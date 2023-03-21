@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
@@ -22,44 +21,47 @@ public class ShoutEvent : ActionTask<Transform>
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "FindObjectsOfType")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(ActionTask), Member = "get_elapsedTime")]
 	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 17)]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 13)]
 	protected override void OnUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 6)]
 	public override void OnDrawGizmosSelected()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
 	public ShoutEvent()
 	{
 		((ActionTask<>)(object)this)._002Ector();

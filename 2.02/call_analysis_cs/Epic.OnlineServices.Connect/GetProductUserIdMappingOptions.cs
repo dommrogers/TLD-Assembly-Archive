@@ -15,14 +15,14 @@ public class GetProductUserIdMappingOptions
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -37,9 +37,9 @@ public class GetProductUserIdMappingOptions
 		{
 			return default(ExternalAccountType);
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		set
 		{
 		}
@@ -47,23 +47,23 @@ public class GetProductUserIdMappingOptions
 
 	public ProductUserId TargetProductUserId
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public GetProductUserIdMappingOptions()
 	{
 	}

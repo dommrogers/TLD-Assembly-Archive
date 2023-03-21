@@ -17,8 +17,8 @@ public class MoveToPosition : ActionTask<NavMeshAgent>
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -27,24 +27,26 @@ public class MoveToPosition : ActionTask<NavMeshAgent>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 9)]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 6)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 5)]
 	protected override void OnUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 4)]
 	protected override void OnStop()
 	{
 	}

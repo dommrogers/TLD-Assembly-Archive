@@ -24,13 +24,13 @@ public class CheckMouseClick2D : ConditionTask<Collider2D>
 	[CallerCount(Count = 0)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
-	[Calls(Type = typeof(ConditionTask), Member = "Flip")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConditionTask), Member = "Flip")]
+	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
 	public void OnMouseDown()
 	{
 	}

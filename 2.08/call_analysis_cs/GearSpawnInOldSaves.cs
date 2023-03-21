@@ -10,15 +10,14 @@ public class GearSpawnInOldSaves : MonoBehaviour
 
 	private static List<string> m_RestoredGuids;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public static void Add(string guid)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Reset()
@@ -34,20 +33,20 @@ public class GearSpawnInOldSaves : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	public static void DeserializeAll(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(GearManager), Member = "ShouldDeleteActiveGearItem")]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "CheckForSpawnInOldSaves")]
+	[CalledBy(Type = typeof(GearManager), Member = "ShouldDeleteActiveGearItem")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool HasSpawned(string guid)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

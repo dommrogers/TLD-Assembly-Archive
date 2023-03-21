@@ -27,36 +27,36 @@ public class LanguageSelection : MonoBehaviour
 
 	private UIPopupList mList;
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(LanguageSelection), Member = "Refresh")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(LanguageSelection), Member = "Refresh")]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "MaybeLoadLanguageTables")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Localization), Member = "get_Language")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(LanguageSelection), Member = "Awake")]
-	[Calls(Type = typeof(UIPopupList), Member = "set_value")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Localization), Member = "MaybeLoadLanguageTables")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Localization), Member = "get_Language")]
+	[Calls(Type = typeof(UIPopupList), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Refresh()
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public LanguageSelection()
 	{
 	}

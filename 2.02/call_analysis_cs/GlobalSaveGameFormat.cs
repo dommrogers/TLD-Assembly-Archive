@@ -171,7 +171,7 @@ public class GlobalSaveGameFormat
 	public string m_NotificationFlagSerialized;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public GlobalSaveGameFormat()
 	{
 	}

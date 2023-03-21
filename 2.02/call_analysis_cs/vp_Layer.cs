@@ -70,37 +70,37 @@ public sealed class vp_Layer
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	private vp_Layer()
 	{
 	}
 
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SetWeaponLayer")]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "Start")]
+	[CalledBy(Type = typeof(vp_Layer), Member = "Set")]
+	[CalledBy(Type = typeof(HeightFogVolume), Member = "Start")]
 	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "PlayDetonateInHand")]
 	[CalledBy(Type = typeof(SafeCracking), Member = "Start")]
 	[CalledBy(Type = typeof(GearItem), Member = "Awake")]
 	[CalledBy(Type = typeof(LoadScene), Member = "Start")]
 	[CalledBy(Type = typeof(LoadingZone), Member = "Start")]
-	[CalledBy(Type = typeof(HeightFogVolume), Member = "Start")]
-	[CalledBy(Type = typeof(WetZoneTrigger), Member = "Start")]
+	[CalledBy(Type = typeof(RenderObjectInstanceTriggerVolume), Member = "Awake")]
 	[CalledBy(Type = typeof(RenderObjectInstanceVolume), Member = "Awake")]
 	[CalledBy(Type = typeof(BoxSector), Member = "Start")]
 	[CalledBy(Type = typeof(DoorTrigger), Member = "Start")]
 	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "Start")]
 	[CalledBy(Type = typeof(IceCrackingWarningTrigger), Member = "Start")]
+	[CalledBy(Type = typeof(WetZoneTrigger), Member = "Start")]
 	[CalledBy(Type = typeof(SunShadowOverrideVolume), Member = "Start")]
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(vp_Layer), Member = "Set")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "Start")]
-	[CalledBy(Type = typeof(RenderObjectInstanceTriggerVolume), Member = "Awake")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(vp_Layer), Member = "Set")]
-	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "set_layer")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 17)]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SetWeaponLayer")]
+	[Calls(Type = typeof(GameObject), Member = "set_layer")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[Calls(Type = typeof(vp_Layer), Member = "Set")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	public static void Set(GameObject obj, int layer, bool recursive = false)
 	{
 	}

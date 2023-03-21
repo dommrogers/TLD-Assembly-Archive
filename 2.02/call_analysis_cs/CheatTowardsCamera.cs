@@ -9,15 +9,15 @@ public class CheatTowardsCamera : MonoBehaviour
 
 	private Vector3 m_LastPosition;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 18)]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 18)]
 	private void Update()
 	{
 	}

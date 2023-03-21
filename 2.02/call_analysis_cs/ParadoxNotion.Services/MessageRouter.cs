@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 
 namespace ParadoxNotion.Services;
 
-public class MessageRouter : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler, IPointerExitHandler, IDragHandler, IPointerUpHandler, IPointerClickHandler, ISelectHandler, IScrollHandler, IUpdateSelectedHandler, IPointerDownHandler, IDeselectHandler, IMoveHandler, ISubmitHandler
+public class MessageRouter : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler, IPointerExitHandler, IPointerDownHandler, IPointerUpHandler, IPointerClickHandler, IDragHandler, IScrollHandler, IUpdateSelectedHandler, ISelectHandler, IDeselectHandler, IMoveHandler, ISubmitHandler
 {
 	public class MessageData
 	{
@@ -19,16 +19,16 @@ public class MessageRouter : MonoBehaviour, IPointerEnterHandler, IEventSystemHa
 
 		public GameObject receiver
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 52)]
 			[CompilerGenerated]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 59)]
 			get
 			{
 				return null;
 			}
-			[CallerCount(Count = 101)]
 			[CompilerGenerated]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 103)]
 			private set
 			{
 			}
@@ -38,21 +38,21 @@ public class MessageRouter : MonoBehaviour, IPointerEnterHandler, IEventSystemHa
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 71)]
+			[CallerCount(Count = 77)]
 			private set
 			{
 			}
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 83)]
+		[CallerCount(Count = 88)]
 		public MessageData(GameObject receiver, object sender)
 		{
 		}
@@ -69,11 +69,11 @@ public class MessageRouter : MonoBehaviour, IPointerEnterHandler, IEventSystemHa
 			[CallerCount(Count = 1)]
 			get
 			{
-				return (T)null;
+				return default(T);
 			}
+			[CompilerGenerated]
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
-			[CompilerGenerated]
 			private set
 			{
 			}
@@ -97,10 +97,10 @@ public class MessageRouter : MonoBehaviour, IPointerEnterHandler, IEventSystemHa
 
 	private Animator animator
 	{
+		[CalledBy(Type = typeof(MessageRouter), Member = "OnAnimatorMove")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(MessageRouter), Member = "OnAnimatorMove")]
-		[CalledBy(Type = typeof(MessageRouter), Member = "OnAnimatorMove")]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 8)]
 		get
 		{
@@ -109,291 +109,321 @@ public class MessageRouter : MonoBehaviour, IPointerEnterHandler, IEventSystemHa
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnPointerEnter(PointerEventData eventData)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnPointerExit(PointerEventData eventData)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnPointerDown(PointerEventData eventData)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnPointerUp(PointerEventData eventData)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnPointerClick(PointerEventData eventData)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnDrag(PointerEventData eventData)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnDrop(BaseEventData eventData)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnScroll(PointerEventData eventData)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnUpdateSelected(BaseEventData eventData)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnSelect(BaseEventData eventData)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnDeselect(BaseEventData eventData)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnMove(AxisEventData eventData)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnSubmit(BaseEventData eventData)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 1)]
 	private void OnAnimatorIK(int layerIndex)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
 	[Calls(Type = typeof(MessageRouter), Member = "get_animator")]
-	[Calls(Type = typeof(MessageRouter), Member = "get_animator")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	private void OnAnimatorMove()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnBecameInvisible()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnBecameVisible()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnCollisionEnter(Collision collisionInfo)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnCollisionExit(Collision collisionInfo)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnCollisionStay(Collision collisionInfo)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnCollisionEnter2D(Collision2D collisionInfo)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnCollisionExit2D(Collision2D collisionInfo)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnCollisionStay2D(Collision2D collisionInfo)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnTriggerEnter(Collider other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnTriggerExit(Collider other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnTriggerStay(Collider other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnTriggerExit2D(Collider2D other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnTriggerStay2D(Collider2D other)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnMouseDown()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnMouseDrag()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnMouseEnter()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnMouseExit()
 	{
 	}
 
-	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnMouseOver()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnMouseUp()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnControllerColliderHit(ControllerColliderHit hit)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnParticleCollision(GameObject other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
-	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnTransformChildrenChanged()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnTransformParentChanged()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Format")]
 	[CalledBy(Type = typeof(Node), Member = "RegisterEvents")]
-	[Calls(Type = typeof(Logger), Member = "LogError")]
-	[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
 	[CalledBy(Type = typeof(Task), Member = "RegisterEvents")]
-	[Calls(Type = typeof(Type), Member = "GetMethod")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Type), Member = "GetMethod")]
 	[Calls(Type = typeof(MethodInfo), Member = "op_Equality")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Logger), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 21)]
 	public void Register(object target, string[] messages)
 	{
 	}
 
-	[Calls(Type = typeof(MessageRouter), Member = "Internal_RegisterCallback")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MessageRouter), Member = "Internal_RegisterCallback")]
 	public void RegisterCallback(string message, Action callback)
 	{
 	}
@@ -406,79 +436,89 @@ public class MessageRouter : MonoBehaviour, IPointerEnterHandler, IEventSystemHa
 	{
 	}
 
+	[CalledBy(Type = typeof(MessageRouter), Member = "RegisterCallback")]
+	[CalledBy(Type = typeof(MessageRouter), Member = "RegisterCallback")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CalledBy(Type = typeof(MessageRouter), Member = "RegisterCallback")]
-	[CalledBy(Type = typeof(MessageRouter), Member = "RegisterCallback")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 11)]
 	private void Internal_RegisterCallback(string message, Delegate callback)
 	{
 	}
 
-	[CalledBy(Type = typeof(Task), Member = "UnRegisterAllEvents")]
-	[CallsUnknownMethods(Count = 16)]
+	[CalledBy(Type = typeof(Node), Member = "UnregisterAllEvents")]
+	[CalledBy(Type = typeof(Node), Member = "UnregisterAllEvents")]
 	[CalledBy(Type = typeof(Task), Member = "Initialize")]
-	[CalledBy(Type = typeof(Node), Member = "UnregisterAllEvents")]
-	[CallsDeduplicatedMethods(Count = 10)]
+	[CalledBy(Type = typeof(Task), Member = "UnRegisterAllEvents")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Node), Member = "UnregisterAllEvents")]
+	[Calls(Type = typeof(Dictionary<, >.KeyCollection.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 16)]
 	public void UnRegister(object target)
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CalledBy(Type = typeof(Node), Member = "UnRegisterEvents")]
 	[CalledBy(Type = typeof(Node), Member = "UnRegisterEvents")]
 	[CalledBy(Type = typeof(Task), Member = "UnRegisterEvent")]
 	[CalledBy(Type = typeof(Task), Member = "UnRegisterEvents")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 17)]
 	public void UnRegister(object target, string[] messages)
 	{
 	}
 
+	[CalledBy(Type = typeof(MessageRouter), Member = "OnAnimatorMove")]
+	[CalledBy(Type = typeof(MessageRouter), Member = "OnBecameInvisible")]
+	[CalledBy(Type = typeof(MessageRouter), Member = "OnBecameVisible")]
+	[CalledBy(Type = typeof(MessageRouter), Member = "OnMouseDown")]
+	[CalledBy(Type = typeof(MessageRouter), Member = "OnMouseDrag")]
+	[CalledBy(Type = typeof(MessageRouter), Member = "OnMouseEnter")]
+	[CalledBy(Type = typeof(MessageRouter), Member = "OnMouseExit")]
+	[CalledBy(Type = typeof(MessageRouter), Member = "OnMouseOver")]
+	[CalledBy(Type = typeof(MessageRouter), Member = "OnMouseUp")]
 	[CalledBy(Type = typeof(MessageRouter), Member = "OnEnable")]
 	[CalledBy(Type = typeof(MessageRouter), Member = "OnDisable")]
-	[CalledBy(Type = typeof(MessageRouter), Member = "OnMouseDown")]
+	[CalledBy(Type = typeof(MessageRouter), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(MessageRouter), Member = "OnTransformChildrenChanged")]
 	[CalledBy(Type = typeof(MessageRouter), Member = "OnTransformParentChanged")]
-	[CalledBy(Type = typeof(MessageRouter), Member = "OnMouseUp")]
-	[CalledBy(Type = typeof(MessageRouter), Member = "OnDestroy")]
-	[CalledBy(Type = typeof(MessageRouter), Member = "OnMouseOver")]
-	[CalledBy(Type = typeof(MessageRouter), Member = "OnBecameVisible")]
-	[CalledBy(Type = typeof(MessageRouter), Member = "OnMouseEnter")]
-	[CalledBy(Type = typeof(MessageRouter), Member = "OnMouseDrag")]
-	[CalledBy(Type = typeof(MessageRouter), Member = "OnBecameInvisible")]
-	[CalledBy(Type = typeof(MessageRouter), Member = "OnAnimatorMove")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 14)]
-	[CalledBy(Type = typeof(MessageRouter), Member = "OnMouseExit")]
+	[Calls(Type = typeof(MessageRouter), Member = "Dispatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool Dispatch(string message, object sender = null)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 28)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Logger), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[Calls(Type = typeof(MonoManager), Member = "get_current")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(MethodInfo), Member = "op_Equality")]
-	[Calls(Type = typeof(Type), Member = "GetMethod")]
-	[CallsDeduplicatedMethods(Count = 14)]
-	[CallerCount(Count = 30)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 30)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Type), Member = "GetMethod")]
+	[Calls(Type = typeof(MethodInfo), Member = "op_Equality")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(ReflectionTools), Member = "SingleTempArgsArray")]
+	[Calls(Type = typeof(MonoManager), Member = "get_current")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Logger), Member = "LogError")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 28)]
 	public bool Dispatch<T>(string message, T arg, object sender = null)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 9)]
 	public MessageRouter()

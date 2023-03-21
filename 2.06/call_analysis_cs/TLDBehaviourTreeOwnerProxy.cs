@@ -6,8 +6,8 @@ public class TLDBehaviourTreeOwnerProxy
 
 	public string m_Blackboard;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public TLDBehaviourTreeOwnerProxy()
 	{
 	}

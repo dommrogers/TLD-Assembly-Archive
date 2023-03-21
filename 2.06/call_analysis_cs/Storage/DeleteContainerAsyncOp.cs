@@ -15,16 +15,16 @@ public class DeleteContainerAsyncOp : AsyncOp<DeleteContainerAsyncOp>
 
 	public string ContainerName;
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(ConnectedStorage), Member = "DeleteThisContainer")]
 	[CalledBy(Type = typeof(ConnectedStorage), Member = "DeleteContainer")]
+	[CallerCount(Count = 2)]
 	public DeleteContainerAsyncOp(ConnectedStorage storage, DeleteContainerAsyncCallback callback, string containerName)
 	{
 		((AsyncOp<>)(object)this)._002Ector();
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Complete(uint status, uint result)
 	{
 	}

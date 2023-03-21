@@ -1,35 +1,14 @@
-using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
 namespace NodeCanvas.DialogueTrees;
 
 public interface IStatement
 {
-	string text
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	string text { get; }
 
-	AudioClip audio
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	AudioClip audio { get; }
 
-	string meta
-	{
-		[CallerCount(Count = 121780)]
-		[DeduplicatedMethod]
-		get;
-	}
+	string meta { get; }
 
-	VoiceOverAnimationState anim
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	VoiceOverAnimationState anim { get; }
 }

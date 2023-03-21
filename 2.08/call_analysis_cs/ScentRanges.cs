@@ -30,11 +30,11 @@ public class ScentRanges : MonoBehaviour
 	[Calls(Type = typeof(Debug), Member = "Log")]
 	public float GetScentRange(ScentRangeCategory cat)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public ScentRanges()
 	{
 	}

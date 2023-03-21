@@ -13,11 +13,11 @@ internal struct CopySessionHandleByInviteIdOptionsInternal : ISettable, IDisposa
 
 	public string InviteId
 	{
+		[CalledBy(Type = typeof(CopySessionHandleByInviteIdOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopySessionHandleByInviteIdOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopySessionHandleByInviteIdOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopySessionHandleByInviteIdOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -30,16 +30,16 @@ internal struct CopySessionHandleByInviteIdOptionsInternal : ISettable, IDisposa
 	}
 
 	[CalledBy(Type = typeof(SessionsInterface), Member = "CopySessionHandleByInviteId")]
-	[Calls(Type = typeof(CopySessionHandleByInviteIdOptionsInternal), Member = "set_InviteId")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CopySessionHandleByInviteIdOptionsInternal), Member = "set_InviteId")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

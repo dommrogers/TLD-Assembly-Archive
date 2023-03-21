@@ -5,9 +5,9 @@ namespace NodeCanvas.Tasks.Actions;
 
 public class DebugBeep : ActionTask
 {
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallerCount(Count = 1)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	protected override void OnExecute()
 	{
 	}

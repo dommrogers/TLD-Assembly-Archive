@@ -19,9 +19,9 @@ public class QueryRemainingQuotaAsyncOp : AsyncOp<QueryRemainingQuotaAsyncOp>
 		((AsyncOp<>)(object)this)._002Ector();
 	}
 
+	[CalledBy(Type = typeof(ConnectedStorage), Member = "QueryRemainingQuotaAsyncThunk")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(ConnectedStorage), Member = "QueryRemainingQuotaAsyncThunk")]
 	[CallsUnknownMethods(Count = 6)]
 	public void Complete(uint result, long quota)
 	{

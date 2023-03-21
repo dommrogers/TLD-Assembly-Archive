@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using TLD.Gear;
@@ -11,8 +12,8 @@ public class Action_UnlockBlueprint : ActionTask
 	public bool showNotification;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(BlueprintManager), Member = "FindBlueprintsForGear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(BlueprintManager), Member = "UnlockSilent")]
 	[Calls(Type = typeof(BlueprintManager), Member = "UnlockWithNotification")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]

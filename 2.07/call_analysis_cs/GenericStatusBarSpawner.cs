@@ -27,14 +27,14 @@ public class GenericStatusBarSpawner : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Object), Member = "get_name")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	public void AssignValuesToSpawnedObject()
 	{
 	}

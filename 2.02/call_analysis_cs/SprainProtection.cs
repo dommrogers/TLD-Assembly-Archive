@@ -9,11 +9,11 @@ public class SprainProtection : MonoBehaviour
 
 	private bool m_ShownSprainProtectionState;
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetCramponsState")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "TakeOffClothingItem")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "PutOnClothingItem")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetCramponsState")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public void UpdateSprainProtection()
 	{
@@ -23,24 +23,24 @@ public class SprainProtection : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool HasSprainProtection()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffLossNotification")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffNotification")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ShouldUpdateBuffNotification()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

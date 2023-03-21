@@ -136,7 +136,7 @@ public class UILabel : UIWidget
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -146,11 +146,11 @@ public class UILabel : UIWidget
 
 	public bool capsLock
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -162,44 +162,41 @@ public class UILabel : UIWidget
 	public override bool isAnchoredHorizontally
 	{
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public override bool isAnchoredVertically
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public override Material material
 	{
-		[Calls(Type = typeof(UIFont), Member = "get_material")]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(Font), Member = "get_material")]
+		[Calls(Type = typeof(UIFont), Member = "get_material")]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -222,24 +219,22 @@ public class UILabel : UIWidget
 
 	public UIFont bitmapFont
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
-		[CalledBy(Type = typeof(UILabel), Member = "set_ambigiousFont")]
-		[CalledBy(Type = typeof(UIFont), Member = "MarkAsChanged")]
-		[CalledBy(Type = typeof(UIFont), Member = "MarkAsChanged")]
-		[CalledBy(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
-		[CalledBy(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
 		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
-		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[CalledBy(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
+		[CalledBy(Type = typeof(UIFont), Member = "MarkAsChanged")]
 		[CalledBy(Type = typeof(UILabel), Member = "set_font")]
+		[CalledBy(Type = typeof(UILabel), Member = "set_ambigiousFont")]
 		[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "RenderFontTest")]
 		[CallerCount(Count = 8)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -250,28 +245,24 @@ public class UILabel : UIWidget
 		[CalledBy(Type = typeof(UILabel), Member = "get_keepCrisp")]
 		[CalledBy(Type = typeof(UILabel), Member = "OnInit")]
 		[CalledBy(Type = typeof(UILabel), Member = "OnFontChanged")]
-		[CalledBy(Type = typeof(UILabel), Member = "OnFontChanged")]
 		[CalledBy(Type = typeof(UILabel), Member = "ProcessText")]
 		[CalledBy(Type = typeof(UILabel), Member = "UpdateNGUIText")]
+		[CallerCount(Count = 6)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(UIFont), Member = "get_dynamicFont")]
 		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallerCount(Count = 6)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 2)]
-		[CalledBy(Type = typeof(UILabel), Member = "set_ambigiousFont")]
 		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
-		[Calls(Type = typeof(UIWidget), Member = "MarkAsChanged")]
+		[CalledBy(Type = typeof(UILabel), Member = "set_ambigiousFont")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
 		[Calls(Type = typeof(UILabel), Member = "SetActiveFont")]
 		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
-		[Calls(Type = typeof(UILabel), Member = "SetActiveFont")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
+		[Calls(Type = typeof(UIWidget), Member = "MarkAsChanged")]
 		set
 		{
 		}
@@ -279,21 +270,20 @@ public class UILabel : UIWidget
 
 	public UnityEngine.Object ambigiousFont
 	{
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CalledBy(Type = typeof(UITextList), Member = "get_isValid")]
-		[CalledBy(Type = typeof(UILabel), Member = "AssumeNaturalSize")]
-		[CalledBy(Type = typeof(UILabel), Member = "MakePixelPerfect")]
-		[CalledBy(Type = typeof(UILabel), Member = "MakePixelPerfect")]
 		[CalledBy(Type = typeof(UILabel), Member = "ProcessAndRequest")]
+		[CalledBy(Type = typeof(UILabel), Member = "MakePixelPerfect")]
+		[CalledBy(Type = typeof(UILabel), Member = "AssumeNaturalSize")]
+		[CalledBy(Type = typeof(UITextList), Member = "get_isValid")]
 		[CallerCount(Count = 5)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(UILabel), Member = "set_bitmapFont")]
 		[Calls(Type = typeof(UILabel), Member = "set_trueTypeFont")]
+		[Calls(Type = typeof(UILabel), Member = "set_bitmapFont")]
 		set
 		{
 		}
@@ -301,28 +291,20 @@ public class UILabel : UIWidget
 
 	public string text
 	{
-		[CallerCount(Count = 9)]
 		[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-		[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-		[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-		[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-		[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-		[Calls(Type = typeof(string), Member = "ToUpper")]
-		[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(PlayerManager), Member = "InitLabelsForGear")]
-		[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-		[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
+		[CallerCount(Count = 9)]
+		[Calls(Type = typeof(string), Member = "ToUpper")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(UIWidget), Member = "ResizeCollider")]
+		[CallerCount(Count = 959)]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 		[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+		[Calls(Type = typeof(UIWidget), Member = "ResizeCollider")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 958)]
 		set
 		{
 		}
@@ -330,38 +312,37 @@ public class UILabel : UIWidget
 
 	public int defaultFontSize
 	{
+		[CallAnalysisFailed]
+		[CalledBy(Type = typeof(UILabel), Member = "ProcessText")]
 		[CalledBy(Type = typeof(UILabel), Member = "GetCharacterIndex")]
 		[CallerCount(Count = 2)]
-		[CalledBy(Type = typeof(UILabel), Member = "ProcessText")]
-		[CallAnalysisFailed]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public int fontSize
 	{
 		[CalledBy(Type = typeof(BMSymbol), Member = "SetSpriteLocation")]
-		[Calls(Type = typeof(UIFont), Member = "GetFontSizeModifierValue")]
-		[Calls(Type = typeof(UIFont), Member = "GetFontSizeModifierValue")]
-		[Calls(Type = typeof(UIFont), Member = "get_defaultSize")]
-		[CallerCount(Count = 8)]
-		[CalledBy(Type = typeof(TextInputField), Member = "GetCursorLocation")]
+		[CalledBy(Type = typeof(UILabel), Member = "ProcessText")]
+		[CalledBy(Type = typeof(UILabel), Member = "UpdateNGUIText")]
 		[CalledBy(Type = typeof(UITextList), Member = "get_lineHeight")]
+		[CalledBy(Type = typeof(TextInputField), Member = "GetCursorLocation")]
 		[CalledBy(Type = typeof(DialogueSequenceFP), Member = "Awake")]
 		[CalledBy(Type = typeof(DialogueSequenceFP), Member = "SetupNormalUILabelText")]
 		[CalledBy(Type = typeof(Panel_HUD), Member = "Initialize")]
+		[CallerCount(Count = 8)]
+		[Calls(Type = typeof(UIFont), Member = "get_defaultSize")]
+		[Calls(Type = typeof(UIFont), Member = "GetFontSizeModifierValue")]
 		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(UILabel), Member = "ProcessText")]
-		[CalledBy(Type = typeof(UILabel), Member = "UpdateNGUIText")]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
 		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
 		set
 		{
 		}
@@ -369,14 +350,14 @@ public class UILabel : UIWidget
 
 	public int fontSizeAsianOverride
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
 		set
 		{
 		}
@@ -387,10 +368,10 @@ public class UILabel : UIWidget
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
 		set
 		{
 		}
@@ -398,14 +379,14 @@ public class UILabel : UIWidget
 
 	public int fontSizeInuktitutOverride
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
 		set
 		{
 		}
@@ -419,8 +400,8 @@ public class UILabel : UIWidget
 		{
 			return default(FontStyle);
 		}
-		[CallerCount(Count = 1)]
 		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
 		set
 		{
@@ -434,9 +415,9 @@ public class UILabel : UIWidget
 		{
 			return default(NGUIText.Alignment);
 		}
+		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
-		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
 		set
 		{
 		}
@@ -447,7 +428,7 @@ public class UILabel : UIWidget
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -472,14 +453,14 @@ public class UILabel : UIWidget
 
 	public Color gradientBottom
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(Color);
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -490,10 +471,10 @@ public class UILabel : UIWidget
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -501,14 +482,14 @@ public class UILabel : UIWidget
 
 	public int spacingY
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -519,7 +500,7 @@ public class UILabel : UIWidget
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -529,15 +510,15 @@ public class UILabel : UIWidget
 
 	public float floatSpacingX
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Utils), Member = "Approximately")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -548,10 +529,10 @@ public class UILabel : UIWidget
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[Calls(Type = typeof(Utils), Member = "Approximately")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Utils), Member = "Approximately")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -563,7 +544,7 @@ public class UILabel : UIWidget
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -572,21 +553,20 @@ public class UILabel : UIWidget
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	private bool keepCrisp
 	{
-		[CallerCount(Count = 3)]
-		[Calls(Type = typeof(UILabel), Member = "get_trueTypeFont")]
-		[CalledBy(Type = typeof(UILabel), Member = "ProcessText")]
 		[CalledBy(Type = typeof(UILabel), Member = "ProcessText")]
 		[CalledBy(Type = typeof(UILabel), Member = "UpdateNGUIText")]
+		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(UILabel), Member = "get_trueTypeFont")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -596,7 +576,7 @@ public class UILabel : UIWidget
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -619,8 +599,8 @@ public class UILabel : UIWidget
 
 	public Overflow overflowMethod
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(Overflow);
@@ -634,11 +614,11 @@ public class UILabel : UIWidget
 
 	public int lineWidth
 	{
-		[CallerCount(Count = 3)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 3)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UIWidget), Member = "set_width")]
@@ -649,14 +629,14 @@ public class UILabel : UIWidget
 
 	public int lineHeight
 	{
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 4)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[Calls(Type = typeof(UIWidget), Member = "set_height")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIWidget), Member = "set_height")]
 		set
 		{
 		}
@@ -667,7 +647,7 @@ public class UILabel : UIWidget
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -677,10 +657,10 @@ public class UILabel : UIWidget
 
 	public override Vector3[] localCorners
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UILabel), Member = "ProcessText")]
 		[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
 		[CallsUnknownMethods(Count = 2)]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -714,10 +694,10 @@ public class UILabel : UIWidget
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -725,8 +705,8 @@ public class UILabel : UIWidget
 
 	public Effect effectStyle
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(Effect);
@@ -768,7 +748,7 @@ public class UILabel : UIWidget
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -778,15 +758,15 @@ public class UILabel : UIWidget
 
 	public string processedText
 	{
-		[CalledBy(Type = typeof(UIInput), Member = "ProcessEvent")]
 		[CalledBy(Type = typeof(TypewriterEffect), Member = "Update")]
-		[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-		[CallerCount(Count = 7)]
+		[CalledBy(Type = typeof(UIInput), Member = "ProcessEvent")]
 		[CalledBy(Type = typeof(UILabel), Member = "GetCharacterIndexAtPosition")]
-		[CalledBy(Type = typeof(Panel_Log), Member = "RefreshSelectedSkillDescriptionView")]
-		[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
 		[CalledBy(Type = typeof(UILabel), Member = "GetCharacterIndex")]
 		[CalledBy(Type = typeof(UILabel), Member = "PrintOverlay")]
+		[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
+		[CalledBy(Type = typeof(Panel_Log), Member = "RefreshSelectedSkillDescriptionView")]
+		[CallerCount(Count = 7)]
+		[Calls(Type = typeof(UILabel), Member = "ProcessText")]
 		get
 		{
 			return null;
@@ -795,11 +775,11 @@ public class UILabel : UIWidget
 
 	public Vector2 printedSize
 	{
-		[CalledBy(Type = typeof(PlayerManager), Member = "InitLabelsForGear")]
-		[CalledBy(Type = typeof(Panel_Log), Member = "MaybeUpdateRockCacheNoteView")]
 		[CalledBy(Type = typeof(Panel_Log), Member = "CheckForNotesChange")]
-		[Calls(Type = typeof(UILabel), Member = "ProcessText")]
+		[CalledBy(Type = typeof(Panel_Log), Member = "MaybeUpdateRockCacheNoteView")]
+		[CalledBy(Type = typeof(PlayerManager), Member = "InitLabelsForGear")]
 		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(UILabel), Member = "ProcessText")]
 		get
 		{
 			return default(Vector2);
@@ -809,9 +789,9 @@ public class UILabel : UIWidget
 	public override Vector2 localSize
 	{
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UILabel), Member = "ProcessText")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(UILabel), Member = "ProcessText")]
 		get
 		{
 			return default(Vector2);
@@ -820,34 +800,35 @@ public class UILabel : UIWidget
 
 	private bool isValid
 	{
-		[CallerCount(Count = 5)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CalledBy(Type = typeof(UILabel), Member = "ProcessText")]
 		[CalledBy(Type = typeof(UILabel), Member = "GetCharacterIndexAtPosition")]
 		[CalledBy(Type = typeof(UILabel), Member = "GetCharacterIndex")]
 		[CalledBy(Type = typeof(UILabel), Member = "PrintOverlay")]
 		[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
+		[CallerCount(Count = 5)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UILabel), Member = "SetActiveFont")]
-	[Calls(Type = typeof(UILabel), Member = "get_trueTypeFont")]
 	[Calls(Type = typeof(UIWidget), Member = "OnInit")]
+	[Calls(Type = typeof(BetterList<>), Member = "Add")]
+	[Calls(Type = typeof(UILabel), Member = "get_trueTypeFont")]
+	[Calls(Type = typeof(UILabel), Member = "SetActiveFont")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnInit()
 	{
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
-	[Calls(Type = typeof(UILabel), Member = "SetActiveFont")]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(UILabel), Member = "SetActiveFont")]
+	[Calls(Type = typeof(BetterList<>), Member = "Remove")]
+	[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
 	[Calls(Type = typeof(UIRect), Member = "OnDisable")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnDisable()
 	{
 	}
@@ -858,42 +839,35 @@ public class UILabel : UIWidget
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void ControlTypeChanged()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(UILabel), Member = "OnDisable")]
+	[CalledBy(Type = typeof(UILabel), Member = "set_trueTypeFont")]
 	[CalledBy(Type = typeof(UILabel), Member = "OnInit")]
-	[CalledBy(Type = typeof(UILabel), Member = "set_trueTypeFont")]
-	[CalledBy(Type = typeof(UILabel), Member = "set_trueTypeFont")]
+	[CalledBy(Type = typeof(UILabel), Member = "OnDisable")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	protected void SetActiveFont(Font fnt)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UILabel), Member = "get_trueTypeFont")]
-	[Calls(Type = typeof(Font), Member = "RequestCharactersInTexture")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UIWidget), Member = "CreatePanel")]
-	[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UILabel), Member = "get_trueTypeFont")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UILabel), Member = "get_trueTypeFont")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Font), Member = "RequestCharactersInTexture")]
+	[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
+	[Calls(Type = typeof(UIWidget), Member = "CreatePanel")]
+	[CallsUnknownMethods(Count = 2)]
 	private static void OnFontChanged(Font font)
 	{
 	}
@@ -906,59 +880,70 @@ public class UILabel : UIWidget
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
 	[Calls(Type = typeof(UIWidget), Member = "set_width")]
 	[Calls(Type = typeof(UIWidget), Member = "set_height")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UIFont), Member = "get_defaultSize")]
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
-	[Calls(Type = typeof(NGUITools), Member = "UpdateWidgetCollider")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NGUITools), Member = "UpdateWidgetCollider")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void UpgradeFrom265()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UIWidget), Member = "OnAnchor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UIWidget), Member = "OnAnchor")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnAnchor()
 	{
 	}
 
+	[CalledBy(Type = typeof(UIInput), Member = "Init")]
+	[CalledBy(Type = typeof(UILabel), Member = "set_trueTypeFont")]
+	[CalledBy(Type = typeof(UILabel), Member = "set_text")]
+	[CalledBy(Type = typeof(UILabel), Member = "set_fontSize")]
+	[CalledBy(Type = typeof(UILabel), Member = "set_fontSizeAsianOverride")]
+	[CalledBy(Type = typeof(UILabel), Member = "set_fontSizeCyrillicOverride")]
+	[CalledBy(Type = typeof(UILabel), Member = "set_fontSizeInuktitutOverride")]
+	[CalledBy(Type = typeof(UILabel), Member = "set_fontStyle")]
+	[CalledBy(Type = typeof(UILabel), Member = "set_alignment")]
+	[CalledBy(Type = typeof(UILabel), Member = "UpgradeFrom265")]
+	[CalledBy(Type = typeof(UILabel), Member = "OnStart")]
+	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "SetupNormalUILabelText")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "ShowCollectibleNote")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "MaintainOriginalObjectSize")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAccessibilityOptions")]
+	[CalledBy(Type = typeof(Panel_Subtitles), Member = "EnableLargeSubtitles")]
+	[CallerCount(Count = 21)]
 	[Calls(Type = typeof(UILabel), Member = "get_ambigiousFont")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[CallerCount(Count = 21)]
 	private void ProcessAndRequest()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Font), Member = "add_textureRebuilt")]
-	[CallsUnknownMethods(Count = 6)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	protected override void OnEnable()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIWidget), Member = "CreatePanel")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UIWidget), Member = "CreatePanel")]
-	[CallerCount(Count = 0)]
 	protected override void OnStart()
 	{
 	}
@@ -969,109 +954,97 @@ public class UILabel : UIWidget
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public void ProcessText()
 	{
 	}
 
-	[Calls(Type = typeof(UIRoot), Member = "get_pixelSizeAdjustment")]
-	[Calls(Type = typeof(UILabel), Member = "UpdateNGUIText")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UILabel), Member = "get_keepCrisp")]
-	[Calls(Type = typeof(UILabel), Member = "get_fontSize")]
-	[Calls(Type = typeof(UIFont), Member = "get_defaultSize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UIWidget), Member = "set_width")]
-	[Calls(Type = typeof(NGUIText), Member = "Update")]
-	[Calls(Type = typeof(NGUIText), Member = "CalculatePrintedSize")]
-	[Calls(Type = typeof(NGUIText), Member = "CalculatePrintedSize")]
-	[Calls(Type = typeof(NGUIText), Member = "CalculatePrintedSize")]
-	[Calls(Type = typeof(NGUIText), Member = "WrapText")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(UILabel), Member = "get_keepCrisp")]
-	[Calls(Type = typeof(UIRect), Member = "get_root")]
 	[CallerCount(Count = 33)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(UILabel), Member = "get_isValid")]
 	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
 	[Calls(Type = typeof(UILabel), Member = "get_defaultFontSize")]
 	[Calls(Type = typeof(UILabel), Member = "get_trueTypeFont")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(UILabel), Member = "get_keepCrisp")]
+	[Calls(Type = typeof(UIRect), Member = "get_root")]
+	[Calls(Type = typeof(UIRoot), Member = "get_pixelSizeAdjustment")]
+	[Calls(Type = typeof(UILabel), Member = "UpdateNGUIText")]
+	[Calls(Type = typeof(UILabel), Member = "get_fontSize")]
+	[Calls(Type = typeof(UIFont), Member = "get_defaultSize")]
+	[Calls(Type = typeof(NGUIText), Member = "Update")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(NGUIText), Member = "WrapText")]
+	[Calls(Type = typeof(NGUIText), Member = "CalculatePrintedSize")]
+	[Calls(Type = typeof(UIWidget), Member = "set_width")]
+	[Calls(Type = typeof(UIWidget), Member = "set_height")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 15)]
 	private void ProcessText(bool legacyMode, bool full)
 	{
 	}
 
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UIWidget), Member = "MakePixelPerfect")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UILabel), Member = "get_ambigiousFont")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UIWidget), Member = "MakePixelPerfect")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
 	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[Calls(Type = typeof(UILabel), Member = "get_ambigiousFont")]
 	public override void MakePixelPerfect()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(UILabel), Member = "get_ambigiousFont")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UILabel), Member = "get_ambigiousFont")]
 	public void AssumeNaturalSize()
 	{
 	}
 
+	[Obsolete("Use UILabel.GetCharacterAtPosition instead")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UILabel), Member = "GetCharacterIndexAtPosition")]
-	[Obsolete("Use UILabel.GetCharacterAtPosition instead")]
 	public int GetCharacterIndex(Vector3 worldPos)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "GetCharacterIndexAtPosition")]
-	[CallerCount(Count = 0)]
 	[Obsolete("Use UILabel.GetCharacterAtPosition instead")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UILabel), Member = "GetCharacterIndexAtPosition")]
 	public int GetCharacterIndex(Vector2 localPos)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(OpenURLOnClick), Member = "OnClick")]
-	[CallerCount(Count = 3)]
 	[CallAnalysisFailed]
-	[CalledBy(Type = typeof(UILabel), Member = "GetCharacterIndex")]
+	[CalledBy(Type = typeof(OpenURLOnClick), Member = "OnClick")]
 	[CalledBy(Type = typeof(UIInput), Member = "GetCharUnderMouse")]
+	[CalledBy(Type = typeof(UILabel), Member = "GetCharacterIndex")]
+	[CallerCount(Count = 3)]
 	public int GetCharacterIndexAtPosition(Vector3 worldPos, bool precise)
 	{
-		return default(int);
+		return 0;
 	}
 
+	[CalledBy(Type = typeof(UILabel), Member = "GetCharacterIndex")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UILabel), Member = "get_isValid")]
+	[Calls(Type = typeof(UILabel), Member = "get_processedText")]
 	[Calls(Type = typeof(UILabel), Member = "UpdateNGUIText")]
 	[Calls(Type = typeof(NGUIText), Member = "PrintApproximateCharacterPositions")]
 	[Calls(Type = typeof(NGUIText), Member = "PrintExactCharacterPositions")]
 	[Calls(Type = typeof(UILabel), Member = "ApplyOffset")]
-	[CalledBy(Type = typeof(UILabel), Member = "GetCharacterIndex")]
-	[CallsUnknownMethods(Count = 2)]
 	[Calls(Type = typeof(NGUIText), Member = "GetApproximateCharacterIndex")]
-	[Calls(Type = typeof(UILabel), Member = "get_processedText")]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public int GetCharacterIndexAtPosition(Vector2 localPos, bool precise)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallAnalysisFailed]
@@ -1088,20 +1061,20 @@ public class UILabel : UIWidget
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(NGUIText), Member = "StripSymbols")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "IndexOfAny")]
-	[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
-	[Calls(Type = typeof(string), Member = "LastIndexOfAny")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "LastIndexOfAny")]
+	[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
+	[Calls(Type = typeof(string), Member = "IndexOfAny")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(NGUIText), Member = "StripSymbols")]
+	[CallsUnknownMethods(Count = 2)]
 	public string GetWordAtCharacterIndex(int characterIndex)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public string GetUrlAtPosition(Vector3 worldPos)
 	{
 		return null;
@@ -1114,232 +1087,201 @@ public class UILabel : UIWidget
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "LastIndexOf")]
 	[CalledBy(Type = typeof(OpenURLOnClick), Member = "OnClick")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "LastIndexOf")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
 	[CallsUnknownMethods(Count = 1)]
 	public string GetUrlAtCharacterIndex(int characterIndex)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "ApplyOffset")]
-	[Calls(Type = typeof(NGUIText), Member = "GetApproximateCharacterIndex")]
 	[CalledBy(Type = typeof(UIInput), Member = "ProcessEvent")]
-	[CalledBy(Type = typeof(UIInput), Member = "ProcessEvent")]
-	[CalledBy(Type = typeof(UIInput), Member = "ProcessEvent")]
-	[CalledBy(Type = typeof(UIInput), Member = "ProcessEvent")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(NGUIText), Member = "PrintApproximateCharacterPositions")]
-	[Calls(Type = typeof(UILabel), Member = "get_defaultFontSize")]
-	[Calls(Type = typeof(UILabel), Member = "get_processedText")]
-	[Calls(Type = typeof(UILabel), Member = "UpdateNGUIText")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UILabel), Member = "get_isValid")]
+	[Calls(Type = typeof(UILabel), Member = "get_processedText")]
+	[Calls(Type = typeof(UILabel), Member = "get_defaultFontSize")]
+	[Calls(Type = typeof(UILabel), Member = "UpdateNGUIText")]
+	[Calls(Type = typeof(NGUIText), Member = "PrintApproximateCharacterPositions")]
+	[Calls(Type = typeof(UILabel), Member = "ApplyOffset")]
+	[Calls(Type = typeof(NGUIText), Member = "GetApproximateCharacterIndex")]
+	[CallsUnknownMethods(Count = 2)]
 	public int GetCharacterIndex(int currentIndex, KeyCode key)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[Calls(Type = typeof(UILabel), Member = "ApplyOffset")]
-	[Calls(Type = typeof(NGUIText), Member = "PrintCaretAndSelection")]
-	[Calls(Type = typeof(UILabel), Member = "ApplyOffset")]
-	[Calls(Type = typeof(NGUIText), Member = "PrintCaretAndSelection")]
-	[Calls(Type = typeof(UILabel), Member = "UpdateNGUIText")]
-	[Calls(Type = typeof(UILabel), Member = "get_isValid")]
-	[Calls(Type = typeof(UIGeometry), Member = "Clear")]
-	[Calls(Type = typeof(UILabel), Member = "get_processedText")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UIGeometry), Member = "Clear")]
+	[Calls(Type = typeof(UILabel), Member = "get_isValid")]
+	[Calls(Type = typeof(UILabel), Member = "get_processedText")]
+	[Calls(Type = typeof(UILabel), Member = "UpdateNGUIText")]
+	[Calls(Type = typeof(NGUIText), Member = "PrintCaretAndSelection")]
+	[Calls(Type = typeof(UILabel), Member = "ApplyOffset")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public void PrintOverlay(int start, int end, UIGeometry caret, UIGeometry highlight, Color caretColor, Color highlightColor)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UILabel), Member = "get_isValid")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UIFont), Member = "get_premultipliedAlphaShader")]
+	[Calls(Type = typeof(Mathf), Member = "GammaToLinearSpace")]
+	[Calls(Type = typeof(UILabel), Member = "get_processedText")]
+	[Calls(Type = typeof(UILabel), Member = "UpdateNGUIText")]
 	[Calls(Type = typeof(UILabel), Member = "ClearDynamicSymbolSprites")]
 	[Calls(Type = typeof(NGUIText), Member = "Print")]
 	[Calls(Type = typeof(UILabel), Member = "ApplyOffset")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UILabel), Member = "ApplyShadow")]
-	[Calls(Type = typeof(UILabel), Member = "ApplyShadow")]
-	[Calls(Type = typeof(UILabel), Member = "ApplyShadow")]
-	[Calls(Type = typeof(UILabel), Member = "ApplyShadow")]
-	[Calls(Type = typeof(UILabel), Member = "ApplyShadow")]
-	[Calls(Type = typeof(UILabel), Member = "ApplyShadow")]
-	[Calls(Type = typeof(UILabel), Member = "ApplyShadow")]
 	[Calls(Type = typeof(UIFont), Member = "get_packedFontShader")]
-	[Calls(Type = typeof(UILabel), Member = "UpdateNGUIText")]
 	[Calls(Type = typeof(UILabel), Member = "ApplyShadow")]
-	[Calls(Type = typeof(UILabel), Member = "get_processedText")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Mathf), Member = "GammaToLinearSpace")]
-	[Calls(Type = typeof(Mathf), Member = "GammaToLinearSpace")]
-	[Calls(Type = typeof(UIFont), Member = "get_premultipliedAlphaShader")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UILabel), Member = "get_isValid")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Mathf), Member = "GammaToLinearSpace")]
 	public override void OnFill(BetterList<Vector3> verts, BetterList<Vector2> uvs, BetterList<Color32> cols)
 	{
 	}
 
-	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
 	[CalledBy(Type = typeof(UILabel), Member = "GetCharacterIndexAtPosition")]
 	[CalledBy(Type = typeof(UILabel), Member = "GetCharacterIndex")]
+	[CalledBy(Type = typeof(UILabel), Member = "PrintOverlay")]
 	[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
-	[CalledBy(Type = typeof(UILabel), Member = "PrintOverlay")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(UILabel), Member = "PrintOverlay")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
+	[CallsUnknownMethods(Count = 4)]
 	public Vector2 ApplyOffset(BetterList<Vector3> verts, int start)
 	{
 		return default(Vector2);
 	}
 
-	[Calls(Type = typeof(UIFont), Member = "get_premultipliedAlphaShader")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
-	[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
-	[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
-	[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
-	[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
-	[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
-	[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UIFont), Member = "get_premultipliedAlphaShader")]
-	[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 8)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UIFont), Member = "get_premultipliedAlphaShader")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public void ApplyShadow(BetterList<Vector3> verts, BetterList<Vector2> uvs, BetterList<Color32> cols, int start, int end, float x, float y)
 	{
 	}
 
 	[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[Calls(Type = typeof(NGUIText), Member = "CalculateOffsetToFit")]
-	[Calls(Type = typeof(UILabel), Member = "UpdateNGUIText")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UILabel), Member = "UpdateNGUIText")]
+	[Calls(Type = typeof(NGUIText), Member = "CalculateOffsetToFit")]
 	public int CalculateOffsetToFit(string text)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetCurrentProgress()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	public void SetCurrentPercent()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetCurrentSelection()
 	{
 	}
 
-	[Calls(Type = typeof(NGUIText), Member = "WrapText")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UILabel), Member = "UpdateNGUIText")]
+	[Calls(Type = typeof(NGUIText), Member = "WrapText")]
 	public bool Wrap(string text, out string final)
 	{
 		final = null;
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "UpdateNGUIText")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UILabel), Member = "UpdateNGUIText")]
 	[Calls(Type = typeof(NGUIText), Member = "WrapText")]
 	public bool Wrap(string text, out string final, int height)
 	{
 		final = null;
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(NGUIText), Member = "Update")]
-	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[Calls(Type = typeof(UIRoot), Member = "get_pixelSizeAdjustment")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CalledBy(Type = typeof(UILabel), Member = "GetCharacterIndexAtPosition")]
-	[Calls(Type = typeof(UIRect), Member = "get_root")]
 	[CalledBy(Type = typeof(UILabel), Member = "ProcessText")]
-	[CalledBy(Type = typeof(UILabel), Member = "PrintOverlay")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(TextInputField), Member = "GetCursorLocation")]
-	[CalledBy(Type = typeof(UITextList), Member = "Rebuild")]
-	[Calls(Type = typeof(UILabel), Member = "get_keepCrisp")]
-	[CalledBy(Type = typeof(UILabel), Member = "Wrap")]
-	[CalledBy(Type = typeof(UILabel), Member = "CalculateOffsetToFit")]
-	[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
+	[CalledBy(Type = typeof(UILabel), Member = "GetCharacterIndexAtPosition")]
 	[CalledBy(Type = typeof(UILabel), Member = "GetCharacterIndex")]
-	[Calls(Type = typeof(UIFont), Member = "get_dynamicFont")]
+	[CalledBy(Type = typeof(UILabel), Member = "PrintOverlay")]
+	[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
+	[CalledBy(Type = typeof(UILabel), Member = "CalculateOffsetToFit")]
 	[CalledBy(Type = typeof(UILabel), Member = "Wrap")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UIFont), Member = "get_defaultSize")]
-	[Calls(Type = typeof(UILabel), Member = "get_fontSize")]
-	[Calls(Type = typeof(UIFont), Member = "get_packedFontShader")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UILabel), Member = "get_trueTypeFont")]
+	[CalledBy(Type = typeof(UILabel), Member = "Wrap")]
+	[CalledBy(Type = typeof(UITextList), Member = "Rebuild")]
+	[CalledBy(Type = typeof(TextInputField), Member = "GetCursorLocation")]
 	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(UILabel), Member = "get_trueTypeFont")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UIFont), Member = "get_packedFontShader")]
+	[Calls(Type = typeof(UILabel), Member = "get_fontSize")]
+	[Calls(Type = typeof(UIFont), Member = "get_defaultSize")]
 	[Calls(Type = typeof(UIFont), Member = "get_isDynamic")]
+	[Calls(Type = typeof(UIFont), Member = "get_dynamicFont")]
+	[Calls(Type = typeof(UILabel), Member = "get_keepCrisp")]
+	[Calls(Type = typeof(UIRect), Member = "get_root")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UIRoot), Member = "get_pixelSizeAdjustment")]
+	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
+	[Calls(Type = typeof(NGUIText), Member = "Update")]
+	[CallsUnknownMethods(Count = 5)]
 	public void UpdateNGUIText()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(BMSymbol), Member = "SetSpriteLocation")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BetterList<>), Member = "Add")]
+	[CallsUnknownMethods(Count = 6)]
 	public void AddDynamicSymbolSprite(UISprite uiSprite)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
 	[CalledBy(Type = typeof(UILabel), Member = "PreDisable")]
-	[Calls(Type = typeof(UIRoot), Member = "ReturnDynamicSymbolSpriteToPool")]
-	[Calls(Type = typeof(UIRect), Member = "get_root")]
+	[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UIRect), Member = "get_root")]
+	[Calls(Type = typeof(UIRoot), Member = "ReturnDynamicSymbolSpriteToPool")]
+	[CallsUnknownMethods(Count = 2)]
 	private void ClearDynamicSymbolSprites()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
 	[CallsUnknownMethods(Count = 1)]
 	public int DetermineProcessedLineCount()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIWidget), Member = ".ctor")]
 	public UILabel()
 	{
 	}

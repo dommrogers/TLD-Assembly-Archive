@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
@@ -24,12 +23,12 @@ public class HUDMessage : MonoBehaviour
 
 		public int m_Priority
 		{
-			[CallerCount(Count = 0)]
-			[DeduplicatedMethod]
 			[CompilerGenerated]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
@@ -44,9 +43,9 @@ public class HUDMessage : MonoBehaviour
 		{
 		}
 
-		[CallerCount(Count = 2)]
 		[CalledBy(Type = typeof(FullScreenMessage), Member = "AddMessage")]
 		[CalledBy(Type = typeof(HUDMessage), Member = "CreateMessageInfo")]
+		[CallerCount(Count = 2)]
 		public HUDMessageInfo()
 		{
 		}
@@ -72,39 +71,34 @@ public class HUDMessage : MonoBehaviour
 
 	private const int LOW_PRIORITY = 3;
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(PriorityQueue<>), Member = "get_Count")]
+	[Calls(Type = typeof(PriorityQueue<>), Member = "Peek")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(PriorityQueue<>), Member = "Dequeue")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessageToQueue")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 7)]
 	[Calls(Type = typeof(HUDMessage), Member = "CacheMessageInfo")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessageToQueue")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 13)]
-	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private static void UpdateAlphaValue(Panel_HUD hud)
 	{
 	}
@@ -117,18 +111,17 @@ public class HUDMessage : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "DidFallThroughIceFadeIn")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Panel_PickUnits), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "DisplayErrorMessage")]
-	[CalledBy(Type = typeof(GearItem), Member = "BreakOnUse")]
-	[Calls(Type = typeof(HUDMessage), Member = "CreateMessageInfo")]
 	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
-	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessageToQueue")]
-	[CallerCount(Count = 8)]
 	[CalledBy(Type = typeof(GearItem), Member = "DisplayDegradedHUDMessage")]
+	[CalledBy(Type = typeof(GearItem), Member = "BreakOnUse")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "DisplayErrorMessage")]
+	[CalledBy(Type = typeof(Panel_PickUnits), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnExecute")]
+	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "DidFallThroughIceFadeIn")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(HUDMessage), Member = "CreateMessageInfo")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessageToQueue")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void AddMessage(string message, float numSeconds, bool highPriority = false, bool ignoreOverlayActive = false)
 	{
 	}
@@ -139,20 +132,21 @@ public class HUDMessage : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(HUDMessage), Member = "PutMessageBackToQueue")]
-	[CalledBy(Type = typeof(Action_ShowHUDMessage), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "ShowCookWaterPicker")]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "ShowCookFoodPicker")]
-	[CalledBy(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteFirearmAction")]
 	[CalledBy(Type = typeof(HUDMessage), Member = "Update")]
-	[CallerCount(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CalledBy(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CalledBy(Type = typeof(HUDMessage), Member = "PutMessageBackToQueue")]
+	[CalledBy(Type = typeof(Panel_GearSelect), Member = "ShowCookFoodPicker")]
+	[CalledBy(Type = typeof(Panel_GearSelect), Member = "ShowCookWaterPicker")]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteFirearmAction")]
+	[CalledBy(Type = typeof(Action_ShowHUDMessage), Member = "OnExecute")]
+	[CallerCount(Count = 8)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(PriorityQueue<>.Enumerator), Member = ".ctor")]
+	[Calls(Type = typeof(PriorityQueue<>), Member = "Enqueue")]
 	[Calls(Type = typeof(HUDMessage), Member = "CacheMessageInfo")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	private static void AddMessageToQueue(HUDMessageInfo newHudMessage)
 	{
 	}
@@ -163,33 +157,32 @@ public class HUDMessage : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Action_ShowHUDMessage), Member = "OnExecute")]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteFirearmAction")]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteFirearmAction")]
+	[CalledBy(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CalledBy(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CalledBy(Type = typeof(Panel_GearSelect), Member = "ShowCookFoodPicker")]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "ShowCookWaterPicker")]
-	[CalledBy(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "ShowCookFoodPicker")]
-	[CalledBy(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteFirearmAction")]
+	[CalledBy(Type = typeof(Action_ShowHUDMessage), Member = "OnExecute")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "ShowCookFoodPicker")]
+	[Calls(Type = typeof(Stack<>), Member = "Pop")]
 	[Calls(Type = typeof(HUDMessageInfo), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 1)]
 	private static HUDMessageInfo CreateMessageInfo()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(HUDMessage), Member = "AddMessageToQueue")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(HUDMessage), Member = "Update")]
+	[CalledBy(Type = typeof(HUDMessage), Member = "AddMessageToQueue")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Stack<>), Member = "Push")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private static void CacheMessageInfo(HUDMessageInfo messageInfo)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsUnknownMethods(Count = 1)]
 	private static void ShowMessage(Panel_HUD hud, HUDMessageInfo message)
@@ -197,15 +190,16 @@ public class HUDMessage : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ShowMessageAtBottomOfScreen()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public HUDMessage()
 	{
 	}

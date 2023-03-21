@@ -10,20 +10,21 @@ public class MecanimIsInTransition : ConditionTask<Animator>
 
 	protected override string info
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

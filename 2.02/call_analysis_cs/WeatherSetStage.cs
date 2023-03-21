@@ -27,9 +27,8 @@ public class WeatherSetStage
 	private WeatherStage m_PreviousType;
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	public void Initialize()
 	{
 	}
@@ -39,24 +38,24 @@ public class WeatherSetStage
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "SetWeatherStateAndBlendDirectly")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "SetWeatherStateAndBlendDirectly")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Activate(float startAtFrac, WeatherStage previousStage)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(WeatherTransition), Member = "MaybePlayStinger")]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "SetWeatherStateAndBlendDirectly")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public float Update(float todTimeStep)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -65,19 +64,19 @@ public class WeatherSetStage
 	}
 
 	[CalledBy(Type = typeof(WeatherSet), Member = "GetDebugString")]
-	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 25)]
 	public string GetDebugString(int setIndex, bool isCurrent)
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public WeatherSetStage()
 	{
 	}

@@ -9,25 +9,27 @@ namespace DigitalOpus.MB.Core;
 public class MB3_MeshBakerGrouperNone : MB3_MeshBakerGrouperCore
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 101)]
+	[CallerCount(Count = 103)]
 	public MB3_MeshBakerGrouperNone(GrouperData d)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Debug), Member = "Log")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 18)]
 	public override Dictionary<string, List<Renderer>> FilterIntoGroups(List<GameObject> selection)
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public override void DrawGizmos(Bounds sourceObjectBounds)
 	{
 	}

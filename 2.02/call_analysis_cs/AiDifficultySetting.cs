@@ -15,51 +15,51 @@ public class AiDifficultySetting : MonoBehaviour
 
 	public float m_StrugglePlayerClothingDamageScale;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public float GetStruggleTapStrenthScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public float GetStrugglePlayerDamageReceivedIntervalScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyClothingDamagePerSecond")]
 	[CalledBy(Type = typeof(ClothingDamageEvent), Member = "OnExecute")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyClothingDamagePerSecond")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public float GetStrugglePlayerClothingDamageScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(StruggleDamageEvent), Member = "ApplyDamage")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyPlayerDamagePerSecond")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyPlayerDamagePerSecond")]
 	public float GetStrugglePlayerDamageReceivedScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public AiDifficultySetting()
 	{
 	}

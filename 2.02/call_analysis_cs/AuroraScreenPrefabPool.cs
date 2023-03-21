@@ -9,35 +9,35 @@ public class AuroraScreenPrefabPool : ScriptableObject
 
 	private List<GameObject> m_PrefabsTemp;
 
-	[Calls(Type = typeof(UnityEngine.Random), Member = "InitState")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsUnknownMethods(Count = 44)]
-	[Calls(Type = typeof(GameManager), Member = "GetRandomSeed")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 27)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "InitializeDisplayInterface")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(HashSet<>), Member = "Remove")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(GameManager), Member = "GetRandomSeed")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "InitState")]
+	[Calls(Type = typeof(HashSet<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 17)]
+	[CallsUnknownMethods(Count = 44)]
 	public GameObject InstantiateRandomPrefabForScreen(AuroraScreenDisplay screen)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public AuroraScreenPrefabPool()
 	{

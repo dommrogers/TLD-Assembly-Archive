@@ -83,19 +83,19 @@ public class Insomnia
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(InsomniaManager), Member = "Serialize")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public InsomniaParamsSaveDataProxy Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(InsomniaManager), Member = "Deserialize")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Deserialize(InsomniaParamsSaveDataProxy saveDataProxy)
 	{
 	}
@@ -113,23 +113,23 @@ public class Insomnia
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetAfflictionHoursRemaining()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 1)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 1)]
 	public float GetRiskProgress()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void Destroy()
 	{
@@ -139,114 +139,114 @@ public class Insomnia
 	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	public bool ShouldInterruptSleep()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	public float GetChanceOfHowBadlySleepIsInterrupted()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool AfflictionIsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool RiskIsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(InsomniaManager), Member = "ApplyInsomniaRisk")]
-	[Calls(Type = typeof(Log), Member = "AddAffliction")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Log), Member = "AddAffliction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void StartRisk()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Log), Member = "AddAffliction")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
-	[CallerCount(Count = 0)]
 	private void ShowRiskNotification()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(Insomnia), Member = "UpdateInsomnia")]
 	[CalledBy(Type = typeof(InsomniaManager), Member = "Update")]
 	[CalledBy(Type = typeof(InsomniaManager), Member = "MaybeUpdateInsomnia")]
+	[CallerCount(Count = 3)]
 	private void MaybeUpdateRisk()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Insomnia), Member = "OnWeatherStageChanged")]
-	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void HealRisk()
 	{
 	}
 
 	[CalledBy(Type = typeof(InsomniaManager), Member = "ApplyInsomniaAffliction")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Insomnia), Member = "ShowAfflictionNotification")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[Calls(Type = typeof(Insomnia), Member = "ShowAfflictionNotification")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void StartAffliction()
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CalledBy(Type = typeof(Insomnia), Member = "StartAffliction")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Log), Member = "AddAffliction")]
-	[CalledBy(Type = typeof(Insomnia), Member = "StartAffliction")]
 	[CallsUnknownMethods(Count = 1)]
 	private void ShowAfflictionNotification()
 	{
 	}
 
-	[CalledBy(Type = typeof(InsomniaManager), Member = "Update")]
-	[CalledBy(Type = typeof(Insomnia), Member = "UpdateInsomnia")]
-	[CalledBy(Type = typeof(InsomniaManager), Member = "MaybeUpdateInsomnia")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(Insomnia), Member = "UpdateInsomnia")]
+	[CalledBy(Type = typeof(InsomniaManager), Member = "Update")]
+	[CalledBy(Type = typeof(InsomniaManager), Member = "MaybeUpdateInsomnia")]
 	[CallerCount(Count = 3)]
 	private void MaybeUpdateAffliction()
 	{
 	}
 
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void HealAffliction()
 	{
 	}
@@ -258,9 +258,9 @@ public class Insomnia
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Insomnia), Member = "HealRisk")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private void OnWeatherStageChanged(WeatherSetStage current)
 	{
 	}
@@ -269,6 +269,6 @@ public class Insomnia
 	[CallerCount(Count = 0)]
 	private float GetRemainingHours()
 	{
-		return default(float);
+		return 0f;
 	}
 }

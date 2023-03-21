@@ -12,14 +12,14 @@ public class TLD_Condition : ConditionTask
 
 	protected new Component agent
 	{
+		[CalledBy(Type = typeof(Condition_BaseAiInState), Member = "OnCheck")]
+		[CalledBy(Type = typeof(Condition_AnimatorInState), Member = "OnCheck")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(Task), Member = "get_agent")]
 		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-		[CalledBy(Type = typeof(Condition_BaseAiInState), Member = "OnCheck")]
-		[CalledBy(Type = typeof(Condition_AnimatorInState), Member = "OnCheck")]
-		[CallsUnknownMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
@@ -27,14 +27,15 @@ public class TLD_Condition : ConditionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsUnknownMethods(Count = 1)]
 	protected string GetAgentMissionObjectIdentifierValue()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public TLD_Condition()
 	{
 	}

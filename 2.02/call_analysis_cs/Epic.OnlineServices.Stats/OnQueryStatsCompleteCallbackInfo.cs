@@ -22,9 +22,9 @@ public class OnQueryStatsCompleteCallbackInfo : ICallbackInfo, ISettable
 		{
 			return default(Result);
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
@@ -34,14 +34,14 @@ public class OnQueryStatsCompleteCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -51,14 +51,14 @@ public class OnQueryStatsCompleteCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -66,16 +66,16 @@ public class OnQueryStatsCompleteCallbackInfo : ICallbackInfo, ISettable
 
 	public ProductUserId TargetUserId
 	{
-		[CallerCount(Count = 12)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 12)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		private set
 		{
 		}
@@ -88,27 +88,27 @@ public class OnQueryStatsCompleteCallbackInfo : ICallbackInfo, ISettable
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CalledBy(Type = typeof(OnQueryStatsCompleteCallbackInfo), Member = "Set")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(OnQueryStatsCompleteCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(OnQueryStatsCompleteCallbackInfoInternal), Member = "get_LocalUserId")]
 	[Calls(Type = typeof(OnQueryStatsCompleteCallbackInfoInternal), Member = "get_TargetUserId")]
-	[CalledBy(Type = typeof(OnQueryStatsCompleteCallbackInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	internal void Set(OnQueryStatsCompleteCallbackInfoInternal? other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(OnQueryStatsCompleteCallbackInfo), Member = "Set")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(OnQueryStatsCompleteCallbackInfo), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public OnQueryStatsCompleteCallbackInfo()
 	{
 	}

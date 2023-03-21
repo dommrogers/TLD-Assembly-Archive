@@ -9,15 +9,15 @@ public class NPCPreventActiveTrigger : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(NPC), Member = "HasActive")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NPC), Member = "HasActive")]
 	[Calls(Type = typeof(NPC), Member = "ClearActive")]
 	private void Update()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public NPCPreventActiveTrigger()
 	{
 	}

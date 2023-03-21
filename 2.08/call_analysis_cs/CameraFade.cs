@@ -21,97 +21,85 @@ public class CameraFade : MonoBehaviour
 
 	private static Action m_OnFadeFinish;
 
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(CameraFade), Member = "GetHUD")]
-	[Calls(Type = typeof(CameraFade), Member = "SetScreenOverlayColor")]
-	[Calls(Type = typeof(CameraFade), Member = "NotifyFadeFinish")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "WaitAsyncSaveComplete")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
-	[Calls(Type = typeof(CameraFade), Member = "SetScreenOverlayColor")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "WaitAsyncSaveComplete")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(CameraFade), Member = "NotifyFadeFinish")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(CameraFade), Member = "SetScreenOverlayColor")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(CameraFade), Member = "NotifyFadeFinish")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(CameraFade), Member = "GetHUD")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void UpdateFade()
 	{
 	}
 
+	[CalledBy(Type = typeof(CameraFade), Member = "UpdateFade")]
 	[CalledBy(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[CalledBy(Type = typeof(CameraFade), Member = "UpdateFade")]
-	[CalledBy(Type = typeof(CameraFade), Member = "UpdateFade")]
 	[CallerCount(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	private static void NotifyFadeFinish()
 	{
 	}
 
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(CabinFever), Member = "CabinFeverStart")]
 	[CalledBy(Type = typeof(Action_SpawnHuntedChallengeBear), Member = "SpawnChallengeBearNearPlayer")]
 	[CalledBy(Type = typeof(Inventory), Member = "ShouldMakeItemInHandsActive")]
-	[CalledBy(Type = typeof(SaveGameSystem._003CSaveScreenshotDataCoroutine_003Ed__115), Member = "MoveNext")]
+	[CalledBy(TypeFullName = "SaveGameSystem.<SaveScreenshotDataCoroutine>d__115", Member = "MoveNext")]
+	[CallerCount(Count = 4)]
 	public static float GetFadeAlpha()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "BashGetupDelayCamera")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerStunned), Member = "UpdateBlurEffect")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ResetGameSettingsToNormal")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "UpdateFadeAndBlur")]
-	[Calls(Type = typeof(CameraFade), Member = "GetHUD")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "UpdatePrepare")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(CinematicManager), Member = "UpdateFadeAndBlur")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "UpdateFadeAndBlur")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "BashGetupDelayCamera")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ResetGameSettingsToNormal")]
+	[CalledBy(Type = typeof(PlayerStunned), Member = "UpdateBlurEffect")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(CameraFade), Member = "GetHUD")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void BashFadeAlpha(float alpha)
 	{
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "DoExitToMainMenu")]
+	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "OnMainMenu")]
+	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "OnTryAgain")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
 	[CalledBy(Type = typeof(GameManager), Member = "OnGameQuit")]
-	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "OnMainMenu")]
+	[CalledBy(Type = typeof(GameManager), Member = "DoExitToMainMenu")]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "OnTryAgain")]
 	public static void ClearPendingCallbacks()
 	{
 	}
 
-	[CalledBy(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Action_PlayCredits), Member = "OnMovieStop")]
-	[CalledBy(Type = typeof(CameraFade), Member = "ForceScreenOverlayColor")]
-	[CalledBy(Type = typeof(CameraFade), Member = "BlackOutScreen")]
-	[CalledBy(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[CalledBy(Type = typeof(CameraFade), Member = "UpdateFade")]
-	[CalledBy(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[CalledBy(Type = typeof(CameraFade), Member = "UpdateFade")]
 	[CalledBy(Type = typeof(PlayableBehaviourCameraEffects), Member = "ProcessFrame")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CameraFade), Member = "GetHUD")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 10)]
 	[CalledBy(Type = typeof(CameraFade), Member = "UpdateFade")]
+	[CalledBy(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[CalledBy(Type = typeof(CameraFade), Member = "BlackOutScreen")]
+	[CalledBy(Type = typeof(CameraFade), Member = "ForceScreenOverlayColor")]
+	[CalledBy(Type = typeof(Action_PlayCredits), Member = "OnMovieStop")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(CameraFade), Member = "GetHUD")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void SetScreenOverlayColor(Color newScreenOverlayColor)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(CameraFade), Member = "NotifyFadeFinish")]
-	[Calls(Type = typeof(CameraFade), Member = "SetScreenOverlayColor")]
-	[Calls(Type = typeof(CameraFade), Member = "SetScreenOverlayColor")]
-	[Calls(Type = typeof(CameraFade), Member = "SetScreenOverlayColor")]
-	[Calls(Type = typeof(CameraFade), Member = "GetHUD")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 47)]
+	[Calls(Type = typeof(CameraFade), Member = "GetHUD")]
 	[Calls(Type = typeof(Panel_HUD), Member = "SetConditionLabelDepth")]
+	[Calls(Type = typeof(CameraFade), Member = "SetScreenOverlayColor")]
+	[Calls(Type = typeof(CameraFade), Member = "NotifyFadeFinish")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void StartAlphaFade(Color newScreenOverlayColor, bool isFadeIn, float fadeDuration, float delay, Action OnFadeFinish)
 	{
 	}
@@ -121,73 +109,71 @@ public class CameraFade : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(AmbientEmitter), Member = "PlayRandomClip")]
-	[CalledBy(Type = typeof(AmbientEmitter), Member = "PlayRandomLoop")]
-	[CalledBy(Type = typeof(Condition_IsCameraFadeActive), Member = "OnCheck")]
-	[CalledBy(Type = typeof(InputManager), Member = "ProcessInput")]
-	[CalledBy(Type = typeof(InputManager), Member = "ProcessInput")]
-	[CalledBy(Type = typeof(InputManager), Member = "CanInvokePauseMenu")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "Update")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "FixedUpdateInternal")]
+	[CalledBy(Type = typeof(vp_FPSController), Member = "ShouldFreezeMovement")]
 	[CalledBy(Type = typeof(Weather), Member = "UpdateTemperatureOnHUD")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_fade_out")]
-	[CalledBy(Type = typeof(vp_FPSController), Member = "ShouldFreezeMovement")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "FixedUpdateInternal")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "Update")]
-	[CallerCount(Count = 12)]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
+	[CalledBy(Type = typeof(InputManager), Member = "CanInvokePauseMenu")]
+	[CalledBy(Type = typeof(InputManager), Member = "ProcessInput")]
+	[CalledBy(Type = typeof(Condition_IsCameraFadeActive), Member = "OnCheck")]
+	[CalledBy(Type = typeof(AmbientEmitter), Member = "PlayRandomLoop")]
+	[CalledBy(Type = typeof(AmbientEmitter), Member = "PlayRandomClip")]
+	[CallerCount(Count = 12)]
 	public static bool IsFadingOut()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Condition_IsCameraFadeActive), Member = "OnCheck")]
-	[CalledBy(Type = typeof(Condition_IsCameraFadeActive), Member = "OnCheck")]
-	[CalledBy(Type = typeof(SaveGameSystem._003CSaveScreenshotDataCoroutine_003Ed__115), Member = "MoveNext")]
-	[CalledBy(Type = typeof(InputManager), Member = "CanInvokePauseMenu")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_fade_in")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
+	[CalledBy(Type = typeof(InputManager), Member = "CanInvokePauseMenu")]
+	[CalledBy(TypeFullName = "SaveGameSystem.<SaveScreenshotDataCoroutine>d__115", Member = "MoveNext")]
+	[CalledBy(Type = typeof(Condition_IsCameraFadeActive), Member = "OnCheck")]
+	[CallerCount(Count = 6)]
 	public static bool IsFadingIn()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Action_PlayCredits), Member = "OnActionComplete")]
-	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(CameraFade), Member = "SetScreenOverlayColor")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
 	[CalledBy(Type = typeof(GameManager), Member = "OnGameQuit")]
 	[CalledBy(Type = typeof(Action_PlayCredits), Member = "OnCreditsEnd")]
+	[CalledBy(Type = typeof(Action_PlayCredits), Member = "OnActionComplete")]
 	[CalledBy(Type = typeof(Action_PlayVideo), Member = "PlayMovie")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(CameraFade), Member = "SetScreenOverlayColor")]
 	public static void BlackOutScreen()
 	{
 	}
 
-	[Calls(Type = typeof(CameraFade), Member = "SetScreenOverlayColor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraFade), Member = "SetScreenOverlayColor")]
 	public static void ForceScreenOverlayColor(Color color)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AccelTimePopup), Member = "SetActive")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
+	[CallerCount(Count = 2)]
 	public static float GetTargetAlpha()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public static float GetStartAlpha()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(CameraFade), Member = "SetScreenOverlayColor")]
-	[CalledBy(Type = typeof(CameraFade), Member = "BashFadeAlpha")]
-	[CalledBy(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(CameraFade), Member = "UpdateFade")]
+	[CalledBy(Type = typeof(CameraFade), Member = "BashFadeAlpha")]
+	[CalledBy(Type = typeof(CameraFade), Member = "SetScreenOverlayColor")]
+	[CalledBy(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
 	private static Panel_HUD GetHUD()
 	{
 		return null;

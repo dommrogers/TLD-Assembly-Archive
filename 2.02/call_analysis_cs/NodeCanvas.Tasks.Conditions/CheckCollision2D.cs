@@ -23,11 +23,11 @@ public class CheckCollision2D : ConditionTask<Collider2D>
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -38,30 +38,29 @@ public class CheckCollision2D : ConditionTask<Collider2D>
 	[CallerCount(Count = 0)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Collision2D), Member = "get_contacts")]
-	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
-	[Calls(Type = typeof(ConditionTask), Member = "Flip")]
-	[Calls(Type = typeof(Collision2D), Member = "get_contacts")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Collision2D), Member = "get_gameObject")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Collision2D), Member = "get_gameObject")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(Type = typeof(Collision2D), Member = "get_contacts")]
+	[Calls(Type = typeof(ConditionTask), Member = "Flip")]
+	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 15)]
 	public void OnCollisionEnter2D(Collision2D info)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Collision2D), Member = "get_gameObject")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Collision2D), Member = "get_gameObject")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[Calls(Type = typeof(ConditionTask), Member = "Flip")]
 	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	public void OnCollisionExit2D(Collision2D info)
 	{

@@ -14,7 +14,6 @@ public class CheckKeyboardInput : ConditionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(Enum), Member = "ToString")]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Enum), Member = "ToString")]
 		[Calls(Type = typeof(string), Member = "Concat")]
@@ -29,7 +28,7 @@ public class CheckKeyboardInput : ConditionTask
 	[CallsUnknownMethods(Count = 2)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

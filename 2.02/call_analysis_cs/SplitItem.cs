@@ -7,9 +7,9 @@ public class SplitItem : MonoBehaviour
 
 	public int[] m_SplitGearUnits;
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public SplitItem()
 	{
 	}

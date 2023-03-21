@@ -13,16 +13,16 @@ public class PanWithMouse : MonoBehaviour
 
 	private Vector2 mRot;
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 8)]
 	private void Update()
 	{
 	}

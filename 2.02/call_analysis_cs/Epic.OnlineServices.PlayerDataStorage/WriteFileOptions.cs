@@ -17,16 +17,16 @@ public class WriteFileOptions
 
 	public ProductUserId LocalUserId
 	{
-		[CallerCount(Count = 52)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -36,14 +36,14 @@ public class WriteFileOptions
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -56,11 +56,11 @@ public class WriteFileOptions
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -77,7 +77,7 @@ public class WriteFileOptions
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
@@ -87,21 +87,21 @@ public class WriteFileOptions
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 20)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 23)]
 		set
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public WriteFileOptions()
 	{
 	}

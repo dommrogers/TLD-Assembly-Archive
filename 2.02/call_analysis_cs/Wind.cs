@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
@@ -151,174 +150,143 @@ public class Wind : MonoBehaviour
 
 	private static WindSaveDataProxy m_WindSaveDataProxy;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool PlayerShelteredFromWind()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Campfire), Member = "TooWindyToStart")]
-	[CalledBy(Type = typeof(TorchItem), Member = "ShouldBlowOut")]
-	[CalledBy(Type = typeof(Fire), Member = "FireShouldBlowOutFromWind")]
-	[CalledBy(Type = typeof(ParticleWindForce), Member = "Update")]
 	[CalledBy(Type = typeof(Wind), Member = "UpdateWindOcclusion")]
-	[CalledBy(Type = typeof(Wind), Member = "UpdateWindOcclusion")]
-	[Calls(Type = typeof(Wind), Member = "ShouldIgnoreWindOccluder")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Quaternion), Member = "AngleAxis")]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
 	[CalledBy(Type = typeof(OcclusionTest), Member = "CheckOcclusion")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[CalledBy(Type = typeof(ParticleWindForce), Member = "Update")]
+	[CalledBy(Type = typeof(Fire), Member = "FireShouldBlowOutFromWind")]
+	[CalledBy(Type = typeof(TorchItem), Member = "ShouldBlowOut")]
+	[CalledBy(Type = typeof(Campfire), Member = "TooWindyToStart")]
 	[CallerCount(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(Wind), Member = "PointInsideWindKiller")]
-	[Calls(Type = typeof(Wind), Member = "ShouldIgnoreWindOccluder")]
 	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
 	[Calls(Type = typeof(Wind), Member = "ShouldIgnoreWindOccluder")]
 	[Calls(Type = typeof(Vector3), Member = "get_up")]
 	[Calls(Type = typeof(Quaternion), Member = "AngleAxis")]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public bool IsPositionOccludedFromWind(Vector3 pos)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(Wind), Member = "IsPositionOccludedFromWind")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Wind), Member = "IsPositionOccludedFromWind")]
-	[CalledBy(Type = typeof(Wind), Member = "IsPositionOccludedFromWind")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallsUnknownMethods(Count = 4)]
 	private bool ShouldIgnoreWindOccluder(Collider collider)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Wind), Member = "IsPositionOccludedFromWind")]
-	[CallsUnknownMethods(Count = 20)]
-	[CalledBy(Type = typeof(PlayerInVehicle), Member = "ExitVehicleAfterFadeOut")]
-	[CalledBy(Type = typeof(SnowShelterManager), Member = "ExitShelterAfterFadeOut")]
-	[CalledBy(Type = typeof(LeanToManager), Member = "ExitLeanToAfterFadeOut")]
 	[CalledBy(Type = typeof(Wind), Member = "Update")]
-	[Calls(Type = typeof(Wind), Member = "IsPositionOccludedFromWind")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "PanViewCameraIsDetached")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInNonRuinedShelter")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(LeanToManager), Member = "ExitLeanToAfterFadeOut")]
+	[CalledBy(Type = typeof(SnowShelterManager), Member = "ExitShelterAfterFadeOut")]
+	[CalledBy(Type = typeof(PlayerInVehicle), Member = "ExitVehicleAfterFadeOut")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInNonRuinedShelter")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "PanViewCameraIsDetached")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Wind), Member = "IsPositionOccludedFromWind")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 20)]
 	public void UpdateWindOcclusion()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Wind), Member = "IsPositionOccludedFromWind")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 6)]
 	private bool PointInsideWindKiller(Vector3 pos)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Vector3), Member = "get_forward")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Wind), Member = "Deserialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Wind), Member = "ResetNoise")]
+	[Calls(Type = typeof(Vector3), Member = "get_forward")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Start()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CalledBy(Type = typeof(Wind), Member = "Start")]
 	[CalledBy(Type = typeof(Wind), Member = "Deserialize")]
 	[CalledBy(Type = typeof(Wind), Member = "StartPhase")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 12)]
 	[CallsUnknownMethods(Count = 12)]
 	private void ResetNoise()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
 	[CalledBy(Type = typeof(Wind), Member = "Update")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[CalledBy(Type = typeof(Wind), Member = "StartPhase")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Wind), Member = "Deserialize")]
-	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
+	[CalledBy(Type = typeof(Wind), Member = "StartPhase")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateNoise()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "IsFrameValidToUpdate")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Wind), Member = "StartRandomPhase")]
+	[Calls(Type = typeof(Wind), Member = "MaybeChangePhase")]
+	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
+	[Calls(Type = typeof(Mathf), Member = "LerpAngle")]
+	[Calls(Type = typeof(Mathf), Member = "Repeat")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[Calls(Type = typeof(Wind), Member = "UpdateNoise")]
 	[Calls(Type = typeof(Wind), Member = "RefreshSettings")]
 	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[Calls(Type = typeof(Wind), Member = "UpdateWindZone")]
+	[Calls(Type = typeof(Quaternion), Member = "AngleAxis")]
 	[Calls(Type = typeof(Wind), Member = "UpdateWindOcclusion")]
 	[Calls(Type = typeof(Wind), Member = "UpdateWindChill")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(Wind), Member = "UpdateWindZone")]
 	[Calls(Type = typeof(Wind), Member = "UpdateProceduralWind")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(Quaternion), Member = "AngleAxis")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Wind), Member = "StartRandomPhase")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Repeat")]
-	[Calls(Type = typeof(Mathf), Member = "LerpAngle")]
-	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
-	[Calls(Type = typeof(Wind), Member = "MaybeChangePhase")]
-	[Calls(Type = typeof(Wind), Member = "StartRandomPhase")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
-	[Calls(Type = typeof(GameManager), Member = "IsFrameValidToUpdate")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CallsUnknownMethods(Count = 13)]
 	public void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Wind), Member = "ForceStopAudioLoop")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Wind), Member = "ForceStopAudioLoop")]
 	private void OnDestroy()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ToggleGameCameraForBrightness")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 11)]
 	public string Serialize()
 	{
@@ -326,24 +294,24 @@ public class Wind : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ToggleGameCameraForBrightness")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Wind), Member = "Start")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(Wind), Member = "StartPhaseImmediate")]
+	[Calls(Type = typeof(Wind), Member = "ResetNoise")]
 	[Calls(Type = typeof(Wind), Member = "UpdateNoise")]
 	[Calls(Type = typeof(Wind), Member = "RefreshSettings")]
-	[Calls(Type = typeof(Wind), Member = "StartPhaseImmediate")]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Wind), Member = "ResetNoise")]
-	[Calls(Type = typeof(Wind), Member = "Start")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(Wind), Member = "Update")]
 	[CalledBy(Type = typeof(Wind), Member = "Update")]
 	[CalledBy(Type = typeof(Wind), Member = "MaybeChangePhase")]
+	[CallerCount(Count = 3)]
 	public void StartRandomPhase(bool forceCalm)
 	{
 	}
@@ -354,73 +322,67 @@ public class Wind : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(Wind), Member = "ForceImmediateWindChangeBasedOnWeather")]
-	[CalledBy(Type = typeof(Weather), Member = "WarmWeatherState")]
+	[CalledBy(Type = typeof(Weather), Member = "WarmWeather")]
 	[CalledBy(Type = typeof(Weather), Member = "WarmWeatherState")]
 	[CalledBy(Type = typeof(Wind), Member = "StartPhaseImmediate")]
+	[CalledBy(Type = typeof(Wind), Member = "StartPhaseImmediate")]
+	[CalledBy(Type = typeof(Wind), Member = "ForceImmediateWindChangeBasedOnWeather")]
+	[CalledBy(Type = typeof(Wind), Member = "MaybeChangePhase")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "SetWind")]
-	[CalledBy(Type = typeof(Wind), Member = "MaybeChangePhase")]
-	[CalledBy(Type = typeof(Wind), Member = "MaybeChangePhase")]
-	[CalledBy(Type = typeof(Weather), Member = "WarmWeather")]
-	[CallsUnknownMethods(Count = 42)]
-	[CalledBy(Type = typeof(Wind), Member = "ForceImmediateWindChangeBasedOnWeather")]
-	[CalledBy(Type = typeof(Weather), Member = "WarmWeather")]
-	[CalledBy(Type = typeof(Wind), Member = "StartPhaseImmediate")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
 	[CallerCount(Count = 11)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ActiveWindSettings), Member = ".ctor")]
-	[Calls(Type = typeof(ActiveWindSettings), Member = ".ctor")]
+	[Calls(Type = typeof(Random), Member = "Range")]
 	[Calls(Type = typeof(Wind), Member = "ResetNoise")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(Wind), Member = "RefreshSettings")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
 	[Calls(Type = typeof(Wind), Member = "UpdateNoise")]
+	[Calls(Type = typeof(Wind), Member = "RefreshSettings")]
+	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "UpdateDecalProjectorLifeTimes")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 42)]
 	public void StartPhase(WindStrength strength, float angle = -1f)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Wind), Member = "Deserialize")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "SetWind")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ToggleGameCameraForBrightness")]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
-	[Calls(Type = typeof(Weather), Member = "WarmBlowingSnow")]
-	[Calls(Type = typeof(Wind), Member = "StartPhase")]
-	[Calls(Type = typeof(Wind), Member = "DirectionToAngle")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(DebugViewModeManager), Member = "ToggleTexelDensity")]
+	[CalledBy(Type = typeof(Wind), Member = "Deserialize")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ToggleGameCameraForBrightness")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "SetWind")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Wind), Member = "DirectionToAngle")]
+	[Calls(Type = typeof(Wind), Member = "StartPhase")]
+	[Calls(Type = typeof(Weather), Member = "WarmBlowingSnow")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void StartPhaseImmediate(WindDirection direction, WindStrength strength)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Wind), Member = "StartPhase")]
 	[Calls(Type = typeof(Weather), Member = "WarmBlowingSnow")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void StartPhaseImmediate(WindStrength strength, float angle = -1f)
 	{
 	}
 
+	[CalledBy(Type = typeof(Wind), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(Action_StopWindAudio), Member = "OnExecute")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
-	[CalledBy(Type = typeof(Wind), Member = "OnDestroy")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void ForceStopAudioLoop()
 	{
 	}
 
-	[CalledBy(Type = typeof(ConsoleManager), Member = "SetWind")]
 	[CalledBy(Type = typeof(Wind), Member = "StartPhaseImmediate")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "SetWind")]
 	[CallerCount(Count = 2)]
 	public static float DirectionToAngle(WindDirection direction)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -438,41 +400,41 @@ public class Wind : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetNormalizedIntensity()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetSpeedMPH_Base()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 1)]
 	public float GetSpeedMPH()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetTargetSpeedMPH()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetWindAngle_Base()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetWindAngle()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -487,49 +449,49 @@ public class Wind : MonoBehaviour
 		return default(Vector3);
 	}
 
+	[CalledBy(Type = typeof(WeatherParticleManager), Member = "UpdateShaderGlobalsForFoliage")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(WeatherParticleManager), Member = "UpdateShaderGlobalsForFoliage")]
-	[CalledBy(Type = typeof(WeatherParticleManager), Member = "UpdateShaderGlobalsForFoliage")]
 	public float GetWindLift()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetBaseWindChill()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetWindChill()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Wind), Member = "StartPhase")]
 	[Calls(Type = typeof(Wind), Member = "StartPhase")]
 	public void ForceImmediateWindChangeBasedOnWeather(WeatherStage ws)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(TorchItem), Member = "AttemptToLight")]
-	[CalledBy(Type = typeof(MatchesItem), Member = "IgniteDelayed")]
 	[CalledBy(Type = typeof(MatchesItem), Member = "UpdateWhileInHands")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(MatchesItem), Member = "IgniteDelayed")]
+	[CalledBy(Type = typeof(TorchItem), Member = "AttemptToLight")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool TooWindyForPlayerAction(float thresholdSpeedMPH)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void AddWindKiller(WindKiller wk)
 	{
@@ -538,154 +500,137 @@ public class Wind : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetPlayerWindAngle()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Wind), Member = "Update")]
-	[Calls(Type = typeof(Wind), Member = "StartPhase")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(Wind), Member = "StartRandomPhase")]
-	[Calls(Type = typeof(Weather), Member = "IsBlizzard")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Weather), Member = "IsBlizzard")]
+	[Calls(Type = typeof(Wind), Member = "StartRandomPhase")]
 	[Calls(Type = typeof(Wind), Member = "StartPhase")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private void MaybeChangePhase()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Vector3), Member = "get_right")]
-	[Calls(Type = typeof(Quaternion), Member = "AngleAxis")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Vector3), Member = "get_forward")]
-	[Calls(Type = typeof(Quaternion), Member = "AngleAxis")]
-	[Calls(Type = typeof(Wind), Member = "SetWindAccelerationForAllInteractiveCloth")]
 	[CalledBy(Type = typeof(Wind), Member = "Update")]
 	[CalledBy(Type = typeof(Wind), Member = "Deserialize")]
 	[CalledBy(Type = typeof(Wind), Member = "StartPhase")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
-	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
-	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
-	[Calls(Type = typeof(Mathf), Member = "Repeat")]
-	[Calls(Type = typeof(Utils), Member = "ExpStep")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Vector3), Member = "get_forward")]
-	[Calls(Type = typeof(Quaternion), Member = "AngleAxis")]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Vector3), Member = "get_up")]
+	[Calls(Type = typeof(Quaternion), Member = "AngleAxis")]
+	[Calls(Type = typeof(Vector3), Member = "get_forward")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
 	[Calls(Type = typeof(Utils), Member = "ExpStep")]
+	[Calls(Type = typeof(Mathf), Member = "Repeat")]
+	[Calls(Type = typeof(Vector3), Member = "get_right")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(Wind), Member = "SetWindAccelerationForAllInteractiveCloth")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void RefreshSettings()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Wind), Member = "Update")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateWindZone()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Vector3), Member = "get_up")]
 	[Calls(Type = typeof(Quaternion), Member = "AngleAxis")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateUniStormParticleSystems()
 	{
 	}
 
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInNonRuinedShelter")]
 	[CalledBy(Type = typeof(Wind), Member = "Update")]
-	[Calls(Type = typeof(Wind), Member = "CalculateWindChill")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Wind), Member = "CalculateWindChill")]
+	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInNonRuinedShelter")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void UpdateWindChill()
 	{
 	}
 
+	[CalledBy(Type = typeof(Wind), Member = "UpdateWindChill")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsNight")]
 	[Calls(Type = typeof(Weather), Member = "IsClear")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[CalledBy(Type = typeof(Wind), Member = "UpdateWindChill")]
-	[CalledBy(Type = typeof(Wind), Member = "UpdateWindChill")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 10)]
 	private float CalculateWindChill(float airTempCelsius)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(Wind), Member = "SetWindAccelerationForAllInteractiveCloth")]
 	[CalledBy(Type = typeof(Wind), Member = "UpdateProceduralWind")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(Wind), Member = "SetWindAccelerationForAllInteractiveCloth")]
+	[CallsUnknownMethods(Count = 5)]
 	private WindStrength GetStrengthFromSpeed(float normalizedSpeed, out WindSettings ws)
 	{
 		ws = null;
 		return default(WindStrength);
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(InteractiveClothManager), Member = "SetAcceleration")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[CalledBy(Type = typeof(Wind), Member = "RefreshSettings")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(Wind), Member = "GetStrengthFromSpeed")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(InteractiveClothManager), Member = "SetAcceleration")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void SetWindAccelerationForAllInteractiveCloth()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Wind), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "HasFadedInOnStart")]
+	[Calls(Type = typeof(Wind), Member = "GetStrengthFromSpeed")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
+	[Calls(Type = typeof(Wind), Member = "PlayProceduralWindAudio")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
 	[Calls(Type = typeof(Wind), Member = "GetWindAngleRelativeToPlayer")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Wind), Member = "GetStrengthFromSpeed")]
-	[Calls(Type = typeof(GameAudioManager), Member = "HasFadedInOnStart")]
-	[Calls(Type = typeof(Wind), Member = "PlayProceduralWindAudio")]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateProceduralWind()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(FirstPersonParticles), Member = "ComputeWindInEmitterSpace")]
-	[CalledBy(Type = typeof(AnimatedUVs), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(Wind), Member = "UpdateProceduralWind")]
-	[Calls(Type = typeof(Utils), Member = "GetAngleDegrees")]
 	[CalledBy(Type = typeof(Weather), Member = "GetDebugWeatherText")]
+	[CalledBy(Type = typeof(Wind), Member = "UpdateProceduralWind")]
+	[CalledBy(Type = typeof(AnimatedUVs), Member = "LateUpdate")]
+	[CalledBy(Type = typeof(FirstPersonParticles), Member = "ComputeWindInEmitterSpace")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(GameManager), Member = "HasPlayerObject")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(GameManager), Member = "HasPlayerObject")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(Utils), Member = "GetAngleDegrees")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public float GetWindAngleRelativeToPlayer()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -700,31 +645,24 @@ public class Wind : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(Wind), Member = "UpdateProceduralWind")]
-	[CallsUnknownMethods(Count = 24)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(string), Member = "ToLower")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 24)]
 	private uint PlayProceduralWindAudio()
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public Wind()
 	{
 	}

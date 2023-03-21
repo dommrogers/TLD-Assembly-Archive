@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class AkTriggerMouseExit : AkTriggerBase
 {
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[DeduplicatedMethod]
 	private void OnMouseExit()
 	{
 	}

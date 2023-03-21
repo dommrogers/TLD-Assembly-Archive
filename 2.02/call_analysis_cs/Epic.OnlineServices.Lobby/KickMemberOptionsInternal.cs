@@ -18,9 +18,9 @@ internal struct KickMemberOptionsInternal : ISettable, IDisposable
 	public string LobbyId
 	{
 		[CalledBy(Type = typeof(KickMemberOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(KickMemberOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -32,8 +32,8 @@ internal struct KickMemberOptionsInternal : ISettable, IDisposable
 		[CalledBy(Type = typeof(KickMemberOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(KickMemberOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -41,11 +41,11 @@ internal struct KickMemberOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId TargetUserId
 	{
+		[CalledBy(Type = typeof(KickMemberOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(KickMemberOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(KickMemberOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(KickMemberOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -60,17 +60,17 @@ internal struct KickMemberOptionsInternal : ISettable, IDisposable
 	}
 
 	[CalledBy(Type = typeof(LobbyInterface), Member = "KickMember")]
-	[Calls(Type = typeof(KickMemberOptionsInternal), Member = "set_TargetUserId")]
-	[Calls(Type = typeof(KickMemberOptionsInternal), Member = "set_LocalUserId")]
-	[Calls(Type = typeof(KickMemberOptionsInternal), Member = "set_LobbyId")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(KickMemberOptionsInternal), Member = "set_LobbyId")]
+	[Calls(Type = typeof(KickMemberOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(KickMemberOptionsInternal), Member = "set_TargetUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

@@ -56,12 +56,12 @@ public class FootstepTrail
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public FootstepTrail()
 	{
 	}
@@ -72,13 +72,13 @@ public class FootstepTrail
 	{
 	}
 
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MaybePlaceFootstep")]
-	[CalledBy(Type = typeof(PlayerMovement), Member = "Start")]
-	[CalledBy(Type = typeof(FootstepTrail), Member = "Deserialize")]
+	[CallAnalysisFailed]
 	[CalledBy(Type = typeof(BaseAi), Member = "PlaceFootPrintDecal")]
 	[CalledBy(Type = typeof(FootstepTrail), Member = ".ctor")]
+	[CalledBy(Type = typeof(FootstepTrail), Member = "Deserialize")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MaybePlaceFootstep")]
+	[CalledBy(Type = typeof(PlayerMovement), Member = "Start")]
 	[CallerCount(Count = 5)]
-	[CallAnalysisFailed]
 	public void Initialize(FootstepTrailType trailType, SnowImprintType imprintType)
 	{
 	}
@@ -89,17 +89,17 @@ public class FootstepTrail
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "HandleFootprintsForDespawn")]
-	[CalledBy(Type = typeof(FootstepTrailManager), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(FootstepTrail), Member = "Destroy")]
-	[CalledBy(Type = typeof(BaseAi), Member = "Despawn")]
-	[CalledBy(Type = typeof(FootstepTrailManager), Member = "OnDestroy")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(FootstepGroup), Member = "Destroy")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(BaseAi), Member = "HandleFootprintsForDespawn")]
+	[CalledBy(Type = typeof(BaseAi), Member = "Despawn")]
+	[CalledBy(Type = typeof(FootstepTrail), Member = "Destroy")]
+	[CalledBy(Type = typeof(FootstepTrailManager), Member = "OnDestroy")]
+	[CalledBy(Type = typeof(FootstepTrailManager), Member = "LateUpdate")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "HandleFootprintsForDespawn")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(FootstepGroup), Member = "Destroy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Reset()
 	{
 	}
@@ -110,192 +110,201 @@ public class FootstepTrail
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(FootstepGroup), Member = "Close")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(BaseAi), Member = "EnterDead")]
 	[CalledBy(Type = typeof(FootstepTrail), Member = "Deserialize")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(FootstepGroup), Member = "Close")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Close()
 	{
 	}
 
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
-	[CalledBy(Type = typeof(FootstepTrailManager), Member = "OnQualityChange")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(FootstepTrailManager), Member = "OnQualityChange")]
+	[CalledBy(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
 	[CallerCount(Count = 2)]
 	public void OnQualityChange(QualityFootprints quality)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(FootstepGroup), Member = "Destroy")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public bool ProcessPurge(int currCaptureTick, float currSnowDepth)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 34)]
-	[CalledBy(Type = typeof(FootstepTrailManager), Member = "OnPlayerEnterSnowDepthTrigger")]
 	[CalledBy(Type = typeof(SnowDepth), Member = "OnTriggerEnter")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(FootstepTrailManager), Member = "OnPlayerEnterSnowDepthTrigger")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 34)]
 	public void OnOwnerEnterSnowDepthTrigger(SnowDepth sd)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public void OnOwnerExitSnowDepthTrigger(SnowDepth sd)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(FootstepGroup), Member = "AddFootstep")]
-	[CallsUnknownMethods(Count = 35)]
-	[Calls(Type = typeof(FootstepGroup), Member = ".ctor")]
 	[CalledBy(Type = typeof(BaseAi), Member = "OnPlaceFootPrintDecalRaycastCompleted")]
 	[CalledBy(Type = typeof(FootstepTrailManager), Member = "AddPlayerFootstep")]
 	[CalledBy(Type = typeof(FootStepSounds), Member = "MaybeLeaveFootPrint")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(FootstepGroup), Member = "Destroy")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(FootstepGroup), Member = "MaybeAddFootstep")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(SnowImprint), Member = ".ctor")]
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[Calls(Type = typeof(FootstepTrail), Member = "GetFootprintDepth")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(FootstepTrail), Member = "GetFootprintDepth")]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(SnowImprint), Member = ".ctor")]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(FootstepGroup), Member = "MaybeAddFootstep")]
 	[Calls(Type = typeof(FootstepGroup), Member = "Close")]
+	[Calls(Type = typeof(FootstepGroup), Member = "Destroy")]
+	[Calls(Type = typeof(FootstepGroup), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(FootstepGroup), Member = "AddFootstep")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 35)]
 	public void AddFootstep(Vector3 ownerPos, Vector3 pos, Vector3 groundNormal, float yRotation, bool flip, int variantIndex, float forceDeepFrac = 0f)
 	{
 	}
 
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "HandleFootprintsForDespawn")]
+	[CalledBy(Type = typeof(BaseAi), Member = "HandleFootprintsForDespawn")]
 	[CalledBy(Type = typeof(BaseAi), Member = "PlaceFootPrintDecal")]
 	[CalledBy(Type = typeof(BaseAi), Member = "Despawn")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "HandleFootprintsForDespawn")]
 	[CallerCount(Count = 4)]
-	[CallAnalysisFailed]
-	[CalledBy(Type = typeof(BaseAi), Member = "HandleFootprintsForDespawn")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(SnowImprint), Member = "get_Position")]
+	[Calls(Type = typeof(FootstepGroup), Member = "GetFootprintIndexInTrail")]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 24)]
 	public void FadeFootprintsAtTrailEnd(bool atStart)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
+	[CalledBy(Type = typeof(FootstepTrail), Member = "AddFootstep")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(FootstepTrail), Member = "AddFootstep")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public float GetFootprintDepth(Vector3 pos, Vector3 groundNormal, float forceDeepFrac)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public FootstepGroup GetOpenFootstepGroup()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(FootstepGroup), Member = "AddFootstep")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(FootstepGroup), Member = "AddFootstep")]
 	[CallsUnknownMethods(Count = 11)]
 	public int ReserveFootstepBlock()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public void ReturnFootstepBlock(int baseIndex)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void RemoveFootstepGroup(FootstepGroup fg)
 	{
 	}
 
 	[CalledBy(Type = typeof(FootstepTrailManager), Member = "Serialize")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(FootstepGroup), Member = "SerializeFootsteps")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 21)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(Bounds), Member = "get_size")]
+	[Calls(Type = typeof(FootstepGroup), Member = "SerializeFootsteps")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 21)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(FootstepTrail), Member = "Close")]
 	[CalledBy(Type = typeof(FootstepTrailManager), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(FootstepGroup), Member = "Close")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(SnowImprint), Member = ".ctor")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(FootstepGroup), Member = "AddFootstep")]
-	[Calls(Type = typeof(FootstepGroup), Member = ".ctor")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(FootstepTrail), Member = "Initialize")]
+	[Calls(Type = typeof(FootstepGroup), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(SnowImprint), Member = ".ctor")]
+	[Calls(Type = typeof(FootstepGroup), Member = "AddFootstep")]
+	[Calls(Type = typeof(FootstepGroup), Member = "Close")]
+	[Calls(Type = typeof(FootstepTrail), Member = "Close")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 15)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(FootstepGroup), Member = "AdjustSnowDepthRecords")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void AdjustSnowDepthRecords(float baseDepth)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public int GetNumFootsteps()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(BaseAi), Member = "HandleFootprintsForDespawn")]
 	[CalledBy(Type = typeof(BaseAi), Member = "Despawn")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "HandleFootprintsForDespawn")]
+	[CallerCount(Count = 3)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsVisible()
 	{
-		return default(bool);
+		return false;
 	}
 }

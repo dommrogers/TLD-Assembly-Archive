@@ -15,18 +15,18 @@ public class BatchAsyncLoadPanelRequest : ILoadPanelRequest
 
 	public event Action<bool> m_PanelLoadedCallback
 	{
+		[CompilerGenerated]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CompilerGenerated]
-		[CallerCount(Count = 0)]
 		add
 		{
 		}
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
@@ -43,37 +43,37 @@ public class BatchAsyncLoadPanelRequest : ILoadPanelRequest
 	[CallerCount(Count = 0)]
 	public bool IsLoadingPanel(string panelName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void NotifyPanelLoaded()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetProgress()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(BatchAsyncLoadPanelRequest), Member = "LoadNextPanel")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(BatchAsyncLoadPanelRequest), Member = "LoadNextPanel")]
 	[CallsUnknownMethods(Count = 1)]
 	public bool HasCompleted()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool HasFailed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -83,20 +83,20 @@ public class BatchAsyncLoadPanelRequest : ILoadPanelRequest
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public void UpdateRequest()
 	{
 	}
 
+	[CalledBy(Type = typeof(InterfaceManager), Member = "GetBatchAsyncPanels_Internal")]
+	[CalledBy(Type = typeof(BatchAsyncLoadPanelRequest), Member = ".ctor")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(BatchAsyncLoadPanelRequest), Member = "HasCompleted")]
 	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
 	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanelAsync_Internal")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "GetBatchAsyncPanels_Internal")]
-	[CalledBy(Type = typeof(BatchAsyncLoadPanelRequest), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void LoadNextPanel()
 	{

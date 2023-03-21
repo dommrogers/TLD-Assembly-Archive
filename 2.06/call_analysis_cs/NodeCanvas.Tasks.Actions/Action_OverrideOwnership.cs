@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -11,28 +10,28 @@ public class Action_OverrideOwnership : ActionTask
 
 	public BBParameter<string> trustId;
 
-	[Calls(Type = typeof(Action_OverrideOwnership), Member = "DoWork")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Action_OverrideOwnership), Member = "DoWork")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	protected override void OnExecute()
 	{
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CalledBy(Type = typeof(Action_OverrideOwnership), Member = "OnExecute")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(OwnershipOverride), Member = "SetTrustId")]
 	[Calls(Type = typeof(GearItem), Member = "OverrideOwnership")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CalledBy(Type = typeof(Action_OverrideOwnership), Member = "OnExecute")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DoWork()
 	{
 	}

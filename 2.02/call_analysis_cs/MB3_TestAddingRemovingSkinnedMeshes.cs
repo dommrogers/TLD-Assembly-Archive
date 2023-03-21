@@ -2,13 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
 public class MB3_TestAddingRemovingSkinnedMeshes : MonoBehaviour
 {
-	private sealed class _003CTestScript_003Ed__3 : IEnumerator, IDisposable, IEnumerator<object>
+	private sealed class _003CTestScript_003Ed__3 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -20,7 +19,7 @@ public class MB3_TestAddingRemovingSkinnedMeshes : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -31,7 +30,7 @@ public class MB3_TestAddingRemovingSkinnedMeshes : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -45,25 +44,20 @@ public class MB3_TestAddingRemovingSkinnedMeshes : MonoBehaviour
 		{
 		}
 
-		[CallerCount(Count = 2)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 141)]
-		[Calls(Type = typeof(Debug), Member = "Log")]
-		[Calls(Type = typeof(Debug), Member = "Log")]
-		[Calls(Type = typeof(Debug), Member = "Log")]
-		[Calls(Type = typeof(Debug), Member = "Log")]
-		[Calls(Type = typeof(Debug), Member = "Log")]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Debug), Member = "Log")]
 		[CallsDeduplicatedMethods(Count = 21)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 141)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -86,11 +80,10 @@ public class MB3_TestAddingRemovingSkinnedMeshes : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(MB3_TestAddingRemovingSkinnedMeshes), Member = "Start")]
 	[CallerCount(Count = 1)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator TestScript()
 	{
 		return null;

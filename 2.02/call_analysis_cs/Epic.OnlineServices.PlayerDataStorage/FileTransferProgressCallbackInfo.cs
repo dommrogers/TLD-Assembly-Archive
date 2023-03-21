@@ -19,14 +19,14 @@ public class FileTransferProgressCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		private set
 		{
 		}
@@ -34,16 +34,16 @@ public class FileTransferProgressCallbackInfo : ICallbackInfo, ISettable
 
 	public ProductUserId LocalUserId
 	{
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 71)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -53,14 +53,14 @@ public class FileTransferProgressCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -70,10 +70,10 @@ public class FileTransferProgressCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 2)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -85,12 +85,12 @@ public class FileTransferProgressCallbackInfo : ICallbackInfo, ISettable
 
 	public uint TotalFileSizeBytes
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -107,27 +107,27 @@ public class FileTransferProgressCallbackInfo : ICallbackInfo, ISettable
 		return null;
 	}
 
+	[CalledBy(Type = typeof(FileTransferProgressCallbackInfo), Member = "Set")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(FileTransferProgressCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(FileTransferProgressCallbackInfoInternal), Member = "get_LocalUserId")]
 	[Calls(Type = typeof(FileTransferProgressCallbackInfoInternal), Member = "get_Filename")]
-	[CalledBy(Type = typeof(FileTransferProgressCallbackInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	internal void Set(FileTransferProgressCallbackInfoInternal? other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(FileTransferProgressCallbackInfo), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public FileTransferProgressCallbackInfo()
 	{
 	}

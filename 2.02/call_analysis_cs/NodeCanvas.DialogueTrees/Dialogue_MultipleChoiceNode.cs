@@ -35,16 +35,16 @@ public class Dialogue_MultipleChoiceNode : DTNode, ISubTasksContainer
 
 		public BBParameter<float> textSize;
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public Choice()
 		{
 		}
 
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallsUnknownMethods(Count = 1)]
 		public Choice(VoiceOverItem statement)
 		{
 		}
@@ -91,116 +91,95 @@ public class Dialogue_MultipleChoiceNode : DTNode, ISubTasksContainer
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallsUnknownMethods(Count = 17)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 17)]
 	public Task[] GetSubTasks()
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public override void OnChildConnected(int index)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public override void OnChildDisconnected(int index)
 	{
 	}
 
-	[Calls(Type = typeof(Node), Member = "Error")]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
-	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
-	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
-	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(KeyNotFoundException), Member = ".ctor")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(KeyNotFoundException), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 102)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
-	[Calls(Type = typeof(Dialogue_MultipleChoiceNode), Member = "MaybeShowTwoButtonsUI")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
 	[Calls(Type = typeof(Graph), Member = "Stop")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Dialogue_Speech_Utils), Member = "GetShowChoiceVariableName")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
 	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
+	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
 	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
 	[Calls(Type = typeof(VoiceOverItem), Member = "GetLocString")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "SetDialogueTreeChoices")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Dialogue_MultipleChoiceNode), Member = "MaybeShowTwoButtonsUI")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
+	[Calls(Type = typeof(Node), Member = "Error")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(KeyNotFoundException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 102)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnExitRequested()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 21)]
 	[CalledBy(Type = typeof(Dialogue_MultipleChoiceNode), Member = "OnExecute")]
-	[Calls(Type = typeof(TwoButtonsChoiceUI), Member = "ShowChoices")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(VoiceOverItem), Member = "GetLocString")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(VoiceOverItem), Member = "GetLocString")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(TwoButtonsChoiceUI), Member = "ShowChoices")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 21)]
 	private void MaybeShowTwoButtonsUI()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(TwoButtonsChoiceUI), Member = "HideChoices")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnChoiceSelected")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnChoiceSelected")]
+	[Calls(Type = typeof(TwoButtonsChoiceUI), Member = "HideChoices")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	private void OnButtonSelected(int buttonSelected)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(DTNode), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 36)]
 	public Dialogue_MultipleChoiceNode()
 	{

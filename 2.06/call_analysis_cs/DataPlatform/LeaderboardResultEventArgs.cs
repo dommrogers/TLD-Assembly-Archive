@@ -11,8 +11,8 @@ public class LeaderboardResultEventArgs : IDisposable, IWrappedObject
 	public LeaderboardResults Result
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(LeaderboardResults), Member = "SetNativePtr")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -20,8 +20,8 @@ public class LeaderboardResultEventArgs : IDisposable, IWrappedObject
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public LeaderboardResultEventArgs(IntPtr self)
 	{
 	}
@@ -31,24 +31,24 @@ public class LeaderboardResultEventArgs : IDisposable, IWrappedObject
 	{
 	}
 
-	[Calls(Type = typeof(LeaderboardResultEventArgs), Member = "DisposeImpl")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LeaderboardResultEventArgs), Member = "DisposeImpl")]
 	[CallsUnknownMethods(Count = 1)]
 	~LeaderboardResultEventArgs()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SetNativePtr(IntPtr self)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 98)]
+	[CallerCount(Count = 113)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -58,11 +58,11 @@ public class LeaderboardResultEventArgs : IDisposable, IWrappedObject
 	{
 	}
 
-	[CalledBy(Type = typeof(LeaderboardResultEventArgs), Member = "Dispose")]
 	[CalledBy(Type = typeof(LeaderboardResultEventArgs), Member = "Finalize")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(LeaderboardResultEventArgs), Member = "Dispose")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void DisposeImpl()
 	{
 	}

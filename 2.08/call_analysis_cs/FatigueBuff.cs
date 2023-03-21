@@ -14,8 +14,8 @@ public class FatigueBuff : MonoBehaviour
 
 	private GearItem m_GearItem;
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	public void Awake()
 	{
 	}
@@ -26,16 +26,18 @@ public class FatigueBuff : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_buffs_add_all")]
 	[CalledBy(Type = typeof(GearItem), Member = "ApplyBuffs")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_buffs_add_all")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
+	[Calls(Type = typeof(Feat_StraightToHeart), Member = "IsHeartItem")]
+	[Calls(Type = typeof(Fatigue), Member = "AddFatigue")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffNotification")]
 	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
-	[Calls(Type = typeof(Feat_StraightToHeart), Member = "IsHeartItem")]
-	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Fatigue), Member = "AddFatigue")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Apply(float normalizedValue)
 	{
 	}

@@ -10,8 +10,8 @@ public class AkTriggerEnable : AkTriggerBase
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public AkTriggerEnable()
 	{

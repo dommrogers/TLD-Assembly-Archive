@@ -29,7 +29,7 @@ public class WaterSupply : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{

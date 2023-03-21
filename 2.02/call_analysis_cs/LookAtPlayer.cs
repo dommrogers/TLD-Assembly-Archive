@@ -4,9 +4,9 @@ using UnityEngine;
 public class LookAtPlayer : MonoBehaviour
 {
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
 	[Calls(Type = typeof(Transform), Member = "LookAt")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 9)]
 	private void Update()
 	{

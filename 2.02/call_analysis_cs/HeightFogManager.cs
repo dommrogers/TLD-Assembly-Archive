@@ -50,30 +50,34 @@ public class HeightFogManager : MonoBehaviour
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 20)]
+	[CallerCount(Count = 23)]
 	public void SetGlobalVolume(HeightFogVolume volume)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void EnterVolume(HeightFogVolume volume)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ExitVolume(HeightFogVolume volume)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 16)]
 	private void Awake()
 	{
 	}
@@ -90,37 +94,36 @@ public class HeightFogManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(HeightFogVolume), Member = "GetBlendAmount")]
-	[Calls(Type = typeof(HeightFogManager), Member = "ApplySettings")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Camera), Member = "get_farClipPlane")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(Renderer), Member = "get_enabled")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
-	[Calls(Type = typeof(HeightFogSettings), Member = "IsFogVisible")]
-	[Calls(Type = typeof(HeightFogSettings), Member = "ApplyLightSources")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(HeightFogSettings), Member = "Clear")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(HeightFogVolume), Member = "GetBlendAmount")]
 	[Calls(Type = typeof(HeightFogSettings), Member = "Blend")]
+	[Calls(Type = typeof(HeightFogSettings), Member = "ApplyLightSources")]
+	[Calls(Type = typeof(HeightFogSettings), Member = "IsFogVisible")]
+	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
+	[Calls(Type = typeof(Renderer), Member = "get_enabled")]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(Camera), Member = "get_farClipPlane")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(HeightFogManager), Member = "ApplySettings")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 17)]
 	public void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 32)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[CalledBy(Type = typeof(HeightFogManager), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 16)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 32)]
 	private void ApplySettings(HeightFogSettings settings)
 	{
 	}

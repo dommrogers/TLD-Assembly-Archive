@@ -27,9 +27,9 @@ public class FSMOwner : GraphOwner<FSM>
 
 	public string currentDeepStateName
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(FSMOwner), Member = "GetCurrentState")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(FSMOwner), Member = "GetCurrentState")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -47,19 +47,21 @@ public class FSMOwner : GraphOwner<FSM>
 		}
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(FSMOwner), Member = "get_currentDeepStateName")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public IState GetCurrentState(bool includeSubFSMs = true)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(FSMOwner), Member = "get_previousDeepStateName")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public IState GetPreviousState(bool includeSubFSMs = true)
 	{
 		return null;
@@ -81,8 +83,8 @@ public class FSMOwner : GraphOwner<FSM>
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public FSMOwner()
 	{
 		((GraphOwner<>)(object)this)._002Ector();

@@ -7,8 +7,8 @@ namespace DataPlatform;
 public class AchievementUnlockedEventArgsPlugin
 {
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr AchievementUnlockedEventArgs_AchievementId(IntPtr self);
 
 	[PreserveSig]
@@ -37,8 +37,8 @@ public class AchievementUnlockedEventArgsPlugin
 	public static extern void AchievementUnlockedEventArgs_InAppRewardValue_Dispose(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr AchievementUnlockedEventArgs_ServiceConfigurationId(IntPtr self);
 
 	[PreserveSig]
@@ -66,8 +66,8 @@ public class AchievementUnlockedEventArgsPlugin
 	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr AchievementUnlockedEventArgs_XboxUserId(IntPtr self);
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public AchievementUnlockedEventArgsPlugin()
 	{
 	}

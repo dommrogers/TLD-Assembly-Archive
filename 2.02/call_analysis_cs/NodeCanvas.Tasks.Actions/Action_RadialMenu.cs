@@ -23,10 +23,10 @@ public class Action_RadialMenu : ActionTask
 		}
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

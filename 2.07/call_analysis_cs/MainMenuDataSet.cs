@@ -14,11 +14,11 @@ public class MainMenuDataSet : ScriptableObject
 	[CallsUnknownMethods(Count = 1)]
 	public bool UseAlternateMainMenu()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public MainMenuDataSet()
 	{

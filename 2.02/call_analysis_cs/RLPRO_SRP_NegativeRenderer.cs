@@ -6,15 +6,12 @@ public sealed class RLPRO_SRP_NegativeRenderer : PostProcessEffectRenderer<RLPro
 {
 	private float T;
 
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
+	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 15)]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}

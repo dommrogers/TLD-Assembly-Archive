@@ -7,11 +7,11 @@ public class Action_ToggleLockControls : ActionTask
 {
 	public bool shouldLock;
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 4)]
 	protected override void OnExecute()
 	{
 	}

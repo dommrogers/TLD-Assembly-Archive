@@ -28,8 +28,8 @@ public class CatalogItem : IWrappedObject, IDisposable
 	public string Id
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -49,10 +49,10 @@ public class CatalogItem : IWrappedObject, IDisposable
 
 	public string Name
 	{
-		[CallsUnknownMethods(Count = 7)]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -61,9 +61,9 @@ public class CatalogItem : IWrappedObject, IDisposable
 
 	public string ReducedName
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -73,19 +73,19 @@ public class CatalogItem : IWrappedObject, IDisposable
 
 	public uint TitleId
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
 	public string ProductId
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -96,8 +96,8 @@ public class CatalogItem : IWrappedObject, IDisposable
 	public string SandboxId
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -112,26 +112,26 @@ public class CatalogItem : IWrappedObject, IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public bool IsPartOfAnyBundle
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public DateTime ReleaseDate
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedDateTime")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -153,8 +153,8 @@ public class CatalogItem : IWrappedObject, IDisposable
 	public CatalogItemImageList Images
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(CatalogItemImageList), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 8)]
 		get
 		{
@@ -168,8 +168,8 @@ public class CatalogItem : IWrappedObject, IDisposable
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public CatalogItem()
 	{
 	}
@@ -181,10 +181,10 @@ public class CatalogItem : IWrappedObject, IDisposable
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 52)]
+	[CallerCount(Count = 59)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]

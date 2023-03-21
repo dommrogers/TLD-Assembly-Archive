@@ -14,8 +14,8 @@ public class ListContainsElement<T> : ConditionTask
 	{
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		get
 		{
 			return null;
@@ -28,11 +28,11 @@ public class ListContainsElement<T> : ConditionTask
 	[CallsUnknownMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public ListContainsElement()
 	{
 	}

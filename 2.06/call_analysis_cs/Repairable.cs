@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -27,11 +28,14 @@ public class Repairable : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Repairable), Member = "Start")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	private void AddAlternateTools()
 	{

@@ -17,61 +17,62 @@ public class ActiveSwitch : MonoBehaviour
 	private static List<ActiveSwitch> m_ActiveSwitches;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ActiveSwitch), Member = "SetActiveStateIndex")]
 	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Action_ActiveSwitch), Member = "DoWork")]
-	[CalledBy(Type = typeof(ActiveSwitch), Member = "DeserializeAll")]
 	[CalledBy(Type = typeof(ActiveSwitch), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CalledBy(Type = typeof(ActiveSwitch), Member = "DeserializeAll")]
+	[CalledBy(Type = typeof(Action_ActiveSwitch), Member = "DoWork")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void SetActiveStateIndex(int index)
 	{
 	}
 
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Reset()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[Calls(Type = typeof(ActiveSwitch), Member = "SetActiveStateIndex")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(ActiveSwitch), Member = "SetActiveStateIndex")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	private static ActiveSwitch FindActiveSwitchByGuid(string guid)
 	{
 		return null;

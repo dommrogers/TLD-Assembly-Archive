@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 
@@ -10,9 +9,9 @@ public class CheckBooleanTrigger : ConditionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		get
 		{
 			return null;
@@ -20,14 +19,15 @@ public class CheckBooleanTrigger : ConditionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
 	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
 	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

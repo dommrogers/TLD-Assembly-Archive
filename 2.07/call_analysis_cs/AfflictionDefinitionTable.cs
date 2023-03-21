@@ -10,44 +10,45 @@ public class AfflictionDefinitionTable : ScriptableObject
 
 	private Dictionary<string, AfflictionDefinition> m_AfflictionPerNameMap;
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(NPCAfflictions), Member = "Deserialize")]
 	[CalledBy(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[CallsUnknownMethods(Count = 2)]
 	public AfflictionDefinition GetAfflictionDefinitionByType(AfflictionType afflictionType)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(NPCFreezing), Member = "DoUpdate")]
-	[CalledBy(Type = typeof(NPCAfflictions), Member = "Deserialize")]
-	[CalledBy(Type = typeof(Affliction), Member = "GetDisplayName")]
-	[CalledBy(Type = typeof(Affliction), Member = "SpriteNameFromAfflictionType")]
 	[CalledBy(Type = typeof(Affliction), Member = "GetDisplayNameLocId")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 7)]
+	[CalledBy(Type = typeof(Affliction), Member = "SpriteNameFromAfflictionType")]
 	[CalledBy(Type = typeof(Affliction), Member = "GetDescriptionLocId")]
+	[CalledBy(Type = typeof(Affliction), Member = "GetDisplayName")]
+	[CalledBy(Type = typeof(NPCAfflictions), Member = "Deserialize")]
+	[CalledBy(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
+	[CalledBy(Type = typeof(NPCFreezing), Member = "DoUpdate")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public AfflictionDefinition GetAfflictionDefinitionByName(string afflictionName)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[CallsUnknownMethods(Count = 14)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Object), Member = "get_name")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 13)]
 	public void RefreshCache()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public AfflictionDefinitionTable()
 	{

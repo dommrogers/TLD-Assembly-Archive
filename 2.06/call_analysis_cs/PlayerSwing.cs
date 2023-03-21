@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -23,70 +22,63 @@ public class PlayerSwing : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerMovement), Member = "AddSprintStamina")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerSwing), Member = "SwingIsPlaying")]
+	[Calls(Type = typeof(PlayerMovement), Member = "AddSprintStamina")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerIsSwingingFirstPersonItem")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerSwing), Member = "Swing")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerIsSwingingFirstPersonItem")]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
 	[CalledBy(Type = typeof(PlayerSwing), Member = "Update")]
-	[Calls(Type = typeof(FirstPersonItem), Member = "TryGetFPSWeapon")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[CalledBy(Type = typeof(PlayerSwing), Member = "Swing")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(FirstPersonItem), Member = "TryGetFPSWeapon")]
+	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool SwingIsPlaying()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(PlayerSwing), Member = "SwingIsPlaying")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
 	public void Swing(FirstPersonItem fpi, PlayerAnimation.OnAnimationEvent midSwingEvent)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(PlayerSwing), Member = "WardPredatorsWithSwing")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerSwing), Member = "WardPredatorsWithSwing")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnBrandishBegin()
 	{
 	}
 
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(PlayerSwing), Member = "OnBrandishBegin")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(BaseAi), Member = "MaybeFleeDueToTorchSwing")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(BaseAi), Member = "MaybeFleeDueToTorchSwing")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 6)]
 	private bool WardPredatorsWithSwing()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

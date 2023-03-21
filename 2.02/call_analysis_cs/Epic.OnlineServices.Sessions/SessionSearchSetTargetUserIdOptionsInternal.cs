@@ -13,11 +13,11 @@ internal struct SessionSearchSetTargetUserIdOptionsInternal : ISettable, IDispos
 
 	public ProductUserId TargetUserId
 	{
+		[CalledBy(Type = typeof(SessionSearchSetTargetUserIdOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(SessionSearchSetTargetUserIdOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(SessionSearchSetTargetUserIdOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(SessionSearchSetTargetUserIdOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -31,14 +31,14 @@ internal struct SessionSearchSetTargetUserIdOptionsInternal : ISettable, IDispos
 
 	[CalledBy(Type = typeof(SessionSearch), Member = "SetTargetUserId")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SessionSearchSetTargetUserIdOptionsInternal), Member = "set_TargetUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

@@ -10,25 +10,25 @@ public class RootSwitcher : BTNode
 
 	private Node targetNode;
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Graph), Member = "GetNodeWithTag")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnGraphStarted()
 	{
 	}
 
-	[Calls(Type = typeof(Graph), Member = "set_primeNode")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Graph), Member = "get_primeNode")]
+	[Calls(Type = typeof(Graph), Member = "set_primeNode")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public RootSwitcher()
 	{
 	}

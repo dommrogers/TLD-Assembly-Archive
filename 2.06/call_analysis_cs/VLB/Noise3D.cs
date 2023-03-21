@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -18,39 +17,39 @@ public static class Noise3D
 
 	public static bool isSupported
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(Noise3D), Member = "LoadIfNeeded")]
-		[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
 		[CalledBy(Type = typeof(BeamGeometry), Member = "get_isNoiseEnabled")]
 		[CalledBy(Type = typeof(BeamGeometry), Member = "ApplyMaterial")]
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
+		[CalledBy(Type = typeof(Noise3D), Member = "LoadIfNeeded")]
 		[CallerCount(Count = 4)]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[Calls(Type = typeof(Debug), Member = "LogWarning")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public static bool isProperlyLoaded
 	{
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public static string isNotSupportedString
 	{
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -64,31 +63,30 @@ public static class Noise3D
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Noise3D), Member = "OnStartUp")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_hideFlags")]
-	[Calls(Type = typeof(Noise3D), Member = "LoadTexture3D")]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[Calls(Type = typeof(Config), Member = "GetInstance")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Noise3D), Member = "get_isSupported")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Noise3D), Member = "OnStartUp")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Noise3D), Member = "get_isSupported")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Config), Member = "GetInstance")]
+	[Calls(Type = typeof(Noise3D), Member = "LoadTexture3D")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "set_hideFlags")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void LoadIfNeeded()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(Noise3D), Member = "LoadIfNeeded")]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[Calls(Type = typeof(Texture3D), Member = "Apply")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Texture3D), Member = ".ctor")]
+	[Calls(Type = typeof(Texture3D), Member = "Apply")]
+	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 13)]
 	private static Texture3D LoadTexture3D(TextAsset textData, int size)
 	{
 		return null;

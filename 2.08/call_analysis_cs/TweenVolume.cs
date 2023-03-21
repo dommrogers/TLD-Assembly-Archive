@@ -11,11 +11,12 @@ public class TweenVolume : UITweener
 
 	public AudioSource audioSource
 	{
-		[CallerCount(Count = 2)]
-		[Calls(Type = typeof(Debug), Member = "LogError")]
 		[CalledBy(Type = typeof(TweenVolume), Member = "get_value")]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[CalledBy(Type = typeof(TweenVolume), Member = "set_value")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
+		[Calls(Type = typeof(Debug), Member = "LogError")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -24,14 +25,14 @@ public class TweenVolume : UITweener
 
 	public float volume
 	{
-		[Calls(Type = typeof(TweenVolume), Member = "get_value")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(TweenVolume), Member = "get_value")]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[Calls(Type = typeof(TweenVolume), Member = "set_value")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(TweenVolume), Member = "set_value")]
 		set
 		{
 		}
@@ -39,60 +40,60 @@ public class TweenVolume : UITweener
 
 	public float value
 	{
-		[Calls(Type = typeof(TweenVolume), Member = "get_audioSource")]
-		[CallerCount(Count = 4)]
+		[CalledBy(Type = typeof(TweenVolume), Member = "get_volume")]
 		[CalledBy(Type = typeof(TweenVolume), Member = "Begin")]
 		[CalledBy(Type = typeof(TweenVolume), Member = "SetStartToCurrentValue")]
 		[CalledBy(Type = typeof(TweenVolume), Member = "SetEndToCurrentValue")]
+		[CallerCount(Count = 4)]
+		[Calls(Type = typeof(TweenVolume), Member = "get_audioSource")]
 		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(TweenVolume), Member = "get_volume")]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[Calls(Type = typeof(TweenVolume), Member = "get_audioSource")]
-		[Calls(Type = typeof(AudioSource), Member = "set_volume")]
 		[CalledBy(Type = typeof(TweenVolume), Member = "set_volume")]
 		[CalledBy(Type = typeof(TweenVolume), Member = "OnUpdate")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(TweenVolume), Member = "get_audioSource")]
+		[Calls(Type = typeof(AudioSource), Member = "set_volume")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TweenVolume), Member = "set_value")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(TweenVolume), Member = "set_value")]
-	[CallerCount(Count = 0)]
 	protected override void OnUpdate(float factor, bool isFinished)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UITweener), Member = "Begin")]
 	[Calls(Type = typeof(TweenVolume), Member = "get_value")]
+	[CallsUnknownMethods(Count = 1)]
 	public static TweenVolume Begin(GameObject go, float duration, float targetVolume)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(TweenVolume), Member = "get_value")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TweenVolume), Member = "get_value")]
 	public override void SetStartToCurrentValue()
 	{
 	}
 
-	[Calls(Type = typeof(TweenVolume), Member = "get_value")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TweenVolume), Member = "get_value")]
 	public override void SetEndToCurrentValue()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UITweener), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public TweenVolume()
 	{
 	}

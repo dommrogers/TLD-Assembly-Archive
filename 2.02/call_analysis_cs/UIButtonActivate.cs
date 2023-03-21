@@ -7,17 +7,17 @@ public class UIButtonActivate : MonoBehaviour
 
 	public bool state;
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnClick()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public UIButtonActivate()
 	{
 	}

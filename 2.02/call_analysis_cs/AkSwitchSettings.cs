@@ -31,7 +31,7 @@ public class AkSwitchSettings : AkWwiseInitializationSettings.PlatformSettings
 		public uint m_ThreadProperties_affinityMask;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public override void CopyTo(AkPlatformInitSettings settings)
 		{
 		}
@@ -55,14 +55,14 @@ public class AkSwitchSettings : AkWwiseInitializationSettings.PlatformSettings
 	public AkCommonCommSettings CommsSettings;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 15)]
+	[CallerCount(Count = 17)]
 	protected override AkCommonAdvancedSettings GetAdvancedSettings()
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 8)]
+	[CallerCount(Count = 9)]
 	protected override AkCommonUserSettings GetUserSettings()
 	{
 		return null;
@@ -75,15 +75,13 @@ public class AkSwitchSettings : AkWwiseInitializationSettings.PlatformSettings
 		return null;
 	}
 
-	[Calls(Type = typeof(AkCommonCommSettings), Member = ".ctor")]
-	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = "IgnorePropertyValue")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = "SetUseGlobalPropertyValue")]
-	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = "IgnorePropertyValue")]
-	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = ".ctor")]
 	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = "SetUseGlobalPropertyValue")]
+	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = "IgnorePropertyValue")]
+	[Calls(Type = typeof(AkCommonCommSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public AkSwitchSettings()
 	{
 	}

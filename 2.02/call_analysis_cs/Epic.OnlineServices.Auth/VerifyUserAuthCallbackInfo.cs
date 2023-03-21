@@ -30,14 +30,14 @@ public class VerifyUserAuthCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 71)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -51,23 +51,23 @@ public class VerifyUserAuthCallbackInfo : ICallbackInfo, ISettable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(VerifyUserAuthCallbackInfoInternal), Member = "get_ClientData")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	internal void Set(VerifyUserAuthCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(VerifyUserAuthCallbackInfoInternal), Member = "get_ClientData")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public VerifyUserAuthCallbackInfo()
 	{
 	}

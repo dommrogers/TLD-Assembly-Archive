@@ -13,9 +13,9 @@ public class QueryExternalAccountMappingsCallbackInfo : ICallbackInfo, ISettable
 
 	public Result ResultCode
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 7)]
-		[CompilerGenerated]
 		get
 		{
 			return default(Result);
@@ -32,14 +32,14 @@ public class QueryExternalAccountMappingsCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -47,48 +47,48 @@ public class QueryExternalAccountMappingsCallbackInfo : ICallbackInfo, ISettable
 
 	public ProductUserId LocalUserId
 	{
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 5)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 41)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Result? GetResultCode()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(QueryExternalAccountMappingsCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(QueryExternalAccountMappingsCallbackInfoInternal), Member = "get_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	internal void Set(QueryExternalAccountMappingsCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(QueryExternalAccountMappingsCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(QueryExternalAccountMappingsCallbackInfoInternal), Member = "get_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public QueryExternalAccountMappingsCallbackInfo()
 	{
 	}

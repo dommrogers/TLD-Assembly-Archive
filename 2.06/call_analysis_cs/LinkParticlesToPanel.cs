@@ -12,22 +12,23 @@ public class LinkParticlesToPanel : MonoBehaviour
 	private float m_Alpha;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Material), Member = "GetColor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Material), Member = "SetColor")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private void Update()
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public LinkParticlesToPanel()
 	{
 	}

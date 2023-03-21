@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -9,31 +10,32 @@ public class MB_SwitchBakedObjectsTexture : MonoBehaviour
 
 	public MB3_MeshBaker meshBaker;
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GUILayout), Member = "Label")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnGUI()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 12)]
 	public void Update()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public MB_SwitchBakedObjectsTexture()
 	{
 	}

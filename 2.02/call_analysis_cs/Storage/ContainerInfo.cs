@@ -16,7 +16,7 @@ public class ContainerInfo
 	public bool NeedsSync;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ContainerInfo()
 	{
 	}

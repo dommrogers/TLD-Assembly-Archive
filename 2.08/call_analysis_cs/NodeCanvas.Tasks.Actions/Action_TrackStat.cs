@@ -23,36 +23,36 @@ public class Action_TrackStat : ActionTask
 		}
 	}
 
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(StatsManager.SetStatDelegate), Member = ".ctor")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[Calls(Type = typeof(StatsManager.SetStatDelegate), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Delegate), Member = "Remove")]
 	[Calls(Type = typeof(StatsManager.SetStatDelegate), Member = ".ctor")]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	protected override void OnStop()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNull")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter), Member = "get_isNull")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnIncrementStat(StatID id, float amount)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BBParameter), Member = "get_isNull")]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnSetStat(StatID id, float previous, float current)
 	{
 	}

@@ -19,11 +19,11 @@ internal struct QueryProductUserIdMappingsOptionsInternal : ISettable, IDisposab
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(QueryProductUserIdMappingsOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(QueryProductUserIdMappingsOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(QueryProductUserIdMappingsOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(QueryProductUserIdMappingsOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -40,34 +40,35 @@ internal struct QueryProductUserIdMappingsOptionsInternal : ISettable, IDisposab
 
 	public ProductUserId[] ProductUserIds
 	{
+		[CalledBy(Type = typeof(QueryProductUserIdMappingsOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(QueryProductUserIdMappingsOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(QueryProductUserIdMappingsOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(QueryProductUserIdMappingsOptionsInternal), Member = "Set")]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(QueryProductUserIdMappingsOptionsInternal), Member = "set_ProductUserIds")]
-	[Calls(Type = typeof(QueryProductUserIdMappingsOptionsInternal), Member = "set_LocalUserId")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(QueryProductUserIdMappingsOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(QueryProductUserIdMappingsOptionsInternal), Member = "set_ProductUserIds")]
 	public void Set(QueryProductUserIdMappingsOptions other)
 	{
 	}
 
+	[CalledBy(Type = typeof(ConnectInterface), Member = "QueryProductUserIdMappings")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(QueryProductUserIdMappingsOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(QueryProductUserIdMappingsOptionsInternal), Member = "set_ProductUserIds")]
-	[CalledBy(Type = typeof(ConnectInterface), Member = "QueryProductUserIdMappings")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

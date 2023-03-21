@@ -8,22 +8,20 @@ namespace ParadoxNotion.Serialization.FullSerializer.Internal.DirectConverters;
 public class AnimationCurve_DirectConverter : fsDirectConverter<AnimationCurve>
 {
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(fsBaseConverter), Member = "SerializeMember")]
 	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
 	protected override fsResult DoSerialize(AnimationCurve model, Dictionary<string, fsData> serialized)
 	{
 		return default(fsResult);
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsBaseConverter), Member = "DeserializeMember")]
 	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 12)]
 	protected override fsResult DoDeserialize(Dictionary<string, fsData> data, ref AnimationCurve model)
 	{
 		return default(fsResult);

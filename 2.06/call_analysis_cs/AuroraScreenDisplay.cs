@@ -71,167 +71,151 @@ public class AuroraScreenDisplay : MonoBehaviour
 
 	private string m_LanguageUsedForLocalize;
 
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(AuroraScreenDisplay), Member = "SetState")]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Material), Member = "GetColor")]
-	[Calls(Type = typeof(Material), Member = "GetFloat")]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ObjectGuid), Member = "MaybeRuntimeRegister")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(ObjectGuid), Member = "MaybeRuntimeRegister")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInParent")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(Material), Member = "GetFloat")]
+	[Calls(Type = typeof(Material), Member = "GetColor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[Calls(Type = typeof(AuroraScreenDisplay), Member = "SetState")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 19)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RenderTextureCameraManager), Member = "UnregisterCamera")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(RenderTextureCameraManager), Member = "UnregisterCamera")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnDestroy()
 	{
 	}
 
-	[Calls(Type = typeof(AuroraScreenDisplay), Member = "UpdateInteractiveScrolling")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(AuroraScreenDisplay), Member = "RefreshLocalization")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Localization), Member = "get_Language")]
-	[Calls(Type = typeof(AuroraScreenDisplay), Member = "SetState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Material), Member = "set_color")]
-	[Calls(Type = typeof(AuroraScreenDisplay), Member = "SetDisplayActive")]
-	[Calls(Type = typeof(AuroraScreenDisplay), Member = "UpdateDigitalEffect")]
-	[Calls(Type = typeof(AuroraScreenDisplay), Member = "UpdateAnalogEffect")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(AuroraScreenDisplay), Member = "InitializeDisplayInterface")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(RenderTexture), Member = "Create")]
 	[Calls(Type = typeof(AuroraScreenDisplay), Member = "SetDisplayActive")]
 	[Calls(Type = typeof(Material), Member = "set_color")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RenderTexture), Member = "Create")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[Calls(Type = typeof(Material), Member = "SetFloat")]
+	[Calls(Type = typeof(AuroraScreenDisplay), Member = "UpdateDigitalEffect")]
+	[Calls(Type = typeof(AuroraScreenDisplay), Member = "UpdateAnalogEffect")]
+	[Calls(Type = typeof(AuroraScreenDisplay), Member = "UpdateInteractiveScrolling")]
+	[Calls(Type = typeof(AuroraScreenDisplay), Member = "SetState")]
+	[Calls(Type = typeof(Localization), Member = "get_Language")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(AuroraScreenDisplay), Member = "RefreshLocalization")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Material), Member = "set_mainTexture")]
 	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "Update")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RenderTextureCameraManager), Member = "GetRenderTextureManagedCamera")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(RenderTextureCameraManager), Member = "RegisterCamera")]
-	[Calls(Type = typeof(Camera), Member = "set_targetTexture")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(AuroraScreenPrefabPool), Member = "InstantiateRandomPrefabForScreen")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(AuroraScreenPrefabPool), Member = "InstantiateRandomPrefabForScreen")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
 	[Calls(Type = typeof(Texture), Member = "set_wrapMode")]
+	[Calls(Type = typeof(Camera), Member = "set_targetTexture")]
+	[Calls(Type = typeof(Material), Member = "set_mainTexture")]
+	[Calls(Type = typeof(RenderTextureCameraManager), Member = "RegisterCamera")]
+	[Calls(Type = typeof(RenderTextureCameraManager), Member = "GetRenderTextureManagedCamera")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	private void InitializeDisplayInterface()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "Update")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(Material), Member = "SetTextureOffset")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(Material), Member = "SetTextureOffset")]
+	[Calls(Type = typeof(Material), Member = "SetFloat")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateDigitalEffect()
 	{
 	}
 
+	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Material), Member = "SetFloat")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	private void UpdateAnalogEffect()
 	{
 	}
 
 	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "Update")]
-	[Calls(Type = typeof(InteractiveScrollText), Member = "SetScrollingEnabled")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(InteractiveScrollText), Member = "SetScrollingEnabled")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateInteractiveScrolling()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "SetState")]
-	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "SetState")]
 	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "Update")]
-	[Calls(Type = typeof(InteractiveScrollText), Member = "SetScrollingEnabled")]
-	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "Update")]
-	[Calls(Type = typeof(RenderTextureCameraManager), Member = "GetRenderTextureManagedCamera")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "SetState")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(RenderTextureCameraManager), Member = "GetRenderTextureManagedCamera")]
+	[Calls(Type = typeof(InteractiveScrollText), Member = "SetScrollingEnabled")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 10)]
 	private void SetDisplayActive(bool enable)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "Update")]
 	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "Start")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[Calls(Type = typeof(AuroraScreenDisplay), Member = "SetDisplayActive")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Material), Member = "set_color")]
-	[Calls(Type = typeof(Material), Member = "set_color")]
-	[Calls(Type = typeof(AuroraScreenDisplay), Member = "SetDisplayActive")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
+	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "Update")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AuroraScreenDisplay), Member = "SetDisplayActive")]
+	[Calls(Type = typeof(Material), Member = "set_color")]
+	[Calls(Type = typeof(Material), Member = "SetFloat")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 3)]
 	private void SetState(State state)
 	{
 	}
 
+	[CalledBy(Type = typeof(CollectionManager), Member = "UnlockAuroraScreen")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CalledBy(Type = typeof(CollectionManager), Member = "UnlockAuroraScreen")]
-	[CalledBy(Type = typeof(CollectionManager), Member = "UnlockAuroraScreen")]
 	[CallsUnknownMethods(Count = 1)]
 	public string GetPrefabName()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(InteractiveScrollText), Member = "SetScrollingEnabled")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(CollectionManager), Member = "UnlockAuroraScreen")]
 	[Calls(Type = typeof(InteractiveScrollText), Member = "SetScrollingEnabled")]
 	[Calls(Type = typeof(MissionManagerBase), Member = "SendMissionEvent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(CollectionManager), Member = "UnlockAuroraScreen")]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnCameraPositionStateChange(CustomCameraPosition.State newCameraState)
 	{
 	}
@@ -243,15 +227,14 @@ public class AuroraScreenDisplay : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(RenderTextureCameraManager), Member = "GetRenderTextureManagedCamera")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Localization), Member = "get_Language")]
-	[Calls(Type = typeof(InteractiveScrollText), Member = "RefreshLocalization")]
 	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InteractiveScrollText), Member = "RefreshLocalization")]
+	[Calls(Type = typeof(RenderTextureCameraManager), Member = "GetRenderTextureManagedCamera")]
+	[Calls(Type = typeof(Localization), Member = "get_Language")]
+	[CallsUnknownMethods(Count = 2)]
 	private void RefreshLocalization()
 	{
 	}

@@ -27,15 +27,16 @@ public class SceneNameMapping : ScriptableObject
 
 	private Dictionary<string, string> m_SceneRegionMapping;
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 6)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void OnEnable()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public static string FindLocalizedSceneNamesPath()
 	{
 		return null;
@@ -48,24 +49,26 @@ public class SceneNameMapping : ScriptableObject
 		return null;
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "MatchesMainMenuSceneName")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(string), Member = "Remove")]
-	[Calls(Type = typeof(string), Member = "LastIndexOf")]
-	[Calls(Type = typeof(SceneNameMapping), Member = "IsChildOfAnother")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SceneNameMapping), Member = "IsChildOfAnother")]
+	[Calls(Type = typeof(string), Member = "LastIndexOf")]
+	[Calls(Type = typeof(string), Member = "Remove")]
+	[Calls(Type = typeof(GameManager), Member = "MatchesMainMenuSceneName")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public string GetLocIDForScene(string sceneName)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(SceneNameMapping), Member = "IsChildOfAnother")]
 	[Calls(Type = typeof(string), Member = "LastIndexOf")]
 	[Calls(Type = typeof(string), Member = "Remove")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public string GetRegionForScene(string sceneName)
 	{
@@ -79,65 +82,30 @@ public class SceneNameMapping : ScriptableObject
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 8)]
 	public void AddEntry(string sceneName, string locId, string region)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "GetRegionForScene")]
 	[CalledBy(Type = typeof(SceneNameMapping), Member = "GetLocIDForScene")]
 	[CalledBy(Type = typeof(SceneNameMapping), Member = "GetRegionForScene")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool IsChildOfAnother(string sceneName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public SceneNameMapping()
 	{
 	}

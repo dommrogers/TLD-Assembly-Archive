@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -19,30 +18,32 @@ public class Flee : ActionTask<NavMeshAgent>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 13)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 15)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 23)]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 20)]
 	protected override void OnUpdate()
 	{
 	}
@@ -54,16 +55,16 @@ public class Flee : ActionTask<NavMeshAgent>
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 0)]
 	protected override void OnStop()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 3)]
 	public Flee()
 	{
 		((ActionTask<>)(object)this)._002Ector();

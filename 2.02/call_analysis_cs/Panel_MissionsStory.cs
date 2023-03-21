@@ -162,200 +162,181 @@ public class Panel_MissionsStory : Panel_Base
 	{
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "LoadMissionDataFromResources")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[CallsUnknownMethods(Count = 48)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "CacheComponents")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[CallsDeduplicatedMethods(Count = 14)]
-	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 48)]
 	public override void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "MaybeShowNewMissionEntryNotificationFlagIcon")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateTabsObjects")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnMapNav")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnCancel")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateGamepadControls")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshGamepadButtons")]
 	[Calls(Type = typeof(InputManager), Member = "GetOpenMapPressed")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnCancel")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnMapNav")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateButtonLegend")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateTabsObjects")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "MaybeShowNewMissionEntryNotificationFlagIcon")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateGamepadControls")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 35)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(StoryMissionObjective), Member = "CopyConstantDataFromResources")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 35)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 31)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
+	[Calls(Type = typeof(CategoryButton), Member = "SetButtonState")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshGamepadButtons")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateTabsObjects")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-	[Calls(Type = typeof(CategoryButton), Member = "SetButtonState")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 15)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 31)]
 	public override void Enable(bool enable)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public void DeselectAllMissions()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "LoadMissionDataFromResources")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void ClearMissions()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnMissionListEntrySelected")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public void SelectMissionListEntry(string missionID)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateGamepadControls")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnBack")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Update")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnCancel()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "HandleVerticalMovement")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "NavigateToMissionById")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(CategoryButton), Member = "SetButtonState")]
+	[Calls(Type = typeof(GameAudioManager), Member = "CanPlaySpecialUIEntrySound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
 	[Calls(Type = typeof(StoryMissionListEntry), Member = "SetSelected")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateTabsObjects")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "HandleVerticalMovement")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "NavigateToMissionById")]
-	[CallsUnknownMethods(Count = 31)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(CategoryButton), Member = "SetButtonState")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(GameAudioManager), Member = "CanPlaySpecialUIEntrySound")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallsUnknownMethods(Count = 31)]
 	public void OnNavigationChanged(UIButton button)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "SelectMissionListEntry")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "HandleVerticalMovement")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "NavigateToMissionById")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionListScrollingForCurrentIndex")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(GameAudioManager), Member = "CanPlaySpecialUIEntrySound")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameAudioManager), Member = "CanPlaySpecialUIEntrySound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionListScrollingForCurrentIndex")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 13)]
 	public void OnMissionListEntrySelected(int index)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void OnExamineCollectible()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void OnSeeLocationOnMap()
 	{
 	}
@@ -364,405 +345,383 @@ public class Panel_MissionsStory : Panel_Base
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
 	public bool ObjectiveIsActiveOrComplete(string objectiveID)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public StoryMissionObjective GetActiveObjective(string objectiveID)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 37)]
 	[CalledBy(Type = typeof(Action_MissionAddNew), Member = "OnExecute")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionIndex")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(TrustManager), Member = "AddTrustDecayGracePeriod")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
 	[Calls(Type = typeof(HUDMission), Member = "Enqueue")]
 	[Calls(Type = typeof(HUDChapter), Member = "Enqueue")]
 	[Calls(Type = typeof(NotificationFlagManager), Member = "AddNotification")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 37)]
 	public void AddMission(string missionID, bool suppressUI, bool suppressMission, bool suppressChapter)
 	{
 	}
 
 	[CalledBy(Type = typeof(Action_MissionUpdateName), Member = "OnExecute")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(HUDMission), Member = "Enqueue")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionIndex")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 4)]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionIndex")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
+	[Calls(Type = typeof(HUDMission), Member = "Enqueue")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void UpdateMissionName(string missionID, string nameLocID, bool suppressUI)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(HUDMission), Member = "Enqueue")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Action_MissionUpdateDesc), Member = "OnExecute")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionIndex")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionIndex")]
+	[Calls(Type = typeof(HUDMission), Member = "Enqueue")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void UpdateMissionDesc(string missionID, string descriptionLocID, bool suppressUI)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(HUDMission), Member = "Enqueue")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
 	[CalledBy(Type = typeof(Action_MissionUpdateTexture), Member = "OnExecute")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionIndex")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionIndex")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
+	[Calls(Type = typeof(HUDMission), Member = "Enqueue")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void UpdateMissionTexture(string missionID, string textureName, bool suppressUI)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Action_MissionUpdateTimer), Member = "OnExecute")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(HUDMission), Member = "Enqueue")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionIndex")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionIndex")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
+	[Calls(Type = typeof(HUDMission), Member = "Enqueue")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void UpdateMissionTimer(string missionID, string timerID, bool suppressUI)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool TryGetObjectiveIsComplete(string objectiveID, out bool result)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<bool, @null>(ref result) = null;
-		return default(bool);
+		result = default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 24)]
 	[CalledBy(Type = typeof(Action_MissionMarkComplete), Member = "OnExecute")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
-	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(HUDMission), Member = "Enqueue")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionIndex")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionIndex")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(HUDMission), Member = "Enqueue")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 24)]
 	public void MarkMissionComplete(string missionID, bool missionSuccess, bool suppressUI)
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Action_ObjectiveAddNew), Member = "OnExecute")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 29)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "AddNotification")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionInfoFromID")]
-	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
-	[Calls(Type = typeof(HUDObjectives), Member = "EnqueueObjective")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(HUDObjectives), Member = "EnqueueObjective")]
+	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionInfoFromID")]
+	[Calls(Type = typeof(NotificationFlagManager), Member = "AddNotification")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 29)]
 	public void AddObjective(string objectiveID, bool suppressUI)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Action_ObjectiveUpdateDesc), Member = "OnExecute")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(HUDObjectives), Member = "EnqueueObjective")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
+	[Calls(Type = typeof(HUDObjectives), Member = "EnqueueObjective")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void UpdateObjectiveDesc(string objectiveID, string descriptionLocID, bool suppressUI)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Action_ObjectiveUpdateTimer), Member = "OnExecute")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(HUDObjectives), Member = "EnqueueObjective")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
+	[Calls(Type = typeof(HUDObjectives), Member = "EnqueueObjective")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void UpdateObjectiveTimer(string objectiveID, string timerID, bool suppressUI)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
 	[CalledBy(Type = typeof(Action_ObjectiveCompleteMain), Member = "OnExecute")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
-	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(HUDObjectives), Member = "EnqueueObjective")]
+	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 16)]
 	public void MarkObjectiveComplete(string objectiveID, bool suppressUI)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void MarkObjectiveInvisible(string objectiveID)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(GameManager), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GearMessage), Member = "AddJournalQueueMessage")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GearMessage), Member = "AddJournalQueueMessage")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 4)]
 	public void MaybeShowNotificationsInQueue()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "AddObjective")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateObjectiveGroup")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapMarkerToMap")]
-	[CalledBy(Type = typeof(HUDObjectives), Member = "Dequeue")]
-	[CalledBy(Type = typeof(HUDObjectives), Member = "GetMissionId")]
-	[CalledBy(Type = typeof(HUDObjectives), Member = "EnqueueSideMission")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMapMarkerFromMap")]
-	[CalledBy(Type = typeof(HUDMission), Member = "Enqueue")]
 	[CalledBy(Type = typeof(HUDChapter), Member = "Enqueue")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 10)]
+	[CalledBy(Type = typeof(HUDMission), Member = "Enqueue")]
 	[CalledBy(Type = typeof(HUDMission), Member = "Dequeue")]
+	[CalledBy(Type = typeof(HUDObjectives), Member = "EnqueueSideMission")]
+	[CalledBy(Type = typeof(HUDObjectives), Member = "GetMissionId")]
+	[CalledBy(Type = typeof(HUDObjectives), Member = "Dequeue")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapMarkerToMap")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMapMarkerFromMap")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateObjectiveGroup")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "AddObjective")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public StoryMissionInfo GetMissionInfoFromID(string missionID)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "NavigateToMissionById")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public bool IsSideMission(string missionID)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionDescScrollbar")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "HandleVerticalRightStick")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateGamepadControls")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "HandleVerticalRightStick")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionDescScrollbar")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public void OnScrollbarMissionDescUp()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateGamepadControls")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionDescScrollbar")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "HandleVerticalRightStick")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionDescScrollbar")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public void OnScrollbarMissionDescDown()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionDescScrollbar")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnScrollbarMissionDescChange()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnInventoryNav()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnClothingNav()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnFirstAidNav()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Update")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Panel_Map), Member = "ShowNoMapsUnlockedMessage")]
-	[Calls(Type = typeof(Panel_Map), Member = "CenterOn")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Panel_Map), Member = "NoMapsUnlocked")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Map), Member = "NoMapsUnlocked")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnMapNav")]
+	[Calls(Type = typeof(Panel_Map), Member = "CenterOn")]
+	[Calls(Type = typeof(Panel_Map), Member = "ShowNoMapsUnlockedMessage")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public void OnMapNav()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnableFromMissionsStory")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnDailyLogButton()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "EnableFromMissionsStory")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnableFromMissionsStory")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnStatsButton()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Log), Member = "EnableFromMissionsStory")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnableFromMissionsStory")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnCollectibleButton()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnableFromMissionsStory")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnRockCachesButton()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Log), Member = "EnableFromMissionsStory")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnableFromMissionsStory")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnSkillsButton()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnCraftingButton()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public StoryMissionInfo GetTrackedMainMission()
@@ -771,104 +730,100 @@ public class Panel_MissionsStory : Panel_Base
 	}
 
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateMissionInfoFromPrefab")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(GameManager), Member = "AllowedToSave")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public StoryMissionInfo GetTrackedMission()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public List<StoryMissionObjective> GetObjectivesToShow()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Container), Member = "RefreshContainerMode")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "CanEnterContainerMissionMode")]
-	[CalledBy(Type = typeof(MissionUI), Member = "UpdateObjectives")]
-	[CalledBy(Type = typeof(MissionUI), Member = "UpdateObjectives")]
-	[CalledBy(Type = typeof(HUDObjectives), Member = "Dequeue")]
-	[CalledBy(Type = typeof(HUDObjectives), Member = "EnqueueObjective")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateObjectiveGroup")]
-	[CalledBy(Type = typeof(HUDMission), Member = "EnqueueObjective")]
 	[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "SetObjectiveInfo")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(HUDMission), Member = "EnqueueObjective")]
 	[CalledBy(Type = typeof(HUDMission), Member = "Dequeue")]
+	[CalledBy(Type = typeof(HUDObjectives), Member = "EnqueueObjective")]
+	[CalledBy(Type = typeof(HUDObjectives), Member = "Dequeue")]
+	[CalledBy(Type = typeof(MissionUI), Member = "UpdateObjectives")]
+	[CalledBy(Type = typeof(Panel_Container), Member = "CanEnterContainerMissionMode")]
+	[CalledBy(Type = typeof(Panel_Container), Member = "RefreshContainerMode")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateObjectiveGroup")]
 	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public StoryMissionObjective GetObjective(string objectiveID)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public string GetCurrentMissionId()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveInfoData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public StoryMissionInfo GetActiveStoryMissionInfo()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[CallsUnknownMethods(Count = 15)]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 15)]
 	private void UpdateButtonLegend()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Update")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnCancel")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnScrollbarMissionDescUp")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnScrollbarMissionDescDown")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVerticalRightStick")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "HandleVerticalMovement")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnScrollbarMissionDescDown")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnScrollbarMissionDescUp")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnCancel")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVerticalRightStick")]
 	private void UpdateGamepadControls()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnMissionListEntrySelected")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnNavigationChanged")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateGamepadControls")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnNavigationChanged")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnMissionListEntrySelected")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 18)]
 	private void HandleVerticalMovement(float movement)
 	{
 	}
@@ -886,57 +841,46 @@ public class Panel_MissionsStory : Panel_Base
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnNavigationChanged")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "AddMission")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionName")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionDesc")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MarkMissionComplete")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionTexture")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionTimer")]
-	[CallsUnknownMethods(Count = 51)]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MarkMissionComplete")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "AddObjective")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateObjectiveDesc")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateObjectiveTimer")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MarkObjectiveComplete")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MarkObjectiveInvisible")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "FSMForceRefresh")]
 	[CalledBy(Type = typeof(Action_ObjectiveToggleInvisible), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionTexture")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateObjectiveDesc")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallerCount(Count = 15)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshMissionsToShow")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetNumObjectivesForMission")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetNumCompletedObjectivesForMission")]
-	[Calls(Type = typeof(StoryMissionListEntry), Member = "Refresh")]
 	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetNumObjectivesForMission")]
-	[Calls(Type = typeof(StoryMissionListEntry), Member = "SetSelected")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionListScrollingForCurrentIndex")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(StoryMissionListEntry), Member = "SetSelected")]
-	[Calls(Type = typeof(StoryMissionListEntry), Member = "Refresh")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetNumCompletedObjectivesForMission")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(StoryMissionListEntry), Member = "Refresh")]
+	[Calls(Type = typeof(StoryMissionListEntry), Member = "SetSelected")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionListScrollingForCurrentIndex")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 51)]
 	private void RefreshScrollList()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionListScrollIndex")]
 	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void OnScrollbarMissionListChanged()
 	{
@@ -944,55 +888,50 @@ public class Panel_MissionsStory : Panel_Base
 
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnMissionListEntrySelected")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
-	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionListScrollIndex")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionListScrollIndex")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	public void UpdateMissionListScrollingForCurrentIndex()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromObjective")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromMap")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnMissionListEntrySelected")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnNavigationChanged")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "IsSideMission")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromObjective")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "IsSideMission")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnNavigationChanged")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "OnMissionListEntrySelected")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void NavigateToMissionById(string missionId)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionListScrollingForCurrentIndex")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnScrollbarMissionListChanged")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionListScrollingForCurrentIndex")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private int GetMissionListScrollIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(MissionObjectiveEntry), Member = "SetObjectiveInfo")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "SetupMissionDescScrollbar")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnNavigationChanged")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnMissionListEntrySelected")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "AddMission")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionName")]
-	[CallsUnknownMethods(Count = 43)]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionDesc")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionTexture")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionTimer")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MarkMissionComplete")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "AddObjective")]
@@ -1002,113 +941,112 @@ public class Panel_MissionsStory : Panel_Base
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MarkObjectiveInvisible")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "FSMForceRefresh")]
 	[CalledBy(Type = typeof(Action_ObjectiveToggleInvisible), Member = "OnExecute")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionDesc")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionTexture")]
-	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[CallerCount(Count = 16)]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(AssetBundleManager), Member = "LoadBundle")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshObjectivesToShow")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(AssetBundleManager), Member = "LoadBundle")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionTimerByName")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[Calls(Type = typeof(MissionTimer), Member = "get_Time")]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
 	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(MissionTimer), Member = "get_Time")]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(Transform), Member = "GetChild")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(MissionObjectiveEntry), Member = "SetObjectiveInfo")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "SetupMissionDescScrollbar")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 43)]
 	private void RefreshDescriptionPage()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	private void RefreshMissionsToShow()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallsUnknownMethods(Count = 2)]
 	private bool HasSideMissionsInLog()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallsUnknownMethods(Count = 2)]
 	private bool HasCompletedMissionsInLog()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateMissionInfoFromPrefab")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void RefreshObjectivesToShow(string missionID)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public StoryMissionObjective GetActiveObjectiveForMission(string missionID)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateCurrentMissionDisplay")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public void GetAllActiveObjectivesForMission(string missionID, ref List<StoryMissionObjective> results)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "CloseOverlaysDueToSceneLoad")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 13)]
 	public void ResetNotificationsData()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "ShowPanelMissionSubCategoryNotificationIcon")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void HandleOnNotificationAdded(NotificationFlagInfo nfi)
 	{
@@ -1116,185 +1054,184 @@ public class Panel_MissionsStory : Panel_Base
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
-	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
 	[CallsUnknownMethods(Count = 1)]
 	public void HandleOnSubcategoryNotificationRemoved(NotificationFlagInfo nfi)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "HandleOnNotificationAdded")]
-	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
-	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ShowPanelMissionSubCategoryNotificationIcon(SubCategory subCategory, bool enable)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void AddNewMissionEntry(NotificationFlagInfo nfi)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(StoryMissionObjective), Member = "TryGetCurrentAndRequired")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private int GetNumObjectivesForMission(string missionID)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(StoryMissionObjective), Member = "TryGetCurrentAndRequired")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private int GetNumCompletedObjectivesForMission(string missionID)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
 	private void QueueMissionNotification(string header, string body)
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[CallsUnknownMethods(Count = 80)]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "ClearUISaveData")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "ClearMissions")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Initialize")]
-	[Calls(Type = typeof(Transform), Member = "get_childCount")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "ClearMissions")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "ClearUISaveData")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Resources), Member = "LoadAll")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(Transform), Member = "get_childCount")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 17)]
 	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[Calls(Type = typeof(Transform), Member = "get_childCount")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 80)]
 	private void LoadMissionDataFromResources()
 	{
 	}
 
-	[CallerCount(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "AddMission")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionName")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionDesc")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionTexture")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionTimer")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MarkMissionComplete")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	private int GetMissionIndex(string missionID)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "GetObjective")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MarkObjectiveInvisible")]
-	[CalledBy(Type = typeof(Condition_ObjectiveIsActiveOrComplete), Member = "OnCheck")]
-	[CalledBy(Type = typeof(Action_ObjectiveToggleInvisible), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateObjectiveTimer")]
-	[CalledBy(Type = typeof(Condition_ObjectiveCompleted), Member = "OnCheck")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateObjectiveDesc")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MarkObjectiveComplete")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "TryGetObjectiveIsComplete")]
-	[CallerCount(Count = 13)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "AddObjective")]
+	[CalledBy(Type = typeof(ContainerMissionHoverText), Member = "GetHoverText")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "ObjectiveIsActiveOrComplete")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "GetActiveObjective")]
-	[CalledBy(Type = typeof(ContainerMissionHoverText), Member = "GetHoverText")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "TryGetObjectiveIsComplete")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "AddObjective")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateObjectiveDesc")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateObjectiveTimer")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MarkObjectiveComplete")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MarkObjectiveInvisible")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "GetObjective")]
+	[CalledBy(Type = typeof(Condition_ObjectiveIsActiveOrComplete), Member = "OnCheck")]
+	[CalledBy(Type = typeof(Condition_ObjectiveCompleted), Member = "OnCheck")]
+	[CalledBy(Type = typeof(Action_ObjectiveToggleInvisible), Member = "OnExecute")]
+	[CallerCount(Count = 13)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private int GetObjectiveIndex(string objectiveID)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private int GetMissionListEntryIndex(string missionID)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionDescScrollbar")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
 	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionDescScrollbar")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	private void SetupMissionDescScrollbar(float pixelHeightRightSide)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnScrollbarMissionDescUp")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "SetupMissionDescScrollbar")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnScrollbarMissionDescChange")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnScrollbarMissionDescDown")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnScrollbarMissionDescChange")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "SetupMissionDescScrollbar")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private void UpdateMissionDescScrollbar()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void FSMForceRefresh()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Update")]
-	[Calls(Type = typeof(GamepadButtonSprite), Member = "UpdateSpriteForActiveController")]
-	[CallsUnknownMethods(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Enable")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(GamepadButtonSprite), Member = "UpdateSpriteForActiveController")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void RefreshGamepadButtons()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnNavigationChanged")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnNavigationChanged")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateTabsObjects()
 	{
 	}
@@ -1304,48 +1241,50 @@ public class Panel_MissionsStory : Panel_Base
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AssetBundleManager), Member = "LoadBundle")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private static void MaybeLoadMissionTexturesAssetBundle()
 	{
 	}
 
-	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Update")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "RemoveNewMissionEntry")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "RemoveNewMissionEntry")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 13)]
 	private void MaybeShowNewMissionEntryNotificationFlagIcon()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MaybeShowNewMissionEntryNotificationFlagIcon")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void RemoveNewMissionEntry(NotificationFlagInfo nfi)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Initialize")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Initialize")]
 	[CallsUnknownMethods(Count = 5)]
 	private void CacheComponents()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 49)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 49)]
 	public Panel_MissionsStory()
 	{
 	}

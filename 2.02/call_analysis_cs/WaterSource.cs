@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -33,10 +34,10 @@ public class WaterSource : MonoBehaviour
 
 	public string m_DisplayName
 	{
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(LocalizedString), Member = "Text")]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		get
 		{
 			return null;
@@ -44,33 +45,35 @@ public class WaterSource : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Random), Member = "Range")]
 	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameManager), Member = "RollSpawnChance")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 1)]
 	public float GetVolumeLiters()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -84,25 +87,26 @@ public class WaterSource : MonoBehaviour
 	[CallsDeduplicatedMethods(Count = 1)]
 	public float RemoveLiters(float liters)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(WaterSourceManager), Member = "Serialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(WaterSourceManager), Member = "Deserialize")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}

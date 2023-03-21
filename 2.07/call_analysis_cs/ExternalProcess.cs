@@ -77,21 +77,21 @@ public static class ExternalProcess
 	}
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private static extern bool CreateProcessW(string lpApplicationName, [In] string lpCommandLine, IntPtr procSecAttrs, IntPtr threadSecAttrs, bool bInheritHandles, ProcessCreationFlags dwCreationFlags, IntPtr lpEnvironment, string lpCurrentDirectory, ref STARTUPINFO lpStartupInfo, ref PROCESS_INFORMATION lpProcessInformation);
 
-	[CalledBy(Type = typeof(Utils), Member = "QuitAndRunApplication")]
-	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnStory")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Utils), Member = "QuitAndRunApplication")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static bool RunCommand(string command, string args, string workingDirectory)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -99,6 +99,6 @@ public static class ExternalProcess
 	[CallsUnknownMethods(Count = 3)]
 	public static bool RunCommand(string command, string workingDirectory)
 	{
-		return default(bool);
+		return false;
 	}
 }

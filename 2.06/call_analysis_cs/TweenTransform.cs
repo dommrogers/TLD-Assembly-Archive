@@ -17,20 +17,19 @@ public class TweenTransform : UITweener
 
 	private Vector3 mScale;
 
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 22)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[CallsDeduplicatedMethods(Count = 20)]
+	[CallsUnknownMethods(Count = 22)]
 	protected override void OnUpdate(float factor, bool isFinished)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(UITweener), Member = "Begin")]
 	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static TweenTransform Begin(GameObject go, float duration, Transform to)
 	{
@@ -38,8 +37,9 @@ public class TweenTransform : UITweener
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(UITweener), Member = "Begin")]
 	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static TweenTransform Begin(GameObject go, float duration, Transform from, Transform to)
 	{

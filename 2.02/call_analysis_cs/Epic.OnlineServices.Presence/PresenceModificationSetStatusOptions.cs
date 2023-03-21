@@ -25,7 +25,7 @@ public class PresenceModificationSetStatusOptions
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PresenceModificationSetStatusOptions()
 	{
 	}

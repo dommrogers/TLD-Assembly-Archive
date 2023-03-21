@@ -33,10 +33,11 @@ public class DecalGroup
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 4)]
 	public bool ContainsTexture(Texture2D tex)
 	{
-		return default(bool);
+		return false;
 	}
 }

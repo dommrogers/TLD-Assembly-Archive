@@ -7,8 +7,8 @@ namespace DataPlatform;
 public class StatisticPlugin
 {
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr Statistic_Value(IntPtr self);
 
 	[PreserveSig]

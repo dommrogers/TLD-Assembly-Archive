@@ -116,149 +116,141 @@ public class TorchItem : MonoBehaviour
 
 	private const float DRAG_STATIONARY_LIMIT = 5000f;
 
-	[Calls(Type = typeof(TorchItem), Member = "SetState")]
-	[CallsUnknownMethods(Count = 24)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[CallsDeduplicatedMethods(Count = 15)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TorchItem), Member = "SetState")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 24)]
 	public void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(TorchItem), Member = "GetModifiedBurnLifetimeMinutes")]
 	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Start()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Confirm")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(TorchItem), Member = "Ignite")]
-	[Calls(Type = typeof(TorchItem), Member = "MaybeEnableNavMeshObstacle")]
-	[Calls(Type = typeof(TorchItem), Member = "GetModifiedBurnLifetimeMinutes")]
-	[Calls(Type = typeof(TorchItem), Member = "GetModifiedBurnLifetimeMinutes")]
-	[Calls(Type = typeof(TorchItem), Member = "ShouldBlowOut")]
-	[Calls(Type = typeof(TorchItem), Member = "Extinguish")]
-	[Calls(Type = typeof(TorchItem), Member = "MaybeEnableNavMeshObstacle")]
 	[CalledBy(Type = typeof(Inventory), Member = "ProcessItems")]
-	[CallsUnknownMethods(Count = 31)]
-	[Calls(Type = typeof(TorchItem), Member = "Extinguish")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[Calls(Type = typeof(TorchItem), Member = "GetGearItem")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(TorchItem), Member = "Extinguish")]
 	[Calls(Type = typeof(Utils), Member = "EnableRendering")]
-	[Calls(Type = typeof(TorchItem), Member = "StopIgniteLoop")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(TorchItem), Member = "MaybeAdjustHeatSource")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
 	[Calls(Type = typeof(TorchItem), Member = "UpdateLightPosition")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(TorchItem), Member = "GetGearItem")]
+	[Calls(Type = typeof(TorchItem), Member = "GetModifiedBurnLifetimeMinutes")]
+	[Calls(Type = typeof(TorchItem), Member = "StopIgniteLoop")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(TorchItem), Member = "Ignite")]
+	[Calls(Type = typeof(TorchItem), Member = "MaybeEnableNavMeshObstacle")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Confirm")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(TorchItem), Member = "ShouldBlowOut")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 31)]
 	public void Update()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(GearItem), Member = "Serialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
-	[Calls(Type = typeof(TorchItem), Member = "MaybeEnableNavMeshObstacle")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(TorchItem), Member = "Ignite")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(TorchItem), Member = "SetState")]
 	[Calls(Type = typeof(TorchItem), Member = "GetModifiedBurnLifetimeMinutes")]
-	[Calls(Type = typeof(TorchItem), Member = "SetState")]
-	[Calls(Type = typeof(TorchItem), Member = "SetState")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(TorchItem), Member = "Ignite")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(TorchItem), Member = "MaybeEnableNavMeshObstacle")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[Calls(Type = typeof(TorchItem), Member = "MaybeEnableNavMeshObstacle")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TorchItem), Member = "Ignite")]
+	[Calls(Type = typeof(TorchItem), Member = "MaybeEnableNavMeshObstacle")]
 	public void Ignite()
 	{
 	}
 
-	[CalledBy(Type = typeof(TorchItem), Member = "Ignite")]
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnTakeTorch")]
-	[CalledBy(Type = typeof(TorchItem), Member = "Deserialize")]
 	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
-	[Calls(Type = typeof(HeatSource), Member = "TurnOn")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(TorchItem), Member = "SetState")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(TorchItem), Member = "Deserialize")]
+	[CalledBy(Type = typeof(TorchItem), Member = "Ignite")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnTakeTorch")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(TorchItem), Member = "SetState")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(HeatSource), Member = "TurnOn")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 12)]
 	public void Ignite(string igniteAudio)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private void OnIgniteComplete()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_TorchLight), Member = "StartTorchIgnite")]
-	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
-	[Calls(Type = typeof(TorchItem), Member = "GetGearItem")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(TorchItem), Member = "GetGearItem")]
+	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 13)]
 	public void IgniteDelayed(float delaySeconds, string igniteAudio, bool isFire)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[Calls(Type = typeof(FirstPersonItem), Member = "AnimateFPSMeshToExitPosition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(FirstPersonItem), Member = "AnimateFPSMeshToExitPosition")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	public void IgniteAfterDelay()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Cancel")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
 	[Calls(Type = typeof(TorchItem), Member = "StopIgniteLoop")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Cancel")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public void CancelIgnite()
 	{
 	}
@@ -267,47 +259,46 @@ public class TorchItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsSetToIgniteAfterDelay()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessFireAction")]
-	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
-	[Calls(Type = typeof(TorchItem), Member = "GetGearItem")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(TorchItem), Member = "GetGearItem")]
+	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	public void ExtinguishDelayed()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void OnExtinguishCompleteCallback()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(FirstPersonItem), Member = "AnimateFPSMeshToExitPosition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Extinguish")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(FirstPersonItem), Member = "AnimateFPSMeshToExitPosition")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Extinguish")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 20)]
 	public void ExtinguishAfterDelayStarted()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	public void CancelExtinguish()
 	{
@@ -316,31 +307,31 @@ public class TorchItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool CanBeLit()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsBurning()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsExtinguishing()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsBurnedOut()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsFresh()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -349,68 +340,63 @@ public class TorchItem : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(TorchItem), Member = "SetState")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TorchItem), Member = "SetState")]
 	public void ResumeLight()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsPaused()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Rigidbody), Member = "set_angularDrag")]
-	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[Calls(Type = typeof(Rigidbody), Member = "get_velocity")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Rigidbody), Member = "set_drag")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Rigidbody), Member = "get_drag")]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[Calls(Type = typeof(Collision), Member = "get_contacts")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Collision), Member = "get_contacts")]
+	[Calls(Type = typeof(Vector3), Member = "get_up")]
+	[Calls(Type = typeof(Rigidbody), Member = "get_drag")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Rigidbody), Member = "set_drag")]
 	[Calls(Type = typeof(Rigidbody), Member = "get_angularDrag")]
+	[Calls(Type = typeof(Rigidbody), Member = "set_angularDrag")]
+	[Calls(Type = typeof(Rigidbody), Member = "get_velocity")]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 15)]
 	public void OnCollisionStay(Collision collisionInfo)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(GameAudioManager), Member = "NotifyAiAudioEvent")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[Calls(Type = typeof(BaseAi), Member = "MaybeFleeFromThrownItem")]
-	[Calls(Type = typeof(Collision), Member = "get_contacts")]
-	[Calls(Type = typeof(TorchItem), Member = "Extinguish")]
-	[Calls(Type = typeof(BreakableIce), Member = "IsIceBroken")]
-	[Calls(Type = typeof(Collision), Member = "get_contacts")]
-	[Calls(Type = typeof(Component), Member = "CompareTag")]
-	[Calls(Type = typeof(Collision), Member = "get_contacts")]
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[Calls(Type = typeof(Collision), Member = "get_contacts")]
+	[Calls(Type = typeof(Component), Member = "CompareTag")]
+	[Calls(Type = typeof(BreakableIce), Member = "IsIceBroken")]
+	[Calls(Type = typeof(TorchItem), Member = "Extinguish")]
+	[Calls(Type = typeof(BaseAi), Member = "MaybeFleeFromThrownItem")]
+	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "NotifyAiAudioEvent")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 16)]
 	public void OnCollisionEnter(Collision collisionInfo)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "ReleaseThrownObject")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropToPlacementZone")]
+	[CalledBy(Type = typeof(TorchItem), Member = "PrepareForThrow")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Drop")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "DropToPlacementZone")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ReleaseThrownObject")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Utils), Member = "DisableRendering")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(TorchItem), Member = "PrepareForThrow")]
+	[CallsUnknownMethods(Count = 1)]
 	public void DisableRendering(int numFrames)
 	{
 	}
@@ -427,32 +413,32 @@ public class TorchItem : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void DestroyHeatSource()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "HideLightFromMesh")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void HideEffects(bool hide)
 	{
 	}
 
+	[CalledBy(Type = typeof(InputManager), Member = "ProcessFireAction")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
 	[Calls(Type = typeof(Wind), Member = "TooWindyForPlayerAction")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[CalledBy(Type = typeof(InputManager), Member = "ProcessFireAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
 	public void AttemptToLight()
 	{
@@ -463,68 +449,65 @@ public class TorchItem : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(TorchItem), Member = "GetModifiedBurnLifetimeMinutes")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TorchItem), Member = "GetModifiedBurnLifetimeMinutes")]
 	public float GetBurnProgress()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
 	private void UpdateTorchAudioPosition()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 31)]
 	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 16)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(Vector3), Member = "get_up")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 31)]
 	private void UpdateLightPosition()
 	{
 	}
 
-	[CalledBy(Type = typeof(GearManager), Member = "DestroyGearObject")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ConsumeUnitFromInventory")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "StopAudioForEquippedItem")]
-	[CalledBy(Type = typeof(TorchItem), Member = "OnDisable")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
-	[CalledBy(Type = typeof(TorchItem), Member = "StopLoopingAudio")]
 	[CalledBy(Type = typeof(TorchItem), Member = "Extinguish")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 7)]
+	[CalledBy(Type = typeof(TorchItem), Member = "StopLoopingAudio")]
 	[CalledBy(Type = typeof(TorchItem), Member = "OnDestroy")]
+	[CalledBy(Type = typeof(TorchItem), Member = "OnDisable")]
+	[CalledBy(Type = typeof(GearManager), Member = "DestroyGearObject")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "StopAudioForEquippedItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ConsumeUnitFromInventory")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void StopBurningAudioLoop()
 	{
 	}
 
 	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Utils), Member = "ExtinguishLitItem")]
-	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "ExtinguishLitItemInHands")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TurnLightOffImmediate")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "OnInventoryToContainer")]
-	[CalledBy(Type = typeof(TorchItem), Member = "OnDroppedInWater")]
 	[CalledBy(Type = typeof(TorchItem), Member = "OnCollisionEnter")]
-	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
-	[Calls(Type = typeof(TorchItem), Member = "StopBurningAudioLoop")]
-	[Calls(Type = typeof(TorchItem), Member = "MaybeEnableNavMeshObstacle")]
-	[Calls(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TorchItem), Member = "SetState")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(TorchItem), Member = "OnDroppedInWater")]
+	[CalledBy(Type = typeof(Panel_Container), Member = "OnInventoryToContainer")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TurnLightOffImmediate")]
+	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "ExtinguishLitItemInHands")]
+	[CalledBy(Type = typeof(Utils), Member = "ExtinguishLitItem")]
 	[CallerCount(Count = 9)]
-	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
+	[Calls(Type = typeof(TorchItem), Member = "StopBurningAudioLoop")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(TorchItem), Member = "SetState")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
+	[Calls(Type = typeof(TorchItem), Member = "MaybeEnableNavMeshObstacle")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	public void Extinguish(TorchState newState)
 	{
 	}
@@ -532,26 +515,25 @@ public class TorchItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsIgnitedFromFire()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(TorchItem), Member = "GetBurnProgress")]
-	[CalledBy(Type = typeof(TorchItem), Member = "Deserialize")]
-	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
-	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
-	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(TorchIntensity), Member = "Update")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnTakeTorch")]
+	[CalledBy(Type = typeof(TorchIntensity), Member = "Update")]
 	[CalledBy(Type = typeof(TorchItem), Member = "Start")]
+	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
+	[CalledBy(Type = typeof(TorchItem), Member = "Deserialize")]
+	[CalledBy(Type = typeof(TorchItem), Member = "GetBurnProgress")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnTakeTorch")]
+	[CallerCount(Count = 8)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public float GetModifiedBurnLifetimeMinutes()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(TorchItem), Member = "Extinguish")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TorchItem), Member = "Extinguish")]
 	public void OnDroppedInWater()
 	{
 	}
@@ -563,121 +545,119 @@ public class TorchItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ResumeLight")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PauseLight")]
-	[CalledBy(Type = typeof(TorchItem), Member = "Extinguish")]
-	[CalledBy(Type = typeof(TorchItem), Member = "ResumeLight")]
-	[CalledBy(Type = typeof(TorchItem), Member = "Ignite")]
-	[CalledBy(Type = typeof(TorchItem), Member = "Deserialize")]
-	[CalledBy(Type = typeof(TorchItem), Member = "PauseLight")]
-	[CalledBy(Type = typeof(TorchItem), Member = "Deserialize")]
 	[CalledBy(Type = typeof(TorchItem), Member = "Awake")]
-	[Calls(Type = typeof(GearItem), Member = "Degrade")]
-	[Calls(Type = typeof(TorchItem), Member = "GetGearItem")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 10)]
 	[CalledBy(Type = typeof(TorchItem), Member = "Deserialize")]
+	[CalledBy(Type = typeof(TorchItem), Member = "Ignite")]
+	[CalledBy(Type = typeof(TorchItem), Member = "PauseLight")]
+	[CalledBy(Type = typeof(TorchItem), Member = "ResumeLight")]
+	[CalledBy(Type = typeof(TorchItem), Member = "Extinguish")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PauseLight")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ResumeLight")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(TorchItem), Member = "GetGearItem")]
+	[Calls(Type = typeof(GearItem), Member = "Degrade")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void SetState(TorchState state)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Wind), Member = "IsPositionOccludedFromWind")]
 	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Wind), Member = "IsPositionOccludedFromWind")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 7)]
 	private bool ShouldBlowOut()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(FireManager), Member = "PointInInnerRadiusOfBurningFire")]
 	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(FireManager), Member = "PointInInnerRadiusOfBurningFire")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	private void MaybeAdjustHeatSource()
 	{
 	}
 
-	[CallerCount(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
 	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
 	[CalledBy(Type = typeof(TorchItem), Member = "CancelIgnite")]
 	[CalledBy(Type = typeof(TorchItem), Member = "StopLoopingAudio")]
 	[CalledBy(Type = typeof(TorchItem), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(TorchItem), Member = "OnDisable")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StopAudioForEquippedItem")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void StopIgniteLoop()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnEnable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(TorchItem), Member = "StopBurningAudioLoop")]
 	[Calls(Type = typeof(TorchItem), Member = "StopIgniteLoop")]
+	[Calls(Type = typeof(HashSet<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(TorchItem), Member = "StopBurningAudioLoop")]
 	[Calls(Type = typeof(TorchItem), Member = "StopIgniteLoop")]
+	[Calls(Type = typeof(HashSet<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
+	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
+	[CalledBy(Type = typeof(TorchItem), Member = "IgniteDelayed")]
 	[CalledBy(Type = typeof(TorchItem), Member = "ExtinguishDelayed")]
 	[CalledBy(Type = typeof(TorchItem), Member = "SetState")]
-	[CalledBy(Type = typeof(TorchItem), Member = "IgniteDelayed")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "TryGetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private GearItem GetGearItem()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 16)]
-	[CalledBy(Type = typeof(TorchItem), Member = "Extinguish")]
-	[CalledBy(Type = typeof(TorchItem), Member = "Ignite")]
+	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
 	[CalledBy(Type = typeof(TorchItem), Member = "Deserialize")]
-	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
-	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
-	[Calls(Type = typeof(MoveAgent), Member = "GetRadius")]
-	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
-	[Calls(Type = typeof(NavMeshObstacle), Member = "get_radius")]
-	[Calls(Type = typeof(Utils), Member = "DistanceSqr")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[CalledBy(Type = typeof(TorchItem), Member = "Ignite")]
+	[CalledBy(Type = typeof(TorchItem), Member = "Extinguish")]
 	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnTakeTorch")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Rigidbody), Member = "get_velocity")]
 	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
 	[Calls(Type = typeof(Rigidbody), Member = "get_isKinematic")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Utils), Member = "DistanceSqr")]
+	[Calls(Type = typeof(NavMeshObstacle), Member = "get_radius")]
+	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
+	[Calls(Type = typeof(MoveAgent), Member = "GetRadius")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 16)]
 	private void MaybeEnableNavMeshObstacle(bool enable)
 	{
 	}

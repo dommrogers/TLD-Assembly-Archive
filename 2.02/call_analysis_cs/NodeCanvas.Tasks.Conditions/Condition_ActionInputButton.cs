@@ -10,38 +10,38 @@ public class Condition_ActionInputButton : ConditionTask
 
 	public InputManager.InputState inputState;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(InputManager), Member = "AnyButtonsOrKeysPressed")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonUnpressed")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonUnpressed")]
+	[Calls(Type = typeof(InputManager), Member = "AnyButtonsOrKeysPressed")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonUnpressed")]
 	[Calls(Type = typeof(InputManager), Member = "AnyButtonsOrKeysPressed")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool Test()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void OnCustomEvent(EventData receivedEvent)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Condition_ActionInputButton()
 	{
 	}

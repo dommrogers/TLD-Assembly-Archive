@@ -42,23 +42,21 @@ public class PlayerClimbRope : MonoBehaviour
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(float);
+				return 0f;
 			}
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 279)]
+		[CallerCount(Count = 282)]
 		public OnOffTransitionInfo(PlayerClimbRope pcr)
 		{
 		}
 
+		[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdatePosition")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 		[Calls(Type = typeof(Mathf), Member = "LerpAngle")]
-		[Calls(Type = typeof(Mathf), Member = "LerpAngle")]
-		[Calls(Type = typeof(Mathf), Member = "LerpAngle")]
-		[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdatePosition")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 7)]
 		public Vector3 Update(Vector3 camPos, Vector3 splinePos, Vector3 splineTan, Vector3 splineNorm, float yaw, ref float roll, ref Vector2 viewAngles)
 		{
@@ -68,11 +66,11 @@ public class PlayerClimbRope : MonoBehaviour
 		[CallerCount(Count = 0)]
 		public bool IsComplete()
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	private sealed class _003CPutPlayerOnRopeAfterDeserialize_003Ed__125 : IDisposable, IEnumerator<object>, IEnumerator
+	private sealed class _003CPutPlayerOnRopeAfterDeserialize_003Ed__125 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -84,9 +82,9 @@ public class PlayerClimbRope : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 28)]
-			[DeduplicatedMethod]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -97,16 +95,16 @@ public class PlayerClimbRope : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
 			}
 		}
 
+		[DebuggerHidden]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[DebuggerHidden]
 		public _003CPutPlayerOnRopeAfterDeserialize_003Ed__125(int _003C_003E1__state)
 		{
 		}
@@ -119,13 +117,13 @@ public class PlayerClimbRope : MonoBehaviour
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+		[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 		[Calls(Type = typeof(PlayerClimbRope), Member = "BeginClimbing")]
 		[CallsUnknownMethods(Count = 1)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -388,7 +386,7 @@ public class PlayerClimbRope : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -397,11 +395,12 @@ public class PlayerClimbRope : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public string Serialize()
 	{
@@ -409,22 +408,22 @@ public class PlayerClimbRope : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
+	[IteratorStateMachine(typeof(_003CPutPlayerOnRopeAfterDeserialize_003Ed__125))]
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
-	[IteratorStateMachine(typeof(_003CPutPlayerOnRopeAfterDeserialize_003Ed__125))]
 	private IEnumerator PutPlayerOnRopeAfterDeserialize(PlayerClimbRopeProxy saveProxy)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(InputManager), Member = "GetPlayerMovement")]
@@ -432,56 +431,52 @@ public class PlayerClimbRope : MonoBehaviour
 	[Calls(Type = typeof(PlayerClimbRope), Member = "UpdateFatigue")]
 	[Calls(Type = typeof(PlayerClimbRope), Member = "UpdatePosition")]
 	[Calls(Type = typeof(PlayerClimbRope), Member = "MaybeSlipOrFall")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
 	[CallsUnknownMethods(Count = 2)]
 	public void UpdateClimbing()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(Spline), Member = "GetPositionOnSpline")]
-	[Calls(Type = typeof(Utils), Member = "NearestPointInfinite")]
-	[Calls(Type = typeof(Spring), Member = ".ctor")]
-	[Calls(Type = typeof(Spline), Member = "GetTangentToSpline")]
-	[Calls(Type = typeof(PlayerClimbRope), Member = "OnRopeTransition")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CalledBy(Type = typeof(RopeClimbPoint), Member = "PerformInteraction")]
 	[CalledBy(Type = typeof(_003CPutPlayerOnRopeAfterDeserialize_003Ed__125), Member = "MoveNext")]
-	[CallsUnknownMethods(Count = 55)]
-	[Calls(Type = typeof(Spring), Member = ".ctor")]
-	[Calls(Type = typeof(Spline), Member = "GetClosestPointParam")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[Calls(Type = typeof(Spline), Member = "GetTangentToSpline")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 38)]
 	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouch")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
 	[Calls(Type = typeof(PlayerManager), Member = "AutoUnequipItemInHandsBeforeInteraction")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[Calls(Type = typeof(PlayerClimbRope), Member = "EnablePhysicsHelper")]
 	[Calls(Type = typeof(PlayerManager), Member = "DisableCharacterController")]
 	[Calls(Type = typeof(PlayerClimbRope), Member = "FindLowestValidTOnSpline")]
 	[Calls(Type = typeof(Spline), Member = "GetPositionOnSpline")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
+	[Calls(Type = typeof(Spline), Member = "GetTangentToSpline")]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(Spline), Member = "GetClosestPointParam")]
+	[Calls(Type = typeof(Utils), Member = "NearestPointInfinite")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Spring), Member = ".ctor")]
+	[Calls(Type = typeof(PlayerClimbRope), Member = "OnRopeTransition")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 38)]
+	[CallsUnknownMethods(Count = 55)]
 	public void BeginClimbing(Rope r, float initialSplineT = -1f)
 	{
 	}
 
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "BeginClimbing")]
-	[Calls(Type = typeof(Spline), Member = "GetPositionInternal")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Spline), Member = "GetPositionOnSpline")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Spline), Member = "RecalculateParameter")]
+	[Calls(Type = typeof(Spline), Member = "GetPositionInternal")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private float FindLowestValidTOnSpline()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -490,62 +485,56 @@ public class PlayerClimbRope : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(RopeExitPoint), Member = "PerformInteraction")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetStickToGroundPosition")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetStickToGroundPosition")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 13)]
 	public void RequestExitToPoint(Rope r, RopeExitPoint rep)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 15)]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdatePosition")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetStickToGroundPosition")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Mathf), Member = "Repeat")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Mathf), Member = "Repeat")]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetStickToGroundPosition")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 15)]
 	public void RequestExitTopOrBottom(Transform camT)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "EndSlipHandling")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "HandleSlipStage")]
+	[CalledBy(Type = typeof(PlayerClimbRope), Member = "EndSlipHandling")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetStickToGroundPosition")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetStickToGroundPosition")]
+	[CallsUnknownMethods(Count = 9)]
 	public void RequestExitAfterFall(Transform camT)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdatePosition")]
-	[Calls(Type = typeof(PlayerManager), Member = "AutoEquipItemInHandsAfterInteraction")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerClimbRope), Member = "OnRopeTransition")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
+	[Calls(Type = typeof(PlayerManager), Member = "EnableCharacterController")]
+	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
 	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
 	[Calls(Type = typeof(FootStepSounds), Member = "MaybeLeaveFootPrint")]
-	[Calls(Type = typeof(PlayerManager), Member = "EnableCharacterController")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
-	[Calls(Type = typeof(PlayerClimbRope), Member = "OnRopeTransition")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "AutoEquipItemInHandsAfterInteraction")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
+	[CallsUnknownMethods(Count = 3)]
 	public void EndClimbing(Vector3 endPos, Quaternion endRot)
 	{
 	}
@@ -553,24 +542,24 @@ public class PlayerClimbRope : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsInOnOffTransition()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool FallingWithoutRecovery()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "EndClimbing")]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "BeginClimbing")]
+	[CalledBy(Type = typeof(PlayerClimbRope), Member = "EndClimbing")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
 	[Calls(Type = typeof(RopeLedge), Member = "OnRopeTransition")]
 	[Calls(Type = typeof(RopeClimbPoint), Member = "OnRopeTransition")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+	[CallsUnknownMethods(Count = 9)]
 	private void OnRopeTransition(bool onRope)
 	{
 	}
@@ -581,110 +570,82 @@ public class PlayerClimbRope : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(ODE), Member = "Update2")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(ODE3), Member = "Update2")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
-	[Calls(Type = typeof(PlayerClimbRope), Member = "RequestExitTopOrBottom")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(PlayerClimbRope), Member = "EndClimbing")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdateClimbing")]
-	[CallsUnknownMethods(Count = 22)]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Utils), Member = "ExpStep")]
-	[Calls(Type = typeof(Utils), Member = "ExpFilterWeight")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[CallsDeduplicatedMethods(Count = 21)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerClimbRope), Member = "HandleSlipStage")]
-	[Calls(Type = typeof(PlayerClimbRope), Member = "GetPositionOnRope")]
-	[Calls(Type = typeof(PlayerClimbRope), Member = "GetAdjustedViewAngles")]
 	[Calls(Type = typeof(PlayerClimbRope), Member = "GetPositionOnRope")]
 	[Calls(Type = typeof(PlayerClimbRope), Member = "GetAdjustedViewAngles")]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[Calls(Type = typeof(OnOffTransitionInfo), Member = "Update")]
 	[Calls(Type = typeof(Transform), Member = "get_rotation")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Utils), Member = "ExpFilterWeight")]
 	[Calls(Type = typeof(ODE), Member = "Update2")]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(Utils), Member = "ExpStep")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(ODE3), Member = "Update2")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
+	[Calls(Type = typeof(PlayerClimbRope), Member = "EndClimbing")]
+	[Calls(Type = typeof(PlayerClimbRope), Member = "RequestExitTopOrBottom")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CallsDeduplicatedMethods(Count = 21)]
+	[CallsUnknownMethods(Count = 22)]
 	private void UpdatePosition()
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "SlipBegin")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	private Vector3 GetSlipStageParams(int i, float baseT, float limitT, float scalar, float splineLen)
 	{
 		return default(Vector3);
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(PlayerManager), Member = "OnLandFromFall")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(PlayerClimbRope), Member = "EnablePhysicsHelper")]
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(Rigidbody), Member = "set_drag")]
-	[Calls(Type = typeof(RopeAnchorPoint), Member = "LookupAnchorPointFromRope")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RopeAnchorPoint), Member = "SnapRope")]
-	[Calls(Type = typeof(PlayerClimbRope), Member = "EnablePhysicsHelper")]
-	[Calls(Type = typeof(PlayerClimbRope), Member = "RequestExitAfterFall")]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdatePosition")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(PlayerClimbRope), Member = "StopSounds")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 15)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(PlayerClimbRope), Member = "EnablePhysicsHelper")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(Spline), Member = "GetClosestPointParam")]
 	[Calls(Type = typeof(Rigidbody), Member = "set_drag")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(PlayerClimbRope), Member = "StopSounds")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(PlayerClimbRope), Member = "StopSounds")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(PlayerManager), Member = "OnLandFromFall")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(RopeAnchorPoint), Member = "LookupAnchorPointFromRope")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(RopeAnchorPoint), Member = "SnapRope")]
+	[Calls(Type = typeof(PlayerClimbRope), Member = "RequestExitAfterFall")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 26)]
 	private void HandleSlipStage(out float swayOffset, out float pitchOffset, out float rollOffset)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref swayOffset) = null;
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref pitchOffset) = null;
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref rollOffset) = null;
+		swayOffset = default(float);
+		pitchOffset = default(float);
+		rollOffset = default(float);
 	}
 
+	[CalledBy(Type = typeof(PlayerClimbRope), Member = "HandleSlipStage")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "HandleSlipStage")]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "HandleSlipStage")]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "HandleSlipStage")]
 	private void StopSounds(ref uint voId, ref uint soundId)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerClimbRope), Member = "RequestExitAfterFall")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerClimbRope), Member = "EnablePhysicsHelper")]
+	[Calls(Type = typeof(PlayerClimbRope), Member = "RequestExitAfterFall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void EndSlipHandling()
 	{
 	}
@@ -695,87 +656,78 @@ public class PlayerClimbRope : MonoBehaviour
 		return default(ClimbingState);
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdatePosition")]
-	[Calls(Type = typeof(Spline), Member = "GetTangentToSpline")]
-	[Calls(Type = typeof(Utils), Member = "ExpStep")]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdatePosition")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Spline), Member = "GetTangentToSpline")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Spline), Member = "GetTangentToSpline")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[Calls(Type = typeof(Mathf), Member = "DeltaAngle")]
+	[Calls(Type = typeof(Utils), Member = "ExpStep")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 8)]
 	private bool GetAdjustedViewAngles(ref Vector2 viewAngles, out float rollScalar)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref rollScalar) = null;
-		return default(bool);
+		rollScalar = default(float);
+		return false;
 	}
 
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdatePosition")]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdatePosition")]
-	[Calls(Type = typeof(PlayerClimbRope), Member = "SlipBegin")]
-	[Calls(Type = typeof(PlayerClimbRope), Member = "MaybePlaceFootstep")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Spline), Member = "GetTangentToSpline")]
-	[Calls(Type = typeof(Spline), Member = "GetPositionOnSpline")]
-	[Calls(Type = typeof(Utils), Member = "ExpStep")]
-	[Calls(Type = typeof(Mathf), Member = "Repeat")]
-	[Calls(Type = typeof(PlayerClimbRope), Member = "SetClimbSpeed")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerClimbRope), Member = "SetClimbSpeed")]
+	[Calls(Type = typeof(Mathf), Member = "Repeat")]
+	[Calls(Type = typeof(Utils), Member = "ExpStep")]
+	[Calls(Type = typeof(Spline), Member = "GetPositionOnSpline")]
+	[Calls(Type = typeof(Spline), Member = "GetTangentToSpline")]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[Calls(Type = typeof(PlayerClimbRope), Member = "MaybePlaceFootstep")]
+	[Calls(Type = typeof(PlayerClimbRope), Member = "SlipBegin")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 12)]
 	private Vector3 GetPositionOnRope(bool allowMotion, out Vector3 splinePos, out Vector3 splineTan, out Vector3 splineNorm, out Vector3 splineLat, out float splinePitch, out float splineRoll)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref splinePos) = null;
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref splineTan) = null;
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref splineNorm) = null;
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref splineLat) = null;
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref splinePitch) = null;
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref splineRoll) = null;
+		splinePos = default(Vector3);
+		splineTan = default(Vector3);
+		splineNorm = default(Vector3);
+		splineLat = default(Vector3);
+		splinePitch = default(float);
+		splineRoll = default(float);
 		return default(Vector3);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "GetPositionOnRope")]
-	[Calls(Type = typeof(FootStepSounds), Member = "MaybeLeaveFootPrint")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(FootStepSounds), Member = "PlayFootStepSound")]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
 	[Calls(Type = typeof(FootStepSounds), Member = "PlayFootStepSound")]
+	[Calls(Type = typeof(FootStepSounds), Member = "MaybeLeaveFootPrint")]
+	[CallsUnknownMethods(Count = 1)]
 	private void MaybePlaceFootstep(float oldPhase, float newPhase, float splineT, Vector3 splinePos)
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdateClimbing")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(PlayerMovement), Member = "AddSprintStamina")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetNormalizedSprintReduction")]
-	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetNormalizedSprintReduction")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(PlayerMovement), Member = "AddSprintStamina")]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateStamina()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Fatigue), Member = "AddFatigue")]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdateClimbing")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Fatigue), Member = "AddFatigue")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	private void UpdateFatigue()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "GetPositionOnRope")]
 	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetClimbSpeed()
 	{
 	}
@@ -789,15 +741,12 @@ public class PlayerClimbRope : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdateClimbing")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	[Calls(Type = typeof(StatsManager), Member = "GetValue")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaybeSlipOrFall()
 	{
 	}
@@ -812,27 +761,26 @@ public class PlayerClimbRope : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "GetPositionOnRope")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
 	[Calls(Type = typeof(PlayerClimbRope), Member = "GetSlipStageParams")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void SlipBegin(float slipDistance)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "HandleSlipStage")]
-	[CallsUnknownMethods(Count = 6)]
+	[CalledBy(Type = typeof(PlayerClimbRope), Member = "BeginClimbing")]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "HandleSlipStage")]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "EndSlipHandling")]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "BeginClimbing")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "HandleSlipStage")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	private void EnablePhysicsHelper(bool isFalling)
 	{
 	}

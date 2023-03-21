@@ -63,71 +63,66 @@ public class NPCAfflictionButton : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(NPCAfflictionButton), Member = "SetSelected")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void OnClick()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CheckForAfflictionListChange")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CheckIfSelectedAfflictionHealed")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshScrollList")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PostTreatment")]
 	[CalledBy(Type = typeof(NPCAfflictionButton), Member = "OnClick")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "SelectNPCAffliction")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(NPCAfflictionButton), Member = "SetColor")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PostTreatment")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshScrollList")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CheckIfSelectedAfflictionHealed")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CheckForAfflictionListChange")]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(NPCAfflictionButton), Member = "SetColor")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetSelected(bool selected)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshScrollList")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
 	[Calls(Type = typeof(NPCAfflictionButton), Member = "GetColorBasedOnAffliction")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshScrollList")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 10)]
 	public void SetupAffliction(NPCAffliction affliction, Action<NPCAfflictionButton> onClickAction)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public NPCAffliction GetAffliction()
 	{
 		return null;
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(NPCAfflictionButton), Member = "SetupAffliction")]
 	[CalledBy(Type = typeof(NPCAfflictionButton), Member = "SetColor")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateBodyIconActiveAnimation")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateBodyIconColors")]
+	[CallerCount(Count = 4)]
 	public Color GetColorBasedOnAffliction(AfflictionType afflictionType, bool isHovering)
 	{
 		return default(Color);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
 	[CalledBy(Type = typeof(NPCAfflictionButton), Member = "SetSelected")]
-	[Calls(Type = typeof(NPCAfflictionButton), Member = "GetColorBasedOnAffliction")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NPCAfflictionButton), Member = "GetColorBasedOnAffliction")]
 	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetColor(bool isSelected)
 	{
 	}

@@ -13,7 +13,7 @@ public class ThirstSaveDataProxy
 	public bool m_SuppressVoiceOver;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ThirstSaveDataProxy()
 	{
 	}

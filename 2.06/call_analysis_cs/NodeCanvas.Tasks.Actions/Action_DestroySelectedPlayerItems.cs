@@ -37,12 +37,12 @@ public class Action_DestroySelectedPlayerItems : ActionTask
 		public List<VisibleClothingLayer> destroyLayerList;
 
 		[CalledBy(Type = typeof(Action_DestroySelectedPlayerItems), Member = "OnExecute")]
-		[CallsUnknownMethods(Count = 6)]
 		[CallerCount(Count = 1)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+		[CallsUnknownMethods(Count = 6)]
 		public bool IsClothingLayerToDestroy(ClothingLayer cl)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
@@ -66,39 +66,35 @@ public class Action_DestroySelectedPlayerItems : ActionTask
 
 	private GearType m_GearType;
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Action_DestroySelectedPlayerItems), Member = "OnExecute")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsUnknownMethods(Count = 2)]
 	private ClothingRegionInfo GetClothingRegionDestroyInfo(ClothingRegion region)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(GearItem), Member = "IsAnyGearType")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(Container), Member = "DestroyGear")]
-	[CallsUnknownMethods(Count = 37)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(GearItem), Member = "IsAnyGearType")]
-	[Calls(Type = typeof(Utils), Member = "GetGearItemsStoredInSceneByPlayer")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ClothingItem), Member = "IsWearing")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Action_DestroySelectedPlayerItems), Member = "GetClothingRegionDestroyInfo")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetClothingInSlot")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(ClothingRegionInfo), Member = "IsClothingLayerToDestroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Action_DestroySelectedPlayerItems), Member = "GetClothingRegionDestroyInfo")]
+	[Calls(Type = typeof(GearItem), Member = "IsAnyGearType")]
+	[Calls(Type = typeof(Utils), Member = "GetGearItemsStoredInSceneByPlayer")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Container), Member = "DestroyGear")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 37)]
 	protected override void OnExecute()
 	{
 	}

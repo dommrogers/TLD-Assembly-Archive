@@ -43,9 +43,9 @@ public sealed class TemporalAntialiasing
 
 	public Vector2 jitter
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		get
 		{
 			return default(Vector2);
@@ -65,7 +65,7 @@ public sealed class TemporalAntialiasing
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -75,24 +75,22 @@ public sealed class TemporalAntialiasing
 		}
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(RuntimeUtilities), Member = "IsTemporalAntialiasingActive")]
-	[CalledBy(Type = typeof(PostProcessRenderContext), Member = "IsTemporalAntialiasingActive")]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "SetLegacyCameraFlags")]
+	[CalledBy(Type = typeof(MaskedBlurEffectRenderer), Member = "Render")]
+	[CalledBy(Type = typeof(DepthOfFieldRenderer), Member = "Render")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "OnPostRender")]
+	[CalledBy(Type = typeof(PostProcessLayer), Member = "SetLegacyCameraFlags")]
+	[CalledBy(Type = typeof(PostProcessRenderContext), Member = "IsTemporalAntialiasingActive")]
+	[CalledBy(Type = typeof(RuntimeUtilities), Member = "IsTemporalAntialiasingActive")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(DepthOfFieldRenderer), Member = "Render")]
-	[CalledBy(Type = typeof(MaskedBlurEffectRenderer), Member = "Render")]
-	[CalledBy(Type = typeof(MaskedBlurEffectRenderer), Member = "Render")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(DepthOfFieldRenderer), Member = "Render")]
+	[CallsUnknownMethods(Count = 3)]
 	public bool IsSupported()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	internal DepthTextureMode GetCameraFlags()
 	{
 		return default(DepthTextureMode);
@@ -104,89 +102,80 @@ public sealed class TemporalAntialiasing
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "GetJitteredProjectionMatrix")]
 	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "ConfigureStereoJitteredProjectionMatrices")]
+	[CallerCount(Count = 2)]
 	private Vector2 GenerateRandomOffset()
 	{
 		return default(Vector2);
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "ConfigureJitteredProjectionMatrix")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(TemporalAntialiasing), Member = "GenerateRandomOffset")]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "GetJitteredOrthographicProjectionMatrix")]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "GetJitteredPerspectiveProjectionMatrix")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(TemporalAntialiasing), Member = "GenerateRandomOffset")]
+	[CallsUnknownMethods(Count = 4)]
 	public Matrix4x4 GetJitteredProjectionMatrix(Camera camera)
 	{
 		return default(Matrix4x4);
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(TemporalAntialiasing), Member = "GetJitteredProjectionMatrix")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(TemporalAntialiasing), Member = "GetJitteredProjectionMatrix")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	public void ConfigureJitteredProjectionMatrix(PostProcessRenderContext context)
 	{
 	}
 
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "GenerateJitteredProjectionMatrixFromOriginal")]
-	[Calls(Type = typeof(TemporalAntialiasing), Member = "GenerateRandomOffset")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(TemporalAntialiasing), Member = "GenerateRandomOffset")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "GenerateJitteredProjectionMatrixFromOriginal")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public void ConfigureStereoJitteredProjectionMatrices(PostProcessRenderContext context)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "CheckHistory")]
-	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "CheckHistory")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
 	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 2)]
 	private void GenerateHistoryName(RenderTexture rt, int id, PostProcessRenderContext context)
 	{
 	}
 
-	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "Render")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(TemporalAntialiasing), Member = "GenerateHistoryName")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "Render")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
 	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
-	[Calls(Type = typeof(Texture), Member = "set_filterMode")]
 	[Calls(Type = typeof(TemporalAntialiasing), Member = "GenerateHistoryName")]
+	[Calls(Type = typeof(Texture), Member = "set_filterMode")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 17)]
 	private RenderTexture CheckHistory(int id, PostProcessRenderContext context)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(TemporalAntialiasing), Member = "CheckHistory")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
 	[Calls(Type = typeof(TemporalAntialiasing), Member = "CheckHistory")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	internal void Render(PostProcessRenderContext context)
 	{
 	}

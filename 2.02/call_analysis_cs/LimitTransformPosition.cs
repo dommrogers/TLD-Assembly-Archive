@@ -21,16 +21,16 @@ public class LimitTransformPosition : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 16)]
 	private void LateUpdate()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public LimitTransformPosition()
 	{
 	}

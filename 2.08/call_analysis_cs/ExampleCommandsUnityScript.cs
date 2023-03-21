@@ -17,8 +17,8 @@ public class ExampleCommandsUnityScript : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public ExampleCommandsUnityScript()
 	{
 	}

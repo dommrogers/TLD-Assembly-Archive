@@ -17,8 +17,8 @@ public class MoveToPosition : ActionTask<NavMeshAgent>
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -27,26 +27,28 @@ public class MoveToPosition : ActionTask<NavMeshAgent>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 14)]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 11)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Vector3), Member = "op_Inequality")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 12)]
 	protected override void OnUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 6)]
 	protected override void OnStop()
 	{
 	}
@@ -59,8 +61,8 @@ public class MoveToPosition : ActionTask<NavMeshAgent>
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 2)]
 	public MoveToPosition()
 	{
 		((ActionTask<>)(object)this)._002Ector();

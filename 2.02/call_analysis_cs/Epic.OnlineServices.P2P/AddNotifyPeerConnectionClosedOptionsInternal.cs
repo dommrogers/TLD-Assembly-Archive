@@ -15,11 +15,11 @@ internal struct AddNotifyPeerConnectionClosedOptionsInternal : ISettable, IDispo
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(AddNotifyPeerConnectionClosedOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(AddNotifyPeerConnectionClosedOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(AddNotifyPeerConnectionClosedOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(AddNotifyPeerConnectionClosedOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -28,34 +28,34 @@ internal struct AddNotifyPeerConnectionClosedOptionsInternal : ISettable, IDispo
 	public SocketId SocketId
 	{
 		[CalledBy(Type = typeof(AddNotifyPeerConnectionClosedOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(SocketIdInternal), Member = "Set")]
 		[CalledBy(Type = typeof(AddNotifyPeerConnectionClosedOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(SocketIdInternal), Member = "Set")]
 		[CallsDeduplicatedMethods(Count = 4)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(AddNotifyPeerConnectionClosedOptionsInternal), Member = "set_SocketId")]
-	[Calls(Type = typeof(AddNotifyPeerConnectionClosedOptionsInternal), Member = "set_LocalUserId")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AddNotifyPeerConnectionClosedOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(AddNotifyPeerConnectionClosedOptionsInternal), Member = "set_SocketId")]
 	public void Set(AddNotifyPeerConnectionClosedOptions other)
 	{
 	}
 
+	[CalledBy(Type = typeof(P2PInterface), Member = "AddNotifyPeerConnectionClosed")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AddNotifyPeerConnectionClosedOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(AddNotifyPeerConnectionClosedOptionsInternal), Member = "set_SocketId")]
-	[CalledBy(Type = typeof(P2PInterface), Member = "AddNotifyPeerConnectionClosed")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

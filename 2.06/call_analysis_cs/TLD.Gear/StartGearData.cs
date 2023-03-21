@@ -18,53 +18,46 @@ public class StartGearData : ScriptableObject
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 58)]
+		[CallerCount(Count = 61)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 36)]
+		[CallerCount(Count = 38)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ClothingItem), Member = "PutOn")]
 	[CalledBy(Type = typeof(StartGear), Member = "AddAllToInventory")]
-	[CallsUnknownMethods(Count = 22)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(LootTableData), Member = "GetRandomGearItemPrefab")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(LootTableData), Member = "GetRandomGearItemPrefab")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ClothingItem), Member = "PutOn")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[CallsDeduplicatedMethods(Count = 14)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(ClothingItem), Member = "PutOn")]
+	[Calls(Type = typeof(LootTableData), Member = "GetRandomGearItemPrefab")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 22)]
 	public void AddStartingGearToPlayer(PlayerManager playerManager, Action<List<GearItem>> onItemsAddedCallback = null)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Awake()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public StartGearData()
 	{
 	}

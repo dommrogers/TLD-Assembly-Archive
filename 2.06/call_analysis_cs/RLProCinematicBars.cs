@@ -10,8 +10,8 @@ public sealed class RLProCinematicBars : PostProcessEffectSettings
 	public FloatParameter fade;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 11)]
 	public RLProCinematicBars()
 	{

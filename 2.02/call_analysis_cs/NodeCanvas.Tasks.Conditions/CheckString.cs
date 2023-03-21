@@ -12,8 +12,8 @@ public class CheckString : ConditionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -21,12 +21,13 @@ public class CheckString : ConditionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

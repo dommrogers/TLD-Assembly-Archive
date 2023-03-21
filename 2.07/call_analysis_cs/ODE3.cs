@@ -28,10 +28,10 @@ public class ODE3
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdatePosition")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Update2(float dt)
 	{
 	}

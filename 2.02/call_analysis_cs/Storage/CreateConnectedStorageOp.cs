@@ -17,20 +17,20 @@ public class CreateConnectedStorageOp : AsyncOp<CreateConnectedStorageOp>
 	public string DefaultContainerName;
 
 	[CalledBy(Type = typeof(ConnectedStorage), Member = "CreateAsync")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public CreateConnectedStorageOp(ConnectedStorageInitializedCallback callback, int uid, string defaultContainerName)
 	{
 		((AsyncOp<>)(object)this)._002Ector();
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(ConnectedStorage), Member = "InitializedThunk")]
-	[Calls(Type = typeof(ConnectedStorage), Member = "OpenOrCreateContainer")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(ConnectedStorage), Member = ".ctor")]
+	[Calls(Type = typeof(ConnectedStorage), Member = "OpenOrCreateContainer")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	public void Complete(uint result, IntPtr self)
 	{
 	}

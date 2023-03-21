@@ -13,16 +13,16 @@ public class ParticleStopper : MonoBehaviour
 	private Action m_OnStopCompletedAction;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(ParticleSystem), Member = "Stop")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void StopWithCallback(Action onStopCompleted)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnParticleSystemStopped()
 	{
 	}

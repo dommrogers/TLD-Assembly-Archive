@@ -19,15 +19,15 @@ public class ConsumeInventoryItemResult : IWrappedObject, IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
 	public Uri ConsumableUrl
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedUri")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -37,18 +37,18 @@ public class ConsumeInventoryItemResult : IWrappedObject, IDisposable
 
 	public string TransactionId
 	{
-		[CallsUnknownMethods(Count = 7)]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public ConsumeInventoryItemResult(IntPtr self)
 	{
 	}
@@ -66,10 +66,10 @@ public class ConsumeInventoryItemResult : IWrappedObject, IDisposable
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 52)]
+	[CallerCount(Count = 59)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]

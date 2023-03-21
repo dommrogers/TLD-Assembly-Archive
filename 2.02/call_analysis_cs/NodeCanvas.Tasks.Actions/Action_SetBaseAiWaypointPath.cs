@@ -17,15 +17,16 @@ public class Action_SetBaseAiWaypointPath : TLD_Action
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TLD_Action), Member = "get_agent")]
 	[CalledBy(Type = typeof(Action_SetBaseAiWaypointPath), Member = "OnExecute")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(TLD_Action), Member = "get_agent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	private void DoWork()
 	{
 	}

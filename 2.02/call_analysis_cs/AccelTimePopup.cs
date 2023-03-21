@@ -96,164 +96,76 @@ public class AccelTimePopup : MonoBehaviour
 	private bool m_IsPassTimeUISuppressed;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(AccelTimePopup), Member = "SetActive")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AccelTimePopup), Member = "SetActive")]
 	private void ForceDisable()
 	{
 	}
 
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AccelTimePopup), Member = "SetActive")]
 	[Calls(Type = typeof(AccelTimePopup), Member = "IsLabelMessageActive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "IsHarvesting")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsUnknownMethods(Count = 388)]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(PassTime), Member = "IsPassingTime")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "IsRotating")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "IsRepairing")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "IsSharpening")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "IsReading")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_timeofday_display")]
-	[CalledBy(Type = typeof(AccelTimePopup), Member = "Update")]
 	[CalledBy(Type = typeof(AccelTimePopup), Member = "ForceDisable")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "get_text")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "IsCleaning")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "IsDismantling")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "CanUserCancelAction")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(InterfaceManager), Member = "SetTimeWidgetActive")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UIWidget), Member = "get_color")]
-	[Calls(Type = typeof(CameraFade), Member = "GetTargetAlpha")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOff")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIPanel), Member = "set_depth")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CallsDeduplicatedMethods(Count = 24)]
+	[CalledBy(Type = typeof(AccelTimePopup), Member = "Update")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_timeofday_display")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UIPanel), Member = "set_depth")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOff")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(CameraFade), Member = "GetTargetAlpha")]
+	[Calls(Type = typeof(UIWidget), Member = "get_color")]
+	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(InterfaceManager), Member = "InitializeAndActivateTimeWidget")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(InterfaceManager), Member = "SetTimeWidgetActive")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "CanUserCancelAction")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "IsCrafting")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(AccelTimePopup), Member = "HarvestInProgress")]
 	[Calls(Type = typeof(Panel_Repair), Member = "RepairInProgress")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "IsCrafting")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "IsDismantling")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "IsRotating")]
+	[Calls(Type = typeof(PassTime), Member = "IsPassingTime")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "IsHarvesting")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "IsRepairing")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "IsCleaning")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "IsSharpening")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "IsReading")]
+	[Calls(Type = typeof(UILabel), Member = "get_text")]
+	[CallsDeduplicatedMethods(Count = 20)]
+	[CallsUnknownMethods(Count = 307)]
 	public void SetActive(bool active, bool fadeIn)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "ProgressBarEnded")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnCancel()
 	{
@@ -263,39 +175,39 @@ public class AccelTimePopup : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetLabelMessageLocIdAndDuration(string localizationId, float duration, float fadeduration, float delay)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Rest.PassTimeHelper), Member = "OnSleepEnd")]
 	[CalledBy(Type = typeof(Action_PassTime), Member = "OnUpdate")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	public void EnableLabelMessage(bool enabled)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Action_PassTime), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Rest.PassTimeHelper), Member = "PassTime")]
 	[CalledBy(Type = typeof(AccelTimePopup), Member = "Update")]
+	[CalledBy(Type = typeof(Action_PassTime), Member = "OnExecute")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(Rest.PassTimeHelper), Member = "PassTime")]
+	[CallsUnknownMethods(Count = 4)]
 	public bool IsLabelMessageActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -307,17 +219,17 @@ public class AccelTimePopup : MonoBehaviour
 	[CallerCount(Count = 1)]
 	public bool IsPassTimeUISuppressed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_Harvest), Member = "HarvestInProgress")]
 	[CalledBy(Type = typeof(AccelTimePopup), Member = "SetActive")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Harvest), Member = "HarvestInProgress")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool HarvestInProgress()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

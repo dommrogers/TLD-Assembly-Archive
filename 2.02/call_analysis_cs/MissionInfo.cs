@@ -25,9 +25,9 @@ public class MissionInfo : MonoBehaviour
 
 	public string m_Icon;
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public MissionInfo()
 	{
 	}

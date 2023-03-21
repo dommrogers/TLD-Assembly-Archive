@@ -6,8 +6,8 @@ public class PlayableAssetChangeTOD : PlayableAsset
 {
 	public PlayableBehaviourChangeTOD m_Settings;
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptPlayable<>), Member = "Create")]
 	[CallsUnknownMethods(Count = 1)]
 	public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
 	{

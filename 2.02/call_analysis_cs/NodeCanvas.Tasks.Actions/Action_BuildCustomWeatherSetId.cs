@@ -11,11 +11,12 @@ public class Action_BuildCustomWeatherSetId : ActionTask
 	public string customSetVarName;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(string), Member = "StartsWith")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Variable<>), Member = "set_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 8)]
 	protected override void OnExecute()
 	{

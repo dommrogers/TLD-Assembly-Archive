@@ -17,11 +17,11 @@ internal struct CopyExternalUserInfoByIndexOptionsInternal : ISettable, IDisposa
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(CopyExternalUserInfoByIndexOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyExternalUserInfoByIndexOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyExternalUserInfoByIndexOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyExternalUserInfoByIndexOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -30,9 +30,9 @@ internal struct CopyExternalUserInfoByIndexOptionsInternal : ISettable, IDisposa
 	public EpicAccountId TargetUserId
 	{
 		[CalledBy(Type = typeof(CopyExternalUserInfoByIndexOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(CopyExternalUserInfoByIndexOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -55,17 +55,17 @@ internal struct CopyExternalUserInfoByIndexOptionsInternal : ISettable, IDisposa
 	{
 	}
 
-	[Calls(Type = typeof(CopyExternalUserInfoByIndexOptionsInternal), Member = "set_TargetUserId")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(CopyExternalUserInfoByIndexOptionsInternal), Member = "set_LocalUserId")]
 	[CalledBy(Type = typeof(UserInfoInterface), Member = "CopyExternalUserInfoByIndex")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CopyExternalUserInfoByIndexOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(CopyExternalUserInfoByIndexOptionsInternal), Member = "set_TargetUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

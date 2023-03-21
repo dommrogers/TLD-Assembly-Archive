@@ -14,10 +14,10 @@ public class Action_TrackStat : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -25,41 +25,41 @@ public class Action_TrackStat : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
 	[CallsUnknownMethods(Count = 16)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Delegate), Member = "Remove")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
 	[CallsUnknownMethods(Count = 16)]
 	protected override void OnStop()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BBParameter), Member = "get_isNull")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
+	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
+	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnIncrementStat(StatID id, float amount)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(BBParameter), Member = "get_isNull")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
 	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
 	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnSetStat(StatID id, float previous, float current)
 	{
 	}

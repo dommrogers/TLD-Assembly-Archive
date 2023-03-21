@@ -1,3 +1,4 @@
+using System;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -18,18 +19,18 @@ public class Notification
 	public CustomNotificationType m_CustomNotificationType;
 
 	[CalledBy(Type = typeof(Notifications), Member = "LoadNotifications")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public Notification(Notifications.Data d)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(Notifications), Member = "LoadNotifications")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Enum), Member = "TryParse")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public Notification(WebNotification wn)
 	{

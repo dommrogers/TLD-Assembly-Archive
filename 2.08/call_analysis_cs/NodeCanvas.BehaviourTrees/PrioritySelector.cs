@@ -19,23 +19,26 @@ public class PrioritySelector : BTComposite
 	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
 	[Calls(Type = typeof(BBParameter), Member = "ResolveReference")]
 	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[CallsUnknownMethods(Count = 2)]
 	public override void OnChildConnected(int index)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnChildDisconnected(int index)
 	{
 	}
 
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
+	[Calls(Type = typeof(Func<, >), Member = ".ctor")]
+	[Calls(Type = typeof(Enumerable), Member = "OrderBy")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
@@ -47,8 +50,8 @@ public class PrioritySelector : BTComposite
 	{
 	}
 
-	[Calls(Type = typeof(Node), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Node), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public PrioritySelector()

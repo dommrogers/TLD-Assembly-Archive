@@ -11,8 +11,8 @@ public class SubtitlesRequestInfo
 
 	public Action Continue;
 
-	[CallerCount(Count = 54)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 54)]
 	public SubtitlesRequestInfo(IDialogueActor actor, IStatement statement, Action callback)
 	{
 	}

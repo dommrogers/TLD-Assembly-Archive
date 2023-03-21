@@ -63,78 +63,87 @@ public class Campfire : FireplaceInteraction
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(FireplaceInteraction), Member = "Awake")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(FireManager), Member = "AddCampfire")]
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 13)]
+	[Calls(Type = typeof(FireManager), Member = "AddCampfire")]
 	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 21)]
 	protected override void Start()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "IsChildOf")]
-	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowKeyNotFoundException")]
-	[CallsUnknownMethods(Count = 32)]
-	[Calls(Type = typeof(ObjectGuid), Member = "MaybeRuntimeRegister")]
-	[Calls(Type = typeof(Physics), Member = "RaycastNonAlloc")]
-	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 14)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Physics), Member = "RaycastNonAlloc")]
+	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[Calls(Type = typeof(Transform), Member = "IsChildOf")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(ObjectGuid), Member = "MaybeRuntimeRegister")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowKeyNotFoundException")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 31)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Fire), Member = "Serialize")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[CallsUnknownMethods(Count = 20)]
 	[CalledBy(Type = typeof(Fire), Member = "Deserialize")]
-	[Calls(Type = typeof(Campfire), Member = "SetState")]
-	[Calls(Type = typeof(PdidTable), Member = "RuntimeUnregister")]
-	[Calls(Type = typeof(PdidTable), Member = "RuntimeRegister")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(PdidTable), Member = "RuntimeUnregister")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(PdidTable), Member = "RuntimeRegister")]
+	[Calls(Type = typeof(Campfire), Member = "SetState")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 20)]
 	public void Deserialize(string text)
 	{
 	}
@@ -142,79 +151,73 @@ public class Campfire : FireplaceInteraction
 	[CallerCount(Count = 0)]
 	public bool AreAnyRockOffsetsInvalid()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Campfire), Member = "Deserialize")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetState(CampfireState state)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Wind), Member = "IsPositionOccludedFromWind")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public override bool TooWindyToStart()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_layer")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_layer")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 9)]
 	public void OnEnteredPlaceMesh()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 7)]
 	public void OnExitedPlaceMesh()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(FireplaceInteraction), Member = "AttemptToFeedFire")]
-	[Calls(Type = typeof(FireplaceInteraction), Member = "AttemptToStartFire")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(FireplaceInteraction), Member = "AttemptToStartFire")]
+	[Calls(Type = typeof(FireplaceInteraction), Member = "AttemptToFeedFire")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void PerformFireplaceInteraction()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(FireplaceInteraction), Member = "GetHoverText")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(FireplaceInteraction), Member = "GetHoverText")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 1)]
 	public override string GetHoverText()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(BaseInteraction), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public Campfire()
 	{

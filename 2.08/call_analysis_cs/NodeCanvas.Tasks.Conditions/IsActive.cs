@@ -11,7 +11,7 @@ public class IsActive : ConditionTask<Transform>
 	[CallsUnknownMethods(Count = 3)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

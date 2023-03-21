@@ -16,63 +16,63 @@ public class WaterSourceManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void DisableAll()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(WaterSource), Member = "Serialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(WaterSource), Member = "Serialize")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 9)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallsUnknownMethods(Count = 14)]
 	public static string Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(WaterSource), Member = "Deserialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(WaterSourceManager), Member = "FindWaterSourceByPosition")]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 7)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(WaterSourceManager), Member = "FindWaterSourceByPosition")]
+	[Calls(Type = typeof(WaterSource), Member = "Deserialize")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public static void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(WaterSourceManager), Member = "Deserialize")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private static WaterSource FindWaterSourceByPosition(WaterSourceSaveData wsd)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	private static WaterSource FindWaterSourceByGuid(string guid)
 	{
 		return null;

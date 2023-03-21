@@ -13,16 +13,16 @@ public class QueryFileCallbackInfo : ICallbackInfo, ISettable
 
 	public Result ResultCode
 	{
-		[CallerCount(Count = 7)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return default(Result);
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		private set
 		{
 		}
@@ -32,14 +32,14 @@ public class QueryFileCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -49,46 +49,46 @@ public class QueryFileCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Result? GetResultCode()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(QueryFileCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(QueryFileCallbackInfoInternal), Member = "get_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	internal void Set(QueryFileCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(QueryFileCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(QueryFileCallbackInfoInternal), Member = "get_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public QueryFileCallbackInfo()
 	{
 	}

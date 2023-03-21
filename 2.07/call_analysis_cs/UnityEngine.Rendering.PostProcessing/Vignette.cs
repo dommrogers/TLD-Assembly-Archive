@@ -24,17 +24,17 @@ public sealed class Vignette : PostProcessEffectSettings
 
 	public FloatParameter opacity;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public override bool IsEnabledAndSupported(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 1)]
 	public Vignette()
 	{
 	}

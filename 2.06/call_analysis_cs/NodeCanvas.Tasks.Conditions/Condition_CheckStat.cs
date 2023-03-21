@@ -21,8 +21,8 @@ public class Condition_CheckStat : ConditionTask
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Enum), Member = "ToString")]
 		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
+		[Calls(Type = typeof(float), Member = "ToString")]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -33,7 +33,7 @@ public class Condition_CheckStat : ConditionTask
 	[Calls(Type = typeof(StatsManager), Member = "GetValue")]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

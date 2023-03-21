@@ -18,28 +18,28 @@ public class ClimbingBuff : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsActive(PlayerManager playerManager)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetSprainRollOddsModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetStaminaModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public float GetWeakIceTimeSecondsModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

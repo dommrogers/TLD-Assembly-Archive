@@ -27,10 +27,10 @@ internal struct LinkAccountCallbackInfoInternal : ICallbackInfoInternal
 
 	public object ClientData
 	{
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(LinkAccountCallbackInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -39,19 +39,20 @@ internal struct LinkAccountCallbackInfoInternal : ICallbackInfoInternal
 
 	public IntPtr ClientDataAddress
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public EpicAccountId LocalUserId
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(LinkAccountCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -61,8 +62,9 @@ internal struct LinkAccountCallbackInfoInternal : ICallbackInfoInternal
 	public PinGrantInfo PinGrantInfo
 	{
 		[CalledBy(Type = typeof(LinkAccountCallbackInfo), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;

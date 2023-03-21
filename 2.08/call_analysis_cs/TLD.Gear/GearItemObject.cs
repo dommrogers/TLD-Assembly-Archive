@@ -9,27 +9,25 @@ public struct GearItemObject
 
 	public readonly string m_GearItemName;
 
-	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
-	[CalledBy(Type = typeof(Container), Member = "InstantiateGearPrefabInContainer")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
-	[CalledBy(Type = typeof(Container), Member = "AddGear")]
-	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(Utils), Member = "SanitizePrefabName")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(CraftingRequirementTool), Member = "Enable")]
+	[CalledBy(Type = typeof(Container), Member = "AddGear")]
+	[CalledBy(Type = typeof(Container), Member = "InstantiateGearPrefabInContainer")]
+	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Utils), Member = "SanitizePrefabName")]
+	[CallsUnknownMethods(Count = 1)]
 	public GearItemObject(GearItem gearItem)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Inventory), Member = "QuickSelectionHandleInventoryItemRemoval")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "RefreshTools")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "RefreshTools")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_BreakDown), Member = "RefreshTools")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "RefreshTools")]
+	[CalledBy(Type = typeof(Inventory), Member = "QuickSelectionHandleInventoryItemRemoval")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 2)]
 	public static implicit operator GameObject(GearItemObject gearItemObject)
 	{
 		return null;

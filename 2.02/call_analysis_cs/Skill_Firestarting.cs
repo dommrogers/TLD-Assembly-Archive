@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 
@@ -14,8 +13,8 @@ public class Skill_Firestarting : Skill
 
 	private static Skill_FirestartingSaveData m_Skill_FirestartingSaveData;
 
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
@@ -23,11 +22,12 @@ public class Skill_Firestarting : Skill
 		return null;
 	}
 
-	[Calls(Type = typeof(Feat_FireMaster), Member = "MaybeUpdateFireStartingSkillLevel")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Skill), Member = "SetPoints")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(Skill), Member = "SetPoints")]
+	[Calls(Type = typeof(Feat_FireMaster), Member = "MaybeUpdateFireStartingSkillLevel")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Deserialize(string text)
 	{
 	}
@@ -38,42 +38,35 @@ public class Skill_Firestarting : Skill
 	[CallsUnknownMethods(Count = 3)]
 	public int GetBaseChanceSuccess()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[CallsUnknownMethods(Count = 3)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[CallsUnknownMethods(Count = 3)]
 	public float GetDurationScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public float GetStartTimeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 16)]
 	public override string GetTierBenefits(int index)
 	{
 		return null;
@@ -83,12 +76,12 @@ public class Skill_Firestarting : Skill
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	public bool TinderRequired()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Skill), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Skill_Firestarting()
 	{
 	}

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -15,8 +16,8 @@ public class FindObjectsOfType<T> : ActionTask where T : Component
 
 		public static Func<T, GameObject> _003C_003E9__2_0;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec()
 		{
 		}
@@ -36,15 +37,17 @@ public class FindObjectsOfType<T> : ActionTask where T : Component
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(Enumerable), Member = "ToList")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 15)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 13)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public FindObjectsOfType()
 	{
 	}

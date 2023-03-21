@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -15,21 +14,23 @@ public class Condition_InsideMissionTrigger : ConditionTask
 
 	public MissionTriggerType triggerType;
 
-	[CallsUnknownMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "IsMissionObjectInMissionTrigger")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "IsPlayerInMissionTrigger")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 5)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsUnknownMethods(Count = 11)]
 	public Condition_InsideMissionTrigger()
 	{
 	}

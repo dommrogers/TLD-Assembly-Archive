@@ -108,28 +108,27 @@ public class NPC_Animation : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NPC_Animation), Member = "Update_VOPlaying")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(NPC_Animation), Member = "RequestVO")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NPC_Animation), Member = "SetAnimationParameter_IdleVariationIndex")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(NPC_Animation), Member = "Update_VOPlaying")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(NPC_Animation), Member = "RequestVO")]
+	[CallsUnknownMethods(Count = 6)]
 	public void Update()
 	{
 	}
@@ -143,25 +142,25 @@ public class NPC_Animation : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsNotSpeaking()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(NPC_Animation), Member = "SetAnimationParameter_IdleVariationIndex")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NPC_Animation), Member = "SetAnimationParameter_IdleVariationIndex")]
 	public void RestoreIdleIndex()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update_None()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 3)]
 	private string RollLocId()
 	{
@@ -169,59 +168,57 @@ public class NPC_Animation : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NPC_Animation), Member = "SetAnimationParameter_IdleVariationIndex")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void RollCurrentIdleVariation()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
 	[CalledBy(Type = typeof(NPC_Animation), Member = "Update")]
 	[CalledBy(Type = typeof(NPC_Animation), Member = "Update_RequestRandomVO")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(string), Member = "SplitInternal")]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayVoiceWithPositionTracking")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetDefaultStateNameForDialogueLineFromLocId")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetDefaultAudioStartForDialogueLineFromLocId")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Animator), Member = "StringToHash")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "DisplaySubtitleText")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
 	[Calls(Type = typeof(Debug), Member = "LogFormat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayVoiceWithPositionTracking")]
+	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
+	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 20)]
 	private void RequestVO(string requestedLocId)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[Calls(Type = typeof(NPC_Animation), Member = "RequestVO")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update_RequestRandomVO()
 	{
 	}
 
 	[CalledBy(Type = typeof(NPC_Animation), Member = "Update")]
-	[Calls(Type = typeof(NPC_Animation), Member = "ReturnToIdleAnimation")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(CinematicManager), Member = "TryGetTimeFromAudio")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
+	[Calls(Type = typeof(CinematicManager), Member = "TryGetTimeFromAudio")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
+	[Calls(Type = typeof(NPC_Animation), Member = "ReturnToIdleAnimation")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update_VOPlaying()
 	{
 	}
@@ -234,12 +231,12 @@ public class NPC_Animation : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private float GetOnGoingStateDuration()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -248,64 +245,62 @@ public class NPC_Animation : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	private float ComputeSubtitleDurationInSeconds(string text)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(AnimationUtils), Member = "HasParameter")]
 	[CalledBy(Type = typeof(NPC_Animation), Member = "Update_VOPlaying")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Animator), Member = "StringToHash")]
+	[Calls(Type = typeof(AnimationUtils), Member = "HasParameter")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void ReturnToIdleAnimation()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(NPC_Animation), Member = "LateUpdate")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(PlayEventMonitor), Member = "TryGetPlayingStateId")]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
-	[Calls(Type = typeof(Animator), Member = "PlayInFixedTime")]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
-	[Calls(Type = typeof(Animator), Member = "PlayInFixedTime")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Animator), Member = "PlayInFixedTime")]
+	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
+	[Calls(Type = typeof(PlayEventMonitor), Member = "TryGetPlayingStateId")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private void LateSynchronizeAnimators(float currentTime, int stateHash)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayEventMonitor), Member = "TryGetPlayingStateId")]
 	[Calls(Type = typeof(Animator), Member = "PlayInFixedTime")]
+	[CallsUnknownMethods(Count = 1)]
 	private void SynchronizePropAnimation(Animator animator, PlayEventMonitor playEventMonitor, float currentTime)
 	{
 	}
 
-	[CalledBy(Type = typeof(NPC_Animation), Member = "RestoreIdleIndex")]
-	[CalledBy(Type = typeof(NPC_Animation), Member = "Update")]
-	[CalledBy(Type = typeof(NPC_Animation), Member = "MaybeChangeVariationIdle")]
-	[CalledBy(Type = typeof(NPC_Animation), Member = "RollCurrentIdleVariation")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
-	[Calls(Type = typeof(AnimationUtils), Member = "HasParameter")]
-	[Calls(Type = typeof(AnimationUtils), Member = "HasParameter")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateEnd")]
+	[CalledBy(Type = typeof(NPC_Animation), Member = "Update")]
+	[CalledBy(Type = typeof(NPC_Animation), Member = "RestoreIdleIndex")]
+	[CalledBy(Type = typeof(NPC_Animation), Member = "RollCurrentIdleVariation")]
+	[CalledBy(Type = typeof(NPC_Animation), Member = "MaybeChangeVariationIdle")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(AnimationUtils), Member = "HasParameter")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void SetAnimationParameter_IdleVariationIndex(int idleVariationIndex)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NPC_Animation), Member = "SetAnimationParameter_IdleVariationIndex")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaybeChangeVariationIdle()
 	{
 	}

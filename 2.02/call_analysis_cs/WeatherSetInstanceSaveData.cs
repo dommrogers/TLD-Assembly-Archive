@@ -11,7 +11,7 @@ public class WeatherSetInstanceSaveData
 	public float[] m_StageTransitionTimes;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public WeatherSetInstanceSaveData()
 	{
 	}

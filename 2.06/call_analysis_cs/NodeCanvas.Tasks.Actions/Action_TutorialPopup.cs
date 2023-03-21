@@ -13,22 +13,22 @@ public class Action_TutorialPopup : ActionTask
 	private bool m_PreviousUseHudPopupValue;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(Panel_TutorialPopup), Member = "ShowTutorialPopupRequest")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnUpdate()
 	{
 	}

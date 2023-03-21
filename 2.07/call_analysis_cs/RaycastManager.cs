@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Cpp2ILInjected.CallAnalysis;
 using Unity.Collections;
+using Unity.Jobs.LowLevel.Unsafe;
 using UnityEngine;
 
 public class RaycastManager : MonoBehaviour
@@ -44,32 +45,31 @@ public class RaycastManager : MonoBehaviour
 
 	private static int s_AveragePendingJobsPerSecondSamples;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsUnknownMethods(Count = 2)]
 	private static void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnDestroy()
 	{
 	}
 
-	[Calls(Type = typeof(RaycastManager), Member = "CompletePendingRaycasts")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(RaycastManager), Member = "CompletePendingRaycasts")]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(RaycastManager), Member = "RequestAsyncRaycast_Internal")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(RaycastManager), Member = "GetInstance")]
+	[Calls(Type = typeof(RaycastManager), Member = "RequestAsyncRaycast_Internal")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void RequestAsyncRaycast(Vector3 origin, Vector3 direction, float range, int layer, Action<RaycastHit> onJobCompleted)
 	{
 	}
@@ -103,32 +103,33 @@ public class RaycastManager : MonoBehaviour
 
 	[CalledBy(Type = typeof(RaycastManager), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(BatchQueryJobStruct<>), Member = "Initialize")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 10)]
 	private void CompletePendingRaycasts()
 	{
 	}
 
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MaybePlaceFootstep")]
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(BaseAi), Member = "PlaceFootPrintDecal")]
 	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "MaybeLeaveScorchMarkOnGround")]
 	[CalledBy(Type = typeof(RaycastManager), Member = "RequestAsyncRaycast")]
-	[CalledBy(Type = typeof(BaseAi), Member = "PlaceFootPrintDecal")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MaybePlaceFootstep")]
 	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void RequestAsyncRaycast_Internal(Vector3 origin, Vector3 direction, float range, int layer, Action<RaycastHit> onJobCompleted)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MaybePlaceFootstep")]
-	[CalledBy(Type = typeof(RaycastManager), Member = "RequestAsyncRaycast")]
-	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "MaybeLeaveScorchMarkOnGround")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MaybePlaceFootstep")]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(BaseAi), Member = "PlaceFootPrintDecal")]
+	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "MaybeLeaveScorchMarkOnGround")]
+	[CalledBy(Type = typeof(RaycastManager), Member = "RequestAsyncRaycast")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MaybePlaceFootstep")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private static RaycastManager GetInstance()
 	{
 		return null;

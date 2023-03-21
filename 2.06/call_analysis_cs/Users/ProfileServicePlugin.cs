@@ -8,9 +8,9 @@ namespace Users;
 public class ProfileServicePlugin
 {
 	[PreserveSig]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public static extern bool ProfileService_GetUserProfileAsync(int requestingUserId, string xboxUserId, ObjectResultCallback callback, IntPtr userData);
 
 	[PreserveSig]

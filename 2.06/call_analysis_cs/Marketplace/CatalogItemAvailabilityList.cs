@@ -10,13 +10,13 @@ public class CatalogItemAvailabilityList : WrappedCachedList<CatalogItemAvailabi
 	[CallsDeduplicatedMethods(Count = 1)]
 	public CatalogItemAvailabilityList(IntPtr self)
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
 	public CatalogItemAvailabilityList()
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
@@ -34,9 +34,9 @@ public class CatalogItemAvailabilityList : WrappedCachedList<CatalogItemAvailabi
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void SetupLength()
 	{
 	}

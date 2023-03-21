@@ -10,7 +10,7 @@ public class Action_SuppressPassTime : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsUnknownMethods(Count = 1)]
 		get
@@ -20,15 +20,16 @@ public class Action_SuppressPassTime : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public Action_SuppressPassTime()
 	{
 	}

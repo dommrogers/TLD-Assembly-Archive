@@ -14,21 +14,22 @@ public class SplineAnimatorCustomValue : MonoBehaviour
 
 	public float passedTime;
 
-	[Calls(Type = typeof(Spline), Member = "GetCustomValueOnSpline")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(Material), Member = "set_color")]
-	[Calls(Type = typeof(Spline), Member = "GetOrientationOnSpline")]
-	[Calls(Type = typeof(Spline), Member = "GetPositionOnSpline")]
-	[Calls(Type = typeof(SplineUtils), Member = "WrapValue")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SplineUtils), Member = "WrapValue")]
+	[Calls(Type = typeof(Spline), Member = "GetCustomValueOnSpline")]
+	[Calls(Type = typeof(Spline), Member = "GetPositionOnSpline")]
+	[Calls(Type = typeof(Spline), Member = "GetOrientationOnSpline")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Material), Member = "set_color")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 13)]
 	private void Update()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public SplineAnimatorCustomValue()
 	{
 	}

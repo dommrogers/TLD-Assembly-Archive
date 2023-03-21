@@ -12,16 +12,17 @@ public class FindObjectOfType<T> : ActionTask where T : Component
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public FindObjectOfType()
 	{

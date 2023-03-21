@@ -14,11 +14,12 @@ public class Condition_NPCTrustValue : ConditionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -26,19 +27,21 @@ public class Condition_NPCTrustValue : ConditionTask
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(TrustManager), Member = "GetTrustValue")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
 	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
 	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[CallsUnknownMethods(Count = 12)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	public Condition_NPCTrustValue()
 	{
 	}

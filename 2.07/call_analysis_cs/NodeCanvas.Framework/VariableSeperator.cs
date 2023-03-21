@@ -9,12 +9,12 @@ public class VariableSeperator
 
 	public bool isEditingName
 	{
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]

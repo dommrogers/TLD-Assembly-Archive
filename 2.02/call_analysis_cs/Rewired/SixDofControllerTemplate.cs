@@ -144,7 +144,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateAxis Rewired_002EISixDofControllerTemplate_002EextraAxis1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -154,7 +155,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateAxis Rewired_002EISixDofControllerTemplate_002EextraAxis2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -164,7 +166,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateAxis Rewired_002EISixDofControllerTemplate_002EextraAxis3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -174,7 +177,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateAxis Rewired_002EISixDofControllerTemplate_002EextraAxis4
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -184,7 +188,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -194,7 +199,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -203,8 +209,9 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton3
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -214,7 +221,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton4
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -224,7 +232,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton5
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -234,7 +243,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton6
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -244,7 +254,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton7
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -254,7 +265,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton8
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -264,7 +276,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton9
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -274,7 +287,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton10
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -284,7 +298,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton11
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -293,8 +308,9 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton12
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -304,7 +320,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton13
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -314,7 +331,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton14
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -324,7 +342,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton15
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -334,7 +353,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton16
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -344,7 +364,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton17
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -354,7 +375,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton18
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -363,8 +385,9 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton19
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -374,7 +397,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton20
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -384,7 +408,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton21
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -394,7 +419,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton22
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -404,7 +430,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton23
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -414,7 +441,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton24
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -424,7 +452,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton25
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -433,8 +462,9 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton26
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -444,7 +474,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton27
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -454,7 +485,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton28
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -464,7 +496,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton29
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -474,7 +507,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton30
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -484,7 +518,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton31
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -494,7 +529,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateButton Rewired_002EISixDofControllerTemplate_002Ebutton32
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -503,8 +539,9 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 
 	private IControllerTemplateHat Rewired_002EISixDofControllerTemplate_002Ehat1
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -514,7 +551,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateHat Rewired_002EISixDofControllerTemplate_002Ehat2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -524,7 +562,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateThrottle Rewired_002EISixDofControllerTemplate_002Ethrottle1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -534,7 +573,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateThrottle Rewired_002EISixDofControllerTemplate_002Ethrottle2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -544,7 +584,8 @@ public sealed class SixDofControllerTemplate : ControllerTemplate, ISixDofContro
 	private IControllerTemplateStick6D Rewired_002EISixDofControllerTemplate_002Estick
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;

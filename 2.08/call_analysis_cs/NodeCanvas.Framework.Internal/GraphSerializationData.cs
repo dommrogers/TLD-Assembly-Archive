@@ -41,20 +41,20 @@ public class GraphSerializationData
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Graph), Member = "CopySerialized")]
 	[CalledBy(Type = typeof(Graph), Member = "Serialize")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Graph), Member = "CopySerialized")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public GraphSerializationData(Graph graph)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Graph), Member = "LoadGraphData")]
+	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	public void Reconstruct(Graph graph)
 	{

@@ -27,15 +27,16 @@ public class CheckVectorDistance : ConditionTask
 		}
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public CheckVectorDistance()
 	{
 	}

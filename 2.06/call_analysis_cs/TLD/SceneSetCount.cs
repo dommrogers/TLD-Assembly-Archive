@@ -13,8 +13,8 @@ public class SceneSetCount
 
 	public int m_LocationTriggers;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public SceneSetCount()
 	{
 	}

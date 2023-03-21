@@ -21,7 +21,7 @@ public class AccelTimePopup : MonoBehaviour
 		[CallerCount(Count = 0)]
 		public bool IsAcceleratingTime()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
@@ -63,8 +63,8 @@ public class AccelTimePopup : MonoBehaviour
 			return null;
 		}
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public void StartAcceleratingTime()
 		{
 		}
@@ -107,15 +107,15 @@ public class AccelTimePopup : MonoBehaviour
 		{
 		}
 
-		[Calls(Type = typeof(AccelTimePopup), Member = "GetControlMode")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(AccelTimePopup), Member = "GetControlMode")]
 		internal bool _003CAwake_003Eb__30_0()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(Localization), Member = "Get")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Localization), Member = "Get")]
 		internal string _003CAwake_003Eb__30_1()
 		{
 			return null;
@@ -125,7 +125,7 @@ public class AccelTimePopup : MonoBehaviour
 		[Calls(Type = typeof(AccelTimePopup), Member = "GetControlMode")]
 		internal bool _003CAwake_003Eb__30_4()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
@@ -138,7 +138,7 @@ public class AccelTimePopup : MonoBehaviour
 		[CallerCount(Count = 0)]
 		internal bool _003CAwake_003Eb__30_8()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
@@ -218,8 +218,8 @@ public class AccelTimePopup : MonoBehaviour
 	private IAccelerateTimeProvider m_activeAccelerator;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 10)]
 	[CallsUnknownMethods(Count = 8)]
 	private void Awake()
 	{
@@ -231,57 +231,51 @@ public class AccelTimePopup : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CallsUnknownMethods(Count = 5)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AccelTimePopup), Member = "SetActive")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(AccelTimePopup), Member = "IsLabelMessageActive")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(AccelTimePopup), Member = "SetActive")]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CalledBy(Type = typeof(AccelTimePopup), Member = "ForceDisable")]
 	[CalledBy(Type = typeof(AccelTimePopup), Member = "Update")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_timeofday_display")]
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "CanUserCancelAction")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 18)]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOff")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(CameraFade), Member = "GetTargetAlpha")]
 	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(InterfaceManager), Member = "InitializeAndActivateTimeWidget")]
 	[Calls(Type = typeof(InterfaceManager), Member = "SetTimeWidgetActive")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "CanUserCancelAction")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanelsWithComponent")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 32)]
 	public void SetActive(bool active, bool fadeIn)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "ProgressBarEnded")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnCancel()
 	{
@@ -291,38 +285,38 @@ public class AccelTimePopup : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetLabelMessageLocIdAndDuration(string localizationId, float duration, float fadeduration, float delay)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Rest.PassTimeHelper), Member = "OnSleepEnd")]
 	[CalledBy(Type = typeof(Action_PassTime), Member = "OnUpdate")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void EnableLabelMessage(bool enabled)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Action_PassTime), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Rest.PassTimeHelper), Member = "PassTime")]
 	[CalledBy(Type = typeof(AccelTimePopup), Member = "Update")]
+	[CalledBy(Type = typeof(Action_PassTime), Member = "OnExecute")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(Rest.PassTimeHelper), Member = "PassTime")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool IsLabelMessageActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -334,14 +328,14 @@ public class AccelTimePopup : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsPassTimeUISuppressed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(_003C_003Ec), Member = "<Awake>b__30_0")]
 	[CalledBy(Type = typeof(_003C_003Ec), Member = "<Awake>b__30_4")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CallsUnknownMethods(Count = 1)]
 	private static PlayerControlMode GetControlMode()
 	{
 		return default(PlayerControlMode);

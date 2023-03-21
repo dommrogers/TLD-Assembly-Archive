@@ -9,34 +9,35 @@ public class TrackableCache : MonoBehaviour
 
 	private Container m_Container;
 
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void PerformInteraction()
 	{
 	}

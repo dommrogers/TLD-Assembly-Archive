@@ -23,12 +23,13 @@ public class Action_ShowChallengeComplete : ActionTask
 
 	public BBParameter<int> stat2Value;
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Panel_ChallengeComplete), Member = "SetStatInfoText")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanel")]
 	[Calls(Type = typeof(Panel_ChallengeComplete), Member = "ShowPanel")]
+	[Calls(Type = typeof(Panel_ChallengeComplete), Member = "SetStatInfoText")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

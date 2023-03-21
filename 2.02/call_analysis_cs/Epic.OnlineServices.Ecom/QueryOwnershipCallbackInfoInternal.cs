@@ -29,10 +29,10 @@ internal struct QueryOwnershipCallbackInfoInternal : ICallbackInfoInternal
 
 	public object ClientData
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(QueryOwnershipCallbackInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -45,7 +45,7 @@ internal struct QueryOwnershipCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
@@ -53,7 +53,8 @@ internal struct QueryOwnershipCallbackInfoInternal : ICallbackInfoInternal
 	{
 		[CalledBy(Type = typeof(QueryOwnershipCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -62,9 +63,9 @@ internal struct QueryOwnershipCallbackInfoInternal : ICallbackInfoInternal
 
 	public ItemOwnership[] ItemOwnership
 	{
-		[CallsDeduplicatedMethods(Count = 3)]
 		[CalledBy(Type = typeof(QueryOwnershipCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[CallsDeduplicatedMethods(Count = 3)]
 		get
 		{
 			return null;

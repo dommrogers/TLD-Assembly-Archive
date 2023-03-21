@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -34,104 +33,76 @@ public class HexSector : MonoBehaviour
 
 	private SectorLOD m_CurLod;
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	public void ProcessExclusionList()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(HexSectorManager), Member = "UpdateSectors")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(HexSector), Member = "SectorError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(HexSector), Member = "SectorError")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(LODGroup), Member = "get_lodCount")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(LODGroup), Member = "get_lodCount")]
 	[Calls(Type = typeof(LODGroup), Member = "ForceLOD")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(HexSector), Member = "SectorError")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void SetOnlyLOD(SectorLOD newLOD)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(HexSector), Member = "SectorError")]
 	[CalledBy(Type = typeof(HexSectorManager), Member = "UpdateSectors")]
-	[CalledBy(Type = typeof(HexSectorManager), Member = "UpdateSectors")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(HexSector), Member = "SectorError")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(HexSector), Member = "SectorError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(LODGroup), Member = "ForceLOD")]
-	[Calls(Type = typeof(LODGroup), Member = "get_lodCount")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(LODGroup), Member = "get_lodCount")]
+	[Calls(Type = typeof(LODGroup), Member = "ForceLOD")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(HexSector), Member = "SectorError")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 10)]
 	public void SetSectorLOD(SectorLOD newLOD)
 	{
 	}
 
-	[Calls(Type = typeof(HexSector), Member = "IsScene_CurrentlyLoaded")]
 	[CalledBy(Type = typeof(HexSectorManager), Member = "UpdateSectors")]
-	[CalledBy(Type = typeof(HexSectorManager), Member = "UpdateSectors")]
-	[CalledBy(Type = typeof(HexSectorManager), Member = "UpdateSectors")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "UnloadSceneAsync")]
-	[Calls(Type = typeof(HexSector), Member = "IsScene_CurrentlyLoaded")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "UnloadSceneAsync")]
-	[Calls(Type = typeof(HexSector), Member = "IsScene_CurrentlyLoaded")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(HexSector), Member = "IsScene_CurrentlyLoaded")]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "UnloadSceneAsync")]
 	[Calls(Type = typeof(Addressables), Member = "LoadSceneAsync")]
-	[Calls(Type = typeof(Addressables), Member = "LoadSceneAsync")]
-	[Calls(Type = typeof(HexSector), Member = "IsScene_CurrentlyLoaded")]
 	public void SetScene(SectorLOD newLOD)
 	{
 	}
 
+	[CalledBy(Type = typeof(HexSector), Member = "SetScene")]
 	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CalledBy(Type = typeof(HexSector), Member = "SetScene")]
-	[CalledBy(Type = typeof(HexSector), Member = "SetScene")]
-	[CalledBy(Type = typeof(HexSector), Member = "SetScene")]
-	[CalledBy(Type = typeof(HexSector), Member = "SetScene")]
-	[CalledBy(Type = typeof(HexSector), Member = "SetScene")]
-	[CallsUnknownMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetSceneAt")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool IsScene_CurrentlyLoaded(string sceneName_no_extention)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(HexSector), Member = "SetSectorLOD")]
-	[CalledBy(Type = typeof(HexSector), Member = "SetSectorLOD")]
-	[CalledBy(Type = typeof(HexSector), Member = "SetSectorLOD")]
 	[CalledBy(Type = typeof(HexSector), Member = "SetOnlyLOD")]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[CalledBy(Type = typeof(HexSector), Member = "SetSectorLOD")]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(HexSector), Member = "SetOnlyLOD")]
+	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[CallsUnknownMethods(Count = 9)]
 	private void SectorError(string sectorName, int objIndex)
 	{
 	}

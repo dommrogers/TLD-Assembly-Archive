@@ -3,18 +3,19 @@ using UnityEngine;
 
 public class UISoundVolume : MonoBehaviour
 {
-	[Calls(Type = typeof(NGUITools), Member = "get_soundVolume")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(NGUITools), Member = "get_soundVolume")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerPrefs), Member = "SetFloat")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerPrefs), Member = "SetFloat")]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnChange()
 	{

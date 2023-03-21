@@ -20,27 +20,19 @@ public class UIButtonKeys : UIKeyNavigation
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[CalledBy(Type = typeof(UIButtonKeys), Member = "OnEnable")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 11)]
 	public void Upgrade()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public UIButtonKeys()
 	{
 	}

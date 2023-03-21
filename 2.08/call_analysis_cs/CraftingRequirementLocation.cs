@@ -41,28 +41,29 @@ public class CraftingRequirementLocation : MonoBehaviour
 
 	private Color m_DisplayTint;
 
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 4)]
 	public void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Disable()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "Enable")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public void Enable(Panel_Crafting ownerPanel, BlueprintData bp)
 	{
 	}

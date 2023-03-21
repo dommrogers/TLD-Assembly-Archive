@@ -9,12 +9,13 @@ public class Action_SetBaseAIFleeDestination : TLD_Action
 	public BBParameter<GameObject> target;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(TLD_Action), Member = "get_agent")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 9)]
 	protected override void OnExecute()
 	{

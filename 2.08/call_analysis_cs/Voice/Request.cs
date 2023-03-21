@@ -16,8 +16,8 @@ public class Request
 
 	public float m_Timeout;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Copy(Request other)
 	{
 	}
@@ -25,17 +25,17 @@ public class Request
 	[CallerCount(Count = 0)]
 	public bool IsOptionSet(uint option)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsValid()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
+	[Calls(Type = typeof(uint), Member = "ToString")]
 	public string GetEventName()
 	{
 		return null;

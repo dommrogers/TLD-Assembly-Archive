@@ -75,14 +75,14 @@ public sealed class PostProcessRenderContext
 	public Camera camera
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 80)]
+		[CallerCount(Count = 92)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 7)]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
 		[CallsUnknownMethods(Count = 8)]
 		set
 		{
@@ -91,16 +91,16 @@ public sealed class PostProcessRenderContext
 
 	public CommandBuffer command
 	{
-		[CallerCount(Count = 28)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 32)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 79)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 86)]
 		set
 		{
 		}
@@ -130,8 +130,8 @@ public sealed class PostProcessRenderContext
 		{
 			return default(RenderTargetIdentifier);
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -139,9 +139,9 @@ public sealed class PostProcessRenderContext
 
 	public RenderTextureFormat sourceFormat
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(RenderTextureFormat);
@@ -156,16 +156,16 @@ public sealed class PostProcessRenderContext
 
 	public bool flip
 	{
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 4)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -197,9 +197,9 @@ public sealed class PostProcessRenderContext
 		{
 			return null;
 		}
-		[CallerCount(Count = 8)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		internal set
 		{
 		}
@@ -216,7 +216,7 @@ public sealed class PostProcessRenderContext
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private set
 		{
 		}
@@ -226,14 +226,14 @@ public sealed class PostProcessRenderContext
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 59)]
+		[CallerCount(Count = 64)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 8)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 8)]
 		internal set
 		{
 		}
@@ -246,7 +246,7 @@ public sealed class PostProcessRenderContext
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -258,12 +258,12 @@ public sealed class PostProcessRenderContext
 
 	public int height
 	{
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -280,11 +280,11 @@ public sealed class PostProcessRenderContext
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		private set
 		{
 		}
@@ -292,12 +292,12 @@ public sealed class PostProcessRenderContext
 
 	public int xrActiveEye
 	{
-		[CallerCount(Count = 2)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -314,11 +314,11 @@ public sealed class PostProcessRenderContext
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		private set
 		{
 		}
@@ -343,16 +343,16 @@ public sealed class PostProcessRenderContext
 
 	public int screenWidth
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		private set
 		{
 		}
@@ -365,7 +365,7 @@ public sealed class PostProcessRenderContext
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -377,16 +377,16 @@ public sealed class PostProcessRenderContext
 
 	public bool isSceneView
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 1)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
 		internal set
 		{
 		}
@@ -401,9 +401,9 @@ public sealed class PostProcessRenderContext
 		{
 			return default(PostProcessLayer.Antialiasing);
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		internal set
 		{
 		}
@@ -411,46 +411,46 @@ public sealed class PostProcessRenderContext
 
 	public TemporalAntialiasing temporalAntialiasing
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 4)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		internal set
 		{
 		}
 	}
 
+	[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(RenderTextureDescriptor), Member = ".ctor")]
 	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Reset()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(TemporalAntialiasing), Member = "IsSupported")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsTemporalAntialiasingActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsDebugOverlayEnabled(DebugOverlay overlay)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -460,64 +460,55 @@ public sealed class PostProcessRenderContext
 	{
 	}
 
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderList")]
+	[CalledBy(Type = typeof(MaskedBlurEffectRenderer), Member = "Render")]
+	[CalledBy(Type = typeof(DepthOfFieldRenderer), Member = "Render")]
+	[CalledBy(Type = typeof(MotionBlurRenderer), Member = "CreateTemporaryRT")]
+	[CalledBy(Type = typeof(ScalableAO), Member = "Render")]
+	[CalledBy(Type = typeof(PostProcessLayer), Member = "UpdateSrcDstForOpaqueOnly")]
+	[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderInjectionPoint")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderList")]
-	[CalledBy(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
+	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderBuiltins")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderFinalPass")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderEffect")]
 	[CalledBy(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderBuiltins")]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
-	[Calls(Type = typeof(RenderTextureDescriptor), Member = ".ctor")]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "UpdateSrcDstForOpaqueOnly")]
-	[CalledBy(Type = typeof(ScalableAO), Member = "Render")]
-	[CalledBy(Type = typeof(MotionBlurRenderer), Member = "CreateTemporaryRT")]
-	[CalledBy(Type = typeof(DepthOfFieldRenderer), Member = "Render")]
-	[CalledBy(Type = typeof(MaskedBlurEffectRenderer), Member = "Render")]
-	[Calls(Type = typeof(RenderTextureDescriptor), Member = "set_sRGB")]
-	[Calls(Type = typeof(RenderTextureDescriptor), Member = "set_colorFormat")]
-	[Calls(Type = typeof(RenderTextureDescriptor), Member = "get_colorFormat")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
 	[CallerCount(Count = 17)]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
+	[Calls(Type = typeof(RenderTextureDescriptor), Member = "get_colorFormat")]
+	[Calls(Type = typeof(RenderTextureDescriptor), Member = ".ctor")]
+	[Calls(Type = typeof(RenderTextureDescriptor), Member = "set_colorFormat")]
+	[Calls(Type = typeof(RenderTextureDescriptor), Member = "set_sRGB")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public RenderTextureDescriptor GetDescriptor(int depthBufferBits = 0, RenderTextureFormat colorFormat = RenderTextureFormat.Default, RenderTextureReadWrite readWrite = RenderTextureReadWrite.Default)
 	{
 		return default(RenderTextureDescriptor);
 	}
 
+	[CalledBy(Type = typeof(MaskedBlurEffectRenderer), Member = "Render")]
+	[CalledBy(Type = typeof(SuffocationScreenEffectRenderer), Member = "Render")]
+	[CalledBy(Type = typeof(BloomRenderer), Member = "Render")]
 	[CalledBy(Type = typeof(DepthOfFieldRenderer), Member = "Render")]
 	[CalledBy(Type = typeof(ScalableAO), Member = "Render")]
-	[CalledBy(Type = typeof(MaskedBlurEffectRenderer), Member = "Render")]
-	[CalledBy(Type = typeof(DepthOfFieldRenderer), Member = "Render")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(BloomRenderer), Member = "Render")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(SuffocationScreenEffectRenderer), Member = "Render")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetDescriptor")]
-	[CalledBy(Type = typeof(BloomRenderer), Member = "Render")]
-	[CalledBy(Type = typeof(MaskedBlurEffectRenderer), Member = "Render")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void GetScreenSpaceTemporaryRT(CommandBuffer cmd, int nameID, int depthBufferBits = 0, RenderTextureFormat colorFormat = RenderTextureFormat.Default, RenderTextureReadWrite readWrite = RenderTextureReadWrite.Default, FilterMode filter = FilterMode.Bilinear, int widthOverride = 0, int heightOverride = 0)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "CheckHistory")]
-	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "CheckHistory")]
-	[CalledBy(Type = typeof(ScalableAO), Member = "DoLazyInitialization")]
-	[CalledBy(Type = typeof(RLProArtefactsRenderer), Member = "Render")]
+	[CalledBy(Type = typeof(MaskedBlurEffectRenderer), Member = "CheckHistory")]
 	[CalledBy(Type = typeof(RLProArtefactsRenderer), Member = "Render")]
 	[CalledBy(Type = typeof(DepthOfFieldRenderer), Member = "CheckHistory")]
-	[CalledBy(Type = typeof(MaskedBlurEffectRenderer), Member = "CheckHistory")]
-	[Calls(Type = typeof(RenderTexture), Member = "ValidateRenderTextureDesc")]
-	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetDescriptor")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(ScalableAO), Member = "DoLazyInitialization")]
+	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "CheckHistory")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(RLProArtefactsRenderer), Member = "Render")]
+	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetDescriptor")]
+	[Calls(Type = typeof(RenderTexture), Member = "ValidateRenderTextureDesc")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public RenderTexture GetScreenSpaceTemporaryRT(int depthBufferBits = 0, RenderTextureFormat colorFormat = RenderTextureFormat.Default, RenderTextureReadWrite readWrite = RenderTextureReadWrite.Default, int widthOverride = 0, int heightOverride = 0)
 	{
 		return null;

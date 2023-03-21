@@ -25,12 +25,12 @@ public class DamageRegion : IComparable
 	public bool m_DoNotBleedOut;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Enum), Member = "CompareTo")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public int CompareTo(object obj)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]

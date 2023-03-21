@@ -53,8 +53,8 @@ public class Panel_Sandbox : Panel_AutoReferenced
 		{
 		}
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public GameEditionArt()
 		{
 		}
@@ -124,77 +124,76 @@ public class Panel_Sandbox : Panel_AutoReferenced
 
 	private const float MAX_PANEL_ALPHA = 1f;
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(BasicMenu), Member = "InstantiateMenu")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(BasicMenu), Member = "InstantiateMenu")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 5)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Sandbox), Member = "UpdateFading")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Panel_Sandbox), Member = "SetPanelAlpha")]
-	[Calls(Type = typeof(InputManager), Member = "AnyInput")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(BasicMenu), Member = "ManualUpdate")]
-	[Calls(Type = typeof(BasicMenu), Member = "UpdateMenuExtensionButtonLegend")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(BasicMenu), Member = "ManualUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(BasicMenu), Member = "UpdateMenuExtensionButtonLegend")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(InputManager), Member = "AnyInput")]
+	[Calls(Type = typeof(Panel_Sandbox), Member = "SetPanelAlpha")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Panel_Sandbox), Member = "UpdateFading")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Extras), Member = "ShouldShowExtras")]
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(Panel_Sandbox), Member = "Enable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Sandbox), Member = "AddMenuItem")]
-	[Calls(Type = typeof(SaveGameSlotHelper), Member = "GetSaveSlotInfoList")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(BasicMenu), Member = "AddExtension")]
-	[Calls(Type = typeof(BasicMenu), Member = "Reset")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[Calls(Type = typeof(BasicMenu), Member = "Reset")]
+	[Calls(Type = typeof(BasicMenu), Member = "AddExtension")]
 	[Calls(Type = typeof(BasicMenu), Member = "UpdateTitle")]
+	[Calls(Type = typeof(SaveGameSlotHelper), Member = "GetSaveSlotInfoList")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Extras), Member = "ShouldShowExtras")]
+	[Calls(Type = typeof(Panel_Sandbox), Member = "AddMenuItem")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 14)]
 	private void ConfigureMenu()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Panel_Sandbox), Member = "ConfigureMenu")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(BasicMenu), Member = "AddItem")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(BasicMenu), Member = "AddItem")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void AddMenuItem(int itemIndex)
 	{
 	}
 
-	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_Sandbox), Member = "SetPanelAlpha")]
-	[Calls(Type = typeof(OptionalContentManager), Member = "CanUseContent")]
-	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[Calls(Type = typeof(Panel_Sandbox), Member = "ConfigureMenu")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(SaveGameSlotHelper), Member = "GetSaveSlotInfoList")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[Calls(Type = typeof(SaveGameSlotHelper), Member = "RefreshSandboxSaveSlots")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[Calls(Type = typeof(SaveGameSlotHelper), Member = "GetSaveSlotInfoList")]
+	[Calls(Type = typeof(SaveGameSlotHelper), Member = "RefreshSandboxSaveSlots")]
+	[Calls(Type = typeof(Panel_Sandbox), Member = "ConfigureMenu")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
+	[Calls(Type = typeof(OptionalContentManager), Member = "CanUseContent")]
+	[Calls(Type = typeof(Panel_Sandbox), Member = "SetPanelAlpha")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public override void Enable(bool enable)
 	{
 	}
@@ -206,82 +205,91 @@ public class Panel_Sandbox : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "GetInstance")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowNotEnoughSaveSlotsAvailableNotification")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetNumSaveSlotsInUse")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "GetInstance")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetNumSaveSlotsInUse")]
 	[Calls(Type = typeof(SaveGameSlots), Member = "GetUnusedGameId")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TrySetEnabled")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowNotEnoughSaveSlotsAvailableNotification")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void OnClickNew()
 	{
 	}
 
-	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "GetInstance")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "GetInstance")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TrySetEnabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnClickLoad()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "GetInstance")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_MainMenu), Member = "OnLoadSaveSlot")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnClickResume()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "SetLoadingPriority")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "SlotsAreLoading")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "GetInstance")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "SlotsAreLoading")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TrySetEnabled")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "SetLoadingPriority")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnClickChallenges()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Badges), Member = "Enable")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_MainMenu), Member = "OnMainMenuTop")]
-	[Calls(Type = typeof(Panel_Badges), Member = "OnFeats")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_MainMenu), Member = "OnMainMenuTop")]
+	[Calls(Type = typeof(Panel_Badges), Member = "Enable")]
+	[Calls(Type = typeof(Panel_Badges), Member = "OnFeats")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnClickFeats()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_MainMenu), Member = "OnMainMenuTop")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnClickBack()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TrySetEnabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnClickExtras()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetPanelToReturnToOnExit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnClickOptions()
 	{
@@ -293,21 +301,20 @@ public class Panel_Sandbox : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(BasicMenu), Member = "UpdateMenuExtensionButtonLegend")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(BasicMenu), Member = "UpdateMenuExtensionButtonLegend")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateButtonLegend()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SaveGameSlots), Member = "GetUnusedGameId")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TrySetEnabled")]
 	private void OnNewSandbox()
 	{
 	}
@@ -323,41 +330,42 @@ public class Panel_Sandbox : Panel_AutoReferenced
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Sandbox), Member = "Update")]
+	[CallerCount(Count = 1)]
 	private void UpdateFading()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(OptionalContentManager), Member = "CanUseContent")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
+	[Calls(Type = typeof(OptionalContentManager), Member = "CanUseContent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetGameEditionArt()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[CalledBy(Type = typeof(Panel_Sandbox), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Sandbox), Member = "Enable")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void SetPanelAlpha(float alpha)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
 	private bool IsSubMenuEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 11)]
 	public Panel_Sandbox()
 	{
 	}

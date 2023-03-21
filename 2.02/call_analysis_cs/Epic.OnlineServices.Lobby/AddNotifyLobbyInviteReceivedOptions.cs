@@ -4,8 +4,8 @@ namespace Epic.OnlineServices.Lobby;
 
 public class AddNotifyLobbyInviteReceivedOptions
 {
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public AddNotifyLobbyInviteReceivedOptions()
 	{
 	}

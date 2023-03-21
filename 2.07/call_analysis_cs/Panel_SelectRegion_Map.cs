@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.AddressableAssets;
 using TLD.Gameplay;
 using TLD.Scenes;
 using TLD.UI;
@@ -30,7 +32,7 @@ public class Panel_SelectRegion_Map : Panel_AutoReferenced
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003COnRegionsLoaded_003Eb__0(SelectRegionItem item)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -40,8 +42,8 @@ public class Panel_SelectRegion_Map : Panel_AutoReferenced
 
 		public Panel_SelectRegion_Map _003C_003E4__this;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec__DisplayClass27_0()
 		{
 		}
@@ -103,60 +105,70 @@ public class Panel_SelectRegion_Map : Panel_AutoReferenced
 	private readonly HashSet<AsyncOperationHandle<GameObject>> m_PendingInstantiations;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(AssetHelper), Member = "SafeLoadAssetsAsync")]
+	[Calls(Type = typeof(Action<>), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "add_Completed")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void Initialize()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 26)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_Status")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_Result")]
+	[Calls(Type = typeof(List<>), Member = "Find")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Action<>), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "add_Completed")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 23)]
 	private void OnRegionsLoaded(AsyncOperationHandle<IList<RegionSpecification>> loadOperation)
 	{
 	}
 
-	[Calls(Type = typeof(SelectRegionItem), Member = "PatchUpReference")]
-	[Calls(Type = typeof(SelectRegionItem), Member = "PatchUpReference")]
-	[Calls(Type = typeof(SelectRegionItem), Member = "PatchUpReference")]
-	[Calls(Type = typeof(SelectRegionItem), Member = "PatchUpReference")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 31)]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_Status")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_Result")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(HashSet<>), Member = "Remove")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[Calls(Type = typeof(SelectRegionItem), Member = "PatchUpReference")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 28)]
 	private void OnSelectRegionItemInstantiated(AsyncOperationHandle<GameObject> selectRegionItemOperation)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateAnimation")]
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateHoveredItem")]
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateControls")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateControls")]
+	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateHoveredItem")]
+	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateButtonLegend")]
+	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateAnimation")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Animator), Member = "Play")]
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateDisplayedRegions")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(WorldMapChangedEvent), Member = "UpdateAvailableWorldMaps")]
+	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateDisplayedRegions")]
+	[Calls(Type = typeof(Animator), Member = "Play")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateButtonLegend")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public override void Enable(bool enable)
 	{
 	}
@@ -167,14 +179,14 @@ public class Panel_SelectRegion_Map : Panel_AutoReferenced
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateControls")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(WorldMapChangedEvent), Member = "GetNextAvailableWorldMap")]
+	[Calls(Type = typeof(WorldMapChangedEvent), Member = "SetCurrentMap")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateDisplayedRegions")]
 	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateControls")]
-	[Calls(Type = typeof(WorldMapChangedEvent), Member = "SetCurrentMap")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(WorldMapChangedEvent), Member = "GetNextAvailableWorldMap")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	public void OnSwitchMapsSelected()
 	{
 	}
@@ -185,190 +197,176 @@ public class Panel_SelectRegion_Map : Panel_AutoReferenced
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[Calls(Type = typeof(Panel_SelectWorldMap), Member = "ShouldBePartOfFlow")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "NavigateToItem")]
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "NavigateToItem")]
 	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateControls")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_SelectWorldMap), Member = "ShouldBePartOfFlow")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "NavigateToItem")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	public void OnClickBack()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateControls")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnSelectRegionContinue()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateControls")]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "OnRandomSelected")]
 	[CalledBy(Type = typeof(_003C_003Ec__DisplayClass27_0), Member = "<OnSelectRegionItemInstantiated>b__0")]
 	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "OnItemSelected")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "OnRandomSelected")]
+	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateControls")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "BroadcastMessage")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void SelectItem(SelectRegionItem item, bool showMapSmoke)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateHoveredItem")]
-	[CallsUnknownMethods(Count = 5)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 4)]
 	private SelectRegionItem GetHoveredItem()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(InputManager), Member = "GetDeletePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetRenamePressed")]
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "OnSwitchMapsSelected")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "OnClickBack")]
 	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "Update")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "OnSelectRegionContinue")]
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "NavigateToItem")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "NavigateToItem")]
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "SelectItem")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "SelectItem")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
+	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "NavigateToItem")]
+	[Calls(Type = typeof(InputManager), Member = "GetRenamePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetDeletePressed")]
+	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "OnSwitchMapsSelected")]
+	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "OnSelectRegionContinue")]
+	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "OnClickBack")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateControls()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateDisplayedRegions")]
+	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "OnClickBack")]
+	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateControls")]
 	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateHoveredItem")]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateControls")]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateControls")]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "OnClickBack")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "BroadcastMessage")]
-	[Calls(Type = typeof(GameObject), Member = "BroadcastMessage")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateDisplayedRegions")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "OnClickBack")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "BroadcastMessage")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	private void NavigateToItem(SelectRegionItem item)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "Update")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "NavigateToItem")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "GetHoveredItem")]
+	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "NavigateToItem")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateHoveredItem()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "Update")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "Enable")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(WorldMapChangedEvent), Member = "get_IsCoreRegionMapSelected")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateButtonLegend()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateAnimation")]
-	[Calls(Type = typeof(Utils), Member = "IsAnimationStatePlaying")]
-	[Calls(Type = typeof(Utils), Member = "IsAnimationStatePlaying")]
-	[Calls(Type = typeof(Utils), Member = "IsAnimationStatePlaying")]
-	[Calls(Type = typeof(Utils), Member = "IsAnimationStatePlaying")]
-	[Calls(Type = typeof(Utils), Member = "IsAnimationStatePlaying")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsAnimationStatePlaying")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 3)]
 	private bool IsAnyAnimationInProgress()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "Update")]
-	[Calls(Type = typeof(SelectRegionItem), Member = "PlayAnimation")]
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "PlayAnimation")]
-	[Calls(Type = typeof(SelectRegionItem), Member = "PlayAnimation")]
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "PlayAnimation")]
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "IsAnyAnimationInProgress")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "IsAnyAnimationInProgress")]
+	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "PlayAnimation")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(SelectRegionItem), Member = "PlayAnimation")]
+	[CallsUnknownMethods(Count = 9)]
 	private void UpdateAnimation()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateAnimation")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Animator), Member = "Play")]
-	[Calls(Type = typeof(SelectRegionItem), Member = "PlayAnimation")]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateAnimation")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SelectRegionItem), Member = "PlayAnimation")]
+	[Calls(Type = typeof(Animator), Member = "Play")]
+	[CallsUnknownMethods(Count = 1)]
 	private void PlayAnimation(SelectRegionItem region, AnimationState animation)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "OnSwitchMapsSelected")]
 	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "Enable")]
-	[Calls(Type = typeof(GameObject), Member = "BroadcastMessage")]
-	[Calls(Type = typeof(GameObject), Member = "BroadcastMessage")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "NavigateToItem")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(SandboxBaseConfig), Member = "IsValidStartingRegion")]
-	[Calls(Type = typeof(RegionSpecification), Member = "IsUnlocked")]
-	[CallsDeduplicatedMethods(Count = 13)]
+	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "OnSwitchMapsSelected")]
 	[CallerCount(Count = 2)]
-	[CallsUnknownMethods(Count = 34)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(RegionSpecification), Member = "IsUnlocked")]
+	[Calls(Type = typeof(SandboxBaseConfig), Member = "IsValidStartingRegion")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_IsDone")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_Result")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(WorldMapSpecification), Member = "GetOrInstantiateBaseMap")]
+	[Calls(Type = typeof(Panel_SelectRegion_Map), Member = "NavigateToItem")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(GameObject), Member = "BroadcastMessage")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 29)]
 	private void UpdateDisplayedRegions()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(WorldMapSpecification), Member = "GetOrInstantiateBaseMap")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private UIWorldMap GetWorldMap(WorldMapSpecification worldMap)
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public Panel_SelectRegion_Map()
 	{
 	}

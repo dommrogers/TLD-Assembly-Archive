@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.UI.Generics;
 using UnityEngine;
@@ -185,31 +184,28 @@ public class ColorGrading : PostEffectsBase
 
 	private float m_ScreenTintTransitionDuration;
 
-	[Calls(Type = typeof(PostEffectsBase), Member = "CheckShaderAndCreateMaterial")]
-	[Calls(Type = typeof(PostEffectsBase), Member = "ReportAutoDisable")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PostEffectsBase), Member = "CheckSupport")]
+	[Calls(Type = typeof(PostEffectsBase), Member = "CheckShaderAndCreateMaterial")]
+	[Calls(Type = typeof(PostEffectsBase), Member = "ReportAutoDisable")]
 	public override bool CheckResources()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 18)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Material), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(ColorGrading), Member = "UpdateLUTMaterialForTOD")]
+	[CallsDeduplicatedMethods(Count = 18)]
 	[CallsUnknownMethods(Count = 25)]
 	private void OnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
 	private void OnDisable()
 	{
 	}
@@ -226,13 +222,13 @@ public class ColorGrading : PostEffectsBase
 	[CallerCount(Count = 0)]
 	public float GetDefaultGamma()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(ColorGrading), Member = "GetModifiedGamma")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(ColorGrading), Member = "GetModifiedGamma")]
+	[CallsUnknownMethods(Count = 2)]
 	public void ConfigureForInterior()
 	{
 	}
@@ -245,26 +241,26 @@ public class ColorGrading : PostEffectsBase
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(ColorGrading), Member = "OnEnable")]
 	[CalledBy(Type = typeof(ColorGrading), Member = "ConfigureLUTMaterialForInterior")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 3)]
 	public void UpdateLUTMaterialForTOD(Texture2D lut1A, Texture2D lut1B, Texture2D lut2A, Texture2D lut2B, float blend1, float blend2, float blendCombine)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(ColorGrading), Member = "UpdateLUTMaterialForTOD")]
-	[CallerCount(Count = 0)]
 	public void ConfigureLUTMaterialForInterior(Texture2D customLUT)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void UpdateMaterialForAuxiliaryBlend(Texture2D lut, float blend)
 	{
@@ -272,85 +268,70 @@ public class ColorGrading : PostEffectsBase
 
 	[CalledBy(Type = typeof(ColorGrading), Member = "OnRenderImage")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[CalledBy(Type = typeof(ColorGrading), Member = "OnRenderImage")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 11)]
 	private void PrepareForPositionalBlend(PosBlendInfo pb, RenderTexture rt, int i, float noise, RenderTexture screen)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ColorGrading), Member = "GetModifiedGamma")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(ColorGrading), Member = "GetModifiedGamma")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(RenderTexture), Member = "GetTemporaryImpl")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ColorGrading), Member = "HandleScreenTint")]
 	[Calls(Type = typeof(RenderTexture), Member = "GetCompatibleFormat")]
-	[Calls(Type = typeof(ColorGrading), Member = "PrepareForPositionalBlend")]
+	[Calls(Type = typeof(RenderTexture), Member = "GetTemporaryImpl")]
+	[Calls(Type = typeof(Graphics), Member = "Blit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
 	[Calls(Type = typeof(ColorGrading), Member = "PrepareForPositionalBlend")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(RenderTexture), Member = "GetTemporaryImpl")]
-	[Calls(Type = typeof(RenderTexture), Member = "GetCompatibleFormat")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(RenderTexture), Member = "GetTemporaryImpl")]
-	[Calls(Type = typeof(RenderTexture), Member = "GetCompatibleFormat")]
-	[Calls(Type = typeof(ColorGrading), Member = "HandleScreenTint")]
 	[CallsDeduplicatedMethods(Count = 15)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 26)]
 	private void OnRenderImage(RenderTexture source, RenderTexture destination)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(ColorGrading), Member = "HandleScreenTint")]
 	[CalledBy(Type = typeof(ColorGrading), Member = "HandleScreenTint")]
 	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(ColorGrading), Member = "HandleScreenTint")]
+	[CallsUnknownMethods(Count = 1)]
 	private void GetLUTAndBlendForClient(ScreenTintClient client, out Texture2D lut, out float blend)
 	{
 		lut = null;
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref blend) = null;
+		blend = default(float);
 	}
 
-	[Calls(Type = typeof(Material), Member = "SetVector")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(ColorGrading), Member = "OnRenderImage")]
-	[Calls(Type = typeof(Material), Member = "SetVector")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(ColorGrading), Member = "GetLUTAndBlendForClient")]
+	[Calls(Type = typeof(RenderTexture), Member = "GetCompatibleFormat")]
+	[Calls(Type = typeof(RenderTexture), Member = "GetTemporaryImpl")]
+	[Calls(Type = typeof(Texture), Member = "set_wrapMode")]
+	[Calls(Type = typeof(Texture), Member = "set_anisoLevel")]
 	[Calls(Type = typeof(Material), Member = "SetVector")]
 	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(Texture), Member = "set_anisoLevel")]
-	[Calls(Type = typeof(ColorGrading), Member = "GetLUTAndBlendForClient")]
-	[Calls(Type = typeof(RenderTexture), Member = "GetTemporaryImpl")]
-	[Calls(Type = typeof(RenderTexture), Member = "GetCompatibleFormat")]
-	[Calls(Type = typeof(ColorGrading), Member = "GetLUTAndBlendForClient")]
-	[Calls(Type = typeof(ColorGrading), Member = "GetLUTAndBlendForClient")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Texture), Member = "set_wrapMode")]
+	[CallsUnknownMethods(Count = 3)]
 	private RenderTexture HandleScreenTint(RenderTexture screen)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public float GetBrightnessSetting()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -359,20 +340,20 @@ public class ColorGrading : PostEffectsBase
 	{
 	}
 
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(ColorGrading), Member = "Configure")]
 	[CalledBy(Type = typeof(ColorGrading), Member = "ConfigureForInterior")]
 	[CalledBy(Type = typeof(ColorGrading), Member = "ConfigureForExterior")]
 	[CalledBy(Type = typeof(ColorGrading), Member = "Update")]
+	[CallerCount(Count = 4)]
 	private float GetModifiedGamma()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnCopyFrom(ColorGrading src)
 	{
 	}

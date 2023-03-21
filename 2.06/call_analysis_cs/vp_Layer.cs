@@ -63,43 +63,43 @@ public sealed class vp_Layer
 
 	public const int Default = 0;
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 6)]
 	static vp_Layer()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	private vp_Layer()
 	{
 	}
 
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SetWeaponLayer")]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeBuildRuntimeHierarchy")]
+	[CalledBy(Type = typeof(vp_Layer), Member = "Set")]
 	[CalledBy(Type = typeof(HeightFogVolume), Member = "Start")]
+	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "PlayDetonateInHand")]
 	[CalledBy(Type = typeof(SafeCracking), Member = "Start")]
 	[CalledBy(Type = typeof(GearItem), Member = "Awake")]
 	[CalledBy(Type = typeof(LoadingZone), Member = "Awake")]
 	[CalledBy(Type = typeof(LoadScene), Member = "Start")]
 	[CalledBy(Type = typeof(RenderObjectInstanceTriggerVolume), Member = "Awake")]
 	[CalledBy(Type = typeof(RenderObjectInstanceVolume), Member = "Awake")]
-	[CalledBy(Type = typeof(SunShadowOverrideVolume), Member = "Start")]
-	[CalledBy(Type = typeof(WetZoneTrigger), Member = "Start")]
-	[CalledBy(Type = typeof(IceCrackingWarningTrigger), Member = "Start")]
-	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "Start")]
-	[CalledBy(Type = typeof(DoorTrigger), Member = "Start")]
 	[CalledBy(Type = typeof(BoxSector), Member = "Start")]
-	[CalledBy(Type = typeof(vp_Layer), Member = "Set")]
-	[CallsUnknownMethods(Count = 15)]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeBuildRuntimeHierarchy")]
-	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "PlayDetonateInHand")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(vp_Layer), Member = "Set")]
-	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "set_layer")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(DoorTrigger), Member = "Start")]
+	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "Start")]
+	[CalledBy(Type = typeof(IceCrackingWarningTrigger), Member = "Start")]
+	[CalledBy(Type = typeof(WetZoneTrigger), Member = "Start")]
+	[CalledBy(Type = typeof(SunShadowOverrideVolume), Member = "Start")]
 	[CallerCount(Count = 17)]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SetWeaponLayer")]
+	[Calls(Type = typeof(GameObject), Member = "set_layer")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[Calls(Type = typeof(vp_Layer), Member = "Set")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 15)]
 	public static void Set(GameObject obj, int layer, bool recursive = false)
 	{
 	}

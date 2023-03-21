@@ -1,5 +1,7 @@
 using System;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.AddressableAssets;
+using TLD.SaveState;
 using UnityEngine;
 
 public class vp_FPSWeapon : vp_Component
@@ -224,17 +226,14 @@ public class vp_FPSWeapon : vp_Component
 	public float RenderingFieldOfViewVertical
 	{
 		[CalledBy(Type = typeof(vp_FPSWeapon), Member = "UpdateZoom")]
-		[CalledBy(Type = typeof(vp_FPSWeapon), Member = "UpdateZoom")]
-		[CalledBy(Type = typeof(vp_FPSWeapon), Member = "UpdateZoom")]
-		[CalledBy(Type = typeof(vp_FPSWeapon), Member = "UpdateZoom")]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 6)]
-		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyFOV")]
-		[CallsUnknownMethods(Count = 5)]
 		[CalledBy(Type = typeof(vp_FPSWeapon), Member = "SnapZoom")]
+		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyFOV")]
+		[CallerCount(Count = 6)]
+		[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+		[CallsUnknownMethods(Count = 5)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -250,11 +249,11 @@ public class vp_FPSWeapon : vp_Component
 
 	public Vector3 DefaultPosition
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(vp_FPSCamera), Member = "SetWeapon")]
 		[CalledBy(Type = typeof(vp_FPSCamera), Member = "ShowNext")]
-		[Calls(Type = typeof(vp_ComponentPreset), Member = "GetFieldValue")]
+		[CalledBy(Type = typeof(vp_FPSCamera), Member = "SetWeapon")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(vp_ComponentPreset), Member = "GetFieldValue")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return default(Vector3);
@@ -263,12 +262,12 @@ public class vp_FPSWeapon : vp_Component
 
 	public Vector3 DefaultRotation
 	{
-		[Calls(Type = typeof(vp_ComponentPreset), Member = "GetFieldValue")]
+		[CalledBy(Type = typeof(vp_FPSCamera), Member = "ShowNext")]
 		[CalledBy(Type = typeof(vp_FPSCamera), Member = "SetWeapon")]
 		[CalledBy(Type = typeof(vp_FPSShooter), Member = "Update")]
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 3)]
-		[CalledBy(Type = typeof(vp_FPSCamera), Member = "ShowNext")]
+		[Calls(Type = typeof(vp_ComponentPreset), Member = "GetFieldValue")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return default(Vector3);
@@ -279,14 +278,14 @@ public class vp_FPSWeapon : vp_Component
 	[CallerCount(Count = 0)]
 	public bool GetStartCalled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "DoAiming")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 7)]
 	private Vector3 RandomShake(float deltaTime, float speed, float noiseSpeed)
 	{
 		return default(Vector3);
@@ -295,34 +294,34 @@ public class vp_FPSWeapon : vp_Component
 	[CallerCount(Count = 0)]
 	public static bool IsAimBreathingDisabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "DoAiming")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool IsAimSwayDisabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public static bool IsAimStaminaDisabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public static bool IsAimShakeDisabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public static bool GetDisableDepthOfField()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -350,304 +349,276 @@ public class vp_FPSWeapon : vp_Component
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	public bool HasFirstPersonWeapon()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	public bool CanStartAiming()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	public bool ShouldStopAiming()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_Component), Member = "Awake")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
 	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
-	[CallsUnknownMethods(Count = 24)]
-	[Calls(Type = typeof(Collider), Member = "set_enabled")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(vp_FPSWeapon), Member = "NoWeaponCameraError")]
 	[Calls(Type = typeof(Component), Member = "GetComponent")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(vp_Component), Member = "Awake")]
-	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
+	[Calls(Type = typeof(Collider), Member = "set_enabled")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 24)]
 	protected override void Awake()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "MaybeBuildRuntimeHierarchy")]
+	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Material), Member = ".ctor")]
-	[Calls(Type = typeof(vp_Spring), Member = ".ctor")]
-	[Calls(Type = typeof(vp_Spring), Member = ".ctor")]
-	[Calls(Type = typeof(vp_Spring), Member = ".ctor")]
-	[Calls(Type = typeof(vp_Spring), Member = ".ctor")]
-	[Calls(Type = typeof(vp_Spring), Member = ".ctor")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(Material), Member = "set_color")]
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
 	[Calls(Type = typeof(Shader), Member = "Find")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "MaybeBuildRuntimeHierarchy")]
-	[CallsDeduplicatedMethods(Count = 23)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Material), Member = ".ctor")]
+	[Calls(Type = typeof(Material), Member = "set_color")]
+	[Calls(Type = typeof(vp_Spring), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 19)]
+	[CallsUnknownMethods(Count = 19)]
 	protected override void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "Start")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "LoadAllFPSWeapons")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "RegisterWeaponItem")]
-	[Calls(Type = typeof(vp_Layer), Member = "Set")]
-	[Calls(Type = typeof(Transform), Member = "set_localEulerAngles")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 11)]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "LoadAllFPSWeapons")]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "Start")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(Transform), Member = "set_localEulerAngles")]
+	[Calls(Type = typeof(vp_Layer), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 12)]
 	public void MaybeBuildRuntimeHierarchy()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "DoCustomFixedUpdate")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	protected override void Update()
 	{
 	}
 
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "UpdateZoom")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 5)]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "UpdateZoom")]
 	[Calls(Type = typeof(vp_FPSWeapon), Member = "DoAiming")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	protected void FixedUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "DoAiming")]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "UpdateZoom")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "UpdateZoom")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "DoAiming")]
+	[CallsUnknownMethods(Count = 3)]
 	protected void FixedUpdateInternal(float fixedTime, float fixedDeltaTime)
 	{
 	}
 
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "DoWeaponBob")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(vp_FPSWeapon), Member = "DoWeaponSwaying")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "DoWeaponBob")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	protected void UpdateForces(float time, float deltaTime)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
-	[CallerCount(Count = 0)]
 	public void SetActive(bool isActive)
 	{
 	}
 
-	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
-	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
 	public void AddForce(Vector3 positional, Vector3 angular)
 	{
 	}
 
-	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
-	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
 	public void AddForce(float xPos, float yPos, float zPos, float xRot, float yRot, float zRot)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
+	[CallsUnknownMethods(Count = 1)]
 	public void AddForce2(Vector3 positional, Vector3 angular)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
-	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
 	[CallsUnknownMethods(Count = 1)]
 	public void AddForce2(float xPos, float yPos, float zPos, float xRot, float yRot, float zRot)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void ApplyFallImpact(float impact)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
+	[CallsUnknownMethods(Count = 1)]
 	public void AddForce(Vector3 force)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
+	[CallsUnknownMethods(Count = 1)]
 	public void AddForce(float x, float y, float z)
 	{
 	}
 
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "get_RenderingFieldOfViewVertical")]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "get_RenderingFieldOfViewVertical")]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "get_RenderingFieldOfViewVertical")]
-	[Calls(Type = typeof(vp_StateManager), Member = "IsEnabled")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "get_RenderingFieldOfViewVertical")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetAimingZoomBlend")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "FixedUpdateInternal")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "FixedUpdate")]
-	[Calls(Type = typeof(Utils), Member = "SetCameraFOVSafe")]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "FixedUpdateInternal")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(vp_StateManager), Member = "IsEnabled")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "get_RenderingFieldOfViewVertical")]
 	[Calls(Type = typeof(Mathf), Member = "SmoothStep")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "GetAimingZoomBlend")]
+	[Calls(Type = typeof(Utils), Member = "SetCameraFOVSafe")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected void UpdateZoom(float time)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Zoom()
 	{
 	}
 
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "get_RenderingFieldOfViewVertical")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SetCameraFOVSafe")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "get_RenderingFieldOfViewVertical")]
+	[Calls(Type = typeof(Utils), Member = "SetCameraFOVSafe")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SnapZoom()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "UpdateForces")]
-	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
+	[CallsUnknownMethods(Count = 5)]
 	protected void DoWeaponBob(float speed, float time)
 	{
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
-	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
-	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
-	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
-	[Calls(Type = typeof(CharacterController), Member = "get_isGrounded")]
-	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "UpdateForces")]
-	[Calls(Type = typeof(InputManager), Member = "GetCameraMovementGamepad")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
-	[Calls(Type = typeof(GameManager), Member = "ControlsLocked")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "ControlsLocked")]
+	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(InputManager), Member = "GetCameraMovementMouse")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(InputManager), Member = "GetCameraMovementGamepad")]
+	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
+	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+	[Calls(Type = typeof(CharacterController), Member = "get_isGrounded")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 7)]
 	protected void DoWeaponSwaying(Vector3 velocity, float time, float deltaTime)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "FixedUpdate")]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "FixedUpdateInternal")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillRifle")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillRifle")]
 	[Calls(Type = typeof(Skill_Rifle), Member = "GetStabilityBonus")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "FixedUpdate")]
 	[Calls(Type = typeof(vp_FPSWeapon), Member = "IsAimSwayDisabled")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "FixedUpdateInternal")]
-	[CallsUnknownMethods(Count = 21)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(vp_FPSWeapon), Member = "RandomShake")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 21)]
 	public void DoAiming(float fixedTime, float fixedDeltaTime)
 	{
 	}
 
+	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(vp_Spring), Member = "ForceVelocityFadeIn")]
-	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(vp_Spring), Member = "ForceVelocityFadeIn")]
 	public void ResetSprings(float positionReset, float rotationReset, float positionPauseTime = 0f, float rotationPauseTime = 0f)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Camera), Member = "set_nearClipPlane")]
 	[Calls(Type = typeof(Camera), Member = "set_farClipPlane")]
 	[Calls(Type = typeof(vp_FPSWeapon), Member = "NoWeaponCameraError")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
 	public override void Refresh()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public void SnapPivot()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetPivotVisible(bool visible)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	public void SnapSprings()
 	{
@@ -658,32 +629,32 @@ public class vp_FPSWeapon : vp_Component
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "EnableEffectsForWeapon")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(HeatSource), Member = "TurnOn")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(HeatSource), Member = "TurnOn")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	public void TurnOnEffects()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void DisableEffectsObject()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "EnableEffectsForWeapon")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SetWeapon")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "EnableEffectsForWeapon")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ParticleSystem), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 6)]
 	public void TurnOffEffects(bool hardStop)
 	{
 	}
@@ -694,110 +665,102 @@ public class vp_FPSWeapon : vp_Component
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_ComponentPreset), Member = "GetFieldValue")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(vp_ComponentPreset), Member = "GetFieldValue")]
-	[Calls(Type = typeof(vp_ComponentPreset), Member = "GetFieldValue")]
-	[CallerCount(Count = 0)]
 	public void AnimateToDefaultPosition()
 	{
 	}
 
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "Refresh")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "Awake")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "Refresh")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	private void NoWeaponCameraError()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "CheckForFireRelease")]
+	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public int GetAmmoCount()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool AnimIsPlaying(int id, int layer)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetSkillRevolver")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
-	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
-	[Calls(Type = typeof(Skill_Revolver), Member = "GetRecoilScale")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(Skill_Revolver), Member = "GetRecoilScale")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillRevolver")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Fire")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(vp_FPSCamera.RecoilSpring), Member = "SetTarget")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Fire")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillRevolver")]
+	[Calls(Type = typeof(Skill_Revolver), Member = "GetRecoilScale")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(vp_FPSCamera.RecoilSpring), Member = "SetTarget")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void PlayFireAnimation()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnFireAnimationComplete()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 2)]
 	public void ToggleZoom(bool zoomed)
 	{
 	}
 
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "Reload")]
-	[Calls(Type = typeof(vp_StateManager), Member = "SetState")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Reload")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Reload")]
+	[Calls(Type = typeof(vp_StateManager), Member = "SetState")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 3)]
 	public void UnJam()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
-	[Calls(Type = typeof(GunItem), Member = "PlayCasingAudio")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_StateManager), Member = "SetState")]
 	[Calls(Type = typeof(GunItem), Member = "RemoveNextFromClip")]
 	[Calls(Type = typeof(vp_FPSWeapon), Member = "UpdateBulletsForReload")]
 	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemAtPlayersFeet")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItem), Member = "SetNormalizedHP")]
-	[Calls(Type = typeof(vp_StateManager), Member = "SetState")]
-	[CallsUnknownMethods(Count = 4)]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GunItem), Member = "PlayCasingAudio")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnUnJamComplete()
 	{
 	}
 
+	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Reload")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Reload")]
-	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Reload")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 3)]
 	public void SetBulletsToReload(int count)
 	{
@@ -806,174 +769,144 @@ public class vp_FPSWeapon : vp_Component
 	[CallerCount(Count = 0)]
 	public bool ReloadInProgress()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(vp_FPSShooter), Member = "PreventFiring")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(vp_StateManager), Member = "SetState")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_StateManager), Member = "SetState")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(vp_FPSShooter), Member = "PreventFiring")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnReloadComplete()
 	{
 	}
 
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnLeftHandProp")]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "EnableReloadBulletInstance")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnRightHandProp")]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "UpdateBulletsForReload")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnLeftHandProp")]
 	[Calls(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnShoulderProp")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "UpdateBulletsForReload")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "EnableReloadBulletInstance")]
 	public void MaybeSpawnFirstPersonWeapon()
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnShoulderProp")]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnRightHandProp")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnLeftHandProp")]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnShoulderProp")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private GameObject GetOrCreateTempParent(string objectName, Transform parent)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableRenderable")]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "SpawnReloadBulletPrefab")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "GetOrCreateTempParent")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "RegisterWeaponItem")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "LoadAllFPSWeapons")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnFirstPersonWeapon")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "SpawnFirstPersonItems")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(FirstPersonWeapon), Member = "SpawnReloadBulletPrefab")]
+	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableRenderable")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "GetOrCreateTempParent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void MaybeSpawnRightHandProp()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "SpawnReloadBulletPrefab")]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableRenderable")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "RegisterWeaponItem")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "GetOrCreateTempParent")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "LoadAllFPSWeapons")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnFirstPersonWeapon")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "SpawnFirstPersonItems")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "LoadAllFPSWeapons")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(FirstPersonWeapon), Member = "SpawnReloadBulletPrefab")]
+	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableRenderable")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "GetOrCreateTempParent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void MaybeSpawnLeftHandProp()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "SpawnReloadBulletPrefab")]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableRenderable")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "GetOrCreateTempParent")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "RegisterWeaponItem")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "LoadAllFPSWeapons")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnFirstPersonWeapon")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "SpawnFirstPersonItems")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "RegisterWeaponItem")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(FirstPersonWeapon), Member = "SpawnReloadBulletPrefab")]
+	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableRenderable")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "GetOrCreateTempParent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void MaybeSpawnShoulderProp()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetInt")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(vp_StateManager), Member = "SetState")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(vp_FPSShooter), Member = "OnClipLoaded")]
 	[CalledBy(Type = typeof(vp_FPSShooter), Member = "OnBulletLoaded")]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "CancelReload")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateReloadCount")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetInt")]
+	[CalledBy(Type = typeof(vp_FPSShooter), Member = "OnClipLoaded")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(vp_StateManager), Member = "SetState")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetInt")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateReloadCount")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "CancelReload")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool DecrementBulletsToReload(int n)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
 	[CallAnalysisFailed]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "DecrementBulletsToReload")]
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "CancelReload")]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "DecrementBulletsToReload")]
+	[CallerCount(Count = 2)]
 	public void CancelReload()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "MaybeResetCurrentWeapon")]
-	[Calls(Type = typeof(vp_StateManager), Member = "Reset")]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "EnableReloadBulletInstance")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GunItem), Member = "ResetEffects")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "EnableReloadBulletInstance")]
+	[Calls(Type = typeof(vp_StateManager), Member = "Reset")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Reset()
 	{
 	}
 
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "UpdateBulletsForReload")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SetWeapon")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "RegisterWeaponItem")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "LoadAllFPSWeapons")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "OnUnJamComplete")]
@@ -981,12 +914,10 @@ public class vp_FPSWeapon : vp_Component
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "OnUnJamRoundsUnloaded")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "OnRoundsUnloaded")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "SpawnFirstPersonItems")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "UpdateBulletsForReload")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "UpdateBulletsForReload")]
 	[CallerCount(Count = 8)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(FirstPersonWeapon), Member = "UpdateBulletsForReload")]
+	[CallsUnknownMethods(Count = 1)]
 	public void UpdateBulletsForReload(int numToShow)
 	{
 	}
@@ -997,112 +928,85 @@ public class vp_FPSWeapon : vp_Component
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "RegisterWeaponItem")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "LoadAllFPSWeapons")]
 	[CalledBy(Type = typeof(vp_FPSShooter), Member = "OnBulletLoaded")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnFirstPersonWeapon")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "Reset")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "SpawnFirstPersonItems")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_ShowReloadBulletInstance")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "RegisterWeaponItem")]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableReloadBulletInstance")]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableReloadBulletInstance")]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableReloadBulletInstance")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 7)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableReloadBulletInstance")]
+	[CallsUnknownMethods(Count = 1)]
 	public void EnableReloadBulletInstance(bool enable)
 	{
 	}
 
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "MoveToTempParent")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(vp_FPSWeapon), Member = "RestoreChildObject")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "MoveToTempParent")]
 	[Calls(Type = typeof(vp_FPSWeapon), Member = "CopyChildObject")]
 	public void AttachObjectChildCopy(GameObject parentObject)
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(BodyCarry), Member = "DetachFPMesh")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "AttachObjectChildCopy")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(BodyCarry), Member = "AttachFPMesh")]
+	[CalledBy(Type = typeof(BodyCarry), Member = "DetachFPMesh")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	public void RestoreChildObject()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AnimationUtils), Member = "IsStatePlayingOnAnyLayer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(AnimationUtils), Member = "IsStatePlayingOnAnyLayer")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsAnimationPlayingOnAnyLayer(int hash)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Animator), Member = "Play")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Animator), Member = "Play")]
 	[CalledBy(Type = typeof(BodyCarry), Member = "Update")]
 	[CalledBy(Type = typeof(BodyCarry), Member = "PlayCarryIdleAnimation")]
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Animator), Member = "Play")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void PlayAnimation(int hash)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(BodyCarry), Member = "AttachFPMesh")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "AttachObjectChildCopy")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 14)]
+	[CalledBy(Type = typeof(BodyCarry), Member = "AttachFPMesh")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "GetChild")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 12)]
 	private void MoveToTempParent()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "AttachObjectChildCopy")]
 	[CalledBy(Type = typeof(BodyCarry), Member = "AttachFPMesh")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[CallsUnknownMethods(Count = 9)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "GetChild")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 9)]
 	private void CopyChildObject(GameObject newProp)
 	{
 	}
@@ -1114,24 +1018,22 @@ public class vp_FPSWeapon : vp_Component
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GunItem), Member = "PlayCasingAudio")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemAtLocation")]
-	[Calls(Type = typeof(PlayerInVehicle), Member = "GetDropItemLocationForLastDoor")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemAtPlayersFeet")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "UpdateBulletsForReload")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemAtPlayersFeet")]
+	[Calls(Type = typeof(PlayerInVehicle), Member = "GetDropItemLocationForLastDoor")]
+	[Calls(Type = typeof(AssetReferenceWithComponent<>), Member = "GetOrLoadTypedAsset")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemAtLocation")]
+	[Calls(Type = typeof(GunItem), Member = "PlayCasingAudio")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "UpdateBulletsForReload")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnRoundsUnloaded()
 	{
 	}
 
-	[Calls(Type = typeof(vp_Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_Component), Member = ".ctor")]
 	public vp_FPSWeapon()
 	{
 	}

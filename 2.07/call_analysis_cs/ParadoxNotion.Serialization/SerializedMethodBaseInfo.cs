@@ -6,16 +6,10 @@ namespace ParadoxNotion.Serialization;
 
 public abstract class SerializedMethodBaseInfo : ISerializationCallbackReceiver
 {
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101261)]
 	public abstract MethodBase GetBase();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101261)]
 	public abstract bool HasChanged();
 
-	[CallerCount(Count = 101261)]
-	[DeduplicatedMethod]
 	public abstract string GetMethodString();
 
 	[DeduplicatedMethod]
@@ -25,12 +19,8 @@ public abstract class SerializedMethodBaseInfo : ISerializationCallbackReceiver
 		return null;
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101261)]
 	public abstract void OnBeforeSerialize();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101261)]
 	public abstract void OnAfterDeserialize();
 
 	[DeduplicatedMethod]

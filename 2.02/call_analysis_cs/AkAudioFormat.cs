@@ -15,7 +15,7 @@ public class AkAudioFormat : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -27,16 +27,16 @@ public class AkAudioFormat : IDisposable
 
 	public AkChannelConfig channelConfig
 	{
-		[CallsUnknownMethods(Count = 8)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 8)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AkChannelConfig), Member = "getCPtr")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -50,7 +50,7 @@ public class AkAudioFormat : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -67,7 +67,7 @@ public class AkAudioFormat : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -84,11 +84,11 @@ public class AkAudioFormat : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -101,7 +101,7 @@ public class AkAudioFormat : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -121,7 +121,7 @@ public class AkAudioFormat : IDisposable
 	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkAudioFormat obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -138,21 +138,21 @@ public class AkAudioFormat : IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public uint GetNumChannels()
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -160,7 +160,7 @@ public class AkAudioFormat : IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public uint GetBitsPerSample()
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -168,7 +168,7 @@ public class AkAudioFormat : IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public uint GetBlockAlign()
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -176,21 +176,21 @@ public class AkAudioFormat : IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public uint GetTypeID()
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public uint GetInterleaveID()
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[Calls(Type = typeof(AkChannelConfig), Member = "getCPtr")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkChannelConfig), Member = "getCPtr")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetAll(uint in_uSampleRate, AkChannelConfig in_channelConfig, uint in_uBitsPerSample, uint in_uBlockAlign, uint in_uTypeID, uint in_uInterleaveID)
 	{
 	}
@@ -200,7 +200,7 @@ public class AkAudioFormat : IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsChannelConfigSupported()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

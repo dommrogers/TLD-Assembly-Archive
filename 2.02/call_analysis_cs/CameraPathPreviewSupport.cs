@@ -8,7 +8,7 @@ public class CameraPathPreviewSupport
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -22,8 +22,8 @@ public class CameraPathPreviewSupport
 		}
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public CameraPathPreviewSupport()
 	{
 	}

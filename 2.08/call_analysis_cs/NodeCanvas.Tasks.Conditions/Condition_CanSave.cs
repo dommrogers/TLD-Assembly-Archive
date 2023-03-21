@@ -24,7 +24,7 @@ public class Condition_CanSave : ConditionTask
 	[Calls(Type = typeof(GameManager), Member = "AllowedToSave")]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

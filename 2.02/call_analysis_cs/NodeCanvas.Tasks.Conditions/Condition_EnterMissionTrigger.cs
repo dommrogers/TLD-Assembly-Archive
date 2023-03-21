@@ -20,24 +20,27 @@ public class Condition_EnterMissionTrigger : ConditionTask
 	[CallerCount(Count = 0)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(ConditionTask), Member = "Flip")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(MissionTrigger), Member = "ParseAssociatedData")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(NCUtils), Member = "GetOrAddVar")]
+	[Calls(Type = typeof(MissionTrigger), Member = "ParseAssociatedData")]
+	[Calls(Type = typeof(Variable<>), Member = "set_value")]
+	[Calls(Type = typeof(ConditionTask), Member = "Flip")]
+	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	public void OnCustomEvent(EventData receivedEvent)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(BBParameter<>), Member = ".ctor")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 16)]
 	public Condition_EnterMissionTrigger()
 	{

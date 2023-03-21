@@ -17,8 +17,8 @@ internal struct OnUnlockAchievementsCompleteCallbackInfoInternal : ICallbackInfo
 
 	public Result ResultCode
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(Result);
@@ -27,11 +27,11 @@ internal struct OnUnlockAchievementsCompleteCallbackInfoInternal : ICallbackInfo
 
 	public object ClientData
 	{
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CalledBy(Type = typeof(OnUnlockAchievementsCompleteCallbackInfo), Member = "Set")]
 		[CalledBy(Type = typeof(OnUnlockAchievementsCompleteCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(OnUnlockAchievementsCompleteCallbackInfo), Member = "Set")]
 		get
 		{
 			return null;
@@ -40,20 +40,21 @@ internal struct OnUnlockAchievementsCompleteCallbackInfoInternal : ICallbackInfo
 
 	public IntPtr ClientDataAddress
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public ProductUserId UserId
 	{
+		[CalledBy(Type = typeof(OnUnlockAchievementsCompleteCallbackInfo), Member = "Set")]
+		[CalledBy(Type = typeof(OnUnlockAchievementsCompleteCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(OnUnlockAchievementsCompleteCallbackInfo), Member = "Set")]
-		[CalledBy(Type = typeof(OnUnlockAchievementsCompleteCallbackInfo), Member = "Set")]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -66,7 +67,7 @@ internal struct OnUnlockAchievementsCompleteCallbackInfoInternal : ICallbackInfo
 		[CallerCount(Count = 8)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 }

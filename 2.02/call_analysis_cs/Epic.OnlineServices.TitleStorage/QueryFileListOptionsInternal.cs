@@ -17,11 +17,11 @@ internal struct QueryFileListOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(QueryFileListOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(QueryFileListOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(QueryFileListOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(QueryFileListOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -30,33 +30,34 @@ internal struct QueryFileListOptionsInternal : ISettable, IDisposable
 	public string[] ListOfTags
 	{
 		[CalledBy(Type = typeof(QueryFileListOptionsInternal), Member = "Set")]
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(QueryFileListOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(QueryFileListOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(QueryFileListOptionsInternal), Member = "set_ListOfTags")]
-	[CallerCount(Count = 0)]
 	public void Set(QueryFileListOptions other)
 	{
 	}
 
+	[CalledBy(Type = typeof(TitleStorageInterface), Member = "QueryFileList")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(QueryFileListOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(QueryFileListOptionsInternal), Member = "set_ListOfTags")]
-	[CalledBy(Type = typeof(TitleStorageInterface), Member = "QueryFileList")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

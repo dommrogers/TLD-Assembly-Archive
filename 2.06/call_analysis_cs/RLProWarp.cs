@@ -13,10 +13,10 @@ public sealed class RLProWarp : PostProcessEffectSettings
 
 	public FloatParameter scale;
 
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 21)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 21)]
 	public RLProWarp()
 	{
 	}

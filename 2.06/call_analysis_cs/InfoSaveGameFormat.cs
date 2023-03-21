@@ -24,8 +24,8 @@ public class InfoSaveGameFormat
 
 	public string m_ActiveMissionId;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public InfoSaveGameFormat()
 	{
 	}

@@ -6,9 +6,9 @@ public class PlayableAssetTitleCards : PlayableAsset
 {
 	public PlayableBehaviourTitleCards template;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(ScriptPlayable<>), Member = "Create")]
+	[CallsUnknownMethods(Count = 1)]
 	public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
 	{
 		return default(Playable);

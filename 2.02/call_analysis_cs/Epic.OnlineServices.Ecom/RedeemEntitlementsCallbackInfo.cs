@@ -30,16 +30,16 @@ public class RedeemEntitlementsCallbackInfo : ICallbackInfo, ISettable
 
 	public object ClientData
 	{
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 71)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -49,46 +49,46 @@ public class RedeemEntitlementsCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 41)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Result? GetResultCode()
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(RedeemEntitlementsCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(RedeemEntitlementsCallbackInfoInternal), Member = "get_LocalUserId")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	internal void Set(RedeemEntitlementsCallbackInfoInternal? other)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(RedeemEntitlementsCallbackInfoInternal), Member = "get_LocalUserId")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(RedeemEntitlementsCallbackInfoInternal), Member = "get_ClientData")]
+	[Calls(Type = typeof(RedeemEntitlementsCallbackInfoInternal), Member = "get_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public RedeemEntitlementsCallbackInfo()
 	{
 	}

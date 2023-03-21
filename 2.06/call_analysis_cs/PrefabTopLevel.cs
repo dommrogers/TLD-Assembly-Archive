@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class PrefabTopLevel : MonoBehaviour
 {
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public PrefabTopLevel()
 	{
 	}

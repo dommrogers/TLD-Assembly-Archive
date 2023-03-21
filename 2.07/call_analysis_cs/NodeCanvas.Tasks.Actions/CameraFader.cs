@@ -10,7 +10,7 @@ namespace NodeCanvas.Tasks.Actions;
 
 public class CameraFader : MonoBehaviour
 {
-	private sealed class _003CCoroutineFadeIn_003Ed__9 : IEnumerator, IDisposable, IEnumerator<object>
+	private sealed class _003CCoroutineFadeIn_003Ed__9 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -24,7 +24,7 @@ public class CameraFader : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -33,9 +33,9 @@ public class CameraFader : MonoBehaviour
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 28)]
-			[DeduplicatedMethod]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -56,24 +56,24 @@ public class CameraFader : MonoBehaviour
 		{
 		}
 
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[CallsUnknownMethods(Count = 4)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
 	}
 
-	private sealed class _003CCoroutineFadeOut_003Ed__10 : IEnumerator, IDisposable, IEnumerator<object>
+	private sealed class _003CCoroutineFadeOut_003Ed__10 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -85,9 +85,9 @@ public class CameraFader : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 28)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -98,7 +98,7 @@ public class CameraFader : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -124,7 +124,7 @@ public class CameraFader : MonoBehaviour
 		[CallsUnknownMethods(Count = 2)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -145,11 +145,11 @@ public class CameraFader : MonoBehaviour
 	private Texture2D blackTexture
 	{
 		[CalledBy(Type = typeof(CameraFader), Member = "OnGUI")]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Texture2D), Member = "Apply")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Texture2D), Member = ".ctor")]
 		[Calls(Type = typeof(Texture2D), Member = "SetPixel")]
+		[Calls(Type = typeof(Texture2D), Member = "Apply")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -158,11 +158,12 @@ public class CameraFader : MonoBehaviour
 
 	public static CameraFader current
 	{
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[Calls(Type = typeof(GameObject), Member = ".ctor")]
 		[CalledBy(Type = typeof(FadeIn), Member = "OnExecute")]
 		[CalledBy(Type = typeof(FadeOut), Member = "OnExecute")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectOfType")]
+		[Calls(Type = typeof(GameObject), Member = ".ctor")]
+		[Calls(Type = typeof(GameObject), Member = "AddComponent")]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -170,9 +171,9 @@ public class CameraFader : MonoBehaviour
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsUnknownMethods(Count = 1)]
 	public void FadeIn(float time)
 	{
 	}
@@ -192,18 +193,18 @@ public class CameraFader : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[IteratorStateMachine(typeof(_003CCoroutineFadeOut_003Ed__10))]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private IEnumerator CoroutineFadeOut(float time)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(CameraFader), Member = "get_blackTexture")]
 	[Calls(Type = typeof(GUI), Member = "DrawTexture")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
 	private void OnGUI()
 	{

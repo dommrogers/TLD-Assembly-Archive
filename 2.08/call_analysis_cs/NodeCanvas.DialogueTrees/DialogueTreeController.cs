@@ -11,9 +11,9 @@ public class DialogueTreeController : GraphOwner<DialogueTree>, IDialogueActor
 {
 	private string NodeCanvas_002EDialogueTrees_002EIDialogueActor_002Ename
 	{
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 		get
 		{
 			return null;
@@ -62,9 +62,9 @@ public class DialogueTreeController : GraphOwner<DialogueTree>, IDialogueActor
 
 	private Transform NodeCanvas_002EDialogueTrees_002EIDialogueActor_002Etransform
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 1151)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1205)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -89,32 +89,31 @@ public class DialogueTreeController : GraphOwner<DialogueTree>, IDialogueActor
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(StartDialogueTree), Member = "OnExecute")]
-	[CalledBy(Type = typeof(StartDialogueTree), Member = "OnExecute")]
-	[CalledBy(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
-	[CalledBy(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Graph), Member = "StartGraph")]
-	[Calls(Type = typeof(GraphOwner), Member = "GetInstance")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateStart")]
+	[CalledBy(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
+	[CalledBy(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
+	[CalledBy(Type = typeof(StartDialogueTree), Member = "OnExecute")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(GraphOwner), Member = "GetInstance")]
+	[Calls(Type = typeof(Graph), Member = "StartGraph")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public void StartDialogue(IDialogueActor instigator, Action<bool> callback)
 	{
 	}
 
-	[Calls(Type = typeof(Graph), Member = "Pause")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Graph), Member = "Pause")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void PauseDialogue()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Graph), Member = "Stop")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Graph), Member = "Stop")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void StopDialogue()
 	{
 	}
@@ -133,9 +132,9 @@ public class DialogueTreeController : GraphOwner<DialogueTree>, IDialogueActor
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public IDialogueActor GetActorReferenceByName(string paramName)
 	{
 		return null;

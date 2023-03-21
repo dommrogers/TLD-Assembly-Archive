@@ -34,15 +34,15 @@ public class State_DialogueSubDT : FSMState, ITaskAssignable, ITLDChildGraphOwne
 
 	public Task task
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -51,13 +51,13 @@ public class State_DialogueSubDT : FSMState, ITaskAssignable, ITLDChildGraphOwne
 	public ActionList actionList
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 1)]
+		[CallerCount(Count = 3)]
 		set
 		{
 		}
@@ -69,7 +69,7 @@ public class State_DialogueSubDT : FSMState, ITaskAssignable, ITLDChildGraphOwne
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -80,57 +80,58 @@ public class State_DialogueSubDT : FSMState, ITaskAssignable, ITLDChildGraphOwne
 
 	public GameObject childGraphPrefab
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Task), Member = "Create")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public override void OnValidate(Graph assignedGraph)
 	{
 	}
 
-	[Calls(Type = typeof(State_DialogueSubDT), Member = "StartDialogueTree")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(State_DialogueSubDT), Member = "GetDialogModeRigFPOnActor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NCUtils), Member = "SpawnChildGraph")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NCUtils), Member = "SpawnChildGraph")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(State_DialogueSubDT), Member = "GetDialogModeRigFPOnActor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(State_DialogueSubDT), Member = "StartDialogueTree")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 12)]
 	protected override void OnEnter()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
 	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	protected override void OnUpdate()
 	{
 	}
@@ -142,49 +143,49 @@ public class State_DialogueSubDT : FSMState, ITaskAssignable, ITLDChildGraphOwne
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExit()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(State_DialogueSubDT), Member = "OnEnter")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnPlayerStartedDialogue")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
 	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
 	[Calls(Type = typeof(NCUtils), Member = "AddBlackboardMembersIfRequired")]
-	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnPlayerStartedDialogue")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void StartDialogueTree()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(State_DialogueSubDT), Member = "OnEnter")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CalledBy(Type = typeof(State_DialogueSubDT), Member = "OnEnter")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private DialogueModeRigFP GetDialogModeRigFPOnActor(string name)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Node), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = ".ctor")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(Type = typeof(Node), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public State_DialogueSubDT()
 	{
 	}

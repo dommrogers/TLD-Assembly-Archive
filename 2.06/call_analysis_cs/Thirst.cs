@@ -61,26 +61,26 @@ public class Thirst : MonoBehaviour
 	private static ThirstSaveDataProxy m_ThirstSaveDataProxy;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(Thirst), Member = "UpdateThirstStatusOnHUD")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Thirst), Member = "AddThirst")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Thirst), Member = "MaybePlayPlayerThirstVoiceOver")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Thirst), Member = "AddThirst")]
+	[Calls(Type = typeof(Thirst), Member = "MaybePlayPlayerThirstVoiceOver")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
+	[Calls(Type = typeof(Thirst), Member = "UpdateThirstStatusOnHUD")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	private void Update()
 	{
 	}
@@ -93,28 +93,30 @@ public class Thirst : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
 	public string GetThirstStateString()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(Hunger), Member = "UpdateCalorieReserves")]
 	[CalledBy(Type = typeof(Thirst), Member = "Update")]
 	[CalledBy(Type = typeof(Thirst), Member = "UpdateAddThirstOverTime")]
 	[CalledBy(Type = typeof(Dysentery), Member = "UpdateDysentery")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "EatingComplete_Internal")]
+	[CallerCount(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
 	public void AddThirst(float thirstValue)
 	{
@@ -125,8 +127,8 @@ public class Thirst : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void ClearAddThirstOverTime()
 	{
 	}
@@ -135,19 +137,19 @@ public class Thirst : MonoBehaviour
 	[CallerCount(Count = 2)]
 	public bool IsAddingThirstOverTime()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsDehydrated()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsVeryThirsty()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -159,14 +161,14 @@ public class Thirst : MonoBehaviour
 	[Calls(Type = typeof(Condition), Member = "CanPlayConditionVO")]
 	private bool ShouldPlayThirstVoiceOver()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(Thirst), Member = "Update")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Condition), Member = "CanPlayConditionVO")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[CallsUnknownMethods(Count = 5)]
 	private void MaybePlayPlayerThirstVoiceOver()
 	{
 	}
@@ -186,54 +188,49 @@ public class Thirst : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	private string GetThirstTextForHud()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void MaybeUpdateThirstStatusLabel(Panel_HUD hud)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Thirst), Member = "AddThirst")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private void UpdateAddThirstOverTime()
 	{
 	}
 
 	[CalledBy(Type = typeof(Thirst), Member = "Update")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateThirstStatusOnHUD(Panel_HUD hud)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 3)]
 	private void MaybeUpdateDehydratedStatusInLog()
 	{
 	}

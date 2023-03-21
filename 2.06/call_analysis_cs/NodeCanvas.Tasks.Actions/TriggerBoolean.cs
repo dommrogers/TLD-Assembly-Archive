@@ -22,7 +22,7 @@ public class TriggerBoolean : ActionTask
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -33,7 +33,7 @@ public class TriggerBoolean : ActionTask
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -47,28 +47,28 @@ public class TriggerBoolean : ActionTask
 		{
 		}
 
-		[CallerCount(Count = 6)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
 		[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
 		[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
+		[DebuggerHidden]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[CallsUnknownMethods(Count = 5)]
-		[CallerCount(Count = 0)]
-		[DebuggerHidden]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -79,7 +79,7 @@ public class TriggerBoolean : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		get
 		{
@@ -87,14 +87,15 @@ public class TriggerBoolean : ActionTask
 		}
 	}
 
-	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
+	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
+	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	protected override void OnExecute()
 	{
 	}

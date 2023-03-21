@@ -18,66 +18,64 @@ public class Panel_SafeCracking : Panel_AutoReferenced
 
 	private SafeCracking m_CurrentSafe;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(OpenClose), Member = "Open")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SafeCracking), Member = "ExitInterfaceAndOpenSafe")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(OpenClose), Member = "Open")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Lock), Member = "SetLockState")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CallsUnknownMethods(Count = 3)]
 	public override void Enable(bool enable)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 4)]
+	[CallerCount(Count = 21)]
 	public void SetCurrentSafe(SafeCracking safe)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(SafeCracking), Member = "Update")]
 	[CalledBy(Type = typeof(SafeCracking), Member = "EnableSafeCrackingInterface")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	public bool IsCurrentSafe(SafeCracking safe)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(SafeCracking), Member = "UnlockSafe")]
 	[CalledBy(Type = typeof(SafeCracking), Member = "HitTick")]
 	[CalledBy(Type = typeof(SafeCracking), Member = "EnableSafeCrackingInterface")]
-	[CalledBy(Type = typeof(SafeCracking), Member = "UnlockSafe")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
@@ -86,18 +84,17 @@ public class Panel_SafeCracking : Panel_AutoReferenced
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnDone()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(OpenClose), Member = "Open")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SafeCracking), Member = "ExitInterfaceAndOpenSafe")]
+	[Calls(Type = typeof(OpenClose), Member = "Open")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnOpen()
 	{
 	}
@@ -118,13 +115,12 @@ public class Panel_SafeCracking : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateButtonLegend()
 	{
 	}

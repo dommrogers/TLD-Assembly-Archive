@@ -10,61 +10,61 @@ public class GearSelectCoverflow : MonoBehaviour
 
 	private GearItem m_GearItem;
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTextureNonNull")]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "SetupScrollList")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTextureNonNull")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetEmptySlot(string textureName)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "SetupScrollList")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTextureNonNull")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTextureNonNull")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public void SetBareHands()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_GearSelect), Member = "SetupScrollList")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTextureFromPrefabName")]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "SetupScrollList")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetGearItem(GearItem gearItem)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void UpdateGearItemIcon()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTextureFromPrefabName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void SetGearItemIcon(string gearPrefabName)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 58)]
+	[CallerCount(Count = 61)]
 	private GearItem GetGearItem()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public GearSelectCoverflow()
 	{
 	}

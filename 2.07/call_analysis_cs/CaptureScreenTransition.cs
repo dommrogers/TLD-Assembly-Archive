@@ -35,20 +35,19 @@ public class CaptureScreenTransition
 	[CallerCount(Count = 0)]
 	public bool HasFadeoutCaptureCompleted()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = "SendMessage")]
-	[Calls(Type = typeof(Component), Member = "SendMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	public void StartCaptureFadeOut(UISprite background)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	public void DoCaptureScreen()
 	{
 	}
@@ -56,12 +55,12 @@ public class CaptureScreenTransition
 	[CallerCount(Count = 0)]
 	public bool ShouldCaptureScreen()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnFadeoutCompleted()
 	{
@@ -78,16 +77,14 @@ public class CaptureScreenTransition
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Component), Member = "SendMessage")]
-	[Calls(Type = typeof(Component), Member = "SendMessage")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "SendMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	public void MaybeStartCaptureFadeOut(UISprite background)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Component), Member = "SendMessage")]
 	[Calls(Type = typeof(Component), Member = "SendMessage")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CallsUnknownMethods(Count = 1)]
@@ -95,14 +92,14 @@ public class CaptureScreenTransition
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
-	[CalledBy(Type = typeof(CaptureScreenTransition), Member = "MaybeResetBackgrounds")]
-	[Calls(Type = typeof(CaptureScreenTransition), Member = "SetBackgroundAlpha")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(CaptureScreenTransition), Member = "OnDisable")]
+	[CalledBy(Type = typeof(CaptureScreenTransition), Member = "MaybeResetBackgrounds")]
+	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(CaptureScreenTransition), Member = "SetBackgroundAlpha")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void ResetBackgrounds(UISprite backround)
 	{
 	}
@@ -122,11 +119,11 @@ public class CaptureScreenTransition
 	[CallerCount(Count = 0)]
 	public bool IsCaptureFadingInProgress()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	public void MaybeEnableAnimationLoading(GameObject loadingAnimation)
 	{
 	}
@@ -138,19 +135,21 @@ public class CaptureScreenTransition
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void InitBackgroundTweenAlpha(UISprite background, float currentAlpha)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
 	[CalledBy(Type = typeof(CaptureScreenTransition), Member = "MaybeInitFadeOut")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(CaptureScreenTransition), Member = "SetBackgroundAlpha")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(CaptureScreenTransition), Member = "SetBackgroundAlpha")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void InitFadeOutCapture(UISprite background, GameObject loadingAnimation)
 	{
 	}
@@ -159,14 +158,14 @@ public class CaptureScreenTransition
 	[CallerCount(Count = 0)]
 	private bool IsCaptureFading()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(CaptureScreenTransition), Member = "InitFadeOutCapture")]
 	[CalledBy(Type = typeof(CaptureScreenTransition), Member = "ResetBackgrounds")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(CaptureScreenTransition), Member = "InitFadeOutCapture")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private static void SetBackgroundAlpha(UIWidget widget, float alpha)
 	{
 	}

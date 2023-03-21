@@ -6,26 +6,26 @@ namespace ParadoxNotion.Serialization.FullSerializer.Internal;
 public class fsTypeConverter : fsConverter
 {
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public override bool CanProcess(Type type)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public override bool RequestCycleSupport(Type type)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public override bool RequestInheritanceSupport(Type type)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -38,13 +38,12 @@ public class fsTypeConverter : fsConverter
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(fsData), Member = "get_IsString")]
 	[Calls(Type = typeof(fsData), Member = "get_AsString")]
 	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
-	[Calls(Type = typeof(fsData), Member = "get_AsString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(fsResult), Member = "Fail")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public override fsResult TryDeserialize(fsData data, ref object instance, Type storageType)
 	{
@@ -57,8 +56,8 @@ public class fsTypeConverter : fsConverter
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public fsTypeConverter()
 	{
 	}

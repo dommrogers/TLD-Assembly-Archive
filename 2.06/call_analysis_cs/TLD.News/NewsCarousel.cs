@@ -8,6 +8,7 @@ using System.Text;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Logging;
 using TLD.OptionalContent;
+using TLD.SaveState;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -35,9 +36,9 @@ public class NewsCarousel : MonoBehaviour
 		{
 		}
 
-		[Calls(Type = typeof(NewsCarousel), Member = "SetActiveItem")]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+		[Calls(Type = typeof(NewsCarousel), Member = "SetActiveItem")]
 		[CallsUnknownMethods(Count = 1)]
 		internal void _003CSetupPipClick_003Eb__0()
 		{
@@ -54,9 +55,9 @@ public class NewsCarousel : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -65,40 +66,40 @@ public class NewsCarousel : MonoBehaviour
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CDownloadAllBackgrounds_003Ed__40(int _003C_003E1__state)
 		{
 		}
 
-		[CallerCount(Count = 6)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[Calls(Type = typeof(Array), Member = "Clear")]
 		[Calls(Type = typeof(NewsCarousel), Member = "DownloadTexture")]
 		[Calls(Type = typeof(NewsCarousel), Member = "SetupPips")]
 		[Calls(Type = typeof(NewsCarousel), Member = "SetActiveItem")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		[CallsUnknownMethods(Count = 13)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -118,23 +119,24 @@ public class NewsCarousel : MonoBehaviour
 
 		public NewsItem newsItem;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec__DisplayClass41_0()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 6)]
-		[Calls(Type = typeof(ImageConversion), Member = "LoadImage")]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[Calls(Type = typeof(Texture2D), Member = ".ctor")]
+		[Calls(Type = typeof(ImageConversion), Member = "LoadImage")]
+		[Calls(Type = typeof(List<>), Member = "Remove")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 6)]
 		internal void _003CDownloadTexture_003Eb__0(UnityWebRequest succesResponse)
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(List<>), Member = "Remove")]
 		[CallsUnknownMethods(Count = 1)]
 		internal void _003CDownloadTexture_003Eb__1(UnityWebRequest failResponse)
 		{
@@ -208,11 +210,11 @@ public class NewsCarousel : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(NewsCarousel), Member = "Awake")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	private void SetupPipClick(int index)
 	{
 	}
@@ -237,8 +239,8 @@ public class NewsCarousel : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private void SetNewsState(NewsState state)
 	{
 	}
@@ -249,113 +251,106 @@ public class NewsCarousel : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(NewsCarousel), Member = "UpdateCarousel")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[Calls(Type = typeof(Utils), Member = "WebRequest")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(WebUtility), Member = "UrlEncode")]
-	[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-	[Calls(Type = typeof(NewsCarousel), Member = "FinishNewsFetching")]
-	[Calls(Type = typeof(NewsProvider), Member = "GenerateQuery")]
-	[Calls(Type = typeof(OptionalContentManager), Member = "IsContentOwned")]
-	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
-	[Calls(Type = typeof(OptionalContentManager), Member = "IsContentOwned")]
-	[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(NewsCarousel), Member = "UpdateCarousel")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
+	[Calls(Type = typeof(OptionalContentManager), Member = "IsContentOwned")]
+	[Calls(Type = typeof(NewsProvider), Member = "GenerateQuery")]
+	[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
+	[Calls(Type = typeof(WebUtility), Member = "UrlEncode")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Utils), Member = "WebRequest")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[Calls(Type = typeof(NewsCarousel), Member = "FinishNewsFetching")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 12)]
 	private void RetrieveNewsFromServer()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(OptionalContentManager), Member = "IsContentOwned")]
-	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
-	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
 	[Calls(Type = typeof(OptionalContentManager), Member = "IsContentOwned")]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetSKU()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(NewsProvider), Member = "ParseJson")]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[CalledBy(Type = typeof(NewsCarousel), Member = "RetrieveNewsFromServer")]
 	[CalledBy(Type = typeof(NewsCarousel), Member = "<RetrieveNewsFromServer>b__37_0")]
-	[CalledBy(Type = typeof(NewsCarousel), Member = "<RetrieveNewsFromServer>b__37_0")]
 	[CalledBy(Type = typeof(NewsCarousel), Member = "<RetrieveNewsFromServer>b__37_1")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(NewsProvider), Member = "ParseJson")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	private void FinishNewsFetching(string newsJson)
 	{
 	}
 
+	[IteratorStateMachine(typeof(_003CDownloadAllBackgrounds_003Ed__40))]
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 6)]
-	[IteratorStateMachine(typeof(_003CDownloadAllBackgrounds_003Ed__40))]
 	private IEnumerator DownloadAllBackgrounds()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(_003CDownloadAllBackgrounds_003Ed__40), Member = "MoveNext")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Utils), Member = "WebRequest")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[CalledBy(Type = typeof(_003CDownloadAllBackgrounds_003Ed__40), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 17)]
 	private void DownloadTexture(NewsItem newsItem, string url)
 	{
 	}
 
-	[Calls(Type = typeof(NewsCarousel), Member = "SetActiveItem")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(NewsCarousel), Member = "SetupPips")]
+	[Calls(Type = typeof(NewsCarousel), Member = "SetActiveItem")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void FinishSettingUpNews()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(NewsCarousel), Member = "FinishSettingUpNews")]
 	[CalledBy(Type = typeof(_003CDownloadAllBackgrounds_003Ed__40), Member = "MoveNext")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CalledBy(Type = typeof(NewsCarousel), Member = "FinishSettingUpNews")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	private void SetupPips(int count)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(NewsCarousel), Member = "MoveToNextItem")]
-	[Calls(Type = typeof(NewsCarousel), Member = "SetActiveItem")]
-	[Calls(Type = typeof(Utils), Member = "OpenURL")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
 	[CalledBy(Type = typeof(NewsCarousel), Member = "UpdateCarousel")]
-	[Calls(Type = typeof(NewsCarousel), Member = "ResetNews")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(NewsCarousel), Member = "MoveToNextItem")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(DateTime), Member = "get_Now")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(DateTime), Member = "get_Now")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(NewsCarousel), Member = "MoveToNextItem")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetInventoryExaminePressed")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Utils), Member = "OpenURL")]
+	[Calls(Type = typeof(NewsCarousel), Member = "SetActiveItem")]
+	[Calls(Type = typeof(NewsCarousel), Member = "ResetNews")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateActiveCarousel()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(NewsCarousel), Member = "SetActiveItem")]
-	[CallerCount(Count = 0)]
 	private void OnPipButtonClicked(int index)
 	{
 	}
@@ -363,7 +358,7 @@ public class NewsCarousel : MonoBehaviour
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Utils), Member = "OpenURL")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnItemButtonClicked()
 	{
@@ -372,53 +367,51 @@ public class NewsCarousel : MonoBehaviour
 	[CalledBy(Type = typeof(NewsCarousel), Member = "UpdateActiveCarousel")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(NewsCarousel), Member = "SetActiveItem")]
-	[CalledBy(Type = typeof(NewsCarousel), Member = "UpdateActiveCarousel")]
 	[CallsUnknownMethods(Count = 1)]
 	private void MoveToNextItem()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void MoveToPreviousItem()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(NewsCarousel), Member = "MoveToNextItem")]
-	[CalledBy(Type = typeof(NewsCarousel), Member = "UpdateActiveCarousel")]
-	[CalledBy(Type = typeof(NewsCarousel), Member = "FinishSettingUpNews")]
-	[CalledBy(Type = typeof(_003CDownloadAllBackgrounds_003Ed__40), Member = "MoveNext")]
-	[CalledBy(Type = typeof(NewsCarousel), Member = "OnPipButtonClicked")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(NewsCarousel), Member = "UpdateNewsItem")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(_003C_003Ec__DisplayClass31_0), Member = "<SetupPipClick>b__0")]
+	[CalledBy(Type = typeof(_003CDownloadAllBackgrounds_003Ed__40), Member = "MoveNext")]
+	[CalledBy(Type = typeof(NewsCarousel), Member = "FinishSettingUpNews")]
+	[CalledBy(Type = typeof(NewsCarousel), Member = "UpdateActiveCarousel")]
+	[CalledBy(Type = typeof(NewsCarousel), Member = "OnPipButtonClicked")]
+	[CalledBy(Type = typeof(NewsCarousel), Member = "MoveToNextItem")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(NewsCarousel), Member = "UpdateNewsItem")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetActiveItem(int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(NewsCarousel), Member = "SetActiveItem")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateNewsItem(NewsItem item, bool isNew)
 	{
 	}
 
 	[CalledBy(Type = typeof(NewsCarousel), Member = "Awake")]
-	[CallsUnknownMethods(Count = 15)]
-	[CalledBy(Type = typeof(NewsCarousel), Member = "UpdateActiveCarousel")]
 	[CalledBy(Type = typeof(NewsCarousel), Member = "OnDestroy")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(NewsCarousel), Member = "UpdateActiveCarousel")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 15)]
 	private void ResetNews()
 	{
 	}

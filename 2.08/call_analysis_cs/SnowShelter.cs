@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Interactions;
@@ -75,22 +75,24 @@ public class SnowShelter : MonoBehaviour
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return null;
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 2)]
-		[CompilerGenerated]
 		private set
 		{
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 11)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 9)]
 	private void Awake()
 	{
@@ -103,76 +105,65 @@ public class SnowShelter : MonoBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsRepairingShelter")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsDismantlingShelter")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(SnowShelterManager), Member = "GetPlayerOccupiedSnowShelter")]
 	[Calls(Type = typeof(PassTime), Member = "End")]
 	[Calls(Type = typeof(Rest), Member = "EndSleeping")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "GetPlayerOccupiedSnowShelter")]
-	[CallsUnknownMethods(Count = 16)]
 	[Calls(Type = typeof(SnowShelterManager), Member = "ExitShelter")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsDismantlingShelter")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsRepairingShelter")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 16)]
 	private void Update()
 	{
 	}
 
+	[CalledBy(Type = typeof(SnowShelterManager), Member = "SerializeAll")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(SnowShelterManager), Member = "SerializeAll")]
 	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(SnowShelterManager), Member = "DeserializeAll")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
+	[CallsUnknownMethods(Count = 1)]
 	public void BuildFinished()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
+	[CallsUnknownMethods(Count = 3)]
 	public void RepairFinished(int numSticksUsed, int numClothUsed)
 	{
 	}
 
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "InteractionFinished")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
 	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[CallsUnknownMethods(Count = 7)]
 	public void DismantleFinished()
 	{
 	}
@@ -180,64 +171,65 @@ public class SnowShelter : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsRuined()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetNormalizedCondition()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SnowShelterManager), Member = "GetPlayerOccupiedSnowShelter")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void InitializeInteraction(BaseInteraction baseInteraction)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(SnowShelterManager), Member = "GetPlayerOccupiedSnowShelter")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(SnowShelterManager), Member = "ExitShelter")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void PerformInteraction()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "NeedsRepair")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "HasMaterialsForRepair")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshRepairPanel")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnRepair")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshRepairPanel")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "NeedsRepair")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "HasMaterialsForRepair")]
+	[CallerCount(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public int GetNumSticksToRepair()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnRepair")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshRepairPanel")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "NeedsRepair")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "HasMaterialsForRepair")]
+	[CallerCount(Count = 4)]
 	[CallsUnknownMethods(Count = 1)]
 	public int GetNumClothToRepair()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "InteractionFinished")]
-	[CalledBy(Type = typeof(Panel_SnowShelterBuild), Member = "OnCancel")]
 	[CalledBy(Type = typeof(Panel_SnowShelterBuild), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_SnowShelterBuild), Member = "OnCancel")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "InteractionFinished")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Destroy()
 	{
 	}
@@ -246,7 +238,7 @@ public class SnowShelter : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetHoursRuined()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -255,8 +247,8 @@ public class SnowShelter : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnEntered()
 	{
 	}

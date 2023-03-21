@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -16,8 +15,8 @@ public class StepIterator : BTComposite
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
@@ -30,9 +29,9 @@ public class StepIterator : BTComposite
 	{
 	}
 
-	[Calls(Type = typeof(Node), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Node), Member = ".ctor")]
 	public StepIterator()
 	{
 	}

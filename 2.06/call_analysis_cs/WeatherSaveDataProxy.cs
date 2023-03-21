@@ -26,8 +26,8 @@ public class WeatherSaveDataProxy
 
 	public int m_TemperatureCountForTimeOfDay;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public WeatherSaveDataProxy()
 	{
 	}

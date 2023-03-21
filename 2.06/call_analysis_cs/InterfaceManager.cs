@@ -5,13 +5,17 @@ using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using Interface.PanelRequest;
+using NodeCanvas.Tasks.Actions;
 using TLD.AddressableAssets;
 using TLD.GameplayTags;
 using TLD.Gear;
+using TLD.SaveState;
 using TLD.Scenes;
+using TLD.UI.Generics;
 using TLD.UI.Notifications;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class InterfaceManager : MonoBehaviour
 {
@@ -25,7 +29,7 @@ public class InterfaceManager : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -34,9 +38,9 @@ public class InterfaceManager : MonoBehaviour
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -50,9 +54,9 @@ public class InterfaceManager : MonoBehaviour
 		{
 		}
 
-		[CallerCount(Count = 6)]
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
@@ -61,7 +65,7 @@ public class InterfaceManager : MonoBehaviour
 		[CallerCount(Count = 0)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -195,55 +199,55 @@ public class InterfaceManager : MonoBehaviour
 		return null;
 	}
 
-	[CalledBy(Type = typeof(BatchAsyncLoadPanelRequest), Member = "LoadNextPanel")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "TryDestroyPanel")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadPanelAsync")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadPanel")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "GetPanel")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "IsPanelLoaded")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "UnloadMainMenuPanels")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadMainMenuPanelsAsync")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "InstantiateInterfaceObjects")]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Extras), Member = "PlayCredits")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 17)]
+	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "InstantiateInterfaceObjects")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadMainMenuPanelsAsync")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "UnloadMainMenuPanels")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "IsPanelLoaded")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "GetPanelsWithComponent")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "GetPanel")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadPanel")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadPanelAsync")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "TryDestroyPanel")]
+	[CalledBy(Type = typeof(BatchAsyncLoadPanelRequest), Member = "LoadNextPanel")]
+	[CallerCount(Count = 17)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	public static bool HasInstance()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateInterfaceSystem")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
-	[CalledBy(Type = typeof(EmptyScene), Member = "MaybeInstantiateLoadingScreen")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "LoadScene")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(EmptyScene), Member = "MaybeInstantiateLoadingScreen")]
+	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
+	[CalledBy(Type = typeof(GameManager), Member = "InstantiateInterfaceSystem")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Addressables), Member = "InstantiateAsync")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CreateInterfaceManager()
 	{
 	}
 
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_atlas_sd")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "Awake")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_atlas_sd")]
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_atlas_sd")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
 	[Calls(Type = typeof(UIAtlas), Member = "set_replacement")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 13)]
 	public void LoadReplacementAtlases(string label)
 	{
 	}
@@ -257,53 +261,52 @@ public class InterfaceManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(InterfaceManager), Member = "InstantiateCommonGUI")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InterfaceManager), Member = "LoadReplacementAtlases")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(InterfaceManager), Member = "InstantiateCommonGUI")]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UIAtlas), Member = "set_replacement")]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnDestroy()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallerCount(Count = 0)]
 	private void SetupBasicMenuPrefab()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
-	[Calls(Type = typeof(InterfaceManager), Member = "UpdateAsyncLoadPanelRequests")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "ResetLastLocations")]
-	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "ResetLastLocations")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(TextureCache), Member = "HasTextureCache")]
-	[Calls(Type = typeof(InterfaceManager), Member = "UpdateConfirmPanelRequest")]
-	[Calls(Type = typeof(InputManager), Member = "ShowCursor")]
 	[Calls(Type = typeof(InterfaceManager), Member = "ShouldEnableMousePointer")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "ShowCursor")]
+	[Calls(Type = typeof(InterfaceManager), Member = "UpdateConfirmPanelRequest")]
+	[Calls(Type = typeof(TextureCache), Member = "HasTextureCache")]
 	[Calls(Type = typeof(TextureCache), Member = "ClearTextureCache")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "ResetLastLocations")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
+	[Calls(Type = typeof(InterfaceManager), Member = "UpdateAsyncLoadPanelRequests")]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InterfaceManager), Member = "DetermineIfOverlayIsActiveInternal")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void LateUpdate()
 	{
@@ -313,125 +316,127 @@ public class InterfaceManager : MonoBehaviour
 	[Calls(Type = typeof(InterfaceManager), Member = "DetermineIfOverlayIsActiveInternal")]
 	public static bool ShouldHidePopupBase()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InterfaceManager), Member = "DetermineIfOverlayIsActiveInternal")]
 	[CallerCount(Count = 42)]
+	[Calls(Type = typeof(InterfaceManager), Member = "DetermineIfOverlayIsActiveInternal")]
 	public static bool IsOverlayActiveImmediate()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public static bool IsOverlayActiveCached()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool IsPanelLoadingEnabledOrLoading()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
 	[CallerCount(Count = 0)]
 	private static bool DetermineIfOverlayIsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "ShouldHidePopupBase")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(PopupBase), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(InterfaceManager), Member = "AnyOverlayPanelEnabled")]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "LateUpdate")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "ShouldHidePopupBase")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(InterfaceManager), Member = "AnyOverlayPanelEnabled")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private static bool DetermineIfOverlayIsActiveInternal(bool checkPopupBaseActive)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_close_ui")]
-	[Calls(Type = typeof(PopupBase), Member = "Quit")]
-	[Calls(Type = typeof(Panel_TutorialPopup), Member = "ClearRequests")]
 	[CalledBy(Type = typeof(JumpManager), Member = "OnLoadSetup")]
-	[Calls(Type = typeof(InterfaceManager), Member = "UnloadMainMenuPanels")]
-	[Calls(Type = typeof(Panel_Log), Member = "ExitInterface")]
-	[CallsDeduplicatedMethods(Count = 55)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Log), Member = "ExitInterface")]
+	[Calls(Type = typeof(InterfaceManager), Member = "UnloadMainMenuPanels")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryDestroyPanel")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
 	[Calls(Type = typeof(Panel_Milling), Member = "Disable")]
+	[Calls(Type = typeof(Panel_TutorialPopup), Member = "ClearRequests")]
+	[Calls(Type = typeof(PopupBase), Member = "Quit")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void QuitCurrentScreens()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_WeaponPicker), Member = "Update")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	[CallsUnknownMethods(Count = 1)]
 	public static bool ShouldImmediatelyExitOverlayDuringStruggle()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 47)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool ShouldImmediatelyExitOverlay()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneWithLoadingScreen")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 14)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "ProgressBarEnded")]
 	[Calls(Type = typeof(Panel_Cooking), Member = "ExitCookingInterface")]
 	[Calls(Type = typeof(Panel_FeedFire), Member = "ExitFeedFireInterface")]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneWithLoadingScreen")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 9)]
 	public static void CloseOverlaysDueToSceneLoad()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private static void ResetNotificationsDataIfNotNull(INotificationHandler handler)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool SetCameraViewPort(float x, float y, float w, float h)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 79)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[CallsUnknownMethods(Count = 3)]
 	public static GameObject GetSoundEmitter()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(InputManager), Member = "ShowCursor")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InterfaceManager), Member = "ShouldEnableMousePointer")]
 	[Calls(Type = typeof(InputManager), Member = "ShowCursor")]
@@ -439,76 +444,76 @@ public class InterfaceManager : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableNavigationTabs")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoMainNavControls")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "EnableNavigationTabs")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "EnableNavigationTabs")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "SetActiveTab")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "EnableNavigationTabs")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "EnableNavigationTabs")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Clothing), Member = "EnableNavigationTabs")]
-	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 11)]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "EnableNavigationTabs")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleInput")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "EnableNavigationTabs")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "EnableNavigationTabs")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoMainNavControls")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnableNavigationTabs")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "SetActiveTab")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "EnableNavigationTabs")]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool IsUsingSurvivalTabs()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshAll")]
-	[CalledBy(Type = typeof(Panel_Rest), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Rest), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_IceFishing), Member = "OnFish")]
-	[CalledBy(Type = typeof(Panel_IceFishing), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_IceFishing), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Enable")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "ConfigureForMissionStart")]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "Update")]
 	[CalledBy(Type = typeof(AccelTimePopup), Member = "SetActive")]
-	[CallerCount(Count = 15)]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "ConfigureForMissionStart")]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshAll")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshAll")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_IceFishing), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_IceFishing), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_IceFishing), Member = "OnFish")]
+	[CalledBy(Type = typeof(Panel_Rest), Member = "Enable")]
+	[CallerCount(Count = 15)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetTimeWidgetActive(bool active)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_IceFishing), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "Enable")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Rest), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
-	[Calls(Type = typeof(TimeWidget), Member = "Update")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_IceFishing), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Rest), Member = "Enable")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(TimeWidget), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public void InitializeAndActivateTimeWidget(Transform parent, Vector3 pos)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(TimeWidget), Member = "Update")]
 	[CalledBy(Type = typeof(AccelTimePopup), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(TimeWidget), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public void InitializeAndActivateTimeWidget(Transform positionMarker)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 13)]
 	[CallsUnknownMethods(Count = 14)]
 	private void ParentToCommonGUIAnchor(GameObject panel, Transform anchor)
 	{
@@ -521,60 +526,62 @@ public class InterfaceManager : MonoBehaviour
 		return null;
 	}
 
-	[Calls(Type = typeof(Transform), Member = "Find")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Transform), Member = "Find")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "Awake")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(Transform), Member = "Find")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void InstantiateCommonGUI()
 	{
 	}
 
+	[CalledBy(Type = typeof(InterfaceManager), Member = "InstantiateInterfaceObjects")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(Transform), Member = "SetParent")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "InstantiateInterfaceObjects")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	private void InstantiateTimeWidget()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanel")]
 	public static void InstantiateInterfaceObjectsForLoading()
 	{
 	}
 
+	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
+	[CalledBy(Type = typeof(GameManager), Member = "InstantiateInterfaceSystem")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
 	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanel_Internal")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(InterfaceManager), Member = "InstantiateTimeWidget")]
 	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
 	[Calls(Type = typeof(InterfaceManager), Member = "LoadMainMenuPanels")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateInterfaceSystem")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void InstantiateInterfaceObjects()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[CallsUnknownMethods(Count = 1)]
 	private static void CachePanelReferences()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
 	private void CacheInstancePanelReferences()
 	{
 	}
@@ -586,262 +593,261 @@ public class InterfaceManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[IteratorStateMachine(typeof(_003CTakeMapScreenshot_003Ed__92))]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 6)]
 	private IEnumerator TakeMapScreenshot(int detailLevel)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsCancelableActionInProgress")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "UpdateMousePointerState")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(Panel_HUD), Member = "IsShowingCollectibleNote")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "Update")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "UpdateMousePointerState")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_IceFishing), Member = "IsFishing")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_IceFishing), Member = "IsFishing")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallsDeduplicatedMethods(Count = 25)]
-	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_HUD), Member = "IsShowingCollectibleNote")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsCancelableActionInProgress")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 14)]
 	private static bool ShouldEnableMousePointer()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Breath), Member = "ShouldSuppressBreathEffect")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "ShouldEnableMousePointer")]
-	[CalledBy(Type = typeof(HUDManager), Member = "Update")]
-	[CalledBy(Type = typeof(GameManager), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
-	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "Update")]
-	[CalledBy(Type = typeof(Frostbite), Member = "Update")]
-	[CalledBy(Type = typeof(GearItem), Member = "DecayOverTODHours")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "MaybePlayTimeOfDayStingers")]
-	[CalledBy(Type = typeof(BaseAi), Member = "TargetCanBeIgnored")]
-	[CalledBy(Type = typeof(vp_FPSController), Member = "Update")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "FixedUpdateInternal")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 17)]
+	[CalledBy(Type = typeof(vp_FPSController), Member = "Update")]
+	[CalledBy(Type = typeof(BaseAi), Member = "TargetCanBeIgnored")]
+	[CalledBy(Type = typeof(TimeOfDay), Member = "MaybePlayTimeOfDayStingers")]
+	[CalledBy(Type = typeof(GearItem), Member = "DecayOverTODHours")]
+	[CalledBy(Type = typeof(Frostbite), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableSpecialEvent")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
+	[CalledBy(Type = typeof(GameManager), Member = "Update")]
+	[CalledBy(Type = typeof(HUDManager), Member = "Update")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "ShouldEnableMousePointer")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
+	[CalledBy(Type = typeof(Breath), Member = "ShouldSuppressBreathEffect")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "Update")]
+	[CallerCount(Count = 17)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	public static bool IsMainMenuEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool IsBrightnessCalibrationActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Utils), Member = "GetCurrentRegion")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCartographyRegionList")]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
-	[CalledBy(Type = typeof(LoadingScreenInfo), Member = "GetLocalizedSceneName")]
-	[CalledBy(Type = typeof(Panel_Debug), Member = "GenerateLocationLookup")]
-	[CalledBy(Type = typeof(JumpData), Member = "ToString")]
 	[CalledBy(Type = typeof(RockCacheListItem), Member = "SetRegionInfo")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(SceneSetManager), Member = "FindSceneSetForSceneName")]
-	[CallerCount(Count = 9)]
+	[CalledBy(Type = typeof(JumpData), Member = "ToString")]
 	[CalledBy(Type = typeof(RockCache), Member = "Awake")]
+	[CalledBy(Type = typeof(Panel_Debug), Member = "GenerateLocationLookup")]
+	[CalledBy(Type = typeof(LoadingScreenInfo), Member = "GetLocalizedSceneName")]
+	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCartographyRegionList")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
+	[CalledBy(Type = typeof(Utils), Member = "GetCurrentRegion")]
+	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(SceneSetManager), Member = "FindSceneSetForSceneName")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	public static string GetNameForScene(string sceneName)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "GetChecklistNameForKey")]
-	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "GetChecklistNameForKey")]
-	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "GetChecklistNameForKey")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "GetChecklistNameForKey")]
 	[CallerCount(Count = 3)]
 	public static string GetLocIDForScene(string sceneName)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "GetChecklistNameForKey")]
-	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "GetChecklistNameForKey")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddMarkerToLocation")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapIconFromFSM")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMarkerFromLocation")]
-	[CalledBy(Type = typeof(RockCache), Member = "SetupInWorld")]
 	[CalledBy(Type = typeof(Log), Member = "AddLocation")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(SceneSetManager), Member = "FindSceneSetForSceneName")]
-	[CallerCount(Count = 8)]
+	[CalledBy(Type = typeof(RockCache), Member = "SetupInWorld")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddLoadScene")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapIconFromFSM")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddMarkerToLocation")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMarkerFromLocation")]
+	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "GetChecklistNameForKey")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(SceneSetManager), Member = "FindSceneSetForSceneName")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public static string GetLocIDForScene(string sceneName, bool warnIfNotAvailable)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_Map), Member = "GetIndexOfCurrentScene")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Utils), Member = "GetCurrentRegion")]
-	[CalledBy(Type = typeof(Utils), Member = "GetHardcodedRegionForLocation")]
-	[CalledBy(Type = typeof(UtilsPanelChoose), Member = "GetLargeRegionBackgroundName")]
-	[CalledBy(Type = typeof(UtilsPanelChoose), Member = "RefreshDetails")]
-	[CalledBy(Type = typeof(UtilsPanelChoose), Member = "RefreshDetails")]
-	[CalledBy(Type = typeof(Log), Member = "AddCurrentRegion")]
-	[CalledBy(Type = typeof(UtilsPanelChoose), Member = "GetRegionSpriteName")]
-	[Calls(Type = typeof(string), Member = "Remove")]
-	[Calls(Type = typeof(string), Member = "LastIndexOf")]
-	[Calls(Type = typeof(SceneNameMapping), Member = "IsChildOfAnother")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(Log), Member = "AddLocation")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Log), Member = "AddCurrentRegion")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "GetIndexOfCurrentScene")]
+	[CalledBy(Type = typeof(UtilsPanelChoose), Member = "RefreshDetails")]
+	[CalledBy(Type = typeof(UtilsPanelChoose), Member = "GetLargeRegionBackgroundName")]
+	[CalledBy(Type = typeof(UtilsPanelChoose), Member = "GetRegionSpriteName")]
+	[CalledBy(Type = typeof(Utils), Member = "GetHardcodedRegionForLocation")]
+	[CalledBy(Type = typeof(Utils), Member = "GetCurrentRegion")]
 	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(SceneNameMapping), Member = "IsChildOfAnother")]
+	[Calls(Type = typeof(string), Member = "LastIndexOf")]
+	[Calls(Type = typeof(string), Member = "Remove")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static string GetRegionForScene(string sceneName)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void RequestConfirmationPanel(Panel_Confirmation.CallbackDelegate onConfirm)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(PopupDefinition), Member = "Show")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public static GameObject InstantiatePopup(UIPanel panelPrefab)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CallsUnknownMethods(Count = 1)]
 	private void UpdateConfirmPanelRequest()
 	{
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Enable")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "OnTryAgain")]
-	[Calls(Type = typeof(GenericInteractionPrompt), Member = "HideInteraction")]
-	[Calls(Type = typeof(TwoButtonsChoiceUI), Member = "HideChoices")]
-	[Calls(Type = typeof(Panel_HUD), Member = "HideNotifications")]
-	[Calls(Type = typeof(Panel_Map), Member = "ClearData")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "LoadMissionDataFromResources")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Enable")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Map), Member = "ClearData")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "LoadMissionDataFromResources")]
 	[Calls(Type = typeof(BlueprintManager), Member = "ClearUnlockedBlueprints")]
+	[Calls(Type = typeof(Panel_HUD), Member = "HideNotifications")]
+	[Calls(Type = typeof(TwoButtonsChoiceUI), Member = "HideChoices")]
+	[Calls(Type = typeof(GenericInteractionPrompt), Member = "HideInteraction")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void ClearUISaveData()
 	{
 	}
 
-	[CalledBy(Type = typeof(CinematicTrack), Member = "EnterPlaying")]
-	[CalledBy(Type = typeof(CinematicTrack), Member = "Update")]
-	[CalledBy(Type = typeof(AnimationEvents), Member = "EventDisplaySubtitles")]
-	[CalledBy(Type = typeof(MoviePlayer), Member = "PlayMovieFromFullPath")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 6)]
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayCinematic")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
+	[CalledBy(Type = typeof(MoviePlayer), Member = "PlayMovieFromFullPath")]
+	[CalledBy(Type = typeof(AnimationEvents), Member = "EventDisplaySubtitles")]
+	[CalledBy(Type = typeof(CinematicTrack), Member = "Update")]
+	[CalledBy(Type = typeof(CinematicTrack), Member = "EnterPlaying")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Dictionary<, >.ValueCollection.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 13)]
 	public static void HidePanelsForSubtitle()
 	{
 	}
 
-	[CalledBy(Type = typeof(AnimationEvents), Member = "DoExit")]
-	[CalledBy(Type = typeof(MoviePlayer), Member = "DoStop")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(CinematicTrack), Member = "UpdatePlaying")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayCinematicComplete")]
-	[CalledBy(Type = typeof(CinematicTrack), Member = "OnCinematicDone")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitlesImmediate")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "QuitGame")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayCinematicComplete")]
+	[CalledBy(Type = typeof(MoviePlayer), Member = "DoStop")]
+	[CalledBy(Type = typeof(AnimationEvents), Member = "DoExit")]
+	[CalledBy(Type = typeof(CinematicTrack), Member = "UpdatePlaying")]
+	[CalledBy(Type = typeof(CinematicTrack), Member = "OnCinematicDone")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitlesImmediate")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public static void RestorePanelsAfterSubtitle()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanel")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "InstantiateInterfaceObjects")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanel")]
 	[CallsUnknownMethods(Count = 2)]
 	private static void LoadMainMenuPanels()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetBatchAsyncPanels_Internal")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetBatchAsyncPanels_Internal")]
+	[CallsUnknownMethods(Count = 2)]
 	public static ILoadPanelRequest LoadMainMenuPanelsAsync()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "QuitCurrentScreens")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
 	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel_Internal")]
 	[Calls(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
 	[Calls(Type = typeof(InterfaceManager), Member = "TryDestroyPanel")]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "QuitCurrentScreens")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public static void UnloadMainMenuPanels()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool IsPanelLoaded<T>() where T : Panel_Base
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(AccelTimePopup), Member = "SetActive")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 12)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	public static void GetPanelsWithComponent<T>(IList<T> list)
 	{
 	}
@@ -851,108 +857,109 @@ public class InterfaceManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool IsPanelLoaded_Internal(Type panelType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel_Internal")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 94)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 94)]
 	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel_Internal")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static bool IsPanelEnabled<T>() where T : Panel_Base
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
 	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel_Internal")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public static bool IsPanelEnabled(Type panelType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel_Internal")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool IsPanelEnabled_Internal(Type panelType)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(InterfaceManager), Member = "DetermineIfOverlayIsActiveInternal")]
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Dictionary<, >.ValueCollection.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public bool AnyOverlayPanelEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 75)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel_Internal")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public static bool TrySetPanelEnabled<T>(bool enable) where T : Panel_Base
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(InterfaceManager), Member = "UnloadMainMenuPanels")]
-	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel_Internal")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel_Internal")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static bool TrySetPanelEnabled(Type panelType, bool enable)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel_Internal")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel_Internal")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool TrySetPanelEnabled_Internal(Type panelType, bool enable)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
+	[CallerCount(Count = 201)]
 	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel_Internal")]
 	[CallsUnknownMethods(Count = 8)]
-	[CallerCount(Count = 201)]
 	public static bool TryGetPanel<T>(out T panel) where T : Panel_Base
 	{
 		panel = null;
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "IsPanelEnabled_Internal")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled_Internal")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "UnloadMainMenuPanels")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel_Internal")]
-	[CallerCount(Count = 8)]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "IsPanelEnabled_Internal")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled_Internal")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel_Internal")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	private bool TryGetPanel_Internal(Type panelType, out Panel_Base panel)
 	{
 		panel = null;
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -966,17 +973,26 @@ public class InterfaceManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "TryGetPanel_Internal")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "GetPanel")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	private Panel_Base GetPanel_Internal(Type panelType)
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(EmptyScene), Member = "LoadScene")]
+	[CalledBy(Type = typeof(EmptyScene), Member = "MaybeInstantiateLoadingScreen")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "InstantiateInterfaceObjectsForLoading")]
+	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "WinChallenge")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "DraggingAnimationEnd")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "WinHunted2Challenge")]
+	[CalledBy(Type = typeof(Action_ShowChallengeComplete), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_PlayCredits), Member = "PlayCredits")]
+	[CalledBy(Type = typeof(Action_ShowCredits), Member = "OnExecute")]
 	[CallerCount(Count = 9)]
 	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
@@ -988,22 +1004,22 @@ public class InterfaceManager : MonoBehaviour
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadMainMenuPanels")]
+	[CallerCount(Count = 1)]
 	public static Panel_Base LoadPanel(Type panelType)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(InterfaceManager), Member = "InstantiateInterfaceObjects")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadPanel")]
-	[Calls(Type = typeof(InterfaceManager), Member = "FinishLoadPanelRequest")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetPanelVariantName")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(LoadPanelRequest), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetPanelName")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanelVariantName")]
+	[Calls(Type = typeof(LoadPanelRequest), Member = ".ctor")]
+	[Calls(Type = typeof(InterfaceManager), Member = "FinishLoadPanelRequest")]
+	[CallsUnknownMethods(Count = 6)]
 	private Panel_Base LoadPanel_Internal(Type panelType)
 	{
 		return null;
@@ -1027,117 +1043,127 @@ public class InterfaceManager : MonoBehaviour
 		return null;
 	}
 
-	[Calls(Type = typeof(InterfaceManager), Member = "GetPanelVariantName")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(BatchAsyncLoadPanelRequest), Member = "LoadNextPanel")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadPanelAsync")]
 	[CalledBy(Type = typeof(Panel_Extras), Member = "PlayCredits")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetPanelName")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetPendingAsyncPanelRequest")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadPanelAsync")]
+	[CalledBy(Type = typeof(BatchAsyncLoadPanelRequest), Member = "LoadNextPanel")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanelName")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanelVariantName")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPendingAsyncPanelRequest")]
 	[Calls(Type = typeof(AsyncLoadPanelRequest), Member = ".ctor")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	private AsyncLoadPanelRequest LoadPanelAsync_Internal(Type panelType, Action<Panel_Base> panelLoadedCallback = null)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public static BatchAsyncLoadPanelRequest GetBatchAsyncPanels(List<Type> panelTypes, Action<bool> panelLoadedCallback = null)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadMainMenuPanelsAsync")]
-	[Calls(Type = typeof(BatchAsyncLoadPanelRequest), Member = "LoadNextPanel")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadMainMenuPanelsAsync")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BatchAsyncLoadPanelRequest), Member = "LoadNextPanel")]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	private BatchAsyncLoadPanelRequest GetBatchAsyncPanels_Internal(List<Type> panelTypes, Action<bool> panelLoadedCallback = null)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadPanelAsync_Internal")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsUnknownMethods(Count = 5)]
 	private AsyncLoadPanelRequest GetPendingAsyncPanelRequest(string panelName)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "DisablePanel")]
+	[CalledBy(Type = typeof(Panel_Credits), Member = "Exit")]
+	[CalledBy(Type = typeof(Panel_Extras), Member = "OnCreditsEnd")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "QuitCurrentScreens")]
+	[CalledBy(Type = typeof(Action_PlayCredits), Member = "OnCreditsEnd")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(InterfaceManager), Member = "TryDestroyPanel_Internal")]
-	[CallerCount(Count = 7)]
-	[DeduplicatedMethod]
-	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool TryDestroyPanel<T>() where T : Panel_Base
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "UnloadMainMenuPanels")]
+	[CallerCount(Count = 1)]
 	public static bool TryDestroyPanel(Type panelType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "TryDestroyPanel")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool TryDestroyPanel_Internal(Type panelType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(InterfaceManager), Member = "GetPanelVariantName")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadPanelAsync_Internal")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadPanel_Internal")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadPanelAsync_Internal")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "GetPanelVariantName")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetPanelName(Type panelType)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadPanelAsync_Internal")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadPanel_Internal")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetPanelName")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadPanelAsync_Internal")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanelName")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetPanelVariantName(Type panelType)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(InterfaceManager), Member = "FinishLoadPanelRequest")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "Update")]
-	[CallsUnknownMethods(Count = 5)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "FinishLoadPanelRequest")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateAsyncLoadPanelRequests()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "UpdateAsyncLoadPanelRequests")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadPanel_Internal")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "UpdateAsyncLoadPanelRequests")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(BaseLoadPanelRequest), Member = "GetPanel")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void FinishLoadPanelRequest(ILoadPanelRequest panelRequest)
 	{
 	}

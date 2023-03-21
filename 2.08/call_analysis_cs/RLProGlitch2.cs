@@ -11,10 +11,10 @@ public sealed class RLProGlitch2 : PostProcessEffectSettings
 
 	public FloatParameter stretchMultiplier;
 
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public RLProGlitch2()
 	{
 	}

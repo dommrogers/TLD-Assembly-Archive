@@ -21,10 +21,10 @@ public sealed class RLProColormapPalette : PostProcessEffectSettings
 
 	public TextureParameter bluenoise;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 1)]
 	public RLProColormapPalette()
 	{
 	}

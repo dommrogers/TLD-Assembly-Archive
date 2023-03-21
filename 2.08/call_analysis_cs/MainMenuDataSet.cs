@@ -8,13 +8,13 @@ public class MainMenuDataSet : ScriptableObject
 
 	public string m_AlternateMainMenuAddress;
 
-	[Calls(Type = typeof(OptionalContentManager), Member = "CanUseContent")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
+	[Calls(Type = typeof(OptionalContentManager), Member = "CanUseContent")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool UseAlternateMainMenu()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

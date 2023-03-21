@@ -34,8 +34,8 @@ public class PermissionIdConstants
 	public static string BroadcastWithTwitch
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -45,10 +45,10 @@ public class PermissionIdConstants
 
 	public static string CommunicateUsingText
 	{
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
-		[CallsUnknownMethods(Count = 6)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -58,8 +58,8 @@ public class PermissionIdConstants
 	public static string CommunicateUsingVideo
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -70,8 +70,8 @@ public class PermissionIdConstants
 	public static string CommunicateUsingVoice
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -81,10 +81,10 @@ public class PermissionIdConstants
 
 	public static string PlayMultiplayer
 	{
-		[CallsUnknownMethods(Count = 6)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -94,8 +94,8 @@ public class PermissionIdConstants
 	public static string ViewTargetExerciseInfo
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -106,8 +106,8 @@ public class PermissionIdConstants
 	public static string ViewTargetGameHistory
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -117,10 +117,10 @@ public class PermissionIdConstants
 
 	public static string ViewTargetMusicHistory
 	{
-		[CallsUnknownMethods(Count = 6)]
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -130,8 +130,8 @@ public class PermissionIdConstants
 	public static string ViewTargetMusicStatus
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -142,8 +142,8 @@ public class PermissionIdConstants
 	public static string ViewTargetPresence
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -153,10 +153,10 @@ public class PermissionIdConstants
 
 	public static string ViewTargetProfile
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallsUnknownMethods(Count = 6)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -166,8 +166,8 @@ public class PermissionIdConstants
 	public static string ViewTargetVideoHistory
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -177,8 +177,8 @@ public class PermissionIdConstants
 
 	public static string ViewTargetVideoStatus
 	{
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get

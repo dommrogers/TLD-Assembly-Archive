@@ -13,14 +13,14 @@ public class Credentials : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -28,9 +28,9 @@ public class Credentials : ISettable
 
 	public ExternalCredentialType Type
 	{
-		[CallerCount(Count = 8)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 8)]
 		get
 		{
 			return default(ExternalCredentialType);
@@ -44,23 +44,23 @@ public class Credentials : ISettable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CredentialsInternal), Member = "get_Token")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	internal void Set(CredentialsInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(CredentialsInternal), Member = "get_Token")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public Credentials()
 	{
 	}

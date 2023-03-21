@@ -35,30 +35,31 @@ public class Condition_VisibilityTest : ConditionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsUnknownMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(Physics), Member = "SphereCast")]
-	[Calls(Type = typeof(Physics), Member = "SphereCast")]
-	[Calls(Type = typeof(Utils), Member = "SphereIntersectsCone")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Utils), Member = "SphereIntersectsCone")]
+	[Calls(Type = typeof(Physics), Member = "SphereCast")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 16)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsUnknownMethods(Count = 1)]
 	public Condition_VisibilityTest()
 	{
 	}

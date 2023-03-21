@@ -15,15 +15,15 @@ internal struct AddNotifyLobbyMemberStatusReceivedOptionsInternal : ISettable, I
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(LobbyInterface), Member = "AddNotifyLobbyMemberStatusReceived")]
+	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

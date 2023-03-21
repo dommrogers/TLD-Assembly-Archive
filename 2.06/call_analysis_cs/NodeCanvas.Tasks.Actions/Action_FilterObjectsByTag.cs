@@ -11,18 +11,18 @@ public class Action_FilterObjectsByTag : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "AddMissionObjectFilterTags")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "AddMissionObjectFilterTags")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

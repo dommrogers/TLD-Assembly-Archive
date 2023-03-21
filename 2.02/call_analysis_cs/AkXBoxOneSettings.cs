@@ -16,14 +16,14 @@ public class AkXBoxOneSettings : AkWwiseInitializationSettings.PlatformSettings
 
 		public uint APUHeapNonCachedSize;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public override void CopyTo(AkPlatformInitSettings settings)
 		{
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public override void CopyTo(AkUnityPlatformSpecificSettings settings)
 		{
 		}
@@ -40,29 +40,27 @@ public class AkXBoxOneSettings : AkWwiseInitializationSettings.PlatformSettings
 
 	public AkCommonCommSettings CommsSettings;
 
-	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = "SetUseGlobalPropertyValue")]
-	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = "SetUseGlobalPropertyValue")]
-	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = "SetUseGlobalPropertyValue")]
-	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = "IgnorePropertyValue")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(AkCommonCommSettings), Member = ".ctor")]
 	[Calls(Type = typeof(AkCommonUserSettings), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(AkCommonCommSettings), Member = ".ctor")]
 	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = ".ctor")]
+	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = "IgnorePropertyValue")]
+	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = "SetUseGlobalPropertyValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 23)]
 	public AkXBoxOneSettings()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 15)]
+	[CallerCount(Count = 17)]
 	protected override AkCommonUserSettings GetUserSettings()
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 8)]
+	[CallerCount(Count = 9)]
 	protected override AkCommonAdvancedSettings GetAdvancedSettings()
 	{
 		return null;

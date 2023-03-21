@@ -6,12 +6,7 @@ namespace ParadoxNotion.Serialization.FullSerializer;
 
 public abstract class fsDirectConverter : fsBaseConverter
 {
-	public abstract Type ModelType
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101262)]
-		get;
-	}
+	public abstract Type ModelType { get; }
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 6)]
@@ -42,24 +37,20 @@ public abstract class fsDirectConverter<TModel> : fsDirectConverter
 		return default(fsResult);
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(fsBaseConverter), Member = "CheckType")]
 	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsData), Member = "Cast")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[DeduplicatedMethod]
+	[CallsUnknownMethods(Count = 4)]
 	public sealed override fsResult TryDeserialize(fsData data, ref object instance, Type storageType)
 	{
 		return default(fsResult);
 	}
 
-	[CallerCount(Count = 101262)]
-	[DeduplicatedMethod]
 	protected abstract fsResult DoSerialize(TModel model, Dictionary<string, fsData> serialized);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101262)]
 	protected abstract fsResult DoDeserialize(Dictionary<string, fsData> data, ref TModel model);
 
 	[DeduplicatedMethod]

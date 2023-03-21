@@ -13,11 +13,11 @@ public class StatEvent : IDisposable, IWrappedObject
 
 	public int UserId
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -37,15 +37,15 @@ public class StatEvent : IDisposable, IWrappedObject
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public string ErrorMessage
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -56,8 +56,8 @@ public class StatEvent : IDisposable, IWrappedObject
 	public LeaderboardResultEventArgs LeaderboardResultArgs
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(StatEventPlugin), Member = "StatisticEvent_EventType")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 8)]
 		get
 		{
@@ -65,8 +65,8 @@ public class StatEvent : IDisposable, IWrappedObject
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public StatEvent(IntPtr self)
 	{
 	}
@@ -84,10 +84,10 @@ public class StatEvent : IDisposable, IWrappedObject
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 52)]
+	[CallerCount(Count = 59)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -97,19 +97,19 @@ public class StatEvent : IDisposable, IWrappedObject
 	{
 	}
 
-	[Calls(Type = typeof(StatEvent), Member = "DisposeImpl")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(StatEvent), Member = "DisposeImpl")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(StatEvent), Member = "Dispose")]
 	[CalledBy(Type = typeof(StatEvent), Member = "Finalize")]
+	[CalledBy(Type = typeof(StatEvent), Member = "Dispose")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void DisposeImpl()
 	{
 	}

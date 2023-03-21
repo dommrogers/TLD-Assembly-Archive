@@ -13,40 +13,40 @@ public class SerializedEventInfo : ISerializationCallbackReceiver
 	[NonSerialized]
 	private EventInfo _event;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UnityEngine_002EISerializationCallbackReceiver_002EOnBeforeSerialize()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "SplitInternal")]
 	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
 	[Calls(Type = typeof(ReflectionTools), Member = "RTGetEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 10)]
 	private void UnityEngine_002EISerializationCallbackReceiver_002EOnAfterDeserialize()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SerializedEventInfo()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 71)]
+	[CallerCount(Count = 77)]
 	public SerializedEventInfo(EventInfo info)
 	{
 	}
 
-	[CallerCount(Count = 29)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 35)]
 	public EventInfo Get()
 	{
 		return null;

@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -19,20 +18,20 @@ public class SetObjectActive : ActionTask<Transform>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Task), Member = "get_agentInfo")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 8)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 8)]
 	protected override void OnExecute()
 	{
 	}

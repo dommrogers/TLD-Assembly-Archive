@@ -15,12 +15,12 @@ public class LeaderboardQuery : IDisposable, IWrappedObject
 
 	public bool SkipResultToMe
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
@@ -35,7 +35,7 @@ public class LeaderboardQuery : IDisposable, IWrappedObject
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
@@ -50,7 +50,7 @@ public class LeaderboardQuery : IDisposable, IWrappedObject
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
@@ -61,14 +61,14 @@ public class LeaderboardQuery : IDisposable, IWrappedObject
 
 	public SortOrder Order
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return default(SortOrder);
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -77,8 +77,8 @@ public class LeaderboardQuery : IDisposable, IWrappedObject
 	public string StatName
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -89,8 +89,8 @@ public class LeaderboardQuery : IDisposable, IWrappedObject
 	public string SocialGroup
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -100,25 +100,25 @@ public class LeaderboardQuery : IDisposable, IWrappedObject
 
 	public bool HasNext
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public LeaderboardQuery(IntPtr self)
 	{
 	}
 
-	[Calls(Type = typeof(ApplicationException), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ApplicationException), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public LeaderboardQuery()
 	{
 	}
@@ -130,10 +130,10 @@ public class LeaderboardQuery : IDisposable, IWrappedObject
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 52)]
+	[CallerCount(Count = 59)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]

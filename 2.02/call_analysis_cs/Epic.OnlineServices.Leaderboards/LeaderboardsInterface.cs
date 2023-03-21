@@ -41,7 +41,7 @@ public sealed class LeaderboardsInterface : Handle
 	public const int UserscoresquerystatinfoApiLatest = 1;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public LeaderboardsInterface()
 	{
 	}
@@ -53,10 +53,11 @@ public sealed class LeaderboardsInterface : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(CopyLeaderboardDefinitionByIndexOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 	[Calls(Type = typeof(LeaderboardsInterface), Member = "EOS_Leaderboards_Definition_Release")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result CopyLeaderboardDefinitionByIndex(CopyLeaderboardDefinitionByIndexOptions options, out Definition outLeaderboardDefinition)
 	{
@@ -64,12 +65,13 @@ public sealed class LeaderboardsInterface : Handle
 		return default(Result);
 	}
 
-	[Calls(Type = typeof(LeaderboardsInterface), Member = "EOS_Leaderboards_Definition_Release")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(CopyLeaderboardDefinitionByLeaderboardIdOptionsInternal), Member = "Set")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CopyLeaderboardDefinitionByLeaderboardIdOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[Calls(Type = typeof(LeaderboardsInterface), Member = "EOS_Leaderboards_Definition_Release")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result CopyLeaderboardDefinitionByLeaderboardId(CopyLeaderboardDefinitionByLeaderboardIdOptions options, out Definition outLeaderboardDefinition)
 	{
 		outLeaderboardDefinition = null;
@@ -77,10 +79,11 @@ public sealed class LeaderboardsInterface : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(CopyLeaderboardRecordByIndexOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 	[Calls(Type = typeof(LeaderboardsInterface), Member = "EOS_Leaderboards_LeaderboardRecord_Release")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result CopyLeaderboardRecordByIndex(CopyLeaderboardRecordByIndexOptions options, out LeaderboardRecord outLeaderboardRecord)
 	{
@@ -88,24 +91,26 @@ public sealed class LeaderboardsInterface : Handle
 		return default(Result);
 	}
 
-	[Calls(Type = typeof(LeaderboardsInterface), Member = "EOS_Leaderboards_LeaderboardRecord_Release")]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CopyLeaderboardRecordByUserIdOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[Calls(Type = typeof(LeaderboardsInterface), Member = "EOS_Leaderboards_LeaderboardRecord_Release")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result CopyLeaderboardRecordByUserId(CopyLeaderboardRecordByUserIdOptions options, out LeaderboardRecord outLeaderboardRecord)
 	{
 		outLeaderboardRecord = null;
 		return default(Result);
 	}
 
-	[Calls(Type = typeof(LeaderboardsInterface), Member = "EOS_Leaderboards_LeaderboardUserScore_Release")]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CopyLeaderboardUserScoreByIndexOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[Calls(Type = typeof(LeaderboardsInterface), Member = "EOS_Leaderboards_LeaderboardUserScore_Release")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result CopyLeaderboardUserScoreByIndex(CopyLeaderboardUserScoreByIndexOptions options, out LeaderboardUserScore outLeaderboardUserScore)
 	{
 		outLeaderboardUserScore = null;
@@ -113,10 +118,11 @@ public sealed class LeaderboardsInterface : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(CopyLeaderboardUserScoreByUserIdOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 	[Calls(Type = typeof(LeaderboardsInterface), Member = "EOS_Leaderboards_LeaderboardUserScore_Release")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result CopyLeaderboardUserScoreByUserId(CopyLeaderboardUserScoreByUserIdOptions options, out LeaderboardUserScore outLeaderboardUserScore)
 	{
@@ -124,67 +130,66 @@ public sealed class LeaderboardsInterface : Handle
 		return default(Result);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GetLeaderboardDefinitionCountOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public uint GetLeaderboardDefinitionCount(GetLeaderboardDefinitionCountOptions options)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(GetLeaderboardRecordCountOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public uint GetLeaderboardRecordCount(GetLeaderboardRecordCountOptions options)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(GetLeaderboardUserScoreCountOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public uint GetLeaderboardUserScoreCount(GetLeaderboardUserScoreCountOptions options)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(QueryLeaderboardDefinitionsOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void QueryLeaderboardDefinitions(QueryLeaderboardDefinitionsOptions options, object clientData, OnQueryLeaderboardDefinitionsCompleteCallback completionDelegate)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(QueryLeaderboardRanksOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public void QueryLeaderboardRanks(QueryLeaderboardRanksOptions options, object clientData, OnQueryLeaderboardRanksCompleteCallback completionDelegate)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(QueryLeaderboardUserScoresOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(QueryLeaderboardUserScoresOptionsInternal), Member = "Set")]
+	[CallsUnknownMethods(Count = 9)]
 	public void QueryLeaderboardUserScores(QueryLeaderboardUserScoresOptions options, object clientData, OnQueryLeaderboardUserScoresCompleteCallback completionDelegate)
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -192,7 +197,6 @@ public sealed class LeaderboardsInterface : Handle
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -200,17 +204,16 @@ public sealed class LeaderboardsInterface : Handle
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
-	[CallerCount(Count = 0)]
 	internal static void OnQueryLeaderboardUserScoresCompleteCallbackInternalImplementation(IntPtr data)
 	{
 	}
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern Result EOS_Leaderboards_CopyLeaderboardDefinitionByIndex(IntPtr handle, IntPtr options, ref IntPtr outLeaderboardDefinition);
 
 	[PreserveSig]
@@ -224,8 +227,8 @@ public sealed class LeaderboardsInterface : Handle
 	internal static extern Result EOS_Leaderboards_CopyLeaderboardRecordByIndex(IntPtr handle, IntPtr options, ref IntPtr outLeaderboardRecord);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern Result EOS_Leaderboards_CopyLeaderboardRecordByUserId(IntPtr handle, IntPtr options, ref IntPtr outLeaderboardRecord);
 
 	[PreserveSig]
@@ -239,13 +242,13 @@ public sealed class LeaderboardsInterface : Handle
 	internal static extern Result EOS_Leaderboards_CopyLeaderboardUserScoreByUserId(IntPtr handle, IntPtr options, ref IntPtr outLeaderboardUserScore);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern uint EOS_Leaderboards_GetLeaderboardDefinitionCount(IntPtr handle, IntPtr options);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern uint EOS_Leaderboards_GetLeaderboardRecordCount(IntPtr handle, IntPtr options);
 
 	[PreserveSig]
@@ -272,23 +275,23 @@ public sealed class LeaderboardsInterface : Handle
 	internal static extern void EOS_Leaderboards_QueryLeaderboardUserScores(IntPtr handle, IntPtr options, IntPtr clientData, OnQueryLeaderboardUserScoresCompleteCallbackInternal completionDelegate);
 
 	[PreserveSig]
-	[CalledBy(Type = typeof(LeaderboardsInterface), Member = "CopyLeaderboardDefinitionByLeaderboardId")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(LeaderboardsInterface), Member = "CopyLeaderboardDefinitionByIndex")]
+	[CalledBy(Type = typeof(LeaderboardsInterface), Member = "CopyLeaderboardDefinitionByLeaderboardId")]
+	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern void EOS_Leaderboards_Definition_Release(IntPtr leaderboardDefinition);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(LeaderboardsInterface), Member = "CopyLeaderboardUserScoreByIndex")]
 	[CalledBy(Type = typeof(LeaderboardsInterface), Member = "CopyLeaderboardUserScoreByUserId")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	internal static extern void EOS_Leaderboards_LeaderboardUserScore_Release(IntPtr leaderboardUserScore);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(LeaderboardsInterface), Member = "CopyLeaderboardRecordByIndex")]
 	[CalledBy(Type = typeof(LeaderboardsInterface), Member = "CopyLeaderboardRecordByUserId")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	internal static extern void EOS_Leaderboards_LeaderboardRecord_Release(IntPtr leaderboardRecord);
 

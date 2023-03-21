@@ -38,29 +38,28 @@ public class CheckCollision : ConditionTask<Collider>
 	[CallerCount(Count = 0)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
-	[Calls(Type = typeof(Collision), Member = "get_contacts")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Collision), Member = "get_contacts")]
-	[Calls(Type = typeof(Collision), Member = "get_gameObject")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Collision), Member = "get_gameObject")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(Type = typeof(Collision), Member = "get_contacts")]
+	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void OnCollisionEnter(Collision info)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Collision), Member = "get_gameObject")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Collision), Member = "get_gameObject")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnCollisionExit(Collision info)
 	{
 	}

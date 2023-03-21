@@ -32,16 +32,16 @@ public class UpdateSessionCallbackInfo : ICallbackInfo, ISettable
 
 	public object ClientData
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -51,14 +51,14 @@ public class UpdateSessionCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -73,42 +73,42 @@ public class UpdateSessionCallbackInfo : ICallbackInfo, ISettable
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 20)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 24)]
 		private set
 		{
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Result? GetResultCode()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(UpdateSessionCallbackInfo), Member = "Set")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UpdateSessionCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(UpdateSessionCallbackInfoInternal), Member = "get_SessionName")]
 	[Calls(Type = typeof(UpdateSessionCallbackInfoInternal), Member = "get_SessionId")]
-	[CalledBy(Type = typeof(UpdateSessionCallbackInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	internal void Set(UpdateSessionCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UpdateSessionCallbackInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public UpdateSessionCallbackInfo()
 	{
 	}

@@ -42,22 +42,20 @@ public class Keypad : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
+	[CallsUnknownMethods(Count = 8)]
 	public void Update()
 	{
 	}
@@ -71,85 +69,85 @@ public class Keypad : MonoBehaviour
 		return null;
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 15)]
 	public bool ProcessInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Reset()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 22)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 22)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(Keypad), Member = "FindKeypadByPosition")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallsUnknownMethods(Count = 6)]
 	private bool CodeIsKnownByPlayer()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(AkEventCallbackInfo), Member = "get_playingID")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkEventCallbackInfo), Member = "get_playingID")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnAkCallback(object in_cookie, AkCallbackType in_type, object in_info)
 	{
 	}
 
+	[CalledBy(Type = typeof(Keypad), Member = "DeserializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(Keypad), Member = "DeserializeAll")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	private static Keypad FindKeypadByPosition(Vector3 pos)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public Keypad()
 	{
 	}

@@ -14,13 +14,12 @@ public class AISendMissionEvent : MonoBehaviour
 	private bool m_SentEvent;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
 	[CallsUnknownMethods(Count = 4)]
@@ -28,8 +27,8 @@ public class AISendMissionEvent : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public AISendMissionEvent()
 	{
 	}

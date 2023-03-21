@@ -42,28 +42,29 @@ public class CraftingRequirementMultiTool : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "Enable")]
 	[CalledBy(Type = typeof(CraftingRequirementMultiTool), Member = "Enable")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Disable()
 	{
 	}
 
+	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "Enable")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(CraftingRequirementMultiTool), Member = "AddToolOptions")]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[Calls(Type = typeof(CraftingRequirementMultiTool), Member = "RefreshDisplayed")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[Calls(Type = typeof(CraftingRequirementMultiTool), Member = "Disable")]
-	[Calls(Type = typeof(CraftingRequirementMultiTool), Member = "RefreshDisplayed")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "Enable")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(CraftingRequirementMultiTool), Member = "AddToolOptions")]
-	[Calls(Type = typeof(CraftingRequirementMultiTool), Member = "AddToolOptions")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Enable(BlueprintData bp)
 	{
 	}
@@ -75,36 +76,36 @@ public class CraftingRequirementMultiTool : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 55)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool IsEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool IsSelected()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(CraftingRequirementMultiTool), Member = "RefreshDisplayed")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnNextTool()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(CraftingRequirementMultiTool), Member = "RefreshDisplayed")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(CraftingRequirementMultiTool), Member = "RefreshDisplayed")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnPreviousTool()
 	{
 	}
@@ -115,48 +116,46 @@ public class CraftingRequirementMultiTool : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(CraftingRequirementMultiTool), Member = "Enable")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Inventory), Member = "GetItems")]
-	[CalledBy(Type = typeof(CraftingRequirementMultiTool), Member = "Enable")]
-	[CalledBy(Type = typeof(CraftingRequirementMultiTool), Member = "Enable")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 17)]
 	private void AddToolOptions(GearItem gi, bool mustHaveInInventory)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTextureNonNull")]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "OnNext")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "OnPrevious")]
 	[CalledBy(Type = typeof(CraftingRequirementMultiTool), Member = "Enable")]
 	[CalledBy(Type = typeof(CraftingRequirementMultiTool), Member = "OnNextTool")]
 	[CalledBy(Type = typeof(CraftingRequirementMultiTool), Member = "OnPreviousTool")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "OnPrevious")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(Inventory), Member = "HasNonRuinedItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "HasNonRuinedItem")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTextureNonNull")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void RefreshDisplayed()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public CraftingRequirementMultiTool()
 	{
 	}

@@ -48,36 +48,35 @@ public class Panel_CanOpening : Panel_Base
 
 	private float m_InspectCamOrigDepth;
 
-	[Calls(Type = typeof(Panel_CanOpening), Member = "AddAlternateTools")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[Calls(Type = typeof(Panel_CanOpening), Member = "AddAlternateTools")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_CanOpening), Member = "RefreshVisuals")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(Inventory), Member = "AddGear")]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = "set_active")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(Panel_CanOpening), Member = "OnOpen")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Panel_CanOpening), Member = "NextTool")]
-	[Calls(Type = typeof(Panel_CanOpening), Member = "PrevTool")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
-	[Calls(Type = typeof(Panel_CanOpening), Member = "OnCancel")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_CanOpening), Member = "OnCancel")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
+	[Calls(Type = typeof(Panel_CanOpening), Member = "PrevTool")]
+	[Calls(Type = typeof(Panel_CanOpening), Member = "NextTool")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_CanOpening), Member = "OnOpen")]
+	[Calls(Type = typeof(Panel_CanOpening), Member = "RefreshVisuals")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = "set_active")]
+	[Calls(Type = typeof(Inventory), Member = "AddGear")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 11)]
 	private void Update()
 	{
 	}
@@ -88,31 +87,30 @@ public class Panel_CanOpening : Panel_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_CanOpening), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
 	[Calls(Type = typeof(PlayerManager), Member = "EnterInspectGearMode")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
+	[CallsUnknownMethods(Count = 4)]
 	public void OnCancel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Panel_CanOpening), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_CanOpening), Member = "OnSmash")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "OpenAndUseFoodInventoryItem")]
-	[Calls(Type = typeof(Inventory), Member = "AddGear")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Panel_CanOpening), Member = "ToolCanOpenSelectedItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Panel_CanOpening), Member = "ToolCanOpenSelectedItem")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(GearItem), Member = "DegradeOnUse")]
+	[Calls(Type = typeof(Inventory), Member = "AddGear")]
+	[Calls(Type = typeof(PlayerManager), Member = "OpenAndUseFoodInventoryItem")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_CanOpening), Member = "OnSmash")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	public void OnOpen()
 	{
 	}
@@ -121,133 +119,131 @@ public class Panel_CanOpening : Panel_Base
 	[CallerCount(Count = 0)]
 	public bool IsGoingToOpenItem()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_CanOpening), Member = "Update")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(ScrollList), Member = "Next")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void NextTool()
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_CanOpening), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(ScrollList), Member = "Prev")]
 	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
 	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(ScrollList), Member = "Prev")]
+	[CallsUnknownMethods(Count = 6)]
 	public void PrevTool()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
 	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
 	[Calls(Type = typeof(UITweener), Member = "Sample")]
 	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void SelectToolByIndex(int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Panel_CanOpening), Member = "OnOpen")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(PlayerManager), Member = "UseSmashableItem")]
-	[Calls(Type = typeof(Inventory), Member = "AddGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Inventory), Member = "AddGear")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(PlayerManager), Member = "UseSmashableItem")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public void OnSmash()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(GearItemCoverflow), Member = "SetGearItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 32)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
-	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
-	[Calls(Type = typeof(Panel_CanOpening), Member = "ToolCanOpenSelectedItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_CanOpening), Member = "ToolCanOpenSelectedItem")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
+	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(GearItemCoverflow), Member = "SetGearItem")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 32)]
 	private void SetupScrollList()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_CanOpening), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GearItemCoverflow), Member = "SetSelected")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GearItemCoverflow), Member = "SetSelected")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 13)]
 	private void RefreshVisuals()
 	{
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateButtonLegend()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Panel_CanOpening), Member = "Initialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 25)]
 	private void AddAlternateTools()
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(Panel_CanOpening), Member = "OnOpen")]
 	[CalledBy(Type = typeof(Panel_CanOpening), Member = "SetupScrollList")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ToolCanOpenSelectedItem(CanOpeningItem ci)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	public Panel_CanOpening()
 	{
 	}

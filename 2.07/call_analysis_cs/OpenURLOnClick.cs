@@ -4,16 +4,17 @@ using UnityEngine;
 public class OpenURLOnClick : MonoBehaviour
 {
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "GetUrlAtCharacterIndex")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UILabel), Member = "GetCharacterIndexAtPosition")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(UILabel), Member = "GetUrlAtCharacterIndex")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnClick()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public OpenURLOnClick()
 	{
 	}

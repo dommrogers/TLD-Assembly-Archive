@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
 using NodeCanvas.Tasks.Conditions;
@@ -21,85 +22,80 @@ public class BadgeUIInfo : ScriptableObject
 	[NonSerialized]
 	public bool m_Unlocked;
 
+	[CalledBy(Type = typeof(Panel_Badges), Member = "SetupChallengeScrollList")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(BadgeUIInfo), Member = "IsUnlocked")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CalledBy(Type = typeof(Panel_Badges), Member = "SetupChallengeScrollList")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public BadgeInfo CreateBadgeInfo()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEvent")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEvent")]
-	[Calls(Type = typeof(Enum), Member = "GetNames")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enum), Member = "GetNames")]
 	[Calls(Type = typeof(BadgeUIInfo), Member = "IsUnlocked")]
+	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEvent")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 12)]
 	public static void SendBadgeInfoAnalyticsEvent()
 	{
 	}
 
+	[CalledBy(Type = typeof(BadgeUIInfo), Member = "IsUnlocked")]
 	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(BadgeUIInfo), Member = "IsUnlocked")]
-	[CalledBy(Type = typeof(BadgeUIInfo), Member = "IsUnlocked")]
 	[CallsUnknownMethods(Count = 8)]
 	private static int GetNumFourDaysOfNightCompleted()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CalledBy(Type = typeof(BadgeUIInfo), Member = "IsUnlocked")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(BadgeUIInfo), Member = "IsUnlocked")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private static int GetNumFourDaysOfNight2019Completed()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 36)]
-	[CalledBy(Type = typeof(PostSpecialEvent), Member = "ManageSaveData")]
-	[CalledBy(Type = typeof(BadgeUIInfo), Member = "SendBadgeInfoAnalyticsEvent")]
 	[CalledBy(Type = typeof(BadgeUIInfo), Member = "CreateBadgeInfo")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CalledBy(Type = typeof(BadgeUIInfo), Member = "SendBadgeInfoAnalyticsEvent")]
+	[CalledBy(Type = typeof(PostSpecialEvent), Member = "ManageSaveData")]
 	[CalledBy(Type = typeof(Condition_IsBadgeUnlocked), Member = "OnCheck")]
-	[Calls(Type = typeof(BadgeUIInfo), Member = "GetNumFourDaysOfNightCompleted")]
-	[Calls(Type = typeof(BadgeUIInfo), Member = "GetNumFourDaysOfNight2019Completed")]
-	[Calls(Type = typeof(BadgeUIInfo), Member = "GetNumFourDaysOfNight2019Completed")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(BadgeUIInfo), Member = "GetNumFourDaysOfNight2019Completed")]
 	[Calls(Type = typeof(BadgeUIInfo), Member = "GetNumFourDaysOfNightCompleted")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 36)]
 	public static bool IsUnlocked(BadgeInfoType bit)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(Action_UnlockBadge), Member = "OnExecute")]
-	[Calls(Type = typeof(FeatNotify), Member = "ShowFeatUnlockedKicker")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
 	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(FeatNotify), Member = "ShowFeatUnlockedKicker")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public static void UnlockBadge(BadgeInfoType badge, bool skipProfileSave = false)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public BadgeUIInfo()
 	{

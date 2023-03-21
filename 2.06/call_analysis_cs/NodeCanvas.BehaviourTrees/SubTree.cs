@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -28,15 +29,17 @@ public class SubTree : BTNode, IGraphAssignable
 
 	public BehaviourTree subTree
 	{
-		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -46,33 +49,37 @@ public class SubTree : BTNode, IGraphAssignable
 	{
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 3)]
+		[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private Graph[] NodeCanvas_002EFramework_002EIGraphAssignable_002EGetInstances()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Graph), Member = "StartGraph")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(SubTree), Member = "CheckInstance")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Graph), Member = "get_primeNode")]
+	[Calls(Type = typeof(SubTree), Member = "CheckInstance")]
+	[Calls(Type = typeof(Graph), Member = "StartGraph")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
@@ -86,10 +93,10 @@ public class SubTree : BTNode, IGraphAssignable
 	{
 	}
 
-	[Calls(Type = typeof(Graph), Member = "Pause")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Graph), Member = "Pause")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnGraphPaused()
 	{
 	}
@@ -102,20 +109,24 @@ public class SubTree : BTNode, IGraphAssignable
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(SubTree), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 6)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Graph), Member = "Clone")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private BehaviourTree CheckInstance()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Node), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Node), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public SubTree()
 	{
 	}

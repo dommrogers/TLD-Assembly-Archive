@@ -13,20 +13,20 @@ public class UIViewport : MonoBehaviour
 
 	private Camera mCam;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Camera), Member = "set_orthographicSize")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 19)]
 	private void LateUpdate()
 	{
 	}

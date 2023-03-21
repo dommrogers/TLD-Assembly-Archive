@@ -23,9 +23,10 @@ internal struct QueryLeaderboardUserScoresOptionsInternal : ISettable, IDisposab
 
 	public ProductUserId[] UserIds
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(QueryLeaderboardUserScoresOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -43,10 +44,10 @@ internal struct QueryLeaderboardUserScoresOptionsInternal : ISettable, IDisposab
 
 	public DateTimeOffset? StartTime
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(QueryLeaderboardUserScoresOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -54,37 +55,36 @@ internal struct QueryLeaderboardUserScoresOptionsInternal : ISettable, IDisposab
 
 	public DateTimeOffset? EndTime
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(QueryLeaderboardUserScoresOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(QueryLeaderboardUserScoresOptionsInternal), Member = "set_EndTime")]
-	[Calls(Type = typeof(QueryLeaderboardUserScoresOptionsInternal), Member = "set_StartTime")]
 	[CalledBy(Type = typeof(QueryLeaderboardUserScoresOptionsInternal), Member = "Set")]
-	[Calls(Type = typeof(QueryLeaderboardUserScoresOptionsInternal), Member = "set_UserIds")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(QueryLeaderboardUserScoresOptionsInternal), Member = "set_UserIds")]
 	[Calls(Type = typeof(QueryLeaderboardUserScoresOptionsInternal), Member = "set_StatInfo")]
+	[Calls(Type = typeof(QueryLeaderboardUserScoresOptionsInternal), Member = "set_StartTime")]
+	[Calls(Type = typeof(QueryLeaderboardUserScoresOptionsInternal), Member = "set_EndTime")]
 	public void Set(QueryLeaderboardUserScoresOptions other)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(QueryLeaderboardUserScoresOptionsInternal), Member = "Set")]
 	[CalledBy(Type = typeof(LeaderboardsInterface), Member = "QueryLeaderboardUserScores")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(QueryLeaderboardUserScoresOptionsInternal), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	public void Dispose()
 	{
 	}

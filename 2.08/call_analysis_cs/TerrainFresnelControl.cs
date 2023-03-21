@@ -15,25 +15,22 @@ public class TerrainFresnelControl : MonoBehaviour
 
 	private Material m_TerrainMat;
 
-	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Material), Member = "SetFloat")]
+	[Calls(Type = typeof(Material), Member = "SetColor")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Material), Member = "SetFloat")]
+	[Calls(Type = typeof(Material), Member = "SetColor")]
+	[CallsUnknownMethods(Count = 1)]
 	public void UpdateFresnel(float fresnelExponent, float fresnelBias, float fresnelGain, Color fresnelColour)
 	{
 	}

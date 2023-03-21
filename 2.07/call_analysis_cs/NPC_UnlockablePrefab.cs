@@ -37,10 +37,10 @@ public class NPC_UnlockablePrefab : MonoBehaviour
 
 	public string m_Description
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Localization), Member = "Get")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Localization), Member = "Get")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;

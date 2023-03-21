@@ -13,20 +13,22 @@ public class FindChildByName : ActionTask<Transform>
 
 	protected override string info
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Format")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	protected override void OnExecute()
 	{
 	}

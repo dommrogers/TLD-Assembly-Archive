@@ -23,14 +23,13 @@ public sealed class SuffocationScreenEffectRenderer : PostProcessEffectRenderer<
 	{
 	}
 
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
 	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}

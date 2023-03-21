@@ -25,8 +25,8 @@ public abstract class RichPresenceProviderBase : IRichPresenceProvider
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(RichPresenceProviderBase), Member = "UpdateRichPresence")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public virtual void Update()
 	{
 	}
@@ -37,20 +37,17 @@ public abstract class RichPresenceProviderBase : IRichPresenceProvider
 	{
 	}
 
-	[CallerCount(Count = 101224)]
-	[DeduplicatedMethod]
 	protected abstract bool IsUserSignedOn();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract void ChangePresence();
 
+	[CalledBy(Type = typeof(RichPresenceProviderBase), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Object), Member = "get_name")]
-	[CalledBy(Type = typeof(RichPresenceProviderBase), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	protected void UpdateRichPresence()
 	{

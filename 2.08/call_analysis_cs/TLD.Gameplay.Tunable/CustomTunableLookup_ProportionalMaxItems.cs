@@ -7,7 +7,7 @@ namespace TLD.Gameplay.Tunable;
 public class CustomTunableLookup_ProportionalMaxItems : CustomTunableLookup<CustomTunableNLH, CustomTunableLookup_NLMH>
 {
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = ".ctor")]
 	public CustomTunableLookup_ProportionalMaxItems()
 	{
 		((CustomTunableLookup<, >)(object)this)._002Ector();

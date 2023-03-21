@@ -11,8 +11,8 @@ public class GetGameObjectPosition : ActionTask<Transform>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		get
 		{
 			return null;
@@ -20,8 +20,8 @@ public class GetGameObjectPosition : ActionTask<Transform>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	protected override void OnExecute()
 	{

@@ -18,8 +18,8 @@ public class MoveToGameObject : ActionTask<NavMeshAgent>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -27,19 +27,21 @@ public class MoveToGameObject : ActionTask<NavMeshAgent>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 11)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 17)]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 15)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 12)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Vector3), Member = "op_Inequality")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 14)]
 	protected override void OnUpdate()
 	{
 	}
@@ -59,16 +61,17 @@ public class MoveToGameObject : ActionTask<NavMeshAgent>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 9)]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 8)]
 	public override void OnDrawGizmos()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 2)]
 	public MoveToGameObject()
 	{
 		((ActionTask<>)(object)this)._002Ector();

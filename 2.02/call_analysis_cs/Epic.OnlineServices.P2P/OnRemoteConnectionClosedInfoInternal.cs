@@ -19,10 +19,10 @@ internal struct OnRemoteConnectionClosedInfoInternal : ICallbackInfoInternal
 
 	public object ClientData
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(OnRemoteConnectionClosedInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -31,19 +31,20 @@ internal struct OnRemoteConnectionClosedInfoInternal : ICallbackInfoInternal
 
 	public IntPtr ClientDataAddress
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public ProductUserId LocalUserId
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(OnRemoteConnectionClosedInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -54,7 +55,8 @@ internal struct OnRemoteConnectionClosedInfoInternal : ICallbackInfoInternal
 	{
 		[CalledBy(Type = typeof(OnRemoteConnectionClosedInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -63,9 +65,10 @@ internal struct OnRemoteConnectionClosedInfoInternal : ICallbackInfoInternal
 
 	public SocketId SocketId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(OnRemoteConnectionClosedInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;

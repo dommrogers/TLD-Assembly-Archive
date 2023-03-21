@@ -6,15 +6,15 @@ public class PlayerSpawnPoints : MonoBehaviour
 {
 	public List<GameObject> m_SpawnPoints;
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{

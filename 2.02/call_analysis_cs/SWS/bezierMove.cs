@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using Holoville.HOTween;
 using Holoville.HOTween.Core;
@@ -34,7 +33,7 @@ public class bezierMove : MonoBehaviour
 		pingPong
 	}
 
-	private sealed class _003CMove_003Ed__28 : IDisposable, IEnumerator<object>, IEnumerator
+	private sealed class _003CMove_003Ed__28 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -46,7 +45,7 @@ public class bezierMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -57,7 +56,7 @@ public class bezierMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -71,35 +70,35 @@ public class bezierMove : MonoBehaviour
 		{
 		}
 
-		[CallerCount(Count = 2)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[Calls(Type = typeof(bezierMove), Member = "InitWaypoints")]
 		[Calls(Type = typeof(bezierMove), Member = "MoveToPath")]
 		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 		[Calls(Type = typeof(bezierMove), Member = "CreateTween")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 8)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 3)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
 	}
 
-	private sealed class _003CMoveToPath_003Ed__29 : IEnumerator, IDisposable, IEnumerator<object>
+	private sealed class _003CMoveToPath_003Ed__29 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -111,7 +110,7 @@ public class bezierMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -122,7 +121,7 @@ public class bezierMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -138,32 +137,31 @@ public class bezierMove : MonoBehaviour
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 93)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(bezierMove), Member = "InitWaypoints")]
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-		[Calls(Type = typeof(ABSTweenComponent), Member = "WaitForCompletion")]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(WaypointManager), Member = "SmoothCurve")]
 		[Calls(Type = typeof(Array), Member = "Copy")]
 		[Calls(Type = typeof(bezierMove), Member = "CreateTween")]
-		[Calls(Type = typeof(WaypointManager), Member = "SmoothCurve")]
-		[CallsDeduplicatedMethods(Count = 7)]
-		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Tweener), Member = "UsePartialPath")]
+		[Calls(Type = typeof(ABSTweenComponent), Member = "WaitForCompletion")]
+		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+		[Calls(Type = typeof(bezierMove), Member = "InitWaypoints")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+		[CallsDeduplicatedMethods(Count = 7)]
+		[CallsUnknownMethods(Count = 93)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 3)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -185,7 +183,7 @@ public class bezierMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -196,7 +194,7 @@ public class bezierMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -212,18 +210,18 @@ public class bezierMove : MonoBehaviour
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[Calls(Type = typeof(ABSTweenComponent), Member = "OnPause")]
-		[CallsUnknownMethods(Count = 3)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ABSTweenComponent), Member = "OnPause")]
 		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 3)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -286,77 +284,74 @@ public class bezierMove : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(_003CMove_003Ed__28), Member = "MoveNext")]
-	[CallsUnknownMethods(Count = 8)]
+	[CalledBy(Type = typeof(_003CMoveToPath_003Ed__29), Member = "MoveNext")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(_003CMoveToPath_003Ed__29), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 8)]
 	private void InitWaypoints()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(bezierMove), Member = "Stop")]
-	[Calls(Type = typeof(bezierMove), Member = "Move")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[CalledBy(Type = typeof(bezierMove), Member = "Start")]
 	[CalledBy(Type = typeof(bezierMove), Member = "ReachedEnd")]
 	[CalledBy(Type = typeof(bezierMove), Member = "SetPath")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(bezierMove), Member = "Stop")]
+	[Calls(Type = typeof(bezierMove), Member = "Move")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void StartMove()
 	{
 	}
 
 	[CalledBy(Type = typeof(bezierMove), Member = "StartMove")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 1)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator Move()
 	{
 		return null;
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
+	[CalledBy(Type = typeof(_003CMove_003Ed__28), Member = "MoveNext")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(_003CMove_003Ed__28), Member = "MoveNext")]
 	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator MoveToPath()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 42)]
-	[CalledBy(Type = typeof(_003CMoveToPath_003Ed__29), Member = "MoveNext")]
-	[CalledBy(Type = typeof(_003CMove_003Ed__28), Member = "MoveNext")]
-	[Calls(Type = typeof(HOTween), Member = "To")]
-	[Calls(Type = typeof(TweenParms), Member = "Ease")]
 	[CalledBy(Type = typeof(bezierMove), Member = "ReachedEnd")]
-	[Calls(Type = typeof(TweenParms), Member = "Loops")]
-	[Calls(Type = typeof(TweenParms), Member = "Prop")]
-	[Calls(Type = typeof(TweenParms), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(_003CMove_003Ed__28), Member = "MoveNext")]
+	[CalledBy(Type = typeof(_003CMoveToPath_003Ed__29), Member = "MoveNext")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(TweenParms), Member = ".ctor")]
+	[Calls(Type = typeof(TweenParms), Member = "Prop")]
+	[Calls(Type = typeof(TweenParms), Member = "Loops")]
 	[Calls(Type = typeof(TweenParms), Member = "Ease")]
+	[Calls(Type = typeof(TweenParms), Member = "Ease")]
+	[Calls(Type = typeof(HOTween), Member = "To")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 42)]
 	private void CreateTween()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Messages), Member = "Execute")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Messages), Member = "Execute")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private void CheckPoint()
 	{
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
@@ -365,15 +360,14 @@ public class bezierMove : MonoBehaviour
 		return null;
 	}
 
-	[Calls(Type = typeof(bezierMove), Member = "StartMove")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(bezierMove), Member = "Stop")]
-	[CallsUnknownMethods(Count = 28)]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Copy")]
 	[Calls(Type = typeof(bezierMove), Member = "CreateTween")]
+	[Calls(Type = typeof(bezierMove), Member = "Stop")]
+	[Calls(Type = typeof(bezierMove), Member = "StartMove")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 28)]
 	private void ReachedEnd()
 	{
 	}
@@ -385,22 +379,22 @@ public class bezierMove : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(bezierMove), Member = "StartMove")]
 	[CalledBy(Type = typeof(bezierMove), Member = "ReachedEnd")]
 	[CalledBy(Type = typeof(bezierMove), Member = "SetPath")]
 	[CalledBy(Type = typeof(bezierMove), Member = "ResetMove")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Stop()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(bezierMove), Member = "Stop")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(bezierMove), Member = "Stop")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public void ResetMove(bool reposition)
 	{
 	}
@@ -423,21 +417,21 @@ public class bezierMove : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(Tweener), Member = "GetPlugVector3PathPlugin")]
-	[Calls(Type = typeof(Holoville.HOTween.Core.Path), Member = "GetConstPathPercFromTimePerc")]
-	[Calls(Type = typeof(Holoville.HOTween.Core.Path), Member = "GetPoint")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "Holoville.HOTween.Core.Path", Member = "GetConstPathPercFromTimePerc")]
+	[Calls(TypeFullName = "Holoville.HOTween.Core.Path", Member = "GetPoint")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 9)]
 	private void OnDrawGizmosSelected()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Messages), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public bezierMove()
 	{
 	}

@@ -13,11 +13,11 @@ public class ClickToStartDialogue : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
 	[Calls(Type = typeof(Graph), Member = "StartGraph")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 12)]
 	private void OnMouseDown()
 	{
 	}

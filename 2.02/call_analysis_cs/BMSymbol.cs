@@ -35,31 +35,32 @@ public class BMSymbol
 
 	public int length
 	{
+		[CalledBy(Type = typeof(NGUIText), Member = "Print")]
+		[CallerCount(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public int offsetX
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public int offsetY
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -69,7 +70,7 @@ public class BMSymbol
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -79,7 +80,7 @@ public class BMSymbol
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -89,7 +90,7 @@ public class BMSymbol
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -108,18 +109,17 @@ public class BMSymbol
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(UIFont), Member = "MatchSymbol")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UIAtlas), Member = "get_texture")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UIAtlas), Member = "GetSprite")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UIAtlas), Member = "GetSprite")]
+	[Calls(Type = typeof(UIAtlas), Member = "get_texture")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public bool Validate(UIAtlas atlas)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -132,53 +132,41 @@ public class BMSymbol
 	{
 	}
 
+	[CalledBy(Type = typeof(NGUIText), Member = "Print")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Resources), Member = "Load")]
+	[Calls(Type = typeof(ButtonLegendAtlas), Member = "BuildDictionaries")]
 	[Calls(Type = typeof(UIRect), Member = "get_root")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[Calls(Type = typeof(Application), Member = "get_isPlaying")]
+	[Calls(Type = typeof(UIRoot), Member = "GetDynamicSymbolSpriteFromPool")]
+	[Calls(Type = typeof(UILabel), Member = "AddDynamicSymbolSprite")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
+	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(UIWidget), Member = "set_width")]
+	[Calls(Type = typeof(UIWidget), Member = "set_height")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(Type = typeof(UIRoot), Member = "ReturnDynamicSymbolSpriteToPool")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(UIWidget), Member = "set_pivot")]
-	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
 	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[Calls(Type = typeof(UILabel), Member = "get_fontSize")]
 	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UIRect), Member = "get_root")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 45)]
+	[Calls(Type = typeof(Application), Member = "get_isPlaying")]
+	[Calls(Type = typeof(Transform), Member = "GetChild")]
 	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(UILabel), Member = "AddDynamicSymbolSprite")]
-	[Calls(Type = typeof(UIRect), Member = "get_root")]
-	[Calls(Type = typeof(UIRoot), Member = "ReturnDynamicSymbolSpriteToPool")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 21)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UIRect), Member = "get_root")]
-	[Calls(Type = typeof(UIRoot), Member = "GetDynamicSymbolSpriteFromPool")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(ButtonLegendAtlas), Member = "BuildDictionaries")]
-	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
-	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
-	[Calls(Type = typeof(UIWidget), Member = "set_width")]
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 20)]
+	[CallsUnknownMethods(Count = 45)]
 	public void SetSpriteLocation(UILabel label, Vector3 offsetPosition)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public BMSymbol()
 	{
 	}

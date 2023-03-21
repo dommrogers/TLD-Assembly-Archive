@@ -28,144 +28,114 @@ public class ButtonPrompt : MonoBehaviour
 
 	private bool m_HasInitialized;
 
-	[Calls(Type = typeof(ButtonPrompt), Member = "InitializeValues")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ButtonPrompt), Member = "InitializeValues")]
 	private void Awake()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void ResetPrompt()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "get_Chars")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(ButtonLegend), Member = "ConfigureButtonIconSpriteName")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
-	[CallsUnknownMethods(Count = 43)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CalledBy(Type = typeof(ButtonPrompt), Member = "ShowPromptForKeyWithDisable")]
+	[CalledBy(Type = typeof(ButtonPrompt), Member = "RefreshPrompt")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "OnControllerScheme")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdatePlacementButtonLabels")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowGenericPopup")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowGenericPopupWithDefaultActions")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateButtonStatus")]
+	[CalledBy(Type = typeof(GenericInteractionCancelUI), Member = "RefreshButtonPrompt")]
+	[CalledBy(Type = typeof(GenericInteractionPrompt), Member = "RefreshButtonPrompts")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "ExitDialogueUpdate")]
+	[CalledBy(Type = typeof(TimedActionPopup), Member = "SetPrompt")]
 	[CallerCount(Count = 49)]
-	[CallsDeduplicatedMethods(Count = 15)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(ButtonPrompt), Member = "InitializeValues")]
 	[Calls(Type = typeof(ButtonPrompt), Member = "DisableAll")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Application), Member = "get_platform")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(PlayerManager), Member = "IsInPlacementMode")]
-	[Calls(Type = typeof(InputManager), Member = "GetButtonNameForAction")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(ButtonPrompt), Member = "UpdatePromptLabel")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
-	[Calls(Type = typeof(Application), Member = "get_platform")]
+	[Calls(Type = typeof(InputManager), Member = "GetButtonNameForAction")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(string), Member = "get_Chars")]
+	[Calls(Type = typeof(char), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(ButtonLegend), Member = "ConfigureButtonIconSpriteName")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 42)]
 	public void ShowPromptForKey(string promptStr, string inputActionName, bool forceRefresh = false)
 	{
 	}
 
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
 	[CalledBy(Type = typeof(GenericInteractionPrompt), Member = "ShowInteraction")]
 	[CalledBy(Type = typeof(GenericInteractionPrompt), Member = "ShowInteraction")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
 	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 18)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 18)]
 	public void ShowPromptForKeyWithDisable(string promptStr, string inputActionName, bool isPromptEnabled)
 	{
 	}
 
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateButtonStatus")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateButtonStatus")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateButtonStatus")]
 	[CalledBy(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "DisableAll")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateButtonStatus")]
 	[CallerCount(Count = 4)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(ButtonPrompt), Member = "DisableAll")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void UpdatePromptLabel(string promptStr)
 	{
 	}
 
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
 	public void RefreshPrompt()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(ButtonPrompt), Member = "Awake")]
 	[CalledBy(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 20)]
 	private void InitializeValues()
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 20)]
-	[CalledBy(Type = typeof(ButtonPrompt), Member = "UpdatePromptLabel")]
 	[CalledBy(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CalledBy(Type = typeof(ButtonPrompt), Member = "UpdatePromptLabel")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 20)]
 	private void DisableAll()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public ButtonPrompt()
 	{
 	}

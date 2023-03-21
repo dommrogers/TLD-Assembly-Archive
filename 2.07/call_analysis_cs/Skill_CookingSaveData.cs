@@ -4,8 +4,8 @@ public class Skill_CookingSaveData
 {
 	public int m_Points;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public Skill_CookingSaveData()
 	{
 	}

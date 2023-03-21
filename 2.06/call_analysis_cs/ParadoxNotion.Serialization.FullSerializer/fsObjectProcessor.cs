@@ -5,16 +5,16 @@ namespace ParadoxNotion.Serialization.FullSerializer;
 
 public abstract class fsObjectProcessor
 {
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NotImplementedException), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 5)]
 	public virtual bool CanProcess(Type type)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public virtual void OnBeforeSerialize(Type storageType, object instance)
 	{
 	}
@@ -43,8 +43,8 @@ public abstract class fsObjectProcessor
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	protected fsObjectProcessor()
 	{
 	}

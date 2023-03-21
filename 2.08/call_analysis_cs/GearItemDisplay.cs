@@ -32,10 +32,10 @@ public class GearItemDisplay : MonoBehaviour
 	[NonSerialized]
 	public OnClicked m_ClickedDelegate;
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshList")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 4)]
 	public void Clear()
 	{
@@ -48,21 +48,21 @@ public class GearItemDisplay : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshList")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshSelected")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetSelected(bool selected)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshList")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
 	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshList")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 4)]
 	public void Setup(GearItem gi)
 	{

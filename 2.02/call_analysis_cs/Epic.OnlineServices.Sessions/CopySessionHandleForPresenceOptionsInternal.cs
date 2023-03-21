@@ -13,11 +13,11 @@ internal struct CopySessionHandleForPresenceOptionsInternal : ISettable, IDispos
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(CopySessionHandleForPresenceOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopySessionHandleForPresenceOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopySessionHandleForPresenceOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopySessionHandleForPresenceOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,16 +29,16 @@ internal struct CopySessionHandleForPresenceOptionsInternal : ISettable, IDispos
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(CopySessionHandleForPresenceOptionsInternal), Member = "set_LocalUserId")]
 	[CalledBy(Type = typeof(SessionsInterface), Member = "CopySessionHandleForPresence")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CopySessionHandleForPresenceOptionsInternal), Member = "set_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

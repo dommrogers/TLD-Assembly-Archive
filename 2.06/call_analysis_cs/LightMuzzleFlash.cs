@@ -11,18 +11,20 @@ public class LightMuzzleFlash : MonoBehaviour
 
 	private float durTimer;
 
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Light), Member = "set_range")]
 	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 13)]
 	private void Update()
 	{
 	}

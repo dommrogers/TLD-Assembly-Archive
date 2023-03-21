@@ -5,18 +5,18 @@ namespace NodeCanvas.Tasks.Actions;
 
 public class Action_DisableCharacterController : ActionTask
 {
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "DisableCharacterController")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "EnableCharacterController")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "EnableCharacterController")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnStop()
 	{
 	}

@@ -5,8 +5,8 @@ public class BasicMenuItem : MonoBehaviour
 {
 	public BasicMenu.BasicMenuItemView m_View;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public BasicMenuItem()
 	{

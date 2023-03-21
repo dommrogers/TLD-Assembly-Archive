@@ -13,18 +13,18 @@ public class ContainerManager
 
 	public static List<Container> s_ActiveContainers;
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Container), Member = "Serialize")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(Container), Member = "Serialize")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 7)]
 	public static string Serialize()
 	{
 		return null;
@@ -36,87 +36,86 @@ public class ContainerManager
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
 	[CalledBy(Type = typeof(InaccessibleGearContainer), Member = "LoadSceneIntoNearestContainer")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Container), Member = "Deserialize")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(ContainerManager), Member = "FindContainerByGuid")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ContainerManager), Member = "FindContainerByPosition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ContainerManager), Member = "FindContainerByGuid")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Container), Member = "DeserializeContentsToPos")]
+	[Calls(Type = typeof(Container), Member = "Deserialize")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public static void Deserialize(string text, List<GearItem> loadedItems)
 	{
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneDataAdditive")]
-	[Calls(Type = typeof(Container), Member = "DeserializeContentsToPos")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(Container), Member = "DeserializeAdditive")]
-	[Calls(Type = typeof(Container), Member = "DeserializeContentsToPos")]
-	[Calls(Type = typeof(ContainerManager), Member = "FindContainerByGuid")]
-	[Calls(Type = typeof(ContainerManager), Member = "FindContainerByPosition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(ContainerManager), Member = "FindContainerByGuid")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ContainerManager), Member = "FindContainerByPosition")]
+	[Calls(Type = typeof(Container), Member = "DeserializeContentsToPos")]
+	[Calls(Type = typeof(Container), Member = "DeserializeAdditive")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public static void DeserializeAdditive(string text)
 	{
 	}
 
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Reset()
 	{
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public static void DisableAll()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Container), Member = "UpdateContainer")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void UpdateAll()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(ContainerManager), Member = "Deserialize")]
 	[CalledBy(Type = typeof(ContainerManager), Member = "DeserializeAdditive")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
 	private static Container FindContainerByPosition(ContainerSaveData csd)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(ContainerManager), Member = "DeserializeAdditive")]
 	[CalledBy(Type = typeof(ContainerManager), Member = "Deserialize")]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(ContainerManager), Member = "DeserializeAdditive")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	private static Container FindContainerByGuid(string guid)
 	{
 		return null;
@@ -126,7 +125,7 @@ public class ContainerManager
 	[CallsUnknownMethods(Count = 1)]
 	private static bool ShouldUseSavedContainerPosition(Vector3 scenePos, Vector3 savedPos)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

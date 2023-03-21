@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
@@ -13,27 +12,29 @@ public class Probability : ConditionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-		[CallsUnknownMethods(Count = 3)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+		[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
 	public Probability()
 	{
 	}

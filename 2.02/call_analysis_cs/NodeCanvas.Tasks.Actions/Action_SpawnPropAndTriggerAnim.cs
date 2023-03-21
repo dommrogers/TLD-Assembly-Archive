@@ -14,8 +14,8 @@ public class Action_SpawnPropAndTriggerAnim : ActionTask
 
 		public Vector2 YawLimitDegrees;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public ConstrainedLimits()
 		{
 		}
@@ -53,77 +53,73 @@ public class Action_SpawnPropAndTriggerAnim : ActionTask
 
 	public ConstrainedLimits ActionConstainedLimits;
 
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Utils), Member = "SetObjectAndChildrenLayer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(CinematicManager), Member = "StartMasterFP")]
-	[Calls(Type = typeof(Action_SpawnPropAndTriggerAnim), Member = "OnEnterPlaying")]
-	[CallsUnknownMethods(Count = 57)]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 17)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(PlayerManager), Member = "DisableCharacterController")]
 	[Calls(Type = typeof(Action_SpawnPropAndTriggerAnim), Member = "GetParentJoint")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(Utils), Member = "SetObjectAndChildrenLayer")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(CinematicManager), Member = "StartMasterFP")]
+	[Calls(Type = typeof(Action_SpawnPropAndTriggerAnim), Member = "OnEnterPlaying")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 54)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(Action_SpawnPropAndTriggerAnim), Member = "OnExecute")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 10)]
 	private Transform GetParentJoint()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_AnimatedInteraction")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[CalledBy(Type = typeof(Action_SpawnPropAndTriggerAnim), Member = "OnExecute")]
-	[Calls(Type = typeof(Action_SpawnPropAndTriggerAnim), Member = "OnComplete")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(Action_SpawnPropAndTriggerAnim), Member = "OnComplete")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_AnimatedInteraction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	private void OnEnterPlaying(bool success)
 	{
 	}
 
+	[CalledBy(Type = typeof(Action_SpawnPropAndTriggerAnim), Member = "OnEnterPlaying")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(PlayerManager), Member = "EnableCharacterController")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CalledBy(Type = typeof(Action_SpawnPropAndTriggerAnim), Member = "OnEnterPlaying")]
-	[CallsUnknownMethods(Count = 8)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private void OnComplete()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	public Action_SpawnPropAndTriggerAnim()
 	{
 	}

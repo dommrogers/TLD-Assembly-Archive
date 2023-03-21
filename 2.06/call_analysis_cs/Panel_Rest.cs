@@ -95,11 +95,11 @@ public class Panel_Rest : Panel_AutoReferenced, IAccelerateTimeProvider
 
 	private ButtonLegendConfigure[] m_ButtonLegendConfigureArray_PassTime;
 
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 4)]
 	public override void Initialize()
 	{
 	}
@@ -110,51 +110,39 @@ public class Panel_Rest : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Condition), Member = "GetAdjustedMaxHP")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedMilliseconds")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(Panel_Rest), Member = "Enable")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Panel_Rest), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(Condition), Member = "GetConditionValueForInterfaceDisplay")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_Rest), Member = "UpdateEstimatedCaloriesBurnedLabel")]
 	[Calls(Type = typeof(Panel_Rest), Member = "UpdateFeelsLikeLabel")]
 	[Calls(Type = typeof(Panel_Rest), Member = "UpdateWarmthBonusLabel")]
 	[Calls(Type = typeof(Panel_Rest), Member = "UpdateCurrentCaloriesLabel")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Rest), Member = "UpdateEstimatedCaloriesBurnedLabel")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(Condition), Member = "GetConditionValueForInterfaceDisplay")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Condition), Member = "GetAdjustedMaxHP")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedMilliseconds")]
+	[Calls(Type = typeof(Panel_Rest), Member = "UpdateButtonLegend")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 11)]
 	private void UpdateVisuals()
 	{
 	}
 
-	[CalledBy(Type = typeof(SnowShelterManager), Member = "OnBedroll")]
-	[CalledBy(Type = typeof(PlayerInVehicle), Member = "OnBedroll")]
-	[CalledBy(Type = typeof(PlayerInVehicle), Member = "OnBedroll")]
-	[CalledBy(Type = typeof(SnowShelterManager), Member = "OnBedroll")]
-	[CalledBy(Type = typeof(LeanToManager), Member = "OnBedroll")]
 	[CalledBy(Type = typeof(GearItem), Member = "PerformInteraction")]
 	[CalledBy(Type = typeof(Bed), Member = "PerformInteraction")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 8)]
 	[CalledBy(Type = typeof(LeanToManager), Member = "OnBedroll")]
+	[CalledBy(Type = typeof(SnowShelterManager), Member = "OnBedroll")]
+	[CalledBy(Type = typeof(PlayerInVehicle), Member = "OnBedroll")]
+	[CallerCount(Count = 8)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void StartRest(Bed b)
 	{
 	}
@@ -165,25 +153,24 @@ public class Panel_Rest : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Rest), Member = "UpdateVisuals")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "DoPassTime")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "DoSpecialActionFromInspectMode")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(InterfaceManager), Member = "InitializeAndActivateTimeWidget")]
-	[Calls(Type = typeof(InterfaceManager), Member = "SetTimeWidgetActive")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[Calls(Type = typeof(InterfaceManager), Member = "SetTimeWidgetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 11)]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "DoPassTime")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(InterfaceManager), Member = "SetTimeWidgetActive")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[Calls(Type = typeof(Panel_Rest), Member = "UpdateVisuals")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(InterfaceManager), Member = "InitializeAndActivateTimeWidget")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 19)]
 	public void Enable(bool enable, bool passTimeOnly)
 	{
 	}
@@ -196,14 +183,14 @@ public class Panel_Rest : Panel_AutoReferenced, IAccelerateTimeProvider
 	[CallerCount(Count = 0)]
 	public bool GetPassTimeAllowed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PassTime), Member = "End")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(PassTime), Member = "End")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnCancel()
 	{
 	}
@@ -213,21 +200,21 @@ public class Panel_Rest : Panel_AutoReferenced, IAccelerateTimeProvider
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsPassingTimeOnly()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void OnSelectRest()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnSelectPassTime()
 	{
 	}
@@ -250,33 +237,34 @@ public class Panel_Rest : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "DoSpecialActionFromInspectMode")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Rest), Member = "CheckPassTimeErrorMessage")]
 	[Calls(Type = typeof(PassTime), Member = "Begin")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Panel_Rest), Member = "CheckPassTimeErrorMessage")]
+	[CallsUnknownMethods(Count = 3)]
 	public bool DoPassTime(float sleepHours)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Bed), Member = "SetState")]
 	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnPickUp()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	public void OnIncreaseHours()
 	{
 	}
@@ -288,26 +276,22 @@ public class Panel_Rest : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_Rest), Member = "DoPassTime")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "DoSpecialActionFromInspectMode")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CalledBy(Type = typeof(Panel_Rest), Member = "DoPassTime")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "InHibernationPreventionIndoorEnvironment")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(Anxiety), Member = "CanPassTime")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(PlayerManager), Member = "InHibernationPreventionIndoorEnvironment")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsUnknownMethods(Count = 6)]
 	public static bool CheckPassTimeErrorMessage()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsUnknownMethods(Count = 1)]
@@ -315,92 +299,81 @@ public class Panel_Rest : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateWakeTimeLabel()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "CalculateModifiedCalorieBurnRate")]
-	[Calls(Type = typeof(PlayerManager), Member = "CalculateModifiedCalorieBurnRate")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_Rest), Member = "UpdateVisuals")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "CalculateModifiedCalorieBurnRate")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsUnknownMethods(Count = 7)]
 	private void UpdateEstimatedCaloriesBurnedLabel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Rest), Member = "UpdateVisuals")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateCurrentCaloriesLabel()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Rest), Member = "UpdateVisuals")]
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Freezing), Member = "CalculateBodyTemperature")]
 	[Calls(Type = typeof(Utils), Member = "GetTemperatureString")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Freezing), Member = "CalculateBodyTemperature")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateFeelsLikeLabel()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Rest), Member = "UpdateVisuals")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetTemperatureString")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Bed), Member = "GetWarmthBonusCelsius")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Utils), Member = "GetTemperatureString")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateWarmthBonusLabel()
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[CalledBy(Type = typeof(Panel_Rest), Member = "OnRest")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(Rest), Member = "BeginSleeping")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Rest), Member = "RestNeededForAffliction")]
-	[Calls(Type = typeof(Rest), Member = "AllowUnlimitedSleep")]
-	[Calls(Type = typeof(Anxiety), Member = "CanPassTime")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(PlayerManager), Member = "InHibernationPreventionIndoorEnvironment")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "InHibernationPreventionIndoorEnvironment")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Anxiety), Member = "CanPassTime")]
+	[Calls(Type = typeof(Rest), Member = "AllowUnlimitedSleep")]
+	[Calls(Type = typeof(Rest), Member = "RestNeededForAffliction")]
+	[Calls(Type = typeof(Rest), Member = "BeginSleeping")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 12)]
 	private void DoRest(int restAmount, bool wakeUpAtFullRest)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Rest), Member = "UpdateVisuals")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(Panel_Rest), Member = "UpdateVisuals")]
+	[CallerCount(Count = 1)]
 	private void UpdateButtonLegend()
 	{
 	}
@@ -418,7 +391,7 @@ public class Panel_Rest : Panel_AutoReferenced, IAccelerateTimeProvider
 	[CallsUnknownMethods(Count = 4)]
 	public bool IsAcceleratingTime()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -440,8 +413,8 @@ public class Panel_Rest : Panel_AutoReferenced, IAccelerateTimeProvider
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public UIWidget GetWidgetToFade()
 	{
 		return null;
@@ -468,8 +441,8 @@ public class Panel_Rest : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void StopAcceleratingTime()
 	{
 	}

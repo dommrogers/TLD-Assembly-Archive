@@ -7,7 +7,7 @@ public class ReplaceMaterialSaveDataProxy
 	public string m_Guid;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ReplaceMaterialSaveDataProxy()
 	{
 	}

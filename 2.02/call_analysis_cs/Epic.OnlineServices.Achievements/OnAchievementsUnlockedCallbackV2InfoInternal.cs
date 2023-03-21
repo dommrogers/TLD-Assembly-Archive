@@ -19,8 +19,8 @@ internal struct OnAchievementsUnlockedCallbackV2InfoInternal : ICallbackInfoInte
 	{
 		[CalledBy(Type = typeof(OnAchievementsUnlockedCallbackV2Info), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -29,19 +29,20 @@ internal struct OnAchievementsUnlockedCallbackV2InfoInternal : ICallbackInfoInte
 
 	public IntPtr ClientDataAddress
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public ProductUserId UserId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(OnAchievementsUnlockedCallbackV2Info), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -50,10 +51,10 @@ internal struct OnAchievementsUnlockedCallbackV2InfoInternal : ICallbackInfoInte
 
 	public string AchievementId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(OnAchievementsUnlockedCallbackV2Info), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -63,8 +64,8 @@ internal struct OnAchievementsUnlockedCallbackV2InfoInternal : ICallbackInfoInte
 	public DateTimeOffset? UnlockTime
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;

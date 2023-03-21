@@ -22,7 +22,7 @@ public struct UserReportMetric
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(double);
+			return 0.0;
 		}
 	}
 
@@ -33,7 +33,7 @@ public struct UserReportMetric
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -45,15 +45,15 @@ public struct UserReportMetric
 
 	public double Maximum
 	{
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(double);
+			return 0.0;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -61,12 +61,12 @@ public struct UserReportMetric
 
 	public double Minimum
 	{
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(double);
+			return 0.0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -80,14 +80,14 @@ public struct UserReportMetric
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -100,23 +100,23 @@ public struct UserReportMetric
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(double);
+			return 0.0;
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Math), Member = "Min")]
-	[Calls(Type = typeof(Math), Member = "Max")]
 	[CalledBy(Type = typeof(UserReport), Member = "Complete")]
 	[CalledBy(Type = typeof(UserReportingClient), Member = "SampleClientMetric")]
 	[CalledBy(Type = typeof(UserReportingClient), Member = "SampleMetric")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Math), Member = "Min")]
+	[Calls(Type = typeof(Math), Member = "Max")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Sample(double value)
 	{
 	}

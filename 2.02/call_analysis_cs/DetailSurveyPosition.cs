@@ -13,7 +13,7 @@ public class DetailSurveyPosition
 	public float m_Time;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public DetailSurveyPosition()
 	{
 	}

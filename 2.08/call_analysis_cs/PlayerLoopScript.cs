@@ -47,11 +47,11 @@ public class PlayerLoopScript
 		{
 		}
 
-		[Calls(Type = typeof(Stopwatch), Member = "get_Elapsed")]
-		[Calls(Type = typeof(Stopwatch), Member = "Stop")]
-		[CallsUnknownMethods(Count = 7)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Stopwatch), Member = "Stop")]
+		[Calls(Type = typeof(Stopwatch), Member = "get_Elapsed")]
 		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 7)]
 		internal void _003CInit_003Eb__7_1()
 		{
 		}
@@ -67,32 +67,27 @@ public class PlayerLoopScript
 
 	public const uint MAX_FRAME_TIMINGS = 60u;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerLoop), Member = "SetPlayerLoop")]
-	[Calls(Type = typeof(PlayerLoopScript), Member = "InsertSystem")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(PlayerLoopScript), Member = "InsertSystem")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[RuntimeInitializeOnLoadMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerLoop), Member = "InternalToPlayerLoopSystem")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(PlayerLoopScript), Member = "InsertSystem")]
+	[Calls(Type = typeof(PlayerLoop), Member = "SetPlayerLoop")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
-	[RuntimeInitializeOnLoadMethod]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[CallsUnknownMethods(Count = 2)]
 	private static void Init()
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerLoopScript), Member = "Init")]
 	[CalledBy(Type = typeof(PlayerLoopScript), Member = "InsertSystem")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerLoopScript), Member = "Init")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Array), Member = "CopyTo")]
-	[CalledBy(Type = typeof(PlayerLoopScript), Member = "Init")]
 	[Calls(Type = typeof(PlayerLoopScript), Member = "InsertSystem")]
+	[Calls(Type = typeof(Array), Member = "CopyTo")]
+	[CallsUnknownMethods(Count = 2)]
 	private static bool InsertSystem(ref PlayerLoopSystem system, Type insertUnder, PlayerLoopSystem toInsert, bool insertAtStart = true)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -20,7 +19,7 @@ public class EffectPoolManager : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -29,9 +28,9 @@ public class EffectPoolManager : MonoBehaviour
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 29)]
-			[DeduplicatedMethod]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -47,22 +46,20 @@ public class EffectPoolManager : MonoBehaviour
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[CallsUnknownMethods(Count = 15)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[CallsDeduplicatedMethods(Count = 11)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(EffectPoolManager), Member = "CreatePool")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(EffectPool<>), Member = "LoadEffects")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 15)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -109,43 +106,44 @@ public class EffectPoolManager : MonoBehaviour
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 5)]
+	[CallerCount(Count = 11)]
 	public SplashEffectPool GetSplashEffectPool()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 10)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 11)]
 	public HeavyFootstepEffectPool GetHeavyFootstepEffectPool()
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 20)]
+	[CallerCount(Count = 40)]
 	public ScorchImpactEffectPool GetScorchImpactEffectPool()
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(_003CStart_003Ed__16), Member = "MoveNext")]
 	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 8)]
 	private T CreatePool<T>(GameObject effectPoolPrefab)
 	{
-		return (T)null;
+		return default(T);
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
-	[CallerCount(Count = 0)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	public IEnumerator Start()
 	{
 		return null;

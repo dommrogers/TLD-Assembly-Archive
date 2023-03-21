@@ -8,20 +8,20 @@ public class Action_AuroraFielIntensity : ActionTask
 {
 	public string missionObjectIdentifier;
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Action_AuroraFielIntensity), Member = "DoWork")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallerCount(Count = 0)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Action_AuroraFielIntensity), Member = "OnExecute")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DoWork()
 	{
 	}

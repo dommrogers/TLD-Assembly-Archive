@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 
@@ -15,7 +14,7 @@ public class Action_SetNightWalkerProgress : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		get
 		{
@@ -24,18 +23,18 @@ public class Action_SetNightWalkerProgress : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnUpdate()
 	{
 	}

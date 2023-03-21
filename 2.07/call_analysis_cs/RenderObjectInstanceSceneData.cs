@@ -23,32 +23,33 @@ public class RenderObjectInstanceSceneData : MonoBehaviour
 
 	public List<Mesh> m_UniqueMeshes;
 
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Bounds), Member = "Encapsulate")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "MaybeGetMeshForInstancedRendering")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(RenderObjectInstance), Member = "GetLodsAndRenderers")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "MaybeGetMeshForInstancedRendering")]
+	[Calls(Type = typeof(Bounds), Member = "Encapsulate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 20)]
 	public void RegenerateInstanceLists()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "CreateBatchList")]
-	[CallsUnknownMethods(Count = 5)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public int GetRenderBatchCount()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public RenderObjectInstanceSceneData()
 	{
 	}

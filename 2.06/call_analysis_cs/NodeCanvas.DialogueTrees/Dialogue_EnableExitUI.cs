@@ -17,19 +17,19 @@ public class Dialogue_EnableExitUI : DTNode
 		}
 	}
 
-	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
 	}
 
-	[Calls(Type = typeof(DTNode), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DTNode), Member = ".ctor")]
 	public Dialogue_EnableExitUI()
 	{
 	}

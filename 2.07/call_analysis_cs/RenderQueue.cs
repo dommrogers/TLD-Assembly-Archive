@@ -8,7 +8,8 @@ public class RenderQueue : MonoBehaviour
 	private Material m_CachedMaterial;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Start()
 	{

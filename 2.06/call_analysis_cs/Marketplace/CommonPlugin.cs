@@ -18,8 +18,8 @@ public class CommonPlugin
 	public static extern bool AmFullyInitialized();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int GetPluginVersion();
 
 	[PreserveSig]

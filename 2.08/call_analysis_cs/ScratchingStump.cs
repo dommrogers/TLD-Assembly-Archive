@@ -22,27 +22,28 @@ public class ScratchingStump : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void ResetStumps()
 	{
 	}
 
 	[CalledBy(Type = typeof(BaseAi), Member = "MaybeSelectScratchingStump")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 11)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 10)]
 	public static ScratchingStump SelectRandomStump(float radius, Vector3 currentAiPos)
 	{
 		return null;

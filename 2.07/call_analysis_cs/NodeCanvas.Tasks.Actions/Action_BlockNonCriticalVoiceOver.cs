@@ -10,8 +10,8 @@ public class Action_BlockNonCriticalVoiceOver : ActionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(float), Member = "ToString")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		get
 		{
@@ -24,7 +24,6 @@ public class Action_BlockNonCriticalVoiceOver : ActionTask
 	[Calls(Type = typeof(PlayerVoice), Member = "BlockNonCriticalVoiceForDuration")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsUnknownMethods(Count = 3)]
 	protected override void OnExecute()
 	{

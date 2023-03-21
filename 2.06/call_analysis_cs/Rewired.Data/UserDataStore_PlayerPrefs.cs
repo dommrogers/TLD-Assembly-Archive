@@ -31,7 +31,7 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 				[CallerCount(Count = 0)]
 				get
 				{
-					return default(int);
+					return 0;
 				}
 			}
 
@@ -39,18 +39,18 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 			[CallsUnknownMethods(Count = 2)]
 			public int IndexOfJoystick(int joystickId)
 			{
-				return default(int);
+				return 0;
 			}
 
 			[CallerCount(Count = 0)]
 			[CallsUnknownMethods(Count = 2)]
 			public bool ContainsJoystick(int joystickId)
 			{
-				return default(bool);
+				return false;
 			}
 
-			[CallerCount(Count = 6)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 6)]
 			public PlayerInfo()
 			{
 			}
@@ -64,8 +64,8 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 
 			public int id;
 
-			[CallerCount(Count = 6)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 6)]
 			public JoystickInfo()
 			{
 			}
@@ -79,40 +79,39 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 		}
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public ControllerAssignmentSaveInfo()
 		{
 		}
 
+		[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerAssignments")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerAssignments")]
 		[CallsUnknownMethods(Count = 9)]
 		public ControllerAssignmentSaveInfo(int playerCount)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 2)]
-		[CallerCount(Count = 3)]
 		[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadKeyboardAndMouseAssignmentsNow")]
 		[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickAssignmentsNow")]
-		[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickAssignmentsNow")]
+		[CallerCount(Count = 3)]
+		[CallsUnknownMethods(Count = 2)]
 		public int IndexOfPlayer(int playerId)
 		{
-			return default(int);
+			return 0;
 		}
 
-		[CallsUnknownMethods(Count = 2)]
 		[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickAssignmentsNow")]
 		[CallerCount(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		public bool ContainsPlayer(int playerId)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -122,10 +121,9 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 
 		public readonly int oldJoystickId;
 
+		[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickAssignmentsNow")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-		[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickAssignmentsNow")]
-		[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickAssignmentsNow")]
 		[CallsUnknownMethods(Count = 6)]
 		public JoystickAssignmentHistoryInfo(Joystick joystick, int oldJoystickId)
 		{
@@ -142,12 +140,12 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 		{
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CLoadJoystickAssignmentsNow_003Eb__0(JoystickAssignmentHistoryInfo x)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -155,8 +153,8 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 	{
 		public ControllerAssignmentSaveInfo.JoystickInfo joystickInfo;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec__DisplayClass78_1()
 		{
 		}
@@ -165,7 +163,7 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CLoadJoystickAssignmentsNow_003Eb__1(JoystickAssignmentHistoryInfo x)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -184,7 +182,7 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CLoadJoystickAssignmentsNow_003Eb__2(JoystickAssignmentHistoryInfo x)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -198,9 +196,9 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -209,9 +207,9 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -232,13 +230,13 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 		{
 		}
 
-		[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerAssignments")]
-		[CallsUnknownMethods(Count = 7)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickAssignmentsNow")]
+		[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerAssignments")]
+		[CallsUnknownMethods(Count = 7)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -301,7 +299,7 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -312,11 +310,11 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 
 	public bool LoadDataOnStart
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -331,7 +329,7 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -346,10 +344,10 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -361,7 +359,7 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 		[CallerCount(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -373,13 +371,13 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 	public string PlayerPrefsKeyPrefix
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 23)]
+		[CallerCount(Count = 27)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 51)]
+		[CallerCount(Count = 53)]
 		set
 		{
 		}
@@ -389,12 +387,10 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 	{
 		[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerAssignmentData")]
 		[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerAssignments")]
-		[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerAssignmentData")]
-		[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "ControllerAssignmentSaveDataExists")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "ControllerAssignmentSaveDataExists")]
 		[CallerCount(Count = 5)]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		get
 		{
 			return null;
@@ -406,18 +402,18 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	private List<int> allActionIds
 	{
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 3)]
-		[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-		[Calls(Type = typeof(ReInput.MappingHelper), Member = "get_Actions")]
 		[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "get_allActionIdsString")]
 		[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "AddDefaultMappingsForNewActions")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(ReInput), Member = "get_mapping")]
+		[Calls(Type = typeof(ReInput.MappingHelper), Member = "get_Actions")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 11)]
 		get
 		{
@@ -427,34 +423,34 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 
 	private string allActionIdsString
 	{
-		[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 7)]
 		[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMap")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-		[Calls(Type = typeof(StringBuilder), Member = "Append")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "get_allActionIds")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
+		[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "get_allActionIds")]
 		[Calls(Type = typeof(StringBuilder), Member = "Append")]
+		[Calls(Type = typeof(StringBuilder), Member = "Append")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveAll")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveAll")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	public override void Save()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMaps")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveJoystickCalibrationData")]
-	[CallsUnknownMethods(Count = 2)]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMaps")]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void SaveControllerData(int playerId, ControllerType controllerType, int controllerId)
 	{
 	}
@@ -467,19 +463,17 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SavePlayerDataNow")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SavePlayerDataNow")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsUnknownMethods(Count = 2)]
 	public override void SavePlayerData(int playerId)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
 	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
@@ -488,13 +482,15 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 	[Calls(Type = typeof(InputBehavior), Member = "ToXmlString")]
 	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void SaveInputBehavior(int playerId, int behaviorId)
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadAll")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadAll")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	public override void Load()
 	{
 	}
@@ -508,9 +504,9 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickCalibrationData")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	public override void LoadControllerData(ControllerType controllerType, int controllerId)
 	{
 	}
@@ -525,33 +521,33 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadInputBehaviorNow")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetInputBehavior")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
 	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
+	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetInputBehavior")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadInputBehaviorNow")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void LoadInputBehavior(int playerId, int behaviorId)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
 	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_joystickCount")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerAssignments")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnInitialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerAssignments")]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickData")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerAssignments")]
+	[CallsUnknownMethods(Count = 6)]
 	protected override void OnControllerConnected(ControllerStatusChangedEventArgs args)
 	{
 	}
@@ -569,127 +565,120 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 	{
 	}
 
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMap")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMap")]
 	[CallsUnknownMethods(Count = 1)]
 	public override void SaveControllerMap(int playerId, ControllerMap controllerMap)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerMap")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerMap")]
+	[CallsUnknownMethods(Count = 1)]
 	public override ControllerMap LoadControllerMap(int playerId, ControllerIdentifier controllerIdentifier, int categoryId, int layoutId)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "Load")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerAssignmentsNow")]
 	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadPlayerDataNow")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadAllJoystickCalibrationData")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "Load")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private int LoadAll()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallAnalysisFailed]
 	[CallerCount(Count = 0)]
 	private int LoadPlayerDataNow(int playerId)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "RefreshLayoutManager")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerMaps")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadAll")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(Player), Member = "get_id")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadPlayerData")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerMaps")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerMaps")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadAll")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Player), Member = "get_id")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadInputBehaviors")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerMaps")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "RefreshLayoutManager")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 12)]
 	private int LoadPlayerDataNow(Player player)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadAll")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickCalibrationData")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
 	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickCalibrationData")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private int LoadAllJoystickCalibrationData()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickData")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickCalibrationData")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadAllJoystickCalibrationData")]
-	[Calls(Type = typeof(CalibrationMap), Member = "ImportXmlString")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetJoystickCalibrationMapPlayerPrefsKey")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickCalibrationData")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickData")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetJoystickCalibrationMapPlayerPrefsKey")]
+	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
 	[Calls(Type = typeof(ControllerWithAxes), Member = "get_calibrationMap")]
+	[Calls(Type = typeof(CalibrationMap), Member = "ImportXmlString")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private int LoadJoystickCalibrationData(Joystick joystick)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerDataNow")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerDataNow")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerData")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerData")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerDataNow")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerDataNow")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickCalibrationData")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "GetJoystick")]
 	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerData")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "GetJoystick")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickCalibrationData")]
+	[CallsUnknownMethods(Count = 1)]
 	private int LoadJoystickCalibrationData(int joystickId)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickCalibrationData")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "GetJoystick")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "RefreshLayoutManager")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "OnControllerConnected")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(Player.ControllerHelper.BnvLPSemkwrCfKYYABiuIneeJhx), Member = "eFsFDEPBoBwkCtkCNRQkVwhlOQ")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
+	[Calls(TypeFullName = "Rewired.Player.ControllerHelper.BnvLPSemkwrCfKYYABiuIneeJhx", Member = "eFsFDEPBoBwkCtkCNRQkVwhlOQ")]
+	[Calls(Type = typeof(Player), Member = "get_id")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerMaps")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "RefreshLayoutManager")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "GetJoystick")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickCalibrationData")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private int LoadJoystickData(int joystickId)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -698,69 +687,66 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickCalibrationData")]
 	private int LoadControllerDataNow(int playerId, ControllerType controllerType, int controllerId)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickCalibrationData")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickCalibrationData")]
 	private int LoadControllerDataNow(ControllerType controllerType, int controllerId)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerDataNow")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickData")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadPlayerDataNow")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadPlayerDataNow")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadPlayerDataNow")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerData")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "AddMap")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerMap")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "MapLayouts")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadPlayerDataNow")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickData")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerDataNow")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
 	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "GetController")]
 	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
 	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "GetController")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
+	[Calls(TypeFullName = "Rewired.Utils.EmptyObjects`1", Member = "get_EmptyReadOnlyIListT")]
 	[Calls(Type = typeof(Controller), Member = "get_type")]
+	[Calls(Type = typeof(ReInput.MappingHelper), Member = "MapLayouts")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerMap")]
+	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "AddMap")]
+	[CallsUnknownMethods(Count = 5)]
 	private int LoadControllerMaps(int playerId, ControllerType controllerType, int controllerId)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerMaps")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerMap")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "AddDefaultMappingsForNewActions")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapKnownActionIds")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerMaps")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapPlayerPrefsKey")]
 	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(ControllerMap), Member = "CreateFromXml")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapKnownActionIds")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "AddDefaultMappingsForNewActions")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private ControllerMap LoadControllerMap(Player player, ControllerIdentifier controllerIdentifier, int categoryId, int layoutId)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetInputBehaviors")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadPlayerDataNow")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadInputBehaviorNow")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
 	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
+	[Calls(Type = typeof(Player), Member = "get_id")]
+	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetInputBehaviors")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadInputBehaviorNow")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private int LoadInputBehaviors(int playerId)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -772,99 +758,88 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 	[CallsUnknownMethods(Count = 1)]
 	private int LoadInputBehaviorNow(int playerId, int behaviorId)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadInputBehaviorNow")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadInputBehaviors")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadInputBehavior")]
-	[Calls(Type = typeof(InputBehavior), Member = "ImportXmlString")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetInputBehaviorPlayerPrefsKey")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadInputBehaviors")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadInputBehaviorNow")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetInputBehaviorPlayerPrefsKey")]
+	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(InputBehavior), Member = "ImportXmlString")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private int LoadInputBehaviorNow(Player player, InputBehavior inputBehavior)
 	{
-		return default(int);
+		return 0;
 	}
 
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadAll")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerAssignmentData")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadKeyboardAndMouseAssignmentsNow")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickAssignmentsNow")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadAll")]
 	private bool LoadControllerAssignmentsNow()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerAssignmentsNow")]
-	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "set_hasMouse")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "set_hasKeyboard")]
-	[Calls(Type = typeof(ControllerAssignmentSaveInfo), Member = "IndexOfPlayer")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerAssignmentData")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerAssignmentData")]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
 	[Calls(Type = typeof(Player), Member = "get_id")]
+	[Calls(Type = typeof(ControllerAssignmentSaveInfo), Member = "IndexOfPlayer")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "set_hasKeyboard")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "set_hasMouse")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 23)]
 	private bool LoadKeyboardAndMouseAssignmentsNow(ControllerAssignmentSaveInfo data)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(ControllerAssignmentSaveInfo), Member = "ContainsPlayer")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(ControllerAssignmentSaveInfo), Member = "IndexOfPlayer")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "TryFindJoysticksImprecise")]
-	[Calls(Type = typeof(JoystickAssignmentHistoryInfo), Member = ".ctor")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "AddController")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "AutoAssignJoysticks")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(_003CLoadJoystickAssignmentsDeferred_003Ed__80), Member = "MoveNext")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerAssignmentsNow")]
-	[CallsUnknownMethods(Count = 131)]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
-	[Calls(Type = typeof(ReInput), Member = "get_configuration")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(JoystickAssignmentHistoryInfo), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
 	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_joystickCount")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerAssignmentData")]
 	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
 	[Calls(Type = typeof(Player.ControllerHelper), Member = "qVOccUfXdhgsLdOJByiWhuiJSkfd")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
 	[Calls(Type = typeof(Player), Member = "get_id")]
 	[Calls(Type = typeof(ControllerAssignmentSaveInfo), Member = "IndexOfPlayer")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "FindJoystickPrecise")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[Calls(Type = typeof(List<>), Member = "Find")]
+	[Calls(Type = typeof(JoystickAssignmentHistoryInfo), Member = ".ctor")]
 	[Calls(Type = typeof(Player.ControllerHelper), Member = "AddController")]
+	[Calls(Type = typeof(ControllerAssignmentSaveInfo), Member = "ContainsPlayer")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "TryFindJoysticksImprecise")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(ReInput), Member = "get_configuration")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "AutoAssignJoysticks")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 131)]
 	private bool LoadJoystickAssignmentsNow(ControllerAssignmentSaveInfo data)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerAssignmentsNow")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickAssignmentsNow")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadKeyboardAndMouseAssignmentsNow")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "get_playerPrefsKey_controllerAssignments")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "get_playerPrefsKey_controllerAssignments")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickAssignmentsNow")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "get_playerPrefsKey_controllerAssignments")]
 	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private ControllerAssignmentSaveInfo LoadControllerAssignmentData()
 	{
 		return null;
@@ -878,101 +853,101 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "Save")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerAssignments")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveAllJoystickCalibrationData")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SavePlayerDataNow")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveAllJoystickCalibrationData")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerAssignments")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void SaveAll()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SavePlayerDataNow")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SavePlayerDataNow")]
+	[CallsUnknownMethods(Count = 2)]
 	private void SavePlayerDataNow(int playerId)
 	{
 	}
 
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SavePlayerData")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveAll")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SavePlayerDataNow")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Player), Member = "GetSaveData")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetInputBehaviorPlayerPrefsKey")]
 	[Calls(Type = typeof(InputBehavior), Member = "ToXmlString")]
 	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMaps")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SavePlayerData")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveAll")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SavePlayerDataNow")]
 	[CallsUnknownMethods(Count = 2)]
 	private void SavePlayerDataNow(Player player)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
-	[Calls(Type = typeof(CalibrationMap), Member = "ToXmlString")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetJoystickCalibrationMapPlayerPrefsKey")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveAll")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
 	[Calls(Type = typeof(Joystick), Member = "GetCalibrationMapSaveData")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetJoystickCalibrationMapPlayerPrefsKey")]
+	[Calls(Type = typeof(CalibrationMap), Member = "ToXmlString")]
+	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void SaveAllJoystickCalibrationData()
 	{
 	}
 
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerData")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerData")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerDataNow")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerDataNow")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerData")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerData")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerDataNow")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerDataNow")]
 	private void SaveJoystickCalibrationData(int joystickId)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
-	[Calls(Type = typeof(CalibrationMap), Member = "ToXmlString")]
-	[Calls(Type = typeof(Joystick), Member = "GetCalibrationMapSaveData")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Joystick), Member = "GetCalibrationMapSaveData")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetJoystickCalibrationMapPlayerPrefsKey")]
+	[Calls(Type = typeof(CalibrationMap), Member = "ToXmlString")]
+	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
+	[CallsUnknownMethods(Count = 1)]
 	private void SaveJoystickCalibrationData(Joystick joystick)
 	{
 	}
 
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "GetJoystick")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "OnControllerPreDisconnect")]
-	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
-	[Calls(Type = typeof(CalibrationMap), Member = "ToXmlString")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetJoystickCalibrationMapPlayerPrefsKey")]
-	[Calls(Type = typeof(Joystick), Member = "GetCalibrationMapSaveData")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMaps")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(Player.ControllerHelper.BnvLPSemkwrCfKYYABiuIneeJhx), Member = "eFsFDEPBoBwkCtkCNRQkVwhlOQ")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
 	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
+	[Calls(TypeFullName = "Rewired.Player.ControllerHelper.BnvLPSemkwrCfKYYABiuIneeJhx", Member = "eFsFDEPBoBwkCtkCNRQkVwhlOQ")]
+	[Calls(Type = typeof(Player), Member = "get_id")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMaps")]
 	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "GetJoystick")]
+	[Calls(Type = typeof(Joystick), Member = "GetCalibrationMapSaveData")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetJoystickCalibrationMapPlayerPrefsKey")]
+	[Calls(Type = typeof(CalibrationMap), Member = "ToXmlString")]
+	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void SaveJoystickData(int joystickId)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveJoystickCalibrationData")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMaps")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveJoystickCalibrationData")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SaveControllerDataNow(int playerId, ControllerType controllerType, int controllerId)
 	{
 	}
@@ -984,74 +959,70 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 	{
 	}
 
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMap")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SavePlayerDataNow")]
-	[Calls(Type = typeof(ControllerMapSaveData), Member = "get_map")]
-	[CallsUnknownMethods(Count = 10)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerSaveData), Member = "get_AllControllerMapSaveData")]
+	[Calls(Type = typeof(ControllerMapSaveData), Member = "get_map")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMap")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	private void SaveControllerMaps(Player player, PlayerSaveData playerSaveData)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerDataNow")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveJoystickData")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerData")]
-	[Calls(Type = typeof(ControllerMapSaveData), Member = "get_map")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMap")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "ContainsController")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveJoystickData")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerDataNow")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "ContainsController")]
 	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "bwJwehFCYWrUsUIUBqkVaHmjbzp")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[Calls(TypeFullName = "Rewired.Utils.EmptyObjects`1", Member = "get_array")]
+	[Calls(Type = typeof(ControllerMapSaveData), Member = "get_map")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMap")]
+	[CallsUnknownMethods(Count = 2)]
 	private void SaveControllerMaps(int playerId, ControllerType controllerType, int controllerId)
 	{
 	}
 
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapKnownActionIdsPlayerPrefsKey")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMaps")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMaps")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMap")]
-	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "get_allActionIdsString")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_layoutId")]
-	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_controller")]
-	[Calls(Type = typeof(ControllerMap), Member = "ToXmlString")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapPlayerPrefsKey")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_layoutId")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_categoryId")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_controller")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMaps")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMaps")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(ControllerMap), Member = "get_controller")]
 	[Calls(Type = typeof(ControllerMap), Member = "get_categoryId")]
+	[Calls(Type = typeof(ControllerMap), Member = "get_layoutId")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapPlayerPrefsKey")]
+	[Calls(Type = typeof(ControllerMap), Member = "ToXmlString")]
+	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapKnownActionIdsPlayerPrefsKey")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "get_allActionIdsString")]
+	[CallsUnknownMethods(Count = 1)]
 	private void SaveControllerMap(Player player, ControllerMap controllerMap)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetInputBehaviorPlayerPrefsKey")]
 	[Calls(Type = typeof(InputBehavior), Member = "ToXmlString")]
+	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
+	[CallsUnknownMethods(Count = 2)]
 	private void SaveInputBehaviors(Player player, PlayerSaveData playerSaveData)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
-	[Calls(Type = typeof(InputBehavior), Member = "ToXmlString")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
 	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetInputBehavior")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetInputBehaviorPlayerPrefsKey")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(InputBehavior), Member = "ToXmlString")]
+	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
+	[CallsUnknownMethods(Count = 2)]
 	private void SaveInputBehaviorNow(int playerId, int behaviorId)
 	{
 	}
@@ -1064,45 +1035,40 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 	{
 	}
 
+	[CalledBy(Type = typeof(_003CLoadJoystickAssignmentsDeferred_003Ed__80), Member = "MoveNext")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "OnInitialize")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "OnControllerConnected")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "OnControllerDisconnected")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveAll")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_allPlayerCount")]
+	[Calls(Type = typeof(ControllerAssignmentSaveInfo), Member = ".ctor")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
+	[Calls(Type = typeof(Player), Member = "get_id")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_hasKeyboard")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_hasMouse")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
 	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
 	[Calls(Type = typeof(Controller), Member = "get_hardwareIdentifier")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "get_playerPrefsKey_controllerAssignments")]
 	[Calls(Type = typeof(JsonWriter), Member = "ToJson")]
 	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "OnControllerDisconnected")]
-	[CallsUnknownMethods(Count = 42)]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "OnControllerConnected")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveAll")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
-	[CalledBy(Type = typeof(_003CLoadJoystickAssignmentsDeferred_003Ed__80), Member = "MoveNext")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "OnInitialize")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_hasKeyboard")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_allPlayerCount")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[Calls(Type = typeof(ControllerAssignmentSaveInfo), Member = ".ctor")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_allPlayerCount")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_hasMouse")]
+	[CallsUnknownMethods(Count = 42)]
 	private bool SaveControllerAssignments()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "get_playerPrefsKey_controllerAssignments")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "get_playerPrefsKey_controllerAssignments")]
+	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ControllerAssignmentSaveDataExists()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1115,232 +1081,210 @@ public class UserDataStore_PlayerPrefs : UserDataStore
 	}
 
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerMap")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapXml")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMap")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapXml")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Player), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapPlayerPrefsKeyCommonSuffix")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Player), Member = "get_name")]
-	[CallerCount(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetControllerMapPlayerPrefsKey(Player player, ControllerIdentifier controllerIdentifier, int categoryId, int layoutId, int ppKeyVersion)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapKnownActionIds")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveControllerMap")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapKnownActionIds")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Player), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapPlayerPrefsKeyCommonSuffix")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Player), Member = "get_name")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	private string GetControllerMapKnownActionIdsPlayerPrefsKey(Player player, ControllerIdentifier controllerIdentifier, int categoryId, int layoutId, int ppKeyVersion)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 22)]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetDuplicateIndex")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapPlayerPrefsKey")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapKnownActionIdsPlayerPrefsKey")]
-	[Calls(Type = typeof(Guid), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetDuplicateIndex")]
 	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Guid), Member = "ToString")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetDuplicateIndex")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 22)]
 	private static string GetControllerMapPlayerPrefsKeyCommonSuffix(Player player, ControllerIdentifier controllerIdentifier, int categoryId, int layoutId, int ppKeyVersion)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetJoystickCalibrationMapXml")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveJoystickData")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveJoystickCalibrationData")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveAllJoystickCalibrationData")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickCalibrationData")]
-	[Calls(Type = typeof(Guid), Member = "ToString")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveAllJoystickCalibrationData")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveJoystickCalibrationData")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveJoystickData")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetJoystickCalibrationMapXml")]
+	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Controller), Member = "get_type")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Controller), Member = "get_hardwareIdentifier")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(Controller), Member = "get_type")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(Controller), Member = "get_hardwareTypeGuid")]
+	[Calls(Type = typeof(Guid), Member = "ToString")]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetJoystickCalibrationMapPlayerPrefsKey(Joystick joystick)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetInputBehaviorXml")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveInputBehaviorNow")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveInputBehaviorNow")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveInputBehaviors")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SavePlayerDataNow")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveInputBehavior")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadInputBehaviorNow")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SavePlayerDataNow")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveInputBehaviors")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveInputBehaviorNow")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveInputBehaviorNow")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetInputBehaviorXml")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Player), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Player), Member = "get_name")]
-	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "SaveInputBehavior")]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetInputBehaviorPlayerPrefsKey(Player player, int inputBehaviorId)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapPlayerPrefsKey")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapPlayerPrefsKey")]
+	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetControllerMapXml(Player player, ControllerIdentifier controllerIdentifier, int categoryId, int layoutId)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerMap")]
-	[Calls(Type = typeof(int), Member = "TryParse")]
-	[Calls(Type = typeof(string), Member = "Split")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapKnownActionIdsPlayerPrefsKey")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
+	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(Type = typeof(int), Member = "TryParse")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	private List<int> GetControllerMapKnownActionIds(Player player, ControllerIdentifier controllerIdentifier, int categoryId, int layoutId)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetJoystickCalibrationMapPlayerPrefsKey")]
 	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private string GetJoystickCalibrationMapXml(Joystick joystick)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetInputBehaviorPlayerPrefsKey")]
+	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetInputBehaviorXml(Player player, int id)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(ControllerMap), Member = "get_controllerType")]
-	[CallsUnknownMethods(Count = 32)]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerMap")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[Calls(Type = typeof(AdaDTKzmCBgRGHQacnobDRfGngTN), Member = "ATmAaKeuFgLdsiWLDeruqclfAaRa")]
-	[Calls(Type = typeof(ActionElementMap), Member = "get_modifierKeyFlags")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_AllMaps")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetControllerMapInstance")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_layoutId")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_categoryId")]
-	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "get_allActionIds")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
+	[Calls(Type = typeof(ControllerMap), Member = "get_categoryId")]
+	[Calls(Type = typeof(ControllerMap), Member = "get_layoutId")]
+	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetControllerMapInstance")]
+	[Calls(Type = typeof(UserDataStore_PlayerPrefs), Member = "get_allActionIds")]
+	[Calls(Type = typeof(ControllerMap), Member = "get_AllMaps")]
+	[Calls(Type = typeof(ControllerMap), Member = "get_controllerType")]
+	[Calls(Type = typeof(ActionElementMap), Member = "get_modifierKeyFlags")]
+	[Calls(TypeFullName = "AdaDTKzmCBgRGHQacnobDRfGngTN", Member = "ATmAaKeuFgLdsiWLDeruqclfAaRa")]
+	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 32)]
 	private void AddDefaultMappingsForNewActions(ControllerIdentifier controllerIdentifier, ControllerMap controllerMap, List<int> knownActionIds)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickAssignmentsNow")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private Joystick FindJoystickPrecise(ControllerAssignmentSaveInfo.JoystickInfo joystickInfo)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickAssignmentsNow")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Controller), Member = "get_hardwareIdentifier")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
 	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
+	[Calls(Type = typeof(Controller), Member = "get_hardwareIdentifier")]
+	[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 10)]
 	private bool TryFindJoysticksImprecise(ControllerAssignmentSaveInfo.JoystickInfo joystickInfo, out List<Joystick> matches)
 	{
 		matches = null;
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Controller), Member = "get_hardwareTypeGuid")]
-	[CallsUnknownMethods(Count = 18)]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapPlayerPrefsKeyCommonSuffix")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "GetControllerMapPlayerPrefsKeyCommonSuffix")]
-	[Calls(Type = typeof(Controller), Member = "get_hardwareIdentifier")]
-	[Calls(Type = typeof(Controller), Member = "get_hardwareIdentifier")]
-	[Calls(Type = typeof(Controller), Member = "get_hardwareTypeGuid")]
-	[Calls(Type = typeof(Controller), Member = "get_hardwareTypeGuid")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Controller), Member = "get_type")]
-	[Calls(Type = typeof(Controller), Member = "get_type")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Controllers")]
-	[Calls(Type = typeof(bqgFhLJevgwGDBkMuBcbCeTHblPK), Member = "GdzbXbYxKujnkgbjkzWSvNZuKOq")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
 	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[Calls(TypeFullName = "bqgFhLJevgwGDBkMuBcbCeTHblPK", Member = "GdzbXbYxKujnkgbjkzWSvNZuKOq")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Controllers")]
 	[Calls(Type = typeof(Controller), Member = "get_type")]
+	[Calls(Type = typeof(Controller), Member = "get_hardwareTypeGuid")]
+	[Calls(Type = typeof(Controller), Member = "get_hardwareIdentifier")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 18)]
 	private static int GetDuplicateIndex(Player player, ControllerIdentifier controllerIdentifier)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerDataNow")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickData")]
-	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadPlayerDataNow")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[Calls(Type = typeof(ControllerMapLayoutManager), Member = "Apply")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerData")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadPlayerDataNow")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadJoystickData")]
+	[CalledBy(Type = typeof(UserDataStore_PlayerPrefs), Member = "LoadControllerDataNow")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+	[Calls(Type = typeof(ControllerMapLayoutManager), Member = "Apply")]
+	[CallsUnknownMethods(Count = 1)]
 	private void RefreshLayoutManager(int playerId)
 	{
 	}
 
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	private static Type GetControllerMapType(ControllerType controllerType)
 	{
 		return null;

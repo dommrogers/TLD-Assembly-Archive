@@ -12,14 +12,14 @@ public class GameSaveLoadedArgs : EventArgs
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 80)]
+		[CallerCount(Count = 92)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 279)]
+		[CallerCount(Count = 282)]
 		private set
 		{
 		}

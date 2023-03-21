@@ -7,7 +7,7 @@ public class Feat_StraightToHeartSaveData
 	public float m_ItemConsumedAccumulator;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public Feat_StraightToHeartSaveData()
 	{
 	}

@@ -35,42 +35,37 @@ public class MissionSubobjectiveEntry : MonoBehaviour
 
 	public Color m_TimerColorLowTime;
 
-	[Calls(Type = typeof(string), Member = "PadHelper")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "SetObjectiveInfo")]
 	[CalledBy(Type = typeof(MissionUI), Member = "UpdateObjectives")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "PadHelper")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 13)]
-	[Calls(Type = typeof(MissionObjectiveEntry), Member = "MaybeUpdateTimerObjectiveUI")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(MissionObjectiveEntry), Member = "MaybeUpdateCounterUI")]
 	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(MissionObjectiveEntry), Member = "MaybeUpdateTimerObjectiveUI")]
+	[Calls(Type = typeof(MissionObjectiveEntry), Member = "MaybeUpdateCounterUI")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "PadHelper")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 33)]
 	public void SetObjectiveInfo(StoryMissionObjective objective, MissionSubobjectiveEntry prevEntry)
 	{
 	}
 
+	[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "SetObjectiveInfo")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "SetObjectiveInfo")]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetHeight()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public MissionSubobjectiveEntry()
 	{
 	}

@@ -13,14 +13,14 @@ public class CopyPlayerAchievementByIndexOptions
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 101)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -33,7 +33,7 @@ public class CopyPlayerAchievementByIndexOptions
 		[CallerCount(Count = 8)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -44,7 +44,7 @@ public class CopyPlayerAchievementByIndexOptions
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CopyPlayerAchievementByIndexOptions()
 	{
 	}

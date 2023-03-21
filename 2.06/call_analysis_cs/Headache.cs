@@ -49,39 +49,43 @@ public class Headache : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(HeadacheParams), Member = "Destroy")]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(HeadacheParams), Member = "Update")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(HeadacheParams), Member = "Update")]
 	[Calls(Type = typeof(Headache), Member = "RemoveHeadache")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Update()
 	{
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(HeadacheParams), Member = "Serialize")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 12)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 21)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[Calls(Type = typeof(HeadacheParams), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(HeadacheParams), Member = "Deserialize")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(HeadacheParams), Member = ".ctor")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 21)]
 	public void Deserialize(string text)
 	{
 	}
@@ -90,32 +94,33 @@ public class Headache : MonoBehaviour
 	[Calls(Type = typeof(Headache), Member = "GetAfflictionsCount")]
 	public bool HasHeadache()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(AfflictionButton), Member = "UpdateFillBar")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
+	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 3)]
 	public float GetActiveHoursRemaining(int index)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(EnergyBoost), Member = "ApplyEnergyBoostExitEffects")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(HeadacheParams), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(HeadacheParams), Member = ".ctor")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(HeadacheParams), Member = ".ctor")]
+	[Calls(Type = typeof(HeadacheParams), Member = "Initialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public void ApplyHeadache(HeadacheCause headacheType)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Headache), Member = "RemoveHeadache")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public void RemoveHeadache(HeadacheCause cause)
 	{
@@ -123,77 +128,78 @@ public class Headache : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Headache), Member = "RemoveHeadache")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public void RemoveHeadachesAll()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "HasAffliction")]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
 	[CalledBy(Type = typeof(Condition), Member = "HasSpecificAffliction")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(Headache), Member = "HasHeadache")]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "HasAffliction")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 4)]
 	public int GetAfflictionsCount()
 	{
-		return default(int);
+		return 0;
 	}
 
+	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public string GetCause(int index)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public HeadacheParams GetAfflictionByIndex(int index)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
 	[CalledBy(Type = typeof(EnergyBoost), Member = "ApplyEnergyBoost")]
 	[CalledBy(Type = typeof(Headache), Member = "Update")]
 	[CalledBy(Type = typeof(Headache), Member = "RemoveHeadache")]
 	[CalledBy(Type = typeof(Headache), Member = "RemoveHeadachesAll")]
 	[CalledBy(Type = typeof(Headache), Member = "MaybeUpdateHeadaches")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void RemoveHeadache(HeadacheParams data)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(HeadacheParams), Member = "Update")]
 	[Calls(Type = typeof(Headache), Member = "RemoveHeadache")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaybeUpdateHeadaches()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 3)]
 	private HeadacheParams GetHeadacheDataByCause(HeadacheCause cause)
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 16)]
-	[CallerCount(Count = 0)]
 	public Headache()
 	{
 	}

@@ -33,10 +33,10 @@ public class FirstAidItem : MonoBehaviour
 
 	public string m_ProgressBarMessage
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Localization), Member = "Get")]
-		[CallerCount(Count = 11)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 11)]
+		[Calls(Type = typeof(Localization), Member = "Get")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -68,7 +68,7 @@ public class FirstAidItem : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	public void Awake()
 	{
 	}
@@ -79,18 +79,18 @@ public class FirstAidItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetRemainingHealing()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public float DeductHealing(float neededHP)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]

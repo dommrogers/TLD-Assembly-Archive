@@ -13,15 +13,15 @@ public abstract class PostProcessEffectRenderer
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public virtual DepthTextureMode GetCameraFlags()
 	{
 		return default(DepthTextureMode);
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public virtual void ResetHistory()
 	{
 	}
@@ -33,12 +33,8 @@ public abstract class PostProcessEffectRenderer
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	public abstract void Render(PostProcessRenderContext context);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	internal abstract void SetSettings(PostProcessEffectSettings settings);
 
 	[DeduplicatedMethod]
@@ -53,16 +49,16 @@ public abstract class PostProcessEffectRenderer<T> : PostProcessEffectRenderer w
 
 	public T settings
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 44)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 53)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 85)]
+		[CallerCount(Count = 93)]
 		internal set
 		{
 		}

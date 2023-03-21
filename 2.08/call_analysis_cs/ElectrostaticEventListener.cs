@@ -13,13 +13,13 @@ public class ElectrostaticEventListener : MonoBehaviour
 
 	private UnityEvent<float> m_StrengthChanged;
 
-	[Calls(Type = typeof(ElectrostaticForce), Member = "add_m_NormalizedActiveChanged")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(ElectrostaticForce), Member = "add_m_IsFullyActiveChanged")]
-	[Calls(Type = typeof(ElectrostaticForce), Member = "add_m_StrengthChanged")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(ElectrostaticForce), Member = "add_m_IsActiveChanged")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ElectrostaticForce), Member = "add_m_IsActiveChanged")]
+	[Calls(Type = typeof(UnityEvent<>), Member = "Invoke")]
+	[Calls(Type = typeof(ElectrostaticForce), Member = "add_m_IsFullyActiveChanged")]
+	[Calls(Type = typeof(ElectrostaticForce), Member = "add_m_NormalizedActiveChanged")]
+	[Calls(Type = typeof(ElectrostaticForce), Member = "add_m_StrengthChanged")]
+	[CallsUnknownMethods(Count = 8)]
 	private void OnEnable()
 	{
 	}

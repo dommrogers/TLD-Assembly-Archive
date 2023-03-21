@@ -27,9 +27,9 @@ public class GraphOwnerControl : ActionTask<GraphOwner>
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 28)]
-			[DeduplicatedMethod]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -40,7 +40,7 @@ public class GraphOwnerControl : ActionTask<GraphOwner>
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -61,12 +61,12 @@ public class GraphOwnerControl : ActionTask<GraphOwner>
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(GraphOwnerControl), Member = "Do")]
+		[CallsUnknownMethods(Count = 1)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -85,9 +85,9 @@ public class GraphOwnerControl : ActionTask<GraphOwner>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Enum), Member = "ToString")]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -100,30 +100,29 @@ public class GraphOwnerControl : ActionTask<GraphOwner>
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[IteratorStateMachine(typeof(_003CYieldDo_003Ed__6))]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private IEnumerator YieldDo()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(_003CYieldDo_003Ed__6), Member = "MoveNext")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[Calls(Type = typeof(GraphOwner), Member = "StopBehaviour")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[Calls(Type = typeof(GraphOwner), Member = "PauseBehaviour")]
-	[CalledBy(Type = typeof(_003CYieldDo_003Ed__6), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void Do()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GraphOwner), Member = "StopBehaviour")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnStop()
 	{
 	}

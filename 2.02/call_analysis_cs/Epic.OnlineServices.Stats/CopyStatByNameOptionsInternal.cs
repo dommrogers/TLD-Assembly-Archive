@@ -15,11 +15,11 @@ internal struct CopyStatByNameOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId TargetUserId
 	{
+		[CalledBy(Type = typeof(CopyStatByNameOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyStatByNameOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyStatByNameOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyStatByNameOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -28,9 +28,9 @@ internal struct CopyStatByNameOptionsInternal : ISettable, IDisposable
 	public string Name
 	{
 		[CalledBy(Type = typeof(CopyStatByNameOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(CopyStatByNameOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -44,18 +44,18 @@ internal struct CopyStatByNameOptionsInternal : ISettable, IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(StatsInterface), Member = "CopyStatByName")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CopyStatByNameOptionsInternal), Member = "set_TargetUserId")]
 	[Calls(Type = typeof(CopyStatByNameOptionsInternal), Member = "set_Name")]
-	[CalledBy(Type = typeof(StatsInterface), Member = "CopyStatByName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -17,41 +16,42 @@ public class LootTable : MonoBehaviour
 
 	private static LootTableItem[] m_FilteredLootTableItems;
 
-	[Calls(Type = typeof(LootTableData), Member = "GetRandomGearItemPrefab")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(LootTable), Member = "PopulateFilteredLootTable_Legacy")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(LootTable), Member = "PopulateFilteredLootTable_Legacy")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(LootTableData), Member = "GetRandomGearItemPrefab")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public GameObject GetRandomGearPrefab()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(LootTable), Member = "GetRandomGearPrefab")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(LootTable), Member = "DisableForXPMode")]
-	[CalledBy(Type = typeof(LootTable), Member = "GetRandomGearPrefab")]
 	[CallsUnknownMethods(Count = 6)]
 	private int PopulateFilteredLootTable_Legacy()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(LootTableData), Member = "GetPrefabByName")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LootTableData), Member = "GetPrefabByName")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	public GameObject GetPrefab(string name)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 3)]
 	public GameObject GetPrefab_Legacy(string name)
 	{
@@ -59,14 +59,14 @@ public class LootTable : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(LootTable), Member = "PopulateFilteredLootTable_Legacy")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(DisableObjectForXPMode), Member = "ShouldDisableForCurrentMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(DisableObjectForXPMode), Member = "ShouldDisableForCurrentMode")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool DisableForXPMode(GameObject go)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

@@ -24,24 +24,24 @@ public class SpawnWildlife_Trigger : MonoBehaviour
 	private List<BaseAi> m_RemoveAnimals;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(SpawnWildlife_Trigger), Member = "EnableSpawnGroups")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SpawnWildlife_Trigger), Member = "EnableSpawnGroups")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnTriggerEnter(Collider collider)
 	{
 	}
@@ -52,108 +52,112 @@ public class SpawnWildlife_Trigger : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(BaseAi), Member = "Despawn")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public static void OnDespawn(BaseAi bai)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(SpawnWildlife_Trigger), Member = "OnTriggerEnter")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CalledBy(Type = typeof(SpawnWildlife_Trigger), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 17)]
 	private void EnableSpawnGroups()
 	{
 	}
 
+	[CalledBy(Type = typeof(SpawnWildlife_Trigger), Member = "SerializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(ObjectGuid), Member = "GetObjectGuidFromGO")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(SpawnWildlife_Trigger), Member = "SerializeAll")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 30)]
 	private SpawnWildlife_TriggerSaveData Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(SpawnWildlife_Trigger), Member = "DeserializeAll")]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 12)]
 	private void Deserialize(SpawnWildlife_TriggerSaveData data)
 	{
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(SpawnWildlife_Trigger), Member = "Serialize")]
-	[CallsUnknownMethods(Count = 14)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(SpawnWildlife_Trigger), Member = "Serialize")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 14)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SpawnWildlife_Trigger), Member = "Deserialize")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
 	[CallsUnknownMethods(Count = 5)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Reset()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(ObjectGuid), Member = "MaybeRuntimeRegister")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "SceneLoadCompleted")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "get_scene")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "SceneLoadCompleted")]
-	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(ObjectGuid), Member = "MaybeRuntimeRegister")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public static void RegisterAnySpawnWildlifeGuid()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 3)]
 	public static bool IsChildOf(GameObject go)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	public SpawnWildlife_Trigger()
 	{
 	}

@@ -13,10 +13,10 @@ internal struct EndPlayerSessionOptionsInternal : ISettable, IDisposable
 
 	public EndPlayerSessionOptionsAccountId AccountId
 	{
+		[CalledBy(Type = typeof(EndPlayerSessionOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(EndPlayerSessionOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 3)]
-		[CalledBy(Type = typeof(EndPlayerSessionOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(EndPlayerSessionOptionsInternal), Member = "Set")]
 		set
 		{
 		}
@@ -30,15 +30,15 @@ internal struct EndPlayerSessionOptionsInternal : ISettable, IDisposable
 
 	[CalledBy(Type = typeof(MetricsInterface), Member = "EndPlayerSession")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(EndPlayerSessionOptionsInternal), Member = "set_AccountId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(EndPlayerSessionOptionsAccountIdInternal), Member = "Dispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EndPlayerSessionOptionsAccountIdInternal), Member = "Dispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

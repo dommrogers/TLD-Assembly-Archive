@@ -137,17 +137,17 @@ public class UIInput : MonoBehaviour
 
 	public string defaultText
 	{
-		[Calls(Type = typeof(UIInput), Member = "Init")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIInput), Member = "Init")]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 3)]
-		[Calls(Type = typeof(UIInput), Member = "Init")]
 		[CalledBy(Type = typeof(UILocalize), Member = "set_value")]
 		[CalledBy(Type = typeof(TextInputField), Member = "SetText")]
 		[CalledBy(Type = typeof(TextInputField), Member = "Select")]
+		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(UIInput), Member = "Init")]
 		[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
 		set
 		{
@@ -157,25 +157,25 @@ public class UIInput : MonoBehaviour
 	public bool inputShouldBeHidden
 	{
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public string text
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UIInput), Member = "Init")]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(UIInput), Member = "set_value")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIInput), Member = "set_value")]
 		set
 		{
 		}
@@ -183,9 +183,9 @@ public class UIInput : MonoBehaviour
 
 	public string value
 	{
-		[Calls(Type = typeof(UIInput), Member = "Init")]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIInput), Member = "Init")]
 		get
 		{
 			return null;
@@ -193,21 +193,18 @@ public class UIInput : MonoBehaviour
 		[CalledBy(Type = typeof(ChatInput), Member = "OnSubmit")]
 		[CalledBy(Type = typeof(UIInput), Member = "set_text")]
 		[CalledBy(Type = typeof(UIInput), Member = "Start")]
-		[CalledBy(Type = typeof(UIInput), Member = "Start")]
 		[CalledBy(Type = typeof(UIInput), Member = "LoadValue")]
-		[CalledBy(Type = typeof(TextInputField), Member = "Update")]
-		[CalledBy(Type = typeof(TextInputField), Member = "Update")]
 		[CalledBy(Type = typeof(TextInputField), Member = "Update")]
 		[CalledBy(Type = typeof(TextInputField), Member = "SetText")]
 		[CalledBy(Type = typeof(TextInputField), Member = "UpdateInputString")]
-		[Calls(Type = typeof(UIInput), Member = "ExecuteOnChange")]
-		[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
-		[Calls(Type = typeof(UIInput), Member = "SaveToPlayerPrefs")]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-		[Calls(Type = typeof(UIInput), Member = "Validate")]
-		[Calls(Type = typeof(UIInput), Member = "Init")]
 		[CallerCount(Count = 10)]
+		[Calls(Type = typeof(UIInput), Member = "Init")]
+		[Calls(Type = typeof(UIInput), Member = "Validate")]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 		[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
+		[Calls(Type = typeof(UIInput), Member = "SaveToPlayerPrefs")]
+		[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
+		[Calls(Type = typeof(UIInput), Member = "ExecuteOnChange")]
 		set
 		{
 		}
@@ -215,14 +212,14 @@ public class UIInput : MonoBehaviour
 
 	public bool selected
 	{
-		[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[Calls(Type = typeof(UIInput), Member = "set_isSelected")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIInput), Member = "set_isSelected")]
 		set
 		{
 		}
@@ -230,19 +227,37 @@ public class UIInput : MonoBehaviour
 
 	public bool isSelected
 	{
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CalledBy(Type = typeof(ChatInput), Member = "OnSubmit")]
+		[CalledBy(Type = typeof(UIInput), Member = "set_value")]
+		[CalledBy(Type = typeof(UIInput), Member = "get_selected")]
+		[CalledBy(Type = typeof(UIInput), Member = "set_isSelected")]
+		[CalledBy(Type = typeof(UIInput), Member = "get_cursorPosition")]
+		[CalledBy(Type = typeof(UIInput), Member = "set_cursorPosition")]
+		[CalledBy(Type = typeof(UIInput), Member = "get_selectionStart")]
+		[CalledBy(Type = typeof(UIInput), Member = "set_selectionStart")]
+		[CalledBy(Type = typeof(UIInput), Member = "get_selectionEnd")]
+		[CalledBy(Type = typeof(UIInput), Member = "set_selectionEnd")]
+		[CalledBy(Type = typeof(UIInput), Member = "Update")]
+		[CalledBy(Type = typeof(UIInput), Member = "OnPress")]
+		[CalledBy(Type = typeof(UIInput), Member = "OnDrag")]
+		[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
+		[CalledBy(Type = typeof(UIInput), Member = "RemoveFocus")]
+		[CalledBy(Type = typeof(TextInputField), Member = "Update")]
+		[CalledBy(Type = typeof(TextInputField), Member = "GetCursorLocation")]
+		[CalledBy(Type = typeof(Panel_Log), Member = "NoteTakingStart")]
+		[CalledBy(Type = typeof(Panel_Log), Member = "RockCacheNoteTakingStart")]
 		[CallerCount(Count = 26)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 1)]
-		[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(UIInput), Member = "set_selected")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
+		[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -250,18 +265,18 @@ public class UIInput : MonoBehaviour
 
 	public int cursorPosition
 	{
-		[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 6)]
+		[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
 		[Calls(Type = typeof(UIInput), Member = "Init")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
-		[DeduplicatedMethod]
 		[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
 		set
 		{
@@ -270,16 +285,16 @@ public class UIInput : MonoBehaviour
 
 	public int selectionStart
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UIInput), Member = "Init")]
-		[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
+		[Calls(Type = typeof(UIInput), Member = "Init")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
 		[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
 		set
 		{
@@ -288,14 +303,14 @@ public class UIInput : MonoBehaviour
 
 	public int selectionEnd
 	{
-		[Calls(Type = typeof(UIInput), Member = "Init")]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 6)]
+		[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
+		[Calls(Type = typeof(UIInput), Member = "Init")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -316,68 +331,66 @@ public class UIInput : MonoBehaviour
 		}
 	}
 
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
-	[Calls(Type = typeof(StringBuilder), Member = "ToString")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(UIInput), Member = "Validate")]
-	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(UIInput), Member = "set_value")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
+	[Calls(Type = typeof(UIInput), Member = "Validate")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(StringBuilder), Member = "ToString")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 6)]
 	public string Validate(string val)
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
 	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
 	[Calls(Type = typeof(UIInput), Member = "set_value")]
-	[Calls(Type = typeof(UIInput), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 0)]
 	private void Start()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
 	[CallerCount(Count = 27)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected void Init()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(UIInput), Member = "SaveValue")]
-	[CalledBy(Type = typeof(UIInput), Member = "Submit")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
 	[CalledBy(Type = typeof(UIInput), Member = "set_value")]
+	[CalledBy(Type = typeof(UIInput), Member = "Submit")]
+	[CalledBy(Type = typeof(UIInput), Member = "SaveValue")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected void SaveToPlayerPrefs(string val)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	[Calls(Type = typeof(UIInput), Member = "OnDeselectEvent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
 	[Calls(Type = typeof(UIInput), Member = "Init")]
 	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	protected virtual void OnSelect(bool isSelected)
 	{
 	}
@@ -386,105 +399,87 @@ public class UIInput : MonoBehaviour
 	[Calls(Type = typeof(UIInput), Member = "Init")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected void OnSelectEvent()
 	{
 	}
 
 	[CalledBy(Type = typeof(UIInput), Member = "OnSelect")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[Calls(Type = typeof(UIInput), Member = "RestoreLabelPivot")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UIInput), Member = "Init")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UIInput), Member = "Init")]
 	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[Calls(Type = typeof(UIInput), Member = "RestoreLabelPivot")]
+	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected void OnDeselectEvent()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
+	[Calls(Type = typeof(UIInput), Member = "Init")]
+	[Calls(Type = typeof(UIWidget), Member = "set_color")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
 	[Calls(Type = typeof(Screen), Member = "get_height")]
 	[Calls(Type = typeof(Input), Member = "set_imeCompositionMode")]
 	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
 	[Calls(Type = typeof(Input), Member = "get_inputString")]
-	[Calls(Type = typeof(Input), Member = "get_inputString")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
-	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
-	[CallsDeduplicatedMethods(Count = 17)]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(char), Member = "ToString")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(UIInput), Member = "ExecuteOnChange")]
-	[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
-	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[Calls(Type = typeof(UIInput), Member = "Submit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(UIInput), Member = "Init")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UIInput), Member = "Submit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 17)]
+	[CallsUnknownMethods(Count = 15)]
 	protected virtual void Update()
 	{
 	}
 
 	[CalledBy(Type = typeof(UIInput), Member = "ProcessEvent")]
-	[CallerCount(Count = 1)]
+	[CalledBy(Type = typeof(UIInput), Member = "Insert")]
+	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	protected void DoBackspace()
 	{
 	}
 
-	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[Calls(Type = typeof(Event), Member = "Use")]
-	[Calls(Type = typeof(UILabel), Member = "GetCharacterIndex")]
-	[Calls(Type = typeof(Event), Member = "Use")]
-	[Calls(Type = typeof(Event), Member = "Use")]
-	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[Calls(Type = typeof(Event), Member = "Use")]
-	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[Calls(Type = typeof(TextEditor), Member = ".ctor")]
-	[Calls(Type = typeof(UIInput), Member = "GetSelection")]
-	[Calls(Type = typeof(UILabel), Member = "GetCharacterIndex")]
-	[Calls(Type = typeof(Event), Member = "Use")]
-	[Calls(Type = typeof(Event), Member = "Use")]
-	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[Calls(Type = typeof(Event), Member = "Use")]
-	[Calls(Type = typeof(UIInput), Member = "DoBackspace")]
-	[Calls(Type = typeof(Event), Member = "Use")]
-	[Calls(Type = typeof(NGUITools), Member = "set_clipboard")]
-	[Calls(Type = typeof(TextEditor), Member = "Paste")]
-	[Calls(Type = typeof(Event), Member = "Use")]
-	[Calls(Type = typeof(NGUITools), Member = "set_clipboard")]
-	[Calls(Type = typeof(Event), Member = "Use")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(UIInput), Member = "GetSelection")]
-	[Calls(Type = typeof(Event), Member = "Use")]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Event), Member = "Use")]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UILabel), Member = "GetCharacterIndex")]
 	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[Calls(Type = typeof(Event), Member = "Use")]
-	[Calls(Type = typeof(UILabel), Member = "GetCharacterIndex")]
 	[Calls(Type = typeof(UILabel), Member = "get_processedText")]
-	[Calls(Type = typeof(Event), Member = "Use")]
+	[Calls(Type = typeof(TextEditor), Member = ".ctor")]
+	[Calls(Type = typeof(TextEditor), Member = "Paste")]
+	[Calls(Type = typeof(UIInput), Member = "GetSelection")]
+	[Calls(Type = typeof(NGUITools), Member = "set_clipboard")]
+	[Calls(Type = typeof(UIInput), Member = "DoBackspace")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 12)]
 	public virtual bool ProcessEvent(Event ev)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallAnalysisFailed]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(UIInput), Member = "Validate")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(UIInput), Member = "DoBackspace")]
+	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
+	[Calls(Type = typeof(UIInput), Member = "ExecuteOnChange")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 6)]
 	protected virtual void Insert(string text)
 	{
 	}
@@ -498,207 +493,189 @@ public class UIInput : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Substring")]
+	[CallsUnknownMethods(Count = 1)]
 	protected string GetRightText()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(UIInput), Member = "ProcessEvent")]
 	[CalledBy(Type = typeof(UIInput), Member = "ProcessEvent")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[CallsUnknownMethods(Count = 1)]
 	protected string GetSelection()
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(UIInput), Member = "OnPress")]
-	[Calls(Type = typeof(UILabel), Member = "GetCharacterIndexAtPosition")]
-	[Calls(Type = typeof(UICamera), Member = "get_currentRay")]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(UIInput), Member = "OnDrag")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UICamera), Member = "get_currentRay")]
+	[Calls(Type = typeof(UILabel), Member = "GetCharacterIndexAtPosition")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	protected int GetCharUnderMouse()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UIInput), Member = "GetCharUnderMouse")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
 	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
 	protected virtual void OnPress(bool isPressed)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UIInput), Member = "GetCharUnderMouse")]
 	[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
 	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	protected virtual void OnDrag(Vector2 delta)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(NGUITools), Member = "Destroy")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NGUITools), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	protected virtual void Cleanup()
 	{
 	}
 
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
-	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
 	[CalledBy(Type = typeof(UIInput), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UIInput), Member = "SaveToPlayerPrefs")]
+	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
 	[Calls(Type = typeof(UIInput), Member = "Init")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
+	[Calls(Type = typeof(UIInput), Member = "SaveToPlayerPrefs")]
 	public void Submit()
 	{
 	}
 
-	[Calls(Type = typeof(Texture2D), Member = "Apply")]
+	[CalledBy(Type = typeof(UIInput), Member = "set_defaultText")]
+	[CalledBy(Type = typeof(UIInput), Member = "set_value")]
+	[CalledBy(Type = typeof(UIInput), Member = "set_cursorPosition")]
+	[CalledBy(Type = typeof(UIInput), Member = "set_selectionStart")]
+	[CalledBy(Type = typeof(UIInput), Member = "set_selectionEnd")]
+	[CalledBy(Type = typeof(UIInput), Member = "Init")]
+	[CalledBy(Type = typeof(UIInput), Member = "OnDeselectEvent")]
+	[CalledBy(Type = typeof(UIInput), Member = "Update")]
+	[CalledBy(Type = typeof(UIInput), Member = "ProcessEvent")]
+	[CalledBy(Type = typeof(UIInput), Member = "Insert")]
+	[CalledBy(Type = typeof(UIInput), Member = "OnPress")]
+	[CalledBy(Type = typeof(UIInput), Member = "OnDrag")]
+	[CalledBy(Type = typeof(TextInputField), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "NoteTakingStart")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "RockCacheNoteTakingStart")]
+	[CallerCount(Count = 23)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UIWidget), Member = "set_pivot")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedGameObject")]
-	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
-	[Calls(Type = typeof(UIInput), Member = "SetPivotToLeft")]
-	[Calls(Type = typeof(Texture2D), Member = "SetPixel")]
-	[Calls(Type = typeof(UIInput), Member = "RestoreLabelPivot")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(UIInput), Member = "RestoreLabelPivot")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UIWidget), Member = "set_pivot")]
-	[Calls(Type = typeof(UIFont), Member = "get_bmFont")]
-	[Calls(Type = typeof(UIRect), Member = "SetAnchor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UIWidget), Member = "set_pivot")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedGameObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UIInput), Member = "SetPivotToLeft")]
-	[Calls(Type = typeof(UIWidget), Member = "set_pivot")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UIRect), Member = "SetAnchor")]
-	[Calls(Type = typeof(UILabel), Member = "PrintOverlay")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UILabel), Member = "PrintOverlay")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UIWidget), Member = "set_pivot")]
 	[Calls(Type = typeof(UIInput), Member = "Init")]
-	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
-	[CallerCount(Count = 22)]
-	[CallsDeduplicatedMethods(Count = 16)]
-	[Calls(Type = typeof(NGUIMath), Member = "GetPivot")]
 	[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
-	[Calls(Type = typeof(UIInput), Member = "Init")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UIFont), Member = "get_bmFont")]
 	[Calls(Type = typeof(BMFont), Member = "GetGlyph")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UIInput), Member = "Init")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UILabel), Member = "CalculateOffsetToFit")]
 	[Calls(Type = typeof(string), Member = "Substring")]
 	[Calls(Type = typeof(UILabel), Member = "CalculateOffsetToFit")]
-	[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
+	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
+	[Calls(Type = typeof(NGUIMath), Member = "GetPivot")]
+	[Calls(Type = typeof(UIWidget), Member = "set_pivot")]
+	[Calls(Type = typeof(UIInput), Member = "SetPivotToLeft")]
+	[Calls(Type = typeof(UIInput), Member = "RestoreLabelPivot")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
+	[Calls(Type = typeof(Texture2D), Member = "SetPixel")]
+	[Calls(Type = typeof(Texture2D), Member = "Apply")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedGameObject")]
+	[Calls(Type = typeof(NGUITools), Member = "AddWidget")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(UIRect), Member = "SetAnchor")]
+	[Calls(Type = typeof(UILabel), Member = "PrintOverlay")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 13)]
 	public void UpdateLabel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[Calls(Type = typeof(UIWidget), Member = "set_pivot")]
-	[Calls(Type = typeof(NGUIMath), Member = "GetPivot")]
-	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
+	[Calls(Type = typeof(NGUIMath), Member = "GetPivot")]
+	[Calls(Type = typeof(UIWidget), Member = "set_pivot")]
+	[CallsUnknownMethods(Count = 1)]
 	protected void SetPivotToLeft()
 	{
 	}
 
-	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UIWidget), Member = "set_pivot")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
 	[Calls(Type = typeof(NGUIMath), Member = "GetPivot")]
+	[Calls(Type = typeof(UIWidget), Member = "set_pivot")]
+	[CallsUnknownMethods(Count = 1)]
 	protected void SetPivotToRight()
 	{
 	}
 
 	[CalledBy(Type = typeof(UIInput), Member = "OnDeselectEvent")]
-	[Calls(Type = typeof(UIWidget), Member = "set_pivot")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UIWidget), Member = "set_pivot")]
 	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
 	protected void RestoreLabelPivot()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
 	[CalledBy(Type = typeof(UIInput), Member = "Validate")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 1)]
+	[CalledBy(Type = typeof(UIInput), Member = "Insert")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected char Validate(string text, int pos, char ch)
 	{
-		return default(char);
+		return '\0';
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CalledBy(Type = typeof(UIInput), Member = "Update")]
 	[CalledBy(Type = typeof(UIInput), Member = "set_value")]
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
+	[CalledBy(Type = typeof(UIInput), Member = "Update")]
+	[CalledBy(Type = typeof(UIInput), Member = "Insert")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(EventDelegate), Member = "IsValid")]
-	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
 	protected void ExecuteOnChange()
 	{
 	}
 
-	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
-	[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
+	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
 	public void RemoveFocus()
 	{
 	}
 
-	[Calls(Type = typeof(UIInput), Member = "SaveToPlayerPrefs")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIInput), Member = "SaveToPlayerPrefs")]
 	public void SaveValue()
 	{
 	}
@@ -707,15 +684,15 @@ public class UIInput : MonoBehaviour
 	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
 	[Calls(Type = typeof(UIInput), Member = "set_value")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void LoadValue()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 11)]
-	[CallerCount(Count = 0)]
 	public UIInput()
 	{
 	}

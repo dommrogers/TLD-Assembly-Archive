@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
@@ -33,14 +32,14 @@ public class SaveGameSlots
 		[CallerCount(Count = 0)]
 		public bool Equals(SaveSlotType x, SaveSlotType y)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		public int GetHashCode(SaveSlotType saveSlotType)
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -52,37 +51,36 @@ public class SaveGameSlots
 
 		private readonly Dictionary<string, object> m_Events;
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public void Reset()
 		{
 		}
 
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 5)]
 		[CalledBy(Type = typeof(SaveGameSlots), Member = "SendAnalytics")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 1)]
 		public void AddSlot(string name)
 		{
 		}
 
 		[CalledBy(Type = typeof(SaveGameSlots), Member = "SendAnalytics")]
-		[CalledBy(Type = typeof(SaveGameSlots), Member = "SendAnalytics")]
-		[CallsUnknownMethods(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 3)]
-		[CalledBy(Type = typeof(SaveGameSlots), Member = "SendAnalytics")]
+		[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 3)]
 		public Dictionary<string, object> FinalizeEventData()
 		{
 			return null;
 		}
 
+		[CalledBy(Type = typeof(SaveGameSlots), Member = ".cctor")]
 		[CallerCount(Count = 3)]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(SaveGameSlots), Member = ".cctor")]
-		[CalledBy(Type = typeof(SaveGameSlots), Member = ".cctor")]
-		[CalledBy(Type = typeof(SaveGameSlots), Member = ".cctor")]
 		[CallsUnknownMethods(Count = 1)]
 		public SaveSlotCounter()
 		{
@@ -98,8 +96,8 @@ public class SaveGameSlots
 
 		public static Comparison<SaveSlotInfo> _003C_003E9__23_0;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec()
 		{
 		}
@@ -110,7 +108,7 @@ public class SaveGameSlots
 		[CallsUnknownMethods(Count = 1)]
 		internal int _003CGetSortedSaveSlotsForEpisodes_003Eb__22_0(SaveSlotInfo x, SaveSlotInfo y)
 		{
-			return default(int);
+			return 0;
 		}
 
 		[DeduplicatedMethod]
@@ -119,7 +117,7 @@ public class SaveGameSlots
 		[CallsUnknownMethods(Count = 1)]
 		internal int _003CGetSortedSaveSlots_003Eb__23_0(SaveSlotInfo x, SaveSlotInfo y)
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -153,175 +151,169 @@ public class SaveGameSlots
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(SaveGameSlots), Member = "CreateSlot")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Init()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(WebUtils.SteamCloudManager), Member = "SyncDone")]
 	[CalledBy(Type = typeof(WebUtils.SteamCloudManager), Member = "ReloadSaves")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "CreateSlot")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "ClearAutoSave")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(WebUtils.SteamCloudManager), Member = "SyncDone")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "ClearAutoSave")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "CreateSlot")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void ReInit()
 	{
 	}
 
-	[CalledBy(Type = typeof(EmptyScene), Member = "StartNewGameFromCommandLine")]
-	[CalledBy(Type = typeof(WebUtils.SteamCloudManager), Member = "SyncDone")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(WebUtils.SteamCloudManager), Member = "ReloadSaves")]
-	[CalledBy(Type = typeof(EmptyScene), Member = "LoadSaveFromCommandLine")]
-	[Calls(Type = typeof(SaveGameData), Member = "SaveGameOperationAlreadyPending")]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "LoadAllSlots")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Enable")]
-	[CallerCount(Count = 7)]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "LoadAllSlots")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateUserInitialization")]
+	[CalledBy(Type = typeof(EmptyScene), Member = "LoadSaveFromCommandLine")]
+	[CalledBy(Type = typeof(EmptyScene), Member = "StartNewGameFromCommandLine")]
+	[CalledBy(Type = typeof(WebUtils.SteamCloudManager), Member = "ReloadSaves")]
+	[CalledBy(Type = typeof(WebUtils.SteamCloudManager), Member = "SyncDone")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(SaveGameData), Member = "SaveGameOperationAlreadyPending")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void LoadAllSavedGameFiles()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "FindOrCreateSlotData")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "CreateSlotFromData")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_xpmode")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_story")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_sandbox")]
-	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateNewGame")]
-	[CalledBy(Type = typeof(Panel_Sandbox), Member = "OnNewSandbox")]
-	[CalledBy(Type = typeof(Panel_Sandbox), Member = "OnClickNew")]
-	[CalledBy(Type = typeof(Panel_Challenges), Member = "OnNewChallenge")]
 	[CalledBy(Type = typeof(Panel_Challenges), Member = "OnClickNew")]
-	[CallerCount(Count = 11)]
+	[CalledBy(Type = typeof(Panel_Challenges), Member = "OnNewChallenge")]
+	[CalledBy(Type = typeof(Panel_Sandbox), Member = "OnClickNew")]
+	[CalledBy(Type = typeof(Panel_Sandbox), Member = "OnNewSandbox")]
+	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateNewGame")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_sandbox")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_story")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_xpmode")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "CreateSlotFromData")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "FindOrCreateSlotData")]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 3)]
 	public static uint GetUnusedGameId()
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CalledBy(Type = typeof(SaveGameDataPC), Member = "LoadAllSaves")]
 	[CalledBy(Type = typeof(WebUtils.SteamCloudManager), Member = "CloudFileRequiresSync")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(string), Member = "Contains")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Contains")]
 	public static bool IsValidSavedGameName(string name)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(GameManager), Member = "AllowedToSave")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(GameManager), Member = "AllowedToSave")]
-	[CalledBy(Type = typeof(GameManager), Member = "AllowedToSave")]
-	[CallsUnknownMethods(Count = 4)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 3)]
 	public static bool SaveExists(SaveSlotType slotType, uint gameId)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 5)]
 	public static void GetSlotDataFor(SaveSlotType slotType, ref List<SlotData> slots)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "GetNewestSaveSlotForActiveGame")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "GetSortedSaveSlotsForEpisodes")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(SaveGameSlots), Member = "CreateSaveSlotInfo")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(SaveGameSlotHelper), Member = "RefreshStorySaveSlots")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "GetSortedSaveSlotsForEpisodes")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "GetNewestSaveSlotForActiveGame")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "CreateSaveSlotInfo")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static List<SaveSlotInfo> GetSortedSaveSlotsForEpisodes(SaveSlotType slotType)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(Panel_Debug), Member = "PopulateSaveFiles")]
+	[CalledBy(Type = typeof(Panel_Debug), Member = "LoadSelectedSave")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "NameSandboxGame")]
+	[CalledBy(Type = typeof(SaveGameSlotHelper), Member = "RefreshSandboxSaveSlots")]
+	[CalledBy(Type = typeof(SaveGameSlotHelper), Member = "RefreshChallengeSaveSlots")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "GetSortedSaveSlots")]
 	[CalledBy(Type = typeof(PostSpecialEvent), Member = "ManageSaveData")]
-	[CalledBy(Type = typeof(SaveGameSlotHelper), Member = "RefreshChallengeSaveSlots")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(PostSpecialEvent), Member = "ManageSaveData")]
-	[CalledBy(Type = typeof(SaveGameSlotHelper), Member = "RefreshSandboxSaveSlots")]
-	[CalledBy(Type = typeof(Panel_Debug), Member = "LoadSelectedSave")]
-	[CalledBy(Type = typeof(Panel_Debug), Member = "PopulateSaveFiles")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "CreateSaveSlotInfo")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "NameSandboxGame")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "CreateSaveSlotInfo")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static List<SaveSlotInfo> GetSortedSaveSlots(Episode episode, SaveSlotType slotType)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(SaveGameData), Member = "GetNumPendingOperations")]
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSlotPrefix")]
-	[Calls(Type = typeof(SaveGameData), Member = "AsyncOperationInProgress")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnSandbox")]
 	[CalledBy(Type = typeof(Panel_Sandbox), Member = "OnClickChallenges")]
 	[CalledBy(Type = typeof(PostSpecialEvent), Member = "ManageSaveData")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSlotPrefix")]
+	[Calls(Type = typeof(SaveGameData), Member = "GetNumPendingOperations")]
+	[Calls(Type = typeof(SaveGameData), Member = "AsyncOperationInProgress")]
 	public static bool SlotsAreLoading(SaveSlotType slotType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Sandbox), Member = "OnClickChallenges")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnSandbox")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSlotPrefix")]
+	[CalledBy(Type = typeof(Panel_Sandbox), Member = "OnClickChallenges")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSlotPrefix")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(SaveGameData), Member = "AddLoadingPriorityPattern")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void SetLoadingPriority(SaveSlotType slotType)
 	{
 	}
 
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "SaveUserDefinedSlotName")]
+	[CalledBy(TypeFullName = "SaveGameSystem.<SaveGameCoroutine>d__53", Member = "MoveNext")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
 	[Calls(Type = typeof(SaveGameSlots), Member = "WriteSlotToDisk")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "SaveUserDefinedSlotName")]
-	[CalledBy(Type = typeof(SaveGameSystem._003CSaveGameCoroutine_003Ed__53), Member = "MoveNext")]
 	public static bool WriteSlotToDisk(string slotName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "WriteSlotToDisk")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "UpdateSlotGameMode")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "ReassignCheckpointSaves")]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "RebaseMatchingSaves")]
-	[Calls(Type = typeof(SaveGameData), Member = "SaveData")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "ReassignCheckpointSaves")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "UpdateSlotGameMode")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "HandleNextAsyncSlot")]
-	[Calls(Type = typeof(SlotData), Member = "Lock")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "ClearSlotDisplayName")]
-	[Calls(Type = typeof(DateTime), Member = "get_Now")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(DateTime), Member = "get_Now")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "ClearSlotDisplayName")]
+	[Calls(Type = typeof(SlotData), Member = "Lock")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(Type = typeof(SaveGameData), Member = "SaveData")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void WriteSlotToDisk(SlotData slot, Timestamp timestampState)
 	{
 	}
 
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
 	public static bool HasSaveSlot(string slotname)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -340,451 +332,439 @@ public class SaveGameSlots
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "TryLoadDataString")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetUnusedGameId")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotId")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetUnusedGameId")]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool CreateSlotFromData(string dataAsString, string filename)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 4)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	public static void AddSlotData(SlotData sd)
 	{
 	}
 
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "ReInit")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "Init")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "FindOrCreateSlotData")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "CopyData")]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "Init")]
-	[Calls(Type = typeof(BaseState), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(DateTime), Member = "get_Now")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "ReInit")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "CopyData")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "FindOrCreateSlotData")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "Init")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[Calls(Type = typeof(BaseState), Member = ".ctor")]
+	[Calls(Type = typeof(DateTime), Member = "get_Now")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static SlotData CreateSlot(string slotname, SaveSlotType gameMode, uint gameId, Episode episode)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "DeleteSaveFiles")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "ReInit")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "ReInit")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "DeleteSaveFiles")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void ClearAutoSave()
 	{
 	}
 
-	[Calls(Type = typeof(SaveGameSlots), Member = "DeleteSlot")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "DeleteSaveFiles")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "DeleteSlot")]
 	[CalledBy(Type = typeof(SaveGameSlotHelper), Member = "RefreshStorySaveSlots")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "ReassignCheckpointSaves")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "HasCheckpointSave")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "RebaseMatchingSaves")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "FindNewestAssociatedSaveSlot")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "DeleteSlot")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "DeleteSlot")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "DeleteSaveFiles")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "DeleteSlot")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "FindNewestAssociatedSaveSlot")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "RebaseMatchingSaves")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "HasCheckpointSave")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "ReassignCheckpointSaves")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "DeleteSlot")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool DeleteSlot(string slotName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEvent")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEvent")]
-	[Calls(Type = typeof(SaveSlotCounter), Member = "FinalizeEventData")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEvent")]
-	[Calls(Type = typeof(SaveSlotCounter), Member = "FinalizeEventData")]
-	[Calls(Type = typeof(SaveSlotCounter), Member = "AddSlot")]
-	[Calls(Type = typeof(SaveSlotCounter), Member = "FinalizeEventData")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "CreateSaveSlotInfo")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "CreateSaveSlotInfo")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(SaveSlotCounter), Member = "AddSlot")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(SaveSlotCounter), Member = "FinalizeEventData")]
+	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEvent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	public static void SendAnalytics()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "DeleteSlot")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(string), Member = "Contains")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(string), Member = "Contains")]
+	[CallsUnknownMethods(Count = 7)]
 	private static SlotData FindNewestAssociatedSaveSlot(SlotData source)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "DeleteSlot")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(SaveGameSlots), Member = "SetBaseNameForSave")]
 	[Calls(Type = typeof(SaveGameSlots), Member = "WriteSlotToDisk")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "DeleteSlot")]
+	[CallsUnknownMethods(Count = 4)]
 	private static void RebaseMatchingSaves(SlotData source, SlotData target)
 	{
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "DeleteSlot")]
 	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 5)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 4)]
 	private static bool HasCheckpointSave(SlotData slot)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(SaveGameSlots), Member = "WriteSlotToDisk")]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "DeleteSlot")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "SetBaseNameForSave")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "SetBaseNameForSave")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "WriteSlotToDisk")]
+	[CallsUnknownMethods(Count = 4)]
 	private static void ReassignCheckpointSaves(SlotData source, SlotData target)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SaveGameSlots), Member = "DeleteSlot")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 3)]
 	public static void DeleteAllSlotsForGameId(uint gameId)
 	{
 	}
 
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "DeleteSaveFilesForGameId")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "DeleteAllSlotsForGameId")]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "DeleteSlot")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(SaveGameData), Member = "SaveGameOperationAlreadyPending")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "DeleteAllSlotsForGameId")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "DeleteSaveFilesForGameId")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(SaveGameData), Member = "SaveGameOperationAlreadyPending")]
 	[Calls(Type = typeof(SaveGameSlots), Member = "ClearSlotDisplayName")]
+	[CallsUnknownMethods(Count = 3)]
 	private static void DeleteSlot(SlotData slotData)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(SlotData), Member = "Lock")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(GameManager), Member = "TriggerAutosaveAndDisplayHUDMessage")]
+	[CalledBy(Type = typeof(GameManager), Member = "TriggerQuicksaveAndDisplayHUDMessage")]
 	[CalledBy(Type = typeof(GameManager), Member = "TriggerManualSaveAndDisplayHUDMessage")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadSlotOnStart")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGame")]
 	[CalledBy(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CalledBy(Type = typeof(GameManager), Member = "TriggerQuicksaveAndDisplayHUDMessage")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "CreateSlot")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "WaitAsyncSaveComplete")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(SaveGameSystem), Member = "WaitAsyncSaveComplete")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "CreateSlot")]
+	[Calls(Type = typeof(string), Member = "Contains")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(SlotData), Member = "Lock")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 4)]
 	public static bool CopyData(string sourceSlotname, string destSlotname, SaveSlotType gameMode = SaveSlotType.UNKNOWN)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGame")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGame")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	public static List<string> GetExtraInstancesOfFilename(string slotname, string filename)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
-	[CalledBy(Type = typeof(HUDManager._003CWaitToShowLocationReveal_003Ed__27), Member = "MoveNext")]
+	[CalledBy(TypeFullName = "HUDManager.<WaitToShowLocationReveal>d__27", Member = "MoveNext")]
 	[CalledBy(Type = typeof(HUDManager), Member = "CheckIfLoadingNewLocation")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGame")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "MaybeSwitchToUninstancedFilename")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static bool HasFilenameInSlot(string slotname, string filename)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void DeleteFileFromSlot(string slotname, string filename)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool TryLoadDataFromSlot<T>(string slotname, string filename, out T data)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<T, @null>(ref data) = null;
-		return default(bool);
+		data = default(T);
+		return false;
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(InaccessibleGearContainer), Member = "LoadSceneIntoNearestContainer")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
 	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public static bool TryLoadDataFromSlotUsingGuid<T>(string slotname, string guid, out T data)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<T, @null>(ref data) = null;
-		return default(bool);
+		data = default(T);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGame")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
 	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotId")]
 	[Calls(Type = typeof(SaveGameSlots), Member = "GetUnusedGameId")]
 	[Calls(Type = typeof(SaveGameSlots), Member = "CreateSlot")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGame")]
 	[CallsUnknownMethods(Count = 2)]
 	public static bool FindOrCreateSlotData(string slotname, SaveSlotType gameMode, Episode episode, uint saveId, out SlotData slot)
 	{
 		slot = null;
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveBootData")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(SaveGameSystem._003CSaveScreenshotDataCoroutine_003Ed__115), Member = "MoveNext")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveInfoData")]
-	[Calls(Type = typeof(EncryptString), Member = "CompressStringToBytes")]
-	[CallerCount(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "UpdateSlotGameMode")]
+	[CalledBy(TypeFullName = "SaveGameSystem.<SaveScreenshotDataCoroutine>d__115", Member = "MoveNext")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveBootData")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveInfoData")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(SlotData), Member = "Lock")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(Type = typeof(EncryptString), Member = "CompressStringToBytes")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	public static bool SaveDataToSlot(SlotData slot, string key, object data)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "GenerateNewSaveName")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatUInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(Debug), Member = "Break")]
+	[Calls(Type = typeof(uint), Member = "ToString")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[Calls(Type = typeof(HashSet<>), Member = "Contains")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatUInt32")]
+	[CallsUnknownMethods(Count = 2)]
 	public static string BuildSlotName(Episode episode, SaveSlotType slotType, uint n)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(string), Member = "Contains")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(string), Member = "Contains")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	public static SaveSlotType GetSaveSlotTypeFromName(string name)
 	{
 		return default(SaveSlotType);
 	}
 
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "SlotsAreLoading")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "SetLoadingPriority")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "SlotsAreLoading")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "SetLoadingPriority")]
 	public static string GetSlotPrefix(SaveSlotType slotType)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "MaybeSetUserDefinedName")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "CreateSaveSlotInfo")]
-	[CalledBy(Type = typeof(SandboxRecord), Member = "CreateFromSandbox")]
-	[CalledBy(Type = typeof(UtilsPanelChoose), Member = "RefreshDetails")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "CreateSandboxRecord")]
+	[CalledBy(Type = typeof(UtilsPanelChoose), Member = "RefreshDetails")]
+	[CalledBy(Type = typeof(SandboxRecord), Member = "CreateFromSandbox")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "CreateSaveSlotInfo")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "MaybeSetUserDefinedName")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
 	[Calls(Type = typeof(string), Member = "ToUpper")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
-	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
 	public static string GetUserDefinedSlotName(string slotName)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SetDefaultUserDefinedSlotName")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CalledBy(Type = typeof(GameManager), Member = "TriggerManualSaveAndDisplayHUDMessage")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SetDefaultUserDefinedSlotName")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	public static bool SetUserDefinedSlotName(string slotName, string displayName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "OnRenameExistingSandboxConfirmed")]
 	[CalledBy(Type = typeof(Panel_ChooseChallenge), Member = "OnRenameExistingChallengeConfirmed")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "OnRenameExistingSandboxConfirmed")]
 	[CalledBy(Type = typeof(Panel_SaveStory), Member = "OnRenameExistingStoryConfirmed")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "WriteSlotToDisk")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "WriteSlotToDisk")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	public static void SaveUserDefinedSlotName(string slotName, string newUserDefinedName)
 	{
 	}
 
-	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnRenameNewSandboxComplete")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnSelectSlotNameContinue")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateNewGame")]
-	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateNewGame")]
 	[CalledBy(Type = typeof(GameManager), Member = "TriggerManualSaveAndDisplayHUDMessage")]
+	[CallerCount(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void SetSlotDisplayName(string slotName, string displayName)
 	{
 	}
 
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "DeleteSlot")]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "WriteSlotToDisk")]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "DeleteSlot")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void ClearSlotDisplayName(string slotName)
 	{
 	}
 
+	[CalledBy(Type = typeof(LoadScene), Member = "MaybeAddGUIDToPrevSceneSave")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(BaseState), Member = "HasData")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
 	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
 	[Calls(Type = typeof(SlotData), Member = "Lock")]
-	[Calls(Type = typeof(BaseState), Member = "HasData")]
-	[CalledBy(Type = typeof(LoadScene), Member = "MaybeAddGUIDToPrevSceneSave")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void AddGUIDToPrevSceneSave(string slotName, string sceneName, string guid)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(GameManager), Member = "TriggerAutosaveAndDisplayHUDMessage")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 5)]
 	public static string GetOldestAutosaveName(Episode episode)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
 	[CalledBy(Type = typeof(SaveGameSlotHelper), Member = "RefreshStorySaveSlots")]
 	[CalledBy(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
 	public static string GetBaseNameForSave(string name)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(GameManager), Member = "TriggerAutosaveAndDisplayHUDMessage")]
-	[CalledBy(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
 	[CalledBy(Type = typeof(GameManager), Member = "TriggerQuicksaveAndDisplayHUDMessage")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(SaveGameSlots), Member = "SetBaseNameForSave")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[CalledBy(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "SetBaseNameForSave")]
 	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[CallsUnknownMethods(Count = 5)]
 	public static void SetBaseNameForSave(string name, string basename)
 	{
 	}
 
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "RebaseMatchingSaves")]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "ReassignCheckpointSaves")]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "SetBaseNameForSave")]
+	[CallerCount(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void SetBaseNameForSave(SlotData dest, SlotData source)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_SaveStory), Member = "ConfigureMenu")]
-	[CalledBy(Type = typeof(Panel_Sandbox), Member = "OnClickNew")]
-	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "ConfigureMenu")]
-	[CalledBy(Type = typeof(Panel_ChooseChallenge), Member = "ConfigureMenu")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(Panel_Challenges), Member = "OnClickNew")]
+	[CalledBy(Type = typeof(Panel_ChooseChallenge), Member = "ConfigureMenu")]
+	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "ConfigureMenu")]
+	[CalledBy(Type = typeof(Panel_Sandbox), Member = "OnClickNew")]
+	[CalledBy(Type = typeof(Panel_SaveStory), Member = "ConfigureMenu")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(string), Member = "Contains")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 4)]
 	public static int GetNumSaveSlotsInUse()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 42)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	public static SlotData GetSaveSlotFromName(string name)
 	{
 		return null;
@@ -797,75 +777,74 @@ public class SaveGameSlots
 		return null;
 	}
 
-	[Calls(Type = typeof(EpisodeManager), Member = "NextEpisodeIsUnlocked")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "GetSortedSaveSlots")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "GetSortedSaveSlotsForEpisodes")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateLoadingSave")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "DeleteSaveFiles")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SetDefaultUserDefinedSlotName")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetUserDefinedSlotName")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "FillSaveSlotInfo")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 4)]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "GetSortedSaveSlotsForEpisodes")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "GetSortedSaveSlots")]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "SendAnalytics")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(BaseState), Member = "TryGetData")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "FillSaveSlotInfo")]
+	[Calls(Type = typeof(EpisodeManager), Member = "NextEpisodeIsUnlocked")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetUserDefinedSlotName")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SetDefaultUserDefinedSlotName")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "DeleteSaveFiles")]
 	[CallsUnknownMethods(Count = 4)]
 	public static SaveSlotInfo CreateSaveSlotInfo(SlotData slot)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetGameModeFromName")]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "CreateSaveSlotInfo")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(BaseState), Member = "TryGetData")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetGameModeFromName")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private static bool FillSaveSlotInfo(SlotData slot, SaveSlotInfo saveSlotInfo)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnLoadGame")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnLoadGame")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public static void PrepareSaveSlotForLoad(string slotName, SaveSlotInfo saveSlotInfo)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(WintersEmbrace), Member = "PostEventConvertSaveSlot")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "WriteSlotToDisk")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "SaveDataToSlot")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(ExperienceModeManagerSaveDataProxy), Member = "StringToExperienceModeType")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[Calls(Type = typeof(BaseState), Member = "TryGetData")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(ExperienceModeManagerSaveDataProxy), Member = "StringToExperienceModeType")]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "SaveDataToSlot")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "WriteSlotToDisk")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void UpdateSlotGameMode(string slotName, ExperienceModeType currentMode, ExperienceModeType newMode)
 	{
 	}
 
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "CreateSlotFromData")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "FindOrCreateSlotData")]
-	[Calls(Type = typeof(System.Number), Member = "TryParseUInt32")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(string), Member = "StartsWith")]
 	[Calls(Type = typeof(Regex), Member = "Replace")]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "TryParseUInt32")]
+	[CallsUnknownMethods(Count = 1)]
 	private static uint GetSaveSlotId(string name)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[DeduplicatedMethod]

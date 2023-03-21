@@ -9,7 +9,7 @@ public class AUDIO_DEVICES
 	public static uint SYSTEM;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AUDIO_DEVICES()
 	{
 	}

@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 
@@ -11,9 +10,10 @@ public class Condition_ObjectiveIsActiveOrComplete : ConditionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -21,13 +21,14 @@ public class Condition_ObjectiveIsActiveOrComplete : ConditionTask
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjectiveIndex")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

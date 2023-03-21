@@ -14,65 +14,62 @@ public abstract class State_InvokeGraphBase : FSMState
 	protected bool m_JustStarted;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	protected override void OnInit()
 	{
 	}
 
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(FSMState), Member = "get_FSM")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void SetCompletionFlag(string tag, bool state)
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract void ConfigureInitialBlackboard(Blackboard bb);
 
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(Graph), Member = "set_blackboard")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Graph), Member = "set_blackboard")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(Graph), Member = "set_blackboard")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 15)]
 	protected override void OnEnter()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(NCUtils), Member = "LogStateInfo")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	protected override void OnUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExit()
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	protected override void OnPause()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
-	[DeduplicatedMethod]
 	protected State_InvokeGraphBase()
 	{
 	}

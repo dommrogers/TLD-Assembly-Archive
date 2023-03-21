@@ -19,9 +19,9 @@ internal struct UnlockAchievementsOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(UnlockAchievementsOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(UnlockAchievementsOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 2)]
 		set
 		{
 		}
@@ -29,10 +29,10 @@ internal struct UnlockAchievementsOptionsInternal : ISettable, IDisposable
 
 	public string[] AchievementIds
 	{
+		[CalledBy(Type = typeof(UnlockAchievementsOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(UnlockAchievementsOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(UnlockAchievementsOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(UnlockAchievementsOptionsInternal), Member = "Set")]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -46,18 +46,18 @@ internal struct UnlockAchievementsOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(UnlockAchievementsOptionsInternal), Member = "set_AchievementIds")]
-	[Calls(Type = typeof(UnlockAchievementsOptionsInternal), Member = "set_UserId")]
 	[CalledBy(Type = typeof(AchievementsInterface), Member = "UnlockAchievements")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnlockAchievementsOptionsInternal), Member = "set_UserId")]
+	[Calls(Type = typeof(UnlockAchievementsOptionsInternal), Member = "set_AchievementIds")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

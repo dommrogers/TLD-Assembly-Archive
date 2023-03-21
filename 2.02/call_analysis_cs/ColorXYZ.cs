@@ -24,55 +24,55 @@ internal struct ColorXYZ
 		return default(ColorXYZ);
 	}
 
-	[Calls(Type = typeof(ColorXYZ), Member = "FromLAB")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ColorXYZ), Member = "FromLAB")]
 	public static implicit operator ColorXYZ(ColorCIELab lab)
 	{
 		return default(ColorXYZ);
 	}
 
-	[Calls(Type = typeof(ColorXYZ), Member = "ToRGBA")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ColorXYZ), Member = "ToRGBA")]
 	public static implicit operator Color(ColorXYZ xyz)
 	{
 		return default(Color);
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(ColorXYZ), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(ColorCIELCh), Member = "FromRGBA")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private static ColorXYZ FromRGBA(Color rgba)
 	{
 		return default(ColorXYZ);
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(ColorXYZ), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(ColorCIELCh), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(ColorCIELCh), Member = "ToRGBA")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private static ColorXYZ FromLAB(ColorCIELab lab)
 	{
 		return default(ColorXYZ);
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(ColorCIELCh), Member = "ToRGBA")]
-	[CalledBy(Type = typeof(ColorCIELCh), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(ColorXYZ), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(ColorCIELCh), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(ColorCIELCh), Member = "ToRGBA")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private static Color ToRGBA(ColorXYZ xyz)
 	{
 		return default(Color);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 37)]
 	public override string ToString()
 	{

@@ -6,24 +6,14 @@ public sealed class RLPRO_SRP_AnalogTVNoise_Renderer : PostProcessEffectRenderer
 {
 	private float TimeX;
 
-	[CallsUnknownMethods(Count = 43)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetTexture")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
 	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetTexture")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 43)]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}

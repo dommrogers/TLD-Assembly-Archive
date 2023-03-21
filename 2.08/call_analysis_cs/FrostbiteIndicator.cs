@@ -23,15 +23,15 @@ public class FrostbiteIndicator : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(FrostbiteIndicator), Member = "OnEnable")]
-	[Calls(Type = typeof(Frostbite), Member = "GetFrostbiteRiskValue")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Frostbite), Member = "NumInstancesFrostbiteAtLocation")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Frostbite), Member = "NumInstancesFrostbiteAtLocation")]
+	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Frostbite), Member = "GetFrostbiteRiskValue")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update()
 	{
 	}

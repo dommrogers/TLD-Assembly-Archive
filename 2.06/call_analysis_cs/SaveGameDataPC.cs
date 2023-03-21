@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -25,14 +24,14 @@ public class SaveGameDataPC
 
 		public int m_Revision;
 
+		[CalledBy(Type = typeof(SaveGameDataPC), Member = "UpdateTargetFile")]
+		[CalledBy(Type = typeof(SaveGameDataPC), Member = "UpdateProfileAgainstFile")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Path), Member = "GetExtension")]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+		[Calls(Type = typeof(string), Member = "Substring")]
 		[Calls(Type = typeof(int), Member = "TryParse")]
 		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(SaveGameDataPC), Member = "UpdateProfileAgainstFile")]
-		[CalledBy(Type = typeof(SaveGameDataPC), Member = "UpdateTargetFile")]
-		[Calls(Type = typeof(string), Member = "Substring")]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-		[Calls(Type = typeof(Path), Member = "GetExtension")]
-		[CallerCount(Count = 2)]
 		public VersionedDataInfo(string path)
 		{
 		}
@@ -44,74 +43,74 @@ public class SaveGameDataPC
 
 	private static int s_ValidationIndex;
 
-	[CalledBy(Type = typeof(SaveGameData), Member = "DoDeleteOperation")]
 	[CalledBy(Type = typeof(SaveGameData), Member = "SaveGameDataProcess")]
-	[Calls(Type = typeof(File), Member = "Delete")]
+	[CalledBy(Type = typeof(SaveGameData), Member = "DoDeleteOperation")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(SaveGameDataPC), Member = "GetFullPath")]
 	[Calls(Type = typeof(File), Member = "Exists")]
+	[Calls(Type = typeof(File), Member = "Delete")]
 	public static SaveGameOperationReturnValue DeleteData(string name)
 	{
 		return default(SaveGameOperationReturnValue);
 	}
 
+	[CalledBy(Type = typeof(SaveGameData), Member = "SaveGameDataProcess")]
+	[CalledBy(Type = typeof(SaveGameData), Member = "DoLoadOperation")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(SaveGameDataPC), Member = "GetFullPath")]
 	[Calls(Type = typeof(SaveGameDataPC), Member = "LoadDataFromPath")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "TryLoadDataString")]
-	[CalledBy(Type = typeof(SaveGameData), Member = "SaveGameDataProcess")]
-	[CalledBy(Type = typeof(SaveGameData), Member = "DoLoadOperation")]
 	public static SaveGameOperationReturnValue LoadData(string name)
 	{
 		return default(SaveGameOperationReturnValue);
 	}
 
-	[CalledBy(Type = typeof(SaveGameDataPC), Member = "UpdateProfileAgainstFile")]
 	[CalledBy(Type = typeof(SaveGameDataPC), Member = "LoadData")]
-	[Calls(Type = typeof(EncryptString), Member = "DecompressBytesToStringNoAlloc")]
-	[Calls(Type = typeof(File), Member = "Exists")]
+	[CalledBy(Type = typeof(SaveGameDataPC), Member = "UpdateProfileAgainstFile")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(File), Member = "Exists")]
 	[Calls(Type = typeof(File), Member = "ReadAllBytes")]
+	[Calls(Type = typeof(EncryptString), Member = "DecompressBytesToStringNoAlloc")]
 	private static bool LoadDataFromPath(string path, out string data)
 	{
 		data = null;
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(SaveGameData), Member = "SaveGameDataProcess")]
-	[Calls(Type = typeof(SaveGameData), Member = "LoadData")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "IsValidSavedGameName")]
 	[CalledBy(Type = typeof(SaveGameData), Member = "DoLoadAllOperation")]
-	[Calls(Type = typeof(DirectoryInfo), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(DirectoryInfo), Member = ".ctor")]
 	[Calls(Type = typeof(DirectoryInfo), Member = "GetFiles")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "IsValidSavedGameName")]
+	[Calls(Type = typeof(SaveGameData), Member = "LoadData")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	public static SaveGameOperationReturnValue LoadAllSaves()
 	{
 		return default(SaveGameOperationReturnValue);
 	}
 
+	[CalledBy(Type = typeof(SaveGameData), Member = "SaveGameDataProcess")]
+	[CalledBy(Type = typeof(SaveGameData), Member = "DoSaveOperation")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(SaveGameDataPC), Member = "GetFullPath")]
 	[Calls(Type = typeof(SaveGameDataPC), Member = "CompressAndWriteString")]
-	[CalledBy(Type = typeof(SaveGameData), Member = "SaveGameDataProcess")]
-	[CalledBy(Type = typeof(SaveGameData), Member = "DoSaveOperation")]
 	public static SaveGameOperationReturnValue SaveData(string name, string data)
 	{
 		return default(SaveGameOperationReturnValue);
 	}
 
-	[CalledBy(Type = typeof(SaveGameData), Member = "DoExistsOperation")]
 	[CalledBy(Type = typeof(SaveGameData), Member = "SaveGameDataProcess")]
-	[Calls(Type = typeof(SaveGameData), Member = "LoadData")]
+	[CalledBy(Type = typeof(SaveGameData), Member = "DoExistsOperation")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SaveGameDataPC), Member = "GetFullPath")]
+	[Calls(Type = typeof(File), Member = "Exists")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "IsProfileFilename")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "HandleOnProfileLoaded")]
 	[Calls(Type = typeof(SaveGameData), Member = "DataExists")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "IsProfileFilename")]
-	[Calls(Type = typeof(File), Member = "Exists")]
-	[Calls(Type = typeof(SaveGameDataPC), Member = "GetFullPath")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(SaveGameData), Member = "LoadData")]
 	public static SaveGameOperationReturnValue DataExists(string name)
 	{
 		return default(SaveGameOperationReturnValue);
@@ -121,150 +120,140 @@ public class SaveGameDataPC
 	[CallerCount(Count = 0)]
 	public static bool IsBusy()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(File), Member = "WriteAllBytes")]
-	[Calls(Type = typeof(EncryptString), Member = "CompressStringToBytes")]
-	[Calls(Type = typeof(File), Member = "Delete")]
-	[Calls(Type = typeof(File), Member = "Exists")]
-	[Calls(Type = typeof(File), Member = "Copy")]
-	[Calls(Type = typeof(File), Member = "Delete")]
-	[Calls(Type = typeof(File), Member = "Exists")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(File), Member = "Delete")]
-	[Calls(Type = typeof(File), Member = "Exists")]
-	[Calls(Type = typeof(LZF), Member = "lzf_compress")]
-	[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(SaveGameDataPC), Member = "SaveData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
+	[Calls(Type = typeof(LZF), Member = "lzf_compress")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(File), Member = "Exists")]
+	[Calls(Type = typeof(File), Member = "Delete")]
 	[Calls(Type = typeof(FileStream), Member = ".ctor")]
+	[Calls(Type = typeof(File), Member = "Copy")]
+	[Calls(Type = typeof(EncryptString), Member = "CompressStringToBytes")]
+	[Calls(Type = typeof(File), Member = "WriteAllBytes")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 6)]
 	private static bool CompressAndWriteString(string pathAndFilename, string dataAsString)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(SaveGameDataPC), Member = "SaveData")]
-	[CalledBy(Type = typeof(SaveGameDataPC), Member = "LoadData")]
-	[CalledBy(Type = typeof(SaveGameDataPC), Member = "DataExists")]
 	[CalledBy(Type = typeof(SaveGameDataPC), Member = "DeleteData")]
-	[Calls(Type = typeof(Path), Member = "Combine")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "IsLegacyProfileFilename")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "IsSettingsFilename")]
+	[CalledBy(Type = typeof(SaveGameDataPC), Member = "LoadData")]
+	[CalledBy(Type = typeof(SaveGameDataPC), Member = "SaveData")]
+	[CalledBy(Type = typeof(SaveGameDataPC), Member = "DataExists")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(SaveGameSystem), Member = "IsSettingsFilename")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "IsLegacyProfileFilename")]
+	[Calls(Type = typeof(Path), Member = "Combine")]
 	private static string GetFullPath(string name)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "Init")]
 	[CalledBy(Type = typeof(SaveGameData), Member = "InitializeUserProfile")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(SaveGameDataPC), Member = "UpdateTargetFile")]
-	[Calls(Type = typeof(SaveGameDataPC), Member = "UpdateTargetFile")]
-	[Calls(Type = typeof(SaveGameDataPC), Member = "UpdateTargetFile")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "Init")]
 	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[Calls(Type = typeof(SaveGameDataPC), Member = "UpdateTargetFile")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void InitializeUserProfile()
 	{
 	}
 
-	[Calls(Type = typeof(File), Member = "Copy")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(SaveGameDataPC), Member = "InitializeUserProfile")]
-	[CalledBy(Type = typeof(SaveGameDataPC), Member = "InitializeUserProfile")]
-	[CalledBy(Type = typeof(SaveGameDataPC), Member = "InitializeUserProfile")]
-	[Calls(Type = typeof(Path), Member = "Combine")]
-	[Calls(Type = typeof(VersionedDataInfo), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(Path), Member = "ChangeExtension")]
-	[Calls(Type = typeof(Path), Member = "GetFileName")]
-	[Calls(Type = typeof(Directory), Member = "InternalEnumeratePaths")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Directory), Member = "InternalEnumeratePaths")]
+	[Calls(Type = typeof(Path), Member = "GetFileName")]
+	[Calls(Type = typeof(Path), Member = "ChangeExtension")]
+	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(Type = typeof(VersionedDataInfo), Member = ".ctor")]
+	[Calls(Type = typeof(Path), Member = "Combine")]
+	[Calls(Type = typeof(File), Member = "Copy")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	private static bool UpdateTargetFile(string folderPath, string startsWith, string targetFilename, int currentRevision)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public static bool IsValidationActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "UpdateUserInitialization")]
 	[CalledBy(Type = typeof(SaveGameData), Member = "ValidateUserProfile")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Directory), Member = "EnumerateFiles")]
-	[Calls(Type = typeof(Directory), Member = "EnumerateFiles")]
-	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
-	[Calls(Type = typeof(SaveGameDataPC), Member = "UpdateProfileAgainstFile")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "UpdateUserInitialization")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
+	[Calls(Type = typeof(SaveGameDataPC), Member = "UpdateProfileAgainstFile")]
+	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
 	[Calls(Type = typeof(SaveGameData), Member = "IsAnyOperationPending")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Directory), Member = "EnumerateFiles")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void ValidateUserProfile()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(SaveGameDataPC), Member = "ValidateUserProfile")]
-	[Calls(Type = typeof(FeatsManager), Member = "ValidateSaveData")]
-	[Calls(Type = typeof(SaveGameDataPC), Member = "UpdateProfileBadges")]
-	[Calls(Type = typeof(VersionedDataInfo), Member = ".ctor")]
-	[Calls(Type = typeof(MigrationHelper), Member = "MigrateProfile")]
-	[Calls(Type = typeof(SaveGameDataPC), Member = "LoadDataFromPath")]
-	[Calls(Type = typeof(SaveGameDataPC), Member = "UpdateProfileChallengeData")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(VersionedDataInfo), Member = ".ctor")]
+	[Calls(Type = typeof(SaveGameDataPC), Member = "LoadDataFromPath")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(MigrationHelper), Member = "MigrateProfile")]
+	[Calls(Type = typeof(SaveGameDataPC), Member = "UpdateProfileChallengeData")]
+	[Calls(Type = typeof(SaveGameDataPC), Member = "UpdateProfileBadges")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(FeatsManager), Member = "ValidateSaveData")]
+	[CallsUnknownMethods(Count = 1)]
 	private static void UpdateProfileAgainstFile(string path, int currentVersion)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(SaveGameDataPC), Member = "ValidateBestTime")]
 	[CalledBy(Type = typeof(SaveGameDataPC), Member = "UpdateProfileAgainstFile")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(SaveGameDataPC), Member = "ValidateBestTime")]
+	[CallsUnknownMethods(Count = 3)]
 	private static void UpdateProfileChallengeData(ProfileState validationState)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(SaveGameDataPC), Member = "UpdateProfileChallengeData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private static void ValidateBestTime(string key, float validationTime)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedBadge")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
 	[CalledBy(Type = typeof(SaveGameDataPC), Member = "UpdateProfileAgainstFile")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedBadge")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsUnknownMethods(Count = 9)]
 	private static void UpdateProfileBadges(ProfileState validationState)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(FeatsManager), Member = "ValidateSaveData")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	private static void UpdateProfileFeatData(ProfileState validationState)
 	{
 	}

@@ -5,9 +5,9 @@ namespace DataPlatform;
 
 public class NotificationManager
 {
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void SetNotificationPositionHint(NotificationPositionHint locationHint)
 	{
 	}

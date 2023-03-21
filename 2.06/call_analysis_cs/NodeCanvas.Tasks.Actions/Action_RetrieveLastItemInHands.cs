@@ -8,18 +8,16 @@ public class Action_RetrieveLastItemInHands : ActionTask
 {
 	public string missionObjectIdentifier;
 
-	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeProcessPickingUpPlacedItem")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "AutoEquipItemInHandsAfterInteraction")]
+	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeProcessPickingUpPlacedItem")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}

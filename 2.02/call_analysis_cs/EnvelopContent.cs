@@ -15,8 +15,8 @@ public class EnvelopContent : MonoBehaviour
 
 	private bool mStarted;
 
-	[Calls(Type = typeof(EnvelopContent), Member = "Execute")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EnvelopContent), Member = "Execute")]
 	private void Start()
 	{
 	}
@@ -27,20 +27,18 @@ public class EnvelopContent : MonoBehaviour
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 7)]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(EnvelopContent), Member = "Start")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Component), Member = "BroadcastMessage")]
-	[Calls(Type = typeof(Bounds), Member = "get_max")]
-	[Calls(Type = typeof(Bounds), Member = "get_max")]
-	[Calls(Type = typeof(Bounds), Member = "get_min")]
-	[ContextMenu(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Bounds), Member = "get_min")]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(NGUITools), Member = "IsChild")]
 	[Calls(Type = typeof(NGUIMath), Member = "CalculateRelativeWidgetBounds")]
+	[Calls(Type = typeof(Bounds), Member = "get_min")]
+	[Calls(Type = typeof(Bounds), Member = "get_max")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "BroadcastMessage")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 6)]
 	public void Execute()
 	{
 	}

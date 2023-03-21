@@ -5,8 +5,8 @@ public class FeatEnabledTrackerSaveData
 {
 	public List<FeatType> m_FeatsEnabledThisSandbox;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public FeatEnabledTrackerSaveData()
 	{
 	}

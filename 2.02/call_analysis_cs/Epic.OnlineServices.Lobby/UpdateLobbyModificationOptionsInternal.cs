@@ -16,10 +16,10 @@ internal struct UpdateLobbyModificationOptionsInternal : ISettable, IDisposable
 	public ProductUserId LocalUserId
 	{
 		[CalledBy(Type = typeof(UpdateLobbyModificationOptionsInternal), Member = "Set")]
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(UpdateLobbyModificationOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -30,8 +30,8 @@ internal struct UpdateLobbyModificationOptionsInternal : ISettable, IDisposable
 		[CalledBy(Type = typeof(UpdateLobbyModificationOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(UpdateLobbyModificationOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -44,17 +44,17 @@ internal struct UpdateLobbyModificationOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(UpdateLobbyModificationOptionsInternal), Member = "set_LobbyId")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UpdateLobbyModificationOptionsInternal), Member = "set_LocalUserId")]
 	[CalledBy(Type = typeof(LobbyInterface), Member = "UpdateLobbyModification")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UpdateLobbyModificationOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(UpdateLobbyModificationOptionsInternal), Member = "set_LobbyId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

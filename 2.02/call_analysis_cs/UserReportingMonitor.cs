@@ -17,19 +17,19 @@ public class UserReportingMonitor : MonoBehaviour
 		public static Action<UserReportScreenshot> _003C_003E9__7_1;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		internal void _003CTrigger_003Eb__7_0(UserReportScreenshot s)
 		{
 		}
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		internal void _003CTrigger_003Eb__7_1(UserReportScreenshot s)
 		{
 		}
@@ -46,8 +46,8 @@ public class UserReportingMonitor : MonoBehaviour
 	public string Summary;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public UserReportingMonitor()
 	{
@@ -61,22 +61,19 @@ public class UserReportingMonitor : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 24)]
 	[CalledBy(Type = typeof(FramerateMonitor), Member = "Update")]
-	[Calls(Type = typeof(UserReportingClient), Member = "CreateUserReport")]
-	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
-	[Calls(Type = typeof(UserReportingClient), Member = "TakeScreenshotFromSource")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UserReportingClient), Member = "TakeScreenshotFromSource")]
-	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
+	[Calls(Type = typeof(UserReportingClient), Member = "TakeScreenshotFromSource")]
+	[Calls(Type = typeof(UserReportingClient), Member = "CreateUserReport")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 24)]
 	public void Trigger()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	protected virtual void Triggered()
 	{
 	}

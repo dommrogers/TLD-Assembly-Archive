@@ -23,9 +23,9 @@ public class WeatherStatesData : ScriptableObject
 
 	public float m_GrassTintScalar;
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public WeatherStatesData()
 	{
 	}

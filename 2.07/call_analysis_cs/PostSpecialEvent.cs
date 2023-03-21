@@ -1,22 +1,22 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using SpecialEvents;
+using TLD.SaveState;
 
 public static class PostSpecialEvent
 {
 	private static bool s_HasManagedSaveData;
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSortedSaveSlots")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "DeleteSaveFiles")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "SlotsAreLoading")]
 	[Calls(Type = typeof(SaveGameSlots), Member = "GetSortedSaveSlots")]
 	[Calls(Type = typeof(WintersEmbrace), Member = "PostEventConvertSaveSlot")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "SlotsAreLoading")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SaveGameSystem), Member = "DeleteSaveFiles")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void ManageSaveData()
 	{
 	}

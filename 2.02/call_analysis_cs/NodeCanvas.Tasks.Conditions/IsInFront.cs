@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -14,9 +13,9 @@ public class IsInFront : ConditionTask<Transform>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -24,28 +23,30 @@ public class IsInFront : ConditionTask<Transform>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Vector3), Member = "Angle")]
-	[CallsUnknownMethods(Count = 10)]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 9)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Vector3), Member = "get_one")]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsUnknownMethods(Count = 8)]
 	public override void OnDrawGizmosSelected()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 1)]
 	public IsInFront()
 	{
 		((ConditionTask<>)(object)this)._002Ector();

@@ -17,14 +17,14 @@ public class ServiceConfigurationStatisticPlugin
 	public static extern uint ServiceConfigurationStatistic_Length(IntPtr self);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(ServiceConfigurationStatistic), Member = "get_Item")]
-	[CalledBy(Type = typeof(ServiceConfigurationStatistic._003CGetEnumerator_003Ed__3), Member = "MoveNext")]
+	[CalledBy(TypeFullName = "DataPlatform.ServiceConfigurationStatistic.<GetEnumerator>d__3", Member = "MoveNext")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr ServiceConfigurationStatistic_GetAt(IntPtr self, uint idx);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ServiceConfigurationStatisticPlugin()
 	{
 	}

@@ -26,58 +26,54 @@ public class GenericInteractionPrompt : MonoBehaviour
 	private bool m_IsShowing;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(GenericInteractionPrompt), Member = "HideInteraction")]
 	[CalledBy(Type = typeof(TwoButtonsChoiceUI), Member = "RefreshChoices")]
 	[CalledBy(Type = typeof(Elevator), Member = "UpdateButtonPrompts")]
 	[CalledBy(Type = typeof(InteractiveLightsource), Member = "ShowHoverButtonPrompts")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GenericInteractionPrompt), Member = "HideInteraction")]
 	public void PrepareInteraction(bool essentialInteraction = true, Action<bool> onInputStatusChanged = null)
 	{
 	}
 
+	[CalledBy(Type = typeof(TwoButtonsChoiceUI), Member = "RefreshChoices")]
 	[CalledBy(Type = typeof(Elevator), Member = "UpdateButtonPrompts")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(InteractiveLightsource), Member = "ShowHoverButtonPrompts")]
-	[CalledBy(Type = typeof(Elevator), Member = "UpdateButtonPrompts")]
-	[CalledBy(Type = typeof(Elevator), Member = "UpdateButtonPrompts")]
-	[CalledBy(Type = typeof(Elevator), Member = "UpdateButtonPrompts")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(TwoButtonsChoiceUI), Member = "RefreshChoices")]
-	[CalledBy(Type = typeof(TwoButtonsChoiceUI), Member = "RefreshChoices")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKeyWithDisable")]
 	[Calls(Type = typeof(GenericInteractionPrompt), Member = "GetNextFreeButtonPrompt")]
+	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKeyWithDisable")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(TwoButtonsChoiceUI), Member = "RefreshChoices")]
+	[CallsUnknownMethods(Count = 3)]
 	public void ShowInteraction(string interactionText, string action, bool promptEnabled = true)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GenericInteractionPrompt), Member = "GetNextFreeButtonPrompt")]
 	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKeyWithDisable")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void ShowInteraction(string interactionText, string action, Color disabledColor, bool promptEnabled = true)
 	{
 	}
 
-	[CalledBy(Type = typeof(Elevator), Member = "CommenceExitPlayer")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "ClearUISaveData")]
-	[CalledBy(Type = typeof(InteractiveLightsource), Member = "HideHoverButtonPrompts")]
-	[CalledBy(Type = typeof(Elevator), Member = "Move")]
-	[CalledBy(Type = typeof(InteractiveLightsource), Member = "ProcessInteraction")]
-	[CalledBy(Type = typeof(GenericInteractionPrompt), Member = "DestroyInteraction")]
 	[CalledBy(Type = typeof(GenericInteractionPrompt), Member = "PrepareInteraction")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 8)]
+	[CalledBy(Type = typeof(GenericInteractionPrompt), Member = "DestroyInteraction")]
 	[CalledBy(Type = typeof(TwoButtonsChoiceUI), Member = "HideChoices")]
+	[CalledBy(Type = typeof(Elevator), Member = "Move")]
+	[CalledBy(Type = typeof(Elevator), Member = "CommenceExitPlayer")]
+	[CalledBy(Type = typeof(InteractiveLightsource), Member = "ProcessInteraction")]
+	[CalledBy(Type = typeof(InteractiveLightsource), Member = "HideHoverButtonPrompts")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "ClearUISaveData")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public void HideInteraction()
 	{
 	}
@@ -86,53 +82,58 @@ public class GenericInteractionPrompt : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsShowing()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GenericInteractionPrompt), Member = "HideInteraction")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void DestroyInteraction()
 	{
 	}
 
+	[CalledBy(Type = typeof(GenericInteractionPrompt), Member = "ShowInteraction")]
+	[CalledBy(Type = typeof(GenericInteractionPrompt), Member = "ShowInteraction")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(Transform), Member = "SetParent")]
-	[CalledBy(Type = typeof(GenericInteractionPrompt), Member = "ShowInteraction")]
-	[CalledBy(Type = typeof(GenericInteractionPrompt), Member = "ShowInteraction")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 12)]
 	private ButtonPrompt GetNextFreeButtonPrompt()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(GenericInteractionPrompt), Member = "RefreshButtonPrompts")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
 	[CalledBy(Type = typeof(GenericInteractionPrompt), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 6)]
 	private void RefreshButtonPrompts()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public GenericInteractionPrompt()
 	{

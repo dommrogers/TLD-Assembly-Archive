@@ -8,8 +8,8 @@ public class SnowShelterDataProxy
 
 	public float m_HoursRuined;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public SnowShelterDataProxy()
 	{
 	}

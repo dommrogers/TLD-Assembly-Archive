@@ -26,14 +26,14 @@ public class BehaviourLifeCycleTracker : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private void OnEnable()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private void Start()
 	{
 	}
@@ -60,11 +60,11 @@ public class BehaviourLifeCycleTracker : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private static bool IsSet(CallsToTrack settings, CallsToTrack mask)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public BehaviourLifeCycleTracker()
 	{
 	}

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -13,7 +14,7 @@ namespace UnityEngine.Rendering.PostProcessing;
 
 public static class RuntimeUtilities
 {
-	private sealed class _003CGetAllSceneObjects_003Ed__82<T> : IEnumerable<T>, IDisposable, IEnumerable, IEnumerator, IEnumerator<T> where T : Component
+	private sealed class _003CGetAllSceneObjects_003Ed__82<T> : IEnumerable<T>, IEnumerable, IEnumerator<T>, IEnumerator, IDisposable where T : Component
 	{
 		private int _003C_003E1__state;
 
@@ -31,9 +32,9 @@ public static class RuntimeUtilities
 
 		private T System_002ECollections_002EGeneric_002EIEnumerator_003CT_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
 			[DebuggerHidden]
-			[CallerCount(Count = 44)]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -44,17 +45,17 @@ public static class RuntimeUtilities
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public _003CGetAllSceneObjects_003Ed__82(int _003C_003E1__state)
 		{
 		}
@@ -68,32 +69,33 @@ public static class RuntimeUtilities
 		{
 		}
 
-		[Calls(Type = typeof(Scene), Member = "GetRootGameObjects")]
-		[CallsUnknownMethods(Count = 33)]
-		[Calls(Type = typeof(Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
-		[Calls(Type = typeof(Object), Member = "op_Inequality")]
-		[CallsDeduplicatedMethods(Count = 6)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+		[Calls(Type = typeof(Scene), Member = "GetRootGameObjects")]
+		[Calls(Type = typeof(Queue<>), Member = "Enqueue")]
+		[Calls(Type = typeof(Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(Queue<>), Member = "Dequeue")]
+		[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+		[CallsDeduplicatedMethods(Count = 6)]
+		[CallsUnknownMethods(Count = 30)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 2)]
 		private void _003C_003Em__Finally1()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 5)]
+		[DebuggerHidden]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[DeduplicatedMethod]
-		[DebuggerHidden]
+		[CallsUnknownMethods(Count = 5)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -108,9 +110,9 @@ public static class RuntimeUtilities
 			return null;
 		}
 
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		private IEnumerator System_002ECollections_002EIEnumerable_002EGetEnumerator()
 		{
 			return null;
@@ -130,9 +132,9 @@ public static class RuntimeUtilities
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal IEnumerable<Type> _003CGetAllAssemblyTypes_003Eb__89_0(Assembly t)
 		{
 			return null;
@@ -173,13 +175,13 @@ public static class RuntimeUtilities
 
 	public static Texture2D whiteTexture
 	{
+		[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderBuiltins")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(Texture2D), Member = ".ctor")]
 		[Calls(Type = typeof(Object), Member = "set_name")]
 		[Calls(Type = typeof(Texture2D), Member = "SetPixel")]
 		[Calls(Type = typeof(Texture2D), Member = "Apply")]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderBuiltins")]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -189,13 +191,13 @@ public static class RuntimeUtilities
 
 	public static Texture3D whiteTexture3D
 	{
-		[CallsUnknownMethods(Count = 7)]
-		[Calls(Type = typeof(Texture3D), Member = "Apply")]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(Texture3D), Member = ".ctor")]
 		[Calls(Type = typeof(Object), Member = "set_name")]
 		[Calls(Type = typeof(Texture3D), Member = "SetPixels")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(Texture3D), Member = ".ctor")]
+		[Calls(Type = typeof(Texture3D), Member = "Apply")]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -204,15 +206,15 @@ public static class RuntimeUtilities
 
 	public static Texture2D blackTexture
 	{
-		[CallsUnknownMethods(Count = 6)]
 		[CalledBy(Type = typeof(MaskedBlurEffectRenderer), Member = "Render")]
-		[Calls(Type = typeof(Texture2D), Member = "Apply")]
-		[Calls(Type = typeof(Texture2D), Member = "SetPixel")]
 		[CalledBy(Type = typeof(BloomRenderer), Member = "Render")]
-		[Calls(Type = typeof(Texture2D), Member = ".ctor")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(Texture2D), Member = ".ctor")]
 		[Calls(Type = typeof(Object), Member = "set_name")]
+		[Calls(Type = typeof(Texture2D), Member = "SetPixel")]
+		[Calls(Type = typeof(Texture2D), Member = "Apply")]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -236,13 +238,13 @@ public static class RuntimeUtilities
 
 	public static Texture2D transparentTexture
 	{
-		[Calls(Type = typeof(Texture2D), Member = "SetPixel")]
-		[CallsUnknownMethods(Count = 6)]
-		[Calls(Type = typeof(Object), Member = "set_name")]
-		[Calls(Type = typeof(Texture2D), Member = "Apply")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(Texture2D), Member = ".ctor")]
+		[Calls(Type = typeof(Object), Member = "set_name")]
+		[Calls(Type = typeof(Texture2D), Member = "SetPixel")]
+		[Calls(Type = typeof(Texture2D), Member = "Apply")]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -251,13 +253,13 @@ public static class RuntimeUtilities
 
 	public static Texture3D transparentTexture3D
 	{
-		[CallsUnknownMethods(Count = 7)]
-		[Calls(Type = typeof(Texture3D), Member = "SetPixels")]
-		[Calls(Type = typeof(Object), Member = "set_name")]
-		[Calls(Type = typeof(Texture3D), Member = "Apply")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(Texture3D), Member = ".ctor")]
+		[Calls(Type = typeof(Object), Member = "set_name")]
+		[Calls(Type = typeof(Texture3D), Member = "SetPixels")]
+		[Calls(Type = typeof(Texture3D), Member = "Apply")]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -266,21 +268,21 @@ public static class RuntimeUtilities
 
 	public static Mesh fullscreenTriangle
 	{
-		[CalledBy(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangleToTexArray")]
-		[CalledBy(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-		[CalledBy(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-		[CallsUnknownMethods(Count = 16)]
-		[CalledBy(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
 		[CalledBy(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
 		[CalledBy(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
 		[CalledBy(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangleFromTexArray")]
+		[CalledBy(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangleToTexArray")]
+		[CalledBy(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+		[CalledBy(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+		[CalledBy(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+		[CallerCount(Count = 7)]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(Mesh), Member = ".ctor")]
+		[Calls(Type = typeof(Object), Member = "set_name")]
 		[Calls(Type = typeof(Mesh), Member = "SetVertices")]
 		[Calls(Type = typeof(Mesh), Member = "SetIndices")]
-		[Calls(Type = typeof(Object), Member = "set_name")]
-		[Calls(Type = typeof(Mesh), Member = ".ctor")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		[CallsDeduplicatedMethods(Count = 5)]
-		[CallerCount(Count = 7)]
+		[CallsUnknownMethods(Count = 16)]
 		get
 		{
 			return null;
@@ -289,15 +291,13 @@ public static class RuntimeUtilities
 
 	public static Material copyStdMaterial
 	{
-		[CallsUnknownMethods(Count = 7)]
 		[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
+		[CallerCount(Count = 3)]
 		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(Material), Member = ".ctor")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 3)]
 		[Calls(Type = typeof(Object), Member = "set_name")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -307,13 +307,12 @@ public static class RuntimeUtilities
 	public static Material copyStdFromDoubleWideMaterial
 	{
 		[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
-		[Calls(Type = typeof(Object), Member = "set_name")]
-		[CallsUnknownMethods(Count = 7)]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(Material), Member = ".ctor")]
+		[Calls(Type = typeof(Object), Member = "set_name")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -322,13 +321,13 @@ public static class RuntimeUtilities
 
 	public static Material copyMaterial
 	{
+		[CalledBy(Type = typeof(RuntimeUtilities), Member = "get_copySheet")]
+		[CalledBy(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(Material), Member = ".ctor")]
 		[Calls(Type = typeof(Object), Member = "set_name")]
-		[CalledBy(Type = typeof(RuntimeUtilities), Member = "get_copySheet")]
-		[CalledBy(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -338,13 +337,13 @@ public static class RuntimeUtilities
 
 	public static Material copyFromTexArrayMaterial
 	{
-		[CallsUnknownMethods(Count = 7)]
 		[CalledBy(Type = typeof(RuntimeUtilities), Member = "get_copyFromTexArraySheet")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(Material), Member = ".ctor")]
 		[Calls(Type = typeof(Object), Member = "set_name")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[CallerCount(Count = 1)]
-		[Calls(Type = typeof(Material), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -353,10 +352,10 @@ public static class RuntimeUtilities
 
 	public static PropertySheet copySheet
 	{
+		[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(RuntimeUtilities), Member = "get_copyMaterial")]
 		[Calls(Type = typeof(PropertySheet), Member = ".ctor")]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -367,11 +366,10 @@ public static class RuntimeUtilities
 	public static PropertySheet copyFromTexArraySheet
 	{
 		[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
-		[CallsUnknownMethods(Count = 6)]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
-		[Calls(Type = typeof(PropertySheet), Member = ".ctor")]
-		[Calls(Type = typeof(RuntimeUtilities), Member = "get_copyFromTexArrayMaterial")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(RuntimeUtilities), Member = "get_copyFromTexArrayMaterial")]
+		[Calls(Type = typeof(PropertySheet), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -380,65 +378,64 @@ public static class RuntimeUtilities
 
 	public static bool scriptableRenderPipelineActive
 	{
-		[CallerCount(Count = 15)]
-		[CalledBy(Type = typeof(RuntimeUtilities), Member = "get_supportsDepthNormals")]
-		[CalledBy(Type = typeof(RuntimeUtilities), Member = "get_supportsDeferredShading")]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderOpaqueOnly")]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "UpdateVolumeSystem")]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
+		[CalledBy(Type = typeof(AmbientOcclusion), Member = "IsEnabledAndSupported")]
+		[CalledBy(Type = typeof(Fog), Member = "IsEnabledAndSupported")]
+		[CalledBy(Type = typeof(PostProcessLayer), Member = "OnEnable")]
+		[CalledBy(Type = typeof(PostProcessLayer), Member = "OnPreCull")]
+		[CalledBy(Type = typeof(PostProcessLayer), Member = "OnPreRender")]
+		[CalledBy(Type = typeof(PostProcessLayer), Member = "RequiresInitialBlit")]
 		[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
 		[CalledBy(Type = typeof(PostProcessLayer), Member = "OnPostRender")]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "OnPreRender")]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "OnPreCull")]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "OnEnable")]
-		[CalledBy(Type = typeof(Fog), Member = "IsEnabledAndSupported")]
-		[CalledBy(Type = typeof(AmbientOcclusion), Member = "IsEnabledAndSupported")]
+		[CalledBy(Type = typeof(PostProcessLayer), Member = "UpdateVolumeSystem")]
+		[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderOpaqueOnly")]
+		[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
+		[CalledBy(Type = typeof(RuntimeUtilities), Member = "get_supportsDeferredShading")]
+		[CalledBy(Type = typeof(RuntimeUtilities), Member = "get_supportsDepthNormals")]
+		[CallerCount(Count = 15)]
 		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "RequiresInitialBlit")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public static bool supportsDeferredShading
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(RuntimeUtilities), Member = "get_scriptableRenderPipelineActive")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public static bool supportsDepthNormals
 	{
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(RuntimeUtilities), Member = "get_scriptableRenderPipelineActive")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public static bool isSinglePassStereoEnabled
 	{
-		[CallerCount(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(MultiScaleVO), Member = "GenerateAOMap")]
+		[CalledBy(Type = typeof(MultiScaleVO), Member = "PushRenderCommands")]
 		[CalledBy(Type = typeof(SubpixelMorphologicalAntialiasing), Member = "IsSupported")]
 		[CalledBy(Type = typeof(PostProcessLayer), Member = "OnPostRender")]
+		[CallerCount(Count = 4)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -448,21 +445,21 @@ public static class RuntimeUtilities
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public static bool isAndroidOpenGL
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(Monitor), Member = "IsRequestedAndSupported")]
-		[CalledBy(Type = typeof(AutoExposure), Member = "IsEnabledAndSupported")]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 3)]
 		[CalledBy(Type = typeof(AmbientOcclusion), Member = "IsEnabledAndSupported")]
+		[CalledBy(Type = typeof(AutoExposure), Member = "IsEnabledAndSupported")]
+		[CalledBy(Type = typeof(Monitor), Member = "IsRequestedAndSupported")]
+		[CallerCount(Count = 3)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -478,30 +475,30 @@ public static class RuntimeUtilities
 
 	public static bool isLinearColorSpace
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[Calls(Type = typeof(Texture), Member = "set_anisoLevel")]
 	[CalledBy(Type = typeof(TextureParameter), Member = "Interp")]
-	[CalledBy(Type = typeof(TextureParameter), Member = "Interp")]
-	[Calls(Type = typeof(Texture2D), Member = "Apply")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Texture2D), Member = "SetPixels")]
-	[Calls(Type = typeof(Texture), Member = "set_wrapMode")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Object), Member = "set_hideFlags")]
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(Object), Member = "set_hideFlags")]
 	[Calls(Type = typeof(Texture), Member = "set_filterMode")]
+	[Calls(Type = typeof(Texture), Member = "set_wrapMode")]
+	[Calls(Type = typeof(Texture), Member = "set_anisoLevel")]
+	[Calls(Type = typeof(Texture2D), Member = "SetPixels")]
+	[Calls(Type = typeof(Texture2D), Member = "Apply")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public static Texture2D GetLutStrip(int size)
 	{
 		return null;
@@ -511,13 +508,10 @@ public static class RuntimeUtilities
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	internal static bool isValidResources()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "SetupContext")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
 	internal static void UpdateResources(PostProcessResources resources)
@@ -532,135 +526,125 @@ public static class RuntimeUtilities
 	}
 
 	[CalledBy(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	public static void SetRenderTargetWithLoadStoreAction(this CommandBuffer cmd, RenderTargetIdentifier color, RenderBufferLoadAction colorLoadAction, RenderBufferStoreAction colorStoreAction, RenderTargetIdentifier depth, RenderBufferLoadAction depthLoadAction, RenderBufferStoreAction depthStoreAction)
 	{
 	}
 
+	[CalledBy(Type = typeof(UnsharpMaskRenderer), Member = "Render")]
+	[CalledBy(Type = typeof(RLProArtefactsRenderer), Member = "Render")]
 	[CalledBy(Type = typeof(Glitch2Renderer), Member = "Render")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(RuntimeUtilities), Member = "CopyTexture")]
-	[CalledBy(Type = typeof(WaveformMonitor), Member = "Render")]
-	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "CheckHistory")]
-	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "CheckHistory")]
-	[CalledBy(Type = typeof(ScreenSpaceReflectionsRenderer), Member = "Render")]
-	[CalledBy(Type = typeof(MotionBlurRenderer), Member = "Render")]
 	[CalledBy(Type = typeof(AutoExposureRenderer), Member = "Render")]
-	[CalledBy(Type = typeof(Glitch2Renderer), Member = "Render")]
-	[CalledBy(Type = typeof(RLProArtefactsRenderer), Member = "Render")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(UnsharpMaskRenderer), Member = "Render")]
-	[CalledBy(Type = typeof(UnsharpMaskRenderer), Member = "Render")]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "get_copyMaterial")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "get_fullscreenTriangle")]
-	[Calls(Type = typeof(CommandBuffer), Member = "ClearRenderTarget")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
+	[CalledBy(Type = typeof(MotionBlurRenderer), Member = "Render")]
+	[CalledBy(Type = typeof(ScreenSpaceReflectionsRenderer), Member = "Render")]
+	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "CheckHistory")]
+	[CalledBy(Type = typeof(WaveformMonitor), Member = "Render")]
+	[CalledBy(Type = typeof(RuntimeUtilities), Member = "CopyTexture")]
 	[CallerCount(Count = 13)]
-	[CalledBy(Type = typeof(RLProArtefactsRenderer), Member = "Render")]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
+	[Calls(Type = typeof(CommandBuffer), Member = "ClearRenderTarget")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "get_fullscreenTriangle")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "get_copyMaterial")]
+	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void BlitFullscreenTriangle(this CommandBuffer cmd, RenderTargetIdentifier source, RenderTargetIdentifier destination, bool clear = false, Rect? viewport = null)
 	{
 	}
 
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 90)]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
 	[Calls(Type = typeof(CommandBuffer), Member = "ClearRenderTarget")]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "get_fullscreenTriangle")]
+	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
-	[CallerCount(Count = 90)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void BlitFullscreenTriangle(this CommandBuffer cmd, RenderTargetIdentifier source, RenderTargetIdentifier destination, PropertySheet propertySheet, int pass, RenderBufferLoadAction loadAction, Rect? viewport = null)
 	{
 	}
 
+	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
 	public static void BlitFullscreenTriangle(this CommandBuffer cmd, RenderTargetIdentifier source, RenderTargetIdentifier destination, PropertySheet propertySheet, int pass, bool clear = false, Rect? viewport = null)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BuiltinBlit")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BuiltinBlit")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void BlitFullscreenTriangleFromDoubleWide(this CommandBuffer cmd, RenderTargetIdentifier source, RenderTargetIdentifier destination, Material material, int pass, int eye)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PropertySheet), Member = "EnableKeyword")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderBuiltins")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderFinalPass")]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderFinalPass")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PropertySheet), Member = "EnableKeyword")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void BlitFullscreenTriangleToDoubleWide(this CommandBuffer cmd, RenderTargetIdentifier source, RenderTargetIdentifier destination, PropertySheet propertySheet, int pass, int eye)
 	{
 	}
 
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
-	[Calls(Type = typeof(CommandBuffer), Member = "ClearRenderTarget")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(CommandBuffer), Member = "ClearRenderTarget")]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "get_fullscreenTriangle")]
+	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void BlitFullscreenTriangleFromTexArray(this CommandBuffer cmd, RenderTargetIdentifier source, RenderTargetIdentifier destination, PropertySheet propertySheet, int pass, bool clear = false, int depthSlice = -1)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderFinalPass")]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderFinalPass")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderBuiltins")]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "get_fullscreenTriangle")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderFinalPass")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
 	[Calls(Type = typeof(CommandBuffer), Member = "ClearRenderTarget")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "get_fullscreenTriangle")]
+	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void BlitFullscreenTriangleToTexArray(this CommandBuffer cmd, RenderTargetIdentifier source, RenderTargetIdentifier destination, PropertySheet propertySheet, int pass, bool clear = false, int depthSlice = -1)
 	{
 	}
 
-	[Calls(Type = typeof(CommandBuffer), Member = "ClearRenderTarget")]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "get_fullscreenTriangle")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "SetRenderTargetWithLoadStoreAction")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "SetRenderTargetWithLoadStoreAction")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "SetRenderTargetWithLoadStoreAction")]
+	[Calls(Type = typeof(CommandBuffer), Member = "ClearRenderTarget")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "get_fullscreenTriangle")]
+	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void BlitFullscreenTriangle(this CommandBuffer cmd, RenderTargetIdentifier source, RenderTargetIdentifier destination, RenderTargetIdentifier depth, PropertySheet propertySheet, int pass, bool clear = false, Rect? viewport = null)
 	{
 	}
 
-	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "Render")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(ScalableAO), Member = "CompositeAmbientOnly")]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "get_fullscreenTriangle")]
 	[CalledBy(Type = typeof(MultiScaleVO), Member = "CompositeAmbientOnly")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(ScalableAO), Member = "CompositeAmbientOnly")]
+	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "Render")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
 	[Calls(Type = typeof(CommandBuffer), Member = "ClearRenderTarget")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "get_fullscreenTriangle")]
+	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void BlitFullscreenTriangle(this CommandBuffer cmd, RenderTargetIdentifier source, RenderTargetIdentifier[] destinations, RenderTargetIdentifier depth, PropertySheet propertySheet, int pass, bool clear = false, Rect? viewport = null)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(CommandBuffer), Member = "Blit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public static void BuiltinBlit(this CommandBuffer cmd, RenderTargetIdentifier source, RenderTargetIdentifier destination)
 	{
@@ -668,41 +652,30 @@ public static class RuntimeUtilities
 
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
 	[CalledBy(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangleFromDoubleWide")]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(CommandBuffer), Member = "Blit")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(CommandBuffer), Member = "Blit")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void BuiltinBlit(this CommandBuffer cmd, RenderTargetIdentifier source, RenderTargetIdentifier destination, Material mat, int pass = 0)
 	{
 	}
 
 	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "get_fullscreenTriangle")]
-	[Calls(Type = typeof(CommandBuffer), Member = "ClearRenderTarget")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
+	[Calls(Type = typeof(CommandBuffer), Member = "ClearRenderTarget")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "get_fullscreenTriangle")]
+	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
 	public static void BlitFullscreenTriangle(this CommandBuffer cmd, RenderTargetIdentifier source, RenderTargetIdentifier destination, PropertySheet propertySheet, MaterialPropertyBlock properties, int pass, bool clear = false)
 	{
 	}
 
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void CopyTexture(CommandBuffer cmd, RenderTargetIdentifier source, RenderTargetIdentifier destination)
 	{
 	}
@@ -710,12 +683,12 @@ public static class RuntimeUtilities
 	[CallerCount(Count = 0)]
 	public static bool isFloatingPointFormat(RenderTextureFormat format)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[CallerCount(Count = 40)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
 	public static void Destroy(Object obj)
 	{
 	}
@@ -725,26 +698,24 @@ public static class RuntimeUtilities
 	[CallsUnknownMethods(Count = 3)]
 	public static bool IsResolvedDepthAvailable(Camera camera)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
 	[CalledBy(Type = typeof(RuntimeUtilities), Member = "DestroyVolume")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
 	[CallsUnknownMethods(Count = 3)]
 	public static void DestroyProfile(PostProcessProfile profile, bool destroyEffects)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PostProcessVolume), Member = "get_profileRef")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "DestroyProfile")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void DestroyVolume(PostProcessVolume volume, bool destroyProfile, bool destroyGameObject = false)
 	{
 	}
@@ -754,17 +725,17 @@ public static class RuntimeUtilities
 	[CallsUnknownMethods(Count = 2)]
 	public static bool IsPostProcessingActive(PostProcessLayer layer)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(TemporalAntialiasing), Member = "IsSupported")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool IsTemporalAntialiasingActive(PostProcessLayer layer)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[IteratorStateMachine(typeof(_003CGetAllSceneObjects_003Ed__82<>))]
@@ -778,6 +749,9 @@ public static class RuntimeUtilities
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(PostProcessDebugLayer), Member = "OnEnable")]
+	[CalledBy(Type = typeof(PostProcessLayer), Member = "Init")]
+	[CalledBy(Type = typeof(PostProcessLayer), Member = "InitBundles")]
 	[CallerCount(Count = 14)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static void CreateIfNull<T>(ref T obj) where T : class, new()
@@ -785,60 +759,59 @@ public static class RuntimeUtilities
 	}
 
 	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static float Exp2(float x)
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "GetJitteredProjectionMatrix")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(Camera), Member = "get_projectionMatrix")]
 	[Calls(Type = typeof(Matrix4x4), Member = "get_Item")]
 	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "get_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "GetJitteredProjectionMatrix")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 8)]
 	public static Matrix4x4 GetJitteredPerspectiveProjectionMatrix(Camera camera, Vector2 offset)
 	{
 		return default(Matrix4x4);
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "GetJitteredProjectionMatrix")]
-	[Calls(Type = typeof(Matrix4x4), Member = "Ortho")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Matrix4x4), Member = "Ortho")]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	public static Matrix4x4 GetJitteredOrthographicProjectionMatrix(Camera camera, Vector2 offset)
 	{
 		return default(Matrix4x4);
 	}
 
+	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "ConfigureStereoJitteredProjectionMatrices")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(TemporalAntialiasing), Member = "ConfigureStereoJitteredProjectionMatrices")]
 	[CallsUnknownMethods(Count = 3)]
 	public static Matrix4x4 GenerateJitteredProjectionMatrixFromOriginal(PostProcessRenderContext context, Matrix4x4 origProj, Vector2 jitter)
 	{
 		return default(Matrix4x4);
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(PostProcessManager), Member = "ReloadBaseTypes")]
-	[CallsUnknownMethods(Count = 13)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Enumerable), Member = "SelectMany")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 12)]
 	public static IEnumerable<Type> GetAllAssemblyTypes()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
+	[CallsUnknownMethods(Count = 5)]
 	public static T GetAttribute<T>(this Type type) where T : Attribute
 	{
 		return null;
@@ -846,22 +819,24 @@ public static class RuntimeUtilities
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Enumerable), Member = "Cast")]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
 	[Calls(Type = typeof(InvalidOperationException), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 14)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 12)]
 	public static Attribute[] GetMemberAttributes<TType, TValue>(Expression<Func<TType, TValue>> expr)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(InvalidOperationException), Member = ".ctor")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[DeduplicatedMethod]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(InvalidOperationException), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 17)]
 	public static string GetFieldPath<TType, TValue>(Expression<Func<TType, TValue>> expr)
 	{
 		return null;

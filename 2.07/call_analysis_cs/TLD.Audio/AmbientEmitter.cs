@@ -77,15 +77,15 @@ public class AmbientEmitter : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(AmbientEmitter), Member = "PassesWeatherFilter")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(AmbientEmitter), Member = "PassesTimeOfDayFilter")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(AmbientEmitter), Member = "PlayRandomClip")]
-	[Calls(Type = typeof(AmbientEmitter), Member = "PlayRandomLoop")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AmbientEmitter), Member = "PlayRandomLoop")]
+	[Calls(Type = typeof(AmbientEmitter), Member = "PlayRandomClip")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(AmbientEmitter), Member = "PassesTimeOfDayFilter")]
+	[Calls(Type = typeof(AmbientEmitter), Member = "PassesWeatherFilter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Update()
 	{
 	}
@@ -96,44 +96,44 @@ public class AmbientEmitter : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(AmbientEmitter), Member = "MaybePlayRandomLoop")]
 	[CalledBy(Type = typeof(AmbientEmitter), Member = "Update")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[CalledBy(Type = typeof(AmbientEmitter), Member = "MaybePlayRandomLoop")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(CameraFade), Member = "IsFadingOut")]
 	[Calls(Type = typeof(AmbientEmitter), Member = "PassesTimeOfDayFilter")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(AmbientEmitter), Member = "PassesWeatherFilter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 10)]
 	private void PlayRandomLoop()
 	{
 	}
 
-	[Calls(Type = typeof(System.Number), Member = "FormatUInt32")]
-	[CallsUnknownMethods(Count = 41)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
 	[CalledBy(Type = typeof(AmbientEmitter), Member = "Update")]
 	[CalledBy(Type = typeof(AmbientEmitter), Member = "MaybePlayRandomClip")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(CameraFade), Member = "IsFadingOut")]
+	[Calls(Type = typeof(AmbientEmitter), Member = "PassesTimeOfDayFilter")]
+	[Calls(Type = typeof(AmbientEmitter), Member = "PassesWeatherFilter")]
 	[Calls(Type = typeof(AmbientEmitter), Member = "PassesWindFilter")]
 	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[Calls(Type = typeof(AmbientEmitter), Member = "PassesWeatherFilter")]
-	[Calls(Type = typeof(AmbientEmitter), Member = "PassesTimeOfDayFilter")]
-	[Calls(Type = typeof(CameraFade), Member = "IsFadingOut")]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatUInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 41)]
 	private void PlayRandomClip()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(AmbientEmitter), Member = "PlayRandomClip")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AmbientEmitter), Member = "PlayRandomClip")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaybePlayRandomClip()
 	{
 	}
@@ -153,38 +153,37 @@ public class AmbientEmitter : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(AmbientEmitter), Member = "PlayRandomClip")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(AmbientEmitter), Member = "AdjustLoopForTimeOfDay")]
+	[CalledBy(Type = typeof(AmbientEmitter), Member = "Update")]
 	[CalledBy(Type = typeof(AmbientEmitter), Member = "PlayRandomLoop")]
+	[CalledBy(Type = typeof(AmbientEmitter), Member = "PlayRandomClip")]
+	[CalledBy(Type = typeof(AmbientEmitter), Member = "AdjustLoopForTimeOfDay")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(TimeOfDay), Member = "IsDay")]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsDay")]
-	[CalledBy(Type = typeof(AmbientEmitter), Member = "Update")]
+	[CallsUnknownMethods(Count = 3)]
 	private bool PassesTimeOfDayFilter(TimeOfDayFilterEnum tod)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(AmbientEmitter), Member = "Update")]
+	[CalledBy(Type = typeof(AmbientEmitter), Member = "PlayRandomLoop")]
+	[CalledBy(Type = typeof(AmbientEmitter), Member = "PlayRandomClip")]
+	[CalledBy(Type = typeof(AmbientEmitter), Member = "AdjustLoopForTimeOfDay")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CalledBy(Type = typeof(AmbientEmitter), Member = "Update")]
-	[CalledBy(Type = typeof(AmbientEmitter), Member = "PlayRandomLoop")]
-	[CalledBy(Type = typeof(AmbientEmitter), Member = "PlayRandomClip")]
-	[CalledBy(Type = typeof(AmbientEmitter), Member = "AdjustLoopForTimeOfDay")]
 	[CallsUnknownMethods(Count = 2)]
 	private bool PassesWeatherFilter(WeatherFilterEnum weather)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(AmbientEmitter), Member = "PlayRandomClip")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool PassesWindFilter(WindFilterEnum wind)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

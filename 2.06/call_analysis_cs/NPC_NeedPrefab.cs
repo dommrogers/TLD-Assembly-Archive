@@ -35,8 +35,8 @@ public class NPC_NeedPrefab : MonoBehaviour
 
 	public float m_HoursBetweenRepeat;
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(NPC_NeedTracker), Member = "AddNeed")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public NPC_NeedPrefabInfo GetPrefabInfo()
 	{

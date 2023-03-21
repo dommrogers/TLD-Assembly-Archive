@@ -5,8 +5,8 @@ namespace ParadoxNotion.Design;
 
 public class ExposeFieldAttribute : Attribute
 {
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public ExposeFieldAttribute()
 	{
 	}

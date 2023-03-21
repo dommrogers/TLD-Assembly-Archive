@@ -9,39 +9,39 @@ public class PresenceModificationDataRecordId : ISettable
 
 	public string Key
 	{
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 101)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PresenceModificationDataRecordIdInternal), Member = "get_Key")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	internal void Set(PresenceModificationDataRecordIdInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(PresenceModificationDataRecordIdInternal), Member = "get_Key")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PresenceModificationDataRecordId()
 	{
 	}

@@ -11,14 +11,14 @@ public class TweenOrthoSize : UITweener
 
 	public Camera cachedCamera
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(TweenOrthoSize), Member = "get_orthoSize")]
 		[CalledBy(Type = typeof(TweenOrthoSize), Member = "get_value")]
 		[CalledBy(Type = typeof(TweenOrthoSize), Member = "set_value")]
+		[CalledBy(Type = typeof(TweenOrthoSize), Member = "Begin")]
 		[CalledBy(Type = typeof(TweenOrthoSize), Member = "SetStartToCurrentValue")]
 		[CalledBy(Type = typeof(TweenOrthoSize), Member = "SetEndToCurrentValue")]
-		[CalledBy(Type = typeof(TweenOrthoSize), Member = "Begin")]
 		[CallerCount(Count = 6)]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
 		get
 		{
 			return null;
@@ -27,16 +27,16 @@ public class TweenOrthoSize : UITweener
 
 	public float orthoSize
 	{
-		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(TweenOrthoSize), Member = "get_cachedCamera")]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(TweenOrthoSize), Member = "get_cachedCamera")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[Calls(Type = typeof(TweenOrthoSize), Member = "set_value")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(TweenOrthoSize), Member = "set_value")]
 		set
 		{
 		}
@@ -44,19 +44,19 @@ public class TweenOrthoSize : UITweener
 
 	public float value
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(TweenOrthoSize), Member = "get_cachedCamera")]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(TweenOrthoSize), Member = "get_cachedCamera")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CalledBy(Type = typeof(TweenOrthoSize), Member = "OnUpdate")]
-		[CallsUnknownMethods(Count = 2)]
 		[CalledBy(Type = typeof(TweenOrthoSize), Member = "set_orthoSize")]
+		[CalledBy(Type = typeof(TweenOrthoSize), Member = "OnUpdate")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(TweenOrthoSize), Member = "get_cachedCamera")]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
@@ -69,9 +69,10 @@ public class TweenOrthoSize : UITweener
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(UITweener), Member = "Begin")]
 	[Calls(Type = typeof(TweenOrthoSize), Member = "get_cachedCamera")]
 	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public static TweenOrthoSize Begin(GameObject go, float duration, float to)
 	{
@@ -79,24 +80,24 @@ public class TweenOrthoSize : UITweener
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
 	[Calls(Type = typeof(TweenOrthoSize), Member = "get_cachedCamera")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void SetStartToCurrentValue()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TweenOrthoSize), Member = "get_cachedCamera")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void SetEndToCurrentValue()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UITweener), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public TweenOrthoSize()
 	{
 	}

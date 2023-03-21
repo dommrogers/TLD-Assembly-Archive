@@ -7,11 +7,11 @@ public class Panel_Knowledge : Panel_Base
 
 	public GameObject KnowledgeItemPrefab;
 
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}

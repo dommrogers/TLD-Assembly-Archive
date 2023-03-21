@@ -4,8 +4,8 @@ public class StringArray
 {
 	public string[] strings;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public StringArray()
 	{
 	}

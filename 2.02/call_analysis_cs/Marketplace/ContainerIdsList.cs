@@ -11,14 +11,15 @@ public class ContainerIdsList : WrappedCachedList<string>
 	[CallsUnknownMethods(Count = 1)]
 	public ContainerIdsList(IntPtr self)
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(WrappedCachedList<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public ContainerIdsList()
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
@@ -36,9 +37,9 @@ public class ContainerIdsList : WrappedCachedList<string>
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	protected override void SetupLength()
 	{
 	}

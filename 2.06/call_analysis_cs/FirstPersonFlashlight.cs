@@ -15,24 +15,14 @@ public class FirstPersonFlashlight : MonoBehaviour
 
 	private Light m_LightOutdoorsHigh;
 
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
-	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(FlashlightItem), Member = "IsLit")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(FlashlightItem), Member = "IsLit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}

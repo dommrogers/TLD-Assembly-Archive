@@ -12,30 +12,30 @@ public class UIControllerScheme : MonoBehaviour
 	public ControlScheme m_ControlScheme;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "Awake")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(UIControllerScheme), Member = "SetActiveChildren")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(UIControllerScheme), Member = "SetActiveChildren")]
 	public void Start()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	protected void OnEnable()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CalledBy(Type = typeof(UIControllerScheme), Member = "Start")]
 	[CalledBy(Type = typeof(UIControllerScheme), Member = "LateUpdate")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 7)]
 	private void SetActiveChildren(bool enabled)
 	{

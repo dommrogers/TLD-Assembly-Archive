@@ -33,31 +33,26 @@ public class EyeGlow : MonoBehaviour
 
 	private BaseAi m_BaseAi;
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Material), Member = "GetFloat")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Material), Member = "GetFloat")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(Material), Member = "SetFloat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Update()
 	{
 	}
@@ -67,7 +62,7 @@ public class EyeGlow : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	private bool TurnOffEyeGlow()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

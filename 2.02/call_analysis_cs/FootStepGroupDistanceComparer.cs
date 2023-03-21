@@ -6,16 +6,16 @@ public class FootStepGroupDistanceComparer : IComparer<FootstepGroup>
 {
 	public Vector3 m_Point;
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public int Compare(FootstepGroup x, FootstepGroup y)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public FootStepGroupDistanceComparer()
 	{
 	}

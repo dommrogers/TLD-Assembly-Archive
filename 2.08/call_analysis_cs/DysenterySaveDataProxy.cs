@@ -14,8 +14,8 @@ public class DysenterySaveDataProxy
 
 	public float m_CleanWaterConsumedLiters;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public DysenterySaveDataProxy()
 	{
 	}

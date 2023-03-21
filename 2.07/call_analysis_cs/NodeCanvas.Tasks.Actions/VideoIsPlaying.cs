@@ -9,7 +9,7 @@ public class VideoIsPlaying : ConditionTask
 	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

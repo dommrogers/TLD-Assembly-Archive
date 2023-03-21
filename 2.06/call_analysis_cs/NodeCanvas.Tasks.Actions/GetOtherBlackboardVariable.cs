@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using NodeCanvas.Framework.Internal;
@@ -14,7 +13,7 @@ public class GetOtherBlackboardVariable : ActionTask<Blackboard>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		get
 		{
@@ -22,11 +21,13 @@ public class GetOtherBlackboardVariable : ActionTask<Blackboard>
 		}
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(BlackboardSource), Member = "GetVariable")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(BlackboardSource), Member = "GetVariable")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

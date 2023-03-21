@@ -34,23 +34,25 @@ public class CheckTrigger2D : ConditionTask<Collider2D>
 	[CallerCount(Count = 0)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 4)]
 	public void OnTriggerEnter2D(Collider2D other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
-	[CallsUnknownMethods(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public void OnTriggerExit2D(Collider2D other)
 	{
 	}

@@ -5,9 +5,9 @@ namespace TLD.Gameplay;
 
 public class CustomBasedExperienceMode : CustomExperienceMode
 {
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public CustomBasedExperienceMode()
 	{
 	}

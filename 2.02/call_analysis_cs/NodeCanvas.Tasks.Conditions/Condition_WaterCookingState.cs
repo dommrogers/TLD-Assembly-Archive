@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using ParadoxNotion;
@@ -13,25 +12,23 @@ public class Condition_WaterCookingState : ConditionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnCustomEvent(EventData receivedEvent)
 	{
 	}
@@ -40,7 +37,7 @@ public class Condition_WaterCookingState : ConditionTask
 	[CallerCount(Count = 0)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

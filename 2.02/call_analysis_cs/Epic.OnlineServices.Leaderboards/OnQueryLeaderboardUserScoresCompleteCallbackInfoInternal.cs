@@ -25,9 +25,9 @@ internal struct OnQueryLeaderboardUserScoresCompleteCallbackInfoInternal : ICall
 	{
 		[CalledBy(Type = typeof(OnQueryLeaderboardUserScoresCompleteCallbackInfo), Member = "Set")]
 		[CalledBy(Type = typeof(OnQueryLeaderboardUserScoresCompleteCallbackInfo), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -40,7 +40,7 @@ internal struct OnQueryLeaderboardUserScoresCompleteCallbackInfoInternal : ICall
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 }

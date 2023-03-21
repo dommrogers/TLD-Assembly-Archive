@@ -13,11 +13,11 @@ internal struct HideFriendsOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(HideFriendsOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(HideFriendsOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(HideFriendsOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(HideFriendsOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,16 +29,16 @@ internal struct HideFriendsOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(HideFriendsOptionsInternal), Member = "set_LocalUserId")]
 	[CalledBy(Type = typeof(UIInterface), Member = "HideFriends")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(HideFriendsOptionsInternal), Member = "set_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

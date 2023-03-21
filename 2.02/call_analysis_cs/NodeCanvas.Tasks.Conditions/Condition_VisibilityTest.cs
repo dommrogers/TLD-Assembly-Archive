@@ -35,8 +35,9 @@ public class Condition_VisibilityTest : ConditionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 3)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
@@ -44,27 +45,27 @@ public class Condition_VisibilityTest : ConditionTask
 		}
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
 	[Calls(Type = typeof(Utils), Member = "SphereIntersectsCone")]
 	[Calls(Type = typeof(PhysicsScene), Member = "SphereCast")]
 	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[CallsDeduplicatedMethods(Count = 15)]
 	[CallsUnknownMethods(Count = 30)]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[Calls(Type = typeof(PhysicsScene), Member = "SphereCast")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[CallsDeduplicatedMethods(Count = 17)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(BBParameter<>), Member = ".ctor")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 16)]
 	public Condition_VisibilityTest()
 	{

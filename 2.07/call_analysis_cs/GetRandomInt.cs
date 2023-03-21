@@ -12,9 +12,9 @@ public class GetRandomInt : StateMachineBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public GetRandomInt()
 	{
 	}

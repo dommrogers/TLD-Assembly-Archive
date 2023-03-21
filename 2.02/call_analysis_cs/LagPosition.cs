@@ -21,23 +21,21 @@ public class LagPosition : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(LagPosition), Member = "Update")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Interpolate(float delta)
 	{
 	}
 
-	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
 	}
@@ -54,24 +52,24 @@ public class LagPosition : MonoBehaviour
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(LagPosition), Member = "OnEnable")]
+	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void ResetPosition()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LagPosition), Member = "Interpolate")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public LagPosition()
 	{
 	}

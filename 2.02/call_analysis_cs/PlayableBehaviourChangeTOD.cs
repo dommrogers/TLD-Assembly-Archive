@@ -20,30 +20,29 @@ public class PlayableBehaviourChangeTOD : PlayableBehaviour
 
 	private TimeOfDay m_TimeOfDay;
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
-	[Calls(Type = typeof(Utils), Member = "TryParseTOD")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Utils), Member = "TryParseTOD")]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public override void OnBehaviourPlay(Playable playable, FrameData info)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayableHandle), Member = "GetTime")]
 	[Calls(Type = typeof(PlayableHandle), Member = "GetDuration")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public override void ProcessFrame(Playable playable, FrameData info, object playerData)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PlayableBehaviourChangeTOD()
 	{
 	}

@@ -17,20 +17,20 @@ public class Action_AuroraFielEnable : ActionTask
 	{
 	}
 
-	[Calls(Type = typeof(AuroraField), Member = "SetFieldActive")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(Action_AuroraFielEnable), Member = "OnExecute")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(AuroraField), Member = "SetFieldActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void DoWork()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_AuroraFielEnable()
 	{
 	}

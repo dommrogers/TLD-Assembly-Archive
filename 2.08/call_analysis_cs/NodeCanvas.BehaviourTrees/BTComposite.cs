@@ -25,23 +25,23 @@ public abstract class BTComposite : BTNode
 		[CallerCount(Count = 16)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public sealed override Alignment2x2 commentsAlignment
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(Alignment2x2);
 		}
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
-	[DeduplicatedMethod]
 	protected BTComposite()
 	{
 	}

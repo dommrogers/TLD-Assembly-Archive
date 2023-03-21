@@ -27,21 +27,21 @@ public sealed class UIInterface : Handle
 	public const int ShowfriendsApiLatest = 1;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public UIInterface()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public UIInterface(IntPtr innerHandle)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(AcknowledgeEventIdOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result AcknowledgeEventId(AcknowledgeEventIdOptions options)
 	{
@@ -49,25 +49,25 @@ public sealed class UIInterface : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(AddNotifyDisplaySettingsUpdatedOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[Calls(Type = typeof(Helper), Member = "TryAssignNotificationIdToCallback")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public ulong AddNotifyDisplaySettingsUpdated(AddNotifyDisplaySettingsUpdatedOptions options, object clientData, OnDisplaySettingsUpdatedCallback notificationFn)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GetFriendsVisibleOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool GetFriendsVisible(GetFriendsVisibleOptions options)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -78,21 +78,21 @@ public sealed class UIInterface : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(GetToggleFriendsKeyOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public KeyCombination GetToggleFriendsKey(GetToggleFriendsKeyOptions options)
 	{
 		return default(KeyCombination);
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
-	[Calls(Type = typeof(HideFriendsOptionsInternal), Member = "Set")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(HideFriendsOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void HideFriends(HideFriendsOptions options, object clientData, OnHideFriendsCallback completionDelegate)
 	{
 	}
@@ -102,56 +102,54 @@ public sealed class UIInterface : Handle
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsValidKeyCombination(KeyCombination keyCombination)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryRemoveCallbackByNotificationId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void RemoveNotifyDisplaySettingsUpdated(ulong id)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SetDisplayPreferenceOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result SetDisplayPreference(SetDisplayPreferenceOptions options)
 	{
 		return default(Result);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(SetToggleFriendsKeyOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result SetToggleFriendsKey(SetToggleFriendsKeyOptions options)
 	{
 		return default(Result);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(ShowFriendsOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public void ShowFriends(ShowFriendsOptions options, object clientData, OnShowFriendsCallback completionDelegate)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static void OnDisplaySettingsUpdatedCallbackInternalImplementation(IntPtr data)
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -159,7 +157,6 @@ public sealed class UIInterface : Handle
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -173,19 +170,19 @@ public sealed class UIInterface : Handle
 	internal static extern Result EOS_UI_AcknowledgeEventId(IntPtr handle, IntPtr options);
 
 	[PreserveSig]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	internal static extern ulong EOS_UI_AddNotifyDisplaySettingsUpdated(IntPtr handle, IntPtr options, IntPtr clientData, OnDisplaySettingsUpdatedCallbackInternal notificationFn);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern int EOS_UI_GetFriendsVisible(IntPtr handle, IntPtr options);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern NotificationLocation EOS_UI_GetNotificationLocationPreference(IntPtr handle);
 
 	[PreserveSig]
@@ -220,8 +217,8 @@ public sealed class UIInterface : Handle
 	internal static extern Result EOS_UI_SetToggleFriendsKey(IntPtr handle, IntPtr options);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	internal static extern void EOS_UI_ShowFriends(IntPtr handle, IntPtr options, IntPtr clientData, OnShowFriendsCallbackInternal completionDelegate);
 }

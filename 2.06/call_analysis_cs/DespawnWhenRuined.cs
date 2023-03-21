@@ -12,7 +12,8 @@ public class DespawnWhenRuined : MonoBehaviour
 	private GearItem m_GearItem;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Start()
 	{
@@ -24,22 +25,18 @@ public class DespawnWhenRuined : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(DespawnWhenRuined), Member = "Update")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Inventory), Member = "GameObjectInInventory")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Inventory), Member = "GameObjectInInventory")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[CallsUnknownMethods(Count = 4)]
 	private void MaybeDespawnWhenRuined(bool ignorePosition)
 	{
 	}

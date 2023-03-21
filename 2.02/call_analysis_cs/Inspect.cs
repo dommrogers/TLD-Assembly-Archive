@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -9,7 +8,7 @@ public class Inspect : MonoBehaviour
 		public bool m_SkipInspectVO;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public InspectSaveData()
 		{
 		}
@@ -43,51 +42,35 @@ public class Inspect : MonoBehaviour
 
 	private bool m_DidSetUrgency;
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 40)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "MaybePlayInspectModeVoiceOver")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[Calls(Type = typeof(Inspect), Member = "SetUrgencyIfHigher")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "HasNonRuinedItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Inspect), Member = "SetUrgencyIfHigher")]
-	[Calls(Type = typeof(Inspect), Member = "SetUrgencyIfHigher")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Inspect), Member = "SetUrgencyIfHigher")]
-	[Calls(Type = typeof(Inspect), Member = "SetUrgencyIfHigher")]
-	[Calls(Type = typeof(Inspect), Member = "SetUrgencyIfHigher")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Inspect), Member = "SetUrgencyIfHigher")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Inspect), Member = "SetUrgencyIfHigher")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetTotalLiters")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "HasNonRuinedItem")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 40)]
 	public uint GetUrgency()
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Deserialize(string serialized)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(GearItem), Member = "Serialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public string Serialize()
 	{
@@ -95,15 +78,8 @@ public class Inspect : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(Inspect), Member = "GetUrgency")]
-	[CalledBy(Type = typeof(Inspect), Member = "GetUrgency")]
-	[CalledBy(Type = typeof(Inspect), Member = "GetUrgency")]
-	[CalledBy(Type = typeof(Inspect), Member = "GetUrgency")]
-	[CalledBy(Type = typeof(Inspect), Member = "GetUrgency")]
-	[CalledBy(Type = typeof(Inspect), Member = "GetUrgency")]
-	[CalledBy(Type = typeof(Inspect), Member = "GetUrgency")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(Inspect), Member = "GetUrgency")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void SetUrgencyIfHigher(uint newUrgency)
 	{
 	}

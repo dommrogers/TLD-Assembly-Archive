@@ -152,8 +152,8 @@ public class GAME_PARAMETERS
 
 	public static uint WOOZYFADE;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public GAME_PARAMETERS()
 	{
 	}

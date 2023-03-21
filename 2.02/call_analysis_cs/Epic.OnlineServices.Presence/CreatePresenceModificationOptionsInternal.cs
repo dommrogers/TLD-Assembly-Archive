@@ -13,11 +13,11 @@ internal struct CreatePresenceModificationOptionsInternal : ISettable, IDisposab
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(CreatePresenceModificationOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CreatePresenceModificationOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CreatePresenceModificationOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CreatePresenceModificationOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,16 +29,16 @@ internal struct CreatePresenceModificationOptionsInternal : ISettable, IDisposab
 	{
 	}
 
-	[Calls(Type = typeof(CreatePresenceModificationOptionsInternal), Member = "set_LocalUserId")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(PresenceInterface), Member = "CreatePresenceModification")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CreatePresenceModificationOptionsInternal), Member = "set_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

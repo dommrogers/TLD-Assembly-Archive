@@ -1,5 +1,6 @@
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Gear;
+using TLD.SaveState;
 using TLD.UI;
 using TLD.UI.Generics;
 using UnityEngine;
@@ -67,10 +68,10 @@ public class Panel_PickWater : Panel_AutoReferenced
 
 	public string m_ProgressBarMessage
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Localization), Member = "Get")]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Localization), Member = "Get")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -79,49 +80,48 @@ public class Panel_PickWater : Panel_AutoReferenced
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public override void Initialize()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(InputManager), Member = "PushContext")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(InputManager), Member = "PopContext")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[Calls(Type = typeof(InputManager), Member = "PopContext")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[Calls(Type = typeof(InputManager), Member = "PushContext")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public override void Enable(bool enable)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnCancel")]
+	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnExecute")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Container), Member = "Enable")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "Enable")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnCancel")]
-	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnExecute")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void ExitInterface()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
 	[Calls(Type = typeof(Panel_PickWater), Member = "ExitInterface")]
-	[CallerCount(Count = 0)]
 	public void OnCancel()
 	{
 	}
@@ -133,96 +133,86 @@ public class Panel_PickWater : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Panel_PickWater), Member = "InstantiateAndDropWaterBottle")]
 	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnExecuteAll")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_PickWater), Member = "ExitInterface")]
-	[Calls(Type = typeof(Panel_PickWater), Member = "InstantiateAndDropWaterBottle")]
-	[Calls(Type = typeof(Panel_PickWater), Member = "InstantiateAndDropWaterBottle")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_PickWater), Member = "TakeWater")]
-	[Calls(Type = typeof(Panel_PickWater), Member = "TransferWaterInventoryToContainer")]
-	[Calls(Type = typeof(Panel_PickWater), Member = "ExitInterface")]
-	[Calls(Type = typeof(GearItem), Member = "PlayPickUpClip")]
-	[Calls(Type = typeof(Panel_PickWater), Member = "TransferWaterContainerToInventory")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GearItemObjectExtensions), Member = "GetTotalWeightKG")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GearItemObjectExtensions), Member = "GetTotalWeightKG")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(Panel_PickWater), Member = "TransferWaterContainerToInventory")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "PlayPickUpClip")]
 	[Calls(Type = typeof(Panel_PickWater), Member = "ExitInterface")]
+	[Calls(Type = typeof(Panel_PickWater), Member = "TransferWaterInventoryToContainer")]
+	[Calls(Type = typeof(Panel_PickWater), Member = "TakeWater")]
+	[Calls(Type = typeof(Panel_PickWater), Member = "InstantiateAndDropWaterBottle")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnExecute()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_PickWater), Member = "Refresh")]
 	[Calls(Type = typeof(Panel_PickWater), Member = "OnExecute")]
-	[CallerCount(Count = 0)]
 	public void OnExecuteAll()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
-	[Calls(Type = typeof(Panel_PickWater), Member = "Refresh")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[Calls(Type = typeof(Panel_PickWater), Member = "Refresh")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	public void OnIncrease()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_PickWater), Member = "Refresh")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_PickWater), Member = "ReduceToNearestDeltaMultiple")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[Calls(Type = typeof(Panel_PickWater), Member = "Refresh")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	public void OnDecrease()
 	{
 	}
 
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnBoilDown")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnMeltSnowDown")]
 	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnDecrease")]
+	[CallerCount(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	public static float ReduceToNearestDeltaMultiple(float numLiters)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public static float GetDeltaLiters()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnDrop")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_PickWater), Member = "Refresh")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnDrop")]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetWaterSupplyForDrop(WaterSupply ws)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(WaterSource), Member = "PerformInteraction")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_PickWater), Member = "Refresh")]
-	[CalledBy(Type = typeof(WaterSource), Member = "PerformInteraction")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetWaterSourceForTaking(WaterSource source, WaterSupply ws)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_PickWater), Member = "Refresh")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetWaterSupplyForTransferFromInventoryToContainer(WaterSupply ws, Container c)
 	{
 	}
@@ -237,22 +227,9 @@ public class Panel_PickWater : Panel_AutoReferenced
 	[CallerCount(Count = 0)]
 	public bool IsTakingWater()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
 	[CalledBy(Type = typeof(Panel_Container), Member = "OnInventoryToContainer")]
 	[CalledBy(Type = typeof(Panel_Container), Member = "OnContainerToInventory")]
 	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnAll")]
@@ -262,63 +239,51 @@ public class Panel_PickWater : Panel_AutoReferenced
 	[CalledBy(Type = typeof(Panel_PickWater), Member = "SetWaterSupplyForDrop")]
 	[CalledBy(Type = typeof(Panel_PickWater), Member = "SetWaterSourceForTaking")]
 	[CalledBy(Type = typeof(Panel_PickWater), Member = "SetWaterSupplyForTransferFromInventoryToContainer")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 9)]
-	[CallsDeduplicatedMethods(Count = 14)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringNoOunces")]
 	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(GearItemObjectExtensions), Member = "GetTotalWeightKG")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Refresh()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_PickWater), Member = "DropWater")]
-	[CalledBy(Type = typeof(Panel_PickWater), Member = "DropWater")]
 	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Panel_PickWater), Member = "DropWater")]
-	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnExecute")]
-	[Calls(Type = typeof(GearItem), Member = "InstantiateWater")]
-	[Calls(Type = typeof(GearItem), Member = "Drop")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnExecute")]
+	[Calls(Type = typeof(GearItem), Member = "InstantiateWater")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "Drop")]
+	[CallsUnknownMethods(Count = 1)]
 	private void InstantiateAndDropWaterBottle(GameObject prefab, float volume, LiquidQuality quality)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Object), Member = "set_name")]
 	[CalledBy(Type = typeof(Panel_PickWater), Member = "TransferWaterInventoryToContainer")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private GearItem InstantiateWaterSupply(GameObject prefab)
 	{
 		return null;
@@ -326,23 +291,21 @@ public class Panel_PickWater : Panel_AutoReferenced
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_PickWater), Member = "InstantiateAndDropWaterBottle")]
-	[Calls(Type = typeof(Panel_PickWater), Member = "InstantiateAndDropWaterBottle")]
-	[Calls(Type = typeof(Panel_PickWater), Member = "InstantiateAndDropWaterBottle")]
 	[CallsUnknownMethods(Count = 2)]
 	private void DropWater()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnExecute")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_PickWater), Member = "OnTakeWaterComplete")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(OnExitDelegate), Member = ".ctor")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsUnknownMethods(Count = 6)]
 	private void TakeWater()
 	{
 	}
@@ -354,17 +317,19 @@ public class Panel_PickWater : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_PickWater), Member = "TransferAllWaterContainerToInventory")]
-	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Panel_Container), Member = "OnMoveAllToInventory")]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
-	[Calls(Type = typeof(Panel_Container), Member = "ShiftFocusToInventoryItem")]
-	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
-	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Panel_PickWater), Member = "TransferAllWaterContainerToInventory")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
+	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Container), Member = "RemoveGear")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Container), Member = "ShiftFocusToInventoryItem")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void TransferWaterContainerToInventory(Container container, WaterSupply waterSupplyContainer, float liters)
 	{
 	}
@@ -376,41 +341,43 @@ public class Panel_PickWater : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Container), Member = "ShiftFocusToContainerItem")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_PickWater), Member = "TransferAllWaterInventoryToContainer")]
-	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Panel_Container), Member = "OnMoveAllToContainer")]
-	[Calls(Type = typeof(Container), Member = "AddGear")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Panel_PickWater), Member = "InstantiateWaterSupply")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Container), Member = "GetWaterSupply")]
+	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Panel_PickWater), Member = "TransferAllWaterInventoryToContainer")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Container), Member = "GetWaterSupply")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Panel_PickWater), Member = "InstantiateWaterSupply")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(Container), Member = "AddGear")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_Container), Member = "ShiftFocusToContainerItem")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void TransferWaterInventoryToContainer(Container container, WaterSupply waterSupplyInventory, float liters)
 	{
 	}
 
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
-	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[CalledBy(Type = typeof(Panel_PickWater), Member = "TakeWater")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "PlayPickUpClip")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GearItem), Member = "PlayPickUpClip")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[CalledBy(Type = typeof(Panel_PickWater), Member = "TakeWater")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnTakeWaterComplete(bool success, bool playerCancel, float progress)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 6)]
 	public Panel_PickWater()
 	{
 	}

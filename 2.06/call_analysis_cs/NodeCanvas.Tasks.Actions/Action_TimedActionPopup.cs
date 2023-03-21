@@ -20,10 +20,11 @@ public class Action_TimedActionPopup : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(float), Member = "ToString")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(string), Member = "Format")]
-		[CallsUnknownMethods(Count = 22)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 21)]
 		get
 		{
 			return null;
@@ -31,7 +32,7 @@ public class Action_TimedActionPopup : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(TimedActionPopup), Member = "Setup")]
 	[CallsUnknownMethods(Count = 1)]
@@ -39,8 +40,8 @@ public class Action_TimedActionPopup : ActionTask
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_TimedActionPopup()
 	{
 	}

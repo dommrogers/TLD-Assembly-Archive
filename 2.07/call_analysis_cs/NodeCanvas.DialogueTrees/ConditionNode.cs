@@ -16,8 +16,8 @@ public class ConditionNode : DTNode, ITaskAssignable<ConditionTask>, ITaskAssign
 		{
 			return null;
 		}
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		set
 		{
 		}
@@ -25,8 +25,8 @@ public class ConditionNode : DTNode, ITaskAssignable<ConditionTask>, ITaskAssign
 
 	public Task task
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -44,7 +44,7 @@ public class ConditionNode : DTNode, ITaskAssignable<ConditionTask>, ITaskAssign
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -54,27 +54,25 @@ public class ConditionNode : DTNode, ITaskAssignable<ConditionTask>, ITaskAssign
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Node), Member = "Error")]
-	[Calls(Type = typeof(Node), Member = "Error")]
-	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
 	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
+	[Calls(Type = typeof(Node), Member = "Error")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DTNode), Member = ".ctor")]
 	public ConditionNode()
 	{

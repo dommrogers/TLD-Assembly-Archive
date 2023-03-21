@@ -22,7 +22,7 @@ public class Elevator : MonoBehaviour
 		public EntranceSide m_EntranceSide;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public FloorData()
 		{
 		}
@@ -189,148 +189,154 @@ public class Elevator : MonoBehaviour
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetDisplayName()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayText")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Elevator), Member = "CanInteract")]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayText")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public string GetHoverText()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Elevator), Member = "EnterPlayer")]
-	[Calls(Type = typeof(Elevator), Member = "UpdatePlacementZoneParent")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Elevator), Member = "CanInteract")]
 	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Elevator), Member = "CanInteract")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(Elevator), Member = "UpdatePlacementZoneParent")]
+	[Calls(Type = typeof(Elevator), Member = "EnterPlayer")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public bool ProcessInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private bool HasValidCrankItem()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 0)]
 	public bool IsMoving()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsWaitingForPlayerInput()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(TimelinePlayback), Member = "StopCurrentTimeline")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(TimelinePlayback), Member = "StopCurrentTimeline")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnDestroy()
 	{
 	}
 
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void ResetAll()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 15)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Elevator), Member = "Serialize")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Elevator), Member = "Serialize")]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 15)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CalledBy(Type = typeof(Elevator), Member = "SerializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(Elevator), Member = "SerializeAll")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private string Serialize()
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(Elevator), Member = "FindElevatorByGuid")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Elevator), Member = "Deserialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(Elevator), Member = "FindElevatorByGuid")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Elevator), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[CalledBy(Type = typeof(Elevator), Member = "DeserializeAll")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Elevator), Member = "DeserializeAll")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ObjectGuidManager), Member = "Lookup")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private static Elevator FindElevatorByGuid(string guid)
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void OnValidate()
 	{
 	}
@@ -342,101 +348,91 @@ public class Elevator : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void HandleLowStaminaAudio()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[CallsUnknownMethods(Count = 15)]
 	[CalledBy(Type = typeof(Elevator), Member = "CanInteract")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(Utils), Member = "RaycastNearest")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Utils), Member = "RaycastNearest")]
+	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 15)]
 	private GameObject GetInteractedDoor()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Elevator), Member = "ProcessInteraction")]
 	[CalledBy(Type = typeof(Elevator), Member = "GetHoverText")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Elevator), Member = "GetInteractedDoor")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Elevator), Member = "ProcessInteraction")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Elevator), Member = "GetInteractedDoor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private bool CanInteract()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 20)]
 	[CalledBy(Type = typeof(Elevator), Member = "UpdateWaitForPlayerMovement")]
-	[CalledBy(Type = typeof(Elevator), Member = "UpdateWaitForPlayerMovement")]
-	[Calls(Type = typeof(GenericInteractionPrompt), Member = "HideInteraction")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(Elevator), Member = "PlayTimeline")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(TimelinePlayback), Member = "StopCurrentTimeline")]
-	[Calls(Type = typeof(Mathf), Member = "Abs")]
-	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
 	[Calls(Type = typeof(Mathf), Member = "Abs")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "StopCurrentTimeline")]
+	[Calls(Type = typeof(Elevator), Member = "PlayTimeline")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(GenericInteractionPrompt), Member = "HideInteraction")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 20)]
 	private void Move(State direction)
 	{
 	}
 
-	[Calls(Type = typeof(Elevator), Member = "PlayTimeline")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Elevator), Member = "UpdateMoving")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Elevator), Member = "GetNumCranksFromMiddleFloor")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Elevator), Member = "GetNumCranksFromMiddleFloor")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "StopCurrentTimeline")]
-	[Calls(Type = typeof(Elevator), Member = "ApplyPositionFromAnimation")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Elevator), Member = "ApplyPositionFromAnimation")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "StopCurrentTimeline")]
+	[Calls(Type = typeof(Elevator), Member = "GetNumCranksFromMiddleFloor")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Elevator), Member = "PlayTimeline")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	private void StartCrashDownSequence()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Elevator), Member = "UpdateWaitForPlayerMovement")]
 	[Calls(Type = typeof(InputManager), Member = "GetHolsterPressed")]
 	[Calls(Type = typeof(Elevator), Member = "CommenceExitPlayer")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void UpdateIdleDockedAtFloor()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Elevator), Member = "OnMoved")]
 	[CalledBy(Type = typeof(Elevator), Member = "UpdateIdleDockedAtFloor")]
-	[Calls(Type = typeof(Elevator), Member = "Move")]
-	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
+	[CalledBy(Type = typeof(Elevator), Member = "OnMoved")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
 	[Calls(Type = typeof(InputManager), Member = "GetPlayerMovement")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
 	[Calls(Type = typeof(Elevator), Member = "Move")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool UpdateWaitForPlayerMovement()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -445,32 +441,28 @@ public class Elevator : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
 	private EntranceSide GetEntranceUsedForCurrentFloor()
 	{
 		return default(EntranceSide);
 	}
 
-	[CalledBy(Type = typeof(Elevator), Member = "UpdateButtonPrompts")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Elevator), Member = "UpdateButtonPrompts")]
-	[CalledBy(Type = typeof(Elevator), Member = "UpdateButtonPrompts")]
-	[CalledBy(Type = typeof(Elevator), Member = "UpdateButtonPrompts")]
-	[CalledBy(Type = typeof(Elevator), Member = "CommenceExitPlayer")]
-	[CalledBy(Type = typeof(Elevator), Member = "EnterPlayer")]
-	[CalledBy(Type = typeof(Elevator), Member = "CanGoUp")]
-	[CalledBy(Type = typeof(Elevator), Member = "GetEntranceUsedForCurrentFloor")]
-	[CalledBy(Type = typeof(Elevator), Member = "CanGoDown")]
-	[CalledBy(Type = typeof(Elevator), Member = "UpdateWaitForPlayerMovement")]
-	[CalledBy(Type = typeof(Elevator), Member = "UpdateWaitForPlayerMovement")]
-	[CalledBy(Type = typeof(Elevator), Member = "Move")]
 	[CalledBy(Type = typeof(Elevator), Member = "CanInteract")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Mathf), Member = "Abs")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 14)]
+	[CalledBy(Type = typeof(Elevator), Member = "Move")]
+	[CalledBy(Type = typeof(Elevator), Member = "UpdateWaitForPlayerMovement")]
 	[CalledBy(Type = typeof(Elevator), Member = "GetRevsRequiredToNextFloor")]
+	[CalledBy(Type = typeof(Elevator), Member = "GetEntranceUsedForCurrentFloor")]
+	[CalledBy(Type = typeof(Elevator), Member = "CanGoUp")]
+	[CalledBy(Type = typeof(Elevator), Member = "CanGoDown")]
+	[CalledBy(Type = typeof(Elevator), Member = "EnterPlayer")]
+	[CalledBy(Type = typeof(Elevator), Member = "CommenceExitPlayer")]
+	[CalledBy(Type = typeof(Elevator), Member = "UpdateButtonPrompts")]
+	[CallerCount(Count = 14)]
+	[Calls(Type = typeof(Mathf), Member = "Abs")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private FloorData GetFloorIndex(int index)
 	{
 		return null;
@@ -480,144 +472,132 @@ public class Elevator : MonoBehaviour
 	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
 	private bool CanGoUp()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
 	private bool CanGoDown()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "GetCurrentTimelineNormalizedProgress")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Elevator), Member = "StartCrashDownSequence")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(PlayerMovement), Member = "AddSprintStamina")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "SetTimelineSpeed")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(PlayableDirector), Member = "get_duration")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(PlayerMovement), Member = "AddSprintStamina")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "GetCurrentTimelineNormalizedProgress")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(Type = typeof(Elevator), Member = "StartCrashDownSequence")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 9)]
 	private void UpdateMoving()
 	{
 	}
 
-	[Calls(Type = typeof(TimelinePlayback), Member = "GetCurrentTimelineNormalizedProgress")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "GetCurrentTimelineNormalizedProgress")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ShouldRollForDrop(float stamina)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Elevator), Member = "StartCrashDownSequence")]
+	[CalledBy(Type = typeof(Elevator), Member = "GetNumCranksFromBottomFloor")]
 	[CallerCount(Count = 4)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(Elevator), Member = "StartCrashDownSequence")]
-	[CalledBy(Type = typeof(Elevator), Member = "StartCrashDownSequence")]
-	[CalledBy(Type = typeof(Elevator), Member = "GetNumCranksFromBottomFloor")]
-	[CalledBy(Type = typeof(Elevator), Member = "GetNumCranksFromBottomFloor")]
 	[CallsUnknownMethods(Count = 2)]
 	private int GetNumCranksFromMiddleFloor()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Elevator), Member = "GetNumCranksFromMiddleFloor")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Elevator), Member = "GetNumCranksFromMiddleFloor")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private int GetNumCranksFromBottomFloor()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private Vector3 GetDistanceForNumberOfCranks(int numCranks)
 	{
 		return default(Vector3);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(Elevator), Member = "PlayTimeline")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Condition), Member = "AddHealth")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(Utils), Member = "DistanceSqr")]
-	[Calls(Type = typeof(Mathf), Member = "Approximately")]
 	[Calls(Type = typeof(Vector3), Member = "Lerp")]
-	[Calls(Type = typeof(Utils), Member = "DistanceSqr")]
-	[CallsDeduplicatedMethods(Count = 13)]
+	[Calls(Type = typeof(Mathf), Member = "Approximately")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(Condition), Member = "AddHealth")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Elevator), Member = "PlayTimeline")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 19)]
 	private void UpdateCrashingDown()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "DistanceSqr")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private float GetFallDamageToIssue()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(Elevator), Member = "LoadElevatorTimelines")]
-	[Calls(Type = typeof(Elevator), Member = "PlayTimeline")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
 	[CalledBy(Type = typeof(Elevator), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeHandleItemInHands")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeHandleItemInHands")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
+	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
+	[Calls(Type = typeof(Elevator), Member = "PlayTimeline")]
+	[Calls(Type = typeof(Elevator), Member = "LoadElevatorTimelines")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	private void EnterPlayer()
 	{
 	}
 
+	[CalledBy(Type = typeof(Elevator), Member = "UpdateIdleDockedAtFloor")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(TimelinePlayback), Member = "StopCurrentTimeline")]
 	[Calls(Type = typeof(GenericInteractionPrompt), Member = "HideInteraction")]
 	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
 	[Calls(Type = typeof(Elevator), Member = "PlayTimeline")]
-	[CalledBy(Type = typeof(Elevator), Member = "UpdateIdleDockedAtFloor")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(TimelinePlayback), Member = "StopCurrentTimeline")]
 	private void CommenceExitPlayer()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeProcessPickingUpPlacedItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void ExitPlayer()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[CallerCount(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(TimelinePlayback), Member = "PlayTimelineOnSelf")]
 	[CalledBy(Type = typeof(Elevator), Member = "Move")]
 	[CalledBy(Type = typeof(Elevator), Member = "StartCrashDownSequence")]
 	[CalledBy(Type = typeof(Elevator), Member = "UpdateCrashingDown")]
@@ -625,14 +605,17 @@ public class Elevator : MonoBehaviour
 	[CalledBy(Type = typeof(Elevator), Member = "CommenceExitPlayer")]
 	[CalledBy(Type = typeof(Elevator), Member = "OnEnterAnimationComplete")]
 	[CalledBy(Type = typeof(Elevator), Member = "OnMoved")]
-	[CalledBy(Type = typeof(Elevator), Member = "OnMoved")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(TimelinePlayback), Member = "PlayTimelineOnSelf")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	private void PlayTimeline(TimelinePlayback.TimelineInfo timeline, Action onTimelineComplete, Action onTimelineInterrupted = null)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(TimelinePlayback), Member = "LoadTimelineOnSelf")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TimelinePlayback), Member = "LoadTimelineOnSelf")]
+	[CallsUnknownMethods(Count = 1)]
 	private void LoadTimeline(TimelinePlayback.TimelineInfo timeline)
 	{
 	}
@@ -644,69 +627,66 @@ public class Elevator : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(Elevator), Member = "UpdateButtonPrompts")]
 	[Calls(Type = typeof(Elevator), Member = "PlayTimeline")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnEnterAnimationComplete()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeProcessPickingUpPlacedItem")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(Elevator), Member = "UnloadElevatorTimelines")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeProcessPickingUpPlacedItem")]
+	[Calls(Type = typeof(Elevator), Member = "UnloadElevatorTimelines")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnExitAnimationComplete()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Elevator), Member = "ApplyPositionFromAnimation")]
 	[Calls(Type = typeof(Elevator), Member = "UpdatePlacementZoneParent")]
 	[Calls(Type = typeof(Elevator), Member = "UpdateWaitForPlayerMovement")]
 	[Calls(Type = typeof(Elevator), Member = "PlayTimeline")]
-	[Calls(Type = typeof(Elevator), Member = "PlayTimeline")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(Elevator), Member = "UpdateButtonPrompts")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnMoved()
 	{
 	}
 
-	[CalledBy(Type = typeof(Elevator), Member = "OnMoved")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Elevator), Member = "StartCrashDownSequence")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Elevator), Member = "OnMoved")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Elevator), Member = "GetRealPosition")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void ApplyPositionFromAnimation()
 	{
 	}
 
+	[CalledBy(Type = typeof(Elevator), Member = "ProcessInteraction")]
 	[CalledBy(Type = typeof(Elevator), Member = "OnMoved")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Transform), Member = "SetParent")]
-	[CalledBy(Type = typeof(Elevator), Member = "ProcessInteraction")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	private void UpdatePlacementZoneParent()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Elevator), Member = "ApplyPositionFromAnimation")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private Vector3 GetRealPosition()
 	{
 		return default(Vector3);
@@ -715,82 +695,44 @@ public class Elevator : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private bool IsCurrentlyAtAFloor()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(GenericInteractionPrompt), Member = "ShowInteraction")]
 	[CalledBy(Type = typeof(Elevator), Member = "OnEnterAnimationComplete")]
 	[CalledBy(Type = typeof(Elevator), Member = "OnMoved")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
-	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
-	[Calls(Type = typeof(GenericInteractionPrompt), Member = "ShowInteraction")]
-	[Calls(Type = typeof(GenericInteractionPrompt), Member = "ShowInteraction")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GenericInteractionPrompt), Member = "PrepareInteraction")]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[Calls(Type = typeof(GenericInteractionPrompt), Member = "ShowInteraction")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[Calls(Type = typeof(Elevator), Member = "GetFloorIndex")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	private void UpdateButtonPrompts(bool isGamepadActive)
 	{
 	}
 
 	[CalledBy(Type = typeof(Elevator), Member = "EnterPlayer")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "LoadTimelineOnSelf")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "LoadTimelineOnSelf")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "LoadTimelineOnSelf")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "LoadTimelineOnSelf")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(TimelinePlayback), Member = "LoadTimelineOnSelf")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "LoadTimelineOnSelf")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "LoadTimelineOnSelf")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(TimelinePlayback), Member = "LoadTimelineOnSelf")]
+	[CallsUnknownMethods(Count = 1)]
 	private void LoadElevatorTimelines()
 	{
 	}
 
 	[CalledBy(Type = typeof(Elevator), Member = "OnExitAnimationComplete")]
-	[Calls(Type = typeof(TimelineRef), Member = "Unload")]
-	[Calls(Type = typeof(TimelineRef), Member = "Unload")]
-	[Calls(Type = typeof(TimelineRef), Member = "Unload")]
-	[Calls(Type = typeof(TimelineRef), Member = "Unload")]
-	[Calls(Type = typeof(TimelineRef), Member = "Unload")]
-	[Calls(Type = typeof(TimelineRef), Member = "Unload")]
-	[Calls(Type = typeof(TimelineRef), Member = "Unload")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(TimelineRef), Member = "Unload")]
 	private void UnloadElevatorTimelines()
 	{
 	}
 
-	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
-	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
-	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
-	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 127)]
-	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
-	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
-	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
-	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
-	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
-	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
-	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
 	public Elevator()
 	{
 	}

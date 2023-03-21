@@ -19,11 +19,11 @@ internal struct QueryEntitlementsOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(QueryEntitlementsOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(QueryEntitlementsOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(QueryEntitlementsOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(QueryEntitlementsOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -31,10 +31,11 @@ internal struct QueryEntitlementsOptionsInternal : ISettable, IDisposable
 
 	public string[] EntitlementNames
 	{
+		[CalledBy(Type = typeof(QueryEntitlementsOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(QueryEntitlementsOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(QueryEntitlementsOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(QueryEntitlementsOptionsInternal), Member = "Set")]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -43,9 +44,9 @@ internal struct QueryEntitlementsOptionsInternal : ISettable, IDisposable
 	public bool IncludeRedeemed
 	{
 		[CalledBy(Type = typeof(QueryEntitlementsOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(QueryEntitlementsOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -60,19 +61,19 @@ internal struct QueryEntitlementsOptionsInternal : ISettable, IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(EcomInterface), Member = "QueryEntitlements")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(QueryEntitlementsOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(QueryEntitlementsOptionsInternal), Member = "set_EntitlementNames")]
 	[Calls(Type = typeof(QueryEntitlementsOptionsInternal), Member = "set_IncludeRedeemed")]
-	[CalledBy(Type = typeof(EcomInterface), Member = "QueryEntitlements")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

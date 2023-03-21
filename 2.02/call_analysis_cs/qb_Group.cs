@@ -10,8 +10,8 @@ public class qb_Group : MonoBehaviour
 	private bool frozen;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void AddObject(GameObject newObject)
 	{
@@ -38,16 +38,16 @@ public class qb_Group : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "DestroyImmediate")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "DestroyImmediate")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void CleanUp()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public qb_Group()
 	{

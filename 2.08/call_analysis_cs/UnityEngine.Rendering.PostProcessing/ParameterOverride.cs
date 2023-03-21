@@ -7,12 +7,8 @@ public abstract class ParameterOverride
 {
 	public bool overrideState;
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101262)]
 	internal abstract void Interp(ParameterOverride from, ParameterOverride to, float t);
 
-	[CallerCount(Count = 101262)]
-	[DeduplicatedMethod]
 	public abstract int GetHash();
 
 	[DeduplicatedMethod]
@@ -20,7 +16,7 @@ public abstract class ParameterOverride
 	[CallsUnknownMethods(Count = 5)]
 	public T GetValue<T>()
 	{
-		return (T)null;
+		return default(T);
 	}
 
 	[DeduplicatedMethod]
@@ -35,8 +31,6 @@ public abstract class ParameterOverride
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101262)]
 	internal abstract void SetValue(ParameterOverride parameter);
 
 	[DeduplicatedMethod]
@@ -50,16 +44,16 @@ public class ParameterOverride<T> : ParameterOverride
 {
 	public T value;
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[DeduplicatedMethod]
 	public ParameterOverride()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public ParameterOverride(T value)
 	{
 	}
@@ -78,42 +72,46 @@ public class ParameterOverride<T> : ParameterOverride
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public virtual void Interp(T from, T to, float t)
 	{
 	}
 
+	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(CameraEffects), Member = "UpdateEffectParameters")]
+	[CalledBy(Type = typeof(CameraEffects), Member = "ConfigureSSAO")]
+	[CalledBy(Type = typeof(ColorGradingSettings), Member = "ApplySettings")]
+	[CalledBy(Type = typeof(ColorGrading), Member = "UpdateLutForTimeOfDay")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[DeduplicatedMethod]
-	[CallerCount(Count = 0)]
 	public void Override(T x)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public virtual bool Equals(T valueA, T valueB)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[DeduplicatedMethod]
 	[CallsUnknownMethods(Count = 1)]
 	internal override void SetValue(ParameterOverride parameter)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public override int GetHash()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
@@ -121,6 +119,6 @@ public class ParameterOverride<T> : ParameterOverride
 	[CallsUnknownMethods(Count = 1)]
 	public static implicit operator T(ParameterOverride<T> prop)
 	{
-		return (T)null;
+		return default(T);
 	}
 }

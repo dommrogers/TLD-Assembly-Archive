@@ -17,55 +17,56 @@ public class InteractiveClothManager : MonoBehaviour
 
 	private Vector3 m_lastRandomAcceleration;
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(InteractiveClothManager), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(Cloth), Member = "get_enabled")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Cloth), Member = "set_enabled")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(InteractiveClothManager), Member = "Initialize")]
-	[Calls(Type = typeof(SceneManager), Member = "IsLoading")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SceneManager), Member = "IsLoading")]
+	[Calls(Type = typeof(InteractiveClothManager), Member = "Initialize")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Cloth), Member = "get_enabled")]
+	[Calls(Type = typeof(Cloth), Member = "set_enabled")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Wind), Member = "SetWindAccelerationForAllInteractiveCloth")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void SetAcceleration(Vector3 externalAcceleration, Vector3 randomAcceleration)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Cloth), Member = "set_enabled")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void EnableAll(bool enable)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	public InteractiveClothManager()
 	{
 	}

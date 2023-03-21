@@ -25,7 +25,7 @@ public class WindSaveDataProxy
 	public string m_TargetSettingsSerialized;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public WindSaveDataProxy()
 	{
 	}

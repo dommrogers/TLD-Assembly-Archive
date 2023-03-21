@@ -15,22 +15,22 @@ public class CraftingRequirementLocation : MonoBehaviour
 
 		private Color m_IconTint;
 
+		[CalledBy(Type = typeof(CraftingRequirementLocation), Member = "Enable")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(CraftingRequirementLocation), Member = "Enable")]
 		[CallsUnknownMethods(Count = 3)]
 		public void Enable(Panel_Crafting panel, bool enable, bool requirementsMet)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		public void Setup()
 		{
 		}
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public Data()
 		{
 		}
@@ -42,30 +42,30 @@ public class CraftingRequirementLocation : MonoBehaviour
 
 	private Color m_DisplayTint;
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 5)]
 	public void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Disable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "Enable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(Data), Member = "Enable")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Data), Member = "Enable")]
+	[CallsUnknownMethods(Count = 4)]
 	public void Enable(Panel_Crafting ownerPanel, BlueprintData bp)
 	{
 	}

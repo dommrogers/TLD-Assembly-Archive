@@ -25,18 +25,16 @@ public class UITexture : UIBasicSprite
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(Material), Member = "get_mainTexture")]
 		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 		[Calls(Type = typeof(UIDrawCall), Member = "set_mainTexture")]
 		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -45,16 +43,16 @@ public class UITexture : UIBasicSprite
 
 	public override Material material
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -62,23 +60,21 @@ public class UITexture : UIBasicSprite
 
 	public override Shader shader
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(Shader), Member = "Find")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 		[Calls(Type = typeof(UIDrawCall), Member = "set_shader")]
 		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -86,17 +82,17 @@ public class UITexture : UIBasicSprite
 
 	public override bool premultipliedAlpha
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(string), Member = "IndexOf")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[Calls(Type = typeof(Material), Member = "get_shader")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(Material), Member = "get_shader")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "IndexOf")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -130,11 +126,11 @@ public class UITexture : UIBasicSprite
 
 	public override Vector4 drawingDimensions
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return default(Vector4);
@@ -143,11 +139,11 @@ public class UITexture : UIBasicSprite
 
 	public bool fixedAspect
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -156,35 +152,34 @@ public class UITexture : UIBasicSprite
 		}
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIWidget), Member = "MakePixelPerfect")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UIBasicSprite), Member = "get_hasBorder")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UIWidget), Member = "set_width")]
 	[Calls(Type = typeof(UIWidget), Member = "set_height")]
-	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void MakePixelPerfect()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UIWidget), Member = "set_drawRegion")]
-	[Calls(Type = typeof(UIWidget), Member = "set_drawRegion")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UIWidget), Member = "OnUpdate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UIWidget), Member = "set_drawRegion")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UIBasicSprite), Member = "Fill")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UIBasicSprite), Member = "Fill")]
 	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnFill(BetterList<Vector3> verts, BetterList<Vector2> uvs, BetterList<Color32> cols)
 	{
 	}

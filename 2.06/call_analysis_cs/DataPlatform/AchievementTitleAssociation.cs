@@ -14,8 +14,8 @@ public class AchievementTitleAssociation : IWrappedObject, IDisposable
 	public string Name
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -29,12 +29,12 @@ public class AchievementTitleAssociation : IWrappedObject, IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public AchievementTitleAssociation(IntPtr self)
 	{
 	}
@@ -51,10 +51,10 @@ public class AchievementTitleAssociation : IWrappedObject, IDisposable
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 98)]
+	[CallerCount(Count = 113)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -64,9 +64,9 @@ public class AchievementTitleAssociation : IWrappedObject, IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

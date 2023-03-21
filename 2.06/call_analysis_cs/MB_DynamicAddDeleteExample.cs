@@ -20,7 +20,7 @@ public class MB_DynamicAddDeleteExample : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -29,35 +29,35 @@ public class MB_DynamicAddDeleteExample : MonoBehaviour
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		public _003ClargeNumber_003Ed__6(int _003C_003E1__state)
 		{
 		}
 
-		[CallerCount(Count = 6)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 11)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 11)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -77,26 +77,26 @@ public class MB_DynamicAddDeleteExample : MonoBehaviour
 
 	private GameObject[] objs;
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(MB_DynamicAddDeleteExample), Member = "Start")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private float GaussianValue()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[CallsUnknownMethods(Count = 13)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(MB_DynamicAddDeleteExample), Member = "GaussianValue")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[CallsDeduplicatedMethods(Count = 12)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 13)]
 	private void Start()
 	{
 	}
@@ -109,16 +109,16 @@ public class MB_DynamicAddDeleteExample : MonoBehaviour
 		return null;
 	}
 
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GUILayout), Member = "Label")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnGUI()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 0)]
 	public MB_DynamicAddDeleteExample()
 	{
 	}

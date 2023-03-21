@@ -15,7 +15,7 @@ public class ReputationServicePlugin
 	public static extern bool ReputationService_SubmitReputationFeedbackAsync(int requestingUserId, string xboxUserId, ReputationFeedbackType reputationFeedbackType, string sessionName, string reasonMessage, string evidenceResourceId, GenericActionCallback callback, IntPtr userData);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ReputationServicePlugin()
 	{
 	}

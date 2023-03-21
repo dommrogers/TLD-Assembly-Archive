@@ -5,7 +5,7 @@ using Cpp2ILInjected.CallAnalysis;
 
 public static class EnumExtensions
 {
-	public struct EnumFlagIterator<T> : IDisposable, IEnumerator<T>, IEnumerable<T>, IEnumerable, IEnumerator where T : Enum
+	public struct EnumFlagIterator<T> : IEnumerator<T>, IEnumerator, IDisposable, IEnumerable<T>, IEnumerable where T : Enum
 	{
 		private T m_EnumFlag;
 
@@ -31,23 +31,25 @@ public static class EnumExtensions
 			[CallsUnknownMethods(Count = 2)]
 			get
 			{
-				return (T)null;
+				return default(T);
 			}
 		}
 
-		[CallsDeduplicatedMethods(Count = 1)]
 		[DeduplicatedMethod]
+		[CalledBy(Type = typeof(GearItem), Member = "IsAnyGearType")]
+		[CalledBy(Type = typeof(EnumExtensions), Member = "GetFlags")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 		[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 14)]
 		public EnumFlagIterator(T enumFlag)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 2)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 2)]
 		public IEnumerator<T> GetEnumerator()
 		{
 			return null;
@@ -61,8 +63,8 @@ public static class EnumExtensions
 			return null;
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public void Dispose()
 		{
 		}
@@ -73,7 +75,7 @@ public static class EnumExtensions
 		[CallsUnknownMethods(Count = 6)]
 		public bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
@@ -83,26 +85,20 @@ public static class EnumExtensions
 		}
 	}
 
-	[CallerCount(Count = 101262)]
-	[CallAnalysisNotSupported]
-	[DeduplicatedMethod]
 	public static bool HasFlag<T>(this T var, T flags) where T : struct, IConvertible
 	{
-		return default(bool);
+		return false;
 	}
 
-	[DeduplicatedMethod]
-	[CallAnalysisNotSupported]
-	[CallerCount(Count = 101262)]
 	public static bool HasAnyFlag<T>(this T var, T flags) where T : struct, IConvertible
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EnumFlagIterator<>), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 1)]
 	public static IEnumerable<T> GetFlags<T>(this T enumFlag) where T : Enum
 	{
 		return null;

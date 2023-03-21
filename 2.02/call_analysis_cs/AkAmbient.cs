@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using AK.Wwise;
@@ -20,99 +19,105 @@ public class AkAmbient : AkEvent
 
 	public AkAmbient ParentAkAmbience
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 1)]
+		[CallerCount(Count = 3)]
 		set
 		{
 		}
 	}
 
+	[CalledBy(Type = typeof(AmbientTracker), Member = "Start")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 21)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponents")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(AkMultiPosEvent), Member = ".ctor")]
 	[Calls(Type = typeof(AkAmbient), Member = "BuildMultiDirectionArray")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "SetMultiplePositions")]
 	[Calls(Type = typeof(AkAmbient), Member = "BuildAkPositionArray")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(AmbientTracker), Member = "Start")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 16)]
 	[CallsUnknownMethods(Count = 52)]
 	public void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(AmbientTracker), Member = "Cleanup")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[Calls(Type = typeof(AkAmbient), Member = "BuildMultiDirectionArray")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "SetMultiplePositions")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 14)]
 	public void OnDisable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 19)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(AK.Wwise.Event), Member = "Post")]
 	[Calls(Type = typeof(AK.Wwise.Event), Member = "ExecuteAction")]
 	[Calls(Type = typeof(AkEvent), Member = "HandleEvent")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 19)]
 	public override void HandleEvent(GameObject in_gameObject)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public void OnDrawGizmosSelected()
 	{
 	}
 
-	[CalledBy(Type = typeof(AkAmbient), Member = "OnDisable")]
 	[CalledBy(Type = typeof(AkAmbient), Member = "OnEnable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(AkPositionArray), Member = "Add")]
-	[Calls(Type = typeof(Transform), Member = "get_up")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AkPositionArray), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(AkAmbient), Member = "OnDisable")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AkPositionArray), Member = ".ctor")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Transform), Member = "get_up")]
+	[Calls(Type = typeof(AkPositionArray), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 14)]
 	public AkPositionArray BuildMultiDirectionArray(AkMultiPosEvent eventPosList)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 16)]
 	[CalledBy(Type = typeof(AkAmbient), Member = "OnEnable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(AkPositionArray), Member = "Add")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(AkPositionArray), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AkPositionArray), Member = ".ctor")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Transform), Member = "get_up")]
+	[Calls(Type = typeof(AkPositionArray), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 16)]
 	private AkPositionArray BuildAkPositionArray()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkEvent), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	public AkAmbient()
 	{
 	}

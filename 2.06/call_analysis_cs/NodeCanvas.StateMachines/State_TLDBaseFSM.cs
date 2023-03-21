@@ -29,7 +29,7 @@ public class State_TLDBaseFSM : NestedFSMState, ITaskAssignable, ITLDConcurrentG
 	public Task task
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return null;
@@ -43,8 +43,8 @@ public class State_TLDBaseFSM : NestedFSMState, ITaskAssignable, ITLDConcurrentG
 
 	public ActionList actionList
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return null;
@@ -59,13 +59,15 @@ public class State_TLDBaseFSM : NestedFSMState, ITaskAssignable, ITLDConcurrentG
 	public GameObject childGraphPrefab
 	{
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -77,7 +79,7 @@ public class State_TLDBaseFSM : NestedFSMState, ITaskAssignable, ITLDConcurrentG
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -85,15 +87,15 @@ public class State_TLDBaseFSM : NestedFSMState, ITaskAssignable, ITLDConcurrentG
 		}
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "AddCustomManagedObject")]
-	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnEnter")]
 	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnInit")]
+	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnEnter")]
 	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "RegisterConcurrentGraph")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "AddCustomManagedObject")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Task), Member = "Create")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 12)]
 	private void Initialize()
 	{
 	}
@@ -104,61 +106,60 @@ public class State_TLDBaseFSM : NestedFSMState, ITaskAssignable, ITLDConcurrentG
 	{
 	}
 
-	[Calls(Type = typeof(Graph), Member = "add_onFinish")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(MissionManagerBase), Member = "PreRegisterChildGraph")]
-	[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
-	[Calls(Type = typeof(FSMHierarchy), Member = "SetFSMForRank")]
 	[CalledBy(Type = typeof(State_GameplaySubFSM), Member = "OnEnter")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[CalledBy(Type = typeof(State_SandboxSubFSM), Member = "OnEnter")]
 	[CalledBy(Type = typeof(State_StorySubFSM), Member = "OnEnter")]
-	[Calls(Type = typeof(NCUtils), Member = "SetInitialStateByTag")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(State_TLDBaseFSM), Member = "RegisterAsSubFSMOwner")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(FSMHierarchy), Member = "SetFSMForRank")]
-	[Calls(Type = typeof(NestedFSMState), Member = "OnEnter")]
-	[Calls(Type = typeof(NCUtils), Member = "SetInitialStateByTag")]
-	[Calls(Type = typeof(State_TLDBaseFSM), Member = "RegisterAsSubFSMOwner")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(NCUtils), Member = "GetMissionManagerForFSM")]
-	[Calls(Type = typeof(State_TLDBaseFSM), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(State_TLDBaseFSM), Member = "Initialize")]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(NCUtils), Member = "GetMissionManagerForFSM")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(State_TLDBaseFSM), Member = "RegisterAsSubFSMOwner")]
+	[Calls(Type = typeof(NCUtils), Member = "SetInitialStateByTag")]
+	[Calls(Type = typeof(NestedFSMState), Member = "OnEnter")]
+	[Calls(Type = typeof(FSMHierarchy), Member = "SetFSMForRank")]
+	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
 	[Calls(Type = typeof(NCUtils), Member = "SpawnChildGraph")]
-	[CallsUnknownMethods(Count = 24)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Graph), Member = "add_onFinish")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Variable<>), Member = "set_value")]
+	[Calls(Type = typeof(MissionManagerBase), Member = "PreRegisterChildGraph")]
+	[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 17)]
 	protected override void OnEnter()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	public GraphOwner GetChildGraphOwner()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
 	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
 	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ActionTask), Member = "PauseAction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Graph), Member = "Pause")]
+	[Calls(Type = typeof(ActionTask), Member = "PauseAction")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnPause()
 	{
 	}
@@ -170,87 +171,81 @@ public class State_TLDBaseFSM : NestedFSMState, ITaskAssignable, ITLDConcurrentG
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(NCUtils), Member = "GetMissionManagerForFSM")]
-	[Calls(Type = typeof(State_TLDBaseFSM), Member = "RemoveSubFSMOwnerVar")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "LookupConcurrentGraph")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[Calls(Type = typeof(State_TLDBaseFSM), Member = "RemoveSubFSMOwnerVar")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveCustomManagedObject")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveConcurrentGraph")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Graph), Member = "Stop")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Graph), Member = "Stop")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "LookupConcurrentGraph")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveConcurrentGraph")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveCustomManagedObject")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(NCUtils), Member = "GetMissionManagerForFSM")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(State_TLDBaseFSM), Member = "RemoveSubFSMOwnerVar")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	protected override void OnExit()
 	{
 	}
 
 	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnEnter")]
-	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnEnter")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Variable<>), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 14)]
 	private void RegisterAsSubFSMOwner(Graph _graph)
 	{
 	}
 
 	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnExit")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnExit")]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void RemoveSubFSMOwnerVar(Graph _graph)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "RegisterConcurrentGraph")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(State_TLDBaseFSM), Member = "Initialize")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "RegisterConcurrentGraph")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void RegisterConcurrentGraph(string id, GraphOwner graphOwner)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "LookupConcurrentGraph")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveConcurrentGraph")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	public void RemoveConcurrentGraph(string id)
 	{
 	}
 
-	[Calls(Type = typeof(MissionServicesManager), Member = "AddCustomManagedObject")]
-	[Calls(Type = typeof(State_TLDBaseFSM), Member = "Initialize")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(State_TLDBaseFSM), Member = "Initialize")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "AddCustomManagedObject")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void AddCustomManagedObject(string name, bool reqState)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveCustomManagedObject")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	public void RemoveCustomManagedObject(string name)
 	{

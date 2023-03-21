@@ -18,19 +18,19 @@ public class GenericSliderSpawner : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 7)]
 	public void AssignValuesToSpawnedObject()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public GenericSliderSpawner()
 	{
 	}

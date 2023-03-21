@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -5,16 +6,18 @@ public class StealthZoneTrigger : MonoBehaviour
 {
 	public bool m_RequirePlayerCrouch;
 
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	private void OnTriggerEnter(Collider c)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	private void OnTriggerExit(Collider c)
 	{
 	}

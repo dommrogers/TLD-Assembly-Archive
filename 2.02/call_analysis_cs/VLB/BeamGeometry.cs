@@ -23,7 +23,7 @@ public class BeamGeometry : MonoBehaviour, MaterialModifier.Interface
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -34,45 +34,44 @@ public class BeamGeometry : MonoBehaviour, MaterialModifier.Interface
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CCoUpdateFadeOut_003Ed__31(int _003C_003E1__state)
 		{
 		}
 
-		[CallerCount(Count = 2)]
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Config), Member = "get_Instance")]
 		[Calls(Type = typeof(Config), Member = "get_fadeOutCameraTransform")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(BeamGeometry), Member = "ComputeFadeOutFactor")]
 		[Calls(Type = typeof(BeamGeometry), Member = "SetFadeOutFactorProp")]
-		[Calls(Type = typeof(BeamGeometry), Member = "SetFadeOutFactorProp")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 3)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 3)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -109,9 +108,9 @@ public class BeamGeometry : MonoBehaviour, MaterialModifier.Interface
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		private set
 		{
 		}
@@ -119,9 +118,9 @@ public class BeamGeometry : MonoBehaviour, MaterialModifier.Interface
 
 	public MeshFilter meshFilter
 	{
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -145,7 +144,7 @@ public class BeamGeometry : MonoBehaviour, MaterialModifier.Interface
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 8)]
 		private set
 		{
 		}
@@ -157,13 +156,13 @@ public class BeamGeometry : MonoBehaviour, MaterialModifier.Interface
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "GenerateGeometry")]
-		[CallsUnknownMethods(Count = 2)]
+		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "OnEnable")]
 		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "OnDisable")]
 		[CallerCount(Count = 3)]
-		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "OnEnable")]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
@@ -175,12 +174,12 @@ public class BeamGeometry : MonoBehaviour, MaterialModifier.Interface
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallerCount(Count = 3)]
 		[CalledBy(Type = typeof(BeamGeometry), Member = "Initialize")]
 		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "set_sortingLayerID")]
 		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "set_sortingLayerName")]
+		[CallerCount(Count = 3)]
 		[CallsUnknownMethods(Count = 2)]
 		set
 		{
@@ -193,12 +192,12 @@ public class BeamGeometry : MonoBehaviour, MaterialModifier.Interface
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "set_sortingOrder")]
 		[CalledBy(Type = typeof(BeamGeometry), Member = "Initialize")]
+		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "set_sortingOrder")]
 		[CallerCount(Count = 2)]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
@@ -209,7 +208,7 @@ public class BeamGeometry : MonoBehaviour, MaterialModifier.Interface
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -219,37 +218,37 @@ public class BeamGeometry : MonoBehaviour, MaterialModifier.Interface
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	private bool shouldUseGPUInstancedMaterial
 	{
+		[CalledBy(Type = typeof(BeamGeometry), Member = "Initialize")]
+		[CalledBy(Type = typeof(BeamGeometry), Member = "ApplyMaterial")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(VolumetricLightBeam), Member = "get__INTERNAL_DynamicOcclusionMode")]
 		[Calls(Type = typeof(Config), Member = "get_Instance")]
 		[Calls(Type = typeof(Config), Member = "get_actualRenderingMode")]
-		[CalledBy(Type = typeof(BeamGeometry), Member = "Initialize")]
-		[CalledBy(Type = typeof(BeamGeometry), Member = "ApplyMaterial")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	private bool isNoiseEnabled
 	{
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Noise3D), Member = "get_isSupported")]
 		[CalledBy(Type = typeof(BeamGeometry), Member = "ApplyMaterial")]
 		[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Noise3D), Member = "get_isSupported")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -260,341 +259,298 @@ public class BeamGeometry : MonoBehaviour, MaterialModifier.Interface
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Mathf), Member = "InverseLerp")]
 	[CalledBy(Type = typeof(_003CCoUpdateFadeOut_003Ed__31), Member = "MoveNext")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Mathf), Member = "InverseLerp")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 6)]
 	private float ComputeFadeOutFactor(Transform camTransform)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
+	[CalledBy(Type = typeof(BeamGeometry), Member = "RestartFadeOutCoroutine")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "RestartFadeOutCoroutine")]
 	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator CoUpdateFadeOut()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void ComputeFadeOutFactor()
 	{
 	}
 
+	[CalledBy(Type = typeof(_003CCoUpdateFadeOut_003Ed__31), Member = "MoveNext")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(BeamGeometry), Member = "MaterialChangeStart")]
 	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
 	[Calls(Type = typeof(BeamGeometry), Member = "MaterialChangeStop")]
-	[CalledBy(Type = typeof(_003CCoUpdateFadeOut_003Ed__31), Member = "MoveNext")]
-	[CalledBy(Type = typeof(_003CCoUpdateFadeOut_003Ed__31), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void SetFadeOutFactorProp(float value)
 	{
 	}
 
 	[CalledBy(Type = typeof(BeamGeometry), Member = "OnEnable")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "OnFadeOutStateChanged")]
-	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "SetFadeOutValue")]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "Initialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StopCoroutine")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "SetFadeOutValue")]
+	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "OnFadeOutStateChanged")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StopCoroutine")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(BeamGeometry), Member = "CoUpdateFadeOut")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void RestartFadeOutCoroutine()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(RenderPipelineManager), Member = "remove_beginCameraRendering")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SRPHelper), Member = "IsUsingCustomRenderPipeline")]
+	[Calls(Type = typeof(RenderPipelineManager), Member = "remove_beginCameraRendering")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private void OnDisable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(SRPHelper), Member = "RegisterOnBeginCameraRendering")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BeamGeometry), Member = "RestartFadeOutCoroutine")]
+	[Calls(Type = typeof(SRPHelper), Member = "RegisterOnBeginCameraRendering")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void OnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(BeamGeometry), Member = "set_sortingLayerID")]
-	[CallsUnknownMethods(Count = 29)]
 	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "GenerateGeometry")]
-	[Calls(Type = typeof(BeamGeometry), Member = "RestartFadeOutCoroutine")]
-	[Calls(Type = typeof(BeamGeometry), Member = "set_sortingOrder")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(Utils), Member = "GetPath")]
-	[Calls(Type = typeof(BeamGeometry), Member = "ApplyMaterial")]
-	[Calls(Type = typeof(MaterialManager), Member = "NewMaterialTransient")]
-	[Calls(Type = typeof(BeamGeometry), Member = "get_shouldUseGPUInstancedMaterial")]
-	[Calls(Type = typeof(Consts), Member = "get_ProceduralObjectsHideFlags")]
-	[CallsDeduplicatedMethods(Count = 18)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Consts), Member = "get_ProceduralObjectsHideFlags")]
+	[Calls(Type = typeof(Utils), Member = "GetOrAddComponent")]
+	[Calls(Type = typeof(BeamGeometry), Member = "get_shouldUseGPUInstancedMaterial")]
+	[Calls(Type = typeof(MaterialManager), Member = "NewMaterialTransient")]
+	[Calls(Type = typeof(BeamGeometry), Member = "ApplyMaterial")]
+	[Calls(Type = typeof(Utils), Member = "GetPath")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(BeamGeometry), Member = "set_sortingLayerID")]
+	[Calls(Type = typeof(BeamGeometry), Member = "set_sortingOrder")]
+	[Calls(Type = typeof(BeamGeometry), Member = "RestartFadeOutCoroutine")]
+	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 29)]
 	public void Initialize(VolumetricLightBeam master)
 	{
 	}
 
+	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "GenerateGeometry")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Config), Member = "get_Instance")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
+	[Calls(Type = typeof(GlobalMesh), Member = "Get")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(Config), Member = "get_actualRenderingMode")]
+	[Calls(Type = typeof(MeshGenerator), Member = "GenerateConeZ_Radius")]
 	[Calls(Type = typeof(Consts), Member = "get_ProceduralObjectsHideFlags")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_hideFlags")]
 	[Calls(Type = typeof(MeshFilter), Member = "set_mesh")]
-	[Calls(Type = typeof(MeshGenerator), Member = "GenerateConeZ_Radius")]
-	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "GenerateGeometry")]
-	[CallsUnknownMethods(Count = 23)]
 	[Calls(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[Calls(Type = typeof(Config), Member = "get_actualRenderingMode")]
-	[Calls(Type = typeof(Config), Member = "get_Instance")]
-	[Calls(Type = typeof(GlobalMesh), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Config), Member = "get_Instance")]
-	[Calls(Type = typeof(Config), Member = "get_Instance")]
-	[Calls(Type = typeof(Config), Member = "get_Instance")]
 	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsUnknownMethods(Count = 23)]
 	public void RegenerateMesh()
 	{
 	}
 
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_beamInternalLocalRotation")]
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_maxGeometryDistance")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_coneRadiusEnd")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_coneRadiusEnd")]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_maxGeometryDistance")]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_beamInternalLocalRotation")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 12)]
 	private Vector3 ComputeLocalMatrix()
 	{
 		return default(Vector3);
 	}
 
+	[CalledBy(Type = typeof(BeamGeometry), Member = "Initialize")]
+	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "GetFloatPackingPrecision")]
+	[Calls(Type = typeof(BeamGeometry), Member = "get_isNoiseEnabled")]
+	[Calls(Type = typeof(BatchingHelper), Member = "get_forceEnableDepthBlend")]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "get__INTERNAL_DynamicOcclusionMode")]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_hasMeshSkewing")]
+	[Calls(Type = typeof(BeamGeometry), Member = "get_shouldUseGPUInstancedMaterial")]
+	[Calls(Type = typeof(MaterialManager), Member = "GetInstancedMaterial")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(MaterialManager.StaticProperties), Member = "ApplyToMaterial")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "Initialize")]
-	[Calls(Type = typeof(MaterialManager), Member = "GetInstancedMaterial")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_hasMeshSkewing")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "get__INTERNAL_DynamicOcclusionMode")]
-	[Calls(Type = typeof(BatchingHelper), Member = "get_forceEnableDepthBlend")]
-	[Calls(Type = typeof(BeamGeometry), Member = "get_isNoiseEnabled")]
-	[Calls(Type = typeof(Utils), Member = "GetFloatPackingPrecision")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(BeamGeometry), Member = "get_shouldUseGPUInstancedMaterial")]
+	[CallsUnknownMethods(Count = 12)]
 	private bool ApplyMaterial()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "SetFadeOutFactorProp")]
+	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
+	[CallerCount(Count = 11)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 11)]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetMaterialProp(int nameID, float value)
 	{
 	}
 
 	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateCameraRelatedProperties")]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
 	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void SetMaterialProp(int nameID, Vector4 value)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void SetMaterialProp(int nameID, Color value)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMatricesPropertiesForGPUInstancingSRP")]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMatricesPropertiesForGPUInstancingSRP")]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateCameraRelatedProperties")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public void SetMaterialProp(int nameID, Matrix4x4 value)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetMaterialProp(int nameID, Texture value)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "SetFadeOutFactorProp")]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateCameraRelatedProperties")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaterialChangeStart()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateCameraRelatedProperties")]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "SetFadeOutFactorProp")]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateCameraRelatedProperties")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaterialChangeStop()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SetKeywordEnabled")]
-	[Calls(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
+	[Calls(Type = typeof(Utils), Member = "SetKeywordEnabled")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void SetDynamicOcclusionCallback(string shaderKeyword, MaterialModifier.Callback cb)
 	{
 	}
 
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_hasMeshSkewing")]
-	[Calls(Type = typeof(BeamGeometry), Member = "ComputeLocalMatrix")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
-	[Calls(Type = typeof(Config), Member = "get_Instance")]
-	[Calls(Type = typeof(Config), Member = "get_Instance")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_additionalClippingPlane")]
-	[Calls(Type = typeof(BeamGeometry), Member = "get_isNoiseEnabled")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
-	[Calls(Type = typeof(BatchingHelper), Member = "get_forceEnableDepthBlend")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
-	[CallsUnknownMethods(Count = 38)]
-	[Calls(Type = typeof(Noise3D), Member = "LoadIfNeeded")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "RegenerateMesh")]
-	[Calls(Type = typeof(MeshGenerator), Member = "ComputeBounds")]
-	[Calls(Type = typeof(Bounds), Member = "get_min")]
-	[Calls(Type = typeof(Bounds), Member = "get_max")]
-	[Calls(Type = typeof(Bounds), Member = "get_max")]
-	[Calls(Type = typeof(Bounds), Member = "SetMinMax")]
-	[Calls(Type = typeof(Bounds), Member = "get_min")]
-	[Calls(Type = typeof(Bounds), Member = "SetMinMax")]
-	[Calls(Type = typeof(BeamGeometry), Member = "UpdateMatricesPropertiesForGPUInstancingSRP")]
-	[Calls(Type = typeof(BeamGeometry), Member = "MaterialChangeStop")]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "SetDynamicOcclusionCallback")]
 	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "_INTERNAL_SetDynamicOcclusionCallback")]
 	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "UpdateAfterManualPropertyChange")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_skewingLocalForwardDirectionNormalized")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(BeamGeometry), Member = "ApplyMaterial")]
 	[Calls(Type = typeof(BeamGeometry), Member = "MaterialChangeStart")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_coneAngle")]
 	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
 	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_coneRadiusEnd")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
 	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_coneApexOffsetZ")]
 	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
 	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_usedColorMode")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_coneApexOffsetZ")]
-	[Calls(Type = typeof(Gradient), Member = "Evaluate")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
 	[Calls(Type = typeof(Utils), Member = "GetFloatPackingPrecision")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_maxGeometryDistance")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
-	[Calls(Type = typeof(Mathf), Member = "Approximately")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
+	[Calls(Type = typeof(Gradient), Member = "Evaluate")]
 	[Calls(Type = typeof(Utils), Member = "PackToFloat")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
+	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Mathf), Member = "Approximately")]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_maxGeometryDistance")]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_additionalClippingPlane")]
+	[Calls(Type = typeof(BatchingHelper), Member = "get_forceEnableDepthBlend")]
+	[Calls(Type = typeof(BeamGeometry), Member = "get_isNoiseEnabled")]
+	[Calls(Type = typeof(Noise3D), Member = "LoadIfNeeded")]
+	[Calls(Type = typeof(Config), Member = "get_Instance")]
+	[Calls(Type = typeof(BeamGeometry), Member = "ComputeLocalMatrix")]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_hasMeshSkewing")]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_skewingLocalForwardDirectionNormalized")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(MeshGenerator), Member = "ComputeBounds")]
+	[Calls(Type = typeof(Bounds), Member = "get_min")]
+	[Calls(Type = typeof(Bounds), Member = "get_max")]
+	[Calls(Type = typeof(Bounds), Member = "SetMinMax")]
+	[Calls(Type = typeof(BeamGeometry), Member = "UpdateMatricesPropertiesForGPUInstancingSRP")]
+	[Calls(Type = typeof(BeamGeometry), Member = "MaterialChangeStop")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 38)]
 	public void UpdateMaterialAndBounds()
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_worldToLocalMatrix")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateCameraRelatedProperties")]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
-	[Calls(Type = typeof(SRPHelper), Member = "IsUsingCustomRenderPipeline")]
-	[Calls(Type = typeof(Config), Member = "get_actualRenderingMode")]
-	[Calls(Type = typeof(Config), Member = "get_Instance")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateCameraRelatedProperties")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SRPHelper), Member = "IsUsingCustomRenderPipeline")]
+	[Calls(Type = typeof(Config), Member = "get_Instance")]
+	[Calls(Type = typeof(Config), Member = "get_actualRenderingMode")]
 	[Calls(Type = typeof(Transform), Member = "get_localToWorldMatrix")]
+	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
+	[Calls(Type = typeof(Transform), Member = "get_worldToLocalMatrix")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateMatricesPropertiesForGPUInstancingSRP()
 	{
 	}
@@ -605,51 +561,48 @@ public class BeamGeometry : MonoBehaviour, MaterialModifier.Interface
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(BeamGeometry), Member = "UpdateCameraRelatedProperties")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnWillRenderObject()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(BeamGeometry), Member = "UpdateCameraRelatedProperties")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BeamGeometry), Member = "UpdateCameraRelatedProperties")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnWillCameraRenderThisBeam(Camera cam)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 17)]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "OnWillCameraRenderThisBeam")]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "OnWillRenderObject")]
-	[Calls(Type = typeof(Camera), Member = "set_depthTextureMode")]
-	[Calls(Type = typeof(Camera), Member = "get_depthTextureMode")]
-	[Calls(Type = typeof(BeamGeometry), Member = "MaterialChangeStop")]
-	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_usedColorMode")]
-	[Calls(Type = typeof(BeamGeometry), Member = "UpdateMatricesPropertiesForGPUInstancingSRP")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "GetInsideBeamFactorFromObjectSpacePos")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(BeamGeometry), Member = "MaterialChangeStart")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[CalledBy(Type = typeof(BeamGeometry), Member = "OnWillCameraRenderThisBeam")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BeamGeometry), Member = "MaterialChangeStart")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "GetInsideBeamFactorFromObjectSpacePos")]
 	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
+	[Calls(Type = typeof(BeamGeometry), Member = "UpdateMatricesPropertiesForGPUInstancingSRP")]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_usedColorMode")]
+	[Calls(Type = typeof(BeamGeometry), Member = "SetMaterialProp")]
+	[Calls(Type = typeof(BeamGeometry), Member = "MaterialChangeStop")]
+	[Calls(Type = typeof(Camera), Member = "get_depthTextureMode")]
+	[Calls(Type = typeof(Camera), Member = "set_depthTextureMode")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 17)]
 	private void UpdateCameraRelatedProperties(Camera cam)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public BeamGeometry()
 	{

@@ -6,8 +6,8 @@ public class SteamPipeSaveDataProxy
 
 	public bool m_IsFrozen;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public SteamPipeSaveDataProxy()
 	{
 	}

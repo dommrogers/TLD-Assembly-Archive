@@ -18,10 +18,10 @@ public class TLD_FPAnimationTrack : TLD_SpawnedAnimationTrack, TLD_IFPAnchoredTr
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "HasFPAnchor")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TLD_TimelineDirector), Member = "HasFPAnchor")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void PlayInternal()
 	{
 	}
@@ -32,33 +32,30 @@ public class TLD_FPAnimationTrack : TLD_SpawnedAnimationTrack, TLD_IFPAnchoredTr
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetCameraTrack")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "GetNextEndTime")]
 	[Calls(Type = typeof(TLD_FPAnimationTrack), Member = "UpdateRotationExit")]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetCameraTrack")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaybeUpdateTransitionOut()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(TLD_FPAnimationTrack), Member = "MaybeUpdateTransitionOut")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[CalledBy(Type = typeof(TLD_FPAnimationTrack), Member = "MaybeUpdateTransitionOut")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateRotationExit(float progress)
 	{
 	}
 
-	[Calls(Type = typeof(AnimationTrack), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AnimationTrack), Member = ".ctor")]
 	public TLD_FPAnimationTrack()
 	{
 	}

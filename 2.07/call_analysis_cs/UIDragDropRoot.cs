@@ -12,9 +12,9 @@ public class UIDragDropRoot : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnDisable()
 	{
 	}

@@ -10,19 +10,19 @@ public class CustomExample2 : MonoBehaviour
 	{
 		public int value;
 
-		[Calls(Type = typeof(StringBuilder), Member = "Append")]
-		[Calls(Type = typeof(System.Number), Member = "FormatUInt32")]
-		[CallsUnknownMethods(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+		[Calls(TypeFullName = "System.Number", Member = "FormatUInt32")]
+		[Calls(Type = typeof(StringBuilder), Member = "Append")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 3)]
 		public static void Serialize(StringBuilder sb, object obj)
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(FastJson.JsonParser), Member = "ReadUInt32")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		public static object Deserialize(Type type, FastJson.JsonParser parser)
 		{
@@ -30,28 +30,26 @@ public class CustomExample2 : MonoBehaviour
 		}
 	}
 
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 16)]
 	private void Awake()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(FastJson), Member = "Serialize")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(FastJson), Member = "Serialize")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(FastJson), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public CustomExample2()
 	{
 	}

@@ -12,8 +12,8 @@ public class LoadScene : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Format")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Format")]
 		get
 		{
 			return null;
@@ -21,9 +21,10 @@ public class LoadScene : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(SceneManager), Member = "LoadScene")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

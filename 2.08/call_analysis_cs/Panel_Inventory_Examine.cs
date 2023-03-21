@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.AddressableAssets;
+using TLD.SaveState;
 using TLD.UI;
 using TLD.UI.Generics;
 using UnityEngine;
@@ -377,11 +378,13 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 
 	private ComingFromScreenCategory m_CameFromScreenCategory;
 
-	[CallsDeduplicatedMethods(Count = 18)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 11)]
 	[CallsUnknownMethods(Count = 59)]
 	public override void Initialize()
 	{
@@ -393,24 +396,26 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "OnActionsButton")]
 	[CalledBy(Type = typeof(Panel_Clothing), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "OnActionsButton")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnExamine")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_PickWater), Member = "ExitInterface")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(Panel_PickWater), Member = "ExitInterface")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "ExitInspectGearMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
 	[Calls(Type = typeof(GameManager), Member = "MaybeForceGC")]
 	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "ExitInspectGearMode")]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TrySetEnabled")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 11)]
 	public void Enable(bool enable, ComingFromScreenCategory cameFrom)
 	{
 	}
@@ -418,148 +423,137 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	[CallerCount(Count = 0)]
 	public bool IsHarvesting()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsRepairing()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsCleaning()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsSharpening()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsReading()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "CheckSelectedButton")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateMainWindowNavigation")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateReadPanelNavigation")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectActionTool")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnToolIncrease")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateRepairLabels")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnToolDecrease")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateRepairLabels")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateMainAndToolHybrid")]
-	[CallsUnknownMethods(Count = 4)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateLabels")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateButtonLegend")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "ExitInspectGearMode")]
 	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectActionTool")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "CheckSelectedButton")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateMainWindowNavigation")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateReadPanelNavigation")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairHasRequiredMaterial")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Update")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "CanHarvest")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "CleanHasRequiredTool")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "CleanHasRequiredTool")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairHasRequiredMaterial")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "CleanHasRequiredTool")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "CanHarvest")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateLabels()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
+	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
 	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 10)]
 	private void UpdateMainWindowNavigation()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Update")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshHoursToRead")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
-	[Calls(Type = typeof(ResearchItem), Member = "GetHoursResearchRemaining")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnRead")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnRead")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
+	[Calls(Type = typeof(ResearchItem), Member = "GetHoursResearchRemaining")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshHoursToRead")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateReadPanelNavigation()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Debug), Member = "LogFormat")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 16)]
 	private void CheckSelectedButton()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
 	public void OnToolSelectBack()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateRepairLabels")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
@@ -574,133 +568,104 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnToolIncrease")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnToolDecrease")]
+	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
 	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Update")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectActionTool")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnToolIncrease")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnToolDecrease")]
+	[CallsUnknownMethods(Count = 10)]
 	private void UpdateMainAndToolHybrid()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartRepair")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairFinished")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairSuccessful")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartRepair")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RestoreTimeOfDay")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairFinished")]
+	[CallsUnknownMethods(Count = 7)]
 	private void SetRepairInProgress(bool on)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartHarvest")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "HarvestSuccessful")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "HarvestSuccessful")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RestoreTimeOfDay")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RestoreTimeOfDay")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void SetHarvestInProgress(bool on)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartClean")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectCleanTool")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CleanSuccessful")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CleanFinished")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RestoreTimeOfDay")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CleanFinished")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CleanSuccessful")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectCleanTool")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartClean")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RestoreTimeOfDay")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 7)]
 	private void SetCleanInProgress(bool on)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenFinished")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenSuccessful")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectSharpenTool")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartSharpen")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenSuccessful")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenFinished")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RestoreTimeOfDay")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RestoreTimeOfDay")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void SetSharpenInProgress(bool on)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartRead")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "ReadComplete")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRead")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "ReadComplete")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartRead")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RestoreTimeOfDay")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void SetReadInProgress(bool on)
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateSkillAfterClean")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "DegradeToolUsedForAction")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetCleanInProgress")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshButton")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "HarvestSuccessful")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Weather), Member = "IsTooDarkForAction")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateSkillAfterRepair")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairFinished")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairSuccessful")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GearItem), Member = "UpdateDamageShader")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Update")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetCleanConditionIncreaseAndDuration")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "CanUserCancelAction")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
@@ -708,78 +673,86 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetReadInProgress")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "ReadComplete")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "ReadComplete")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "ReadComplete")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetSharpenConditionIncreaseAndDuration")]
 	[Calls(Type = typeof(GearItem), Member = "UpdateDamageShader")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateSkillAfterSharpen")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "DegradeToolUsedForAction")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetSharpenInProgress")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetCleanConditionIncreaseAndDuration")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateSkillAfterClean")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetCleanInProgress")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshButton")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "HarvestSuccessful")]
+	[Calls(Type = typeof(Weather), Member = "IsTooDarkForAction")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateSkillAfterRepair")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairFinished")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairSuccessful")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 8)]
 	private void UpdateActionProgressBar()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SetSharpenInProgress")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SetReadInProgress")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SetCleanInProgress")]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SetRepairInProgress")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SetHarvestInProgress")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SetCleanInProgress")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SetSharpenInProgress")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SetReadInProgress")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[CallsUnknownMethods(Count = 2)]
 	private void RestoreTimeOfDay()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartHarvest")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartSharpen")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectSharpenTool")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRead")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartRead")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectCleanTool")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartRepair")]
-	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
-	[CallerCount(Count = 8)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectCleanTool")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartClean")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRead")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectSharpenTool")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartSharpen")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartRead")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartHarvest")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
+	[CallsUnknownMethods(Count = 1)]
 	private void AccelerateTimeOfDay(int minutes, bool doFadeout)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "HarvestSuccessful")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenSuccessful")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenFinished")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CleanSuccessful")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CleanFinished")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairFinished")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "DegradeOnUse")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CleanFinished")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CleanSuccessful")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenFinished")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenSuccessful")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "HarvestSuccessful")]
 	[CallerCount(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GearItemIsConsideredClothing")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillClothingRepair")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "DegradeOnUse")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
+	[CallsUnknownMethods(Count = 2)]
 	private void DegradeToolUsedForAction()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairFinished")]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void ConsumeMaterialsUsedForRepair()
 	{
 	}
@@ -790,113 +763,112 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairSuccessful")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairFailed")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshButton")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairHasRequiredMaterial")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetRepairInProgress")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "ConsumeMaterialsUsedForRepair")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "DegradeToolUsedForAction")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairFailed")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairSuccessful")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "DegradeToolUsedForAction")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "ConsumeMaterialsUsedForRepair")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetRepairInProgress")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairHasRequiredMaterial")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshButton")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
+	[CallsUnknownMethods(Count = 1)]
 	private void RepairFinished()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairFinished")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateSkillAfterRepair")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairFinished")]
 	private void RepairFailed()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetRepairInProgress")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairFinished")]
-	[Calls(Type = typeof(PlayerManager), Member = "MaybeUnlockResoluteOutfitterAchievement")]
-	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetConditionIncreaseFromRepair")]
+	[Calls(Type = typeof(GearItem), Member = "GetMaxHPFromRepair")]
 	[Calls(Type = typeof(GearItem), Member = "UpdateDamageShader")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GearItemIsConsideredClothing")]
-	[Calls(Type = typeof(GearItem), Member = "GetMaxHPFromRepair")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetConditionIncreaseFromRepair")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateSkillAfterRepair")]
+	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
+	[Calls(Type = typeof(PlayerManager), Member = "MaybeUnlockResoluteOutfitterAchievement")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairFinished")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetRepairInProgress")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private void RepairSuccessful()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateClothingSkillAfterRepair(GearItem gi)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(PlayerSkills), Member = "RollForSkillIncrease")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairFailed")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairSuccessful")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PlayerSkills), Member = "RollForSkillIncrease")]
 	[CallsUnknownMethods(Count = 1)]
 	private void UpdateSkillAfterRepair(bool success)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshButton")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "DegradeToolUsedForAction")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetCleanInProgress")]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshButton")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
+	[CallsUnknownMethods(Count = 1)]
 	private void CleanFinished()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshButton")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetCleanInProgress")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateSkillAfterClean")]
-	[Calls(Type = typeof(GearItem), Member = "UpdateDamageShader")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetCleanConditionIncreaseAndDuration")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetCleanConditionIncreaseAndDuration")]
+	[Calls(Type = typeof(GearItem), Member = "UpdateDamageShader")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateSkillAfterClean")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "DegradeToolUsedForAction")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetCleanInProgress")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshButton")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
+	[CallsUnknownMethods(Count = 1)]
 	private void CleanSuccessful()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CleanSuccessful")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateSkillAfterClean(bool success)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshButton")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "DegradeToolUsedForAction")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "DegradeToolUsedForAction")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetSharpenInProgress")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshButton")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
+	[CallsUnknownMethods(Count = 1)]
 	private void SharpenFinished()
 	{
 	}
@@ -915,93 +887,76 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenSuccessful")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenSuccessful")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateSkillAfterSharpen(bool success)
 	{
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SelectToolByIndex")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnToolDecrease")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnToolIncrease")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnToolIncrease")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnToolDecrease")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SelectToolByIndex")]
 	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(GearItem), Member = "GetColorBasedOnCondition")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "GetColorBasedOnCondition")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void RefreshSelectedActionTool()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "DegradeToolUsedForAction")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshRepairPanel")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshCleanPanel")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshSharpenPanel")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SelectCleanButton")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SelectSharpenButton")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshButton")]
+	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTextureNonNull")]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshSelectedActionTool")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "DegradeToolUsedForAction")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SelectCleanButton")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshCleanPanel")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshSharpenPanel")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
-	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SelectSharpenButton")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshButton")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshButton")]
-	[CallsUnknownMethods(Count = 37)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshRepairPanel")]
-	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 9)]
-	[CallsDeduplicatedMethods(Count = 23)]
-	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 33)]
 	public void RefreshTools()
 	{
 	}
 
-	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshRepairPanel")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(HarvestRepairMaterial), Member = "ShowItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
+	[Calls(Type = typeof(HarvestRepairMaterial), Member = "ShowItem")]
+	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	private void RefreshMaterialsTable()
 	{
 	}
@@ -1010,305 +965,246 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	[CallsUnknownMethods(Count = 1)]
 	private bool RepairHasRequiredTool()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateWeightAndConditionLabels")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairHasRequiredMaterial")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairRequiresSewingKit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionToolSelect")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionToolSelect")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshRepairPanel")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 14)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetChanceSuccessfullRepair")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetCurrentSkillName")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetChanceActionSuccess")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetConditionIncreaseFromRepair")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedActionDuration")]
 	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetConditionIncreaseFromRepair")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetChanceActionSuccess")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(Type = typeof(float), Member = "ToString")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateWeightAndConditionLabels")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairHasRequiredMaterial")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairRequiresSewingKit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateRepairLabels()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshCleanPanel")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateWeightAndConditionLabels")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 18)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetCleanConditionIncreaseAndDuration")]
 	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetCleanConditionIncreaseAndDuration")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateWeightAndConditionLabels")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
+	[CallsDeduplicatedMethods(Count = 17)]
+	[CallsUnknownMethods(Count = 17)]
 	private void UpdateCleanLabels()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateRepairLabels")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshHarvest")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateSharpenLabels")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateCleanLabels")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GearItem), Member = "GetColorBasedOnCondition")]
-	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateSharpenLabels")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshHarvest")]
 	[CallerCount(Count = 5)]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
 	[Calls(Type = typeof(Utils), Member = "GetWeightOneDecimalPlaceWithUnitsString")]
+	[Calls(Type = typeof(GearItem), Member = "GetColorBasedOnCondition")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateWeightAndConditionLabels()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateCleanLabels")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectCleanTool")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CleanSuccessful")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedActionDuration")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillRevolver")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CleanSuccessful")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateCleanLabels")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectCleanTool")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillRifle")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillRevolver")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedActionDuration")]
+	[CallsUnknownMethods(Count = 5)]
 	private void GetCleanConditionIncreaseAndDuration(out float conditionIncrease, out int durationMinutes)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref conditionIncrease) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref durationMinutes) = null;
+		conditionIncrease = default(float);
+		durationMinutes = default(int);
 	}
 
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateWeightAndConditionLabels")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshSharpenPanel")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsDeduplicatedMethods(Count = 20)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetSharpenConditionIncreaseAndDuration")]
 	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateWeightAndConditionLabels")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
+	[CallsDeduplicatedMethods(Count = 18)]
+	[CallsUnknownMethods(Count = 18)]
 	private void UpdateSharpenLabels()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectSharpenTool")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateSharpenLabels")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenSuccessful")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenSuccessful")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateSharpenLabels")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectSharpenTool")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedActionDuration")]
+	[CallsUnknownMethods(Count = 4)]
 	private void GetSharpenConditionIncreaseAndDuration(out float conditionIncrease, out int durationMinutes)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref conditionIncrease) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref durationMinutes) = null;
+		conditionIncrease = default(float);
+		durationMinutes = default(int);
 	}
 
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMaterialsTable")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateRepairLabels")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairHasRequiredMaterial")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMaterialsTable")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateRepairLabels")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void RefreshRepairPanel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "CanClean")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateCleanLabels")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "CanClean")]
+	[CallsUnknownMethods(Count = 4)]
 	private void RefreshCleanPanel()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateLabels")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateLabels")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateLabels")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool CleanHasRequiredTool()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateSharpenLabels")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateSharpenLabels")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void RefreshSharpenPanel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTotalLiters")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetCapacityLiters")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringNoOunces")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringNoOunces")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTotalLiters")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 14)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetTotalLiters")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringNoOunces")]
+	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetCapacityLiters")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 12)]
 	private void RefreshRefuelPanel()
 	{
 	}
 
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshHoursToRead")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshHoursToRead")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "ReadComplete")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(Skill), Member = "GetProgressToNextLevelAsNormalizedValue")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(Skill), Member = "GetProgressToNextLevelAsNormalizedValue")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 10)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(GearItem), Member = "get_Description")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(ResearchItem), Member = "GetSkillNameLocalized")]
 	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(Skill), Member = "GetProgressToNextLevelAsNormalizedValue")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshHoursToRead")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 15)]
 	private void RefreshReadPanel()
 	{
 	}
 
-	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnReadHoursDecrease")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnReadHoursIncrease")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshReadPanel")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshReadPanel")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateReadPanelNavigation")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
-	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
-	[Calls(Type = typeof(ResearchItem), Member = "GetHoursResearchRemaining")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(ResearchItem), Member = "GetHoursResearchRemaining")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshReadPanel")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnReadHoursIncrease")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnReadHoursDecrease")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(ResearchItem), Member = "GetHoursResearchRemaining")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
+	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void RefreshHoursToRead()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool SharpenHasRequiredTool()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1316,54 +1212,53 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	[CallsUnknownMethods(Count = 1)]
 	private bool CanRefuel()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateLabels")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
-	[Calls(Type = typeof(Panel_Inventory_Examine_MenuItem), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SetRepairInProgress")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SetCleanInProgress")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SetSharpenInProgress")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SetReadInProgress")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRefuel")]
-	[CallsUnknownMethods(Count = 13)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefuelFinished")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnUnload")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SetCleanInProgress")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefuelFinished")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshReadPanel")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateWeightAndConditionLabels")]
 	[CallerCount(Count = 9)]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshHarvest")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshRepairPanel")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "CanClean")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateCleanLabels")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshSharpenPanel")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshRefuelPanel")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshHarvest")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshReadPanel")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateWeightAndConditionLabels")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateLabels")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
+	[Calls(Type = typeof(Panel_Inventory_Examine_MenuItem), Member = "Update")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 13)]
 	public void RefreshMainWindow()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
 	public void OnSelectHarvestButton()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
 	public void OnSelectRepairButton()
 	{
 	}
@@ -1382,9 +1277,9 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
-	[CallerCount(Count = 0)]
 	public void OnSelectSharpenButton()
 	{
 	}
@@ -1409,11 +1304,11 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void SelectCleanButton(bool selected)
 	{
 	}
@@ -1425,74 +1320,69 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void SelectSharpenButton(bool selected)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateMainWindowNavigation")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CheckSelectedButton")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateMainAndToolHybrid")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairFinished")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CleanFinished")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CleanSuccessful")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenFinished")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenSuccessful")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectHarvestButton")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectRepairButton")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectRefuelButton")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectCleanButton")]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectSharpenButton")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectUnload")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectSharpenButton")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenSuccessful")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CleanSuccessful")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CleanFinished")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairFinished")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateMainAndToolHybrid")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CheckSelectedButton")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateMainWindowNavigation")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshButton")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenFinished")]
 	[CallerCount(Count = 18)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshButton")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SelectButton(int index)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairFinished")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CleanFinished")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CleanSuccessful")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenFinished")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenSuccessful")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SharpenFinished")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshHarvest")]
-	[CallsDeduplicatedMethods(Count = 15)]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshHarvest")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 17)]
 	private void RefreshButton()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnEquip()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Weather), Member = "IsTooDarkForAction")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "CanHarvest")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
@@ -1501,37 +1391,36 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnHarvest()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateRepairLabels")]
 	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool RepairRequiresSewingKit()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRepair")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CanRepair")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshRepairPanel")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairFinished")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateLabels")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairFinished")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateRepairLabels")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshRepairPanel")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CanRepair")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRepair")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private bool RepairHasRequiredMaterial()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1539,205 +1428,197 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	[CallsUnknownMethods(Count = 1)]
 	private bool CanRepair()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairHasRequiredMaterial")]
 	[Calls(Type = typeof(Weather), Member = "IsTooDarkForAction")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RepairHasRequiredMaterial")]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectRepairTool")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnRepair()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Update")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetHarvestInProgress")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetRepairInProgress")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetCleanInProgress")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetReadInProgress")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetSharpenInProgress")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetHarvestInProgress")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetRepairInProgress")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetRepairInProgress")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetHarvestInProgress")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetSharpenInProgress")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetReadInProgress")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetCleanInProgress")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "ReadComplete")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public void OnProgressBarCancel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetChanceActionSuccess")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedActionDuration")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedActionDuration")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "DegradeToolUsedForAction")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectRepairTool")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedActionDuration")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetChanceActionSuccess")]
+	[CallerCount(Count = 5)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private GameObject GetSelectedTool()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionToolSelect")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateMainAndToolHybrid")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionToolSelect")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateMainAndToolHybrid")]
 	[CallerCount(Count = 3)]
 	public void OnSelectActionTool()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedActionDuration")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRepair")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "StartRepair")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetConditionIncreaseFromRepair")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(GearItem), Member = "GetMaxHPFromRepair")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GearItem), Member = "GetMaxHPFromRepair")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetConditionIncreaseFromRepair")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedActionDuration")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "StartRepair")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 16)]
 	public void OnSelectRepairTool()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectRepairTool")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetInventoryAlpha")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetChanceActionSuccess")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "AccelerateTimeOfDay")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetRepairInProgress")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetRepairInProgress")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "AccelerateTimeOfDay")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetChanceSuccessfullRepair")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetChanceActionSuccess")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetInventoryAlpha")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void StartRepair(int durationMinutes, string repairAudio)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetConditionIncreaseFromRepair")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedActionDuration")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private int GetModifiedRepairDuration(Repairable r, int baseMinutes)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedActionDuration")]
 	[CallsUnknownMethods(Count = 1)]
 	private int GetModifiedCleanDuration(Cleanable c, float conditionIncrease, int baseMinutes)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallAnalysisFailed]
 	[CallerCount(Count = 0)]
 	private int GetModifiedSharpenDuration(Sharpenable s, float conditionIncrease, int baseMinutes)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GearItemIsConsideredClothing")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedCleanDuration")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedRepairDuration")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectRepairTool")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetSharpenConditionIncreaseAndDuration")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetCleanConditionIncreaseAndDuration")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateRepairLabels")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillClothingRepair")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetSelectedTool")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetCleanConditionIncreaseAndDuration")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetSharpenConditionIncreaseAndDuration")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectRepairTool")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedRepairDuration")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedCleanDuration")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GearItemIsConsideredClothing")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillClothingRepair")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 3)]
 	private int GetModifiedActionDuration(GearItem gi, float conditionIncrease, int baseMinutes)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RollForActionSuccess")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartRepair")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateRepairLabels")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetSelectedTool")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartRepair")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RollForActionSuccess")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetSelectedTool")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetChanceActionSuccess(float skillBaseChance)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetChanceActionSuccess")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private bool RollForActionSuccess(float baseSkillChance)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetTotalLiters")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(PlayerManager), Member = "DeductLiquidFromInventory")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(OnExitDelegate), Member = ".ctor")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
-	[Calls(Type = typeof(OnExitDelegate), Member = ".ctor")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(PlayerManager), Member = "DeductLiquidFromInventory")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTotalLiters")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTotalLiters")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void OnRefuel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerManager), Member = "DeductLiquidFromInventory")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTotalLiters")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetTotalLiters")]
+	[Calls(Type = typeof(PlayerManager), Member = "DeductLiquidFromInventory")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
+	[CallsUnknownMethods(Count = 3)]
 	public void RefuelFinished(bool success, bool playerCancel, float progress)
 	{
 	}
@@ -1759,17 +1640,17 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnUnload")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(AssetReferenceWithComponent<>), Member = "GetOrLoadTypedAsset")]
 	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool DoUnload()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
@@ -1778,34 +1659,34 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetInventoryAlpha")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetCleanInProgress")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetCleanConditionIncreaseAndDuration")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetCleanConditionIncreaseAndDuration")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetCleanInProgress")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "AccelerateTimeOfDay")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetInventoryAlpha")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnSelectCleanTool()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetInventoryAlpha")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetCleanInProgress")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetCleanInProgress")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "AccelerateTimeOfDay")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetInventoryAlpha")]
+	[CallsUnknownMethods(Count = 1)]
 	private void StartClean(int durationMinutes, string cleanAudio)
 	{
 	}
@@ -1820,58 +1701,51 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateReadPanelNavigation")]
-	[Calls(Type = typeof(AchievementManager), Member = "ResearchedBook")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetInventoryAlpha")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "AccelerateTimeOfDay")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ResearchItem), Member = "IsResearchComplete")]
 	[Calls(Type = typeof(SkillsManager), Member = "GetSkill")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "MaybeAbortReadingWithHUDMessage")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetReadInProgress")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "MaybeAbortReadingWithHUDMessage")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "AccelerateTimeOfDay")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetInventoryAlpha")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(AchievementManager), Member = "ResearchedBook")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnRead()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ResearchItem), Member = "Read")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetReadInProgress")]
+	[Calls(Type = typeof(ResearchItem), Member = "IsResearchComplete")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshReadPanel")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
 	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshReadPanel")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
-	[Calls(Type = typeof(ResearchItem), Member = "IsResearchComplete")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetReadInProgress")]
-	[Calls(Type = typeof(ResearchItem), Member = "Read")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
 	public void ReadComplete(float normalizedProgress)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ResearchItem), Member = "GetHoursResearchRemaining")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshHoursToRead")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(ResearchItem), Member = "GetHoursResearchRemaining")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnReadHoursIncrease()
 	{
 	}
@@ -1884,128 +1758,115 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSharpen")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetInventoryAlpha")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetSharpenInProgress")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "AccelerateTimeOfDay")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetSharpenConditionIncreaseAndDuration")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GetSharpenConditionIncreaseAndDuration")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetSharpenInProgress")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "AccelerateTimeOfDay")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetInventoryAlpha")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnSelectSharpenTool()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetInventoryAlpha")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetSharpenInProgress")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "AccelerateTimeOfDay")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetInventoryAlpha")]
+	[CallsUnknownMethods(Count = 1)]
 	private void StartSharpen(int durationMinutes, string sharpenAudio)
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetInventoryAlpha")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetReadInProgress")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetReadInProgress")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "AccelerateTimeOfDay")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetInventoryAlpha")]
+	[CallsUnknownMethods(Count = 1)]
 	private void StartRead(int durationMinutes, string readAudio)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateMainWindowNavigation")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "HarvestSuccessful")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "ReadComplete")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnEquip")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairSuccessful")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateMainAndToolHybrid")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateReadPanelNavigation")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "ExitInspectGearMode")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuClose")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateMainAndToolHybrid")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairSuccessful")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnEquip")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnProgressBarCancel")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "ReadComplete")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "HarvestSuccessful")]
 	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectButton")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuClose")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "ExitInspectGearMode")]
 	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TrySetEnabled")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public void OnBack()
 	{
 	}
 
+	[CallerCount(Count = 30)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "ExitInspectGearMode")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshSelectedActionTool")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "EnterInspectGearMode")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshSelectedActionTool")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "ExitInspectGearMode")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 30)]
+	[CallsUnknownMethods(Count = 7)]
 	private void SelectWindow(GameObject window)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateMainAndToolHybrid")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionToolSelect")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Update")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIComboBoxScroll")]
-	[Calls(Type = typeof(ScrollList), Member = "Next")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionToolSelect")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateMainAndToolHybrid")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(ScrollList), Member = "Next")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIComboBoxScroll")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshSelectedActionTool")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnToolIncrease()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateMainAndToolHybrid")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionToolSelect")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Update")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIComboBoxScroll")]
-	[Calls(Type = typeof(ScrollList), Member = "Prev")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionToolSelect")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateMainAndToolHybrid")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(ScrollList), Member = "Prev")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIComboBoxScroll")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "RefreshSelectedActionTool")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnToolDecrease()
 	{
 	}
@@ -2019,283 +1880,260 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnHarvest")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetInventoryAlpha")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "AccelerateTimeOfDay")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetHarvestInProgress")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetHarvestInProgress")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "AccelerateTimeOfDay")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetInventoryAlpha")]
+	[CallsUnknownMethods(Count = 2)]
 	public void StartHarvest()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnHarvest")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateLabels")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnHarvest")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool CanHarvest()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 15)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshButton")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SelectHarvestButton")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateWeightAndConditionLabels")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SelectHarvestButton")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshButton")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(HarvestRepairMaterial), Member = "ShowItem")]
 	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
-	[Calls(Type = typeof(HarvestRepairMaterial), Member = "ShowItem")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(HarvestRepairMaterial), Member = "ShowPowder")]
-	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 14)]
-	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "UpdateWeightAndConditionLabels")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 15)]
 	private void RefreshHarvest()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "HarvestSuccessful")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "HarvestSuccessful")]
-	[Calls(Type = typeof(Skill_Gunsmithing), Member = "GetCurrentTier")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillGunsmithing")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillGunsmithing")]
+	[Calls(Type = typeof(Skill_Gunsmithing), Member = "GetCurrentTier")]
 	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool CheckForHarvestSuccess(Harvest harvest)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "MaybeReturnAmmoOrFuelToInventory")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetHarvestInProgress")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetHarvestInProgress")]
-	[Calls(Type = typeof(Utils), Member = "GetWeightTwoDecimalPlacesWithUnitsString")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddPowderToInventory")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "DegradeToolUsedForAction")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "CheckForHarvestSuccess")]
 	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "CheckForHarvestSuccess")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(Type = typeof(PlayerManager), Member = "AddPowderToInventory")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Utils), Member = "GetWeightTwoDecimalPlacesWithUnitsString")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "MaybeReturnAmmoOrFuelToInventory")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SetHarvestInProgress")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	private void HarvestSuccessful()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "HarvestSuccessful")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GearItem), Member = "LoadGearItemPrefab")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddLiquidToInventory")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(PlayerManager), Member = "AddLiquidToInventory")]
+	[Calls(Type = typeof(GearItem), Member = "LoadGearItemPrefab")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void MaybeReturnAmmoOrFuelToInventory(GearItem gi)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[Calls(Type = typeof(PlayerManager), Member = "RestoreTransformFromLastInspection")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
 	[Calls(Type = typeof(Utils), Member = "ShowInspectForGearItem")]
+	[Calls(Type = typeof(PlayerManager), Member = "RestoreTransformFromLastInspection")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void EnterInspectGearMode()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Update")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Enable")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnBack")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "SelectWindow")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void ExitInspectGearMode()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
+	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "CanExamine")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshCleanPanel")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMainWindow")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool CanClean(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "CanUserCancelAction")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	private void UpdateButtonLegend()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Weather), Member = "IsTooDarkForAction")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRead")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Weather), Member = "IsTooDarkForAction")]
 	[Calls(Type = typeof(Condition), Member = "HasNonRiskAffliction")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsUnknownMethods(Count = 7)]
 	private bool MaybeAbortReadingWithHUDMessage()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartRepair")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateRepairLabels")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillClothingRepair")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartRepair")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GearItemIsConsideredClothing")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillClothingRepair")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsUnknownMethods(Count = 3)]
 	private float GetChanceSuccessfullRepair(GearItem gi)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateRepairLabels")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GearItemIsConsideredClothing")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillClothingRepair")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierName")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GearItemIsConsideredClothing")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsUnknownMethods(Count = 2)]
 	private string GetCurrentSkillName(GearItem gi)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairSuccessful")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetConditionIncreaseFromRepair")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetChanceSuccessfullRepair")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedActionDuration")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "DegradeToolUsedForAction")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairSuccessful")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedActionDuration")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetChanceSuccessfullRepair")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetCurrentSkillName")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetConditionIncreaseFromRepair")]
 	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillClothingRepair")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool GearItemIsConsideredClothing(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedRepairDuration")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectRepairTool")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateRepairLabels")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairSuccessful")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateRepairLabels")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillClothingRepair")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GearItemIsConsideredClothing")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectRepairTool")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedRepairDuration")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "GearItemIsConsideredClothing")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillClothingRepair")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsUnknownMethods(Count = 3)]
 	private float GetConditionIncreaseFromRepair(GearItem gi)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartHarvest")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartRead")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartRepair")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectCleanTool")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartClean")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRead")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectSharpenTool")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartSharpen")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRead")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnSelectCleanTool")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartRepair")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartRead")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartHarvest")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "StartClean")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetInventoryAlpha(float alpha)
 	{
 	}
@@ -2305,13 +2143,9 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsAcceleratingTime()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	public string GetActionText()
@@ -2333,7 +2167,7 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 16)]
+	[CallerCount(Count = 18)]
 	public UIWidget GetWidgetToFade()
 	{
 		return null;
@@ -2347,9 +2181,9 @@ public class Panel_Inventory_Examine : Panel_AutoReferenced, IAccelerateTimeProv
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	public UIProgressBar GetActionProgress()
 	{
 		return null;

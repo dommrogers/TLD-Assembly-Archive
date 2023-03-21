@@ -173,10 +173,10 @@ public static class Consts
 
 	public static HideFlags ProceduralObjectsHideFlags
 	{
-		[CallerCount(Count = 3)]
 		[CalledBy(Type = typeof(BeamGeometry), Member = "RegenerateMesh")]
 		[CalledBy(Type = typeof(DynamicOcclusionDepthBuffer), Member = "InstantiateOrActivateDepthCamera")]
 		[CalledBy(Type = typeof(TriggerZone), Member = "ComputeZone")]
+		[CallerCount(Count = 3)]
 		get
 		{
 			return default(HideFlags);

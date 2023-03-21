@@ -21,14 +21,10 @@ public class SuperActionState : FSMState, ISubTasksContainer
 		return null;
 	}
 
-	[Calls(Type = typeof(Task), Member = "Create")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Task), Member = "Create")]
-	[Calls(Type = typeof(Task), Member = "Create")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Task), Member = "Create")]
+	[CallsUnknownMethods(Count = 7)]
 	public override void OnValidate(Graph assignedGraph)
 	{
 	}
@@ -39,21 +35,16 @@ public class SuperActionState : FSMState, ISubTasksContainer
 	{
 	}
 
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
-	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
 	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnUpdate()
 	{
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
 	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
@@ -63,11 +54,10 @@ public class SuperActionState : FSMState, ISubTasksContainer
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ActionTask), Member = "PauseAction")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ActionTask), Member = "PauseAction")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnPause()
 	{
 	}

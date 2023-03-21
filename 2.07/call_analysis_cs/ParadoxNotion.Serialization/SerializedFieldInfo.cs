@@ -14,19 +14,19 @@ public class SerializedFieldInfo : ISerializationCallbackReceiver
 	private FieldInfo _field;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
 	[Calls(Type = typeof(string), Member = "Format")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void UnityEngine_002EISerializationCallbackReceiver_002EOnBeforeSerialize()
 	{
 	}
 
-	[Calls(Type = typeof(ReflectionTools), Member = "RTGetField")]
-	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTGetField")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UnityEngine_002EISerializationCallbackReceiver_002EOnAfterDeserialize()
 	{
 	}
@@ -38,13 +38,13 @@ public class SerializedFieldInfo : ISerializationCallbackReceiver
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 79)]
+	[CallerCount(Count = 86)]
 	public SerializedFieldInfo(FieldInfo info)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 28)]
+	[CallerCount(Count = 32)]
 	public FieldInfo Get()
 	{
 		return null;

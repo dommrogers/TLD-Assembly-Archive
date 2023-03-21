@@ -15,25 +15,25 @@ public class InteriorTemperatureTrigger : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(SpecialEvent), Member = "IgnoreInteriorTemperatureTriggers")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	private void OnTriggerEnter(Collider c)
 	{
 	}
 
-	[Calls(Type = typeof(SpecialEvent), Member = "IgnoreInteriorTemperatureTriggers")]
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SpecialEvent), Member = "IgnoreInteriorTemperatureTriggers")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnTriggerExit(Collider c)
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public InteriorTemperatureTrigger()
 	{
 	}

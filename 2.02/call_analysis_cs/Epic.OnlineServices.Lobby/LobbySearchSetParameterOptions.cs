@@ -11,16 +11,16 @@ public class LobbySearchSetParameterOptions
 
 	public AttributeData Parameter
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -28,9 +28,9 @@ public class LobbySearchSetParameterOptions
 
 	public ComparisonOp ComparisonOp
 	{
-		[CallerCount(Count = 8)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 8)]
 		get
 		{
 			return default(ComparisonOp);
@@ -44,7 +44,7 @@ public class LobbySearchSetParameterOptions
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public LobbySearchSetParameterOptions()
 	{
 	}

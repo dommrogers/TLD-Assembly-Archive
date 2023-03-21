@@ -70,7 +70,7 @@ public class NPCFreezing : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetHealthyDelta(float delta)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -80,25 +80,18 @@ public class NPCFreezing : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(NPC), Member = "DoConditionUpdate")]
-	[Calls(Type = typeof(NPCVoice), Member = "Play")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "HealedAffliction")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "HealedAffliction")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
-	[Calls(Type = typeof(AfflictionDefinitionTable), Member = "GetAfflictionDefinitionByName")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
-	[Calls(Type = typeof(NPCVoice), Member = "Play")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NPCFreezing), Member = "CalculateCurrentTemperature")]
-	[Calls(Type = typeof(FireManager), Member = "PointInRadiusOfBurningFire")]
-	[Calls(Type = typeof(NPCFreezing), Member = "GetPosition")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NPCFreezing), Member = "GetPosition")]
+	[Calls(Type = typeof(FireManager), Member = "PointInRadiusOfBurningFire")]
+	[Calls(Type = typeof(NPCFreezing), Member = "CalculateCurrentTemperature")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPCVoice), Member = "Play")]
+	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
+	[Calls(Type = typeof(AfflictionDefinitionTable), Member = "GetAfflictionDefinitionByName")]
+	[Calls(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
+	[Calls(Type = typeof(NPCAfflictions), Member = "HealedAffliction")]
+	[CallsUnknownMethods(Count = 2)]
 	public void DoUpdate(float deltaTODHours)
 	{
 	}
@@ -106,11 +99,11 @@ public class NPCFreezing : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsFreezing()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	public void Deserialize(string serialized)
 	{
 	}
@@ -123,18 +116,17 @@ public class NPCFreezing : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(NPCFreezing), Member = "DoUpdate")]
-	[Calls(Type = typeof(Bed), Member = "GetWarmthBonusCelsius")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NPC), Member = "IsIndoors")]
 	[Calls(Type = typeof(NPCFreezing), Member = "GetPosition")]
 	[Calls(Type = typeof(HeatSourceManager), Member = "GetTemperatureIncrease")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NPC), Member = "IsIndoors")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Bed), Member = "GetWarmthBonusCelsius")]
+	[CallsUnknownMethods(Count = 3)]
 	private float CalculateCurrentTemperature(bool inRangeOfFire)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -143,13 +135,13 @@ public class NPCFreezing : MonoBehaviour
 		return default(Level);
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(NPCFreezing), Member = "DoUpdate")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[CalledBy(Type = typeof(NPCFreezing), Member = "CalculateCurrentTemperature")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(BodyCarry), Member = "IsCarryingBody")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	private Vector3 GetPosition()
 	{
 		return default(Vector3);
@@ -169,8 +161,8 @@ public class NPCFreezing : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public NPCFreezing()
 	{
 	}

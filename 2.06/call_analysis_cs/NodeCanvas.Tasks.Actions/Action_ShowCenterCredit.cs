@@ -17,27 +17,23 @@ public class Action_ShowCenterCredit : ActionTask
 	private PanelReference<Panel_HUD> m_HUD;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowCreditsCenter")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 22)]
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
+	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
+	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 21)]
 	public Action_ShowCenterCredit()
 	{
 	}

@@ -13,17 +13,17 @@ public class AsyncQuotaOp : AsyncOp<AsyncQuotaOp>
 
 	private QuotaRequestDelegate Callback;
 
-	[CallsUnknownMethods(Count = 8)]
+	[CalledBy(Type = typeof(TitleStorage), Member = "RequestQuotaAsync")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(TitleStorage), Member = "RequestQuotaAsync")]
+	[CallsUnknownMethods(Count = 8)]
 	public AsyncQuotaOp(TitleStorage storage, QuotaRequestDelegate callback)
 	{
 		((AsyncOp<>)(object)this)._002Ector();
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void Complete(uint result, StorageQuota quota)
 	{
 	}

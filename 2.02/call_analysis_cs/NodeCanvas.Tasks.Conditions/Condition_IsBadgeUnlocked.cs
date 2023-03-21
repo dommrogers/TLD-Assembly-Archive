@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 
@@ -11,20 +10,20 @@ public class Condition_IsBadgeUnlocked : ConditionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(BadgeUIInfo), Member = "IsUnlocked")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BadgeUIInfo), Member = "IsUnlocked")]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

@@ -15,7 +15,7 @@ public sealed class IntParameter : ParameterOverride<int>
 	[CallerCount(Count = 0)]
 	public override bool Equals(int a, int b)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

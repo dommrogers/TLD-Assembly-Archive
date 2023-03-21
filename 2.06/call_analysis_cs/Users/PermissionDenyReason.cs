@@ -16,8 +16,8 @@ public class PermissionDenyReason : IWrappedObject, IDisposable
 	public string Reason
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -27,10 +27,10 @@ public class PermissionDenyReason : IWrappedObject, IDisposable
 
 	public string RestrictedSetting
 	{
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
-		[CallsUnknownMethods(Count = 6)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -55,15 +55,15 @@ public class PermissionDenyReason : IWrappedObject, IDisposable
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 98)]
+	[CallerCount(Count = 113)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

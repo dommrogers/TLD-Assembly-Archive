@@ -17,24 +17,24 @@ public class FlareRandomBrightness : MonoBehaviour
 
 	private LensFlare m_LensFlare;
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Random), Member = "Range")]
+	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Random), Member = "Range")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public FlareRandomBrightness()
 	{
 	}

@@ -12,9 +12,9 @@ public class SerializedTypeInfo : ISerializationCallbackReceiver
 	[NonSerialized]
 	private Type _type;
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void UnityEngine_002EISerializationCallbackReceiver_002EOnBeforeSerialize()
 	{
 	}
@@ -32,13 +32,13 @@ public class SerializedTypeInfo : ISerializationCallbackReceiver
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 79)]
+	[CallerCount(Count = 86)]
 	public SerializedTypeInfo(Type info)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 28)]
+	[CallerCount(Count = 32)]
 	public Type Get()
 	{
 		return null;

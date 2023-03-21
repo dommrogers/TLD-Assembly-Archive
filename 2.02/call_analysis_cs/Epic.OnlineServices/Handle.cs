@@ -12,10 +12,10 @@ public abstract class Handle : IEquatable<Handle>
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -26,7 +26,7 @@ public abstract class Handle : IEquatable<Handle>
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public Handle()
 	{
 	}
@@ -37,41 +37,41 @@ public abstract class Handle : IEquatable<Handle>
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public override bool Equals(object obj)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public override int GetHashCode()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(Handle), Member = "op_Inequality")]
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Handle), Member = "op_Equality")]
+	[CalledBy(Type = typeof(Handle), Member = "op_Inequality")]
 	[CalledBy(Type = typeof(Helper), Member = "TryMarshalSet")]
 	[CalledBy(Type = typeof(Helper), Member = "TryConvert")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool Equals(Handle other)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Handle), Member = "Equals")]
 	public static bool operator ==(Handle lhs, Handle rhs)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Handle), Member = "Equals")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Handle), Member = "Equals")]
 	public static bool operator !=(Handle lhs, Handle rhs)
 	{
-		return default(bool);
+		return false;
 	}
 }

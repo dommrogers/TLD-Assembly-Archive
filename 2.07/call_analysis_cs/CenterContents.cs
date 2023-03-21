@@ -21,21 +21,22 @@ public class CenterContents : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Component), Member = "BroadcastMessage")]
-	[CalledBy(Type = typeof(CenterContents), Member = "Start")]
-	[Calls(Type = typeof(NGUIMath), Member = "CalculateRelativeWidgetBounds")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[ContextMenu("Execute")]
-	[Calls(Type = typeof(NGUITools), Member = "IsChild")]
+	[CalledBy(Type = typeof(CenterContents), Member = "Start")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NGUITools), Member = "IsChild")]
+	[Calls(Type = typeof(NGUIMath), Member = "CalculateRelativeWidgetBounds")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "BroadcastMessage")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 10)]
 	public void LateUpdate()
 	{
 	}

@@ -17,9 +17,9 @@ internal struct CopyTransactionByIdOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(CopyTransactionByIdOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(CopyTransactionByIdOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -27,11 +27,11 @@ internal struct CopyTransactionByIdOptionsInternal : ISettable, IDisposable
 
 	public string TransactionId
 	{
+		[CalledBy(Type = typeof(CopyTransactionByIdOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyTransactionByIdOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyTransactionByIdOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyTransactionByIdOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -45,17 +45,17 @@ internal struct CopyTransactionByIdOptionsInternal : ISettable, IDisposable
 	}
 
 	[CalledBy(Type = typeof(EcomInterface), Member = "CopyTransactionById")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CopyTransactionByIdOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(CopyTransactionByIdOptionsInternal), Member = "set_TransactionId")]
-	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

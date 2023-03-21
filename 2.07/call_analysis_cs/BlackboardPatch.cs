@@ -25,14 +25,14 @@ public class BlackboardPatch : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(BlackboardPatch), Member = "Update")]
-	[Calls(Type = typeof(BlackboardSource), Member = "SetValue")]
-	[Calls(Type = typeof(BlackboardSource), Member = "SetValue")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(BlackboardSource), Member = "SetValue")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	private void ApplyPatch()
 	{
 	}

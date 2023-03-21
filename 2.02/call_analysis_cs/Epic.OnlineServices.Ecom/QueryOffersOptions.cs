@@ -11,16 +11,16 @@ public class QueryOffersOptions
 
 	public EpicAccountId LocalUserId
 	{
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -30,21 +30,21 @@ public class QueryOffersOptions
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public QueryOffersOptions()
 	{
 	}

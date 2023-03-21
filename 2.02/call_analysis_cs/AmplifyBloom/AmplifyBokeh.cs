@@ -26,8 +26,8 @@ public sealed class AmplifyBokeh : IAmplifyItem, ISerializationCallbackReceiver
 
 	public ApertureShape ApertureShape
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(ApertureShape);
@@ -42,10 +42,10 @@ public sealed class AmplifyBokeh : IAmplifyItem, ISerializationCallbackReceiver
 	public bool ApplyBokeh
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 6)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -60,7 +60,7 @@ public sealed class AmplifyBokeh : IAmplifyItem, ISerializationCallbackReceiver
 		[CallerCount(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -75,10 +75,10 @@ public sealed class AmplifyBokeh : IAmplifyItem, ISerializationCallbackReceiver
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -90,7 +90,7 @@ public sealed class AmplifyBokeh : IAmplifyItem, ISerializationCallbackReceiver
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -120,10 +120,10 @@ public sealed class AmplifyBokeh : IAmplifyItem, ISerializationCallbackReceiver
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -135,7 +135,7 @@ public sealed class AmplifyBokeh : IAmplifyItem, ISerializationCallbackReceiver
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -150,7 +150,7 @@ public sealed class AmplifyBokeh : IAmplifyItem, ISerializationCallbackReceiver
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -165,91 +165,69 @@ public sealed class AmplifyBokeh : IAmplifyItem, ISerializationCallbackReceiver
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(AmplifyBokeh), Member = "CreateBokehOffsets")]
 	[CalledBy(Type = typeof(AmplifyBloomBase), Member = ".ctor")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(AmplifyBokeh), Member = "CreateBokehOffsets")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public AmplifyBokeh()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnDestroy")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AmplifyUtils), Member = "ReleaseTempRenderTarget")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Destroy()
 	{
 	}
 
-	[Calls(Type = typeof(AmplifyBokeh), Member = "CalculateBokehSamples")]
-	[CallsUnknownMethods(Count = 73)]
-	[CalledBy(Type = typeof(AmplifyBokeh), Member = "set_ApertureShape")]
-	[CalledBy(Type = typeof(AmplifyBokeh), Member = "OnAfterDeserialize")]
 	[CalledBy(Type = typeof(AmplifyBokeh), Member = ".ctor")]
-	[Calls(Type = typeof(AmplifyBokeh), Member = "CalculateBokehSamples")]
-	[Calls(Type = typeof(AmplifyBokeh), Member = "CalculateBokehSamples")]
-	[Calls(Type = typeof(AmplifyBokeh), Member = "CalculateBokehSamples")]
-	[Calls(Type = typeof(AmplifyBokeh), Member = "CalculateBokehSamples")]
-	[Calls(Type = typeof(AmplifyBokeh), Member = "CalculateBokehSamples")]
-	[Calls(Type = typeof(AmplifyBokeh), Member = "CalculateBokehSamples")]
-	[Calls(Type = typeof(AmplifyBokeh), Member = "CalculateBokehSamples")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 17)]
+	[CalledBy(Type = typeof(AmplifyBokeh), Member = "OnAfterDeserialize")]
+	[CalledBy(Type = typeof(AmplifyBokeh), Member = "set_ApertureShape")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(AmplifyBokeh), Member = "CalculateBokehSamples")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 73)]
 	private void CreateBokehOffsets(ApertureShape shape)
 	{
 	}
 
 	[CalledBy(Type = typeof(AmplifyBokeh), Member = "CreateBokehOffsets")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(AmplifyBokeh), Member = "CreateBokehOffsets")]
-	[CalledBy(Type = typeof(AmplifyBokeh), Member = "CreateBokehOffsets")]
-	[CalledBy(Type = typeof(AmplifyBokeh), Member = "CreateBokehOffsets")]
-	[CalledBy(Type = typeof(AmplifyBokeh), Member = "CreateBokehOffsets")]
-	[CalledBy(Type = typeof(AmplifyBokeh), Member = "CreateBokehOffsets")]
-	[CalledBy(Type = typeof(AmplifyBokeh), Member = "CreateBokehOffsets")]
-	[CalledBy(Type = typeof(AmplifyBokeh), Member = "CreateBokehOffsets")]
+	[CallerCount(Count = 9)]
 	[Calls(Type = typeof(Vector4), Member = "Lerp")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 9)]
-	[CalledBy(Type = typeof(AmplifyBokeh), Member = "CreateBokehOffsets")]
+	[CallsUnknownMethods(Count = 7)]
 	private Vector4[] CalculateBokehSamples(int sampleCount, float angle)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[CallsUnknownMethods(Count = 34)]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(AmplifyUtils), Member = "ReleaseTempRenderTarget")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AmplifyUtils), Member = "GetTempRenderTarget")]
+	[Calls(Type = typeof(Material), Member = "SetVector")]
 	[Calls(Type = typeof(Graphics), Member = "Blit")]
 	[Calls(Type = typeof(RenderTexture), Member = "DiscardContents")]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(Material), Member = "SetVector")]
-	[Calls(Type = typeof(AmplifyUtils), Member = "GetTempRenderTarget")]
+	[Calls(Type = typeof(AmplifyUtils), Member = "ReleaseTempRenderTarget")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 34)]
 	public void ApplyBokehFilter(RenderTexture source, Material material)
 	{
 	}
@@ -261,7 +239,7 @@ public sealed class AmplifyBokeh : IAmplifyItem, ISerializationCallbackReceiver
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void OnBeforeSerialize()
 	{
 	}

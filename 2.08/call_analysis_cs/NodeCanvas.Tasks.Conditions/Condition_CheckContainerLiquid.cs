@@ -1,5 +1,6 @@
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
+using UnityEngine;
 
 namespace NodeCanvas.Tasks.Conditions;
 
@@ -15,24 +16,27 @@ public class Condition_CheckContainerLiquid : ConditionTask
 	{
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(BBParameter), Member = "get_isNull")]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(string), Member = "Format")]
 		[Calls(Type = typeof(string), Member = "Format")]
-		[CallsUnknownMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Container), Member = "GetLiquidItemAmount")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BBParameter), Member = "get_isNull")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Container), Member = "GetLiquidItemAmount")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

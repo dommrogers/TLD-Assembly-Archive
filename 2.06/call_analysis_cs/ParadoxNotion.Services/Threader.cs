@@ -23,10 +23,10 @@ public static class Threader
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal void _003CStartAction_003Eb__0()
 		{
 		}
@@ -40,8 +40,8 @@ public static class Threader
 
 		public T2 parameter2;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec__DisplayClass2_0()
 		{
 		}
@@ -65,15 +65,15 @@ public static class Threader
 
 		public T3 parameter3;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec__DisplayClass3_0()
 		{
 		}
 
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[DeduplicatedMethod]
 		[CallsUnknownMethods(Count = 1)]
 		internal void _003CStartAction_003Eb__0()
 		{
@@ -88,8 +88,8 @@ public static class Threader
 
 		public Action<TResult> callback;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec__DisplayClass4_0()
 		{
 		}
@@ -127,18 +127,18 @@ public static class Threader
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal void _003CStartFunction_003Eb__0()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal void _003CStartFunction_003Eb__1()
 		{
 		}
@@ -156,16 +156,16 @@ public static class Threader
 
 		public Action<TResult> callback;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec__DisplayClass6_0()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal void _003CStartFunction_003Eb__0()
 		{
 		}
@@ -207,16 +207,16 @@ public static class Threader
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal void _003CStartFunction_003Eb__1()
 		{
 		}
 	}
 
-	private sealed class _003CThreadUpdater_003Ed__9 : IDisposable, IEnumerator<object>, IEnumerator
+	private sealed class _003CThreadUpdater_003Ed__9 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -228,9 +228,9 @@ public static class Threader
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -241,50 +241,50 @@ public static class Threader
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
 			}
 		}
 
+		[DebuggerHidden]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[DebuggerHidden]
 		public _003CThreadUpdater_003Ed__9(int _003C_003E1__state)
 		{
 		}
 
+		[DebuggerHidden]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 6)]
-		[DebuggerHidden]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[Calls(Type = typeof(Thread), Member = "get_IsAlive")]
-		[CallsUnknownMethods(Count = 6)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Thread), Member = "get_IsAlive")]
 		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 6)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 5)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 5)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(Threader), Member = "Begin")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Thread), Member = ".ctor")]
+	[Calls(Type = typeof(Threader), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	public static Thread StartAction(Action function, Action callback = null)
 	{
 		return null;
@@ -292,21 +292,21 @@ public static class Threader
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Thread), Member = ".ctor")]
 	[Calls(Type = typeof(Threader), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 17)]
 	public static Thread StartAction<T1>(Action<T1> function, T1 parameter1, Action callback = null)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Threader), Member = "Begin")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(Thread), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Thread), Member = ".ctor")]
+	[Calls(Type = typeof(Threader), Member = "Begin")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 17)]
 	public static Thread StartAction<T1, T2>(Action<T1, T2> function, T1 parameter1, T2 parameter2, Action callback = null)
 	{
 		return null;
@@ -314,21 +314,21 @@ public static class Threader
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Thread), Member = ".ctor")]
 	[Calls(Type = typeof(Threader), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 17)]
 	public static Thread StartAction<T1, T2, T3>(Action<T1, T2, T3> function, T1 parameter1, T2 parameter2, T3 parameter3, Action callback = null)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 22)]
-	[Calls(Type = typeof(Threader), Member = "Begin")]
-	[Calls(Type = typeof(Thread), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Thread), Member = ".ctor")]
+	[Calls(Type = typeof(Threader), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 22)]
 	public static Thread StartFunction<TResult>(Func<TResult> function, Action<TResult> callback = null)
 	{
 		return null;
@@ -336,21 +336,21 @@ public static class Threader
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Thread), Member = ".ctor")]
 	[Calls(Type = typeof(Threader), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 22)]
 	public static Thread StartFunction<TResult, T1>(Func<T1, TResult> function, T1 parameter1, Action<TResult> callback = null)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 22)]
-	[Calls(Type = typeof(Threader), Member = "Begin")]
-	[Calls(Type = typeof(Thread), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Thread), Member = ".ctor")]
+	[Calls(Type = typeof(Threader), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 22)]
 	public static Thread StartFunction<TResult, T1, T2>(Func<T1, T2, TResult> function, T1 parameter1, T2 parameter2, Action<TResult> callback = null)
 	{
 		return null;
@@ -358,37 +358,37 @@ public static class Threader
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Thread), Member = ".ctor")]
 	[Calls(Type = typeof(Threader), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 22)]
 	public static Thread StartFunction<TResult, T1, T2, T3>(Func<T1, T2, T3, TResult> function, T1 parameter1, T2 parameter2, T3 parameter3, Action<TResult> callback = null)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(Threader), Member = "StartAction")]
+	[CalledBy(Type = typeof(Threader), Member = "StartAction")]
+	[CalledBy(Type = typeof(Threader), Member = "StartAction")]
+	[CalledBy(Type = typeof(Threader), Member = "StartAction")]
 	[CalledBy(Type = typeof(Threader), Member = "StartFunction")]
 	[CalledBy(Type = typeof(Threader), Member = "StartFunction")]
 	[CalledBy(Type = typeof(Threader), Member = "StartFunction")]
-	[CalledBy(Type = typeof(Threader), Member = "StartAction")]
-	[CalledBy(Type = typeof(Threader), Member = "StartAction")]
-	[Calls(Type = typeof(Threader), Member = "ThreadUpdater")]
-	[CalledBy(Type = typeof(Threader), Member = "StartAction")]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[Calls(Type = typeof(MonoManager), Member = "get_current")]
-	[Calls(Type = typeof(Thread), Member = "Start")]
+	[CalledBy(Type = typeof(Threader), Member = "StartFunction")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(Threader), Member = "StartAction")]
-	[CalledBy(Type = typeof(Threader), Member = "StartFunction")]
+	[Calls(Type = typeof(Thread), Member = "Start")]
+	[Calls(Type = typeof(MonoManager), Member = "get_current")]
+	[Calls(Type = typeof(Threader), Member = "ThreadUpdater")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsUnknownMethods(Count = 1)]
 	private static void Begin(Thread thread, Action callback)
 	{
 	}
 
-	[CalledBy(Type = typeof(Threader), Member = "Begin")]
-	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 1)]
 	[IteratorStateMachine(typeof(_003CThreadUpdater_003Ed__9))]
+	[CalledBy(Type = typeof(Threader), Member = "Begin")]
+	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private static IEnumerator ThreadUpdater(Thread thread, Action callback)
 	{
 		return null;

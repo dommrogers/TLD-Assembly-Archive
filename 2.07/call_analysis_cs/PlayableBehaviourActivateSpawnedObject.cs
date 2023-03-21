@@ -14,10 +14,10 @@ public class PlayableBehaviourActivateSpawnedObject : PlayableBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(TLD_SpawnedAnimationTrack), Member = "Activate")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TLD_SpawnedAnimationTrack), Member = "Activate")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnBehaviourPlay(Playable playable, FrameData info)
 	{
 	}

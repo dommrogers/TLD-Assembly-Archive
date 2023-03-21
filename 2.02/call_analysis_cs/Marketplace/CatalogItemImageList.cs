@@ -6,21 +6,22 @@ namespace Marketplace;
 
 public class CatalogItemImageList : WrappedCachedList<CatalogItemImage>
 {
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(CatalogItem), Member = "get_Images")]
 	[CalledBy(Type = typeof(CatalogItemDetails), Member = "get_Images")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public CatalogItemImageList(IntPtr self)
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(WrappedCachedList<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public CatalogItemImageList()
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
@@ -30,9 +31,9 @@ public class CatalogItemImageList : WrappedCachedList<CatalogItemImage>
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	protected override CatalogItemImage CreateIthElement(int i)
 	{
 		return null;

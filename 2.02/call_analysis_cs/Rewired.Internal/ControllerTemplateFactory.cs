@@ -30,17 +30,12 @@ public static class ControllerTemplateFactory
 		}
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(ExternalTools), Member = "CreateControllerTemplate")]
-	[Calls(Type = typeof(ControllerTemplate), Member = ".ctor")]
-	[Calls(Type = typeof(Guid), Member = "op_Equality")]
-	[Calls(Type = typeof(Guid), Member = "op_Equality")]
-	[Calls(Type = typeof(Guid), Member = "op_Equality")]
-	[Calls(Type = typeof(Guid), Member = "op_Equality")]
-	[Calls(Type = typeof(Guid), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Guid), Member = "op_Equality")]
+	[Calls(Type = typeof(ControllerTemplate), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static IControllerTemplate Create(Guid typeGuid, object payload)
 	{
 		return null;

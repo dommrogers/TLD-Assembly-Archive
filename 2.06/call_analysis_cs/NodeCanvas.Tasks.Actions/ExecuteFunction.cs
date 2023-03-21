@@ -14,7 +14,7 @@ namespace NodeCanvas.Tasks.Actions;
 
 public class ExecuteFunction : ActionTask, ISubParametersContainer, IReflectedWrapper
 {
-	private sealed class _003CInternalCoroutine_003Ed__14 : IDisposable, IEnumerator<object>, IEnumerator
+	private sealed class _003CInternalCoroutine_003Ed__14 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -26,9 +26,9 @@ public class ExecuteFunction : ActionTask, ISubParametersContainer, IReflectedWr
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -39,7 +39,7 @@ public class ExecuteFunction : ActionTask, ISubParametersContainer, IReflectedWr
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -60,18 +60,18 @@ public class ExecuteFunction : ActionTask, ISubParametersContainer, IReflectedWr
 		{
 		}
 
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 		[CallsUnknownMethods(Count = 3)]
-		[CallerCount(Count = 0)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 5)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 5)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -83,8 +83,8 @@ public class ExecuteFunction : ActionTask, ISubParametersContainer, IReflectedWr
 
 	private MethodInfo targetMethod
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -93,9 +93,9 @@ public class ExecuteFunction : ActionTask, ISubParametersContainer, IReflectedWr
 
 	public override Type agentType
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
@@ -106,19 +106,16 @@ public class ExecuteFunction : ActionTask, ISubParametersContainer, IReflectedWr
 
 	protected override string info
 	{
-		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
-		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
-		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[CallsUnknownMethods(Count = 18)]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 		[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
+		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
+		[Calls(Type = typeof(string), Member = "Format")]
 		[CallsDeduplicatedMethods(Count = 12)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 18)]
 		get
 		{
 			return null;
@@ -139,34 +136,32 @@ public class ExecuteFunction : ActionTask, ISubParametersContainer, IReflectedWr
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ReflectedWrapper), Member = "Create")]
 	[Calls(Type = typeof(Task), Member = "Error")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnValidate(ITaskSystem ownerSystem)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Task), Member = "get_agent")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override string OnInit()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(ExecuteFunction), Member = "InternalCoroutine")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(ExecuteFunction), Member = "InternalCoroutine")]
+	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 14)]
 	protected override void OnExecute()
 	{
 	}
@@ -178,8 +173,8 @@ public class ExecuteFunction : ActionTask, ISubParametersContainer, IReflectedWr
 	}
 
 	[IteratorStateMachine(typeof(_003CInternalCoroutine_003Ed__14))]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(ExecuteFunction), Member = "OnExecute")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	private IEnumerator InternalCoroutine(IEnumerator routine)
 	{
@@ -193,8 +188,8 @@ public class ExecuteFunction : ActionTask, ISubParametersContainer, IReflectedWr
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public ExecuteFunction()
 	{
 	}

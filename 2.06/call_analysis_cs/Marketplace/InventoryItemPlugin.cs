@@ -7,8 +7,8 @@ namespace Marketplace;
 public class InventoryItemPlugin
 {
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint InventoryItem_ConsumableBalance(IntPtr self);
 
 	[PreserveSig]
@@ -32,13 +32,13 @@ public class InventoryItemPlugin
 	public static extern IntPtr InventoryItem_ContainerIds_GetAt(IntPtr self, uint idx);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void InventoryItem_ContainerIds_Dispose(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern ulong InventoryItem_EndDate(IntPtr self);
 
 	[PreserveSig]
@@ -62,13 +62,13 @@ public class InventoryItemPlugin
 	public static extern IntPtr InventoryItem_ProductId(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern ulong InventoryItem_RightsObtainedDate(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern ulong InventoryItem_StartDate(IntPtr self);
 
 	[PreserveSig]

@@ -6,18 +6,18 @@ public abstract class RichPresenceLocalizedProviderBase : RichPresenceProviderBa
 {
 	private class PresenceEqualityComparer : IEqualityComparer<PresenceType>
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public bool Equals(PresenceType x, PresenceType y)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		public int GetHashCode(PresenceType x)
 		{
-			return default(int);
+			return 0;
 		}
 
 		[DeduplicatedMethod]
@@ -29,25 +29,26 @@ public abstract class RichPresenceLocalizedProviderBase : RichPresenceProviderBa
 
 	protected Dictionary<PresenceType, string> m_PresenceLocKeys;
 
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Enum), Member = "GetValues")]
 	[Calls(Type = typeof(Array), Member = "get_Length")]
+	[Calls(Type = typeof(Dictionary<, >), Member = ".ctor")]
 	[CallsUnknownMethods(Count = 11)]
 	public override void Initialize()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public override void SetLocalizationKeys(RichPresenceLocInfo[] locKeys)
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	protected RichPresenceLocalizedProviderBase()
 	{
 	}

@@ -19,22 +19,22 @@ public class SetBoolean : ActionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Enum), Member = "ToString")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(Enum), Member = "ToString")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}

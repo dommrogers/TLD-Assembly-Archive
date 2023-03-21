@@ -13,8 +13,8 @@ public class GraphInfoAttribute : Attribute
 
 	public string forumsURL;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public GraphInfoAttribute()
 	{
 	}

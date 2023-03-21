@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
+using NodeCanvas.BehaviourTrees;
+using NodeCanvas.DialogueTrees;
+using NodeCanvas.StateMachines;
 using ParadoxNotion.Services;
 using UnityEngine;
 
@@ -24,10 +27,10 @@ public abstract class ConditionTask<T> : ConditionTask where T : class
 
 	public new T agent
 	{
-		[CallsUnknownMethods(Count = 6)]
-		[Calls(Type = typeof(Task), Member = "get_agent")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 222)]
+		[Calls(Type = typeof(Task), Member = "get_agent")]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -42,7 +45,7 @@ public abstract class ConditionTask<T> : ConditionTask where T : class
 }
 public abstract class ConditionTask : Task
 {
-	private sealed class _003CFlip_003Ed__13 : IEnumerator, IDisposable, IEnumerator<object>
+	private sealed class _003CFlip_003Ed__13 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -52,9 +55,9 @@ public abstract class ConditionTask : Task
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -65,23 +68,23 @@ public abstract class ConditionTask : Task
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CFlip_003Ed__13(int _003C_003E1__state)
 		{
 		}
 
-		[CallerCount(Count = 6)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
@@ -89,12 +92,11 @@ public abstract class ConditionTask : Task
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(MonoManager), Member = "get_current")]
 		[Calls(Type = typeof(MonoManager), Member = "StaggeredUpdatedEnabled")]
-		[Calls(Type = typeof(MonoManager), Member = "get_current")]
 		[Calls(Type = typeof(MonoManager), Member = "CanUpdateGraph")]
 		[CallsUnknownMethods(Count = 1)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -119,7 +121,7 @@ public abstract class ConditionTask : Task
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 2)]
@@ -129,8 +131,8 @@ public abstract class ConditionTask : Task
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Task), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Enable(Component agent, IBlackboard bb)
 	{
 	}
@@ -141,23 +143,41 @@ public abstract class ConditionTask : Task
 	{
 	}
 
-	[Calls(Type = typeof(Task), Member = "Set")]
+	[CalledBy(Type = typeof(BinarySelector), Member = "OnExecute")]
+	[CalledBy(Type = typeof(ConditionalEvaluator), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Interruptor), Member = "OnExecute")]
+	[CalledBy(Type = typeof(NodeCanvas.BehaviourTrees.WaitUntil), Member = "OnExecute")]
+	[CalledBy(Type = typeof(NodeCanvas.BehaviourTrees.ConditionNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(ConditionList), Member = "OnCheck")]
+	[CalledBy(Type = typeof(FSMState), Member = "CheckTransitions")]
+	[CalledBy(Type = typeof(AnyState), Member = "Update")]
+	[CalledBy(Type = typeof(ConcurrentState), Member = "OnEnter")]
+	[CalledBy(Type = typeof(ConcurrentState), Member = "Update")]
+	[CalledBy(Type = typeof(Dialogue_MultipleChoiceNode), Member = "OnExecute")]
+	[CalledBy(TypeFullName = "NodeCanvas.DialogueTrees.ParlayChooseResponseNode.<CountDown>d__13", Member = "MoveNext")]
+	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(ParlayNPCResponseNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(NodeCanvas.DialogueTrees.ConditionNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(MultipleChoiceNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(MultipleConditionNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(NodeCanvas.DialogueTrees.ProbabilitySelector), Member = "OnExecute")]
 	[CallerCount(Count = 23)]
+	[Calls(Type = typeof(Task), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public bool CheckCondition(Component agent, IBlackboard blackboard)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
 	[CallerCount(Count = 61)]
+	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
+	[CallsUnknownMethods(Count = 1)]
 	protected void YieldReturn(bool value)
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	protected virtual void OnEnable()
 	{
 	}
@@ -172,7 +192,7 @@ public abstract class ConditionTask : Task
 	[CallerCount(Count = 0)]
 	protected virtual bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[IteratorStateMachine(typeof(_003CFlip_003Ed__13))]
@@ -183,8 +203,8 @@ public abstract class ConditionTask : Task
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	protected ConditionTask()
 	{
 	}

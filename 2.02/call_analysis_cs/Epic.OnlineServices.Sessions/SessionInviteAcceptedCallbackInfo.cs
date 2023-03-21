@@ -19,14 +19,14 @@ public class SessionInviteAcceptedCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		private set
 		{
 		}
@@ -36,14 +36,14 @@ public class SessionInviteAcceptedCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -51,16 +51,16 @@ public class SessionInviteAcceptedCallbackInfo : ICallbackInfo, ISettable
 
 	public ProductUserId LocalUserId
 	{
-		[CallerCount(Count = 5)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -77,7 +77,7 @@ public class SessionInviteAcceptedCallbackInfo : ICallbackInfo, ISettable
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		private set
 		{
 		}
@@ -87,14 +87,14 @@ public class SessionInviteAcceptedCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 20)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 23)]
 		private set
 		{
 		}
@@ -107,29 +107,29 @@ public class SessionInviteAcceptedCallbackInfo : ICallbackInfo, ISettable
 		return null;
 	}
 
+	[CalledBy(Type = typeof(SessionInviteAcceptedCallbackInfo), Member = "Set")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SessionInviteAcceptedCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(SessionInviteAcceptedCallbackInfoInternal), Member = "get_SessionId")]
 	[Calls(Type = typeof(SessionInviteAcceptedCallbackInfoInternal), Member = "get_LocalUserId")]
 	[Calls(Type = typeof(SessionInviteAcceptedCallbackInfoInternal), Member = "get_TargetUserId")]
 	[Calls(Type = typeof(SessionInviteAcceptedCallbackInfoInternal), Member = "get_InviteId")]
-	[CalledBy(Type = typeof(SessionInviteAcceptedCallbackInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	internal void Set(SessionInviteAcceptedCallbackInfoInternal? other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SessionInviteAcceptedCallbackInfo), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SessionInviteAcceptedCallbackInfo()
 	{
 	}

@@ -12,12 +12,12 @@ public class CallbackAttribute : DrawerAttribute
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 101)]
+	[CallerCount(Count = 103)]
 	public CallbackAttribute(string methodName)
 	{
 	}

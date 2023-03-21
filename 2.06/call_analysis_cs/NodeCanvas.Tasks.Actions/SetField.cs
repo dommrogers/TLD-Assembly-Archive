@@ -30,18 +30,18 @@ public class SetField : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ReflectionTools), Member = "RTGetField")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTGetField")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	protected override string OnInit()
 	{
@@ -50,9 +50,10 @@ public class SetField : ActionTask
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Task), Member = "get_agent")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(FieldInfo), Member = "SetValue")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

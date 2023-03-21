@@ -8,24 +8,24 @@ public class TerrainVisibilityTrigger : MonoBehaviour
 
 	private const int TERRAIN_VISIBILITY_TRIGGER_LAYER = 21;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
-	[CallerCount(Count = 0)]
 	public void OnValidate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(TerrainRenderingManager), Member = "SetTerrainRendering")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 6)]
 	private void OnTriggerEnter(Collider other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(TerrainRenderingManager), Member = "SetTerrainRendering")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 6)]
 	private void OnTriggerExit(Collider other)
 	{

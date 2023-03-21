@@ -18,7 +18,7 @@ public class SnowImprintVariant
 	public Vector2 m_DepthSelectionRange;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SnowImprintVariant()
 	{
 	}

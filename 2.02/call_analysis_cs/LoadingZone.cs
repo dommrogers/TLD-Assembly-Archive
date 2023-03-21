@@ -44,51 +44,50 @@ public class LoadingZone : MonoBehaviour
 		}
 	}
 
-	[Calls(Type = typeof(Utils), Member = "GetGuid")]
-	[Calls(Type = typeof(vp_Layer), Member = "Set")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(vp_Layer), Member = "Set")]
+	[Calls(Type = typeof(Utils), Member = "GetGuid")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(LoadingZone), Member = "Cancel")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(CharacterController), Member = "get_isGrounded")]
 	[Calls(Type = typeof(LoadingZone), Member = "Cancel")]
 	[Calls(Type = typeof(LoadingZone), Member = "Activate")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(CharacterController), Member = "get_isGrounded")]
+	[CallsUnknownMethods(Count = 7)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(LoadingZone), Member = "PlayFadeOutSound")]
 	[CalledBy(Type = typeof(LoadingZone), Member = "Update")]
-	[Calls(Type = typeof(LoadScene), Member = "Activate")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_jump_to_loadingzone")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopAll")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayerManager), Member = "StowOrDropPlaceMesh")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 2)]
-	[CallsUnknownMethods(Count = 16)]
+	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "StowOrDropPlaceMesh")]
 	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopAll")]
+	[Calls(Type = typeof(LoadingZone), Member = "PlayFadeOutSound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(LoadScene), Member = "Activate")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 16)]
 	public void Activate()
 	{
 	}
 
-	[CallerCount(Count = 20)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 40)]
 	public string GetGUID()
 	{
 		return null;
@@ -98,68 +97,66 @@ public class LoadingZone : MonoBehaviour
 	[CallerCount(Count = 2)]
 	public bool IsBeingInteractedWith()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 14)]
 	public void StartInteract()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(LoadingZone), Member = "Update")]
 	[CalledBy(Type = typeof(InputManager), Member = "MaybeCancelClickHold")]
-	[CalledBy(Type = typeof(LoadingZone), Member = "Update")]
-	[CalledBy(Type = typeof(LoadingZone), Member = "Update")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Cancel()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void ProgressBarStarted()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 29)]
-	[Calls(Type = typeof(GameManager), Member = "LoadScene")]
-	[Calls(Type = typeof(RegionManager), Member = "GetRegionFromString")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
 	[Calls(Type = typeof(GameManager), Member = "StripOptFromSceneName")]
+	[Calls(Type = typeof(RegionManager), Member = "GetRegionFromString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(GameManager), Member = "LoadScene")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 29)]
 	private void LoadLevelWhenFadeOutComplete()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CalledBy(Type = typeof(LoadingZone), Member = "Activate")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[CalledBy(Type = typeof(LoadingZone), Member = "Activate")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void PlayFadeOutSound()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void HolsterItemInHands()
 	{
 	}
@@ -170,51 +167,46 @@ public class LoadingZone : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "StowOrDropPlaceMesh")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Component), Member = "CompareTag")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "CompareTag")]
 	[Calls(Type = typeof(LoadingZone), Member = "UpdateInLoadingZoneState")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "StowOrDropPlaceMesh")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private void OnTriggerStay(Collider other)
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = "CompareTag")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "CompareTag")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnTriggerExit(Collider other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[CalledBy(Type = typeof(LoadingZone), Member = "OnTriggerEnter")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 16)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 26)]
 	private void ComputeTriggerForwardDirection()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[CalledBy(Type = typeof(LoadingZone), Member = "OnTriggerStay")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private void UpdateInLoadingZoneState()
 	{
 	}

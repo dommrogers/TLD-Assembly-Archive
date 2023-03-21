@@ -5,8 +5,6 @@ namespace TLD.Gameplay;
 
 public abstract class ScriptableAction : ScriptableObject
 {
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101261)]
 	public abstract void ExecuteAction();
 
 	[DeduplicatedMethod]

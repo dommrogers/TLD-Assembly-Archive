@@ -4,8 +4,8 @@ namespace Users;
 
 public class PermissionDenyReasonListPlugin
 {
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public PermissionDenyReasonListPlugin()
 	{
 	}

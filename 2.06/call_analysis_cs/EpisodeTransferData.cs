@@ -4,8 +4,8 @@ public class EpisodeTransferData
 {
 	public string m_StoryGlobalSerialized;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public EpisodeTransferData()
 	{
 	}

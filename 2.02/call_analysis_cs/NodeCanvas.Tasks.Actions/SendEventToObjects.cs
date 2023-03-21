@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
@@ -14,9 +13,9 @@ public class SendEventToObjects : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
 		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -25,11 +24,13 @@ public class SendEventToObjects : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 13)]
 	protected override void OnExecute()
 	{
@@ -51,11 +52,11 @@ public class SendEventToObjects<T> : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -64,10 +65,13 @@ public class SendEventToObjects<T> : ActionTask
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 17)]
 	protected override void OnExecute()
 	{

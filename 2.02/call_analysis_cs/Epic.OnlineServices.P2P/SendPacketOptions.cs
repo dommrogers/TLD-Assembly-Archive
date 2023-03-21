@@ -23,14 +23,14 @@ public class SendPacketOptions
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 101)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -38,16 +38,16 @@ public class SendPacketOptions
 
 	public ProductUserId RemoteUserId
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -57,14 +57,14 @@ public class SendPacketOptions
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
@@ -72,16 +72,16 @@ public class SendPacketOptions
 
 	public byte Channel
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(byte);
+			return 0;
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -91,14 +91,14 @@ public class SendPacketOptions
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 23)]
 		set
 		{
 		}
@@ -106,16 +106,16 @@ public class SendPacketOptions
 
 	public bool AllowDelayedDelivery
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		set
 		{
 		}
@@ -123,9 +123,9 @@ public class SendPacketOptions
 
 	public PacketReliability Reliability
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		get
 		{
 			return default(PacketReliability);
@@ -139,7 +139,7 @@ public class SendPacketOptions
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SendPacketOptions()
 	{
 	}

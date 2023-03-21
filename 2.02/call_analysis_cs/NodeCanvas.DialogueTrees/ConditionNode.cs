@@ -17,7 +17,7 @@ public class ConditionNode : DTNode, ITaskAssignable<ConditionTask>, ITaskAssign
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 1)]
+		[CallerCount(Count = 6)]
 		set
 		{
 		}
@@ -31,8 +31,8 @@ public class ConditionNode : DTNode, ITaskAssignable<ConditionTask>, ITaskAssign
 		{
 			return null;
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -41,11 +41,11 @@ public class ConditionNode : DTNode, ITaskAssignable<ConditionTask>, ITaskAssign
 
 	public override int maxOutConnections
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -55,27 +55,27 @@ public class ConditionNode : DTNode, ITaskAssignable<ConditionTask>, ITaskAssign
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
 	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
 	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
 	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
 	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
 	[Calls(Type = typeof(Node), Member = "Error")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DTNode), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public ConditionNode()
 	{
 	}

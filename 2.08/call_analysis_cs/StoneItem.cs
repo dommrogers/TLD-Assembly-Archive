@@ -31,18 +31,19 @@ public class StoneItem : MonoBehaviour
 
 	private Vector3 m_DefaultColliderSize;
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Update()
 	{
 	}
@@ -54,39 +55,32 @@ public class StoneItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(StoneItem), Member = "OnCollisionEnter")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddImpactDecal")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetMaterialSwitch")]
+	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "NotifyAiAudioEvent")]
 	[Calls(Type = typeof(ImpactDecals), Member = "MapSurfaceTagToMaterialEffectType")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetMaterialSwitch")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddImpactDecal")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[CallsUnknownMethods(Count = 5)]
 	private void PlayImpactEffects(string surfaceTag, Vector3 collisionPoint, Vector3 normal)
 	{
 	}
 
-	[Calls(Type = typeof(Collision), Member = "get_contacts")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(StoneItem), Member = "PlayImpactEffects")]
-	[Calls(Type = typeof(Collision), Member = "get_contacts")]
-	[Calls(Type = typeof(Collision), Member = "get_contacts")]
-	[Calls(Type = typeof(Utils), Member = "GetMaterialTagForObjectAtPosition")]
-	[Calls(Type = typeof(Collision), Member = "get_contacts")]
-	[Calls(Type = typeof(BaseAi), Member = "MaybeStunnedByStone")]
-	[Calls(Type = typeof(BaseAi), Member = "MaybeFleeFromThrownItem")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Collision), Member = "get_contacts")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(CookingPotItem), Member = "IsAttachedToGearPlacePoint")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
+	[Calls(Type = typeof(Collision), Member = "get_contacts")]
+	[Calls(Type = typeof(BaseAi), Member = "MaybeFleeFromThrownItem")]
+	[Calls(Type = typeof(BaseAi), Member = "MaybeStunnedByStone")]
+	[Calls(Type = typeof(Utils), Member = "GetMaterialTagForObjectAtPosition")]
+	[Calls(Type = typeof(StoneItem), Member = "PlayImpactEffects")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 9)]
 	public void OnCollisionEnter(Collision collisionInfo)
 	{
 	}
@@ -98,7 +92,7 @@ public class StoneItem : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
@@ -106,51 +100,51 @@ public class StoneItem : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "Throw")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "Throw")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Throw()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopAllSoundsFromGameObject")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Aim")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopAllSoundsFromGameObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void ZoomStart()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Freezing), Member = "MaybeCancelPlayerFreezingTeethChatter")]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Aim_Cancel")]
+	[Calls(Type = typeof(Freezing), Member = "MaybeCancelPlayerFreezingTeethChatter")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void ZoomEnd()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ReleaseThrownObject")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void SetThrown(bool thrown)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsThrown()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	private void OnAiming()
 	{
 	}

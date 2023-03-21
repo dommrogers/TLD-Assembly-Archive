@@ -19,9 +19,9 @@ internal struct InstallModOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(InstallModOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(InstallModOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 2)]
 		set
 		{
 		}
@@ -29,11 +29,11 @@ internal struct InstallModOptionsInternal : ISettable, IDisposable
 
 	public ModIdentifier Mod
 	{
+		[CalledBy(Type = typeof(InstallModOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(InstallModOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[Calls(Type = typeof(ModIdentifierInternal), Member = "Set")]
-		[CalledBy(Type = typeof(InstallModOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(InstallModOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		set
 		{
 		}
@@ -41,37 +41,37 @@ internal struct InstallModOptionsInternal : ISettable, IDisposable
 
 	public bool RemoveAfterExit
 	{
+		[CalledBy(Type = typeof(InstallModOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(InstallModOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(InstallModOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(InstallModOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(InstallModOptionsInternal), Member = "set_RemoveAfterExit")]
-	[Calls(Type = typeof(InstallModOptionsInternal), Member = "set_Mod")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InstallModOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(InstallModOptionsInternal), Member = "set_Mod")]
+	[Calls(Type = typeof(InstallModOptionsInternal), Member = "set_RemoveAfterExit")]
 	public void Set(InstallModOptions other)
 	{
 	}
 
+	[CalledBy(Type = typeof(ModsInterface), Member = "InstallMod")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InstallModOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(InstallModOptionsInternal), Member = "set_Mod")]
 	[Calls(Type = typeof(InstallModOptionsInternal), Member = "set_RemoveAfterExit")]
-	[CalledBy(Type = typeof(ModsInterface), Member = "InstallMod")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

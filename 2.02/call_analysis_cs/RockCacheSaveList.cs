@@ -5,10 +5,11 @@ public class RockCacheSaveList
 {
 	public List<RockCacheSaveData> m_SerializedRockCacheList;
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(RockCacheManager), Member = "SerializeAll")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public RockCacheSaveList()
 	{
 	}

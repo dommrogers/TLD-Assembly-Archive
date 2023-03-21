@@ -18,10 +18,10 @@ public class Bullet : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}

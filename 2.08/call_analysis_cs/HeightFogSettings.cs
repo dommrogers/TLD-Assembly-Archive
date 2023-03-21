@@ -39,26 +39,26 @@ public struct HeightFogSettings
 	[CallerCount(Count = 1)]
 	public bool IsFogVisible()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(HeightFogManager), Member = "Update")]
+	[CallerCount(Count = 1)]
 	public void Clear()
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(HeightFogManager), Member = "Update")]
+	[CallerCount(Count = 1)]
 	public void Blend(HeightFogSettings other, float blendAmount)
 	{
 	}
 
+	[CalledBy(Type = typeof(HeightFogManager), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetHeldLightIntensity")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetHeldLightColor")]
-	[CalledBy(Type = typeof(HeightFogManager), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void ApplyLightSources()
 	{

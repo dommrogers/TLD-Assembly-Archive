@@ -10,7 +10,7 @@ public class AnimatedWidget : MonoBehaviour
 	private UIWidget mWidget;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UIWidget), Member = "set_width")]
 	[Calls(Type = typeof(UIWidget), Member = "set_height")]
 	[CallsUnknownMethods(Count = 3)]

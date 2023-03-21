@@ -21,25 +21,26 @@ public class GetLinecastInfo2D : ActionTask<Transform>
 	private RaycastHit2D hit;
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-	[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(ContactFilter2D), Member = "CreateLegacyFilter")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
+	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
+	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 5)]
 	public override void OnDrawGizmosSelected()
 	{
 	}

@@ -27,26 +27,23 @@ public class ActiveBurner : MonoBehaviour
 
 	private Material m_Material;
 
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Material), Member = "SetFloat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void Update()
 	{
 	}

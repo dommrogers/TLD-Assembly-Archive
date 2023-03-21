@@ -72,52 +72,54 @@ public class BreakableIce : MonoBehaviour
 	private static List<BreakableIce> m_Instances;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(BreakableIce), Member = "InitializeBrokenIceTexture")]
 	[Calls(Type = typeof(BreakableIce), Member = "InitializeAudioEmitters")]
 	[Calls(Type = typeof(BreakableIce), Member = "InitializeNavmeshCuts")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 4)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(BitmaskTexture), Member = "ApplyChanges")]
-	[Calls(Type = typeof(BreakableIce), Member = "RemoveExpiredBrokenIce")]
-	[CallsUnknownMethods(Count = 32)]
-	[Calls(Type = typeof(IceCrackingTrigger), Member = "FallInWater")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Array), Member = "CopyTo")]
-	[Calls(Type = typeof(BreakableIce), Member = "IsIceBroken")]
-	[Calls(Type = typeof(BreakableIce), Member = "UpdateAudioEmitters")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "CopyTo")]
+	[Calls(Type = typeof(BreakableIce), Member = "UpdateAudioEmitters")]
+	[Calls(Type = typeof(BreakableIce), Member = "IsIceBroken")]
 	[Calls(Type = typeof(IceCrackingManager), Member = "FindNearestFallTrigger")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(IceCrackingTrigger), Member = "FallInWater")]
+	[Calls(Type = typeof(BreakableIce), Member = "RemoveExpiredBrokenIce")]
+	[Calls(Type = typeof(BitmaskTexture), Member = "ApplyChanges")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 32)]
 	private void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnDisable()
 	{
 	}
 
+	[CalledBy(Type = typeof(BreakableIce), Member = "SerializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(BreakableIce), Member = "SerializeAll")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 17)]
 	public string Serialize()
 	{
@@ -125,180 +127,173 @@ public class BreakableIce : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(BreakableIce), Member = "DeserializeAll")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(BreakableIce), Member = "AddBrokenIceToNavmeshCuts")]
-	[Calls(Type = typeof(BreakableIce), Member = "AddBrokenIceToTexture")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(BreakableIce), Member = "AddBrokenIceToTexture")]
+	[Calls(Type = typeof(BreakableIce), Member = "AddBrokenIceToNavmeshCuts")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public void Deserialize(BreakableIceComponentSaveDataProxy proxy)
 	{
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(BreakableIce), Member = "Serialize")]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 16)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(BreakableIce), Member = "Deserialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(BreakableIce), Member = "FindBreakableIceByPosition")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(BreakableIce), Member = "FindBreakableIceByPosition")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(BreakableIce), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 24)]
-	[CalledBy(Type = typeof(WetZoneTrigger), Member = "BreakIce")]
 	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "BreakIce")]
-	[Calls(Type = typeof(Bounds), Member = "get_size")]
-	[Calls(Type = typeof(Collider), Member = "get_bounds")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Fire), Member = "TurnOff")]
-	[Calls(Type = typeof(Campfire), Member = "SetState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GearItem), Member = "DropIntoWater")]
-	[Calls(Type = typeof(BreakableIce), Member = "IsIceBroken")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BreakableIce), Member = "IsIceBroken")]
-	[Calls(Type = typeof(Collider), Member = "get_bounds")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Physics), Member = "OverlapSphere")]
-	[Calls(Type = typeof(BreakableIce), Member = "RemoveOldestBrokenIce")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(BreakableIce), Member = "AddBrokenIceToNavmeshCuts")]
-	[Calls(Type = typeof(BreakableIce), Member = "AddBrokenIceToTexture")]
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[CallsDeduplicatedMethods(Count = 12)]
+	[CalledBy(Type = typeof(WetZoneTrigger), Member = "BreakIce")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BreakableIce), Member = "IsIceBroken")]
+	[Calls(Type = typeof(BreakableIce), Member = "AddBrokenIceToTexture")]
+	[Calls(Type = typeof(BreakableIce), Member = "AddBrokenIceToNavmeshCuts")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(BreakableIce), Member = "RemoveOldestBrokenIce")]
+	[Calls(Type = typeof(Physics), Member = "OverlapSphere")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Collider), Member = "get_bounds")]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[Calls(Type = typeof(BreakableIce), Member = "IsIceBroken")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInParent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "DropIntoWater")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Campfire), Member = "SetState")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Fire), Member = "TurnOff")]
+	[Calls(Type = typeof(Bounds), Member = "get_size")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 24)]
 	public void BreakIce(Vector3 pos, float radius)
 	{
 	}
 
-	[CalledBy(Type = typeof(BreakableIce), Member = "IsIceBroken")]
-	[CalledBy(Type = typeof(BreakableIce), Member = "IsIceBroken")]
 	[CalledBy(Type = typeof(FlareItem), Member = "OnCollisionEnter")]
-	[CalledBy(Type = typeof(Utils), Member = "GetMaterialTagForObjectAtPosition")]
-	[CalledBy(Type = typeof(BreakableIce), Member = "IsIceBroken")]
-	[CalledBy(Type = typeof(BreakableIce), Member = "IsIceBroken")]
-	[CalledBy(Type = typeof(BreakableIce), Member = "IsIceBroken")]
-	[Calls(Type = typeof(BreakableIce), Member = "GetVoronoiPointSet")]
-	[CalledBy(Type = typeof(TorchItem), Member = "OnCollisionEnter")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "OnCollisionEnter")]
-	[Calls(Type = typeof(VoronoiPointSet), Member = "ComputeNearestPointIndex")]
-	[CallsUnknownMethods(Count = 14)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 10)]
+	[CalledBy(Type = typeof(TorchItem), Member = "OnCollisionEnter")]
 	[CalledBy(Type = typeof(BreakableIce), Member = "BreakIce")]
+	[CalledBy(Type = typeof(BreakableIce), Member = "IsIceBroken")]
+	[CalledBy(Type = typeof(Utils), Member = "GetMaterialTagForObjectAtPosition")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(BreakableIce), Member = "GetVoronoiPointSet")]
+	[Calls(Type = typeof(VoronoiPointSet), Member = "ComputeNearestPointIndex")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 14)]
 	public bool IsIceBroken(Vector3 position)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "ObjectToPlaceIsOnBrokenIce")]
 	[CalledBy(Type = typeof(GearItem), Member = "MaybeFallIntoWater")]
-	[CalledBy(Type = typeof(BreakableIce), Member = "BreakIce")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ObjectToPlaceIsOnBrokenIce")]
 	[CalledBy(Type = typeof(BreakableIce), Member = "Update")]
+	[CalledBy(Type = typeof(BreakableIce), Member = "BreakIce")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(BreakableIce), Member = "IsIceBroken")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(BreakableIce), Member = "IsIceBroken")]
-	[Calls(Type = typeof(BreakableIce), Member = "IsIceBroken")]
-	[Calls(Type = typeof(BreakableIce), Member = "IsIceBroken")]
-	[Calls(Type = typeof(BreakableIce), Member = "IsIceBroken")]
-	[CallerCount(Count = 4)]
 	public bool IsIceBroken(Vector3 position, float radius)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(IceCrackingManager), Member = "GetRespawnLocation")]
 	[CalledBy(Type = typeof(IceCrackingManager), Member = "UpdateTrackLocation")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public bool IsInDangerOfFallingIn(Vector3 position)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Reset()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NavMeshObstacle), Member = "set_radius")]
 	[CalledBy(Type = typeof(BreakableIce), Member = "Deserialize")]
 	[CalledBy(Type = typeof(BreakableIce), Member = "BreakIce")]
 	[CalledBy(Type = typeof(BreakableIce), Member = "InitializeNavmeshCuts")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NavMeshObstacle), Member = "set_radius")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 12)]
 	private void AddBrokenIceToNavmeshCuts(int index)
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(BreakableIce), Member = "Deserialize")]
 	[CalledBy(Type = typeof(BreakableIce), Member = "BreakIce")]
+	[CallerCount(Count = 2)]
 	private void AddBrokenIceToTexture(int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(VoronoiPointSet), Member = "ComputeNearestPointIndex")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(BreakableIce), Member = "GetVoronoiPointSet")]
+	[Calls(Type = typeof(VoronoiPointSet), Member = "ComputeNearestPointIndex")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	private void AddBrokenIceToTexture(Vector2 position)
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(BreakableIce), Member = "RemoveOldestBrokenIce")]
+	[CallerCount(Count = 1)]
 	private void RemoveBrokenIceFromTexture(int index)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(BreakableIce), Member = "GetVoronoiPointSet")]
 	[Calls(Type = typeof(VoronoiPointSet), Member = "ComputeNearestPointIndex")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 11)]
 	private void RemoveBrokenIceFromTexture(Vector2 position)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	private BrokenIce GetOldestBrokenIce()
 	{
 		return default(BrokenIce);
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[Calls(Type = typeof(Mathf), Member = "Abs")]
 	[CalledBy(Type = typeof(BreakableIce), Member = "IsIceBroken")]
 	[CalledBy(Type = typeof(BreakableIce), Member = "AddBrokenIceToTexture")]
 	[CalledBy(Type = typeof(BreakableIce), Member = "RemoveBrokenIceFromTexture")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
+	[Calls(Type = typeof(Mathf), Member = "Abs")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private VoronoiPointSet GetVoronoiPointSet(Vector2 tile)
 	{
@@ -306,38 +301,38 @@ public class BreakableIce : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(BreakableIce), Member = "Start")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 17)]
 	private void InitializeAudioEmitters()
 	{
 	}
 
+	[CalledBy(Type = typeof(BreakableIce), Member = "Start")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
 	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
 	[Calls(Type = typeof(BitmaskTexture), Member = ".ctor")]
-	[CalledBy(Type = typeof(BreakableIce), Member = "Start")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 19)]
 	private void InitializeBrokenIceTexture()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 24)]
 	[CalledBy(Type = typeof(BreakableIce), Member = "Start")]
-	[Calls(Type = typeof(BreakableIce), Member = "AddBrokenIceToNavmeshCuts")]
-	[Calls(Type = typeof(NavMeshObstacle), Member = "set_radius")]
-	[Calls(Type = typeof(NavMeshObstacle), Member = "set_height")]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(NavMeshObstacle), Member = "set_height")]
+	[Calls(Type = typeof(NavMeshObstacle), Member = "set_radius")]
+	[Calls(Type = typeof(BreakableIce), Member = "AddBrokenIceToNavmeshCuts")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 24)]
 	private void InitializeNavmeshCuts()
 	{
 	}
@@ -350,54 +345,52 @@ public class BreakableIce : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(BreakableIce), Member = "Update")]
-	[Calls(Type = typeof(BreakableIce), Member = "RemoveOldestBrokenIce")]
-	[CallsUnknownMethods(Count = 9)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BreakableIce), Member = "RemoveOldestBrokenIce")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	private void RemoveExpiredBrokenIce()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(BreakableIce), Member = "RemoveBrokenIceFromTexture")]
 	[CalledBy(Type = typeof(BreakableIce), Member = "BreakIce")]
 	[CalledBy(Type = typeof(BreakableIce), Member = "RemoveExpiredBrokenIce")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BreakableIce), Member = "RemoveBrokenIceFromTexture")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	private void RemoveOldestBrokenIce()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 26)]
 	[CalledBy(Type = typeof(BreakableIce), Member = "Update")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Vector2), Member = "get_up")]
-	[Calls(Type = typeof(Vector2), Member = "get_magnitude")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Vector2), Member = "get_magnitude")]
 	[Calls(Type = typeof(Vector2), Member = "get_up")]
+	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 26)]
 	private void UpdateAudioEmitters(Vector3 listenerPosition)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(BreakableIce), Member = "DeserializeAll")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Vector3), Member = "Distance")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private static BreakableIce FindBreakableIceByPosition(Vector3 pos)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public BreakableIce()
 	{
 	}

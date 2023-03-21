@@ -35,10 +35,10 @@ internal sealed class MaskedBlurEffectRenderer : PostProcessEffectRenderer<Maske
 
 	private const float k_FilmHeight = 0.024f;
 
-	[Calls(Type = typeof(Shader), Member = "Find")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Shader), Member = "Find")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public MaskedBlurEffectRenderer()
 	{
 		((PostProcessEffectRenderer<>)(object)this)._002Ector();
@@ -53,7 +53,6 @@ internal sealed class MaskedBlurEffectRenderer : PostProcessEffectRenderer<Maske
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
-	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
 	private RenderTextureFormat SelectFormat(RenderTextureFormat primary, RenderTextureFormat secondary)
 	{
 		return default(RenderTextureFormat);
@@ -63,50 +62,37 @@ internal sealed class MaskedBlurEffectRenderer : PostProcessEffectRenderer<Maske
 	[CallsUnknownMethods(Count = 1)]
 	private float CalculateMaxCoCRadius(int screenHeight)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(MaskedBlurEffectRenderer), Member = "Render")]
-	[CalledBy(Type = typeof(MaskedBlurEffectRenderer), Member = "Render")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
 	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 10)]
 	private RenderTexture CheckHistory(int eye, int id, PostProcessRenderContext context, RenderTextureFormat format)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(PostProcessDebugLayer), Member = "PushDebugOverlay")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(TemporalAntialiasing), Member = "IsSupported")]
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
-	[Calls(Type = typeof(MaskedBlurEffectRenderer), Member = "CheckHistory")]
-	[Calls(Type = typeof(MaskedBlurEffectRenderer), Member = "CheckHistory")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
-	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 17)]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "get_blackTexture")]
 	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
 	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetDescriptor")]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
 	[Calls(Type = typeof(TemporalAntialiasing), Member = "IsSupported")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "get_blackTexture")]
+	[Calls(Type = typeof(MaskedBlurEffectRenderer), Member = "CheckHistory")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
+	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
+	[Calls(Type = typeof(PostProcessDebugLayer), Member = "PushDebugOverlay")]
+	[CallsDeduplicatedMethods(Count = 17)]
+	[CallsUnknownMethods(Count = 19)]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}

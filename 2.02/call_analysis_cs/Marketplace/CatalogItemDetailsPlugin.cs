@@ -12,8 +12,8 @@ public class CatalogItemDetailsPlugin
 	public static extern IntPtr CatalogItemDetails_Description(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CatalogItemDetails_Id(IntPtr self);
 
 	[PreserveSig]
@@ -47,8 +47,8 @@ public class CatalogItemDetailsPlugin
 	public static extern uint CatalogItemDetails_TitleId(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern ulong CatalogItemDetails_ReleaseDate(IntPtr self);
 
 	[PreserveSig]
@@ -77,13 +77,13 @@ public class CatalogItemDetailsPlugin
 	public static extern IntPtr CatalogItemDetails_Availabilities(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CatalogItemDetails_Availabilities_Length(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CatalogItemDetails_Availabilities_GetAt(IntPtr self, uint idx);
 
 	[PreserveSig]
@@ -97,7 +97,7 @@ public class CatalogItemDetailsPlugin
 	public static extern void CatalogItemDetails_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CatalogItemDetailsPlugin()
 	{
 	}

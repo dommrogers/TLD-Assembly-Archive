@@ -15,14 +15,14 @@ public class PresenceChangedCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		private set
 		{
 		}
@@ -30,16 +30,16 @@ public class PresenceChangedCallbackInfo : ICallbackInfo, ISettable
 
 	public EpicAccountId LocalUserId
 	{
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -49,14 +49,14 @@ public class PresenceChangedCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -70,26 +70,26 @@ public class PresenceChangedCallbackInfo : ICallbackInfo, ISettable
 	}
 
 	[CalledBy(Type = typeof(PresenceChangedCallbackInfo), Member = "Set")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PresenceChangedCallbackInfoInternal), Member = "get_PresenceUserId")]
-	[Calls(Type = typeof(PresenceChangedCallbackInfoInternal), Member = "get_LocalUserId")]
-	[Calls(Type = typeof(PresenceChangedCallbackInfoInternal), Member = "get_ClientData")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PresenceChangedCallbackInfoInternal), Member = "get_ClientData")]
+	[Calls(Type = typeof(PresenceChangedCallbackInfoInternal), Member = "get_LocalUserId")]
+	[Calls(Type = typeof(PresenceChangedCallbackInfoInternal), Member = "get_PresenceUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	internal void Set(PresenceChangedCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PresenceChangedCallbackInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PresenceChangedCallbackInfo()
 	{
 	}

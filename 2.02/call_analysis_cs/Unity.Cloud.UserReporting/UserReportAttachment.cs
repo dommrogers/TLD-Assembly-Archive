@@ -18,16 +18,16 @@ public struct UserReportAttachment
 
 	public string ContentType
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 1)]
-		[CompilerGenerated]
 		set
 		{
 		}
@@ -54,14 +54,14 @@ public struct UserReportAttachment
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 101)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -69,16 +69,16 @@ public struct UserReportAttachment
 
 	public string FileName
 	{
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -88,25 +88,25 @@ public struct UserReportAttachment
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Convert), Member = "ToBase64String")]
 	[CalledBy(Type = typeof(UserReportingScript), Member = "<CreateUserReport>b__29_2")]
 	[CalledBy(Type = typeof(AttachmentExtensions), Member = "AddJson")]
 	[CalledBy(Type = typeof(AttachmentExtensions), Member = "AddText")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Convert), Member = "ToBase64String")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public UserReportAttachment(string name, string fileName, string contentType, byte[] data)
 	{
 	}

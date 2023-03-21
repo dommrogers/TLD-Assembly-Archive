@@ -35,7 +35,7 @@ public class ExecuteFunction_Multiplatform : ActionTask
 		[CallerCount(Count = 3)]
 		internal bool _003COnInit_003Eb__13_0(BBObjectParameter p)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -53,7 +53,7 @@ public class ExecuteFunction_Multiplatform : ActionTask
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -64,33 +64,33 @@ public class ExecuteFunction_Multiplatform : ActionTask
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		public _003CInternalCoroutine_003Ed__16(int _003C_003E1__state)
 		{
 		}
 
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 6)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+		[CallsUnknownMethods(Count = 4)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -116,8 +116,8 @@ public class ExecuteFunction_Multiplatform : ActionTask
 
 	private MethodInfo targetMethod
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -127,9 +127,9 @@ public class ExecuteFunction_Multiplatform : ActionTask
 	public override Type agentType
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -138,54 +138,56 @@ public class ExecuteFunction_Multiplatform : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(System.Text.StringBuilderCache), Member = "Acquire")]
-		[CallsUnknownMethods(Count = 28)]
-		[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(System.Text.StringBuilderCache), Member = "Release")]
-		[Calls(Type = typeof(StringBuilder), Member = "AppendFormatHelper")]
-		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[CallsDeduplicatedMethods(Count = 11)]
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(TypeFullName = "System.Text.StringBuilderCache", Member = "Acquire")]
+		[Calls(Type = typeof(StringBuilder), Member = "AppendFormatHelper")]
+		[Calls(TypeFullName = "System.Text.StringBuilderCache", Member = "Release")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 11)]
+		[CallsUnknownMethods(Count = 28)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Task), Member = "Error")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(ExecuteFunction_Multiplatform), Member = "SetMethod")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ExecuteFunction_Multiplatform), Member = "SetMethod")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Task), Member = "Error")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnValidate(ITaskSystem ownerSystem)
 	{
 	}
 
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
 	[Calls(Type = typeof(string), Member = "Format")]
-	[CallsUnknownMethods(Count = 9)]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	protected override string OnInit()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[Calls(Type = typeof(MonoManager), Member = "get_current")]
-	[Calls(Type = typeof(Task), Member = "get_agent")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Task), Member = "get_agent")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(MonoManager), Member = "get_current")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 11)]
 	protected override void OnExecute()
 	{
 	}
@@ -203,22 +205,23 @@ public class ExecuteFunction_Multiplatform : ActionTask
 		return null;
 	}
 
-	[Calls(Type = typeof(BBObjectParameter), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(ExecuteFunction_Multiplatform), Member = "OnValidate")]
-	[Calls(Type = typeof(BBParameter), Member = "ResolveReference")]
-	[Calls(Type = typeof(BBObjectParameter), Member = "SetType")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(BBObjectParameter), Member = ".ctor")]
 	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(Type = typeof(BBObjectParameter), Member = "SetType")]
+	[Calls(Type = typeof(BBParameter), Member = "ResolveReference")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 6)]
 	private void SetMethod(MethodInfo method)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public ExecuteFunction_Multiplatform()
 	{
 	}

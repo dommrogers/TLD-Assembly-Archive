@@ -12,22 +12,21 @@ public class Action_StartSideMission : ActionTask<GraphOwner>
 
 	public bool restartIfAlreadyActive;
 
-	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(BlackboardSource), Member = "GetVariable")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "IsMissionActive")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "StopMission")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 4)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(BlackboardSource), Member = "GetVariable")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Action_StartSideMission()
 	{
 		((ActionTask<>)(object)this)._002Ector();

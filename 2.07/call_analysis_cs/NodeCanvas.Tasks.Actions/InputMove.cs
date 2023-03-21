@@ -20,13 +20,14 @@ public class InputMove : ActionTask<Transform>
 
 	public bool repeat;
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(Transform), Member = "get_up")]
-	[CallsDeduplicatedMethods(Count = 18)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(Transform), Member = "get_up")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 18)]
+	[CallsUnknownMethods(Count = 12)]
 	protected override void OnUpdate()
 	{
 	}

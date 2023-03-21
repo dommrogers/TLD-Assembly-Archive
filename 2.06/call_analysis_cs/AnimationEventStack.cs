@@ -15,10 +15,10 @@ public class AnimationEventStack
 
 	public AnimationEventValue[] m_Stack;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(AnimationEvents), Member = "MaybeRecreateEventArrays")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public AnimationEventStack(string name, AnimatorControllerParameterType type, RuntimeAnimatorController target)
 	{
 	}

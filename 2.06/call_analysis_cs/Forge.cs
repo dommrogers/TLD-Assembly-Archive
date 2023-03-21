@@ -23,21 +23,21 @@ public class Forge : MonoBehaviour, CraftingLocationInterface
 	[CallerCount(Count = 0)]
 	public int ModifyCraftingTime(int minutes)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool ReadyForBlueprint(BlueprintData bp)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Forge), Member = "ForgeHotEnoughForUse")]
 	public bool ReadyToCraft()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -46,52 +46,52 @@ public class Forge : MonoBehaviour, CraftingLocationInterface
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Fire), Member = "GetHeatIncreaseText")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void UpdateInteraction(BaseInteraction baseInteraction)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Forge), Member = "ForgeHotEnoughForUse")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "EnableCraftingAtLocation")]
 	[Calls(Type = typeof(Forge), Member = "DisplayNotHotEnoughMessage")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Forge), Member = "ForgeHotEnoughForUse")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Panel_Crafting), Member = "EnableCraftingAtLocation")]
 	public void PerformInteraction()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Forge), Member = "ReadyToCraft")]
 	[CalledBy(Type = typeof(Forge), Member = "PerformInteraction")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ForgeHotEnoughForUse()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Forge), Member = "PerformInteraction")]
 	[CalledBy(Type = typeof(Forge), Member = "ShowError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Utils), Member = "GetTemperatureString")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CalledBy(Type = typeof(Forge), Member = "PerformInteraction")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Utils), Member = "GetTemperatureString")]
 	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsUnknownMethods(Count = 1)]
 	private void DisplayNotHotEnoughMessage()
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public Forge()
 	{
 	}

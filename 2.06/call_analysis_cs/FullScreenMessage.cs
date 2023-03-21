@@ -27,45 +27,48 @@ public class FullScreenMessage : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Action_FullScreenMessage), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Action_PassTime), Member = "OnExecute")]
-	[Calls(Type = typeof(FullScreenMessage), Member = "ShowText")]
-	[Calls(Type = typeof(HUDMessage.HUDMessageInfo), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Action_FullScreenMessage), Member = "OnExecute")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(HUDMessage.HUDMessageInfo), Member = ".ctor")]
+	[Calls(Type = typeof(FullScreenMessage), Member = "ShowText")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void AddMessage(string message, float numSeconds, bool blackOutScreen, bool fadeIn)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(FullScreenMessage), Member = "ShowText")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private static void ShowMessage()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(FullScreenMessage), Member = "ShowMessage")]
 	[CalledBy(Type = typeof(FullScreenMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(LocationRevealText), Member = "StartFade")]
-	[Calls(Type = typeof(LocationRevealText), Member = "SetFontAndHide")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(FullScreenMessage), Member = "ShowMessage")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(LocationRevealText), Member = "SetFontAndHide")]
+	[Calls(Type = typeof(LocationRevealText), Member = "StartFade")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private static void ShowText(string text)
 	{
 	}

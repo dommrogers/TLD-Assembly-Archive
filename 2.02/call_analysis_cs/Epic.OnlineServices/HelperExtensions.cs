@@ -4,17 +4,17 @@ namespace Epic.OnlineServices;
 
 public static class HelperExtensions
 {
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "IsOperationComplete")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "IsOperationComplete")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsOperationComplete(this Result result)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "ToHexString")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static string ToHexString(this byte[] byteArray)
 	{
 		return null;

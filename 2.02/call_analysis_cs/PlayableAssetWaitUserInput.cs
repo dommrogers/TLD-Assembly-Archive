@@ -6,10 +6,13 @@ public class PlayableAssetWaitUserInput : PlayableAsset
 {
 	public LocalizedString m_LocalizationId;
 
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptPlayable<>), Member = "Create")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "FindClip")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(PlayableHandle), Member = "GetObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
 	{
 		return default(Playable);

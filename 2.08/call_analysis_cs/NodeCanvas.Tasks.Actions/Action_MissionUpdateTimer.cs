@@ -13,28 +13,31 @@ public class Action_MissionUpdateTimer : ActionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(Task), Member = "get_name")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Task), Member = "get_name")]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(Utils), Member = "MissionIDExists")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionTimer")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsUnknownMethods(Count = 2)]
 	public Action_MissionUpdateTimer()
 	{
 	}

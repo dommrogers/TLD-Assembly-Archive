@@ -23,7 +23,7 @@ public class GetLinecastInfo2DAll : ActionTask<Transform>
 		public static Func<RaycastHit2D, Vector2> _003C_003E9__7_3;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
@@ -39,7 +39,7 @@ public class GetLinecastInfo2DAll : ActionTask<Transform>
 		[CallerCount(Count = 0)]
 		internal float _003COnExecute_003Eb__7_1(RaycastHit2D h)
 		{
-			return default(float);
+			return 0f;
 		}
 
 		[CallerCount(Count = 0)]
@@ -69,28 +69,31 @@ public class GetLinecastInfo2DAll : ActionTask<Transform>
 
 	private RaycastHit2D[] hits;
 
-	[CallsUnknownMethods(Count = 54)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[CallsDeduplicatedMethods(Count = 16)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Physics2D), Member = "LinecastAll")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(Enumerable), Member = "ToList")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 48)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public override void OnDrawGizmosSelected()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GetLinecastInfo2DAll()
 	{
 		((ActionTask<>)(object)this)._002Ector();

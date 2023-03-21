@@ -393,9 +393,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedAction_System_Int32 : ReflectedAction<int>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Framework_Internal_ReflectedAction_System_Int32()
 		{
 			((ReflectedAction<>)(object)this)._002Ector();
@@ -426,9 +426,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Vector4 : ReflectedAction<Vector4>
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		public NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Vector4()
 		{
 			((ReflectedAction<>)(object)this)._002Ector();
@@ -437,9 +437,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Quaternion : ReflectedAction<Quaternion>
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		public NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Quaternion()
 		{
 			((ReflectedAction<>)(object)this)._002Ector();
@@ -481,9 +481,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Rect : ReflectedAction<Rect>
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		public NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Rect()
 		{
 			((ReflectedAction<>)(object)this)._002Ector();
@@ -515,7 +515,7 @@ internal class AOTDummy
 	private class NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Collision : ReflectedAction<Collision>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ReflectedAction<>), Member = ".ctor")]
 		public NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Collision()
 		{
 			((ReflectedAction<>)(object)this)._002Ector();
@@ -524,8 +524,8 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Collision2D : ReflectedAction<Collision2D>
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ReflectedAction<>), Member = ".ctor")]
 		public NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Collision2D()
 		{
 			((ReflectedAction<>)(object)this)._002Ector();
@@ -556,9 +556,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Ray : ReflectedAction<Ray>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Framework_Internal_ReflectedAction_UnityEngine_Ray()
 		{
 			((ReflectedAction<>)(object)this)._002Ector();
@@ -589,9 +589,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_System_Boolean : ReflectedFunction<bool>
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_System_Boolean()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -600,9 +600,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_System_Single : ReflectedFunction<float>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_System_Single()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -633,9 +633,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Vector3 : ReflectedFunction<Vector3>
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Vector3()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -644,9 +644,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Vector4 : ReflectedFunction<Vector4>
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Vector4()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -666,9 +666,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Keyframe : ReflectedFunction<Keyframe>
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Keyframe()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -677,9 +677,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Bounds : ReflectedFunction<Bounds>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Bounds()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -688,9 +688,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Color : ReflectedFunction<Color>
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Color()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -732,8 +732,8 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Collision : ReflectedFunction<Collision>
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ReflectedFunction<>), Member = ".ctor")]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Collision()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -743,7 +743,7 @@ internal class AOTDummy
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Collision2D : ReflectedFunction<Collision2D>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ReflectedFunction<>), Member = ".ctor")]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Collision2D()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -774,9 +774,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Ray : ReflectedFunction<Ray>
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_UnityEngine_Ray()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -5313,14 +5313,14 @@ internal class AOTDummy
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private void NodeCanvas_Framework_Blackboard_GetValue_2()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private void NodeCanvas_Framework_IBlackboard_GetVariable_1()
 	{
 	}

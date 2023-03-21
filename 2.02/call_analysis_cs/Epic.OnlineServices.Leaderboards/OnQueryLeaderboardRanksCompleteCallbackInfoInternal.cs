@@ -13,8 +13,8 @@ internal struct OnQueryLeaderboardRanksCompleteCallbackInfoInternal : ICallbackI
 
 	public Result ResultCode
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(Result);
@@ -23,11 +23,11 @@ internal struct OnQueryLeaderboardRanksCompleteCallbackInfoInternal : ICallbackI
 
 	public object ClientData
 	{
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CalledBy(Type = typeof(OnQueryLeaderboardRanksCompleteCallbackInfo), Member = "Set")]
 		[CalledBy(Type = typeof(OnQueryLeaderboardRanksCompleteCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(OnQueryLeaderboardRanksCompleteCallbackInfo), Member = "Set")]
 		get
 		{
 			return null;
@@ -40,7 +40,7 @@ internal struct OnQueryLeaderboardRanksCompleteCallbackInfoInternal : ICallbackI
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 }

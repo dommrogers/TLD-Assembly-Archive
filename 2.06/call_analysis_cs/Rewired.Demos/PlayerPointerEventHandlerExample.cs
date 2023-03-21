@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 namespace Rewired.Demos;
 
-public sealed class PlayerPointerEventHandlerExample : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerUpHandler, IPointerExitHandler, IEventSystemHandler, IDragHandler, IBeginDragHandler, IScrollHandler, IEndDragHandler, IPointerClickHandler
+public sealed class PlayerPointerEventHandlerExample : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler, IPointerExitHandler, IPointerUpHandler, IPointerDownHandler, IPointerClickHandler, IScrollHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 	public Text text;
 
@@ -17,39 +17,38 @@ public sealed class PlayerPointerEventHandlerExample : MonoBehaviour, IPointerDo
 
 	private List<string> log;
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnEndDrag")]
-	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnDrag")]
-	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnBeginDrag")]
-	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnScroll")]
-	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnPointerClick")]
-	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnPointerDown")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnPointerExit")]
 	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnPointerEnter")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 9)]
+	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnPointerExit")]
 	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnPointerUp")]
+	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnPointerDown")]
+	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnPointerClick")]
+	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnScroll")]
+	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnBeginDrag")]
+	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnDrag")]
+	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnEndDrag")]
+	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Log(string o)
 	{
 	}
 
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	private void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "GetSourceName")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "Log")]
@@ -58,81 +57,69 @@ public sealed class PlayerPointerEventHandlerExample : MonoBehaviour, IPointerDo
 	{
 	}
 
-	[CallsUnknownMethods(Count = 28)]
-	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "GetSourceName")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "Log")]
+	[CallsUnknownMethods(Count = 28)]
 	public void OnPointerExit(PointerEventData eventData)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "GetSourceName")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "Log")]
 	[CallsUnknownMethods(Count = 37)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "GetSourceName")]
-	[CallerCount(Count = 0)]
 	public void OnPointerUp(PointerEventData eventData)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 37)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "GetSourceName")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "Log")]
+	[CallsUnknownMethods(Count = 37)]
 	public void OnPointerDown(PointerEventData eventData)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 37)]
-	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "GetSourceName")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "Log")]
+	[CallsUnknownMethods(Count = 37)]
 	public void OnPointerClick(PointerEventData eventData)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "GetSourceName")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "Log")]
 	[CallsUnknownMethods(Count = 28)]
-	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "GetSourceName")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	public void OnScroll(PointerEventData eventData)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[CallsUnknownMethods(Count = 37)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "GetSourceName")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "Log")]
+	[CallsUnknownMethods(Count = 37)]
 	public void OnBeginDrag(PointerEventData eventData)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "GetSourceName")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "Log")]
 	[CallsUnknownMethods(Count = 37)]
@@ -140,40 +127,36 @@ public sealed class PlayerPointerEventHandlerExample : MonoBehaviour, IPointerDo
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 37)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "Log")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "GetSourceName")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(PlayerPointerEventHandlerExample), Member = "Log")]
+	[CallsUnknownMethods(Count = 37)]
 	public void OnEndDrag(PointerEventData eventData)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnEndDrag")]
-	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnBeginDrag")]
-	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnScroll")]
-	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnPointerClick")]
-	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnPointerDown")]
-	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnDrag")]
-	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnPointerExit")]
 	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnPointerEnter")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallerCount(Count = 9)]
+	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnPointerExit")]
 	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnPointerUp")]
+	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnPointerDown")]
+	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnPointerClick")]
+	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnScroll")]
+	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnBeginDrag")]
+	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnDrag")]
+	[CalledBy(Type = typeof(PlayerPointerEventHandlerExample), Member = "OnEndDrag")]
+	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallsUnknownMethods(Count = 3)]
 	private static string GetSourceName(PlayerPointerEventData playerEventData)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public PlayerPointerEventHandlerExample()
 	{
 	}

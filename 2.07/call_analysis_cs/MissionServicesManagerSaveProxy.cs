@@ -19,9 +19,9 @@ public class MissionServicesManagerSaveProxy
 
 	public List<CustomManagedObjectState> m_CustomManagedObjectStates;
 
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = ".cctor")]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public MissionServicesManagerSaveProxy()
 	{

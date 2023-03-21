@@ -11,11 +11,11 @@ public class CommonPlugin
 	public static extern int InitializePlugin(uint creationFlags);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(TitleStorage), Member = "Create")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(StorageManager), Member = "AmFullyInitialized")]
+	[CalledBy(Type = typeof(TitleStorage), Member = "Create")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool AmFullyInitialized();
 
 	[PreserveSig]
@@ -28,8 +28,8 @@ public class CommonPlugin
 	[CallsUnknownMethods(Count = 1)]
 	public static extern int GetPluginVersion();
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public CommonPlugin()
 	{
 	}

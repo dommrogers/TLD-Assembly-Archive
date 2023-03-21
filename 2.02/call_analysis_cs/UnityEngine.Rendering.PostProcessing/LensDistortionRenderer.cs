@@ -4,10 +4,10 @@ namespace UnityEngine.Rendering.PostProcessing;
 
 internal sealed class LensDistortionRenderer : PostProcessEffectRenderer<LensDistortion>
 {
-	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(PropertySheet), Member = "EnableKeyword")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PropertySheet), Member = "EnableKeyword")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 23)]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}

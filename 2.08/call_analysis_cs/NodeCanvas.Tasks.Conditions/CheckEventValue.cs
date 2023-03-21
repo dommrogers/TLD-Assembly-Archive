@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using ParadoxNotion;
@@ -26,17 +25,17 @@ public class CheckEventValue<T> : ConditionTask<GraphOwner>
 	[CallerCount(Count = 3)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnCustomEvent(EventData receivedEvent)
 	{
 	}

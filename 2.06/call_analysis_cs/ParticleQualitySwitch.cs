@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -63,8 +62,8 @@ public class ParticleQualitySwitch : MonoBehaviour
 
 	private bool m_IsInitialized;
 
-	[Calls(Type = typeof(ParticleQualitySwitch), Member = "Initialize")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ParticleQualitySwitch), Member = "Initialize")]
 	private void Start()
 	{
 	}
@@ -75,33 +74,32 @@ public class ParticleQualitySwitch : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(ParticleQualitySwitch), Member = "Start")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 25)]
 	private void Initialize()
 	{
 	}
 
 	[CalledBy(Type = typeof(ParticleQualitySwitch), Member = "Update")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(ParticleQualitySwitch), Member = "SetLocalQuality")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
+	[Calls(Type = typeof(ParticleQualitySwitch), Member = "SetLocalQuality")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void RefreshLocalQuality()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 14)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CalledBy(Type = typeof(ParticleQualitySwitch), Member = "RefreshLocalQuality")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 14)]
 	[CallsUnknownMethods(Count = 17)]
 	private void SetLocalQuality(ParticleSystem curFX, bool cEnabled, bool nEnabled, bool isDisabled, FxComponentQuality cQual, FxComponentQuality nQual)
 	{

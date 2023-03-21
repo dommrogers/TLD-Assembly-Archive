@@ -47,9 +47,11 @@ public class MatchesItem : MonoBehaviour
 
 	private GearItem m_ClonedStack;
 
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Awake()
 	{
 	}
@@ -66,73 +68,71 @@ public class MatchesItem : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(MatchesItem), Member = "UpdateFXTransform")]
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateItemInHands")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
-	[Calls(Type = typeof(MatchesItem), Member = "PutOut")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(MatchesItem), Member = "PutOut")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Confirm")]
-	[Calls(Type = typeof(MatchesItem), Member = "Ignite")]
-	[Calls(Type = typeof(Wind), Member = "TooWindyForPlayerAction")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(MatchesItem), Member = "Ignite")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Confirm")]
+	[Calls(Type = typeof(Wind), Member = "TooWindyForPlayerAction")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(MatchesItem), Member = "UpdateFXTransform")]
+	[Calls(Type = typeof(MatchesItem), Member = "PutOut")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 17)]
 	public void UpdateWhileInHands()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessFireAction")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Wind), Member = "TooWindyForPlayerAction")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
+	[Calls(Type = typeof(Wind), Member = "TooWindyForPlayerAction")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public void IgniteDelayed()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite")]
-	[Calls(Type = typeof(FirstPersonItem), Member = "AnimateFPSMeshToExitPosition")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(FirstPersonItem), Member = "AnimateFPSMeshToExitPosition")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite")]
+	[CallsUnknownMethods(Count = 3)]
 	public void IgniteAfterDelay()
 	{
 	}
 
+	[CalledBy(Type = typeof(MatchesItem), Member = "UpdateWhileInHands")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(Random), Member = "Range")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(MatchesItem), Member = "UpdateWhileInHands")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void Ignite()
 	{
@@ -145,37 +145,36 @@ public class MatchesItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Cancel")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Cancel")]
+	[CallsUnknownMethods(Count = 3)]
 	public void CancelIgnite()
 	{
 	}
 
-	[CalledBy(Type = typeof(MatchesItem), Member = "UpdateWhileInHands")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "ExtinguishLitItemInHands")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemToPlacementZone")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemInHand")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PauseLight")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TurnLightOffImmediate")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
-	[CalledBy(Type = typeof(MatchesItem), Member = "UpdateWhileInHands")]
-	[CalledBy(Type = typeof(MatchesItem), Member = "OnDroppedInWater")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
-	[CallerCount(Count = 11)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CalledBy(Type = typeof(GearItem), Member = "ExtinguishLitItem")]
+	[CalledBy(Type = typeof(MatchesItem), Member = "OnDroppedInWater")]
+	[CalledBy(Type = typeof(MatchesItem), Member = "UpdateWhileInHands")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TurnLightOffImmediate")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PauseLight")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemInHand")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemToPlacementZone")]
+	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "ExtinguishLitItemInHands")]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_FireStart), Member = "Refresh")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "EquipItem")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Update_Lightsource_Lit")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 9)]
 	public void PutOut(bool burntOut)
 	{
 	}
@@ -184,39 +183,38 @@ public class MatchesItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsBurning()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool IsFresh()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetBurnProgress()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableRenderable")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableRenderable")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnIgniteCompleteCallback()
 	{
 	}
 
 	[CalledBy(Type = typeof(MatchesItem), Member = "UpdateWhileInHands")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "GetFPSItemGameObject")]
 	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	private void UpdateFXTransform(float percentComplete)
 	{

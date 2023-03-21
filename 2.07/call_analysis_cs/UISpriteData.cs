@@ -35,7 +35,7 @@ public class UISpriteData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -44,7 +44,7 @@ public class UISpriteData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -69,8 +69,8 @@ public class UISpriteData
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 13)]
 	public void CopyFromReduced(UISpriteData sd, float reductionFactor)
 	{
 	}

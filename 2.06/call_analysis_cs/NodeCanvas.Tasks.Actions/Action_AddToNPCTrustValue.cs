@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 
@@ -13,29 +12,32 @@ public class Action_AddToNPCTrustValue : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsUnknownMethods(Count = 5)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(TrustManager), Member = "AddToTrustValue")]
-	[CallsUnknownMethods(Count = 5)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}
 
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
+	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
+	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	public Action_AddToNPCTrustValue()
 	{
 	}

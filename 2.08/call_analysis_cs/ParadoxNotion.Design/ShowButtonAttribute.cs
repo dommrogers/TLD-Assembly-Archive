@@ -8,8 +8,8 @@ public class ShowButtonAttribute : DrawerAttribute
 
 	public readonly string methodnameCallback;
 
-	[CallerCount(Count = 263)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 268)]
 	public ShowButtonAttribute(string buttonTitle, string methodnameCallback)
 	{
 	}

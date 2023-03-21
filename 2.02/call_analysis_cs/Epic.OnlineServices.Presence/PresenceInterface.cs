@@ -43,7 +43,7 @@ public sealed class PresenceInterface : Handle
 	public const int SetstatusApiLatest = 1;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PresenceInterface()
 	{
 	}
@@ -54,35 +54,36 @@ public sealed class PresenceInterface : Handle
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Helper), Member = "TryAssignNotificationIdToCallback")]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
-	[Calls(Type = typeof(AddNotifyJoinGameAcceptedOptionsInternal), Member = "Set")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AddNotifyJoinGameAcceptedOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryAssignNotificationIdToCallback")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public ulong AddNotifyJoinGameAccepted(AddNotifyJoinGameAcceptedOptions options, object clientData, OnJoinGameAcceptedCallback notificationFn)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(AddNotifyOnPresenceChangedOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[Calls(Type = typeof(Helper), Member = "TryAssignNotificationIdToCallback")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public ulong AddNotifyOnPresenceChanged(AddNotifyOnPresenceChangedOptions options, object clientData, OnPresenceChangedCallback notificationHandler)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CopyPresenceOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 2)]
 	public Result CopyPresence(CopyPresenceOptions options, out Info outPresence)
 	{
 		outPresence = null;
@@ -90,9 +91,10 @@ public sealed class PresenceInterface : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(CreatePresenceModificationOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result CreatePresenceModification(CreatePresenceModificationOptions options, out PresenceModification outPresenceModificationHandle)
 	{
@@ -100,67 +102,65 @@ public sealed class PresenceInterface : Handle
 		return default(Result);
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GetJoinInfoOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalAllocate")]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-	[Calls(Type = typeof(GetJoinInfoOptionsInternal), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsUnknownMethods(Count = 1)]
 	public Result GetJoinInfo(GetJoinInfoOptions options, out string outBuffer)
 	{
 		outBuffer = null;
 		return default(Result);
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(HasPresenceOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool HasPresence(HasPresenceOptions options)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
-	[CallsUnknownMethods(Count = 9)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(QueryPresenceOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void QueryPresence(QueryPresenceOptions options, object clientData, OnQueryPresenceCompleteCallback completionDelegate)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRemoveCallbackByNotificationId")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryRemoveCallbackByNotificationId")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void RemoveNotifyJoinGameAccepted(ulong inId)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryRemoveCallbackByNotificationId")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryRemoveCallbackByNotificationId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void RemoveNotifyOnPresenceChanged(ulong notificationId)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SetPresenceOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void SetPresence(SetPresenceOptions options, object clientData, SetPresenceCompleteCallback completionDelegate)
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -168,7 +168,6 @@ public sealed class PresenceInterface : Handle
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -176,7 +175,6 @@ public sealed class PresenceInterface : Handle
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -184,10 +182,9 @@ public sealed class PresenceInterface : Handle
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static void SetPresenceCompleteCallbackInternalImplementation(IntPtr data)
 	{
 	}
@@ -220,8 +217,8 @@ public sealed class PresenceInterface : Handle
 	internal static extern Result EOS_Presence_GetJoinInfo(IntPtr handle, IntPtr options, IntPtr outBuffer, ref int inOutBufferLength);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern int EOS_Presence_HasPresence(IntPtr handle, IntPtr options);
 
 	[PreserveSig]

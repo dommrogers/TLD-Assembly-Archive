@@ -14,7 +14,7 @@ public class PolygonHelper : MonoBehaviour
 		[CallerCount(Count = 0)]
 		public float Distance(Vector2 point)
 		{
-			return default(float);
+			return 0f;
 		}
 
 		[CallerCount(Count = 0)]
@@ -23,9 +23,8 @@ public class PolygonHelper : MonoBehaviour
 			return default(Vector2);
 		}
 
+		[CalledBy(Type = typeof(Plane2D), Member = "CutConvex")]
 		[CallerCount(Count = 2)]
-		[CalledBy(Type = typeof(Plane2D), Member = "CutConvex")]
-		[CalledBy(Type = typeof(Plane2D), Member = "CutConvex")]
 		public Vector2 Intersect(Vector2 p1, Vector2 p2)
 		{
 			return default(Vector2);
@@ -34,7 +33,7 @@ public class PolygonHelper : MonoBehaviour
 		[CallerCount(Count = 0)]
 		public bool GetSide(Vector2 point)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
@@ -55,11 +54,10 @@ public class PolygonHelper : MonoBehaviour
 		{
 		}
 
-		[CallsUnknownMethods(Count = 6)]
 		[CalledBy(Type = typeof(TriggerZone), Member = "ComputeZone")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Plane2D), Member = "Intersect")]
-		[Calls(Type = typeof(Plane2D), Member = "Intersect")]
+		[CallsUnknownMethods(Count = 6)]
 		public Vector2[] CutConvex(Vector2[] poly)
 		{
 			return null;

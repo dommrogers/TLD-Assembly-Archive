@@ -29,29 +29,29 @@ public class AnimatedUVs : MonoBehaviour
 
 	private float m_CurRndSpeed;
 
-	[Calls(Type = typeof(Material), Member = "SetTextureOffset")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(Material), Member = "SetTextureOffset")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Wind), Member = "GetWindAngleRelativeToPlayer")]
 	[Calls(Type = typeof(Material), Member = "SetTextureOffset")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	private void LateUpdate()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Vector2), Member = "get_zero")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public AnimatedUVs()
 	{
 	}

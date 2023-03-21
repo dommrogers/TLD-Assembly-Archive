@@ -23,20 +23,16 @@ public class Action_GetInvItemCount : ActionTask
 		}
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 28)]
-	[Calls(Type = typeof(Variable), Member = "OnValueChanged")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Utils), Member = "GetMeasurableTotalByTypeInList")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Variable), Member = "OnValueChanged")]
-	[Calls(Type = typeof(Utils), Member = "NumGearInListForScripting")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Utils), Member = "NumGearInListForScripting")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Variable), Member = "OnValueChanged")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(Utils), Member = "GetMeasurableTotalByTypeInList")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 28)]
 	protected override void OnExecute()
 	{
 	}

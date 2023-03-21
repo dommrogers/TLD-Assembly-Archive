@@ -26,49 +26,54 @@ public class ReplaceMaterial : MonoBehaviour
 	private static ReplaceMaterialSaveDataProxy m_ReplaceMaterialSaveDataProxy;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(ReplaceMaterial), Member = "ScanForRenderers")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(ReplaceMaterial), Member = "ReplaceMaterials")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
 
 	[CalledBy(Type = typeof(ReplaceMaterialsManager), Member = "SerializeAll")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(ReplaceMaterial), Member = "ScanForRenderers")]
-	[Calls(Type = typeof(ReplaceMaterial), Member = "ReplaceMaterials")]
 	[CalledBy(Type = typeof(ReplaceMaterialsManager), Member = "DeserializeAll")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReplaceMaterial), Member = "ScanForRenderers")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(ReplaceMaterial), Member = "ReplaceMaterials")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CalledBy(Type = typeof(ReplaceMaterial), Member = "Deserialize")]
 	[CalledBy(Type = typeof(ReplaceMaterial), Member = "Start")]
-	[Calls(Type = typeof(ReplaceMaterial), Member = "SetMaterialNameMap")]
-	[CallsUnknownMethods(Count = 11)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(ReplaceMaterial), Member = "Deserialize")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(ReplaceMaterial), Member = "SetMaterialNameMap")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 11)]
 	public void ScanForRenderers()
 	{
 	}
@@ -80,33 +85,36 @@ public class ReplaceMaterial : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(ReplaceMaterial), Member = "Deserialize")]
 	[CalledBy(Type = typeof(ReplaceMaterial), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(ReplaceMaterial), Member = "Deserialize")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void ReplaceMaterials(Material srcMat, int newMatIndex)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(ReplaceMaterial), Member = "ScanForRenderers")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 17)]
 	private void SetMaterialNameMap()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 15)]
 	public ReplaceMaterial()
 	{

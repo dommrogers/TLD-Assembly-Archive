@@ -26,19 +26,19 @@ public class Skill_Archery : Skill
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetCriticalHitChanceScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -47,7 +47,7 @@ public class Skill_Archery : Skill
 	[CallsUnknownMethods(Count = 2)]
 	public float GetArcheryDamageScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -56,15 +56,15 @@ public class Skill_Archery : Skill
 	[CallsUnknownMethods(Count = 2)]
 	public float GetConditionDegradeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetSwayScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -73,34 +73,22 @@ public class Skill_Archery : Skill
 	[CallsUnknownMethods(Count = 2)]
 	public float GetBleedOutTimeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	public bool CanFireBowWhileCrouched()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsUnknownMethods(Count = 2)]
 	public override string GetTierBenefits(int index)
 	{
 		return null;

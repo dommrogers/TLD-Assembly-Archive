@@ -25,11 +25,11 @@ internal struct LinkAccountCallbackInfoInternal : ICallbackInfoInternal
 
 	public object ClientData
 	{
+		[CalledBy(Type = typeof(LinkAccountCallbackInfo), Member = "Set")]
+		[CalledBy(Type = typeof(LinkAccountCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CalledBy(Type = typeof(LinkAccountCallbackInfo), Member = "Set")]
-		[CalledBy(Type = typeof(LinkAccountCallbackInfo), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -42,16 +42,17 @@ internal struct LinkAccountCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(LinkAccountCallbackInfo), Member = "Set")]
+		[CalledBy(Type = typeof(LinkAccountCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(LinkAccountCallbackInfo), Member = "Set")]
-		[CalledBy(Type = typeof(LinkAccountCallbackInfo), Member = "Set")]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;

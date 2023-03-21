@@ -15,20 +15,20 @@ internal struct UserScoresQueryStatInfoInternal : ISettable, IDisposable
 
 	public string StatName
 	{
+		[CalledBy(Type = typeof(UserScoresQueryStatInfo), Member = "Set")]
+		[CalledBy(Type = typeof(UserScoresQueryStatInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CalledBy(Type = typeof(UserScoresQueryStatInfo), Member = "Set")]
-		[CalledBy(Type = typeof(UserScoresQueryStatInfo), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(UserScoresQueryStatInfoInternal), Member = "Set")]
+		[CalledBy(Type = typeof(UserScoresQueryStatInfoInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(UserScoresQueryStatInfoInternal), Member = "Set")]
-		[CalledBy(Type = typeof(UserScoresQueryStatInfoInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -42,8 +42,8 @@ internal struct UserScoresQueryStatInfoInternal : ISettable, IDisposable
 		{
 			return default(LeaderboardAggregation);
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -56,15 +56,15 @@ internal struct UserScoresQueryStatInfoInternal : ISettable, IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UserScoresQueryStatInfoInternal), Member = "set_StatName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

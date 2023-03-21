@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -13,8 +14,8 @@ public class FindAllWithTag : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -22,10 +23,13 @@ public class FindAllWithTag : ActionTask
 		}
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enumerable), Member = "ToList")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}

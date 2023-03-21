@@ -24,7 +24,7 @@ public class CheckMouse : ConditionTask<Collider>
 	[CallerCount(Count = 0)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -34,15 +34,15 @@ public class CheckMouse : ConditionTask<Collider>
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	public void OnMouseExit()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	public void OnMouseOver()
 	{

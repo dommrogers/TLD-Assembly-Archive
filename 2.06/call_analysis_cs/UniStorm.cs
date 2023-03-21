@@ -40,30 +40,25 @@ public class UniStorm : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[Calls(Type = typeof(AudioSource), Member = "PlayOneShot")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
-	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Transform), Member = "Rotate")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[Calls(Type = typeof(Transform), Member = "Rotate")]
-	[Calls(Type = typeof(Object), Member = "set_hideFlags")]
-	[Calls(Type = typeof(Transform), Member = "Rotate")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "set_hideFlags")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 21)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Object), Member = "set_hideFlags")]
 	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
+	[Calls(Type = typeof(Transform), Member = "Rotate")]
+	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[Calls(Type = typeof(AudioSource), Member = "PlayOneShot")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 15)]
 	public void Update()
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public UniStorm()
 	{
 	}

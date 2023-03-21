@@ -37,10 +37,10 @@ public class StackableItem : MonoBehaviour
 
 	public string m_MultipleUnitText
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(LocalizedString), Member = "Text")]
-		[CallerCount(Count = 1)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(LocalizedString), Member = "Text")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -48,31 +48,32 @@ public class StackableItem : MonoBehaviour
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Start()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(GearItem), Member = "Serialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public StackableItem()
 	{
 	}

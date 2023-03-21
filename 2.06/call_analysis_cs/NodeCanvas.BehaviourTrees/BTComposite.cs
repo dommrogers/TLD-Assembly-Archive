@@ -21,11 +21,11 @@ public abstract class BTComposite : BTNode
 
 	public sealed override int maxOutConnections
 	{
-		[CallerCount(Count = 16)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 16)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 

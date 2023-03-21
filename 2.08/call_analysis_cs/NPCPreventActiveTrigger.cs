@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class NPCPreventActiveTrigger : MonoBehaviour
 {
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}

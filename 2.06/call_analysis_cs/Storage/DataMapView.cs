@@ -10,10 +10,10 @@ public class DataMapView : IDisposable
 	public IntPtr NativePtr
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 98)]
+		[CallerCount(Count = 113)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
@@ -21,14 +21,14 @@ public class DataMapView : IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public uint Length(string name)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public uint Capacity(string name)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -36,7 +36,7 @@ public class DataMapView : IDisposable
 	[CallsUnknownMethods(Count = 2)]
 	public bool FillBuffer(string name, int offset, byte[] data)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -47,15 +47,15 @@ public class DataMapView : IDisposable
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public DataMapView(IntPtr self)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

@@ -27,13 +27,13 @@ public class DialogueStatesTable : ScriptableObject
 
 		public string m_StateIdle;
 
-		[CallerCount(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Path), Member = "GetFileNameWithoutExtension")]
-		[Calls(Type = typeof(string), Member = "Format")]
 		[CalledBy(Type = typeof(DialogueStatesTable), Member = "GetFirstStateKeyForState")]
 		[CalledBy(Type = typeof(DialogueStatesTable), Member = "GetFaceStateKeyForState")]
 		[CalledBy(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
+		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(Path), Member = "GetFileNameWithoutExtension")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 21)]
 		public string GetKey()
 		{
@@ -41,7 +41,7 @@ public class DialogueStatesTable : ScriptableObject
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public DialogueStatesTableEntry()
 		{
 		}
@@ -49,15 +49,15 @@ public class DialogueStatesTable : ScriptableObject
 
 	public List<DialogueStatesTableEntry> m_DialogueStatesTableEntries;
 
-	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
 	public string GetLayer(string stateKey)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
 	public string GetTriggeredBy(string stateKey)
 	{
 		return null;
@@ -81,7 +81,7 @@ public class DialogueStatesTable : ScriptableObject
 	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
 	public int GetLayerIndex(string stateKey)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -91,8 +91,8 @@ public class DialogueStatesTable : ScriptableObject
 		return null;
 	}
 
-	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
 	public string GetPrefabPath(string stateKey)
 	{
 		return null;
@@ -105,41 +105,43 @@ public class DialogueStatesTable : ScriptableObject
 		return null;
 	}
 
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "MaybeAutoAssignDialogueAnimationAndAudio")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(DialogueStatesTableEntry), Member = "GetKey")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "MaybeAutoAssignDialogueAnimationAndAudio")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public string GetFirstStateKeyForState(string stateName)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(DialogueStatesTableEntry), Member = "GetKey")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "MaybeAutoAssignDialogueAnimationAndAudio")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(DialogueStatesTableEntry), Member = "GetKey")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public string GetFaceStateKeyForState(string stateName)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
 	public bool HasKey(string stateKey)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallerCount(Count = 25)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(DialogueStatesTableEntry), Member = "GetKey")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private DialogueStatesTableEntry GetListEntryFromStateKey(string stateKey)
 	{
 		return null;

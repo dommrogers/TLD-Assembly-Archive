@@ -34,32 +34,26 @@ public class EyeGlow : MonoBehaviour
 	private BaseAi m_BaseAi;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 7)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsDay")]
-	[Calls(Type = typeof(Material), Member = "GetFloat")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Material), Member = "GetFloat")]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsDay")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Material), Member = "SetFloat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update()
 	{
 	}
@@ -70,7 +64,7 @@ public class EyeGlow : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool TurnOffEyeGlow()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

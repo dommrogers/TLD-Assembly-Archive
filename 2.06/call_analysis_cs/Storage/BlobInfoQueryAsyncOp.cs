@@ -22,10 +22,10 @@ public class BlobInfoQueryAsyncOp : AsyncOp<BlobInfoQueryAsyncOp>
 		((AsyncOp<>)(object)this)._002Ector();
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CalledBy(Type = typeof(ContainerContext), Member = "BlobInfoQueryAsyncThunk")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(ContainerContext), Member = "BlobInfoQueryAsyncThunk")]
+	[CallsUnknownMethods(Count = 6)]
 	public void Complete(uint result, uint totalResults, IntPtr queryHandle)
 	{
 	}

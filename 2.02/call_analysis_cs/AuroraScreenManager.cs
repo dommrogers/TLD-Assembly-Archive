@@ -9,7 +9,7 @@ public static class AuroraScreenManager
 		public string m_AssignedPrefabsSerialized;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public SaveProxy()
 		{
 		}
@@ -19,21 +19,21 @@ public static class AuroraScreenManager
 
 	private static Dictionary<string, string> s_AssignedPrefabs;
 
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	public static void Deserialize(string text)
 	{
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public static string Serialize()
 	{
@@ -41,26 +41,28 @@ public static class AuroraScreenManager
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void AssociatePrefabWithId(string guid, string prefabName)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public static string GetPrefabForId(string id)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(HashSet<>), Member = "Contains")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool IsPrefabInUse(string prefabName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -70,20 +72,23 @@ public static class AuroraScreenManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(HashSet<>), Member = "Remove")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void RemovePrefabAssociation(string id)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateActivation")]
 	[CalledBy(Type = typeof(GameManager), Member = "ResetLists")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void Reset()
 	{
 	}

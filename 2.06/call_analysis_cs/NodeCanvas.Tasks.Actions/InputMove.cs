@@ -21,18 +21,19 @@ public class InputMove : ActionTask<Transform>
 	public bool repeat;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 18)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Transform), Member = "get_right")]
 	[Calls(Type = typeof(Transform), Member = "get_up")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 21)]
+	[CallsDeduplicatedMethods(Count = 18)]
+	[CallsUnknownMethods(Count = 13)]
 	protected override void OnUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
 	public InputMove()
 	{
 		((ActionTask<>)(object)this)._002Ector();

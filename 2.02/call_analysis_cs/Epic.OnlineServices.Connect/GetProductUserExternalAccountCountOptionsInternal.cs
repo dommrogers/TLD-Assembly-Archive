@@ -13,11 +13,11 @@ internal struct GetProductUserExternalAccountCountOptionsInternal : ISettable, I
 
 	public ProductUserId TargetUserId
 	{
+		[CalledBy(Type = typeof(GetProductUserExternalAccountCountOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(GetProductUserExternalAccountCountOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(GetProductUserExternalAccountCountOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(GetProductUserExternalAccountCountOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,16 +29,16 @@ internal struct GetProductUserExternalAccountCountOptionsInternal : ISettable, I
 	{
 	}
 
-	[Calls(Type = typeof(GetProductUserExternalAccountCountOptionsInternal), Member = "set_TargetUserId")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(ConnectInterface), Member = "GetProductUserExternalAccountCount")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GetProductUserExternalAccountCountOptionsInternal), Member = "set_TargetUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

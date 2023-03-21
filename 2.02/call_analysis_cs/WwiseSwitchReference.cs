@@ -21,7 +21,7 @@ public class WwiseSwitchReference : WwiseGroupValueObjectReference
 	public override WwiseObjectReference GroupObjectReference
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
@@ -43,9 +43,9 @@ public class WwiseSwitchReference : WwiseGroupValueObjectReference
 		}
 	}
 
-	[Calls(Type = typeof(WwiseObjectReference), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(WwiseObjectReference), Member = ".ctor")]
 	public WwiseSwitchReference()
 	{
 	}

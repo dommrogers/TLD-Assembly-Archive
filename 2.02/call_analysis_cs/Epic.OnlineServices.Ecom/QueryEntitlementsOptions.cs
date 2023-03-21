@@ -13,16 +13,16 @@ public class QueryEntitlementsOptions
 
 	public EpicAccountId LocalUserId
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 101)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -32,14 +32,14 @@ public class QueryEntitlementsOptions
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -52,18 +52,18 @@ public class QueryEntitlementsOptions
 		[CallerCount(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		set
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public QueryEntitlementsOptions()
 	{
 	}

@@ -14,13 +14,13 @@ public class AuroraObjectMaterialInfo
 	private Material m_OriginalMaterial;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 36)]
+	[CallerCount(Count = 38)]
 	public void SetOriginalMaterial(Material mat)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 58)]
+	[CallerCount(Count = 61)]
 	public Material GetOriginalMaterial()
 	{
 		return null;

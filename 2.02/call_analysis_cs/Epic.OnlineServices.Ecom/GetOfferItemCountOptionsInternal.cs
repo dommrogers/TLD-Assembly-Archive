@@ -15,11 +15,11 @@ internal struct GetOfferItemCountOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(GetOfferItemCountOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(GetOfferItemCountOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(GetOfferItemCountOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(GetOfferItemCountOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -27,11 +27,11 @@ internal struct GetOfferItemCountOptionsInternal : ISettable, IDisposable
 
 	public string OfferId
 	{
+		[CalledBy(Type = typeof(GetOfferItemCountOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(GetOfferItemCountOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(GetOfferItemCountOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(GetOfferItemCountOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -45,16 +45,16 @@ internal struct GetOfferItemCountOptionsInternal : ISettable, IDisposable
 	}
 
 	[CalledBy(Type = typeof(EcomInterface), Member = "GetOfferItemCount")]
-	[Calls(Type = typeof(GetOfferItemCountOptionsInternal), Member = "set_OfferId")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GetOfferItemCountOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(GetOfferItemCountOptionsInternal), Member = "set_OfferId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

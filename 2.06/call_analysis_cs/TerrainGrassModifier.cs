@@ -31,22 +31,22 @@ public class TerrainGrassModifier : MonoBehaviour
 	private List<ModifiedRegion> m_ModifiedRegions;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 9)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(TerrainData), Member = "SetDetailLayer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(TerrainData), Member = "SetDetailLayer")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnDestroy()
 	{
 	}
@@ -63,35 +63,35 @@ public class TerrainGrassModifier : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_SnowShelterBuild), Member = "OnCancel")]
-	[CalledBy(Type = typeof(Panel_SnowShelterBuild), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "OnCancel")]
 	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "Update")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Array), Member = "Copy")]
+	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "OnCancel")]
+	[CalledBy(Type = typeof(Panel_SnowShelterBuild), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_SnowShelterBuild), Member = "OnCancel")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[Calls(Type = typeof(TerrainData), Member = "SetDetailLayer")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void UndoLastOperation()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 12)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(ModifiedRegion), Member = ".ctor")]
-	[Calls(Type = typeof(TerrainData), Member = "SetDetailLayer")]
 	[CalledBy(Type = typeof(TerrainGrassModifier), Member = "AddGrass")]
 	[CalledBy(Type = typeof(TerrainGrassModifier), Member = "RemoveGrass")]
-	[CallsUnknownMethods(Count = 28)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(TerrainData), Member = "GetDetailLayer")]
+	[Calls(Type = typeof(ModifiedRegion), Member = ".ctor")]
+	[Calls(Type = typeof(TerrainData), Member = "SetDetailLayer")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 28)]
 	private void DrawToMap(Vector3 position, float radius, int value, int layerIndex = -1)
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public TerrainGrassModifier()
 	{
 	}

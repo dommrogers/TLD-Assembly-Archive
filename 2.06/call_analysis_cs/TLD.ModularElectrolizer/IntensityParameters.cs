@@ -23,8 +23,8 @@ public class IntensityParameters : ScriptableObject
 
 	public Color m_OverrideColor;
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public IntensityParameters()
 	{
 	}

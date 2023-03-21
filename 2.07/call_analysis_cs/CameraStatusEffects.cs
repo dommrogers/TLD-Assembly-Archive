@@ -118,8 +118,8 @@ public class CameraStatusEffects : MonoBehaviour
 
 	private UnityEngine.Rendering.PostProcessing.ColorGrading m_NewColorGrading;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
@@ -174,37 +174,22 @@ public class CameraStatusEffects : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[CallsUnknownMethods(Count = 17)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
 	[Calls(Type = typeof(AnimatedInteraction), Member = "InProgress")]
 	[Calls(Type = typeof(CameraStatusEffects), Member = "UpdateImage")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[CallsDeduplicatedMethods(Count = 19)]
-	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 17)]
 	private void Update()
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(CameraStatusEffects), Member = "Update")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	private void UpdateImage()
 	{

@@ -19,11 +19,11 @@ internal struct IngestStatOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(IngestStatOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(IngestStatOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(IngestStatOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(IngestStatOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -42,37 +42,37 @@ internal struct IngestStatOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId TargetUserId
 	{
+		[CalledBy(Type = typeof(IngestStatOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(IngestStatOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(IngestStatOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(IngestStatOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(IngestStatOptionsInternal), Member = "set_Stats")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(IngestStatOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(IngestStatOptionsInternal), Member = "set_Stats")]
 	[Calls(Type = typeof(IngestStatOptionsInternal), Member = "set_TargetUserId")]
 	public void Set(IngestStatOptions other)
 	{
 	}
 
 	[CalledBy(Type = typeof(StatsInterface), Member = "IngestStat")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(IngestStatOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(IngestStatOptionsInternal), Member = "set_Stats")]
 	[Calls(Type = typeof(IngestStatOptionsInternal), Member = "set_TargetUserId")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(IngestStatOptionsInternal), Member = "set_LocalUserId")]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

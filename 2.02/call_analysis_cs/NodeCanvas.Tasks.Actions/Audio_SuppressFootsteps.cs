@@ -7,10 +7,10 @@ public class Audio_SuppressFootsteps : ActionTask
 {
 	public bool m_Suppress;
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}

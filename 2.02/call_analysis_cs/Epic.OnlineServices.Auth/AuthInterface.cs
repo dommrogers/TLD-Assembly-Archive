@@ -29,34 +29,35 @@ public sealed class AuthInterface : Handle
 	public const int VerifyuserauthApiLatest = 1;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AuthInterface()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public AuthInterface(IntPtr innerHandle)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Helper), Member = "TryAssignNotificationIdToCallback")]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AddNotifyLoginStatusChangedOptionsInternal), Member = "Set")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryAssignNotificationIdToCallback")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public ulong AddNotifyLoginStatusChanged(AddNotifyLoginStatusChangedOptions options, object clientData, OnLoginStatusChangedCallback notification)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(CopyUserAuthTokenOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 2)]
 	public Result CopyUserAuthToken(CopyUserAuthTokenOptions options, EpicAccountId localUserId, out Token outUserAuthToken)
 	{
@@ -64,18 +65,19 @@ public sealed class AuthInterface : Handle
 		return default(Result);
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
-	[Calls(Type = typeof(DeletePersistentAuthOptionsInternal), Member = "Set")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DeletePersistentAuthOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void DeletePersistentAuth(DeletePersistentAuthOptions options, object clientData, OnDeletePersistentAuthCallback completionDelegate)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public EpicAccountId GetLoggedInAccountByIndex(int index)
 	{
@@ -86,75 +88,73 @@ public sealed class AuthInterface : Handle
 	[CallsUnknownMethods(Count = 1)]
 	public int GetLoggedInAccountsCount()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public LoginStatus GetLoginStatus(EpicAccountId localUserId)
 	{
 		return default(LoginStatus);
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LinkAccountOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void LinkAccount(LinkAccountOptions options, object clientData, OnLinkAccountCallback completionDelegate)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(LoginOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public void Login(LoginOptions options, object clientData, OnLoginCallback completionDelegate)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
-	[CallsUnknownMethods(Count = 9)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LogoutOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void Logout(LogoutOptions options, object clientData, OnLogoutCallback completionDelegate)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryRemoveCallbackByNotificationId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void RemoveNotifyLoginStatusChanged(ulong inId)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(VerifyUserAuthOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public void VerifyUserAuth(VerifyUserAuthOptions options, object clientData, OnVerifyUserAuthCallback completionDelegate)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static void OnDeletePersistentAuthCallbackInternalImplementation(IntPtr data)
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -162,7 +162,6 @@ public sealed class AuthInterface : Handle
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -170,7 +169,6 @@ public sealed class AuthInterface : Handle
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -178,15 +176,13 @@ public sealed class AuthInterface : Handle
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static void OnLogoutCallbackInternalImplementation(IntPtr data)
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -206,9 +202,9 @@ public sealed class AuthInterface : Handle
 	internal static extern Result EOS_Auth_CopyUserAuthToken(IntPtr handle, IntPtr options, IntPtr localUserId, ref IntPtr outUserAuthToken);
 
 	[PreserveSig]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	internal static extern void EOS_Auth_DeletePersistentAuth(IntPtr handle, IntPtr options, IntPtr clientData, OnDeletePersistentAuthCallbackInternal completionDelegate);
 
 	[PreserveSig]
@@ -233,15 +229,15 @@ public sealed class AuthInterface : Handle
 	internal static extern void EOS_Auth_LinkAccount(IntPtr handle, IntPtr options, IntPtr clientData, OnLinkAccountCallbackInternal completionDelegate);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	internal static extern void EOS_Auth_Login(IntPtr handle, IntPtr options, IntPtr clientData, OnLoginCallbackInternal completionDelegate);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	internal static extern void EOS_Auth_Logout(IntPtr handle, IntPtr options, IntPtr clientData, OnLogoutCallbackInternal completionDelegate);
 
 	[PreserveSig]

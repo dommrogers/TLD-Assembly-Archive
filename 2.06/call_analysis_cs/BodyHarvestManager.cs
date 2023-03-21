@@ -23,93 +23,94 @@ public class BodyHarvestManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestore")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "MaybeCleanupDuplicateBody")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "UnregisterDuplicatedGuids")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestore")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 3)]
 	public static BodyHarvest GetBodyHarvestFromSerializedMissionId(string missionId)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(PdidTable), Member = "RuntimeUnregister")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void DeleteAllActive()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestoreBodyHarvest")]
-	[Calls(Type = typeof(PdidTable), Member = "RuntimeUnregister")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(PdidTable), Member = "RuntimeUnregister")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void Destroy(BodyHarvest bodyHarvest)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 18)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(BodyHarvest), Member = "Serialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(BodyHarvest), Member = "Serialize")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 18)]
 	public static string Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(BodyHarvestManager), Member = "InstantiateBodyHarvestGameObject")]
-	[CallsUnknownMethods(Count = 25)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(BodyHarvestManager), Member = "MaybeRestoreCarcassSite")]
-	[Calls(Type = typeof(BodyHarvestManager), Member = "MaybeRestoreCorpseState")]
-	[Calls(Type = typeof(ObjectGuid), Member = "MaybeAttachObjectGuidAndRegister")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Debug), Member = "LogFormat")]
-	[Calls(Type = typeof(BodyHarvest), Member = "Deserialize")]
-	[Calls(Type = typeof(Debug), Member = "LogFormat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Debug), Member = "LogFormat")]
+	[Calls(Type = typeof(BodyHarvestManager), Member = "InstantiateBodyHarvestGameObject")]
+	[Calls(Type = typeof(ObjectGuid), Member = "MaybeAttachObjectGuidAndRegister")]
+	[Calls(Type = typeof(BodyHarvest), Member = "Deserialize")]
+	[Calls(Type = typeof(BodyHarvestManager), Member = "MaybeRestoreCorpseState")]
+	[Calls(Type = typeof(BodyHarvestManager), Member = "MaybeRestoreCarcassSite")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 25)]
 	public static void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void AddBodyHarvest(BodyHarvest bh)
 	{
 	}
@@ -121,41 +122,42 @@ public class BodyHarvestManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestoreBodyHarvest")]
 	[CalledBy(Type = typeof(BodyHarvestManager), Member = "Deserialize")]
-	[Calls(Type = typeof(MoveAgent), Member = "Enable")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestoreBodyHarvest")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(BaseAi), Member = "IsTimberwolf")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
+	[Calls(Type = typeof(MoveAgent), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void MaybeRestoreCorpseState(BodyHarvest bh)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestoreBodyHarvest")]
 	[CalledBy(Type = typeof(BodyHarvestManager), Member = "Deserialize")]
-	[Calls(Type = typeof(BodyHarvest), Member = "MaybeSpawnCarcassSite")]
-	[Calls(Type = typeof(BodyHarvest), Member = "NoMoreResources")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestoreBodyHarvest")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BodyHarvest), Member = "NoMoreResources")]
 	[Calls(Type = typeof(BodyHarvest), Member = "ConditionReachedZero")]
+	[Calls(Type = typeof(BodyHarvest), Member = "MaybeSpawnCarcassSite")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void MaybeRestoreCarcassSite(BodyHarvest bh)
 	{
 	}
 
 	[CalledBy(Type = typeof(BodyHarvestManager), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SpawnRegion), Member = "GetPrefabNameFromInstanceName")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private static BodyHarvest InstantiateBodyHarvestGameObject(BodyHarvestSaveData proxy)
 	{
 		return null;

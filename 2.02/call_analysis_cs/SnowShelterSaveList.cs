@@ -5,10 +5,11 @@ public class SnowShelterSaveList
 {
 	public List<SnowShelterSaveData> m_SerializedSnowShelters;
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(SnowShelterManager), Member = "SerializeAll")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public SnowShelterSaveList()
 	{
 	}

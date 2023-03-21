@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -14,13 +15,13 @@ public class ProbabilitySelector : DTNode, ISubParametersContainer, ISubTasksCon
 
 		public ConditionTask condition;
 
+		[CalledBy(Type = typeof(ProbabilitySelector), Member = "OnChildConnected")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
 		[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
 		[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
 		[Calls(Type = typeof(BBParameter), Member = "set_bb")]
-		[CalledBy(Type = typeof(ProbabilitySelector), Member = "OnChildConnected")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 8)]
 		public Option(float weightValue, IBlackboard bbValue)
 		{
@@ -36,8 +37,8 @@ public class ProbabilitySelector : DTNode, ISubParametersContainer, ISubTasksCon
 
 		public static Func<Option, BBParameter<float>> _003C_003E9__6_0;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
@@ -69,77 +70,84 @@ public class ProbabilitySelector : DTNode, ISubParametersContainer, ISubTasksCon
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public Task[] GetSubTasks()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public BBParameter[] GetSubParameters()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
 	[Calls(Type = typeof(Option), Member = ".ctor")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public override void OnChildConnected(int index)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public override void OnChildDisconnected(int index)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
-	[CallsUnknownMethods(Count = 38)]
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
+	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
 	[Calls(Type = typeof(ProbabilitySelector), Member = "GetTotal")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 36)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(ProbabilitySelector), Member = "OnExecute")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[CallsUnknownMethods(Count = 8)]
 	private float GetTotal()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 3)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 3)]
 	protected override void OnReset()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(DTNode), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public ProbabilitySelector()
 	{

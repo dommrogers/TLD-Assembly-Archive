@@ -6,8 +6,8 @@ namespace TLD.Gameplay.Tunable;
 [Serializable]
 public class CustomPackSettingsLookup_LMH : CustomTunableLookup<CustomTunableLMH, PackSettings>
 {
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = ".ctor")]
 	public CustomPackSettingsLookup_LMH()
 	{
 		((CustomTunableLookup<, >)(object)this)._002Ector();

@@ -12,8 +12,8 @@ public class MissionAfflictionEvent
 
 	public const string AFFLICTION_EVENT_NAME = "AfflictionEvent";
 
-	[CallerCount(Count = 11)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 11)]
 	public MissionAfflictionEvent(MissionObjectIdentifier moi, AfflictionType afflictionType, AfflictionEventType eventType)
 	{
 	}

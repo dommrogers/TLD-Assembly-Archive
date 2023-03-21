@@ -22,7 +22,7 @@ public class DistanceFadeControl
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -32,7 +32,7 @@ public class DistanceFadeControl
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -42,22 +42,20 @@ public class DistanceFadeControl
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 224)]
+	[CallerCount(Count = 230)]
 	public DistanceFadeControl(DistanceParameters outdoor, DistanceParameters indoor)
 	{
 	}
 
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "Initialize")]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
 	[CallerCount(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetLocationDistances(bool useOutdoorValues, QualityLodBias quality, bool forceUpdate = false)
 	{
 	}

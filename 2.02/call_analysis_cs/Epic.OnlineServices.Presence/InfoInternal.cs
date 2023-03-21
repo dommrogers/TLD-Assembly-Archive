@@ -35,8 +35,8 @@ internal struct InfoInternal : ISettable, IDisposable
 		{
 			return default(Status);
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -44,17 +44,18 @@ internal struct InfoInternal : ISettable, IDisposable
 
 	public EpicAccountId UserId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(Info), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(InfoInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -62,18 +63,18 @@ internal struct InfoInternal : ISettable, IDisposable
 
 	public string ProductId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(Info), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(InfoInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 1)]
 		set
 		{
 		}
@@ -82,17 +83,17 @@ internal struct InfoInternal : ISettable, IDisposable
 	public string ProductVersion
 	{
 		[CalledBy(Type = typeof(Info), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(InfoInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -100,17 +101,17 @@ internal struct InfoInternal : ISettable, IDisposable
 
 	public string Platform
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(Info), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(InfoInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -119,18 +120,18 @@ internal struct InfoInternal : ISettable, IDisposable
 
 	public string RichText
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(Info), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(InfoInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -138,17 +139,17 @@ internal struct InfoInternal : ISettable, IDisposable
 
 	public DataRecord[] Records
 	{
+		[CalledBy(Type = typeof(Info), Member = "Set")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 5)]
-		[CalledBy(Type = typeof(Info), Member = "Set")]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(InfoInternal), Member = "Set")]
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 1)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -156,51 +157,46 @@ internal struct InfoInternal : ISettable, IDisposable
 
 	public string ProductName
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(Info), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(InfoInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(InfoInternal), Member = "set_Records")]
-	[Calls(Type = typeof(InfoInternal), Member = "set_RichText")]
-	[Calls(Type = typeof(InfoInternal), Member = "set_Platform")]
+	[CalledBy(Type = typeof(InfoInternal), Member = "Set")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(InfoInternal), Member = "set_UserId")]
 	[Calls(Type = typeof(InfoInternal), Member = "set_ProductId")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(InfoInternal), Member = "set_ProductName")]
 	[Calls(Type = typeof(InfoInternal), Member = "set_ProductVersion")]
-	[CalledBy(Type = typeof(InfoInternal), Member = "Set")]
+	[Calls(Type = typeof(InfoInternal), Member = "set_Platform")]
+	[Calls(Type = typeof(InfoInternal), Member = "set_RichText")]
+	[Calls(Type = typeof(InfoInternal), Member = "set_Records")]
+	[Calls(Type = typeof(InfoInternal), Member = "set_ProductName")]
 	public void Set(Info other)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InfoInternal), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

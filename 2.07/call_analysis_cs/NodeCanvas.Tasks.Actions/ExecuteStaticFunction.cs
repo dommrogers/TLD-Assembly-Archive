@@ -24,21 +24,20 @@ public class ExecuteStaticFunction : ActionTask, ISubParametersContainer
 
 	protected override string info
 	{
-		[Calls(Type = typeof(StringBuilder), Member = "AppendFormatHelper")]
-		[Calls(Type = typeof(System.Text.StringBuilderCache), Member = "Release")]
-		[Calls(Type = typeof(System.Text.StringBuilderCache), Member = "Acquire")]
-		[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 28)]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[CallsDeduplicatedMethods(Count = 9)]
+		[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(TypeFullName = "System.Text.StringBuilderCache", Member = "Acquire")]
+		[Calls(Type = typeof(StringBuilder), Member = "AppendFormatHelper")]
+		[Calls(TypeFullName = "System.Text.StringBuilderCache", Member = "Release")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 9)]
+		[CallsUnknownMethods(Count = 28)]
 		get
 		{
 			return null;
@@ -52,30 +51,29 @@ public class ExecuteStaticFunction : ActionTask, ISubParametersContainer
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Task), Member = "Error")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(ReflectedWrapper), Member = "Create")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReflectedWrapper), Member = "Create")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Task), Member = "Error")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnValidate(ITaskSystem ownerSystem)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Format")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override string OnInit()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

@@ -9,7 +9,7 @@ public class NowhereToHideElapsedTimeSource : AlternateElapsedTimeSource
 	[CallsUnknownMethods(Count = 1)]
 	public override float GetElapsedTimeInHours()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]

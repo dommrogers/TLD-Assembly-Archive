@@ -31,7 +31,7 @@ public class StoryMissionInfo
 	public string icon;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public StoryMissionInfo()
 	{
 	}

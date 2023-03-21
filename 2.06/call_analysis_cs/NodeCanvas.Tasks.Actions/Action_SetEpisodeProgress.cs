@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using TLD.Stats;
@@ -12,11 +11,12 @@ public class Action_SetEpisodeProgress : ActionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 2)]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -25,16 +25,17 @@ public class Action_SetEpisodeProgress : ActionTask
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(StatContainer), Member = "GetValue")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(StatsManager), Member = "SetValue")]
 	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 14)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 6)]
 	public Action_SetEpisodeProgress()
 	{
 	}

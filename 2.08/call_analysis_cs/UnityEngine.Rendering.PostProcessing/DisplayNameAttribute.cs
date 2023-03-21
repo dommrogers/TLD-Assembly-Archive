@@ -8,7 +8,7 @@ public sealed class DisplayNameAttribute : Attribute
 	public readonly string displayName;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 279)]
+	[CallerCount(Count = 282)]
 	public DisplayNameAttribute(string displayName)
 	{
 	}

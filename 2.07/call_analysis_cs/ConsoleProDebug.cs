@@ -24,9 +24,9 @@ public static class ConsoleProDebug
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallerCount(Count = 0)]
 	public static void Search(string inText)
 	{
 	}

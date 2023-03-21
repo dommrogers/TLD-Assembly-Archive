@@ -40,44 +40,44 @@ public struct Volume
 	[Calls(Type = typeof(Volume), Member = "Equals")]
 	public static bool operator ==(Volume left, Volume right)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Volume), Member = "Equals")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Volume), Member = "Equals")]
 	public static bool operator !=(Volume left, Volume right)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Volume), Member = "op_Equality")]
 	[CalledBy(Type = typeof(Volume), Member = "op_Inequality")]
 	[CalledBy(Type = typeof(Volume), Member = "Equals")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool Equals(Volume other)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Volume), Member = "Equals")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public override bool Equals(object obj)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public override int GetHashCode()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public override string ToString()
 	{

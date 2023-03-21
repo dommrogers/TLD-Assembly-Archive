@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
@@ -21,7 +20,7 @@ public class Jumper : DTNode
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		set
 		{
 		}
@@ -29,14 +28,13 @@ public class Jumper : DTNode
 
 	private DTNode sourceNode
 	{
-		[CallsUnknownMethods(Count = 4)]
-		[CalledBy(Type = typeof(Jumper), Member = "OnExecute")]
-		[CalledBy(Type = typeof(Jumper), Member = "OnExecute")]
 		[CalledBy(Type = typeof(Jumper), Member = "get_name")]
+		[CalledBy(Type = typeof(Jumper), Member = "OnExecute")]
 		[CallerCount(Count = 4)]
-		[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-		[CallsDeduplicatedMethods(Count = 3)]
-		[CalledBy(Type = typeof(Jumper), Member = "get_name")]
+		[Calls(Type = typeof(Enumerable), Member = "FirstOrDefault")]
+		[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 4)]
 		get
 		{
 			return null;
@@ -54,17 +52,17 @@ public class Jumper : DTNode
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public override bool requireActorSelection
 	{
-		[CallerCount(Count = 3)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 3)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -72,8 +70,7 @@ public class Jumper : DTNode
 	{
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Jumper), Member = "get_sourceNode")]
-		[Calls(Type = typeof(Jumper), Member = "get_sourceNode")]
-		[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+		[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsUnknownMethods(Count = 2)]
 		get
@@ -82,13 +79,12 @@ public class Jumper : DTNode
 		}
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Jumper), Member = "get_sourceNode")]
+	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[Calls(Type = typeof(DialogueTree), Member = "EnterNode")]
 	[Calls(Type = typeof(Node), Member = "Error")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(DialogueTree), Member = "EnterNode")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
-	[Calls(Type = typeof(Jumper), Member = "get_sourceNode")]
-	[Calls(Type = typeof(Jumper), Member = "get_sourceNode")]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);

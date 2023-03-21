@@ -8,9 +8,9 @@ internal class CommandLineParser
 {
 	public Dictionary<string, string> Args;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
-	[CallerCount(Count = 0)]
 	public CommandLineParser()
 	{
 	}
@@ -20,18 +20,18 @@ internal class CommandLineParser
 	[CallsUnknownMethods(Count = 3)]
 	private bool HasArg(string arg, string[] args)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "ToLower")]
 	[Calls(Type = typeof(string), Member = "StartsWith")]
 	[Calls(Type = typeof(string), Member = "SplitInternal")]
 	[Calls(Type = typeof(Console), Member = "WriteLine")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 16)]
 	public bool Parse(string[] args, string[] validArgs)
 	{
-		return default(bool);
+		return false;
 	}
 }

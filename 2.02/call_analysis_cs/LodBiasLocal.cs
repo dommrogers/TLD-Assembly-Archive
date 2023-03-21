@@ -33,42 +33,26 @@ public class LodBiasLocal : MonoBehaviour
 
 	private LODGroup m_LodGroup;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(LodBiasLocal), Member = "SetBias")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LodBiasLocal), Member = "SetBias")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 111)]
 	[CalledBy(Type = typeof(LodBiasLocal), Member = "Start")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 17)]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(LODGroup), Member = "GetLODs")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(LODGroup), Member = "GetLODs")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 111)]
 	private void SetBias()
 	{
 	}

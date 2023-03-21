@@ -10,21 +10,26 @@ public class ToggleCollider : MonoBehaviour
 	public List<Collider> allColliders;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Enumerable), Member = "ToList")]
 	[Calls(Type = typeof(ToggleCollider), Member = "RemoveDuplicates")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Collider), Member = "get_enabled")]
 	[Calls(Type = typeof(Collider), Member = "set_enabled")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 13)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(ToggleCollider), Member = "Start")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Enumerable), Member = "ToList")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	private List<Collider> RemoveDuplicates(List<Collider> oldList)
 	{
 		return null;

@@ -5,8 +5,8 @@ using UnityEngine.Rendering.PostProcessing;
 [Serializable]
 public sealed class FisheyeTypeParameter : ParameterOverride<FisheyeTypeEnum>
 {
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public FisheyeTypeParameter()
 	{
 		((ParameterOverride<>)(object)this)._002Ector();

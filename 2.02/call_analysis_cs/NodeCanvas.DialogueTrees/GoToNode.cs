@@ -10,11 +10,11 @@ public class GoToNode : DTNode
 
 	public override int maxOutConnections
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -24,24 +24,24 @@ public class GoToNode : DTNode
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
 	[Calls(Type = typeof(DialogueTree), Member = "EnterNode")]
 	[Calls(Type = typeof(Node), Member = "Error")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
 	}
 
-	[Calls(Type = typeof(DTNode), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DTNode), Member = ".ctor")]
 	public GoToNode()
 	{
 	}

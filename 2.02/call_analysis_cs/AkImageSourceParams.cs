@@ -18,8 +18,8 @@ public class AkImageSourceParams : IDisposable
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AkVector), Member = "getCPtr")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -28,12 +28,12 @@ public class AkImageSourceParams : IDisposable
 
 	public float fDistanceScalingFactor
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -50,7 +50,7 @@ public class AkImageSourceParams : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -67,7 +67,7 @@ public class AkImageSourceParams : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -84,11 +84,11 @@ public class AkImageSourceParams : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -101,7 +101,7 @@ public class AkImageSourceParams : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -121,12 +121,12 @@ public class AkImageSourceParams : IDisposable
 	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkImageSourceParams obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal virtual void setCPtr(IntPtr cPtr)
 	{
 	}
@@ -138,26 +138,26 @@ public class AkImageSourceParams : IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public AkImageSourceParams()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkVector), Member = "getCPtr")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public AkImageSourceParams(AkVector in_sourcePosition, float in_fDistanceScalingFactor, float in_fLevel)
 	{
 	}

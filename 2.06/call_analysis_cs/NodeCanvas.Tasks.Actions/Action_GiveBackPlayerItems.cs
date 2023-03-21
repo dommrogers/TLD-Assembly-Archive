@@ -6,12 +6,12 @@ namespace NodeCanvas.Tasks.Actions;
 
 public class Action_GiveBackPlayerItems : ActionTask
 {
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Inventory), Member = "AddGear")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "GetGearItemsStoredInSceneByPlayer")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Inventory), Member = "AddGear")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 3)]
 	protected override void OnExecute()
 	{
 	}

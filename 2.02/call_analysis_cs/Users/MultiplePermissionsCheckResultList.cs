@@ -11,14 +11,15 @@ public class MultiplePermissionsCheckResultList : WrappedCachedList<MultiplePerm
 	[CallsUnknownMethods(Count = 1)]
 	public MultiplePermissionsCheckResultList(IntPtr self)
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(WrappedCachedList<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public MultiplePermissionsCheckResultList()
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
@@ -28,17 +29,17 @@ public class MultiplePermissionsCheckResultList : WrappedCachedList<MultiplePerm
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	protected override MultiplePermissionsCheckResult CreateIthElement(int i)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void SetupLength()
 	{
 	}

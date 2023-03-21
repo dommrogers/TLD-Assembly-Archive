@@ -5,21 +5,17 @@ public abstract class AkCommonPlatformSettings : AkBasePlatformSettings
 {
 	public override AkInitializationSettings AkInitializationSettings
 	{
-		[CallsUnknownMethods(Count = 10)]
-		[Calls(Type = typeof(AkInitializationSettings), Member = "get_unityPlatformSpecificSettings")]
-		[Calls(Type = typeof(AkInitializationSettings), Member = "get_platformSettings")]
-		[Calls(Type = typeof(AkInitializationSettings), Member = "get_initSettings")]
-		[Calls(Type = typeof(AkInitializationSettings), Member = "get_deviceSettings")]
-		[Calls(Type = typeof(AkInitializationSettings), Member = "get_unityPlatformSpecificSettings")]
-		[Calls(Type = typeof(AkInitializationSettings), Member = "get_musicSettings")]
-		[Calls(Type = typeof(AkInitializationSettings), Member = "get_platformSettings")]
-		[Calls(Type = typeof(AkInitializationSettings), Member = "get_streamMgrSettings")]
-		[Calls(Type = typeof(AkInitializationSettings), Member = "get_deviceSettings")]
-		[Calls(Type = typeof(AkInitializationSettings), Member = "get_memSettings")]
-		[Calls(Type = typeof(AkBasePlatformSettings), Member = "get_AkInitializationSettings")]
-		[CallsDeduplicatedMethods(Count = 18)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(AkBasePlatformSettings), Member = "get_AkInitializationSettings")]
+		[Calls(Type = typeof(AkInitializationSettings), Member = "get_memSettings")]
+		[Calls(Type = typeof(AkInitializationSettings), Member = "get_deviceSettings")]
+		[Calls(Type = typeof(AkInitializationSettings), Member = "get_streamMgrSettings")]
 		[Calls(Type = typeof(AkInitializationSettings), Member = "get_initSettings")]
+		[Calls(Type = typeof(AkInitializationSettings), Member = "get_platformSettings")]
+		[Calls(Type = typeof(AkInitializationSettings), Member = "get_musicSettings")]
+		[Calls(Type = typeof(AkInitializationSettings), Member = "get_unityPlatformSpecificSettings")]
+		[CallsDeduplicatedMethods(Count = 18)]
+		[CallsUnknownMethods(Count = 10)]
 		get
 		{
 			return null;
@@ -29,8 +25,8 @@ public abstract class AkCommonPlatformSettings : AkBasePlatformSettings
 	public override AkSpatialAudioInitSettings AkSpatialAudioInitSettings
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[Calls(Type = typeof(AkBasePlatformSettings), Member = "get_AkSpatialAudioInitSettings")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -40,10 +36,10 @@ public abstract class AkCommonPlatformSettings : AkBasePlatformSettings
 
 	public override AkCallbackManager.InitializationSettings CallbackManagerInitializationSettings
 	{
-		[Calls(Type = typeof(AkCallbackManager.InitializationSettings), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 9)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(AkCallbackManager.InitializationSettings), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 9)]
 		get
 		{
 			return null;
@@ -68,7 +64,7 @@ public abstract class AkCommonPlatformSettings : AkBasePlatformSettings
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -85,26 +81,20 @@ public abstract class AkCommonPlatformSettings : AkBasePlatformSettings
 
 	public override AkCommunicationSettings AkCommunicationSettings
 	{
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(AkBasePlatformSettings), Member = "get_AkCommunicationSettings")]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallerCount(Count = 121780)]
-	[DeduplicatedMethod]
 	protected abstract AkCommonUserSettings GetUserSettings();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract AkCommonAdvancedSettings GetAdvancedSettings();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract AkCommonCommSettings GetCommsSettings();
 
 	[DeduplicatedMethod]

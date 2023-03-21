@@ -31,15 +31,15 @@ public class ElectrifiedWater : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(ElectrifiedWater), Member = "SetExternalPowerState")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(ElectrifiedWater), Member = "Initialize")]
-	[CalledBy(Type = typeof(AuroraElectrolizerControlVolume), Member = "Initialize")]
-	[CalledBy(Type = typeof(ElectrifiedWater), Member = "Awake")]
 	[CalledBy(Type = typeof(AuroraElectrolizerController), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(AuroraElectrolizerControlVolume), Member = "SetPowerState")]
+	[CalledBy(Type = typeof(AuroraElectrolizerControlVolume), Member = "Initialize")]
+	[CalledBy(Type = typeof(ElectrifiedWater), Member = "SetExternalPowerState")]
+	[CalledBy(Type = typeof(ElectrifiedWater), Member = "Initialize")]
+	[CalledBy(Type = typeof(ElectrifiedWater), Member = "Awake")]
+	[CallerCount(Count = 6)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void SetElectrified(bool isElectrified)
 	{
 	}

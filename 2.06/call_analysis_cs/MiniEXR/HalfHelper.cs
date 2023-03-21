@@ -18,7 +18,7 @@ internal static class HalfHelper
 	[CallerCount(Count = 0)]
 	private static uint ConvertMantissa(int i)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -43,15 +43,15 @@ internal static class HalfHelper
 	}
 
 	[CalledBy(Type = typeof(HalfHelper), Member = ".cctor")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private static ushort[] GenerateBaseTable()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(HalfHelper), Member = ".cctor")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private static sbyte[] GenerateShiftTable()
 	{
@@ -63,7 +63,7 @@ internal static class HalfHelper
 	[CallsUnknownMethods(Count = 2)]
 	public static float HalfToSingle(ushort half)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -71,17 +71,15 @@ internal static class HalfHelper
 	[CallsUnknownMethods(Count = 2)]
 	public static ushort SingleToHalf(float single)
 	{
-		return default(ushort);
+		return 0;
 	}
 
+	[CalledBy(Type = typeof(MiniEXR), Member = "MiniEXRWrite")]
 	[CalledBy(Type = typeof(MiniEXR), Member = "MiniEXRWrite_Depth")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(MiniEXR), Member = "MiniEXRWrite")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(MiniEXR), Member = "MiniEXRWrite")]
-	[CalledBy(Type = typeof(MiniEXR), Member = "MiniEXRWrite")]
+	[CallsUnknownMethods(Count = 2)]
 	public static ushort SingleToHalf(uint singleAsUint)
 	{
-		return default(ushort);
+		return 0;
 	}
 }

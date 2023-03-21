@@ -53,14 +53,14 @@ public class HeadacheParams
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 80)]
+		[CallerCount(Count = 92)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 279)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 282)]
 		private set
 		{
 		}
@@ -70,14 +70,14 @@ public class HeadacheParams
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 28)]
+		[CallerCount(Count = 32)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 79)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 86)]
 		private set
 		{
 		}
@@ -85,16 +85,16 @@ public class HeadacheParams
 
 	public LocalizedString m_HeadacheDescription
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 27)]
-		[CompilerGenerated]
 		get
 		{
 			return null;
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 55)]
-		[CompilerGenerated]
 		private set
 		{
 		}
@@ -104,14 +104,14 @@ public class HeadacheParams
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 25)]
+		[CallerCount(Count = 28)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 40)]
+		[CallerCount(Count = 50)]
 		private set
 		{
 		}
@@ -119,9 +119,9 @@ public class HeadacheParams
 
 	public HeadacheStatus m_HeadacheStatus
 	{
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return default(HeadacheStatus);
@@ -143,9 +143,9 @@ public class HeadacheParams
 		{
 			return default(HeadacheCause);
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
@@ -158,7 +158,7 @@ public class HeadacheParams
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -168,8 +168,8 @@ public class HeadacheParams
 		}
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public HeadacheParams()
 	{
 	}
@@ -186,93 +186,88 @@ public class HeadacheParams
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Headache), Member = "Serialize")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public HeadacheParamsSaveDataProxy Serialize()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Headache), Member = "Deserialize")]
+	[CallerCount(Count = 1)]
 	public void Deserialize(HeadacheParamsSaveDataProxy saveDataProxy)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
 	[CalledBy(Type = typeof(Headache), Member = "ApplyHeadache")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(HeadacheParams), Member = "HandleOnHeadacheStatusChanged")]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Deactivate()
 	{
 	}
 
 	[CalledBy(Type = typeof(HeadacheParams), Member = "OnWeatherStageChanged")]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[CallsUnknownMethods(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public void RemoveRisk()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(Headache), Member = "Update")]
+	[CalledBy(Type = typeof(Headache), Member = "MaybeUpdateHeadaches")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(HeadacheParams), Member = "UpdateTimer")]
 	[Calls(Type = typeof(HeadacheParams), Member = "SetStatus")]
 	[Calls(Type = typeof(HeadacheParams), Member = "AddHeadacheAffliction")]
-	[Calls(Type = typeof(HeadacheParams), Member = "SetStatus")]
 	[Calls(Type = typeof(HeadacheParams), Member = "MaybeStartHealing")]
-	[CalledBy(Type = typeof(Headache), Member = "Update")]
-	[CalledBy(Type = typeof(Headache), Member = "MaybeUpdateHeadaches")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetActiveHoursRemaining()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsAfflictionActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(HeadacheParams), Member = "MaybeActivate")]
-	[CalledBy(Type = typeof(HeadacheParams), Member = "MaybePutOnHoldAfterRisk")]
 	[CalledBy(Type = typeof(HeadacheParams), Member = "Update")]
-	[Calls(Type = typeof(Log), Member = "AddAffliction")]
 	[CalledBy(Type = typeof(HeadacheParams), Member = "HandleOnHeadacheStatusChanged")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(HeadacheParams), Member = "MaybePutOnHoldAfterRisk")]
+	[CalledBy(Type = typeof(HeadacheParams), Member = "MaybeActivate")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Log), Member = "AddAffliction")]
+	[CallsUnknownMethods(Count = 1)]
 	private void AddHeadacheAffliction()
 	{
 	}
@@ -285,11 +280,10 @@ public class HeadacheParams
 	}
 
 	[CalledBy(Type = typeof(HeadacheParams), Member = "Update")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateTimer()
 	{
 	}
@@ -297,22 +291,21 @@ public class HeadacheParams
 	[CallerCount(Count = 0)]
 	private float HoursRequiredToDeactivateAfflictionRemaining()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	private float HoursRequiredToActivateAfflictionRemaining()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(HeadacheParams), Member = "MaybeStartHealing")]
+	[CalledBy(Type = typeof(HeadacheParams), Member = "Update")]
 	[CalledBy(Type = typeof(HeadacheParams), Member = "MaybePutOnHoldAfterRisk")]
-	[CalledBy(Type = typeof(HeadacheParams), Member = "Update")]
 	[CalledBy(Type = typeof(HeadacheParams), Member = "MaybeActivateWithCondition")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(HeadacheParams), Member = "MaybeStartHealing")]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(HeadacheParams), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void SetStatus(HeadacheStatus status)
 	{
 	}
@@ -321,20 +314,20 @@ public class HeadacheParams
 	[CallerCount(Count = 1)]
 	public bool NeedsTreatment()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void Destroy()
 	{
 	}
 
-	[Calls(Type = typeof(HeadacheParams), Member = "AddHeadacheAffliction")]
-	[Calls(Type = typeof(HeadacheParams), Member = "Deactivate")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(HeadacheParams), Member = "Deactivate")]
+	[Calls(Type = typeof(HeadacheParams), Member = "AddHeadacheAffliction")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	private void HandleOnHeadacheStatusChanged(HeadacheStatus status)
 	{
@@ -355,8 +348,8 @@ public class HeadacheParams
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(HeadacheParams), Member = "AddHeadacheAffliction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void MaybeActivate()
 	{
 	}
@@ -367,24 +360,23 @@ public class HeadacheParams
 	{
 	}
 
-	[Calls(Type = typeof(CameraEffects), Member = "HeadachePulse")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CalledBy(Type = typeof(HeadacheParams), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(HeadacheParams), Member = "SetStatus")]
+	[Calls(Type = typeof(Time), Member = "get_realtimeSinceStartup")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Time), Member = "get_realtimeSinceStartup")]
-	[Calls(Type = typeof(HeadacheParams), Member = "SetStatus")]
+	[Calls(Type = typeof(CameraEffects), Member = "HeadachePulse")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CalledBy(Type = typeof(HeadacheParams), Member = "Update")]
+	[CallsUnknownMethods(Count = 4)]
 	private void MaybeStartHealing()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(HeadacheParams), Member = "RemoveRisk")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnWeatherStageChanged(WeatherSetStage current)
 	{
 	}

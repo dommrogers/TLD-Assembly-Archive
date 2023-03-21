@@ -11,18 +11,16 @@ public class SpinWithMouse : MonoBehaviour
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 9)]
 	private void OnDrag(Vector2 delta)

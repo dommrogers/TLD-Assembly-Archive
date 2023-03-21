@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine.Events;
@@ -13,9 +12,9 @@ public class ButtonClicked : ConditionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -23,10 +22,11 @@ public class ButtonClicked : ConditionTask
 		}
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(UnityEvent), Member = "AddListener")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(UnityEvent), Member = "AddListener")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	protected override string OnInit()
 	{
 		return null;
@@ -36,7 +36,7 @@ public class ButtonClicked : ConditionTask
 	[CallerCount(Count = 0)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

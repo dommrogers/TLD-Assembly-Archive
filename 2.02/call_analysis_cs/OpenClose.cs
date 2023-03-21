@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 using UnityEngine.AI;
@@ -84,106 +85,108 @@ public class OpenClose : MonoBehaviour
 		}
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(OpenClose), Member = "SetAnimationSpeed")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(OpenClose), Member = "SetAnimationSpeed")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Awake()
 	{
 	}
 
+	[CalledBy(Type = typeof(OpenClose), Member = "Deserialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Lock), Member = "RollLockedState")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(OpenClose), Member = "MaybeCreateNavMeshObstacle")]
-	[CalledBy(Type = typeof(OpenClose), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	public void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(OpenClose), Member = "MaybeUpdateNavmeshObstacleState")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(OpenClose), Member = "SetCollisionEnabled")]
-	[Calls(Type = typeof(ObjectAnim), Member = "IsAnimating")]
-	[Calls(Type = typeof(OpenClose), Member = "Open")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(OpenClose), Member = "Open")]
+	[Calls(Type = typeof(ObjectAnim), Member = "IsAnimating")]
+	[Calls(Type = typeof(OpenClose), Member = "SetCollisionEnabled")]
+	[Calls(Type = typeof(OpenClose), Member = "MaybeUpdateNavmeshObstacleState")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Update_Internal()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
-	[Calls(Type = typeof(OpenClose), Member = "Close")]
-	[Calls(Type = typeof(OpenClose), Member = "Open")]
-	[Calls(Type = typeof(OpenClose), Member = "Cancel")]
-	[Calls(Type = typeof(OpenClose), Member = "Cancel")]
 	[CalledBy(Type = typeof(OpenCloseManager), Member = "UpdateAll")]
-	[Calls(Type = typeof(OpenClose), Member = "MaybeUpdateNavmeshObstacleState")]
-	[Calls(Type = typeof(OpenClose), Member = "SetCollisionEnabled")]
-	[Calls(Type = typeof(ObjectAnim), Member = "IsAnimating")]
-	[Calls(Type = typeof(OpenClose), Member = "Open")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(OpenClose), Member = "Open")]
+	[Calls(Type = typeof(ObjectAnim), Member = "IsAnimating")]
+	[Calls(Type = typeof(OpenClose), Member = "SetCollisionEnabled")]
+	[Calls(Type = typeof(OpenClose), Member = "MaybeUpdateNavmeshObstacleState")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(OpenClose), Member = "Cancel")]
+	[Calls(Type = typeof(OpenClose), Member = "Close")]
+	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public void UpdateOpenClose()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(OpenCloseManager), Member = "SerializeAll")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(SafeCracking), Member = "Serialize")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Lock), Member = "Serialize")]
+	[Calls(Type = typeof(SafeCracking), Member = "Serialize")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(SafeCracking), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(OpenCloseManager), Member = "DeserializeAll")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(OpenClose), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Lock), Member = "Deserialize")]
+	[Calls(Type = typeof(SafeCracking), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessOpenCloseInteraction")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ShouldShowClickHoldBackpiece")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayText")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
+	[CallerCount(Count = 4)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool CanInteract()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 1)]
 	public bool IsOpen()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
@@ -192,28 +195,26 @@ public class OpenClose : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(OpenCloseTrigger), Member = "OnTriggerEnter")]
-	[CalledBy(Type = typeof(OpenClose), Member = "Open")]
-	[CalledBy(Type = typeof(OpenClose), Member = "UpdateOpenClose")]
-	[CalledBy(Type = typeof(OpenClose), Member = "UpdateOpenClose")]
-	[CalledBy(Type = typeof(OpenClose), Member = "Update_Internal")]
 	[CalledBy(Type = typeof(SafeCracking), Member = "OpenSafe")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(OpenClose), Member = "SetCollisionEnabled")]
-	[Calls(Type = typeof(OpenClose), Member = "Open")]
-	[Calls(Type = typeof(ObjectAnim), Member = "Play")]
+	[CalledBy(Type = typeof(OpenClose), Member = "Update_Internal")]
+	[CalledBy(Type = typeof(OpenClose), Member = "UpdateOpenClose")]
+	[CalledBy(Type = typeof(OpenClose), Member = "Open")]
+	[CalledBy(Type = typeof(OpenCloseTrigger), Member = "OnTriggerEnter")]
 	[CallerCount(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SafeCracking), Member = "EnableSafeCrackingInterface")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(ObjectAnim), Member = "GoToEndImmediate")]
-	[Calls(Type = typeof(OpenClose), Member = "AnimateOpen")]
 	[Calls(Type = typeof(OpenClose), Member = "SetAnimationSpeed")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(OpenClose), Member = "AnimateOpen")]
 	[Calls(Type = typeof(OpenClose), Member = "PlayAnimInReverse")]
+	[Calls(Type = typeof(ObjectAnim), Member = "Play")]
+	[Calls(Type = typeof(ObjectAnim), Member = "GoToEndImmediate")]
+	[Calls(Type = typeof(OpenClose), Member = "SetCollisionEnabled")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(OpenClose), Member = "Open")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Open(bool isImmediate, bool fromLink)
 	{
 	}
@@ -224,125 +225,121 @@ public class OpenClose : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(OpenClose), Member = "Cancel")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(OpenClose), Member = "Cancel")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(OpenCloseTrigger), Member = "OnTriggerExit")]
-	[CalledBy(Type = typeof(OpenClose), Member = "Close")]
-	[CalledBy(Type = typeof(OpenClose), Member = "Close")]
 	[CalledBy(Type = typeof(SafeCracking), Member = "CloseSafe")]
-	[Calls(Type = typeof(OpenClose), Member = "Close")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CalledBy(Type = typeof(OpenClose), Member = "UpdateOpenClose")]
-	[Calls(Type = typeof(ObjectAnim), Member = "GoToEndImmediate")]
-	[Calls(Type = typeof(ObjectAnim), Member = "Play")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(OpenClose), Member = "AnimateOpen")]
-	[Calls(Type = typeof(OpenClose), Member = "SetAnimationSpeed")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(OpenClose), Member = "Close")]
+	[CalledBy(Type = typeof(OpenClose), Member = "Close")]
+	[CalledBy(Type = typeof(OpenCloseTrigger), Member = "OnTriggerExit")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(OpenClose), Member = "SetAnimationSpeed")]
+	[Calls(Type = typeof(OpenClose), Member = "AnimateOpen")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ObjectAnim), Member = "Play")]
+	[Calls(Type = typeof(ObjectAnim), Member = "GoToEndImmediate")]
 	[Calls(Type = typeof(OpenClose), Member = "SetCollisionEnabled")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(OpenClose), Member = "Close")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Close(bool isImmediate, bool fromLink)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(OpenClose), Member = "Open")]
-	[Calls(Type = typeof(OpenClose), Member = "SetCollisionEnabled")]
 	[CalledBy(Type = typeof(OpenClose), Member = "Close")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(OpenClose), Member = "SetCollisionEnabled")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void AnimateOpen(bool isOpen)
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayText")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayText")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public string GetHoverText()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessOpenCloseInteraction")]
-	[Calls(Type = typeof(SafeCracking), Member = "EnableSafeCrackingInterface")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Lock), Member = "ForceLockBegin")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(Lock), Member = "GetGearItemToForceLock")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Lock), Member = "GetGearItemToForceLock")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Lock), Member = "ForceLockBegin")]
+	[Calls(Type = typeof(SafeCracking), Member = "EnableSafeCrackingInterface")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 18)]
 	public void ForceLock()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsLocked()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(SafeCracking), Member = "EnableSafeCrackingInterface")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(SafeCracking), Member = "EnableSafeCrackingInterface")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void StartSafeCrackingInterface()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
-	[CallsUnknownMethods(Count = 24)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessOpenCloseInteraction")]
 	[CalledBy(Type = typeof(OpenClose), Member = "OnLockBroken")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessOpenCloseInteraction")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 24)]
 	public void StartInteract()
 	{
 	}
 
 	[CalledBy(Type = typeof(OpenClose), Member = "UpdateOpenClose")]
-	[CalledBy(Type = typeof(InputManager), Member = "MaybeCancelClickHold")]
 	[CalledBy(Type = typeof(OpenClose), Member = "OnDisable")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(OpenClose), Member = "UpdateOpenClose")]
-	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(InputManager), Member = "MaybeCancelClickHold")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public void Cancel()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void ProgressBarStarted()
 	{
 	}
@@ -353,99 +350,96 @@ public class OpenClose : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(OpenClose), Member = "Open")]
-	[Calls(Type = typeof(Utils), Member = "PositionIsInLOSOfPlayer")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Utils), Member = "PositionIsInLOSOfPlayer")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private bool PlayAnimInReverse()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(SafeCracking), Member = "OpenSafe")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(OpenClose), Member = "StartInteract")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SafeCracking), Member = "EnableSafeCrackingInterface")]
+	[Calls(Type = typeof(SafeCracking), Member = "OpenSafe")]
+	[Calls(Type = typeof(OpenClose), Member = "StartInteract")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnLockBroken()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(OpenClose), Member = "OnStateDone")]
-	[CalledBy(Type = typeof(OpenClose), Member = "AnimateOpen")]
-	[CalledBy(Type = typeof(OpenClose), Member = "Close")]
-	[CalledBy(Type = typeof(OpenClose), Member = "Open")]
 	[CalledBy(Type = typeof(OpenClose), Member = "Update_Internal")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(OpenClose), Member = "UpdateOpenClose")]
+	[CalledBy(Type = typeof(OpenClose), Member = "Open")]
+	[CalledBy(Type = typeof(OpenClose), Member = "Close")]
+	[CalledBy(Type = typeof(OpenClose), Member = "AnimateOpen")]
+	[CalledBy(Type = typeof(OpenClose), Member = "OnStateDone")]
+	[CallerCount(Count = 6)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	private void SetCollisionEnabled(bool enabled)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(OpenClose), Member = "Awake")]
 	[CalledBy(Type = typeof(OpenClose), Member = "Open")]
 	[CalledBy(Type = typeof(OpenClose), Member = "Close")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void SetAnimationSpeed(float value)
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(NavMeshObstacle), Member = "set_carving")]
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(OpenClose), Member = "MaybeUpdateNavmeshObstacleState")]
 	[CalledBy(Type = typeof(OpenClose), Member = "Start")]
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[Calls(Type = typeof(NavMeshObstacle), Member = "set_shape")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 19)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(NavMeshObstacle), Member = "set_carving")]
+	[Calls(Type = typeof(NavMeshObstacle), Member = "set_shape")]
+	[Calls(Type = typeof(OpenClose), Member = "MaybeUpdateNavmeshObstacleState")]
+	[CallsDeduplicatedMethods(Count = 17)]
+	[CallsUnknownMethods(Count = 33)]
 	private void MaybeCreateNavMeshObstacle()
 	{
 	}
 
-	[CalledBy(Type = typeof(OpenClose), Member = "UpdateOpenClose")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(OpenClose), Member = "MaybeCreateNavMeshObstacle")]
 	[CalledBy(Type = typeof(OpenClose), Member = "Update_Internal")]
+	[CalledBy(Type = typeof(OpenClose), Member = "UpdateOpenClose")]
+	[CalledBy(Type = typeof(OpenClose), Member = "MaybeCreateNavMeshObstacle")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(ObjectAnim), Member = "IsAnimating")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void MaybeUpdateNavmeshObstacleState()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public OpenClose()
 	{
 	}

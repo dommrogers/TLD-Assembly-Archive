@@ -32,12 +32,12 @@ public class CheckUnityEvent : ConditionTask
 		}
 	}
 
-	[Calls(Type = typeof(UnityEvent), Member = "AddListener")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Task), Member = "get_agent")]
-	[Calls(Type = typeof(ReflectionTools), Member = "RTGetField")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTGetField")]
+	[Calls(Type = typeof(Task), Member = "get_agent")]
+	[Calls(Type = typeof(UnityEvent), Member = "AddListener")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override string OnInit()
 	{
 		return null;
@@ -54,11 +54,11 @@ public class CheckUnityEvent : ConditionTask
 	[CallerCount(Count = 3)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public CheckUnityEvent()
 	{
 	}
@@ -93,12 +93,12 @@ public class CheckUnityEvent<T> : ConditionTask
 		}
 	}
 
-	[Calls(Type = typeof(Task), Member = "get_agent")]
-	[Calls(Type = typeof(ReflectionTools), Member = "RTGetField")]
-	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTGetField")]
+	[Calls(Type = typeof(Task), Member = "get_agent")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	protected override string OnInit()
 	{
 		return null;
@@ -106,8 +106,8 @@ public class CheckUnityEvent<T> : ConditionTask
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Raised(T eventValue)
 	{
@@ -117,11 +117,11 @@ public class CheckUnityEvent<T> : ConditionTask
 	[CallerCount(Count = 3)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public CheckUnityEvent()
 	{
 	}

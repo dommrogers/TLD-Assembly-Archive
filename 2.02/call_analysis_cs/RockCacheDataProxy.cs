@@ -11,7 +11,7 @@ public class RockCacheDataProxy
 	public bool m_UserPlaced;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public RockCacheDataProxy()
 	{
 	}

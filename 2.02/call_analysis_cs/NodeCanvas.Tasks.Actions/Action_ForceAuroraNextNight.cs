@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -17,12 +16,13 @@ public class Action_ForceAuroraNextNight : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
-		[CallsUnknownMethods(Count = 16)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 8)]
 		get
 		{
 			return null;
@@ -30,30 +30,22 @@ public class Action_ForceAuroraNextNight : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[CallsUnknownMethods(Count = 18)]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	protected override void OnExecute()
 	{
 	}
 
-	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-	[CallsUnknownMethods(Count = 32)]
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
+	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
+	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 32)]
 	public Action_ForceAuroraNextNight()
 	{
 	}

@@ -15,11 +15,11 @@ public class SaveLoadOp : AsyncOp<SaveLoadOp>
 
 	private SaveLoadDelegate Callback;
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(TitleStorage), Member = "UploadFileAsync")]
 	[CalledBy(Type = typeof(TitleStorage), Member = "DownloadFileAsync")]
 	[CalledBy(Type = typeof(TitleStorage), Member = "DownloadFileAsync")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public SaveLoadOp(TitleStorage storage, byte[] buffer, SaveLoadDelegate callback)
 	{
@@ -27,8 +27,8 @@ public class SaveLoadOp : AsyncOp<SaveLoadOp>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SaveLoadDelegate), Member = "Invoke")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Complete(uint result, uint size)
 	{
 	}

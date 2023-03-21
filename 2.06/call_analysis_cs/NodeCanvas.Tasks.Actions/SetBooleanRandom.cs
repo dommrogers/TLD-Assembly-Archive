@@ -9,8 +9,8 @@ public class SetBooleanRandom : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -19,18 +19,18 @@ public class SetBooleanRandom : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
 	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
 	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public SetBooleanRandom()
 	{
 	}

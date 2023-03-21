@@ -26,9 +26,9 @@ internal struct DuplicateFileCallbackInfoInternal : ICallbackInfoInternal
 	public object ClientData
 	{
 		[CalledBy(Type = typeof(DuplicateFileCallbackInfo), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(DuplicateFileCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -42,16 +42,17 @@ internal struct DuplicateFileCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(DuplicateFileCallbackInfo), Member = "Set")]
+		[CalledBy(Type = typeof(DuplicateFileCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(DuplicateFileCallbackInfo), Member = "Set")]
-		[CalledBy(Type = typeof(DuplicateFileCallbackInfo), Member = "Set")]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;

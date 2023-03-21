@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Serialization;
 using UnityEngine;
@@ -27,90 +26,90 @@ public class MissionObjectIdentifier : MonoBehaviour
 
 	private bool m_IsBlankId;
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
-	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[CallsDeduplicatedMethods(Count = 13)]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(float), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 12)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "UnregisterMissionObject")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "UnregisterMissionObject")]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnDestroy()
 	{
 	}
 
-	[Calls(Type = typeof(MissionServicesManager), Member = "RegisterMissionObject")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Container), Member = "AssumeMissionObjectResponsibility")]
-	[CalledBy(Type = typeof(Container), Member = "Deserialize")]
-	[CalledBy(Type = typeof(GearItem), Member = "AssumeMissionObjectResponsibility")]
 	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "UnregisterMissionObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "GetCurrentMissionFilterTags")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(GearItem), Member = "AssumeMissionObjectResponsibility")]
+	[CalledBy(Type = typeof(Container), Member = "Deserialize")]
+	[CalledBy(Type = typeof(Container), Member = "AssumeMissionObjectResponsibility")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetCurrentMissionFilterTags")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "UnregisterMissionObject")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "RegisterMissionObject")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static MissionObjectIdentifier AddMissionComponentForSaveManagedItem(GameObject smObject, string missionObjectSerialized)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Container), Member = "Serialize")]
 	[CalledBy(Type = typeof(GearItem), Member = "Serialize")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CalledBy(Type = typeof(Container), Member = "Serialize")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "ReviewObjectFiltering")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "FindMissionObjectsWithoutTag")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "FindMissionObjectsByTag")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "RegisterMissionObject")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "FiltersAllowObject")]
 	[CalledBy(Type = typeof(GearItem), Member = "MaybeDestroyGearItemAfterMission")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(string), Member = "Split")]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(Container), Member = "MaybeDestroyContainerAfterMission")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "FiltersAllowObject")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "RegisterMissionObject")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "FindMissionObjectsByTag")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "FindMissionObjectsWithoutTag")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "ReviewObjectFiltering")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool HasAnyTag(string[] tags)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool IsBlankId()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

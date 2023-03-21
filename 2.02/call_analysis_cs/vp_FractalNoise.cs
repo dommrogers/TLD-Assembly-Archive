@@ -12,59 +12,48 @@ public class vp_FractalNoise
 
 	private float m_Lacunarity;
 
-	[Calls(Type = typeof(vp_FractalNoise), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_FractalNoise), Member = ".ctor")]
 	public vp_FractalNoise(float inH, float inLacunarity, float inOctaves)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(vp_Perlin), Member = ".ctor")]
 	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "Get")]
 	[CalledBy(Type = typeof(vp_FractalNoise), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 16)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(vp_Perlin), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 16)]
 	public vp_FractalNoise(float inH, float inLacunarity, float inOctaves, vp_Perlin noise)
 	{
 	}
 
 	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3Slow")]
 	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3CenteredSlow")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetSlow")]
-	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3CenteredSlow")]
-	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3CenteredSlow")]
-	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3Slow")]
-	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3CenteredSlow")]
-	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3CenteredSlow")]
-	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3CenteredSlow")]
-	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3Slow")]
 	[CallerCount(Count = 10)]
 	[Calls(Type = typeof(vp_Perlin), Member = "Noise")]
-	[Calls(Type = typeof(vp_Perlin), Member = "Noise")]
-	[Calls(Type = typeof(vp_Perlin), Member = "Noise")]
+	[CallsUnknownMethods(Count = 7)]
 	public float HybridMultifractal(float x, float y, float offset)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_Perlin), Member = "Noise")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(vp_Perlin), Member = "Noise")]
-	[Calls(Type = typeof(vp_Perlin), Member = "Noise")]
+	[CallsUnknownMethods(Count = 5)]
 	public float RidgedMultifractal(float x, float y, float offset, float gain)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(vp_Perlin), Member = "Noise")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(vp_Perlin), Member = "Noise")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 8)]
 	public float BrownianMotion(float x, float y)
 	{
-		return default(float);
+		return 0f;
 	}
 }

@@ -38,27 +38,26 @@ public class SteamManager : MonoBehaviour
 
 	public static bool Initialized
 	{
+		[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "ResetAllAchievements")]
+		[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "Initialize")]
+		[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "Update")]
+		[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "Shutdown")]
+		[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "Unlock")]
+		[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "SendStatistic")]
+		[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "RequestStatsAndAchievements")]
+		[CalledBy(Type = typeof(TextInputField), Member = "Select")]
+		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyVsync")]
 		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateDisplayMenuItems")]
 		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "CanLockFPS")]
+		[CalledBy(Type = typeof(InputSystemRewired), Member = "InitializeSteamController")]
 		[CalledBy(Type = typeof(SteamRichPresenceProvider), Member = "IsUserSignedOn")]
-		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyVsync")]
+		[CalledBy(Type = typeof(SteamRichPresenceProvider), Member = "ChangePresence")]
 		[CalledBy(Type = typeof(SteamManager), Member = "Update")]
 		[CalledBy(Type = typeof(SteamManager), Member = "IsRunningOnSteamDeck")]
-		[CalledBy(Type = typeof(SteamRichPresenceProvider), Member = "ChangePresence")]
-		[CalledBy(Type = typeof(TextInputField), Member = "Select")]
-		[CalledBy(Type = typeof(InputSystemRewired), Member = "InitializeSteamController")]
-		[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "SendStatistic")]
-		[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "Unlock")]
-		[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "Shutdown")]
-		[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "Update")]
-		[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "RequestStatsAndAchievements")]
-		[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "Update")]
-		[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "Initialize")]
-		[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "ResetAllAchievements")]
 		[CallerCount(Count = 17)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -68,7 +67,7 @@ public class SteamManager : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
@@ -79,10 +78,10 @@ public class SteamManager : MonoBehaviour
 
 	public static event OnGameOverlayActivatedDelegate s_OnGameOverlayActivated
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
@@ -95,35 +94,33 @@ public class SteamManager : MonoBehaviour
 		}
 	}
 
-	[Calls(Type = typeof(CallbackDispatcher), Member = "Initialize")]
-	[Calls(Type = typeof(Exception), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "DontDestroyOnLoad")]
-	[Calls(Type = typeof(SteamUser), Member = "BLoggedOn")]
-	[Calls(Type = typeof(Steamworks.CSteamAPIContext), Member = "Init")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Marshal), Member = "SizeOf")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Marshal), Member = "SizeOf")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Marshal), Member = "SizeOf")]
 	[Calls(Type = typeof(Application), Member = "Quit")]
+	[Calls(TypeFullName = "Steamworks.CSteamAPIContext", Member = "Init")]
+	[Calls(Type = typeof(CallbackDispatcher), Member = "Initialize")]
+	[Calls(Type = typeof(SteamUser), Member = "BLoggedOn")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "DontDestroyOnLoad")]
+	[Calls(Type = typeof(Exception), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 14)]
 	private void Awake()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
 	[Calls(Type = typeof(CallbackDispatcher), Member = "RunFrame")]
-	[CallerCount(Count = 0)]
 	private void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CallbackDispatcher), Member = "Unregister")]
-	[Calls(Type = typeof(Steamworks.CSteamAPIContext), Member = "Clear")]
+	[Calls(TypeFullName = "Steamworks.CSteamAPIContext", Member = "Clear")]
 	[Calls(Type = typeof(CallbackDispatcher), Member = "Shutdown")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnDestroy()
 	{
@@ -134,15 +131,15 @@ public class SteamManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(InteropHelp), Member = "TestIfAvailableClient")]
-	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
-	[Calls(Type = typeof(Steamworks.NativeMethods), Member = "ISteamUtils_IsSteamRunningOnSteamDeck")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
+	[Calls(Type = typeof(InteropHelp), Member = "TestIfAvailableClient")]
+	[Calls(TypeFullName = "Steamworks.NativeMethods", Member = "ISteamUtils_IsSteamRunningOnSteamDeck")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsRunningOnSteamDeck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

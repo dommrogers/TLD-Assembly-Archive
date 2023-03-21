@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Cpp2ILInjected.CallAnalysis;
 
@@ -34,7 +33,7 @@ public sealed class PlayerDataStorageInterface : Handle
 	public const int WritefileoptionsApiLatest = 1;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PlayerDataStorageInterface()
 	{
 	}
@@ -46,10 +45,11 @@ public sealed class PlayerDataStorageInterface : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(CopyFileMetadataAtIndexOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 	[Calls(Type = typeof(PlayerDataStorageInterface), Member = "EOS_PlayerDataStorage_FileMetadata_Release")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result CopyFileMetadataAtIndex(CopyFileMetadataAtIndexOptions copyFileMetadataOptions, out FileMetadata outMetadata)
 	{
@@ -57,12 +57,13 @@ public sealed class PlayerDataStorageInterface : Handle
 		return default(Result);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerDataStorageInterface), Member = "EOS_PlayerDataStorage_FileMetadata_Release")]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CopyFileMetadataByFilenameOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[Calls(Type = typeof(PlayerDataStorageInterface), Member = "EOS_PlayerDataStorage_FileMetadata_Release")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result CopyFileMetadataByFilename(CopyFileMetadataByFilenameOptions copyFileMetadataOptions, out FileMetadata outMetadata)
 	{
 		outMetadata = null;
@@ -70,102 +71,102 @@ public sealed class PlayerDataStorageInterface : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(DeleteCacheOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public Result DeleteCache(DeleteCacheOptions options, object clientData, OnDeleteCacheCompleteCallback completionCallback)
 	{
 		return default(Result);
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DeleteFileOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void DeleteFile(DeleteFileOptions deleteOptions, object clientData, OnDeleteFileCompleteCallback completionCallback)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(DuplicateFileOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public void DuplicateFile(DuplicateFileOptions duplicateOptions, object clientData, OnDuplicateFileCompleteCallback completionCallback)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(GetFileMetadataCountOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result GetFileMetadataCount(GetFileMetadataCountOptions getFileMetadataCountOptions, out int outFileMetadataCount)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref outFileMetadataCount) = null;
+		outFileMetadataCount = default(int);
 		return default(Result);
 	}
 
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
-	[Calls(Type = typeof(QueryFileOptionsInternal), Member = "Set")]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(QueryFileOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public void QueryFile(QueryFileOptions queryFileOptions, object clientData, OnQueryFileCompleteCallback completionCallback)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
-	[CallsUnknownMethods(Count = 9)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(QueryFileListOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void QueryFileList(QueryFileListOptions queryFileListOptions, object clientData, OnQueryFileListCompleteCallback completionCallback)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 27)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
-	[Calls(Type = typeof(ReadFileOptionsInternal), Member = "get_FileTransferProgressCallback")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ReadFileOptionsInternal), Member = "Set")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(ReadFileOptionsInternal), Member = "get_ReadFileDataCallback")]
+	[Calls(Type = typeof(ReadFileOptionsInternal), Member = "get_FileTransferProgressCallback")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 27)]
 	public PlayerDataStorageFileTransferRequest ReadFile(ReadFileOptions readOptions, object clientData, OnReadFileCompleteCallback completionCallback)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(WriteFileOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(WriteFileOptionsInternal), Member = "get_WriteFileDataCallback")]
 	[Calls(Type = typeof(WriteFileOptionsInternal), Member = "get_FileTransferProgressCallback")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 27)]
 	public PlayerDataStorageFileTransferRequest WriteFile(WriteFileOptions writeOptions, object clientData, OnWriteFileCompleteCallback completionCallback)
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
-	[CallerCount(Count = 0)]
 	internal static void OnDeleteCacheCompleteCallbackInternalImplementation(IntPtr data)
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -173,7 +174,6 @@ public sealed class PlayerDataStorageInterface : Handle
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -181,23 +181,21 @@ public sealed class PlayerDataStorageInterface : Handle
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
 	internal static void OnFileTransferProgressCallbackInternalImplementation(IntPtr data)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static void OnQueryFileCompleteCallbackInternalImplementation(IntPtr data)
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -205,7 +203,6 @@ public sealed class PlayerDataStorageInterface : Handle
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -213,16 +210,15 @@ public sealed class PlayerDataStorageInterface : Handle
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static ReadResult OnReadFileDataCallbackInternalImplementation(IntPtr data)
 	{
 		return default(ReadResult);
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -230,10 +226,10 @@ public sealed class PlayerDataStorageInterface : Handle
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 	[Calls(Type = typeof(Marshal), Member = "Copy")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 1)]
 	internal static WriteResult OnWriteFileDataCallbackInternalImplementation(IntPtr data, IntPtr outDataBuffer, ref uint outDataWritten)
 	{
@@ -241,13 +237,13 @@ public sealed class PlayerDataStorageInterface : Handle
 	}
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern Result EOS_PlayerDataStorage_CopyFileMetadataAtIndex(IntPtr handle, IntPtr copyFileMetadataOptions, ref IntPtr outMetadata);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern Result EOS_PlayerDataStorage_CopyFileMetadataByFilename(IntPtr handle, IntPtr copyFileMetadataOptions, ref IntPtr outMetadata);
 
 	[PreserveSig]
@@ -274,9 +270,9 @@ public sealed class PlayerDataStorageInterface : Handle
 	internal static extern Result EOS_PlayerDataStorage_GetFileMetadataCount(IntPtr handle, IntPtr getFileMetadataCountOptions, ref int outFileMetadataCount);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	internal static extern void EOS_PlayerDataStorage_QueryFile(IntPtr handle, IntPtr queryFileOptions, IntPtr clientData, OnQueryFileCompleteCallbackInternal completionCallback);
 
 	[PreserveSig]
@@ -292,15 +288,15 @@ public sealed class PlayerDataStorageInterface : Handle
 	internal static extern IntPtr EOS_PlayerDataStorage_ReadFile(IntPtr handle, IntPtr readOptions, IntPtr clientData, OnReadFileCompleteCallbackInternal completionCallback);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(PlayerDataStorageInterface), Member = "CopyFileMetadataAtIndex")]
 	[CalledBy(Type = typeof(PlayerDataStorageInterface), Member = "CopyFileMetadataByFilename")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	internal static extern void EOS_PlayerDataStorage_FileMetadata_Release(IntPtr fileMetadata);
 
 	[PreserveSig]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	internal static extern IntPtr EOS_PlayerDataStorage_WriteFile(IntPtr handle, IntPtr writeOptions, IntPtr clientData, OnWriteFileCompleteCallbackInternal completionCallback);
 }

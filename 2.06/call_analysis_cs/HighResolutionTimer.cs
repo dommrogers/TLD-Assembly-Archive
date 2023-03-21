@@ -51,8 +51,8 @@ public class HighResolutionTimer
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 6)]
 	public static HighResolutionTimer FromHours(double hours)
 	{
 		return null;
@@ -78,11 +78,11 @@ public class HighResolutionTimer
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "OnUpdate")]
 	[CalledBy(Type = typeof(PassTime), Member = "Begin")]
-	[Calls(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedMilliseconds")]
+	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "OnUpdate")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedMilliseconds")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Restart()
 	{
 	}
@@ -91,56 +91,56 @@ public class HighResolutionTimer
 	[CallerCount(Count = 0)]
 	public bool IsPaused()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "UpdateTimeForCurrentScene")]
-	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(PassTime), Member = "End")]
-	[CalledBy(Type = typeof(PassTime), Member = "UpdatePassingTime")]
-	[CalledBy(Type = typeof(HighResolutionTimer), Member = "Serialize")]
-	[CalledBy(Type = typeof(PassTime), Member = "GetNumHoursRemaining")]
-	[CalledBy(Type = typeof(HighResolutionTimer), Member = "GetElapsedHours")]
-	[CalledBy(Type = typeof(HighResolutionTimer), Member = "GetElapsedMinutes")]
-	[CalledBy(Type = typeof(HighResolutionTimer), Member = "GetElapsedSeconds")]
-	[CalledBy(Type = typeof(HighResolutionTimer), Member = "GetElapsedDays")]
 	[CalledBy(Type = typeof(HighResolutionTimer), Member = "Stop")]
-	[Calls(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedMilliseconds")]
+	[CalledBy(Type = typeof(HighResolutionTimer), Member = "GetElapsedSeconds")]
+	[CalledBy(Type = typeof(HighResolutionTimer), Member = "GetElapsedMinutes")]
+	[CalledBy(Type = typeof(HighResolutionTimer), Member = "GetElapsedHours")]
+	[CalledBy(Type = typeof(HighResolutionTimer), Member = "GetElapsedDays")]
+	[CalledBy(Type = typeof(HighResolutionTimer), Member = "Serialize")]
+	[CalledBy(Type = typeof(PassTime), Member = "UpdatePassingTime")]
+	[CalledBy(Type = typeof(PassTime), Member = "End")]
+	[CalledBy(Type = typeof(PassTime), Member = "GetNumHoursRemaining")]
+	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "OnUpdate")]
+	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "UpdateTimeForCurrentScene")]
 	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedMilliseconds")]
+	[CallsUnknownMethods(Count = 2)]
 	public ulong GetElapsedMilliseconds()
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(HighResolutionTimer), Member = "GetElapsedMilliseconds")]
 	public float GetElapsedSeconds()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(HighResolutionTimer), Member = "GetElapsedMilliseconds")]
 	public float GetElapsedMinutes()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(PassTime), Member = "End")]
 	[CalledBy(Type = typeof(PassTime), Member = "UpdatePassingTime")]
-	[Calls(Type = typeof(HighResolutionTimer), Member = "GetElapsedMilliseconds")]
+	[CalledBy(Type = typeof(PassTime), Member = "End")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(HighResolutionTimer), Member = "GetElapsedMilliseconds")]
 	public float GetElapsedHours()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(HighResolutionTimer), Member = "GetElapsedMilliseconds")]
 	public float GetElapsedDays()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -153,7 +153,7 @@ public class HighResolutionTimer
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
@@ -162,49 +162,49 @@ public class HighResolutionTimer
 	[CallerCount(Count = 0)]
 	public static double MillisecondsToSeconds(ulong milliseconds)
 	{
-		return default(double);
+		return 0.0;
 	}
 
 	[CallerCount(Count = 0)]
 	public static double MilliSecondsToMinutes(ulong milliseconds)
 	{
-		return default(double);
+		return 0.0;
 	}
 
 	[CallerCount(Count = 0)]
 	public static double MillisecondsToHours(ulong milliseconds)
 	{
-		return default(double);
+		return 0.0;
 	}
 
 	[CallerCount(Count = 0)]
 	public static double MillisecondsToDays(ulong milliseconds)
 	{
-		return default(double);
+		return 0.0;
 	}
 
 	[CallerCount(Count = 0)]
 	public static ulong SecondsToMilliseconds(double seconds)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
 	[CallerCount(Count = 0)]
 	public static ulong MinutesToMilliseconds(double minutes)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
 	[CallerCount(Count = 0)]
 	public static ulong HoursToMilliseconds(double hours)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
 	[CallerCount(Count = 0)]
 	public static ulong DaysToMilliseconds(double days)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
 	[DeduplicatedMethod]

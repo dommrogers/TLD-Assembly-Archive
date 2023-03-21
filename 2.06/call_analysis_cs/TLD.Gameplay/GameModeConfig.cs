@@ -49,9 +49,9 @@ public abstract class GameModeConfig : ScriptableObject
 
 	public virtual StartGearData StartGear
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Object), Member = "op_Implicit")]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -62,7 +62,7 @@ public abstract class GameModeConfig : ScriptableObject
 	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
 	public bool HasActiveTag(GameplayTag tag)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

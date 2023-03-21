@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -15,35 +16,35 @@ public class ButtonLegendConfigure : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Rest), Member = "RefreshButtonConfigure")]
-	[CalledBy(Type = typeof(Panel_Badges), Member = "RefreshButtonConfigure")]
 	[CalledBy(Type = typeof(ButtonLegendConfigure), Member = "Update")]
-	[Calls(Type = typeof(ButtonLegend), Member = "ConfigureButtonIconSpriteName")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(ButtonLegendConfigure), Member = "RefreshReferences")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CalledBy(Type = typeof(Panel_Badges), Member = "RefreshButtonConfigure")]
+	[CalledBy(Type = typeof(Panel_Rest), Member = "RefreshButtonConfigure")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(ButtonLegendConfigure), Member = "RefreshReferences")]
+	[Calls(Type = typeof(ButtonLegend), Member = "ConfigureButtonIconSpriteName")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ConfigureButton()
 	{
 	}
 
-	[Calls(Type = typeof(ButtonLegendConfigure), Member = "ConfigureButton")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ButtonLegendConfigure), Member = "ConfigureButton")]
 	public void Update()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(ButtonLegendConfigure), Member = "ConfigureButton")]
 	[CalledBy(Type = typeof(ButtonLegendConfigure), Member = "Awake")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CalledBy(Type = typeof(ButtonLegendConfigure), Member = "ConfigureButton")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UIPanel), Member = "Find")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	private void RefreshReferences()
 	{
 	}

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -9,31 +10,34 @@ public class FastCloth : MonoBehaviour
 
 	private MeshFilter m_MeshFilter;
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(MeshFilter), Member = "set_sharedMesh")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(FastClothManager), Member = "TryCacheClothMeshData")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(FastClothManager), Member = "TryCacheClothMeshData")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(MeshFilter), Member = "set_sharedMesh")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnDestroy()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Bounds), Member = "get_size")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 10)]
 	private void OnDrawGizmosSelected()
 	{

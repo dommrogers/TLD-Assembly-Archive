@@ -38,17 +38,17 @@ public class SnareItem : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	public void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Inventory), Member = "ProcessItems")]
-	[Calls(Type = typeof(SnareItem), Member = "DoRoll")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SnareItem), Member = "SkipCheckDueToPlayerProximity")]
+	[Calls(Type = typeof(SnareItem), Member = "DoRoll")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Update()
 	{
 	}
@@ -61,11 +61,11 @@ public class SnareItem : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(SnareItem), Member = "DoRoll")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(SnareItem), Member = "SetState")]
+	[Calls(Type = typeof(SnareItem), Member = "DoRoll")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
@@ -97,26 +97,26 @@ public class SnareItem : MonoBehaviour
 		return default(SnareState);
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceSnare")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeDisableInspectModeMesh")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PrepareGhostedObject")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "SetSnarePlacedMesh")]
-	[CalledBy(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
-	[CallsUnknownMethods(Count = 17)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceMeshInWorld")]
+	[CalledBy(Type = typeof(GearItem), Member = "Awake")]
+	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
+	[CalledBy(Type = typeof(GearItem), Member = "Drop")]
+	[CalledBy(Type = typeof(SnareItem), Member = "Deserialize")]
+	[CalledBy(Type = typeof(SnareItem), Member = "OnSnarePlaced")]
+	[CalledBy(Type = typeof(SnareItem), Member = "LeaveInspectMode")]
 	[CalledBy(Type = typeof(SnareItem), Member = "DoRoll")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ExitInspectGearMode")]
-	[CalledBy(Type = typeof(SnareItem), Member = "LeaveInspectMode")]
-	[CalledBy(Type = typeof(SnareItem), Member = "OnSnarePlaced")]
-	[CalledBy(Type = typeof(SnareItem), Member = "Deserialize")]
-	[CalledBy(Type = typeof(GearItem), Member = "Drop")]
-	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
-	[CalledBy(Type = typeof(GearItem), Member = "Awake")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 15)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeDisableInspectModeMesh")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceSnare")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PrepareGhostedObject")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceMeshInWorld")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "SetSnarePlacedMesh")]
+	[CalledBy(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
 	[CallerCount(Count = 16)]
-	[CalledBy(Type = typeof(SnareItem), Member = "DoRoll")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 17)]
 	public void SetState(SnareState state)
 	{
 	}
@@ -126,69 +126,66 @@ public class SnareItem : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(SnareItem), Member = "SetState")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SnareItem), Member = "SetState")]
 	public void LeaveInspectMode()
 	{
 	}
 
+	[CalledBy(Type = typeof(SnareItem), Member = "Update")]
+	[CalledBy(Type = typeof(SnareItem), Member = "CheckForCatch")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(Utils), Member = "DistanceToMainCamera")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[CalledBy(Type = typeof(SnareItem), Member = "Update")]
-	[CalledBy(Type = typeof(SnareItem), Member = "CheckForCatch")]
+	[CallsDeduplicatedMethods(Count = 10)]
 	[CallsUnknownMethods(Count = 13)]
 	private bool SkipCheckDueToPlayerProximity()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(SnareItem), Member = "DoRoll")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SnareItem), Member = "SkipCheckDueToPlayerProximity")]
+	[Calls(Type = typeof(SnareItem), Member = "DoRoll")]
+	[CallsUnknownMethods(Count = 2)]
 	private void CheckForCatch()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[CalledBy(Type = typeof(SnareItem), Member = "Deserialize")]
-	[CalledBy(Type = typeof(SnareItem), Member = "Update")]
 	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
-	[Calls(Type = typeof(SnareItem), Member = "SpawnDeadRabbitOnSnare")]
-	[Calls(Type = typeof(SnareItem), Member = "SetState")]
-	[Calls(Type = typeof(SnareItem), Member = "SetState")]
+	[CalledBy(Type = typeof(SnareItem), Member = "Update")]
+	[CalledBy(Type = typeof(SnareItem), Member = "Deserialize")]
 	[CalledBy(Type = typeof(SnareItem), Member = "CheckForCatch")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[Calls(Type = typeof(SpawnRegion), Member = "GetMaxSimultaneousSpawnsNight")]
-	[Calls(Type = typeof(SpawnRegion), Member = "GetMaxSimultaneousSpawnsDay")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(SpawnRegionManager), Member = "PointInsideSpawnRegion")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(SpawnRegionManager), Member = "PointInsideSpawnRegion")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(SpawnRegion), Member = "GetMaxSimultaneousSpawnsDay")]
+	[Calls(Type = typeof(SpawnRegion), Member = "GetMaxSimultaneousSpawnsNight")]
 	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(Type = typeof(SnareItem), Member = "SetState")]
+	[Calls(Type = typeof(SnareItem), Member = "SpawnDeadRabbitOnSnare")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	private void DoRoll()
 	{
 	}
 
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(Feat), Member = "ShouldBlockIncrement")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
 	[CalledBy(Type = typeof(SnareItem), Member = "DoRoll")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Object), Member = "set_name")]
 	[Calls(Type = typeof(Object), Member = "Instantiate")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(Feat), Member = "ShouldBlockIncrement")]
+	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 10)]
 	private void SpawnDeadRabbitOnSnare(GameObject rabbitPrefab)
 	{
 	}

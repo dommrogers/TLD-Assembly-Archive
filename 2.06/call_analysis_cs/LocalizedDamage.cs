@@ -13,8 +13,8 @@ public class LocalizedDamage : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 51)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 53)]
 	public void SetBodyDamage(BodyDamage bodyDamage)
 	{
 	}
@@ -25,58 +25,58 @@ public class LocalizedDamage : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetDamageScale(BodyDamage.Weapon weapon)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(vp_Bullet), Member = "Start")]
+	[CalledBy(Type = typeof(ArrowItem), Member = "InflictDamage")]
+	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "InflictDamage")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(LocalizedDamage), Member = "HasBodyDamage")]
 	[Calls(Type = typeof(BodyDamage), Member = "GetDamageById")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillArchery")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[CallsUnknownMethods(Count = 2)]
+	public float GetBleedOutMinutes(BodyDamage.Weapon weapon)
+	{
+		return 0f;
+	}
+
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LocalizedDamage), Member = "HasBodyDamage")]
+	[Calls(Type = typeof(BodyDamage), Member = "GetChanceKill")]
+	[CallsUnknownMethods(Count = 1)]
+	public int GetChanceKill(BodyDamage.Weapon weapon)
+	{
+		return 0;
+	}
+
 	[CalledBy(Type = typeof(vp_Bullet), Member = "Start")]
 	[CalledBy(Type = typeof(ArrowItem), Member = "InflictDamage")]
 	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "InflictDamage")]
-	public float GetBleedOutMinutes(BodyDamage.Weapon weapon)
-	{
-		return default(float);
-	}
-
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(BodyDamage), Member = "GetChanceKill")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(LocalizedDamage), Member = "HasBodyDamage")]
-	public int GetChanceKill(BodyDamage.Weapon weapon)
-	{
-		return default(int);
-	}
-
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(LocalizedDamage), Member = "HasBodyDamage")]
 	[Calls(Type = typeof(BodyDamage), Member = "GetChanceKill")]
 	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[CalledBy(Type = typeof(vp_Bullet), Member = "Start")]
-	[CalledBy(Type = typeof(ArrowItem), Member = "InflictDamage")]
-	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "InflictDamage")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool RollChanceToKill(BodyDamage.Weapon weapon)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(LocalizedDamage), Member = "RollChanceToKill")]
-	[CalledBy(Type = typeof(LocalizedDamage), Member = "GetChanceKill")]
-	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "InflictDamage")]
-	[CalledBy(Type = typeof(LocalizedDamage), Member = "GetBleedOutMinutes")]
-	[CalledBy(Type = typeof(ArrowItem), Member = "InflictDamage")]
 	[CalledBy(Type = typeof(vp_Bullet), Member = "Start")]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(LocalizedDamage), Member = "GetDamageScale")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CalledBy(Type = typeof(LocalizedDamage), Member = "GetBleedOutMinutes")]
+	[CalledBy(Type = typeof(LocalizedDamage), Member = "GetChanceKill")]
+	[CalledBy(Type = typeof(LocalizedDamage), Member = "RollChanceToKill")]
+	[CalledBy(Type = typeof(ArrowItem), Member = "InflictDamage")]
+	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "InflictDamage")]
+	[CallerCount(Count = 7)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	private bool HasBodyDamage()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

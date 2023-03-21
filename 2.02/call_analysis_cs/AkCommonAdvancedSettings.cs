@@ -42,10 +42,10 @@ public class AkCommonAdvancedSettings : AkSettingsValidationHandler
 
 	public bool m_RenderDuringFocusLoss;
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(AkSwitchSettings.PlatformAdvancedSettings), Member = "CopyTo")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 5)]
 	public virtual void CopyTo(AkDeviceSettings settings)
 	{
 	}
@@ -58,7 +58,7 @@ public class AkCommonAdvancedSettings : AkSettingsValidationHandler
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public virtual void CopyTo(AkPlatformInitSettings settings)
 	{
 	}
@@ -71,16 +71,15 @@ public class AkCommonAdvancedSettings : AkSettingsValidationHandler
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public virtual void CopyTo(AkUnityPlatformSpecificSettings settings)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public override void Validate()
 	{
 	}

@@ -9,11 +9,11 @@ public class TLD_SubtitleTrack : PlayableTrack
 	{
 	}
 
+	[CalledBy(Type = typeof(TLD_SubtitleTrack), Member = "OnValidate")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(TrackAsset), Member = "get_clips")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CalledBy(Type = typeof(TLD_SubtitleTrack), Member = "OnValidate")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 12)]
 	public void RefreshClips()
 	{

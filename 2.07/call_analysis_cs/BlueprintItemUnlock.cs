@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Gear;
 using UnityEngine;
@@ -20,17 +21,18 @@ public class BlueprintItemUnlock : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
-	[CalledBy(Type = typeof(BlueprintItemUnlock), Member = "UnlockSilent")]
 	[CalledBy(Type = typeof(BlueprintItemUnlock), Member = "Unlock")]
-	[Calls(Type = typeof(BlueprintManager), Member = "UnlockSilent")]
-	[Calls(Type = typeof(BlueprintManager), Member = "UnlockWithNotification")]
-	[Calls(Type = typeof(BlueprintManager), Member = "FindBlueprintsForGear")]
-	[Calls(Type = typeof(Utils), Member = "SanitizePrefabName")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[CalledBy(Type = typeof(BlueprintItemUnlock), Member = "UnlockSilent")]
+	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Utils), Member = "SanitizePrefabName")]
+	[Calls(Type = typeof(BlueprintManager), Member = "FindBlueprintsForGear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(BlueprintManager), Member = "UnlockWithNotification")]
+	[Calls(Type = typeof(BlueprintManager), Member = "UnlockSilent")]
+	[CallsUnknownMethods(Count = 6)]
 	private void Unlock(bool silent)
 	{
 	}
@@ -39,7 +41,7 @@ public class BlueprintItemUnlock : MonoBehaviour
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	public bool ShouldUnlock()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

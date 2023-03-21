@@ -6,7 +6,7 @@ public class LoadingAnimation : MonoBehaviour
 	private UISpriteAnimation m_SpriteAnimation;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
 	private void Awake()
 	{
 	}
@@ -19,8 +19,8 @@ public class LoadingAnimation : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public LoadingAnimation()
 	{
 	}

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -22,8 +23,8 @@ public class Gdk : MonoBehaviour
 
 		public static Func<char, bool> _003C_003E9__21_1;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec()
 		{
 		}
@@ -33,15 +34,15 @@ public class Gdk : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		internal int _003CValidateGuid_003Eb__21_0(string str)
 		{
-			return default(int);
+			return 0;
 		}
 
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "IndexOf")]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "IndexOf")]
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CValidateGuid_003Eb__21_1(char c)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -69,20 +70,16 @@ public class Gdk : MonoBehaviour
 
 	public static Gdk Helpers
 	{
-		[CalledBy(Type = typeof(GameSaveSampleLogic), Member = "Load")]
-		[CalledBy(Type = typeof(Gdk), Member = "Succeeded")]
-		[CalledBy(Type = typeof(Gdk), Member = "Succeeded")]
-		[CalledBy(Type = typeof(Gdk), Member = "Succeeded")]
-		[CalledBy(Type = typeof(GameSaveSampleLogic), Member = "Load")]
-		[CalledBy(Type = typeof(GameSaveSampleLogic), Member = "Load")]
-		[CallsUnknownMethods(Count = 2)]
 		[CalledBy(Type = typeof(UnlockAchievementSampleLogic), Member = "UnlockAchievement")]
-		[Calls(Type = typeof(Gdk), Member = "_Initialize")]
-		[Calls(Type = typeof(Debug), Member = "LogError")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 8)]
 		[CalledBy(Type = typeof(GameSaveSampleLogic), Member = "Save")]
+		[CalledBy(Type = typeof(GameSaveSampleLogic), Member = "Load")]
+		[CalledBy(Type = typeof(Gdk), Member = "Succeeded")]
+		[CallerCount(Count = 8)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+		[Calls(Type = typeof(Debug), Member = "LogError")]
+		[Calls(Type = typeof(Gdk), Member = "_Initialize")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
@@ -91,10 +88,10 @@ public class Gdk : MonoBehaviour
 
 	public event OnGameSaveLoadedHandler OnGameSaveLoaded
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
@@ -109,17 +106,17 @@ public class Gdk : MonoBehaviour
 
 	public event OnErrorHandler OnError
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
@@ -127,20 +124,22 @@ public class Gdk : MonoBehaviour
 
 	[CalledBy(Type = typeof(Gdk), Member = "OnValidate")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
 	[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
-	[CallsUnknownMethods(Count = 13)]
+	[Calls(Type = typeof(Enumerable), Member = "All")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 12)]
 	private bool ValidateGuid(string guid)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(Gdk), Member = "ValidateGuid")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnValidate()
 	{
 	}
@@ -151,18 +150,18 @@ public class Gdk : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CalledBy(Type = typeof(Gdk), Member = "get_Helpers")]
 	[CalledBy(Type = typeof(Gdk), Member = "Start")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	private void _Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	private void InitializeHresultToFriendlyErrorLookup()
 	{
 	}
@@ -185,32 +184,31 @@ public class Gdk : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void UnlockAchievement(string achievementId)
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Gdk), Member = "get_Helpers")]
-	[Calls(Type = typeof(Gdk), Member = "get_Helpers")]
-	[Calls(Type = typeof(Gdk), Member = "get_Helpers")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(Gdk), Member = "get_Helpers")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	protected static bool Succeeded(int hresult, string operationFriendlyName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

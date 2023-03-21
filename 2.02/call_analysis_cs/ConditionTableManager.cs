@@ -25,8 +25,8 @@ public class ConditionTableManager : MonoBehaviour
 
 			public float m_MinConditionForName;
 
-			[CallerCount(Count = 2)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 7)]
 			public GearNameSuffixForConditionRange()
 			{
 			}
@@ -35,7 +35,7 @@ public class ConditionTableManager : MonoBehaviour
 		public List<GearNameSuffixForConditionRange> m_NameForConditionRangeList;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public ConditionTable()
 		{
 		}
@@ -60,17 +60,17 @@ public class ConditionTableManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(GearItem), Member = "get_m_DisplayName")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Exists")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Localization), Member = "Exists")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	public string GetDisplayNameWithCondition(GearItem gearItem)
 	{
 		return null;

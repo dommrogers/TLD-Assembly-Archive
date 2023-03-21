@@ -9,14 +9,15 @@ public class Condition_HasInteractor : ConditionTask
 	public BBParameter<GameObject> interactor;
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Condition_HasInteractor()
 	{
 	}

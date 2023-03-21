@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -19,28 +20,29 @@ public class BlueprintItemUnlock : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
-	[CalledBy(Type = typeof(BlueprintItemUnlock), Member = "UnlockSilent")]
 	[CalledBy(Type = typeof(BlueprintItemUnlock), Member = "Unlock")]
+	[CalledBy(Type = typeof(BlueprintItemUnlock), Member = "UnlockSilent")]
+	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Utils), Member = "SanitizePrefabName")]
+	[Calls(Type = typeof(Utils), Member = "FindBlueprintsForGear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(BlueprintItem), Member = "UnlockWithNotification")]
 	[Calls(Type = typeof(BlueprintItem), Member = "UnlockSilent")]
-	[Calls(Type = typeof(Utils), Member = "SanitizePrefabName")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Utils), Member = "FindBlueprintsForGear")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Unlock(bool silent)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool ShouldUnlock()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

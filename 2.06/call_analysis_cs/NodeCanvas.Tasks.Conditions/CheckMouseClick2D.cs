@@ -24,7 +24,7 @@ public class CheckMouseClick2D : ConditionTask<Collider2D>
 	[CallerCount(Count = 0)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

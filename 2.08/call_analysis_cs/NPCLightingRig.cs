@@ -27,17 +27,15 @@ public class NPCLightingRig : MonoBehaviour
 
 	private Gradient m_RightFillColor;
 
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetNightPercentage")]
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetNightPercentage")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[CallsDeduplicatedMethods(Count = 19)]
-	[Calls(Type = typeof(Transform), Member = "LookAt")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(Transform), Member = "LookAt")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetNightPercentage")]
+	[CallsDeduplicatedMethods(Count = 19)]
+	[CallsUnknownMethods(Count = 21)]
 	private void Update()
 	{
 	}

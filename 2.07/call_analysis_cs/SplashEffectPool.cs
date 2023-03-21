@@ -16,7 +16,7 @@ public class SplashEffectPool : EffectPool<SplashEffectType>
 	public SerializableSpawnGroup[] m_EffectGroupsSerialized;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 25)]
+	[CallerCount(Count = 28)]
 	protected override SerializableSpawnGroupGeneric[] GetSerializedGroups()
 	{
 		return null;
@@ -29,7 +29,7 @@ public class SplashEffectPool : EffectPool<SplashEffectType>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(EffectPool<>), Member = ".ctor")]
 	public SplashEffectPool()
 	{
 		((EffectPool<>)(object)this)._002Ector();

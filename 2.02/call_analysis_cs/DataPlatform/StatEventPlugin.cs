@@ -7,20 +7,20 @@ namespace DataPlatform;
 public class StatEventPlugin
 {
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(StatEvent), Member = "get_EventType")]
 	[CalledBy(Type = typeof(StatEvent), Member = "get_LeaderboardResultArgs")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern StatEventType StatisticEvent_EventType(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int StatisticEvent_ErrorCode(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr StatisticEvent_ErrorMessage(IntPtr self);
 
 	[PreserveSig]
@@ -39,7 +39,7 @@ public class StatEventPlugin
 	public static extern IntPtr StatisticEvent_EventArgs_AsLeaderboardResultEventArgs(IntPtr self);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public StatEventPlugin()
 	{
 	}

@@ -81,174 +81,150 @@ public class StatusBar : MonoBehaviour
 
 	private TweenAlpha m_TweenAlpha;
 
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(StatusBar), Member = "ToggleAll")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(StatusBar), Member = "ToggleAll")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 19)]
-	[CallerCount(Count = 0)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(StatusBar), Member = "Update")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(StatusBar), Member = "Update")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(StatusBar), Member = "GetRateOfChange")]
-	[Calls(Type = typeof(StatusBar), Member = "SetArrowBools")]
-	[Calls(Type = typeof(StatusBar), Member = "SetArrowActiveStates")]
-	[Calls(Type = typeof(StatusBar), Member = "SetSpriteColors")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(StatusBar), Member = "SetActiveBacksplash")]
 	[CalledBy(Type = typeof(StatusBar), Member = "OnEnable")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateStatusBars")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(StatusBar), Member = "GetFillValue")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 20)]
 	[Calls(Type = typeof(StatusBar), Member = "UpdateForceShow")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Transform), Member = "GetChild")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(StatusBar), Member = "GetFillValue")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
+	[Calls(Type = typeof(StatusBar), Member = "GetRateOfChange")]
+	[Calls(Type = typeof(StatusBar), Member = "SetArrowBools")]
+	[Calls(Type = typeof(StatusBar), Member = "SetArrowActiveStates")]
+	[Calls(Type = typeof(StatusBar), Member = "SetSpriteColors")]
+	[Calls(Type = typeof(StatusBar), Member = "SetActiveBacksplash")]
+	[CallsDeduplicatedMethods(Count = 20)]
+	[CallsUnknownMethods(Count = 15)]
 	public void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(StatusBar), Member = "SetArrowBools")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 3)]
 	public int GetNumFreezingEffectArrows()
 	{
-		return default(int);
+		return 0;
 	}
 
+	[CalledBy(Type = typeof(Action_ShowHUDStatusBar), Member = "OnExecute")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Action_ShowHUDStatusBar), Member = "OnExecute")]
 	[CallsUnknownMethods(Count = 1)]
 	public void ForceShowForSeconds(float secondsToFadeIn, float secondsToShow, float secondsToFadeOut)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void MarkAsChildOfHUD()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 36)]
 	[CalledBy(Type = typeof(StatusBar), Member = "Update")]
-	[Calls(Type = typeof(StatusBar), Member = "SetAlpha")]
-	[Calls(Type = typeof(StatusBar), Member = "ShouldFadeOut")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(Type = typeof(StatusBar), Member = "ShouldFadeOut")]
+	[Calls(Type = typeof(StatusBar), Member = "SetAlpha")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 36)]
 	private void SetSpriteColors(float fillValue)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(StatusBar), Member = "GetFillValue")]
-	[Calls(Type = typeof(FireManager), Member = "PointInRadiusOfBurningFire")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerStruggle), Member = "InStruggleWIthWolf")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(FireManager), Member = "PointInRadiusOfBurningFire")]
+	[Calls(Type = typeof(StatusBar), Member = "GetFillValue")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 18)]
 	protected virtual bool ShouldBeHidden()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(StatusBar), Member = "GetNumFreezingEffectArrows")]
-	[CallsUnknownMethods(Count = 32)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(StatusBar), Member = "Update")]
+	[CalledBy(Type = typeof(StatusBar), Member = "GetNumFreezingEffectArrows")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 32)]
 	private void SetArrowBools(float rateOfChange)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CalledBy(Type = typeof(StatusBar), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 15)]
 	private void SetArrowActiveStates()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CalledBy(Type = typeof(StatusBar), Member = "Awake")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(StatusBar), Member = "Awake")]
+	[CallsUnknownMethods(Count = 6)]
 	private void ToggleAll(GameObject[] objects, bool toggleVal)
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(StatusBar), Member = "Update")]
 	[CalledBy(Type = typeof(StatusBar), Member = "Update")]
 	[CalledBy(Type = typeof(StatusBar), Member = "ShouldBeHidden")]
 	[CalledBy(Type = typeof(StatusBar), Member = "GetReverseFillValue")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 5)]
 	private float GetFillValue()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected virtual float GetFillValueThirst()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	protected virtual float GetFillValueHunger()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -256,7 +232,7 @@ public class StatusBar : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	protected virtual float GetFillValueCold()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -264,7 +240,7 @@ public class StatusBar : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	protected virtual float GetFillValueFatigue()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -272,15 +248,15 @@ public class StatusBar : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	protected virtual float GetFillValueCondition()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(StatusBar), Member = "GetFillValue")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(StatusBar), Member = "GetFillValue")]
 	[CallsDeduplicatedMethods(Count = 3)]
 	private float GetReverseFillValue()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -288,49 +264,48 @@ public class StatusBar : MonoBehaviour
 	[CallsUnknownMethods(Count = 4)]
 	protected virtual float GetReverseFillValueFatigue()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Condition), Member = "GetAdjustedMaxHP")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	protected virtual float GetReverseFillValueCondition()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	protected virtual float GetBuffFillValue()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(Condition), Member = "GetAdjustedMaxHP")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(Condition), Member = "GetAdjustedMaxHP")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	protected virtual float GetBuffFillValueCondition()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(StatusBar), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CalledBy(Type = typeof(StatusBar), Member = "Update")]
 	private float GetRateOfChange()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallAnalysisFailed]
 	[CallerCount(Count = 0)]
 	protected virtual float GetRateOfChangeThirst()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -338,16 +313,16 @@ public class StatusBar : MonoBehaviour
 	[CallsUnknownMethods(Count = 14)]
 	protected virtual float GetRateOfChangeHunger()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 18)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 18)]
 	protected virtual float GetRateOfChangeCold()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -355,52 +330,52 @@ public class StatusBar : MonoBehaviour
 	[CallsUnknownMethods(Count = 8)]
 	protected virtual float GetRateOfChangeFatigue()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Condition), Member = "GetAdjustedMaxHP")]
 	[Calls(Type = typeof(PlayerManager), Member = "IsPumpkinPieBuffActive")]
 	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 12)]
 	protected virtual bool IsBuffActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Condition), Member = "GetAdjustedMaxHP")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Condition), Member = "GetAdjustedMaxHP")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	protected virtual bool ShouldShowBuffedFillSprite()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Condition), Member = "HasAffliction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	protected virtual bool IsDebuffActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(StatusBar), Member = "Update")]
+	[CallerCount(Count = 1)]
 	private void UpdateForceShow()
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(StatusBar), Member = "SetSpriteColors")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(TweenAlpha), Member = "get_value")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(TweenAlpha), Member = "get_value")]
 	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetAlpha(float alphaVal, float duration)
 	{
 	}
@@ -412,41 +387,29 @@ public class StatusBar : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(StatusBar), Member = "Update")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void SetActiveBacksplash(GameObject activeBacksplash)
 	{
 	}
 
 	[CalledBy(Type = typeof(StatusBar), Member = "SetSpriteColors")]
-	[CallsUnknownMethods(Count = 9)]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 9)]
 	private bool ShouldFadeOut(float fillValue)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 5)]
 	private int GetNumActiveArrows()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]

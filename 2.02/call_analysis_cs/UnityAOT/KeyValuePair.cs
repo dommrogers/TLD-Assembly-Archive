@@ -16,8 +16,8 @@ public abstract class KeyValuePair<T> : IDisposable where T : IWrappedObject, ne
 	{
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 8)]
 		get
 		{
@@ -27,13 +27,13 @@ public abstract class KeyValuePair<T> : IDisposable where T : IWrappedObject, ne
 
 	public T Value
 	{
-		[CallsDeduplicatedMethods(Count = 4)]
-		[CallsUnknownMethods(Count = 2)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return (T)null;
+			return default(T);
 		}
 	}
 
@@ -44,15 +44,15 @@ public abstract class KeyValuePair<T> : IDisposable where T : IWrappedObject, ne
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 52)]
+	[CallerCount(Count = 59)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -69,24 +69,18 @@ public abstract class KeyValuePair<T> : IDisposable where T : IWrappedObject, ne
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Dispose()
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract IntPtr GetKeyImpl(IntPtr self);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract IntPtr GetValueImpl(IntPtr self);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract void DisposeChildImpl();
 }

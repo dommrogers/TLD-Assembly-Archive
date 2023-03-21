@@ -10,8 +10,8 @@ public sealed class UnsharpMask : PostProcessEffectSettings
 	public FloatParameter blurSpread;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public UnsharpMask()
 	{

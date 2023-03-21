@@ -9,7 +9,7 @@ public class DebugCondition : ConditionTask
 	[CallerCount(Count = 0)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

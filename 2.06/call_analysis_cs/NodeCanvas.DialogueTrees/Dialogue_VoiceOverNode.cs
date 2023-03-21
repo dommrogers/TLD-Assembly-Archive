@@ -8,26 +8,25 @@ public class Dialogue_VoiceOverNode : DTNode
 {
 	public VoiceOverItem statement;
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
+	[Calls(Type = typeof(VoiceOverItem), Member = "GetLocId")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnSpeech")]
-	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DialogueTree), Member = "RequestSubtitles")]
-	[Calls(Type = typeof(VoiceOverItem), Member = "GetLocId")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 21)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
 	}
 
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
 	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
 	private void OnStatementFinish()
 	{
 	}

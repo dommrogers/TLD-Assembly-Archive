@@ -92,14 +92,9 @@ public class BipedMoveAgent : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(BipedMoveAgent), Member = "MoveToWeight")]
-	[Calls(Type = typeof(BipedMoveAgent), Member = "MoveToWeight")]
-	[Calls(Type = typeof(BipedMoveAgent), Member = "MoveToWeight")]
-	[Calls(Type = typeof(BipedMoveAgent), Member = "MoveToWeight")]
-	[Calls(Type = typeof(BipedMoveAgent), Member = "MoveToWeight")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BipedMoveAgent), Member = "UpdateStickToGround")]
 	[Calls(Type = typeof(BipedMoveAgent), Member = "UpdateAnimationBasedOnNavigation")]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BipedMoveAgent), Member = "MoveToWeight")]
 	private void Update()
 	{
@@ -112,58 +107,57 @@ public class BipedMoveAgent : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[CalledBy(Type = typeof(BipedMoveAgent), Member = "StopMovingImmediate")]
 	[CalledBy(Type = typeof(BipedMoveAgent), Member = "UpdateAnimationBlendOut")]
 	[CalledBy(Type = typeof(Patrol), Member = "OnUpdate")]
 	[CalledBy(Type = typeof(Wander), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Wander), Member = "OnUpdate")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	public bool IsMoving()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(TimelineAsset), Member = "UpdateOutputTrackCache")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(BipedMoveAgent), Member = "MaybePlayInteraction")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayableDirector), Member = "get_playableAsset")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TimelineAsset), Member = "UpdateOutputTrackCache")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 14)]
 	private void DoDynamicBinding()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(BipedMoveAgent), Member = "StopMoving")]
-	[Calls(Type = typeof(BipedMoveAgent), Member = "DoDynamicBinding")]
-	[Calls(Type = typeof(PlayableDirector), Member = "add_stopped")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(BipedMoveAgent), Member = "DoDynamicBinding")]
+	[Calls(Type = typeof(PlayableDirector), Member = "add_stopped")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void MaybePlayInteraction()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(BipedMoveAgent), Member = "MaybePlayInteraction")]
 	[CalledBy(Type = typeof(BipedMoveAgent), Member = "StopMovingImmediate")]
 	[CalledBy(Type = typeof(BipedMoveAgent), Member = "UpdateAnimationBlendOut")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BipedMoveAgent), Member = "MaybePlayInteraction")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	private void StopMoving()
 	{
 	}
 
-	[Calls(Type = typeof(BipedMoveAgent), Member = "IsMoving")]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(BipedMoveAgent), Member = "StopMoving")]
 	[CalledBy(Type = typeof(Patrol), Member = "OnStop")]
 	[CalledBy(Type = typeof(Wander), Member = "OnStop")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BipedMoveAgent), Member = "IsMoving")]
+	[Calls(Type = typeof(BipedMoveAgent), Member = "StopMoving")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void StopMovingImmediate()
 	{
@@ -171,18 +165,17 @@ public class BipedMoveAgent : MonoBehaviour
 
 	[CalledBy(Type = typeof(Patrol), Member = "OnUpdate")]
 	[CalledBy(Type = typeof(Wander), Member = "DoWander")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[Calls(Type = typeof(NavMeshAgent), Member = "get_pathStatus")]
-	[CallsDeduplicatedMethods(Count = 18)]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 18)]
+	[CallsUnknownMethods(Count = 17)]
 	public bool SetDestination(Vector3 position, Transform gameObjectTransform = null)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -191,12 +184,12 @@ public class BipedMoveAgent : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(MecanimSetLookAt), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void SetLookAtGameObject(GameObject go)
 	{
 	}
@@ -206,115 +199,85 @@ public class BipedMoveAgent : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Animator), Member = "SetLookAtWeightInternal")]
-	[Calls(Type = typeof(Animator), Member = "CheckIfInIKPass")]
-	[Calls(Type = typeof(Animator), Member = "CheckIfInIKPass")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Animator), Member = "CheckIfInIKPass")]
+	[Calls(Type = typeof(Animator), Member = "SetLookAtWeightInternal")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public void OnAnimatorIK()
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Debug), Member = "DrawLine")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(NavMeshAgent), Member = "get_remainingDistance")]
-	[Calls(Type = typeof(NavMeshAgent), Member = "get_remainingDistance")]
 	[CalledBy(Type = typeof(BipedMoveAgent), Member = "Update")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NavMeshAgent), Member = "get_remainingDistance")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(NavMeshAgent), Member = "get_desiredVelocity")]
-	[CallsDeduplicatedMethods(Count = 17)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(Debug), Member = "DrawLine")]
+	[CallsDeduplicatedMethods(Count = 17)]
+	[CallsUnknownMethods(Count = 8)]
 	private void UpdateAnimationBasedOnNavigation()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(BipedMoveAgent), Member = "LateUpdate")]
-	[Calls(Type = typeof(BipedMoveAgent), Member = "StopMoving")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BipedMoveAgent), Member = "IsMoving")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NavMeshAgent), Member = "get_remainingDistance")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(NavMeshAgent), Member = "get_remainingDistance")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BipedMoveAgent), Member = "IsMoving")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(BipedMoveAgent), Member = "StopMoving")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateAnimationBlendOut()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
 	[CalledBy(Type = typeof(BipedMoveAgent), Member = "Update")]
 	[CalledBy(Type = typeof(BipedMoveAgent), Member = "LateUpdate")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	private void UpdateStickToGround()
 	{
 	}
 
-	[CalledBy(Type = typeof(BipedMoveAgent), Member = "UpdateCurrentIKWeights")]
-	[CalledBy(Type = typeof(BipedMoveAgent), Member = "UpdateCurrentIKWeights")]
-	[CalledBy(Type = typeof(BipedMoveAgent), Member = "UpdateCurrentIKWeights")]
-	[CalledBy(Type = typeof(BipedMoveAgent), Member = "UpdateCurrentIKWeights")]
-	[CalledBy(Type = typeof(BipedMoveAgent), Member = "UpdateCurrentIKWeights")]
 	[CalledBy(Type = typeof(BipedMoveAgent), Member = "Update")]
 	[CalledBy(Type = typeof(BipedMoveAgent), Member = "UpdateCurrentIKWeights")]
-	[CalledBy(Type = typeof(BipedMoveAgent), Member = "Update")]
 	[CallerCount(Count = 12)]
 	[Calls(Type = typeof(Utils), Member = "MoveToValue")]
-	[CalledBy(Type = typeof(BipedMoveAgent), Member = "Update")]
-	[CalledBy(Type = typeof(BipedMoveAgent), Member = "Update")]
-	[CalledBy(Type = typeof(BipedMoveAgent), Member = "Update")]
-	[CalledBy(Type = typeof(BipedMoveAgent), Member = "Update")]
 	private void MoveToWeight(ref float currentWeight, float desiredWeight, float time)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BipedMoveAgent), Member = "MoveToWeight")]
-	[Calls(Type = typeof(BipedMoveAgent), Member = "MoveToWeight")]
-	[Calls(Type = typeof(BipedMoveAgent), Member = "MoveToWeight")]
-	[Calls(Type = typeof(BipedMoveAgent), Member = "MoveToWeight")]
-	[Calls(Type = typeof(BipedMoveAgent), Member = "MoveToWeight")]
-	[Calls(Type = typeof(BipedMoveAgent), Member = "MoveToWeight")]
 	private void UpdateCurrentIKWeights()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(PlayableDirector), Member = "remove_stopped")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(PlayableDirector), Member = "remove_stopped")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnPlayableDirectorStopped(PlayableDirector pd)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayableDirector), Member = "remove_stopped")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	private void OnDestroy()
 	{

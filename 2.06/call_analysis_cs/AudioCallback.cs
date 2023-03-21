@@ -17,19 +17,19 @@ public class AudioCallback : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnAudioEvent(string audioEventName)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnAudioStruggleEvent(string audioEventName)
 	{
@@ -43,9 +43,9 @@ public class AudioCallback : MonoBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void OnPlayerVoiceEvent(string audioEventName)
 	{
 	}

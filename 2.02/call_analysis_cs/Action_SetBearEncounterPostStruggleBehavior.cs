@@ -8,12 +8,13 @@ public class Action_SetBearEncounterPostStruggleBehavior : ActionTask
 
 	public BBParameter<BearEncounter.PostStruggleBehavior> postStruggleBehavior;
 
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(BearHuntRedux), Member = "SetPostStruggleBehavior")]
+	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	protected override void OnExecute()
 	{
 	}

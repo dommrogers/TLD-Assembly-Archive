@@ -16,7 +16,8 @@ public class TLD_FPHandsTrack : AnimationTrack, TLD_IDynamicBindableTrack, TLD_I
 	private PlayerAnimation m_PlayerAnimation;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void DoDynamicBinding(PlayableDirector director)
 	{
@@ -31,29 +32,26 @@ public class TLD_FPHandsTrack : AnimationTrack, TLD_IDynamicBindableTrack, TLD_I
 	}
 
 	[CalledBy(Type = typeof(TLD_FPHandsTrack), Member = "Play")]
-	[Calls(Type = typeof(TimelineClip), Member = "set_easeOutDuration")]
-	[Calls(Type = typeof(TimelineClip), Member = "get_easeOutDuration")]
-	[Calls(Type = typeof(TimelineClip), Member = "set_easeInDuration")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(TrackAsset), Member = "get_clips")]
-	[CallsUnknownMethods(Count = 10)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(TrackAsset), Member = "get_clips")]
 	[Calls(Type = typeof(TimelineClip), Member = "get_easeInDuration")]
+	[Calls(Type = typeof(TimelineClip), Member = "set_easeInDuration")]
+	[Calls(Type = typeof(TimelineClip), Member = "get_easeOutDuration")]
+	[Calls(Type = typeof(TimelineClip), Member = "set_easeOutDuration")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public void RemoveBlending()
 	{
 	}
 
 	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "SetFPAnchor")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetCameraTrackFeetTransform")]
 	[CalledBy(Type = typeof(TLD_FPHandsTrack), Member = "Play")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetCameraTrackFeetTransform")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetCameraTrackFeetTransform")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetLayerOnObjectRecursively")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetLayerOnObjectRecursively")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetCameraTrackFeetTransform")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 10)]
 	public void UpdatePlay()
 	{
 	}
@@ -64,14 +62,12 @@ public class TLD_FPHandsTrack : AnimationTrack, TLD_IDynamicBindableTrack, TLD_I
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(vp_Spring), Member = "RefreshTransformType")]
-	[Calls(Type = typeof(vp_Spring), Member = "RefreshTransformType")]
-	[Calls(Type = typeof(vp_Spring), Member = "RefreshTransformType")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetLayerOnObjectRecursively")]
+	[Calls(Type = typeof(vp_Spring), Member = "RefreshTransformType")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 7)]
 	public void Stop()
 	{
 	}

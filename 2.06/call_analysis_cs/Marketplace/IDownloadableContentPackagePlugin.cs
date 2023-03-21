@@ -17,8 +17,8 @@ public class IDownloadableContentPackagePlugin
 	public static extern uint IDownloadableContentPackage_ContentType(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr IDownloadableContentPackage_Description(IntPtr self);
 
 	[PreserveSig]
@@ -42,13 +42,13 @@ public class IDownloadableContentPackagePlugin
 	public static extern IntPtr IDownloadableContentPackage_PackageFullName(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr IDownloadableContentPackage_ProductId(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr IDownloadableContentPackage_Publisher(IntPtr self);
 
 	[PreserveSig]
@@ -73,8 +73,8 @@ public class IDownloadableContentPackagePlugin
 	public static extern bool IDownloadableContentPackage_CheckLicense(IntPtr self, out bool isTrial);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr IDownloadableContentPackage_Mount(IntPtr self);
 
 	[PreserveSig]

@@ -39,40 +39,39 @@ public class Action_LookAtTargetForTime : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(float), Member = "ToString")]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsUnknownMethods(Count = 22)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 21)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(vp_FPSController), Member = "Stop")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(Transform), Member = "LookAt")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "LookAt")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(vp_FPSController), Member = "Stop")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 9)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ActionTask), Member = "get_elapsedTime")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(ActionTask), Member = "get_elapsedTime")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CallsUnknownMethods(Count = 4)]
 	protected override void OnUpdate()
 	{
 	}

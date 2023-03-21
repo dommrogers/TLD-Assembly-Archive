@@ -19,17 +19,17 @@ public class AkCommonCommSettings : AkSettingsValidationHandler
 	public string m_NetworkName;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[Calls(Type = typeof(AkCommunicationSettings), Member = "set_szAppNetworkName")]
+	[CallsDeduplicatedMethods(Count = 11)]
 	[CallsUnknownMethods(Count = 7)]
 	public virtual void CopyTo(AkCommunicationSettings settings)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(AkSwitchSettings), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkXBoxOneSettings), Member = ".ctor")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public AkCommonCommSettings()
 	{
 	}

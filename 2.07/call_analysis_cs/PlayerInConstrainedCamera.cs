@@ -19,8 +19,8 @@ public class PlayerInConstrainedCamera : MonoBehaviour
 
 		public float m_ExitCameraPitch;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public ConstrainedCameraInfo()
 		{
 		}
@@ -84,23 +84,22 @@ public class PlayerInConstrainedCamera : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(PlayerInConstrainedCamera), Member = "OnEnterConstrainedState")]
-	[Calls(Type = typeof(PlayerInConstrainedCamera), Member = "TransitionCamera")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerInConstrainedCamera), Member = "TransitionCamera")]
 	[Calls(Type = typeof(PlayerInConstrainedCamera), Member = "OnExitConstrainedState")]
+	[Calls(Type = typeof(PlayerInConstrainedCamera), Member = "OnEnterConstrainedState")]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(PlayerManager), Member = "DisableCharacterController")]
-	[Calls(Type = typeof(PlayerInConstrainedCamera), Member = "PanToLocation")]
 	[CalledBy(Type = typeof(Chair), Member = "PerformInteraction")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(PlayerInConstrainedCamera), Member = "PanToLocation")]
+	[Calls(Type = typeof(PlayerManager), Member = "DisableCharacterController")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 9)]
 	public void Enter(ConstrainedCameraInfo constrainedCameraInfo)
 	{
 	}
@@ -121,56 +120,55 @@ public class PlayerInConstrainedCamera : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool InTransition()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(PlayerInConstrainedCamera), Member = "Enter")]
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessInput")]
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CalledBy(Type = typeof(PlayerInConstrainedCamera), Member = "Enter")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	private void PanToLocation(Transform target)
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerInConstrainedCamera), Member = "Update")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CalledBy(Type = typeof(PlayerInConstrainedCamera), Member = "Update")]
-	[CalledBy(Type = typeof(PlayerInConstrainedCamera), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 10)]
 	[CallsUnknownMethods(Count = 12)]
 	private bool TransitionCamera()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 15)]
 	[CalledBy(Type = typeof(PlayerInConstrainedCamera), Member = "Update")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
-	[Calls(Type = typeof(Camera), Member = "set_fieldOfView")]
-	[Calls(Type = typeof(Component), Member = "SendMessage")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsDeduplicatedMethods(Count = 13)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[Calls(Type = typeof(Component), Member = "SendMessage")]
+	[Calls(Type = typeof(Camera), Member = "set_fieldOfView")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 15)]
 	private void OnEnterConstrainedState()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "EnableCharacterController")]
 	[CalledBy(Type = typeof(PlayerInConstrainedCamera), Member = "Update")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Camera), Member = "set_fieldOfView")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(Camera), Member = "set_fieldOfView")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
+	[Calls(Type = typeof(PlayerManager), Member = "EnableCharacterController")]
+	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 10)]
 	private void OnExitConstrainedState()
 	{
 	}

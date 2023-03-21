@@ -46,23 +46,21 @@ public struct RenderObjectInstanceJob : IJob
 
 	public NativeSlice<int> m_ObjectVisibleIndexes;
 
+	[CalledBy(TypeFullName = "Unity.Jobs.IJobExtensions.JobStruct`1", Member = "Execute")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(JobVisUtils), Member = "FrustumCamera")]
 	[Calls(Type = typeof(RenderObjectInstanceJob), Member = "IndexOOB")]
 	[Calls(Type = typeof(JobVisUtils), Member = "FrustrumDotJob")]
-	[Calls(Type = typeof(RenderObjectInstanceJob), Member = "IndexOOB")]
-	[CalledBy(Type = typeof(IJobExtensions.JobStruct<>), Member = "Execute")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 16)]
 	public void Execute()
 	{
 	}
 
+	[CalledBy(Type = typeof(RenderObjectInstanceJob), Member = "Execute")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(RenderObjectInstanceJob), Member = "Execute")]
-	[CalledBy(Type = typeof(RenderObjectInstanceJob), Member = "Execute")]
 	private bool IndexOOB(int arraySize, int index)
 	{
-		return default(bool);
+		return false;
 	}
 }

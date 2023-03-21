@@ -9,12 +9,12 @@ public class AkMarkerCallbackInfo : AkEventCallbackInfo
 
 	public uint uIdentifier
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
@@ -25,37 +25,37 @@ public class AkMarkerCallbackInfo : AkEventCallbackInfo
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
 	public string strLabel
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(PlayerVoice), Member = "OnAkVoiceEvent")]
-		[CalledBy(Type = typeof(PlayerCough), Member = "OnAkVoiceEvent")]
-		[CalledBy(Type = typeof(NPCVoice), Member = "OnAkVoiceEvent")]
-		[CalledBy(Type = typeof(InvisibleEntityManager), Member = "OnAkVoiceEvent")]
-		[CalledBy(Type = typeof(VoiceTracker), Member = "OnAkVoiceEvent")]
 		[CalledBy(Type = typeof(Anxiety), Member = "OnAkVoiceEvent")]
+		[CalledBy(Type = typeof(Fear), Member = "OnAkVoiceEvent")]
+		[CalledBy(Type = typeof(InvisibleEntityManager), Member = "OnAkVoiceEvent")]
+		[CalledBy(Type = typeof(NPCVoice), Member = "OnAkVoiceEvent")]
+		[CalledBy(Type = typeof(PlayerCough), Member = "OnAkVoiceEvent")]
+		[CalledBy(Type = typeof(PlayerVoice), Member = "OnAkVoiceEvent")]
+		[CalledBy(Type = typeof(VoiceTracker), Member = "OnAkVoiceEvent")]
+		[CallerCount(Count = 7)]
 		[Calls(Type = typeof(AkSoundEngine), Member = "StringFromIntPtrString")]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(Fear), Member = "OnAkVoiceEvent")]
-		[CallerCount(Count = 7)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkMarkerCallbackInfo_SWIGUpcast")]
-	[Calls(Type = typeof(AkEventCallbackInfo), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkMarkerCallbackInfo), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkCallbackManager), Member = ".cctor")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkMarkerCallbackInfo_SWIGUpcast")]
+	[Calls(Type = typeof(AkEventCallbackInfo), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal AkMarkerCallbackInfo(IntPtr cPtr, bool cMemoryOwn)
-		: base(default(IntPtr), cMemoryOwn: default(bool))
+		: base((IntPtr)0, cMemoryOwn: false)
 	{
 	}
 
@@ -63,41 +63,41 @@ public class AkMarkerCallbackInfo : AkEventCallbackInfo
 	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkMarkerCallbackInfo obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
-	[Calls(Type = typeof(AkEventCallbackInfo), Member = "setCPtr")]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkMarkerCallbackInfo_SWIGUpcast")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkMarkerCallbackInfo_SWIGUpcast")]
+	[Calls(Type = typeof(AkEventCallbackInfo), Member = "setCPtr")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	internal override void setCPtr(IntPtr cPtr)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkEventCallbackInfo), Member = "Finalize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	~AkMarkerCallbackInfo()
 	{
 	}
 
-	[Calls(Type = typeof(AkEventCallbackInfo), Member = "Dispose")]
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[Calls(Type = typeof(AkEventCallbackInfo), Member = "Dispose")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public override void Dispose()
 	{
 	}
 
-	[Calls(Type = typeof(AkMarkerCallbackInfo), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkMarkerCallbackInfo), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public AkMarkerCallbackInfo()
-		: base(default(IntPtr), cMemoryOwn: default(bool))
+		: base((IntPtr)0, cMemoryOwn: false)
 	{
 	}
 }

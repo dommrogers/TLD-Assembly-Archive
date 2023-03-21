@@ -15,7 +15,7 @@ public class ConditionalEvaluator : BTDecorator, ITaskAssignable<ConditionTask>,
 	public Task task
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 1)]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return null;
@@ -30,29 +30,25 @@ public class ConditionalEvaluator : BTDecorator, ITaskAssignable<ConditionTask>,
 	private ConditionTask condition
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 1)]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 8)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[Calls(Type = typeof(Node), Member = "Reset")]
-	[Calls(Type = typeof(Connection), Member = "Execute")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
+	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
+	[Calls(Type = typeof(Connection), Member = "Execute")]
+	[Calls(Type = typeof(Node), Member = "Reset")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);

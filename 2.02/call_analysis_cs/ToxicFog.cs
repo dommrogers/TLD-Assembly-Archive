@@ -53,10 +53,10 @@ public class ToxicFog : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetAfflictionCause()
 	{
 		return null;
@@ -67,55 +67,54 @@ public class ToxicFog : MonoBehaviour
 	[CallsDeduplicatedMethods(Count = 4)]
 	public bool HasAffliction()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
 	[Calls(Type = typeof(Log), Member = "AddAffliction")]
 	[Calls(Type = typeof(PlayerCough), Member = "MaybeStart")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public void StartAffliction()
 	{
 	}
 
-	[Calls(Type = typeof(CameraStatusEffects), Member = "HeadachePulse")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(PlayerCough), Member = "Stop")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[Calls(Type = typeof(PlayerCough), Member = "Stop")]
+	[Calls(Type = typeof(CameraStatusEffects), Member = "HeadachePulse")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void StopAffliction()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Random), Member = "Range")]
 	[Calls(Type = typeof(CameraStatusEffects), Member = "HeadachePulse")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private void ToxicFogHeadachePulse()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(CameraStatusEffects), Member = "HeadachePulse")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(Condition), Member = "AddHealth")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(TimeOfDay), Member = "GetTODMinutes")]
+	[Calls(Type = typeof(Condition), Member = "AddHealth")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(CameraStatusEffects), Member = "HeadachePulse")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	public void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public ToxicFog()
 	{

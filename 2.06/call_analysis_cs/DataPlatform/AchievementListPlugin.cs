@@ -21,8 +21,8 @@ public class AchievementListPlugin
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void AchievementList_Dispose(IntPtr self);
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public AchievementListPlugin()
 	{
 	}

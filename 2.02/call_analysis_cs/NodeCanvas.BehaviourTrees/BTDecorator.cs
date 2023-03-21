@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using ParadoxNotion;
@@ -13,7 +12,7 @@ public abstract class BTDecorator : BTNode
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -29,9 +28,23 @@ public abstract class BTDecorator : BTNode
 
 	protected Connection decoratedConnection
 	{
+		[CalledBy(Type = typeof(BTDecorator), Member = "get_decoratedNode")]
+		[CalledBy(Type = typeof(ConditionalEvaluator), Member = "OnExecute")]
+		[CalledBy(Type = typeof(Filter), Member = "OnExecute")]
+		[CalledBy(Type = typeof(Guard), Member = "OnExecute")]
+		[CalledBy(Type = typeof(Interruptor), Member = "OnExecute")]
+		[CalledBy(Type = typeof(Inverter), Member = "OnExecute")]
+		[CalledBy(Type = typeof(Iterator), Member = "OnExecute")]
+		[CalledBy(Type = typeof(Monitor), Member = "OnExecute")]
+		[CalledBy(Type = typeof(Optional), Member = "OnExecute")]
+		[CalledBy(Type = typeof(Remapper), Member = "OnExecute")]
+		[CalledBy(Type = typeof(Repeater), Member = "OnExecute")]
+		[CalledBy(Type = typeof(Setter), Member = "OnExecute")]
+		[CalledBy(Type = typeof(Timeout), Member = "OnExecute")]
+		[CalledBy(Type = typeof(WaitUntil), Member = "OnExecute")]
 		[CallerCount(Count = 39)]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
@@ -49,8 +62,8 @@ public abstract class BTDecorator : BTNode
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
 	protected BTDecorator()
 	{

@@ -11,7 +11,7 @@ public class TimelineManifestEntry
 	public string m_AssetGUID;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public TimelineManifestEntry()
 	{
 	}

@@ -20,9 +20,9 @@ public class TriggerBoolean : ActionTask
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
 			[DebuggerHidden]
-			[CallerCount(Count = 28)]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -33,16 +33,16 @@ public class TriggerBoolean : ActionTask
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CFlip_003Ed__4(int _003C_003E1__state)
 		{
 		}
@@ -58,13 +58,13 @@ public class TriggerBoolean : ActionTask
 		[CallsUnknownMethods(Count = 2)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 4)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -82,11 +82,11 @@ public class TriggerBoolean : ActionTask
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}

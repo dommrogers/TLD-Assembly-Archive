@@ -34,9 +34,9 @@ public class Filter : BTDecorator
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -47,7 +47,7 @@ public class Filter : BTDecorator
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -68,12 +68,13 @@ public class Filter : BTDecorator
 		{
 		}
 
-		[CallsUnknownMethods(Count = 3)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -99,37 +100,34 @@ public class Filter : BTDecorator
 
 	private float currentTime;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public override void OnGraphStarted()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[Calls(Type = typeof(Connection), Member = "Execute")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Connection), Member = "Execute")]
 	[Calls(Type = typeof(Node), Member = "StartCoroutine")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 6)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[IteratorStateMachine(typeof(_003CCooldown_003Ed__11))]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 6)]
 	private IEnumerator Cooldown()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Node), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
+	[Calls(Type = typeof(Node), Member = ".ctor")]
 	public Filter()
 	{
 	}

@@ -14,16 +14,16 @@ public class StatementNode : DTNode
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 15)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
 	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
 	[Calls(Type = typeof(DialogueTree), Member = "RequestSubtitles")]
-	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 15)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
@@ -39,9 +39,9 @@ public class StatementNode : DTNode
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Statement), Member = ".ctor")]
 	[Calls(Type = typeof(DTNode), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public StatementNode()
 	{

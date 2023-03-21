@@ -14,7 +14,7 @@ public class StorageManager
 	[Calls(Type = typeof(CommonPlugin), Member = "AmFullyInitialized")]
 	public static bool AmFullyInitialized()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

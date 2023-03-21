@@ -18,16 +18,16 @@ public class VariantIndex : StateMachineBehaviour
 
 	public Type m_Type;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
-	[CallerCount(Count = 0)]
 	public override void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public VariantIndex()
 	{
 	}

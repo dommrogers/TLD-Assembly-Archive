@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using Parlay;
@@ -23,13 +24,13 @@ public class ParlayNPCResponseNode : DTNode, ISubTasksContainer
 		public string testString;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public Choice()
 		{
 		}
 
-		[CallerCount(Count = 71)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		public Choice(Statement statement)
 		{
 		}
@@ -43,7 +44,7 @@ public class ParlayNPCResponseNode : DTNode, ISubTasksContainer
 		public static Func<Choice, ConditionTask> _003C_003E9__1_0;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
@@ -65,50 +66,52 @@ public class ParlayNPCResponseNode : DTNode, ISubTasksContainer
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public Task[] GetSubTasks()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(Statement), Member = ".ctor")]
-	[Calls(Type = typeof(DTNode), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DTNode), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Statement), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 23)]
 	public ParlayNPCResponseNode()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Node), Member = "Error")]
-	[Calls(Type = typeof(DialogueTree), Member = "RequestSubtitles")]
-	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
-	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
+	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
 	[Calls(Type = typeof(Graph), Member = "Stop")]
+	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
+	[Calls(Type = typeof(DialogueTree), Member = "RequestSubtitles")]
+	[Calls(Type = typeof(Node), Member = "Error")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 25)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnStatementFinish()
 	{
 	}

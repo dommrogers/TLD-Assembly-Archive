@@ -37,18 +37,18 @@ public class NPC_UnlockablePrefabInfo
 
 	public string m_Description
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 11)]
 		[Calls(Type = typeof(LocalizedString), Member = "Text")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public NPC_UnlockablePrefabInfo()
 	{
 	}

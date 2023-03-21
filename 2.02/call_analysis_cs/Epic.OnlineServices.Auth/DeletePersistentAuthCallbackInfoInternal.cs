@@ -24,9 +24,9 @@ internal struct DeletePersistentAuthCallbackInfoInternal : ICallbackInfoInternal
 	public object ClientData
 	{
 		[CalledBy(Type = typeof(DeletePersistentAuthCallbackInfo), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(DeletePersistentAuthCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -40,7 +40,7 @@ internal struct DeletePersistentAuthCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 }

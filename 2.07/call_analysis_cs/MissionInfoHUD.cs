@@ -35,9 +35,10 @@ public class MissionInfoHUD : MonoBehaviour
 
 	private UIWidget m_Widget;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}

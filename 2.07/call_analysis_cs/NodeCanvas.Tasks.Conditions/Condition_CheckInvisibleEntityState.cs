@@ -19,12 +19,12 @@ public class Condition_CheckInvisibleEntityState : ConditionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 2)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

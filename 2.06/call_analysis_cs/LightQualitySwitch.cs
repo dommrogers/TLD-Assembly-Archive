@@ -73,61 +73,56 @@ public class LightQualitySwitch : MonoBehaviour
 
 	private LightShadowResolution m_DefaultShadowResolution;
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(LightQualitySwitch), Member = "RefreshLocalQuality")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LightQualitySwitch), Member = "RefreshLocalQuality")]
 	private void Update()
 	{
 	}
 
+	[CalledBy(Type = typeof(LightQualitySwitch), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(LightQualitySwitch), Member = "SetLocalQuality")]
-	[Calls(Type = typeof(LightQualitySwitch), Member = "SetLocalQuality")]
-	[CalledBy(Type = typeof(LightQualitySwitch), Member = "Update")]
 	[CallsUnknownMethods(Count = 2)]
 	private void RefreshLocalQuality()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(LightQualitySwitch), Member = "RefreshLocalQuality")]
-	[CalledBy(Type = typeof(LightQualitySwitch), Member = "RefreshLocalQuality")]
-	[Calls(Type = typeof(LightQualitySwitch), Member = "UpdateLight")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(LightQualitySwitch), Member = "IsValidLocation")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "GetCurrentQualitySettings")]
+	[Calls(Type = typeof(LightQualitySwitch), Member = "UpdateLight")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetLocalQuality(Light curLight)
 	{
 	}
 
 	[CalledBy(Type = typeof(LightQualitySwitch), Member = "SetLocalQuality")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
 	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
-	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
-	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private bool IsValidLocation()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(LightQualitySwitch), Member = "SetLocalQuality")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Light), Member = "set_cookie")]
-	[CalledBy(Type = typeof(LightQualitySwitch), Member = "SetLocalQuality")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
 	private void UpdateLight(Light light, bool isDisabled, LightShadows shadowType, LightShadowResolution shadowResolution)
 	{

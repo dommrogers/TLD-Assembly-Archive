@@ -7,60 +7,61 @@ public class ObjectAnim : MonoBehaviour
 
 	private iTweenEvent[] m_Events;
 
-	[Calls(Type = typeof(ObjectAnim), Member = "Initialize")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ObjectAnim), Member = "Initialize")]
 	private void Start()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(ObjectAnim), Member = "Start")]
 	[CalledBy(Type = typeof(OpenClose), Member = "Start")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Initialize()
 	{
 	}
 
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(Container), Member = "UpdateContainer")]
 	[CalledBy(Type = typeof(Container), Member = "IsPlayingAnimation")]
 	[CalledBy(Type = typeof(OpenClose), Member = "UpdateOpenClose")]
 	[CalledBy(Type = typeof(OpenClose), Member = "MaybeUpdateNavmeshObstacleState")]
 	[CalledBy(Type = typeof(OpenCloseManager), Member = "UpdateAll")]
+	[CallerCount(Count = 5)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsAnimating()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(WoodStove), Member = "Close")]
-	[CalledBy(Type = typeof(WoodStove), Member = "Open")]
-	[CalledBy(Type = typeof(OpenClose), Member = "Close")]
-	[CalledBy(Type = typeof(WoodStove), Member = "PerformFireplaceInteraction")]
 	[CalledBy(Type = typeof(Container), Member = "PlayAnimation")]
-	[Calls(Type = typeof(iTweenEvent), Member = "Play")]
-	[Calls(Type = typeof(iTweenEvent), Member = "GetEvent")]
 	[CalledBy(Type = typeof(OpenClose), Member = "Open")]
+	[CalledBy(Type = typeof(OpenClose), Member = "Close")]
+	[CalledBy(Type = typeof(WoodStove), Member = "Open")]
+	[CalledBy(Type = typeof(WoodStove), Member = "Close")]
+	[CalledBy(Type = typeof(WoodStove), Member = "PerformFireplaceInteraction")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(iTweenEvent), Member = "GetEvent")]
+	[Calls(Type = typeof(iTweenEvent), Member = "Play")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool Play(string name)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(OpenClose), Member = "Open")]
 	[CalledBy(Type = typeof(OpenClose), Member = "Close")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponents")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void GoToEndImmediate()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public ObjectAnim()
 	{
 	}

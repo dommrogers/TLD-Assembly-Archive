@@ -6,15 +6,16 @@ using UnityEngine;
 public class RenderBehind : MonoBehaviour
 {
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public virtual void Start()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public RenderBehind()
 	{
 	}

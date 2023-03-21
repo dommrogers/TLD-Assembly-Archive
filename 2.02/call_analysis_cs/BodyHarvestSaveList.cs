@@ -5,10 +5,11 @@ public class BodyHarvestSaveList
 {
 	public List<BodyHarvestSaveData> m_SerializedBodyHarvests;
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(BodyHarvestManager), Member = "Serialize")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public BodyHarvestSaveList()
 	{
 	}

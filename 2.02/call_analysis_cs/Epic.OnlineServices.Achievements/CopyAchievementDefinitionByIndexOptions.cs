@@ -14,7 +14,7 @@ public class CopyAchievementDefinitionByIndexOptions
 		[CallerCount(Count = 7)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -24,8 +24,8 @@ public class CopyAchievementDefinitionByIndexOptions
 		}
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public CopyAchievementDefinitionByIndexOptions()
 	{
 	}

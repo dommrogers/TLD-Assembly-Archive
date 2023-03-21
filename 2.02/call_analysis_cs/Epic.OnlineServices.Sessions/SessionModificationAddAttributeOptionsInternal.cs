@@ -17,9 +17,9 @@ internal struct SessionModificationAddAttributeOptionsInternal : ISettable, IDis
 	{
 		[CalledBy(Type = typeof(SessionModificationAddAttributeOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(SessionModificationAddAttributeOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(AttributeDataInternal), Member = "Set")]
 		[CallsDeduplicatedMethods(Count = 4)]
-		[CallerCount(Count = 2)]
 		set
 		{
 		}
@@ -40,17 +40,17 @@ internal struct SessionModificationAddAttributeOptionsInternal : ISettable, IDis
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(SessionModificationAddAttributeOptionsInternal), Member = "set_SessionAttribute")]
 	[CalledBy(Type = typeof(SessionModification), Member = "AddAttribute")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SessionModificationAddAttributeOptionsInternal), Member = "set_SessionAttribute")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

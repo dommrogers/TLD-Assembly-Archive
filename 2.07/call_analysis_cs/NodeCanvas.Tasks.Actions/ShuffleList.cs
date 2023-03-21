@@ -9,9 +9,10 @@ public class ShuffleList : ActionTask
 	public BBParameter<IList> targetList;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 9)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	protected override void OnExecute()
 	{
 	}

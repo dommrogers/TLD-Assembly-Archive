@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework.Internal;
@@ -18,7 +19,7 @@ public class Blackboard : MonoBehaviour, ISerializationCallbackReceiver, IBlackb
 		public Variable variable;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 83)]
+		[CallerCount(Count = 88)]
 		public BBKeyVar(string _key, Variable _variable)
 		{
 		}
@@ -38,30 +39,28 @@ public class Blackboard : MonoBehaviour, ISerializationCallbackReceiver, IBlackb
 
 	public new string name
 	{
-		[CalledBy(Type = typeof(GlobalBlackboard), Member = "<IsUnique>b__9_0")]
-		[CalledBy(Type = typeof(GlobalBlackboard), Member = "<IsUnique>b__9_0")]
-		[CalledBy(Type = typeof(GlobalBlackboard), Member = "Awake")]
-		[CalledBy(Type = typeof(GlobalBlackboard._003C_003Ec__DisplayClass6_0), Member = "<Find>b__1")]
-		[CallsUnknownMethods(Count = 4)]
-		[CalledBy(Type = typeof(GlobalBlackboard._003C_003Ec__DisplayClass6_0), Member = "<Find>b__0")]
-		[CalledBy(Type = typeof(GlobalBlackboard), Member = "Awake")]
-		[CalledBy(Type = typeof(GlobalBlackboard._003C_003Ec__DisplayClass6_0), Member = "<Find>b__2")]
-		[CalledBy(Type = typeof(GlobalBlackboard), Member = "get_name")]
 		[CalledBy(Type = typeof(Blackboard), Member = "Save")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[CalledBy(Type = typeof(GlobalBlackboard), Member = "get_name")]
 		[CalledBy(Type = typeof(GlobalBlackboard), Member = "set_name")]
+		[CalledBy(Type = typeof(GlobalBlackboard), Member = "Awake")]
+		[CalledBy(Type = typeof(GlobalBlackboard), Member = "<IsUnique>b__9_0")]
+		[CalledBy(TypeFullName = "NodeCanvas.Framework.GlobalBlackboard.<>c__DisplayClass6_0", Member = "<Find>b__0")]
+		[CalledBy(TypeFullName = "NodeCanvas.Framework.GlobalBlackboard.<>c__DisplayClass6_0", Member = "<Find>b__1")]
+		[CalledBy(TypeFullName = "NodeCanvas.Framework.GlobalBlackboard.<>c__DisplayClass6_0", Member = "<Find>b__2")]
 		[CallerCount(Count = 10)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 4)]
 		get
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 3)]
 		set
 		{
 		}
@@ -76,10 +75,10 @@ public class Blackboard : MonoBehaviour, ISerializationCallbackReceiver, IBlackb
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(BlackboardSource), Member = "SetValue")]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BlackboardSource), Member = "SetValue")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -103,7 +102,7 @@ public class Blackboard : MonoBehaviour, ISerializationCallbackReceiver, IBlackb
 	public GameObject propertiesBindTarget
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 1542)]
+		[CallerCount(Count = 1558)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -113,19 +112,19 @@ public class Blackboard : MonoBehaviour, ISerializationCallbackReceiver, IBlackb
 
 	public event Action<Variable> onVariableAdded
 	{
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
-		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
@@ -135,66 +134,69 @@ public class Blackboard : MonoBehaviour, ISerializationCallbackReceiver, IBlackb
 	{
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 1)]
+		[CompilerGenerated]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
-		[CompilerGenerated]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void UnityEngine_002EISerializationCallbackReceiver_002EOnBeforeSerialize()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(JSONSerializer), Member = "Deserialize")]
 	[Calls(Type = typeof(BlackboardSource), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 9)]
 	private void UnityEngine_002EISerializationCallbackReceiver_002EOnAfterDeserialize()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(BlackboardSource), Member = "InitializePropertiesBinding")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BlackboardSource), Member = "InitializePropertiesBinding")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	protected virtual void Awake()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(BlackboardSource), Member = "AddVariable")]
 	[CalledBy(Type = typeof(BlackboardSpawner), Member = "MaybeCopyBlackboardVariables")]
 	[CalledBy(Type = typeof(Action_InvokeConcurrentGraph), Member = "OnExecute")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BlackboardSource), Member = "AddVariable")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public Variable AddVariable(string name, Type type)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(BlackboardSource), Member = "AddVariable")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BlackboardSource), Member = "AddVariable")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public Variable AddVariable(string name, object value)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 3)]
 	public Variable RemoveVariable(string name)
 	{
@@ -217,22 +219,22 @@ public class Blackboard : MonoBehaviour, ISerializationCallbackReceiver, IBlackb
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public Variable<T> GetVariable<T>(string name)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public T GetValue<T>(string name)
 	{
-		return (T)null;
+		return default(T);
 	}
 
 	[DeduplicatedMethod]
@@ -245,25 +247,26 @@ public class Blackboard : MonoBehaviour, ISerializationCallbackReceiver, IBlackb
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public string[] GetVariableNames()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(BlackboardSource), Member = "GetVariableNames")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BlackboardSource), Member = "GetVariableNames")]
 	[CallsUnknownMethods(Count = 1)]
 	public string[] GetVariableNames(Type ofType)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
-	[Calls(Type = typeof(Blackboard), Member = "Serialize")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Blackboard), Member = "get_name")]
+	[Calls(Type = typeof(Blackboard), Member = "Serialize")]
+	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
 	public string Save()
 	{
 		return null;
@@ -281,19 +284,19 @@ public class Blackboard : MonoBehaviour, ISerializationCallbackReceiver, IBlackb
 	[CallerCount(Count = 0)]
 	public bool Load()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(LoadBlackboard), Member = "OnExecute")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
 	[Calls(Type = typeof(Blackboard), Member = "Deserialize")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CalledBy(Type = typeof(LoadBlackboard), Member = "OnExecute")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool Load(string saveKey)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -302,59 +305,63 @@ public class Blackboard : MonoBehaviour, ISerializationCallbackReceiver, IBlackb
 	{
 	}
 
-	[Calls(Type = typeof(Blackboard), Member = "RestoreInternalVars")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Blackboard), Member = "RestoreInternalVars")]
 	public void TLD_PostSerialize()
 	{
 	}
 
-	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(MissionManagerBase), Member = "Serialize")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "Serialize")]
 	[CalledBy(Type = typeof(NCUtils), Member = "GetSerializedBlackboard")]
 	[CalledBy(Type = typeof(Blackboard), Member = "TLD_PreSerialize")]
 	[CalledBy(Type = typeof(Blackboard), Member = "Deserialize")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 23)]
 	public void ExtractInternalVars()
 	{
 	}
 
-	[CalledBy(Type = typeof(Blackboard), Member = "TLD_PostSerialize")]
 	[CalledBy(Type = typeof(MissionManagerBase), Member = "Serialize")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Blackboard), Member = "Deserialize")]
-	[CalledBy(Type = typeof(NCUtils), Member = "GetSerializedBlackboard")]
-	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "Serialize")]
+	[CalledBy(Type = typeof(NCUtils), Member = "GetSerializedBlackboard")]
+	[CalledBy(Type = typeof(Blackboard), Member = "TLD_PostSerialize")]
+	[CalledBy(Type = typeof(Blackboard), Member = "Deserialize")]
+	[CallerCount(Count = 5)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void RestoreInternalVars()
 	{
 	}
 
-	[CalledBy(Type = typeof(SaveBlackboard), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Blackboard), Member = "Save")]
-	[CalledBy(Type = typeof(NCUtils), Member = "GetSerializedBlackboard")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "Serialize")]
-	[CalledBy(Type = typeof(MissionManagerBase), Member = "Serialize")]
-	[CalledBy(Type = typeof(Blackboard), Member = "Save")]
-	[Calls(Type = typeof(JSONSerializer), Member = "Serialize")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(GameManager), Member = "SetupTransferData")]
+	[CalledBy(Type = typeof(MissionManagerBase), Member = "Serialize")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "Serialize")]
+	[CalledBy(Type = typeof(NCUtils), Member = "GetSerializedBlackboard")]
+	[CalledBy(Type = typeof(Blackboard), Member = "Save")]
+	[CalledBy(Type = typeof(Blackboard), Member = "Save")]
+	[CalledBy(Type = typeof(SaveBlackboard), Member = "OnExecute")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(JSONSerializer), Member = "Serialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(JSONSerializer), Member = "Serialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string Serialize(List<UnityEngine.Object> storedObjectReferences)
 	{
 		return null;
@@ -364,39 +371,43 @@ public class Blackboard : MonoBehaviour, ISerializationCallbackReceiver, IBlackb
 	[Calls(Type = typeof(Blackboard), Member = "Deserialize")]
 	public bool Deserialize(string json)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "DeserializeGlobalBB")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "RegisterConcurrentGraph")]
-	[CalledBy(Type = typeof(MissionServicesManager._003CJumpCo_003Ed__136), Member = "MoveNext")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "RegisterConcurrentGraph")]
-	[CalledBy(Type = typeof(Blackboard), Member = "Load")]
-	[CallsUnknownMethods(Count = 25)]
-	[CalledBy(Type = typeof(Blackboard), Member = "Deserialize")]
-	[CalledBy(Type = typeof(TLDBehaviourTreeManager), Member = "Deserialize")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "Deserialize")]
-	[CallsDeduplicatedMethods(Count = 12)]
-	[CalledBy(Type = typeof(MissionManagerBase), Member = "PreRegisterGraphOwner")]
-	[CalledBy(Type = typeof(GameManager), Member = "ApplyTransferData")]
 	[CalledBy(Type = typeof(GameManager), Member = "InstantiateStoryManager")]
-	[Calls(Type = typeof(Blackboard), Member = "RestoreInternalVars")]
-	[Calls(Type = typeof(BlackboardSource), Member = "InitializePropertiesBinding")]
-	[Calls(Type = typeof(BlackboardSource), Member = "SetValue")]
-	[Calls(Type = typeof(Blackboard), Member = "ExtractInternalVars")]
-	[CallerCount(Count = 12)]
+	[CalledBy(Type = typeof(GameManager), Member = "ApplyTransferData")]
+	[CalledBy(Type = typeof(MissionManagerBase), Member = "PreRegisterGraphOwner")]
 	[CalledBy(Type = typeof(MissionManagerBase), Member = "PreRegisterChildGraph")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "Deserialize")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "RegisterConcurrentGraph")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "DeserializeGlobalBB")]
+	[CalledBy(TypeFullName = "MissionServicesManager.<JumpCo>d__136", Member = "MoveNext")]
+	[CalledBy(Type = typeof(TLDBehaviourTreeManager), Member = "Deserialize")]
+	[CalledBy(Type = typeof(Blackboard), Member = "Load")]
+	[CalledBy(Type = typeof(Blackboard), Member = "Deserialize")]
+	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(Blackboard), Member = "ExtractInternalVars")]
+	[Calls(Type = typeof(JSONSerializer), Member = "Deserialize")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(BlackboardSource), Member = "SetValue")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(BlackboardSource), Member = "InitializePropertiesBinding")]
+	[Calls(Type = typeof(Blackboard), Member = "RestoreInternalVars")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 25)]
 	public bool Deserialize(string json, List<UnityEngine.Object> storedObjectReferences, bool removeMissing = true)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(GlobalBlackboard), Member = ".ctor")]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(BlackboardSource), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public Blackboard()
 	{
 	}

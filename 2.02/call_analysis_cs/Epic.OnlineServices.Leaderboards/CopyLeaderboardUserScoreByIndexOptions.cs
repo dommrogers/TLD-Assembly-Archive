@@ -16,11 +16,11 @@ public class CopyLeaderboardUserScoreByIndexOptions
 		[CallerCount(Count = 7)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -30,21 +30,21 @@ public class CopyLeaderboardUserScoreByIndexOptions
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CopyLeaderboardUserScoreByIndexOptions()
 	{
 	}

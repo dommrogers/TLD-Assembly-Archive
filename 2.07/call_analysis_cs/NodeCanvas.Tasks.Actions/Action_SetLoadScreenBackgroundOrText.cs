@@ -14,21 +14,22 @@ public class Action_SetLoadScreenBackgroundOrText : ActionTask
 	{
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(Object), Member = "get_name")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsUnknownMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(LoadingScreenData), Member = "GetRandomNoRepeat")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Loading), Member = "SetBackgroundData")]
+	[Calls(Type = typeof(LoadingScreenData), Member = "GetRandomNoRepeat")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}

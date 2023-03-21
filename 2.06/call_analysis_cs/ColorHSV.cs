@@ -66,8 +66,9 @@ public struct ColorHSV
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(float), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 41)]
+	[CallsUnknownMethods(Count = 37)]
 	public override string ToString()
 	{
 		return null;

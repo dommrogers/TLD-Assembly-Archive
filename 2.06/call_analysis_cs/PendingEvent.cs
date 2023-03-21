@@ -8,7 +8,7 @@ public class PendingEvent
 	public string m_MissionId;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 224)]
+	[CallerCount(Count = 230)]
 	public PendingEvent(EventData ev, string missionId)
 	{
 	}

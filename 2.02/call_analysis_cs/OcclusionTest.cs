@@ -9,36 +9,36 @@ public class OcclusionTest : MonoBehaviour
 
 	private float m_CurrentTime;
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(OcclusionTest), Member = "CheckOcclusion")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(OcclusionTest), Member = "CheckOcclusion")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
+	[CalledBy(Type = typeof(OcclusionTest), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
 	[Calls(Type = typeof(Wind), Member = "IsPositionOccludedFromWind")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(OcclusionTest), Member = "Update")]
 	private bool CheckOcclusion()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 2)]
 	public bool IsOccluded()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public OcclusionTest()
 	{
 	}

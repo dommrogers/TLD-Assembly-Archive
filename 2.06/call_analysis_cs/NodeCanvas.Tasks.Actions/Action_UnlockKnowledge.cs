@@ -15,10 +15,10 @@ public class Action_UnlockKnowledge : ActionTask
 
 	public bool showNotificationFlag;
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Knowledge), Member = "Unlock")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Knowledge), Member = "Unlock")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	protected override void OnExecute()
 	{
 	}

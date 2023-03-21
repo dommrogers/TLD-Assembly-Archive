@@ -54,11 +54,11 @@ public class UIToggle : UIWidgetContainer
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[Calls(Type = typeof(UIToggle), Member = "Set")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIToggle), Member = "Set")]
 		set
 		{
 		}
@@ -70,7 +70,7 @@ public class UIToggle : UIWidgetContainer
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -80,95 +80,74 @@ public class UIToggle : UIWidgetContainer
 		}
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public static UIToggle GetActiveToggle(int group)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(BetterList<>), Member = "Add")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BetterList<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(EventDelegate), Member = "IsValid")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIToggle), Member = "Set")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(EventDelegate), Member = "IsValid")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Start()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void OnClick()
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(ActiveAnimation), Member = "Finish")]
-	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(ActiveAnimation), Member = "Play")]
-	[Calls(Type = typeof(ActiveAnimation), Member = "Play")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(UISavedOption), Member = "OnEnable")]
-	[CalledBy(Type = typeof(UIToggle), Member = "set_isChecked")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CalledBy(Type = typeof(BurnsElectric), Member = "UpdateRemedyItems")]
-	[CalledBy(Type = typeof(BurnsElectric), Member = "UpdateRemedyItems")]
 	[CalledBy(Type = typeof(UIToggle), Member = "set_value")]
-	[CalledBy(Type = typeof(Burns), Member = "UpdateRemedyItems")]
-	[CalledBy(Type = typeof(Burns), Member = "UpdateRemedyItems")]
-	[CalledBy(Type = typeof(UIToggle), Member = "Set")]
+	[CalledBy(Type = typeof(UIToggle), Member = "set_isChecked")]
 	[CalledBy(Type = typeof(UIToggle), Member = "Start")]
-	[CalledBy(Type = typeof(UISavedOption), Member = "OnEnable")]
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CalledBy(Type = typeof(Dysentery), Member = "UpdateRemedyItems")]
-	[CalledBy(Type = typeof(Dysentery), Member = "UpdateRemedyItems")]
-	[CalledBy(Type = typeof(Dysentery), Member = "UpdateRemedyItems")]
+	[CalledBy(Type = typeof(UIToggle), Member = "Set")]
+	[CalledBy(Type = typeof(Burns), Member = "UpdateRemedyItems")]
+	[CalledBy(Type = typeof(BurnsElectric), Member = "UpdateRemedyItems")]
 	[CalledBy(Type = typeof(Dysentery), Member = "UpdateRemedyItems")]
 	[CallerCount(Count = 15)]
-	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UIToggle), Member = "Set")]
 	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
 	[Calls(Type = typeof(TweenAlpha), Member = "Begin")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(TweenAlpha), Member = "Begin")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(EventDelegate), Member = "IsValid")]
-	[Calls(Type = typeof(UIToggle), Member = "Set")]
-	[CalledBy(Type = typeof(Dysentery), Member = "UpdateRemedyItems")]
+	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
+	[Calls(Type = typeof(ActiveAnimation), Member = "Play")]
+	[Calls(Type = typeof(ActiveAnimation), Member = "Play")]
+	[Calls(Type = typeof(ActiveAnimation), Member = "Finish")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Set(bool state)
 	{
 	}

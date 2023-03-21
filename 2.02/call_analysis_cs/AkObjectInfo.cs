@@ -10,12 +10,12 @@ public class AkObjectInfo : IDisposable
 
 	public uint objID
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -32,11 +32,11 @@ public class AkObjectInfo : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -49,7 +49,7 @@ public class AkObjectInfo : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -65,12 +65,12 @@ public class AkObjectInfo : IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(AkObjectInfoArray), Member = "CloneIntoReferenceFromIntPtr")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(AkObjectInfoArray), Member = "CloneIntoReferenceFromIntPtr")]
 	internal static IntPtr getCPtr(AkObjectInfo obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -80,40 +80,40 @@ public class AkObjectInfo : IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	~AkObjectInfo()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkObjectInfo_Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Clear()
 	{
 	}
 
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkObjectInfo_GetSizeOf")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkObjectInfo_GetSizeOf")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static int GetSizeOf()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkObjectInfo_Clone")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void Clone(AkObjectInfo other)
 	{
 	}

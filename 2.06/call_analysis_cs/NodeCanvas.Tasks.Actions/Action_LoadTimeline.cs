@@ -16,17 +16,17 @@ public class Action_LoadTimeline : Action_Timeline
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AssetReferenceTimeline), Member = "LoadTimeline")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	protected override void ExecuteTimelineAction()
 	{
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AssetReferenceTimeline), Member = "get_IsLoaded")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDoneLoading(AssetReferenceTimeline timeline)
 	{
 	}

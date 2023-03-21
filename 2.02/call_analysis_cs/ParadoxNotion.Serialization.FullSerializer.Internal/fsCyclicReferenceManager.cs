@@ -13,18 +13,18 @@ public class fsCyclicReferenceManager
 		[CallerCount(Count = 0)]
 		private bool System_002ECollections_002EGeneric_002EIEqualityComparer_003CSystem_002EObject_003E_002EEquals(object x, object y)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		private int System_002ECollections_002EGeneric_002EIEqualityComparer_003CSystem_002EObject_003E_002EGetHashCode(object obj)
 		{
-			return default(int);
+			return 0;
 		}
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public ObjectReferenceEqualityComparator()
 		{
 		}
@@ -38,9 +38,9 @@ public class fsCyclicReferenceManager
 
 	private int _depth;
 
+	[CalledBy(Type = typeof(fsSerializer), Member = ".ctor")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(fsSerializer), Member = ".ctor")]
 	[CallsUnknownMethods(Count = 16)]
 	public fsCyclicReferenceManager()
 	{
@@ -52,21 +52,22 @@ public class fsCyclicReferenceManager
 	{
 	}
 
-	[CalledBy(Type = typeof(fsSerializer), Member = "TryDeserialize")]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(fsSerializer), Member = "TrySerialize")]
 	[CalledBy(Type = typeof(fsSerializer), Member = "TryDeserialize")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	public bool Exit()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public object GetReferenceObject(int id)
 	{
 		return null;
@@ -80,32 +81,29 @@ public class fsCyclicReferenceManager
 	}
 
 	[CalledBy(Type = typeof(fsSerializer), Member = "Internal_Serialize")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(fsCyclicReferenceManager), Member = "IsReference")]
-	[CalledBy(Type = typeof(fsSerializer), Member = "Internal_Serialize")]
 	[CalledBy(Type = typeof(fsCyclicReferenceManager), Member = "MarkSerialized")]
-	[CalledBy(Type = typeof(fsSerializer), Member = "Internal_Serialize")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(fsSerializer), Member = "Internal_Serialize")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public int GetReferenceId(object item)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(fsCyclicReferenceManager), Member = "GetReferenceId")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsCyclicReferenceManager), Member = "GetReferenceId")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsReference(object item)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(fsCyclicReferenceManager), Member = "GetReferenceId")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
 	public void MarkSerialized(object item)
 	{

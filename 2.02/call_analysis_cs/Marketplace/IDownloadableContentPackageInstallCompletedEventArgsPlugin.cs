@@ -23,12 +23,12 @@ public class IDownloadableContentPackageInstallCompletedEventArgsPlugin
 	public static extern IntPtr IDownloadableContentPackageInstallCompletedEventArgs_PackageFullName(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void IDownloadableContentPackageInstallCompletedEventArgs_Dispose(IntPtr self);
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public IDownloadableContentPackageInstallCompletedEventArgsPlugin()
 	{
 	}

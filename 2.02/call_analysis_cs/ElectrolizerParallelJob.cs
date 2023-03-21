@@ -21,9 +21,9 @@ internal struct ElectrolizerParallelJob : IJobParallelFor
 
 	public NativeArray<byte> m_EnabledArr;
 
+	[CalledBy(TypeFullName = "Unity.Jobs.IJobParallelForExtensions.ParallelForJobStruct`1", Member = "Execute")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(IJobParallelForExtensions.ParallelForJobStruct<>), Member = "Execute")]
 	public void Execute(int i)
 	{
 	}

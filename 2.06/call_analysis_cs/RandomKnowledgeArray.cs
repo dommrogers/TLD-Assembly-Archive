@@ -5,8 +5,8 @@ public class RandomKnowledgeArray : MonoBehaviour
 {
 	public GameObject[] m_Prefabs;
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public RandomKnowledgeArray()
 	{
 	}

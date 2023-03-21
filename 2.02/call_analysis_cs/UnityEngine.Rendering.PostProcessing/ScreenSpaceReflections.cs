@@ -20,26 +20,22 @@ public sealed class ScreenSpaceReflections : PostProcessEffectSettings
 
 	public FloatParameter vignette;
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 12)]
 	[Calls(Type = typeof(Shader), Member = "get_isSupported")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 12)]
 	public override bool IsEnabledAndSupported(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(IntParameter), Member = ".ctor")]
+	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 56)]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
 	public ScreenSpaceReflections()
 	{
 	}

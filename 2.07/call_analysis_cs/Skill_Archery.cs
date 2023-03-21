@@ -17,16 +17,16 @@ public class Skill_Archery : Skill
 
 	private static Skill_ArcherySaveData m_Skill_ArcherySaveData;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
@@ -37,15 +37,15 @@ public class Skill_Archery : Skill
 	[CallsUnknownMethods(Count = 2)]
 	public float GetCriticalHitChanceScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
-	[DeduplicatedMethod]
 	public float GetArcheryDamageScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -53,14 +53,14 @@ public class Skill_Archery : Skill
 	[CallsUnknownMethods(Count = 2)]
 	public float GetConditionDegradeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetSwayScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -68,38 +68,26 @@ public class Skill_Archery : Skill
 	[CallsUnknownMethods(Count = 2)]
 	public float GetBleedOutTimeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
-	[CalledBy(Type = typeof(BowItem), Member = "PressFire")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "EnableCrouch")]
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "EnableCrouchImmediate")]
+	[CalledBy(Type = typeof(BowItem), Member = "PressFire")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
 	[CallerCount(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool CanFireBowWhileCrouched()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsUnknownMethods(Count = 2)]
 	public override string GetTierBenefits(int index)
 	{
 		return null;

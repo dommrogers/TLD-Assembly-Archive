@@ -11,21 +11,17 @@ public sealed class RLPRO_SRP_Phosphor_Renderer : PostProcessEffectRenderer<RLPr
 
 	private float T;
 
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetTexture")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[CallsUnknownMethods(Count = 27)]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
-	[Calls(Type = typeof(RenderTexture), Member = "GetCompatibleFormat")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(RenderTexture), Member = "GetCompatibleFormat")]
+	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
 	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetTexture")]
+	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 27)]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}

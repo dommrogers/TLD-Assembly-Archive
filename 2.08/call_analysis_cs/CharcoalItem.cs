@@ -31,7 +31,7 @@ public class CharcoalItem : MonoBehaviour
 	private uint m_SurveyAudioID;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	private void Awake()
 	{
 	}
@@ -40,27 +40,27 @@ public class CharcoalItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private float GetSurveyRealSeconds()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private float GetSurveyGameMinutes()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	private float GetSurveyExtendedTimeSkillBonus()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(CharcoalItem), Member = "DetailSurveyComplete")]
 	[Calls(Type = typeof(CharcoalItem), Member = "CancelDetailSurvey")]
@@ -69,74 +69,73 @@ public class CharcoalItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
-	[CalledBy(Type = typeof(RockCache), Member = "SetupInWorld")]
 	[CalledBy(Type = typeof(CharcoalItem), Member = "StartDetailSurvey")]
-	[Calls(Type = typeof(Weather), Member = "IsClear")]
-	[Calls(Type = typeof(Weather), Member = "IsBlizzard")]
-	[Calls(Type = typeof(Weather), Member = "IsElectrostaticFog")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(Weather), Member = "IsFullMoon")]
+	[CalledBy(Type = typeof(RockCache), Member = "SetupInWorld")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Weather), Member = "IsFullMoon")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(Weather), Member = "IsBlizzard")]
+	[Calls(Type = typeof(Weather), Member = "IsElectrostaticFog")]
+	[Calls(Type = typeof(Weather), Member = "IsClear")]
+	[CallsUnknownMethods(Count = 10)]
 	public static bool HasSurveyVisibility(float extendedHoursBonus)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessFireAction")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
-	[Calls(Type = typeof(CharcoalItem), Member = "HasSurveyVisibility")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "CanTransitionToState")]
-	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
 	[Calls(Type = typeof(Weather), Member = "CanSurveyEnvironment")]
+	[Calls(Type = typeof(CharcoalItem), Member = "HasSurveyVisibility")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsUnknownMethods(Count = 4)]
 	public void StartDetailSurvey()
 	{
 	}
 
+	[CalledBy(Type = typeof(CharcoalItem), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(CharcoalItem), Member = "RestoreTimeOfDay")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[CalledBy(Type = typeof(CharcoalItem), Member = "Update")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
 	public void CancelDetailSurvey()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CalledBy(Type = typeof(CharcoalItem), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(CharcoalItem), Member = "RestoreTimeOfDay")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_Map), Member = "Enable")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Map), Member = "DoNearbyDetailsCheck")]
+	[Calls(Type = typeof(Panel_Map), Member = "Enable")]
+	[Calls(Type = typeof(CharcoalItem), Member = "RestoreTimeOfDay")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void DetailSurveyComplete()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(CharcoalItem), Member = "CancelDetailSurvey")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	[CalledBy(Type = typeof(CharcoalItem), Member = "DetailSurveyComplete")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[CallsUnknownMethods(Count = 3)]
 	private void RestoreTimeOfDay()
 	{
 	}
@@ -151,12 +150,12 @@ public class CharcoalItem : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void ConsumeCharcoal()
 	{
 	}

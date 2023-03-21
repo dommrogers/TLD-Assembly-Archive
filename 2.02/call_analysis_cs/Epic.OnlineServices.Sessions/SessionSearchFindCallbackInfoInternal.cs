@@ -25,9 +25,9 @@ internal struct SessionSearchFindCallbackInfoInternal : ICallbackInfoInternal
 	{
 		[CalledBy(Type = typeof(SessionSearchFindCallbackInfo), Member = "Set")]
 		[CalledBy(Type = typeof(SessionSearchFindCallbackInfo), Member = "Set")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 2)]
 		get
 		{
 			return null;
@@ -40,7 +40,7 @@ internal struct SessionSearchFindCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 }

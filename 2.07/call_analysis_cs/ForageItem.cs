@@ -15,8 +15,8 @@ public class ForageItem : MonoBehaviour
 
 	public float m_HPDecreasePerHourForaging;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	private void Start()
 	{
 	}

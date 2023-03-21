@@ -92,9 +92,9 @@ public class PlayerManagerSaveDataProxy
 
 	public bool m_HasEverSprayPainted;
 
+	[CalledBy(Type = typeof(PlayerManager), Member = ".cctor")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerManager), Member = ".cctor")]
 	[CallsUnknownMethods(Count = 12)]
 	public PlayerManagerSaveDataProxy()
 	{

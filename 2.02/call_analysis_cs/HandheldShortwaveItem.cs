@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -25,37 +26,36 @@ public class HandheldShortwaveItem : MonoBehaviour
 
 	public float m_Intensity;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(HandheldShortwaveItem), Member = "IsActive")]
 	[Calls(Type = typeof(Vector3), Member = "get_forward")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 13)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(HandheldShortwaveItem), Member = "Update")]
 	[CalledBy(Type = typeof(FirstPersonHandheldShortwave), Member = "UpdateIntensityNeedle")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(HandheldShortwaveItem), Member = "Update")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

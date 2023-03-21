@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using System.Text;
 using Cpp2ILInjected.CallAnalysis;
 using Rewired.UI;
+using Rewired.Utils;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -15,38 +15,29 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 	{
 		private List<ButtonState> m_TrackedButtons;
 
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsUnknownMethods(Count = 2)]
 		public bool AnyPressesThisFrame()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 		[CallsUnknownMethods(Count = 2)]
 		public bool AnyReleasesThisFrame()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 4)]
-		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessMouseEvent")]
-		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessMouseEvent")]
-		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessMouseEvent")]
-		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessMouseEvent")]
-		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessMouseEvent")]
-		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessMouseEvent")]
-		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessMouseEvent")]
 		[CalledBy(Type = typeof(MouseState), Member = "SetButtonState")]
 		[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMousePointerEventData")]
-		[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMousePointerEventData")]
-		[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMousePointerEventData")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessMouseEvent")]
 		[CallerCount(Count = 12)]
-		[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMousePointerEventData")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 4)]
 		public ButtonState GetButtonState(int button)
 		{
 			return null;
@@ -77,14 +68,14 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 		[CallerCount(Count = 0)]
 		public bool PressedThisFrame()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public bool ReleasedThisFrame()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
@@ -103,13 +94,13 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 		public MouseButtonEventData eventData
 		{
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
 			}
 			[DeduplicatedMethod]
-			[CallerCount(Count = 79)]
+			[CallerCount(Count = 86)]
 			set
 			{
 			}
@@ -121,7 +112,7 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 			[CallerCount(Count = 28)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
@@ -130,8 +121,8 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 			}
 		}
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public ButtonState()
 		{
 		}
@@ -152,7 +143,7 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 			[Calls(Type = typeof(UnityInputSource), Member = "TryUpdate")]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 		}
 
@@ -163,29 +154,29 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 			[Calls(Type = typeof(UnityInputSource), Member = "TryUpdate")]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 		}
 
 		private bool Rewired_002EUI_002EIMouseInputSource_002Eenabled
 		{
-			[Calls(Type = typeof(UnityInputSource), Member = "TryUpdate")]
 			[CallerCount(Count = 0)]
+			[Calls(Type = typeof(UnityInputSource), Member = "TryUpdate")]
 			get
 			{
-				return default(bool);
+				return false;
 			}
 		}
 
 		private bool Rewired_002EUI_002EIMouseInputSource_002Elocked
 		{
-			[CallsUnknownMethods(Count = 1)]
-			[Calls(Type = typeof(UnityInputSource), Member = "TryUpdate")]
 			[CallerCount(Count = 0)]
+			[Calls(Type = typeof(UnityInputSource), Member = "TryUpdate")]
 			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(bool);
+				return false;
 			}
 		}
 
@@ -195,14 +186,14 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 			[Calls(Type = typeof(UnityInputSource), Member = "TryUpdate")]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 		}
 
 		private Vector2 Rewired_002EUI_002EIMouseInputSource_002EscreenPosition
 		{
-			[Calls(Type = typeof(UnityInputSource), Member = "TryUpdate")]
 			[CallerCount(Count = 0)]
+			[Calls(Type = typeof(UnityInputSource), Member = "TryUpdate")]
 			[CallsDeduplicatedMethods(Count = 1)]
 			[CallsUnknownMethods(Count = 1)]
 			get
@@ -213,8 +204,8 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 
 		private Vector2 Rewired_002EUI_002EIMouseInputSource_002EscreenPositionDelta
 		{
-			[Calls(Type = typeof(UnityInputSource), Member = "TryUpdate")]
 			[CallerCount(Count = 0)]
+			[Calls(Type = typeof(UnityInputSource), Member = "TryUpdate")]
 			get
 			{
 				return default(Vector2);
@@ -223,10 +214,10 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 
 		private Vector2 Rewired_002EUI_002EIMouseInputSource_002EwheelDelta
 		{
-			[Calls(Type = typeof(UnityInputSource), Member = "TryUpdate")]
-			[CallsUnknownMethods(Count = 1)]
 			[CallerCount(Count = 0)]
+			[Calls(Type = typeof(UnityInputSource), Member = "TryUpdate")]
 			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 1)]
 			get
 			{
 				return default(Vector2);
@@ -240,7 +231,7 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(bool);
+				return false;
 			}
 		}
 
@@ -251,7 +242,7 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 		}
 
@@ -260,7 +251,7 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 		[CallsUnknownMethods(Count = 1)]
 		private bool Rewired_002EUI_002EIMouseInputSource_002EGetButtonDown(int button)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
@@ -268,7 +259,7 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 		[CallsUnknownMethods(Count = 1)]
 		private bool Rewired_002EUI_002EIMouseInputSource_002EGetButtonUp(int button)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
@@ -276,35 +267,35 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 		[CallsUnknownMethods(Count = 1)]
 		private bool Rewired_002EUI_002EIMouseInputSource_002EGetButton(int button)
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityInputSource), Member = "TryUpdate")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityInputSource), Member = "TryUpdate")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		private Touch Rewired_002EUI_002EITouchInputSource_002EGetTouch(int index)
 		{
 			return default(Touch);
 		}
 
-		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.GetButton")]
-		[CallsUnknownMethods(Count = 3)]
-		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.ITouchInputSource.GetTouch")]
-		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.ITouchInputSource.get_touchCount")]
-		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.ITouchInputSource.get_touchSupported")]
-		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.get_wheelDelta")]
-		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.GetButtonUp")]
-		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.get_screenPositionDelta")]
+		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.get_playerId")]
+		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.ITouchInputSource.get_playerId")]
+		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.get_enabled")]
+		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.get_locked")]
 		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.get_buttonCount")]
 		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.GetButtonDown")]
+		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.GetButtonUp")]
+		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.GetButton")]
+		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.get_screenPosition")]
+		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.get_screenPositionDelta")]
+		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.get_wheelDelta")]
+		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.ITouchInputSource.get_touchSupported")]
+		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.ITouchInputSource.get_touchCount")]
+		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.ITouchInputSource.GetTouch")]
 		[CallerCount(Count = 14)]
 		[CallsDeduplicatedMethods(Count = 3)]
-		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.get_playerId")]
-		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.get_screenPosition")]
-		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.get_enabled")]
-		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.ITouchInputSource.get_playerId")]
-		[CalledBy(Type = typeof(UnityInputSource), Member = "Rewired.UI.IMouseInputSource.get_locked")]
+		[CallsUnknownMethods(Count = 3)]
 		private void TryUpdate()
 		{
 		}
@@ -342,25 +333,19 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 
 	private UnityInputSource defaultInputSource
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessTouchEvents")]
-		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessTouchEvents")]
-		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessTouchEvents")]
-		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ShouldActivateModule")]
-		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ShouldActivateModule")]
-		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ShouldActivateModule")]
-		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "Awake")]
-		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "get_isMouseSupported")]
-		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessTouchEvents")]
-		[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetPointerData")]
-		[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "get_isMouseSupported")]
-		[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetTouchInputSource")]
-		[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMouseInputSource")]
-		[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "IsDefaultMouse")]
-		[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "get_defaultTouchInputSource")]
 		[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "get_defaultMouseInputSource")]
-		[CallerCount(Count = 17)]
+		[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "get_defaultTouchInputSource")]
+		[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "IsDefaultMouse")]
+		[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMouseInputSource")]
+		[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetTouchInputSource")]
+		[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "get_isMouseSupported")]
 		[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetPointerData")]
+		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "get_isMouseSupported")]
+		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "Awake")]
+		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ShouldActivateModule")]
+		[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessTouchEvents")]
+		[CallerCount(Count = 17)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -380,9 +365,9 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 
 	protected ITouchInputSource defaultTouchInputSource
 	{
-		[Calls(Type = typeof(RewiredPointerInputModule), Member = "get_defaultInputSource")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(RewiredPointerInputModule), Member = "get_defaultInputSource")]
 		get
 		{
 			return null;
@@ -391,13 +376,13 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 
 	protected virtual bool isMouseSupported
 	{
-		[Calls(Type = typeof(RewiredPointerInputModule), Member = "get_defaultInputSource")]
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+		[Calls(Type = typeof(RewiredPointerInputModule), Member = "get_defaultInputSource")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 		[CallsUnknownMethods(Count = 4)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -405,84 +390,84 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 	[Calls(Type = typeof(RewiredPointerInputModule), Member = "get_defaultInputSource")]
 	protected bool IsDefaultMouse(IMouseInputSource mouse)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "GetMouseButtonDownOnAnyMouse")]
-	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "DidAnyMouseMove")]
-	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessMousePress")]
-	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessMouseEvent")]
-	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ShouldActivateModule")]
-	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ShouldActivateModule")]
-	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "StateForMouseButton")]
+	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetPointerData")]
+	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "CreatePointerEventData")]
+	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMousePointerEventData")]
 	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "ProcessMove")]
 	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "ProcessDrag")]
-	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "CreatePointerEventData")]
-	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetPointerData")]
-	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetPointerData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(ArgumentOutOfRangeException), Member = ".ctor")]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "get_defaultInputSource")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "StateForMouseButton")]
+	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ShouldActivateModule")]
+	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessMouseEvent")]
+	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessMousePress")]
+	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "DidAnyMouseMove")]
+	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "GetMouseButtonDownOnAnyMouse")]
 	[CallerCount(Count = 13)]
-	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMousePointerEventData")]
+	[Calls(Type = typeof(RewiredPointerInputModule), Member = "get_defaultInputSource")]
+	[Calls(Type = typeof(UnityTools), Member = "IsNullOrDestroyed")]
+	[Calls(Type = typeof(ArgumentOutOfRangeException), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public IMouseInputSource GetMouseInputSource(int playerId, int mouseIndex)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 6)]
 	public void RemoveMouseInputSource(IMouseInputSource source)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "SetupRewiredVars")]
 	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "SetUpRewiredPlayerMice")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityTools), Member = "IsNullOrDestroyed")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public void AddMouseInputSource(IMouseInputSource source)
 	{
 	}
 
-	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessMouseEvents")]
-	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "GetMouseButtonDownOnAnyMouse")]
-	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "DidAnyMouseMove")]
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ShouldActivateModule")]
 	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "Process")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ShouldActivateModule")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessMouseEvents")]
+	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "DidAnyMouseMove")]
+	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "GetMouseButtonDownOnAnyMouse")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ShouldActivateModule")]
+	[Calls(Type = typeof(UnityTools), Member = "IsNullOrDestroyed")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public int GetMouseInputSourceCount(int playerId)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "get_defaultInputSource")]
 	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "CreatePointerEventData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityTools), Member = "IsNullOrDestroyed")]
+	[Calls(Type = typeof(RewiredPointerInputModule), Member = "get_defaultInputSource")]
 	public ITouchInputSource GetTouchInputSource(int playerId, int sourceIndex)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 5)]
 	public void RemoveTouchInputSource(ITouchInputSource source)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(UnityTools), Member = "IsNullOrDestroyed")]
 	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CallsUnknownMethods(Count = 5)]
 	public void AddTouchInputSource(ITouchInputSource source)
@@ -493,105 +478,91 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 	[CallsDeduplicatedMethods(Count = 1)]
 	public int GetTouchInputSourceCount(int playerId)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "SetUpRewiredPlayerMice")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	protected void ClearMouseInputSources()
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101262)]
 	protected abstract bool IsDefaultPlayer(int playerId);
 
-	[CallsUnknownMethods(Count = 15)]
-	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetLastPointerEventData")]
-	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMousePointerEventData")]
-	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMousePointerEventData")]
-	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMousePointerEventData")]
-	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMousePointerEventData")]
-	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMousePointerEventData")]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "get_defaultInputSource")]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetMouseInputSource")]
-	[Calls(Type = typeof(PointerEventData), Member = ".ctor")]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "get_defaultInputSource")]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetMouseInputSource")]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetTouchPointerEventData")]
+	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMousePointerEventData")]
+	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetLastPointerEventData")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetMouseInputSource")]
+	[Calls(Type = typeof(UnityTools), Member = "IsNullOrDestroyed")]
+	[Calls(Type = typeof(RewiredPointerInputModule), Member = "get_defaultInputSource")]
+	[Calls(Type = typeof(PointerEventData), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 15)]
 	protected bool GetPointerData(int playerId, int pointerIndex, int pointerTypeId, out PlayerPointerEventData data, bool create, PointerEventType pointerEventType)
 	{
 		data = null;
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetMouseInputSource")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetTouchInputSource")]
-	[Calls(Type = typeof(PointerEventData), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PointerEventData), Member = ".ctor")]
+	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetTouchInputSource")]
+	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetMouseInputSource")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private PlayerPointerEventData CreatePointerEventData(int playerId, int pointerIndex, int pointerTypeId, PointerEventType pointerEventType)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessTouchEvents")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	protected void RemovePointerData(PlayerPointerEventData data)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "ProcessTouchEvents")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetPointerData")]
+	[Calls(Type = typeof(EventSystem), Member = "RaycastAll")]
 	[Calls(Type = typeof(BaseInputModule), Member = "FindFirstRaycast")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetPointerData")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(EventSystem), Member = "RaycastAll")]
+	[CallsUnknownMethods(Count = 1)]
 	protected PlayerPointerEventData GetTouchPointerEventData(int playerId, int touchDeviceIndex, Touch input, out bool pressed, out bool released)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<bool, @null>(ref pressed) = null;
-		System.Runtime.CompilerServices.Unsafe.As<bool, @null>(ref released) = null;
+		pressed = default(bool);
+		released = default(bool);
 		return null;
 	}
 
-	[Calls(Type = typeof(MouseState), Member = "GetButtonState")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(MouseState), Member = "GetButtonState")]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "StateForMouseButton")]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetPointerData")]
-	[Calls(Type = typeof(MouseState), Member = "GetButtonState")]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "StateForMouseButton")]
-	[Calls(Type = typeof(MouseState), Member = "GetButtonState")]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "StateForMouseButton")]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "StateForMouseButton")]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetPointerData")]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetPointerData")]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetPointerData")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(BaseInputModule), Member = "FindFirstRaycast")]
-	[Calls(Type = typeof(EventSystem), Member = "RaycastAll")]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetPointerData")]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetMouseInputSource")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetMouseInputSource")]
+	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetPointerData")]
+	[Calls(Type = typeof(EventSystem), Member = "RaycastAll")]
+	[Calls(Type = typeof(BaseInputModule), Member = "FindFirstRaycast")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(RewiredPointerInputModule), Member = "StateForMouseButton")]
+	[Calls(Type = typeof(MouseState), Member = "GetButtonState")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	protected virtual MouseState GetMousePointerEventData(int playerId, int mouseIndex)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetPointerData")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetPointerData")]
+	[CallsUnknownMethods(Count = 2)]
 	protected PlayerPointerEventData GetLastPointerEventData(int playerId, int pointerIndex, int pointerTypeId, bool ignorePointerTypeId, PointerEventType pointerEventType)
 	{
 		return null;
@@ -601,7 +572,7 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 	[CallerCount(Count = 0)]
 	private static bool ShouldStartDrag(Vector2 pressPos, Vector2 currentPos, float threshold, bool useDragThreshold)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -613,58 +584,47 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(PointerEventData), Member = "set_pointerPress")]
-	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetMouseInputSource")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetMouseInputSource")]
+	[Calls(Type = typeof(ExecuteEvents), Member = "Execute")]
+	[Calls(Type = typeof(PointerEventData), Member = "set_pointerPress")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	protected virtual void ProcessDrag(PlayerPointerEventData pointerEvent)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[CallsUnknownMethods(Count = 6)]
 	public override bool IsPointerOverGameObject(int pointerTypeId)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(BaseInputModule), Member = "HandlePointerExitAndEnter")]
-	[Calls(Type = typeof(EventSystem), Member = "SetSelectedGameObject")]
 	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "DeactivateModule")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(BaseInputModule), Member = "HandlePointerExitAndEnter")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[Calls(Type = typeof(EventSystem), Member = "SetSelectedGameObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	protected void ClearSelection()
 	{
 	}
 
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
 	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
 	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	public override string ToString()
 	{
 		return null;
@@ -672,36 +632,33 @@ public abstract class RewiredPointerInputModule : BaseInputModule
 
 	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = "HandleMouseTouchDeselectionOnSelectionChanged")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(ExecuteEvents), Member = "GetEventHandler")]
 	[Calls(Type = typeof(EventSystem), Member = "SetSelectedGameObject")]
 	[CallsUnknownMethods(Count = 1)]
 	protected void DeselectIfSelectionChanged(GameObject currentOverGo, BaseEventData pointerEvent)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	protected void CopyFromTo(PointerEventData from, PointerEventData to)
 	{
 	}
 
+	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMousePointerEventData")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(RewiredPointerInputModule), Member = "GetMouseInputSource")]
-	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMousePointerEventData")]
-	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMousePointerEventData")]
-	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMousePointerEventData")]
-	[CalledBy(Type = typeof(RewiredPointerInputModule), Member = "GetMousePointerEventData")]
 	[CallsUnknownMethods(Count = 2)]
 	protected PointerEventData.FramePressState StateForMouseButton(int playerId, int mouseIndex, int buttonId)
 	{
 		return default(PointerEventData.FramePressState);
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(RewiredStandaloneInputModule), Member = ".ctor")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(BaseInputModule), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	protected RewiredPointerInputModule()
 	{
 	}

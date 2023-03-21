@@ -9,8 +9,8 @@ public class BearHuntWaypoint : MissionWaypoint
 
 	public float m_WeatherTransitionSeconds;
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public BearHuntWaypoint()
 	{
 	}

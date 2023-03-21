@@ -11,8 +11,8 @@ public class LeanToSaveData
 
 	public string m_SearializedLeanTo;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public LeanToSaveData()
 	{
 	}

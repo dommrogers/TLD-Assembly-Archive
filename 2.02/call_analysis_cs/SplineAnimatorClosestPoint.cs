@@ -17,14 +17,13 @@ public class SplineAnimatorClosestPoint : MonoBehaviour
 	public float offset;
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(Spline), Member = "GetOrientationOnSpline")]
-	[Calls(Type = typeof(Spline), Member = "GetPositionOnSpline")]
-	[Calls(Type = typeof(SplineUtils), Member = "WrapValue")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Spline), Member = "GetClosestPointParam")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(SplineUtils), Member = "WrapValue")]
+	[Calls(Type = typeof(Spline), Member = "GetPositionOnSpline")]
+	[Calls(Type = typeof(Spline), Member = "GetOrientationOnSpline")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CallsUnknownMethods(Count = 11)]
 	private void Update()
 	{
 	}

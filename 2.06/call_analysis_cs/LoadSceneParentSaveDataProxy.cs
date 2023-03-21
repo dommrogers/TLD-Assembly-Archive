@@ -7,8 +7,8 @@ public class LoadSceneParentSaveDataProxy
 
 	public string m_GUID;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public LoadSceneParentSaveDataProxy()
 	{
 	}

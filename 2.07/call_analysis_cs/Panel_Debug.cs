@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.AddressableAssets;
 using TLD.OptionalContent;
+using TLD.SaveState;
 using TLD.UI;
 using TLD.UI.Generics;
 using UnityEngine;
@@ -36,31 +38,14 @@ public class Panel_Debug : Panel_AutoReferenced
 		}
 
 		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
 		[CallerCount(Count = 16)]
 		[Calls(Type = typeof(DebugElement), Member = ".ctor")]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
 		public DebugElement(string name, string setName, string initial, string[] options, Func<ConsoleComboBox, bool> onApplyDelegate)
 		{
 		}
 
+		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
 		[CallerCount(Count = 3)]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-		[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
 		[Calls(Type = typeof(DebugElement), Member = ".ctor")]
 		public DebugElement(string name, string setName, string initial, Func<string[]> populateOptionsDelegate, Func<ConsoleComboBox, bool> onApplyDelegate)
 		{
@@ -78,13 +63,14 @@ public class Panel_Debug : Panel_AutoReferenced
 		{
 		}
 
-		[CallsUnknownMethods(Count = 9)]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+		[Calls(Type = typeof(UILabel), Member = "set_text")]
+		[Calls(Type = typeof(Array), Member = "Clear")]
 		[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
 		[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-		[Calls(Type = typeof(UILabel), Member = "set_text")]
-		[CallsDeduplicatedMethods(Count = 7)]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(Array), Member = "Clear")]
+		[CallsDeduplicatedMethods(Count = 6)]
+		[CallsUnknownMethods(Count = 9)]
 		public void AssignComboBox(ConsoleComboBox comboBox)
 		{
 		}
@@ -93,7 +79,7 @@ public class Panel_Debug : Panel_AutoReferenced
 		[CallsUnknownMethods(Count = 1)]
 		public bool OnApply()
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -107,8 +93,8 @@ public class Panel_Debug : Panel_AutoReferenced
 
 		public string m_EnglishLocationName;
 
-		[CallerCount(Count = 1)]
 		[CalledBy(Type = typeof(Panel_Debug), Member = "GenerateLocationLookup")]
+		[CallerCount(Count = 1)]
 		public Location(string scene, Vector3 coordinates, string locId, string englishLocaitonName)
 		{
 		}
@@ -141,31 +127,15 @@ public class Panel_Debug : Panel_AutoReferenced
 	public Dictionary<string, List<Location>> m_LocationLookup;
 
 	[CalledBy(Type = typeof(Panel_Debug), Member = "Enable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
-	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
-	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
-	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
-	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
-	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
-	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
-	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
-	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
-	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 168)]
-	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 29)]
 	[Calls(Type = typeof(Panel_Debug), Member = "GenerateLocationLookup")]
 	[Calls(Type = typeof(Panel_Debug), Member = "GenerateLocationList")]
 	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
 	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
-	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
-	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
-	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
-	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
-	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
-	[Calls(Type = typeof(DebugElement), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 28)]
+	[CallsUnknownMethods(Count = 168)]
 	private void InitializeOptions()
 	{
 	}
@@ -176,8 +146,8 @@ public class Panel_Debug : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Panel_AutoReferenced), Member = "Awake")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_AutoReferenced), Member = "Awake")]
 	protected override void Awake()
 	{
 	}
@@ -189,17 +159,17 @@ public class Panel_Debug : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
 	[Calls(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
 	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouch")]
+	[CallsUnknownMethods(Count = 2)]
 	public override void Enable(bool enable)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_AutoReferenced), Member = "OnDestroy")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_AutoReferenced), Member = "OnDestroy")]
 	protected override void OnDestroy()
 	{
 	}
@@ -230,131 +200,121 @@ public class Panel_Debug : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void SetLineActive(int index, bool state)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(TerrainRenderingManager), Member = "ForceDisableTerrainTrees")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(TerrainRenderingManager), Member = "ForceDisableTerrainTrees")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ApplyTerrainTrees(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(RenderObjectInstance), Member = "IsCategoryEnabled")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableCategory")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "IsCategoryEnabled")]
 	private bool ApplyInstanceTrees(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableAll")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableAll")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableAll")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableAll")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ApplyRenderObjectInstances(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ApplyFarElectrolyzerOptim(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ApplyAiFrustimCulling(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ApplyFilterWorldLightsForFp(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "EnableShadows")]
+	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(Utils), Member = "EnableShadows")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ApplyShadows(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ApplySpecular(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ApplyDebugTerrain(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "OverrideTerrainPixelError")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(Convert), Member = "ToInt32")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "OverrideTerrainPixelError")]
+	[CallsUnknownMethods(Count = 3)]
 	private bool ApplyTerrainPixelError(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallsUnknownMethods(Count = 4)]
 	private bool ApplyToggleVsync(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -366,54 +326,45 @@ public class Panel_Debug : Panel_AutoReferenced
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Array), Member = "GetEnumerator")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 20)]
 	private bool UnlockAchievement(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(EpisodeManager), Member = "SetState")]
+	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(EpisodeManager), Member = "SetState")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(EpisodeManager), Member = "SetState")]
-	[Calls(Type = typeof(EpisodeManager), Member = "SetState")]
-	[Calls(Type = typeof(EpisodeManager), Member = "SetState")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(EpisodeManager), Member = "SetState")]
 	private static bool UnlockEpisode(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(Panel_Map), Member = "ClearData")]
 	[Calls(Type = typeof(MapDetailManager), Member = "LockAll")]
 	[Calls(Type = typeof(Panel_Map), Member = "DoNearbyDetailsCheck")]
 	[Calls(Type = typeof(Panel_Map), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool ApplySurvey(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 93)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 93)]
 	private string[] PopulateLoadZoneOptions()
 	{
 		return null;
@@ -426,68 +377,64 @@ public class Panel_Debug : Panel_AutoReferenced
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-	[Calls(Type = typeof(Location), Member = ".ctor")]
-	[Calls(Type = typeof(Convert), Member = "ToDouble")]
-	[Calls(Type = typeof(Convert), Member = "ToDouble")]
-	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
-	[Calls(Type = typeof(string), Member = "TrimHelper")]
-	[Calls(Type = typeof(string), Member = "TrimHelper")]
-	[Calls(Type = typeof(string), Member = "TrimHelper")]
-	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
-	[Calls(Type = typeof(string), Member = "TrimHelper")]
-	[Calls(Type = typeof(Convert), Member = "ToDouble")]
-	[Calls(Type = typeof(string), Member = "TrimHelper")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetNameForScene")]
-	[Calls(Type = typeof(string), Member = "Split")]
-	[Calls(Type = typeof(string), Member = "SplitInternal")]
-	[Calls(Type = typeof(string), Member = "Split")]
-	[Calls(Type = typeof(TextAsset), Member = "DecodeString")]
-	[Calls(Type = typeof(Resources), Member = "Load")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Resources), Member = "Load")]
+	[Calls(Type = typeof(TextAsset), Member = "DecodeString")]
+	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetNameForScene")]
+	[Calls(Type = typeof(string), Member = "TrimHelper")]
 	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
+	[Calls(Type = typeof(Convert), Member = "ToDouble")]
+	[Calls(Type = typeof(Location), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 5)]
 	private void GenerateLocationLookup()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "InitializeOptions")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Utils), Member = "GetCurrentRegion")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(Utils), Member = "GetCurrentRegion")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 12)]
 	public void GenerateLocationList()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Debug), Member = "PopulateTimelineOptions")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
 	[CallsUnknownMethods(Count = 1)]
 	public string[] PopulateTimelineOptionsToArray()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "PopulateTimelineOptionsToArray")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AssetHelper), Member = "FindAllAssetsLocations")]
 	[Calls(Type = typeof(string), Member = "Contains")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 14)]
 	public static List<string> PopulateTimelineOptions()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
 	[CallsUnknownMethods(Count = 1)]
 	private string[] PopulateLoadLocationOptions()
 	{
@@ -498,19 +445,19 @@ public class Panel_Debug : Panel_AutoReferenced
 	[CallerCount(Count = 3)]
 	private bool ApplyLoadLocationLoad(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ApplyShowTODSlider(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -521,234 +468,234 @@ public class Panel_Debug : Panel_AutoReferenced
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(MoviePlayer), Member = "Play")]
 	private bool ApplyPlayMovie(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "Play")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool ApplyPlayTimeline(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
 	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ApplyShowDaysSurvived(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(uConsole), Member = "RunCommand")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(uConsole), Member = "RunCommand")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool Toggle4DON(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(uConsole), Member = "RunCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RunCommand")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool OverrideDay4DON(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "RunCommand")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(uConsole), Member = "RunCommand")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool TransitionToDay4DON(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(uConsole), Member = "RunCommand")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool CompleteTimer4DON(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(uConsole), Member = "RunCommand")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ResetBadgeProgress4DON(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(SpecialEvent), Member = "IsActive")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool DisableSpecialEvent(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_disable_aim_breath")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool DisableAimBreathing(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_disable_aim_sway")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_disable_aim_sway")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool DisableAimSway(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_disable_aim_stamina")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool DisableAimStamina(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_disable_aim_shake")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool DisableAimShake(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_disable_ambient_sway")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_disable_ambient_sway")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool DisableAmbientSway(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool DisableAimDepthOfField(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_disable_ambient_sway")]
-	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_disable_aim_shake")]
-	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_disable_aim_stamina")]
-	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_disable_aim_breath")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_disable_aim_breath")]
 	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_disable_aim_sway")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_disable_aim_stamina")]
+	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_disable_aim_shake")]
+	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_disable_ambient_sway")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool DisableAllAimingMotion(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(float), Member = "Parse")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ChangeSteamControllerMenuScrollSensitivity(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(SaveGameSlots), Member = "GetSortedSaveSlots")]
-	[CallsUnknownMethods(Count = 7)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private string[] PopulateSaveFiles()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSortedSaveSlots")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(GameManager), Member = "LoadGame")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSortedSaveSlots")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameManager), Member = "LoadGame")]
+	[CallsUnknownMethods(Count = 3)]
 	private bool LoadSelectedSave(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "DeleteSaveFiles")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool DeleteSelectedSave(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
 	[Calls(Type = typeof(GameManager), Member = "ForceSaveGame")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	private bool OverwriteSelectedSave(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
 	[Calls(Type = typeof(OptionalContentManager), Member = "InitializeAsync")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ApplyInitializeDLC(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_dlc_list_known_content")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_dlc_list_known_content")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ApplyListKnownDLC(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_dlc_list_available_content")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ApplyListAvailableDLC(ConsoleComboBox comboBox)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

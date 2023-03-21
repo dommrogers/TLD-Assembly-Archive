@@ -38,14 +38,14 @@ public class UnityUserReportingPlatform : IUserReportingPlatform
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 52)]
+			[CallerCount(Count = 59)]
 			get
 			{
 				return null;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 101)]
+			[CallerCount(Count = 103)]
 			set
 			{
 			}
@@ -55,14 +55,14 @@ public class UnityUserReportingPlatform : IUserReportingPlatform
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 71)]
+			[CallerCount(Count = 77)]
 			set
 			{
 			}
@@ -70,23 +70,23 @@ public class UnityUserReportingPlatform : IUserReportingPlatform
 
 		public UnityWebRequest WebRequest
 		{
-			[CallerCount(Count = 5)]
 			[CompilerGenerated]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 9)]
 			get
 			{
 				return null;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 41)]
+			[CallerCount(Count = 44)]
 			set
 			{
 			}
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public PostOperation()
 		{
 		}
@@ -103,7 +103,7 @@ public class UnityUserReportingPlatform : IUserReportingPlatform
 		[Calls(Type = typeof(Recorder), Member = "get_elapsedNanoseconds")]
 		public double GetValue()
 		{
-			return default(double);
+			return 0.0;
 		}
 	}
 
@@ -135,14 +135,14 @@ public class UnityUserReportingPlatform : IUserReportingPlatform
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 52)]
+			[CallerCount(Count = 59)]
 			get
 			{
 				return null;
 			}
-			[DeduplicatedMethod]
-			[CallerCount(Count = 101)]
 			[CompilerGenerated]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 103)]
 			set
 			{
 			}
@@ -155,7 +155,7 @@ public class UnityUserReportingPlatform : IUserReportingPlatform
 			[CallerCount(Count = 8)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
@@ -172,11 +172,11 @@ public class UnityUserReportingPlatform : IUserReportingPlatform
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
+			[CompilerGenerated]
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
-			[CompilerGenerated]
 			set
 			{
 			}
@@ -184,12 +184,12 @@ public class UnityUserReportingPlatform : IUserReportingPlatform
 
 		public int MaximumWidth
 		{
-			[CallerCount(Count = 1)]
-			[DeduplicatedMethod]
 			[CompilerGenerated]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 1)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
@@ -210,7 +210,7 @@ public class UnityUserReportingPlatform : IUserReportingPlatform
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 20)]
+			[CallerCount(Count = 24)]
 			set
 			{
 			}
@@ -220,14 +220,14 @@ public class UnityUserReportingPlatform : IUserReportingPlatform
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 15)]
+			[CallerCount(Count = 17)]
 			get
 			{
 				return null;
 			}
-			[CallerCount(Count = 20)]
-			[DeduplicatedMethod]
 			[CompilerGenerated]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 23)]
 			set
 			{
 			}
@@ -261,7 +261,7 @@ public class UnityUserReportingPlatform : IUserReportingPlatform
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 41)]
+			[CallerCount(Count = 46)]
 			set
 			{
 			}
@@ -269,16 +269,16 @@ public class UnityUserReportingPlatform : IUserReportingPlatform
 
 		public Texture2D TextureResized
 		{
-			[CallerCount(Count = 3)]
 			[CompilerGenerated]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 3)]
 			get
 			{
 				return null;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 17)]
+			[CallerCount(Count = 19)]
 			set
 			{
 			}
@@ -291,7 +291,7 @@ public class UnityUserReportingPlatform : IUserReportingPlatform
 			[CallerCount(Count = 3)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
@@ -303,23 +303,23 @@ public class UnityUserReportingPlatform : IUserReportingPlatform
 
 		public int WaitFrames
 		{
-			[CallerCount(Count = 3)]
 			[CompilerGenerated]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 3)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
-			[CallerCount(Count = 0)]
 			[CompilerGenerated]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			set
 			{
 			}
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public ScreenshotOperation()
 		{
 		}
@@ -347,14 +347,16 @@ public class UnityUserReportingPlatform : IUserReportingPlatform
 	private List<PostOperation> taskOperations;
 
 	[CalledBy(Type = typeof(UnityUserReporting), Member = "GetPlatform")]
-	[CallsUnknownMethods(Count = 58)]
-	[Calls(Type = typeof(Application), Member = "add_logMessageReceivedThreaded")]
-	[Calls(Type = typeof(Recorder), Member = "set_enabled")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Sampler), Member = "get_isValid")]
-	[Calls(Type = typeof(Sampler), Member = "Get")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Sampler), Member = "Get")]
+	[Calls(Type = typeof(Sampler), Member = "get_isValid")]
 	[Calls(Type = typeof(Sampler), Member = "GetRecorder")]
+	[Calls(Type = typeof(Recorder), Member = "set_enabled")]
+	[Calls(Type = typeof(Application), Member = "add_logMessageReceivedThreaded")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 58)]
 	public UnityUserReportingPlatform()
 	{
 	}
@@ -364,66 +366,47 @@ public class UnityUserReportingPlatform : IUserReportingPlatform
 	[CallsDeduplicatedMethods(Count = 2)]
 	public T DeserializeJson<T>(string json)
 	{
-		return (T)null;
+		return default(T);
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Stopwatch), Member = "Start")]
+	[Calls(Type = typeof(Screen), Member = "get_width")]
+	[Calls(Type = typeof(Screen), Member = "get_height")]
+	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
+	[Calls(Type = typeof(Camera), Member = "get_targetTexture")]
+	[Calls(Type = typeof(Camera), Member = "set_targetTexture")]
+	[Calls(Type = typeof(Camera), Member = "Render")]
 	[Calls(Type = typeof(Stopwatch), Member = "Stop")]
 	[Calls(Type = typeof(Stopwatch), Member = "get_ElapsedMilliseconds")]
 	[Calls(Type = typeof(UserReportingClient), Member = "SampleClientMetric")]
-	[Calls(Type = typeof(Stopwatch), Member = "Start")]
+	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
+	[Calls(Type = typeof(Texture2D), Member = "ReadPixels")]
+	[Calls(Type = typeof(Texture2D), Member = "Apply")]
 	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
 	[Calls(Type = typeof(Texture2D), Member = "GetPixels")]
 	[Calls(Type = typeof(Texture2D), Member = "SetPixels")]
-	[Calls(Type = typeof(Texture2D), Member = "Apply")]
-	[Calls(Type = typeof(Stopwatch), Member = "Stop")]
 	[Calls(Type = typeof(ImageConversion), Member = "EncodeToPNG")]
-	[Calls(Type = typeof(Stopwatch), Member = "Start")]
-	[Calls(Type = typeof(Stopwatch), Member = "Stop")]
-	[Calls(Type = typeof(Stopwatch), Member = "get_ElapsedMilliseconds")]
-	[Calls(Type = typeof(UserReportingClient), Member = "SampleClientMetric")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 14)]
 	[CallsUnknownMethods(Count = 65)]
-	[Calls(Type = typeof(Texture2D), Member = "Apply")]
-	[Calls(Type = typeof(Stopwatch), Member = "get_ElapsedMilliseconds")]
-	[Calls(Type = typeof(Texture2D), Member = "ReadPixels")]
-	[Calls(Type = typeof(UserReportingClient), Member = "SampleClientMetric")]
-	[Calls(Type = typeof(Texture2D), Member = "Apply")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 15)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Stopwatch), Member = "Start")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Screen), Member = "get_width")]
-	[Calls(Type = typeof(Screen), Member = "get_height")]
-	[Calls(Type = typeof(Stopwatch), Member = "Start")]
-	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
-	[Calls(Type = typeof(Camera), Member = "get_targetTexture")]
-	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
-	[Calls(Type = typeof(Camera), Member = "Render")]
-	[Calls(Type = typeof(Camera), Member = "set_targetTexture")]
-	[Calls(Type = typeof(Stopwatch), Member = "Stop")]
-	[Calls(Type = typeof(Stopwatch), Member = "get_ElapsedMilliseconds")]
-	[Calls(Type = typeof(UserReportingClient), Member = "SampleClientMetric")]
-	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
-	[Calls(Type = typeof(Screen), Member = "get_width")]
-	[Calls(Type = typeof(Screen), Member = "get_height")]
-	[Calls(Type = typeof(Texture2D), Member = "ReadPixels")]
-	[Calls(Type = typeof(Camera), Member = "set_targetTexture")]
 	public void OnEndOfFrame(UserReportingClient client)
 	{
 	}
 
-	[Calls(Type = typeof(UnityWebRequest), Member = "SetRequestHeader")]
-	[CallsUnknownMethods(Count = 32)]
-	[Calls(Type = typeof(UnityWebRequest), Member = "SendWebRequest")]
-	[Calls(Type = typeof(UnityWebRequest), Member = "set_downloadHandler")]
-	[Calls(Type = typeof(UploadHandlerRaw), Member = ".ctor")]
-	[Calls(Type = typeof(UnityWebRequest), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityWebRequest), Member = ".ctor")]
+	[Calls(Type = typeof(UploadHandlerRaw), Member = ".ctor")]
 	[Calls(Type = typeof(UnityWebRequest), Member = "set_uploadHandler")]
+	[Calls(Type = typeof(UnityWebRequest), Member = "set_downloadHandler")]
+	[Calls(Type = typeof(UnityWebRequest), Member = "SetRequestHeader")]
+	[Calls(Type = typeof(UnityWebRequest), Member = "SendWebRequest")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 32)]
 	public void Post(string endpoint, string contentType, byte[] content, Action<float, float> progressCallback, Action<bool, byte[]> callback)
 	{
 	}
@@ -435,111 +418,90 @@ public class UnityUserReportingPlatform : IUserReportingPlatform
 	{
 	}
 
-	[Calls(Type = typeof(Analytics), Member = "CustomEvent")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Analytics), Member = "CustomEvent")]
 	public void SendAnalyticsEvent(string eventName, Dictionary<string, object> eventData)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Unity.Cloud.UserReporting.Plugin.SimpleJson.SimpleJson), Member = "SerializeObject")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Unity.Cloud.UserReporting.Plugin.SimpleJson.SimpleJson), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string SerializeJson(object instance)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 10)]
 	public void TakeScreenshot(int frameNumber, int maximumWidth, int maximumHeight, object source, Action<int, byte[]> callback)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(UnityWebRequest), Member = "get_error")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(UnityWebRequest), Member = "get_responseCode")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UserReportingClient), Member = "LogEvent")]
-	[Calls(Type = typeof(UnityWebRequest), Member = "get_responseCode")]
-	[CallsUnknownMethods(Count = 44)]
-	[Calls(Type = typeof(UnityWebRequest), Member = "get_downloadProgress")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[Calls(Type = typeof(UserReportingClient), Member = "LogEvent")]
-	[Calls(Type = typeof(UnityWebRequest), Member = "get_error")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(Recorder), Member = "get_isValid")]
 	[Calls(Type = typeof(UserReportingClient), Member = "SampleMetric")]
 	[Calls(Type = typeof(UnityWebRequest), Member = "get_uploadProgress")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityWebRequest), Member = "get_downloadProgress")]
+	[Calls(Type = typeof(Action<, >), Member = "Invoke")]
+	[Calls(Type = typeof(UnityWebRequest), Member = "get_error")]
+	[Calls(Type = typeof(UnityWebRequest), Member = "get_responseCode")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 42)]
 	public void Update(UserReportingClient client)
 	{
 	}
 
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[CallsUnknownMethods(Count = 46)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "GetInstance")]
-	[Calls(Type = typeof(CultureInfo), Member = "get_InvariantCulture")]
-	[CallsDeduplicatedMethods(Count = 68)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CultureInfo), Member = "get_InvariantCulture")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "GetInstance")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[CallsDeduplicatedMethods(Count = 68)]
+	[CallsUnknownMethods(Count = 46)]
 	public virtual IDictionary<string, string> GetDeviceMetadata()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 22)]
+	[CallsUnknownMethods(Count = 8)]
 	public virtual Dictionary<string, string> GetSamplerNames()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(Vector3), Member = "ToString")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Vector3), Member = "ToString")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 35)]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Vector3), Member = "ToString")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[CallsDeduplicatedMethods(Count = 19)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Vector3), Member = "ToString")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[Calls(Type = typeof(RaycastHit), Member = "get_transform")]
+	[CallsDeduplicatedMethods(Count = 19)]
+	[CallsUnknownMethods(Count = 35)]
 	public virtual void ModifyUserReport(UserReport userReport)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(UserReportingClient), Member = "SampleMetric")]
-	[Calls(Type = typeof(UserReportingClient), Member = "SampleMetric")]
-	[Calls(Type = typeof(UserReportingClient), Member = "SampleMetric")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(UserReportingClient), Member = "SampleMetric")]
-	[Calls(Type = typeof(UserReportingClient), Member = "SampleMetric")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UserReportingClient), Member = "SampleMetric")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 7)]
 	public virtual void SampleAutomaticMetrics(UserReportingClient client)
 	{
 	}

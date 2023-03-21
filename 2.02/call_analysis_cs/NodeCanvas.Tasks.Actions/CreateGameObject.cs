@@ -14,12 +14,14 @@ public class CreateGameObject : ActionTask
 
 	public BBParameter<GameObject> saveAs;
 
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 17)]
 	protected override void OnExecute()
 	{
 	}

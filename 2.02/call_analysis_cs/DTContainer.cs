@@ -11,9 +11,9 @@ public class DTContainer : ScriptableObject
 
 	public List<DialogueTreeController> m_DialogueTreeControllers;
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public DTContainer()
 	{
 	}

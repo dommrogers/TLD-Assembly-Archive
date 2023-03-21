@@ -15,11 +15,11 @@ internal struct CopyPresenceOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(CopyPresenceOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyPresenceOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyPresenceOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyPresenceOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -27,34 +27,34 @@ internal struct CopyPresenceOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId TargetUserId
 	{
+		[CalledBy(Type = typeof(CopyPresenceOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyPresenceOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyPresenceOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyPresenceOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CopyPresenceOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(CopyPresenceOptionsInternal), Member = "set_TargetUserId")]
-	[CallerCount(Count = 0)]
 	public void Set(CopyPresenceOptions other)
 	{
 	}
 
+	[CalledBy(Type = typeof(PresenceInterface), Member = "CopyPresence")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CopyPresenceOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(CopyPresenceOptionsInternal), Member = "set_TargetUserId")]
-	[CalledBy(Type = typeof(PresenceInterface), Member = "CopyPresence")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

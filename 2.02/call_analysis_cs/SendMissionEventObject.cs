@@ -7,20 +7,20 @@ public class SendMissionEventObject : MonoBehaviour
 
 	public SendMissionEventTrigger m_TriggerRequiredForEvent;
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void ProcessInteraction()
 	{
 	}
 
-	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SendMissionEvent()
 	{
 	}

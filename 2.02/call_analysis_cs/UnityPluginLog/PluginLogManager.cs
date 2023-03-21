@@ -1,8 +1,6 @@
 using System;
-using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
-using UnityAOT;
 using UnityPlugin;
 
 namespace UnityPluginLog;
@@ -15,8 +13,8 @@ public class PluginLogManager
 	{
 		public int hresult;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass5_0()
 		{
 		}
@@ -25,7 +23,7 @@ public class PluginLogManager
 		[CallsUnknownMethods(Count = 1)]
 		internal IntPtr _003CResolveSystemMessage_003Eb__0()
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
@@ -33,33 +31,33 @@ public class PluginLogManager
 	{
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
 	}
 
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsUnknownMethods(Count = 11)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 11)]
 	public static void Create(string logPath = "")
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalString")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 15)]
 	public static string ResolveSystemMessage(int hresult)
 	{
@@ -80,20 +78,20 @@ public class PluginLogManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static int GetLogVerbosity(LogTarget target)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static int GetLogChannels(LogTarget target)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
@@ -103,35 +101,30 @@ public class PluginLogManager
 	{
 	}
 
-	[Conditional(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityPluginLogPlugin), Member = "Log_LogException")]
 	public static void LogException(string module, uint hresult, string message, string fileAndLine = "")
 	{
 	}
 
-	[Conditional(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityPluginLogPlugin), Member = "Log_LogError")]
 	public static void LogError(string module, string message, string fileAndLine = "")
 	{
 	}
 
-	[Conditional(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityPluginLogPlugin), Member = "Log_Log")]
 	public static void Log(string module, string message, string fileAndLine = "")
 	{
 	}
 
-	[Calls(Type = typeof(UnityPluginLogPlugin), Member = "Log_Trace")]
 	[CallerCount(Count = 0)]
-	[Conditional(/*Could not decode attribute arguments.*/)]
+	[Calls(Type = typeof(UnityPluginLogPlugin), Member = "Log_Trace")]
 	public static void Trace(string module, string message, string fileAndLine = "")
 	{
 	}
 
-	[Conditional(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PluginLogManager), Member = "GetMetadata")]
 	[Calls(Type = typeof(UnityPluginLogPlugin), Member = "Log_LogException")]
@@ -139,7 +132,6 @@ public class PluginLogManager
 	{
 	}
 
-	[Conditional(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PluginLogManager), Member = "GetMetadata")]
 	[Calls(Type = typeof(UnityPluginLogPlugin), Member = "Log_LogError")]
@@ -147,7 +139,6 @@ public class PluginLogManager
 	{
 	}
 
-	[Conditional(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PluginLogManager), Member = "GetMetadata")]
 	[Calls(Type = typeof(UnityPluginLogPlugin), Member = "Log_Log")]
@@ -155,20 +146,19 @@ public class PluginLogManager
 	{
 	}
 
-	[Calls(Type = typeof(UnityPluginLogPlugin), Member = "Log_Trace")]
-	[Calls(Type = typeof(PluginLogManager), Member = "GetMetadata")]
 	[CallerCount(Count = 0)]
-	[Conditional(/*Could not decode attribute arguments.*/)]
+	[Calls(Type = typeof(PluginLogManager), Member = "GetMetadata")]
+	[Calls(Type = typeof(UnityPluginLogPlugin), Member = "Log_Trace")]
 	public static void Trace(string message)
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(PluginLogManager), Member = "LogException")]
 	[CalledBy(Type = typeof(PluginLogManager), Member = "LogError")]
 	[CalledBy(Type = typeof(PluginLogManager), Member = "Log")]
 	[CalledBy(Type = typeof(PluginLogManager), Member = "Trace")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void GetMetadata(int stackDepth, out string fileAndLine, out string method, out string module)
 	{
 		fileAndLine = null;
@@ -176,7 +166,6 @@ public class PluginLogManager
 		module = null;
 	}
 
-	[UnityAOT.MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	public static void PluginLogThunk(int channel, string message)
@@ -184,7 +173,7 @@ public class PluginLogManager
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PluginLogManager()
 	{
 	}

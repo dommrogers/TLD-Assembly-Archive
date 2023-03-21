@@ -11,7 +11,7 @@ public class OpenCloseSaveDataProxy
 	public string m_SafeSerialized;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public OpenCloseSaveDataProxy()
 	{
 	}

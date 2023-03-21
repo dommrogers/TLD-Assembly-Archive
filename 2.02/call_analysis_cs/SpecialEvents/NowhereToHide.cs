@@ -26,24 +26,24 @@ public static class NowhereToHide
 
 	public static bool s_Debug;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 34)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool IsCurrentExperienceMode()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public static bool MatchesExperienceMode(ExperienceModeType xpMode)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(SaveGameSystem), Member = "DeleteSaveFiles")]
 	[CalledBy(Type = typeof(PostSpecialEvent), Member = "ManageSaveData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SaveGameSystem), Member = "DeleteSaveFiles")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void PostEventDeleteSaveSlot(SaveSlotInfo ssi)
 	{

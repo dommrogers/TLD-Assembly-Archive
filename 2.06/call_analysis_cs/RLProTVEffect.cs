@@ -23,10 +23,10 @@ public sealed class RLProTVEffect : PostProcessEffectSettings
 
 	public FloatParameter scale;
 
-	[CallsUnknownMethods(Count = 46)]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 46)]
 	public RLProTVEffect()
 	{
 	}

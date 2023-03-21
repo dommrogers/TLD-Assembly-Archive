@@ -1,6 +1,6 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.GameplayTags;
+using TLD.SaveState;
 using UnityEngine;
 
 public class StartSettings : MonoBehaviour
@@ -49,17 +49,17 @@ public class StartSettings : MonoBehaviour
 
 	private int[] m_WeatherWeights;
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 22)]
 	public string PickRandomSpawnPointName()
 	{
@@ -69,36 +69,35 @@ public class StartSettings : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool ShouldSetWeather()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TeleportPlayerAfterSceneLoad")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TeleportPlayerAfterSceneLoad")]
-	[Calls(Type = typeof(WeatherTransition), Member = "ChooseNextWeatherSet")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
-	[Calls(Type = typeof(WeatherTransition), Member = "ForceUnmanagedWeatherStage")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TeleportPlayerAfterSceneLoad")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ForceUnmanagedWeatherStage")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ChooseNextWeatherSet")]
+	[CallsUnknownMethods(Count = 4)]
 	public void SetWeather()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(WeatherTransition), Member = "ChooseNextWeatherSet")]
 	[CallsUnknownMethods(Count = 3)]
 	private void SetRandomWeather()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(WeatherTransition), Member = "ForceUnmanagedWeatherStage")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(WeatherTransition), Member = "ForceUnmanagedWeatherStage")]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetLockedWeather()
 	{
 	}
@@ -106,30 +105,31 @@ public class StartSettings : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool ShouldSetTime()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "TeleportPlayerAfterSceneLoad")]
+	[CallerCount(Count = 2)]
 	public void SetTime()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 11)]
 	private void SetRandomTime()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "TryParseTOD")]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+	[CallsUnknownMethods(Count = 3)]
 	private void SetLockedTime()
 	{
 	}

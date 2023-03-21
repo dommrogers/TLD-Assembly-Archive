@@ -5,9 +5,9 @@ public class ChimneySaveList
 {
 	public List<LinkedChimneySaveData> m_SerializedChimneyData;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public ChimneySaveList()
 	{
 	}

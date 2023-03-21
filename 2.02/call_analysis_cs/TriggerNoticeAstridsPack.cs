@@ -5,17 +5,17 @@ public class TriggerNoticeAstridsPack : MonoBehaviour
 {
 	private bool hasBeenPlayed;
 
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnTriggerEnter(Collider other)
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public TriggerNoticeAstridsPack()
 	{
 	}

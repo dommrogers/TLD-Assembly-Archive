@@ -10,16 +10,16 @@ public class GameSaveLoadedArgs : EventArgs
 
 	public byte[] Data
 	{
-		[CallerCount(Count = 98)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 113)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 265)]
+		[CallerCount(Count = 269)]
 		private set
 		{
 		}

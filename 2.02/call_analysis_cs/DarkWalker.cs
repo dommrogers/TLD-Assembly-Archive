@@ -10,8 +10,8 @@ public class DarkWalker : MonoBehaviour
 	public Transform m_RightFoot;
 
 	[DeduplicatedMethod]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public DarkWalker()
 	{
 	}

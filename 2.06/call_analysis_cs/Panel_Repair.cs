@@ -97,36 +97,36 @@ public class Panel_Repair : Panel_AutoReferenced, IAccelerateTimeProvider
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
 	[Calls(Type = typeof(Panel_Repair), Member = "UpdateRepair")]
 	[Calls(Type = typeof(Panel_Repair), Member = "ExitInterface")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Repair), Member = "RefreshLabels")]
-	[Calls(Type = typeof(Panel_Repair), Member = "RefreshMaterialsTable")]
-	[Calls(Type = typeof(Panel_Repair), Member = "RefreshTools")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Panel_Repair), Member = "DisableProgressBar")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(Panel_Repair), Member = "DisableProgressBar")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_Repair), Member = "RefreshTools")]
+	[Calls(Type = typeof(Panel_Repair), Member = "RefreshMaterialsTable")]
+	[Calls(Type = typeof(Panel_Repair), Member = "RefreshLabels")]
 	[Calls(Type = typeof(Panel_Repair), Member = "ExitInterface")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void Enable(bool enable)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Repair), Member = "RefreshMaterialsTable")]
+	[Calls(Type = typeof(Panel_Repair), Member = "RefreshLabels")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Repair), Member = "RefreshLabels")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Panel_Repair), Member = "RefreshMaterialsTable")]
 	public void OnNextTool()
 	{
 	}
@@ -141,39 +141,27 @@ public class Panel_Repair : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Repair), Member = "StartRepair")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_Repair), Member = "GetModifiedRepairDuration")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[CallsUnknownMethods(Count = 35)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Panel_Repair), Member = "GetSelectedTool")]
 	[Calls(Type = typeof(Panel_Repair), Member = "ToolCanRepairSelectedItem")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_Repair), Member = "GetSelectedTool")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(Panel_Repair), Member = "GetSelectedRepairableItem")]
-	[Calls(Type = typeof(Panel_Repair), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Panel_Repair), Member = "GetModifiedRepairDuration")]
+	[Calls(Type = typeof(Panel_Repair), Member = "StartRepair")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 35)]
 	public void OnRepair()
 	{
 	}
@@ -183,30 +171,34 @@ public class Panel_Repair : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Repair), Member = "Enable")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "OnCancel")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "Update")]
-	[Calls(Type = typeof(Panel_Repair), Member = "RestoreTimeOfDay")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "OnCancel")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(Panel_Repair), Member = "RestoreTimeOfDay")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private void ExitInterface()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Repair), Member = "DisableProgressBar")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_Repair), Member = "RestoreTimeOfDay")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Panel_Repair), Member = "ExitInterface")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Panel_Repair), Member = "ExitInterface")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(Panel_Repair), Member = "RestoreTimeOfDay")]
+	[Calls(Type = typeof(Panel_Repair), Member = "DisableProgressBar")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnCancel()
 	{
 	}
@@ -220,159 +212,141 @@ public class Panel_Repair : Panel_AutoReferenced, IAccelerateTimeProvider
 	[CallerCount(Count = 0)]
 	public bool RepairInProgress()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_Repair), Member = "GetModifiedRepairDuration")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairFinished")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "DegradeToolUsedForRepair")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "GetModifiedRepairDuration")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "RefreshChanceSuccessLabel")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "OnRepair")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "GetChanceSuccess")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "OnRepair")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "OnRepair")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "OnRepair")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallerCount(Count = 10)]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "RefreshChanceSuccessLabel")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "DegradeToolUsedForRepair")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairFinished")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "GetModifiedRepairDuration")]
+	[CallerCount(Count = 10)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private GameObject GetSelectedTool()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(Panel_Repair), Member = "OnRepair")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "ToolCanRepairSelectedItem")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "OnRepair")]
 	[CallsUnknownMethods(Count = 2)]
 	private GameObject GetSelectedRepairableItem()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairFinished")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "DegradeToolUsedForRepair")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(GearItemObject), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairFinished")]
-	[Calls(Type = typeof(Panel_Repair), Member = "ToolCanRepairSelectedItem")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "Enable")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "DegradeToolUsedForRepair")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairFinished")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItemObject), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Repair), Member = "ToolCanRepairSelectedItem")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void RefreshTools()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairFinished")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairFinished")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "Refresh")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "OnPrevTool")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "OnNextTool")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "Enable")]
-	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
-	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "OnNextTool")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "OnPrevTool")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "Refresh")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairFinished")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 6)]
-	[CallsUnknownMethods(Count = 7)]
+	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
 	[Calls(Type = typeof(HarvestRepairMaterial), Member = "ShowItem")]
+	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	private void RefreshMaterialsTable()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Repair), Member = "RollForRepairSuccess")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "RefreshChanceSuccessLabel")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "RollForRepairSuccess")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "StartRepair")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Repair), Member = "GetSelectedTool")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Repair), Member = "GetSelectedTool")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private float GetChanceSuccess()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsUnknownMethods(Count = 1)]
 	private void RefreshRepairSkillLabel()
 	{
 	}
 
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "RefreshLabels")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Panel_Repair), Member = "GetChanceSuccess")]
 	[Calls(Type = typeof(Panel_Repair), Member = "GetModifiedRepairDuration")]
 	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Repair), Member = "GetSelectedTool")]
 	[Calls(Type = typeof(Panel_Repair), Member = "ToolCanRepairSelectedItem")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Panel_Repair), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Panel_Repair), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private void RefreshChanceSuccessLabel()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTextureNonNull")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "OnNextTool")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "OnPrevTool")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "Refresh")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairFinished")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "Enable")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Panel_Repair), Member = "RefreshChanceSuccessLabel")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_Repair), Member = "RefreshChanceSuccessLabel")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 	[Calls(Type = typeof(GearItem), Member = "GetColorBasedOnCondition")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTextureNonNull")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 9)]
 	private void RefreshLabels()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "OnCancel")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "Initialize")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "OnCancel")]
 	[CallerCount(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "Initialize")]
+	[CallsUnknownMethods(Count = 3)]
 	private void DisableProgressBar()
 	{
 	}
@@ -384,54 +358,54 @@ public class Panel_Repair : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Repair), Member = "RefreshTools")]
-	[Calls(Type = typeof(GearItem), Member = "DegradeOnUse")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Repair), Member = "GetSelectedTool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Repair), Member = "GetSelectedTool")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "DegradeOnUse")]
+	[Calls(Type = typeof(Panel_Repair), Member = "RefreshTools")]
+	[CallsUnknownMethods(Count = 1)]
 	private void DegradeToolUsedForRepair()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairFinished")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void ConsumeMaterialsUsedForRepair()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	private void StopProgressBarAudio()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Repair), Member = "RefreshMaterialsTable")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "UpdateRepair")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "UpdateRepair")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairSuccessful")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairFailed")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "RefreshTable")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
-	[Calls(Type = typeof(Panel_Repair), Member = "RefreshLabels")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_Repair), Member = "RefreshTools")]
-	[Calls(Type = typeof(Panel_Repair), Member = "RefreshMaterialsTable")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairSuccessful")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "UpdateRepair")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Panel_Repair), Member = "RestoreTimeOfDay")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_Repair), Member = "GetSelectedTool")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItem), Member = "DegradeOnUse")]
 	[Calls(Type = typeof(Panel_Repair), Member = "RefreshTools")]
 	[Calls(Type = typeof(Panel_Repair), Member = "ConsumeMaterialsUsedForRepair")]
-	[Calls(Type = typeof(Panel_Repair), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(Panel_Repair), Member = "RestoreTimeOfDay")]
+	[Calls(Type = typeof(Panel_Repair), Member = "RefreshMaterialsTable")]
+	[Calls(Type = typeof(Panel_Repair), Member = "RefreshLabels")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "RefreshTable")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void RepairFinished()
 	{
 	}
@@ -446,115 +420,113 @@ public class Panel_Repair : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Repair), Member = "RepairFinished")]
-	[Calls(Type = typeof(Panel_Repair), Member = "UpdateSkillAfterRepair")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(GearItem), Member = "UpdateDamageShader")]
+	[Calls(Type = typeof(Panel_Repair), Member = "UpdateSkillAfterRepair")]
+	[Calls(Type = typeof(Panel_Repair), Member = "RepairFinished")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void RepairSuccessful()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "Update")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Repair), Member = "RepairFinished")]
-	[Calls(Type = typeof(Panel_Repair), Member = "UpdateSkillAfterRepair")]
-	[Calls(Type = typeof(GearItem), Member = "UpdateDamageShader")]
-	[Calls(Type = typeof(Panel_Repair), Member = "RepairFinished")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(Panel_Repair), Member = "UpdateSkillAfterRepair")]
+	[Calls(Type = typeof(Panel_Repair), Member = "RepairFinished")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "UpdateDamageShader")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateRepair()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Repair), Member = "GetChanceSuccess")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool RollForRepairSuccess()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "ExitInterface")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "OnCancel")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairFinished")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[CallsUnknownMethods(Count = 2)]
 	private void RestoreTimeOfDay()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
+	[CallsUnknownMethods(Count = 1)]
 	private void AccelerateTimeOfDay(int minutes)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Repair), Member = "OnRepair")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
 	[Calls(Type = typeof(Panel_Repair), Member = "GetChanceSuccess")]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "OnRepair")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 5)]
 	private void StartRepair(int durationMinutes, string repairAudio)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "UpdateRepair")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairFailed")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairSuccessful")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "UpdateRepair")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairFailed")]
 	[Calls(Type = typeof(PlayerSkills), Member = "RollForSkillIncrease")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairSuccessful")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateSkillAfterRepair(bool success)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "RefreshChanceSuccessLabel")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "OnRepair")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Panel_Repair), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "RefreshChanceSuccessLabel")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Repair), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 3)]
 	private int GetModifiedRepairDuration(Repairable r, int baseMinutes)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Panel_Repair), Member = "GetSelectedRepairableItem")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "RefreshChanceSuccessLabel")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "RefreshTools")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "OnRepair")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "RefreshTools")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "RefreshChanceSuccessLabel")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_Repair), Member = "GetSelectedRepairableItem")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool ToolCanRepairSelectedItem(GameObject toolObject)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -562,7 +534,7 @@ public class Panel_Repair : Panel_AutoReferenced, IAccelerateTimeProvider
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsAcceleratingTime()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -573,14 +545,14 @@ public class Panel_Repair : Panel_AutoReferenced, IAccelerateTimeProvider
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 0)]
+	[CallerCount(Count = 2)]
 	public string GetSpriteName()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	public UIPanel GetPanelToFade()
 	{
 		return null;
@@ -601,7 +573,7 @@ public class Panel_Repair : Panel_AutoReferenced, IAccelerateTimeProvider
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 1)]
+	[CallerCount(Count = 2)]
 	public UIProgressBar GetActionProgress()
 	{
 		return null;

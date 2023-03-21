@@ -26,20 +26,20 @@ public class MoveAnimator : MonoBehaviour
 	private float lastRotY;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
 	[Calls(Type = typeof(Quaternion), Member = "Inverse")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 23)]
 	private void OnAnimatorMove()
 	{
 	}

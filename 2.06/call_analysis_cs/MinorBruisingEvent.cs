@@ -9,11 +9,11 @@ public class MinorBruisingEvent : StruggleDamageEvent
 
 	public float m_DamageMax;
 
-	[Calls(Type = typeof(StruggleDamageEvent), Member = "ApplyDamage")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(StruggleDamageEvent), Member = "ApplyDamage")]
 	public override void OnExecute()
 	{
 	}
@@ -22,7 +22,7 @@ public class MinorBruisingEvent : StruggleDamageEvent
 	[CallerCount(Count = 0)]
 	public override bool IsLocationAvailable()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

@@ -22,8 +22,8 @@ public class CheatTowardsCamera : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public CheatTowardsCamera()
 	{
 	}

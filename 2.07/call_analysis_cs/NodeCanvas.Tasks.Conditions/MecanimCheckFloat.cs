@@ -15,11 +15,11 @@ public class MecanimCheckFloat : ConditionTask<Animator>
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -27,11 +27,12 @@ public class MecanimCheckFloat : ConditionTask<Animator>
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

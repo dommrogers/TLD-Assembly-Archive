@@ -17,12 +17,12 @@ public class XboxUserProfileListPlugin
 	public static extern IntPtr XboxUserProfileList_GetAt(IntPtr self, uint idx);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void XboxUserProfileList_Dispose(IntPtr self);
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public XboxUserProfileListPlugin()
 	{
 	}

@@ -12,30 +12,28 @@ public class AfflictionRemedy
 
 	private const string GEAR_PREFIX = "GEAR_";
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PlayerHasRemedy")]
 	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyStandardRemedy")]
 	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyAlternateRemedy")]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "GetGearItemName")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PlayerHasRemedy")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(AfflictionRemedy), Member = "GetGearItemName")]
 	[Calls(Type = typeof(GearItemObjectExtensions), Member = "NumGearInList")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool PlayerHasRequiredRemedy()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyAlternateRemedy")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateRemedyUI")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "GetAfflictionsRemediesParams")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "GetAfflictionsRemediesParams")]
-	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyStandardRemedy")]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(AfflictionRemedy), Member = "PlayerHasRequiredRemedy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(AfflictionRemedy), Member = "GetSpriteName")]
+	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyStandardRemedy")]
+	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyAlternateRemedy")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "GetAfflictionsRemediesParams")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateRemedyUI")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetGearItemName()
 	{
 		return null;
@@ -48,31 +46,25 @@ public class AfflictionRemedy
 		return null;
 	}
 
+	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyStandardRemedy")]
+	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyAlternateRemedy")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyStandardTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "IsWaterTreamentInProgress")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyAlternateTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "IsWaterTreamentInProgress")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PlayerHasRemedy")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateRemedyUI")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyAlternateTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyStandardTreatment")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyAlternateRemedy")]
 	[CallerCount(Count = 10)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyStandardTreatment")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyStandardRemedy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsWaterSupply()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 	[CallsUnknownMethods(Count = 1)]
 	public string GetDisplayName()
@@ -80,8 +72,8 @@ public class AfflictionRemedy
 		return null;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public AfflictionRemedy()
 	{
 	}

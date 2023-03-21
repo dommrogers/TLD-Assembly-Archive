@@ -12,9 +12,9 @@ public class ScriptActionsTrigger : MonoBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
-	[CallerCount(Count = 0)]
 	private void OnTriggerExit(Collider c)
 	{
 	}

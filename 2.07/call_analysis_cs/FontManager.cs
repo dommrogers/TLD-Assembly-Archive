@@ -30,13 +30,12 @@ public class FontManager : MonoBehaviour
 
 	private static CharacterSet m_CurrentCharacterSet;
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_lang")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetLanguage")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_lang")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(FontManager), Member = "ResetFontsForCharacterSet")]
 	[Calls(Type = typeof(UIFont), Member = "set_replacement")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UIFont), Member = "set_replacement")]
+	[CallsUnknownMethods(Count = 2)]
 	public void UpdateDummyFonts()
 	{
 	}
@@ -65,27 +64,27 @@ public class FontManager : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
+	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "RenderFontTest")]
 	[CalledBy(Type = typeof(FontManager), Member = "UpdateDummyFonts")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(TMP_FontAsset), Member = "ClearFontAssetTables")]
 	[Calls(Type = typeof(TMP_FontAsset), Member = "ClearAtlasTextures")]
 	[Calls(Type = typeof(TMP_FontAsset), Member = "ReadFontAssetDefinition")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
-	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "RenderFontTest")]
 	public void ResetFontsForCharacterSet(CharacterSet characterSet)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TMP_FontAsset), Member = "ClearFontAssetTables")]
 	[Calls(Type = typeof(TMP_FontAsset), Member = "ClearAtlasTextures")]
 	[Calls(Type = typeof(TMP_FontAsset), Member = "ReadFontAssetDefinition")]
-	[Calls(Type = typeof(TMP_FontAsset), Member = "ClearFontAssetTables")]
-	[CallerCount(Count = 0)]
 	private void ResetTMPFont(TMP_FontAsset font)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public FontManager()
 	{
 	}

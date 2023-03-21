@@ -21,7 +21,7 @@ public class TweenAlpha : UITweener
 		[Calls(Type = typeof(TweenAlpha), Member = "get_value")]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(TweenAlpha), Member = "set_value")]
@@ -32,50 +32,48 @@ public class TweenAlpha : UITweener
 
 	public float value
 	{
-		[CalledBy(Type = typeof(StatusBar), Member = "SetAlpha")]
-		[Calls(Type = typeof(Object), Member = "op_Inequality")]
 		[CalledBy(Type = typeof(TweenAlpha), Member = "get_alpha")]
 		[CalledBy(Type = typeof(TweenAlpha), Member = "Begin")]
 		[CalledBy(Type = typeof(TweenAlpha), Member = "SetStartToCurrentValue")]
 		[CalledBy(Type = typeof(TweenAlpha), Member = "SetEndToCurrentValue")]
+		[CalledBy(Type = typeof(StatusBar), Member = "SetAlpha")]
 		[CalledBy(Type = typeof(Panel_Map), Member = "UpdateObjectiveGroup")]
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(Material), Member = "get_color")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 6)]
 		[Calls(Type = typeof(TweenAlpha), Member = "Cache")]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(Material), Member = "get_color")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallsUnknownMethods(Count = 3)]
-		[CalledBy(Type = typeof(Panel_HUD), Member = "HideNewLocationDiscovered")]
-		[CalledBy(Type = typeof(TweenAlpha), Member = "OnUpdate")]
 		[CalledBy(Type = typeof(TweenAlpha), Member = "set_alpha")]
-		[Calls(Type = typeof(Material), Member = "set_color")]
-		[Calls(Type = typeof(Material), Member = "get_color")]
-		[Calls(Type = typeof(Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(TweenAlpha), Member = "Cache")]
+		[CalledBy(Type = typeof(TweenAlpha), Member = "OnUpdate")]
+		[CalledBy(Type = typeof(Panel_HUD), Member = "HideNewLocationDiscovered")]
 		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(TweenAlpha), Member = "Cache")]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(Material), Member = "get_color")]
+		[Calls(Type = typeof(Material), Member = "set_color")]
 		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 3)]
 		set
 		{
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(TweenAlpha), Member = "set_value")]
 	[CalledBy(Type = typeof(TweenAlpha), Member = "get_value")]
+	[CalledBy(Type = typeof(TweenAlpha), Member = "set_value")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Cache()
 	{
 	}
@@ -86,15 +84,15 @@ public class TweenAlpha : UITweener
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_SelectWorldMap), Member = "PlayFadeIn")]
+	[CalledBy(Type = typeof(UIToggle), Member = "Set")]
 	[CalledBy(Type = typeof(Panel_SelectWorldMap), Member = "PlayFadeOut")]
-	[CalledBy(Type = typeof(UIToggle), Member = "Set")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(UIToggle), Member = "Set")]
+	[CalledBy(Type = typeof(Panel_SelectWorldMap), Member = "PlayFadeIn")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UITweener), Member = "Begin")]
 	[Calls(Type = typeof(TweenAlpha), Member = "get_value")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static TweenAlpha Begin(GameObject go, float duration, float alpha)
 	{
 		return null;
@@ -112,9 +110,9 @@ public class TweenAlpha : UITweener
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UITweener), Member = ".ctor")]
 	public TweenAlpha()
 	{
 	}

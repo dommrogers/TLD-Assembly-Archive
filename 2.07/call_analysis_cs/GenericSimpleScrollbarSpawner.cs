@@ -19,24 +19,25 @@ public class GenericSimpleScrollbarSpawner : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GenericSimpleScrollbarSpawner), Member = "AssignValuesToSpawnedObject")]
 	[CalledBy(Type = typeof(GenericSimpleScrollbarSpawner), Member = "Awake")]
 	[CalledBy(Type = typeof(Utils), Member = "GetSliderForScrollbar")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GenericSimpleScrollbarSpawner), Member = "AssignValuesToSpawnedObject")]
 	public void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 15)]
 	[CalledBy(Type = typeof(GenericSimpleScrollbarSpawner), Member = "Initialize")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 15)]
 	public void AssignValuesToSpawnedObject()
 	{
 	}

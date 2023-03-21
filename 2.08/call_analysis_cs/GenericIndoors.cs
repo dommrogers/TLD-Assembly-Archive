@@ -12,12 +12,12 @@ public class GenericIndoors : MonoBehaviour
 
 	public static List<GenericIndoors> m_GenericIndoorsList;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Rendering.PostProcessing.ColorGrading), Member = "UpdateLutForTimeOfDay")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(Weather), Member = "ForceIndoorEnvironment")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Weather), Member = "ForceIndoorEnvironment")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(UnityEngine.Rendering.PostProcessing.ColorGrading), Member = "UpdateLutForTimeOfDay")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
 	}
@@ -29,8 +29,8 @@ public class GenericIndoors : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public GenericIndoors()
 	{
 	}

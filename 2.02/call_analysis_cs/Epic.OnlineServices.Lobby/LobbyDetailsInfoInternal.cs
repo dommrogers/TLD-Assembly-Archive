@@ -23,19 +23,19 @@ internal struct LobbyDetailsInfoInternal : ISettable, IDisposable
 
 	public string LobbyId
 	{
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(LobbyDetailsInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(LobbyDetailsInfoInternal), Member = "Set")]
+		[CalledBy(Type = typeof(LobbyDetailsInfoInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(LobbyDetailsInfoInternal), Member = "Set")]
-		[CalledBy(Type = typeof(LobbyDetailsInfoInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -43,17 +43,18 @@ internal struct LobbyDetailsInfoInternal : ISettable, IDisposable
 
 	public ProductUserId LobbyOwnerUserId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(LobbyDetailsInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(LobbyDetailsInfoInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(LobbyDetailsInfoInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -81,7 +82,7 @@ internal struct LobbyDetailsInfoInternal : ISettable, IDisposable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -96,10 +97,10 @@ internal struct LobbyDetailsInfoInternal : ISettable, IDisposable
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -107,18 +108,18 @@ internal struct LobbyDetailsInfoInternal : ISettable, IDisposable
 
 	public bool AllowInvites
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(LobbyDetailsInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[CallsDeduplicatedMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
+		[CalledBy(Type = typeof(LobbyDetailsInfoInternal), Member = "Set")]
+		[CalledBy(Type = typeof(LobbyDetailsInfoInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(LobbyDetailsInfoInternal), Member = "Set")]
-		[CalledBy(Type = typeof(LobbyDetailsInfoInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -132,17 +133,17 @@ internal struct LobbyDetailsInfoInternal : ISettable, IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(LobbyDetailsInfoInternal), Member = "set_LobbyOwnerUserId")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(LobbyDetailsInfoInternal), Member = "set_LobbyId")]
+	[Calls(Type = typeof(LobbyDetailsInfoInternal), Member = "set_LobbyOwnerUserId")]
 	[Calls(Type = typeof(LobbyDetailsInfoInternal), Member = "set_AllowInvites")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

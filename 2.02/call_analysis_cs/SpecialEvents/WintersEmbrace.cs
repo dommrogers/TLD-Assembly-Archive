@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -18,67 +17,66 @@ public static class WintersEmbrace
 
 	private static readonly string[] ITEMS_TO_EAT_NAMES;
 
-	[Calls(Type = typeof(FeatNotify), Member = "ShowFeatUnlockedKicker")]
-	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(WintersEmbrace), Member = "IsCurrentExperienceMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(WintersEmbrace), Member = "IsCurrentExperienceMode")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(FeatNotify), Member = "ShowFeatUnlockedKicker")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 25)]
 	public static void EatingComplete(GearItem itemEaten)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(WintersEmbrace), Member = "EatingComplete")]
 	[CalledBy(Type = typeof(WintersEmbrace), Member = "UpdateDaysSurvived")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static bool IsCurrentExperienceMode()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public static bool MatchesExperienceMode(ExperienceModeType xpMode)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(PostSpecialEvent), Member = "ManageSaveData")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "UpdateSlotGameMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(WintersEmbrace), Member = "CheckSaveSlotForMissedBadges")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "UpdateSlotGameMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void PostEventConvertSaveSlot(string slotName)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(WintersEmbrace), Member = "IsCurrentExperienceMode")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
 	[Calls(Type = typeof(FeatNotify), Member = "ShowFeatUnlockedKicker")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public static void UpdateDaysSurvived(int numDaysSurvived)
 	{
 	}
 
-	[Calls(Type = typeof(FeatNotify), Member = "ShowFeatUnlockedKicker")]
 	[CalledBy(Type = typeof(WintersEmbrace), Member = "PostEventConvertSaveSlot")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(SaveGameSlots), Member = "LoadDataFromSlot")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "StringAllNullTerminators")]
 	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "LoadDataFromSlot")]
+	[Calls(Type = typeof(Utils), Member = "StringAllNullTerminators")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
+	[Calls(Type = typeof(FeatNotify), Member = "ShowFeatUnlockedKicker")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private static void CheckSaveSlotForMissedBadges(string slotName)
 	{
 	}

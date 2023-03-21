@@ -50,10 +50,11 @@ public class Sparks : MonoBehaviour, ITimeControl
 
 	private float m_CurrentControlledTime;
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Random), Member = "Range")]
 	[CalledBy(Type = typeof(Sparks), Member = "OnControlTimeStart")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	private void Start()
 	{
@@ -76,11 +77,11 @@ public class Sparks : MonoBehaviour, ITimeControl
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}

@@ -6,7 +6,7 @@ public class SnowDepthBoxRecord : SnowDepthTriggerRecord
 	private BoxCollider m_Box;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 263)]
+	[CallerCount(Count = 268)]
 	public SnowDepthBoxRecord(SnowDepth sd, BoxCollider box)
 		: base(null)
 	{
@@ -17,6 +17,6 @@ public class SnowDepthBoxRecord : SnowDepthTriggerRecord
 	[CallsUnknownMethods(Count = 5)]
 	public override float GetDepthFracAtPosition(Vector3 position)
 	{
-		return default(float);
+		return 0f;
 	}
 }

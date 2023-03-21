@@ -6,8 +6,8 @@ public class Tumbler
 
 	public TumblerState m_State;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public Tumbler()
 	{
 	}

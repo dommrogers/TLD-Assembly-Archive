@@ -22,16 +22,17 @@ public class ButtonLegendContainer
 
 	private static Dictionary<GameObject, ButtonLegendContainer> m_OwnerDictionnary;
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[CallsDeduplicatedMethods(Count = 14)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CallerCount(Count = 60)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 10)]
 	public void Create(GameObject owner)
 	{
 	}
@@ -42,9 +43,9 @@ public class ButtonLegendContainer
 	{
 	}
 
+	[CallerCount(Count = 58)]
 	[Calls(Type = typeof(ButtonLegend), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 58)]
 	public void Clear()
 	{
 	}
@@ -63,16 +64,16 @@ public class ButtonLegendContainer
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 86)]
+	[CallsUnknownMethods(Count = 1)]
 	public void BeginUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ButtonLegend), Member = "AddButton")]
 	[CallerCount(Count = 241)]
 	[Calls(Type = typeof(ButtonLegend), Member = "RemoveButton")]
+	[Calls(Type = typeof(ButtonLegend), Member = "AddButton")]
+	[CallsUnknownMethods(Count = 1)]
 	public void UpdateButton(string action, string localizationKey, bool active, int priority, bool localize = true)
 	{
 	}
@@ -84,12 +85,12 @@ public class ButtonLegendContainer
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "UpdateButtonLegend")]
 	[CalledBy(Type = typeof(ButtonLegendContainer), Member = "ResetDefaultDepthOfAllItems")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "UpdateButtonLegend")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(ButtonLegendItem), Member = "SetDepth")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OverrideDepthOfAllItems(int depthAmount)
 	{
 	}
@@ -101,7 +102,7 @@ public class ButtonLegendContainer
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[CallsUnknownMethods(Count = 1)]
 	public static ButtonLegendContainer TryGetButtonLegendContainer(GameObject owner)
 	{

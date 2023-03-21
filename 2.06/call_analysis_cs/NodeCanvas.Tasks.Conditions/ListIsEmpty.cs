@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
@@ -12,7 +11,7 @@ public class ListIsEmpty : ConditionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		get
 		{
@@ -20,11 +19,12 @@ public class ListIsEmpty : ConditionTask
 		}
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

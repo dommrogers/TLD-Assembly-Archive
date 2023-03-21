@@ -38,34 +38,24 @@ public abstract class WrappedCachedMap<T> : IDisposable, IWrappedObject where T 
 
 	public T Item
 	{
-		[CallsDeduplicatedMethods(Count = 3)]
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return (T)null;
+			return default(T);
 		}
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract T LookupElementImpl(IntPtr self, string key);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract void SetupLengthImpl(IntPtr self);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract void DisposeChildImpl();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract bool HasKeyImpl(IntPtr self, string key);
 
-	[CallerCount(Count = 101224)]
-	[DeduplicatedMethod]
 	protected abstract FullWrappedCacheMapEnumerable<T> CreateIteratorImpl(IntPtr self);
 
 	[DeduplicatedMethod]
@@ -74,7 +64,7 @@ public abstract class WrappedCachedMap<T> : IDisposable, IWrappedObject where T 
 	[CallsUnknownMethods(Count = 1)]
 	public bool HasKey(string key)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -90,33 +80,33 @@ public abstract class WrappedCachedMap<T> : IDisposable, IWrappedObject where T 
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public void SetNativePtr(IntPtr self)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 44)]
+	[CallerCount(Count = 53)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetValue(string key, T val)
 	{
 	}

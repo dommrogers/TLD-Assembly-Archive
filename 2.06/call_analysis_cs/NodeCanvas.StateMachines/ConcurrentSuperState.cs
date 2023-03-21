@@ -21,7 +21,7 @@ public class ConcurrentSuperState : FSMState, IUpdatable
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		set
 		{
 		}
@@ -35,8 +35,8 @@ public class ConcurrentSuperState : FSMState, IUpdatable
 		{
 			return null;
 		}
-		[CallerCount(Count = 7)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		set
 		{
 		}
@@ -51,7 +51,7 @@ public class ConcurrentSuperState : FSMState, IUpdatable
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 7)]
+		[CallerCount(Count = 10)]
 		set
 		{
 		}
@@ -63,7 +63,7 @@ public class ConcurrentSuperState : FSMState, IUpdatable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -73,17 +73,17 @@ public class ConcurrentSuperState : FSMState, IUpdatable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public override bool allowAsPrime
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -92,7 +92,7 @@ public class ConcurrentSuperState : FSMState, IUpdatable
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Node), Member = "get_name")]
 		[Calls(Type = typeof(string), Member = "ToUpper")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[CallsUnknownMethods(Count = 1)]
 		get
@@ -108,14 +108,10 @@ public class ConcurrentSuperState : FSMState, IUpdatable
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Task), Member = "Create")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Task), Member = "Create")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Task), Member = "Create")]
+	[CallsUnknownMethods(Count = 7)]
 	public override void OnValidate(Graph assignedGraph)
 	{
 	}
@@ -126,11 +122,11 @@ public class ConcurrentSuperState : FSMState, IUpdatable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnEnter()
 	{
 	}
@@ -144,29 +140,27 @@ public class ConcurrentSuperState : FSMState, IUpdatable
 	{
 	}
 
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
-	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExit()
 	{
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "PauseAction")]
-	[Calls(Type = typeof(ActionTask), Member = "PauseAction")]
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ActionTask), Member = "PauseAction")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnPause()
 	{
 	}
 
-	[Calls(Type = typeof(Node), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Node), Member = ".ctor")]
 	public ConcurrentSuperState()
 	{
 	}

@@ -22,43 +22,50 @@ public class OctreeBounds<T>
 		[CallerCount(Count = 7)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(FootstepTrailManager), Member = "Awake")]
+	[CalledBy(Type = typeof(SnowPatchManager), Member = "Start")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 26)]
 	public OctreeBounds(float initialWorldSize, Vector3 initialWorldPos, float minNodeSize, float loosenessVal)
 	{
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(FootstepGroup), Member = ".ctor")]
+	[CalledBy(Type = typeof(FootstepGroup), Member = "Close")]
+	[CalledBy(Type = typeof(FootstepTrailManager), Member = "OnAddFootstepGroup")]
+	[CalledBy(Type = typeof(FootstepTrailManager), Member = "OnCloseFootstepGroup")]
+	[CalledBy(Type = typeof(SnowPatchManager), Member = "AddPatch")]
 	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Add(T obj, Bounds objBounds)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool Remove(T obj)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -67,7 +74,7 @@ public class OctreeBounds<T>
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsColliding(Bounds checkBounds)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -78,10 +85,11 @@ public class OctreeBounds<T>
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(SnowPatchManager), Member = "LateUpdate")]
+	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void FrustumCapture(Plane[] frustumPlanes, ref List<T> captureList)
 	{
 	}
@@ -102,18 +110,18 @@ public class OctreeBounds<T>
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 9)]
-	[CallsUnknownMethods(Count = 27)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 27)]
 	private void Grow(Vector3 direction)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Shrink()
 	{
 	}
@@ -122,6 +130,6 @@ public class OctreeBounds<T>
 	[CallerCount(Count = 0)]
 	private static int GetRootPosIndex(int xDir, int yDir, int zDir)
 	{
-		return default(int);
+		return 0;
 	}
 }

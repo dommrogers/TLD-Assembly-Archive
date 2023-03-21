@@ -11,15 +11,13 @@ public class FaceCamera : MonoBehaviour
 
 	private Vector3 m_TargetPosition;
 
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(Transform), Member = "LookAt")]
-	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
-	[CallsDeduplicatedMethods(Count = 14)]
-	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
+	[Calls(Type = typeof(Transform), Member = "LookAt")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 17)]
 	private void Update()
 	{
 	}

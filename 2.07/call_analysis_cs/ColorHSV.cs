@@ -38,8 +38,8 @@ public struct ColorHSV
 		return default(ColorHSV);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static implicit operator Color(ColorHSV hsv)
 	{
 		return default(Color);
@@ -66,8 +66,9 @@ public struct ColorHSV
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(float), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 41)]
+	[CallsUnknownMethods(Count = 37)]
 	public override string ToString()
 	{
 		return null;

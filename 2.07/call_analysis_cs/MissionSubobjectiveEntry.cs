@@ -1,4 +1,5 @@
 using Cpp2ILInjected.CallAnalysis;
+using TLD.SaveState;
 using UnityEngine;
 
 public class MissionSubobjectiveEntry : MonoBehaviour
@@ -35,35 +36,31 @@ public class MissionSubobjectiveEntry : MonoBehaviour
 
 	public Color m_TimerColorLowTime;
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(MissionUI), Member = "UpdateObjectives")]
 	[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "SetObjectiveInfo")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "PadLeft")]
+	[CalledBy(Type = typeof(MissionUI), Member = "UpdateObjectives")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[Calls(Type = typeof(string), Member = "PadLeft")]
 	[Calls(Type = typeof(MissionObjectiveEntry), Member = "MaybeUpdateTimerObjectiveUI")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(MissionObjectiveEntry), Member = "MaybeUpdateCounterUI")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(string), Member = "PadLeft")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 13)]
 	public void SetObjectiveInfo(StoryMissionObjective objective, MissionSubobjectiveEntry prevEntry)
 	{
 	}
 
+	[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "SetObjectiveInfo")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "SetObjectiveInfo")]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetHeight()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]

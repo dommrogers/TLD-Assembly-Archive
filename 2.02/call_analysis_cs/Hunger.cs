@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -111,61 +110,62 @@ public class Hunger : MonoBehaviour
 
 	private static HungerSaveDataProxy m_HungerSaveDataProxy;
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CalledBy(Type = typeof(Hunger), Member = "Deserialize")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 10)]
 	public void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Hunger), Member = "UpdateFatiguePenalty")]
-	[Calls(Type = typeof(Hunger), Member = "UpdateStarvingStatusOnHUD")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Hunger), Member = "UpdateCaloriesOnHUD")]
-	[Calls(Type = typeof(Hunger), Member = "UpdateCalorieReserves")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Hunger), Member = "MaybeUpdateStarvingStatusInLog")]
-	[CallsUnknownMethods(Count = 7)]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Hunger), Member = "UpdateCalorieReserves")]
+	[Calls(Type = typeof(Hunger), Member = "UpdateCaloriesOnHUD")]
+	[Calls(Type = typeof(Hunger), Member = "UpdateStarvingStatusOnHUD")]
+	[Calls(Type = typeof(Hunger), Member = "UpdateFatiguePenalty")]
 	[Calls(Type = typeof(Hunger), Member = "MaybePlayPlayerHungryVoiceOver")]
+	[Calls(Type = typeof(Hunger), Member = "MaybeUpdateStarvingStatusInLog")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(Hunger), Member = "Start")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(Hunger), Member = "UpdateCalorieReserves")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "EatingComplete_Internal")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 6)]
 	public void AddReserveCalories(float calories)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Hunger), Member = "UpdateCalorieReserves")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void RemoveReserveCalories(float calories)
 	{
 	}
@@ -180,12 +180,12 @@ public class Hunger : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool IsEatingInProgress()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -196,38 +196,37 @@ public class Hunger : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsAddingCaloriesOverTime()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "UpdateActiveBars")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "UpdateActiveBars")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "UpdateActiveBars")]
 	public bool ItemBeingEatenAffectsThirst()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 2)]
 	public FoodItem GetItemBeingEaten()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public float GetCaloriesToAddOverTime()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsStarving()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -239,63 +238,63 @@ public class Hunger : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetCalorieReserves()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetCurrentCalorieBurnPerHour()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void DisplayCaloriesOnHUDForTime(float seconds)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public float GetFatiguePenalty()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SetSuppressVoiceOver(bool suppress)
 	{
 	}
 
+	[CalledBy(Type = typeof(Hunger), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Hunger), Member = "RemoveReserveCalories")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(Hunger), Member = "AddReserveCalories")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(Hunger), Member = "Update")]
-	[CallsUnknownMethods(Count = 13)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Thirst), Member = "AddThirst")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 13)]
 	private void UpdateCalorieReserves()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Condition), Member = "CanPlayConditionVO")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private bool ShouldPlayHungerVoiceOver()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(Hunger), Member = "Update")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Condition), Member = "CanPlayConditionVO")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private void MaybePlayPlayerHungryVoiceOver()
 	{
 	}
@@ -306,114 +305,107 @@ public class Hunger : MonoBehaviour
 		return default(HungerLevel);
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CalledBy(Type = typeof(Hunger), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CalledBy(Type = typeof(Hunger), Member = "Update")]
-	[CallsUnknownMethods(Count = 60)]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 18)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsUnknownMethods(Count = 60)]
 	private void UpdateCaloriesOnHUD()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DisplayHungerOnHUDForTime(float seconds)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private string GetHungerTextForHud()
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
 	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 11)]
 	private void MaybeUpdateStarvingStatusLabel()
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private string GetHungerIconName(int currHungerLevel)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CalledBy(Type = typeof(Hunger), Member = "Update")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 37)]
-	[CallsDeduplicatedMethods(Count = 16)]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 37)]
 	private void UpdateStarvingStatusOnHUD()
 	{
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private float CalculateNextCaloriesThresholdForDisplayOnHud()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Hunger), Member = "Update")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void MaybeUpdateStarvingStatusInLog()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[CalledBy(Type = typeof(Hunger), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void UpdateFatiguePenalty()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public Hunger()
 	{
 	}

@@ -8,37 +8,37 @@ public class LineRenderManager
 
 	private static List<LineRenderer> m_LineRenederers;
 
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Shader), Member = "Find")]
 	[Calls(Type = typeof(Material), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static Material GetAdditiveMaterial()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(LineRenderer), Member = "set_startWidth")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(LineRenderer), Member = "set_endWidth")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(LineRenderer), Member = "set_startWidth")]
+	[Calls(Type = typeof(LineRenderer), Member = "set_endWidth")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 11)]
 	public static LineRenderer CreateLineRenderer(string name, Color color, float width, Material material)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void DestroyLineRenderer(LineRenderer lineRenderer)
 	{
 	}

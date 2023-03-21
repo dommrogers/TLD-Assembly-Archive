@@ -24,31 +24,29 @@ public class AtlasPackingResult
 	public object data;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 20)]
+	[CallerCount(Count = 24)]
 	public AtlasPackingResult(AtlasPadding[] pds)
 	{
 	}
 
-	[CallerCount(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
-	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
 	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsSingleAtlas")]
 	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsMultiAtlas")]
 	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsSingleAtlas")]
 	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsMultiAtlasVertical")]
-	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsMultiAtlasVertical")]
 	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsMultiAtlasHorizontal")]
 	[CalledBy(Type = typeof(MB3_TextureCombinerPackerMeshBakerHorizontalVertical), Member = "MergeAtlasPackingResultStackBonA")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 12)]
 	public void CalcUsedWidthAndHeight()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Format")]
-	[CallsUnknownMethods(Count = 22)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Format")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 22)]
 	public override string ToString()
 	{
 		return null;

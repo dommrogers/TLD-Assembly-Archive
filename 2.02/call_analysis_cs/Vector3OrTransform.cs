@@ -15,8 +15,8 @@ public class Vector3OrTransform
 
 	public Transform transform;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public Vector3OrTransform()
 	{
 	}

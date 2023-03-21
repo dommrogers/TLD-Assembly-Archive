@@ -11,11 +11,11 @@ public class ToggleComponentsDuringTimelinePlayback : MonoBehaviour
 
 	public bool TimelinePlaybackActive
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(ToggleComponentsDuringTimelinePlayback), Member = "UpdateComponentStates")]
@@ -30,15 +30,14 @@ public class ToggleComponentsDuringTimelinePlayback : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(ToggleComponentsDuringTimelinePlayback), Member = "Start")]
-	[CalledBy(Type = typeof(ToggleComponentsDuringTimelinePlayback), Member = "set_TimelinePlaybackActive")]
-	[CalledBy(Type = typeof(TLD_AnimationTrack), Member = "Stop")]
 	[CalledBy(Type = typeof(TLD_AnimationTrack), Member = "Play")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CalledBy(Type = typeof(TLD_AnimationTrack), Member = "Stop")]
+	[CalledBy(Type = typeof(ToggleComponentsDuringTimelinePlayback), Member = "set_TimelinePlaybackActive")]
+	[CalledBy(Type = typeof(ToggleComponentsDuringTimelinePlayback), Member = "Start")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 4)]
+	[CallsUnknownMethods(Count = 10)]
 	private void UpdateComponentStates()
 	{
 	}

@@ -9,21 +9,21 @@ internal struct GetToggleFriendsKeyOptionsInternal : ISettable, IDisposable
 {
 	private int m_ApiVersion;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void Set(GetToggleFriendsKeyOptions other)
 	{
 	}
 
+	[CalledBy(Type = typeof(UIInterface), Member = "GetToggleFriendsKey")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(UIInterface), Member = "GetToggleFriendsKey")]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

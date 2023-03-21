@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -18,18 +17,19 @@ public class Skill_CarcassHarvesting : Skill
 	private static Skill_CarcassHarvestingSaveData m_Skill_CarcassHarvestingSaveData;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Skill), Member = "SetPoints")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(Skill), Member = "SetPoints")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
@@ -39,70 +39,56 @@ public class Skill_CarcassHarvesting : Skill
 	[CallsUnknownMethods(Count = 3)]
 	public int GetFrozenThresholdPercent()
 	{
-		return default(int);
+		return 0;
 	}
 
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public float GetMeatHarvestTimeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public float GetHideGutHarvestTimeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 20)]
 	public override string GetTierBenefits(int index)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
 	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void ApplyHoursToSkill(float hours)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Skill), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public Skill_CarcassHarvesting()
 	{
 	}

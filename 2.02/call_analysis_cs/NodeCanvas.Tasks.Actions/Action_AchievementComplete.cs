@@ -7,10 +7,10 @@ public class Action_AchievementComplete : ActionTask
 {
 	public AchievementManager.ChallengeAchievement achievement;
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	protected override void OnExecute()
 	{
 	}

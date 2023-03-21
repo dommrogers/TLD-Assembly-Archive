@@ -24,34 +24,37 @@ public class vp_Explosion : MonoBehaviour
 
 	public List<GameObject> FXPrefabs;
 
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponents")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(Physics), Member = "OverlapSphere")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "DoBomb")]
 	[Calls(Type = typeof(Physics), Member = "Raycast")]
 	[Calls(Type = typeof(Rigidbody), Member = "AddExplosionForce")]
 	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Physics), Member = "OverlapSphere")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 47)]
+	[CallsDeduplicatedMethods(Count = 33)]
+	[CallsUnknownMethods(Count = 32)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public vp_Explosion()
 	{
 	}

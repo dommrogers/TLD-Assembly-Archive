@@ -13,11 +13,11 @@ internal struct SessionModificationSetJoinInProgressAllowedOptionsInternal : ISe
 
 	public bool AllowJoinInProgress
 	{
+		[CalledBy(Type = typeof(SessionModificationSetJoinInProgressAllowedOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(SessionModificationSetJoinInProgressAllowedOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(SessionModificationSetJoinInProgressAllowedOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(SessionModificationSetJoinInProgressAllowedOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,16 +29,16 @@ internal struct SessionModificationSetJoinInProgressAllowedOptionsInternal : ISe
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(SessionModificationSetJoinInProgressAllowedOptionsInternal), Member = "set_AllowJoinInProgress")]
 	[CalledBy(Type = typeof(SessionModification), Member = "SetJoinInProgressAllowed")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SessionModificationSetJoinInProgressAllowedOptionsInternal), Member = "set_AllowJoinInProgress")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

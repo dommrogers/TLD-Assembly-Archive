@@ -33,40 +33,33 @@ public class RopeLedge : MonoBehaviour
 
 	private float m_ClosestRopeT;
 
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[Calls(Type = typeof(Quaternion), Member = "AngleAxis")]
-	[CallsUnknownMethods(Count = 44)]
-	[Calls(Type = typeof(Vector3), Member = "get_right")]
-	[Calls(Type = typeof(Quaternion), Member = "AngleAxis")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 25)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
 	[Calls(Type = typeof(Spline), Member = "GetClosestPointParam")]
 	[Calls(Type = typeof(Spline), Member = "GetPositionOnSpline")]
 	[Calls(Type = typeof(Spline), Member = "GetTangentToSpline")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+	[Calls(Type = typeof(Vector3), Member = "get_up")]
+	[Calls(Type = typeof(Quaternion), Member = "AngleAxis")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(Vector3), Member = "get_right")]
+	[CallsDeduplicatedMethods(Count = 25)]
+	[CallsUnknownMethods(Count = 44)]
 	private void Start()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "SetRopeActiveState")]
+	[CallerCount(Count = 1)]
 	public void SetActiveInitial(bool state)
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerClimbRope), Member = "OnRopeTransition")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "OnRopeTransition")]
 	[CallsUnknownMethods(Count = 5)]
 	public void OnRopeTransition(bool playerOnRope)
 	{

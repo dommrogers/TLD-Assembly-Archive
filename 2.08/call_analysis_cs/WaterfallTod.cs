@@ -19,24 +19,23 @@ public class WaterfallTod : MonoBehaviour
 
 	private static readonly int s_GlowAmountShaderID;
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(AnimationCurve), Member = "Linear")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AnimationCurve), Member = "Linear")]
 	public WaterfallTod()

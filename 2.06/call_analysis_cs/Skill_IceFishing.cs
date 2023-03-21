@@ -20,18 +20,18 @@ public class Skill_IceFishing : Skill
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public float GetLineBreakOnChancePercent()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -40,7 +40,7 @@ public class Skill_IceFishing : Skill
 	[CallsUnknownMethods(Count = 2)]
 	public float ReduceFishingTimeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -49,21 +49,15 @@ public class Skill_IceFishing : Skill
 	[CallsUnknownMethods(Count = 2)]
 	public float GetFishWeightScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsUnknownMethods(Count = 2)]
 	public override string GetTierBenefits(int index)
 	{
 		return null;

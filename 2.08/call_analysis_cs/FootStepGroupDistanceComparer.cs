@@ -11,11 +11,11 @@ public class FootStepGroupDistanceComparer : IComparer<FootstepGroup>
 	[CallsUnknownMethods(Count = 5)]
 	public int Compare(FootstepGroup x, FootstepGroup y)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public FootStepGroupDistanceComparer()
 	{
 	}

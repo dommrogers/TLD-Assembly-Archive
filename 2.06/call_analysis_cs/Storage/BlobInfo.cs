@@ -8,8 +8,8 @@ public class BlobInfo
 
 	public uint TotalSize;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public BlobInfo()
 	{
 	}

@@ -6,14 +6,14 @@ namespace NodeCanvas.Tasks.Conditions;
 
 public class HasComponent<T> : ConditionTask<Transform> where T : Component
 {
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
-	[DeduplicatedMethod]
-	[CallerCount(Count = 0)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

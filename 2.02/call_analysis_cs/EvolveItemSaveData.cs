@@ -8,8 +8,8 @@ public class EvolveItemSaveData
 
 	public bool m_ForceNoAutoEvolve;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public EvolveItemSaveData()
 	{
 	}

@@ -31,25 +31,27 @@ public class GetInputAxis : ActionTask
 	{
 	}
 
-	[Calls(Type = typeof(GetInputAxis), Member = "Do")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GetInputAxis), Member = "Do")]
 	protected override void OnUpdate()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CalledBy(Type = typeof(GetInputAxis), Member = "OnExecute")]
 	[CalledBy(Type = typeof(GetInputAxis), Member = "OnUpdate")]
-	[CallsUnknownMethods(Count = 18)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	private void Do()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public GetInputAxis()
 	{
 	}

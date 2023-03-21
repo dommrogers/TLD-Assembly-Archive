@@ -14,11 +14,10 @@ public class Action_MissionMarkComplete : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(Utils), Member = "MissionIDExists")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsUnknownMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -26,16 +25,18 @@ public class Action_MissionMarkComplete : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "MarkMissionComplete")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 4)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsUnknownMethods(Count = 3)]
 	public Action_MissionMarkComplete()
 	{
 	}

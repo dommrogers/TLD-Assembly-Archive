@@ -54,60 +54,45 @@ public class ColorGradingSettings : PostProcessEffectSettings
 
 	private readonly Color[] m_Pixels;
 
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[CallsUnknownMethods(Count = 22)]
 	[CalledBy(Type = typeof(UnityEngine.Rendering.PostProcessing.ColorGrading), Member = "ApplyTempLut")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ParameterOverride<>), Member = "Override")]
 	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 16)]
 	public void ApplySettings(UnityEngine.Rendering.PostProcessing.ColorGrading cg)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
-	[Calls(Type = typeof(ColorGradingSettings), Member = "GetCurveTexture")]
-	[Calls(Type = typeof(ColorUtilities), Member = "ComputeColorBalance")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 11)]
-	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
+	[Calls(Type = typeof(ColorUtilities), Member = "ComputeColorBalance")]
+	[Calls(Type = typeof(ColorGradingSettings), Member = "GetCurveTexture")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 11)]
 	public void ApplySettings(MaterialPropertyBlock properties)
 	{
 	}
 
-	[Calls(Type = typeof(Texture2D), Member = "Apply")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(ColorGradingSettings), Member = "ApplySettings")]
-	[Calls(Type = typeof(Texture2D), Member = "SetPixels")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Object), Member = "set_name")]
 	[Calls(Type = typeof(SystemInfo), Member = "SupportsTextureFormat")]
+	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(Texture2D), Member = "SetPixels")]
+	[Calls(Type = typeof(Texture2D), Member = "Apply")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 6)]
 	private Texture2D GetCurveTexture(bool hdr)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Spline), Member = ".ctor")]
-	[Calls(Type = typeof(Spline), Member = ".ctor")]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[Calls(Type = typeof(Spline), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 27)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Spline), Member = ".ctor")]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 27)]
+	[CallsUnknownMethods(Count = 5)]
 	public ColorGradingSettings()
 	{
 	}

@@ -23,10 +23,10 @@ public class PlayableBehaviourSetFPAnchor : PlayableBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(PlayableBehaviourSetFPAnchor), Member = "MaybeSetAnchor")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	public override void OnBehaviourPlay(Playable playable, FrameData info)
 	{
 	}
@@ -37,23 +37,25 @@ public class PlayableBehaviourSetFPAnchor : PlayableBehaviour
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(PlayableBehaviourSetFPAnchor), Member = "FindAnchor")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CalledBy(Type = typeof(PlayableBehaviourSetFPAnchor), Member = "ProcessFrame")]
 	[CalledBy(Type = typeof(PlayableBehaviourSetFPAnchor), Member = "OnBehaviourPlay")]
-	[CallsUnknownMethods(Count = 6)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayableBehaviourSetFPAnchor), Member = "FindAnchor")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallsUnknownMethods(Count = 5)]
 	private void MaybeSetAnchor(TLD_TimelineDirector timelineDirector)
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "FindChildRecursive")]
 	[CalledBy(Type = typeof(PlayableBehaviourSetFPAnchor), Member = "MaybeSetAnchor")]
-	[Calls(Type = typeof(SyncNodesInfo), Member = "GetBestNode")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "TryGetFPAnchorTargetOverride")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetComponentForMissionObject")]
+	[Calls(Type = typeof(SyncNodesInfo), Member = "GetBestNode")]
+	[Calls(Type = typeof(Utils), Member = "FindChildRecursive")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private GameObject FindAnchor(TLD_TimelineDirector timelineDirector)
 	{
 		return null;

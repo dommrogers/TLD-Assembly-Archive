@@ -32,11 +32,11 @@ public class BehaviourTree : Graph
 		{
 			return default(Status);
 		}
-		[CallerCount(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(BehaviourTree), Member = "OnGraphStarted")]
 		[CalledBy(Type = typeof(BehaviourTree), Member = "OnGraphUpdate")]
 		[CalledBy(Type = typeof(BehaviourTree), Member = "Tick")]
+		[CallerCount(Count = 3)]
+		[CallsDeduplicatedMethods(Count = 2)]
 		private set
 		{
 		}
@@ -45,8 +45,8 @@ public class BehaviourTree : Graph
 	public override Type baseNodeType
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -55,21 +55,21 @@ public class BehaviourTree : Graph
 
 	public override bool requiresAgent
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public override bool requiresPrimeNode
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -79,7 +79,7 @@ public class BehaviourTree : Graph
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -89,7 +89,7 @@ public class BehaviourTree : Graph
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -99,7 +99,7 @@ public class BehaviourTree : Graph
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -107,17 +107,17 @@ public class BehaviourTree : Graph
 	{
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
@@ -145,34 +145,32 @@ public class BehaviourTree : Graph
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Graph), Member = "Stop")]
-	[Calls(Type = typeof(BehaviourTree), Member = "set_rootStatus")]
-	[Calls(Type = typeof(Graph), Member = "get_primeNode")]
-	[Calls(Type = typeof(Graph), Member = "get_primeNode")]
-	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
+	[Calls(Type = typeof(Graph), Member = "get_primeNode")]
 	[Calls(Type = typeof(Node), Member = "Reset")]
+	[Calls(Type = typeof(BehaviourTree), Member = "set_rootStatus")]
+	[Calls(Type = typeof(Graph), Member = "Stop")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnGraphUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Graph), Member = "get_primeNode")]
 	[Calls(Type = typeof(Node), Member = "Reset")]
-	[Calls(Type = typeof(Graph), Member = "get_primeNode")]
 	[Calls(Type = typeof(BehaviourTree), Member = "set_rootStatus")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private Status Tick(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Graph), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Graph), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public BehaviourTree()
 	{
 	}

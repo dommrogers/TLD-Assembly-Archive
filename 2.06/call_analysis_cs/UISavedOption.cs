@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -15,12 +14,10 @@ public class UISavedOption : MonoBehaviour
 	private string key
 	{
 		[CalledBy(Type = typeof(UISavedOption), Member = "OnEnable")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[CallerCount(Count = 4)]
-		[CalledBy(Type = typeof(UISavedOption), Member = "OnEnable")]
-		[CalledBy(Type = typeof(UISavedOption), Member = "OnEnable")]
 		[CalledBy(Type = typeof(UISavedOption), Member = "OnDisable")]
+		[CallerCount(Count = 4)]
+		[Calls(Type = typeof(Object), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		get
 		{
 			return null;
@@ -28,63 +25,56 @@ public class UISavedOption : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerPrefs), Member = "GetInt")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UISavedOption), Member = "get_key")]
+	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(UIToggle), Member = "Set")]
 	[Calls(Type = typeof(EventDelegate), Member = "Add")]
 	[Calls(Type = typeof(PlayerPrefs), Member = "GetFloat")]
-	[Calls(Type = typeof(UISavedOption), Member = "get_key")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIToggle), Member = "Set")]
+	[Calls(Type = typeof(PlayerPrefs), Member = "GetInt")]
 	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
 	[Calls(Type = typeof(UIPopupList), Member = "set_value")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(UIToggle), Member = "Set")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(PlayerPrefs), Member = "GetString")]
-	[Calls(Type = typeof(UISavedOption), Member = "get_key")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 18)]
 	private void OnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(EventDelegate), Member = "Remove")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UISavedOption), Member = "get_key")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
+	[Calls(Type = typeof(EventDelegate), Member = "Remove")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 17)]
 	private void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(PlayerPrefs), Member = "SetString")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SaveSelection()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(PlayerPrefs), Member = "SetInt")]
 	[CallsUnknownMethods(Count = 1)]
@@ -93,7 +83,7 @@ public class UISavedOption : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(PlayerPrefs), Member = "SetFloat")]
 	[CallsUnknownMethods(Count = 2)]
@@ -101,8 +91,8 @@ public class UISavedOption : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public UISavedOption()
 	{
 	}

@@ -5,8 +5,8 @@ namespace ParadoxNotion.Serialization.FullSerializer;
 
 public sealed class fsIgnoreAttribute : Attribute
 {
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public fsIgnoreAttribute()
 	{
 	}

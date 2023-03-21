@@ -28,16 +28,16 @@ public class CreateDeviceIdCallbackInfo : ICallbackInfo, ISettable
 
 	public object ClientData
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -51,23 +51,23 @@ public class CreateDeviceIdCallbackInfo : ICallbackInfo, ISettable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CreateDeviceIdCallbackInfoInternal), Member = "get_ClientData")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	internal void Set(CreateDeviceIdCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(CreateDeviceIdCallbackInfoInternal), Member = "get_ClientData")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public CreateDeviceIdCallbackInfo()
 	{
 	}

@@ -4,8 +4,8 @@ public class qd_Constant
 {
 	public const string ParentToHitTransform = "qd_ParentToHitTransform";
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public qd_Constant()
 	{
 	}

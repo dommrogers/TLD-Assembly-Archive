@@ -1,20 +1,21 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.BehaviourTrees;
 using NodeCanvas.Framework;
 
 public class TLDBehaviourTreeOwner : BehaviourTreeOwner
 {
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GraphOwner), Member = "Initialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected new void Awake()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GraphOwner), Member = "OnDestroy")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(GraphOwner), Member = "OnDestroy")]
 	[CallsUnknownMethods(Count = 1)]
 	protected new void OnDestroy()
 	{
@@ -26,15 +27,15 @@ public class TLDBehaviourTreeOwner : BehaviourTreeOwner
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void Deserialize()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public TLDBehaviourTreeOwner()
 	{
 	}

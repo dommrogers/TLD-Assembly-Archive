@@ -9,7 +9,7 @@ public class NPCThirst : MonoBehaviour
 		public float m_CurrentThirstPercentage;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public SaveData()
 		{
 		}
@@ -41,14 +41,12 @@ public class NPCThirst : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(NPC), Member = "DoConditionUpdate")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NPCThirst), Member = "StartDehydrationAffliction")]
+	[Calls(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public void DoUpdate(float deltaTODHours)
 	{
 	}
@@ -56,49 +54,50 @@ public class NPCThirst : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GeAfflictionDehydrationRequiredLiters()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public float GetHealthyDelta(float delta)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	private bool IsDehydrated()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	private bool HasDehydrationRisk()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(NPCCondition), Member = "ApplyDamage")]
-	[Calls(Type = typeof(NPCThirst), Member = "StartDehydrationAffliction")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
+	[Calls(Type = typeof(NPCThirst), Member = "StartDehydrationAffliction")]
+	[Calls(Type = typeof(NPCCondition), Member = "ApplyDamage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void ApplyTODHours(float delta)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Deserialize(string serialized)
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(NPC), Member = "Serialize")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public string Serialize()
@@ -106,21 +105,21 @@ public class NPCThirst : MonoBehaviour
 		return null;
 	}
 
-	[CalledBy(Type = typeof(NPCThirst), Member = "ApplyTODHours")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
 	[CalledBy(Type = typeof(NPCThirst), Member = "DoUpdate")]
+	[CalledBy(Type = typeof(NPCThirst), Member = "ApplyTODHours")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
 	[Calls(Type = typeof(NPCAfflictions), Member = "RemoveAffliction")]
+	[Calls(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void StartDehydrationAffliction()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void StartDehydrationRiskAffliction()
 	{
@@ -132,14 +131,14 @@ public class NPCThirst : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void AddWaterLiters(float waterAddedLiters)
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public NPCThirst()
 	{
 	}

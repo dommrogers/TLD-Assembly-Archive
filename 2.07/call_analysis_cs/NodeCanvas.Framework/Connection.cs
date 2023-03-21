@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.BehaviourTrees;
 using ParadoxNotion;
+using ParadoxNotion.Serialization;
 using UnityEngine;
 
 namespace NodeCanvas.Framework;
@@ -20,13 +22,13 @@ public abstract class Connection : IGraphElement
 	public Node sourceNode
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 80)]
+		[CallerCount(Count = 92)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 279)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 282)]
 		protected set
 		{
 		}
@@ -35,13 +37,13 @@ public abstract class Connection : IGraphElement
 	public Node targetNode
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 28)]
+		[CallerCount(Count = 32)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 79)]
+		[CallerCount(Count = 86)]
 		protected set
 		{
 		}
@@ -53,7 +55,7 @@ public abstract class Connection : IGraphElement
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Node), Member = "Reset")]
@@ -65,8 +67,8 @@ public abstract class Connection : IGraphElement
 
 	public Status status
 	{
-		[CallerCount(Count = 4)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return default(Status);
@@ -93,34 +95,34 @@ public abstract class Connection : IGraphElement
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Graph), Member = "ConnectNodes")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Activator), Member = "CreateInstance")]
 	[Calls(Type = typeof(Connection), Member = "SetSourceNode")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Connection), Member = "SetTargetNode")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public static Connection Create(Node source, Node target, int sourceIndex = -1, int targetIndex = -1)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CalledBy(Type = typeof(Graph), Member = "CloneNodes")]
-	[Calls(Type = typeof(Connection), Member = "SetTargetNode")]
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(JSONSerializer), Member = "Clone")]
 	[Calls(Type = typeof(Connection), Member = "SetSourceNode")]
+	[Calls(Type = typeof(Connection), Member = "SetTargetNode")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public Connection Duplicate(Node newSource, Node newTarget)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public virtual void OnCreate(int sourceIndex, int targetIndex)
 	{
 	}
@@ -137,26 +139,30 @@ public abstract class Connection : IGraphElement
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CalledBy(Type = typeof(Connection), Member = "Create")]
 	[CalledBy(Type = typeof(Connection), Member = "Duplicate")]
 	[CalledBy(Type = typeof(Graph), Member = "CloneNodes")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public int SetSourceNode(Node newSource, int index = -1)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Graph), Member = "CloneNodes")]
-	[CalledBy(Type = typeof(Connection), Member = "Duplicate")]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CalledBy(Type = typeof(Connection), Member = "Create")]
+	[CalledBy(Type = typeof(Connection), Member = "Duplicate")]
+	[CalledBy(Type = typeof(Graph), Member = "CloneNodes")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public int SetTargetNode(Node newTarget, int index = -1)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -166,23 +172,22 @@ public abstract class Connection : IGraphElement
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Filter), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(NodeCanvas.BehaviourTrees.WaitUntil), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Filter), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Parallel), Member = "OnExecute")]
 	[CalledBy(Type = typeof(ProbabilitySelector), Member = "OnExecute")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(ConditionalEvaluator), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Filter), Member = "OnExecute")]
+	[CalledBy(Type = typeof(NodeCanvas.BehaviourTrees.WaitUntil), Member = "OnExecute")]
+	[CallerCount(Count = 6)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public Status Execute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
 	}
 
+	[CalledBy(Type = typeof(Node), Member = "Reset")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Node), Member = "Reset")]
-	[CalledBy(Type = typeof(Node), Member = "Reset")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Reset(bool recursively = true)
 	{

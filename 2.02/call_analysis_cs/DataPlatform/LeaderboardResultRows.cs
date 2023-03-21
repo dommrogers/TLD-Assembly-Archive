@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 
 namespace DataPlatform;
@@ -23,7 +22,7 @@ public class LeaderboardResultRows : IEnumerable<LeaderboardResultRow>, IEnumera
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -34,41 +33,41 @@ public class LeaderboardResultRows : IEnumerable<LeaderboardResultRow>, IEnumera
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 		}
 
+		[DebuggerHidden]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[DebuggerHidden]
 		public _003CGetEnumerator_003Ed__1(int _003C_003E1__state)
 		{
 		}
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(LeaderboardResultPlugin), Member = "LeaderboardResult_GetRow")]
 		[Calls(Type = typeof(LeaderboardResultRow), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 20)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 3)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -82,21 +81,20 @@ public class LeaderboardResultRows : IEnumerable<LeaderboardResultRow>, IEnumera
 
 	public LeaderboardResultRow Item
 	{
-		[Calls(Type = typeof(LeaderboardResultRow), Member = ".ctor")]
-		[Calls(Type = typeof(LeaderboardResultPlugin), Member = "LeaderboardResult_GetRow")]
-		[CallsUnknownMethods(Count = 18)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(LeaderboardResultPlugin), Member = "LeaderboardResult_GetRow")]
+		[Calls(Type = typeof(LeaderboardResultRow), Member = ".ctor")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 18)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
+	[CalledBy(Type = typeof(LeaderboardResultRows), Member = "System.Collections.IEnumerable.GetEnumerator")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(LeaderboardResultRows), Member = "System.Collections.IEnumerable.GetEnumerator")]
 	[CallsUnknownMethods(Count = 7)]
 	public IEnumerator<LeaderboardResultRow> GetEnumerator()
 	{

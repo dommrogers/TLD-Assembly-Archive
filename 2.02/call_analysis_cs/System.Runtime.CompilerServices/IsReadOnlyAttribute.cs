@@ -5,7 +5,7 @@ namespace System.Runtime.CompilerServices;
 internal sealed class IsReadOnlyAttribute : Attribute
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public IsReadOnlyAttribute()
 	{
 	}

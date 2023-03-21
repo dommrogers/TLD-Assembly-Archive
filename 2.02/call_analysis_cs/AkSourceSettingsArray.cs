@@ -5,24 +5,25 @@ public class AkSourceSettingsArray : AkBaseArray<AkSourceSettings>
 {
 	protected override int StructureSize
 	{
-		[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkSourceSettings_GetSizeOf")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkSourceSettings_GetSizeOf")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(AkBaseArray<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public AkSourceSettingsArray(int count)
 	{
-		((AkBaseArray<>)(object)this)._002Ector(default(int));
+		((AkBaseArray<>)(object)this)._002Ector(0);
 	}
 
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkSourceSettings_Clear")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkSourceSettings_Clear")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	protected override void DefaultConstructAtIntPtr(IntPtr address)
 	{
@@ -37,9 +38,9 @@ public class AkSourceSettingsArray : AkBaseArray<AkSourceSettings>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSourceSettings), Member = "getCPtr")]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkSourceSettings_Clone")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected override void CloneIntoReferenceFromIntPtr(IntPtr address, AkSourceSettings other)
 	{
 	}

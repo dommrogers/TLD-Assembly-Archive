@@ -82,8 +82,8 @@ public class qb_Template
 	public string layerText;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public qb_Template()
 	{
 	}

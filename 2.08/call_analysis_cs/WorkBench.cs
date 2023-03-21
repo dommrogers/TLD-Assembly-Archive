@@ -11,8 +11,8 @@ public class WorkBench : MonoBehaviour, CraftingLocationInterface
 
 	public PanelReference<Panel_Crafting> m_CraftingPanel;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public CraftingLocation GetLocation()
 	{
 		return default(CraftingLocation);
@@ -22,21 +22,21 @@ public class WorkBench : MonoBehaviour, CraftingLocationInterface
 	[CallsUnknownMethods(Count = 1)]
 	public int ModifyCraftingTime(int minutes)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool ReadyForBlueprint(BlueprintData _)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool ReadyToCraft()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -45,10 +45,10 @@ public class WorkBench : MonoBehaviour, CraftingLocationInterface
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Crafting), Member = "EnableCraftingAtLocation")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "EnableCraftingAtLocation")]
+	[CallsUnknownMethods(Count = 1)]
 	public void InteractWithWorkbench()
 	{
 	}

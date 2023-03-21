@@ -4,8 +4,8 @@ namespace Epic.OnlineServices.Achievements;
 
 public class AddNotifyAchievementsUnlockedOptions
 {
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public AddNotifyAchievementsUnlockedOptions()
 	{
 	}

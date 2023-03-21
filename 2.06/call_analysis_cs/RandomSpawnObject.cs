@@ -40,35 +40,32 @@ public class RandomSpawnObject : MonoBehaviour
 
 	private readonly List<IShouldDisableForCurrentMode> m_Disablers;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(RandomSpawnObject), Member = "ShouldAllSkipSerialization")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "Update")]
-	[Calls(Type = typeof(RandomSpawnObject), Member = "ActivateRandomObject")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(RandomSpawnObject), Member = "CheckForSpawnInOldSaves")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(RandomSpawnObject), Member = "GetNumObjectsToEnableCurrentXPMode")]
 	[Calls(Type = typeof(RandomSpawnObject), Member = "DisableAll")]
-	[Calls(Type = typeof(PrefabSpawn), Member = "SpawnObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(RandomSpawnObject), Member = "RecheckObjectDisablers")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
 	[Calls(Type = typeof(RandomSpawnObject), Member = "ActivateRandomObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(RandomSpawnObject), Member = "DisableAll")]
-	[Calls(Type = typeof(RandomSpawnObject), Member = "GetNumObjectsToEnableCurrentXPMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(RandomSpawnObject), Member = "CheckForSpawnInOldSaves")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(RandomSpawnObject), Member = "RecheckObjectDisablers")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(PrefabSpawn), Member = "SpawnObjects")]
+	[CallsUnknownMethods(Count = 2)]
 	private void Initialize()
 	{
 	}
@@ -81,214 +78,213 @@ public class RandomSpawnObject : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(RandomSpawnObjectManager), Member = "Deserialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(RandomSpawnObject), Member = "FindObject")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(RandomSpawnObject), Member = "FindObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	public bool HasObject(string objName, Vector3 location)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(RandomSpawnObjectManager), Member = "Deserialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(RandomSpawnObject), Member = "FindObject")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(RandomSpawnObject), Member = "RecheckObjectDisablers")]
-	[CalledBy(Type = typeof(RandomSpawnObjectManager), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 7)]
 	public void LoadObject(string objName, Vector3 location, float elapsedTimeSinceReroll)
 	{
 	}
 
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "Initialize")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(RandomSpawnObject), Member = "MaybeReroll")]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "CheckForSpawnInOldSaves")]
-	[CalledBy(Type = typeof(RandomSpawnObject), Member = "Initialize")]
+	[CalledBy(Type = typeof(RandomSpawnObject), Member = "MaybeReroll")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(SpawnRegion), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(SpawnRegion), Member = "SetActive")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void DisableAll()
 	{
 	}
 
+	[CalledBy(Type = typeof(RandomSpawnObjectManager), Member = "Deserialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(RandomSpawnObjectManager), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void DisableAllAndCheckContainers()
 	{
 	}
 
 	[CalledBy(Type = typeof(RandomSpawnObjectManager), Member = "Deserialize")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 15)]
 	public void PruneMissingObjects()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(RandomSpawnObject), Member = "ShouldSkipSerialization")]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "Start")]
 	[CalledBy(Type = typeof(RandomSpawnObjectManager), Member = "Serialize")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(RandomSpawnObject), Member = "ShouldSkipSerialization")]
 	[CallsUnknownMethods(Count = 2)]
 	public bool ShouldAllSkipSerialization()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(RandomSpawnObject), Member = "ShouldSkipSerialization")]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public bool ShouldAnySkipSerialization()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "ShouldAllSkipSerialization")]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "ShouldAnySkipSerialization")]
 	[CalledBy(Type = typeof(RandomSpawnObjectManager), Member = "Serialize")]
 	[CalledBy(Type = typeof(RandomSpawnObjectManager), Member = "Deserialize")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
 	[CallsUnknownMethods(Count = 1)]
 	public static bool ShouldSkipSerialization(GameObject item)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(SpecialEvent), Member = "MatchesExperienceMode")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "GetNumObjectsToEnableCurrentXPMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "ActivateRandomObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(SpecialEvent), Member = "MatchesExperienceMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static ExperienceModeType GetExperienceMode()
 	{
 		return default(ExperienceModeType);
 	}
 
+	[CalledBy(Type = typeof(RandomSpawnObject), Member = "Initialize")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(RandomSpawnObject), Member = "GetExperienceMode")]
-	[CalledBy(Type = typeof(RandomSpawnObject), Member = "Initialize")]
 	private int GetNumObjectsToEnableCurrentXPMode()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(RandomSpawnObject), Member = "LoadObject")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "HasObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(RandomSpawnObject), Member = "LoadObject")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private GameObject FindObject(string objName, Vector3 location)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 58)]
-	[CalledBy(Type = typeof(RandomSpawnObject), Member = "MaybeReroll")]
+	[CalledBy(Type = typeof(RandomSpawnObject), Member = "Initialize")]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "CheckForSpawnInOldSaves")]
-	[CalledBy(Type = typeof(RandomSpawnObject), Member = "Initialize")]
-	[CalledBy(Type = typeof(RandomSpawnObject), Member = "Initialize")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
+	[CalledBy(Type = typeof(RandomSpawnObject), Member = "MaybeReroll")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(RandomSpawnObject), Member = "RecheckObjectDisablers")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RandomSpawnObject), Member = "GetExperienceMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetRandomSeed")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(RandomSpawnObject), Member = "GetFirstNonZeroPosition")]
-	[CallsDeduplicatedMethods(Count = 12)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[Calls(Type = typeof(float), Member = "GetHashCode")]
+	[Calls(Type = typeof(GameManager), Member = "GetRandomSeed")]
+	[Calls(Type = typeof(RandomSpawnObject), Member = "GetExperienceMode")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(RandomSpawnObject), Member = "RecheckObjectDisablers")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 54)]
 	private void ActivateRandomObject()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "ActivateRandomObject")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallsUnknownMethods(Count = 4)]
 	private Vector3 GetFirstNonZeroPosition()
 	{
 		return default(Vector3);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(RandomSpawnObject), Member = "ActivateRandomObject")]
-	[Calls(Type = typeof(GearManager), Member = "DestroyNextUpdate")]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "Initialize")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(RandomSpawnObject), Member = "DisableAll")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(GearSpawnInOldSaves), Member = "HasSpawned")]
+	[Calls(Type = typeof(RandomSpawnObject), Member = "DisableAll")]
+	[Calls(Type = typeof(RandomSpawnObject), Member = "ActivateRandomObject")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(GearManager), Member = "DestroyNextUpdate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void CheckForSpawnInOldSaves()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "Update")]
-	[Calls(Type = typeof(RandomSpawnObject), Member = "ActivateRandomObject")]
-	[Calls(Type = typeof(RandomSpawnObject), Member = "DisableAll")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(SpawnRegion), Member = "GetNumActiveSpawns")]
+	[Calls(Type = typeof(RandomSpawnObject), Member = "DisableAll")]
+	[Calls(Type = typeof(RandomSpawnObject), Member = "ActivateRandomObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void MaybeReroll()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "Initialize")]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "LoadObject")]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "ActivateRandomObject")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsUnknownMethods(Count = 4)]
 	private void RecheckObjectDisablers(GameObject go)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public string PerformSceneValidationTest()
 	{
 		return null;

@@ -10,22 +10,21 @@ public class BehaviourTreeInteraction : MonoBehaviour
 	public Blackboard m_Blackboard;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
-	[Calls(Type = typeof(BlackboardSource), Member = "SetValue")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(BlackboardSource), Member = "SetValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool ProcessInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -37,9 +36,9 @@ public class BehaviourTreeInteraction : MonoBehaviour
 		return null;
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public BehaviourTreeInteraction()
 	{
 	}

@@ -5,9 +5,9 @@ public class NotificationSaveData
 {
 	public List<NotificationFlagInfo> m_NotificationFlagInfo;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 0)]
 	public NotificationSaveData()
 	{
 	}

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
@@ -18,7 +17,7 @@ public class Action_EnableObjects : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+		[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsUnknownMethods(Count = 1)]
 		get
@@ -27,29 +26,30 @@ public class Action_EnableObjects : ActionTask
 		}
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "AddCustomManagedObject")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "AddCustomManagedObject")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(NCUtils), Member = "GetHostState")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveCustomManagedObject")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveCustomManagedObject")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	protected override void OnStop()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public Action_EnableObjects()
 	{
 	}

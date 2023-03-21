@@ -11,13 +11,13 @@ public class GetComponent<T> : ActionTask<Transform> where T : Component
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -26,9 +26,9 @@ public class GetComponent<T> : ActionTask<Transform> where T : Component
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{

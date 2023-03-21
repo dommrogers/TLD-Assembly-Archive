@@ -26,7 +26,7 @@ public class EnergyBoostItem : MonoBehaviour
 	private GearItem m_GearItem;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	public void Awake()
 	{
 	}

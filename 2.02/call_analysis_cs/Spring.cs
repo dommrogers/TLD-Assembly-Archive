@@ -10,13 +10,12 @@ public class Spring : ODE
 
 	public float restLen;
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "BeginClimbing")]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "BeginClimbing")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public Spring(float _mass, float _dampening, float _k, float _restLength, float _initialLength)
-		: base(default(int))
+		: base(0)
 	{
 	}
 
@@ -32,7 +31,7 @@ public class Spring : ODE
 	[CallsUnknownMethods(Count = 3)]
 	public float GetLength()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -45,7 +44,7 @@ public class Spring : ODE
 	[CallsUnknownMethods(Count = 3)]
 	public float GetVelocity()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -54,8 +53,8 @@ public class Spring : ODE
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	public void AddForce(float force)
 	{
 	}

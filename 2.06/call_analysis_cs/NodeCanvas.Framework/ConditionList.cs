@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 
 namespace NodeCanvas.Framework;
@@ -30,7 +31,7 @@ public class ConditionList : ConditionTask, ISubTasksContainer
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003COnInit_003Eb__10_0(ConditionTask c)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -45,103 +46,107 @@ public class ConditionList : ConditionTask, ISubTasksContainer
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(Task), Member = "get_summaryInfo")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
 	[CallsUnknownMethods(Count = 1)]
 	private Task[] NodeCanvas_002EFramework_002EISubTasksContainer_002EGetSubTasks()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(ConditionList), Member = "AddCondition")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Task), Member = "Duplicate")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(ConditionList), Member = "AddCondition")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public override Task Duplicate(ITaskSystem newOwnerSystem)
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enumerable), Member = "Where")]
+	[Calls(Type = typeof(Enumerable), Member = "ToList")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	protected override string OnInit()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Task), Member = "Set")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Task), Member = "get_agent")]
+	[Calls(Type = typeof(Task), Member = "Set")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnEnable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	protected override void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Task), Member = "get_agent")]
+	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public override void OnDrawGizmos()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public override void OnDrawGizmosSelected()
 	{
 	}
 
-	[CalledBy(Type = typeof(ConditionList), Member = "AddCondition")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Task), Member = "SetOwnerSystem")]
 	[CalledBy(Type = typeof(ConditionList), Member = "Duplicate")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(ConditionList), Member = "AddCondition")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(ConditionList), Member = "AddCondition")]
+	[Calls(Type = typeof(Task), Member = "SetOwnerSystem")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public void AddCondition(ConditionTask condition)
 	{
 	}

@@ -15,9 +15,9 @@ public class CheckCSharpEventValue<T> : ConditionTask
 
 	public override Type agentType
 	{
-		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 		get
 		{
 			return null;
@@ -35,12 +35,12 @@ public class CheckCSharpEventValue<T> : ConditionTask
 		}
 	}
 
-	[Calls(Type = typeof(ReflectionTools), Member = "RTCreateDelegate")]
-	[Calls(Type = typeof(ReflectionTools), Member = "RTGetMethod")]
-	[Calls(Type = typeof(ReflectionTools), Member = "RTGetEvent")]
-	[Calls(Type = typeof(Task), Member = "get_agent")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTGetEvent")]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTGetMethod")]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTCreateDelegate")]
+	[Calls(Type = typeof(Task), Member = "get_agent")]
 	[CallsDeduplicatedMethods(Count = 3)]
 	protected override string OnInit()
 	{
@@ -49,8 +49,8 @@ public class CheckCSharpEventValue<T> : ConditionTask
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void Raised(T eventValue)
 	{
@@ -60,7 +60,7 @@ public class CheckCSharpEventValue<T> : ConditionTask
 	[CallerCount(Count = 3)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
@@ -22,16 +22,19 @@ public class Action_MissionSelector : ActionTask
 		}
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(NCUtils), Member = "GetOrAddVar")]
+	[Calls(Type = typeof(Variable<>), Member = "set_value")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 9)]
 	protected override void OnExecute()
 	{
 	}

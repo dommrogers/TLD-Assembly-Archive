@@ -13,16 +13,16 @@ public class TransferDeviceIdAccountOptions
 
 	public ProductUserId PrimaryLocalUserId
 	{
-		[CallerCount(Count = 52)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -32,14 +32,14 @@ public class TransferDeviceIdAccountOptions
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -49,21 +49,21 @@ public class TransferDeviceIdAccountOptions
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public TransferDeviceIdAccountOptions()
 	{
 	}

@@ -11,7 +11,7 @@ public class OwnershipOverride : MonoBehaviour
 		public string m_TrustId;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public SerializedData()
 		{
 		}
@@ -19,43 +19,44 @@ public class OwnershipOverride : MonoBehaviour
 
 	private SerializedData m_SerializedData;
 
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(Container), Member = "Serialize")]
 	[CalledBy(Type = typeof(GearItem), Member = "Serialize")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Container), Member = "Serialize")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
 	[CalledBy(Type = typeof(Container), Member = "Deserialize")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Deserialize(string data)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Action_OverrideOwnership), Member = "DoWork")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetTrustId(string trustId)
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
-	[DeduplicatedMethod]
 	public string GetTrustId()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public OwnershipOverride()
 	{
 	}

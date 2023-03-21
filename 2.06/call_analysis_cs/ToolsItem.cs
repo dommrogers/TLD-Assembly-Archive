@@ -33,8 +33,8 @@ public class ToolsItem : MonoBehaviour
 
 	public bool m_AppearInStoryOnly;
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public ToolsItem()
 	{
 	}

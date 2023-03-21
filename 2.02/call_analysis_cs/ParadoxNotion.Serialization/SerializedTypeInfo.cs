@@ -19,27 +19,27 @@ public class SerializedTypeInfo : ISerializationCallbackReceiver
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void UnityEngine_002EISerializationCallbackReceiver_002EOnAfterDeserialize()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SerializedTypeInfo()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 71)]
+	[CallerCount(Count = 77)]
 	public SerializedTypeInfo(Type info)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 29)]
+	[CallerCount(Count = 35)]
 	public Type Get()
 	{
 		return null;

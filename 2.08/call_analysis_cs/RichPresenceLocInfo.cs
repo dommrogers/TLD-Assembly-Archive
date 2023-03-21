@@ -8,8 +8,8 @@ public class RichPresenceLocInfo
 
 	public string LocKey;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public RichPresenceLocInfo()
 	{
 	}

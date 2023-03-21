@@ -9,7 +9,7 @@ public class BedSaveDataProxy
 	public string m_BodyGuid;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public BedSaveDataProxy()
 	{
 	}

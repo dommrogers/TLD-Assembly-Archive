@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
@@ -314,20 +313,25 @@ public class Panel_Map : Panel_Base
 
 	private Transform[] m_NotificationFlagChildren;
 
-	[Calls(Type = typeof(Panel_Map), Member = "CacheComponents")]
-	[CallsUnknownMethods(Count = 86)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_Map), Member = "HideFilterButtonLabels")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[Calls(Type = typeof(Panel_Map), Member = "CreateObjectPools")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Panel_Map), Member = "CreateObjectPools")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 24)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Resources), Member = "LoadAll")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Panel_Map), Member = "HideFilterButtonLabels")]
+	[Calls(Type = typeof(Panel_Map), Member = "CacheComponents")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 86)]
 	public override void Initialize()
 	{
 	}
@@ -338,163 +342,167 @@ public class Panel_Map : Panel_Base
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Map), Member = "UpdateButtonLegend")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_Map), Member = "ForceUpdateRegion")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(Panel_Map), Member = "DoMouseControls")]
+	[Calls(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
+	[Calls(Type = typeof(Panel_Map), Member = "CheckForExpiredMissionTimers")]
+	[Calls(Type = typeof(Panel_Map), Member = "MaybeFollowMouseWithCrosshair")]
 	[Calls(Type = typeof(Panel_Map), Member = "CheckForHoverState")]
 	[Calls(Type = typeof(Panel_Map), Member = "UpdateCrosshairState")]
+	[Calls(Type = typeof(Panel_Map), Member = "UpdateButtonLegend")]
 	[Calls(Type = typeof(Panel_Map), Member = "MagnetTowardsHoveredIcon")]
-	[Calls(Type = typeof(Panel_Map), Member = "MaybeFollowMouseWithCrosshair")]
+	[Calls(Type = typeof(Panel_Map), Member = "RefreshLastUpdateTimeLabel")]
 	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconsForOffscreenMissionMarkers")]
 	[Calls(Type = typeof(Panel_Map), Member = "UpdateFilterButtons")]
 	[Calls(Type = typeof(Panel_Map), Member = "UpdateNowhereToHide")]
 	[Calls(Type = typeof(Panel_Map), Member = "OnCancel")]
-	[Calls(Type = typeof(Panel_Map), Member = "RefreshLastUpdateTimeLabel")]
-	[Calls(Type = typeof(Panel_Map), Member = "CheckForExpiredMissionTimers")]
-	[Calls(Type = typeof(Panel_Map), Member = "DoMouseControls")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Panel_Map), Member = "ForceUpdateRegion")]
-	[Calls(Type = typeof(Panel_Map), Member = "ForceUpdateRegion")]
-	[Calls(Type = typeof(Panel_Map), Member = "ForceUpdateRegion")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 86)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 26)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >.KeyCollection.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 86)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 93)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_Map), Member = "RevealFogForScene")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Panel_SprayPaint), Member = "GetShapeLocNameID")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[CallsDeduplicatedMethods(Count = 40)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[Calls(Type = typeof(Dictionary<, >.KeyCollection.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(Enum), Member = "TryParse")]
+	[Calls(Type = typeof(Panel_SprayPaint), Member = "GetShapeLocNameID")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
 	[Calls(Type = typeof(Panel_Map), Member = "UnlockRegionMap")]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(Panel_Map), Member = "RevealFogForScene")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 93)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplySurvey")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_survey_clear")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "ClearUISaveData")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Dictionary<, >.KeyCollection.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	public void ClearData()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Map), Member = "CenterOnPoint")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "RevealOnPolaroidDiscovery")]
-	[Calls(Type = typeof(Panel_Map), Member = "Enable")]
-	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeRevealPolaroidDiscoveryOnClose")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Panel_Map), Member = "DoNearbyDetailsCheck")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Equals")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Panel_Map), Member = "DoNearbyDetailsCheck")]
+	[Calls(Type = typeof(Panel_Map), Member = "Enable")]
+	[Calls(Type = typeof(Panel_Map), Member = "CenterOnPoint")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	public void RevealOnPolaroidDiscovery(string polaroidGearItemName, bool showOnMap)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_survey")]
-	[CalledBy(Type = typeof(RockCache), Member = "SetupInWorld")]
-	[CalledBy(Type = typeof(CharcoalItem), Member = "DetailSurveyComplete")]
 	[CalledBy(Type = typeof(CharcoalItem), Member = "Update")]
+	[CalledBy(Type = typeof(CharcoalItem), Member = "DetailSurveyComplete")]
+	[CalledBy(Type = typeof(RockCache), Member = "SetupInWorld")]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplySurvey")]
-	[Calls(Type = typeof(Panel_Map), Member = "DoNearbyDetailsCheck")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_survey")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Panel_Map), Member = "DoNearbyDetailsCheck")]
 	[Calls(Type = typeof(Panel_Map), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void DoDetailSurvey(SurveyType surveyType = SurveyType.Charcoal)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "RevealCurrentScene")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoDetailSurvey")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "RevealOnPolaroidDiscovery")]
-	[Calls(Type = typeof(Utils), Member = "DistanceSqr")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[CallsUnknownMethods(Count = 48)]
-	[Calls(Type = typeof(Panel_Map), Member = "ShouldAddSurveyPosition")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "DoDetailSurvey")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "RevealCurrentScene")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 14)]
 	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
 	[Calls(Type = typeof(Panel_Map), Member = "SceneCanBeMapped")]
-	[Calls(Type = typeof(Panel_Map), Member = "AddSurveyedVistaLocation")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(MapDetailManager), Member = "UnlockMapDetailObjectsNearPosition")]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "UnlockDecalMapMarkersNearPosition")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Panel_Map), Member = "AddSurveyedVistaLocation")]
+	[Calls(Type = typeof(Panel_Map), Member = "ShouldAddSurveyPosition")]
+	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(Utils), Member = "DistanceSqr")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 48)]
 	public void DoNearbyDetailsCheck(float radius, bool forceAddSurveyPosition, bool useOverridePosition, Vector3 overridePostion, bool shouldAllowVistaReveals)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Panel_Map), Member = "HasVistaLocationRequiredGearItem")]
-	[Calls(Type = typeof(Panel_Map), Member = "HasVistaLocationBeenSurveyed")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoNearbyDetailsCheck")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
+	[Calls(Type = typeof(Panel_Map), Member = "HasVistaLocationBeenSurveyed")]
+	[Calls(Type = typeof(Panel_Map), Member = "HasVistaLocationRequiredGearItem")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public bool ShouldAddSurveyPosition()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Panel_Map), Member = "SceneCanBeMapped")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "Deserialize")]
 	[CalledBy(Type = typeof(Action_UnlockMap), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Action_UnlockAllMaps), Member = "OnExecute")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Map), Member = "SceneCanBeMapped")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 19)]
 	public void RevealFogForScene(string sceneName)
 	{
@@ -506,179 +514,177 @@ public class Panel_Map : Panel_Base
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoDetailSurvey")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "RevealOnPolaroidDiscovery")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(Panel_Map), Member = "RevealOnPolaroidDiscovery")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "DoDetailSurvey")]
 	[CallerCount(Count = 2)]
 	public void Enable(bool enable, bool cameFromDetailSurvey)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
+	[CalledBy(Type = typeof(InputManager), Member = "MaybeClosePanelDueToHotkey")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
 	[Calls(Type = typeof(GameAudioManager), Member = "MaybePlayOverrideCloseSound")]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(Panel_Map), Member = "CloseMarkerListIfActive")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
-	[CalledBy(Type = typeof(InputManager), Member = "MaybeClosePanelDueToHotkey")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnCancel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnInventoryNav()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnClothingNav()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnFirstAidNav()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnJournalNav()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OpenRockCache")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "DoMouseControls")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
 	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateSectionNavButtonColors")]
 	[Calls(Type = typeof(Panel_Log), Member = "SetRegionAndRockCacheSelected")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OpenRockCache")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoMouseControls")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 3)]
 	public void OnRockCacheNav(string rockCacheName)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Crafting), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnCraftingNav()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnMissionsNav()
 	{
 	}
 
-	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Map), Member = "CloseMarkerListIfActive")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Map), Member = "ResetToNormal")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Panel_Map), Member = "UnloadMapElements")]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetLocIDForScene")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Panel_Map), Member = "CloseMarkerListIfActive")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
+	[Calls(Type = typeof(Panel_Map), Member = "ResetToNormal")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public void ToggleWorldMap()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(Panel_Map), Member = "ResetToNormal")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetIndexOfCurrentScene")]
-	[Calls(Type = typeof(Panel_Map), Member = "EnableCartographyFilters")]
-	[Calls(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[Calls(Type = typeof(Panel_Map), Member = "UnloadMapElements")]
-	[Calls(Type = typeof(Panel_Map), Member = "CloseMarkerListIfActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Map), Member = "CloseMarkerListIfActive")]
+	[Calls(Type = typeof(Panel_Map), Member = "UnloadMapElements")]
+	[Calls(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
+	[Calls(Type = typeof(Panel_Map), Member = "EnableCartographyFilters")]
 	[Calls(Type = typeof(Panel_Map), Member = "ShouldCenterOnPlayer")]
+	[Calls(Type = typeof(Panel_Map), Member = "GetIndexOfCurrentScene")]
+	[Calls(Type = typeof(Panel_Map), Member = "ResetToNormal")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnNextRegion()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Map), Member = "ResetToNormal")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetIndexOfCurrentScene")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(Panel_Map), Member = "EnableCartographyFilters")]
-	[Calls(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[Calls(Type = typeof(Panel_Map), Member = "UnloadMapElements")]
-	[Calls(Type = typeof(Panel_Map), Member = "ShouldCenterOnPlayer")]
-	[Calls(Type = typeof(Panel_Map), Member = "CloseMarkerListIfActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Map), Member = "CloseMarkerListIfActive")]
+	[Calls(Type = typeof(Panel_Map), Member = "UnloadMapElements")]
+	[Calls(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
+	[Calls(Type = typeof(Panel_Map), Member = "EnableCartographyFilters")]
+	[Calls(Type = typeof(Panel_Map), Member = "ShouldCenterOnPlayer")]
+	[Calls(Type = typeof(Panel_Map), Member = "GetIndexOfCurrentScene")]
+	[Calls(Type = typeof(Panel_Map), Member = "ResetToNormal")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnPrevRegion()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "GenerateRockCacheScreenData")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheShowOnMapClicked")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCartographyRegionList")]
 	[CalledBy(Type = typeof(RockCacheListItem), Member = "SetRegionInfo")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCartographyRegionList")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheShowOnMapClicked")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "GenerateRockCacheScreenData")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsRegionUnlocked([In] ref string regionName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_WorldMap), Member = "SelectRegionMap")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheShowOnMapClicked")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_WorldMap), Member = "SelectRegionMap")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(Panel_Map), Member = "UnloadMapElements")]
+	[Calls(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetRegion(string regionName)
 	{
 	}
@@ -691,18 +697,21 @@ public class Panel_Map : Panel_Base
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Map), Member = "UnlockMapCurrentScene")]
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(Action_UnlockMap), Member = "OnExecute")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_map_unlock_region")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "Deserialize")]
-	[CalledBy(Type = typeof(Action_UnlockAllMaps), Member = "OnExecute")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Panel_Map), Member = "SceneCanBeMapped")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "ShowLocationReveal")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "Deserialize")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "UnlockMapCurrentScene")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_map_unlock_region")]
+	[CalledBy(Type = typeof(Action_UnlockMap), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_UnlockAllMaps), Member = "OnExecute")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Panel_Map), Member = "SceneCanBeMapped")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	public void UnlockRegionMap(string regionName)
 	{
 	}
@@ -712,315 +721,285 @@ public class Panel_Map : Panel_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_map_reveal")]
-	[Calls(Type = typeof(Panel_Map), Member = "DoNearbyDetailsCheck")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+	[Calls(Type = typeof(Panel_Map), Member = "DoNearbyDetailsCheck")]
+	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	public void RevealCurrentScene()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_MarkerList), Member = "GatherItems")]
 	[CalledBy(Type = typeof(Panel_MarkerList), Member = "UpdatePosition")]
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_MarkerList), Member = "GatherItems")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public ClusterCell FindCluster(int x, int y)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "OnUserMarkerRenameConfirm")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "DeleteMarker")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_MarkerList), Member = "Enable_Internal")]
-	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_SprayMarkings")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Corpses")]
-	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Structures")]
-	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Resources")]
-	[Calls(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[Calls(Type = typeof(Panel_Map), Member = "UnloadMapElements")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "DeleteMarker")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "OnUserMarkerRenameConfirm")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Panel_Map), Member = "UnloadMapElements")]
+	[Calls(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
+	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Resources")]
+	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Structures")]
+	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Corpses")]
 	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_RockCache")]
+	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_SprayMarkings")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ForceUpdateRegion()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_SprayMarkings")]
-	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_RockCache")]
-	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Corpses")]
-	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Resources")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Resources")]
 	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Structures")]
+	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Corpses")]
+	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_RockCache")]
+	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_SprayMarkings")]
 	public void RefreshIconVisibility()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_Map), Member = "DoMapIconSpacing")]
-	[Calls(Type = typeof(Panel_MarkerList), Member = "UpdatePosition")]
-	[Calls(Type = typeof(FogOfWar), Member = "ProcessList")]
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[Calls(Type = typeof(Panel_Map), Member = "DoMapIconSpacing")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_Map), Member = "DoMapIconSpacing")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 59)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "OnNextRegion")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "OnPrevRegion")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "SetRegion")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "ForceUpdateRegion")]
-	[Calls(Type = typeof(Panel_Map), Member = "DoMapIconSpacing")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_Map), Member = "DoMapIconSpacing")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Panel_Map), Member = "DoMapCondense")]
-	[Calls(Type = typeof(Panel_Map), Member = "MergeNearbyMissionMapIconsWithLocations")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 20)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetNameForScene")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(Panel_Map), Member = "GatherClustersElementsForScene")]
 	[Calls(Type = typeof(Panel_Map), Member = "IsSprayPaint")]
 	[Calls(Type = typeof(Panel_Map), Member = "IsRockCache")]
 	[Calls(Type = typeof(Panel_Map), Member = "IsLegacyUserMarker")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(Transform), Member = "get_childCount")]
 	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Transform), Member = "get_childCount")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(MapIcon), Member = "DoSetup")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[Calls(Type = typeof(Transform), Member = "get_childCount")]
-	[Calls(Type = typeof(MapIcon), Member = "DoSetup")]
-	[Calls(Type = typeof(MapIcon), Member = "DoSetup")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[Calls(Type = typeof(Transform), Member = "get_childCount")]
-	[Calls(Type = typeof(MapIcon), Member = "DoSetup")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[Calls(Type = typeof(Transform), Member = "get_childCount")]
-	[Calls(Type = typeof(MapIcon), Member = "DoSetup")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[Calls(Type = typeof(MapIcon), Member = "DoSetup")]
+	[Calls(Type = typeof(Panel_Map), Member = "DoMapCondense")]
+	[Calls(Type = typeof(Panel_Map), Member = "MergeNearbyMissionMapIconsWithLocations")]
+	[Calls(Type = typeof(Panel_Map), Member = "DoMapIconSpacing")]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[Calls(Type = typeof(FogOfWar), Member = "ProcessList")]
+	[Calls(Type = typeof(Panel_MarkerList), Member = "UpdatePosition")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 59)]
 	public void LoadMapElementsForScene(string sceneName)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(RockCacheManager), Member = "UpdateRockCacheName")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void RenameMapMarkerFromGuid(string guid, string newName)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
-	[Calls(Type = typeof(Panel_Map), Member = "AddMapElementCurrentRegion")]
 	[CalledBy(Type = typeof(MapDetail), Member = "UpdateCustomName")]
 	[CalledBy(Type = typeof(MapDetail), Member = "ShowOnMap")]
 	[CalledBy(Type = typeof(RockCache), Member = "SetMapDetailName")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(Panel_Map), Member = "AddMapElementCurrentRegion")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	public void AddMapDetailToMap(MapDetail mapDetail)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(MapDetail), Member = "UpdateCustomName")]
 	[CalledBy(Type = typeof(MapDetail), Member = "ShowOnMap")]
 	[CalledBy(Type = typeof(RockCache), Member = "SetMapDetailName")]
-	[CalledBy(Type = typeof(MapDetail), Member = "UpdateCustomName")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
 	[Calls(Type = typeof(Panel_Map), Member = "RemoveMapElement")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void RemoveMapDetailFromMap(MapDetail mapDetail, float delayHours)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Panel_Map), Member = "GetSpriteNameForLocation")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
 	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
 	[Calls(Type = typeof(Panel_Map), Member = "AddMapElement")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void AddIndoorSpaceTrigger(string triggerID, Vector3 worldPos, bool nameIsKnown)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Map), Member = "AddMapElement")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetLocIDForScene")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Panel_Map), Member = "GetSpriteNameForLocation")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
+	[Calls(Type = typeof(Panel_Map), Member = "AddMapElement")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void AddLoadScene(string sceneName, Vector3 worldPos, bool nameIsKnown)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Map), Member = "AddMapElement")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
+	[Calls(Type = typeof(Panel_Map), Member = "AddMapElement")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void AddDisplayLocationLabel(string locationLocID, Vector3 worldPos)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 27)]
-	[CalledBy(Type = typeof(Action_AddMissionMarkerToMap), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_AddMissionMarkerToMap), Member = "OnUpdate")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_mapmarker_add")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CalledBy(Type = typeof(Action_AddMissionMarkerToMap), Member = "OnUpdate")]
+	[CalledBy(Type = typeof(Action_AddMissionMarkerToMap), Member = "OnExecute")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Map), Member = "GetMapMarkerIndex")]
+	[Calls(Type = typeof(Panel_Map), Member = "SceneCanBeMapped")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionInfoFromID")]
+	[Calls(Type = typeof(Panel_Map), Member = "AddMarkerToLocation")]
 	[Calls(Type = typeof(Panel_Map), Member = "AddMarkerToWorldPos")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionInfoFromID")]
-	[Calls(Type = typeof(Panel_Map), Member = "SceneCanBeMapped")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapMarkerIndex")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Panel_Map), Member = "AddMarkerToLocation")]
+	[CallsUnknownMethods(Count = 27)]
 	public bool AddMapMarkerToMap(string markerID, bool isSurveyed = true)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallsUnknownMethods(Count = 32)]
-	[CalledBy(Type = typeof(Action_RemoveMissionMarkerFromMap), Member = "OnExecute")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_mapmarker_remove")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Panel_Map), Member = "RemoveMarkerFromWorldPos")]
-	[Calls(Type = typeof(Panel_Map), Member = "RemoveMarkerFromLocation")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionInfoFromID")]
-	[Calls(Type = typeof(Panel_Map), Member = "SceneCanBeMapped")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapMarkerIndex")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Action_RemoveMissionMarkerFromMap), Member = "OnExecute")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Map), Member = "GetMapMarkerIndex")]
+	[Calls(Type = typeof(Panel_Map), Member = "SceneCanBeMapped")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionInfoFromID")]
+	[Calls(Type = typeof(Panel_Map), Member = "RemoveMarkerFromLocation")]
+	[Calls(Type = typeof(Panel_Map), Member = "RemoveMarkerFromWorldPos")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 32)]
 	public void RemoveMapMarkerFromMap(string markerID)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 26)]
 	[CalledBy(Type = typeof(Action_RevealMapLocation), Member = "OnExecute")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Panel_Map), Member = "AddMapElement")]
-	[Calls(Type = typeof(Localization), Member = "Exists")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetLocIDForScene")]
-	[Calls(Type = typeof(Panel_Map), Member = "SceneCanBeMapped")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapMarkerIndex")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Map), Member = "GetMapMarkerIndex")]
+	[Calls(Type = typeof(Panel_Map), Member = "SceneCanBeMapped")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetLocIDForScene")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Localization), Member = "Exists")]
+	[Calls(Type = typeof(Panel_Map), Member = "AddMapElement")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 26)]
 	public void AddMapIconFromFSM(string markerID, bool nameIsKnown)
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "UnlockDecalMapMarkersNearPosition")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Map), Member = "GetMapMarkerIndex")]
+	[Calls(Type = typeof(Panel_SprayPaint), Member = "GetShapeLocNameID")]
 	[Calls(Type = typeof(Panel_Map), Member = "AddMapElementCurrentRegion")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapMarkerIndex")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Panel_SprayPaint), Member = "GetShapeLocNameID")]
+	[CallsUnknownMethods(Count = 6)]
 	public bool AddDecalMapMarker(DecalProjectorInstance decal)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_SprayPaint), Member = "GetShapeLocNameID")]
 	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
 	[Calls(Type = typeof(Panel_Map), Member = "RemoveMapElement")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void RemoveDecalMapMarker(DecalProjectorInstance decal)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(FogOfWar), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(MapIcon), Member = "LateUpdate")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(FogOfWar), Member = "LateUpdate")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Mathf), Member = "InverseLerp")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetDetailLevelAlpha()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnMapNav")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnMapNav")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnMapNav")]
+	[CalledBy(Type = typeof(HUDObjectives), Member = "RestoreDisplay")]
+	[CalledBy(Type = typeof(HUDObjectives), Member = "Show")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNavigationRadial")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "DoOpenMap")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "OnMapNav")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnMapNam")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "OnMapNav")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnMapNav")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnMapNav")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnMapNav")]
+	[CalledBy(Type = typeof(InputManager), Member = "ProcessInput")]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteOpenMapAction")]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteOpenMapActionFromObjective")]
-	[CalledBy(Type = typeof(InputManager), Member = "ProcessInput")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnMapNam")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "DoOpenMap")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNavigationRadial")]
-	[CalledBy(Type = typeof(HUDObjectives), Member = "Show")]
-	[CalledBy(Type = typeof(HUDObjectives), Member = "RestoreDisplay")]
+	[CallerCount(Count = 14)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 14)]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "OnMapNav")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool NoMapsUnlocked()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteOpenMapActionFromObjective")]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteOpenMapAction")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnMapNav")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnMapNav")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnMapNav")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnMapNam")]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "OnMapNav")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "OnMapNav")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNavigationRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "DoOpenMap")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "OnMapNav")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnMapNam")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "OnMapNav")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnMapNav")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnMapNav")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnMapNav")]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteOpenMapAction")]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteOpenMapActionFromObjective")]
 	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void ShowNoMapsUnlockedMessage()
 	{
 	}
@@ -1030,31 +1009,33 @@ public class Panel_Map : Panel_Base
 	[Calls(Type = typeof(Panel_Map), Member = "GetNumberOfUnlockedMapElements")]
 	public bool CheckRegionForAchievement(string sceneName, int numTopLevelIconsRequired, int numLocationTriggersRequired, ref int numComplete)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(AchievementManager), Member = "IsRegionCompleteFaithfulCartographer")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "CheckRegionForAchievement")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfScene")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(AchievementManager), Member = "IsRegionCompleteFaithfulCartographer")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfScene")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public int GetNumberOfUnlockedMapElements(string sceneName)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(MapDetailManager), Member = "LogAllUnmappedLocations")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCartographyRegionList")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfScene")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(MapDetailManager), Member = "LogAllUnmappedLocations")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfScene")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 13)]
 	public List<string> GetLocIdsOfUnlockedMapElements(string sceneName)
 	{
 		return null;
@@ -1062,31 +1043,33 @@ public class Panel_Map : Panel_Base
 
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessInput")]
 	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallsUnknownMethods(Count = 2)]
 	public string GetSelectedMission()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteOpenMapActionFromObjective")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnMapNav")]
-	[Calls(Type = typeof(Vector2), Member = "Distance")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteOpenMapActionFromObjective")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(Vector2), Member = "Distance")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 11)]
 	public void CenterOn(string missionId)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheShowOnMapClicked")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "RevealOnPolaroidDiscovery")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void CenterOnPoint(Vector3 point)
 	{
@@ -1094,9 +1077,9 @@ public class Panel_Map : Panel_Base
 
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapDetailToMap")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddDecalMapMarker")]
-	[Calls(Type = typeof(Panel_Map), Member = "AddMapElement")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
+	[Calls(Type = typeof(Panel_Map), Member = "AddMapElement")]
 	public MapElementSaveData AddMapElementCurrentRegion(string locationLocID, string spriteName, bool bigSprite, bool nameIsKnown, Vector3 worldPos, bool isDetail = false, bool isArea = false, bool showDirectional = false, float directionalAngle = float.NaN, string customName = "", bool worldPosIsMapPos = false, string optionalGuid = null)
 	{
 		return null;
@@ -1109,36 +1092,35 @@ public class Panel_Map : Panel_Base
 	{
 	}
 
-	[Calls(Type = typeof(ObjectGuidManager), Member = "Lookup")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoNearbyDetailsCheck")]
-	[CallsUnknownMethods(Count = 41)]
-	[Calls(Type = typeof(VistaLocation), Member = "GetGuid")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(Panel_Map), Member = "HasVistaLocationBeenSurveyed")]
-	[Calls(Type = typeof(VistaLocation), Member = "MaybeHideNotification")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Panel_Map), Member = "HasVistaLocationBeenSurveyed")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Panel_Map), Member = "HasVistaLocationRequiredGearItem")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Panel_Map), Member = "RemoveMapElement")]
-	[Calls(Type = typeof(VistaLocation), Member = "GetGuid")]
 	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
+	[Calls(Type = typeof(Panel_Map), Member = "RemoveMapElement")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(VistaLocation), Member = "GetGuid")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Panel_Map), Member = "MapPositionToWorldPosition")]
 	[Calls(Type = typeof(MapDetailManager), Member = "UnlockMapDetailObjectsNearPosition")]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "UnlockDecalMapMarkersNearPosition")]
+	[Calls(Type = typeof(VistaLocation), Member = "MaybeHideNotification")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(ObjectGuidManager), Member = "Lookup")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 41)]
 	public void AddSurveyedVistaLocation(string regionName, VistaLocation vistaLocation)
 	{
 	}
@@ -1147,82 +1129,92 @@ public class Panel_Map : Panel_Base
 	[CallerCount(Count = 0)]
 	public bool HasVistaLocationBeenSurveyed(VistaLocation vistaLocation)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AreAnyUnsurveyedVistasActive")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddSurveyedVistaLocation")]
 	[CalledBy(Type = typeof(VistaLocation), Member = "OnTriggerEnter")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "ShouldAddSurveyPosition")]
-	[Calls(Type = typeof(VistaLocation), Member = "GetGuid")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddSurveyedVistaLocation")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AreAnyUnsurveyedVistasActive")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(VistaLocation), Member = "GetGuid")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private bool HasVistaLocationBeenSurveyed(string regionName, VistaLocation vistaLocation)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddSurveyedVistaLocation")]
 	[CalledBy(Type = typeof(VistaLocation), Member = "OnTriggerEnter")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "ShouldAddSurveyPosition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddSurveyedVistaLocation")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public bool HasVistaLocationRequiredGearItem(VistaLocation vistaLocation)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void RegisterVistaLocation(VistaLocation vistaLocation)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void UnregisterVistaLocation(VistaLocation vistaLocation)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void AddActiveVistaLocation(VistaLocation vistaLocation)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void RemoveActiveVistaLocation(VistaLocation vistaLocation)
 	{
 	}
 
+	[CalledBy(Type = typeof(VistaLocation), Member = "MaybeHideNotification")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
 	[Calls(Type = typeof(Panel_Map), Member = "HasVistaLocationBeenSurveyed")]
-	[CalledBy(Type = typeof(VistaLocation), Member = "MaybeHideNotification")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public bool AreAnyUnsurveyedVistasActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(Panel_MarkerList), Member = "UpdatePosition")]
 	[CalledBy(Type = typeof(Panel_MarkerList), Member = "DoDeleteItem")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public MapIcon GetMapIconFromMapElement(MapElementSaveData mesd)
 	{
@@ -1231,105 +1223,104 @@ public class Panel_Map : Panel_Base
 
 	[CalledBy(Type = typeof(Panel_MarkerList), Member = "DoDeleteItem")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "OnSprayPaintMarkerRemoveConfirm")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "OnMarkerRemove")]
-	[Calls(Type = typeof(Panel_Map), Member = "ForceUpdateRegion")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
 	[Calls(Type = typeof(Panel_Map), Member = "SetMapIconBeingHovered")]
+	[Calls(Type = typeof(Panel_Map), Member = "ForceUpdateRegion")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 14)]
 	public void DeleteMarker(MapElementSaveData mesd, MapIcon mapIcon, bool shouldClearHoveredIcon)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public void ResetNotificationsData()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private static bool IsPartOfCluster(MapElementSaveData me)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateButtonLegend")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoMouseControls")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoMouseControls")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "MaybeShowClusterListOnHover")]
+	[CallerCount(Count = 6)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private static bool IsCluster(MapElementSaveData me)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(MarkerListDisplayItem), Member = "CanOpen")]
+	[CalledBy(Type = typeof(Panel_MarkerList), Member = "UpdateGamePad")]
+	[CalledBy(Type = typeof(ClusterCell), Member = "UpdateMapElement")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Resources")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_RockCache")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "GatherClustersElementsForScene")]
-	[CalledBy(Type = typeof(Panel_MarkerList), Member = "UpdateGamePad")]
-	[CalledBy(Type = typeof(MarkerListDisplayItem), Member = "CanOpen")]
+	[CallerCount(Count = 9)]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 9)]
-	[CalledBy(Type = typeof(ClusterCell), Member = "UpdateMapElement")]
+	[CallsUnknownMethods(Count = 3)]
 	public static bool IsRockCache(MapElementSaveData me)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private static bool IsLegacyUserMarker(MapElementSaveData me)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "GatherClustersElementsForScene")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_SprayMarkings")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Resources")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoMouseControls")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateButtonLegend")]
 	[CallAnalysisFailed]
-	[CalledBy(Type = typeof(ClusterCell), Member = "UpdateMapElement")]
-	[CalledBy(Type = typeof(Panel_MarkerList), Member = "UpdateGamePad")]
-	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OnDeleteItemRequested")]
 	[CalledBy(Type = typeof(MarkerListDisplayItem), Member = "CanDelete")]
-	[CallerCount(Count = 11)]
+	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OnDeleteItemRequested")]
+	[CalledBy(Type = typeof(Panel_MarkerList), Member = "UpdateGamePad")]
+	[CalledBy(Type = typeof(ClusterCell), Member = "UpdateMapElement")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateButtonLegend")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "DoMouseControls")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Resources")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_SprayMarkings")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "GatherClustersElementsForScene")]
+	[CallerCount(Count = 11)]
 	public static bool IsSprayPaint(MapElementSaveData me)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapElement")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_SprayPaint), Member = "IsUsingNowhereToHideShapes")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private static bool IsLocationIdSprayPaint(string locationName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1339,298 +1330,236 @@ public class Panel_Map : Panel_Base
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMapElementCurrentRegion")]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RemoveDecalFromMap")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveExpiredMapElements")]
+	[CalledBy(Type = typeof(ShowOnMapItem), Member = "RemoveFromMap")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMapDetailFromMap")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveDecalMapMarker")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMapElementCurrentRegion")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddSurveyedVistaLocation")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveDecalMapMarker")]
-	[CallsUnknownMethods(Count = 15)]
-	[CalledBy(Type = typeof(ShowOnMapItem), Member = "RemoveFromMap")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_Map), Member = "MapDataIsMatch")]
-	[Calls(Type = typeof(Panel_Map), Member = "SceneCanBeMapped")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMapElementCurrentRegion")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveExpiredMapElements")]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RemoveDecalFromMap")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMapDetailFromMap")]
+	[Calls(Type = typeof(Panel_Map), Member = "SceneCanBeMapped")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(Panel_Map), Member = "MapDataIsMatch")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 15)]
 	private void RemoveMapElement(string regionName, string locationLocID, Vector3 worldPos, float delayHours)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 27)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapElementCurrentRegion")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapIconFromFSM")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddDisplayLocationLabel")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddLoadScene")]
 	[CalledBy(Type = typeof(ShowOnMapItem), Member = "AddToMap")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddIndoorSpaceTrigger")]
-	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
-	[Calls(Type = typeof(MapElementSaveData), Member = ".ctor")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsLocationIdSprayPaint")]
-	[Calls(Type = typeof(Panel_Map), Member = "MapDataIsMatch")]
-	[Calls(Type = typeof(Panel_Map), Member = "SceneCanBeMapped")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddLoadScene")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddDisplayLocationLabel")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapIconFromFSM")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapElementCurrentRegion")]
 	[CallerCount(Count = 6)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(Panel_Map), Member = "SceneCanBeMapped")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(Panel_Map), Member = "MapDataIsMatch")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsLocationIdSprayPaint")]
+	[Calls(Type = typeof(MapElementSaveData), Member = ".ctor")]
+	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 27)]
 	private MapElementSaveData AddMapElement(string regionName, string locationLocID, string spriteName, bool bigSprite, bool nameIsKnown, Vector3 worldPos, bool isDetail = false, bool isArea = false, bool showDirectional = false, float directionalAngle = float.NaN, Vector2 areaZoneSize = default(Vector2), string customName = "", bool worldPosIsMapPos = false, string optionalGuid = null)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(InputManager), Member = "IsSteamControllerActive")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(GamepadButtonSprite), Member = "UpdateSpriteForActiveController")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
-	[CallsUnknownMethods(Count = 31)]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsCluster")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsSprayPaint")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 11)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsCluster")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsSprayPaint")]
+	[Calls(Type = typeof(InputManager), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(Type = typeof(GamepadButtonSprite), Member = "UpdateSpriteForActiveController")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 31)]
 	private void UpdateButtonLegend()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Map), Member = "MapDataIsMatch")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMarkerFromWorldPos")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddMarkerToLocation")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddMarkerToWorldPos")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddMarkerToWorldPos")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "ResetToNormal")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "MissionMapDataIsMatch")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "MapElementExists")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "CenterOnPoint")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoNearbyDetailsCheck")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 11)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "CenterOnPoint")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapElement")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "MapElementExists")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "MapDataIsMatch")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "MissionMapDataIsMatch")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "ResetToNormal")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddMarkerToWorldPos")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddMarkerToLocation")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMarkerFromWorldPos")]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private Vector3 WorldPositionToMapPosition(string regionName, Vector3 worldPos)
 	{
 		return default(Vector3);
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddSurveyedVistaLocation")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	private void MapPositionToWorldPosition(string regionName, Vector2 mapPosition, float radius, out Vector3 worldPos, out float worldRadius)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref worldPos) = null;
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref worldRadius) = null;
+		worldPos = default(Vector3);
+		worldRadius = default(float);
 	}
 
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "ResetToNormal")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Vector3), Member = "SignedAngle")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(Vector3), Member = "SignedAngle")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private Quaternion WorldRotationToMapRotation(string regionName, Quaternion worldRotation)
 	{
 		return default(Quaternion);
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "Initialize")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Vector3), Member = "get_one")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 20)]
 	private void CreateObjectPools()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 42)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "ForceUpdateRegion")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "SetRegion")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "OnPrevRegion")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "OnNextRegion")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "ToggleWorldMap")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[CallsDeduplicatedMethods(Count = 22)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "OnNextRegion")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "OnPrevRegion")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "SetRegion")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "ForceUpdateRegion")]
 	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 21)]
+	[CallsUnknownMethods(Count = 42)]
 	private void UnloadMapElements()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddMarkerToLocation")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddLoadScene")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddIndoorSpaceTrigger")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddLoadScene")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddMarkerToLocation")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	private string GetSpriteNameForLocation(string location)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public bool MapElementExists(string regionName, string locationNameLocID, Vector3 worldPos)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMarkerFromLocation")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddMarkerToLocation")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapElement")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMapElement")]
-	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapElement")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddMarkerToLocation")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMarkerFromLocation")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
 	[Calls(Type = typeof(Vector2), Member = "Distance")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool MapDataIsMatch(MapElementSaveData mapData, string locationNameLocID, Vector3 worldPos, string regionName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
 	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
 	[Calls(Type = typeof(Vector2), Member = "Distance")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool MissionMapDataIsMatch(MapElementSaveData mapData, string missionNameLocID, Vector3 worldPos, string regionName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_Map), Member = "ProcessFilterButtons")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "OnControllerScheme")]
-	[CallsUnknownMethods(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "Initialize")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "OnControllerScheme")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "ProcessFilterButtons")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void HideFilterButtonLabels()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Panel_Map), Member = "HideFilterButtonLabels")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	private void ProcessFilterButtons()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Map), Member = "OnToggleResourcesFilter")]
-	[Calls(Type = typeof(Panel_Map), Member = "OnToggleStructuresFilter")]
-	[Calls(Type = typeof(Panel_Map), Member = "OnToggleCorpsesFilter")]
-	[Calls(Type = typeof(Panel_Map), Member = "OnToggleSprayMarkingsFilter")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Map), Member = "OnToggleRockCacheFilter")]
+	[Calls(Type = typeof(Panel_Map), Member = "OnToggleSprayMarkingsFilter")]
+	[Calls(Type = typeof(Panel_Map), Member = "OnToggleCorpsesFilter")]
+	[Calls(Type = typeof(Panel_Map), Member = "OnToggleStructuresFilter")]
+	[Calls(Type = typeof(Panel_Map), Member = "OnToggleResourcesFilter")]
 	private void FilterSelectionToggle()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Map), Member = "ProcessFilterButtons")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(Vector2), Member = "get_zero")]
-	[Calls(Type = typeof(Transform), Member = "Translate")]
-	[Calls(Type = typeof(Panel_MarkerList), Member = "UpdatePosition")]
-	[Calls(Type = typeof(InputManager), Member = "GetCameraMovementGamepad")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetMenuToolSelectPressed")]
-	[Calls(Type = typeof(Panel_Map), Member = "ToggleZoom")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
-	[Calls(Type = typeof(Panel_Map), Member = "OnToggleRockCacheFilter")]
-	[Calls(Type = typeof(Panel_Map), Member = "OnPrevRegion")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsCluster")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsRockCache")]
-	[Calls(Type = typeof(Panel_Map), Member = "OnRockCacheNav")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(InputManager), Member = "GetPlayerMovement")]
-	[Calls(Type = typeof(Panel_Map), Member = "OnNextRegion")]
-	[Calls(Type = typeof(Vector2), Member = "get_zero")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsRockCache")]
-	[Calls(Type = typeof(InputManager), Member = "GetEquipPressed")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 15)]
 	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetInventoryAddToSatchelPressed")]
@@ -1640,557 +1569,515 @@ public class Panel_Map : Panel_Base
 	[Calls(Type = typeof(InputManager), Member = "GetFirePressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsCluster")]
 	[Calls(Type = typeof(Panel_Map), Member = "ShowClusterList")]
 	[Calls(Type = typeof(Panel_Map), Member = "IsSprayPaint")]
 	[Calls(Type = typeof(Panel_Map), Member = "OnSprayPaintMarkerRemove")]
-	[Calls(Type = typeof(Panel_Map), Member = "ToggleWorldMap")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsRockCache")]
+	[Calls(Type = typeof(Panel_Map), Member = "OnToggleRockCacheFilter")]
 	[Calls(Type = typeof(Panel_Map), Member = "OnToggleSprayMarkingsFilter")]
 	[Calls(Type = typeof(Panel_Map), Member = "OnToggleCorpsesFilter")]
 	[Calls(Type = typeof(Panel_Map), Member = "OnToggleStructuresFilter")]
 	[Calls(Type = typeof(Panel_Map), Member = "OnToggleResourcesFilter")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryAddToSatchelPressed")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsCluster")]
+	[Calls(Type = typeof(InputManager), Member = "GetEquipPressed")]
+	[Calls(Type = typeof(Panel_Map), Member = "ToggleWorldMap")]
+	[Calls(Type = typeof(Vector2), Member = "get_zero")]
+	[Calls(Type = typeof(InputManager), Member = "GetPlayerMovement")]
+	[Calls(Type = typeof(Panel_Map), Member = "ProcessFilterButtons")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(Transform), Member = "Translate")]
+	[Calls(Type = typeof(Panel_MarkerList), Member = "UpdatePosition")]
+	[Calls(Type = typeof(InputManager), Member = "GetCameraMovementGamepad")]
+	[Calls(Type = typeof(Panel_Map), Member = "ToggleZoom")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(Panel_Map), Member = "OnNextRegion")]
+	[Calls(Type = typeof(Panel_Map), Member = "OnPrevRegion")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Map), Member = "OnRockCacheNav")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 21)]
 	private void DoGamepadControls()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoMouseControls")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "MaybeShowClusterListOnHover")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Panel_Map), Member = "CloseMarkerListIfActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Map), Member = "CloseMarkerListIfActive")]
 	[Calls(Type = typeof(Panel_MarkerList), Member = "UpdatePosition")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ShowClusterList(MapElementSaveData mesd, MapIcon mapBeingHovered)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 15)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
-	[Calls(Type = typeof(Panel_Map), Member = "OnRockCacheNav")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Map), Member = "ShowClusterList")]
-	[Calls(Type = typeof(Panel_Map), Member = "OnSprayPaintMarkerRemove")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsSprayPaint")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsCluster")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(InputManager), Member = "GetAltFirePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetFirePressed")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
 	[Calls(Type = typeof(Panel_Map), Member = "ToggleZoom")]
-	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetFirePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetAltFirePressed")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[Calls(Type = typeof(Panel_Map), Member = "IsCluster")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsSprayPaint")]
+	[Calls(Type = typeof(Panel_Map), Member = "OnSprayPaintMarkerRemove")]
+	[Calls(Type = typeof(Panel_Map), Member = "ShowClusterList")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(Panel_Map), Member = "OnRockCacheNav")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 15)]
 	private void DoMouseControls()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheShowOnMapClicked")]
-	[Calls(Type = typeof(Panel_Map), Member = "UpdateCrosshairState")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(Panel_Map), Member = "UpdateCrosshairState")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ForceZoomIn()
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoMouseControls")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
-	[Calls(Type = typeof(Panel_Map), Member = "UpdateCrosshairState")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "DoMouseControls")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
 	[Calls(Type = typeof(Panel_Map), Member = "ShouldAlwaysBeZoomed")]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[Calls(Type = typeof(Panel_Map), Member = "UpdateCrosshairState")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 11)]
 	private void ToggleZoom()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
+	[CallerCount(Count = 1)]
 	private void CheckForHoverState()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "ForceZoomIn")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "ToggleZoom")]
-	[Calls(Type = typeof(MapCrosshair), Member = "SetState")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(MapCrosshair), Member = "SetState")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateCrosshairState()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DeleteMarker")]
-	[Calls(Type = typeof(Panel_Map), Member = "MaybeShowClusterListOnHover")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(MapIcon), Member = "HideHoverWidget")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Panel_Map), Member = "UpdateObjectiveGroup")]
-	[Calls(Type = typeof(MapIcon), Member = "HideHoverWidget")]
-	[Calls(Type = typeof(Panel_Map), Member = "CloseMarkerListIfActive")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
 	[Calls(Type = typeof(Panel_Map), Member = "RefreshHoverIconText")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Panel_Map), Member = "RefreshHoverIconText")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
 	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(Panel_Map), Member = "CloseMarkerListIfActive")]
+	[Calls(Type = typeof(MapIcon), Member = "HideHoverWidget")]
+	[Calls(Type = typeof(Panel_Map), Member = "UpdateObjectiveGroup")]
+	[Calls(Type = typeof(Panel_Map), Member = "MaybeShowClusterListOnHover")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void SetMapIconBeingHovered(MapIcon newMapIcon)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "SetMapIconBeingHovered")]
-	[Calls(Type = typeof(Panel_Map), Member = "ShowClusterList")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsCluster")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsCluster")]
+	[Calls(Type = typeof(Panel_Map), Member = "ShowClusterList")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void MaybeShowClusterListOnHover()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 27)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "SetMapIconBeingHovered")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "SetMapIconBeingHovered")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_Map), Member = "UpdateObjectiveGroup")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(MissionTimer), Member = "get_Time")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionTimerByName")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 15)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(MissionTimer), Member = "get_Time")]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_Map), Member = "UpdateObjectiveGroup")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 27)]
 	private void RefreshHoverIconText(MapIcon hoverIcon)
 	{
 	}
 
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(TweenAlpha), Member = "get_value")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "SetMapIconBeingHovered")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "RefreshHoverIconText")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjective")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionInfoFromID")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(TweenAlpha), Member = "get_value")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 15)]
 	private void UpdateObjectiveGroup(MapElementSaveData mapData)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
-	[Calls(Type = typeof(Panel_Map), Member = "WorldRotationToMapRotation")]
-	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetIndexOfCurrentScene")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "OnPrevRegion")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "ToggleWorldMap")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "OnNextRegion")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[CallsUnknownMethods(Count = 52)]
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "OnPrevRegion")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(MapCrosshair), Member = "ResetToNormal")]
 	[Calls(Type = typeof(Enum), Member = "HasFlag")]
 	[Calls(Type = typeof(Panel_Map), Member = "ShouldAlwaysBeZoomed")]
-	[CallsDeduplicatedMethods(Count = 20)]
 	[Calls(Type = typeof(Vector3), Member = "get_one")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
+	[Calls(Type = typeof(Panel_Map), Member = "WorldRotationToMapRotation")]
+	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
+	[Calls(Type = typeof(Panel_Map), Member = "GetIndexOfCurrentScene")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 18)]
+	[CallsUnknownMethods(Count = 52)]
 	private void ResetToNormal(ResetOpts opts)
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
-	[Calls(Type = typeof(Transform), Member = "Translate")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(InputManager), Member = "GetPlayerMovement")]
-	[Calls(Type = typeof(Input), Member = "GetMouseButton")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(Input), Member = "GetMouseButton")]
+	[Calls(Type = typeof(InputManager), Member = "GetPlayerMovement")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Transform), Member = "Translate")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void MagnetTowardsHoveredIcon()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_Map), Member = "RemoveMapElement")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Map), Member = "RemoveMapElement")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void RemoveExpiredMapElements(bool force)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 64)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionTimerByName")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionTimerByName")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionTimerByName")]
-	[CallsDeduplicatedMethods(Count = 29)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionTimerByName")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(Type = typeof(Transform), Member = "GetChild")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 64)]
 	private void CheckForExpiredMissionTimers()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 29)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(Camera), Member = "get_orthographic")]
-	[Calls(Type = typeof(Screen), Member = "get_width")]
-	[Calls(Type = typeof(Screen), Member = "get_height")]
-	[Calls(Type = typeof(Screen), Member = "get_width")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallsDeduplicatedMethods(Count = 14)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Screen), Member = "get_width")]
 	[Calls(Type = typeof(Screen), Member = "get_height")]
+	[Calls(Type = typeof(Camera), Member = "get_orthographic")]
+	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 29)]
 	private void MaybeFollowMouseWithCrosshair()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "ResetToNormal")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "OnPrevRegion")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "OnNextRegion")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfScene")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "OnPrevRegion")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "ResetToNormal")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfScene")]
 	[Calls(Type = typeof(Utils), Member = "GetHardcodedRegionForLocation")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfScene")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Utils), Member = "InferOutdoorSceneName")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	private int GetIndexOfCurrentScene()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Resources), Member = "LoadAll")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void LoadMarkerDataFromResources()
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapMarkerToMap")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMapMarkerFromMap")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapIconFromFSM")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddDecalMapMarker")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallsUnknownMethods(Count = 3)]
 	private int GetMapMarkerIndex(string markerID)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
-	[CallsUnknownMethods(Count = 57)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(MapElementSaveData), Member = ".ctor")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapMarkerToMap")]
-	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
-	[CallsDeduplicatedMethods(Count = 17)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
 	[Calls(Type = typeof(Vector2), Member = "Distance")]
+	[Calls(Type = typeof(MapElementSaveData), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 57)]
 	private void AddMarkerToWorldPos(MissionMapMarkerInfo markerInfo, StoryMissionInfo missionInfo)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 106)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapMarkerToMap")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetSpriteNameForLocation")]
-	[Calls(Type = typeof(MapElementSaveData), Member = ".ctor")]
-	[Calls(Type = typeof(Panel_Map), Member = "MapDataIsMatch")]
-	[Calls(Type = typeof(Localization), Member = "Exists")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetLocIDForScene")]
-	[CallsDeduplicatedMethods(Count = 23)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetLocIDForScene")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Localization), Member = "Exists")]
+	[Calls(Type = typeof(Panel_Map), Member = "MapDataIsMatch")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(MapElementSaveData), Member = ".ctor")]
+	[Calls(Type = typeof(Panel_Map), Member = "GetSpriteNameForLocation")]
 	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 106)]
 	private void AddMarkerToLocation(MissionMapMarkerInfo markerInfo, StoryMissionInfo missionInfo)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMapMarkerFromMap")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	private void RemoveMarkerFromWorldPos(MissionMapMarkerInfo markerInfo, StoryMissionInfo missionInfo)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMapMarkerFromMap")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_Map), Member = "MapDataIsMatch")]
-	[Calls(Type = typeof(Localization), Member = "Exists")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetLocIDForScene")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetLocIDForScene")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Localization), Member = "Exists")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(Panel_Map), Member = "MapDataIsMatch")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 16)]
 	private void RemoveMarkerFromLocation(MissionMapMarkerInfo markerInfo, StoryMissionInfo missionInfo)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 23)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(KeyNotFoundException), Member = ".ctor")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(KeyNotFoundException), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 23)]
 	private void RefreshLastUpdateTimeLabel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapElement")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMapElement")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapIconFromFSM")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMapMarkerFromMap")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapMarkerToMap")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "UnlockRegionMap")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "ShowLocationReveal")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoNearbyDetailsCheck")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "RevealFogForScene")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "ShowLocationReveal")]
-	[Calls(Type = typeof(string), Member = "Equals")]
-	[Calls(Type = typeof(RegionManager), Member = "SceneIsRegion")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 10)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "UnlockMapCurrentScene")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "UnlockRegionMap")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapMarkerToMap")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMapMarkerFromMap")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapIconFromFSM")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveMapElement")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapElement")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(RegionManager), Member = "SceneIsRegion")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "Equals")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool SceneCanBeMapped(string sceneName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
+	[Calls(Type = typeof(Transform), Member = "get_childCount")]
+	[Calls(Type = typeof(Transform), Member = "GetChild")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
 	[Calls(Type = typeof(string), Member = "op_Inequality")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 15)]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(Transform), Member = "get_childCount")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 18)]
 	private void DoMapCondense(Transform mapIconParent)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[Calls(Type = typeof(Transform), Member = "get_childCount")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Transform), Member = "get_childCount")]
+	[Calls(Type = typeof(Transform), Member = "GetChild")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
 	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 17)]
 	private void DoMapIconSpacing(Transform mapIconParentStatic, Transform mapIconParentMoveable)
 	{
 	}
 
-	[Calls(Type = typeof(MapIcon), Member = "SetLocationMapIcon")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[Calls(Type = typeof(Vector2), Member = "Distance")]
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(Transform), Member = "get_childCount")]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Transform), Member = "get_childCount")]
 	[Calls(Type = typeof(Transform), Member = "GetChild")]
+	[Calls(Type = typeof(Vector2), Member = "Distance")]
+	[Calls(Type = typeof(MapIcon), Member = "SetLocationMapIcon")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 21)]
 	private void MergeNearbyMissionMapIconsWithLocations(Transform mapIconMissionParent, Transform mapIconLocationParent)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "ResetToNormal")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "ToggleZoom")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "ResetToNormal")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool ShouldAlwaysBeZoomed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_Map), Member = "GetIndexOfCurrentScene")]
-	[CalledBy(Type = typeof(AchievementManager), Member = "IsRegionCompleteFaithfulCartographer")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "GetIndexOfCurrentScene")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "GetIndexOfCurrentScene")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "GetLocIdsOfUnlockedMapElements")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "GetNumberOfUnlockedMapElements")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "CheckRegionForAchievement")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(SceneMapping), Member = "GetParentSceneEntry")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "GetNumberOfUnlockedMapElements")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "GetLocIdsOfUnlockedMapElements")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "GetIndexOfCurrentScene")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
+	[CalledBy(Type = typeof(AchievementManager), Member = "IsRegionCompleteFaithfulCartographer")]
 	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(SceneMapping), Member = "GetParentSceneEntry")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	private string GetMapNameOfScene(string sceneName)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 22)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfScene")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private string GetMapNameOfCurrentScene()
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
-	[Calls(Type = typeof(MapIcon), Member = "SetState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Quaternion), Member = "FromToRotation")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(Vector3), Member = "get_down")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(MapIcon), Member = "GetLocationMapTransform")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(MapIcon), Member = "GetLocationMapTransform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(MapIcon), Member = "SetState")]
+	[Calls(Type = typeof(Vector3), Member = "get_down")]
+	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
+	[Calls(Type = typeof(Quaternion), Member = "FromToRotation")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 18)]
 	private void UpdateIconsForOffscreenMissionMarkers()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InterfaceManager), Member = "IsUsingSurvivalTabs")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void EnableNavigationTabs(bool enable)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
 	[Calls(Type = typeof(Enum), Member = "HasFlag")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
+	[CallsUnknownMethods(Count = 10)]
 	private void UpdateFilterButtons()
 	{
 	}
@@ -2207,157 +2094,170 @@ public class Panel_Map : Panel_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Resources")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Structures")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool IsStructure(string locNameID)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Resources")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Corpses")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private bool IsCorpse(string locNameID)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "FilterSelectionToggle")]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Enum), Member = "HasFlag")]
 	[Calls(Type = typeof(Panel_Map), Member = "UpdateIconVisibility_Resources")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public void OnToggleResourcesFilter()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Map), Member = "RefreshIconVisibility")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "ForceUpdateRegion")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsRockCache")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsCorpse")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsStructure")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "RefreshIconVisibility")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "OnToggleResourcesFilter")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsStructure")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsCorpse")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsRockCache")]
 	[Calls(Type = typeof(Panel_Map), Member = "IsSprayPaint")]
+	[Calls(Type = typeof(Enum), Member = "HasFlag")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 9)]
 	public void UpdateIconVisibility_Resources()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "FilterSelectionToggle")]
-	[CallerCount(Count = 2)]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(Panel_Map), Member = "FilterSelectionToggle")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
+	[CallerCount(Count = 2)]
 	public void OnToggleStructuresFilter()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "ForceUpdateRegion")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "RefreshIconVisibility")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsStructure")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsStructure")]
 	[Calls(Type = typeof(Enum), Member = "HasFlag")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 11)]
 	public void UpdateIconVisibility_Structures()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "FilterSelectionToggle")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
+	[CallerCount(Count = 2)]
 	public void OnToggleCorpsesFilter()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Map), Member = "ForceUpdateRegion")]
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "RefreshIconVisibility")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsCorpse")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsCorpse")]
+	[Calls(Type = typeof(Enum), Member = "HasFlag")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 11)]
 	public void UpdateIconVisibility_Corpses()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "FilterSelectionToggle")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
+	[CallerCount(Count = 2)]
 	public void OnToggleRockCacheFilter()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Map), Member = "ForceUpdateRegion")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "RefreshIconVisibility")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsRockCache")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsRockCache")]
+	[Calls(Type = typeof(Enum), Member = "HasFlag")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 10)]
 	public void UpdateIconVisibility_RockCache()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "FilterSelectionToggle")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
+	[CallerCount(Count = 2)]
 	public void OnToggleSprayMarkingsFilter()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "RefreshIconVisibility")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "ForceUpdateRegion")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsSprayPaint")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "RefreshIconVisibility")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsSprayPaint")]
 	[Calls(Type = typeof(Enum), Member = "HasFlag")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 10)]
 	public void UpdateIconVisibility_SprayMarkings()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoMouseControls")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 17)]
 	private void OnSprayPaintMarkerRemove(MapElementSaveData mesd)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Map), Member = "DeleteMarker")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Panel_Map), Member = "DeleteMarker")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnSprayPaintMarkerRemoveConfirm()
 	{
 	}
@@ -2367,153 +2267,153 @@ public class Panel_Map : Panel_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(TextInputField), Member = "GetText")]
-	[Calls(Type = typeof(Panel_Map), Member = "ForceUpdateRegion")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TextInputField), Member = "GetText")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_Map), Member = "ForceUpdateRegion")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 12)]
 	private void OnUserMarkerRenameConfirm()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[Calls(Type = typeof(Panel_Map), Member = "DeleteMarker")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnMarkerRemove(bool enable)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_MarkerList), Member = "UpdatePosition")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void LoadMapElementsForSceneDone()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "OnNextRegion")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "OnPrevRegion")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	private void EnableCartographyFilters()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(ClusterCell), Member = "UpdateMapElement")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsRockCache")]
 	[Calls(Type = typeof(Panel_Map), Member = "IsSprayPaint")]
 	[Calls(Type = typeof(Panel_Map), Member = "GetOrCreateClusterCell")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsRockCache")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ClusterCell), Member = "UpdateFrom")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(ClusterCell), Member = "UpdateMapElement")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 20)]
 	private void GatherClustersElementsForScene(List<MapElementSaveData> mapData)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Map), Member = "GatherClustersElementsForScene")]
-	[Calls(Type = typeof(ClusterCell), Member = ".ctor")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(ClusterCell), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	private ClusterCell GetOrCreateClusterCell(Vector2 positionOnMap, float width)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Map), Member = "CloseMarkerListIfActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnMapElementsPositionChanged()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Map), Member = "CloseMarkerListIfActive")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Map), Member = "CloseMarkerListIfActive")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnMapClicked()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Map), Member = "ShowClusterList")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "OnMapClicked")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "OnMapElementsPositionChanged")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "SetMapIconBeingHovered")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "OnCancel")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "OnNextRegion")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "ToggleWorldMap")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "OnNextRegion")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "OnPrevRegion")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "ShowClusterList")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "SetMapIconBeingHovered")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "OnMapElementsPositionChanged")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "OnMapClicked")]
 	[CallerCount(Count = 9)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void CloseMarkerListIfActive()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Map), Member = "OnPrevRegion")]
-	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "OnNextRegion")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "OnPrevRegion")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private bool ShouldCenterOnPlayer()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "Update")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
 	[Calls(Type = typeof(ToxicFogManager), Member = "GetFogProgressForRegion")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(string), Member = "Format")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	private void UpdateNowhereToHide()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Map), Member = "Initialize")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "Initialize")]
 	[CallsUnknownMethods(Count = 5)]
 	private void CacheComponents()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 50)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 50)]
 	public Panel_Map()
 	{
 	}

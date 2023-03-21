@@ -62,21 +62,20 @@ public class LightShaftGimble : MonoBehaviour
 	private static readonly int m_shaderColor;
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 12)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(LightShaftGimble), Member = "UpdateFX")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(LightShaftGimble), Member = "UpdateMaterial")]
-	[Calls(Type = typeof(LightShaftGimble), Member = "UpdateLight")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LightShaftGimble), Member = "UpdateWeather")]
 	[Calls(Type = typeof(LightShaftGimble), Member = "UpdateRotation")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LightShaftGimble), Member = "UpdateMaterial")]
+	[Calls(Type = typeof(LightShaftGimble), Member = "UpdateLight")]
+	[Calls(Type = typeof(LightShaftGimble), Member = "UpdateFX")]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
@@ -91,10 +90,9 @@ public class LightShaftGimble : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(LightShaftGimble), Member = "ManualUpdate")]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "UpdateGimbles")]
 	[CalledBy(Type = typeof(LightShaftGimble), Member = "Update")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[CalledBy(Type = typeof(LightShaftGimble), Member = "ManualUpdate")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[CallsUnknownMethods(Count = 1)]
@@ -102,57 +100,53 @@ public class LightShaftGimble : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Transform), Member = "set_localEulerAngles")]
-	[Calls(Type = typeof(Transform), Member = "set_localEulerAngles")]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "UpdateGimbles")]
 	[CalledBy(Type = typeof(LightShaftGimble), Member = "Update")]
 	[CalledBy(Type = typeof(LightShaftGimble), Member = "ManualUpdate")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Transform), Member = "set_localEulerAngles")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	private void UpdateRotation(float tod)
 	{
 	}
 
-	[CalledBy(Type = typeof(LightShaftGimble), Member = "ManualUpdate")]
-	[CalledBy(Type = typeof(LightShaftGimble), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "UpdateGimbles")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Light), Member = "get_color")]
+	[CalledBy(Type = typeof(LightShaftGimble), Member = "Update")]
+	[CalledBy(Type = typeof(LightShaftGimble), Member = "ManualUpdate")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(LightShaftGimble), Member = "CalculateDot")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Light), Member = "get_intensity")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(LightShaftGimble), Member = "CalculateDot")]
+	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[Calls(Type = typeof(Light), Member = "get_color")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateMaterial(float tod)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(LightShaftGimble), Member = "ManualUpdate")]
-	[CalledBy(Type = typeof(LightShaftGimble), Member = "Update")]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "UpdateGimbles")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(LightShaftGimble), Member = "Update")]
+	[CalledBy(Type = typeof(LightShaftGimble), Member = "ManualUpdate")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateLight(float tod)
 	{
 	}
 
-	[Calls(Type = typeof(ParticleSystem.MinMaxGradient), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(LightShaftGimble), Member = "ManualUpdate")]
-	[CalledBy(Type = typeof(LightShaftGimble), Member = "Update")]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "UpdateGimbles")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ParticleSystem.MinMaxGradient), Member = "op_Implicit")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(LightShaftGimble), Member = "Update")]
+	[CalledBy(Type = typeof(LightShaftGimble), Member = "ManualUpdate")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[Calls(Type = typeof(ParticleSystem.MinMaxGradient), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateFX(float tod)
 	{
 	}
@@ -160,7 +154,7 @@ public class LightShaftGimble : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private float GetCombinedIntensity()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -180,21 +174,21 @@ public class LightShaftGimble : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SetFollowTimeOfDay(bool followTod)
 	{
 	}
 
+	[CalledBy(Type = typeof(LightShaftGimble), Member = "UpdateMaterial")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[CalledBy(Type = typeof(LightShaftGimble), Member = "UpdateMaterial")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 6)]
 	private float CalculateDot()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

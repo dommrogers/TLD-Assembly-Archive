@@ -10,7 +10,7 @@ public class BrokenIceSaveDataProxy
 	public float m_PlacementDay;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public BrokenIceSaveDataProxy()
 	{
 	}

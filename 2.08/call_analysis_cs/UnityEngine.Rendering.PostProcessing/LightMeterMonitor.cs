@@ -12,23 +12,22 @@ public sealed class LightMeterMonitor : Monitor
 
 	public bool showCurves;
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	internal override bool ShaderResourcesAvailable(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(Monitor), Member = "CheckOutput")]
 	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
 	[Calls(Type = typeof(PropertySheet), Member = "EnableKeyword")]
-	[Calls(Type = typeof(PropertySheet), Member = "EnableKeyword")]
 	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
 	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 9)]
 	internal override void Render(PostProcessRenderContext context)
 	{

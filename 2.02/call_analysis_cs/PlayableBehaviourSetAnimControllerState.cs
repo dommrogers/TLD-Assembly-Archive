@@ -10,8 +10,8 @@ public class PlayableBehaviourSetAnimControllerState : PlayableBehaviour
 
 	private Animator m_TrackAnimator;
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public override void ProcessFrame(Playable playable, FrameData info, object playerData)
 	{
 	}
@@ -22,19 +22,18 @@ public class PlayableBehaviourSetAnimControllerState : PlayableBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayableBehaviourSetAnimControllerState), Member = "OnBehaviourPlay")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Animator), Member = "Play")]
-	[CalledBy(Type = typeof(PlayableBehaviourSetAnimControllerState), Member = "OnBehaviourPlay")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 7)]
 	private void SetAnimControllerState()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PlayableBehaviourSetAnimControllerState()
 	{
 	}

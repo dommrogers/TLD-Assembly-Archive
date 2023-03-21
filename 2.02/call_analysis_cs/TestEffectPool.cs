@@ -13,28 +13,29 @@ public class TestEffectPool : MonoBehaviour
 
 	private int m_EffectIndex;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(EffectPool<>), Member = "LoadEffects")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 22)]
 	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(EffectPool<>), Member = "SpawnUntilParticlesDone")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(EffectPool<>), Member = "LoadEffects")]
+	[CallsDeduplicatedMethods(Count = 19)]
 	[CallsUnknownMethods(Count = 24)]
 	public void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public TestEffectPool()
 	{
 	}

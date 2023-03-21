@@ -17,33 +17,33 @@ public sealed class Fog
 		return default(DepthTextureMode);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "SetLegacyCameraFlags")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
-	[Calls(Type = typeof(Camera), Member = "get_actualRenderingPath")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "get_scriptableRenderPipelineActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PostProcessLayer), Member = "SetLegacyCameraFlags")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "get_scriptableRenderPipelineActive")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Shader), Member = "get_isSupported")]
+	[Calls(Type = typeof(Camera), Member = "get_actualRenderingPath")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	internal bool IsEnabledAndSupported(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
 	[Calls(Type = typeof(Color), Member = "get_linear")]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 10)]
 	internal void Render(PostProcessRenderContext context)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Fog()
 	{
 	}

@@ -17,9 +17,9 @@ internal struct LobbySearchRemoveParameterOptionsInternal : ISettable, IDisposab
 	{
 		[CalledBy(Type = typeof(LobbySearchRemoveParameterOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(LobbySearchRemoveParameterOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -40,16 +40,16 @@ internal struct LobbySearchRemoveParameterOptionsInternal : ISettable, IDisposab
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(LobbySearchRemoveParameterOptionsInternal), Member = "set_Key")]
 	[CalledBy(Type = typeof(LobbySearch), Member = "RemoveParameter")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(LobbySearchRemoveParameterOptionsInternal), Member = "set_Key")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{

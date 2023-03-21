@@ -35,24 +35,20 @@ public class FPSLogger : MonoBehaviour
 
 		private float m_WorstGPUTime;
 
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Utils), Member = "IsZero")]
-		[Calls(Type = typeof(Utils), Member = "IsZero")]
 		[CalledBy(Type = typeof(FPSLogger), Member = "OnFPSChanged")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Utils), Member = "IsZero")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public void AddSample(FPSCounterEvent eventData)
 		{
 		}
 
-		[Calls(Type = typeof(string), Member = "Format")]
-		[CallsUnknownMethods(Count = 45)]
 		[CalledBy(Type = typeof(FPSLogger), Member = "WriteToFile")]
-		[Calls(Type = typeof(Utils), Member = "GetFormattedBytes")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Utils), Member = "GetFormattedBytes")]
-		[Calls(Type = typeof(Utils), Member = "GetFormattedBytes")]
+		[Calls(Type = typeof(string), Member = "Format")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Utils), Member = "GetFormattedBytes")]
+		[CallsUnknownMethods(Count = 45)]
 		public string FormatForWrite()
 		{
 			return null;
@@ -72,7 +68,7 @@ public class FPSLogger : MonoBehaviour
 		public static Func<KeyValuePair<string, LogData>, string> _003C_003E9__11_0;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
@@ -103,90 +99,93 @@ public class FPSLogger : MonoBehaviour
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsRecording()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_record_fps")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(Path), Member = "Combine")]
-	[Calls(Type = typeof(DateTime), Member = "get_Now")]
-	[Calls(Type = typeof(FPSLogger), Member = "StopRecording")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(FPSLogger), Member = "StopRecording")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[Calls(Type = typeof(DateTime), Member = "get_Now")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Path), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void StartRecording(string newExtension)
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_record_fps")]
 	[CalledBy(Type = typeof(FPSLogger), Member = "StartRecording")]
+	[CallerCount(Count = 2)]
 	public static void StopRecording()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 45)]
 	[CalledBy(Type = typeof(FPSLogger), Member = "OnDisable")]
-	[Calls(Type = typeof(StreamWriter), Member = ".ctor")]
-	[Calls(Type = typeof(StreamWriter), Member = "get_UTF8NoBOM")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Join")]
-	[Calls(Type = typeof(LogData), Member = "FormatForWrite")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(LogData), Member = "FormatForWrite")]
+	[Calls(Type = typeof(string), Member = "Join")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(StreamWriter), Member = "get_UTF8NoBOM")]
+	[Calls(Type = typeof(StreamWriter), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 45)]
 	private static void WriteToFile(string outputPath)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 10)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(FPSLogger), Member = "WriteToFile")]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[Calls(Type = typeof(FPSLogger), Member = "WriteToFile")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	private void OnDisable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(SceneManager), Member = "IsLoading")]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(LogData), Member = "AddSample")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 13)]
 	private void OnFPSChanged(FPSCounterEvent eventData)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private string GetCurrentLogKey()
 	{
 		return null;

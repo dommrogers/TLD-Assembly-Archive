@@ -75,7 +75,7 @@ public sealed class SessionsInterface : Handle
 	public const int UpdatesessionmodificationApiLatest = 1;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SessionsInterface()
 	{
 	}
@@ -87,46 +87,47 @@ public sealed class SessionsInterface : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(AddNotifyJoinSessionAcceptedOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[Calls(Type = typeof(Helper), Member = "TryAssignNotificationIdToCallback")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public ulong AddNotifyJoinSessionAccepted(AddNotifyJoinSessionAcceptedOptions options, object clientData, OnJoinSessionAcceptedCallback notificationFn)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryAssignNotificationIdToCallback")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AddNotifySessionInviteAcceptedOptionsInternal), Member = "Set")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryAssignNotificationIdToCallback")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public ulong AddNotifySessionInviteAccepted(AddNotifySessionInviteAcceptedOptions options, object clientData, OnSessionInviteAcceptedCallback notificationFn)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(AddNotifySessionInviteReceivedOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[Calls(Type = typeof(Helper), Member = "TryAssignNotificationIdToCallback")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public ulong AddNotifySessionInviteReceived(AddNotifySessionInviteReceivedOptions options, object clientData, OnSessionInviteReceivedCallback notificationFn)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CopyActiveSessionHandleOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result CopyActiveSessionHandle(CopyActiveSessionHandleOptions options, out ActiveSession outSessionHandle)
 	{
 		outSessionHandle = null;
@@ -134,9 +135,10 @@ public sealed class SessionsInterface : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(CopySessionHandleByInviteIdOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result CopySessionHandleByInviteId(CopySessionHandleByInviteIdOptions options, out SessionDetails outSessionHandle)
 	{
@@ -145,9 +147,10 @@ public sealed class SessionsInterface : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(CopySessionHandleByUiEventIdOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result CopySessionHandleByUiEventId(CopySessionHandleByUiEventIdOptions options, out SessionDetails outSessionHandle)
 	{
@@ -155,11 +158,12 @@ public sealed class SessionsInterface : Handle
 		return default(Result);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CopySessionHandleForPresenceOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result CopySessionHandleForPresence(CopySessionHandleForPresenceOptions options, out SessionDetails outSessionHandle)
 	{
 		outSessionHandle = null;
@@ -167,9 +171,10 @@ public sealed class SessionsInterface : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(CreateSessionModificationOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result CreateSessionModification(CreateSessionModificationOptions options, out SessionModification outSessionModificationHandle)
 	{
@@ -177,189 +182,190 @@ public sealed class SessionsInterface : Handle
 		return default(Result);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(CreateSessionSearchOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result CreateSessionSearch(CreateSessionSearchOptions options, out SessionSearch outSessionSearchHandle)
 	{
 		outSessionSearchHandle = null;
 		return default(Result);
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(DestroySessionOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void DestroySession(DestroySessionOptions options, object clientData, OnDestroySessionCallback completionDelegate)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(DumpSessionStateOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result DumpSessionState(DumpSessionStateOptions options)
 	{
 		return default(Result);
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
-	[CallsUnknownMethods(Count = 9)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(EndSessionOptionsInternal), Member = "Set")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EndSessionOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void EndSession(EndSessionOptions options, object clientData, OnEndSessionCallback completionDelegate)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(GetInviteCountOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public uint GetInviteCount(GetInviteCountOptions options)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(GetInviteIdByIndexOptionsInternal), Member = "Set")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalAllocate")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GetInviteIdByIndexOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalAllocate")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result GetInviteIdByIndex(GetInviteIdByIndexOptions options, out string outBuffer)
 	{
 		outBuffer = null;
 		return default(Result);
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(IsUserInSessionOptionsInternal), Member = "Set")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(IsUserInSessionOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result IsUserInSession(IsUserInSessionOptions options)
 	{
 		return default(Result);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(JoinSessionOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public void JoinSession(JoinSessionOptions options, object clientData, OnJoinSessionCallback completionDelegate)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(QueryInvitesOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(QueryInvitesOptionsInternal), Member = "Set")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void QueryInvites(QueryInvitesOptions options, object clientData, OnQueryInvitesCallback completionDelegate)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(RegisterPlayersOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public void RegisterPlayers(RegisterPlayersOptions options, object clientData, OnRegisterPlayersCallback completionDelegate)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(RejectInviteOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public void RejectInvite(RejectInviteOptions options, object clientData, OnRejectInviteCallback completionDelegate)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryRemoveCallbackByNotificationId")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryRemoveCallbackByNotificationId")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void RemoveNotifyJoinSessionAccepted(ulong inId)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryRemoveCallbackByNotificationId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void RemoveNotifySessionInviteAccepted(ulong inId)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryRemoveCallbackByNotificationId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void RemoveNotifySessionInviteReceived(ulong inId)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void SendInvite(SendInviteOptions options, object clientData, OnSendInviteCallback completionDelegate)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(StartSessionOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public void StartSession(StartSessionOptions options, object clientData, OnStartSessionCallback completionDelegate)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(UnregisterPlayersOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void UnregisterPlayers(UnregisterPlayersOptions options, object clientData, OnUnregisterPlayersCallback completionDelegate)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UpdateSessionOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void UpdateSession(UpdateSessionOptions options, object clientData, OnUpdateSessionCallback completionDelegate)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(UpdateSessionModificationOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result UpdateSessionModification(UpdateSessionModificationOptions options, out SessionModification outSessionModificationHandle)
 	{
@@ -367,7 +373,6 @@ public sealed class SessionsInterface : Handle
 		return default(Result);
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -375,15 +380,13 @@ public sealed class SessionsInterface : Handle
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static void OnEndSessionCallbackInternalImplementation(IntPtr data)
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -391,7 +394,6 @@ public sealed class SessionsInterface : Handle
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -399,23 +401,20 @@ public sealed class SessionsInterface : Handle
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static void OnQueryInvitesCallbackInternalImplementation(IntPtr data)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static void OnRegisterPlayersCallbackInternalImplementation(IntPtr data)
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -423,23 +422,20 @@ public sealed class SessionsInterface : Handle
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 5)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
 	internal static void OnSendInviteCallbackInternalImplementation(IntPtr data)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static void OnSessionInviteAcceptedCallbackInternalImplementation(IntPtr data)
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -447,7 +443,6 @@ public sealed class SessionsInterface : Handle
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -455,7 +450,6 @@ public sealed class SessionsInterface : Handle
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -463,10 +457,9 @@ public sealed class SessionsInterface : Handle
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static void OnUpdateSessionCallbackInternalImplementation(IntPtr data)
 	{
 	}
@@ -484,14 +477,14 @@ public sealed class SessionsInterface : Handle
 	internal static extern ulong EOS_Sessions_AddNotifySessionInviteAccepted(IntPtr handle, IntPtr options, IntPtr clientData, OnSessionInviteAcceptedCallbackInternal notificationFn);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	internal static extern ulong EOS_Sessions_AddNotifySessionInviteReceived(IntPtr handle, IntPtr options, IntPtr clientData, OnSessionInviteReceivedCallbackInternal notificationFn);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern Result EOS_Sessions_CopyActiveSessionHandle(IntPtr handle, IntPtr options, ref IntPtr outSessionHandle);
 
 	[PreserveSig]
@@ -520,9 +513,9 @@ public sealed class SessionsInterface : Handle
 	internal static extern Result EOS_Sessions_CreateSessionSearch(IntPtr handle, IntPtr options, ref IntPtr outSessionSearchHandle);
 
 	[PreserveSig]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	internal static extern void EOS_Sessions_DestroySession(IntPtr handle, IntPtr options, IntPtr clientData, OnDestroySessionCallbackInternal completionDelegate);
 
 	[PreserveSig]
@@ -547,20 +540,20 @@ public sealed class SessionsInterface : Handle
 	internal static extern Result EOS_Sessions_GetInviteIdByIndex(IntPtr handle, IntPtr options, IntPtr outBuffer, ref int inOutBufferLength);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern Result EOS_Sessions_IsUserInSession(IntPtr handle, IntPtr options);
 
 	[PreserveSig]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	internal static extern void EOS_Sessions_JoinSession(IntPtr handle, IntPtr options, IntPtr clientData, OnJoinSessionCallbackInternal completionDelegate);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	internal static extern void EOS_Sessions_QueryInvites(IntPtr handle, IntPtr options, IntPtr clientData, OnQueryInvitesCallbackInternal completionDelegate);
 
 	[PreserveSig]
@@ -591,9 +584,9 @@ public sealed class SessionsInterface : Handle
 	internal static extern void EOS_Sessions_RemoveNotifySessionInviteReceived(IntPtr handle, ulong inId);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	internal static extern void EOS_Sessions_SendInvite(IntPtr handle, IntPtr options, IntPtr clientData, OnSendInviteCallbackInternal completionDelegate);
 
 	[PreserveSig]
@@ -615,7 +608,7 @@ public sealed class SessionsInterface : Handle
 	internal static extern void EOS_Sessions_UpdateSession(IntPtr handle, IntPtr options, IntPtr clientData, OnUpdateSessionCallbackInternal completionDelegate);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern Result EOS_Sessions_UpdateSessionModification(IntPtr handle, IntPtr options, ref IntPtr outSessionModificationHandle);
 }

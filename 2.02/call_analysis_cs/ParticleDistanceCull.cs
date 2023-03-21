@@ -46,32 +46,29 @@ public class ParticleDistanceCull : MonoBehaviour
 
 	private QualityLodBias m_CachedQuality;
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 53)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[Calls(Type = typeof(GameObject), Member = "get_scene")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_scene")]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "GetCurrentQualitySettings")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 53)]
 	private void Start()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(ParticleDistanceCull), Member = "UpdateParticle")]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "GetCurrentQualitySettings")]
 	[Calls(Type = typeof(ParticleDistanceCull), Member = "UpdateQualityValues")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "GetCurrentQualitySettings")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(ParticleDistanceCull), Member = "UpdateParticle")]
+	[CallsUnknownMethods(Count = 6)]
 	private void LateUpdate()
 	{
 	}
@@ -86,32 +83,20 @@ public class ParticleDistanceCull : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private float DistanceToPlayer(Vector3 fxPos, Vector3 camPos)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 29)]
 	[CalledBy(Type = typeof(ParticleDistanceCull), Member = "LateUpdate")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(ParticleSystem.MinMaxGradient), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Mathf), Member = "InverseLerp")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Mathf), Member = "InverseLerp")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(ParticleSystem.MinMaxGradient), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 29)]
 	private void UpdateParticle()
 	{
 	}

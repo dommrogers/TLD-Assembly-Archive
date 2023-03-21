@@ -16,7 +16,7 @@ public class NGUIDebug : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallAnalysisFailed]
 		[CallerCount(Count = 0)]
@@ -25,44 +25,43 @@ public class NGUIDebug : MonoBehaviour
 		}
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(NGUIDebug), Member = "LogString")]
 	[CalledBy(Type = typeof(UICamera), Member = "Start")]
-	[CalledBy(Type = typeof(NGUIDebug), Member = "LogString")]
-	[CalledBy(Type = typeof(NGUIDebug), Member = "LogString")]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void CreateInstance()
 	{
 	}
 
-	[Calls(Type = typeof(NGUIDebug), Member = "CreateInstance")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(NGUIDebug), Member = "Log")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[Calls(Type = typeof(NGUIDebug), Member = "CreateInstance")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private static void LogString(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(NGUIDebug), Member = "LogString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(NGUIDebug), Member = "LogString")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void Log(object[] objs)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Clear()
 	{
 	}
@@ -75,14 +74,13 @@ public class NGUIDebug : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GUILayout), Member = "Label")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(NGUITools), Member = "GetHierarchy")]
 	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(NGUITools), Member = "GetHierarchy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	private void OnGUI()
 	{

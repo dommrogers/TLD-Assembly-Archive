@@ -27,8 +27,8 @@ public class IDownloadableContentPackageInstallCompletedEventArgsPlugin
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void IDownloadableContentPackageInstallCompletedEventArgs_Dispose(IntPtr self);
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public IDownloadableContentPackageInstallCompletedEventArgsPlugin()
 	{
 	}

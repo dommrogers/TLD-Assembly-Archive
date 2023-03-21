@@ -23,11 +23,11 @@ internal struct LobbySearchFindCallbackInfoInternal : ICallbackInfoInternal
 
 	public object ClientData
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(LobbySearchFindCallbackInfo), Member = "Set")]
 		[CalledBy(Type = typeof(LobbySearchFindCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -40,7 +40,7 @@ internal struct LobbySearchFindCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 }

@@ -9,42 +9,41 @@ public class MBVersionConcrete : MBVersionInterface
 {
 	private Vector2 _HALF_UV;
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string version()
 	{
 		return null;
 	}
 
+	[CalledBy(TypeFullName = "MB3_TextureBaker.<CreateAtlasesCoroutine>d__94", Member = "MoveNext")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "SplitInternal")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "ParseInt32")]
-	[CalledBy(Type = typeof(MB3_TextureBaker._003CCreateAtlasesCoroutine_003Ed__94), Member = "MoveNext")]
-	[CalledBy(Type = typeof(MB3_TextureBaker._003CCreateAtlasesCoroutine_003Ed__94), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.Number", Member = "ParseInt32")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public int GetMajorVersion()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(System.Number), Member = "ParseInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "ParseInt32")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public int GetMinorVersion()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool GetActive(GameObject go)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -54,9 +53,9 @@ public class MBVersionConcrete : MBVersionInterface
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetActiveRecursively(GameObject go, bool isActive)
 	{
 	}
@@ -69,41 +68,39 @@ public class MBVersionConcrete : MBVersionInterface
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void OptimizeMesh(Mesh m)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool IsRunningAndMeshNotReadWriteable(Mesh m)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(MB2_Log), Member = "LogDebug")]
 	[Calls(Type = typeof(Mesh), Member = "get_uv")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(MB2_Log), Member = "LogDebug")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 6)]
 	public Vector2[] GetMeshUV1s(Mesh m, MB2_LogLevel LOG_LEVEL)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 28)]
-	[Calls(Type = typeof(MB2_Log), Member = "LogDebug")]
-	[Calls(Type = typeof(Mesh), Member = "get_uv3")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Mesh), Member = "get_uv4")]
+	[Calls(Type = typeof(Mesh), Member = "get_uv3")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(MB2_Log), Member = "LogDebug")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 28)]
 	public Vector2[] GetMeshUV3orUV4(Mesh m, bool get3, MB2_LogLevel LOG_LEVEL)
 	{
 		return null;
@@ -129,18 +126,18 @@ public class MBVersionConcrete : MBVersionInterface
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public Vector4 GetLightmapTilingOffset(Renderer r)
 	{
 		return default(Vector4);
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallsUnknownMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	public Transform[] GetBones(Renderer r)
 	{
 		return null;
@@ -150,14 +147,14 @@ public class MBVersionConcrete : MBVersionInterface
 	[CallsUnknownMethods(Count = 2)]
 	public int GetBlendShapeFrameCount(Mesh m, int shapeIndex)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetBlendShapeFrameWeight(Mesh m, int shapeIndex, int frameIndex)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -183,17 +180,13 @@ public class MBVersionConcrete : MBVersionInterface
 	[CallerCount(Count = 0)]
 	public int MaxMeshVertexCount()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MBVersion), Member = "MeshClear")]
+	[Calls(Type = typeof(Mesh), Member = "set_indexFormat")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(MBVersion), Member = "MeshClear")]
-	[Calls(Type = typeof(Mesh), Member = "set_indexFormat")]
-	[Calls(Type = typeof(MBVersion), Member = "MeshClear")]
-	[Calls(Type = typeof(Mesh), Member = "set_indexFormat")]
-	[Calls(Type = typeof(MBVersion), Member = "MeshClear")]
-	[Calls(Type = typeof(MBVersion), Member = "MeshClear")]
 	[CallsUnknownMethods(Count = 3)]
 	public void SetMeshIndexFormatAndClearMesh(Mesh m, int numVerts, bool vertices, bool justClearTriangles)
 	{

@@ -15,11 +15,11 @@ internal struct CopyStatByIndexOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId TargetUserId
 	{
+		[CalledBy(Type = typeof(CopyStatByIndexOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyStatByIndexOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyStatByIndexOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyStatByIndexOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -41,15 +41,15 @@ internal struct CopyStatByIndexOptionsInternal : ISettable, IDisposable
 	}
 
 	[CalledBy(Type = typeof(StatsInterface), Member = "CopyStatByIndex")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CopyStatByIndexOptionsInternal), Member = "set_TargetUserId")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

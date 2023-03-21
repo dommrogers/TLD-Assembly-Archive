@@ -13,8 +13,8 @@ public class SuppressWeaponAimTrigger : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public SuppressWeaponAimTrigger()
 	{
 	}

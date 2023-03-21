@@ -25,20 +25,20 @@ public class BMFont
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public int charSize
 	{
-		[CallerCount(Count = 14)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 34)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -47,10 +47,10 @@ public class BMFont
 	public int baseOffset
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 6)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -61,14 +61,14 @@ public class BMFont
 
 	public int texWidth
 	{
-		[CallerCount(Count = 11)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 11)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -76,14 +76,14 @@ public class BMFont
 
 	public int texHeight
 	{
-		[CallerCount(Count = 1)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -95,20 +95,20 @@ public class BMFont
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public string spriteName
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 23)]
+		[CallerCount(Count = 27)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 51)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 53)]
 		set
 		{
 		}
@@ -116,22 +116,22 @@ public class BMFont
 
 	public List<BMGlyph> glyphs
 	{
-		[CallerCount(Count = 58)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 61)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 4)]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(NGUIText), Member = "GetGlyph")]
-	[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
 	[CalledBy(Type = typeof(BMFont), Member = "GetGlyph")]
 	[CalledBy(Type = typeof(NGUIText), Member = "GetGlyphWidth")]
+	[CalledBy(Type = typeof(NGUIText), Member = "GetGlyph")]
+	[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
+	[CallerCount(Count = 4)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	public BMGlyph GetGlyph(int index, bool createIfMissing)
 	{
 		return null;
@@ -145,25 +145,25 @@ public class BMFont
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Clear()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[Calls(Type = typeof(BMGlyph), Member = "Trim")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Trim(int xMin, int yMin, int xMax, int yMax)
 	{
 	}
 
 	[CalledBy(Type = typeof(UIFont), Member = ".ctor")]
+	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 11)]
-	[CallerCount(Count = 1)]
 	public BMFont()
 	{
 	}

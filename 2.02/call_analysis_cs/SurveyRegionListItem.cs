@@ -34,37 +34,27 @@ public class SurveyRegionListItem : MonoBehaviour
 	[NonSerialized]
 	public OnDisplayItemClicked m_ClickedDelegate;
 
-	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateCartographyPage")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Clear()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshAchievementListForSelectedRegion")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateCartographyPage")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetRegionButtonTexture")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshAchievementListForSelectedRegion")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(Type = typeof(Panel_Log), Member = "GetRegionButtonTexture")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 11)]
 	public void SetRegionInfo(SurveyRegionInfo sri)
 	{
 	}
@@ -75,13 +65,12 @@ public class SurveyRegionListItem : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyRegionClicked")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateCartographyPage")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyRegionClicked")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetSelected(bool selected)
 	{
 	}

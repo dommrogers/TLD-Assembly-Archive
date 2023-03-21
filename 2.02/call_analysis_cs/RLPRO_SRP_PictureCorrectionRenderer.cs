@@ -4,18 +4,12 @@ using UnityEngine.Rendering.PostProcessing;
 
 public sealed class RLPRO_SRP_PictureCorrectionRenderer : PostProcessEffectRenderer<RLProPictureCorrection>
 {
-	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
 	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 25)]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}

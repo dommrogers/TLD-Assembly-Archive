@@ -17,7 +17,7 @@ public static class AchievementPlatformManager
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -27,23 +27,23 @@ public static class AchievementPlatformManager
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public static event AchievementsChangedHandler OnAchievementsChanged
 	{
 		[CompilerGenerated]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
@@ -55,8 +55,8 @@ public static class AchievementPlatformManager
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public static void Update()
 	{
@@ -74,45 +74,33 @@ public static class AchievementPlatformManager
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
 	[CalledBy(Type = typeof(AchievementManager), Member = "CheckAchievements")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void Unlock(Achievement achievement)
 	{
 	}
 
-	[CalledBy(Type = typeof(EpisodeManager), Member = "OnAchievementsChanged")]
+	[CalledBy(Type = typeof(UnlockAchievementTrigger), Member = "OnTriggerEnter")]
 	[CalledBy(Type = typeof(AchievementManager), Member = "CheckAchievements")]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(EpisodeManager), Member = "HasCompletedEpisode")]
 	[CalledBy(Type = typeof(EpisodeManager), Member = "OnAchievementsChanged")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(EpisodeManager), Member = "OnAchievementsChanged")]
-	[CalledBy(Type = typeof(EpisodeManager), Member = "HasCompletedEpisode")]
-	[CalledBy(Type = typeof(UnlockAchievementTrigger), Member = "OnTriggerEnter")]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool IsUnlocked(Achievement achievement)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
-	[CalledBy(Type = typeof(AchievementManager), Member = "FullyHarvestedDeer")]
-	[CalledBy(Type = typeof(AchievementManager), Member = "UpdateDaysSurvived")]
-	[CalledBy(Type = typeof(AchievementManager), Member = "UpdateDaysSurvived")]
-	[CalledBy(Type = typeof(AchievementManager), Member = "UpdateDaysSurvived")]
 	[CalledBy(Type = typeof(AchievementManager), Member = "UpdateDaysSurvived")]
 	[CalledBy(Type = typeof(AchievementManager), Member = "SendStat")]
 	[CalledBy(Type = typeof(AchievementManager), Member = "NightEnded")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
-	[CalledBy(Type = typeof(AchievementManager), Member = "UpdateDaysSurvived")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
+	[CalledBy(Type = typeof(AchievementManager), Member = "FullyHarvestedDeer")]
 	[CallerCount(Count = 16)]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void SendStatistic(GameIntStatType statistic, int amount)
 	{
 	}
@@ -123,14 +111,14 @@ public static class AchievementPlatformManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void SendStatistic(GameEventStatType statistic)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private static IAchievementPlatform AllocatePlatform()
 	{
 		return null;

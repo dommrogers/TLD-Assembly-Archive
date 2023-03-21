@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.UI;
@@ -44,39 +43,37 @@ public class Panel_TorchLight : Panel_AutoReferenced
 
 	private float m_LastUseTime;
 
-	[CallsUnknownMethods(Count = 2)]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(FirstPersonItem), Member = "AnimateFPSMeshToDefaultPosition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Panel_TorchLight), Member = "OnUseSelectedItem")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Panel_TorchLight), Member = "RefreshVisuals")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(ScrollList), Member = "Prev")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(ScrollList), Member = "Next")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
+	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_TorchLight), Member = "OnUseSelectedItem")]
+	[Calls(Type = typeof(Panel_TorchLight), Member = "RefreshVisuals")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(FirstPersonItem), Member = "AnimateFPSMeshToDefaultPosition")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update()
 	{
 	}
@@ -87,156 +84,145 @@ public class Panel_TorchLight : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(FirstPersonItem), Member = "AnimateFPSMeshToDefaultPosition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(FirstPersonItem), Member = "AnimateFPSMeshToDefaultPosition")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnCancel()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_TorchLight), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_TorchLight), Member = "StartTorchIgnite")]
-	[Calls(Type = typeof(PlayerManager), Member = "ConsumeUnitFromInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Panel_TorchLight), Member = "OnUseFireStriker")]
 	[Calls(Type = typeof(Panel_TorchLight), Member = "OnUseFlintAndSteel")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(PlayerManager), Member = "ConsumeUnitFromInventory")]
+	[Calls(Type = typeof(Panel_TorchLight), Member = "StartTorchIgnite")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 5)]
 	public void OnUseSelectedItem()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ScrollList), Member = "Next")]
+	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void NextTool()
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(ScrollList), Member = "Prev")]
 	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void PrevTool()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
+	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SelectToolByIndex(int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_TorchLight), Member = "StartTorchIgnite")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(PlayerManager), Member = "ConsumeUnitFromInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_TorchLight), Member = "StartTorchIgnite")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnUseMatches(GearItem matches, bool consumeResource)
 	{
 	}
 
-	[Calls(Type = typeof(GearItem), Member = "BreakOnUse")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_TorchLight), Member = "OnUseSelectedItem")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_TorchLight), Member = "StartTorchIgnite")]
-	[Calls(Type = typeof(GearItem), Member = "CheckForBreakOnUse")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(GearItem), Member = "Degrade")]
+	[Calls(Type = typeof(GearItem), Member = "CheckForBreakOnUse")]
+	[Calls(Type = typeof(GearItem), Member = "BreakOnUse")]
+	[Calls(Type = typeof(Panel_TorchLight), Member = "StartTorchIgnite")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnUseFlintAndSteel(bool consumeResource)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_TorchLight), Member = "OnUseSelectedItem")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_TorchLight), Member = "StartTorchIgnite")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(GearItem), Member = "Degrade")]
 	[Calls(Type = typeof(GearItem), Member = "CheckForBreakOnUse")]
 	[Calls(Type = typeof(GearItem), Member = "BreakOnUse")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Panel_TorchLight), Member = "StartTorchIgnite")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GearItem), Member = "Degrade")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnUseFireStriker(bool consumeResource)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GearItemCoverflow), Member = "SetGearItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
-	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(Inventory), Member = "GetBestMatches")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
-	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
-	[Calls(Type = typeof(Inventory), Member = "GetBestMatches")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
+	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(GearItemCoverflow), Member = "SetGearItem")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 17)]
 	private void SetupScrollList()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_TorchLight), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GearItemCoverflow), Member = "SetSelected")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_TorchLight), Member = "Update")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void RefreshVisuals()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_TorchLight), Member = "OnUseFireStriker")]
-	[CalledBy(Type = typeof(Panel_TorchLight), Member = "OnUseMatches")]
 	[CalledBy(Type = typeof(Panel_TorchLight), Member = "OnUseSelectedItem")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TorchItem), Member = "IgniteDelayed")]
-	[CallerCount(Count = 4)]
+	[CalledBy(Type = typeof(Panel_TorchLight), Member = "OnUseMatches")]
 	[CalledBy(Type = typeof(Panel_TorchLight), Member = "OnUseFlintAndSteel")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(Panel_TorchLight), Member = "OnUseFireStriker")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TorchItem), Member = "IgniteDelayed")]
+	[CallsUnknownMethods(Count = 3)]
 	private void StartTorchIgnite(float delaySeconds, string igniteAudio, bool isFire)
 	{
 	}
@@ -244,15 +230,14 @@ public class Panel_TorchLight : Panel_AutoReferenced
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
 	[CallsUnknownMethods(Count = 1)]
 	private void UpdateButtonLegend()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 6)]
 	public Panel_TorchLight()
 	{
 	}

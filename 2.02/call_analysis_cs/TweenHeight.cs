@@ -15,18 +15,19 @@ public class TweenHeight : UITweener
 
 	public UIWidget cachedWidget
 	{
-		[CalledBy(Type = typeof(TweenHeight), Member = "SetStartToCurrentValue")]
+		[CalledBy(Type = typeof(TweenHeight), Member = "get_height")]
+		[CalledBy(Type = typeof(TweenHeight), Member = "set_height")]
 		[CalledBy(Type = typeof(TweenHeight), Member = "get_value")]
 		[CalledBy(Type = typeof(TweenHeight), Member = "set_value")]
 		[CalledBy(Type = typeof(TweenHeight), Member = "OnUpdate")]
+		[CalledBy(Type = typeof(TweenHeight), Member = "SetStartToCurrentValue")]
 		[CalledBy(Type = typeof(TweenHeight), Member = "SetEndToCurrentValue")]
 		[CalledBy(Type = typeof(TweenHeight), Member = "SetCurrentValueToStart")]
 		[CalledBy(Type = typeof(TweenHeight), Member = "SetCurrentValueToEnd")]
-		[CalledBy(Type = typeof(TweenHeight), Member = "set_height")]
-		[Calls(Type = typeof(Object), Member = "op_Equality")]
-		[CalledBy(Type = typeof(TweenHeight), Member = "get_height")]
 		[CallerCount(Count = 9)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Object), Member = "op_Equality")]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -35,19 +36,19 @@ public class TweenHeight : UITweener
 
 	public int height
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(TweenHeight), Member = "get_cachedWidget")]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(TweenHeight), Member = "get_cachedWidget")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[Calls(Type = typeof(TweenHeight), Member = "get_cachedWidget")]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(TweenHeight), Member = "get_cachedWidget")]
 		[Calls(Type = typeof(UIWidget), Member = "set_height")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -55,13 +56,13 @@ public class TweenHeight : UITweener
 
 	public int value
 	{
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(TweenHeight), Member = "get_cachedWidget")]
 		[CallsUnknownMethods(Count = 1)]
-		[DeduplicatedMethod]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -73,44 +74,42 @@ public class TweenHeight : UITweener
 		}
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(TweenHeight), Member = "get_cachedWidget")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(TweenHeight), Member = "get_cachedWidget")]
+	[Calls(Type = typeof(UIWidget), Member = "set_height")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	protected override void OnUpdate(float factor, bool isFinished)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(UITweener), Member = "Begin")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static TweenHeight Begin(UIWidget widget, float duration, int height)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[ContextMenu(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TweenHeight), Member = "get_cachedWidget")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void SetStartToCurrentValue()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TweenHeight), Member = "get_cachedWidget")]
-	[ContextMenu(/*Could not decode attribute arguments.*/)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void SetEndToCurrentValue()
 	{
 	}
 
-	[ContextMenu(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TweenHeight), Member = "get_cachedWidget")]
 	[Calls(Type = typeof(UIWidget), Member = "set_height")]
@@ -120,10 +119,9 @@ public class TweenHeight : UITweener
 	}
 
 	[CallerCount(Count = 0)]
-	[ContextMenu(/*Could not decode attribute arguments.*/)]
+	[Calls(Type = typeof(TweenHeight), Member = "get_cachedWidget")]
 	[Calls(Type = typeof(UIWidget), Member = "set_height")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(TweenHeight), Member = "get_cachedWidget")]
 	private void SetCurrentValueToEnd()
 	{
 	}

@@ -33,20 +33,20 @@ public class ResearchItem : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "ReadComplete")]
-	[Calls(Type = typeof(ResearchItem), Member = "OnResearchComplete")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Feat), Member = "ShouldBlockIncrement")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Feat), Member = "ShouldBlockIncrement")]
 	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(ResearchItem), Member = "OnResearchComplete")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Read(float timeOfDayHours)
 	{
 	}
@@ -57,37 +57,37 @@ public class ResearchItem : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool NoBenefitAtCurrentSkillLevel()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(ResearchItem), Member = "Read")]
-	[Calls(Type = typeof(AchievementManager), Member = "ResearchedBook")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
+	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(AchievementManager), Member = "ResearchedBook")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnResearchComplete()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "InitLabelsForGear")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "ReadComplete")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRead")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnFeedFire")]
+	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateGearItemDescription")]
+	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "GetEquipButtonLocalizationId")]
+	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "BuildItemDescription")]
 	[CalledBy(Type = typeof(GearItem), Member = "IsGearType")]
 	[CalledBy(Type = typeof(ResearchItem), Member = "GetHoursResearchRemaining")]
-	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "BuildItemDescription")]
-	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "GetEquipButtonLocalizationId")]
-	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateGearItemDescription")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnFeedFire")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRead")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "ReadComplete")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "InitLabelsForGear")]
 	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	public bool IsResearchComplete()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -95,41 +95,40 @@ public class ResearchItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshHoursToRead")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateReadPanelNavigation")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshHoursToRead")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnReadHoursIncrease")]
-	[Calls(Type = typeof(ResearchItem), Member = "IsResearchComplete")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateReadPanelNavigation")]
+	[Calls(Type = typeof(ResearchItem), Member = "IsResearchComplete")]
+	[CallsUnknownMethods(Count = 1)]
 	public int GetHoursResearchRemaining()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 1)]
 	public float GetElapsedHours()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshReadPanel")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "InitLabelsForGear")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(SkillsManager), Member = "GetSkill")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshReadPanel")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "InitLabelsForGear")]
 	[CallsUnknownMethods(Count = 1)]
 	public string GetSkillNameLocalized()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SkillsManager), Member = "GetSkill")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetSkillIconName()
 	{
 		return null;

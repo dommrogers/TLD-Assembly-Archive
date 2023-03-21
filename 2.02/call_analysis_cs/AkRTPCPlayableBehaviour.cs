@@ -37,14 +37,14 @@ public class AkRTPCPlayableBehaviour : PlayableBehaviour
 
 	public GameObject rtpcObject
 	{
-		[CallerCount(Count = 5)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
@@ -53,25 +53,25 @@ public class AkRTPCPlayableBehaviour : PlayableBehaviour
 	public RTPC parameter
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "SetRTPCValue")]
 	[Calls(Type = typeof(RTPC), Member = "SetGlobalValue")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 4)]
 	public override void ProcessFrame(Playable playable, FrameData info, object playerData)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AkRTPCPlayableBehaviour()
 	{
 	}

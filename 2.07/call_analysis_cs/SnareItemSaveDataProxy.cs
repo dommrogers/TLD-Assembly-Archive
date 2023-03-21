@@ -8,8 +8,8 @@ public class SnareItemSaveDataProxy
 
 	public SnareState m_State;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public SnareItemSaveDataProxy()
 	{
 	}

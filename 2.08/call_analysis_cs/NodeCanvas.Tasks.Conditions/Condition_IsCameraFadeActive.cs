@@ -26,13 +26,12 @@ public class Condition_IsCameraFadeActive : ConditionTask
 		}
 	}
 
-	[Calls(Type = typeof(CameraFade), Member = "IsFadingOut")]
-	[Calls(Type = typeof(CameraFade), Member = "IsFadingIn")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CameraFade), Member = "IsFadingIn")]
+	[Calls(Type = typeof(CameraFade), Member = "IsFadingOut")]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

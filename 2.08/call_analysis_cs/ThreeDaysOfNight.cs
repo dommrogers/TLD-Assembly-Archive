@@ -48,13 +48,9 @@ public class ThreeDaysOfNight : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(ThreeDaysOfNight), Member = "SetCurrentDay")]
 	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
-	[Calls(Type = typeof(DateTime), Member = ".ctor")]
-	[Calls(Type = typeof(DateTime), Member = ".ctor")]
-	[Calls(Type = typeof(DateTime), Member = ".ctor")]
+	[CalledBy(Type = typeof(ThreeDaysOfNight), Member = "SetCurrentDay")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(DateTime), Member = ".ctor")]
 	[Calls(Type = typeof(DateTime), Member = ".ctor")]
 	public static void Init()
 	{
@@ -66,14 +62,8 @@ public class ThreeDaysOfNight : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(DateTime), Member = "Add")]
-	[Calls(Type = typeof(DateTime), Member = "Add")]
-	[Calls(Type = typeof(DateTime), Member = "Add")]
-	[Calls(Type = typeof(DateTime), Member = "Add")]
-	[Calls(Type = typeof(DateTime), Member = "Add")]
-	[Calls(Type = typeof(DateTime), Member = "Add")]
-	[Calls(Type = typeof(ServerTime), Member = "GetServerTime")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ServerTime), Member = "GetServerTime")]
 	[Calls(Type = typeof(DateTime), Member = "Add")]
 	public static void SetTransitionToDay(int dayNumber)
 	{
@@ -84,20 +74,16 @@ public class ThreeDaysOfNight : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "UpdateMainWindow")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
-	[Calls(Type = typeof(ThreeDaysOfNight), Member = "GetCurrentDayNumber")]
-	[Calls(Type = typeof(ThreeDaysOfNight), Member = "GetCurrentDayNumber")]
-	[Calls(Type = typeof(ThreeDaysOfNight), Member = "GetCurrentDayNumber")]
-	[Calls(Type = typeof(ServerTime), Member = "GetServerTime")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "UpdateMainWindow")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ServerTime), Member = "GetServerTime")]
+	[Calls(Type = typeof(ThreeDaysOfNight), Member = "GetCurrentDayNumber")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void SetDailyTimerLabel(UILabel dayLabel, UILabel timerLabel)
 	{
 	}
@@ -106,71 +92,66 @@ public class ThreeDaysOfNight : MonoBehaviour
 	[CallerCount(Count = 3)]
 	public static bool CanManuallyUnlock()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 3)]
 	public static bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool NoWolfGracePeriodActive()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(ThreeDaysOfNight), Member = "SetDailyTimerLabel")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(ServerTime), Member = "GetServerTime")]
-	[CalledBy(Type = typeof(ThreeDaysOfNight), Member = "SetDailyTimerLabel")]
-	[CalledBy(Type = typeof(ThreeDaysOfNight), Member = "SetDailyTimerLabel")]
-	[CalledBy(Type = typeof(ThreeDaysOfNight), Member = "SetDailyTimerLabel")]
 	public static int GetCurrentDayNumber()
 	{
-		return default(int);
+		return 0;
 	}
 
+	[CalledBy(Type = typeof(FlashlightItem), Member = "DoThreeDaysOfNightBonus")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(FlashlightItem), Member = "DoThreeDaysOfNightBonus")]
-	[CalledBy(Type = typeof(FlashlightItem), Member = "DoThreeDaysOfNightBonus")]
 	[CallsUnknownMethods(Count = 1)]
 	public static float GetFlashlightDurationMultiplier()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(FlashlightItem), Member = "DoThreeDaysOfNightBonus")]
 	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(FlashlightItem), Member = "DoThreeDaysOfNightBonus")]
-	[CalledBy(Type = typeof(FlashlightItem), Member = "DoThreeDaysOfNightBonus")]
-	[CalledBy(Type = typeof(FlashlightItem), Member = "DoThreeDaysOfNightBonus")]
 	[CallsUnknownMethods(Count = 1)]
 	public static float GetFlashlightEffectivenessMultiplier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public static float GetColdRateMultiplier()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static float GetBaselineAirTempIndoors()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public static int GetNumReduceMaxSpawnWolf()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]

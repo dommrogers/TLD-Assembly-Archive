@@ -17,13 +17,13 @@ public class AchievementRewardPlugin
 	public static extern IntPtr AchievementReward_Description(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr AchievementReward_MediaAsset(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr AchievementReward_Name(IntPtr self);
 
 	[PreserveSig]
@@ -42,7 +42,7 @@ public class AchievementRewardPlugin
 	public static extern void AchievementReward_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AchievementRewardPlugin()
 	{
 	}

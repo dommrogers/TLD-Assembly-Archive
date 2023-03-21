@@ -16,10 +16,10 @@ public static class ConsoleProDebug
 	{
 	}
 
-	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(Debug), Member = "Log")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsUnknownMethods(Count = 25)]
 	public static void Watch(string inName, string inValue)
 	{
 	}

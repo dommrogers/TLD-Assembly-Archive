@@ -21,48 +21,45 @@ public sealed class RLPRO_SRP_BleedRenderer : PostProcessEffectRenderer<RLProBle
 	{
 	}
 
-	[Calls(Type = typeof(PropertySheet), Member = "DisableKeyword")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(PropertySheet), Member = "EnableKeyword")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVector")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetTexture")]
-	[Calls(Type = typeof(RLPRO_SRP_BleedRenderer), Member = "Curves")]
-	[Calls(Type = typeof(RLPRO_SRP_BleedRenderer), Member = "Curves")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[Calls(Type = typeof(Shader), Member = "Find")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Shader), Member = "Find")]
+	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
+	[Calls(Type = typeof(RLPRO_SRP_BleedRenderer), Member = "Curves")]
+	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetTexture")]
+	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVector")]
+	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
+	[Calls(Type = typeof(PropertySheet), Member = "DisableKeyword")]
+	[Calls(Type = typeof(PropertySheet), Member = "EnableKeyword")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}
 
-	[Calls(Type = typeof(PropertySheet), Member = "EnableKeyword")]
-	[Calls(Type = typeof(PropertySheet), Member = "DisableKeyword")]
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PropertySheet), Member = "DisableKeyword")]
+	[Calls(Type = typeof(PropertySheet), Member = "EnableKeyword")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ParamSwitch(PropertySheet mat, bool paramValue, string paramName)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(RLPRO_SRP_BleedRenderer), Member = "Init")]
+	[CalledBy(Type = typeof(RLPRO_SRP_BleedRenderer), Member = "Render")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
 	[Calls(Type = typeof(Texture2D), Member = "Apply")]
 	[Calls(Type = typeof(Texture), Member = "CreateNonReadableException")]
-	[CalledBy(Type = typeof(RLPRO_SRP_BleedRenderer), Member = "Init")]
-	[CalledBy(Type = typeof(RLPRO_SRP_BleedRenderer), Member = "Render")]
-	[CalledBy(Type = typeof(RLPRO_SRP_BleedRenderer), Member = "Render")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Curves()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public RLPRO_SRP_BleedRenderer()
 	{
 		((PostProcessEffectRenderer<>)(object)this)._002Ector();

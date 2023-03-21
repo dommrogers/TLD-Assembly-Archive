@@ -119,147 +119,140 @@ public class ExteriorLightingManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public int GetLightGroupCount()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void MarkProbesDirty()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 66)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 16)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 66)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ExteriorLightingManager), Member = "MaybeAssignAmbientProbeAnchor")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
+	[Calls(Type = typeof(AuroraManager), Member = "GetAuroraColour")]
+	[Calls(Type = typeof(Color), Member = "Lerp")]
+	[Calls(Type = typeof(ExteriorLightingManager), Member = "BlendLightProperties")]
+	[Calls(Type = typeof(ExteriorLightingManager), Member = "BlendParticleProperties")]
 	[Calls(Type = typeof(ExteriorLightingManager), Member = "BlendGlowCardProperties")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[Calls(Type = typeof(ExteriorLightingManager), Member = "BlendLightmaps")]
-	[Calls(Type = typeof(ExteriorLightingManager), Member = "BlendParticleProperties")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(ExteriorLightingManager), Member = "UpdateLightProbes")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(ExteriorLightingManager), Member = "BlendLightProperties")]
-	[Calls(Type = typeof(ExteriorLightingManager), Member = "MaybeAssignAmbientProbeAnchor")]
-	[Calls(Type = typeof(AuroraManager), Member = "GetAuroraColour")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Color), Member = "Lerp")]
+	[CallsUnknownMethods(Count = 15)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(ExteriorLightingManager), Member = "Update")]
-	[Calls(Type = typeof(Renderer), Member = "set_probeAnchor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(SceneManager), Member = "IsLoading")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SceneManager), Member = "IsLoading")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Renderer), Member = "set_probeAnchor")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void MaybeAssignAmbientProbeAnchor()
 	{
 	}
 
-	[Calls(Type = typeof(SphericalHarmonicsL2), Member = "set_Item")]
-	[CallsUnknownMethods(Count = 21)]
 	[CalledBy(Type = typeof(ExteriorLightingManager), Member = "Update")]
-	[Calls(Type = typeof(LightmapSettings), Member = "get_lightProbes")]
-	[Calls(Type = typeof(Stopwatch), Member = "get_Elapsed")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(RenderSettings), Member = "get_ambientProbe")]
-	[Calls(Type = typeof(LightmapSettings), Member = "get_lightProbes")]
-	[Calls(Type = typeof(Stopwatch), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(LightmapSettings), Member = "get_lightProbes")]
+	[Calls(Type = typeof(RenderSettings), Member = "get_ambientProbe")]
+	[Calls(Type = typeof(Stopwatch), Member = "Start")]
+	[Calls(Type = typeof(Stopwatch), Member = "get_Elapsed")]
+	[Calls(Type = typeof(SphericalHarmonicsL2), Member = "set_Item")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 21)]
 	private void UpdateLightProbes()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 29)]
 	[CalledBy(Type = typeof(ExteriorLightingManager), Member = "Update")]
-	[Calls(Type = typeof(Renderer), Member = "set_lightmapIndex")]
-	[Calls(Type = typeof(Renderer), Member = "get_lightmapIndex")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(LightmapSettings), Member = "set_lightmaps")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(LightmapSettings), Member = "get_lightmaps")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "Lerp")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Color), Member = "Lerp")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(LightmapSettings), Member = "get_lightmaps")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(Type = typeof(LightmapSettings), Member = "set_lightmaps")]
+	[Calls(Type = typeof(HashSet<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Renderer), Member = "get_lightmapIndex")]
+	[Calls(Type = typeof(Renderer), Member = "set_lightmapIndex")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 29)]
 	private void BlendLightmaps(Dictionary<Texture2D, HashSet<Renderer>> lightmapsToRenderers, float intensity, Color lightmapColor, Color minLightmapColor)
 	{
 	}
 
-	[Calls(Type = typeof(Color), Member = "Lerp")]
 	[CalledBy(Type = typeof(ExteriorLightingManager), Member = "Update")]
-	[Calls(Type = typeof(Light), Member = "get_color")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[Calls(Type = typeof(Color), Member = "Lerp")]
+	[Calls(Type = typeof(Light), Member = "get_color")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 5)]
 	private void BlendLightProperties(DarkLightingManager.LightDef[] lightDefinitions, float intensity, Color ambientColor, float ambientColorBlend, float ambientColorAdd)
 	{
 	}
 
+	[CalledBy(Type = typeof(ExteriorLightingManager), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[CalledBy(Type = typeof(ExteriorLightingManager), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
 	private void BlendParticleProperties(DarkLightingManager.ParticleDef[] particleDefinitions, float intensity)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(ExteriorLightingManager), Member = "Update")]
-	[Calls(Type = typeof(Color), Member = "Lerp")]
-	[Calls(Type = typeof(Renderer), Member = "get_enabled")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
+	[Calls(Type = typeof(Renderer), Member = "get_enabled")]
+	[Calls(Type = typeof(Color), Member = "Lerp")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	private void BlendGlowCardProperties(DarkLightingManager.GlowObjectDef[] glowCardDefinitions, float intensity, Color ambientColor, float ambientColorBlend, float ambientColorAdd)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public ExteriorLightingManager()
 	{

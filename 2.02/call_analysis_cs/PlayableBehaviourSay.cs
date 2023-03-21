@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -31,13 +30,13 @@ public class PlayableBehaviourSay : PlayableBehaviour
 
 	private const NPCVoice.Options NPC_VOICE_OPTIONS = (NPCVoice.Options)3u;
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetSourcePlayPosition")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetSourcePlayPosition")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public bool TryGetCurrentTimelineTimeFromAudio(out float currentTime)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref currentTime) = null;
-		return default(bool);
+		currentTime = default(float);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -47,11 +46,10 @@ public class PlayableBehaviourSay : PlayableBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(PlayableHandle), Member = "GetTime")]
 	[Calls(Type = typeof(PlayableBehaviourSay), Member = "PlayVoice")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public override void ProcessFrame(Playable playable, FrameData info, object playerData)
 	{
@@ -63,29 +61,29 @@ public class PlayableBehaviourSay : PlayableBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(PlayerVoice), Member = "Stop")]
-	[Calls(Type = typeof(NPCVoice), Member = "CompleteActiveRequest")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPCVoice), Member = "CompleteActiveRequest")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Stop")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public override void OnBehaviourPause(Playable playable, FrameData info)
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayableBehaviourSay), Member = "ProcessFrame")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NPCVoice), Member = "Play")]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[CalledBy(Type = typeof(PlayableBehaviourSay), Member = "ProcessFrame")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	private void PlayVoice(float playTime)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PlayableBehaviourSay()
 	{
 	}

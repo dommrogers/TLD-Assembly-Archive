@@ -6,7 +6,7 @@ namespace TinyJSON;
 public sealed class Include : Attribute
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public Include()
 	{
 	}

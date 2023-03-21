@@ -43,48 +43,42 @@ public class PropertyBinding : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
 	private void LateUpdate()
 	{
 	}
 
-	[Calls(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
 	private void FixedUpdate()
 	{
 	}
 
-	[Calls(Type = typeof(PropertyReference), Member = "Reset")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PropertyReference), Member = "Reset")]
 	private void OnValidate()
 	{
 	}
 
-	[Calls(Type = typeof(PropertyReference), Member = "Set")]
-	[Calls(Type = typeof(PropertyReference), Member = "Get")]
-	[Calls(Type = typeof(PropertyReference), Member = "Get")]
+	[ContextMenu("Update Now")]
 	[CalledBy(Type = typeof(PropertyBinding), Member = "Start")]
 	[CalledBy(Type = typeof(PropertyBinding), Member = "Update")]
 	[CalledBy(Type = typeof(PropertyBinding), Member = "LateUpdate")]
-	[Calls(Type = typeof(PropertyReference), Member = "Get")]
 	[CalledBy(Type = typeof(PropertyBinding), Member = "FixedUpdate")]
-	[Calls(Type = typeof(PropertyReference), Member = "Get")]
-	[Calls(Type = typeof(PropertyReference), Member = "GetPropertyType")]
-	[Calls(Type = typeof(PropertyReference), Member = "GetPropertyType")]
-	[Calls(Type = typeof(PropertyReference), Member = "get_isValid")]
-	[Calls(Type = typeof(PropertyReference), Member = "get_isValid")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 4)]
-	[ContextMenu("Update Now")]
+	[Calls(Type = typeof(PropertyReference), Member = "get_isValid")]
+	[Calls(Type = typeof(PropertyReference), Member = "GetPropertyType")]
+	[Calls(Type = typeof(PropertyReference), Member = "Get")]
+	[Calls(Type = typeof(PropertyReference), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void UpdateTarget()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public PropertyBinding()
 	{
 	}

@@ -10,8 +10,8 @@ public class ButtonIcon
 
 	public UIAtlas m_Atlas;
 
-	[CallerCount(Count = 83)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 88)]
 	public ButtonIcon(string name, string icon)
 	{
 	}

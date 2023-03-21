@@ -68,66 +68,63 @@ public class KeroseneLampItem : MonoBehaviour
 
 	private static KeroseneLampItemSaveDataProxy m_KeroseneLampItemSaveDataProxy;
 
-	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 23)]
 	public void Awake()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(Inventory), Member = "ProcessItems")]
-	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
-	[Calls(Type = typeof(GearItem), Member = "BreakOnUse")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
+	[Calls(Type = typeof(KeroseneLampItem), Member = "UpdateEffects")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(TimeOfDay), Member = "GetTODHours")]
+	[Calls(Type = typeof(KeroseneLampItem), Member = "ReduceFuel")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "ReduceFuel")]
-	[Calls(Type = typeof(TimeOfDay), Member = "GetTODHours")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "UpdateEffects")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "BreakOnUse")]
+	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 10)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(GearItem), Member = "Serialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Time), Member = "get_time")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOn")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "ReduceFuel")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(KeroseneLampItem), Member = "ReduceFuel")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOn")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Time), Member = "get_time")]
+	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Deserialize(string text)
 	{
 	}
@@ -136,7 +133,7 @@ public class KeroseneLampItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsOn()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -145,62 +142,59 @@ public class KeroseneLampItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "TurnOnAfterDelay")]
 	[CalledBy(Type = typeof(KeroseneLampItem), Member = "Deserialize")]
-	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[Calls(Type = typeof(HeatSource), Member = "TurnOn")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(KeroseneLampItem), Member = "TurnOnAfterDelay")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(GearItem), Member = "CheckForBreakOnUse")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "PlaySparkParticles")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(KeroseneLampItem), Member = "PlaySparkParticles")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "CheckForBreakOnUse")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(HeatSource), Member = "TurnOn")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite")]
+	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	public void TurnOn(bool supressStartAudio)
 	{
 	}
 
+	[CalledBy(Type = typeof(KeroseneLampItem), Member = "Update")]
+	[CalledBy(Type = typeof(KeroseneLampItem), Member = "Deserialize")]
+	[CalledBy(Type = typeof(KeroseneLampItem), Member = "OnExtinguishCompleteCallback")]
+	[CalledBy(Type = typeof(KeroseneLampItem), Member = "CancelAction")]
 	[CalledBy(Type = typeof(KeroseneLampItem), Member = "OnDroppedInWater")]
 	[CalledBy(Type = typeof(Panel_Container), Member = "OnInventoryToContainer")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
-	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "ExtinguishLitItemInHands")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TurnLightOffImmediate")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "OnExtinguishComplete")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
+	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "ExtinguishLitItemInHands")]
 	[CalledBy(Type = typeof(Utils), Member = "ExtinguishLitItem")]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "CancelAction")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TurnLightOffImmediate")]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "OnExtinguishCompleteCallback")]
-	[Calls(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "Update")]
 	[CallerCount(Count = 15)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(KeroseneLampItem), Member = "StopLoopingAudio")]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "Deserialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "StopSparkParticles")]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "Update")]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "Update")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
+	[Calls(Type = typeof(KeroseneLampItem), Member = "StopSparkParticles")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 10)]
 	public void TurnOff(bool playAudio = true)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Extinguish")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 14)]
 	public void TurnOffDelayed()
 	{
@@ -212,8 +206,8 @@ public class KeroseneLampItem : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void PauseLight()
 	{
 	}
@@ -227,92 +221,90 @@ public class KeroseneLampItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsPaused()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessFireAction")]
-	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsUnknownMethods(Count = 22)]
-	[Calls(Type = typeof(PlayerManager), Member = "IsCancelableActionInProgress")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsCancelableActionInProgress")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 22)]
 	public void Toggle()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Cancel")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Cancel")]
+	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public void CancelAction()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnRefuel")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefuelFinished")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public float AddFuel(float fuelLiters)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetMaxFuelToAdd()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRefuel")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnRefuel")]
-	[CalledBy(Type = typeof(GearItem), Member = "GetItemPostFixForInventoryInterfaces")]
 	[CalledBy(Type = typeof(KeroseneLampIntensity), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(GearItem), Member = "GetItemPostFixForInventoryInterfaces")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnRefuel")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRefuel")]
 	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public float GetPercentFuelRemaining()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void DestroyHeatSource()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "HideLightFromMesh")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void HideEffects(bool hide)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public float GetModifiedFuelBurnLitersPerHour()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -321,13 +313,13 @@ public class KeroseneLampItem : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
 	[CalledBy(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
 	[CalledBy(Type = typeof(KeroseneLampItem), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(KeroseneLampItem), Member = "OnDisable")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StopAudioForEquippedItem")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void StopLoopingAudio()
 	{
@@ -342,28 +334,28 @@ public class KeroseneLampItem : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
 	private void UpdateLoopingAudioPosition()
 	{
 	}
 
+	[CalledBy(Type = typeof(KeroseneLampItem), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Confirm")]
 	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 20)]
 	private void UpdateEffects()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnIgniteComplete()
 	{
 	}
@@ -371,90 +363,76 @@ public class KeroseneLampItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsIgniting()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsIgnitingOrExtinguishing()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(KeroseneLampItem), Member = "PlaySparkParticles")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "ForceGetChildGameObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(SetChildOnOff), Member = "StartOnOffCycle")]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Utils), Member = "ForceGetChildGameObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Utils), Member = "ForceGetChildGameObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Utils), Member = "ForceGetChildGameObject")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(SetChildOnOff), Member = "StartOnOffCycle")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	private void PlayerSparkParticlesOnSpecific(GameObject turningOnFX)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 20)]
 	[CalledBy(Type = typeof(KeroseneLampItem), Member = "TurnOn")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "PlayerSparkParticlesOnSpecific")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(KeroseneLampItem), Member = "PlayerSparkParticlesOnSpecific")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 20)]
 	private void PlaySparkParticles()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 25)]
 	[CalledBy(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
-	[Calls(Type = typeof(SetChildOnOff), Member = "CancelOnOffCycle")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(SetChildOnOff), Member = "CancelOnOffCycle")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 25)]
 	private void StopSparkParticles()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(KeroseneLampItem), Member = "StopLoopingAudio")]
-	[DeduplicatedMethod]
 	private void OnDestroy()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(KeroseneLampItem), Member = "StopLoopingAudio")]
-	[DeduplicatedMethod]
 	private void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public KeroseneLampItem()
 	{
 	}

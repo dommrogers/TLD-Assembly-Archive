@@ -10,16 +10,16 @@ public class ShowIfAttribute : DrawerAttribute
 
 	public override int priority
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 22)]
+	[CallerCount(Count = 23)]
 	public ShowIfAttribute(string fieldName, int checkValue)
 	{
 	}

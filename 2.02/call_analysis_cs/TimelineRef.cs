@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
 using UnityEngine;
@@ -51,7 +50,7 @@ public class TimelineRef
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -60,9 +59,9 @@ public class TimelineRef
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[DeduplicatedMethod]
 			[DebuggerHidden]
-			[CallerCount(Count = 29)]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -76,37 +75,32 @@ public class TimelineRef
 		{
 		}
 
-		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-		[CallsUnknownMethods(Count = 28)]
-		[Calls(Type = typeof(Debug), Member = "LogError")]
-		[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-		[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-		[Calls(Type = typeof(AssetBundleManager), Member = "LoadBundleAsync")]
-		[Calls(Type = typeof(TimelineRef), Member = "LoadComplete")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[Calls(Type = typeof(string), Member = "EqualsHelper")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(TimelineManifest), Member = "TryGetEntry")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[CallsDeduplicatedMethods(Count = 7)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+		[Calls(Type = typeof(TimelineManifest), Member = "TryGetEntry")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(string), Member = "EqualsHelper")]
+		[Calls(Type = typeof(TimelineRef), Member = "LoadComplete")]
+		[Calls(Type = typeof(AssetBundleManager), Member = "LoadBundleAsync")]
+		[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+		[Calls(Type = typeof(Debug), Member = "LogError")]
+		[CallsDeduplicatedMethods(Count = 7)]
+		[CallsUnknownMethods(Count = 28)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[CallsUnknownMethods(Count = 3)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
@@ -129,47 +123,47 @@ public class TimelineRef
 
 	public static readonly List<TLD_TimelineDirector.BindingInfo> NO_BINDING_OVERRIDE;
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Action_PlayTimeline), Member = "OnLoadComplete")]
-	[CalledBy(Type = typeof(TimelineRef), Member = "PlayTimelineForPlayer")]
-	[CalledBy(Type = typeof(TimelinePlayback), Member = "Update")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTimeline")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "OnTimelineLoaded")]
+	[CalledBy(Type = typeof(TimelinePlayback), Member = "Update")]
+	[CalledBy(Type = typeof(TimelineRef), Member = "PlayTimelineForPlayer")]
+	[CalledBy(Type = typeof(Action_PlayTimeline), Member = "OnLoadComplete")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "Play")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTimeline")]
+	[CallsUnknownMethods(Count = 1)]
 	public void PlayTimeline(Action onTimelineStop, List<TLD_TimelineDirector.BindingInfo> bindingOverrides, bool isPlayerTimeline, DirectorWrapMode wrapMode = DirectorWrapMode.None)
 	{
 	}
 
-	[Calls(Type = typeof(TimelineRef), Member = "PlayTimeline")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TimelineRef), Member = "PlayTimeline")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void PlayTimelineForPlayer()
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "Interrupt")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "StopTimeline")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "StopCurrentTimeline")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "Cleanup")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void StopTimeline()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(TimelineRef), Member = "IsLoaded")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public double GetDuration()
 	{
-		return default(double);
+		return 0.0;
 	}
 
 	[CalledBy(Type = typeof(_003CLoad_003Ed__17), Member = "MoveNext")]
@@ -191,72 +185,64 @@ public class TimelineRef
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "LoadTimeline")]
 	[CalledBy(Type = typeof(TimelineRef), Member = "LoadForPlayerDirector")]
 	[CalledBy(Type = typeof(LoadTimelineTrigger), Member = "OnTriggerEnter")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public IEnumerator Load(TLD_TimelineDirector director, Action onTimeLineLoadDone, Action onTimeLineLoadFailed, LoadOptions options)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Action_LoadTimeline), Member = "OnExecute")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_play_timeline")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Action_PlayTimeline), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplyPlayTimeline")]
-	[Calls(Type = typeof(TimelineRef), Member = "Load")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "MaybeTriggerAnimation")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplyPlayTimeline")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_play_timeline")]
+	[CalledBy(Type = typeof(Action_LoadTimeline), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_PlayTimeline), Member = "OnExecute")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(TimelineRef), Member = "Load")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public IEnumerator LoadForPlayerDirector(Action onTimeLineLoadDone, Action onTimeLineLoadFailed, LoadOptions options)
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 29)]
+	[CallerCount(Count = 35)]
 	public TimelineAsset GetLoadedTimeline()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(TimelineRef), Member = "GetDuration")]
-	[CalledBy(Type = typeof(TimelinePlayback), Member = "Update")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTimeline")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "LoadTimeline")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(TimelinePlayback), Member = "Update")]
+	[CalledBy(Type = typeof(TimelineRef), Member = "GetDuration")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool IsLoaded()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Elevator), Member = "UnloadElevatorTimelines")]
-	[CalledBy(Type = typeof(Action_PlayTimeline), Member = "OnLoadFailed")]
-	[CalledBy(Type = typeof(Action_PlayTimeline), Member = "OnTimelineStopped")]
-	[CalledBy(Type = typeof(Action_PlayTimeline), Member = "OnActionComplete")]
-	[CalledBy(Type = typeof(TimelinePlayback), Member = "Cleanup")]
-	[CalledBy(Type = typeof(Elevator), Member = "UnloadElevatorTimelines")]
-	[CalledBy(Type = typeof(Elevator), Member = "UnloadElevatorTimelines")]
-	[CalledBy(Type = typeof(Elevator), Member = "UnloadElevatorTimelines")]
-	[CalledBy(Type = typeof(Elevator), Member = "UnloadElevatorTimelines")]
-	[CalledBy(Type = typeof(Action_UnloadTimeline), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Elevator), Member = "UnloadElevatorTimelines")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AssetBundleManager), Member = "UnloadBundle")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
-	[CallerCount(Count = 17)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematicComplete")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
 	[CalledBy(Type = typeof(Elevator), Member = "UnloadTimeline")]
 	[CalledBy(Type = typeof(Elevator), Member = "UnloadElevatorTimelines")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematicComplete")]
-	[CalledBy(Type = typeof(Elevator), Member = "UnloadElevatorTimelines")]
+	[CalledBy(Type = typeof(TimelinePlayback), Member = "Cleanup")]
+	[CalledBy(Type = typeof(Action_UnloadTimeline), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_PlayTimeline), Member = "OnTimelineStopped")]
+	[CalledBy(Type = typeof(Action_PlayTimeline), Member = "OnLoadFailed")]
+	[CalledBy(Type = typeof(Action_PlayTimeline), Member = "OnActionComplete")]
+	[CallerCount(Count = 17)]
+	[Calls(Type = typeof(AssetBundleManager), Member = "UnloadBundle")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Unload()
 	{
 	}
@@ -268,7 +254,7 @@ public class TimelineRef
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public TimelineRef()
 	{
 	}

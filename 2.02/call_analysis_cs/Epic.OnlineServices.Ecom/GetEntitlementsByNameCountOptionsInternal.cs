@@ -15,11 +15,11 @@ internal struct GetEntitlementsByNameCountOptionsInternal : ISettable, IDisposab
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(GetEntitlementsByNameCountOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(GetEntitlementsByNameCountOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(GetEntitlementsByNameCountOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(GetEntitlementsByNameCountOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -27,34 +27,34 @@ internal struct GetEntitlementsByNameCountOptionsInternal : ISettable, IDisposab
 
 	public string EntitlementName
 	{
+		[CalledBy(Type = typeof(GetEntitlementsByNameCountOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(GetEntitlementsByNameCountOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(GetEntitlementsByNameCountOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(GetEntitlementsByNameCountOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(GetEntitlementsByNameCountOptionsInternal), Member = "set_EntitlementName")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GetEntitlementsByNameCountOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(GetEntitlementsByNameCountOptionsInternal), Member = "set_EntitlementName")]
 	public void Set(GetEntitlementsByNameCountOptions other)
 	{
 	}
 
+	[CalledBy(Type = typeof(EcomInterface), Member = "GetEntitlementsByNameCount")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GetEntitlementsByNameCountOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(GetEntitlementsByNameCountOptionsInternal), Member = "set_EntitlementName")]
-	[CalledBy(Type = typeof(EcomInterface), Member = "GetEntitlementsByNameCount")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

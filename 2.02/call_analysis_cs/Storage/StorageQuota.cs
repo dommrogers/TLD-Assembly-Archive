@@ -13,7 +13,7 @@ public class StorageQuota
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(ulong);
+			return 0uL;
 		}
 	}
 

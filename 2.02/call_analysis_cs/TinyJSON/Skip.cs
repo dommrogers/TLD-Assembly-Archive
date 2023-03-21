@@ -5,7 +5,7 @@ namespace TinyJSON;
 public sealed class Skip : Exclude
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public Skip()
 	{
 	}

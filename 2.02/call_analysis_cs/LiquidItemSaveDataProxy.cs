@@ -7,7 +7,7 @@ public class LiquidItemSaveDataProxy
 	public LiquidQuality m_LiquidQuality;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public LiquidItemSaveDataProxy()
 	{
 	}

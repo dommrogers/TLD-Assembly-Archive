@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 
@@ -13,13 +12,9 @@ public class uConsoleAutoComplete
 	}
 
 	[CalledBy(Type = typeof(ConsoleManager), Member = "Initialize")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "Initialize")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "Initialize")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "Initialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void CreateCommandParameterSet(List<string> commands, List<string> parameters)
 	{
 	}
@@ -34,72 +29,70 @@ public class uConsoleAutoComplete
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(uConsoleAutoComplete), Member = "DisplayParametersStartingWithMatch")]
-	[Calls(Type = typeof(uConsoleAutoComplete), Member = "DisplayStringsStartingWithMatch")]
-	[Calls(Type = typeof(string), Member = "Split")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(Type = typeof(uConsoleAutoComplete), Member = "DisplayStringsStartingWithMatch")]
+	[Calls(Type = typeof(uConsoleAutoComplete), Member = "DisplayParametersStartingWithMatch")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void DisplayPossibleMatches(string command)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(uConsole), Member = "Log")]
-	[Calls(Type = typeof(uConsole), Member = "Log")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(uConsoleAutoComplete), Member = "DisplayPossibleMatches")]
 	[CalledBy(Type = typeof(uConsoleAutoComplete), Member = "DisplayParametersStartingWithMatch")]
 	[CalledBy(Type = typeof(uConsoleInput), Member = "AutoComplete")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(uConsole), Member = "Log")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void DisplayStringsStartingWithMatch(string match, List<string> list)
 	{
 	}
 
-	[CalledBy(Type = typeof(uConsoleInput), Member = "AutoComplete")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(uConsoleAutoComplete), Member = "DisplayPossibleMatches")]
+	[CalledBy(Type = typeof(uConsoleInput), Member = "AutoComplete")]
 	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(uConsoleAutoComplete), Member = "DisplayStringsStartingWithMatch")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private static void DisplayParametersStartingWithMatch(string command, string parameter)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private static bool CommonCharacterAtIndex(int index, List<string> strings)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "AutoComplete")]
-	[CalledBy(Type = typeof(uConsoleAutoComplete), Member = "GetBestCommandWithParameterCompletion")]
 	[CalledBy(Type = typeof(uConsoleAutoComplete), Member = "GetBestCompletion")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CalledBy(Type = typeof(uConsoleAutoComplete), Member = "GetBestCommandWithParameterCompletion")]
+	[CalledBy(Type = typeof(uConsoleInput), Member = "AutoComplete")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
+	[CallsUnknownMethods(Count = 8)]
 	private static string GetBestMatchFromList(string pattern, List<string> list)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(uConsoleAutoComplete), Member = "GetBestCompletion")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(uConsoleInput), Member = "AutoComplete")]
-	[Calls(Type = typeof(uConsoleAutoComplete), Member = "GetBestMatchFromList")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(uConsoleAutoComplete), Member = "GetBestMatchFromList")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private static string GetBestCommandWithParameterCompletion(string command, string partialParameter)
 	{
 		return null;

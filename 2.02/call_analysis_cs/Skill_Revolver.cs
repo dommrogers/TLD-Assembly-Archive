@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 
@@ -22,18 +21,19 @@ public class Skill_Revolver : Skill
 
 	private static Skill_RevolverSaveData m_Skill_RevolverSaveData;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(Skill), Member = "SetPoints")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
@@ -45,24 +45,24 @@ public class Skill_Revolver : Skill
 	[CallsUnknownMethods(Count = 3)]
 	public float GetCriticalHitChanceScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[CallsUnknownMethods(Count = 3)]
 	public int GetConditionRepairBonus()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[CallsUnknownMethods(Count = 3)]
 	public float GetRecoilScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -71,16 +71,16 @@ public class Skill_Revolver : Skill
 	[CallsUnknownMethods(Count = 3)]
 	public float GetRevolverDamageScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public float GetConditionDegradeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -88,58 +88,37 @@ public class Skill_Revolver : Skill
 	[CallsUnknownMethods(Count = 3)]
 	public float GetAimAssistAngleDegrees()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "OnRevolverFired")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "GetFleeChanceOnHitPercent")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "GetFleeChanceOnRevolverShotPercent")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "OnRevolverFired")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[CallsUnknownMethods(Count = 3)]
 	public float GetStruggleBonus()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 33)]
 	public override string GetTierBenefits(int index)
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Skill), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Skill), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Skill_Revolver()
 	{
 	}

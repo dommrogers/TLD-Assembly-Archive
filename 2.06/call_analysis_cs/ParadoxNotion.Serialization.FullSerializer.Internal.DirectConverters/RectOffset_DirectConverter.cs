@@ -7,25 +7,20 @@ namespace ParadoxNotion.Serialization.FullSerializer.Internal.DirectConverters;
 
 public class RectOffset_DirectConverter : fsDirectConverter<RectOffset>
 {
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(fsResult), Member = "Merge")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[CallsUnknownMethods(Count = 9)]
 	protected override fsResult DoSerialize(RectOffset model, Dictionary<string, fsData> serialized)
 	{
 		return default(fsResult);
 	}
 
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[CallsUnknownMethods(Count = 13)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsBaseConverter), Member = "DeserializeMember")]
 	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 9)]
 	protected override fsResult DoDeserialize(Dictionary<string, fsData> data, ref RectOffset model)
 	{
 		return default(fsResult);

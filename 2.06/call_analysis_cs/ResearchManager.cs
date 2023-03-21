@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class ResearchManager : MonoBehaviour
 {
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	private void Start()
 	{
 	}

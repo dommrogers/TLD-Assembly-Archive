@@ -21,11 +21,11 @@ public sealed class RLProUltimateVignette : PostProcessEffectSettings
 
 	public ColorParameter innerColor;
 
-	[CallsUnknownMethods(Count = 41)]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(ColorParameter), Member = ".ctor")]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 41)]
 	public RLProUltimateVignette()
 	{
 	}

@@ -6,7 +6,7 @@ public class DummyInteractiveObject : MonoBehaviour
 	public string m_InteractiveObjectLocID;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}
@@ -15,14 +15,13 @@ public class DummyInteractiveObject : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool ProcessInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayText")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayText")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayText")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public string GetInteractionText()
 	{

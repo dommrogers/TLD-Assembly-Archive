@@ -23,22 +23,22 @@ public abstract class EffectPool<T> : MonoBehaviour
 		[CallerCount(Count = 0)]
 		public override int GetHashCode()
 		{
-			return default(int);
+			return 0;
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public bool Equals(EffectHandle other)
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 6)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 6)]
 		public override bool Equals(object obj)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
@@ -46,7 +46,7 @@ public abstract class EffectPool<T> : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		public static bool operator ==(EffectHandle a, EffectHandle b)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
@@ -54,7 +54,7 @@ public abstract class EffectPool<T> : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		public static bool operator !=(EffectHandle a, EffectHandle b)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -87,20 +87,20 @@ public abstract class EffectPool<T> : MonoBehaviour
 
 		private readonly ParticleSystem[] m_ParticleSystems;
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public ParticleSystemInfo(EffectHandle effectHandle, bool hasParticleSystem, float duration, bool isLooping, ParticleSystem[] particleSystems)
 		{
 		}
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(ParticleSystem), Member = "IsAlive")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 4)]
 		public bool IsAlive()
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -116,25 +116,25 @@ public abstract class EffectPool<T> : MonoBehaviour
 		[CallerCount(Count = 1)]
 		public T GetEffectType()
 		{
-			return (T)null;
+			return default(T);
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 14)]
+		[CallerCount(Count = 34)]
 		public int GetInstancesCount()
 		{
-			return default(int);
+			return 0;
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 44)]
+		[CallerCount(Count = 53)]
 		public GameObject GetPrefabObject()
 		{
 			return null;
 		}
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public SerializableSpawnGroupGeneric()
 		{
 		}
@@ -167,36 +167,43 @@ public abstract class EffectPool<T> : MonoBehaviour
 
 	private List<ParticleSystemInfo> m_WatchedEmitters;
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract SerializableSpawnGroupGeneric[] GetSerializedGroups();
 
-	[CallsUnknownMethods(Count = 2)]
 	[DeduplicatedMethod]
+	[CalledBy(TypeFullName = "EffectPoolManager.<Start>d__16", Member = "MoveNext")]
+	[CalledBy(Type = typeof(TestEffectPool), Member = "Awake")]
+	[CalledBy(Type = typeof(TestEffectPool), Member = "Update")]
 	[CallerCount(Count = 8)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public void LoadEffects()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	public void UnLoadEffects()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
+	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(vp_Bullet), Member = "SpawnImpactEffects")]
+	[CalledBy(Type = typeof(TestEffectPool), Member = "Update")]
+	[CalledBy(Type = typeof(ArrowItem), Member = "HandleCollisionWithObject")]
+	[CalledBy(Type = typeof(ArrowItem), Member = "OnCollisionStay")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "PlaceFootstep")]
+	[CalledBy(Type = typeof(FootStepSounds), Member = "AddMoveDistance")]
+	[CalledBy(Type = typeof(FootStepSounds), Member = "PlayWaterSplashVFX")]
+	[CallerCount(Count = 10)]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[CallerCount(Count = 10)]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[DeduplicatedMethod]
+	[CallsUnknownMethods(Count = 13)]
 	public bool SpawnUntilParticlesDone(T effectType, Vector3 position, Quaternion rotation)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -214,9 +221,9 @@ public abstract class EffectPool<T> : MonoBehaviour
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected virtual void InternalUpdate()
 	{
 	}
@@ -230,17 +237,17 @@ public abstract class EffectPool<T> : MonoBehaviour
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(ParticleSystem), Member = "IsAlive")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 4)]
 	private void UpdateWatchedEmitters()
 	{
 	}
 
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
 	private void RemoveWatchedEmitter(EffectHandle effectHandle)
 	{
 	}
@@ -251,27 +258,26 @@ public abstract class EffectPool<T> : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool IsNonLoopingParticleEffect(T effectType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private EffectHandle ActivateInstance(T effectType, Vector3 position, Quaternion rotation)
 	{
 		return default(EffectHandle);
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	private void ReleaseInstance(EffectHandle effectHandle)
 	{
@@ -281,18 +287,18 @@ public abstract class EffectPool<T> : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private int GetGroupIndexFromEffectHandle(EffectHandle id)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private int GetInstanceIndexFromEffectHandle(EffectHandle effectHandle)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private EffectHandle GetEffectHandleFromGroupAndInstanceIndex(int indexGroup, int indexInstance, int poolHashCode, T effectType)
 	{
 		return default(EffectHandle);
@@ -300,20 +306,21 @@ public abstract class EffectPool<T> : MonoBehaviour
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 11)]
 	private InstanceInfo CreateInstanceInfo(EffectHandle instanceHandle, SerializableSpawnGroupGeneric serializableSpawnGroup)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsUnknownMethods(Count = 1)]
 	private void DeleteInstanceInfo(InstanceInfo instanceInfo)
 	{
 	}
@@ -327,20 +334,20 @@ public abstract class EffectPool<T> : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private InstanceInfo FindAvailableInstanceInfo(SpawnGroup spawnGroup, T effectType)
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallsUnknownMethods(Count = 5)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 5)]
 	private ParticleSystemInfo ComputeParticleSystemInfo(InstanceInfo instanceInfo)
 	{
 		return default(ParticleSystemInfo);
@@ -363,17 +370,22 @@ public abstract class EffectPool<T> : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ValueType), Member = "DefaultEquals")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ValueType), Member = "DefaultEquals")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private SpawnGroup GetSpawnGroup(T effectType, List<SpawnGroup> groups)
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(ArrowImpactEffectPool), Member = ".ctor")]
+	[CalledBy(Type = typeof(BulletImpactEffectPool), Member = ".ctor")]
+	[CalledBy(Type = typeof(HeavyFootstepEffectPool), Member = ".ctor")]
+	[CalledBy(Type = typeof(ScorchImpactEffectPool), Member = ".ctor")]
+	[CalledBy(Type = typeof(SplashEffectPool), Member = ".ctor")]
 	[CallerCount(Count = 5)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 13)]

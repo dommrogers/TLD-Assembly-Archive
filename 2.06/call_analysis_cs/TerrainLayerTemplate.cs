@@ -16,9 +16,9 @@ public class TerrainLayerTemplate : ScriptableObject
 
 	public TerrainLayer[] m_Layers;
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public TerrainLayerTemplate()
 	{
 	}

@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class CustomBasedExperienceMode : CustomExperienceMode
 {
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public CustomBasedExperienceMode()
 	{
 	}

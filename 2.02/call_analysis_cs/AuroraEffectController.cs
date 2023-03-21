@@ -30,44 +30,43 @@ public class AuroraEffectController : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(AuroraEffectController), Member = "Enable")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 12)]
 	public void Update()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CalledBy(Type = typeof(AuroraEffectController), Member = "Start")]
 	[CalledBy(Type = typeof(AuroraEffectController), Member = "Update")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 7)]
 	private void Enable(bool on)
 	{
 	}
 
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaybeRollActive()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool PassesFilter()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -77,18 +76,18 @@ public class AuroraEffectController : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[CallsUnknownMethods(Count = 22)]
 	[CalledBy(Type = typeof(AuroraEffectController), Member = "Start")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 22)]
 	private void InstantiateEffects()
 	{
 	}

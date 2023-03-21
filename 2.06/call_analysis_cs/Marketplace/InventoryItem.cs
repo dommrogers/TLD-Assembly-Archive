@@ -25,19 +25,19 @@ public class InventoryItem : IWrappedObject, IDisposable
 
 	public uint ConsumableBalance
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
 	public Uri ConsumableUrl
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedUri")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -58,10 +58,10 @@ public class InventoryItem : IWrappedObject, IDisposable
 
 	public DateTime EndDate
 	{
-		[CallsUnknownMethods(Count = 6)]
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedDateTime")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedDateTime")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return default(DateTime);
@@ -90,8 +90,8 @@ public class InventoryItem : IWrappedObject, IDisposable
 
 	public string ProductId
 	{
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
@@ -102,10 +102,10 @@ public class InventoryItem : IWrappedObject, IDisposable
 
 	public DateTime RightsObtainedDate
 	{
-		[CallsUnknownMethods(Count = 6)]
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedDateTime")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedDateTime")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return default(DateTime);
@@ -115,8 +115,8 @@ public class InventoryItem : IWrappedObject, IDisposable
 	public DateTime StartDate
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedDateTime")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -130,16 +130,16 @@ public class InventoryItem : IWrappedObject, IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
 	public Uri Url
 	{
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedUri")]
-		[CallsUnknownMethods(Count = 6)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedUri")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -153,7 +153,7 @@ public class InventoryItem : IWrappedObject, IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -163,7 +163,7 @@ public class InventoryItem : IWrappedObject, IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(long);
+			return 0L;
 		}
 	}
 
@@ -184,11 +184,11 @@ public class InventoryItem : IWrappedObject, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 98)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 113)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]

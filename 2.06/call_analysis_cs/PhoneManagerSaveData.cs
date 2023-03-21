@@ -8,17 +8,16 @@ public class PhoneManagerSaveData
 
 	public List<PhoneSaveDataInfo> m_ListPhoneSaveDataInfo;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Reset()
 	{
 	}
 
+	[CalledBy(Type = typeof(PhoneManager), Member = ".cctor")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(PhoneManager), Member = ".cctor")]
 	[CallsUnknownMethods(Count = 11)]
 	public PhoneManagerSaveData()
 	{

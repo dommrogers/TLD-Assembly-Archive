@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
@@ -22,39 +21,39 @@ public class Action_SetAnimatorVariable : ActionTask
 
 	public string value;
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Action_SetAnimatorVariable), Member = "DoWork")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	protected override void OnExecute()
 	{
 	}
 
 	[CalledBy(Type = typeof(Action_SetAnimatorVariable), Member = "DoWork")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Task), Member = "get_agent")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(Task), Member = "get_agent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private Animator GetAnimator()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(System.Number), Member = "ParseSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "ParseInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
 	[CalledBy(Type = typeof(Action_SetAnimatorVariable), Member = "OnExecute")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Action_SetAnimatorVariable), Member = "GetAnimator")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Action_SetAnimatorVariable), Member = "GetAnimator")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(bool), Member = "Parse")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "ParseInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "ParseSingle")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 11)]
 	private void DoWork()
 	{
 	}

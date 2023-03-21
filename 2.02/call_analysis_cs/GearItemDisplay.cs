@@ -32,11 +32,11 @@ public class GearItemDisplay : MonoBehaviour
 	[NonSerialized]
 	public OnClicked m_ClickedDelegate;
 
+	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshList")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshList")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 9)]
 	public void Clear()
 	{
@@ -49,33 +49,31 @@ public class GearItemDisplay : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshSelected")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshList")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshSelected")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public void SetSelected(bool selected)
 	{
 	}
 
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshList")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 12)]
 	public void Setup(GearItem gi)
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public GearItemDisplay()
 	{
 	}

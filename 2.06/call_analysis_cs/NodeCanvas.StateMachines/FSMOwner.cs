@@ -41,33 +41,33 @@ public class FSMOwner : GraphOwner<FSM>
 
 	public string previousDeepStateName
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(FSMOwner), Member = "GetPreviousState")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(FSMOwner), Member = "GetPreviousState")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(FSMOwner), Member = "get_currentDeepStateName")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public IState GetCurrentState(bool includeSubFSMs = true)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(FSMOwner), Member = "get_previousDeepStateName")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public IState GetPreviousState(bool includeSubFSMs = true)
 	{
 		return null;
@@ -82,17 +82,17 @@ public class FSMOwner : GraphOwner<FSM>
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(FSM), Member = "GetStateNames")]
+	[CallsUnknownMethods(Count = 1)]
 	public string[] GetStateNames()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(GraphOwner), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GraphOwner), Member = ".ctor")]
 	public FSMOwner()
 	{
 		((GraphOwner<>)(object)this)._002Ector();

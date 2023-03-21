@@ -40,11 +40,11 @@ public class ConditionNode : BTNode, ITaskAssignable<ConditionTask>, ITaskAssign
 
 	public override string name
 	{
-		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(string), Member = "ToUpper")]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Node), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "ToUpper")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -58,8 +58,8 @@ public class ConditionNode : BTNode, ITaskAssignable<ConditionTask>, ITaskAssign
 		return default(Status);
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
 	public ConditionNode()
 	{

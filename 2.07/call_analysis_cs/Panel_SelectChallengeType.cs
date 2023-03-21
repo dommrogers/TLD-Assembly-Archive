@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Gameplay;
+using TLD.SaveState;
 using TLD.UI;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -44,101 +45,99 @@ public class Panel_SelectChallengeType : Panel_AutoReferenced
 
 	private ChallengeConfig m_lastSelectedConfig;
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(BasicMenu), Member = "InstantiateMenu")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(BasicMenu), Member = "InstantiateMenu")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	public override void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BasicMenu), Member = "ManualUpdate")]
+	[Calls(Type = typeof(Panel_SelectChallengeType), Member = "ChallengeIsLocked")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Panel_SelectChallengeType), Member = "ChallengeIsLocked")]
-	[Calls(Type = typeof(BasicMenu), Member = "ManualUpdate")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_SelectChallengeType), Member = "ChallengeIsLocked")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ChallengeConfig), Member = "GetLockedCondition")]
-	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "OnChallengeClicked")]
 	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "UpdateButtonLegend")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ChallengeConfig), Member = "GetLockedCondition")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ChallengeIsLocked()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_SelectWorldMap), Member = "ShouldBePartOfFlow")]
-	[Calls(Type = typeof(GameManager), Member = "RegionLockedBySelectedMode")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_SelectChallengeType), Member = "ChallengeIsLocked")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_SelectChallengeType), Member = "ChallengeIsLocked")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[Calls(Type = typeof(GameManager), Member = "RegionLockedBySelectedMode")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_SelectWorldMap), Member = "ShouldBePartOfFlow")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnChallengeClicked()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(BasicMenu), Member = "AddItem")]
 	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "ConfigureMenu")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(BasicMenu), Member = "AddItem")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void AddMenuItem(int itemIndex)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "Enable")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(BasicMenu), Member = "Reset")]
 	[Calls(Type = typeof(BasicMenu), Member = "UpdateTitle")]
 	[Calls(Type = typeof(Panel_SelectChallengeType), Member = "AddMenuItem")]
 	[Calls(Type = typeof(BasicMenu), Member = "EnableConfirm")]
-	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void ConfigureMenu()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ChallengeConfig), Member = "GetChallengeTexture")]
+	[Calls(Type = typeof(AssetReference), Member = "IsValid")]
 	[Calls(Type = typeof(Panel_SelectChallengeType), Member = "ConfigureMenu")]
 	[Calls(Type = typeof(Panel_SelectChallengeType), Member = "RestoreSelection")]
-	[Calls(Type = typeof(ChallengeConfig), Member = "GetChallengeTexture")]
 	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(AssetReference), Member = "IsValid")]
-	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(ChallengeConfig), Member = "GetChallengeTexture")]
+	[CallsUnknownMethods(Count = 3)]
 	public override void Enable(bool enable)
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnClickBack()
 	{
 	}
@@ -149,58 +148,45 @@ public class Panel_SelectChallengeType : Panel_AutoReferenced
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "RestoreSelection")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ChallengeConfig), Member = "GetLockedCondition")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILocalize), Member = "set_value")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
 	[Calls(Type = typeof(ChallengeConfig), Member = "GetChallengeTexture")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(ChallengeConfig), Member = "GetChallengeTexture")]
+	[Calls(Type = typeof(Action<>), Member = ".ctor")]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "SetGameModeConfig")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "RestoreSelection")]
-	[Calls(Type = typeof(UILocalize), Member = "set_value")]
-	[Calls(Type = typeof(ChallengeConfig), Member = "GetChallengeTexture")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ChallengeConfig), Member = "GetLockedCondition")]
-	[Calls(Type = typeof(UILocalize), Member = "set_value")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ChallengeConfig), Member = "GetLockedCondition")]
-	[Calls(Type = typeof(UILocalize), Member = "set_value")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ChallengeConfig), Member = "GetLockedCondition")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UILocalize), Member = "set_value")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 13)]
 	private void UpdateUISelection(int itemIndex)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(Panel_SelectChallengeType), Member = "ChallengeIsLocked")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Panel_SelectChallengeType), Member = "ChallengeIsLocked")]
 	private void UpdateButtonLegend()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "Enable")]
-	[Calls(Type = typeof(Panel_SelectChallengeType), Member = "UpdateUISelection")]
-	[Calls(Type = typeof(BasicMenu), Member = "GetSelectedItemIndex")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
 	[Calls(Type = typeof(BasicMenu), Member = "SetItemSelected")]
+	[Calls(Type = typeof(BasicMenu), Member = "GetSelectedItemIndex")]
+	[Calls(Type = typeof(Panel_SelectChallengeType), Member = "UpdateUISelection")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void RestoreSelection()
 	{
 	}

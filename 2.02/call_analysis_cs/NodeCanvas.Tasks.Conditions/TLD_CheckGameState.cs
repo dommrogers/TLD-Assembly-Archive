@@ -17,8 +17,8 @@ public class TLD_CheckGameState : ConditionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -27,29 +27,32 @@ public class TLD_CheckGameState : ConditionTask
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	protected override void OnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(NCUtils), Member = "GetGameState")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(Enum), Member = "Parse")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
-	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enum), Member = "Parse")]
+	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(NCUtils), Member = "GetGameState")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(BBParameter<>), Member = ".ctor")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public TLD_CheckGameState()
 	{

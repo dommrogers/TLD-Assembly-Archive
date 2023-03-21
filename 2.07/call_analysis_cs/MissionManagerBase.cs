@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using NodeCanvas.StateMachines;
@@ -33,44 +32,44 @@ public abstract class MissionManagerBase
 
 	private static MissionManagerSaveProxy m_MissionManagerSaveProxy;
 
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(MainMissionManager), Member = ".ctor")]
 	[CalledBy(Type = typeof(SideMissionManager), Member = ".ctor")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "Awake")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "InstantiateMission")]
+	[CallerCount(Count = 4)]
 	[CallsUnknownMethods(Count = 1)]
 	protected MissionManagerBase(string missionId, FSMOwner fsmOwner)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Start()
 	{
 	}
 
+	[CalledBy(Type = typeof(MissionManagerBase), Member = "InitiateJumpTo")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "DestroyMission")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Graph), Member = "Stop")]
 	[Calls(Type = typeof(GraphOwner), Member = "StopBehaviour")]
-	[CalledBy(Type = typeof(MissionManagerBase), Member = "InitiateJumpTo")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "DestroyMission")]
 	[CallsUnknownMethods(Count = 2)]
 	public void Stop()
 	{
 	}
 
-	[Calls(Type = typeof(MissionManagerBase), Member = "Stop")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "JumpTo")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MissionManagerBase), Member = "Stop")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsUnknownMethods(Count = 2)]
 	public void InitiateJumpTo(string[] jumpToIds, FSMHierarchy.Rank firstRank, string missionConfigData)
 	{
 	}
 
+	[CalledBy(TypeFullName = "MissionServicesManager.<JumpCo>d__130", Member = "MoveNext")]
 	[CallerCount(Count = 1)]
-	[CalledBy(Type = typeof(MissionServicesManager._003CJumpCo_003Ed__130), Member = "MoveNext")]
 	[CallsUnknownMethods(Count = 3)]
 	public string GetNextJumpToId()
 	{
@@ -83,16 +82,17 @@ public abstract class MissionManagerBase
 		return default(FSMHierarchy.Rank);
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Blackboard), Member = "Deserialize")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Blackboard), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void PreRegisterGraphOwner(GraphOwner graphOwner)
 	{
 	}
 
-	[Calls(Type = typeof(FSMHierarchy), Member = "SetFSMForRank")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(FSMHierarchy), Member = "SetFSMForRank")]
 	[CallsUnknownMethods(Count = 1)]
 	public void RegisterFSM(FSMHierarchy.Rank rank, FSM fsm, GraphOwner graphOwner = null)
 	{
@@ -105,19 +105,20 @@ public abstract class MissionManagerBase
 	}
 
 	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnEnter")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(Blackboard), Member = "Deserialize")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void PreRegisterChildGraph(FSMHierarchy.Rank rank, GraphOwner childGraph)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(FSMHierarchy), Member = "SetFSMForRank")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	public void RegisterChildGraph(FSMHierarchy.Rank rank, GraphOwner childGraph)
 	{
@@ -130,25 +131,23 @@ public abstract class MissionManagerBase
 	}
 
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "Serialize")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Blackboard), Member = "RestoreInternalVars")]
-	[Calls(Type = typeof(Blackboard), Member = "Serialize")]
-	[Calls(Type = typeof(Blackboard), Member = "ExtractInternalVars")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Blackboard), Member = "Serialize")]
-	[Calls(Type = typeof(Blackboard), Member = "RestoreInternalVars")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Blackboard), Member = "ExtractInternalVars")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Blackboard), Member = "ExtractInternalVars")]
+	[Calls(Type = typeof(Blackboard), Member = "Serialize")]
+	[Calls(Type = typeof(Blackboard), Member = "RestoreInternalVars")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	public void Deserialize(string text)
 	{
 	}
@@ -158,19 +157,19 @@ public abstract class MissionManagerBase
 	{
 	}
 
+	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "OnCameraPositionStateChange")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
 	[Calls(Type = typeof(FSMHierarchy), Member = "SendEvent")]
-	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "OnCameraPositionStateChange")]
 	[CallsUnknownMethods(Count = 1)]
 	public void SendMissionEvent(string eventString)
 	{
 	}
 
-	[Calls(Type = typeof(FSMHierarchy), Member = "SendEvent")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
+	[Calls(Type = typeof(FSMHierarchy), Member = "SendEvent")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SendMissionEvent(EventData ev)
 	{
 	}
@@ -183,65 +182,63 @@ public abstract class MissionManagerBase
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetTopLevelBlackboardVar<T>(string varName, T value)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallsUnknownMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetMissionBlackboardVar<T>(string varName, T value, FSMHierarchy.Rank rank = FSMHierarchy.Rank.SubStage)
 	{
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(AlmanacGridItem), Member = "SetUpGridItem")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateAlmanacPage")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Convert), Member = "ChangeType")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 9)]
 	public bool GetMissionBlackboardVar<T>(string varName, out T value, FSMHierarchy.Rank rank = FSMHierarchy.Rank.SubStage)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<T, @null>(ref value) = null;
-		return default(bool);
+		value = default(T);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 25)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetMissionGraphOwner")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Array), Member = "GetEnumerator")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 25)]
 	public GraphOwner GetMissionGraphOwner(string graphName)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 28)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetBlackboardVarAsFloatFullSearch")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "TryGetMissionBlackboardVar")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Array), Member = "GetEnumerator")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 26)]
 	public bool TryGetBlackboardVarAsFloatFullSearch(string varName, out float result)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref result) = null;
-		return default(bool);
+		result = default(float);
+		return false;
 	}
 }

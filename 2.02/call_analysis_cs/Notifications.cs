@@ -23,7 +23,7 @@ public class Notifications : ScriptableObject
 		public string m_EndDate;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public Data()
 		{
 		}
@@ -60,136 +60,125 @@ public class Notifications : ScriptableObject
 	private string m_LastLanguage;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Notifications), Member = "GetValidNotifications")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public int GetCount(Options opts)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CalledBy(Type = typeof(Notifications), Member = "GetCount")]
-	[CalledBy(Type = typeof(Panel_Notifications), Member = "HasNotifications")]
-	[CalledBy(Type = typeof(Panel_Notifications), Member = "Enable")]
 	[CalledBy(Type = typeof(Notifications), Member = "HasNotifications")]
-	[Calls(Type = typeof(Notifications), Member = "LoadNotifications")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(DateTime), Member = "op_Subtraction")]
-	[Calls(Type = typeof(TimeSpan), Member = "FromHours")]
-	[Calls(Type = typeof(DateTime), Member = "get_Now")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Notifications), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Notifications), Member = "HasNotifications")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(DateTime), Member = "get_Now")]
+	[Calls(Type = typeof(TimeSpan), Member = "FromHours")]
+	[Calls(Type = typeof(DateTime), Member = "op_Subtraction")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Notifications), Member = "LoadNotifications")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public List<Notification> GetValidNotifications(Options opts)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Notifications), Member = "GetValidNotifications")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Notifications), Member = "GetValidNotifications")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool HasNotifications(Options opts)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(DateTime), Member = "Parse")]
-	[CalledBy(Type = typeof(Notifications), Member = "ParseJson")]
 	[CalledBy(Type = typeof(Notifications), Member = "GetValidNotifications")]
-	[Calls(Type = typeof(Debug), Member = "LogFormat")]
-	[Calls(Type = typeof(Notification), Member = ".ctor")]
-	[Calls(Type = typeof(DateTime), Member = "Parse")]
-	[CallsUnknownMethods(Count = 44)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "HasNotificationBeenViewed")]
-	[Calls(Type = typeof(DateTime), Member = "Parse")]
-	[Calls(Type = typeof(Notification), Member = ".ctor")]
-	[Calls(Type = typeof(DateTime), Member = "Parse")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "HasNotificationBeenViewed")]
-	[Calls(Type = typeof(Notifications), Member = "Validate")]
-	[Calls(Type = typeof(DateTime), Member = "get_Now")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(Notifications), Member = "ParseJson")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(DateTime), Member = "get_Now")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Notifications), Member = "Validate")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "HasNotificationBeenViewed")]
+	[Calls(Type = typeof(DateTime), Member = "Parse")]
+	[Calls(Type = typeof(Notification), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Notifications), Member = "Validate")]
+	[Calls(Type = typeof(Notification), Member = ".ctor")]
+	[Calls(Type = typeof(Debug), Member = "LogFormat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 44)]
 	private void LoadNotifications(Options opts)
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Notifications), Member = "LoadNotifications")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(DateTime), Member = "Parse")]
-	[Calls(Type = typeof(DateTime), Member = "Parse")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(DateTime), Member = "Parse")]
 	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	private bool Validate(Data d)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(Notifications), Member = "LoadNotifications")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(DateTime), Member = "Parse")]
 	[Calls(Type = typeof(DateTime), Member = "Parse")]
 	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 23)]
 	private bool Validate(WebNotification wn)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(DateTime), Member = ".ctor")]
-	[Calls(Type = typeof(DateTime), Member = "get_UtcNow")]
-	[Calls(Type = typeof(Convert), Member = "ToInt64")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "RetrieveNotificationsFromServer")]
-	[Calls(Type = typeof(DateTime), Member = "get_UtcNow")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(DateTime), Member = "get_UtcNow")]
+	[Calls(Type = typeof(DateTime), Member = ".ctor")]
+	[Calls(Type = typeof(Convert), Member = "ToInt64")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string GetWebNotificationUrl()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(WWWForm), Member = "AddField")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(WWWForm), Member = "AddField")]
-	[Calls(Type = typeof(WWWForm), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(WWWForm), Member = ".ctor")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(WWWForm), Member = "AddField")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public WWWForm GetWebForm()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CalledBy(TypeFullName = "Panel_MainMenu.<>c__DisplayClass189_0", Member = "<RetrieveNotificationsFromServer>b__0")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(Notifications), Member = "LoadNotifications")]
 	[Calls(Type = typeof(GameManager), Member = "SetServerTime")]
-	[CalledBy(Type = typeof(Panel_MainMenu._003C_003Ec__DisplayClass189_0), Member = "<RetrieveNotificationsFromServer>b__0")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void ParseJson(string json)
 	{
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public Notifications()
 	{

@@ -1,4 +1,4 @@
-using System;
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Serialization;
 using TLD.UI.Generics;
@@ -75,10 +75,10 @@ public class LeanTo : MonoBehaviour
 
 	public string m_DisplayName
 	{
-		[Calls(Type = typeof(Localization), Member = "Get")]
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 13)]
+		[Calls(Type = typeof(Localization), Member = "Get")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -115,10 +115,10 @@ public class LeanTo : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Awake()
 	{
 	}
@@ -130,14 +130,13 @@ public class LeanTo : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsDismantlingShelter")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsRepairingShelter")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsDismantlingShelter")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 10)]
 	private void Update()
 	{
 	}
@@ -149,53 +148,54 @@ public class LeanTo : MonoBehaviour
 		return null;
 	}
 
+	[CalledBy(Type = typeof(LeanToManager), Member = "SerializeAll")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(LeanToManager), Member = "SerializeAll")]
 	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(LeanToManager), Member = "DeserializeAll")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "BuildFinished")]
 	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "BuildFinished")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public void BuildFinished()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
 	[CallsUnknownMethods(Count = 2)]
 	public void RepairFinished(int numSticksUsed)
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "InteractionFinished")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[CallsUnknownMethods(Count = 5)]
 	public void DismantleFinished()
 	{
 	}
@@ -204,14 +204,14 @@ public class LeanTo : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsRuined()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LeanToManager), Member = "GetPlayerOccupiedLeanTo")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetHoverText()
 	{
 		return null;
@@ -220,50 +220,52 @@ public class LeanTo : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetNormalizedCondition()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(LeanToManager), Member = "GetPlayerOccupiedLeanTo")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(LeanToManager), Member = "ExitLeanTo")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public bool ProcessInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnRepair")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "NeedsRepair")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "HasMaterialsForRepair")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnRepair")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
+	[CallsUnknownMethods(Count = 1)]
 	public int GetNumSticksToRepair()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnRepair")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "NeedsRepair")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "HasMaterialsForRepair")]
+	[CallerCount(Count = 4)]
 	[CallsUnknownMethods(Count = 1)]
 	public int GetNumBranchesToRepair()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "InteractionFinished")]
-	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "OnCancel")]
 	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "OnCancel")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "InteractionFinished")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Destroy()
 	{
 	}
@@ -272,25 +274,25 @@ public class LeanTo : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetHoursRuined()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(LeanToManager), Member = "SerializeAll")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool ShouldRemove()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void OnExited()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void OnEntered()
 	{
 	}

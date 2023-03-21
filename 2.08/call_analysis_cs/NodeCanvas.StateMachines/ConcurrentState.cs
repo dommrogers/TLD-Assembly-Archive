@@ -16,14 +16,14 @@ public class ConcurrentState : FSMState, IUpdatable, ISubTasksContainer
 
 	public ConditionList conditionList
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		set
 		{
 		}
@@ -32,7 +32,7 @@ public class ConcurrentState : FSMState, IUpdatable, ISubTasksContainer
 	public ActionList actionList
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 59)]
+		[CallerCount(Count = 64)]
 		get
 		{
 			return null;
@@ -46,14 +46,14 @@ public class ConcurrentState : FSMState, IUpdatable, ISubTasksContainer
 
 	public bool repeatStateActions
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -78,7 +78,7 @@ public class ConcurrentState : FSMState, IUpdatable, ISubTasksContainer
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -88,7 +88,7 @@ public class ConcurrentState : FSMState, IUpdatable, ISubTasksContainer
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -98,7 +98,7 @@ public class ConcurrentState : FSMState, IUpdatable, ISubTasksContainer
 		[CallerCount(Count = 3)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -109,48 +109,40 @@ public class ConcurrentState : FSMState, IUpdatable, ISubTasksContainer
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Task), Member = "Create")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Task), Member = "Create")]
+	[CallsUnknownMethods(Count = 3)]
 	public override void OnValidate(Graph assignedGraph)
 	{
 	}
 
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Task), Member = "Set")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(Task), Member = "Set")]
+	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
+	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnEnter()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
 	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
 	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
 	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
+	[CallsUnknownMethods(Count = 1)]
 	public new void Update()
 	{
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExit()
 	{
 	}

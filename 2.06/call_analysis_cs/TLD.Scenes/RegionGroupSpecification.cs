@@ -20,9 +20,9 @@ public class RegionGroupSpecification : ScriptableObject
 
 	public string LocalizedName
 	{
-		[Calls(Type = typeof(Localization), Member = "Get")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 11)]
+		[Calls(Type = typeof(Localization), Member = "Get")]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{

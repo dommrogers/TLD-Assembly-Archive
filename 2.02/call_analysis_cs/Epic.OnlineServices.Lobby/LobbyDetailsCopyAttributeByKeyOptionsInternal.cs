@@ -13,11 +13,11 @@ internal struct LobbyDetailsCopyAttributeByKeyOptionsInternal : ISettable, IDisp
 
 	public string AttrKey
 	{
+		[CalledBy(Type = typeof(LobbyDetailsCopyAttributeByKeyOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(LobbyDetailsCopyAttributeByKeyOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(LobbyDetailsCopyAttributeByKeyOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(LobbyDetailsCopyAttributeByKeyOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -30,16 +30,16 @@ internal struct LobbyDetailsCopyAttributeByKeyOptionsInternal : ISettable, IDisp
 	}
 
 	[CalledBy(Type = typeof(LobbyDetails), Member = "CopyAttributeByKey")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(LobbyDetailsCopyAttributeByKeyOptionsInternal), Member = "set_AttrKey")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

@@ -13,51 +13,49 @@ public abstract class Monitor
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 80)]
+		[CallerCount(Count = 92)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 279)]
+		[CallerCount(Count = 282)]
 		protected set
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "ShouldGenerateLogHistogram")]
+	[CalledBy(Type = typeof(PostProcessDebugLayer), Member = "RenderMonitors")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderBuiltins")]
+	[CalledBy(Type = typeof(PostProcessLayer), Member = "ShouldGenerateLogHistogram")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "get_isAndroidOpenGL")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(PostProcessDebugLayer), Member = "RenderMonitors")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsRequestedAndSupported(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101262)]
 	internal abstract bool ShaderResourcesAvailable(PostProcessRenderContext context);
 
-	[CallerCount(Count = 3)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 3)]
 	internal virtual bool NeedsHalfRes()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CalledBy(Type = typeof(HistogramMonitor), Member = "Render")]
+	[CalledBy(Type = typeof(LightMeterMonitor), Member = "Render")]
 	[CalledBy(Type = typeof(VectorscopeMonitor), Member = "Render")]
 	[CalledBy(Type = typeof(WaveformMonitor), Member = "Render")]
-	[CalledBy(Type = typeof(LightMeterMonitor), Member = "Render")]
-	[CalledBy(Type = typeof(HistogramMonitor), Member = "Render")]
-	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
+	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 6)]
 	protected void CheckOutput(int width, int height)
 	{
 	}
@@ -74,8 +72,6 @@ public abstract class Monitor
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101262)]
 	internal abstract void Render(PostProcessRenderContext context);
 
 	[DeduplicatedMethod]

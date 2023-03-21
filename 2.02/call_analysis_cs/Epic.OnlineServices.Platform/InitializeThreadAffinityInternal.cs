@@ -25,7 +25,7 @@ internal struct InitializeThreadAffinityInternal : ISettable, IDisposable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(ulong);
+			return 0uL;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -36,11 +36,11 @@ internal struct InitializeThreadAffinityInternal : ISettable, IDisposable
 
 	public ulong StorageIo
 	{
-		[CallerCount(Count = 52)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
-			return default(ulong);
+			return 0uL;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -52,10 +52,10 @@ internal struct InitializeThreadAffinityInternal : ISettable, IDisposable
 	public ulong WebSocketIo
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
-			return default(ulong);
+			return 0uL;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -67,10 +67,10 @@ internal struct InitializeThreadAffinityInternal : ISettable, IDisposable
 	public ulong P2PIo
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
-			return default(ulong);
+			return 0uL;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -85,10 +85,10 @@ internal struct InitializeThreadAffinityInternal : ISettable, IDisposable
 		[CallerCount(Count = 12)]
 		get
 		{
-			return default(ulong);
+			return 0uL;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -99,15 +99,15 @@ internal struct InitializeThreadAffinityInternal : ISettable, IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(InitializeOptionsInternal), Member = "set_OverrideThreadAffinity")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(InitializeOptionsInternal), Member = "set_OverrideThreadAffinity")]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

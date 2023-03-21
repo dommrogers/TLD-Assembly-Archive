@@ -38,16 +38,16 @@ public class Millable : MonoBehaviour
 
 	public float m_RestorationProgress
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 1)]
-		[CompilerGenerated]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
@@ -59,7 +59,7 @@ public class Millable : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	public void Deserialize(string serialized)
 	{
 	}

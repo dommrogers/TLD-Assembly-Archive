@@ -17,9 +17,9 @@ public class Condition_CheckStat : ConditionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -28,12 +28,12 @@ public class Condition_CheckStat : ConditionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(StatsManager), Member = "GetValue")]
 	[Calls(Type = typeof(OperationTools), Member = "Compare")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

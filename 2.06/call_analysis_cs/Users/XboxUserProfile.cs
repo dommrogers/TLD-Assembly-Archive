@@ -26,8 +26,8 @@ public class XboxUserProfile : IWrappedObject, IDisposable
 	public string ApplicationDisplayName
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -37,10 +37,10 @@ public class XboxUserProfile : IWrappedObject, IDisposable
 
 	public Uri ApplicationDisplayPictureResizeUri
 	{
-		[CallsUnknownMethods(Count = 6)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedUri")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -50,8 +50,8 @@ public class XboxUserProfile : IWrappedObject, IDisposable
 	public string GameDisplayName
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -62,8 +62,8 @@ public class XboxUserProfile : IWrappedObject, IDisposable
 	public Uri GameDisplayPictureResizeUri
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedUri")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -73,10 +73,10 @@ public class XboxUserProfile : IWrappedObject, IDisposable
 
 	public string Gamerscore
 	{
-		[CallsUnknownMethods(Count = 6)]
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -86,8 +86,8 @@ public class XboxUserProfile : IWrappedObject, IDisposable
 	public string Gamertag
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -98,8 +98,8 @@ public class XboxUserProfile : IWrappedObject, IDisposable
 	public string XboxUserId
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -125,10 +125,10 @@ public class XboxUserProfile : IWrappedObject, IDisposable
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 98)]
+	[CallerCount(Count = 113)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -145,13 +145,13 @@ public class XboxUserProfile : IWrappedObject, IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedUri")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedUri")]
 	[Calls(Type = typeof(Uri), Member = "get_AbsoluteUri")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public string GetGameDisplayPictureResizeUriForSize(Picture.Size size)
 	{
 		return null;

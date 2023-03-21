@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -57,64 +56,64 @@ public class Thirst : MonoBehaviour
 
 	private static ThirstSaveDataProxy m_ThirstSaveDataProxy;
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
 	[CalledBy(Type = typeof(Thirst), Member = "Deserialize")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
 	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Start()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Thirst), Member = "UpdateAddThirstOverTime")]
 	[Calls(Type = typeof(Thirst), Member = "MaybePlayPlayerThirstVoiceOver")]
 	[Calls(Type = typeof(Thirst), Member = "MaybeUpdateDehydratedStatusInLog")]
 	[Calls(Type = typeof(Thirst), Member = "UpdateThirstStatusOnHUD")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 17)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Thirst), Member = "Start")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetThirstStateString()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(Hunger), Member = "UpdateCalorieReserves")]
 	[CalledBy(Type = typeof(Thirst), Member = "UpdateAddThirstOverTime")]
+	[CalledBy(Type = typeof(Dysentery), Member = "UpdateDysentery")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "EatingComplete_Internal")]
 	[CallerCount(Count = 4)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Hunger), Member = "UpdateCalorieReserves")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "EatingComplete_Internal")]
 	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Dysentery), Member = "UpdateDysentery")]
 	public void AddThirst(float thirstValue)
 	{
 	}
@@ -133,19 +132,19 @@ public class Thirst : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsAddingThirstOverTime()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsDehydrated()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsVeryThirsty()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -159,14 +158,14 @@ public class Thirst : MonoBehaviour
 	[CallsDeduplicatedMethods(Count = 1)]
 	private bool ShouldPlayThirstVoiceOver()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(Condition), Member = "CanPlayConditionVO")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Thirst), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Condition), Member = "CanPlayConditionVO")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	private void MaybePlayPlayerThirstVoiceOver()
 	{
@@ -186,67 +185,63 @@ public class Thirst : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	private string GetThirstTextForHud()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 11)]
 	private void MaybeUpdateThirstStatusLabel()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Thirst), Member = "Update")]
-	[CallsUnknownMethods(Count = 5)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Thirst), Member = "AddThirst")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateAddThirstOverTime()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 16)]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 	[CalledBy(Type = typeof(Thirst), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[CallsDeduplicatedMethods(Count = 16)]
 	[CallsUnknownMethods(Count = 37)]
 	private void UpdateThirstStatusOnHUD()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Thirst), Member = "Update")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void MaybeUpdateDehydratedStatusInLog()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public Thirst()
 	{
 	}

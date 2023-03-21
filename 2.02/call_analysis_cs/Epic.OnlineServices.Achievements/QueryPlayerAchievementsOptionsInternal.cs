@@ -14,31 +14,31 @@ internal struct QueryPlayerAchievementsOptionsInternal : ISettable, IDisposable
 	public ProductUserId UserId
 	{
 		[CalledBy(Type = typeof(QueryPlayerAchievementsOptionsInternal), Member = "Set")]
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(QueryPlayerAchievementsOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(QueryPlayerAchievementsOptionsInternal), Member = "set_UserId")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(QueryPlayerAchievementsOptionsInternal), Member = "set_UserId")]
 	public void Set(QueryPlayerAchievementsOptions other)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(QueryPlayerAchievementsOptionsInternal), Member = "set_UserId")]
 	[CalledBy(Type = typeof(AchievementsInterface), Member = "QueryPlayerAchievements")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(QueryPlayerAchievementsOptionsInternal), Member = "set_UserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

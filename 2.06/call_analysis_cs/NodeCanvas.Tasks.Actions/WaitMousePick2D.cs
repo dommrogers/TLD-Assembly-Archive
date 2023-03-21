@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -31,7 +30,7 @@ public class WaitMousePick2D : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		get
 		{
@@ -39,17 +38,17 @@ public class WaitMousePick2D : ActionTask
 		}
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
-	[Calls(Type = typeof(Physics2D), Member = "Raycast")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Physics2D), Member = "Raycast")]
 	[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
+	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
+	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	protected override void OnUpdate()
 	{
 	}

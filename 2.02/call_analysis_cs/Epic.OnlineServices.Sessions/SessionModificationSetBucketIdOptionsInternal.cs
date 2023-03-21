@@ -15,9 +15,9 @@ internal struct SessionModificationSetBucketIdOptionsInternal : ISettable, IDisp
 	{
 		[CalledBy(Type = typeof(SessionModificationSetBucketIdOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(SessionModificationSetBucketIdOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,17 +29,17 @@ internal struct SessionModificationSetBucketIdOptionsInternal : ISettable, IDisp
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(SessionModificationSetBucketIdOptionsInternal), Member = "set_BucketId")]
 	[CalledBy(Type = typeof(SessionModification), Member = "SetBucketId")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SessionModificationSetBucketIdOptionsInternal), Member = "set_BucketId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

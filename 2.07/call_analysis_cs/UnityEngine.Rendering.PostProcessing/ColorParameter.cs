@@ -22,11 +22,11 @@ public sealed class ColorParameter : ParameterOverride<Color>
 	[CallerCount(Count = 0)]
 	public override bool Equals(Color a, Color b)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public ColorParameter()
 	{
 		((ParameterOverride<>)(object)this)._002Ector();

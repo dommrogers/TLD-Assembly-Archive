@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using NodeCanvas.StateMachines;
@@ -57,8 +56,8 @@ public class FSMHierarchy
 
 	public string SubStage
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
@@ -93,8 +92,8 @@ public class FSMHierarchy
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 5)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 5)]
 		set
 		{
 		}
@@ -102,8 +101,8 @@ public class FSMHierarchy
 
 	public string Worker3
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
@@ -127,71 +126,69 @@ public class FSMHierarchy
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnEnter")]
-	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnEnter")]
-	[CalledBy(Type = typeof(MissionServicesManager._003CJumpCo_003Ed__130), Member = "MoveNext")]
-	[CalledBy(Type = typeof(FSMHierarchy), Member = "SetChildGraphForRank")]
-	[CalledBy(Type = typeof(MissionManagerBase), Member = "RegisterChildGraph")]
 	[CalledBy(Type = typeof(MissionManagerBase), Member = "RegisterFSM")]
+	[CalledBy(Type = typeof(MissionManagerBase), Member = "RegisterChildGraph")]
+	[CalledBy(Type = typeof(FSMHierarchy), Member = "SetChildGraphForRank")]
+	[CalledBy(TypeFullName = "MissionServicesManager.<JumpCo>d__130", Member = "MoveNext")]
+	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnEnter")]
 	[CallerCount(Count = 6)]
+	[CallsUnknownMethods(Count = 9)]
 	public void SetFSMForRank(Rank rank, FSM fsm)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(FSMHierarchy), Member = "SetFSMForRank")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	public void SetChildGraphForRank(Rank rank, GraphOwner graphOwner)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 2)]
 	public string GetJumpString()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "RefreshMissionIds")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "Update")]
+	[CalledBy(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
+	[CallerCount(Count = 3)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public void RefreshIds()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Graph), Member = "Stop")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Stop()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
+	[CallsUnknownMethods(Count = 2)]
 	public void SendEvent(EventData ev)
 	{
 	}
 
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "SendEvent")]
-	[CalledBy(Type = typeof(MissionManagerBase), Member = "SendMissionEvent")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "SendOrQueueEvent")]
-	[CalledBy(Type = typeof(MissionServicesManager._003CPostSceneLoadCo_003Ed__109), Member = "MoveNext")]
-	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_challenge_complete")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(MissionManagerBase), Member = "SendMissionEvent")]
+	[CalledBy(Type = typeof(MissionManagerBase), Member = "SendMissionEvent")]
+	[CalledBy(TypeFullName = "MissionServicesManager.<PostSceneLoadCo>d__109", Member = "MoveNext")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "SendEvent")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "SendOrQueueEvent")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
+	[CallsUnknownMethods(Count = 2)]
 	public void SendEvent(string eventString)
 	{
 	}

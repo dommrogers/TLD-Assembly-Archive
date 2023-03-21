@@ -63,16 +63,16 @@ public class Action_ScrapMetalStruggle : ActionTask
 
 	private State m_State;
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_HUD), Member = "SetStruggleBarFillAmount")]
-	[Calls(Type = typeof(Action_ScrapMetalStruggle), Member = "EnterWaitForFirstClick")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-	[Calls(Type = typeof(Action_ScrapMetalStruggle), Member = "MaybeFindProp")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Action_ScrapMetalStruggle), Member = "MaybeFindProp")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_HUD), Member = "SetStruggleBarFillAmount")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(Action_ScrapMetalStruggle), Member = "EnterWaitForFirstClick")]
+	[CallsUnknownMethods(Count = 3)]
 	protected override void OnExecute()
 	{
 	}
@@ -96,39 +96,38 @@ public class Action_ScrapMetalStruggle : ActionTask
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "OnIntroComplete")]
 	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "OnExecute")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
+	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "OnIntroComplete")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private void EnterWaitForFirstClick()
 	{
 	}
 
-	[Calls(Type = typeof(Action_ScrapMetalStruggle), Member = "EnterPrepareStruggle")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "OnUpdate")]
-	[Calls(Type = typeof(InputManager), Member = "GetInteractPressed")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(InputManager), Member = "GetInteractPressed")]
+	[Calls(Type = typeof(Action_ScrapMetalStruggle), Member = "EnterPrepareStruggle")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	private void UpdateWaitForFirstClick()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "UpdateWaitForFirstClick")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_AnimatedInteraction")]
-	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "UpdateWaitForFirstClick")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void EnterPrepareStruggle()
 	{
 	}
@@ -139,72 +138,77 @@ public class Action_ScrapMetalStruggle : ActionTask
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowStruggleWidget")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowStruggleWidget")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnPrepareStruggleComplete()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowStruggleWidget")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowStruggleWidget")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void EnterStruggle()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "OnUpdate")]
-	[Calls(Type = typeof(Action_ScrapMetalStruggle), Member = "EnterOutro")]
-	[Calls(Type = typeof(PlayerStruggle), Member = "UpdateKeyBindingLabels")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(InputManager), Member = "GetStruggleTapPressed")]
-	[Calls(Type = typeof(ActionTask), Member = "get_deltaTime")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ActionTask), Member = "get_deltaTime")]
+	[Calls(Type = typeof(InputManager), Member = "GetStruggleTapPressed")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_HUD), Member = "SetStruggleBarFillAmount")]
+	[Calls(Type = typeof(PlayerStruggle), Member = "UpdateKeyBindingLabels")]
+	[Calls(Type = typeof(Action_ScrapMetalStruggle), Member = "EnterOutro")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateStruggle()
 	{
 	}
 
 	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "UpdateStruggle")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowStruggleWidget")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_AnimatedInteraction")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	private void EnterOutro()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	private void UpdateOutro()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void OnOutroComplete()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
 	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "OnExecute")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void MaybeFindProp()
 	{
@@ -216,9 +220,9 @@ public class Action_ScrapMetalStruggle : ActionTask
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public Action_ScrapMetalStruggle()
 	{
 	}

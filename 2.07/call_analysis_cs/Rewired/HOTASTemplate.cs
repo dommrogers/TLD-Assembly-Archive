@@ -346,7 +346,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickTrigger
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -356,7 +356,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickTriggerStage2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -366,7 +366,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickPinkyButton
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -375,8 +375,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickPinkyTrigger
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -386,7 +386,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickButton1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -395,8 +395,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickButton2
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -406,7 +406,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickButton3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -416,7 +416,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickButton4
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -426,7 +426,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickButton5
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -436,7 +436,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickButton6
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -445,8 +445,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickButton7
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -456,7 +456,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickButton8
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -466,7 +466,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickButton9
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -476,7 +476,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickButton10
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -486,7 +486,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickBaseButton1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -495,8 +495,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickBaseButton2
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -506,7 +506,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickBaseButton3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -516,7 +516,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickBaseButton4
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -526,7 +526,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickBaseButton5
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -536,7 +536,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickBaseButton6
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -545,8 +545,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickBaseButton7
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -556,7 +556,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickBaseButton8
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -566,7 +566,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickBaseButton9
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -576,7 +576,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickBaseButton10
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -586,7 +586,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickBaseButton11
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -596,7 +596,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EstickBaseButton12
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -605,8 +605,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002Emode1
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -616,7 +616,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002Emode2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -626,7 +626,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002Emode3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -636,7 +636,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleButton1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -646,7 +646,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleButton2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -655,8 +655,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleButton3
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -666,7 +666,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleButton4
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -676,7 +676,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleButton5
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -686,7 +686,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleButton6
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -696,7 +696,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleButton7
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -706,7 +706,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleButton8
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -715,8 +715,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleButton9
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -726,7 +726,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleButton10
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -736,7 +736,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleBaseButton1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -746,7 +746,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleBaseButton2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -756,7 +756,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleBaseButton3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -765,8 +765,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleBaseButton4
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -776,7 +776,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleBaseButton5
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -786,7 +786,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleBaseButton6
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -796,7 +796,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleBaseButton7
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -806,7 +806,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleBaseButton8
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -815,8 +815,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleBaseButton9
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -825,8 +825,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleBaseButton10
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -836,7 +836,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleBaseButton11
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -846,7 +846,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleBaseButton12
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -856,7 +856,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleBaseButton13
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -866,7 +866,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleBaseButton14
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -876,7 +876,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleBaseButton15
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -885,8 +885,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateAxis Rewired_002EIHOTASTemplate_002EthrottleSlider1
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -896,7 +896,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateAxis Rewired_002EIHOTASTemplate_002EthrottleSlider2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -906,7 +906,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateAxis Rewired_002EIHOTASTemplate_002EthrottleSlider3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -916,7 +916,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateAxis Rewired_002EIHOTASTemplate_002EthrottleSlider4
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -926,7 +926,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateAxis Rewired_002EIHOTASTemplate_002EthrottleDial1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -935,8 +935,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateAxis Rewired_002EIHOTASTemplate_002EthrottleDial2
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -946,7 +946,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateAxis Rewired_002EIHOTASTemplate_002EthrottleDial3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -956,7 +956,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateAxis Rewired_002EIHOTASTemplate_002EthrottleDial4
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -966,7 +966,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleWheel1Forward
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -976,7 +976,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleWheel1Back
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -985,8 +985,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleWheel1Press
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -996,7 +996,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleWheel2Forward
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1006,7 +1006,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleWheel2Back
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1016,7 +1016,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleWheel2Press
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1025,8 +1025,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleWheel3Forward
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1035,8 +1035,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleWheel3Back
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1046,7 +1046,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateButton Rewired_002EIHOTASTemplate_002EthrottleWheel3Press
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1056,7 +1056,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateAxis Rewired_002EIHOTASTemplate_002EleftPedal
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1066,7 +1066,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateAxis Rewired_002EIHOTASTemplate_002ErightPedal
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1076,7 +1076,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateAxis Rewired_002EIHOTASTemplate_002EslidePedals
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1085,8 +1085,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateStick Rewired_002EIHOTASTemplate_002Estick
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1096,7 +1096,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateThumbStick Rewired_002EIHOTASTemplate_002EstickMiniStick1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1106,7 +1106,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateThumbStick Rewired_002EIHOTASTemplate_002EstickMiniStick2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1116,7 +1116,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateHat Rewired_002EIHOTASTemplate_002EstickHat1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1126,7 +1126,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateHat Rewired_002EIHOTASTemplate_002EstickHat2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1135,8 +1135,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateHat Rewired_002EIHOTASTemplate_002EstickHat3
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1146,7 +1146,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateHat Rewired_002EIHOTASTemplate_002EstickHat4
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1156,7 +1156,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateThrottle Rewired_002EIHOTASTemplate_002Ethrottle1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1166,7 +1166,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateThrottle Rewired_002EIHOTASTemplate_002Ethrottle2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1175,8 +1175,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateThumbStick Rewired_002EIHOTASTemplate_002EthrottleMiniStick
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1185,8 +1185,8 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateHat Rewired_002EIHOTASTemplate_002EthrottleHat1
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1196,7 +1196,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateHat Rewired_002EIHOTASTemplate_002EthrottleHat2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1206,7 +1206,7 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 	private IControllerTemplateHat Rewired_002EIHOTASTemplate_002EthrottleHat3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -1215,17 +1215,17 @@ public sealed class HOTASTemplate : ControllerTemplate, IHOTASTemplate, IControl
 
 	private IControllerTemplateHat Rewired_002EIHOTASTemplate_002EthrottleHat4
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
 		}
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ControllerTemplate), Member = ".ctor")]
-	[DeduplicatedMethod]
 	[CallsUnknownMethods(Count = 1)]
 	public HOTASTemplate(object payload)
 		: base(null)

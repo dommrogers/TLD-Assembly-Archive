@@ -11,7 +11,7 @@ public class State : BaseGroupType
 	public override WwiseObjectReference ObjectReference
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
@@ -43,17 +43,17 @@ public class State : BaseGroupType
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "SetState")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(BaseGroupType), Member = "get_GroupId")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "SetState")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetValue()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public State()
 	{
 	}

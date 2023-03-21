@@ -11,7 +11,7 @@ public class MissionObjectIdentifierSaveProxy
 	public bool m_DestroyAfterMission;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public MissionObjectIdentifierSaveProxy()
 	{
 	}

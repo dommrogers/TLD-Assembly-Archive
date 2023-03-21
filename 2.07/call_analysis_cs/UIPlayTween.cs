@@ -52,135 +52,133 @@ public class UIPlayTween : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UICamera), Member = "IsHighlighted")]
 	[Calls(Type = typeof(UIPlayTween), Member = "OnHover")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 0)]
 	private void OnEnable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(EventDelegate), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UIPlayTween), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDragOver()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(UIPlayTween), Member = "OnEnable")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UIPlayTween), Member = "Play")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnHover(bool isOver)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIPlayTween), Member = "Play")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDragOut()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIPlayTween), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnPress(bool isPressed)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIPlayTween), Member = "Play")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnClick()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(UIPlayTween), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDoubleClick()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UIPlayTween), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnSelect(bool isSelected)
 	{
 	}
 
-	[Calls(Type = typeof(UIPlayTween), Member = "Play")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIPlayTween), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnToggle()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UITweener), Member = "get_direction")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UITweener), Member = "get_direction")]
-	[CallerCount(Count = 0)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(UITweener), Member = "Toggle")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[CalledBy(Type = typeof(UIPlayTween), Member = "OnHover")]
 	[CalledBy(Type = typeof(UIPlayTween), Member = "OnDragOver")]
+	[CalledBy(Type = typeof(UIPlayTween), Member = "OnHover")]
 	[CalledBy(Type = typeof(UIPlayTween), Member = "OnDragOut")]
 	[CalledBy(Type = typeof(UIPlayTween), Member = "OnPress")]
 	[CalledBy(Type = typeof(UIPlayTween), Member = "OnClick")]
 	[CalledBy(Type = typeof(UIPlayTween), Member = "OnDoubleClick")]
 	[CalledBy(Type = typeof(UIPlayTween), Member = "OnSelect")]
 	[CalledBy(Type = typeof(UIPlayTween), Member = "OnToggle")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponents")]
 	[Calls(Type = typeof(UITweener), Member = "Play")]
 	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
 	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 8)]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[Calls(Type = typeof(UITweener), Member = "Toggle")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Play(bool forward)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
+	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnFinished()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public UIPlayTween()
 	{
 	}

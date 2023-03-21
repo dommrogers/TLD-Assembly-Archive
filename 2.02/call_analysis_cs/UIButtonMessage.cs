@@ -23,51 +23,51 @@ public class UIButtonMessage : MonoBehaviour
 
 	private bool mStarted;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(UICamera), Member = "IsHighlighted")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UICamera), Member = "IsHighlighted")]
 	[Calls(Type = typeof(UIButtonMessage), Member = "OnHover")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UIButtonMessage), Member = "Send")]
 	[CalledBy(Type = typeof(UIButtonMessage), Member = "OnEnable")]
 	[CalledBy(Type = typeof(UIButtonMessage), Member = "OnSelect")]
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UIButtonMessage), Member = "Send")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnHover(bool isOver)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(UIButtonMessage), Member = "Send")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnPress(bool isPressed)
 	{
 	}
 
-	[Calls(Type = typeof(UIButtonMessage), Member = "OnHover")]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(UIButtonMessage), Member = "OnHover")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnSelect(bool isSelected)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UIButtonMessage), Member = "Send")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIButtonMessage), Member = "Send")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnClick()
 	{
 	}
@@ -78,14 +78,14 @@ public class UIButtonMessage : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CalledBy(Type = typeof(UIButtonMessage), Member = "OnHover")]
-	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
-	[CalledBy(Type = typeof(UIButtonMessage), Member = "OnClick")]
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(UIButtonMessage), Member = "OnPress")]
+	[CalledBy(Type = typeof(UIButtonMessage), Member = "OnClick")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 12)]
 	private void Send()
 	{
 	}

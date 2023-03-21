@@ -43,9 +43,9 @@ public class MultipleChoiceNode : DTNode, ISubTasksContainer
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		internal ConditionTask _003CGetSubTasks_003Eb__4_0(Choice c)
 		{
 			return null;
@@ -64,10 +64,10 @@ public class MultipleChoiceNode : DTNode, ISubTasksContainer
 		{
 		}
 
-		[Calls(Type = typeof(DialogueTree), Member = "Continue")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+		[Calls(Type = typeof(DialogueTree), Member = "Continue")]
 		[CallsUnknownMethods(Count = 1)]
 		internal void _003COnOptionSelected_003Eb__0()
 		{
@@ -82,68 +82,69 @@ public class MultipleChoiceNode : DTNode, ISubTasksContainer
 
 	public override int maxOutConnections
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public override bool requireActorSelection
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(TypeFullName = "System.Linq.Buffer`1", Member = ".ctor")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 5)]
 	public Task[] GetSubTasks()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Node), Member = "Error")]
-	[Calls(Type = typeof(Graph), Member = "Stop")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(DialogueTree), Member = "RequestMultipleChoices")]
-	[Calls(Type = typeof(MultipleChoiceRequestInfo), Member = ".ctor")]
-	[Calls(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
-	[Calls(Type = typeof(DialogueTree), Member = "GetParameterByID")]
-	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
 	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
+	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
+	[Calls(Type = typeof(DialogueTree), Member = "GetParameterByID")]
 	[Calls(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
+	[Calls(Type = typeof(MultipleChoiceRequestInfo), Member = ".ctor")]
+	[Calls(Type = typeof(DialogueTree), Member = "RequestMultipleChoices")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(Graph), Member = "Stop")]
+	[Calls(Type = typeof(Node), Member = "Error")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(DialogueTree), Member = "RequestSubtitles")]
-	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
-	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
+	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
+	[Calls(Type = typeof(DialogueTree), Member = "RequestSubtitles")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnOptionSelected(int index)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(DTNode), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public MultipleChoiceNode()
 	{

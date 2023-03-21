@@ -19,9 +19,9 @@ public class Action_ToggleRestAbility : ActionTask
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

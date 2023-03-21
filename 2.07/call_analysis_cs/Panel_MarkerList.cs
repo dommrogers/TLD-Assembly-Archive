@@ -44,45 +44,44 @@ public class Panel_MarkerList : Panel_List<MarkerListDisplayItem, MapElementSave
 	[CallerCount(Count = 0)]
 	public bool IsLastCluster(ClusterCell clusterCell)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsClusterSet(ClusterCell clusterCell)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "ShowClusterList")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoMouseControls")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "MaybeShowClusterListOnHover")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForSceneDone")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
-	[Calls(Type = typeof(Panel_Map), Member = "FindCluster")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapIconFromMapElement")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Map), Member = "FindCluster")]
+	[Calls(Type = typeof(Panel_Map), Member = "GetMapIconFromMapElement")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 9)]
 	public void UpdatePosition()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
-	[Calls(Type = typeof(Panel_MarkerList), Member = "Hide")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_MarkerList), Member = "Hide")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnClickedDeleteAll()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Map), Member = "ForceUpdateRegion")]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void Enable_Internal(bool isEnabled)
@@ -94,18 +93,18 @@ public class Panel_MarkerList : Panel_List<MarkerListDisplayItem, MapElementSave
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_MarkerList), Member = "UpdateGamePad")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_MarkerList), Member = "UpdateGamePad")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void Update_Internal()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Map), Member = "FindCluster")]
 	[CallsUnknownMethods(Count = 1)]
 	protected override List<MapElementSaveData> GatherItems()
@@ -114,54 +113,54 @@ public class Panel_MarkerList : Panel_List<MarkerListDisplayItem, MapElementSave
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
 	[CallsUnknownMethods(Count = 7)]
 	protected override void ConfigureDisplay(MarkerListDisplayItem display, int index)
 	{
 	}
 
-	[Calls(Type = typeof(MarkerListDisplayItem), Member = "RefreshButtons")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MarkerListDisplayItem), Member = "RefreshButtons")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void SetSelected(MarkerListDisplayItem display, bool selected)
 	{
 	}
 
-	[Calls(Type = typeof(MarkerListDisplayItem), Member = "Clear")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MarkerListDisplayItem), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void ClearDisplay(MarkerListDisplayItem display)
 	{
 	}
 
-	[Calls(Type = typeof(MarkerListDisplayItem), Member = "Setup")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MarkerListDisplayItem), Member = "Setup")]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void SetupDisplay(MarkerListDisplayItem display, MapElementSaveData item)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Map), Member = "IsLocationIdSprayPaint")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_MarkerList), Member = "Hide")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsLocationIdSprayPaint")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnDeleteItemRequested(int itemIndex)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Panel_Map), Member = "IsLocationIdSprayPaint")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool CanDeleteAll()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -170,33 +169,34 @@ public class Panel_MarkerList : Panel_List<MarkerListDisplayItem, MapElementSave
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_MarkerList), Member = "Hide")]
 	[Calls(Type = typeof(Panel_MarkerList), Member = "DoDeleteItem")]
-	[CallerCount(Count = 0)]
 	private void OnSprayPaintMarkerRemoveConfirm()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_MarkerList), Member = "Hide")]
 	[Calls(Type = typeof(Panel_Map), Member = "IsLocationIdSprayPaint")]
 	[Calls(Type = typeof(Panel_MarkerList), Member = "DoDeleteItem")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnDeleteAllMarkerRemoveConfirm()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OnDeleteAllMarkerRemoveConfirm")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_MarkerList), Member = "DeleteAllDeleteableItems")]
 	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OnSprayPaintMarkerRemoveConfirm")]
+	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OnDeleteAllMarkerRemoveConfirm")]
+	[CalledBy(Type = typeof(Panel_MarkerList), Member = "DeleteAllDeleteableItems")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Map), Member = "GetMapIconFromMapElement")]
 	[Calls(Type = typeof(Panel_Map), Member = "DeleteMarker")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DoDeleteItem(int index)
 	{
 	}
@@ -204,63 +204,66 @@ public class Panel_MarkerList : Panel_List<MarkerListDisplayItem, MapElementSave
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Map), Member = "IsLocationIdSprayPaint")]
 	[Calls(Type = typeof(Panel_MarkerList), Member = "DoDeleteItem")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private void DeleteAllDeleteableItems()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_MarkerList), Member = "UpdateGamePad")]
-	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OnDeleteAllMarkerRemoveConfirm")]
-	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OnSprayPaintMarkerRemoveConfirm")]
-	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OnConfirmCanceled")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OnClickedDeleteAll")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OnDeleteItemRequested")]
+	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OnConfirmCanceled")]
+	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OnSprayPaintMarkerRemoveConfirm")]
+	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OnDeleteAllMarkerRemoveConfirm")]
+	[CalledBy(Type = typeof(Panel_MarkerList), Member = "UpdateGamePad")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	private void Hide(bool isHidden)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateDeleteAllGroup()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_MarkerList), Member = "Update_Internal")]
-	[Calls(Type = typeof(Panel_MarkerList), Member = "OpenRockCache")]
-	[Calls(Type = typeof(Panel_MarkerList), Member = "Hide")]
-	[Calls(Type = typeof(InputManager), Member = "GetEquipPressed")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsRockCache")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_List<, >), Member = "GetItemIndex")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsRockCache")]
 	[Calls(Type = typeof(Panel_Map), Member = "IsLocationIdSprayPaint")]
+	[Calls(Type = typeof(InputManager), Member = "GetEquipPressed")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_MarkerList), Member = "Hide")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
+	[Calls(Type = typeof(Panel_MarkerList), Member = "OpenRockCache")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateGamePad()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_MarkerList), Member = "OpenRockCache")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnDisplayClickedOpen(int index)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OnDisplayClickedOpen")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_MarkerList), Member = "UpdateGamePad")]
-	[Calls(Type = typeof(Panel_Map), Member = "OnRockCacheNav")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OnDisplayClickedOpen")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Map), Member = "OnRockCacheNav")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OpenRockCache(MapElementSaveData me)
 	{
 	}

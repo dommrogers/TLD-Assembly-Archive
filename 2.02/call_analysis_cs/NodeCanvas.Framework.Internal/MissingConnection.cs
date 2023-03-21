@@ -18,7 +18,7 @@ public sealed class MissingConnection : Connection, IMissingRecoverable
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
@@ -27,20 +27,20 @@ public sealed class MissingConnection : Connection, IMissingRecoverable
 	private string ParadoxNotion_002ESerialization_002EIMissingRecoverable_002ErecoveryState
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 23)]
 		set
 		{
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public MissingConnection()
 	{
 	}

@@ -7,7 +7,7 @@ public class LockSaveDataProxy
 	public bool m_AttemptedToOpen;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public LockSaveDataProxy()
 	{
 	}

@@ -21,8 +21,8 @@ public class MecanimPlayAnimation : ActionTask<Animator>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -30,23 +30,24 @@ public class MecanimPlayAnimation : ActionTask<Animator>
 		}
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Animator), Member = "CrossFade")]
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
+	[Calls(Type = typeof(Animator), Member = "CrossFade")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(ActionTask), Member = "get_elapsedTime")]
 	[Calls(Type = typeof(AnimatorStateInfo), Member = "IsName")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(ActionTask), Member = "get_elapsedTime")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	protected override void OnUpdate()
 	{
 	}

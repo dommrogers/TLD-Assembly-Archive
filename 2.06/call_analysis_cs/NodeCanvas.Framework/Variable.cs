@@ -30,8 +30,8 @@ public abstract class Variable
 			return null;
 		}
 
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		internal object _003CGetGetConverter_003Eb__1()
 		{
@@ -45,16 +45,16 @@ public abstract class Variable
 
 		public Func<object, object> converter;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec__DisplayClass39_0()
 		{
 		}
 
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal void _003CGetSetConverter_003Eb__0(object x)
 		{
 		}
@@ -76,14 +76,14 @@ public abstract class Variable
 	public string name
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 98)]
+		[CallerCount(Count = 113)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 		set
 		{
 		}
@@ -91,9 +91,9 @@ public abstract class Variable
 
 	public string ID
 	{
-		[Calls(Type = typeof(Guid), Member = "ToString")]
-		[Calls(Type = typeof(Interop), Member = "GetRandomBytes")]
 		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "Interop", Member = "GetRandomBytes")]
+		[Calls(Type = typeof(Guid), Member = "ToString")]
 		get
 		{
 			return null;
@@ -122,7 +122,7 @@ public abstract class Variable
 		[CallerCount(Count = 3)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -131,39 +131,13 @@ public abstract class Variable
 		}
 	}
 
-	protected abstract object objectValue
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101224)]
-		get;
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101224)]
-		set;
-	}
+	protected abstract object objectValue { get; set; }
 
-	public abstract Type varType
-	{
-		[CallerCount(Count = 101224)]
-		[DeduplicatedMethod]
-		get;
-	}
+	public abstract Type varType { get; }
 
-	public abstract bool hasBinding
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101224)]
-		get;
-	}
+	public abstract bool hasBinding { get; }
 
-	public abstract string propertyPath
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101224)]
-		get;
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101224)]
-		set;
-	}
+	public abstract string propertyPath { get; set; }
 
 	public event Action<string> onNameChanged
 	{
@@ -185,10 +159,10 @@ public abstract class Variable
 
 	public event Action<string, object> onValueChanged
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 2)]
 		add
 		{
 		}
@@ -201,11 +175,11 @@ public abstract class Variable
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	protected bool HasValueChangeEvent()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -221,50 +195,44 @@ public abstract class Variable
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	public abstract void BindProperty(MemberInfo prop, GameObject target = null);
 
-	[CallerCount(Count = 101224)]
-	[DeduplicatedMethod]
 	public abstract void UnBindProperty();
 
-	[CallerCount(Count = 101224)]
-	[DeduplicatedMethod]
 	public abstract void InitializePropertyBinding(GameObject go, bool callSetter = false);
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Variable), Member = "GetGetConverter")]
 	public bool CanConvertTo(Type toType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(TypeConverter), Member = "Get")]
 	[CalledBy(Type = typeof(BBParameter<>), Member = "BindGetter")]
 	[CalledBy(Type = typeof(Variable), Member = "CanConvertTo")]
-	[CalledBy(Type = typeof(BlackboardSource._003C_003Ec__DisplayClass30_0), Member = "<GetVariableNames>b__0")]
+	[CalledBy(TypeFullName = "NodeCanvas.Framework.Internal.BlackboardSource.<>c__DisplayClass30_0", Member = "<GetVariableNames>b__0")]
 	[CalledBy(Type = typeof(BlackboardSource), Member = "GetVariable")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(TypeConverter), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 16)]
 	public Func<object> GetGetConverter(Type toType)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Variable), Member = "GetSetConverter")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Variable), Member = "GetSetConverter")]
 	public bool CanConvertFrom(Type fromType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(TypeConverter), Member = "Get")]
 	[CalledBy(Type = typeof(BBParameter<>), Member = "BindSetter")]
 	[CalledBy(Type = typeof(Variable), Member = "CanConvertFrom")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(TypeConverter), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 16)]
 	public Action<object> GetSetConverter(Type fromType)
 	{
@@ -272,7 +240,7 @@ public abstract class Variable
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 98)]
+	[CallerCount(Count = 113)]
 	public override string ToString()
 	{
 		return null;
@@ -295,20 +263,20 @@ public class Variable<T> : Variable
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Debug), Member = "LogError")]
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[Calls(Type = typeof(Debug), Member = "LogError")]
+		[CallsUnknownMethods(Count = 1)]
 		internal T _003CInitializePropertyBinding_003Eb__1()
 		{
-			return (T)null;
+			return default(T);
 		}
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[Calls(Type = typeof(Debug), Member = "LogError")]
 		[CallsUnknownMethods(Count = 1)]
@@ -325,25 +293,25 @@ public class Variable<T> : Variable
 
 		public MethodInfo setMethod;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec__DisplayClass22_1()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 3)]
 		internal T _003CInitializePropertyBinding_003Eb__0()
 		{
-			return (T)null;
+			return default(T);
 		}
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(ReflectionTools), Member = "SingleTempArgsArray")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		internal void _003CInitializePropertyBinding_003Eb__2(T o)
 		{
@@ -362,13 +330,13 @@ public class Variable<T> : Variable
 		{
 		}
 
-		[CallsUnknownMethods(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 3)]
 		internal T _003CInitializePropertyBinding_003Eb__4()
 		{
-			return (T)null;
+			return default(T);
 		}
 
 		[DeduplicatedMethod]
@@ -391,10 +359,10 @@ public class Variable<T> : Variable
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 6)]
 		internal T _003CInitializePropertyBinding_003Eb__6()
 		{
-			return (T)null;
+			return default(T);
 		}
 	}
 
@@ -408,14 +376,14 @@ public class Variable<T> : Variable
 
 	public override string propertyPath
 	{
-		[CallerCount(Count = 7)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 55)]
+		[CallerCount(Count = 65)]
 		set
 		{
 		}
@@ -427,7 +395,7 @@ public class Variable<T> : Variable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -441,9 +409,9 @@ public class Variable<T> : Variable
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 3)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 3)]
 		set
 		{
 		}
@@ -466,7 +434,7 @@ public class Variable<T> : Variable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return (T)null;
+			return default(T);
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 3)]
@@ -483,56 +451,52 @@ public class Variable<T> : Variable
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public T GetValue()
 	{
-		return (T)null;
+		return default(T);
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void SetValue(T newValue)
 	{
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public override void BindProperty(MemberInfo prop, GameObject target = null)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public override void UnBindProperty()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 101)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
-	[Calls(Type = typeof(ReflectionTools), Member = "IsConstant")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(ReflectionTools), Member = "RTGetProperty")]
-	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "LastIndexOf")]
-	[CallsDeduplicatedMethods(Count = 27)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "LastIndexOf")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTGetProperty")]
 	[Calls(Type = typeof(ReflectionTools), Member = "RTGetField")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(ReflectionTools), Member = "IsConstant")]
+	[CallsDeduplicatedMethods(Count = 27)]
+	[CallsUnknownMethods(Count = 101)]
 	public override void InitializePropertyBinding(GameObject go, bool callSetter = false)
 	{
 	}

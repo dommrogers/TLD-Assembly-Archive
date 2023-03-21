@@ -9,8 +9,8 @@ public class RandomSpawnObjectSaveData
 
 	public float m_ElapsedHoursAtLastReroll;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public RandomSpawnObjectSaveData()
 	{
 	}

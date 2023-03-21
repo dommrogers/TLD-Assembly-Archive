@@ -10,7 +10,7 @@ public static class SwitchNotificationHandler
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -20,7 +20,7 @@ public static class SwitchNotificationHandler
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 }

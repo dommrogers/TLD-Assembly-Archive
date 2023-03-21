@@ -22,19 +22,19 @@ internal struct CredentialsInternal : ISettable, IDisposable
 
 	public string Id
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(Credentials), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(CredentialsInternal), Member = "Set")]
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(CredentialsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -43,18 +43,18 @@ internal struct CredentialsInternal : ISettable, IDisposable
 	public string Token
 	{
 		[CalledBy(Type = typeof(Credentials), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(CredentialsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CredentialsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CredentialsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CredentialsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -78,10 +78,10 @@ internal struct CredentialsInternal : ISettable, IDisposable
 	public IntPtr SystemAuthCredentialsOptions
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -93,39 +93,37 @@ internal struct CredentialsInternal : ISettable, IDisposable
 	public ExternalCredentialType ExternalType
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return default(ExternalCredentialType);
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CredentialsInternal), Member = "set_Id")]
 	[Calls(Type = typeof(CredentialsInternal), Member = "set_Token")]
-	[CallerCount(Count = 0)]
 	public void Set(Credentials other)
 	{
 	}
 
+	[CalledBy(Type = typeof(LoginOptionsInternal), Member = "set_Credentials")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CredentialsInternal), Member = "set_Id")]
 	[Calls(Type = typeof(CredentialsInternal), Member = "set_Token")]
-	[CalledBy(Type = typeof(LoginOptionsInternal), Member = "set_Credentials")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	public void Dispose()
 	{
 	}

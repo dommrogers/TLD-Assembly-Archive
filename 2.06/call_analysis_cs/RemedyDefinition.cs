@@ -8,31 +8,29 @@ public class RemedyDefinition : ScriptableObject
 	private FirstAidItem m_FirstAidItem;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsWaterSupply()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetDisplayName()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(AfflictionDefinition), Member = "GetFirstAidItemUsed")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[CallsUnknownMethods(Count = 1)]
 	public FirstAidItem GetFirstAidItem()
 	{

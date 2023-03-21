@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using Steamworks;
 
@@ -9,18 +10,17 @@ public class SteamRichPresenceProvider : RichPresenceLocalizedProviderBase
 
 	private const string StatusVariableName = "status_value";
 
-	[Calls(Type = typeof(SteamUser), Member = "BLoggedOn")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
+	[Calls(Type = typeof(SteamUser), Member = "BLoggedOn")]
 	protected override bool IsUserSignedOn()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(SteamFriends), Member = "SetRichPresence")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(SteamFriends), Member = "SetRichPresence")]
 	[CallsUnknownMethods(Count = 1)]
@@ -28,8 +28,8 @@ public class SteamRichPresenceProvider : RichPresenceLocalizedProviderBase
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public SteamRichPresenceProvider()
 	{
 	}

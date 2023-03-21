@@ -88,7 +88,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002EactionBottomRow1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -98,7 +99,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002Ea
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -108,7 +110,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002EactionBottomRow2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -118,7 +121,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002Eb
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -128,7 +132,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002EactionBottomRow3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -137,8 +142,9 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002Ec
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -147,8 +153,9 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002EactionTopRow1
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -158,7 +165,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002Ex
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -168,7 +176,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002EactionTopRow2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -178,7 +187,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002Ey
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -188,7 +198,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002EactionTopRow3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -198,7 +209,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002Ez
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -208,7 +220,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002EleftShoulder1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -218,7 +231,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002EleftBumper
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -227,8 +241,9 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 
 	private IControllerTemplateAxis Rewired_002EIGamepadTemplate_002EleftShoulder2
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -238,7 +253,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateAxis Rewired_002EIGamepadTemplate_002EleftTrigger
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -248,7 +264,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002ErightShoulder1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -258,7 +275,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002ErightBumper
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -268,7 +286,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateAxis Rewired_002EIGamepadTemplate_002ErightShoulder2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -278,7 +297,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateAxis Rewired_002EIGamepadTemplate_002ErightTrigger
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -288,7 +308,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002Ecenter1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -297,8 +318,9 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002Eback
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -308,7 +330,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002Ecenter2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -318,7 +341,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002Estart
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -328,7 +352,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002Ecenter3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -338,7 +363,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateButton Rewired_002EIGamepadTemplate_002Eguide
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -348,7 +374,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateThumbStick Rewired_002EIGamepadTemplate_002EleftStick
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -358,7 +385,8 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 	private IControllerTemplateThumbStick Rewired_002EIGamepadTemplate_002ErightStick
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -367,8 +395,9 @@ public sealed class GamepadTemplate : ControllerTemplate, IGamepadTemplate, ICon
 
 	private IControllerTemplateDPad Rewired_002EIGamepadTemplate_002EdPad
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;

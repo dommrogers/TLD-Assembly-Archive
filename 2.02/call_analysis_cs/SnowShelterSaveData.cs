@@ -12,7 +12,7 @@ public class SnowShelterSaveData
 	public string m_SearializedSnowShelter;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SnowShelterSaveData()
 	{
 	}

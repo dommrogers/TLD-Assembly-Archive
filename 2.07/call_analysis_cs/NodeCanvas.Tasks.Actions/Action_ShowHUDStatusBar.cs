@@ -19,20 +19,21 @@ public class Action_ShowHUDStatusBar : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(Enum), Member = "ToString")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Enum), Member = "ToString")]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(StatusBar), Member = "ForceShowForSeconds")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(StatusBar), Member = "ForceShowForSeconds")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}

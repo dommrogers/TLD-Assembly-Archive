@@ -76,7 +76,7 @@ public class AchievementSaveData
 	public Dictionary<string, bool> m_MappedRegions;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AchievementSaveData()
 	{
 	}

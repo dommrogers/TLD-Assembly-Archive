@@ -27,8 +27,8 @@ public class IncreaseTemperatureTrigger : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnDisable()
 	{
 	}

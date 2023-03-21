@@ -11,8 +11,6 @@ public class GearItemInventoryIconFoodData : GearItemInventoryIconData
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	public override Texture2D GetInventoryIcon(GearItem item)
 	{
@@ -20,7 +18,7 @@ public class GearItemInventoryIconFoodData : GearItemInventoryIconData
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 28)]
+	[CallerCount(Count = 32)]
 	public override Texture2D GetInventoryIcon(float condition)
 	{
 		return null;

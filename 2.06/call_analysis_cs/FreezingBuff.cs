@@ -12,20 +12,22 @@ public class FreezingBuff : MonoBehaviour
 
 	private PanelReference<Panel_HUD> m_HUD;
 
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_buffs_add_all")]
 	[CalledBy(Type = typeof(GearItem), Member = "ApplyBuffs")]
-	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Freezing), Member = "AddFreezing")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_buffs_add_all")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Freezing), Member = "AddFreezing")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffNotification")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public void Apply(float normalizedValue)
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public FreezingBuff()
 	{
 	}

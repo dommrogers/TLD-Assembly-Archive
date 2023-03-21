@@ -22,8 +22,8 @@ public class DialogueTimelineScript : ScriptableObject
 	public bool m_DisabledBreathFX;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public DialogueTimelineScript()
 	{
 	}

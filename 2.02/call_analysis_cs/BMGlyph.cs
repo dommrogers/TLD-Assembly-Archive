@@ -25,21 +25,20 @@ public class BMGlyph
 
 	public List<int> kerning;
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(NGUIText), Member = "GetGlyphWidth")]
 	[CalledBy(Type = typeof(NGUIText), Member = "GetGlyph")]
+	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public int GetKerning(int previousChar)
 	{
-		return default(int);
+		return 0;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallerCount(Count = 0)]
 	public void SetKerning(int previousChar, int amount)
 	{
 	}
@@ -51,8 +50,8 @@ public class BMGlyph
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public BMGlyph()
 	{
 	}

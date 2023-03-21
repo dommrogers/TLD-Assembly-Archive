@@ -22,19 +22,19 @@ public class MisfireTable : ScriptableObject
 	public List<Range> m_Ranges;
 
 	[CalledBy(Type = typeof(GunItem), Member = "RollForMisfire")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public bool DoesMisfire(float condition)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 12)]
 	public MisfireTable()
 	{

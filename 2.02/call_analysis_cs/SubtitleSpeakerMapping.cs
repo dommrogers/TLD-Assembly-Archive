@@ -16,7 +16,7 @@ public class SubtitleSpeakerMapping
 	public Color m_SpeakerNameColor;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SubtitleSpeakerMapping()
 	{
 	}

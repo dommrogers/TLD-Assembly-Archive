@@ -21,9 +21,9 @@ public class ShowHands : StateMachineBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(ShowHands), Member = "DoAction")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ShowHands), Member = "DoAction")]
 	public override void OnStateMachineEnter(Animator animator, int layerIndex)
 	{
 	}
@@ -42,12 +42,12 @@ public class ShowHands : StateMachineBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(ShowHands), Member = "OnStateMachineEnter")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(ShowHands), Member = "OnStateEnter")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "HideHands")]
+	[CalledBy(Type = typeof(ShowHands), Member = "OnStateMachineEnter")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "HideHands")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ShowHands")]
+	[CallsUnknownMethods(Count = 3)]
 	private void DoAction(Action action)
 	{
 	}

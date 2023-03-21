@@ -29,20 +29,21 @@ public class StruggleMeshTable : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "GetRevolverMuzzleFlashGO")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "EnableWeapon")]
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "GetRevolverMuzzleFlashGO")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public MeshFilter GetMesh(StruggleBonus.StruggleWeaponType type)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 8)]
 	public StruggleMeshTable()
 	{

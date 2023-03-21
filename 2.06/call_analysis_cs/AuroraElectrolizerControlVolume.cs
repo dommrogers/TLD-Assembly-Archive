@@ -29,16 +29,16 @@ public class AuroraElectrolizerControlVolume : MonoBehaviour
 
 	private bool m_HasSetPowerState;
 
-	[CallsUnknownMethods(Count = 16)]
-	[CalledBy(Type = typeof(AuroraElectrolizerController), Member = "Update")]
+	[CalledBy(Type = typeof(AuroraElectrolizerController), Member = "SetPowerState")]
+	[CalledBy(Type = typeof(AuroraElectrolizerController), Member = "SetPowerState")]
 	[CalledBy(Type = typeof(AuroraElectrolizerController), Member = "SetPowerStateAll")]
-	[CalledBy(Type = typeof(AuroraElectrolizerController), Member = "SetPowerState")]
 	[CalledBy(Type = typeof(AuroraElectrolizerController), Member = "Update")]
-	[Calls(Type = typeof(ElectrifiedWater), Member = "SetElectrified")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(AuroraElectrolizerController), Member = "SetPowerState")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(ElectrifiedWater), Member = "SetElectrified")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 16)]
 	public void SetPowerState(bool isActive)
 	{
 	}
@@ -47,20 +47,20 @@ public class AuroraElectrolizerControlVolume : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsActivated()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool HasSetPowerState()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ElectrifiedWater), Member = "SetElectrified")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(ElectrifiedWater), Member = "SetElectrified")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Initialize()
 	{
 	}

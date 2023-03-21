@@ -15,14 +15,13 @@ public class AkVector : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallsUnknownMethods(Count = 1)]
+		[CalledBy(Type = typeof(AkRoom), Member = "OnEnable")]
 		[CalledBy(Type = typeof(AkRoomPortal), Member = "Awake")]
-		[CalledBy(Type = typeof(AkRoom), Member = "OnEnable")]
-		[CalledBy(Type = typeof(AkRoom), Member = "OnEnable")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 3)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -30,18 +29,17 @@ public class AkVector : IDisposable
 
 	public float Y
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallerCount(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(AkRoom), Member = "OnEnable")]
 		[CalledBy(Type = typeof(AkRoom), Member = "OnEnable")]
 		[CalledBy(Type = typeof(AkRoomPortal), Member = "Awake")]
+		[CallerCount(Count = 3)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -55,13 +53,12 @@ public class AkVector : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallerCount(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(AkRoom), Member = "OnEnable")]
 		[CalledBy(Type = typeof(AkRoom), Member = "OnEnable")]
 		[CalledBy(Type = typeof(AkRoomPortal), Member = "Awake")]
+		[CallerCount(Count = 3)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -74,16 +71,32 @@ public class AkVector : IDisposable
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(AkImageSourceParams), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkImageSourceParams), Member = "set_sourcePosition")]
+	[CalledBy(Type = typeof(AkImageSourceSettings), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkPathParams), Member = "set_listenerPos")]
+	[CalledBy(Type = typeof(AkPathParams), Member = "set_emitterPos")]
+	[CalledBy(Type = typeof(AkPropagationPathInfo), Member = "set_nodePoint")]
+	[CalledBy(Type = typeof(AkReflectionPathInfo), Member = "set_imageSource")]
+	[CalledBy(Type = typeof(AkReflectionPathInfo), Member = "set_occlusionPoint")]
+	[CalledBy(Type = typeof(AkRoomParams), Member = "set_Up")]
+	[CalledBy(Type = typeof(AkRoomParams), Member = "set_Front")]
+	[CalledBy(Type = typeof(AkTransform), Member = "Set")]
+	[CalledBy(Type = typeof(AkTransform), Member = "SetPosition")]
+	[CalledBy(Type = typeof(AkTransform), Member = "SetOrientation")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "QueryReflectionPaths")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetRoomPortal")]
+	[CalledBy(Type = typeof(AkRoomPortal), Member = "ActivatePortal")]
 	[CallerCount(Count = 20)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkVector obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal virtual void setCPtr(IntPtr cPtr)
 	{
 	}
@@ -96,16 +109,16 @@ public class AkVector : IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Zero()
 	{

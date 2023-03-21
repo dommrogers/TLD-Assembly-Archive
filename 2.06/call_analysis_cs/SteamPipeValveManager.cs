@@ -13,7 +13,6 @@ public class SteamPipeValveManager : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Start()
 	{
@@ -26,9 +25,9 @@ public class SteamPipeValveManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Remove(SteamPipeValve valve)
 	{
 	}
@@ -41,37 +40,36 @@ public class SteamPipeValveManager : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Remove(SteamPipeValveSocket socket)
 	{
 	}
 
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CallsUnknownMethods(Count = 46)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(SteamPipeValveSocket), Member = "Serialize")]
-	[Calls(Type = typeof(SteamPipeValveSaveList), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SteamPipeValveSaveList), Member = ".ctor")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(SteamPipeValve), Member = "Serialize")]
+	[Calls(Type = typeof(SteamPipeValveSocket), Member = "Serialize")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 46)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(SteamPipeValveSocket), Member = "Deserialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[Calls(Type = typeof(SteamPipeValve), Member = "Deserialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(SteamPipeValve), Member = "Deserialize")]
+	[Calls(Type = typeof(SteamPipeValveSocket), Member = "Deserialize")]
+	[CallsUnknownMethods(Count = 13)]
 	public static void DeserializeAll(string text)
 	{
 	}

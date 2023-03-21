@@ -16,7 +16,7 @@ public class PageQuery : ISettable
 		[CallerCount(Count = 7)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -30,10 +30,10 @@ public class PageQuery : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 6)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -43,9 +43,9 @@ public class PageQuery : ISettable
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	internal void Set(PageQueryInternal? other)
 	{
 	}
@@ -58,7 +58,7 @@ public class PageQuery : ISettable
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PageQuery()
 	{
 	}

@@ -57,40 +57,31 @@ public class FlareIntensity : MonoBehaviour
 
 	private MeshRenderer m_RadialGradientMeshRenderer;
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[Calls(Type = typeof(Material), Member = "GetColor")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(FlareIntensity), Member = "MaybeUpdateIntensityRTPC")]
-	[Calls(Type = typeof(FlareItem), Member = "GetNormalizedBurnTimeLeft")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(FlareItem), Member = "GetNormalizedBurnTimeLeft")]
+	[Calls(Type = typeof(FlareIntensity), Member = "MaybeUpdateIntensityRTPC")]
+	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[Calls(Type = typeof(Material), Member = "GetColor")]
+	[Calls(Type = typeof(Material), Member = "SetColor")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SetIntensity(float intensity)
 	{
 	}
@@ -101,7 +92,7 @@ public class FlareIntensity : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	private float GetEmissionRate(ParticleSystem ps)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -112,14 +103,13 @@ public class FlareIntensity : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(FlareIntensity), Member = "Update")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[Calls(Type = typeof(LightRandomIntensity), Member = "GetIntensity")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
 	[Calls(Type = typeof(LightRandomIntensity), Member = "GetIntensity")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaybeUpdateIntensityRTPC()
 	{
 	}

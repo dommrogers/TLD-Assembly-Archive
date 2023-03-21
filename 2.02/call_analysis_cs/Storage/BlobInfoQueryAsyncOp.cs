@@ -16,19 +16,19 @@ public class BlobInfoQueryAsyncOp : AsyncOp<BlobInfoQueryAsyncOp>
 
 	public BlobInfoQueryCallback Callback;
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(ContainerContext), Member = "QueryBlobInfoAsync")]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public BlobInfoQueryAsyncOp(ContainerContext storage, BlobInfoQueryCallback callback)
 	{
 		((AsyncOp<>)(object)this)._002Ector();
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(ContainerContext), Member = "BlobInfoQueryAsyncThunk")]
+	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public void Complete(uint result, uint totalResults, IntPtr queryHandle)
 	{
 	}

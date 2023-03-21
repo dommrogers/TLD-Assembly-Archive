@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using ParadoxNotion;
@@ -38,11 +37,11 @@ public class DebugLogText : ActionTask<Transform>
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -51,14 +50,14 @@ public class DebugLogText : ActionTask<Transform>
 
 	private Texture2D tex
 	{
-		[CallsUnknownMethods(Count = 9)]
 		[CalledBy(Type = typeof(DebugLogText), Member = "OnGUI")]
-		[Calls(Type = typeof(Texture2D), Member = "Apply")]
-		[Calls(Type = typeof(Texture2D), Member = "SetPixel")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[Calls(Type = typeof(Texture2D), Member = ".ctor")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Object), Member = "op_Equality")]
+		[Calls(Type = typeof(Texture2D), Member = ".ctor")]
+		[Calls(Type = typeof(Texture2D), Member = "SetPixel")]
+		[Calls(Type = typeof(Texture2D), Member = "Apply")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 9)]
 		get
 		{
 			return null;
@@ -66,13 +65,14 @@ public class DebugLogText : ActionTask<Transform>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 10)]
 	protected override void OnExecute()
 	{
@@ -85,28 +85,27 @@ public class DebugLogText : ActionTask<Transform>
 	{
 	}
 
-	[CallsUnknownMethods(Count = 26)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GUISkin), Member = "GetStyle")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(GUISkin), Member = "get_error")]
+	[Calls(Type = typeof(GUIStyle), Member = ".ctor")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(GUIContent), Member = ".ctor")]
 	[Calls(Type = typeof(GUI), Member = "set_color")]
-	[Calls(Type = typeof(GUI), Member = "Label")]
-	[Calls(Type = typeof(GUI), Member = "set_color")]
-	[Calls(Type = typeof(GUI), Member = "DrawTexture")]
 	[Calls(Type = typeof(DebugLogText), Member = "get_tex")]
-	[Calls(Type = typeof(GUI), Member = "set_color")]
-	[Calls(Type = typeof(GUIStyle), Member = ".ctor")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(GUISkin), Member = "GetStyle")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GUISkin), Member = "get_error")]
+	[Calls(Type = typeof(GUI), Member = "DrawTexture")]
+	[Calls(Type = typeof(GUI), Member = "Label")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 26)]
 	private void OnGUI()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public DebugLogText()
 	{
 		((ActionTask<>)(object)this)._002Ector();

@@ -44,86 +44,87 @@ public class UIDraggableCamera : MonoBehaviour
 		}
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(NGUITools), Member = "GetHierarchy")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(UIDraggableCamera), Member = "ConstrainToBounds")]
-	[Calls(Type = typeof(NGUIMath), Member = "ConstrainRect")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(NGUIMath), Member = "ConstrainRect")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 12)]
 	private Vector3 CalculateConstrainOffset()
 	{
 		return default(Vector3);
 	}
 
-	[Calls(Type = typeof(SpringPosition), Member = "Begin")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[CalledBy(Type = typeof(UIDragCamera), Member = "OnPress")]
 	[CalledBy(Type = typeof(UIDraggableCamera), Member = "Press")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[CalledBy(Type = typeof(UIDraggableCamera), Member = "Drag")]
 	[CalledBy(Type = typeof(UIDraggableCamera), Member = "Update")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UIDraggableCamera), Member = "CalculateConstrainOffset")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(SpringPosition), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool ConstrainToBounds(bool immediate)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UIDraggableCamera), Member = "ConstrainToBounds")]
 	[Calls(Type = typeof(NGUIMath), Member = "CalculateAbsoluteWidgetBounds")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Press(bool isPressed)
 	{
 	}
 
+	[CalledBy(Type = typeof(UIDragCamera), Member = "OnDrag")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UIDraggableCamera), Member = "ConstrainToBounds")]
-	[CalledBy(Type = typeof(UIDragCamera), Member = "OnDrag")]
 	[Calls(Type = typeof(UIRoot), Member = "get_pixelSizeAdjustment")]
+	[Calls(Type = typeof(UIDraggableCamera), Member = "ConstrainToBounds")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public void Drag(Vector2 delta)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Scroll(float delta)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(NGUIMath), Member = "CalculateAbsoluteWidgetBounds")]
-	[Calls(Type = typeof(UIDraggableCamera), Member = "ConstrainToBounds")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(NGUIMath), Member = "SpringDampen")]
-	[CallsUnknownMethods(Count = 5)]
 	[Calls(Type = typeof(NGUIMath), Member = "SpringLerp")]
 	[Calls(Type = typeof(NGUIMath), Member = "SpringDampen")]
+	[Calls(Type = typeof(NGUIMath), Member = "CalculateAbsoluteWidgetBounds")]
+	[Calls(Type = typeof(UIDraggableCamera), Member = "ConstrainToBounds")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{
 	}

@@ -38,77 +38,74 @@ public class VehicleDoor : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 12)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(VehicleDoor), Member = "Cancel")]
 	[Calls(Type = typeof(PlayerInVehicle), Member = "EnterVehicle")]
 	[Calls(Type = typeof(PlayerInVehicle), Member = "ExitVehicle")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(VehicleDoor), Member = "Cancel")]
+	[CallsUnknownMethods(Count = 13)]
 	public static void UpdateDoorInProgress()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 24)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
-	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 24)]
 	public bool StartInteract()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(VehicleDoor), Member = "UpdateDoorInProgress")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(InputManager), Member = "MaybeCancelClickHold")]
-	[CalledBy(Type = typeof(VehicleDoor), Member = "UpdateDoorInProgress")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Cancel()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void ProgressBarStarted()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerInVehicle), Member = "EnterVehicle")]
 	[Calls(Type = typeof(PlayerInVehicle), Member = "ExitVehicle")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public void ProcessInteraction()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayText")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 2)]
 	public string GetHoverText()
 	{
 		return null;

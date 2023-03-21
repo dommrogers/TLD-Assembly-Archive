@@ -16,11 +16,12 @@ public class InstantiateGameObject : ActionTask<Transform>
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 34)]
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 4)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 33)]
 		get
 		{
 			return null;
@@ -28,10 +29,13 @@ public class InstantiateGameObject : ActionTask<Transform>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
 	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 9)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 5)]
 	protected override void OnExecute()
 	{
 	}

@@ -14,8 +14,8 @@ public class CheckEnum : ConditionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		get
 		{
 			return null;
@@ -23,18 +23,17 @@ public class CheckEnum : ConditionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(BBObjectParameter), Member = ".ctor")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(BBObjectParameter), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 1)]
 	public CheckEnum()
 	{
 	}

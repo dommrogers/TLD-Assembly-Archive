@@ -30,37 +30,37 @@ public class InvStat
 
 	public int amount;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static string GetName(Identifier i)
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static string GetDescription(Identifier i)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static int CompareArmor(InvStat a, InvStat b)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public static int CompareWeapon(InvStat a, InvStat b)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public InvStat()
 	{
 	}

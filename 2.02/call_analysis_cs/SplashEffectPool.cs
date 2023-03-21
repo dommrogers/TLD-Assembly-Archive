@@ -6,9 +6,9 @@ public class SplashEffectPool : EffectPool<SplashEffectType>
 	[Serializable]
 	public class SerializableSpawnGroup : SerializableSpawnGroupGeneric
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public SerializableSpawnGroup()
 		{
 			((EffectPool<>.SerializableSpawnGroupGeneric)(object)this)._002Ector();
@@ -32,7 +32,8 @@ public class SplashEffectPool : EffectPool<SplashEffectType>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(EffectPool<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public SplashEffectPool()
 	{
 		((EffectPool<>)(object)this)._002Ector();

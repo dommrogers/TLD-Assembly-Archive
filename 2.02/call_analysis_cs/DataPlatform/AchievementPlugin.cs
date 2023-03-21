@@ -32,8 +32,8 @@ public class AchievementPlugin
 	public static extern IntPtr Achievement_Id(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int Achievement_IsRevoked(IntPtr self);
 
 	[PreserveSig]
@@ -67,8 +67,8 @@ public class AchievementPlugin
 	public static extern void Achievement_MediaAssets_Dispose(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr Achievement_Name(IntPtr self);
 
 	[PreserveSig]
@@ -102,8 +102,8 @@ public class AchievementPlugin
 	public static extern IntPtr Achievement_ProductId(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr Achievement_Progression(IntPtr self);
 
 	[PreserveSig]
@@ -137,13 +137,13 @@ public class AchievementPlugin
 	public static extern IntPtr Achievement_ServiceConfigurationId(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr Achievement_TitleAssociations(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint Achievement_TitleAssociations_Length(IntPtr self);
 
 	[PreserveSig]
@@ -167,7 +167,7 @@ public class AchievementPlugin
 	public static extern void Achievement_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AchievementPlugin()
 	{
 	}

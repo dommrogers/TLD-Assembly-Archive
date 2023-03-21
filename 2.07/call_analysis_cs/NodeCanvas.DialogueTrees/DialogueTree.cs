@@ -33,13 +33,13 @@ public class DialogueTree : Graph
 		public string name
 		{
 			[DeduplicatedMethod]
-			[CallerCount(Count = 80)]
+			[CallerCount(Count = 92)]
 			get
 			{
 				return null;
 			}
-			[CallerCount(Count = 279)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 282)]
 			set
 			{
 			}
@@ -49,7 +49,7 @@ public class DialogueTree : Graph
 		{
 			[DeduplicatedMethod]
 			[CallerCount(Count = 3)]
-			[Calls(Type = typeof(Interop), Member = "GetRandomBytes")]
+			[Calls(TypeFullName = "Interop", Member = "GetRandomBytes")]
 			[Calls(Type = typeof(Guid), Member = "ToString")]
 			get
 			{
@@ -59,32 +59,31 @@ public class DialogueTree : Graph
 
 		public IDialogueActor actor
 		{
+			[CalledBy(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
 			[CalledBy(Type = typeof(SubDialogueTree), Member = "SetActorParametersMapping")]
-			[CalledBy(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
-			[CallsUnknownMethods(Count = 2)]
 			[CallerCount(Count = 3)]
-			[CalledBy(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
+			[CallsUnknownMethods(Count = 2)]
 			get
 			{
 				return null;
 			}
 			[CalledBy(Type = typeof(ActorParameter), Member = ".ctor")]
 			[CalledBy(Type = typeof(DialogueTree), Member = "SetActorReference")]
-			[CallerCount(Count = 3)]
 			[CalledBy(Type = typeof(DialogueTree), Member = "SetActorReferences")]
+			[CallerCount(Count = 3)]
 			set
 			{
 			}
 		}
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public ActorParameter()
 		{
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 279)]
+		[CallerCount(Count = 282)]
 		public ActorParameter(string name)
 		{
 		}
@@ -96,7 +95,7 @@ public class DialogueTree : Graph
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 80)]
+		[CallerCount(Count = 92)]
 		public override string ToString()
 		{
 			return null;
@@ -110,8 +109,8 @@ public class DialogueTree : Graph
 
 		public static Func<ActorParameter, string> _003C_003E9__45_0;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec()
 		{
 		}
@@ -135,13 +134,13 @@ public class DialogueTree : Graph
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CGetParameterByID_003Eb__0(ActorParameter p)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -149,19 +148,19 @@ public class DialogueTree : Graph
 	{
 		public string paramName;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec__DisplayClass47_0()
 		{
 		}
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CGetParameterByName_003Eb__0(ActorParameter p)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -175,13 +174,13 @@ public class DialogueTree : Graph
 		{
 		}
 
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CGetActorReferenceByName_003Eb__0(ActorParameter r)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -197,11 +196,11 @@ public class DialogueTree : Graph
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CSetActorReference_003Eb__0(ActorParameter p)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -209,18 +208,18 @@ public class DialogueTree : Graph
 	{
 		public KeyValuePair<string, IDialogueActor> pair;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec__DisplayClass51_0()
 		{
 		}
 
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CSetActorReferences_003Eb__0(ActorParameter p)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -242,8 +241,8 @@ public class DialogueTree : Graph
 		{
 			return null;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
@@ -280,17 +279,17 @@ public class DialogueTree : Graph
 		[CallerCount(Count = 3)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public override bool requiresPrimeNode
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -300,7 +299,7 @@ public class DialogueTree : Graph
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -310,7 +309,7 @@ public class DialogueTree : Graph
 		[CallerCount(Count = 3)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -320,14 +319,14 @@ public class DialogueTree : Graph
 		[CallerCount(Count = 3)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public List<ActorParameter> actorParameters
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 59)]
+		[CallerCount(Count = 64)]
 		get
 		{
 			return null;
@@ -336,11 +335,13 @@ public class DialogueTree : Graph
 
 	public List<string> definedActorParameterNames
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 1)]
-		[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
 		[CalledBy(Type = typeof(DTNode), Member = "get_name")]
-		[CallsUnknownMethods(Count = 7)]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Enumerable), Member = "Select")]
+		[Calls(Type = typeof(List<>), Member = "Insert")]
+		[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 5)]
 		get
 		{
 			return null;
@@ -349,21 +350,21 @@ public class DialogueTree : Graph
 
 	public static event Action<DialogueTree> OnDialogueStarted
 	{
-		[CallsUnknownMethods(Count = 3)]
-		[CalledBy(Type = typeof(DialogueUGUI), Member = "OnEnable")]
-		[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnPlayerStartedDialogue")]
-		[CallerCount(Count = 2)]
 		[CompilerGenerated]
+		[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnPlayerStartedDialogue")]
+		[CalledBy(Type = typeof(DialogueUGUI), Member = "OnEnable")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 3)]
 		add
 		{
 		}
 		[CompilerGenerated]
-		[CallerCount(Count = 3)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnPlayerEndedDialogue")]
 		[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnDialogueTreeFinished")]
 		[CalledBy(Type = typeof(DialogueUGUI), Member = "OnDisable")]
+		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CallsUnknownMethods(Count = 3)]
 		remove
 		{
@@ -372,18 +373,18 @@ public class DialogueTree : Graph
 
 	public static event Action<DialogueTree> OnDialoguePaused
 	{
-		[CallsUnknownMethods(Count = 3)]
-		[CalledBy(Type = typeof(DialogueUGUI), Member = "OnEnable")]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CompilerGenerated]
+		[CalledBy(Type = typeof(DialogueUGUI), Member = "OnEnable")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 3)]
 		add
 		{
 		}
 		[CompilerGenerated]
+		[CalledBy(Type = typeof(DialogueUGUI), Member = "OnDisable")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CalledBy(Type = typeof(DialogueUGUI), Member = "OnDisable")]
 		[CallsUnknownMethods(Count = 3)]
 		remove
 		{
@@ -392,21 +393,21 @@ public class DialogueTree : Graph
 
 	public static event Action<DialogueTree> OnDialogueFinished
 	{
+		[CompilerGenerated]
 		[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnPlayerStartedDialogue")]
 		[CalledBy(Type = typeof(DialogueUGUI), Member = "OnEnable")]
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
-		[CompilerGenerated]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 3)]
 		add
 		{
 		}
 		[CompilerGenerated]
-		[CallerCount(Count = 3)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnPlayerEndedDialogue")]
 		[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnDialogueTreeFinished")]
 		[CalledBy(Type = typeof(DialogueUGUI), Member = "OnDisable")]
+		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CallsUnknownMethods(Count = 3)]
 		remove
 		{
@@ -415,18 +416,18 @@ public class DialogueTree : Graph
 
 	public static event Action<SubtitlesRequestInfo> OnSubtitlesRequest
 	{
-		[CallsUnknownMethods(Count = 3)]
+		[CompilerGenerated]
 		[CalledBy(Type = typeof(DialogueUGUI), Member = "OnEnable")]
 		[CallerCount(Count = 1)]
-		[CompilerGenerated]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 3)]
 		add
 		{
 		}
 		[CompilerGenerated]
+		[CalledBy(Type = typeof(DialogueUGUI), Member = "OnDisable")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CalledBy(Type = typeof(DialogueUGUI), Member = "OnDisable")]
 		[CallsUnknownMethods(Count = 3)]
 		remove
 		{
@@ -435,18 +436,18 @@ public class DialogueTree : Graph
 
 	public static event Action<MultipleChoiceRequestInfo> OnMultipleChoiceRequest
 	{
-		[CallsUnknownMethods(Count = 3)]
-		[CalledBy(Type = typeof(DialogueUGUI), Member = "OnEnable")]
 		[CompilerGenerated]
+		[CalledBy(Type = typeof(DialogueUGUI), Member = "OnEnable")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 3)]
 		add
 		{
 		}
 		[CompilerGenerated]
+		[CalledBy(Type = typeof(DialogueUGUI), Member = "OnDisable")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CalledBy(Type = typeof(DialogueUGUI), Member = "OnDisable")]
 		[CallsUnknownMethods(Count = 3)]
 		remove
 		{
@@ -465,30 +466,30 @@ public class DialogueTree : Graph
 	{
 	}
 
+	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence.ActorVoiceOverItem), Member = "get_actorName")]
+	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence.ActorVoiceOverItem), Member = "get_finalActor")]
+	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "PlayStatement")]
+	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(DTNode), Member = "get_name")]
 	[CalledBy(Type = typeof(DTNode), Member = "get_actorName")]
 	[CalledBy(Type = typeof(DTNode), Member = "get_finalActor")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SubDialogueTree), Member = "SetActorParametersMapping")]
-	[CalledBy(Type = typeof(SubDialogueTree), Member = "SetActorParametersMapping")]
 	[CalledBy(Type = typeof(MultipleChoiceNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(DTNode), Member = "get_name")]
-	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "PlayStatement")]
-	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence.ActorVoiceOverItem), Member = "get_finalActor")]
-	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence.ActorVoiceOverItem), Member = "get_actorName")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(SubDialogueTree), Member = "SetActorParametersMapping")]
 	[CallerCount(Count = 11)]
-	[CalledBy(Type = typeof(DTNode), Member = "get_name")]
+	[Calls(Type = typeof(List<>), Member = "Find")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public ActorParameter GetParameterByID(string id)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(DTNode), Member = "set_actorName")]
 	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence.ActorVoiceOverItem), Member = "set_actorName")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(DTNode), Member = "set_actorName")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Find")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public ActorParameter GetParameterByName(string paramName)
 	{
 		return null;
@@ -501,48 +502,45 @@ public class DialogueTree : Graph
 		return null;
 	}
 
+	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence.ActorVoiceOverItem), Member = "get_finalActor")]
+	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "PlayStatement")]
 	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(MultipleChoiceNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(MultipleChoiceNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(DTNode), Member = "get_finalActor")]
-	[CalledBy(Type = typeof(DTNode), Member = "get_finalActor")]
 	[CalledBy(Type = typeof(DialogueTreeController), Member = "GetActorReferenceByName")]
-	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "PlayStatement")]
-	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence.ActorVoiceOverItem), Member = "get_finalActor")]
-	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence.ActorVoiceOverItem), Member = "get_finalActor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(ActorParameter), Member = "get_actor")]
-	[Calls(Type = typeof(ActorParameter), Member = "get_actor")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(DTNode), Member = "get_finalActor")]
+	[CalledBy(Type = typeof(MultipleChoiceNode), Member = "OnExecute")]
 	[CallerCount(Count = 11)]
-	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "PlayStatement")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(List<>), Member = "Find")]
+	[Calls(Type = typeof(ActorParameter), Member = "get_actor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public IDialogueActor GetActorReferenceByName(string paramName)
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(DialogueTreeController), Member = "SetActorReference")]
+	[CalledBy(Type = typeof(SubDialogueTree), Member = "SetActorParametersMapping")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Find")]
 	[Calls(Type = typeof(ActorParameter), Member = "set_actor")]
 	[Calls(Type = typeof(string), Member = "Format")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CalledBy(Type = typeof(DialogueTreeController), Member = "SetActorReference")]
-	[CalledBy(Type = typeof(SubDialogueTree), Member = "SetActorParametersMapping")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetActorReference(string paramName, IDialogueActor actor)
 	{
 	}
 
 	[CalledBy(Type = typeof(DialogueTreeController), Member = "SetActorReferences")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(ActorParameter), Member = "set_actor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(ActorParameter), Member = "set_actor")]
 	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	public void SetActorReferences(Dictionary<string, IDialogueActor> actors)
 	{
 	}
@@ -554,61 +552,61 @@ public class DialogueTree : Graph
 	}
 
 	[CalledBy(Type = typeof(DialogueTree), Member = "OnGraphStarted")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(GoToNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Jumper), Member = "OnExecute")]
 	[CalledBy(Type = typeof(DialogueTree), Member = "OnGraphUnpaused")]
-	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
-	[Calls(Type = typeof(Node), Member = "Reset")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Jumper), Member = "OnExecute")]
+	[CalledBy(Type = typeof(GoToNode), Member = "OnExecute")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Node), Member = "Reset")]
+	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
 	[Calls(Type = typeof(Graph), Member = "Stop")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void EnterNode(DTNode node)
 	{
 	}
 
+	[CalledBy(Type = typeof(Dialogue_VoiceOverNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "PlayStatement")]
+	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnOptionSelected")]
+	[CalledBy(Type = typeof(ParlayNPCResponseNode), Member = "OnExecute")]
 	[CalledBy(Type = typeof(MultipleChoiceNode), Member = "OnOptionSelected")]
 	[CalledBy(Type = typeof(StatementNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "PlayStatement")]
-	[CalledBy(Type = typeof(SayRandom), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Say), Member = "OnExecute")]
-	[CalledBy(Type = typeof(ParlayNPCResponseNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Dialogue_VoiceOverNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(SayRandom), Member = "OnExecute")]
+	[CallerCount(Count = 8)]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnOptionSelected")]
 	public static void RequestSubtitles(SubtitlesRequestInfo info)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnExecute")]
 	[CalledBy(Type = typeof(MultipleChoiceNode), Member = "OnExecute")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void RequestMultipleChoices(MultipleChoiceRequestInfo info)
 	{
 	}
 
-	[Calls(Type = typeof(DialogueTree), Member = "EnterNode")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(Graph), Member = "get_primeNode")]
+	[Calls(Type = typeof(DialogueTree), Member = "EnterNode")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	protected override void OnGraphStarted()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Format")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Graph), Member = "get_primeNode")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Graph), Member = "get_primeNode")]
 	[Calls(Type = typeof(DialogueTree), Member = "EnterNode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnGraphUnpaused()
 	{
 	}
@@ -620,18 +618,18 @@ public class DialogueTree : Graph
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected override void OnGraphPaused()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Graph), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public DialogueTree()
 	{

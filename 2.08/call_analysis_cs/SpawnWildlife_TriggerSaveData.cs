@@ -13,9 +13,9 @@ public class SpawnWildlife_TriggerSaveData
 
 	public List<string> m_RemovedBaseAiGuids;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public SpawnWildlife_TriggerSaveData()
 	{
 	}

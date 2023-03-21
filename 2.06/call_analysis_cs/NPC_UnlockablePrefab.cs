@@ -37,18 +37,18 @@ public class NPC_UnlockablePrefab : MonoBehaviour
 
 	public string m_Description
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Localization), Member = "Get")]
-		[CallerCount(Count = 3)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(Localization), Member = "Get")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(NPC_UnlockableTracker), Member = "AddUnlockable")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public NPC_UnlockablePrefabInfo GetPrefabInfo()
 	{

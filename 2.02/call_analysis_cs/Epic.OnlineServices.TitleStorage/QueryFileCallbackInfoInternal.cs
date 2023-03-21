@@ -28,8 +28,8 @@ internal struct QueryFileCallbackInfoInternal : ICallbackInfoInternal
 		[CalledBy(Type = typeof(QueryFileCallbackInfo), Member = "Set")]
 		[CalledBy(Type = typeof(QueryFileCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -42,16 +42,17 @@ internal struct QueryFileCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(QueryFileCallbackInfo), Member = "Set")]
+		[CalledBy(Type = typeof(QueryFileCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(QueryFileCallbackInfo), Member = "Set")]
-		[CalledBy(Type = typeof(QueryFileCallbackInfo), Member = "Set")]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;

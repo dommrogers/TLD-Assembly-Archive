@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
 using UnityEngine;
@@ -16,7 +15,7 @@ public class PlayerAnimation : MonoBehaviour
 		public bool m_FirstPersonHandsHidden;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public SerializedParams()
 		{
 		}
@@ -150,36 +149,38 @@ public class PlayerAnimation : MonoBehaviour
 	{
 		private Dictionary<Animator, Dictionary<int, bool>> m_ParametersCache;
 
-		[CalledBy(Type = typeof(AnimatorParametersCache), Member = "DoesParameterExists")]
 		[CalledBy(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-		[CallsUnknownMethods(Count = 18)]
+		[CalledBy(Type = typeof(AnimatorParametersCache), Member = "DoesParameterExists")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 7)]
+		[CallsUnknownMethods(Count = 18)]
 		public Dictionary<int, bool> RefreshCache(Animator animator)
 		{
 			return null;
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		public void Clear()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 3)]
+		[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 		[Calls(Type = typeof(AnimatorParametersCache), Member = "RefreshCache")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 2)]
 		public bool DoesParameterExists(Animator animator, int paramHash)
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 8)]
 		[CalledBy(Type = typeof(PlayerAnimation), Member = ".ctor")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 8)]
 		public AnimatorParametersCache()
 		{
 		}
@@ -568,68 +569,63 @@ public class PlayerAnimation : MonoBehaviour
 
 	private Quaternion m_FrozenRotation;
 
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void Awake()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetOutdoorEnvironmentSwitch")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetIndoorEnvironmentSwitch")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnEnvironmentChanged(bool isIndoor)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "DisableAllClothing")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ShowHands")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraBasedHandPositioningMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[CallsUnknownMethods(Count = 349)]
-	[Calls(Type = typeof(Utils), Member = "SetCameraFOVSafe")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Deserialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Animator), Member = "GetLayerIndex")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(Animator), Member = "GetLayerIndex")]
-	[Calls(Type = typeof(Animator), Member = "GetLayerIndex")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 50)]
+	[Calls(Type = typeof(Animator), Member = "GetLayerIndex")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Utils), Member = "SetCameraFOVSafe")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "DisableAllClothing")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ShowHands")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraBasedHandPositioningMode")]
+	[CallsDeduplicatedMethods(Count = 50)]
+	[CallsUnknownMethods(Count = 349)]
 	public void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetHandMeshState")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Start")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Start")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetHandMeshState")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
@@ -642,13 +638,13 @@ public class PlayerAnimation : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsMotionFromRefEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	private bool IsHipShoulderLayerDisabledPending()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -657,59 +653,42 @@ public class PlayerAnimation : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "InProgress")]
+	[Calls(Type = typeof(Enum), Member = "HasFlag")]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[Calls(Type = typeof(GameManager), Member = "ControlsLocked")]
+	[Calls(Type = typeof(GameManager), Member = "IsMovementLockedBecauseOfLantern")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "IsMovementLockedBecauseOfLantern")]
-	[Calls(Type = typeof(GameManager), Member = "ControlsLocked")]
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "InProgress")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CallsUnknownMethods(Count = 11)]
 	private void MaybeFadeoutHipShoulder(Vector3 localVelocity)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(SceneManager), Member = "IsLoading")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ComputeDampedVelocity")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(InputManager), Member = "GetSprintDown")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
+	[Calls(Type = typeof(PlayerMovement), Member = "GetSprintStaminaRemainingAsPercentage")]
 	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
+	[Calls(Type = typeof(InputManager), Member = "GetSprintDown")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Update_HasUnloadedAmmo")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeFadeoutHipShoulder")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateAnimatorSpeed")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateLookAtTarget")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeUpdateCinematicFade")]
+	[CallsDeduplicatedMethods(Count = 17)]
 	[CallsUnknownMethods(Count = 42)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Update_HasUnloadedAmmo")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayerMovement), Member = "GetSprintStaminaRemainingAsPercentage")]
-	[CallsDeduplicatedMethods(Count = 19)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(SceneManager), Member = "IsLoading")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ComputeDampedVelocity")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
 	public void Update()
 	{
 	}
@@ -719,26 +698,22 @@ public class PlayerAnimation : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "Update")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "EnableFreeCameraLook")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "DisableFreeCameraLook")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "EnablePlayerFreeCameraMovement")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "EnableFreeCameraLook")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "DisablePlayerFreeCameraMovement")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void UpdateFreeCameraLook(Vector2 delta)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[CallsDeduplicatedMethods(Count = 10)]
 	[CallsUnknownMethods(Count = 22)]
 	private void OnAnimatorMove()
 	{
@@ -749,116 +724,73 @@ public class PlayerAnimation : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeDropAndResetCurrentWeapon")]
-	[CalledBy(Type = typeof(CinematicTrack), Member = "OnCinematicDone")]
-	[CalledBy(Type = typeof(CinematicTrack), Member = "Update")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "Start")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptToPlaceMesh")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnPlaceMeshAnimationComplete")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(EmergencyStimItem), Member = "OnInjectComplete")]
-	[CalledBy(Type = typeof(EmergencyStimItem), Member = "OnInject")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTransitionOut")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ShowHands")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearParametersCache")]
-	[Calls(Type = typeof(Animator), Member = "Play")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "HideHands")]
+	[CalledBy(Type = typeof(EmergencyStimItem), Member = "OnInject")]
+	[CalledBy(Type = typeof(EmergencyStimItem), Member = "OnInjectComplete")]
+	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnPlaceMeshAnimationComplete")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptToPlaceMesh")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "Start")]
+	[CalledBy(Type = typeof(CinematicTrack), Member = "Update")]
+	[CalledBy(Type = typeof(CinematicTrack), Member = "OnCinematicDone")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeDropAndResetCurrentWeapon")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
+	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "EnableEquipped")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ResetParams")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetParams")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "EnableEquipped")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "HideHands")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ShowHands")]
+	[Calls(Type = typeof(Animator), Member = "Play")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearParametersCache")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "DisableWeapon")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Reset()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "ResetParams")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "ResetParams")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "ResetParams")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "ResetParams")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "ResetParams")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "ResetParams")]
+	[CallsUnknownMethods(Count = 2)]
 	private void ResetBoolIfExists(int hash)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "DisableWeapon")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "ResetParams")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "DisableWeapon")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void ResetWeaponParams()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Reset")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_AnimatedInteractionComplete")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_HiddenComplete")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_PlacementMode_PlaceItem_Complete")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_Use_Complete")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Reset")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
 	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ResetWeaponParams")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ResetBoolIfExists")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetBoolIfExists")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetBoolIfExists")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetBoolIfExists")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetBoolIfExists")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetInt")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetBoolIfExists")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetInt")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void ResetParams()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
 	public void ResetStruggleStartEnd()
 	{
@@ -868,54 +800,44 @@ public class PlayerAnimation : MonoBehaviour
 	[CallerCount(Count = 51)]
 	public bool FirstPersonHandsEnabled(GearItem gearItem)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "ShowNext")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "EnableEffectsForWeapon")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "EnableEffectsForWeapon")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SetWeapon")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SwitchWeapon")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "HidePrevious")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "ShowNext")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SetWeapon")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "EnableEffectsForWeapon")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "GetWeaponFromID")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SwitchWeapon")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
+	[CallsUnknownMethods(Count = 6)]
 	public bool FirstPersonHandsEnabled(int weaponID)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(CinematicManager), Member = "SwapFPController")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Reset")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ClearParametersCache()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Animator), Member = "set_speed")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(Animator), Member = "set_speed")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Animator), Member = "set_speed")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallerCount(Count = 55)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetFloat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Animator), Member = "set_speed")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 55)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 19)]
 	private bool MaybeSetState(State state)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -925,11 +847,11 @@ public class PlayerAnimation : MonoBehaviour
 		return default(State);
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public bool GetAnimatorIsIdle()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -938,103 +860,72 @@ public class PlayerAnimation : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsCurrentState(int fullPathHash)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(AnimationEvents), Member = "DoEnableObject")]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "TryGetFXObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "TryGetFXObject")]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "TryGetFXObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(FirstPersonWeapon), Member = "TryGetFXObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool TryGetFXObject(string name, out GameObject fxGameObject)
 	{
 		fxGameObject = null;
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "PanViewCameraIsDetached")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool GetFirstPersonWeaponCanSwitch()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Save")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Save")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Save")]
 	[CallsUnknownMethods(Count = 4)]
 	public void SaveCameraBasedHandPositioning(RuntimeAnimatorController controller)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Load")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Load")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Load")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void LoadCameraBasedHandPositioning(RuntimeAnimatorController controller)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Restore")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Restore")]
 	[CallsUnknownMethods(Count = 1)]
 	public void RestoreCameraBasedHandPositioning()
 	{
 	}
 
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "LateUpdate")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "UpdateJoint")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "LerpPlayer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
+	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "UpdateJoint")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 19)]
 	public void UpdateShoulderRotation()
 	{
 	}
 
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Enable")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateActiveJointPositioning()
 	{
 	}
@@ -1045,7 +936,7 @@ public class PlayerAnimation : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	public bool AnimIsPlaying(int id)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1055,12 +946,12 @@ public class PlayerAnimation : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ShowHands")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "EnableWeapon")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
+	[CallsUnknownMethods(Count = 3)]
 	public void Trigger_Struggle_Start(StruggleBonus.StruggleWeaponType weaponType, WildlifeType wildlifeType)
 	{
 	}
@@ -1073,37 +964,37 @@ public class PlayerAnimation : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "OnEnter_Setting")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void SetParameterSetSpearMultiplier(float multiplier)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "OnEnter_None")]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "OnEnter_Recovering")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void SetParameterRecoverSpearMultiplier(float multiplier)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "DisableWeapon")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "DisableWeapon")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Trigger_Struggle_End()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public bool Trigger_Brandish(OnAnimationEvent brandishBegin, OnAnimationEvent midSwingEvent)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1128,35 +1019,33 @@ public class PlayerAnimation : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool BrandishIsPlaying()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoTriggerAnimation")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnBack")]
 	[CalledBy(Type = typeof(Action_TriggerAnimatedInteraction), Member = "DoWork")]
-	[CalledBy(Type = typeof(Action_TriggerAnimatedInteraction), Member = "DoWork")]
 	[CalledBy(Type = typeof(Action_SpawnPropAndTriggerAnim), Member = "OnEnterPlaying")]
 	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "EnterOutro")]
+	[CallerCount(Count = 6)]
 	public void Trigger_AnimatedInteraction(string trigger, bool weaponSpace, OnAnimationEvent onCompleteCallback, AnimationLayerFlags layersEnabled)
 	{
 	}
 
+	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "EnterPrepareStruggle")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouch")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[Calls(Type = typeof(Enum), Member = "HasFlag")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ShowHands")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
-	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "EnterPrepareStruggle")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouch")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
+	[CallsUnknownMethods(Count = 5)]
 	public void Trigger_AnimatedInteraction(int trigger, bool weaponSpace, OnAnimationEvent onCompleteCallback, AnimationLayerFlags layersDisabled)
 	{
 	}
@@ -1167,18 +1056,18 @@ public class PlayerAnimation : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_ShowPanel), Member = "MaybeUpdateBodyHarvest")]
-	[CalledBy(Type = typeof(Action_ShowPanel), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "OnOutroComplete")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "GetUpAnimationComplete")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_AnimatedInteractionComplete")]
-	[CalledBy(Type = typeof(Action_ResetHitAndShoulderOffsetLayer), Member = "OnExecute")]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "OnEnter_None")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionOut")]
-	[CalledBy(Type = typeof(BaseAi), Member = "OnSpearStruggleEnd")]
-	[CallerCount(Count = 10)]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(BaseAi), Member = "OnSpearStruggleEnd")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionOut")]
+	[CalledBy(Type = typeof(BearSpearItem), Member = "OnEnter_None")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_AnimatedInteractionComplete")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "GetUpAnimationComplete")]
+	[CalledBy(Type = typeof(Action_ResetHitAndShoulderOffsetLayer), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "OnOutroComplete")]
+	[CalledBy(Type = typeof(Action_ShowPanel), Member = "OnUpdate")]
+	[CalledBy(Type = typeof(Action_ShowPanel), Member = "MaybeUpdateBodyHarvest")]
+	[CallerCount(Count = 10)]
 	public void ResetHipAndShoulderOffsetLayer()
 	{
 	}
@@ -1189,177 +1078,153 @@ public class PlayerAnimation : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(BaseAi), Member = "OnSpearHit")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTransitionIn")]
+	[CalledBy(Type = typeof(BearSpearItem), Member = "OnEnter_Setting")]
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoTriggerAnimation")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeFadeoutHipShoulder")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_AnimatedInteraction")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "DisableHipAndShoulderOffsetLayer")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayer")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayer")]
-	[CalledBy(Type = typeof(Action_ScrapMetalStruggleIntro), Member = "OnExecute")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "BeginSpearStruggle")]
 	[CalledBy(Type = typeof(Action_SpawnPropAndTriggerAnim), Member = "OnEnterPlaying")]
+	[CalledBy(Type = typeof(Action_ScrapMetalStruggleIntro), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Action_ShowPanel), Member = "MaybeShowBodyHarvest")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_AnimatedInteraction")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeFadeoutHipShoulder")]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "OnEnter_Setting")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeFadeoutHipShoulder")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoTriggerAnimation")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTransitionIn")]
-	[CalledBy(Type = typeof(BaseAi), Member = "OnSpearHit")]
-	[Calls(Type = typeof(Animator), Member = "SetLayerWeight")]
+	[CallerCount(Count = 17)]
 	[Calls(Type = typeof(Animator), Member = "SetLayerWeight")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 17)]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeFadeoutHipShoulder")]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateHipAndShoulderOffsetLayerWeigth(float weigth)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
 	private void UpdateHipAndShoulderOffsetLayer(bool enabled)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetHipAndShoulderOffsetLayer")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "TurnOffEffects")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ResetParams")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
 	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ResetHipAndShoulderOffsetLayer")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnAnimationEvent_AnimatedInteractionComplete()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "EnableWeapon")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "EnableWeapon")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Trigger_Breakdown_Intro(StruggleBonus.StruggleWeaponType weaponType)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Trigger_Breakdown_StartLoop()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Trigger_Breakdown_Cancel()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Trigger_Breakdown_ExitLoop()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Trigger_Limp()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Trigger_Stumble(int stumbleId)
 	{
 	}
 
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "ShowNext")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenEquip")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "GetWeaponFromID")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[Calls(Type = typeof(FirstPersonItem), Member = "PlayWieldAudio")]
+	[Calls(Type = typeof(FirstPersonItem), Member = "SetExteriorInteriorSwitch")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ShowHands")]
 	[Calls(Type = typeof(FlashlightItem), Member = "IsLit")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "EnableEquipped")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_Equip_Complete")]
-	[Calls(Type = typeof(GunItem), Member = "NumRoundsInClip")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetInt")]
 	[Calls(Type = typeof(GunItem), Member = "NumRoundsInClip")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Update_Lightsource_Lit")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "ShowNext")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenEquip")]
-	[CallsUnknownMethods(Count = 37)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetInt")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 10)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "GetWeaponFromID")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
-	[Calls(Type = typeof(FirstPersonItem), Member = "PlayWieldAudio")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ShowHands")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FirstPersonItem), Member = "SetExteriorInteriorSwitch")]
+	[CallsUnknownMethods(Count = 37)]
 	public void Trigger_Generic_Equip(GearItem gearItem, bool immediate, OnAnimationEvent showItemEventCallback, OnAnimationEvent equepCompleteEventCallback)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "EnableEquipped")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private void OnAnimationEvent_Generic_Equip_ShowItem()
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Equip")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Equip")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 7)]
 	private void OnAnimationEvent_Generic_Equip_Complete()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenDropCurrent")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SwitchWeapon")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenDropCurrent")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool Trigger_Generic_Unequip(OnAnimationEvent extinguishFxCallback, OnAnimationEvent hideCallback, OnAnimationEvent completeCallback)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1368,56 +1233,51 @@ public class PlayerAnimation : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeDropAndResetCurrentWeapon")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_Hidden")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BowItem), Member = "OnDequip")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "Drop")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeDropAndResetCurrentWeapon")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "Drop")]
+	[Calls(Type = typeof(BowItem), Member = "OnDequip")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	public void DropCurrentItemInHand()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "DropCurrentItemInHand")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "EnableEquipped")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "TurnOffEffects")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "EnableEquipped")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "DropCurrentItemInHand")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnAnimationEvent_Generic_Hidden()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "HideHands")]
-	[Calls(Type = typeof(Animator), Member = "Play")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetParams")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ResetLightSources")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "HideHands")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ResetParams")]
+	[Calls(Type = typeof(Animator), Member = "Play")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnAnimationEvent_Generic_HiddenComplete()
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "StowItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "StowItem")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
 	public void Trigger_Generic_Stow()
 	{
 	}
@@ -1428,17 +1288,15 @@ public class PlayerAnimation : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
 	public void Trigger_Generic_Unstow()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	public void Trigger_BearSpearStruggleAnimation(BearSpearStruggleOutcome outcome)
@@ -1452,30 +1310,30 @@ public class PlayerAnimation : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Trigger_Spray(OnAnimationEvent sprayCompleteCallback)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Trigger_Erase_Paint(OnAnimationEvent erasePaintCompleteCallback)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Trigger_NoiseMaker_Explode_In_Hand(OnAnimationEvent completeCallback)
 	{
@@ -1493,16 +1351,16 @@ public class PlayerAnimation : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
 	public void SetStruggleRevolverAvailableToFire(bool isAvailable)
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "MaybeShootRevolver")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "MaybeShootRevolver")]
 	public void SetStruggleRevolverFired(bool hasFired, OnAnimationEvent onRevolverFired, OnAnimationEvent onRevolverFiredComplete)
 	{
 	}
@@ -1514,112 +1372,110 @@ public class PlayerAnimation : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(FlashlightItem), Member = "TurnOn")]
-	[CalledBy(Type = typeof(TorchItem), Member = "IgniteAfterDelay")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "IgniteAfterDelay")]
-	[CalledBy(Type = typeof(MatchesItem), Member = "IgniteAfterDelay")]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "TurnOn")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(FlareItem), Member = "IgniteDelayed")]
+	[CalledBy(Type = typeof(FlashlightItem), Member = "TurnOn")]
+	[CalledBy(Type = typeof(KeroseneLampItem), Member = "TurnOn")]
+	[CalledBy(Type = typeof(MatchesItem), Member = "IgniteAfterDelay")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "IgniteAfterDelay")]
+	[CalledBy(Type = typeof(TorchItem), Member = "IgniteAfterDelay")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Trigger_Generic_Ignite(bool isFire)
 	{
 	}
 
-	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
-	[CalledBy(Type = typeof(MatchesItem), Member = "UpdateWhileInHands")]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "UpdateEffects")]
-	[CalledBy(Type = typeof(FlashlightItem), Member = "TurnOn")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Update")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(FlareItem), Member = "Update")]
+	[CalledBy(Type = typeof(FlashlightItem), Member = "TurnOn")]
+	[CalledBy(Type = typeof(KeroseneLampItem), Member = "UpdateEffects")]
+	[CalledBy(Type = typeof(MatchesItem), Member = "UpdateWhileInHands")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Update")]
+	[CalledBy(Type = typeof(TorchItem), Member = "Update")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	public void Trigger_Generic_Ignite_Confirm(OnAnimationEvent ignite_FX_Callback, OnAnimationEvent ignite_Complete_Callback)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
-	[CallerCount(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	[CalledBy(Type = typeof(FlareItem), Member = "CancelIgnite")]
 	[CalledBy(Type = typeof(KeroseneLampItem), Member = "CancelAction")]
 	[CalledBy(Type = typeof(MatchesItem), Member = "CancelIgnite")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "CancelIgnite")]
 	[CalledBy(Type = typeof(TorchItem), Member = "CancelIgnite")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Trigger_Generic_Ignite_Cancel()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnAnimationEvent_Generic_Ignite()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnAnimationEvent_Generic_IgniteComplete()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "TurnOffDelayed")]
 	[CalledBy(Type = typeof(FlashlightItem), Member = "TurnOff")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[CalledBy(Type = typeof(KeroseneLampItem), Member = "TurnOffDelayed")]
 	[CalledBy(Type = typeof(TorchItem), Member = "ExtinguishAfterDelayStarted")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool Trigger_Generic_Extinguish(OnAnimationEvent animationEventCallback)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	public void Trigger_Generic_Extinguish_Cancel()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 9)]
 	private void OnAnimationEvent_Generic_Extinguish_FX()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	private void OnAnimationEvent_Generic_Extinguish_Complete()
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceImmediately")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	[CalledBy(Type = typeof(BodyCarry), Member = "ReadyForPlacementDropAnimation")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	public void Trigger_Generic_PlacementMode_Place(OnAnimationEvent placementPlaceAnimationEventCallback, OnAnimationEvent placementCompleteAnimationEventCallback)
 	{
 	}
@@ -1637,58 +1493,40 @@ public class PlayerAnimation : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ResetParams")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	private void OnAnimationEvent_Generic_PlacementMode_PlaceItem_Complete()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateItemInHands")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FirstPersonLightSource), Member = "SetFresh")]
 	[CalledBy(Type = typeof(MatchesItem), Member = "PutOut")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateItemInHands")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateItemInHands")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateItemInHands")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Equip")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateItemInHands")]
-	[Calls(Type = typeof(FirstPersonLightSource), Member = "SetFresh")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateItemInHands")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(FirstPersonLightSource), Member = "SetFresh")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public void Update_Lightsource_Lit(bool lit, bool isFresh)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(BowItem), Member = "ShootArrow")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "PlayFireAnimation")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetInt")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[CalledBy(Type = typeof(BowItem), Member = "ShootArrow")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "IsBowAllowedToFire")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "IsAllowedToFire")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "IsBowAllowedToFire")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetInt")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public void Trigger_Generic_Fire(int roundsInClip, bool willJam, OnAnimationEvent fxEventCallback, OnAnimationEvent completeEventCallback)
 	{
 	}
@@ -1699,33 +1537,28 @@ public class PlayerAnimation : MonoBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(GunItem), Member = "NumRoundsInClip")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetInt")]
-	[Calls(Type = typeof(GunItem), Member = "NumRoundsInClip")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[CallsUnknownMethods(Count = 5)]
 	private void OnAnimationEvent_Generic_Fire_Complete()
 	{
 	}
 
-	[CalledBy(Type = typeof(BowItem), Member = "NockArrow")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "SetBulletsToReload")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetInt")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetInt")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "UnJam")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "SetBulletsToReload")]
+	[CalledBy(Type = typeof(BowItem), Member = "NockArrow")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetInt")]
 	public void Trigger_Generic_Reload(int bulletsToReload, int roundsLoaded, bool willJam, OnAnimationEvent roundLoadedEventCallback, OnAnimationEvent clipLoadedEventCallback, OnAnimationEvent reloadCompleteEventCallback, OnAnimationEvent roundsUnloadedEventCallback)
 	{
 	}
@@ -1748,17 +1581,17 @@ public class PlayerAnimation : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "EnableReloadBulletInstance")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "EnableReloadBulletInstance")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnAnimationEvent_Generic_ShowReloadBulletInstance()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnAnimationEvent_Struggle_Revolver_Fire()
 	{
 	}
@@ -1770,30 +1603,27 @@ public class PlayerAnimation : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemAtPlayersFeet")]
 	[Calls(Type = typeof(GunItem), Member = "PlayCasingAudio")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	private void OnAnimationEvent_Discharge_Shell_Event()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	private void OnAnimationEvent_Spray_Complete()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnAnimationEvent_Erase_Paint_Complete()
 	{
@@ -1806,19 +1636,17 @@ public class PlayerAnimation : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private void OnAnimationEvent_Generic_Reload_Complete()
 	{
 	}
 
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "DecrementBulletsToReload")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetInt")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetInt")]
 	public void UpdateReloadCount(int bulletsToReload, int roundsLoaded, bool willJam)
 	{
@@ -1830,67 +1658,65 @@ public class PlayerAnimation : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(StoneItem), Member = "ZoomStart")]
-	[CalledBy(Type = typeof(GunItem), Member = "ZoomStart")]
-	[CalledBy(Type = typeof(BowItem), Member = "PressFire")]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "OnEnter_Setting")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(BowItem), Member = "PressFire")]
+	[CalledBy(Type = typeof(GunItem), Member = "ZoomStart")]
+	[CalledBy(Type = typeof(StoneItem), Member = "ZoomStart")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Trigger_Generic_Aim(OnAnimationEvent onAnimationComplete)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnAnimationEvent_Generic_Aim_Complete()
 	{
 	}
 
+	[CalledBy(Type = typeof(BearSpearItem), Member = "OnEnter_Recovering")]
+	[CalledBy(Type = typeof(GunItem), Member = "ZoomEnd")]
+	[CalledBy(Type = typeof(StoneItem), Member = "ZoomEnd")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "OnEnter_Recovering")]
-	[CalledBy(Type = typeof(GunItem), Member = "ZoomEnd")]
-	[CalledBy(Type = typeof(StoneItem), Member = "ZoomEnd")]
 	public void Trigger_Generic_Aim_Cancel(OnAnimationEvent onAnimationComplete, bool exhausted)
 	{
 	}
 
-	[CalledBy(Type = typeof(BowItem), Member = "ReleaseFire")]
-	[CalledBy(Type = typeof(BowItem), Member = "NockArrow")]
-	[CalledBy(Type = typeof(BowItem), Member = "ForceReady")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(BowItem), Member = "ExhaustedRelaxBow")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[CalledBy(Type = typeof(BowItem), Member = "ReleaseFire")]
+	[CalledBy(Type = typeof(BowItem), Member = "ForceReady")]
+	[CalledBy(Type = typeof(BowItem), Member = "NockArrow")]
+	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(BowItem), Member = "ExhaustedRelaxBow")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Trigger_Generic_BowAim_Cancel(OnAnimationEvent onAnimationComplete)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnAnimationEvent_Generic_Aim_Cancel_Complete()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	public void Trigger_Generic_Use(OnAnimationEvent useNowEventCallback, OnAnimationEvent useCompleteEventCallback)
 	{
 	}
@@ -1903,9 +1729,9 @@ public class PlayerAnimation : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ResetParams")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private void OnAnimationEvent_Generic_Use_Complete()
 	{
@@ -1918,66 +1744,63 @@ public class PlayerAnimation : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerStruggle), Member = "GetUpAnimationComplete")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerStruggle), Member = "GetUpAnimationComplete")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnAnimationEvent_Struggle_GetUp_Complete()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnAnimationEvent_Struggle_Play_MauledMuffle()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnAnimationEvent_Struggle_Stop_MauledMuffle()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerStunned), Member = "Begin")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerStruggle), Member = "InStruggleWithMoose")]
 	[Calls(Type = typeof(PlayerStruggle), Member = "GetStunnedDurationFromParter")]
-	[Calls(Type = typeof(PlayerStruggle), Member = "GetStunnedDurationFromParter")]
+	[Calls(Type = typeof(PlayerStunned), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	private void OnAnimationEvent_PlayerStunned_Begin()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	private void OnAnimationEvent_StartResumingFov()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	public bool Trigger_Generic_Throw(OnAnimationEvent releaseItemCallback, OnAnimationEvent throwCompleteCallback)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "TurnOffEffects")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "EnableEquipped")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnAnimationEvent_Generic_Throw_ReleaseItem()
 	{
 	}
@@ -1990,372 +1813,302 @@ public class PlayerAnimation : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Update_Aiming(bool aiming)
 	{
 	}
 
-	[Calls(Type = typeof(BowItem), Member = "GetNumArrowsInInventory")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(Inventory), Member = "GetNumStones")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Update")]
-	[Calls(Type = typeof(Inventory), Member = "GetAmmoAvailableForWeapon")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Inventory), Member = "GetAmmoAvailableForWeapon")]
+	[Calls(Type = typeof(BowItem), Member = "GetNumArrowsInInventory")]
+	[Calls(Type = typeof(Inventory), Member = "GetNumStones")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 15)]
 	public void Update_HasUnloadedAmmo()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
 	public void Update_IsLoaded(bool isLoaded)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(GunItem), Member = "Update")]
 	[CalledBy(Type = typeof(BowItem), Member = "UpdateBowStateAim")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetFloat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(GunItem), Member = "Update")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetFloat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void Update_WeaponFatigue(float fatigue)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Action_ShowHideHands), Member = "OnExecute")]
-	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "Stop")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ResetGameSettingsToNormal")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "BeginSpearStruggle")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Equip")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_AnimatedInteraction")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Spear_Struggle_Start")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Struggle_Start")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_show_hands")]
+	[CalledBy(Type = typeof(ShowHands), Member = "DoAction")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Start")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Reset")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_show_hands")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Struggle_Start")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Spear_Struggle_Start")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_AnimatedInteraction")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Equip")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "BeginSpearStruggle")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ResetGameSettingsToNormal")]
+	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "Stop")]
+	[CalledBy(Type = typeof(Action_ShowHideHands), Member = "OnExecute")]
 	[CallerCount(Count = 13)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(ShowHands), Member = "DoAction")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ClothingSpawner), Member = "EnableActiveClothing")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "EnableEquipped")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "EnableActiveClothing")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "EnableEquipped")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public void ShowHands()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Reset")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Action_ShowHideHands), Member = "OnExecute")]
-	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "Play")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "BreakStruggle")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_HiddenComplete")]
-	[CalledBy(Type = typeof(ShowHands), Member = "DoAction")]
-	[Calls(Type = typeof(ClothingSpawner), Member = "EnableActiveClothing")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "EnableEquipped")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "DisableAllClothing")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 8)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_show_hands")]
+	[CalledBy(Type = typeof(ShowHands), Member = "DoAction")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Reset")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_HiddenComplete")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "BreakStruggle")]
+	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "Play")]
+	[CalledBy(Type = typeof(Action_ShowHideHands), Member = "OnExecute")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ClothingSpawner), Member = "EnableActiveClothing")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "DisableAllClothing")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "EnableEquipped")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public void HideHands()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableRenderable")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	public void SetEquippedWeaponLeftHandVisible(bool visible)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableRenderable")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableRenderable")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public void SetEquippedWeaponRightHandVisible(bool visible)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableRenderable")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	public void SetEquippedWeaponShoulderVisible(bool visible)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Action_SetFpHands), Member = "DoWork")]
-	[CalledBy(Type = typeof(Action_SetFpHands), Member = "OnExecute")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_fphands_mesh")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(ClothingSpawner), Member = "GetCurrentHands")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Deserialize")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CalledBy(Type = typeof(Action_SetFpHands), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_SetFpHands), Member = "DoWork")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ClothingSpawner), Member = "GetCurrentHands")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void SetHandMeshState(string name)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "HideHands")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Start")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "HideHands")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "EnableActiveClothing")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public void DisableAllClothing()
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Start")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "ResetBoolIfExists")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "ResetWeaponParams")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Update_HasUnloadedAmmo")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetBool")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetInt")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetFloat")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "ResetTrigger")]
 	[CallerCount(Count = 36)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[Calls(Type = typeof(AnimatorParametersCache), Member = "RefreshCache")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 8)]
 	private bool GetParamExists(Animator animator, int paramHash)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 51)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 14)]
 	private void SetTrigger(int trigger)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 31)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 13)]
 	private void SetBool(int boolVar, bool boolVal)
 	{
 	}
 
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "DecrementBulletsToReload")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "ResetParams")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Equip")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Equip")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Fire")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_Fire_Complete")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateReloadCount")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Reload")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateReloadCount")]
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "ResetParams")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Reload")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "DecrementBulletsToReload")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
 	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "DecrementBulletsToReload")]
+	[CallsUnknownMethods(Count = 13)]
 	private void SetInt(int intVar, int intVal)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Update_WeaponFatigue")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 13)]
 	private void SetFloat(int floatVar, float floatVal)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "ResetParams")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "ResetStruggleStartEnd")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
 	[CallerCount(Count = 34)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "GetParamExists")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 14)]
 	private void ResetTrigger(int trigger)
 	{
 	}
 
-	[Calls(Type = typeof(Animator), Member = "SetLayerWeight")]
-	[CallsUnknownMethods(Count = 23)]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Reset")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Equip")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_Equip_ShowItem")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_Hidden")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "ShowHands")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_PlacementMode_HideItemInHands")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_Throw_ReleaseItem")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "ShowHands")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "HideHands")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeDropAndResetCurrentWeapon")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_PlacementMode_HideItemInHands")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Reset")]
-	[Calls(Type = typeof(Utils), Member = "UseHigherPrecisionTimestep")]
 	[CallerCount(Count = 9)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableRenderable")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableRenderable")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "EnableRenderable")]
+	[Calls(Type = typeof(Utils), Member = "UseHigherPrecisionTimestep")]
+	[Calls(Type = typeof(Animator), Member = "SetLayerWeight")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 23)]
 	private void EnableEquipped(bool active)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "ShowHands")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "DisableAllClothing")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "DisableAllClothing")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	public void EnableActiveClothing()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "DoChangeWeapon")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Breakdown_Intro")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Struggle_Start")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Breakdown_Intro")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "DoChangeWeapon")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(StruggleMeshTable), Member = "GetMesh")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(StruggleMeshTable), Member = "GetMesh")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 8)]
 	public void EnableWeapon(StruggleBonus.StruggleWeaponType weaponType)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "Start")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(StruggleMeshTable), Member = "GetMesh")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(StruggleMeshTable), Member = "GetMesh")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public GameObject GetRevolverMuzzleFlashGO(StruggleBonus.StruggleWeaponType weaponType)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Struggle_End")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "BreakStruggle")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Reset")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Struggle_End")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "BreakStruggle")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ResetWeaponParams")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void DisableWeapon()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(TLD_FPHandsTrack), Member = "Stop")]
-	[CalledBy(Type = typeof(TLD_FPHandsTrack), Member = "UpdatePlay")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetLayerOnObjectRecursively")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetLayerOnObjectRecursively")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
-	[Calls(Type = typeof(GameObject), Member = "set_layer")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(TLD_FPHandsTrack), Member = "UpdatePlay")]
+	[CalledBy(Type = typeof(TLD_FPHandsTrack), Member = "Stop")]
 	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(GameObject), Member = "set_layer")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "GetChild")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetLayerOnObjectRecursively")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 8)]
 	public static void SetLayerOnObjectRecursively(GameObject gameObject, int layer)
 	{
 	}
@@ -2366,6 +2119,9 @@ public class PlayerAnimation : MonoBehaviour
 		return default(CameraLayer);
 	}
 
+	[CalledBy(Type = typeof(global::CameraLayer), Member = "OnStateEnter")]
+	[CalledBy(Type = typeof(global::CameraLayer), Member = "OnStateUpdate")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "ExitDialogueMode")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateStart")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "AutoUnequipItemInHandsBeforeInteraction")]
@@ -2373,43 +2129,31 @@ public class PlayerAnimation : MonoBehaviour
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Struggle_Start")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Spear_Struggle_Start")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_AnimatedInteraction")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_AnimatedInteractionComplete")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Breakdown_Intro")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Equip")]
-	[CalledBy(Type = typeof(global::CameraLayer), Member = "OnStateUpdate")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "BeginSpearStruggle")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "GetUpAnimationComplete")]
-	[CallsUnknownMethods(Count = 22)]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_AnimatedInteractionComplete")]
-	[CalledBy(Type = typeof(global::CameraLayer), Member = "OnStateEnter")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "ExitDialogueMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 16)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetLayerOnObjectRecursively")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Transform), Member = "SetParent")]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetLayerOnObjectRecursively")]
 	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetLayerOnObjectRecursively")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetLayerOnObjectRecursively")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetLayerOnObjectRecursively")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "SetParent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetLayerOnObjectRecursively")]
+	[CallsUnknownMethods(Count = 22)]
 	public void SetCameraLayer(CameraLayer cameraLayer)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Start")]
-	[CalledBy(Type = typeof(global::CameraBasedHandPositioningMode), Member = "OnStateMachineExit")]
 	[CalledBy(Type = typeof(CellToilet), Member = "OnGottenUp")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(global::CameraBasedHandPositioningMode), Member = "OnStateMachineEnter")]
+	[CalledBy(Type = typeof(global::CameraBasedHandPositioningMode), Member = "OnStateMachineExit")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Start")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	public void SetCameraBasedHandPositioningMode(CameraBasedHandPositioningMode mode)
 	{
 	}
@@ -2426,51 +2170,51 @@ public class PlayerAnimation : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(FlyMode), Member = "TeleportPlayerAndExit")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(FlyMode), Member = "Enter")]
 	[CalledBy(Type = typeof(FlyMode), Member = "Exit")]
+	[CalledBy(Type = typeof(FlyMode), Member = "TeleportPlayerAndExit")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ShowPlayer(bool show)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(TriggerAnimationCallback), Member = "OnStateExit")]
+	[CalledBy(Type = typeof(AnimationEvents), Member = "DoExit")]
+	[CalledBy(Type = typeof(AnimationEvents), Member = "MaybeTriggerEvent")]
 	[CalledBy(Type = typeof(TriggerAnimationCallback), Member = "OnStateEnter")]
 	[CalledBy(Type = typeof(TriggerAnimationCallback), Member = "OnStateExit")]
-	[CalledBy(Type = typeof(AnimationEvents), Member = "DoExit")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(AnimationEvents), Member = "MaybeTriggerEvent")]
 	[CalledBy(Type = typeof(TriggerAnimationCallback), Member = "OnStateUpdate")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool TriggerCallback(AnimationCallbackEvent animationCallbackEvent)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerStruggle), Member = "WinHunted2Challenge")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void DraggingAnimationEnd()
 	{
 	}
 
-	[Calls(Type = typeof(vp_FPSCamera), Member = "DeactivateAllWeapons")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Reset")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "DropCurrentItemInHand")]
 	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnTakeTorch")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "TurnOffEffects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "EnableEquipped")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "TurnOffEffects")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "EnableEquipped")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "DropCurrentItemInHand")]
+	[Calls(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "DeactivateAllWeapons")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Reset")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	public void MaybeDropAndResetCurrentWeapon()
 	{
 	}
@@ -2478,7 +2222,7 @@ public class PlayerAnimation : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsLooking()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -2492,45 +2236,42 @@ public class PlayerAnimation : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Update")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
-	[Calls(Type = typeof(Transform), Member = "get_up")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(Vector3), Member = "RotateTowards")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Vector3), Member = "RotateTowards")]
+	[Calls(Type = typeof(Transform), Member = "get_up")]
+	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 13)]
 	private void UpdateLookAtTarget()
 	{
 	}
 
 	[CalledBy(Type = typeof(Condition), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	public bool GetCinematicBlurValue(out float value)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref value) = null;
-		return default(bool);
+		value = default(float);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioFade")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioFade")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Panel_HUD), Member = "SetCinematicBlackout")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioFade")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 10)]
 	private void MaybeUpdateCinematicFade()
 	{
 	}
@@ -2539,213 +2280,194 @@ public class PlayerAnimation : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsAnimationDrivenViewBobEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "UpdateZoom")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "UpdateZoom")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	public float GetAimingZoomBlend()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool CanInteract()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsDequipping()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsUnstowing()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsStowed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsAiming()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsEnteringAiming()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsAimingDownSight()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsReloading()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CalledBy(Type = typeof(BowItem), Member = "ReleaseFire")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Fire")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
 	public bool IsBowAllowedToFire()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsInteractionAllowed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsShowing()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Fire")]
-	[CalledBy(Type = typeof(GunItem), Member = "IsAiming")]
+	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
 	[CalledBy(Type = typeof(GunItem), Member = "Update")]
-	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
-	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
+	[CalledBy(Type = typeof(GunItem), Member = "IsAiming")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Fire")]
+	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	public bool IsAllowedToFire(bool allowHipFire)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
 	[CallerCount(Count = 0)]
 	public bool IsAllowedToAim()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "InputZoom")]
 	[CalledBy(Type = typeof(CharcoalItem), Member = "StartDetailSurvey")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Throw")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public bool CanTransitionToState(State state)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 16)]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Update")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 16)]
 	private Vector3 ComputeDampedVelocity(Vector3 newVelocity)
 	{
 		return default(Vector3);
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "KnockedDownByAI")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "ApplyFallImpact")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "KnockedDownByAI")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 8)]
 	public void Trigger_Knockdown()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public List<Animator> GetGlobalAnimationList()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void RegisterAnimator(Animator animator)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void UnregisterAnimator(Animator animator)
 	{
 	}
 
-	[Calls(Type = typeof(FirstPersonLightSource), Member = "Reset")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_HiddenComplete")]
-	[Calls(Type = typeof(FirstPersonLightSource), Member = "Reset")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FirstPersonLightSource), Member = "Reset")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(FirstPersonLightSource), Member = "Reset")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public void ResetLightSources()
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_AnimatedInteractionComplete")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_Hidden")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_Throw_ReleaseItem")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_AnimatedInteractionComplete")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(FirstPersonLightSource), Member = "TurnOffEffects")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeDropAndResetCurrentWeapon")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FirstPersonLightSource), Member = "TurnOffEffects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(FirstPersonLightSource), Member = "TurnOffEffects")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public void TurnOffEffects()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(FirstPersonLightSource), Member = "TurnOnEffects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FirstPersonLightSource), Member = "TurnOnEffects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FirstPersonLightSource), Member = "TurnOnEffects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(FirstPersonLightSource), Member = "TurnOnEffects")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public void TurnOnEffects()
 	{
 	}
@@ -2757,7 +2479,6 @@ public class PlayerAnimation : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
 	public void SetLimp(bool islimpingleft, bool islimpingright)
 	{
 	}
@@ -2768,51 +2489,51 @@ public class PlayerAnimation : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public int GetHipLayerIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(CinematicManager), Member = "StartMasterNPC")]
-	[CalledBy(Type = typeof(CinematicManager), Member = "StartMasterFP")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(CinematicTrack), Member = "LoadCinematicAsync")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerIsInvisibleToAi")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "IsReadyToEquip")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerIsInvisibleToAi")]
+	[CalledBy(Type = typeof(CinematicManager), Member = "StartMasterFP")]
+	[CalledBy(Type = typeof(CinematicManager), Member = "StartMasterNPC")]
+	[CalledBy(Type = typeof(CinematicTrack), Member = "LoadCinematicAsync")]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public CinematicManager GetFPCinematicManager()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
 	[Calls(Type = typeof(Animator), Member = "set_speed")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	private void UpdateAnimatorSpeed()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Reset")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Reset")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ResetStandardAimingMode()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "FullReset")]
 	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "FullReset")]
 	[CallsUnknownMethods(Count = 1)]
 	public void FullResetAimingModes()
@@ -2821,16 +2542,15 @@ public class PlayerAnimation : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "ResetForStruggle")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "ResetForStruggle")]
 	[CallsUnknownMethods(Count = 1)]
 	public void ResetAimingModesForStruggle()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 81)]
 	[Calls(Type = typeof(AnimatorParametersCache), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 81)]
 	[CallsUnknownMethods(Count = 101)]
 	public PlayerAnimation()
 	{

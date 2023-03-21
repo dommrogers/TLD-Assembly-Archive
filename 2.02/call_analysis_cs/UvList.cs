@@ -17,31 +17,29 @@ public class UvList : ScriptableObject
 	{
 	}
 
-	[CalledBy(Type = typeof(SnowImprintExpanded), Member = ".ctor")]
-	[CalledBy(Type = typeof(SnowImprintExpanded), Member = ".ctor")]
-	[CalledBy(Type = typeof(SnowImprintExpanded), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "TryGetStaticDecalUvs")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RenderDynamicDecal")]
+	[CalledBy(Type = typeof(SnowImprintExpanded), Member = ".ctor")]
+	[CallerCount(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public Vector4 GetUvs(string texName)
 	{
 		return default(Vector4);
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "TryGetStaticDecalUvs")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Deserialize")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public bool HasUvs(string texName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public UvList()
 	{
 	}

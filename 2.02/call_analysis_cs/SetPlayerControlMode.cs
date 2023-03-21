@@ -16,18 +16,17 @@ public class SetPlayerControlMode : StateMachineBehaviour
 	private PlayerControlMode m_RestoreMode;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[CallsUnknownMethods(Count = 4)]
 	public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{

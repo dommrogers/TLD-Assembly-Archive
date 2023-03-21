@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
@@ -18,74 +17,72 @@ public class OctreePoint<T> where T : class
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 14)]
+		[CallerCount(Count = 34)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		private set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public OctreePoint(float initialWorldSize, Vector3 initialWorldPos, float minNodeSize)
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Add(T obj, Vector3 objPos)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 5)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool Remove(T obj)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public T[] GetNearby(Ray ray, float maxDistance)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void DrawAllBounds()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void DrawAllObjects()
 	{
 	}
@@ -98,10 +95,10 @@ public class OctreePoint<T> where T : class
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Shrink()
 	{
 	}
@@ -110,6 +107,6 @@ public class OctreePoint<T> where T : class
 	[CallerCount(Count = 0)]
 	private static int GetRootPosIndex(int xDir, int yDir, int zDir)
 	{
-		return default(int);
+		return 0;
 	}
 }

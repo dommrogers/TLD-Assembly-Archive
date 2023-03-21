@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -25,44 +24,44 @@ public class FlickerModuleSet : ScriptableObject
 
 	private float m_MaxIntensity;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(FlickerModuleSet), Member = "ProcessIntensity")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public float ProcessIntensity(List<float> moduleTimeValues, float inputIntensity)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
 	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "UpdateIntensity")]
 	[CalledBy(Type = typeof(FlickerModuleSet), Member = "ProcessIntensity")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
 	[CallsUnknownMethods(Count = 2)]
 	private float ProcessIntensity(FlickerValueGenerator valueGenerator, float timeValue, float inputIntensity, FlickerAmplitudeParameters amMods, IntensityOperation operation)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(Random), Member = "Range")]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetRandomFlickerDuration()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetMaxIntensity()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float Remap(float value, float inMin, float inMax, float toMin, float toMax)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

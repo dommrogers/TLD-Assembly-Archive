@@ -13,10 +13,10 @@ public class IceCrackingWarningTrigger : MonoBehaviour
 
 	public bool m_SetLayerToTriggerIgnoreRaycast;
 
-	[Calls(Type = typeof(vp_Layer), Member = "Set")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_Layer), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
@@ -28,10 +28,10 @@ public class IceCrackingWarningTrigger : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Component), Member = "CompareTag")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
 	private void OnTriggerEnter(Collider other)
 	{

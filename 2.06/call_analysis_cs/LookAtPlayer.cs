@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class LookAtPlayer : MonoBehaviour
 {
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Transform), Member = "LookAt")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "LookAt")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	private void Update()
 	{
 	}

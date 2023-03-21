@@ -12,17 +12,17 @@ public abstract class AkObstructionOcclusion : MonoBehaviour
 		public float targetValue;
 
 		[CalledBy(Type = typeof(AkObstructionOcclusion), Member = "Update")]
-		[Calls(Type = typeof(Mathf), Member = "Approximately")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Mathf), Member = "Approximately")]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public bool Update(float fadeRate)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public ObstructionOcclusionValue()
 		{
 		}
@@ -46,61 +46,62 @@ public abstract class AkObstructionOcclusion : MonoBehaviour
 
 	private float refreshTime;
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(AkEmitterObstructionOcclusion), Member = "Awake")]
 	[CalledBy(Type = typeof(AkRoomPortalObstruction), Member = "Awake")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected void InitIntervalsAndFadeRates()
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract void UpdateCurrentListenerList();
 
 	[CalledBy(Type = typeof(AkObstructionOcclusion), Member = "Update")]
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 19)]
 	private void UpdateObstructionOcclusionValues()
 	{
 	}
 
+	[CalledBy(Type = typeof(AkObstructionOcclusion), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(Physics), Member = "Raycast")]
-	[CalledBy(Type = typeof(AkObstructionOcclusion), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 13)]
 	private void CastRays()
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract void SetObstructionOcclusion(KeyValuePair<AkAudioListener, ObstructionOcclusionValue> ObsOccPair);
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(ObstructionOcclusionValue), Member = "Update")]
-	[Calls(Type = typeof(AkObstructionOcclusion), Member = "CastRays")]
-	[Calls(Type = typeof(AkObstructionOcclusion), Member = "UpdateObstructionOcclusionValues")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(AkObstructionOcclusion), Member = "UpdateObstructionOcclusionValues")]
+	[Calls(Type = typeof(AkObstructionOcclusion), Member = "CastRays")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(ObstructionOcclusionValue), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkEmitterObstructionOcclusion), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkRoomPortalObstruction), Member = ".ctor")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 22)]
 	protected AkObstructionOcclusion()
 	{

@@ -20,12 +20,12 @@ public sealed class DepthOfField : PostProcessEffectSettings
 	[CallsUnknownMethods(Count = 2)]
 	public override bool IsEnabledAndSupported(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 21)]
 	public DepthOfField()
 	{

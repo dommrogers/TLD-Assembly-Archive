@@ -19,8 +19,8 @@ public class SetField : ActionTask
 
 	public override Type agentType
 	{
-		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 		get
 		{
 			return null;
@@ -30,8 +30,8 @@ public class SetField : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(string), Member = "Format")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -39,19 +39,20 @@ public class SetField : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ReflectionTools), Member = "RTGetField")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected override string OnInit()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(FieldInfo), Member = "SetValue")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Task), Member = "get_agent")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(FieldInfo), Member = "SetValue")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

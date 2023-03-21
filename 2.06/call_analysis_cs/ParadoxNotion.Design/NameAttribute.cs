@@ -10,7 +10,7 @@ public class NameAttribute : Attribute
 	public readonly int priority;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 22)]
+	[CallerCount(Count = 23)]
 	public NameAttribute(string name, int priority = 0)
 	{
 	}

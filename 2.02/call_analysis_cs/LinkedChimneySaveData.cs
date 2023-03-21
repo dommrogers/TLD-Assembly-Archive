@@ -7,7 +7,7 @@ public class LinkedChimneySaveData
 	public string m_ChimneyGuid;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public LinkedChimneySaveData()
 	{
 	}

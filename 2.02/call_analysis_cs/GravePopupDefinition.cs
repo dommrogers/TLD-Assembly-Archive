@@ -9,16 +9,13 @@ public class GravePopupDefinition : PopupDefinition
 
 	public LocalizedString m_GraveNumber;
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	protected override void ConfigurePopup(GameObject go)
 	{
 	}

@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -12,23 +11,23 @@ public class InterceptEvent : ConditionTask<Transform>
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Task), Member = "get_agentInfo")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Task), Member = "RegisterEvents")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Task), Member = "RegisterEvents")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	protected override string OnInit()
 	{
 		return null;
@@ -38,7 +37,7 @@ public class InterceptEvent : ConditionTask<Transform>
 	[CallerCount(Count = 0)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -57,10 +56,10 @@ public class InterceptEvent : ConditionTask<Transform>
 	{
 	}
 
-	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
-	[Calls(Type = typeof(ConditionTask), Member = "Flip")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConditionTask), Member = "Flip")]
+	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
 	private void OnPointerDown(PointerEventData eventData)
 	{
 	}
@@ -81,10 +80,10 @@ public class InterceptEvent : ConditionTask<Transform>
 	{
 	}
 
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
-	[Calls(Type = typeof(ConditionTask), Member = "Flip")]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConditionTask), Member = "Flip")]
+	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
 	private void OnDrag(PointerEventData eventData)
 	{
 	}
@@ -105,10 +104,10 @@ public class InterceptEvent : ConditionTask<Transform>
 	{
 	}
 
-	[Calls(Type = typeof(ConditionTask), Member = "Flip")]
-	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConditionTask), Member = "Flip")]
+	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
 	private void OnUpdateSelected(BaseEventData eventData)
 	{
 	}
@@ -137,10 +136,10 @@ public class InterceptEvent : ConditionTask<Transform>
 	{
 	}
 
-	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
-	[Calls(Type = typeof(ConditionTask), Member = "Flip")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConditionTask), Member = "Flip")]
+	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
 	private void OnSubmit(BaseEventData eventData)
 	{
 	}

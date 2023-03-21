@@ -18,17 +18,16 @@ public class TLD_CheckObjectEvent : ConditionTask<GraphOwner>
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 3)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(Enum), Member = "ToString")]
-		[Calls(Type = typeof(int), Member = "ToString")]
-		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(int), Member = "ToString")]
+		[Calls(Type = typeof(Enum), Member = "ToString")]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
@@ -39,24 +38,23 @@ public class TLD_CheckObjectEvent : ConditionTask<GraphOwner>
 	[CallerCount(Count = 0)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnCustomEvent(EventData receivedEvent)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 7)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsUnknownMethods(Count = 6)]
 	public TLD_CheckObjectEvent()
 	{
 		((ConditionTask<>)(object)this)._002Ector();

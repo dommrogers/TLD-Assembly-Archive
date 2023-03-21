@@ -5,14 +5,14 @@ using UnityEngine;
 [Serializable]
 public class ExampleCommandsUnityScript : MonoBehaviour
 {
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public virtual void Start()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public virtual void EchoNothing()
 	{
 	}

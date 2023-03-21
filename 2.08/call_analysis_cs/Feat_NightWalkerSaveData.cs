@@ -4,8 +4,8 @@ public class Feat_NightWalkerSaveData
 {
 	public bool m_Unlocked;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public Feat_NightWalkerSaveData()
 	{
 	}

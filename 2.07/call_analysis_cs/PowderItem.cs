@@ -22,15 +22,14 @@ public class PowderItem : MonoBehaviour
 	public float m_WeightLimitKG;
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "AddPowderToInventory")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "AddPowderToInventory")]
 	[CallerCount(Count = 2)]
 	public float Add(float amount)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	public void Deserialize(string serialized)
 	{
 	}

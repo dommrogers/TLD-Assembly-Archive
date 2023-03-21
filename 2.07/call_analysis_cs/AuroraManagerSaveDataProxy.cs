@@ -18,8 +18,8 @@ public class AuroraManagerSaveDataProxy
 
 	public int m_NumAurorasForSave;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public AuroraManagerSaveDataProxy()
 	{
 	}

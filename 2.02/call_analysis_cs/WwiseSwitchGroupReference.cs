@@ -6,17 +6,17 @@ public class WwiseSwitchGroupReference : WwiseObjectReference
 
 	public override WwiseObjectType WwiseObjectType
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return default(WwiseObjectType);
 		}
 	}
 
-	[Calls(Type = typeof(WwiseObjectReference), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(WwiseObjectReference), Member = ".ctor")]
 	public WwiseSwitchGroupReference()
 	{
 	}

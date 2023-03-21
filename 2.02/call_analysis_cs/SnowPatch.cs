@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -46,13 +45,13 @@ public class SnowPatch
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(SnowPatchManager), Member = "AddPatch")]
-	[Calls(Type = typeof(Bounds), Member = "get_size")]
-	[Calls(Type = typeof(Utils), Member = "GeneratePatchCoefficients")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(Utils), Member = "GeneratePatchCoefficients")]
+	[Calls(Type = typeof(Bounds), Member = "get_size")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Initialize(Vector3 centrePos, float boundsSize)
 	{
 	}
@@ -65,12 +64,12 @@ public class SnowPatch
 	[CallerCount(Count = 0)]
 	public bool RemoveReference()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(SnowPatchManager), Member = "LateUpdate")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(SnowPatchManager), Member = "LateUpdate")]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnRenderCapture(int captureTick, Camera cam)
 	{
@@ -82,49 +81,44 @@ public class SnowPatch
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GeneratePatchCoefficients")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void GeneratePatchCoefficients(Vector3 minPos, Vector3 maxPos, ref Vector3[] hermiteCoefficients, out float deviationWeight)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref deviationWeight) = null;
+		deviationWeight = default(float);
 	}
 
 	[CalledBy(Type = typeof(SnowPatch), Member = "AddImprint")]
-	[CalledBy(Type = typeof(SnowPatch), Member = "AddImprint")]
-	[Calls(Type = typeof(Utils), Member = "GetPatchHeightAtPosition")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(Utils), Member = "GetPatchHeightAtPosition")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private float GetPatchHeightAtPosition(Vector3 pos)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Vector3), Member = "get_one")]
 	[Calls(Type = typeof(Utils), Member = "GetPatchHeightTangentAtPosition")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private float GetPatchHeightTangentAtPosition(Vector3 pos)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 32)]
 	[CalledBy(Type = typeof(SnowPatchManager), Member = "AddImprint")]
-	[Calls(Type = typeof(Utils), Member = "GetPatchHeightTangentAtPosition")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(SnowPatch), Member = "GetPatchHeightAtPosition")]
-	[Calls(Type = typeof(Bounds), Member = "Intersects")]
-	[Calls(Type = typeof(Bounds), Member = "Intersects")]
-	[Calls(Type = typeof(Bounds), Member = "Intersects")]
-	[Calls(Type = typeof(SnowImprintExpanded), Member = ".ctor")]
-	[Calls(Type = typeof(SnowPatch), Member = "GetPatchHeightAtPosition")]
-	[Calls(Type = typeof(SnowImprint), Member = "get_Position")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SnowImprint), Member = "get_Position")]
+	[Calls(Type = typeof(SnowPatch), Member = "GetPatchHeightAtPosition")]
+	[Calls(Type = typeof(SnowImprintExpanded), Member = ".ctor")]
 	[Calls(Type = typeof(Bounds), Member = "Intersects")]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(Utils), Member = "GetPatchHeightTangentAtPosition")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 32)]
 	public int AddImprint(ref SnowImprint imprint, Bounds imprintBounds, int typeMask = -1)
 	{
-		return default(int);
+		return 0;
 	}
 }

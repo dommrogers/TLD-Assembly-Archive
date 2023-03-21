@@ -7,8 +7,8 @@ namespace Users;
 public class PermissionIdConstantsPlugin
 {
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr PermissionIdConstants_BroadcastWithTwitch();
 
 	[PreserveSig]
@@ -37,8 +37,8 @@ public class PermissionIdConstantsPlugin
 	public static extern IntPtr PermissionIdConstants_ViewTargetExerciseInfo();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr PermissionIdConstants_ViewTargetGameHistory();
 
 	[PreserveSig]
@@ -62,13 +62,13 @@ public class PermissionIdConstantsPlugin
 	public static extern IntPtr PermissionIdConstants_ViewTargetProfile();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr PermissionIdConstants_ViewTargetVideoHistory();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr PermissionIdConstants_ViewTargetVideoStatus();
 
 	[DeduplicatedMethod]

@@ -9,12 +9,12 @@ public class CreateLobbySearchOptions
 
 	public uint MaxResults
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 7)]
-		[CompilerGenerated]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -25,7 +25,7 @@ public class CreateLobbySearchOptions
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CreateLobbySearchOptions()
 	{
 	}

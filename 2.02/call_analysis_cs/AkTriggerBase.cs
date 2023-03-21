@@ -10,14 +10,11 @@ public abstract class AkTriggerBase : MonoBehaviour
 	public Trigger triggerDelegate;
 
 	[CalledBy(Type = typeof(AkTriggerHandler), Member = ".cctor")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(AkUtilities.ShortIDGenerator), Member = "Compute")]
-	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(AkUtilities.ShortIDGenerator), Member = "Compute")]
 	[CallsDeduplicatedMethods(Count = 12)]
-	[Calls(Type = typeof(AkUtilities.ShortIDGenerator), Member = "Compute")]
-	[Calls(Type = typeof(AkUtilities.ShortIDGenerator), Member = "Compute")]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 25)]
 	public static Dictionary<uint, string> GetAllDerivedTypes()
 	{
 		return null;

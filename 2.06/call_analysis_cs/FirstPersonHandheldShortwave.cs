@@ -19,50 +19,49 @@ public class FirstPersonHandheldShortwave : MonoBehaviour
 
 	private float m_LedBlinkTimer;
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(FirstPersonHandheldShortwave), Member = "UpdateIntensityNeedle")]
 	[Calls(Type = typeof(FirstPersonHandheldShortwave), Member = "UpdateBlinkingLight")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void LateUpdate()
 	{
 	}
 
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Mathf), Member = "LerpAngle")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[CalledBy(Type = typeof(FirstPersonHandheldShortwave), Member = "LateUpdate")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(HandheldShortwaveItem), Member = "IsActive")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(HandheldShortwaveItem), Member = "IsActive")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Mathf), Member = "LerpAngle")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateIntensityNeedle(HandheldShortwaveItem hhsw)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[CalledBy(Type = typeof(FirstPersonHandheldShortwave), Member = "LateUpdate")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateBlinkingLight(HandheldShortwaveItem hhsw)
 	{
 	}

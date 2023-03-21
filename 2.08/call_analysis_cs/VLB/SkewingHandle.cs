@@ -22,7 +22,7 @@ public class SkewingHandle : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -33,23 +33,23 @@ public class SkewingHandle : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		public _003CCoUpdate_003Ed__8(int _003C_003E1__state)
 		{
 		}
 
-		[CallerCount(Count = 6)]
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
@@ -60,13 +60,13 @@ public class SkewingHandle : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 4)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -76,24 +76,24 @@ public class SkewingHandle : MonoBehaviour
 
 	public bool shouldUpdateEachFrame;
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public bool IsAttachedToSelf()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SkewingHandle), Member = "Start")]
+	[CalledBy(Type = typeof(_003CCoUpdate_003Ed__8), Member = "MoveNext")]
+	[CalledBy(Type = typeof(SkewingHandle), Member = "CanUpdateEachFrame")]
 	[CalledBy(Type = typeof(SkewingHandle), Member = "ShouldUpdateEachFrame")]
 	[CalledBy(Type = typeof(SkewingHandle), Member = "OnEnable")]
-	[CalledBy(Type = typeof(_003CCoUpdate_003Ed__8), Member = "MoveNext")]
+	[CalledBy(Type = typeof(SkewingHandle), Member = "Start")]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(SkewingHandle), Member = "CanUpdateEachFrame")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool CanSetSkewingVector()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -101,15 +101,15 @@ public class SkewingHandle : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool CanUpdateEachFrame()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SkewingHandle), Member = "CanSetSkewingVector")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private bool ShouldUpdateEachFrame()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -119,27 +119,27 @@ public class SkewingHandle : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SkewingHandle), Member = "CanSetSkewingVector")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[IteratorStateMachine(typeof(_003CCoUpdate_003Ed__8))]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private IEnumerator CoUpdate()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(_003CCoUpdate_003Ed__8), Member = "MoveNext")]
 	[CalledBy(Type = typeof(SkewingHandle), Member = "OnEnable")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	private void SetSkewingVector()
 	{

@@ -64,9 +64,9 @@ public class LoadScene : LockedInteraction
 
 	public LoadingZone PartnerLoadingZone
 	{
-		[CallerCount(Count = 1)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
 		get
 		{
 			return null;
@@ -85,7 +85,7 @@ public class LoadScene : LockedInteraction
 		[Calls(Type = typeof(BaseHoldInteraction), Member = "get_CanInteract")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -95,42 +95,42 @@ public class LoadScene : LockedInteraction
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
 	private void AssignBindingOverrides()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(vp_Layer), Member = "Set")]
-	[Calls(Type = typeof(LoadScene), Member = "GetSceneToLoad")]
-	[Calls(Type = typeof(Lock), Member = "RollLockedState")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Collider), Member = "set_isTrigger")]
-	[Calls(Type = typeof(LoadSceneParent), Member = "Start")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(LoadSceneParent), Member = "Start")]
 	[Calls(Type = typeof(GameObject), Member = "get_layer")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Collider), Member = "set_isTrigger")]
+	[Calls(Type = typeof(vp_Layer), Member = "Set")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Lock), Member = "RollLockedState")]
+	[Calls(Type = typeof(LoadScene), Member = "GetSceneToLoad")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(LoadScene), Member = "PerformSceneLoad")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowSaveGameFailedSaveNotification")]
-	[Calls(Type = typeof(GameManager), Member = "LoadMainMenu")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LoadScene), Member = "Activate")]
+	[Calls(Type = typeof(GameManager), Member = "AllowedToSave")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
 	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
 	[Calls(Type = typeof(GameManager), Member = "OnGameQuit")]
-	[Calls(Type = typeof(GameManager), Member = "AllowedToSave")]
-	[Calls(Type = typeof(LoadScene), Member = "Activate")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(GameManager), Member = "LoadMainMenu")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowSaveGameFailedSaveNotification")]
+	[Calls(Type = typeof(LoadScene), Member = "PerformSceneLoad")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private void Update()
 	{
 	}
@@ -143,28 +143,26 @@ public class LoadScene : LockedInteraction
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(LoadScene), Member = "SerializeAll")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Lock), Member = "Serialize")]
-	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Lock), Member = "Serialize")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(LoadScene), Member = "DeserializeAll")]
-	[CalledBy(Type = typeof(LoadScene), Member = "DeserializeAll")]
-	[CalledBy(Type = typeof(LoadScene), Member = "DeserializeAll")]
-	[CalledBy(Type = typeof(LoadScene), Member = "DeserializeAll")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Lock), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
@@ -176,78 +174,73 @@ public class LoadScene : LockedInteraction
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(SaveGameSlots), Member = "AddGUIDToPrevSceneSave")]
 	[Calls(Type = typeof(LoadScene), Member = "MarkExplored")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void MaybeAddGUIDToPrevSceneSave()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(LoadScene), Member = "Serialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(LoadScene), Member = "Serialize")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 9)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 31)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(LoadScene), Member = "Deserialize")]
-	[Calls(Type = typeof(LoadScene), Member = "Deserialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(LoadScene), Member = "Deserialize")]
+	[Calls(Type = typeof(LoadScene), Member = "FindLoadSceneByGuid")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(LoadScene), Member = "FindLoadSceneByPosition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(LoadScene), Member = "FindLoadSceneByGuid")]
-	[Calls(Type = typeof(LoadScene), Member = "Deserialize")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 31)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
+	[CalledBy(Type = typeof(LoadingZone), Member = "PerformInteraction")]
+	[CalledBy(Type = typeof(LoadScene), Member = "Update")]
+	[CalledBy(Type = typeof(LoadScene), Member = "PerformInteraction")]
+	[CalledBy(Type = typeof(LoadScene), Member = "OnTriggerEnter")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_jump_to_loadingzone")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_jump_to_interior")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "StowOrDropPlaceMesh")]
+	[Calls(Type = typeof(LoadScene), Member = "GetSceneToLoad")]
+	[Calls(Type = typeof(GameManager), Member = "IsOutDoorsScene")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[Calls(Type = typeof(LoadScene), Member = "MarkExplored")]
+	[Calls(Type = typeof(AchievementManager), Member = "ExploredNewInterior")]
+	[Calls(Type = typeof(GameManager), Member = "AllowedToSave")]
+	[Calls(Type = typeof(LoadScene), Member = "PerformSceneLoad")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[CalledBy(Type = typeof(LoadingZone), Member = "PerformInteraction")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_jump_to_loadingzone")]
-	[CalledBy(Type = typeof(LoadScene), Member = "OnTriggerEnter")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_jump_to_interior")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 16)]
-	[CalledBy(Type = typeof(LoadScene), Member = "Update")]
-	[Calls(Type = typeof(LoadScene), Member = "PerformSceneLoad")]
-	[CalledBy(Type = typeof(LoadScene), Member = "PerformInteraction")]
-	[Calls(Type = typeof(AchievementManager), Member = "ExploredNewInterior")]
-	[CallerCount(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "StowOrDropPlaceMesh")]
-	[Calls(Type = typeof(GameManager), Member = "AllowedToSave")]
-	[Calls(Type = typeof(GameManager), Member = "IsOutDoorsScene")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(LoadScene), Member = "MarkExplored")]
-	[Calls(Type = typeof(LoadScene), Member = "GetSceneToLoad")]
 	public void Activate()
 	{
 	}
@@ -259,75 +252,71 @@ public class LoadScene : LockedInteraction
 		return null;
 	}
 
-	[CalledBy(Type = typeof(LoadScene), Member = "Activate")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(LoadScene), Member = "MaybeAddGUIDToPrevSceneSave")]
+	[CalledBy(Type = typeof(LoadScene), Member = "Activate")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(LoadScene), Member = "MarkBrothersExplored")]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(LoadSceneParent), Member = "MarkChildrenExplored")]
+	[CallsUnknownMethods(Count = 1)]
 	public void MarkExplored()
 	{
 	}
 
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(LoadScene), Member = "Start")]
 	[CalledBy(Type = typeof(LoadScene), Member = "Activate")]
 	[CalledBy(Type = typeof(LoadScene), Member = "PerformSceneLoad")]
 	[CalledBy(Type = typeof(Utils), Member = "InferOutdoorSceneName")]
+	[CallerCount(Count = 4)]
 	[CallsUnknownMethods(Count = 1)]
 	public string GetSceneToLoad()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(LockedInteraction), Member = "IsLocked")]
 	[Calls(Type = typeof(TimedHoldInteraction), Member = "InitializeInteraction")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(LockedInteraction), Member = "IsLocked")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Localization), Member = "Exists")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void InitializeInteraction()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(LockedInteraction), Member = "PerformLockInteraction")]
-	[Calls(Type = typeof(TimedHoldInteraction), Member = "PerformHold")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(LockedInteraction), Member = "IsLocked")]
-	[Calls(Type = typeof(BodyCarry), Member = "ShowError")]
-	[Calls(Type = typeof(NPC), Member = "HasActive")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(NPC), Member = "HasActive")]
+	[Calls(Type = typeof(BodyCarry), Member = "ShowError")]
+	[Calls(Type = typeof(LockedInteraction), Member = "IsLocked")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
+	[Calls(Type = typeof(TimedHoldInteraction), Member = "PerformHold")]
+	[Calls(Type = typeof(LockedInteraction), Member = "PerformLockInteraction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public override bool PerformHold()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void AnimatedInteractionDone()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LoadScene), Member = "Activate")]
 	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
-	[CallerCount(Count = 0)]
 	public override bool PerformInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -342,15 +331,15 @@ public class LoadScene : LockedInteraction
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(LoadScene), Member = "Activate")]
-	[Calls(Type = typeof(GameManager), Member = "LoadScene")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(LoadScene), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(LoadScene), Member = "Activate")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(LoadScene), Member = "GetSceneToLoad")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(GameManager), Member = "LoadScene")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void PerformSceneLoad()
 	{
 	}
@@ -363,39 +352,40 @@ public class LoadScene : LockedInteraction
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = "CompareTag")]
 	[Calls(Type = typeof(LoadScene), Member = "Activate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnTriggerEnter(Collider other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(LoadScene), Member = "MarkExplored")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void MarkBrothersExplored()
 	{
 	}
 
+	[CalledBy(Type = typeof(LoadScene), Member = "DeserializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(LoadScene), Member = "DeserializeAll")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[CallsUnknownMethods(Count = 1)]
 	private static LoadScene FindLoadSceneByGuid(string guid)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(LoadScene), Member = "DeserializeAll")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private static LoadScene FindLoadSceneByPosition(LoadSceneSaveDataProxy proxy)
 	{
 		return null;

@@ -14,9 +14,9 @@ internal struct CopyLobbyDetailsHandleByInviteIdOptionsInternal : ISettable, IDi
 	public string InviteId
 	{
 		[CalledBy(Type = typeof(CopyLobbyDetailsHandleByInviteIdOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(CopyLobbyDetailsHandleByInviteIdOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -29,17 +29,17 @@ internal struct CopyLobbyDetailsHandleByInviteIdOptionsInternal : ISettable, IDi
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(CopyLobbyDetailsHandleByInviteIdOptionsInternal), Member = "set_InviteId")]
 	[CalledBy(Type = typeof(LobbyInterface), Member = "CopyLobbyDetailsHandleByInviteId")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CopyLobbyDetailsHandleByInviteIdOptionsInternal), Member = "set_InviteId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

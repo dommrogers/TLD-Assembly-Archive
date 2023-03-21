@@ -38,34 +38,24 @@ public abstract class WrappedCachedMap<T> : IDisposable, IWrappedObject where T 
 
 	public T Item
 	{
-		[CallsDeduplicatedMethods(Count = 3)]
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return (T)null;
+			return default(T);
 		}
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract T LookupElementImpl(IntPtr self, string key);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract void SetupLengthImpl(IntPtr self);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract void DisposeChildImpl();
 
-	[CallerCount(Count = 121780)]
-	[DeduplicatedMethod]
 	protected abstract bool HasKeyImpl(IntPtr self, string key);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract FullWrappedCacheMapEnumerable<T> CreateIteratorImpl(IntPtr self);
 
 	[DeduplicatedMethod]
@@ -74,7 +64,7 @@ public abstract class WrappedCachedMap<T> : IDisposable, IWrappedObject where T 
 	[CallsUnknownMethods(Count = 1)]
 	public bool HasKey(string key)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -93,25 +83,25 @@ public abstract class WrappedCachedMap<T> : IDisposable, IWrappedObject where T 
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public void SetNativePtr(IntPtr self)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 29)]
+	[CallerCount(Count = 35)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Dispose()
 	{

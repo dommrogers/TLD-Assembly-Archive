@@ -23,10 +23,10 @@ internal struct QueryStatsOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId LocalUserId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(QueryStatsOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -34,10 +34,10 @@ internal struct QueryStatsOptionsInternal : ISettable, IDisposable
 
 	public DateTimeOffset? StartTime
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(QueryStatsOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -46,8 +46,8 @@ internal struct QueryStatsOptionsInternal : ISettable, IDisposable
 	public DateTimeOffset? EndTime
 	{
 		[CalledBy(Type = typeof(QueryStatsOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -56,9 +56,9 @@ internal struct QueryStatsOptionsInternal : ISettable, IDisposable
 
 	public string[] StatNames
 	{
+		[CalledBy(Type = typeof(QueryStatsOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(QueryStatsOptionsInternal), Member = "Set")]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -67,37 +67,37 @@ internal struct QueryStatsOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId TargetUserId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(QueryStatsOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(QueryStatsOptionsInternal), Member = "set_TargetUserId")]
 	[CalledBy(Type = typeof(QueryStatsOptionsInternal), Member = "Set")]
-	[Calls(Type = typeof(QueryStatsOptionsInternal), Member = "set_StatNames")]
-	[Calls(Type = typeof(QueryStatsOptionsInternal), Member = "set_EndTime")]
-	[Calls(Type = typeof(QueryStatsOptionsInternal), Member = "set_StartTime")]
-	[Calls(Type = typeof(QueryStatsOptionsInternal), Member = "set_LocalUserId")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(QueryStatsOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(QueryStatsOptionsInternal), Member = "set_StartTime")]
+	[Calls(Type = typeof(QueryStatsOptionsInternal), Member = "set_EndTime")]
+	[Calls(Type = typeof(QueryStatsOptionsInternal), Member = "set_StatNames")]
+	[Calls(Type = typeof(QueryStatsOptionsInternal), Member = "set_TargetUserId")]
 	public void Set(QueryStatsOptions other)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(QueryStatsOptionsInternal), Member = "Set")]
 	[CalledBy(Type = typeof(StatsInterface), Member = "QueryStats")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(QueryStatsOptionsInternal), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

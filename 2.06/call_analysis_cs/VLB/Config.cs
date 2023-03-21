@@ -68,8 +68,8 @@ public class Config : ScriptableObject
 		{
 			return default(RenderPipeline);
 		}
-		[Calls(Type = typeof(Debug), Member = "LogError")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Debug), Member = "LogError")]
 		set
 		{
 		}
@@ -107,25 +107,25 @@ public class Config : ScriptableObject
 		[Calls(Type = typeof(SRPHelper), Member = "get_renderPipelineType")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public bool requiresDoubleSidedMesh
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(SRPHelper), Member = "get_renderPipelineType")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public Shader beamShader
 	{
-		[CallerCount(Count = 49)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 49)]
 		get
 		{
 			return null;
@@ -134,11 +134,11 @@ public class Config : ScriptableObject
 
 	public Transform fadeOutCameraTransform
 	{
+		[CalledBy(TypeFullName = "VLB.BeamGeometry.<CoUpdateFadeOut>d__31", Member = "MoveNext")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[CalledBy(Type = typeof(BeamGeometry._003CCoUpdateFadeOut_003Ed__31), Member = "MoveNext")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 3)]
 		get
 		{
@@ -148,11 +148,11 @@ public class Config : ScriptableObject
 
 	public bool hasRenderPipelineMismatch
 	{
-		[Calls(Type = typeof(SRPHelper), Member = "get_renderPipelineType")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(SRPHelper), Member = "get_renderPipelineType")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -170,12 +170,12 @@ public class Config : ScriptableObject
 	[Calls(Type = typeof(SRPHelper), Member = "get_renderPipelineType")]
 	public bool IsSRPBatcherSupported()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void ForceUpdateFadeOutCamera()
 	{
@@ -183,20 +183,17 @@ public class Config : ScriptableObject
 
 	[RuntimeInitializeOnLoadMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Config), Member = "GetInstance")]
-	[Calls(Type = typeof(Config), Member = "GetInstance")]
 	[Calls(Type = typeof(Config), Member = "GetInstance")]
 	[Calls(Type = typeof(SRPHelper), Member = "get_renderPipelineType")]
-	[Calls(Type = typeof(Config), Member = "GetInstance")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private static void OnStartup()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public void Reset()
 	{
 	}
@@ -208,23 +205,22 @@ public class Config : ScriptableObject
 	{
 	}
 
-	[Calls(Type = typeof(Resources), Member = "Load")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Resources), Member = "Load")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Resources), Member = "Load")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	public void ResetInternalData()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(VolumetricDustParticles), Member = "InstantiateParticleSystem")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	public ParticleSystem NewVolumetricDustParticles()
 	{
 		return null;
@@ -241,14 +237,13 @@ public class Config : ScriptableObject
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 75)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Resources), Member = "Load")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private static Config GetInstance(bool assertIfNotFound)
 	{
 		return null;

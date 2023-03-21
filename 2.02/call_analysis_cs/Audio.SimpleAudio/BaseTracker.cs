@@ -18,42 +18,32 @@ public abstract class BaseTracker
 
 	protected bool m_StopWhenDisabled;
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract void Cleanup();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract bool HasProxy();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract bool IsActive();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract void Start();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract void Stop();
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(LoopTracker), Member = ".ctor")]
-	[CalledBy(Type = typeof(AmbientTracker), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(PlayAudioSimpleManager), Member = "AddAmbient")]
+	[CalledBy(Type = typeof(AmbientTracker), Member = ".ctor")]
+	[CalledBy(Type = typeof(LoopTracker), Member = ".ctor")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	protected BaseTracker(GameObject go, float radius, bool stopWhenDisabled)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public virtual bool Matches(GameObject go, AK.Wwise.Event akEvent)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -63,13 +53,13 @@ public abstract class BaseTracker
 	}
 
 	[CalledBy(Type = typeof(PlayAudioSimpleManager), Member = "Update")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public int MaybeStartOrStop(Vector3 listenerPos)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -77,7 +67,7 @@ public abstract class BaseTracker
 	[CallsUnknownMethods(Count = 2)]
 	private bool ShouldStart()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -85,6 +75,6 @@ public abstract class BaseTracker
 	[CallsUnknownMethods(Count = 2)]
 	private bool ShouldStop()
 	{
-		return default(bool);
+		return false;
 	}
 }

@@ -30,19 +30,19 @@ public class AuroraBand_OneOff : MonoBehaviour
 	private Animation m_Animation;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[Calls(Type = typeof(Material), Member = "SetTextureOffset")]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AnimationState), Member = "set_speed")]
 	[Calls(Type = typeof(Material), Member = "SetTextureOffset")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Material), Member = "SetColor")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 13)]
 	private void Update()
 	{
 	}
@@ -54,10 +54,10 @@ public class AuroraBand_OneOff : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Material), Member = "SetColor")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void SetAlpha(float alpha)
 	{
 	}

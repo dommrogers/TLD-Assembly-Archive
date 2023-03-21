@@ -30,44 +30,44 @@ public class RegisterPlayersCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 71)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Result? GetResultCode()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(RegisterPlayersCallbackInfoInternal), Member = "get_ClientData")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	internal void Set(RegisterPlayersCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(RegisterPlayersCallbackInfoInternal), Member = "get_ClientData")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public RegisterPlayersCallbackInfo()
 	{
 	}

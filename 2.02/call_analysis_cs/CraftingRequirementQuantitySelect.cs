@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
@@ -38,29 +37,29 @@ public class CraftingRequirementQuantitySelect : MonoBehaviour
 
 	private bool m_NeedsRefresh;
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Disable()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "NumGearInInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(CraftingRequirementQuantitySelect), Member = "Refresh")]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "Enable")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "NumGearInInventory")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(CraftingRequirementQuantitySelect), Member = "Refresh")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 21)]
 	public void Enable(BlueprintItem bpi)
 	{
@@ -70,86 +69,87 @@ public class CraftingRequirementQuantitySelect : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public int GetCurrent()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 54)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 54)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool IsEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool IsMinimumSelected()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool IsSelected()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(CraftingRequirementQuantitySelect), Member = "Refresh")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CraftingRequirementQuantitySelect), Member = "Refresh")]
 	public void ManualUpdate()
 	{
 	}
 
-	[Calls(Type = typeof(CraftingRequirementQuantitySelect), Member = "Refresh")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(CraftingRequirementQuantitySelect), Member = "Refresh")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	public void OnDecrease()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(CraftingRequirementQuantitySelect), Member = "Refresh")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(CraftingRequirementQuantitySelect), Member = "Refresh")]
 	[CallsDeduplicatedMethods(Count = 3)]
 	public void OnIncrease()
 	{
 	}
 
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "SetHighlightedItem")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void SetSelected(bool selected)
 	{
 	}
 
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "OnNext")]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "ManualUpdate")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "OnNext")]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "OnPrevious")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(CraftingRequirementQuantitySelect), Member = "ManualUpdate")]
 	[CalledBy(Type = typeof(CraftingRequirementQuantitySelect), Member = "Enable")]
+	[CalledBy(Type = typeof(CraftingRequirementQuantitySelect), Member = "ManualUpdate")]
+	[CalledBy(Type = typeof(CraftingRequirementQuantitySelect), Member = "OnDecrease")]
 	[CalledBy(Type = typeof(CraftingRequirementQuantitySelect), Member = "OnIncrease")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "Update")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(CraftingRequirementQuantitySelect), Member = "OnDecrease")]
 	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Refresh()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public CraftingRequirementQuantitySelect()
 	{

@@ -23,30 +23,29 @@ public class FuelSourceItem : MonoBehaviour
 
 	public bool m_IsBurntInFireTracked;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void Start()
 	{
 	}
 
-	[CallerCount(Count = 7)]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[CalledBy(Type = typeof(Fire), Member = "AddFuel")]
 	[CalledBy(Type = typeof(Fire), Member = "TurnOn")]
-	[CalledBy(Type = typeof(Container), Member = "GetHoursFuel")]
 	[CalledBy(Type = typeof(Container), Member = "GetHoursFuel")]
 	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnFeedFire")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshEstimatedDurationLabel")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshLabels")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetModifiedBurnDurationHours(float normalizedCondition)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public FuelSourceItem()
 	{
 	}

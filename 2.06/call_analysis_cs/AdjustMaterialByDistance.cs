@@ -30,26 +30,27 @@ public class AdjustMaterialByDistance : MonoBehaviour
 	private Material m_ThisMaterial;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
 	private void Start()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
 	[CalledBy(Type = typeof(AdjustMaterialByDistance), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private float DistanceToPlayer(Vector3 fxPos)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AdjustMaterialByDistance), Member = "DistanceToPlayer")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update()
 	{
 	}

@@ -52,43 +52,43 @@ public class CarcassSite : MonoBehaviour
 
 		private static ManagerDataProxy m_ManagerDataProxy;
 
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-		[CallsUnknownMethods(Count = 3)]
 		[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-		[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Array), Member = "Clear")]
 		[Calls(Type = typeof(CarcassSite), Member = "GetNumberOfNonDepletedItemsOnSite")]
-		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(CarcassSite), Member = "Serialize")]
+		[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsUnknownMethods(Count = 3)]
 		public static string Serialize()
 		{
 			return null;
 		}
 
-		[CallsUnknownMethods(Count = 2)]
 		[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+		[Calls(Type = typeof(SpawnRegion), Member = "GetPrefabNameFromInstanceName")]
+		[Calls(Type = typeof(Manager), Member = "TryInstanciateCarcassSite")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(CarcassSite), Member = "Deserialize")]
-		[Calls(Type = typeof(SpawnRegion), Member = "GetPrefabNameFromInstanceName")]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 1)]
-		[Calls(Type = typeof(Manager), Member = "TryInstanciateCarcassSite")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		public static void Deserialize(string text)
 		{
 		}
 
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(BodyHarvest), Member = "MaybeSpawnCarcassSite")]
-		[CalledBy(Type = typeof(Manager), Member = "TrySpawnCarcassSite")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[CalledBy(Type = typeof(Manager), Member = "Deserialize")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[CalledBy(Type = typeof(Manager), Member = "TrySpawnCarcassSite")]
+		[CalledBy(Type = typeof(BodyHarvest), Member = "MaybeSpawnCarcassSite")]
 		[CallerCount(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[Calls(Type = typeof(Manager), Member = "IsCarcasseSiteNearby")]
 		[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(Manager), Member = "IsCarcasseSiteNearby")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+		[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+		[CallsUnknownMethods(Count = 1)]
 		private static CarcassSite TryInstanciateCarcassSite(GameObject carcassSitePrefab, Vector3 position, GameObject originCorpse)
 		{
 			return null;
@@ -104,33 +104,33 @@ public class CarcassSite : MonoBehaviour
 			return null;
 		}
 
-		[Calls(Type = typeof(Array), Member = "Clear")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Array), Member = "Clear")]
 		[CallsUnknownMethods(Count = 1)]
 		public static void Reset()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 3)]
 		[CalledBy(Type = typeof(Manager), Member = "TryInstanciateCarcassSite")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 3)]
 		public static bool IsCarcasseSiteNearby(Vector3 position, float radius)
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		public static void Add(CarcassSite site)
 		{
 		}
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public Manager()
 		{
 		}
@@ -179,33 +179,33 @@ public class CarcassSite : MonoBehaviour
 	private GameObject m_LegFrontLRightObject;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(CarcassSite), Member = "IsCarrionActive")]
-	[Calls(Type = typeof(CarcassSite), Member = "UpdatePostHarvestMess")]
-	[Calls(Type = typeof(Carrion), Member = "HasDispersed")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CarcassSite), Member = "GetNumberOfNonDepletedItemsOnSite")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(CarcassSite), Member = "IsCarrionActive")]
+	[Calls(Type = typeof(Carrion), Member = "HasDispersed")]
+	[Calls(Type = typeof(CarcassSite), Member = "UpdatePostHarvestMess")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Update()
 	{
 	}
 
-	[CalledBy(Type = typeof(BodyHarvest), Member = "RefreshCarcassSite")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "SpawnOrRefreshCarcassSite")]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "MaybeSpawnOrRefreshCarcassSite")]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "RefreshCarcassSite")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "SpawnOrRefreshCarcassSite")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(CarcassSite), Member = "AddBodyHarvestOnSite")]
 	[Calls(Type = typeof(CarcassSite), Member = "AddPostHarvestMessFx")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Refresh(float hoursAtRefresh)
 	{
 	}
@@ -216,51 +216,43 @@ public class CarcassSite : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(CarcassSite), Member = "PlaceBodyPart")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
 	[Calls(Type = typeof(Utils), Member = "GetOrientationOnSlope")]
-	[CalledBy(Type = typeof(CarcassSite), Member = "PlaceBodyPart")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
 	public bool StickToGroundAndOrientOnSlope(Transform modifiedTransform, Vector3 desiredPosition)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(CarcassSite), Member = "MaybeSpawnBodyParts")]
-	[Calls(Type = typeof(CarcassSite), Member = "StickToGroundAndOrientOnSlope")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(CarcassSite), Member = "StickToGroundAndOrientOnSlope")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 12)]
 	private void PlaceBodyPart(float spawnAngle, float startAngle, float spawnRadius, int i, GameObject legObject)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[CallsUnknownMethods(Count = 30)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "SpawnQuarteringMessOnCarcassSite")]
-	[CalledBy(Type = typeof(BodyHarvest), Member = "MaybeSpawnQuarteringMess")]
-	[CalledBy(Type = typeof(CarcassSite), Member = "Deserialize")]
-	[Calls(Type = typeof(CarcassSite), Member = "PlaceBodyPart")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CalledBy(Type = typeof(CarcassSite), Member = "SpawnQuarteringMess")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 14)]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CalledBy(Type = typeof(CarcassSite), Member = "Deserialize")]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "MaybeSpawnQuarteringMess")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "SpawnQuarteringMessOnCarcassSite")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
 	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(CarcassSite), Member = "PlaceBodyPart")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 30)]
 	private void MaybeSpawnBodyParts()
 	{
 	}
@@ -273,127 +265,116 @@ public class CarcassSite : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(CarcassSite), Member = "AddPostHarvestMessFx")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void RefreshPostHarvestMessFX(float hoursAtRefresh)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Manager), Member = "Serialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 19)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 19)]
+	[CallsUnknownMethods(Count = 20)]
 	private CarcassSiteDataProxy Serialize()
 	{
 		return default(CarcassSiteDataProxy);
 	}
 
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(Manager), Member = "Deserialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CarcassSite), Member = "HasPostHarvestMessFxExpired")]
-	[Calls(Type = typeof(CarcassSite), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 16)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CarcassSite), Member = "Initialize")]
+	[Calls(Type = typeof(CarcassSite), Member = "HasPostHarvestMessFxExpired")]
 	[Calls(Type = typeof(CarcassSite), Member = "MaybeSpawnBodyParts")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 17)]
 	private void Deserialize(CarcassSiteDataProxy dataProxy)
 	{
 	}
 
-	[Calls(Type = typeof(CarcassSite), Member = "AddPostHarvestMessFx")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(CarcassSite), Member = "Deserialize")]
 	[CalledBy(Type = typeof(Manager), Member = "TrySpawnCarcassSite")]
-	[Calls(Type = typeof(CarcassSite), Member = "HasPostHarvestMessFxExpired")]
+	[CalledBy(Type = typeof(CarcassSite), Member = "Deserialize")]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "MaybeSpawnCarcassSite")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(CarcassSite), Member = "AddBodyHarvestOnSite")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(CarcassSite), Member = "AddBodyHarvestOnSite")]
+	[Calls(Type = typeof(CarcassSite), Member = "HasPostHarvestMessFxExpired")]
+	[Calls(Type = typeof(CarcassSite), Member = "AddPostHarvestMessFx")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Initialize(Vector3 position, string name, bool spawnPostHarvestFX, float timeHours)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[CalledBy(Type = typeof(CarcassSite), Member = "Refresh")]
 	[CalledBy(Type = typeof(CarcassSite), Member = "RefreshPostHarvestMessFX")]
 	[CalledBy(Type = typeof(CarcassSite), Member = "Initialize")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void AddPostHarvestMessFx(Vector3 position, float postHarvestMessDurationHours)
 	{
 	}
 
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(CarcassSite), Member = "Deserialize")]
 	[CalledBy(Type = typeof(CarcassSite), Member = "Initialize")]
 	[CalledBy(Type = typeof(CarcassSite), Member = "UpdatePostHarvestMess")]
+	[CallerCount(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	private bool HasPostHarvestMessFxExpired()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(CarcassSite), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CarcassSite), Member = "HasPostHarvestMessFxExpired")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	private void UpdatePostHarvestMess()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(CarcassSite), Member = "AddBodyHarvestOnSite")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private BodyHarvest TryGetBodyHarvestFromCollider(Collider collider)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Carrion), Member = "HasDispersed")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void SetCarrionActive(bool enabled)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(CarcassSite), Member = "UpdateCarrion")]
-	[CalledBy(Type = typeof(CarcassSite), Member = "UpdateCarrion")]
 	[CalledBy(Type = typeof(CarcassSite), Member = "Update")]
-	[CalledBy(Type = typeof(CarcassSite), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(CarcassSite), Member = "UpdateCarrion")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool IsCarrionActive()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(CarcassSite), Member = "AddBodyHarvestOnSite")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(CarcassSite), Member = "AddBodyHarvestOnSite")]
 	[CallsUnknownMethods(Count = 2)]
 	private void AddBodyHarvest(BodyHarvest bodyHarvest)
 	{
@@ -406,39 +387,38 @@ public class CarcassSite : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(CarcassSite), Member = "Initialize")]
 	[CalledBy(Type = typeof(CarcassSite), Member = "Refresh")]
-	[Calls(Type = typeof(CarcassSite), Member = "AddBodyHarvest")]
+	[CalledBy(Type = typeof(CarcassSite), Member = "Initialize")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Physics), Member = "OverlapSphere")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(CarcassSite), Member = "TryGetBodyHarvestFromCollider")]
+	[Calls(Type = typeof(CarcassSite), Member = "AddBodyHarvest")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void AddBodyHarvestOnSite()
 	{
 	}
 
+	[CalledBy(Type = typeof(Manager), Member = "Serialize")]
 	[CalledBy(Type = typeof(CarcassSite), Member = "Update")]
 	[CalledBy(Type = typeof(CarcassSite), Member = "UpdateCarrion")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Manager), Member = "Serialize")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(BodyHarvest), Member = "ConditionReachedZero")]
-	[Calls(Type = typeof(BodyHarvest), Member = "NoMoreResources")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(BodyHarvest), Member = "NoMoreResources")]
+	[Calls(Type = typeof(BodyHarvest), Member = "ConditionReachedZero")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 5)]
 	private int GetNumberOfNonDepletedItemsOnSite()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(CarcassSite), Member = "IsCarrionActive")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CarcassSite), Member = "GetNumberOfNonDepletedItemsOnSite")]
 	[Calls(Type = typeof(CarcassSite), Member = "IsCarrionActive")]
 	[Calls(Type = typeof(Carrion), Member = "HasDispersed")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(CarcassSite), Member = "GetNumberOfNonDepletedItemsOnSite")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateCarrion()
 	{
 	}

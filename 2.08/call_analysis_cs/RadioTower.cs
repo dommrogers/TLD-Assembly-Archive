@@ -17,11 +17,10 @@ public class RadioTower : TimedHoldInteraction
 
 	private uint m_InteractAudioID;
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TimedHoldInteraction), Member = "InitializeInteraction")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(TimedHoldInteraction), Member = "InitializeInteraction")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	public override void InitializeInteraction()
 	{
 	}
@@ -36,28 +35,28 @@ public class RadioTower : TimedHoldInteraction
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
-	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
+	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public override bool PerformInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void CancelHold()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	private void PlayAudio()
 	{
 	}

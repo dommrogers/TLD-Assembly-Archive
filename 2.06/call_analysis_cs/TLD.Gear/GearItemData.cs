@@ -71,7 +71,7 @@ public class GearItemData : ScriptableObject
 	public AssetReferenceGearItem PrefabReference
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 44)]
+		[CallerCount(Count = 53)]
 		get
 		{
 			return null;
@@ -80,8 +80,8 @@ public class GearItemData : ScriptableObject
 
 	public GameplayTag GameplayTag
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(GameplayTag);
@@ -94,7 +94,7 @@ public class GearItemData : ScriptableObject
 		[CallerCount(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -104,7 +104,7 @@ public class GearItemData : ScriptableObject
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -124,7 +124,7 @@ public class GearItemData : ScriptableObject
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -134,17 +134,17 @@ public class GearItemData : ScriptableObject
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	public float DailyHPDecay
 	{
-		[CallerCount(Count = 1)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -154,7 +154,7 @@ public class GearItemData : ScriptableObject
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -164,7 +164,7 @@ public class GearItemData : ScriptableObject
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -174,16 +174,16 @@ public class GearItemData : ScriptableObject
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public string DisplayName
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Localization), Member = "Get")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -192,9 +192,9 @@ public class GearItemData : ScriptableObject
 
 	public string DisplayNameLocID
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -237,7 +237,7 @@ public class GearItemData : ScriptableObject
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -246,17 +246,17 @@ public class GearItemData : ScriptableObject
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public float DamageBlendStartPercent
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -266,7 +266,7 @@ public class GearItemData : ScriptableObject
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -283,7 +283,7 @@ public class GearItemData : ScriptableObject
 	public AssetReferenceTexture2D CoverFlowMainTexture
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 1)]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return null;
@@ -302,8 +302,8 @@ public class GearItemData : ScriptableObject
 
 	public AssetReferenceTexture2D CoverFlowBlendTexture
 	{
-		[CallerCount(Count = 49)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 49)]
 		get
 		{
 			return null;
@@ -333,7 +333,7 @@ public class GearItemData : ScriptableObject
 	public AK.Wwise.Event PickupAudio
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 11)]
+		[CallerCount(Count = 18)]
 		get
 		{
 			return null;
@@ -343,7 +343,7 @@ public class GearItemData : ScriptableObject
 	public AK.Wwise.Event StowAudio
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return null;
@@ -352,8 +352,8 @@ public class GearItemData : ScriptableObject
 
 	public AK.Wwise.Event PutBackAudio
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return null;
@@ -362,8 +362,8 @@ public class GearItemData : ScriptableObject
 
 	public AK.Wwise.Event WornOutAudio
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -373,7 +373,7 @@ public class GearItemData : ScriptableObject
 	public AK.Wwise.Event CookingSlotPlacementAudio
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return null;
@@ -393,11 +393,11 @@ public class GearItemData : ScriptableObject
 	[CallerCount(Count = 0)]
 	public bool IsGearType(GearType type)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public GearItemData()
 	{
 	}

@@ -15,9 +15,9 @@ public class OnUnlockAchievementsCompleteCallbackInfo : ICallbackInfo, ISettable
 
 	public Result ResultCode
 	{
-		[CallerCount(Count = 7)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return default(Result);
@@ -34,14 +34,14 @@ public class OnUnlockAchievementsCompleteCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -50,15 +50,15 @@ public class OnUnlockAchievementsCompleteCallbackInfo : ICallbackInfo, ISettable
 	public ProductUserId UserId
 	{
 		[CompilerGenerated]
-		[CallerCount(Count = 5)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -68,10 +68,10 @@ public class OnUnlockAchievementsCompleteCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 2)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -88,26 +88,26 @@ public class OnUnlockAchievementsCompleteCallbackInfo : ICallbackInfo, ISettable
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(OnUnlockAchievementsCompleteCallbackInfoInternal), Member = "get_ClientData")]
-	[CallsUnknownMethods(Count = 4)]
 	[Calls(Type = typeof(OnUnlockAchievementsCompleteCallbackInfoInternal), Member = "get_UserId")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 4)]
 	internal void Set(OnUnlockAchievementsCompleteCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(OnUnlockAchievementsCompleteCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(OnUnlockAchievementsCompleteCallbackInfoInternal), Member = "get_UserId")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public OnUnlockAchievementsCompleteCallbackInfo()
 	{
 	}

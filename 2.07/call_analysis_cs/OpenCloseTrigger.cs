@@ -11,17 +11,17 @@ public class OpenCloseTrigger : MonoBehaviour
 
 	private bool m_CloseOnTriggerExit;
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(OpenClose), Member = "Open")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnTriggerEnter(Collider other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(OpenClose), Member = "Close")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnTriggerExit(Collider other)
 	{

@@ -43,9 +43,7 @@ public class NPCThirst : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
 	[Calls(Type = typeof(NPCThirst), Member = "StartDehydrationAffliction")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
 	[Calls(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
 	[CallsUnknownMethods(Count = 1)]
 	public void DoUpdate(float deltaTODHours)
@@ -55,25 +53,25 @@ public class NPCThirst : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GeAfflictionDehydrationRequiredLiters()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetHealthyDelta(float delta)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	private bool IsDehydrated()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	private bool HasDehydrationRisk()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -86,34 +84,34 @@ public class NPCThirst : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	public void Deserialize(string serialized)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsUnknownMethods(Count = 6)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(NPC), Member = "DoConditionUpdate")]
+	[CalledBy(Type = typeof(NPCThirst), Member = "DoUpdate")]
+	[CalledBy(Type = typeof(NPCThirst), Member = "ApplyTODHours")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
 	[Calls(Type = typeof(NPCAfflictions), Member = "RemoveAffliction")]
 	[Calls(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
-	[CalledBy(Type = typeof(NPC), Member = "DoConditionUpdate")]
-	[CalledBy(Type = typeof(NPCThirst), Member = "DoUpdate")]
-	[CalledBy(Type = typeof(NPCThirst), Member = "ApplyTODHours")]
+	[CallsUnknownMethods(Count = 1)]
 	private void StartDehydrationAffliction()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
+	[CallsUnknownMethods(Count = 1)]
 	private void StartDehydrationRiskAffliction()
 	{
 	}

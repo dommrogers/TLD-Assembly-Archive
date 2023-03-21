@@ -18,7 +18,7 @@ public class AkState : AkDragDropTriggerHandler
 	protected override BaseType WwiseType
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
@@ -27,13 +27,13 @@ public class AkState : AkDragDropTriggerHandler
 
 	public int valueID
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -44,17 +44,17 @@ public class AkState : AkDragDropTriggerHandler
 		[Calls(Type = typeof(BaseGroupType), Member = "get_GroupId")]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public byte[] valueGuid
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(WwiseObjectReference), Member = "get_Guid")]
 		[Calls(Type = typeof(Guid), Member = "ToByteArray")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -64,32 +64,32 @@ public class AkState : AkDragDropTriggerHandler
 
 	public byte[] groupGuid
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Guid), Member = "ToByteArray")]
-		[Calls(Type = typeof(WwiseObjectReference), Member = "get_Guid")]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(BaseGroupType), Member = "get_GroupWwiseObjectReference")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(WwiseObjectReference), Member = "get_Guid")]
+		[Calls(Type = typeof(Guid), Member = "ToByteArray")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(BaseGroupType), Member = "get_GroupId")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "SetState")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void HandleEvent(GameObject in_gameObject)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkDragDropTriggerHandler), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public AkState()
 	{
 	}

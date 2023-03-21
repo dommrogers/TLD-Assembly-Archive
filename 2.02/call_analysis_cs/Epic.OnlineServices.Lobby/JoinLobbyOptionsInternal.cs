@@ -17,11 +17,11 @@ internal struct JoinLobbyOptionsInternal : ISettable, IDisposable
 
 	public LobbyDetails LobbyDetailsHandle
 	{
+		[CalledBy(Type = typeof(JoinLobbyOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(JoinLobbyOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(JoinLobbyOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(JoinLobbyOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,11 +29,11 @@ internal struct JoinLobbyOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(JoinLobbyOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(JoinLobbyOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(JoinLobbyOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(JoinLobbyOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -44,8 +44,8 @@ internal struct JoinLobbyOptionsInternal : ISettable, IDisposable
 		[CalledBy(Type = typeof(JoinLobbyOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(JoinLobbyOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -59,18 +59,18 @@ internal struct JoinLobbyOptionsInternal : ISettable, IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(LobbyInterface), Member = "JoinLobby")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(JoinLobbyOptionsInternal), Member = "set_LobbyDetailsHandle")]
 	[Calls(Type = typeof(JoinLobbyOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(JoinLobbyOptionsInternal), Member = "set_PresenceEnabled")]
-	[CalledBy(Type = typeof(LobbyInterface), Member = "JoinLobby")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

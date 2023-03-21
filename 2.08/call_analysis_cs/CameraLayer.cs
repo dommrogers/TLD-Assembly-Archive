@@ -5,9 +5,9 @@ public class CameraLayer : StateMachineBehaviour
 {
 	private PlayerAnimation.CameraLayer m_Layer;
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
+	[CallsUnknownMethods(Count = 2)]
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 	}

@@ -14,12 +14,12 @@ public class ShowIfAttribute : DrawerAttribute
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
-	[CallerCount(Count = 1)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 1)]
 	public ShowIfAttribute(string fieldName, int checkValue)
 	{
 	}

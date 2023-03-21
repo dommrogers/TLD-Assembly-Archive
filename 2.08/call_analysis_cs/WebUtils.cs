@@ -8,6 +8,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Encryption;
+using TLD.SaveState;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -37,9 +38,9 @@ public class WebUtils
 
 				private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 				{
-					[DeduplicatedMethod]
-					[CallerCount(Count = 28)]
 					[DebuggerHidden]
+					[DeduplicatedMethod]
+					[CallerCount(Count = 32)]
 					get
 					{
 						return null;
@@ -50,7 +51,7 @@ public class WebUtils
 				{
 					[DebuggerHidden]
 					[DeduplicatedMethod]
-					[CallerCount(Count = 28)]
+					[CallerCount(Count = 32)]
 					get
 					{
 						return null;
@@ -64,23 +65,24 @@ public class WebUtils
 				{
 				}
 
-				[CallsUnknownMethods(Count = 1)]
+				[DebuggerHidden]
 				[CalledBy(Type = typeof(_003CBatch_003Ed__10), Member = "MoveNext")]
 				[CallerCount(Count = 1)]
-				[DebuggerHidden]
+				[CallsUnknownMethods(Count = 1)]
 				private void System_002EIDisposable_002EDispose()
 				{
 				}
 
 				[CallerCount(Count = 0)]
-				[CallsDeduplicatedMethods(Count = 2)]
-				[Calls(Type = typeof(BatchOperation), Member = "IsBatchCompleted")]
-				[Calls(Type = typeof(BatchOperation), Member = "IsBatchSuccess")]
+				[Calls(TypeFullName = "WebUtils.SteamCloudManager.BatchOperation", Member = "IsBatchCompleted")]
+				[Calls(TypeFullName = "WebUtils.SteamCloudManager.BatchOperation", Member = "IsBatchSuccess")]
+				[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 				[Calls(Type = typeof(_003CBatch_003Ed__10), Member = "System.IDisposable.Dispose")]
-				[CallsUnknownMethods(Count = 13)]
+				[CallsDeduplicatedMethods(Count = 2)]
+				[CallsUnknownMethods(Count = 12)]
 				private bool MoveNext()
 				{
-					return default(bool);
+					return false;
 				}
 
 				[CallerCount(Count = 0)]
@@ -105,76 +107,72 @@ public class WebUtils
 
 			private BatchType m_Type;
 
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchDeleteLocalSave")]
-			[CallsUnknownMethods(Count = 1)]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "EnumerateForDeleteAllDone")]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "CreateUploadReplaceSaveFileOperation")]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchUploadReplaceSave")]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchDeleteSave")]
 			[CalledBy(Type = typeof(SteamCloudManager), Member = "Sync")]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchDownloadSave")]
 			[CalledBy(Type = typeof(SteamCloudManager), Member = "DoSyncOperation")]
-			[CallsDeduplicatedMethods(Count = 1)]
-			[CallerCount(Count = 9)]
+			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchDownloadSave")]
 			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchUploadSave")]
+			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchDeleteSave")]
+			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchDeleteLocalSave")]
+			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchUploadReplaceSave")]
+			[CalledBy(Type = typeof(SteamCloudManager), Member = "CreateUploadReplaceSaveFileOperation")]
+			[CalledBy(Type = typeof(SteamCloudManager), Member = "EnumerateForDeleteAllDone")]
+			[CallerCount(Count = 9)]
+			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 1)]
 			public BatchOperation(Action<ICloudOperation> onOperationComplete, BatchType type)
 			{
 			}
 
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchDeleteLocalSave")]
-			[CallsUnknownMethods(Count = 2)]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "CreateUploadReplaceSaveFileOperation")]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "CreateUploadReplaceSaveFileOperation")]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchUploadReplaceSave")]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchUploadReplaceSave")]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchDeleteLocalSave")]
+			[CalledBy(Type = typeof(SteamCloudManager), Member = "Sync")]
+			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchDownloadSave")]
+			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchUploadSave")]
 			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchDeleteSave")]
+			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchDeleteLocalSave")]
+			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchUploadReplaceSave")]
+			[CalledBy(Type = typeof(SteamCloudManager), Member = "CreateUploadReplaceSaveFileOperation")]
 			[CalledBy(Type = typeof(SteamCloudManager), Member = "EnumerateForDeleteAllDone")]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchUploadSave")]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchUploadSave")]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchDownloadSave")]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchDownloadSave")]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "Sync")]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "Sync")]
-			[CallsDeduplicatedMethods(Count = 1)]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchDeleteSave")]
 			[CallerCount(Count = 15)]
+			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 2)]
 			public void AddOperation(CommonCloudOperation operation)
 			{
 			}
 
-			[CallsUnknownMethods(Count = 2)]
-			[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-			[CallsDeduplicatedMethods(Count = 2)]
 			[CallerCount(Count = 0)]
+			[Calls(Type = typeof(List<>), Member = "Remove")]
 			[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+			[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 2)]
 			public override void Execute()
 			{
 			}
 
 			[CallerCount(Count = 0)]
-			[CallsDeduplicatedMethods(Count = 1)]
-			[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+			[Calls(Type = typeof(List<>), Member = "Remove")]
+			[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 			[CallsUnknownMethods(Count = 2)]
 			private void RemoveSuccessfullOperations()
 			{
 			}
 
-			[CallsUnknownMethods(Count = 4)]
+			[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.BatchOperation.<Batch>d__10", Member = "MoveNext")]
 			[CallerCount(Count = 1)]
-			[CalledBy(Type = typeof(_003CBatch_003Ed__10), Member = "MoveNext")]
+			[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+			[CallsUnknownMethods(Count = 3)]
 			private bool IsBatchCompleted()
 			{
-				return default(bool);
+				return false;
 			}
 
+			[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.BatchOperation.<Batch>d__10", Member = "MoveNext")]
 			[CalledBy(Type = typeof(BatchOperation), Member = "BatchDone")]
-			[CallsUnknownMethods(Count = 4)]
 			[CallerCount(Count = 2)]
-			[CalledBy(Type = typeof(_003CBatch_003Ed__10), Member = "MoveNext")]
+			[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+			[CallsUnknownMethods(Count = 3)]
 			private bool IsBatchSuccess()
 			{
-				return default(bool);
+				return false;
 			}
 
 			[IteratorStateMachine(typeof(_003CBatch_003Ed__10))]
@@ -186,8 +184,8 @@ public class WebUtils
 			}
 
 			[CallerCount(Count = 0)]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[Calls(Type = typeof(BatchOperation), Member = "IsBatchSuccess")]
+			[CallsDeduplicatedMethods(Count = 1)]
 			private void BatchDone()
 			{
 			}
@@ -207,7 +205,7 @@ public class WebUtils
 			private string m_FileName;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 40)]
+			[CallerCount(Count = 50)]
 			public LocalFileDeleteOperation(string filename)
 			{
 			}
@@ -229,22 +227,22 @@ public class WebUtils
 
 				public DeleteOperation _003C_003E4__this;
 
-				[CallerCount(Count = 6)]
 				[DeduplicatedMethod]
+				[CallerCount(Count = 6)]
 				public _003C_003Ec__DisplayClass7_0()
 				{
 				}
 
-				[CallsUnknownMethods(Count = 1)]
 				[CallerCount(Count = 0)]
-				[Calls(Type = typeof(DeleteOperation), Member = "RequestDeleteDataCompleted")]
+				[Calls(TypeFullName = "WebUtils.SteamCloudManager.DeleteOperation", Member = "RequestDeleteDataCompleted")]
+				[CallsUnknownMethods(Count = 1)]
 				internal void _003CWebRequestDeleteData_003Eb__0(UnityWebRequest response)
 				{
 				}
 
 				[CallerCount(Count = 0)]
 				[Calls(Type = typeof(UnityWebRequest), Member = "get_error")]
-				[Calls(Type = typeof(DeleteOperation), Member = "RequestDeleteDataCompleted")]
+				[Calls(TypeFullName = "WebUtils.SteamCloudManager.DeleteOperation", Member = "RequestDeleteDataCompleted")]
 				[CallsUnknownMethods(Count = 1)]
 				internal void _003CWebRequestDeleteData_003Eb__1(UnityWebRequest response)
 				{
@@ -257,18 +255,18 @@ public class WebUtils
 
 			private Action<bool> m_OnOperationComplete;
 
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "EnumerateForDeleteAllDone")]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "CreateUploadReplaceSaveFileOperation")]
 			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchDeleteSave")]
+			[CalledBy(Type = typeof(SteamCloudManager), Member = "CreateUploadReplaceSaveFileOperation")]
+			[CalledBy(Type = typeof(SteamCloudManager), Member = "EnumerateForDeleteAllDone")]
 			[CallerCount(Count = 3)]
 			public DeleteOperation(string token, string filename, Action<bool> onOperationComplete)
 			{
 			}
 
 			[CallerCount(Count = 0)]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[Calls(Type = typeof(DeleteOperation), Member = "WebRequestDeleteData")]
 			[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+			[CallsDeduplicatedMethods(Count = 1)]
 			[CallsUnknownMethods(Count = 1)]
 			public override void Execute()
 			{
@@ -282,32 +280,27 @@ public class WebUtils
 			{
 			}
 
-			[CalledBy(Type = typeof(_003C_003Ec__DisplayClass7_0), Member = "<WebRequestDeleteData>b__1")]
-			[Calls(Type = typeof(string), Member = "Concat")]
-			[CalledBy(Type = typeof(_003C_003Ec__DisplayClass7_0), Member = "<WebRequestDeleteData>b__0")]
-			[CallsDeduplicatedMethods(Count = 1)]
+			[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.DeleteOperation.<>c__DisplayClass7_0", Member = "<WebRequestDeleteData>b__0")]
+			[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.DeleteOperation.<>c__DisplayClass7_0", Member = "<WebRequestDeleteData>b__1")]
 			[CallerCount(Count = 2)]
 			[Calls(Type = typeof(string), Member = "Concat")]
+			[Calls(Type = typeof(string), Member = "Concat")]
+			[CallsDeduplicatedMethods(Count = 1)]
 			private void RequestDeleteDataCompleted(DeleteRequestResult result)
 			{
 			}
 
-			[CallerCount(Count = 2)]
-			[CallsUnknownMethods(Count = 1)]
-			[CalledBy(Type = typeof(DeleteOperation), Member = "RequestDeleteData")]
 			[CalledBy(Type = typeof(DeleteOperation), Member = "Execute")]
-			[Calls(Type = typeof(Utils), Member = "WebRequest")]
-			[Calls(Type = typeof(WWWForm), Member = "AddField")]
-			[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-			[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-			[Calls(Type = typeof(WWWForm), Member = "AddField")]
-			[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
+			[CalledBy(Type = typeof(DeleteOperation), Member = "RequestDeleteData")]
+			[CallerCount(Count = 2)]
+			[Calls(Type = typeof(string), Member = "Concat")]
+			[Calls(Type = typeof(string), Member = "Concat")]
 			[Calls(Type = typeof(WWWForm), Member = ".ctor")]
-			[Calls(Type = typeof(string), Member = "Concat")]
-			[Calls(Type = typeof(string), Member = "Concat")]
-			[Calls(Type = typeof(string), Member = "Concat")]
-			[CallsDeduplicatedMethods(Count = 2)]
+			[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
 			[Calls(Type = typeof(WWWForm), Member = "AddField")]
+			[Calls(Type = typeof(Utils), Member = "WebRequest")]
+			[CallsDeduplicatedMethods(Count = 2)]
+			[CallsUnknownMethods(Count = 1)]
 			private IEnumerator WebRequestDeleteData(string token, string filename)
 			{
 				return null;
@@ -324,16 +317,16 @@ public class WebUtils
 
 			private Action<bool> m_OnOperationComplete;
 
-			[CallsUnknownMethods(Count = 2)]
-			[CallerCount(Count = 1)]
 			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchDownloadSave")]
+			[CallerCount(Count = 1)]
+			[CallsUnknownMethods(Count = 2)]
 			public DownloadSaveOperation(string filename, DateTime dateTime, string url, string sha1, Action<bool> onOperationComplete)
 			{
 			}
 
-			[CallsUnknownMethods(Count = 1)]
-			[CallsDeduplicatedMethods(Count = 2)]
 			[CallerCount(Count = 0)]
+			[CallsDeduplicatedMethods(Count = 2)]
+			[CallsUnknownMethods(Count = 1)]
 			public override void Execute()
 			{
 			}
@@ -367,19 +360,19 @@ public class WebUtils
 			{
 			}
 
-			[Calls(Type = typeof(WebUtils), Member = "DownloadData")]
-			[CallsUnknownMethods(Count = 2)]
 			[CallerCount(Count = 0)]
+			[Calls(Type = typeof(WebUtils), Member = "DownloadData")]
 			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 2)]
 			public override void Execute()
 			{
 			}
 
 			[CallerCount(Count = 0)]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[Calls(Type = typeof(string), Member = "Concat")]
 			[Calls(Type = typeof(WebUtils), Member = "ComputeSha1Hex")]
 			[Calls(Type = typeof(string), Member = "Concat")]
+			[CallsDeduplicatedMethods(Count = 1)]
 			private void DownloadDone(DownloadDataResult result)
 			{
 			}
@@ -406,19 +399,19 @@ public class WebUtils
 
 				public readonly string m_Url;
 
-				[CallerCount(Count = 3)]
 				[CalledBy(Type = typeof(EnumerateFilesResult), Member = ".cctor")]
-				[CalledBy(Type = typeof(EnumerateFilesOperation._003C_003Ec__DisplayClass5_0), Member = "<WebRequestEnumerateFiles>b__0")]
+				[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.EnumerateFilesOperation.<>c__DisplayClass5_0", Member = "<WebRequestEnumerateFiles>b__0")]
 				[CalledBy(Type = typeof(SteamCloudManagerPC), Member = "EnumerateLocalSaveFiles")]
+				[CallerCount(Count = 3)]
 				public FileInfo(string fileName, DateTime dateTime, string sha, uint size, string url)
 				{
 				}
 
-				[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 				[CallerCount(Count = 0)]
+				[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 				public bool IsContentIdentical(FileInfo other)
 				{
-					return default(bool);
+					return false;
 				}
 
 				[CallerCount(Count = 0)]
@@ -426,40 +419,35 @@ public class WebUtils
 				[CallsUnknownMethods(Count = 1)]
 				public override bool Equals(object other)
 				{
-					return default(bool);
+					return false;
 				}
 
 				[CallerCount(Count = 0)]
 				[Calls(Type = typeof(ValueType), Member = "GetHashCode")]
 				public override int GetHashCode()
 				{
-					return default(int);
+					return 0;
 				}
 
-				[CalledBy(Type = typeof(SteamCloudManager), Member = "GatherFilesStatus")]
-				[CalledBy(Type = typeof(SteamCloudManager), Member = "GetLocalFileSyncStatus")]
-				[CalledBy(Type = typeof(SteamCloudManager), Member = "GetCloudFileSyncStatus")]
-				[CalledBy(Type = typeof(SteamCloudManager), Member = "AreFilesIdentical")]
-				[CalledBy(Type = typeof(SteamCloudManager), Member = "GatherFilesStatus")]
 				[CalledBy(Type = typeof(FileInfo), Member = "Equals")]
-				[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-				[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-				[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+				[CalledBy(Type = typeof(SteamCloudManager), Member = "GatherFilesStatus")]
+				[CalledBy(Type = typeof(SteamCloudManager), Member = "AreFilesIdentical")]
+				[CalledBy(Type = typeof(SteamCloudManager), Member = "GetCloudFileSyncStatus")]
+				[CalledBy(Type = typeof(SteamCloudManager), Member = "GetLocalFileSyncStatus")]
 				[CallerCount(Count = 6)]
+				[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 				public static bool operator ==(FileInfo a, FileInfo b)
 				{
-					return default(bool);
+					return false;
 				}
 
 				[CalledBy(Type = typeof(SteamCloudManager), Member = "AddToListIfNotFound")]
-				[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 				[CalledBy(Type = typeof(SteamCloudManager), Member = "FileExists")]
-				[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 				[CallerCount(Count = 2)]
-				[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+				[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 				public static bool operator !=(FileInfo a, FileInfo b)
 				{
-					return default(bool);
+					return false;
 				}
 			}
 
@@ -488,21 +476,23 @@ public class WebUtils
 				{
 				}
 
-				[Calls(Type = typeof(string), Member = "Format")]
 				[CallerCount(Count = 0)]
-				[CallsDeduplicatedMethods(Count = 3)]
+				[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+				[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 				[Calls(Type = typeof(DateTime), Member = "Add")]
 				[Calls(Type = typeof(string), Member = "Concat")]
 				[Calls(Type = typeof(EnumerateFilesResult.FileInfo), Member = ".ctor")]
-				[CallsUnknownMethods(Count = 6)]
+				[Calls(Type = typeof(string), Member = "Format")]
+				[CallsDeduplicatedMethods(Count = 2)]
+				[CallsUnknownMethods(Count = 5)]
 				internal void _003CWebRequestEnumerateFiles_003Eb__0(UnityWebRequest response)
 				{
 				}
 
-				[CallsUnknownMethods(Count = 1)]
+				[CallerCount(Count = 0)]
 				[Calls(Type = typeof(UnityWebRequest), Member = "get_error")]
 				[CallsDeduplicatedMethods(Count = 1)]
-				[CallerCount(Count = 0)]
+				[CallsUnknownMethods(Count = 1)]
 				internal void _003CWebRequestEnumerateFiles_003Eb__1(UnityWebRequest response)
 				{
 				}
@@ -512,49 +502,48 @@ public class WebUtils
 
 			private Action<EnumerateFilesResult> m_OnOperationComplete;
 
-			[CallsUnknownMethods(Count = 8)]
-			[CalledBy(Type = typeof(SteamCloudManager), Member = "GetAllFiles")]
+			[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.AuthenticateOperation.<Authenticate>d__6", Member = "MoveNext")]
 			[CalledBy(Type = typeof(SteamCloudManager), Member = "CreateFileEnumerationOperationForSync")]
-			[Calls(Type = typeof(Delegate), Member = "Combine")]
-			[Calls(Type = typeof(Delegate), Member = "Combine")]
+			[CalledBy(Type = typeof(SteamCloudManager), Member = "GetAllFiles")]
 			[CallerCount(Count = 3)]
-			[CalledBy(Type = typeof(AuthenticateOperation._003CAuthenticate_003Ed__6), Member = "MoveNext")]
+			[Calls(Type = typeof(Delegate), Member = "Combine")]
+			[CallsUnknownMethods(Count = 8)]
 			public EnumerateFilesOperation(string token, Action<EnumerateFilesResult> onOperationComplete1, Action<EnumerateFilesResult> onOperationComplete2)
 			{
 			}
 
 			[CallerCount(Count = 0)]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[Calls(Type = typeof(EnumerateFilesOperation), Member = "WebRequestEnumerateFiles")]
 			[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+			[CallsDeduplicatedMethods(Count = 1)]
 			[CallsUnknownMethods(Count = 1)]
 			public override void Execute()
 			{
 			}
 
-			[CallsUnknownMethods(Count = 1)]
-			[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-			[Calls(Type = typeof(EnumerateFilesOperation), Member = "WebRequestEnumerateFiles")]
 			[CallerCount(Count = 0)]
+			[Calls(Type = typeof(EnumerateFilesOperation), Member = "WebRequestEnumerateFiles")]
+			[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+			[CallsUnknownMethods(Count = 1)]
 			private void RequestEnumerateFiles(string token, bool extendedDetails)
 			{
 			}
 
+			[CalledBy(Type = typeof(EnumerateFilesOperation), Member = "Execute")]
+			[CalledBy(Type = typeof(EnumerateFilesOperation), Member = "RequestEnumerateFiles")]
 			[CallerCount(Count = 2)]
-			[CallsDeduplicatedMethods(Count = 2)]
 			[Calls(Type = typeof(string), Member = "Format")]
 			[Calls(Type = typeof(string), Member = "Concat")]
 			[Calls(Type = typeof(Utils), Member = "WebRequest")]
-			[CalledBy(Type = typeof(EnumerateFilesOperation), Member = "Execute")]
-			[CalledBy(Type = typeof(EnumerateFilesOperation), Member = "RequestEnumerateFiles")]
+			[CallsDeduplicatedMethods(Count = 2)]
 			[CallsUnknownMethods(Count = 17)]
 			private IEnumerator WebRequestEnumerateFiles(string token, bool extendedDetails)
 			{
 				return null;
 			}
 
-			[CallsDeduplicatedMethods(Count = 1)]
 			[CallerCount(Count = 0)]
+			[CallsDeduplicatedMethods(Count = 1)]
 			private void RequestEnumerateFilesDone(EnumerateFilesResult result)
 			{
 			}
@@ -606,7 +595,7 @@ public class WebUtils
 			}
 
 			[CallerCount(Count = 0)]
-			[CallsDeduplicatedMethods(Count = 1)]
+			[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 			public static EnumerateUserFiles_v1 ParseJson(string txt)
 			{
 				return null;
@@ -684,17 +673,18 @@ public class WebUtils
 				}
 
 				[CallerCount(Count = 0)]
-				[CallsDeduplicatedMethods(Count = 3)]
-				[Calls(Type = typeof(UploadOperation), Member = "RequestUploadData_BeginDone")]
+				[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+				[Calls(TypeFullName = "WebUtils.SteamCloudManager.UploadOperation", Member = "RequestUploadData_BeginDone")]
+				[CallsDeduplicatedMethods(Count = 2)]
 				[CallsUnknownMethods(Count = 1)]
 				internal void _003CWebRequestBeginUploadData_003Eb__0(UnityWebRequest response)
 				{
 				}
 
-				[CallsUnknownMethods(Count = 1)]
-				[Calls(Type = typeof(UploadOperation), Member = "RequestUploadData_BeginDone")]
 				[CallerCount(Count = 0)]
 				[Calls(Type = typeof(UnityWebRequest), Member = "get_error")]
+				[Calls(TypeFullName = "WebUtils.SteamCloudManager.UploadOperation", Member = "RequestUploadData_BeginDone")]
+				[CallsUnknownMethods(Count = 1)]
 				internal void _003CWebRequestBeginUploadData_003Eb__1(UnityWebRequest response)
 				{
 				}
@@ -714,18 +704,19 @@ public class WebUtils
 				{
 				}
 
-				[CallsUnknownMethods(Count = 1)]
 				[CallerCount(Count = 0)]
-				[CallsDeduplicatedMethods(Count = 2)]
-				[Calls(Type = typeof(UploadOperation), Member = "RequestUploadData_CommitDone")]
+				[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+				[Calls(TypeFullName = "WebUtils.SteamCloudManager.UploadOperation", Member = "RequestUploadData_CommitDone")]
+				[CallsDeduplicatedMethods(Count = 1)]
+				[CallsUnknownMethods(Count = 1)]
 				internal void _003CWebRequestCommitUpload_003Eb__0(UnityWebRequest response)
 				{
 				}
 
-				[CallsUnknownMethods(Count = 1)]
-				[Calls(Type = typeof(UploadOperation), Member = "RequestUploadData_CommitDone")]
 				[CallerCount(Count = 0)]
 				[Calls(Type = typeof(UnityWebRequest), Member = "get_error")]
+				[Calls(TypeFullName = "WebUtils.SteamCloudManager.UploadOperation", Member = "RequestUploadData_CommitDone")]
+				[CallsUnknownMethods(Count = 1)]
 				internal void _003CWebRequestCommitUpload_003Eb__1(UnityWebRequest response)
 				{
 				}
@@ -746,19 +737,19 @@ public class WebUtils
 				}
 
 				[CallerCount(Count = 0)]
-				[CallsDeduplicatedMethods(Count = 7)]
 				[Calls(Type = typeof(string), Member = "Format")]
-				[Calls(Type = typeof(UploadOperation), Member = "RequestUploadData_PutDone")]
+				[Calls(TypeFullName = "WebUtils.SteamCloudManager.UploadOperation", Member = "RequestUploadData_PutDone")]
+				[CallsDeduplicatedMethods(Count = 7)]
 				[CallsUnknownMethods(Count = 7)]
 				internal void _003CWebRequestUploadData_003Eb__0(UnityWebRequest response)
 				{
 				}
 
-				[CallsDeduplicatedMethods(Count = 1)]
-				[CallsUnknownMethods(Count = 2)]
-				[Calls(Type = typeof(UploadOperation), Member = "RequestUploadData_PutDone")]
 				[CallerCount(Count = 0)]
 				[Calls(Type = typeof(UnityWebRequest), Member = "get_error")]
+				[Calls(TypeFullName = "WebUtils.SteamCloudManager.UploadOperation", Member = "RequestUploadData_PutDone")]
+				[CallsDeduplicatedMethods(Count = 1)]
+				[CallsUnknownMethods(Count = 2)]
 				internal void _003CWebRequestUploadData_003Eb__1(UnityWebRequest response)
 				{
 				}
@@ -780,11 +771,11 @@ public class WebUtils
 			{
 			}
 
-			[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-			[CallsUnknownMethods(Count = 1)]
-			[Calls(Type = typeof(UploadOperation), Member = "WebRequestBeginUploadData")]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[CallerCount(Count = 0)]
+			[Calls(Type = typeof(UploadOperation), Member = "WebRequestBeginUploadData")]
+			[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 1)]
 			public override void Execute()
 			{
 			}
@@ -805,12 +796,12 @@ public class WebUtils
 			{
 			}
 
-			[CallsUnknownMethods(Count = 1)]
-			[CalledBy(Type = typeof(UploadOperation), Member = "RequestUploadData_PutDone")]
 			[CalledBy(Type = typeof(UploadOperation), Member = "RequestUploadData_BeginDone")]
-			[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-			[Calls(Type = typeof(UploadOperation), Member = "WebRequestCommitUpload")]
+			[CalledBy(Type = typeof(UploadOperation), Member = "RequestUploadData_PutDone")]
 			[CallerCount(Count = 2)]
+			[Calls(Type = typeof(UploadOperation), Member = "WebRequestCommitUpload")]
+			[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+			[CallsUnknownMethods(Count = 1)]
 			public void RequestCommitUpload(string token, bool transfer_succeeded, string filename, string filesha)
 			{
 			}
@@ -821,117 +812,88 @@ public class WebUtils
 			{
 			}
 
-			[CallsUnknownMethods(Count = 4)]
-			[CalledBy(Type = typeof(_003C_003Ec__DisplayClass14_0), Member = "<WebRequestBeginUploadData>b__1")]
-			[CalledBy(Type = typeof(_003C_003Ec__DisplayClass14_0), Member = "<WebRequestBeginUploadData>b__0")]
-			[Calls(Type = typeof(UploadOperation), Member = "RequestCommitUpload")]
+			[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.UploadOperation.<>c__DisplayClass14_0", Member = "<WebRequestBeginUploadData>b__0")]
+			[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.UploadOperation.<>c__DisplayClass14_0", Member = "<WebRequestBeginUploadData>b__1")]
+			[CallerCount(Count = 2)]
 			[Calls(Type = typeof(string), Member = "Concat")]
+			[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 			[Calls(Type = typeof(string), Member = "Concat")]
 			[Calls(Type = typeof(UploadOperation), Member = "WebRequestUploadData")]
-			[Calls(Type = typeof(string), Member = "Concat")]
-			[CallsDeduplicatedMethods(Count = 3)]
-			[CallerCount(Count = 2)]
 			[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+			[Calls(Type = typeof(string), Member = "Concat")]
+			[Calls(Type = typeof(UploadOperation), Member = "RequestCommitUpload")]
+			[CallsDeduplicatedMethods(Count = 3)]
+			[CallsUnknownMethods(Count = 3)]
 			private void RequestUploadData_BeginDone(BeginUploadRequestResult result)
 			{
 			}
 
-			[CalledBy(Type = typeof(_003C_003Ec__DisplayClass16_0), Member = "<WebRequestUploadData>b__0")]
-			[Calls(Type = typeof(UploadOperation), Member = "RequestCommitUpload")]
-			[CalledBy(Type = typeof(_003C_003Ec__DisplayClass16_0), Member = "<WebRequestUploadData>b__1")]
-			[Calls(Type = typeof(string), Member = "Concat")]
+			[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.UploadOperation.<>c__DisplayClass16_0", Member = "<WebRequestUploadData>b__0")]
+			[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.UploadOperation.<>c__DisplayClass16_0", Member = "<WebRequestUploadData>b__1")]
 			[CallerCount(Count = 2)]
 			[Calls(Type = typeof(string), Member = "Concat")]
+			[Calls(Type = typeof(string), Member = "Concat")]
+			[Calls(Type = typeof(UploadOperation), Member = "RequestCommitUpload")]
 			private void RequestUploadData_PutDone(UploadPutRequestResult result)
 			{
 			}
 
+			[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.UploadOperation.<>c__DisplayClass15_0", Member = "<WebRequestCommitUpload>b__0")]
+			[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.UploadOperation.<>c__DisplayClass15_0", Member = "<WebRequestCommitUpload>b__1")]
 			[CallerCount(Count = 2)]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[Calls(Type = typeof(string), Member = "Concat")]
 			[Calls(Type = typeof(Debug), Member = "LogError")]
 			[Calls(Type = typeof(string), Member = "Format")]
 			[Calls(Type = typeof(string), Member = "Format")]
-			[CalledBy(Type = typeof(_003C_003Ec__DisplayClass15_0), Member = "<WebRequestCommitUpload>b__0")]
-			[CalledBy(Type = typeof(_003C_003Ec__DisplayClass15_0), Member = "<WebRequestCommitUpload>b__1")]
+			[CallsDeduplicatedMethods(Count = 1)]
 			private void RequestUploadData_CommitDone(UploadCommitRequestResult result)
 			{
 			}
 
-			[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-			[Calls(Type = typeof(WWWForm), Member = "AddField")]
-			[Calls(Type = typeof(int), Member = "ToString")]
-			[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-			[Calls(Type = typeof(WWWForm), Member = "AddField")]
-			[CallsUnknownMethods(Count = 1)]
-			[Calls(Type = typeof(WWWForm), Member = "AddField")]
-			[Calls(Type = typeof(Utils), Member = "WebRequest")]
 			[CalledBy(Type = typeof(UploadOperation), Member = "Execute")]
 			[CalledBy(Type = typeof(UploadOperation), Member = "RequestBeginUploadData")]
-			[Calls(Type = typeof(WWWForm), Member = "AddField")]
-			[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-			[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-			[Calls(Type = typeof(WWWForm), Member = "AddField")]
 			[CallerCount(Count = 2)]
-			[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-			[CallsDeduplicatedMethods(Count = 2)]
-			[Calls(Type = typeof(string), Member = "Concat")]
 			[Calls(Type = typeof(string), Member = "Concat")]
 			[Calls(Type = typeof(string), Member = "Concat")]
 			[Calls(Type = typeof(string), Member = "Format")]
-			[Calls(Type = typeof(string), Member = "Concat")]
-			[Calls(Type = typeof(string), Member = "Concat")]
-			[Calls(Type = typeof(string), Member = "Concat")]
 			[Calls(Type = typeof(WWWForm), Member = ".ctor")]
 			[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
 			[Calls(Type = typeof(WWWForm), Member = "AddField")]
-			[Calls(Type = typeof(string), Member = "Concat")]
+			[Calls(Type = typeof(int), Member = "ToString")]
+			[Calls(Type = typeof(Utils), Member = "WebRequest")]
+			[CallsDeduplicatedMethods(Count = 2)]
+			[CallsUnknownMethods(Count = 1)]
 			private IEnumerator WebRequestBeginUploadData(string token, int filesize, string filename, string filesha)
 			{
 				return null;
 			}
 
-			[Calls(Type = typeof(WWWForm), Member = "AddField")]
-			[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-			[Calls(Type = typeof(WWWForm), Member = "AddField")]
-			[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-			[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
+			[CalledBy(Type = typeof(UploadOperation), Member = "RequestCommitUpload")]
+			[CallerCount(Count = 1)]
 			[Calls(Type = typeof(string), Member = "Concat")]
+			[Calls(Type = typeof(string), Member = "Concat")]
+			[Calls(Type = typeof(string), Member = "Format")]
+			[Calls(Type = typeof(WWWForm), Member = ".ctor")]
 			[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
 			[Calls(Type = typeof(WWWForm), Member = "AddField")]
 			[Calls(Type = typeof(Utils), Member = "WebRequest")]
-			[CalledBy(Type = typeof(UploadOperation), Member = "RequestCommitUpload")]
-			[Calls(Type = typeof(WWWForm), Member = "AddField")]
-			[Calls(Type = typeof(WWWForm), Member = "AddField")]
-			[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-			[Calls(Type = typeof(string), Member = "Format")]
-			[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-			[Calls(Type = typeof(WWWForm), Member = ".ctor")]
-			[Calls(Type = typeof(string), Member = "Concat")]
-			[Calls(Type = typeof(string), Member = "Concat")]
-			[CallsUnknownMethods(Count = 1)]
-			[Calls(Type = typeof(string), Member = "Concat")]
-			[Calls(Type = typeof(string), Member = "Concat")]
-			[Calls(Type = typeof(string), Member = "Concat")]
-			[Calls(Type = typeof(string), Member = "Concat")]
 			[CallsDeduplicatedMethods(Count = 2)]
-			[CallerCount(Count = 1)]
-			[Calls(Type = typeof(WWWForm), Member = "AddField")]
+			[CallsUnknownMethods(Count = 1)]
 			private IEnumerator WebRequestCommitUpload(string token, bool transfer_succeeded, string filename, string filesha)
 			{
 				return null;
 			}
 
 			[CalledBy(Type = typeof(UploadOperation), Member = "RequestUploadData")]
-			[Calls(Type = typeof(Utils), Member = "WebRequestPut")]
-			[CallsUnknownMethods(Count = 1)]
 			[CalledBy(Type = typeof(UploadOperation), Member = "RequestUploadData_BeginDone")]
-			[Calls(Type = typeof(string), Member = "Concat")]
-			[Calls(Type = typeof(string), Member = "Concat")]
-			[Calls(Type = typeof(string), Member = "Concat")]
-			[Calls(Type = typeof(string), Member = "StartsWith")]
-			[CallsDeduplicatedMethods(Count = 2)]
 			[CallerCount(Count = 2)]
+			[Calls(Type = typeof(string), Member = "StartsWith")]
+			[Calls(Type = typeof(string), Member = "Concat")]
+			[Calls(Type = typeof(string), Member = "Concat")]
+			[Calls(Type = typeof(string), Member = "Concat")]
+			[Calls(Type = typeof(Utils), Member = "WebRequestPut")]
+			[CallsDeduplicatedMethods(Count = 2)]
+			[CallsUnknownMethods(Count = 1)]
 			private IEnumerator WebRequestUploadData(string url_host, string url_path, string filename, Dictionary<string, string> httpHeaders, byte[] data)
 			{
 				return null;
@@ -1000,30 +962,30 @@ public class WebUtils
 
 				public ResponseData response;
 
-				[CallerCount(Count = 6)]
 				[DeduplicatedMethod]
+				[CallerCount(Count = 6)]
 				public CommitHTTPUpload_v1()
 				{
 				}
 			}
 
 			[CallerCount(Count = 0)]
-			[CallsDeduplicatedMethods(Count = 1)]
+			[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 			public static BeginHTTPUpload_v1 ParseJson(string txt)
 			{
 				return null;
 			}
 
 			[CallerCount(Count = 0)]
-			[CallsDeduplicatedMethods(Count = 1)]
+			[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 			[CallsUnknownMethods(Count = 1)]
 			public static bool IsCommitHTTPUploadSuccess(string response)
 			{
-				return default(bool);
+				return false;
 			}
 
-			[CallerCount(Count = 6)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 6)]
 			public Upload()
 			{
 			}
@@ -1039,9 +1001,9 @@ public class WebUtils
 
 			private Action<bool> m_OnOperationComplete;
 
-			[CallerCount(Count = 2)]
 			[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchUploadSave")]
 			[CalledBy(Type = typeof(SteamCloudManager), Member = "CreateUploadReplaceSaveFileOperation")]
+			[CallerCount(Count = 2)]
 			public UploadSaveOperation(string token, string fileName, Action<bool> onOperationComplete)
 			{
 			}
@@ -1058,8 +1020,8 @@ public class WebUtils
 			{
 			}
 
-			[CallerCount(Count = 0)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
 			private void OperationFailed()
 			{
@@ -1078,9 +1040,9 @@ public class WebUtils
 
 				private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 				{
-					[CallerCount(Count = 28)]
-					[DeduplicatedMethod]
 					[DebuggerHidden]
+					[DeduplicatedMethod]
+					[CallerCount(Count = 32)]
 					get
 					{
 						return null;
@@ -1091,37 +1053,35 @@ public class WebUtils
 				{
 					[DebuggerHidden]
 					[DeduplicatedMethod]
-					[CallerCount(Count = 28)]
+					[CallerCount(Count = 32)]
 					get
 					{
 						return null;
 					}
 				}
 
+				[DebuggerHidden]
 				[DeduplicatedMethod]
 				[CallerCount(Count = 0)]
-				[DebuggerHidden]
 				public _003CWaitSaveOperationComplete_003Ed__3(int _003C_003E1__state)
 				{
 				}
 
-				[CallerCount(Count = 6)]
 				[DebuggerHidden]
 				[DeduplicatedMethod]
+				[CallerCount(Count = 6)]
 				private void System_002EIDisposable_002EDispose()
 				{
 				}
 
 				[CallerCount(Count = 0)]
+				[Calls(Type = typeof(SaveGameData), Member = "GetNumPendingOperations")]
+				[Calls(Type = typeof(SaveGameData), Member = "AsyncOperationInProgress")]
 				[CallsDeduplicatedMethods(Count = 1)]
-				[Calls(Type = typeof(SaveGameData), Member = "GetNumPendingOperations")]
-				[Calls(Type = typeof(SaveGameData), Member = "GetNumPendingOperations")]
-				[Calls(Type = typeof(SaveGameData), Member = "AsyncOperationInProgress")]
-				[Calls(Type = typeof(SaveGameData), Member = "AsyncOperationInProgress")]
 				[CallsUnknownMethods(Count = 1)]
 				private bool MoveNext()
 				{
-					return default(bool);
+					return false;
 				}
 
 				[DebuggerHidden]
@@ -1135,15 +1095,15 @@ public class WebUtils
 
 			private Action m_OnOperationComplete;
 
-			[CallerCount(Count = 40)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 50)]
 			public WaitSaveOperation(Action onCompleted)
 			{
 			}
 
 			[CallerCount(Count = 0)]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+			[CallsDeduplicatedMethods(Count = 1)]
 			[CallsUnknownMethods(Count = 1)]
 			public override void Execute()
 			{
@@ -1184,7 +1144,7 @@ public class WebUtils
 				{
 					[DebuggerHidden]
 					[DeduplicatedMethod]
-					[CallerCount(Count = 28)]
+					[CallerCount(Count = 32)]
 					get
 					{
 						return null;
@@ -1193,18 +1153,18 @@ public class WebUtils
 
 				private object System_002ECollections_002EIEnumerator_002ECurrent
 				{
-					[DeduplicatedMethod]
 					[DebuggerHidden]
-					[CallerCount(Count = 28)]
+					[DeduplicatedMethod]
+					[CallerCount(Count = 32)]
 					get
 					{
 						return null;
 					}
 				}
 
-				[CallerCount(Count = 0)]
-				[DeduplicatedMethod]
 				[DebuggerHidden]
+				[DeduplicatedMethod]
+				[CallerCount(Count = 0)]
 				public _003CAuthenticate_003Ed__6(int _003C_003E1__state)
 				{
 				}
@@ -1216,15 +1176,15 @@ public class WebUtils
 				{
 				}
 
-				[Calls(Type = typeof(AuthenticateOperation), Member = "RetrieveToken")]
-				[Calls(Type = typeof(EnumerateFilesOperation), Member = ".ctor")]
-				[CallsUnknownMethods(Count = 2)]
-				[CallsDeduplicatedMethods(Count = 1)]
 				[CallerCount(Count = 0)]
-				[Calls(Type = typeof(AuthenticateOperation), Member = "AuthenticationComplete")]
+				[Calls(TypeFullName = "WebUtils.SteamCloudManager.AuthenticateOperation", Member = "AuthenticationComplete")]
+				[Calls(TypeFullName = "WebUtils.SteamCloudManager.EnumerateFilesOperation", Member = ".ctor")]
+				[Calls(TypeFullName = "WebUtils.SteamCloudManager.AuthenticateOperation", Member = "RetrieveToken")]
+				[CallsDeduplicatedMethods(Count = 1)]
+				[CallsUnknownMethods(Count = 2)]
 				private bool MoveNext()
 				{
-					return default(bool);
+					return false;
 				}
 
 				[DebuggerHidden]
@@ -1243,16 +1203,16 @@ public class WebUtils
 			private OperationStatus m_Status;
 
 			[CalledBy(Type = typeof(SteamCloudManager), Member = "Sync")]
-			[CallerCount(Count = 2)]
 			[CalledBy(Type = typeof(SteamCloudManager), Member = "Authenticate")]
+			[CallerCount(Count = 2)]
 			public AuthenticateOperation(string token, Action<bool> onOperationComplete)
 			{
 			}
 
-			[CallsUnknownMethods(Count = 1)]
-			[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 			[CallerCount(Count = 0)]
+			[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 1)]
 			public override void Execute()
 			{
 			}
@@ -1271,28 +1231,29 @@ public class WebUtils
 			{
 			}
 
+			[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.AuthenticateOperation.<Authenticate>d__6", Member = "MoveNext")]
 			[CalledBy(Type = typeof(AuthenticateOperation), Member = "EnumerateForAuthenticationDone")]
 			[CalledBy(Type = typeof(AuthenticateOperation), Member = "Success")]
-			[CalledBy(Type = typeof(_003CAuthenticate_003Ed__6), Member = "MoveNext")]
-			[CallsDeduplicatedMethods(Count = 1)]
-			[Calls(Type = typeof(string), Member = "Concat")]
 			[CallerCount(Count = 3)]
+			[Calls(Type = typeof(string), Member = "Concat")]
+			[CallsDeduplicatedMethods(Count = 1)]
 			private void AuthenticationComplete()
 			{
 			}
 
 			[CallAnalysisFailed]
+			[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.AuthenticateOperation.<Authenticate>d__6", Member = "MoveNext")]
 			[CallerCount(Count = 1)]
-			[CalledBy(Type = typeof(_003CAuthenticate_003Ed__6), Member = "MoveNext")]
 			private void RetrieveToken()
 			{
 			}
 
 			[CalledBy(Type = typeof(AuthenticateOperation), Member = "EnumerateForAuthenticationDone")]
-			[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
-			[CallsUnknownMethods(Count = 1)]
 			[CallerCount(Count = 1)]
-			[CallsDeduplicatedMethods(Count = 3)]
+			[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+			[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
+			[CallsDeduplicatedMethods(Count = 2)]
+			[CallsUnknownMethods(Count = 1)]
 			private void ShowRetryDialog()
 			{
 			}
@@ -1320,12 +1281,12 @@ public class WebUtils
 			{
 			}
 
-			[Calls(Type = typeof(GameManager), Member = "SaveProfileSettingsAndDisplayHUDMessage")]
-			[CallsUnknownMethods(Count = 1)]
-			[Calls(Type = typeof(SteamCloudManager), Member = "SetToken")]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[CallerCount(Count = 0)]
 			[Calls(Type = typeof(SteamCloudManager), Member = "GetInstance")]
+			[Calls(Type = typeof(SteamCloudManager), Member = "SetToken")]
+			[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+			[Calls(Type = typeof(GameManager), Member = "SaveProfileSettingsAndDisplayHUDMessage")]
+			[CallsUnknownMethods(Count = 1)]
 			private static void SaveToken(string token)
 			{
 			}
@@ -1348,16 +1309,10 @@ public class WebUtils
 
 		public interface ICloudOperation
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 101262)]
 			bool IsCompleted();
 
-			[DeduplicatedMethod]
-			[CallerCount(Count = 101262)]
 			bool IsSuccess();
 
-			[DeduplicatedMethod]
-			[CallerCount(Count = 101262)]
 			bool IsRetryPending();
 		}
 
@@ -1377,20 +1332,20 @@ public class WebUtils
 			[CallerCount(Count = 0)]
 			public bool IsCompleted()
 			{
-				return default(bool);
+				return false;
 			}
 
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
 			public bool IsSuccess()
 			{
-				return default(bool);
+				return false;
 			}
 
 			[CallerCount(Count = 0)]
 			public bool IsRetryPending()
 			{
-				return default(bool);
+				return false;
 			}
 
 			[DeduplicatedMethod]
@@ -1405,24 +1360,24 @@ public class WebUtils
 			{
 			}
 
-			[CallerCount(Count = 0)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			private void Reset()
 			{
 			}
 
-			[CallerCount(Count = 79)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 86)]
 			public void SetOnExecuteStarted(Action onExecuteStarted)
 			{
 			}
 
 			[CallerCount(Count = 0)]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[Calls(Type = typeof(string), Member = "Format")]
+			[CallsDeduplicatedMethods(Count = 1)]
 			public bool Retry()
 			{
-				return default(bool);
+				return false;
 			}
 
 			[DeduplicatedMethod]
@@ -1527,7 +1482,7 @@ public class WebUtils
 		[CallerCount(Count = 3)]
 		private static bool WriteDownloadedSaveFile(DownloadDataResult result, string filename, DateTime dateTime)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
@@ -1535,47 +1490,47 @@ public class WebUtils
 		private static bool ReadSaveFile(string filename, out byte[] bytes)
 		{
 			bytes = null;
-			return default(bool);
+			return false;
 		}
 
-		[CallerCount(Count = 3)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 3)]
 		private static bool DeleteSaveFile(string filename)
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CalledBy(Type = typeof(SteamCloudManagerPC), Member = "EnumerateLocalSaveFiles")]
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "FileEnumerationForSyncComplete")]
-		[Calls(Type = typeof(string), Member = "Contains")]
-		[Calls(Type = typeof(SaveGameSlots), Member = "IsValidSavedGameName")]
-		[Calls(Type = typeof(SaveGameSystem), Member = "IsProfileFilename")]
+		[CalledBy(Type = typeof(SteamCloudManagerPC), Member = "EnumerateLocalSaveFiles")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Path), Member = "GetFileName")]
-		[Calls(Type = typeof(SaveGameSystem), Member = "IsSettingsFilename")]
 		[Calls(Type = typeof(Path), Member = "ChangeExtension")]
+		[Calls(Type = typeof(SaveGameSystem), Member = "IsProfileFilename")]
+		[Calls(Type = typeof(SaveGameSystem), Member = "IsSettingsFilename")]
+		[Calls(Type = typeof(string), Member = "Contains")]
+		[Calls(Type = typeof(SaveGameSlots), Member = "IsValidSavedGameName")]
+		[CallsUnknownMethods(Count = 1)]
 		public static bool CloudFileRequiresSync(string fileName)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(DateTime), Member = "get_Now")]
 		[Calls(Type = typeof(EncryptString), Member = "DecompressBytesToStringNoAlloc")]
+		[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 		public static DateTime GetDateTimeFromSave(byte[] data)
 		{
 			return default(DateTime);
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(SteamCloudManager), Member = "ProcessOperation")]
-		[Calls(Type = typeof(SaveGameSlots), Member = "LoadAllSavedGameFiles")]
-		[Calls(Type = typeof(SaveGameSlots), Member = "ReInit")]
-		[Calls(Type = typeof(SaveGameSlotHelper), Member = "ClearSaveSlotsLists")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(SaveGameSlotHelper), Member = "ClearSaveSlotsLists")]
+		[Calls(Type = typeof(SaveGameSlots), Member = "ReInit")]
+		[Calls(Type = typeof(SaveGameSlots), Member = "LoadAllSavedGameFiles")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "ProcessOperation")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public void ReloadSaves()
 		{
 		}
@@ -1584,19 +1539,19 @@ public class WebUtils
 		[CallerCount(Count = 3)]
 		public bool IsSyncSavesEnabled()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(SteamCloudManager), Member = "GetAllFiles")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		public void RetrieveFilesForSync()
 		{
 		}
 
-		[Calls(Type = typeof(SteamCloudManager), Member = "GetCloudSaveFilename")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(SteamCloudManager), Member = "GetCloudSaveFilename")]
 		public void HandleSaveDeleted(string saveFilename)
 		{
 		}
@@ -1608,8 +1563,8 @@ public class WebUtils
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(SteamCloudManager), Member = "HideSyncMessage")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		private void DeleteSaveDone(bool res)
 		{
 		}
@@ -1618,17 +1573,16 @@ public class WebUtils
 		[CallerCount(Count = 0)]
 		public bool HasSyncStarted()
 		{
-			return default(bool);
+			return false;
 		}
 
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BatchOperation), Member = ".ctor")]
+		[Calls(Type = typeof(BatchOperation), Member = "AddOperation")]
+		[Calls(Type = typeof(AuthenticateOperation), Member = ".ctor")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "ProcessOperation")]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(SteamCloudManager), Member = "ProcessOperation")]
-		[Calls(Type = typeof(BatchOperation), Member = "AddOperation")]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(BatchOperation), Member = "AddOperation")]
-		[Calls(Type = typeof(BatchOperation), Member = ".ctor")]
-		[Calls(Type = typeof(AuthenticateOperation), Member = ".ctor")]
 		public void Sync()
 		{
 		}
@@ -1639,19 +1593,19 @@ public class WebUtils
 		{
 		}
 
-		[Calls(Type = typeof(SteamCloudManager), Member = "GetAllFiles")]
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(SteamCloudManager), Member = "HideSyncMessage")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(SteamCloudManager), Member = "HideSyncMessage")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "GetAllFiles")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 3)]
 		private void AuthenticateForSyncDone(ICloudOperation operation)
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(SteamCloudManager), Member = "CreateUploadReplaceSaveFileOperation")]
 		[Calls(Type = typeof(SteamCloudManager), Member = "ProcessOperation")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		private void ReplaceCloudSave(string cloudFileName)
 		{
@@ -1663,8 +1617,8 @@ public class WebUtils
 		{
 		}
 
-		[Calls(Type = typeof(SteamCloudManager), Member = "HideSyncMessage")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(SteamCloudManager), Member = "HideSyncMessage")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		private void ReplaceCloudSaveDone(ICloudOperation operation)
 		{
@@ -1682,27 +1636,28 @@ public class WebUtils
 		{
 		}
 
-		[Calls(Type = typeof(SteamCloudManager), Member = "GatherFilesStatus")]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(SteamCloudManager), Member = "AreFilesIdentical")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "RequestUserConfirmation")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Array), Member = "Clear")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "AreFilesIdentical")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "GatherFilesStatus")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "RequestUserConfirmation")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		private void SyncInternal()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(SteamCloudManager), Member = "GatherFilesStatus")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "AreFilesIdentical")]
-		[Calls(Type = typeof(Array), Member = "Clear")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "RequestUserConfirmation")]
-		[Calls(Type = typeof(Localization), Member = "Get")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "HideSyncMessage")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(SteamCloudManager), Member = "HideSyncMessage")]
+		[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+		[Calls(Type = typeof(Localization), Member = "Get")]
 		[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
+		[Calls(Type = typeof(Array), Member = "Clear")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "AreFilesIdentical")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "GatherFilesStatus")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "RequestUserConfirmation")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		private void CloudFilesRetrievedForSync(EnumerateFilesResult res)
 		{
 		}
@@ -1731,26 +1686,22 @@ public class WebUtils
 		{
 		}
 
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "AddBatchDownloadSave")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "CloudSyncLocalNewerDeclined")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "AddBatchUploadReplaceSave")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "CloudSyncLocalNewerAccepted")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "CloudSyncNewerDeclined")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "RequestUserConfirmation")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "CloudSyncLocalNewerAccepted")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "AddBatchUploadReplaceSave")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "ProcessOperation")]
-		[Calls(Type = typeof(string), Member = "Format")]
 		[CallerCount(Count = 4)]
-		[CallsDeduplicatedMethods(Count = 17)]
 		[Calls(Type = typeof(BatchOperation), Member = ".ctor")]
+		[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 		[Calls(Type = typeof(SteamCloudManager), Member = "AddBatchDeleteLocalSave")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "AddBatchDownloadSave")]
 		[Calls(Type = typeof(SteamCloudManager), Member = "AddBatchUploadSave")]
 		[Calls(Type = typeof(string), Member = "Format")]
 		[Calls(Type = typeof(SteamCloudManager), Member = "AddBatchDeleteSave")]
 		[Calls(Type = typeof(SteamCloudManager), Member = "AddBatchDownloadSave")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "AddBatchUploadReplaceSave")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "ProcessOperation")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		private void DoSyncOperation()
 		{
 		}
@@ -1761,210 +1712,195 @@ public class WebUtils
 		{
 		}
 
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(SteamCloudManager), Member = "ProcessOperation")]
-		[Calls(Type = typeof(SaveGameSlots), Member = "LoadAllSavedGameFiles")]
-		[Calls(Type = typeof(SaveGameSlots), Member = "ReInit")]
-		[Calls(Type = typeof(SaveGameSlotHelper), Member = "ClearSaveSlotsLists")]
-		[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
-		[Calls(Type = typeof(Localization), Member = "Get")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+		[Calls(Type = typeof(Localization), Member = "Get")]
+		[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 		[Calls(Type = typeof(SteamCloudManager), Member = "HideSyncMessage")]
+		[Calls(Type = typeof(SaveGameSlotHelper), Member = "ClearSaveSlotsLists")]
+		[Calls(Type = typeof(SaveGameSlots), Member = "ReInit")]
+		[Calls(Type = typeof(SaveGameSlots), Member = "LoadAllSavedGameFiles")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "ProcessOperation")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 4)]
 		private void SyncDone(ICloudOperation cloudOperation)
 		{
 		}
 
-		[CallsDeduplicatedMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		private void NotifySyncDone()
 		{
 		}
 
-		[CallsDeduplicatedMethods(Count = 5)]
-		[Calls(Type = typeof(SteamCloudManager), Member = "HideSyncMessage")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(SteamCloudManager), Member = "HideSyncMessage")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "RefreshSaveUI")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		private void ReloadSavesReady()
 		{
 		}
 
-		[CallerCount(Count = 1)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "RequestUserConfirmation")]
+		[CallerCount(Count = 1)]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
 		[CallsUnknownMethods(Count = 9)]
 		private bool AreCloudFilesNewer()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "CloudFilesRetrievedForSync")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "SyncInternal")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "AreCloudFilesNewer")]
-		[CallsDeduplicatedMethods(Count = 5)]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "CloudFilesRetrievedForSync")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "AreCloudFilesNewer")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(SteamCloudManager), Member = "DoSyncOperation")]
+		[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
+		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 1)]
 		private void RequestUserConfirmation()
 		{
 		}
 
-		[Calls(Type = typeof(SteamCloudManager), Member = "AddToListIfNotFound")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "CloudFilesRetrievedForSync")]
-		[CallsUnknownMethods(Count = 11)]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "SyncInternal")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "FindFile")]
-		[Calls(Type = typeof(EnumerateFilesResult.FileInfo), Member = "op_Equality")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "AddToListIfNotFound")]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-		[Calls(Type = typeof(EnumerateFilesResult.FileInfo), Member = "op_Equality")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "FindFile")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "ClearCloudFilesBySyncStatus")]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "CloudFilesRetrievedForSync")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(SteamCloudManager), Member = "ClearCloudFilesBySyncStatus")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "FindFile")]
+		[Calls(Type = typeof(EnumerateFilesResult.FileInfo), Member = "op_Equality")]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+		[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "AddToListIfNotFound")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+		[CallsUnknownMethods(Count = 11)]
 		private void GatherFilesStatus()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 8)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "GatherFilesStatus")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Array), Member = "Clear")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 8)]
 		private void ClearCloudFilesBySyncStatus()
 		{
 		}
 
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "GatherFilesStatus")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(SteamCloudManager), Member = "FindFile")]
 		[Calls(Type = typeof(EnumerateFilesResult.FileInfo), Member = "op_Inequality")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "GatherFilesStatus")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "GatherFilesStatus")]
 		[CallsUnknownMethods(Count = 2)]
 		private void AddToListIfNotFound(EnumerateFilesResult.FileInfo info, List<EnumerateFilesResult.FileInfo> list)
 		{
 		}
 
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "DoSyncOperation")]
-		[CallsUnknownMethods(Count = 5)]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "DoSyncOperation")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "DoSyncOperation")]
-		[Calls(Type = typeof(BatchOperation), Member = "AddOperation")]
-		[Calls(Type = typeof(DownloadSaveOperation), Member = ".ctor")]
-		[Calls(Type = typeof(BatchOperation), Member = ".ctor")]
 		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(BatchOperation), Member = ".ctor")]
+		[Calls(Type = typeof(DownloadSaveOperation), Member = ".ctor")]
 		[Calls(Type = typeof(BatchOperation), Member = "AddOperation")]
+		[CallsUnknownMethods(Count = 5)]
 		private void AddBatchDownloadSave(BatchOperation batchOperation, List<EnumerateFilesResult.FileInfo> list)
 		{
 		}
 
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "DoSyncOperation")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(BatchOperation), Member = ".ctor")]
 		[Calls(Type = typeof(UploadSaveOperation), Member = ".ctor")]
 		[Calls(Type = typeof(BatchOperation), Member = "AddOperation")]
-		[Calls(Type = typeof(BatchOperation), Member = "AddOperation")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "DoSyncOperation")]
 		[CallsUnknownMethods(Count = 4)]
 		private void AddBatchUploadSave(BatchOperation batchOperation, List<EnumerateFilesResult.FileInfo> list)
 		{
 		}
 
-		[Calls(Type = typeof(BatchOperation), Member = "AddOperation")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "DoSyncOperation")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(BatchOperation), Member = ".ctor")]
+		[Calls(Type = typeof(DeleteOperation), Member = ".ctor")]
 		[Calls(Type = typeof(BatchOperation), Member = "AddOperation")]
 		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(BatchOperation), Member = ".ctor")]
-		[CallerCount(Count = 1)]
-		[Calls(Type = typeof(DeleteOperation), Member = ".ctor")]
 		private void AddBatchDeleteSave(BatchOperation batchOperation, List<EnumerateFilesResult.FileInfo> list)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 4)]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "DoSyncOperation")]
-		[Calls(Type = typeof(BatchOperation), Member = "AddOperation")]
-		[Calls(Type = typeof(BatchOperation), Member = "AddOperation")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(BatchOperation), Member = ".ctor")]
+		[Calls(Type = typeof(BatchOperation), Member = "AddOperation")]
+		[CallsUnknownMethods(Count = 4)]
 		private void AddBatchDeleteLocalSave(BatchOperation batchOperation, List<EnumerateFilesResult.FileInfo> list)
 		{
 		}
 
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "DoSyncOperation")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(BatchOperation), Member = ".ctor")]
 		[Calls(Type = typeof(SteamCloudManager), Member = "CreateUploadReplaceSaveFileOperation")]
 		[Calls(Type = typeof(BatchOperation), Member = "AddOperation")]
-		[Calls(Type = typeof(BatchOperation), Member = "AddOperation")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "DoSyncOperation")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "DoSyncOperation")]
 		[CallsUnknownMethods(Count = 3)]
 		private void AddBatchUploadReplaceSave(BatchOperation batchOperation, List<EnumerateFilesResult.FileInfo> list)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchUploadReplaceSave")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "ReplaceCloudSave")]
-		[Calls(Type = typeof(BatchOperation), Member = "AddOperation")]
-		[Calls(Type = typeof(BatchOperation), Member = ".ctor")]
-		[Calls(Type = typeof(UploadSaveOperation), Member = ".ctor")]
-		[Calls(Type = typeof(DeleteOperation), Member = ".ctor")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "AddBatchUploadReplaceSave")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(BatchOperation), Member = ".ctor")]
+		[Calls(Type = typeof(DeleteOperation), Member = ".ctor")]
+		[Calls(Type = typeof(UploadSaveOperation), Member = ".ctor")]
 		[Calls(Type = typeof(BatchOperation), Member = "AddOperation")]
+		[CallsUnknownMethods(Count = 1)]
 		private BatchOperation CreateUploadReplaceSaveFileOperation(string cloudFileName, Action<ICloudOperation> onOperationComplete)
 		{
 			return null;
 		}
 
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "CloudFilesRetrievedForSync")]
-		[CallsUnknownMethods(Count = 3)]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "SyncInternal")]
-		[Calls(Type = typeof(EnumerateFilesResult.FileInfo), Member = "op_Equality")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "FindFile")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "CloudFilesRetrievedForSync")]
 		[CallerCount(Count = 2)]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "FindFile")]
+		[Calls(Type = typeof(EnumerateFilesResult.FileInfo), Member = "op_Equality")]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+		[CallsUnknownMethods(Count = 3)]
 		private bool AreFilesIdentical(List<EnumerateFilesResult.FileInfo> filesToCompare)
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "GetLocalFileSyncStatus")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "GetCloudFileSyncStatus")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "FileExists")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "AreFilesIdentical")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "GatherFilesStatus")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "AddToListIfNotFound")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "GatherFilesStatus")]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-		[Calls(Type = typeof(Path), Member = "ChangeExtension")]
-		[Calls(Type = typeof(Path), Member = "GetFileName")]
-		[Calls(Type = typeof(Path), Member = "ChangeExtension")]
-		[Calls(Type = typeof(Path), Member = "GetFileName")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "AreFilesIdentical")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "FileExists")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "GetCloudFileSyncStatus")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "GetLocalFileSyncStatus")]
 		[CallerCount(Count = 7)]
+		[Calls(Type = typeof(Path), Member = "GetFileName")]
+		[Calls(Type = typeof(Path), Member = "ChangeExtension")]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 		[CallsUnknownMethods(Count = 3)]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "GatherFilesStatus")]
 		private EnumerateFilesResult.FileInfo FindFile(string filename, List<EnumerateFilesResult.FileInfo> filesToSearch)
 		{
 			return default(EnumerateFilesResult.FileInfo);
 		}
 
-		[Calls(Type = typeof(EnumerateFilesResult.FileInfo), Member = "op_Inequality")]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(SteamCloudManager), Member = "FindFile")]
+		[Calls(Type = typeof(EnumerateFilesResult.FileInfo), Member = "op_Inequality")]
 		private bool FileExists(EnumerateFilesResult.FileInfo fileInfo, List<EnumerateFilesResult.FileInfo> comparedToList)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(SteamCloudManager), Member = "FindFile")]
 		[Calls(Type = typeof(EnumerateFilesResult.FileInfo), Member = "op_Equality")]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 		private CloudSyncStatus GetCloudFileSyncStatus(EnumerateFilesResult.FileInfo cloudInfo)
 		{
 			return default(CloudSyncStatus);
@@ -1973,30 +1909,28 @@ public class WebUtils
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(SteamCloudManager), Member = "FindFile")]
 		[Calls(Type = typeof(EnumerateFilesResult.FileInfo), Member = "op_Equality")]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 		private CloudSyncStatus GetLocalFileSyncStatus(EnumerateFilesResult.FileInfo localInfo)
 		{
 			return default(CloudSyncStatus);
 		}
 
-		[Calls(Type = typeof(EncryptString), Member = "DecompressBytesToStringNoAlloc")]
-		[Calls(Type = typeof(DateTime), Member = "get_Now")]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(DateTime), Member = "get_Now")]
+		[Calls(Type = typeof(EncryptString), Member = "DecompressBytesToStringNoAlloc")]
+		[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 		private static bool TryExtractTimeStampFromSave(byte[] data, out DateTime timestamp)
 		{
-			System.Runtime.CompilerServices.Unsafe.As<DateTime, @null>(ref timestamp) = null;
-			return default(bool);
+			timestamp = default(DateTime);
+			return false;
 		}
 
-		[Calls(Type = typeof(SaveGameData), Member = "AsyncOperationInProgress")]
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(SaveGameData), Member = "GetNumPendingOperations")]
 		[Calls(Type = typeof(SaveGameData), Member = "GetNumPendingOperations")]
 		[Calls(Type = typeof(SaveGameData), Member = "AsyncOperationInProgress")]
 		private static bool IsSaveOperationInProgress()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
@@ -2011,9 +1945,9 @@ public class WebUtils
 			return null;
 		}
 
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "GetInstance")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 3)]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "GetInstance")]
 		[CallsUnknownMethods(Count = 5)]
 		private SteamCloudManager()
 		{
@@ -2026,11 +1960,11 @@ public class WebUtils
 			return null;
 		}
 
-		[CalledBy(Type = typeof(AuthenticateOperation), Member = "SaveToken")]
-		[CalledBy(Type = typeof(ConsoleManager), Member = "SaveToken")]
 		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnAfterDeserialization")]
-		[Calls(Type = typeof(string), Member = "Concat")]
+		[CalledBy(Type = typeof(ConsoleManager), Member = "SaveToken")]
+		[CalledBy(Type = typeof(AuthenticateOperation), Member = "SaveToken")]
 		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		public void SetToken(string token)
 		{
 		}
@@ -2045,20 +1979,21 @@ public class WebUtils
 		{
 		}
 
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "Update")]
-		[CallsUnknownMethods(Count = 2)]
 		[CalledBy(Type = typeof(GameManager), Member = "Update")]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "Update")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(string), Member = "Format")]
+		[Calls(Type = typeof(Queue<>), Member = "Dequeue")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		private void UpdateQueue()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(AuthenticateOperation), Member = ".ctor")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(AuthenticateOperation), Member = ".ctor")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public void Authenticate()
 		{
 		}
@@ -2075,20 +2010,21 @@ public class WebUtils
 		[CallerCount(Count = 0)]
 		private bool HasSyncMessage()
 		{
-			return default(bool);
+			return false;
 		}
 
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(SteamCloudManager), Member = "GetInstance")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "ShowSyncMessage")]
 		[Calls(Type = typeof(SteamCloudManager), Member = "HideSyncMessage")]
 		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(SteamCloudManager), Member = "ShowSyncMessage")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "GetInstance")]
-		[CallerCount(Count = 0)]
 		private void UpdateSyncMessage()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
+		[Calls(Type = typeof(Queue<>), Member = "Enqueue")]
+		[CallsUnknownMethods(Count = 1)]
 		private void QueueOperation(CommonCloudOperation cloudOperation)
 		{
 		}
@@ -2101,13 +2037,13 @@ public class WebUtils
 			return null;
 		}
 
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "DeleteAllCloudFiles")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "ProcessOperation")]
-		[CallsUnknownMethods(Count = 2)]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "RetrieveFilesForSync")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "AuthenticateForSyncDone")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "DeleteAllCloudFiles")]
 		[CallerCount(Count = 3)]
 		[Calls(Type = typeof(EnumerateFilesOperation), Member = ".ctor")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "RetrieveFilesForSync")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "ProcessOperation")]
+		[CallsUnknownMethods(Count = 2)]
 		public void GetAllFiles(Action<EnumerateFilesResult> onActionComplete, Action onOperationStarted, int numRetries)
 		{
 		}
@@ -2116,14 +2052,14 @@ public class WebUtils
 		[CallsUnknownMethods(Count = 1)]
 		public bool IsOperationPending()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 3)]
 		public bool IsSyncPending()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
@@ -2143,19 +2079,19 @@ public class WebUtils
 		[CallerCount(Count = 3)]
 		public bool AreSaveFilesSynchronized()
 		{
-			return default(bool);
+			return false;
 		}
 
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CallsUnknownMethods(Count = 4)]
-		[CallerCount(Count = 0)]
 		public void RegisterSyncEnabledChanged(Action<bool> onSyncEnabledChanged)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 4)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 4)]
 		public void UnRegisterSyncEnabledChanged(Action<bool> onSyncEnabledChanged)
 		{
 		}
@@ -2174,64 +2110,63 @@ public class WebUtils
 		{
 		}
 
-		[CallsUnknownMethods(Count = 3)]
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.DateTimeFormat), Member = "Format")]
+		[Calls(TypeFullName = "System.DateTimeFormat", Member = "Format")]
+		[CallsUnknownMethods(Count = 3)]
 		public static void DebugLogFiles(EnumerateFilesResult result)
 		{
 		}
 
+		[CalledBy(Type = typeof(GameManager), Member = "Update")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "DeleteSaveStarted")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "ReplaceCloudSaveStarted")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "SyncStarted")]
-		[Calls(Type = typeof(GameObject), Member = "SetActive")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "RetrieveFilesForSyncSyncStarted")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "SyncingFilesOperationStarted")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "Update")]
-		[CalledBy(Type = typeof(GameManager), Member = "Update")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "RetrieveFilesForSyncSyncStarted")]
-		[Calls(Type = typeof(UILabel), Member = "set_text")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-		[Calls(Type = typeof(string), Member = "ToUpper")]
-		[Calls(Type = typeof(Localization), Member = "Get")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "UpdateSyncMessage")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "GetCurrentMessageLabel")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "GetInstance")]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[CallerCount(Count = 8)]
+		[Calls(Type = typeof(SteamCloudManager), Member = "GetInstance")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "GetCurrentMessageLabel")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(GameObject), Member = "SetActive")]
 		[Calls(Type = typeof(Localization), Member = "Get")]
+		[Calls(Type = typeof(string), Member = "ToUpper")]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+		[Calls(Type = typeof(UILabel), Member = "set_text")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 4)]
 		public static void ShowSyncMessage(string locId)
 		{
 		}
 
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "SyncDone")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "Update")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "ReloadSavesReady")]
-		[CallsUnknownMethods(Count = 4)]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "ReplaceCloudSaveDone")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "UpdateSyncMessage")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "AuthenticateForSyncDone")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "CloudFilesRetrievedForSync")]
 		[CalledBy(Type = typeof(GameManager), Member = "Update")]
-		[CallerCount(Count = 9)]
-		[CallsDeduplicatedMethods(Count = 3)]
-		[Calls(Type = typeof(SteamCloudManager), Member = "GetInstance")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "DeleteSaveDone")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "AuthenticateForSyncDone")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "ReplaceCloudSaveDone")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "CloudFilesRetrievedForSync")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "SyncDone")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "ReloadSavesReady")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "Update")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "UpdateSyncMessage")]
+		[CallerCount(Count = 9)]
+		[Calls(Type = typeof(SteamCloudManager), Member = "GetInstance")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "GetCurrentMessageLabel")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(GameObject), Member = "SetActive")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "GetCurrentMessageLabel")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 4)]
 		public static void HideSyncMessage()
 		{
 		}
 
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "HandleSaveDeleted")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "HandleDataSaved")]
+		[CalledBy(Type = typeof(SteamCloudManagerPC), Member = "EnumerateLocalSaveFiles")]
 		[CallerCount(Count = 3)]
 		[Calls(Type = typeof(Path), Member = "GetFileName")]
 		[Calls(Type = typeof(Path), Member = "ChangeExtension")]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "HandleSaveDeleted")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "HandleDataSaved")]
-		[CalledBy(Type = typeof(SteamCloudManagerPC), Member = "EnumerateLocalSaveFiles")]
 		public static string GetCloudSaveFilename(string filename)
 		{
 			return null;
@@ -2240,18 +2175,19 @@ public class WebUtils
 		[CallerCount(Count = 0)]
 		private bool IsCurrentOperationPending()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "GetAllFiles")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "DoSyncOperation")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "ReplaceCloudSave")]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "SyncDone")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "ReloadSaves")]
-		[CallerCount(Count = 6)]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "Sync")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "ReplaceCloudSave")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "DoSyncOperation")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "SyncDone")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "GetAllFiles")]
+		[CallerCount(Count = 6)]
+		[Calls(Type = typeof(Queue<>), Member = "Enqueue")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		private void ProcessOperation(CommonCloudOperation cloudOperation, int numRetries)
 		{
 		}
@@ -2259,7 +2195,7 @@ public class WebUtils
 		[CallerCount(Count = 0)]
 		private bool HasToken()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
@@ -2272,36 +2208,39 @@ public class WebUtils
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(BatchOperation), Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(DeleteOperation), Member = ".ctor")]
 		[Calls(Type = typeof(BatchOperation), Member = "AddOperation")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 4)]
 		private void EnumerateForDeleteAllDone(EnumerateFilesResult result)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(SteamCloudManager), Member = "HideSyncMessage")]
 		[CalledBy(Type = typeof(SteamCloudManager), Member = "ShowSyncMessage")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "HideSyncMessage")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 9)]
+		[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+		[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+		[CallsUnknownMethods(Count = 1)]
 		private static UILabel GetCurrentMessageLabel()
 		{
 			return null;
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 4)]
+		[Calls(Type = typeof(SteamCloudManager), Member = "RefreshSaveUI")]
 		private static void RefreshCurrentSaveUI()
 		{
 		}
 
 		[DeduplicatedMethod]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "ReloadSavesReady")]
+		[CalledBy(Type = typeof(SteamCloudManager), Member = "RefreshCurrentSaveUI")]
 		[CallerCount(Count = 8)]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[Calls(Type = typeof(SaveGameSlotHelper), Member = "RefreshSaveSlots")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		private static void RefreshSaveUI<T>(SaveSlotType saveSlotType) where T : Panel_Base
 		{
 		}
@@ -2318,71 +2257,67 @@ public class WebUtils
 
 	public class SteamCloudManagerPC
 	{
-		[Calls(Type = typeof(WebUtils), Member = "ComputeSha1Hex")]
-		[Calls(Type = typeof(SteamCloudManager), Member = "CloudFileRequiresSync")]
-		[Calls(Type = typeof(SteamCloudManager.EnumerateFilesResult.FileInfo), Member = ".ctor")]
-		[Calls(Type = typeof(EncryptString), Member = "DecompressBytesToStringNoAlloc")]
-		[Calls(Type = typeof(DateTime), Member = "get_Now")]
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(File), Member = "ReadAllBytes")]
-		[Calls(Type = typeof(DirectoryInfo), Member = "GetFiles")]
-		[Calls(Type = typeof(DirectoryInfo), Member = ".ctor")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(Array), Member = "Clear")]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Array), Member = "Clear")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(DirectoryInfo), Member = ".ctor")]
+		[Calls(Type = typeof(DirectoryInfo), Member = "GetFiles")]
 		[Calls(Type = typeof(SteamCloudManager), Member = "GetCloudSaveFilename")]
+		[Calls(Type = typeof(File), Member = "ReadAllBytes")]
+		[Calls(Type = typeof(WebUtils), Member = "ComputeSha1Hex")]
+		[Calls(Type = typeof(DateTime), Member = "get_Now")]
+		[Calls(Type = typeof(EncryptString), Member = "DecompressBytesToStringNoAlloc")]
+		[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+		[Calls(Type = typeof(SteamCloudManager.EnumerateFilesResult.FileInfo), Member = ".ctor")]
+		[Calls(Type = typeof(SteamCloudManager), Member = "CloudFileRequiresSync")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 4)]
 		public static void EnumerateLocalSaveFiles(List<SteamCloudManager.EnumerateFilesResult.FileInfo> list)
 		{
 		}
 
-		[Calls(Type = typeof(File), Member = "ReadAllBytes")]
-		[Calls(Type = typeof(Path), Member = "GetFileName")]
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(Path), Member = "GetFileName")]
+		[Calls(Type = typeof(File), Member = "ReadAllBytes")]
 		public static bool ReadSaveFile(string filename, out byte[] bytes)
 		{
 			bytes = null;
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(Path), Member = "GetFileName")]
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(File), Member = "Exists")]
 		[Calls(Type = typeof(File), Member = "Delete")]
 		public static bool DeleteSaveFile(string filename)
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(Path), Member = "InsecureGetFullPath")]
-		[Calls(Type = typeof(System.IO.FileSystem), Member = "SetCreationTime")]
-		[Calls(Type = typeof(File), Member = "GetUtcDateTimeOffset")]
-		[Calls(Type = typeof(File), Member = "GetUtcDateTimeOffset")]
-		[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-		[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-		[Calls(Type = typeof(System.IO.FileSystem), Member = "SetLastWriteTime")]
-		[Calls(Type = typeof(Path), Member = "InsecureGetFullPath")]
-		[Calls(Type = typeof(ArgumentException), Member = ".ctor")]
-		[Calls(Type = typeof(Directory), Member = "CreateDirectory")]
-		[Calls(Type = typeof(Directory), Member = "Exists")]
-		[Calls(Type = typeof(Path), Member = "GetDirectoryName")]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(Path), Member = "GetFileName")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Path), Member = "GetDirectoryName")]
+		[Calls(Type = typeof(Directory), Member = "Exists")]
+		[Calls(Type = typeof(Directory), Member = "CreateDirectory")]
 		[Calls(Type = typeof(File), Member = "InternalWriteAllBytes")]
+		[Calls(Type = typeof(Path), Member = "InsecureGetFullPath")]
+		[Calls(Type = typeof(File), Member = "GetUtcDateTimeOffset")]
+		[Calls(TypeFullName = "System.IO.FileSystem", Member = "SetCreationTime")]
+		[Calls(TypeFullName = "System.IO.FileSystem", Member = "SetLastWriteTime")]
+		[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+		[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+		[Calls(Type = typeof(ArgumentException), Member = ".ctor")]
 		[CallsUnknownMethods(Count = 17)]
 		public static bool WriteDownloadedSaveFile(byte[] result, string filename, DateTime dateTime)
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		private static string GetDownloadDirectory()
 		{
 			return null;
@@ -2408,17 +2343,17 @@ public class WebUtils
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[Calls(Type = typeof(Array), Member = "CopyTo")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 1)]
 		internal void _003CDownloadData_003Eb__0(UnityWebRequest response)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityWebRequest), Member = "get_error")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityWebRequest), Member = "get_error")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal void _003CDownloadData_003Eb__1(UnityWebRequest response)
 		{
 		}
@@ -2434,13 +2369,13 @@ public class WebUtils
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(string), Member = "SplitInternal")]
-	[Calls(Type = typeof(string), Member = "Split")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "IndexOf")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "IndexOf")]
 	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 2)]
 	public static string GetParamFromURI(string uri, char fragmentstart, string param)
 	{
 		return null;
@@ -2453,20 +2388,20 @@ public class WebUtils
 		return default(DateTime);
 	}
 
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 10)]
+	[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.DownloadOperation", Member = "DownloadDone")]
+	[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.UploadOperation", Member = ".ctor")]
 	[CalledBy(Type = typeof(SteamCloudManagerPC), Member = "EnumerateLocalSaveFiles")]
-	[CalledBy(Type = typeof(SteamCloudManager.UploadOperation), Member = ".ctor")]
-	[CalledBy(Type = typeof(SteamCloudManager.DownloadOperation), Member = "DownloadDone")]
-	[Calls(Type = typeof(ObjectDisposedException), Member = ".ctor")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentNullException")]
-	[Calls(Type = typeof(SHA1CryptoServiceProvider), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "Replace")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(SHA1CryptoServiceProvider), Member = ".ctor")]
 	[Calls(Type = typeof(HashAlgorithm), Member = "CaptureHashCodeAndReinitialize")]
 	[Calls(Type = typeof(BitConverter), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentNullException")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[Calls(Type = typeof(ObjectDisposedException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public static string ComputeSha1Hex(byte[] data)
 	{
 		return null;
@@ -2482,26 +2417,26 @@ public class WebUtils
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private static string ShowWebPageInternal(string requestedUrl, string callbackUrl, string callbackableUrl)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.DownloadOperation", Member = "Execute")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Utils), Member = "WebRequest")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[CalledBy(Type = typeof(SteamCloudManager.DownloadOperation), Member = "Execute")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void DownloadData(string url, Action<DownloadDataResult> onCompleted)
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public WebUtils()
 	{
 	}

@@ -20,20 +20,20 @@ public class CameraSyncPostFX : MonoBehaviour
 
 	private bool m_ForceFirstPersonCamera;
 
-	[Calls(Type = typeof(CameraSyncPostFX), Member = "Initialize")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(CameraSyncPostFX), Member = "CopyDataFromSourceImageEffects")]
+	[Calls(Type = typeof(CameraSyncPostFX), Member = "Initialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnDisable()
 	{
 	}
@@ -44,69 +44,62 @@ public class CameraSyncPostFX : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 26)]
 	[CalledBy(Type = typeof(CameraSyncPostFX), Member = "OnEnable")]
-	[Calls(Type = typeof(CameraSyncPostFX), Member = "CopyDataFromSourceImageEffects")]
-	[Calls(Type = typeof(CameraSyncPostFX), Member = "AddImageEffectsFromCamera")]
-	[Calls(Type = typeof(CameraSyncPostFX), Member = "AddImageEffectsFromCamera")]
-	[Calls(Type = typeof(CameraSyncPostFX), Member = "AddImageEffectsFromCamera")]
-	[Calls(Type = typeof(Camera), Member = "set_farClipPlane")]
-	[Calls(Type = typeof(Camera), Member = "get_farClipPlane")]
-	[Calls(Type = typeof(CameraSyncPostFX), Member = "AddImageEffectsFromCamera")]
-	[Calls(Type = typeof(Camera), Member = "set_useOcclusionCulling")]
-	[Calls(Type = typeof(Camera), Member = "set_renderingPath")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(Camera), Member = "set_renderingPath")]
+	[Calls(Type = typeof(Camera), Member = "set_useOcclusionCulling")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Camera), Member = "get_farClipPlane")]
+	[Calls(Type = typeof(Camera), Member = "set_farClipPlane")]
+	[Calls(Type = typeof(CameraSyncPostFX), Member = "AddImageEffectsFromCamera")]
+	[Calls(Type = typeof(CameraSyncPostFX), Member = "CopyDataFromSourceImageEffects")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 26)]
 	public void Initialize()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SetFirstPerson()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 21)]
 	[CalledBy(Type = typeof(CameraSyncPostFX), Member = "Initialize")]
-	[CalledBy(Type = typeof(CameraSyncPostFX), Member = "Initialize")]
-	[CalledBy(Type = typeof(CameraSyncPostFX), Member = "Initialize")]
-	[CalledBy(Type = typeof(CameraSyncPostFX), Member = "Initialize")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(MethodInfo), Member = "op_Equality")]
-	[Calls(Type = typeof(MethodInfo), Member = "op_Equality")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetMethod")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Component), Member = "GetComponents")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Type), Member = "GetMethod")]
+	[Calls(Type = typeof(MethodInfo), Member = "op_Equality")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 21)]
 	private void AddImageEffectsFromCamera(Camera destinationCamera, Camera sourceCamera)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 15)]
-	[CalledBy(Type = typeof(CameraSyncPostFX), Member = "Initialize")]
-	[CalledBy(Type = typeof(CameraSyncPostFX), Member = "Update")]
 	[CalledBy(Type = typeof(CameraSyncPostFX), Member = "OnEnable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(MethodInfo), Member = "op_Equality")]
-	[Calls(Type = typeof(Type), Member = "GetMethod")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CalledBy(Type = typeof(CameraSyncPostFX), Member = "Update")]
+	[CalledBy(Type = typeof(CameraSyncPostFX), Member = "Initialize")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Type), Member = "GetMethod")]
+	[Calls(Type = typeof(MethodInfo), Member = "op_Equality")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 15)]
 	private void CopyDataFromSourceImageEffects()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 14)]
 	public CameraSyncPostFX()
 	{

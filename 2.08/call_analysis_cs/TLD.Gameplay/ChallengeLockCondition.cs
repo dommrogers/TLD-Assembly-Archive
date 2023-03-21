@@ -16,13 +16,11 @@ public abstract class ChallengeLockCondition : ScriptableObject
 
 	public LocalizedString m_AltInstructions;
 
-	[CallerCount(Count = 101262)]
-	[DeduplicatedMethod]
 	public abstract bool IsLocked();
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	protected ChallengeLockCondition()
 	{
 	}

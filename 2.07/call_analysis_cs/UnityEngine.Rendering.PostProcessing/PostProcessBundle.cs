@@ -16,14 +16,14 @@ public sealed class PostProcessBundle
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 80)]
+		[CallerCount(Count = 92)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 279)]
+		[CallerCount(Count = 282)]
 		private set
 		{
 		}
@@ -31,16 +31,16 @@ public sealed class PostProcessBundle
 
 	public PostProcessEffectSettings settings
 	{
-		[CallerCount(Count = 28)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 32)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 79)]
+		[CallerCount(Count = 86)]
 		private set
 		{
 		}
@@ -48,16 +48,15 @@ public sealed class PostProcessBundle
 
 	internal PostProcessEffectRenderer renderer
 	{
-		[CallsUnknownMethods(Count = 3)]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderEffect")]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderEffect")]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderList")]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "SetLegacyCameraFlags")]
 		[CalledBy(Type = typeof(PostProcessBundle), Member = "CastRenderer")]
+		[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
+		[CalledBy(Type = typeof(PostProcessLayer), Member = "SetLegacyCameraFlags")]
+		[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderList")]
+		[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderEffect")]
+		[CallerCount(Count = 6)]
 		[Calls(Type = typeof(Activator), Member = "CreateInstance")]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 6)]
-		[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
+		[CallsUnknownMethods(Count = 3)]
 		get
 		{
 			return null;
@@ -70,15 +69,15 @@ public sealed class PostProcessBundle
 	{
 	}
 
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	internal void Release()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal void ResetHistory()
 	{
 	}

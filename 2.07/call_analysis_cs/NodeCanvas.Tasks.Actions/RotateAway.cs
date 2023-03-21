@@ -16,12 +16,12 @@ public class RotateAway : ActionTask<Transform>
 
 	public bool waitActionFinish;
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsDeduplicatedMethods(Count = 15)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 12)]
 	protected override void OnUpdate()
 	{
 	}

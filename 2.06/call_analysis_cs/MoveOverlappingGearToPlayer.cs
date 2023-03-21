@@ -7,12 +7,13 @@ public class MoveOverlappingGearToPlayer : MonoBehaviour
 
 	private static Collider[] s_Results;
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(GearItem), Member = "StickToGroundAtPlayerFeet")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInParent")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GearItem), Member = "StickToGroundAtPlayerFeet")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 11)]
 	private void Start()
 	{
 	}

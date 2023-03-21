@@ -14,25 +14,27 @@ public class PlayableAssetPlayAudio : PlayableAsset
 
 	private TLD_AudioTrack m_Track;
 
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(PlayableDirector), Member = "get_playableAsset")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptPlayable<>), Member = "Create")]
+	[Calls(Type = typeof(PlayableHandle), Member = "GetObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "FindClip")]
+	[Calls(Type = typeof(PlayableDirector), Member = "get_playableAsset")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[CallsUnknownMethods(Count = 3)]
 	public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
 	{
 		return default(Playable);
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 21)]
+	[CallerCount(Count = 25)]
 	public void SetTrack(TLD_AudioTrack tldAudioTrack)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 53)]
+	[CallerCount(Count = 58)]
 	public TLD_AudioTrack GetTrack()
 	{
 		return null;

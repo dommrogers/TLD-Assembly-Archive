@@ -7,7 +7,7 @@ public class CollectionManagerSaveData
 	public string m_UnlockedAuroraSetSerialized;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CollectionManagerSaveData()
 	{
 	}

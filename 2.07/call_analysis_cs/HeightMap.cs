@@ -37,7 +37,7 @@ public class HeightMap : ScriptableObject
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -46,7 +46,7 @@ public class HeightMap : ScriptableObject
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -56,17 +56,18 @@ public class HeightMap : ScriptableObject
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(WeatherParticleManager.WTTask), Member = "UpdateParticleNoTurbulence")]
-	[CalledBy(Type = typeof(WeatherParticleManager.WTTask), Member = "KillBox")]
-	[CalledBy(Type = typeof(WeatherParticleManager.WTTask), Member = "UpdateParticle")]
-	[CalledBy(Type = typeof(WeatherParticleManager.WTTask), Member = "NoWrap")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "NoWrap")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "KillPoint")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "KillBox")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "UpdateParticle")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "UpdateParticleNoTurbulence")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "Execute")]
+	[CallerCount(Count = 7)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(WeatherParticleManager.WTTask), Member = "KillPoint")]
+	[CallsUnknownMethods(Count = 3)]
 	public float GetHeight(Vector3 p)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -74,7 +75,7 @@ public class HeightMap : ScriptableObject
 	[CallsUnknownMethods(Count = 1)]
 	public static float GetHeightStaticNativeArray(Vector3 p, WeatherParticleManager.ParticleCollisionHeightMapInfo info, NativeArray<float> heights)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -96,8 +97,8 @@ public class HeightMap : ScriptableObject
 		return default(WeatherParticleManager.ParticleCollisionHeightMapInfo);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static NativeArray<float> CreateEmptyHeights()
 	{
 		return default(NativeArray<float>);

@@ -4,8 +4,8 @@ public class PackAnimalDataProxy
 {
 	public float m_PackReformDelayTimer;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public PackAnimalDataProxy()
 	{
 	}

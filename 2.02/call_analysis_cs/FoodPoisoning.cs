@@ -41,10 +41,10 @@ public class FoodPoisoning : MonoBehaviour
 
 	public string m_DisplayName
 	{
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(LocalizedString), Member = "Text")]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		get
 		{
 			return null;
@@ -68,58 +68,60 @@ public class FoodPoisoning : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(FoodPoisoning), Member = "UpdateFoodPoisoning")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_food_poison")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_food_poison_nofx")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "EatingComplete_Internal")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_food_poison")]
-	[Calls(Type = typeof(Log), Member = "AddAffliction")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
+	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(Random), Member = "Range")]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
+	[Calls(Type = typeof(Log), Member = "AddAffliction")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[Calls(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public void FoodPoisoningStart(string causeId, bool displayIcon, bool nofx = false)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_food_poison_cure")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions_cure")]
 	[CalledBy(Type = typeof(FoodPoisoning), Member = "UpdateFoodPoisoning")]
-	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions_cure")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_food_poison_cure")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void FoodPoisoningEnd()
 	{
 	}
@@ -128,7 +130,7 @@ public class FoodPoisoning : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool HasFoodPoisoning()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -136,19 +138,20 @@ public class FoodPoisoning : MonoBehaviour
 	[CallsDeduplicatedMethods(Count = 4)]
 	public bool HasTakenAntibiotics()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
+	[CallerCount(Count = 1)]
 	public float GetRestAmountRemaining()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CallerCount(Count = 1)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public string GetCauseString()
 	{
@@ -166,17 +169,15 @@ public class FoodPoisoning : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(FoodPoisoning), Member = "FoodPoisoningEnd")]
-	[Calls(Type = typeof(Fatigue), Member = "AddFatigue")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
 	[CalledBy(Type = typeof(FoodPoisoning), Member = "Update")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(Condition), Member = "AddHealth")]
+	[Calls(Type = typeof(Fatigue), Member = "AddFatigue")]
+	[Calls(Type = typeof(FoodPoisoning), Member = "FoodPoisoningEnd")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 20)]
 	private void UpdateFoodPoisoning()
 	{
 	}

@@ -29,22 +29,21 @@ public class AnimationEventData
 
 	private string m_CachedString;
 
-	[CalledBy(Type = typeof(AnimationEvents), Member = "PopAnimationEventValue")]
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(AnimationEvents), Member = "MaybeRecreateEventArrays")]
 	[CalledBy(Type = typeof(AnimationEvents), Member = "MaybeRecreateEventArrays")]
 	[CalledBy(Type = typeof(AnimationEvents), Member = "PushAnimationEventValue")]
+	[CalledBy(Type = typeof(AnimationEvents), Member = "PopAnimationEventValue")]
+	[CallerCount(Count = 4)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallsUnknownMethods(Count = 1)]
 	public string Key()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public AnimationEventData()
 	{
 	}

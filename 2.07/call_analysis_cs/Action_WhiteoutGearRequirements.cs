@@ -1,9 +1,9 @@
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using MissionTypes;
 using NodeCanvas.Framework;
+using TLD.SaveState;
 using TLD.Serialization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -42,129 +42,79 @@ public class Action_WhiteoutGearRequirements : ActionTask<GraphOwner>
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(Utils), Member = "GetGearItemsStoredInSceneByPlayer")]
+	[Calls(Type = typeof(Action_WhiteoutGearRequirements), Member = "AddGearItemsToDict")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Action_WhiteoutGearRequirements), Member = "GetDictValueIfExists")]
-	[Calls(Type = typeof(string), Member = "Contains")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(float), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateMissionInfo")]
-	[Calls(Type = typeof(Action_WhiteoutGearRequirements), Member = "GetDictValueIfExists")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(string), Member = "Contains")]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Action_WhiteoutGearRequirements), Member = "GetDictValueIfExists")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
 	[Calls(Type = typeof(string), Member = "Substring")]
 	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 44)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(Type = typeof(float), Member = "Parse")]
 	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Split")]
-	[Calls(Type = typeof(string), Member = "Split")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(Action_WhiteoutGearRequirements), Member = "GetDictValueIfExists")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(Action_WhiteoutGearRequirements), Member = "GetDictValueIfExists")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "SplitInternal")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Action_WhiteoutGearRequirements), Member = "AddGearItemsToDict")]
-	[Calls(Type = typeof(Utils), Member = "GetGearItemsStoredInSceneByPlayer")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[CallsDeduplicatedMethods(Count = 21)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Action_WhiteoutGearRequirements), Member = "GetDictValueIfExists")]
-	[Calls(Type = typeof(Action_WhiteoutGearRequirements), Member = "GetDictValueIfExists")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Action_WhiteoutGearRequirements), Member = "GetDictValueIfExists")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Action_WhiteoutGearRequirements), Member = "GetDictValueIfExists")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 34)]
 	protected override void OnUpdate()
 	{
 	}
 
-	[Calls(Type = typeof(Action_WhiteoutGearRequirements), Member = "AddOrIncrementDictEntry")]
-	[Calls(Type = typeof(GunItem), Member = "NumRoundsInClip")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Action_WhiteoutGearRequirements), Member = "AddOrIncrementDictEntry")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Action_WhiteoutGearRequirements), Member = "AddOrIncrementDictEntry")]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Action_WhiteoutGearRequirements), Member = "OnUpdate")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Action_WhiteoutGearRequirements), Member = "AddOrIncrementDictEntry")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Contains")]
+	[Calls(Type = typeof(GunItem), Member = "NumRoundsInClip")]
 	[CallsUnknownMethods(Count = 2)]
 	private void AddGearItemsToDict(GearItem[] gearItems)
 	{
 	}
 
 	[CalledBy(Type = typeof(Action_WhiteoutGearRequirements), Member = "AddGearItemsToDict")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Action_WhiteoutGearRequirements), Member = "AddGearItemsToDict")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(Action_WhiteoutGearRequirements), Member = "AddGearItemsToDict")]
-	[CalledBy(Type = typeof(Action_WhiteoutGearRequirements), Member = "AddGearItemsToDict")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void AddOrIncrementDictEntry(string key, float val)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Action_WhiteoutGearRequirements), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(Action_WhiteoutGearRequirements), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(Action_WhiteoutGearRequirements), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(Action_WhiteoutGearRequirements), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(Action_WhiteoutGearRequirements), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(Action_WhiteoutGearRequirements), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(Action_WhiteoutGearRequirements), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(Action_WhiteoutGearRequirements), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(Action_WhiteoutGearRequirements), Member = "OnUpdate")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetDictValueIfExists(string key)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public Action_WhiteoutGearRequirements()
 	{
 		((ActionTask<>)(object)this)._002Ector();

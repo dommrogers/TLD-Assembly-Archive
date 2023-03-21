@@ -25,61 +25,63 @@ public class LoadSceneParent : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(LoadScene), Member = "Start")]
 	[CalledBy(Type = typeof(LoadSceneParent), Member = "Deserialize")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Register(LoadScene child)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(LoadScene), Member = "MarkExplored")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 3)]
 	public void MarkChildrenExplored()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(LoadSceneParent), Member = "SerializeAll")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(LoadSceneParent), Member = "DeserializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(LoadSceneParent), Member = "Start")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(InaccessibleGearContainer), Member = "LoadSceneIntoNearestContainer")]
-	[Calls(Type = typeof(LoadSceneParent), Member = "Deserialize")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(LoadSceneParent), Member = "FindLoadSceneParentByPosition")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(LoadSceneParent), Member = "FindLoadSceneParentByPosition")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(LoadSceneParent), Member = "Deserialize")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(InaccessibleGearContainer), Member = "LoadSceneIntoNearestContainer")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Reset()
@@ -88,19 +90,20 @@ public class LoadSceneParent : MonoBehaviour
 
 	[CalledBy(Type = typeof(LoadSceneParent), Member = "DeserializeAll")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 8)]
 	private static LoadSceneParent FindLoadSceneParentByPosition(LoadSceneParentSaveDataProxy proxy)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(LoadSceneParent), Member = "Serialize")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(LoadSceneParent), Member = "Serialize")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 6)]
 	public static string SerializeAll()
 	{
 		return null;

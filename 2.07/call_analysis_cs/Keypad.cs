@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -24,54 +23,48 @@ public class Keypad : MonoBehaviour
 
 	private uint m_PlayingAudioID;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Keypad), Member = "IsLocked")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Keypad), Member = "IsLocked")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Keypad), Member = "IsLocked")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Keypad), Member = "CodeIsKnownByPlayer")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
 	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
-	[Calls(Type = typeof(Keypad), Member = "CodeIsKnownByPlayer")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[CallsUnknownMethods(Count = 3)]
 	public void PerformInteraction()
 	{
 	}
 
+	[CalledBy(Type = typeof(Keypad), Member = "Update")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(Keypad), Member = "Update")]
-	[CalledBy(Type = typeof(Keypad), Member = "Update")]
 	[CallsUnknownMethods(Count = 2)]
 	private bool IsLocked()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
 	[CalledBy(Type = typeof(Keypad), Member = "PerformInteraction")]
+	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsUnknownMethods(Count = 7)]
 	private bool CodeIsKnownByPlayer()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(AkEventCallbackInfo), Member = "get_playingID")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkEventCallbackInfo), Member = "get_playingID")]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnAkCallback(object in_cookie, AkCallbackType in_type, object in_info)
 	{
 	}

@@ -7,7 +7,7 @@ namespace Epic.OnlineServices.TitleStorage;
 public sealed class TitleStorageFileTransferRequest : Handle
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public TitleStorageFileTransferRequest()
 	{
 	}
@@ -32,12 +32,12 @@ public sealed class TitleStorageFileTransferRequest : Handle
 		return default(Result);
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalAllocate")]
-	[CallsUnknownMethods(Count = 1)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsUnknownMethods(Count = 1)]
 	public Result GetFilename(out string outStringBuffer)
 	{
 		outStringBuffer = null;
@@ -66,7 +66,7 @@ public sealed class TitleStorageFileTransferRequest : Handle
 	internal static extern Result EOS_TitleStorageFileTransferRequest_GetFilename(IntPtr handle, uint filenameStringBufferSizeBytes, IntPtr outStringBuffer, ref int outStringLength);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern void EOS_TitleStorageFileTransferRequest_Release(IntPtr titleStorageFileTransferHandle);
 }

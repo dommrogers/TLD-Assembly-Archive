@@ -22,34 +22,31 @@ public class TodSmokeTrail : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(TimeOfDay), Member = "IsDawn")]
 	[Calls(Type = typeof(TimeOfDay), Member = "IsDusk")]
 	[Calls(Type = typeof(TodSmokeTrail), Member = "ForceUpdate")]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsDusk")]
 	[Calls(Type = typeof(TodSmokeTrail), Member = "UpdateMiddayObject")]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsDusk")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 6)]
 	public void Update()
 	{
 	}
 
-	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
 	[CalledBy(Type = typeof(TodSmokeTrail), Member = "Update")]
-	[Calls(Type = typeof(TodSmokeTrail), Member = "ForceMiddayObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(TimeOfDay), Member = "IsDay")]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
+	[Calls(Type = typeof(TodSmokeTrail), Member = "ForceMiddayObject")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public void ForceUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 10)]
+	[CallsUnknownMethods(Count = 2)]
 	private void ForceToOriginalState()
 	{
 	}
@@ -75,65 +72,59 @@ public class TodSmokeTrail : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsDay")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsDay")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void ForceDayOnlyObject()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void ForceNightOnlyObject()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(TodSmokeTrail), Member = "ForceUpdate")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void ForceMiddayObject()
 	{
 	}
 
-	[Calls(Type = typeof(TimeOfDay), Member = "IsDusk")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsDusk")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateDayOnlyObject()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(TimeOfDay), Member = "IsDusk")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void UpdateNightOnlyObject()
 	{
 	}
 
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(TodSmokeTrail), Member = "Update")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateMiddayObject()
 	{
 	}

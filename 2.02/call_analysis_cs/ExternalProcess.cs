@@ -82,20 +82,22 @@ public static class ExternalProcess
 	[CallsUnknownMethods(Count = 1)]
 	private static extern bool CreateProcessW(string lpApplicationName, [In] string lpCommandLine, IntPtr procSecAttrs, IntPtr threadSecAttrs, bool bInheritHandles, ProcessCreationFlags dwCreationFlags, IntPtr lpEnvironment, string lpCurrentDirectory, ref STARTUPINFO lpStartupInfo, ref PROCESS_INFORMATION lpProcessInformation);
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CalledBy(Type = typeof(Utils), Member = "QuitAndRunApplication")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Marshal), Member = "SizeOf")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 3)]
 	public static bool RunCommand(string command, string args, string workingDirectory)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(Marshal), Member = "SizeOf")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool RunCommand(string command, string workingDirectory)
 	{
-		return default(bool);
+		return false;
 	}
 }

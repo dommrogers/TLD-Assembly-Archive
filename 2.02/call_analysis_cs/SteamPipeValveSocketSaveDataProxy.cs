@@ -7,7 +7,7 @@ public class SteamPipeValveSocketSaveDataProxy
 	public bool m_SteamPipeValveActive;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SteamPipeValveSocketSaveDataProxy()
 	{
 	}

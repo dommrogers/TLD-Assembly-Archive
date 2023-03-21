@@ -21,16 +21,17 @@ internal struct ExternalAccountInfoInternal : ISettable, IDisposable
 
 	public ProductUserId ProductUserId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(ExternalAccountInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(ExternalAccountInfoInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -39,18 +40,18 @@ internal struct ExternalAccountInfoInternal : ISettable, IDisposable
 
 	public string DisplayName
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(ExternalAccountInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(ExternalAccountInfoInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -58,18 +59,18 @@ internal struct ExternalAccountInfoInternal : ISettable, IDisposable
 
 	public string AccountId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(ExternalAccountInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(ExternalAccountInfoInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 1)]
 		set
 		{
 		}
@@ -93,42 +94,41 @@ internal struct ExternalAccountInfoInternal : ISettable, IDisposable
 	public DateTimeOffset? LastLoginTime
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(ExternalAccountInfoInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
 	[CalledBy(Type = typeof(ExternalAccountInfoInternal), Member = "Set")]
-	[Calls(Type = typeof(ExternalAccountInfoInternal), Member = "set_LastLoginTime")]
-	[Calls(Type = typeof(ExternalAccountInfoInternal), Member = "set_AccountId")]
-	[Calls(Type = typeof(ExternalAccountInfoInternal), Member = "set_ProductUserId")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ExternalAccountInfoInternal), Member = "set_ProductUserId")]
 	[Calls(Type = typeof(ExternalAccountInfoInternal), Member = "set_DisplayName")]
+	[Calls(Type = typeof(ExternalAccountInfoInternal), Member = "set_AccountId")]
+	[Calls(Type = typeof(ExternalAccountInfoInternal), Member = "set_LastLoginTime")]
 	public void Set(ExternalAccountInfo other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ExternalAccountInfoInternal), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	public void Dispose()
 	{
 	}

@@ -1,4 +1,3 @@
-using System;
 using AK.Wwise;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Serialization;
@@ -87,79 +86,82 @@ public class MusicEventManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	public void PlaySorrowMusic()
 	{
 	}
 
-	[Calls(Type = typeof(Weather), Member = "IsClear")]
 	[CalledBy(Type = typeof(MusicEventManager), Member = "Update")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(FireManager), Member = "GetClosestFire")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Weather), Member = "IsClear")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 17)]
 	private void CheckForHappySuccess()
 	{
 	}
 
+	[CalledBy(Type = typeof(MusicEventManager), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	[Calls(Type = typeof(Condition), Member = "HasAffliction")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
-	[CalledBy(Type = typeof(MusicEventManager), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 8)]
 	private void CheckForSorrow()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(MusicEventManager), Member = "Update")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void CheckForRopeClimbStress()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
 	[CalledBy(Type = typeof(MusicEventManager), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(AiTarget), Member = "IsPlayer")]
-	[Calls(Type = typeof(AiTarget), Member = "IsPlayer")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(AiTarget), Member = "IsPlayer")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 11)]
 	private void CheckForBeingStalked()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(HUDManager), Member = "TrackIndoorLocation")]
-	[CalledBy(Type = typeof(HUDManager._003CWaitToShowLocationReveal_003Ed__27), Member = "MoveNext")]
 	[CalledBy(Type = typeof(DisplayLocationLabel), Member = "OnTriggerEnter")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(TypeFullName = "HUDManager.<WaitToShowLocationReveal>d__27", Member = "MoveNext")]
+	[CalledBy(Type = typeof(HUDManager), Member = "TrackIndoorLocation")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public void PlayLocationSound(bool hasPlayedBefore)
 	{
 	}

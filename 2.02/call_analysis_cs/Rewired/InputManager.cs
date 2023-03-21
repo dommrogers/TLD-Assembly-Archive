@@ -9,8 +9,8 @@ public sealed class InputManager : InputManager_Base
 {
 	private bool ignoreRecompile;
 
-	[Calls(Type = typeof(InputManager), Member = "SubscribeEvents")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputManager), Member = "SubscribeEvents")]
 	protected override void OnInitialized()
 	{
 	}
@@ -29,7 +29,7 @@ public sealed class InputManager : InputManager_Base
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	protected override void CheckRecompile()
 	{
 	}
@@ -42,40 +42,39 @@ public sealed class InputManager : InputManager_Base
 		return null;
 	}
 
-	[Calls(Type = typeof(Regex), Member = "IsMatch")]
-	[Calls(Type = typeof(Regex), Member = "IsMatch")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Regex), Member = "IsMatch")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	private bool CheckDeviceName(string searchPattern, string deviceName, string deviceModel)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(InputManager), Member = "OnInitialized")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InputManager), Member = "UnsubscribeEvents")]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "add_sceneLoaded")]
-	[CalledBy(Type = typeof(InputManager), Member = "OnInitialized")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	private void SubscribeEvents()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "remove_sceneLoaded")]
 	[CalledBy(Type = typeof(InputManager), Member = "OnDeinitialized")]
 	[CalledBy(Type = typeof(InputManager), Member = "SubscribeEvents")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "remove_sceneLoaded")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	private void UnsubscribeEvents()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ReInput), Member = "uOkGINHzUFvBvzDERdNwZKMwKOm")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
 	}

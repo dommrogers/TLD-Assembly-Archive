@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class OpenURLOnClick : MonoBehaviour
 {
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UILabel), Member = "GetUrlAtCharacterIndex")]
-	[Calls(Type = typeof(UILabel), Member = "GetCharacterIndexAtPosition")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UILabel), Member = "GetCharacterIndexAtPosition")]
+	[Calls(Type = typeof(UILabel), Member = "GetUrlAtCharacterIndex")]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnClick()
 	{
 	}

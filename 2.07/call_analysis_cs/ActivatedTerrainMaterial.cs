@@ -12,24 +12,24 @@ public class ActivatedTerrainMaterial : MonoBehaviour
 	private Material m_Material;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Material), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Terrain), Member = "set_materialTemplate")]
 	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void ActivateMaterialProperties(bool isActive)
 	{
 	}

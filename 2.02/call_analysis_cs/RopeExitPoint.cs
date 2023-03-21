@@ -10,28 +10,28 @@ public class RopeExitPoint : MonoBehaviour
 	public Transform m_ExitPoint;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetHoverText()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerClimbRope), Member = "RequestExitToPoint")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerClimbRope), Member = "RequestExitToPoint")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool ProcessInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

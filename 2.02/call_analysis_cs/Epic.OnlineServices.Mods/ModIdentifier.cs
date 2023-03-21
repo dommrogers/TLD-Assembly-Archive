@@ -17,16 +17,16 @@ public class ModIdentifier : ISettable
 
 	public string NamespaceId
 	{
-		[CallerCount(Count = 52)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -36,14 +36,14 @@ public class ModIdentifier : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -51,16 +51,16 @@ public class ModIdentifier : ISettable
 
 	public string ArtifactId
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
@@ -77,7 +77,7 @@ public class ModIdentifier : ISettable
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
@@ -85,44 +85,44 @@ public class ModIdentifier : ISettable
 
 	public string Version
 	{
-		[CallerCount(Count = 15)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 23)]
 		set
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(ModIdentifier), Member = "Set")]
-	[Calls(Type = typeof(ModIdentifierInternal), Member = "get_Version")]
-	[Calls(Type = typeof(ModIdentifierInternal), Member = "get_Title")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(ModIdentifierInternal), Member = "get_ItemId")]
 	[Calls(Type = typeof(ModIdentifierInternal), Member = "get_NamespaceId")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(ModIdentifierInternal), Member = "get_ItemId")]
 	[Calls(Type = typeof(ModIdentifierInternal), Member = "get_ArtifactId")]
+	[Calls(Type = typeof(ModIdentifierInternal), Member = "get_Title")]
+	[Calls(Type = typeof(ModIdentifierInternal), Member = "get_Version")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	internal void Set(ModIdentifierInternal? other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ModIdentifier), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public ModIdentifier()
 	{
 	}

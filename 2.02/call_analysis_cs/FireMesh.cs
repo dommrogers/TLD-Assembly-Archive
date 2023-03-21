@@ -27,63 +27,55 @@ public class FireMesh : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(FireMesh), Member = "SetMesh")]
-	[Calls(Type = typeof(FireMesh), Member = "SetMesh")]
-	[Calls(Type = typeof(FireMesh), Member = "SetMesh")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(FireMesh), Member = "SetMesh")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 16)]
 	private void StartFire()
 	{
 	}
 
+	[CalledBy(Type = typeof(FireMesh), Member = "UpdateRatesAndSizes")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CalledBy(Type = typeof(FireMesh), Member = "UpdateRatesAndSizes")]
-	[CalledBy(Type = typeof(FireMesh), Member = "UpdateRatesAndSizes")]
-	[CalledBy(Type = typeof(FireMesh), Member = "UpdateRatesAndSizes")]
-	[CalledBy(Type = typeof(FireMesh), Member = "UpdateRatesAndSizes")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	private void SetEmissionRate(GameObject ps, float newRate)
 	{
 	}
 
 	[CalledBy(Type = typeof(FireMesh), Member = "StartFire")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(FireMesh), Member = "StartFire")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(FireMesh), Member = "StartFire")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(FireMesh), Member = "StartFire")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void SetMesh(ParticleSystem ps, Mesh newMesh)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void SetSize(GameObject ps, float newSize)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(FireMesh), Member = "Update")]
-	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
-	[Calls(Type = typeof(FireMesh), Member = "SetEmissionRate")]
-	[Calls(Type = typeof(FireMesh), Member = "SetEmissionRate")]
-	[Calls(Type = typeof(FireMesh), Member = "SetEmissionRate")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(FireMesh), Member = "SetEmissionRate")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateRatesAndSizes()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(FireMesh), Member = "UpdateRatesAndSizes")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Update()
 	{
 	}

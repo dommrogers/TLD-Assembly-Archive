@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.Runtime.CompilerServices;
 using System.Text;
 using Cpp2ILInjected.CallAnalysis;
 using DigitalOpus.MB.Core;
@@ -54,9 +53,9 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 29)]
-			[DeduplicatedMethod]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -67,59 +66,54 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CCreateAtlasesCoroutine_003Ed__94(int _003C_003E1__state)
 		{
 		}
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[Calls(Type = typeof(MB3_TextureCombiner), Member = "CombineTexturesIntoAtlasesCoroutine")]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(MBVersionConcrete), Member = "GetMajorVersion")]
+		[Calls(Type = typeof(string), Member = "SplitInternal")]
+		[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+		[Calls(TypeFullName = "System.Number", Member = "ParseInt32")]
+		[Calls(Type = typeof(Application), Member = "get_isPlaying")]
+		[Calls(Type = typeof(MB3_MeshBakerRoot), Member = "DoCombinedValidate")]
+		[Calls(Type = typeof(MB3_TextureBaker), Member = "_ValidateResultMaterials")]
+		[Calls(Type = typeof(Debug), Member = "LogError")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+		[Calls(Type = typeof(Material), Member = "get_shader")]
+		[Calls(Type = typeof(MB_Utility), Member = "GetGOMaterials")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(Debug), Member = "LogWarning")]
-		[Calls(Type = typeof(Debug), Member = "LogError")]
-		[Calls(Type = typeof(Debug), Member = "LogError")]
-		[Calls(Type = typeof(MB_MultiMaterial), Member = ".ctor")]
-		[Calls(Type = typeof(Material), Member = "get_shader")]
-		[Calls(Type = typeof(Debug), Member = "Log")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[CallsUnknownMethods(Count = 135)]
-		[Calls(Type = typeof(MB3_TextureBaker), Member = "unpackMat2RectMap")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(MB3_TextureBaker), Member = "CreateAndConfigureTextureCombiner")]
-		[Calls(Type = typeof(Material), Member = "get_shader")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[Calls(Type = typeof(Debug), Member = "LogError")]
-		[Calls(Type = typeof(MB3_TextureBaker), Member = "_ValidateResultMaterials")]
-		[Calls(Type = typeof(MB3_MeshBakerRoot), Member = "DoCombinedValidate")]
-		[Calls(Type = typeof(Application), Member = "get_isPlaying")]
-		[Calls(Type = typeof(System.Number), Member = "ParseInt32")]
-		[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-		[Calls(Type = typeof(string), Member = "SplitInternal")]
-		[Calls(Type = typeof(MBVersionConcrete), Member = "GetMajorVersion")]
-		[Calls(Type = typeof(MBVersionConcrete), Member = "GetMajorVersion")]
-		[CallsDeduplicatedMethods(Count = 18)]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(MB_Utility), Member = "GetGOMaterials")]
+		[Calls(Type = typeof(MB3_TextureCombiner), Member = "CombineTexturesIntoAtlasesCoroutine")]
+		[Calls(Type = typeof(MB3_TextureBaker), Member = "unpackMat2RectMap")]
+		[Calls(Type = typeof(MB_MultiMaterial), Member = ".ctor")]
+		[Calls(Type = typeof(List<>), Member = ".ctor")]
+		[Calls(Type = typeof(Debug), Member = "Log")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+		[CallsDeduplicatedMethods(Count = 17)]
+		[CallsUnknownMethods(Count = 135)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -188,13 +182,13 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 	public override MB2_TextureBakeResults textureBakeResults
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 23)]
 		set
 		{
 		}
@@ -202,14 +196,14 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 
 	public virtual int atlasPadding
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -221,7 +215,7 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -236,7 +230,7 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -251,10 +245,10 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -266,7 +260,7 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -281,7 +275,7 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -296,7 +290,7 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -307,11 +301,11 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 
 	public virtual bool fixOutOfBoundsUVs
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -326,7 +320,7 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 		[CallerCount(Count = 3)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -356,10 +350,10 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -368,13 +362,13 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 	public virtual List<ShaderTextureProperty> customShaderProperties
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 40)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 12)]
+		[CallerCount(Count = 37)]
 		set
 		{
 		}
@@ -383,13 +377,13 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 	public virtual List<string> customShaderPropNames
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 4)]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 19)]
 		set
 		{
 		}
@@ -401,7 +395,7 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -412,11 +406,11 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 
 	public virtual bool doMultiMaterialSplitAtlasesIfTooBig
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -431,7 +425,7 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -461,10 +455,10 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -472,11 +466,11 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 
 	public bool doSuggestTreatment
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -495,7 +489,8 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public override List<GameObject> GetObjectsToCombine()
 	{
@@ -509,122 +504,109 @@ public class MB3_TextureBaker : MB3_MeshBakerRoot
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(MB3_TextureBaker), Member = "CreateAtlases")]
 	[CalledBy(Type = typeof(BakeTexturesAtRuntime), Member = "OnGUI")]
+	[CalledBy(Type = typeof(MB3_TextureBaker), Member = "CreateAtlases")]
 	[CallerCount(Count = 2)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public IEnumerator CreateAtlasesCoroutine(ProgressUpdateDelegate progressInfo, CreateAtlasesCoroutineResult coroutineResult, bool saveAtlasesAsAssets = false, MB2_EditorMethodsInterface editorMethods = null, float maxTimePerFrame = 0.01f)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(MB_Utility), Member = "Destroy")]
-	[CallsUnknownMethods(Count = 22)]
-	[CalledBy(Type = typeof(MB3_TextureBaker), Member = "CreateAtlases")]
 	[CalledBy(Type = typeof(BakeTexturesAtRuntime), Member = "OnGUI")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CalledBy(Type = typeof(MB3_TextureBaker), Member = "CreateAtlases")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(MB3_TextureCombiner), Member = "RunCorutineWithoutPause")]
 	[Calls(Type = typeof(MB3_TextureBaker), Member = "CreateAtlasesCoroutine")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MB3_TextureCombiner), Member = "RunCorutineWithoutPause")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(MB_Utility), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 22)]
 	public MB_AtlasesAndRects[] CreateAtlases(ProgressUpdateDelegate progressInfo, bool saveAtlasesAsAssets = false, MB2_EditorMethodsInterface editorMethods = null)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 38)]
 	[CalledBy(Type = typeof(_003CCreateAtlasesCoroutine_003Ed__94), Member = "MoveNext")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 38)]
 	private void unpackMat2RectMap(MB2_TextureBakeResults tbr)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(MB3_TextureCombiner), Member = ".ctor")]
 	[CalledBy(Type = typeof(_003CCreateAtlasesCoroutine_003Ed__94), Member = "MoveNext")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MB3_TextureCombiner), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 8)]
 	public MB3_TextureCombiner CreateAndConfigureTextureCombiner()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 34)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Material), Member = "SetTextureScale")]
-	[Calls(Type = typeof(Material), Member = "SetTextureOffset")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Vector2), Member = "get_one")]
 	[Calls(Type = typeof(Vector2), Member = "get_zero")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Material), Member = "HasProperty")]
+	[Calls(Type = typeof(Material), Member = "SetTextureOffset")]
+	[Calls(Type = typeof(Material), Member = "SetTextureScale")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 34)]
 	public static void ConfigureNewMaterialToMatchOld(Material newMat, Material original)
 	{
 	}
 
 	[CalledBy(Type = typeof(MB3_TextureBaker), Member = "_ValidateResultMaterials")]
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(MB3_TextureBaker), Member = "_ValidateResultMaterials")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
+	[Calls(Type = typeof(HashSet<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	private string PrintSet(HashSet<Material> s)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(MB3_TextureBaker), Member = "PrintSet")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(MB3_TextureBaker), Member = "PrintSet")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Material), Member = "get_shader")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Material), Member = "get_shader")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CalledBy(Type = typeof(_003CCreateAtlasesCoroutine_003Ed__94), Member = "MoveNext")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(MB_Utility), Member = "GetGOMaterials")]
-	[CalledBy(Type = typeof(_003CCreateAtlasesCoroutine_003Ed__94), Member = "MoveNext")]
-	[CallsDeduplicatedMethods(Count = 12)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Material), Member = "get_shader")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(HashSet<>), Member = "Contains")]
+	[Calls(Type = typeof(string), Member = "Format")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(HashSet<>), Member = "IsProperSubsetOf")]
+	[Calls(Type = typeof(HashSet<>), Member = "ExceptWith")]
+	[Calls(Type = typeof(MB3_TextureBaker), Member = "PrintSet")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 58)]
 	private bool _ValidateResultMaterials()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	public MB3_TextureBaker()
 	{
 	}

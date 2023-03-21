@@ -20,10 +20,10 @@ public abstract class BaseLoadPanelRequest : ILoadPanelRequest
 
 	public event Action<bool> m_PanelLoadedCallback
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 2)]
 		add
 		{
 		}
@@ -45,26 +45,26 @@ public abstract class BaseLoadPanelRequest : ILoadPanelRequest
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 2)]
 		remove
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 51)]
+	[CallerCount(Count = 53)]
 	public BaseLoadPanelRequest(string panelName)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	public bool IsLoadingPanel(string panelName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -73,46 +73,45 @@ public abstract class BaseLoadPanelRequest : ILoadPanelRequest
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	public abstract float GetProgress();
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool HasCompleted()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public Type GetPanelType()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(InterfaceManager), Member = "FinishLoadPanelRequest")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(Transform), Member = "SetParent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "FinishLoadPanelRequest")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 3)]
 	public Panel_Base GetPanel()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool HasFailed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 7)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public string GetError()
 	{
 		return null;
@@ -125,9 +124,9 @@ public abstract class BaseLoadPanelRequest : ILoadPanelRequest
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Addressables), Member = "ReleaseInstance")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void CleanupRequest()
 	{

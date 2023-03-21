@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class DoorTrigger : MonoBehaviour
 {
-	[Calls(Type = typeof(vp_Layer), Member = "Set")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_Layer), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}

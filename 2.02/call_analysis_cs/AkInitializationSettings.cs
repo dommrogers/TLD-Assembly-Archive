@@ -10,9 +10,9 @@ public class AkInitializationSettings : IDisposable
 
 	public AkMemSettings memSettings
 	{
+		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_AkInitializationSettings")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_AkInitializationSettings")]
 		[CallsUnknownMethods(Count = 8)]
 		get
 		{
@@ -28,18 +28,18 @@ public class AkInitializationSettings : IDisposable
 
 	public AkStreamMgrSettings streamMgrSettings
 	{
+		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_AkInitializationSettings")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_AkInitializationSettings")]
 		[CallsUnknownMethods(Count = 8)]
 		get
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(AkStreamMgrSettings), Member = "getCPtr")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(AkStreamMgrSettings), Member = "getCPtr")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -47,18 +47,17 @@ public class AkInitializationSettings : IDisposable
 
 	public AkDeviceSettings deviceSettings
 	{
-		[CallsUnknownMethods(Count = 8)]
+		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_AkInitializationSettings")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_AkInitializationSettings")]
-		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_AkInitializationSettings")]
+		[CallsUnknownMethods(Count = 8)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AkDeviceSettings), Member = "getCPtr")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -67,19 +66,18 @@ public class AkInitializationSettings : IDisposable
 
 	public AkInitSettings initSettings
 	{
+		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_AkInitializationSettings")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_AkInitializationSettings")]
-		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_AkInitializationSettings")]
 		[CallsUnknownMethods(Count = 8)]
 		get
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(AkInitSettings), Member = "getCPtr")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -87,18 +85,17 @@ public class AkInitializationSettings : IDisposable
 
 	public AkPlatformInitSettings platformSettings
 	{
-		[CallsUnknownMethods(Count = 8)]
 		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_AkInitializationSettings")]
-		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_AkInitializationSettings")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 2)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 8)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AkPlatformInitSettings), Member = "getCPtr")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -107,17 +104,17 @@ public class AkInitializationSettings : IDisposable
 
 	public AkMusicSettings musicSettings
 	{
+		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_AkInitializationSettings")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_AkInitializationSettings")]
 		[CallsUnknownMethods(Count = 8)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AkMusicSettings), Member = "getCPtr")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -126,12 +123,12 @@ public class AkInitializationSettings : IDisposable
 
 	public uint preparePoolSize
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -151,8 +148,8 @@ public class AkInitializationSettings : IDisposable
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AkCommunicationSettings), Member = "getCPtr")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -161,11 +158,10 @@ public class AkInitializationSettings : IDisposable
 
 	public AkUnityPlatformSpecificSettings unityPlatformSpecificSettings
 	{
-		[CallsUnknownMethods(Count = 8)]
 		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_AkInitializationSettings")]
-		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_AkInitializationSettings")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 2)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 8)]
 		get
 		{
 			return null;
@@ -188,7 +184,7 @@ public class AkInitializationSettings : IDisposable
 	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkInitializationSettings obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -205,11 +201,11 @@ public class AkInitializationSettings : IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}

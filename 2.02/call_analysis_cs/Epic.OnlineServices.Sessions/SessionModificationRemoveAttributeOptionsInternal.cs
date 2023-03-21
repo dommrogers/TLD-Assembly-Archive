@@ -13,11 +13,11 @@ internal struct SessionModificationRemoveAttributeOptionsInternal : ISettable, I
 
 	public string Key
 	{
+		[CalledBy(Type = typeof(SessionModificationRemoveAttributeOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(SessionModificationRemoveAttributeOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(SessionModificationRemoveAttributeOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(SessionModificationRemoveAttributeOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -30,16 +30,16 @@ internal struct SessionModificationRemoveAttributeOptionsInternal : ISettable, I
 	}
 
 	[CalledBy(Type = typeof(SessionModification), Member = "RemoveAttribute")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SessionModificationRemoveAttributeOptionsInternal), Member = "set_Key")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

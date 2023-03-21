@@ -7,8 +7,8 @@ namespace DataPlatform;
 public class AchievementRewardPlugin
 {
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr AchievementReward_Data(IntPtr self);
 
 	[PreserveSig]
@@ -32,13 +32,13 @@ public class AchievementRewardPlugin
 	public static extern uint AchievementReward_RewardType(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint AchievementReward_ValuePropertyType(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void AchievementReward_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]

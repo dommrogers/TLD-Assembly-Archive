@@ -19,10 +19,10 @@ internal struct SessionInviteAcceptedCallbackInfoInternal : ICallbackInfoInterna
 
 	public object ClientData
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(SessionInviteAcceptedCallbackInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -35,15 +35,15 @@ internal struct SessionInviteAcceptedCallbackInfoInternal : ICallbackInfoInterna
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public string SessionId
 	{
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(SessionInviteAcceptedCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -53,9 +53,10 @@ internal struct SessionInviteAcceptedCallbackInfoInternal : ICallbackInfoInterna
 
 	public ProductUserId LocalUserId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(SessionInviteAcceptedCallbackInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -66,7 +67,8 @@ internal struct SessionInviteAcceptedCallbackInfoInternal : ICallbackInfoInterna
 	{
 		[CalledBy(Type = typeof(SessionInviteAcceptedCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -75,9 +77,9 @@ internal struct SessionInviteAcceptedCallbackInfoInternal : ICallbackInfoInterna
 
 	public string InviteId
 	{
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(SessionInviteAcceptedCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{

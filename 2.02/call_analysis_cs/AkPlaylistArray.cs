@@ -14,11 +14,11 @@ public class AkPlaylistArray : IDisposable
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkPlaylistArray obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -28,27 +28,27 @@ public class AkPlaylistArray : IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(AkPlaylist), Member = "Finalize")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(AkPlaylist), Member = "Finalize")]
 	[CallsUnknownMethods(Count = 1)]
 	~AkPlaylistArray()
 	{
 	}
 
+	[CalledBy(Type = typeof(AkPlaylist), Member = "Dispose")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[CalledBy(Type = typeof(AkPlaylist), Member = "Dispose")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public AkPlaylistArray()
 	{
 	}
@@ -69,19 +69,19 @@ public class AkPlaylistArray : IDisposable
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkPlaylistItem), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public AkIterator FindEx(AkPlaylistItem in_Item)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkIterator), Member = "getCPtr")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 8)]
 	public AkIterator Erase(AkIterator in_rIter)
 	{
 		return null;
@@ -95,8 +95,8 @@ public class AkPlaylistArray : IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkIterator), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public AkIterator EraseSwap(AkIterator in_rIter)
 	{
@@ -111,12 +111,12 @@ public class AkPlaylistArray : IDisposable
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public uint Reserved()
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -131,7 +131,7 @@ public class AkPlaylistArray : IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public uint Length()
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -147,13 +147,13 @@ public class AkPlaylistArray : IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsEmpty()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(AkPlaylistItem), Member = "getCPtr")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkPlaylistItem), Member = "getCPtr")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public AkPlaylistItem Exists(AkPlaylistItem in_Item)
 	{
 		return null;
@@ -168,8 +168,8 @@ public class AkPlaylistArray : IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkPlaylistItem), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public AkPlaylistItem AddLast(AkPlaylistItem in_rItem)
 	{
@@ -184,16 +184,16 @@ public class AkPlaylistArray : IDisposable
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void RemoveLast()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkPlaylistItem), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public AKRESULT Remove(AkPlaylistItem in_rItem)
 	{
@@ -201,8 +201,8 @@ public class AkPlaylistArray : IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkPlaylistItem), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public AKRESULT RemoveSwap(AkPlaylistItem in_rItem)
 	{
@@ -216,17 +216,17 @@ public class AkPlaylistArray : IDisposable
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
-	[CallerCount(Count = 0)]
 	public AkPlaylistItem ItemAtIndex(uint uiIndex)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public AkPlaylistItem Insert(uint in_uIndex)
 	{
 		return null;
@@ -237,7 +237,7 @@ public class AkPlaylistArray : IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public bool GrowArray(uint in_uGrowBy)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -245,7 +245,7 @@ public class AkPlaylistArray : IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public bool GrowArray()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -253,7 +253,7 @@ public class AkPlaylistArray : IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public bool Resize(uint in_uiSize)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -263,9 +263,9 @@ public class AkPlaylistArray : IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public AKRESULT Copy(AkPlaylistArray in_rSource)
 	{
 		return default(AKRESULT);

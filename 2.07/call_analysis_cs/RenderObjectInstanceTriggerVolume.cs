@@ -13,32 +13,35 @@ public class RenderObjectInstanceTriggerVolume : MonoBehaviour
 	private List<RenderObjectInstance> m_InstancingScriptList;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(vp_Layer), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void RegisterInstancingScript(RenderObjectInstance newRoi)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(GameObject), Member = "CompareTag")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "CompareTag")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	private void OnTriggerEnter(Collider other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameObject), Member = "CompareTag")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnTriggerExit(Collider other)
 	{
 	}

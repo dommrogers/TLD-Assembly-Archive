@@ -19,25 +19,25 @@ public class AiMoose : MonoBehaviour
 
 	public float m_StumpScratchingChance;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool CanScratch()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Random), Member = "Range")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Random), Member = "Range")]
 	public float GetRolledStumpScratchingDelay()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

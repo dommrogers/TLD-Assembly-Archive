@@ -21,53 +21,51 @@ public class UIGeometry
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public bool hasTransformed
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CalledBy(Type = typeof(UIWidget), Member = "UpdateGeometry")]
 	[CalledBy(Type = typeof(UILabel), Member = "PrintOverlay")]
-	[CalledBy(Type = typeof(UIWidget), Member = "UpdateGeometry")]
-	[CalledBy(Type = typeof(UIWidget), Member = "UpdateGeometry")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(UILabel), Member = "PrintOverlay")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Clear()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[CalledBy(Type = typeof(UIWidget), Member = "UpdateGeometry")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 12)]
 	public void ApplyTransform(Matrix4x4 widgetToPanel)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsUnknownMethods(Count = 57)]
 	[CalledBy(Type = typeof(UIWidget), Member = "WriteToBuffers")]
+	[CalledBy(Type = typeof(UIPanel), Member = "FillAllDrawCalls")]
 	[CalledBy(Type = typeof(UIPanel), Member = "FillDrawCall")]
+	[CallerCount(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 57)]
 	public void WriteToBuffers(BetterList<Vector3> v, BetterList<Vector2> u, BetterList<Color32> c, BetterList<Vector3> n, BetterList<Vector4> t)
 	{
 	}
 
+	[CalledBy(Type = typeof(UIWidget), Member = ".ctor")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(UIWidget), Member = ".ctor")]
 	[CallsUnknownMethods(Count = 32)]
 	public UIGeometry()
 	{

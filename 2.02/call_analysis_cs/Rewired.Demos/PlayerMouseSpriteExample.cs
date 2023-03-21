@@ -36,76 +36,59 @@ public class PlayerMouseSpriteExample : MonoBehaviour
 	[NonSerialized]
 	private PlayerMouse mouse;
 
-	[CallsUnknownMethods(Count = 42)]
-	[Calls(Type = typeof(PlayerMouse), Member = "add_ScreenPositionChangedEvent")]
-	[Calls(Type = typeof(PlayerMouse), Member = "aRljyCnbaetbamKSsBaXDdNQipi")]
-	[Calls(Type = typeof(PlayerController.MouseWheel), Member = "get_yAxis")]
-	[Calls(Type = typeof(PlayerMouse), Member = "get_wheel")]
-	[Calls(Type = typeof(PlayerMouse), Member = "set_pointerSpeed")]
-	[Calls(Type = typeof(PlayerController.ElementWithSource), Member = "set_actionName")]
-	[Calls(Type = typeof(PlayerMouse), Member = "get_middleButton")]
-	[Calls(Type = typeof(PlayerController.ElementWithSource), Member = "set_actionName")]
-	[Calls(Type = typeof(PlayerMouse), Member = "get_rightButton")]
-	[Calls(Type = typeof(PlayerController.ElementWithSource), Member = "set_actionName")]
-	[Calls(Type = typeof(PlayerMouse), Member = "get_screenPosition")]
-	[Calls(Type = typeof(PlayerController.ElementWithSource), Member = "set_actionName")]
-	[Calls(Type = typeof(PlayerMouse), Member = "get_leftButton")]
-	[CallsDeduplicatedMethods(Count = 11)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(PlayerMouse.Factory), Member = "iMviRVGHjpzwJOpMWSPIIPuZgHL")]
 	[Calls(Type = typeof(PlayerController), Member = "set_playerId")]
 	[Calls(Type = typeof(PlayerMouse), Member = "get_xAxis")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(PlayerMouse), Member = "get_yAxis")]
 	[Calls(Type = typeof(PlayerController.ElementWithSource), Member = "set_actionName")]
+	[Calls(Type = typeof(PlayerMouse), Member = "get_yAxis")]
 	[Calls(Type = typeof(PlayerMouse), Member = "get_wheel")]
 	[Calls(Type = typeof(PlayerController.MouseWheel), Member = "get_yAxis")]
-	[Calls(Type = typeof(PlayerController.ElementWithSource), Member = "set_actionName")]
+	[Calls(Type = typeof(PlayerMouse), Member = "get_leftButton")]
+	[Calls(Type = typeof(PlayerMouse), Member = "get_rightButton")]
+	[Calls(Type = typeof(PlayerMouse), Member = "get_middleButton")]
+	[Calls(Type = typeof(PlayerMouse), Member = "set_pointerSpeed")]
+	[Calls(Type = typeof(PlayerMouse), Member = "aRljyCnbaetbamKSsBaXDdNQipi")]
+	[Calls(Type = typeof(PlayerMouse), Member = "add_ScreenPositionChangedEvent")]
+	[Calls(Type = typeof(PlayerMouse), Member = "get_screenPosition")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 42)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(PlayerController.Element), Member = "get_player")]
-	[Calls(Type = typeof(PlayerMouseSpriteExample), Member = "CreateClickEffect")]
-	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
-	[Calls(Type = typeof(PlayerController.Element), Member = "get_player")]
-	[Calls(Type = typeof(PlayerController.Element), Member = "get_player")]
-	[Calls(Type = typeof(PlayerMouse), Member = "get_middleButton")]
-	[Calls(Type = typeof(PlayerMouseSpriteExample), Member = "CreateClickEffect")]
-	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
-	[Calls(Type = typeof(PlayerController.Element), Member = "get_player")]
-	[Calls(Type = typeof(PlayerMouse), Member = "get_rightButton")]
-	[Calls(Type = typeof(PlayerMouse), Member = "get_leftButton")]
-	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
-	[Calls(Type = typeof(PlayerController.Element), Member = "get_player")]
-	[Calls(Type = typeof(PlayerController.Element), Member = "get_player")]
-	[Calls(Type = typeof(Transform), Member = "Rotate")]
-	[Calls(Type = typeof(PlayerController.MouseWheel), Member = "get_yAxis")]
-	[Calls(Type = typeof(PlayerMouse), Member = "get_wheel")]
-	[Calls(Type = typeof(Vector3), Member = "get_forward")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Vector3), Member = "get_forward")]
+	[Calls(Type = typeof(PlayerMouse), Member = "get_wheel")]
+	[Calls(Type = typeof(PlayerController.MouseWheel), Member = "get_yAxis")]
+	[Calls(Type = typeof(Transform), Member = "Rotate")]
+	[Calls(Type = typeof(PlayerMouse), Member = "get_leftButton")]
+	[Calls(Type = typeof(PlayerController.Element), Member = "get_player")]
+	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
 	[Calls(Type = typeof(PlayerMouseSpriteExample), Member = "CreateClickEffect")]
+	[Calls(Type = typeof(PlayerMouse), Member = "get_rightButton")]
+	[Calls(Type = typeof(PlayerMouse), Member = "get_middleButton")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 19)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerMouse), Member = "remove_ScreenPositionChangedEvent")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerMouse), Member = "remove_ScreenPositionChangedEvent")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 9)]
 	private void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 15)]
 	[CalledBy(Type = typeof(PlayerMouseSpriteExample), Member = "Update")]
-	[CalledBy(Type = typeof(PlayerMouseSpriteExample), Member = "Update")]
-	[CalledBy(Type = typeof(PlayerMouseSpriteExample), Member = "Update")]
-	[Calls(Type = typeof(PlayerMouse), Member = "get_screenPosition")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(PlayerMouse), Member = "get_screenPosition")]
-	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 15)]
 	private void CreateClickEffect(Color color)
 	{
 	}
@@ -118,8 +101,8 @@ public class PlayerMouseSpriteExample : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public PlayerMouseSpriteExample()
 	{
 	}

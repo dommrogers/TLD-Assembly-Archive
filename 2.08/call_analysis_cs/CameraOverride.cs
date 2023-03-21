@@ -17,10 +17,10 @@ public class CameraOverride : StateMachineBehaviour
 
 	private float m_StartPitch;
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(CameraOverride), Member = "UpdateCamera")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraOverride), Member = "UpdateCamera")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 	}
@@ -31,19 +31,19 @@ public class CameraOverride : StateMachineBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
 	[CalledBy(Type = typeof(CameraOverride), Member = "OnStateEnter")]
 	[CalledBy(Type = typeof(CameraOverride), Member = "OnStateUpdate")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateCamera()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public CameraOverride()
 	{
 	}

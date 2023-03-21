@@ -10,7 +10,7 @@ public class StoryMissionSaveData
 	public bool m_HasBeenUpdated;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public StoryMissionSaveData()
 	{
 	}

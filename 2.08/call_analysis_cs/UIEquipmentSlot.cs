@@ -8,25 +8,25 @@ public class UIEquipmentSlot : UIItemSlot
 
 	protected override InvGameItem observedItem
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InvEquipment), Member = "Replace")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	protected override InvGameItem Replace(InvGameItem item)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UIItemSlot), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIItemSlot), Member = ".ctor")]
 	public UIEquipmentSlot()
 	{
 	}

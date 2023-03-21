@@ -13,10 +13,9 @@ public class qb_PrefabObject
 
 	public Texture2D PreviewTexture
 	{
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -34,7 +33,7 @@ public class qb_PrefabObject
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void TryGetAssetPreview()
 	{
 	}

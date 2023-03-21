@@ -17,9 +17,9 @@ internal struct HasPresenceOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(HasPresenceOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(HasPresenceOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -27,11 +27,11 @@ internal struct HasPresenceOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId TargetUserId
 	{
+		[CalledBy(Type = typeof(HasPresenceOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(HasPresenceOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(HasPresenceOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(HasPresenceOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -45,16 +45,16 @@ internal struct HasPresenceOptionsInternal : ISettable, IDisposable
 	}
 
 	[CalledBy(Type = typeof(PresenceInterface), Member = "HasPresence")]
-	[Calls(Type = typeof(HasPresenceOptionsInternal), Member = "set_TargetUserId")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(HasPresenceOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(HasPresenceOptionsInternal), Member = "set_TargetUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

@@ -72,72 +72,70 @@ public class SteamPipe : MonoBehaviour
 		add
 		{
 		}
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CallsUnknownMethods(Count = 2)]
 		remove
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Awake()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 11)]
+	[CallerCount(Count = 18)]
 	public string GetGuid()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(SteamPipeEffect), Member = "SetSource")]
 	[Calls(Type = typeof(SteamPipe), Member = "ThawPipes")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Start()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnDestroy()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(SteamPipe), Member = "UpdateSteamPipeValues")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(SteamPipe), Member = "UpdateSteamPipeValues")]
 	[CalledBy(Type = typeof(SteamPipe), Member = "Update")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(SteamPipe), Member = "UpdateSteamPipeValues")]
 	[CallsUnknownMethods(Count = 12)]
 	private void UpdateSteamPipeValues()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void InteractValve(float percent = 100f)
 	{
 	}
 
+	[CalledBy(Type = typeof(SteamPipeManager), Member = "SerializeAll")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(SteamPipeManager), Member = "SerializeAll")]
 	[CallsUnknownMethods(Count = 6)]
 	public string Serialize()
 	{
@@ -145,65 +143,62 @@ public class SteamPipe : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(SteamPipeManager), Member = "DeserializeAll")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(SteamPipe), Member = "ThawPipes")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(SteamPipe), Member = "ThawPipes")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
 	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	private void MaybePlayOpenCloseAudio()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void MaybePlaySteamFlowAudio()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void MaybeShowFrozenPipe(bool immediate)
 	{
 	}
 
+	[CalledBy(Type = typeof(SteamPipe), Member = "Start")]
+	[CalledBy(Type = typeof(SteamPipe), Member = "Deserialize")]
 	[CalledBy(Type = typeof(SteamPipe), Member = "LateUpdate")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(SteamPipeEffect), Member = "Thaw")]
-	[CalledBy(Type = typeof(SteamPipe), Member = "Start")]
-	[CalledBy(Type = typeof(SteamPipe), Member = "Deserialize")]
 	[CallsUnknownMethods(Count = 2)]
 	private void ThawPipes(bool immediate)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(SteamPipe), Member = "UpdateSteamPipeValues")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(SteamPipe), Member = "UpdateSteamPipeValues")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(SteamPipe), Member = "ThawPipes")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	private void LateUpdate()
 	{
 	}

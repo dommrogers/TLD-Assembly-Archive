@@ -26,12 +26,12 @@ public class GearManager
 
 	public static event Action<GearItem> m_OnGearItemAdded
 	{
-		[CalledBy(Type = typeof(ToxicFogManager), Member = "Start")]
-		[CallsUnknownMethods(Count = 3)]
-		[CalledBy(Type = typeof(GearManager), Member = "RegisterForOnGearItemAdded")]
 		[CompilerGenerated]
+		[CalledBy(Type = typeof(GearManager), Member = "RegisterForOnGearItemAdded")]
+		[CalledBy(Type = typeof(ToxicFogManager), Member = "Start")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 3)]
 		add
 		{
 		}
@@ -46,12 +46,12 @@ public class GearManager
 
 	public static event Action<GearItem> m_OnGearItemRemoved
 	{
-		[CallsUnknownMethods(Count = 3)]
+		[CompilerGenerated]
 		[CalledBy(Type = typeof(GearManager), Member = "RegisterForOnGearItemRemoved")]
 		[CalledBy(Type = typeof(ToxicFogManager), Member = "Start")]
 		[CallerCount(Count = 2)]
-		[CompilerGenerated]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 3)]
 		add
 		{
 		}
@@ -65,106 +65,98 @@ public class GearManager
 	}
 
 	[CalledBy(Type = typeof(GearItem), Member = "Awake")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void Add(GearItem gi)
 	{
 	}
 
+	[CalledBy(Type = typeof(GameManager), Member = "ResetLists")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameObject), Member = ".ctor")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CalledBy(Type = typeof(GameManager), Member = "ResetLists")]
-	[CallsUnknownMethods(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void Reset()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(PdidTable), Member = "RuntimeUnregister")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GearManager), Member = "ShouldDeleteActiveGearItem")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GearManager), Member = "DestroyNextUpdate")]
+	[Calls(Type = typeof(PdidTable), Member = "RuntimeUnregister")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void DeleteAllActive()
 	{
 	}
 
+	[CalledBy(Type = typeof(BaseAi), Member = "ProcessInvestigateFood")]
 	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "Update")]
-	[CalledBy(Type = typeof(Container), Member = "DestroyAllGear")]
+	[CalledBy(Type = typeof(CookingPotItem), Member = "Update")]
+	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedItem")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "InspectModeCallback")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "ExitPlaceMesh")]
 	[CalledBy(Type = typeof(GearItem), Member = "MaybeDestroyGearItemAfterMission")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "ProcessItemInHandDetonated")]
 	[CalledBy(Type = typeof(Container), Member = "DestroyGear")]
+	[CalledBy(Type = typeof(Container), Member = "DestroyAllGear")]
 	[CalledBy(Type = typeof(Harvestable), Member = "Harvest")]
-	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedItem")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
 	[CalledBy(Type = typeof(GearManager), Member = "DestroyMarkedObjects")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "TransferGearFromInspectToContainer")]
 	[CalledBy(Type = typeof(BodyCarry), Member = "Drop")]
 	[CalledBy(Type = typeof(BodyCarry), Member = "OnDropPlaceMeshAnimationComplete")]
 	[CalledBy(Type = typeof(Inventory), Member = "DestroyGear")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(BaseAi), Member = "ProcessInvestigateFood")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[CalledBy(Type = typeof(CookingPotItem), Member = "Update")]
-	[Calls(Type = typeof(GearManager), Member = "Remove")]
 	[CallerCount(Count = 18)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GameObjectInInventory")]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(RadialSpawnManager), Member = "ReturnToObjectPool")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Inventory), Member = "GameObjectInInventory")]
+	[Calls(Type = typeof(Inventory), Member = "RemoveGear")]
+	[Calls(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
 	[Calls(Type = typeof(TorchItem), Member = "StopBurningAudioLoop")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearManager), Member = "Remove")]
 	[Calls(Type = typeof(Addressables), Member = "ReleaseInstance")]
-	[Calls(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
-	[Calls(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsUnknownMethods(Count = 3)]
 	public static void DestroyGearObject(GameObject go)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(GearManager), Member = "DestroyGearObject")]
 	[CalledBy(Type = typeof(GearItem), Member = "OnDestroy")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(GearManager), Member = "DestroyGearObject")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GearManager), Member = "RemovedFromDroppedDecoys")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Remove(GearItem gi)
 	{
 	}
 
-	[Calls(Type = typeof(GearItem), Member = "CreateSaveData")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearSaveList), Member = ".ctor")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GearSaveList), Member = ".ctor")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "CreateSaveData")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 3)]
 	public static string Serialize()
 	{
 		return null;
@@ -176,56 +168,55 @@ public class GearManager
 	{
 	}
 
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneDataAdditive")]
 	[CalledBy(Type = typeof(InaccessibleGearContainer), Member = "LoadSceneIntoNearestContainer")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneDataAdditive")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(GearManager), Member = "Deserialize")]
 	public static void Deserialize(string text, List<GearItem> loadedItems)
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(GearManager), Member = "Deserialize")]
 	[CalledBy(Type = typeof(GearItemInteractabilityControl), Member = "Deserialize")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GearItem), Member = "Deserialize")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(GearManager), Member = "Deserialize")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Utils), Member = "SanitizePrefabName")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "LastIndexOf")]
 	[Calls(Type = typeof(string), Member = "Substring")]
 	[Calls(Type = typeof(GearItem), Member = "InstantiateGearItem")]
 	[Calls(Type = typeof(DisableObjectForXPMode), Member = "RemoveDisabler")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "LastIndexOf")]
+	[Calls(Type = typeof(Utils), Member = "SanitizePrefabName")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GearItem), Member = "Deserialize")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public static void Deserialize(GearSaveList list, List<GearItem> loadedItems)
 	{
 	}
 
+	[CalledBy(Type = typeof(GearItem), Member = "Drop")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(GearItem), Member = "Drop")]
-	[CalledBy(Type = typeof(GearItem), Member = "Drop")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void MaybeAddToDroppedDecoys(GearItem gi)
 	{
 	}
 
-	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(GearManager), Member = "Remove")]
+	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void RemovedFromDroppedDecoys(GearItem gi)
 	{
 	}
@@ -246,41 +237,41 @@ public class GearManager
 	[CallsUnknownMethods(Count = 1)]
 	public static int GetFrameCountBetweenItemUpdates()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(GearManager), Member = "DeleteAllActive")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearSpawnInOldSaves), Member = "HasSpawned")]
-	[CalledBy(Type = typeof(GearManager), Member = "DeleteAllActive")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private static bool ShouldDeleteActiveGearItem(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Action_DestroyLockedItems), Member = "DoDestroyContainerLockedItems")]
-	[CalledBy(Type = typeof(GearManager), Member = "DeleteAllActive")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(RandomSpawnObject), Member = "CheckForSpawnInOldSaves")]
+	[CalledBy(Type = typeof(GearItem), Member = "MaybeDestroyBodyHarvest")]
 	[CalledBy(Type = typeof(GearItem), Member = "RemoveGearFromContainer")]
 	[CalledBy(Type = typeof(GearItem), Member = "ManualUpdate")]
-	[CalledBy(Type = typeof(GearItem), Member = "MaybeDestroyBodyHarvest")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(RandomSpawnObject), Member = "CheckForSpawnInOldSaves")]
+	[CalledBy(Type = typeof(GearManager), Member = "DeleteAllActive")]
+	[CalledBy(Type = typeof(Action_DestroyLockedItems), Member = "DoDestroyContainerLockedItems")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void DestroyNextUpdate(GearItem gearItem, bool value)
 	{
 	}
 
 	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GearManager), Member = "DestroyGearObject")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private static void DestroyMarkedObjects()
 	{
 	}
@@ -292,21 +283,21 @@ public class GearManager
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(GameManager), Member = "AllScenesLoaded")]
 	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
 	[CalledBy(Type = typeof(SceneManager), Member = "OnSceneLoaded")]
+	[CallerCount(Count = 4)]
 	public static void UpdateAll()
 	{
 	}
 
 	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GearItem), Member = "ManualUpdate")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private static void UpdateItems(int start, int endExclusive)
 	{
 	}

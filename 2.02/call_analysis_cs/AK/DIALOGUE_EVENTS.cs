@@ -9,7 +9,7 @@ public class DIALOGUE_EVENTS
 	public static uint TESTDDSWITCHES;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public DIALOGUE_EVENTS()
 	{
 	}

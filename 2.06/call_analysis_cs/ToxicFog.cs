@@ -35,10 +35,10 @@ public class ToxicFog : MonoBehaviour
 		return null;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetAfflictionTreatment()
 	{
 		return null;
@@ -62,26 +62,26 @@ public class ToxicFog : MonoBehaviour
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool HasAffliction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Log), Member = "AddAffliction")]
-	[Calls(Type = typeof(PlayerCough), Member = "MaybeStart")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[Calls(Type = typeof(Log), Member = "AddAffliction")]
+	[Calls(Type = typeof(PlayerCough), Member = "MaybeStart")]
 	[CallsUnknownMethods(Count = 3)]
 	public void StartAffliction()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerCough), Member = "Stop")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[Calls(Type = typeof(PlayerCough), Member = "Stop")]
+	[CallsUnknownMethods(Count = 3)]
 	public void StopAffliction()
 	{
 	}
@@ -93,13 +93,12 @@ public class ToxicFog : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(Condition), Member = "AddHealth")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(TimeOfDay), Member = "GetTODMinutes")]
+	[Calls(Type = typeof(Condition), Member = "AddHealth")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[CallsUnknownMethods(Count = 4)]
 	public void Update()
 	{
 	}

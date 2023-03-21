@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using TLD.SaveState;
@@ -13,18 +12,18 @@ public class Action_UnlockBadge : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(BadgeUIInfo), Member = "UnlockBadge")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BadgeUIInfo), Member = "UnlockBadge")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	protected override void OnExecute()
 	{
 	}

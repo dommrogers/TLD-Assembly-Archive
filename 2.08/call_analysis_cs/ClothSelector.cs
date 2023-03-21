@@ -18,11 +18,8 @@ public class ClothSelector : MonoBehaviour
 	private ClothType m_NintendoSwitch;
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnEnable()
 	{

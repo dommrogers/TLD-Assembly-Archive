@@ -33,9 +33,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_BBParameter_Int32 : BBParameter<int>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Framework_BBParameter_Int32()
 		{
 			((BBParameter<>)(object)this)._002Ector();
@@ -44,9 +44,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_BBParameter_Vector2 : BBParameter<Vector2>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Framework_BBParameter_Vector2()
 		{
 			((BBParameter<>)(object)this)._002Ector();
@@ -77,9 +77,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_BBParameter_Quaternion : BBParameter<Quaternion>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Framework_BBParameter_Quaternion()
 		{
 			((BBParameter<>)(object)this)._002Ector();
@@ -88,9 +88,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_BBParameter_Keyframe : BBParameter<Keyframe>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Framework_BBParameter_Keyframe()
 		{
 			((BBParameter<>)(object)this)._002Ector();
@@ -99,9 +99,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_BBParameter_Bounds : BBParameter<Bounds>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Framework_BBParameter_Bounds()
 		{
 			((BBParameter<>)(object)this)._002Ector();
@@ -154,8 +154,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_BBParameter_Collision : BBParameter<Collision>
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Framework_BBParameter_Collision()
 		{
 			((BBParameter<>)(object)this)._002Ector();
@@ -165,7 +166,8 @@ internal class AOTDummy
 	private class NodeCanvas_Framework_BBParameter_Collision2D : BBParameter<Collision2D>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Framework_BBParameter_Collision2D()
 		{
 			((BBParameter<>)(object)this)._002Ector();
@@ -197,7 +199,8 @@ internal class AOTDummy
 	private class NodeCanvas_Framework_BBParameter_Space : BBParameter<Space>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Framework_BBParameter_Space()
 		{
 			((BBParameter<>)(object)this)._002Ector();
@@ -207,7 +210,8 @@ internal class AOTDummy
 	private class NodeCanvas_Framework_BBParameter_SpawnLocation : BBParameter<SpawnLocation>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Framework_BBParameter_SpawnLocation()
 		{
 			((BBParameter<>)(object)this)._002Ector();
@@ -216,9 +220,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_BBParameter_LayerMask : BBParameter<LayerMask>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Framework_BBParameter_LayerMask()
 		{
 			((BBParameter<>)(object)this)._002Ector();
@@ -271,9 +275,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Variable_Vector3 : Variable<Vector3>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Framework_Variable_Vector3()
 		{
 			((Variable<>)(object)this)._002Ector();
@@ -304,9 +308,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Variable_Keyframe : Variable<Keyframe>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Framework_Variable_Keyframe()
 		{
 			((Variable<>)(object)this)._002Ector();
@@ -315,9 +319,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Variable_Bounds : Variable<Bounds>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Framework_Variable_Bounds()
 		{
 			((Variable<>)(object)this)._002Ector();
@@ -326,9 +330,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Variable_Color : Variable<Color>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Framework_Variable_Color()
 		{
 			((Variable<>)(object)this)._002Ector();
@@ -381,9 +385,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Variable_Collision2D : Variable<Collision2D>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Framework_Variable_Collision2D()
 		{
 			((Variable<>)(object)this)._002Ector();
@@ -436,9 +440,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Variable_LayerMask : Variable<LayerMask>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Framework_Variable_LayerMask()
 		{
 			((Variable<>)(object)this)._002Ector();
@@ -491,9 +495,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedAction_Vector3 : ReflectedAction<Vector3>
 	{
-		[CallsUnknownMethods(Count = 8)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 8)]
 		public NodeCanvas_Framework_Internal_ReflectedAction_Vector3()
 		{
 			((ReflectedAction<>)(object)this)._002Ector();
@@ -546,9 +550,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedAction_Color : ReflectedAction<Color>
 	{
-		[CallsUnknownMethods(Count = 8)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 8)]
 		public NodeCanvas_Framework_Internal_ReflectedAction_Color()
 		{
 			((ReflectedAction<>)(object)this)._002Ector();
@@ -591,7 +595,8 @@ internal class AOTDummy
 	private class NodeCanvas_Framework_Internal_ReflectedAction_Collision : ReflectedAction<Collision>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ReflectedAction<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Framework_Internal_ReflectedAction_Collision()
 		{
 			((ReflectedAction<>)(object)this)._002Ector();
@@ -600,8 +605,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedAction_Collision2D : ReflectedAction<Collision2D>
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ReflectedAction<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Framework_Internal_ReflectedAction_Collision2D()
 		{
 			((ReflectedAction<>)(object)this)._002Ector();
@@ -633,7 +639,8 @@ internal class AOTDummy
 	private class NodeCanvas_Framework_Internal_ReflectedAction_Space : ReflectedAction<Space>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ReflectedAction<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Framework_Internal_ReflectedAction_Space()
 		{
 			((ReflectedAction<>)(object)this)._002Ector();
@@ -653,8 +660,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedAction_SpawnLocation : ReflectedAction<SpawnLocation>
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ReflectedAction<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Framework_Internal_ReflectedAction_SpawnLocation()
 		{
 			((ReflectedAction<>)(object)this)._002Ector();
@@ -663,9 +671,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_Boolean : ReflectedFunction<bool>
 	{
-		[CallsUnknownMethods(Count = 8)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 8)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_Boolean()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -696,9 +704,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_Vector2 : ReflectedFunction<Vector2>
 	{
-		[CallsUnknownMethods(Count = 8)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 8)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_Vector2()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -707,9 +715,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_Vector3 : ReflectedFunction<Vector3>
 	{
-		[CallsUnknownMethods(Count = 8)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 8)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_Vector3()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -729,9 +737,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_Quaternion : ReflectedFunction<Quaternion>
 	{
-		[CallsUnknownMethods(Count = 8)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 8)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_Quaternion()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -740,9 +748,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_Keyframe : ReflectedFunction<Keyframe>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 8)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_Keyframe()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -751,9 +759,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_Bounds : ReflectedFunction<Bounds>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 8)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_Bounds()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -762,9 +770,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_Color : ReflectedFunction<Color>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 8)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_Color()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -773,9 +781,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_Rect : ReflectedFunction<Rect>
 	{
-		[CallsUnknownMethods(Count = 8)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 8)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_Rect()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -807,7 +815,8 @@ internal class AOTDummy
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_Collision : ReflectedFunction<Collision>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ReflectedFunction<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_Collision()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -817,7 +826,8 @@ internal class AOTDummy
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_Collision2D : ReflectedFunction<Collision2D>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ReflectedFunction<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_Collision2D()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -826,9 +836,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_RaycastHit : ReflectedFunction<RaycastHit>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 8)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_RaycastHit()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -849,7 +859,8 @@ internal class AOTDummy
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_Space : ReflectedFunction<Space>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ReflectedFunction<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_Space()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -870,7 +881,8 @@ internal class AOTDummy
 	private class NodeCanvas_Framework_Internal_ReflectedFunction_SpawnLocation : ReflectedFunction<SpawnLocation>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ReflectedFunction<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Framework_Internal_ReflectedFunction_SpawnLocation()
 		{
 			((ReflectedFunction<>)(object)this)._002Ector();
@@ -879,9 +891,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_Boolean : Action_PostEventToConcurrentGraph<bool>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_Boolean()
 		{
 			((Action_PostEventToConcurrentGraph<>)(object)this)._002Ector();
@@ -890,9 +902,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_Single : Action_PostEventToConcurrentGraph<float>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_Single()
 		{
 			((Action_PostEventToConcurrentGraph<>)(object)this)._002Ector();
@@ -945,9 +957,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_Quaternion : Action_PostEventToConcurrentGraph<Quaternion>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_Quaternion()
 		{
 			((Action_PostEventToConcurrentGraph<>)(object)this)._002Ector();
@@ -1000,9 +1012,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_ContactPoint : Action_PostEventToConcurrentGraph<ContactPoint>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_ContactPoint()
 		{
 			((Action_PostEventToConcurrentGraph<>)(object)this)._002Ector();
@@ -1023,7 +1035,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_Collision : Action_PostEventToConcurrentGraph<Collision>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Action_PostEventToConcurrentGraph<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_Collision()
 		{
 			((Action_PostEventToConcurrentGraph<>)(object)this)._002Ector();
@@ -1033,7 +1046,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_Collision2D : Action_PostEventToConcurrentGraph<Collision2D>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Action_PostEventToConcurrentGraph<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_Collision2D()
 		{
 			((Action_PostEventToConcurrentGraph<>)(object)this)._002Ector();
@@ -1053,9 +1067,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_RaycastHit2D : Action_PostEventToConcurrentGraph<RaycastHit2D>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_RaycastHit2D()
 		{
 			((Action_PostEventToConcurrentGraph<>)(object)this)._002Ector();
@@ -1065,7 +1079,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_Space : Action_PostEventToConcurrentGraph<Space>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Action_PostEventToConcurrentGraph<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_Space()
 		{
 			((Action_PostEventToConcurrentGraph<>)(object)this)._002Ector();
@@ -1075,7 +1090,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_SpawnLocation : Action_PostEventToConcurrentGraph<SpawnLocation>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Action_PostEventToConcurrentGraph<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_SpawnLocation()
 		{
 			((Action_PostEventToConcurrentGraph<>)(object)this)._002Ector();
@@ -1106,9 +1122,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_AddElementToList_Int32 : AddElementToList<int>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_AddElementToList_Int32()
 		{
 			((AddElementToList<>)(object)this)._002Ector();
@@ -1117,9 +1133,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_AddElementToList_Vector2 : AddElementToList<Vector2>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_AddElementToList_Vector2()
 		{
 			((AddElementToList<>)(object)this)._002Ector();
@@ -1172,9 +1188,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_AddElementToList_Bounds : AddElementToList<Bounds>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_AddElementToList_Bounds()
 		{
 			((AddElementToList<>)(object)this)._002Ector();
@@ -1227,9 +1243,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_AddElementToList_Collision : AddElementToList<Collision>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_AddElementToList_Collision()
 		{
 			((AddElementToList<>)(object)this)._002Ector();
@@ -1271,9 +1287,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_AddElementToList_Space : AddElementToList<Space>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_AddElementToList_Space()
 		{
 			((AddElementToList<>)(object)this)._002Ector();
@@ -1315,9 +1331,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_GetIndexOfElement_Single : GetIndexOfElement<float>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_GetIndexOfElement_Single()
 		{
 			((GetIndexOfElement<>)(object)this)._002Ector();
@@ -1326,9 +1342,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_GetIndexOfElement_Int32 : GetIndexOfElement<int>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_GetIndexOfElement_Int32()
 		{
 			((GetIndexOfElement<>)(object)this)._002Ector();
@@ -1370,9 +1386,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_GetIndexOfElement_Quaternion : GetIndexOfElement<Quaternion>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_GetIndexOfElement_Quaternion()
 		{
 			((GetIndexOfElement<>)(object)this)._002Ector();
@@ -1381,9 +1397,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_GetIndexOfElement_Keyframe : GetIndexOfElement<Keyframe>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_GetIndexOfElement_Keyframe()
 		{
 			((GetIndexOfElement<>)(object)this)._002Ector();
@@ -1414,9 +1430,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_GetIndexOfElement_Rect : GetIndexOfElement<Rect>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_GetIndexOfElement_Rect()
 		{
 			((GetIndexOfElement<>)(object)this)._002Ector();
@@ -1425,9 +1441,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_GetIndexOfElement_ContactPoint : GetIndexOfElement<ContactPoint>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_GetIndexOfElement_ContactPoint()
 		{
 			((GetIndexOfElement<>)(object)this)._002Ector();
@@ -1436,9 +1452,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_GetIndexOfElement_ContactPoint2D : GetIndexOfElement<ContactPoint2D>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_GetIndexOfElement_ContactPoint2D()
 		{
 			((GetIndexOfElement<>)(object)this)._002Ector();
@@ -1480,9 +1496,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_GetIndexOfElement_RaycastHit2D : GetIndexOfElement<RaycastHit2D>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_GetIndexOfElement_RaycastHit2D()
 		{
 			((GetIndexOfElement<>)(object)this)._002Ector();
@@ -1524,9 +1540,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_InsertElementToList_Boolean : InsertElementToList<bool>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_InsertElementToList_Boolean()
 		{
 			((InsertElementToList<>)(object)this)._002Ector();
@@ -1535,9 +1551,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_InsertElementToList_Single : InsertElementToList<float>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_InsertElementToList_Single()
 		{
 			((InsertElementToList<>)(object)this)._002Ector();
@@ -1579,9 +1595,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_InsertElementToList_Vector4 : InsertElementToList<Vector4>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_InsertElementToList_Vector4()
 		{
 			((InsertElementToList<>)(object)this)._002Ector();
@@ -1590,9 +1606,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_InsertElementToList_Quaternion : InsertElementToList<Quaternion>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_InsertElementToList_Quaternion()
 		{
 			((InsertElementToList<>)(object)this)._002Ector();
@@ -1623,9 +1639,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_InsertElementToList_Color : InsertElementToList<Color>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_InsertElementToList_Color()
 		{
 			((InsertElementToList<>)(object)this)._002Ector();
@@ -1634,9 +1650,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_InsertElementToList_Rect : InsertElementToList<Rect>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_InsertElementToList_Rect()
 		{
 			((InsertElementToList<>)(object)this)._002Ector();
@@ -1645,9 +1661,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_InsertElementToList_ContactPoint : InsertElementToList<ContactPoint>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_InsertElementToList_ContactPoint()
 		{
 			((InsertElementToList<>)(object)this)._002Ector();
@@ -1656,9 +1672,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_InsertElementToList_ContactPoint2D : InsertElementToList<ContactPoint2D>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_InsertElementToList_ContactPoint2D()
 		{
 			((InsertElementToList<>)(object)this)._002Ector();
@@ -1700,9 +1716,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_InsertElementToList_RaycastHit2D : InsertElementToList<RaycastHit2D>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_InsertElementToList_RaycastHit2D()
 		{
 			((InsertElementToList<>)(object)this)._002Ector();
@@ -1744,9 +1760,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_PickListElement_Boolean : PickListElement<bool>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_PickListElement_Boolean()
 		{
 			((PickListElement<>)(object)this)._002Ector();
@@ -1755,9 +1771,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_PickListElement_Single : PickListElement<float>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_PickListElement_Single()
 		{
 			((PickListElement<>)(object)this)._002Ector();
@@ -1799,9 +1815,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_PickListElement_Vector4 : PickListElement<Vector4>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_PickListElement_Vector4()
 		{
 			((PickListElement<>)(object)this)._002Ector();
@@ -1810,9 +1826,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_PickListElement_Quaternion : PickListElement<Quaternion>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_PickListElement_Quaternion()
 		{
 			((PickListElement<>)(object)this)._002Ector();
@@ -1843,9 +1859,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_PickListElement_Color : PickListElement<Color>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_PickListElement_Color()
 		{
 			((PickListElement<>)(object)this)._002Ector();
@@ -1854,9 +1870,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_PickListElement_Rect : PickListElement<Rect>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_PickListElement_Rect()
 		{
 			((PickListElement<>)(object)this)._002Ector();
@@ -1865,9 +1881,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_PickListElement_ContactPoint : PickListElement<ContactPoint>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_PickListElement_ContactPoint()
 		{
 			((PickListElement<>)(object)this)._002Ector();
@@ -1920,9 +1936,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_PickListElement_RaycastHit2D : PickListElement<RaycastHit2D>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_PickListElement_RaycastHit2D()
 		{
 			((PickListElement<>)(object)this)._002Ector();
@@ -1975,9 +1991,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_PickRandomListElement_Single : PickRandomListElement<float>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_PickRandomListElement_Single()
 		{
 			((PickRandomListElement<>)(object)this)._002Ector();
@@ -2019,9 +2035,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_PickRandomListElement_Vector4 : PickRandomListElement<Vector4>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_PickRandomListElement_Vector4()
 		{
 			((PickRandomListElement<>)(object)this)._002Ector();
@@ -2063,9 +2079,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_PickRandomListElement_Color : PickRandomListElement<Color>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_PickRandomListElement_Color()
 		{
 			((PickRandomListElement<>)(object)this)._002Ector();
@@ -2074,9 +2090,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_PickRandomListElement_Rect : PickRandomListElement<Rect>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_PickRandomListElement_Rect()
 		{
 			((PickRandomListElement<>)(object)this)._002Ector();
@@ -2085,9 +2101,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_PickRandomListElement_ContactPoint : PickRandomListElement<ContactPoint>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_PickRandomListElement_ContactPoint()
 		{
 			((PickRandomListElement<>)(object)this)._002Ector();
@@ -2140,9 +2156,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_PickRandomListElement_RaycastHit2D : PickRandomListElement<RaycastHit2D>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_PickRandomListElement_RaycastHit2D()
 		{
 			((PickRandomListElement<>)(object)this)._002Ector();
@@ -2195,9 +2211,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_RemoveElementFromList_Single : RemoveElementFromList<float>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_RemoveElementFromList_Single()
 		{
 			((RemoveElementFromList<>)(object)this)._002Ector();
@@ -2250,9 +2266,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_RemoveElementFromList_Quaternion : RemoveElementFromList<Quaternion>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_RemoveElementFromList_Quaternion()
 		{
 			((RemoveElementFromList<>)(object)this)._002Ector();
@@ -2305,9 +2321,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_RemoveElementFromList_ContactPoint : RemoveElementFromList<ContactPoint>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_RemoveElementFromList_ContactPoint()
 		{
 			((RemoveElementFromList<>)(object)this)._002Ector();
@@ -2349,9 +2365,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_RemoveElementFromList_RaycastHit : RemoveElementFromList<RaycastHit>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_RemoveElementFromList_RaycastHit()
 		{
 			((RemoveElementFromList<>)(object)this)._002Ector();
@@ -2393,9 +2409,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_RemoveElementFromList_SpawnLocation : RemoveElementFromList<SpawnLocation>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_RemoveElementFromList_SpawnLocation()
 		{
 			((RemoveElementFromList<>)(object)this)._002Ector();
@@ -2404,9 +2420,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendEvent_Boolean : SendEvent<bool>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendEvent_Boolean()
 		{
 			((SendEvent<>)(object)this)._002Ector();
@@ -2448,9 +2464,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendEvent_Vector3 : SendEvent<Vector3>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendEvent_Vector3()
 		{
 			((SendEvent<>)(object)this)._002Ector();
@@ -2481,8 +2497,8 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendEvent_Keyframe : SendEvent<Keyframe>
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendEvent_Keyframe()
 		{
@@ -2492,8 +2508,8 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendEvent_Bounds : SendEvent<Bounds>
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendEvent_Bounds()
 		{
@@ -2503,8 +2519,8 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendEvent_Color : SendEvent<Color>
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendEvent_Color()
 		{
@@ -2514,8 +2530,8 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendEvent_Rect : SendEvent<Rect>
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendEvent_Rect()
 		{
@@ -2525,9 +2541,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendEvent_ContactPoint : SendEvent<ContactPoint>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendEvent_ContactPoint()
 		{
 			((SendEvent<>)(object)this)._002Ector();
@@ -2548,7 +2564,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Actions_SendEvent_Collision : SendEvent<Collision>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(SendEvent<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendEvent_Collision()
 		{
 			((SendEvent<>)(object)this)._002Ector();
@@ -2558,7 +2575,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Actions_SendEvent_Collision2D : SendEvent<Collision2D>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(SendEvent<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendEvent_Collision2D()
 		{
 			((SendEvent<>)(object)this)._002Ector();
@@ -2589,8 +2607,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendEvent_Space : SendEvent<Space>
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(SendEvent<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendEvent_Space()
 		{
 			((SendEvent<>)(object)this)._002Ector();
@@ -2611,7 +2630,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Actions_SendEvent_SpawnLocation : SendEvent<SpawnLocation>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(SendEvent<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendEvent_SpawnLocation()
 		{
 			((SendEvent<>)(object)this)._002Ector();
@@ -2642,9 +2662,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendEventToObjects_Int32 : SendEventToObjects<int>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_SendEventToObjects_Int32()
 		{
 			((SendEventToObjects<>)(object)this)._002Ector();
@@ -2686,9 +2706,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendEventToObjects_Quaternion : SendEventToObjects<Quaternion>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendEventToObjects_Quaternion()
 		{
 			((SendEventToObjects<>)(object)this)._002Ector();
@@ -2697,9 +2717,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendEventToObjects_Keyframe : SendEventToObjects<Keyframe>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendEventToObjects_Keyframe()
 		{
 			((SendEventToObjects<>)(object)this)._002Ector();
@@ -2730,9 +2750,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendEventToObjects_Rect : SendEventToObjects<Rect>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendEventToObjects_Rect()
 		{
 			((SendEventToObjects<>)(object)this)._002Ector();
@@ -2741,9 +2761,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendEventToObjects_ContactPoint : SendEventToObjects<ContactPoint>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_SendEventToObjects_ContactPoint()
 		{
 			((SendEventToObjects<>)(object)this)._002Ector();
@@ -2752,9 +2772,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendEventToObjects_ContactPoint2D : SendEventToObjects<ContactPoint2D>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_SendEventToObjects_ContactPoint2D()
 		{
 			((SendEventToObjects<>)(object)this)._002Ector();
@@ -2807,9 +2827,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendEventToObjects_Space : SendEventToObjects<Space>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendEventToObjects_Space()
 		{
 			((SendEventToObjects<>)(object)this)._002Ector();
@@ -2862,9 +2882,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendMessage_Int32 : SendMessage<int>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendMessage_Int32()
 		{
 			((SendMessage<>)(object)this)._002Ector();
@@ -2906,9 +2926,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendMessage_Quaternion : SendMessage<Quaternion>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendMessage_Quaternion()
 		{
 			((SendMessage<>)(object)this)._002Ector();
@@ -2950,9 +2970,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendMessage_Rect : SendMessage<Rect>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_SendMessage_Rect()
 		{
 			((SendMessage<>)(object)this)._002Ector();
@@ -2961,9 +2981,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendMessage_ContactPoint : SendMessage<ContactPoint>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Actions_SendMessage_ContactPoint()
 		{
 			((SendMessage<>)(object)this)._002Ector();
@@ -2972,9 +2992,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendMessage_ContactPoint2D : SendMessage<ContactPoint2D>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendMessage_ContactPoint2D()
 		{
 			((SendMessage<>)(object)this)._002Ector();
@@ -2984,7 +3004,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Actions_SendMessage_Collision : SendMessage<Collision>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(SendMessage<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendMessage_Collision()
 		{
 			((SendMessage<>)(object)this)._002Ector();
@@ -2994,7 +3015,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Actions_SendMessage_Collision2D : SendMessage<Collision2D>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(SendMessage<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendMessage_Collision2D()
 		{
 			((SendMessage<>)(object)this)._002Ector();
@@ -3026,7 +3048,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Actions_SendMessage_Space : SendMessage<Space>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(SendMessage<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendMessage_Space()
 		{
 			((SendMessage<>)(object)this)._002Ector();
@@ -3035,9 +3058,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SendMessage_LayerMask : SendMessage<LayerMask>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendMessage_LayerMask()
 		{
 			((SendMessage<>)(object)this)._002Ector();
@@ -3047,7 +3070,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Actions_SendMessage_SpawnLocation : SendMessage<SpawnLocation>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(SendMessage<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SendMessage_SpawnLocation()
 		{
 			((SendMessage<>)(object)this)._002Ector();
@@ -3078,9 +3102,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SetListElement_Int32 : SetListElement<int>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SetListElement_Int32()
 		{
 			((SetListElement<>)(object)this)._002Ector();
@@ -3089,9 +3113,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SetListElement_Vector2 : SetListElement<Vector2>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SetListElement_Vector2()
 		{
 			((SetListElement<>)(object)this)._002Ector();
@@ -3144,9 +3168,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SetListElement_Bounds : SetListElement<Bounds>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SetListElement_Bounds()
 		{
 			((SetListElement<>)(object)this)._002Ector();
@@ -3199,9 +3223,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SetListElement_Collision : SetListElement<Collision>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SetListElement_Collision()
 		{
 			((SetListElement<>)(object)this)._002Ector();
@@ -3254,9 +3278,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SetListElement_LayerMask : SetListElement<LayerMask>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SetListElement_LayerMask()
 		{
 			((SetListElement<>)(object)this)._002Ector();
@@ -3309,9 +3333,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SetVariable_Vector2 : SetVariable<Vector2>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SetVariable_Vector2()
 		{
 			((SetVariable<>)(object)this)._002Ector();
@@ -3364,9 +3388,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SetVariable_Bounds : SetVariable<Bounds>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SetVariable_Bounds()
 		{
 			((SetVariable<>)(object)this)._002Ector();
@@ -3419,9 +3443,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SetVariable_Collision : SetVariable<Collision>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SetVariable_Collision()
 		{
 			((SetVariable<>)(object)this)._002Ector();
@@ -3474,9 +3498,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Actions_SetVariable_LayerMask : SetVariable<LayerMask>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Actions_SetVariable_LayerMask()
 		{
 			((SetVariable<>)(object)this)._002Ector();
@@ -3529,9 +3553,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckCSharpEvent_Vector2 : CheckCSharpEvent<Vector2>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckCSharpEvent_Vector2()
 		{
 			((CheckCSharpEvent<>)(object)this)._002Ector();
@@ -3584,9 +3608,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckCSharpEvent_Bounds : CheckCSharpEvent<Bounds>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckCSharpEvent_Bounds()
 		{
 			((CheckCSharpEvent<>)(object)this)._002Ector();
@@ -3639,9 +3663,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckCSharpEvent_Collision : CheckCSharpEvent<Collision>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckCSharpEvent_Collision()
 		{
 			((CheckCSharpEvent<>)(object)this)._002Ector();
@@ -3694,9 +3718,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckCSharpEvent_LayerMask : CheckCSharpEvent<LayerMask>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckCSharpEvent_LayerMask()
 		{
 			((CheckCSharpEvent<>)(object)this)._002Ector();
@@ -3749,9 +3773,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckEvent_Vector2 : CheckEvent<Vector2>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckEvent_Vector2()
 		{
 			((CheckEvent<>)(object)this)._002Ector();
@@ -3793,9 +3817,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckEvent_Keyframe : CheckEvent<Keyframe>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckEvent_Keyframe()
 		{
 			((CheckEvent<>)(object)this)._002Ector();
@@ -3826,8 +3850,8 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckEvent_Rect : CheckEvent<Rect>
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckEvent_Rect()
 		{
@@ -3837,8 +3861,8 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckEvent_ContactPoint : CheckEvent<ContactPoint>
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckEvent_ContactPoint()
 		{
@@ -3848,9 +3872,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckEvent_ContactPoint2D : CheckEvent<ContactPoint2D>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckEvent_ContactPoint2D()
 		{
 			((CheckEvent<>)(object)this)._002Ector();
@@ -3860,7 +3884,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Conditions_CheckEvent_Collision : CheckEvent<Collision>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(CheckEvent<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckEvent_Collision()
 		{
 			((CheckEvent<>)(object)this)._002Ector();
@@ -3870,7 +3895,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Conditions_CheckEvent_Collision2D : CheckEvent<Collision2D>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(CheckEvent<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckEvent_Collision2D()
 		{
 			((CheckEvent<>)(object)this)._002Ector();
@@ -3902,7 +3928,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Conditions_CheckEvent_Space : CheckEvent<Space>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(CheckEvent<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckEvent_Space()
 		{
 			((CheckEvent<>)(object)this)._002Ector();
@@ -3911,9 +3938,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckEvent_LayerMask : CheckEvent<LayerMask>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckEvent_LayerMask()
 		{
 			((CheckEvent<>)(object)this)._002Ector();
@@ -3923,7 +3950,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Conditions_CheckEvent_SpawnLocation : CheckEvent<SpawnLocation>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(CheckEvent<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckEvent_SpawnLocation()
 		{
 			((CheckEvent<>)(object)this)._002Ector();
@@ -3965,9 +3993,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckEventValue_Vector2 : CheckEventValue<Vector2>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Conditions_CheckEventValue_Vector2()
 		{
 			((CheckEventValue<>)(object)this)._002Ector();
@@ -4009,9 +4037,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckEventValue_Keyframe : CheckEventValue<Keyframe>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckEventValue_Keyframe()
 		{
 			((CheckEventValue<>)(object)this)._002Ector();
@@ -4020,9 +4048,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckEventValue_Bounds : CheckEventValue<Bounds>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckEventValue_Bounds()
 		{
 			((CheckEventValue<>)(object)this)._002Ector();
@@ -4053,9 +4081,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckEventValue_ContactPoint : CheckEventValue<ContactPoint>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckEventValue_ContactPoint()
 		{
 			((CheckEventValue<>)(object)this)._002Ector();
@@ -4064,9 +4092,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckEventValue_ContactPoint2D : CheckEventValue<ContactPoint2D>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Conditions_CheckEventValue_ContactPoint2D()
 		{
 			((CheckEventValue<>)(object)this)._002Ector();
@@ -4075,8 +4103,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckEventValue_Collision : CheckEventValue<Collision>
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(CheckEventValue<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckEventValue_Collision()
 		{
 			((CheckEventValue<>)(object)this)._002Ector();
@@ -4086,7 +4115,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Conditions_CheckEventValue_Collision2D : CheckEventValue<Collision2D>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(CheckEventValue<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckEventValue_Collision2D()
 		{
 			((CheckEventValue<>)(object)this)._002Ector();
@@ -4118,7 +4148,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Conditions_CheckEventValue_Space : CheckEventValue<Space>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(CheckEventValue<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckEventValue_Space()
 		{
 			((CheckEventValue<>)(object)this)._002Ector();
@@ -4138,8 +4169,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckEventValue_SpawnLocation : CheckEventValue<SpawnLocation>
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(CheckEventValue<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckEventValue_SpawnLocation()
 		{
 			((CheckEventValue<>)(object)this)._002Ector();
@@ -4192,9 +4224,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckStaticCSharpEvent_Vector3 : CheckStaticCSharpEvent<Vector3>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckStaticCSharpEvent_Vector3()
 		{
 			((CheckStaticCSharpEvent<>)(object)this)._002Ector();
@@ -4236,9 +4268,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckStaticCSharpEvent_Bounds : CheckStaticCSharpEvent<Bounds>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckStaticCSharpEvent_Bounds()
 		{
 			((CheckStaticCSharpEvent<>)(object)this)._002Ector();
@@ -4280,9 +4312,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckStaticCSharpEvent_ContactPoint2D : CheckStaticCSharpEvent<ContactPoint2D>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Conditions_CheckStaticCSharpEvent_ContactPoint2D()
 		{
 			((CheckStaticCSharpEvent<>)(object)this)._002Ector();
@@ -4291,9 +4323,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckStaticCSharpEvent_Collision : CheckStaticCSharpEvent<Collision>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Conditions_CheckStaticCSharpEvent_Collision()
 		{
 			((CheckStaticCSharpEvent<>)(object)this)._002Ector();
@@ -4302,9 +4334,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckStaticCSharpEvent_Collision2D : CheckStaticCSharpEvent<Collision2D>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckStaticCSharpEvent_Collision2D()
 		{
 			((CheckStaticCSharpEvent<>)(object)this)._002Ector();
@@ -4357,9 +4389,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckStaticCSharpEvent_LayerMask : CheckStaticCSharpEvent<LayerMask>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckStaticCSharpEvent_LayerMask()
 		{
 			((CheckStaticCSharpEvent<>)(object)this)._002Ector();
@@ -4412,9 +4444,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckVariable_Vector3 : CheckVariable<Vector3>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckVariable_Vector3()
 		{
 			((CheckVariable<>)(object)this)._002Ector();
@@ -4467,9 +4499,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckVariable_Color : CheckVariable<Color>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckVariable_Color()
 		{
 			((CheckVariable<>)(object)this)._002Ector();
@@ -4522,9 +4554,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckVariable_Collision2D : CheckVariable<Collision2D>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckVariable_Collision2D()
 		{
 			((CheckVariable<>)(object)this)._002Ector();
@@ -4577,9 +4609,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_CheckVariable_SpawnLocation : CheckVariable<SpawnLocation>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_CheckVariable_SpawnLocation()
 		{
 			((CheckVariable<>)(object)this)._002Ector();
@@ -4632,9 +4664,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_ListContainsElement_Vector3 : ListContainsElement<Vector3>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_ListContainsElement_Vector3()
 		{
 			((ListContainsElement<>)(object)this)._002Ector();
@@ -4676,9 +4708,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_ListContainsElement_Bounds : ListContainsElement<Bounds>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_ListContainsElement_Bounds()
 		{
 			((ListContainsElement<>)(object)this)._002Ector();
@@ -4709,8 +4741,8 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_ListContainsElement_ContactPoint : ListContainsElement<ContactPoint>
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_ListContainsElement_ContactPoint()
 		{
@@ -4720,8 +4752,8 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_ListContainsElement_ContactPoint2D : ListContainsElement<ContactPoint2D>
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_ListContainsElement_ContactPoint2D()
 		{
@@ -4731,9 +4763,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_ListContainsElement_Collision : ListContainsElement<Collision>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_ListContainsElement_Collision()
 		{
 			((ListContainsElement<>)(object)this)._002Ector();
@@ -4786,9 +4818,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_ListContainsElement_LayerMask : ListContainsElement<LayerMask>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_ListContainsElement_LayerMask()
 		{
 			((ListContainsElement<>)(object)this)._002Ector();
@@ -4841,9 +4873,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_TLD_CheckEvent_Vector2 : TLD_CheckEvent<Vector2>
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_TLD_CheckEvent_Vector2()
 		{
 			((TLD_CheckEvent<>)(object)this)._002Ector();
@@ -4885,9 +4917,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_TLD_CheckEvent_Keyframe : TLD_CheckEvent<Keyframe>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_TLD_CheckEvent_Keyframe()
 		{
 			((TLD_CheckEvent<>)(object)this)._002Ector();
@@ -4929,9 +4961,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_TLD_CheckEvent_ContactPoint : TLD_CheckEvent<ContactPoint>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Conditions_TLD_CheckEvent_ContactPoint()
 		{
 			((TLD_CheckEvent<>)(object)this)._002Ector();
@@ -4940,9 +4972,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_TLD_CheckEvent_ContactPoint2D : TLD_CheckEvent<ContactPoint2D>
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public NodeCanvas_Tasks_Conditions_TLD_CheckEvent_ContactPoint2D()
 		{
 			((TLD_CheckEvent<>)(object)this)._002Ector();
@@ -4952,7 +4984,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Conditions_TLD_CheckEvent_Collision : TLD_CheckEvent<Collision>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(TLD_CheckEvent<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_TLD_CheckEvent_Collision()
 		{
 			((TLD_CheckEvent<>)(object)this)._002Ector();
@@ -4962,7 +4995,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Conditions_TLD_CheckEvent_Collision2D : TLD_CheckEvent<Collision2D>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(TLD_CheckEvent<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_TLD_CheckEvent_Collision2D()
 		{
 			((TLD_CheckEvent<>)(object)this)._002Ector();
@@ -4994,7 +5028,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Conditions_TLD_CheckEvent_Space : TLD_CheckEvent<Space>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(TLD_CheckEvent<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_TLD_CheckEvent_Space()
 		{
 			((TLD_CheckEvent<>)(object)this)._002Ector();
@@ -5003,9 +5038,9 @@ internal class AOTDummy
 
 	private class NodeCanvas_Tasks_Conditions_TLD_CheckEvent_LayerMask : TLD_CheckEvent<LayerMask>
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_TLD_CheckEvent_LayerMask()
 		{
 			((TLD_CheckEvent<>)(object)this)._002Ector();
@@ -5015,7 +5050,8 @@ internal class AOTDummy
 	private class NodeCanvas_Tasks_Conditions_TLD_CheckEvent_SpawnLocation : TLD_CheckEvent<SpawnLocation>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(TLD_CheckEvent<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public NodeCanvas_Tasks_Conditions_TLD_CheckEvent_SpawnLocation()
 		{
 			((TLD_CheckEvent<>)(object)this)._002Ector();
@@ -5024,9 +5060,9 @@ internal class AOTDummy
 
 	private object o;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void NodeCanvas_Framework_IBlackboard_GetVariable_1()
 	{
 	}
@@ -5039,13 +5075,13 @@ internal class AOTDummy
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void CustomSpoof()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AOTDummy()
 	{
 	}

@@ -10,8 +10,8 @@ public class UnlockablePrefabSaveData
 
 	public string m_UnlockablePrefabName;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public UnlockablePrefabSaveData()
 	{
 	}

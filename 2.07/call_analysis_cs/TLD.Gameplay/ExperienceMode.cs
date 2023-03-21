@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.GameplayTags;
@@ -119,33 +118,33 @@ public class ExperienceMode : ScriptableObject
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public virtual bool AdjustFreezingDueToNearbyFire
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 1)]
+	[CallerCount(Count = 5)]
 	public virtual PackSettings GetPackSettings()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "GetDamageEventTable")]
 	[CalledBy(Type = typeof(BaseAi), Member = "GetDamageEventsForTag")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameplayTag), Member = "MatchesTag")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "GetDamageEventTable")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(GameplayTag), Member = "MatchesTag")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public DamageEventTable GetDamageEventTable(GameplayTag tag)
 	{
 		return null;

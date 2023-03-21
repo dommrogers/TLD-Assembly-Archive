@@ -12,28 +12,27 @@ public class ShowOnMapItem : MonoBehaviour
 
 	public bool m_BigIconOnMap;
 
-	[CalledBy(Type = typeof(Inventory), Member = "DropAndScatterItems")]
-	[CalledBy(Type = typeof(BodyCarry), Member = "Drop")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(GearItem), Member = "Drop")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Map), Member = "AddMapElement")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(CarryableBody), Member = "Dropped")]
+	[CalledBy(Type = typeof(GearItem), Member = "Drop")]
+	[CalledBy(Type = typeof(BodyCarry), Member = "Drop")]
+	[CalledBy(Type = typeof(Inventory), Member = "DropAndScatterItems")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
+	[Calls(Type = typeof(Panel_Map), Member = "AddMapElement")]
+	[CallsUnknownMethods(Count = 1)]
 	public void AddToMap(Vector3 worldPosition)
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
-	[Calls(Type = typeof(Panel_Map), Member = "RemoveMapElement")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
+	[CalledBy(Type = typeof(CarryableBody), Member = "OnPickedUp")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
 	[CalledBy(Type = typeof(BodyCarry), Member = "Carry")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
+	[Calls(Type = typeof(Panel_Map), Member = "RemoveMapElement")]
 	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(CarryableBody), Member = "OnPickedUp")]
 	public void RemoveFromMap(Vector3 worldPosition)
 	{
 	}

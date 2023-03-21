@@ -28,68 +28,60 @@ public class FastClothManager : MonoBehaviour
 
 	private readonly int m_ClothBlendShapeEndNormalID;
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(FastCloth), Member = "Start")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVectorArray")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVectorArray")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVectorArray")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVectorArray")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = ".ctor")]
-	[Calls(Type = typeof(FastClothData), Member = "IsValid")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(FastClothData), Member = "IsValid")]
 	[Calls(Type = typeof(MaterialPropertyBlock), Member = ".ctor")]
+	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVectorArray")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	public bool TryCacheClothMeshData(FastClothData clothData)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(FastCloth), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void RegisterRenderer(MeshRenderer renderer, MeshFilter meshFilter)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void UnRegisterRenderer(MeshRenderer renderer)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(FastClothManager), Member = "CopyPropertyBlockValues")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsRendererBeingPlaced")]
-	[Calls(Type = typeof(MeshFilter), Member = "get_sharedMesh")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Dictionary<, >.ValueCollection.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(MeshFilter), Member = "get_sharedMesh")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsRendererBeingPlaced")]
+	[Calls(Type = typeof(FastClothManager), Member = "CopyPropertyBlockValues")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 21)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVectorArray")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(FastClothManager), Member = "Update")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVectorArray")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "GetVectorArray")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "GetVectorArray")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVectorArray")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "GetVectorArray")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVectorArray")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "GetVectorArray")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MaterialPropertyBlock), Member = "GetVectorArray")]
+	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVectorArray")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void CopyPropertyBlockValues(MaterialPropertyBlock fromBlock, MaterialPropertyBlock toBlock)
 	{
 	}

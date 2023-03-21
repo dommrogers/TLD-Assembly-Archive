@@ -12,8 +12,8 @@ public class PickRandomListElement<T> : ActionTask
 
 	protected override string info
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Format")]
 		get
 		{
@@ -21,11 +21,11 @@ public class PickRandomListElement<T> : ActionTask
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}

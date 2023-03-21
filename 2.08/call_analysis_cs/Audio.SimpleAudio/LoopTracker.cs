@@ -20,34 +20,32 @@ public class LoopTracker : BaseTracker
 
 	public bool m_TrackPosition;
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(VoiceTracker), Member = ".ctor")]
-	[CalledBy(Type = typeof(PlayVoiceSimple), Member = "Start")]
 	[CalledBy(Type = typeof(PlayAudioSimpleManager), Member = "AddVoice")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(BaseTracker), Member = ".ctor")]
+	[CalledBy(Type = typeof(PlayVoiceSimple), Member = "Start")]
+	[CalledBy(Type = typeof(VoiceTracker), Member = ".ctor")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(BaseTracker), Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	public LoopTracker(string eventId, GameObject go, float radius, bool stopWhenDisabled, bool position)
-		: base(null, default(float), stopWhenDisabled: default(bool))
+		: base(null, 0f, stopWhenDisabled: false)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayAudioSimpleManager), Member = "Add")]
 	[CalledBy(Type = typeof(PlayAudioSimple), Member = "Start")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayAudioSimpleManager), Member = "Add")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(BaseTracker), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	public LoopTracker(AK.Wwise.Event eventSpec, GameObject go, float radius, bool stopWhenDisabled, bool position)
-		: base(null, default(float), stopWhenDisabled: default(bool))
+		: base(null, 0f, stopWhenDisabled: false)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[CallsUnknownMethods(Count = 3)]
 	public override void Cleanup()
@@ -58,22 +56,22 @@ public class LoopTracker : BaseTracker
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	public override bool HasProxy()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public override bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySoundWithPositionTracking")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySoundWithPositionTracking")]
 	[Calls(Type = typeof(LoopTracker), Member = "SetupDynamicProxy")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	protected override void Start()
 	{
 	}
@@ -85,28 +83,26 @@ public class LoopTracker : BaseTracker
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySoundWithPositionTracking")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySoundWithPositionTracking")]
 	private void PlayFromEventString()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	protected override void Stop()
 	{
 	}
 
 	[CalledBy(Type = typeof(LoopTracker), Member = "Start")]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(VoiceTracker), Member = "Start")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected void SetupDynamicProxy()
 	{

@@ -14,7 +14,7 @@ public class RockCacheInfo
 	public string m_UserText;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public RockCacheInfo()
 	{
 	}

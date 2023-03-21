@@ -19,19 +19,17 @@ public class DragDropContainer : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(DragDropContainer), Member = "SetSpriteScale")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(DragDropContainer), Member = "SetSpriteScale")]
+	[CallsUnknownMethods(Count = 1)]
 	protected void OnDragOver(GameObject draggedObject)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(DragDropContainer), Member = "SetSpriteScale")]
 	[CallsUnknownMethods(Count = 1)]
@@ -39,14 +37,16 @@ public class DragDropContainer : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(DragDropContainer), Member = "OnDragOut")]
 	[CalledBy(Type = typeof(DragDropContainer), Member = "OnDragOver")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(DragDropContainer), Member = "OnDragOut")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	protected void SetSpriteScale(float newScale)
 	{
 	}

@@ -4,8 +4,8 @@ public class UISDAtlas : UIAtlas
 {
 	public float m_ReductionFactor;
 
-	[Calls(Type = typeof(UIAtlas), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIAtlas), Member = ".ctor")]
 	public UISDAtlas()
 	{
 	}

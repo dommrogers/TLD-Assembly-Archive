@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -20,31 +19,31 @@ public static class CurveUtils
 	[Calls(Type = typeof(CurveUtils), Member = "IsPosAlongCurve")]
 	public static bool IsPosAlongCurve(Vector2 from, Vector2 to, Vector2 fromTangent, Vector2 toTangent, Vector2 targetPosition)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(CurveUtils), Member = "IsPosAlongCurve")]
 	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static bool IsPosAlongCurve(Vector2 from, Vector2 to, Vector2 fromTangent, Vector2 toTangent, Vector2 targetPosition, out float norm)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref norm) = null;
-		return default(bool);
+		norm = default(float);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CurveUtils), Member = "ResolveTangents")]
 	public static void ResolveTangents(Vector2 from, Vector2 to, float rigidMlt, PlanarDirection direction, out Vector2 fromTangent, out Vector2 toTangent)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Vector2, @null>(ref fromTangent) = null;
-		System.Runtime.CompilerServices.Unsafe.As<Vector2, @null>(ref toTangent) = null;
+		fromTangent = default(Vector2);
+		toTangent = default(Vector2);
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(CurveUtils), Member = "ResolveTangents")]
+	[CallerCount(Count = 1)]
 	public static void ResolveTangents(Vector2 from, Vector2 to, Rect fromRect, Rect toRect, float rigidMlt, PlanarDirection direction, out Vector2 fromTangent, out Vector2 toTangent)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Vector2, @null>(ref fromTangent) = null;
-		System.Runtime.CompilerServices.Unsafe.As<Vector2, @null>(ref toTangent) = null;
+		fromTangent = default(Vector2);
+		toTangent = default(Vector2);
 	}
 }

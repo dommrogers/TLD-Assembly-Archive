@@ -5,7 +5,7 @@ public class AnxietySaveDataProxy
 	public bool m_HasAffliction;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AnxietySaveDataProxy()
 	{
 	}

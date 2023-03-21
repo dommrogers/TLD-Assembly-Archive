@@ -7,11 +7,11 @@ public abstract class DrawerAttribute : Attribute
 {
 	public virtual int priority
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 

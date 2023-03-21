@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
@@ -17,16 +16,16 @@ public class UserReportList
 
 	public string ContinuationToken
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 101)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -34,16 +33,16 @@ public class UserReportList
 
 	public string Error
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -56,7 +55,7 @@ public class UserReportList
 		[CallerCount(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -75,24 +74,25 @@ public class UserReportList
 		{
 			return null;
 		}
-		[CallerCount(Count = 20)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public UserReportList()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallsUnknownMethods(Count = 6)]
 	public void Complete(int originalLimit, string continuationToken)
 	{

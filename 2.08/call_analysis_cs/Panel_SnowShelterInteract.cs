@@ -114,56 +114,59 @@ public class Panel_SnowShelterInteract : Panel_AutoReferenced, IAccelerateTimePr
 	private int m_NumClothUsedForRepair;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 32)]
 	public override void Initialize()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateMainWindowNavigation")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "NeedsRepair")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "HasMaterialsForRepair")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "GetTaskDurationInHours")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateEstimatedCaloriesBurnedLabel")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateCurrentCaloriesLabel")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateConditionLabel")]
 	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdatePanelDisplays")]
 	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
 	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
 	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "OnInteract")]
 	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "OnCancel")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "InteractionFinished")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateConditionLabel")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "OnCancel")]
 	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "ExitInterface")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateCurrentCaloriesLabel")]
-	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateEstimatedCaloriesBurnedLabel")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "NeedsRepair")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateMainWindowNavigation")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "GetTaskDurationInHours")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "HasMaterialsForRepair")]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshMainWindow")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PanViewCamera), Member = "ReattachToPlayer")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PanViewCamera), Member = "ReattachToPlayer")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshMainWindow")]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public override void Enable(bool enable)
 	{
 	}
@@ -174,10 +177,10 @@ public class Panel_SnowShelterInteract : Panel_AutoReferenced, IAccelerateTimePr
 	{
 	}
 
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "ExitInterface")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SnowShelterManager), Member = "EnterShelter")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "ExitInterface")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnUse()
 	{
 	}
@@ -193,162 +196,151 @@ public class Panel_SnowShelterInteract : Panel_AutoReferenced, IAccelerateTimePr
 	{
 	}
 
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "OnInteractionCommon")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "OnInteractionCommon")]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnDismantle()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsTimeAccelerated()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsRepairing()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsDismantling()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshMainWindow")]
-	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnUse")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnCancel")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "InteractionFinished")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshMainWindow")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void ExitInterface()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateMainWindowNavigation")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Update")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "ExitInterface")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateMainWindowNavigation")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "ExitInterface")]
 	public void OnCancel()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Update")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Update")]
 	[CallerCount(Count = 1)]
 	public void OnInteract()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnDismantle")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnRepair")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "GetTaskDurationInHours")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnDismantle")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "GetTaskDurationInHours")]
 	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnInteractionCommon(string audioEvent)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Update")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "ExitInterface")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuClose")]
-	[Calls(Type = typeof(SnowShelter), Member = "Destroy")]
-	[Calls(Type = typeof(SnowShelter), Member = "DismantleFinished")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
+	[Calls(Type = typeof(SnowShelter), Member = "DismantleFinished")]
+	[Calls(Type = typeof(SnowShelter), Member = "Destroy")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuClose")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "ExitInterface")]
+	[CallsUnknownMethods(Count = 3)]
 	private void InteractionFinished()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "GetTaskDurationInHours")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateDurationLabel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "GetButtonChoiceFromIndex")]
 	[Calls(Type = typeof(PlayerManager), Member = "CalculateModifiedCalorieBurnRate")]
 	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "GetTaskDurationInHours")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Update")]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateEstimatedCaloriesBurnedLabel()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Update")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 10)]
 	private void UpdateCurrentCaloriesLabel()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Update")]
 	[CallsUnknownMethods(Count = 3)]
 	private void UpdateConditionLabel()
 	{
 	}
 
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	private string GetSignedInt(int value)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallsUnknownMethods(Count = 4)]
 	private string GetSignedPercentage(float value)
@@ -357,55 +349,54 @@ public class Panel_SnowShelterInteract : Panel_AutoReferenced, IAccelerateTimePr
 	}
 
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Update")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "GetButtonChoiceFromIndex")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "NeedsRepair")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "HasMaterialsForRepair")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "NeedsRepair")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "GetButtonChoiceFromIndex")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "HasMaterialsForRepair")]
 	private void UpdateButtonLegend()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "ExitInterface")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Enable")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "SelectButton")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdatePanelDisplays")]
-	[Calls(Type = typeof(Panel_Inventory_Examine_MenuItem), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdatePanelDisplays")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "SelectButton")]
+	[Calls(Type = typeof(Panel_Inventory_Examine_MenuItem), Member = "Update")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "ExitInterface")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 10)]
 	public void RefreshMainWindow()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateMainWindowNavigation")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnSelectDismantleButton")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnSelectRepairButton")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnSelectUseButton")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "CameraPan")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshMainWindow")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnSelectUseButton")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnSelectRepairButton")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnSelectDismantleButton")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateMainWindowNavigation")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "CameraPan")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SelectButton(int index)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "SelectButton")]
-	[CallerCount(Count = 0)]
 	public void OnSelectUseButton()
 	{
 	}
@@ -424,136 +415,119 @@ public class Panel_SnowShelterInteract : Panel_AutoReferenced, IAccelerateTimePr
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "OnCancel")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "SelectButton")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "SelectButton")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "OnCancel")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateMainWindowNavigation()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateUseButton()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateDismantleButton()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "HasMaterialsForRepair")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "NeedsRepair")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "NeedsRepair")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "HasMaterialsForRepair")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateRepairButton()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshMainWindow")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshRepairPanel")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshDismantlePanel")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "GetButtonChoiceFromIndex")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshMainWindow")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "GetButtonChoiceFromIndex")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshDismantlePanel")]
 	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "NeedsRepair")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshRepairPanel")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdatePanelDisplays()
 	{
 	}
 
-	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateRequiredMaterialsObject")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateRequiredMaterialsObject")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "NeedsRepair")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "HasMaterialsForRepair")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdatePanelDisplays")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(SnowShelter), Member = "GetNumSticksToRepair")]
-	[Calls(Type = typeof(SnowShelter), Member = "GetNumClothToRepair")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(SnowShelterManager), Member = "GetNumSticksInInventory")]
 	[Calls(Type = typeof(SnowShelterManager), Member = "GetNumClothInInventory")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(SnowShelter), Member = "GetNumSticksToRepair")]
+	[Calls(Type = typeof(SnowShelter), Member = "GetNumClothToRepair")]
+	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateRequiredMaterialsObject")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "NeedsRepair")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "HasMaterialsForRepair")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void RefreshRepairPanel()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshDismantlePanel")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshDismantlePanel")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshRepairPanel")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshDismantlePanel")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(HarvestRepairMaterial), Member = "ShowItem")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshRepairPanel")]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateRequiredMaterialsObject(int index, float spacingVal, GearItem gi, int count, bool hasItem)
 	{
 	}
 
-	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdatePanelDisplays")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateRequiredMaterialsObject")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateRequiredMaterialsObject")]
-	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateRequiredMaterialsObject")]
+	[CallsUnknownMethods(Count = 4)]
 	private void RefreshDismantlePanel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateEstimatedCaloriesBurnedLabel")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateDurationLabel")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnInteractionCommon")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "GetButtonChoiceFromIndex")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnInteractionCommon")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateDurationLabel")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateEstimatedCaloriesBurnedLabel")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "GetButtonChoiceFromIndex")]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetTaskDurationInHours()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -561,66 +535,64 @@ public class Panel_SnowShelterInteract : Panel_AutoReferenced, IAccelerateTimePr
 	[CallsUnknownMethods(Count = 3)]
 	private float GetCalorieBurnRate()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateEstimatedCaloriesBurnedLabel")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateButtonLegend")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdatePanelDisplays")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "GetTaskDurationInHours")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "GetCalorieBurnRate")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateEstimatedCaloriesBurnedLabel")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdatePanelDisplays")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	private ButtonChoice GetButtonChoiceFromIndex(int index)
 	{
 		return default(ButtonChoice);
 	}
 
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "SelectButton")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "FindChildRecursive")]
 	[Calls(Type = typeof(PanViewCamera), Member = "PanToTransform")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "SelectButton")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 16)]
 	private void CameraPan(int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "HasMaterialsForRepair")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshRepairPanel")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdatePanelDisplays")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateRepairButton")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnRepair")]
-	[Calls(Type = typeof(SnowShelter), Member = "GetNumClothToRepair")]
-	[Calls(Type = typeof(SnowShelter), Member = "GetNumSticksToRepair")]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateButtonLegend")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateRepairButton")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdatePanelDisplays")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshRepairPanel")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "HasMaterialsForRepair")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(SnowShelter), Member = "GetNumSticksToRepair")]
+	[Calls(Type = typeof(SnowShelter), Member = "GetNumClothToRepair")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool NeedsRepair()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshRepairPanel")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateRepairButton")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnRepair")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Update")]
-	[Calls(Type = typeof(GearItemObjectExtensions), Member = "NumGearInList")]
-	[Calls(Type = typeof(GearItemObjectExtensions), Member = "NumGearInList")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(SnowShelter), Member = "GetNumClothToRepair")]
-	[Calls(Type = typeof(SnowShelter), Member = "GetNumSticksToRepair")]
-	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "NeedsRepair")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnRepair")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateButtonLegend")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateRepairButton")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshRepairPanel")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Panel_SnowShelterInteract), Member = "NeedsRepair")]
+	[Calls(Type = typeof(SnowShelter), Member = "GetNumSticksToRepair")]
+	[Calls(Type = typeof(SnowShelter), Member = "GetNumClothToRepair")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(GearItemObjectExtensions), Member = "NumGearInList")]
+	[CallsUnknownMethods(Count = 3)]
 	private bool HasMaterialsForRepair()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -628,12 +600,11 @@ public class Panel_SnowShelterInteract : Panel_AutoReferenced, IAccelerateTimePr
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsAcceleratingTime()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	public string GetActionText()
 	{
 		return null;
@@ -680,8 +651,8 @@ public class Panel_SnowShelterInteract : Panel_AutoReferenced, IAccelerateTimePr
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void StopAcceleratingTime()
 	{
 	}

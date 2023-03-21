@@ -22,13 +22,13 @@ public class LodBias : MonoBehaviour
 
 	public float m_PcUltraBias;
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	public float GetLodBias(QualityLodBias quality)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -37,7 +37,7 @@ public class LodBias : MonoBehaviour
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	public static float GetDefaultLodBias(QualityLodBias quality)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

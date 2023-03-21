@@ -5,8 +5,8 @@ public class TableItem : MonoBehaviour
 {
 	public bool m_JustClicked;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void Start()
 	{
 	}

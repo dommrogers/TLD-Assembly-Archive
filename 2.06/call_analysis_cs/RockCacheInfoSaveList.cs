@@ -10,9 +10,9 @@ public class RockCacheInfoSaveList
 	public int m_RockCacheIndex;
 
 	[CalledBy(Type = typeof(RockCacheManager), Member = "SerializeGlobal")]
-	[CallsUnknownMethods(Count = 11)]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	public RockCacheInfoSaveList()
 	{
 	}

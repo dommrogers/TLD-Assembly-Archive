@@ -16,7 +16,8 @@ public sealed class FlightPedalsTemplate : ControllerTemplate, IFlightPedalsTemp
 	private IControllerTemplateAxis Rewired_002EIFlightPedalsTemplate_002EleftPedal
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -26,7 +27,8 @@ public sealed class FlightPedalsTemplate : ControllerTemplate, IFlightPedalsTemp
 	private IControllerTemplateAxis Rewired_002EIFlightPedalsTemplate_002ErightPedal
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -36,16 +38,17 @@ public sealed class FlightPedalsTemplate : ControllerTemplate, IFlightPedalsTemp
 	private IControllerTemplateAxis Rewired_002EIFlightPedalsTemplate_002Eslide
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(ControllerTemplate), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ControllerTemplate), Member = ".ctor")]
 	public FlightPedalsTemplate(object payload)
 		: base(null)
 	{

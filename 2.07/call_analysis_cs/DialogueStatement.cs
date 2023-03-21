@@ -10,7 +10,7 @@ public class DialogueStatement : Statement
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return default(VoiceOverAnimationState);

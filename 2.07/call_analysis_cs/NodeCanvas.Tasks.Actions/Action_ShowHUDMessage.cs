@@ -24,21 +24,21 @@ public class Action_ShowHUDMessage : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Enum), Member = "ToString")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsUnknownMethods(Count = 21)]
-		[Calls(Type = typeof(Enum), Member = "ToString")]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessageToQueue")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(HUDMessage), Member = "CreateMessageInfo")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessageToQueue")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

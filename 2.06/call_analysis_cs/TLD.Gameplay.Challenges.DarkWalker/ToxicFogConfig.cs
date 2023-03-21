@@ -59,11 +59,11 @@ public class ToxicFogConfig : ScriptableObject
 	[CallerCount(Count = 0)]
 	public float GetAdjustedFogScale(float fogScale)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public ToxicFogConfig()
 	{
 	}

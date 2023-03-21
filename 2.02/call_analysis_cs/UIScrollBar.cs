@@ -19,15 +19,15 @@ public class UIScrollBar : UISlider
 
 	public float scrollValue
 	{
-		[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 		set
 		{
@@ -36,19 +36,19 @@ public class UIScrollBar : UISlider
 
 	public float barSize
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CalledBy(Type = typeof(UITextList), Member = "Rebuild")]
 		[CalledBy(Type = typeof(UIScrollView), Member = "UpdateScrollbars")]
-		[Calls(Type = typeof(EventDelegate), Member = "Execute")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[CalledBy(Type = typeof(UITextList), Member = "Rebuild")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+		[Calls(Type = typeof(EventDelegate), Member = "Execute")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 2)]
 		set
 		{
@@ -60,49 +60,40 @@ public class UIScrollBar : UISlider
 	{
 	}
 
-	[Calls(Type = typeof(UIEventListener), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UISlider), Member = "OnStart")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UISlider), Member = "OnStart")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UIEventListener), Member = "Get")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 26)]
 	protected override void OnStart()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UIProgressBar), Member = "LocalToValue")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallerCount(Count = 0)]
 	protected override float LocalToValue(Vector2 localPos)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(UIProgressBar), Member = "SetThumbPosition")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UIWidget), Member = "set_drawRegion")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UIProgressBar), Member = "ForceUpdate")]
 	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(UIWidget), Member = "set_drawRegion")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(UIProgressBar), Member = "SetThumbPosition")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public override void ForceUpdate()
 	{
 	}

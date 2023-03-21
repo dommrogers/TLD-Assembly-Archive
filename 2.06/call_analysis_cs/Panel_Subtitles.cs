@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Audio.SimpleAudio;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.SaveState;
 using TLD.UI;
 using UnityEngine;
 
@@ -64,19 +65,19 @@ public class Panel_Subtitles : Panel_AutoReferenced
 	private static readonly int s_Stop;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitlesImmediate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitlesImmediate")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "FadeSpeakerName")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitlesImmediate")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{
 	}
@@ -85,7 +86,7 @@ public class Panel_Subtitles : Panel_AutoReferenced
 	[CallerCount(Count = 0)]
 	public override bool IsOverlayPanel()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -93,33 +94,33 @@ public class Panel_Subtitles : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Utils), Member = "UpdateSubtitles")]
-	[CalledBy(Type = typeof(PlayableBehaviourSubtitle), Member = "OnBehaviourPlay")]
-	[CalledBy(Type = typeof(PlayerVoice), Member = "MaybeShowInitialSubtitle")]
-	[CalledBy(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
 	[CalledBy(Type = typeof(Phone), Member = "StartSingleRing")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "DisplaySubtitleText")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
+	[CalledBy(Type = typeof(PlayerVoice), Member = "MaybeShowInitialSubtitle")]
+	[CalledBy(Type = typeof(PlayableBehaviourSubtitle), Member = "OnBehaviourPlay")]
+	[CalledBy(Type = typeof(Utils), Member = "UpdateSubtitles")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "EndsWith")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "DisplaySubtitleText")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool ShowSubtitles(string locID)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "EndsWith")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "DisplaySubtitleText")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "DisplaySubtitleText")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
 	public bool ShowSubtitles(string locID, float duration)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -136,32 +137,32 @@ public class Panel_Subtitles : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(NPC_Animation), Member = "RequestVO")]
-	[CalledBy(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
-	[CalledBy(Type = typeof(Panel_Subtitles), Member = "ShowSubtitlesForced")]
-	[CalledBy(Type = typeof(Panel_Subtitles), Member = "ShowSubtitles")]
-	[CalledBy(Type = typeof(Panel_Subtitles), Member = "ShowSubtitles")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayLine")]
+	[CalledBy(Type = typeof(Panel_Subtitles), Member = "ShowSubtitles")]
+	[CalledBy(Type = typeof(Panel_Subtitles), Member = "ShowSubtitles")]
 	[CalledBy(Type = typeof(Panel_Subtitles), Member = "ShowSubtitlesForced")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Exists")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CalledBy(Type = typeof(Panel_Subtitles), Member = "ShowSubtitlesForced")]
+	[CalledBy(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
+	[CalledBy(Type = typeof(NPC_Animation), Member = "RequestVO")]
 	[CallerCount(Count = 7)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Localization), Member = "Exists")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 5)]
 	private void DisplaySubtitleText(string locID)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Localization), Member = "Exists")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 1)]
 	private string FormatSubtitleText(string locID)
 	{
 		return null;
@@ -171,101 +172,99 @@ public class Panel_Subtitles : Panel_AutoReferenced
 	[CallerCount(Count = 0)]
 	private bool ShouldShowSpeakerName(string _)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 24)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NPCVoice), Member = "AnySpeaking")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public void HideSubtitles(float secondsUntilHide = 0.5f)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "ShowPanelAndPause")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(PlayableBehaviourSubtitle), Member = "OnBehaviourPause")]
-	[CalledBy(Type = typeof(Panel_Subtitles), Member = "Update")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "RestorePanelsAfterSubtitle")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
 	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
 	[CalledBy(Type = typeof(Panel_Subtitles), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_Subtitles), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "ShowPanelAndPause")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "RestorePanelsAfterSubtitle")]
+	[CalledBy(Type = typeof(PlayableBehaviourSubtitle), Member = "OnBehaviourPause")]
 	[CallerCount(Count = 7)]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public void HideSubtitlesImmediate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
-	[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
+	[CallsUnknownMethods(Count = 1)]
 	public void EnableLargeSubtitles(bool enableLargeSubtitles)
 	{
 	}
 
-	[CalledBy(Type = typeof(NPCVoice), Member = "HandleNextRequest")]
-	[CalledBy(Type = typeof(VoiceTracker), Member = "OnAkVoiceEvent")]
-	[CalledBy(Type = typeof(PlayerVoice), Member = "OnAkVoiceEvent")]
-	[CalledBy(Type = typeof(PlayerVoice), Member = "MaybeForceSubtitles")]
-	[CalledBy(Type = typeof(PlayerVoice), Member = "HandleNextRequest")]
-	[CalledBy(Type = typeof(NPCVoice), Member = "OnAkVoiceEvent")]
-	[CalledBy(Type = typeof(NPCVoice), Member = "MaybeForceSubtitles")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "OnAkVoiceEvent")]
-	[CalledBy(Type = typeof(PlayerCough), Member = "OnAkVoiceEvent")]
 	[CalledBy(Type = typeof(Anxiety), Member = "OnAkVoiceEvent")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "DisplaySubtitleText")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "ShowSubtitles")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "LocIdFromEvent")]
-	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
-	[CallerCount(Count = 11)]
 	[CalledBy(Type = typeof(Fear), Member = "OnAkVoiceEvent")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "OnAkVoiceEvent")]
+	[CalledBy(Type = typeof(NPCVoice), Member = "HandleNextRequest")]
+	[CalledBy(Type = typeof(NPCVoice), Member = "MaybeForceSubtitles")]
+	[CalledBy(Type = typeof(NPCVoice), Member = "OnAkVoiceEvent")]
+	[CalledBy(Type = typeof(PlayerCough), Member = "OnAkVoiceEvent")]
+	[CalledBy(Type = typeof(PlayerVoice), Member = "HandleNextRequest")]
+	[CalledBy(Type = typeof(PlayerVoice), Member = "MaybeForceSubtitles")]
+	[CalledBy(Type = typeof(PlayerVoice), Member = "OnAkVoiceEvent")]
+	[CalledBy(Type = typeof(VoiceTracker), Member = "OnAkVoiceEvent")]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "LocIdFromEvent")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "ShowSubtitles")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "DisplaySubtitleText")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
 	public bool MaybeShowSubtitleForAudioEvent(string eventName, bool forced)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(TLD_SayTrack), Member = "RefreshClips")]
 	[CalledBy(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[Calls(Type = typeof(Localization), Member = "Exists")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Substring")]
+	[CalledBy(Type = typeof(TLD_SayTrack), Member = "RefreshClips")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "Substring")]
 	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Localization), Member = "Exists")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 9)]
 	public static string LocIdFromEvent(string eventName, out string audioPrefix)
 	{
 		audioPrefix = null;
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CalledBy(Type = typeof(PlayableBehaviourSpeakerName), Member = "OnBehaviourPlay")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "GetSpeakerMappingFromLocID")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CalledBy(Type = typeof(PlayableBehaviourSpeakerName), Member = "OnBehaviourPlay")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public void ShowSpeakerNameDuringPhoneCalls(string locID, bool isCommunitySpeaker)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void HideSpeakerName()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Subtitles), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Subtitles), Member = "Update")]
 	[CallsUnknownMethods(Count = 6)]
 	private void FadeSpeakerName(bool enable)
 	{
@@ -281,35 +280,36 @@ public class Panel_Subtitles : Panel_AutoReferenced
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "EndsWith")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool IsSubtitleClosedCaptioning(string locID)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "Substring")]
 	[CalledBy(Type = typeof(Panel_Subtitles), Member = "ShowSpeakerNameDuringPhoneCalls")]
 	[CalledBy(Type = typeof(Panel_Subtitles), Member = "GetSpeakerName")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private SubtitleSpeakerMapping GetSpeakerMappingFromLocID(string locID)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "OnAkVoiceEvent")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "UpdateActiveBars")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "OnAkVoiceEvent")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool AreSubtitlesVisible()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

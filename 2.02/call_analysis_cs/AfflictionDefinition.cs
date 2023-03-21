@@ -48,29 +48,29 @@ public class AfflictionDefinition : ScriptableObject
 	public TimelineRef m_HealedDiagnoseExitRightTimelineOverride;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AfflictionDefinition), Member = "GetFirstAidItemUsed")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public string GetStandardMessageLocIdUsed()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AfflictionDefinition), Member = "GetFirstAidItemUsed")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AfflictionDefinition), Member = "GetFirstAidItemUsed")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public string GetAlternateMessageLocIdUsed()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AfflictionDefinition), Member = "GetFirstAidItemUsed")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public string GetStandardAudioUsed()
 	{
@@ -78,63 +78,58 @@ public class AfflictionDefinition : ScriptableObject
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AfflictionDefinition), Member = "GetFirstAidItemUsed")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public string GetAlternateAudioUsed()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(AfflictionDefinition), Member = "GetFirstAidItemUsed")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(AfflictionDefinition), Member = "GetFirstAidItemUsed")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public float GetStandardDurationdUsed()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(AfflictionDefinition), Member = "GetFirstAidItemUsed")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public float GetAlternateDurationUsed()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyAlternateTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyAlternateTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyStandardTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyStandardTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyStandardTreatment")]
-	[CalledBy(Type = typeof(AfflictionDefinition), Member = "GetAlternateDurationUsed")]
-	[CalledBy(Type = typeof(AfflictionDefinition), Member = "GetStandardDurationdUsed")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyAlternateTreatment")]
-	[CalledBy(Type = typeof(AfflictionDefinition), Member = "GetStandardAudioUsed")]
-	[CalledBy(Type = typeof(AfflictionDefinition), Member = "GetAlternateMessageLocIdUsed")]
 	[CalledBy(Type = typeof(AfflictionDefinition), Member = "GetStandardMessageLocIdUsed")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 12)]
+	[CalledBy(Type = typeof(AfflictionDefinition), Member = "GetAlternateMessageLocIdUsed")]
+	[CalledBy(Type = typeof(AfflictionDefinition), Member = "GetStandardAudioUsed")]
 	[CalledBy(Type = typeof(AfflictionDefinition), Member = "GetAlternateAudioUsed")]
+	[CalledBy(Type = typeof(AfflictionDefinition), Member = "GetStandardDurationdUsed")]
+	[CalledBy(Type = typeof(AfflictionDefinition), Member = "GetAlternateDurationUsed")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyStandardTreatment")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyAlternateTreatment")]
+	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private FirstAidItem GetFirstAidItemUsed(AfflictionRemedy remedy)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 14)]
 	public AfflictionDefinition()
 	{

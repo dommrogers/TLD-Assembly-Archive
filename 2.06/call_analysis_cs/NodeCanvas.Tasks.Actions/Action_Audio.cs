@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
@@ -12,24 +11,24 @@ public class Action_Audio : ActionTask
 
 	public string missionObjectIdentifier;
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Action_Audio), Member = "DoWork")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallerCount(Count = 0)]
 	protected override void OnExecute()
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
 	[CalledBy(Type = typeof(Action_Audio), Member = "OnExecute")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 28)]
 	private void DoWork()
 	{

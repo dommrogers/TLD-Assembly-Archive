@@ -13,33 +13,33 @@ internal struct CreateDeviceIdOptionsInternal : ISettable, IDisposable
 
 	public string DeviceModel
 	{
+		[CalledBy(Type = typeof(CreateDeviceIdOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CreateDeviceIdOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CreateDeviceIdOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CreateDeviceIdOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(CreateDeviceIdOptionsInternal), Member = "set_DeviceModel")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CreateDeviceIdOptionsInternal), Member = "set_DeviceModel")]
 	public void Set(CreateDeviceIdOptions other)
 	{
 	}
 
-	[Calls(Type = typeof(CreateDeviceIdOptionsInternal), Member = "set_DeviceModel")]
 	[CalledBy(Type = typeof(ConnectInterface), Member = "CreateDeviceId")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CreateDeviceIdOptionsInternal), Member = "set_DeviceModel")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

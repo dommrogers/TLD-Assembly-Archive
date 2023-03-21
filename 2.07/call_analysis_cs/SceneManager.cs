@@ -23,23 +23,21 @@ public class SceneManager : ScriptableObject
 
 	private int m_LoadingCount;
 
-	[CalledBy(Type = typeof(FPSLogger), Member = "OnFPSChanged")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "ProcessRegistrationQueue")]
-	[CalledBy(Type = typeof(SceneManager), Member = "IsLoading")]
-	[CalledBy(Type = typeof(SceneManager), Member = "RegisterLoadingScenes")]
-	[CalledBy(Type = typeof(SceneManager), Member = "RegisterLoadingScenes")]
-	[CalledBy(Type = typeof(SceneManager), Member = "LoadSceneAsync")]
-	[CalledBy(Type = typeof(SceneManager), Member = "LoadSceneAsync")]
-	[CalledBy(Type = typeof(RadialSpawnManager), Member = "Update")]
-	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EarlyUpdate")]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "HasFinishedLoading")]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "Update")]
-	[CalledBy(Type = typeof(ExteriorLightingManager), Member = "MaybeAssignAmbientProbeAnchor")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
 	[CalledBy(Type = typeof(Suffocating), Member = "StartSuffocating")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 15)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
+	[CalledBy(Type = typeof(ExteriorLightingManager), Member = "MaybeAssignAmbientProbeAnchor")]
+	[CalledBy(Type = typeof(Panel_Loading), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Loading), Member = "HasFinishedLoading")]
 	[CalledBy(Type = typeof(GameManager), Member = "Update")]
+	[CalledBy(Type = typeof(RadialSpawnManager), Member = "Update")]
+	[CalledBy(Type = typeof(SceneManager), Member = "LoadSceneAsync")]
+	[CalledBy(Type = typeof(SceneManager), Member = "RegisterLoadingScenes")]
+	[CalledBy(Type = typeof(SceneManager), Member = "IsLoading")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "ProcessRegistrationQueue")]
+	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EarlyUpdate")]
+	[CalledBy(Type = typeof(FPSLogger), Member = "OnFPSChanged")]
+	[CallerCount(Count = 15)]
+	[Calls(Type = typeof(ScriptableObject), Member = "CreateInstance")]
 	private static SceneManager GetInstance()
 	{
 		return null;
@@ -62,119 +60,118 @@ public class SceneManager : ScriptableObject
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(NodeCanvas.Tasks.Actions.LoadScene), Member = "OnExecute")]
-	[CalledBy(Type = typeof(ExampleCommands), Member = "LoadScene")]
-	[Calls(Type = typeof(SceneManager), Member = "LoadSceneAsync")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(LoadLevelOnClick), Member = "OnClick")]
+	[CalledBy(Type = typeof(ExampleCommands), Member = "LoadScene")]
+	[CalledBy(Type = typeof(NodeCanvas.Tasks.Actions.LoadScene), Member = "OnExecute")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(SceneManager), Member = "LoadSceneAsync")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
 	public static void LoadScene(string sceneName, LoadSceneMode mode = LoadSceneMode.Single)
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
-	[Calls(Type = typeof(Addressables), Member = "LoadSceneAsync")]
-	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
 	[CalledBy(Type = typeof(BootUpdate), Member = "LoadMainMenu")]
 	[CalledBy(Type = typeof(GameManager), Member = "AddAsyncLoadRequest")]
 	[CalledBy(Type = typeof(GameManager), Member = "AsyncDirectLoadMainMenu")]
 	[CalledBy(Type = typeof(SceneManager), Member = "LoadScene")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
+	[Calls(Type = typeof(Addressables), Member = "LoadSceneAsync")]
 	[CallsUnknownMethods(Count = 3)]
 	public static AsyncOperationHandle<SceneInstance> LoadSceneAsync(string sceneName, LoadSceneMode mode = LoadSceneMode.Single)
 	{
 		return default(AsyncOperationHandle<SceneInstance>);
 	}
 
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
-	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 19)]
 	public static void RegisterLoadingScenes(ICollection<AsyncOperationHandle<SceneInstance>> scenes)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(InsomniaManager), Member = "Update")]
-	[CalledBy(Type = typeof(Action_WaitForSceneLoad), Member = "OnExecute")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Update")]
-	[CalledBy(Type = typeof(HUDNowhereToHide), Member = "UpdateToxicFogIndicatorLabel")]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "Update")]
-	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
-	[CallerCount(Count = 8)]
+	[CalledBy(Type = typeof(HUDNowhereToHide), Member = "UpdateToxicFogIndicatorLabel")]
 	[CalledBy(Type = typeof(InteractiveClothManager), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Update")]
+	[CalledBy(Type = typeof(Action_WaitForSceneLoad), Member = "OnExecute")]
+	[CalledBy(Type = typeof(InsomniaManager), Member = "Update")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool IsLoading()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "ToUpperInvariant")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_scene_addlayer")]
 	[CalledBy(Type = typeof(Action_AddMissionLayer), Member = "OnExecute")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "ToUpperInvariant")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void AddLayer(string name)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "ToUpperInvariant")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "ToUpperInvariant")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool ContainsLayer(string name)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Action_RemoveMissionLayer), Member = "OnExecute")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_scene_removelayer")]
+	[CalledBy(Type = typeof(Action_RemoveMissionLayer), Member = "OnExecute")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "ToUpperInvariant")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void RemoveLayer(string name)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Deserialize(string serialized)
 	{
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
 	[CallsUnknownMethods(Count = 1)]
 	public static string Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void ResetLayers()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(GearManager), Member = "UpdateAll")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(InaccessibleGearContainer), Member = "Initialize")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "CompareSceneNames")]
 	[Calls(Type = typeof(GameManager), Member = "MatchesMainMenuSceneName")]
 	[Calls(Type = typeof(NPC), Member = "FindAll")]
-	[Calls(Type = typeof(GameManager), Member = "CompareSceneNames")]
+	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
+	[Calls(Type = typeof(InaccessibleGearContainer), Member = "Initialize")]
+	[Calls(Type = typeof(GearManager), Member = "UpdateAll")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnSceneLoaded(AsyncOperationHandle<SceneInstance> handle)
 	{
 	}

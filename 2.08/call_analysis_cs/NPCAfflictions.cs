@@ -64,40 +64,55 @@ public class NPCAfflictions : MonoBehaviour
 
 	private const float m_CharacterHeight = 1.75f;
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 9)]
 	public void Awake()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(MissionUtils), Member = "PostAfflictionEvent")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "SelectNPCAffliction")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(MissionUtils), Member = "PostAfflictionEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void AfflictionDiagnosed(NPCAffliction affliction)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(BodyCarry), Member = "ProcessInteraction")]
 	[CalledBy(Type = typeof(NPCAfflictions), Member = "HealedAffliction")]
+	[CalledBy(Type = typeof(BodyCarry), Member = "ProcessInteraction")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 8)]
 	public bool AreAllAfflictionTreated()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(NPCStatusBar), Member = "IsDebuffActive")]
+	[CalledBy(Type = typeof(NPCAfflictions), Member = "HealedAffliction")]
+	[CalledBy(Type = typeof(NPCAfflictions), Member = "RemoveAffliction")]
+	[CalledBy(Type = typeof(NPCAfflictions), Member = "RemoveAffliction")]
+	[CalledBy(Type = typeof(NPCAfflictions), Member = "HasAfflictionType")]
+	[CalledBy(Type = typeof(NPCAfflictions), Member = "IsDehydrated")]
+	[CalledBy(Type = typeof(NPCAfflictions), Member = "HasDehydrationRisk")]
+	[CalledBy(Type = typeof(NPCAfflictions), Member = "HasBloodLoss")]
+	[CalledBy(Type = typeof(NPCAfflictions), Member = "HasFrostbite")]
+	[CalledBy(Type = typeof(NPCAfflictions), Member = "HasHypothermia")]
+	[CalledBy(Type = typeof(NPC), Member = "DoConditionUpdate")]
+	[CalledBy(Type = typeof(NPCCondition), Member = "DoUpdate")]
+	[CalledBy(Type = typeof(NPCFreezing), Member = "DoUpdate")]
+	[CalledBy(Type = typeof(NPCThirst), Member = "DoUpdate")]
+	[CalledBy(Type = typeof(NPCThirst), Member = "ApplyTODHours")]
+	[CalledBy(Type = typeof(NPCThirst), Member = "StartDehydrationAffliction")]
+	[CalledBy(Type = typeof(PlayerMovement), Member = "MovedDistance")]
 	[CallerCount(Count = 29)]
-	[CallsUnknownMethods(Count = 5)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 4)]
 	private NPCAffliction GetNPCAffliction(AfflictionType afflictionType)
 	{
 		return null;
@@ -109,93 +124,97 @@ public class NPCAfflictions : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(NPCFreezing), Member = "DoUpdate")]
-	[CalledBy(Type = typeof(NPCFreezing), Member = "DoUpdate")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PostTreatment")]
-	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
-	[Calls(Type = typeof(MissionUtils), Member = "PostAfflictionEvent")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(NPCFreezing), Member = "DoUpdate")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
+	[Calls(Type = typeof(MissionUtils), Member = "PostAfflictionEvent")]
 	[Calls(Type = typeof(NPCAfflictions), Member = "AreAllAfflictionTreated")]
+	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void HealedAffliction(NPCAffliction affliction)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
 	[CallsUnknownMethods(Count = 1)]
 	private void RemoveAffliction(NPCAffliction affliction)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(NPCCondition), Member = "GetAdjustedMaxHP")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 8)]
 	public float GetTotalHitPointReduction()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(BodyCarry), Member = "DiagnoseCallback")]
 	[CalledBy(Type = typeof(NPC), Member = "PerformInteraction")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
 	[CalledBy(Type = typeof(BodyCarry), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(BodyCarry), Member = "DiagnoseCallback")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(NPCAfflictions), Member = "SelectApproachSide")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "Enable")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void StartDiagnosing()
 	{
 	}
 
-	[Calls(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void EndDiagnosing()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(NPC), Member = "Serialize")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	public string Serialize()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(NPC), Member = "Deserialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(AfflictionDefinitionTable), Member = "GetAfflictionDefinitionByName")]
 	[Calls(Type = typeof(AfflictionDefinitionTable), Member = "GetAfflictionDefinitionByType")]
 	[Calls(Type = typeof(NPCAffliction), Member = "Load")]
-	[CalledBy(Type = typeof(NPC), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 11)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(NPCThirst), Member = "StartDehydrationRiskAffliction")]
-	[CalledBy(Type = typeof(NPCThirst), Member = "StartDehydrationAffliction")]
-	[CalledBy(Type = typeof(NPCThirst), Member = "DoUpdate")]
-	[CalledBy(Type = typeof(NPC), Member = "DoConditionUpdate")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
 	[CalledBy(Type = typeof(BaseAi), Member = "DoPassingAttackDamage")]
-	[Calls(Type = typeof(AfflictionDefinitionTable), Member = "GetAfflictionDefinitionByType")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_npc_bloodloss")]
+	[CalledBy(Type = typeof(NPC), Member = "DoConditionUpdate")]
+	[CalledBy(Type = typeof(NPCThirst), Member = "DoUpdate")]
+	[CalledBy(Type = typeof(NPCThirst), Member = "StartDehydrationAffliction")]
+	[CalledBy(Type = typeof(NPCThirst), Member = "StartDehydrationRiskAffliction")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(AfflictionDefinitionTable), Member = "GetAfflictionDefinitionByType")]
+	[Calls(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
+	[CallsUnknownMethods(Count = 1)]
 	public void AddAffliction(AfflictionType afflictionType, string causeLocId, AfflictionBodyArea location)
 	{
 	}
@@ -208,19 +227,18 @@ public class NPCAfflictions : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	public void RemoveAffliction(AfflictionType afflictionType)
 	{
 	}
 
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
 	[CalledBy(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
 	[CalledBy(Type = typeof(NPCFreezing), Member = "DoUpdate")]
+	[CallerCount(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	public void AddAffliction(AfflictionDefinition afflictionDefinition, string causeLocId, AfflictionBodyArea location)
 	{
@@ -233,11 +251,11 @@ public class NPCAfflictions : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "Enable")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "Enable")]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnDiagnoseIntroComplete()
 	{
 	}
@@ -254,16 +272,13 @@ public class NPCAfflictions : MonoBehaviour
 		return null;
 	}
 
-	[Calls(Type = typeof(SyncNode), Member = "OverlapsObjects")]
 	[CalledBy(Type = typeof(NPCAfflictions), Member = "StartDiagnosing")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 11)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SyncNode), Member = "OverlapsObjects")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 10)]
 	private void SelectApproachSide()
 	{
 	}
@@ -272,51 +287,52 @@ public class NPCAfflictions : MonoBehaviour
 	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
 	private bool HasAfflictionType(AfflictionType afflictionType)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
 	public bool IsDehydrated()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
 	public bool HasDehydrationRisk()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
 	public bool HasBloodLoss()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
 	public bool HasFrostbite()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(NPCCondition), Member = "DoUpdate")]
 	[CalledBy(Type = typeof(NPCCondition), Member = "UpdateHeathForBloodLoss")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(NPCCondition), Member = "DoUpdate")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 4)]
 	public int GetBloodLossCount()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
 	public bool HasHypothermia()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
@@ -325,39 +341,13 @@ public class NPCAfflictions : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[CalledBy(Type = typeof(NPC), Member = "Initialize")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[CallsDeduplicatedMethods(Count = 16)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 3)]
 	private void MaybeReparentAnimatedInteractions()
 	{
 	}

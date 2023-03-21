@@ -11,45 +11,39 @@ public sealed class ProxyNumber : Variant
 	private IConvertible value;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ProxyNumber), Member = "Parse")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public ProxyNumber(IConvertible value)
 	{
 	}
 
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_InvariantInfo")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "ValidateParseStyleFloatingPoint")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "GetInstance")]
-	[Calls(Type = typeof(System.Number), Member = "TryParseDecimal")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_InvariantInfo")]
 	[CalledBy(Type = typeof(Decoder), Member = "DecodeNumber")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_InvariantInfo")]
 	[CalledBy(Type = typeof(ProxyNumber), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(decimal), Member = "op_Equality")]
-	[Calls(Type = typeof(System.Number), Member = "TryParseInt64")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "GetInstance")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "ValidateParseStyleInteger")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_InvariantInfo")]
-	[Calls(Type = typeof(System.Number), Member = "TryParseUInt64")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "ValidateParseStyleInteger")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_InvariantInfo")]
-	[Calls(Type = typeof(string), Member = "get_Chars")]
-	[Calls(Type = typeof(string), Member = "IndexOfAny")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "IndexOfAny")]
+	[Calls(Type = typeof(string), Member = "get_Chars")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_InvariantInfo")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "ValidateParseStyleInteger")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "GetInstance")]
+	[Calls(TypeFullName = "System.Number", Member = "TryParseUInt64")]
+	[Calls(TypeFullName = "System.Number", Member = "TryParseInt64")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "ValidateParseStyleFloatingPoint")]
+	[Calls(TypeFullName = "System.Number", Member = "TryParseDecimal")]
+	[Calls(Type = typeof(double), Member = "TryParse")]
+	[Calls(Type = typeof(decimal), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private IConvertible Parse(string value)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override bool ToBoolean(IFormatProvider provider)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -57,7 +51,7 @@ public sealed class ProxyNumber : Variant
 	[CallsUnknownMethods(Count = 2)]
 	public override byte ToByte(IFormatProvider provider)
 	{
-		return default(byte);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -65,23 +59,23 @@ public sealed class ProxyNumber : Variant
 	[CallsUnknownMethods(Count = 2)]
 	public override char ToChar(IFormatProvider provider)
 	{
-		return default(char);
+		return '\0';
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override decimal ToDecimal(IFormatProvider provider)
 	{
 		return default(decimal);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override double ToDouble(IFormatProvider provider)
 	{
-		return default(double);
+		return 0.0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -89,7 +83,7 @@ public sealed class ProxyNumber : Variant
 	[CallsUnknownMethods(Count = 2)]
 	public override short ToInt16(IFormatProvider provider)
 	{
-		return default(short);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -97,7 +91,7 @@ public sealed class ProxyNumber : Variant
 	[CallsUnknownMethods(Count = 2)]
 	public override int ToInt32(IFormatProvider provider)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -105,7 +99,7 @@ public sealed class ProxyNumber : Variant
 	[CallsUnknownMethods(Count = 2)]
 	public override long ToInt64(IFormatProvider provider)
 	{
-		return default(long);
+		return 0L;
 	}
 
 	[CallerCount(Count = 0)]
@@ -113,15 +107,15 @@ public sealed class ProxyNumber : Variant
 	[CallsUnknownMethods(Count = 2)]
 	public override sbyte ToSByte(IFormatProvider provider)
 	{
-		return default(sbyte);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override float ToSingle(IFormatProvider provider)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -137,7 +131,7 @@ public sealed class ProxyNumber : Variant
 	[CallsUnknownMethods(Count = 2)]
 	public override ushort ToUInt16(IFormatProvider provider)
 	{
-		return default(ushort);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -145,7 +139,7 @@ public sealed class ProxyNumber : Variant
 	[CallsUnknownMethods(Count = 2)]
 	public override uint ToUInt32(IFormatProvider provider)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -153,6 +147,6 @@ public sealed class ProxyNumber : Variant
 	[CallsUnknownMethods(Count = 2)]
 	public override ulong ToUInt64(IFormatProvider provider)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 }

@@ -14,18 +14,15 @@ public class ImpactDefinition : ScriptableObject
 
 	public string m_AudioVO;
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Action_PlayerImpact), Member = "OnExecute")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Apply()
 	{
 	}

@@ -8,10 +8,10 @@ public class Action_OverridePosBeforeInteriorLoad : ActionTask<GraphOwner>
 {
 	public Vector3 overridePos;
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

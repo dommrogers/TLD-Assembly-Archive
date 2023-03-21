@@ -13,14 +13,14 @@ public class CopyProductUserExternalAccountByIndexOptions
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 101)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -28,23 +28,23 @@ public class CopyProductUserExternalAccountByIndexOptions
 
 	public uint ExternalAccountInfoIndex
 	{
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 8)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		set
 		{
 		}
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public CopyProductUserExternalAccountByIndexOptions()
 	{
 	}

@@ -43,10 +43,9 @@ internal sealed class DepthOfFieldRenderer : PostProcessEffectRenderer<DepthOfFi
 		return default(DepthTextureMode);
 	}
 
-	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private RenderTextureFormat SelectFormat(RenderTextureFormat primary, RenderTextureFormat secondary)
 	{
 		return default(RenderTextureFormat);
@@ -57,61 +56,44 @@ internal sealed class DepthOfFieldRenderer : PostProcessEffectRenderer<DepthOfFi
 	[CallsUnknownMethods(Count = 2)]
 	private float CalculateMaxCoCRadius(int screenHeight)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(DepthOfFieldRenderer), Member = "Render")]
-	[CalledBy(Type = typeof(DepthOfFieldRenderer), Member = "Render")]
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[CallsUnknownMethods(Count = 39)]
-	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 39)]
 	private RenderTexture CheckHistory(int eye, int id, PostProcessRenderContext context, RenderTextureFormat format)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(PostProcessDebugLayer), Member = "PushDebugOverlay")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(TemporalAntialiasing), Member = "IsSupported")]
-	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 52)]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(DepthOfFieldRenderer), Member = "CheckHistory")]
-	[Calls(Type = typeof(DepthOfFieldRenderer), Member = "CheckHistory")]
-	[Calls(Type = typeof(TemporalAntialiasing), Member = "IsSupported")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetDescriptor")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
-	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
-	[CallsDeduplicatedMethods(Count = 19)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
+	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
+	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetDescriptor")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[Calls(Type = typeof(TemporalAntialiasing), Member = "IsSupported")]
+	[Calls(Type = typeof(DepthOfFieldRenderer), Member = "CheckHistory")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
+	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
+	[Calls(Type = typeof(PostProcessDebugLayer), Member = "PushDebugOverlay")]
+	[CallsDeduplicatedMethods(Count = 19)]
+	[CallsUnknownMethods(Count = 52)]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(RenderTexture), Member = "ReleaseTemporary")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 10)]
 	public override void Release()
 	{
 	}

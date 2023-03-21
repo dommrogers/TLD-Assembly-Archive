@@ -26,7 +26,8 @@ public class EnergyBoostItem : MonoBehaviour
 	private GearItem m_GearItem;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Awake()
 	{
 	}
@@ -38,10 +39,10 @@ public class EnergyBoostItem : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(EnergyBoost), Member = "ApplyEnergyBoost")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EnergyBoost), Member = "ApplyEnergyBoost")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ApplyBoost()
 	{
 	}

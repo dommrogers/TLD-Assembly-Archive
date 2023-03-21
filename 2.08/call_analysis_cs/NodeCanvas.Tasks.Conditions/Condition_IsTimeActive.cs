@@ -9,9 +9,10 @@ public class Condition_IsTimeActive : ConditionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -19,12 +20,13 @@ public class Condition_IsTimeActive : ConditionTask
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionTimerByName")]
 	[Calls(Type = typeof(MissionTimer), Member = "get_ElapsedTime")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

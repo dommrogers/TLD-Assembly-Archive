@@ -5,8 +5,8 @@ namespace ParadoxNotion.Design;
 
 public class SpoofAOTAttribute : Attribute
 {
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public SpoofAOTAttribute()
 	{
 	}

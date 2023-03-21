@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -19,91 +20,91 @@ public class AuroraActivatedToggle : MonoBehaviour
 
 	public string m_DisplayName
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(LocalizedString), Member = "Text")]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(LocalizedString), Member = "Text")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(AuroraActivatedToggle), Member = "DisableChildren")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AuroraActivatedToggle), Member = "DisableChildren")]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(AuroraActivatedToggle), Member = "EnableChildren")]
-	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
+	[Calls(Type = typeof(AuroraActivatedToggle), Member = "EnableChildren")]
 	[Calls(Type = typeof(AuroraActivatedToggle), Member = "DisableChildren")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetHoverText()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 41)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 46)]
 	public void SetAuroraField(AuroraField auroraField)
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	public bool ProcessInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private void TurnOn()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private void TurnOff()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(AuroraActivatedToggle), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void EnableChildren()
 	{
 	}
 
+	[CalledBy(Type = typeof(AuroraActivatedToggle), Member = "Start")]
+	[CalledBy(Type = typeof(AuroraActivatedToggle), Member = "Update")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CalledBy(Type = typeof(AuroraActivatedToggle), Member = "Start")]
 	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(AuroraActivatedToggle), Member = "Update")]
 	private void DisableChildren()
 	{
 	}

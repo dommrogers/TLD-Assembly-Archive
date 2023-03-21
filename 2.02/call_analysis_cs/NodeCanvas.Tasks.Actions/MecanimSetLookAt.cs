@@ -23,41 +23,43 @@ public class MecanimSetLookAt : ActionTask<Animator>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(BipedMoveAgent), Member = "SetSetLookAtWeight")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(BipedMoveAgent), Member = "SetLookAtGameObject")]
+	[Calls(Type = typeof(BipedMoveAgent), Member = "SetSetLookAtWeight")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 19)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Animator), Member = "CheckIfInIKPass")]
 	[Calls(Type = typeof(Animator), Member = "SetLookAtWeightInternal")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Animator), Member = "CheckIfInIKPass")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(Animator), Member = "CheckIfInIKPass")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 14)]
 	public void OnAnimatorIK()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 4)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public MecanimSetLookAt()
 	{
 		((ActionTask<>)(object)this)._002Ector();

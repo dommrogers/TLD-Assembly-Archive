@@ -11,7 +11,7 @@ public sealed class MetricsInterface : Handle
 	public const int EndplayersessionApiLatest = 1;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public MetricsInterface()
 	{
 	}
@@ -22,20 +22,20 @@ public sealed class MetricsInterface : Handle
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result BeginPlayerSession(BeginPlayerSessionOptions options)
 	{
 		return default(Result);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(EndPlayerSessionOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result EndPlayerSession(EndPlayerSessionOptions options)
 	{
@@ -48,7 +48,7 @@ public sealed class MetricsInterface : Handle
 	internal static extern Result EOS_Metrics_BeginPlayerSession(IntPtr handle, IntPtr options);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern Result EOS_Metrics_EndPlayerSession(IntPtr handle, IntPtr options);
 }

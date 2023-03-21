@@ -17,20 +17,20 @@ public class RotateTowards : ActionTask<Transform>
 	public bool waitActionFinish;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 20)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Vector3), Member = "Angle")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 27)]
+	[CallsDeduplicatedMethods(Count = 18)]
+	[CallsUnknownMethods(Count = 24)]
 	protected override void OnUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
 	[Calls(Type = typeof(Vector3), Member = "get_up")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public RotateTowards()
 	{
 		((ActionTask<>)(object)this)._002Ector();

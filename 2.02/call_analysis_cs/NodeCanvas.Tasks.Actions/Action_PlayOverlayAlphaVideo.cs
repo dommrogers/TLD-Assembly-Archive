@@ -9,9 +9,9 @@ public class Action_PlayOverlayAlphaVideo : ActionTask
 
 	protected override string info
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -19,16 +19,16 @@ public class Action_PlayOverlayAlphaVideo : ActionTask
 		}
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(MoviePlayer), Member = "Play")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_PlayOverlayAlphaVideo()
 	{
 	}

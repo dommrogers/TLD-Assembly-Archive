@@ -12,25 +12,24 @@ public class CheckVariable<T> : ConditionTask
 
 	protected override string info
 	{
-		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 5)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

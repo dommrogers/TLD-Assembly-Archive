@@ -17,12 +17,12 @@ public class MuteListPlugin
 	public static extern uint MuteList_Length(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void MuteList_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public MuteListPlugin()
 	{
 	}

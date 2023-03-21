@@ -15,9 +15,9 @@ public class ConeVolume : VolumetricObjectBase
 
 	private float previousStartOffset;
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(VolumetricObjectBase), Member = "OnEnable")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	protected override void OnEnable()
 	{
@@ -33,7 +33,7 @@ public class ConeVolume : VolumetricObjectBase
 	[Calls(Type = typeof(VolumetricObjectBase), Member = "HasChanged")]
 	public override bool HasChanged()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -42,19 +42,17 @@ public class ConeVolume : VolumetricObjectBase
 	{
 	}
 
-	[Calls(Type = typeof(Material), Member = "SetTexture")]
-	[Calls(Type = typeof(VolumetricObjectBase), Member = "ScaleMesh")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Vector3), Member = "get_up")]
+	[Calls(Type = typeof(VolumetricObjectBase), Member = "ScaleMesh")]
 	[Calls(Type = typeof(Bounds), Member = "SetMinMax")]
-	[Calls(Type = typeof(Material), Member = "SetVector")]
 	[Calls(Type = typeof(Material), Member = "SetVector")]
 	[Calls(Type = typeof(Material), Member = "SetFloat")]
 	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Material), Member = "SetTexture")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 9)]
 	public override void UpdateVolume()
 	{
 	}

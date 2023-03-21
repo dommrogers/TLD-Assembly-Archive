@@ -9,7 +9,7 @@ public class WaterSourceSaveDataProxy
 	public bool m_RolledSpawnChance;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public WaterSourceSaveDataProxy()
 	{
 	}

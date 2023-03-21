@@ -16,8 +16,8 @@ public class ProductPurchasedEventArgsPlugin
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void ProductPurchasedEventArgs_Dispose(IntPtr self);
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public ProductPurchasedEventArgsPlugin()
 	{
 	}

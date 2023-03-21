@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class OutdoorSceneRoot : MonoBehaviour
 {
-	private sealed class _003CStart_003Ed__10 : IDisposable, IEnumerator<object>, IEnumerator
+	private sealed class _003CStart_003Ed__10 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -25,7 +25,7 @@ public class OutdoorSceneRoot : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -36,23 +36,23 @@ public class OutdoorSceneRoot : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
 			}
 		}
 
+		[DebuggerHidden]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[DebuggerHidden]
 		public _003CStart_003Ed__10(int _003C_003E1__state)
 		{
 		}
 
-		[CallerCount(Count = 6)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
@@ -63,13 +63,13 @@ public class OutdoorSceneRoot : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 4)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -93,14 +93,15 @@ public class OutdoorSceneRoot : MonoBehaviour
 
 	private const string m_MasterObjectPrefix = "Master_";
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "add_sceneLoaded")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "add_sceneLoaded")]
 	[Calls(Type = typeof(OutdoorSceneRoot), Member = "GetSceneName")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Awake()
 	{
 	}
@@ -120,44 +121,43 @@ public class OutdoorSceneRoot : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
-	[CalledBy(Type = typeof(OutdoorSceneRoot), Member = "SpawnPrefabs")]
 	[CalledBy(Type = typeof(OutdoorSceneRoot), Member = "TrySetGroundLayerRecursive")]
+	[CalledBy(Type = typeof(OutdoorSceneRoot), Member = "SpawnPrefabs")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(OutdoorSceneRoot), Member = "TrySetGroundLayerRecursive")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 16)]
 	private void TrySetGroundLayerRecursive(GameObject go)
 	{
 	}
 
-	[Calls(Type = typeof(OutdoorSceneRoot), Member = "MoveToCache")]
-	[CalledBy(Type = typeof(OutdoorSceneRoot), Member = "LevelLoadedCallback")]
 	[CalledBy(Type = typeof(_003CStart_003Ed__10), Member = "MoveNext")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(OutdoorSceneRoot), Member = "TrySetGroundLayerRecursive")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(OutdoorSceneRoot), Member = "LevelLoadedCallback")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(OutdoorSceneRoot), Member = "TrySetGroundLayerRecursive")]
 	[Calls(Type = typeof(Terrain), Member = "set_drawInstanced")]
+	[Calls(Type = typeof(OutdoorSceneRoot), Member = "MoveToCache")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private void SpawnPrefabs(int start, int endExclusive)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CalledBy(Type = typeof(_003CStart_003Ed__10), Member = "MoveNext")]
 	[CalledBy(Type = typeof(OutdoorSceneRoot), Member = "LevelLoadedCallback")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 10)]
 	private void DecachePrefabs(int start, int endExclusive)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void SpawnOrDecachePrefabs(int start, int endExclusive)
 	{
 	}
@@ -170,58 +170,60 @@ public class OutdoorSceneRoot : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[CalledBy(Type = typeof(OutdoorSceneRoot), Member = "SpawnPrefabs")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void MoveToCache(Transform prefab)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "remove_sceneLoaded")]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	private void OnDestroy()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
 	[CalledBy(Type = typeof(OutdoorSceneRoot), Member = "Awake")]
 	[CalledBy(Type = typeof(OutdoorSceneRoot), Member = "OnSceneUnload")]
-	[CalledBy(Type = typeof(OutdoorSceneRoot), Member = "OnSceneUnload")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
 	[CallsUnknownMethods(Count = 1)]
 	private static string GetSceneName()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(OutdoorSceneRoot), Member = "OnSceneUnload")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "IsOutDoorsScene")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private static void MaybeClearCache(string nextScene)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneAsynchronously")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(OutdoorSceneRoot), Member = "MaybeClearCache")]
 	[Calls(Type = typeof(OutdoorSceneRoot), Member = "GetSceneName")]
-	[Calls(Type = typeof(OutdoorSceneRoot), Member = "GetSceneName")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneAsynchronously")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	public static void OnSceneUnload(string nextScene)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public OutdoorSceneRoot()
 	{
 	}

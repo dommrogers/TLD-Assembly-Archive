@@ -12,21 +12,21 @@ public class TLD_SayTrack : PlayableTrack, TLD_IDynamicBindableTrack
 	public VoiceInstigatorType m_InstigatorType;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(Utils), Member = "FindTimelineDynamicBinding")]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void DoDynamicBinding(PlayableDirector director)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "LocIdFromEvent")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(TrackAsset), Member = "get_clips")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "LocIdFromEvent")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 10)]
 	public void RefreshClips()
 	{
 	}

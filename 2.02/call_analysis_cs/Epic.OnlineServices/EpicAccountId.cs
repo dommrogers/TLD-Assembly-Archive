@@ -9,7 +9,7 @@ public sealed class EpicAccountId : Handle
 	public const int EpicaccountidMaxLength = 32;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public EpicAccountId()
 	{
 	}
@@ -20,11 +20,12 @@ public sealed class EpicAccountId : Handle
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public static EpicAccountId FromString(string accountIdString)
 	{
 		return null;
@@ -35,14 +36,14 @@ public sealed class EpicAccountId : Handle
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsValid()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalAllocate")]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result ToString(out string outBuffer)
 	{
@@ -51,13 +52,13 @@ public sealed class EpicAccountId : Handle
 	}
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern IntPtr EOS_EpicAccountId_FromString(IntPtr accountIdString);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern int EOS_EpicAccountId_IsValid(IntPtr accountId);
 
 	[PreserveSig]

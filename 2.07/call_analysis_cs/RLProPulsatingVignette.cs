@@ -9,10 +9,10 @@ public sealed class RLProPulsatingVignette : PostProcessEffectSettings
 
 	public FloatParameter amount;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public RLProPulsatingVignette()
 	{
 	}

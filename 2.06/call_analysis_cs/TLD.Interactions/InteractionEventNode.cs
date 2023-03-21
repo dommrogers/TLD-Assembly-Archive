@@ -14,26 +14,26 @@ public class InteractionEventNode : EventUnit<InteractionEventData>
 
 	protected override bool register
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public ValueOutput interaction
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 3)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 4)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 8)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 10)]
 		private set
 		{
 		}
@@ -43,7 +43,7 @@ public class InteractionEventNode : EventUnit<InteractionEventData>
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 11)]
+		[CallerCount(Count = 18)]
 		get
 		{
 			return null;
@@ -57,20 +57,20 @@ public class InteractionEventNode : EventUnit<InteractionEventData>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(EventUnit<>), Member = "Definition")]
+	[Calls(Type = typeof(Unit), Member = "ValueOutput")]
 	protected override void Definition()
 	{
 	}
 
-	[Calls(Type = typeof(EventHook), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EventHook), Member = ".ctor")]
 	public override EventHook GetHook(GraphReference reference)
 	{
 		return default(EventHook);
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Flow), Member = "SetValue")]
 	[Calls(Type = typeof(Flow), Member = "SetValue")]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void AssignArguments(Flow flow, InteractionEventData eventData)

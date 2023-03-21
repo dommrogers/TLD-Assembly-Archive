@@ -13,9 +13,10 @@ public class SpawnWildlife_TriggerSaveData
 
 	public List<string> m_RemovedBaseAiGuids;
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(SpawnWildlife_Trigger), Member = "Serialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public SpawnWildlife_TriggerSaveData()
 	{

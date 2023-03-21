@@ -20,11 +20,11 @@ public static class TypeConverter
 		{
 		}
 
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Activator), Member = "CreateInstance")]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Convert), Member = "ChangeType")]
+		[Calls(Type = typeof(Activator), Member = "CreateInstance")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal object _003CGet_003Eb__2(object value)
 		{
 			return null;
@@ -46,8 +46,8 @@ public static class TypeConverter
 			return null;
 		}
 
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		internal object _003CGet_003Eb__7(object value)
 		{
@@ -140,9 +140,9 @@ public static class TypeConverter
 			return null;
 		}
 
-		[CallsUnknownMethods(Count = 3)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 3)]
 		internal object _003CGet_003Eb__4_11(object value)
 		{
 			return null;
@@ -156,17 +156,17 @@ public static class TypeConverter
 			return null;
 		}
 
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+		[CallsUnknownMethods(Count = 2)]
 		internal object _003CGet_003Eb__4_13(object value)
 		{
 			return null;
 		}
 
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 3)]
-		[CallerCount(Count = 0)]
 		internal object _003CGet_003Eb__4_14(object value)
 		{
 			return null;
@@ -196,52 +196,23 @@ public static class TypeConverter
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
 	}
 
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CalledBy(Type = typeof(Variable), Member = "GetSetConverter")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CalledBy(Type = typeof(Variable), Member = "GetGetConverter")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CalledBy(Type = typeof(TypeConverter), Member = "CanConvert")]
-	[Calls(Type = typeof(Type), Member = "get_IsInterface")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[CalledBy(Type = typeof(Variable), Member = "GetGetConverter")]
+	[CalledBy(Type = typeof(Variable), Member = "GetSetConverter")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 29)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Type), Member = "get_IsInterface")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[CallsDeduplicatedMethods(Count = 29)]
+	[CallsUnknownMethods(Count = 2)]
 	public static Func<object, object> Get(Type fromType, Type toType)
 	{
 		return null;
@@ -251,6 +222,6 @@ public static class TypeConverter
 	[Calls(Type = typeof(TypeConverter), Member = "Get")]
 	public static bool CanConvert(Type fromType, Type toType)
 	{
-		return default(bool);
+		return false;
 	}
 }

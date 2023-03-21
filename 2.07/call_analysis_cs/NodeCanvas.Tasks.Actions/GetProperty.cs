@@ -13,8 +13,8 @@ public class GetProperty : ActionTask, ISubParametersContainer
 
 	private MethodInfo targetMethod
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -24,9 +24,9 @@ public class GetProperty : ActionTask, ISubParametersContainer
 	public override Type agentType
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -36,14 +36,14 @@ public class GetProperty : ActionTask, ISubParametersContainer
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Format")]
-		[CallsUnknownMethods(Count = 2)]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
+		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
 		[Calls(Type = typeof(Task), Member = "get_agentInfo")]
 		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
+		[Calls(Type = typeof(string), Member = "Format")]
 		[CallsDeduplicatedMethods(Count = 4)]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
@@ -58,20 +58,20 @@ public class GetProperty : ActionTask, ISubParametersContainer
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ReflectedFunctionWrapper), Member = "Create")]
 	[Calls(Type = typeof(string), Member = "Format")]
 	[Calls(Type = typeof(Task), Member = "Error")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public override void OnValidate(ITaskSystem ownerSystem)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Task), Member = "get_agent")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Task), Member = "get_agent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override string OnInit()
 	{
 		return null;
@@ -79,22 +79,21 @@ public class GetProperty : ActionTask, ISubParametersContainer
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ReflectedFunctionWrapper), Member = "Create")]
 	private void SetMethod(MethodInfo method)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public GetProperty()
 	{
 	}

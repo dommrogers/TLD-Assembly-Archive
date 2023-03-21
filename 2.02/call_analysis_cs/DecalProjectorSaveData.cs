@@ -34,7 +34,7 @@ public class DecalProjectorSaveData
 	public ProjectileType m_ProjectileType;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public DecalProjectorSaveData()
 	{
 	}

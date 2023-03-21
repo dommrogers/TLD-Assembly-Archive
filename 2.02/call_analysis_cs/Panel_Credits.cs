@@ -32,7 +32,7 @@ public class Panel_Credits : Panel_Base
 		public UIAtlas m_Atlas;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public AtlasReference()
 		{
 		}
@@ -46,7 +46,7 @@ public class Panel_Credits : Panel_Base
 		public Texture2D m_Texture;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public TextureReference()
 		{
 		}
@@ -60,7 +60,7 @@ public class Panel_Credits : Panel_Base
 		public CreditElement m_Prefab;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public CreditTypePrefabMap()
 		{
 		}
@@ -100,26 +100,27 @@ public class Panel_Credits : Panel_Base
 		[CallerCount(Count = 0)]
 		public float GetEndScrollValue()
 		{
-			return default(float);
+			return 0f;
 		}
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		public bool HasLines()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CalledBy(Type = typeof(Panel_Credits), Member = "ShowCredits")]
-		[Calls(Type = typeof(ByteReader), Member = "ReadCSV")]
 		[CalledBy(Type = typeof(Panel_Credits), Member = "SetActiveEpisode")]
-		[Calls(Type = typeof(LineDefinition), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 26)]
-		[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
 		[CallerCount(Count = 2)]
-		[Calls(Type = typeof(ByteReader), Member = "ReadCSV")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[CallsDeduplicatedMethods(Count = 5)]
+		[Calls(Type = typeof(List<>), Member = ".ctor")]
+		[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
+		[Calls(Type = typeof(ByteReader), Member = "ReadCSV")]
+		[Calls(TypeFullName = "Panel_Credits.LineDefinition", Member = ".ctor")]
+		[Calls(Type = typeof(List<>), Member = "Add")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 26)]
 		public void BuildLines()
 		{
 		}
@@ -138,9 +139,10 @@ public class Panel_Credits : Panel_Base
 
 		private bool m_IsEmpty;
 
+		[CalledBy(TypeFullName = "Panel_Credits.EpisodeDefinition", Member = "BuildLines")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(EpisodeDefinition), Member = "BuildLines")]
+		[Calls(Type = typeof(Enum), Member = "TryParse")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		public LineDefinition(BetterList<string> line, int contentSize)
 		{
@@ -150,7 +152,7 @@ public class Panel_Credits : Panel_Base
 		[CallerCount(Count = 2)]
 		public bool IsEmpty()
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -219,25 +221,21 @@ public class Panel_Credits : Panel_Base
 
 	private RenderTexture m_BackgroundRenderTexture;
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
-	[Calls(Type = typeof(RenderTexture), Member = "GetCompatibleFormat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Camera), Member = "set_targetTexture")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(RenderTexture), Member = "GetCompatibleFormat")]
+	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
+	[Calls(Type = typeof(Camera), Member = "set_targetTexture")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 11)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void OnDisable()
 	{
 	}
@@ -249,16 +247,16 @@ public class Panel_Credits : Panel_Base
 	}
 
 	[CalledBy(Type = typeof(Panel_Credits), Member = "ShowCredits")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Action_ShowCredits), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_PlayCredits), Member = "PlayCredits")]
-	[Calls(Type = typeof(Panel_Credits), Member = "Exit")]
 	[CalledBy(Type = typeof(Panel_Extras), Member = "HandleOnCreditsLoaded")]
-	[Calls(Type = typeof(EpisodeDefinition), Member = "BuildLines")]
+	[CalledBy(Type = typeof(Action_PlayCredits), Member = "PlayCredits")]
+	[CalledBy(Type = typeof(Action_ShowCredits), Member = "OnExecute")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Credits), Member = "BuildCreditElements")]
 	[Calls(Type = typeof(Panel_Credits), Member = "Reset")]
+	[Calls(Type = typeof(EpisodeDefinition), Member = "BuildLines")]
+	[Calls(Type = typeof(Panel_Credits), Member = "BuildCreditElements")]
+	[Calls(Type = typeof(Panel_Credits), Member = "Exit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void ShowCredits(int episodeIndex, Action fadedInAction, Action exitAction)
 	{
 	}
@@ -266,7 +264,7 @@ public class Panel_Credits : Panel_Base
 	[CallerCount(Count = 0)]
 	public bool IsFullyActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
@@ -282,48 +280,46 @@ public class Panel_Credits : Panel_Base
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Credits), Member = "FadeIn")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	private void FadeInElements()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Credits), Member = "FadeInElements")]
 	[CalledBy(Type = typeof(Panel_Credits), Member = "FadeInPanel")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(Panel_Credits), Member = "FadeInElements")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 3)]
 	private void FadeIn(UIPanel panel, PanelState nextState, float startTime, float fadeInDuration, ref float fadeInAmount, ref float nextStateStartTime, Action onComplete)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(GameAudioManager), Member = "MuteGameplayAudio")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
 	[Calls(Type = typeof(GameAudioManager), Member = "Seek")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
 	private void StartMusic()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void EnableBackgroundElementsGroup()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(Mathf), Member = "SmoothDamp")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 11)]
 	private void Play()
 	{
@@ -337,44 +333,45 @@ public class Panel_Credits : Panel_Base
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsUnknownMethods(Count = 3)]
 	public Texture2D GetTextureById(string id)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private bool IsEditingPrefab()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_Credits), Member = "ShowCredits")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(GameAudioManager), Member = "UnmuteGameplayAudio")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
 	[Calls(Type = typeof(Panel_Credits), Member = "Reset")]
-	[CalledBy(Type = typeof(Panel_Credits), Member = "ShowCredits")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryDestroyPanel")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Exit()
 	{
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
-	[Calls(Type = typeof(GameAudioManager), Member = "UnmuteGameplayAudio")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "UnmuteGameplayAudio")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void StopMusic()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Credits), Member = "BuildCreditElements")]
 	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private CreditElement GetCreditElementPrefab(CreditType creditType)
 	{
 		return null;
@@ -389,36 +386,35 @@ public class Panel_Credits : Panel_Base
 	}
 
 	[CalledBy(Type = typeof(Panel_Credits), Member = "ShowCredits")]
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(Panel_Credits), Member = "Exit")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 17)]
 	private void Reset()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Credits), Member = "ShowCredits")]
 	[CalledBy(Type = typeof(Panel_Credits), Member = "SetActiveEpisode")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Panel_Credits), Member = "GetCreditElementPrefab")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CalledBy(Type = typeof(Panel_Credits), Member = "ShowCredits")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 12)]
 	private void BuildCreditElements(EpisodeDefinition episode)
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public Panel_Credits()
 	{
 	}

@@ -8,9 +8,9 @@ public class ForceFinishGraph : ActionTask
 {
 	public CompactStatus finishStatus;
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Graph), Member = "Stop")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	protected override void OnExecute()
 	{
 	}

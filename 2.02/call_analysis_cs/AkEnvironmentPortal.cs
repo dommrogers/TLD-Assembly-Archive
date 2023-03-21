@@ -10,19 +10,20 @@ public class AkEnvironmentPortal : MonoBehaviour
 	public AkEnvironment[] environments;
 
 	[CalledBy(Type = typeof(AkGameObjEnvironmentData), Member = "AddHighestPriorityEnvironmentsFromPortals")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 11)]
 	public float GetAuxSendValueForPosition(Vector3 in_position, int index)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public AkEnvironmentPortal()
 	{
 	}

@@ -8,20 +8,20 @@ public abstract class PostProcessEffectRenderer
 	protected bool m_ResetHistory;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public virtual void Init()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public virtual DepthTextureMode GetCameraFlags()
 	{
 		return default(DepthTextureMode);
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public virtual void ResetHistory()
 	{
 	}
@@ -33,16 +33,12 @@ public abstract class PostProcessEffectRenderer
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract void Render(PostProcessRenderContext context);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	internal abstract void SetSettings(PostProcessEffectSettings settings);
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	protected PostProcessEffectRenderer()
 	{
 	}
@@ -55,23 +51,23 @@ public abstract class PostProcessEffectRenderer<T> : PostProcessEffectRenderer w
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		internal set
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	internal override void SetSettings(PostProcessEffectSettings settings)
 	{
 	}

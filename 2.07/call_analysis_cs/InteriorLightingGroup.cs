@@ -12,8 +12,8 @@ public class InteriorLightingGroup : MonoBehaviour
 
 		public static Predicate<GameObject> _003C_003E9__11_0;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec()
 		{
 		}
@@ -21,7 +21,7 @@ public class InteriorLightingGroup : MonoBehaviour
 		[CallerCount(Count = 0)]
 		internal bool _003CStart_003Eb__11_0(GameObject item)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -47,47 +47,47 @@ public class InteriorLightingGroup : MonoBehaviour
 
 	private readonly List<Color> m_GlowObjectMaterialsOriginalColor;
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Material), Member = "get_color")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(InteriorLightingGroup), Member = "DetermineObject")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAll")]
+	[Calls(Type = typeof(InteriorLightingGroup), Member = "DetermineObject")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Material), Member = "get_shader")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Material), Member = "get_color")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 11)]
 	private void Start()
 	{
 	}
 
 	[CalledBy(Type = typeof(InteriorLightingManager), Member = "UpdateLights")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(Light), Member = "set_intensity")]
 	[Calls(Type = typeof(Material), Member = "get_color")]
 	[Calls(Type = typeof(Material), Member = "set_color")]
 	[Calls(Type = typeof(Material), Member = "SetFloat")]
 	[Calls(Type = typeof(ParticleSystem.MinMaxGradient), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 14)]
 	public void ScrubUpdate(float intensityMultiplier, Color newColor, float timeOfDay)
 	{
 	}
 
 	[CalledBy(Type = typeof(InteriorLightingGroup), Member = "Start")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 13)]
 	private void DetermineObject(List<GameObject> goList)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 25)]
+	[CallerCount(Count = 28)]
 	public List<Light> GetLights()
 	{
 		return null;
@@ -101,15 +101,15 @@ public class InteriorLightingGroup : MonoBehaviour
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 16)]
+	[CallerCount(Count = 18)]
 	public List<ParticleSystem> GetParticles()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(AnimationCurve), Member = "Linear")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 5)]
 	public InteriorLightingGroup()
 	{

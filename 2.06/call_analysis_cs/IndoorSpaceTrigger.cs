@@ -21,30 +21,26 @@ public class IndoorSpaceTrigger : MonoBehaviour
 
 	public string m_TriggerID;
 
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
-	[Calls(Type = typeof(FirstPersonItem), Member = "SetExteriorInteriorSwitch")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetIndoorEnvironmentSwitch")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetIndoorEnvironmentSwitch")]
+	[Calls(Type = typeof(FirstPersonItem), Member = "SetExteriorInteriorSwitch")]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 13)]
 	private void OnTriggerEnter(Collider c)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "ExitIndoorSpaceTrigger")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetOutdoorEnvironmentSwitch")]
 	[Calls(Type = typeof(FirstPersonItem), Member = "SetExteriorInteriorSwitch")]
-	[Calls(Type = typeof(PlayerManager), Member = "ExitIndoorSpaceTrigger")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 10)]
 	private void OnTriggerExit(Collider c)
 	{
 	}

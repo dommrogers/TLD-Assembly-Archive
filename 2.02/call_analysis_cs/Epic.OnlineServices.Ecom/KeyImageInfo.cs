@@ -17,14 +17,14 @@ public class KeyImageInfo : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 101)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -34,14 +34,14 @@ public class KeyImageInfo : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -54,11 +54,11 @@ public class KeyImageInfo : ISettable
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -71,7 +71,7 @@ public class KeyImageInfo : ISettable
 		[CallerCount(Count = 3)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -81,26 +81,26 @@ public class KeyImageInfo : ISettable
 		}
 	}
 
-	[Calls(Type = typeof(KeyImageInfoInternal), Member = "get_Url")]
-	[Calls(Type = typeof(KeyImageInfoInternal), Member = "get_Type")]
 	[CalledBy(Type = typeof(KeyImageInfo), Member = "Set")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(KeyImageInfoInternal), Member = "get_Type")]
+	[Calls(Type = typeof(KeyImageInfoInternal), Member = "get_Url")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	internal void Set(KeyImageInfoInternal? other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(KeyImageInfo), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public KeyImageInfo()
 	{
 	}

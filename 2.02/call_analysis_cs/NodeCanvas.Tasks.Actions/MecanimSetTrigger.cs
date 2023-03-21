@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -13,11 +12,12 @@ public class MecanimSetTrigger : ActionTask<Animator>
 
 	protected override string info
 	{
-		[CallsDeduplicatedMethods(Count = 3)]
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 4)]
 		get
 		{
 			return null;
@@ -25,9 +25,10 @@ public class MecanimSetTrigger : ActionTask<Animator>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 8)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	protected override void OnExecute()
 	{
 	}

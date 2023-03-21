@@ -10175,7 +10175,7 @@ public class EVENTS
 	public static uint UNMUTE_MASTERINGAME_EXCEPTGUI;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public EVENTS()
 	{
 	}

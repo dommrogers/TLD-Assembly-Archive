@@ -31,16 +31,14 @@ public struct SnowImprintExpanded
 
 	public bool m_HasBumpDecal;
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(SnowPatch), Member = "AddImprint")]
 	[CalledBy(Type = typeof(SnowImprintExpanded), Member = "op_Explicit")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(UvList), Member = "GetUvs")]
-	[Calls(Type = typeof(UvList), Member = "GetUvs")]
-	[Calls(Type = typeof(SnowImprint), Member = "get_Position")]
+	[CalledBy(Type = typeof(SnowPatch), Member = "AddImprint")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SnowImprint), Member = "get_Position")]
 	[Calls(Type = typeof(UvList), Member = "GetUvs")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public SnowImprintExpanded(SnowImprint im)
 	{
 	}

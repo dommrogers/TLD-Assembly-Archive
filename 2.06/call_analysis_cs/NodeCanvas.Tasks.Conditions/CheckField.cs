@@ -30,14 +30,14 @@ public class CheckField : ConditionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -45,27 +45,25 @@ public class CheckField : ConditionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ReflectionTools), Member = "RTGetField")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected override string OnInit()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Task), Member = "get_agent")]
 	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Task), Member = "get_agent")]
-	[Calls(Type = typeof(Task), Member = "get_agent")]
+	[CallsUnknownMethods(Count = 5)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public CheckField()
 	{
 	}

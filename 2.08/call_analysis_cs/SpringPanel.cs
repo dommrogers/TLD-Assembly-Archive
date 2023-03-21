@@ -19,35 +19,38 @@ public class SpringPanel : MonoBehaviour
 
 	private UIScrollView mDrag;
 
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[DeduplicatedMethod]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(NGUIMath), Member = "SpringLerp")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NGUIMath), Member = "SpringLerp")]
 	[Calls(Type = typeof(UIPanel), Member = "set_clipOffset")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 6)]
 	protected virtual void AdvanceTowardsPosition()
 	{
 	}
 
 	[CalledBy(Type = typeof(UICenterOnChild), Member = "CenterOn")]
+	[CalledBy(Type = typeof(UICenterOnClick), Member = "OnClick")]
 	[CalledBy(Type = typeof(UIScrollView), Member = "RestrictWithinBounds")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(UICenterOnClick), Member = "OnClick")]
 	public static SpringPanel Begin(GameObject go, Vector3 pos, float strength)
 	{
 		return null;

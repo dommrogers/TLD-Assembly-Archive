@@ -7,9 +7,9 @@ public class EmitterProxy : MonoBehaviour
 
 	public AkGameObj m_AkGameObj;
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public EmitterProxy()
 	{
 	}

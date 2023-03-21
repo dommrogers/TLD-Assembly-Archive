@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using AK.Wwise;
 using Audio.SimpleAudio;
@@ -17,20 +16,20 @@ public class AkSoundEngine
 		private readonly GameObject gameObject;
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(AkSoundEngine), Member = "RegisterGameObj")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		public AutoObject(GameObject go)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(AkSoundEngine), Member = "UnregisterGameObj")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(AkSoundEngine), Member = "UnregisterGameObj")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		~AutoObject()
 		{
 		}
@@ -712,12 +711,12 @@ public class AkSoundEngine
 
 	public static uint AK_SOUNDBANK_VERSION
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
@@ -728,7 +727,7 @@ public class AkSoundEngine
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(ushort);
+			return 0;
 		}
 	}
 
@@ -739,7 +738,7 @@ public class AkSoundEngine
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(ushort);
+			return 0;
 		}
 	}
 
@@ -750,7 +749,7 @@ public class AkSoundEngine
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(byte);
+			return 0;
 		}
 	}
 
@@ -761,18 +760,18 @@ public class AkSoundEngine
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(byte);
+			return 0;
 		}
 	}
 
 	public static uint AK_LE_NATIVE_BITSPERSAMPLE
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
@@ -783,7 +782,7 @@ public class AkSoundEngine
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
@@ -794,7 +793,7 @@ public class AkSoundEngine
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
@@ -805,7 +804,7 @@ public class AkSoundEngine
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(byte);
+			return 0;
 		}
 	}
 
@@ -816,7 +815,7 @@ public class AkSoundEngine
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(byte);
+			return 0;
 		}
 	}
 
@@ -827,7 +826,7 @@ public class AkSoundEngine
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -838,18 +837,18 @@ public class AkSoundEngine
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	public static int g_SpatialAudioPoolId
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -869,52 +868,52 @@ public class AkSoundEngine
 		}
 	}
 
-	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
-	[Calls(Type = typeof(AkCallbackManager.EventCallbackPackage), Member = "Create")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[Calls(Type = typeof(AkCallbackManager.EventCallbackPackage), Member = "Create")]
+	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public static uint DynamicSequenceOpen(GameObject in_gameObjectID, uint in_uFlags, AkCallbackManager.EventCallback in_pfnCallback, object in_pCookie, AkDynamicSequenceType in_eDynamicSequenceType)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkCallbackManager.EventCallbackPackage), Member = "Create")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[Calls(Type = typeof(AkCallbackManager.EventCallbackPackage), Member = "Create")]
 	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[CallsUnknownMethods(Count = 1)]
 	public static uint DynamicSequenceOpen(GameObject in_gameObjectID, uint in_uFlags, AkCallbackManager.EventCallback in_pfnCallback, object in_pCookie)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static uint DynamicSequenceOpen(GameObject in_gameObjectID)
 	{
-		return default(uint);
+		return 0u;
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static AKRESULT DynamicSequenceClose(uint in_playingID)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT DynamicSequencePlay(uint in_playingID, int in_uTransitionDuration, AkCurveInterpolation in_eFadeCurve)
 	{
 		return default(AKRESULT);
@@ -944,9 +943,9 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT DynamicSequencePause(uint in_playingID, int in_uTransitionDuration)
 	{
 		return default(AKRESULT);
@@ -976,17 +975,17 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static AKRESULT DynamicSequenceResume(uint in_playingID)
 	{
 		return default(AKRESULT);
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static AKRESULT DynamicSequenceStop(uint in_playingID, int in_uTransitionDuration, AkCurveInterpolation in_eFadeCurve)
 	{
 		return default(AKRESULT);
@@ -1016,20 +1015,20 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static AKRESULT DynamicSequenceGetPauseTimes(uint in_playingID, out uint out_uTime, out uint out_uDuration)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<uint, @null>(ref out_uTime) = null;
-		System.Runtime.CompilerServices.Unsafe.As<uint, @null>(ref out_uDuration) = null;
+		out_uTime = default(uint);
+		out_uDuration = default(uint);
 		return default(AKRESULT);
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(AkPlaylist), Member = ".ctor")]
 	[CalledBy(Type = typeof(GameAudioManager), Member = "PlayDynamicSequence")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AkPlaylist), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public static AkPlaylist DynamicSequenceLockPlaylist(uint in_playingID)
 	{
@@ -1044,24 +1043,24 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CalledBy(Type = typeof(AkGameObjListenerList), Member = "Remove")]
-	[CalledBy(Type = typeof(AkSoundEngineController), Member = "Init")]
-	[CalledBy(Type = typeof(AkGameObjListenerList), Member = "Add")]
-	[CalledBy(Type = typeof(AkSurfaceReflector), Member = "AddGeometrySet")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(AkSoundEngineController), Member = "ActivateAudio")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICallUserHook")]
+	[CalledBy(TypeFullName = "AkBankManager.BankHandle", Member = "LogLoadResult")]
+	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "TerminateSoundEngine")]
+	[CalledBy(Type = typeof(AkAudioListener.DefaultListenerList), Member = "Add")]
 	[CalledBy(Type = typeof(AkAudioListener.DefaultListenerList), Member = "Remove")]
 	[CalledBy(Type = typeof(AkGameObj), Member = "OnDestroy")]
-	[CalledBy(Type = typeof(AkAudioListener.DefaultListenerList), Member = "Add")]
-	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "TerminateSoundEngine")]
-	[CalledBy(Type = typeof(AkBankManager.BankHandle), Member = "LogLoadResult")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICallUserHook")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(AkGameObjListenerList), Member = "Add")]
+	[CalledBy(Type = typeof(AkGameObjListenerList), Member = "Remove")]
+	[CalledBy(Type = typeof(AkSoundEngineController), Member = "Init")]
+	[CalledBy(Type = typeof(AkSoundEngineController), Member = "ActivateAudio")]
+	[CalledBy(Type = typeof(AkSurfaceReflector), Member = "AddGeometrySet")]
 	[CallerCount(Count = 12)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool IsInitialized()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1080,9 +1079,9 @@ public class AkSoundEngine
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public static AkChannelConfig GetSpeakerConfiguration()
 	{
 		return null;
@@ -1093,7 +1092,7 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetPanningRule(out int out_ePanningRule, ulong in_idOutput)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref out_ePanningRule) = null;
+		out_ePanningRule = default(int);
 		return default(AKRESULT);
 	}
 
@@ -1102,7 +1101,7 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetPanningRule(out int out_ePanningRule)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref out_ePanningRule) = null;
+		out_ePanningRule = default(int);
 		return default(AKRESULT);
 	}
 
@@ -1114,20 +1113,20 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static AKRESULT SetPanningRule(AkPanningRule in_ePanningRule)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetSpeakerAngles(float[] io_pfSpeakerAngles, ref uint io_uNumAngles, out float out_fHeightAngle, ulong in_idOutput)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref out_fHeightAngle) = null;
+		out_fHeightAngle = default(float);
 		return default(AKRESULT);
 	}
 
@@ -1136,7 +1135,7 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetSpeakerAngles(float[] io_pfSpeakerAngles, ref uint io_uNumAngles, out float out_fHeightAngle)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref out_fHeightAngle) = null;
+		out_fHeightAngle = default(float);
 		return default(AKRESULT);
 	}
 
@@ -1148,17 +1147,17 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetSpeakerAngles(float[] in_pfSpeakerAngles, uint in_uNumAngles, float in_fHeightAngle)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetVolumeThreshold(float in_fVolumeThresholdDB)
 	{
 		return default(AKRESULT);
@@ -1172,222 +1171,240 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT RenderAudio(bool in_bAllowSyncRender)
 	{
 		return default(AKRESULT);
 	}
 
+	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "TerminateSoundEngine")]
+	[CalledBy(Type = typeof(AkInitializer), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(AkSoundEngineController), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(AkSoundEngineController), Member = "ActivateAudio")]
-	[CalledBy(Type = typeof(AkInitializer), Member = "LateUpdate")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "TerminateSoundEngine")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT RenderAudio()
 	{
 		return default(AKRESULT);
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static AKRESULT RegisterPluginDLL(string in_DllName, string in_DllPath)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT RegisterPluginDLL(string in_DllName)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(GameAudioManager), Member = "PlayDynamicSequence")]
 	[CalledBy(Type = typeof(NPCVoice), Member = "Play")]
 	[CalledBy(Type = typeof(PlayerVoice), Member = "Play")]
 	[CalledBy(Type = typeof(PlayerVoice), Member = "Queue")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static uint GetIDFromString(string in_pszString)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
-	[Calls(Type = typeof(AkCallbackManager.EventCallbackPackage), Member = "Create")]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[Calls(Type = typeof(AkCallbackManager.EventCallbackPackage), Member = "Create")]
+	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public static uint PostEvent(uint in_eventID, GameObject in_gameObjectID, uint in_uFlags, AkCallbackManager.EventCallback in_pfnCallback, object in_pCookie, uint in_cExternals, AkExternalSourceInfoArray in_pExternalSources, uint in_PlayingID)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
-	[Calls(Type = typeof(AkCallbackManager.EventCallbackPackage), Member = "Create")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[Calls(Type = typeof(AkCallbackManager.EventCallbackPackage), Member = "Create")]
+	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public static uint PostEvent(uint in_eventID, GameObject in_gameObjectID, uint in_uFlags, AkCallbackManager.EventCallback in_pfnCallback, object in_pCookie, uint in_cExternals, AkExternalSourceInfoArray in_pExternalSources)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(AK.Wwise.Event), Member = "Post")]
-	[CalledBy(Type = typeof(AK.Wwise.Event), Member = "Post")]
-	[CalledBy(Type = typeof(AkAudioInputManager), Member = "PostAudioInputEvent")]
-	[CalledBy(Type = typeof(PlayerVoice), Member = "StartNextRequest")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
-	[Calls(Type = typeof(AkCallbackManager.EventCallbackPackage), Member = "Create")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CalledBy(Type = typeof(NPCVoice), Member = "StartNextRequest")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(PlayerVoice), Member = "StartNextRequest")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CalledBy(Type = typeof(AkAudioInputManager), Member = "PostAudioInputEvent")]
+	[CalledBy(Type = typeof(AK.Wwise.Event), Member = "Post")]
+	[CalledBy(Type = typeof(AK.Wwise.Event), Member = "Post")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[Calls(Type = typeof(AkCallbackManager.EventCallbackPackage), Member = "Create")]
+	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public static uint PostEvent(uint in_eventID, GameObject in_gameObjectID, uint in_uFlags, AkCallbackManager.EventCallback in_pfnCallback, object in_pCookie)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Loading), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Story), Member = "OnNewEpisode")]
+	[CalledBy(Type = typeof(LoadScene), Member = "Activate")]
+	[CalledBy(Type = typeof(LoadingZone), Member = "PlayFadeOutSound")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "Start")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "PauseAudioImmediate")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "PauseAudio")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "UnPauseAudio")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "PlayMusic")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[CalledBy(Type = typeof(GameManager), Member = "FadeOutSceneAudio")]
+	[CalledBy(Type = typeof(GameManager), Member = "OnGameQuit")]
+	[CalledBy(Type = typeof(AK.Wwise.Event), Member = "Post")]
+	[CalledBy(Type = typeof(Action_PassTime), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_PassTime), Member = "OnUpdate")]
 	[CallerCount(Count = 21)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static uint PostEvent(uint in_eventID, GameObject in_gameObjectID)
 	{
-		return default(uint);
+		return 0u;
 	}
 
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[Calls(Type = typeof(AkCallbackManager.EventCallbackPackage), Member = "Create")]
 	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	public static uint PostEvent(string in_pszEventName, GameObject in_gameObjectID, uint in_uFlags, AkCallbackManager.EventCallback in_pfnCallback, object in_pCookie, uint in_cExternals, AkExternalSourceInfoArray in_pExternalSources, uint in_PlayingID)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(AkCallbackManager.EventCallbackPackage), Member = "Create")]
-	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[Calls(Type = typeof(AkCallbackManager.EventCallbackPackage), Member = "Create")]
+	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static uint PostEvent(string in_pszEventName, GameObject in_gameObjectID, uint in_uFlags, AkCallbackManager.EventCallback in_pfnCallback, object in_pCookie, uint in_cExternals, AkExternalSourceInfoArray in_pExternalSources)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(VoiceTracker), Member = "Start")]
-	[CalledBy(Type = typeof(AkAudioInputManager), Member = "PostAudioInputEvent")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[CalledBy(Type = typeof(PlayAudioTrigger), Member = "Play")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
-	[CalledBy(Type = typeof(GameAudioManager), Member = "PlayVoiceWithPositionTracking")]
-	[CalledBy(Type = typeof(GameAudioManager), Member = "PlaySoundWithPositionTracking")]
-	[CalledBy(Type = typeof(MoviePlayer), Member = "UpdatePrepare")]
-	[CalledBy(Type = typeof(PlayerCough), Member = "MaybeStart")]
-	[CalledBy(Type = typeof(Fear), Member = "StartAffliction")]
 	[CalledBy(Type = typeof(Anxiety), Member = "StartAffliction")]
-	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
-	[Calls(Type = typeof(AkCallbackManager.EventCallbackPackage), Member = "Create")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 12)]
+	[CalledBy(Type = typeof(Fear), Member = "StartAffliction")]
 	[CalledBy(Type = typeof(Keypad), Member = "ProcessInteraction")]
+	[CalledBy(Type = typeof(MoviePlayer), Member = "UpdatePrepare")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "PlaySoundWithPositionTracking")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "PlayVoiceWithPositionTracking")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
+	[CalledBy(Type = typeof(PlayerCough), Member = "MaybeStart")]
+	[CalledBy(Type = typeof(PlayAudioTrigger), Member = "Play")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CalledBy(Type = typeof(AkAudioInputManager), Member = "PostAudioInputEvent")]
+	[CalledBy(Type = typeof(VoiceTracker), Member = "Start")]
+	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[Calls(Type = typeof(AkCallbackManager.EventCallbackPackage), Member = "Create")]
+	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public static uint PostEvent(string in_pszEventName, GameObject in_gameObjectID, uint in_uFlags, AkCallbackManager.EventCallback in_pfnCallback, object in_pCookie)
 	{
-		return default(uint);
+		return 0u;
 	}
 
+	[CalledBy(Type = typeof(vp_Bullet), Member = "SpawnImpactEffects")]
+	[CalledBy(Type = typeof(AuroraScreenAudio), Member = "SetState")]
+	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "Update")]
+	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "SetState")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "PostAudioEvent")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "StopPreviousAudio")]
+	[CalledBy(Type = typeof(FlashlightItem), Member = "UpdateAudio")]
+	[CalledBy(Type = typeof(MillingMachine), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "ShowPanelAndPause")]
 	[CalledBy(Type = typeof(GameAudioManager), Member = "PlayMusic")]
 	[CalledBy(Type = typeof(GameAudioManager), Member = "PlayVoiceWithPositionTracking")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CalledBy(Type = typeof(PlayableBehaviourPlayAudio), Member = "PostStopAudioEvent")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "Play3DSound")]
 	[CalledBy(Type = typeof(GameAudioManager), Member = "FadeInAudioOnSceneStart")]
 	[CalledBy(Type = typeof(PlayableBehaviourPlayAudio), Member = "StopAudio")]
+	[CalledBy(Type = typeof(PlayableBehaviourPlayAudio), Member = "PostStopAudioEvent")]
 	[CalledBy(Type = typeof(Action_AudioEvent), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "Enable")]
-	[CalledBy(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[CalledBy(Type = typeof(MillingMachine), Member = "Update")]
-	[CalledBy(Type = typeof(AuroraScreenAudio), Member = "SetState")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "StopPreviousAudio")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "PostAudioEvent")]
-	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "SetState")]
-	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "Update")]
-	[CalledBy(Type = typeof(vp_Bullet), Member = "SpawnImpactEffects")]
-	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 18)]
-	[CalledBy(Type = typeof(FlashlightItem), Member = "UpdateAudio")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[Calls(Type = typeof(AkCallbackManager), Member = "SetLastAddedPlayingID")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static uint PostEvent(string in_pszEventName, GameObject in_gameObjectID)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ExecuteActionOnEvent(uint in_eventID, AkActionOnEventType in_ActionType, GameObject in_gameObjectID, int in_uTransitionDuration, AkCurveInterpolation in_eFadeCurve, uint in_PlayingID)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ExecuteActionOnEvent(uint in_eventID, AkActionOnEventType in_ActionType, GameObject in_gameObjectID, int in_uTransitionDuration, AkCurveInterpolation in_eFadeCurve)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ExecuteActionOnEvent(uint in_eventID, AkActionOnEventType in_ActionType, GameObject in_gameObjectID, int in_uTransitionDuration)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ExecuteActionOnEvent(uint in_eventID, AkActionOnEventType in_ActionType, GameObject in_gameObjectID)
 	{
@@ -1402,20 +1419,20 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ExecuteActionOnEvent(string in_pszEventName, AkActionOnEventType in_ActionType, GameObject in_gameObjectID, int in_uTransitionDuration, AkCurveInterpolation in_eFadeCurve, uint in_PlayingID)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ExecuteActionOnEvent(string in_pszEventName, AkActionOnEventType in_ActionType, GameObject in_gameObjectID, int in_uTransitionDuration, AkCurveInterpolation in_eFadeCurve)
 	{
@@ -1423,20 +1440,20 @@ public class AkSoundEngine
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ExecuteActionOnEvent(string in_pszEventName, AkActionOnEventType in_ActionType, GameObject in_gameObjectID, int in_uTransitionDuration)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ExecuteActionOnEvent(string in_pszEventName, AkActionOnEventType in_ActionType, GameObject in_gameObjectID)
 	{
 		return default(AKRESULT);
@@ -1451,20 +1468,20 @@ public class AkSoundEngine
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static AKRESULT PostMIDIOnEvent(uint in_eventID, GameObject in_gameObjectID, AkMIDIPostArray in_pPosts, ushort in_uNumPosts)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT StopMIDIOnEvent(uint in_eventID, GameObject in_gameObjectID)
 	{
 		return default(AKRESULT);
@@ -1502,9 +1519,9 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT UnpinEventInStreamCache(uint in_eventID)
 	{
 		return default(AKRESULT);
@@ -1523,8 +1540,8 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetBufferStatusForPinnedEvent(uint in_eventID, out float out_fPercentBuffered, out int out_bCachePinnedMemoryFull)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref out_fPercentBuffered) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref out_bCachePinnedMemoryFull) = null;
+		out_fPercentBuffered = default(float);
+		out_bCachePinnedMemoryFull = default(int);
 		return default(AKRESULT);
 	}
 
@@ -1533,104 +1550,104 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 4)]
 	public static AKRESULT GetBufferStatusForPinnedEvent(string in_pszEventName, out float out_fPercentBuffered, out int out_bCachePinnedMemoryFull)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref out_fPercentBuffered) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref out_bCachePinnedMemoryFull) = null;
+		out_fPercentBuffered = default(float);
+		out_bCachePinnedMemoryFull = default(int);
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SeekOnEvent(uint in_eventID, GameObject in_gameObjectID, int in_iPosition, bool in_bSeekToNearestMarker, uint in_PlayingID)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SeekOnEvent(uint in_eventID, GameObject in_gameObjectID, int in_iPosition, bool in_bSeekToNearestMarker)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SeekOnEvent(uint in_eventID, GameObject in_gameObjectID, int in_iPosition)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SeekOnEvent(string in_pszEventName, GameObject in_gameObjectID, int in_iPosition, bool in_bSeekToNearestMarker, uint in_PlayingID)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SeekOnEvent(string in_pszEventName, GameObject in_gameObjectID, int in_iPosition, bool in_bSeekToNearestMarker)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SeekOnEvent(string in_pszEventName, GameObject in_gameObjectID, int in_iPosition)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SeekOnEvent(uint in_eventID, GameObject in_gameObjectID, float in_fPercent, bool in_bSeekToNearestMarker, uint in_PlayingID)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SeekOnEvent(uint in_eventID, GameObject in_gameObjectID, float in_fPercent, bool in_bSeekToNearestMarker)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SeekOnEvent(uint in_eventID, GameObject in_gameObjectID, float in_fPercent)
 	{
 		return default(AKRESULT);
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SeekOnEvent(string in_pszEventName, GameObject in_gameObjectID, float in_fPercent, bool in_bSeekToNearestMarker, uint in_PlayingID)
@@ -1638,20 +1655,20 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SeekOnEvent(string in_pszEventName, GameObject in_gameObjectID, float in_fPercent, bool in_bSeekToNearestMarker)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SeekOnEvent(string in_pszEventName, GameObject in_gameObjectID, float in_fPercent)
 	{
@@ -1659,24 +1676,24 @@ public class AkSoundEngine
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkCallbackManager), Member = "RemoveEventCallbackCookie")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void CancelEventCallbackCookie(object in_pCookie)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CancelEventCallbackGameObject(GameObject in_gameObjectID)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkCallbackManager), Member = "RemoveEventCallback")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void CancelEventCallback(uint in_playingID)
 	{
 	}
@@ -1686,23 +1703,23 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetSourcePlayPosition(uint in_PlayingID, out int out_puPosition, bool in_bExtrapolate)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref out_puPosition) = null;
+		out_puPosition = default(int);
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(TLD_TimelineDirector), Member = "TryGetTimeFromAudio")]
-	[CalledBy(Type = typeof(PlayableBehaviourSay), Member = "TryGetCurrentTimelineTimeFromAudio")]
-	[CalledBy(Type = typeof(PlayableAssetSay), Member = "TryGetCurrentTimelineTimeFromAudio")]
-	[CalledBy(Type = typeof(PlayerVoice), Member = "UpdateActive")]
-	[CalledBy(Type = typeof(CinematicManager), Member = "TryGetTimeFromAudio")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "UpdatePlayback")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 7)]
+	[CalledBy(Type = typeof(CinematicManager), Member = "TryGetTimeFromAudio")]
 	[CalledBy(Type = typeof(CinematicTrack), Member = "UpdateAudioAndMaybeAnimationTime")]
+	[CalledBy(Type = typeof(PlayerVoice), Member = "UpdateActive")]
+	[CalledBy(Type = typeof(PlayableAssetSay), Member = "TryGetCurrentTimelineTimeFromAudio")]
+	[CalledBy(Type = typeof(PlayableBehaviourSay), Member = "TryGetCurrentTimelineTimeFromAudio")]
+	[CalledBy(Type = typeof(TLD_TimelineDirector), Member = "TryGetTimeFromAudio")]
+	[CallerCount(Count = 7)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetSourcePlayPosition(uint in_PlayingID, out int out_puPosition)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref out_puPosition) = null;
+		out_puPosition = default(int);
 		return default(AKRESULT);
 	}
 
@@ -1711,25 +1728,25 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetSourceStreamBuffering(uint in_PlayingID, out int out_buffering, out int out_bIsBuffering)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref out_buffering) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref out_bIsBuffering) = null;
+		out_buffering = default(int);
+		out_bIsBuffering = default(int);
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void StopAll(GameObject in_gameObjectID)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "StopAll")]
 	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "TerminateSoundEngine")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(GameAudioManager), Member = "StopAll")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void StopAll()
 	{
 	}
@@ -1741,23 +1758,23 @@ public class AkSoundEngine
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 147)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void StopPlayingID(uint in_playingID, int in_uTransitionDuration)
 	{
 	}
 
-	[CalledBy(Type = typeof(FlashlightItem), Member = "UpdateAudio")]
-	[CalledBy(Type = typeof(Fire), Member = "StopFireLoopImmediate")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Wind), Member = "ForceStopAudioLoop")]
-	[CalledBy(Type = typeof(CookingPotItem), Member = "StartInspectMode")]
+	[CalledBy(Type = typeof(AmbientEmitter), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(CustomAudioEmitter), Member = "Enable")]
+	[CalledBy(Type = typeof(EmergencyStim), Member = "ApplyEmergencyStimExitEffects")]
+	[CalledBy(Type = typeof(Wind), Member = "ForceStopAudioLoop")]
+	[CalledBy(Type = typeof(Fire), Member = "StopFireLoopImmediate")]
+	[CalledBy(Type = typeof(CookingPotItem), Member = "StartInspectMode")]
+	[CalledBy(Type = typeof(FlashlightItem), Member = "UpdateAudio")]
 	[CallerCount(Count = 7)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(EmergencyStim), Member = "ApplyEmergencyStimExitEffects")]
-	[CalledBy(Type = typeof(AmbientEmitter), Member = "OnDestroy")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void StopPlayingID(uint in_playingID)
 	{
 	}
@@ -1781,14 +1798,14 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static bool GetBackgroundMusicMute()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SendPluginCustomGameData(uint in_busID, GameObject in_busObjectID, AkPluginType in_eType, uint in_uCompanyID, uint in_uPluginID, IntPtr in_pData, uint in_uSizeInBytes)
 	{
 		return default(AKRESULT);
@@ -1802,29 +1819,29 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[CalledBy(Type = typeof(AkAmbient), Member = "OnEnable")]
 	[CalledBy(Type = typeof(AkAmbient), Member = "OnDisable")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static AKRESULT SetMultiplePositions(GameObject in_GameObjectID, AkPositionArray in_pPositions, ushort in_NumPositions, AkMultiPositionType in_eMultiPositionType)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static AKRESULT SetMultiplePositions(GameObject in_GameObjectID, AkPositionArray in_pPositions, ushort in_NumPositions)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static AKRESULT SetMultiplePositions(GameObject in_GameObjectID, AkChannelEmitterArray in_pPositions, ushort in_NumPositions, AkMultiPositionType in_eMultiPositionType)
 	{
@@ -1832,16 +1849,16 @@ public class AkSoundEngine
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static AKRESULT SetMultiplePositions(GameObject in_GameObjectID, AkChannelEmitterArray in_pPositions, ushort in_NumPositions)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetScalingFactor(GameObject in_GameObjectID, float in_fAttenuationScalingFactor)
@@ -1849,11 +1866,11 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "TerminateSoundEngine")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "ResetSoundEngine")]
+	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "TerminateSoundEngine")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ClearBanks()
 	{
 		return default(AKRESULT);
@@ -1867,22 +1884,22 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CalledBy(Type = typeof(AkBankManager.DecodableBankHandle), Member = "DoLoadBank")]
-	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "LoadInitBank")]
-	[CalledBy(Type = typeof(AkBankManager.BankHandle), Member = "DoLoadBank")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(SoundbankLoader), Member = "TryLoadSoundbankByName")]
+	[CalledBy(TypeFullName = "AkBankManager.BankHandle", Member = "DoLoadBank")]
+	[CalledBy(TypeFullName = "AkBankManager.DecodableBankHandle", Member = "DoLoadBank")]
+	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "LoadInitBank")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT LoadBank(string in_pszString, int in_memPoolId, out uint out_bankID)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<uint, @null>(ref out_bankID) = null;
+		out_bankID = default(uint);
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT LoadBank(uint in_bankID, int in_memPoolId)
 	{
 		return default(AKRESULT);
@@ -1893,7 +1910,7 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT LoadBank(IntPtr in_pInMemoryBankPtr, uint in_uInMemoryBankSize, out uint out_bankID)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<uint, @null>(ref out_bankID) = null;
+		out_bankID = default(uint);
 		return default(AKRESULT);
 	}
 
@@ -1902,47 +1919,47 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT LoadBank(IntPtr in_pInMemoryBankPtr, uint in_uInMemoryBankSize, int in_uPoolForBankMedia, out uint out_bankID)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<uint, @null>(ref out_bankID) = null;
+		out_bankID = default(uint);
 		return default(AKRESULT);
 	}
 
+	[CalledBy(TypeFullName = "AkBankManager.AsyncBankHandle", Member = "DoLoadBank")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkCallbackManager.BankCallbackPackage), Member = ".ctor")]
-	[CalledBy(Type = typeof(AkBankManager.AsyncBankHandle), Member = "DoLoadBank")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public static AKRESULT LoadBank(string in_pszString, AkCallbackManager.BankCallback in_pfnBankCallback, object in_pCookie, int in_memPoolId, out uint out_bankID)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<uint, @null>(ref out_bankID) = null;
+		out_bankID = default(uint);
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 8)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkCallbackManager.BankCallbackPackage), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 8)]
 	public static AKRESULT LoadBank(uint in_bankID, AkCallbackManager.BankCallback in_pfnBankCallback, object in_pCookie, int in_memPoolId)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkCallbackManager.BankCallbackPackage), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public static AKRESULT LoadBank(IntPtr in_pInMemoryBankPtr, uint in_uInMemoryBankSize, AkCallbackManager.BankCallback in_pfnBankCallback, object in_pCookie, out uint out_bankID)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<uint, @null>(ref out_bankID) = null;
+		out_bankID = default(uint);
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkCallbackManager.BankCallbackPackage), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public static AKRESULT LoadBank(IntPtr in_pInMemoryBankPtr, uint in_uInMemoryBankSize, AkCallbackManager.BankCallback in_pfnBankCallback, object in_pCookie, int in_uPoolForBankMedia, out uint out_bankID)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<uint, @null>(ref out_bankID) = null;
+		out_bankID = default(uint);
 		return default(AKRESULT);
 	}
 
@@ -1951,13 +1968,13 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT UnloadBank(string in_pszString, IntPtr in_pInMemoryBankPtr, out int out_pMemPoolId)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref out_pMemPoolId) = null;
+		out_pMemPoolId = default(int);
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT UnloadBank(string in_pszString, IntPtr in_pInMemoryBankPtr)
 	{
 		return default(AKRESULT);
@@ -1968,14 +1985,14 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT UnloadBank(uint in_bankID, IntPtr in_pInMemoryBankPtr, out int out_pMemPoolId)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref out_pMemPoolId) = null;
+		out_pMemPoolId = default(int);
 		return default(AKRESULT);
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(SoundbankLoader), Member = "TryUnloadSoundbank")]
 	[CalledBy(Type = typeof(AkMemBankLoader), Member = "OnDestroy")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT UnloadBank(uint in_bankID, IntPtr in_pInMemoryBankPtr)
 	{
@@ -1983,28 +2000,28 @@ public class AkSoundEngine
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkCallbackManager.BankCallbackPackage), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public static AKRESULT UnloadBank(string in_pszString, IntPtr in_pInMemoryBankPtr, AkCallbackManager.BankCallback in_pfnBankCallback, object in_pCookie)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(AkBankManager.DecodableBankHandle), Member = "UnloadBank")]
-	[CalledBy(Type = typeof(AkBankManager.BankHandle), Member = "UnloadBank")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(TypeFullName = "AkBankManager.BankHandle", Member = "UnloadBank")]
+	[CalledBy(TypeFullName = "AkBankManager.DecodableBankHandle", Member = "UnloadBank")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(AkCallbackManager.BankCallbackPackage), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public static AKRESULT UnloadBank(uint in_bankID, IntPtr in_pInMemoryBankPtr, AkCallbackManager.BankCallback in_pfnBankCallback, object in_pCookie)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkCallbackManager), Member = "RemoveBankCallback")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void CancelBankCallbackCookie(object in_pCookie)
 	{
 	}
@@ -2017,17 +2034,17 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT PrepareBank(AkPreparationType in_PreparationType, string in_pszString)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT PrepareBank(AkPreparationType in_PreparationType, uint in_bankID, AkBankContent in_uFlags)
 	{
 		return default(AKRESULT);
@@ -2042,8 +2059,8 @@ public class AkSoundEngine
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkCallbackManager.BankCallbackPackage), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public static AKRESULT PrepareBank(AkPreparationType in_PreparationType, string in_pszString, AkCallbackManager.BankCallback in_pfnBankCallback, object in_pCookie, AkBankContent in_uFlags)
 	{
@@ -2051,26 +2068,26 @@ public class AkSoundEngine
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkCallbackManager.BankCallbackPackage), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public static AKRESULT PrepareBank(AkPreparationType in_PreparationType, string in_pszString, AkCallbackManager.BankCallback in_pfnBankCallback, object in_pCookie)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 8)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkCallbackManager.BankCallbackPackage), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 8)]
 	public static AKRESULT PrepareBank(AkPreparationType in_PreparationType, uint in_bankID, AkCallbackManager.BankCallback in_pfnBankCallback, object in_pCookie, AkBankContent in_uFlags)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkCallbackManager.BankCallbackPackage), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public static AKRESULT PrepareBank(AkPreparationType in_PreparationType, uint in_bankID, AkCallbackManager.BankCallback in_pfnBankCallback, object in_pCookie)
 	{
@@ -2085,14 +2102,13 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Buffer), Member = "Memcpy")]
-	[Calls(Type = typeof(Marshal), Member = "Copy")]
-	[Calls(Type = typeof(string), Member = "ToCharArray")]
-	[Calls(Type = typeof(Buffer), Member = "Memcpy")]
-	[Calls(Type = typeof(Marshal), Member = "AllocHGlobal")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Marshal), Member = "AllocHGlobal")]
+	[Calls(Type = typeof(Buffer), Member = "Memcpy")]
+	[Calls(Type = typeof(string), Member = "ToCharArray")]
+	[Calls(Type = typeof(Marshal), Member = "Copy")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	public static AKRESULT PrepareEvent(AkPreparationType in_PreparationType, string[] in_ppszString, uint in_uNumEvent)
 	{
 		return default(AKRESULT);
@@ -2106,23 +2122,22 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(AkCallbackManager.BankCallbackPackage), Member = ".ctor")]
-	[Calls(Type = typeof(Marshal), Member = "Copy")]
-	[Calls(Type = typeof(string), Member = "ToCharArray")]
-	[Calls(Type = typeof(Buffer), Member = "Memcpy")]
-	[Calls(Type = typeof(Marshal), Member = "AllocHGlobal")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Marshal), Member = "AllocHGlobal")]
 	[Calls(Type = typeof(Buffer), Member = "Memcpy")]
+	[Calls(Type = typeof(string), Member = "ToCharArray")]
+	[Calls(Type = typeof(Marshal), Member = "Copy")]
+	[Calls(Type = typeof(AkCallbackManager.BankCallbackPackage), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 16)]
 	public static AKRESULT PrepareEvent(AkPreparationType in_PreparationType, string[] in_ppszString, uint in_uNumEvent, AkCallbackManager.BankCallback in_pfnBankCallback, object in_pCookie)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkCallbackManager.BankCallbackPackage), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public static AKRESULT PrepareEvent(AkPreparationType in_PreparationType, uint[] in_pEventID, uint in_uNumEvent, AkCallbackManager.BankCallback in_pfnBankCallback, object in_pCookie)
 	{
@@ -2137,22 +2152,21 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static AKRESULT UnsetMedia(AkSourceSettingsArray in_pSourceSettings, uint in_uNumSourceSettings)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(Marshal), Member = "Copy")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Marshal), Member = "AllocHGlobal")]
 	[Calls(Type = typeof(Buffer), Member = "Memcpy")]
 	[Calls(Type = typeof(string), Member = "ToCharArray")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Marshal), Member = "AllocHGlobal")]
+	[Calls(Type = typeof(Marshal), Member = "Copy")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Buffer), Member = "Memcpy")]
+	[CallsUnknownMethods(Count = 9)]
 	public static AKRESULT PrepareGameSyncs(AkPreparationType in_PreparationType, AkGroupType in_eGameSyncType, string in_pszGroupName, string[] in_ppszGameSyncName, uint in_uNumGameSyncs)
 	{
 		return default(AKRESULT);
@@ -2166,124 +2180,119 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(AkCallbackManager.BankCallbackPackage), Member = ".ctor")]
-	[Calls(Type = typeof(Buffer), Member = "Memcpy")]
-	[Calls(Type = typeof(Marshal), Member = "Copy")]
-	[Calls(Type = typeof(string), Member = "ToCharArray")]
-	[Calls(Type = typeof(Buffer), Member = "Memcpy")]
-	[Calls(Type = typeof(Marshal), Member = "AllocHGlobal")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Marshal), Member = "AllocHGlobal")]
+	[Calls(Type = typeof(Buffer), Member = "Memcpy")]
+	[Calls(Type = typeof(string), Member = "ToCharArray")]
+	[Calls(Type = typeof(Marshal), Member = "Copy")]
+	[Calls(Type = typeof(AkCallbackManager.BankCallbackPackage), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 16)]
 	public static AKRESULT PrepareGameSyncs(AkPreparationType in_PreparationType, AkGroupType in_eGameSyncType, string in_pszGroupName, string[] in_ppszGameSyncName, uint in_uNumGameSyncs, AkCallbackManager.BankCallback in_pfnBankCallback, object in_pCookie)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkCallbackManager.BankCallbackPackage), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public static AKRESULT PrepareGameSyncs(AkPreparationType in_PreparationType, AkGroupType in_eGameSyncType, uint in_GroupID, uint[] in_paGameSyncID, uint in_uNumGameSyncs, AkCallbackManager.BankCallback in_pfnBankCallback, object in_pCookie)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(AkGameObjListenerList), Member = "SetUseDefaultListeners")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[CalledBy(Type = typeof(AkGameObjListenerList), Member = "Add")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT AddListener(GameObject in_emitterGameObj, GameObject in_listenerGameObj)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT RemoveListener(GameObject in_emitterGameObj, GameObject in_listenerGameObj)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT AddDefaultListener(GameObject in_listenerGameObj)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT RemoveDefaultListener(GameObject in_listenerGameObj)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(AkGameObjListenerList), Member = "Refresh")]
-	[CalledBy(Type = typeof(AkGameObjListenerList), Member = "SetUseDefaultListeners")]
 	[CalledBy(Type = typeof(AkGameObj), Member = "MaybeUpdateAuxValues")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[CalledBy(Type = typeof(AkGameObjListenerList), Member = "SetUseDefaultListeners")]
+	[CalledBy(Type = typeof(AkGameObjListenerList), Member = "Refresh")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ResetListenersToDefault(GameObject in_emitterGameObj)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[Calls(Type = typeof(AkChannelConfig), Member = "getCPtr")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetListenerSpatialization(GameObject in_uListenerID, bool in_bSpatialized, AkChannelConfig in_channelConfig, float[] in_pVolumeOffsets)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[Calls(Type = typeof(AkChannelConfig), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetListenerSpatialization(GameObject in_uListenerID, bool in_bSpatialized, AkChannelConfig in_channelConfig)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetRTPCValue(uint in_rtpcID, float in_value, GameObject in_gameObjectID, int in_uValueChangeDuration, AkCurveInterpolation in_eFadeCurve, bool in_bBypassInternalValueInterpolation)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetRTPCValue(uint in_rtpcID, float in_value, GameObject in_gameObjectID, int in_uValueChangeDuration, AkCurveInterpolation in_eFadeCurve)
 	{
@@ -2291,25 +2300,25 @@ public class AkSoundEngine
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetRTPCValue(uint in_rtpcID, float in_value, GameObject in_gameObjectID, int in_uValueChangeDuration)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(RTPC), Member = "SetValue")]
-	[CalledBy(Type = typeof(AkRTPCPlayableBehaviour), Member = "ProcessFrame")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "SetIndoorEnvironmentSwitch")]
 	[CalledBy(Type = typeof(GameAudioManager), Member = "SetOutdoorEnvironmentSwitch")]
 	[CalledBy(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(AkRTPCPlayableBehaviour), Member = "ProcessFrame")]
+	[CalledBy(Type = typeof(RTPC), Member = "SetValue")]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(GameAudioManager), Member = "SetIndoorEnvironmentSwitch")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetRTPCValue(uint in_rtpcID, float in_value, GameObject in_gameObjectID)
 	{
 		return default(AKRESULT);
@@ -2324,29 +2333,29 @@ public class AkSoundEngine
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetRTPCValue(string in_pszRtpcName, float in_value, GameObject in_gameObjectID, int in_uValueChangeDuration, AkCurveInterpolation in_eFadeCurve, bool in_bBypassInternalValueInterpolation)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetRTPCValue(string in_pszRtpcName, float in_value, GameObject in_gameObjectID, int in_uValueChangeDuration, AkCurveInterpolation in_eFadeCurve)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetRTPCValue(string in_pszRtpcName, float in_value, GameObject in_gameObjectID, int in_uValueChangeDuration)
 	{
@@ -2354,26 +2363,26 @@ public class AkSoundEngine
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetRTPCValue(string in_pszRtpcName, float in_value, GameObject in_gameObjectID)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetRTPCValue(string in_pszRtpcName, float in_value)
 	{
 		return default(AKRESULT);
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static AKRESULT SetRTPCValueByPlayingID(uint in_rtpcID, float in_value, uint in_playingID, int in_uValueChangeDuration, AkCurveInterpolation in_eFadeCurve, bool in_bBypassInternalValueInterpolation)
 	{
 		return default(AKRESULT);
@@ -2411,9 +2420,9 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static AKRESULT SetRTPCValueByPlayingID(string in_pszRtpcName, float in_value, uint in_playingID, int in_uValueChangeDuration, AkCurveInterpolation in_eFadeCurve)
 	{
 		return default(AKRESULT);
@@ -2436,66 +2445,66 @@ public class AkSoundEngine
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ResetRTPCValue(uint in_rtpcID, GameObject in_gameObjectID, int in_uValueChangeDuration, AkCurveInterpolation in_eFadeCurve, bool in_bBypassInternalValueInterpolation)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ResetRTPCValue(uint in_rtpcID, GameObject in_gameObjectID, int in_uValueChangeDuration, AkCurveInterpolation in_eFadeCurve)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ResetRTPCValue(uint in_rtpcID, GameObject in_gameObjectID, int in_uValueChangeDuration)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ResetRTPCValue(uint in_rtpcID, GameObject in_gameObjectID)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ResetRTPCValue(uint in_rtpcID)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ResetRTPCValue(string in_pszRtpcName, GameObject in_gameObjectID, int in_uValueChangeDuration, AkCurveInterpolation in_eFadeCurve, bool in_bBypassInternalValueInterpolation)
 	{
 		return default(AKRESULT);
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ResetRTPCValue(string in_pszRtpcName, GameObject in_gameObjectID, int in_uValueChangeDuration, AkCurveInterpolation in_eFadeCurve)
@@ -2503,20 +2512,20 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ResetRTPCValue(string in_pszRtpcName, GameObject in_gameObjectID, int in_uValueChangeDuration)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT ResetRTPCValue(string in_pszRtpcName, GameObject in_gameObjectID)
 	{
@@ -2531,117 +2540,113 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
+	[CalledBy(Type = typeof(Condition), Member = "MaybePlayPlayerInjuredVoiceOver")]
+	[CalledBy(Type = typeof(Fire), Member = "PlayStartingFireVoiceEvent")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAccessibilityOptions")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "SetCookingSlotSwitch")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "SetMaterialSwitch")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "SetCuttingToolSwitch")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "SetWeaponTypeSwitch")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "SetFootwearSwitch")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "SetCramponsSwitch")]
 	[CalledBy(Type = typeof(GameAudioManager), Member = "SetIndoorEnvironmentSwitch")]
 	[CalledBy(Type = typeof(GameAudioManager), Member = "SetOutdoorEnvironmentSwitch")]
 	[CalledBy(Type = typeof(GameAudioManager), Member = "SetSwearFilterSwitchOnEmitter")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "SetSoundSwitch")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "MaybePlayInspectModeVoiceOver")]
-	[CalledBy(Type = typeof(Switch), Member = "SetValue")]
 	[CalledBy(Type = typeof(PlayerVoice), Member = "SetPlayerVoicePersona")]
 	[CalledBy(Type = typeof(AkSwitch), Member = "HandleEvent")]
-	[CalledBy(Type = typeof(GameAudioManager), Member = "SetCramponsSwitch")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerVoice), Member = "SetPlayerVoicePersona")]
-	[CalledBy(Type = typeof(GameAudioManager), Member = "SetFootwearSwitch")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "SetSoundSwitch")]
-	[CalledBy(Type = typeof(GameAudioManager), Member = "SetCuttingToolSwitch")]
-	[CalledBy(Type = typeof(GameAudioManager), Member = "SetMaterialSwitch")]
-	[CalledBy(Type = typeof(GameAudioManager), Member = "SetCookingSlotSwitch")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAccessibilityOptions")]
-	[CalledBy(Type = typeof(Fire), Member = "PlayStartingFireVoiceEvent")]
-	[CalledBy(Type = typeof(Condition), Member = "MaybePlayPlayerInjuredVoiceOver")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Switch), Member = "SetValue")]
 	[CallerCount(Count = 18)]
-	[CalledBy(Type = typeof(GameAudioManager), Member = "SetWeaponTypeSwitch")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetSwitch(uint in_switchGroup, uint in_switchState, GameObject in_gameObjectID)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetSwitch(string in_pszSwitchGroup, string in_pszSwitchState, GameObject in_gameObjectID)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT PostTrigger(uint in_triggerID, GameObject in_gameObjectID)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT PostTrigger(string in_pszTrigger, GameObject in_gameObjectID)
 	{
 		return default(AKRESULT);
 	}
 
-	[CalledBy(Type = typeof(GameAudioManager), Member = "SetNoOcclusion")]
-	[CalledBy(Type = typeof(AkState), Member = "HandleEvent")]
-	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "SendWeatherStateToWise")]
-	[CalledBy(Type = typeof(GameManager), Member = "SetAudioModeForLoadedScene")]
-	[CalledBy(Type = typeof(GameManager), Member = "SetAudioModeForLoadedScene")]
-	[CalledBy(Type = typeof(GameAudioManager), Member = "SetMildOcclusion")]
-	[CalledBy(Type = typeof(State), Member = "SetValue")]
-	[CalledBy(Type = typeof(GameAudioManager), Member = "SetHeavyOcclusion")]
-	[CalledBy(Type = typeof(GameAudioManager), Member = "UpdateAudioOcclusion")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAccessibilityOptions")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 11)]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "UpdateAudioOcclusion")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "SetHeavyOcclusion")]
 	[CalledBy(Type = typeof(GameAudioManager), Member = "SetMediumOcclusion")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "SetMildOcclusion")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "SetNoOcclusion")]
+	[CalledBy(Type = typeof(GameManager), Member = "SetAudioModeForLoadedScene")]
+	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "SendWeatherStateToWise")]
+	[CalledBy(Type = typeof(AkState), Member = "HandleEvent")]
+	[CalledBy(Type = typeof(State), Member = "SetValue")]
+	[CallerCount(Count = 11)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetState(uint in_stateGroup, uint in_state)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetState(string in_pszStateGroup, string in_pszState)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_SetGameObjectAuxSendValues")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetGameObjectAuxSendValues(GameObject in_gameObjectID, AkAuxSendArray in_aAuxSendValues, uint in_uNumSendValues)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetGameObjectOutputBusVolume(GameObject in_emitterObjID, GameObject in_listenerObjID, float in_fControlValue)
 	{
 		return default(AKRESULT);
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static AKRESULT SetActorMixerEffect(uint in_audioNodeID, uint in_uFXIndex, uint in_shareSetID)
 	{
 		return default(AKRESULT);
@@ -2671,26 +2676,26 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetMixer(string in_pszBusName, uint in_shareSetID)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkChannelConfig), Member = "getCPtr")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkChannelConfig), Member = "getCPtr")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetBusConfig(uint in_audioNodeID, AkChannelConfig in_channelConfig)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkChannelConfig), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetBusConfig(string in_pszBusName, AkChannelConfig in_channelConfig)
 	{
@@ -2698,24 +2703,20 @@ public class AkSoundEngine
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetObjectObstructionAndOcclusion(GameObject in_EmitterID, GameObject in_ListenerID, float in_fObstructionLevel, float in_fOcclusionLevel)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static AKRESULT SetMultipleObstructionAndOcclusion(GameObject in_EmitterID, GameObject in_uListenerID, AkObstructionOcclusionValuesArray in_fObstructionOcclusionValues, uint in_uNumOcclusionObstruction)
 	{
 		return default(AKRESULT);
@@ -2737,17 +2738,17 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public static AKRESULT AddOutputCaptureMarker(string in_MarkerText)
 	{
 		return default(AKRESULT);
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static AKRESULT StartProfilerCapture(string in_CaptureFileName)
 	{
 		return default(AKRESULT);
@@ -2774,7 +2775,7 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static ulong GetOutputID(uint in_idShareset, uint in_idDevice)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
 	[CallerCount(Count = 0)]
@@ -2782,20 +2783,20 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 4)]
 	public static ulong GetOutputID(string in_szShareSet, uint in_idDevice)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetBusDevice(uint in_idBus, uint in_idNewDevice)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_SetBusDevice__SWIG_1")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static AKRESULT SetBusDevice(string in_BusName, string in_DeviceName)
 	{
 		return default(AKRESULT);
@@ -2825,9 +2826,9 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT WakeupFromSuspend()
 	{
 		return default(AKRESULT);
@@ -2838,52 +2839,52 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static uint GetBufferTick()
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSegmentInfo), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetPlayingSegmentInfo(uint in_PlayingID, AkSegmentInfo out_segmentInfo, bool in_bExtrapolate)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSegmentInfo), Member = "getCPtr")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSegmentInfo), Member = "getCPtr")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetPlayingSegmentInfo(uint in_PlayingID, AkSegmentInfo out_segmentInfo)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT PostCode(AkMonitorErrorCode in_eError, AkMonitorErrorLevel in_eErrorLevel, uint in_playingID, GameObject in_gameObjID, uint in_audioNodeID, bool in_bIsBus)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT PostCode(AkMonitorErrorCode in_eError, AkMonitorErrorLevel in_eErrorLevel, uint in_playingID, GameObject in_gameObjID, uint in_audioNodeID)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT PostCode(AkMonitorErrorCode in_eError, AkMonitorErrorLevel in_eErrorLevel, uint in_playingID, GameObject in_gameObjID)
 	{
 		return default(AKRESULT);
@@ -2906,29 +2907,29 @@ public class AkSoundEngine
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT PostString(string in_pszError, AkMonitorErrorLevel in_eErrorLevel, uint in_playingID, GameObject in_gameObjID, uint in_audioNodeID, bool in_bIsBus)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT PostString(string in_pszError, AkMonitorErrorLevel in_eErrorLevel, uint in_playingID, GameObject in_gameObjID, uint in_audioNodeID)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT PostString(string in_pszError, AkMonitorErrorLevel in_eErrorLevel, uint in_playingID, GameObject in_gameObjID)
 	{
@@ -2943,20 +2944,20 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT PostString(string in_pszError, AkMonitorErrorLevel in_eErrorLevel)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static int GetTimeStamp()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -2964,12 +2965,12 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static uint GetNumNonZeroBits(uint in_uWord)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkThreadProperties), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void AkGetDefaultHighPriorityThreadProperties(AkThreadProperties out_threadProperties)
 	{
@@ -2980,15 +2981,15 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static uint ResolveDialogueEvent(uint in_eventID, uint[] in_aArgumentValues, uint in_uNumArguments, uint in_idSequence)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static uint ResolveDialogueEvent(uint in_eventID, uint[] in_aArgumentValues, uint in_uNumArguments)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -2996,7 +2997,7 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetDialogueEventCustomPropertyValue(uint in_eventID, uint in_uPropID, out int out_iValue)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref out_iValue) = null;
+		out_iValue = default(int);
 		return default(AKRESULT);
 	}
 
@@ -3005,172 +3006,168 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetDialogueEventCustomPropertyValue(uint in_eventID, uint in_uPropID, out float out_fValue)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref out_fValue) = null;
+		out_fValue = default(float);
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkTransform), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetPosition(GameObject in_GameObjectID, AkTransform out_rPosition)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkTransform), Member = "getCPtr")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[Calls(Type = typeof(AkTransform), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetListenerPosition(GameObject in_uIndex, AkTransform out_rPosition)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetRTPCValue(uint in_rtpcID, GameObject in_gameObjectID, uint in_playingID, out float out_rValue, ref int io_rValueType)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref out_rValue) = null;
+		out_rValue = default(float);
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetRTPCValue(string in_pszRtpcName, GameObject in_gameObjectID, uint in_playingID, out float out_rValue, ref int io_rValueType)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref out_rValue) = null;
+		out_rValue = default(float);
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetSwitch(uint in_switchGroup, GameObject in_gameObjectID, out uint out_rSwitchState)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<uint, @null>(ref out_rSwitchState) = null;
+		out_rSwitchState = default(uint);
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetSwitch(string in_pstrSwitchGroupName, GameObject in_GameObj, out uint out_rSwitchState)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<uint, @null>(ref out_rSwitchState) = null;
+		out_rSwitchState = default(uint);
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetState(uint in_stateGroup, out uint out_rState)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<uint, @null>(ref out_rState) = null;
+		out_rState = default(uint);
 		return default(AKRESULT);
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static AKRESULT GetState(string in_pstrStateGroupName, out uint out_rState)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<uint, @null>(ref out_rState) = null;
+		out_rState = default(uint);
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_GetGameObjectAuxSendValues")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetGameObjectAuxSendValues(GameObject in_gameObjectID, AkAuxSendArray out_paAuxSendValues, ref uint io_ruNumSendValues)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetGameObjectDryLevelValue(GameObject in_EmitterID, GameObject in_ListenerID, out float out_rfControlValue)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref out_rfControlValue) = null;
+		out_rfControlValue = default(float);
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetObjectObstructionAndOcclusion(GameObject in_EmitterID, GameObject in_ListenerID, out float out_rfObstructionLevel, out float out_rfOcclusionLevel)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref out_rfObstructionLevel) = null;
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref out_rfOcclusionLevel) = null;
+		out_rfObstructionLevel = default(float);
+		out_rfOcclusionLevel = default(float);
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static AKRESULT QueryAudioObjectIDs(uint in_eventID, ref uint io_ruNumItems, AkObjectInfoArray out_aObjectInfos)
 	{
 		return default(AKRESULT);
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public static AKRESULT QueryAudioObjectIDs(string in_pszEventName, ref uint io_ruNumItems, AkObjectInfoArray out_aObjectInfos)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetPositioningInfo(uint in_ObjectID, AkPositioningInfo out_rPositioningInfo)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static bool GetIsGameObjectActive(GameObject in_GameObjId)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static float GetMaxRadius(GameObject in_GameObjId)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -3178,21 +3175,21 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static uint GetEventIDFromPlayingID(uint in_playingID)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static ulong GetGameObjectFromPlayingID(uint in_playingID)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
 	public static AKRESULT GetPlayingIDsFromGameObject(GameObject in_GameObjId, ref uint io_ruNumIDs, uint[] out_aPlayingIDs)
 	{
@@ -3204,22 +3201,22 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetCustomPropertyValue(uint in_ObjectID, uint in_uPropID, out int out_iValue)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref out_iValue) = null;
+		out_iValue = default(int);
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT GetCustomPropertyValue(uint in_ObjectID, uint in_uPropID, out float out_fValue)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref out_fValue) = null;
+		out_fValue = default(float);
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void AK_SPEAKER_SETUP_FIX_LEFT_TO_CENTER(ref uint io_uChannelMask)
 	{
 	}
@@ -3243,7 +3240,7 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static byte ChannelMaskToNumChannels(uint in_uChannelMask)
 	{
-		return default(byte);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -3251,15 +3248,15 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static uint ChannelMaskFromNumChannels(uint in_uNumChannels)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static byte ChannelBitToIndex(uint in_uChannelBit, uint in_uChannelMask)
 	{
-		return default(byte);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -3267,7 +3264,7 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static bool HasSurroundChannels(uint in_uChannelMask)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -3275,7 +3272,7 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static bool HasStrictlyOnePairOfSurroundChannels(uint in_uChannelMask)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -3283,23 +3280,23 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static bool HasSideAndRearChannels(uint in_uChannelMask)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool HasHeightChannels(uint in_uChannelMask)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static uint BackToSideChannels(uint in_uChannelMask)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -3307,7 +3304,7 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static uint StdChannelIndexToDisplayIndex(AkChannelOrdering in_eOrdering, uint in_uChannelMask, uint in_uChannelIdx)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -3315,95 +3312,94 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static int GetPoolID()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT RegisterEmitter(GameObject in_gameObjectID, AkEmitterSettings in_settings)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT UnregisterEmitter(GameObject in_gameObjectID)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static AKRESULT SetEmitterAuxSendValues(GameObject in_gameObjectID, AkAuxSendArray in_pAuxSends, uint in_uNumAux)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkImageSourceSettings), Member = "getCPtr")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[Calls(Type = typeof(AkImageSourceSettings), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetImageSource(uint in_srcID, AkImageSourceSettings in_info, uint in_AuxBusID, ulong in_roomID, GameObject in_gameObjectID)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkImageSourceSettings), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetImageSource(uint in_srcID, AkImageSourceSettings in_info, uint in_AuxBusID, ulong in_roomID)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT RemoveImageSource(uint in_srcID, uint in_AuxBusID, GameObject in_gameObjectID)
 	{
 		return default(AKRESULT);
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static AKRESULT RemoveImageSource(uint in_srcID, uint in_AuxBusID)
 	{
 		return default(AKRESULT);
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static AKRESULT RemoveGeometry(ulong in_SetID)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(AkVector), Member = "getCPtr")]
-	[Calls(Type = typeof(AkVector), Member = "getCPtr")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[Calls(Type = typeof(AkVector), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static AKRESULT QueryReflectionPaths(GameObject in_gameObjectID, AkVector out_listenerPos, AkVector out_emitterPos, AkReflectionPathInfoArray out_aPaths, out uint io_uArraySize)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<uint, @null>(ref io_uArraySize) = null;
+		io_uArraySize = default(uint);
 		return default(AKRESULT);
 	}
 
@@ -3423,20 +3419,20 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetGameObjectInRoom(GameObject in_gameObjectID, ulong in_CurrentRoomID)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetEmitterObstructionAndOcclusion(GameObject in_gameObjectID, float in_fObstruction, float in_fOcclusion)
 	{
@@ -3451,16 +3447,16 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void SetErrorLogger(AkLogger.ErrorLoggerInteropDelegate logger)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static void SetErrorLogger()
 	{
 	}
@@ -3488,56 +3484,55 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkCommunicationSettings), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT InitCommunication(AkCommunicationSettings settings)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "InitializeSoundEngine")]
 	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "TerminateSoundEngine")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "InitializeSoundEngine")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Term()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_RegisterGameObjInternal")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static AKRESULT RegisterGameObjInternal(GameObject in_GameObj)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_UnregisterGameObjInternal")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static AKRESULT UnregisterGameObjInternal(GameObject in_GameObj)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_RegisterGameObjInternal_WithName")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_RegisterGameObjInternal_WithName")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static AKRESULT RegisterGameObjInternal_WithName(GameObject in_GameObj, string in_pszObjName)
 	{
 		return default(AKRESULT);
 	}
 
+	[CalledBy(TypeFullName = "AkBankManager.DecodableBankHandle", Member = "DoLoadBank")]
+	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "InitializeSoundEngine")]
 	[CallerCount(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(AkBankManager.DecodableBankHandle), Member = "DoLoadBank")]
-	[CalledBy(Type = typeof(AkBankManager.DecodableBankHandle), Member = "DoLoadBank")]
-	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "InitializeSoundEngine")]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetBasePath(string in_pszBasePath)
 	{
@@ -3552,19 +3547,18 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static AKRESULT LoadFilePackage(string in_pszFilePackageName, out uint out_uPackageID, int in_memPoolID)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<uint, @null>(ref out_uPackageID) = null;
+		out_uPackageID = default(uint);
 		return default(AKRESULT);
 	}
 
+	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "InitializeSoundEngine")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "InitializeSoundEngine")]
-	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "InitializeSoundEngine")]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT AddBasePath(string in_pszBasePath)
 	{
@@ -3579,20 +3573,20 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetDecodedBankPath(string in_DecodedPath)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT LoadAndDecodeBank(string in_pszString, bool in_bSaveDecodedBank, out uint out_bankID)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<uint, @null>(ref out_bankID) = null;
+		out_bankID = default(uint);
 		return default(AKRESULT);
 	}
 
@@ -3601,25 +3595,25 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT LoadAndDecodeBankFromMemory(IntPtr in_BankData, uint in_BankDataSize, bool in_bSaveDecodedBank, string in_DecodedBankName, bool in_bIsLanguageSpecific, out uint out_bankID)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<uint, @null>(ref out_bankID) = null;
+		out_bankID = default(uint);
 		return default(AKRESULT);
 	}
 
+	[CalledBy(TypeFullName = "AkBankManager.DecodableBankHandle", Member = ".ctor")]
+	[CalledBy(Type = typeof(AkMemBankLoader), Member = "Start")]
 	[CalledBy(Type = typeof(AkMemBankLoader), Member = "LoadLocalizedBank")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "StringFromIntPtrOSString")]
-	[CalledBy(Type = typeof(AkBankManager.DecodableBankHandle), Member = ".ctor")]
-	[CalledBy(Type = typeof(AkMemBankLoader), Member = "Start")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static string GetCurrentLanguage()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT UnloadFilePackage(uint in_uPackageID)
 	{
 		return default(AKRESULT);
@@ -3634,33 +3628,33 @@ public class AkSoundEngine
 	}
 
 	[CalledBy(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_SetObjectPosition")]
 	[CalledBy(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_SetObjectPosition")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static AKRESULT SetObjectPosition(GameObject in_GameObjectID, float PosX, float PosY, float PosZ, float FrontX, float FrontY, float FrontZ, float TopX, float TopY, float TopZ)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_GetSourceMultiplePlayPositions")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_GetSourceMultiplePlayPositions")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static AKRESULT GetSourceMultiplePlayPositions(uint in_PlayingID, uint[] out_audioNodeID, uint[] out_mediaID, int[] out_msTime, ref uint io_pcPositions, bool in_bExtrapolate)
 	{
 		return default(AKRESULT);
 	}
 
-	[CalledBy(Type = typeof(AkGameObjListenerList), Member = "Init")]
-	[CalledBy(Type = typeof(AkGameObjListenerList), Member = "SetUseDefaultListeners")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(AkGameObj), Member = "MaybeUpdateAuxValues")]
+	[CalledBy(Type = typeof(AkGameObjListenerList), Member = "SetUseDefaultListeners")]
+	[CalledBy(Type = typeof(AkGameObjListenerList), Member = "Init")]
 	[CalledBy(Type = typeof(AkGameObjListenerList), Member = "Refresh")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetListeners(GameObject in_emitterGameObj, ulong[] in_pListenerGameObjs, uint in_uNumListeners)
 	{
 		return default(AKRESULT);
@@ -3675,51 +3669,51 @@ public class AkSoundEngine
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkOutputSettings), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT AddOutput(AkOutputSettings in_Settings, out ulong out_pDeviceID, ulong[] in_pListenerIDs, uint in_uNumListeners)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<ulong, @null>(ref out_pDeviceID) = null;
+		out_pDeviceID = default(ulong);
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkStreamMgrSettings), Member = "getCPtr")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkStreamMgrSettings), Member = "getCPtr")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void GetDefaultStreamSettings(AkStreamMgrSettings out_settings)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkDeviceSettings), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void GetDefaultDeviceSettings(AkDeviceSettings out_settings)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkMusicSettings), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void GetDefaultMusicSettings(AkMusicSettings out_settings)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkInitSettings), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void GetDefaultInitSettings(AkInitSettings out_settings)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkPlatformInitSettings), Member = "getCPtr")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkPlatformInitSettings), Member = "getCPtr")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void GetDefaultPlatformInitSettings(AkPlatformInitSettings out_settings)
 	{
 	}
@@ -3729,7 +3723,7 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static uint GetMajorMinorVersion()
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -3737,7 +3731,7 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static uint GetSubminorBuildVersion()
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -3745,87 +3739,86 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static uint GetDeviceIDFromName(string in_szToken)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "StringFromIntPtrWString")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "StringFromIntPtrWString")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static string GetWindowsDeviceName(int index, out uint out_uDeviceID)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<uint, @null>(ref out_uDeviceID) = null;
+		out_uDeviceID = default(uint);
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[Calls(Type = typeof(AkPathParams), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static AKRESULT QueryIndirectPaths(GameObject in_gameObjectID, AkPathParams arg1, AkReflectionPathInfoArray paths, uint numPaths)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkPathParams), Member = "getCPtr")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[Calls(Type = typeof(AkPathParams), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static AKRESULT QuerySoundPropagationPaths(GameObject in_gameObjectID, AkPathParams arg1, AkPropagationPathInfoArray paths, uint numPaths)
 	{
 		return default(AKRESULT);
 	}
 
-	[Calls(Type = typeof(AkPathParams), Member = "getCPtr")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[Calls(Type = typeof(AkPathParams), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static AKRESULT QueryDiffractionPaths(GameObject in_gameObjectID, AkPathParams arg1, AkDiffractionPathInfoArray paths, uint numPaths)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkTransform), Member = "getCPtr")]
 	[Calls(Type = typeof(AkVector), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT SetRoomPortal(ulong in_PortalID, AkTransform Transform, AkVector Extent, bool bEnabled, ulong FrontRoom, ulong BackRoom)
 	{
 		return default(AKRESULT);
 	}
 
+	[CalledBy(Type = typeof(AkRoom), Member = "OnEnable")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(AkRoom), Member = "OnEnable")]
 	[CallsUnknownMethods(Count = 4)]
 	public static AKRESULT SetRoom(ulong in_RoomID, AkRoomParams in_roomParams, string in_pName)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT RegisterSpatialAudioListener(GameObject in_gameObjectID)
 	{
 		return default(AKRESULT);
 	}
 
+	[CalledBy(Type = typeof(AkSpatialAudioListener.SpatialAudioListenerList), Member = "Refresh")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CalledBy(Type = typeof(AkSpatialAudioListener.SpatialAudioListenerList), Member = "Refresh")]
-	[CalledBy(Type = typeof(AkSpatialAudioListener.SpatialAudioListenerList), Member = "Refresh")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT UnregisterSpatialAudioListener(GameObject in_gameObjectID)
 	{
@@ -3840,47 +3833,47 @@ public class AkSoundEngine
 		return default(AKRESULT);
 	}
 
+	[CalledBy(Type = typeof(AkAcousticSurface), Member = "get_strName")]
+	[CalledBy(Type = typeof(AkMarkerCallbackInfo), Member = "get_strLabel")]
 	[CalledBy(Type = typeof(AkMusicSyncCallbackInfo), Member = "get_userCueName")]
 	[CalledBy(Type = typeof(AkCommunicationSettings), Member = "get_szAppNetworkName")]
-	[CalledBy(Type = typeof(AkMarkerCallbackInfo), Member = "get_strLabel")]
-	[CalledBy(Type = typeof(AkAcousticSurface), Member = "get_strName")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static string StringFromIntPtrString(IntPtr ptr)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "GetWindowsDeviceName")]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "StringFromIntPtrOSString")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static string StringFromIntPtrWString(IntPtr ptr)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(AkMonitoringCallbackInfo), Member = "get_message")]
-	[CalledBy(Type = typeof(AkInitSettings), Member = "get_szPluginDLLPath")]
 	[CalledBy(Type = typeof(AkExternalSourceInfo), Member = "get_szFile")]
+	[CalledBy(Type = typeof(AkInitSettings), Member = "get_szPluginDLLPath")]
+	[CalledBy(Type = typeof(AkMonitoringCallbackInfo), Member = "get_message")]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "GetCurrentLanguage")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "StringFromIntPtrWString")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static string StringFromIntPtrOSString(IntPtr ptr)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private static ulong InternalGameObjectHash(GameObject gameObject)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
 	[CallerCount(Count = 155)]
@@ -3888,55 +3881,52 @@ public class AkSoundEngine
 	[CallsUnknownMethods(Count = 1)]
 	public static ulong GetAkGameObjectID(GameObject gameObject)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostRegisterGameObjUserHook")]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_RegisterGameObjInternal")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_RegisterGameObjInternal")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostRegisterGameObjUserHook")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static AKRESULT RegisterGameObj(GameObject gameObject)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_RegisterGameObjInternal_WithName")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostRegisterGameObjUserHook")]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "AutoRegister")]
 	[CalledBy(Type = typeof(AutoObject), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkGameObj), Member = "Register")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_RegisterGameObjInternal_WithName")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostRegisterGameObjUserHook")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static AKRESULT RegisterGameObj(GameObject gameObject, string name)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(AutoObject), Member = "Finalize")]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_UnregisterGameObjInternal")]
 	[CalledBy(Type = typeof(AkGameObj), Member = "OnDestroy")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_UnregisterGameObjInternal")]
+	[Calls(Type = typeof(HashSet<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT UnregisterGameObj(GameObject gameObject)
 	{
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_SetObjectPosition")]
-	[Calls(Type = typeof(Transform), Member = "get_up")]
-	[Calls(Type = typeof(Transform), Member = "get_up")]
-	[Calls(Type = typeof(Transform), Member = "get_up")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Transform), Member = "get_up")]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_SetObjectPosition")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public static AKRESULT SetObjectPosition(GameObject gameObject, Transform transform)
 	{
 		return default(AKRESULT);
@@ -3944,10 +3934,10 @@ public class AkSoundEngine
 
 	[CalledBy(Type = typeof(AkGameObj), Member = "MaybeUpdateObjectPosition")]
 	[CalledBy(Type = typeof(AkGameObj), Member = "Awake")]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_SetObjectPosition")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_SetObjectPosition")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static AKRESULT SetObjectPosition(GameObject gameObject, Vector3 position, Vector3 forward, Vector3 up)
 	{
 		return default(AKRESULT);
@@ -3955,125 +3945,127 @@ public class AkSoundEngine
 
 	[Obsolete]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(AkExternalSourceInfoArray), Member = ".ctor")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 9)]
 	public static uint PostEvent(uint eventId, GameObject gameObject, uint flags, AkCallbackManager.EventCallback callback, object cookie, uint numSources, AkExternalSourceInfo externalSources, uint playingId)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[Calls(Type = typeof(AkExternalSourceInfoArray), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[Obsolete]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(AkExternalSourceInfoArray), Member = ".ctor")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public static uint PostEvent(uint eventId, GameObject gameObject, uint flags, AkCallbackManager.EventCallback callback, object cookie, uint numSources, AkExternalSourceInfo externalSources)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[Obsolete]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(AkExternalSourceInfoArray), Member = ".ctor")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 9)]
 	public static uint PostEvent(string eventName, GameObject gameObject, uint flags, AkCallbackManager.EventCallback callback, object cookie, uint numSources, AkExternalSourceInfo externalSources, uint playingId)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(AkExternalSourceInfoArray), Member = ".ctor")]
 	[Obsolete]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(AkExternalSourceInfoArray), Member = ".ctor")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public static uint PostEvent(string eventName, GameObject gameObject, uint flags, AkCallbackManager.EventCallback callback, object cookie, uint numSources, AkExternalSourceInfo externalSources)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 132)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "IsInRegisteredList")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "IsInitialized")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "AutoRegister")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public static void PreGameObjectAPICall(GameObject gameObject, ulong id)
 	{
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "AutoRegister")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "IsInRegisteredList")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "IsInitialized")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "AutoRegister")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private static void PreGameObjectAPICallUserHook(GameObject gameObject, ulong id)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "RegisterGameObj")]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "RegisterGameObj")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "RegisterGameObj")]
+	[CallsUnknownMethods(Count = 1)]
 	private static void PostRegisterGameObjUserHook(AKRESULT result, GameObject gameObject, ulong id)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(HashSet<>), Member = "Remove")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private static void PostUnregisterGameObjUserHook(AKRESULT result, GameObject gameObject, ulong id)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICallUserHook")]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "RegisterGameObj")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICallUserHook")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "RegisterGameObj")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 10)]
 	private static void AutoRegister(GameObject gameObject, ulong id)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICallUserHook")]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "IsGameObjectRegistered")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 13)]
 	private static bool IsInRegisteredList(ulong id)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "IsInRegisteredList")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "IsInRegisteredList")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsGameObjectRegistered(GameObject in_gameObject)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AkSoundEngine()
 	{
 	}

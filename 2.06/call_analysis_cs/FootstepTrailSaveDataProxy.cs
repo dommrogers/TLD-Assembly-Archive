@@ -11,9 +11,9 @@ public class FootstepTrailSaveDataProxy
 
 	public List<uint> m_Footsteps;
 
+	[CalledBy(Type = typeof(FootstepTrail), Member = ".cctor")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(FootstepTrail), Member = ".cctor")]
 	[CallsUnknownMethods(Count = 13)]
 	public FootstepTrailSaveDataProxy()
 	{

@@ -12,7 +12,7 @@ public abstract class AchievementPlatformBase : IAchievementPlatform
 		public int OptionalData;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public AchievementInfo()
 		{
 		}
@@ -29,14 +29,14 @@ public abstract class AchievementPlatformBase : IAchievementPlatform
 	public bool IsFullyOperational
 	{
 		[CompilerGenerated]
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		protected set
 		{
@@ -50,85 +50,85 @@ public abstract class AchievementPlatformBase : IAchievementPlatform
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
 	}
 
+	[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "Initialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Enum), Member = "GetValues")]
 	[Calls(Type = typeof(Array), Member = "GetEnumerator")]
-	[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "Initialize")]
-	[CallsUnknownMethods(Count = 33)]
 	[CallsDeduplicatedMethods(Count = 12)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 33)]
 	public virtual void Initialize()
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public virtual void Update()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public virtual void Shutdown()
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract void Unlock(Achievement achievement);
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public virtual bool IsUnlocked(Achievement achievement)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public virtual void SendStatistic(GameIntStatType statistic, int amount)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public virtual void SendStatistic(GameFloatStatType statistic, float amount)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public virtual void SendStatistic(GameEventStatType statistic)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public virtual void ListAllUnlockedAchievements()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	protected AchievementInfo FindAchievementInfoByOptionalData(int optionalID)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	protected AchievementPlatformBase()
 	{
 	}

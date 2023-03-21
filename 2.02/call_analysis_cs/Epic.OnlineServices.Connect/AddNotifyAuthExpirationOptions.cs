@@ -5,7 +5,7 @@ namespace Epic.OnlineServices.Connect;
 public class AddNotifyAuthExpirationOptions
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AddNotifyAuthExpirationOptions()
 	{
 	}

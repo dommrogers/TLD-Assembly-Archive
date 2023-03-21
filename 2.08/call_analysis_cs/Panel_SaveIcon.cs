@@ -11,31 +11,30 @@ public class Panel_SaveIcon : Panel_AutoReferenced
 
 	private float m_TimeToShowSaveSprite;
 
-	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public override void Initialize()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
-	[CalledBy(Type = typeof(GameManager), Member = "TriggerQuicksaveAndDisplayHUDMessage")]
-	[CalledBy(Type = typeof(GameManager), Member = "TriggerAutosaveAndDisplayHUDMessage")]
-	[CalledBy(Type = typeof(GameManager), Member = "SaveProfileSettingsAndDisplayHUDMessage")]
-	[CalledBy(Type = typeof(GameManager), Member = "SaveGameAndDisplayHUDMessage")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_save")]
-	[CallerCount(Count = 7)]
+	[CalledBy(Type = typeof(GameManager), Member = "SaveGameAndDisplayHUDMessage")]
 	[CalledBy(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
+	[CalledBy(Type = typeof(GameManager), Member = "SaveProfileSettingsAndDisplayHUDMessage")]
+	[CalledBy(Type = typeof(GameManager), Member = "TriggerAutosaveAndDisplayHUDMessage")]
+	[CalledBy(Type = typeof(GameManager), Member = "TriggerQuicksaveAndDisplayHUDMessage")]
+	[CalledBy(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
+	[CallerCount(Count = 7)]
 	public void StartSaveIconAnimation()
 	{
 	}
@@ -44,14 +43,14 @@ public class Panel_SaveIcon : Panel_AutoReferenced
 	[CallerCount(Count = 1)]
 	public bool IsIconVisible()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 3)]
 	public override bool IsOverlayPanel()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

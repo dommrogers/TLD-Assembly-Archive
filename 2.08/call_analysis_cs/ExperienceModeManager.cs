@@ -4,9 +4,12 @@ using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Events;
 using TLD.Gameplay;
+using TLD.Gameplay.Tunable;
+using TLD.SaveState;
 using TLD.Serialization;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class ExperienceModeManager : MonoBehaviour
 {
@@ -39,11 +42,14 @@ public class ExperienceModeManager : MonoBehaviour
 		}
 	}
 
-	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetExperienceModeDefinition")]
+	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Awake()
 	{
 	}
@@ -54,45 +60,47 @@ public class ExperienceModeManager : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetExperienceModeDefinition")]
 	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
 	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataForEspisodeMigration")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataForEspisodeMigration")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(ExperienceModeManagerSaveDataProxy), Member = "get_CurrentMode")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "SetGameModeConfig")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetExperienceModeDefinition")]
+	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "FillSaveSlotInfo")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public static GameModeConfig GetGameModeFromName(string gameModeName)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 102)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	public static ExperienceModeType GetCurrentExperienceModeType()
@@ -106,32 +114,30 @@ public class ExperienceModeManager : MonoBehaviour
 		return null;
 	}
 
-	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateLoadingSave")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(JumpManager), Member = "OnLoadSetup")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_xpmode")]
-	[CalledBy(Type = typeof(EmptyScene), Member = "MaybeInstantiateGameManager")]
-	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateNewGame")]
-	[CalledBy(Type = typeof(Panel_SelectExperience), Member = "OnExperienceClicked")]
-	[CalledBy(Type = typeof(GameManager), Member = "OnLoadGameCallback")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnLoadGame")]
 	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "UpdateUISelection")]
+	[CalledBy(Type = typeof(Panel_SelectExperience), Member = "OnExperienceClicked")]
+	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateLoadingSave")]
+	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateNewGame")]
+	[CalledBy(Type = typeof(EmptyScene), Member = "MaybeInstantiateGameManager")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_xpmode")]
+	[CalledBy(Type = typeof(ExperienceModeManager), Member = "Deserialize")]
+	[CalledBy(Type = typeof(GameManager), Member = "OnLoadGameCallback")]
+	[CalledBy(Type = typeof(JumpManager), Member = "OnLoadSetup")]
 	[CallerCount(Count = 11)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(ExperienceModeManager), Member = "Deserialize")]
 	[Calls(Type = typeof(GameEvent), Member = "Post")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnLoadGame")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetGameModeConfig(GameModeConfig gameModeConfig)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Loading), Member = "SetLoadingScreenText")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGame")]
+	[CallerCount(Count = 2)]
 	public bool IsChallengeActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 62)]
@@ -142,15 +148,10 @@ public class ExperienceModeManager : MonoBehaviour
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(SpawnRegion), Member = "GetCustomSpawnRegionChanceActiveScale")]
-	[CalledBy(Type = typeof(SpawnRegion), Member = "GetCustomSpawnRegionChanceActiveScale")]
 	[CalledBy(Type = typeof(SpawnRegion), Member = "GetCustomSpawnRegionChanceActiveScale")]
 	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(SpawnRegion), Member = "GetCustomSpawnRegionChanceActiveScale")]
-	[CalledBy(Type = typeof(SpawnRegion), Member = "GetCustomSpawnRegionChanceActiveScale")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public ExperienceMode GetSpecificExperienceMode(ExperienceModeType modeType)
 	{
@@ -158,12 +159,12 @@ public class ExperienceModeManager : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "Update")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetExperienceModeDefinition")]
+	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
 	public bool SetCurrentCustomModeString(string inputString)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -172,7 +173,7 @@ public class ExperienceModeManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetDecayScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -181,16 +182,16 @@ public class ExperienceModeManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetCalorieBurnScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
-	[CallerCount(Count = 0)]
 	public float GetThirstRateScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -199,7 +200,7 @@ public class ExperienceModeManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetFreezingRateScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -208,16 +209,16 @@ public class ExperienceModeManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetFatigueRateScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
-	[CallerCount(Count = 0)]
 	public float GetConditonRecoveryFromRestScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -226,7 +227,7 @@ public class ExperienceModeManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetConditonRecoveryWhileAwakeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -235,60 +236,59 @@ public class ExperienceModeManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetWeatherDurationScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetChanceOfBlizzardScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(TimeOfDay), Member = "Update")]
+	[CalledBy(Type = typeof(TimeOfDay), Member = "UpdateUniStormDayLength")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "Update")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "UpdateUniStormDayLength")]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetTimeOfDayScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SpawnRegion), Member = "MaybeReRollActive")]
 	[CalledBy(Type = typeof(SpawnRegion), Member = "Start")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[CalledBy(Type = typeof(SpawnRegion), Member = "MaybeReRollActive")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetSpawnRegionChanceActiveScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(GearItem), Member = "RollSpawnChance")]
+	[CalledBy(Type = typeof(GearItem), Member = "ManualStart")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(GearItem), Member = "RollSpawnChance")]
-	[CalledBy(Type = typeof(GearItem), Member = "ManualStart")]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetGearSpawnChanceScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Container), Member = "PopulateWithRandomGear")]
-	[CalledBy(Type = typeof(Container), Member = "PopulateWithRandomGear")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public int GetReduceMaxItemsInContainer()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -297,16 +297,16 @@ public class ExperienceModeManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public int GetChanceForEmptyContainer()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetClosestSpawnDistanceAfterTransitionScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -315,7 +315,7 @@ public class ExperienceModeManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetSmellRangeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -324,50 +324,49 @@ public class ExperienceModeManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetStruggleTapStrenthScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetStrugglePlayerDamageReceivedIntervalScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(ClothingDamageEvent), Member = "OnExecute")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyClothingDamagePerSecond")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(ClothingDamageEvent), Member = "OnExecute")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyClothingDamagePerSecond")]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetStrugglePlayerClothingDamageScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyPlayerDamagePerSecond")]
 	[CalledBy(Type = typeof(StruggleDamageEvent), Member = "ApplyDamage")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyPlayerDamagePerSecond")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetStrugglePlayerDamageReceivedScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyDamageAfterMooseAttack")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyDamageAfterMooseAttack")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetStugglePlayerPercentLossFromBearScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -377,27 +376,27 @@ public class ExperienceModeManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetOutdoorTempDropCelcius(float numDays)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetRespawnHoursScale(float numDays)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetFishCatchTimeScale(float numDays)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -407,7 +406,7 @@ public class ExperienceModeManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetRadialRespawnTimeScale(float numDays)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -416,24 +415,24 @@ public class ExperienceModeManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetNumHoursWarmForHypothermiaCureScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PackManager), Member = "Start")]
-	[CalledBy(Type = typeof(BaseAi), Member = "CanEnterStalking")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeEnterAttackModeWhenStalking")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ShouldAlwaysFleeFromCurrentTarget")]
-	[CalledBy(Type = typeof(PackManager), Member = "ArePacksAllowed")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "InCustomMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(BaseAi), Member = "AttackOrFleeAfterNearMissGunshot")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ShouldAlwaysFleeFromCurrentTarget")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeEnterAttackModeWhenStalking")]
+	[CalledBy(Type = typeof(BaseAi), Member = "CanEnterStalking")]
+	[CalledBy(Type = typeof(PackManager), Member = "ArePacksAllowed")]
+	[CalledBy(Type = typeof(PackManager), Member = "Start")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "InCustomMode")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool GetWildlifeNotAttackUnprovoked()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -442,16 +441,16 @@ public class ExperienceModeManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool GetWildlifeInterruptRest()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool GetWeatherStartForceClear()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -460,136 +459,144 @@ public class ExperienceModeManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool GetWeatherWindForceCalm()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 23)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 4)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 3)]
 	public CustomExperienceMode GetCustomMode()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "InCustomMode")]
 	[CalledBy(Type = typeof(ExperienceModeManager), Member = "GetWildlifeNotAttackUnprovoked")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(GameManager), Member = "InCustomMode")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool InCustomMode()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetProportionalReduceMaxItems()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetCustomAuroraChanceModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetCustomWindSpeedModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetCustomWindChangeFrequencyModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetCustomBloodScentModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(BaseAi), Member = "DoCustomModeModifiers")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(BaseAi), Member = "DoCustomModeModifiers")]
-	[CalledBy(Type = typeof(BaseAi), Member = "DoCustomModeModifiers")]
-	[CalledBy(Type = typeof(BaseAi), Member = "DoCustomModeModifiers")]
-	[CalledBy(Type = typeof(BaseAi), Member = "DoCustomModeModifiers")]
-	[CalledBy(Type = typeof(BaseAi), Member = "DoCustomModeModifiers")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
 	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(BaseAi), Member = "DoCustomModeModifiers")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetCustomWildlifeDetectionModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetCustomWolfFleeModifier(WolfType wolfType)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetCustomPlantSpawnModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetCustomWildlifeRespawnTimeModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
 	[CalledBy(Type = typeof(DisableObjectForXPMode), Member = "ShouldDisableForCurrentMode")]
 	[CalledBy(Type = typeof(EnableObjectForXPMode), Member = "ShouldDisableForCurrentMode")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
 	[CallsUnknownMethods(Count = 1)]
 	public ExperienceModeType GetCustomLootXPType()
 	{
 		return default(ExperienceModeType);
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void RunInitCommandStory()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 9)]
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateNewGame")]
+	[CalledBy(Type = typeof(ExperienceModeManager), Member = "Awake")]
+	[CalledBy(Type = typeof(ExperienceModeManager), Member = "Serialize")]
+	[CalledBy(Type = typeof(ExperienceModeManager), Member = "Deserialize")]
+	[CalledBy(Type = typeof(ExperienceModeManager), Member = "SetCurrentCustomModeString")]
+	[CalledBy(Type = typeof(ExperienceModeManager), Member = "GetCurrentCustomModeString")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 8)]
 	private T GetExperienceModeDefinition<T>() where T : ExperienceMode
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetExperienceModeDefinition")]
 	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
 	private string GetCurrentCustomModeString()
 	{
@@ -602,23 +609,25 @@ public class ExperienceModeManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool GetStandardModeWildlifeNotAttackUnprovoked()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetCustomRegularWolfFleeModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetCustomTimberWolfFleeModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

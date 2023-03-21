@@ -10,7 +10,7 @@ public class Condition_IsPlayerInStrugglee : ConditionTask
 	[CallsUnknownMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

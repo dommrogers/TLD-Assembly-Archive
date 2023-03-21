@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityAOT;
 using UnityPlugin;
@@ -13,16 +12,16 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 		public IntPtr mountPoint;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass22_0()
 		{
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		internal IntPtr _003CMount_003Eb__0()
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
@@ -49,8 +48,8 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 	public string ContentId
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -64,15 +63,15 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
 	public string Description
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -82,10 +81,10 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 
 	public string DisplayName
 	{
-		[CallsUnknownMethods(Count = 7)]
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -94,24 +93,24 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 
 	public bool IsMounted
 	{
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(DownloadableContentPackage), Member = "Mount")]
 		[CalledBy(Type = typeof(DownloadableContentPackage), Member = "UnMount")]
+		[CallerCount(Count = 2)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public string MountPath
 	{
-		[CallsUnknownMethods(Count = 7)]
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CalledBy(Type = typeof(DownloadableContentPackage), Member = "Mount")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -120,10 +119,10 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 
 	public string PackageFullName
 	{
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
-		[CallsUnknownMethods(Count = 7)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -133,8 +132,8 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 	public string ProductId
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -145,8 +144,8 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 	public string Publisher
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -157,8 +156,8 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 	public string TitleId
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -168,10 +167,10 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 
 	public string Version
 	{
-		[CallsUnknownMethods(Count = 7)]
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -179,10 +178,10 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(DownloadableContentPackage), Member = "get_IsMounted")]
 	[Calls(Type = typeof(DownloadableContentPackage), Member = "get_MountPath")]
 	[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 16)]
 	public string Mount()
 	{
@@ -196,17 +195,17 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool CheckLicense(out bool isTrial)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<bool, @null>(ref isTrial) = null;
-		return default(bool);
+		isTrial = default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public DownloadableContentPackage(IntPtr self)
 	{
 	}
@@ -224,10 +223,10 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 52)]
+	[CallerCount(Count = 59)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]

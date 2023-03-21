@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using Rewired.ControllerExtensions;
@@ -14,8 +13,8 @@ public class DualShock4SpecialFeaturesExample : MonoBehaviour
 
 		public int touchId;
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public Touch()
 		{
 		}
@@ -35,7 +34,7 @@ public class DualShock4SpecialFeaturesExample : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CHandleTouchpad_003Eb__0(Touch x)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -59,21 +58,12 @@ public class DualShock4SpecialFeaturesExample : MonoBehaviour
 
 	private Player player
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "OnGUI")]
-		[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "OnGUI")]
-		[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "OnGUI")]
-		[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "OnGUI")]
-		[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "OnGUI")]
 		[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "Update")]
-		[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-		[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "Update")]
-		[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "Update")]
-		[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "Update")]
-		[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "Update")]
-		[Calls(Type = typeof(ReInput), Member = "get_players")]
+		[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "OnGUI")]
 		[CallerCount(Count = 11)]
-		[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "Update")]
+		[Calls(Type = typeof(ReInput), Member = "get_players")]
+		[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -86,79 +76,40 @@ public class DualShock4SpecialFeaturesExample : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "GetFirstDS4")]
-	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "StartLightFlash")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-	[Calls(Type = typeof(Controller), Member = "get_enabled")]
-	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
-	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "get_player")]
-	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
-	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "get_player")]
-	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "get_player")]
-	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "HandleTouchpad")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "get_player")]
 	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "GetFirstDS4")]
+	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "HandleTouchpad")]
 	[Calls(Type = typeof(Transform), Member = "LookAt")]
-	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "get_player")]
-	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "get_player")]
+	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
 	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "SetRandomLightColor")]
-	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "get_player")]
-	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
 	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
-	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "GetFirstDS4")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "StartLightFlash")]
+	[Calls(Type = typeof(Controller), Member = "get_enabled")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 10)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstElementMapWithAction")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_controllerType")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_controllerType")]
-	[Calls(Type = typeof(ActionElementMap), Member = "TOPwFiaqgxlpgnTfCgAfcRxFBSo")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "get_player")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstElementMapWithAction")]
-	[Calls(Type = typeof(ActionElementMap), Member = "TOPwFiaqgxlpgnTfCgAfcRxFBSo")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "get_player")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstElementMapWithAction")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_controllerType")]
-	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "get_player")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(GUILayout), Member = "EndArea")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(ActionElementMap), Member = "TOPwFiaqgxlpgnTfCgAfcRxFBSo")]
-	[Calls(Type = typeof(ActionElementMap), Member = "TOPwFiaqgxlpgnTfCgAfcRxFBSo")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[Calls(Type = typeof(GUIUtility), Member = "CheckOnGUI")]
 	[Calls(Type = typeof(GUIStyle), Member = ".ctor")]
 	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
 	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "GetFirstDS4")]
 	[Calls(Type = typeof(GUILayout), Member = "BeginArea")]
 	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
 	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "get_player")]
 	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstElementMapWithAction")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_controllerType")]
 	[Calls(Type = typeof(ControllerMap), Member = "get_controllerType")]
 	[Calls(Type = typeof(ActionElementMap), Member = "TOPwFiaqgxlpgnTfCgAfcRxFBSo")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "get_player")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstElementMapWithAction")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
+	[Calls(Type = typeof(GUILayout), Member = "EndArea")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 10)]
 	private void OnGUI()
 	{
 	}
@@ -172,84 +123,88 @@ public class DualShock4SpecialFeaturesExample : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Material), Member = "set_color")]
 	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "Update")]
-	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "GetFirstDS4")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "GetFirstDS4")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Material), Member = "set_color")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private void SetRandomLightColor()
 	{
 	}
 
+	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
 	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "GetFirstDS4")]
 	[Calls(Type = typeof(Controller), Member = "get_enabled")]
 	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "Update")]
 	[CallsUnknownMethods(Count = 3)]
 	private void StartLightFlash()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(Controller), Member = "get_enabled")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
 	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
 	[Calls(Type = typeof(DualShock4SpecialFeaturesExample), Member = "GetFirstDS4")]
+	[Calls(Type = typeof(Controller), Member = "get_enabled")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[CallsUnknownMethods(Count = 2)]
 	private void StopLightFlash()
 	{
 	}
 
-	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "ResetOrientation")]
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "StopLightFlash")]
-	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "StartLightFlash")]
-	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "SetRandomLightColor")]
+	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "Update")]
 	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "OnGUI")]
+	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "ResetOrientation")]
+	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "SetRandomLightColor")]
+	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "StartLightFlash")]
+	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "StopLightFlash")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "Update")]
-	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "Update")]
 	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "Update")]
+	[Calls(Type = typeof(Controller), Member = "GetExtension")]
+	[CallsUnknownMethods(Count = 13)]
 	private IDualShock4Extension GetFirstDS4(Player player)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "Awake")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 24)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Queue<>), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Material), Member = "set_color")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Queue<>), Member = "Enqueue")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 22)]
 	private void InitializeTouchObjects()
 	{
 	}
 
 	[CalledBy(Type = typeof(DualShock4SpecialFeaturesExample), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Queue<>), Member = "Enqueue")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(Type = typeof(List<>), Member = "Find")]
+	[Calls(Type = typeof(Queue<>), Member = "Dequeue")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "get_localScale")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 21)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 18)]
 	private void HandleTouchpad(IDualShock4Extension ds4)
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public DualShock4SpecialFeaturesExample()
 	{
 	}

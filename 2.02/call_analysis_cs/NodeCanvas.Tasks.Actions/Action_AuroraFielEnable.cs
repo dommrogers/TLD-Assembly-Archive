@@ -10,27 +10,27 @@ public class Action_AuroraFielEnable : ActionTask
 
 	public bool enabled;
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Action_AuroraFielEnable), Member = "DoWork")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	protected override void OnExecute()
 	{
 	}
 
+	[CalledBy(Type = typeof(Action_AuroraFielEnable), Member = "OnExecute")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(AuroraField), Member = "SetFieldActive")]
-	[CalledBy(Type = typeof(Action_AuroraFielEnable), Member = "OnExecute")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	private void DoWork()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_AuroraFielEnable()
 	{
 	}

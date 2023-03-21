@@ -33,29 +33,30 @@ public class ChanceEndWanderPause : StateMachineBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ChanceEndWanderPause), Member = "EndWanderPause")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(ChanceEndWanderPause), Member = "EndWanderPause")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 	}
 
+	[CalledBy(Type = typeof(ChanceEndWanderPause), Member = "OnStateUpdate")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[CalledBy(Type = typeof(ChanceEndWanderPause), Member = "OnStateUpdate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void EndWanderPause(Animator animator)
 	{
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public ChanceEndWanderPause()
 	{
 	}

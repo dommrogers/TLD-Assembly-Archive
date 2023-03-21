@@ -23,7 +23,7 @@ public class ConcurrentState : FSMState, IUpdatable, ISubTasksContainer
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		set
 		{
 		}
@@ -31,8 +31,8 @@ public class ConcurrentState : FSMState, IUpdatable, ISubTasksContainer
 
 	public ActionList actionList
 	{
-		[CallerCount(Count = 49)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 49)]
 		get
 		{
 			return null;
@@ -50,7 +50,7 @@ public class ConcurrentState : FSMState, IUpdatable, ISubTasksContainer
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -61,11 +61,11 @@ public class ConcurrentState : FSMState, IUpdatable, ISubTasksContainer
 
 	public override string name
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(string), Member = "ToUpper")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Node), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "ToUpper")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -78,7 +78,7 @@ public class ConcurrentState : FSMState, IUpdatable, ISubTasksContainer
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -88,7 +88,7 @@ public class ConcurrentState : FSMState, IUpdatable, ISubTasksContainer
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -98,7 +98,7 @@ public class ConcurrentState : FSMState, IUpdatable, ISubTasksContainer
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -109,47 +109,39 @@ public class ConcurrentState : FSMState, IUpdatable, ISubTasksContainer
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Task), Member = "Create")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Task), Member = "Create")]
+	[CallsUnknownMethods(Count = 3)]
 	public override void OnValidate(Graph assignedGraph)
 	{
 	}
 
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
-	[Calls(Type = typeof(Task), Member = "Set")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(Task), Member = "Set")]
+	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
+	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnEnter()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
-	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
 	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
 	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
+	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
+	[CallsUnknownMethods(Count = 1)]
 	public new void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExit()
 	{
@@ -162,9 +154,9 @@ public class ConcurrentState : FSMState, IUpdatable, ISubTasksContainer
 	{
 	}
 
-	[Calls(Type = typeof(Node), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Node), Member = ".ctor")]
 	public ConcurrentState()
 	{
 	}

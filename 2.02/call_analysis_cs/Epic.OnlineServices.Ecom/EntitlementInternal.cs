@@ -24,17 +24,17 @@ internal struct EntitlementInternal : ISettable, IDisposable
 	public string EntitlementName
 	{
 		[CalledBy(Type = typeof(Entitlement), Member = "Set")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(EntitlementInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -42,18 +42,18 @@ internal struct EntitlementInternal : ISettable, IDisposable
 
 	public string EntitlementId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(Entitlement), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(EntitlementInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -62,17 +62,17 @@ internal struct EntitlementInternal : ISettable, IDisposable
 	public string CatalogItemId
 	{
 		[CalledBy(Type = typeof(Entitlement), Member = "Set")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(EntitlementInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -84,7 +84,7 @@ internal struct EntitlementInternal : ISettable, IDisposable
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -95,16 +95,16 @@ internal struct EntitlementInternal : ISettable, IDisposable
 
 	public bool Redeemed
 	{
+		[CalledBy(Type = typeof(Entitlement), Member = "Set")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(Entitlement), Member = "Set")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CalledBy(Type = typeof(EntitlementInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -117,7 +117,7 @@ internal struct EntitlementInternal : ISettable, IDisposable
 		[CallerCount(Count = 12)]
 		get
 		{
-			return default(long);
+			return 0L;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -126,25 +126,25 @@ internal struct EntitlementInternal : ISettable, IDisposable
 		}
 	}
 
+	[CalledBy(Type = typeof(EntitlementInternal), Member = "Set")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(EntitlementInternal), Member = "set_EntitlementName")]
 	[Calls(Type = typeof(EntitlementInternal), Member = "set_EntitlementId")]
 	[Calls(Type = typeof(EntitlementInternal), Member = "set_CatalogItemId")]
 	[Calls(Type = typeof(EntitlementInternal), Member = "set_Redeemed")]
-	[CalledBy(Type = typeof(EntitlementInternal), Member = "Set")]
 	public void Set(Entitlement other)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(EntitlementInternal), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

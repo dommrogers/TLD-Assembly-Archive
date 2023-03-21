@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Events;
 using UnityEngine;
@@ -13,27 +14,28 @@ public class WeatherStageEventListener : MonoBehaviour
 
 	private WeatherStage m_LastWeatherStage;
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(GameEvent), Member = "add_Fired")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameEvent), Member = "add_Fired")]
+	[Calls(Type = typeof(UnityEvent<>), Member = "Invoke")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnEnable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 7)]
+	[Calls(Type = typeof(HashSet<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEvent<>), Member = "Invoke")]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnWeatherChanged()
 	{

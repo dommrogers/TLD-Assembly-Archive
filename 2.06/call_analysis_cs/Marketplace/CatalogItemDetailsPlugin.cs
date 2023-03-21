@@ -22,8 +22,8 @@ public class CatalogItemDetailsPlugin
 	public static extern uint CatalogItemDetails_MediaItemType(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CatalogItemDetails_ProductId(IntPtr self);
 
 	[PreserveSig]
@@ -52,8 +52,8 @@ public class CatalogItemDetailsPlugin
 	public static extern ulong CatalogItemDetails_ReleaseDate(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CatalogItemDetails_Images(IntPtr self);
 
 	[PreserveSig]
@@ -82,8 +82,8 @@ public class CatalogItemDetailsPlugin
 	public static extern uint CatalogItemDetails_Availabilities_Length(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CatalogItemDetails_Availabilities_GetAt(IntPtr self, uint idx);
 
 	[PreserveSig]

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -16,68 +15,55 @@ public class HighlightFogManager : MonoBehaviour
 	private float m_TODMultiplier;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 18)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(HighlightFogManager), Member = "UpdateHeadings")]
+	[Calls(Type = typeof(HighlightFogManager), Member = "UpdateTOD")]
+	[Calls(Type = typeof(HighlightFogManaged), Member = "ManualUpdateAngles")]
 	[Calls(Type = typeof(HighlightFogManaged), Member = "UpdateDrive")]
 	[Calls(Type = typeof(HighlightFogManaged), Member = "UpdateMaterial")]
-	[Calls(Type = typeof(HighlightFogManager), Member = "UpdateTOD")]
-	[Calls(Type = typeof(HighlightFogManager), Member = "UpdateHeadings")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(HighlightFogManaged), Member = "ManualUpdateAngles")]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(HighlightFogManager), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 12)]
 	private void UpdateHeadings()
 	{
 	}
 
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
 	[CalledBy(Type = typeof(HighlightFogManager), Member = "Update")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsNight")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateTOD()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(HighlightFogManaged), Member = "UpdateMaterial")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(HighlightFogManaged), Member = "ManualUpdateAngles")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(HighlightFogManaged), Member = "ManualUpdateAngles")]
 	[Calls(Type = typeof(HighlightFogManaged), Member = "UpdateDrive")]
+	[Calls(Type = typeof(HighlightFogManaged), Member = "UpdateMaterial")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateQuads()
 	{
 	}

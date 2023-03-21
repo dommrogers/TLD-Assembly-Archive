@@ -5,8 +5,8 @@ public class MissionWaypoint : MonoBehaviour
 {
 	public float m_Radius;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}

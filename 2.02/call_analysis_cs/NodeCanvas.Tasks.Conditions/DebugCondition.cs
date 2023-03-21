@@ -5,11 +5,11 @@ namespace NodeCanvas.Tasks.Conditions;
 
 public class DebugCondition : ConditionTask
 {
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

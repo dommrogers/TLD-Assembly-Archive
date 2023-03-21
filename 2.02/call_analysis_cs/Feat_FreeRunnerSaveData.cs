@@ -6,8 +6,8 @@ public class Feat_FreeRunnerSaveData
 
 	public float m_MetersAccumulator;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public Feat_FreeRunnerSaveData()
 	{
 	}

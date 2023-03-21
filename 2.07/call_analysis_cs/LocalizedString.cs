@@ -6,6 +6,19 @@ public class LocalizedString
 {
 	public string m_LocalizationID;
 
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "TryPerformInteraction")]
+	[CalledBy(Type = typeof(LockedInteraction), Member = "PerformLockInteraction")]
+	[CalledBy(Type = typeof(InteractiveLightsource), Member = "InitializeInteraction")]
+	[CalledBy(Type = typeof(RockCache), Member = "Awake")]
+	[CalledBy(Type = typeof(GridUI), Member = "RefreshGridItem")]
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
+	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "ShowPanel")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "AddSurveyedVistaLocation")]
+	[CalledBy(Type = typeof(Panel_Subtitles), Member = "ShowSpeakerNameDuringPhoneCalls")]
+	[CalledBy(Type = typeof(Panel_Subtitles), Member = "GetSpeakerName")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_warp")]
+	[CalledBy(Type = typeof(BodyCarry), Member = "ShowError")]
 	[CallerCount(Count = 23)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	public string Text()
@@ -13,11 +26,11 @@ public class LocalizedString
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsSet()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

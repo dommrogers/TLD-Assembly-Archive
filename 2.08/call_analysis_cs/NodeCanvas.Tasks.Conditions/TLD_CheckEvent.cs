@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using ParadoxNotion;
@@ -12,8 +11,8 @@ public class TLD_CheckEvent : ConditionTask<GraphOwner>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -25,15 +24,15 @@ public class TLD_CheckEvent : ConditionTask<GraphOwner>
 	[CallerCount(Count = 3)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnCustomEvent(EventData receivedEvent)
 	{
 	}
@@ -65,17 +64,17 @@ public class TLD_CheckEvent<T> : ConditionTask<GraphOwner>
 	[CallerCount(Count = 3)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public void OnCustomEvent(EventData receivedEvent)
 	{
 	}

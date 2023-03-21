@@ -19,14 +19,14 @@ public class OnRemoteConnectionClosedInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		private set
 		{
 		}
@@ -36,14 +36,14 @@ public class OnRemoteConnectionClosedInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -51,16 +51,16 @@ public class OnRemoteConnectionClosedInfo : ICallbackInfo, ISettable
 
 	public ProductUserId RemoteUserId
 	{
-		[CallerCount(Count = 5)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -77,7 +77,7 @@ public class OnRemoteConnectionClosedInfo : ICallbackInfo, ISettable
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		private set
 		{
 		}
@@ -92,9 +92,9 @@ public class OnRemoteConnectionClosedInfo : ICallbackInfo, ISettable
 		{
 			return default(ConnectionClosedReason);
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
@@ -107,28 +107,28 @@ public class OnRemoteConnectionClosedInfo : ICallbackInfo, ISettable
 		return null;
 	}
 
+	[CalledBy(Type = typeof(OnRemoteConnectionClosedInfo), Member = "Set")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(OnRemoteConnectionClosedInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(OnRemoteConnectionClosedInfoInternal), Member = "get_LocalUserId")]
 	[Calls(Type = typeof(OnRemoteConnectionClosedInfoInternal), Member = "get_RemoteUserId")]
 	[Calls(Type = typeof(OnRemoteConnectionClosedInfoInternal), Member = "get_SocketId")]
-	[CalledBy(Type = typeof(OnRemoteConnectionClosedInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	internal void Set(OnRemoteConnectionClosedInfoInternal? other)
 	{
 	}
 
-	[Calls(Type = typeof(OnRemoteConnectionClosedInfo), Member = "Set")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(OnRemoteConnectionClosedInfo), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public OnRemoteConnectionClosedInfo()
 	{
 	}

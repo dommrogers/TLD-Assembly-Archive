@@ -18,35 +18,26 @@ public static class ColorUtils
 		return default(Color);
 	}
 
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 6)]
 	public static string ColorToHex(Color32 color)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(NumberFormatInfo), Member = "ValidateParseStyleInteger")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(Exception), Member = ".ctor")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "ValidateParseStyleInteger")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "ValidateParseStyleInteger")]
-	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(byte), Member = "Parse")]
+	[Calls(Type = typeof(Exception), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "ValidateParseStyleInteger")]
+	[CallsUnknownMethods(Count = 8)]
 	public static Color HexToColor(string hex)
 	{
 		return default(Color);

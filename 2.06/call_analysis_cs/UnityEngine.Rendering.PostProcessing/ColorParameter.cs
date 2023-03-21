@@ -22,18 +22,18 @@ public sealed class ColorParameter : ParameterOverride<Color>
 	[CallerCount(Count = 0)]
 	public override bool Equals(Color a, Color b)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Vignette), Member = ".ctor")]
-	[CalledBy(Type = typeof(Bloom), Member = ".ctor")]
-	[CalledBy(Type = typeof(AmbientOcclusion), Member = ".ctor")]
-	[CalledBy(Type = typeof(RLProVHSScanlines), Member = ".ctor")]
 	[CalledBy(Type = typeof(ColorGradingSettings), Member = ".ctor")]
 	[CalledBy(Type = typeof(RLProArtefacts), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(RLProUltimateVignette), Member = ".ctor")]
+	[CalledBy(Type = typeof(RLProVHSScanlines), Member = ".ctor")]
+	[CalledBy(Type = typeof(AmbientOcclusion), Member = ".ctor")]
+	[CalledBy(Type = typeof(Bloom), Member = ".ctor")]
+	[CalledBy(Type = typeof(Vignette), Member = ".ctor")]
+	[CallerCount(Count = 7)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public ColorParameter()
 	{
 		((ParameterOverride<>)(object)this)._002Ector();

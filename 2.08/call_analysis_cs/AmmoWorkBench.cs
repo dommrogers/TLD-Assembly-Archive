@@ -20,34 +20,33 @@ public class AmmoWorkBench : MonoBehaviour, CraftingLocationInterface
 	[CallerCount(Count = 0)]
 	public int ModifyCraftingTime(int minutes)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	public bool ReadyForBlueprint(BlueprintData bp)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool ReadyToCraft()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	public void ShowError(CraftingLocationError error)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "EnableCraftingAtLocation")]
 	[CallsUnknownMethods(Count = 1)]
 	public void InteractWithWorkbench()

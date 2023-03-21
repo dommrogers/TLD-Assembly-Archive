@@ -15,7 +15,6 @@ public abstract class CustomTunableLookup<TKey, TElement> where TKey : Enum
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Enum), Member = "GetValues")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Enum), Member = "GetNames")]
 	[CallsUnknownMethods(Count = 18)]
 	static CustomTunableLookup()
@@ -30,27 +29,38 @@ public abstract class CustomTunableLookup<TKey, TElement> where TKey : Enum
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 4)]
 	public static string[] GetNames()
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(CustomTunableLookup_LMH), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomPackSettingsLookup_LMH), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_NLH), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_LMHV), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_NLMH), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_NLMHV), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_DayNightMultiplier), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_TimeOfDay), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_Distance), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_Weather), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_ProportionalMaxItems), Member = ".ctor")]
 	[CallerCount(Count = 11)]
 	[CallsUnknownMethods(Count = 4)]
 	public CustomTunableLookup()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(ValueType), Member = "DefaultEquals")]
+	[CallsUnknownMethods(Count = 8)]
 	public TElement GetValue(TKey index)
 	{
-		return (TElement)null;
+		return default(TElement);
 	}
 }

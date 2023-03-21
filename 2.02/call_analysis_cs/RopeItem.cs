@@ -4,13 +4,13 @@ using UnityEngine;
 public class RopeItem : MonoBehaviour
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void Update()
 	{
 	}

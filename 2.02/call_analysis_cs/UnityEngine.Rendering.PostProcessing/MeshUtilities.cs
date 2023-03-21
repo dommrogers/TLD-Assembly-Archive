@@ -11,19 +11,18 @@ internal static class MeshUtilities
 	private static Dictionary<Type, PrimitiveType> s_ColliderPrimitives;
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallsUnknownMethods(Count = 16)]
 	static MeshUtilities()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(MeshUtilities), Member = "GetPrimitive")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	internal static Mesh GetColliderMesh(Collider collider)
 	{
@@ -31,19 +30,22 @@ internal static class MeshUtilities
 	}
 
 	[CalledBy(Type = typeof(MeshUtilities), Member = "GetColliderMesh")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	internal static Mesh GetPrimitive(PrimitiveType primitiveType)
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private static Mesh GetBuiltinMesh(PrimitiveType primitiveType)
 	{
 		return null;

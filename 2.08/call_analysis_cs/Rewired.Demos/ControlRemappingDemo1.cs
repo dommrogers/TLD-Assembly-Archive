@@ -22,11 +22,11 @@ public class ControlRemappingDemo1 : MonoBehaviour
 
 		public int id
 		{
-			[CallerCount(Count = 28)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 28)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[CallerCount(Count = 0)]
 			set
@@ -54,7 +54,7 @@ public class ControlRemappingDemo1 : MonoBehaviour
 			[CallerCount(Count = 2)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 		}
 
@@ -73,12 +73,12 @@ public class ControlRemappingDemo1 : MonoBehaviour
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(bool);
+				return false;
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public ControllerSelection()
 		{
 		}
@@ -88,8 +88,8 @@ public class ControlRemappingDemo1 : MonoBehaviour
 		{
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public void Clear()
 		{
 		}
@@ -136,7 +136,7 @@ public class ControlRemappingDemo1 : MonoBehaviour
 			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(float);
+				return 0f;
 			}
 		}
 
@@ -146,7 +146,7 @@ public class ControlRemappingDemo1 : MonoBehaviour
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(bool);
+				return false;
 			}
 			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 2)]
@@ -163,9 +163,9 @@ public class ControlRemappingDemo1 : MonoBehaviour
 			{
 				return default(DialogType);
 			}
-			[CallsUnknownMethods(Count = 2)]
 			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 2)]
+			[CallsUnknownMethods(Count = 2)]
 			set
 			{
 			}
@@ -177,7 +177,7 @@ public class ControlRemappingDemo1 : MonoBehaviour
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(bool);
+				return false;
 			}
 		}
 
@@ -194,34 +194,34 @@ public class ControlRemappingDemo1 : MonoBehaviour
 		{
 		}
 
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessCalibration")]
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessFallbackJoystickIdentification")]
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessElementAssignmentConflictCheck")]
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessAddOrReplaceElementAssignment")]
-		[CallsDeduplicatedMethods(Count = 3)]
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessRemoveOrReassignElementAssignment")]
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessJoystickAssignmentChange")]
 		[CalledBy(Type = typeof(DialogHelper), Member = "StartModal")]
-		[CallerCount(Count = 8)]
+		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessJoystickAssignmentChange")]
+		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessRemoveOrReassignElementAssignment")]
 		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessRemoveElementAssignment")]
+		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessAddOrReplaceElementAssignment")]
+		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessElementAssignmentConflictCheck")]
+		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessFallbackJoystickIdentification")]
+		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessCalibration")]
+		[CallerCount(Count = 8)]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 2)]
 		public void StartModal(int queueActionId, DialogType type, WindowProperties windowProperties, Action<int, UserResponse> resultCallback, float openBusyDelay)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(DialogHelper), Member = "Draw")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		public void Update()
 		{
 		}
 
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 6)]
-		[Calls(Type = typeof(GUILayout), Member = "Window")]
 		[CalledBy(Type = typeof(DialogHelper), Member = "Update")]
 		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ShowDialog")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(GUILayout), Member = "Window")]
+		[CallsDeduplicatedMethods(Count = 6)]
 		[CallsUnknownMethods(Count = 5)]
 		public void Draw()
 		{
@@ -233,14 +233,14 @@ public class ControlRemappingDemo1 : MonoBehaviour
 		{
 		}
 
-		[CallsUnknownMethods(Count = 5)]
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawReassignOrRemoveElementAssignmentWindow")]
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawModalWindow_OkayOnly")]
 		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawModalWindow")]
-		[CallsDeduplicatedMethods(Count = 6)]
-		[Calls(Type = typeof(GUILayout), Member = "Button")]
+		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawModalWindow_OkayOnly")]
+		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawReassignOrRemoveElementAssignmentWindow")]
 		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(GUILayout), Member = "Button")]
 		[Calls(Type = typeof(DialogHelper), Member = "Close")]
+		[CallsDeduplicatedMethods(Count = 6)]
+		[CallsUnknownMethods(Count = 5)]
 		public void DrawConfirmButton(string title)
 		{
 		}
@@ -251,14 +251,13 @@ public class ControlRemappingDemo1 : MonoBehaviour
 		{
 		}
 
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawElementAssignmentNormalConflictWindow")]
-		[CallsUnknownMethods(Count = 5)]
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawElementAssignmentNormalConflictWindow")]
 		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawElementAssignmentProtectedConflictWindow")]
+		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawElementAssignmentNormalConflictWindow")]
 		[CallerCount(Count = 3)]
 		[Calls(Type = typeof(GUILayout), Member = "Button")]
-		[CallsDeduplicatedMethods(Count = 6)]
 		[Calls(Type = typeof(DialogHelper), Member = "Close")]
+		[CallsDeduplicatedMethods(Count = 6)]
+		[CallsUnknownMethods(Count = 5)]
 		public void DrawConfirmButton(UserResponse response, string title)
 		{
 		}
@@ -269,49 +268,49 @@ public class ControlRemappingDemo1 : MonoBehaviour
 		{
 		}
 
-		[CallerCount(Count = 4)]
-		[CallsDeduplicatedMethods(Count = 6)]
-		[Calls(Type = typeof(GUILayout), Member = "Button")]
-		[Calls(Type = typeof(DialogHelper), Member = "Close")]
 		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawModalWindow")]
 		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawElementAssignmentProtectedConflictWindow")]
 		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawElementAssignmentNormalConflictWindow")]
 		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawReassignOrRemoveElementAssignmentWindow")]
+		[CallerCount(Count = 4)]
+		[Calls(Type = typeof(GUILayout), Member = "Button")]
+		[Calls(Type = typeof(DialogHelper), Member = "Close")]
+		[CallsDeduplicatedMethods(Count = 6)]
 		[CallsUnknownMethods(Count = 5)]
 		public void DrawCancelButton(string title)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawElementAssignmentWindow")]
 		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawFallbackJoystickIdentificationWindow")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(DialogHelper), Member = "Close")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(DialogHelper), Member = "Close")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public void Confirm()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(DialogHelper), Member = "Close")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		public void Confirm(UserResponse response)
 		{
 		}
 
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(DialogHelper), Member = "Close")]
 		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawElementAssignmentWindow")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(DialogHelper), Member = "Close")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		public void Cancel()
 		{
 		}
 
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		private void DrawWindow(int windowId)
 		{
 		}
@@ -331,21 +330,20 @@ public class ControlRemappingDemo1 : MonoBehaviour
 		{
 		}
 
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawElementAssignmentProtectedConflictWindow")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawCalibrationWindow")]
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawCalibrationWindow")]
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawFallbackJoystickIdentificationWindow")]
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawElementAssignmentNormalConflictWindow")]
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawElementAssignmentWindow")]
-		[CallerCount(Count = 12)]
-		[CalledBy(Type = typeof(DialogHelper), Member = "Confirm")]
-		[CalledBy(Type = typeof(DialogHelper), Member = "Confirm")]
+		[CalledBy(Type = typeof(DialogHelper), Member = "DrawConfirmButton")]
+		[CalledBy(Type = typeof(DialogHelper), Member = "DrawConfirmButton")]
 		[CalledBy(Type = typeof(DialogHelper), Member = "DrawCancelButton")]
-		[CalledBy(Type = typeof(DialogHelper), Member = "DrawConfirmButton")]
-		[CalledBy(Type = typeof(DialogHelper), Member = "DrawConfirmButton")]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[CalledBy(Type = typeof(DialogHelper), Member = "Confirm")]
+		[CalledBy(Type = typeof(DialogHelper), Member = "Confirm")]
 		[CalledBy(Type = typeof(DialogHelper), Member = "Cancel")]
+		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawElementAssignmentWindow")]
+		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawElementAssignmentProtectedConflictWindow")]
+		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawElementAssignmentNormalConflictWindow")]
+		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawFallbackJoystickIdentificationWindow")]
+		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawCalibrationWindow")]
+		[CallerCount(Count = 12)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		private void Close()
 		{
 		}
@@ -395,12 +393,12 @@ public class ControlRemappingDemo1 : MonoBehaviour
 
 		public int id
 		{
+			[CompilerGenerated]
 			[DeduplicatedMethod]
 			[CallerCount(Count = 28)]
-			[CompilerGenerated]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
@@ -419,9 +417,9 @@ public class ControlRemappingDemo1 : MonoBehaviour
 			{
 				return default(QueueActionType);
 			}
+			[CompilerGenerated]
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
-			[CompilerGenerated]
 			protected set
 			{
 			}
@@ -446,16 +444,16 @@ public class ControlRemappingDemo1 : MonoBehaviour
 
 		public UserResponse response
 		{
-			[CallerCount(Count = 1)]
 			[CompilerGenerated]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 1)]
 			get
 			{
 				return default(UserResponse);
 			}
+			[CompilerGenerated]
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
-			[CompilerGenerated]
 			protected set
 			{
 			}
@@ -466,7 +464,7 @@ public class ControlRemappingDemo1 : MonoBehaviour
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 		}
 
@@ -502,11 +500,11 @@ public class ControlRemappingDemo1 : MonoBehaviour
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
+			[CompilerGenerated]
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
-			[CompilerGenerated]
 			private set
 			{
 			}
@@ -516,10 +514,10 @@ public class ControlRemappingDemo1 : MonoBehaviour
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 4)]
+			[CallerCount(Count = 9)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
@@ -531,23 +529,23 @@ public class ControlRemappingDemo1 : MonoBehaviour
 
 		public bool assign
 		{
+			[CompilerGenerated]
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
-			[CompilerGenerated]
 			get
 			{
-				return default(bool);
+				return false;
 			}
-			[CallerCount(Count = 0)]
-			[DeduplicatedMethod]
 			[CompilerGenerated]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			private set
 			{
 			}
 		}
 
-		[CallerCount(Count = 1)]
 		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawJoystickSelector")]
+		[CallerCount(Count = 1)]
 		public JoystickAssignmentChange(int newPlayerId, int joystickId, bool assign)
 			: base(default(QueueActionType))
 		{
@@ -569,9 +567,9 @@ public class ControlRemappingDemo1 : MonoBehaviour
 			{
 				return default(ElementAssignmentChangeType);
 			}
+			[CompilerGenerated]
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
-			[CompilerGenerated]
 			set
 			{
 			}
@@ -581,26 +579,25 @@ public class ControlRemappingDemo1 : MonoBehaviour
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 25)]
+			[CallerCount(Count = 28)]
 			get
 			{
 				return null;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 40)]
+			[CallerCount(Count = 50)]
 			private set
 			{
 			}
 		}
 
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessRemoveOrReassignElementAssignment")]
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessRemoveOrReassignElementAssignment")]
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawAddActionMapButton")]
-		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessAddOrReplaceElementAssignment")]
 		[CalledBy(Type = typeof(ElementAssignmentChange), Member = ".ctor")]
-		[CallerCount(Count = 6)]
 		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawActionAssignmentButton")]
+		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawAddActionMapButton")]
+		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessRemoveOrReassignElementAssignment")]
+		[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessAddOrReplaceElementAssignment")]
+		[CallerCount(Count = 6)]
 		public ElementAssignmentChange(ElementAssignmentChangeType changeType, InputMapper.Context context)
 			: base(default(QueueActionType))
 		{
@@ -629,11 +626,11 @@ public class ControlRemappingDemo1 : MonoBehaviour
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
-			[CallerCount(Count = 0)]
-			[DeduplicatedMethod]
 			[CompilerGenerated]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			private set
 			{
 			}
@@ -643,14 +640,14 @@ public class ControlRemappingDemo1 : MonoBehaviour
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 25)]
+			[CallerCount(Count = 28)]
 			get
 			{
 				return null;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 40)]
+			[CallerCount(Count = 50)]
 			private set
 			{
 			}
@@ -679,16 +676,16 @@ public class ControlRemappingDemo1 : MonoBehaviour
 
 		public Player player
 		{
-			[CallerCount(Count = 27)]
 			[CompilerGenerated]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 27)]
 			get
 			{
 				return null;
 			}
+			[CompilerGenerated]
 			[DeduplicatedMethod]
 			[CallerCount(Count = 55)]
-			[CompilerGenerated]
 			private set
 			{
 			}
@@ -696,9 +693,9 @@ public class ControlRemappingDemo1 : MonoBehaviour
 
 		public ControllerType controllerType
 		{
-			[CallerCount(Count = 0)]
 			[CompilerGenerated]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			get
 			{
 				return default(ControllerType);
@@ -715,14 +712,14 @@ public class ControlRemappingDemo1 : MonoBehaviour
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 53)]
+			[CallerCount(Count = 58)]
 			get
 			{
 				return null;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 21)]
+			[CallerCount(Count = 25)]
 			private set
 			{
 			}
@@ -730,16 +727,16 @@ public class ControlRemappingDemo1 : MonoBehaviour
 
 		public CalibrationMap calibrationMap
 		{
-			[CallerCount(Count = 16)]
 			[CompilerGenerated]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 18)]
 			get
 			{
 				return null;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 38)]
+			[CallerCount(Count = 43)]
 			private set
 			{
 			}
@@ -840,74 +837,70 @@ public class ControlRemappingDemo1 : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputMapper), Member = "get_options")]
-	[Calls(Type = typeof(InputMapper), Member = "get_options")]
-	[Calls(Type = typeof(InputMapper), Member = "get_options")]
 	[Calls(Type = typeof(ControlRemappingDemo1), Member = "Initialize")]
 	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputMapper), Member = "RemoveAllEventListeners")]
+	[Calls(Type = typeof(InputMapper), Member = "add_ConflictFoundEvent")]
+	[Calls(Type = typeof(InputMapper), Member = "add_StoppedEvent")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(InputMapper), Member = "add_StoppedEvent")]
-	[Calls(Type = typeof(InputMapper), Member = "add_ConflictFoundEvent")]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
-	[Calls(Type = typeof(InputMapper), Member = "RemoveAllEventListeners")]
 	private void OnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(InputMapper), Member = "RemoveAllEventListeners")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputMapper), Member = "RemoveAllEventListeners")]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "IdentifyAllJoysticks")]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "Awake")]
-	[Calls(Type = typeof(ReInput), Member = "add_ControllerDisconnectedEvent")]
-	[Calls(Type = typeof(ReInput), Member = "get_unityJoystickIdentificationRequired")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ReInput), Member = "get_userDataStore")]
-	[Calls(Type = typeof(ReInput), Member = "add_ControllerConnectedEvent")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "ClearWorkingVars")]
-	[Calls(Type = typeof(ReInput), Member = "add_ControllerPreDisconnectEvent")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReInput), Member = "add_ControllerConnectedEvent")]
+	[Calls(Type = typeof(ReInput), Member = "add_ControllerPreDisconnectEvent")]
+	[Calls(Type = typeof(ReInput), Member = "add_ControllerDisconnectedEvent")]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "ClearWorkingVars")]
+	[Calls(Type = typeof(ReInput), Member = "get_userDataStore")]
+	[Calls(Type = typeof(ReInput), Member = "get_unityJoystickIdentificationRequired")]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "IdentifyAllJoysticks")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GUIUtility), Member = "CheckOnGUI")]
-	[Calls(Type = typeof(GUIStyle), Member = ".ctor")]
-	[Calls(Type = typeof(GUIStyle), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GUIUtility), Member = "CheckOnGUI")]
+	[Calls(Type = typeof(GUIStyle), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Setup()
 	{
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(InputMapper), Member = "RemoveAllEventListeners")]
 	[Calls(Type = typeof(InputMapper), Member = "add_ConflictFoundEvent")]
 	[Calls(Type = typeof(InputMapper), Member = "add_StoppedEvent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void Subscribe()
 	{
 	}
 
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputMapper), Member = "RemoveAllEventListeners")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
 	private void Unsubscribe()
 	{
 	}
@@ -919,12 +912,12 @@ public class ControlRemappingDemo1 : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetSystemPlayer")]
 	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
 	[Calls(Type = typeof(ReInput), Member = "get_userDataStore")]
 	[Calls(Type = typeof(ControlRemappingDemo1), Member = "ClearWorkingVars")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void HandleMenuControl()
 	{
@@ -942,666 +935,545 @@ public class ControlRemappingDemo1 : MonoBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetSystemPlayer")]
+	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstElementMapWithAction")]
+	[Calls(Type = typeof(ControllerMap), Member = "get_controllerType")]
+	[Calls(Type = typeof(ActionElementMap), Member = "TOPwFiaqgxlpgnTfCgAfcRxFBSo")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(GUIContent), Member = ".ctor")]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "GetScreenCenteredRect")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_none")]
+	[Calls(Type = typeof(GUILayout), Member = "BeginArea")]
+	[Calls(Type = typeof(GUILayout), Member = "ExpandHeight")]
 	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
 	[Calls(Type = typeof(GUILayoutUtility), Member = "DoGetRect")]
 	[Calls(Type = typeof(GUI), Member = "Box")]
-	[Calls(Type = typeof(GUIStyle), Member = "get_none")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandHeight")]
 	[Calls(Type = typeof(GUILayout), Member = "EndArea")]
-	[Calls(Type = typeof(GUILayout), Member = "BeginArea")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GUIContent), Member = ".ctor")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(ActionElementMap), Member = "TOPwFiaqgxlpgnTfCgAfcRxFBSo")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_controllerType")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstElementMapWithAction")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetSystemPlayer")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "GetScreenCenteredRect")]
+	[CallsUnknownMethods(Count = 9)]
 	private void DrawInitialScreen()
 	{
 	}
 
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawCalibrateButton")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(GUILayout), Member = "EndArea")]
-	[Calls(Type = typeof(GUILayout), Member = "EndScrollView")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawCategoryActions")]
-	[Calls(Type = typeof(GUILayout), Member = "BeginScrollView")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawMapCategories")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GUIStyle), Member = "get_none")]
+	[Calls(Type = typeof(GUILayout), Member = "BeginArea")]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawPlayerSelector")]
 	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawJoystickSelector")]
 	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawMouseAssignment")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawPlayerSelector")]
-	[Calls(Type = typeof(GUILayout), Member = "BeginArea")]
-	[Calls(Type = typeof(GUIStyle), Member = "get_none")]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawControllerSelector")]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawCalibrateButton")]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawMapCategories")]
+	[Calls(Type = typeof(GUILayout), Member = "BeginScrollView")]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawCategoryActions")]
+	[Calls(Type = typeof(GUILayout), Member = "EndScrollView")]
+	[Calls(Type = typeof(GUILayout), Member = "EndArea")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 8)]
 	private void DrawPage()
 	{
 	}
 
-	[Calls(Type = typeof(Player), Member = "get_name")]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
-	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
-	[Calls(Type = typeof(GUILayout), Member = "Toggle")]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawPage")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(Player), Member = "get_descriptiveName")]
-	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Player), Member = "get_descriptiveName")]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_allPlayerCount")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(GUILayout), Member = "Space")]
 	[Calls(Type = typeof(GUILayout), Member = "Label")]
 	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[Calls(Type = typeof(GUILayout), Member = "Space")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[Calls(TypeFullName = "Rewired.Utils.EmptyObjects`1", Member = "get_EmptyReadOnlyIListT")]
+	[Calls(Type = typeof(Player), Member = "get_descriptiveName")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Player), Member = "get_name")]
+	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
+	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
+	[Calls(Type = typeof(GUILayout), Member = "Toggle")]
+	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 18)]
 	private void DrawPlayerSelector()
 	{
 	}
 
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[CallsUnknownMethods(Count = 19)]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawPage")]
-	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "set_hasMouse")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "set_hasMouse")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_Players")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "set_hasMouse")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
-	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_hasMouse")]
-	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
 	[Calls(Type = typeof(GUILayout), Member = "Space")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(GUILayout), Member = "Label")]
+	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_hasMouse")]
+	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
+	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
 	[Calls(Type = typeof(GUILayout), Member = "Toggle")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "set_hasMouse")]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_Players")]
+	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 19)]
 	private void DrawMouseAssignment()
 	{
 	}
 
+	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawPage")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GUILayout), Member = "Space")]
+	[Calls(Type = typeof(GUILayout), Member = "Label")]
+	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
+	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
+	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
+	[Calls(Type = typeof(GUILayout), Member = "Toggle")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "qVOccUfXdhgsLdOJByiWhuiJSkfd")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
 	[Calls(Type = typeof(Player.ControllerHelper), Member = "ContainsController")]
 	[Calls(Type = typeof(Controller), Member = "get_name")]
-	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
-	[Calls(Type = typeof(JoystickAssignmentChange), Member = ".ctor")]
 	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
+	[Calls(Type = typeof(JoystickAssignmentChange), Member = ".ctor")]
 	[Calls(Type = typeof(ControlRemappingDemo1), Member = "EnqueueAction")]
 	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
-	[Calls(Type = typeof(GUILayout), Member = "Toggle")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "qVOccUfXdhgsLdOJByiWhuiJSkfd")]
-	[Calls(Type = typeof(GUILayout), Member = "Toggle")]
-	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
-	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(GUILayout), Member = "Space")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 1)]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawPage")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
 	[CallsUnknownMethods(Count = 27)]
 	private void DrawJoystickSelector()
 	{
 	}
 
-	[Calls(Type = typeof(Controller), Member = "get_name")]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
-	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
-	[Calls(Type = typeof(GUILayout), Member = "Toggle")]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawPage")]
-	[CallsUnknownMethods(Count = 32)]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
-	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
-	[Calls(Type = typeof(GUILayout), Member = "Toggle")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_hasMouse")]
-	[Calls(Type = typeof(GUILayout), Member = "Toggle")]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
-	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
-	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
 	[Calls(Type = typeof(GUILayout), Member = "Space")]
+	[Calls(Type = typeof(GUILayout), Member = "Label")]
+	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
+	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
 	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
+	[Calls(Type = typeof(GUILayout), Member = "Toggle")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_hasMouse")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
+	[Calls(Type = typeof(Controller), Member = "get_name")]
+	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 32)]
 	private void DrawControllerSelector()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawPage")]
-	[Calls(Type = typeof(GUI), Member = "set_enabled")]
-	[Calls(Type = typeof(GUILayout), Member = "Button")]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "EnqueueAction")]
-	[Calls(Type = typeof(ControllerWithAxes), Member = "get_calibrationMap")]
-	[Calls(Type = typeof(GUILayout), Member = "Button")]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Controller), Member = "get_name")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "GetController")]
-	[Calls(Type = typeof(GUILayout), Member = "Space")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GUILayout), Member = "Space")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "GetController")]
+	[Calls(Type = typeof(Controller), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
+	[Calls(Type = typeof(GUILayout), Member = "Button")]
+	[Calls(Type = typeof(ControllerWithAxes), Member = "get_calibrationMap")]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "EnqueueAction")]
+	[Calls(Type = typeof(GUI), Member = "set_enabled")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 14)]
 	private void DrawCalibrateButton()
 	{
 	}
 
+	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawPage")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GUILayout), Member = "Space")]
+	[Calls(Type = typeof(GUILayout), Member = "Label")]
+	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
+	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[Calls(TypeFullName = "Rewired.Utils.EmptyObjects`1", Member = "get_EmptyReadOnlyIListT")]
+	[Calls(TypeFullName = "Rewired.Player.ControllerHelper.BnvLPSemkwrCfKYYABiuIneeJhx", Member = "eFsFDEPBoBwkCtkCNRQkVwhlOQ")]
+	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstMapInCategory")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[Calls(Type = typeof(GUI), Member = "set_enabled")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
 	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
 	[Calls(Type = typeof(GUILayout), Member = "Toggle")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstMapInCategory")]
 	[Calls(Type = typeof(GUI), Member = "get_enabled")]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawPage")]
 	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 41)]
-	[Calls(Type = typeof(GUI), Member = "set_enabled")]
-	[Calls(Type = typeof(GUI), Member = "set_enabled")]
-	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstMapInCategory")]
-	[Calls(Type = typeof(Player.ControllerHelper.BnvLPSemkwrCfKYYABiuIneeJhx), Member = "eFsFDEPBoBwkCtkCNRQkVwhlOQ")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(GUILayout), Member = "Space")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
 	private void DrawMapCategories()
 	{
 	}
 
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(GUILayout), Member = "Width")]
-	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
-	[CallsUnknownMethods(Count = 85)]
-	[Calls(Type = typeof(InputAction), Member = "get_negativeDescriptiveName")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(InputAction), Member = "get_negativeDescriptiveName")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawActionAssignmentButton")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_AllMaps")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawAddActionMapButton")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawAddActionMapButton")]
-	[Calls(Type = typeof(GUILayout), Member = "Width")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawActionAssignmentButton")]
-	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawAddActionMapButton")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_AllMaps")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawActionAssignmentButton")]
-	[Calls(Type = typeof(GUI), Member = "get_enabled")]
-	[Calls(Type = typeof(GUI), Member = "set_enabled")]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawPage")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_AllMaps")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
-	[Calls(Type = typeof(GUILayout), Member = "Width")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(GUILayout), Member = "Space")]
 	[Calls(Type = typeof(GUILayout), Member = "Label")]
 	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
 	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetMapCategory")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
 	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
 	[Calls(Type = typeof(UserData), Member = "GetActionCategory")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
 	[Calls(Type = typeof(UserData), Member = "GIRDqTjLRaEIriZdEiTFKTpCEtce")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(GUILayout), Member = "Width")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(InputAction), Member = "get_positiveDescriptiveName")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "Rewired.Utils.EmptyObjects`1", Member = "get_EmptyReadOnlyIListT")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawInvertButton")]
+	[Calls(Type = typeof(GUILayout), Member = "Width")]
 	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(InputAction), Member = "get_positiveDescriptiveName")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_AllMaps")]
 	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawAddActionMapButton")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
+	[Calls(Type = typeof(ControllerMap), Member = "get_AllMaps")]
 	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawActionAssignmentButton")]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "DrawInvertButton")]
+	[Calls(Type = typeof(InputAction), Member = "get_positiveDescriptiveName")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(InputAction), Member = "get_negativeDescriptiveName")]
+	[Calls(Type = typeof(GUI), Member = "get_enabled")]
+	[Calls(Type = typeof(GUI), Member = "set_enabled")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 85)]
 	private void DrawCategoryActions()
 	{
 	}
 
-	[Calls(Type = typeof(ElementAssignmentChange), Member = ".ctor")]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawCategoryActions")]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawCategoryActions")]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawCategoryActions")]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawCategoryActions")]
-	[Calls(Type = typeof(GUILayout), Member = "Space")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "EnqueueAction")]
-	[Calls(Type = typeof(InputMapper.Context), Member = "set_actionElementMapToReplace")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Logger), Member = "LogError")]
-	[Calls(Type = typeof(Logger), Member = "LogError")]
-	[Calls(Type = typeof(GUILayout), Member = "Button")]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
-	[Calls(Type = typeof(ActionElementMap), Member = "TOPwFiaqgxlpgnTfCgAfcRxFBSo")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_controllerType")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(ControllerMap), Member = "get_controllerType")]
+	[Calls(Type = typeof(ActionElementMap), Member = "TOPwFiaqgxlpgnTfCgAfcRxFBSo")]
+	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
+	[Calls(Type = typeof(GUILayout), Member = "Button")]
+	[Calls(TypeFullName = "Rewired.Logger", Member = "LogError")]
 	[Calls(Type = typeof(InputMapper.Context), Member = "set_controllerMap")]
+	[Calls(Type = typeof(InputMapper.Context), Member = "set_actionElementMapToReplace")]
+	[Calls(Type = typeof(ElementAssignmentChange), Member = ".ctor")]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "EnqueueAction")]
+	[Calls(Type = typeof(GUILayout), Member = "Space")]
+	[CallsUnknownMethods(Count = 9)]
 	private void DrawActionAssignmentButton(int playerId, InputAction action, AxisRange actionRange, ControllerSelection controller, ControllerMap controllerMap, ActionElementMap elementMap)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawCategoryActions")]
-	[Calls(Type = typeof(GUILayout), Member = "Space")]
-	[Calls(Type = typeof(GUILayout), Member = "DoToggle")]
-	[Calls(Type = typeof(GUIContent), Member = "Temp")]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
+	[Calls(Type = typeof(GUIContent), Member = "Temp")]
 	[Calls(Type = typeof(GUIUtility), Member = "CheckOnGUI")]
+	[Calls(Type = typeof(GUILayout), Member = "DoToggle")]
+	[Calls(Type = typeof(GUILayout), Member = "Space")]
+	[CallsUnknownMethods(Count = 5)]
 	private void DrawInvertButton(int playerId, InputAction action, Pole actionAxisContribution, ControllerSelection controller, ControllerMap controllerMap, ActionElementMap elementMap)
 	{
 	}
 
-	[Calls(Type = typeof(GUILayout), Member = "Space")]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawCategoryActions")]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawCategoryActions")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawCategoryActions")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "EnqueueAction")]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawCategoryActions")]
-	[Calls(Type = typeof(InputMapper.Context), Member = "set_controllerMap")]
-	[Calls(Type = typeof(Logger), Member = "LogError")]
-	[Calls(Type = typeof(Logger), Member = "LogError")]
-	[Calls(Type = typeof(GUILayout), Member = "Button")]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
+	[Calls(Type = typeof(GUILayout), Member = "Button")]
+	[Calls(TypeFullName = "Rewired.Logger", Member = "LogError")]
+	[Calls(Type = typeof(InputMapper.Context), Member = "set_controllerMap")]
 	[Calls(Type = typeof(ElementAssignmentChange), Member = ".ctor")]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "EnqueueAction")]
+	[Calls(Type = typeof(GUILayout), Member = "Space")]
+	[CallsUnknownMethods(Count = 5)]
 	private void DrawAddActionMapButton(int playerId, InputAction action, AxisRange actionRange, ControllerSelection controller, ControllerMap controllerMap)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(DialogHelper), Member = "Draw")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void ShowDialog()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
-	[Calls(Type = typeof(DialogHelper), Member = "DrawCancelButton")]
-	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
-	[Calls(Type = typeof(DialogHelper), Member = "DrawConfirmButton")]
-	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(GUILayout), Member = "Space")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GUILayout), Member = "Space")]
+	[Calls(Type = typeof(GUILayout), Member = "Label")]
+	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
 	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
+	[Calls(Type = typeof(DialogHelper), Member = "DrawConfirmButton")]
+	[Calls(Type = typeof(DialogHelper), Member = "DrawCancelButton")]
+	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void DrawModalWindow(string title, string message)
 	{
 	}
 
-	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GUILayout), Member = "Space")]
 	[Calls(Type = typeof(GUILayout), Member = "Label")]
 	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
 	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
 	[Calls(Type = typeof(DialogHelper), Member = "DrawConfirmButton")]
+	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void DrawModalWindow_OkayOnly(string title, string message)
 	{
 	}
 
-	[Calls(Type = typeof(InputMapper.KFfTdKEYHyKIWgtQchMdsiMvqor), Member = "get_timeRemaining")]
-	[Calls(Type = typeof(DialogHelper), Member = "Cancel")]
-	[Calls(Type = typeof(InputMapper), Member = "Start")]
-	[Calls(Type = typeof(DialogHelper), Member = "Close")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(DialogHelper), Member = "Confirm")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(InputMapper), Member = "get_options")]
-	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(GUILayout), Member = "Space")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GUILayout), Member = "Space")]
+	[Calls(Type = typeof(GUILayout), Member = "Label")]
+	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
+	[Calls(Type = typeof(InputMapper), Member = "get_options")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(InputMapper), Member = "Start")]
+	[Calls(TypeFullName = "Rewired.InputMapper.KFfTdKEYHyKIWgtQchMdsiMvqor", Member = "get_timeRemaining")]
+	[Calls(Type = typeof(DialogHelper), Member = "Cancel")]
+	[Calls(Type = typeof(DialogHelper), Member = "Confirm")]
+	[Calls(Type = typeof(DialogHelper), Member = "Close")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void DrawElementAssignmentWindow(string title, string message)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(DialogHelper), Member = "Close")]
-	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
-	[Calls(Type = typeof(DialogHelper), Member = "DrawCancelButton")]
-	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
-	[Calls(Type = typeof(DialogHelper), Member = "DrawConfirmButton")]
-	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
-	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(GUILayout), Member = "Space")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GUILayout), Member = "Space")]
+	[Calls(Type = typeof(GUILayout), Member = "Label")]
+	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
+	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
+	[Calls(Type = typeof(DialogHelper), Member = "DrawConfirmButton")]
+	[Calls(Type = typeof(DialogHelper), Member = "DrawCancelButton")]
+	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
+	[Calls(Type = typeof(DialogHelper), Member = "Close")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DrawElementAssignmentProtectedConflictWindow(string title, string message)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(DialogHelper), Member = "Close")]
-	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
-	[Calls(Type = typeof(DialogHelper), Member = "DrawCancelButton")]
-	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
-	[Calls(Type = typeof(DialogHelper), Member = "DrawConfirmButton")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GUILayout), Member = "Space")]
+	[Calls(Type = typeof(GUILayout), Member = "Label")]
 	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
 	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
-	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(GUILayout), Member = "Space")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DialogHelper), Member = "DrawConfirmButton")]
+	[Calls(Type = typeof(DialogHelper), Member = "DrawCancelButton")]
+	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
+	[Calls(Type = typeof(DialogHelper), Member = "Close")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DrawElementAssignmentNormalConflictWindow(string title, string message)
 	{
 	}
 
-	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
-	[Calls(Type = typeof(DialogHelper), Member = "DrawCancelButton")]
-	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
-	[Calls(Type = typeof(DialogHelper), Member = "DrawConfirmButton")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(GUILayout), Member = "Space")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GUILayout), Member = "Space")]
+	[Calls(Type = typeof(GUILayout), Member = "Label")]
 	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
+	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
+	[Calls(Type = typeof(DialogHelper), Member = "DrawConfirmButton")]
+	[Calls(Type = typeof(DialogHelper), Member = "DrawCancelButton")]
+	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void DrawReassignOrRemoveElementAssignmentWindow(string title, string message)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GUILayout), Member = "Space")]
+	[Calls(Type = typeof(GUILayout), Member = "Label")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
+	[Calls(Type = typeof(GUILayout), Member = "Button")]
+	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
 	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "SetUnityJoystickIdFromAnyButtonOrAxisPress")]
 	[Calls(Type = typeof(DialogHelper), Member = "Confirm")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[CallsUnknownMethods(Count = 2)]
 	[Calls(Type = typeof(DialogHelper), Member = "Close")]
-	[Calls(Type = typeof(GUILayout), Member = "Button")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(GUILayout), Member = "Space")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DrawFallbackJoystickIdentificationWindow(string title, string message)
 	{
 	}
 
-	[Calls(Type = typeof(GUIContent), Member = "Temp")]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
-	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
-	[Calls(Type = typeof(GUILayout), Member = "Space")]
-	[Calls(Type = typeof(GUILayout), Member = "DoToggle")]
-	[Calls(Type = typeof(GUIContent), Member = "Temp")]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
-	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(GUILayout), Member = "DoToggle")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(GUILayout), Member = "Space")]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
-	[Calls(Type = typeof(GUILayout), Member = "Button")]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[CallsUnknownMethods(Count = 56)]
-	[Calls(Type = typeof(OverflowException), Member = ".ctor")]
-	[Calls(Type = typeof(DialogHelper), Member = "Close")]
-	[Calls(Type = typeof(DialogHelper), Member = "Close")]
-	[Calls(Type = typeof(GUILayout), Member = "Button")]
-	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
-	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
-	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
-	[Calls(Type = typeof(AxisCalibration), Member = "Reset")]
-	[Calls(Type = typeof(GUILayout), Member = "Button")]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
-	[Calls(Type = typeof(GUILayout), Member = "Space")]
-	[Calls(Type = typeof(GUILayout), Member = "DoToggle")]
-	[Calls(Type = typeof(GUIContent), Member = "Temp")]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
-	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
-	[Calls(Type = typeof(GUILayout), Member = "Button")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Controller.Axis), Member = "get_value")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(GUI), Member = "EndScrollView")]
-	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
-	[Calls(Type = typeof(GUILayout), Member = "DoToggle")]
-	[Calls(Type = typeof(GUIContent), Member = "Temp")]
-	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
-	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
-	[Calls(Type = typeof(ControllerWithAxes), Member = "get_AxisElementIdentifiers")]
-	[Calls(Type = typeof(GUI), Member = "set_enabled")]
-	[Calls(Type = typeof(GUILayout), Member = "BeginScrollView")]
-	[Calls(Type = typeof(GUILayout), Member = "BeginVertical")]
-	[Calls(Type = typeof(GUILayout), Member = "Width")]
-	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
-	[Calls(Type = typeof(GUILayout), Member = "Space")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[CallsDeduplicatedMethods(Count = 24)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
-	[Calls(Type = typeof(GUILayout), Member = "Width")]
 	[Calls(Type = typeof(GUILayout), Member = "Space")]
 	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(CalibrationMap), Member = "GetAxis")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(Controller.Axis), Member = "get_valueRaw")]
+	[Calls(Type = typeof(GUILayout), Member = "BeginHorizontal")]
+	[Calls(Type = typeof(GUILayout), Member = "Width")]
 	[Calls(Type = typeof(GUILayout), Member = "BeginVertical")]
+	[Calls(Type = typeof(GUILayout), Member = "BeginScrollView")]
+	[Calls(Type = typeof(GUI), Member = "set_enabled")]
+	[Calls(Type = typeof(ControllerWithAxes), Member = "get_AxisElementIdentifiers")]
+	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
+	[Calls(Type = typeof(GUILayout), Member = "ExpandWidth")]
+	[Calls(Type = typeof(GUIContent), Member = "Temp")]
+	[Calls(Type = typeof(GUILayout), Member = "DoToggle")]
+	[Calls(Type = typeof(GUILayoutUtility), Member = "EndLayoutGroup")]
+	[Calls(Type = typeof(GUI), Member = "EndScrollView")]
+	[Calls(Type = typeof(GUILayout), Member = "Label")]
+	[Calls(Type = typeof(Controller.Axis), Member = "get_valueRaw")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(CalibrationMap), Member = "GetAxis")]
+	[Calls(Type = typeof(Controller.Axis), Member = "get_value")]
+	[Calls(Type = typeof(GUILayout), Member = "Button")]
+	[Calls(Type = typeof(AxisCalibration), Member = "Reset")]
+	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
+	[Calls(Type = typeof(DialogHelper), Member = "Close")]
+	[Calls(Type = typeof(OverflowException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 24)]
+	[CallsUnknownMethods(Count = 56)]
 	private void DrawCalibrationWindow(string title, string message)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 7)]
+	[Calls(Type = typeof(Queue<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 6)]
 	private void DialogResultCallback(int queueActionId, UserResponse response)
 	{
 	}
 
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessElementAssignmentConflictCheck")]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessCalibration")]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessFallbackJoystickIdentification")]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessElementAssignmentConflictCheck")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessAddOrReplaceElementAssignment")]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessRemoveOrReassignElementAssignment")]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessJoystickAssignmentChange")]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawInitialScreen")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 9)]
+	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessJoystickAssignmentChange")]
+	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessRemoveOrReassignElementAssignment")]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessRemoveElementAssignment")]
+	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessAddOrReplaceElementAssignment")]
+	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessElementAssignmentConflictCheck")]
+	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessFallbackJoystickIdentification")]
+	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessCalibration")]
+	[CallerCount(Count = 9)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private Rect GetScreenCenteredRect(float width, float height)
 	{
 		return default(Rect);
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawJoystickSelector")]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawCalibrateButton")]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawActionAssignmentButton")]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "DrawAddActionMapButton")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Queue<>), Member = "Enqueue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void EnqueueAction(QueueEntry entry)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "ProcessJoystickAssignmentChange")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "ProcessElementAssignmentChange")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ControlRemappingDemo1), Member = "ProcessCalibration")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ControlRemappingDemo1), Member = "ProcessFallbackJoystickIdentification")]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "ProcessElementAssignmentChange")]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "ProcessJoystickAssignmentChange")]
+	[Calls(Type = typeof(Queue<>), Member = "Dequeue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void ProcessQueue()
 	{
 	}
 
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "GetScreenCenteredRect")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessQueue")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "AEAGuWUxmCMnWwXPzMBFgjoWoCu")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "AddController")]
-	[Calls(Type = typeof(DialogHelper), Member = "StartModal")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Player), Member = "get_descriptiveName")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "IsJoystickAssigned")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(Player.ControllerHelper.BnvLPSemkwrCfKYYABiuIneeJhx), Member = "eFsFDEPBoBwkCtkCNRQkVwhlOQ")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+	[Calls(TypeFullName = "Rewired.Player.ControllerHelper.BnvLPSemkwrCfKYYABiuIneeJhx", Member = "eFsFDEPBoBwkCtkCNRQkVwhlOQ")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "IsJoystickAssigned")]
+	[Calls(Type = typeof(Player), Member = "get_descriptiveName")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "GetScreenCenteredRect")]
+	[Calls(Type = typeof(DialogHelper), Member = "StartModal")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "AddController")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "AEAGuWUxmCMnWwXPzMBFgjoWoCu")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool ProcessJoystickAssignmentChange(JoystickAssignmentChange entry)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessQueue")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessQueue")]
+	[CallerCount(Count = 1)]
 	private bool ProcessElementAssignmentChange(ElementAssignmentChange entry)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ControlRemappingDemo1), Member = "GetScreenCenteredRect")]
 	[Calls(Type = typeof(DialogHelper), Member = "StartModal")]
 	[Calls(Type = typeof(InputMapper.Context), Member = "Clone")]
 	[Calls(Type = typeof(ElementAssignmentChange), Member = ".ctor")]
-	[Calls(Type = typeof(InputMapper.Context), Member = "Clone")]
-	[Calls(Type = typeof(ElementAssignmentChange), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(Queue<>), Member = "Enqueue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool ProcessRemoveOrReassignElementAssignment(ElementAssignmentChange entry)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(DialogHelper), Member = "StartModal")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ControlRemappingDemo1), Member = "GetScreenCenteredRect")]
+	[Calls(Type = typeof(DialogHelper), Member = "StartModal")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool ProcessRemoveElementAssignment(ElementAssignmentChange entry)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(DialogHelper), Member = "StartModal")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ControllerMap), Member = "get_controllerType")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_controllerType")]
-	[Calls(Type = typeof(Application), Member = "get_platform")]
 	[Calls(Type = typeof(Application), Member = "get_platform")]
 	[Calls(Type = typeof(ControlRemappingDemo1), Member = "GetScreenCenteredRect")]
+	[Calls(Type = typeof(DialogHelper), Member = "StartModal")]
 	[Calls(Type = typeof(InputMapper.Context), Member = "Clone")]
 	[Calls(Type = typeof(ElementAssignmentChange), Member = ".ctor")]
-	[Calls(Type = typeof(InputMapper.KFfTdKEYHyKIWgtQchMdsiMvqor), Member = "cLsgLNiZfZLdTfDERXbrfQHXqTPc")]
-	[CallsUnknownMethods(Count = 4)]
+	[Calls(Type = typeof(Queue<>), Member = "Enqueue")]
+	[Calls(TypeFullName = "Rewired.InputMapper.KFfTdKEYHyKIWgtQchMdsiMvqor", Member = "cLsgLNiZfZLdTfDERXbrfQHXqTPc")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool ProcessAddOrReplaceElementAssignment(ElementAssignmentChange entry)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ElementAssignmentInfo), Member = "get_elementDisplayName")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "GetScreenCenteredRect")]
 	[Calls(Type = typeof(DialogHelper), Member = "StartModal")]
 	[Calls(Type = typeof(InputMapper), Member = "Stop")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "GetScreenCenteredRect")]
-	[CallsUnknownMethods(Count = 6)]
 	[Calls(Type = typeof(NotImplementedException), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ElementAssignmentInfo), Member = "get_elementDisplayName")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "GetScreenCenteredRect")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ElementAssignmentInfo), Member = "get_elementDisplayName")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 6)]
 	private bool ProcessElementAssignmentConflictCheck(ElementAssignmentChange entry)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(DialogHelper), Member = "StartModal")]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessQueue")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ControlRemappingDemo1), Member = "GetScreenCenteredRect")]
+	[Calls(Type = typeof(DialogHelper), Member = "StartModal")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool ProcessFallbackJoystickIdentification(FallbackJoystickIdentification entry)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ProcessQueue")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Controller), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(ControlRemappingDemo1), Member = "GetScreenCenteredRect")]
 	[Calls(Type = typeof(DialogHelper), Member = "StartModal")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool ProcessCalibration(Calibration entry)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "ClearControllerSelection")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "ClearControllerSelection")]
 	private void PlayerSelectionChanged()
 	{
 	}
@@ -1612,9 +1484,9 @@ public class ControlRemappingDemo1 : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "PlayerSelectionChanged")]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "JoystickPreDisconnect")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void ClearControllerSelection()
 	{
@@ -1626,29 +1498,29 @@ public class ControlRemappingDemo1 : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "ClearWorkingVars")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "ClearWorkingVars")]
 	private void ResetAll()
 	{
 	}
 
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "IdentifyAllJoysticks")]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "JoystickDisconnected")]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ResetAll")]
-	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "Close")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "Initialize")]
-	[Calls(Type = typeof(InputMapper.KFfTdKEYHyKIWgtQchMdsiMvqor), Member = "cLsgLNiZfZLdTfDERXbrfQHXqTPc")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "HandleMenuControl")]
+	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "Close")]
+	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "ResetAll")]
+	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "JoystickDisconnected")]
+	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "IdentifyAllJoysticks")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Queue<>), Member = "Clear")]
+	[Calls(TypeFullName = "Rewired.InputMapper.KFfTdKEYHyKIWgtQchMdsiMvqor", Member = "cLsgLNiZfZLdTfDERXbrfQHXqTPc")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ClearWorkingVars()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 0)]
 	private void SetGUIStateStart()
 	{
 	}
@@ -1660,35 +1532,33 @@ public class ControlRemappingDemo1 : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "IdentifyAllJoysticks")]
-	[Calls(Type = typeof(ReInput), Member = "get_unityJoystickIdentificationRequired")]
-	[Calls(Type = typeof(ReInput), Member = "get_userDataStore")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "IsControllerAssigned")]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
 	[Calls(Type = typeof(Player.ControllerHelper), Member = "ContainsController")]
 	[Calls(Type = typeof(ReInput), Member = "get_userDataStore")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "IsControllerAssigned")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
+	[Calls(Type = typeof(Player), Member = "get_id")]
+	[Calls(Type = typeof(ReInput), Member = "get_unityJoystickIdentificationRequired")]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "IdentifyAllJoysticks")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
+	[CallsUnknownMethods(Count = 14)]
 	private void JoystickConnected(ControllerStatusChangedEventArgs args)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "ClearControllerSelection")]
+	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "IsControllerAssigned")]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
 	[Calls(Type = typeof(Player.ControllerHelper), Member = "ContainsController")]
-	[CallsUnknownMethods(Count = 14)]
 	[Calls(Type = typeof(ReInput), Member = "get_userDataStore")]
 	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(ReInput), Member = "get_userDataStore")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_AllPlayers")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "IsControllerAssigned")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "ClearControllerSelection")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[CallsUnknownMethods(Count = 14)]
 	private void JoystickPreDisconnect(ControllerStatusChangedEventArgs args)
 	{
 	}
@@ -1702,7 +1572,7 @@ public class ControlRemappingDemo1 : MonoBehaviour
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 40)]
+	[CallerCount(Count = 50)]
 	private void OnConflictFound(InputMapper.ConflictFoundEventData data)
 	{
 	}
@@ -1715,16 +1585,16 @@ public class ControlRemappingDemo1 : MonoBehaviour
 
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "Initialize")]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "JoystickConnected")]
-	[Calls(Type = typeof(Controller), Member = "get_name")]
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(ControlRemappingDemo1), Member = "JoystickDisconnected")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
-	[Calls(Type = typeof(ControlRemappingDemo1), Member = "ClearWorkingVars")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_joystickCount")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_joystickCount")]
+	[Calls(Type = typeof(ControlRemappingDemo1), Member = "ClearWorkingVars")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
+	[Calls(Type = typeof(Controller), Member = "get_name")]
+	[Calls(Type = typeof(Queue<>), Member = "Enqueue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	public void IdentifyAllJoysticks()
 	{
 	}

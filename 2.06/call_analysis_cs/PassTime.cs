@@ -40,53 +40,52 @@ public class PassTime : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool HasFearOrAnxiety()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(PassTime), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "InHibernationPreventionIndoorEnvironment")]
+	[Calls(Type = typeof(Anxiety), Member = "CanPassTime")]
+	[Calls(Type = typeof(HighResolutionTimer), Member = "GetElapsedHours")]
+	[Calls(Type = typeof(BrokenRib), Member = "AddRest")]
+	[Calls(Type = typeof(HighResolutionTimer), Member = "GetElapsedMilliseconds")]
 	[Calls(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
 	[Calls(Type = typeof(PassTime), Member = "End")]
 	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(HighResolutionTimer), Member = "GetElapsedMilliseconds")]
-	[Calls(Type = typeof(HighResolutionTimer), Member = "GetElapsedHours")]
-	[Calls(Type = typeof(BrokenRib), Member = "AddRest")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Anxiety), Member = "CanPassTime")]
-	[Calls(Type = typeof(PlayerManager), Member = "InHibernationPreventionIndoorEnvironment")]
 	private void UpdatePassingTime()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_pass_time")]
-	[CalledBy(Type = typeof(Panel_Rest), Member = "DoPassTime")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpSnow")]
+	[CalledBy(Type = typeof(Panel_Rest), Member = "DoPassTime")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_pass_time")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(HighResolutionTimer), Member = "Restart")]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
-	[Calls(Type = typeof(HighResolutionTimer), Member = "Restart")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Begin(float hours, Bed bed)
 	{
 	}
 
-	[CalledBy(Type = typeof(PassTime), Member = "UpdatePassingTime")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
-	[CalledBy(Type = typeof(Panel_Rest), Member = "OnCancel")]
-	[CalledBy(Type = typeof(SnowShelter), Member = "Update")]
-	[CalledBy(Type = typeof(CookingPotItem), Member = "MaybeInterruptPassTime")]
-	[CalledBy(Type = typeof(PassTime), Member = "Update")]
 	[CalledBy(Type = typeof(BaseAi), Member = "EnterPassingAttack")]
-	[Calls(Type = typeof(HighResolutionTimer), Member = "GetElapsedMilliseconds")]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(Bed), Member = "Degrade")]
-	[Calls(Type = typeof(HighResolutionTimer), Member = "GetElapsedHours")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(PassTime), Member = "Update")]
+	[CalledBy(Type = typeof(PassTime), Member = "UpdatePassingTime")]
+	[CalledBy(Type = typeof(CookingPotItem), Member = "MaybeInterruptPassTime")]
+	[CalledBy(Type = typeof(SnowShelter), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Rest), Member = "OnCancel")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(HighResolutionTimer), Member = "GetElapsedHours")]
+	[Calls(Type = typeof(Bed), Member = "Degrade")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[Calls(Type = typeof(HighResolutionTimer), Member = "GetElapsedMilliseconds")]
+	[CallsUnknownMethods(Count = 2)]
 	public void End()
 	{
 	}
@@ -103,11 +102,11 @@ public class PassTime : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsPassingTime()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -115,29 +114,28 @@ public class PassTime : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetNumHoursRemaining()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(Freezing), Member = "CalculateBodyTemperature")]
+	[CalledBy(Type = typeof(Frostbite), Member = "CalculateBodyTemperatureWithoutClothing")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Bed), Member = "GetWarmthBonusCelsius")]
-	[CalledBy(Type = typeof(Freezing), Member = "CalculateBodyTemperature")]
-	[CalledBy(Type = typeof(Frostbite), Member = "CalculateBodyTemperatureWithoutClothing")]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetBedWarmthBonusCelsius()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[CallsUnknownMethods(Count = 2)]
 	private void RestoreTimeOfDay()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
 	[CallsUnknownMethods(Count = 1)]
 	private void AccelerateTimeOfDay(float hours)

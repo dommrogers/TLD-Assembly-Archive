@@ -21,34 +21,36 @@ public class PlayableBehaviourFadeLight : PlayableBehaviour
 	private float m_CurrentValue;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 8)]
 	public override void ProcessFrame(Playable playable, FrameData info, object playerData)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Light), Member = "get_intensity")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	public override void OnBehaviourPlay(Playable playable, FrameData info)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(GameManager), Member = "ResetLists")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 5)]
 	public static void Reset()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void ClearCachedValuesForLights(Light[] lights)
 	{
@@ -61,10 +63,11 @@ public class PlayableBehaviourFadeLight : PlayableBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[CallsUnknownMethods(Count = 3)]
 	public static void SetLightFadeDisabled(bool disabled)
 	{
 	}

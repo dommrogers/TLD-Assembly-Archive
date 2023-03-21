@@ -11,15 +11,15 @@ public class Panel_Help : Panel_Base
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void Update()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteHelpAction")]
+	[CallerCount(Count = 1)]
 	public void OnDone()
 	{
 	}
@@ -31,9 +31,9 @@ public class Panel_Help : Panel_Base
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public Panel_Help()
 	{
 	}

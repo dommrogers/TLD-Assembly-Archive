@@ -13,14 +13,14 @@ public class LobbyUpdateReceivedCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		private set
 		{
 		}
@@ -30,46 +30,46 @@ public class LobbyUpdateReceivedCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Result? GetResultCode()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(LobbyUpdateReceivedCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(LobbyUpdateReceivedCallbackInfoInternal), Member = "get_LobbyId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	internal void Set(LobbyUpdateReceivedCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(LobbyUpdateReceivedCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(LobbyUpdateReceivedCallbackInfoInternal), Member = "get_LobbyId")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public LobbyUpdateReceivedCallbackInfo()
 	{
 	}

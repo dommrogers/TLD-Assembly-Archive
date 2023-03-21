@@ -27,10 +27,10 @@ internal struct SendPacketOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId LocalUserId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(SendPacketOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -38,10 +38,10 @@ internal struct SendPacketOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId RemoteUserId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(SendPacketOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -50,8 +50,8 @@ internal struct SendPacketOptionsInternal : ISettable, IDisposable
 	public SocketId SocketId
 	{
 		[CalledBy(Type = typeof(SendPacketOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(SocketIdInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(SocketIdInternal), Member = "Set")]
 		[CallsDeduplicatedMethods(Count = 4)]
 		set
 		{
@@ -69,9 +69,9 @@ internal struct SendPacketOptionsInternal : ISettable, IDisposable
 
 	public byte[] Data
 	{
+		[CalledBy(Type = typeof(SendPacketOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(SendPacketOptionsInternal), Member = "Set")]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -82,8 +82,8 @@ internal struct SendPacketOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(SendPacketOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -91,35 +91,34 @@ internal struct SendPacketOptionsInternal : ISettable, IDisposable
 
 	public PacketReliability Reliability
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
 	}
 
+	[CalledBy(Type = typeof(SendPacketOptionsInternal), Member = "Set")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SendPacketOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(SendPacketOptionsInternal), Member = "set_RemoteUserId")]
 	[Calls(Type = typeof(SendPacketOptionsInternal), Member = "set_SocketId")]
 	[Calls(Type = typeof(SendPacketOptionsInternal), Member = "set_Data")]
 	[Calls(Type = typeof(SendPacketOptionsInternal), Member = "set_AllowDelayedDelivery")]
-	[CalledBy(Type = typeof(SendPacketOptionsInternal), Member = "Set")]
 	public void Set(SendPacketOptions other)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(SendPacketOptionsInternal), Member = "Set")]
 	[CalledBy(Type = typeof(P2PInterface), Member = "SendPacket")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SendPacketOptionsInternal), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{

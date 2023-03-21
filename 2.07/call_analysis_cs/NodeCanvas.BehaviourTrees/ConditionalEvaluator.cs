@@ -14,14 +14,14 @@ public class ConditionalEvaluator : BTDecorator, ITaskAssignable<ConditionTask>,
 
 	public Task task
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -36,37 +36,33 @@ public class ConditionalEvaluator : BTDecorator, ITaskAssignable<ConditionTask>,
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 8)]
+		[CallerCount(Count = 9)]
 		set
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[Calls(Type = typeof(Node), Member = "Reset")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
+	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
 	[Calls(Type = typeof(Connection), Member = "Execute")]
+	[Calls(Type = typeof(Node), Member = "Reset")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	protected override void OnReset()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public ConditionalEvaluator()
 	{
 	}

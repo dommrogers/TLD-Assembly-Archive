@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -21,24 +20,24 @@ public class FlickerTimingControl
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	public int CurrentFlickerSet
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 6)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public List<float> FlickerModuleTiming
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 44)]
+		[CallerCount(Count = 53)]
 		get
 		{
 			return null;
@@ -52,28 +51,28 @@ public class FlickerTimingControl
 	{
 	}
 
-	[CallsUnknownMethods(Count = 20)]
 	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "InitializeFlickerSet")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 20)]
 	public void InitializeFlickerTiming(FlickerModuleSet moduleSet)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "ManualUpdate")]
 	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "UpdateFlickerTiming")]
+	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 3)]
 	public void AdvanceFlickerTiming(FlickerModuleSet moduleSet, float deltaTime)
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public FlickerTimingControl()
 	{
 	}

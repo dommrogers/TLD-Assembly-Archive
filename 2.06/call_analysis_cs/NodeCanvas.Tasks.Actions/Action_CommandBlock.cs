@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -11,14 +10,13 @@ public class Action_CommandBlock : ActionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-		[Calls(Type = typeof(string), Member = "Split")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[Calls(Type = typeof(string), Member = "Split")]
+		[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsUnknownMethods(Count = 3)]
 		get
 		{
 			return null;
@@ -26,18 +24,20 @@ public class Action_CommandBlock : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(string), Member = "Split")]
 	[Calls(Type = typeof(NCUtils), Member = "ProcessCommandBlockLines")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsUnknownMethods(Count = 6)]
 	public Action_CommandBlock()
 	{
 	}

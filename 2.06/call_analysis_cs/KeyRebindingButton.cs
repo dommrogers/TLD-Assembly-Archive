@@ -11,20 +11,18 @@ public class KeyRebindingButton : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsUnknownMethods(Count = 2)]
 	public void Start()
 	{
 	}
 
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "UpdateKeyBindingTable")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "UpdateKeyBindingTable")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnGUI")]
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnKeyRebindButtonPress")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnGUI")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "UpdateKeyBindingTable")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(InputManager), Member = "ConvertKeycodeToLabel")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetValueLabel(string keycode)
 	{
 	}

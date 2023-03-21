@@ -40,37 +40,37 @@ public class Action_PassTime : ActionTask
 
 	private const float audioFadeDuration = 1f;
 
-	[CallsUnknownMethods(Count = 59)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[Calls(Type = typeof(FullScreenMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(AccelTimePopup), Member = "IsLabelMessageActive")]
-	[Calls(Type = typeof(Rest), Member = "BeginSleeping")]
-	[Calls(Type = typeof(Panel_FeedFire), Member = "ExitFeedFireInterface")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Panel_FeedFire), Member = "ExitFeedFireInterface")]
 	[Calls(Type = typeof(Panel_Cooking), Member = "ExitCookingInterface")]
+	[Calls(Type = typeof(AccelTimePopup), Member = "IsLabelMessageActive")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(FullScreenMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(Rest), Member = "BeginSleeping")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 45)]
 	protected override void OnExecute()
 	{
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(AccelTimePopup), Member = "EnableLabelMessage")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[CallsUnknownMethods(Count = 17)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 15)]
 	protected override void OnUpdate()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Action_PassTime()
 	{
 	}

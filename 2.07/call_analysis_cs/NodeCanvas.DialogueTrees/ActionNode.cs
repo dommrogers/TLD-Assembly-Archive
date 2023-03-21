@@ -23,9 +23,9 @@ public class ActionNode : DTNode, ITaskAssignable<ActionTask>, ITaskAssignable
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 28)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -36,7 +36,7 @@ public class ActionNode : DTNode, ITaskAssignable<ActionTask>, ITaskAssignable
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -57,23 +57,22 @@ public class ActionNode : DTNode, ITaskAssignable<ActionTask>, ITaskAssignable
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Graph), Member = "Stop")]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+		[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
 		[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
 		[Calls(Type = typeof(DialogueTree), Member = "Continue")]
-		[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
-		[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+		[Calls(Type = typeof(Graph), Member = "Stop")]
+		[CallsUnknownMethods(Count = 1)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 4)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -83,14 +82,14 @@ public class ActionNode : DTNode, ITaskAssignable<ActionTask>, ITaskAssignable
 
 	public ActionTask action
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		set
 		{
 		}
@@ -117,15 +116,15 @@ public class ActionNode : DTNode, ITaskAssignable<ActionTask>, ITaskAssignable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Node), Member = "StartCoroutine")]
-	[Calls(Type = typeof(Node), Member = "Error")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
+	[Calls(Type = typeof(Node), Member = "StartCoroutine")]
+	[Calls(Type = typeof(Node), Member = "Error")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
@@ -139,13 +138,12 @@ public class ActionNode : DTNode, ITaskAssignable<ActionTask>, ITaskAssignable
 		return null;
 	}
 
+	[DeduplicatedMethod]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[Calls(Type = typeof(Graph), Member = "Stop")]
 	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Graph), Member = "Stop")]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
-	[CallerCount(Count = 1)]
-	[DeduplicatedMethod]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
 	private void OnActionEnd(bool success)
 	{
 	}
@@ -162,8 +160,8 @@ public class ActionNode : DTNode, ITaskAssignable<ActionTask>, ITaskAssignable
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DTNode), Member = ".ctor")]
 	public ActionNode()
 	{

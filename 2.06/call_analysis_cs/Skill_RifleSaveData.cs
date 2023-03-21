@@ -4,8 +4,8 @@ public class Skill_RifleSaveData
 {
 	public int m_Points;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public Skill_RifleSaveData()
 	{
 	}

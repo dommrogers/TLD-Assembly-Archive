@@ -26,15 +26,15 @@ internal struct SessionModificationSetMaxPlayersOptionsInternal : ISettable, IDi
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(SessionModification), Member = "SetMaxPlayers")]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

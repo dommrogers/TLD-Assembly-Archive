@@ -16,8 +16,8 @@ public class ConditionNode : BTNode, ITaskAssignable<ConditionTask>, ITaskAssign
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -40,19 +40,19 @@ public class ConditionNode : BTNode, ITaskAssignable<ConditionTask>, ITaskAssign
 
 	public override string name
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Node), Member = "get_name")]
 		[Calls(Type = typeof(string), Member = "ToUpper")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);

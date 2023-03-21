@@ -32,9 +32,9 @@ public class PlayerSpawn : MonoBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	private void SetWeather()
 	{
 	}

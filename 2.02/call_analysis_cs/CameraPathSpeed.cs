@@ -9,17 +9,17 @@ public class CameraPathSpeed : CameraPathPoint
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(CameraPathPoint), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPathPoint), Member = ".ctor")]
 	public CameraPathSpeed()
 	{
 	}

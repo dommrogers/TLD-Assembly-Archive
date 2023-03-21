@@ -5,7 +5,7 @@ namespace Users;
 public class PermissionCheckResultListPlugin
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PermissionCheckResultListPlugin()
 	{
 	}

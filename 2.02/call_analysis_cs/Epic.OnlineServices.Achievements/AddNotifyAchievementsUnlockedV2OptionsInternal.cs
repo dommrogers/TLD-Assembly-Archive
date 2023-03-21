@@ -15,15 +15,15 @@ internal struct AddNotifyAchievementsUnlockedV2OptionsInternal : ISettable, IDis
 	{
 	}
 
+	[CalledBy(Type = typeof(AchievementsInterface), Member = "AddNotifyAchievementsUnlockedV2")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(AchievementsInterface), Member = "AddNotifyAchievementsUnlockedV2")]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

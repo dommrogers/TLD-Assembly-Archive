@@ -12,15 +12,15 @@ public class AmplifyBokehData
 	internal Vector4[] Offsets;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 71)]
+	[CallerCount(Count = 77)]
 	public AmplifyBokehData(Vector4[] offsets)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(AmplifyUtils), Member = "ReleaseTempRenderTarget")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Destroy()
 	{
 	}

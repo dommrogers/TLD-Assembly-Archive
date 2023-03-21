@@ -11,9 +11,9 @@ public class FootstepTrailSaveDataProxy
 
 	public List<uint> m_Footsteps;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public FootstepTrailSaveDataProxy()
 	{
 	}

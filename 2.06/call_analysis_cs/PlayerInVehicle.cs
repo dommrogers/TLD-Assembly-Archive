@@ -37,16 +37,16 @@ public class PlayerInVehicle : MonoBehaviour
 
 	public bool IsTransitioning
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
@@ -57,89 +57,84 @@ public class PlayerInVehicle : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool BlockSavingWhileInside()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "SetHeavyOcclusion")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CalledBy(Type = typeof(VehicleDoor), Member = "PerformInteraction")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetHeavyOcclusion")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public void EnterVehicle(VehicleDoor vd)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(VehicleDoor), Member = "PerformInteraction")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(GameAudioManager), Member = "ExitOcclusionTrigger")]
-	[CalledBy(Type = typeof(VehicleDoor), Member = "PerformInteraction")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public void ExitVehicle(VehicleDoor vd)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsInside()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool IsEntering()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetTempIncrease()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Panel_Rest), Member = "StartRest")]
-	[Calls(Type = typeof(Panel_Rest), Member = "StartRest")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "OnBedRoll")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "OpenVehicleRest")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "OpenVehicleRest")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Panel_Rest), Member = "StartRest")]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnBedroll(GearItem gi = null)
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "Deserialize")]
-	[Calls(Type = typeof(PlayerInVehicle), Member = "EnterVehicleCommon")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "SetState")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerInVehicle), Member = "GetVehicleDoorFromCollider")]
-	[Calls(Type = typeof(Physics), Member = "OverlapSphere")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Physics), Member = "OverlapSphere")]
+	[Calls(Type = typeof(PlayerInVehicle), Member = "GetVehicleDoorFromCollider")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "SetState")]
+	[Calls(Type = typeof(PlayerInVehicle), Member = "EnterVehicleCommon")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void ForceIntoVehicleSilent(Vector3 cameraPos)
 	{
 	}
 
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "OnRoundsUnloaded")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Random), Member = "Range")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public Vector3 GetDropItemLocationForLastDoor()
 	{
 		return default(Vector3);
@@ -147,11 +142,10 @@ public class PlayerInVehicle : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	public bool HasDropLocationForLastDoor()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
@@ -161,58 +155,46 @@ public class PlayerInVehicle : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(PlayerInVehicle), Member = "ForceIntoVehicleSilent")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(PlayerManager), Member = "DisableCharacterController")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapZoom")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapSprings")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouchImmediate")]
-	[CallsDeduplicatedMethods(Count = 22)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouchImmediate")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapSprings")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapZoom")]
+	[Calls(Type = typeof(PlayerManager), Member = "DisableCharacterController")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
+	[CallsDeduplicatedMethods(Count = 22)]
+	[CallsUnknownMethods(Count = 23)]
 	private void EnterVehicleCommon()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 36)]
-	[Calls(Type = typeof(Wind), Member = "UpdateWindOcclusion")]
-	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
-	[Calls(Type = typeof(PlayerManager), Member = "EnableCharacterController")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(GameAudioManager), Member = "NotifyAiAudioEvent")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[CallsDeduplicatedMethods(Count = 20)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "NotifyAiAudioEvent")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
+	[Calls(Type = typeof(PlayerManager), Member = "EnableCharacterController")]
+	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
+	[Calls(Type = typeof(Wind), Member = "UpdateWindOcclusion")]
+	[CallsDeduplicatedMethods(Count = 20)]
+	[CallsUnknownMethods(Count = 36)]
 	private void ExitVehicleAfterFadeOut()
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(PlayerInVehicle), Member = "ForceIntoVehicleSilent")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 22)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 18)]
+	[CallsUnknownMethods(Count = 3)]
 	private VehicleDoor GetVehicleDoorFromCollider(Collider c)
 	{
 		return null;

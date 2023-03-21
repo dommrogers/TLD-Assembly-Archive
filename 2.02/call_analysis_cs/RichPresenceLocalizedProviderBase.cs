@@ -6,25 +6,26 @@ public abstract class RichPresenceLocalizedProviderBase : RichPresenceProviderBa
 {
 	protected Dictionary<PresenceType, string> m_PresenceLocKeys;
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Array), Member = "get_Length")]
-	[Calls(Type = typeof(Enum), Member = "GetValues")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enum), Member = "GetValues")]
+	[Calls(Type = typeof(Array), Member = "get_Length")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	public override void Initialize()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	public override void SetLocalizationKeys(RichPresenceLocInfo[] locKeys)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	protected RichPresenceLocalizedProviderBase()
 	{
 	}

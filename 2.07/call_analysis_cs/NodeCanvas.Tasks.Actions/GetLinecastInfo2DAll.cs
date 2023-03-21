@@ -22,15 +22,15 @@ public class GetLinecastInfo2DAll : ActionTask<Transform>
 
 		public static Func<RaycastHit2D, Vector2> _003C_003E9__7_3;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec()
 		{
 		}
 
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
 		[CallsUnknownMethods(Count = 2)]
-		[CallerCount(Count = 0)]
 		internal GameObject _003COnExecute_003Eb__7_0(RaycastHit2D h)
 		{
 			return null;
@@ -39,7 +39,7 @@ public class GetLinecastInfo2DAll : ActionTask<Transform>
 		[CallerCount(Count = 0)]
 		internal float _003COnExecute_003Eb__7_1(RaycastHit2D h)
 		{
-			return default(float);
+			return 0f;
 		}
 
 		[CallerCount(Count = 0)]
@@ -69,26 +69,25 @@ public class GetLinecastInfo2DAll : ActionTask<Transform>
 
 	private RaycastHit2D[] hits;
 
-	[CallsUnknownMethods(Count = 44)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(Physics2D), Member = "LinecastAll")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Physics2D), Member = "LinecastAll")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(Func<, >), Member = ".ctor")]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 34)]
 	protected override void OnExecute()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 5)]
 	public override void OnDrawGizmosSelected()
 	{
 	}

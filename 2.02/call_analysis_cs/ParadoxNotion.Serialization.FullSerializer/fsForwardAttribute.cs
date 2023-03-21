@@ -8,7 +8,7 @@ public sealed class fsForwardAttribute : Attribute
 	public string MemberName;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 101)]
+	[CallerCount(Count = 103)]
 	public fsForwardAttribute(string memberName)
 	{
 	}

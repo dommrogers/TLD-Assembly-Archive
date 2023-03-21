@@ -6,8 +6,8 @@ public class WellFedSaveDataProxy
 
 	public float m_ElapsedHoursNotStarving;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public WellFedSaveDataProxy()
 	{
 	}

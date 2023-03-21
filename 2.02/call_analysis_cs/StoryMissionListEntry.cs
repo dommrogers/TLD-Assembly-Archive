@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -52,75 +51,53 @@ public class StoryMissionListEntry : MonoBehaviour
 
 	public bool m_IsSelected;
 
-	[Calls(Type = typeof(StoryMissionListEntry), Member = "SetActiveCheckboxEntry")]
-	[Calls(Type = typeof(MissionTimer), Member = "get_Time")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionTimerByName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
-	[Calls(Type = typeof(StoryMissionListEntry), Member = "SetActiveCheckboxEntry")]
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(Type = typeof(StoryMissionListEntry), Member = "SetActiveCheckboxEntry")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionTimerByName")]
+	[Calls(Type = typeof(MissionTimer), Member = "get_Time")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 26)]
 	public void Refresh(StoryMissionInfo missionInfo, int numCompletedObjectives, int numObjectives)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnNavigationChanged")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshScrollList")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetSelected(bool isSelected)
 	{
 	}
 
+	[CalledBy(Type = typeof(StoryMissionListEntry), Member = "Refresh")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CalledBy(Type = typeof(StoryMissionListEntry), Member = "Refresh")]
-	[CalledBy(Type = typeof(StoryMissionListEntry), Member = "Refresh")]
 	[CallsUnknownMethods(Count = 12)]
 	private void SetActiveCheckboxEntry(UISprite activeSprite)
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public StoryMissionListEntry()
 	{
 	}

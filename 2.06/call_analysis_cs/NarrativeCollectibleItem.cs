@@ -23,24 +23,24 @@ public class NarrativeCollectibleItem : MonoBehaviour
 
 	public LocalizedString m_HudMessageOnPickup;
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenEquip")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenEquip")]
 	public void MaybeShowHudMessage()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateAvailableMementos")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshCollectibleCounters")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool IsMementoItem()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

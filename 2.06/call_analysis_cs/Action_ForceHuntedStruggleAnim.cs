@@ -17,8 +17,8 @@ public class Action_ForceHuntedStruggleAnim : ActionTask
 			}
 		}
 
-		[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 		protected override void OnExecute()
 		{
 		}
@@ -42,26 +42,25 @@ public class Action_ForceHuntedStruggleAnim : ActionTask
 
 	public string struggleFaceTargetObjectIdentifier;
 
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
 	public Action_ForceHuntedStruggleAnim()
 	{
 	}

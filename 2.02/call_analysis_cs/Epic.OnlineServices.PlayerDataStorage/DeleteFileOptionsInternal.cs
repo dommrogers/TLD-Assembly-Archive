@@ -17,9 +17,9 @@ internal struct DeleteFileOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(DeleteFileOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(DeleteFileOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -27,11 +27,11 @@ internal struct DeleteFileOptionsInternal : ISettable, IDisposable
 
 	public string Filename
 	{
+		[CalledBy(Type = typeof(DeleteFileOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(DeleteFileOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(DeleteFileOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(DeleteFileOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -45,17 +45,17 @@ internal struct DeleteFileOptionsInternal : ISettable, IDisposable
 	}
 
 	[CalledBy(Type = typeof(PlayerDataStorageInterface), Member = "DeleteFile")]
-	[Calls(Type = typeof(DeleteFileOptionsInternal), Member = "set_Filename")]
-	[Calls(Type = typeof(DeleteFileOptionsInternal), Member = "set_LocalUserId")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DeleteFileOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(DeleteFileOptionsInternal), Member = "set_Filename")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

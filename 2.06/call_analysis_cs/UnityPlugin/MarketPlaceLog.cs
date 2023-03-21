@@ -10,8 +10,8 @@ internal class MarketPlaceLog
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void LogCallbackException(string message);
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public MarketPlaceLog()
 	{
 	}

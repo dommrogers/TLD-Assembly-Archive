@@ -1,3 +1,4 @@
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using ParadoxNotion.Serialization;
 
@@ -11,14 +12,14 @@ public class MissingAction : ActionTask, IMissingRecoverable
 
 	private string ParadoxNotion_002ESerialization_002EIMissingRecoverable_002EmissingType
 	{
-		[CallerCount(Count = 4)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 4)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 4)]
+		[CallerCount(Count = 23)]
 		set
 		{
 		}
@@ -33,7 +34,7 @@ public class MissingAction : ActionTask, IMissingRecoverable
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 6)]
+		[CallerCount(Count = 10)]
 		set
 		{
 		}
@@ -43,8 +44,9 @@ public class MissingAction : ActionTask, IMissingRecoverable
 	{
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "SplitInternal")]
+		[Calls(Type = typeof(Enumerable), Member = "Last")]
 		[Calls(Type = typeof(string), Member = "Format")]
-		[CallsUnknownMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;

@@ -16,8 +16,8 @@ internal struct SessionSearchFindOptionsInternal : ISettable, IDisposable
 		[CalledBy(Type = typeof(SessionSearchFindOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(SessionSearchFindOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,16 +29,16 @@ internal struct SessionSearchFindOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(SessionSearchFindOptionsInternal), Member = "set_LocalUserId")]
 	[CalledBy(Type = typeof(SessionSearch), Member = "Find")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SessionSearchFindOptionsInternal), Member = "set_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

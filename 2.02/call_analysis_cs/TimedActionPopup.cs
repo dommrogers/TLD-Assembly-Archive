@@ -29,12 +29,12 @@ public class TimedActionPopup : MonoBehaviour
 
 	public bool m_ActionTriggered
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -50,17 +50,15 @@ public class TimedActionPopup : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(TimedActionPopup), Member = "Reset")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(TimedActionPopup), Member = "Reset")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
-	[Calls(Type = typeof(TimedActionPopup), Member = "SetPrompt")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TimedActionPopup), Member = "SetPrompt")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
+	[Calls(Type = typeof(TimedActionPopup), Member = "Reset")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public void Update()
 	{
 	}
@@ -72,32 +70,31 @@ public class TimedActionPopup : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(TimedActionPopup), Member = "Update")]
+	[CallAnalysisFailed]
 	[CalledBy(Type = typeof(TimedActionPopup), Member = "Awake")]
 	[CalledBy(Type = typeof(TimedActionPopup), Member = "Update")]
-	[CallAnalysisFailed]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(TimedActionPopup), Member = "Setup")]
+	[CallerCount(Count = 4)]
 	private void Reset()
 	{
 	}
 
 	[CalledBy(Type = typeof(TimedActionPopup), Member = "Update")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetPrompt(string prompt, string action)
 	{
 	}
 
+	[CalledBy(Type = typeof(Action_TimedActionPopup), Member = "OnExecute")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(TimedActionPopup), Member = "Reset")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CalledBy(Type = typeof(Action_TimedActionPopup), Member = "OnExecute")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Setup(float displaytime, float holdtime, string prompt, InputManager.InputAction action)
 	{

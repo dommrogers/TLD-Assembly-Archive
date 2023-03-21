@@ -9,7 +9,7 @@ public class LocationRevealQueueInfo
 	public bool m_ShowNewLocation;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public LocationRevealQueueInfo()
 	{
 	}

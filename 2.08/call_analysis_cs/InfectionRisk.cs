@@ -89,19 +89,19 @@ public class InfectionRisk : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(InfectionRisk), Member = "UpdateInfectionRisk")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(TimeOfDay), Member = "GetTODHours")]
+	[Calls(Type = typeof(InfectionRisk), Member = "UpdateInfectionRisk")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 4)]
 	public void Update()
 	{
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallsUnknownMethods(Count = 7)]
 	public string Serialize()
@@ -109,100 +109,101 @@ public class InfectionRisk : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 14)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public bool LocationAvailable()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(InfectionRisk), Member = "InfectionRiskStart")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	public void ConstantInfectionRiskStart(string cause, AfflictionBodyArea area, bool displayIcon, bool nofx = false)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "BearFadeFinish")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_infection_risk_nofx")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions")]
-	[CalledBy(Type = typeof(InfectionRisk), Member = "ConstantInfectionRiskStart")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_infection_risk_constant")]
-	[Calls(Type = typeof(Log), Member = "AddAffliction")]
 	[CalledBy(Type = typeof(RiskOfInfectionEvent), Member = "OnExecute")]
-	[CallerCount(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CalledBy(Type = typeof(InfectionRisk), Member = "ConstantInfectionRiskStart")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_infection_risk")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_infection_risk_constant")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_infection_risk_nofx")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "BearFadeFinish")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
+	[Calls(Type = typeof(Log), Member = "AddAffliction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public void InfectionRiskStart(string cause, AfflictionBodyArea area, bool displayIcon, bool nofx = false)
 	{
 	}
 
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(InfectionRisk), Member = "CheckForInfection")]
 	[CalledBy(Type = typeof(InfectionRisk), Member = "TakeAntiseptic")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(InfectionRisk), Member = "CheckForInfection")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void InfectionRiskEnd(int index)
 	{
 	}
 
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_infection_risk_cure")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions_cure")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_infection_risk_cure")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Cure()
 	{
 	}
 
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(Condition), Member = "HasAffliction")]
 	[CalledBy(Type = typeof(Condition), Member = "HasSpecificAffliction")]
 	[CalledBy(Type = typeof(NCUtils), Member = "GetGameState")]
+	[CallerCount(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool HasInfectionRisk()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
 	[CalledBy(Type = typeof(AfflictionButton), Member = "UpdateFillBar")]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public int GetCurrentRisk(int index)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
 	[CallsUnknownMethods(Count = 1)]
 	public string[] GetCauseLocIDList()
 	{
@@ -213,35 +214,34 @@ public class InfectionRisk : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public int GetAfflictionsCount()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public string GetAfflictionCauseLocalizationId(int localAfflictionIndex)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public AfflictionBodyArea GetLocation(int index)
 	{
 		return default(AfflictionBodyArea);
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "TreatAffliction")]
 	[CalledBy(Type = typeof(InfectionRisk), Member = "ApplyAntisepticToLocation")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(InfectionRisk), Member = "InfectionRiskEnd")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TreatAffliction")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(InfectionRisk), Member = "InfectionRiskEnd")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void TakeAntiseptic(int index)
 	{
 	}
@@ -251,63 +251,62 @@ public class InfectionRisk : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public int GetIndexFromLocation(AfflictionBodyArea area)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(InfectionRisk), Member = "TakeAntiseptic")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void ApplyAntisepticToLocation(AfflictionBodyArea area)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "RequiresAntiseptic")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
+	[CallerCount(Count = 3)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool RequiresAntiseptic(int index)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(InfectionRisk), Member = "UpdateInfectionRisk")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
 	[Calls(Type = typeof(Infection), Member = "InfectionStart")]
 	[Calls(Type = typeof(InfectionRisk), Member = "InfectionRiskEnd")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(InfectionRisk), Member = "UpdateInfectionRisk")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 3)]
 	private void CheckForInfection(int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool IsConstant(int index)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CalledBy(Type = typeof(InfectionRisk), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(TimeOfDay), Member = "GetTODHours")]
 	[Calls(Type = typeof(InfectionRisk), Member = "CheckForInfection")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(InfectionRisk), Member = "Update")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateInfectionRisk(int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public InfectionRisk()
 	{
 	}

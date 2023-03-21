@@ -18,8 +18,8 @@ public class AkChannelEmitter : IDisposable
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AkTransform), Member = "getCPtr")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -28,12 +28,12 @@ public class AkChannelEmitter : IDisposable
 
 	public uint uInputChannels
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -53,7 +53,7 @@ public class AkChannelEmitter : IDisposable
 	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkChannelEmitter obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -70,11 +70,11 @@ public class AkChannelEmitter : IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}

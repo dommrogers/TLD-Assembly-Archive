@@ -17,8 +17,8 @@ public class vp_StateInfo
 
 	public bool Allowed;
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(vp_Component), Member = "RefreshDefaultState")]
+	[CallerCount(Count = 1)]
 	public vp_StateInfo(string typeName, string name = "New State", string path = null, TextAsset asset = null)
 	{
 	}

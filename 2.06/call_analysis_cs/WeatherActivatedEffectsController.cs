@@ -20,10 +20,13 @@ public class WeatherActivatedEffectsController : MonoBehaviour
 		{
 		}
 
-		[CallsUnknownMethods(Count = 9)]
-		[Calls(Type = typeof(UnityEvent), Member = "Invoke")]
-		[CallsDeduplicatedMethods(Count = 10)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_Status")]
+		[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_Result")]
+		[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+		[Calls(Type = typeof(UnityEvent), Member = "Invoke")]
+		[CallsDeduplicatedMethods(Count = 9)]
+		[CallsUnknownMethods(Count = 7)]
 		internal void _003COnWeatherChanged_003Eb__0(AsyncOperationHandle<GameObject> opHandle)
 		{
 		}
@@ -64,43 +67,46 @@ public class WeatherActivatedEffectsController : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(WeatherActivatedEffectsController), Member = "OnWeatherChanged")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(GameEvent), Member = "add_Fired")]
+	[Calls(Type = typeof(WeatherActivatedEffectsController), Member = "OnWeatherChanged")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	private void OnEnable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(HashSet<>), Member = "Remove")]
 	[Calls(Type = typeof(WeatherActivatedEffectsController), Member = "StopAndReleaseInstances")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnDisable()
 	{
 	}
 
 	[CalledBy(Type = typeof(WeatherActivatedEffectsController), Member = "OnEnable")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 12)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(WeatherActivatedEffectsController), Member = "StopAndReleaseInstances")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Action<>), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "add_Completed")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 11)]
 	private void OnWeatherChanged()
 	{
 	}
 
-	[CalledBy(Type = typeof(WeatherActivatedEffectsController), Member = "OnWeatherChanged")]
 	[CalledBy(Type = typeof(WeatherActivatedEffectsController), Member = "OnDisable")]
-	[CallsUnknownMethods(Count = 19)]
+	[CalledBy(Type = typeof(WeatherActivatedEffectsController), Member = "OnWeatherChanged")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(WeatherActivatedEffect), Member = "Stop")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(WeatherActivatedEffect), Member = "Stop")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 18)]
 	private void StopAndReleaseInstances(bool immediate)
 	{
 	}

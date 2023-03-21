@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -15,33 +14,31 @@ public class ButtonLegendItem : MonoBehaviour
 	private bool m_Localize;
 
 	[CalledBy(Type = typeof(ButtonLegend), Member = "AddButton")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool Setup(string localizationKey, string iconName, UIAtlas atlas, int priority, bool localize)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public int CompareTo(ButtonLegendItem b)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(ButtonLegend), Member = "AddButton")]
 	[CalledBy(Type = typeof(ButtonLegendContainer), Member = "OverrideDepthOfAllItems")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
+	[CalledBy(Type = typeof(ButtonLegend), Member = "AddButton")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetDepth(int depth)
 	{
 	}
@@ -50,14 +47,13 @@ public class ButtonLegendItem : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public int GetDepth()
 	{
-		return default(int);
+		return 0;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	private void OnLocalize()
 	{
 	}

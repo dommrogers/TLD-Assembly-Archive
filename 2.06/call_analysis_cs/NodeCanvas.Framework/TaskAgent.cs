@@ -10,15 +10,16 @@ public class TaskAgent : BBParameter<UnityEngine.Object>
 	public new UnityEngine.Object value
 	{
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(GameObject), Member = "get_transform")]
-		[CallsUnknownMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 55)]
+		[CallerCount(Count = 65)]
 		set
 		{
 		}
@@ -26,10 +27,11 @@ public class TaskAgent : BBParameter<UnityEngine.Object>
 
 	protected override object objectValue
 	{
-		[Calls(Type = typeof(GameObject), Member = "get_transform")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallsUnknownMethods(Count = 3)]
+		[Calls(Type = typeof(GameObject), Member = "get_transform")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;

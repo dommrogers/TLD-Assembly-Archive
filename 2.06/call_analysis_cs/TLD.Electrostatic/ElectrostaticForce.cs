@@ -25,7 +25,7 @@ public static class ElectrostaticForce
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
@@ -40,7 +40,7 @@ public static class ElectrostaticForce
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
@@ -51,11 +51,11 @@ public static class ElectrostaticForce
 
 	public static float NormalizedActive
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
@@ -70,7 +70,7 @@ public static class ElectrostaticForce
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
@@ -81,17 +81,17 @@ public static class ElectrostaticForce
 
 	public static event Action<bool> m_IsActiveChanged
 	{
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CallsUnknownMethods(Count = 2)]
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 2)]
 		remove
 		{
 		}
@@ -117,10 +117,10 @@ public static class ElectrostaticForce
 
 	public static event Action<float> m_NormalizedActiveChanged
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 2)]
 		add
 		{
 		}
@@ -142,10 +142,10 @@ public static class ElectrostaticForce
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 2)]
 		remove
 		{
 		}
@@ -159,7 +159,7 @@ public static class ElectrostaticForce
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Remove(IElectrostaticSource source)
 	{
@@ -171,10 +171,11 @@ public static class ElectrostaticForce
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(GameManager), Member = "LateUpdate")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 5)]
 	private static void UpdateValueAndStrength()
 	{
 	}

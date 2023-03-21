@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -13,18 +12,17 @@ public class ShaderToggle : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(ShaderComparison), Member = "Toggle")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(ShaderComparison), Member = "Toggle")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void Toggle(string tag)
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public ShaderToggle()
 	{
 	}

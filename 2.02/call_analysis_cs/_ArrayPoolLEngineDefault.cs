@@ -8,17 +8,17 @@ public class _ArrayPoolLEngineDefault : IDisposable
 
 	protected bool swigCMemOwn;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	internal _ArrayPoolLEngineDefault(IntPtr cPtr, bool cMemoryOwn)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(_ArrayPoolLEngineDefault obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -35,26 +35,26 @@ public class _ArrayPoolLEngineDefault : IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static int Get()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public _ArrayPoolLEngineDefault()
 	{
 	}

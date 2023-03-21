@@ -42,16 +42,16 @@ public class UserReportPreview
 
 	public List<UserReportMetric> AggregateMetrics
 	{
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -66,9 +66,9 @@ public class UserReportPreview
 		{
 			return default(UserReportAppearanceHint);
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -76,16 +76,16 @@ public class UserReportPreview
 
 	public long ContentLength
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
-			return default(long);
+			return 0L;
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -102,7 +102,7 @@ public class UserReportPreview
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
@@ -112,14 +112,14 @@ public class UserReportPreview
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return default(DateTime);
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		set
 		{
 		}
@@ -129,14 +129,14 @@ public class UserReportPreview
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 8)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 18)]
 		set
 		{
 		}
@@ -151,9 +151,9 @@ public class UserReportPreview
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 46)]
 		set
 		{
 		}
@@ -161,16 +161,16 @@ public class UserReportPreview
 
 	public string IPAddress
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 3)]
-		[CompilerGenerated]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 17)]
+		[CallerCount(Count = 19)]
 		set
 		{
 		}
@@ -183,7 +183,7 @@ public class UserReportPreview
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -195,16 +195,16 @@ public class UserReportPreview
 
 	public bool IsSilent
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -217,7 +217,7 @@ public class UserReportPreview
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -229,16 +229,16 @@ public class UserReportPreview
 
 	public LicenseLevel LicenseLevel
 	{
-		[CallerCount(Count = 3)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 3)]
 		get
 		{
 			return default(LicenseLevel);
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		set
 		{
 		}
@@ -246,16 +246,16 @@ public class UserReportPreview
 
 	public string ProjectIdentifier
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 10)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 11)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 16)]
 		set
 		{
 		}
@@ -265,7 +265,7 @@ public class UserReportPreview
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 40)]
 		get
 		{
 			return default(DateTime);
@@ -282,14 +282,14 @@ public class UserReportPreview
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 4)]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 2)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 19)]
 		set
 		{
 		}
@@ -310,9 +310,9 @@ public class UserReportPreview
 		}
 	}
 
+	[CalledBy(Type = typeof(UserReport), Member = "ToPreview")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(UserReport), Member = "ToPreview")]
 	[CallsUnknownMethods(Count = 12)]
 	public UserReportPreview()
 	{

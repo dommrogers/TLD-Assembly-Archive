@@ -30,22 +30,20 @@ public class AuroraBand_OneOff : MonoBehaviour
 	private Animation m_Animation;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 8)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[CallsUnknownMethods(Count = 30)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AnimationState), Member = "set_speed")]
+	[Calls(Type = typeof(Material), Member = "SetTextureOffset")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[Calls(Type = typeof(Material), Member = "SetTextureOffset")]
-	[Calls(Type = typeof(AnimationState), Member = "set_speed")]
 	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Material), Member = "SetTextureOffset")]
+	[CallsUnknownMethods(Count = 30)]
 	private void Update()
 	{
 	}
@@ -58,29 +56,26 @@ public class AuroraBand_OneOff : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Material), Member = "SetColor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	public void SetAlpha(float alpha)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private Color SetColor()
 	{
 		return default(Color);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Vector2), Member = "get_zero")]
 	[Calls(Type = typeof(Vector2), Member = "get_zero")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public AuroraBand_OneOff()
 	{
 	}

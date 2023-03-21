@@ -14,8 +14,8 @@ public class FoodPoisoningSaveDataProxy
 
 	public string m_CauseLocID;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public FoodPoisoningSaveDataProxy()
 	{
 	}

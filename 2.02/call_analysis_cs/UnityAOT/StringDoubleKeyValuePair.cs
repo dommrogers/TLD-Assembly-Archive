@@ -14,13 +14,13 @@ public abstract class StringDoubleKeyValuePair : IDisposable
 
 	public string Key
 	{
-		[CallsUnknownMethods(Count = 7)]
-		[CalledBy(Type = typeof(StringDoubleFullWrappedCacheMapEnumerable), Member = "MoveNext")]
 		[CalledBy(Type = typeof(StringDoubleFullWrappedCacheMapEnumerable), Member = ".ctor")]
+		[CalledBy(Type = typeof(StringDoubleFullWrappedCacheMapEnumerable), Member = "MoveNext")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(StringDoubleKeyValuePair), Member = "get_Ok")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -30,65 +30,57 @@ public abstract class StringDoubleKeyValuePair : IDisposable
 	public double Value
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(StringDoubleKeyValuePair), Member = "get_Ok")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
-			return default(double);
+			return 0.0;
 		}
 	}
 
 	public bool Ok
 	{
-		[CallerCount(Count = 6)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(StringDoubleKeyValuePair), Member = "get_Key")]
 		[CalledBy(Type = typeof(StringDoubleKeyValuePair), Member = "get_Value")]
 		[CalledBy(Type = typeof(StringDoubleFullWrappedCacheMapEnumerable), Member = ".ctor")]
-		[CalledBy(Type = typeof(StringDoubleFullWrappedCacheMapEnumerable), Member = ".ctor")]
 		[CalledBy(Type = typeof(StringDoubleFullWrappedCacheMapEnumerable), Member = "MoveNext")]
-		[CalledBy(Type = typeof(StringDoubleFullWrappedCacheMapEnumerable), Member = "MoveNext")]
+		[CallerCount(Count = 6)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 52)]
+	[CallerCount(Count = 59)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SetNativePtr(IntPtr self)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public StringDoubleKeyValuePair(IntPtr self)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void Dispose()
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract IntPtr GetKeyImpl(IntPtr self);
 
-	[CallerCount(Count = 121780)]
-	[DeduplicatedMethod]
 	protected abstract double GetValueImpl(IntPtr self);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract void DisposeChildImpl();
 }

@@ -16,8 +16,8 @@ public class LayerMask_DirectConverter : fsDirectConverter<LayerMask>
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsBaseConverter), Member = "DeserializeMember")]
 	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[CallsUnknownMethods(Count = 1)]
 	protected override fsResult DoDeserialize(Dictionary<string, fsData> data, ref LayerMask model)
 	{
 		return default(fsResult);

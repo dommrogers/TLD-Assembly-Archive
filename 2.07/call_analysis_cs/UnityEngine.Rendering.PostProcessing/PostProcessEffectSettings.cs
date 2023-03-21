@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
@@ -25,20 +26,20 @@ public class PostProcessEffectSettings : ScriptableObject
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003COnEnable_003Eb__6_0(FieldInfo t)
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		internal int _003COnEnable_003Eb__6_1(FieldInfo t)
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -54,40 +55,40 @@ public class PostProcessEffectSettings : ScriptableObject
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
+		[CalledBy(Type = typeof(CameraEffects), Member = "Start")]
+		[CalledBy(Type = typeof(CameraEffects), Member = "UpdateEffectParameters")]
 		[CalledBy(Type = typeof(PostProcessManager), Member = "EnableAO")]
-		[CalledBy(Type = typeof(CameraEffects), Member = "UpdateEffectParameters")]
-		[CalledBy(Type = typeof(CameraEffects), Member = "UpdateEffectParameters")]
-		[CalledBy(Type = typeof(CameraEffects), Member = "UpdateEffectParameters")]
-		[CalledBy(Type = typeof(CameraEffects), Member = "Start")]
-		[CalledBy(Type = typeof(CameraEffects), Member = "Start")]
-		[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 		[CallerCount(Count = 7)]
-		[CalledBy(Type = typeof(CameraEffects), Member = "UpdateEffectParameters")]
+		[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 		set
 		{
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[CallsUnknownMethods(Count = 17)]
+	[Calls(Type = typeof(Enumerable), Member = "Where")]
+	[Calls(Type = typeof(Enumerable), Member = "OrderBy")]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(List<>), Member = "AsReadOnly")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 15)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	private void OnDisable()
 	{
 	}
 
+	[CalledBy(Type = typeof(PostProcessManager), Member = "ReloadBaseTypes")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(PostProcessManager), Member = "ReloadBaseTypes")]
 	[CallsUnknownMethods(Count = 11)]
 	public void SetAllOverridesTo(bool state, bool excludeEnabled = true)
 	{
@@ -97,7 +98,7 @@ public class PostProcessEffectSettings : ScriptableObject
 	[CallsUnknownMethods(Count = 1)]
 	public virtual bool IsEnabledAndSupported(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -105,13 +106,13 @@ public class PostProcessEffectSettings : ScriptableObject
 	[CallsUnknownMethods(Count = 11)]
 	public int GetHash()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[CallerCount(Count = 42)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public PostProcessEffectSettings()
 	{
 	}

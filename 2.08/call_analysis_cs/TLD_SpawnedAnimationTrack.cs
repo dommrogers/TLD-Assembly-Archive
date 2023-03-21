@@ -29,15 +29,15 @@ public class TLD_SpawnedAnimationTrack : AnimationTrack, TLD_ITrack, TLD_IDynami
 
 	private static Dictionary<string, GameObject> m_SpawnedObjectMapping;
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void Play()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public virtual void UpdatePlay()
 	{
 	}
@@ -54,12 +54,12 @@ public class TLD_SpawnedAnimationTrack : AnimationTrack, TLD_ITrack, TLD_IDynami
 	{
 	}
 
-	[Calls(Type = typeof(TLD_SpawnedAnimationTrack), Member = "GetSpawnedObject")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetGameObjectOverride")]
+	[Calls(Type = typeof(TLD_SpawnedAnimationTrack), Member = "GetSpawnedObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void DoDynamicBinding(PlayableDirector director)
 	{
 	}
@@ -70,51 +70,42 @@ public class TLD_SpawnedAnimationTrack : AnimationTrack, TLD_ITrack, TLD_IDynami
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallsUnknownMethods(Count = 5)]
 	protected virtual void UpdateSpawnedObjectRootTransformAndParent()
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
-	[Calls(Type = typeof(Transform), Member = "SetParent")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(Transform), Member = "SetParent")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	public virtual GameObject SpawnObject()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CalledBy(Type = typeof(TLD_SpawnedAnimationTrack), Member = "Stop")]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public void DeleteSpawnedObject()
 	{
 	}
@@ -122,33 +113,33 @@ public class TLD_SpawnedAnimationTrack : AnimationTrack, TLD_ITrack, TLD_IDynami
 	[CallerCount(Count = 0)]
 	public bool HasSpawned()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(PlayableBehaviourActivateSpawnedObject), Member = "OnBehaviourPause")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayableBehaviourActivateSpawnedObject), Member = "OnBehaviourPlay")]
 	[CalledBy(Type = typeof(PlayableBehaviourActivateSpawnedObject), Member = "ProcessFrame")]
+	[CalledBy(Type = typeof(PlayableBehaviourActivateSpawnedObject), Member = "OnBehaviourPlay")]
+	[CalledBy(Type = typeof(PlayableBehaviourActivateSpawnedObject), Member = "OnBehaviourPause")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Activate(bool enabled)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayableBehaviourSyncTransform), Member = "GetParent")]
 	[CalledBy(Type = typeof(TLD_SpawnedAnimationTrack), Member = "DoDynamicBinding")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	public GameObject GetSpawnedObject()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void MaybeApplyRendererSettings()
 	{
 	}

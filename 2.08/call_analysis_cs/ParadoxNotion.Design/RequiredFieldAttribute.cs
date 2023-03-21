@@ -10,7 +10,7 @@ public class RequiredFieldAttribute : DrawerAttribute
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 

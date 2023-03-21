@@ -10,12 +10,12 @@ public class DialogueOptionsAnimationTree : MonoBehaviour
 	public static string m_DebugCurrentTextSelected;
 
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Awake")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(DialogueOptionsAnimationSubTree), Member = "InstantiateLabels")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(DialogueOptionsAnimationSubTree), Member = "InstantiateLabels")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public void InstantiateLabels(GameObject labelPrefab)
 	{
 	}
@@ -34,15 +34,16 @@ public class DialogueOptionsAnimationTree : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateIdleUI")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UpdateClosestToCenter")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateIdleUI")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "LateUpdate")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 16)]
 	public void UpdateClosestToCenter()
 	{
 	}

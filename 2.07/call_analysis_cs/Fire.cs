@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Conditions;
+using TLD.SaveState;
 using TLD.Serialization;
 using TLD.UI.Generics;
 using UnityEngine;
@@ -132,7 +133,7 @@ public class Fire : MonoBehaviour
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		set
 		{
 		}
@@ -141,79 +142,72 @@ public class Fire : MonoBehaviour
 	public static event FireStateDelegate OnFireStateChanged
 	{
 		[CompilerGenerated]
-		[CallerCount(Count = 2)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CalledBy(Type = typeof(Panel_ActionPicker), Member = "MaybeUpdateFireplaceInteraction")]
 		[CalledBy(Type = typeof(Panel_ActionPicker), Member = "MaybeUpdateCookingSlot")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CallsUnknownMethods(Count = 1)]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
 	}
 
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(FireManager), Member = "Serialize")]
-	[Calls(Type = typeof(Campfire), Member = "Serialize")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Campfire), Member = "Serialize")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 15)]
 	[CalledBy(Type = typeof(FireManager), Member = "Deserialize")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Fire), Member = "TurnOff")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Fire), Member = "TurnOffImmediate")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 20)]
 	[Calls(Type = typeof(Fire), Member = "StartFireLit")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(HeatSource), Member = "TurnOn")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Campfire), Member = "Deserialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Fire), Member = "MaybeUpdateLongestBurningFireStat")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(HeatSource), Member = "TurnOn")]
+	[Calls(Type = typeof(Campfire), Member = "Deserialize")]
+	[Calls(Type = typeof(Fire), Member = "MaybeUpdateLongestBurningFireStat")]
+	[Calls(Type = typeof(Fire), Member = "TurnOffImmediate")]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Fire), Member = "TurnOff")]
+	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 15)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Fire), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private float GetWeatherAdjustedElapsedDuration(float realtimeSeconds)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Awake()
 	{
 	}
@@ -237,43 +231,34 @@ public class Fire : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(TimeOfDay), Member = "GetTODSeconds")]
-	[Calls(Type = typeof(Fire), Member = "TurnOff")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "DeactivateAllFX")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(Fire), Member = "UpdateFireStage")]
-	[Calls(Type = typeof(Fire), Member = "UpdateFireAudio")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
-	[Calls(Type = typeof(TimeOfDay), Member = "GetTODSeconds")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Fire), Member = "FireShouldBlowOutFromWind")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(Fire), Member = "GetWeatherAdjustedElapsedDuration")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Fire), Member = "FireShouldBlowOutFromWind")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TimeOfDay), Member = "GetTODSeconds")]
+	[Calls(Type = typeof(Fire), Member = "UpdateFireAudio")]
 	[Calls(Type = typeof(Fire), Member = "MaybeUpdateLongestBurningFireStat")]
+	[Calls(Type = typeof(Fire), Member = "TurnOff")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "DeactivateAllFX")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Fire), Member = "Deserialize")]
-	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
 	[CalledBy(Type = typeof(Fire), Member = "Update")]
-	[Calls(Type = typeof(StatsManager), Member = "SetValue")]
-	[Calls(Type = typeof(StatsManager), Member = "GetValue")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(StatsManager), Member = "GetValue")]
+	[Calls(Type = typeof(StatsManager), Member = "SetValue")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
+	[CallsUnknownMethods(Count = 3)]
 	private void MaybeUpdateLongestBurningFireStat(float burnTimeInHours)
 	{
 	}
@@ -285,121 +270,106 @@ public class Fire : MonoBehaviour
 		return default(FireState);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(FireManager), Member = "PlayerStartFire")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CalledBy(Type = typeof(Fire), Member = "AddFuel")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(FireManager), Member = "PlayerStartFire")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnFuelBurnt(GearItem fuel)
 	{
 	}
 
-	[Calls(Type = typeof(Fire), Member = "GetFireOuterRadiusScale")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "ForceBurnResearchItem")]
 	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnFeedFire")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "Initialize")]
-	[Calls(Type = typeof(FuelSourceItem), Member = "GetModifiedBurnDurationHours")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "ForceBurnResearchItem")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(Fire), Member = "OnFuelBurnt")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
 	[Calls(Type = typeof(HeatSource), Member = "TurnOn")]
+	[Calls(Type = typeof(FuelSourceItem), Member = "GetModifiedBurnDurationHours")]
+	[Calls(Type = typeof(Fire), Member = "GetFireOuterRadiusScale")]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "Initialize")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void AddFuel(GearItem fuel, bool inForge)
 	{
 	}
 
-	[CalledBy(Type = typeof(FireManager), Member = "SerializeChimneyData")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnFeedFire")]
+	[CalledBy(Type = typeof(ParticleFadeFire), Member = "LateUpdate")]
+	[CalledBy(Type = typeof(SmokeTrail), Member = "FixedUpdateInternal")]
 	[CalledBy(Type = typeof(ClothingItem), Member = "Serialize")]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "Serialize")]
-	[CalledBy(Type = typeof(ParticleFadeFire), Member = "LateUpdate")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnFeedFire")]
+	[CalledBy(Type = typeof(FireManager), Member = "SerializeChimneyData")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(SmokeTrail), Member = "FixedUpdateInternal")]
 	public float GetRemainingLifeTimeSeconds()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Condition_RemainingFireBurnTime), Member = "OnCheck")]
+	[CallerCount(Count = 1)]
 	public float GetRemainingLifeTimeHours()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(LightFadeFire), Member = "LateUpdate")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetIgnitionTotalGameTimeSeconds()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Fire), Member = "ExitFireStarting")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(FireManager), Member = "PlayerStartFire")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
-	[Calls(Type = typeof(OnExitDelegate), Member = ".ctor")]
-	[Calls(Type = typeof(Fire), Member = "FireStateSet")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Fire), Member = "TurnOn")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Fire), Member = "TurnOn")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Fire), Member = "PlayStartingFireVoiceEvent")]
+	[Calls(Type = typeof(Fire), Member = "FireStateSet")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Fire), Member = "ExitFireStarting")]
+	[Calls(Type = typeof(OnExitDelegate), Member = ".ctor")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void PlayerBeginCreate(bool attemptSuccessful, float startTimeSeconds, FireStarterItem starter, FuelSourceItem fuel, FireStarterItem accelerant, Action<bool> onDoneStartingFire)
 	{
 	}
 
+	[CalledBy(Type = typeof(Fire), Member = "PlayerBeginCreate")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
+	[Calls(Type = typeof(GearItem), Member = "BreakOnUse")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(WoodStove), Member = "Close")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[Calls(Type = typeof(Fire), Member = "TurnOff")]
+	[Calls(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(Transform), Member = "Translate")]
 	[Calls(Type = typeof(Fire), Member = "FireStateSet")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[Calls(Type = typeof(PlayerManager), Member = "ConsumeUnitFromInventory")]
 	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
-	[CallsUnknownMethods(Count = 17)]
 	[Calls(Type = typeof(Fire), Member = "AttachToNearbyCookables")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(PanViewCamera), Member = "ReattachToPlayer")]
-	[CalledBy(Type = typeof(Fire), Member = "PlayerBeginCreate")]
-	[Calls(Type = typeof(PlayerManager), Member = "ConsumeUnitFromInventory")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(GearItem), Member = "BreakOnUse")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 15)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(Fire), Member = "TurnOff")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(WoodStove), Member = "Close")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 17)]
 	private void ExitFireStarting(bool success, bool playerCancel, float progress)
 	{
 	}
@@ -407,71 +377,69 @@ public class Fire : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool CanFeedFire()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsBurning()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetMinutesBurning()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetUnmodifiedMinutesBurning()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetBurningTimeTODHours()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsEmbers()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 7)]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Fire), Member = "StartFireLit")]
-	[CalledBy(Type = typeof(Fire), Member = "UpdateFireStage")]
-	[CalledBy(Type = typeof(Fire), Member = "UpdateFireStage")]
-	[CalledBy(Type = typeof(Fire), Member = "TurnOffImmediate")]
-	[CalledBy(Type = typeof(Fire), Member = "TurnOff")]
-	[CalledBy(Type = typeof(Fire), Member = "ExitFireStarting")]
-	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
 	[CalledBy(Type = typeof(Fire), Member = "PlayerBeginCreate")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
-	[Calls(Type = typeof(Feat_FireMaster), Member = "MaybeUpdateFireStartingSkillLevel")]
-	[Calls(Type = typeof(Feat), Member = "ShouldBlockIncrement")]
+	[CalledBy(Type = typeof(Fire), Member = "ExitFireStarting")]
+	[CalledBy(Type = typeof(Fire), Member = "TurnOff")]
+	[CalledBy(Type = typeof(Fire), Member = "TurnOffImmediate")]
+	[CalledBy(Type = typeof(Fire), Member = "UpdateFireStage")]
+	[CalledBy(Type = typeof(Fire), Member = "StartFireLit")]
+	[CallerCount(Count = 7)]
 	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(Feat), Member = "ShouldBlockIncrement")]
+	[Calls(Type = typeof(Feat_FireMaster), Member = "MaybeUpdateFireStartingSkillLevel")]
+	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 5)]
 	public void FireStateSet(FireState stage)
 	{
 	}
 
-	[CalledBy(Type = typeof(Fire), Member = "UpdateFireAudio")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Fire), Member = "StartFireLit")]
 	[CalledBy(Type = typeof(Fire), Member = "UpdateFireStage")]
+	[CalledBy(Type = typeof(Fire), Member = "UpdateFireAudio")]
+	[CalledBy(Type = typeof(Fire), Member = "StartFireLit")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
 	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public void PlayFireLoop(float blend)
 	{
 	}
@@ -489,43 +457,42 @@ public class Fire : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Fire), Member = "PlayerBeginCreate")]
-	[Calls(Type = typeof(FuelSourceItem), Member = "GetModifiedBurnDurationHours")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Fire), Member = "StartFireLit")]
-	[Calls(Type = typeof(HeatSource), Member = "TurnOn")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Fire), Member = "GetFireOuterRadiusScale")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(HeatSource), Member = "TurnOn")]
+	[Calls(Type = typeof(Fire), Member = "GetFireOuterRadiusScale")]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
+	[Calls(Type = typeof(FuelSourceItem), Member = "GetModifiedBurnDurationHours")]
+	[CallsUnknownMethods(Count = 1)]
 	public void TurnOn(FuelSourceItem fuel, bool maskTempIncrease)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(BreakableIce), Member = "BreakIce")]
-	[CalledBy(Type = typeof(Fire), Member = "ExitFireStarting")]
-	[CalledBy(Type = typeof(Fire), Member = "Update")]
 	[CalledBy(Type = typeof(Fire), Member = "Deserialize")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "StopAllFX")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CalledBy(Type = typeof(Fire), Member = "Update")]
+	[CalledBy(Type = typeof(Fire), Member = "ExitFireStarting")]
+	[CalledBy(Type = typeof(BreakableIce), Member = "BreakIce")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "StopAllFX")]
 	[Calls(Type = typeof(Fire), Member = "FireStateSet")]
+	[CallsUnknownMethods(Count = 2)]
 	public void TurnOff()
 	{
 	}
 
 	[CalledBy(Type = typeof(EntityWard), Member = "DisableWard")]
 	[CalledBy(Type = typeof(Fire), Member = "Deserialize")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "StopAllFX")]
 	[Calls(Type = typeof(Fire), Member = "FireStateSet")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "StopAllFX")]
 	public void TurnOffImmediate()
 	{
 	}
@@ -545,23 +512,21 @@ public class Fire : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetCurrentTempIncrease()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "RefreshFireDurationLabel")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "RefreshFireDurationLabel")]
+	[CalledBy(Type = typeof(FireplaceInteraction), Member = "GetHoverText")]
 	[CalledBy(Type = typeof(Forge), Member = "UpdateInteraction")]
-	[CalledBy(Type = typeof(FireplaceInteraction), Member = "GetHoverText")]
-	[CalledBy(Type = typeof(FireplaceInteraction), Member = "GetHoverText")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "RefreshFireDurationLabel")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "RefreshFireDurationLabel")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 2)]
 	public string GetHeatIncreaseText()
 	{
 		return null;
@@ -573,60 +538,60 @@ public class Fire : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(SmokeTrail), Member = "InitEffect")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetSmokeTrail(SmokeTrail st)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Wind), Member = "IsPositionOccludedFromWind")]
 	[CalledBy(Type = typeof(Fire), Member = "Update")]
 	[CalledBy(Type = typeof(Fire), Member = "MaybeBlowOutFromWind")]
 	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnFeedFire")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Wind), Member = "IsPositionOccludedFromWind")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	public bool FireShouldBlowOutFromWind()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool StartedByPlayer()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(FireManager), Member = "Deserialize")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Fire), Member = "HasAttachedCookables")]
-	[CalledBy(Type = typeof(FireManager), Member = "Deserialize")]
 	public bool CanBreakdownFire()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "CanTakeTorch")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "AddFeedFireActions")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "CanTakeTorch")]
+	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool CanTakeTorch()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "AddLightFireActions")]
 	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "DismantleFireCompleteCallback")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "CanHarvestCharcoal")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnCharcoalHarvest")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	public int GetAvailableCharcoalPieces()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -634,19 +599,19 @@ public class Fire : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Condition_ItemConsumedInFire), Member = "OnCheck")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool HasBurntItem(string itemName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public static bool IsStartingFireUIInProgress()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -659,18 +624,17 @@ public class Fire : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Fire), Member = "PlayFireLoop")]
 	[CalledBy(Type = typeof(Fire), Member = "Update")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Fire), Member = "FireStateSet")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
-	[Calls(Type = typeof(Fire), Member = "FireStateSet")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Fire), Member = "FireStateSet")]
 	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(Fire), Member = "PlayFireLoop")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateFireStage()
 	{
 	}
@@ -683,100 +647,96 @@ public class Fire : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Fire), Member = "Update")]
-	[Calls(Type = typeof(Fire), Member = "PlayFireLoop")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[Calls(Type = typeof(Fire), Member = "PlayFireLoop")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateFireAudio()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[CalledBy(Type = typeof(Fire), Member = "AddFuel")]
 	[CalledBy(Type = typeof(Fire), Member = "TurnOn")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[CallsUnknownMethods(Count = 2)]
 	private float GetFireOuterRadiusScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Fire), Member = "Start")]
 	[CalledBy(Type = typeof(Fire), Member = "Deserialize")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Fire), Member = "PlayFireLoop")]
-	[Calls(Type = typeof(Fire), Member = "TurnOn")]
-	[Calls(Type = typeof(Fire), Member = "FireStateSet")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Fire), Member = "Start")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Fire), Member = "FireStateSet")]
+	[Calls(Type = typeof(Fire), Member = "TurnOn")]
+	[Calls(Type = typeof(Fire), Member = "PlayFireLoop")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void StartFireLit()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Fire), Member = "PlayerBeginCreate")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "SetSwitch")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "SetSwitch")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[CallsUnknownMethods(Count = 5)]
 	private void PlayStartingFireVoiceEvent(bool successful)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[CallsUnknownMethods(Count = 3)]
 	private uint GetStartFireUrgencySwitch()
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Fire), Member = "ExitFireStarting")]
-	[Calls(Type = typeof(Cookable), Member = "MaybeReattachToNearbyFire")]
-	[Calls(Type = typeof(CookingPotItem), Member = "AttachedFireIsBurning")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CookingPotItem), Member = "IsDummyPot")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Physics), Member = "OverlapSphereNonAlloc")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Physics), Member = "OverlapSphereNonAlloc")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Cookable), Member = "MaybeStartWarmingUpDueToNearbyFire")]
+	[Calls(Type = typeof(CookingPotItem), Member = "IsDummyPot")]
+	[Calls(Type = typeof(CookingPotItem), Member = "AttachedFireIsBurning")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Cookable), Member = "MaybeReattachToNearbyFire")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 6)]
 	private void AttachToNearbyCookables()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "AddLightFireActions")]
 	[CalledBy(Type = typeof(Fire), Member = "CanBreakdownFire")]
+	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "AddLightFireActions")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Physics), Member = "OverlapSphereNonAlloc")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(CookingPotItem), Member = "IsDummyPot")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Physics), Member = "OverlapSphereNonAlloc")]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 6)]
 	private bool HasAttachedCookables()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	private int RoundOutput(float heatToRound)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]

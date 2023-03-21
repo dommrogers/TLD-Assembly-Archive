@@ -9,23 +9,23 @@ public class SessionSearchSetTargetUserIdOptions
 
 	public ProductUserId TargetUserId
 	{
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 101)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SessionSearchSetTargetUserIdOptions()
 	{
 	}

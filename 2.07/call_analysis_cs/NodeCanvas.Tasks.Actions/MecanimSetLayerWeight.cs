@@ -17,8 +17,8 @@ public class MecanimSetLayerWeight : ActionTask<Animator>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		get
 		{
 			return null;
@@ -26,18 +26,19 @@ public class MecanimSetLayerWeight : ActionTask<Animator>
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(ActionTask), Member = "get_elapsedTime")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(ActionTask), Member = "get_elapsedTime")]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnUpdate()
 	{
 	}

@@ -17,14 +17,14 @@ public class Action_LockSetState : ActionTask
 	{
 	}
 
-	[Calls(Type = typeof(Lock), Member = "UnlockCompainionLock")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Action_LockSetState), Member = "OnExecute")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Lock), Member = "UnlockCompainionLock")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private void DoWork()
 	{
 	}

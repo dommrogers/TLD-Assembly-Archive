@@ -82,45 +82,29 @@ public class TorchIntensity : MonoBehaviour
 	private Color m_RadialGradientColor;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 12)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 12)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(Material), Member = "GetColor")]
-	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[Calls(Type = typeof(ParticleSystem.MinMaxGradient), Member = "op_Implicit")]
-	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
-	[Calls(Type = typeof(TorchIntensity), Member = "MaybeUpdateIntensityRTPC")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[CallsUnknownMethods(Count = 41)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 15)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(TorchItem), Member = "GetModifiedBurnLifetimeMinutes")]
 	[Calls(Type = typeof(TorchIntensity), Member = "SetIntensity")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(TorchIntensity), Member = "MaybeUpdateIntensityRTPC")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
+	[Calls(Type = typeof(ParticleSystem.MinMaxGradient), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Material), Member = "GetColor")]
+	[Calls(Type = typeof(Material), Member = "SetColor")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 41)]
 	private void Update()
 	{
 	}
@@ -140,20 +124,19 @@ public class TorchIntensity : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(TorchIntensity), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
 	[Calls(Type = typeof(LightRandomIntensity), Member = "GetIntensity")]
-	[Calls(Type = typeof(LightRandomIntensity), Member = "GetIntensity")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[CalledBy(Type = typeof(TorchIntensity), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	private void MaybeUpdateIntensityRTPC()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public TorchIntensity()
 	{
 	}

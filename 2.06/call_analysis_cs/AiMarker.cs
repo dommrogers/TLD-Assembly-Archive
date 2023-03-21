@@ -15,8 +15,8 @@ public class AiMarker : MonoBehaviour
 
 	public ObjectType m_ObjectType;
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public AiMarker()
 	{
 	}

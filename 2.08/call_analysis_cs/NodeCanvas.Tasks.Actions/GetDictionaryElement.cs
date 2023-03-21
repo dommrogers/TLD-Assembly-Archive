@@ -23,17 +23,18 @@ public class GetDictionaryElement<T> : ActionTask
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public GetDictionaryElement()
 	{
 	}

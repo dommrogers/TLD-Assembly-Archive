@@ -34,14 +34,14 @@ public class CheckoutCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 71)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -49,16 +49,16 @@ public class CheckoutCallbackInfo : ICallbackInfo, ISettable
 
 	public EpicAccountId LocalUserId
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -75,7 +75,7 @@ public class CheckoutCallbackInfo : ICallbackInfo, ISettable
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		private set
 		{
 		}
@@ -88,27 +88,27 @@ public class CheckoutCallbackInfo : ICallbackInfo, ISettable
 		return null;
 	}
 
-	[Calls(Type = typeof(CheckoutCallbackInfoInternal), Member = "get_LocalUserId")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(CheckoutCallbackInfo), Member = "Set")]
-	[Calls(Type = typeof(CheckoutCallbackInfoInternal), Member = "get_TransactionId")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CheckoutCallbackInfoInternal), Member = "get_ClientData")]
+	[Calls(Type = typeof(CheckoutCallbackInfoInternal), Member = "get_LocalUserId")]
+	[Calls(Type = typeof(CheckoutCallbackInfoInternal), Member = "get_TransactionId")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	internal void Set(CheckoutCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CheckoutCallbackInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CheckoutCallbackInfo()
 	{
 	}

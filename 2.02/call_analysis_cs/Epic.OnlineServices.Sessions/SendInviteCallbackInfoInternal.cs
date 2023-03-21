@@ -26,8 +26,8 @@ internal struct SendInviteCallbackInfoInternal : ICallbackInfoInternal
 		[CalledBy(Type = typeof(SendInviteCallbackInfo), Member = "Set")]
 		[CalledBy(Type = typeof(SendInviteCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -40,7 +40,7 @@ internal struct SendInviteCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 }

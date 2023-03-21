@@ -28,10 +28,10 @@ public class PlayerPointerEventData : PointerEventData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -44,7 +44,7 @@ public class PlayerPointerEventData : PointerEventData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
@@ -62,9 +62,9 @@ public class PlayerPointerEventData : PointerEventData
 		{
 			return null;
 		}
-		[CallerCount(Count = 3)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 3)]
 		set
 		{
 		}
@@ -89,8 +89,8 @@ public class PlayerPointerEventData : PointerEventData
 
 	public PointerEventType sourceType
 	{
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		get
 		{
@@ -111,7 +111,7 @@ public class PlayerPointerEventData : PointerEventData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
@@ -120,47 +120,23 @@ public class PlayerPointerEventData : PointerEventData
 		}
 	}
 
-	[Calls(Type = typeof(PointerEventData), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PointerEventData), Member = ".ctor")]
 	public PlayerPointerEventData(EventSystem eventSystem)
 		: base(null)
 	{
 	}
 
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(PointerEventData), Member = "ToString")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(PointerEventData), Member = "ToString")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public override string ToString()
 	{
 		return null;

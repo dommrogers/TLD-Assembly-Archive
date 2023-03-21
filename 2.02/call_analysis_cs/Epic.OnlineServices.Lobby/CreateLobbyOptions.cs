@@ -17,14 +17,14 @@ public class CreateLobbyOptions
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -32,12 +32,12 @@ public class CreateLobbyOptions
 
 	public uint MaxLobbyMembers
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 8)]
-		[CompilerGenerated]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -66,23 +66,23 @@ public class CreateLobbyOptions
 
 	public bool PresenceEnabled
 	{
-		[CallerCount(Count = 2)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CreateLobbyOptions()
 	{
 	}

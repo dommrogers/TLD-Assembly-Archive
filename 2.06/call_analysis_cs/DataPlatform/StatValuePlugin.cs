@@ -32,8 +32,8 @@ public class StatValuePlugin
 	public static extern StatDataType StatisticValue_DataType(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void StatisticValue_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]

@@ -21,25 +21,24 @@ public static class Common
 	[CallsUnknownMethods(Count = 1)]
 	public static bool IsOperationComplete(Result result)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static string ToString(Result result)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalAllocate")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalAllocate")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsUnknownMethods(Count = 2)]
 	public static Result ToString(byte[] byteArray, out string outBuffer)
 	{
 		outBuffer = null;

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 
@@ -5,12 +6,13 @@ namespace NodeCanvas.Tasks.Actions;
 
 public class Action_UnlockAllMaps : ActionTask
 {
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Panel_Map), Member = "RevealFogForScene")]
-	[Calls(Type = typeof(Panel_Map), Member = "UnlockRegionMap")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Panel_Map), Member = "UnlockRegionMap")]
+	[Calls(Type = typeof(Panel_Map), Member = "RevealFogForScene")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	protected override void OnExecute()
 	{
 	}

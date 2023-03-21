@@ -27,98 +27,89 @@ public class BoxSector : MonoBehaviour
 
 	private BoxSectorManager m_MyManager;
 
-	[Calls(Type = typeof(vp_Layer), Member = "Set")]
-	[Calls(Type = typeof(BoxSector), Member = "GetBoxManager")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(BoxSector), Member = "GetBoxManager")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(vp_Layer), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Start()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(BoxSector), Member = "Start")]
 	[CalledBy(Type = typeof(BoxSector), Member = "OnTriggerEnter")]
 	[CalledBy(Type = typeof(BoxSector), Member = "OnTriggerExit")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void GetBoxManager()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(BoxSectorManager), Member = "RestoreSectorState")]
-	[CalledBy(Type = typeof(BoxSectorManager), Member = "RestoreSectorState")]
+	[CalledBy(Type = typeof(BoxSectorManager), Member = "UpdateSectors")]
 	[CalledBy(Type = typeof(BoxSectorManager), Member = "ForceAllActive")]
-	[CalledBy(Type = typeof(BoxSectorManager), Member = "UpdateSectors")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(BoxSectorManager), Member = "UpdateSectors")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
+	[CalledBy(Type = typeof(BoxSectorManager), Member = "RestoreSectorState")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(BoxSectorManager), Member = "UpdateSectors")]
+	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void ShowObject(BoxSectorManager.SectorCullMode cullMode)
 	{
 	}
 
 	[CalledBy(Type = typeof(BoxSectorManager), Member = "UpdateSectors")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(BoxSectorManager), Member = "ForceAllInactive")]
-	[CalledBy(Type = typeof(BoxSectorManager), Member = "UpdateSectors")]
 	[CalledBy(Type = typeof(BoxSectorManager), Member = "RestoreSectorState")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(BoxSectorManager), Member = "UpdateSectors")]
+	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void HideObject(BoxSectorManager.SectorCullMode cullMode)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(BoxSectorManager), Member = "RestoreSectorState")]
-	[CalledBy(Type = typeof(BoxSectorManager), Member = "RestoreSectorState")]
+	[CalledBy(Type = typeof(BoxSectorManager), Member = "UpdateSectors")]
 	[CalledBy(Type = typeof(BoxSectorManager), Member = "ForceAllActive")]
-	[CalledBy(Type = typeof(BoxSectorManager), Member = "UpdateSectors")]
-	[CalledBy(Type = typeof(BoxSectorManager), Member = "UpdateSectors")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
+	[CalledBy(Type = typeof(BoxSectorManager), Member = "RestoreSectorState")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(BoxSectorManager), Member = "UpdateSectors")]
+	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void ShowStructure(BoxSectorManager.SectorCullMode cullMode)
 	{
 	}
 
 	[CalledBy(Type = typeof(BoxSectorManager), Member = "UpdateSectors")]
-	[CalledBy(Type = typeof(BoxSectorManager), Member = "RestoreSectorState")]
 	[CalledBy(Type = typeof(BoxSectorManager), Member = "ForceAllInactive")]
-	[CalledBy(Type = typeof(BoxSectorManager), Member = "UpdateSectors")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
+	[CalledBy(Type = typeof(BoxSectorManager), Member = "RestoreSectorState")]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(BoxSectorManager), Member = "UpdateSectors")]
+	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void HideStructure(BoxSectorManager.SectorCullMode cullMode)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(BoxSectorManager), Member = "UpdateSectors")]
 	[Calls(Type = typeof(BoxSectorManager), Member = "UpdateSectors")]
 	[Calls(Type = typeof(BoxSector), Member = "GetBoxManager")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
 	public void OnTriggerEnter(Collider other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[Calls(Type = typeof(BoxSectorManager), Member = "UpdateSectors")]
 	[Calls(Type = typeof(BoxSector), Member = "GetBoxManager")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnTriggerExit(Collider other)
 	{
 	}

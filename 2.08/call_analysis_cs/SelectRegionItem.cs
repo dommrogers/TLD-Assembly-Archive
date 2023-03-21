@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Scenes;
@@ -20,7 +21,7 @@ public class SelectRegionItem : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CPatchUpReference_003Eb__0(SelectRegionItem item)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -78,18 +79,23 @@ public class SelectRegionItem : MonoBehaviour
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "IsValid")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_IsDone")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_Result")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
 	public Texture2D GetMiniMap()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 7)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "IsValid")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Action<>), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "add_Completed")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnEnable()
 	{
 	}
@@ -100,23 +106,24 @@ public class SelectRegionItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_Status")]
 	private void OnMiniMapLoaded(AsyncOperationHandle<Texture2D> obj)
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "IsValid")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
@@ -129,15 +136,14 @@ public class SelectRegionItem : MonoBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SelectRegionItem), Member = "PlayAnimation")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void Hide()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(SelectRegionItem), Member = "PlayAnimation")]
 	[Calls(Type = typeof(SelectRegionItem), Member = "PlayAnimation")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Select(bool isSelected)
@@ -146,59 +152,45 @@ public class SelectRegionItem : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "IsAnimationStatePlaying")]
-	[Calls(Type = typeof(Utils), Member = "IsAnimationStatePlaying")]
-	[Calls(Type = typeof(Utils), Member = "IsAnimationStatePlaying")]
-	[Calls(Type = typeof(Utils), Member = "IsAnimationStatePlaying")]
 	public bool IsAnyAnimationInProgress()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(SelectRegionItem), Member = "PatchUpReference")]
-	[Calls(Type = typeof(SelectRegionItem), Member = "PatchUpReference")]
-	[Calls(Type = typeof(SelectRegionItem), Member = "PatchUpReference")]
-	[Calls(Type = typeof(SelectRegionItem), Member = "PatchUpReference")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SelectRegionItem), Member = "PatchUpReference")]
 	public void PatchUpReferences(List<SelectRegionItem> items)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(EventDelegate), Member = "Add")]
 	[CallsUnknownMethods(Count = 1)]
 	public void AttachEventHandler(EventDelegate.Callback callback)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(SelectRegionItem), Member = "Select")]
-	[CalledBy(Type = typeof(SelectRegionItem), Member = "Select")]
-	[CalledBy(Type = typeof(SelectRegionItem), Member = "Hide")]
+	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateAnimation")]
+	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "PlayAnimation")]
 	[CalledBy(Type = typeof(SelectRegionItem), Member = "Show")]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "PlayAnimation")]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "PlayAnimation")]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateAnimation")]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateAnimation")]
+	[CalledBy(Type = typeof(SelectRegionItem), Member = "Hide")]
+	[CalledBy(Type = typeof(SelectRegionItem), Member = "Select")]
+	[CallerCount(Count = 8)]
 	[Calls(Type = typeof(Animator), Member = "Play")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 8)]
+	[CallsUnknownMethods(Count = 2)]
 	private void PlayAnimation(string stateName)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SelectRegionItem), Member = "PatchUpReferences")]
-	[CalledBy(Type = typeof(SelectRegionItem), Member = "PatchUpReferences")]
-	[CalledBy(Type = typeof(SelectRegionItem), Member = "PatchUpReferences")]
-	[CalledBy(Type = typeof(SelectRegionItem), Member = "PatchUpReferences")]
 	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "OnSelectRegionItemInstantiated")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "OnSelectRegionItemInstantiated")]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "OnSelectRegionItemInstantiated")]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "OnSelectRegionItemInstantiated")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(SelectRegionItem), Member = "PatchUpReferences")]
 	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Find")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void PatchUpReference(List<SelectRegionItem> items, RegionSpecification target, out SelectRegionItem memberReference)
 	{
 		memberReference = null;

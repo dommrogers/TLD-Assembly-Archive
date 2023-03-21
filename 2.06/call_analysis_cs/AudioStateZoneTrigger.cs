@@ -15,22 +15,22 @@ public class AudioStateZoneTrigger : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameAudioManager), Member = "ExitOcclusionTrigger")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetHeavyOcclusion")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetMediumOcclusion")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetMildOcclusion")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void OnTriggerStay(Collider c)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(GameAudioManager), Member = "ExitOcclusionTrigger")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "ExitOcclusionTrigger")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void OnTriggerExit(Collider c)
 	{
 	}

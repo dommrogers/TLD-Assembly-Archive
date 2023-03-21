@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.AddressableAssets;
 using TLD.Serialization;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
 namespace TLD.Gear;
@@ -16,8 +18,8 @@ public class SpawnGearVariant : MonoBehaviour
 	{
 		public string m_SpawnerGUID;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public SaveData()
 		{
 		}
@@ -37,9 +39,9 @@ public class SpawnGearVariant : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 28)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -50,7 +52,7 @@ public class SpawnGearVariant : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -71,22 +73,29 @@ public class SpawnGearVariant : MonoBehaviour
 		{
 		}
 
-		[CallsUnknownMethods(Count = 11)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-		[CallsDeduplicatedMethods(Count = 10)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_IsDone")]
+		[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_Status")]
+		[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_Result")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+		[Calls(Type = typeof(AssetHelper), Member = "SafeLoadAssetAsync")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+		[Calls(Type = typeof(Addressables), Member = "Release")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsDeduplicatedMethods(Count = 6)]
+		[CallsUnknownMethods(Count = 7)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 4)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -102,24 +111,27 @@ public class SpawnGearVariant : MonoBehaviour
 
 	private static readonly List<SaveData> s_SaveData;
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	public static string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(SpawnGearVariant), Member = "FindSpawner")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SpawnGearVariant), Member = "DeleteSpawnedItem")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(SpawnGearVariant), Member = "FindSpawner")]
+	[CallsUnknownMethods(Count = 4)]
 	public static void Deserialize(string jsonText)
 	{
 	}
@@ -139,16 +151,16 @@ public class SpawnGearVariant : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private SaveData GetSaveData()
 	{
@@ -156,28 +168,29 @@ public class SpawnGearVariant : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(SpawnGearVariant), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DeleteSpawnedItem()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CalledBy(Type = typeof(SpawnGearVariant), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 5)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private static SpawnGearVariant FindSpawner(string spawnerGuid)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public SpawnGearVariant()
 	{
 	}

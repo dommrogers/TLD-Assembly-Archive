@@ -19,11 +19,11 @@ public abstract class BTNode : Node
 
 	public override int maxInConnections
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -33,7 +33,7 @@ public abstract class BTNode : Node
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -43,7 +43,7 @@ public abstract class BTNode : Node
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -67,11 +67,11 @@ public abstract class BTNode : Node
 		}
 	}
 
-	[Calls(Type = typeof(Graph), Member = "ConnectNodes")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Graph), Member = "ConnectNodes")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public T AddChild<T>(int childIndex) where T : BTNode
 	{
 		return null;
@@ -79,17 +79,17 @@ public abstract class BTNode : Node
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Graph), Member = "ConnectNodes")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public T AddChild<T>() where T : BTNode
 	{
 		return null;
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
-	[DeduplicatedMethod]
 	protected BTNode()
 	{
 	}

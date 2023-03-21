@@ -14,9 +14,9 @@ internal struct UpdateSessionModificationOptionsInternal : ISettable, IDisposabl
 	public string SessionName
 	{
 		[CalledBy(Type = typeof(UpdateSessionModificationOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(UpdateSessionModificationOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -29,17 +29,17 @@ internal struct UpdateSessionModificationOptionsInternal : ISettable, IDisposabl
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UpdateSessionModificationOptionsInternal), Member = "set_SessionName")]
 	[CalledBy(Type = typeof(SessionsInterface), Member = "UpdateSessionModification")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UpdateSessionModificationOptionsInternal), Member = "set_SessionName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

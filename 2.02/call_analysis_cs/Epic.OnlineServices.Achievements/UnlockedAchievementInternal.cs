@@ -15,19 +15,19 @@ internal struct UnlockedAchievementInternal : ISettable, IDisposable
 
 	public string AchievementId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(UnlockedAchievement), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(UnlockedAchievementInternal), Member = "Set")]
+		[CalledBy(Type = typeof(UnlockedAchievementInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(UnlockedAchievementInternal), Member = "Set")]
-		[CalledBy(Type = typeof(UnlockedAchievementInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -35,18 +35,18 @@ internal struct UnlockedAchievementInternal : ISettable, IDisposable
 
 	public DateTimeOffset? UnlockTime
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(UnlockedAchievementInternal), Member = "Set")]
+		[CalledBy(Type = typeof(UnlockedAchievementInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(UnlockedAchievementInternal), Member = "Set")]
-		[CalledBy(Type = typeof(UnlockedAchievementInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -60,16 +60,16 @@ internal struct UnlockedAchievementInternal : ISettable, IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnlockedAchievementInternal), Member = "set_AchievementId")]
 	[Calls(Type = typeof(UnlockedAchievementInternal), Member = "set_UnlockTime")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void Dispose()
 	{
 	}

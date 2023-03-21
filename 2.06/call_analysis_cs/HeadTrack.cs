@@ -25,19 +25,17 @@ public class HeadTrack : StateMachineBehaviour
 
 	private float m_LookWeightMaster;
 
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Animator), Member = "CheckIfInIKPass")]
-	[Calls(Type = typeof(Animator), Member = "CheckIfInIKPass")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Animator), Member = "SetLookAtWeightInternal")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(AiTarget), Member = "GetEyePos")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Animator), Member = "CheckIfInIKPass")]
+	[Calls(Type = typeof(Animator), Member = "SetLookAtWeightInternal")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 6)]
 	public override void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 	}

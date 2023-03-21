@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -29,17 +28,16 @@ public class Panel_Log_Toc_GridItem : MonoBehaviour
 
 	private float m_DoubleClickTimer;
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnTocItemClicked")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnTocItemClicked")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnTocItemClicked")]
 	[CallsUnknownMethods(Count = 2)]
 	public void Update()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 1)]
 	public void SetSelected(bool selected)
 	{
 	}
@@ -51,19 +49,19 @@ public class Panel_Log_Toc_GridItem : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(Panel_Log), Member = "ViewSandbox")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnClick()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public Panel_Log_Toc_GridItem()
 	{
 	}

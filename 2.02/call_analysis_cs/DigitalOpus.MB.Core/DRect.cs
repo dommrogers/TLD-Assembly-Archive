@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -75,7 +74,7 @@ public struct DRect
 	{
 	}
 
-	[CalledBy(Type = typeof(MB3_TextureCombinerPipeline._003C__Step1_CollectDistinctMatTexturesAndUsedObjects_003Ed__8), Member = "MoveNext")]
+	[CalledBy(TypeFullName = "DigitalOpus.MB.Core.MB3_TextureCombinerPipeline.<__Step1_CollectDistinctMatTexturesAndUsedObjects>d__8", Member = "MoveNext")]
 	[CallerCount(Count = 1)]
 	public DRect(Vector2 o, Vector2 s)
 	{
@@ -102,46 +101,41 @@ public struct DRect
 		return default(Rect);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(MB_TexSet), Member = "IsEqual")]
-	[CalledBy(Type = typeof(MatAndTransformToMerged), Member = "Equals")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(DRect), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(DRect), Member = "op_Inequality")]
+	[CalledBy(Type = typeof(MatAndTransformToMerged), Member = "Equals")]
+	[CalledBy(Type = typeof(MB_TexSet), Member = "IsEqual")]
+	[CalledBy(Type = typeof(MB3_TextureCombinerMerging), Member = "MergeOverlappingDistinctMaterialTexturesAndCalcMaterialSubrects")]
+	[CallerCount(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override bool Equals(object obj)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(DRect), Member = "Equals")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DRect), Member = "Equals")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool operator ==(DRect a, DRect b)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(DRect), Member = "Equals")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DRect), Member = "Equals")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool operator !=(DRect a, DRect b)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(System.Number), Member = "FormatDouble")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(System.Number), Member = "FormatDouble")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatDouble")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatDouble")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatDouble")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 17)]
 	public override string ToString()
 	{
 		return null;
@@ -155,12 +149,12 @@ public struct DRect
 	[CallerCount(Count = 0)]
 	public bool Encloses(DRect smallToTestIfFits)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public override int GetHashCode()
 	{
-		return default(int);
+		return 0;
 	}
 }

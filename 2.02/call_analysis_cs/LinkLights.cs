@@ -13,22 +13,23 @@ public class LinkLights : MonoBehaviour
 
 	private Light m_ThisLight;
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 7)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public LinkLights()
 	{
 	}

@@ -99,13 +99,12 @@ public class PlayerStunned : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(PlayerStunned), Member = "End")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(PlayerStunned), Member = "UpdateBlurEffect")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerStunned), Member = "End")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerStunned), Member = "End")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerStunned), Member = "UpdateBlurEffect")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	public void Update()
 	{
 	}
@@ -114,82 +113,66 @@ public class PlayerStunned : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsStunned()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_player_stunned")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_PlayerStunned_Begin")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 12)]
 	public void Begin(float stunnedDurationSeconds, float stunnedTransitionSeconds = 1f)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
+	[CalledBy(Type = typeof(PlayerStunned), Member = "Update")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(CameraFade), Member = "BashFadeAlpha")]
+	[Calls(Type = typeof(CameraEffects), Member = "BlurSetSize")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CalledBy(Type = typeof(PlayerStunned), Member = "Update")]
-	[CalledBy(Type = typeof(PlayerStunned), Member = "Update")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
-	[Calls(Type = typeof(CameraEffects), Member = "BlurSetSize")]
-	[Calls(Type = typeof(CameraFade), Member = "BashFadeAlpha")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[CallsUnknownMethods(Count = 12)]
 	public void End()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 70)]
 	[CalledBy(Type = typeof(PlayerStunned), Member = "Update")]
-	[Calls(Type = typeof(PlayerStunned), Member = "UpdateLowHealthStagger")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[Calls(Type = typeof(CameraEffects), Member = "BlurSetSize")]
-	[Calls(Type = typeof(CameraFade), Member = "BashFadeAlpha")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
 	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(CameraFade), Member = "BashFadeAlpha")]
+	[Calls(Type = typeof(CameraEffects), Member = "BlurSetSize")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerStunned), Member = "UpdateLowHealthStagger")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 70)]
 	private void UpdateBlurEffect()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "ExpStep")]
-	[CallsUnknownMethods(Count = 19)]
 	[CalledBy(Type = typeof(PlayerStunned), Member = "UpdateBlurEffect")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Utils), Member = "ExpStep")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[Calls(Type = typeof(vp_FPSController), Member = "AddForce")]
+	[Calls(Type = typeof(Utils), Member = "ExpStep")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 19)]
 	private void UpdateLowHealthStagger(float blurFrac, float speedFrac)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public PlayerStunned()
 	{
 	}

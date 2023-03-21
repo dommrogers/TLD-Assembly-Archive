@@ -13,11 +13,11 @@ internal struct DestroySessionOptionsInternal : ISettable, IDisposable
 
 	public string SessionName
 	{
+		[CalledBy(Type = typeof(DestroySessionOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(DestroySessionOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(DestroySessionOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(DestroySessionOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,17 +29,17 @@ internal struct DestroySessionOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(DestroySessionOptionsInternal), Member = "set_SessionName")]
 	[CalledBy(Type = typeof(SessionsInterface), Member = "DestroySession")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DestroySessionOptionsInternal), Member = "set_SessionName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

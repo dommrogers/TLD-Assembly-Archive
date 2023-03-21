@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.DialogueTrees;
 using NodeCanvas.Framework;
@@ -14,9 +13,9 @@ public class StartDialogueTree : ActionTask<IDialogueActor>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -24,10 +23,10 @@ public class StartDialogueTree : ActionTask<IDialogueActor>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 11)]
 	protected override void OnExecute()
 	{

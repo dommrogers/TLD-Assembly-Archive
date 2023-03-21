@@ -8,19 +8,20 @@ public class UsePhoneTrigger : MonoBehaviour
 
 	public string m_PhoneObjectId;
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(UsePhoneTrigger), Member = "OnTriggerStay")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Phone), Member = "OnPhonePickup")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Phone), Member = "StopRinging")]
-	[Calls(Type = typeof(GameObject), Member = "CompareTag")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
-	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(GameObject), Member = "CompareTag")]
 	[Calls(Type = typeof(Phone), Member = "GetPhone")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Phone), Member = "StopRinging")]
+	[Calls(Type = typeof(Phone), Member = "OnPhonePickup")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void MaybeUsePhone(Collider c)
 	{
 	}

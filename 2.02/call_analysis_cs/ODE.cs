@@ -8,8 +8,8 @@ public class ODE
 
 	public float t;
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public ODE(int _numEquations)
 	{
 	}
@@ -28,10 +28,9 @@ public class ODE
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdatePosition")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdatePosition")]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdatePosition")]
 	[CallsUnknownMethods(Count = 21)]
 	public void Update2(float dt)
 	{

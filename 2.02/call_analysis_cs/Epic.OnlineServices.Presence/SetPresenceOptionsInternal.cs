@@ -17,9 +17,9 @@ internal struct SetPresenceOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(SetPresenceOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(SetPresenceOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 2)]
 		set
 		{
 		}
@@ -27,11 +27,11 @@ internal struct SetPresenceOptionsInternal : ISettable, IDisposable
 
 	public PresenceModification PresenceModificationHandle
 	{
+		[CalledBy(Type = typeof(SetPresenceOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(SetPresenceOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(SetPresenceOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(SetPresenceOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -44,17 +44,17 @@ internal struct SetPresenceOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(SetPresenceOptionsInternal), Member = "set_LocalUserId")]
 	[CalledBy(Type = typeof(PresenceInterface), Member = "SetPresence")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(SetPresenceOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(SetPresenceOptionsInternal), Member = "set_PresenceModificationHandle")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

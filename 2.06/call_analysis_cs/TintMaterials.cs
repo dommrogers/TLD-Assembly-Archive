@@ -48,16 +48,16 @@ public class TintMaterials : MonoBehaviour
 
 	private static readonly TintMaterialsSaveData s_SaveData;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 8)]
-	[CallerCount(Count = 0)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(TintMaterials), Member = "UpdateTint")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnEnable()
 	{
@@ -69,63 +69,65 @@ public class TintMaterials : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CalledBy(Type = typeof(TintMaterials), Member = "OnEnable")]
 	[CalledBy(Type = typeof(TintMaterials), Member = "Deserialize")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 6)]
 	private void UpdateTint()
 	{
 	}
 
 	[CalledBy(Type = typeof(TintMaterials), Member = "SerializeAll")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(TintMaterials), Member = "UpdateTint")]
 	[CalledBy(Type = typeof(TintMaterials), Member = "DeserializeAll")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(TintMaterials), Member = "UpdateTint")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(TintMaterialsSaveData proxy)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static void ResetInstances()
 	{
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(TintMaterials), Member = "Serialize")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 20)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(TintMaterials), Member = "Deserialize")]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(TintMaterials), Member = "Deserialize")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void DeserializeAll(string text)
 	{
 	}

@@ -115,60 +115,60 @@ public class NPC : MonoBehaviour
 
 	private static string s_ActiveGuid;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(BodyCarry), Member = "Carry")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NPC), Member = "HasActive")]
 	[Calls(Type = typeof(NPC), Member = "UpdateTODHours")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public void HandlePickUp()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(AiTarget), Member = "IsDead")]
+	[CalledBy(Type = typeof(NPC), Member = "UpdateAll")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NPCCondition), Member = "IsAlive")]
-	[CalledBy(Type = typeof(AiTarget), Member = "IsDead")]
-	[CalledBy(Type = typeof(NPC), Member = "UpdateAll")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsAlive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(NPC), Member = "UpdateAmbientVoiceOver")]
-	[CalledBy(Type = typeof(NPC), Member = "DoUpdate")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(NPC), Member = "FindNearest")]
-	[CalledBy(Type = typeof(NPC), Member = "ResetNextAmbientAudioTimer")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(BaseAi), Member = "ScanForNewTarget")]
-	[Calls(Type = typeof(BodyCarry), Member = "IsCarryingBody")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(NPC), Member = "IsIndoors")]
+	[CalledBy(Type = typeof(NPC), Member = "ResetNextAmbientAudioTimer")]
+	[CalledBy(Type = typeof(NPC), Member = "DoUpdate")]
+	[CalledBy(Type = typeof(NPC), Member = "UpdateAmbientVoiceOver")]
+	[CalledBy(Type = typeof(NPC), Member = "FindNearest")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BodyCarry), Member = "IsCarryingBody")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsBeingCarried()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool IsConditionUpdateEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(NPCVoice), Member = "UpdateIndoorOutdoorSwitch")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[CalledBy(Type = typeof(NPCFreezing), Member = "CalculateCurrentTemperature")]
-	[Calls(Type = typeof(NPC), Member = "IsBeingCarried")]
+	[CalledBy(Type = typeof(NPCVoice), Member = "UpdateIndoorOutdoorSwitch")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(NPC), Member = "IsBeingCarried")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsIndoors()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -183,70 +183,62 @@ public class NPC : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NPCAfflictions), Member = "StartDiagnosing")]
+	[CallsUnknownMethods(Count = 1)]
 	public void PerformInteraction()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NPC), Member = "GetHoverText")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void UpdateInteraction(BaseInteraction baseInteraction)
 	{
 	}
 
+	[CalledBy(Type = typeof(CarryableBody), Member = "GetHoverText")]
+	[CalledBy(Type = typeof(NPC), Member = "UpdateInteraction")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(string), Member = "Format")]
-	[CalledBy(Type = typeof(CarryableBody), Member = "GetHoverText")]
-	[CalledBy(Type = typeof(NPC), Member = "UpdateInteraction")]
 	[CallsUnknownMethods(Count = 2)]
 	public string GetHoverText()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(NPC), Member = "SerializeAll")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "Serialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPCAfflictions), Member = "Serialize")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public NPCSavedData Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(NPC), Member = "DeserializeAll")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NPCCondition), Member = "GetCurrentConditionLevel")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "Deserialize")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPCAfflictions), Member = "Deserialize")]
+	[Calls(Type = typeof(NPCCondition), Member = "GetCurrentConditionLevel")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(NPCSavedData savedData)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(BodyCarry), Member = "Drop")]
-	[CalledBy(Type = typeof(NPC), Member = "UpdateAmbientVoiceOver")]
+	[CalledBy(Type = typeof(NPC), Member = "DoUpdate")]
 	[CalledBy(Type = typeof(NPC), Member = "Initialize")]
+	[CalledBy(Type = typeof(NPC), Member = "UpdateAmbientVoiceOver")]
+	[CalledBy(Type = typeof(BodyCarry), Member = "Drop")]
 	[CalledBy(Type = typeof(BodyCarry), Member = "SetupCarryState")]
+	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(NPC), Member = "IsBeingCarried")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(NPC), Member = "DoUpdate")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ResetNextAmbientAudioTimer()
 	{
 	}
@@ -257,105 +249,94 @@ public class NPC : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(NPCCondition), Member = "DoUpdate")]
 	[CalledBy(Type = typeof(NPC), Member = "DoUpdate")]
-	[Calls(Type = typeof(Bed), Member = "RemoveBody")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Bed), Member = "Degrade")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
-	[Calls(Type = typeof(NPCThirst), Member = "StartDehydrationAffliction")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NPCFreezing), Member = "DoUpdate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
+	[Calls(Type = typeof(NPCThirst), Member = "StartDehydrationAffliction")]
 	[Calls(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
+	[Calls(Type = typeof(NPCCondition), Member = "DoUpdate")]
+	[Calls(Type = typeof(Bed), Member = "Degrade")]
+	[Calls(Type = typeof(Bed), Member = "RemoveBody")]
+	[CallsUnknownMethods(Count = 1)]
 	private void DoConditionUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(NPC), Member = "UpdateAll")]
-	[Calls(Type = typeof(NPCVoice), Member = "UpdateAudioEmitterPosition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NPC), Member = "UpdateTODHours")]
-	[Calls(Type = typeof(NPC), Member = "ResetNextAmbientAudioTimer")]
-	[Calls(Type = typeof(NPC), Member = "IsBeingCarried")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NPC), Member = "DoConditionUpdate")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NPC), Member = "DoConditionUpdate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPC), Member = "IsBeingCarried")]
 	[Calls(Type = typeof(NPCVoice), Member = "Play")]
+	[Calls(Type = typeof(NPC), Member = "ResetNextAmbientAudioTimer")]
+	[Calls(Type = typeof(NPC), Member = "UpdateTODHours")]
+	[Calls(Type = typeof(NPCVoice), Member = "UpdateAudioEmitterPosition")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DoUpdate(UpdateFlags flags)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(NPC), Member = "FindAll")]
 	[CalledBy(Type = typeof(NPC), Member = "Awake")]
-	[Calls(Type = typeof(NPC), Member = "ResetNextAmbientAudioTimer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(NPC), Member = "FindAll")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NPCAfflictions), Member = "MaybeReparentAnimatedInteractions")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(NPC), Member = "ResetNextAmbientAudioTimer")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Initialize()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(NPC), Member = "ResetNextAmbientAudioTimer")]
-	[Calls(Type = typeof(NPCVoice), Member = "Play")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NPC), Member = "IsBeingCarried")]
+	[Calls(Type = typeof(NPCVoice), Member = "Play")]
+	[Calls(Type = typeof(NPC), Member = "ResetNextAmbientAudioTimer")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateAmbientVoiceOver()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Action_NPCEnableConditionUpdate), Member = "OnExecute")]
-	[CalledBy(Type = typeof(NPC), Member = "SetActive")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_npc_conditionupdate")]
+	[CalledBy(Type = typeof(NPC), Member = "HandlePickUp")]
 	[CalledBy(Type = typeof(NPC), Member = "SetConditionUpdateEnabled")]
 	[CalledBy(Type = typeof(NPC), Member = "DoUpdate")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_npc_conditionupdate")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_npc_conditionupdate")]
+	[CalledBy(Type = typeof(NPC), Member = "SetActive")]
+	[CalledBy(Type = typeof(Action_NPCEnableConditionUpdate), Member = "OnExecute")]
 	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(NPC), Member = "HandlePickUp")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateTODHours()
 	{
 	}
 
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Enable")]
 	[CalledBy(Type = typeof(NPCPreventActiveTrigger), Member = "Update")]
 	[CalledBy(Type = typeof(Action_NPCClearActive), Member = "OnExecute")]
+	[CallerCount(Count = 3)]
 	public static void ClearActive()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(NPC), Member = "GetActive")]
 	[CalledBy(Type = typeof(BodyCarry), Member = "ShowError")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 3)]
 	public static NPC GetFromGuid(string guid)
 	{
 		return null;
@@ -369,38 +350,38 @@ public class NPC : MonoBehaviour
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Action_NPCEnableConditionUpdate), Member = "OnExecute")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[CalledBy(Type = typeof(BodyCarry), Member = "ShowError")]
-	[CalledBy(Type = typeof(BodyCarry), Member = "ProcessInteraction")]
-	[CalledBy(Type = typeof(NPCPreventActiveTrigger), Member = "Update")]
-	[CalledBy(Type = typeof(NPC), Member = "SerializeGlobal")]
-	[CalledBy(Type = typeof(NPC), Member = "IsActive")]
-	[CalledBy(Type = typeof(NPC), Member = "GetActive")]
-	[CalledBy(Type = typeof(NPC), Member = "HandlePickUp")]
 	[CalledBy(Type = typeof(LoadScene), Member = "PerformHold")]
-	[CallerCount(Count = 11)]
+	[CalledBy(Type = typeof(NPC), Member = "HandlePickUp")]
+	[CalledBy(Type = typeof(NPC), Member = "GetActive")]
+	[CalledBy(Type = typeof(NPC), Member = "IsActive")]
 	[CalledBy(Type = typeof(NPC), Member = "SetActive")]
+	[CalledBy(Type = typeof(NPC), Member = "SerializeGlobal")]
+	[CalledBy(Type = typeof(NPCPreventActiveTrigger), Member = "Update")]
+	[CalledBy(Type = typeof(BodyCarry), Member = "ProcessInteraction")]
+	[CalledBy(Type = typeof(BodyCarry), Member = "ShowError")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
+	[CalledBy(Type = typeof(Action_NPCEnableConditionUpdate), Member = "OnExecute")]
+	[CallerCount(Count = 11)]
 	public static bool HasActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(NPC), Member = "HasActive")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CalledBy(Type = typeof(BodyCarry), Member = "ProcessInteraction")]
 	[CalledBy(Type = typeof(Action_NPCEnableConditionUpdate), Member = "OnExecute")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(NPC), Member = "HasActive")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	public static bool IsActive(string guid)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(NPC), Member = "UpdateTODHours")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NPC), Member = "HasActive")]
+	[Calls(Type = typeof(NPC), Member = "UpdateTODHours")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void SetActive(NPC npc)
 	{
 	}
@@ -412,7 +393,7 @@ public class NPC : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	public static void DeserializeGlobal(string serialized)
 	{
 	}
@@ -426,37 +407,39 @@ public class NPC : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(NPC), Member = "Serialize")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(NPC), Member = "Deserialize")]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPC), Member = "Deserialize")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(GameManager), Member = "AllScenesLoaded")]
-	[Calls(Type = typeof(NPC), Member = "Initialize")]
 	[CalledBy(Type = typeof(SceneManager), Member = "OnSceneLoaded")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
 	[Calls(Type = typeof(GameObject), Member = "get_scene")]
+	[Calls(Type = typeof(NPC), Member = "Initialize")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public static void FindAll()
 	{
 	}
@@ -468,38 +451,40 @@ public class NPC : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(BodyCarry), Member = "IsCarryingBody")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(NPC), Member = "DoUpdate")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
 	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(NPC), Member = "IsAlive")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(BodyCarry), Member = "IsCarryingBody")]
+	[Calls(Type = typeof(NPC), Member = "DoUpdate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void UpdateAll()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[CallsUnknownMethods(Count = 1)]
 	private static NPC FindNPCByGuid(string guid)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_npc_bloodloss")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_npc_conditionupdate")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ScanForNewTarget")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateCurrentNPCCondition")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_npc_conditionupdate")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_npc_bloodloss")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(NPC), Member = "IsBeingCarried")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(BaseAi), Member = "ScanForNewTarget")]
+	[CallsUnknownMethods(Count = 7)]
 	public static NPC FindNearest(Vector3 position, float maxDistance, FindFlags flags)
 	{
 		return null;

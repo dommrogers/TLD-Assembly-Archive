@@ -21,30 +21,30 @@ public class LodBias : MonoBehaviour
 
 	public float m_PcUltraBias;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetLodBias(QualityLodBias quality)
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(QualitySettingsManager), Member = "GetLodBias")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "GetLodBias")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static float GetDefaultLodBias(QualityLodBias quality)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public LodBias()
 	{
 	}

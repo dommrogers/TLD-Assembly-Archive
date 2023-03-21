@@ -19,7 +19,7 @@ public class IconAttribute : Attribute
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 20)]
+	[CallerCount(Count = 24)]
 	public IconAttribute(Type fromType)
 	{
 	}

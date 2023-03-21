@@ -31,23 +31,19 @@ public struct SnowImprintExpanded
 
 	public bool m_HasBumpDecal;
 
-	[CalledBy(Type = typeof(SnowPatch), Member = "AddImprint")]
 	[CalledBy(Type = typeof(SnowImprintExpanded), Member = "op_Explicit")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Vector3), Member = "get_forward")]
-	[Calls(Type = typeof(Quaternion), Member = "AngleAxis")]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(UvList), Member = "GetUvs")]
-	[Calls(Type = typeof(UvList), Member = "GetUvs")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(UvList), Member = "GetUvs")]
-	[Calls(Type = typeof(SnowImprint), Member = "get_Position")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CalledBy(Type = typeof(SnowPatch), Member = "AddImprint")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SnowImprint), Member = "get_Position")]
+	[Calls(Type = typeof(UvList), Member = "GetUvs")]
 	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(Vector3), Member = "get_up")]
+	[Calls(Type = typeof(Quaternion), Member = "AngleAxis")]
+	[Calls(Type = typeof(Vector3), Member = "get_forward")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 17)]
 	public SnowImprintExpanded(SnowImprint im)
 	{
 	}

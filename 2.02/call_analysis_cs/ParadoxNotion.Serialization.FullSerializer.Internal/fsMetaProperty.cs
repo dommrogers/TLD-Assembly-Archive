@@ -17,14 +17,14 @@ public class fsMetaProperty
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 71)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -34,14 +34,14 @@ public class fsMetaProperty
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -49,10 +49,10 @@ public class fsMetaProperty
 
 	public string MemberName
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -60,17 +60,18 @@ public class fsMetaProperty
 	}
 
 	[CalledBy(Type = typeof(fsMetaType), Member = "CollectProperties")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTGetAttribute")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	internal fsMetaProperty(fsConfig config, FieldInfo field)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Write(object context, object value)
 	{
 	}

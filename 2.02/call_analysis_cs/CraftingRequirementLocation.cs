@@ -14,11 +14,11 @@ public class CraftingRequirementLocation : MonoBehaviour
 
 		private Color m_IconTint;
 
-		[CallsUnknownMethods(Count = 6)]
 		[CalledBy(Type = typeof(CraftingRequirementLocation), Member = "Enable")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(Color), Member = "op_Equality")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 6)]
 		public void Enable(bool enable, bool requirementsMet)
 		{
 		}
@@ -30,7 +30,7 @@ public class CraftingRequirementLocation : MonoBehaviour
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public Data()
 		{
 		}
@@ -42,39 +42,40 @@ public class CraftingRequirementLocation : MonoBehaviour
 
 	private Color m_DisplayTint;
 
-	[CallsUnknownMethods(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Awake()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Disable()
 	{
 	}
 
+	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "Enable")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[Calls(Type = typeof(Data), Member = "Enable")]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "Enable")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 14)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	public void Enable(BlueprintItem bpi)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public CraftingRequirementLocation()
 	{
 	}

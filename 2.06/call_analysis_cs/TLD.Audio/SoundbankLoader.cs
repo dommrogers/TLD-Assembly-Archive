@@ -36,35 +36,34 @@ public class SoundbankLoader : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(GameAudioManager), Member = "LoadEpisode")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
 	[CalledBy(Type = typeof(EpisodeManager), Member = "SetActiveEpisode")]
-	[Calls(Type = typeof(SoundbankLoader), Member = "MaybeLoadEpisodeBanks")]
-	[Calls(Type = typeof(SoundbankLoader), Member = "MaybeLoadEpisodeBanks")]
-	[Calls(Type = typeof(SoundbankLoader), Member = "MaybeUnloadOtherEpisodeBanks")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "LoadEpisode")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SoundbankLoader), Member = "MaybeUnloadOtherEpisodeBanks")]
+	[Calls(Type = typeof(SoundbankLoader), Member = "MaybeLoadEpisodeBanks")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsUnknownMethods(Count = 19)]
 	public void LoadEpisodeBanks(Episode episode)
 	{
 	}
 
-	[CalledBy(Type = typeof(GameAudioManager), Member = "DebugLoadAllEpisodeBanks")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_play_timeline")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(SoundbankLoader), Member = "MaybeLoadEpisodeBanks")]
+	[CalledBy(Type = typeof(GameAudioManager), Member = "DebugLoadAllEpisodeBanks")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[Calls(Type = typeof(SoundbankLoader), Member = "MaybeLoadEpisodeBanks")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsUnknownMethods(Count = 8)]
 	public void DebugLoadAllEpisodeBanks()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(AkBankManager), Member = "UnloadBank")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(GameAudioManager), Member = "UnloadActiveEpisode")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadMainMenu")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(AkBankManager), Member = "UnloadBank")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public void UnloadAllEpisodeBanks()
 	{
@@ -72,42 +71,43 @@ public class SoundbankLoader : MonoBehaviour
 
 	[CalledBy(Type = typeof(SoundbankLoader), Member = "LoadEpisodeBanks")]
 	[CalledBy(Type = typeof(SoundbankLoader), Member = "DebugLoadAllEpisodeBanks")]
-	[CalledBy(Type = typeof(SoundbankLoader), Member = "LoadEpisodeBanks")]
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Bank), Member = "Load")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public void MaybeLoadEpisodeBanks(List<Bank> loadSoundBankList)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Bank), Member = "Unload")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(SoundbankLoader), Member = "LoadEpisodeBanks")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Bank), Member = "Unload")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaybeUnloadOtherEpisodeBanks(List<Bank> loadSoundBankList)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(SoundbankLoader), Member = "TryLoadSoundbank")]
 	[CalledBy(Type = typeof(SoundbankLoader), Member = "Awake")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SoundbankLoader), Member = "TryLoadSoundbank")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void LoadSoundBanks(IEnumerable<Bank> list)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Bank), Member = "Load")]
 	[CalledBy(Type = typeof(SoundbankLoader), Member = "LoadSoundBanks")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Bank), Member = "Load")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	private uint TryLoadSoundbank(Bank bank)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]

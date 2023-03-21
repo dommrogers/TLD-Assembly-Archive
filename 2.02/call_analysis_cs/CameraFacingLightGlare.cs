@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -20,14 +21,15 @@ public class CameraFacingLightGlare : MonoBehaviour
 
 	private CameraEffects.BloomOverride m_BloomOverride;
 
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
-	[CallsDeduplicatedMethods(Count = 18)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 26)]
 	private void Update()
 	{
 	}

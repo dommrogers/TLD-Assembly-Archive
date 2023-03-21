@@ -39,14 +39,14 @@ public class AkWindowsSettings : AkWwiseInitializationSettings.PlatformSettings
 	public AkCommonCommSettings CommsSettings;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 15)]
+	[CallerCount(Count = 17)]
 	protected override AkCommonUserSettings GetUserSettings()
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 8)]
+	[CallerCount(Count = 9)]
 	protected override AkCommonAdvancedSettings GetAdvancedSettings()
 	{
 		return null;
@@ -59,9 +59,9 @@ public class AkWindowsSettings : AkWwiseInitializationSettings.PlatformSettings
 		return null;
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public AkWindowsSettings()
 	{
 	}

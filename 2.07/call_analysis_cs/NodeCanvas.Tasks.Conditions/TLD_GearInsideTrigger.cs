@@ -12,24 +12,27 @@ public class TLD_GearInsideTrigger : ConditionTask<BoxCollider>
 	{
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(BBParameter), Member = "get_isNull")]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(Object), Member = "get_name")]
 		[Calls(Type = typeof(string), Member = "Format")]
-		[CallsUnknownMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(GearItem), Member = "Equals")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[Calls(Type = typeof(BBParameter), Member = "get_isNull")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(GearItem), Member = "Equals")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 10)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

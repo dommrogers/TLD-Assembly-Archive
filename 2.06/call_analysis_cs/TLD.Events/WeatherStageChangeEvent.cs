@@ -8,8 +8,8 @@ public class WeatherStageChangeEvent : GameEvent
 	[NonSerialized]
 	public WeatherStage m_CurrentWeatherStage;
 
-	[Calls(Type = typeof(GameEvent), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameEvent), Member = ".ctor")]
 	public WeatherStageChangeEvent()
 	{
 	}

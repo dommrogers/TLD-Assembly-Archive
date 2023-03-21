@@ -28,14 +28,14 @@ public class Feat_ColdFusion : Feat
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	public void ValidateSaveData(string text)
 	{
 	}
@@ -44,13 +44,13 @@ public class Feat_ColdFusion : Feat
 	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
 	public int GetTemperatureCelsiusBonus()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Feat), Member = "ShouldBlockIncrement")]
+	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void IncrementHours(float hours)
 	{
 	}
@@ -60,18 +60,17 @@ public class Feat_ColdFusion : Feat
 	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(Utils), Member = "GetTemperatureString")]
-	[Calls(Type = typeof(string), Member = "Replace")]
 	[CallsUnknownMethods(Count = 1)]
 	public override string GetDescription()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Replace")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsUnknownMethods(Count = 1)]
 	public override string GetShortDescription()
 	{
 		return null;
@@ -91,24 +90,24 @@ public class Feat_ColdFusion : Feat
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	public override bool IsUnlocked()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public override float GetNormalizedProgress()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public override void SetNormalizedProgress(float normalizedValue)
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public Feat_ColdFusion()
 	{
 	}

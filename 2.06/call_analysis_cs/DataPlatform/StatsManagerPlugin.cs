@@ -25,15 +25,15 @@ public class StatsManagerPlugin
 	public static extern void StatsManager_SetStatAsInteger(int userId, string statName, long statValue);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void StatsManager_SetStatAsNumber(int userId, string statName, double statValue);
 
 	[PreserveSig]
+	[CalledBy(Type = typeof(StatsManager), Member = "SetStatAsString")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(StatsManager), Member = "SetStatAsString")]
 	[CallsUnknownMethods(Count = 5)]
 	public static extern void StatsManager_SetStatAsString(int userId, string statName, string statValue);
 
@@ -49,8 +49,8 @@ public class StatsManagerPlugin
 	public static extern IntPtr StatsManager_GetStatNames(int userId);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void StatsManager_GetStatNames_Dispose(IntPtr self);
 
 	[PreserveSig]
@@ -80,8 +80,8 @@ public class StatsManagerPlugin
 	public static extern void StatsManager_GetLeaderboard(int userId, string statName, IntPtr query);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void StatsManager_GetSocialLeaderboard(int userId, string statName, string socialGroup, IntPtr query);
 
 	[PreserveSig]
@@ -100,14 +100,13 @@ public class StatsManagerPlugin
 	public static extern uint StatsManager_DoWork_Length(IntPtr self);
 
 	[PreserveSig]
+	[CalledBy(Type = typeof(StatEventList), Member = "CreateIthElement")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(StatEventList), Member = "CreateIthElement")]
-	[CalledBy(Type = typeof(StatEventList), Member = "CreateIthElement")]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr StatsManager_DoWork_GetAt(IntPtr self, uint idx);
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public StatsManagerPlugin()
 	{
 	}

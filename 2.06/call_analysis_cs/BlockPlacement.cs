@@ -15,8 +15,8 @@ public class BlockPlacement : MonoBehaviour
 
 	public bool m_BlockGearItemPlacement;
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public BlockPlacement()
 	{
 	}

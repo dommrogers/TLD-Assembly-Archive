@@ -26,15 +26,15 @@ internal struct CreateLobbySearchOptionsInternal : ISettable, IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(LobbyInterface), Member = "CreateLobbySearch")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(LobbyInterface), Member = "CreateLobbySearch")]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

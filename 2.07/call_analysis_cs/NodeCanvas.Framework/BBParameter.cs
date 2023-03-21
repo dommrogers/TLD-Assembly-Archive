@@ -36,14 +36,14 @@ public abstract class BBParameter
 
 	private string targetVariableID
 	{
-		[CallerCount(Count = 28)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 32)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 79)]
+		[CallerCount(Count = 86)]
 		set
 		{
 		}
@@ -52,26 +52,24 @@ public abstract class BBParameter
 	public Variable varRef
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 25)]
+		[CallerCount(Count = 28)]
 		get
 		{
 			return null;
 		}
-		[CalledBy(Type = typeof(BBParameter<>), Member = "CheckForPromotedVariable")]
-		[CalledBy(Type = typeof(BBParameter<>), Member = "set_value")]
-		[CalledBy(Type = typeof(BBParameter<>), Member = "get_value")]
-		[CalledBy(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-		[CalledBy(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-		[CalledBy(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-		[CalledBy(Type = typeof(BBParameter), Member = "set_name")]
-		[CalledBy(Type = typeof(Dialogue_VoiceOverNode), Member = "OnExecute")]
-		[CalledBy(Type = typeof(BBParameter), Member = "set_bb")]
-		[CalledBy(Type = typeof(NodeCanvas.BehaviourTrees.ProbabilitySelector), Member = "OnChildConnected")]
 		[CalledBy(Type = typeof(PrioritySelector), Member = "OnChildConnected")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 13)]
+		[CalledBy(Type = typeof(NodeCanvas.BehaviourTrees.ProbabilitySelector), Member = "OnChildConnected")]
+		[CalledBy(Type = typeof(BBParameter), Member = "set_bb")]
+		[CalledBy(Type = typeof(BBParameter), Member = "set_name")]
 		[CalledBy(Type = typeof(BBParameter), Member = "set_useBlackboard")]
+		[CalledBy(Type = typeof(BBParameter), Member = "PromoteToVariable")]
+		[CalledBy(Type = typeof(BBParameter<>), Member = "get_value")]
+		[CalledBy(Type = typeof(BBParameter<>), Member = "set_value")]
+		[CalledBy(Type = typeof(BBParameter<>), Member = "CheckForPromotedVariable")]
+		[CalledBy(Type = typeof(Dialogue_VoiceOverNode), Member = "OnExecute")]
 		[CalledBy(Type = typeof(NodeCanvas.DialogueTrees.ProbabilitySelector.Option), Member = ".ctor")]
+		[CallerCount(Count = 13)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -79,24 +77,23 @@ public abstract class BBParameter
 
 	public IBlackboard bb
 	{
-		[CallerCount(Count = 27)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 27)]
 		get
 		{
 			return null;
 		}
-		[CalledBy(Type = typeof(Dialogue_MultipleChoiceNode), Member = "OnExecute")]
-		[CallerCount(Count = 9)]
-		[Calls(Type = typeof(BBParameter), Member = "ResolveReference")]
-		[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
 		[CalledBy(Type = typeof(Task), Member = "set_agentIsOverride")]
 		[CalledBy(Type = typeof(Task), Member = "set_blackboard")]
 		[CalledBy(Type = typeof(Task), Member = "Set")]
 		[CalledBy(Type = typeof(BBParameter), Member = "CreateInstance")]
 		[CalledBy(Type = typeof(BBParameter), Member = "SetBBFields")]
-		[CalledBy(Type = typeof(TLDSetOtherBlackboardVariable), Member = "OnExecute")]
+		[CalledBy(Type = typeof(Dialogue_MultipleChoiceNode), Member = "OnExecute")]
 		[CalledBy(Type = typeof(TLDSetOtherBlackboardVariable), Member = "OnExecute")]
 		[CalledBy(Type = typeof(ExecuteFunction_Multiplatform), Member = "SetMethod")]
+		[CallerCount(Count = 9)]
+		[Calls(Type = typeof(BBParameter), Member = "ResolveReference")]
+		[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
 		set
 		{
 		}
@@ -105,16 +102,16 @@ public abstract class BBParameter
 	public string name
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 80)]
+		[CallerCount(Count = 92)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(BBParameter), Member = "set_useBlackboard")]
+		[CallerCount(Count = 1)]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 		[Calls(Type = typeof(BBParameter), Member = "ResolveReference")]
 		[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-		[CallerCount(Count = 1)]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-		[CalledBy(Type = typeof(BBParameter), Member = "set_useBlackboard")]
 		set
 		{
 		}
@@ -122,11 +119,11 @@ public abstract class BBParameter
 
 	public bool useBlackboard
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
@@ -138,17 +135,16 @@ public abstract class BBParameter
 
 	public bool isNone
 	{
-		[CalledBy(Type = typeof(CheckMousePick2D), Member = "get_info")]
-		[CallerCount(Count = 6)]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 		[CalledBy(Type = typeof(BBParameter), Member = "ToString")]
 		[CalledBy(Type = typeof(BBParameter<>), Member = "set_value")]
 		[CalledBy(Type = typeof(CheckMousePick2D), Member = "get_info")]
 		[CalledBy(Type = typeof(ExecuteFunction), Member = "get_info")]
 		[CalledBy(Type = typeof(ExecuteStaticFunction), Member = "get_info")]
+		[CallerCount(Count = 6)]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -158,32 +154,32 @@ public abstract class BBParameter
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public bool isNull
 	{
-		[CalledBy(Type = typeof(SendMessage<>), Member = "OnExecute")]
-		[CalledBy(Type = typeof(Action_NPCEnableConditionUpdate), Member = "OnExecute")]
-		[CalledBy(Type = typeof(Action_NPCSetFreezing), Member = "OnExecute")]
+		[CalledBy(Type = typeof(Task), Member = "Internal_GetWarning")]
+		[CalledBy(Type = typeof(BBParameter), Member = "ToString")]
+		[CalledBy(Type = typeof(TLD_GearInsideTrigger), Member = "get_info")]
+		[CalledBy(Type = typeof(TLD_GearInsideTrigger), Member = "OnCheck")]
+		[CalledBy(Type = typeof(Condition_CheckContainerLiquid), Member = "get_info")]
+		[CalledBy(Type = typeof(Condition_CheckContainerLiquid), Member = "OnCheck")]
+		[CalledBy(Type = typeof(Condition_CheckContainerPowder), Member = "get_info")]
 		[CalledBy(Type = typeof(Condition_CheckContainerPowder), Member = "OnCheck")]
+		[CalledBy(Type = typeof(Action_NPCEnableConditionUpdate), Member = "OnExecute")]
+		[CalledBy(Type = typeof(Action_NPCSetCondition), Member = "OnExecute")]
+		[CalledBy(Type = typeof(Action_NPCSetFreezing), Member = "OnExecute")]
+		[CalledBy(Type = typeof(Action_TrackStat), Member = "OnIncrementStat")]
 		[CalledBy(Type = typeof(Action_TrackStat), Member = "OnSetStat")]
 		[CalledBy(Type = typeof(GetToString), Member = "OnExecute")]
-		[CalledBy(Type = typeof(Action_TrackStat), Member = "OnIncrementStat")]
-		[CalledBy(Type = typeof(Condition_CheckContainerPowder), Member = "get_info")]
-		[CalledBy(Type = typeof(Action_NPCSetCondition), Member = "OnExecute")]
-		[CalledBy(Type = typeof(Condition_CheckContainerLiquid), Member = "get_info")]
-		[CalledBy(Type = typeof(TLD_GearInsideTrigger), Member = "OnCheck")]
-		[CalledBy(Type = typeof(TLD_GearInsideTrigger), Member = "get_info")]
-		[CalledBy(Type = typeof(BBParameter), Member = "ToString")]
-		[CalledBy(Type = typeof(Task), Member = "Internal_GetWarning")]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[CalledBy(Type = typeof(SendMessage<>), Member = "OnExecute")]
 		[CallerCount(Count = 15)]
-		[CalledBy(Type = typeof(Condition_CheckContainerLiquid), Member = "OnCheck")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -212,22 +208,9 @@ public abstract class BBParameter
 		}
 	}
 
-	protected abstract object objectValue
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		set;
-	}
+	protected abstract object objectValue { get; set; }
 
-	public abstract Type varType
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	public abstract Type varType { get; }
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 6)]
@@ -235,16 +218,16 @@ public abstract class BBParameter
 	{
 	}
 
-	[CalledBy(Type = typeof(CheckProperty), Member = "SetMethod")]
-	[CalledBy(Type = typeof(CheckProperty), Member = "OnValidate")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(CheckFunction), Member = "SetMethod")]
 	[CalledBy(Type = typeof(CheckFunction), Member = "OnValidate")]
+	[CalledBy(Type = typeof(CheckFunction), Member = "SetMethod")]
+	[CalledBy(Type = typeof(CheckProperty), Member = "OnValidate")]
+	[CalledBy(Type = typeof(CheckProperty), Member = "SetMethod")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Activator), Member = "CreateInstance")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public static BBParameter CreateInstance(Type t, IBlackboard bb)
 	{
 		return null;
@@ -252,108 +235,96 @@ public abstract class BBParameter
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void ResetVariableNamesCache()
 	{
 	}
 
-	[CalledBy(Type = typeof(Task), Member = "Duplicate")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(ReflectedFunctionWrapper), Member = "Create")]
-	[CalledBy(Type = typeof(ReflectedActionWrapper), Member = "Create")]
-	[CalledBy(Type = typeof(Task), Member = "Set")]
-	[CalledBy(Type = typeof(Task), Member = "set_blackboard")]
-	[CalledBy(Type = typeof(Task), Member = "Create")]
+	[CalledBy(Type = typeof(Graph), Member = "UpdateReferences")]
 	[CalledBy(Type = typeof(Graph), Member = "UpdateNodeBBFields")]
 	[CalledBy(Type = typeof(Node), Member = "Create")]
 	[CalledBy(Type = typeof(Node), Member = "Duplicate")]
-	[CalledBy(Type = typeof(Graph), Member = "UpdateReferences")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
-	[Calls(Type = typeof(BBParameter), Member = "GetObjectBBParameters")]
+	[CalledBy(Type = typeof(Task), Member = "Create")]
+	[CalledBy(Type = typeof(Task), Member = "Duplicate")]
+	[CalledBy(Type = typeof(Task), Member = "set_blackboard")]
+	[CalledBy(Type = typeof(Task), Member = "Set")]
+	[CalledBy(Type = typeof(ReflectedActionWrapper), Member = "Create")]
+	[CalledBy(Type = typeof(ReflectedFunctionWrapper), Member = "Create")]
 	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(BBParameter), Member = "GetObjectBBParameters")]
+	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void SetBBFields(object o, IBlackboard bb)
 	{
 	}
 
-	[CalledBy(Type = typeof(BBParameter), Member = "SetBBFields")]
 	[CalledBy(Type = typeof(Graph), Member = "GetTaskAndParametersStructureInTarget")]
-	[Calls(Type = typeof(FieldInfo), Member = "SetValue")]
-	[Calls(Type = typeof(Activator), Member = "CreateInstance")]
-	[Calls(Type = typeof(Activator), Member = "CreateInstance")]
+	[CalledBy(Type = typeof(BBParameter), Member = "SetBBFields")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(ReflectionTools), Member = "RTGetFields")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsUnknownMethods(Count = 14)]
+	[Calls(Type = typeof(Activator), Member = "CreateInstance")]
+	[Calls(Type = typeof(FieldInfo), Member = "SetValue")]
 	[CallsDeduplicatedMethods(Count = 19)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[CallsUnknownMethods(Count = 14)]
 	public static List<BBParameter> GetObjectBBParameters(object o)
 	{
 		return null;
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101261)]
 	protected abstract void Bind(Variable data);
 
-	[CalledBy(Type = typeof(Dialogue_MultipleChoiceNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(NodeCanvas.DialogueTrees.ProbabilitySelector.Option), Member = ".ctor")]
-	[CalledBy(Type = typeof(CheckFunction_Multiplatform), Member = "SetMethod")]
-	[CalledBy(Type = typeof(CheckFunction_Multiplatform), Member = "SetMethod")]
-	[CalledBy(Type = typeof(ExecuteStaticFunction_Multiplatform), Member = "SetMethod")]
-	[CalledBy(Type = typeof(ImplementedAction_Multiplatform), Member = "SetMethod")]
-	[CalledBy(Type = typeof(ExecuteStaticFunction_Multiplatform), Member = "SetMethod")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(ExecuteFunction_Multiplatform), Member = "SetMethod")]
-	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "OnExecute")]
-	[Calls(Type = typeof(string), Member = "Split")]
-	[CalledBy(Type = typeof(ReflectedWrapper), Member = "SetVariablesBB")]
-	[CallerCount(Count = 15)]
-	[CalledBy(Type = typeof(Dialogue_VoiceOverNode), Member = "OnExecute")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(GlobalBlackboard), Member = "Find")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PrioritySelector), Member = "OnChildConnected")]
 	[CalledBy(Type = typeof(NodeCanvas.BehaviourTrees.ProbabilitySelector), Member = "OnChildConnected")]
 	[CalledBy(Type = typeof(BBParameter), Member = "set_bb")]
 	[CalledBy(Type = typeof(BBParameter), Member = "set_name")]
-	[CalledBy(Type = typeof(PrioritySelector), Member = "OnChildConnected")]
+	[CalledBy(Type = typeof(ReflectedWrapper), Member = "SetVariablesBB")]
+	[CalledBy(Type = typeof(Dialogue_VoiceOverNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Dialogue_MultipleChoiceNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(NodeCanvas.DialogueTrees.ProbabilitySelector.Option), Member = ".ctor")]
+	[CalledBy(Type = typeof(CheckFunction_Multiplatform), Member = "SetMethod")]
+	[CalledBy(Type = typeof(ExecuteFunction_Multiplatform), Member = "SetMethod")]
+	[CalledBy(Type = typeof(ImplementedAction_Multiplatform), Member = "SetMethod")]
+	[CalledBy(Type = typeof(ExecuteStaticFunction_Multiplatform), Member = "SetMethod")]
+	[CallerCount(Count = 15)]
+	[Calls(Type = typeof(string), Member = "Contains")]
+	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(Type = typeof(GlobalBlackboard), Member = "Find")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private Variable ResolveReference(IBlackboard targetBlackboard, bool useID)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[CalledBy(Type = typeof(BBParameter<>), Member = "set_value")]
 	[CalledBy(Type = typeof(Graph), Member = "PromoteDefinedParametersToVariables")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[Calls(Type = typeof(Logger), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(Logger), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
+	[CalledBy(Type = typeof(BBParameter<>), Member = "set_value")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(string), Member = "Contains")]
+	[Calls(Type = typeof(string), Member = "Split")]
 	[Calls(Type = typeof(GlobalBlackboard), Member = "Find")]
 	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Logger), Member = "LogError")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public Variable PromoteToVariable(IBlackboard targetBB)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
 	[Calls(Type = typeof(BBParameter), Member = "get_isNull")]
 	[Calls(Type = typeof(StringUtils), Member = "ToStringAdvanced")]
 	[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
 	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(string), Member = "Format")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
 	public sealed override string ToString()
 	{
 		return null;
@@ -372,13 +343,13 @@ public class BBParameter<T> : BBParameter
 		{
 		}
 
-		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 3)]
 		internal T _003CBindGetter_003Eb__0()
 		{
-			return (T)null;
+			return default(T);
 		}
 	}
 
@@ -403,15 +374,14 @@ public class BBParameter<T> : BBParameter
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Logger), Member = "LogWarning")]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
-		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[Calls(Type = typeof(Logger), Member = "LogWarning")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal void _003CBindSetter_003Eb__1(T value)
 		{
 		}
@@ -427,19 +397,19 @@ public class BBParameter<T> : BBParameter
 	{
 		[DeduplicatedMethod]
 		[CallerCount(Count = 110)]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 		[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return (T)null;
+			return default(T);
 		}
-		[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-		[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-		[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
+		[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
+		[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -466,17 +436,17 @@ public class BBParameter<T> : BBParameter
 
 	public override Type varType
 	{
-		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public BBParameter()
 	{
 	}
@@ -487,14 +457,14 @@ public class BBParameter<T> : BBParameter
 	{
 	}
 
-	[Calls(Type = typeof(GlobalBlackboard), Member = "Find")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[Calls(Type = typeof(string), Member = "Split")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Contains")]
+	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(Type = typeof(GlobalBlackboard), Member = "Find")]
+	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	protected void CheckForPromotedVariable(string name)
 	{
 	}
@@ -508,25 +478,33 @@ public class BBParameter<T> : BBParameter
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Variable), Member = "GetGetConverter")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 6)]
 	private bool BindGetter(Variable variable)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Variable), Member = "GetSetConverter")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Variable), Member = "GetSetConverter")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	private bool BindSetter(Variable variable)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(CheckButtonInput), Member = ".ctor")]
+	[CalledBy(Type = typeof(Action_SetBaseAIStateFollowWaypoint), Member = ".ctor")]
+	[CalledBy(Type = typeof(Action_PlayTimelineOnPlayer), Member = ".ctor")]
+	[CalledBy(Type = typeof(FindAllWithName), Member = ".ctor")]
+	[CalledBy(Type = typeof(GetInputAxis), Member = ".ctor")]
+	[CalledBy(Type = typeof(CurveTransformTween), Member = ".ctor")]
+	[CalledBy(Type = typeof(Patrol), Member = ".ctor")]
+	[CalledBy(Type = typeof(DebugLogText), Member = ".ctor")]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]

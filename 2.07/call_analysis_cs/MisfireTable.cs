@@ -21,14 +21,14 @@ public class MisfireTable : ScriptableObject
 
 	public List<Range> m_Ranges;
 
-	[CalledBy(Type = typeof(GunItem), Member = "RollForMisfire")]
 	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(GunItem), Member = "RollForMisfire")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[CallsUnknownMethods(Count = 3)]
 	public bool DoesMisfire(float condition)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

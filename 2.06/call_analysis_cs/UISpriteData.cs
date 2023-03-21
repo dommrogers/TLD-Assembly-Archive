@@ -35,7 +35,7 @@ public class UISpriteData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -44,7 +44,7 @@ public class UISpriteData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -63,8 +63,8 @@ public class UISpriteData
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void CopyFrom(UISpriteData sd)
 	{
 	}
@@ -81,8 +81,8 @@ public class UISpriteData
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(UIAtlas), Member = "Upgrade")]
+	[CallerCount(Count = 1)]
 	public UISpriteData()
 	{
 	}

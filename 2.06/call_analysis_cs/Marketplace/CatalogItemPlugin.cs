@@ -22,8 +22,8 @@ public class CatalogItemPlugin
 	public static extern IntPtr CatalogItem_Name(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CatalogItem_ReducedName(IntPtr self);
 
 	[PreserveSig]
@@ -48,9 +48,9 @@ public class CatalogItemPlugin
 	public static extern bool CatalogItem_IsBundle(IntPtr self);
 
 	[PreserveSig]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static extern bool CatalogItem_IsPartOfAnyBundle(IntPtr self);
 
 	[PreserveSig]
@@ -74,13 +74,13 @@ public class CatalogItemPlugin
 	public static extern IntPtr CatalogItem_AvailabilityContentIds_GetAt(IntPtr self, uint idx);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CatalogItem_AvailabilityContentIds_Dispose(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CatalogItem_Images(IntPtr self);
 
 	[PreserveSig]

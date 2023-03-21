@@ -15,27 +15,24 @@ public class UIDragScrollView : MonoBehaviour
 
 	private bool mStarted;
 
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UIDragScrollView), Member = "FindScrollView")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UIDragScrollView), Member = "FindScrollView")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void Start()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(UIDragScrollView), Member = "OnEnable")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	private void FindScrollView()
@@ -43,36 +40,37 @@ public class UIDragScrollView : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
 	[Calls(Type = typeof(UIScrollView), Member = "Press")]
+	[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	private void OnPress(bool pressed)
 	{
 	}
 
-	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 1)]
+	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
 	[Calls(Type = typeof(UIScrollView), Member = "Drag")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDrag(Vector2 delta)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UIScrollView), Member = "Scroll")]
-	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+	[Calls(Type = typeof(UIScrollView), Member = "Scroll")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnScroll(float delta)
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public UIDragScrollView()
 	{
 	}

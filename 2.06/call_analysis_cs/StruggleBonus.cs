@@ -27,8 +27,8 @@ public class StruggleBonus : MonoBehaviour
 
 	public StruggleWeaponType m_StruggleWeaponType;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void Start()
 	{
 	}

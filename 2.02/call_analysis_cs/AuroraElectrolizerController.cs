@@ -20,7 +20,7 @@ public class AuroraElectrolizerController : MonoBehaviour
 		public string m_Id;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public AuroraElectrolizerControllerSaveData()
 		{
 		}
@@ -35,141 +35,151 @@ public class AuroraElectrolizerController : MonoBehaviour
 	public static List<AuroraElectrolizerController> s_AuroraElectrolizerControllerList;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentOnSelfOrParent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(AuroraElectrolizerController), Member = "SetPowerStateAll")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(AuroraElectrolizerController), Member = "PopulateVolumes")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(AuroraElectrolizerController), Member = "PopulateVolumes")]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(AuroraElectrolizerController), Member = "SetPowerStateAll")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 40)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(AuroraElectrolizerController), Member = "Start")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Collider), Member = "set_enabled")]
-	[Calls(Type = typeof(Renderer), Member = "get_bounds")]
-	[Calls(Type = typeof(Collider), Member = "get_bounds")]
-	[Calls(Type = typeof(AuroraElectrolizerController), Member = "FindRenderer")]
-	[Calls(Type = typeof(Collider), Member = "get_bounds")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AuroraElectrolizerController), Member = "FindRenderer")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(AuroraElectrolizerController), Member = "FindRenderer")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Collider), Member = "get_bounds")]
 	[Calls(Type = typeof(Renderer), Member = "get_bounds")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Collider), Member = "set_enabled")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 40)]
 	private void PopulateVolumes()
 	{
 	}
 
+	[CalledBy(Type = typeof(AuroraElectrolizerController), Member = "PopulateVolumes")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(AuroraElectrolizerController), Member = "PopulateVolumes")]
-	[CalledBy(Type = typeof(AuroraElectrolizerController), Member = "PopulateVolumes")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInParent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private Renderer FindRenderer(GameObject obj)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Action_SetAuroraElectrolyzerControllerVolume), Member = "DoWork")]
-	[CalledBy(Type = typeof(Action_SetAuroraElectrolyzerControllerVolume), Member = "OnExecute")]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(AuroraElectrolizerControlVolume), Member = "SetPowerState")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(AuroraElectrolizerController), Member = "DeserializeAll")]
+	[CalledBy(Type = typeof(Action_SetAuroraElectrolyzerControllerVolume), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_SetAuroraElectrolyzerControllerVolume), Member = "DoWork")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(AuroraElectrolizerControlVolume), Member = "SetPowerState")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void SetPowerState(string volumeName, bool isActive)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(AuroraElectrolizerControlVolume), Member = "SetPowerState")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void SetPowerState(int volumeID, bool isActive)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Action_SetAuroraElectrolyzerControllerState), Member = "DoWork")]
-	[CalledBy(Type = typeof(Action_SetAuroraElectrolyzerControllerState), Member = "OnExecute")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(AuroraElectrolizerControlVolume), Member = "SetPowerState")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(AuroraElectrolizerController), Member = "Start")]
+	[CalledBy(Type = typeof(Action_SetAuroraElectrolyzerControllerState), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_SetAuroraElectrolyzerControllerState), Member = "DoWork")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(AuroraElectrolizerControlVolume), Member = "SetPowerState")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void SetPowerStateAll(bool isActive)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 37)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[Calls(Type = typeof(AuroraElectrolizerController), Member = "SetPowerState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetComponentForMissionObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(AuroraElectrolizerController), Member = "Initialize")]
+	[Calls(Type = typeof(AuroraElectrolizerController), Member = "SetPowerState")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(AuroraElectrolizerController), Member = "DeserializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(ElectrifiedWater), Member = "SetElectrified")]
-	[CalledBy(Type = typeof(AuroraElectrolizerController), Member = "DeserializeAll")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Reset()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
 	[Calls(Type = typeof(AuroraElectrolizerControlVolume), Member = "SetPowerState")]
-	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
-	[Calls(Type = typeof(AuroraElectrolizerControlVolume), Member = "SetPowerState")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	private void Update()
 	{

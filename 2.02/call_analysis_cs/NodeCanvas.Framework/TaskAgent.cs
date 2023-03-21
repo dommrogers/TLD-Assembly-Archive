@@ -9,17 +9,18 @@ public class TaskAgent : BBParameter<UnityEngine.Object>
 {
 	public new UnityEngine.Object value
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(GameObject), Member = "get_transform")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+		[Calls(Type = typeof(GameObject), Member = "get_transform")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 46)]
 		set
 		{
 		}
@@ -28,9 +29,10 @@ public class TaskAgent : BBParameter<UnityEngine.Object>
 	protected override object objectValue
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 		[Calls(Type = typeof(GameObject), Member = "get_transform")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
@@ -44,8 +46,9 @@ public class TaskAgent : BBParameter<UnityEngine.Object>
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public TaskAgent()
 	{
 		((BBParameter<>)(object)this)._002Ector();

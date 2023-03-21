@@ -63,57 +63,38 @@ public class QualitySettingsManager : MonoBehaviour
 
 	private static int s_PendingMasterTextureLimit;
 
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampMasterTextureLimit")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "CopyQualitySettings")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampMasterTextureLimit")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampMasterTextureLimit")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampMasterTextureLimit")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampMasterTextureLimit")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampMasterTextureLimit")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampMasterTextureLimit")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampMasterTextureLimit")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampMasterTextureLimit")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampMasterTextureLimit")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampMasterTextureLimit")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampSliderValuesToRange")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampSliderValuesToRange")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampSliderValuesToRange")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampMasterTextureLimit")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "CopyQualitySettings")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampSliderValuesToRange")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampSliderValuesToRange")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampSliderValuesToRange")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampSliderValuesToRange")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampSliderValuesToRange")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampSliderValuesToRange")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampSliderValuesToRange")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampSliderValuesToRange")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampSliderValuesToRange")]
+	[CallsUnknownMethods(Count = 7)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "CopyQualitySettings")]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "ClampMasterTextureLimit")]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
@@ -131,7 +112,7 @@ public class QualitySettingsManager : MonoBehaviour
 		return default(Quality);
 	}
 
-	[CallerCount(Count = 23)]
+	[CallerCount(Count = 24)]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
@@ -140,261 +121,204 @@ public class QualitySettingsManager : MonoBehaviour
 		return null;
 	}
 
-	[CalledBy(Type = typeof(ParticleDistanceCull), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
-	[CalledBy(Type = typeof(ParticleDistanceCull), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(WeatherParticleManager), Member = "LateUpdate_part1")]
+	[CalledBy(Type = typeof(DarkLightingManager), Member = "Update")]
 	[CalledBy(Type = typeof(LightDistanceCull), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(LightQualitySwitch), Member = "SetLocalQuality")]
-	[CalledBy(Type = typeof(DarkLightingManager), Member = "Update")]
-	[CalledBy(Type = typeof(DarkLightingManager), Member = "Update")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
+	[CalledBy(Type = typeof(ParticleDistanceCull), Member = "LateUpdate")]
+	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
+	[CalledBy(Type = typeof(WeatherParticleManager), Member = "LateUpdate_part1")]
 	[CallerCount(Count = 9)]
-	[CalledBy(Type = typeof(LightDistanceCull), Member = "LateUpdate")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
 	public QualityLevelSettings GetCurrentQualitySettings()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(GameManager), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
-	[CalledBy(Type = typeof(GameManager), Member = "Update")]
 	public void ApplyCurrentQualitySettings()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmQuality")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmQuality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool SetAndMaybeApplyQuality(Quality quality, bool force)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_fancy")]
-	[Calls(Type = typeof(CameraEffects), Member = "ConfigureContrastEnhance")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_fancy")]
-	[Calls(Type = typeof(CameraEffects), Member = "ConfigureSSAO")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_quality")]
+	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Deserialize")]
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "ApplyCurrentQualitySettings")]
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetAndMaybeApplyQuality")]
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetDefaultQualityLevel")]
-	[CallsUnknownMethods(Count = 31)]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Deserialize")]
-	[Calls(Type = typeof(CameraEffects), Member = "ConfigureSSAO")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_quality")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "SetSSAO")]
 	[CallerCount(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 29)]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
-	[Calls(Type = typeof(FootstepTrail), Member = "OnQualityChange")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
 	[Calls(Type = typeof(SnowPatchManager), Member = "AllocateResources")]
+	[Calls(Type = typeof(FootstepTrail), Member = "OnQualityChange")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "OnQualityChange")]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "GetHeightmapPixelError")]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "SetTextureStreaming")]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "GetLodBias")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "OnQualityChange")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "SetSSAO")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
+	[Calls(Type = typeof(CameraEffects), Member = "ConfigureSSAO")]
+	[Calls(Type = typeof(CameraEffects), Member = "ConfigureContrastEnhance")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 28)]
+	[CallsUnknownMethods(Count = 31)]
 	public void ApplyQualitySettings(Quality quality)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetDefaultQualityLevel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool SystemShouldUseLowGraphicsQuality()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(CameraEffects), Member = "BloomEnable")]
-	[CallsUnknownMethods(Count = 36)]
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(CameraEffects), Member = "VignettingEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "ContrastEnhanceEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "BloomEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "VignettingEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "ContrastEnhanceEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "BloomEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "VignettingEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "ContrastEnhanceEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "VignettingEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "BloomEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "BloomEnable")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CameraEffects), Member = "BloomEnable")]
+	[Calls(Type = typeof(CameraEffects), Member = "ContrastEnhanceEnable")]
+	[Calls(Type = typeof(CameraEffects), Member = "VignettingEnable")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(CameraEffects), Member = "BloomEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "ContrastEnhanceEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "VignettingEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "ContrastEnhanceEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "ContrastEnhanceEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "BloomEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "ContrastEnhanceEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "VignettingEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "BloomEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "ContrastEnhanceEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "VignettingEnable")]
-	[Calls(Type = typeof(CameraEffects), Member = "VignettingEnable")]
+	[CallsUnknownMethods(Count = 36)]
 	private void SetPostFx(QualityPostFx quality)
 	{
 	}
 
-	[Calls(Type = typeof(CameraEffects), Member = "ConfigureSSAO")]
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
-	[Calls(Type = typeof(CameraEffects), Member = "EnableCameraWeaponPostEffects")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(CameraEffects), Member = "ConfigureSSAO")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CameraEffects), Member = "EnableCameraWeaponPostEffects")]
+	[Calls(Type = typeof(CameraEffects), Member = "ConfigureSSAO")]
+	[CallsUnknownMethods(Count = 6)]
 	public void SetSSAO(QualitySSAO quality)
 	{
 	}
 
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "MaybeSwitchToCustomQuality")]
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Deserialize")]
+	[CallerCount(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public void CopyQualitySettings(QualityLevelSettings dest, QualityLevelSettings source)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "MaybeSwitchToCustomQuality")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool Match(QualityLevelSettings A, QualityLevelSettings B)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
 	[CallerCount(Count = 11)]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ClampSliderValuesToRange(QualityLevelSettings settings)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Deserialize")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 12)]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "Awake")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void ClampMasterTextureLimit(QualityLevelSettings settings)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetLodBias(QualityLodBias quality)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "OverrideTerrainPixelError")]
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(QualitySettingsManager), Member = "OverrideTerrainPixelError")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetHeightmapPixelError(Terrain t, QualityTerrainLod quality)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplyTerrainPixelError")]
-	[Calls(Type = typeof(Terrain), Member = "set_heightmapPixelError")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_terrain_setpixelerror")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "GetHeightmapPixelError")]
+	[Calls(Type = typeof(Terrain), Member = "set_heightmapPixelError")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OverrideTerrainPixelError(int value)
 	{
 	}
 
+	[CalledBy(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
 	[CallsUnknownMethods(Count = 6)]
 	private void SetTextureStreaming(QualityLevelSettings settings)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private static bool UsingOpenGL()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool DoesQualityRequireRestart(Quality quality)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

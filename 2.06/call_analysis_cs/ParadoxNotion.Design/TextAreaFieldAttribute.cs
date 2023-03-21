@@ -6,8 +6,8 @@ public class TextAreaFieldAttribute : DrawerAttribute
 {
 	public readonly int numberOfLines;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public TextAreaFieldAttribute(int numberOfLines)
 	{
 	}

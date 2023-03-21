@@ -33,12 +33,12 @@ public class DecalGroup
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsUnknownMethods(Count = 3)]
 	public bool ContainsTexture(Texture2D tex)
 	{
-		return default(bool);
+		return false;
 	}
 }

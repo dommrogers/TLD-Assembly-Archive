@@ -19,52 +19,54 @@ public class OpenCloseManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void Add(OpenClose oc)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Remove(OpenClose oc)
 	{
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(OpenClose), Member = "Serialize")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 10)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(OpenClose), Member = "Deserialize")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(OpenClose), Member = "Deserialize")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
-	[Calls(Type = typeof(OpenClose), Member = "MaybeUpdateNavmeshObstacleState")]
-	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
 	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
-	[Calls(Type = typeof(OpenClose), Member = "SetCollisionEnabled")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(OpenClose), Member = "Open")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(OpenClose), Member = "Open")]
 	[Calls(Type = typeof(ObjectAnim), Member = "IsAnimating")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(OpenClose), Member = "SetCollisionEnabled")]
+	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
+	[Calls(Type = typeof(OpenClose), Member = "MaybeUpdateNavmeshObstacleState")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public static void UpdateAll()
 	{
 	}

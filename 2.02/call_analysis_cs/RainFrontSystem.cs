@@ -17,19 +17,18 @@ public class RainFrontSystem : MonoBehaviour
 
 	private Vector3 point;
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public virtual void Start()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Vector3), Member = "MoveTowards")]
-	[CallsUnknownMethods(Count = 10)]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(Vector3), Member = "MoveTowards")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 10)]
 	public virtual void Update()
 	{
 	}

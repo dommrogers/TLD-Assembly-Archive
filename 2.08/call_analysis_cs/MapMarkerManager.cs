@@ -9,14 +9,14 @@ public class MapMarkerManager : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void RemoveMarker()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public MapMarkerManager()
 	{
 	}

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using ParadoxNotion.Serialization.FullSerializer;
 
@@ -6,34 +7,35 @@ namespace ParadoxNotion.Serialization;
 
 public class fsUnityObjectConverter : fsConverter
 {
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override bool CanProcess(Type type)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public override bool RequestCycleSupport(Type storageType)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public override bool RequestInheritanceSupport(Type storageType)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(fsContext), Member = "Get")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(fsData), Member = ".ctor")]
-	[Calls(Type = typeof(fsData), Member = ".ctor")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 17)]
 	public override fsResult TrySerialize(object instance, out fsData serialized, Type storageType)
 	{
@@ -41,12 +43,13 @@ public class fsUnityObjectConverter : fsConverter
 		return default(fsResult);
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(fsResult), Member = "Warn")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsContext), Member = "Get")]
 	[Calls(Type = typeof(fsData), Member = "get_AsInt64")]
+	[Calls(Type = typeof(fsResult), Member = "Warn")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public override fsResult TryDeserialize(fsData data, ref object instance, Type storageType)
 	{
 		return default(fsResult);
@@ -60,7 +63,7 @@ public class fsUnityObjectConverter : fsConverter
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public fsUnityObjectConverter()
 	{
 	}

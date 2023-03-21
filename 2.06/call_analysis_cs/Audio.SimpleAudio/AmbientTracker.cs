@@ -26,45 +26,37 @@ public class AmbientTracker : BaseTracker
 
 	public GameObject TargetGameObject
 	{
-		[CallerCount(Count = 2)]
-		[Calls(Type = typeof(Object), Member = "op_Implicit")]
 		[CalledBy(Type = typeof(AmbientTracker), Member = "Start")]
 		[CalledBy(Type = typeof(AmbientTracker), Member = "Stop")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Object), Member = "op_Implicit")]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(PlayAudioSimpleManager), Member = "AddAmbient")]
-	[Calls(Type = typeof(GameObject), Member = "set_layer")]
-	[Calls(Type = typeof(Transform), Member = "SetParent")]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(BaseTracker), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(Transform), Member = "SetParent")]
+	[Calls(Type = typeof(GameObject), Member = "set_layer")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 9)]
 	public AmbientTracker(AK.Wwise.Event akEvent, MultiPositionTypeLabel multiposition, GameObject go, float radius, bool stopWhenDisabled)
-		: base(null, default(float), stopWhenDisabled: default(bool))
+		: base(null, 0f, stopWhenDisabled: false)
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "Destroy")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[Calls(Type = typeof(AkAmbient), Member = "OnDisable")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void Cleanup()
 	{
 	}
@@ -73,44 +65,45 @@ public class AmbientTracker : BaseTracker
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	public override bool HasProxy()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	public override bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	public override bool Matches(GameObject go, AK.Wwise.Event akEvent)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(AK.Wwise.Event), Member = "Post")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(SphereCollider), Member = "set_radius")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AmbientTracker), Member = "get_TargetGameObject")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
 	[Calls(Type = typeof(Rigidbody), Member = "set_isKinematic")]
+	[Calls(Type = typeof(SphereCollider), Member = "set_radius")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AmbientTracker), Member = "get_TargetGameObject")]
-	[CallsDeduplicatedMethods(Count = 13)]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AK.Wwise.Event), Member = "Post")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 14)]
 	protected override void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AmbientTracker), Member = "get_TargetGameObject")]
 	[Calls(Type = typeof(AK.Wwise.Event), Member = "ExecuteAction")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void Stop()
 	{
 	}

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -26,58 +25,58 @@ public class PlayEventMonitor : MonoBehaviour
 	private List<PlayEventInfo> m_PlayEventInfoList;
 
 	[CalledBy(Type = typeof(AnimationEvents), Member = "DoExit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
-	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void ResetRemainingEventsForInstigator(StateMachineBehaviour instigator)
 	{
 	}
 
+	[CalledBy(Type = typeof(AnimationEvents), Member = "EventPlay")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayEventMonitor), Member = "ClearPlayOnAnimator")]
 	[Calls(Type = typeof(PlayEventInfo), Member = ".ctor")]
-	[CalledBy(Type = typeof(AnimationEvents), Member = "EventPlay")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnPlay(string name, int stateId, Animator animator, StateMachineBehaviour instigator)
 	{
 	}
 
-	[CalledBy(Type = typeof(NPC_Animation), Member = "SynchronizePropAnimation")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(CinematicTrack), Member = "LateSynchronizeAnimatorsFP")]
-	[CalledBy(Type = typeof(CinematicTrack), Member = "LateSynchronizeAnimatorsNPC")]
-	[CalledBy(Type = typeof(NPC_Animation), Member = "LateSynchronizeAnimators")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "LateSynchronizeAnimators")]
 	[CalledBy(Type = typeof(CinematicAssets), Member = "SynchronizePropAnimation")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "LateSynchronizeAnimators")]
+	[CalledBy(Type = typeof(NPC_Animation), Member = "LateSynchronizeAnimators")]
+	[CalledBy(Type = typeof(NPC_Animation), Member = "SynchronizePropAnimation")]
+	[CalledBy(Type = typeof(CinematicTrack), Member = "LateSynchronizeAnimatorsNPC")]
+	[CalledBy(Type = typeof(CinematicTrack), Member = "LateSynchronizeAnimatorsFP")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsUnknownMethods(Count = 9)]
 	public bool TryGetPlayingStateId(Animator animator, out int statedId)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref statedId) = null;
-		return default(bool);
+		statedId = default(int);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(AnimationEvents), Member = "EventStop")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(AnimationEvents), Member = "EventStop")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnStop(string name, int hash, Animator animator)
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayEventMonitor), Member = "OnPlay")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void ClearPlayOnAnimator(Animator animator)
 	{
 	}

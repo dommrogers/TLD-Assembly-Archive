@@ -15,34 +15,34 @@ public class Action_SetSkillLevel : ActionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Enum), Member = "ToString")]
-		[Calls(Type = typeof(Enum), Member = "ToString")]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(SkillsManager), Member = "GetTierName")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(SkillNotify), Member = "MaybeShowLevelUp")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(SkillsManager), Member = "GetSkill")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[Calls(Type = typeof(Skill), Member = "SetPoints")]
+	[Calls(Type = typeof(SkillsManager), Member = "GetTierName")]
+	[Calls(Type = typeof(SkillNotify), Member = "MaybeShowLevelUp")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_SetSkillLevel()
 	{
 	}

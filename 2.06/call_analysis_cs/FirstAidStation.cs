@@ -7,10 +7,10 @@ public class FirstAidStation : MonoBehaviour
 
 	public string m_DisplayName
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Localization), Member = "Get")]
-		[CallerCount(Count = 11)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 11)]
+		[Calls(Type = typeof(Localization), Member = "Get")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;

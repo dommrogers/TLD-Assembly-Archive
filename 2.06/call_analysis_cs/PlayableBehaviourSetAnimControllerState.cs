@@ -23,12 +23,11 @@ public class PlayableBehaviourSetAnimControllerState : PlayableBehaviour
 	}
 
 	[CalledBy(Type = typeof(PlayableBehaviourSetAnimControllerState), Member = "OnBehaviourPlay")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Animator), Member = "Play")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Animator), Member = "Play")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 4)]
 	private void SetAnimControllerState()
 	{
 	}

@@ -29,10 +29,11 @@ public class SpawnRegionDataProxy
 
 	public bool m_WasActiveBeforeAurora;
 
-	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(SpawnRegion), Member = ".cctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public SpawnRegionDataProxy()
 	{
 	}

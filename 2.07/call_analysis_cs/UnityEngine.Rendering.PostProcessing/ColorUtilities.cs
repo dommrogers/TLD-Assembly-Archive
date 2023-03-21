@@ -21,7 +21,7 @@ public static class ColorUtilities
 	[CallerCount(Count = 0)]
 	public static float StandardIlluminantY(float x)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -30,11 +30,11 @@ public static class ColorUtilities
 		return default(Vector3);
 	}
 
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(ColorGradingSettings), Member = "ApplySettings")]
 	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRPipeline3D")]
 	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRPipeline2D")]
 	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderLDRPipeline2D")]
+	[CallerCount(Count = 4)]
 	public static Vector3 ComputeColorBalance(float temperature, float tint)
 	{
 		return default(Vector3);
@@ -62,20 +62,20 @@ public static class ColorUtilities
 	[CallsUnknownMethods(Count = 1)]
 	public static float LogCToLinear(float x)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public static float LinearToLogC(float x)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public static uint ToHex(Color c)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]

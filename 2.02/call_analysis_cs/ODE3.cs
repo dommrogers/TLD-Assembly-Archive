@@ -29,9 +29,9 @@ public class ODE3
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdatePosition")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdatePosition")]
 	[CallsUnknownMethods(Count = 26)]
 	public void Update2(float dt)
 	{

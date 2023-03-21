@@ -85,26 +85,12 @@ public class TODStateData : ScriptableObject
 
 	public float m_VignettingChromaticAberration;
 
-	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
-	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
-	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
-	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
-	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
-	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
-	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
-	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
-	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
-	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
-	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
-	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
-	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
-	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
-	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Set")]
 	[CalledBy(Type = typeof(SunShadowOverrideVolume), Member = "BlendTODState")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Set")]
+	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
 	[CallerCount(Count = 17)]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetBlended(TODStateData a, TODStateData b, float blend, float blendBiased, int nightStates)
 	{
 	}

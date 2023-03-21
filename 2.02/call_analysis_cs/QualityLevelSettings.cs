@@ -37,8 +37,8 @@ public class QualityLevelSettings
 
 	public float m_GroundDetailsDensity;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public QualityLevelSettings()
 	{
 	}

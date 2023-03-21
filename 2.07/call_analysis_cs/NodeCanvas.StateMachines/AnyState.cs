@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 
@@ -23,7 +22,7 @@ public class AnyState : FSMState, IUpdatable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -33,7 +32,7 @@ public class AnyState : FSMState, IUpdatable
 		[CallerCount(Count = 16)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -43,20 +42,18 @@ public class AnyState : FSMState, IUpdatable
 		[CallerCount(Count = 3)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(FSM), Member = "EnterState")]
-	[Calls(Type = typeof(FSMState), Member = "get_FSM")]
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
-	[Calls(Type = typeof(FSMState), Member = "get_FSM")]
-	[Calls(Type = typeof(FSMState), Member = "get_FSM")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(FSMState), Member = "get_FSM")]
+	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
+	[Calls(Type = typeof(FSM), Member = "EnterState")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 5)]
 	public new void Update()
 	{
 	}

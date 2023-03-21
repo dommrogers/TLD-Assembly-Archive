@@ -11,7 +11,7 @@ public sealed class Transaction : Handle
 	public const int TransactionGetentitlementscountApiLatest = 1;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public Transaction()
 	{
 	}
@@ -22,12 +22,13 @@ public sealed class Transaction : Handle
 	{
 	}
 
-	[Calls(Type = typeof(EcomInterface), Member = "EOS_Ecom_Entitlement_Release")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(TransactionCopyEntitlementByIndexOptionsInternal), Member = "Set")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TransactionCopyEntitlementByIndexOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[Calls(Type = typeof(EcomInterface), Member = "EOS_Ecom_Entitlement_Release")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result CopyEntitlementByIndex(TransactionCopyEntitlementByIndexOptions options, out Entitlement outEntitlement)
 	{
 		outEntitlement = null;
@@ -35,20 +36,20 @@ public sealed class Transaction : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(TransactionGetEntitlementsCountOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public uint GetEntitlementsCount(TransactionGetEntitlementsCountOptions options)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalAllocate")]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result GetTransactionId(out string outBuffer)
 	{
@@ -56,8 +57,8 @@ public sealed class Transaction : Handle
 		return default(Result);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Release()
 	{
 	}

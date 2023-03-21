@@ -38,10 +38,10 @@ public abstract class BaseLoadPanelRequest : ILoadPanelRequest
 
 	public event Action<Panel_Base> m_PanelInstantiatedCallback
 	{
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 3)]
 		add
 		{
 		}
@@ -61,27 +61,25 @@ public abstract class BaseLoadPanelRequest : ILoadPanelRequest
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	public bool IsLoadingPanel(string panelName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void NotifyPanelLoaded()
 	{
 	}
 
-	[CallerCount(Count = 101261)]
-	[DeduplicatedMethod]
 	public abstract float GetProgress();
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool HasCompleted()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -92,12 +90,13 @@ public abstract class BaseLoadPanelRequest : ILoadPanelRequest
 	}
 
 	[CalledBy(Type = typeof(InterfaceManager), Member = "FinishLoadPanelRequest")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(Transform), Member = "SetParent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public Panel_Base GetPanel()
 	{
 		return null;
@@ -107,7 +106,7 @@ public abstract class BaseLoadPanelRequest : ILoadPanelRequest
 	[CallerCount(Count = 0)]
 	public bool HasFailed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -123,16 +122,16 @@ public abstract class BaseLoadPanelRequest : ILoadPanelRequest
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Addressables), Member = "ReleaseInstance")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void CleanupRequest()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	protected virtual void UpdateRequest_Internal()
 	{
 	}

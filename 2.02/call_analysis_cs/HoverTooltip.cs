@@ -21,20 +21,21 @@ public class HoverTooltip : MonoBehaviour
 
 	private float m_AlphaOnEndHover;
 
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Mathf), Member = "InverseLerp")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Mathf), Member = "InverseLerp")]
 	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Update()
 	{
 	}
@@ -46,17 +47,17 @@ public class HoverTooltip : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Time), Member = "get_realtimeSinceStartup")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Time), Member = "get_realtimeSinceStartup")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnHover(bool hover)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public HoverTooltip()
 	{
 	}

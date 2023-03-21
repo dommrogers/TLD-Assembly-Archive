@@ -18,14 +18,14 @@ public class Stat : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 101)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -67,12 +67,12 @@ public class Stat : ISettable
 
 	public int Value
 	{
-		[CallerCount(Count = 10)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 10)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -82,27 +82,26 @@ public class Stat : ISettable
 		}
 	}
 
+	[CalledBy(Type = typeof(Stat), Member = "Set")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(StatInternal), Member = "get_Name")]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-	[CalledBy(Type = typeof(Stat), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	internal void Set(StatInternal? other)
 	{
 	}
 
-	[Calls(Type = typeof(Stat), Member = "Set")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Stat), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public Stat()
 	{
 	}

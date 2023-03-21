@@ -13,16 +13,20 @@ public class CatalogServiceManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GetObjectAsyncOp<>), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetHandle")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 13)]
 	public static GetObjectAsyncOp<BrowseCatalogResult> BrowseCatalogAsync(int userId, string parentId, MediaItemType parentMediaType, MediaItemType childMediaType, CatalogSortOrder orderBy, uint skipItems, uint maxItems, GetObjectAsyncOp<BrowseCatalogResult>.GetObjectAsyncCallback callback)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(GetObjectAsyncOp<>), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetHandle")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 13)]
 	public static GetObjectAsyncOp<BrowseCatalogResult> BrowseCatalogBundlesAsync(int userId, string parentId, MediaItemType parentMediaType, string productId, BundleRelationshipType relationship, uint skipItems, uint maxItems, GetObjectAsyncOp<BrowseCatalogResult>.GetObjectAsyncCallback callback)
 	{
@@ -30,28 +34,34 @@ public class CatalogServiceManager
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(GetObjectAsyncOp<>), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetHandle")]
 	[Calls(Type = typeof(CatalogServicePlugin), Member = "CatalogService_GetCatalogItemDetailsAsync")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 11)]
 	public static GetObjectAsyncOp<CatalogItemDetailsList> GetCatalogItemDetailsAsync(int userId, string[] productIds, GetObjectAsyncOp<CatalogItemDetailsList>.GetObjectAsyncCallback callback)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityPlugin.Log), Member = "LogCallbackException")]
-	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
 	[UnityAOT.MonoPInvokeCallback(typeof(ObjectResultCallback))]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetMyObject")]
+	[Calls(Type = typeof(GetObjectAsyncOp<>), Member = "Complete")]
+	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
+	[Calls(Type = typeof(UnityPlugin.Log), Member = "LogCallbackException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void GetCatalogItemDetailsListThunk(uint result, IntPtr lresult, IntPtr userData)
 	{
 	}
 
 	[UnityAOT.MonoPInvokeCallback(typeof(ObjectResultCallback))]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetMyObject")]
+	[Calls(Type = typeof(GetObjectAsyncOp<>), Member = "Complete")]
 	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
 	[Calls(Type = typeof(UnityPlugin.Log), Member = "LogCallbackException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void GetBrowseCatalogResultThunk(uint result, IntPtr lresult, IntPtr userData)
 	{
 	}

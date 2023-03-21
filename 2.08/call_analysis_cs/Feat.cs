@@ -40,23 +40,24 @@ public class Feat : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(FeatNotify), Member = "ShowFeatUnlockedKicker")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(FeatNotify), Member = "ShowFeatUnlockedKicker")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "AddFeatToList")]
+	[CalledBy(Type = typeof(Panel_Badges), Member = "AddFeatToList")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "SetupFeatScrollList")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "SetupFeatScrollList")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "AddFeatToList")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Badges), Member = "AddFeatToList")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public BadgeInfo CreateBadgeInfo()
 	{
 		return null;
@@ -71,19 +72,19 @@ public class Feat : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	public virtual string GetShortDescription()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	public virtual string GetBonusDescription()
 	{
 		return null;
@@ -94,21 +95,21 @@ public class Feat : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsUnlockedAndEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 3)]
 	public virtual bool IsUnlocked()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public virtual float GetNormalizedProgress()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -117,58 +118,55 @@ public class Feat : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(FeatNotify), Member = "ShowFeatUnlockedKicker")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(FeatNotify), Member = "ShowFeatUnlockedKicker")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected bool TryToDisplayKicker()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Feat_BlizzardWalker), Member = "IncrementHours")]
+	[CalledBy(Type = typeof(Feat_BookSmarts), Member = "IncrementHours")]
+	[CalledBy(Type = typeof(Feat_ColdFusion), Member = "IncrementHours")]
+	[CalledBy(Type = typeof(Feat_EfficientMachine), Member = "IncrementElapsedHours")]
+	[CalledBy(Type = typeof(Feat_ExpertTrapper), Member = "IncrementRabbitSnaredCount")]
+	[CalledBy(Type = typeof(Feat_FireMaster), Member = "IncrementFiresStarted")]
+	[CalledBy(Type = typeof(Feat_FreeRunner), Member = "IncrementMeters")]
+	[CalledBy(Type = typeof(Feat_SnowWalker), Member = "IncrementMeters")]
+	[CalledBy(Type = typeof(Feat_StraightToHeart), Member = "IncrementItemConsumed")]
+	[CalledBy(Type = typeof(Fire), Member = "FireStateSet")]
 	[CalledBy(Type = typeof(ResearchItem), Member = "Read")]
 	[CalledBy(Type = typeof(SnareItem), Member = "SpawnDeadRabbitOnSnare")]
 	[CalledBy(Type = typeof(PlayerMovement), Member = "MovedDistance")]
-	[CalledBy(Type = typeof(Feat_ColdFusion), Member = "IncrementHours")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "UpdateTimeStats")]
-	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "UpdateTimeStats")]
-	[CalledBy(Type = typeof(Fire), Member = "FireStateSet")]
-	[CalledBy(Type = typeof(PlayerMovement), Member = "MovedDistance")]
-	[CalledBy(Type = typeof(Feat_StraightToHeart), Member = "IncrementItemConsumed")]
-	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
-	[CalledBy(Type = typeof(Feat_FreeRunner), Member = "IncrementMeters")]
-	[CalledBy(Type = typeof(Feat_FireMaster), Member = "IncrementFiresStarted")]
-	[CalledBy(Type = typeof(Feat_ExpertTrapper), Member = "IncrementRabbitSnaredCount")]
-	[CalledBy(Type = typeof(Feat_EfficientMachine), Member = "IncrementElapsedHours")]
-	[CalledBy(Type = typeof(Feat_BookSmarts), Member = "IncrementHours")]
-	[CalledBy(Type = typeof(Feat_BlizzardWalker), Member = "IncrementHours")]
 	[CallerCount(Count = 16)]
-	[CalledBy(Type = typeof(Feat_SnowWalker), Member = "IncrementMeters")]
+	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
 	protected bool ShouldBlockIncrement()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(SnareItem), Member = "SpawnDeadRabbitOnSnare")]
-	[CalledBy(Type = typeof(Fire), Member = "FireStateSet")]
-	[CalledBy(Type = typeof(PlayerMovement), Member = "MovedDistance")]
-	[CalledBy(Type = typeof(Feat_StraightToHeart), Member = "IncrementItemConsumed")]
-	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "UpdateTimeStats")]
-	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "UpdateTimeStats")]
-	[CalledBy(Type = typeof(PlayerMovement), Member = "MovedDistance")]
-	[CalledBy(Type = typeof(Feat_SnowWalker), Member = "IncrementMeters")]
-	[CalledBy(Type = typeof(ResearchItem), Member = "Read")]
-	[CalledBy(Type = typeof(Feat_FireMaster), Member = "IncrementFiresStarted")]
-	[CallerCount(Count = 16)]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
 	[CalledBy(Type = typeof(Feat_BlizzardWalker), Member = "IncrementHours")]
 	[CalledBy(Type = typeof(Feat_BookSmarts), Member = "IncrementHours")]
-	[CalledBy(Type = typeof(Feat_FreeRunner), Member = "IncrementMeters")]
+	[CalledBy(Type = typeof(Feat_ColdFusion), Member = "IncrementHours")]
 	[CalledBy(Type = typeof(Feat_EfficientMachine), Member = "IncrementElapsedHours")]
 	[CalledBy(Type = typeof(Feat_ExpertTrapper), Member = "IncrementRabbitSnaredCount")]
-	[CalledBy(Type = typeof(Feat_ColdFusion), Member = "IncrementHours")]
+	[CalledBy(Type = typeof(Feat_FireMaster), Member = "IncrementFiresStarted")]
+	[CalledBy(Type = typeof(Feat_FreeRunner), Member = "IncrementMeters")]
+	[CalledBy(Type = typeof(Feat_SnowWalker), Member = "IncrementMeters")]
+	[CalledBy(Type = typeof(Feat_StraightToHeart), Member = "IncrementItemConsumed")]
+	[CalledBy(Type = typeof(Fire), Member = "FireStateSet")]
+	[CalledBy(Type = typeof(ResearchItem), Member = "Read")]
+	[CalledBy(Type = typeof(SnareItem), Member = "SpawnDeadRabbitOnSnare")]
+	[CalledBy(Type = typeof(PlayerMovement), Member = "MovedDistance")]
+	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "UpdateTimeStats")]
+	[CallerCount(Count = 16)]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
 	protected void HandleOnFeatUnlocked()
 	{
 	}

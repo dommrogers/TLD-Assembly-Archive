@@ -10,20 +10,20 @@ public class DLCPlugin
 	public delegate void DownloadableContentPackageInstallCompletedCallback(IntPtr userData);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr DLC_FindPackages(InstalledPackagesFilter filter);
 
 	[PreserveSig]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public static extern bool DLC_RegisterForDLCCompletedEvent(DownloadableContentPackageInstallCompletedCallback callback, IntPtr userData);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool DLC_UnRegisterForDLCCompletedEvent();
 
 	[PreserveSig]
@@ -53,8 +53,8 @@ public class DLCPlugin
 	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr DLC_IDownloadableContentPackage_GetAt(IntPtr self, uint idx);
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public DLCPlugin()
 	{
 	}

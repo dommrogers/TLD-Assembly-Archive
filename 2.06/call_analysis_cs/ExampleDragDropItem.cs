@@ -5,22 +5,22 @@ public class ExampleDragDropItem : UIDragDropItem
 {
 	public GameObject prefab;
 
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(UIDragDropItem), Member = "OnDragDropRelease")]
-	[Calls(Type = typeof(NGUITools), Member = "Destroy")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(NGUITools), Member = "AddChild")]
 	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(NGUITools), Member = "Destroy")]
+	[Calls(Type = typeof(UIDragDropItem), Member = "OnDragDropRelease")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 11)]
 	protected override void OnDragDropRelease(GameObject surface)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public ExampleDragDropItem()
 	{
 	}

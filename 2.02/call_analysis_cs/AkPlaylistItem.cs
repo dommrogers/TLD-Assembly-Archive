@@ -10,12 +10,12 @@ public class AkPlaylistItem : IDisposable
 
 	public uint audioNodeID
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -32,7 +32,7 @@ public class AkPlaylistItem : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -49,7 +49,7 @@ public class AkPlaylistItem : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -65,23 +65,23 @@ public class AkPlaylistItem : IDisposable
 	{
 	}
 
-	[CalledBy(Type = typeof(AkPlaylistItem), Member = ".ctor")]
-	[CallerCount(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(AkIterator), Member = "set_pItem")]
 	[CalledBy(Type = typeof(AkPlaylistArray), Member = "FindEx")]
 	[CalledBy(Type = typeof(AkPlaylistArray), Member = "Exists")]
 	[CalledBy(Type = typeof(AkPlaylistArray), Member = "AddLast")]
 	[CalledBy(Type = typeof(AkPlaylistArray), Member = "Remove")]
 	[CalledBy(Type = typeof(AkPlaylistArray), Member = "RemoveSwap")]
+	[CalledBy(Type = typeof(AkPlaylistItem), Member = ".ctor")]
+	[CallerCount(Count = 7)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkPlaylistItem obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[DeduplicatedMethod]
 	internal virtual void setCPtr(IntPtr cPtr)
 	{
 	}
@@ -94,9 +94,9 @@ public class AkPlaylistItem : IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
@@ -109,10 +109,10 @@ public class AkPlaylistItem : IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(AkPlaylistItem), Member = "getCPtr")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkPlaylistItem), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public AkPlaylistItem(AkPlaylistItem in_rCopy)
 	{
 	}
@@ -130,7 +130,7 @@ public class AkPlaylistItem : IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsEqualTo(AkPlaylistItem in_rCopy)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

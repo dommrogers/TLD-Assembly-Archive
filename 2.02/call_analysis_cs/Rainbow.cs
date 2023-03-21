@@ -31,56 +31,45 @@ public class Rainbow : MonoBehaviour
 
 	private float m_CurrentOpacity;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 37)]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(Vector3), Member = "Distance")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Bounds), Member = "get_min")]
+	[Calls(Type = typeof(Bounds), Member = "get_max")]
+	[Calls(Type = typeof(Plane), Member = ".ctor")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Vector3), Member = "Distance")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Bounds), Member = "get_max")]
-	[Calls(Type = typeof(Bounds), Member = "get_min")]
-	[Calls(Type = typeof(Bounds), Member = "get_max")]
-	[Calls(Type = typeof(Bounds), Member = "get_min")]
-	[Calls(Type = typeof(Bounds), Member = "get_min")]
-	[Calls(Type = typeof(Bounds), Member = "get_min")]
-	[Calls(Type = typeof(Bounds), Member = "get_min")]
-	[Calls(Type = typeof(Bounds), Member = "get_max")]
-	[Calls(Type = typeof(Bounds), Member = "get_min")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Material), Member = "SetColor")]
+	[Calls(Type = typeof(Material), Member = "SetFloat")]
 	[CallsDeduplicatedMethods(Count = 18)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Plane), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 37)]
 	private void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private Vector3 ProjectPointOnPlane(Vector3 planeNormal, Vector3 planePoint, Vector3 point)
 	{
 		return default(Vector3);
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public Rainbow()
 	{
 	}

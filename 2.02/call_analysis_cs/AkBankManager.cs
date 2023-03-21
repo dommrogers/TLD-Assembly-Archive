@@ -24,7 +24,7 @@ public static class AkBankManager
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
@@ -35,32 +35,34 @@ public static class AkBankManager
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		public BankHandle(string name)
 		{
 		}
 
-		[Calls(Type = typeof(AkSoundEngine), Member = "LoadBank")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(AkSoundEngine), Member = "LoadBank")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		public virtual AKRESULT DoLoadBank()
 		{
 			return default(AKRESULT);
 		}
 
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 4)]
-		[Calls(Type = typeof(BankHandle), Member = "LogLoadResult")]
 		[CalledBy(Type = typeof(AkBankManager), Member = "LoadBank")]
 		[CalledBy(Type = typeof(AkBankManager), Member = "LoadBankAsync")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(List<>), Member = "Contains")]
+		[Calls(Type = typeof(BankHandle), Member = "LogLoadResult")]
+		[Calls(Type = typeof(List<>), Member = "Remove")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 2)]
 		public void LoadBank()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AkSoundEngine), Member = "UnloadBank")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public virtual void UnloadBank()
 		{
 		}
@@ -70,20 +72,21 @@ public static class AkBankManager
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(List<>), Member = "Add")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public void DecRef()
 		{
 		}
 
+		[CalledBy(Type = typeof(BankHandle), Member = "LoadBank")]
+		[CalledBy(TypeFullName = "AkBankManager.AsyncBankHandle", Member = "GlobalBankCallback")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AkSoundEngine), Member = "IsInitialized")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(Debug), Member = "LogWarning")]
-		[CalledBy(Type = typeof(BankHandle), Member = "LoadBank")]
-		[CalledBy(Type = typeof(AsyncBankHandle), Member = "GlobalBankCallback")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 21)]
 		protected void LogLoadResult(AKRESULT result)
 		{
@@ -100,19 +103,20 @@ public static class AkBankManager
 		{
 		}
 
-		[CallsUnknownMethods(Count = 5)]
-		[Calls(Type = typeof(AkCallbackManager.BankCallback), Member = "Invoke")]
-		[Calls(Type = typeof(Mutex), Member = "ReleaseMutex")]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(BankHandle), Member = "LogLoadResult")]
+		[Calls(TypeFullName = "AkBankManager.BankHandle", Member = "LogLoadResult")]
+		[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+		[Calls(Type = typeof(Mutex), Member = "ReleaseMutex")]
+		[Calls(Type = typeof(AkCallbackManager.BankCallback), Member = "Invoke")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 5)]
 		private static void GlobalBankCallback(uint in_bankID, IntPtr in_pInMemoryBankPtr, AKRESULT in_eLoadResult, uint in_memPoolId, object in_Cookie)
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AkSoundEngine), Member = "LoadBank")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		public override AKRESULT DoLoadBank()
 		{
@@ -128,42 +132,36 @@ public static class AkBankManager
 
 		private readonly bool saveDecodedBank;
 
-		[Calls(Type = typeof(Path), Member = "Combine")]
 		[CalledBy(Type = typeof(AkBankManager), Member = "LoadBank")]
-		[Calls(Type = typeof(File), Member = "GetLastWriteTime")]
-		[Calls(Type = typeof(Path), Member = "Combine")]
-		[Calls(Type = typeof(AkBasePathGetter), Member = "GetSoundbankBasePath")]
-		[Calls(Type = typeof(File), Member = "Exists")]
-		[Calls(Type = typeof(File), Member = "Exists")]
-		[Calls(Type = typeof(File), Member = "GetLastWriteTime")]
-		[Calls(Type = typeof(Path), Member = "Combine")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(Path), Member = "Combine")]
-		[Calls(Type = typeof(AkSoundEngineController), Member = "GetDecodedBankFullPath")]
 		[Calls(Type = typeof(AkSoundEngine), Member = "GetCurrentLanguage")]
+		[Calls(Type = typeof(AkSoundEngineController), Member = "GetDecodedBankFullPath")]
+		[Calls(Type = typeof(Path), Member = "Combine")]
+		[Calls(Type = typeof(File), Member = "Exists")]
+		[Calls(Type = typeof(File), Member = "GetLastWriteTime")]
+		[Calls(Type = typeof(AkBasePathGetter), Member = "GetSoundbankBasePath")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public DecodableBankHandle(string name, bool save)
 			: base(null)
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[Calls(Type = typeof(AkSoundEngine), Member = "SetBasePath")]
 		[Calls(Type = typeof(AkSoundEngine), Member = "LoadBank")]
 		[Calls(Type = typeof(AkBasePathGetter), Member = "GetSoundbankBasePath")]
-		[Calls(Type = typeof(AkSoundEngine), Member = "SetBasePath")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 1)]
 		public override AKRESULT DoLoadBank()
 		{
 			return default(AKRESULT);
 		}
 
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(AkSoundEngine), Member = "UnloadBank")]
 		[CallsDeduplicatedMethods(Count = 3)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		public override void UnloadBank()
 		{
 		}
@@ -175,58 +173,62 @@ public static class AkBankManager
 
 	private static readonly Mutex m_Mutex;
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(AkSoundEngineController), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(AkInitializer), Member = "LateUpdate")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(AkSoundEngineController), Member = "LateUpdate")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	internal static void DoUnloadBanks()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "LoadInitBank")]
 	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "TerminateSoundEngine")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	internal static void Reset()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 21)]
-	[CalledBy(Type = typeof(Bank), Member = "Load")]
 	[CalledBy(Type = typeof(AkBank), Member = "HandleEvent")]
-	[Calls(Type = typeof(Mutex), Member = "ReleaseMutex")]
-	[Calls(Type = typeof(BankHandle), Member = "LoadBank")]
-	[Calls(Type = typeof(Mutex), Member = "ReleaseMutex")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(Bank), Member = "Load")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Mutex), Member = "ReleaseMutex")]
 	[Calls(Type = typeof(DecodableBankHandle), Member = ".ctor")]
+	[Calls(Type = typeof(BankHandle), Member = "LoadBank")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 21)]
 	public static void LoadBank(string name, bool decodeBank, bool saveDecodedBank)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Mutex), Member = "ReleaseMutex")]
-	[Calls(Type = typeof(Mutex), Member = "ReleaseMutex")]
-	[Calls(Type = typeof(BankHandle), Member = "LoadBank")]
 	[CalledBy(Type = typeof(AkBank), Member = "HandleEvent")]
 	[CalledBy(Type = typeof(Bank), Member = "LoadAsync")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Mutex), Member = "ReleaseMutex")]
+	[Calls(Type = typeof(BankHandle), Member = "LoadBank")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 13)]
 	public static void LoadBankAsync(string name, AkCallbackManager.BankCallback callback = null)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(AkBank), Member = "UnloadBank")]
 	[CalledBy(Type = typeof(Bank), Member = "Unload")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
 	[Calls(Type = typeof(Mutex), Member = "ReleaseMutex")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void UnloadBank(string name)
 	{
 	}

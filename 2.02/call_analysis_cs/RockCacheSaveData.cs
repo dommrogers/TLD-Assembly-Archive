@@ -12,7 +12,7 @@ public class RockCacheSaveData
 	public string m_SearializedRockCache;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public RockCacheSaveData()
 	{
 	}

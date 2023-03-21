@@ -39,13 +39,13 @@ public class Fear : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool HasAffliction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 13)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 13)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetNoSleepString()
 	{
 		return null;
@@ -55,7 +55,7 @@ public class Fear : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool CanPassTime()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -75,10 +75,10 @@ public class Fear : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallerCount(Count = 3)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetAfflictionTreatment()
 	{
 		return null;
@@ -102,37 +102,37 @@ public class Fear : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
-	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Log), Member = "AddAffliction")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[Calls(Type = typeof(Log), Member = "AddAffliction")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
+	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
+	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CallsUnknownMethods(Count = 7)]
 	public void StartAffliction()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(AkMarkerCallbackInfo), Member = "get_strLabel")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
@@ -142,12 +142,11 @@ public class Fear : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "SetBehaviour")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CallsUnknownMethods(Count = 1)]
 	public void StopAffliction(bool silent)
 	{
 	}

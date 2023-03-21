@@ -11,16 +11,16 @@ public class PlayerSpawn : MonoBehaviour
 
 	public WeatherStage m_StartWeather;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetStartTimeAndWeather()
 	{
 	}

@@ -9,9 +9,9 @@ public class RegionGroupSpecification : ScriptableObject
 
 	public string Name
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -30,8 +30,8 @@ public class RegionGroupSpecification : ScriptableObject
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public RegionGroupSpecification()
 	{

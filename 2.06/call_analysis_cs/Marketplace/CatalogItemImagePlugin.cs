@@ -7,8 +7,8 @@ namespace Marketplace;
 public class CatalogItemImagePlugin
 {
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CatalogItemImage_Id(IntPtr self);
 
 	[PreserveSig]
@@ -32,13 +32,13 @@ public class CatalogItemImagePlugin
 	public static extern IntPtr CatalogItemImage_ResizeUrl(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CatalogItemImage_Purposes(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CatalogItemImage_Purposes_Length(IntPtr self);
 
 	[PreserveSig]

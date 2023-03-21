@@ -9,8 +9,8 @@ public sealed class fsObjectAttribute : Attribute
 
 	public Type Processor;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public fsObjectAttribute()
 	{
 	}

@@ -25,17 +25,17 @@ public class SimpleSway : MonoBehaviour
 
 	private Vector3 m_Direction;
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Random), Member = "Range")]
 	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 0)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}

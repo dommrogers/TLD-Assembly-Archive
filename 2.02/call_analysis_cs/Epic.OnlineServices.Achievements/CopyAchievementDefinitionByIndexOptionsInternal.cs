@@ -26,15 +26,15 @@ internal struct CopyAchievementDefinitionByIndexOptionsInternal : ISettable, IDi
 	{
 	}
 
+	[CalledBy(Type = typeof(AchievementsInterface), Member = "CopyAchievementDefinitionByIndex")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(AchievementsInterface), Member = "CopyAchievementDefinitionByIndex")]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

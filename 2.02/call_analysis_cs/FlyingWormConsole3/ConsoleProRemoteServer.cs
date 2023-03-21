@@ -10,8 +10,8 @@ public class ConsoleProRemoteServer : MonoBehaviour
 	public int port;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Awake()
 	{
 	}

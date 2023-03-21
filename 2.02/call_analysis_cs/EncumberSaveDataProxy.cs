@@ -9,7 +9,7 @@ public class EncumberSaveDataProxy
 	public EncumberLevel m_EcumberLevelForPreviousVoiceOver;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public EncumberSaveDataProxy()
 	{
 	}

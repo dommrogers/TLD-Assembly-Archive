@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.AddressableAssets;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class MissionInfo : MonoBehaviour
@@ -31,20 +33,26 @@ public class MissionInfo : MonoBehaviour
 
 	private static AsyncOperationHandle<IList<GameObject>> s_handles;
 
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "LoadMissionDataFromResources")]
 	[CalledBy(Type = typeof(Utils), Member = "MaybePopulateMissionIds")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(AssetHelper), Member = "SafeLoadAssetsAsync")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(Addressables), Member = "Release")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 13)]
 	public static IList<MissionInfo> GetAllMissionInfos()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "LoadMissionDataFromResources")]
 	[CalledBy(Type = typeof(Utils), Member = "MaybePopulateMissionIds")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "IsValid")]
+	[Calls(Type = typeof(Addressables), Member = "Release")]
 	public static void ReleaseAllMissionInfos()
 	{
 	}

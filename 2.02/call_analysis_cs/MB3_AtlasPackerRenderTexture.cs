@@ -39,26 +39,26 @@ public class MB3_AtlasPackerRenderTexture : MonoBehaviour
 
 	public Material testMat;
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(MB_TextureCombinerRenderTexture), Member = "DoRenderAtlas")]
 	[CalledBy(Type = typeof(MB3_TestRenderTextureTestHarness), Member = "TestRender")]
-	[CalledBy(Type = typeof(MB3_TextureCombinerPackerMeshBakerFast._003CCreateAtlases_003Ed__2), Member = "MoveNext")]
+	[CalledBy(TypeFullName = "DigitalOpus.MB.Core.MB3_TextureCombinerPackerMeshBakerFast.<CreateAtlases>d__2", Member = "MoveNext")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(MB_TextureCombinerRenderTexture), Member = "DoRenderAtlas")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 9)]
 	public Texture2D OnRenderAtlas(MB3_TextureCombiner combiner)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(MB_TextureCombinerRenderTexture), Member = "OnRenderObject")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnRenderObject()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public MB3_AtlasPackerRenderTexture()
 	{
 	}

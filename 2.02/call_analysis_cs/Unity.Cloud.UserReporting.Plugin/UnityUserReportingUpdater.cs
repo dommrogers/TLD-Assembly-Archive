@@ -18,41 +18,40 @@ public class UnityUserReportingUpdater : IEnumerator
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
 	}
 
+	[CalledBy(Type = typeof(UserReportingScript), Member = ".ctor")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(UserReportingScript), Member = ".ctor")]
 	[CallsUnknownMethods(Count = 7)]
 	public UnityUserReportingUpdater()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
 	[Calls(Type = typeof(UserReportingClient), Member = "UpdateOnEndOfFrame")]
 	[Calls(Type = typeof(UserReportingClient), Member = "Update")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
 	[CallsUnknownMethods(Count = 1)]
 	public bool MoveNext()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void Reset()
 	{
 	}

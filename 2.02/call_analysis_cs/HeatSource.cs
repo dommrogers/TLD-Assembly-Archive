@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -34,18 +35,18 @@ public class HeatSource : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public string Serialize()
 	{
@@ -53,48 +54,47 @@ public class HeatSource : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(HeatSource), Member = "TurnOn")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(HeatSourceManager), Member = "GetTemperatureIncrease")]
 	[CalledBy(Type = typeof(HeatSourceManager), Member = "GetBestHeatSourceInRange")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	public float GetTempIncrease(Vector3 pos)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool IsTurnedOn()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(GearManager), Member = "DestroyGearObject")]
-	[CalledBy(Type = typeof(GearManager), Member = "DestroyGearObject")]
-	[CalledBy(Type = typeof(GearManager), Member = "DestroyGearObject")]
-	[CalledBy(Type = typeof(TorchItem), Member = "Extinguish")]
-	[CalledBy(Type = typeof(TorchItem), Member = "DestroyHeatSource")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "BurnOut")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "OnDroppedInWater")]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "DestroyHeatSource")]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
-	[CalledBy(Type = typeof(FlareItem), Member = "BurnOut")]
-	[CalledBy(Type = typeof(FlareItem), Member = "DestroyHeatSource")]
 	[CalledBy(Type = typeof(Fire), Member = "ExitFireStarting")]
+	[CalledBy(Type = typeof(FlareItem), Member = "DestroyHeatSource")]
+	[CalledBy(Type = typeof(FlareItem), Member = "BurnOut")]
+	[CalledBy(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
+	[CalledBy(Type = typeof(KeroseneLampItem), Member = "DestroyHeatSource")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "DestroyHeatSource")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "OnDroppedInWater")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "BurnOut")]
+	[CalledBy(Type = typeof(TorchItem), Member = "DestroyHeatSource")]
+	[CalledBy(Type = typeof(TorchItem), Member = "Extinguish")]
+	[CalledBy(Type = typeof(GearManager), Member = "DestroyGearObject")]
+	[CallerCount(Count = 13)]
 	[Calls(Type = typeof(HeatSourceManager), Member = "RemoveHeatSource")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 13)]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "DestroyHeatSource")]
+	[CallsUnknownMethods(Count = 2)]
 	public void TurnOffImmediate()
 	{
 	}
@@ -103,26 +103,29 @@ public class HeatSource : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetCurrentTempIncrease()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "TurnOn")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Ignite")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Ignite")]
-	[CalledBy(Type = typeof(FirstPersonLightSource), Member = "TurnOnEffects")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(FlareItem), Member = "Ignite")]
-	[CalledBy(Type = typeof(TorchItem), Member = "Ignite")]
-	[CalledBy(Type = typeof(HeatSource), Member = "Deserialize")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Deserialize")]
-	[CalledBy(Type = typeof(Fire), Member = "TurnOn")]
-	[CalledBy(Type = typeof(Fire), Member = "AddFuel")]
-	[CalledBy(Type = typeof(HeatSource), Member = "Start")]
-	[CalledBy(Type = typeof(Fire), Member = "Deserialize")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "TurnOnEffects")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(Fire), Member = "Deserialize")]
+	[CalledBy(Type = typeof(Fire), Member = "AddFuel")]
+	[CalledBy(Type = typeof(Fire), Member = "TurnOn")]
+	[CalledBy(Type = typeof(HeatSource), Member = "Start")]
+	[CalledBy(Type = typeof(HeatSource), Member = "Deserialize")]
+	[CalledBy(Type = typeof(FlareItem), Member = "Ignite")]
+	[CalledBy(Type = typeof(KeroseneLampItem), Member = "TurnOn")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Deserialize")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Ignite")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Ignite")]
+	[CalledBy(Type = typeof(TorchItem), Member = "Ignite")]
+	[CalledBy(Type = typeof(FirstPersonLightSource), Member = "TurnOnEffects")]
 	[CallerCount(Count = 13)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void TurnOn()
 	{
 	}
@@ -132,10 +135,10 @@ public class HeatSource : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(HeatSourceManager), Member = "RemoveHeatSource")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(HeatSourceManager), Member = "RemoveHeatSource")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnDestroy()
 	{
 	}

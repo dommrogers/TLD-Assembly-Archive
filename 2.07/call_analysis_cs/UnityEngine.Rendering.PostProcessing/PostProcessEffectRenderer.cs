@@ -20,29 +20,25 @@ public abstract class PostProcessEffectRenderer
 		return default(DepthTextureMode);
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public virtual void ResetHistory()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public virtual void Release()
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101261)]
 	public abstract void Render(PostProcessRenderContext context);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101261)]
 	internal abstract void SetSettings(PostProcessEffectSettings settings);
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	protected PostProcessEffectRenderer()
 	{
 	}
@@ -53,16 +49,16 @@ public abstract class PostProcessEffectRenderer<T> : PostProcessEffectRenderer w
 
 	public T settings
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 28)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 32)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 79)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 86)]
 		internal set
 		{
 		}

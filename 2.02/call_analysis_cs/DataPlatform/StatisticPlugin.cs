@@ -12,13 +12,13 @@ public class StatisticPlugin
 	public static extern IntPtr Statistic_Value(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void Statistic_Dispose(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr Statistic_Name(IntPtr self);
 
 	[PreserveSig]
@@ -27,7 +27,7 @@ public class StatisticPlugin
 	public static extern uint Statistic_Type(IntPtr self);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public StatisticPlugin()
 	{
 	}

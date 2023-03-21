@@ -7,7 +7,7 @@ public class WolfDenSaveDataProxy
 	public bool m_IsDestroyed;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public WolfDenSaveDataProxy()
 	{
 	}

@@ -44,19 +44,15 @@ public class PlayableBehaviourPlayAudio : PlayableBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetSourcePlayPosition")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Seek")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySoundWithPositionTracking")]
+	[Calls(Type = typeof(GameAudioManager), Member = "Seek")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetSourcePlayPosition")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public override void ProcessFrame(Playable playable, FrameData info, object playerData)
 	{
 	}
@@ -67,13 +63,13 @@ public class PlayableBehaviourPlayAudio : PlayableBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
+	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
-	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallerCount(Count = 0)]
 	public override void OnBehaviourPause(Playable playable, FrameData info)
 	{
 	}
@@ -87,12 +83,12 @@ public class PlayableBehaviourPlayAudio : PlayableBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
-	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
+	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CallsUnknownMethods(Count = 1)]
 	private void StopAudio()
 	{
 	}
@@ -104,16 +100,16 @@ public class PlayableBehaviourPlayAudio : PlayableBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private uint PostStopAudioEvent()
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "Seek")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameAudioManager), Member = "Seek")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool TryToSeekAudio()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

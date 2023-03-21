@@ -14,16 +14,16 @@ public sealed class Grain : PostProcessEffectSettings
 
 	public FloatParameter lumContrib;
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
-	[DeduplicatedMethod]
 	public override bool IsEnabledAndSupported(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 21)]
 	public Grain()

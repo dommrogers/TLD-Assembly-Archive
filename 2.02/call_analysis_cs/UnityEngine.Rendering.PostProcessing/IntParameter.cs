@@ -15,19 +15,18 @@ public sealed class IntParameter : ParameterOverride<int>
 	[CallerCount(Count = 0)]
 	public override bool Equals(int a, int b)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(MotionBlur), Member = ".ctor")]
-	[CalledBy(Type = typeof(RLProVHSEffect), Member = ".ctor")]
-	[CalledBy(Type = typeof(RLProLowRes), Member = ".ctor")]
-	[CalledBy(Type = typeof(ScreenSpaceReflections), Member = ".ctor")]
-	[CalledBy(Type = typeof(RLProColormapPalette), Member = ".ctor")]
 	[CalledBy(Type = typeof(RLProBleed), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(RLProColormapPalette), Member = ".ctor")]
+	[CalledBy(Type = typeof(RLProLowRes), Member = ".ctor")]
+	[CalledBy(Type = typeof(RLProVHSEffect), Member = ".ctor")]
+	[CalledBy(Type = typeof(MotionBlur), Member = ".ctor")]
+	[CalledBy(Type = typeof(ScreenSpaceReflections), Member = ".ctor")]
 	[CallerCount(Count = 7)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public IntParameter()
 	{
 		((ParameterOverride<>)(object)this)._002Ector();

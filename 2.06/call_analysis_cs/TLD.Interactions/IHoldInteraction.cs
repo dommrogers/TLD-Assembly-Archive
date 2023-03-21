@@ -1,35 +1,14 @@
-using Cpp2ILInjected.CallAnalysis;
-
 namespace TLD.Interactions;
 
 public interface IHoldInteraction : IInteraction
 {
-	bool IsActive
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101224)]
-		get;
-	}
+	bool IsActive { get; }
 
-	bool CanCancel
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101224)]
-		get;
-	}
+	bool CanCancel { get; }
 
-	float NormalizedProgress
-	{
-		[CallerCount(Count = 101224)]
-		[DeduplicatedMethod]
-		get;
-	}
+	float NormalizedProgress { get; }
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	bool PerformHold();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	void CancelHold();
 }

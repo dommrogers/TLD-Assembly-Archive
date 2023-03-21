@@ -11,26 +11,27 @@ public class AcceptablePaymentInstrumentTypesList : WrappedCachedList<string>
 	[CallsUnknownMethods(Count = 1)]
 	public AcceptablePaymentInstrumentTypesList(IntPtr self)
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(WrappedCachedList<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public AcceptablePaymentInstrumentTypesList()
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	~AcceptablePaymentInstrumentTypesList()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	protected override string CreateIthElement(int i)
 	{
 		return null;

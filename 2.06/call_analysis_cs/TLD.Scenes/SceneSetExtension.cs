@@ -18,7 +18,7 @@ public class SceneSetExtension : ScriptableObject
 	public List<AssetReference> AdditiveScenes
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 23)]
+		[CallerCount(Count = 27)]
 		get
 		{
 			return null;
@@ -28,27 +28,28 @@ public class SceneSetExtension : ScriptableObject
 	public List<ConditionalScene> ConditionalScenes
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 58)]
+		[CallerCount(Count = 61)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 21)]
 	[CalledBy(Type = typeof(SceneSetManager), Member = "HandleSceneExtensionLoaded")]
-	[Calls(Type = typeof(Exception), Member = ".ctor")]
-	[Calls(Type = typeof(AsyncOperationHandle), Member = "get_IsDone")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AsyncOperationHandle), Member = "get_IsDone")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(Type = typeof(Exception), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 20)]
 	public SceneSet GetParentSceneSet()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 11)]
 	public SceneSetExtension()
 	{

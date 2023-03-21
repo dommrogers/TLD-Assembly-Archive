@@ -27,24 +27,29 @@ public class Action_SetAnimatorVariable : ActionTask
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Task), Member = "get_agent")]
 	[CalledBy(Type = typeof(Action_SetAnimatorVariable), Member = "DoWork")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(Task), Member = "get_agent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private Animator GetAnimator()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Action_SetAnimatorVariable), Member = "GetAnimator")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(int), Member = "Parse")]
 	[CalledBy(Type = typeof(Action_SetAnimatorVariable), Member = "OnExecute")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Action_SetAnimatorVariable), Member = "GetAnimator")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(bool), Member = "Parse")]
+	[Calls(Type = typeof(int), Member = "Parse")]
+	[Calls(Type = typeof(float), Member = "Parse")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DoWork()
 	{
 	}

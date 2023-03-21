@@ -74,18 +74,18 @@ public class RockCache : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(RockCacheManager), Member = "SetRockCacheRegionName")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(RockCacheManager), Member = "UpdateRockCacheName")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetNameForScene")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(RockCacheManager), Member = "Add")]
-	[Calls(Type = typeof(RockCacheManager), Member = "WasDestroyed")]
-	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(RockCacheManager), Member = "WasDestroyed")]
+	[Calls(Type = typeof(RockCacheManager), Member = "Add")]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetNameForScene")]
+	[Calls(Type = typeof(RockCacheManager), Member = "SetRockCacheRegionName")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(RockCacheManager), Member = "UpdateRockCacheName")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void Awake()
 	{
 	}
@@ -94,7 +94,7 @@ public class RockCache : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsUserPlaced()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -102,30 +102,30 @@ public class RockCache : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool CanPlaceInWorld()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(RockCache), Member = "SetupInWorld")]
 	[CalledBy(Type = typeof(RockCache), Member = "Deserialize")]
-	[Calls(Type = typeof(MapDetail), Member = "Unlock")]
-	[Calls(Type = typeof(RockCache), Member = "SetMapDetailName")]
+	[CalledBy(Type = typeof(RockCache), Member = "SetupInWorld")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(RockCacheManager), Member = "Add")]
 	[Calls(Type = typeof(ObjectGuid), Member = "MaybeAttachObjectGuidAndRegister")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(RockCacheManager), Member = "Add")]
 	[Calls(Type = typeof(RockCacheManager), Member = "GetRockCacheNameFromGuid")]
+	[Calls(Type = typeof(RockCache), Member = "SetMapDetailName")]
+	[Calls(Type = typeof(MapDetail), Member = "Unlock")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Activate(string guid)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(RockCacheManager), Member = "UpdateRockCacheName")]
 	[CalledBy(Type = typeof(RockCache), Member = "Activate")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Map), Member = "RemoveMapDetailFromMap")]
+	[CalledBy(Type = typeof(RockCacheManager), Member = "UpdateRockCacheName")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Map), Member = "RemoveMapDetailFromMap")]
 	[Calls(Type = typeof(Panel_Map), Member = "AddMapDetailToMap")]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetMapDetailName(string name)
 	{
 	}
@@ -137,157 +137,145 @@ public class RockCache : MonoBehaviour
 		return null;
 	}
 
+	[CalledBy(Type = typeof(RockCacheManager), Member = "SerializeAll")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(RockCacheManager), Member = "SerializeAll")]
 	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(RockCacheManager), Member = "DeserializeAll")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(RockCacheManager), Member = "WasDestroyed")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(RockCacheManager), Member = "WasDestroyed")]
 	[Calls(Type = typeof(RockCache), Member = "Activate")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CalledBy(Type = typeof(RockCache), Member = "BuildCallback")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
-	[CalledBy(Type = typeof(RockCache), Member = "DismantleCallback")]
 	[CalledBy(Type = typeof(RockCache), Member = "OnDismantle")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(MapDetail), Member = "ShowOnMap")]
-	[Calls(Type = typeof(RockCacheManager), Member = "TrackDestroyedRockCacheInScene")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(RockCache), Member = "DismantleCallback")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(RockCacheManager), Member = "TrackDestroyedRockCacheInScene")]
+	[Calls(Type = typeof(MapDetail), Member = "ShowOnMap")]
 	[Calls(Type = typeof(RockCacheManager), Member = "Remove")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Destroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceMeshInWorld")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
+	[Calls(Type = typeof(RockCache), Member = "SetupInWorld")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(OnExitDelegate), Member = ".ctor")]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(RockCache), Member = "SetupInWorld")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnBuild()
 	{
 	}
 
-	[Calls(Type = typeof(CharcoalItem), Member = "HasSurveyVisibility")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(RockCache), Member = "BuildCallback")]
-	[CalledBy(Type = typeof(RockCache), Member = "BuildFinished")]
 	[CalledBy(Type = typeof(RockCache), Member = "OnBuild")]
-	[Calls(Type = typeof(Panel_Map), Member = "DoDetailSurvey")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(RockCacheManager), Member = "UpdateRockCacheName")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(RockCacheManager), Member = "SetRockCacheRegionName")]
-	[Calls(Type = typeof(RockCache), Member = "Activate")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetLocIDForScene")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[CalledBy(Type = typeof(RockCache), Member = "BuildFinished")]
+	[CalledBy(Type = typeof(RockCache), Member = "BuildCallback")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetLocIDForScene")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(RockCache), Member = "Activate")]
+	[Calls(Type = typeof(RockCacheManager), Member = "SetRockCacheRegionName")]
+	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(RockCacheManager), Member = "UpdateRockCacheName")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(CharcoalItem), Member = "HasSurveyVisibility")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(Panel_Map), Member = "DoDetailSurvey")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetupInWorld()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
 	[Calls(Type = typeof(RockCache), Member = "SetupInWorld")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallerCount(Count = 0)]
 	public void BuildFinished()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(RockCache), Member = "SetupInWorld")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(RockCache), Member = "Destroy")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(RockCache), Member = "Destroy")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
+	[Calls(Type = typeof(RockCache), Member = "SetupInWorld")]
+	[CallsUnknownMethods(Count = 1)]
 	public void BuildCallback(bool success, bool playerCancel, float progress)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(RockCacheManager), Member = "GetRockCacheNameFromGuid")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "SetupInputField")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[Calls(Type = typeof(TextInputField), Member = "Select")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnLabel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(RockCacheManager), Member = "UpdateRockCacheName")]
-	[Calls(Type = typeof(TextInputField), Member = "GetText")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(TextInputField), Member = "GetText")]
+	[Calls(Type = typeof(RockCacheManager), Member = "UpdateRockCacheName")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnRenameRockCacheConfirmed()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
-	[Calls(Type = typeof(OnExitDelegate), Member = ".ctor")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(RockCache), Member = "Destroy")]
-	[Calls(Type = typeof(RockCache), Member = "DismantleFinished")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(RockCache), Member = "DismantleFinished")]
+	[Calls(Type = typeof(RockCache), Member = "Destroy")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(OnExitDelegate), Member = ".ctor")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnDismantle()
 	{
 	}
 
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[CalledBy(Type = typeof(RockCache), Member = "DismantleCallback")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 	[CalledBy(Type = typeof(RockCache), Member = "OnDismantle")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[CalledBy(Type = typeof(RockCache), Member = "DismantleCallback")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
 	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[CallsUnknownMethods(Count = 3)]
 	private void DismantleFinished()
 	{
 	}

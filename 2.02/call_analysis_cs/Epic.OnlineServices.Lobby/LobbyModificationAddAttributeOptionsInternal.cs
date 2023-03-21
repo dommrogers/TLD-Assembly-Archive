@@ -15,11 +15,11 @@ internal struct LobbyModificationAddAttributeOptionsInternal : ISettable, IDispo
 
 	public AttributeData Attribute
 	{
+		[CalledBy(Type = typeof(LobbyModificationAddAttributeOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(LobbyModificationAddAttributeOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[Calls(Type = typeof(AttributeDataInternal), Member = "Set")]
-		[CalledBy(Type = typeof(LobbyModificationAddAttributeOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(LobbyModificationAddAttributeOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		set
 		{
 		}
@@ -34,23 +34,23 @@ internal struct LobbyModificationAddAttributeOptionsInternal : ISettable, IDispo
 		}
 	}
 
-	[Calls(Type = typeof(LobbyModificationAddAttributeOptionsInternal), Member = "set_Attribute")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LobbyModificationAddAttributeOptionsInternal), Member = "set_Attribute")]
 	public void Set(LobbyModificationAddAttributeOptions other)
 	{
 	}
 
-	[Calls(Type = typeof(LobbyModificationAddAttributeOptionsInternal), Member = "set_Attribute")]
 	[CalledBy(Type = typeof(LobbyModification), Member = "AddAttribute")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(LobbyModificationAddAttributeOptionsInternal), Member = "set_Attribute")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

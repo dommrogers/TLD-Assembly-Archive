@@ -8,8 +8,8 @@ public class RegionOrientation
 
 	public float m_RotationDegrees;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public RegionOrientation()
 	{
 	}

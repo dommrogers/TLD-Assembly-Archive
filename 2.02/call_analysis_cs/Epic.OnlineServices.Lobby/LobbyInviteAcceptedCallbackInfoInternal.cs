@@ -17,10 +17,10 @@ internal struct LobbyInviteAcceptedCallbackInfoInternal : ICallbackInfoInternal
 
 	public object ClientData
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(LobbyInviteAcceptedCallbackInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -33,7 +33,7 @@ internal struct LobbyInviteAcceptedCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
@@ -41,8 +41,8 @@ internal struct LobbyInviteAcceptedCallbackInfoInternal : ICallbackInfoInternal
 	{
 		[CalledBy(Type = typeof(LobbyInviteAcceptedCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -51,9 +51,10 @@ internal struct LobbyInviteAcceptedCallbackInfoInternal : ICallbackInfoInternal
 
 	public ProductUserId LocalUserId
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(LobbyInviteAcceptedCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -62,9 +63,10 @@ internal struct LobbyInviteAcceptedCallbackInfoInternal : ICallbackInfoInternal
 
 	public ProductUserId TargetUserId
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(LobbyInviteAcceptedCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;

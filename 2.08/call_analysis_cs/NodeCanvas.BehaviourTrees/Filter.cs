@@ -24,7 +24,7 @@ public class Filter : BTDecorator
 		FailureOnly
 	}
 
-	private sealed class _003CCooldown_003Ed__11 : IEnumerator, IDisposable, IEnumerator<object>
+	private sealed class _003CCooldown_003Ed__11 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -36,7 +36,7 @@ public class Filter : BTDecorator
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -45,9 +45,9 @@ public class Filter : BTDecorator
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 28)]
-			[DeduplicatedMethod]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -68,18 +68,19 @@ public class Filter : BTDecorator
 		{
 		}
 
-		[CallsUnknownMethods(Count = 3)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 4)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 4)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -99,28 +100,26 @@ public class Filter : BTDecorator
 
 	private float currentTime;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public override void OnGraphStarted()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[Calls(Type = typeof(Connection), Member = "Execute")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Connection), Member = "Execute")]
 	[Calls(Type = typeof(Node), Member = "StartCoroutine")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[IteratorStateMachine(typeof(_003CCooldown_003Ed__11))]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private IEnumerator Cooldown()
 	{
 		return null;

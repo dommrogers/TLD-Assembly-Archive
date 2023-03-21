@@ -7,7 +7,7 @@ namespace TLD.Gameplay.Tunable;
 public class CustomTunableLookup_Weather : CustomTunableLookup<CustomTunableWeather, float>
 {
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = ".ctor")]
 	public CustomTunableLookup_Weather()
 	{
 		((CustomTunableLookup<, >)(object)this)._002Ector();

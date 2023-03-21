@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -16,8 +17,8 @@ public class fsMetaType
 	{
 		public FieldInfo field;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass14_0()
 		{
 		}
@@ -27,7 +28,7 @@ public class fsMetaType
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CCollectProperties_003Eb__0(Type t)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -36,7 +37,7 @@ public class fsMetaType
 		public FieldInfo field;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass15_0()
 		{
 		}
@@ -46,7 +47,7 @@ public class fsMetaType
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CCanSerializeField_003Eb__0(Type t)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -55,30 +56,30 @@ public class fsMetaType
 		public Type reflectedType;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass16_0()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 4)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(Exception), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 3)]
 		internal object _003CGetGenerator_003Eb__0()
 		{
 			return null;
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		internal object _003CGetGenerator_003Eb__1()
 		{
 			return null;
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Array), Member = "CreateInstance")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		internal object _003CGetGenerator_003Eb__2()
 		{
@@ -86,8 +87,8 @@ public class fsMetaType
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(FormatterServices), Member = "GetSafeUninitializedObject")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		internal object _003CGetGenerator_003Eb__4()
 		{
 			return null;
@@ -108,8 +109,8 @@ public class fsMetaType
 
 		public static ObjectGenerator _003C_003E9__16_3;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
@@ -134,14 +135,14 @@ public class fsMetaType
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -151,31 +152,32 @@ public class fsMetaType
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
 	}
 
-	[CalledBy(Type = typeof(fsReflectedConverter), Member = "TrySerialize")]
-	[CallsUnknownMethods(Count = 19)]
-	[CalledBy(Type = typeof(fsReflectedConverter), Member = "CreateInstance")]
-	[CalledBy(Type = typeof(fsReflectedConverter), Member = "TryDeserialize")]
-	[CalledBy(Type = typeof(fsForwardConverter), Member = "CreateInstance")]
-	[CalledBy(Type = typeof(fsListConverter), Member = "CreateInstance")]
+	[CalledBy(Type = typeof(fsArrayConverter), Member = "CreateInstance")]
 	[CalledBy(Type = typeof(fsDictionaryConverter), Member = "CreateInstance")]
 	[CalledBy(Type = typeof(fsForwardConverter), Member = "GetProperty")]
-	[CalledBy(Type = typeof(fsArrayConverter), Member = "CreateInstance")]
-	[Calls(Type = typeof(fsMetaType), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(fsForwardConverter), Member = "CreateInstance")]
+	[CalledBy(Type = typeof(fsListConverter), Member = "CreateInstance")]
+	[CalledBy(Type = typeof(fsReflectedConverter), Member = "TrySerialize")]
+	[CalledBy(Type = typeof(fsReflectedConverter), Member = "TryDeserialize")]
+	[CalledBy(Type = typeof(fsReflectedConverter), Member = "CreateInstance")]
 	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(fsMetaType), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 19)]
 	public static fsMetaType Get(fsConfig config, Type type)
 	{
 		return null;
@@ -188,77 +190,75 @@ public class fsMetaType
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(fsMetaType), Member = "GetGenerator")]
-	[Calls(Type = typeof(fsMetaType), Member = "CollectProperties")]
 	[CalledBy(Type = typeof(fsMetaType), Member = "Get")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(fsMetaType), Member = "GetGenerator")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(fsMetaType), Member = "CollectProperties")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	private fsMetaType(fsConfig config, Type reflectedType)
 	{
 	}
 
 	[CalledBy(Type = typeof(fsMetaType), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 28)]
-	[Calls(Type = typeof(fsMetaProperty), Member = ".ctor")]
-	[Calls(Type = typeof(fsMetaType), Member = "CanSerializeField")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Enumerable), Member = "Any")]
+	[Calls(Type = typeof(fsMetaType), Member = "CanSerializeField")]
+	[Calls(Type = typeof(fsMetaProperty), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 28)]
 	private static void CollectProperties(fsConfig config, List<fsMetaProperty> properties, Type reflectedType)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CalledBy(Type = typeof(fsMetaType), Member = "CollectProperties")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enumerable), Member = "Any")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 22)]
 	private static bool CanSerializeField(fsConfig config, FieldInfo field)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 54)]
-	[Calls(Type = typeof(fsMetaType), Member = "HasDefaultConstructor")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CalledBy(Type = typeof(fsMetaType), Member = ".ctor")]
-	[Calls(Type = typeof(Type), Member = "get_IsInterface")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Type), Member = "get_IsInterface")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(fsMetaType), Member = "HasDefaultConstructor")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 54)]
 	private static ObjectGenerator GetGenerator(Type reflectedType)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(fsMetaType), Member = "GetGenerator")]
-	[Calls(Type = typeof(ReflectionTools), Member = "RTGetConstructors")]
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTGetConstructors")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	private static bool HasDefaultConstructor(Type reflectedType)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(fsArrayConverter), Member = "CreateInstance")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(fsReflectedConverter), Member = "CreateInstance")]
-	[CalledBy(Type = typeof(fsReflectedConverter), Member = "TrySerialize")]
-	[CalledBy(Type = typeof(fsListConverter), Member = "CreateInstance")]
-	[CalledBy(Type = typeof(fsForwardConverter), Member = "CreateInstance")]
 	[CalledBy(Type = typeof(fsDictionaryConverter), Member = "CreateInstance")]
-	[Calls(Type = typeof(InvalidOperationException), Member = ".ctor")]
+	[CalledBy(Type = typeof(fsForwardConverter), Member = "CreateInstance")]
+	[CalledBy(Type = typeof(fsListConverter), Member = "CreateInstance")]
+	[CalledBy(Type = typeof(fsReflectedConverter), Member = "TrySerialize")]
+	[CalledBy(Type = typeof(fsReflectedConverter), Member = "CreateInstance")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(InvalidOperationException), Member = ".ctor")]
 	[Calls(Type = typeof(Exception), Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(InvalidOperationException), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 6)]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 9)]
 	public object CreateInstance()
 	{
 		return null;

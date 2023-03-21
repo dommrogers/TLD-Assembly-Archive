@@ -15,9 +15,9 @@ internal struct LobbySearchFindOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(LobbySearchFindOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(LobbySearchFindOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,16 +29,16 @@ internal struct LobbySearchFindOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(LobbySearchFindOptionsInternal), Member = "set_LocalUserId")]
 	[CalledBy(Type = typeof(LobbySearch), Member = "Find")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(LobbySearchFindOptionsInternal), Member = "set_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

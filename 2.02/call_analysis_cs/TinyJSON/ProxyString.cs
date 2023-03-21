@@ -14,7 +14,7 @@ public sealed class ProxyString : Variant
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 52)]
+	[CallerCount(Count = 59)]
 	public override string ToString(IFormatProvider provider)
 	{
 		return null;

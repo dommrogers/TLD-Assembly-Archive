@@ -5,17 +5,17 @@ public class ConeShadowTestRotate : MonoBehaviour
 {
 	public float rotationSpeed;
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Transform), Member = "Rotate")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Transform), Member = "Rotate")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public ConeShadowTestRotate()
 	{
 	}

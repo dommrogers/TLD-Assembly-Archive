@@ -9,8 +9,8 @@ public class Sprains : MonoBehaviour
 	{
 		public bool m_HadSprainRiskAffliction;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public SaveDataProxy()
 		{
 		}
@@ -64,8 +64,8 @@ public class Sprains : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
@@ -73,39 +73,34 @@ public class Sprains : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	public void Deserialize(string text)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsWalking")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Utils), Member = "CalculateSlopeUnderPosition")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(Type = typeof(Sprains), Member = "ShowSlopeWarning")]
+	[Calls(Type = typeof(Encumber), Member = "IsEncumberedIgnoringPlaceMesh")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
+	[Calls(Type = typeof(Sprains), Member = "IsSlopeWarningShowing")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsWalking")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	[Calls(Type = typeof(SprainedAnkle), Member = "SprainedAnkleStart")]
 	[Calls(Type = typeof(SprainedWrist), Member = "SprainedWristStart")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Sprains), Member = "IsSlopeWarningShowing")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
-	[Calls(Type = typeof(Encumber), Member = "IsEncumberedIgnoringPlaceMesh")]
-	[Calls(Type = typeof(Sprains), Member = "ShowSlopeWarning")]
-	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
-	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(Utils), Member = "CalculateSlopeUnderPosition")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 7)]
 	private void MaybeSprainWhileMoving()
 	{
 	}
 
-	[Calls(Type = typeof(Sprains), Member = "ShowSlopeWarning")]
-	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
+	[Calls(Type = typeof(Sprains), Member = "ShowSlopeWarning")]
 	private void UpdateSprainRiskWarning(float slopeDegrees)
 	{
 	}
@@ -113,7 +108,7 @@ public class Sprains : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private float ComputeSprainChanceForSlope(float slopeDegrees)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -121,22 +116,22 @@ public class Sprains : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private float ComputeSprainChanceForEncumberance()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private float ComputeSprainChanceForExhaustion()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
+	[CallsUnknownMethods(Count = 2)]
 	private float ModifyChanceForSprinting(float sprainChance)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -144,44 +139,46 @@ public class Sprains : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	private float ModifyChanceForCrouching(float sprainChance)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	private bool AreSprainsFromSlopesBlocked()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Sprains), Member = "MaybeSprainWhileMoving")]
 	[CalledBy(Type = typeof(Sprains), Member = "ShowSlopeWarning")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(Sprains), Member = "MaybeSprainWhileMoving")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool IsSlopeWarningShowing()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Sprains), Member = "IsSlopeWarningShowing")]
 	[CalledBy(Type = typeof(Sprains), Member = "MaybeSprainWhileMoving")]
 	[CalledBy(Type = typeof(Sprains), Member = "UpdateSprainRiskWarning")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Sprains), Member = "IsSlopeWarningShowing")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void ShowSlopeWarning(bool enable)
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsWalking")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsWalking")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
+	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[CallsUnknownMethods(Count = 3)]
 	private bool RollForSprainWhenMoving(float sprainChance)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -198,30 +195,28 @@ public class Sprains : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(Condition), Member = "HasSpecificAffliction")]
 	[CalledBy(Type = typeof(Sprains), Member = "UpdateSprainRiskAffliction")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Encumber), Member = "IsEncumberedIgnoringPlaceMesh")]
-	[CalledBy(Type = typeof(Condition), Member = "HasSpecificAffliction")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool HasSprainsRiskAffliction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Encumber), Member = "IsEncumberedIgnoringPlaceMesh")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
+	[CallsUnknownMethods(Count = 2)]
 	public string GetSprainRiskAfflictionReason()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Sprains), Member = "HasSprainsRiskAffliction")]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
 	private void UpdateSprainRiskAffliction()
 	{
 	}

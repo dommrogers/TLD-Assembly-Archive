@@ -8,8 +8,8 @@ public class SliderFieldAttribute : DrawerAttribute
 
 	public readonly float max;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public SliderFieldAttribute(float min, float max)
 	{
 	}

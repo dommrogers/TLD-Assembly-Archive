@@ -13,20 +13,23 @@ public class Action_GetWeightOfItems : ActionTask
 
 	private List<GearItem> playerItems;
 
-	[Calls(Type = typeof(Inventory), Member = "GetItems")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "GetItems")]
+	[Calls(Type = typeof(NCUtils), Member = "GetOrAddVar")]
+	[Calls(Type = typeof(Variable<>), Member = "set_value")]
+	[CallsUnknownMethods(Count = 11)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 17)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 16)]
 	public Action_GetWeightOfItems()
 	{
 	}

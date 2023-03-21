@@ -8,8 +8,8 @@ namespace DataPlatform;
 public class AchievementsResultPlugin
 {
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr AchievementsResult_Items(IntPtr self);
 
 	[PreserveSig]
@@ -33,13 +33,13 @@ public class AchievementsResultPlugin
 	public static extern void AchievementsResult_Dispose(IntPtr self);
 
 	[PreserveSig]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static extern bool AchievementsResult_GetNextAsync(IntPtr res, uint maxItems, ObjectResultCallback callback, IntPtr userData);
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public AchievementsResultPlugin()
 	{
 	}

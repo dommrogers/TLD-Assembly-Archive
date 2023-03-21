@@ -58,8 +58,8 @@ public sealed class AchievementsInterface : Handle
 
 	public const int UnlockedachievementApiLatest = 1;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public AchievementsInterface()
 	{
 	}
@@ -71,34 +71,35 @@ public sealed class AchievementsInterface : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(AddNotifyAchievementsUnlockedOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[Calls(Type = typeof(Helper), Member = "TryAssignNotificationIdToCallback")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public ulong AddNotifyAchievementsUnlocked(AddNotifyAchievementsUnlockedOptions options, object clientData, OnAchievementsUnlockedCallback notificationFn)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Helper), Member = "TryAssignNotificationIdToCallback")]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(AddNotifyAchievementsUnlockedV2OptionsInternal), Member = "Set")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AddNotifyAchievementsUnlockedV2OptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryAssignNotificationIdToCallback")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public ulong AddNotifyAchievementsUnlockedV2(AddNotifyAchievementsUnlockedV2Options options, object clientData, OnAchievementsUnlockedCallbackV2 notificationFn)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(CopyAchievementDefinitionByAchievementIdOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 	[Calls(Type = typeof(AchievementsInterface), Member = "EOS_Achievements_Definition_Release")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result CopyAchievementDefinitionByAchievementId(CopyAchievementDefinitionByAchievementIdOptions options, out Definition outDefinition)
 	{
@@ -106,12 +107,13 @@ public sealed class AchievementsInterface : Handle
 		return default(Result);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(AchievementsInterface), Member = "EOS_Achievements_Definition_Release")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(CopyAchievementDefinitionByIndexOptionsInternal), Member = "Set")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CopyAchievementDefinitionByIndexOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[Calls(Type = typeof(AchievementsInterface), Member = "EOS_Achievements_Definition_Release")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result CopyAchievementDefinitionByIndex(CopyAchievementDefinitionByIndexOptions options, out Definition outDefinition)
 	{
 		outDefinition = null;
@@ -119,10 +121,11 @@ public sealed class AchievementsInterface : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(CopyAchievementDefinitionV2ByAchievementIdOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 	[Calls(Type = typeof(AchievementsInterface), Member = "EOS_Achievements_DefinitionV2_Release")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result CopyAchievementDefinitionV2ByAchievementId(CopyAchievementDefinitionV2ByAchievementIdOptions options, out DefinitionV2 outDefinition)
 	{
@@ -130,24 +133,26 @@ public sealed class AchievementsInterface : Handle
 		return default(Result);
 	}
 
-	[Calls(Type = typeof(AchievementsInterface), Member = "EOS_Achievements_DefinitionV2_Release")]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CopyAchievementDefinitionV2ByIndexOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[Calls(Type = typeof(AchievementsInterface), Member = "EOS_Achievements_DefinitionV2_Release")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result CopyAchievementDefinitionV2ByIndex(CopyAchievementDefinitionV2ByIndexOptions options, out DefinitionV2 outDefinition)
 	{
 		outDefinition = null;
 		return default(Result);
 	}
 
-	[Calls(Type = typeof(AchievementsInterface), Member = "EOS_Achievements_PlayerAchievement_Release")]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CopyPlayerAchievementByAchievementIdOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[Calls(Type = typeof(AchievementsInterface), Member = "EOS_Achievements_PlayerAchievement_Release")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result CopyPlayerAchievementByAchievementId(CopyPlayerAchievementByAchievementIdOptions options, out PlayerAchievement outAchievement)
 	{
 		outAchievement = null;
@@ -155,10 +160,11 @@ public sealed class AchievementsInterface : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(CopyPlayerAchievementByIndexOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 	[Calls(Type = typeof(AchievementsInterface), Member = "EOS_Achievements_PlayerAchievement_Release")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result CopyPlayerAchievementByIndex(CopyPlayerAchievementByIndexOptions options, out PlayerAchievement outAchievement)
 	{
@@ -166,12 +172,13 @@ public sealed class AchievementsInterface : Handle
 		return default(Result);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(AchievementsInterface), Member = "EOS_Achievements_UnlockedAchievement_Release")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(CopyUnlockedAchievementByAchievementIdOptionsInternal), Member = "Set")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CopyUnlockedAchievementByAchievementIdOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[Calls(Type = typeof(AchievementsInterface), Member = "EOS_Achievements_UnlockedAchievement_Release")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result CopyUnlockedAchievementByAchievementId(CopyUnlockedAchievementByAchievementIdOptions options, out UnlockedAchievement outAchievement)
 	{
 		outAchievement = null;
@@ -179,10 +186,11 @@ public sealed class AchievementsInterface : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(CopyUnlockedAchievementByIndexOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 	[Calls(Type = typeof(AchievementsInterface), Member = "EOS_Achievements_UnlockedAchievement_Release")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result CopyUnlockedAchievementByIndex(CopyUnlockedAchievementByIndexOptions options, out UnlockedAchievement outAchievement)
 	{
@@ -190,75 +198,74 @@ public sealed class AchievementsInterface : Handle
 		return default(Result);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GetAchievementDefinitionCountOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public uint GetAchievementDefinitionCount(GetAchievementDefinitionCountOptions options)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(GetPlayerAchievementCountOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public uint GetPlayerAchievementCount(GetPlayerAchievementCountOptions options)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(GetUnlockedAchievementCountOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public uint GetUnlockedAchievementCount(GetUnlockedAchievementCountOptions options)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
-	[CallsUnknownMethods(Count = 9)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(QueryDefinitionsOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void QueryDefinitions(QueryDefinitionsOptions options, object clientData, OnQueryDefinitionsCompleteCallback completionDelegate)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(QueryPlayerAchievementsOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "AddCallback")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public void QueryPlayerAchievements(QueryPlayerAchievementsOptions options, object clientData, OnQueryPlayerAchievementsCompleteCallback completionDelegate)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryRemoveCallbackByNotificationId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void RemoveNotifyAchievementsUnlocked(ulong inId)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(Helper), Member = "AddCallback")]
-	[Calls(Type = typeof(UnlockAchievementsOptionsInternal), Member = "Set")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnlockAchievementsOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "AddCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public void UnlockAchievements(UnlockAchievementsOptions options, object clientData, OnUnlockAchievementsCompleteCallback completionDelegate)
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -266,7 +273,6 @@ public sealed class AchievementsInterface : Handle
 	{
 	}
 
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
@@ -274,26 +280,23 @@ public sealed class AchievementsInterface : Handle
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static void OnQueryDefinitionsCompleteCallbackInternalImplementation(IntPtr data)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallsUnknownMethods(Count = 1)]
 	internal static void OnQueryPlayerAchievementsCompleteCallbackInternalImplementation(IntPtr data)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static void OnUnlockAchievementsCompleteCallbackInternalImplementation(IntPtr data)
 	{
 	}
@@ -326,8 +329,8 @@ public sealed class AchievementsInterface : Handle
 	internal static extern Result EOS_Achievements_CopyAchievementDefinitionV2ByAchievementId(IntPtr handle, IntPtr options, ref IntPtr outDefinition);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern Result EOS_Achievements_CopyAchievementDefinitionV2ByIndex(IntPtr handle, IntPtr options, ref IntPtr outDefinition);
 
 	[PreserveSig]
@@ -361,14 +364,14 @@ public sealed class AchievementsInterface : Handle
 	internal static extern uint EOS_Achievements_GetPlayerAchievementCount(IntPtr handle, IntPtr options);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern uint EOS_Achievements_GetUnlockedAchievementCount(IntPtr handle, IntPtr options);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	internal static extern void EOS_Achievements_QueryDefinitions(IntPtr handle, IntPtr options, IntPtr clientData, OnQueryDefinitionsCompleteCallbackInternal completionDelegate);
 
 	[PreserveSig]
@@ -378,30 +381,30 @@ public sealed class AchievementsInterface : Handle
 	internal static extern void EOS_Achievements_QueryPlayerAchievements(IntPtr handle, IntPtr options, IntPtr clientData, OnQueryPlayerAchievementsCompleteCallbackInternal completionDelegate);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AchievementsInterface), Member = "CopyAchievementDefinitionV2ByAchievementId")]
 	[CalledBy(Type = typeof(AchievementsInterface), Member = "CopyAchievementDefinitionV2ByIndex")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	internal static extern void EOS_Achievements_DefinitionV2_Release(IntPtr achievementDefinition);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AchievementsInterface), Member = "CopyPlayerAchievementByAchievementId")]
 	[CalledBy(Type = typeof(AchievementsInterface), Member = "CopyPlayerAchievementByIndex")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	internal static extern void EOS_Achievements_PlayerAchievement_Release(IntPtr achievement);
 
 	[PreserveSig]
 	[CalledBy(Type = typeof(AchievementsInterface), Member = "CopyAchievementDefinitionByAchievementId")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AchievementsInterface), Member = "CopyAchievementDefinitionByIndex")]
+	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern void EOS_Achievements_Definition_Release(IntPtr achievementDefinition);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AchievementsInterface), Member = "CopyUnlockedAchievementByAchievementId")]
 	[CalledBy(Type = typeof(AchievementsInterface), Member = "CopyUnlockedAchievementByIndex")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	internal static extern void EOS_Achievements_UnlockedAchievement_Release(IntPtr achievement);
 
@@ -411,8 +414,8 @@ public sealed class AchievementsInterface : Handle
 	internal static extern void EOS_Achievements_RemoveNotifyAchievementsUnlocked(IntPtr handle, ulong inId);
 
 	[PreserveSig]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	internal static extern void EOS_Achievements_UnlockAchievements(IntPtr handle, IntPtr options, IntPtr clientData, OnUnlockAchievementsCompleteCallbackInternal completionDelegate);
 }

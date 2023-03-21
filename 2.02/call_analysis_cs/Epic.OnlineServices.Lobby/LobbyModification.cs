@@ -23,7 +23,7 @@ public sealed class LobbyModification : Handle
 	public const int LobbymodificationSetpermissionlevelApiLatest = 1;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public LobbyModification()
 	{
 	}
@@ -34,20 +34,20 @@ public sealed class LobbyModification : Handle
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(LobbyModificationAddAttributeOptionsInternal), Member = "Set")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LobbyModificationAddAttributeOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result AddAttribute(LobbyModificationAddAttributeOptions options)
 	{
 		return default(Result);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(LobbyModificationAddMemberAttributeOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result AddMemberAttribute(LobbyModificationAddMemberAttributeOptions options)
 	{
@@ -60,9 +60,9 @@ public sealed class LobbyModification : Handle
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LobbyModificationRemoveAttributeOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result RemoveAttribute(LobbyModificationRemoveAttributeOptions options)
@@ -70,20 +70,20 @@ public sealed class LobbyModification : Handle
 		return default(Result);
 	}
 
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LobbyModificationRemoveMemberAttributeOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result RemoveMemberAttribute(LobbyModificationRemoveMemberAttributeOptions options)
 	{
 		return default(Result);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(LobbyModificationSetMaxMembersOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result SetMaxMembers(LobbyModificationSetMaxMembersOptions options)
 	{
@@ -91,9 +91,9 @@ public sealed class LobbyModification : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(LobbyModificationSetPermissionLevelOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result SetPermissionLevel(LobbyModificationSetPermissionLevelOptions options)
 	{
@@ -101,8 +101,8 @@ public sealed class LobbyModification : Handle
 	}
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern Result EOS_LobbyModification_AddAttribute(IntPtr handle, IntPtr options);
 
 	[PreserveSig]

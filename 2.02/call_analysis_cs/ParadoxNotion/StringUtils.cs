@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Text.RegularExpressions;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.DialogueTrees;
@@ -18,151 +19,141 @@ public static class StringUtils
 	private static Dictionary<string, string> splitCaseCache;
 
 	[CalledBy(Type = typeof(Node), Member = "get_name")]
-	[CalledBy(Type = typeof(Task), Member = "Internal_GetWarning")]
-	[CalledBy(Type = typeof(Task), Member = "Internal_GetWarning")]
-	[CalledBy(Type = typeof(Task), Member = "Internal_GetWarning")]
-	[CalledBy(Type = typeof(Task), Member = "Internal_GetWarning")]
 	[CalledBy(Type = typeof(Task), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "TrimHelper")]
+	[CalledBy(Type = typeof(Task), Member = "Internal_GetWarning")]
 	[CallerCount(Count = 6)]
-	[Calls(Type = typeof(Regex), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallsUnknownMethods(Count = 4)]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(Regex), Member = "Replace")]
 	[Calls(Type = typeof(StringUtils), Member = "CapitalizeFirst")]
+	[Calls(Type = typeof(string), Member = "TrimHelper")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public static string SplitCamelCase(this string s)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(ReflectionTools), Member = "FriendlyName")]
 	[CalledBy(Type = typeof(StringUtils), Member = "SplitCamelCase")]
-	[CalledBy(Type = typeof(ReflectionTools), Member = "FriendlyName")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(ReflectionTools), Member = "FriendlyName")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Substring")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Enumerable), Member = "First")]
+	[Calls(Type = typeof(char), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static string CapitalizeFirst(this string s)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Substring")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static string CapLength(this string s, int max)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(string), Member = "TrimHelper")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "get_Chars")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "get_Chars")]
+	[Calls(Type = typeof(char), Member = "IsUpper")]
+	[Calls(Type = typeof(char), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "TrimHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static string GetCapitals(this string s)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "get_Chars")]
+	[Calls(Type = typeof(char), Member = "ToString")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static string GetAlphabetLetter(int index)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(GroupCollection), Member = "get_Item")]
-	[Calls(Type = typeof(Regex), Member = "Match")]
-	[Calls(Type = typeof(Regex), Member = ".ctor")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[Calls(Type = typeof(Regex), Member = ".ctor")]
+	[Calls(Type = typeof(Regex), Member = "Match")]
+	[Calls(Type = typeof(GroupCollection), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 11)]
 	public static string GetStringWithin(this string input, string from, string to)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[Calls(Type = typeof(Enumerable), Member = "LastOrDefault")]
+	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 15)]
 	public static float ScoreSearchMatch(string input, string leafName, string categoryName = "")
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "SplitInternal")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[Calls(Type = typeof(Enumerable), Member = "LastOrDefault")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 17)]
 	public static bool SearchMatch(string input, string leafName, string categoryName = "")
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Statement), Member = "BlackboardReplace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public static string ReplaceWithin(this string text, char startChar, char endChar, Func<string, string> Process)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Convert), Member = "ToInt32")]
 	[CalledBy(Type = typeof(BBParameter), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Convert), Member = "ToInt32")]
-	[Calls(Type = typeof(Array), Member = "get_Length")]
-	[Calls(Type = typeof(Array), Member = "GetEnumerator")]
-	[Calls(Type = typeof(Enum), Member = "GetValues")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTIsDefined")]
+	[Calls(Type = typeof(Enum), Member = "GetValues")]
+	[Calls(Type = typeof(Array), Member = "GetEnumerator")]
 	[Calls(Type = typeof(Convert), Member = "ToInt32")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Array), Member = "get_Length")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 15)]
 	public static string ToStringAdvanced(this object o)
 	{
 		return null;

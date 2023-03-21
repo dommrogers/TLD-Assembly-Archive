@@ -15,7 +15,7 @@ public class AkCommunicationSettings : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -27,16 +27,16 @@ public class AkCommunicationSettings : IDisposable
 
 	public ushort uDiscoveryBroadcastPort
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
-			return default(ushort);
+			return 0;
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -49,11 +49,11 @@ public class AkCommunicationSettings : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(ushort);
+			return 0;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -66,7 +66,7 @@ public class AkCommunicationSettings : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(ushort);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -78,16 +78,16 @@ public class AkCommunicationSettings : IDisposable
 
 	public bool bInitSystemLib
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -95,17 +95,17 @@ public class AkCommunicationSettings : IDisposable
 
 	public string szAppNetworkName
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(AkSoundEngine), Member = "StringFromIntPtrString")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(AkCommonCommSettings), Member = "CopyTo")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 4)]
-		[CalledBy(Type = typeof(AkCommonCommSettings), Member = "CopyTo")]
 		[CallsUnknownMethods(Count = 4)]
 		set
 		{
@@ -118,14 +118,14 @@ public class AkCommunicationSettings : IDisposable
 	{
 	}
 
-	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "InitializeSoundEngine")]
 	[CalledBy(Type = typeof(AkInitializationSettings), Member = "set_communicationSettings")]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "InitCommunication")]
+	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "InitializeSoundEngine")]
 	[CallerCount(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkCommunicationSettings obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -142,18 +142,18 @@ public class AkCommunicationSettings : IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public AkCommunicationSettings()
 	{
 	}

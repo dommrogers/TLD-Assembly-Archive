@@ -28,14 +28,14 @@ public sealed class MissingNode : Node, IMissingRecoverable
 
 	private string ParadoxNotion_002ESerialization_002EIMissingRecoverable_002ErecoveryState
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 8)]
+		[CallerCount(Count = 9)]
 		set
 		{
 		}
@@ -66,27 +66,27 @@ public sealed class MissingNode : Node, IMissingRecoverable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public override int maxOutConnections
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public override bool allowAsPrime
 	{
-		[CallerCount(Count = 3)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 3)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -110,9 +110,9 @@ public sealed class MissingNode : Node, IMissingRecoverable
 		}
 	}
 
-	[Calls(Type = typeof(Node), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Node), Member = ".ctor")]
 	public MissingNode()
 	{
 	}

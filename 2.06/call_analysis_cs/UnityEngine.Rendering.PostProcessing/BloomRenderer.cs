@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 
 namespace UnityEngine.Rendering.PostProcessing;
@@ -29,33 +28,27 @@ internal sealed class BloomRenderer : PostProcessEffectRenderer<Bloom>
 
 	private const int k_MaxPyramidSize = 16;
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public override void Init()
 	{
 	}
 
-	[Calls(Type = typeof(Color), Member = "get_linear")]
-	[Calls(Type = typeof(CommandBuffer), Member = "ReleaseTemporaryRT")]
-	[Calls(Type = typeof(CommandBuffer), Member = "ReleaseTemporaryRT")]
-	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "get_blackTexture")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(PostProcessDebugLayer), Member = "PushDebugOverlay")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
-	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
-	[CallsDeduplicatedMethods(Count = 19)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
+	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
 	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[Calls(Type = typeof(Color), Member = "get_linear")]
+	[Calls(Type = typeof(PostProcessDebugLayer), Member = "PushDebugOverlay")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "get_blackTexture")]
+	[Calls(Type = typeof(CommandBuffer), Member = "ReleaseTemporaryRT")]
+	[CallsDeduplicatedMethods(Count = 19)]
+	[CallsUnknownMethods(Count = 25)]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}

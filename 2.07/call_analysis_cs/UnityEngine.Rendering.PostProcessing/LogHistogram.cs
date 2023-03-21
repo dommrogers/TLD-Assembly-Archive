@@ -17,14 +17,14 @@ internal sealed class LogHistogram
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 80)]
+		[CallerCount(Count = 92)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 279)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 282)]
 		private set
 		{
 		}
@@ -32,12 +32,11 @@ internal sealed class LogHistogram
 
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderBuiltins")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(ComputeBuffer), Member = ".ctor")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeBufferParam")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeBufferParam")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeTextureParam")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeVectorParam")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 12)]
 	public void Generate(PostProcessRenderContext context)
 	{

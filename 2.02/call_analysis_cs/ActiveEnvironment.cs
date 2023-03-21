@@ -12,9 +12,9 @@ public class ActiveEnvironment
 
 	public float m_GrassTintScalar;
 
+	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "Init")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "Init")]
 	[CallsUnknownMethods(Count = 21)]
 	public ActiveEnvironment()
 	{
@@ -27,28 +27,14 @@ public class ActiveEnvironment
 	{
 	}
 
-	[Calls(Type = typeof(TODStateConfig), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateConfig), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateConfig), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateConfig), Member = "SetBlended")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(TODStateConfig), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateConfig), Member = "SetBlended")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "Update")]
-	[Calls(Type = typeof(TODStateConfig), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateConfig), Member = "SetBlended")]
-	[CallsUnknownMethods(Count = 61)]
-	[Calls(Type = typeof(TODStateConfig), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateConfig), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateConfig), Member = "SetBlended")]
-	[Calls(Type = typeof(UnityEngine.Rendering.PostProcessing.ColorGrading), Member = "UpdateLutForTimeOfDay")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(TODStateConfig), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateConfig), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateConfig), Member = "SetBlended")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(TODStateConfig), Member = "SetBlended")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Rendering.PostProcessing.ColorGrading), Member = "UpdateLutForTimeOfDay")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 61)]
 	public void Refresh(WeatherStateConfig wsA, WeatherStateConfig wsB, float weatherBlendFrac, TODBlendState todBlendState, float todBlendFrac, float todBlendBiased, bool isIndoors)
 	{
 	}

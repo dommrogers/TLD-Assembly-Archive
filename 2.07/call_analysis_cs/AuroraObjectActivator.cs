@@ -20,18 +20,18 @@ public class AuroraObjectActivator : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(AuroraObjectActivator), Member = "Start")]
+	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 7)]
-	[CallerCount(Count = 1)]
-	[CalledBy(Type = typeof(AuroraObjectActivator), Member = "Start")]
 	private void EnableChildren()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(AuroraObjectActivator), Member = "Start")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CalledBy(Type = typeof(AuroraObjectActivator), Member = "Start")]
+	[CallsUnknownMethods(Count = 7)]
 	private void DisableChildren()
 	{
 	}

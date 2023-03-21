@@ -8,7 +8,7 @@ public class WolfIntimidationBuff : MonoBehaviour
 	public float m_DecreaseAttackChancePercentagePoints;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}
@@ -27,9 +27,9 @@ public class WolfIntimidationBuff : MonoBehaviour
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public WolfIntimidationBuff()
 	{
 	}

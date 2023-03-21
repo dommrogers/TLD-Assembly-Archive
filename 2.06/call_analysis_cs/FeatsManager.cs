@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.SaveState;
@@ -53,127 +52,103 @@ public class FeatsManager : MonoBehaviour
 
 	private static FeatsManagerSaveData m_FeatsManagerSaveData;
 
-	[Calls(Type = typeof(FeatsManager), Member = "InstantiateFeatPrefab")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 14)]
 	[Calls(Type = typeof(FeatsManager), Member = "InstantiateFeatPrefab")]
-	[Calls(Type = typeof(FeatsManager), Member = "InstantiateFeatPrefab")]
-	[Calls(Type = typeof(FeatsManager), Member = "InstantiateFeatPrefab")]
-	[Calls(Type = typeof(FeatsManager), Member = "InstantiateFeatPrefab")]
-	[Calls(Type = typeof(FeatsManager), Member = "InstantiateFeatPrefab")]
-	[Calls(Type = typeof(FeatsManager), Member = "InstantiateFeatPrefab")]
-	[Calls(Type = typeof(FeatsManager), Member = "InstantiateFeatPrefab")]
-	[Calls(Type = typeof(FeatsManager), Member = "InstantiateFeatPrefab")]
-	[Calls(Type = typeof(FeatsManager), Member = "InstantiateFeatPrefab")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "add_OnBeforeSerialization")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "add_OnAfterDeserialization")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 11)]
 	private void Awake()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(FeatsManager), Member = "Serialize")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private void HandleSerialization(ProfileState profileState)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(FeatsManager), Member = "Deserialize")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private void HandleDeserialization(ProfileState profileState)
 	{
 	}
 
+	[CalledBy(Type = typeof(FeatsManager), Member = "HandleSerialization")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(FeatsManager), Member = "HandleSerialization")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CallerCount(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "Start")]
 	[CalledBy(Type = typeof(FeatsManager), Member = "HandleDeserialization")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(GameManager), Member = "Start")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 11)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(FeatEnabledTracker), Member = "Deserialize")]
 	[CalledBy(Type = typeof(FeatEnabledTracker), Member = "SendAnalytics")]
 	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "UpdateSelectedFeats")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_feat_unlock_all")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "SetFeat")]
+	[CallerCount(Count = 5)]
 	public Feat GetFeat(FeatType featType)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "GetNumUnlockedFeats")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "SetupFeatScrollList")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "SetupFeatScrollList")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnSelectFeatsContinue")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "SetupFeatScrollList")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "GetNumUnlockedFeats")]
+	[CallerCount(Count = 4)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public Feat GetFeatFromIndex(int index)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "SetupFeatScrollList")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnSelectFeatsContinue")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "SetupFeatScrollList")]
+	[CallerCount(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public int GetNumFeats()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CalledBy(Type = typeof(SaveGameDataPC), Member = "UpdateProfileAgainstFile")]
 	[CalledBy(Type = typeof(SaveGameDataPC), Member = "UpdateProfileFeatData")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public void ValidateSaveData(string serialized)
 	{
 	}
 
 	[CalledBy(Type = typeof(FeatsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(FeatsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(FeatsManager), Member = "Awake")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(FeatsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(FeatsManager), Member = "Awake")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(FeatsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(FeatsManager), Member = "Awake")]
-	[CalledBy(Type = typeof(FeatsManager), Member = "Awake")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CalledBy(Type = typeof(FeatsManager), Member = "Awake")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[CalledBy(Type = typeof(FeatsManager), Member = "Awake")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private GameObject InstantiateFeatPrefab(GameObject prefab)
 	{
 		return null;

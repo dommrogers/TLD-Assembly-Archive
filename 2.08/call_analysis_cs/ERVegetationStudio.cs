@@ -8,14 +8,14 @@ public class ERVegetationStudio : ScriptableObject
 	[CallerCount(Count = 3)]
 	public static bool VegetationStudio()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 3)]
 	public static bool VegetationStudioPro()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -48,8 +48,8 @@ public class ERVegetationStudio : ScriptableObject
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void UpdateBiomeArea(GameObject go, ERVSData[] vsData, float distance, float blendDistance, float noise)
 	{
 	}

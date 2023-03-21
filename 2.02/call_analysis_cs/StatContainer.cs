@@ -23,103 +23,97 @@ public class StatContainer
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
-	[CalledBy(Type = typeof(SandboxRecord), Member = "CreateFromSandbox")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UncacheSandboxRecord")]
+	[CalledBy(Type = typeof(SandboxRecord), Member = "CreateFromSandbox")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(StatContainer), Member = "CacheHashIds")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 16)]
 	public StatContainer(StatContainer rhs)
 	{
 	}
 
-	[CalledBy(Type = typeof(SummaryStatsView), Member = "Populate")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "FillLegacySaveSlotInfo")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "FillLegacySaveSlotInfo")]
-	[CalledBy(Type = typeof(StatsManager), Member = "FixUpCurrentSessionLongestBurningFireStat")]
-	[CalledBy(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[CalledBy(Type = typeof(StatsManager), Member = "SetValue")]
-	[CalledBy(Type = typeof(StatsManager), Member = "GetValue")]
-	[CalledBy(Type = typeof(StatsManager), Member = "MaybeUpdateAllTimeBestStat")]
-	[CalledBy(Type = typeof(StatsManager), Member = "DeserializeCurrentSession")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(StatContainer), Member = "IncrementValue")]
 	[CalledBy(Type = typeof(CustomExperienceMode), Member = "SendAnalytics")]
-	[CallerCount(Count = 16)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(StatContainer), Member = "GetHashId")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
 	[CalledBy(Type = typeof(StatContainer), Member = "GetFormattedValue")]
-	[CalledBy(Type = typeof(CustomExperienceMode), Member = "SendAnalytics")]
-	[CalledBy(Type = typeof(CustomExperienceMode), Member = "SendAnalytics")]
-	[CalledBy(Type = typeof(CustomExperienceMode), Member = "SendAnalytics")]
-	[Calls(Type = typeof(System.Number), Member = "ParseSingle")]
+	[CalledBy(Type = typeof(StatContainer), Member = "IncrementValue")]
+	[CalledBy(Type = typeof(SummaryStatsView), Member = "Populate")]
+	[CalledBy(Type = typeof(StatsManager), Member = "DeserializeCurrentSession")]
+	[CalledBy(Type = typeof(StatsManager), Member = "MaybeUpdateAllTimeBestStat")]
+	[CalledBy(Type = typeof(StatsManager), Member = "GetValue")]
+	[CalledBy(Type = typeof(StatsManager), Member = "SetValue")]
+	[CalledBy(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[CalledBy(Type = typeof(StatsManager), Member = "FixUpCurrentSessionLongestBurningFireStat")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "FillLegacySaveSlotInfo")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CallerCount(Count = 16)]
+	[Calls(Type = typeof(StatContainer), Member = "GetHashId")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "ParseSingle")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetValue(StatID id)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(StatsManager), Member = "GetStatInfo")]
 	[Calls(Type = typeof(StatContainer), Member = "GetValue")]
 	[Calls(Type = typeof(StatInfo), Member = "GetFormattedValue")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(StatsManager), Member = "GetStatInfo")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetFormattedValue(StatID id)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 6)]
-	[Calls(Type = typeof(StatContainer), Member = "GetHashId")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
 	[CalledBy(Type = typeof(StatContainer), Member = "IncrementValue")]
 	[CalledBy(Type = typeof(StatsManager), Member = "MaybeUpdateAllTimeBestStat")]
 	[CalledBy(Type = typeof(StatsManager), Member = "SetValue")]
 	[CalledBy(Type = typeof(StatsManager), Member = "IncrementValue")]
 	[CalledBy(Type = typeof(StatsManager), Member = "FixUpCurrentSessionLongestBurningFireStat")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(StatContainer), Member = "GetHashId")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetValue(StatID id, float value)
 	{
 	}
 
-	[Calls(Type = typeof(StatContainer), Member = "SetValue")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(StatContainer), Member = "GetValue")]
+	[Calls(Type = typeof(StatContainer), Member = "SetValue")]
 	public float IncrementValue(StatID id, float increment)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(StatsManager), Member = "Reset")]
-	[CallerCount(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(DetailedStatsView), Member = "OnResetAllTimeStatsConfirmed")]
-	[CalledBy(Type = typeof(DetailedStatsView), Member = "OnResetAllTimeStatsConfirmed")]
-	[CalledBy(Type = typeof(DetailedStatsView), Member = "OnResetAllTimeStatsConfirmed")]
 	[CalledBy(Type = typeof(DetailedStatsView), Member = "OnResetAllTimeStatsConfirmed")]
 	[CalledBy(Type = typeof(StatContainer), Member = ".ctor")]
+	[CalledBy(Type = typeof(StatsManager), Member = "Reset")]
 	[CalledBy(Type = typeof(StatsManager), Member = "MaybeInitializeAllTimeBestStats")]
 	[CalledBy(Type = typeof(StatsManager), Member = ".cctor")]
+	[CallerCount(Count = 8)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public void Reset()
 	{
 	}
 
-	[CalledBy(Type = typeof(StatsManager), Member = ".cctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(StatsManager), Member = "MaybeInitializeAllTimeBestStats")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(StatsManager), Member = "Reset")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(StatContainer), Member = ".ctor")]
 	[CalledBy(Type = typeof(StatContainer), Member = ".ctor")]
-	[Calls(Type = typeof(StatContainer), Member = "ComputeHashId")]
 	[CalledBy(Type = typeof(StatContainer), Member = "GetHashId")]
+	[CalledBy(Type = typeof(StatsManager), Member = "Reset")]
+	[CalledBy(Type = typeof(StatsManager), Member = "MaybeInitializeAllTimeBestStats")]
+	[CalledBy(Type = typeof(StatsManager), Member = ".cctor")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(StatContainer), Member = "ComputeHashId")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void CacheHashIds()
 	{
 	}
@@ -130,17 +124,17 @@ public class StatContainer
 	[CallsUnknownMethods(Count = 2)]
 	private int ComputeHashId(StatID id)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(StatContainer), Member = "GetValue")]
 	[CalledBy(Type = typeof(StatContainer), Member = "SetValue")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(StatContainer), Member = "CacheHashIds")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(StatContainer), Member = "CacheHashIds")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private int GetHashId(StatID id)
 	{
-		return default(int);
+		return 0;
 	}
 }

@@ -14,67 +14,66 @@ public class AkGameObjListenerList : AkAudioListener.BaseListenerList
 	public bool useDefaultListeners;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(AkAudioListener.BaseListenerList), Member = "GetListenerIds")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "SetListeners")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "ResetListenersToDefault")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "AddListener")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 8)]
 	public void SetUseDefaultListeners(bool useDefault)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(AkGameObj), Member = "Awake")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "SetListeners")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "SetListeners")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 10)]
 	public void Init(AkGameObj akGameObj)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(AkAudioListener.BaseListenerList), Member = "Add")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "IsInitialized")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "AddListener")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	public override bool Add(AkAudioListener listener)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[Calls(Type = typeof(AkAudioListener.BaseListenerList), Member = "Remove")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkAudioListener.BaseListenerList), Member = "Remove")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "IsInitialized")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 5)]
 	public override bool Remove(AkAudioListener listener)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(AkAudioListener.BaseListenerList), Member = "GetListenerIds")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "SetListeners")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "ResetListenersToDefault")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Refresh(GameObject gameObject)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(AkAudioListener.BaseListenerList), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkGameObj), Member = ".ctor")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(AkAudioListener.BaseListenerList), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public AkGameObjListenerList()
 	{
 	}

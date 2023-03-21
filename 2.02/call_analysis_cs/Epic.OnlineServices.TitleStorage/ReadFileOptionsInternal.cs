@@ -26,8 +26,8 @@ internal struct ReadFileOptionsInternal : ISettable, IDisposable
 	public ProductUserId LocalUserId
 	{
 		[CalledBy(Type = typeof(ReadFileOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -36,10 +36,10 @@ internal struct ReadFileOptionsInternal : ISettable, IDisposable
 
 	public string Filename
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(ReadFileOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -56,10 +56,10 @@ internal struct ReadFileOptionsInternal : ISettable, IDisposable
 
 	public static OnReadFileDataCallbackInternal ReadFileDataCallback
 	{
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(ReadFileOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(TitleStorageInterface), Member = "ReadFile")]
+		[CallerCount(Count = 2)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -69,37 +69,37 @@ internal struct ReadFileOptionsInternal : ISettable, IDisposable
 
 	public static OnFileTransferProgressCallbackInternal FileTransferProgressCallback
 	{
-		[CallsUnknownMethods(Count = 7)]
-		[CalledBy(Type = typeof(TitleStorageInterface), Member = "ReadFile")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 2)]
 		[CalledBy(Type = typeof(ReadFileOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(TitleStorageInterface), Member = "ReadFile")]
+		[CallerCount(Count = 2)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
 		}
 	}
 
+	[CalledBy(Type = typeof(ReadFileOptionsInternal), Member = "Set")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ReadFileOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(ReadFileOptionsInternal), Member = "set_Filename")]
 	[Calls(Type = typeof(ReadFileOptionsInternal), Member = "get_ReadFileDataCallback")]
 	[Calls(Type = typeof(ReadFileOptionsInternal), Member = "get_FileTransferProgressCallback")]
-	[CalledBy(Type = typeof(ReadFileOptionsInternal), Member = "Set")]
 	public void Set(ReadFileOptions other)
 	{
 	}
 
 	[CalledBy(Type = typeof(TitleStorageInterface), Member = "ReadFile")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ReadFileOptionsInternal), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{

@@ -69,21 +69,21 @@ public class HexSectorManager : MonoBehaviour
 	private bool m_Initialized;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(HexSectorManager), Member = "RefreshLodDistance")]
 	[Calls(Type = typeof(HexSectorManager), Member = "GetClosestSectorIndex")]
 	[Calls(Type = typeof(HexSectorManager), Member = "UpdateSectors")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 7)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(HexSectorManager), Member = "UpdateSectors")]
-	[Calls(Type = typeof(HexSectorManager), Member = "GetClosestSectorIndex")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(HexSectorManager), Member = "RefreshLodDistance")]
+	[Calls(Type = typeof(HexSectorManager), Member = "GetClosestSectorIndex")]
+	[Calls(Type = typeof(HexSectorManager), Member = "UpdateSectors")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}
@@ -95,42 +95,37 @@ public class HexSectorManager : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(HexSectorManager), Member = "Update")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(HexSectorManager), Member = "ForceUpdate")]
 	[CalledBy(Type = typeof(HexSectorManager), Member = "Start")]
+	[CalledBy(Type = typeof(HexSectorManager), Member = "Update")]
+	[CalledBy(Type = typeof(HexSectorManager), Member = "ForceUpdate")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 7)]
 	private int GetClosestSectorIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(HexSectorManager), Member = "ForceUpdate")]
-	[CalledBy(Type = typeof(HexSectorManager), Member = "Update")]
 	[CalledBy(Type = typeof(HexSectorManager), Member = "Start")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CalledBy(Type = typeof(HexSectorManager), Member = "Update")]
+	[CalledBy(Type = typeof(HexSectorManager), Member = "ForceUpdate")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(HexSector), Member = "SetSectorLOD")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(HexSector), Member = "SetScene")]
 	[Calls(Type = typeof(HexSector), Member = "SetOnlyLOD")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(HexSector), Member = "SetScene")]
-	[Calls(Type = typeof(HexSector), Member = "SetSectorLOD")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(HexSector), Member = "SetSectorLOD")]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(HexSector), Member = "SetScene")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateSectors()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
 	[CalledBy(Type = typeof(HexSectorManager), Member = "Start")]
 	[CalledBy(Type = typeof(HexSectorManager), Member = "Update")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
 	[CallsUnknownMethods(Count = 1)]
 	private void RefreshLodDistance()
 	{

@@ -13,8 +13,8 @@ public class BodyHarvestItem : MonoBehaviour
 
 	public float m_HPDecreasePerHourUse;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	private void Start()
 	{
 	}

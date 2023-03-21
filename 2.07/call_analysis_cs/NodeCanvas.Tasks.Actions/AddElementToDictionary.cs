@@ -23,11 +23,12 @@ public class AddElementToDictionary<T> : ActionTask
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

@@ -1,5 +1,6 @@
 using System;
 using Cpp2ILInjected.CallAnalysis;
+using ParadoxNotion;
 
 namespace NodeCanvas.Framework.Internal;
 
@@ -16,7 +17,8 @@ public class ReflectedAction : ReflectedActionWrapper
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTCreateDelegate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public override void Init(object instance)
 	{
 	}
@@ -29,8 +31,8 @@ public class ReflectedAction : ReflectedActionWrapper
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public ReflectedAction()
 	{
 	}
@@ -67,10 +69,14 @@ public class ReflectedAction<T1> : ReflectedActionWrapper
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
+	[CalledBy(TypeFullName = "ParadoxNotion.Internal.AOTDummy.NodeCanvas_Framework_Internal_ReflectedAction_Collision", Member = ".ctor")]
+	[CalledBy(TypeFullName = "ParadoxNotion.Internal.AOTDummy.NodeCanvas_Framework_Internal_ReflectedAction_Collision2D", Member = ".ctor")]
+	[CalledBy(TypeFullName = "ParadoxNotion.Internal.AOTDummy.NodeCanvas_Framework_Internal_ReflectedAction_Space", Member = ".ctor")]
+	[CalledBy(TypeFullName = "ParadoxNotion.Internal.AOTDummy.NodeCanvas_Framework_Internal_ReflectedAction_SpawnLocation", Member = ".ctor")]
 	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public ReflectedAction()
 	{
 	}
@@ -101,10 +107,10 @@ public class ReflectedAction<T1, T2> : ReflectedActionWrapper
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void Call()
 	{
 	}
@@ -137,18 +143,18 @@ public class ReflectedAction<T1, T2, T3> : ReflectedActionWrapper
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void Init(object instance)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void Call()
 	{
 	}
@@ -183,10 +189,10 @@ public class ReflectedAction<T1, T2, T3, T4> : ReflectedActionWrapper
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void Init(object instance)
 	{
 	}
@@ -222,19 +228,19 @@ public class ReflectedAction<T1, T2, T3, T4, T5> : ReflectedActionWrapper
 
 	public BBParameter<T5> p5;
 
-	[CallsUnknownMethods(Count = 21)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 21)]
 	public override BBParameter[] GetVariables()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void Init(object instance)
 	{
 	}
@@ -272,19 +278,19 @@ public class ReflectedAction<T1, T2, T3, T4, T5, T6> : ReflectedActionWrapper
 
 	public BBParameter<T6> p6;
 
-	[CallsUnknownMethods(Count = 25)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 25)]
 	public override BBParameter[] GetVariables()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void Init(object instance)
 	{
 	}
@@ -297,10 +303,10 @@ public class ReflectedAction<T1, T2, T3, T4, T5, T6> : ReflectedActionWrapper
 	{
 	}
 
-	[CallsUnknownMethods(Count = 48)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 48)]
 	public ReflectedAction()
 	{
 	}

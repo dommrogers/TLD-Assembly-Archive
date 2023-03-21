@@ -19,7 +19,7 @@ public class DefaultHDRHandler : IHDRHandler
 	[CallerCount(Count = 0)]
 	public bool IsOutputtingHDR()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

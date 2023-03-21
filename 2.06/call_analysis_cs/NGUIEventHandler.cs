@@ -12,15 +12,13 @@ public class NGUIEventHandler : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	private void OnSelectDelegate(GameObject go, bool selected)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UICamera), Member = "get_selectedObject")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UICamera), Member = "get_selectedObject")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]

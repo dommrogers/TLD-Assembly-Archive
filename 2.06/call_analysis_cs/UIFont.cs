@@ -34,20 +34,19 @@ public class UIFont : MonoBehaviour
 
 	public BMFont bmFont
 	{
+		[CalledBy(Type = typeof(NGUIText), Member = "GetGlyphWidth")]
 		[CalledBy(Type = typeof(NGUIText), Member = "GetGlyph")]
-		[CallsUnknownMethods(Count = 1)]
+		[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
 		[CallerCount(Count = 4)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CalledBy(Type = typeof(NGUIText), Member = "GetGlyphWidth")]
-		[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
-		[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -55,15 +54,16 @@ public class UIFont : MonoBehaviour
 
 	public int texWidth
 	{
-		[CallsUnknownMethods(Count = 1)]
+		[CalledBy(Type = typeof(NGUIText), Member = "Print")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -72,16 +72,17 @@ public class UIFont : MonoBehaviour
 
 	public int texHeight
 	{
-		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 1)]
+		[CalledBy(Type = typeof(NGUIText), Member = "Print")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -94,21 +95,19 @@ public class UIFont : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public List<BMSymbol> symbols
 	{
-		[CalledBy(Type = typeof(UIFont), Member = "UsesSprite")]
-		[CalledBy(Type = typeof(UIFont), Member = "RemoveSymbol")]
-		[CalledBy(Type = typeof(UIFont), Member = "MarkAsChanged")]
-		[CalledBy(Type = typeof(UIFont), Member = "MarkAsChanged")]
 		[CalledBy(Type = typeof(UIFont), Member = "get_sprite")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallerCount(Count = 6)]
-		[CallsUnknownMethods(Count = 1)]
+		[CalledBy(Type = typeof(UIFont), Member = "MarkAsChanged")]
+		[CalledBy(Type = typeof(UIFont), Member = "RemoveSymbol")]
 		[CalledBy(Type = typeof(UIFont), Member = "UsesSprite")]
+		[CallerCount(Count = 6)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -117,28 +116,24 @@ public class UIFont : MonoBehaviour
 
 	public UIAtlas atlas
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 4)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CalledBy(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
-		[CalledBy(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
 		[CalledBy(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
 		[CalledBy(Type = typeof(UIFont), Member = "MatchSymbol")]
+		[CallerCount(Count = 4)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
-		[CalledBy(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
-		[Calls(Type = typeof(UIFont), Member = "get_uvRect")]
-		[Calls(Type = typeof(UIFont), Member = "get_sprite")]
-		[Calls(Type = typeof(UIAtlas), Member = "get_spriteMaterial")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(UIAtlas), Member = "get_spriteMaterial")]
+		[Calls(Type = typeof(UIFont), Member = "get_sprite")]
+		[Calls(Type = typeof(UIFont), Member = "get_uvRect")]
+		[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -146,34 +141,28 @@ public class UIFont : MonoBehaviour
 
 	public Material material
 	{
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(Material), Member = "get_mainTexture")]
-		[Calls(Type = typeof(Material), Member = "set_mainTexture")]
-		[Calls(Type = typeof(UIAtlas), Member = "get_spriteMaterial")]
 		[CalledBy(Type = typeof(UIFont), Member = "get_premultipliedAlphaShader")]
-		[Calls(Type = typeof(Font), Member = "get_material")]
 		[CalledBy(Type = typeof(UIFont), Member = "get_packedFontShader")]
 		[CalledBy(Type = typeof(UIFont), Member = "get_texture")]
 		[CalledBy(Type = typeof(UILabel), Member = "get_material")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(Font), Member = "get_material")]
-		[Calls(Type = typeof(Font), Member = "get_material")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CallerCount(Count = 4)]
-		[CallsUnknownMethods(Count = 1)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(Font), Member = "get_material")]
+		[Calls(Type = typeof(Material), Member = "get_mainTexture")]
+		[Calls(Type = typeof(Material), Member = "set_mainTexture")]
+		[Calls(Type = typeof(UIAtlas), Member = "get_spriteMaterial")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(UIFont), Member = "set_dynamicFont")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
-		[CalledBy(Type = typeof(UIFont), Member = "set_dynamicFont")]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 1)]
 		set
 		{
 		}
@@ -185,65 +174,56 @@ public class UIFont : MonoBehaviour
 		[Calls(Type = typeof(UIFont), Member = "get_premultipliedAlphaShader")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public bool premultipliedAlphaShader
 	{
-		[Calls(Type = typeof(Material), Member = "get_shader")]
-		[Calls(Type = typeof(string), Member = "IndexOf")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[Calls(Type = typeof(UIAtlas), Member = "get_premultipliedAlpha")]
 		[CalledBy(Type = typeof(UIFont), Member = "get_premultipliedAlpha")]
 		[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
 		[CalledBy(Type = typeof(UILabel), Member = "ApplyShadow")]
-		[CalledBy(Type = typeof(UILabel), Member = "ApplyShadow")]
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 4)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(UIFont), Member = "get_material")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(Material), Member = "get_shader")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallerCount(Count = 4)]
-		[Calls(Type = typeof(UIFont), Member = "get_material")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "IndexOf")]
+		[Calls(Type = typeof(UIAtlas), Member = "get_premultipliedAlpha")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public bool packedFontShader
 	{
-		[CalledBy(Type = typeof(UILabel), Member = "UpdateNGUIText")]
-		[Calls(Type = typeof(string), Member = "IndexOf")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[Calls(Type = typeof(Material), Member = "get_shader")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(Material), Member = "get_shader")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(UIFont), Member = "get_material")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 2)]
 		[CalledBy(Type = typeof(UILabel), Member = "OnFill")]
+		[CalledBy(Type = typeof(UILabel), Member = "UpdateNGUIText")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(UIFont), Member = "get_material")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(Material), Member = "get_shader")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "IndexOf")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public Texture2D texture
 	{
+		[CalledBy(Type = typeof(UIFont), Member = "Trim")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(UIFont), Member = "get_material")]
 		[Calls(Type = typeof(Material), Member = "get_mainTexture")]
-		[CalledBy(Type = typeof(UIFont), Member = "Trim")]
-		[CalledBy(Type = typeof(UIFont), Member = "Trim")]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 2)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		get
 		{
 			return null;
@@ -252,25 +232,25 @@ public class UIFont : MonoBehaviour
 
 	public Rect uvRect
 	{
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(UIFont), Member = "get_uvRect")]
+		[CalledBy(Type = typeof(NGUIText), Member = "Print")]
 		[CalledBy(Type = typeof(UIFont), Member = "set_atlas")]
-		[CallerCount(Count = 2)]
+		[CalledBy(Type = typeof(UIFont), Member = "get_uvRect")]
+		[CallerCount(Count = 3)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(UIFont), Member = "get_uvRect")]
 		[Calls(Type = typeof(UIFont), Member = "get_sprite")]
+		[Calls(Type = typeof(UIFont), Member = "get_uvRect")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return default(Rect);
 		}
-		[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
-		[Calls(Type = typeof(UIFont), Member = "get_sprite")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallerCount(Count = 1)]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UIFont), Member = "set_uvRect")]
 		[CalledBy(Type = typeof(UIFont), Member = "set_uvRect")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(UIFont), Member = "get_sprite")]
+		[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
+		[Calls(Type = typeof(UIFont), Member = "set_uvRect")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -278,20 +258,20 @@ public class UIFont : MonoBehaviour
 
 	public string spriteName
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(UIFont), Member = "UsesSprite")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-		[CallsUnknownMethods(Count = 1)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 		[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -299,22 +279,22 @@ public class UIFont : MonoBehaviour
 
 	public bool isValid
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public int size
 	{
-		[Calls(Type = typeof(UIFont), Member = "get_defaultSize")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIFont), Member = "get_defaultSize")]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UIFont), Member = "set_defaultSize")]
@@ -325,27 +305,27 @@ public class UIFont : MonoBehaviour
 
 	public int defaultSize
 	{
-		[CalledBy(Type = typeof(UILabel), Member = "get_fontSize")]
+		[CalledBy(Type = typeof(UIPopupList), Member = "get_activeFontSize")]
+		[CalledBy(Type = typeof(UIPopupList), Member = "get_activeFontScale")]
 		[CalledBy(Type = typeof(UIPopupList), Member = "OnEnable")]
 		[CalledBy(Type = typeof(UIPopupList), Member = "OnValidate")]
 		[CalledBy(Type = typeof(UIFont), Member = "get_size")]
+		[CalledBy(Type = typeof(UILabel), Member = "get_fontSize")]
 		[CalledBy(Type = typeof(UILabel), Member = "UpgradeFrom265")]
 		[CalledBy(Type = typeof(UILabel), Member = "ProcessText")]
 		[CalledBy(Type = typeof(UILabel), Member = "UpdateNGUIText")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(UIPopupList), Member = "get_activeFontScale")]
-		[Calls(Type = typeof(UIFont), Member = "get_isDynamic")]
-		[CalledBy(Type = typeof(UIPopupList), Member = "get_activeFontSize")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CallerCount(Count = 9)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(UIFont), Member = "get_isDynamic")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(UIFont), Member = "set_size")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -353,22 +333,21 @@ public class UIFont : MonoBehaviour
 
 	public UISpriteData sprite
 	{
-		[Calls(Type = typeof(UIAtlas), Member = "GetSprite")]
-		[Calls(Type = typeof(UIFont), Member = "UpdateUVRect")]
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(UIFont), Member = "get_symbols")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 		[CalledBy(Type = typeof(UIFont), Member = "set_atlas")]
 		[CalledBy(Type = typeof(UIFont), Member = "get_uvRect")]
 		[CalledBy(Type = typeof(UIFont), Member = "set_uvRect")]
 		[CalledBy(Type = typeof(UIFont), Member = "get_sprite")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[Calls(Type = typeof(UIAtlas), Member = "GetSprite")]
-		[Calls(Type = typeof(UIFont), Member = "get_sprite")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 4)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(UIAtlas), Member = "GetSprite")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(UIFont), Member = "UpdateUVRect")]
+		[Calls(Type = typeof(UIFont), Member = "get_symbols")]
+		[Calls(Type = typeof(UIFont), Member = "get_sprite")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
@@ -383,20 +362,14 @@ public class UIFont : MonoBehaviour
 		{
 			return null;
 		}
-		[CalledBy(Type = typeof(FontManager), Member = "UpdateDummyFonts")]
-		[CalledBy(Type = typeof(FontManager), Member = "UpdateDummyFonts")]
 		[CalledBy(Type = typeof(UIFont), Member = "set_replacement")]
-		[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(UIFont), Member = "set_replacement")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CalledBy(Type = typeof(FontManager), Member = "UpdateDummyFonts")]
 		[CallerCount(Count = 3)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+		[Calls(Type = typeof(UIFont), Member = "set_replacement")]
+		[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
 		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		set
 		{
 		}
@@ -405,47 +378,41 @@ public class UIFont : MonoBehaviour
 	public bool isDynamic
 	{
 		[CalledBy(Type = typeof(UIPopupList), Member = "OnEnable")]
-		[CalledBy(Type = typeof(UILabel), Member = "UpdateNGUIText")]
-		[CalledBy(Type = typeof(UIFont), Member = "get_dynamicTexture")]
-		[CalledBy(Type = typeof(UIFont), Member = "CheckIfRelated")]
-		[CalledBy(Type = typeof(UIFont), Member = "CheckIfRelated")]
-		[CalledBy(Type = typeof(UIFont), Member = "get_defaultSize")]
 		[CalledBy(Type = typeof(UIPopupList), Member = "OnValidate")]
-		[CalledBy(Type = typeof(UIPopupList), Member = "OnEnable")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallsUnknownMethods(Count = 1)]
+		[CalledBy(Type = typeof(UIFont), Member = "get_defaultSize")]
+		[CalledBy(Type = typeof(UIFont), Member = "CheckIfRelated")]
+		[CalledBy(Type = typeof(UIFont), Member = "get_dynamicTexture")]
+		[CalledBy(Type = typeof(UILabel), Member = "UpdateNGUIText")]
 		[CallerCount(Count = 8)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public Font dynamicFont
 	{
 		[CalledBy(Type = typeof(UIPopupList), Member = "OnEnable")]
-		[CalledBy(Type = typeof(UIPopupList), Member = "OnEnable")]
-		[CalledBy(Type = typeof(UIFont), Member = "CheckIfRelated")]
+		[CalledBy(Type = typeof(UIPopupList), Member = "OnValidate")]
 		[CalledBy(Type = typeof(UIFont), Member = "CheckIfRelated")]
 		[CalledBy(Type = typeof(UILabel), Member = "get_trueTypeFont")]
 		[CalledBy(Type = typeof(UILabel), Member = "UpdateNGUIText")]
 		[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "RenderFontTest")]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CalledBy(Type = typeof(UIPopupList), Member = "OnValidate")]
 		[CallerCount(Count = 8)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
-		[Calls(Type = typeof(UIFont), Member = "set_material")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(UIFont), Member = "set_material")]
+		[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -454,18 +421,18 @@ public class UIFont : MonoBehaviour
 	public FontStyle dynamicFontStyle
 	{
 		[CalledBy(Type = typeof(UIPopupList), Member = "OnEnable")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallerCount(Count = 2)]
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(UIPopupList), Member = "OnValidate")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return default(FontStyle);
 		}
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
 		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		set
 		{
 		}
@@ -475,180 +442,166 @@ public class UIFont : MonoBehaviour
 	{
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(Material), Member = "get_mainTexture")]
 		[Calls(Type = typeof(UIFont), Member = "get_isDynamic")]
+		[Calls(Type = typeof(Material), Member = "get_mainTexture")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 	}
 
+	[CalledBy(Type = typeof(UILabel), Member = "get_fontSize")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CalledBy(Type = typeof(UILabel), Member = "get_fontSize")]
 	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(UILabel), Member = "get_fontSize")]
 	public float GetFontSizeModifierValue()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(UIFont), Member = "UpdateUVRect")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(BMGlyph), Member = "Trim")]
-	[Calls(Type = typeof(NGUIMath), Member = "ConvertToPixels")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UIAtlas), Member = "get_texture")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UIFont), Member = "get_texture")]
-	[Calls(Type = typeof(UIFont), Member = "get_texture")]
+	[Calls(Type = typeof(NGUIMath), Member = "ConvertToPixels")]
+	[Calls(Type = typeof(BMGlyph), Member = "Trim")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private void Trim()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CalledBy(Type = typeof(UIFont), Member = "CheckIfRelated")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(UIFont), Member = "CheckIfRelated")]
-	[CalledBy(Type = typeof(UIFont), Member = "CheckIfRelated")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool References(UIFont font)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UIFont), Member = "get_isDynamic")]
-	[Calls(Type = typeof(UIFont), Member = "get_isDynamic")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UIFont), Member = "get_dynamicFont")]
 	[CalledBy(Type = typeof(UIFont), Member = "MarkAsChanged")]
-	[Calls(Type = typeof(UIFont), Member = "References")]
-	[Calls(Type = typeof(UIFont), Member = "References")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Font), Member = "get_fontNames")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UIFont), Member = "get_isDynamic")]
 	[Calls(Type = typeof(UIFont), Member = "get_dynamicFont")]
-	[CallsUnknownMethods(Count = 2)]
 	[Calls(Type = typeof(Font), Member = "get_fontNames")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UIFont), Member = "References")]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool CheckIfRelated(UIFont a, UIFont b)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(UIFont), Member = "set_atlas")]
 	[CalledBy(Type = typeof(UIFont), Member = "set_material")]
-	[Calls(Type = typeof(UIFont), Member = "get_symbols")]
-	[CalledBy(Type = typeof(UIFont), Member = "MarkAsChanged")]
 	[CalledBy(Type = typeof(UIFont), Member = "set_uvRect")]
-	[Calls(Type = typeof(UIFont), Member = "get_symbols")]
 	[CalledBy(Type = typeof(UIFont), Member = "set_spriteName")]
-	[CalledBy(Type = typeof(UIFont), Member = "set_replacement")]
 	[CalledBy(Type = typeof(UIFont), Member = "set_replacement")]
 	[CalledBy(Type = typeof(UIFont), Member = "set_dynamicFont")]
 	[CalledBy(Type = typeof(UIFont), Member = "set_dynamicFontStyle")]
+	[CalledBy(Type = typeof(UIFont), Member = "MarkAsChanged")]
 	[CalledBy(Type = typeof(UIFont), Member = "AddSymbol")]
-	[Calls(Type = typeof(UILabel), Member = "set_bitmapFont")]
-	[CalledBy(Type = typeof(UIFont), Member = "RenameSymbol")]
-	[Calls(Type = typeof(UIFont), Member = "CheckIfRelated")]
-	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-	[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 12)]
 	[CalledBy(Type = typeof(UIFont), Member = "RemoveSymbol")]
+	[CalledBy(Type = typeof(UIFont), Member = "RenameSymbol")]
+	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
+	[Calls(Type = typeof(NGUITools), Member = "FindActive")]
+	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+	[Calls(Type = typeof(UIFont), Member = "CheckIfRelated")]
 	[Calls(Type = typeof(UILabel), Member = "set_bitmapFont")]
+	[Calls(Type = typeof(UIFont), Member = "get_symbols")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void MarkAsChanged()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UIFont), Member = "Trim")]
 	[CalledBy(Type = typeof(UIFont), Member = "get_sprite")]
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UIAtlas), Member = "get_texture")]
+	[Calls(Type = typeof(UIFont), Member = "Trim")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void UpdateUVRect()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(UIFont), Member = "RenameSymbol")]
-	[CalledBy(Type = typeof(UIFont), Member = "RemoveSymbol")]
 	[CalledBy(Type = typeof(UIFont), Member = "AddSymbol")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CalledBy(Type = typeof(UIFont), Member = "RemoveSymbol")]
+	[CalledBy(Type = typeof(UIFont), Member = "RenameSymbol")]
+	[CallerCount(Count = 3)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private BMSymbol GetSymbol(string sequence, bool createIfMissing)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
-	[Calls(Type = typeof(BMSymbol), Member = "Validate")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(NGUIText), Member = "GetSymbol")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UIFont), Member = "get_atlas")]
+	[Calls(Type = typeof(BMSymbol), Member = "Validate")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public BMSymbol MatchSymbol(string text, int offset, int textLength)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIFont), Member = "GetSymbol")]
 	[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UIFont), Member = "GetSymbol")]
 	public void AddSymbol(string sequence, string spriteName)
 	{
 	}
 
-	[Calls(Type = typeof(UIFont), Member = "GetSymbol")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(UIFont), Member = "GetSymbol")]
 	[Calls(Type = typeof(UIFont), Member = "get_symbols")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
+	[CallsUnknownMethods(Count = 1)]
 	public void RemoveSymbol(string sequence)
 	{
 	}
 
-	[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
-	[Calls(Type = typeof(UIFont), Member = "GetSymbol")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIFont), Member = "GetSymbol")]
+	[Calls(Type = typeof(UIFont), Member = "MarkAsChanged")]
 	public void RenameSymbol(string before, string after)
 	{
 	}
 
-	[Calls(Type = typeof(UIFont), Member = "get_spriteName")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(UIFont), Member = "get_spriteName")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(UIFont), Member = "get_symbols")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UIFont), Member = "get_symbols")]
 	public bool UsesSprite(string s)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 11)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BMFont), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 11)]
 	public UIFont()
 	{
 	}

@@ -10,17 +10,17 @@ public class SpinWithMouse : MonoBehaviour
 	private Transform mTrans;
 
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private void Start()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 9)]
 	private void OnDrag(Vector2 delta)
 	{
 	}

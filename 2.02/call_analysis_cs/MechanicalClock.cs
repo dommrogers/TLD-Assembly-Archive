@@ -46,51 +46,48 @@ public class MechanicalClock : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(MechanicalClock), Member = "UpdateHands")]
-	[Calls(Type = typeof(MechanicalClock), Member = "UpdateWeights")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(MechanicalClock), Member = "UpdatePendulum")]
+	[Calls(Type = typeof(MechanicalClock), Member = "UpdateWeights")]
+	[Calls(Type = typeof(MechanicalClock), Member = "UpdateHands")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
+	[CalledBy(Type = typeof(MechanicalClock), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
-	[CalledBy(Type = typeof(MechanicalClock), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	private void UpdatePendulum()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(MechanicalClock), Member = "Update")]
-	[Calls(Type = typeof(Vector3), Member = "Lerp")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Vector3), Member = "Lerp")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	private void UpdateWeights()
 	{
 	}
 
 	[CalledBy(Type = typeof(MechanicalClock), Member = "Update")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Transform), Member = "set_localEulerAngles")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Transform), Member = "set_localEulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Transform), Member = "set_localEulerAngles")]
 	[CallsUnknownMethods(Count = 17)]
 	private void UpdateHands()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public MechanicalClock()
 	{
 	}

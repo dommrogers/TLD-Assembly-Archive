@@ -17,11 +17,11 @@ internal struct DuplicateFileOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(DuplicateFileOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(DuplicateFileOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(DuplicateFileOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(DuplicateFileOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,11 +29,11 @@ internal struct DuplicateFileOptionsInternal : ISettable, IDisposable
 
 	public string SourceFilename
 	{
+		[CalledBy(Type = typeof(DuplicateFileOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(DuplicateFileOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(DuplicateFileOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(DuplicateFileOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -42,37 +42,36 @@ internal struct DuplicateFileOptionsInternal : ISettable, IDisposable
 	public string DestinationFilename
 	{
 		[CalledBy(Type = typeof(DuplicateFileOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(DuplicateFileOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(DuplicateFileOptionsInternal), Member = "set_DestinationFilename")]
-	[Calls(Type = typeof(DuplicateFileOptionsInternal), Member = "set_SourceFilename")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DuplicateFileOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(DuplicateFileOptionsInternal), Member = "set_SourceFilename")]
+	[Calls(Type = typeof(DuplicateFileOptionsInternal), Member = "set_DestinationFilename")]
 	public void Set(DuplicateFileOptions other)
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerDataStorageInterface), Member = "DuplicateFile")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(DuplicateFileOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(DuplicateFileOptionsInternal), Member = "set_SourceFilename")]
 	[Calls(Type = typeof(DuplicateFileOptionsInternal), Member = "set_DestinationFilename")]
-	[CalledBy(Type = typeof(PlayerDataStorageInterface), Member = "DuplicateFile")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	public void Dispose()
 	{
 	}

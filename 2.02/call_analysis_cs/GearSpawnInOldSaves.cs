@@ -9,47 +9,48 @@ public class GearSpawnInOldSaves : MonoBehaviour
 
 	private static List<string> m_RestoredGuids;
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Add(string guid)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void Reset()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
-	[CalledBy(Type = typeof(GearManager), Member = "ShouldDeleteActiveGearItem")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "CheckForSpawnInOldSaves")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(GearManager), Member = "ShouldDeleteActiveGearItem")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool HasSpawned(string guid)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

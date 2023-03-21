@@ -32,14 +32,14 @@ public class ExternalUserInfo : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 71)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -49,39 +49,39 @@ public class ExternalUserInfo : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(ExternalUserInfoInternal), Member = "get_DisplayName")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ExternalUserInfoInternal), Member = "get_AccountId")]
+	[Calls(Type = typeof(ExternalUserInfoInternal), Member = "get_DisplayName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	internal void Set(ExternalUserInfoInternal? other)
 	{
 	}
 
-	[Calls(Type = typeof(ExternalUserInfoInternal), Member = "get_DisplayName")]
-	[Calls(Type = typeof(ExternalUserInfoInternal), Member = "get_AccountId")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ExternalUserInfoInternal), Member = "get_AccountId")]
+	[Calls(Type = typeof(ExternalUserInfoInternal), Member = "get_DisplayName")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public ExternalUserInfo()
 	{
 	}

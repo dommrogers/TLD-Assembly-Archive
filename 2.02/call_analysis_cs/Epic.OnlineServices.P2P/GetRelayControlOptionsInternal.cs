@@ -15,15 +15,15 @@ internal struct GetRelayControlOptionsInternal : ISettable, IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(P2PInterface), Member = "GetRelayControl")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(P2PInterface), Member = "GetRelayControl")]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

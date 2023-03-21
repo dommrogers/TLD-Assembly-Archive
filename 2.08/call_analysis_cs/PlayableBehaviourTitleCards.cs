@@ -6,21 +6,21 @@ public class PlayableBehaviourTitleCards : PlayableBehaviour
 {
 	private Panel_HUD m_HUD;
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayableBehaviourTitleCards), Member = "OnBehaviourPlay")]
 	[CalledBy(Type = typeof(PlayableBehaviourTitleCards), Member = "OnBehaviourPause")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
 	private bool HasHUD()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(PlayableBehaviourTitleCards), Member = "HasHUD")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 4)]
 	public override void OnBehaviourPlay(Playable playable, FrameData info)
 	{
 	}

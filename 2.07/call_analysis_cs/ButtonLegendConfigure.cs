@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -15,14 +16,14 @@ public class ButtonLegendConfigure : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Badges), Member = "RefreshButtonConfigure")]
 	[CalledBy(Type = typeof(ButtonLegendConfigure), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Badges), Member = "RefreshButtonConfigure")]
 	[CalledBy(Type = typeof(Panel_Rest), Member = "RefreshButtonConfigure")]
-	[Calls(Type = typeof(ButtonLegendConfigure), Member = "RefreshReferences")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(ButtonLegendConfigure), Member = "RefreshReferences")]
 	[Calls(Type = typeof(ButtonLegend), Member = "ConfigureButtonIconSpriteName")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ConfigureButton()
 	{
 	}
@@ -33,12 +34,14 @@ public class ButtonLegendConfigure : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(ButtonLegendConfigure), Member = "ConfigureButton")]
 	[CalledBy(Type = typeof(ButtonLegendConfigure), Member = "Awake")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(ButtonLegendConfigure), Member = "ConfigureButton")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UIPanel), Member = "Find")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void RefreshReferences()
 	{
 	}

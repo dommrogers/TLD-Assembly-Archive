@@ -7,7 +7,7 @@ public class SceneMusicSaveData
 	public bool m_SupressExploreMusic;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SceneMusicSaveData()
 	{
 	}

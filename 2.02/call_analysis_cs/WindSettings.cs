@@ -19,8 +19,8 @@ public class WindSettings
 
 	public Vector3 m_ClothRandomRange;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public WindSettings()
 	{
 	}

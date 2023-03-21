@@ -57,8 +57,8 @@ public class DownsampleAurora : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(DownsampleAurora), Member = "ReattachCommandBuffer")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DownsampleAurora), Member = "ReattachCommandBuffer")]
 	private void OnEnable()
 	{
 	}
@@ -80,119 +80,117 @@ public class DownsampleAurora : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(DownsampleAurora), Member = "ReattachCommandBuffer")]
-	[Calls(Type = typeof(Material), Member = "SetShaderPassEnabled")]
-	[Calls(Type = typeof(Material), Member = "set_shader")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(DownsampleAurora), Member = "DetachCommandBuffer")]
-	[Calls(Type = typeof(Material), Member = "set_shader")]
-	[Calls(Type = typeof(DownsampleAurora), Member = "Initialize")]
 	[Conditional("__DEBUG")]
-	[Calls(Type = typeof(Material), Member = "SetShaderPassEnabled")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DownsampleAurora), Member = "Initialize")]
+	[Calls(Type = typeof(Material), Member = "set_shader")]
+	[Calls(Type = typeof(Material), Member = "SetShaderPassEnabled")]
+	[Calls(Type = typeof(DownsampleAurora), Member = "DetachCommandBuffer")]
+	[Calls(Type = typeof(DownsampleAurora), Member = "ReattachCommandBuffer")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 6)]
 	public void Debug_ToggleEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(AuroraBand), Member = "Start")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Material), Member = "SetShaderPassEnabled")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Material), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Material), Member = ".ctor")]
 	[Calls(Type = typeof(Material), Member = "CopyPropertiesFromMaterial")]
+	[Calls(Type = typeof(Material), Member = "SetShaderPassEnabled")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 8)]
 	public void RegisterAurora(GameObject auroraGO)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void UnRegisterAurora(GameObject auroraGO)
 	{
 	}
 
-	[CalledBy(Type = typeof(DownsampleAurora), Member = "Update")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(DownsampleAurora), Member = "ReattachCommandBuffer")]
-	[CalledBy(Type = typeof(DownsampleAurora), Member = "Debug_ToggleEnable")]
 	[CalledBy(Type = typeof(DownsampleAurora), Member = "OnDisable")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CalledBy(Type = typeof(DownsampleAurora), Member = "Update")]
+	[CalledBy(Type = typeof(DownsampleAurora), Member = "Debug_ToggleEnable")]
+	[CalledBy(Type = typeof(DownsampleAurora), Member = "ReattachCommandBuffer")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
+	[CallsUnknownMethods(Count = 1)]
 	private void DetachCommandBuffer()
 	{
 	}
 
-	[CalledBy(Type = typeof(DownsampleAurora), Member = "Debug_ToggleEnable")]
-	[CalledBy(Type = typeof(DownsampleAurora), Member = "Update")]
 	[CalledBy(Type = typeof(DownsampleAurora), Member = "OnEnable")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(DownsampleAurora), Member = "DetachCommandBuffer")]
+	[CalledBy(Type = typeof(DownsampleAurora), Member = "Update")]
+	[CalledBy(Type = typeof(DownsampleAurora), Member = "Debug_ToggleEnable")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(DownsampleAurora), Member = "DetachCommandBuffer")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
+	[CallsUnknownMethods(Count = 2)]
 	private void ReattachCommandBuffer()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(DownsampleAurora), Member = "Update")]
 	[CalledBy(Type = typeof(DownsampleAurora), Member = "RebuildCommandBuffer")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	private bool IsCommandBufferActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Material), Member = "set_color")]
-	[CalledBy(Type = typeof(DownsampleAurora), Member = "Debug_ToggleEnable")]
 	[CalledBy(Type = typeof(DownsampleAurora), Member = "Start")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Material), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(Material), Member = ".ctor")]
+	[CalledBy(Type = typeof(DownsampleAurora), Member = "Debug_ToggleEnable")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(CommandBuffer), Member = "set_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(CommandBuffer), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Material), Member = ".ctor")]
+	[Calls(Type = typeof(Material), Member = "set_color")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsUnknownMethods(Count = 18)]
 	private void Initialize()
 	{
 	}
 
 	[CalledBy(Type = typeof(DownsampleAurora), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Material), Member = "set_color")]
-	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
-	[Calls(Type = typeof(GraphicsFormatUtility), Member = "GetGraphicsFormat")]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawRenderer")]
-	[Calls(Type = typeof(CommandBuffer), Member = "ClearRenderTarget")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DownsampleAurora), Member = "IsCommandBufferActive")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(DownsampleAurora), Member = "IsCommandBufferActive")]
-	[CallsDeduplicatedMethods(Count = 20)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
+	[Calls(Type = typeof(CommandBuffer), Member = "ClearRenderTarget")]
+	[Calls(Type = typeof(CommandBuffer), Member = "DrawRenderer")]
+	[Calls(Type = typeof(GraphicsFormatUtility), Member = "GetGraphicsFormat")]
+	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
+	[Calls(Type = typeof(Material), Member = "set_color")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 20)]
+	[CallsUnknownMethods(Count = 26)]
 	private void RebuildCommandBuffer()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public DownsampleAurora()
 	{
 	}

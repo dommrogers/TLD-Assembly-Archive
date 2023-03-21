@@ -59,189 +59,148 @@ public class CameraBasedJointPositioning : MonoBehaviour
 
 	private Dictionary<string, JointSavedData> m_SavedJoints;
 
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 10)]
 	public void Start()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 3)]
 	private bool CanApplyCameraMotionToJoint()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
 	[CalledBy(Type = typeof(CameraBasedJointPositioning), Member = "Restore")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateShoulderRotation")]
-	[CallsUnknownMethods(Count = 16)]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "GetShoulderRotation")]
 	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Load")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CallsUnknownMethods(Count = 16)]
 	public void UpdateJoint()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateActiveJointPositioning")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateShoulderRotation")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateShoulderRotation")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateShoulderRotation")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateShoulderRotation")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateShoulderRotation")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateShoulderRotation")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateShoulderRotation")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateActiveJointPositioning")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateActiveJointPositioning")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateShoulderRotation")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateActiveJointPositioning")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateActiveJointPositioning")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateActiveJointPositioning")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateActiveJointPositioning")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateActiveJointPositioning")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateActiveJointPositioning")]
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateActiveJointPositioning")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "UpdateShoulderRotation")]
-	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CallerCount(Count = 19)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Animator), Member = "SetLayerWeight")]
+	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
 	[Calls(Type = typeof(Animator), Member = "get_layerCount")]
 	[Calls(Type = typeof(Animator), Member = "SetLayerWeight")]
-	[Calls(Type = typeof(Animator), Member = "get_layerCount")]
 	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 12)]
 	public void Enable(bool enabled)
 	{
 	}
 
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "UpdateJoint")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "RestoreCameraBasedHandPositioning")]
 	[CalledBy(Type = typeof(CinematicManager), Member = "SwapFPController")]
-	[Calls(Type = typeof(Animator), Member = "SetLayerWeight")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "RestoreCameraBasedHandPositioning")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "OnPlayerDeath")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "GetUpAnimationComplete")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "BreakStruggle")]
 	[CallerCount(Count = 10)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "BreakStruggle")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "OnPlayerDeath")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "GetUpAnimationComplete")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "GetUpAnimationComplete")]
-	[CalledBy(Type = typeof(CinematicManager), Member = "SwapFPController")]
+	[Calls(Type = typeof(Animator), Member = "SetLayerWeight")]
+	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "UpdateJoint")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "BreakStruggle")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "OnPlayerDeath")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "RestoreCameraBasedHandPositioning")]
 	public void Restore()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "SaveCameraBasedHandPositioning")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "SaveCameraBasedHandPositioning")]
-	[CalledBy(Type = typeof(CinematicManager), Member = "SwapFPController")]
-	[CalledBy(Type = typeof(CinematicManager), Member = "SwapFPController")]
 	[CalledBy(Type = typeof(CameraBasedJointPositioning), Member = "ResetForStruggle")]
+	[CalledBy(Type = typeof(CinematicManager), Member = "SwapFPController")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "SaveCameraBasedHandPositioning")]
+	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
-	[CallerCount(Count = 5)]
 	public void Save(string saveName)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "LoadCameraBasedHandPositioning")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
-	[CalledBy(Type = typeof(CinematicManager), Member = "SwapFPController")]
-	[CalledBy(Type = typeof(CinematicManager), Member = "SwapFPController")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "LoadCameraBasedHandPositioning")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CalledBy(Type = typeof(CameraBasedJointPositioning), Member = "UpdateJoint")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(CinematicManager), Member = "SwapFPController")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "LoadCameraBasedHandPositioning")]
 	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 16)]
 	public void Load(string saveName)
 	{
 	}
 
 	[CalledBy(Type = typeof(CameraBasedJointPositioning), Member = "GetShoulderRotation")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	private float GetAngleFromPercentageOfAngleRange(float min, float max, float value, float outMin, float outMax)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(CameraBasedJointPositioning), Member = "UpdateJoint")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "GetAngleFromPercentageOfAngleRange")]
 	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	public float GetShoulderRotation()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "ResetStandardAimingMode")]
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	public void Reset()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "FullResetAimingModes")]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
 	[CalledBy(Type = typeof(CameraBasedJointPositioning), Member = "ResetForStruggle")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "FullResetAimingModes")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 12)]
 	public void FullReset()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "ResetAimingModesForStruggle")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "ResetAimingModesForStruggle")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "FullReset")]
-	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Save")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "Save")]
+	[Calls(Type = typeof(CameraBasedJointPositioning), Member = "FullReset")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void ResetForStruggle()
 	{
 	}

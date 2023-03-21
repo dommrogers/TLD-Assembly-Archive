@@ -7,9 +7,10 @@ public class SnowfallManagerSaveDataProxy
 
 	public List<string> m_Records;
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(SnowfallManager), Member = ".cctor")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 14)]
 	public SnowfallManagerSaveDataProxy()
 	{

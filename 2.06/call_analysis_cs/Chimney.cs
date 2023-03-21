@@ -33,40 +33,40 @@ public class Chimney : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(SmokeTrail), Member = "SetAlpha")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(SmokeTrail), Member = "SetAlpha")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{
 	}
 
+	[CalledBy(Type = typeof(Chimney), Member = "SerializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(Chimney), Member = "SerializeAll")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Chimney), Member = "DeserializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Deserialize(string text)
 	{
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Chimney), Member = "Serialize")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 10)]
 	public static string SerializeAll()
 	{
@@ -74,33 +74,33 @@ public class Chimney : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Chimney), Member = "Deserialize")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(Chimney), Member = "FindByGuid")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Chimney), Member = "Deserialize")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(FireManager), Member = "DeserializeChimneyData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	public static Chimney GetClosestChimney(Vector3 pos)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(FireManager), Member = "DeserializeChimneyData")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Chimney), Member = "DeserializeAll")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(FireManager), Member = "DeserializeChimneyData")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[CallsUnknownMethods(Count = 1)]
 	public static Chimney FindByGuid(string guid)
 	{

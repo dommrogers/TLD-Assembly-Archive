@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class PopupDefinition : ScriptableObject
 {
-	private sealed class _003CDisplayPopup_003Ed__7 : IEnumerator, IDisposable, IEnumerator<object>
+	private sealed class _003CDisplayPopup_003Ed__7 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -25,7 +25,7 @@ public class PopupDefinition : ScriptableObject
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -34,9 +34,9 @@ public class PopupDefinition : ScriptableObject
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 28)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -57,16 +57,16 @@ public class PopupDefinition : ScriptableObject
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Transform), Member = "set_parent")]
-		[Calls(Type = typeof(GameObject), Member = "get_transform")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(GameObject), Member = "SetActive")]
+		[Calls(Type = typeof(GameObject), Member = "get_transform")]
+		[Calls(Type = typeof(Transform), Member = "set_parent")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -86,14 +86,14 @@ public class PopupDefinition : ScriptableObject
 
 	private Action m_OnPopupEndAction;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Action_ShowPopup), Member = "OnExecute")]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(InterfaceManager), Member = "InstantiatePopup")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "InstantiatePopup")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Show(Action onPopupEndAction)
 	{
 	}
@@ -111,9 +111,9 @@ public class PopupDefinition : ScriptableObject
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[IteratorStateMachine(typeof(_003CDisplayPopup_003Ed__7))]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private IEnumerator DisplayPopup(GameObject go, float duration)
 	{
 		return null;

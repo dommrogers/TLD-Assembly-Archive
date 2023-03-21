@@ -10,8 +10,8 @@ public class AmbientMultiPositionEnvironmentTracker : MonoBehaviour
 	private Collider m_Collider;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkGameObjEnvironmentData), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = "TryGetComponent")]
 	[CallsUnknownMethods(Count = 6)]
 	private void Awake()
 	{
@@ -23,17 +23,17 @@ public class AmbientMultiPositionEnvironmentTracker : MonoBehaviour
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkGameObjEnvironmentData), Member = "UpdateAuxSend")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkGameObjEnvironmentData), Member = "AddAkEnvironment")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnTriggerEnter(Collider other)
 	{
 	}

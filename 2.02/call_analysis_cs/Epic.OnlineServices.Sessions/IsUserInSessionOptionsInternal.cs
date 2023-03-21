@@ -15,11 +15,11 @@ internal struct IsUserInSessionOptionsInternal : ISettable, IDisposable
 
 	public string SessionName
 	{
+		[CalledBy(Type = typeof(IsUserInSessionOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(IsUserInSessionOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(IsUserInSessionOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(IsUserInSessionOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,9 +29,9 @@ internal struct IsUserInSessionOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(IsUserInSessionOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(IsUserInSessionOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 2)]
 		set
 		{
 		}
@@ -44,18 +44,18 @@ internal struct IsUserInSessionOptionsInternal : ISettable, IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(SessionsInterface), Member = "IsUserInSession")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(IsUserInSessionOptionsInternal), Member = "set_SessionName")]
 	[Calls(Type = typeof(IsUserInSessionOptionsInternal), Member = "set_TargetUserId")]
-	[CalledBy(Type = typeof(SessionsInterface), Member = "IsUserInSession")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

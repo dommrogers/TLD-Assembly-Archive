@@ -5,9 +5,9 @@ public class AmmoCasingItem : MonoBehaviour
 {
 	public GunType m_AmmoForGunType;
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public AmmoCasingItem()
 	{
 	}

@@ -20,28 +20,28 @@ public class LogAudioEvent : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 14)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Delegate), Member = "Remove")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 8)]
 	private void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public LogAudioEvent()
 	{
 	}

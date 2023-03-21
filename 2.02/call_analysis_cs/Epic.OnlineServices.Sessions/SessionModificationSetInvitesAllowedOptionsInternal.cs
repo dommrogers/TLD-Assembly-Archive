@@ -16,8 +16,8 @@ internal struct SessionModificationSetInvitesAllowedOptionsInternal : ISettable,
 		[CalledBy(Type = typeof(SessionModificationSetInvitesAllowedOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(SessionModificationSetInvitesAllowedOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,16 +29,16 @@ internal struct SessionModificationSetInvitesAllowedOptionsInternal : ISettable,
 	{
 	}
 
-	[Calls(Type = typeof(SessionModificationSetInvitesAllowedOptionsInternal), Member = "set_InvitesAllowed")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(SessionModification), Member = "SetInvitesAllowed")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SessionModificationSetInvitesAllowedOptionsInternal), Member = "set_InvitesAllowed")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

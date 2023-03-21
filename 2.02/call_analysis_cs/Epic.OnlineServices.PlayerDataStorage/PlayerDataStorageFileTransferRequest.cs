@@ -7,7 +7,7 @@ namespace Epic.OnlineServices.PlayerDataStorage;
 public sealed class PlayerDataStorageFileTransferRequest : Handle
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PlayerDataStorageFileTransferRequest()
 	{
 	}
@@ -32,12 +32,12 @@ public sealed class PlayerDataStorageFileTransferRequest : Handle
 		return default(Result);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalAllocate")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result GetFilename(out string outStringBuffer)
 	{
 		outStringBuffer = null;
@@ -66,7 +66,7 @@ public sealed class PlayerDataStorageFileTransferRequest : Handle
 	internal static extern Result EOS_PlayerDataStorageFileTransferRequest_GetFilename(IntPtr handle, uint filenameStringBufferSizeBytes, IntPtr outStringBuffer, ref int outStringLength);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern void EOS_PlayerDataStorageFileTransferRequest_Release(IntPtr playerDataStorageFileTransferHandle);
 }

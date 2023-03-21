@@ -15,17 +15,17 @@ public class TerrainVisibilityTrigger : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(TerrainRenderingManager), Member = "SetTerrainRendering")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TerrainRenderingManager), Member = "SetTerrainRendering")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnTriggerEnter(Collider other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(TerrainRenderingManager), Member = "SetTerrainRendering")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void OnTriggerExit(Collider other)
 	{

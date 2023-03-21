@@ -14,89 +14,73 @@ public class TextureBlenderMaterialPropertyCacheHelper
 		public string property;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 67)]
+		[CallerCount(Count = 68)]
 		public MaterialPropertyPair(Material m, string prop)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(string), Member = "EqualsHelper")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "EqualsHelper")]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 2)]
 		public override bool Equals(object obj)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(ValueType), Member = "GetHashCode")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		public override int GetHashCode()
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	private Dictionary<MaterialPropertyPair, object> nonTexturePropertyValuesForSourceMaterials;
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(string), Member = "Equals")]
 	[CalledBy(Type = typeof(TextureBlenderMaterialPropertyCacheHelper), Member = "GetValueIfAllSourceAreTheSameOrDefault")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.KeyCollection.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "Equals")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 10)]
 	private bool AllNonTexturePropertyValuesAreEqual(string prop)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(TextureBlenderStandardMetallicRoughness), Member = "GetColorIfNoTexture")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(TextureBlenderStandardSpecular), Member = "GetColorIfNoTexture")]
-	[CalledBy(Type = typeof(TextureBlenderStandardSpecular), Member = "GetColorIfNoTexture")]
-	[CalledBy(Type = typeof(TextureBlenderStandardSpecular), Member = "GetColorIfNoTexture")]
-	[CalledBy(Type = typeof(TextureBlenderStandardSpecular), Member = "GetColorIfNoTexture")]
-	[CalledBy(Type = typeof(TextureBlenderStandardMetallicRoughness), Member = "GetColorIfNoTexture")]
 	[CalledBy(Type = typeof(TextureBlenderStandardMetallic), Member = "GetColorIfNoTexture")]
 	[CalledBy(Type = typeof(TextureBlenderStandardMetallicRoughness), Member = "GetColorIfNoTexture")]
-	[CalledBy(Type = typeof(TextureBlenderStandardMetallic), Member = "GetColorIfNoTexture")]
-	[CalledBy(Type = typeof(TextureBlenderStandardMetallic), Member = "GetColorIfNoTexture")]
-	[CalledBy(Type = typeof(TextureBlenderStandardMetallic), Member = "GetColorIfNoTexture")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(TextureBlenderStandardSpecular), Member = "GetColorIfNoTexture")]
 	[CallerCount(Count = 12)]
-	[CalledBy(Type = typeof(TextureBlenderStandardMetallicRoughness), Member = "GetColorIfNoTexture")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void CacheMaterialProperty(Material m, string property, object value)
 	{
 	}
 
+	[CalledBy(Type = typeof(TextureBlenderStandardMetallic), Member = "SetNonTexturePropertyValuesOnResultMaterial")]
 	[CalledBy(Type = typeof(TextureBlenderStandardMetallicRoughness), Member = "SetNonTexturePropertyValuesOnResultMaterial")]
 	[CalledBy(Type = typeof(TextureBlenderStandardSpecular), Member = "SetNonTexturePropertyValuesOnResultMaterial")]
-	[CalledBy(Type = typeof(TextureBlenderStandardSpecular), Member = "SetNonTexturePropertyValuesOnResultMaterial")]
-	[CalledBy(Type = typeof(TextureBlenderStandardMetallic), Member = "SetNonTexturePropertyValuesOnResultMaterial")]
-	[CalledBy(Type = typeof(TextureBlenderStandardSpecular), Member = "SetNonTexturePropertyValuesOnResultMaterial")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(TextureBlenderStandardMetallicRoughness), Member = "SetNonTexturePropertyValuesOnResultMaterial")]
-	[CalledBy(Type = typeof(TextureBlenderStandardSpecular), Member = "SetNonTexturePropertyValuesOnResultMaterial")]
-	[CalledBy(Type = typeof(TextureBlenderStandardMetallicRoughness), Member = "SetNonTexturePropertyValuesOnResultMaterial")]
-	[Calls(Type = typeof(string), Member = "Equals")]
-	[CalledBy(Type = typeof(TextureBlenderStandardMetallic), Member = "SetNonTexturePropertyValuesOnResultMaterial")]
-	[CalledBy(Type = typeof(TextureBlenderStandardMetallic), Member = "SetNonTexturePropertyValuesOnResultMaterial")]
-	[CalledBy(Type = typeof(TextureBlenderStandardMetallic), Member = "SetNonTexturePropertyValuesOnResultMaterial")]
-	[Calls(Type = typeof(TextureBlenderMaterialPropertyCacheHelper), Member = "AllNonTexturePropertyValuesAreEqual")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 12)]
-	[CalledBy(Type = typeof(TextureBlenderStandardMetallicRoughness), Member = "SetNonTexturePropertyValuesOnResultMaterial")]
+	[Calls(Type = typeof(TextureBlenderMaterialPropertyCacheHelper), Member = "AllNonTexturePropertyValuesAreEqual")]
+	[Calls(Type = typeof(Dictionary<, >.KeyCollection.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "Equals")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public object GetValueIfAllSourceAreTheSameOrDefault(string property, object defaultValue)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(TextureBlenderStandardSpecular), Member = ".ctor")]
-	[CalledBy(Type = typeof(TextureBlenderStandardMetallicRoughness), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(TextureBlenderStandardMetallic), Member = ".ctor")]
+	[CalledBy(Type = typeof(TextureBlenderStandardMetallicRoughness), Member = ".ctor")]
+	[CalledBy(Type = typeof(TextureBlenderStandardSpecular), Member = ".ctor")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public TextureBlenderMaterialPropertyCacheHelper()
 	{
 	}

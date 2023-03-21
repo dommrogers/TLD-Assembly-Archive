@@ -9,7 +9,7 @@ public class FrostbiteSaveDataProxy
 	public float[] m_LocationsCurrentFrostbiteDamage;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public FrostbiteSaveDataProxy()
 	{
 	}

@@ -10,13 +10,15 @@ public class ConditionOverTimeBuff : MonoBehaviour
 
 	private PanelReference<Panel_HUD> m_HUD;
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(GearItem), Member = "ApplyBuffs")]
-	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_buffs_add_all")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffNotification")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public void Apply(float normalizedValue)
 	{
 	}

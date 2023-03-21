@@ -7,10 +7,10 @@ public class SetState : MonoBehaviour
 
 	public string m_State;
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnSetState(string state, bool active)
 	{
 	}

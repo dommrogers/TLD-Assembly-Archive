@@ -39,18 +39,18 @@ public class BearHuntRedux : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[CalledBy(Type = typeof(GameManager), Member = "ResetLists")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(BearHuntRedux), Member = "Deserialize")]
+	[CalledBy(Type = typeof(GameManager), Member = "ResetLists")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CallerCount(Count = 3)]
 	public static void Reset()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static string Serialize()
 	{
@@ -58,9 +58,10 @@ public class BearHuntRedux : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(BearHuntRedux), Member = "Reset")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Deserialize(string text)
 	{
@@ -72,18 +73,18 @@ public class BearHuntRedux : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_bear_hunt_redux")]
+	[CalledBy(Type = typeof(Action_BearHuntRedux), Member = "OnExecute")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[CalledBy(Type = typeof(Action_BearHuntRedux), Member = "OnExecute")]
 	public static void Begin()
 	{
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
+	[CalledBy(Type = typeof(BearHuntRedux), Member = "UpdateMission")]
 	[CalledBy(Type = typeof(BearHuntRedux), Member = "MaybeLoseMission")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_bear_hunt_redux")]
+	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(BearHuntRedux), Member = "UpdateMission")]
 	public static void End()
 	{
 	}
@@ -91,32 +92,30 @@ public class BearHuntRedux : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public static bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 27)]
 	[CallsUnknownMethods(Count = 1)]
 	public static bool IsHuntedBear(BaseAi bai)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void OnPlayerDetected(BaseAi bai)
 	{
 	}
 
-	[CalledBy(Type = typeof(BearEncounter), Member = "Update")]
+	[CalledBy(Type = typeof(BearEncounter), Member = "UpdateBearSpawn")]
 	[CalledBy(Type = typeof(BearEncounter), Member = "Update")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(BearEncounter), Member = "UpdateBearSpawn")]
-	[CalledBy(Type = typeof(BearEncounter), Member = "UpdateBearSpawn")]
 	public static bool IsBearSpawned()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -126,14 +125,12 @@ public class BearHuntRedux : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(BearEncounter), Member = "UpdateBearDespawn")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
-	[Calls(Type = typeof(BearHuntRedux), Member = "OnBearEncounterOutcome")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "BreakStruggle")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BearHuntRedux), Member = "OnBearEncounterOutcome")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void OnBearSpearOutcome(BearEncounter.BearSpawnEncounterResult result, BearSpearStruggleOutcome struggleOutcome)
 	{
 	}
@@ -149,67 +146,66 @@ public class BearHuntRedux : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(Action_ActivateBearEncounter), Member = "OnExecute")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_bearhuntredux_encounter_activate")]
 	[CalledBy(Type = typeof(BearHuntRedux), Member = "OnBearEncounterOutcome")]
-	[Calls(Type = typeof(BearHuntRedux), Member = "UpdateBearEncounterInfo")]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(BearEncounter), Member = "GetCurrentActiveBearEncounter")]
-	[Calls(Type = typeof(BearEncounter), Member = "GetCurrentActiveBearEncounterCountInScene")]
-	[Calls(Type = typeof(BearHuntRedux), Member = "FindBearEncounter")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_bearhuntredux_encounter_activate")]
+	[CalledBy(Type = typeof(Action_ActivateBearEncounter), Member = "OnExecute")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(BearHuntRedux), Member = "FindBearEncounter")]
+	[Calls(Type = typeof(BearEncounter), Member = "GetCurrentActiveBearEncounterCountInScene")]
+	[Calls(Type = typeof(BearEncounter), Member = "GetCurrentActiveBearEncounter")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
 	[Calls(Type = typeof(BearEncounter), Member = "Activate")]
+	[Calls(Type = typeof(BearHuntRedux), Member = "UpdateBearEncounterInfo")]
+	[CallsUnknownMethods(Count = 9)]
 	public static bool ActivateEncounter(string missionObjectId, bool activate)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BearHuntRedux), Member = "GetBearEncounterInfo")]
 	public static bool IsEncounterActivated(string missionObjectId)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Action_SetBearEncounterLast), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_bearhuntredux_encounter_last")]
+	[CalledBy(Type = typeof(Action_SetBearEncounterLast), Member = "OnExecute")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BearHuntRedux), Member = "FindBearEncounter")]
 	[Calls(Type = typeof(BearHuntRedux), Member = "UpdateBearEncounterInfo")]
 	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(BearHuntRedux), Member = "FindBearEncounter")]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public static bool SetLastEncounter(string missionObjectId, bool isLast)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Action_SetBearEncounterPostStruggleBehavior), Member = "OnExecute")]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(BearHuntRedux), Member = "UpdateBearEncounterInfo")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_bearhuntredux_encounter_poststrugglemode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BearHuntRedux), Member = "FindBearEncounter")]
+	[CalledBy(Type = typeof(Action_SetBearEncounterPostStruggleBehavior), Member = "OnExecute")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BearHuntRedux), Member = "FindBearEncounter")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BearHuntRedux), Member = "UpdateBearEncounterInfo")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[CallsUnknownMethods(Count = 5)]
 	public static bool SetPostStruggleBehavior(string missionObjectId, BearEncounter.PostStruggleBehavior postStruggleBehavior)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(BearHuntRedux), Member = "GetBearEncounterInfo")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BearHuntRedux), Member = "GetBearEncounterInfo")]
 	public static bool IsLastEncounter(string missionObjectId)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BearHuntRedux), Member = "GetBearEncounterInfo")]
 	public static bool HasWonLatestEncounter(string missionObjectId)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -220,23 +216,17 @@ public class BearHuntRedux : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public static bool GetPlayerDiesAfterSpearMiss()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[CalledBy(Type = typeof(HUDManager), Member = "UpdateDebugLines")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 3)]
 	public static string GetDebugText()
 	{
 		return null;
@@ -256,27 +246,25 @@ public class BearHuntRedux : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(BearHuntRedux), Member = "RetrieveSpawnedBear")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(BearEncounter), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(BearHuntRedux), Member = "RetrieveSpawnedBear")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private static BaseAi FindHuntBear()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Debug), Member = "LogFormat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private static void Win()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(BearHuntRedux), Member = "OnBearEncounterOutcome")]
 	[CallsUnknownMethods(Count = 1)]
@@ -284,66 +272,67 @@ public class BearHuntRedux : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(TLD_IsBearEncounterLast), Member = "OnCheck")]
-	[CalledBy(Type = typeof(TLD_IsLatestBearEncounterWon), Member = "OnCheck")]
-	[CalledBy(Type = typeof(BearHuntRedux), Member = "UpdateBearEncounterInfo")]
-	[CalledBy(Type = typeof(BearHuntRedux), Member = "GetOrCreateBearEncounterInfo")]
-	[CalledBy(Type = typeof(TLD_IsBearEncounterActivated), Member = "OnCheck")]
-	[CalledBy(Type = typeof(BearHuntRedux), Member = "IsLastEncounter")]
 	[CalledBy(Type = typeof(BearHuntRedux), Member = "IsEncounterActivated")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallerCount(Count = 8)]
+	[CalledBy(Type = typeof(BearHuntRedux), Member = "IsLastEncounter")]
 	[CalledBy(Type = typeof(BearHuntRedux), Member = "HasWonLatestEncounter")]
+	[CalledBy(Type = typeof(BearHuntRedux), Member = "GetOrCreateBearEncounterInfo")]
+	[CalledBy(Type = typeof(BearHuntRedux), Member = "UpdateBearEncounterInfo")]
+	[CalledBy(Type = typeof(TLD_IsLatestBearEncounterWon), Member = "OnCheck")]
+	[CalledBy(Type = typeof(TLD_IsBearEncounterActivated), Member = "OnCheck")]
+	[CalledBy(Type = typeof(TLD_IsBearEncounterLast), Member = "OnCheck")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 3)]
 	private static BearEncounterInfo GetBearEncounterInfo(string missionObjectId)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(BearHuntRedux), Member = "GetBearEncounterInfo")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private static BearEncounterInfo GetOrCreateBearEncounterInfo(string missionObjectId)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(BearHuntRedux), Member = "OnBearEncounterOutcome")]
-	[CalledBy(Type = typeof(BearHuntRedux), Member = "SetPostStruggleBehavior")]
+	[CalledBy(Type = typeof(BearHuntRedux), Member = "ActivateEncounter")]
 	[CalledBy(Type = typeof(BearHuntRedux), Member = "SetLastEncounter")]
+	[CalledBy(Type = typeof(BearHuntRedux), Member = "SetPostStruggleBehavior")]
+	[CalledBy(Type = typeof(BearHuntRedux), Member = "OnBearEncounterOutcome")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(BearEncounter), Member = "GetMissionObjectId")]
 	[Calls(Type = typeof(BearHuntRedux), Member = "GetBearEncounterInfo")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(BearHuntRedux), Member = "ActivateEncounter")]
+	[CallsUnknownMethods(Count = 2)]
 	private static void UpdateBearEncounterInfo(BearEncounter bearEncounter)
 	{
 	}
 
-	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(BearHuntRedux), Member = "OnBearSpearOutcomeInternal")]
 	[CalledBy(Type = typeof(BearHuntRedux), Member = "OnBearSpearOutcome")]
-	[Calls(Type = typeof(BearHuntRedux), Member = "UpdateBearEncounterInfo")]
-	[Calls(Type = typeof(BearHuntRedux), Member = "ActivateEncounter")]
-	[Calls(Type = typeof(Debug), Member = "LogFormat")]
-	[Calls(Type = typeof(BearEncounter), Member = "EncounterWon")]
-	[Calls(Type = typeof(BearEncounter), Member = "EncounterFailed")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(BearHuntRedux), Member = "OnBearSpearOutcomeInternal")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BearEncounter), Member = "EncounterFailed")]
+	[Calls(Type = typeof(BearEncounter), Member = "EncounterWon")]
+	[Calls(Type = typeof(Debug), Member = "LogFormat")]
 	[Calls(Type = typeof(BearEncounter), Member = "GetMissionObjectId")]
+	[Calls(Type = typeof(BearHuntRedux), Member = "ActivateEncounter")]
+	[Calls(Type = typeof(BearHuntRedux), Member = "UpdateBearEncounterInfo")]
+	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 3)]
 	private static void OnBearEncounterOutcome(BearEncounter.BearSpawnEncounterResult result, BearSpearStruggleOutcome struggleOutcome, BearEncounter bearEncounter, BearHuntAiRedux bearHuntReduxAi)
 	{
 	}
 
 	[CalledBy(Type = typeof(BearHuntRedux), Member = "ActivateEncounter")]
-	[CalledBy(Type = typeof(BearHuntRedux), Member = "SetPostStruggleBehavior")]
 	[CalledBy(Type = typeof(BearHuntRedux), Member = "SetLastEncounter")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(BearHuntRedux), Member = "SetPostStruggleBehavior")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	private static BearEncounter FindBearEncounter(string missionObjectId)
 	{
 		return null;

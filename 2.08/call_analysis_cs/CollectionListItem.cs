@@ -24,36 +24,34 @@ public class CollectionListItem : MonoBehaviour
 	private CollectionListItemInfo m_ItemInfo;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 28)]
+	[CallerCount(Count = 29)]
 	public CollectionListItemInfo GetItemInfo()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "AddWhatIKnowEntryToList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildWhatIKnowList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "AddTrustEntryToList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildTrustList")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectionsList")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "AddEntryToList")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "BuildTrustList")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "AddTrustEntryToList")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "BuildWhatIKnowList")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "AddWhatIKnowEntryToList")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectionsList")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetItemInfo(CollectionListItemInfo itemInfo)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowListItemsColor")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTrustListItemsColor")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateCollectionListItemsColor")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTrustListItemsColor")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowListItemsColor")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetSelected(bool selected)
 	{
 	}

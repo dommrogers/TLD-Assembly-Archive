@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -40,19 +39,19 @@ public struct DVector2
 	[CallerCount(Count = 0)]
 	public bool IsContainedIn(DRect r)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public bool IsContainedInWithMargin(DRect r)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public override string ToString()
 	{
@@ -60,13 +59,11 @@ public struct DVector2
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatDouble")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatDouble")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatDouble")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string ToString(string formatS)
 	{
 		return null;
@@ -77,6 +74,6 @@ public struct DVector2
 	[CallsUnknownMethods(Count = 1)]
 	public static double Distance(DVector2 a, DVector2 b)
 	{
-		return default(double);
+		return 0.0;
 	}
 }

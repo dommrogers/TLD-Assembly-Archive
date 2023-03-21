@@ -30,14 +30,14 @@ public sealed class Bloom : PostProcessEffectSettings
 	[CallsUnknownMethods(Count = 1)]
 	public override bool IsEnabledAndSupported(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 51)]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[Calls(Type = typeof(ColorParameter), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ColorParameter), Member = ".ctor")]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 51)]
 	public Bloom()
 	{
 	}

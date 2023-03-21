@@ -28,8 +28,8 @@ public class PersistentControllerStateSaveData
 
 	public string m_Id;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public PersistentControllerStateSaveData()
 	{
 	}

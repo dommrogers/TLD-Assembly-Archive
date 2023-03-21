@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class Tutorial5 : MonoBehaviour
 {
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 0)]
 	public void SetDurationToCurrentProgress()
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public Tutorial5()
 	{
 	}

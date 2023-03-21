@@ -12,21 +12,22 @@ public class Action_SetEpisodeProgress : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[CallsUnknownMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(StatContainer), Member = "GetValue")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(StatContainer), Member = "GetValue")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(StatsManager), Member = "SetValue")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 14)]
 	protected override void OnExecute()
 	{
 	}

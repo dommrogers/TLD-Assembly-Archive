@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using NodeCanvas.StateMachines;
@@ -36,13 +36,15 @@ public class NestedFSM : BTNode, IGraphAssignable
 	{
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -50,39 +52,41 @@ public class NestedFSM : BTNode, IGraphAssignable
 
 	private Graph NodeCanvas_002EFramework_002EIGraphAssignable_002EnestedGraph
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 3)]
+		[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private Graph[] NodeCanvas_002EFramework_002EIGraphAssignable_002EGetInstances()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Graph), Member = "get_primeNode")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Graph), Member = "Stop")]
-	[Calls(Type = typeof(Graph), Member = "Stop")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(NestedFSM), Member = "CheckInstance")]
 	[Calls(Type = typeof(Graph), Member = "StartGraph")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Graph), Member = "Stop")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 7)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
@@ -93,43 +97,47 @@ public class NestedFSM : BTNode, IGraphAssignable
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Graph), Member = "Stop")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	protected override void OnReset()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Graph), Member = "Pause")]
 	[CallsUnknownMethods(Count = 1)]
 	public override void OnGraphPaused()
 	{
 	}
 
-	[Calls(Type = typeof(Graph), Member = "Stop")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Graph), Member = "Stop")]
 	[CallsUnknownMethods(Count = 1)]
 	public override void OnGraphStoped()
 	{
 	}
 
 	[CalledBy(Type = typeof(NestedFSM), Member = "OnExecute")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Graph), Member = "Clone")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private FSM CheckInstance()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public NestedFSM()
 	{

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -23,18 +22,18 @@ public class QualityLevelFilter : MonoBehaviour
 	private List<GameObject> m_Children;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(Transform), Member = "GetChild")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 8)]
 	public void Start()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Update()
 	{
 	}
@@ -43,7 +42,7 @@ public class QualityLevelFilter : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool PassesFilter()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Gameplay.Tunable;
+using TLD.SaveState;
 using TLD.Stats;
 using UnityEngine;
 
@@ -150,7 +151,7 @@ public class CustomExperienceMode : ExperienceMode
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -159,122 +160,133 @@ public class CustomExperienceMode : ExperienceMode
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
 	[CallsUnknownMethods(Count = 1)]
 	public override PackSettings GetPackSettings()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetIndoorStartChance()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetAuroraChanceModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetWindSpeedModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetWindChangeFrequencyModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetBloodScentModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetWildlifeDetectionModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetPlantSpawnModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetWildlifeRespawnTimeModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetWolfFleeModifier(CustomTunableNLMH tunable)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetRegularWolfFleeModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetTimberWolfFleeModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetProportionalReduceMaxItems()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public static int GetSharingStringLengthWithDashes()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(CustomExperienceMode), Member = "OnValidate")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "SetCustomXPSettingsFromUI")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
+	[CalledBy(Type = typeof(CustomExperienceMode), Member = "OnValidate")]
 	[CalledBy(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = "GetValue")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 109)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 98)]
 	public bool UpdateBaseValues()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -283,25 +295,13 @@ public class CustomExperienceMode : ExperienceMode
 		return default(CustomTunableNLMHV);
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(StatContainer), Member = "GetValue")]
-	[Calls(Type = typeof(StatContainer), Member = "GetValue")]
-	[Calls(Type = typeof(StatContainer), Member = "GetValue")]
-	[Calls(Type = typeof(StatContainer), Member = "GetValue")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[CallsDeduplicatedMethods(Count = 79)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(StatContainer), Member = "GetValue")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 78)]
 	[CallsUnknownMethods(Count = 3)]
 	public void SendAnalytics()
 	{
@@ -326,137 +326,27 @@ public class CustomExperienceMode : ExperienceMode
 		return null;
 	}
 
-	[Calls(Type = typeof(CustomExperienceMode), Member = "ConvertDecToBase")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "ConvertDecToBase")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "ConvertDecToBase")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "ConvertDecToBase")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(ExperienceModeManager), Member = "SetCurrentCustomModeString")]
-	[CalledBy(Type = typeof(ExperienceModeManager), Member = "Deserialize")]
-	[CalledBy(Type = typeof(ExperienceModeManager), Member = "Awake")]
-	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateNewGame")]
-	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "SetValuesToMatchXPMode")]
-	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "SetCustomModeString")]
-	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnEnterCodePopupCancelled")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnEnterCodePopupConfirmed")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "UpdateBaseValues")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "ConvertDecToBase")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "ConvertDecToBase")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(Convert), Member = "FromBase64CharPtr")]
+	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnEnterCodePopupCancelled")]
+	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "SetCustomModeString")]
+	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "SetValuesToMatchXPMode")]
+	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateNewGame")]
+	[CalledBy(Type = typeof(ExperienceModeManager), Member = "Awake")]
+	[CalledBy(Type = typeof(ExperienceModeManager), Member = "Deserialize")]
+	[CalledBy(Type = typeof(ExperienceModeManager), Member = "SetCurrentCustomModeString")]
 	[CallerCount(Count = 8)]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
+	[Calls(Type = typeof(Convert), Member = "FromBase64CharPtr")]
+	[Calls(Type = typeof(BitArray), Member = ".ctor")]
 	[Calls(Type = typeof(BitArray), Member = "Get")]
 	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "BitsToDecimal")]
+	[Calls(Type = typeof(CustomExperienceMode), Member = "ConvertDecToBase")]
+	[Calls(Type = typeof(CustomExperienceMode), Member = "UpdateBaseValues")]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool CreateCustomModeFromString(CustomExperienceMode customMode, string inputString)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "GetBitArrayFromDec")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(Convert), Member = "ToBase64String")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnContinue")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnShareExperiencePopup")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnEnterCode")]
@@ -464,128 +354,22 @@ public class CustomExperienceMode : ExperienceMode
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "DoMainScreenControls")]
 	[CalledBy(Type = typeof(ExperienceModeManager), Member = "Serialize")]
 	[CalledBy(Type = typeof(ExperienceModeManager), Member = "GetCurrentCustomModeString")]
-	[CalledBy(Type = typeof(InternalUserReport._003C_003Ec__DisplayClass7_0), Member = "<Send>b__1")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "GetBitArrayFromDec")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "GetBitArrayFromDec")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "GetBitArrayFromDec")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "GetBitArrayFromDec")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "GetBitArrayFromDec")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "GetBitArrayFromDec")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
+	[CalledBy(TypeFullName = "InternalUserReport.<>c__DisplayClass7_0", Member = "<Send>b__1")]
 	[CallerCount(Count = 8)]
 	[Calls(Type = typeof(BitArray), Member = ".ctor")]
 	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
 	[Calls(Type = typeof(BitArray), Member = ".ctor")]
 	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
+	[Calls(Type = typeof(CustomExperienceMode), Member = "GetBitArrayFromDec")]
+	[Calls(Type = typeof(Convert), Member = "ToBase64String")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 11)]
 	public static string CreateStringFromCustomMode(CustomExperienceMode customMode)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
 	[CallerCount(Count = 32)]
 	[Calls(Type = typeof(BitArray), Member = ".ctor")]
 	[Calls(Type = typeof(BitArray), Member = "Get")]
@@ -593,36 +377,25 @@ public class CustomExperienceMode : ExperienceMode
 	[CallsUnknownMethods(Count = 3)]
 	private static int BitsToDecimal(BitArray bitArray, int startIndex, int length)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
-	[CalledBy(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
-	[CalledBy(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
-	[CalledBy(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
-	[CalledBy(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private static int[] ConvertDecToBase(int decimalValue, int baseValue, int size)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
-	[CalledBy(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
-	[CalledBy(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
-	[CalledBy(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
-	[CalledBy(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
-	[CalledBy(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
-	[CalledBy(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
-	[Calls(Type = typeof(BitArray), Member = "Set")]
-	[Calls(Type = typeof(BitArray), Member = "Get")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
-	[Calls(Type = typeof(BitArray), Member = ".ctor")]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(BitArray), Member = ".ctor")]
+	[Calls(Type = typeof(BitArray), Member = ".ctor")]
+	[Calls(Type = typeof(BitArray), Member = "Get")]
+	[Calls(Type = typeof(BitArray), Member = "Set")]
+	[CallsUnknownMethods(Count = 2)]
 	private static BitArray GetBitArrayFromDec(int decValue, int desiredLength)
 	{
 		return null;

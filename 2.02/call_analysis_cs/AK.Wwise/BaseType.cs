@@ -11,22 +11,9 @@ public abstract class BaseType
 
 	private byte[] valueGuidInternal;
 
-	public abstract WwiseObjectReference ObjectReference
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		set;
-	}
+	public abstract WwiseObjectReference ObjectReference { get; set; }
 
-	public abstract WwiseObjectType WwiseObjectType
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	public abstract WwiseObjectType WwiseObjectType { get; }
 
 	public virtual string Name
 	{
@@ -47,29 +34,29 @@ public abstract class BaseType
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
 	public int ID
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 5)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 5)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public byte[] valueGuid
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(WwiseObjectReference), Member = "get_Guid")]
 		[Calls(Type = typeof(Guid), Member = "ToByteArray")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -77,33 +64,33 @@ public abstract class BaseType
 		}
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public virtual bool IsValid()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool Validate()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	protected void Verify(AKRESULT result)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
 	public override string ToString()
 	{
@@ -111,7 +98,7 @@ public abstract class BaseType
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	protected BaseType()
 	{
 	}

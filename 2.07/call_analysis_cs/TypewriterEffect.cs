@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Text;
 using Cpp2ILInjected.CallAnalysis;
@@ -47,26 +46,26 @@ public class TypewriterEffect : MonoBehaviour
 
 	public bool isActive
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[Calls(Type = typeof(TypewriterEffect), Member = "Update")]
-	[Calls(Type = typeof(TypewriterEffect), Member = "Finish")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TypewriterEffect), Member = "Finish")]
+	[Calls(Type = typeof(TypewriterEffect), Member = "Update")]
 	public void ResetToBeginning()
 	{
 	}
 
 	[CalledBy(Type = typeof(TypewriterEffect), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
-	[Calls(Type = typeof(UIScrollView), Member = "UpdatePosition")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UIScrollView), Member = "UpdatePosition")]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Finish()
 	{
@@ -77,46 +76,31 @@ public class TypewriterEffect : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(TypewriterEffect), Member = "ResetToBeginning")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UILabel), Member = "get_processedText")]
+	[Calls(Type = typeof(UIScrollView), Member = "UpdatePosition")]
+	[Calls(Type = typeof(NGUIText), Member = "ParseSymbol")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
+	[Calls(Type = typeof(BetterList<>), Member = "RemoveAt")]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
 	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[Calls(Type = typeof(NGUIText), Member = "EncodeAlpha")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CalledBy(Type = typeof(TypewriterEffect), Member = "ResetToBeginning")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(UIScrollView), Member = "UpdatePosition")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UILabel), Member = "get_processedText")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(NGUIText), Member = "ParseSymbol")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(UIScrollView), Member = "UpdatePosition")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public TypewriterEffect()
 	{
 	}

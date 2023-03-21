@@ -11,19 +11,20 @@ public class AchievementTitleAssociationList : WrappedCachedList<AchievementTitl
 	[CallsUnknownMethods(Count = 1)]
 	public AchievementTitleAssociationList(IntPtr self)
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(WrappedCachedList<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public AchievementTitleAssociationList()
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	~AchievementTitleAssociationList()
 	{
 	}

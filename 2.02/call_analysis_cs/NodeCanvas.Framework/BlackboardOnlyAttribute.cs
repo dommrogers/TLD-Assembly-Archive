@@ -6,7 +6,7 @@ namespace NodeCanvas.Framework;
 public class BlackboardOnlyAttribute : Attribute
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public BlackboardOnlyAttribute()
 	{
 	}

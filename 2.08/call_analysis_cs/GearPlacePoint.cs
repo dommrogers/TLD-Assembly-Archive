@@ -50,9 +50,9 @@ public class GearPlacePoint : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(GearPlacePoint), Member = "CheckGearStillPlaced")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GearPlacePoint), Member = "CheckForPlacedGearAfterLoad")]
+	[Calls(Type = typeof(GearPlacePoint), Member = "CheckGearStillPlaced")]
 	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
@@ -68,71 +68,65 @@ public class GearPlacePoint : MonoBehaviour
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public void RefreshPlacedGear()
 	{
 	}
 
-	[CalledBy(Type = typeof(GearPlacePoint), Member = "DropAndPlaceItem")]
-	[CalledBy(Type = typeof(GearPlacePoint), Member = "Start")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "ExitPlaceMesh")]
+	[CalledBy(Type = typeof(GearPlacePoint), Member = "Start")]
+	[CalledBy(Type = typeof(GearPlacePoint), Member = "DropAndPlaceItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(GearPlacePoint), Member = "MaybeInstantiateDummyCookingPot")]
-	[Calls(Type = typeof(GearItem), Member = "SetPlacePoint")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GearItem), Member = "SetPlacePoint")]
+	[Calls(Type = typeof(GearPlacePoint), Member = "MaybeInstantiateDummyCookingPot")]
 	[Calls(Type = typeof(GearPlacePoint), Member = "UpdateAttachedFire")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void ItemPlaced(GearItem previousPlacedItem, GearItem newPlacedItem)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_GearSelect), Member = "DoFirePickerAction")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(GearItem), Member = "Drop")]
 	[Calls(Type = typeof(GearPlacePoint), Member = "ItemPlaced")]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "DoFirePickerAction")]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "DoFirePickerAction")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 9)]
 	public void DropAndPlaceItem(GearItem newPlacedItem)
 	{
 	}
 
 	[CalledBy(Type = typeof(GearItem), Member = "MaybePlaceGear")]
-	[Calls(Type = typeof(GearPlacePoint), Member = "UpdateAttachedFire")]
-	[Calls(Type = typeof(GearItem), Member = "SetPlacePoint")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "SetPlacePoint")]
+	[Calls(Type = typeof(GearPlacePoint), Member = "UpdateAttachedFire")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 5)]
 	public void PlaceGear(GearItem gi, bool reposition)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
 	[CalledBy(Type = typeof(GearPlacePoint), Member = "FindGearAtPlacePoint")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 4)]
 	public bool IsAuthorizedPrefab(GameObject testedObject)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(GearItem), Member = "MaybePlaceGear")]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "FindFireEmptyPlacePoint")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static GearPlacePoint FindFirstEmptyPlacePoint(GameObject parent)
 	{
@@ -140,100 +134,103 @@ public class GearPlacePoint : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(GearItem), Member = "MaybePlaceGear")]
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 19)]
 	public static GearPlacePoint FindTargetPlacePoint(GameObject parent, string name)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(GearPlacePoint), Member = "CheckGearStillPlaced")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GearPlacePoint), Member = "UpdateAttachedFire")]
 	[Calls(Type = typeof(GearItem), Member = "SetPlacePoint")]
-	[CalledBy(Type = typeof(GearPlacePoint), Member = "CheckGearStillPlaced")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void ResetPlacedGear()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(GearPlacePoint), Member = "Update")]
-	[Calls(Type = typeof(GearPlacePoint), Member = "ResetPlacedGear")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "IsCurrent")]
+	[Calls(Type = typeof(GearPlacePoint), Member = "ResetPlacedGear")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	private void CheckGearStillPlaced()
 	{
 	}
 
 	[CalledBy(Type = typeof(CookingPotItem), Member = "ExitPlaceMesh")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
-	[CalledBy(Type = typeof(GearPlacePoint), Member = "CheckForPlacedGearAfterLoad")]
 	[CalledBy(Type = typeof(GearPlacePoint), Member = "Start")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Physics), Member = "OverlapSphere")]
-	[CallsDeduplicatedMethods(Count = 16)]
+	[CalledBy(Type = typeof(GearPlacePoint), Member = "CheckForPlacedGearAfterLoad")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Physics), Member = "OverlapSphere")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(GearPlacePoint), Member = "IsAuthorizedPrefab")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 9)]
 	private GearItem FindGearAtPlacePoint()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(GearPlacePoint), Member = "ItemPlaced")]
-	[Calls(Type = typeof(CookingPotItem), Member = "StartCooking")]
-	[Calls(Type = typeof(GearItem), Member = "MaybePlayCookingSlotPlacementAudio")]
-	[Calls(Type = typeof(GearPlacePoint), Member = "UpdateAttachedFire")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GearItem), Member = "SetPlacePoint")]
 	[Calls(Type = typeof(GearItem), Member = "LoadGearItemPrefab")]
-	[Calls(Type = typeof(GearItem), Member = "SetPlacePoint")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemAtPlayersFeet")]
+	[Calls(Type = typeof(GearPlacePoint), Member = "UpdateAttachedFire")]
+	[Calls(Type = typeof(GearItem), Member = "MaybePlayCookingSlotPlacementAudio")]
+	[Calls(Type = typeof(CookingPotItem), Member = "StartCooking")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 6)]
 	private void MaybeInstantiateDummyCookingPot()
 	{
 	}
 
-	[CalledBy(Type = typeof(GearPlacePoint), Member = "ResetPlacedGear")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(GearPlacePoint), Member = "CheckForPlacedGearAfterLoad")]
-	[CalledBy(Type = typeof(GearPlacePoint), Member = "MaybeInstantiateDummyCookingPot")]
-	[CalledBy(Type = typeof(GearPlacePoint), Member = "PlaceGear")]
 	[CalledBy(Type = typeof(GearPlacePoint), Member = "ItemPlaced")]
-	[Calls(Type = typeof(CookingPotItem), Member = "AttachToFire")]
-	[Calls(Type = typeof(CookingPotItem), Member = "DetachFromFire")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(GearPlacePoint), Member = "PlaceGear")]
+	[CalledBy(Type = typeof(GearPlacePoint), Member = "ResetPlacedGear")]
+	[CalledBy(Type = typeof(GearPlacePoint), Member = "MaybeInstantiateDummyCookingPot")]
+	[CalledBy(Type = typeof(GearPlacePoint), Member = "CheckForPlacedGearAfterLoad")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
+	[Calls(Type = typeof(CookingPotItem), Member = "DetachFromFire")]
+	[Calls(Type = typeof(CookingPotItem), Member = "AttachToFire")]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateAttachedFire(GearItem placedGearOld, GearItem placedGearNew)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[CalledBy(Type = typeof(GearPlacePoint), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 13)]
 	private void AddDefaultCapsuleCollider()
 	{
 	}
 
+	[CalledBy(Type = typeof(GearPlacePoint), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GearPlacePoint), Member = "FindGearAtPlacePoint")]
 	[Calls(Type = typeof(GearItem), Member = "SetPlacePoint")]
 	[Calls(Type = typeof(GearPlacePoint), Member = "UpdateAttachedFire")]
-	[CalledBy(Type = typeof(GearPlacePoint), Member = "Update")]
 	[CallsUnknownMethods(Count = 1)]
 	private void CheckForPlacedGearAfterLoad()
 	{

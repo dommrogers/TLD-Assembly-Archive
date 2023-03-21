@@ -17,11 +17,11 @@ internal struct CloseConnectionOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(CloseConnectionOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CloseConnectionOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CloseConnectionOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CloseConnectionOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -31,9 +31,9 @@ internal struct CloseConnectionOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(CloseConnectionOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(CloseConnectionOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 2)]
 		set
 		{
 		}
@@ -41,11 +41,11 @@ internal struct CloseConnectionOptionsInternal : ISettable, IDisposable
 
 	public SocketId SocketId
 	{
+		[CalledBy(Type = typeof(CloseConnectionOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CloseConnectionOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[Calls(Type = typeof(SocketIdInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CloseConnectionOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CloseConnectionOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		set
 		{
 		}
@@ -60,18 +60,18 @@ internal struct CloseConnectionOptionsInternal : ISettable, IDisposable
 	}
 
 	[CalledBy(Type = typeof(P2PInterface), Member = "CloseConnection")]
-	[Calls(Type = typeof(CloseConnectionOptionsInternal), Member = "set_SocketId")]
-	[Calls(Type = typeof(CloseConnectionOptionsInternal), Member = "set_RemoteUserId")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CloseConnectionOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(CloseConnectionOptionsInternal), Member = "set_RemoteUserId")]
+	[Calls(Type = typeof(CloseConnectionOptionsInternal), Member = "set_SocketId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

@@ -20,9 +20,9 @@ public sealed class SuffocationScreenEffect : PostProcessEffectSettings
 	public TextureParameter m_NoiseTexture;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(Vector4Parameter), Member = ".ctor")]
 	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 36)]
 	public SuffocationScreenEffect()
 	{

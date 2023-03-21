@@ -11,9 +11,9 @@ public class State_SandboxSubFSM : State_TLDBaseFSM
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NestedFSMState), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public State_SandboxSubFSM()
 	{
 	}

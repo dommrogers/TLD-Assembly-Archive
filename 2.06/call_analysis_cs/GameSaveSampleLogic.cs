@@ -32,39 +32,37 @@ public class GameSaveSampleLogic : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Gdk), Member = "get_Helpers")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(BinaryFormatter), Member = "Serialize")]
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(BinaryFormatter), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BinaryFormatter), Member = ".ctor")]
 	[Calls(Type = typeof(MemoryStream), Member = ".ctor")]
+	[Calls(Type = typeof(BinaryFormatter), Member = "Serialize")]
+	[Calls(Type = typeof(Gdk), Member = "get_Helpers")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 19)]
 	public void Save()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Gdk), Member = "get_Helpers")]
 	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[Calls(Type = typeof(Gdk), Member = "get_Helpers")]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(Gdk), Member = "get_Helpers")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 13)]
 	public void Load()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(BinaryFormatter), Member = "Deserialize")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(BinaryFormatter), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BinaryFormatter), Member = ".ctor")]
 	[Calls(Type = typeof(MemoryStream), Member = ".ctor")]
+	[Calls(Type = typeof(BinaryFormatter), Member = "Deserialize")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 18)]
 	private void OnGameSaveLoaded(object sender, GameSaveLoadedArgs saveData)
 	{
 	}

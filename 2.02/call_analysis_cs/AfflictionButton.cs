@@ -51,66 +51,63 @@ public class AfflictionButton : MonoBehaviour
 
 	private int m_Index;
 
-	[Calls(Type = typeof(AfflictionButton), Member = "UpdateFillBar")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AfflictionButton), Member = "UpdateFillBar")]
 	private void Update()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(AfflictionButton), Member = "SetSelected")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(AfflictionButton), Member = "SetSelected")]
 	[Calls(Type = typeof(Panel_FirstAid), Member = "SelectAffliction")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnClick()
 	{
 	}
 
+	[CalledBy(Type = typeof(AfflictionButton), Member = "SetSelected")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(AfflictionButton), Member = "GetColorBasedOnAffliction")]
 	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[CalledBy(Type = typeof(AfflictionButton), Member = "SetSelected")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
 	private void SetColor(bool isSelected)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "CheckForAfflictionListChange")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "CheckIfSelectedAfflictionHealed")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshScrollList")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "SelectAffliction")]
 	[CalledBy(Type = typeof(AfflictionButton), Member = "OnClick")]
-	[Calls(Type = typeof(AfflictionButton), Member = "SetColor")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "SelectAffliction")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshScrollList")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "CheckIfSelectedAfflictionHealed")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "CheckForAfflictionListChange")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(AfflictionButton), Member = "SetColor")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetSelected(bool selected)
 	{
 	}
 
-	[Calls(Type = typeof(AfflictionButton), Member = "GetColorBasedOnAffliction")]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshScrollList")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(AfflictionButton), Member = "UpdateFillBar")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(Type = typeof(AfflictionButton), Member = "GetColorBasedOnAffliction")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AfflictionButton), Member = "UpdateFillBar")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetCauseAndEffect(string causeStr, AfflictionType affType, AfflictionBodyArea location, int index, string effectName, string spriteName)
 	{
 	}
@@ -119,44 +116,38 @@ public class AfflictionButton : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public int GetIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Affliction), Member = "IsBeneficial")]
 	[CalledBy(Type = typeof(AfflictionButton), Member = "SetColor")]
 	[CalledBy(Type = typeof(AfflictionButton), Member = "SetCauseAndEffect")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "UpdateCoverFlowColor")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "UpdateSelectedAffliction")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "UpdateBodyIconActiveAnimation")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "UpdateBodyIconColors")]
-	[Calls(Type = typeof(Affliction), Member = "IsBeneficial")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Affliction), Member = "IsBeneficial")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Color GetColorBasedOnAffliction(AfflictionType m_AfflictionType, bool isHovering)
 	{
 		return default(Color);
 	}
 
-	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
-	[CallsUnknownMethods(Count = 47)]
-	[CalledBy(Type = typeof(AfflictionButton), Member = "SetCauseAndEffect")]
 	[CalledBy(Type = typeof(AfflictionButton), Member = "Update")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CalledBy(Type = typeof(AfflictionButton), Member = "SetCauseAndEffect")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Frostbite), Member = "GetFrostbiteRiskValue")]
+	[Calls(Type = typeof(CabinFever), Member = "GetCurrentRisk")]
+	[Calls(Type = typeof(IntestinalParasites), Member = "GetCurrentRisk")]
+	[Calls(Type = typeof(InfectionRisk), Member = "GetCurrentRisk")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
+	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
 	[Calls(Type = typeof(EmergencyStim), Member = "GetTimeRemainingNormalized")]
 	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostTimeRemainingHours")]
-	[Calls(Type = typeof(EmergencyStim), Member = "GetTimeRemainingNormalized")]
-	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(IntestinalParasites), Member = "GetCurrentRisk")]
-	[Calls(Type = typeof(CabinFever), Member = "GetCurrentRisk")]
-	[Calls(Type = typeof(Frostbite), Member = "GetFrostbiteRiskValue")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(InfectionRisk), Member = "GetCurrentRisk")]
+	[CallsUnknownMethods(Count = 47)]
 	private void UpdateFillBar()
 	{
 	}
@@ -165,7 +156,7 @@ public class AfflictionButton : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public int GetAfflictionIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]

@@ -50,122 +50,117 @@ public class Carrion : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnDestroy()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(Carrion), Member = "StaggeredUpdateCarrion")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CalledBy(Type = typeof(Carrion), Member = "StaggeredUpdateCarrion")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Carrion), Member = "HasDispersed")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(Carrion), Member = "HasDispersed")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool ShouldDisperseGlobal(float radius)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Carrion), Member = "UpdateCarrions")]
 	[CalledBy(Type = typeof(Carrion), Member = "UpdateAll")]
-	[CalledBy(Type = typeof(Carrion), Member = "UpdateCarrions")]
-	[CalledBy(Type = typeof(Carrion), Member = "UpdateCarrions")]
-	[Calls(Type = typeof(Carrion), Member = "UpdatePosition")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(Carrion), Member = "UpdatePosition")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private static void UpdateAllCarrionPositions()
 	{
 	}
 
-	[Calls(Type = typeof(Carrion), Member = "StaggeredUpdateCarrions")]
+	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Carrion), Member = "StaggeredUpdateCarrions")]
 	[Calls(Type = typeof(Carrion), Member = "UpdateAllCarrionPositions")]
-	[Calls(Type = typeof(Carrion), Member = "UpdateAllCarrionPositions")]
-	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void UpdateCarrions()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private static void StaggeredUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Carrion), Member = "UpdateAllCarrionPositions")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Carrion), Member = "StaggeredUpdateCarrions")]
+	[Calls(Type = typeof(Carrion), Member = "UpdateAllCarrionPositions")]
+	[CallsUnknownMethods(Count = 1)]
 	private static void UpdateAll()
 	{
 	}
 
 	[CalledBy(Type = typeof(Carrion), Member = "UpdateCarrions")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Carrion), Member = "UpdateCarrions")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Carrion), Member = "StaggeredUpdateCarrion")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
 	[CalledBy(Type = typeof(Carrion), Member = "UpdateAll")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(Carrion), Member = "StaggeredUpdateCarrion")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private static void StaggeredUpdateCarrions(int start, int endExclusive)
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CalledBy(Type = typeof(Carrion), Member = "StaggeredUpdateCarrions")]
-	[Calls(Type = typeof(Carrion), Member = "Create")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(Carrion), Member = "Destroy")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Weather), Member = "IsSnowing")]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsDawn")]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsDusk")]
 	[Calls(Type = typeof(Utils), Member = "DistanceToMainCamera")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsDusk")]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsDawn")]
+	[Calls(Type = typeof(Weather), Member = "IsSnowing")]
 	[Calls(Type = typeof(Carrion), Member = "ShouldDisperseGlobal")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Carrion), Member = "Destroy")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(Carrion), Member = "Create")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 8)]
 	public void StaggeredUpdateCarrion()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[CallsDeduplicatedMethods(Count = 24)]
-	[Calls(Type = typeof(FlyOver), Member = "TryGetClearFlightHeight")]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Carrion), Member = "StaggeredUpdateCarrion")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(FlyOver), Member = "TryGetClearFlightHeight")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 23)]
 	[CallsUnknownMethods(Count = 34)]
 	public void Create()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CalledBy(Type = typeof(Carrion), Member = "StaggeredUpdateCarrion")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	public void Destroy()
 	{
 	}
@@ -176,24 +171,24 @@ public class Carrion : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(CarcassSite), Member = "Update")]
 	[CalledBy(Type = typeof(CarcassSite), Member = "SetCarrionActive")]
 	[CalledBy(Type = typeof(CarcassSite), Member = "UpdateCarrion")]
 	[CalledBy(Type = typeof(Carrion), Member = "ShouldDisperseGlobal")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	public bool HasDispersed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(TimeOfDay), Member = "IsDawn")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TimeOfDay), Member = "IsDusk")]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsDawn")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool IsTooDark()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -201,26 +196,17 @@ public class Carrion : MonoBehaviour
 	[CallsUnknownMethods(Count = 3)]
 	private bool ShouldDisperseLocal()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 19)]
 	[CalledBy(Type = typeof(Carrion), Member = "UpdateAllCarrionPositions")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
 	[CallsDeduplicatedMethods(Count = 18)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 19)]
 	private void UpdatePosition()
 	{
 	}

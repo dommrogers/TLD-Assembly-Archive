@@ -24,9 +24,9 @@ public class VolumetricLightBeam : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -35,25 +35,25 @@ public class VolumetricLightBeam : MonoBehaviour
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 44)]
-			[DeduplicatedMethod]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CCoPlaytimeUpdate_003Ed__184(int _003C_003E1__state)
 		{
 		}
 
-		[CallerCount(Count = 6)]
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
@@ -63,13 +63,13 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallsUnknownMethods(Count = 2)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 5)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 5)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -177,10 +177,10 @@ public class VolumetricLightBeam : MonoBehaviour
 
 	public ColorMode usedColorMode
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Config), Member = "GetInstance")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Config), Member = "GetInstance")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return default(ColorMode);
@@ -193,7 +193,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -208,10 +208,10 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -223,7 +223,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -237,7 +237,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -247,7 +247,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -257,21 +257,20 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	public float coneApexOffsetZ
 	{
-		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "GetInsideBeamFactorFromObjectSpacePos")]
-		[CallsUnknownMethods(Count = 1)]
+		[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
 		[CalledBy(Type = typeof(DynamicOcclusionDepthBuffer), Member = "UpdateDepthCameraPropertiesAccordingToBeam")]
+		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "GetInsideBeamFactorFromObjectSpacePos")]
 		[CallerCount(Count = 4)]
-		[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-		[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -282,7 +281,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Debug), Member = "LogWarning")]
@@ -298,7 +297,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Debug), Member = "LogWarning")]
@@ -309,16 +308,16 @@ public class VolumetricLightBeam : MonoBehaviour
 
 	public Vector3 skewingLocalForwardDirectionNormalized
 	{
-		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "GetInsideBeamFactorFromObjectSpacePos")]
-		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalForward")]
-		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "get_raycastDistance")]
-		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "get_hasMeshSkewing")]
-		[CallsUnknownMethods(Count = 6)]
-		[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-		[CallerCount(Count = 5)]
 		[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
+		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "get_hasMeshSkewing")]
+		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "get_raycastDistance")]
+		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalForward")]
+		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "GetInsideBeamFactorFromObjectSpacePos")]
+		[CallerCount(Count = 5)]
+		[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return default(Vector3);
@@ -328,9 +327,9 @@ public class VolumetricLightBeam : MonoBehaviour
 	public Vector4 additionalClippingPlane
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(Transform), Member = "get_forward")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
@@ -343,24 +342,24 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public bool hasMeshSkewing
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "GetInsideBeamFactorFromObjectSpacePos")]
-		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalForward")]
-		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "get_raycastDistance")]
-		[Calls(Type = typeof(VolumetricLightBeam), Member = "get_skewingLocalForwardDirectionNormalized")]
 		[CalledBy(Type = typeof(BeamGeometry), Member = "ApplyMaterial")]
-		[Calls(Type = typeof(Config), Member = "GetInstance")]
-		[CallerCount(Count = 5)]
 		[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
+		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "get_raycastDistance")]
+		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalForward")]
+		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "GetInsideBeamFactorFromObjectSpacePos")]
+		[CallerCount(Count = 5)]
+		[Calls(Type = typeof(Config), Member = "GetInstance")]
+		[Calls(Type = typeof(VolumetricLightBeam), Member = "get_skewingLocalForwardDirectionNormalized")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -370,7 +369,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -384,7 +383,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -394,10 +393,10 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -409,7 +408,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -423,7 +422,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -433,7 +432,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -443,7 +442,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
@@ -457,7 +456,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(VolumetricLightBeam), Member = "SetFadeOutValue")]
@@ -472,7 +471,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(VolumetricLightBeam), Member = "SetFadeOutValue")]
@@ -486,7 +485,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -495,22 +494,22 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public int sortingLayerID
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(BeamGeometry), Member = "set_sortingLayerID")]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(BeamGeometry), Member = "set_sortingLayerID")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -525,9 +524,9 @@ public class VolumetricLightBeam : MonoBehaviour
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(BeamGeometry), Member = "set_sortingLayerID")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		set
 		{
@@ -539,7 +538,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
@@ -556,10 +555,10 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[Calls(Type = typeof(VolumetricLightBeam), Member = "StartPlaytimeUpdateIfNeeded")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(VolumetricLightBeam), Member = "StartPlaytimeUpdateIfNeeded")]
 		set
 		{
 		}
@@ -570,26 +569,26 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public bool hasGeometry
 	{
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public Bounds bounds
 	{
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return default(Bounds);
@@ -605,21 +604,21 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public Quaternion beamInternalLocalRotation
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalRight")]
-		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalUp")]
-		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalForward")]
-		[CalledBy(Type = typeof(VolumetricDustParticles), Member = "InstantiateParticleSystem")]
-		[CalledBy(Type = typeof(DynamicOcclusionDepthBuffer), Member = "UpdateDepthCameraPropertiesAccordingToBeam")]
 		[CalledBy(Type = typeof(BeamGeometry), Member = "ComputeLocalMatrix")]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[CalledBy(Type = typeof(DynamicOcclusionDepthBuffer), Member = "UpdateDepthCameraPropertiesAccordingToBeam")]
+		[CalledBy(Type = typeof(VolumetricDustParticles), Member = "InstantiateParticleSystem")]
+		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalForward")]
+		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalUp")]
+		[CalledBy(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalRight")]
 		[CallerCount(Count = 6)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return default(Quaternion);
@@ -637,10 +636,10 @@ public class VolumetricLightBeam : MonoBehaviour
 
 	public Vector3 lossyScale
 	{
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 8)]
 		[CalledBy(Type = typeof(DynamicOcclusionDepthBuffer), Member = "UpdateDepthCameraPropertiesAccordingToBeam")]
 		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "get_raycastMaxDistance")]
+		[CallerCount(Count = 2)]
+		[CallsDeduplicatedMethods(Count = 8)]
 		[CallsUnknownMethods(Count = 9)]
 		get
 		{
@@ -650,30 +649,30 @@ public class VolumetricLightBeam : MonoBehaviour
 
 	public float raycastDistance
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "get_raycastMaxDistance")]
 		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(VolumetricLightBeam), Member = "get_hasMeshSkewing")]
 		[Calls(Type = typeof(VolumetricLightBeam), Member = "get_skewingLocalForwardDirectionNormalized")]
-		[CallerCount(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	public Vector3 raycastGlobalForward
 	{
-		[CallsUnknownMethods(Count = 4)]
-		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "SetHit")]
 		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
-		[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-		[Calls(Type = typeof(VolumetricLightBeam), Member = "get_beamInternalLocalRotation")]
-		[Calls(Type = typeof(VolumetricLightBeam), Member = "get_hasMeshSkewing")]
-		[Calls(Type = typeof(Transform), Member = "get_forward")]
-		[CallsDeduplicatedMethods(Count = 3)]
+		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "SetHit")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Transform), Member = "get_forward")]
+		[Calls(Type = typeof(VolumetricLightBeam), Member = "get_hasMeshSkewing")]
 		[Calls(Type = typeof(VolumetricLightBeam), Member = "get_skewingLocalForwardDirectionNormalized")]
+		[Calls(Type = typeof(VolumetricLightBeam), Member = "get_beamInternalLocalRotation")]
+		[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 4)]
 		get
 		{
 			return default(Vector3);
@@ -683,15 +682,13 @@ public class VolumetricLightBeam : MonoBehaviour
 	public Vector3 raycastGlobalUp
 	{
 		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "GetDirection")]
-		[CallsUnknownMethods(Count = 2)]
 		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
-		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
-		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "GetDirection")]
 		[CallerCount(Count = 4)]
-		[Calls(Type = typeof(Transform), Member = "get_up")]
 		[Calls(Type = typeof(VolumetricLightBeam), Member = "get_beamInternalLocalRotation")]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(Transform), Member = "get_up")]
 		[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return default(Vector3);
@@ -701,15 +698,13 @@ public class VolumetricLightBeam : MonoBehaviour
 	public Vector3 raycastGlobalRight
 	{
 		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "GetDirection")]
-		[CallsUnknownMethods(Count = 2)]
 		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
-		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
-		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "GetDirection")]
 		[CallerCount(Count = 4)]
-		[Calls(Type = typeof(Transform), Member = "get_right")]
 		[Calls(Type = typeof(VolumetricLightBeam), Member = "get_beamInternalLocalRotation")]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(Transform), Member = "get_right")]
 		[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return default(Vector3);
@@ -725,8 +720,8 @@ public class VolumetricLightBeam : MonoBehaviour
 		{
 			return default(MaterialManager.DynamicOcclusion);
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -749,7 +744,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -760,7 +755,7 @@ public class VolumetricLightBeam : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -772,14 +767,13 @@ public class VolumetricLightBeam : MonoBehaviour
 
 	public string meshStats
 	{
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-		[Calls(Type = typeof(Mesh), Member = "get_triangles")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(Mesh), Member = "get_triangles")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 4)]
 		get
 		{
 			return null;
@@ -790,33 +784,32 @@ public class VolumetricLightBeam : MonoBehaviour
 	{
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public int meshTrianglesCount
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(Mesh), Member = "get_triangles")]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(Mesh), Member = "get_triangles")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	private Light lightSpotAttached
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
@@ -833,10 +826,10 @@ public class VolumetricLightBeam : MonoBehaviour
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
@@ -846,24 +839,23 @@ public class VolumetricLightBeam : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public void GetInsideAndOutsideIntensity(out float inside, out float outside)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref inside) = null;
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref outside) = null;
+		inside = default(float);
+		outside = default(float);
 	}
 
-	[CalledBy(Type = typeof(DynamicOcclusionAbstractBase), Member = "OnDisable")]
-	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "SetClippingPlaneOff")]
-	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "SetClippingPlane")]
-	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "SetHit")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(DynamicOcclusionAbstractBase), Member = "OnDestroy")]
-	[CalledBy(Type = typeof(DynamicOcclusionAbstractBase), Member = "DisableOcclusion")]
-	[Calls(Type = typeof(Utils), Member = "SetKeywordEnabled")]
-	[Calls(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(DynamicOcclusionAbstractBase), Member = "ProcessOcclusion")]
+	[CalledBy(Type = typeof(DynamicOcclusionAbstractBase), Member = "OnDestroy")]
+	[CalledBy(Type = typeof(DynamicOcclusionAbstractBase), Member = "OnDisable")]
+	[CalledBy(Type = typeof(DynamicOcclusionAbstractBase), Member = "DisableOcclusion")]
+	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "SetHit")]
+	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "SetClippingPlane")]
+	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "SetClippingPlaneOff")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BeamGeometry), Member = "UpdateMaterialAndBounds")]
+	[Calls(Type = typeof(Utils), Member = "SetKeywordEnabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void _INTERNAL_SetDynamicOcclusionCallback(string shaderKeyword, MaterialModifier.Callback cb)
 	{
 	}
@@ -883,53 +875,53 @@ public class VolumetricLightBeam : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "GenerateGeometry")]
 	[CalledBy(Type = typeof(DynamicOcclusionAbstractBase), Member = "OnEnable")]
 	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "RegisterOnBeamGeometryInitializedCallback")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "GenerateGeometry")]
 	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void CallOnBeamGeometryInitializedCallback()
 	{
 	}
 
+	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "set_fadeOutBegin")]
+	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "set_fadeOutEnd")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(BeamGeometry), Member = "RestartFadeOutCoroutine")]
-	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "set_fadeOutBegin")]
-	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "set_fadeOutEnd")]
 	[CallsUnknownMethods(Count = 1)]
 	private void SetFadeOutValue(ref float propToChange, float value)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(BeamGeometry), Member = "RestartFadeOutCoroutine")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BeamGeometry), Member = "RestartFadeOutCoroutine")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnFadeOutStateChanged()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(VolumetricLightBeam), Member = "GetInsideBeamFactorFromObjectSpacePos")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public float GetInsideBeamFactor(Vector3 posWS)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "GetInsideBeamFactor")]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateCameraRelatedProperties")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Vector2), Member = "get_normalized")]
+	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "GetInsideBeamFactor")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_hasMeshSkewing")]
 	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_skewingLocalForwardDirectionNormalized")]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_coneApexOffsetZ")]
+	[Calls(Type = typeof(Vector2), Member = "get_normalized")]
+	[CallsUnknownMethods(Count = 4)]
 	public float GetInsideBeamFactorFromObjectSpacePos(Vector3 posOS)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[Obsolete("Use 'GenerateGeometry()' instead")]
@@ -940,15 +932,16 @@ public class VolumetricLightBeam : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(BeamGeometry), Member = "set_visible")]
-	[Calls(Type = typeof(BeamGeometry), Member = "RegenerateMesh")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "ValidateProperties")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Utils), Member = "NewWithComponent")]
 	[Calls(Type = typeof(BeamGeometry), Member = "Initialize")]
 	[Calls(Type = typeof(VolumetricLightBeam), Member = "CallOnBeamGeometryInitializedCallback")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "ValidateProperties")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(BeamGeometry), Member = "RegenerateMesh")]
+	[Calls(Type = typeof(BeamGeometry), Member = "set_visible")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public virtual void GenerateGeometry()
 	{
 	}
@@ -962,9 +955,9 @@ public class VolumetricLightBeam : MonoBehaviour
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Start()
 	{
 	}
@@ -978,81 +971,81 @@ public class VolumetricLightBeam : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(BeamGeometry), Member = "set_visible")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "OnEnable")]
 	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "set_trackChangesDuringPlaytime")]
+	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "OnEnable")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private void StartPlaytimeUpdateIfNeeded()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[IteratorStateMachine(typeof(_003CCoPlaytimeUpdate_003Ed__184))]
+	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 6)]
 	private IEnumerator CoPlaytimeUpdate()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnDestroy()
 	{
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void DestroyBeam()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Light), Member = "get_spotAngle")]
-	[Calls(Type = typeof(Light), Member = "get_range")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Light), Member = "get_intensity")]
+	[Calls(Type = typeof(Light), Member = "get_range")]
+	[Calls(Type = typeof(Light), Member = "get_spotAngle")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void AssignPropertiesFromSpotLight(Light lightSpot)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "ValidateProperties")]
+	[CallerCount(Count = 1)]
 	private void ClampProperties()
 	{
 	}
 
-	[Calls(Type = typeof(Light), Member = "get_spotAngle")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "UpdateAfterManualPropertyChange")]
 	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "GenerateGeometry")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "ClampProperties")]
-	[Calls(Type = typeof(Light), Member = "get_range")]
-	[Calls(Type = typeof(Light), Member = "get_intensity")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(VolumetricLightBeam), Member = "UpdateAfterManualPropertyChange")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Light), Member = "get_intensity")]
+	[Calls(Type = typeof(Light), Member = "get_range")]
+	[Calls(Type = typeof(Light), Member = "get_spotAngle")]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "ClampProperties")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ValidateProperties()
 	{
 	}

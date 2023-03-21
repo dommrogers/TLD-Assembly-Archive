@@ -11,14 +11,14 @@ public class EventData
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 80)]
+		[CallerCount(Count = 92)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 279)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 282)]
 		private set
 		{
 		}
@@ -26,8 +26,8 @@ public class EventData
 
 	public object value
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -42,7 +42,7 @@ public class EventData
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 279)]
+	[CallerCount(Count = 282)]
 	public EventData(string name)
 	{
 	}
@@ -58,7 +58,7 @@ public class EventData<T> : EventData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return (T)null;
+			return default(T);
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -68,10 +68,10 @@ public class EventData<T> : EventData
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override object GetValue()
 	{
 		return null;

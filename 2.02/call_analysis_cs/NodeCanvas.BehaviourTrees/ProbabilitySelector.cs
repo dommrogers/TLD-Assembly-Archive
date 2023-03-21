@@ -20,20 +20,22 @@ public class ProbabilitySelector : BTComposite
 
 	private List<int> failedIndeces;
 
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
+	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	public override void OnChildConnected(int index)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public override void OnChildDisconnected(int index)
 	{
@@ -46,44 +48,44 @@ public class ProbabilitySelector : BTComposite
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(ProbabilitySelector), Member = "GetTotal")]
-	[Calls(Type = typeof(Connection), Member = "Execute")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Connection), Member = "Execute")]
+	[Calls(Type = typeof(ProbabilitySelector), Member = "GetTotal")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 22)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(ProbabilitySelector), Member = "GetTotal")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	protected override void OnReset()
 	{
 	}
 
-	[CalledBy(Type = typeof(ProbabilitySelector), Member = "OnReset")]
 	[CalledBy(Type = typeof(ProbabilitySelector), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 6)]
+	[CalledBy(Type = typeof(ProbabilitySelector), Member = "OnReset")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private float GetTotal()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 35)]
 	public ProbabilitySelector()
 	{

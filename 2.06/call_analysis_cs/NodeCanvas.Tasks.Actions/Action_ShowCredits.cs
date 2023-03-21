@@ -7,25 +7,27 @@ public class Action_ShowCredits : ActionTask
 {
 	public int m_CreditsSourceIndex;
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanel")]
 	[Calls(Type = typeof(Panel_Credits), Member = "ShowCredits")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	protected override void OnExecute()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "LoadMainMenu")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "OnGameQuit")]
+	[Calls(Type = typeof(GameManager), Member = "LoadMainMenu")]
 	[CallsUnknownMethods(Count = 1)]
 	private static void SimpleQuit()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_ShowCredits()
 	{
 	}

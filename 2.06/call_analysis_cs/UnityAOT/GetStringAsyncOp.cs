@@ -32,10 +32,11 @@ public class GetStringAsyncOp : AsyncOp<GetStringAsyncOp>
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
 	[MonoPInvokeCallback(typeof(GenericStringCallback))]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetMyObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	protected static void GetStringAsyncThunkImpl(uint result, IntPtr lresult, IntPtr userData)
 	{
 	}

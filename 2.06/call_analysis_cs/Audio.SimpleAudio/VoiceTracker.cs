@@ -10,34 +10,34 @@ public class VoiceTracker : LoopTracker
 
 	private float m_CaptionDisplayTime;
 
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(BaseTracker), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BaseTracker), Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[CallsUnknownMethods(Count = 1)]
 	public VoiceTracker(string eventId, GameObject go, float radius, bool stopWhenDisabled, bool position)
-		: base((string)null, (GameObject)null, default(float), stopWhenDisabled: default(bool), position: default(bool))
+		: base((string)null, (GameObject)null, 0f, stopWhenDisabled: false, position: false)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetIndoorEnvironmentSwitch")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetOutdoorEnvironmentSwitch")]
-	[Calls(Type = typeof(LoopTracker), Member = "SetupDynamicProxy")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
-	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetOutdoorEnvironmentSwitch")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetIndoorEnvironmentSwitch")]
+	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[Calls(Type = typeof(LoopTracker), Member = "SetupDynamicProxy")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	protected override void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(AkMarkerCallbackInfo), Member = "get_strLabel")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]

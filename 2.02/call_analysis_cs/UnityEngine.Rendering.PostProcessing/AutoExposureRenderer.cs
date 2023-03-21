@@ -22,45 +22,34 @@ internal sealed class AutoExposureRenderer : PostProcessEffectRenderer<AutoExpos
 		((PostProcessEffectRenderer<>)(object)this)._002Ector();
 	}
 
-	[CallsUnknownMethods(Count = 39)]
 	[CalledBy(Type = typeof(AutoExposureRenderer), Member = "Render")]
-	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
-	[CalledBy(Type = typeof(AutoExposureRenderer), Member = "Render")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(RenderTexture), Member = "GetCompatibleFormat")]
+	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 39)]
 	private void CheckTexture(int eye, int id)
 	{
 	}
 
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeTextureParam")]
-	[CallsUnknownMethods(Count = 70)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "CopyTexture")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeTextureParam")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeTextureParam")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeVectorParam")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeVectorParam")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Exp2")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Exp2")]
+	[Calls(Type = typeof(AutoExposureRenderer), Member = "CheckTexture")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeBufferParam")]
-	[Calls(Type = typeof(AutoExposureRenderer), Member = "CheckTexture")]
-	[Calls(Type = typeof(AutoExposureRenderer), Member = "CheckTexture")]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "Exp2")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeVectorParam")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeTextureParam")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "CopyTexture")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 70)]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public override void Release()
 	{

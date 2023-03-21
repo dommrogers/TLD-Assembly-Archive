@@ -43,127 +43,123 @@ public class BloodTrail : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(BloodTrail), Member = "MaybeInitializeBloodDecalIndexes")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	public void Start()
 	{
 	}
 
-	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveBloodCluster")]
-	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveHarvestBloodStain")]
-	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveStruggleBloodStain")]
-	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveBloodStain")]
-	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveBloodDrop")]
 	[CalledBy(Type = typeof(BloodTrail), Member = "Start")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "LookupUVRectangleIndex")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "LookupUVRectangleIndex")]
+	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveBloodDrop")]
+	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveBloodStain")]
+	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveStruggleBloodStain")]
+	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveHarvestBloodStain")]
+	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveBloodCluster")]
 	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "LookupUVRectangleIndex")]
 	private void MaybeInitializeBloodDecalIndexes()
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(PlayerMovement), Member = "MovedDistance")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(BaseAi), Member = "MovedDistance")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(BloodTrail), Member = "LeaveBloodDrop")]
 	[CalledBy(Type = typeof(MoveAgent), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerMovement), Member = "MovedDistance")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(BloodTrail), Member = "LeaveBloodCluster")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(BloodTrail), Member = "LeaveBloodStain")]
+	[Calls(Type = typeof(BloodTrail), Member = "LeaveBloodDrop")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void AddMoveDistance(float dist)
 	{
 	}
 
 	[CalledBy(Type = typeof(BloodTrail), Member = "AddMoveDistance")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "CreateDecal")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(BloodTrail), Member = "GetDecalProjectorType")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(BloodTrail), Member = "MaybeInitializeBloodDecalIndexes")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[Calls(Type = typeof(BloodTrail), Member = "MaybeInitializeBloodDecalIndexes")]
 	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(BloodTrail), Member = "GetDecalProjectorType")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "CreateDecal")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 10)]
 	private void LeaveBloodDrop(Vector3 pos)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(BloodTrail), Member = "AddMoveDistance")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "CreateDecal")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(BloodTrail), Member = "GetDecalProjectorType")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(BloodTrail), Member = "MaybeInitializeBloodDecalIndexes")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[Calls(Type = typeof(BloodTrail), Member = "MaybeInitializeBloodDecalIndexes")]
 	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(BloodTrail), Member = "GetDecalProjectorType")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "CreateDecal")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	public void LeaveBloodStain(Vector3 pos, float scaleMin, float scaleMax)
 	{
 	}
 
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "BreakStruggle")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(BloodTrail), Member = "GetDecalProjectorType")]
-	[Calls(Type = typeof(BloodTrail), Member = "MaybeInitializeBloodDecalIndexes")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "CreateDecal")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Transform), Member = "get_up")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Transform), Member = "get_up")]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
 	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[Calls(Type = typeof(BloodTrail), Member = "MaybeInitializeBloodDecalIndexes")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(BloodTrail), Member = "GetDecalProjectorType")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "CreateDecal")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 15)]
 	public void LeaveStruggleBloodStain()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "CreateDecal")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(BloodTrail), Member = "GetDecalProjectorType")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(BloodTrail), Member = "MaybeInitializeBloodDecalIndexes")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Transform), Member = "get_up")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Transform), Member = "get_up")]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[Calls(Type = typeof(BloodTrail), Member = "MaybeInitializeBloodDecalIndexes")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(BloodTrail), Member = "GetDecalProjectorType")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "CreateDecal")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 14)]
 	public void LeaveHarvestBloodStain()
 	{
 	}
 
 	[CalledBy(Type = typeof(BloodTrail), Member = "AddMoveDistance")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "CreateDecal")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(BloodTrail), Member = "GetDecalProjectorType")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
 	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
 	[Calls(Type = typeof(BloodTrail), Member = "MaybeInitializeBloodDecalIndexes")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(BloodTrail), Member = "GetDecalProjectorType")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "CreateDecal")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 9)]
 	private void LeaveBloodCluster(Vector3 pos, int dropCount)
 	{
 	}
@@ -172,18 +168,18 @@ public class BloodTrail : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool ShouldLeaveBloodDrop(Vector3 pos)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveBloodCluster")]
-	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveHarvestBloodStain")]
-	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveStruggleBloodStain")]
+	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveBloodDrop")]
 	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveBloodStain")]
+	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveStruggleBloodStain")]
+	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveHarvestBloodStain")]
+	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveBloodCluster")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(HuntedPart2WaypointController), Member = "IsHuntedBear")]
 	[Calls(Type = typeof(BearHuntRedux), Member = "IsHuntedBear")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveBloodDrop")]
 	private DecalProjectorType GetDecalProjectorType()
 	{
 		return default(DecalProjectorType);

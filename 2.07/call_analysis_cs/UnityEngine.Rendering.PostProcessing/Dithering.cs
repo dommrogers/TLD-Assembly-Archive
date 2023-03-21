@@ -10,10 +10,10 @@ internal sealed class Dithering
 
 	private System.Random m_Random;
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderBuiltins")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderFinalPass")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 4)]
 	internal void Render(PostProcessRenderContext context)
 	{

@@ -14,17 +14,17 @@ public class AkTransform : IDisposable
 	{
 	}
 
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "GetListenerPosition")]
-	[CalledBy(Type = typeof(AkRoomPortal), Member = "ActivatePortal")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetRoomPortal")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "GetPosition")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(AkChannelEmitter), Member = "set_position")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(AkDiffractionPathInfo), Member = "set_virtualPos")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "GetPosition")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "GetListenerPosition")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetRoomPortal")]
+	[CalledBy(Type = typeof(AkRoomPortal), Member = "ActivatePortal")]
+	[CallerCount(Count = 6)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkTransform obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -34,18 +34,18 @@ public class AkTransform : IDisposable
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	~AkTransform()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}
@@ -74,12 +74,10 @@ public class AkTransform : IDisposable
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkVector), Member = "getCPtr")]
-	[Calls(Type = typeof(AkVector), Member = "getCPtr")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkVector), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Set(AkVector in_position, AkVector in_orientationFront, AkVector in_orientationTop)
 	{
 	}
@@ -92,8 +90,8 @@ public class AkTransform : IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkVector), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetPosition(AkVector in_position)
 	{
@@ -106,11 +104,10 @@ public class AkTransform : IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkVector), Member = "getCPtr")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkVector), Member = "getCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetOrientation(AkVector in_orientationFront, AkVector in_orientationTop)
 	{
 	}

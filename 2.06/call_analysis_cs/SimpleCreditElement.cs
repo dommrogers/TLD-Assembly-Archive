@@ -6,19 +6,19 @@ public class SimpleCreditElement : CreditElement
 	private UILabel m_Label;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public override Vector2 GetSize()
 	{
 		return default(Vector2);
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public override bool IsContentValid(string[] content, Panel_Credits panel)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

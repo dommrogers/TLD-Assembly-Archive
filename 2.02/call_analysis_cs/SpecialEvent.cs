@@ -1,5 +1,4 @@
 using System;
-using System.Diagnostics;
 using Cpp2ILInjected.CallAnalysis;
 
 public static class SpecialEvent
@@ -12,62 +11,60 @@ public static class SpecialEvent
 
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Conditional(/*Could not decode attribute arguments.*/)]
 	public static void Debug_DisableEvent()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(SpecialEvent), Member = "IsCurrentExperienceMode")]
 	[CalledBy(Type = typeof(InteriorTemperatureTrigger), Member = "OnTriggerEnter")]
 	[CalledBy(Type = typeof(InteriorTemperatureTrigger), Member = "OnTriggerExit")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SpecialEvent), Member = "IsCurrentExperienceMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IgnoreInteriorTemperatureTriggers()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_Sandbox4DON), Member = "OnNewSandbox4DON")]
-	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "Update")]
-	[CalledBy(Type = typeof(SpecialEvent), Member = "MatchesBaseExperienceMode")]
-	[CalledBy(Type = typeof(SaveGameSlotHelper), Member = "RefreshSaveSlotsFourDaysOfNight")]
-	[CalledBy(Type = typeof(SaveGameSlotHelper), Member = "RefreshSandboxSaveSlots")]
-	[CalledBy(Type = typeof(Panel_Sandbox4DON), Member = "Update")]
-	[CalledBy(Type = typeof(SpecialEvent), Member = "MatchesExperienceMode")]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
-	[CallerCount(Count = 11)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "ConfigureMenu")]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableSpecialEvent")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "ConfigureMenu")]
+	[CalledBy(Type = typeof(Panel_Sandbox4DON), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Sandbox4DON), Member = "OnNewSandbox4DON")]
+	[CalledBy(Type = typeof(SaveGameSlotHelper), Member = "RefreshSandboxSaveSlots")]
+	[CalledBy(Type = typeof(SaveGameSlotHelper), Member = "RefreshSaveSlotsFourDaysOfNight")]
+	[CalledBy(Type = typeof(SpecialEvent), Member = "MatchesBaseExperienceMode")]
+	[CalledBy(Type = typeof(SpecialEvent), Member = "MatchesExperienceMode")]
+	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "Update")]
+	[CallerCount(Count = 11)]
 	[Calls(Type = typeof(GameManager), Member = "GetServerTime")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(SpecialEvent), Member = "MatchesExperienceMode")]
 	[CalledBy(Type = typeof(Weather), Member = "InitializeWeatherSetsForScene")]
 	[CalledBy(Type = typeof(Weather), Member = "MaybeLoadOverrideForEvent")]
 	[CalledBy(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[CalledBy(Type = typeof(SpecialEvent), Member = "IgnoreInteriorTemperatureTriggers")]
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(SpecialEvent), Member = "MatchesExperienceMode")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool IsCurrentExperienceMode()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public static ExperienceModeType GetBaseExperienceMode()
 	{
 		return default(ExperienceModeType);
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public static ExperienceModeType GetExperienceMode()
 	{
 		return default(ExperienceModeType);
@@ -87,64 +84,64 @@ public static class SpecialEvent
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Choose4DON), Member = "AddSavesOfTypeToMenu")]
 	[CalledBy(Type = typeof(Panel_Sandbox4DON), Member = "AddMenuItem")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static string GetSandboxMenuDescSuffix()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(SpecialEvent), Member = "IsActive")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SpecialEvent), Member = "IsActive")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool MatchesBaseExperienceMode(ExperienceModeType xpMode)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_SelectRegion), Member = "OnClickBack")]
-	[CalledBy(Type = typeof(SaveGameSlotHelper), Member = "RefreshChallengeSaveSlots")]
-	[CalledBy(Type = typeof(StatsManager), Member = "MaybeUpdateAllTimeBestStat")]
-	[CalledBy(Type = typeof(SpecialEvent), Member = "IsCurrentExperienceMode")]
-	[CalledBy(Type = typeof(ExperienceModeManager), Member = "GetSpecificExperienceMode")]
-	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "SetExperienceModeIcon")]
-	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
-	[CalledBy(Type = typeof(IntestinalParasites), Member = "GetNumDosesRequired")]
 	[CalledBy(Type = typeof(StruggleDamageEvent), Member = "GetChance")]
+	[CalledBy(Type = typeof(IntestinalParasites), Member = "GetNumDosesRequired")]
+	[CalledBy(Type = typeof(RandomSpawnObject), Member = "GetExperienceMode")]
+	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "SetExperienceModeIcon")]
+	[CalledBy(Type = typeof(Panel_SelectRegion), Member = "OnClickBack")]
+	[CalledBy(Type = typeof(ExperienceModeManager), Member = "GetSpecificExperienceMode")]
+	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
+	[CalledBy(Type = typeof(StatsManager), Member = "MaybeUpdateAllTimeBestStat")]
+	[CalledBy(Type = typeof(SaveGameSlotHelper), Member = "RefreshChallengeSaveSlots")]
+	[CalledBy(Type = typeof(SpecialEvent), Member = "IsCurrentExperienceMode")]
+	[CallerCount(Count = 10)]
 	[Calls(Type = typeof(SpecialEvent), Member = "IsActive")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 10)]
-	[CalledBy(Type = typeof(RandomSpawnObject), Member = "GetExperienceMode")]
 	public static bool MatchesExperienceMode(ExperienceModeType xpMode)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public static void EatingComplete(GearItem itemEaten)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Sandbox4DON), Member = "Update")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(GameManager), Member = "GetServerTime")]
+	[Calls(Type = typeof(DateTime), Member = "ToLocalTime")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
-	[Calls(Type = typeof(GameManager), Member = "GetServerTime")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(DateTime), Member = "ToLocalTime")]
+	[CallsUnknownMethods(Count = 3)]
 	public static void SetDailyTimerLabel(UILabel dayLabel, UILabel timerLabel)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public static void UpdateDaysSurvived(int numDaysSurvived)
 	{
 	}

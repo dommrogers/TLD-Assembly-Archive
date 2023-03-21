@@ -61,8 +61,8 @@ public class Action_SetCinematicProperties : ActionTask
 
 		public bool boostAurora;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public Properties()
 		{
 		}
@@ -83,17 +83,11 @@ public class Action_SetCinematicProperties : ActionTask
 		}
 	}
 
-	[Calls(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
-	[Calls(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
-	[Calls(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
 	[Calls(Type = typeof(Rest.PassTimeHelper), Member = "PassTime")]
-	[Calls(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
+	[CallsUnknownMethods(Count = 10)]
 	protected override void OnExecute()
 	{
 	}
@@ -105,27 +99,19 @@ public class Action_SetCinematicProperties : ActionTask
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_SetCinematicProperties), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_SetCinematicProperties), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_SetCinematicProperties), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_SetCinematicProperties), Member = "OnExecute")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[CalledBy(Type = typeof(Action_SetCinematicProperties), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_SetCinematicProperties), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_cinematicproperty")]
 	[CalledBy(Type = typeof(Action_SetCinematicProperties), Member = "OnExecute")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(Rest.PassTimeHelper), Member = "PassTime")]
+	[Calls(Type = typeof(PlayerManager), Member = "EquipLastItemInHands")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsHeldItemRestricted")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
 	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsHeldItemRestricted")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "EquipLastItemInHands")]
-	[Calls(Type = typeof(Rest.PassTimeHelper), Member = "PassTime")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 8)]
+	[CallsUnknownMethods(Count = 14)]
 	public static void SetProperty(CinematicPropertyType type, bool isSet, int argValue)
 	{
 	}
@@ -137,11 +123,11 @@ public class Action_SetCinematicProperties : ActionTask
 	private static bool TryGetPanel<T>(out T panel) where T : Panel_Base
 	{
 		panel = null;
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_SetCinematicProperties()
 	{
 	}

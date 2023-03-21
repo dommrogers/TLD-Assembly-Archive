@@ -12,14 +12,14 @@ public class LanguageSelection : MonoBehaviour
 		public static EventDelegate.Callback _003C_003E9__2_0;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Localization), Member = "set_Language")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		internal void _003CStart_003Eb__2_0()
 		{
@@ -28,30 +28,31 @@ public class LanguageSelection : MonoBehaviour
 
 	private UIPopupList mList;
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(LanguageSelection), Member = "Refresh")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(LanguageSelection), Member = "Refresh")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 8)]
 	[Calls(Type = typeof(EventDelegate), Member = "Add")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "GetLanguages")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CalledBy(Type = typeof(LanguageSelection), Member = "Awake")]
-	[Calls(Type = typeof(UIPopupList), Member = "set_value")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Localization), Member = "get_Language")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Localization), Member = "GetLanguages")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Localization), Member = "get_Language")]
+	[Calls(Type = typeof(UIPopupList), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Refresh()
 	{
 	}

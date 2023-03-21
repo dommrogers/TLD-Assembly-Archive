@@ -9,23 +9,23 @@ public class CopySessionHandleByInviteIdOptions
 
 	public string InviteId
 	{
-		[CallerCount(Count = 52)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CopySessionHandleByInviteIdOptions()
 	{
 	}

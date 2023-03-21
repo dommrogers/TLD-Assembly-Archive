@@ -15,20 +15,20 @@ internal struct ItemOwnershipInternal : ISettable, IDisposable
 
 	public string Id
 	{
+		[CalledBy(Type = typeof(ItemOwnership), Member = "Set")]
+		[CalledBy(Type = typeof(ItemOwnership), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CalledBy(Type = typeof(ItemOwnership), Member = "Set")]
-		[CalledBy(Type = typeof(ItemOwnership), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(ItemOwnershipInternal), Member = "Set")]
+		[CalledBy(Type = typeof(ItemOwnershipInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(ItemOwnershipInternal), Member = "Set")]
-		[CalledBy(Type = typeof(ItemOwnershipInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -36,8 +36,8 @@ internal struct ItemOwnershipInternal : ISettable, IDisposable
 
 	public OwnershipStatus OwnershipStatus
 	{
-		[CallerCount(Count = 7)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return default(OwnershipStatus);
@@ -56,14 +56,14 @@ internal struct ItemOwnershipInternal : ISettable, IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ItemOwnershipInternal), Member = "set_Id")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

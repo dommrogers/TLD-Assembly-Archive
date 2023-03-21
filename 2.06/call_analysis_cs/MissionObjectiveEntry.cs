@@ -1,6 +1,6 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.SaveState;
 using UnityEngine;
 
 public class MissionObjectiveEntry : MonoBehaviour
@@ -55,72 +55,62 @@ public class MissionObjectiveEntry : MonoBehaviour
 
 	public Color m_TimerColorLowTime;
 
-	[CallsUnknownMethods(Count = 22)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[Calls(Type = typeof(MissionSubobjectiveEntry), Member = "GetHeight")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(MissionSubobjectiveEntry), Member = "SetObjectiveInfo")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjective")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[Calls(Type = typeof(MissionObjectiveEntry), Member = "MaybeUpdateCounterUI")]
-	[Calls(Type = typeof(MissionObjectiveEntry), Member = "MaybeUpdateTimerObjectiveUI")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 18)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(MissionObjectiveEntry), Member = "MaybeUpdateTimerObjectiveUI")]
+	[Calls(Type = typeof(MissionObjectiveEntry), Member = "MaybeUpdateCounterUI")]
 	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjective")]
+	[Calls(Type = typeof(MissionSubobjectiveEntry), Member = "SetObjectiveInfo")]
+	[Calls(Type = typeof(MissionSubobjectiveEntry), Member = "GetHeight")]
+	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[Calls(Type = typeof(UIWidget), Member = "set_height")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 17)]
+	[CallsUnknownMethods(Count = 22)]
 	public void SetObjectiveInfo(StoryMissionObjective objective, MissionObjectiveEntry prevEntry, bool skipSubobjectives = false)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(MissionSubobjectiveEntry), Member = "SetObjectiveInfo")]
-	[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "UpdateObjectiveUI")]
 	[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "SetObjectiveInfo")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(MissionTimer), Member = "get_Time")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
-	[Calls(Type = typeof(MissionTimer), Member = "get_Time")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionTimerByName")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "UpdateObjectiveUI")]
+	[CalledBy(Type = typeof(MissionSubobjectiveEntry), Member = "SetObjectiveInfo")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionTimerByName")]
+	[Calls(Type = typeof(MissionTimer), Member = "get_Time")]
+	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[CallsUnknownMethods(Count = 3)]
 	private static bool MaybeUpdateTimerObjectiveUI(StoryMissionObjective objective, UILabel timerlabel, Color timerColorLowTime, Color timerColorNormal, UISprite timerSprite)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "SetObjectiveInfo")]
+	[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "UpdateObjectiveUI")]
+	[CalledBy(Type = typeof(MissionSubobjectiveEntry), Member = "SetObjectiveInfo")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(StoryMissionObjective), Member = "TryGetCurrentAndRequired")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringNoOunces")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(Utils), Member = "GetWeightOneDecimalPlaceWithUnitsString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "UpdateObjectiveUI")]
-	[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "SetObjectiveInfo")]
-	[CalledBy(Type = typeof(MissionSubobjectiveEntry), Member = "SetObjectiveInfo")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(StoryMissionObjective), Member = "TryGetCurrentAndRequired")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(Utils), Member = "GetWeightOneDecimalPlaceWithUnitsString")]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringNoOunces")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringNoOunces")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
 	private static bool MaybeUpdateCounterUI(StoryMissionObjective objective, UIWidget widget, float alphaValueWhenCompleted, UILabel countLabel, UISprite countFillSprite, float fillSpriteOffset)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

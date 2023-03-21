@@ -8,11 +8,11 @@ public class BehaviourTreeOwner : GraphOwner<BehaviourTree>
 {
 	public bool repeat
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
@@ -27,7 +27,7 @@ public class BehaviourTreeOwner : GraphOwner<BehaviourTree>
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
@@ -46,10 +46,10 @@ public class BehaviourTreeOwner : GraphOwner<BehaviourTree>
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public Status Tick()
 	{
 		return default(Status);

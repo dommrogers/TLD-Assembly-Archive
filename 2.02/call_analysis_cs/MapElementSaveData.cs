@@ -40,14 +40,14 @@ public class MapElementSaveData
 	[NonSerialized]
 	public ClusterCell m_ClusterCell;
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Vector2), Member = "get_zero")]
-	[Calls(Type = typeof(Vector2), Member = "get_zero")]
 	[CalledBy(Type = typeof(ClusterCell), Member = ".ctor")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddMapElement")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddMarkerToWorldPos")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddMarkerToLocation")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Vector2), Member = "get_zero")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 28)]
 	public MapElementSaveData()
 	{

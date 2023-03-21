@@ -11,8 +11,8 @@ public class LanguageSelection : MonoBehaviour
 
 		public static EventDelegate.Callback _003C_003E9__2_0;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec()
 		{
 		}
@@ -28,28 +28,28 @@ public class LanguageSelection : MonoBehaviour
 	private UIPopupList mList;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(LanguageSelection), Member = "Refresh")]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
+	[CalledBy(Type = typeof(LanguageSelection), Member = "Awake")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "MaybeLoadLanguageTables")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(Localization), Member = "get_Language")]
 	[Calls(Type = typeof(UIPopupList), Member = "set_value")]
-	[CalledBy(Type = typeof(LanguageSelection), Member = "Awake")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Refresh()
 	{
 	}

@@ -17,33 +17,33 @@ public static class SpecialEvent
 	{
 	}
 
-	[CalledBy(Type = typeof(InteriorTemperatureTrigger), Member = "OnTriggerExit")]
 	[CalledBy(Type = typeof(InteriorTemperatureTrigger), Member = "OnTriggerEnter")]
-	[Calls(Type = typeof(SpecialEvent), Member = "MatchesExperienceMode")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
+	[CalledBy(Type = typeof(InteriorTemperatureTrigger), Member = "OnTriggerExit")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
+	[Calls(Type = typeof(SpecialEvent), Member = "MatchesExperienceMode")]
 	public static bool IgnoreInteriorTemperatureTriggers()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(ServerTime), Member = "GetServerTime")]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableSpecialEvent")]
 	[CalledBy(Type = typeof(SaveGameSlotHelper), Member = "RefreshSandboxSaveSlots")]
 	[CalledBy(Type = typeof(SpecialEvent), Member = "MatchesBaseExperienceMode")]
 	[CalledBy(Type = typeof(SpecialEvent), Member = "MatchesExperienceMode")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(ServerTime), Member = "GetServerTime")]
 	public static bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	[Calls(Type = typeof(SpecialEvent), Member = "MatchesExperienceMode")]
-	[CallerCount(Count = 0)]
 	public static bool IsCurrentExperienceMode()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -78,40 +78,40 @@ public static class SpecialEvent
 		return null;
 	}
 
-	[Calls(Type = typeof(SpecialEvent), Member = "IsActive")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SpecialEvent), Member = "IsActive")]
 	public static bool MatchesBaseExperienceMode(ExperienceModeType xpMode)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(SpecialEvent), Member = "IsCurrentExperienceMode")]
-	[CalledBy(Type = typeof(SpecialEvent), Member = "IgnoreInteriorTemperatureTriggers")]
+	[CalledBy(Type = typeof(RandomSpawnObject), Member = "GetExperienceMode")]
 	[CalledBy(Type = typeof(SaveGameSlotHelper), Member = "RefreshChallengeSaveSlots")]
+	[CalledBy(Type = typeof(SpecialEvent), Member = "IgnoreInteriorTemperatureTriggers")]
+	[CalledBy(Type = typeof(SpecialEvent), Member = "IsCurrentExperienceMode")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(SpecialEvent), Member = "IsActive")]
-	[CalledBy(Type = typeof(RandomSpawnObject), Member = "GetExperienceMode")]
 	public static bool MatchesExperienceMode(ExperienceModeType xpMode)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void EatingComplete(GearItem itemEaten)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ServerTime), Member = "GetServerTime")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(DateTime), Member = "ToLocalTime")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(ServerTime), Member = "GetServerTime")]
+	[Calls(Type = typeof(DateTime), Member = "ToLocalTime")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void SetDailyTimerLabel(UILabel dayLabel, UILabel timerLabel)
 	{
 	}

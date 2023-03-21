@@ -45,134 +45,134 @@ public class Bed : MonoBehaviour
 	private static BedSaveDataProxy m_BedSaveDataProxy;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(Bed), Member = "Serialize")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Bed), Member = "Serialize")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 6)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(Bed), Member = "SerializeAll")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ObjectGuid), Member = "MaybeGetGuidFromGameObject")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(GearItem), Member = "Serialize")]
+	[CalledBy(Type = typeof(Bed), Member = "SerializeAll")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ObjectGuid), Member = "MaybeGetGuidFromGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[Calls(Type = typeof(Bed), Member = "Deserialize")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Bed), Member = "Deserialize")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
-	[CalledBy(Type = typeof(Bed), Member = "DeserializeAll")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Bed), Member = "DeserializeAll")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(Bed), Member = "SetState")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Bed), Member = "PlaceBody")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Bed), Member = "PlaceBody")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 3)]
 	public static void PostDeserialize()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "Degrade")]
 	[CalledBy(Type = typeof(PassTime), Member = "End")]
 	[CalledBy(Type = typeof(Rest), Member = "EndSleeping")]
 	[CalledBy(Type = typeof(NPC), Member = "DoConditionUpdate")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "Degrade")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Degrade(float hoursUsed)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsWornOut()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(NPCFreezing), Member = "CalculateCurrentTemperature")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Rest), Member = "UpdateWarmthBonusLabel")]
-	[CalledBy(Type = typeof(Rest), Member = "GetBedWarmthBonusCelsius")]
 	[CalledBy(Type = typeof(PassTime), Member = "GetBedWarmthBonusCelsius")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(Rest), Member = "GetBedWarmthBonusCelsius")]
+	[CalledBy(Type = typeof(Panel_Rest), Member = "UpdateWarmthBonusLabel")]
+	[CalledBy(Type = typeof(NPCFreezing), Member = "CalculateCurrentTemperature")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetWarmthBonusCelsius()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void PlayOpenAudio()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void PlayCloseAudio()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "SetBedRolledMesh")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "SetBedPlacedMesh")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PrepareGhostedObject")]
-	[CalledBy(Type = typeof(Panel_Rest), Member = "OnPickUp")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(Bed), Member = "Deserialize")]
+	[CalledBy(Type = typeof(Panel_Rest), Member = "OnPickUp")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PrepareGhostedObject")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "SetBedPlacedMesh")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "SetBedRolledMesh")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetState(BedRollState state)
 	{
 	}
@@ -184,39 +184,39 @@ public class Bed : MonoBehaviour
 		return default(BedRollState);
 	}
 
-	[CalledBy(Type = typeof(Bed), Member = "CanBodyBePlaced")]
-	[CalledBy(Type = typeof(Bed), Member = "PerformInteraction")]
-	[CalledBy(Type = typeof(GearItem), Member = "TryStartPlaceMeshInteraction")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(GearItem), Member = "GetHoverText")]
 	[CalledBy(Type = typeof(GearItem), Member = "PerformInteraction")]
+	[CalledBy(Type = typeof(GearItem), Member = "TryStartPlaceMeshInteraction")]
+	[CalledBy(Type = typeof(Bed), Member = "CanBodyBePlaced")]
+	[CalledBy(Type = typeof(Bed), Member = "PerformInteraction")]
+	[CallerCount(Count = 5)]
 	public bool IsOccupied()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Bed), Member = "IsOccupied")]
 	[CalledBy(Type = typeof(Bed), Member = "PlaceBody")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Bed), Member = "IsOccupied")]
 	public bool CanBodyBePlaced()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceMeshInWorld")]
 	[CalledBy(Type = typeof(Bed), Member = "PostDeserialize")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceMeshInWorld")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Bed), Member = "CanBodyBePlaced")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	public void PlaceBody(CarryableBody body)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(NPC), Member = "DoConditionUpdate")]
 	[CalledBy(Type = typeof(BodyCarry), Member = "Carry")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void RemoveBody(CarryableBody body)
 	{
@@ -229,31 +229,31 @@ public class Bed : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	private static Bed FindBedByGuid(string guid)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AnimatedInteraction), Member = "InProgress")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool ShouldPerformBedInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Panel_Rest), Member = "StartRest")]
-	[Calls(Type = typeof(Bed), Member = "IsOccupied")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Bed), Member = "IsOccupied")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Rest), Member = "StartRest")]
 	[Calls(Type = typeof(BodyCarry), Member = "ProcessInteraction")]
+	[CallsUnknownMethods(Count = 2)]
 	public void PerformInteraction()
 	{
 	}

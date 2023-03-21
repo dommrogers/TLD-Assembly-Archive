@@ -36,17 +36,17 @@ internal struct DefinitionInternal : ISettable, IDisposable
 	public string AchievementId
 	{
 		[CalledBy(Type = typeof(Definition), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(DefinitionInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -54,18 +54,18 @@ internal struct DefinitionInternal : ISettable, IDisposable
 
 	public string DisplayName
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(Definition), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(DefinitionInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -74,17 +74,17 @@ internal struct DefinitionInternal : ISettable, IDisposable
 	public string Description
 	{
 		[CalledBy(Type = typeof(Definition), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(DefinitionInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -92,18 +92,18 @@ internal struct DefinitionInternal : ISettable, IDisposable
 
 	public string LockedDisplayName
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(Definition), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(DefinitionInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -112,17 +112,17 @@ internal struct DefinitionInternal : ISettable, IDisposable
 	public string LockedDescription
 	{
 		[CalledBy(Type = typeof(Definition), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(DefinitionInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -130,18 +130,18 @@ internal struct DefinitionInternal : ISettable, IDisposable
 
 	public string HiddenDescription
 	{
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(Definition), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(DefinitionInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -149,18 +149,18 @@ internal struct DefinitionInternal : ISettable, IDisposable
 
 	public string CompletionDescription
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(Definition), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(DefinitionInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -168,18 +168,18 @@ internal struct DefinitionInternal : ISettable, IDisposable
 
 	public string UnlockedIconId
 	{
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(Definition), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(DefinitionInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -187,18 +187,18 @@ internal struct DefinitionInternal : ISettable, IDisposable
 
 	public string LockedIconId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(Definition), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(DefinitionInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -211,12 +211,12 @@ internal struct DefinitionInternal : ISettable, IDisposable
 		[CallsDeduplicatedMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(DefinitionInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -224,58 +224,49 @@ internal struct DefinitionInternal : ISettable, IDisposable
 
 	public StatThresholds[] StatThresholds
 	{
+		[CalledBy(Type = typeof(Definition), Member = "Set")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 5)]
-		[CalledBy(Type = typeof(Definition), Member = "Set")]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(DefinitionInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(DefinitionInternal), Member = "Set")]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
+	[CalledBy(Type = typeof(DefinitionInternal), Member = "Set")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DefinitionInternal), Member = "set_AchievementId")]
+	[Calls(Type = typeof(DefinitionInternal), Member = "set_DisplayName")]
+	[Calls(Type = typeof(DefinitionInternal), Member = "set_Description")]
+	[Calls(Type = typeof(DefinitionInternal), Member = "set_LockedDisplayName")]
+	[Calls(Type = typeof(DefinitionInternal), Member = "set_LockedDescription")]
+	[Calls(Type = typeof(DefinitionInternal), Member = "set_HiddenDescription")]
+	[Calls(Type = typeof(DefinitionInternal), Member = "set_CompletionDescription")]
 	[Calls(Type = typeof(DefinitionInternal), Member = "set_UnlockedIconId")]
 	[Calls(Type = typeof(DefinitionInternal), Member = "set_LockedIconId")]
-	[Calls(Type = typeof(DefinitionInternal), Member = "set_StatThresholds")]
-	[Calls(Type = typeof(DefinitionInternal), Member = "set_CompletionDescription")]
 	[Calls(Type = typeof(DefinitionInternal), Member = "set_IsHidden")]
-	[Calls(Type = typeof(DefinitionInternal), Member = "set_HiddenDescription")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(DefinitionInternal), Member = "set_LockedDisplayName")]
-	[Calls(Type = typeof(DefinitionInternal), Member = "set_Description")]
-	[Calls(Type = typeof(DefinitionInternal), Member = "set_DisplayName")]
-	[Calls(Type = typeof(DefinitionInternal), Member = "set_AchievementId")]
-	[Calls(Type = typeof(DefinitionInternal), Member = "set_LockedDescription")]
-	[CalledBy(Type = typeof(DefinitionInternal), Member = "Set")]
+	[Calls(Type = typeof(DefinitionInternal), Member = "set_StatThresholds")]
 	public void Set(Definition other)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DefinitionInternal), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	public void Dispose()
 	{
 	}

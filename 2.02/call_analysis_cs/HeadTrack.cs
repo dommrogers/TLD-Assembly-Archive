@@ -25,21 +25,19 @@ public class HeadTrack : StateMachineBehaviour
 
 	private float m_LookWeightMaster;
 
-	[Calls(Type = typeof(Animator), Member = "CheckIfInIKPass")]
-	[Calls(Type = typeof(Animator), Member = "SetLookAtWeightInternal")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(AiTarget), Member = "GetEyePos")]
+	[Calls(Type = typeof(Vector3), Member = "Distance")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(Animator), Member = "CheckIfInIKPass")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(Animator), Member = "SetLookAtWeightInternal")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(AiTarget), Member = "GetEyePos")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Vector3), Member = "Distance")]
 	public override void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 	}

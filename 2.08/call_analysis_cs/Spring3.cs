@@ -14,7 +14,7 @@ public class Spring3 : ODE3
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public Spring3(float _mass, Vector3 _dampening, Vector3 _k, Vector3 _restPosition, Vector3 _initialPosition)
-		: base(default(int))
+		: base(0)
 	{
 	}
 
@@ -32,14 +32,14 @@ public class Spring3 : ODE3
 		return default(Vector3);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetPosition(Vector3 position)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public Vector3 GetVelocity()
 	{
 		return default(Vector3);

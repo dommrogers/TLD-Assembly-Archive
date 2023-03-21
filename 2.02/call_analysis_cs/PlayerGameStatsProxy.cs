@@ -21,7 +21,7 @@ public class PlayerGameStatsProxy
 	public float m_CaloriesExpendedToday;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PlayerGameStatsProxy()
 	{
 	}

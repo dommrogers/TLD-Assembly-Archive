@@ -61,53 +61,50 @@ public class DebugPanel_FontRendering : Panel_Base
 	{
 	}
 
-	[Calls(Type = typeof(DebugPanel_FontRendering), Member = "GetUnicodeRangeInfoString")]
-	[CallsUnknownMethods(Count = 29)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(DebugPanel_FontRendering), Member = "GetAllCharactersForFontTest")]
-	[Calls(Type = typeof(DebugPanel_FontRendering), Member = "GetUnicodeRangeInfoString")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(DebugPanel_FontRendering), Member = "GetTestName")]
-	[CallerCount(Count = 0)]
 	[ContextMenu("Bake Font Tests")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(DebugPanel_FontRendering), Member = "GetTestName")]
+	[Calls(Type = typeof(char), Member = "IsLetter")]
+	[Calls(Type = typeof(string), Member = "Contains")]
+	[Calls(Type = typeof(DebugPanel_FontRendering), Member = "GetUnicodeRangeInfoString")]
+	[Calls(Type = typeof(DebugPanel_FontRendering), Member = "GetAllCharactersForFontTest")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsUnknownMethods(Count = 27)]
 	private void PrepareFontTests()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "PrepareFontTests")]
-	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "PrepareFontTests")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(string), Member = "Format")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private string GetTestName(FontTest fontTest)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "PrepareFontTests")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "PrepareFontTests")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private string GetUnicodeRangeInfoString(List<char> chars, int start, int end)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
 	[Calls(Type = typeof(DebugPanel_FontRendering), Member = "RenderFontTest")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryDestroyPanel")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public override void Enable(bool enable)
 	{
@@ -119,17 +116,17 @@ public class DebugPanel_FontRendering : Panel_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(DebugPanel_FontRendering), Member = "RenderFontTest")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DebugPanel_FontRendering), Member = "RenderFontTest")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnPrevPage()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DebugPanel_FontRendering), Member = "RenderFontTest")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnNextPage()
 	{
@@ -141,72 +138,69 @@ public class DebugPanel_FontRendering : Panel_Base
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnCancel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "OnNextPage")]
-	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "OnPrevPage")]
 	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "Enable")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UIFont), Member = "get_dynamicFont")]
-	[Calls(Type = typeof(UILabel), Member = "set_bitmapFont")]
-	[Calls(Type = typeof(TMP_Text), Member = "set_font")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(FontManager), Member = "ResetFontsForCharacterSet")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "OnPrevPage")]
+	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "OnNextPage")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(FontManager), Member = "ResetFontsForCharacterSet")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(TMP_Text), Member = "set_font")]
+	[Calls(Type = typeof(UILabel), Member = "set_bitmapFont")]
+	[Calls(Type = typeof(UIFont), Member = "get_dynamicFont")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void RenderFontTest(FontTest fontTest)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "PrepareFontTests")]
-	[Calls(Type = typeof(DebugPanel_FontRendering), Member = "GetAllCharactersInLanguage")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(DebugPanel_FontRendering), Member = "GetAllLanguagesWithCharacterSet")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(DebugPanel_FontRendering), Member = "GetAllCharactersInLanguage")]
+	[CallsUnknownMethods(Count = 9)]
 	private List<char> GetAllCharactersForFontTest(FontTest fontTest)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(StringTable), Member = "GetCharacterSetForLanguage")]
 	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "GetAllCharactersForFontTest")]
-	[CallsUnknownMethods(Count = 5)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(StringTable), Member = "GetCharacterSetForLanguage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private List<string> GetAllLanguagesWithCharacterSet(CharacterSet characterSet)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "GetAllCharactersForFontTest")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(StringTable), Member = "GetStringForKeyAndLanguage")]
-	[Calls(Type = typeof(StringTable), Member = "InitializeData")]
-	[Calls(Type = typeof(StringTable), Member = "InitializeData")]
-	[Calls(Type = typeof(StringTable), Member = "InitializeData")]
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(StringTable), Member = "InitializeData")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(StringTable), Member = "GetStringForKeyAndLanguage")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsUnknownMethods(Count = 5)]
 	private List<char> GetAllCharactersInLanguage(string lang)
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public DebugPanel_FontRendering()
 	{
 	}

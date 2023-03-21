@@ -6,9 +6,9 @@ public class State_StorySubFSM : State_TLDBaseFSM
 {
 	public string stageId;
 
-	[Calls(Type = typeof(State_TLDBaseFSM), Member = "OnEnter")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(State_TLDBaseFSM), Member = "OnEnter")]
 	protected override void OnEnter()
 	{
 	}

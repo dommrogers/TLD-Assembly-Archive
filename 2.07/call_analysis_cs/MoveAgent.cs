@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 using UnityEngine.AI;
@@ -71,10 +70,11 @@ public class MoveAgent : MonoBehaviour
 
 	private int m_CurrentAnimState;
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(BaseAi), Member = "CreateMoveAgent")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	public void Initialize(BaseAi owner, Vector3 position)
 	{
 	}
@@ -82,15 +82,15 @@ public class MoveAgent : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(BaseAi), Member = "Despawn")]
 	[CalledBy(Type = typeof(MoveAgent), Member = "Update")]
 	[CalledBy(Type = typeof(BaseAiManager), Member = "DisableInvalidAi")]
 	[CalledBy(Type = typeof(BodyHarvestManager), Member = "MaybeRestoreCorpseState")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Enable(bool enable)
 	{
@@ -100,26 +100,26 @@ public class MoveAgent : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetMaxSpeed()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetRampSpeed()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetDesiredSpeed()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public Vector3 GetVelocity()
 	{
 		return default(Vector3);
@@ -129,54 +129,51 @@ public class MoveAgent : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	public float GetAcceleration()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(BaseAi), Member = "ProcessHideAndSeek")]
 	[CalledBy(Type = typeof(MoveAgent), Member = "Update")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public float GetCurrentSpeed()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(BaseAiManager), Member = "DisableInvalidAi")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsOnNavMesh()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(BaseAi), Member = "OnWanderPauseAnimStateExit")]
-	[CalledBy(Type = typeof(MoveAgent), Member = "IsDestinationSafe")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ProcessInvestigateSmell")]
-	[CalledBy(Type = typeof(AreaMarkupManager), Member = "MaybeUnreserveAreaMarkups")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeKeepLonersWithinRadius")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeApplyAttack")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ProcessFlee")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ProcessHideAndSeek")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ProcessInvestigate")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ProcessInvestigateFood")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ProcessHideAndSeek")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ProcessHideAndSeek")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ProcessHideAndSeek")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ProcessFlee")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeApplyAttack")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(BaseAi), Member = "ProcessInvestigateSmell")]
+	[CalledBy(Type = typeof(BaseAi), Member = "OnWanderPauseAnimStateExit")]
+	[CalledBy(Type = typeof(MoveAgent), Member = "IsDestinationSafe")]
+	[CalledBy(Type = typeof(PackManager), Member = "MaybeKeepLonersWithinRadius")]
+	[CalledBy(Type = typeof(AreaMarkupManager), Member = "MaybeUnreserveAreaMarkups")]
 	[CallerCount(Count = 13)]
-	[CalledBy(Type = typeof(BaseAi), Member = "ProcessHideAndSeek")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool HasPath()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public float GetRemainingDistance()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -186,34 +183,33 @@ public class MoveAgent : MonoBehaviour
 		return default(NavMeshPathStatus);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(AreaMarkupManager), Member = "MaybeUnreserveAreaMarkups")]
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeKeepLonersWithinRadius")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ProcessHideAndSeek")]
+	[CalledBy(Type = typeof(MoveAgent), Member = "IsDestinationSafe")]
+	[CalledBy(Type = typeof(MoveAgent), Member = "UpdateAnimatedHeadTurns")]
 	[CalledBy(Type = typeof(PackManager), Member = "IsPointCloseToPackMembers")]
 	[CalledBy(Type = typeof(PackManager), Member = "MaybeKeepLonersWithinRadius")]
-	[CalledBy(Type = typeof(MoveAgent), Member = "IsDestinationSafe")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ProcessHideAndSeek")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(AreaMarkupManager), Member = "MaybeUnreserveAreaMarkups")]
 	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(MoveAgent), Member = "UpdateAnimatedHeadTurns")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public Vector3 GetDestination()
 	{
 		return default(Vector3);
 	}
 
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(FlareItem), Member = "MaybeEnableNavMeshObstacle")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "MaybeEnableNavMeshObstacle")]
 	[CalledBy(Type = typeof(TorchItem), Member = "MaybeEnableNavMeshObstacle")]
+	[CallerCount(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetRadius()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(MoveAgent), Member = "SetAnimationParameters")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(MoveAgent), Member = "Stop")]
+	[Calls(Type = typeof(MoveAgent), Member = "SetAnimationParameters")]
 	public void SetAnimState(MoveState moveState, int animState)
 	{
 	}
@@ -223,166 +219,164 @@ public class MoveAgent : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	public static bool FindRandomPointWithinRadius(Vector3 center, float radius, out Vector3 result, int areaMask)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref result) = null;
-		return default(bool);
+		result = default(Vector3);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(AiUtils), Member = "TurnTowardsTarget")]
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(BaseAi), Member = "ProcessFakeFeeding")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ProcessFeeding")]
-	[Calls(Type = typeof(Mathf), Member = "MoveTowardsAngle")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ProcessFakeFeeding")]
 	[CalledBy(Type = typeof(BaseAi), Member = "TurnTowardsFeedingPos")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Mathf), Member = "MoveTowardsAngle")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 10)]
 	public bool RotateTowards(Vector3 direction)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[CalledBy(Type = typeof(AiUtils), Member = "PointTowardsDirection")]
 	[CalledBy(Type = typeof(BaseAi), Member = "MaybeApplyAttack")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 8)]
 	public void PointTowardsDirection(Vector3 dir)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(MoveAgent), Member = "Warp")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void AdjustModelVerticalOnWarp()
 	{
 	}
 
-	[CalledBy(Type = typeof(BaseAiManager), Member = "CreateMoveAgent")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(Action_SpawnHuntedChallengeBear), Member = "InstantiateChallengeBear")]
-	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "ForceEndGame")]
-	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "Update")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "set_spawn_position")]
-	[CalledBy(Type = typeof(BaseAiManager), Member = "DeserializeAi")]
-	[CalledBy(Type = typeof(Rest), Member = "SpawnPredator")]
-	[CalledBy(Type = typeof(BaseAi), Member = "SetPosition")]
-	[CalledBy(Type = typeof(MoveAgent), Member = "Update")]
-	[CalledBy(Type = typeof(MoveAgent), Member = "SetDestination")]
-	[CalledBy(Type = typeof(BaseAi), Member = "TeleportToRandomWaypointAndPathfind")]
 	[CalledBy(Type = typeof(BaseAi), Member = "SetPositionAndRotation")]
+	[CalledBy(Type = typeof(BaseAi), Member = "SetPosition")]
+	[CalledBy(Type = typeof(BaseAi), Member = "TeleportToRandomWaypointAndPathfind")]
+	[CalledBy(Type = typeof(MoveAgent), Member = "SetDestination")]
+	[CalledBy(Type = typeof(MoveAgent), Member = "Update")]
+	[CalledBy(Type = typeof(SpawnRegion), Member = "InstantiateSpawn")]
+	[CalledBy(Type = typeof(Rest), Member = "SpawnPredator")]
+	[CalledBy(Type = typeof(BaseAiManager), Member = "CreateMoveAgent")]
+	[CalledBy(Type = typeof(BaseAiManager), Member = "DeserializeAi")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "set_spawn_position")]
+	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "Update")]
+	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "ForceEndGame")]
+	[CalledBy(Type = typeof(Action_SpawnHuntedChallengeBear), Member = "InstantiateChallengeBear")]
+	[CallerCount(Count = 13)]
 	[Calls(Type = typeof(MoveAgent), Member = "AdjustModelVerticalOnWarp")]
 	[CallsDeduplicatedMethods(Count = 9)]
-	[CallerCount(Count = 13)]
-	[CalledBy(Type = typeof(SpawnRegion), Member = "InstantiateSpawn")]
+	[CallsUnknownMethods(Count = 9)]
 	public bool Warp(Vector3 position, float radius, bool findClosestPoint, int areaMask)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(BaseAi), Member = "ApplyDamage")]
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeForceAttackInCombatRestrictedArea")]
-	[CalledBy(Type = typeof(BaseAi), Member = "CanEnterHideAndSeekInternal")]
-	[CalledBy(Type = typeof(BaseAi), Member = "PickFleeDesination")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybePickFleeDestinationFromAreaMarkup")]
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeApplyAttack")]
+	[CalledBy(Type = typeof(BaseAi), Member = "AttackOrFleeAfterNearMissGunshot")]
+	[CalledBy(Type = typeof(BaseAi), Member = "EnterAttackModeIfPossible")]
+	[CalledBy(Type = typeof(BaseAi), Member = "CantReachTarget")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ApplyDamage")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ScanForSmells")]
-	[CalledBy(Type = typeof(BaseAi), Member = "EnterAttackModeIfPossible")]
-	[CalledBy(Type = typeof(BaseAi), Member = "AttackOrFleeAfterNearMissGunshot")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeApplyAttack")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybePickFleeDestinationFromAreaMarkup")]
+	[CalledBy(Type = typeof(BaseAi), Member = "PickFleeDesination")]
+	[CalledBy(Type = typeof(BaseAi), Member = "CanEnterHideAndSeekInternal")]
+	[CalledBy(Type = typeof(PackManager), Member = "MaybeForceAttackInCombatRestrictedArea")]
+	[CallerCount(Count = 11)]
 	[Calls(Type = typeof(NavMeshPath), Member = "ClearCorners")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 11)]
-	[CalledBy(Type = typeof(BaseAi), Member = "CantReachTarget")]
+	[CallsUnknownMethods(Count = 5)]
 	public bool CanFindPath(Vector3 destination, PathRequirement minPathRequirement = PathRequirement.PartialPath)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(NavMeshPath), Member = "ClearCorners")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public NavMeshPathStatus CanFindPathStatus(Vector3 destination)
 	{
 		return default(NavMeshPathStatus);
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(MoveAgent), Member = "ProcessDestination")]
-	[Calls(Type = typeof(MoveAgent), Member = "GetDestination")]
-	[Calls(Type = typeof(MoveAgent), Member = "HasPath")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
+	[Calls(Type = typeof(MoveAgent), Member = "HasPath")]
+	[Calls(Type = typeof(MoveAgent), Member = "GetDestination")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private bool IsDestinationSafe(Vector3 destination)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(NavMeshAgent), Member = "get_pathPending")]
 	[CalledBy(Type = typeof(MoveAgent), Member = "SetDestination")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(NavMeshAgent), Member = "set_updateRotation")]
-	[Calls(Type = typeof(NavMeshAgent), Member = "set_isStopped")]
-	[Calls(Type = typeof(NavMeshAgent), Member = "get_hasPath")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(NavMeshPath), Member = "get_status")]
-	[Calls(Type = typeof(NavMeshPath), Member = "ClearCorners")]
-	[Calls(Type = typeof(NavMeshPath), Member = ".ctor")]
-	[Calls(Type = typeof(MoveAgent), Member = "IsDestinationSafe")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MoveAgent), Member = "IsDestinationSafe")]
+	[Calls(Type = typeof(NavMeshPath), Member = ".ctor")]
+	[Calls(Type = typeof(NavMeshPath), Member = "ClearCorners")]
+	[Calls(Type = typeof(NavMeshPath), Member = "get_status")]
 	[Calls(Type = typeof(NavMeshAgent), Member = "SetPath")]
+	[Calls(Type = typeof(NavMeshAgent), Member = "get_hasPath")]
+	[Calls(Type = typeof(NavMeshAgent), Member = "get_pathPending")]
+	[Calls(Type = typeof(NavMeshAgent), Member = "set_isStopped")]
+	[Calls(Type = typeof(NavMeshAgent), Member = "set_updateRotation")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private bool ProcessDestination(Vector3 destination, bool processImmediate)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(BaseAi), Member = "StartPath")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(NavMeshAgent), Member = "get_isOnNavMesh")]
 	[Calls(Type = typeof(AiUtils), Member = "GetRandomPointAndNormalOnNavmeshNoPadding")]
 	[Calls(Type = typeof(MoveAgent), Member = "Warp")]
 	[Calls(Type = typeof(MoveAgent), Member = "ProcessDestination")]
-	[CalledBy(Type = typeof(BaseAi), Member = "StartPath")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 7)]
 	public bool SetDestination(Vector3 destination, float radius, bool findClosestPoint, int areaMask, bool processImmediate, AiTarget overrideTarget)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(BaseAi), Member = "SetAnimationParameters")]
 	[CalledBy(Type = typeof(BaseAi), Member = "SetSpeedAnimationParameter")]
 	[CalledBy(Type = typeof(BaseAi), Member = "StartPath")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(BaseAi), Member = "SetAnimationParameters")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void SetMoveSpeed(float speed)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(MoveAgent), Member = "Update")]
-	[CalledBy(Type = typeof(MoveAgent), Member = "Update")]
-	[CalledBy(Type = typeof(BaseAi), Member = "DoReachedTargetPointOfInterestBehavior")]
-	[CalledBy(Type = typeof(BaseAi), Member = "PathfindToNextPointOfInterest")]
-	[CalledBy(Type = typeof(BaseAi), Member = "StartPath")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MoveAgentStop")]
-	[CalledBy(Type = typeof(MoveAgent), Member = "SetAnimState")]
-	[Calls(Type = typeof(MoveAgent), Member = "SetAnimationParameters")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NavMeshAgent), Member = "set_updateRotation")]
-	[Calls(Type = typeof(NavMeshAgent), Member = "set_isStopped")]
-	[Calls(Type = typeof(NavMeshAgent), Member = "set_speed")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 8)]
 	[CalledBy(Type = typeof(BaseAi), Member = "SetAnimStateForMoveAgent")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MoveAgentStop")]
+	[CalledBy(Type = typeof(BaseAi), Member = "StartPath")]
+	[CalledBy(Type = typeof(BaseAi), Member = "PathfindToNextPointOfInterest")]
+	[CalledBy(Type = typeof(BaseAi), Member = "DoReachedTargetPointOfInterestBehavior")]
+	[CalledBy(Type = typeof(MoveAgent), Member = "SetAnimState")]
+	[CalledBy(Type = typeof(MoveAgent), Member = "Update")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(NavMeshAgent), Member = "set_speed")]
+	[Calls(Type = typeof(NavMeshAgent), Member = "set_isStopped")]
+	[Calls(Type = typeof(NavMeshAgent), Member = "set_updateRotation")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(MoveAgent), Member = "SetAnimationParameters")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 7)]
 	public void Stop()
 	{
 	}
@@ -393,9 +387,9 @@ public class MoveAgent : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[Conditional("__DEBUG")]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	private void SetDebugSphere(Vector3 position, float radius, Color color)
 	{
 	}
@@ -404,94 +398,90 @@ public class MoveAgent : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public int GetAnimState()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool HasReachedDestination()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(MoveAgent), Member = "SwitchToIdleAnim")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(MoveAgent), Member = "Update")]
+	[CalledBy(Type = typeof(BaseAi), Member = "SetAnimStateForMoveAgent")]
+	[CalledBy(Type = typeof(BaseAi), Member = "DoReachedTargetPointOfInterestBehavior")]
 	[CalledBy(Type = typeof(MoveAgent), Member = "SetAnimState")]
 	[CalledBy(Type = typeof(MoveAgent), Member = "Stop")]
-	[CalledBy(Type = typeof(BaseAi), Member = "SetAnimStateForMoveAgent")]
+	[CalledBy(Type = typeof(MoveAgent), Member = "SwitchToIdleAnim")]
+	[CalledBy(Type = typeof(MoveAgent), Member = "Update")]
 	[CallerCount(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(BaseAi), Member = "DoReachedTargetPointOfInterestBehavior")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetAnimationParameters(int animState, float speed)
 	{
 	}
 
+	[CalledBy(Type = typeof(MoveAgent), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Transform), Member = "get_right")]
 	[Calls(Type = typeof(BaseAi), Member = "AnimSetFloat")]
-	[CalledBy(Type = typeof(MoveAgent), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	private void UpdateAnimatedTurns()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
 	[CalledBy(Type = typeof(MoveAgent), Member = "Update")]
-	[Calls(Type = typeof(BaseAi), Member = "AnimSetFloat")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(MoveAgent), Member = "GetDestination")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(MoveAgent), Member = "GetDestination")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(BaseAi), Member = "AnimSetFloat")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateAnimatedHeadTurns()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BaseAi), Member = "IsImposter")]
+	[Calls(Type = typeof(MoveAgent), Member = "UpdateAnimatedTurns")]
+	[Calls(Type = typeof(MoveAgent), Member = "UpdateAnimatedHeadTurns")]
+	[Calls(Type = typeof(NavMeshAgent), Member = "get_isOnNavMesh")]
+	[Calls(Type = typeof(NavMeshAgent), Member = "get_pathPending")]
+	[Calls(Type = typeof(BloodTrail), Member = "AddMoveDistance")]
+	[Calls(Type = typeof(MoveAgent), Member = "ResetPreviousPosition")]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsTimeLapseActive")]
+	[Calls(Type = typeof(NavMeshAgent), Member = "get_remainingDistance")]
+	[Calls(Type = typeof(NavMeshAgent), Member = "get_stoppingDistance")]
+	[Calls(Type = typeof(MoveAgent), Member = "GetCurrentSpeed")]
 	[Calls(Type = typeof(NavMeshAgent), Member = "get_hasPath")]
 	[Calls(Type = typeof(NavMeshAgent), Member = "get_pathStatus")]
 	[Calls(Type = typeof(NavMeshAgent), Member = "set_speed")]
 	[Calls(Type = typeof(NavMeshAgent), Member = "set_acceleration")]
 	[Calls(Type = typeof(Time), Member = "get_smoothDeltaTime")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(MoveAgent), Member = "SetAnimationParameters")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(MoveAgent), Member = "Warp")]
-	[Calls(Type = typeof(MoveAgent), Member = "Stop")]
-	[Calls(Type = typeof(MoveAgent), Member = "Enable")]
-	[Calls(Type = typeof(NavMeshAgent), Member = "get_remainingDistance")]
 	[Calls(Type = typeof(Animator), Member = "set_speed")]
-	[Calls(Type = typeof(MoveAgent), Member = "GetCurrentSpeed")]
+	[Calls(Type = typeof(MoveAgent), Member = "SetAnimationParameters")]
 	[Calls(Type = typeof(MoveAgent), Member = "Stop")]
-	[Calls(Type = typeof(NavMeshAgent), Member = "get_remainingDistance")]
-	[Calls(Type = typeof(NavMeshAgent), Member = "get_stoppingDistance")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MoveAgent), Member = "Warp")]
+	[Calls(Type = typeof(MoveAgent), Member = "Enable")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BaseAi), Member = "IsImposter")]
-	[Calls(Type = typeof(MoveAgent), Member = "UpdateAnimatedTurns")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NavMeshAgent), Member = "get_isOnNavMesh")]
-	[Calls(Type = typeof(NavMeshAgent), Member = "get_pathPending")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BloodTrail), Member = "AddMoveDistance")]
-	[Calls(Type = typeof(MoveAgent), Member = "ResetPreviousPosition")]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsTimeLapseActive")]
-	[Calls(Type = typeof(MoveAgent), Member = "UpdateAnimatedHeadTurns")]
+	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(BaseAi), Member = "CreateMoveAgent")]
 	[CalledBy(Type = typeof(MoveAgent), Member = "Update")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void ResetPreviousPosition()
 	{

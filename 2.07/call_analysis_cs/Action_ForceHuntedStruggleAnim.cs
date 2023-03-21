@@ -17,14 +17,14 @@ public class Action_ForceHuntedStruggleAnim : ActionTask
 			}
 		}
 
-		[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 		protected override void OnExecute()
 		{
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public Action_SetBearEncounterPlayerOutcomeAfterSpearMiss()
 		{
 		}
@@ -42,16 +42,17 @@ public class Action_ForceHuntedStruggleAnim : ActionTask
 
 	public string struggleFaceTargetObjectIdentifier;
 
-	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	protected override void OnExecute()
 	{
 	}

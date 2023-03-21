@@ -32,54 +32,55 @@ public class SkillNotify : MonoBehaviour
 	private bool m_SkillLevelUpPending;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	public void Start()
 	{
 	}
 
-	[Calls(Type = typeof(SkillNotify), Member = "UpdateSkillLevelUpAlpha")]
-	[Calls(Type = typeof(SkillNotify), Member = "UpdateSkillIncreaseAlpha")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(SkillNotify), Member = "ShouldHideSkillLevelUpIcon")]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 12)]
-	[Calls(Type = typeof(SkillNotify), Member = "ShouldHideSkillLevelUpIcon")]
-	[Calls(Type = typeof(SkillNotify), Member = "ShouldHideSkillLevelUpIcon")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(SkillNotify), Member = "UpdateSkillIncreaseAlpha")]
+	[Calls(Type = typeof(SkillNotify), Member = "UpdateSkillLevelUpAlpha")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 10)]
 	public void Update()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "SetSkillPoints")]
 	[CalledBy(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
 	[CalledBy(Type = typeof(Action_SetSkillPoints), Member = "OnExecute")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void MaybeShowPointIncrease(string spriteName)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Action_SetSkillLevel), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_SetSkillPoints), Member = "OnExecute")]
-	[CalledBy(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "SetSkillLevel")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "SetSkillPoints")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "SetSkillLevel")]
+	[CalledBy(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
+	[CalledBy(Type = typeof(Action_SetSkillPoints), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_SetSkillLevel), Member = "OnExecute")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(int), Member = "ToString")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void MaybeShowLevelUp(string spriteName, string header, string footer, int tier)
 	{
 	}
@@ -92,51 +93,49 @@ public class SkillNotify : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(SkillNotify), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(SkillNotify), Member = "Update")]
 	[CallsUnknownMethods(Count = 5)]
 	private void UpdateSkillLevelUpAlpha(Panel_HUD hud)
 	{
 	}
 
 	[CalledBy(Type = typeof(SkillNotify), Member = "Update")]
-	[CalledBy(Type = typeof(SkillNotify), Member = "Update")]
 	[CalledBy(Type = typeof(SkillNotify), Member = "TryToDisplaySkillLevelUp")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool ShouldHideSkillLevelUpIcon()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool ShouldHideSkillIncreaseIcon()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(SkillNotify), Member = "ShouldHideSkillLevelUpIcon")]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private bool TryToDisplaySkillLevelUp(Panel_HUD hud)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public SkillNotify()
 	{
 	}

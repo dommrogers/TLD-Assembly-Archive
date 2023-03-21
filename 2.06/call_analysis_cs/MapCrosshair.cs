@@ -53,48 +53,33 @@ public class MapCrosshair : MonoBehaviour
 
 	private TweenPosition m_TweenPosDown;
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Map), Member = "ResetToNormal")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 8)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "ResetToNormal")]
 	[CallsUnknownMethods(Count = 9)]
 	public void ResetToNormal()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateCrosshairState")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateCrosshairState")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[CallsDeduplicatedMethods(Count = 16)]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 9)]
 	public void SetState(CrosshairState newState)
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public MapCrosshair()
 	{
 	}

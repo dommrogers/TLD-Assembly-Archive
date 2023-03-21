@@ -8,8 +8,8 @@ public class PhoneSaveDataInfo
 
 	public int m_RingCycleCount;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public PhoneSaveDataInfo()
 	{
 	}

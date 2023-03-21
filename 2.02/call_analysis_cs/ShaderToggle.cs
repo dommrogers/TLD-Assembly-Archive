@@ -13,14 +13,13 @@ public class ShaderToggle : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_shader_toggle")]
-	[Calls(Type = typeof(ShaderComparison), Member = "Toggle")]
-	[Calls(Type = typeof(string), Member = "Equals")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "ToLower")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(string), Member = "Equals")]
+	[Calls(Type = typeof(ShaderComparison), Member = "Toggle")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	public static void Toggle(string tag)
 	{
 	}

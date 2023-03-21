@@ -45,10 +45,9 @@ public class Panel_Confirmation : Panel_AutoReferenced
 		public TextInputField m_InputField;
 
 		[CalledBy(Type = typeof(Panel_Confirmation), Member = "Initialize")]
-		[CalledBy(Type = typeof(Panel_Confirmation), Member = "Initialize")]
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+		[CallsUnknownMethods(Count = 2)]
 		public void Initialize(GameObject obj)
 		{
 		}
@@ -113,7 +112,7 @@ public class Panel_Confirmation : Panel_AutoReferenced
 		[CallerCount(Count = 0)]
 		public bool IsInputType()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
@@ -150,12 +149,12 @@ public class Panel_Confirmation : Panel_AutoReferenced
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Enum), Member = "CompareTo")]
+		[CallsUnknownMethods(Count = 1)]
 		internal int _003CQueueConfirmation_003Eb__29_0(ConfirmationRequest a, ConfirmationRequest b)
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -167,89 +166,87 @@ public class Panel_Confirmation : Panel_AutoReferenced
 
 	private List<ConfirmationRequest> m_ConfirmationRequests;
 
-	[Calls(Type = typeof(Group), Member = "Initialize")]
-	[Calls(Type = typeof(Group), Member = "Initialize")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(Group), Member = "Initialize")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "OnConfirm")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(InputManager), Member = "CheckForActiveController")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "OnCancel")]
-	[Calls(Type = typeof(InputManager), Member = "GetPauseMenuTogglePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(TextInputField), Member = "Select")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "SetActiveButtons")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "SetCurrentCustomModeString")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(TextInputField), Member = "GetText")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "OnCancel")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(TextInputField), Member = "IsLockedIn")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "GetCurrentConfirmationRequest")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "GetCurrentConfirmationRequest")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "SetActiveButtons")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "OnCancel")]
+	[Calls(Type = typeof(TextInputField), Member = "GetText")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "SetCurrentCustomModeString")]
+	[Calls(Type = typeof(TextInputField), Member = "IsLockedIn")]
+	[Calls(Type = typeof(TextInputField), Member = "Select")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(InputManager), Member = "GetPauseMenuTogglePressed")]
+	[Calls(Type = typeof(InputManager), Member = "CheckForActiveController")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "OnConfirm")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Confirmation), Member = "UpdateButtons")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "UpdateButtons")]
 	public void LateUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
 	[Calls(Type = typeof(InputManager), Member = "PopContext")]
 	[Calls(Type = typeof(InputManager), Member = "PushContext")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "GetCurrentConfirmationRequest")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
 	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "SetActiveButtons")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public override void Enable(bool enable)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Confirmation), Member = "GetCurrentConfirmationRequest")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "GetCurrentConfirmationRequest")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public bool IsControllerDisconnectedPanel()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "GetCurrentConfirmationRequest")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "OnCancel")]
-	[CallsUnknownMethods(Count = 4)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public void CancelConfirmation(ConfirmationType confirmationType)
 	{
 	}
 
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void ForceQuit()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TextInputField), Member = "GetText")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetInputFieldText()
 	{
 		return null;
@@ -259,68 +256,67 @@ public class Panel_Confirmation : Panel_AutoReferenced
 	[CallsUnknownMethods(Count = 1)]
 	public uint GetMaxInputLength()
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetVirtualKeyboardDescription()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheRenameButton")]
-	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnEnterCodePopupCancelled")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnEnterCodePopupConfirmed")]
-	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnEnterCode")]
 	[CalledBy(Type = typeof(RockCache), Member = "OnLabel")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnEnterCode")]
+	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnEnterCodePopupConfirmed")]
+	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnEnterCodePopupCancelled")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheRenameButton")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetupInputField(string virtualKeyboardDescriptionLocId, uint maxLength, bool capsLock)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	private void RemoveConfirmation(ConfirmationRequest confirmation)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "OnConfirm")]
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "OnCancel")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowCurrentConfirmation")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ShowNextConfirmation(ConfirmationRequest currentConfirmation)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowCurrentConfirmation")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowCurrentConfirmation")]
 	[CallsUnknownMethods(Count = 1)]
 	private void SetCurrentGroup(Group group)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "MaybeUpdateDisconnectedGamepadConfirmButton")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "UpdateButtons")]
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "SetActiveButtons")]
-	[Calls(Type = typeof(InputManager), Member = "HasReconnectedJoystick")]
-	[Calls(Type = typeof(UIPanel), Member = "Find")]
-	[Calls(Type = typeof(InputManager), Member = "IsShowingControllerDisconnectedPanel")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "UpdateButtons")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "IsShowingControllerDisconnectedPanel")]
+	[Calls(Type = typeof(UIPanel), Member = "Find")]
+	[Calls(Type = typeof(InputManager), Member = "HasReconnectedJoystick")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private bool IsControllerSchemeEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -331,54 +327,40 @@ public class Panel_Confirmation : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowCurrentConfirmation")]
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "Enable")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "IsControllerSchemeEnabled")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowCurrentConfirmation")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(InputManager), Member = "IsShowingControllerDisconnectedPanel")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(TextInputField), Member = "GetText")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(InputManager), Member = "IsShowingControllerDisconnectedPanel")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "IsControllerSchemeEnabled")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetActiveButtons(ConfirmationRequest confirmationRequest)
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 19)]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "QueueConfirmation")]
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowNextConfirmation")]
-	[Calls(Type = typeof(InputManager), Member = "PauseGame")]
-	[Calls(Type = typeof(InputManager), Member = "CanInvokePauseMenu")]
-	[Calls(Type = typeof(TextInputField), Member = "Select")]
-	[Calls(Type = typeof(TextInputField), Member = "SetText")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "SetActiveButtons")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "SetCurrentGroup")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "GetCurrentConfirmationRequest")]
-	[CallsDeduplicatedMethods(Count = 19)]
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "QueueConfirmation")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "GetCurrentConfirmationRequest")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "SetCurrentGroup")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "SetActiveButtons")]
+	[Calls(Type = typeof(TextInputField), Member = "SetText")]
+	[Calls(Type = typeof(TextInputField), Member = "Select")]
+	[Calls(Type = typeof(InputManager), Member = "CanInvokePauseMenu")]
+	[Calls(Type = typeof(InputManager), Member = "PauseGame")]
+	[CallsDeduplicatedMethods(Count = 19)]
+	[CallsUnknownMethods(Count = 19)]
 	private void ShowCurrentConfirmation()
 	{
 	}
@@ -387,12 +369,13 @@ public class Panel_Confirmation : Panel_AutoReferenced
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
+	[Calls(Type = typeof(List<>), Member = "Sort")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowCurrentConfirmation")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void QueueConfirmation(ConfirmationRequest request)
 	{
 	}
@@ -405,69 +388,69 @@ public class Panel_Confirmation : Panel_AutoReferenced
 	}
 
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowMailingListResultPanel")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "QueueConfirmation")]
+	[CallsUnknownMethods(Count = 1)]
 	private void AddConfirmation(ConfirmationType type, string titleLocID, string messageLocID, ButtonLayout buttonLayout, Background background, CallbackDelegate confirmCallback, EnableDelegate enableCallback)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Confirmation), Member = "QueueConfirmation")]
 	[CalledBy(Type = typeof(RockCache), Member = "OnLabel")]
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowRenamePanel")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnEnterCode")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "ShowNameSaveSlotPopup")]
 	[CalledBy(Type = typeof(Panel_SaveStory), Member = "OnNewSave")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "QueueConfirmation")]
+	[CallsUnknownMethods(Count = 1)]
 	private void AddConfirmation(ConfirmationType type, string titleLocID, string currentName, ButtonLayout buttonLayout, string buttonLocID1, string buttonLocID2, Background background, CallbackDelegate confirmCallback, EnableDelegate enableCallback)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_MarkerList), Member = "UpdateGamePad")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowConfirmPanel")]
 	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OnClickedDeleteAll")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "QueueConfirmation")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_MarkerList), Member = "OnDeleteItemRequested")]
+	[CalledBy(Type = typeof(Panel_MarkerList), Member = "UpdateGamePad")]
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowConfirmPanel")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "QueueConfirmation")]
+	[CallsUnknownMethods(Count = 1)]
 	private void AddConfirmation(ConfirmationType type, string titleLocID, ButtonLayout buttonLayout, string buttonLocID1, string buttonLocID2, Background background, CallbackDelegate confirmCallback, EnableDelegate cancelCallback)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(WebUtils.SteamCloudManager.AuthenticateOperation), Member = "ShowRetryDialog")]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowCloudSyncLocalNewer")]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowCloudSyncCloudNewerConfirm")]
-	[CalledBy(Type = typeof(WebUtils.SteamCloudManager), Member = "RequestUserConfirmation")]
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowMailingListPanel")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "QueueConfirmation")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowCloudRetryAuthenticationConfirmationPanel")]
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowCloudSyncCloudNewerConfirm")]
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowCloudSyncLocalNewer")]
+	[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.AuthenticateOperation", Member = "ShowRetryDialog")]
+	[CalledBy(Type = typeof(WebUtils.SteamCloudManager), Member = "RequestUserConfirmation")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "QueueConfirmation")]
+	[CallsUnknownMethods(Count = 1)]
 	private void AddConfirmation(ConfirmationType type, string titleLocID, string messageLocID, string currentName, ButtonLayout buttonLayout, string buttonLocID1, string buttonLocID2, Background background, CallbackDelegate confirmCallback, EnableDelegate enableCallback)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowWaitingPanel")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "QueueConfirmation")]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowWaitingPanel")]
 	[CallsUnknownMethods(Count = 1)]
 	private void AddConfirmation(ConfirmationType type, string messageLocID, ButtonLayout buttonLayout, Background background, EnableDelegate enableCallback)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "OnCancel")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(InputManager), Member = "IsShowingControllerDisconnectedPanel")]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "IsConfirmationEnabled")]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "OnConfirm")]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowCurrentConfirmation")]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "CancelConfirmation")]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "IsControllerDisconnectedPanel")]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "IsControllerDisconnectedPanel")]
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "CancelConfirmation")]
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "ShowCurrentConfirmation")]
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "OnConfirm")]
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "OnCancel")]
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "IsConfirmationEnabled")]
+	[CalledBy(Type = typeof(InputManager), Member = "IsShowingControllerDisconnectedPanel")]
 	[CallerCount(Count = 9)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private ConfirmationRequest GetCurrentConfirmationRequest()
 	{
 		return null;
@@ -485,8 +468,8 @@ public class Panel_Confirmation : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	public void ShowSignoutConfirmationPanel(CallbackDelegate confirmCallback)
 	{
 	}
@@ -497,11 +480,11 @@ public class Panel_Confirmation : Panel_AutoReferenced
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CalledBy(Type = typeof(Panel_ChooseChallenge), Member = "OnDelete")]
 	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "OnDelete")]
 	[CalledBy(Type = typeof(Panel_SaveStory), Member = "OnDelete")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	public void ShowDeleteConfirmationPanel(CallbackDelegate confirmCallback, EnableDelegate enableCallback)
 	{
 	}
@@ -512,8 +495,8 @@ public class Panel_Confirmation : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	public void ShowDeleteJounalPanel(CallbackDelegate confirmCallback, EnableDelegate enableCallback)
 	{
 	}
@@ -536,16 +519,16 @@ public class Panel_Confirmation : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_SaveStory), Member = "OnRename")]
-	[CalledBy(Type = typeof(Panel_SaveStory._003COnOverwriteConfirmedCoroutine_003Ed__56), Member = "MoveNext")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheRenameButton")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnRenameSandbox")]
 	[CalledBy(Type = typeof(Panel_ChooseChallenge), Member = "OnRename")]
-	[Calls(Type = typeof(TextInputField), Member = "Select")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "OnRename")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnRenameSandbox")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheRenameButton")]
+	[CalledBy(TypeFullName = "Panel_SaveStory.<OnOverwriteConfirmedCoroutine>d__56", Member = "MoveNext")]
+	[CalledBy(Type = typeof(Panel_SaveStory), Member = "OnRename")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
+	[Calls(Type = typeof(TextInputField), Member = "Select")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ShowRenamePanel(string locID, string currentName, string buttonPromptLocId1, string buttonPromptLocId2, CallbackDelegate confirmCallback, EnableDelegate enableCallback)
 	{
 	}
@@ -557,8 +540,8 @@ public class Panel_Confirmation : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	public void ShowMailingListPanel(string titleLocID, string messageLocID, string currentName, string buttonPromptLocId1, string buttonPromptLocId2, CallbackDelegate confirmCallback, EnableDelegate enableCallback)
 	{
 	}
@@ -595,27 +578,26 @@ public class Panel_Confirmation : Panel_AutoReferenced
 	{
 	}
 
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGame")]
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CalledBy(Type = typeof(LoadScene), Member = "Update")]
 	[CalledBy(Type = typeof(SaveGameData), Member = "MaybeDisplayErrorNotification")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGame")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	public void ShowSaveGameFailedSaveNotification(CallbackDelegate confirmCallback)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	public void ShowProfileFailedSaveNotification(CallbackDelegate confirmCallback)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadSlotOnStart")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGame")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGameForEpisodeMigration")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	public void ShowSaveGameFaileLoadNotification(CallbackDelegate confirmCallback)
 	{
 	}
@@ -626,16 +608,16 @@ public class Panel_Confirmation : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	public void ShowSaveDeleteFailedNotification(CallbackDelegate confirmCallback)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CalledBy(Type = typeof(Panel_Challenges), Member = "OnClickNew")]
 	[CalledBy(Type = typeof(Panel_Sandbox), Member = "OnClickNew")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	public void ShowNotEnoughSaveSlotsAvailableNotification(CallbackDelegate confirmCallback)
 	{
 	}
@@ -652,8 +634,8 @@ public class Panel_Confirmation : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	public void ShowCloudRetryAuthenticationConfirmationPanel(CallbackDelegate confirmCallback, EnableDelegate cancelCallback)
 	{
 	}
@@ -664,53 +646,52 @@ public class Panel_Confirmation : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	public void ShowCloudSyncLocalNewer(CallbackDelegate confirmCallback, EnableDelegate cancelCallback)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
 	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "GetCurrentConfirmationRequest")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowNextConfirmation")]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void OnConfirm()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Confirmation), Member = "CancelConfirmation")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "GetCurrentConfirmationRequest")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowNextConfirmation")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "GetCurrentConfirmationRequest")]
-	[CalledBy(Type = typeof(Panel_Confirmation), Member = "CancelConfirmation")]
 	public void OnCancel()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "LateUpdate")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "IsControllerSchemeEnabled")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateButtons()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "GetCurrentConfirmationRequest")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private bool IsConfirmationEnabled(ConfirmationType confirmationType)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

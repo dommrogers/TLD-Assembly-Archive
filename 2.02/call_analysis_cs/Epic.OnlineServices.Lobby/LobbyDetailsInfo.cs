@@ -21,14 +21,14 @@ public class LobbyDetailsInfo : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -36,16 +36,16 @@ public class LobbyDetailsInfo : ISettable
 
 	public ProductUserId LobbyOwnerUserId
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -70,16 +70,16 @@ public class LobbyDetailsInfo : ISettable
 
 	public uint AvailableSlots
 	{
-		[CallerCount(Count = 3)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 3)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -89,10 +89,10 @@ public class LobbyDetailsInfo : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 2)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -109,7 +109,7 @@ public class LobbyDetailsInfo : ISettable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -119,27 +119,27 @@ public class LobbyDetailsInfo : ISettable
 		}
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(LobbyDetailsInfo), Member = "Set")]
-	[Calls(Type = typeof(LobbyDetailsInfoInternal), Member = "get_AllowInvites")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(LobbyDetailsInfoInternal), Member = "get_LobbyId")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(LobbyDetailsInfoInternal), Member = "get_LobbyOwnerUserId")]
+	[Calls(Type = typeof(LobbyDetailsInfoInternal), Member = "get_AllowInvites")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	internal void Set(LobbyDetailsInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(LobbyDetailsInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public LobbyDetailsInfo()
 	{
 	}

@@ -42,110 +42,113 @@ public class UIPlayAnimation : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(EventDelegate), Member = "IsValid")]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(UIPlayAnimation), Member = "Play")]
-	[Calls(Type = typeof(UICamera), Member = "IsHighlighted")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UICamera), Member = "IsHighlighted")]
+	[Calls(Type = typeof(UIPlayAnimation), Member = "Play")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 5)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(EventDelegate), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UIPlayAnimation), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnHover(bool isOver)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UIPlayAnimation), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnPress(bool isPressed)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UIPlayAnimation), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnClick()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UIPlayAnimation), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnDoubleClick()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UIPlayAnimation), Member = "Play")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIPlayAnimation), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnSelect(bool isSelected)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UIPlayAnimation), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnToggle()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIPlayAnimation), Member = "Play")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnDragOver()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIPlayAnimation), Member = "Play")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnDragOut()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UIPlayAnimation), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnDrop(GameObject go)
 	{
 	}
@@ -156,57 +159,55 @@ public class UIPlayAnimation : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnPress")]
-	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnHover")]
 	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnEnable")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(ActiveAnimation), Member = "Reset")]
-	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnDoubleClick")]
-	[CalledBy(Type = typeof(UIPlayAnimation), Member = "PlayForward")]
-	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnDrop")]
-	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnDragOut")]
+	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnHover")]
+	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnPress")]
 	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnClick")]
-	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnDragOver")]
-	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnToggle")]
+	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnDoubleClick")]
 	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnSelect")]
-	[Calls(Type = typeof(ActiveAnimation), Member = "Play")]
-	[Calls(Type = typeof(ActiveAnimation), Member = "Play")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
-	[Calls(Type = typeof(UICamera), Member = "get_selectedObject")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 12)]
+	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnToggle")]
+	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnDragOver")]
+	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnDragOut")]
+	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnDrop")]
+	[CalledBy(Type = typeof(UIPlayAnimation), Member = "PlayForward")]
 	[CalledBy(Type = typeof(UIPlayAnimation), Member = "PlayReverse")]
+	[CallerCount(Count = 12)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UICamera), Member = "get_selectedObject")]
+	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
+	[Calls(Type = typeof(ActiveAnimation), Member = "Play")]
+	[Calls(Type = typeof(ActiveAnimation), Member = "Play")]
+	[Calls(Type = typeof(ActiveAnimation), Member = "Reset")]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Play(bool forward, bool onlyIfDifferent)
 	{
 	}
 
-	[Calls(Type = typeof(UIPlayAnimation), Member = "Play")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIPlayAnimation), Member = "Play")]
 	public void PlayForward()
 	{
 	}
 
-	[Calls(Type = typeof(UIPlayAnimation), Member = "Play")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIPlayAnimation), Member = "Play")]
 	public void PlayReverse()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
+	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnFinished()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public UIPlayAnimation()
 	{
 	}

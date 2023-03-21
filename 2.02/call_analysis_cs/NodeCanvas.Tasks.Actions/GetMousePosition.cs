@@ -10,9 +10,9 @@ public class GetMousePosition : ActionTask
 
 	public bool repeat;
 
-	[Calls(Type = typeof(GetMousePosition), Member = "Do")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GetMousePosition), Member = "Do")]
 	protected override void OnExecute()
 	{
 	}
@@ -24,11 +24,11 @@ public class GetMousePosition : ActionTask
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CalledBy(Type = typeof(GetMousePosition), Member = "OnExecute")]
 	[CalledBy(Type = typeof(GetMousePosition), Member = "OnUpdate")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Do()
 	{

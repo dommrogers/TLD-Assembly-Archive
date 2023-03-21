@@ -12,8 +12,8 @@ public sealed class ColorParameter : ParameterOverride<Color>
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static implicit operator Vector4(ColorParameter prop)
 	{
 		return default(Vector4);
@@ -22,7 +22,7 @@ public sealed class ColorParameter : ParameterOverride<Color>
 	[CallerCount(Count = 0)]
 	public override bool Equals(Color a, Color b)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

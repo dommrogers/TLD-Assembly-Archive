@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using ParadoxNotion.Serialization.FullSerializer.Internal;
+using ParadoxNotion.Serialization.FullSerializer.Internal.DirectConverters;
 
 namespace ParadoxNotion.Serialization.FullSerializer;
 
@@ -31,93 +32,89 @@ public abstract class fsBaseConverter
 
 	public fsSerializer Serializer;
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 28)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 28)]
 	public virtual object CreateInstance(fsData data, Type storageType)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Type), Member = "get_IsInterface")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public virtual bool RequestCycleSupport(Type storageType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public virtual bool RequestInheritanceSupport(Type storageType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	public abstract fsResult TrySerialize(object instance, out fsData serialized, Type storageType);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	public abstract fsResult TryDeserialize(fsData data, ref object instance, Type storageType);
 
 	[CalledBy(Type = typeof(fsDictionaryConverter), Member = "TryDeserialize")]
-	[Calls(Type = typeof(fsResult), Member = "Fail")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[CallsUnknownMethods(Count = 36)]
-	[Calls(Type = typeof(string), Member = "Join")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[Calls(Type = typeof(string), Member = "Join")]
 	[Calls(Type = typeof(fsData), Member = "get_Type")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(fsResult), Member = "Fail")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 34)]
 	protected fsResult FailExpectedType(fsData data, fsDataType[] types)
 	{
 		return default(fsResult);
 	}
 
-	[CallsUnknownMethods(Count = 29)]
-	[CalledBy(Type = typeof(fsReflectedConverter), Member = "TryDeserialize")]
-	[CalledBy(Type = typeof(fsPrimitiveConverter), Member = "TryDeserialize")]
-	[CalledBy(Type = typeof(fsPrimitiveConverter), Member = "TryDeserialize")]
-	[CalledBy(Type = typeof(fsListConverter), Member = "TryDeserialize")]
-	[CalledBy(Type = typeof(fsDictionaryConverter), Member = "TryDeserialize")]
-	[CalledBy(Type = typeof(fsArrayConverter), Member = "TryDeserialize")]
 	[CalledBy(Type = typeof(fsDirectConverter<>), Member = "TryDeserialize")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(fsData), Member = "get_Type")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(fsData), Member = "get_Type")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(fsArrayConverter), Member = "TryDeserialize")]
+	[CalledBy(Type = typeof(fsDictionaryConverter), Member = "TryDeserialize")]
+	[CalledBy(Type = typeof(fsListConverter), Member = "TryDeserialize")]
+	[CalledBy(Type = typeof(fsPrimitiveConverter), Member = "TryDeserialize")]
+	[CalledBy(Type = typeof(fsReflectedConverter), Member = "TryDeserialize")]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(fsData), Member = "get_Type")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(fsResult), Member = "Fail")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 29)]
 	protected fsResult CheckType(fsData data, fsDataType type)
 	{
 		return default(fsResult);
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsData), Member = "Cast")]
 	[Calls(Type = typeof(fsBaseConverter), Member = "CheckKey")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	protected fsResult CheckKey(fsData data, string key, out fsData subitem)
 	{
 		subitem = null;
 		return default(fsResult);
 	}
 
-	[CalledBy(Type = typeof(fsDictionaryConverter), Member = "TryDeserialize")]
-	[CallsUnknownMethods(Count = 21)]
 	[CalledBy(Type = typeof(fsBaseConverter), Member = "CheckKey")]
 	[CalledBy(Type = typeof(fsDictionaryConverter), Member = "TryDeserialize")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(fsResult), Member = "Fail")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 21)]
 	protected fsResult CheckKey(Dictionary<string, fsData> data, string key, out fsData subitem)
 	{
 		subitem = null;
@@ -125,27 +122,40 @@ public abstract class fsBaseConverter
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(AnimationCurve_DirectConverter), Member = "DoSerialize")]
+	[CalledBy(Type = typeof(Gradient_DirectConverter), Member = "DoSerialize")]
+	[CalledBy(Type = typeof(GUIStyleState_DirectConverter), Member = "DoSerialize")]
+	[CalledBy(Type = typeof(GUIStyle_DirectConverter), Member = "DoSerialize")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(fsSerializer), Member = "TrySerialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	protected fsResult SerializeMember<T>(Dictionary<string, fsData> data, Type overrideConverterType, string name, T value)
 	{
 		return default(fsResult);
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(fsResult), Member = "Fail")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(fsSerializer), Member = "TryDeserialize")]
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(AnimationCurve_DirectConverter), Member = "DoDeserialize")]
+	[CalledBy(Type = typeof(Bounds_DirectConverter), Member = "DoDeserialize")]
+	[CalledBy(Type = typeof(Gradient_DirectConverter), Member = "DoDeserialize")]
+	[CalledBy(Type = typeof(GUIStyleState_DirectConverter), Member = "DoDeserialize")]
+	[CalledBy(Type = typeof(GUIStyle_DirectConverter), Member = "DoDeserialize")]
+	[CalledBy(Type = typeof(Keyframe_DirectConverter), Member = "DoDeserialize")]
+	[CalledBy(Type = typeof(LayerMask_DirectConverter), Member = "DoDeserialize")]
+	[CalledBy(Type = typeof(RectOffset_DirectConverter), Member = "DoDeserialize")]
+	[CalledBy(Type = typeof(Rect_DirectConverter), Member = "DoDeserialize")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(fsSerializer), Member = "TryDeserialize")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(fsResult), Member = "Fail")]
+	[CallsUnknownMethods(Count = 3)]
 	protected fsResult DeserializeMember<T>(Dictionary<string, fsData> data, Type overrideConverterType, string name, out T value)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<T, @null>(ref value) = null;
+		value = default(T);
 		return default(fsResult);
 	}
 

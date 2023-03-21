@@ -19,19 +19,19 @@ public class ParticleWindForce : MonoBehaviour
 
 	private float m_CurrentTime;
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Wind), Member = "IsPositionOccludedFromWind")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(Wind), Member = "IsPositionOccludedFromWind")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 8)]
 	private void Update()
 	{
 	}

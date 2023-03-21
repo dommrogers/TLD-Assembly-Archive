@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 
@@ -11,16 +12,16 @@ public class Action_StartSideMission : ActionTask<GraphOwner>
 
 	public bool restartIfAlreadyActive;
 
-	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionManager")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "IsMissionActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "IsMissionActive")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionManager")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "ProcessRemoveMissionList")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}

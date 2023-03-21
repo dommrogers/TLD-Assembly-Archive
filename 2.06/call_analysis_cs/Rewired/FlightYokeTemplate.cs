@@ -164,7 +164,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EleftPaddle
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -174,7 +174,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002ErightPaddle
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -184,7 +184,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EleftGripButton1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -193,8 +193,8 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EleftGripButton2
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -204,7 +204,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EleftGripButton3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -214,7 +214,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EleftGripButton4
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -224,7 +224,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EleftGripButton5
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -234,7 +234,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EleftGripButton6
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -244,7 +244,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002ErightGripButton1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -253,8 +253,8 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002ErightGripButton2
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -264,7 +264,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002ErightGripButton3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -274,7 +274,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002ErightGripButton4
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -284,7 +284,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002ErightGripButton5
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -294,7 +294,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002ErightGripButton6
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -304,7 +304,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EcenterButton1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -313,8 +313,8 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EcenterButton2
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -324,7 +324,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EcenterButton3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -334,7 +334,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EcenterButton4
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -344,7 +344,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EcenterButton5
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -354,7 +354,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EcenterButton6
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -364,7 +364,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EcenterButton7
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -373,8 +373,8 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EcenterButton8
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -384,7 +384,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002Ewheel1Up
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -394,7 +394,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002Ewheel1Down
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -404,7 +404,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002Ewheel1Press
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -414,7 +414,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002Ewheel2Up
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -424,7 +424,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002Ewheel2Down
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -433,8 +433,8 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002Ewheel2Press
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -444,7 +444,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EconsoleButton1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -454,7 +454,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EconsoleButton2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -464,7 +464,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EconsoleButton3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -474,7 +474,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EconsoleButton4
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -484,7 +484,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EconsoleButton5
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -493,8 +493,8 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EconsoleButton6
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -504,7 +504,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EconsoleButton7
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -514,7 +514,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EconsoleButton8
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -524,7 +524,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EconsoleButton9
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -534,7 +534,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002EconsoleButton10
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -544,7 +544,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002Emode1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -553,8 +553,8 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002Emode2
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -564,7 +564,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateButton Rewired_002EIFlightYokeTemplate_002Emode3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -574,7 +574,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateYoke Rewired_002EIFlightYokeTemplate_002Eyoke
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -584,7 +584,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateThrottle Rewired_002EIFlightYokeTemplate_002Elever1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -594,7 +594,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateThrottle Rewired_002EIFlightYokeTemplate_002Elever2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -603,8 +603,8 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 
 	private IControllerTemplateThrottle Rewired_002EIFlightYokeTemplate_002Elever3
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -614,7 +614,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateThrottle Rewired_002EIFlightYokeTemplate_002Elever4
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -624,7 +624,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateThrottle Rewired_002EIFlightYokeTemplate_002Elever5
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -634,7 +634,7 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateHat Rewired_002EIFlightYokeTemplate_002EleftGripHat
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -644,15 +644,15 @@ public sealed class FlightYokeTemplate : ControllerTemplate, IFlightYokeTemplate
 	private IControllerTemplateHat Rewired_002EIFlightYokeTemplate_002ErightGripHat
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ControllerTemplate), Member = ".ctor")]
 	public FlightYokeTemplate(object payload)
 		: base(null)

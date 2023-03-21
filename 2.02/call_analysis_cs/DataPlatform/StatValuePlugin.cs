@@ -17,8 +17,8 @@ public class StatValuePlugin
 	public static extern double StatisticValue_AsNumber(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern long StatisticValue_AsInteger(IntPtr self);
 
 	[PreserveSig]
@@ -37,7 +37,7 @@ public class StatValuePlugin
 	public static extern void StatisticValue_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public StatValuePlugin()
 	{
 	}

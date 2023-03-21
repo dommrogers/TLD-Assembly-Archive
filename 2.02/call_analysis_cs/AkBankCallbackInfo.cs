@@ -11,32 +11,32 @@ public class AkBankCallbackInfo : IDisposable
 	public uint bankID
 	{
 		[CalledBy(Type = typeof(AkCallbackManager), Member = "PostCallbacks")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
 	public IntPtr inMemoryBankPtr
 	{
 		[CalledBy(Type = typeof(AkCallbackManager), Member = "PostCallbacks")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public AKRESULT loadResult
 	{
+		[CalledBy(Type = typeof(AkCallbackManager), Member = "PostCallbacks")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(AkCallbackManager), Member = "PostCallbacks")]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -46,13 +46,13 @@ public class AkBankCallbackInfo : IDisposable
 
 	public int memPoolId
 	{
+		[CalledBy(Type = typeof(AkCallbackManager), Member = "PostCallbacks")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(AkCallbackManager), Member = "PostCallbacks")]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -62,11 +62,11 @@ public class AkBankCallbackInfo : IDisposable
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkBankCallbackInfo obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -84,9 +84,9 @@ public class AkBankCallbackInfo : IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{

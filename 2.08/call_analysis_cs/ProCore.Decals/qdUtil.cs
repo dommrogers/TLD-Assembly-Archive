@@ -17,8 +17,8 @@ public static class qdUtil
 
 		public static Comparison<Decal> _003C_003E9__2_1;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec()
 		{
 		}
@@ -28,80 +28,84 @@ public static class qdUtil
 		[CallsUnknownMethods(Count = 1)]
 		internal int _003CSortDecalsUsingView_003Eb__2_0(Decal a, Decal b)
 		{
-			return default(int);
+			return 0;
 		}
 
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
 		internal int _003CSortDecalsUsingView_003Eb__2_1(Decal a, Decal b)
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public static GameObject[] FindDecalsWithTexture(Texture2D img)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(qd_Decal), Member = "SetUVRect")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(qd_Decal), Member = "SetUVRect")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void RefreshSceneDecals(DecalGroup dg)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Sort")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void SortDecalsUsingView(ref List<Decal> decals, DecalView decalView)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool Contains(this Dictionary<int, List<int>> dic, int key, int val)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	public static void Add(this Dictionary<int, List<int>> dic, int key, int val)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 25)]
 	public static string ToFormattedString(this Dictionary<int, List<int>> dic)
 	{
 		return null;
 	}
 
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
 	[Calls(Type = typeof(int), Member = "ToString")]
-	[CallsUnknownMethods(Count = 2)]
 	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
+	[CallsUnknownMethods(Count = 2)]
 	public static string ToFormattedString<T>(this T[] t, string _delimiter)
 	{
 		return null;

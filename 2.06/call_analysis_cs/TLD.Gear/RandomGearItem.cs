@@ -12,8 +12,8 @@ public class RandomGearItem
 
 	public int m_MaxCount;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public RandomGearItem()
 	{
 	}

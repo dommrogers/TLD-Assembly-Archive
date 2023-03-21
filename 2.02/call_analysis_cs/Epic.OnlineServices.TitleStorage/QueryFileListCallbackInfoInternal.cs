@@ -27,11 +27,11 @@ internal struct QueryFileListCallbackInfoInternal : ICallbackInfoInternal
 
 	public object ClientData
 	{
+		[CalledBy(Type = typeof(QueryFileListCallbackInfo), Member = "Set")]
+		[CalledBy(Type = typeof(QueryFileListCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CalledBy(Type = typeof(QueryFileListCallbackInfo), Member = "Set")]
-		[CalledBy(Type = typeof(QueryFileListCallbackInfo), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -40,20 +40,21 @@ internal struct QueryFileListCallbackInfoInternal : ICallbackInfoInternal
 
 	public IntPtr ClientDataAddress
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public ProductUserId LocalUserId
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(QueryFileListCallbackInfo), Member = "Set")]
 		[CalledBy(Type = typeof(QueryFileListCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -66,7 +67,7 @@ internal struct QueryFileListCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 8)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 }

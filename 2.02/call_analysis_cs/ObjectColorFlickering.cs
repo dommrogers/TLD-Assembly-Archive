@@ -10,10 +10,11 @@ public class ObjectColorFlickering : MonoBehaviour
 	public Color color1;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Mathf), Member = "PingPong")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Color), Member = "Lerp")]
 	[Calls(Type = typeof(Material), Member = "set_color")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 6)]
 	private void Update()
 	{

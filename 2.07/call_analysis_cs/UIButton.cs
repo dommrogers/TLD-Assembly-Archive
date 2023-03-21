@@ -39,19 +39,23 @@ public class UIButton : UIButtonColor
 
 	public override bool isEnabled
 	{
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[CallsDeduplicatedMethods(Count = 6)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		[CallsUnknownMethods(Count = 4)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 3)]
+		[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 		[Calls(Type = typeof(Collider), Member = "set_enabled")]
-		[CallsDeduplicatedMethods(Count = 10)]
+		[Calls(Type = typeof(Component), Member = "GetComponents")]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
+		[CallsDeduplicatedMethods(Count = 6)]
+		[CallsUnknownMethods(Count = 3)]
 		set
 		{
 		}
@@ -59,28 +63,23 @@ public class UIButton : UIButtonColor
 
 	public string normalSprite
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CalledBy(Type = typeof(Panel_Container), Member = "OnSortInventoryChange")]
-		[CalledBy(Type = typeof(Panel_Container), Member = "OnSortInventoryChange")]
-		[CalledBy(Type = typeof(Panel_Cooking), Member = "OnSortChange")]
-		[CalledBy(Type = typeof(Panel_Cooking), Member = "OnSortChange")]
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "RefreshBackpackDisplay")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "OnSortChange")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "OnSortChange")]
-		[CalledBy(Type = typeof(Panel_Crafting.HighlightButton), Member = "SetHighlighted")]
-		[CalledBy(Type = typeof(Panel_Crafting.HighlightButton), Member = "SetHighlighted")]
 		[CalledBy(Type = typeof(UILocalize), Member = "set_value")]
-		[Calls(Type = typeof(UIButton), Member = "SetSprite")]
-		[Calls(Type = typeof(UIButton), Member = "SetSprite")]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[CalledBy(Type = typeof(Panel_Container), Member = "OnSortInventoryChange")]
+		[CalledBy(Type = typeof(Panel_Cooking), Member = "OnSortChange")]
+		[CalledBy(TypeFullName = "Panel_Crafting.HighlightButton", Member = "SetHighlighted")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "OnSortChange")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "RefreshBackpackDisplay")]
 		[CallerCount(Count = 10)]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+		[Calls(Type = typeof(UIButton), Member = "SetSprite")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
@@ -88,17 +87,16 @@ public class UIButton : UIButtonColor
 
 	public Sprite normalSprite2D
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UIButton), Member = "SetSprite")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UIButton), Member = "SetSprite")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -112,23 +110,23 @@ public class UIButton : UIButtonColor
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(UICamera), Member = "get_selectedObject")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 4)]
 	protected override void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnDragOver()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnDragOut()
 	{
 	}
@@ -140,36 +138,34 @@ public class UIButton : UIButtonColor
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public override void SetState(State state, bool immediate)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(UIButton), Member = "set_normalSprite")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(UIButton), Member = "set_normalSprite")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected void SetSprite(string sp)
 	{
 	}
 
+	[CalledBy(Type = typeof(UIButton), Member = "set_normalSprite2D")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UI2DSprite), Member = "set_sprite2D")]
-	[CalledBy(Type = typeof(UIButton), Member = "set_normalSprite2D")]
-	[CalledBy(Type = typeof(UIButton), Member = "set_normalSprite2D")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected void SetSprite(Sprite sp)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public UIButton()
 	{
 	}

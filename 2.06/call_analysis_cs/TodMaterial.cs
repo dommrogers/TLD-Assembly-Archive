@@ -21,34 +21,27 @@ public class TodMaterial : MonoBehaviour
 
 	private static List<TodMaterial> m_TodMaterials;
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(TodMaterial), Member = "ForceUpdateAll")]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "ForceUpdateTodObjects")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(Material), Member = "set_color")]
-	[Calls(Type = typeof(Material), Member = "set_color")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(TodMaterial), Member = "ForceUpdateAll")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(TimeOfDay), Member = "IsDay")]
+	[Calls(Type = typeof(Material), Member = "set_color")]
+	[Calls(Type = typeof(Material), Member = "SetFloat")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public void ForceUpdate()
 	{
 	}
@@ -60,12 +53,12 @@ public class TodMaterial : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(TodMaterial), Member = "UpdateMaterial")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void UpdateAll()
 	{
 	}
@@ -73,39 +66,37 @@ public class TodMaterial : MonoBehaviour
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(TodMaterial), Member = "ForceUpdate")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void ForceUpdateAll()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CalledBy(Type = typeof(TodMaterial), Member = "UpdateAll")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(TodMaterial), Member = "UpdateAll")]
+	[CallerCount(Count = 1)]
 	private void UpdateMaterial()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetProgressDawn")]
 	[Calls(Type = typeof(Material), Member = "set_color")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetProgressDawn")]
 	[Calls(Type = typeof(Material), Member = "SetFloat")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	private void UpdateForDawn()
 	{
 	}
 
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetProgressDusk")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(Material), Member = "set_color")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetProgressDusk")]
+	[Calls(Type = typeof(Material), Member = "set_color")]
+	[Calls(Type = typeof(Material), Member = "SetFloat")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateForDusk()
 	{
 	}

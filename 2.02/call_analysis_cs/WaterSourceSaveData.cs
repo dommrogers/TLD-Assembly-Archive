@@ -16,7 +16,7 @@ public class WaterSourceSaveData
 	public bool m_NotActive;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public WaterSourceSaveData()
 	{
 	}

@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using Holoville.HOTween;
 using Holoville.HOTween.Core;
@@ -47,7 +46,7 @@ public class splineMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -58,7 +57,7 @@ public class splineMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -74,24 +73,23 @@ public class splineMove : MonoBehaviour
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[Calls(Type = typeof(splineMove), Member = "ReachedEnd")]
-		[CallsUnknownMethods(Count = 7)]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(splineMove), Member = "InitWaypoints")]
+		[Calls(Type = typeof(splineMove), Member = "MoveToPath")]
 		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 		[Calls(Type = typeof(splineMove), Member = "CreateTween")]
 		[Calls(Type = typeof(splineMove), Member = "NextWaypoint")]
-		[Calls(Type = typeof(splineMove), Member = "MoveToPath")]
-		[Calls(Type = typeof(splineMove), Member = "InitWaypoints")]
+		[Calls(Type = typeof(splineMove), Member = "ReachedEnd")]
 		[CallsDeduplicatedMethods(Count = 3)]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+		[CallsUnknownMethods(Count = 7)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -113,9 +111,9 @@ public class splineMove : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 29)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -126,39 +124,39 @@ public class splineMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CMoveToPath_003Ed__37(int _003C_003E1__state)
 		{
 		}
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 23)]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 5)]
 		[Calls(Type = typeof(splineMove), Member = "CreateTween")]
 		[Calls(Type = typeof(ABSTweenComponent), Member = "Play")]
 		[Calls(Type = typeof(Tweener), Member = "UsePartialPath")]
 		[Calls(Type = typeof(ABSTweenComponent), Member = "WaitForCompletion")]
 		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 		[Calls(Type = typeof(splineMove), Member = "InitWaypoints")]
+		[CallsDeduplicatedMethods(Count = 5)]
+		[CallsUnknownMethods(Count = 23)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -182,9 +180,9 @@ public class splineMove : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 29)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -195,44 +193,39 @@ public class splineMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CNextWaypoint_003Ed__40(int _003C_003E1__state)
 		{
 		}
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[Calls(Type = typeof(splineMove), Member = "WaitDelay")]
-		[Calls(Type = typeof(Messages), Member = "Execute")]
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-		[Calls(Type = typeof(ABSTweenComponent), Member = "WaitForCompletion")]
-		[Calls(Type = typeof(Tweener), Member = "UsePartialPath")]
-		[Calls(Type = typeof(ABSTweenComponent), Member = "Play")]
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(splineMove), Member = "WaitDelay")]
-		[Calls(Type = typeof(Messages), Member = "Execute")]
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 		[Calls(Type = typeof(splineMove), Member = "ReachedEnd")]
+		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+		[Calls(Type = typeof(Messages), Member = "Execute")]
+		[Calls(Type = typeof(splineMove), Member = "WaitDelay")]
+		[Calls(Type = typeof(ABSTweenComponent), Member = "Play")]
+		[Calls(Type = typeof(Tweener), Member = "UsePartialPath")]
+		[Calls(Type = typeof(ABSTweenComponent), Member = "WaitForCompletion")]
 		[CallsUnknownMethods(Count = 11)]
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -256,9 +249,9 @@ public class splineMove : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -267,43 +260,43 @@ public class splineMove : MonoBehaviour
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 29)]
-			[DeduplicatedMethod]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		public _003CWaitDelay_003Ed__41(int _003C_003E1__state)
 		{
 		}
 
-		[CallerCount(Count = 2)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 5)]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(ABSTweenComponent), Member = "OnPause")]
 		[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 5)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 3)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 3)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -319,9 +312,9 @@ public class splineMove : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 29)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -332,7 +325,7 @@ public class splineMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -348,34 +341,31 @@ public class splineMove : MonoBehaviour
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 66)]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(splineMove), Member = "InitWaypoints")]
+		[Calls(Type = typeof(splineMove), Member = "CreateTween")]
+		[Calls(Type = typeof(Transform), Member = "get_position")]
+		[Calls(Type = typeof(ABSTweenComponent), Member = "Play")]
+		[Calls(Type = typeof(Tweener), Member = "UsePartialPath")]
+		[Calls(Type = typeof(ABSTweenComponent), Member = "WaitForCompletion")]
 		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 		[Calls(Type = typeof(splineMove), Member = "NextWaypoint")]
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-		[Calls(Type = typeof(ABSTweenComponent), Member = "WaitForCompletion")]
-		[Calls(Type = typeof(Tweener), Member = "UsePartialPath")]
-		[Calls(Type = typeof(ABSTweenComponent), Member = "Play")]
-		[Calls(Type = typeof(splineMove), Member = "CreateTween")]
-		[Calls(Type = typeof(splineMove), Member = "InitWaypoints")]
-		[Calls(Type = typeof(splineMove), Member = "CreateTween")]
-		[Calls(Type = typeof(splineMove), Member = "InitWaypoints")]
 		[CallsDeduplicatedMethods(Count = 5)]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(Transform), Member = "get_position")]
+		[CallsUnknownMethods(Count = 66)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 3)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 3)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -443,109 +433,100 @@ public class splineMove : MonoBehaviour
 
 	private int startingPoint;
 
-	[Calls(Type = typeof(splineMove), Member = "StartMove")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(splineMove), Member = "StartMove")]
 	private void Start()
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(_003CMove_003Ed__36), Member = "MoveNext")]
 	[CalledBy(Type = typeof(_003CMoveToPath_003Ed__37), Member = "MoveNext")]
 	[CalledBy(Type = typeof(_003CReachedEnd_003Ed__42), Member = "MoveNext")]
-	[CalledBy(Type = typeof(_003CReachedEnd_003Ed__42), Member = "MoveNext")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 10)]
 	private void InitWaypoints()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 29)]
-	[CalledBy(Type = typeof(splineMove), Member = "SetPath")]
-	[CalledBy(Type = typeof(splineMove), Member = "SetPath")]
 	[CalledBy(Type = typeof(splineMove), Member = "Start")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(splineMove), Member = "Teleport")]
-	[Calls(Type = typeof(Messages), Member = "Initialize")]
-	[Calls(Type = typeof(splineMove), Member = "Move")]
-	[Calls(Type = typeof(splineMove), Member = "Stop")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(splineMove), Member = "SetPath")]
+	[CalledBy(Type = typeof(splineMove), Member = "SetPath")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(Type = typeof(Messages), Member = "Initialize")]
+	[Calls(Type = typeof(splineMove), Member = "Stop")]
+	[Calls(Type = typeof(splineMove), Member = "Move")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[Calls(Type = typeof(splineMove), Member = "Teleport")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 29)]
 	public void StartMove()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(splineMove), Member = "StartMove")]
 	[CalledBy(Type = typeof(splineMove), Member = "Teleport")]
 	[CallerCount(Count = 2)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator Move()
 	{
 		return null;
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
+	[CalledBy(Type = typeof(_003CMove_003Ed__36), Member = "MoveNext")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(_003CMove_003Ed__36), Member = "MoveNext")]
 	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator MoveToPath()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 29)]
-	[CalledBy(Type = typeof(_003CReachedEnd_003Ed__42), Member = "MoveNext")]
-	[CalledBy(Type = typeof(_003CReachedEnd_003Ed__42), Member = "MoveNext")]
-	[CalledBy(Type = typeof(_003CMoveToPath_003Ed__37), Member = "MoveNext")]
 	[CalledBy(Type = typeof(_003CMove_003Ed__36), Member = "MoveNext")]
-	[Calls(Type = typeof(HOTween), Member = "To")]
-	[Calls(Type = typeof(TweenParms), Member = "Ease")]
-	[Calls(Type = typeof(TweenParms), Member = "Loops")]
-	[Calls(Type = typeof(TweenParms), Member = "Prop")]
-	[Calls(Type = typeof(TweenParms), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(_003CMoveToPath_003Ed__37), Member = "MoveNext")]
+	[CalledBy(Type = typeof(_003CReachedEnd_003Ed__42), Member = "MoveNext")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(TweenParms), Member = ".ctor")]
+	[Calls(Type = typeof(TweenParms), Member = "Prop")]
+	[Calls(Type = typeof(TweenParms), Member = "Loops")]
 	[Calls(Type = typeof(TweenParms), Member = "Ease")]
+	[Calls(Type = typeof(TweenParms), Member = "Ease")]
+	[Calls(Type = typeof(HOTween), Member = "To")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 29)]
 	private void CreateTween()
 	{
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(_003CMove_003Ed__36), Member = "MoveNext")]
 	[CalledBy(Type = typeof(_003CReachedEnd_003Ed__42), Member = "MoveNext")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator NextWaypoint()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(_003CNextWaypoint_003Ed__40), Member = "MoveNext")]
 	[CalledBy(Type = typeof(_003CNextWaypoint_003Ed__40), Member = "MoveNext")]
 	[CallerCount(Count = 2)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator WaitDelay()
 	{
 		return null;
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(_003CMove_003Ed__36), Member = "MoveNext")]
 	[CalledBy(Type = typeof(_003CNextWaypoint_003Ed__40), Member = "MoveNext")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator ReachedEnd()
 	{
@@ -559,43 +540,43 @@ public class splineMove : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(splineMove), Member = "StartMove")]
-	[Calls(Type = typeof(splineMove), Member = "ResetMove")]
-	[Calls(Type = typeof(splineMove), Member = "Stop")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(splineMove), Member = "Stop")]
+	[Calls(Type = typeof(splineMove), Member = "ResetMove")]
+	[Calls(Type = typeof(splineMove), Member = "StartMove")]
 	public void SetPath(PathManager newPath, bool reset)
 	{
 	}
 
+	[CalledBy(Type = typeof(splineMove), Member = "StartMove")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[Calls(Type = typeof(splineMove), Member = "Stop")]
 	[Calls(Type = typeof(splineMove), Member = "Move")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[CalledBy(Type = typeof(splineMove), Member = "StartMove")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Teleport(int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(splineMove), Member = "Teleport")]
-	[CalledBy(Type = typeof(splineMove), Member = "SetPath")]
-	[CalledBy(Type = typeof(splineMove), Member = "ResetMove")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(splineMove), Member = "StartMove")]
+	[CalledBy(Type = typeof(splineMove), Member = "SetPath")]
+	[CalledBy(Type = typeof(splineMove), Member = "Teleport")]
+	[CalledBy(Type = typeof(splineMove), Member = "ResetMove")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Stop()
 	{
 	}
 
+	[CalledBy(Type = typeof(splineMove), Member = "SetPath")]
+	[CalledBy(Type = typeof(splineMove), Member = "SetPath")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(splineMove), Member = "Stop")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(splineMove), Member = "SetPath")]
-	[CalledBy(Type = typeof(splineMove), Member = "SetPath")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 9)]
 	public void ResetMove(bool reposition)
 	{
@@ -618,15 +599,19 @@ public class splineMove : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public void SetDelay(int index, float min, float max)
 	{
 	}
 
-	[CallAnalysisFailed]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Messages), Member = ".ctor")]
+	[Calls(Type = typeof(System.Random), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 14)]
 	public splineMove()
 	{
 	}

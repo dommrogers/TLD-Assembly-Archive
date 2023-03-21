@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class BearSpearHead : MonoBehaviour
 {
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public BearSpearHead()
 	{
 	}

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -96,11 +95,10 @@ public class AuroraLightingSimple : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	private void FindMaterials()
 	{
 	}
@@ -111,37 +109,37 @@ public class AuroraLightingSimple : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(AuroraLightingSimple), Member = "OnDisable")]
 	[CalledBy(Type = typeof(AuroraLightingSimple), Member = "Start")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CalledBy(Type = typeof(AuroraLightingSimple), Member = "OnDisable")]
 	[CalledBy(Type = typeof(AuroraLightingSimple), Member = "CheckActivation")]
-	[Calls(Type = typeof(AuroraLightingSimple), Member = "UpdateLight")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(AuroraLightingSimple), Member = "UpdateLight")]
 	[Calls(Type = typeof(AuroraLightingSimple), Member = "UpdateEmissiveObjects")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	public void StopAll()
 	{
 	}
 
+	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(AuroraLightingSimple), Member = "CheckActivation")]
 	[Calls(Type = typeof(AuroraLightingSimple), Member = "UpdateLight")]
 	[Calls(Type = typeof(AuroraLightingSimple), Member = "UpdateEmissiveObjects")]
 	[Calls(Type = typeof(AuroraLightingSimple), Member = "UpdateAudio")]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
 	[CallsUnknownMethods(Count = 2)]
 	public void ManualUpdate(float camDistSqr, float fadeIntensity, float auroraIntensity, float deltaTime)
 	{
 	}
 
 	[CalledBy(Type = typeof(AuroraLightingSimple), Member = "ManualUpdate")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AuroraLightingSimple), Member = "StopAll")]
-	[Calls(Type = typeof(Mathf), Member = "InverseLerp")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Mathf), Member = "InverseLerp")]
+	[Calls(Type = typeof(AuroraLightingSimple), Member = "StopAll")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool CheckActivation(float camDistSqr, float fadeIntensity, float auroraIntensity)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -150,36 +148,35 @@ public class AuroraLightingSimple : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateElectrolizerState")]
-	[CalledBy(Type = typeof(AuroraLightingSimple), Member = "ManualUpdate")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
 	[CalledBy(Type = typeof(AuroraLightingSimple), Member = "StopAll")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(AuroraLightingSimple), Member = "ManualUpdate")]
+	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateElectrolizerState")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateLight(bool allOff = false)
 	{
 	}
 
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateElectrolizerState")]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(AuroraLightingSimple), Member = "StopAll")]
 	[CalledBy(Type = typeof(AuroraLightingSimple), Member = "ManualUpdate")]
+	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateElectrolizerState")]
+	[CallerCount(Count = 3)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateEmissiveObjects(bool allOff = false)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(AuroraLightingSimple), Member = "ManualUpdate")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateAudio()
 	{
 	}
@@ -199,20 +196,20 @@ public class AuroraLightingSimple : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetCurrentLowThreshold()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public float GetCurrentStableThreshold()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsElectrolized()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -225,7 +222,7 @@ public class AuroraLightingSimple : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetIntensityNormalized()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]

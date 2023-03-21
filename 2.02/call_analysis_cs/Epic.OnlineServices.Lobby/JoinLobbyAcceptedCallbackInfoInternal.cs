@@ -18,8 +18,8 @@ internal struct JoinLobbyAcceptedCallbackInfoInternal : ICallbackInfoInternal
 		[CalledBy(Type = typeof(JoinLobbyAcceptedCallbackInfo), Member = "Set")]
 		[CalledBy(Type = typeof(JoinLobbyAcceptedCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -32,16 +32,17 @@ internal struct JoinLobbyAcceptedCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(JoinLobbyAcceptedCallbackInfo), Member = "Set")]
+		[CalledBy(Type = typeof(JoinLobbyAcceptedCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(JoinLobbyAcceptedCallbackInfo), Member = "Set")]
-		[CalledBy(Type = typeof(JoinLobbyAcceptedCallbackInfo), Member = "Set")]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -51,10 +52,10 @@ internal struct JoinLobbyAcceptedCallbackInfoInternal : ICallbackInfoInternal
 	public ulong UiEventId
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
-			return default(ulong);
+			return 0uL;
 		}
 	}
 }

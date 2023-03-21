@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -22,7 +21,7 @@ public class TextureInjector : MonoBehaviour
 		[CallerCount(Count = 0)]
 		internal bool _003CInitialize_003Eb__17_0(Material item)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -60,69 +59,58 @@ public class TextureInjector : MonoBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TextureInjector), Member = "Initialize")]
+	[Calls(Type = typeof(Material), Member = "SetColor")]
+	[Calls(Type = typeof(Material), Member = "SetTexture")]
+	[Calls(Type = typeof(Material), Member = "SetFloat")]
 	[Calls(Type = typeof(Material), Member = "SetTextureScale")]
 	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(Material), Member = "SetTextureScale")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(Material), Member = "SetTexture")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(Material), Member = "SetTexture")]
-	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[Calls(Type = typeof(TextureInjector), Member = "Initialize")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Material), Member = "SetTexture")]
 	public void LoadTextures()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(Material), Member = "SetTexture")]
-	[Calls(Type = typeof(Material), Member = "SetTextureScale")]
-	[Calls(Type = typeof(Material), Member = "SetTextureScale")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(Material), Member = "SetTexture")]
-	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[Calls(Type = typeof(TextureInjector), Member = "Initialize")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TextureInjector), Member = "Initialize")]
+	[Calls(Type = typeof(Material), Member = "SetColor")]
 	[Calls(Type = typeof(Material), Member = "SetTexture")]
+	[Calls(Type = typeof(Material), Member = "SetFloat")]
+	[Calls(Type = typeof(Material), Member = "SetTextureScale")]
+	[CallsUnknownMethods(Count = 10)]
 	public void UnloadTextures()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsUnknownMethods(Count = 19)]
-	[CalledBy(Type = typeof(TextureInjector), Member = "UnloadTextures")]
 	[CalledBy(Type = typeof(TextureInjector), Member = "LoadTextures")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(TextureInjector), Member = "Contains")]
-	[Calls(Type = typeof(TextureInjector), Member = "Contains")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Material), Member = "get_shader")]
-	[CallsDeduplicatedMethods(Count = 17)]
+	[CalledBy(Type = typeof(TextureInjector), Member = "UnloadTextures")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Material), Member = "get_shader")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAll")]
+	[Calls(Type = typeof(TextureInjector), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 18)]
 	private void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(TextureInjector), Member = "Initialize")]
 	[CalledBy(Type = typeof(TextureInjector), Member = "Initialize")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Contains")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(string), Member = "Contains")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private int Contains(List<Material> localList, string matName)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]

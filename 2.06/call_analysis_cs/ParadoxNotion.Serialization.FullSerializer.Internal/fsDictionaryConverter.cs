@@ -1,17 +1,18 @@
 using System;
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 
 namespace ParadoxNotion.Serialization.FullSerializer.Internal;
 
 public class fsDictionaryConverter : fsConverter
 {
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override bool CanProcess(Type type)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -23,44 +24,36 @@ public class fsDictionaryConverter : fsConverter
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 34)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(fsData), Member = "CreateDictionary")]
-	[Calls(Type = typeof(fsData), Member = "CreateList")]
-	[Calls(Type = typeof(fsData), Member = "get_IsString")]
-	[Calls(Type = typeof(fsSerializer), Member = "TrySerialize")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsSerializer), Member = "TrySerialize")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(fsSerializer), Member = "TrySerialize")]
 	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsData), Member = "get_IsString")]
+	[Calls(Type = typeof(fsData), Member = "CreateList")]
+	[Calls(Type = typeof(fsData), Member = "Cast")]
+	[Calls(Type = typeof(fsData), Member = "CreateDictionary")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 31)]
 	public override fsResult TrySerialize(object instance_, out fsData serialized, Type storageType)
 	{
 		serialized = null;
 		return default(fsResult);
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsData), Member = "get_IsDictionary")]
+	[Calls(Type = typeof(fsData), Member = "Cast")]
+	[Calls(Type = typeof(fsBaseConverter), Member = "CheckType")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsBaseConverter), Member = "CheckKey")]
 	[Calls(Type = typeof(fsSerializer), Member = "TryDeserialize")]
 	[Calls(Type = typeof(fsBaseConverter), Member = "FailExpectedType")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(fsSerializer), Member = "IsReservedKeyword")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 35)]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsSerializer), Member = "TryDeserialize")]
-	[Calls(Type = typeof(fsSerializer), Member = "TryDeserialize")]
-	[Calls(Type = typeof(fsBaseConverter), Member = "CheckKey")]
-	[Calls(Type = typeof(fsSerializer), Member = "TryDeserialize")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsBaseConverter), Member = "CheckKey")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsBaseConverter), Member = "CheckType")]
-	[Calls(Type = typeof(fsData), Member = "get_IsDictionary")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 30)]
 	public override fsResult TryDeserialize(fsData data, ref object instance_, Type storageType)
 	{
 		return default(fsResult);

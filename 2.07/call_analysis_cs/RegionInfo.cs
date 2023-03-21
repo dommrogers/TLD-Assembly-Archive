@@ -4,8 +4,8 @@ public class RegionInfo
 {
 	public string m_SceneName;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public RegionInfo()
 	{
 	}

@@ -8,14 +8,14 @@ public class ObjectInTriggerInfo
 
 	public MissionTrigger m_TriggerComponent;
 
-	[CalledBy(Type = typeof(MissionTrigger), Member = "OnTriggerExit")]
-	[CalledBy(Type = typeof(MissionTrigger), Member = "OnTriggerEnter")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "UnregisterMissionObject")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "MissionTriggerRemoved")]
+	[CalledBy(Type = typeof(MissionTrigger), Member = "OnTriggerEnter")]
+	[CalledBy(Type = typeof(MissionTrigger), Member = "OnTriggerExit")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "UnregisterMissionObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public ObjectInTriggerInfo(MissionObjectIdentifier moi, MissionTrigger trigger)
 	{
 	}

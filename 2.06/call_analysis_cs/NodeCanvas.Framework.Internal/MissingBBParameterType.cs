@@ -17,8 +17,8 @@ public class MissingBBParameterType : BBParameter<object>, IMissingRecoverable
 		{
 			return null;
 		}
-		[CallerCount(Count = 12)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 23)]
 		set
 		{
 		}
@@ -27,13 +27,13 @@ public class MissingBBParameterType : BBParameter<object>, IMissingRecoverable
 	private string ParadoxNotion_002ESerialization_002EIMissingRecoverable_002ErecoveryState
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 11)]
+		[CallerCount(Count = 21)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 16)]
+		[CallerCount(Count = 21)]
 		set
 		{
 		}

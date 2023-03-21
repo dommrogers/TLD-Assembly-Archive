@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using Cpp2ILInjected.CallAnalysis;
@@ -7,10 +8,12 @@ using TLD.Gameplay;
 using TLD.OptionalContent;
 using TLD.PDID;
 using TLD.Platform;
+using TLD.SaveState;
 using TLD.Scenes;
 using TLD.UI.Generics;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class EmptyScene : MonoBehaviour
 {
@@ -38,8 +41,8 @@ public class EmptyScene : MonoBehaviour
 		{
 		}
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		internal void _003CInitializeAndSignInUser_003Eb__26_0(IPlatformProvider provider, bool succeeded)
 		{
 		}
@@ -82,63 +85,57 @@ public class EmptyScene : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(OptionalContentManager), Member = "InitializeAsync")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "LoadAllSavedGameFiles")]
-	[Calls(Type = typeof(EmptyScene), Member = "MaybeInstantiateGameManager")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlatformManager), Member = "Update")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlatformManager), Member = "Update")]
 	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
+	[Calls(Type = typeof(AssetHelper), Member = "TryLoadAsset")]
+	[Calls(Type = typeof(EmptyScene), Member = "MaybeInstantiateGameManager")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "LoadAllSavedGameFiles")]
+	[Calls(Type = typeof(OptionalContentManager), Member = "InitializeAsync")]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateUserInitialization()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EmptyScene), Member = "IsSaveSystemInitialized")]
+	[Calls(Type = typeof(Utils), Member = "GetCommandLineValue")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
+	[Calls(Type = typeof(GameManager), Member = "SaveGameCanBeLoaded")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "CreateSaveSlotInfo")]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "SetGameModeConfig")]
 	[Calls(Type = typeof(EpisodeManager), Member = "SetActiveEpisode")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "CreateSaveSlotInfo")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameManager), Member = "LoadSaveGameSlot")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(GameManager), Member = "SaveGameCanBeLoaded")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
-	[Calls(Type = typeof(Utils), Member = "GetCommandLineValue")]
-	[Calls(Type = typeof(EmptyScene), Member = "IsSaveSystemInitialized")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
 	private void UpdateLoadingSave()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(SaveGameSlots), Member = "SetSlotDisplayName")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
-	[Calls(Type = typeof(Utils), Member = "GetCommandLineValue")]
-	[Calls(Type = typeof(GameManager), Member = "LaunchSandbox")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "SetSlotDisplayName")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
-	[Calls(Type = typeof(Utils), Member = "GetCommandLineValue")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Utils), Member = "GetCommandLineValue")]
-	[Calls(Type = typeof(int), Member = "TryParse")]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(EmptyScene), Member = "IsSaveSystemInitialized")]
 	[Calls(Type = typeof(Utils), Member = "GetCommandLineValue")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Utils), Member = "GetCommandLineValue")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetUnusedGameId")]
-	[Calls(Type = typeof(Utils), Member = "GetCommandLineValue")]
-	[Calls(Type = typeof(Utils), Member = "GetCommandLineValue")]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "SetGameModeConfig")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetUnusedGameId")]
+	[Calls(Type = typeof(int), Member = "TryParse")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetExperienceModeDefinition")]
+	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "SetSlotDisplayName")]
+	[Calls(Type = typeof(GameManager), Member = "LaunchSandbox")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 11)]
 	private void UpdateNewGame()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(AssetHelper), Member = "TryLoadAsset")]
 	[Calls(Type = typeof(EmptyScene), Member = "MaybeInstantiateGameManager")]
 	[Calls(Type = typeof(SaveGameSlots), Member = "LoadAllSavedGameFiles")]
 	private void LoadSaveFromCommandLine()
@@ -152,113 +149,117 @@ public class EmptyScene : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(EmptyScene), Member = "Start")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PdidTable), Member = "MaybeRemoveDeadGameObjects")]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(InterfaceManager), Member = "CreateInterfaceManager")]
+	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanel")]
+	[Calls(Type = typeof(GameManager), Member = "ForceGC")]
+	[Calls(Type = typeof(TextureCache), Member = "HasTextureCache")]
+	[Calls(Type = typeof(TextureCache), Member = "ClearTextureCache")]
 	[Calls(Type = typeof(GameManager), Member = "SetPhysicsAutoSimulationEnabled")]
 	[Calls(Type = typeof(GameManager), Member = "MatchesMainMenuSceneName")]
-	[Calls(Type = typeof(TextureCache), Member = "ClearTextureCache")]
-	[Calls(Type = typeof(GameManager), Member = "LoadSceneAsynchronously")]
 	[Calls(Type = typeof(GameManager), Member = "GetTargetMainMenuSceneName")]
-	[Calls(Type = typeof(TextureCache), Member = "HasTextureCache")]
-	[CalledBy(Type = typeof(EmptyScene), Member = "Start")]
-	[Calls(Type = typeof(InterfaceManager), Member = "CreateInterfaceManager")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(PdidTable), Member = "MaybeRemoveDeadGameObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "ForceGC")]
+	[Calls(Type = typeof(GameManager), Member = "LoadSceneAsynchronously")]
 	private void LoadScene(string scene)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateInputSystem")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "Start")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(EmptyScene), Member = "ForceSystemLanguage")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateOnlineSystems")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(CaseInsensitiveResourceLocator), Member = ".ctor")]
-	[Calls(Type = typeof(AssetBundleManager), Member = "LoadManifest")]
-	[Calls(Type = typeof(Path), Member = "Combine")]
 	[Calls(Type = typeof(GameManager), Member = "InitializeCulture")]
+	[Calls(Type = typeof(Path), Member = "Combine")]
+	[Calls(Type = typeof(AssetBundleManager), Member = "LoadManifest")]
+	[Calls(Type = typeof(CaseInsensitiveResourceLocator), Member = ".ctor")]
+	[Calls(TypeFullName = "UnityEngine.AddressableAssets.AddressablesImpl", Member = "AddResourceLocator")]
+	[Calls(Type = typeof(GameManager), Member = "InstantiateOnlineSystems")]
+	[Calls(Type = typeof(GameManager), Member = "InstantiateInputSystem")]
+	[Calls(Type = typeof(EmptyScene), Member = "ForceSystemLanguage")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_Result")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.AddressableAssets.AddressablesImpl), Member = "AddResourceLocator")]
+	[CallsUnknownMethods(Count = 10)]
 	private void InitializeSystems()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(EmptyScene), Member = "InitializeSystems")]
-	[Calls(Type = typeof(Localization), Member = "set_Language")]
-	[Calls(Type = typeof(Localization), Member = "MaybeLoadLanguageTables")]
-	[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetLanguageStringFromSystemLang")]
-	[Calls(Type = typeof(Localization), Member = "get_Language")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(Localization), Member = "get_Language")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetLanguageStringFromSystemLang")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Localization), Member = "MaybeLoadLanguageTables")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
+	[Calls(Type = typeof(Localization), Member = "set_Language")]
+	[CallsUnknownMethods(Count = 3)]
 	private void ForceSystemLanguage()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "SetGameModeConfig")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateUserInitialization")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "LoadSaveFromCommandLine")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "StartNewGameFromCommandLine")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "SetGameModeConfig")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TrySetEnabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void MaybeInstantiateGameManager(GameModeConfig gameModeConfig)
 	{
 	}
 
-	[Calls(Type = typeof(InterfaceManager), Member = "CreateInterfaceManager")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(InterfaceManager), Member = "CreateInterfaceManager")]
+	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanel")]
 	private void MaybeInstantiateLoadingScreen()
 	{
 	}
 
-	[Calls(Type = typeof(MissionServicesManager), Member = "Deserialize")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "InstantiateStoryManager")]
 	[Calls(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "JumpTo")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "Deserialize")]
 	[CallsUnknownMethods(Count = 3)]
 	private static void OnLoadComplete()
 	{
 	}
 
-	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateNewGame")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateLoadingSave")]
-	[Calls(Type = typeof(SaveGameData), Member = "AsyncOperationInProgress")]
+	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateNewGame")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(SaveGameData), Member = "GetNumPendingOperations")]
-	[Calls(Type = typeof(SaveGameData), Member = "GetNumPendingOperations")]
+	[Calls(Type = typeof(SaveGameData), Member = "AsyncOperationInProgress")]
 	private bool IsSaveSystemInitialized()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(EmptyScene), Member = "Start")]
-	[Calls(Type = typeof(PlatformManager), Member = "Initialize")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlatformManager), Member = "Initialize")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	private void InitializeAndSignInUser()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool IsUserSignedIn()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

@@ -23,10 +23,10 @@ internal struct ReadFileDataCallbackInfoInternal : ICallbackInfoInternal
 
 	public object ClientData
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(ReadFileDataCallbackInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -39,15 +39,16 @@ internal struct ReadFileDataCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public ProductUserId LocalUserId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(ReadFileDataCallbackInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -57,8 +58,8 @@ internal struct ReadFileDataCallbackInfoInternal : ICallbackInfoInternal
 	public string Filename
 	{
 		[CalledBy(Type = typeof(ReadFileDataCallbackInfo), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -72,26 +73,26 @@ internal struct ReadFileDataCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 8)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
 	public bool IsLastChunk
 	{
+		[CalledBy(Type = typeof(ReadFileDataCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(ReadFileDataCallbackInfo), Member = "Set")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public byte[] DataChunk
 	{
+		[CalledBy(Type = typeof(ReadFileDataCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(ReadFileDataCallbackInfo), Member = "Set")]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{

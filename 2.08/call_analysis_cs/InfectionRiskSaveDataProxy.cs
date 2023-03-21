@@ -28,8 +28,8 @@ public class InfectionRiskSaveDataProxy
 
 	public int[] m_ConstantAfflictionIndices;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public InfectionRiskSaveDataProxy()
 	{
 	}

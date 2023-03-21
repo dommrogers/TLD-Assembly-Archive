@@ -8,7 +8,7 @@ using UnityEngine;
 
 public class EffectPoolManager : MonoBehaviour
 {
-	private sealed class _003CStart_003Ed__16 : IEnumerator, IDisposable, IEnumerator<object>
+	private sealed class _003CStart_003Ed__16 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -18,9 +18,9 @@ public class EffectPoolManager : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -31,7 +31,7 @@ public class EffectPoolManager : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -45,24 +45,21 @@ public class EffectPoolManager : MonoBehaviour
 		{
 		}
 
+		[DebuggerHidden]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 6)]
-		[DebuggerHidden]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 11)]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 10)]
+		[Calls(Type = typeof(EffectPoolManager), Member = "CreatePool")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(EffectPool<>), Member = "LoadEffects")]
+		[CallsUnknownMethods(Count = 11)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -102,14 +99,14 @@ public class EffectPoolManager : MonoBehaviour
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 9)]
+	[CallerCount(Count = 11)]
 	public BulletImpactEffectPool GetBulletImpactEffectPool()
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 5)]
+	[CallerCount(Count = 15)]
 	public SplashEffectPool GetSplashEffectPool()
 	{
 		return null;
@@ -122,35 +119,37 @@ public class EffectPoolManager : MonoBehaviour
 		return null;
 	}
 
-	[CallerCount(Count = 28)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 29)]
 	public ScorchImpactEffectPool GetScorchImpactEffectPool()
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(_003CStart_003Ed__16), Member = "MoveNext")]
 	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
 	private T CreatePool<T>(GameObject effectPoolPrefab)
 	{
-		return (T)null;
+		return default(T);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[IteratorStateMachine(typeof(_003CStart_003Ed__16))]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public IEnumerator Start()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public EffectPoolManager()
 	{
 	}

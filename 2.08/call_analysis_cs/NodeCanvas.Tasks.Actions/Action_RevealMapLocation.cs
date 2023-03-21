@@ -11,11 +11,12 @@ public class Action_RevealMapLocation : ActionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 2)]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Task), Member = "get_name")]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(Utils), Member = "MissionMapMarkerIDExists")]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(Task), Member = "get_name")]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -23,16 +24,18 @@ public class Action_RevealMapLocation : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Panel_Map), Member = "AddMapIconFromFSM")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsUnknownMethods(Count = 2)]
 	public Action_RevealMapLocation()
 	{
 	}

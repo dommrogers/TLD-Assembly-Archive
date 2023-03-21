@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
@@ -20,18 +19,20 @@ public class Feat_StraightToHeart : Feat
 
 	private List<string> m_GearItemNames;
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public string Serialize()
 	{
@@ -39,73 +40,72 @@ public class Feat_StraightToHeart : Feat
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void ValidateSaveData(string text)
 	{
 	}
 
-	[Calls(Type = typeof(Feat_StraightToHeart), Member = "IsHeartItem")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
+	[Calls(Type = typeof(Feat_StraightToHeart), Member = "IsHeartItem")]
 	public float GetEffectiveLengthModifier(GearItem gi)
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(EmergencyStimItem), Member = "OnInject")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "EatingComplete_Internal")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Feat), Member = "ShouldBlockIncrement")]
 	[Calls(Type = typeof(Feat_StraightToHeart), Member = "IsHeartItem")]
 	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
-	[CalledBy(Type = typeof(EmergencyStimItem), Member = "OnInject")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "EatingComplete_Internal")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	public void IncrementItemConsumed(GearItem gi, float itemFraction)
 	{
 	}
 
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Replace")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public override string GetDescription()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override string GetShortDescription()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override string GetBonusDescription()
 	{
 		return null;
@@ -115,44 +115,46 @@ public class Feat_StraightToHeart : Feat
 	[CallsDeduplicatedMethods(Count = 1)]
 	public override bool IsUnlocked()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public override float GetNormalizedProgress()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
 	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	public override void SetNormalizedProgress(float normalizedValue)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(FatigueBuff), Member = "Apply")]
-	[CalledBy(Type = typeof(Feat_StraightToHeart), Member = "IncrementItemConsumed")]
-	[CalledBy(Type = typeof(Feat_StraightToHeart), Member = "GetEffectiveLengthModifier")]
-	[CalledBy(Type = typeof(EnergyBoost), Member = "ApplyEnergyBoost")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(GearItem), Member = "RefreshName")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(EmergencyStim), Member = "ApplyEmergencyStim")]
+	[CalledBy(Type = typeof(EnergyBoost), Member = "ApplyEnergyBoost")]
+	[CalledBy(Type = typeof(Feat_StraightToHeart), Member = "GetEffectiveLengthModifier")]
+	[CalledBy(Type = typeof(Feat_StraightToHeart), Member = "IncrementItemConsumed")]
+	[CalledBy(Type = typeof(FatigueBuff), Member = "Apply")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GearItem), Member = "RefreshName")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool IsHeartItem(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public Feat_StraightToHeart()
 	{
 	}

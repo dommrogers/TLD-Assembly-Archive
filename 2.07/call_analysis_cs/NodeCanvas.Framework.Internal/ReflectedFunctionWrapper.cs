@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
@@ -30,34 +32,28 @@ public abstract class ReflectedFunctionWrapper : ReflectedWrapper
 		}
 	}
 
-	[CalledBy(Type = typeof(ImplementedAction), Member = "SetMethod")]
-	[CalledBy(Type = typeof(ImplementedAction), Member = "OnValidate")]
-	[CalledBy(Type = typeof(GetProperty), Member = "SetMethod")]
-	[CalledBy(Type = typeof(GetProperty), Member = "OnValidate")]
-	[CalledBy(Type = typeof(CheckProperty), Member = "SetMethod")]
-	[CalledBy(Type = typeof(CheckProperty), Member = "OnValidate")]
-	[CalledBy(Type = typeof(CheckFunction), Member = "SetMethod")]
-	[CalledBy(Type = typeof(CheckFunction), Member = "OnValidate")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(BBParameter), Member = "SetBBFields")]
 	[CalledBy(Type = typeof(ReflectedWrapper), Member = "Create")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 11)]
+	[CalledBy(Type = typeof(CheckFunction), Member = "OnValidate")]
+	[CalledBy(Type = typeof(CheckFunction), Member = "SetMethod")]
+	[CalledBy(Type = typeof(CheckProperty), Member = "OnValidate")]
+	[CalledBy(Type = typeof(CheckProperty), Member = "SetMethod")]
+	[CalledBy(Type = typeof(GetProperty), Member = "OnValidate")]
+	[CalledBy(Type = typeof(GetProperty), Member = "SetMethod")]
+	[CalledBy(Type = typeof(ImplementedAction), Member = "OnValidate")]
+	[CalledBy(Type = typeof(ImplementedAction), Member = "SetMethod")]
 	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
 	[Calls(Type = typeof(Activator), Member = "CreateInstance")]
+	[Calls(Type = typeof(BBParameter), Member = "SetBBFields")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 4)]
 	public new static ReflectedFunctionWrapper Create(MethodInfo method, IBlackboard bb)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 101261)]
-	[DeduplicatedMethod]
 	public abstract object Call();
 
 	[DeduplicatedMethod]

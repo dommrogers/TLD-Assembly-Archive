@@ -22,19 +22,22 @@ public class Action_GetInvRequirementsCount : ActionTask
 		}
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(NCUtils), Member = "GetItemRequirementsMatchCount")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(NCUtils), Member = "BuildRequirementsDictionary")]
+	[Calls(Type = typeof(NCUtils), Member = "GetItemRequirementsMatchCount")]
+	[Calls(Type = typeof(NCUtils), Member = "GetOrAddVar")]
+	[Calls(Type = typeof(Variable<>), Member = "set_value")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 11)]
 	public Action_GetInvRequirementsCount()
 	{
 	}

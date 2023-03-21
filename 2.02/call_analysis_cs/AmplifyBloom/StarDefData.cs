@@ -36,8 +36,8 @@ public class StarDefData
 		{
 			return default(StarLibType);
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -46,13 +46,13 @@ public class StarDefData
 	public string StarName
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -64,10 +64,10 @@ public class StarDefData
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[Calls(Type = typeof(StarDefData), Member = "CalculateStarData")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(StarDefData), Member = "CalculateStarData")]
 		set
 		{
 		}
@@ -75,11 +75,11 @@ public class StarDefData
 
 	public int PassCount
 	{
-		[CallerCount(Count = 3)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 3)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(StarDefData), Member = "CalculateStarData")]
@@ -94,7 +94,7 @@ public class StarDefData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(StarDefData), Member = "CalculateStarData")]
@@ -109,7 +109,7 @@ public class StarDefData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(StarDefData), Member = "CalculateStarData")]
@@ -124,7 +124,7 @@ public class StarDefData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(StarDefData), Member = "CalculateStarData")]
@@ -135,11 +135,11 @@ public class StarDefData
 
 	public float CameraRotInfluence
 	{
-		[CallerCount(Count = 1)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -151,7 +151,7 @@ public class StarDefData
 	public StarLineData[] StarLinesArr
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 8)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
@@ -164,7 +164,7 @@ public class StarDefData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(StarDefData), Member = "CalculateStarData")]
@@ -179,7 +179,7 @@ public class StarDefData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(StarDefData), Member = "CalculateStarData")]
@@ -188,8 +188,8 @@ public class StarDefData
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public StarDefData()
 	{
 	}
@@ -200,26 +200,22 @@ public class StarDefData
 	}
 
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(AmplifyGlare), Member = ".ctor")]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(AmplifyGlare), Member = ".ctor")]
-	[CalledBy(Type = typeof(AmplifyGlare), Member = ".ctor")]
-	[CalledBy(Type = typeof(AmplifyGlare), Member = ".ctor")]
-	[CalledBy(Type = typeof(AmplifyGlare), Member = ".ctor")]
-	[CalledBy(Type = typeof(AmplifyGlare), Member = ".ctor")]
 	public StarDefData(StarLibType starType, string starName, int starLinesCount, int passCount, float sampleLength, float attenuation, float inclination, float rotation, float longAttenuation = 0f, float customIncrement = -1f)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 33)]
-	[CalledBy(Type = typeof(StarDefData), Member = "set_LongAttenuation")]
-	[CalledBy(Type = typeof(StarDefData), Member = "set_Inclination")]
-	[CalledBy(Type = typeof(StarDefData), Member = "set_Attenuation")]
-	[CalledBy(Type = typeof(StarDefData), Member = "set_CustomIncrement")]
-	[CalledBy(Type = typeof(StarDefData), Member = "set_PassCount")]
 	[CalledBy(Type = typeof(StarDefData), Member = "set_StarlinesCount")]
+	[CalledBy(Type = typeof(StarDefData), Member = "set_PassCount")]
 	[CalledBy(Type = typeof(StarDefData), Member = "set_SampleLength")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(StarDefData), Member = "set_Attenuation")]
+	[CalledBy(Type = typeof(StarDefData), Member = "set_Inclination")]
+	[CalledBy(Type = typeof(StarDefData), Member = "set_CustomIncrement")]
+	[CalledBy(Type = typeof(StarDefData), Member = "set_LongAttenuation")]
 	[CallerCount(Count = 7)]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 33)]
 	public void CalculateStarData()
 	{
 	}

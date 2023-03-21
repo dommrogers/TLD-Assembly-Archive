@@ -12,8 +12,8 @@ public class AchievementListPlugin
 	public static extern IntPtr AchievementList_GetAt(IntPtr self, uint index);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint AchievementList_Length(IntPtr self);
 
 	[PreserveSig]
@@ -22,7 +22,7 @@ public class AchievementListPlugin
 	public static extern void AchievementList_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AchievementListPlugin()
 	{
 	}

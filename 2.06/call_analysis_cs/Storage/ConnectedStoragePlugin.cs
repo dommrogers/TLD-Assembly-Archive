@@ -14,9 +14,9 @@ public class ConnectedStoragePlugin
 	public delegate void ContainerInfoQueryAsyncCallback(uint result, IntPtr queryHandle, IntPtr userData, uint totalInfos);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static extern IntPtr ConnectedStorage_Init(int userId, string serviceConfigurationId, int flags, ObjectResultCallback callback, IntPtr userData);
 
 	[PreserveSig]
@@ -31,11 +31,11 @@ public class ConnectedStoragePlugin
 	public static extern void ConnectedStorage_SetSignOutCallback(IntPtr self, UserSignedOutStorageInvalidCallback callback, IntPtr userData);
 
 	[PreserveSig]
-	[CalledBy(Type = typeof(ConnectedStorage), Member = "DeleteContainer")]
 	[CalledBy(Type = typeof(ConnectedStorage), Member = "DeleteThisContainer")]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(ConnectedStorage), Member = "DeleteContainer")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static extern bool ConnectedStorage_DeleteContainer(IntPtr self, string containerName, GenericActionCallback callback, IntPtr userData);
 
 	[PreserveSig]
@@ -76,8 +76,8 @@ public class ConnectedStoragePlugin
 	public static extern IntPtr ConnectedStorage_ContainerInfo_Name(IntPtr self, uint idx);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr ConnectedStorage_ContainerInfo_DisplayName(IntPtr self, uint idx);
 
 	[PreserveSig]
@@ -92,15 +92,15 @@ public class ConnectedStoragePlugin
 	public static extern ulong ConnectedStorage_ContainerInfo_LastModifiedTime(IntPtr self, uint idx);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(ConnectedStorage), Member = "GetNumberOfContainersChangedSinceLastSync")]
 	[CalledBy(Type = typeof(ConnectedStorage), Member = "GetContainerChangedSinceLastSync")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern uint ConnectedStorage_ContainersChangedSinceLastSync_Size(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr ConnectedStorage_ContainersChangedSinceLastSync_Name(IntPtr self, uint idx);
 
 	[DeduplicatedMethod]

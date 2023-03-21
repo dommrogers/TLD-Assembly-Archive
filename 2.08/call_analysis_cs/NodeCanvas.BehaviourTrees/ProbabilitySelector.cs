@@ -23,13 +23,15 @@ public class ProbabilitySelector : BTComposite
 	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
 	[Calls(Type = typeof(BBParameter), Member = "ResolveReference")]
 	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[CallsUnknownMethods(Count = 2)]
 	public override void OnChildConnected(int index)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnChildDisconnected(int index)
 	{
 	}
@@ -41,37 +43,40 @@ public class ProbabilitySelector : BTComposite
 	{
 	}
 
-	[Calls(Type = typeof(ProbabilitySelector), Member = "GetTotal")]
-	[Calls(Type = typeof(Connection), Member = "Execute")]
-	[Calls(Type = typeof(Random), Member = "Range")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 10)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Connection), Member = "Execute")]
+	[Calls(Type = typeof(ProbabilitySelector), Member = "GetTotal")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ProbabilitySelector), Member = "GetTotal")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ProbabilitySelector), Member = "GetTotal")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnReset()
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(ProbabilitySelector), Member = "OnExecute")]
 	[CalledBy(Type = typeof(ProbabilitySelector), Member = "OnReset")]
-	[CallsUnknownMethods(Count = 6)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 3)]
 	private float GetTotal()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public ProbabilitySelector()
 	{

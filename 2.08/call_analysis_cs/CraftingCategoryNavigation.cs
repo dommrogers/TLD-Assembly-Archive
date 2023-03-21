@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -23,26 +22,27 @@ public class CraftingCategoryNavigation : MonoBehaviour
 
 	private bool m_Selected;
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "Enable")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(CraftingCategoryNavigation), Member = "SetCurrentIndex")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CraftingCategoryNavigation), Member = "SetCurrentIndex")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnNavigationChanged(UIButton button)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CraftingCategoryNavigation), Member = "SetCurrentIndex")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void OnNavigateDown()
 	{
 	}
@@ -54,29 +54,28 @@ public class CraftingCategoryNavigation : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "SetNavigationArea")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "SetNavigationArea")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "SetNavigationArea")]
 	public void SetSelected(bool selected)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(CraftingCategoryNavigation), Member = "OnNavigateUp")]
-	[CalledBy(Type = typeof(CraftingCategoryNavigation), Member = "OnNavigateDown")]
+	[CalledBy(Type = typeof(CraftingCategoryNavigation), Member = "Initialize")]
 	[CalledBy(Type = typeof(CraftingCategoryNavigation), Member = "OnNavigationChanged")]
+	[CalledBy(Type = typeof(CraftingCategoryNavigation), Member = "OnNavigateDown")]
+	[CalledBy(Type = typeof(CraftingCategoryNavigation), Member = "OnNavigateUp")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleVerticalNavigation")]
 	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(CategoryButton), Member = "SetButtonState")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleVerticalNavigation")]
-	[CalledBy(Type = typeof(CraftingCategoryNavigation), Member = "Initialize")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
 	private void SetCurrentIndex(int index)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public CraftingCategoryNavigation()
 	{

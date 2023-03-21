@@ -23,8 +23,8 @@ public class LeaderboardQueryPlugin
 	public static extern uint LeaderboardQuery_MaxItems(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern SortOrder LeaderboardQuery_Order(IntPtr self);
 
 	[PreserveSig]
@@ -49,8 +49,8 @@ public class LeaderboardQueryPlugin
 	public static extern void LeaderboardQuery_Dispose(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr LeaderboardQuery_Create();
 
 	[PreserveSig]

@@ -21,18 +21,18 @@ public class UITexture : UIBasicSprite
 
 	public override Texture mainTexture
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Material), Member = "get_mainTexture")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Material), Member = "get_mainTexture")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(UIDrawCall), Member = "set_mainTexture")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
+		[Calls(Type = typeof(UIDrawCall), Member = "set_mainTexture")]
 		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
@@ -46,10 +46,10 @@ public class UITexture : UIBasicSprite
 		{
 			return null;
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -58,17 +58,17 @@ public class UITexture : UIBasicSprite
 	public override Shader shader
 	{
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
 		[Calls(Type = typeof(Shader), Member = "Find")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
-		[Calls(Type = typeof(UIDrawCall), Member = "set_shader")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIDrawCall), Member = "set_shader")]
+		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
@@ -76,15 +76,15 @@ public class UITexture : UIBasicSprite
 
 	public override bool premultipliedAlpha
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[Calls(Type = typeof(Material), Member = "get_shader")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Material), Member = "get_shader")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 		[Calls(Type = typeof(string), Member = "Contains")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -118,10 +118,10 @@ public class UITexture : UIBasicSprite
 
 	public override Vector4 drawingDimensions
 	{
-		[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
 		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return default(Vector4);
@@ -134,7 +134,7 @@ public class UITexture : UIBasicSprite
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -143,35 +143,34 @@ public class UITexture : UIBasicSprite
 		}
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = "set_width")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIWidget), Member = "MakePixelPerfect")]
 	[Calls(Type = typeof(UIBasicSprite), Member = "get_hasBorder")]
+	[Calls(Type = typeof(UIWidget), Member = "set_width")]
 	[Calls(Type = typeof(UIWidget), Member = "set_height")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
 	public override void MakePixelPerfect()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UIWidget), Member = "OnUpdate")]
 	[Calls(Type = typeof(UIWidget), Member = "set_drawRegion")]
-	[Calls(Type = typeof(UIWidget), Member = "set_drawRegion")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	protected override void OnUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(UIBasicSprite), Member = "Fill")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 1)]
 	public override void OnFill(BetterList<Vector3> verts, BetterList<Vector2> uvs, BetterList<Color32> cols)
 	{
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIWidget), Member = ".ctor")]
 	public UITexture()
 	{
 	}

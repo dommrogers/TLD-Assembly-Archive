@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using NodeCanvas.Framework.Internal;
@@ -12,8 +13,8 @@ public class GetOtherBlackboardVariable : ActionTask<Blackboard>
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Format")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Format")]
 		get
 		{
 			return null;
@@ -21,9 +22,12 @@ public class GetOtherBlackboardVariable : ActionTask<Blackboard>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

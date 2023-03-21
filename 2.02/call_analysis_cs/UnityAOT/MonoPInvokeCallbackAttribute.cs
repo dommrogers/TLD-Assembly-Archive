@@ -7,8 +7,8 @@ public class MonoPInvokeCallbackAttribute : Attribute
 {
 	public Type type;
 
-	[CallerCount(Count = 101)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 103)]
 	public MonoPInvokeCallbackAttribute(Type t)
 	{
 	}

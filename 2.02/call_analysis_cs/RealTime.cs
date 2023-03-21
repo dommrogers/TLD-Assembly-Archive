@@ -5,28 +5,28 @@ public class RealTime : MonoBehaviour
 {
 	public static float time
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 3)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 3)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	public static float deltaTime
 	{
 		[DeduplicatedMethod]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 11)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public RealTime()
 	{

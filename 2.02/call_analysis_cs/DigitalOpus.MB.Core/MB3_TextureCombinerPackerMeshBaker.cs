@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -51,7 +50,7 @@ internal class MB3_TextureCombinerPackerMeshBaker : MB3_TextureCombinerPackerRoo
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -62,7 +61,7 @@ internal class MB3_TextureCombinerPackerMeshBaker : MB3_TextureCombinerPackerRoo
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -76,79 +75,54 @@ internal class MB3_TextureCombinerPackerMeshBaker : MB3_TextureCombinerPackerRoo
 		{
 		}
 
-		[CallerCount(Count = 2)]
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[Calls(Type = typeof(ProgressUpdateDelegate), Member = "Invoke")]
-		[Calls(Type = typeof(MatAndTransformToMerged), Member = "GetMaterialName")]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(Debug), Member = "Log")]
-		[Calls(Type = typeof(MeshBakerMaterialTexture), Member = "GetTexture2D")]
-		[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-		[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-		[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-		[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(Debug), Member = "LogError")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(MeshBakerMaterialTexture), Member = "GetTexName")]
-		[Calls(Type = typeof(MeshBakerMaterialTexture), Member = "GetTexName")]
-		[Calls(Type = typeof(ProgressUpdateDelegate), Member = "Invoke")]
-		[Calls(Type = typeof(MB3_TextureCombinerPackerMeshBaker), Member = "CopyScaledAndTiledToAtlas")]
-		[Calls(Type = typeof(MB3_TextureCombinerPipeline.TexturePipelineData), Member = "get_numAtlases")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[CallsUnknownMethods(Count = 166)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(ProgressUpdateDelegate), Member = "Invoke")]
-		[Calls(Type = typeof(ProgressUpdateDelegate), Member = "Invoke")]
-		[Calls(Type = typeof(MeshBakerMaterialTexture), Member = "GetTexName")]
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 8)]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(ProgressUpdateDelegate), Member = "Invoke")]
 		[Calls(Type = typeof(Texture2D), Member = ".ctor")]
 		[Calls(Type = typeof(Texture2D), Member = "SetPixels")]
 		[Calls(Type = typeof(Texture2D), Member = "Apply")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(Debug), Member = "Log")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(Debug), Member = "Log")]
 		[Calls(Type = typeof(MB3_TextureCombinerPipeline), Member = "_ShouldWeCreateAtlasForThisProperty")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(Debug), Member = "Log")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(ProgressUpdateDelegate), Member = "Invoke")]
-		[Calls(Type = typeof(MB3_TextureCombinerPackerRoot), Member = "CreateTemporaryTexturesForAtlas")]
-		[Calls(Type = typeof(GC), Member = "Collect")]
-		[Calls(Type = typeof(Debug), Member = "Log")]
-		[Calls(Type = typeof(MB3_TextureCombiner), Member = "_destroyTemporaryTextures")]
-		[Calls(Type = typeof(Material), Member = "SetTextureScale")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(Material), Member = "SetTextureOffset")]
-		[Calls(Type = typeof(Vector2), Member = "get_zero")]
-		[Calls(Type = typeof(Material), Member = "SetTexture")]
 		[Calls(Type = typeof(Stopwatch), Member = "Start")]
+		[Calls(Type = typeof(Material), Member = "SetTexture")]
+		[Calls(Type = typeof(Vector2), Member = "get_zero")]
+		[Calls(Type = typeof(Material), Member = "SetTextureOffset")]
 		[Calls(Type = typeof(Vector2), Member = "get_one")]
+		[Calls(Type = typeof(Material), Member = "SetTextureScale")]
+		[Calls(Type = typeof(MB3_TextureCombiner), Member = "_destroyTemporaryTextures")]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(GC), Member = "Collect")]
+		[Calls(Type = typeof(MB3_TextureCombinerPackerRoot), Member = "CreateTemporaryTexturesForAtlas")]
+		[Calls(Type = typeof(MeshBakerMaterialTexture), Member = "GetTexName")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(MatAndTransformToMerged), Member = "GetMaterialName")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[Calls(Type = typeof(MeshBakerMaterialTexture), Member = "GetTexture2D")]
+		[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(Debug), Member = "LogError")]
+		[Calls(Type = typeof(MB3_TextureCombinerPackerMeshBaker), Member = "CopyScaledAndTiledToAtlas")]
+		[Calls(Type = typeof(MB3_TextureCombinerPipeline.TexturePipelineData), Member = "get_numAtlases")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+		[CallsDeduplicatedMethods(Count = 8)]
+		[CallsUnknownMethods(Count = 166)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
+		[DebuggerHidden]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[CallsUnknownMethods(Count = 3)]
-		[CallerCount(Count = 0)]
-		[DebuggerHidden]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -200,7 +174,7 @@ internal class MB3_TextureCombinerPackerMeshBaker : MB3_TextureCombinerPackerRoo
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -209,9 +183,9 @@ internal class MB3_TextureCombinerPackerMeshBaker : MB3_TextureCombinerPackerRoo
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 29)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -227,27 +201,27 @@ internal class MB3_TextureCombinerPackerMeshBaker : MB3_TextureCombinerPackerRoo
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-		[CallsUnknownMethods(Count = 141)]
-		[Calls(Type = typeof(ProgressUpdateDelegate), Member = "Invoke")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-		[Calls(Type = typeof(MB3_TextureCombinerNonTextureProperties), Member = "TintTextureWithTextureCombiner")]
-		[Calls(Type = typeof(Texture2D), Member = "GetPixelBilinear")]
-		[Calls(Type = typeof(Debug), Member = "Log")]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(MeshBakerMaterialTexture), Member = "GetTexture2D")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(MB3_TextureCombiner), Member = "_createTextureCopy")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(MeshBakerMaterialTexture), Member = "GetTexture2D")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[Calls(Type = typeof(Debug), Member = "Log")]
+		[Calls(Type = typeof(MB3_TextureCombiner), Member = "_createTextureCopy")]
+		[Calls(Type = typeof(MB3_TextureCombinerNonTextureProperties), Member = "TintTextureWithTextureCombiner")]
+		[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+		[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(ProgressUpdateDelegate), Member = "Invoke")]
+		[Calls(Type = typeof(Texture2D), Member = "GetPixelBilinear")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 141)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -259,19 +233,17 @@ internal class MB3_TextureCombinerPackerMeshBaker : MB3_TextureCombinerPackerRoo
 		}
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public override IEnumerator CreateAtlases(ProgressUpdateDelegate progressInfo, MB3_TextureCombinerPipeline.TexturePipelineData data, MB3_TextureCombiner combiner, AtlasPackingResult packedAtlasRects, Texture2D[] atlases, MB2_EditorMethodsInterface textureEditorMethods, MB2_LogLevel LOG_LEVEL)
 	{
 		return null;
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
+	[CalledBy(Type = typeof(_003CCreateAtlases_003Ed__0), Member = "MoveNext")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(_003CCreateAtlases_003Ed__0), Member = "MoveNext")]
 	[CallsUnknownMethods(Count = 7)]
 	internal static IEnumerator CopyScaledAndTiledToAtlas(MeshBakerMaterialTexture source, MB_TexSet sourceMaterial, ShaderTextureProperty shaderPropertyName, DRect srcSamplingRect, int targX, int targY, int targW, int targH, AtlasPadding padding, Color[][] atlasPixels, bool isNormalMap, MB3_TextureCombinerPipeline.TexturePipelineData data, MB3_TextureCombiner combiner, ProgressUpdateDelegate progressInfo = null, MB2_LogLevel LOG_LEVEL = MB2_LogLevel.info)
 	{
@@ -279,7 +251,7 @@ internal class MB3_TextureCombinerPackerMeshBaker : MB3_TextureCombinerPackerRoo
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public MB3_TextureCombinerPackerMeshBaker()
 	{
 	}

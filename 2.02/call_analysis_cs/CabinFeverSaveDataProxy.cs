@@ -15,7 +15,7 @@ public class CabinFeverSaveDataProxy
 	public bool m_DoneHalloweenEventFix;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CabinFeverSaveDataProxy()
 	{
 	}

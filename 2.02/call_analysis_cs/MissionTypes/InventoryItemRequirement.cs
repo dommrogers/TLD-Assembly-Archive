@@ -32,39 +32,36 @@ public class InventoryItemRequirement
 	{
 	}
 
-	[CalledBy(Type = typeof(NCUtils), Member = "GetValue5")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(NCUtils), Member = "GetValue2")]
 	[CalledBy(Type = typeof(NCUtils), Member = "GetValue3")]
 	[CalledBy(Type = typeof(NCUtils), Member = "GetValue4")]
+	[CalledBy(Type = typeof(NCUtils), Member = "GetValue5")]
+	[CallerCount(Count = 4)]
 	public InventoryItemRequirement(string _name, int _amount, bool _testMeasurable, string _optionGroupTag, string _condition)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public override string ToString()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(NCUtils), Member = "GetItemRequirementsMatchCount")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(NCUtils), Member = "ParseConditional")]
 	[Calls(Type = typeof(NCUtils), Member = "TestConditional")]
-	[CalledBy(Type = typeof(NCUtils), Member = "GetItemRequirementsMatchCount")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool TestRequirementCondition(IBlackboard bb)
 	{
-		return default(bool);
+		return false;
 	}
 }

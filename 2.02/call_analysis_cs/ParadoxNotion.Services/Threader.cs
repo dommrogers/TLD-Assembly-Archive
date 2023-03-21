@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using System.Threading;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -24,10 +23,10 @@ public static class Threader
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal void _003CStartAction_003Eb__0()
 		{
 		}
@@ -41,9 +40,9 @@ public static class Threader
 
 		public T2 parameter2;
 
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		public _003C_003Ec__DisplayClass2_0()
 		{
 		}
@@ -74,10 +73,10 @@ public static class Threader
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal void _003CStartAction_003Eb__0()
 		{
 		}
@@ -91,9 +90,9 @@ public static class Threader
 
 		public Action<TResult> callback;
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		public _003C_003Ec__DisplayClass4_0()
 		{
 		}
@@ -106,10 +105,10 @@ public static class Threader
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal void _003CStartFunction_003Eb__1()
 		{
 		}
@@ -125,17 +124,17 @@ public static class Threader
 
 		public Action<TResult> callback;
 
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
-		[DeduplicatedMethod]
 		public _003C_003Ec__DisplayClass5_0()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal void _003CStartFunction_003Eb__0()
 		{
 		}
@@ -176,10 +175,10 @@ public static class Threader
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal void _003CStartFunction_003Eb__1()
 		{
 		}
@@ -223,7 +222,7 @@ public static class Threader
 		}
 	}
 
-	private sealed class _003CThreadUpdater_003Ed__9 : IDisposable, IEnumerator<object>, IEnumerator
+	private sealed class _003CThreadUpdater_003Ed__9 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -235,9 +234,9 @@ public static class Threader
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
 			[DebuggerHidden]
-			[CallerCount(Count = 29)]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -248,62 +247,62 @@ public static class Threader
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CThreadUpdater_003Ed__9(int _003C_003E1__state)
 		{
 		}
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Thread), Member = "get_ThreadState")]
 		[Calls(Type = typeof(Thread), Member = "get_IsAlive")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 3)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 3)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Thread), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 14)]
 	[Calls(Type = typeof(Threader), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	public static Thread StartAction(Action function, Action callback = null)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(Threader), Member = "Begin")]
-	[Calls(Type = typeof(Thread), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Thread), Member = ".ctor")]
+	[Calls(Type = typeof(Threader), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 23)]
 	public static Thread StartAction<T1>(Action<T1> function, T1 parameter1, Action callback = null)
 	{
 		return null;
@@ -311,21 +310,21 @@ public static class Threader
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Thread), Member = ".ctor")]
 	[Calls(Type = typeof(Threader), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 23)]
 	public static Thread StartAction<T1, T2>(Action<T1, T2> function, T1 parameter1, T2 parameter2, Action callback = null)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(Threader), Member = "Begin")]
-	[Calls(Type = typeof(Thread), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Thread), Member = ".ctor")]
+	[Calls(Type = typeof(Threader), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 23)]
 	public static Thread StartAction<T1, T2, T3>(Action<T1, T2, T3> function, T1 parameter1, T2 parameter2, T3 parameter3, Action callback = null)
 	{
 		return null;
@@ -333,32 +332,32 @@ public static class Threader
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Thread), Member = ".ctor")]
 	[Calls(Type = typeof(Threader), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 30)]
 	public static Thread StartFunction<TResult>(Func<TResult> function, Action<TResult> callback = null)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 30)]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Thread), Member = ".ctor")]
 	[Calls(Type = typeof(Threader), Member = "Begin")]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 30)]
 	public static Thread StartFunction<TResult, T1>(Func<T1, TResult> function, T1 parameter1, Action<TResult> callback = null)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 30)]
-	[Calls(Type = typeof(Threader), Member = "Begin")]
-	[Calls(Type = typeof(Thread), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Thread), Member = ".ctor")]
+	[Calls(Type = typeof(Threader), Member = "Begin")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 30)]
 	public static Thread StartFunction<TResult, T1, T2>(Func<T1, T2, TResult> function, T1 parameter1, T2 parameter2, Action<TResult> callback = null)
 	{
 		return null;
@@ -366,39 +365,38 @@ public static class Threader
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Thread), Member = ".ctor")]
 	[Calls(Type = typeof(Threader), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 30)]
 	public static Thread StartFunction<TResult, T1, T2, T3>(Func<T1, T2, T3, TResult> function, T1 parameter1, T2 parameter2, T3 parameter3, Action<TResult> callback = null)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Threader), Member = "StartFunction")]
-	[CalledBy(Type = typeof(Threader), Member = "StartFunction")]
-	[CalledBy(Type = typeof(Threader), Member = "StartFunction")]
-	[CalledBy(Type = typeof(Threader), Member = "StartFunction")]
 	[CalledBy(Type = typeof(Threader), Member = "StartAction")]
 	[CalledBy(Type = typeof(Threader), Member = "StartAction")]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[CalledBy(Type = typeof(Threader), Member = "StartAction")]
-	[Calls(Type = typeof(MonoManager), Member = "get_current")]
-	[Calls(Type = typeof(Thread), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Threader), Member = "StartAction")]
+	[CalledBy(Type = typeof(Threader), Member = "StartFunction")]
+	[CalledBy(Type = typeof(Threader), Member = "StartFunction")]
+	[CalledBy(Type = typeof(Threader), Member = "StartFunction")]
+	[CalledBy(Type = typeof(Threader), Member = "StartFunction")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(Threader), Member = "StartAction")]
+	[Calls(Type = typeof(Thread), Member = "Start")]
+	[Calls(Type = typeof(MonoManager), Member = "get_current")]
 	[Calls(Type = typeof(Threader), Member = "ThreadUpdater")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private static void Begin(Thread thread, Action callback)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Threader), Member = "Begin")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private static IEnumerator ThreadUpdater(Thread thread, Action callback)
 	{
 		return null;

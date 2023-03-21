@@ -15,16 +15,16 @@ public class fsMetaProperty
 
 	public Type StorageType
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 44)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 53)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 85)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 93)]
 		private set
 		{
 		}
@@ -34,14 +34,14 @@ public class fsMetaProperty
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 23)]
+		[CallerCount(Count = 27)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 51)]
+		[CallerCount(Count = 53)]
 		private set
 		{
 		}
@@ -58,10 +58,11 @@ public class fsMetaProperty
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(fsMetaType), Member = "CollectProperties")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTGetAttribute")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	internal fsMetaProperty(fsConfig config, FieldInfo field)
 	{
 	}

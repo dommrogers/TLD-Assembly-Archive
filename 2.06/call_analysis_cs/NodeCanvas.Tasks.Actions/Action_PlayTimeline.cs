@@ -33,21 +33,21 @@ public abstract class Action_PlayTimeline : Action_Timeline
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_PlayTimelineOnPlayer), Member = "ExecuteTimelineAction")]
 	[CalledBy(Type = typeof(Action_PlayTimeline), Member = "ExecuteTimelineAction")]
+	[CalledBy(Type = typeof(Action_PlayTimelineOnPlayer), Member = "ExecuteTimelineAction")]
 	[CalledBy(Type = typeof(Action_PlayTimelineOnTarget), Member = "ExecuteTimelineAction")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 8)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsUnknownMethods(Count = 1)]
 	protected void BuildTimelineInfo()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CalledBy(Type = typeof(Action_PlayTimelineOnPlayer), Member = ".ctor")]
 	[CalledBy(Type = typeof(Action_PlayTimelineOnTarget), Member = ".ctor")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
-	[CalledBy(Type = typeof(Action_PlayTimelineOnPlayer), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 6)]
 	protected Action_PlayTimeline()
 	{
 	}

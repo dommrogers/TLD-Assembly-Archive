@@ -14,7 +14,7 @@ public class DecalProjectorMaskData
 	public DecalMaskMode m_MaskMode;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public DecalProjectorMaskData()
 	{
 	}

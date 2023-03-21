@@ -10,13 +10,12 @@ public class Timeout : BTDecorator
 
 	private float timer;
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Node), Member = "Reset")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Node), Member = "Reset")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
@@ -29,8 +28,8 @@ public class Timeout : BTDecorator
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 1)]
 	public Timeout()
 	{
 	}

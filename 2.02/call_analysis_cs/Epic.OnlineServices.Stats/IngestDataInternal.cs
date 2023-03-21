@@ -17,18 +17,18 @@ internal struct IngestDataInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(IngestData), Member = "Set")]
 		[CalledBy(Type = typeof(IngestData), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(IngestDataInternal), Member = "Set")]
+		[CalledBy(Type = typeof(IngestDataInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(IngestDataInternal), Member = "Set")]
-		[CalledBy(Type = typeof(IngestDataInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -40,7 +40,7 @@ internal struct IngestDataInternal : ISettable, IDisposable
 		[CallerCount(Count = 7)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -55,16 +55,16 @@ internal struct IngestDataInternal : ISettable, IDisposable
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(IngestDataInternal), Member = "set_StatName")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

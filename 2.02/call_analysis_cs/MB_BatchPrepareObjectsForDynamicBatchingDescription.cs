@@ -3,16 +3,16 @@ using UnityEngine;
 
 public class MB_BatchPrepareObjectsForDynamicBatchingDescription : MonoBehaviour
 {
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GUILayout), Member = "Label")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	private void OnGUI()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public MB_BatchPrepareObjectsForDynamicBatchingDescription()
 	{
 	}

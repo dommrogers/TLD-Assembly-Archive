@@ -22,8 +22,8 @@ public class WindowDragTilt : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NGUIMath), Member = "SpringLerp")]
-	[CallsUnknownMethods(Count = 6)]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	private void Update()
 	{
 	}

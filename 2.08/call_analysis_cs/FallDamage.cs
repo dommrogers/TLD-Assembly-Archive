@@ -38,33 +38,31 @@ public class FallDamage : MonoBehaviour
 
 	private bool m_IgnoreDamageReduction;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 17)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnLandFromFall")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(FallDamage), Member = "ApplyClothingDamage")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(BloodLoss), Member = "BloodLossStart")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[Calls(Type = typeof(FallDamage), Member = "MaybeSprainWrist")]
-	[Calls(Type = typeof(FallDamage), Member = "MaybeSprainAnkle")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
-	[Calls(Type = typeof(FallDamage), Member = "MaybeSprainAnkle")]
-	[Calls(Type = typeof(FallDamage), Member = "MaybeSprainWrist")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnLandFromFall")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(CameraEffects), Member = "PainPulse")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(FootStepSounds), Member = "MaybeLeaveFootPrint")]
 	[Calls(Type = typeof(Condition), Member = "AddHealth")]
 	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(FootStepSounds), Member = "MaybeLeaveFootPrint")]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
+	[Calls(Type = typeof(FallDamage), Member = "MaybeSprainAnkle")]
+	[Calls(Type = typeof(FallDamage), Member = "MaybeSprainWrist")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(Type = typeof(BloodLoss), Member = "BloodLossStart")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[Calls(Type = typeof(FallDamage), Member = "ApplyClothingDamage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 17)]
 	public void ApplyFallDamage(float height, float damageOverride)
 	{
 	}
@@ -73,30 +71,28 @@ public class FallDamage : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IgnoreDamageReduction()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(FallDamage), Member = "ApplyFallDamage")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	[Calls(Type = typeof(SprainedAnkle), Member = "SprainedAnkleStart")]
-	[CalledBy(Type = typeof(FallDamage), Member = "ApplyFallDamage")]
 	[CallsUnknownMethods(Count = 4)]
 	private bool MaybeSprainAnkle()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(FallDamage), Member = "ApplyFallDamage")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(CameraEffects), Member = "PainPulse")]
-	[CalledBy(Type = typeof(FallDamage), Member = "ApplyFallDamage")]
-	[Calls(Type = typeof(SprainedWrist), Member = "SprainedWristStart")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(Type = typeof(SprainedWrist), Member = "SprainedWristStart")]
+	[Calls(Type = typeof(CameraEffects), Member = "PainPulse")]
+	[CallsUnknownMethods(Count = 5)]
 	private bool MaybeSprainWrist()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -105,17 +101,16 @@ public class FallDamage : MonoBehaviour
 	[CallsUnknownMethods(Count = 3)]
 	private bool MaybeBloodLoss()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(FallDamage), Member = "ApplyFallDamage")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(PlayerManager), Member = "ApplyDamageToTopMostLayer")]
-	[Calls(Type = typeof(PlayerManager), Member = "ApplyDamageToTopMostLayer")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "ApplyDamageToTopMostLayer")]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ApplyClothingDamage(float fallHeight)
 	{
 	}

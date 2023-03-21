@@ -12,21 +12,21 @@ public class MigratedLootTableAttribute : PropertyAttribute
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 28)]
+		[CallerCount(Count = 32)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 79)]
+		[CallerCount(Count = 86)]
 		private set
 		{
 		}
 	}
 
-	[CallerCount(Count = 79)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 86)]
 	public MigratedLootTableAttribute(string legacyFieldName)
 	{
 	}

@@ -16,7 +16,7 @@ public class BulletImpactEffectPool : EffectPool<BulletImpactEffectType>
 	public SerializableSpawnGroup[] m_EffectGroupsSerialized;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 25)]
+	[CallerCount(Count = 28)]
 	protected override SerializableSpawnGroupGeneric[] GetSerializedGroups()
 	{
 		return null;
@@ -28,8 +28,8 @@ public class BulletImpactEffectPool : EffectPool<BulletImpactEffectType>
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EffectPool<>), Member = ".ctor")]
 	public BulletImpactEffectPool()
 	{
 		((EffectPool<>)(object)this)._002Ector();

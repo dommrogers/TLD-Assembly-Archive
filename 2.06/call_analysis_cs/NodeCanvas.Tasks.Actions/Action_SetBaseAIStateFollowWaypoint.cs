@@ -18,24 +18,23 @@ public class Action_SetBaseAIStateFollowWaypoint : TLD_Action
 
 	public BBParameter<AiMode> nextState;
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(BaseAi), Member = "SetWaypoints")]
-	[Calls(Type = typeof(BaseAi), Member = "SetSpeedOverride")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TLD_Action), Member = "get_agent")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TLD_Action), Member = "get_agent")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(BaseAi), Member = "SetWaypoints")]
+	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[Calls(Type = typeof(BaseAi), Member = "SetSpeedOverride")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
 	public Action_SetBaseAIStateFollowWaypoint()
 	{
 	}

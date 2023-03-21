@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -25,103 +24,105 @@ public class BearHuntAiRedux : MonoBehaviour
 	private BearEncounter.PostStruggleBehavior m_PostStruggleBehavior;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Awake()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Start()
 	{
 	}
 
 	[CalledBy(Type = typeof(BaseAi), Member = "Serialize")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "Serialize")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(BodyHarvest), Member = "Deserialize")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(BaseAi), Member = "DeserializeUsingBaseAiDataProxy")]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "Deserialize")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public float GetInitialCheckHasMovedDelaySeconds()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(BearEncounter), Member = "UpdateBearDespawn")]
-	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Vector3), Member = "Distance")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 10)]
 	public bool CanDespawn(float radius)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 8)]
+	[CallerCount(Count = 9)]
 	public GameObject GetBearEarPrefab()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool CanTakeBearEar()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public GameObject TakeBearEar()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SetPostStruggleBehavior(BearEncounter.PostStruggleBehavior postStruggleBehavior)
 	{
 	}
 
-	[CallerCount(Count = 10)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 10)]
 	public BearEncounter.PostStruggleBehavior GetPostStruggleBehavior()
 	{
 		return default(BearEncounter.PostStruggleBehavior);
 	}
 
-	[CalledBy(Type = typeof(BearSpearItem), Member = "OnAiCollidedWithSpear")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "OnAiCollidedWithSpear")]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "IsDamageFatal")]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "GetDamageDealt")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(BearSpearItem), Member = "IsDamageFatal")]
+	[CalledBy(Type = typeof(BearSpearItem), Member = "OnAiCollidedWithSpear")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsLastEncounter()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -129,8 +130,8 @@ public class BearHuntAiRedux : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void ClearForceBearFleePosition()
 	{
@@ -139,33 +140,33 @@ public class BearHuntAiRedux : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool TryGetForcedBearFleePosition(out Vector3 position)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref position) = null;
-		return default(bool);
+		position = default(Vector3);
+		return false;
 	}
 
-	[CallerCount(Count = 15)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 18)]
 	public void SetBearEarPrefab(GameObject bearEarPrefab)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 41)]
+	[CallerCount(Count = 46)]
 	public void SetCurrentEncounterOwner(BearEncounter bearEncounter)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public BearEncounter GetCurrentBearEncounterOwner()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public BearHuntAiRedux()
 	{
 	}

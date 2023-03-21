@@ -6,15 +6,15 @@ namespace NodeCanvas.Tasks.Conditions;
 
 public class Condition_IsStartingNewGame : ConditionTask
 {
-	[Calls(Type = typeof(SaveGameSystem), Member = "IsRestoreInProgress")]
-	[Calls(Type = typeof(GameManager), Member = "MatchesMainMenuSceneName")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetSceneAt")]
+	[Calls(Type = typeof(GameManager), Member = "MatchesMainMenuSceneName")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "IsRestoreInProgress")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

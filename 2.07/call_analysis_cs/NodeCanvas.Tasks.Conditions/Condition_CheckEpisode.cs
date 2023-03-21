@@ -23,7 +23,7 @@ public class Condition_CheckEpisode : ConditionTask
 	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

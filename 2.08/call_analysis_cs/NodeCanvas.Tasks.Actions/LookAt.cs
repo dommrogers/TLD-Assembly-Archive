@@ -12,36 +12,37 @@ public class LookAt : ActionTask<Transform>
 
 	protected override string info
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LookAt), Member = "DoLook")]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LookAt), Member = "DoLook")]
 	protected override void OnUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(LookAt), Member = "OnUpdate")]
 	[CalledBy(Type = typeof(LookAt), Member = "OnExecute")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Transform), Member = "LookAt")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(LookAt), Member = "OnUpdate")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Transform), Member = "LookAt")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 4)]
 	private void DoLook()
 	{
 	}

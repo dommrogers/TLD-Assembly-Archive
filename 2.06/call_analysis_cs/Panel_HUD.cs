@@ -5,6 +5,7 @@ using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
 using TLD.Gear;
 using TLD.Interactions;
+using TLD.SaveState;
 using TLD.UI;
 using TLD.UI.Generics;
 using TMPro;
@@ -50,8 +51,8 @@ public class Panel_HUD : Panel_AutoReferenced
 
 		public float m_WaitDuration;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public CreditsQueueInfo()
 		{
 		}
@@ -91,8 +92,8 @@ public class Panel_HUD : Panel_AutoReferenced
 		private readonly int[] m_RangeScents;
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(PanelReference), Member = "Get")]
 		[CallsUnknownMethods(Count = 1)]
 		private void UpdateActionsPanel()
 		{
@@ -105,58 +106,51 @@ public class Panel_HUD : Panel_AutoReferenced
 		}
 
 		[CalledBy(Type = typeof(Panel_FirstAid), Member = "Update")]
-		[Calls(Type = typeof(ScentIndicator), Member = "SetActive")]
 		[CalledBy(Type = typeof(Panel_FirstAid), Member = "UpdateScentIndicator")]
-		[Calls(Type = typeof(ScentIndicator), Member = "SetActive")]
-		[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateScentIndicator")]
-		[CallsUnknownMethods(Count = 3)]
 		[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(Inventory), Member = "GetExtraScentIntensity")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateScentIndicator")]
 		[CallerCount(Count = 4)]
-		[CallsDeduplicatedMethods(Count = 6)]
-		[Calls(Type = typeof(ScentIndicator), Member = "SetActive")]
-		[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+		[Calls(Type = typeof(Inventory), Member = "GetExtraScentIntensity")]
 		[Calls(Type = typeof(ScentIndicator), Member = "SetActive")]
 		[Calls(Type = typeof(ScentIndicator), Member = "SetVisibleSprites")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(PanelReference), Member = "Get")]
+		[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+		[CallsDeduplicatedMethods(Count = 5)]
+		[CallsUnknownMethods(Count = 3)]
 		public void Update()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateScentIndicator")]
-		[CalledBy(Type = typeof(ScentIndicator), Member = "Update")]
 		[CalledBy(Type = typeof(ScentIndicator), Member = "Update")]
 		[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-		[CalledBy(Type = typeof(ScentIndicator), Member = "Update")]
+		[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateScentIndicator")]
+		[CallerCount(Count = 6)]
 		[Calls(Type = typeof(Utils), Member = "SetActive")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 6)]
-		[CalledBy(Type = typeof(ScentIndicator), Member = "Update")]
+		[CallsUnknownMethods(Count = 2)]
 		public void SetActive(bool enabled)
 		{
 		}
 
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 5)]
 		[CalledBy(Type = typeof(ScentIndicator), Member = "UpdateSprites")]
 		[CalledBy(Type = typeof(ScentIndicator), Member = "Update")]
+		[CallerCount(Count = 2)]
+		[CallsDeduplicatedMethods(Count = 5)]
 		[CallsUnknownMethods(Count = 7)]
 		private void SetVisibleSprites(int indicatorValue)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 3)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 3)]
 		private int GetIndicatorValue(float scent)
 		{
-			return default(int);
+			return 0;
 		}
 
-		[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
 		public ScentIndicator()
 		{
 		}
@@ -907,33 +901,31 @@ public class Panel_HUD : Panel_AutoReferenced
 
 	public ScentIndicator m_ScentIndicator;
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(WellFed), Member = "WellFedStart")]
-	[CalledBy(Type = typeof(SprainProtection), Member = "Update")]
-	[CalledBy(Type = typeof(DamageProtection), Member = "ApplyProtectionBuff")]
-	[CalledBy(Type = typeof(FreezingBuff), Member = "Apply")]
+	[CalledBy(Type = typeof(EmergencyStim), Member = "ApplyEmergencyStim")]
 	[CalledBy(Type = typeof(ConditionOverTimeBuff), Member = "Apply")]
 	[CalledBy(Type = typeof(ConditionRestBuff), Member = "Apply")]
-	[CalledBy(Type = typeof(EmergencyStim), Member = "ApplyEmergencyStim")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 8)]
 	[CalledBy(Type = typeof(FatigueBuff), Member = "Apply")]
+	[CalledBy(Type = typeof(FreezingBuff), Member = "Apply")]
+	[CalledBy(Type = typeof(DamageProtection), Member = "ApplyProtectionBuff")]
+	[CalledBy(Type = typeof(SprainProtection), Member = "Update")]
+	[CalledBy(Type = typeof(WellFed), Member = "WellFedStart")]
+	[CallerCount(Count = 8)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public void ShowBuffNotification(string buffNameLocID, string buffHeaderLocId, string buffSpriteName)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateBuffDurations")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateConditonBuffDuration")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateBuffDurations")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateBuffDurations")]
-	[CalledBy(Type = typeof(WellFed), Member = "WellFedEnd")]
-	[CalledBy(Type = typeof(SprainProtection), Member = "Update")]
-	[CalledBy(Type = typeof(DamageProtection), Member = "RemoveProtectionBuff")]
-	[CalledBy(Type = typeof(Rest), Member = "UpdateRestForCures")]
 	[CalledBy(Type = typeof(EmergencyStim), Member = "ApplyEmergencyStimExitEffects")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Rest), Member = "UpdateRestForCures")]
+	[CalledBy(Type = typeof(DamageProtection), Member = "RemoveProtectionBuff")]
+	[CalledBy(Type = typeof(SprainProtection), Member = "Update")]
+	[CalledBy(Type = typeof(WellFed), Member = "WellFedEnd")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateBuffDurations")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateConditonBuffDuration")]
 	[CallerCount(Count = 9)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public void ShowBuffLossNotification(string buffNameLocID, string buffHeaderLocId, string buffSpriteName)
 	{
 	}
@@ -946,130 +938,106 @@ public class Panel_HUD : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideNotification")]
+	[Calls(Type = typeof(Panel_HUD), Member = "DoShowBuffNotification")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideNotification")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Panel_HUD), Member = "DoShowBuffNotification")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideNotification")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateBuffNotification()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "DoShowBuffNotification")]
-	[Calls(Type = typeof(UITweener), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(UITweener), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void StartBuffNotificationTweeens(GameObject parent)
 	{
 	}
 
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateBuffNotification")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_HUD), Member = "StartBuffNotificationTweeens")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(Panel_HUD), Member = "StartBuffNotificationTweeens")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 10)]
 	private void DoShowBuffNotification(BuffNotification buffNotification)
 	{
 	}
 
 	[CalledBy(Type = typeof(Cairn), Member = "PerformInteraction")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(int), Member = "ToString")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public void ShowCairnNotification(Cairn cairn)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void HideCairnNotification()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideNotification")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateCairnNotification()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_HUD), Member = "Initialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Panel_HUD), Member = "HideCollectibleNote")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Initialize")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 5)]
 	public void SetupCollectibleNote()
 	{
 	}
 
-	[Calls(Type = typeof(UIScrollView), Member = "Scroll")]
-	[CallsUnknownMethods(Count = 21)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[Calls(Type = typeof(Panel_HUD), Member = "UpdateCollectibleNote")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(UIScrollView), Member = "Scroll")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_HUD), Member = "UpdateCollectibleNote")]
 	[CallsDeduplicatedMethods(Count = 23)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 21)]
 	public void ShowCollectibleNote(GearItem gearItem)
 	{
 	}
@@ -1082,152 +1050,134 @@ public class Panel_HUD : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ExitInspectGearMode")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnCollectibleNoteReadingClickBack")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "SetupCollectibleNote")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnCollectibleNoteReadingClickBack")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ExitInspectGearMode")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[Calls(Type = typeof(Panel_HUD), Member = "RefreshHudDisplayMode")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 13)]
 	public void HideCollectibleNote(GearItem gearItem)
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVerticalRightStick")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "ShowCollectibleNote")]
-	[Calls(Type = typeof(UIScrollView), Member = "Scroll")]
-	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
+	[Calls(Type = typeof(UIScrollView), Member = "Scroll")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVerticalRightStick")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void UpdateCollectibleNote()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "ShouldEnableMousePointer")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ExitInspectGearMode")]
+	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsShowingCollectibleNote()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InitLabelsForGear")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void ShowReadNoteButtonLegend()
 	{
 	}
 
-	[Calls(Type = typeof(HUDObjectives), Member = "Disable")]
-	[CallsUnknownMethods(Count = 89)]
-	[Calls(Type = typeof(Panel_HUD), Member = "SetupCollectibleNote")]
-	[Calls(Type = typeof(HUDNowhereToHide), Member = "Reset")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "get_fontSize")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	[Calls(Type = typeof(Panel_HUD), Member = "SetHoverText")]
-	[CallsDeduplicatedMethods(Count = 39)]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
 	[Calls(Type = typeof(GameManager), Member = "IsTrialMode")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(UILabel), Member = "get_fontSize")]
+	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(Panel_HUD), Member = "SetupCollectibleNote")]
+	[Calls(Type = typeof(HUDObjectives), Member = "Disable")]
+	[Calls(Type = typeof(HUDNowhereToHide), Member = "Reset")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 37)]
+	[CallsUnknownMethods(Count = 89)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(ButtonLegend), Member = "ConfigureButtonIconSpriteName")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideNotification")]
-	[Calls(Type = typeof(Panel_HUD), Member = "UpdateCollectibleNote")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(ButtonLegend), Member = "ConfigureButtonIconSpriteName")]
-	[Calls(Type = typeof(Panel_HUD), Member = "UpdateAimingStaminaBar")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Panel_HUD), Member = "MaybeFadeOutIndividualDamageEvents")]
-	[Calls(Type = typeof(Panel_HUD), Member = "FadeOutAllEvents")]
-	[Calls(Type = typeof(CameraFade), Member = "GetTargetAlpha")]
-	[Calls(Type = typeof(Panel_HUD), Member = "UpdateStaminaBar")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GameManager), Member = "TrialModeTimeRemaining")]
-	[Calls(Type = typeof(InputManager), Member = "IsSteamControllerActive")]
-	[Calls(Type = typeof(UIPanel), Member = "set_depth")]
-	[Calls(Type = typeof(Panel_HUD), Member = "UpdateCredits")]
-	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
-	[Calls(Type = typeof(GameManager), Member = "IsTrialMode")]
-	[CallsUnknownMethods(Count = 37)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Enable")]
-	[Calls(Type = typeof(PlayerSkills), Member = "ShowSkillIncreaseMessages")]
-	[Calls(Type = typeof(Panel_HUD), Member = "UpdateSuffocatingMeter")]
-	[Calls(Type = typeof(Panel_HUD), Member = "UpdateNowhereToHideEvent")]
-	[Calls(Type = typeof(Panel_HUD), Member = "UpdatePackMorale")]
-	[Calls(Type = typeof(Panel_HUD), Member = "UpdateCurrentNPCCondition")]
-	[Calls(Type = typeof(Panel_HUD), Member = "UpdateCurrentMissionDisplay")]
-	[Calls(Type = typeof(Panel_HUD), Member = "UpdatePopupPanels")]
-	[Calls(Type = typeof(Panel_HUD), Member = "UpdateBuffNotification")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideNotification")]
-	[Calls(Type = typeof(ScentIndicator), Member = "SetActive")]
-	[Calls(Type = typeof(ScentIndicator), Member = "Update")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideConditionRelatedLabels")]
-	[Calls(Type = typeof(GameManager), Member = "IsTrialMode")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideConditionRelatedLabels")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShouldShowAlternateColor")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ToggleConditionTween")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ExitDialogueUpdate")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ItemProgressBarCheck")]
-	[Calls(Type = typeof(Panel_HUD), Member = "UpdateSurvivalTimeLabel")]
-	[Calls(Type = typeof(Panel_HUD), Member = "UpdateVistaNotification")]
-	[Calls(Type = typeof(Condition), Member = "HasNonRiskAffliction")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowLocationReveal")]
-	[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UIRect), Member = "get_root")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(UIRect), Member = "get_root")]
-	[CallsDeduplicatedMethods(Count = 39)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UILabel), Member = "ProcessAndRequest")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
 	[Calls(Type = typeof(Panel_HUD), Member = "CanShowLocationReveal")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideConditionRelatedLabels")]
+	[Calls(Type = typeof(Queue<>), Member = "Dequeue")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowLocationReveal")]
+	[Calls(Type = typeof(Panel_HUD), Member = "UpdateVistaNotification")]
+	[Calls(Type = typeof(Panel_HUD), Member = "UpdateSurvivalTimeLabel")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ItemProgressBarCheck")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ExitDialogueUpdate")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
 	[Calls(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ToggleConditionTween")]
 	[Calls(Type = typeof(Condition), Member = "HasNonRiskAffliction")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
-	[Calls(Type = typeof(Panel_HUD), Member = "UpdateBuffCapacityIcon")]
-	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideConditionRelatedLabels")]
 	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
-	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideConditionRelatedLabels")]
+	[Calls(Type = typeof(Condition), Member = "HasRiskAffliction")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsCancelableActionInProgress")]
+	[Calls(Type = typeof(PlayerMovement), Member = "StaminaUsedForClimbing")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Panel_HUD), Member = "UpdateEnvironmentStateIconVisibility")]
-	[Calls(Type = typeof(PlayerMovement), Member = "StaminaUsedForClimbing")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsCancelableActionInProgress")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
+	[Calls(Type = typeof(Panel_HUD), Member = "UpdateBuffCapacityIcon")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShouldShowAlternateColor")]
 	[Calls(Type = typeof(Panel_HUD), Member = "UpdateDebugCompass")]
-	[Calls(Type = typeof(Condition), Member = "HasRiskAffliction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameManager), Member = "IsTrialMode")]
+	[Calls(Type = typeof(GameManager), Member = "TrialModeTimeRemaining")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_HUD), Member = "UpdateStaminaBar")]
+	[Calls(Type = typeof(Panel_HUD), Member = "UpdateAimingStaminaBar")]
+	[Calls(Type = typeof(Panel_HUD), Member = "FadeOutAllEvents")]
+	[Calls(Type = typeof(Panel_HUD), Member = "MaybeFadeOutIndividualDamageEvents")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(ButtonLegend), Member = "ConfigureButtonIconSpriteName")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(Panel_HUD), Member = "UpdateCollectibleNote")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideNotification")]
+	[Calls(Type = typeof(CameraFade), Member = "GetTargetAlpha")]
+	[Calls(Type = typeof(UIPanel), Member = "set_depth")]
+	[Calls(Type = typeof(ScentIndicator), Member = "Update")]
+	[Calls(Type = typeof(ScentIndicator), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_HUD), Member = "UpdateCredits")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_HUD), Member = "UpdateBuffNotification")]
+	[Calls(Type = typeof(Panel_HUD), Member = "UpdatePopupPanels")]
+	[Calls(Type = typeof(Panel_HUD), Member = "UpdateCurrentMissionDisplay")]
+	[Calls(Type = typeof(Panel_HUD), Member = "UpdateCurrentNPCCondition")]
+	[Calls(Type = typeof(Panel_HUD), Member = "UpdatePackMorale")]
+	[Calls(Type = typeof(Panel_HUD), Member = "UpdateNowhereToHideEvent")]
+	[Calls(Type = typeof(Panel_HUD), Member = "UpdateSuffocatingMeter")]
+	[Calls(Type = typeof(PlayerSkills), Member = "ShowSkillIncreaseMessages")]
+	[CallsDeduplicatedMethods(Count = 31)]
+	[CallsUnknownMethods(Count = 36)]
 	private void Update()
 	{
 	}
@@ -1242,20 +1192,20 @@ public class Panel_HUD : Panel_AutoReferenced
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsShowingGenericInteractionPrompt()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsOverlayActive()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallAnalysisFailed]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Enable")]
-	[CallAnalysisFailed]
 	[CallerCount(Count = 2)]
 	public void EnableTimeOfDayScaleDisplay(bool enable)
 	{
@@ -1272,83 +1222,70 @@ public class Panel_HUD : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(CameraFade), Member = "StartAlphaFade")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_timeofday_display")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsTimeLapseActive")]
+	[CalledBy(Type = typeof(CameraFade), Member = "StartAlphaFade")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsTimeLapseActive")]
 	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetConditionLabelDepth()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_HUD), Member = "Update")]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(Panel_HUD), Member = "EnableTimeOfDayScaleDisplay")]
+	[Calls(Type = typeof(Panel_HUD), Member = "RefreshHudDisplayMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(HUDNowhereToHide), Member = "Reset")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_HUD), Member = "RefreshHudDisplayMode")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[Calls(Type = typeof(Panel_HUD), Member = "Update")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Panel_HUD), Member = "EnableTimeOfDayScaleDisplay")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void Enable(bool enable)
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "UpdateStruggle")]
-	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "InitializeStruggle")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "UpdateTapBar")]
+	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "UpdateStruggle")]
+	[CallerCount(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetStruggleBarFillAmount(float value)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "BeginSpearStruggle")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "EnterOutro")]
-	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "EnterStruggle")]
-	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "OnPrepareStruggleComplete")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "DoChangeWeapon")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "WeaponPickerBegin")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "BreakStruggle")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "MaybeShootRevolver")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "InitStruggleForPartner")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "OnPlayerDeath")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "InitStruggleForPartner")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "BearSpearStruggleSuccess")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "BearSpearStruggleTimedOut")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "InitStruggleForPartner")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "UpdateSpear")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "UpdateSpear")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "Start")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "UpdateSpear")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "OnPlayerDeath")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "BearSpearStruggleTimedOut")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "BearSpearStruggleSuccess")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "InitStruggleForPartner")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "BeginSpearStruggle")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "MaybeShootRevolver")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "BreakStruggle")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "WeaponPickerBegin")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "DoChangeWeapon")]
+	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "OnPrepareStruggleComplete")]
+	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "EnterStruggle")]
+	[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "EnterOutro")]
 	[CallerCount(Count = 17)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public void ShowStruggleWidget(bool enable)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "MaybeShootRevolver")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "Start")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "InitializeStruggle")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "MaybeShootRevolver")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "Start")]
+	[CallsUnknownMethods(Count = 2)]
 	public void ShowStruggleRevolverWidget(bool enable)
 	{
 	}
@@ -1360,41 +1297,39 @@ public class Panel_HUD : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(LocationRevealText), Member = "StartFade")]
-	[Calls(Type = typeof(LocationRevealText), Member = "StartFade")]
-	[Calls(Type = typeof(LocationRevealText), Member = "StartFade")]
 	[CalledBy(Type = typeof(DisplayLocationLabel), Member = "OnTriggerEnter")]
-	[CalledBy(Type = typeof(DisplayLocationLabel), Member = "OnTriggerEnter")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateLocationLabel")]
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_show_location_reveal")]
-	[CalledBy(Type = typeof(HUDManager._003CWaitToShowLocationReveal_003Ed__22), Member = "MoveNext")]
-	[Calls(Type = typeof(LocationRevealText), Member = "SetFontAndHide")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(LocationRevealText), Member = "SetFontAndHide")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "ShowRegionReveal")]
-	[Calls(Type = typeof(TextMeshPro), Member = "get_transform")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateLocationLabel")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_show_location_reveal")]
+	[CalledBy(TypeFullName = "HUDManager.<WaitToShowLocationReveal>d__22", Member = "MoveNext")]
 	[CallerCount(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_HUD), Member = "CanShowLocationReveal")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(TextMeshPro), Member = "get_transform")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
 	[Calls(Type = typeof(Panel_Map), Member = "SceneCanBeMapped")]
 	[Calls(Type = typeof(Panel_Map), Member = "UnlockRegionMap")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowNewLocationDiscovered")]
 	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
+	[Calls(Type = typeof(TextMeshPro), Member = "get_transform")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(LocationRevealText), Member = "SetFontAndHide")]
+	[Calls(Type = typeof(LocationRevealText), Member = "StartFade")]
+	[Calls(Type = typeof(Queue<>), Member = "Enqueue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	public void ShowLocationReveal(string text, string subText = "", bool showNewLocation = false)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(VistaLocation), Member = "MaybeHideNotification")]
 	[CalledBy(Type = typeof(VistaLocation), Member = "OnTriggerEnter")]
+	[CalledBy(Type = typeof(VistaLocation), Member = "MaybeHideNotification")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void ShowVistaNotification(bool enabled, string gearItemName)
 	{
 	}
@@ -1406,14 +1341,14 @@ public class Panel_HUD : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "ShowLocationReveal")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(EventDelegate), Member = "Set")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(EventDelegate), Member = "Set")]
+	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private void ShowNewLocationDiscovered()
 	{
 	}
@@ -1425,66 +1360,61 @@ public class Panel_HUD : Panel_AutoReferenced
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateCredits")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateCredits")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "MaybeHideNewLocationDiscovered")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateCairnNotification")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateBuffNotification")]
 	[CalledBy(Type = typeof(LocationRevealText), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 9)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateBuffNotification")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateCairnNotification")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "MaybeHideNewLocationDiscovered")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateCredits")]
+	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
 	public bool ShouldHideNotification()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(HUDNowhereToHide), Member = "ShouldShow")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateBuffCapacityIcon")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateCurrentNPCCondition")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePackMorale")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateNowhereToHideEvent")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "ShouldShowAfflictionSprite")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "ShouldShowAfflictionRiskSprite")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateEnvironmentStateIconVisibility")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateScentIndicator")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "ShouldShowAfflictionSprite")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateNowhereToHideEvent")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePackMorale")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateBuffCapacityIcon")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "ShouldShowAfflictionRiskSprite")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[CalledBy(Type = typeof(HUDNowhereToHide), Member = "ShouldShow")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 14)]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
 	public bool IsNonRadialOverlayActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideNotification")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	private void MaybeHideNewLocationDiscovered()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(LocationRevealText), Member = "Hide")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(LocationRevealText), Member = "Hide")]
 	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
 	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(Queue<>), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void HideLocationLabel()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public UILabel GetUILabel(string label)
 	{
 		return null;
@@ -1498,36 +1428,31 @@ public class Panel_HUD : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "Toggle")]
-	[CalledBy(Type = typeof(TimedHoldInteraction), Member = "BeginHold")]
-	[CalledBy(Type = typeof(LockedInteraction), Member = "PerformLockInteraction")]
-	[CalledBy(Type = typeof(TorchItem), Member = "ExtinguishDelayed")]
-	[CalledBy(Type = typeof(TorchItem), Member = "IgniteDelayed")]
-	[CalledBy(Type = typeof(MatchesItem), Member = "IgniteDelayed")]
 	[CalledBy(Type = typeof(FlareItem), Member = "IgniteDelayed")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallerCount(Count = 8)]
+	[CalledBy(Type = typeof(MatchesItem), Member = "IgniteDelayed")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "IgniteDelayed")]
+	[CalledBy(Type = typeof(TorchItem), Member = "IgniteDelayed")]
+	[CalledBy(Type = typeof(TorchItem), Member = "ExtinguishDelayed")]
+	[CalledBy(Type = typeof(LockedInteraction), Member = "PerformLockInteraction")]
+	[CalledBy(Type = typeof(TimedHoldInteraction), Member = "BeginHold")]
+	[CalledBy(Type = typeof(KeroseneLampItem), Member = "Toggle")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	public void StartItemProgressBar(float duration, string progressLabel, GearItem relatedItem, Action callbackDelegate = null)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "TurnOn")]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "Update")]
-	[CalledBy(Type = typeof(TimedHoldInteraction), Member = "EndHold")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
-	[CalledBy(Type = typeof(LockedInteraction), Member = "FinishForceLock")]
-	[CalledBy(Type = typeof(LockedInteraction), Member = "CancelHold")]
-	[CalledBy(Type = typeof(ContainerInteraction), Member = "CancelHold")]
-	[CalledBy(Type = typeof(TorchItem), Member = "CancelExtinguish")]
 	[CalledBy(Type = typeof(TorchItem), Member = "CancelIgnite")]
-	[CallerCount(Count = 14)]
+	[CalledBy(Type = typeof(TorchItem), Member = "CancelExtinguish")]
+	[CalledBy(Type = typeof(ContainerInteraction), Member = "CancelHold")]
+	[CalledBy(Type = typeof(LockedInteraction), Member = "CancelHold")]
+	[CalledBy(Type = typeof(LockedInteraction), Member = "FinishForceLock")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
+	[CalledBy(Type = typeof(TimedHoldInteraction), Member = "EndHold")]
+	[CalledBy(Type = typeof(KeroseneLampItem), Member = "Update")]
+	[CalledBy(Type = typeof(KeroseneLampItem), Member = "TurnOn")]
+	[CallerCount(Count = 14)]
 	public void CancelItemProgressBar()
 	{
 	}
@@ -1535,20 +1460,16 @@ public class Panel_HUD : Panel_AutoReferenced
 	[CallerCount(Count = 0)]
 	public bool IsItemProgressBarActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessFireAction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	public bool IsProgressBarRelatedItem(GearItem item)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
@@ -1557,42 +1478,34 @@ public class Panel_HUD : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(HUDManager), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "HideCollectibleNote")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetHudModeForCinematic")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "HideCollectibleNote")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "Enable")]
+	[CalledBy(Type = typeof(HUDManager), Member = "Update")]
+	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsUnknownMethods(Count = 8)]
 	public void RefreshHudDisplayMode()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void DisplayWarningMessage(string msg)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
 	[CalledBy(Type = typeof(WetZoneTrigger), Member = "Update")]
 	[CalledBy(Type = typeof(WetZoneTrigger), Member = "OnTriggerExit")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void ClearWarningMessage()
 	{
@@ -1603,158 +1516,122 @@ public class Panel_HUD : Panel_AutoReferenced
 	{
 	}
 
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "RemoveMissionTimer")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "DeserializeTimers")]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "StartMissionTimer")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "DeserializeTimers")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "RemoveMissionTimer")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public void ShowMissionTimer(bool visible)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsUnknownMethods(Count = 1)]
 	public void RefreshMissionTimer(string text)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "ShowPanel")]
 	[CalledBy(Type = typeof(Action_Objective), Member = "DoWork")]
 	[CalledBy(Type = typeof(Action_HideObjective), Member = "OnExecute")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 9)]
 	public void ShowMissionMessage(bool visible)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_HUD), Member = "RefreshMissionMessage")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_HUD), Member = "RefreshMissionMessage")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void RefreshObjectiveLabel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Action_Objective), Member = "DoWork")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmLanguage")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "RefreshObjectiveLabel")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmLanguage")]
+	[CalledBy(Type = typeof(Action_Objective), Member = "DoWork")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
 	[Calls(Type = typeof(Panel_Actions), Member = "ConfigureForMissionStart")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void RefreshMissionMessage(string locID, Color col, bool allowSkipFirstTime)
 	{
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Actions), Member = "ConfigureForMissionStart")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(Panel_Actions), Member = "ConfigureForMissionStart")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void RefreshMissionMessageNoLoc(string mesasge, Color col, bool allowSkipFirstTime)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Action_Message), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Action_Message), Member = "OnStop")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void ShowDebugMissionText(bool visible)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Action_Message), Member = "OnExecute")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void RefreshDebugMissionText(string str, Color col)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
-	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateHUDText")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UIRect), Member = "UpdateAnchors")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
-	[Calls(Type = typeof(UIWidget), Member = "set_width")]
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Initialize")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "ItemProgressBarCheck")]
-	[CallsUnknownMethods(Count = 27)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(HoverIconsToShow), Member = "GetSpriteNameForHoverIcon")]
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateHUDText")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 41)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(string), Member = "Split")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
 	[Calls(Type = typeof(UIWidget), Member = "set_height")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(HoverIconsToShow), Member = "GetSpriteNameForHoverIcon")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(UIRect), Member = "UpdateAnchors")]
+	[Calls(Type = typeof(UIWidget), Member = "set_width")]
+	[CallsDeduplicatedMethods(Count = 35)]
+	[CallsUnknownMethods(Count = 27)]
 	public void SetHoverText(string hoverText, GameObject itemUnderCrosshairs, HoverTextState textState)
 	{
 	}
@@ -1762,7 +1639,7 @@ public class Panel_HUD : Panel_AutoReferenced
 	[CallerCount(Count = 0)]
 	public bool GetCinematicBlackout()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1780,7 +1657,7 @@ public class Panel_HUD : Panel_AutoReferenced
 	[CallerCount(Count = 0)]
 	public bool GetHideHudElements()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1791,19 +1668,18 @@ public class Panel_HUD : Panel_AutoReferenced
 	[CallerCount(Count = 0)]
 	public bool ShouldHideReticle()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "OnDestroy")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "FadeOutAllEvents")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "HideNotifications")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "FadeOutAllEvents")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "OnDestroy")]
+	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UIGrid), Member = "GetChild")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	public void CleanupDamageEventTable()
 	{
 	}
@@ -1815,9 +1691,10 @@ public class Panel_HUD : Panel_AutoReferenced
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(InputManager), Member = "MaybeCancelClickHold")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "ProgressBarEnded")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void DoClickHoldCancel()
 	{
@@ -1825,8 +1702,8 @@ public class Panel_HUD : Panel_AutoReferenced
 
 	[CalledBy(Type = typeof(Panel_HUD), Member = "ExitDialogueUpdate")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void DoExitDialogue()
 	{
@@ -1838,241 +1715,224 @@ public class Panel_HUD : Panel_AutoReferenced
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Panel_HUD), Member = "CleanupDamageEventTable")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "ClearUISaveData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_HUD), Member = "CleanupDamageEventTable")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void HideNotifications()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowLocationReveal")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_HUD), Member = "CanShowLocationReveal")]
+	[Calls(Type = typeof(Queue<>), Member = "Dequeue")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowLocationReveal")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateLocationLabel()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateVistaNotification")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[CallsUnknownMethods(Count = 4)]
 	private Texture GetVistaPostcardTexture()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(Panel_HUD), Member = "GetVistaPostcardTexture")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(HUDManager), Member = "DoNotRenderHUD")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(HUDManager), Member = "DoNotRenderHUD")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Panel_HUD), Member = "GetVistaPostcardTexture")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateVistaNotification()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateLocationLabel")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "ShowLocationReveal")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateLocationLabel")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Loading), Member = "IsShowingQuote")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool CanShowLocationReveal()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(HUDManager), Member = "DoNotRenderHUD")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(HUDManager), Member = "DoNotRenderHUD")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateSurvivalTimeLabel()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_HUD), Member = "SetHoverText")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(InputManager), Member = "MaybeCancelClickHold")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "CanUserCancelAction")]
-	[Calls(Type = typeof(InputManager), Member = "MaybeCancelClickHold")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsCancelableActionInProgress")]
-	[CallsDeduplicatedMethods(Count = 17)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsCancelableActionInProgress")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(InputManager), Member = "MaybeCancelClickHold")]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "CanUserCancelAction")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(Panel_HUD), Member = "SetHoverText")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 13)]
 	private void ItemProgressBarCheck()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool IsDialogueExitButtonAvailable()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
 	[Calls(Type = typeof(InputManager), Member = "GetRadialButton")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(Panel_HUD), Member = "DoExitDialogue")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void ExitDialogueUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	private void MaybeHideHudElementsThatOverlapPauseMenuIcon()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Utils), Member = "GetCompassBearingAndDistance")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Utils), Member = "GetCompassBearingAndDistance")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateDebugCompass()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateScentIndicator")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "ShouldShowAfflictionRiskSprite")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "ShouldShowAfflictionSprite")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateNowhereToHideEvent")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePackMorale")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateCurrentNPCCondition")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateBuffCapacityIcon")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateEnvironmentStateIconVisibility")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
 	[CalledBy(Type = typeof(HUDNowhereToHide), Member = "ShouldShow")]
-	[Calls(Type = typeof(Panel_Loading), Member = "IsShowingQuote")]
-	[Calls(Type = typeof(PlayerStruggle), Member = "IsBlackedOutAfterStruggle")]
-	[Calls(Type = typeof(PlayerStruggle), Member = "InStruggleWIthBear")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 14)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateBuffCapacityIcon")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateCurrentNPCCondition")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePackMorale")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateNowhereToHideEvent")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "ShouldShowAfflictionSprite")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "ShouldShowAfflictionRiskSprite")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateEnvironmentStateIconVisibility")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateScentIndicator")]
+	[CallerCount(Count = 14)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerStruggle), Member = "InStruggleWIthBear")]
+	[Calls(Type = typeof(PlayerStruggle), Member = "IsBlackedOutAfterStruggle")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Loading), Member = "IsShowingQuote")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public bool ShouldHideConditionRelatedLabels()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
 	private bool ShouldHideCaloriesLabel()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateStaminaBar")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateStaminaBar")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerCantSprintBecauseOfInjury")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool ShouldShowAlternateColor()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShouldShowAlternateColor")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsCancelableActionInProgress")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 15)]
+	[Calls(Type = typeof(PlayerMovement), Member = "StaminaUsedForClimbing")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetNormalizedSprintReduction")]
 	[Calls(Type = typeof(PlayerMovement), Member = "GetModifiedMaxSprintStamina")]
-	[Calls(Type = typeof(PlayerMovement), Member = "StaminaUsedForClimbing")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "IsStaminaAiming")]
 	[Calls(Type = typeof(InputManager), Member = "GetSprintDown")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSwingingFirstPersonItem")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsCancelableActionInProgress")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShouldShowAlternateColor")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 12)]
 	private void UpdateStaminaBar()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsCancelableActionInProgress")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsStaminaAiming")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 18)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsStaminaAiming")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsCancelableActionInProgress")]
+	[CallsDeduplicatedMethods(Count = 18)]
+	[CallsUnknownMethods(Count = 10)]
 	private void UpdateAimingStaminaBar()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_HUD), Member = "LateUpdate")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 27)]
-	[CallsDeduplicatedMethods(Count = 34)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 34)]
+	[CallsUnknownMethods(Count = 27)]
 	private void UpdateStatusIcons()
 	{
 	}
@@ -2096,38 +1956,40 @@ public class Panel_HUD : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Panel_HUD), Member = "CleanupDamageEventTable")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateDamageEventFade")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SetAlpha")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(UIGrid), Member = "GetChild")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateDamageEventFade")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UIGrid), Member = "GetChild")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SetAlpha")]
+	[Calls(Type = typeof(Panel_HUD), Member = "CleanupDamageEventTable")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	private void FadeOutAllEvents()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateDamageEventFade")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(UIGrid), Member = "GetChildList")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SetAlpha")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateDamageEventFade")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 6)]
 	private void MaybeFadeOutIndividualDamageEvents()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_HUD), Member = "MaybeFadeOutIndividualDamageEvents")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_HUD), Member = "FadeOutAllEvents")]
+	[Calls(Type = typeof(Panel_HUD), Member = "MaybeFadeOutIndividualDamageEvents")]
 	private void UpdateDamageEventFade()
 	{
 	}
@@ -2139,37 +2001,37 @@ public class Panel_HUD : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "ToggleConditionTween")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void SetUpConditionTween()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Panel_HUD), Member = "SetUpConditionTween")]
 	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
 	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 5)]
 	private void ToggleConditionTween(bool toggle)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideConditionRelatedLabels")]
+	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateBuffCapacityIcon(bool isEncumbered)
 	{
 	}
@@ -2181,185 +2043,166 @@ public class Panel_HUD : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(HUDObjectives), Member = "HideDisplay")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(HUDTutorial), Member = "Dequeue")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(HUDObjectives), Member = "RestoreDisplay")]
-	[Calls(Type = typeof(HUDObjectives), Member = "ManualUpdate")]
-	[Calls(Type = typeof(Animator), Member = "PlayInFixedTime")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(HUDManager), Member = "DoNotRenderHUD")]
-	[Calls(Type = typeof(HUDTutorial), Member = "Disable")]
-	[Calls(Type = typeof(HUDObjectives), Member = "Disable")]
-	[Calls(Type = typeof(HUDMission), Member = "Disable")]
-	[Calls(Type = typeof(HUDChapter), Member = "Disable")]
-	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
-	[CallsDeduplicatedMethods(Count = 17)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
+	[Calls(Type = typeof(HUDChapter), Member = "Disable")]
+	[Calls(Type = typeof(HUDMission), Member = "Disable")]
+	[Calls(Type = typeof(HUDObjectives), Member = "Disable")]
+	[Calls(Type = typeof(HUDTutorial), Member = "Disable")]
+	[Calls(Type = typeof(HUDManager), Member = "DoNotRenderHUD")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Animator), Member = "PlayInFixedTime")]
+	[Calls(Type = typeof(HUDObjectives), Member = "RestoreDisplay")]
+	[Calls(Type = typeof(HUDObjectives), Member = "HideDisplay")]
+	[Calls(Type = typeof(HUDObjectives), Member = "ManualUpdate")]
+	[Calls(Type = typeof(HUDTutorial), Member = "Dequeue")]
+	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 10)]
 	private void UpdatePopupPanels()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateCurrentMissionDisplay")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowCurrentMissionDisplay")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateCurrentMissionDisplay")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Panel_HUD), Member = "SetCurrentMissionDisplay")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowCurrentMissionDisplay")]
 	private void MaybeHideCurrentMissionDisplay()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "MaybeHideCurrentMissionDisplay")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateCurrentMissionDisplay")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsUnknownMethods(Count = 1)]
 	private void SetCurrentMissionDisplay(string missionName, string objectives)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateCurrentMissionDisplay")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "MaybeHideCurrentMissionDisplay")]
-	[Calls(Type = typeof(MissionsProgressBar), Member = "Enable")]
-	[Calls(Type = typeof(MissionsProgressBar), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateCurrentMissionDisplay")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(MissionsProgressBar), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void ShowCurrentMissionDisplay(bool show)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_HUD), Member = "MaybeHideCurrentMissionDisplay")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(MissionsProgressBar), Member = "Refresh")]
-	[Calls(Type = typeof(MissionsProgressBar), Member = "Refresh")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowCurrentMissionDisplay")]
-	[Calls(Type = typeof(Panel_HUD), Member = "SetCurrentMissionDisplay")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(Panel_HUD), Member = "MaybeHideCurrentMissionDisplay")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetAllActiveObjectivesForMission")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Panel_HUD), Member = "SetCurrentMissionDisplay")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowCurrentMissionDisplay")]
+	[Calls(Type = typeof(MissionsProgressBar), Member = "Refresh")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateCurrentMissionDisplay()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 24)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideConditionRelatedLabels")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(NPC), Member = "FindNearest")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 24)]
 	private void UpdateCurrentNPCCondition()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePackMorale")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(ValueType), Member = "GetHashCode")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	private bool IsPackMoraleMeterIdle()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePackMorale")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Animator), Member = "Play")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePackMorale")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePackMorale")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetMoraleMeterState(MoraleMeterState state)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool IsMoraleMeterOptionEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_HUD), Member = "SetMoraleMeterState")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Transform), Member = "get_localScale")]
-	[Calls(Type = typeof(Transform), Member = "get_localScale")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
-	[Calls(Type = typeof(Panel_HUD), Member = "SetMoraleMeterState")]
-	[Calls(Type = typeof(PackManager), Member = "GetHighestPackMorale")]
-	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideConditionRelatedLabels")]
-	[Calls(Type = typeof(Panel_HUD), Member = "IsPackMoraleMeterIdle")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_HUD), Member = "IsPackMoraleMeterIdle")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideConditionRelatedLabels")]
+	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(PackManager), Member = "GetHighestPackMorale")]
+	[Calls(Type = typeof(Panel_HUD), Member = "SetMoraleMeterState")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
+	[Calls(Type = typeof(Transform), Member = "get_localScale")]
+	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 6)]
 	private void UpdatePackMorale()
 	{
 	}
 
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(HUDNowhereToHide), Member = "MaybeSetRootActive")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideConditionRelatedLabels")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideConditionRelatedLabels")]
+	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(HUDNowhereToHide), Member = "MaybeSetRootActive")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateNowhereToHideEvent()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateSuffocatingMeter()
 	{
 	}
@@ -2370,50 +2213,50 @@ public class Panel_HUD : Panel_AutoReferenced
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetLanguage")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetLanguage")]
 	[CallsUnknownMethods(Count = 1)]
 	public void ForceCurrentMissionDisplayUpdate()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public string GetDisplayedMissionId()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Condition), Member = "HasNonRiskAffliction")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideConditionRelatedLabels")]
 	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ShouldShowAfflictionSprite()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
-	[Calls(Type = typeof(Condition), Member = "HasRiskAffliction")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideConditionRelatedLabels")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Condition), Member = "HasNonRiskAffliction")]
+	[Calls(Type = typeof(Condition), Member = "HasRiskAffliction")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideConditionRelatedLabels")]
+	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool ShouldShowAfflictionRiskSprite()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnControllerScheme(bool isController)
 	{
@@ -2421,19 +2264,19 @@ public class Panel_HUD : Panel_AutoReferenced
 
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideConditionRelatedLabels")]
 	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 3)]
 	private void UpdateEnvironmentStateIconVisibility()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public override bool IsOverlayPanel()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -2441,19 +2284,19 @@ public class Panel_HUD : Panel_AutoReferenced
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowQueuedCredits")]
 	[CalledBy(Type = typeof(Action_ShowCenterCredit), Member = "OnExecute")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowQueuedCredits")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public void ShowCreditsCenter(string msg, float tweenDuration, float waitDuration)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Action_ShowSideCredits), Member = "OnExecute")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowQueuedCredits")]
-	[CalledBy(Type = typeof(Action_ShowSideCredits), Member = "OnExecute")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public void ShowCreditsSide(string msgTop, string msgCenter, string msgBottom, float waitDuration)
 	{
@@ -2461,87 +2304,76 @@ public class Panel_HUD : Panel_AutoReferenced
 
 	[CalledBy(Type = typeof(Panel_HUD), Member = "ShowCreditsCenter")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "ShowCreditsSide")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateCredits")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowQueuedCreditsSide")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowQueuedCreditsSide")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void ShowQueuedCredits(CreditsQueueInfo creditsInfo)
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void ShowQueuedCreditsCenter(string msg)
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "ShowQueuedCredits")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	private void ShowQueuedCreditsSide(string msgTop, string msgCenter, string msgBottom)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 2)]
 	public void HideCredits()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideNotification")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideNotification")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowQueuedCredits")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 3)]
 	private void UpdateCredits()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ScentIndicator), Member = "Update")]
-	[Calls(Type = typeof(ScentIndicator), Member = "SetActive")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShouldHideConditionRelatedLabels")]
 	[Calls(Type = typeof(Panel_HUD), Member = "IsNonRadialOverlayActive")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScentIndicator), Member = "Update")]
+	[Calls(Type = typeof(ScentIndicator), Member = "SetActive")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateScentIndicator()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 7)]
-	[CallsUnknownMethods(Count = 51)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 51)]
 	public Panel_HUD()
 	{
 	}

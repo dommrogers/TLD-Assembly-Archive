@@ -15,37 +15,36 @@ public class ScreenEffectTest : MonoBehaviour
 	private Material m_CustomMaterial;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 16)]
 	[Calls(Type = typeof(Mesh), Member = ".ctor")]
 	[Calls(Type = typeof(Mesh), Member = "set_colors")]
 	[Calls(Type = typeof(Mesh), Member = "set_triangles")]
 	[Calls(Type = typeof(Mesh), Member = "RecalculateBounds")]
 	[Calls(Type = typeof(Material), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 16)]
 	[CallsUnknownMethods(Count = 30)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Material), Member = "SetVector")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Material), Member = "SetVector")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 15)]
 	private void OnRenderObject()
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public ScreenEffectTest()
 	{
 	}

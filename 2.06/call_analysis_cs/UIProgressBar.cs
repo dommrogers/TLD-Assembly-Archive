@@ -47,8 +47,8 @@ public class UIProgressBar : UIWidgetContainer
 	public Transform cachedTransform
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -58,12 +58,12 @@ public class UIProgressBar : UIWidgetContainer
 
 	public Camera cachedCamera
 	{
+		[CalledBy(Type = typeof(UIProgressBar), Member = "ScreenToValue")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(NGUITools), Member = "FindCameraForLayer")]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 3)]
-		[CalledBy(Type = typeof(UIProgressBar), Member = "ScreenToValue")]
-		[Calls(Type = typeof(NGUITools), Member = "FindCameraForLayer")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[CallerCount(Count = 1)]
 		get
 		{
 			return null;
@@ -72,14 +72,14 @@ public class UIProgressBar : UIWidgetContainer
 
 	public UIWidget foregroundWidget
 	{
-		[CallerCount(Count = 7)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		set
 		{
 		}
@@ -87,14 +87,14 @@ public class UIProgressBar : UIWidgetContainer
 
 	public UIWidget backgroundWidget
 	{
-		[CallerCount(Count = 18)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 20)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		set
 		{
 		}
@@ -118,19 +118,19 @@ public class UIProgressBar : UIWidgetContainer
 	public float value
 	{
 		[DeduplicatedMethod]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 27)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 143)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(NGUITools), Member = "GetActive")]
 		[Calls(Type = typeof(EventDelegate), Member = "IsValid")]
 		[Calls(Type = typeof(EventDelegate), Member = "Execute")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(NGUITools), Member = "GetActive")]
 		set
 		{
 		}
@@ -138,38 +138,23 @@ public class UIProgressBar : UIWidgetContainer
 
 	public float alpha
 	{
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(UIScrollView), Member = "LateUpdate")]
-		[CalledBy(Type = typeof(UIScrollView), Member = "LateUpdate")]
 		[CalledBy(Type = typeof(UIScrollView), Member = "LateUpdate")]
 		[CallerCount(Count = 4)]
 		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[CalledBy(Type = typeof(UIScrollView), Member = "LateUpdate")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(Collider), Member = "set_enabled")]
-		[CallsDeduplicatedMethods(Count = 25)]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(Collider), Member = "set_enabled")]
 		[CalledBy(Type = typeof(UIScrollView), Member = "CheckScrollbars")]
-		[CalledBy(Type = typeof(UIScrollView), Member = "CheckScrollbars")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(Collider), Member = "set_enabled")]
 		[CalledBy(Type = typeof(UIScrollView), Member = "LateUpdate")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		[CallerCount(Count = 4)]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(UIScrollView), Member = "LateUpdate")]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
 		[Calls(Type = typeof(Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(Collider), Member = "set_enabled")]
+		[CallsDeduplicatedMethods(Count = 12)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -180,17 +165,17 @@ public class UIProgressBar : UIWidgetContainer
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	protected bool isInverted
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -198,97 +183,89 @@ public class UIProgressBar : UIWidgetContainer
 	[CallerCount(Count = 1)]
 	public float GetRawValue()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	protected void Start()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	protected virtual void Upgrade()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	protected virtual void OnStart()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected void Update()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	protected void OnValidate()
 	{
 	}
 
 	[CalledBy(Type = typeof(UISlider), Member = "OnPressBackground")]
 	[CalledBy(Type = typeof(UISlider), Member = "OnDragBackground")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_cachedCamera")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CalledBy(Type = typeof(UISlider), Member = "OnPressForeground")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(UISlider), Member = "OnDragForeground")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(UIProgressBar), Member = "get_cachedCamera")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 9)]
 	protected float ScreenToValue(Vector2 screenPos)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(UIScrollBar), Member = "LocalToValue")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	protected virtual float LocalToValue(Vector2 localPos)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UIProgressBar), Member = "SetThumbPosition")]
 	[CalledBy(Type = typeof(UIScrollBar), Member = "ForceUpdate")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
 	[Calls(Type = typeof(UIWidget), Member = "set_drawRegion")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(UIProgressBar), Member = "SetThumbPosition")]
 	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallsUnknownMethods(Count = 7)]
 	public virtual void ForceUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(ScrollbarThumbResizer), Member = "SetThumbPositionFromValue")]
+	[CalledBy(Type = typeof(UIProgressBar), Member = "ForceUpdate")]
 	[CalledBy(Type = typeof(UIScrollBar), Member = "ForceUpdate")]
+	[CalledBy(Type = typeof(ScrollbarThumbResizer), Member = "SetThumbPositionFromValue")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(UIProgressBar), Member = "ForceUpdate")]
+	[CallsUnknownMethods(Count = 11)]
 	public void SetThumbPosition(Vector3 worldPos)
 	{
 	}
@@ -300,11 +277,11 @@ public class UIProgressBar : UIWidgetContainer
 		return default(Vector3);
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(UISlider), Member = ".ctor")]
 	[CalledBy(Type = typeof(UIScrollBar), Member = ".ctor")]
+	[CalledBy(Type = typeof(UISlider), Member = ".ctor")]
+	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public UIProgressBar()
 	{
 	}

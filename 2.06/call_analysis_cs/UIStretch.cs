@@ -45,18 +45,19 @@ public class UIStretch : MonoBehaviour
 
 	private bool mStarted;
 
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 9)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Delegate), Member = "Remove")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 8)]
 	private void OnDestroy()
 	{
 	}
@@ -67,59 +68,40 @@ public class UIStretch : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UIStretch), Member = "Update")]
-	[Calls(Type = typeof(NGUITools), Member = "FindCameraForLayer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(NGUITools), Member = "FindCameraForLayer")]
+	[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
+	[Calls(Type = typeof(UIStretch), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Camera), Member = "get_orthographicSize")]
-	[Calls(Type = typeof(UIRoot), Member = "get_activeHeight")]
-	[Calls(Type = typeof(Screen), Member = "get_width")]
-	[Calls(Type = typeof(Screen), Member = "get_height")]
-	[Calls(Type = typeof(UIWidget), Member = "CalculateBounds")]
-	[Calls(Type = typeof(UIRoot), Member = "get_activeHeight")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Camera), Member = "get_orthographicSize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Screen), Member = "get_height")]
-	[Calls(Type = typeof(UIPanel), Member = "set_baseClipRegion")]
-	[Calls(Type = typeof(UIWidget), Member = "set_width")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UIAtlas), Member = "get_pixelSize")]
-	[Calls(Type = typeof(UIWidget), Member = "set_width")]
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
 	[CalledBy(Type = typeof(UIStretch), Member = "ScreenSizeChanged")]
 	[CalledBy(Type = typeof(UIStretch), Member = "Start")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UIPanel), Member = "get_finalClipRegion")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(NGUIMath), Member = "CalculateRelativeWidgetBounds")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Camera), Member = "get_pixelRect")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UIRoot), Member = "get_pixelSizeAdjustment")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(NGUIMath), Member = "CalculateRelativeWidgetBounds")]
+	[Calls(Type = typeof(UIPanel), Member = "get_finalClipRegion")]
+	[Calls(Type = typeof(UIRoot), Member = "get_activeHeight")]
+	[Calls(Type = typeof(Screen), Member = "get_height")]
+	[Calls(Type = typeof(Screen), Member = "get_width")]
+	[Calls(Type = typeof(UIWidget), Member = "CalculateBounds")]
+	[Calls(Type = typeof(Camera), Member = "get_orthographicSize")]
+	[Calls(Type = typeof(UIPanel), Member = "set_baseClipRegion")]
+	[Calls(Type = typeof(UIWidget), Member = "set_width")]
+	[Calls(Type = typeof(UIAtlas), Member = "get_pixelSize")]
+	[Calls(Type = typeof(UIWidget), Member = "set_height")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 8)]
 	private void Update()
 	{
 	}

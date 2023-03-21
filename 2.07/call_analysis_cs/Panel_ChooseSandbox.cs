@@ -86,133 +86,136 @@ public class Panel_ChooseSandbox : Panel_AutoReferenced
 
 	private AnimationState m_CurrentEpisodeAnimationState;
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(BasicMenu), Member = "InstantiateMenu")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(BasicMenu), Member = "InstantiateMenu")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public override void Initialize()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_AutoReferenced), Member = "OnDestroy")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	protected override void OnDestroy()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Format")]
-	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "DeleteSaveSlot")]
-	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "OnRenameExistingSandboxConfirmed")]
 	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "Enable")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetNumSaveSlotsInUse")]
-	[Calls(Type = typeof(BasicMenu), Member = "EnableConfirm")]
-	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "AddSavesOfTypeToMenu")]
-	[Calls(Type = typeof(BasicMenu), Member = "UpdateTitle")]
-	[Calls(Type = typeof(BasicMenu), Member = "AddExtension")]
-	[Calls(Type = typeof(BasicMenu), Member = "Reset")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "OnRenameExistingSandboxConfirmed")]
+	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "DeleteSaveSlot")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(BasicMenu), Member = "Reset")]
+	[Calls(Type = typeof(BasicMenu), Member = "AddExtension")]
+	[Calls(Type = typeof(BasicMenu), Member = "UpdateTitle")]
+	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "AddSavesOfTypeToMenu")]
+	[Calls(Type = typeof(BasicMenu), Member = "EnableConfirm")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetNumSaveSlotsInUse")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void ConfigureMenu()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "ConfigureMenu")]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(BasicMenu), Member = "AddItem")]
-	[Calls(Type = typeof(SaveGameSlotHelper), Member = "GetSaveSlotInfo")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(SaveGameSlotHelper), Member = "GetSaveSlotInfo")]
+	[Calls(Type = typeof(BasicMenu), Member = "AddItem")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void AddSavesOfTypeToMenu()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "UpdateAnimation")]
-	[Calls(Type = typeof(UtilsPanelChoose), Member = "ProcessMenu")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(UtilsPanelChoose), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(BasicMenu), Member = "ManualUpdate")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(BasicMenu), Member = "ManualUpdate")]
 	[Calls(Type = typeof(BasicMenu), Member = "GetSelectedItemId")]
+	[Calls(Type = typeof(string), Member = "Contains")]
+	[Calls(Type = typeof(UtilsPanelChoose), Member = "ProcessMenu")]
+	[Calls(Type = typeof(UtilsPanelChoose), Member = "UpdateButtonLegend")]
+	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "UpdateAnimation")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
 	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
 	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "ConfigureMenu")]
-	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
 	[CallsUnknownMethods(Count = 3)]
 	public override void Enable(bool enable)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "GetInstance")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TrySetEnabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnClickBack()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TrySetEnabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void BackWithouSFX()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(BasicMenu), Member = "GetSelectedItemId")]
 	[Calls(Type = typeof(string), Member = "Contains")]
 	[Calls(Type = typeof(UtilsPanelChoose), Member = "ProcessMenu")]
 	[Calls(Type = typeof(UtilsPanelChoose), Member = "UpdateButtonLegend")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	private void ProcessMenu()
 	{
 	}
 
-	[Calls(Type = typeof(SaveGameSlotHelper), Member = "GetSaveSlotInfo")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SaveGameSlotHelper), Member = "GetSaveSlotInfo")]
 	private SaveSlotInfo GetSaveSlotInfo(int index)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "DeleteSaveSlot")]
 	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "OnRename")]
 	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "OnDelete")]
-	[Calls(Type = typeof(BasicMenu), Member = "GetSelectedItemIndex")]
+	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "DeleteSaveSlot")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(BasicMenu), Member = "GetSelectedItemIndex")]
 	[Calls(Type = typeof(SaveGameSlotHelper), Member = "GetSaveSlotInfo")]
+	[CallsUnknownMethods(Count = 1)]
 	private SaveSlotInfo GetSelectedSaveSlotInfo()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "GetSelectedSaveSlotInfo")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowRenamePanel")]
 	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowRenamePanel")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "GetSelectedSaveSlotInfo")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnRename()
 	{
 	}
@@ -223,32 +226,32 @@ public class Panel_ChooseSandbox : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(SaveGameSlots), Member = "SaveUserDefinedSlotName")]
-	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "ConfigureMenu")]
-	[Calls(Type = typeof(UtilsPanelChoose), Member = "RefreshDetails")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(BasicMenu), Member = "Refresh")]
-	[Calls(Type = typeof(TextInputField), Member = "GetText")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(TextInputField), Member = "GetText")]
 	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "SaveUserDefinedSlotName")]
+	[Calls(Type = typeof(UtilsPanelChoose), Member = "RefreshDetails")]
+	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "ConfigureMenu")]
+	[Calls(Type = typeof(BasicMenu), Member = "Refresh")]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnRenameExistingSandboxConfirmed()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "GetSelectedSaveSlotInfo")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowDeleteConfirmationPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "GetSelectedSaveSlotInfo")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallerCount(Count = 0)]
 	public void OnDelete()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BasicMenu), Member = "GetSelectedItemIndexNextId")]
 	[Calls(Type = typeof(SaveGameSlotHelper), Member = "DeleteSaveSlotInfo")]
@@ -258,6 +261,7 @@ public class Panel_ChooseSandbox : Panel_AutoReferenced
 	[Calls(Type = typeof(BasicMenu), Member = "Refresh")]
 	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "GetSelectedSaveSlotInfo")]
 	[Calls(Type = typeof(UtilsPanelChoose), Member = "RefreshDetails")]
+	[CallsUnknownMethods(Count = 1)]
 	private void DeleteSaveSlot()
 	{
 	}
@@ -273,92 +277,93 @@ public class Panel_ChooseSandbox : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UtilsPanelChoose), Member = "RefreshDetails")]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SaveGameSlotHelper), Member = "GetSaveSlotInfo")]
+	[Calls(Type = typeof(UtilsPanelChoose), Member = "RefreshDetails")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnSelectionUpdate(string name, int value, int itemIndex)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_MainMenu), Member = "OnLoadSaveSlot")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_MainMenu), Member = "OnLoadSaveSlot")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnLoadSlotClicked(int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(BasicMenu), Member = "GetSelectedItemIndex")]
-	[Calls(Type = typeof(Panel_MainMenu), Member = "OnLoadSaveSlot")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "GetInstance")]
+	[Calls(Type = typeof(BasicMenu), Member = "GetSelectedItemIndex")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_MainMenu), Member = "OnLoadSaveSlot")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnSlotClicked()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "UpdateAnimation")]
 	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "UpdateAnimation")]
-	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "UpdateAnimation")]
 	[CallsUnknownMethods(Count = 3)]
 	private void EnableSingleAnimItem(int targetIndex)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "UpdateAnimation")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "UpdateAnimation")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private AnimMenuItems GetAnimMenuItem(int index)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "IsPlayingAnimation")]
 	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "UpdateAnimation")]
-	[CallsUnknownMethods(Count = 6)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "IsPlayingAnimation")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private bool IsPlayingAnySelectionAnimation()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "UpdateAnimation")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "IsPlayingAnimation")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private bool IsPlayingAnyDeselectionAnimation()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "IsPlayingAnySelectionAnimation")]
 	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "IsPlayingAnyDeselectionAnimation")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool IsPlayingAnimation(int stateHash)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Animator), Member = "Play")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Animator), Member = "Play")]
+	[CallsUnknownMethods(Count = 1)]
 	private void PlaySelectedAnimation(AnimMenuItems menuItem)
 	{
 	}
@@ -371,19 +376,15 @@ public class Panel_ChooseSandbox : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "Update")]
-	[Calls(Type = typeof(Animator), Member = "Play")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "GetAnimMenuItem")]
-	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "EnableSingleAnimItem")]
-	[Calls(Type = typeof(Animator), Member = "Play")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "GetAnimMenuItem")]
-	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "IsPlayingAnySelectionAnimation")]
-	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "IsPlayingAnyDeselectionAnimation")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "IsPlayingAnyDeselectionAnimation")]
+	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "IsPlayingAnySelectionAnimation")]
+	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "GetAnimMenuItem")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Animator), Member = "Play")]
 	[Calls(Type = typeof(Panel_ChooseSandbox), Member = "EnableSingleAnimItem")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateAnimation()
 	{
 	}

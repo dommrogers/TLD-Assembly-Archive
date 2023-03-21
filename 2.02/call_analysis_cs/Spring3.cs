@@ -11,13 +11,13 @@ public class Spring3 : ODE3
 
 	public Vector3 restPos;
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "BeginClimbing")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public Spring3(float _mass, Vector3 _dampening, Vector3 _k, Vector3 _restPosition, Vector3 _initialPosition)
-		: base(default(int))
+		: base(0)
 	{
 	}
 
@@ -44,8 +44,8 @@ public class Spring3 : ODE3
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	public Vector3 GetVelocity()
 	{
 		return default(Vector3);

@@ -15,46 +15,46 @@ public class AiDifficultySetting : MonoBehaviour
 
 	public float m_StrugglePlayerClothingDamageScale;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	public float GetStruggleTapStrenthScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	public float GetStrugglePlayerDamageReceivedIntervalScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[CalledBy(Type = typeof(ClothingDamageEvent), Member = "OnExecute")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyClothingDamagePerSecond")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	public float GetStrugglePlayerClothingDamageScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(StruggleDamageEvent), Member = "ApplyDamage")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyPlayerDamagePerSecond")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyPlayerDamagePerSecond")]
 	public float GetStrugglePlayerDamageReceivedScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public AiDifficultySetting()
 	{
 	}

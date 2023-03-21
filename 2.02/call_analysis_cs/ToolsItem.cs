@@ -33,9 +33,9 @@ public class ToolsItem : MonoBehaviour
 
 	public bool m_AppearInStoryOnly;
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public ToolsItem()
 	{
 	}

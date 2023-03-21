@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 
@@ -16,18 +15,19 @@ public class Skill_Cooking : Skill
 
 	private static Skill_CookingSaveData m_Skill_CookingSaveData;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(Skill), Member = "SetPoints")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
@@ -39,19 +39,19 @@ public class Skill_Cooking : Skill
 	[CallsUnknownMethods(Count = 3)]
 	public float GetCalorieScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(CookingPotItem), Member = "GetTotalCookMultiplier")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "GetTotalBoilMultiplier")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_FeedFire), Member = "ExecuteCook")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(CookingPotItem), Member = "GetTotalCookMultiplier")]
+	[CallsUnknownMethods(Count = 3)]
 	public float GetCookingTimeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -60,25 +60,18 @@ public class Skill_Cooking : Skill
 	[CallsUnknownMethods(Count = 3)]
 	public float GetReadyTimeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 16)]
 	public override string GetTierBenefits(int index)
 	{
 		return null;
@@ -88,18 +81,18 @@ public class Skill_Cooking : Skill
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	public bool NoCalorieLossWhenSmashingOpen()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	public bool NoParasitesOrFoodPosioning()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Skill), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Skill), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public Skill_Cooking()
 	{

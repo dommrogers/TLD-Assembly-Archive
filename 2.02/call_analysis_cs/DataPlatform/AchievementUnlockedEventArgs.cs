@@ -23,11 +23,11 @@ public class AchievementUnlockedEventArgs : IWrappedObject, IDisposable
 
 	public string AchievementId
 	{
-		[CallsUnknownMethods(Count = 7)]
 		[CalledBy(Type = typeof(AchievementNotification), Member = "get_AchievementId")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -37,8 +37,8 @@ public class AchievementUnlockedEventArgs : IWrappedObject, IDisposable
 	public Uri ExtendedInfoUrl
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedUri")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -48,11 +48,11 @@ public class AchievementUnlockedEventArgs : IWrappedObject, IDisposable
 
 	public InAppRewardValueList InAppRewardValue
 	{
-		[CallerCount(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[CalledBy(Type = typeof(AchievementNotification), Member = "get_Length")]
 		[CalledBy(Type = typeof(AchievementNotification), Member = "get_Item")]
-		[CalledBy(Type = typeof(AchievementNotification._003CGetEnumerator_003Ed__9), Member = "MoveNext")]
+		[CalledBy(TypeFullName = "DataPlatform.AchievementNotification.<GetEnumerator>d__9", Member = "MoveNext")]
+		[CallerCount(Count = 3)]
+		[CallsDeduplicatedMethods(Count = 4)]
 		[CallsUnknownMethods(Count = 9)]
 		get
 		{
@@ -62,10 +62,10 @@ public class AchievementUnlockedEventArgs : IWrappedObject, IDisposable
 
 	public string ServiceConfigurationId
 	{
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
-		[CallsUnknownMethods(Count = 7)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -75,8 +75,8 @@ public class AchievementUnlockedEventArgs : IWrappedObject, IDisposable
 	public string TitleId
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -87,8 +87,8 @@ public class AchievementUnlockedEventArgs : IWrappedObject, IDisposable
 	public DateTime UnlockTime
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedDateTime")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -102,16 +102,16 @@ public class AchievementUnlockedEventArgs : IWrappedObject, IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
 	public string XboxUserId
 	{
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalString")]
-		[CallsUnknownMethods(Count = 7)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalString")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -136,11 +136,11 @@ public class AchievementUnlockedEventArgs : IWrappedObject, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 52)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 59)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]

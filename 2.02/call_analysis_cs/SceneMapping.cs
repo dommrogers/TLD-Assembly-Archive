@@ -25,7 +25,7 @@ public class SceneMapping : ScriptableObject
 		public List<ChildSceneEntry> m_ChildList;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public ParentSceneEntry()
 		{
 		}
@@ -43,7 +43,7 @@ public class SceneMapping : ScriptableObject
 		public LayerMask m_ExperienceModeMask;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public ChildSceneEntry()
 		{
 		}
@@ -51,40 +51,39 @@ public class SceneMapping : ScriptableObject
 
 	public List<ParentSceneEntry> m_ParentSceneList;
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadModeConditionalScenesMapped")]
 	[CalledBy(Type = typeof(GameManager), Member = "MaybeLateLoadMissionLayers")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadModeConditionalScenesMapped")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool ChildExperienceModeMatches(ParentSceneEntry entry, LayerMask xpMode, int childIndex)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(string), Member = "Equals")]
 	[CalledBy(Type = typeof(GameManager), Member = "MaybeLateLoadMissionLayers")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadModeConditionalScenesMapped")]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadModeConditionalScenesMapped")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(string), Member = "Equals")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	public ParentSceneEntry GetParentChildEntryNoCase(string parentName)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(Panel_Map), Member = "GetMapNameOfScene")]
+	[CalledBy(Type = typeof(GameManager), Member = "IsOutDoorsScene")]
 	[CalledBy(Type = typeof(GameManager), Member = "GetMapNameOfScene")]
 	[CalledBy(Type = typeof(SceneMapping), Member = "IsSceneOutdoor")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(GameManager), Member = "IsOutDoorsScene")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Equals")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "GetMapNameOfScene")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "Equals")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public ParentSceneEntry GetParentSceneEntry(string parentName)
 	{
 		return null;
@@ -99,19 +98,20 @@ public class SceneMapping : ScriptableObject
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(SceneMapping), Member = "GetParentSceneEntry")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(SceneMapping), Member = "GetParentSceneEntry")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsSceneOutdoor(string sceneName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public SceneMapping()
 	{

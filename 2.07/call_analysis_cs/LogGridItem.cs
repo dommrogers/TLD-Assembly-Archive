@@ -32,51 +32,49 @@ public class LogGridItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildDailyList")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectibleList")]
-	[Calls(Type = typeof(Panel_Log), Member = "LogListItemCallback")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Log), Member = "GetTotalNumGridItems")]
 	[Calls(Type = typeof(Panel_Log), Member = "DeselectLogGridItems")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetTotalNumGridItems")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Panel_Log), Member = "LogListItemCallback")]
 	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetSelected()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildDailyList")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	public void SetupAsDayEntry(int entryNum, bool hasNotes)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTextureNonNull")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 7)]
 	public void SetupAsCollectionEntry(int entryNum, string textureName, int entryDisplayNum)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 6)]
 	public void SetupAsCollectibleEntry(int entryNum, GearItem gearItem)
 	{
 	}
@@ -92,11 +90,11 @@ public class LogGridItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsSelected()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 28)]
+	[CallerCount(Count = 29)]
 	public GearItem GetGearItem()
 	{
 		return null;
@@ -107,8 +105,8 @@ public class LogGridItem : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public LogGridItem()
 	{
 	}

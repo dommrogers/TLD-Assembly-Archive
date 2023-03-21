@@ -19,34 +19,29 @@ public class Skill_Gunsmithing : Skill
 
 	public List<SkillTier> m_SkillTiers;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(float), Member = "ToString")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public override string GetTierBenefits(int index)
 	{
 		return null;
@@ -56,29 +51,29 @@ public class Skill_Gunsmithing : Skill
 	[Calls(Type = typeof(Skill_Gunsmithing), Member = "GetCurrentTier")]
 	public int GetAmmoCraftingCondition()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Skill_Gunsmithing), Member = "GetCurrentTier")]
 	public float GetMillingRepairCondition()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Skill_Gunsmithing), Member = "GetCurrentTier")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Skill_Gunsmithing), Member = "GetCurrentTier")]
 	public float GetMillingRepairSuccessChance()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[Calls(Type = typeof(Skill_Gunsmithing), Member = "GetCurrentTier")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Skill_Gunsmithing), Member = "GetCurrentTier")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	public bool RollAmmoHarvestSuccess()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -86,32 +81,31 @@ public class Skill_Gunsmithing : Skill
 	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	public bool RollMillingRepairSuccess()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Skill_Gunsmithing), Member = "RollAmmoHarvestSuccess")]
-	[CalledBy(Type = typeof(Skill_Gunsmithing), Member = "GetMillingRepairSuccessChance")]
-	[CalledBy(Type = typeof(Skill_Gunsmithing), Member = "GetMillingRepairCondition")]
-	[CalledBy(Type = typeof(Skill_Gunsmithing), Member = "GetAmmoCraftingCondition")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "RollForRepairSuccess")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshSelected")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshSelected")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "DetermineConditionImprovement")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "BeginRepair")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "ApplyCondition")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CheckForHarvestSuccess")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "ApplyCraftingProgress")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallerCount(Count = 13)]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CheckForHarvestSuccess")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "ApplyCondition")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "BeginRepair")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "DetermineConditionImprovement")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshSelected")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "RollForRepairSuccess")]
+	[CalledBy(Type = typeof(Skill_Gunsmithing), Member = "GetAmmoCraftingCondition")]
+	[CalledBy(Type = typeof(Skill_Gunsmithing), Member = "GetMillingRepairCondition")]
+	[CalledBy(Type = typeof(Skill_Gunsmithing), Member = "GetMillingRepairSuccessChance")]
+	[CalledBy(Type = typeof(Skill_Gunsmithing), Member = "RollAmmoHarvestSuccess")]
 	[CalledBy(Type = typeof(Skill_Gunsmithing), Member = "RollMillingRepairSuccess")]
+	[CallerCount(Count = 13)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private SkillTier GetCurrentTier()
 	{
 		return default(SkillTier);
 	}
 
-	[Calls(Type = typeof(Skill), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Skill), Member = ".ctor")]
 	public Skill_Gunsmithing()
 	{
 	}

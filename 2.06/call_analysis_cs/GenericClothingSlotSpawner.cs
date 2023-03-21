@@ -30,38 +30,39 @@ public class GenericClothingSlotSpawner : MonoBehaviour
 	public ClothingSlot m_ClothingSlot;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
 	[Calls(Type = typeof(GenericClothingSlotSpawner), Member = "AssignValuesToSpawnedObject")]
 	public void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(ClothingSlot), Member = "DoSetup")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(GenericClothingSlotSpawner), Member = "InstantiateObjectIfNoneExists")]
 	[CalledBy(Type = typeof(GenericClothingSlotSpawner), Member = "Awake")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[CalledBy(Type = typeof(GenericClothingSlotSpawner), Member = "InstantiateObjectIfNoneExists")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "set_name")]
 	[Calls(Type = typeof(Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(Object), Member = "set_name")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInParent")]
+	[Calls(Type = typeof(ClothingSlot), Member = "DoSetup")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	public void AssignValuesToSpawnedObject()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
 	[Calls(Type = typeof(GenericClothingSlotSpawner), Member = "AssignValuesToSpawnedObject")]
 	public void InstantiateObjectIfNoneExists()
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public GenericClothingSlotSpawner()
 	{
 	}

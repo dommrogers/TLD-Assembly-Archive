@@ -11,20 +11,20 @@ public class ObjectLog
 
 	private string[] logMessages;
 
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(ObjectLog), Member = "Log")]
 	[CalledBy(Type = typeof(ObjectLog), Member = "Error")]
 	[CalledBy(Type = typeof(ObjectLog), Member = "Warn")]
 	[CalledBy(Type = typeof(ObjectLog), Member = "Info")]
 	[CalledBy(Type = typeof(ObjectLog), Member = "LogDebug")]
 	[CalledBy(Type = typeof(ObjectLog), Member = "Trace")]
+	[CallerCount(Count = 6)]
 	[CallsUnknownMethods(Count = 5)]
 	private void _CacheLogMessage(string msg)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public ObjectLog(short bufferSize)
 	{
 	}
@@ -37,67 +37,66 @@ public class ObjectLog
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(ObjectLog), Member = "_CacheLogMessage")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Error(string msg, object[] args)
 	{
 	}
 
-	[Calls(Type = typeof(ObjectLog), Member = "_CacheLogMessage")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(ObjectLog), Member = "_CacheLogMessage")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Warn(string msg, object[] args)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(ObjectLog), Member = "_CacheLogMessage")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Info(string msg, object[] args)
 	{
 	}
 
-	[Calls(Type = typeof(ObjectLog), Member = "_CacheLogMessage")]
-	[Calls(Type = typeof(MB2_Log), Member = "LogDebug")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MB2_Log), Member = "LogDebug")]
+	[Calls(Type = typeof(ObjectLog), Member = "_CacheLogMessage")]
 	public void LogDebug(string msg, object[] args)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(ObjectLog), Member = "_CacheLogMessage")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Trace(string msg, object[] args)
 	{
 	}
 
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 16)]
 	public string Dump()
 	{
 		return null;

@@ -30,16 +30,14 @@ public class AnimationEventData
 	private string m_CachedString;
 
 	[CalledBy(Type = typeof(AnimationEvents), Member = "MaybeRecreateEventArrays")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(AnimationEvents), Member = "PopAnimationEventValue")]
 	[CalledBy(Type = typeof(AnimationEvents), Member = "PushAnimationEventValue")]
-	[CalledBy(Type = typeof(AnimationEvents), Member = "MaybeRecreateEventArrays")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CalledBy(Type = typeof(AnimationEvents), Member = "PopAnimationEventValue")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 1)]
 	public string Key()
 	{
 		return null;

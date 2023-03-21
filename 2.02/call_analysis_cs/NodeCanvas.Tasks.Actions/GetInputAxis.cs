@@ -38,28 +38,23 @@ public class GetInputAxis : ActionTask
 	{
 	}
 
-	[CallsUnknownMethods(Count = 22)]
-	[CalledBy(Type = typeof(GetInputAxis), Member = "OnUpdate")]
 	[CalledBy(Type = typeof(GetInputAxis), Member = "OnExecute")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-	[CallsDeduplicatedMethods(Count = 13)]
+	[CalledBy(Type = typeof(GetInputAxis), Member = "OnUpdate")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
+	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
 	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 18)]
 	private void Do()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GetInputAxis()
 	{
 	}

@@ -32,8 +32,8 @@ public class qd_Decal : MonoBehaviour
 
 	public Texture2D texture
 	{
-		[CallerCount(Count = 28)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 32)]
 		get
 		{
 			return null;
@@ -47,17 +47,20 @@ public class qd_Decal : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnEnable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnDisable()
 	{
@@ -70,61 +73,65 @@ public class qd_Decal : MonoBehaviour
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 79)]
+	[CallerCount(Count = 86)]
 	public void SetTexture(Texture2D tex)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 38)]
+	[CallerCount(Count = 43)]
 	public void SetDecalId(string decalId)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 16)]
+	[CallerCount(Count = 18)]
 	public string GetDecalId()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 60)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 69)]
 	public void SetFullScreenDecalMaterial(Material mat)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Array), Member = "get_Length")]
-	[Calls(Type = typeof(Mesh), Member = "SetSizedArrayForChannel")]
 	[CalledBy(Type = typeof(qdUtil), Member = "RefreshSceneDecals")]
 	[CalledBy(Type = typeof(qd_Mesh), Member = "CreateDecal")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Array), Member = "get_Length")]
+	[Calls(Type = typeof(Mesh), Member = "SetSizedArrayForChannel")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void SetUVRect(Rect r)
 	{
 	}
 
-	[Calls(Type = typeof(Array), Member = "get_Length")]
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Array), Member = "get_Length")]
 	[Calls(Type = typeof(Mesh), Member = "SetSizedArrayForChannel")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	public void FreezeTransform()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
-	[Calls(Type = typeof(Material), Member = "set_mainTexture")]
-	[Calls(Type = typeof(Material), Member = ".ctor")]
-	[Calls(Type = typeof(qd_Mesh), Member = "DecalMesh")]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Shader), Member = "Find")]
 	[CalledBy(Type = typeof(qd_Decal), Member = "Awake")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Shader), Member = "Find")]
+	[Calls(Type = typeof(Material), Member = ".ctor")]
+	[Calls(Type = typeof(Material), Member = "set_mainTexture")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(qd_Mesh), Member = "DecalMesh")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	public void Verify()
 	{
 	}
@@ -137,24 +144,21 @@ public class qd_Decal : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(qd_Decal), Member = "Awake")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[Calls(Type = typeof(Shader), Member = "Find")]
 	[Calls(Type = typeof(Material), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Material), Member = ".ctor")]
-	[Calls(Type = typeof(Material), Member = "HasProperty")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Material), Member = "set_enableInstancing")]
 	[Calls(Type = typeof(Material), Member = "set_mainTexture")]
-	[Calls(Type = typeof(Material), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Material), Member = "set_enableInstancing")]
+	[Calls(Type = typeof(Material), Member = "HasProperty")]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "TryGetStaticDecalUvs")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 16)]
-	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 12)]
 	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
-	[CalledBy(Type = typeof(qd_Decal), Member = "Awake")]
 	private void RefreshStaticDecal()
 	{
 	}
@@ -165,20 +169,21 @@ public class qd_Decal : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Material), Member = "set_mainTexture")]
-	[Calls(Type = typeof(Material), Member = ".ctor")]
-	[Calls(Type = typeof(Shader), Member = "Find")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Shader), Member = "Find")]
+	[Calls(Type = typeof(Material), Member = ".ctor")]
+	[Calls(Type = typeof(Material), Member = "set_mainTexture")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static Material GetQuickDecalMaterial(Texture texture)
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Replace")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static string GetAtlasUvPathWithoutExtensionFromPngPath(string texturePath)
 	{
 		return null;

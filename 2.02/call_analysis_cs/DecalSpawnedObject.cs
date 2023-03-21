@@ -12,7 +12,7 @@ public class DecalSpawnedObject
 	public GameObject m_SpawnedPrefab;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public DecalSpawnedObject()
 	{
 	}

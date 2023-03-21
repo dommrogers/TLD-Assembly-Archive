@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
@@ -28,46 +27,43 @@ public class Condition_PlayerStats : ConditionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
-		[CallsUnknownMethods(Count = 19)]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-		[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-		[Calls(Type = typeof(Condition_PlayerStats), Member = "GetStatValue")]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Condition_PlayerStats), Member = "GetStatValue")]
+		[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+		[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 19)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(Condition_PlayerStats), Member = "OnCheck")]
 	[CalledBy(Type = typeof(Condition_PlayerStats), Member = "get_info")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CalledBy(Type = typeof(Condition_PlayerStats), Member = "OnCheck")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsUnknownMethods(Count = 10)]
 	private float GetStatValue()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
 	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
 	[Calls(Type = typeof(Condition_PlayerStats), Member = "GetStatValue")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(OperationTools), Member = "Compare")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

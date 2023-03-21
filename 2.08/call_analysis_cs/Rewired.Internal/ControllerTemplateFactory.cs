@@ -28,10 +28,10 @@ public static class ControllerTemplateFactory
 		}
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(ExternalTools), Member = "CreateControllerTemplate")]
-	[Calls(Type = typeof(ControllerTemplate), Member = ".ctor")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ControllerTemplate), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 7)]
 	public static IControllerTemplate Create(Guid typeGuid, object payload)
 	{
 		return null;

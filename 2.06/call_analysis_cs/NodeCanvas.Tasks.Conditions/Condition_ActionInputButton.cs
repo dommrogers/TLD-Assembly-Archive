@@ -9,15 +9,15 @@ public class Condition_ActionInputButton : ConditionTask
 
 	public InputManager.InputState inputState;
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonUnpressed")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(InputManager), Member = "AnyButtonsOrKeysPressed")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonUnpressed")]
+	[Calls(Type = typeof(InputManager), Member = "AnyButtonsOrKeysPressed")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -28,7 +28,7 @@ public class Condition_ActionInputButton : ConditionTask
 	[CallsUnknownMethods(Count = 1)]
 	private bool Test()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

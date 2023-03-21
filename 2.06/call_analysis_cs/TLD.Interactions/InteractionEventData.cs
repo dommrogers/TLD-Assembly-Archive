@@ -9,8 +9,8 @@ public class InteractionEventData
 
 	public GameObject interactionObject;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public InteractionEventData()
 	{
 	}

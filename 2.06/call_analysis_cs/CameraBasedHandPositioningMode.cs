@@ -11,16 +11,16 @@ public class CameraBasedHandPositioningMode : StateMachineBehaviour
 
 	private PlayerAnimation.CameraBasedHandPositioningMode m_RestoreMode;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraBasedHandPositioningMode")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnStateMachineEnter(Animator animator, int layerIndex)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraBasedHandPositioningMode")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public override void OnStateMachineExit(Animator animator, int layerIndex)
 	{
 	}

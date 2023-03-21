@@ -3,58 +3,67 @@ using UnityEngine;
 
 public class AnimationUtils
 {
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(CinematicManager), Member = "SaveAnimationState")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static float GetValueIn01(float value)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(BaseAi), Member = "Start_Anim")]
+	[CalledBy(Type = typeof(BaseAi), Member = "EnableWeapon")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ResetWeapon")]
+	[CalledBy(Type = typeof(BaseAi), Member = "EnterStruggle")]
+	[CalledBy(Type = typeof(CinematicAssets), Member = "SetTriggerOnLoadedPermanentProps")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetAnimationParameter_IsInDialogue")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "ReturnToIdleAnimation")]
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoTriggerAnimation")]
+	[CalledBy(Type = typeof(NPC_Animation), Member = "ReturnToIdleAnimation")]
+	[CalledBy(Type = typeof(NPC_Animation), Member = "SetAnimationParameter_IdleVariationIndex")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "DoChangeWeapon")]
 	[CallerCount(Count = 20)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public static bool HasParameter(Animator animator, int paramHash)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "IsAnimationPlayingOnAnyLayer")]
 	[CalledBy(Type = typeof(BodyCarry), Member = "IsPlayingCarryIdleAnimation")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static bool IsStatePlayingOnAnyLayer(Animator animator, int stateHash)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionIn")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "IsNPCReady")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "IsNPCReady")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateEnd")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionIn")]
-	[Calls(Type = typeof(Animator), Member = "IsInTransition")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateEnd")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "IsNPCReady")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionIn")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Animator), Member = "IsInTransition")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool IsAnyLayerInAnimationTransition(Animator animator)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(CinematicTrack), Member = "LoadCinematicAsync")]
 	[CalledBy(Type = typeof(CinematicAssets), Member = "TryGetPermanentPropInfoFromMissionId")]
+	[CalledBy(Type = typeof(CinematicTrack), Member = "LoadCinematicAsync")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 2)]
 	public static Animator FindAnimatorByMissionId(string missionObjectId)
 	{
 		return null;

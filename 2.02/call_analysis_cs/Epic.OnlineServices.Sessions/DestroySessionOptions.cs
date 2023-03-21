@@ -9,23 +9,23 @@ public class DestroySessionOptions
 
 	public string SessionName
 	{
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 52)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 101)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public DestroySessionOptions()
 	{
 	}

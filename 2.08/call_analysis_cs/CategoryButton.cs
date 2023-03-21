@@ -13,30 +13,30 @@ public class CategoryButton
 	private UIButton m_Button;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 279)]
+	[CallerCount(Count = 282)]
 	public CategoryButton(UIButton button)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnNavigationChanged")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateSectionNavButtonColors")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateNavigationButtons")]
 	[CalledBy(Type = typeof(CraftingCategoryNavigation), Member = "SetCurrentIndex")]
 	[CalledBy(Type = typeof(Panel_Container), Member = "RefreshFilterIconColors")]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "RefreshFilterIconColors")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateNavigationButtons")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateSectionNavButtonColors")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnNavigationChanged")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
 	[Calls(Type = typeof(CategoryButton), Member = "SetButtonColors")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetButtonState(ButtonState state, bool instant = true)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UIButtonColor), Member = "UpdateColor")]
 	[CalledBy(Type = typeof(CategoryButton), Member = "SetButtonState")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIButtonColor), Member = "UpdateColor")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	private void SetButtonColors(Color defaultColor, Color hoverColor, Color disabledColor, bool instant)
 	{

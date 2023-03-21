@@ -13,7 +13,7 @@ public class DecalQualitySettings
 	public float m_VisibleScreenSize;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public DecalQualitySettings()
 	{
 	}

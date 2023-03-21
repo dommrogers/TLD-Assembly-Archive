@@ -137,42 +137,20 @@ public class CustomExperienceMode : ExperienceMode
 
 	public const int CURRENT_VERSION = 1;
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "SetCustomXPSettingsFromUI")]
 	[CalledBy(Type = typeof(CustomExperienceModeManager), Member = "CreateCustomModeFromString")]
-	[CalledBy(Type = typeof(CustomExperienceModeManager), Member = "CreateCustomModeFromString")]
 	[CalledBy(Type = typeof(ExperienceModeManager), Member = "SetupLookupTable")]
-	[CallsUnknownMethods(Count = 59)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(CustomExperienceMode), Member = "GetBaseXPModesSortedByDifficultyAsc")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 59)]
 	public bool UpdateBaseValues()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -181,30 +159,14 @@ public class CustomExperienceMode : ExperienceMode
 		return default(CustomExperienceModeManager.CustomTunableNLMHV);
 	}
 
-	[Calls(Type = typeof(StatContainer), Member = "GetValue")]
-	[Calls(Type = typeof(StatContainer), Member = "GetValue")]
-	[Calls(Type = typeof(StatContainer), Member = "GetValue")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 99)]
-	[Calls(Type = typeof(StatContainer), Member = "GetValue")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[CallsDeduplicatedMethods(Count = 79)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
 	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
+	[Calls(Type = typeof(StatContainer), Member = "GetValue")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 79)]
+	[CallsUnknownMethods(Count = 99)]
 	public void SendAnalytics()
 	{
 	}
@@ -214,10 +176,12 @@ public class CustomExperienceMode : ExperienceMode
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
 	[CalledBy(Type = typeof(CustomExperienceMode), Member = "UpdateBaseValues")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 16)]
 	private List<ExperienceMode> GetBaseXPModesSortedByDifficultyAsc()
 	{

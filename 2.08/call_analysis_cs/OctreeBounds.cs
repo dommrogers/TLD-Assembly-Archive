@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.CompilerServices;
@@ -24,7 +23,7 @@ public class OctreeBounds<T>
 		[CallerCount(Count = 28)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -34,47 +33,52 @@ public class OctreeBounds<T>
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
 	[DeduplicatedMethod]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(FootstepTrailManager), Member = "Awake")]
+	[CalledBy(Type = typeof(SnowPatchManager), Member = "Start")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public OctreeBounds(float initialWorldSize, Vector3 initialWorldPos, float minNodeSize, float loosenessVal)
 	{
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(FootstepGroup), Member = ".ctor")]
+	[CalledBy(Type = typeof(FootstepGroup), Member = "Close")]
+	[CalledBy(Type = typeof(FootstepTrailManager), Member = "OnAddFootstepGroup")]
+	[CalledBy(Type = typeof(FootstepTrailManager), Member = "OnCloseFootstepGroup")]
+	[CalledBy(Type = typeof(SnowPatchManager), Member = "AddPatch")]
 	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Add(T obj, Bounds objBounds)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 5)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool Remove(T obj)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsColliding(Bounds checkBounds)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -85,42 +89,42 @@ public class OctreeBounds<T>
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void FrustumCapture(Plane[] frustumPlanes, ref List<T> captureList)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void DrawAllBounds()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void DrawAllObjects()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 11)]
 	private void Grow(Vector3 direction)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Shrink()
 	{
 	}
@@ -129,6 +133,6 @@ public class OctreeBounds<T>
 	[CallerCount(Count = 0)]
 	private static int GetRootPosIndex(int xDir, int yDir, int zDir)
 	{
-		return default(int);
+		return 0;
 	}
 }

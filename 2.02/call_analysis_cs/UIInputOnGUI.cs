@@ -8,23 +8,23 @@ public class UIInputOnGUI : MonoBehaviour
 	private UIInput mInput;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Event), Member = "get_current")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Event), Member = "get_current")]
-	[Calls(Type = typeof(Event), Member = "get_current")]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnGUI()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public UIInputOnGUI()
 	{
 	}

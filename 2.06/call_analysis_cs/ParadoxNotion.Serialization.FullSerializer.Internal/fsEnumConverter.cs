@@ -6,25 +6,25 @@ namespace ParadoxNotion.Serialization.FullSerializer.Internal;
 
 public class fsEnumConverter : fsConverter
 {
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public override bool CanProcess(Type type)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public override bool RequestCycleSupport(Type storageType)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public override bool RequestInheritanceSupport(Type storageType)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -34,50 +34,47 @@ public class fsEnumConverter : fsConverter
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 40)]
-	[Calls(Type = typeof(fsData), Member = ".ctor")]
-	[Calls(Type = typeof(Convert), Member = "ToInt64")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTIsDefined")]
+	[Calls(Type = typeof(Enum), Member = "GetName")]
 	[Calls(Type = typeof(Convert), Member = "ToInt64")]
 	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
 	[Calls(Type = typeof(Enum), Member = "GetValues")]
-	[Calls(Type = typeof(Convert), Member = "ToInt64")]
-	[Calls(Type = typeof(Enum), Member = "GetName")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "GetEnumerator")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(fsData), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 40)]
 	public override fsResult TrySerialize(object instance, out fsData serialized, Type storageType)
 	{
 		serialized = null;
 		return default(fsResult);
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(fsResult), Member = "Fail")]
-	[Calls(Type = typeof(Enum), Member = "ToObject")]
-	[Calls(Type = typeof(Enum), Member = "ToObject")]
-	[Calls(Type = typeof(fsResult), Member = "Fail")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsData), Member = "Cast")]
+	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(Type = typeof(Enum), Member = "GetNames")]
 	[Calls(Type = typeof(Enum), Member = "Parse")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Enum), Member = "GetNames")]
-	[Calls(Type = typeof(string), Member = "Split")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Convert), Member = "ChangeType")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(fsResult), Member = "Fail")]
+	[Calls(Type = typeof(Enum), Member = "ToObject")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public override fsResult TryDeserialize(fsData data, ref object instance, Type storageType)
 	{
 		return default(fsResult);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private static bool ArrayContains<T>(T[] values, T value)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

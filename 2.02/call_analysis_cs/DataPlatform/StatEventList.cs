@@ -6,19 +6,20 @@ namespace DataPlatform;
 
 public class StatEventList : WrappedCachedList<StatEvent>
 {
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public StatEventList(IntPtr self)
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(WrappedCachedList<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public StatEventList()
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
@@ -29,9 +30,8 @@ public class StatEventList : WrappedCachedList<StatEvent>
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(StatsManagerPlugin), Member = "StatsManager_DoWork_GetAt")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(StatsManagerPlugin), Member = "StatsManager_DoWork_GetAt")]
-	[Calls(Type = typeof(StatsManagerPlugin), Member = "StatsManager_DoWork_GetAt")]
 	[CallsUnknownMethods(Count = 7)]
 	protected override StatEvent CreateIthElement(int i)
 	{

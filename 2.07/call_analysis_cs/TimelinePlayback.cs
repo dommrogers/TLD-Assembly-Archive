@@ -17,8 +17,8 @@ public class TimelinePlayback : MonoBehaviour
 
 		public Action m_OnInterrupted;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public TimelineCallbacks()
 		{
 		}
@@ -68,6 +68,11 @@ public class TimelinePlayback : MonoBehaviour
 
 		public vp_FPSPlayer.UnCrouchOptions m_UnCrouchOptions;
 
+		[CalledBy(Type = typeof(Elevator), Member = ".ctor")]
+		[CalledBy(Type = typeof(PlayPlayerTimelineOnInteract), Member = ".ctor")]
+		[CalledBy(Type = typeof(TimelinePlayback), Member = ".ctor")]
+		[CalledBy(Type = typeof(SteamPipeValve), Member = ".ctor")]
+		[CalledBy(Type = typeof(Action_PlayTimeline), Member = ".ctor")]
 		[CallerCount(Count = 20)]
 		public TimelineInfo()
 		{
@@ -140,8 +145,8 @@ public class TimelinePlayback : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(TimelinePlayback), Member = "PlayTimelineOnSelf")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
@@ -154,109 +159,92 @@ public class TimelinePlayback : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	private void OnValidate()
 	{
 	}
 
-	[Calls(Type = typeof(TimelinePlayback), Member = "StartPlayerSyncingToSyncBone")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(Action_PlayTimelineOnPlayer), Member = "ExecuteTimelineAction")]
-	[CalledBy(Type = typeof(SteamPipeValve), Member = "OnOpenValveInteraction")]
-	[CalledBy(Type = typeof(TimelinePlayback), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(PlayPlayerTimelineOnInteract), Member = "PerformInteraction")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CalledBy(Type = typeof(TimelinePlayback), Member = "LateUpdate")]
+	[CalledBy(Type = typeof(SteamPipeValve), Member = "OnOpenValveInteraction")]
+	[CalledBy(Type = typeof(Action_PlayTimelineOnPlayer), Member = "ExecuteTimelineAction")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "AttemptToStowPlayerItemInHand")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetFPAnchorBindingInfo")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "SetupTrackBinding")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "LoadTimeline")]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouchImmediate")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapSprings")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapZoom")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "StartPlayerSyncingToSyncBone")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "EnablePlayerFreeCameraMovement")]
 	[Calls(Type = typeof(TimelinePlayback), Member = "LateUpdate")]
 	[Calls(Type = typeof(TimelinePlayback), Member = "DisablePlayerFreeCameraMovement")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "LateUpdate")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "EnablePlayerFreeCameraMovement")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapZoom")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "SetupTrackBinding")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouchImmediate")]
-	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapSprings")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "AttemptToStowPlayerItemInHand")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetFPAnchorBindingInfo")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "LoadTimeline")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 9)]
 	public void PlayTimelineOnPlayer(TimelineInfo timeline, TimelineCallbacks callbacks, bool shouldStowItemInHands, PlayerControlMode controlMode = PlayerControlMode.Normal)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(Action_PlayTimelineOnTarget), Member = "ExecuteTimelineAction")]
-	[CalledBy(Type = typeof(TimelinePlayback), Member = "Start")]
 	[CalledBy(Type = typeof(Elevator), Member = "PlayTimeline")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(TimelinePlayback), Member = "PlayTimeline")]
+	[CalledBy(Type = typeof(TimelinePlayback), Member = "Start")]
+	[CalledBy(Type = typeof(Action_PlayTimelineOnTarget), Member = "ExecuteTimelineAction")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "PlayTimeline")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void PlayTimelineOnSelf(TimelineInfo timeline, TimelineCallbacks callbacks)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimelineOnSelf")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "DisablePlayerFreeCameraMovement")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "EnablePlayerFreeCameraMovement")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "StartPlayerSyncingToSyncBone")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapZoom")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "LateUpdate")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouchImmediate")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "LoadTimeline")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "SetupTrackBinding")]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetFPAnchorBindingInfo")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetFPAnchorBindingInfo")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "SetupTrackBinding")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "LoadTimeline")]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouchImmediate")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapSprings")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapZoom")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "StartPlayerSyncingToSyncBone")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "EnablePlayerFreeCameraMovement")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "DisablePlayerFreeCameraMovement")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "LateUpdate")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void PlayTimeline(TimelineInfo timeline, TLD_TimelineDirector targetDirector, TimelineCallbacks callbacks)
 	{
 	}
 
-	[CalledBy(Type = typeof(Elevator), Member = "LoadElevatorTimelines")]
-	[CalledBy(Type = typeof(Elevator), Member = "LoadElevatorTimelines")]
-	[CalledBy(Type = typeof(Elevator), Member = "LoadElevatorTimelines")]
-	[CalledBy(Type = typeof(Elevator), Member = "LoadElevatorTimelines")]
-	[CalledBy(Type = typeof(Elevator), Member = "LoadElevatorTimelines")]
-	[CalledBy(Type = typeof(Elevator), Member = "LoadElevatorTimelines")]
-	[CalledBy(Type = typeof(Elevator), Member = "LoadElevatorTimelines")]
-	[CalledBy(Type = typeof(Elevator), Member = "LoadElevatorTimelines")]
-	[CalledBy(Type = typeof(Elevator), Member = "LoadTimeline")]
-	[CalledBy(Type = typeof(Elevator), Member = "EnterPlayer")]
-	[CalledBy(Type = typeof(Elevator), Member = "EnterPlayer")]
-	[CalledBy(Type = typeof(Elevator), Member = "EnterPlayer")]
-	[CalledBy(Type = typeof(Elevator), Member = "EnterPlayer")]
-	[CalledBy(Type = typeof(Elevator), Member = "EnterPlayer")]
-	[CalledBy(Type = typeof(Elevator), Member = "EnterPlayer")]
-	[CalledBy(Type = typeof(Elevator), Member = "EnterPlayer")]
-	[CallerCount(Count = 17)]
 	[CallAnalysisFailed]
 	[CalledBy(Type = typeof(Elevator), Member = "EnterPlayer")]
+	[CalledBy(Type = typeof(Elevator), Member = "LoadTimeline")]
+	[CalledBy(Type = typeof(Elevator), Member = "LoadElevatorTimelines")]
+	[CallerCount(Count = 17)]
 	public void LoadTimelineOnSelf(TimelineInfo timelineInfo)
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimelineOnPlayer")]
-	[Calls(Type = typeof(AssetReferenceTimeline), Member = "LoadTimeline")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(AssetReferenceTimeline), Member = "get_IsLoaded")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimeline")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AssetReferenceTimeline), Member = "get_IsLoaded")]
+	[Calls(Type = typeof(AssetReferenceTimeline), Member = "LoadTimeline")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void LoadTimeline(TimelineInfo timelineInfo)
 	{
 	}
@@ -269,41 +257,40 @@ public class TimelinePlayback : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Elevator), Member = "CommenceExitPlayer")]
-	[CalledBy(Type = typeof(Elevator), Member = "StartCrashDownSequence")]
-	[CalledBy(Type = typeof(Elevator), Member = "Move")]
 	[CalledBy(Type = typeof(Elevator), Member = "OnDestroy")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "OnTimelineComplete")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Elevator), Member = "Move")]
+	[CalledBy(Type = typeof(Elevator), Member = "StartCrashDownSequence")]
+	[CalledBy(Type = typeof(Elevator), Member = "CommenceExitPlayer")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(TimelinePlayback), Member = "OnTimelineComplete")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool StopCurrentTimeline()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsPlaying()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Elevator), Member = "UpdateMoving")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void SetSpeed(float speed)
 	{
 	}
@@ -314,17 +301,17 @@ public class TimelinePlayback : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public double GetCurrentTimelineDuration()
 	{
-		return default(double);
+		return 0.0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PlayableDirector), Member = "get_time")]
-	[Calls(Type = typeof(PlayableDirector), Member = "get_duration")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayableDirector), Member = "get_duration")]
+	[Calls(Type = typeof(PlayableDirector), Member = "get_time")]
+	[CallsUnknownMethods(Count = 1)]
 	public double GetCurrentTimelineTimeRemaining()
 	{
-		return default(double);
+		return 0.0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -334,33 +321,32 @@ public class TimelinePlayback : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public double GetCurrentTimelineNormalizedProgress()
 	{
-		return default(double);
+		return 0.0;
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenDropCurrent")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimelineOnPlayer")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoInteraction")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(vp_FPSController), Member = "Stop")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
+	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimelineOnPlayer")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
+	[Calls(Type = typeof(vp_FPSController), Member = "Stop")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenDropCurrent")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public static StowResult AttemptToStowPlayerItemInHand(bool unequipImmediate, PlayerAnimation.OnAnimationEvent onStowComplete)
 	{
 		return default(StowResult);
 	}
 
-	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimeline")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Camera), Member = "get_fieldOfView")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimelineOnPlayer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimeline")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Camera), Member = "get_fieldOfView")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void StartPlayerSyncingToSyncBone()
 	{
 	}
@@ -372,29 +358,28 @@ public class TimelinePlayback : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateFreeCameraLook")]
-	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimeline")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimelineOnPlayer")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimeline")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateFreeCameraLook")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	private void EnablePlayerFreeCameraMovement()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimeline")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimelineOnPlayer")]
+	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimeline")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "UnlockRotationLimit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateFreeCameraLook")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "UnlockRotationLimit")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 2)]
 	private void DisablePlayerFreeCameraMovement()
 	{
 	}
@@ -407,13 +392,13 @@ public class TimelinePlayback : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(TimelinePlayback), Member = "SetupBinding")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimelineOnPlayer")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimeline")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(TimelinePlayback), Member = "SetupBinding")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void SetupTrackBinding()
 	{
 	}
@@ -432,92 +417,83 @@ public class TimelinePlayback : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimelineOnPlayer")]
-	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimelineOnPlayer")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "PlayTimelineOnPlayer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "UpdateSyncPlayerToSyncBone")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "PlayTimeline")]
-	[Calls(Type = typeof(AssetReferenceTimeline), Member = "get_IsLoaded")]
-	[Calls(Type = typeof(AssetReference), Member = "IsValid")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "UpdateTransitionOut")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "Finish")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(TimelinePlayback), Member = "Finish")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "UpdateTransitionOut")]
+	[Calls(Type = typeof(AssetReference), Member = "IsValid")]
+	[Calls(Type = typeof(AssetReferenceTimeline), Member = "get_IsLoaded")]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "Play")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "UpdateSyncPlayerToSyncBone")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "PlayTimelineOnPlayer")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void LateUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 15)]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "LateUpdate")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Camera), Member = "set_fieldOfView")]
-	[Calls(Type = typeof(Mathf), Member = "SmoothStep")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(Mathf), Member = "SmoothStep")]
+	[Calls(Type = typeof(Camera), Member = "set_fieldOfView")]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 15)]
 	private void UpdateSyncPlayerToSyncBone()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "LateUpdate")]
-	[Calls(Type = typeof(Camera), Member = "set_fieldOfView")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Camera), Member = "set_fieldOfView")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateTransitionOut()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "OnTimelineLoaded")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "StopCurrentTimeline")]
+	[CallerCount(Count = 2)]
 	private void OnTimelineComplete()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(TimelinePlayback), Member = "Cleanup")]
-	[Calls(Type = typeof(TimelinePlayback), Member = "Cleanup")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "LateUpdate")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(TimelinePlayback), Member = "Cleanup")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Finish()
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "Awake")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "OnDisable")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "Finish")]
-	[CalledBy(Type = typeof(TimelinePlayback), Member = "Finish")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Cleanup()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(TimelineInfo), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TimelineInfo), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public TimelinePlayback()
 	{
 	}

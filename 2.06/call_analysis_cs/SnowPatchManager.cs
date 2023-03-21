@@ -24,7 +24,7 @@ public class SnowPatchManager : MonoBehaviour
 		[CallsUnknownMethods(Count = 3)]
 		internal int _003CLateUpdate_003Eb__124_0(SnowPatch a, SnowPatch b)
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -247,70 +247,57 @@ public class SnowPatchManager : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CalledBy(Type = typeof(SnowPatchManager), Member = "DeserializeGlobal")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(OctreeBounds<>), Member = ".ctor")]
+	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "InitializeCommandBuffers")]
+	[Calls(Type = typeof(Utils), Member = "BuildGridMeshXZ")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(SnowfallManager), Member = ".ctor")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[CalledBy(Type = typeof(SnowPatchManager), Member = "DeserializeGlobal")]
+	[CallsDeduplicatedMethods(Count = 28)]
 	[CallsUnknownMethods(Count = 89)]
-	[Calls(Type = typeof(Utils), Member = "BuildGridMeshXZ")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 29)]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "InitializeCommandBuffers")]
-	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
-	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
-	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
 	private void Start()
 	{
 	}
 
+	[CalledBy(Type = typeof(SnowPatchManager), Member = "AllocateResources")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(SnowPatchManager), Member = "AllocateResources")]
 	[CallsUnknownMethods(Count = 11)]
 	private void AllocatePatches(int num)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
-	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
-	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
-	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 28)]
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
 	[CalledBy(Type = typeof(SnowPatchManager), Member = "OnQualityChange")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(SnowPatchManager), Member = "AllocatePatches")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(SystemInfo), Member = "SupportsRenderTextureFormat")]
 	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(SystemInfo), Member = "SupportsRenderTextureFormat")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 28)]
 	private void AllocateResources(QualityFootprints quality)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(SnowfallManager), Member = "Serialize")]
+	[CallsUnknownMethods(Count = 1)]
 	public string SerializeGlobal()
 	{
 		return null;
@@ -330,35 +317,38 @@ public class SnowPatchManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(SnowPatchManager), Member = "AllocateResources")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SnowPatchManager), Member = "AllocateResources")]
 	public void OnQualityChange(QualityFootprints quality)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(Stack<>), Member = "Push")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void RemovePatchRef(int id)
 	{
 	}
 
-	[Calls(Type = typeof(Bounds), Member = "Intersects")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(FootstepGroup), Member = "Show")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(SnowPatch), Member = "AddImprint")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SnowImprint), Member = "get_Position")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(SnowPatchManager), Member = "GetOverlappedBoundsForImprint")]
+	[Calls(Type = typeof(Bounds), Member = "Intersects")]
 	[Calls(Type = typeof(SnowPatchManager), Member = "CanAddPatch")]
 	[Calls(Type = typeof(SnowPatchManager), Member = "AddPatch")]
-	[Calls(Type = typeof(SnowPatchManager), Member = "GetOverlappedBoundsForImprint")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(SnowImprint), Member = "get_Position")]
+	[Calls(Type = typeof(SnowPatch), Member = "AddImprint")]
+	[Calls(Type = typeof(HashSet<>), Member = "Contains")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Bounds), Member = "Intersects")]
+	[CallsUnknownMethods(Count = 3)]
 	public bool AddImprint(SnowImprint imprint, float imprintSize, ref HashSet<int> referencedPatches)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(SnowPatchManager), Member = "AddImprint")]
@@ -366,155 +356,99 @@ public class SnowPatchManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 13)]
 	private int GetOverlappedBoundsForImprint(Bounds imprintBounds)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(SnowPatchManager), Member = "AddImprint")]
 	[CalledBy(Type = typeof(SnowPatchManager), Member = "AddPatch")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool CanAddPatch()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(SnowPatchManager), Member = "CanAddPatch")]
-	[Calls(Type = typeof(SnowPatch), Member = "Initialize")]
 	[CalledBy(Type = typeof(SnowPatchManager), Member = "AddImprint")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SnowPatchManager), Member = "CanAddPatch")]
+	[Calls(Type = typeof(Stack<>), Member = "Pop")]
+	[Calls(Type = typeof(SnowPatch), Member = "Initialize")]
+	[Calls(Type = typeof(OctreeBounds<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool AddPatch(Vector3 centre, out SnowPatch sp)
 	{
 		sp = null;
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(Stack<>), Member = "Push")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void RemovePatch(SnowPatch sp)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(SnowPatchManager), Member = "LateUpdate")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetLocalSnowDepth()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Weather), Member = "GetFallingSnowIntensity")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Weather), Member = "GetFallingSnowIntensity")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalTexture")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalTexture")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(Vector3), Member = "op_Multiply")]
-	[Calls(Type = typeof(Matrix4x4), Member = "TRS")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(Camera), Member = "WorldToScreenPoint")]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
-	[Calls(Type = typeof(Vector4), Member = "op_Implicit")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(Vector3), Member = "op_Multiply")]
-	[Calls(Type = typeof(Vector3), Member = "op_Subtraction")]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(Vector4), Member = "op_Implicit")]
-	[Calls(Type = typeof(Matrix4x4), Member = "TRS")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
-	[Calls(Type = typeof(CommandBuffer), Member = "ReleaseTemporaryRT")]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
-	[Calls(Type = typeof(Matrix4x4), Member = "TRS")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(Vector4), Member = "op_Implicit")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(Camera), Member = "WorldToScreenPoint")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(CommandBuffer), Member = "Blit")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
-	[Calls(Type = typeof(CommandBuffer), Member = "ReleaseTemporaryRT")]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
-	[Calls(Type = typeof(Vector4), Member = "op_Implicit")]
-	[Calls(Type = typeof(CommandBuffer), Member = "Clear")]
-	[Calls(Type = typeof(Vector4), Member = "op_Implicit")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(Vector4), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(CommandBuffer), Member = "Clear")]
-	[Calls(Type = typeof(CommandBuffer), Member = "Clear")]
-	[Calls(Type = typeof(CommandBuffer), Member = "Clear")]
-	[Calls(Type = typeof(SnowPatchManager), Member = "GetLocalSnowDepth")]
-	[Calls(Type = typeof(Camera), Member = "set_farClipPlane")]
-	[Calls(Type = typeof(Camera), Member = "set_farClipPlane")]
-	[Calls(Type = typeof(Camera), Member = "get_farClipPlane")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(WeatherParticleManager), Member = "LateUpdate_part2")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[CallsDeduplicatedMethods(Count = 18)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(WeatherParticleManager), Member = "LateUpdate_part2")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Camera), Member = "get_farClipPlane")]
+	[Calls(Type = typeof(Camera), Member = "set_farClipPlane")]
+	[Calls(Type = typeof(OctreeBounds<>), Member = "FrustumCapture")]
+	[Calls(Type = typeof(List<>), Member = "get_Item")]
+	[Calls(Type = typeof(SnowPatch), Member = "OnRenderCapture")]
+	[Calls(Type = typeof(List<>), Member = "Sort")]
+	[Calls(Type = typeof(SnowPatchManager), Member = "GetLocalSnowDepth")]
+	[Calls(Type = typeof(CommandBuffer), Member = "Clear")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Vector4), Member = "op_Implicit")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(Vector4), Member = "op_Implicit")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(Vector4), Member = "op_Implicit")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(Vector4), Member = "op_Implicit")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(Vector4), Member = "op_Implicit")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(Vector4), Member = "op_Implicit")]
-	[Calls(Type = typeof(Vector4), Member = "op_Implicit")]
-	[Calls(Type = typeof(Matrix4x4), Member = "TRS")]
 	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
-	[Calls(Type = typeof(Matrix4x4), Member = "Ortho")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
 	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
 	[Calls(Type = typeof(CommandBuffer), Member = "Blit")]
 	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
+	[Calls(Type = typeof(CommandBuffer), Member = "ValidateAgainstExecutionFlags")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTargetSingle_Internal")]
 	[Calls(Type = typeof(CommandBuffer), Member = "ClearRenderTarget")]
 	[Calls(Type = typeof(Quaternion), Member = "AngleAxis")]
-	[Calls(Type = typeof(CommandBuffer), Member = "ValidateAgainstExecutionFlags")]
-	[Calls(Type = typeof(SnowPatch), Member = "OnRenderCapture")]
+	[Calls(Type = typeof(Matrix4x4), Member = "TRS")]
+	[Calls(Type = typeof(Matrix4x4), Member = "Ortho")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
+	[Calls(Type = typeof(Vector3), Member = "op_Subtraction")]
+	[Calls(Type = typeof(Vector3), Member = "op_Multiply")]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalTexture")]
+	[Calls(Type = typeof(Camera), Member = "WorldToScreenPoint")]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
+	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
+	[Calls(Type = typeof(CommandBuffer), Member = "ReleaseTemporaryRT")]
+	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 15)]
 	private void LateUpdate()
 	{
 	}

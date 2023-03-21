@@ -25,10 +25,10 @@ public sealed class RLProAnalogTVNoise : PostProcessEffectSettings
 
 	public TextureParameter texture;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 1)]
 	public RLProAnalogTVNoise()
 	{
 	}

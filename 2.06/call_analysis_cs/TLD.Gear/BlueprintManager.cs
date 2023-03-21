@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
@@ -8,6 +9,7 @@ using TLD.AddressableAssets;
 using TLD.Events;
 using TLD.Logging;
 using TLD.Serialization;
+using TLD.UserGeneratedContent;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.AddressableAssets.ResourceLocators;
@@ -27,14 +29,14 @@ public class BlueprintManager : ScriptableObject
 		{
 		}
 
-		[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CFindBlueprintsForGear_003Eb__0(BlueprintData bp)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -42,20 +44,20 @@ public class BlueprintManager : ScriptableObject
 	{
 		public string craftedResultName;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec__DisplayClass30_0()
 		{
 		}
 
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CMarkBlueprintUnlocked_003Eb__0(BlueprintData bp)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -109,19 +111,26 @@ public class BlueprintManager : ScriptableObject
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Addressables), Member = "InitializeAsync")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "IsValid")]
+	[Calls(Type = typeof(Addressables), Member = "InitializeAsync")]
+	[Calls(Type = typeof(Action<>), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "add_Completed")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnEnable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 5)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "IsValid")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(Type = typeof(Addressables), Member = "Release")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnDisable()
 	{
 	}
@@ -131,13 +140,14 @@ public class BlueprintManager : ScriptableObject
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(BlueprintManager), Member = "MarkBlueprintUnlocked")]
-	[CalledBy(Type = typeof(BlueprintManager), Member = "FindBlueprintsForGear")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "RefreshBlueprints")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(BlueprintManager), Member = "FindBlueprintsForGear")]
+	[CalledBy(Type = typeof(BlueprintManager), Member = "MarkBlueprintUnlocked")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public void GetFilteredBlueprints(List<BlueprintData> blueprints, Predicate<BlueprintData> predicate)
 	{
 	}
@@ -152,36 +162,36 @@ public class BlueprintManager : ScriptableObject
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataForEspisodeMigration")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(BlueprintManager), Member = "ClearUnlockedBlueprints")]
-	[Calls(Type = typeof(BlueprintManager), Member = "MarkBlueprintUnlocked")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(BlueprintManager), Member = "MarkBlueprintUnlocked")]
+	[Calls(Type = typeof(BlueprintManager), Member = "ClearUnlockedBlueprints")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void Deserialize(string text)
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_UnlockBlueprint), Member = "OnExecute")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_blueprint_unlock")]
 	[CalledBy(Type = typeof(BlueprintItemUnlock), Member = "Unlock")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_blueprint_unlock")]
+	[CalledBy(Type = typeof(Action_UnlockBlueprint), Member = "OnExecute")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(BlueprintManager), Member = "GetFilteredBlueprints")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 16)]
 	public static List<BlueprintData> FindBlueprintsForGear(string gearName)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "ClearUISaveData")]
 	[CalledBy(Type = typeof(BlueprintManager), Member = "Deserialize")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsUnknownMethods(Count = 4)]
 	public void ClearUnlockedBlueprints()
 	{
@@ -192,98 +202,102 @@ public class BlueprintManager : ScriptableObject
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsBlueprintUnlocked(string name, bool isStoryMode = false)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Action_UnlockBlueprint), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(BlueprintItemUnlock), Member = "Unlock")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Action_UnlockBlueprint), Member = "OnExecute")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void UnlockSilent(BlueprintData bp)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CalledBy(Type = typeof(BlueprintItemUnlock), Member = "Unlock")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_blueprint_unlock")]
 	[CalledBy(Type = typeof(Action_UnlockBlueprint), Member = "OnExecute")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void UnlockWithNotification(BlueprintData bp)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallAnalysisFailed]
+	[Calls(Type = typeof(Workshop), Member = "GetContentRootPath")]
+	[Calls(Type = typeof(BlueprintManager), Member = "RemoveUserBlueprints")]
+	[Calls(Type = typeof(Directory), Member = "GetFiles")]
+	[Calls(Type = typeof(File), Member = "ReadAllText")]
+	[Calls(Type = typeof(BlueprintManager), Member = "LoadUserBlueprint")]
+	[CallsUnknownMethods(Count = 2)]
 	public void LoadAllUserBlueprints()
 	{
 	}
 
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(BlueprintManager), Member = "LoadAllUserBlueprints")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UserBlueprintData), Member = "CreateFromJson")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public bool LoadUserBlueprint(string jsonText)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(BlueprintManager), Member = "LoadAllUserBlueprints")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void RemoveUserBlueprints()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 2)]
 	private static bool PerformUserBlueprintSanityChecks(BlueprintData blueprint)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 20)]
 	[CalledBy(Type = typeof(BlueprintManager), Member = "Deserialize")]
-	[Calls(Type = typeof(BlueprintManager), Member = "GetFilteredBlueprints")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BlueprintManager), Member = "GetFilteredBlueprints")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 20)]
 	private void MarkBlueprintUnlocked(string craftedResultName)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "IsValid")]
 	[Calls(Type = typeof(Addressables), Member = "InitializeAsync")]
-	[CallsUnknownMethods(Count = 7)]
+	[Calls(Type = typeof(Action<>), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "add_Completed")]
+	[CallsUnknownMethods(Count = 6)]
 	private void LoadAddressableBlueprintsAsync()
 	{
 	}
 
-	[Calls(Type = typeof(AssetHelper), Member = "FindAllAssetLocations")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsUnknownMethods(Count = 11)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(AssetHelper), Member = "FindAllAssetLocations")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 11)]
 	private void OnAddressablesInitialized(AsyncOperationHandle<IResourceLocator> obj)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	private void OnAddressableBlueprintLoaded(BlueprintData blueprint)
 	{
 	}
@@ -300,10 +314,10 @@ public class BlueprintManager : ScriptableObject
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 16)]
 	public BlueprintManager()
 	{
 	}

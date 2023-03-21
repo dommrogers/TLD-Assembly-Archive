@@ -38,17 +38,12 @@ public class RockCacheListItem : MonoBehaviour
 	[NonSerialized]
 	public OnDisplayItemClicked m_ClickedDelegate;
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildRockCacheRegionScrollList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildRockCacheRegionScrollList")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Clear()
 	{
 	}
@@ -59,49 +54,43 @@ public class RockCacheListItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildRockCacheRegionScrollList")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetRegionButtonTexture")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetNameForScene")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetNameForScene")]
 	[Calls(Type = typeof(Panel_Map), Member = "IsRegionUnlocked")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(Type = typeof(Panel_Log), Member = "GetRegionButtonTexture")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 12)]
 	public void SetRegionInfo(int rockCacheCount, string sceneName)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(RockCacheManager), Member = "GetRockCacheNameFromGuid")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetItemInfo(RockCacheInfo itemInfo)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheItemClicked")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheItemClicked")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheRegionClicked")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "BuildRockCacheRegionScrollList")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheBack")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheRegionClicked")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildRockCacheRegionScrollList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildRockCacheRegionScrollList")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheItemClicked")]
+	[CallerCount(Count = 8)]
 	[Calls(Type = typeof(Color), Member = "op_Equality")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetSelected(bool selected)
 	{
 	}

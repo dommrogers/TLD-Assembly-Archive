@@ -13,21 +13,21 @@ public class StatsManagerPlugin
 	public static extern void StatsManager_AddLocalUser(int userId);
 
 	[PreserveSig]
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
-	[DeduplicatedMethod]
 	public static extern void StatsManager_RemoveLocalUser(int userId);
 
 	[PreserveSig]
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
-	[DeduplicatedMethod]
 	public static extern void StatsManager_SetStatAsInteger(int userId, string statName, long statValue);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void StatsManager_SetStatAsNumber(int userId, string statName, double statValue);
 
 	[PreserveSig]
@@ -54,8 +54,8 @@ public class StatsManagerPlugin
 	public static extern void StatsManager_GetStatNames_Dispose(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint StatsManager_GetStatNames_Length(IntPtr self);
 
 	[PreserveSig]
@@ -90,8 +90,8 @@ public class StatsManagerPlugin
 	public static extern IntPtr StatsManager_DoWork();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void StatsManager_DoWork_Dispose(IntPtr self);
 
 	[PreserveSig]
@@ -100,14 +100,13 @@ public class StatsManagerPlugin
 	public static extern uint StatsManager_DoWork_Length(IntPtr self);
 
 	[PreserveSig]
+	[CalledBy(Type = typeof(StatEventList), Member = "CreateIthElement")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(StatEventList), Member = "CreateIthElement")]
-	[CalledBy(Type = typeof(StatEventList), Member = "CreateIthElement")]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr StatsManager_DoWork_GetAt(IntPtr self, uint idx);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public StatsManagerPlugin()
 	{
 	}

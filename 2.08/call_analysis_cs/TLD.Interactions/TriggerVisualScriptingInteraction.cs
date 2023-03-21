@@ -6,10 +6,11 @@ namespace TLD.Interactions;
 
 public class TriggerVisualScriptingInteraction : MonoBehaviour
 {
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(EventHook), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EventHook), Member = ".ctor")]
+	[Calls(Type = typeof(EventBus), Member = "Trigger")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void PerformInteraction(BaseInteraction baseInteraction)
 	{
 	}

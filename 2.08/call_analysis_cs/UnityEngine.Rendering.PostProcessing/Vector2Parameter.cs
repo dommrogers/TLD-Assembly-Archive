@@ -28,7 +28,7 @@ public sealed class Vector2Parameter : ParameterOverride<Vector2>
 	[CallerCount(Count = 0)]
 	public override bool Equals(Vector2 a, Vector2 b)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

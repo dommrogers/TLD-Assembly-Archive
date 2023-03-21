@@ -30,10 +30,9 @@ public class Panel_Log_Toc_GridItem : MonoBehaviour
 
 	private float m_DoubleClickTimer;
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnTocItemClicked")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnTocItemClicked")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnTocItemClicked")]
 	[CallsUnknownMethods(Count = 2)]
 	public void Update()
 	{
@@ -45,16 +44,16 @@ public class Panel_Log_Toc_GridItem : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void OnHover(bool hover)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Log), Member = "ViewSandbox")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Log), Member = "ViewSandbox")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnClick()
 	{
 	}

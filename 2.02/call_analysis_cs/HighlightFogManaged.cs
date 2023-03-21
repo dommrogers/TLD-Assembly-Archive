@@ -47,43 +47,44 @@ public class HighlightFogManaged : MonoBehaviour
 
 	private float m_DistanceMultiplier;
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 13)]
 	private void UpdateAngles()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(HighlightFogManaged), Member = "ManualUpdate")]
 	[CalledBy(Type = typeof(HighlightFogManager), Member = "Update")]
 	[CalledBy(Type = typeof(HighlightFogManager), Member = "UpdateQuads")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 6)]
 	private void UpdateDrive()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(HighlightFogManager), Member = "UpdateQuads")]
 	[CalledBy(Type = typeof(HighlightFogManaged), Member = "ManualUpdate")]
 	[CalledBy(Type = typeof(HighlightFogManager), Member = "Update")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(HighlightFogManager), Member = "UpdateQuads")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Material), Member = "SetFloat")]
 	[Calls(Type = typeof(Material), Member = "SetColor")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateMaterial()
 	{
 	}
@@ -96,21 +97,21 @@ public class HighlightFogManaged : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(HighlightFogManager), Member = "Update")]
 	[CalledBy(Type = typeof(HighlightFogManaged), Member = "ManualUpdate")]
-	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
+	[CalledBy(Type = typeof(HighlightFogManager), Member = "Update")]
+	[CalledBy(Type = typeof(HighlightFogManager), Member = "UpdateQuads")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CalledBy(Type = typeof(HighlightFogManager), Member = "UpdateQuads")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 13)]
 	private void ManualUpdateAngles()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public HighlightFogManaged()
 	{
 	}

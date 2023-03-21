@@ -20,21 +20,21 @@ public static class AuroraScreenManager
 
 	private static Dictionary<string, string> s_AssignedPrefabs;
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[CallsUnknownMethods(Count = 8)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void Deserialize(string text)
 	{
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsUnknownMethods(Count = 6)]
 	public static string Serialize()
 	{
 		return null;
@@ -48,18 +48,20 @@ public static class AuroraScreenManager
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static string GetPrefabForId(string id)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(HashSet<>), Member = "Contains")]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool IsPrefabInUse(string prefabName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -70,19 +72,21 @@ public static class AuroraScreenManager
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(HashSet<>), Member = "Remove")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void RemovePrefabAssociation(string id)
 	{
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "ResetLists")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateActivation")]
+	[CalledBy(Type = typeof(GameManager), Member = "ResetLists")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Reset()
 	{
 	}

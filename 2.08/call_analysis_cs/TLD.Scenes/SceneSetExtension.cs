@@ -28,27 +28,28 @@ public class SceneSetExtension : ScriptableObject
 	public List<ConditionalScene> ConditionalScenes
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 25)]
+		[CallerCount(Count = 28)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(Exception), Member = ".ctor")]
-	[Calls(Type = typeof(AsyncOperationHandle), Member = "get_IsDone")]
-	[CallsUnknownMethods(Count = 11)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(SceneSetManager), Member = "HandleSceneExtensionLoaded")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AsyncOperationHandle), Member = "get_IsDone")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(Type = typeof(Exception), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	public SceneSet GetParentSceneSet()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public SceneSetExtension()
 	{

@@ -35,9 +35,9 @@ public class CatalogItemAvailability : IWrappedObject, IDisposable
 
 	public AcceptablePaymentInstrumentTypesList AcceptablePaymentInstrumentTypes
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 4)]
 		[CallsUnknownMethods(Count = 9)]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -46,10 +46,10 @@ public class CatalogItemAvailability : IWrappedObject, IDisposable
 
 	public string AvailabilityDescription
 	{
-		[CallsUnknownMethods(Count = 7)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -59,8 +59,8 @@ public class CatalogItemAvailability : IWrappedObject, IDisposable
 	public string AvailabilityTitle
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -74,15 +74,15 @@ public class CatalogItemAvailability : IWrappedObject, IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
 	public string ContentId
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -92,10 +92,10 @@ public class CatalogItemAvailability : IWrappedObject, IDisposable
 
 	public string CurrencyCode
 	{
-		[CallsUnknownMethods(Count = 7)]
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -105,8 +105,8 @@ public class CatalogItemAvailability : IWrappedObject, IDisposable
 	public string DisplayListPrice
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -117,8 +117,8 @@ public class CatalogItemAvailability : IWrappedObject, IDisposable
 	public string DisplayPrice
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -128,10 +128,10 @@ public class CatalogItemAvailability : IWrappedObject, IDisposable
 
 	public string DistributionType
 	{
-		[CallsUnknownMethods(Count = 7)]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -140,12 +140,12 @@ public class CatalogItemAvailability : IWrappedObject, IDisposable
 
 	public bool IsPurchasable
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -155,15 +155,15 @@ public class CatalogItemAvailability : IWrappedObject, IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(double);
+			return 0.0;
 		}
 	}
 
 	public string OfferDisplayDataJson
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -174,8 +174,8 @@ public class CatalogItemAvailability : IWrappedObject, IDisposable
 	public string OfferId
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -185,20 +185,20 @@ public class CatalogItemAvailability : IWrappedObject, IDisposable
 
 	public double Price
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(double);
+			return 0.0;
 		}
 	}
 
 	public string PromotionalText
 	{
-		[CallsUnknownMethods(Count = 7)]
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -208,8 +208,8 @@ public class CatalogItemAvailability : IWrappedObject, IDisposable
 	public string SignedOffer
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -235,11 +235,11 @@ public class CatalogItemAvailability : IWrappedObject, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 52)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 59)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]

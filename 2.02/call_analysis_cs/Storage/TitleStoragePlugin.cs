@@ -20,15 +20,15 @@ public class TitleStoragePlugin
 	public static extern IntPtr TitleStorage_Init(int userId, string configurationId, uint typeOfStorage);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void TitleStorage_Destroy(IntPtr self);
 
 	[PreserveSig]
+	[CalledBy(Type = typeof(TitleStorage), Member = "DownloadFileAsync")]
+	[CalledBy(Type = typeof(TitleStorage), Member = "DownloadFileAsync")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(TitleStorage), Member = "DownloadFileAsync")]
-	[CalledBy(Type = typeof(TitleStorage), Member = "DownloadFileAsync")]
 	[CallsUnknownMethods(Count = 2)]
 	public static extern bool TitleStorage_Download(IntPtr self, string name, string targetXuid, byte[] outData, uint dataLength, TitleStorageSaveLoadCallback callback, IntPtr userData);
 
@@ -45,9 +45,9 @@ public class TitleStoragePlugin
 	public static extern bool TitleStorage_Delete(IntPtr self, string name, TitleStorageDeleteCallback callback, IntPtr userData);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static extern bool TitleStorage_RequestQuota(IntPtr self, TitleStorageQuotaCallback callback, IntPtr userData);
 
 	[PreserveSig]
@@ -57,7 +57,7 @@ public class TitleStoragePlugin
 	public static extern void TitleStorage_SetSignOutCallback(IntPtr storage, TitleStorageUserSignedOutStorageInvalidCallback callback, IntPtr userData);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public TitleStoragePlugin()
 	{
 	}

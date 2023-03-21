@@ -15,11 +15,11 @@ internal struct GetExternalUserInfoCountOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(GetExternalUserInfoCountOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(GetExternalUserInfoCountOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(GetExternalUserInfoCountOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(GetExternalUserInfoCountOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -28,10 +28,10 @@ internal struct GetExternalUserInfoCountOptionsInternal : ISettable, IDisposable
 	public EpicAccountId TargetUserId
 	{
 		[CalledBy(Type = typeof(GetExternalUserInfoCountOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(GetExternalUserInfoCountOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -44,17 +44,17 @@ internal struct GetExternalUserInfoCountOptionsInternal : ISettable, IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(UserInfoInterface), Member = "GetExternalUserInfoCount")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GetExternalUserInfoCountOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(GetExternalUserInfoCountOptionsInternal), Member = "set_TargetUserId")]
-	[CalledBy(Type = typeof(UserInfoInterface), Member = "GetExternalUserInfoCount")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

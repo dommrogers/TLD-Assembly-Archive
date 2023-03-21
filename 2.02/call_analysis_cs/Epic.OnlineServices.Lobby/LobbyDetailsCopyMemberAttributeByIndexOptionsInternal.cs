@@ -16,9 +16,9 @@ internal struct LobbyDetailsCopyMemberAttributeByIndexOptionsInternal : ISettabl
 	public ProductUserId TargetUserId
 	{
 		[CalledBy(Type = typeof(LobbyDetailsCopyMemberAttributeByIndexOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(LobbyDetailsCopyMemberAttributeByIndexOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -40,16 +40,16 @@ internal struct LobbyDetailsCopyMemberAttributeByIndexOptionsInternal : ISettabl
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(LobbyDetailsCopyMemberAttributeByIndexOptionsInternal), Member = "set_TargetUserId")]
 	[CalledBy(Type = typeof(LobbyDetails), Member = "CopyMemberAttributeByIndex")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(LobbyDetailsCopyMemberAttributeByIndexOptionsInternal), Member = "set_TargetUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

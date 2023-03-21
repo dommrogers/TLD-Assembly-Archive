@@ -20,10 +20,10 @@ public class OwnershipOverride : MonoBehaviour
 
 	private SerializedData m_SerializedData;
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(GearItem), Member = "Serialize")]
 	[CalledBy(Type = typeof(Container), Member = "Serialize")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	public string Serialize()
 	{
 		return null;
@@ -31,14 +31,14 @@ public class OwnershipOverride : MonoBehaviour
 
 	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
 	[CalledBy(Type = typeof(Container), Member = "Deserialize")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	public void Deserialize(string data)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Action_OverrideOwnership), Member = "DoWork")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetTrustId(string trustId)
 	{

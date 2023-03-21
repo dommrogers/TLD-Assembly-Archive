@@ -21,29 +21,27 @@ public abstract class AkTriggerHandler : MonoBehaviour
 
 	public bool useOtherObject;
 
-	[CallerCount(Count = 121780)]
-	[DeduplicatedMethod]
 	public abstract void HandleEvent(GameObject in_gameObject);
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(AkTriggerHandler), Member = "RegisterTriggers")]
 	[CalledBy(Type = typeof(AkBank), Member = "Awake")]
 	[CalledBy(Type = typeof(AkRoomPortal), Member = "Awake")]
 	[CalledBy(Type = typeof(AkDragDropTriggerHandler), Member = "Awake")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(AkTriggerHandler), Member = "RegisterTriggers")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 12)]
 	protected virtual void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(AkDragDropTriggerHandler), Member = "Start")]
-	[CalledBy(Type = typeof(AkRoomPortal), Member = "Start")]
-	[CalledBy(Type = typeof(AkRoom), Member = "Start")]
 	[CalledBy(Type = typeof(AkBank), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(AkEvent), Member = "Start")]
+	[CalledBy(Type = typeof(AkRoom), Member = "Start")]
+	[CalledBy(Type = typeof(AkRoomPortal), Member = "Start")]
+	[CalledBy(Type = typeof(AkDragDropTriggerHandler), Member = "Start")]
+	[CallerCount(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	protected virtual void Start()
 	{
 	}
@@ -55,66 +53,60 @@ public abstract class AkTriggerHandler : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(AkGameObj), Member = "OnDestroy")]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(AkTriggerHandler), Member = "UnregisterTriggers")]
 	[CalledBy(Type = typeof(AkBank), Member = "OnDestroy")]
+	[CalledBy(Type = typeof(AkGameObj), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(AkRoomPortal), Member = "OnDestroy")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(AkTriggerHandler), Member = "UnregisterTriggers")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 12)]
 	public void DoDestroy()
 	{
 	}
 
-	[Calls(Type = typeof(Type), Member = "GetType")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[Calls(Type = typeof(Type), Member = "GetType")]
+	[CalledBy(Type = typeof(AkBank), Member = "Awake")]
 	[CalledBy(Type = typeof(AkRoomPortal), Member = "Awake")]
 	[CalledBy(Type = typeof(AkTriggerHandler), Member = "Awake")]
-	[CallsUnknownMethods(Count = 16)]
-	[CalledBy(Type = typeof(AkBank), Member = "Awake")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Component), Member = "GetComponent")]
-	[Calls(Type = typeof(Type), Member = "GetType")]
-	[Calls(Type = typeof(Type), Member = "GetType")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Type), Member = "GetType")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 16)]
 	protected void RegisterTriggers(List<int> in_triggerList, AkTriggerBase.Trigger in_delegate)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(AkRoomPortal), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(AkBank), Member = "OnDestroy")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CalledBy(Type = typeof(AkRoomPortal), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(AkTriggerHandler), Member = "DoDestroy")]
-	[Calls(Type = typeof(Type), Member = "GetType")]
-	[Calls(Type = typeof(Type), Member = "GetType")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Type), Member = "GetType")]
 	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	protected void UnregisterTriggers(List<int> in_triggerList, AkTriggerBase.Trigger in_delegate)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
-	[CalledBy(Type = typeof(AkRoomPortal), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkBank), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkRoom), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkRoomPortal), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkDragDropTriggerHandler), Member = ".ctor")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(AkBank), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 16)]
 	protected AkTriggerHandler()
 	{
 	}

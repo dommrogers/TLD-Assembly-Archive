@@ -13,7 +13,7 @@ public class ActiveEnvironment
 	public float m_GrassTintScalar;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(ScriptableObject), Member = "CreateInstance")]
 	public ActiveEnvironment()
 	{
 	}
@@ -25,25 +25,11 @@ public class ActiveEnvironment
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Rendering.PostProcessing.ColorGrading), Member = "UpdateLutForTimeOfDay")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(TODStateData), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateData), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateData), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateData), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateData), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateData), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateData), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateData), Member = "SetBlended")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "Update")]
-	[Calls(Type = typeof(TODStateData), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateData), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateData), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateData), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateData), Member = "SetBlended")]
-	[Calls(Type = typeof(TODStateData), Member = "SetBlended")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(TODStateData), Member = "SetBlended")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Rendering.PostProcessing.ColorGrading), Member = "UpdateLutForTimeOfDay")]
 	[CallsUnknownMethods(Count = 2)]
 	public void Refresh(WeatherStatesData wsA, WeatherStatesData wsB, float weatherBlendFrac, TODBlendState todBlendState, float todBlendFrac, float todBlendBiased, bool isIndoors)
 	{

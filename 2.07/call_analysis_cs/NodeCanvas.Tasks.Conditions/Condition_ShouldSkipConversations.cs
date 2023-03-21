@@ -14,11 +14,11 @@ public class Condition_ShouldSkipConversations : ConditionTask
 		}
 	}
 
-	[CallerCount(Count = 3)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 3)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

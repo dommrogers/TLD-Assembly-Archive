@@ -8,11 +8,11 @@ public class ParlayRollChance : DTNode
 {
 	public override int maxOutConnections
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 

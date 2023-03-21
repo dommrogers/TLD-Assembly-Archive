@@ -20,13 +20,13 @@ public class FallbackJoystickIdentificationDemo : MonoBehaviour
 
 	private GUIStyle style;
 
-	[Calls(Type = typeof(FallbackJoystickIdentificationDemo), Member = "IdentifyAllJoysticks")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(ReInput), Member = "add_ControllerDisconnectedEvent")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(ReInput), Member = "get_unityJoystickIdentificationRequired")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReInput), Member = "get_unityJoystickIdentificationRequired")]
 	[Calls(Type = typeof(ReInput), Member = "add_ControllerConnectedEvent")]
+	[Calls(Type = typeof(ReInput), Member = "add_ControllerDisconnectedEvent")]
+	[Calls(Type = typeof(FallbackJoystickIdentificationDemo), Member = "IdentifyAllJoysticks")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	private void Awake()
 	{
 	}
@@ -45,70 +45,70 @@ public class FallbackJoystickIdentificationDemo : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(FallbackJoystickIdentificationDemo), Member = "JoystickDisconnected")]
-	[CalledBy(Type = typeof(FallbackJoystickIdentificationDemo), Member = "JoystickConnected")]
 	[CalledBy(Type = typeof(FallbackJoystickIdentificationDemo), Member = "Awake")]
-	[Calls(Type = typeof(FallbackJoystickIdentificationDemo), Member = "SetInputDelay")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(FallbackJoystickIdentificationDemo), Member = "JoystickConnected")]
+	[CalledBy(Type = typeof(FallbackJoystickIdentificationDemo), Member = "JoystickDisconnected")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
 	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_joystickCount")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(bqgFhLJevgwGDBkMuBcbCeTHblPK), Member = "BDnioedRPzgfKGYCJPnUcwhBIaAG")]
+	[Calls(TypeFullName = "bqgFhLJevgwGDBkMuBcbCeTHblPK", Member = "BDnioedRPzgfKGYCJPnUcwhBIaAG")]
+	[Calls(Type = typeof(FallbackJoystickIdentificationDemo), Member = "SetInputDelay")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void IdentifyAllJoysticks()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(FallbackJoystickIdentificationDemo), Member = "IdentifyAllJoysticks")]
 	[CalledBy(Type = typeof(FallbackJoystickIdentificationDemo), Member = "OnGUI")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(FallbackJoystickIdentificationDemo), Member = "IdentifyAllJoysticks")]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetInputDelay()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(FallbackJoystickIdentificationDemo), Member = "Reset")]
-	[Calls(Type = typeof(FallbackJoystickIdentificationDemo), Member = "SetInputDelay")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(GUI), Member = "FocusWindow")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "SetUnityJoystickIdFromAnyButtonOrAxisPress")]
-	[Calls(Type = typeof(Screen), Member = "get_height")]
-	[Calls(Type = typeof(Screen), Member = "get_width")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Screen), Member = "get_width")]
+	[Calls(Type = typeof(Screen), Member = "get_height")]
 	[Calls(Type = typeof(GUILayout), Member = "Window")]
+	[Calls(Type = typeof(GUI), Member = "FocusWindow")]
+	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "SetUnityJoystickIdFromAnyButtonOrAxisPress")]
+	[Calls(Type = typeof(Queue<>), Member = "Dequeue")]
+	[Calls(Type = typeof(FallbackJoystickIdentificationDemo), Member = "SetInputDelay")]
+	[Calls(Type = typeof(FallbackJoystickIdentificationDemo), Member = "Reset")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	private void OnGUI()
 	{
 	}
 
-	[Calls(Type = typeof(Controller), Member = "get_name")]
-	[Calls(Type = typeof(GUILayout), Member = "Button")]
-	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(GUILayout), Member = "Label")]
-	[Calls(Type = typeof(GUIStyle), Member = "set_wordWrap")]
-	[Calls(Type = typeof(GUIStyle), Member = ".ctor")]
-	[Calls(Type = typeof(GUI), Member = "get_skin")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GUI), Member = "get_skin")]
+	[Calls(Type = typeof(GUIStyle), Member = ".ctor")]
+	[Calls(Type = typeof(GUIStyle), Member = "set_wordWrap")]
 	[Calls(Type = typeof(GUILayout), Member = "Space")]
+	[Calls(Type = typeof(GUILayout), Member = "Label")]
+	[Calls(Type = typeof(Controller), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(GUILayout), Member = "FlexibleSpace")]
+	[Calls(Type = typeof(GUILayout), Member = "Button")]
+	[Calls(Type = typeof(Queue<>), Member = "Dequeue")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	private void DrawDialogWindow(int windowId)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(FallbackJoystickIdentificationDemo), Member = "OnGUI")]
+	[CallerCount(Count = 1)]
 	private void Reset()
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public FallbackJoystickIdentificationDemo()
 	{
 	}

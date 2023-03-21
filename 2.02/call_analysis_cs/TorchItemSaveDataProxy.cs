@@ -11,7 +11,7 @@ public class TorchItemSaveDataProxy
 	public bool m_Thrown;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public TorchItemSaveDataProxy()
 	{
 	}

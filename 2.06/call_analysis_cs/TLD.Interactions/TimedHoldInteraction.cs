@@ -13,16 +13,16 @@ public class TimedHoldInteraction : BaseHoldInteraction
 
 	public float HoldTime
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		set
 		{
 		}
@@ -33,44 +33,44 @@ public class TimedHoldInteraction : BaseHoldInteraction
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(LoadingZone), Member = "InitializeInteraction")]
-	[CalledBy(Type = typeof(VehicleDoor), Member = "InitializeInteraction")]
-	[CalledBy(Type = typeof(RadioTower), Member = "InitializeInteraction")]
-	[CalledBy(Type = typeof(OpenClose), Member = "InitializeInteraction")]
-	[CalledBy(Type = typeof(LoadScene), Member = "InitializeInteraction")]
 	[CalledBy(Type = typeof(ContainerInteraction), Member = "InitializeInteraction")]
-	[Calls(Type = typeof(BaseInteraction), Member = "InitializeInteraction")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(RockCacheInteraction), Member = "InitializeInteraction")]
+	[CalledBy(Type = typeof(OpenClose), Member = "InitializeInteraction")]
+	[CalledBy(Type = typeof(RadioTower), Member = "InitializeInteraction")]
+	[CalledBy(Type = typeof(VehicleDoor), Member = "InitializeInteraction")]
+	[CalledBy(Type = typeof(LoadingZone), Member = "InitializeInteraction")]
+	[CalledBy(Type = typeof(LoadScene), Member = "InitializeInteraction")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(BaseInteraction), Member = "InitializeInteraction")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void InitializeInteraction()
 	{
 	}
 
-	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(ContainerInteraction), Member = "PerformHold")]
 	[CalledBy(Type = typeof(HarvestableInteraction), Member = "PerformHold")]
 	[CalledBy(Type = typeof(RockCacheInteraction), Member = "PerformHold")]
 	[CalledBy(Type = typeof(OpenClose), Member = "PerformHold")]
 	[CalledBy(Type = typeof(LoadScene), Member = "PerformHold")]
+	[CallerCount(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public override bool PerformHold()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(HarvestableInteraction), Member = "BeginHold")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(RadioTower), Member = "BeginHold")]
-	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void BeginHold()
 	{
 	}
@@ -81,13 +81,13 @@ public class TimedHoldInteraction : BaseHoldInteraction
 	{
 	}
 
-	[CalledBy(Type = typeof(HarvestableInteraction), Member = "EndHold")]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
-	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
 	[CalledBy(Type = typeof(ContainerInteraction), Member = "EndHold")]
+	[CalledBy(Type = typeof(HarvestableInteraction), Member = "EndHold")]
 	[CalledBy(Type = typeof(LoadScene), Member = "EndHold")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void EndHold()
 	{

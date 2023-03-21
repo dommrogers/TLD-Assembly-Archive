@@ -9,11 +9,11 @@ public class RewiredEventSystem : EventSystem
 
 	public bool alwaysUpdate
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -26,16 +26,14 @@ public class RewiredEventSystem : EventSystem
 	[Calls(Type = typeof(EventSystem), Member = "get_current")]
 	[Calls(Type = typeof(EventSystem), Member = "set_current")]
 	[Calls(Type = typeof(EventSystem), Member = "Update")]
-	[Calls(Type = typeof(EventSystem), Member = "Update")]
-	[Calls(Type = typeof(EventSystem), Member = "set_current")]
 	[CallsUnknownMethods(Count = 6)]
 	protected override void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public RewiredEventSystem()
 	{
 	}

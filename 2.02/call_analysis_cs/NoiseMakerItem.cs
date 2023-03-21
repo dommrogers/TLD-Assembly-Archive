@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 using UnityEngine.AI;
@@ -99,28 +100,30 @@ public class NoiseMakerItem : MonoBehaviour
 
 	private static NoiseMakerSaveDataProxy m_NoiseMakerSaveDataProxy;
 
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 15)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NoiseMakerItem), Member = "GetModifiedBurnLifetimeMinutes")]
 	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(GearItem), Member = "Serialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
@@ -128,147 +131,141 @@ public class NoiseMakerItem : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(HeatSource), Member = "TurnOn")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(HeatSource), Member = "TurnOn")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 23)]
 	[CalledBy(Type = typeof(Inventory), Member = "ProcessItems")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "BurnOut")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "GetModifiedBurnLifetimeMinutes")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "MaybeEnableNavMeshObstacle")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "GetNormalizedWickTimeLeft")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "UpdateNoiseMakerAudioPosition")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "GetModifiedBurnLifetimeMinutes")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "GetModifiedBurnLifetimeMinutes")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "UpdateNoiseMakerAudioPosition")]
-	[Calls(Type = typeof(Utils), Member = "EnableRendering")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Confirm")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "Ignite")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "Ignite")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Confirm")]
+	[Calls(Type = typeof(Utils), Member = "EnableRendering")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "UpdateNoiseMakerAudioPosition")]
 	[Calls(Type = typeof(NoiseMakerItem), Member = "Unlight")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "GetModifiedBurnLifetimeMinutes")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "GetNormalizedWickTimeLeft")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "MaybeEnableNavMeshObstacle")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "BurnOut")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 23)]
 	public void Update()
 	{
 	}
 
-	[Calls(Type = typeof(NoiseMakerItem), Member = "MaybeEnableNavMeshObstacle")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Update")]
-	[Calls(Type = typeof(HeatSource), Member = "TurnOn")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(HeatSource), Member = "TurnOn")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "MaybeEnableNavMeshObstacle")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Ignite()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(HeatSource), Member = "TurnOn")]
 	[Calls(Type = typeof(NoiseMakerItem), Member = "MaybeEnableNavMeshObstacle")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Ignite(string igniteAudio)
 	{
 	}
 
-	[Calls(Type = typeof(NoiseMakerItem), Member = "BurnOut")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "GetModifiedBurnLifetimeMinutes")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "MaybeEnableNavMeshObstacle")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "GetNormalizedWickTimeLeft")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "GetModifiedBurnLifetimeMinutes")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "GetModifiedBurnLifetimeMinutes")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "GetModifiedBurnLifetimeMinutes")]
 	[Calls(Type = typeof(NoiseMakerItem), Member = "UpdateNoiseMakerAudioPosition")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "GetNormalizedWickTimeLeft")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "MaybeEnableNavMeshObstacle")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "BurnOut")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateWickLit(float deltaTODMinutes)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NoiseMakerItem), Member = "UpdateNoiseMakerAudioPosition")]
 	[Calls(Type = typeof(NoiseMakerItem), Member = "Unlight")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	private void UpdateDetonate(float deltaTODMinutes)
 	{
 	}
 
-	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
-	[Calls(Type = typeof(Utils), Member = "DistanceSqr")]
-	[Calls(Type = typeof(NavMeshObstacle), Member = "get_radius")]
-	[Calls(Type = typeof(MoveAgent), Member = "GetRadius")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Update")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Ignite")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Ignite")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "UpdateWickLit")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "BurnOut")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Update")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Ignite")]
-	[Calls(Type = typeof(Rigidbody), Member = "get_isKinematic")]
 	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Rigidbody), Member = "get_velocity")]
 	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[Calls(Type = typeof(Rigidbody), Member = "get_isKinematic")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Utils), Member = "DistanceSqr")]
+	[Calls(Type = typeof(NavMeshObstacle), Member = "get_radius")]
+	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
+	[Calls(Type = typeof(MoveAgent), Member = "GetRadius")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 16)]
 	private void MaybeEnableNavMeshObstacle(bool enable)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private void OnIgniteComplete()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Toggle")]
-	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsCancelableActionInProgress")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsCancelableActionInProgress")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	public void IgniteDelayed()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(FirstPersonItem), Member = "AnimateFPSMeshToExitPosition")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 13)]
 	public void IgniteAfterDelay()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Cancel")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Cancel")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void CancelIgnite()
 	{
 	}
@@ -288,88 +285,86 @@ public class NoiseMakerItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsWickLit()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsFresh()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsPaused()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(Rigidbody), Member = "set_angularDrag")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Rigidbody), Member = "get_angularDrag")]
-	[Calls(Type = typeof(Rigidbody), Member = "set_drag")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[Calls(Type = typeof(Collision), Member = "get_contacts")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Collision), Member = "get_contacts")]
+	[Calls(Type = typeof(Vector3), Member = "get_up")]
 	[Calls(Type = typeof(Rigidbody), Member = "get_drag")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Rigidbody), Member = "set_drag")]
+	[Calls(Type = typeof(Rigidbody), Member = "get_angularDrag")]
+	[Calls(Type = typeof(Rigidbody), Member = "set_angularDrag")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 12)]
 	public void OnCollisionStay(Collision collisionInfo)
 	{
 	}
 
-	[Calls(Type = typeof(NoiseMakerItem), Member = "OnDroppedInWater")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "PerformDetonation")]
-	[Calls(Type = typeof(Collision), Member = "get_contacts")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Collision), Member = "get_gameObject")]
-	[Calls(Type = typeof(BreakableIce), Member = "IsIceBroken")]
-	[Calls(Type = typeof(Collision), Member = "get_contacts")]
-	[Calls(Type = typeof(Component), Member = "CompareTag")]
-	[Calls(Type = typeof(Collision), Member = "get_contacts")]
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[Calls(Type = typeof(Collision), Member = "get_contacts")]
+	[Calls(Type = typeof(Component), Member = "CompareTag")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(BreakableIce), Member = "IsIceBroken")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "OnDroppedInWater")]
+	[Calls(Type = typeof(Collision), Member = "get_gameObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "PerformDetonation")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 13)]
 	public void OnCollisionEnter(Collision collisionInfo)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "BurnOut")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "OnCollisionEnter")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "StopIgniteAudio")]
-	[Calls(Type = typeof(GameAudioManager), Member = "NotifyAiAudioEvent")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "BurnOut")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BaseAi), Member = "MaybeFleeFromThrownItem")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "PerformDamageToAllInRange")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "PerformDamageToAllInRange")]
-	[Calls(Type = typeof(BaseAi), Member = "MaybeFleeFromThrownItem")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "NotifyAiAudioEvent")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "StopIgniteAudio")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void PerformDetonation(ContactPoint[] contacts)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "PerformDetonation")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AiUtils), Member = "GetAisWithinRange")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(BaseAi), Member = "ApplyDamage")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(Condition), Member = "AddHealth")]
-	[Calls(Type = typeof(AiUtils), Member = "GetAisWithinRange")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(BaseAi), Member = "ApplyDamage")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 13)]
 	private void PerformDamageToAllInRange()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "DisableRendering")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void DisableRendering(int numFrames)
 	{
@@ -387,20 +382,19 @@ public class NoiseMakerItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void DestroyHeatSource()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "HideLightFromMesh")]
 	[CalledBy(Type = typeof(Inventory), Member = "HideInventoryItem")]
-	[CalledBy(Type = typeof(Inventory), Member = "HideInventoryItem")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	public void HideEffects(bool hide)
 	{
@@ -411,64 +405,56 @@ public class NoiseMakerItem : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Update")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "UpdateWickLit")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
 	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "Update")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Update")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "UpdateWickLit")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(NoiseMakerItem), Member = "GetModifiedBurnLifetimeMinutes")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
 	public float GetNormalizedWickTimeLeft()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "UpdateWickLit")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "UpdateWickLit")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "UpdateWickLit")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Update")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "GetNormalizedWickTimeLeft")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Update")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 8)]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Update")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "UpdateWickLit")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "GetNormalizedWickTimeLeft")]
+	[CallerCount(Count = 8)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public float GetModifiedBurnLifetimeMinutes()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Utils), Member = "ExtinguishLitItem")]
-	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "ExtinguishLitItemInHands")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "OnCollisionEnter")]
-	[Calls(Type = typeof(GearItem), Member = "Degrade")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "Unlight")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "ExtinguishLitItemInHands")]
+	[CalledBy(Type = typeof(Utils), Member = "ExtinguishLitItem")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "Unlight")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
+	[Calls(Type = typeof(GearItem), Member = "Degrade")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnDroppedInWater()
 	{
 	}
 
-	[Calls(Type = typeof(NoiseMakerItem), Member = "BurnOut")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "BurnOut")]
 	public void ForceBurnout()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NoiseMakerItem), Member = "StopIgniteAudio")]
-	[DeduplicatedMethod]
 	public void StopLoopingAudio()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "ForcePaused")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "PerformDetonation")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "StopLoopingAudio")]
@@ -477,101 +463,104 @@ public class NoiseMakerItem : MonoBehaviour
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "OnDisable")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StopAudioForEquippedItem")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void StopIgniteAudio()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void StopDetonateAudio()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Update")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Update")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "UpdateWickLit")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "UpdateDetonate")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateNoiseMakerAudioPosition()
 	{
 	}
 
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "OnDroppedInWater")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Update")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "UpdateDetonate")]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "OnDroppedInWater")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "StopIgniteAudio")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "StopIgniteAudio")]
-	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Update")]
+	[CallsUnknownMethods(Count = 2)]
 	private void Unlight()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "ForceBurnout")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "UpdateWickLit")]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Update")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "ProcessItemInHandDetonated")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "MaybeEnableNavMeshObstacle")]
-	[Calls(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "UpdateWickLit")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "ForceBurnout")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(NoiseMakerItem), Member = "StopIgniteAudio")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "MaybeEnableNavMeshObstacle")]
 	[Calls(Type = typeof(NoiseMakerItem), Member = "PerformDetonation")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "ProcessItemInHandDetonated")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 11)]
 	private void BurnOut()
 	{
 	}
 
-	[Calls(Type = typeof(Inventory), Member = "RemoveGear")]
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "BurnOut")]
-	[Calls(Type = typeof(GearManager), Member = "DestroyGearObject")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "ApplyBurnAffliction")]
-	[Calls(Type = typeof(Inventory), Member = "GameObjectInInventory")]
-	[Calls(Type = typeof(GearItem), Member = "GetFPSMeshID")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GearItem), Member = "GetFPSMeshID")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "SwitchWeapon")]
+	[Calls(Type = typeof(Inventory), Member = "GameObjectInInventory")]
+	[Calls(Type = typeof(Inventory), Member = "RemoveGear")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "ApplyBurnAffliction")]
+	[Calls(Type = typeof(GearManager), Member = "DestroyGearObject")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 12)]
 	private void ProcessItemInHandDetonated()
 	{
 	}
 
+	[CalledBy(Type = typeof(InputManager), Member = "ProcessFireAction")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "Throw")]
 	[Calls(Type = typeof(NoiseMakerItem), Member = "IgniteDelayed")]
-	[CalledBy(Type = typeof(InputManager), Member = "ProcessFireAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 9)]
 	public void Toggle()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private void HandleOnThrown()
 	{
 	}
 
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "ProcessItemInHandDetonated")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Condition), Member = "AddHealth")]
 	[Calls(Type = typeof(Condition), Member = "MaybeShowPainEffect")]
 	[Calls(Type = typeof(Burns), Member = "BurnsStart")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "ProcessItemInHandDetonated")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	private void ApplyBurnAffliction()
 	{
@@ -583,17 +572,17 @@ public class NoiseMakerItem : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(NoiseMakerItem), Member = "StopIgniteAudio")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "StopIgniteAudio")]
 	private void OnDestroy()
 	{
 	}

@@ -20,8 +20,8 @@ public class MonoManager : MonoBehaviour
 
 		public float m_AccumulatedDeltaTime;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public UpdateGraphInfo()
 		{
 		}
@@ -39,11 +39,11 @@ public class MonoManager : MonoBehaviour
 
 	public static bool isQuiting
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
@@ -54,28 +54,28 @@ public class MonoManager : MonoBehaviour
 
 	public static MonoManager current
 	{
-		[CalledBy(Type = typeof(Task), Member = "StopCoroutine")]
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(ExecuteFunction_Multiplatform), Member = "OnExecute")]
-		[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnExecute")]
-		[CalledBy(Type = typeof(ConditionTask._003CFlip_003Ed__13), Member = "MoveNext")]
-		[CalledBy(Type = typeof(ConditionTask._003CFlip_003Ed__13), Member = "MoveNext")]
-		[CalledBy(Type = typeof(ActionTask), Member = "ExecuteAction")]
-		[CalledBy(Type = typeof(Node), Member = "StopCoroutine")]
-		[CalledBy(Type = typeof(Node), Member = "StartCoroutine")]
-		[CalledBy(Type = typeof(Graph), Member = "Pause")]
-		[CalledBy(Type = typeof(Task), Member = "StartCoroutine")]
-		[CalledBy(Type = typeof(Graph), Member = "StartGraph")]
-		[CalledBy(Type = typeof(Graph), Member = "Stop")]
-		[CallerCount(Count = 18)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(Panel_Container._003CUpdateObjectiveUI_003Ed__115), Member = "MoveNext")]
-		[Calls(Type = typeof(GameObject), Member = ".ctor")]
+		[CalledBy(TypeFullName = "Panel_Container.<UpdateObjectiveUI>d__115", Member = "MoveNext")]
+		[CalledBy(Type = typeof(WaitForFullFSMUpdate), Member = ".ctor")]
 		[CalledBy(Type = typeof(MessageRouter), Member = "Dispatch")]
 		[CalledBy(Type = typeof(MonoManager), Member = "Create")]
 		[CalledBy(Type = typeof(Threader), Member = "Begin")]
 		[CalledBy(Type = typeof(ActionListPlayer), Member = "Play")]
-		[CalledBy(Type = typeof(WaitForFullFSMUpdate), Member = ".ctor")]
+		[CalledBy(Type = typeof(Graph), Member = "StartGraph")]
+		[CalledBy(Type = typeof(Graph), Member = "Stop")]
+		[CalledBy(Type = typeof(Graph), Member = "Pause")]
+		[CalledBy(Type = typeof(Node), Member = "StartCoroutine")]
+		[CalledBy(Type = typeof(Node), Member = "StopCoroutine")]
+		[CalledBy(Type = typeof(ActionTask), Member = "ExecuteAction")]
+		[CalledBy(TypeFullName = "NodeCanvas.Framework.ConditionTask.<Flip>d__13", Member = "MoveNext")]
+		[CalledBy(Type = typeof(Task), Member = "StartCoroutine")]
+		[CalledBy(Type = typeof(Task), Member = "StopCoroutine")]
+		[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnExecute")]
+		[CalledBy(Type = typeof(ExecuteFunction_Multiplatform), Member = "OnExecute")]
+		[CallerCount(Count = 18)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectOfType")]
+		[Calls(Type = typeof(GameObject), Member = ".ctor")]
+		[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
@@ -91,10 +91,10 @@ public class MonoManager : MonoBehaviour
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
@@ -102,10 +102,10 @@ public class MonoManager : MonoBehaviour
 
 	public event Action onFixedUpdate
 	{
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
-		[CallsUnknownMethods(Count = 1)]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
@@ -127,10 +127,10 @@ public class MonoManager : MonoBehaviour
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
@@ -145,9 +145,9 @@ public class MonoManager : MonoBehaviour
 		add
 		{
 		}
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CallsUnknownMethods(Count = 3)]
 		remove
 		{
@@ -160,17 +160,18 @@ public class MonoManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(MonoManager), Member = "Update")]
-	[CalledBy(Type = typeof(ConditionTask._003CFlip_003Ed__13), Member = "MoveNext")]
-	[CalledBy(Type = typeof(MonoManager), Member = "GetYeldReturnFrameCount")]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Container._003CUpdateObjectiveUI_003Ed__115), Member = "MoveNext")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(TypeFullName = "Panel_Container.<UpdateObjectiveUI>d__115", Member = "MoveNext")]
 	[CalledBy(Type = typeof(WaitForFullFSMUpdate), Member = ".ctor")]
+	[CalledBy(Type = typeof(MonoManager), Member = "GetYeldReturnFrameCount")]
+	[CalledBy(Type = typeof(MonoManager), Member = "Update")]
+	[CalledBy(TypeFullName = "NodeCanvas.Framework.ConditionTask.<Flip>d__13", Member = "MoveNext")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool StaggeredUpdatedEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -178,7 +179,7 @@ public class MonoManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public int GetYeldReturnFrameCount()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -193,10 +194,10 @@ public class MonoManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	protected void Awake()
 	{
 	}
@@ -207,17 +208,17 @@ public class MonoManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(MonoManager), Member = "FixedUpdate")]
-	[CalledBy(Type = typeof(MonoManager), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(ConditionTask._003CFlip_003Ed__13), Member = "MoveNext")]
-	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(MonoManager), Member = "Update")]
+	[CalledBy(Type = typeof(MonoManager), Member = "LateUpdate")]
+	[CalledBy(Type = typeof(MonoManager), Member = "FixedUpdate")]
+	[CalledBy(TypeFullName = "NodeCanvas.Framework.ConditionTask.<Flip>d__13", Member = "MoveNext")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool CanUpdateGraph()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -228,50 +229,51 @@ public class MonoManager : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public void UnRegisterForUpdate(Action update, Action<float> setAccumulatedDeltaTime)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void UpdateAll()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(MonoManager), Member = "CanUpdateGraph")]
 	[Calls(Type = typeof(MonoManager), Member = "StaggeredUpdatedEnabled")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 3)]
 	protected void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MonoManager), Member = "CanUpdateGraph")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected void LateUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MonoManager), Member = "CanUpdateGraph")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected void FixedUpdate()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public MonoManager()
 	{
 	}

@@ -10,7 +10,7 @@ public class IceFishingHoleClearItem : MonoBehaviour
 	public string m_BreakIceAudio;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}

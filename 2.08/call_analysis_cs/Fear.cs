@@ -39,13 +39,13 @@ public class Fear : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool HasAffliction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetNoSleepString()
 	{
 		return null;
@@ -55,7 +55,7 @@ public class Fear : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool CanPassTime()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -67,9 +67,9 @@ public class Fear : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetAfflictionLocId()
 	{
 		return null;
@@ -84,19 +84,19 @@ public class Fear : MonoBehaviour
 		return null;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetAfflictionDescription()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallerCount(Count = 3)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetAfflictionCause()
 	{
 		return null;
@@ -111,53 +111,52 @@ public class Fear : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
 	[Calls(Type = typeof(Log), Member = "AddAffliction")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
+	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
+	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CallsUnknownMethods(Count = 2)]
 	public void StartAffliction()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(AkMarkerCallbackInfo), Member = "get_strLabel")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(AkMarkerCallbackInfo), Member = "get_strLabel")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
 	private void OnAkVoiceEvent(object in_cookie, AkCallbackType in_type, object in_info)
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "SetBehaviour")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateAttack")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CallsUnknownMethods(Count = 1)]
 	public void StopAffliction(bool silent)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(TimeOfDay), Member = "GetTODMinutes")]
 	[Calls(Type = typeof(Condition), Member = "AddHealth")]
+	[CallsUnknownMethods(Count = 4)]
 	public void Update()
 	{
 	}

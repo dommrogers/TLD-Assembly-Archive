@@ -15,56 +15,57 @@ public class UIButtonScale : MonoBehaviour
 
 	private bool mStarted;
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(UIButtonScale), Member = "OnPress")]
 	[CalledBy(Type = typeof(UIButtonScale), Member = "OnHover")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Start()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UICamera), Member = "IsHighlighted")]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(UIButtonScale), Member = "OnHover")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(TweenScale), Member = "Begin")]
-	[Calls(Type = typeof(UICamera), Member = "IsHighlighted")]
 	[Calls(Type = typeof(UIButtonScale), Member = "Start")]
+	[Calls(Type = typeof(UICamera), Member = "IsHighlighted")]
+	[Calls(Type = typeof(TweenScale), Member = "Begin")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnPress(bool isPressed)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(UIButtonScale), Member = "OnEnable")]
-	[Calls(Type = typeof(UIButtonScale), Member = "Start")]
 	[CalledBy(Type = typeof(UIButtonScale), Member = "OnSelect")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UIButtonScale), Member = "Start")]
 	[Calls(Type = typeof(TweenScale), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnHover(bool isOver)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIButtonScale), Member = "OnHover")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnSelect(bool isSelected)
 	{
 	}

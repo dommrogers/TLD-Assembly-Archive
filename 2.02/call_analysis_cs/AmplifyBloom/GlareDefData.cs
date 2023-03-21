@@ -19,13 +19,13 @@ public class GlareDefData
 	public StarLibType StarType
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 6)]
 		get
 		{
 			return default(StarLibType);
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -37,7 +37,7 @@ public class GlareDefData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -51,7 +51,7 @@ public class GlareDefData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -65,7 +65,7 @@ public class GlareDefData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -77,22 +77,22 @@ public class GlareDefData
 	public StarDefData CustomStarData
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
 	}
 
 	[CalledBy(Type = typeof(AmplifyGlare), Member = "set_CustomGlareDefAmount")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public GlareDefData()
 	{
 	}

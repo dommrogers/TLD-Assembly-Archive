@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -75,15 +74,15 @@ public class ElevatorPrototypeController : MonoBehaviour
 
 	private State m_State
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(State);
 		}
+		[CallAnalysisFailed]
 		[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "OnPlayerEntered")]
 		[CalledBy(Type = typeof(ElevatorTrigger), Member = "OnTriggerEnter")]
-		[CallAnalysisFailed]
 		[CallerCount(Count = 2)]
 		set
 		{
@@ -96,21 +95,20 @@ public class ElevatorPrototypeController : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "OnCrashingDown")]
 	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "OnWaitAtFloor")]
-	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "OnCrashingDown")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 9)]
 	private void CentrePlayerInElevator()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 7)]
 	private void Start()
 	{
@@ -122,125 +120,113 @@ public class ElevatorPrototypeController : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 10)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 12)]
 	private void OnDoorMoving()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ElevatorPrototypeController), Member = "CentrePlayerInElevator")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(InputManager), Member = "GetHolsterPressed")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ElevatorPrototypeController), Member = "OnWaitForUpOrDown")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ElevatorPrototypeController), Member = "OnWaitForUpOrDown")]
+	[Calls(Type = typeof(InputManager), Member = "GetHolsterPressed")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(ElevatorPrototypeController), Member = "CentrePlayerInElevator")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnWaitAtFloor()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "OnWaitAtFloor")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetPlayerMovement")]
+	[Calls(Type = typeof(ElevatorPrototypeController), Member = "GetHighestFloorHeight")]
 	[Calls(Type = typeof(ElevatorPrototypeController), Member = "GetMovementDuration")]
 	[Calls(Type = typeof(ElevatorPrototypeController), Member = "GetLowestFloorHeight")]
-	[Calls(Type = typeof(ElevatorPrototypeController), Member = "GetMovementDuration")]
-	[Calls(Type = typeof(ElevatorPrototypeController), Member = "GetHighestFloorHeight")]
-	[Calls(Type = typeof(InputManager), Member = "GetPlayerMovement")]
 	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private void OnWaitForUpOrDown()
 	{
 	}
 
+	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "OnWaitForUpOrDown")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "OnWaitForUpOrDown")]
-	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "OnWaitForUpOrDown")]
 	public float GetMovementDuration()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerMovement), Member = "GetModifiedMaxSprintStamina")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 19)]
 	private void OnElevatorMoving()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(ElevatorPrototypeController), Member = "CentrePlayerInElevator")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Condition), Member = "AddHealth")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(ElevatorPrototypeController), Member = "GetLowestFloorHeight")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(ElevatorPrototypeController), Member = "GetLowestFloorHeight")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ElevatorPrototypeController), Member = "GetLowestFloorHeight")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(Condition), Member = "AddHealth")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(ElevatorPrototypeController), Member = "CentrePlayerInElevator")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 11)]
 	private void OnCrashingDown()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "OnWaitForUpOrDown")]
 	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "CanGoUp")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "OnWaitForUpOrDown")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsUnknownMethods(Count = 7)]
 	private float GetHighestFloorHeight()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
 	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "OnWaitForUpOrDown")]
-	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "OnCrashingDown")]
 	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "OnCrashingDown")]
 	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "CanGoDown")]
 	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "GetFallDamageToIssue")]
+	[CallerCount(Count = 5)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
 	[CallsUnknownMethods(Count = 7)]
 	private float GetLowestFloorHeight()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ElevatorPrototypeController), Member = "GetLowestFloorHeight")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool CanGoDown()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ElevatorPrototypeController), Member = "GetHighestFloorHeight")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private bool CanGoUp()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -248,15 +234,15 @@ public class ElevatorPrototypeController : MonoBehaviour
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	private float GetFallDamageToIssue()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void EnterPlayer()
 	{
 	}
@@ -273,7 +259,7 @@ public class ElevatorPrototypeController : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private bool IsMoving()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

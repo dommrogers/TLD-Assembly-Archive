@@ -19,42 +19,42 @@ public class CookingSlot : BaseInteraction
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 12)]
+	[CallerCount(Count = 23)]
 	public void SetFireplaceHost(FireplaceInteraction fireplaceHost)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(CookingSlot), Member = "CanCookingSlotBeUsed")]
-	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(CookingSlot), Member = "CanCookingSlotBeUsed")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void UpdateInteraction(float deltaTime)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(CookingSlot), Member = "CanCookingSlotBeUsed")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_ActionPicker), Member = "ShowActionPicker")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public override bool PerformInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "MaybeUpdateCookingSlot")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(CookingSlot), Member = "PerformInteraction")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(CookingSlot), Member = "UpdateInteraction")]
+	[CalledBy(Type = typeof(CookingSlot), Member = "PerformInteraction")]
+	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "MaybeUpdateCookingSlot")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool CanCookingSlotBeUsed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

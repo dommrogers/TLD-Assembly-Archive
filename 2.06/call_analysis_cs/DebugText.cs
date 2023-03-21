@@ -11,22 +11,22 @@ public class DebugText : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[Conditional("__DEBUG")]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void ActivateTags(string activateTags)
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[Conditional("__DEBUG")]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void DeactivateTags(string _tags)
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public DebugText()
 	{
 	}

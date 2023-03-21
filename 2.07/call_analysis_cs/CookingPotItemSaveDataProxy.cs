@@ -20,8 +20,8 @@ public class CookingPotItemSaveDataProxy
 
 	public bool m_CanOnlyWarmUpFood;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public CookingPotItemSaveDataProxy()
 	{
 	}

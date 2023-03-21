@@ -13,12 +13,12 @@ public class SerializedEventInfo : ISerializationCallbackReceiver
 	[NonSerialized]
 	private EventInfo _event;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void UnityEngine_002EISerializationCallbackReceiver_002EOnBeforeSerialize()
 	{
 	}
@@ -38,14 +38,14 @@ public class SerializedEventInfo : ISerializationCallbackReceiver
 	{
 	}
 
-	[CallerCount(Count = 85)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 93)]
 	public SerializedEventInfo(EventInfo info)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 44)]
+	[CallerCount(Count = 53)]
 	public EventInfo Get()
 	{
 		return null;

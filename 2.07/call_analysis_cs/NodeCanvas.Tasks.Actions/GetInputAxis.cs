@@ -38,18 +38,20 @@ public class GetInputAxis : ActionTask
 	{
 	}
 
-	[CallsUnknownMethods(Count = 18)]
-	[CalledBy(Type = typeof(GetInputAxis), Member = "OnUpdate")]
 	[CalledBy(Type = typeof(GetInputAxis), Member = "OnExecute")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(GetInputAxis), Member = "OnUpdate")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	private void Do()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public GetInputAxis()
 	{
 	}

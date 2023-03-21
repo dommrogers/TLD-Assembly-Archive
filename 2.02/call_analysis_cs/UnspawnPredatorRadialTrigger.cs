@@ -8,10 +8,10 @@ public class UnspawnPredatorRadialTrigger : MonoBehaviour
 	public bool m_DisableAfterTriggering;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(AiUtils), Member = "DespawnHostileAiAroundPoint")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 8)]
 	private void OnTriggerEnter(Collider collider)
 	{

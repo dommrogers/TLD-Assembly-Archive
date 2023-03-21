@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -31,8 +30,8 @@ public class NoiseMakerEffects : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public GameObject GetDetonateEffectObject()
 	{
 		return null;
@@ -45,110 +44,81 @@ public class NoiseMakerEffects : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(NoiseMakerEffects), Member = "GetInterpolatedPointAlongWick")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(NoiseMakerEffects), Member = "EnableEffect")]
-	[Calls(Type = typeof(NoiseMakerEffects), Member = "EnableEffect")]
-	[Calls(Type = typeof(NoiseMakerEffects), Member = "MaybeLeaveScorchMarkOnGround")]
-	[Calls(Type = typeof(NoiseMakerEffects), Member = "EnableEffect")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(NoiseMakerEffects), Member = "EnableEffect")]
-	[Calls(Type = typeof(NoiseMakerEffects), Member = "PlayDetonateInHand")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GearManager), Member = "DestroyGearObject")]
-	[Calls(Type = typeof(NoiseMakerEffects), Member = "EnableEffect")]
-	[Calls(Type = typeof(NoiseMakerEffects), Member = "EnableEffect")]
-	[Calls(Type = typeof(NoiseMakerEffects), Member = "EnableEffect")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "GetNormalizedWickTimeLeft")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "GetNormalizedWickTimeLeft")]
+	[Calls(Type = typeof(NoiseMakerEffects), Member = "EnableEffect")]
+	[Calls(Type = typeof(GearManager), Member = "DestroyGearObject")]
+	[Calls(Type = typeof(NoiseMakerEffects), Member = "PlayDetonateInHand")]
+	[Calls(Type = typeof(NoiseMakerEffects), Member = "MaybeLeaveScorchMarkOnGround")]
+	[Calls(Type = typeof(NoiseMakerEffects), Member = "GetInterpolatedPointAlongWick")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "Update")]
-	[Calls(Type = typeof(NoiseMakerEffects), Member = "EnableEffect")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
 	[Calls(Type = typeof(vp_Layer), Member = "Set")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(NoiseMakerEffects), Member = "EnableEffect")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void PlayDetonateInHand()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(NoiseMakerEffects), Member = "EnableEffect")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void EnableDisconnectedEffect(ParticleSystem effect, bool isEnabled)
 	{
 	}
 
 	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "Update")]
-	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "EnableDisconnectedEffect")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "PlayDetonateInHand")]
-	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "Update")]
-	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "Update")]
-	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "Update")]
-	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "Update")]
-	[Calls(Type = typeof(ParticleSystem), Member = "Stop")]
-	[Calls(Type = typeof(ParticleSystem), Member = "Play")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "EnableDisconnectedEffect")]
 	[CallerCount(Count = 9)]
-	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "Update")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(ParticleSystem), Member = "Play")]
+	[Calls(Type = typeof(ParticleSystem), Member = "Stop")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void EnableEffect(ParticleSystem effect, bool isEnabled)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(RaycastManager), Member = "RequestAsyncRaycast")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 9)]
 	private void MaybeLeaveScorchMarkOnGround()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "GetMaterialTagForObjectAtPosition")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddImpactDecal")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(NoiseMakerEffects), Member = "GetImpactEffectTypeBasedOnMaterial")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "GetMaterialTagForObjectAtPosition")]
+	[Calls(Type = typeof(NoiseMakerEffects), Member = "GetImpactEffectTypeBasedOnMaterial")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddImpactDecal")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private static void LeaveScorchMark(RaycastHit hit)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "LeaveScorchMark")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	private static ScorchImpactEffectType GetImpactEffectTypeBasedOnMaterial(string tag)
 	{
 		return default(ScorchImpactEffectType);
@@ -162,11 +132,10 @@ public class NoiseMakerEffects : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "Update")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private Vector3 GetInterpolatedPointAlongWick(float ratio)
 	{
 		return default(Vector3);

@@ -12,8 +12,8 @@ public class AchievementTimeWindowPlugin
 	public static extern ulong AchievementTimeWindow_EndDate(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern ulong AchievementTimeWindow_StartDate(IntPtr self);
 
 	[PreserveSig]
@@ -22,7 +22,7 @@ public class AchievementTimeWindowPlugin
 	public static extern void AchievementTimeWindow_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AchievementTimeWindowPlugin()
 	{
 	}

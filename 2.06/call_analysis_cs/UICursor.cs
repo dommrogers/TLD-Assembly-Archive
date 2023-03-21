@@ -26,21 +26,21 @@ public class UICursor : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(NGUITools), Member = "FindCameraForLayer")]
+	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
 	[CalledBy(Type = typeof(UICursor), Member = "Set")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 16)]
 	private void Update()
 	{
 	}
@@ -51,22 +51,21 @@ public class UICursor : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(UIItemSlot), Member = "UpdateCursor")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 	[Calls(Type = typeof(UICursor), Member = "Update")]
-	[CalledBy(Type = typeof(UIItemSlot), Member = "UpdateCursor")]
-	[CalledBy(Type = typeof(UIItemSlot), Member = "UpdateCursor")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Set(UIAtlas atlas, string sprite)
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public UICursor()
 	{
 	}

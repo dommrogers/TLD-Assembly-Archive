@@ -1,5 +1,6 @@
 using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Reflection;
 using Cpp2ILInjected.CallAnalysis;
 
@@ -18,18 +19,18 @@ public class PostProcessEffectSettings : ScriptableObject
 		public static Func<FieldInfo, int> _003C_003E9__6_1;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 2)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 		[CallsDeduplicatedMethods(Count = 3)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 2)]
 		internal bool _003COnEnable_003Eb__6_0(FieldInfo t)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
@@ -37,7 +38,7 @@ public class PostProcessEffectSettings : ScriptableObject
 		[CallsUnknownMethods(Count = 1)]
 		internal int _003COnEnable_003Eb__6_1(FieldInfo t)
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -53,10 +54,10 @@ public class PostProcessEffectSettings : ScriptableObject
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 		[CallerCount(Count = 81)]
+		[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -64,23 +65,27 @@ public class PostProcessEffectSettings : ScriptableObject
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[Calls(Type = typeof(Enumerable), Member = "Where")]
+	[Calls(Type = typeof(Enumerable), Member = "OrderBy")]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(Enumerable), Member = "ToList")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 41)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	private void OnDisable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(PostProcessManager), Member = "ReloadBaseTypes")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	public void SetAllOverridesTo(bool state, bool excludeEnabled = true)
 	{
 	}
@@ -89,7 +94,7 @@ public class PostProcessEffectSettings : ScriptableObject
 	[CallsUnknownMethods(Count = 1)]
 	public virtual bool IsEnabledAndSupported(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -97,14 +102,14 @@ public class PostProcessEffectSettings : ScriptableObject
 	[CallsUnknownMethods(Count = 10)]
 	public int GetHash()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
+	[CallerCount(Count = 42)]
 	[Calls(Type = typeof(BoolParameter), Member = ".ctor")]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallerCount(Count = 42)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public PostProcessEffectSettings()
 	{
 	}

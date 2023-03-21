@@ -23,53 +23,55 @@ public class Action_DestroyLockedItems : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 9)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(Object), Member = "get_name")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsUnknownMethods(Count = 16)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 14)]
 		get
 		{
 			return null;
 		}
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Action_DestroyLockedItems), Member = "DoDestroyContainerLockedItems")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallerCount(Count = 0)]
 	protected override void OnExecute()
 	{
 	}
 
-	[Calls(Type = typeof(GearManager), Member = "DestroyNextUpdate")]
-	[CallsUnknownMethods(Count = 26)]
 	[CalledBy(Type = typeof(Action_DestroyLockedItems), Member = "OnExecute")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Container), Member = "GetItems")]
-	[Calls(Type = typeof(Container), Member = "GetItems")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Container), Member = "RemoveGear")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Container), Member = "GetItems")]
+	[Calls(Type = typeof(Container), Member = "GetItems")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Container), Member = "RemoveGear")]
+	[Calls(Type = typeof(GearManager), Member = "DestroyNextUpdate")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 24)]
 	private bool DoDestroyContainerLockedItems()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[Calls(Type = typeof(BBParameter<>), Member = ".ctor")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
 	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
 	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 38)]
 	public Action_DestroyLockedItems()
 	{

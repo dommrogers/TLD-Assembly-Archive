@@ -14,8 +14,8 @@ public class HeatSourceSaveDataProxy
 
 	public float m_TempIncreaseProxy;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public HeatSourceSaveDataProxy()
 	{
 	}

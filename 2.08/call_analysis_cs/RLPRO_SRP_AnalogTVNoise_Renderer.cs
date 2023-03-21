@@ -6,24 +6,14 @@ public sealed class RLPRO_SRP_AnalogTVNoise_Renderer : PostProcessEffectRenderer
 {
 	private float TimeX;
 
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Shader), Member = "Find")]
+	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
 	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
 	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetTexture")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[Calls(Type = typeof(Shader), Member = "Find")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 4)]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}

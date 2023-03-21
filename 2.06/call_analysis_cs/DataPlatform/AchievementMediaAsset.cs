@@ -15,8 +15,8 @@ public class AchievementMediaAsset : IWrappedObject, IDisposable
 
 	public AchievementMediaAssetType MediaAssetType
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return default(AchievementMediaAssetType);
@@ -25,10 +25,10 @@ public class AchievementMediaAsset : IWrappedObject, IDisposable
 
 	public string Name
 	{
-		[CallsUnknownMethods(Count = 6)]
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -37,8 +37,8 @@ public class AchievementMediaAsset : IWrappedObject, IDisposable
 
 	public string Url
 	{
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
@@ -47,8 +47,8 @@ public class AchievementMediaAsset : IWrappedObject, IDisposable
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public AchievementMediaAsset(IntPtr self)
 	{
 	}
@@ -64,16 +64,16 @@ public class AchievementMediaAsset : IWrappedObject, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 98)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 113)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	~AchievementMediaAsset()
 	{
 	}

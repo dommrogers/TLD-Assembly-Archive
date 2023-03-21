@@ -43,87 +43,69 @@ public abstract class GraphOwner : MonoBehaviour
 
 	private static bool isQuiting;
 
-	public abstract Graph graph
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101224)]
-		get;
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101224)]
-		set;
-	}
+	public abstract Graph graph { get; set; }
 
-	public abstract IBlackboard blackboard
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101224)]
-		get;
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101224)]
-		set;
-	}
+	public abstract IBlackboard blackboard { get; set; }
 
-	public abstract Type graphType
-	{
-		[CallerCount(Count = 101224)]
-		[DeduplicatedMethod]
-		get;
-	}
+	public abstract Type graphType { get; }
 
 	public bool isRunning
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CalledBy(Type = typeof(MissionServicesManager), Member = "Update")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public bool isPaused
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CalledBy(Type = typeof(MissionServicesManager), Member = "Update")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public float elapsedTime
 	{
-		[CallsUnknownMethods(Count = 2)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CallsDeduplicatedMethods(Count = 3)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
-	[CalledBy(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Graph), Member = "set_blackboard")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "RegisterConcurrentGraph")]
 	[CalledBy(Type = typeof(GraphOwner), Member = "StartBehaviour")]
 	[CalledBy(Type = typeof(GraphOwner), Member = "Initialize")]
+	[CalledBy(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "ContainsValue")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Graph), Member = "Clone")]
+	[Calls(Type = typeof(Graph), Member = "set_blackboard")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public Graph GetInstance(Graph originalGraph)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
 	public void StartBehaviour()
 	{
 	}
@@ -134,61 +116,60 @@ public abstract class GraphOwner : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(GraphOwner), Member = "Start")]
-	[CalledBy(Type = typeof(GraphOwner), Member = "RestartBehaviour")]
-	[CalledBy(Type = typeof(GraphOwner), Member = "OnEnable")]
-	[CalledBy(Type = typeof(GraphOwner<>), Member = "SwitchBehaviour")]
-	[CalledBy(Type = typeof(MissionServicesManager._003CJumpCo_003Ed__130), Member = "MoveNext")]
-	[CalledBy(Type = typeof(GraphOwnerControl), Member = "OnExecute")]
-	[CalledBy(Type = typeof(GraphOwnerControl), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnEnter")]
-	[CalledBy(Type = typeof(GraphOwner), Member = "StartBehaviour")]
+	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Loading), Member = "FindBackgroundAndLoadingText")]
 	[CalledBy(Type = typeof(MissionManagerBase), Member = "Start")]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
-	[Calls(Type = typeof(Graph), Member = "StartGraph")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(GraphOwner), Member = "GetInstance")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 13)]
+	[CalledBy(TypeFullName = "MissionServicesManager.<JumpCo>d__130", Member = "MoveNext")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "RegisterConcurrentGraph")]
+	[CalledBy(Type = typeof(GraphOwner), Member = "StartBehaviour")]
+	[CalledBy(Type = typeof(GraphOwner), Member = "RestartBehaviour")]
+	[CalledBy(Type = typeof(GraphOwner), Member = "OnEnable")]
+	[CalledBy(Type = typeof(GraphOwner), Member = "Start")]
+	[CalledBy(Type = typeof(GraphOwner<>), Member = "SwitchBehaviour")]
+	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnEnter")]
+	[CalledBy(Type = typeof(GraphOwnerControl), Member = "OnExecute")]
+	[CallerCount(Count = 13)]
+	[Calls(Type = typeof(GraphOwner), Member = "GetInstance")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Graph), Member = "StartGraph")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public void StartBehaviour(bool autoUpdate, Action<bool> callback)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(GraphOwnerControl), Member = "Do")]
 	[CalledBy(Type = typeof(GraphOwner), Member = "OnDisable")]
+	[CalledBy(Type = typeof(GraphOwnerControl), Member = "Do")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Graph), Member = "Pause")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public void PauseBehaviour()
 	{
 	}
 
+	[CalledBy(Type = typeof(MissionManagerBase), Member = "Stop")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "RemoveConcurrentGraph")]
+	[CalledBy(Type = typeof(GraphOwner), Member = "RestartBehaviour")]
+	[CalledBy(Type = typeof(GraphOwner), Member = "OnDisable")]
 	[CalledBy(Type = typeof(GraphOwner), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(GraphOwner<>), Member = "SwitchBehaviour")]
-	[CalledBy(Type = typeof(GraphOwner), Member = "OnDisable")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(GraphOwnerControl), Member = "OnStop")]
-	[CalledBy(Type = typeof(GraphOwner), Member = "RestartBehaviour")]
 	[CalledBy(Type = typeof(GraphOwnerControl), Member = "Do")]
-	[CalledBy(Type = typeof(MissionManagerBase), Member = "Stop")]
-	[Calls(Type = typeof(Graph), Member = "Stop")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "RemoveConcurrentGraph")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(GraphOwnerControl), Member = "OnStop")]
 	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Graph), Member = "Stop")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public void StopBehaviour(bool success = true)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public void UpdateBehaviour()
 	{
 	}
@@ -200,63 +181,63 @@ public abstract class GraphOwner : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "SendEvent")]
-	[CalledBy(Type = typeof(Action_PlayerHoursPlayed), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_PlayerHPThreshold), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_IsInMissionTrigger), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_ChallengeNowhereToHideRequirements), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(FSMHierarchy), Member = "SendEvent")]
-	[CalledBy(Type = typeof(Action_IsInScene), Member = "OnExecute")]
-	[CalledBy(Type = typeof(MissionManagerBase), Member = "SendMissionEvent")]
-	[CalledBy(Type = typeof(MissionManagerBase), Member = "SendMissionEvent")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_challenge_complete")]
-	[CallerCount(Count = 11)]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_challenge_complete")]
+	[CalledBy(Type = typeof(MissionManagerBase), Member = "SendMissionEvent")]
+	[CalledBy(Type = typeof(MissionManagerBase), Member = "SendMissionEvent")]
 	[CalledBy(Type = typeof(FSMHierarchy), Member = "SendEvent")]
+	[CalledBy(Type = typeof(FSMHierarchy), Member = "SendEvent")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "SendEvent")]
+	[CalledBy(Type = typeof(Action_ChallengeNowhereToHideRequirements), Member = "OnUpdate")]
+	[CalledBy(Type = typeof(Action_IsInMissionTrigger), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_PlayerHPThreshold), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_PlayerHoursPlayed), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_IsInScene), Member = "OnExecute")]
+	[CallerCount(Count = 11)]
 	public void SendEvent(string eventName)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
+	[CallsUnknownMethods(Count = 7)]
 	public void SendEvent<T>(string eventName, T eventValue)
 	{
 	}
 
-	[CalledBy(Type = typeof(ShoutEvent), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(SendEventToObjects<>), Member = "OnExecute")]
-	[CalledBy(Type = typeof(SendEventToObjects), Member = "OnExecute")]
-	[CalledBy(Type = typeof(SendEvent<>), Member = "OnUpdate")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SendEvent), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(Action_PostEventToConcurrentGraph<>), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "UpdateMissionInfo")]
-	[CalledBy(Type = typeof(GraphOwner), Member = "SendEvent")]
 	[CalledBy(Type = typeof(Action_WhiteoutGearRequirements), Member = "OnUpdate")]
-	[Calls(Type = typeof(Graph), Member = "SendEvent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 10)]
+	[CalledBy(Type = typeof(GraphOwner), Member = "SendEvent")]
 	[CalledBy(Type = typeof(Action_PostEventToConcurrentGraph), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_PostEventToConcurrentGraph<>), Member = "OnExecute")]
+	[CalledBy(Type = typeof(SendEvent), Member = "OnUpdate")]
+	[CalledBy(Type = typeof(SendEvent<>), Member = "OnUpdate")]
+	[CalledBy(Type = typeof(SendEventToObjects), Member = "OnExecute")]
+	[CalledBy(Type = typeof(SendEventToObjects<>), Member = "OnExecute")]
+	[CalledBy(Type = typeof(ShoutEvent), Member = "OnUpdate")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Graph), Member = "SendEvent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SendEvent(EventData eventData, object sender)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(GraphOwner), Member = "Awake")]
 	[CalledBy(Type = typeof(TLDBehaviourTreeOwner), Member = "Awake")]
-	[Calls(Type = typeof(Graph), Member = "Deserialize")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 13)]
-	[Calls(Type = typeof(ScriptableObject), Member = "CreateInstance")]
-	[Calls(Type = typeof(GraphOwner), Member = "GetInstance")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CalledBy(Type = typeof(GraphOwner), Member = "Awake")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GraphOwner), Member = "GetInstance")]
+	[Calls(Type = typeof(ScriptableObject), Member = "CreateInstance")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(Graph), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Initialize()
 	{
 	}
@@ -267,8 +248,8 @@ public abstract class GraphOwner : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
 	protected void OnEnable()
 	{
 	}
@@ -286,14 +267,15 @@ public abstract class GraphOwner : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	[CalledBy(Type = typeof(TLDBehaviourTreeOwner), Member = "OnDestroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(GraphOwner), Member = "StopBehaviour")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GraphOwner), Member = "StopBehaviour")]
+	[Calls(Type = typeof(Dictionary<, >.ValueCollection.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Graph), Member = "GetAllInstancedNestedGraphs")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	protected virtual void OnDestroy()
 	{
 	}
@@ -303,14 +285,14 @@ public abstract class GraphOwner : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(DialogueTreeController), Member = ".ctor")]
-	[CalledBy(Type = typeof(FSMOwner), Member = ".ctor")]
-	[CalledBy(Type = typeof(GraphOwner<>), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(TLDBehaviourTreeOwner), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(BehaviourTreeOwner), Member = ".ctor")]
+	[CalledBy(Type = typeof(GraphOwner<>), Member = ".ctor")]
+	[CalledBy(Type = typeof(FSMOwner), Member = ".ctor")]
+	[CalledBy(Type = typeof(DialogueTreeController), Member = ".ctor")]
+	[CallerCount(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	protected GraphOwner()
 	{
 	}
@@ -346,7 +328,7 @@ public abstract class GraphOwner<T> : GraphOwner where T : Graph
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 55)]
+		[CallerCount(Count = 65)]
 		set
 		{
 		}
@@ -354,22 +336,22 @@ public abstract class GraphOwner<T> : GraphOwner where T : Graph
 
 	public sealed override IBlackboard blackboard
 	{
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallsUnknownMethods(Count = 2)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
-		[CallsDeduplicatedMethods(Count = 5)]
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
+		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(Graph), Member = "UpdateReferences")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		[CallsUnknownMethods(Count = 3)]
 		set
 		{
@@ -378,9 +360,9 @@ public abstract class GraphOwner<T> : GraphOwner where T : Graph
 
 	public sealed override Type graphType
 	{
-		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 		get
 		{
 			return null;
@@ -408,9 +390,9 @@ public abstract class GraphOwner<T> : GraphOwner where T : Graph
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[DeduplicatedMethod]
 	public void SwitchBehaviour(T newGraph)
 	{
 	}
@@ -424,17 +406,17 @@ public abstract class GraphOwner<T> : GraphOwner where T : Graph
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GraphOwner), Member = "StopBehaviour")]
 	[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void SwitchBehaviour(T newGraph, bool autoUpdate, Action<bool> callback)
 	{
 	}
 
-	[Calls(Type = typeof(GraphOwner), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GraphOwner), Member = ".ctor")]
 	protected GraphOwner()
 	{
 	}

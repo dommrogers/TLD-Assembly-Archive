@@ -53,8 +53,8 @@ public class SaveSlotInfo
 
 	public string m_SceneManagerSerialized;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public SaveSlotInfo()
 	{
 	}

@@ -20,22 +20,23 @@ public class GetLinecastInfo2D : ActionTask<Transform>
 
 	private RaycastHit2D hit;
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
-	[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(ContactFilter2D), Member = "CreateLegacyFilter")]
+	[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 9)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 5)]
 	public override void OnDrawGizmosSelected()
 	{
 	}

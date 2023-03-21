@@ -23,7 +23,7 @@ public sealed class PostProcessProfile : ScriptableObject
 		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		internal bool _003COnEnable_003Eb__2_0(PostProcessEffectSettings x)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -33,37 +33,38 @@ public sealed class PostProcessProfile : ScriptableObject
 	public bool isDirty;
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAll")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PostProcessProfile), Member = "AddSettings")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(PostProcessProfile), Member = "AddSettings")]
+	[CallsUnknownMethods(Count = 3)]
 	public T AddSettings<T>() where T : PostProcessEffectSettings
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(PostProcessProfile), Member = "AddSettings")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(PostProcessProfile), Member = "HasSettings")]
 	[Calls(Type = typeof(Object), Member = "set_name")]
-	[CalledBy(Type = typeof(PostProcessProfile), Member = "AddSettings")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 11)]
 	public PostProcessEffectSettings AddSettings(Type type)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PostProcessProfile), Member = "HasSettings")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 8)]
 	public PostProcessEffectSettings AddSettings(PostProcessEffectSettings effect)
 	{
 		return null;
@@ -71,66 +72,70 @@ public sealed class PostProcessProfile : ScriptableObject
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 9)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public void RemoveSettings<T>() where T : PostProcessEffectSettings
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public void RemoveSettings(Type type)
 	{
 	}
 
-	[Calls(Type = typeof(PostProcessProfile), Member = "HasSettings")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(PostProcessProfile), Member = "HasSettings")]
 	public bool HasSettings<T>() where T : PostProcessEffectSettings
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(PostProcessManager), Member = "QuickVolume")]
 	[CalledBy(Type = typeof(PostProcessProfile), Member = "AddSettings")]
 	[CalledBy(Type = typeof(PostProcessProfile), Member = "AddSettings")]
 	[CalledBy(Type = typeof(PostProcessProfile), Member = "HasSettings")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsUnknownMethods(Count = 3)]
 	public bool HasSettings(Type type)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsUnknownMethods(Count = 8)]
 	public T GetSetting<T>() where T : PostProcessEffectSettings
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 8)]
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(CameraEffects), Member = "Awake")]
+	[CalledBy(Type = typeof(PostProcessManager), Member = "EnableAO")]
 	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 8)]
 	public bool TryGetSettings<T>(out T outSetting) where T : PostProcessEffectSettings
 	{
 		outSetting = null;
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public PostProcessProfile()
 	{

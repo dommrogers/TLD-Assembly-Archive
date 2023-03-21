@@ -10,13 +10,13 @@ public class Action_OverrideStartGear : ActionTask
 
 	public StartGear Gear;
 
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(StartGear), Member = "AddAllToInventory")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyAllGear")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Inventory), Member = "DestroyAllGear")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(StartGear), Member = "AddAllToInventory")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	protected override void OnExecute()
 	{
 	}

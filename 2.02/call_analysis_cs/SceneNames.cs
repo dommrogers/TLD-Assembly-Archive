@@ -9,16 +9,16 @@ public class SceneNames
 	private static string[] m_Names;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "ToLower")]
 	[Calls(Type = typeof(Animator), Member = "StringToHash")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public static void Initialize()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SceneNames()
 	{
 	}

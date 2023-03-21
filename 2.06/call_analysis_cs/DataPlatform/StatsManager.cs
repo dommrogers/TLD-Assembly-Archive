@@ -11,16 +11,16 @@ public class StatsManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void RemoveLocaluser(int userId)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void SetStatAsInteger(int userId, string statName, long statValue)
 	{
 	}
@@ -32,30 +32,30 @@ public class StatsManager
 	{
 	}
 
-	[Calls(Type = typeof(StatsManagerPlugin), Member = "StatsManager_SetStatAsString")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(StatsManagerPlugin), Member = "StatsManager_SetStatAsString")]
 	public static void SetStatAsString(int userId, string statName, string statValue)
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
-	[DeduplicatedMethod]
 	public static void RequestFlushToService(int userId, bool isHighPriority)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
-	[CallerCount(Count = 0)]
 	public static StatNamesList GetStatNames(int userId)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static StatValue GetStat(int userId, string statName)
 	{
 		return null;
@@ -88,8 +88,8 @@ public class StatsManager
 		return null;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public StatsManager()
 	{
 	}

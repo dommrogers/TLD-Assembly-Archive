@@ -14,14 +14,14 @@ public class ErrorEventArgs : EventArgs
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 98)]
+		[CallerCount(Count = 113)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 265)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 269)]
 		private set
 		{
 		}
@@ -31,14 +31,14 @@ public class ErrorEventArgs : EventArgs
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 44)]
+		[CallerCount(Count = 53)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 85)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 93)]
 		private set
 		{
 		}

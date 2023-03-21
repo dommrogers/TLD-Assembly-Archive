@@ -18,8 +18,8 @@ public class StringTableData : ScriptableObject
 
 		public List<string> m_Languages;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public Entry()
 		{
 		}
@@ -27,10 +27,11 @@ public class StringTableData : ScriptableObject
 
 	public List<Entry> m_Entries;
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public StringTableData()
 	{
 	}

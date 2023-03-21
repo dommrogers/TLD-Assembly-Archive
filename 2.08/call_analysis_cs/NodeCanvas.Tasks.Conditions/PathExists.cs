@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -13,14 +12,16 @@ public class PathExists : ConditionTask<NavMeshAgent>
 
 	public BBParameter<List<Vector3>> savePathAs;
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(NavMeshPath), Member = "ClearCorners")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(NavMeshPath), Member = "ClearCorners")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 9)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

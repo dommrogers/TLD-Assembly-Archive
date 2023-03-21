@@ -9,17 +9,15 @@ public class Action_ShowChoice : DTNode
 {
 	public int choiceIndex;
 
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
-	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Dialogue_Speech_Utils), Member = "GetShowChoiceVariableName")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Dialogue_Speech_Utils), Member = "GetShowChoiceVariableName")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
+	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 17)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);

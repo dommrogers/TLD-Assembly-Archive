@@ -8,20 +8,16 @@ public class StartGear : MonoBehaviour
 {
 	public StartGearData m_DefaultStartGear;
 
-	[Calls(Type = typeof(Inventory), Member = "HasNonRuinedItem")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Action_OverrideStartGear), Member = "OnExecute")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(GearItem), Member = "LoadGearItemPrefab")]
-	[Calls(Type = typeof(GearItem), Member = "LoadGearItemPrefab")]
-	[Calls(Type = typeof(Inventory), Member = "HasNonRuinedItem")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(StartGearData), Member = "AddStartingGearToPlayer")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Action_OverrideStartGear), Member = "OnExecute")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(StartGearData), Member = "AddStartingGearToPlayer")]
+	[Calls(Type = typeof(Inventory), Member = "HasNonRuinedItem")]
+	[Calls(Type = typeof(GearItem), Member = "LoadGearItemPrefab")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public void AddAllToInventory()
 	{
 	}

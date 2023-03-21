@@ -16,16 +16,16 @@ public class AkEvent : AkDragDropTriggerHandler
 		public GameObject GameObject;
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(GameObject), Member = "SendMessage")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 3)]
 		public void CallFunction(AkEventCallbackMsg eventCallbackMsg)
 		{
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public CallbackData()
 		{
 		}
@@ -74,17 +74,17 @@ public class AkEvent : AkDragDropTriggerHandler
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public byte[] valueGuid
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(WwiseObjectReference), Member = "get_Guid")]
 		[Calls(Type = typeof(Guid), Member = "ToByteArray")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -94,49 +94,48 @@ public class AkEvent : AkDragDropTriggerHandler
 
 	public AkEventCallbackData m_callbackData
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(AkTriggerHandler), Member = "Start")]
-	[CallsUnknownMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkTriggerHandler), Member = "Start")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	protected override void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	private void Callback(object in_cookie, AkCallbackType in_type, AkCallbackInfo in_info)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(AK.Wwise.Event), Member = "ExecuteAction")]
 	[CalledBy(Type = typeof(AkAmbient), Member = "HandleEvent")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(AK.Wwise.Event), Member = "Post")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(AK.Wwise.Event), Member = "Post")]
+	[Calls(Type = typeof(AK.Wwise.Event), Member = "Post")]
+	[Calls(Type = typeof(AK.Wwise.Event), Member = "ExecuteAction")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 18)]
 	public override void HandleEvent(GameObject in_gameObject)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AK.Wwise.Event), Member = "ExecuteAction")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void Stop(int _transitionDuration)
 	{
 	}
@@ -148,10 +147,11 @@ public class AkEvent : AkDragDropTriggerHandler
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(AkDragDropTriggerHandler), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkAmbient), Member = ".ctor")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(AkDragDropTriggerHandler), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 14)]
 	public AkEvent()
 	{

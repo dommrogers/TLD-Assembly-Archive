@@ -16,7 +16,7 @@ public class BodyHarvestSaveData
 	public string m_MissionId;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public BodyHarvestSaveData()
 	{
 	}

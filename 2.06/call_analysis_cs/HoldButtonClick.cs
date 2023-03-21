@@ -20,10 +20,10 @@ public class HoldButtonClick : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}

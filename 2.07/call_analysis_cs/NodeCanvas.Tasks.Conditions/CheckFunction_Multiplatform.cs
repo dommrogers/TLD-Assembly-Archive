@@ -34,9 +34,9 @@ public class CheckFunction_Multiplatform : ConditionTask
 
 	public override Type agentType
 	{
-		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
+		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -46,31 +46,31 @@ public class CheckFunction_Multiplatform : ConditionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(System.Text.StringBuilderCache), Member = "Acquire")]
-		[CallsUnknownMethods(Count = 28)]
-		[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(System.Text.StringBuilderCache), Member = "Release")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-		[Calls(Type = typeof(StringBuilder), Member = "AppendFormatHelper")]
-		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
+		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(TypeFullName = "System.Text.StringBuilderCache", Member = "Acquire")]
+		[Calls(Type = typeof(StringBuilder), Member = "AppendFormatHelper")]
+		[Calls(TypeFullName = "System.Text.StringBuilderCache", Member = "Release")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 		[CallsDeduplicatedMethods(Count = 9)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 28)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(Task), Member = "Error")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CheckFunction_Multiplatform), Member = "SetMethod")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Task), Member = "Error")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnValidate(ITaskSystem ownerSystem)
 	{
 	}
@@ -83,24 +83,24 @@ public class CheckFunction_Multiplatform : ConditionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Task), Member = "get_agent")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 16)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 12)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(BBObjectParameter), Member = "SetType")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(BBParameter), Member = "ResolveReference")]
-	[Calls(Type = typeof(BBParameter), Member = "ResolveReference")]
 	[CalledBy(Type = typeof(CheckFunction_Multiplatform), Member = "OnValidate")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(BBObjectParameter), Member = "SetType")]
+	[Calls(Type = typeof(BBParameter), Member = "ResolveReference")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 3)]
 	private void SetMethod(MethodInfo method)
 	{
 	}

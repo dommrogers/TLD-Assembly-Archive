@@ -10,14 +10,14 @@ public class AuxBus : BaseType
 
 	public override WwiseObjectReference ObjectReference
 	{
-		[CallerCount(Count = 5)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -34,7 +34,7 @@ public class AuxBus : BaseType
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AuxBus()
 	{
 	}

@@ -10,7 +10,6 @@ public class BehaviourTreeInteraction : MonoBehaviour
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(BlackboardSource), Member = "SetValue")]
 	[CallsUnknownMethods(Count = 1)]
 	public void PerformInteraction()

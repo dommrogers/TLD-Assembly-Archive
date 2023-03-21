@@ -16,8 +16,8 @@ internal struct StartSessionOptionsInternal : ISettable, IDisposable
 		[CalledBy(Type = typeof(StartSessionOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(StartSessionOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,17 +29,17 @@ internal struct StartSessionOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(StartSessionOptionsInternal), Member = "set_SessionName")]
 	[CalledBy(Type = typeof(SessionsInterface), Member = "StartSession")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(StartSessionOptionsInternal), Member = "set_SessionName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

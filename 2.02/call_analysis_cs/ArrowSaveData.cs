@@ -16,7 +16,7 @@ public class ArrowSaveData
 	public float m_EmbeddedDepth;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ArrowSaveData()
 	{
 	}

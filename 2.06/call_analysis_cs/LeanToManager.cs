@@ -75,68 +75,72 @@ public class LeanToManager : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Remove(LeanTo lt)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static void Reset()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 18)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(LeanTo), Member = "ShouldRemove")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Transform), Member = "get_rotation")]
 	[Calls(Type = typeof(LeanTo), Member = "Serialize")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(LeanTo), Member = "ShouldRemove")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[CallsUnknownMethods(Count = 18)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(LeanTo), Member = "Deserialize")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(PdidTable), Member = "RuntimeUnregister")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PdidTable), Member = "RuntimeUnregister")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(LeanTo), Member = "Deserialize")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 25)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "SceneLoadCompleted")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ObjectGuid), Member = "MaybeRuntimeRegister")]
-	[Calls(Type = typeof(GameObject), Member = "get_scene")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_scene")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(ObjectGuid), Member = "MaybeRuntimeRegister")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public static void RegisterAnyLeanToGuid()
 	{
 	}
@@ -146,119 +150,111 @@ public class LeanToManager : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowShelterRadial")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowShelterRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowShelterRadial")]
 	public bool LeanTosAreUnlocked()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetTemperatureIncreaseCelsius()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(LeanToManager), Member = "GetMissingMaterialsString")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CalledBy(Type = typeof(LeanToManager), Member = "GetMissingMaterialsString")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public int GetNumSticksInInventory()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(LeanToManager), Member = "GetMissingMaterialsString")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CalledBy(Type = typeof(LeanToManager), Member = "GetMissingMaterialsString")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public int GetNumBranchesInInventory()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(LeanToManager), Member = "CanAttemptToPlaceLeanTo")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNoLeanToMessage")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "OnLeanToInternal")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(LeanToManager), Member = "GetNumBranchesInInventory")]
-	[Calls(Type = typeof(LeanToManager), Member = "GetNumSticksInInventory")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNoLeanToMessage")]
+	[CalledBy(Type = typeof(LeanToManager), Member = "CanAttemptToPlaceLeanTo")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(LeanToManager), Member = "GetNumSticksInInventory")]
+	[Calls(Type = typeof(LeanToManager), Member = "GetNumBranchesInInventory")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetMissingMaterialsString()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "OnLeanToInternal")]
-	[Calls(Type = typeof(LeanToManager), Member = "GetMissingMaterialsString")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(LeanToManager), Member = "GetMissingMaterialsString")]
+	[CallsUnknownMethods(Count = 5)]
 	public bool CanAttemptToPlaceLeanTo()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnUse")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetMediumOcclusion")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetMediumOcclusion")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public void EnterLeanTo(LeanTo lt)
 	{
 	}
 
+	[CalledBy(Type = typeof(LeanTo), Member = "ProcessInteraction")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(GameAudioManager), Member = "ExitOcclusionTrigger")]
 	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[CalledBy(Type = typeof(LeanTo), Member = "ProcessInteraction")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
 	public void ExitLeanTo(LeanTo lt)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsPlaceable")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "OnBedRoll")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsPlaceable")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	public bool PlayerInLeanTo()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(LeanTo), Member = "GetHoverText")]
 	[CalledBy(Type = typeof(LeanTo), Member = "ProcessInteraction")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	public LeanTo GetPlayerOccupiedLeanTo()
 	{
 		return null;
@@ -269,56 +265,52 @@ public class LeanToManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool PlayerInNonRuinedLeanTo()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool PlayerEnteringLeanTo()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Rest), Member = "StartRest")]
-	[Calls(Type = typeof(Panel_Rest), Member = "StartRest")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "OnBedRoll")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "OpenLeanToRest")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "OpenLeanToRest")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Rest), Member = "StartRest")]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnBedroll(GearItem gi = null)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "InitializeStruggle")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "UnlockRotationLimit")]
-	[CallsUnknownMethods(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "UnlockRotationLimit")]
+	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	public void ExitShelterDueToStruggle()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataPostSceneRestore")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "DeserializePostSceneLoadFixup")]
-	[Calls(Type = typeof(LeanToManager), Member = "EnterLeanToAfterFadeOutCommon")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "SetState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Physics), Member = "OverlapSphere")]
-	[CallsDeduplicatedMethods(Count = 16)]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataPostSceneRestore")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Physics), Member = "OverlapSphere")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "SetState")]
+	[Calls(Type = typeof(LeanToManager), Member = "EnterLeanToAfterFadeOutCommon")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 5)]
 	public void ForceIntoLeanToSilent(Vector3 cameraPos)
 	{
 	}
@@ -331,47 +323,44 @@ public class LeanToManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
-	[CallsUnknownMethods(Count = 19)]
-	[CalledBy(Type = typeof(LeanToManager), Member = "EnterLeanToAfterFadeOut")]
 	[CalledBy(Type = typeof(LeanToManager), Member = "ForceIntoLeanToSilent")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
-	[CallsDeduplicatedMethods(Count = 18)]
+	[CalledBy(Type = typeof(LeanToManager), Member = "EnterLeanToAfterFadeOut")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
+	[CallsDeduplicatedMethods(Count = 18)]
+	[CallsUnknownMethods(Count = 19)]
 	private void EnterLeanToAfterFadeOutCommon()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Wind), Member = "UpdateWindOcclusion")]
-	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(LeanToManager), Member = "GetSafeExitPoint")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "UnlockRotationLimit")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "UnlockRotationLimit")]
+	[Calls(Type = typeof(LeanToManager), Member = "GetSafeExitPoint")]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
+	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
+	[Calls(Type = typeof(Wind), Member = "UpdateWindOcclusion")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 10)]
 	private void ExitLeanToAfterFadeOut()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(LeanToManager), Member = "ExitLeanToAfterFadeOut")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private Vector3 GetSafeExitPoint()
 	{
 		return default(Vector3);

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -19,7 +20,12 @@ public class PlayableAssetFadeLight : PlayableAsset
 	public FadeType m_FadeType;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(ScriptPlayable<>), Member = "Create")]
+	[Calls(Type = typeof(PlayableHandle), Member = "GetObject")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetComponentsInChildrenForMissionObject")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 17)]
 	public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
 	{

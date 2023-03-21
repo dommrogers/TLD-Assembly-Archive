@@ -16,19 +16,21 @@ public class ConditionRestBuff : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(GearItem), Member = "ApplyBuffs")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_buffs_add_all")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffNotification")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
-	[CalledBy(Type = typeof(GearItem), Member = "ApplyBuffs")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 6)]
 	public void Apply(float normalizedValue)
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public ConditionRestBuff()
 	{
 	}

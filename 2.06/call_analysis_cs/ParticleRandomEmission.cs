@@ -19,9 +19,10 @@ public class ParticleRandomEmission : MonoBehaviour
 
 	private ParticleSystem m_ParticleSystem;
 
-	[Calls(Type = typeof(Random), Member = "Range")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Start()
 	{
 	}
@@ -41,11 +42,11 @@ public class ParticleRandomEmission : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Mathf), Member = "SmoothStep")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(Mathf), Member = "SmoothStep")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}

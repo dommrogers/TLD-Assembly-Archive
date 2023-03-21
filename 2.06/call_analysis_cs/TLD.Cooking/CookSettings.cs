@@ -28,9 +28,9 @@ public class CookSettings : ScriptableObject
 
 	public Color m_RuinedHoverTextColor;
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public CookSettings()
 	{
 	}

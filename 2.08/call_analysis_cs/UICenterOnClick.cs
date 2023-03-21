@@ -3,21 +3,21 @@ using UnityEngine;
 
 public class UICenterOnClick : MonoBehaviour
 {
-	[Calls(Type = typeof(UICenterOnChild), Member = "CenterOn")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
+	[Calls(Type = typeof(UICenterOnChild), Member = "CenterOn")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
 	[Calls(Type = typeof(UIRect), Member = "get_cachedGameObject")]
-	[CallsUnknownMethods(Count = 9)]
 	[Calls(Type = typeof(SpringPanel), Member = "Begin")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 9)]
 	private void OnClick()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public UICenterOnClick()
 	{
 	}

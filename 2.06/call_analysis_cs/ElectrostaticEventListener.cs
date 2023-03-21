@@ -14,22 +14,16 @@ public class ElectrostaticEventListener : MonoBehaviour
 	private UnityEvent<float> m_StrengthChanged;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallsUnknownMethods(Count = 38)]
+	[Calls(Type = typeof(UnityEvent<>), Member = "Invoke")]
+	[CallsUnknownMethods(Count = 36)]
 	private void OnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[CallsUnknownMethods(Count = 33)]
 	private void OnDisable()
 	{
 	}

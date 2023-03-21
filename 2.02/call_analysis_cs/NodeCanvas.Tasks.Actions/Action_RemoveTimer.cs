@@ -11,19 +11,21 @@ public class Action_RemoveTimer : ActionTask
 
 	private string realId
 	{
-		[CallerCount(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[CalledBy(Type = typeof(Action_RemoveTimer), Member = "get_info")]
 		[CalledBy(Type = typeof(Action_RemoveTimer), Member = "OnExecute")]
-		[CalledBy(Type = typeof(Action_RemoveTimer), Member = "OnExecute")]
+		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 8)]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 3)]
+		[Calls(Type = typeof(BBParameter<>), Member = ".ctor")]
+		[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 8)]
 		set
 		{
 		}
@@ -32,22 +34,21 @@ public class Action_RemoveTimer : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Action_RemoveTimer), Member = "get_realId")]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveMissionTimer")]
-	[Calls(Type = typeof(Action_RemoveTimer), Member = "get_realId")]
-	[Calls(Type = typeof(Action_RemoveTimer), Member = "get_realId")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Action_RemoveTimer), Member = "get_realId")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveMissionTimer")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}

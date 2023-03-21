@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
@@ -16,34 +15,35 @@ public class Condition_HoursWithinRangeOfFire : ConditionTask
 
 	protected override string info
 	{
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Condition_HoursWithinRangeOfFire), Member = "GetHoursWithinRangeOfFire")]
+		[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+		[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
 		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
 		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(Condition_HoursWithinRangeOfFire), Member = "GetHoursWithinRangeOfFire")]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(Condition_HoursWithinRangeOfFire), Member = "get_info")]
 	[CalledBy(Type = typeof(Condition_HoursWithinRangeOfFire), Member = "OnCheck")]
+	[CallerCount(Count = 2)]
 	protected float GetHoursWithinRangeOfFire()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Condition_HoursWithinRangeOfFire), Member = "GetHoursWithinRangeOfFire")]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

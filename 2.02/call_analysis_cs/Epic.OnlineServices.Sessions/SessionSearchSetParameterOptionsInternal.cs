@@ -15,11 +15,11 @@ internal struct SessionSearchSetParameterOptionsInternal : ISettable, IDisposabl
 
 	public AttributeData Parameter
 	{
+		[CalledBy(Type = typeof(SessionSearchSetParameterOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(SessionSearchSetParameterOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[Calls(Type = typeof(AttributeDataInternal), Member = "Set")]
-		[CalledBy(Type = typeof(SessionSearchSetParameterOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(SessionSearchSetParameterOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		set
 		{
 		}
@@ -34,23 +34,23 @@ internal struct SessionSearchSetParameterOptionsInternal : ISettable, IDisposabl
 		}
 	}
 
-	[Calls(Type = typeof(SessionSearchSetParameterOptionsInternal), Member = "set_Parameter")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SessionSearchSetParameterOptionsInternal), Member = "set_Parameter")]
 	public void Set(SessionSearchSetParameterOptions other)
 	{
 	}
 
-	[Calls(Type = typeof(SessionSearchSetParameterOptionsInternal), Member = "set_Parameter")]
 	[CalledBy(Type = typeof(SessionSearch), Member = "SetParameter")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SessionSearchSetParameterOptionsInternal), Member = "set_Parameter")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

@@ -24,30 +24,28 @@ public class CheckMousePick2D : ConditionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-		[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-		[Calls(Type = typeof(Enum), Member = "ToString")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Enum), Member = "ToString")]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Physics2D), Member = "Raycast")]
 	[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
-	[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

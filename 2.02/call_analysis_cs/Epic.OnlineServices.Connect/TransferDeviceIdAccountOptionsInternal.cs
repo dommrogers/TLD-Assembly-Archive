@@ -17,11 +17,11 @@ internal struct TransferDeviceIdAccountOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId PrimaryLocalUserId
 	{
+		[CalledBy(Type = typeof(TransferDeviceIdAccountOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(TransferDeviceIdAccountOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(TransferDeviceIdAccountOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(TransferDeviceIdAccountOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -30,10 +30,10 @@ internal struct TransferDeviceIdAccountOptionsInternal : ISettable, IDisposable
 	public ProductUserId LocalDeviceUserId
 	{
 		[CalledBy(Type = typeof(TransferDeviceIdAccountOptionsInternal), Member = "Set")]
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(TransferDeviceIdAccountOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -42,9 +42,9 @@ internal struct TransferDeviceIdAccountOptionsInternal : ISettable, IDisposable
 	public ProductUserId ProductUserIdToPreserve
 	{
 		[CalledBy(Type = typeof(TransferDeviceIdAccountOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(TransferDeviceIdAccountOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -59,18 +59,18 @@ internal struct TransferDeviceIdAccountOptionsInternal : ISettable, IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(ConnectInterface), Member = "TransferDeviceIdAccount")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(TransferDeviceIdAccountOptionsInternal), Member = "set_PrimaryLocalUserId")]
 	[Calls(Type = typeof(TransferDeviceIdAccountOptionsInternal), Member = "set_LocalDeviceUserId")]
 	[Calls(Type = typeof(TransferDeviceIdAccountOptionsInternal), Member = "set_ProductUserIdToPreserve")]
-	[CalledBy(Type = typeof(ConnectInterface), Member = "TransferDeviceIdAccount")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

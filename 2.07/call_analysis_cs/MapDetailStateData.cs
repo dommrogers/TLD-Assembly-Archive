@@ -8,8 +8,8 @@ public struct MapDetailStateData
 
 	public bool m_IsSurveyed;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public MapDetailStateData(bool isUnlocked, bool isDiscovered, bool isSurveyed)
 	{
 	}

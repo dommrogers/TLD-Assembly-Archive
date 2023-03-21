@@ -4,8 +4,8 @@ public class StackableItemSaveDataProxy
 {
 	public int m_UnitsProxy;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public StackableItemSaveDataProxy()
 	{
 	}

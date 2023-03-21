@@ -17,19 +17,19 @@ public class LightRandomRange : MonoBehaviour
 
 	private Light m_Light;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Random), Member = "Range")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Random), Member = "Range")]
 	[Calls(Type = typeof(Mathf), Member = "SmoothStep")]
 	[Calls(Type = typeof(Light), Member = "set_range")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
@@ -40,11 +40,11 @@ public class LightRandomRange : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	public float GetRange()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public LightRandomRange()
 	{
 	}

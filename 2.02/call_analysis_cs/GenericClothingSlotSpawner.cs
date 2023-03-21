@@ -30,41 +30,43 @@ public class GenericClothingSlotSpawner : MonoBehaviour
 	public ClothingSlot m_ClothingSlot;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
 	[Calls(Type = typeof(GenericClothingSlotSpawner), Member = "AssignValuesToSpawnedObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(GenericClothingSlotSpawner), Member = "Awake")]
-	[Calls(Type = typeof(ClothingSlot), Member = "DoSetup")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
 	[CalledBy(Type = typeof(GenericClothingSlotSpawner), Member = "InstantiateObjectIfNoneExists")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(ClothingSlot), Member = "DoSetup")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 17)]
 	public void AssignValuesToSpawnedObject()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
 	[Calls(Type = typeof(GenericClothingSlotSpawner), Member = "AssignValuesToSpawnedObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void InstantiateObjectIfNoneExists()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public GenericClothingSlotSpawner()
 	{
 	}

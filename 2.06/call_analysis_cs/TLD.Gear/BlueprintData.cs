@@ -67,12 +67,12 @@ public class BlueprintData : ScriptableObject
 
 	public bool Locked
 	{
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -85,13 +85,11 @@ public class BlueprintData : ScriptableObject
 	public Transform transform
 	{
 		[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "Enable")]
-		[CallsUnknownMethods(Count = 7)]
-		[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "Enable")]
-		[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "Enable")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 		[Calls(Type = typeof(GameObject), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -104,8 +102,8 @@ public class BlueprintData : ScriptableObject
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	private void OnDestroy()
 	{
@@ -116,110 +114,100 @@ public class BlueprintData : ScriptableObject
 	{
 	}
 
+	[CalledBy(Type = typeof(BlueprintDisplayItem), Member = "Setup")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "ApplyCraftingProgress")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(BlueprintDisplayItem), Member = "Setup")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
 	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetDisplayedNameWithCount()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(BlueprintData), Member = "HasRequiredMaterials")]
-	[Calls(Type = typeof(BlueprintData), Member = "HasRequiredTool")]
 	[CalledBy(Type = typeof(BlueprintDisplayItem), Member = "Setup")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "CanCraftBlueprint")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "CanCraftSelectedBlueprint")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(BlueprintData), Member = "HasRequiredMaterials")]
+	[Calls(Type = typeof(BlueprintData), Member = "HasRequiredTool")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool CanCraftBlueprint(Inventory inventory, PlayerManager playerManager, CraftingLocationInterface cli)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool CanCraftAtLocation(CraftingLocation craftingLocation)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Inventory), Member = "HasNonRuinedItem")]
 	[CalledBy(Type = typeof(BlueprintData), Member = "CanCraftBlueprint")]
-	[Calls(Type = typeof(Inventory), Member = "HasNonRuinedItem")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "HasNonRuinedItem")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool HasRequiredTool(Inventory inventory)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(CraftingRequirementTool), Member = "Enable")]
-	[Calls(Type = typeof(Inventory), Member = "GetNonRuinedItem")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Inventory), Member = "GetNonRuinedItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public List<GearItem> GetToolsAvailableToCraft(Inventory inventory)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(BlueprintData), Member = "CanCraftBlueprint")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BlueprintData), Member = "GetInProgressItem")]
+	[Calls(Type = typeof(BlueprintData), Member = "NumNeedsConsuming")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InProgressCraftItem), Member = "GetPercentRemainingNormalized")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetTotalLiters")]
 	[Calls(Type = typeof(BlueprintData), Member = "ApplyQuantityMultiplier")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetTotalPowderWeight")]
-	[Calls(Type = typeof(InProgressCraftItem), Member = "GetPercentRemainingNormalized")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BlueprintData), Member = "ApplyQuantityMultiplier")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTotalLiters")]
-	[Calls(Type = typeof(InProgressCraftItem), Member = "GetPercentRemainingNormalized")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(BlueprintData), Member = "NumNeedsConsuming")]
-	[Calls(Type = typeof(BlueprintData), Member = "GetInProgressItem")]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool HasRequiredMaterials(Inventory inventory, PlayerManager playerManager)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(BlueprintData), Member = "HasRequiredMaterials")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private InProgressCraftItem GetInProgressItem(Inventory inventory)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(BlueprintData), Member = "HasRequiredMaterials")]
 	[CalledBy(Type = typeof(CraftingRequirementMaterial), Member = "Enable")]
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(BlueprintData), Member = "HasRequiredMaterials")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 3)]
 	public int NumNeedsConsuming(int requiredGearIndex, InProgressCraftItem wip)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -227,36 +215,35 @@ public class BlueprintData : ScriptableObject
 	[CallsUnknownMethods(Count = 4)]
 	public int NumToConsumeNow(int requiredGearIndex, InProgressCraftItem wip, float newTotalPercent)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsLocked(bool isStoryMode)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(BlueprintData), Member = "OnEnable")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 9)]
 	private void AddAlternateTools()
 	{
 	}
 
+	[CalledBy(Type = typeof(BlueprintData), Member = "HasRequiredMaterials")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(BlueprintData), Member = "HasRequiredMaterials")]
-	[CalledBy(Type = typeof(BlueprintData), Member = "HasRequiredMaterials")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
 	[CallsUnknownMethods(Count = 1)]
 	private float ApplyQuantityMultiplier(float quantityRequired)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

@@ -13,11 +13,11 @@ internal struct QueryFileListOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(QueryFileListOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(QueryFileListOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(QueryFileListOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(QueryFileListOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -31,14 +31,14 @@ internal struct QueryFileListOptionsInternal : ISettable, IDisposable
 
 	[CalledBy(Type = typeof(PlayerDataStorageInterface), Member = "QueryFileList")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(QueryFileListOptionsInternal), Member = "set_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

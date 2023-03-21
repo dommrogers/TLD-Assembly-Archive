@@ -28,18 +28,18 @@ public class AchievementsResultPlugin
 	public static extern void AchievementsResult_Items_Dispose(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void AchievementsResult_Dispose(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static extern bool AchievementsResult_GetNextAsync(IntPtr res, uint maxItems, ObjectResultCallback callback, IntPtr userData);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AchievementsResultPlugin()
 	{
 	}

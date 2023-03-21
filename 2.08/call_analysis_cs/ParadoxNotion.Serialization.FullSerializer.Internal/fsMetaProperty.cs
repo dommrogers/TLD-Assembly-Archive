@@ -17,14 +17,14 @@ public class fsMetaProperty
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 28)]
+		[CallerCount(Count = 32)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 79)]
+		[CallerCount(Count = 86)]
 		private set
 		{
 		}
@@ -39,9 +39,9 @@ public class fsMetaProperty
 		{
 			return null;
 		}
-		[CallerCount(Count = 55)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 55)]
 		private set
 		{
 		}
@@ -58,18 +58,19 @@ public class fsMetaProperty
 		}
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(fsMetaType), Member = "CollectProperties")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTGetAttribute")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	internal fsMetaProperty(fsConfig config, FieldInfo field)
 	{
 	}
 
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(FieldInfo), Member = "SetValue")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
 	public void Write(object context, object value)
 	{
 	}

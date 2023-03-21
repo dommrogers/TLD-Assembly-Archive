@@ -20,8 +20,8 @@ public class ConditionSaveDataProxy
 
 	public bool m_SuppressVoiceOver;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public ConditionSaveDataProxy()
 	{
 	}

@@ -13,9 +13,9 @@ public class Action_UnloadTimeline : Action_Timeline
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void ExecuteTimelineAction()
 	{
 	}

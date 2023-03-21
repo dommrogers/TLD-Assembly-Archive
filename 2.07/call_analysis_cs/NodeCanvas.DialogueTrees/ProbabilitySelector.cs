@@ -16,10 +16,10 @@ public class ProbabilitySelector : DTNode, ISubParametersContainer, ISubTasksCon
 		public ConditionTask condition;
 
 		[CalledBy(Type = typeof(ProbabilitySelector), Member = "OnChildConnected")]
-		[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(BBParameter), Member = "ResolveReference")]
+		[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
+		[CallsUnknownMethods(Count = 2)]
 		public Option(float weightValue, IBlackboard bbValue)
 		{
 		}
@@ -48,9 +48,9 @@ public class ProbabilitySelector : DTNode, ISubParametersContainer, ISubTasksCon
 			return null;
 		}
 
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
-		[DeduplicatedMethod]
 		internal BBParameter<float> _003CGetSubParameters_003Eb__6_0(Option o)
 		{
 			return null;
@@ -63,27 +63,31 @@ public class ProbabilitySelector : DTNode, ISubParametersContainer, ISubTasksCon
 
 	public override int maxOutConnections
 	{
-		[CallerCount(Count = 16)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 16)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(TypeFullName = "System.Linq.Buffer`1", Member = ".ctor")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public Task[] GetSubTasks()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(TypeFullName = "System.Linq.Buffer`1", Member = ".ctor")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 5)]
 	public BBParameter[] GetSubParameters()
 	{
 		return null;
@@ -92,36 +96,40 @@ public class ProbabilitySelector : DTNode, ISubParametersContainer, ISubTasksCon
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
 	[Calls(Type = typeof(Option), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnChildConnected(int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnChildDisconnected(int index)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
 	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
 	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 12)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	private float GetTotal()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -130,8 +138,8 @@ public class ProbabilitySelector : DTNode, ISubParametersContainer, ISubTasksCon
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(DTNode), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public ProbabilitySelector()
 	{

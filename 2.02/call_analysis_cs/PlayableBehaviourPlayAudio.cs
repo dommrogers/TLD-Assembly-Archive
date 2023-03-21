@@ -44,21 +44,17 @@ public class PlayableBehaviourPlayAudio : PlayableBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayableHandle), Member = "GetTime")]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "TryGetTimeFromAudio")]
-	[Calls(Type = typeof(PlayableBehaviourPlayAudio), Member = "TryToSeekAudio")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayableBehaviourPlayAudio), Member = "PlayAudio")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayableHandle), Member = "GetTime")]
+	[Calls(Type = typeof(PlayableBehaviourPlayAudio), Member = "PlayAudio")]
+	[Calls(Type = typeof(PlayableBehaviourPlayAudio), Member = "TryToSeekAudio")]
+	[Calls(Type = typeof(TLD_TimelineDirector), Member = "TryGetTimeFromAudio")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public override void ProcessFrame(Playable playable, FrameData info, object playerData)
 	{
 	}
@@ -70,74 +66,74 @@ public class PlayableBehaviourPlayAudio : PlayableBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayableBehaviourPlayAudio), Member = "StopAudio")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public override void OnBehaviourPause(Playable playable, FrameData info)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(PlayableBehaviourPlayAudio), Member = "ProcessFrame")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySoundWithPositionTracking")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySoundWithPositionTracking")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private void PlayAudio(float seekTime)
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayableBehaviourPlayAudio), Member = "OnBehaviourPause")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
 	[Calls(Type = typeof(string), Member = "TrimHelper")]
 	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[CalledBy(Type = typeof(PlayableBehaviourPlayAudio), Member = "OnBehaviourPause")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void StopAudio()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "TrimHelper")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(string), Member = "TrimHelper")]
 	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private uint PostStopAudioEvent()
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CalledBy(Type = typeof(PlayableBehaviourPlayAudio), Member = "ProcessFrame")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
 	[Calls(Type = typeof(GameAudioManager), Member = "Seek")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	private bool TryToSeekAudio()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkDurationCallbackInfo), Member = "get_fEstimatedDuration")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkDurationCallbackInfo), Member = "get_fEstimatedDuration")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void AudioCallback(object in_cookie, AkCallbackType in_type, object in_info)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "Seek")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private static void AudioSeek(int audioMs, string audioEventStart, uint audioId, GameObject audioEmitterNode)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public PlayableBehaviourPlayAudio()
 	{
 	}

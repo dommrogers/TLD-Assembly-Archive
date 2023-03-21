@@ -22,9 +22,9 @@ public class AcceptInviteCallbackInfo : ICallbackInfo, ISettable
 		{
 			return default(Result);
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		private set
 		{
 		}
@@ -34,14 +34,14 @@ public class AcceptInviteCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -51,14 +51,14 @@ public class AcceptInviteCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 41)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -66,16 +66,16 @@ public class AcceptInviteCallbackInfo : ICallbackInfo, ISettable
 
 	public EpicAccountId TargetUserId
 	{
-		[CallerCount(Count = 12)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 12)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		private set
 		{
 		}
@@ -88,27 +88,27 @@ public class AcceptInviteCallbackInfo : ICallbackInfo, ISettable
 		return null;
 	}
 
-	[Calls(Type = typeof(AcceptInviteCallbackInfoInternal), Member = "get_TargetUserId")]
-	[Calls(Type = typeof(AcceptInviteCallbackInfoInternal), Member = "get_LocalUserId")]
 	[CalledBy(Type = typeof(AcceptInviteCallbackInfo), Member = "Set")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(AcceptInviteCallbackInfoInternal), Member = "get_ClientData")]
+	[Calls(Type = typeof(AcceptInviteCallbackInfoInternal), Member = "get_LocalUserId")]
+	[Calls(Type = typeof(AcceptInviteCallbackInfoInternal), Member = "get_TargetUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	internal void Set(AcceptInviteCallbackInfoInternal? other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AcceptInviteCallbackInfo), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AcceptInviteCallbackInfo()
 	{
 	}

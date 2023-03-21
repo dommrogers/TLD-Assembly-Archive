@@ -13,11 +13,11 @@ internal struct SessionModificationSetHostAddressOptionsInternal : ISettable, ID
 
 	public string HostAddress
 	{
+		[CalledBy(Type = typeof(SessionModificationSetHostAddressOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(SessionModificationSetHostAddressOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(SessionModificationSetHostAddressOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(SessionModificationSetHostAddressOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,17 +29,17 @@ internal struct SessionModificationSetHostAddressOptionsInternal : ISettable, ID
 	{
 	}
 
-	[Calls(Type = typeof(SessionModificationSetHostAddressOptionsInternal), Member = "set_HostAddress")]
 	[CalledBy(Type = typeof(SessionModification), Member = "SetHostAddress")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SessionModificationSetHostAddressOptionsInternal), Member = "set_HostAddress")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

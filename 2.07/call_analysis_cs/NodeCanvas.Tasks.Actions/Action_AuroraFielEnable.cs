@@ -1,5 +1,6 @@
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
+using UnityEngine;
 
 namespace NodeCanvas.Tasks.Actions;
 
@@ -16,12 +17,13 @@ public class Action_AuroraFielEnable : ActionTask
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Action_AuroraFielEnable), Member = "OnExecute")]
-	[Calls(Type = typeof(AuroraField), Member = "SetFieldActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(AuroraField), Member = "SetFieldActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DoWork()
 	{
 	}

@@ -11,14 +11,14 @@ public class AmplifyPassCache
 
 	internal Vector4[] Weights;
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public AmplifyPassCache()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void Destroy()
 	{
 	}

@@ -17,23 +17,23 @@ public class UvList : ScriptableObject
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RenderDynamicDecal")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "TryGetStaticDecalUvs")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RenderDynamicDecal")]
 	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public Vector4 GetUvs(string texName)
 	{
 		return default(Vector4);
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "TryGetStaticDecalUvs")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Deserialize")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool HasUvs(string texName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

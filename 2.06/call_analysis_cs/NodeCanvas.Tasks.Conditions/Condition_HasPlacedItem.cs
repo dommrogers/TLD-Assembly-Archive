@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using ParadoxNotion;
@@ -12,25 +11,26 @@ public class Condition_HasPlacedItem : ConditionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(Object), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnCustomEvent(EventData receivedEvent)
 	{
 	}
@@ -39,11 +39,11 @@ public class Condition_HasPlacedItem : ConditionTask
 	[CallerCount(Count = 0)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 6)]
 	public Condition_HasPlacedItem()
 	{
 	}

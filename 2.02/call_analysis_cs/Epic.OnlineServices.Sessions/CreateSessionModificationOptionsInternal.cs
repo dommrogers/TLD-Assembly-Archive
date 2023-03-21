@@ -25,8 +25,8 @@ internal struct CreateSessionModificationOptionsInternal : ISettable, IDisposabl
 	{
 		[CalledBy(Type = typeof(CreateSessionModificationOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -35,8 +35,8 @@ internal struct CreateSessionModificationOptionsInternal : ISettable, IDisposabl
 	public string BucketId
 	{
 		[CalledBy(Type = typeof(CreateSessionModificationOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -54,10 +54,10 @@ internal struct CreateSessionModificationOptionsInternal : ISettable, IDisposabl
 
 	public ProductUserId LocalUserId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(CreateSessionModificationOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -65,10 +65,10 @@ internal struct CreateSessionModificationOptionsInternal : ISettable, IDisposabl
 
 	public bool PresenceEnabled
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(CreateSessionModificationOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -76,39 +76,37 @@ internal struct CreateSessionModificationOptionsInternal : ISettable, IDisposabl
 
 	public string SessionId
 	{
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(CreateSessionModificationOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
+	[CalledBy(Type = typeof(CreateSessionModificationOptionsInternal), Member = "Set")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CreateSessionModificationOptionsInternal), Member = "set_SessionName")]
 	[Calls(Type = typeof(CreateSessionModificationOptionsInternal), Member = "set_BucketId")]
 	[Calls(Type = typeof(CreateSessionModificationOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(CreateSessionModificationOptionsInternal), Member = "set_PresenceEnabled")]
 	[Calls(Type = typeof(CreateSessionModificationOptionsInternal), Member = "set_SessionId")]
-	[CalledBy(Type = typeof(CreateSessionModificationOptionsInternal), Member = "Set")]
 	public void Set(CreateSessionModificationOptions other)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(CreateSessionModificationOptionsInternal), Member = "Set")]
 	[CalledBy(Type = typeof(SessionsInterface), Member = "CreateSessionModification")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CreateSessionModificationOptionsInternal), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void Dispose()
 	{
 	}

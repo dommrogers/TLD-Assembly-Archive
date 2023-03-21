@@ -10,32 +10,25 @@ public abstract class Action_Timeline : ActionTask
 
 	protected override string info
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 	}
 
-	protected abstract string TimelineActionName
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101224)]
-		get;
-	}
+	protected abstract string TimelineActionName { get; }
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract void ExecuteTimelineAction();
 
 	[DeduplicatedMethod]

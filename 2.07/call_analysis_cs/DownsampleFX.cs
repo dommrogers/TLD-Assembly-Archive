@@ -72,93 +72,93 @@ public class DownsampleFX : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(DownsampleFX), Member = "ReattachCommandBuffer")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(DownsampleFX), Member = "OnDisable")]
+	[CalledBy(Type = typeof(DownsampleFX), Member = "ReattachCommandBuffer")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
 	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	private void DetachCommandBuffer()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(DownsampleFX), Member = "DetachCommandBuffer")]
-	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(DownsampleFX), Member = "OnEnable")]
 	[CalledBy(Type = typeof(DownsampleFX), Member = "Initialize")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(DownsampleFX), Member = "DetachCommandBuffer")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	private void ReattachCommandBuffer()
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(DownsampleFX), Member = "RebuildCommandBuffer")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(DownsampleFX), Member = "ReattachCommandBuffer")]
 	[CalledBy(Type = typeof(DownsampleFX), Member = "Start")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Material), Member = "CopyPropertiesFromMaterial")]
-	[Calls(Type = typeof(Material), Member = ".ctor")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Material), Member = ".ctor")]
+	[Calls(Type = typeof(CommandBuffer), Member = "set_name")]
 	[Calls(Type = typeof(Material), Member = ".ctor")]
 	[Calls(Type = typeof(Material), Member = "set_color")]
-	[Calls(Type = typeof(CommandBuffer), Member = "set_name")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Material), Member = "CopyPropertiesFromMaterial")]
+	[Calls(Type = typeof(DownsampleFX), Member = "ReattachCommandBuffer")]
+	[Calls(Type = typeof(DownsampleFX), Member = "RebuildCommandBuffer")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 9)]
 	private void Initialize()
 	{
 	}
 
+	[CalledBy(Type = typeof(DownsampleFX), Member = "Initialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 24)]
 	[Calls(Type = typeof(GraphicsFormatUtility), Member = "GetGraphicsFormat")]
 	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
 	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
 	[Calls(Type = typeof(CommandBuffer), Member = "DrawRenderer")]
-	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowKeyNotFoundException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(DownsampleFX), Member = "Initialize")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowKeyNotFoundException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 24)]
 	[CallsUnknownMethods(Count = 30)]
 	private void RebuildCommandBuffer()
 	{
 	}
 
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void TryToFindParticleRenderers()
 	{
 	}
 
+	[CalledBy(Type = typeof(Breath), Member = "Update")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(Breath), Member = "Update")]
-	[CalledBy(Type = typeof(Breath), Member = "Update")]
-	[CalledBy(Type = typeof(Breath), Member = "Update")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void RegisterParticleSystem(ParticleSystem particleSystem)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void ClearParticleRenderers()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public DownsampleFX()
 	{
 	}

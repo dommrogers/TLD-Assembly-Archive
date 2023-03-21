@@ -7,8 +7,8 @@ public class ToolbarMenuItemAttribute : Attribute
 {
 	public readonly string path;
 
-	[CallerCount(Count = 279)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 282)]
 	public ToolbarMenuItemAttribute(string path)
 	{
 	}

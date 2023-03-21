@@ -9,11 +9,10 @@ public class ForceFinishGraph : ActionTask
 {
 	public CompactStatus finishStatus;
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Graph), Member = "Stop")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
 using TLD.Cooking;
+using TLD.SaveState;
 using TLD.UI;
 using TLD.UI.Generics;
 using UnityEngine;
@@ -134,37 +135,52 @@ public class Panel_Cooking : Panel_AutoReferenced
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallsUnknownMethods(Count = 6)]
-		[CalledBy(Type = typeof(Panel_Cooking), Member = "OnSortChange")]
-		[CalledBy(Type = typeof(Panel_Cooking), Member = "MakeDefaultSelections")]
-		[CalledBy(Type = typeof(Panel_Cooking), Member = "ScrollUp")]
-		[CalledBy(Type = typeof(Panel_Cooking), Member = "ScrollDown")]
-		[CalledBy(Type = typeof(Panel_Cooking), Member = "OnScrollItemSelect")]
 		[CalledBy(Type = typeof(Panel_Cooking), Member = "Enable")]
+		[CalledBy(Type = typeof(Panel_Cooking), Member = "OnScrollItemSelect")]
+		[CalledBy(Type = typeof(Panel_Cooking), Member = "ScrollDown")]
+		[CalledBy(Type = typeof(Panel_Cooking), Member = "ScrollUp")]
+		[CalledBy(Type = typeof(Panel_Cooking), Member = "MakeDefaultSelections")]
+		[CalledBy(Type = typeof(Panel_Cooking), Member = "OnSortChange")]
+		[CallerCount(Count = 6)]
+		[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
+		[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
 		[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
 		[Calls(Type = typeof(Transform), Member = "set_parent")]
-		[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
-		[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 		[CallsDeduplicatedMethods(Count = 4)]
-		[CallerCount(Count = 6)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsUnknownMethods(Count = 6)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Cooking), Member = "OnSortChange")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "OnSortChange")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void Initialize()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
+	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "ScrollDown")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "ScrollUp")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
 	[Calls(Type = typeof(Panel_Cooking), Member = "Refresh")]
 	[Calls(Type = typeof(InputManager), Member = "GetInventorySortPressed")]
 	[Calls(Type = typeof(Panel_Cooking), Member = "OnSortChange")]
@@ -175,66 +191,48 @@ public class Panel_Cooking : Panel_AutoReferenced
 	[Calls(Type = typeof(InputManager), Member = "GetFeedFireTakeTorchePressed")]
 	[Calls(Type = typeof(Panel_Cooking), Member = "OnDoActionSecondary")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Panel_Cooking), Member = "ExitCookingInterface")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Panel_Cooking), Member = "ScrollDown")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "ScrollUp")]
-	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "ScrollUp")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
-	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "ScrollDown")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Cooking), Member = "RefreshFireDurationLabel")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "UpdateGearItem")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "RefreshSnow")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "Enable")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Panel_Cooking), Member = "RefreshWater")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "RefreshSnow")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "RefreshFireDurationLabel")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "UpdateGearItem")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Refresh()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "Refresh")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "set_m_SelectedFoodIndex")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "RefreshFoodList")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "UpdateSortLabels")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "OnSortChange")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "OnSortChange")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(GearItem), Member = "PlayPickUpClip")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "UpdateSortLabels")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "RefreshFoodList")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "set_m_SelectedFoodIndex")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "Refresh")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "UpdateButtonLegend")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public override void Enable(bool enable)
 	{
 	}
@@ -251,35 +249,35 @@ public class Panel_Cooking : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Cooking), Member = "OnSortChange")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputManager), Member = "GetInventorySortPressed")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "OnSortChange")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateSortNavigation()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "Enable")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 7)]
 	private void UpdateSortLabels()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "Refresh")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(Fire), Member = "GetHeatIncreaseText")]
-	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Fire), Member = "GetHeatIncreaseText")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[CallsUnknownMethods(Count = 3)]
 	private void RefreshFireDurationLabel()
 	{
 	}
@@ -291,123 +289,119 @@ public class Panel_Cooking : Panel_AutoReferenced
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateGamepadControls")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateGamepadControls")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Cooking), Member = "OnCook")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnDoAction()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateGamepadControls")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "ExitCookingInterface")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateGamepadControls")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "ExitCookingInterface")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnDoActionSecondary()
 	{
 	}
 
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnDoAction")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "ExitCookingInterface")]
-	[Calls(Type = typeof(CookingPotItem), Member = "IsDummyPot")]
-	[Calls(Type = typeof(CookingPotItem), Member = "StartCooking")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "ExitCookingInterface")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQualityString")]
-	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "GetLiquidQualityString")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "ExitCookingInterface")]
+	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[Calls(Type = typeof(CookingPotItem), Member = "StartCooking")]
+	[Calls(Type = typeof(CookingPotItem), Member = "IsDummyPot")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void OnCook()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "ExitCookingInterface")]
-	[Calls(Type = typeof(CookingPotItem), Member = "StartBoilingWater")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "GetBoilableWaterSupply")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Cooking), Member = "GetBoilableWaterSupply")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
 	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[Calls(Type = typeof(CookingPotItem), Member = "StartBoilingWater")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "ExitCookingInterface")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnBoil()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "GetBoilableWaterSupply")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Cooking), Member = "GetBoilableWaterSupply")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(Panel_Cooking), Member = "ClampWaterBoilAmount")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnBoilUp()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "ClampWaterBoilAmount")]
-	[Calls(Type = typeof(Panel_PickWater), Member = "ReduceToNearestDeltaMultiple")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Cooking), Member = "GetBoilableWaterSupply")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[Calls(Type = typeof(Panel_PickWater), Member = "ReduceToNearestDeltaMultiple")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "ClampWaterBoilAmount")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	public void OnBoilDown()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Cooking), Member = "ExitCookingInterface")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(CookingPotItem), Member = "SetUpWaterMesh")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
 	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[Calls(Type = typeof(CookingPotItem), Member = "SetUpWaterMesh")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "ExitCookingInterface")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnMeltSnow()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(Panel_Cooking), Member = "ClampMeltSnowAmount")]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnMeltSnowUp()
 	{
 	}
@@ -421,32 +415,32 @@ public class Panel_Cooking : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnDoWater()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
 	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnWaterDown()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnWaterUp()
 	{
 	}
@@ -457,30 +451,29 @@ public class Panel_Cooking : Panel_AutoReferenced
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "CookingPotWaterCallback")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "CookingPotCookCallback")]
+	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "CookingPotWaterCallback")]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "DoFirePickerAction")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetFireContainer(GameObject go)
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_PassTime), Member = "OnExecute")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "CloseOverlaysDueToSceneLoad")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnMeltSnow")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnBoil")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnCook")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnCook")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnDoActionSecondary")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
 	[CalledBy(Type = typeof(Rest.PassTimeHelper), Member = "PassTime")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnDoActionSecondary")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnCook")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnBoil")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnMeltSnow")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "CloseOverlaysDueToSceneLoad")]
+	[CalledBy(Type = typeof(Action_PassTime), Member = "OnExecute")]
 	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void ExitCookingInterface()
 	{
 	}
@@ -492,174 +485,147 @@ public class Panel_Cooking : Panel_AutoReferenced
 	}
 
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[Calls(Type = typeof(Panel_Cooking), Member = "set_m_SelectedFoodIndex")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ScrollDown()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[Calls(Type = typeof(Panel_Cooking), Member = "set_m_SelectedFoodIndex")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
 	private void ScrollUp()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateGearItem")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnWaterUp")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnWaterDown")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnDoWater")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnDoAction")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "Refresh")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "set_m_SelectedFoodIndex")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
-	[CallerCount(Count = 10)]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "Refresh")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnDoAction")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnDoWater")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnWaterDown")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnWaterUp")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateGearItem")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateButtonLegend")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
 	private bool SelectedFoodIsSnow()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnDoWater")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateGearItem")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnWaterUp")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnWaterDown")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnDoAction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "set_m_SelectedFoodIndex")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
-	[CallerCount(Count = 10)]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "Refresh")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnDoAction")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnDoWater")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnWaterDown")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnWaterUp")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateGearItem")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateButtonLegend")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool SelectedFoodIsWater()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateGearItem")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "ExitCookingInterface")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnDoAction")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnCook")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnDoAction")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnDoAction")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallerCount(Count = 13)]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "ExitCookingInterface")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateGearItem")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateButtonLegend")]
+	[CallerCount(Count = 13)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private GearItem GetSelectedFood()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "ClampWaterBoilAmount")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "RefreshWater")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "RefreshFoodList")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnBoilDown")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnBoil")]
-	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnBoilUp")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnBoilDown")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "RefreshFoodList")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "RefreshWater")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "ClampWaterBoilAmount")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
+	[CallsUnknownMethods(Count = 2)]
 	private GameObject GetBoilableWaterSupply()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(CookingItemListEntry), Member = "SetGearIconTexture")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(CookingItemListEntry), Member = "SetGearIconTexture")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
-	[Calls(Type = typeof(CookingItemListEntry), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnSortChange")]
-	[CallsUnknownMethods(Count = 27)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 15)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Cooking), Member = "HaveEnoughUnitsToStartCooking")]
 	[Calls(Type = typeof(CookingPotItem), Member = "CanCookItem")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(Panel_Cooking), Member = "GetBoilableWaterSupply")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
-	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
+	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[Calls(Type = typeof(CookingItemListEntry), Member = "SetGearIconTexture")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
+	[Calls(Type = typeof(CookingItemListEntry), Member = "Update")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 25)]
 	private void RefreshFoodList()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	private void RefreshFood()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Cooking), Member = "ClampWaterBoilAmount")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "Refresh")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "GetBoilableWaterSupply")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Cooking), Member = "GetBoilableWaterSupply")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "ClampWaterBoilAmount")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void RefreshWater()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "Refresh")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_Cooking), Member = "ClampMeltSnowAmount")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private void RefreshSnow()
 	{
 	}
@@ -670,155 +636,134 @@ public class Panel_Cooking : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Cooking), Member = "RefreshFoodList")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateSortNavigation")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "Initialize")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "set_m_SelectedFoodIndex")]
-	[Calls(Type = typeof(UIButton), Member = "set_normalSprite")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UIButtonColor), Member = "ResetDefaultColor")]
-	[Calls(Type = typeof(UIButton), Member = "set_normalSprite")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateSortNavigation")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UIButton), Member = "set_normalSprite")]
+	[Calls(Type = typeof(UIButtonColor), Member = "ResetDefaultColor")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "RefreshFoodList")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "set_m_SelectedFoodIndex")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnSortChange(UIButton sortButtonClicked)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnMeltSnowUp")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnMeltSnowDown")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "RefreshSnow")]
 	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnMeltSnowUp")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ClampMeltSnowAmount()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Cooking), Member = "GetBoilableWaterSupply")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnBoilUp")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnBoilDown")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "RefreshWater")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Cooking), Member = "GetBoilableWaterSupply")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[CallsUnknownMethods(Count = 1)]
 	private void ClampWaterBoilAmount()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 3)]
 	private bool PlayerHasEnoughPotableWaterForCookingItem(Cookable cookable)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "RefreshFoodList")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "RefreshFoodList")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool HaveEnoughUnitsToStartCooking(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "Refresh")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(CookingPotItem), Member = "GetCookedHp")]
+	[Calls(Type = typeof(Cookable), Member = "GetCookTimeMinutesForCaloriesRemaining")]
+	[Calls(Type = typeof(CookingPotItem), Member = "GetTotalCookMultiplier")]
+	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
+	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
 	[Calls(Type = typeof(CookingPotItem), Member = "GetTotalBoilMultiplier")]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
 	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(GearItem), Member = "get_Description")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetWeightTwoDecimalPlacesWithUnitsString")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "Refresh")]
-	[CallsUnknownMethods(Count = 8)]
 	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
-	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CookingPotItem), Member = "GetCookedHp")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Cookable), Member = "GetCookTimeMinutesForCaloriesRemaining")]
-	[Calls(Type = typeof(CookingPotItem), Member = "GetTotalCookMultiplier")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CookingPotItem), Member = "GetTotalBoilMultiplier")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Utils), Member = "GetWeightTwoDecimalPlacesWithUnitsString")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private void UpdateGearItem()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(CookingPotItem), Member = "GetCookedHp")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CookingPotItem), Member = "GetCookedHp")]
+	[CallsUnknownMethods(Count = 1)]
 	private static float GetCookedItemConditionPercent(GearItem rawItem)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UIButtonColor), Member = "UpdateColor")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	private void EnableActionButton(bool enabled)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "Enable")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UIButtonColor), Member = "UpdateColor")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "Enable")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsWater")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "SelectedFoodIsSnow")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "GetSelectedFood")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UIButtonColor), Member = "UpdateColor")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateButtonLegend()
 	{
 	}
 
-	[Calls(Type = typeof(InputManager), Member = "GetFeedFireTakeTorchePressed")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "OnDoAction")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "OnDoActionSecondary")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "OnDoAction")]
+	[Calls(Type = typeof(InputManager), Member = "GetFeedFireTakeTorchePressed")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "OnDoActionSecondary")]
 	private void UpdateGamepadControls()
 	{
 	}

@@ -13,33 +13,33 @@ internal struct DumpSessionStateOptionsInternal : ISettable, IDisposable
 
 	public string SessionName
 	{
+		[CalledBy(Type = typeof(DumpSessionStateOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(DumpSessionStateOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(DumpSessionStateOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(DumpSessionStateOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(DumpSessionStateOptionsInternal), Member = "set_SessionName")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DumpSessionStateOptionsInternal), Member = "set_SessionName")]
 	public void Set(DumpSessionStateOptions other)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(DumpSessionStateOptionsInternal), Member = "set_SessionName")]
 	[CalledBy(Type = typeof(SessionsInterface), Member = "DumpSessionState")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DumpSessionStateOptionsInternal), Member = "set_SessionName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

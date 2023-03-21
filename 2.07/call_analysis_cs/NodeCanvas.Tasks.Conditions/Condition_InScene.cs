@@ -17,14 +17,14 @@ public class Condition_InScene : ConditionTask
 		}
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "CompareSceneNames")]
-	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
+	[Calls(Type = typeof(GameManager), Member = "CompareSceneNames")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

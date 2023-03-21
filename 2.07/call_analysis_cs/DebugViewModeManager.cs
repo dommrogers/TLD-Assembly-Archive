@@ -28,30 +28,27 @@ public class DebugViewModeManager : MonoBehaviour
 		return default(DebugViewMode);
 	}
 
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_debug_view_mode")]
-	[CalledBy(Type = typeof(DebugViewModeManager), Member = "OnDisable")]
 	[CalledBy(Type = typeof(DebugViewModeManager), Member = "OnEnable")]
-	[Calls(Type = typeof(DebugViewModeManager), Member = "ToggleTexelDensity")]
-	[Calls(Type = typeof(DebugViewModeManager), Member = "ToggleLightingOnly")]
-	[Calls(Type = typeof(DebugViewModeManager), Member = "ToggleLightingOnly")]
-	[Calls(Type = typeof(DebugViewModeManager), Member = "ToggleTexelDensity")]
-	[Calls(Type = typeof(DebugViewModeManager), Member = "ToggleDiffuseOnly")]
+	[CalledBy(Type = typeof(DebugViewModeManager), Member = "OnDisable")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_debug_view_mode")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(DebugViewModeManager), Member = "ToggleDiffuseOnly")]
+	[Calls(Type = typeof(DebugViewModeManager), Member = "ToggleLightingOnly")]
+	[Calls(Type = typeof(DebugViewModeManager), Member = "ToggleTexelDensity")]
 	public void SetMode(DebugViewMode mode)
 	{
 	}
 
-	[Calls(Type = typeof(DebugViewModeManager), Member = "ToggleTexelDensity")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DebugViewModeManager), Member = "ToggleDiffuseOnly")]
 	[Calls(Type = typeof(DebugViewModeManager), Member = "ToggleLightingOnly")]
+	[Calls(Type = typeof(DebugViewModeManager), Member = "ToggleTexelDensity")]
 	private void ToggleMode(DebugViewMode mode, bool isEnabled)
 	{
 	}
 
-	[Calls(Type = typeof(DebugViewModeManager), Member = "SetMode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DebugViewModeManager), Member = "SetMode")]
 	private void OnEnable()
 	{
 	}
@@ -62,25 +59,23 @@ public class DebugViewModeManager : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(DebugViewModeManager), Member = "SetMode")]
+	[CalledBy(Type = typeof(DebugViewModeManager), Member = "ToggleMode")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Camera), Member = "ResetReplacementShader")]
 	[Calls(Type = typeof(Camera), Member = "SetReplacementShader")]
-	[CalledBy(Type = typeof(DebugViewModeManager), Member = "SetMode")]
-	[CalledBy(Type = typeof(DebugViewModeManager), Member = "SetMode")]
-	[CalledBy(Type = typeof(DebugViewModeManager), Member = "ToggleMode")]
 	[CallsUnknownMethods(Count = 1)]
 	private void ToggleDiffuseOnly(bool isOn)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(DebugViewModeManager), Member = "SetMode")]
 	[CalledBy(Type = typeof(DebugViewModeManager), Member = "ToggleMode")]
-	[CalledBy(Type = typeof(DebugViewModeManager), Member = "SetMode")]
-	[CalledBy(Type = typeof(DebugViewModeManager), Member = "SetMode")]
-	[Calls(Type = typeof(CameraEffects), Member = "ConfigureSSAO")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(CameraEffects), Member = "ConfigureSSAO")]
 	[Calls(Type = typeof(Camera), Member = "SetReplacementShader")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private void ToggleLightingOnly(bool isOn)
 	{
 	}
@@ -94,23 +89,21 @@ public class DebugViewModeManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public static float GetTexelDensityTarget()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[CallsUnknownMethods(Count = 8)]
+	[CalledBy(Type = typeof(DebugViewModeManager), Member = "SetMode")]
 	[CalledBy(Type = typeof(DebugViewModeManager), Member = "ToggleMode")]
-	[CalledBy(Type = typeof(DebugViewModeManager), Member = "SetMode")]
-	[CalledBy(Type = typeof(DebugViewModeManager), Member = "SetMode")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "EnableWeatherSystems")]
-	[Calls(Type = typeof(Wind), Member = "StartPhaseImmediate")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Weather), Member = "DisableWindEffect")]
-	[Calls(Type = typeof(Camera), Member = "SetReplacementShader")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "EnableWeatherSystems")]
-	[Calls(Type = typeof(Weather), Member = "EnableWindEffect")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Weather), Member = "EnableWindEffect")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "EnableWeatherSystems")]
+	[Calls(Type = typeof(Camera), Member = "SetReplacementShader")]
+	[Calls(Type = typeof(Weather), Member = "DisableWindEffect")]
 	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetImmediate")]
+	[Calls(Type = typeof(Wind), Member = "StartPhaseImmediate")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private void ToggleTexelDensity(bool isOn)
 	{
 	}

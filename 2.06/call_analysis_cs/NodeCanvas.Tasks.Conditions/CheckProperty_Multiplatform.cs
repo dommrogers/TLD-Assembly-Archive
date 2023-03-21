@@ -18,8 +18,8 @@ public class CheckProperty_Multiplatform : ConditionTask
 
 	private MethodInfo targetMethod
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -29,9 +29,9 @@ public class CheckProperty_Multiplatform : ConditionTask
 	public override Type agentType
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -40,27 +40,27 @@ public class CheckProperty_Multiplatform : ConditionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
-		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
-		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
-		[CallsDeduplicatedMethods(Count = 5)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
+		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
 		[Calls(Type = typeof(Task), Member = "get_agentInfo")]
+		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 5)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(CheckProperty_Multiplatform), Member = "SetMethod")]
 	[Calls(Type = typeof(Task), Member = "Error")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnValidate(ITaskSystem ownerSystem)
 	{
 	}
@@ -71,21 +71,21 @@ public class CheckProperty_Multiplatform : ConditionTask
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Task), Member = "get_agent")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Task), Member = "get_agent")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 5)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(BBObjectParameter), Member = "SetType")]
 	[CalledBy(Type = typeof(CheckProperty_Multiplatform), Member = "OnValidate")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BBObjectParameter), Member = "SetType")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	private void SetMethod(MethodInfo method)
 	{

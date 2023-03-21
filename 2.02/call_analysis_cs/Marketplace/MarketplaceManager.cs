@@ -16,11 +16,11 @@ public class MarketplaceManager
 	[CallsUnknownMethods(Count = 1)]
 	public static bool AmFullyInitialized()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public MarketplaceManager()
 	{
 	}

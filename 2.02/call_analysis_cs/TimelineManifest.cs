@@ -6,15 +6,16 @@ public class TimelineManifest : ScriptableObject
 {
 	public List<TimelineManifestEntry> m_List;
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CalledBy(Type = typeof(TimelineRef._003CLoad_003Ed__17), Member = "MoveNext")]
+	[CalledBy(TypeFullName = "TimelineRef.<Load>d__17", Member = "MoveNext")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool TryGetEntry(string timelineFilenameNoExt, out TimelineManifestEntry resultTimelineManifestEntry)
 	{
 		resultTimelineManifestEntry = null;
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

@@ -20,8 +20,8 @@ public class EnergyBoostParams
 
 	public float m_HeadachePulseFrequencyEnd;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public EnergyBoostParams()
 	{
 	}

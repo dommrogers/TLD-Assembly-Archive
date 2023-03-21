@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Gameplay;
+using TLD.SaveState;
 using TLD.Stats;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -32,8 +32,8 @@ public class RegionSpecification : ZoneSpecification
 
 	public string RegionDescription
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -42,9 +42,9 @@ public class RegionSpecification : ZoneSpecification
 
 	public string LocalizedRegionDescription
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Localization), Member = "Get")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -57,7 +57,7 @@ public class RegionSpecification : ZoneSpecification
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -68,7 +68,7 @@ public class RegionSpecification : ZoneSpecification
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -78,21 +78,21 @@ public class RegionSpecification : ZoneSpecification
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public SceneSet GetIndoorSpawnScene(int index)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public AsyncOperationHandle<Texture2D> GetMiniMapTextureAsync()
 	{
 		return default(AsyncOperationHandle<Texture2D>);
@@ -113,17 +113,18 @@ public class RegionSpecification : ZoneSpecification
 		return default(AsyncOperationHandle<GameObject>);
 	}
 
-	[CalledBy(Type = typeof(WorldMapChangedEvent), Member = "DoesMapHaveUnlockedRegions")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SandboxBaseConfig), Member = "GetRandomRegionFromAllAvailable")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_unlock_region")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateDisplayedRegions")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_unlock_region")]
+	[CalledBy(Type = typeof(WorldMapChangedEvent), Member = "DoesMapHaveUnlockedRegions")]
+	[CalledBy(Type = typeof(SandboxBaseConfig), Member = "GetRandomRegionFromAllAvailable")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsUnlocked()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -138,28 +139,30 @@ public class RegionSpecification : ZoneSpecification
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(RegionSpecification), Member = "Visit")]
-	[CalledBy(Type = typeof(GameManager._003C_003Ec), Member = "<LoadSceneAsynchronously>b__294_0")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_unlock_region")]
+	[CalledBy(TypeFullName = "GameManager.<>c", Member = "<LoadSceneAsynchronously>b__294_0")]
+	[CalledBy(Type = typeof(RegionSpecification), Member = "Visit")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaybeUnlock(UnlockMode reason)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool HasBeenVisited()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public RegionSpecification()
 	{
 	}

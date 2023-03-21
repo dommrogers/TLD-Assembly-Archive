@@ -7,8 +7,8 @@ public abstract class RichPresenceProviderBase : IRichPresenceProvider
 
 	private bool m_PresenceHasChanged;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public virtual void Initialize()
 	{
 	}
@@ -25,8 +25,8 @@ public abstract class RichPresenceProviderBase : IRichPresenceProvider
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(RichPresenceProviderBase), Member = "UpdateRichPresence")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public virtual void Update()
 	{
 	}
@@ -37,19 +37,16 @@ public abstract class RichPresenceProviderBase : IRichPresenceProvider
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101262)]
 	protected abstract bool IsUserSignedOn();
 
-	[CallerCount(Count = 101262)]
-	[DeduplicatedMethod]
 	protected abstract void ChangePresence();
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
 	[CalledBy(Type = typeof(RichPresenceProviderBase), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected void UpdateRichPresence()
 	{

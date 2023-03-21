@@ -9,16 +9,16 @@ public class EventData
 
 	public string name
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 98)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 113)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 265)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 269)]
 		private set
 		{
 		}
@@ -42,7 +42,7 @@ public class EventData
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 265)]
+	[CallerCount(Count = 269)]
 	public EventData(string name)
 	{
 	}
@@ -53,12 +53,12 @@ public class EventData<T> : EventData
 
 	public new T value
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		get
 		{
-			return (T)null;
+			return default(T);
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -77,8 +77,8 @@ public class EventData<T> : EventData
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public EventData(string name, T value)
 		: base(null)

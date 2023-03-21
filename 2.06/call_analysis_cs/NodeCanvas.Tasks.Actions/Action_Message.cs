@@ -22,25 +22,25 @@ public class Action_Message : ActionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(float), Member = "ToString")]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowDebugMissionText")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Panel_HUD), Member = "RefreshDebugMissionText")]
-	[Calls(Type = typeof(NCUtils), Member = "SubstituteVarsInStrings")]
-	[Calls(Type = typeof(string), Member = "Split")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(Type = typeof(NCUtils), Member = "SubstituteVarsInStrings")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowDebugMissionText")]
+	[Calls(Type = typeof(Panel_HUD), Member = "RefreshDebugMissionText")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}
@@ -52,16 +52,18 @@ public class Action_Message : ActionTask
 	{
 	}
 
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowDebugMissionText")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowDebugMissionText")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnStop()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 7)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsUnknownMethods(Count = 6)]
 	public Action_Message()
 	{
 	}

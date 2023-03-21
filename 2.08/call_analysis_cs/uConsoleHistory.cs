@@ -21,70 +21,70 @@ public class uConsoleHistory
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void SetMaxNumberOfLines(int count)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(uConsoleInput), Member = "RecallCommandUp")]
 	[CalledBy(Type = typeof(uConsoleInput), Member = "RecallCommandDown")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "RecallCommandUp")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static string GetLine(int index)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(uConsoleInput), Member = "RecallCommandUp")]
 	[CalledBy(Type = typeof(uConsoleInput), Member = "RecallCommandDown")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "RecallCommandUp")]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "RecallCommandUp")]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "RecallCommandDown")]
 	[CallsUnknownMethods(Count = 1)]
 	public static int GetNumLines()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(uConsole), Member = "RunCommand")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void Add(string text)
 	{
 	}
 
+	[CalledBy(Type = typeof(uConsole), Member = "OnApplicationQuit")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Directory), Member = "Exists")]
 	[Calls(Type = typeof(Directory), Member = "CreateDirectory")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(StreamWriter), Member = ".ctor")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(uConsole), Member = "OnApplicationQuit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 3)]
 	public static void Save()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(uConsole), Member = "Start")]
-	[Calls(Type = typeof(StreamReader), Member = ".ctor")]
-	[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Directory), Member = "Exists")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(File), Member = "Exists")]
+	[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
+	[Calls(Type = typeof(StreamReader), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void Restore()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public uConsoleHistory()
 	{
 	}

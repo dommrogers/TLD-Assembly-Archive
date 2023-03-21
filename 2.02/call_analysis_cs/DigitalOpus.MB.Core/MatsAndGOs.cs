@@ -11,7 +11,7 @@ public class MatsAndGOs
 	public List<GameObject> gos;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public MatsAndGOs()
 	{
 	}

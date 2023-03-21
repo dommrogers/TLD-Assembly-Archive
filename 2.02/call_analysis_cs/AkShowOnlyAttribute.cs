@@ -4,7 +4,7 @@ using UnityEngine;
 public class AkShowOnlyAttribute : PropertyAttribute
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AkShowOnlyAttribute()
 	{
 	}

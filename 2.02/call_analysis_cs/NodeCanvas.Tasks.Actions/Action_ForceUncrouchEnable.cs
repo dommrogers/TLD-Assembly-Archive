@@ -8,12 +8,13 @@ public class Action_ForceUncrouchEnable : ActionTask
 {
 	public BBParameter<bool> isLocked;
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouch")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouch")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	protected override void OnExecute()
 	{
 	}

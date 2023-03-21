@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -17,8 +18,8 @@ public class MultipleChoiceNode : DTNode, ISubTasksContainer
 
 		public ConditionTask condition;
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public Choice()
 		{
 		}
@@ -37,7 +38,7 @@ public class MultipleChoiceNode : DTNode, ISubTasksContainer
 		public static Func<Choice, ConditionTask> _003C_003E9__4_0;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
@@ -58,16 +59,16 @@ public class MultipleChoiceNode : DTNode, ISubTasksContainer
 		public int index;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass10_0()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(DialogueTree), Member = "Continue")]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+		[Calls(Type = typeof(DialogueTree), Member = "Continue")]
+		[CallsUnknownMethods(Count = 1)]
 		internal void _003COnOptionSelected_003Eb__0()
 		{
 		}
@@ -86,7 +87,7 @@ public class MultipleChoiceNode : DTNode, ISubTasksContainer
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -96,58 +97,56 @@ public class MultipleChoiceNode : DTNode, ISubTasksContainer
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public Task[] GetSubTasks()
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
+	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
+	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
 	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[Calls(Type = typeof(DialogueTree), Member = "GetParameterByID")]
+	[Calls(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
+	[Calls(Type = typeof(MultipleChoiceRequestInfo), Member = ".ctor")]
+	[Calls(Type = typeof(DialogueTree), Member = "RequestMultipleChoices")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(Graph), Member = "Stop")]
-	[Calls(Type = typeof(DialogueTree), Member = "RequestMultipleChoices")]
-	[CallsUnknownMethods(Count = 36)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[Calls(Type = typeof(Node), Member = "Error")]
-	[Calls(Type = typeof(MultipleChoiceRequestInfo), Member = ".ctor")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
-	[Calls(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
-	[Calls(Type = typeof(DialogueTree), Member = "GetParameterByID")]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
-	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
+	[CallsUnknownMethods(Count = 36)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
 	}
 
-	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(DialogueTree), Member = "RequestSubtitles")]
-	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
-	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
+	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
+	[Calls(Type = typeof(DialogueTree), Member = "RequestSubtitles")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 25)]
 	private void OnOptionSelected(int index)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(DTNode), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public MultipleChoiceNode()
 	{

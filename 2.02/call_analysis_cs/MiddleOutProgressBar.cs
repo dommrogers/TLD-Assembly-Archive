@@ -9,19 +9,17 @@ public class MiddleOutProgressBar : MonoBehaviour
 
 	public float m_Value;
 
-	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetValue(float newValue)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
 	[CallsUnknownMethods(Count = 2)]
 	public void IncrementValue(float increment)
 	{

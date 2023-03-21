@@ -14,22 +14,21 @@ public class CarAnimator : MonoBehaviour
 
 	public float rotationOffset;
 
-	[Calls(Type = typeof(SplineUtils), Member = "WrapValue")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SplineUtils), Member = "WrapValue")]
 	[Calls(Type = typeof(Spline), Member = "GetOrientationOnSpline")]
 	[Calls(Type = typeof(Spline), Member = "GetPositionOnSpline")]
 	[Calls(Type = typeof(Transform), Member = "get_right")]
 	[Calls(Type = typeof(Spline), Member = "GetCustomValueOnSpline")]
-	[CallsUnknownMethods(Count = 12)]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(SplineUtils), Member = "WrapValue")]
+	[CallsUnknownMethods(Count = 12)]
 	private void Update()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public CarAnimator()
 	{
 	}

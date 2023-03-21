@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -52,179 +51,135 @@ public class EffectsControllerFire : MonoBehaviour
 
 	private Dictionary<ParticleSystem, bool> m_ParticlePlayStates;
 
-	[Calls(Type = typeof(EffectsControllerFire), Member = "Initialize")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "Initialize")]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(EffectsControllerFire), Member = "Initialize")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "Initialize")]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(ParticleSystem), Member = "Play")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
 	[CalledBy(Type = typeof(Fire), Member = "Deserialize")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CalledBy(Type = typeof(Fire), Member = "Update")]
-	[CalledBy(Type = typeof(Fire), Member = "Update")]
 	[CalledBy(Type = typeof(Fire), Member = "Update")]
 	[CalledBy(Type = typeof(Fire), Member = "ExitFireStarting")]
 	[CalledBy(Type = typeof(Fire), Member = "TurnOn")]
 	[CalledBy(Type = typeof(Fire), Member = "UpdateFireStage")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallerCount(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
 	[Calls(Type = typeof(EffectsControllerFire), Member = "Initialize")]
-	[CalledBy(Type = typeof(Fire), Member = "UpdateFireStage")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
 	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public void TriggerStage(FireState curState, bool shouldPlay, bool stopOtherStages = false)
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(EffectsControllerFire), Member = "Initialize")]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void TriggerFlareupLarge()
 	{
 	}
 
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "Initialize")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "Initialize")]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
 	public void StopAllStageFX()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Fire), Member = "TurnOffImmediate")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
 	[CalledBy(Type = typeof(Fire), Member = "TurnOff")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Fire), Member = "TurnOffImmediate")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "Initialize")]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
 	[Calls(Type = typeof(EffectsControllerFire), Member = "TriggerParticleSystems")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void StopAllFX()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
 	[CalledBy(Type = typeof(Fire), Member = "Update")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
 	[CallsDeduplicatedMethods(Count = 19)]
+	[CallsUnknownMethods(Count = 21)]
 	public void DeactivateAllFX()
 	{
 	}
 
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[CallsUnknownMethods(Count = 41)]
-	[CalledBy(Type = typeof(Fire), Member = "AddFuel")]
-	[CalledBy(Type = typeof(EffectsControllerFire), Member = "StopAllFX")]
-	[CalledBy(Type = typeof(EffectsControllerFire), Member = "TriggerFlareupLarge")]
-	[CalledBy(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
-	[CalledBy(Type = typeof(EffectsControllerFire), Member = "Start")]
 	[CalledBy(Type = typeof(EffectsControllerFire), Member = "Awake")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
+	[CalledBy(Type = typeof(EffectsControllerFire), Member = "Start")]
+	[CalledBy(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
+	[CalledBy(Type = typeof(EffectsControllerFire), Member = "TriggerFlareupLarge")]
 	[CalledBy(Type = typeof(EffectsControllerFire), Member = "StopAllStageFX")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[CallsDeduplicatedMethods(Count = 20)]
-	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
+	[CalledBy(Type = typeof(EffectsControllerFire), Member = "StopAllFX")]
+	[CalledBy(Type = typeof(Fire), Member = "AddFuel")]
 	[CallerCount(Count = 7)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
+	[Calls(Type = typeof(EffectsControllerFire), Member = "LocalPrint")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[CallsDeduplicatedMethods(Count = 20)]
+	[CallsUnknownMethods(Count = 41)]
 	private void Initialize()
 	{
 	}
 
-	[CalledBy(Type = typeof(Fire), Member = "AddFuel")]
 	[CalledBy(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
-	[CalledBy(Type = typeof(Fire), Member = "AddFuel")]
-	[CalledBy(Type = typeof(Fire), Member = "AddFuel")]
-	[CalledBy(Type = typeof(EffectsControllerFire), Member = "Initialize")]
-	[CalledBy(Type = typeof(EffectsControllerFire), Member = "StopAllFX")]
-	[CalledBy(Type = typeof(EffectsControllerFire), Member = "StopAllStageFX")]
 	[CalledBy(Type = typeof(EffectsControllerFire), Member = "TriggerFlareupLarge")]
-	[CalledBy(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
+	[CalledBy(Type = typeof(EffectsControllerFire), Member = "StopAllStageFX")]
+	[CalledBy(Type = typeof(EffectsControllerFire), Member = "StopAllFX")]
 	[CalledBy(Type = typeof(EffectsControllerFire), Member = "DeactivateAllFX")]
-	[CalledBy(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
-	[CalledBy(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
-	[CalledBy(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
-	[CalledBy(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
-	[CalledBy(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Format")]
+	[CalledBy(Type = typeof(EffectsControllerFire), Member = "Initialize")]
+	[CalledBy(Type = typeof(Fire), Member = "AddFuel")]
 	[CallerCount(Count = 16)]
-	[CalledBy(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
 	private void LocalPrint(string text)
 	{
 	}
 
+	[CalledBy(Type = typeof(EffectsControllerFire), Member = "TriggerStage")]
+	[CalledBy(Type = typeof(EffectsControllerFire), Member = "TriggerFlareupLarge")]
+	[CalledBy(Type = typeof(EffectsControllerFire), Member = "StopAllStageFX")]
+	[CalledBy(Type = typeof(EffectsControllerFire), Member = "StopAllFX")]
+	[CalledBy(Type = typeof(Fire), Member = "AddFuel")]
 	[CallerCount(Count = 25)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(ParticleSystem), Member = "Stop")]
 	[Calls(Type = typeof(ParticleSystem), Member = "Play")]
-	[CallsUnknownMethods(Count = 6)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void TriggerParticleSystems(List<ParticleSystem> particleSystems, bool shouldPlay)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public EffectsControllerFire()
 	{
 	}

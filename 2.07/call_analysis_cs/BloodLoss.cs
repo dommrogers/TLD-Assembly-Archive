@@ -94,124 +94,126 @@ public class BloodLoss : MonoBehaviour
 	[Calls(Type = typeof(TimeOfDay), Member = "GetTODHours")]
 	[Calls(Type = typeof(BloodLoss), Member = "MaybeApplyDamage")]
 	[Calls(Type = typeof(BloodLoss), Member = "BloodLossEnd")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 4)]
 	public void Update()
 	{
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallsUnknownMethods(Count = 4)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 9)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public bool LocationAvailable()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public int GetAfflictionsCount()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public string GetAfflictionCauseLocalizationId(int localAfflictionIndex)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public void BloodLossStartOverrideArea(AfflictionBodyArea area, string cause, bool displayIcon, AfflictionOptions options = (AfflictionOptions)3)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 23)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "BearFadeFinish")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_blood_loss_nofx")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_blood_loss_nofx")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_blood_loss")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_blood_loss")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions")]
-	[CalledBy(Type = typeof(FallDamage), Member = "MaybeBloodLoss")]
-	[CalledBy(Type = typeof(FallDamage), Member = "ApplyFallDamage")]
-	[CalledBy(Type = typeof(SpotLightController), Member = "UpdateDetectionStage")]
-	[CalledBy(Type = typeof(SpotLightController), Member = "MaybeBulletDamage")]
 	[CalledBy(Type = typeof(BloodLossEvent), Member = "OnExecute")]
-	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CalledBy(Type = typeof(SpotLightController), Member = "MaybeBulletDamage")]
+	[CalledBy(Type = typeof(SpotLightController), Member = "UpdateDetectionStage")]
+	[CalledBy(Type = typeof(FallDamage), Member = "ApplyFallDamage")]
+	[CalledBy(Type = typeof(FallDamage), Member = "MaybeBloodLoss")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_blood_loss")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_blood_loss_nofx")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "BearFadeFinish")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
 	[CallerCount(Count = 12)]
-	[CallsDeduplicatedMethods(Count = 14)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(DamageProtection), Member = "GetBodyAreasToPreventBloodLoss")]
 	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(DamageProtection), Member = "GetBodyAreasToPreventBloodLoss")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
 	[Calls(Type = typeof(Log), Member = "AddAffliction")]
+	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
 	[Calls(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 23)]
 	public void BloodLossStart(string cause, bool displayIcon, AfflictionOptions options = (AfflictionOptions)3)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TreatAffliction")]
-	[CalledBy(Type = typeof(BloodLoss), Member = "ApplyBandage")]
 	[CalledBy(Type = typeof(BloodLoss), Member = "Update")]
-	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
+	[CalledBy(Type = typeof(BloodLoss), Member = "ApplyBandage")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TreatAffliction")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 1)]
 	public void BloodLossEnd(int index)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions_cure")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_blood_loss_cure")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Cure()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 7)]
 	[CallsUnknownMethods(Count = 1)]
-	[DeduplicatedMethod]
 	public bool HasBloodLoss()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -219,7 +221,7 @@ public class BloodLoss : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool RequiresBandage()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -229,23 +231,22 @@ public class BloodLoss : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
 	[CallsUnknownMethods(Count = 1)]
 	public string[] GetCauseLocIDList()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "BearFadeFinish")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(RiskOfInfectionEvent), Member = "OnExecute")]
-	[CalledBy(Type = typeof(RiskOfInfectionEvent), Member = "OnExecute")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(BloodLoss), Member = "GetLocationOfLastAdded")]
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "BearFadeFinish")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
+	[CallerCount(Count = 7)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public AfflictionBodyArea GetLocation(int index)
 	{
 		return default(AfflictionBodyArea);
@@ -263,7 +264,7 @@ public class BloodLoss : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool GetNoDamage()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -279,12 +280,12 @@ public class BloodLoss : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(BloodLoss), Member = "Update")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Fatigue), Member = "AddFatigue")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Condition), Member = "AddHealth")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Fatigue), Member = "AddFatigue")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private void MaybeApplyDamage()
 	{
 	}

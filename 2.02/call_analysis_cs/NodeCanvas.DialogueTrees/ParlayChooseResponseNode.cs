@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using Parlay;
@@ -24,13 +24,13 @@ public class ParlayChooseResponseNode : DTNode, ISubTasksContainer
 		public ConditionTask condition;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public Choice()
 		{
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		public Choice(Statement statement)
 		{
 		}
@@ -43,8 +43,8 @@ public class ParlayChooseResponseNode : DTNode, ISubTasksContainer
 
 		public static Func<Choice, ConditionTask> _003C_003E9__1_0;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
@@ -72,7 +72,7 @@ public class ParlayChooseResponseNode : DTNode, ISubTasksContainer
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -81,9 +81,9 @@ public class ParlayChooseResponseNode : DTNode, ISubTasksContainer
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -99,28 +99,24 @@ public class ParlayChooseResponseNode : DTNode, ISubTasksContainer
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+		[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+		[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
+		[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
 		[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
 		[Calls(Type = typeof(ParlayChooseResponseNode), Member = "OnOptionSelected")]
-		[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[CallsUnknownMethods(Count = 14)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
-		[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
-		[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-		[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-		[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+		[CallsUnknownMethods(Count = 14)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -139,7 +135,7 @@ public class ParlayChooseResponseNode : DTNode, ISubTasksContainer
 		public int index;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass14_0()
 		{
 		}
@@ -172,88 +168,87 @@ public class ParlayChooseResponseNode : DTNode, ISubTasksContainer
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public Task[] GetSubTasks()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Statement), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 17)]
 	public override void OnChildConnected(int index)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public override void OnChildDisconnected(int index)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
+	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
+	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
+	[Calls(Type = typeof(ParlayChooseResponseNode), Member = "CountDown")]
+	[Calls(Type = typeof(Node), Member = "StartCoroutine")]
+	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[Calls(Type = typeof(DialogueTree), Member = "GetParameterByID")]
+	[Calls(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
+	[Calls(Type = typeof(MultipleChoiceRequestInfo), Member = ".ctor")]
 	[Calls(Type = typeof(DialogueTree), Member = "RequestMultipleChoices")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
 	[Calls(Type = typeof(Graph), Member = "Stop")]
-	[CallsUnknownMethods(Count = 34)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(MultipleChoiceRequestInfo), Member = ".ctor")]
 	[Calls(Type = typeof(Node), Member = "Error")]
-	[Calls(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
-	[Calls(Type = typeof(DialogueTree), Member = "GetParameterByID")]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
-	[Calls(Type = typeof(Node), Member = "StartCoroutine")]
-	[Calls(Type = typeof(ParlayChooseResponseNode), Member = "CountDown")]
-	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[CallsUnknownMethods(Count = 34)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnExecute")]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator CountDown()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(_003CCountDown_003Ed__13), Member = "MoveNext")]
-	[CallsUnknownMethods(Count = 45)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(DialogueTree), Member = "RequestSubtitles")]
-	[CallsDeduplicatedMethods(Count = 15)]
-	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[Calls(Type = typeof(Variable), Member = "OnValueChanged")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NCUtils), Member = "GetOrAddVar")]
+	[Calls(Type = typeof(Variable<>), Member = "set_value")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Variable), Member = "OnValueChanged")]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
 	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
+	[Calls(Type = typeof(DialogueTree), Member = "RequestSubtitles")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 45)]
 	private void OnOptionSelected(int index)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(DTNode), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public ParlayChooseResponseNode()
 	{

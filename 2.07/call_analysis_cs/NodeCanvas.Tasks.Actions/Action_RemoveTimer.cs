@@ -11,17 +11,18 @@ public class Action_RemoveTimer : ActionTask
 
 	private string realId
 	{
-		[CallsUnknownMethods(Count = 3)]
-		[CalledBy(Type = typeof(Action_RemoveTimer), Member = "OnExecute")]
-		[CalledBy(Type = typeof(Action_RemoveTimer), Member = "OnExecute")]
 		[CalledBy(Type = typeof(Action_RemoveTimer), Member = "get_info")]
+		[CalledBy(Type = typeof(Action_RemoveTimer), Member = "OnExecute")]
 		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -38,12 +39,11 @@ public class Action_RemoveTimer : ActionTask
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveMissionTimer")]
-	[Calls(Type = typeof(Action_RemoveTimer), Member = "get_realId")]
-	[Calls(Type = typeof(Action_RemoveTimer), Member = "get_realId")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Action_RemoveTimer), Member = "get_realId")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveMissionTimer")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}

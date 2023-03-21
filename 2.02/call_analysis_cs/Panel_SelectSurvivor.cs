@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -22,85 +21,80 @@ public class Panel_SelectSurvivor : Panel_Base
 
 	public List<GameObject> m_ItemDetails;
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(BasicMenu), Member = "InstantiateMenu")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(BasicMenu), Member = "InstantiateMenu")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(BasicMenu), Member = "ManualUpdate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(Panel_SelectSurvivor), Member = "ConfigureMenu")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(BasicMenu), Member = "AddItem")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(BasicMenu), Member = "AddItem")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 20)]
 	private void AddMenuItem(int itemIndex)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_SelectSurvivor), Member = "Enable")]
-	[Calls(Type = typeof(BasicMenu), Member = "EnableConfirm")]
-	[Calls(Type = typeof(Panel_SelectSurvivor), Member = "AddMenuItem")]
-	[Calls(Type = typeof(BasicMenu), Member = "UpdateTitle")]
-	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(BasicMenu), Member = "Reset")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(BasicMenu), Member = "UpdateTitle")]
+	[Calls(Type = typeof(Panel_SelectSurvivor), Member = "AddMenuItem")]
+	[Calls(Type = typeof(BasicMenu), Member = "EnableConfirm")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 25)]
 	private void ConfigureMenu()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
-	[Calls(Type = typeof(BasicMenu), Member = "SetItemSelected")]
-	[Calls(Type = typeof(Panel_SelectSurvivor), Member = "ConfigureMenu")]
-	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
 	[Calls(Type = typeof(PostProcessEffectSettings), Member = "set_active")]
+	[Calls(Type = typeof(Panel_SelectSurvivor), Member = "ConfigureMenu")]
+	[Calls(Type = typeof(BasicMenu), Member = "SetItemSelected")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	public override void Enable(bool enable)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
 	[Calls(Type = typeof(GameManager), Member = "RegionLockedBySelectedMode")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnClickBack()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_SelectSurvivor), Member = "OnSelectSurvivor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_SelectSurvivor), Member = "OnSelectSurvivor")]
 	public void OnSelectSurvivorMale()
 	{
 	}
@@ -111,46 +105,46 @@ public class Panel_SelectSurvivor : Panel_Base
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_MainMenu), Member = "OnSelectSurvivorContinue")]
 	[CalledBy(Type = typeof(Panel_SelectSurvivor), Member = "OnSelectSurvivorMale")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+	[Calls(Type = typeof(Panel_MainMenu), Member = "OnSelectSurvivorContinue")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnSelectSurvivor(VoicePersona voicePersona)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	private void OnSelectionUpdate(string name, int value, int itemIndex)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateButtonLegend()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BasicMenu), Member = "SetItemSelected")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(BasicMenu), Member = "SetItemSelected")]
-	[Calls(Type = typeof(BasicMenu), Member = "SetItemSelected")]
 	[CallsUnknownMethods(Count = 4)]
 	private void RestoreSelection()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public Panel_SelectSurvivor()
 	{

@@ -16,11 +16,11 @@ public class Action_ForceAuroraNextNight : ActionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 5)]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(string), Member = "Format")]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -28,11 +28,11 @@ public class Action_ForceAuroraNextNight : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[Calls(Type = typeof(Random), Member = "Range")]
-	[CallsUnknownMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

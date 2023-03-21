@@ -14,20 +14,18 @@ public class qb_Point
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	public qb_Point()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public qb_Point(Vector3 incomingPos, Vector3 incomingUpVector, Vector3 incomingDirVector)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void UpdatePoint(Vector3 incomingPos, Vector3 incomingUpVector, Vector3 incomingDirVector)
 	{
 	}

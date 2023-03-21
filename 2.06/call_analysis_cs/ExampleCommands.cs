@@ -1,29 +1,17 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
 public class ExampleCommands : MonoBehaviour
 {
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[CallsUnknownMethods(Count = 36)]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 36)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "UnRegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "UnRegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "UnRegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "UnRegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "UnRegisterCommand")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "UnRegisterCommand")]
 	private void OnDestroy()
@@ -31,32 +19,32 @@ public class ExampleCommands : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(uConsoleLog), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void EchoNothing()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(uConsoleLog), Member = "Add")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetInt")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(uConsoleLog), Member = "Add")]
 	[CallsUnknownMethods(Count = 1)]
 	public void EchoInteger()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(uConsoleLog), Member = "Add")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[CallerCount(Count = 0)]
 	public void EchoFloat()
 	{
 	}
@@ -76,12 +64,9 @@ public class ExampleCommands : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(uConsoleLog), Member = "Add")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(uConsoleLog), Member = "Add")]
 	public void EchoStrings()
 	{

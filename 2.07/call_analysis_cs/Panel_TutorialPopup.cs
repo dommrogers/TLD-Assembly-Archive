@@ -59,32 +59,32 @@ public class Panel_TutorialPopup : Panel_AutoReferenced
 
 	private GameObject m_BackgroundPane;
 
-	[CallsUnknownMethods(Count = 2)]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(Panel_TutorialPopup), Member = "ShowCurrentTutorialPopup")]
-	[Calls(Type = typeof(Panel_TutorialPopup), Member = "GetCurrentConfirmationRequest")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(Panel_TutorialPopup), Member = "GetCurrentConfirmationRequest")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_TutorialPopup), Member = "ShowPanelAndPause")]
 	[Calls(Type = typeof(Panel_TutorialPopup), Member = "ShowCurrentTutorialPopup")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{
 	}
@@ -95,44 +95,46 @@ public class Panel_TutorialPopup : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuClose")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_HUD), Member = "RefreshHudDisplayMode")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public override void Enable(bool enable)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override bool IsEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuOpen")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitlesImmediate")]
-	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void ShowPanelAndPause()
 	{
 	}
 
+	[CalledBy(Type = typeof(InterfaceManager), Member = "QuitCurrentScreens")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "QuitCurrentScreens")]
 	public void ClearRequests()
 	{
 	}
@@ -141,147 +143,139 @@ public class Panel_TutorialPopup : Panel_AutoReferenced
 	[CallerCount(Count = 3)]
 	public override bool IsOverlayPanel()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool CanShowTutorialPopup()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_TutorialPopup), Member = "GetCurrentConfirmationRequest")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_TutorialPopup), Member = "GetCurrentConfirmationRequest")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	private void RemoveCurrentTutorialPopup()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_TutorialPopup), Member = "GetCurrentConfirmationRequest")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[Calls(Type = typeof(Panel_TutorialPopup), Member = "ShowCurrentTutorialPopup")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ShowNextTutorialPopup()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateButtonLegend()
 	{
 	}
 
-	[Calls(Type = typeof(Knowledge), Member = "Unlock")]
-	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
-	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "ShowNextTutorialPopup")]
 	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "OnCancel")]
-	[Calls(Type = typeof(Knowledge), Member = "GetLocalizedKnowledgeCategoryName")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Panel_TutorialPopup), Member = "GetCurrentConfirmationRequest")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Localization), Member = "Exists")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Exists")]
-	[Calls(Type = typeof(Localization), Member = "Exists")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Knowledge), Member = "GetLocalizedKnowledgeCategoryName")]
+	[Calls(Type = typeof(Knowledge), Member = "Unlock")]
+	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ShowCurrentTutorialPopup()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void QueueTutorialPopupRequest(TutorialPopupRequest request)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "OnCancel")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "ShowCurrentTutorialPopup")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "ShowNextTutorialPopup")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "RemoveCurrentTutorialPopup")]
-	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "ShowNextTutorialPopup")]
+	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "ShowCurrentTutorialPopup")]
+	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "OnCancel")]
+	[CallerCount(Count = 6)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private TutorialPopupRequest GetCurrentConfirmationRequest()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "ShowTutorialPopupRequest")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(KnowledgeManager), Member = "KnowledgeIsUnlocked")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Queue<>), Member = "Enqueue")]
 	[Calls(Type = typeof(HUDTutorial), Member = "Dequeue")]
 	[Calls(Type = typeof(Utils), Member = "GetTitleString")]
 	[Calls(Type = typeof(KnowledgeManager), Member = "AddKnowledge")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "ShowTutorialPopupRequest")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(KnowledgeManager), Member = "KnowledgeIsUnlocked")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void ShowTutorialPopupRequest(TutorialPopupRequest tutorialPopupRequest)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Action_TutorialPopup), Member = "OnExecute")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(Panel_TutorialPopup), Member = "ShowTutorialPopupRequest")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Panel_TutorialPopup), Member = "ShowTutorialPopupRequest")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	public void ShowTutorialPopupRequest(string name)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_TutorialPopup), Member = "GetCurrentConfirmationRequest")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[Calls(Type = typeof(Panel_TutorialPopup), Member = "ShowCurrentTutorialPopup")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(Panel_TutorialPopup), Member = "GetCurrentConfirmationRequest")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(Panel_TutorialPopup), Member = "ShowCurrentTutorialPopup")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnCancel()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "LateUpdate")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 3)]
 	private void UpdateButtons()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public Panel_TutorialPopup()
 	{

@@ -22,8 +22,8 @@ public class IntestinalParasitesSaveDataProxy
 
 	public int m_NumPiecesEatenThisRiskCycle;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public IntestinalParasitesSaveDataProxy()
 	{
 	}

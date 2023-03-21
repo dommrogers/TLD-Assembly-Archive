@@ -23,41 +23,42 @@ public class HUDTutorial : MonoBehaviour
 
 	private int m_ActiveTweens;
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePopupPanels")]
 	[CalledBy(Type = typeof(HUDTutorial), Member = "OnTweenComplete")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePopupPanels")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UITweener), Member = "Sample")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 5)]
 	public void Disable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Queue<>), Member = "Enqueue")]
 	[Calls(Type = typeof(HUDTutorial), Member = "Dequeue")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Enqueue(Panel_TutorialPopup.TutorialPopupRequest request)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void HideDisplay()
 	{
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 12)]
-	[CallsUnknownMethods(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -66,10 +67,10 @@ public class HUDTutorial : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void RestoreDisplay()
 	{
 	}
@@ -79,47 +80,50 @@ public class HUDTutorial : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool WantsUpdates()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UITweener), Member = "AddOnFinished")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(UITweener), Member = "AddOnFinished")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "ShowTutorialPopupRequest")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePopupPanels")]
-	[CalledBy(Type = typeof(HUDTutorial), Member = "OnTweenComplete")]
-	[CalledBy(Type = typeof(HUDTutorial), Member = "ManualUpdate")]
 	[CalledBy(Type = typeof(HUDTutorial), Member = "Enqueue")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CalledBy(Type = typeof(HUDTutorial), Member = "ManualUpdate")]
+	[CalledBy(Type = typeof(HUDTutorial), Member = "OnTweenComplete")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePopupPanels")]
+	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "ShowTutorialPopupRequest")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(HUDManager), Member = "DoNotRenderHUD")]
+	[Calls(Type = typeof(Queue<>), Member = "Dequeue")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Localization), Member = "Exists")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(HUDManager), Member = "DoNotRenderHUD")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	private void Dequeue()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(HUDTutorial), Member = "Dequeue")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(HUDTutorial), Member = "Disable")]
+	[Calls(Type = typeof(HUDTutorial), Member = "Dequeue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnTweenComplete()
 	{
 	}

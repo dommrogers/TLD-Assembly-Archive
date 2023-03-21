@@ -30,17 +30,17 @@ public class LoadingScreenData : ScriptableObject
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Action_SetLoadScreenBackgroundOrText), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "SetTextData")]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "SetBackgroundData")]
-	[CalledBy(Type = typeof(LoadingScreenData), Member = "GetRandomLoadingTextLocID")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(LoadingScreenData), Member = "GetRandomLoadingBackground")]
+	[CalledBy(Type = typeof(LoadingScreenData), Member = "GetRandomLoadingTextLocID")]
+	[CalledBy(Type = typeof(Panel_Loading), Member = "SetBackgroundData")]
+	[CalledBy(Type = typeof(Panel_Loading), Member = "SetTextData")]
+	[CalledBy(Type = typeof(Action_SetLoadScreenBackgroundOrText), Member = "OnExecute")]
+	[CallerCount(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private int GetRandomNoRepeat(int length, int lastIndex)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]

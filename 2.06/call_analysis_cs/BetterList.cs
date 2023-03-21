@@ -21,12 +21,12 @@ public class BetterList<T>
 
 		private T System_002ECollections_002EGeneric_002EIEnumerator_003CT_003E_002ECurrent
 		{
-			[CallerCount(Count = 0)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			get
 			{
-				return (T)null;
+				return default(T);
 			}
 		}
 
@@ -49,21 +49,21 @@ public class BetterList<T>
 		{
 		}
 
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 6)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
-		[CallsUnknownMethods(Count = 2)]
 		[DebuggerStepThrough]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 2)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -82,12 +82,13 @@ public class BetterList<T>
 
 	public T Item
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CalledBy(Type = typeof(NGUIText), Member = "Print")]
+		[CallerCount(Count = 3)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return (T)null;
+			return default(T);
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -97,57 +98,73 @@ public class BetterList<T>
 		}
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
-	[IteratorStateMachine(typeof(BetterList<>._003CGetEnumerator_003Ed__2))]
-	[DebuggerStepThrough]
 	[DebuggerHidden]
+	[DebuggerStepThrough]
+	[IteratorStateMachine(typeof(BetterList<>._003CGetEnumerator_003Ed__2))]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public IEnumerator<T> GetEnumerator()
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "CopyTo")]
+	[CallsUnknownMethods(Count = 2)]
 	private void AllocateMore()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Trim()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void Clear()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void Release()
 	{
 	}
 
-	[CallerCount(Count = 0)]
+	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(UIKeyNavigation), Member = "Awake")]
+	[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnEnable")]
+	[CalledBy(Type = typeof(UIToggle), Member = "OnEnable")]
+	[CalledBy(Type = typeof(ByteReader), Member = "ReadCSV")]
+	[CalledBy(Type = typeof(NGUIText), Member = "Print")]
+	[CalledBy(Type = typeof(NGUIText), Member = "GetDynamicSymbol")]
+	[CalledBy(Type = typeof(UIDrawCall), Member = "Create")]
+	[CalledBy(Type = typeof(UIDrawCall), Member = "Destroy")]
+	[CalledBy(Type = typeof(UIRect), Member = "OnInit")]
+	[CalledBy(Type = typeof(UIRect), Member = "ParentHasChanged")]
+	[CalledBy(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
+	[CalledBy(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
+	[CalledBy(Type = typeof(UICamera), Member = "OnEnable")]
+	[CalledBy(Type = typeof(UILabel), Member = "OnInit")]
+	[CalledBy(Type = typeof(UILabel), Member = "AddDynamicSymbolSprite")]
+	[CalledBy(Type = typeof(UIRoot), Member = "CreateDynamicSymbolSprite")]
+	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[DeduplicatedMethod]
 	public void Add(T item)
 	{
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Insert(int index, T item)
 	{
 	}
@@ -157,44 +174,54 @@ public class BetterList<T>
 	[CallsUnknownMethods(Count = 4)]
 	public bool Contains(T item)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 4)]
 	public int IndexOf(T item)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnDisable")]
+	[CalledBy(Type = typeof(UIScrollView), Member = "OnDisable")]
+	[CalledBy(Type = typeof(UIToggle), Member = "OnDisable")]
+	[CalledBy(Type = typeof(UIDrawCall), Member = "Destroy")]
+	[CalledBy(Type = typeof(UIRect), Member = "OnDisable")]
+	[CalledBy(Type = typeof(UIRect), Member = "ParentHasChanged")]
+	[CalledBy(Type = typeof(UICamera), Member = "OnDisable")]
+	[CalledBy(Type = typeof(UILabel), Member = "OnDisable")]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool Remove(T item)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(TypewriterEffect), Member = "Update")]
+	[CalledBy(Type = typeof(StringTable), Member = "ImportCsv")]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void RemoveAt(int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public T Pop()
 	{
-		return (T)null;
+		return default(T);
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[DeduplicatedMethod]
 	public T[] ToArray()
 	{
 		return null;
@@ -210,8 +237,8 @@ public class BetterList<T>
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public BetterList()
 	{
 	}

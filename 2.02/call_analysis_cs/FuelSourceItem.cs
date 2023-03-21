@@ -26,25 +26,24 @@ public class FuelSourceItem : MonoBehaviour
 	public bool m_CanInitiateFire;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshEstimatedDurationLabel")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnFeedFire")]
-	[CalledBy(Type = typeof(Container), Member = "GetHoursFuel")]
-	[CalledBy(Type = typeof(Container), Member = "GetHoursFuel")]
-	[CalledBy(Type = typeof(Fire), Member = "TurnOn")]
 	[CalledBy(Type = typeof(Fire), Member = "AddFuel")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Fire), Member = "TurnOn")]
+	[CalledBy(Type = typeof(Container), Member = "GetHoursFuel")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnFeedFire")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshEstimatedDurationLabel")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public float GetModifiedBurnDurationHours(float normalizedCondition)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

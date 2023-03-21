@@ -21,40 +21,42 @@ public class VoiceOverItem
 
 	public float m_AfterDuration;
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(Dialogue_VoiceOverNode), Member = ".ctor")]
 	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence.ActorVoiceOverItem), Member = ".ctor")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = ".ctor")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public VoiceOverItem()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Action_PlayerSay), Member = "get_info")]
-	[CalledBy(Type = typeof(Dialogue_MultipleChoiceNode), Member = "MaybeShowTwoButtonsUI")]
-	[CalledBy(Type = typeof(Dialogue_MultipleChoiceNode), Member = "OnExecute")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueTreeChoices")]
+	[CalledBy(Type = typeof(Dialogue_MultipleChoiceNode), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Dialogue_MultipleChoiceNode), Member = "MaybeShowTwoButtonsUI")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(Localization), Member = "Exists")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Action_PlayerSay), Member = "get_info")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Localization), Member = "Exists")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public string GetLocString()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "PlayStatement")]
-	[CalledBy(Type = typeof(Dialogue_VoiceOverNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnSpeech")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueTreeChoices")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnSpeech")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Dialogue_VoiceOverNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "PlayStatement")]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnSpeech")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public string GetLocId()
 	{
 		return null;

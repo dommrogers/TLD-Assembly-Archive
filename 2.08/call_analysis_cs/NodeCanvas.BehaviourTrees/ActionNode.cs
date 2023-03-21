@@ -31,8 +31,8 @@ public class ActionNode : BTNode, ITaskAssignable<ActionTask>, ITaskAssignable
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
 		set
 		{
 		}
@@ -40,11 +40,11 @@ public class ActionNode : BTNode, ITaskAssignable<ActionTask>, ITaskAssignable
 
 	public override string name
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(string), Member = "ToUpper")]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Node), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "ToUpper")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -64,15 +64,15 @@ public class ActionNode : BTNode, ITaskAssignable<ActionTask>, ITaskAssignable
 	{
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "PauseAction")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ActionTask), Member = "PauseAction")]
 	public override void OnGraphPaused()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public ActionNode()
 	{
 	}

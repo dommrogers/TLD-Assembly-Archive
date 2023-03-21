@@ -29,14 +29,14 @@ public class DefinitionV2 : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -44,16 +44,16 @@ public class DefinitionV2 : ISettable
 
 	public string UnlockedDisplayName
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -63,14 +63,14 @@ public class DefinitionV2 : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
@@ -78,16 +78,16 @@ public class DefinitionV2 : ISettable
 
 	public string LockedDisplayName
 	{
-		[CallerCount(Count = 12)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 12)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
@@ -97,14 +97,14 @@ public class DefinitionV2 : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 23)]
 		set
 		{
 		}
@@ -114,14 +114,14 @@ public class DefinitionV2 : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 8)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 15)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 18)]
 		set
 		{
 		}
@@ -129,16 +129,16 @@ public class DefinitionV2 : ISettable
 
 	public string UnlockedIconURL
 	{
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 46)]
 		set
 		{
 		}
@@ -153,9 +153,9 @@ public class DefinitionV2 : ISettable
 		{
 			return null;
 		}
-		[CallerCount(Count = 17)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 19)]
 		set
 		{
 		}
@@ -163,16 +163,16 @@ public class DefinitionV2 : ISettable
 
 	public bool IsHidden
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -182,47 +182,47 @@ public class DefinitionV2 : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 10)]
+		[CallerCount(Count = 11)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 16)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_FlavorText")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(DefinitionV2), Member = "Set")]
-	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_StatThresholds")]
-	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_IsHidden")]
-	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_LockedIconURL")]
-	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_UnlockedIconURL")]
-	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_LockedDisplayName")]
-	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_UnlockedDescription")]
-	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_UnlockedDisplayName")]
-	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_AchievementId")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_AchievementId")]
+	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_UnlockedDisplayName")]
+	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_UnlockedDescription")]
+	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_LockedDisplayName")]
 	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_LockedDescription")]
+	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_FlavorText")]
+	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_UnlockedIconURL")]
+	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_LockedIconURL")]
+	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_IsHidden")]
+	[Calls(Type = typeof(DefinitionV2Internal), Member = "get_StatThresholds")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	internal void Set(DefinitionV2Internal? other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(DefinitionV2), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public DefinitionV2()
 	{
 	}

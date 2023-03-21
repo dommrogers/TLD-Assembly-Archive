@@ -53,7 +53,7 @@ public class BANKS
 	public static uint WEAPONS;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public BANKS()
 	{
 	}

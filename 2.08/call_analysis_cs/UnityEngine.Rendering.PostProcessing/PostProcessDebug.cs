@@ -22,9 +22,9 @@ public sealed class PostProcessDebug : MonoBehaviour
 
 	private CommandBuffer m_CmdAfterEverything;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 0)]
 	private void OnEnable()
 	{
 	}
@@ -43,52 +43,44 @@ public sealed class PostProcessDebug : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	private void Reset()
 	{
 	}
 
-	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
 	[CalledBy(Type = typeof(PostProcessDebug), Member = "Update")]
-	[Calls(Type = typeof(PostProcessDebugLayer), Member = "RequestMonitorPass")]
-	[Calls(Type = typeof(PostProcessDebugLayer), Member = "RequestMonitorPass")]
-	[Calls(Type = typeof(PostProcessDebugLayer), Member = "RequestMonitorPass")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
 	[Calls(Type = typeof(PostProcessDebugLayer), Member = "RequestMonitorPass")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateStates()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 7)]
 	private void OnPostRender()
 	{
 	}
 
-	[Calls(Type = typeof(PostProcessDebug), Member = "DrawMonitor")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PostProcessDebug), Member = "DrawMonitor")]
-	[Calls(Type = typeof(PostProcessDebug), Member = "DrawMonitor")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PostProcessDebug), Member = "DrawMonitor")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnGUI()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(PostProcessDebug), Member = "OnGUI")]
-	[CalledBy(Type = typeof(PostProcessDebug), Member = "OnGUI")]
-	[CalledBy(Type = typeof(PostProcessDebug), Member = "OnGUI")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(GUI), Member = "DrawTexture")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(PostProcessDebug), Member = "OnGUI")]
+	[CallsUnknownMethods(Count = 1)]
 	private void DrawMonitor(ref Rect rect, Monitor monitor, bool enabled)
 	{
 	}

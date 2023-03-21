@@ -7,8 +7,8 @@ public class SwitchBootUpdate : MonoBehaviour
 {
 	private UILabel m_Label_Continue;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public SwitchBootUpdate()
 	{
 	}

@@ -50,25 +50,25 @@ public class TypewriterEffect : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[Calls(Type = typeof(TypewriterEffect), Member = "Update")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TypewriterEffect), Member = "Finish")]
+	[Calls(Type = typeof(TypewriterEffect), Member = "Update")]
 	public void ResetToBeginning()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(TypewriterEffect), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
-	[Calls(Type = typeof(UIScrollView), Member = "UpdatePosition")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UIScrollView), Member = "UpdatePosition")]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Finish()
 	{
 	}
@@ -78,51 +78,34 @@ public class TypewriterEffect : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(NGUIText), Member = "EncodeAlpha")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
-	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(UIScrollView), Member = "UpdatePosition")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(TypewriterEffect), Member = "ResetToBeginning")]
-	[CallsUnknownMethods(Count = 63)]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Substring")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UILabel), Member = "get_processedText")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UIScrollView), Member = "UpdatePosition")]
 	[Calls(Type = typeof(NGUIText), Member = "ParseSymbol")]
+	[Calls(Type = typeof(string), Member = "get_Chars")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "get_Chars")]
-	[Calls(Type = typeof(string), Member = "get_Chars")]
-	[Calls(Type = typeof(string), Member = "get_Chars")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "get_Chars")]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
+	[Calls(Type = typeof(BetterList<>), Member = "RemoveAt")]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(NGUIText), Member = "EncodeAlpha")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 62)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 15)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 15)]
 	public TypewriterEffect()
 	{
 	}

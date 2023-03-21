@@ -20,7 +20,7 @@ public class Vector3OrTransformArray
 	public string pathName;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public Vector3OrTransformArray()
 	{
 	}

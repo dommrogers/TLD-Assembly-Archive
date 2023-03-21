@@ -11,7 +11,7 @@ public class Bank : BaseType
 	public override WwiseObjectReference ObjectReference
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
@@ -33,29 +33,29 @@ public class Bank : BaseType
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(AkBankManager), Member = "LoadBank")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkBankManager), Member = "LoadBank")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	public void Load(bool decodeBank = false, bool saveDecodedBank = false)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(AkBankManager), Member = "LoadBankAsync")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	public void LoadAsync(AkCallbackManager.BankCallback callback = null)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(AkBankManager), Member = "UnloadBank")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	public void Unload()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public Bank()
 	{
 	}

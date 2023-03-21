@@ -11,9 +11,9 @@ public class CheckMouse : ConditionTask<Collider>
 
 	protected override string info
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -24,7 +24,7 @@ public class CheckMouse : ConditionTask<Collider>
 	[CallerCount(Count = 0)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -35,9 +35,9 @@ public class CheckMouse : ConditionTask<Collider>
 	{
 	}
 
-	[Calls(Type = typeof(ConditionTask), Member = "Flip")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConditionTask), Member = "Flip")]
 	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
 	public void OnMouseExit()
 	{
@@ -51,9 +51,9 @@ public class CheckMouse : ConditionTask<Collider>
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public CheckMouse()
 	{
 		((ConditionTask<>)(object)this)._002Ector();

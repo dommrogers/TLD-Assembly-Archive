@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
@@ -40,95 +39,104 @@ public class SceneMusicManager : MonoBehaviour
 
 	private static SceneMusicSaveData m_SceneMusicSaveData;
 
-	[CallsUnknownMethods(Count = 29)]
-	[Calls(Type = typeof(Utils), Member = "IsSceneTransition")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(SceneMusicManager), Member = "ResetExploreMusicTimer")]
+	[Calls(Type = typeof(Utils), Member = "IsSceneTransition")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 29)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
 	[Calls(Type = typeof(SceneMusicManager), Member = "PlayExploreMusic")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 12)]
 	private void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void AddMusicSuppressor(MusicSuppressor ms)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void PlaySceneEnterMusic()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(SceneMusicManager), Member = "Update")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_play_exploremusic")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(SceneMusicManager), Member = "Update")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SceneMusicManager), Member = "ResetExploreMusicTimer")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsNight")]
 	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsNight")]
-	[Calls(Type = typeof(SceneMusicManager), Member = "ResetExploreMusicTimer")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public void PlayExploreMusic()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void RemoveMusicSuppressor(MusicSuppressor ms)
 	{
 	}
 
 	[CalledBy(Type = typeof(SceneMusicManager), Member = "Awake")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(ACtion_SuppressExploreMusic), Member = "OnExecute")]
 	[CalledBy(Type = typeof(SceneMusicManager), Member = "PlayExploreMusic")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(ACtion_SuppressExploreMusic), Member = "OnExecute")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void ResetExploreMusicTimer()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public SceneMusicManager()
 	{
 	}

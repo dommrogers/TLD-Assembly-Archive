@@ -11,13 +11,14 @@ public class Action_NearPlaneOverride : ActionTask
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "StopNearPlaneOverride")]
 	[CallsUnknownMethods(Count = 1)]
@@ -25,19 +26,20 @@ public class Action_NearPlaneOverride : ActionTask
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsUnknownMethods(Count = 1)]
 	private void MaybeOverrideNearPlane()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "StopNearPlaneOverride")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "StopNearPlaneOverride")]
+	[CallsUnknownMethods(Count = 1)]
 	private void MaybeResetNearPlane()
 	{
 	}

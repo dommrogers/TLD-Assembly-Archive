@@ -5,9 +5,9 @@ public class Panel_Story_MissionJumpItem : MonoBehaviour
 {
 	public UILabel m_Label_Mission;
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public Panel_Story_MissionJumpItem()
 	{
 	}

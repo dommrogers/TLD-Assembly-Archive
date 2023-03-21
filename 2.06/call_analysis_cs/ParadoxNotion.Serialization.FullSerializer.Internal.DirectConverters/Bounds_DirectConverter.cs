@@ -9,7 +9,6 @@ public class Bounds_DirectConverter : fsDirectConverter<Bounds>
 {
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
 	[CallsUnknownMethods(Count = 2)]
 	protected override fsResult DoSerialize(Bounds model, Dictionary<string, fsData> serialized)
 	{
@@ -17,9 +16,8 @@ public class Bounds_DirectConverter : fsDirectConverter<Bounds>
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsBaseConverter), Member = "DeserializeMember")]
 	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[CallsUnknownMethods(Count = 2)]
 	protected override fsResult DoDeserialize(Dictionary<string, fsData> data, ref Bounds model)
 	{
 		return default(fsResult);

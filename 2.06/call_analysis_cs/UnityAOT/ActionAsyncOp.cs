@@ -20,30 +20,30 @@ public class ActionAsyncOp : AsyncOp<ActionAsyncOp>
 
 	public event ActionAsyncCallback Callback
 	{
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
-		[CallsUnknownMethods(Count = 1)]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
 	}
 
-	[CalledBy(Type = typeof(StoreManager), Member = "ShowSubscriptionAsync")]
-	[CalledBy(Type = typeof(StoreManager), Member = "ShowRedeemCodeAsync")]
-	[CalledBy(Type = typeof(StoreManager), Member = "ShowPurchaseAsync")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(StoreManager), Member = "ShowDetailsAsync")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(StoreManager), Member = "ShowMarketplaceAsync")]
+	[CalledBy(Type = typeof(StoreManager), Member = "ShowPurchaseAsync")]
+	[CalledBy(Type = typeof(StoreManager), Member = "ShowRedeemCodeAsync")]
+	[CalledBy(Type = typeof(StoreManager), Member = "ShowSubscriptionAsync")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsUnknownMethods(Count = 1)]
 	public ActionAsyncOp(ActionAsyncCallback callback, OnCallbackException logException)
 	{
 		((AsyncOp<>)(object)this)._002Ector();
@@ -55,13 +55,13 @@ public class ActionAsyncOp : AsyncOp<ActionAsyncOp>
 	{
 	}
 
-	[CalledBy(Type = typeof(StoreManager), Member = "ShowSubscriptionAsync")]
-	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(StoreManager), Member = "ShowDetailsAsync")]
 	[CalledBy(Type = typeof(StoreManager), Member = "ShowMarketplaceAsync")]
 	[CalledBy(Type = typeof(StoreManager), Member = "ShowPurchaseAsync")]
 	[CalledBy(Type = typeof(StoreManager), Member = "ShowRedeemCodeAsync")]
+	[CalledBy(Type = typeof(StoreManager), Member = "ShowSubscriptionAsync")]
+	[CallerCount(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public ActionAsyncOp Validate(bool ok)
 	{
 		return null;
@@ -69,8 +69,9 @@ public class ActionAsyncOp : AsyncOp<ActionAsyncOp>
 
 	[MonoPInvokeCallback(typeof(GenericActionCallback))]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetMyObject")]
 	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	protected static void GenericActionThunkImpl(uint result, uint status, IntPtr userData)
 	{

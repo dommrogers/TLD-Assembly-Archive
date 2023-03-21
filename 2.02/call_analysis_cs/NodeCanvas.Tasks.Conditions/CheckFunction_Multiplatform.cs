@@ -34,9 +34,9 @@ public class CheckFunction_Multiplatform : ConditionTask
 	public override Type agentType
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -46,30 +46,30 @@ public class CheckFunction_Multiplatform : ConditionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
-		[CallsUnknownMethods(Count = 23)]
-		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
-		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsDeduplicatedMethods(Count = 6)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
+		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
 		[Calls(Type = typeof(Task), Member = "get_agentInfo")]
+		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+		[CallsDeduplicatedMethods(Count = 6)]
+		[CallsUnknownMethods(Count = 23)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Task), Member = "Error")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CheckFunction_Multiplatform), Member = "SetMethod")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Task), Member = "Error")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void OnValidate(ITaskSystem ownerSystem)
 	{
 	}
@@ -83,34 +83,35 @@ public class CheckFunction_Multiplatform : ConditionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 12)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Task), Member = "get_agent")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(OperationTools), Member = "Compare")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 26)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 28)]
 	[CalledBy(Type = typeof(CheckFunction_Multiplatform), Member = "OnValidate")]
-	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
-	[Calls(Type = typeof(BBObjectParameter), Member = ".ctor")]
-	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(MethodInfo), Member = "op_Equality")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(BBObjectParameter), Member = ".ctor")]
+	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 28)]
 	private void SetMethod(MethodInfo method)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public CheckFunction_Multiplatform()
 	{

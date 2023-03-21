@@ -27,14 +27,14 @@ public class DialogueStatesTable : ScriptableObject
 
 		public string m_StateIdle;
 
-		[CallsUnknownMethods(Count = 21)]
-		[CalledBy(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
-		[CalledBy(Type = typeof(DialogueStatesTable), Member = "GetFaceStateKeyForState")]
 		[CalledBy(Type = typeof(DialogueStatesTable), Member = "GetFirstStateKeyForState")]
-		[Calls(Type = typeof(Path), Member = "ChangeExtension")]
-		[Calls(Type = typeof(Path), Member = "GetFileName")]
+		[CalledBy(Type = typeof(DialogueStatesTable), Member = "GetFaceStateKeyForState")]
+		[CalledBy(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
 		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(Path), Member = "GetFileName")]
+		[Calls(Type = typeof(Path), Member = "ChangeExtension")]
 		[Calls(Type = typeof(string), Member = "Format")]
+		[CallsUnknownMethods(Count = 21)]
 		public string GetKey()
 		{
 			return null;
@@ -77,11 +77,11 @@ public class DialogueStatesTable : ScriptableObject
 		return null;
 	}
 
-	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
 	public int GetLayerIndex(string stateKey)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -105,23 +105,22 @@ public class DialogueStatesTable : ScriptableObject
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(DialogueStatesTableEntry), Member = "GetKey")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "MaybeAutoAssignDialogueAnimationAndAudio")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(DialogueStatesTableEntry), Member = "GetKey")]
+	[CallsUnknownMethods(Count = 4)]
 	public string GetFirstStateKeyForState(string stateName)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(DialogueStatesTableEntry), Member = "GetKey")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "MaybeAutoAssignDialogueAnimationAndAudio")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(DialogueStatesTableEntry), Member = "GetKey")]
 	[CallsUnknownMethods(Count = 3)]
 	public string GetFaceStateKeyForState(string stateName)
 	{
@@ -132,14 +131,14 @@ public class DialogueStatesTable : ScriptableObject
 	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
 	public bool HasKey(string stateKey)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 25)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(DialogueStatesTableEntry), Member = "GetKey")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 3)]
 	private DialogueStatesTableEntry GetListEntryFromStateKey(string stateKey)
 	{
 		return null;

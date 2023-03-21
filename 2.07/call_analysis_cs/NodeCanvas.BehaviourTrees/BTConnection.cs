@@ -5,8 +5,8 @@ namespace NodeCanvas.BehaviourTrees;
 
 public class BTConnection : Connection
 {
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public BTConnection()
 	{
 	}

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 using UnityEngine.AI;
@@ -82,10 +83,10 @@ public class LeanTo : MonoBehaviour
 
 	public string m_DisplayNameRuined
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(LocalizedString), Member = "Text")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(LocalizedString), Member = "Text")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -105,36 +106,35 @@ public class LeanTo : MonoBehaviour
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void OnValidate()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsDismantlingShelter")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Weather), Member = "IsBlizzard")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Weather), Member = "IsBlizzard")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsRepairingShelter")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsDismantlingShelter")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 23)]
 	private void Update()
 	{
 	}
@@ -146,59 +146,59 @@ public class LeanTo : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(LeanToManager), Member = "SerializeAll")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CalledBy(Type = typeof(LeanToManager), Member = "DeserializeAll")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	public void Deserialize(string text)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "BuildFinished")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 9)]
 	public void BuildFinished()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void RepairFinished(int numSticksUsed)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 22)]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "InteractionFinished")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(LeanTo), Member = "GetNormalizedCondition")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(LeanTo), Member = "GetNormalizedCondition")]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 22)]
 	public void DismantleFinished()
 	{
 	}
@@ -207,79 +207,81 @@ public class LeanTo : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsRuined()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayText")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(LeanToManager), Member = "GetPlayerOccupiedLeanTo")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public string GetHoverText()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(LeanTo), Member = "DismantleFinished")]
+	[CalledBy(Type = typeof(LeanTo), Member = "GetNumSticksToRepair")]
+	[CalledBy(Type = typeof(LeanTo), Member = "GetNumBranchesToRepair")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateConditionLabel")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshDismantlePanel")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "GetTaskDurationInHours")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateConditionLabel")]
-	[CalledBy(Type = typeof(LeanTo), Member = "GetNumBranchesToRepair")]
-	[CalledBy(Type = typeof(LeanTo), Member = "DismantleFinished")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(LeanTo), Member = "GetNumSticksToRepair")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public float GetNormalizedCondition()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(LeanToManager), Member = "GetPlayerOccupiedLeanTo")]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(LeanToManager), Member = "ExitLeanTo")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public bool ProcessInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "HasMaterialsForRepair")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "NeedsRepair")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
-	[Calls(Type = typeof(LeanTo), Member = "GetNormalizedCondition")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnRepair")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "NeedsRepair")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "HasMaterialsForRepair")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(LeanTo), Member = "GetNormalizedCondition")]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public int GetNumSticksToRepair()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "NeedsRepair")]
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(LeanTo), Member = "GetNormalizedCondition")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnRepair")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "NeedsRepair")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "HasMaterialsForRepair")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(LeanTo), Member = "GetNormalizedCondition")]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public int GetNumBranchesToRepair()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "InteractionFinished")]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "OnCancel")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "InteractionFinished")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Destroy()
 	{
 	}
@@ -287,32 +289,32 @@ public class LeanTo : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetHoursRuined()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(LeanToManager), Member = "SerializeAll")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(LeanToManager), Member = "SerializeAll")]
 	[CallsUnknownMethods(Count = 2)]
 	public bool ShouldRemove()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void OnExited()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void OnEntered()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public LeanTo()
 	{
 	}

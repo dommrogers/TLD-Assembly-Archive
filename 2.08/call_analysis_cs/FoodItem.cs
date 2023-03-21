@@ -83,17 +83,17 @@ public class FoodItem : MonoBehaviour
 	private static FoodItemSaveDataProxy m_FoodItemSaveDataProxy;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	public void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
+	[CalledBy(Type = typeof(FoodItem), Member = "Deserialize")]
 	[CalledBy(Type = typeof(GearItem), Member = "ManualUpdate")]
+	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[CalledBy(Type = typeof(FoodItem), Member = "Deserialize")]
+	[CallsUnknownMethods(Count = 2)]
 	public void UpdateHeatPercent(float gameMinutes)
 	{
 	}
@@ -102,7 +102,7 @@ public class FoodItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsPreventHeatLossEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -111,17 +111,17 @@ public class FoodItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(GearItem), Member = "Serialize")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(FoodItem), Member = "UpdateHeatPercent")]
 	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
@@ -132,12 +132,11 @@ public class FoodItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsHot()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "InitLabelsForGear")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(GearItem), Member = "GetTextToDisplayWhenSelected")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "InitLabelsForGear")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	public string GetTemperatureTextForInspectMode()
@@ -145,11 +144,10 @@ public class FoodItem : MonoBehaviour
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(GearItem), Member = "GetItemPostFixForInventoryInterfaces")]
 	[CalledBy(Type = typeof(GearItem), Member = "GetHoverStateText")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	public string GetTemperatureTextPostfix()
 	{
 		return null;
@@ -161,11 +159,11 @@ public class FoodItem : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool WasHarvested()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -178,19 +176,18 @@ public class FoodItem : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	public float GetDailyHPDecay()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "EatingComplete_Internal")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[CallsUnknownMethods(Count = 2)]
 	public void DoGearHarvestAfterFinishEating()
 	{
 	}

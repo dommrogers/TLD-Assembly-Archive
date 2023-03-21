@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -36,7 +35,7 @@ public static class PlaceableManager
 		public State m_State;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public PlaceableInfoSaveData()
 		{
 		}
@@ -52,90 +51,90 @@ public static class PlaceableManager
 
 	private static GameObject s_Category;
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(BodyCarry), Member = "Restore")]
+	[CalledBy(Type = typeof(Placeable), Member = "Awake")]
 	[CalledBy(Type = typeof(BodyCarry), Member = "Drop")]
+	[CalledBy(Type = typeof(BodyCarry), Member = "Restore")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(Placeable), Member = "Awake")]
+	[CallsUnknownMethods(Count = 4)]
 	public static void Add(Placeable placeable)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(ObjectGuidManager), Member = "UnRegisterGuid")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ObjectGuidManager), Member = "Lookup")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(BodyCarry), Member = "Restore")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[Calls(Type = typeof(Placeable), Member = "FindOrCreateAndDeserialize")]
-	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlaceableManager), Member = "FindOrCreateCategoryRoot")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(PlaceableManager), Member = "FindOrCreateCategoryRoot")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Placeable), Member = "FindOrCreateAndDeserialize")]
+	[Calls(Type = typeof(Enum), Member = "HasFlag")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(BodyCarry), Member = "Restore")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(ObjectGuidManager), Member = "Lookup")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(ObjectGuidManager), Member = "UnRegisterGuid")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 12)]
 	public static void DeserializeAll(string serialized)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 24)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Placeable), Member = "Serialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Placeable), Member = "Serialize")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 24)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(BodyCarry), Member = "Drop")]
-	[CalledBy(Type = typeof(PlaceableManager), Member = "DeserializeAll")]
 	[CalledBy(Type = typeof(Placeable), Member = "FindOrCreateAndDeserialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(PlaceableManager), Member = "DeserializeAll")]
+	[CalledBy(Type = typeof(BodyCarry), Member = "Drop")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	public static GameObject FindOrCreateCategoryRoot()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Placeable), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(BodyCarry), Member = "PrepareForSceneTransition")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void Remove(Placeable placeable)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(GameManager), Member = "ResetLists")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	public static void Reset()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Conditional(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void DebugLog(string message)
 	{
 	}

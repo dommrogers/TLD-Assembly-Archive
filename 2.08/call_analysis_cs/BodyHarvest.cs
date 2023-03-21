@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
 using TLD.Serialization;
@@ -34,19 +33,17 @@ public class BodyHarvest : MonoBehaviour
 		{
 		}
 
+		[CalledBy(Type = typeof(BodyHarvest), Member = "FastForwardTime")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(FrozenDecayCalculator), Member = "IntegrateDecay")]
-		[Calls(Type = typeof(FrozenDecayCalculator), Member = "IntegrateDecay")]
 		[Calls(Type = typeof(FrozenDecayCalculator), Member = "HandleFreezeOrThawChanges")]
-		[Calls(Type = typeof(FrozenDecayCalculator), Member = "IntegrateDecay")]
-		[CalledBy(Type = typeof(BodyHarvest), Member = "FastForwardTime")]
 		public FastForwardState FastForwardTime(FastForwardState inState)
 		{
 			return default(FastForwardState);
 		}
 
-		[Calls(Type = typeof(FrozenDecayCalculator), Member = "IntegrateDecay")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(FrozenDecayCalculator), Member = "IntegrateDecay")]
 		private FastForwardState HandleThawingNextToFire(FastForwardState inState)
 		{
 			return default(FastForwardState);
@@ -59,9 +56,9 @@ public class BodyHarvest : MonoBehaviour
 			return default(FastForwardState);
 		}
 
+		[CalledBy(Type = typeof(FrozenDecayCalculator), Member = "FastForwardTime")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(FrozenDecayCalculator), Member = "IntegrateDecay")]
-		[CalledBy(Type = typeof(FrozenDecayCalculator), Member = "FastForwardTime")]
 		[CallsUnknownMethods(Count = 2)]
 		private FastForwardState HandleFreezeOrThawChanges(FastForwardState inState)
 		{
@@ -75,23 +72,21 @@ public class BodyHarvest : MonoBehaviour
 			return default(FastForwardState);
 		}
 
+		[CalledBy(Type = typeof(FrozenDecayCalculator), Member = "FastForwardTime")]
+		[CalledBy(Type = typeof(FrozenDecayCalculator), Member = "HandleThawingNextToFire")]
+		[CalledBy(Type = typeof(FrozenDecayCalculator), Member = "HandleFullyThawedNextToFire")]
 		[CalledBy(Type = typeof(FrozenDecayCalculator), Member = "HandleFreezeOrThawChanges")]
 		[CalledBy(Type = typeof(FrozenDecayCalculator), Member = "HandleSteadyStateAfterFreezeOrThaw")]
-		[CalledBy(Type = typeof(FrozenDecayCalculator), Member = "HandleFullyThawedNextToFire")]
-		[CalledBy(Type = typeof(FrozenDecayCalculator), Member = "HandleThawingNextToFire")]
-		[CalledBy(Type = typeof(FrozenDecayCalculator), Member = "FastForwardTime")]
-		[CalledBy(Type = typeof(FrozenDecayCalculator), Member = "FastForwardTime")]
-		[CalledBy(Type = typeof(FrozenDecayCalculator), Member = "FastForwardTime")]
 		[CallerCount(Count = 7)]
 		private float IntegrateDecay(float hoursInLinearSection, float startPercentFrozen, float endPercentFrozen)
 		{
-			return default(float);
+			return 0f;
 		}
 
 		[CallerCount(Count = 0)]
 		private float GetDecayRate(float percentFrozen)
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -209,45 +204,43 @@ public class BodyHarvest : MonoBehaviour
 
 	private const float MINDIST_LOAD_OFFSCREEN_DESTROY = 30f;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(BodyHarvest), Member = "InitializeResourcesAndConditions")]
-	[Calls(Type = typeof(BodyHarvest), Member = "RefreshInternalReferences")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BodyHarvest), Member = "RefreshInternalReferences")]
+	[Calls(Type = typeof(BodyHarvest), Member = "InitializeResourcesAndConditions")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Contains")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[CallsUnknownMethods(Count = 2)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(BodyHarvest), Member = "BodyHarvestDestroy")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(BodyHarvest), Member = "Update")]
 	[CalledBy(Type = typeof(GearItem), Member = "ManualUpdate")]
-	[Calls(Type = typeof(Utils), Member = "DistanceToMainCamera")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(BodyHarvest), Member = "ConditionReachedZero")]
-	[Calls(Type = typeof(BodyHarvest), Member = "MaybeFreeze")]
-	[Calls(Type = typeof(BodyHarvest), Member = "IsGearItem")]
-	[Calls(Type = typeof(BodyHarvest), Member = "NoMoreResources")]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "Update")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BodyHarvest), Member = "IsGearItem")]
+	[Calls(Type = typeof(BodyHarvest), Member = "MaybeFreeze")]
+	[Calls(Type = typeof(BodyHarvest), Member = "ConditionReachedZero")]
+	[Calls(Type = typeof(BodyHarvest), Member = "NoMoreResources")]
+	[Calls(Type = typeof(Utils), Member = "DistanceToMainCamera")]
+	[Calls(Type = typeof(BodyHarvest), Member = "BodyHarvestDestroy")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void UpdateBodyHarvest(float todHours)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BodyHarvest), Member = "UpdateBodyHarvest")]
-	[Calls(Type = typeof(GameManager), Member = "RollSpawnChance")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "RollSpawnChance")]
 	[Calls(Type = typeof(GameManager), Member = "IsFrameValidToUpdate")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameManager), Member = "GetDeltaTime")]
+	[Calls(Type = typeof(BodyHarvest), Member = "UpdateBodyHarvest")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
@@ -263,59 +256,60 @@ public class BodyHarvest : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestoreBodyHarvest")]
-	[CalledBy(Type = typeof(BodyHarvestManager), Member = "Serialize")]
 	[CalledBy(Type = typeof(GearItem), Member = "Serialize")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(BearHuntAiRedux), Member = "Serialize")]
-	[Calls(Type = typeof(BodyHarvest), Member = "IsNearFire")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AiUtils), Member = "GetAiFeedingOnCarcass")]
-	[Calls(Type = typeof(Fire), Member = "GetRemainingLifeTimeSeconds")]
-	[Calls(Type = typeof(FireManager), Member = "GetClosestFire")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(BodyHarvestManager), Member = "Serialize")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestoreBodyHarvest")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(BodyHarvest), Member = "IsNearFire")]
+	[Calls(Type = typeof(FireManager), Member = "GetClosestFire")]
+	[Calls(Type = typeof(Fire), Member = "GetRemainingLifeTimeSeconds")]
+	[Calls(Type = typeof(AiUtils), Member = "GetAiFeedingOnCarcass")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BearHuntAiRedux), Member = "Serialize")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(BodyHarvest), Member = "NoMoreResources")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestoreBodyHarvest")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
-	[Calls(Type = typeof(BodyHarvest), Member = "MaybeDestroyAfterDeserialize")]
-	[Calls(Type = typeof(BodyHarvest), Member = "ConditionReachedZero")]
 	[CalledBy(Type = typeof(BodyHarvestManager), Member = "Deserialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BodyHarvest), Member = "FastForwardTime")]
-	[Calls(Type = typeof(BodyHarvest), Member = "InitializeResourcesAndConditions")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestoreBodyHarvest")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(BodyHarvest), Member = "InitializeResourcesAndConditions")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(BodyHarvest), Member = "FastForwardTime")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
 	[Calls(Type = typeof(BearHuntAiRedux), Member = "Deserialize")]
+	[Calls(Type = typeof(BodyHarvest), Member = "ConditionReachedZero")]
+	[Calls(Type = typeof(BodyHarvest), Member = "NoMoreResources")]
+	[Calls(Type = typeof(BodyHarvest), Member = "MaybeDestroyAfterDeserialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Deserialize(string text, bool isSceneLoad)
 	{
 	}
 
 	[CalledBy(Type = typeof(BodyHarvest), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(FrozenDecayCalculator), Member = "FastForwardTime")]
+	[CallsUnknownMethods(Count = 1)]
 	private void FastForwardTime(float elapsedHours, float percentFrozen, float hoursRemainingOnCloseFire)
 	{
 	}
 
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "UpdateBodyHarvest")]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "BodyHarvestDestroy")]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "MaybeDecay")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "TransferMeatFromCarcassToInventory")]
+	[CallerCount(Count = 4)]
 	public bool IsGearItem()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -325,20 +319,20 @@ public class BodyHarvest : MonoBehaviour
 		return default(BaseAi.DamageSide);
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public float GetCondition()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "TransferMeatFromCarcassToInventory")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetGearItemCondition()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -350,19 +344,19 @@ public class BodyHarvest : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public int GetPercentFrozen()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Action_ShowPanel), Member = "MaybeShowBodyHarvest")]
-	[CalledBy(Type = typeof(BodyHarvestInteraction), Member = "PerformInteraction")]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoBodyHarvest")]
-	[CalledBy(Type = typeof(Action_ShowPanel), Member = "OnExecute")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoOnInteractionComplete")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "MaybePerformCompletionAction")]
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoBodyHarvest")]
+	[CalledBy(Type = typeof(BodyHarvestInteraction), Member = "PerformInteraction")]
+	[CalledBy(Type = typeof(Action_ShowPanel), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_ShowPanel), Member = "MaybeShowBodyHarvest")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
+	[CallsUnknownMethods(Count = 1)]
 	public void InteractWithBodyHarvest(bool playBookEndAnimation)
 	{
 	}
@@ -383,16 +377,18 @@ public class BodyHarvest : MonoBehaviour
 		return null;
 	}
 
-	[CalledBy(Type = typeof(BodyHarvest), Member = "MaybeDestroyAfterDeserialize")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
-	[CalledBy(Type = typeof(BodyHarvest), Member = "DestroyIfFarAway")]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "UpdateBodyHarvest")]
-	[Calls(Type = typeof(Panel_Map), Member = "RemoveMapDetailFromMap")]
-	[Calls(Type = typeof(ArrowItem), Member = "DetachIntoWorld")]
-	[Calls(Type = typeof(BodyHarvest), Member = "IsGearItem")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "DestroyIfFarAway")]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "MaybeDestroyAfterDeserialize")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(BodyHarvest), Member = "IsGearItem")]
+	[Calls(Type = typeof(ArrowItem), Member = "DetachIntoWorld")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Map), Member = "RemoveMapDetailFromMap")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public void BodyHarvestDestroy()
 	{
 	}
@@ -402,56 +398,57 @@ public class BodyHarvest : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[CalledBy(Type = typeof(BodyHarvestManager), Member = "MaybeRestoreCarcassSite")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "MaybeDropDepletedItem")]
-	[CalledBy(Type = typeof(BodyHarvest), Member = "AreResourcesAvailable")]
-	[CalledBy(Type = typeof(BodyHarvest), Member = "Deserialize")]
-	[CalledBy(Type = typeof(BodyHarvest), Member = "UpdateBodyHarvest")]
-	[CalledBy(Type = typeof(GearItem), Member = "ManualUpdate")]
-	[CalledBy(Type = typeof(GearItem), Member = "MaybeDestroyBodyHarvest")]
-	[CalledBy(Type = typeof(CarcassSite), Member = "GetNumberOfNonDepletedItemsOnSite")]
 	[CalledBy(Type = typeof(BaseAi), Member = "MaybeSpawnCarcassSiteIfFarEnough")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 10)]
+	[CalledBy(Type = typeof(CarcassSite), Member = "GetNumberOfNonDepletedItemsOnSite")]
+	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "CanExamine")]
+	[CalledBy(Type = typeof(GearItem), Member = "MaybeDestroyBodyHarvest")]
+	[CalledBy(Type = typeof(GearItem), Member = "ManualUpdate")]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "UpdateBodyHarvest")]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "Deserialize")]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "AreResourcesAvailable")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "MaybeDropDepletedItem")]
+	[CalledBy(Type = typeof(BodyHarvestManager), Member = "MaybeRestoreCarcassSite")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool NoMoreResources()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetGutsAvailableWeightKg()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetHideAvailableWeightKg()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(BodyHarvestManager), Member = "MaybeRestoreCarcassSite")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "MaybeDropDepletedItem")]
-	[CalledBy(Type = typeof(BodyHarvest), Member = "AreResourcesAvailable")]
-	[CalledBy(Type = typeof(BodyHarvest), Member = "Deserialize")]
-	[CalledBy(Type = typeof(BodyHarvest), Member = "UpdateBodyHarvest")]
-	[CalledBy(Type = typeof(GearItem), Member = "MaybeDestroyBodyHarvest")]
-	[CalledBy(Type = typeof(CarcassSite), Member = "GetNumberOfNonDepletedItemsOnSite")]
 	[CalledBy(Type = typeof(BaseAi), Member = "MaybeSpawnCarcassSiteIfFarEnough")]
-	[CallerCount(Count = 9)]
+	[CalledBy(Type = typeof(CarcassSite), Member = "GetNumberOfNonDepletedItemsOnSite")]
+	[CalledBy(Type = typeof(GearItem), Member = "MaybeDestroyBodyHarvest")]
 	[CalledBy(Type = typeof(GearItem), Member = "ManualUpdate")]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "UpdateBodyHarvest")]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "Deserialize")]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "AreResourcesAvailable")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "MaybeDropDepletedItem")]
+	[CalledBy(Type = typeof(BodyHarvestManager), Member = "MaybeRestoreCarcassSite")]
+	[CallerCount(Count = 9)]
 	public bool ConditionReachedZero()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	public bool CanSpawnCarcassSite()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -459,15 +456,15 @@ public class BodyHarvest : MonoBehaviour
 	[Calls(Type = typeof(BodyHarvest), Member = "ConditionReachedZero")]
 	public bool AreResourcesAvailable()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(BodyHarvest), Member = "MaybeSpawnCarcassSite")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(CarcassSite), Member = "Refresh")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BodyHarvest), Member = "HasSpawnedCarcassSite")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BodyHarvest), Member = "MaybeSpawnCarcassSite")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(CarcassSite), Member = "Refresh")]
+	[CallsUnknownMethods(Count = 3)]
 	public void MaybeSpawnOrRefreshCarcassSite()
 	{
 	}
@@ -478,94 +475,92 @@ public class BodyHarvest : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeSpawnCarcassSiteIfFarEnough")]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "MaybeSpawnOrRefreshCarcassSite")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "SpawnOrRefreshCarcassSite")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeSpawnCarcassSiteIfFarEnough")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(BodyHarvestManager), Member = "MaybeRestoreCarcassSite")]
-	[Calls(Type = typeof(CarcassSite), Member = "Initialize")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(CarcassSite.Manager), Member = "TryInstanciateCarcassSite")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(BodyHarvest), Member = "HasSpawnedCarcassSite")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(CarcassSite.Manager), Member = "TryInstanciateCarcassSite")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(CarcassSite), Member = "Initialize")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public void MaybeSpawnCarcassSite(float timeHours)
 	{
 	}
 
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(BaseAi), Member = "MaybeSpawnCarcassSiteIfFarEnough")]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "MaybeSpawnOrRefreshCarcassSite")]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "MaybeSpawnCarcassSite")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "SpawnOrRefreshCarcassSite")]
+	[CallerCount(Count = 4)]
 	public bool HasSpawnedCarcassSite()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(CarcassSite), Member = "MaybeSpawnBodyParts")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(CarcassSite), Member = "MaybeSpawnBodyParts")]
+	[CallsUnknownMethods(Count = 1)]
 	public void MaybeSpawnQuarteringMess()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(BaseAi), Member = "SpawnCarcassPickup")]
+	[CallerCount(Count = 1)]
 	public static void Copy(BodyHarvest from, BodyHarvest to)
 	{
 	}
 
 	[CalledBy(Type = typeof(BodyHarvest), Member = "Awake")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
+	[CallsUnknownMethods(Count = 1)]
 	private void RefreshInternalReferences()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(FireManager), Member = "GetDistanceToClosestFire")]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "Serialize")]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "MaybeFreeze")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(FireManager), Member = "GetDistanceToClosestFire")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private bool IsNearFire()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "DistanceToMainCamera")]
 	[Calls(Type = typeof(BodyHarvest), Member = "BodyHarvestDestroy")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void DestroyIfFarAway()
 	{
 	}
 
-	[Calls(Type = typeof(BodyHarvest), Member = "BodyHarvestDestroy")]
-	[Calls(Type = typeof(Utils), Member = "PositionIsOnscreen")]
-	[Calls(Type = typeof(Utils), Member = "IsSceneTransition")]
-	[CallsUnknownMethods(Count = 24)]
-	[Calls(Type = typeof(Utils), Member = "DistanceToMainCamera")]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "Deserialize")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[CallsDeduplicatedMethods(Count = 16)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Utils), Member = "IsSceneTransition")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetTeleportTransformAfterSceneLoad")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(Utils), Member = "DistanceToMainCamera")]
+	[Calls(Type = typeof(Utils), Member = "PositionIsOnscreen")]
+	[Calls(Type = typeof(BodyHarvest), Member = "BodyHarvestDestroy")]
+	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 24)]
 	private void MaybeDestroyAfterDeserialize(bool useTeleportTransformAfterSceneLoad)
 	{
 	}
@@ -577,65 +572,63 @@ public class BodyHarvest : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(BodyHarvest), Member = "UpdateBodyHarvest")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(BodyHarvest), Member = "IsNearFire")]
-	[CalledBy(Type = typeof(BodyHarvest), Member = "UpdateBodyHarvest")]
 	[CallsUnknownMethods(Count = 4)]
 	private void MaybeFreeze(float hours)
 	{
 	}
 
-	[CalledBy(Type = typeof(BodyHarvest), Member = "Deserialize")]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "Awake")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "Deserialize")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void InitializeResourcesAndConditions()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(CarcassSite), Member = "Refresh")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(CarcassSite), Member = "Refresh")]
+	[CallsUnknownMethods(Count = 1)]
 	private void RefreshCarcassSite(float hoursAtRefresh)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "UpdateColliders")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	private Transform[] UnparentArrows(ArrowItem[] arrows)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void ReparentArrows(ArrowItem[] arrows, Transform[] parentArrows)
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "LateUpdate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(BodyHarvest), Member = "UnparentArrows")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(BodyHarvest), Member = "UnparentArrows")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateColliders()
 	{
 	}

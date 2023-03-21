@@ -19,7 +19,7 @@ public class DialogueActor : MonoBehaviour, IDialogueActor
 	public new string name
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 44)]
+		[CallerCount(Count = 53)]
 		get
 		{
 			return null;
@@ -29,7 +29,7 @@ public class DialogueActor : MonoBehaviour, IDialogueActor
 	public Texture2D portrait
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 23)]
+		[CallerCount(Count = 27)]
 		get
 		{
 			return null;
@@ -38,12 +38,11 @@ public class DialogueActor : MonoBehaviour, IDialogueActor
 
 	public Sprite portraitSprite
 	{
-		[Calls(Type = typeof(Sprite), Member = "Create")]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(Sprite), Member = "Create")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -78,7 +77,7 @@ public class DialogueActor : MonoBehaviour, IDialogueActor
 
 	[SpecialName]
 	[DeduplicatedMethod]
-	[CallerCount(Count = 1207)]
+	[CallerCount(Count = 1280)]
 	[CallsUnknownMethods(Count = 1)]
 	private Transform NodeCanvas_002EDialogueTrees_002EIDialogueActor_002Eget_transform()
 	{

@@ -14,26 +14,25 @@ public class PhoneManager
 
 	private static List<Phone> s_Phones;
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void Add(Phone phone)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Remove(Phone phone)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(GameManager), Member = "ResetLists")]
 	[CalledBy(Type = typeof(PhoneManager), Member = "Deserialize")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Reset()
 	{
@@ -46,9 +45,9 @@ public class PhoneManager
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PhoneManager), Member = "Reset")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PhoneManager), Member = "Reset")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	public static void Deserialize(string text)
 	{
 	}
@@ -59,7 +58,7 @@ public class PhoneManager
 	[CallsUnknownMethods(Count = 1)]
 	public static bool IsConversationComplete(DTContainer dtContainer, int index)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -68,66 +67,66 @@ public class PhoneManager
 	[CallsUnknownMethods(Count = 1)]
 	public static bool IsSequenceComplete(DTContainer dtContainer)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(PhoneManager), Member = "GetDebugText")]
 	[CalledBy(Type = typeof(PhoneManager), Member = "GetOrCreateDialogueSequenceProgressionInfo")]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PhoneManager), Member = "GetDebugText")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 4)]
 	private static DialogueSequenceProgressionInfo GetDialogueSequenceProgressionInfo(string uniqueId)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(TLD_CheckPhoneRingCycle), Member = "OnCheck")]
-	[CalledBy(Type = typeof(PhoneManager), Member = "GetDebugText")]
-	[CalledBy(Type = typeof(PhoneManager), Member = "GetRingCycleCount")]
+	[CalledBy(Type = typeof(Phone), Member = "Update")]
+	[CalledBy(Type = typeof(Phone), Member = "GetRingCycleCount")]
 	[CalledBy(Type = typeof(PhoneManager), Member = "GetOrCreatePhoneSaveDataInfo")]
 	[CalledBy(Type = typeof(PhoneManager), Member = "HasPhoneStartedRinging")]
-	[CalledBy(Type = typeof(Phone), Member = "Update")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PhoneManager), Member = "GetRingCycleCount")]
+	[CalledBy(Type = typeof(PhoneManager), Member = "GetDebugText")]
+	[CalledBy(Type = typeof(TLD_CheckPhoneRingCycle), Member = "OnCheck")]
 	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(Phone), Member = "GetRingCycleCount")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 4)]
 	private static PhoneSaveDataInfo GetPhoneSaveInfo(string missionId)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Phone), Member = "StopPhoneRinging")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(PhoneManager), Member = "IncrementRingCycleCount")]
-	[CalledBy(Type = typeof(PhoneManager), Member = "StopRinging")]
-	[CalledBy(Type = typeof(Phone), Member = "StartPhoneRinging")]
-	[CalledBy(Type = typeof(PhoneManager), Member = "StartRinging")]
-	[CalledBy(Type = typeof(Phone), Member = "UpdateWaitingNextCall")]
 	[CalledBy(Type = typeof(Phone), Member = "StopRinging")]
+	[CalledBy(Type = typeof(Phone), Member = "UpdateWaitingNextCall")]
+	[CalledBy(Type = typeof(Phone), Member = "UpdateAudio")]
+	[CalledBy(Type = typeof(Phone), Member = "StartPhoneRinging")]
+	[CalledBy(Type = typeof(Phone), Member = "StopPhoneRinging")]
+	[CalledBy(Type = typeof(PhoneManager), Member = "StartRinging")]
+	[CalledBy(Type = typeof(PhoneManager), Member = "StopRinging")]
+	[CalledBy(Type = typeof(PhoneManager), Member = "IncrementRingCycleCount")]
+	[CallerCount(Count = 8)]
 	[Calls(Type = typeof(PhoneManager), Member = "GetPhoneSaveInfo")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(Phone), Member = "UpdateAudio")]
+	[CallsUnknownMethods(Count = 7)]
 	private static PhoneSaveDataInfo GetOrCreatePhoneSaveDataInfo(string missionId)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Action_ResetPhoneDT), Member = "OnExecute")]
-	[CalledBy(Type = typeof(TLD_IsSequenceComplete), Member = "OnCheck")]
-	[CalledBy(Type = typeof(TLD_IsConversationComplete), Member = "OnCheck")]
-	[CalledBy(Type = typeof(PhoneManager), Member = "ResetDialogueTreeIndex")]
-	[CalledBy(Type = typeof(PhoneManager), Member = "SelectNextDialogueTree")]
-	[CalledBy(Type = typeof(PhoneManager), Member = "GetCurrentDialogueTreeIndex")]
-	[CalledBy(Type = typeof(PhoneManager), Member = "IsConversationComplete")]
 	[CalledBy(Type = typeof(Phone), Member = "MaybeAssignDTController")]
+	[CalledBy(Type = typeof(PhoneManager), Member = "IsConversationComplete")]
+	[CalledBy(Type = typeof(PhoneManager), Member = "IsSequenceComplete")]
+	[CalledBy(Type = typeof(PhoneManager), Member = "GetCurrentDialogueTreeIndex")]
+	[CalledBy(Type = typeof(PhoneManager), Member = "SelectNextDialogueTree")]
+	[CalledBy(Type = typeof(PhoneManager), Member = "ResetDialogueTreeIndex")]
+	[CalledBy(Type = typeof(TLD_IsConversationComplete), Member = "OnCheck")]
+	[CalledBy(Type = typeof(TLD_IsSequenceComplete), Member = "OnCheck")]
+	[CalledBy(Type = typeof(Action_ResetPhoneDT), Member = "OnExecute")]
+	[CallerCount(Count = 9)]
 	[Calls(Type = typeof(PhoneManager), Member = "GetDialogueSequenceProgressionInfo")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 9)]
-	[CalledBy(Type = typeof(PhoneManager), Member = "IsSequenceComplete")]
+	[CallsUnknownMethods(Count = 7)]
 	private static DialogueSequenceProgressionInfo GetOrCreateDialogueSequenceProgressionInfo(string uniqueId)
 	{
 		return null;
@@ -139,16 +138,16 @@ public class PhoneManager
 	[CallsUnknownMethods(Count = 1)]
 	public static int GetCurrentDialogueTreeIndex(Phone phone)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(Phone), Member = "OnPhoneHangupComplete")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Phone), Member = "OnPhoneHangup")]
+	[CalledBy(Type = typeof(Phone), Member = "OnPhoneHangupComplete")]
 	[CalledBy(Type = typeof(Action_SelectNextPhoneDT), Member = "OnExecute")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PhoneManager), Member = "GetOrCreateDialogueSequenceProgressionInfo")]
-	[CallerCount(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void SelectNextDialogueTree(DTContainer dtContainer)
 	{
 	}
@@ -177,11 +176,11 @@ public class PhoneManager
 	[Calls(Type = typeof(PhoneManager), Member = "GetPhoneSaveInfo")]
 	public static bool HasPhoneStartedRinging(string missionId)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PhoneManager), Member = "GetOrCreatePhoneSaveDataInfo")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PhoneManager), Member = "GetOrCreatePhoneSaveDataInfo")]
 	public static void IncrementRingCycleCount(string missionId)
 	{
 	}
@@ -190,33 +189,23 @@ public class PhoneManager
 	[Calls(Type = typeof(PhoneManager), Member = "GetPhoneSaveInfo")]
 	public static int GetRingCycleCount(string missionId)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(int), Member = "ToString")]
 	[CalledBy(Type = typeof(HUDManager), Member = "UpdateDebugLines")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Phone), Member = "GetMissionObjectId")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 81)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(PhoneManager), Member = "GetPhoneSaveInfo")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Phone), Member = "GetMissionObjectId")]
 	[Calls(Type = typeof(Phone), Member = "GetDebugText")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(PhoneManager), Member = "GetDialogueSequenceProgressionInfo")]
-	[Calls(Type = typeof(Phone), Member = "GetMissionObjectId")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(PhoneManager), Member = "GetPhoneSaveInfo")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 81)]
 	public static string GetDebugText()
 	{
 		return null;

@@ -18,31 +18,21 @@ public abstract class BaseTracker
 
 	protected bool m_StopWhenDisabled;
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101262)]
 	public abstract void Cleanup();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101262)]
 	public abstract bool HasProxy();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101262)]
 	public abstract bool IsActive();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101262)]
 	protected abstract void Start();
 
-	[CallerCount(Count = 101262)]
-	[DeduplicatedMethod]
 	protected abstract void Stop();
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(AmbientTracker), Member = ".ctor")]
 	[CalledBy(Type = typeof(LoopTracker), Member = ".ctor")]
 	[CalledBy(Type = typeof(LoopTracker), Member = ".ctor")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	protected BaseTracker(GameObject go, float radius, bool stopWhenDisabled)
 	{
@@ -52,7 +42,7 @@ public abstract class BaseTracker
 	[CallsUnknownMethods(Count = 1)]
 	public virtual bool Matches(GameObject go, AK.Wwise.Event akEvent)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -61,13 +51,13 @@ public abstract class BaseTracker
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(PlayAudioSimpleManager), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 4)]
 	public int MaybeStartOrStop(Vector3 listenerPos)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -75,7 +65,7 @@ public abstract class BaseTracker
 	[CallsUnknownMethods(Count = 2)]
 	private bool ShouldStart()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -83,6 +73,6 @@ public abstract class BaseTracker
 	[CallsUnknownMethods(Count = 2)]
 	private bool ShouldStop()
 	{
-		return default(bool);
+		return false;
 	}
 }

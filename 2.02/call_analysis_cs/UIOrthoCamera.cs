@@ -7,18 +7,19 @@ public class UIOrthoCamera : MonoBehaviour
 
 	private Transform mTrans;
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Start()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Camera), Member = "set_orthographicSize")]
-	[CallsUnknownMethods(Count = 11)]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Camera), Member = "set_orthographicSize")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 11)]
 	private void Update()
 	{
 	}

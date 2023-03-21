@@ -78,13 +78,13 @@ public class Config : ScriptableObject
 	public RenderingMode renderingMode
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return default(RenderingMode);
 		}
-		[Calls(Type = typeof(Debug), Member = "LogError")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Debug), Member = "LogError")]
 		set
 		{
 		}
@@ -107,7 +107,7 @@ public class Config : ScriptableObject
 		[Calls(Type = typeof(SRPHelper), Member = "get_renderPipelineType")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -118,14 +118,14 @@ public class Config : ScriptableObject
 		[Calls(Type = typeof(SRPHelper), Member = "get_renderPipelineType")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public Shader beamShader
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 59)]
+		[CallerCount(Count = 64)]
 		get
 		{
 			return null;
@@ -134,11 +134,11 @@ public class Config : ScriptableObject
 
 	public Transform fadeOutCameraTransform
 	{
-		[CallsUnknownMethods(Count = 3)]
-		[CalledBy(Type = typeof(BeamGeometry._003CCoUpdateFadeOut_003Ed__31), Member = "MoveNext")]
+		[CalledBy(TypeFullName = "VLB.BeamGeometry.<CoUpdateFadeOut>d__31", Member = "MoveNext")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 1)]
+		[CallsUnknownMethods(Count = 3)]
 		get
 		{
 			return null;
@@ -151,7 +151,7 @@ public class Config : ScriptableObject
 		[Calls(Type = typeof(SRPHelper), Member = "get_renderPipelineType")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -165,31 +165,28 @@ public class Config : ScriptableObject
 		}
 	}
 
-	[Calls(Type = typeof(SRPHelper), Member = "get_renderPipelineType")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SRPHelper), Member = "get_renderPipelineType")]
 	public bool IsSRPBatcherSupported()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void ForceUpdateFadeOutCamera()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Config), Member = "GetInstance")]
-	[Calls(Type = typeof(SRPHelper), Member = "get_renderPipelineType")]
-	[Calls(Type = typeof(Config), Member = "GetInstance")]
+	[RuntimeInitializeOnLoadMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Config), Member = "GetInstance")]
+	[Calls(Type = typeof(SRPHelper), Member = "get_renderPipelineType")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Config), Member = "GetInstance")]
-	[RuntimeInitializeOnLoadMethod]
+	[CallsUnknownMethods(Count = 3)]
 	private static void OnStartup()
 	{
 	}
@@ -200,9 +197,9 @@ public class Config : ScriptableObject
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	private void RefreshGlobalShaderProperties()
 	{
 	}
@@ -211,19 +208,18 @@ public class Config : ScriptableObject
 	[Calls(Type = typeof(Resources), Member = "Load")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Resources), Member = "Load")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Resources), Member = "Load")]
 	public void ResetInternalData()
 	{
 	}
 
 	[CalledBy(Type = typeof(VolumetricDustParticles), Member = "InstantiateParticleSystem")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	public ParticleSystem NewVolumetricDustParticles()
 	{
 		return null;
@@ -240,11 +236,12 @@ public class Config : ScriptableObject
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 75)]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Resources), Member = "Load")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private static Config GetInstance(bool assertIfNotFound)
 	{
 		return null;

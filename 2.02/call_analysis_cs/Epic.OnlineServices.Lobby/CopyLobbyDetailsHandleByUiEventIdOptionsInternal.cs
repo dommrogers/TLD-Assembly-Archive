@@ -26,15 +26,15 @@ internal struct CopyLobbyDetailsHandleByUiEventIdOptionsInternal : ISettable, ID
 	{
 	}
 
+	[CalledBy(Type = typeof(LobbyInterface), Member = "CopyLobbyDetailsHandleByUiEventId")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(LobbyInterface), Member = "CopyLobbyDetailsHandleByUiEventId")]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

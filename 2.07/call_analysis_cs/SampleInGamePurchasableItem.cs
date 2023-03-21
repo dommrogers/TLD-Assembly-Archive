@@ -10,8 +10,8 @@ public class SampleInGamePurchasableItem : MonoBehaviour
 
 	public Text ownedUIElement;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void Purchase()
 	{
 	}

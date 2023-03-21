@@ -38,27 +38,27 @@ public class NPCAffliction
 	[CallerCount(Count = 0)]
 	public bool IsRemedyComplete(int index)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsAlternateRemedyComplete(int index)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool SupportAlternateTreatment()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public int GetPerTypeIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
@@ -67,8 +67,8 @@ public class NPCAffliction
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public AfflictionRemedy GetStandardRemedy(int index)
 	{
 		return null;
@@ -81,106 +81,102 @@ public class NPCAffliction
 		return null;
 	}
 
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyStandardTreatment")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyAlternateTreatment")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
 	[Calls(Type = typeof(NPCAffliction), Member = "GetWaterRequiredForTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyStandardTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyAlternateTreatment")]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetTreatmentWaterVolumeLiters(NPC npc)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "OnTreatmentComplete")]
-	[Calls(Type = typeof(PlayerManager), Member = "RemoveFirstAidItem")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "OnTreatmentComplete")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AfflictionRemedy), Member = "IsWaterSupply")]
+	[Calls(Type = typeof(AfflictionRemedy), Member = "PlayerHasRequiredRemedy")]
+	[Calls(Type = typeof(AfflictionRemedy), Member = "GetGearItemName")]
+	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Inventory), Member = "RemoveUnits")]
-	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "GetGearItemName")]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "PlayerHasRequiredRemedy")]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "IsWaterSupply")]
-	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "RemoveFirstAidItem")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ApplyStandardRemedy(int remedyIndex, NPC npc)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "OnTreatmentComplete")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "OnTreatmentComplete")]
-	[Calls(Type = typeof(PlayerManager), Member = "RemoveFirstAidItem")]
-	[Calls(Type = typeof(Inventory), Member = "RemoveUnits")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "GetGearItemName")]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "PlayerHasRequiredRemedy")]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "IsWaterSupply")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AfflictionRemedy), Member = "IsWaterSupply")]
+	[Calls(Type = typeof(AfflictionRemedy), Member = "PlayerHasRequiredRemedy")]
+	[Calls(Type = typeof(AfflictionRemedy), Member = "GetGearItemName")]
+	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Inventory), Member = "RemoveUnits")]
+	[Calls(Type = typeof(PlayerManager), Member = "RemoveFirstAidItem")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ApplyAlternateRemedy(int remedyIndex, NPC npc)
 	{
 	}
 
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PostTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "HasStandardTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "HasAlternateTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "GetAllAfflictions")]
+	[CallerCount(Count = 4)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsTreated()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 1)]
 	public float GetWaterLitersUsed()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 1)]
 	public float GetRestHoursCompleted()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(NPCAffliction), Member = "GetTreatmentWaterVolumeLiters")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateStandardTreatmentUI")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateAlternateTreatmentUI")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetWaterRequiredForTreatment(NPC npc)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(NPCAfflictions), Member = "Serialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallsUnknownMethods(Count = 6)]
 	public NPCAfflictionSavedData Save()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(NPCAfflictions), Member = "Deserialize")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Load(NPCAfflictionSavedData saveData)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyWaterTreatment")]
-	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "OnTreatmentComplete")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
 	[CallsUnknownMethods(Count = 1)]
 	public void UseWater(NPC npc, float waterLiters)
 	{
@@ -201,12 +197,12 @@ public class NPCAffliction
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CanApplyTreatment")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool RequiresRemdy()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

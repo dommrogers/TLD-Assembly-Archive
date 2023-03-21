@@ -48,94 +48,89 @@ public class PlayerCameraAnim : MonoBehaviour
 
 	private CameraAnimationState m_State;
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Start()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerCameraAnim), Member = "PlayingIdle")]
-	[Calls(Type = typeof(PlayerCameraAnim), Member = "PlayingIdle")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerCameraAnim), Member = "UpdateTeleport")]
+	[Calls(Type = typeof(PlayerCameraAnim), Member = "PlayingIdle")]
 	public void Update()
 	{
 	}
 
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(PlayerCameraAnim), Member = "Update")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(PlayerCameraAnim), Member = "Update")]
-	[CalledBy(Type = typeof(PlayerCameraAnim), Member = "Update")]
 	private bool PlayingIdle()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool AnimIsPlaying(int id, int layerIndex)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[Calls(Type = typeof(Transform), Member = "get_localEulerAngles")]
-	[CallsUnknownMethods(Count = 28)]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "LateUpdate")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsDeduplicatedMethods(Count = 16)]
 	[Calls(Type = typeof(Transform), Member = "get_localEulerAngles")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 28)]
 	public void UpdateMainCamera()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "Update")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "FixedUpdate")]
 	[CalledBy(Type = typeof(GameManager), Member = "EarlyUpdate")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 6)]
 	public void RestoreMainCameraPos()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public CameraAnimationState GetState()
 	{
 		return default(CameraAnimationState);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetStickToGroundPosition")]
 	[Calls(Type = typeof(PlayerCameraAnim), Member = "UpdateTeleport")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void TeleportPlayerToCameraNow(float blendTime)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Vector3), Member = "Lerp")]
-	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
 	[CalledBy(Type = typeof(PlayerCameraAnim), Member = "Update")]
 	[CalledBy(Type = typeof(PlayerCameraAnim), Member = "TeleportPlayerToCameraNow")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Vector3), Member = "Lerp")]
+	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 12)]
 	private void UpdateTeleport()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public PlayerCameraAnim()
 	{
 	}

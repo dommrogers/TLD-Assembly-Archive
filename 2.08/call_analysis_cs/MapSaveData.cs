@@ -20,10 +20,10 @@ public class MapSaveData
 
 	public Guid m_Guid;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "Serialize")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public MapSaveData()
 	{
 	}

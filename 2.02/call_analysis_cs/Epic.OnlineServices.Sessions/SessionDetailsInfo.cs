@@ -17,14 +17,14 @@ public class SessionDetailsInfo : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -32,16 +32,16 @@ public class SessionDetailsInfo : ISettable
 
 	public string HostAddress
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 71)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -54,7 +54,7 @@ public class SessionDetailsInfo : ISettable
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -75,33 +75,33 @@ public class SessionDetailsInfo : ISettable
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(SessionDetailsInfo), Member = "Set")]
-	[Calls(Type = typeof(SessionDetailsInfoInternal), Member = "get_Settings")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SessionDetailsInfoInternal), Member = "get_SessionId")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SessionDetailsInfoInternal), Member = "get_HostAddress")]
+	[Calls(Type = typeof(SessionDetailsInfoInternal), Member = "get_Settings")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	internal void Set(SessionDetailsInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SessionDetailsInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public SessionDetailsInfo()
 	{
 	}

@@ -24,7 +24,7 @@ public class Filter : BTDecorator
 		FailureOnly
 	}
 
-	private sealed class _003CCooldown_003Ed__11 : IEnumerator, IDisposable, IEnumerator<object>
+	private sealed class _003CCooldown_003Ed__11 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -34,9 +34,9 @@ public class Filter : BTDecorator
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 28)]
-			[DeduplicatedMethod]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -47,7 +47,7 @@ public class Filter : BTDecorator
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -69,11 +69,12 @@ public class Filter : BTDecorator
 		}
 
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallsUnknownMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 2)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -105,14 +106,12 @@ public class Filter : BTDecorator
 	{
 	}
 
-	[Calls(Type = typeof(Node), Member = "StartCoroutine")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[Calls(Type = typeof(Connection), Member = "Execute")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Connection), Member = "Execute")]
+	[Calls(Type = typeof(Node), Member = "StartCoroutine")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
@@ -126,8 +125,8 @@ public class Filter : BTDecorator
 		return null;
 	}
 
-	[Calls(Type = typeof(Node), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Node), Member = ".ctor")]
 	[CallsUnknownMethods(Count = 2)]
 	public Filter()
 	{

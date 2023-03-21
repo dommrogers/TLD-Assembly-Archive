@@ -36,35 +36,35 @@ public class TouchJoystickExample : MonoBehaviour, IPointerDownHandler, IEventSy
 		{
 			return default(Vector2);
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		private set
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(TouchJoystickExample), Member = "StoreOrigValues")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TouchJoystickExample), Member = "StoreOrigValues")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(TouchJoystickExample), Member = "Restart")]
 	[Calls(Type = typeof(TouchJoystickExample), Member = "StoreOrigValues")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(TouchJoystickExample), Member = "Update")]
 	[CalledBy(Type = typeof(TouchJoystickExample), Member = "UnityEngine.EventSystems.IPointerUpHandler.OnPointerUp")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Restart()
 	{
@@ -108,7 +108,7 @@ public class TouchJoystickExample : MonoBehaviour, IPointerDownHandler, IEventSy
 	[CallerCount(Count = 0)]
 	private static bool IsMousePointerId(int id)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

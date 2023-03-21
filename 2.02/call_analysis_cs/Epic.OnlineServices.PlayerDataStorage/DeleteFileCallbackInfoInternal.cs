@@ -26,10 +26,10 @@ internal struct DeleteFileCallbackInfoInternal : ICallbackInfoInternal
 	public object ClientData
 	{
 		[CalledBy(Type = typeof(DeleteFileCallbackInfo), Member = "Set")]
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(DeleteFileCallbackInfo), Member = "Set")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -38,11 +38,11 @@ internal struct DeleteFileCallbackInfoInternal : ICallbackInfoInternal
 
 	public IntPtr ClientDataAddress
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
@@ -51,7 +51,8 @@ internal struct DeleteFileCallbackInfoInternal : ICallbackInfoInternal
 		[CalledBy(Type = typeof(DeleteFileCallbackInfo), Member = "Set")]
 		[CalledBy(Type = typeof(DeleteFileCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;

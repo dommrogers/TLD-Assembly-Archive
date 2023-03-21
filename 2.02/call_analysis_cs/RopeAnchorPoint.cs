@@ -36,133 +36,131 @@ public class RopeAnchorPoint : MonoBehaviour
 	private static RopeAnchorPointSaveData m_RopeAnchorPointSaveData;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(RopeAnchorPoint), Member = "SetRopeActiveState")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Start()
 	{
 	}
 
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(RopeAnchorPoint), Member = "ActionFinished")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(RopeAnchorPoint), Member = "ActionFinished")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Reset()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "SerializeAll")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(RopeAnchorPoint), Member = "SetRopeActiveState")]
-	[Calls(Type = typeof(RopeAnchorPoint), Member = "SetRopeActiveState")]
-	[Calls(Type = typeof(RopeAnchorPoint), Member = "SnapRope")]
 	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "DeserializeAll")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(RopeAnchorPoint), Member = "SetRopeActiveState")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(RopeAnchorPoint), Member = "SnapRope")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[CallsUnknownMethods(Count = 16)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(RopeAnchorPoint), Member = "Serialize")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 16)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(RopeAnchorPoint), Member = "FindByGuid")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(RopeAnchorPoint), Member = "Deserialize")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 10)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "HandleSlipStage")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public static RopeAnchorPoint LookupAnchorPointFromRope(Rope r)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayText")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string GetHoverText()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "Deserialize")]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "HandleSlipStage")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(RopeAnchorPoint), Member = "SetRopeActiveState")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void SnapRope()
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
-	[Calls(Type = typeof(RopeAnchorPoint), Member = "ActionStarted")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(RopeAnchorPoint), Member = "ActionStarted")]
 	public bool ProcessInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 20)]
-	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "ActionFinished")]
-	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "ActionFinished")]
-	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "SnapRope")]
-	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "Deserialize")]
 	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "Start")]
 	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "Deserialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "SnapRope")]
+	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "ActionFinished")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(RopeLedge), Member = "SetActiveInitial")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 20)]
 	private void SetRopeActiveState(bool state, bool isInteraction)
 	{
 	}
@@ -173,61 +171,60 @@ public class RopeAnchorPoint : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Inventory), Member = "GetBestRopeItem")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Inventory), Member = "GetBestRopeItem")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 14)]
 	private void ActionStarted(RopeAnchorActionState action)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 20)]
-	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "CancelAction")]
 	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "Update")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(RopeAnchorPoint), Member = "SetRopeActiveState")]
-	[Calls(Type = typeof(PlayerManager), Member = "ConsumeUnitFromInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GetBestRopeItem")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "CancelAction")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
-	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
 	[Calls(Type = typeof(RopeAnchorPoint), Member = "SetRopeActiveState")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(Inventory), Member = "GetBestRopeItem")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "ConsumeUnitFromInventory")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 20)]
 	private void ActionFinished()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "DeserializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ObjectGuidManager), Member = "Lookup")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "DeserializeAll")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private static RopeAnchorPoint FindByGuid(string guid)
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}

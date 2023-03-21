@@ -13,12 +13,10 @@ public class AnimateDecalRevealFromBone : MonoBehaviour
 
 	private float m_EraseThreshold;
 
-	[Calls(Type = typeof(TransformAxisExtension), Member = "GetLocalTransformValue")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(TransformAxisExtension), Member = "GetLocalTransformValue")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}

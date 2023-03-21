@@ -26,51 +26,51 @@ public class FirstPersonParticles : MonoBehaviour
 	private ParticleSystem.Particle[] m_Particles;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(FirstPersonParticles), Member = "InitializeIfNeeded")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ParticleSystem), Member = "GetParticles")]
-	[Calls(Type = typeof(FirstPersonParticles), Member = "ComputeWindInEmitterSpace")]
-	[Calls(Type = typeof(FirstPersonParticles), Member = "ComputeMovementInEmitterSpace")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(FirstPersonParticles), Member = "ComputeMovementInEmitterSpace")]
+	[Calls(Type = typeof(FirstPersonParticles), Member = "ComputeWindInEmitterSpace")]
+	[Calls(Type = typeof(FirstPersonParticles), Member = "InitializeIfNeeded")]
+	[Calls(Type = typeof(ParticleSystem), Member = "GetParticles")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void LateUpdate()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(FirstPersonParticles), Member = "LateUpdate")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void InitializeIfNeeded()
 	{
 	}
 
 	[CalledBy(Type = typeof(FirstPersonParticles), Member = "LateUpdate")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private Vector3 ComputeMovementInEmitterSpace(Transform worldSpace)
 	{
 		return default(Vector3);
 	}
 
+	[CalledBy(Type = typeof(FirstPersonParticles), Member = "LateUpdate")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(Wind), Member = "GetWindAngleRelativeToPlayer")]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[CalledBy(Type = typeof(FirstPersonParticles), Member = "LateUpdate")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	private Vector3 ComputeWindInEmitterSpace()
 	{

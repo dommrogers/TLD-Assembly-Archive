@@ -5,8 +5,8 @@ namespace ParadoxNotion;
 
 public static class RectUtils
 {
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public static Rect GetBoundRect(Rect[] rects)
 	{
 		return default(Rect);
@@ -22,7 +22,7 @@ public static class RectUtils
 	[CallerCount(Count = 0)]
 	public static bool Encapsulates(this Rect a, Rect b)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

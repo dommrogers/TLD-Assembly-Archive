@@ -16,7 +16,7 @@ public class ScorchImpactEffectPool : EffectPool<ScorchImpactEffectType>
 	public SerializableSpawnGroup[] m_EffectGroupsSerialized;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 58)]
+	[CallerCount(Count = 61)]
 	protected override SerializableSpawnGroupGeneric[] GetSerializedGroups()
 	{
 		return null;
@@ -29,7 +29,7 @@ public class ScorchImpactEffectPool : EffectPool<ScorchImpactEffectType>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(EffectPool<>), Member = ".ctor")]
 	public ScorchImpactEffectPool()
 	{
 		((EffectPool<>)(object)this)._002Ector();

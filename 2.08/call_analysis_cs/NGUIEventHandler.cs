@@ -5,9 +5,9 @@ public class NGUIEventHandler : MonoBehaviour
 {
 	private GameObject LastSelectedByKeys;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 0)]
 	private void Start()
 	{
 	}
@@ -20,7 +20,6 @@ public class NGUIEventHandler : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UICamera), Member = "get_selectedObject")]
-	[Calls(Type = typeof(UICamera), Member = "get_selectedObject")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
 	[CallsUnknownMethods(Count = 1)]
@@ -28,8 +27,8 @@ public class NGUIEventHandler : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public NGUIEventHandler()
 	{
 	}

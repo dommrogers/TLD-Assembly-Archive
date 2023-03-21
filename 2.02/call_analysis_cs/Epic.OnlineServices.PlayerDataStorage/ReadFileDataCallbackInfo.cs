@@ -21,14 +21,14 @@ public class ReadFileDataCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		private set
 		{
 		}
@@ -38,14 +38,14 @@ public class ReadFileDataCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -53,16 +53,16 @@ public class ReadFileDataCallbackInfo : ICallbackInfo, ISettable
 
 	public string Filename
 	{
-		[CallerCount(Count = 5)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -72,10 +72,10 @@ public class ReadFileDataCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 2)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -87,16 +87,16 @@ public class ReadFileDataCallbackInfo : ICallbackInfo, ISettable
 
 	public bool IsLastChunk
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
@@ -106,14 +106,14 @@ public class ReadFileDataCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 23)]
 		private set
 		{
 		}
@@ -126,29 +126,29 @@ public class ReadFileDataCallbackInfo : ICallbackInfo, ISettable
 		return null;
 	}
 
-	[Calls(Type = typeof(ReadFileDataCallbackInfoInternal), Member = "get_IsLastChunk")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(ReadFileDataCallbackInfo), Member = "Set")]
-	[Calls(Type = typeof(ReadFileDataCallbackInfoInternal), Member = "get_DataChunk")]
-	[Calls(Type = typeof(ReadFileDataCallbackInfoInternal), Member = "get_LocalUserId")]
-	[Calls(Type = typeof(ReadFileDataCallbackInfoInternal), Member = "get_ClientData")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReadFileDataCallbackInfoInternal), Member = "get_ClientData")]
+	[Calls(Type = typeof(ReadFileDataCallbackInfoInternal), Member = "get_LocalUserId")]
 	[Calls(Type = typeof(ReadFileDataCallbackInfoInternal), Member = "get_Filename")]
+	[Calls(Type = typeof(ReadFileDataCallbackInfoInternal), Member = "get_IsLastChunk")]
+	[Calls(Type = typeof(ReadFileDataCallbackInfoInternal), Member = "get_DataChunk")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	internal void Set(ReadFileDataCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ReadFileDataCallbackInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public ReadFileDataCallbackInfo()
 	{
 	}

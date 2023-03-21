@@ -31,18 +31,18 @@ internal struct TokenInternal : ISettable, IDisposable
 
 	public string App
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(Token), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(TokenInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -51,8 +51,8 @@ internal struct TokenInternal : ISettable, IDisposable
 	public string ClientId
 	{
 		[CalledBy(Type = typeof(Token), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -60,8 +60,8 @@ internal struct TokenInternal : ISettable, IDisposable
 		}
 		[CalledBy(Type = typeof(TokenInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -69,17 +69,18 @@ internal struct TokenInternal : ISettable, IDisposable
 
 	public EpicAccountId AccountId
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(Token), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CallerCount(Count = 1)]
 		[CalledBy(Type = typeof(TokenInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -88,17 +89,17 @@ internal struct TokenInternal : ISettable, IDisposable
 	public string AccessToken
 	{
 		[CalledBy(Type = typeof(Token), Member = "Set")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(TokenInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -110,7 +111,7 @@ internal struct TokenInternal : ISettable, IDisposable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(double);
+			return 0.0;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -120,17 +121,17 @@ internal struct TokenInternal : ISettable, IDisposable
 
 	public string ExpiresAt
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(Token), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(TokenInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -156,15 +157,15 @@ internal struct TokenInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(Token), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(TokenInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -177,7 +178,7 @@ internal struct TokenInternal : ISettable, IDisposable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(double);
+			return 0.0;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -187,52 +188,47 @@ internal struct TokenInternal : ISettable, IDisposable
 
 	public string RefreshExpiresAt
 	{
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(Token), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(TokenInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
+	[CalledBy(Type = typeof(TokenInternal), Member = "Set")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(TokenInternal), Member = "set_App")]
+	[Calls(Type = typeof(TokenInternal), Member = "set_ClientId")]
+	[Calls(Type = typeof(TokenInternal), Member = "set_AccountId")]
+	[Calls(Type = typeof(TokenInternal), Member = "set_AccessToken")]
+	[Calls(Type = typeof(TokenInternal), Member = "set_ExpiresAt")]
 	[Calls(Type = typeof(TokenInternal), Member = "set_RefreshToken")]
 	[Calls(Type = typeof(TokenInternal), Member = "set_RefreshExpiresAt")]
-	[CalledBy(Type = typeof(TokenInternal), Member = "Set")]
-	[Calls(Type = typeof(TokenInternal), Member = "set_ExpiresAt")]
-	[Calls(Type = typeof(TokenInternal), Member = "set_App")]
-	[Calls(Type = typeof(TokenInternal), Member = "set_AccountId")]
-	[Calls(Type = typeof(TokenInternal), Member = "set_ClientId")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(TokenInternal), Member = "set_AccessToken")]
 	public void Set(Token other)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(TokenInternal), Member = "Set")]
 	[CalledBy(Type = typeof(VerifyUserAuthOptionsInternal), Member = "set_AuthToken")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(TokenInternal), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void Dispose()
 	{
 	}

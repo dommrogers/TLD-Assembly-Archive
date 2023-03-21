@@ -13,10 +13,10 @@ public class InterceptEvent : ConditionTask<Transform>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Enum), Member = "ToString")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -33,11 +33,11 @@ public class InterceptEvent : ConditionTask<Transform>
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -61,9 +61,9 @@ public class InterceptEvent : ConditionTask<Transform>
 	{
 	}
 
-	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	private void OnPointerUp(PointerEventData eventData)
 	{
 	}
@@ -89,9 +89,9 @@ public class InterceptEvent : ConditionTask<Transform>
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
-	[DeduplicatedMethod]
 	private void OnScroll(PointerEventData eventData)
 	{
 	}
@@ -117,9 +117,9 @@ public class InterceptEvent : ConditionTask<Transform>
 	{
 	}
 
-	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	private void OnMove(AxisEventData eventData)
 	{
 	}

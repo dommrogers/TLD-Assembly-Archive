@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -39,8 +38,8 @@ public class MegaWireSpan : MonoBehaviour
 
 	public Vector3[] norms;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private void OnBecameVisible()
 	{
 	}
@@ -50,37 +49,36 @@ public class MegaWireSpan : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(MegaWire), Member = "Create")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
 	[Calls(Type = typeof(MegaWireConnection), Member = "Init")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(MegaWire), Member = "Create")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public void Init(MegaWire wire)
 	{
 	}
 
-	[CalledBy(Type = typeof(MegaWire), Member = "RunPhysics")]
 	[CalledBy(Type = typeof(MegaWire), Member = "WireUpdate")]
-	[CallsUnknownMethods(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(MegaWire), Member = "RunPhysics")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void UpdateSpan(MegaWire wire, float ts)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(MegaWire), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(MegaWire), Member = "RebuildWire")]
 	[CalledBy(Type = typeof(MegaWire), Member = "RunPhysics")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(MegaWireConnection), Member = "MoveMasses")]
+	[CalledBy(Type = typeof(MegaWire), Member = "RebuildWire")]
+	[CalledBy(Type = typeof(MegaWire), Member = "LateUpdate")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(MegaWireConnection), Member = "MoveMasses")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void MoveMasses(MegaWire wire)
 	{
 	}
@@ -93,8 +91,9 @@ public class MegaWireSpan : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public MegaWireSpan()
 	{

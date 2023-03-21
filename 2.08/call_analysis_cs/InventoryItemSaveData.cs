@@ -6,8 +6,8 @@ public class InventoryItemSaveData
 
 	public string m_SerializedGear;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public InventoryItemSaveData()
 	{
 	}

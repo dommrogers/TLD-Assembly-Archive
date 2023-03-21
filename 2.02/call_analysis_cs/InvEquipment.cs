@@ -9,79 +9,79 @@ public class InvEquipment : MonoBehaviour
 
 	public InvGameItem[] equippedItems
 	{
-		[CallerCount(Count = 29)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[CalledBy(Type = typeof(InvEquipment), Member = "Unequip")]
-	[Calls(Type = typeof(InvAttachmentPoint), Member = "Attach")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Material), Member = "set_color")]
 	[CalledBy(Type = typeof(UIEquipmentSlot), Member = "Replace")]
 	[CalledBy(Type = typeof(InvEquipment), Member = "Equip")]
 	[CalledBy(Type = typeof(InvEquipment), Member = "Unequip")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(InvGameItem), Member = "get_name")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(InvEquipment), Member = "Unequip")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(InvGameItem), Member = "get_baseItem")]
+	[Calls(Type = typeof(InvGameItem), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(InvAttachmentPoint), Member = "Attach")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Material), Member = "set_color")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 18)]
 	public InvGameItem Replace(InvBaseItem.Slot slot, InvGameItem item)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(EquipRandomItem), Member = "OnClick")]
 	[CalledBy(Type = typeof(EquipItems), Member = "Start")]
-	[Calls(Type = typeof(InvEquipment), Member = "Replace")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(InvGameItem), Member = "get_baseItem")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(EquipRandomItem), Member = "OnClick")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(InvGameItem), Member = "get_baseItem")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(InvEquipment), Member = "Replace")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public InvGameItem Equip(InvGameItem item)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(InvGameItem), Member = "get_baseItem")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InvGameItem), Member = "get_baseItem")]
 	[Calls(Type = typeof(InvEquipment), Member = "Replace")]
 	public InvGameItem Unequip(InvGameItem item)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(InvEquipment), Member = "Replace")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InvEquipment), Member = "Replace")]
 	public InvGameItem Unequip(InvBaseItem.Slot slot)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool HasEquipped(InvGameItem item)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InvGameItem), Member = "get_baseItem")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InvGameItem), Member = "get_baseItem")]
 	[CallsUnknownMethods(Count = 3)]
 	public bool HasEquipped(InvBaseItem.Slot slot)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public InvGameItem GetItem(InvBaseItem.Slot slot)
 	{
 		return null;

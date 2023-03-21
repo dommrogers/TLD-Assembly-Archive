@@ -11,7 +11,8 @@ public class PlayableAssetSubtitle : PlayableAsset
 	private TLD_SubtitleTrack m_Track;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(ScriptPlayable<>), Member = "Create")]
+	[Calls(Type = typeof(PlayableHandle), Member = "GetObject")]
 	[CallsUnknownMethods(Count = 3)]
 	public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
 	{
@@ -19,21 +20,21 @@ public class PlayableAssetSubtitle : PlayableAsset
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 40)]
+	[CallerCount(Count = 50)]
 	public void SetTrack(TLD_SubtitleTrack tldSubtitleTrack)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 25)]
+	[CallerCount(Count = 28)]
 	public TLD_SubtitleTrack GetTrack()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public PlayableAssetSubtitle()
 	{
 	}

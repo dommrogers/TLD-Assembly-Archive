@@ -32,8 +32,8 @@ public class PermissionCheckResultPlugin
 	public static extern int PermissionCheckResult_IsAllowed(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr PermissionCheckResult_PermissionRequested(IntPtr self);
 
 	[PreserveSig]
@@ -42,7 +42,7 @@ public class PermissionCheckResultPlugin
 	public static extern void PermissionCheckResult_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PermissionCheckResultPlugin()
 	{
 	}

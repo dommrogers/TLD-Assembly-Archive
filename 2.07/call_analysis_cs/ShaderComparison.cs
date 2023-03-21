@@ -25,27 +25,25 @@ public class ShaderComparison
 	{
 	}
 
-	[Calls(Type = typeof(TerrainData), Member = "RefreshPrototypes")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(ShaderComparison), Member = "Toggle")]
-	[CalledBy(Type = typeof(ShaderComparison), Member = "Toggle")]
 	[CalledBy(Type = typeof(ShaderComparison), Member = "SelectShader")]
-	[Calls(Type = typeof(Terrain), Member = "get_terrainData")]
+	[CalledBy(Type = typeof(ShaderComparison), Member = "Toggle")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
 	[Calls(Type = typeof(Material), Member = "get_shader")]
 	[Calls(Type = typeof(Material), Member = "set_shader")]
-	[Calls(Type = typeof(Material), Member = "get_shader")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Material), Member = "set_shader")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Terrain), Member = "get_terrainData")]
+	[Calls(Type = typeof(TerrainData), Member = "RefreshPrototypes")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public void SetShaderForMaterials(Shader shader)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(ShaderComparison), Member = "SetShaderForMaterials")]
-	[Calls(Type = typeof(ShaderComparison), Member = "SetShaderForMaterials")]
 	[CalledBy(Type = typeof(ShaderToggle), Member = "Toggle")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_shader_toggle")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ShaderComparison), Member = "SetShaderForMaterials")]
 	public void Toggle()
 	{
 	}

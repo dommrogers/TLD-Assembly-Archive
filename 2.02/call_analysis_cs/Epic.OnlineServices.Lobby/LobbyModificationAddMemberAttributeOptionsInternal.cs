@@ -17,9 +17,9 @@ internal struct LobbyModificationAddMemberAttributeOptionsInternal : ISettable, 
 	{
 		[CalledBy(Type = typeof(LobbyModificationAddMemberAttributeOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(LobbyModificationAddMemberAttributeOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(AttributeDataInternal), Member = "Set")]
 		[CallsDeduplicatedMethods(Count = 4)]
-		[CallerCount(Count = 2)]
 		set
 		{
 		}
@@ -40,17 +40,17 @@ internal struct LobbyModificationAddMemberAttributeOptionsInternal : ISettable, 
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(LobbyModificationAddMemberAttributeOptionsInternal), Member = "set_Attribute")]
 	[CalledBy(Type = typeof(LobbyModification), Member = "AddMemberAttribute")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(LobbyModificationAddMemberAttributeOptionsInternal), Member = "set_Attribute")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

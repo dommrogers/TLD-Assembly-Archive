@@ -13,12 +13,12 @@ public class TouchButtonExample : MonoBehaviour, IPointerDownHandler, IEventSyst
 
 	public bool isPressed
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -47,17 +47,17 @@ public class TouchButtonExample : MonoBehaviour, IPointerDownHandler, IEventSyst
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private void UnityEngine_002EEventSystems_002EIPointerUpHandler_002EOnPointerUp(PointerEventData eventData)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private static bool IsMousePointerId(int id)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

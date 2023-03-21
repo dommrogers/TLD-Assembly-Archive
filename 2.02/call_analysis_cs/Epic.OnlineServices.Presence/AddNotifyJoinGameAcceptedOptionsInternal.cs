@@ -15,15 +15,15 @@ internal struct AddNotifyJoinGameAcceptedOptionsInternal : ISettable, IDisposabl
 	{
 	}
 
+	[CalledBy(Type = typeof(PresenceInterface), Member = "AddNotifyJoinGameAccepted")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(PresenceInterface), Member = "AddNotifyJoinGameAccepted")]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

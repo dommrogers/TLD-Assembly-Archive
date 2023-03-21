@@ -88,100 +88,87 @@ public class Panel_FireStart : Panel_Base
 
 	private float m_SecondsToNextMove;
 
-	[CallsUnknownMethods(Count = 116)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 116)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_childCount")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(Panel_FireStart), Member = "RefreshLabels")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "Refresh")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "OnCancel")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "UpdateMenuNavigation")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "UpdateMenuNavigation")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "get_childCount")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "Refresh")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "UpdateButtonLegend")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "RefreshLabels")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "OnCancel")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 12)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "Update")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "CanHarvestCharcoal")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "CanStartFire")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_FireStart), Member = "CanStartFire")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "CanHarvestCharcoal")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	private void UpdateButtonLegend()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_FireStart), Member = "OnCharcoalHarvest")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "CanHarvestCharcoal")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "Update")]
-	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(InputManager), Member = "HasContext")]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(InputManager), Member = "HasContext")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "CanHarvestCharcoal")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "OnCharcoalHarvest")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 25)]
 	private void UpdateMenuNavigation()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "Update")]
 	[CalledBy(Type = typeof(MatchesItem), Member = "PutOut")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "Enable")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_FireStart), Member = "RefreshList")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "RefreshLabels")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFireStarter")]
 	[Calls(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedAccelerant")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedTinder")]
 	[Calls(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
 	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFuelSource")]
-	[Calls(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
-	[Calls(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFireStarter")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "RefreshLabels")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "RefreshList")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "RefreshList")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "RefreshList")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "RefreshList")]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedTinder")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedAccelerant")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Refresh()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerAttemptToStartFire")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessWoodStoveInteraction")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessWoodStoveInteraction")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerAttemptToStartFire")]
 	[CallerCount(Count = 2)]
 	public void EnableAfterDelay(float delaySeconds)
 	{
@@ -191,338 +178,323 @@ public class Panel_FireStart : Panel_Base
 	[CallerCount(Count = 0)]
 	public bool IsEnablePending()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "Enable")]
-	[CallsUnknownMethods(Count = 11)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	private void LookAtFire()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "LookAtFire")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "Refresh")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTotalPowderWeight")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTotalLiters")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetTotalLiters")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetTotalPowderWeight")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "Refresh")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "LookAtFire")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 33)]
 	public override void Enable(bool enable)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceMeshInWorld")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessCampfireInteraction")]
 	[CalledBy(Type = typeof(Campfire), Member = "LaunchFireStartInterface")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessCampfireInteraction")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceMeshInWorld")]
 	[CallerCount(Count = 3)]
 	public void SetCampFireInstance(Campfire cf, bool destroyOnCancel)
 	{
 	}
 
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "TakeCharcoalCallback")]
 	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "DismantleFireCompleteCallback")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessWoodStoveInteraction")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerAttemptToStartFire")]
+	[CallerCount(Count = 4)]
 	public void SetFireContainer(GameObject go)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void SetDefaultFireStarter(GameObject starter)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "CanStartFire")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "DecreaseStarter")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "IncreaseStarter")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshChanceOfSuccessLabel")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "Refresh")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshChanceOfSuccessLabel")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "IncreaseStarter")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "DecreaseStarter")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "CanStartFire")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private FireStarterItem GetSelectedFireStarter()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "IncreaseTinder")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "CanStartFire")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "DecreaseTinder")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "Refresh")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "IncreaseTinder")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "DecreaseTinder")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "CanStartFire")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private FuelSourceItem GetSelectedTinder()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "CanStartFire")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "DecreaseFuel")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "IncreaseFuel")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshEstimatedDurationLabel")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshChanceOfSuccessLabel")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "Refresh")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshChanceOfSuccessLabel")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshEstimatedDurationLabel")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "IncreaseFuel")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "DecreaseFuel")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "CanStartFire")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private FuelSourceItem GetSelectedFuelSource()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "DecreaseAccelerant")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "IncreaseAccelerant")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshChanceOfSuccessLabel")]
-	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "Refresh")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshChanceOfSuccessLabel")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "IncreaseAccelerant")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "DecreaseAccelerant")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private FireStarterItem GetSelectedAccelerant()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Panel_FireStart), Member = "HasDirectSunlight")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshLabels")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedAccelerant")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFuelSource")]
 	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFireStarter")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFuelSource")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedAccelerant")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(FireManager), Member = "CalclateFireStartSuccess")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "HasDirectSunlight")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void RefreshChanceOfSuccessLabel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void RefreshBaseSkillLabel()
 	{
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshLabels")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
-	[Calls(Type = typeof(FuelSourceItem), Member = "GetModifiedBurnDurationHours")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFuelSource")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
+	[Calls(Type = typeof(FuelSourceItem), Member = "GetModifiedBurnDurationHours")]
+	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
+	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void RefreshEstimatedDurationLabel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshLabels")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 3)]
 	private void RefreshTinderLabel()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFireStarter")]
 	[Calls(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void IncreaseStarter()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFireStarter")]
+	[Calls(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void DecreaseStarter()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedTinder")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedTinder")]
+	[Calls(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void IncreaseTinder()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedTinder")]
 	[Calls(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void DecreaseTinder()
 	{
 	}
 
-	[Calls(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFuelSource")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFuelSource")]
+	[Calls(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void IncreaseFuel()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFuelSource")]
 	[Calls(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void DecreaseFuel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedAccelerant")]
-	[Calls(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedAccelerant")]
+	[Calls(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void IncreaseAccelerant()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedAccelerant")]
 	[Calls(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void DecreaseAccelerant()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "HasDirectSunlight")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFireStarter")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFuelSource")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedTinder")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFireStarter")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedTinder")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFuelSource")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "HasDirectSunlight")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool CanStartFire()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(PlayerManager), Member = "DeductPowderFromInventory")]
-	[Calls(Type = typeof(FireManager), Member = "CalclateFireStartSuccess")]
-	[Calls(Type = typeof(FireManager), Member = "PlayerStartFire")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "UpdateMenuNavigation")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "ForceBurnResearchItem")]
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowBurnResearchNotification")]
-	[Calls(Type = typeof(PlayerManager), Member = "DeductLiquidFromInventory")]
-	[Calls(Type = typeof(ResearchItem), Member = "IsResearchComplete")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFireStarter")]
 	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedTinder")]
 	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedFuelSource")]
 	[Calls(Type = typeof(Panel_FireStart), Member = "GetSelectedAccelerant")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Campfire), Member = "TooWindyToStart")]
-	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Panel_FireStart), Member = "HasDirectSunlight")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(ResearchItem), Member = "IsResearchComplete")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowBurnResearchNotification")]
+	[Calls(Type = typeof(PlayerManager), Member = "DeductPowderFromInventory")]
+	[Calls(Type = typeof(FireManager), Member = "CalclateFireStartSuccess")]
+	[Calls(Type = typeof(FireManager), Member = "PlayerStartFire")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[Calls(Type = typeof(PlayerManager), Member = "DeductLiquidFromInventory")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 21)]
 	public void OnStartFire(bool skipResearchItemCheck = false)
 	{
 	}
@@ -533,213 +505,194 @@ public class Panel_FireStart : Panel_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnCharcoalHarvest")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnCancel")]
-	[Calls(Type = typeof(WoodStove), Member = "Close")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnCharcoalHarvest")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(WoodStove), Member = "Close")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaybeCloseFireContainer()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "Update")]
-	[Calls(Type = typeof(PanViewCamera), Member = "ReattachToPlayer")]
-	[Calls(Type = typeof(FireManager), Member = "DestroyFireObject")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_FireStart), Member = "MaybeCloseFireContainer")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(FireManager), Member = "DestroyFireObject")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PanViewCamera), Member = "ReattachToPlayer")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	public void OnCancel()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "UpdateMenuNavigation")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(Fire), Member = "GetAvailableCharcoalPieces")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "UpdateMenuNavigation")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Fire), Member = "GetAvailableCharcoalPieces")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool CanHarvestCharcoal()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 28)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "UpdateMenuNavigation")]
-	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "DismantleFireCompleteCallback")]
 	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "TakeCharcoalCallback")]
-	[Calls(Type = typeof(PanViewCamera), Member = "ReattachToPlayer")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "MaybeCloseFireContainer")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "DismantleFireCompleteCallback")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "UpdateMenuNavigation")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Fire), Member = "GetAvailableCharcoalPieces")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "MaybeCloseFireContainer")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PanViewCamera), Member = "ReattachToPlayer")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 28)]
 	public void OnCharcoalHarvest()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(FireManager), Member = "GetMissingMaterials")]
-	[CalledBy(Type = typeof(FireManager), Member = "GetMissingMaterials")]
-	[CalledBy(Type = typeof(FireManager), Member = "GetMissingMaterials")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshList")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CalledBy(Type = typeof(FireManager), Member = "GetMissingMaterials")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	public bool FilterItem(GearItem gi, FireStartMaterialType type, bool fuelSourceCanInitiateFire = false)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool FilterItemFireStarter(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool FilterItemTinder(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool FilterItemFuelSource(GearItem gi, bool canInitiateFire)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool FilterItemAccelerant(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentNullException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentNullException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentNullException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentNullException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "Refresh")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "Refresh")]
-	[CallsUnknownMethods(Count = 64)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "Refresh")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "Refresh")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 12)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_FireStart), Member = "FilterItem")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentNullException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 64)]
 	private void RefreshList(StartFireSelectionRow row, List<GearItem> gearList, FireStartMaterialType type)
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "Refresh")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "Update")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "RefreshTinderLabel")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "RefreshEstimatedDurationLabel")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "RefreshChanceOfSuccessLabel")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "Refresh")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "RefreshChanceOfSuccessLabel")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "RefreshEstimatedDurationLabel")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "RefreshTinderLabel")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void RefreshLabels()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "CanStartFire")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshChanceOfSuccessLabel")]
-	[Calls(Type = typeof(Weather), Member = "GetWeatherStage")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "CanStartFire")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(Weather), Member = "IsClear")]
+	[Calls(Type = typeof(Weather), Member = "GetWeatherStage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private bool HasDirectSunlight()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(StartFireSelectionRow), Member = "Update")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CalledBy(Type = typeof(StartFireSelectionRow), Member = "Update")]
-	[CalledBy(Type = typeof(StartFireSelectionRow), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool IsThisKeroseneAccelerant(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(StartFireSelectionRow), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CalledBy(Type = typeof(StartFireSelectionRow), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool IsGunpowderAccelerant(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 63)]
 	public Panel_FireStart()
 	{

@@ -9,9 +9,9 @@ namespace DataPlatform;
 public class AchievementsManagerPlugin
 {
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static extern bool AchievementsManager_QueryAchievementsForTitleIdAsync(uint titleId, string strXboxUserId, ObjectResultCallback callback, IntPtr userData);
 
 	[PreserveSig]
@@ -34,13 +34,13 @@ public class AchievementsManagerPlugin
 
 	[PreserveSig]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static extern void AchievementsManager_RegisterForUnlockNotifications(ObjectResultCallback callback, IntPtr userData);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void AchievementsManager_UnRegisterForUnlockNotifications();
 
 	[PreserveSig]
@@ -56,7 +56,7 @@ public class AchievementsManagerPlugin
 	public static extern bool AchievementsManager_UpdateAchievementFullAsync(int userId, string xboxUserId, uint titleId, string serviceConfigurationId, string achievementId, uint percentComplete, GenericActionCallback callback, IntPtr userData);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AchievementsManagerPlugin()
 	{
 	}

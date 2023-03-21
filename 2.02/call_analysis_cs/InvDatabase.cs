@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -20,22 +19,19 @@ public class InvDatabase : MonoBehaviour
 		[CalledBy(Type = typeof(EquipRandomItem), Member = "OnClick")]
 		[CalledBy(Type = typeof(InvDatabase), Member = "GetDatabase")]
 		[CalledBy(Type = typeof(InvDatabase), Member = "FindByID")]
-		[CalledBy(Type = typeof(InvDatabase), Member = "FindByID")]
 		[CalledBy(Type = typeof(InvDatabase), Member = "FindByName")]
-		[CalledBy(Type = typeof(InvDatabase), Member = "FindByName")]
-		[CalledBy(Type = typeof(InvDatabase), Member = "FindItemID")]
-		[CalledBy(Type = typeof(InvDatabase), Member = "GetDatabase")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(InvDatabase), Member = "FindItemID")]
 		[CallerCount(Count = 9)]
+		[Calls(Type = typeof(NGUITools), Member = "FindActive")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
@@ -46,9 +42,9 @@ public class InvDatabase : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private InvBaseItem GetItem(int id16)
 	{
@@ -56,24 +52,22 @@ public class InvDatabase : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InvDatabase), Member = "get_list")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(InvDatabase), Member = "get_list")]
-	[Calls(Type = typeof(InvDatabase), Member = "get_list")]
 	[CallsUnknownMethods(Count = 5)]
 	private static InvDatabase GetDatabase(int dbID)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(InvDatabase), Member = "get_list")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(EquipItems), Member = "Start")]
 	[CalledBy(Type = typeof(InvGameItem), Member = "get_baseItem")]
-	[CallsUnknownMethods(Count = 9)]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(InvDatabase), Member = "get_list")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	public static InvBaseItem FindByID(int id32)
 	{
 		return null;
@@ -81,30 +75,30 @@ public class InvDatabase : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InvDatabase), Member = "get_list")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(InvDatabase), Member = "get_list")]
 	public static InvBaseItem FindByName(string exact)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(InvDatabase), Member = "get_list")]
-	[Calls(Type = typeof(InvDatabase), Member = "get_list")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InvDatabase), Member = "get_list")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static int FindItemID(InvBaseItem item)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public InvDatabase()
 	{
 	}

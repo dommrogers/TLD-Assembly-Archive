@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -11,34 +10,35 @@ public class SpawnRegionAnimalTableSO : ScriptableObject
 
 	private float m_TotalOdds;
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(SpawnRegion), Member = "InstantiateSpawnFromSaveData")]
-	[Calls(Type = typeof(SpawnRegionAnimalTableSO), Member = "PickSpawnAnimal")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(SpawnRegionAnimalTableSO), Member = "PickSpawnAnimal")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public AssetReferenceAnimalPrefab FindAnimalPrefab(string assetReferenceGUID)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(SpawnRegion), Member = "Start")]
 	[CalledBy(Type = typeof(SpawnRegion), Member = "GetSpawnablePrefabName")]
 	[CalledBy(Type = typeof(SpawnRegion), Member = "Spawn")]
 	[CalledBy(Type = typeof(SpawnRegion), Member = "InstantiateAndPlaceSpawn")]
 	[CalledBy(Type = typeof(SpawnRegionAnimalTableSO), Member = "FindAnimalPrefab")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public AssetReferenceAnimalPrefab PickSpawnAnimal(WildlifeMode mode)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private AssetReferenceAnimalPrefab GetEntryAnimalFromMode(SpawnAnimalTableEntry entry, WildlifeMode mode)
 	{
 		return null;

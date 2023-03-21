@@ -8,16 +8,16 @@ public class ParlayRollChance : DTNode
 {
 	public override int maxOutConnections
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);

@@ -9,8 +9,8 @@ internal struct ActiveSessionGetRegisteredPlayerCountOptionsInternal : ISettable
 {
 	private int m_ApiVersion;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void Set(ActiveSessionGetRegisteredPlayerCountOptions other)
 	{
 	}
@@ -23,7 +23,7 @@ internal struct ActiveSessionGetRegisteredPlayerCountOptionsInternal : ISettable
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

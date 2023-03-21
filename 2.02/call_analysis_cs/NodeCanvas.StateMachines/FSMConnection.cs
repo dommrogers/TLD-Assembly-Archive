@@ -15,8 +15,8 @@ public class FSMConnection : Connection, ITaskAssignable<ConditionTask>, ITaskAs
 		{
 			return null;
 		}
-		[CallerCount(Count = 20)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
@@ -39,8 +39,8 @@ public class FSMConnection : Connection, ITaskAssignable<ConditionTask>, ITaskAs
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(FSM), Member = "EnterState")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void PerformTransition()
 	{

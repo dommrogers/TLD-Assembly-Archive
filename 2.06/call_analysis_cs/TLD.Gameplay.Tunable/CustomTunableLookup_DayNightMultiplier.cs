@@ -7,7 +7,7 @@ namespace TLD.Gameplay.Tunable;
 public class CustomTunableLookup_DayNightMultiplier : CustomTunableLookup<CustomTunableDayNightMultiplier, float>
 {
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(CustomTunableLookup<, >), Member = ".ctor")]
 	public CustomTunableLookup_DayNightMultiplier()
 	{
 		((CustomTunableLookup<, >)(object)this)._002Ector();

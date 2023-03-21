@@ -13,20 +13,18 @@ public class AnimateDecalRevealFromBone : MonoBehaviour
 
 	private float m_EraseThreshold;
 
-	[Calls(Type = typeof(TransformAxisExtension), Member = "GetLocalTransformValue")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(TransformAxisExtension), Member = "GetLocalTransformValue")]
 	[Calls(Type = typeof(PlayerManager), Member = "UpdatePlacementDecalReveal")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public AnimateDecalRevealFromBone()
 	{
 	}

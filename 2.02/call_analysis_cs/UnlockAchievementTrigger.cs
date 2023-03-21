@@ -5,13 +5,13 @@ public class UnlockAchievementTrigger : MonoBehaviour
 {
 	private Achievement m_Achievement;
 
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(AchievementPlatformManager), Member = "IsUnlocked")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(AchievementPlatformManager), Member = "IsUnlocked")]
+	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnTriggerEnter(Collider c)
 	{
 	}

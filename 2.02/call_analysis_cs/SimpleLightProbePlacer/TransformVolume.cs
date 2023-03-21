@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -14,7 +16,7 @@ public class TransformVolume : MonoBehaviour
 		public static Func<Vector3, Vector3, Vector3> _003C_003E9__14_0;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
@@ -37,8 +39,8 @@ public class TransformVolume : MonoBehaviour
 		{
 			return default(Volume);
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -67,84 +69,88 @@ public class TransformVolume : MonoBehaviour
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TransformVolume), Member = "GetCorners")]
 	[Calls(Type = typeof(TransformVolume), Member = "GetBounds")]
-	[Calls(Type = typeof(TransformVolume), Member = "GetBounds")]
 	[Calls(Type = typeof(Bounds), Member = "Intersects")]
 	public bool IsInBounds(Vector3[] points)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 16)]
+	[Calls(Type = typeof(Enumerable), Member = "All")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	public bool IsOnBorder(Vector3[] points)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enumerable), Member = "All")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public bool IsInVolume(Vector3[] points)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(TransformVolume), Member = "GetSideDirection")]
 	[Calls(Type = typeof(TransformVolume), Member = "GetSidePosition")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[Calls(Type = typeof(Plane), Member = "GetSide")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool IsInVolume(Vector3 position)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(TransformVolume), Member = "GetGameObjectsInBounds")]
-	[CalledBy(Type = typeof(TransformVolume), Member = "GetBounds")]
-	[CallsUnknownMethods(Count = 30)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(TransformVolume), Member = "IsInBounds")]
+	[CalledBy(Type = typeof(TransformVolume), Member = "GetBounds")]
+	[CalledBy(Type = typeof(TransformVolume), Member = "GetGameObjectsInBounds")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 30)]
 	public Vector3[] GetCorners()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(TransformVolume), Member = "GetBounds")]
-	[Calls(Type = typeof(TransformVolume), Member = "GetCorners")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TransformVolume), Member = "GetCorners")]
+	[Calls(Type = typeof(TransformVolume), Member = "GetBounds")]
 	public Bounds GetBounds()
 	{
 		return default(Bounds);
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Bounds), Member = "Encapsulate")]
-	[CalledBy(Type = typeof(TransformVolume), Member = "IsInBounds")]
 	[CalledBy(Type = typeof(TransformVolume), Member = "IsInBounds")]
 	[CalledBy(Type = typeof(TransformVolume), Member = "GetBounds")]
 	[CalledBy(Type = typeof(TransformVolume), Member = "GetGameObjectsInBounds")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Enumerable), Member = "Aggregate")]
+	[Calls(Type = typeof(Bounds), Member = "Encapsulate")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 10)]
 	public Bounds GetBounds(Vector3[] points)
 	{
 		return default(Bounds);
 	}
 
-	[CallsUnknownMethods(Count = 30)]
-	[Calls(Type = typeof(Bounds), Member = "Intersects")]
-	[Calls(Type = typeof(Renderer), Member = "get_bounds")]
-	[Calls(Type = typeof(GameObject), Member = "get_layer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(TransformVolume), Member = "GetBounds")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(TransformVolume), Member = "GetCorners")]
-	[CallsDeduplicatedMethods(Count = 11)]
+	[Calls(Type = typeof(TransformVolume), Member = "GetBounds")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GameObject), Member = "get_layer")]
+	[Calls(Type = typeof(Renderer), Member = "get_bounds")]
+	[Calls(Type = typeof(Bounds), Member = "Intersects")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 30)]
 	public GameObject[] GetGameObjectsInBounds(LayerMask layerMask)
 	{
 		return null;
@@ -152,24 +158,24 @@ public class TransformVolume : MonoBehaviour
 
 	[CalledBy(Type = typeof(TransformVolume), Member = "IsInVolume")]
 	[CalledBy(Type = typeof(TransformVolume), Member = "<IsOnBorder>b__9_0")]
-	[Calls(Type = typeof(Vector3), Member = "get_forward")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(Vector3), Member = "get_right")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Vector3), Member = "get_right")]
 	[Calls(Type = typeof(Vector3), Member = "get_up")]
+	[Calls(Type = typeof(Vector3), Member = "get_forward")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 18)]
 	public Vector3 GetSideDirection(int side)
 	{
 		return default(Vector3);
 	}
 
+	[CalledBy(Type = typeof(TransformVolume), Member = "IsInVolume")]
+	[CalledBy(Type = typeof(TransformVolume), Member = "<IsOnBorder>b__9_0")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Vector3), Member = "get_right")]
 	[Calls(Type = typeof(Vector3), Member = "get_up")]
 	[Calls(Type = typeof(Vector3), Member = "get_forward")]
-	[CalledBy(Type = typeof(TransformVolume), Member = "IsInVolume")]
-	[CalledBy(Type = typeof(TransformVolume), Member = "<IsOnBorder>b__9_0")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 18)]
 	public Vector3 GetSidePosition(int side)
 	{
@@ -179,13 +185,13 @@ public class TransformVolume : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetSizeAxis(int side)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public TransformVolume()
 	{

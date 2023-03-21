@@ -7,18 +7,18 @@ public class PlayerStateTransitions : ScriptableObject
 
 	private PlayerAnimation.StateFlags[] m_InvalidTransitions;
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsValidTransition(PlayerAnimation.State from, PlayerAnimation.State to)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsInvalidTransition(PlayerAnimation.State from, PlayerAnimation.State to)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

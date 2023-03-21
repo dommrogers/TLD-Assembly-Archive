@@ -4,9 +4,9 @@ namespace DataPlatform;
 
 public class StatsManager
 {
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void AddLocalUser(int userId)
 	{
 	}
@@ -40,9 +40,9 @@ public class StatsManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void RequestFlushToService(int userId, bool isHighPriority)
 	{
 	}
@@ -70,14 +70,14 @@ public class StatsManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void GetLeaderboard(int userId, string statName, LeaderboardQuery query)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void GetSocialLeaderboard(int userId, string statName, string socialGroup, LeaderboardQuery query)
 	{
 	}
@@ -91,7 +91,7 @@ public class StatsManager
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public StatsManager()
 	{
 	}

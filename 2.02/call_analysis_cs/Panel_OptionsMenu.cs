@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
 using Steamworks;
@@ -36,7 +35,7 @@ public class Panel_OptionsMenu : Panel_Base
 		public string m_LabelLocalizationId;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public OptionTopMenuItem()
 		{
 		}
@@ -44,7 +43,7 @@ public class Panel_OptionsMenu : Panel_Base
 
 	private delegate void OnDelegate();
 
-	private sealed class _003CStartForceTempResolutionChangeCo_003Ed__183 : IEnumerator, IDisposable, IEnumerator<object>
+	private sealed class _003CStartForceTempResolutionChangeCo_003Ed__183 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -54,7 +53,7 @@ public class Panel_OptionsMenu : Panel_Base
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -65,7 +64,7 @@ public class Panel_OptionsMenu : Panel_Base
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -79,23 +78,23 @@ public class Panel_OptionsMenu : Panel_Base
 		{
 		}
 
-		[DeduplicatedMethod]
 		[DebuggerHidden]
-		[CallerCount(Count = 2)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[Calls(Type = typeof(Panel_OptionsMenu), Member = "RestoreResolution")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyGraphicsModeAndResolution")]
-		[CallsUnknownMethods(Count = 7)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetScreenResolutionIndexFromString")]
+		[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyGraphicsModeAndResolution")]
+		[Calls(Type = typeof(Panel_OptionsMenu), Member = "RestoreResolution")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 7)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -478,51 +477,39 @@ public class Panel_OptionsMenu : Panel_Base
 	private bool m_SettingsNeedRestart;
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Initialize")]
-	[CallsUnknownMethods(Count = 155)]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[CallsDeduplicatedMethods(Count = 23)]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 155)]
 	private void InitializeAccessibilityMenuItems()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	private void RefreshAccessibilitySettings()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
+	[CallerCount(Count = 1)]
 	private void OnConfirmAccessibility()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "SetSwitch")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "SetState")]
-	[Calls(Type = typeof(UILabel), Member = "set_fontSize")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
-	[Calls(Type = typeof(UILabel), Member = "set_fontSize")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UILabel), Member = "set_fontSize")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "SetState")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "SetSwitch")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public void ApplyAccessibilityOptions()
 	{
 	}
@@ -533,25 +520,25 @@ public class Panel_OptionsMenu : Panel_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MaybeShowOptionDescriptionLabel")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MaybeShowOptionDescriptionLabel")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ProcessAccessibilityMenu()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyVoiceVolume")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyPanningRule")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplySoundVolume")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyMasterVolume")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplySoundVolume")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyMusicVolume")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyVoiceVolume")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyPanningRule")]
 	public void ApplyVolumeSettings()
 	{
 	}
@@ -567,137 +554,121 @@ public class Panel_OptionsMenu : Panel_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyVolumeSettings")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmAudio")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
 	[CalledBy(Type = typeof(GameManager), Member = "Start")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyVolumeSettings")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ApplyMasterVolume()
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyVolumeSettings")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmAudio")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
 	[CalledBy(Type = typeof(GameManager), Member = "Start")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void ApplySoundVolume()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyVolumeSettings")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmAudio")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
 	[CalledBy(Type = typeof(GameManager), Member = "Start")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmAudio")]
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyVolumeSettings")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ApplyMusicVolume()
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyVolumeSettings")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmAudio")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
 	[CalledBy(Type = typeof(GameManager), Member = "Start")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void ApplyVoiceVolume()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(GameManager), Member = "Start")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmAudio")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyVolumeSettings")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmAudio")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
+	[CalledBy(Type = typeof(GameManager), Member = "Start")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void ApplyPanningRule()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CallsUnknownMethods(Count = 1)]
 	private void RefreshAudioSettings()
 	{
 	}
 
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyPanningRule")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyVoiceVolume")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyMusicVolume")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplySoundVolume")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyMasterVolume")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyMasterVolume")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplySoundVolume")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyMusicVolume")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyVoiceVolume")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyPanningRule")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	private void OnConfirmAudio()
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Initialize")]
-	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 91)]
 	private void InitializeAudioMenuItems()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MaybeShowOptionDescriptionLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[CallsUnknownMethods(Count = 4)]
 	private void ProcessAudioMenu()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
 	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void RefreshAudioSliderLabels()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnTabCommon")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnTabCommon")]
 	public void OnAutosaveTab()
 	{
 	}
@@ -723,45 +694,46 @@ public class Panel_OptionsMenu : Panel_Base
 	{
 	}
 
-	[CallAnalysisFailed]
 	[DeduplicatedMethod]
+	[CallAnalysisFailed]
 	[CallerCount(Count = 0)]
 	private void OnConfirmAutosave()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ApplyAutosaveMinutes()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Initialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
 	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
 	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Initialize")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 18)]
 	private void InitializeAutosaveMenuItems()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MaybeShowOptionDescriptionLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MaybeShowOptionDescriptionLabel")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ProcessAutosaveMenu()
 	{
 	}
@@ -774,62 +746,54 @@ public class Panel_OptionsMenu : Panel_Base
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmBrightnessSettings")]
-	[Calls(Type = typeof(HDRManager), Member = "SetPaperWhiteNits")]
-	[Calls(Type = typeof(HDRManager), Member = "GetPaperWhiteFromRange")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(HDRManager), Member = "GetPaperWhiteFromRange")]
+	[Calls(Type = typeof(HDRManager), Member = "SetPaperWhiteNits")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	public void OnBrightnessChanged()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnBrightnessChanged")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
 	public void OnConfirmBrightnessSettings()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnTabCommon")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ToggleGameCameraForBrightness")]
-	[Calls(Type = typeof(HDRManager), Member = "IsOutputtingHDR")]
-	[Calls(Type = typeof(InputManager), Member = "InitializeDefaultKeybindings")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(InputManager), Member = "InitializeDefaultKeybindings")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnTabCommon")]
+	[Calls(Type = typeof(HDRManager), Member = "IsOutputtingHDR")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ToggleGameCameraForBrightness")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public void OnBrightnessTab()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallsUnknownMethods(Count = 1)]
 	private void RefreshBrightnessSettings()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
 	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
 	[Calls(Type = typeof(HDRManager), Member = "GetPaperWhiteFromRange")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyBrightness")]
@@ -839,72 +803,69 @@ public class Panel_OptionsMenu : Panel_Base
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Initialize")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(HDRManager), Member = "IsOutputtingHDR")]
-	[CallsUnknownMethods(Count = 36)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(HDRManager), Member = "IsOutputtingHDR")]
 	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 36)]
 	private void InitializeBrightnessMenuItems()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(InputManager), Member = "GetOptionsConfirmPressed")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Update")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
+	[Calls(Type = typeof(InputManager), Member = "GetOptionsConfirmPressed")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ProcessBrightnessMenu()
 	{
 	}
 
-	[Calls(Type = typeof(Weather), Member = "EnableWindEffect")]
-	[CallsUnknownMethods(Count = 22)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnBrightnessTab")]
-	[Calls(Type = typeof(Wind), Member = "Deserialize")]
-	[Calls(Type = typeof(TimeOfDay), Member = "Deserialize")]
-	[Calls(Type = typeof(WeatherTransition), Member = "Deserialize")]
-	[Calls(Type = typeof(BrightnessCalibration), Member = "Show")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(WeatherTransition), Member = "ForceUnmanagedWeatherStage")]
-	[Calls(Type = typeof(Wind), Member = "Serialize")]
-	[Calls(Type = typeof(TimeOfDay), Member = "Serialize")]
-	[Calls(Type = typeof(WeatherTransition), Member = "Serialize")]
-	[Calls(Type = typeof(Weather), Member = "DisableWindEffect")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
+	[Calls(Type = typeof(Weather), Member = "DisableWindEffect")]
+	[Calls(Type = typeof(WeatherTransition), Member = "Serialize")]
+	[Calls(Type = typeof(TimeOfDay), Member = "Serialize")]
+	[Calls(Type = typeof(Wind), Member = "Serialize")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ForceUnmanagedWeatherStage")]
 	[Calls(Type = typeof(Wind), Member = "StartPhaseImmediate")]
+	[Calls(Type = typeof(BrightnessCalibration), Member = "Show")]
+	[Calls(Type = typeof(Weather), Member = "EnableWindEffect")]
+	[Calls(Type = typeof(WeatherTransition), Member = "Deserialize")]
+	[Calls(Type = typeof(TimeOfDay), Member = "Deserialize")]
+	[Calls(Type = typeof(Wind), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 22)]
 	private void ToggleGameCameraForBrightness(bool toggle)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnTabCommon")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public void OnControllerDiagramTab()
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void UpdateControllerDiagram()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void ProcessControllerDiagram()
 	{
@@ -915,136 +876,114 @@ public class Panel_OptionsMenu : Panel_Base
 	{
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnTabCommon")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnTabCommon")]
 	public void OnControlsTab()
 	{
 	}
 
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 17)]
 	private void RefreshControlsSettings()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
+	[CallerCount(Count = 1)]
 	private void OnConfirmControls()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(InputManager), Member = "GetMouseSensitivity")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetMouseSensitivity")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void ApplyMouseSensitivity()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(InputManager), Member = "GetZoomSensitivity")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetZoomSensitivity")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void ApplyZoomSensitivity()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(InputManager), Member = "GetGamepadCameraSensitivity")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetGamepadCameraSensitivity")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void ApplyAnalogSticksSensitivity()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[Conditional(/*Could not decode attribute arguments.*/)]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void OnConfirmGyro()
 	{
 	}
 
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Initialize")]
-	[CallsUnknownMethods(Count = 150)]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
-	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
-	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 150)]
 	private void InitializeControlsMenuItems()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Update")]
-	[Calls(Type = typeof(InputManager), Member = "ShowSteamControllerBindingPanel")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
-	[Calls(Type = typeof(InputManager), Member = "HasContext")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MaybeShowOptionDescriptionLabel")]
+	[Calls(Type = typeof(InputManager), Member = "HasContext")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
+	[Calls(Type = typeof(InputManager), Member = "ShowSteamControllerBindingPanel")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void ProcessControlsMenu()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
+	[CallsUnknownMethods(Count = 1)]
 	private void RefreshControlsSliderLabels()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallsUnknownMethods(Count = 31)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateActiveMenuItems")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnTabCommon")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "IsPS4Controller")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "IsPS4Controller")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(InputManager), Member = "IsSteamControllerActive")]
-	[CallsDeduplicatedMethods(Count = 13)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateActiveMenuItems")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(InputManager), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "IsPS4Controller")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 31)]
 	private void UpdateControlsMenuItems()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnSliderChanged")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnSliderChanged")]
 	public void OnFOVChanged()
 	{
 	}
@@ -1055,110 +994,100 @@ public class Panel_OptionsMenu : Panel_Base
 	{
 	}
 
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "Reset")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmFOV")]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "get_RenderingFieldOfViewVertical")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "CanChangeFovOption")]
-	[Calls(Type = typeof(Utils), Member = "SetCameraFOVSafe")]
+	[Calls(Type = typeof(GameManager), Member = "IsMainMenuActive")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapZoom")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "GetWeaponFromID")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "IsMainMenuActive")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "get_RenderingFieldOfViewVertical")]
+	[Calls(Type = typeof(Utils), Member = "SetCameraFOVSafe")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 14)]
 	public void ApplyFOV()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CalledBy(Type = typeof(HUDManager), Member = "Start")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmHudSize")]
 	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 37)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 10)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmHudSize")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
+	[CalledBy(Type = typeof(HUDManager), Member = "Start")]
 	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 37)]
 	public void ApplyHudSize()
 	{
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "LoadActiveSaveGame")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(HUDManager), Member = "Start")]
-	[CalledBy(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
-	[CalledBy(Type = typeof(GameManager), Member = "OnGameQuit")]
-	[CalledBy(Type = typeof(GameManager), Member = "ContinueToNextEpisode")]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadSaveGameSlot")]
-	[CallerCount(Count = 13)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitlesImmediate")]
 	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "OnMainMenu")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
+	[CalledBy(Type = typeof(Panel_Loading), Member = "OnDisable")]
 	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmHudType")]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "OnDisable")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadSaveGameSlot")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadActiveSaveGame")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
+	[CalledBy(Type = typeof(GameManager), Member = "ContinueToNextEpisode")]
+	[CalledBy(Type = typeof(GameManager), Member = "OnGameQuit")]
+	[CalledBy(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
+	[CalledBy(Type = typeof(HUDManager), Member = "Start")]
+	[CallerCount(Count = 13)]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitlesImmediate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ApplyHudType()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmBrightness")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
 	[CalledBy(Type = typeof(GameManager), Member = "Start")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(HDRManager), Member = "SetPeakBrightnessNits")]
-	[Calls(Type = typeof(HDRManager), Member = "SetPaperWhiteNits")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(HDRManager), Member = "SetPaperWhiteNits")]
+	[Calls(Type = typeof(HDRManager), Member = "SetPeakBrightnessNits")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	public void ApplyBrightness()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_vsync")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmVsyncAndFrameCap")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmVsyncAndFrameCap")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmVsyncAndFrameCap")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_vsync")]
 	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public void ApplyVsync()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(PlayerPrefs), Member = "SetInt")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerPrefs), Member = "SetInt")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private bool ApplyDisplayNumber()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1166,88 +1095,73 @@ public class Panel_OptionsMenu : Panel_Base
 	[CallsUnknownMethods(Count = 3)]
 	private bool CopyDisplayNumber(int pendingDisplayNumber)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 32)]
-	[CalledBy(Type = typeof(_003CStartForceTempResolutionChangeCo_003Ed__183), Member = "MoveNext")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ForceTempResolutionChange")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RestoreResolution")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmGraphicsOptions")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyGraphicMode")]
-	[Calls(Type = typeof(UIPanel), Member = "SetDirty")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmGraphicsOptions")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RestoreResolution")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ForceTempResolutionChange")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
+	[CalledBy(Type = typeof(_003CStartForceTempResolutionChangeCo_003Ed__183), Member = "MoveNext")]
 	[CalledBy(Type = typeof(ResolutionManager), Member = "ApplyResolution")]
-	[Calls(Type = typeof(Screen), Member = "SetResolution")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
 	[CallerCount(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(PlayerPrefs), Member = "SetInt")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "IsResolutionSupported")]
-	[Calls(Type = typeof(Debug), Member = "LogFormat")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ResolutionCompatibleWithGraphicsMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshResolutionsStandalone")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetResolutionString")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ResolutionCompatibleWithGraphicsMode")]
+	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
+	[Calls(Type = typeof(Debug), Member = "LogFormat")]
+	[Calls(Type = typeof(Screen), Member = "SetResolution")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UIPanel), Member = "SetDirty")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 32)]
 	public void ApplyGraphicsModeAndResolution(bool applyDisplayNumber)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
-	[CallsUnknownMethods(Count = 38)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetNormalizedValue")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshResolutionsStandalone")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetResolutionString")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetHighestCompatibleResolutionForGraphicsMode")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetResolutionString")]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetNormalizedValue")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 38)]
 	private void RefreshDisplaySettings()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmGraphicsOptions")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyGraphicMode")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetGraphicsModeFromString")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmGraphicsOptions")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetScreenResolutionIndexFromString")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "CopyScreenResolution")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 3)]
-	[CallsUnknownMethods(Count = 13)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetDisplayNumberFromString")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetGraphicsModeFromString")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 13)]
 	private void CopyGraphicModeAndResolution()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "CopyGraphicModeAndResolution")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyGraphicsModeAndResolution")]
-	[CallerCount(Count = 0)]
 	private void ApplyGraphicMode()
 	{
 	}
@@ -1263,269 +1177,237 @@ public class Panel_OptionsMenu : Panel_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyVsync")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyVsync")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyVsync")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private void OnConfirmVsyncAndFrameCap()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void OnConfirmSubtitles()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetLangIDFromName")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetLanguage")]
 	[Calls(Type = typeof(Panel_HUD), Member = "RefreshObjectiveLabel")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnConfirmLanguage()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyFOV")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyFOV")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnConfirmFOV()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnConfirmUnits()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudSize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	private void OnConfirmHudSize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void OnConfirmHudType()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnConfirmWolfMoraleMeter()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnConfirmShowStoryPlayerPosition()
 	{
 	}
 
-	[Calls(Type = typeof(CameraEffects), Member = "SwitchImageFilter")]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Enum), Member = "TryParse")]
+	[Calls(Type = typeof(CameraEffects), Member = "SwitchImageFilter")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnConfirmImageFilter()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 36)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
-	[Calls(Type = typeof(CameraEffects), Member = "SwitchImageFilter")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudSize")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyFOV")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Panel_HUD), Member = "RefreshObjectiveLabel")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "CopyGraphicModeAndResolution")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyGraphicsModeAndResolution")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshResolutionsStandalone")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetResolutionString")]
-	[CallsDeduplicatedMethods(Count = 10)]
+	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmVsyncAndFrameCap")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetLangIDFromName")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetLanguage")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
+	[Calls(Type = typeof(Panel_HUD), Member = "RefreshObjectiveLabel")]
+	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyFOV")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudSize")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Enum), Member = "TryParse")]
+	[Calls(Type = typeof(CameraEffects), Member = "SwitchImageFilter")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 36)]
 	private void OnConfirmDisplay()
 	{
 	}
 
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Initialize")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "PopulateDisplayNumberPopupList")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetupLockedFPS")]
-	[CallsDeduplicatedMethods(Count = 31)]
 	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 337)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetupLockedFPS")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "PopulateDisplayNumberPopupList")]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
 	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 31)]
+	[CallsUnknownMethods(Count = 337)]
 	private void InitializeDisplayMenuItems()
 	{
 	}
 
 	[CalledBy(Type = typeof(_003CStartForceTempResolutionChangeCo_003Ed__183), Member = "MoveNext")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetHighestCompatibleResolutionForGraphicsMode")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetHighestCompatibleResolutionForGraphicsMode")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "CopyScreenResolution")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyGraphicsModeAndResolution")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public void RestoreResolution()
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetHighestCompatibleResolutionForGraphicsMode")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshResolutionsStandalone")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetResolutionString")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MaybeShowOptionDescriptionLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MaybeShowOptionDescriptionLabel")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetGraphicsModeFromString")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshResolutionsStandalone")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetHighestCompatibleResolutionForGraphicsMode")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetResolutionString")]
+	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private void ProcessDisplayMenu()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "InitializeDisplayMenuItems")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	private void PopulateDisplayNumberPopupList()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerPrefs), Member = "GetInt")]
-	[CallsUnknownMethods(Count = 10)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerPrefs), Member = "GetInt")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 10)]
 	private bool ModeAndResolutionDifferentThanCurrent()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private string GetDisplayNumberString(int displayNumber)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "CopyGraphicModeAndResolution")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	private int GetDisplayNumberFromString(string text)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "CopyGraphicModeAndResolution")]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessDisplayMenu")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private GraphicsMode GetGraphicsModeFromString(string text)
 	{
 		return default(GraphicsMode);
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(_003CStartForceTempResolutionChangeCo_003Ed__183), Member = "MoveNext")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "CopyGraphicModeAndResolution")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ForceTempResolutionChange")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(_003CStartForceTempResolutionChangeCo_003Ed__183), Member = "MoveNext")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private int GetScreenResolutionIndexFromString(string text)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshResolutionsStandalone")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshResolutionsStandalone")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmGraphicsOptions")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshDisplaySettings")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessDisplayMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyGraphicsModeAndResolution")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshDisplaySettings")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmGraphicsOptions")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessDisplayMenu")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshResolutionsStandalone")]
+	[CallerCount(Count = 8)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshDisplaySettings")]
 	private string GetResolutionString(int width, int height)
 	{
 		return null;
@@ -1538,20 +1420,19 @@ public class Panel_OptionsMenu : Panel_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetScreenResolutionIndexFromString")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyGraphicsModeAndResolution")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void ForceTempResolutionChange()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
-	[CallerCount(Count = 0)]
 	public static IEnumerator StartForceTempResolutionChangeCo()
 	{
 		return null;
@@ -1564,63 +1445,63 @@ public class Panel_OptionsMenu : Panel_Base
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ResolutionCompatibleWithGraphicsMode")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyGraphicsModeAndResolution")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshResolutionsStandalone")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ResolutionCompatibleWithGraphicsMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	private bool IsResolutionSupported(GraphicsMode mode, int width, int height)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ResolutionCompatibleWithGraphicsMode")]
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ResolutionCompatibleWithGraphicsMode")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private Resolution GetClosestSupportedResolution(GraphicsMode mode, int width, int height)
 	{
 		return default(Resolution);
 	}
 
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "GetClosestSupportedResolution")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "IsResolutionSupported")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyGraphicsModeAndResolution")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "IsResolutionSupported")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "GetClosestSupportedResolution")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Screen), Member = "get_resolutions")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool ResolutionCompatibleWithGraphicsMode(GraphicsMode mode, int width, int height)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshDisplaySettings")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RestoreResolution")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessDisplayMenu")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 11)]
 	private Resolution GetHighestCompatibleResolutionForGraphicsMode(GraphicsMode mode)
 	{
 		return default(Resolution);
 	}
 
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyGraphicsModeAndResolution")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshDisplaySettings")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmGraphicsOptions")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshDisplaySettings")]
-	[CallsUnknownMethods(Count = 22)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessDisplayMenu")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyGraphicsModeAndResolution")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshResolutions")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetResolutionString")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "IsResolutionSupported")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetResolutionString")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "IsResolutionSupported")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetResolutionString")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 22)]
 	private void RefreshResolutionsStandalone(GraphicsMode mode)
 	{
 	}
@@ -1631,13 +1512,13 @@ public class Panel_OptionsMenu : Panel_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "DoSaftyChecksOnCurrentState")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "CopyGraphicModeAndResolution")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RestoreResolution")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "DeserializeSettings")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "DoSaftyChecksOnCurrentState")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "CopyGraphicModeAndResolution")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void CopyScreenResolution(ref Resolution dest)
 	{
 	}
@@ -1647,491 +1528,437 @@ public class Panel_OptionsMenu : Panel_Base
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "InProgress")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyFOV")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateDisplayMenuItems")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "InProgress")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private bool CanChangeFovOption()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "InitializeDisplayMenuItems")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
 	[Calls(Type = typeof(InteropHelp), Member = "TestIfAvailableClient")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Steamworks.NativeMethods), Member = "ISteamUtils_IsSteamRunningOnSteamDeck")]
+	[Calls(TypeFullName = "Steamworks.NativeMethods", Member = "ISteamUtils_IsSteamRunningOnSteamDeck")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 9)]
 	private void SetupLockedFPS()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "CanChangeFovOption")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnTabCommon")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateActiveMenuItems")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "CanChangeFovOption")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 7)]
 	private void UpdateDisplayMenuItems()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void OnPopupClicked()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnQualityTab")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnPrivacyTab")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnDisplayTab")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnControlsTab")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnControllerDiagramTab")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnBrightnessTab")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnAutosaveTab")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnAccessibilityTab")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateDisplayMenuItems")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnAudioTab")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateControlsMenuItems")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnAutosaveTab")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnBrightnessTab")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnControllerDiagramTab")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnControlsTab")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnDisplayTab")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnPrivacyTab")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnQualityTab")]
 	[CallerCount(Count = 9)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetTabActive")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "DisableMenuBackgrounds")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateControlsMenuItems")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateDisplayMenuItems")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	private void OnTabCommon(GameObject tab, List<GameObject> menuItems, int buttonIndex)
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleComboBox), Member = "OnDecrease")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessAccessibilityMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessAudioMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessAutosaveMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessBrightnessMenu")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "OnIncrease")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessControlsMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessDisplayMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessPrivacyMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessQualityMenu")]
-	[CallsUnknownMethods(Count = 29)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessControlsMenu")]
-	[Calls(Type = typeof(ConsoleSlider), Member = "OnDecrease")]
-	[Calls(Type = typeof(ConsoleSlider), Member = "OnIncrease")]
 	[CallerCount(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "IsHoveringOverGameObject")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMouseOver")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetGenericSliderMovementHorizontal")]
 	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMouseOver")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetGenericSliderMovementHorizontal")]
+	[Calls(Type = typeof(ConsoleSlider), Member = "OnIncrease")]
+	[Calls(Type = typeof(ConsoleSlider), Member = "OnDecrease")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
+	[Calls(Type = typeof(ConsoleComboBox), Member = "OnIncrease")]
+	[Calls(Type = typeof(ConsoleComboBox), Member = "OnDecrease")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 29)]
 	private void UpdateMenuNavigationGeneric(ref int index, List<GameObject> menuItems)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 4)]
 	private float GetGenericSliderMovementHorizontal()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnTabCommon")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	private void DisableMenuBackgrounds(List<GameObject> menu)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetUiFromQualitySetting")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetUiFromQualitySetting")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetUiFromQualitySetting")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshAutosaveSettings")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshDisplaySettings")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetUiFromQualitySetting")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshDisplaySettings")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshAutosaveSettings")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetUiFromQualitySetting")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private float GetNormalizedValue(float min, float max, float val)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateActiveMenuItems")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateActiveMenuItems")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateActiveMenuItems")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateActiveMenuItems")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateActiveMenuItems")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateActiveMenuItems")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateActiveMenuItems")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateActiveMenuItems")]
 	private int SetupMenuPositions(List<GameObject> menuItems)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
+	[CallsUnknownMethods(Count = 1)]
 	private void InitSlider(ConsoleSlider slider, int numSteps)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnGroundDetailsDrawDistanceChanged")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnGroundDetailsDensityChanged")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnTreeBillboardDistanceChanged")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnShadowDrawDistanceChanged")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnFOVChanged")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnAutosaveMinutesChanged")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnFOVChanged")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnShadowDrawDistanceChanged")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnTreeDrawDistanceChanged")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnTreeBillboardDistanceChanged")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnGroundDetailsDrawDistanceChanged")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnGroundDetailsDensityChanged")]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnSliderChanged(ConsoleSlider slider, float min, float max, int numFramesInTab)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshAudioSliderLabels")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshAutosaveSliderLabels")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshControlsSliderLabels")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshDisplaySliderLabels")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshQualitySliderLabels")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabels")]
 	[CallerCount(Count = 28)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(EventDelegate), Member = "IsValid")]
 	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void RefreshSliderLabel(UISlider slider)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 6)]
 	private bool IsHoveringOverGameObject(GameObject go)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(InputManager), Member = "ResetKeybindingsToDefault")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnResetKeyBindings()
 	{
 	}
 
-	[Calls(Type = typeof(KeyRebindingButton), Member = "SetValueLabel")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Collider), Member = "set_enabled")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Collider), Member = "set_enabled")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(KeyRebindingButton), Member = "SetValueLabel")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public void OnKeyRebindButtonPress(GameObject buttonPressed)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(InputManager), Member = "InitializeDefaultKeybindings")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetTabActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnRebindingTab()
 	{
 	}
 
-	[Calls(Type = typeof(KeyRebindingButton), Member = "SetValueLabel")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonNameForAction")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "MaybeCreateElementAssignmentFromMousePolling")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(InputSystemRewired), Member = "MaybeCreateElementAssignmentFromKeyboardPolling")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "MaybeCreateElementAssignmentFromKeyboardPolling")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "MaybeCreateElementAssignmentFromMousePolling")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonNameForAction")]
+	[Calls(Type = typeof(KeyRebindingButton), Member = "SetValueLabel")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 11)]
 	private void OnGUI()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InputManager), Member = "UpdateKeyBindingTable")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void ProcessKeyRebindMenu()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "CancelRebindPopup")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private bool UpdateKeyBindings()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateKeyBindings")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void CancelRebindPopup()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "Equals")]
-	[Calls(Type = typeof(string), Member = "Equals")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "ForceSystemLanguage")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "Equals")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(string), Member = "ToLower")]
 	[Calls(Type = typeof(CultureInfo), Member = "get_InvariantCulture")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(string), Member = "Equals")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public static string GetLanguageStringFromSystemLang()
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Localization), Member = "GetForLang")]
-	[Calls(Type = typeof(string), Member = "Equals")]
-	[Calls(Type = typeof(string), Member = "op_Inequality")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(Localization), Member = "GetForLang")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Localization), Member = "GetLanguages")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Localization), Member = "GetLanguages")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Localization), Member = "GetForLang")]
+	[Calls(Type = typeof(string), Member = "op_Inequality")]
+	[Calls(Type = typeof(string), Member = "Equals")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	private void RefreshLanguage()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void SetDefaultLanguage()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsUnknownMethods(Count = 18)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "DeserializeSettings")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmLanguage")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(TextInfo), Member = "CompareOrdinalIgnoreCase")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UICamera), Member = "get_mainCamera")]
-	[Calls(Type = typeof(Panel_MainMenu), Member = "Refresh")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ForceCurrentMissionDisplayUpdate")]
-	[Calls(Type = typeof(FontManager), Member = "UpdateDummyFonts")]
-	[Calls(Type = typeof(Localization), Member = "set_Language")]
-	[Calls(Type = typeof(string), Member = "CompareOrdinalIgnoreCaseHelper")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "DeserializeSettings")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Localization), Member = "GetLanguages")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "CompareOrdinalIgnoreCaseHelper")]
+	[Calls(Type = typeof(Localization), Member = "set_Language")]
+	[Calls(Type = typeof(FontManager), Member = "UpdateDummyFonts")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ForceCurrentMissionDisplayUpdate")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_MainMenu), Member = "Refresh")]
 	[Calls(Type = typeof(UICamera), Member = "get_mainCamera")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(TextInfo), Member = "CompareOrdinalIgnoreCase")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 18)]
 	private static void SetLanguage(string langState)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
-	[Calls(Type = typeof(Localization), Member = "GetForLang")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmLanguage")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(Localization), Member = "GetLanguages")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Localization), Member = "GetLanguages")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Localization), Member = "GetForLang")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private string GetLangIDFromName(string langName)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnTabCommon")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnTabCommon")]
 	public void OnPrivacyTab()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "OpenURL")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnViewPrivacyPolicy()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private static void OnManagePrivacyDataFailed(string reason)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessPrivacyMenu")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(DataPrivacy), Member = "FetchPrivacyUrl")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 16)]
 	public void OnManagePrivacyData()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Initialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 64)]
 	private void InitializePrivacyMenuItems()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Utils), Member = "OpenURL")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnManagePrivacyData")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MaybeShowOptionDescriptionLabel")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Update")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnManagePrivacyData")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Utils), Member = "OpenURL")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsUnknownMethods(Count = 7)]
 	private void ProcessPrivacyMenu()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void RefreshPrivacySettings()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(Utils), Member = "EnableAnalytics")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void OnConfirmPrivacySettings()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnSliderChanged")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnSliderChanged")]
 	public void OnShadowDrawDistanceChanged()
 	{
 	}
@@ -2166,280 +1993,200 @@ public class Panel_OptionsMenu : Panel_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetQualitySettingsFromUi")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetUiFromQualitySetting")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetQualityLevelString")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetQualityLevelString")]
+	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetUiFromQualitySetting")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetQualitySettingsFromUi")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void RefreshQualitySettings()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetNormalizedValue")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetNormalizedValue")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetNormalizedValue")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetNormalizedValue")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshQualitySettings")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessQualityMenu")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessQualityMenu")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[CallsUnknownMethods(Count = 28)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetNormalizedValue")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 17)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
 	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetNormalizedValue")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 17)]
+	[CallsUnknownMethods(Count = 28)]
 	private void SetUiFromQualitySetting(QualityLevelSettings settings)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "SetAndMaybeApplyQuality")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetQualityLevelFromString")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetQualitySettingsFromUi")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "SetAndMaybeApplyQuality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void OnConfirmQuality()
 	{
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshQualitySettings")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmQuality")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessQualityMenu")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessQualityMenu")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessQualityMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshQualitySettings")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetFootprintQualityLevelFromString")]
 	[CallerCount(Count = 6)]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetShadowQualityFromString")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetShadowResolutionFromString")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetTextureStreamingFromString")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetTerrainLodQualityFromString")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetLodBiasQualityFromString")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetSSAOLevelFromString")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetPostFxQualityLevelFromString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetFootprintQualityLevelFromString")]
+	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 21)]
 	private void SetQualitySettingsFromUi(QualityLevelSettings settings)
 	{
 	}
 
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Initialize")]
-	[CallsUnknownMethods(Count = 465)]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
 	[CallsDeduplicatedMethods(Count = 44)]
-	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
-	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
-	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
-	[Calls(Type = typeof(ConsoleSlider), Member = "Start")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallsUnknownMethods(Count = 465)]
 	private void InitializeQualityMenuItems()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MaybeShowOptionDescriptionLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetQualitySettingsFromUi")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MaybeSwitchToCustomQuality")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetQualitySettingsFromUi")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetQualityLevelFromString")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetUiFromQualitySetting")]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetUiFromQualitySetting")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetQualityLevelFromString")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetQualitySettingsFromUi")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MaybeSwitchToCustomQuality")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MaybeShowOptionDescriptionLabel")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void ProcessQualityMenu()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessQualityMenu")]
-	[CallsUnknownMethods(Count = 5)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "Match")]
 	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "CopyQualitySettings")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "Match")]
+	[CallsUnknownMethods(Count = 5)]
 	private void MaybeSwitchToCustomQuality(QualityLevelSettings preset, QualityLevelSettings current)
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshQualitySettings")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
+	[CallerCount(Count = 2)]
 	private string GetQualityLevelString(Quality quality)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetPostFxQualityLevelString(QualityPostFx quality)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetQualitySettingsFromUi")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private QualityPostFx GetPostFxQualityLevelFromString(string quality)
 	{
 		return default(QualityPostFx);
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private string GetFootprintQualityLevelString(QualityFootprints quality)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetQualitySettingsFromUi")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private QualityFootprints GetFootprintQualityLevelFromString(string quality)
 	{
 		return default(QualityFootprints);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private string GetSSAOLevelString(QualitySSAO quality)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetQualitySettingsFromUi")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private QualitySSAO GetSSAOLevelFromString(string quality)
 	{
 		return default(QualitySSAO);
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private string GetShadowQualityString(QualityShadows quality)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetQualitySettingsFromUi")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private QualityShadows GetShadowQualityFromString(string res)
 	{
 		return default(QualityShadows);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private string GetShadowResolutionString(ShadowResolution res)
 	{
@@ -2447,31 +2194,24 @@ public class Panel_OptionsMenu : Panel_Base
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetQualitySettingsFromUi")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private ShadowResolution GetShadowResolutionFromString(string res)
 	{
 		return default(ShadowResolution);
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetQualitySettingsFromUi")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void SetTextureStreamingFromString(string setting, out bool enabled, out int budget)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<bool, @null>(ref enabled) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref budget) = null;
+		enabled = default(bool);
+		budget = default(int);
 	}
 
 	[CallerCount(Count = 0)]
@@ -2481,225 +2221,201 @@ public class Panel_OptionsMenu : Panel_Base
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallerCount(Count = 0)]
 	private string GetTextureResolutionString(int textureLimit)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private int GetTextureResolutionFromString(string textureLimit)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetTerrainLodQualityString(QualityTerrainLod quality)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetQualitySettingsFromUi")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private QualityTerrainLod GetTerrainLodQualityFromString(string quality)
 	{
 		return default(QualityTerrainLod);
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetLodBiasQualityString(QualityLodBias quality)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetQualitySettingsFromUi")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	private QualityLodBias GetLodBiasQualityFromString(string quality)
 	{
 		return default(QualityLodBias);
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessQualityMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmQuality")]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessQualityMenu")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private Quality GetQualityLevelFromString(string level)
 	{
 		return default(Quality);
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
+	[CallsUnknownMethods(Count = 1)]
 	private void RefreshQualitySliderLabels()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 20)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "DoSaftyChecksOnCurrentState")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "SaveRemapping")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "SaveRemapping")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[Calls(Type = typeof(FeatsManager), Member = "Serialize")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "DoSaftyChecksOnCurrentState")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 20)]
 	public static string Serialize(bool saveFeatData)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(QualitySettingsManager), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 22)]
-	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "SetToken")]
-	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "GetInstance")]
-	[Calls(Type = typeof(HDRManager), Member = "IsOutputtingHDR")]
-	[Calls(Type = typeof(HDRManager), Member = "IsOutputtingHDR")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "SetCurrentQualityLevel")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Deserialize")]
-	[Calls(Type = typeof(InputManager), Member = "ApplyRemapping")]
-	[Calls(Type = typeof(InputManager), Member = "ResetKeybindingsToDefault")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "CopyScreenResolution")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetLanguage")]
-	[Calls(Type = typeof(Application), Member = "get_systemLanguage")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Application), Member = "get_systemLanguage")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetLanguage")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "CopyScreenResolution")]
+	[Calls(Type = typeof(InputManager), Member = "ResetKeybindingsToDefault")]
+	[Calls(Type = typeof(InputManager), Member = "ApplyRemapping")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetMappingFromCInput")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "SetCurrentQualityLevel")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "Deserialize")]
+	[Calls(Type = typeof(HDRManager), Member = "IsOutputtingHDR")]
+	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "GetInstance")]
+	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "SetToken")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 22)]
 	private static void DeserializeSettings(ProfileState currentState, ProfileState restoredState)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(FeatsManager), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private static void DeserializeFeats(ProfileState currentState, ProfileState restoredState)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Deserialize")]
-	[Calls(Type = typeof(EpisodeManager), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 32)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(StatsManager), Member = "MaybeInitializeAllTimeBestStats")]
+	[Calls(Type = typeof(EpisodeManager), Member = "Deserialize")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 32)]
 	private static void DeserializeProgress(ProfileState currentState, ProfileState restoredState)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(SaveGameDataPC), Member = "UpdateProfileAgainstFile")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Deserialize")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "TryParseInt32")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(SaveGameDataPC), Member = "UpdateProfileAgainstFile")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "TryParseInt32")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public static void TryToFindAndReplaceInvalidNowhereToHideEnumEntry(ref string text)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "DoSaftyChecksOnCurrentState")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(SaveGameDataPC), Member = "LoadData")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Utils), Member = "EnableAnalytics")]
-	[Calls(Type = typeof(InputManager), Member = "LoadRemapping")]
-	[CalledBy(Type = typeof(SaveGameDataPC), Member = "LoadData")]
-	[Calls(Type = typeof(FeatsManager), Member = "Deserialize")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "DeserializeSettings")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "TryToFindAndReplaceInvalidNowhereToHideEnumEntry")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "DeserializeProgress")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "TryToFindAndReplaceInvalidNowhereToHideEnumEntry")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "DeserializeSettings")]
+	[Calls(Type = typeof(FeatsManager), Member = "Deserialize")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "DeserializeProgress")]
+	[Calls(Type = typeof(InputManager), Member = "LoadRemapping")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "DoSaftyChecksOnCurrentState")]
+	[Calls(Type = typeof(Utils), Member = "EnableAnalytics")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public static bool Deserialize(string text, ProfileSerializationOptions deserializeFlags)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(Action_4DONDayComplete), Member = "OnExecute")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(FeatNotify), Member = "ShowFeatUnlockedKicker")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
 	[Calls(Type = typeof(ThreeDaysOfNight), Member = "GetCurrentDayNumber")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
 	[Calls(Type = typeof(FeatNotify), Member = "ShowFeatUnlockedKicker")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	public void Mark4DONCurrentDayComplete()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ThreeDaysOfNight), Member = "GetCurrentDayNumber")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public bool Is4DONCurrentDayComplete()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public void Reset4DONBadgeProgress()
 	{
@@ -2711,41 +2427,38 @@ public class Panel_OptionsMenu : Panel_Base
 		return default(Quality);
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static bool IsUpsellViewed(UpSell upsell)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnChallenges")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnLogs")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	public static void ViewUpsell(UpSell upsell)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 20)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Deserialize")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Serialize")]
-	[Calls(Type = typeof(GameManager), Member = "ValidateTime")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "CopyScreenResolution")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Deserialize")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "CopyScreenResolution")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(GameManager), Member = "ValidateTime")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 20)]
 	private static void DoSaftyChecksOnCurrentState()
 	{
 	}
@@ -2753,149 +2466,144 @@ public class Panel_OptionsMenu : Panel_Base
 	[CallerCount(Count = 0)]
 	private static float GetNormalizedSensitivity(float current, float min, float mid, float max)
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 0)]
 	private static bool ResolutionIsValid(Resolution res)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "SetCurrentQualityLevel")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private static void RestoreLegacyQualityLevel(int legacyQualityLevel)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(BasicMenu), Member = "InstantiateMenu")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void InitializeTopMenu()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 44)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 44)]
 	private void InitializeTabs()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ConfigureMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Initialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ConfigureMenu")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 38)]
 	private void InitializeTopMenuItems()
 	{
 	}
 
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(BasicMenu), Member = "ManualUpdate")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void ProcessTopMenu()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 63)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "AddMenuItem")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 8)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "AddMenuItem")]
+	[CallsUnknownMethods(Count = 63)]
 	private Action GetActionFromType(OptionTopMenuItem.MenuType type)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ConfigureMenu")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(BasicMenu), Member = "AddItem")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetActionFromType")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetActionFromType")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(BasicMenu), Member = "AddItem")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	private void AddMenuItem(int itemIndex)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BasicMenu), Member = "GetSelectedItemIndex")]
+	[CallsUnknownMethods(Count = 1)]
 	private int GetTabSelectedIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "AddMenuItem")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 8)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "InitializeTopMenuItems")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "MainMenuTabOnEnable")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateActiveMenuItems")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "InitializeTopMenuItems")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(BasicMenu), Member = "Reset")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[Calls(Type = typeof(BasicMenu), Member = "UpdateTitle")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(BasicMenu), Member = "Reset")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(BasicMenu), Member = "UpdateTitle")]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "AddMenuItem")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private void ConfigureMenu()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
-	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
-	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ConfigureMenu")]
+	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 25)]
 	private void MainMenuTabOnEnable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallsUnknownMethods(Count = 4)]
 	private void SetAllTabsActive(bool active)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnRebindingTab")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnTabCommon")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "ResetBindings")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnTabCommon")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnRebindingTab")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Enable")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void SetTabActive(GameObject go)
 	{
 	}
@@ -2918,132 +2626,141 @@ public class Panel_OptionsMenu : Panel_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void UnlockCrashMountainRegion()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "RefreshVisualsScrollList")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "UpdateSelectFeatVisuals")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 13)]
 	public void MarkBadgeAsViewed(string badgeLocID)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "ListHasUnviewedUnlockedBadge")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "UpdateFeatMarkerSprites")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool HasBadgeBeenViewed(string badgeLocID)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(TLD_TimelineDirector), Member = "OnStop")]
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "DoStop")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(TLD_TimelineDirector), Member = "OnStop")]
 	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 12)]
 	public bool MarkCinematicAsViewed(string cinematic)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "CheckForInterrupt")]
 	[CalledBy(Type = typeof(PlayableAssetJumpToTime), Member = "CreatePlayable")]
 	[CalledBy(Type = typeof(PlayableAssetSkip), Member = "CreatePlayable")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(HashSet<>), Member = "Contains")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool HasCinematicBeenViewed(string cinematic)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "HasMarkedAchievementUnlocked")]
 	[CalledBy(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "HasMarkedAchievementUnlocked")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 12)]
 	public void MarkAchievementUnlocked(Achievement achievement)
 	{
 	}
 
-	[CalledBy(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "MarkAchievementUnlocked")]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool HasMarkedAchievementUnlocked(Achievement achievement)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Notifications), Member = "LoadNotifications")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(Notifications), Member = "LoadNotifications")]
-	[CalledBy(Type = typeof(Notifications), Member = "LoadNotifications")]
+	[Calls(Type = typeof(HashSet<>), Member = "Contains")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool HasNotificationBeenViewed(string notification)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(Panel_Notifications), Member = "Populate")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 12)]
 	public void MarkNotificationAsViewed(string notification)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializeQualityMenuItems")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializePrivacyMenuItems")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializeAutosaveMenuItems")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializeBrightnessMenuItems")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializeControlsMenuItems")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializeAudioMenuItems")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializeDisplayMenuItems")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializeTopMenuItems")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializeTabs")]
-	[Calls(Type = typeof(BasicMenu), Member = "InstantiateMenu")]
-	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(BasicMenu), Member = "InstantiateMenu")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializeTabs")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializeTopMenuItems")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializeAccessibilityMenuItems")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializeDisplayMenuItems")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializeQualityMenuItems")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializeAudioMenuItems")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializeControlsMenuItems")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializeBrightnessMenuItems")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializeAutosaveMenuItems")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "InitializePrivacyMenuItems")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetupMenuPositions")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Update")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetupMenuPositions")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetupMenuPositions")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetupMenuPositions")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetupMenuPositions")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetupMenuPositions")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetupMenuPositions")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateDisplayMenuItems")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateControlsMenuItems")]
-	[Calls(Type = typeof(BasicMenu), Member = "Refresh")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ConfigureMenu")]
-	[Calls(Type = typeof(BasicMenu), Member = "GetItemValueIndex")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Enable")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BasicMenu), Member = "GetItemValueIndex")]
+	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ConfigureMenu")]
+	[Calls(Type = typeof(BasicMenu), Member = "Refresh")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateControlsMenuItems")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateDisplayMenuItems")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetupMenuPositions")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateActiveMenuItems()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateActiveMenuItems")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
+	[Calls(Type = typeof(InputManager), Member = "GetOptionsConfirmPressed")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateButtonLegend")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ProcessPrivacyMenu")]
@@ -3051,71 +2768,45 @@ public class Panel_OptionsMenu : Panel_Base
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ProcessBrightnessMenu")]
 	[Calls(Type = typeof(InputManager), Member = "UpdateKeyBindingTable")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ProcessControlsMenu")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ProcessAccessibilityMenu")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ProcessAudioMenu")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ProcessQualityMenu")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ProcessDisplayMenu")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ProcessAccessibilityMenu")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(BasicMenu), Member = "ManualUpdate")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "CancelRebindPopup")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ProcessAudioMenu")]
-	[Calls(Type = typeof(InputManager), Member = "GetOptionsConfirmPressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 10)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateActiveMenuItems")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[CallsUnknownMethods(Count = 18)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "IsSelectButtonActive")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(SaveGameData), Member = "IsSaving")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Update")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(SaveGameData), Member = "IsSaving")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(InputManager), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "IsSelectButtonActive")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsUnknownMethods(Count = 11)]
 	private void UpdateButtonLegend()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private bool IsSelectButtonActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -3125,74 +2816,69 @@ public class Panel_OptionsMenu : Panel_Base
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(GameManager), Member = "Start")]
+	[CallerCount(Count = 1)]
 	public void SetDefaultOptionsAtStartup()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "IsCommandLineArgumentPresent")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "SetCurrentQualityLevel")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UIRect), Member = "get_root")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Utils), Member = "IsCommandLineArgumentPresent")]
-	[CallsUnknownMethods(Count = 13)]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "SetCurrentQualityLevel")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyAllOptions")]
-	[Calls(Type = typeof(Utils), Member = "IsCommandLineArgumentPresent")]
-	[Calls(Type = typeof(Utils), Member = "IsCommandLineArgumentPresent")]
-	[Calls(Type = typeof(Utils), Member = "IsCommandLineArgumentPresent")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Utils), Member = "IsCommandLineArgumentPresent")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(float), Member = "TryParse")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	public void ApplyCommandLineParameters()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(SaveGameDataPC), Member = "LoadData")]
-	[CalledBy(Type = typeof(SaveGameDataPC), Member = "LoadData")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyAccessibilityOptions")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ApplyCurrentQualitySettings")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyBrightness")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyVsync")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyFOV")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyAnalogSticksSensitivity")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudSize")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyMouseSensitivity")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyZoomSensitivity")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyMasterVolume")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplySoundVolume")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyMusicVolume")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyVoiceVolume")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyPanningRule")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyCommandLineParameters")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyGraphicsModeAndResolution")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyVoiceVolume")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyMouseSensitivity")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyZoomSensitivity")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyAnalogSticksSensitivity")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudSize")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyFOV")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyVsync")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyBrightness")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "ApplyCurrentQualitySettings")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyAccessibilityOptions")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ApplyAllOptions(bool applyGraphicsModeAndResolution)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateActiveMenuItems")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MainMenuTabOnEnable")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabels")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = "set_active")]
-	[Calls(Type = typeof(BasicMenu), Member = "GetSelectedItemIndex")]
-	[Calls(Type = typeof(BasicMenu), Member = "GetItemCount")]
-	[Calls(Type = typeof(InputManager), Member = "PushContext")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetTabActive")]
-	[Calls(Type = typeof(InputManager), Member = "PopContext")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(InputManager), Member = "PopContext")]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = "set_active")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetTabActive")]
+	[Calls(Type = typeof(InputManager), Member = "PushContext")]
+	[Calls(Type = typeof(BasicMenu), Member = "GetItemCount")]
+	[Calls(Type = typeof(BasicMenu), Member = "GetSelectedItemIndex")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "UpdateActiveMenuItems")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabels")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MainMenuTabOnEnable")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 17)]
 	public override void Enable(bool enable)
 	{
 	}
@@ -3202,40 +2888,36 @@ public class Panel_OptionsMenu : Panel_Base
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsInBrightnessCalibration()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessControllerDiagram")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessBrightnessMenu")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessAccessibilityMenu")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessAudioMenu")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessAutosaveMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmBrightnessSettings")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessControlsMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessBrightnessMenu")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessControllerDiagram")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessControlsMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessDisplayMenu")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnOptionsClicked")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessKeyRebindMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessPrivacyMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessQualityMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessTopMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Update")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessAutosaveMenu")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessKeyRebindMenu")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessAudioMenu")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ToggleGameCameraForBrightness")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "CancelRebindPopup")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ExitOptions")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
-	[Calls(Type = typeof(Weather), Member = "EnableWindEffect")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ToggleGameCameraForBrightness")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MainMenuTabOnEnable")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MainMenuTabOnEnable")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
-	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessAccessibilityMenu")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnOptionsClicked")]
 	[CallerCount(Count = 15)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "CancelRebindPopup")]
+	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MainMenuTabOnEnable")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ToggleGameCameraForBrightness")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[Calls(Type = typeof(Weather), Member = "EnableWindEffect")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ExitOptions")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	public void OnCancel()
 	{
 	}
@@ -3246,120 +2928,97 @@ public class Panel_OptionsMenu : Panel_Base
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnOptionsClicked()
 	{
 	}
 
-	[Calls(Type = typeof(InputManager), Member = "ApplyRemapping")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmPrivacySettings")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SaveSettings")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyAutosaveMinutes")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmBrightnessSettings")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmControls")]
-	[Calls(Type = typeof(HDRManager), Member = "GetPaperWhiteFromRange")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyBrightness")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmAccessibility")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmQuality")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmControls")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmAudio")]
 	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmQuality")]
+	[Calls(Type = typeof(HDRManager), Member = "GetPaperWhiteFromRange")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyBrightness")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyAutosaveMinutes")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmPrivacySettings")]
+	[Calls(Type = typeof(InputManager), Member = "ApplyRemapping")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SaveSettings")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 10)]
 	public void OnConfirmSettings()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "SaveProfileSettingsAndDisplayHUDMessage")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmSettings")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "SaveToken")]
-	[CalledBy(Type = typeof(WebUtils.SteamCloudManager.AuthenticateOperation), Member = "SaveToken")]
+	[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.AuthenticateOperation", Member = "SaveToken")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameManager), Member = "SaveProfileSettingsAndDisplayHUDMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void SaveSettings()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_MainMenu), Member = "OnMainMenuTop")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+	[Calls(Type = typeof(Panel_MainMenu), Member = "OnMainMenuTop")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void ExitOptions()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetNormalizedValue")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(InputManager), Member = "LoadRemapping")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "MainMenuTabOnEnable")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ClearConfirmSettings")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshLanguage")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnCancel")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ExitOptions")]
-	[CallsUnknownMethods(Count = 31)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Enable")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshAccessibilitySettings")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshControlsSettings")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshAccessibilitySettings")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshDisplaySettings")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetQualityLevelString")]
 	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetUiFromQualitySetting")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetQualitySettingsFromUi")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetUiFromQualitySetting")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshControlsSettings")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshLanguage")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "GetNormalizedValue")]
+	[Calls(Type = typeof(InputManager), Member = "LoadRemapping")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 31)]
 	private void RefreshSettings()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[CallsUnknownMethods(Count = 16)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Enable")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
+	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 16)]
 	private void RefreshSliderLabels()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void DisableMenuItemsBasedOnPlatform()
 	{
 	}
@@ -3367,47 +3026,46 @@ public class Panel_OptionsMenu : Panel_Base
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsUnknownMethods(Count = 6)]
+	[Calls(Type = typeof(float), Member = "TryParse")]
+	[CallsUnknownMethods(Count = 5)]
 	private float CommandLineParameterValue(string arg)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessAccessibilityMenu")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessAudioMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessAutosaveMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessControlsMenu")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessAudioMenu")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessDisplayMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessPrivacyMenu")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessQualityMenu")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessDisplayMenu")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessAccessibilityMenu")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ShowOptionDescriptionLabel")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[CallerCount(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ShowOptionDescriptionLabel")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ShowOptionDescriptionLabel")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private void MaybeShowOptionDescriptionLabel(GameObject go)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "MaybeShowOptionDescriptionLabel")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "MaybeShowOptionDescriptionLabel")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 21)]
 	private void ShowOptionDescriptionLabel(GameObject menuItem, string text)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 12)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 118)]
 	public Panel_OptionsMenu()
 	{

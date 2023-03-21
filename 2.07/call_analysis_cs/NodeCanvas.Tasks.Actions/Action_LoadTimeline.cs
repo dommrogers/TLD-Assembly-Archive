@@ -16,8 +16,8 @@ public class Action_LoadTimeline : Action_Timeline
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AssetReferenceTimeline), Member = "LoadTimeline")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void ExecuteTimelineAction()
 	{
@@ -31,8 +31,8 @@ public class Action_LoadTimeline : Action_Timeline
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_LoadTimeline()
 	{
 	}

@@ -32,24 +32,24 @@ public class EvolveItem : MonoBehaviour
 	private static EvolveItemSaveData m_EvolveItemSaveData;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 9)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(EvolveItem), Member = "CanEvolve")]
-	[Calls(Type = typeof(EvolveItem), Member = "DoEvolution")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Inventory), Member = "ProcessItems")]
-	[Calls(Type = typeof(EvolveItem), Member = "DoEvolution")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(EvolveItem), Member = "IsInspectingFromHarvest")]
 	[Calls(Type = typeof(EvolveItem), Member = "IsIndoorScene")]
 	[Calls(Type = typeof(EvolveItem), Member = "ObjectInIndoorTrigger")]
-	[Calls(Type = typeof(EvolveItem), Member = "IsInspectingFromHarvest")]
+	[Calls(Type = typeof(EvolveItem), Member = "DoEvolution")]
+	[Calls(Type = typeof(EvolveItem), Member = "CanEvolve")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Update()
 	{
 	}
@@ -63,7 +63,7 @@ public class EvolveItem : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(EvolveItem), Member = "CanEvolve")]
 	[Calls(Type = typeof(EvolveItem), Member = "DoEvolution")]
 	[CallsUnknownMethods(Count = 2)]
@@ -74,7 +74,7 @@ public class EvolveItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetEvolveProgressValue()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -82,43 +82,43 @@ public class EvolveItem : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Replace")]
 	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "GetItemInfoString")]
 	[CalledBy(Type = typeof(GearItem), Member = "GetHoverStateText")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Replace")]
 	[CallsUnknownMethods(Count = 3)]
 	public string GetEvolvedPercentString()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "InitLabelsForGear")]
-	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "BuildItemDescription")]
 	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateGearItemDescription")]
+	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "BuildItemDescription")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "InitLabelsForGear")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
 	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
-	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetTimeToDryStringInventory()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(EvolveItem), Member = "Deserialize")]
 	[CalledBy(Type = typeof(EvolveItem), Member = "Update")]
+	[CalledBy(Type = typeof(EvolveItem), Member = "Deserialize")]
 	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
-	[Calls(Type = typeof(EvolveItem), Member = "IsIndoorScene")]
-	[Calls(Type = typeof(EvolveItem), Member = "IsInspectingFromHarvest")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(EvolveItem), Member = "IsInspectingFromHarvest")]
+	[Calls(Type = typeof(EvolveItem), Member = "IsIndoorScene")]
 	[Calls(Type = typeof(EvolveItem), Member = "ObjectInIndoorTrigger")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool CanEvolve()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -128,66 +128,68 @@ public class EvolveItem : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool CanAutoEvolve()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(EvolveItem), Member = "CanEvolve")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(EvolveItem), Member = "CanAutoEvolve")]
 	[CalledBy(Type = typeof(EvolveItem), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[CalledBy(Type = typeof(EvolveItem), Member = "CanEvolve")]
+	[CalledBy(Type = typeof(EvolveItem), Member = "CanAutoEvolve")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool IsIndoorScene()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(EvolveItem), Member = "Update")]
 	[CalledBy(Type = typeof(EvolveItem), Member = "CanEvolve")]
 	[CalledBy(Type = typeof(EvolveItem), Member = "CanAutoEvolve")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool IsInspectingFromHarvest()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(EvolveItem), Member = "CanAutoEvolve")]
-	[CalledBy(Type = typeof(EvolveItem), Member = "CanEvolve")]
 	[CalledBy(Type = typeof(EvolveItem), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Collider), Member = "get_bounds")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(EvolveItem), Member = "CanEvolve")]
+	[CalledBy(Type = typeof(EvolveItem), Member = "CanAutoEvolve")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Collider), Member = "get_bounds")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool ObjectInIndoorTrigger()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Inventory), Member = "AddGear")]
-	[CallsUnknownMethods(Count = 19)]
-	[CalledBy(Type = typeof(Container), Member = "InstantiateGearPrefabInContainer")]
-	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
+	[CalledBy(Type = typeof(EvolveItem), Member = "Update")]
 	[CalledBy(Type = typeof(EvolveItem), Member = "Deserialize")]
-	[CalledBy(Type = typeof(EvolveItem), Member = "Update")]
-	[CalledBy(Type = typeof(EvolveItem), Member = "Update")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(Container), Member = "RemoveGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(PlayerManager), Member = "EnterInspectGearMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "ExitInspectGearMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(GearItem), Member = "OverrideOwnership")]
-	[Calls(Type = typeof(OwnershipManager), Member = "IsUnowned")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 29)]
+	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
+	[CalledBy(Type = typeof(Container), Member = "InstantiateGearPrefabInContainer")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(OwnershipManager), Member = "IsUnowned")]
+	[Calls(Type = typeof(GearItem), Member = "OverrideOwnership")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(PlayerManager), Member = "ExitInspectGearMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "EnterInspectGearMode")]
 	[Calls(Type = typeof(Container), Member = "AddGear")]
+	[Calls(Type = typeof(Container), Member = "RemoveGear")]
+	[Calls(Type = typeof(Inventory), Member = "AddGear")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 23)]
+	[CallsUnknownMethods(Count = 19)]
 	public void DoEvolution()
 	{
 	}

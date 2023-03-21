@@ -23,17 +23,16 @@ public class ExecuteStaticFunction : ActionTask, ISubParametersContainer
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 35)]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
-		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[CallsDeduplicatedMethods(Count = 9)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+		[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[CallsDeduplicatedMethods(Count = 9)]
+		[CallsUnknownMethods(Count = 35)]
 		get
 		{
 			return null;
@@ -49,28 +48,28 @@ public class ExecuteStaticFunction : ActionTask, ISubParametersContainer
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(MethodInfo), Member = "op_Equality")]
 	[Calls(Type = typeof(ReflectedWrapper), Member = "Create")]
 	[Calls(Type = typeof(string), Member = "Format")]
 	[Calls(Type = typeof(Task), Member = "Error")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
 	public override void OnValidate(ITaskSystem ownerSystem)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Format")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Format")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override string OnInit()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{

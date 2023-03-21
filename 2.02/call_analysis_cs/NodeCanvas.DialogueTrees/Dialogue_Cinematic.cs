@@ -27,20 +27,20 @@ public class Dialogue_Cinematic : DTNode
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnCinematicPlay")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 10)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnCinematicFinish()
 	{
 	}

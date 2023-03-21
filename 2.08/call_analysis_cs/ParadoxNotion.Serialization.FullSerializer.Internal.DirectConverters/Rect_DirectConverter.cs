@@ -9,21 +9,15 @@ public class Rect_DirectConverter : fsDirectConverter<Rect>
 {
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
 	[CallsUnknownMethods(Count = 4)]
 	protected override fsResult DoSerialize(Rect model, Dictionary<string, fsData> serialized)
 	{
 		return default(fsResult);
 	}
 
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsBaseConverter), Member = "DeserializeMember")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
 	protected override fsResult DoDeserialize(Dictionary<string, fsData> data, ref Rect model)
 	{
 		return default(fsResult);

@@ -11,11 +11,10 @@ public class RockCacheRegionListItem : MonoBehaviour
 
 	public float m_DeslectedAlphaValue;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetSelected(bool selected)
 	{
 	}

@@ -21,17 +21,13 @@ public sealed class RLProUltimateVignette : PostProcessEffectSettings
 
 	public ColorParameter innerColor;
 
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 63)]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[Calls(Type = typeof(ColorParameter), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Vector2Parameter), Member = ".ctor")]
 	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
+	[Calls(Type = typeof(ColorParameter), Member = ".ctor")]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 63)]
 	public RLProUltimateVignette()
 	{
 	}

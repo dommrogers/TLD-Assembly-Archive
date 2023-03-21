@@ -26,24 +26,24 @@ public class TransformAtNight : MonoBehaviour
 	private float m_NightPercentage;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 7)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetNightPercentage")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetNightPercentage")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
 	private void LateUpdate()
 	{

@@ -25,9 +25,9 @@ public class Action_PlayVideo : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		get
 		{
 			return null;
@@ -42,45 +42,46 @@ public class Action_PlayVideo : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	public static void UnRegisterOnActionMovieCompleteCallback(Action onMovieCompleteCallback)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopAllSoundsFromGameObject")]
 	[Calls(Type = typeof(Action_PlayVideo), Member = "PlayMovie")]
 	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private void ProcessOnMovieCompleteCallback()
 	{
 	}
 
-	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
 	[CalledBy(Type = typeof(Action_PlayVideo), Member = "OnExecute")]
-	[Calls(Type = typeof(Action_PlayVideo), Member = "OnActionComplete")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(MoviePlayer), Member = "Play")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MoviePlayer), Member = "Play")]
 	[Calls(Type = typeof(CameraFade), Member = "BlackOutScreen")]
+	[Calls(Type = typeof(Action_PlayVideo), Member = "OnActionComplete")]
+	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void PlayMovie()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void OnMovieComplete()
 	{
 	}
@@ -91,12 +92,12 @@ public class Action_PlayVideo : ActionTask
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Action_PlayVideo), Member = "PlayMovie")]
 	[CalledBy(Type = typeof(Action_PlayVideo), Member = "OnFadeInComplete")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnActionComplete()
 	{

@@ -41,133 +41,129 @@ public class Panel_SelectWorldMap : Panel_AutoReferenced
 
 	private Panel_Base m_TargetPanel;
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(BasicMenu), Member = "InstantiateMenu")]
-	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(BasicMenu), Member = "InstantiateMenu")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "add_OnAfterDeserialization")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public override void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(WorldMapChangedEvent), Member = "UpdateAvailableWorldMaps")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnContinue")]
 	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "OnChallengeClicked")]
 	[CalledBy(Type = typeof(Panel_SelectExperience), Member = "OnExperienceClicked")]
 	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "OnClickBack")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(WorldMapChangedEvent), Member = "UpdateAvailableWorldMaps")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool ShouldBePartOfFlow()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 7)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void SetTargetPanel(Panel_Base target)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "remove_OnAfterDeserialization")]
 	[Calls(Type = typeof(Panel_AutoReferenced), Member = "OnDestroy")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_SelectWorldMap), Member = "PlayFadeIn")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_SelectWorldMap), Member = "GetActiveMap")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
-	[Calls(Type = typeof(Panel_SelectWorldMap), Member = "RestoreSelection")]
-	[Calls(Type = typeof(Panel_SelectWorldMap), Member = "ConfigureMenu")]
-	[Calls(Type = typeof(WorldMapChangedEvent), Member = "UpdateAvailableWorldMaps")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(WorldMapChangedEvent), Member = "UpdateAvailableWorldMaps")]
+	[Calls(Type = typeof(Panel_SelectWorldMap), Member = "ConfigureMenu")]
+	[Calls(Type = typeof(Panel_SelectWorldMap), Member = "RestoreSelection")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[Calls(Type = typeof(Panel_SelectWorldMap), Member = "GetActiveMap")]
+	[Calls(Type = typeof(Panel_SelectWorldMap), Member = "PlayFadeIn")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public override void Enable(bool enable)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(TweenAlpha), Member = "Begin")]
-	[Calls(Type = typeof(WorldMapSpecification), Member = "GetOrInstantiateBaseMap")]
-	[Calls(Type = typeof(BasicMenu), Member = "GetSelectedItemIndex")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(WorldMapSpecification), Member = "GetOrInstantiateBaseMap")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(WorldMapSpecification), Member = "GetOrInstantiateBaseMap")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(BasicMenu), Member = "GetSelectedItemIndex")]
+	[Calls(Type = typeof(TweenAlpha), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 15)]
 	public void OnFadeOutFinished()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BasicMenu), Member = "ManualUpdate")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(BasicMenu), Member = "ManualUpdate")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(WorldMapSpecification), Member = "GetOrInstantiateBaseMap")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_SelectWorldMap), Member = "Enable")]
-	[Calls(Type = typeof(BasicMenu), Member = "EnableConfirm")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BasicMenu), Member = "Reset")]
+	[Calls(Type = typeof(BasicMenu), Member = "UpdateTitle")]
+	[Calls(Type = typeof(Object), Member = "GetInstanceID")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(BasicMenu), Member = "AddItem")]
-	[Calls(Type = typeof(Object), Member = "GetInstanceID")]
-	[Calls(Type = typeof(BasicMenu), Member = "UpdateTitle")]
-	[Calls(Type = typeof(BasicMenu), Member = "Reset")]
+	[Calls(Type = typeof(WorldMapSpecification), Member = "GetOrInstantiateBaseMap")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(BasicMenu), Member = "EnableConfirm")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 4)]
 	private void ConfigureMenu()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(BasicMenu), Member = "SetItemSelected")]
 	[CalledBy(Type = typeof(Panel_SelectWorldMap), Member = "Enable")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BasicMenu), Member = "SetItemSelected")]
+	[CallsUnknownMethods(Count = 3)]
 	private void RestoreSelection()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(Object), Member = "GetInstanceID")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(BasicMenu), Member = "AddItem")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void AddMenuItem(WorldMapSpecification worldMapSpecification, int itemIndex)
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[Calls(Type = typeof(BasicMenu), Member = "GetSelectedItemId")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(GameManager), Member = "RegionLockedBySelectedMode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BasicMenu), Member = "GetSelectedItemId")]
 	[Calls(Type = typeof(Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(WorldMapChangedEvent), Member = "SetCurrentMap")]
+	[Calls(Type = typeof(GameManager), Member = "RegionLockedBySelectedMode")]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	private void OnWorldMapClicked()
 	{
 	}
@@ -175,51 +171,49 @@ public class Panel_SelectWorldMap : Panel_AutoReferenced
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
 	[CallsUnknownMethods(Count = 1)]
 	private void UpdateButtonLegend()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(WorldMapSpecification), Member = "GetOrInstantiateBaseMap")]
 	[CalledBy(Type = typeof(Panel_SelectWorldMap), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_SelectWorldMap), Member = "OnSelectionUpdate")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(WorldMapSpecification), Member = "GetOrInstantiateBaseMap")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	private UIWorldMap GetActiveMap()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(TweenAlpha), Member = "Begin")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(Panel_SelectWorldMap), Member = "GetActiveMap")]
-	[Calls(Type = typeof(UIWorldMap), Member = "LoadMap")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(WorldMapSpecification), Member = "GetOrInstantiateBaseMap")]
-	[Calls(Type = typeof(WorldMapChangedEvent), Member = "SetCurrentMap")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(WorldMapChangedEvent), Member = "SetCurrentMap")]
+	[Calls(Type = typeof(WorldMapSpecification), Member = "GetOrInstantiateBaseMap")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UIWorldMap), Member = "LoadMap")]
+	[Calls(Type = typeof(Panel_SelectWorldMap), Member = "GetActiveMap")]
+	[Calls(Type = typeof(TweenAlpha), Member = "Begin")]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnSelectionUpdate(string id, int value, int itemIndex)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnClickBack()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(WorldMapSpecification), Member = "GetOrInstantiateBaseMap")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void SwapBackgroundWithoutFades(string id, int value, int itemIndex)
 	{
 	}
@@ -233,19 +227,19 @@ public class Panel_SelectWorldMap : Panel_AutoReferenced
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(TweenAlpha), Member = "Begin")]
 	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void PlayFadeOut(UIWorldMap map)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_SelectWorldMap), Member = "Enable")]
-	[Calls(Type = typeof(TweenAlpha), Member = "Begin")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(TweenAlpha), Member = "Begin")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void PlayFadeIn(UIWorldMap map)
 	{
 	}

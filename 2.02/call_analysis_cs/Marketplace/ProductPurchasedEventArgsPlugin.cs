@@ -17,7 +17,7 @@ public class ProductPurchasedEventArgsPlugin
 	public static extern void ProductPurchasedEventArgs_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ProductPurchasedEventArgsPlugin()
 	{
 	}

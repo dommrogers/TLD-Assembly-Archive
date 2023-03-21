@@ -9,13 +9,13 @@ internal class TypeAllocationException : AllocationException
 	[CalledBy(Type = typeof(Helper), Member = "TryFetch")]
 	[CalledBy(Type = typeof(Helper), Member = "TryFetch")]
 	[CalledBy(Type = typeof(Helper), Member = "TryFetch")]
-	[Calls(Type = typeof(AllocationException), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt64")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "GetInstance")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "GetInstance")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt64")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[Calls(Type = typeof(AllocationException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public TypeAllocationException(IntPtr address, Type foundType, Type expectedType)
 		: base(null)
 	{

@@ -5,8 +5,8 @@ public class LandmarkLocator : MonoBehaviour
 {
 	public string m_LandmarkName;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	private void Start()
 	{
 	}

@@ -14,54 +14,46 @@ public abstract class StringFullWrappedCacheMapEnumerable : IDisposable
 	public StringKeyValuePair Current
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 23)]
+		[CallerCount(Count = 27)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract bool MoveNextImpl(IntPtr self);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract IntPtr FirstImpl(IntPtr self);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract StringKeyValuePair CreateCurrentImpl(IntPtr self);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract void DisposeChildImpl();
 
-	[Calls(Type = typeof(StringWrappedCachedMap), Member = "SetValue")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(StringKeyValuePair), Member = "get_Value")]
-	[Calls(Type = typeof(StringKeyValuePair), Member = "get_Key")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(StringKeyValuePair), Member = "get_Key")]
+	[Calls(Type = typeof(StringKeyValuePair), Member = "get_Value")]
+	[Calls(Type = typeof(StringWrappedCachedMap), Member = "SetValue")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public StringFullWrappedCacheMapEnumerable(StringWrappedCachedMap map)
 	{
 	}
 
+	[CalledBy(Type = typeof(StringWrappedCachedMap), Member = "get_Keys")]
+	[CalledBy(Type = typeof(StringWrappedCachedMap), Member = "get_Values")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(StringKeyValuePair), Member = "get_Key")]
 	[Calls(Type = typeof(StringKeyValuePair), Member = "get_Value")]
 	[Calls(Type = typeof(StringWrappedCachedMap), Member = "SetValue")]
-	[CalledBy(Type = typeof(StringWrappedCachedMap), Member = "get_Keys")]
-	[CalledBy(Type = typeof(StringWrappedCachedMap), Member = "get_Values")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool MoveNext()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{

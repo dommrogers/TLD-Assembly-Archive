@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -64,303 +63,296 @@ public class FireManager : MonoBehaviour
 
 	private bool m_ForceFireStartingSuccess;
 
-	[CallsUnknownMethods(Count = 30)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Fire), Member = "Serialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(FireSaveList), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(FireSaveList), Member = ".ctor")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(Fire), Member = "Serialize")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 30)]
 	public static string Serialize()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(FireManager), Member = "FindFireByGuid")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(FireManager), Member = "FindFireByPosition")]
+	[Calls(Type = typeof(FireManager), Member = "InstantiateFireGameObject")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
 	[Calls(Type = typeof(ObjectGuidManager), Member = "UnRegisterGuid")]
 	[Calls(Type = typeof(ObjectGuid), Member = "Set")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
 	[Calls(Type = typeof(Fire), Member = "Deserialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FireManager), Member = "InstantiateFireGameObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FireManager), Member = "FindFireByPosition")]
-	[Calls(Type = typeof(FireManager), Member = "FindFireByGuid")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FireManager), Member = "FindFireByGuid")]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	public static void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 21)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Fire), Member = "GetRemainingLifeTimeSeconds")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(ChimneySaveList), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ChimneySaveList), Member = ".ctor")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Fire), Member = "GetRemainingLifeTimeSeconds")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 21)]
 	public static string SerializeChimneyData()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataPostSceneRestore")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Chimney), Member = "GetClosestChimney")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTeleportTransformAfterSceneLoad")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Chimney), Member = "FindByGuid")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Chimney), Member = "FindByGuid")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetTeleportTransformAfterSceneLoad")]
+	[Calls(Type = typeof(Chimney), Member = "GetClosestChimney")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void DeserializeChimneyData(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void Reset()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void AddWoodStove(WoodStove ws)
 	{
 	}
 
+	[CalledBy(Type = typeof(Campfire), Member = "Start")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
 	[Calls(Type = typeof(ObjectGuid), Member = "Generate")]
 	[Calls(Type = typeof(ObjectGuid), Member = "Register")]
-	[CalledBy(Type = typeof(Campfire), Member = "Start")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	public static void AddCampfire(Campfire cf)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnCancel")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void DestroyFireObject(Fire f)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[CallsUnknownMethods(Count = 24)]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Campfire), Member = "SetState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "ConsumeUnitFromInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "ConsumeUnitFromInventory")]
-	[Calls(Type = typeof(PlayerManager), Member = "ConsumeUnitFromInventory")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(FireManager), Member = "PlayerCalculateFireStartTime")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "Degrade")]
+	[Calls(Type = typeof(GearItem), Member = "CheckForBreakOnUse")]
 	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	[Calls(Type = typeof(FireManager), Member = "SpawnPlayerFire")]
-	[Calls(Type = typeof(GearItem), Member = "CheckForBreakOnUse")]
-	[Calls(Type = typeof(GearItem), Member = "Degrade")]
-	[Calls(Type = typeof(FireManager), Member = "PlayerCalculateFireStartTime")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "ConsumeUnitFromInventory")]
+	[Calls(Type = typeof(Campfire), Member = "SetState")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 24)]
 	public bool PlayerStartFire(Campfire campfire, FireStarterItem starter, FuelSourceItem tinder, FuelSourceItem fuel, FireStarterItem accelerant, float percentChanceSuccess)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void UpdateSkillAfterFireCreationAttempt(bool success)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshChanceOfSuccessLabel")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 7)]
 	public float CalclateFireStartSuccess(FireStarterItem starter, FuelSourceItem fuel, FireStarterItem accelerant)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void AddFire(Fire f)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Fire), Member = "OnDestroy")]
-	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public static void RemoveFire(Fire f)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(FireManager), Member = "GetMissingMaterialsString")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "FilterItem")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "FilterItem")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_FireStart), Member = "FilterItem")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public void GetMissingMaterials(out bool hasStarter, out bool hasTinder, out bool hasFuel)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<bool, @null>(ref hasStarter) = null;
-		System.Runtime.CompilerServices.Unsafe.As<bool, @null>(ref hasTinder) = null;
-		System.Runtime.CompilerServices.Unsafe.As<bool, @null>(ref hasFuel) = null;
+		hasStarter = default(bool);
+		hasTinder = default(bool);
+		hasFuel = default(bool);
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteStartFireAction")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNoCampfireMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
-	[Calls(Type = typeof(FireManager), Member = "GetMissingMaterials")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteStartFireAction")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(FireManager), Member = "GetMissingMaterials")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public string GetMissingMaterialsString()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Rest), Member = "ShouldInterruptWithPredator")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(BodyHarvest), Member = "IsNearFire")]
-	[CalledBy(Type = typeof(Cookable), Member = "IsNearFire")]
-	[CalledBy(Type = typeof(ClothingItem), Member = "IsNearFire")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeInvestigateMeatWhenStalking")]
-	[CallerCount(Count = 6)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(BaseAi), Member = "ProcessInvestigateFood")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeInvestigateMeatWhenStalking")]
+	[CalledBy(Type = typeof(Rest), Member = "ShouldInterruptWithPredator")]
+	[CalledBy(Type = typeof(ClothingItem), Member = "IsNearFire")]
+	[CalledBy(Type = typeof(Cookable), Member = "IsNearFire")]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "IsNearFire")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Vector3), Member = "Distance")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public float GetDistanceToClosestFire(Vector3 pos)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(MusicEventManager), Member = "CheckForHappySuccess")]
-	[CalledBy(Type = typeof(BodyHarvest), Member = "Serialize")]
-	[CalledBy(Type = typeof(Cookable), Member = "MaybeReattachToNearbyFire")]
-	[CalledBy(Type = typeof(Cookable), Member = "MaybeStartWarmingUpDueToNearbyFire")]
-	[CalledBy(Type = typeof(ClothingItem), Member = "Serialize")]
 	[CalledBy(Type = typeof(Rest), Member = "GetNearbyBuringFire")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(ClothingItem), Member = "Serialize")]
+	[CalledBy(Type = typeof(Cookable), Member = "MaybeStartWarmingUpDueToNearbyFire")]
+	[CalledBy(Type = typeof(Cookable), Member = "MaybeReattachToNearbyFire")]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "Serialize")]
+	[CalledBy(Type = typeof(MusicEventManager), Member = "CheckForHappySuccess")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Vector3), Member = "Distance")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public Fire GetClosestFire(Vector3 pos)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(NPCFreezing), Member = "DoUpdate")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Weather), Member = "GetMinAirTemp")]
-	[CalledBy(Type = typeof(StatusBar), Member = "ShouldBeHidden")]
 	[CalledBy(Type = typeof(Freezing), Member = "MaybeAdjustFreezingDueToNearbyFire")]
+	[CalledBy(Type = typeof(StatusBar), Member = "ShouldBeHidden")]
+	[CalledBy(Type = typeof(Weather), Member = "GetMinAirTemp")]
 	[CalledBy(Type = typeof(Frostbite), Member = "UpdateFrostbite")]
-	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(NPCFreezing), Member = "DoUpdate")]
 	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Vector3), Member = "Distance")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public bool PointInRadiusOfBurningFire(Vector3 pos)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Freezing), Member = "UpdateHoursWithinRangeOfFire")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(Freezing), Member = "UpdateHoursWithinRangeOfFire")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	public bool PointInRadiusOfFullyBurningFire(Vector3 pos)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(TorchItem), Member = "MaybeAdjustHeatSource")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public bool PointInInnerRadiusOfBurningFire(Vector3 pos)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(GearItem), Member = "BreakOnUse")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void ExitFireStarting()
 	{
@@ -371,57 +363,54 @@ public class FireManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool PlayerRollFireStartSuccess(float percentChanceSuccess)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool GetForceFireStartingSuccess()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SetForceFireStartingSuccess(bool forceFireStartingSuccess)
 	{
 	}
 
+	[CalledBy(Type = typeof(FireManager), Member = "PlayerStartFire")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(FireManager), Member = "PlayerStartFire")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
 	private bool PlayerCalculateFireStartTime(out float duration, FireStarterItem starter, FuelSourceItem fuel, FireStarterItem accelerant)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref duration) = null;
-		return default(bool);
+		duration = default(float);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(FireManager), Member = "PlayerHasMaterialsToStartFire")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	private FireStarterItem PlayerGetFirestarterChoice()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(FireManager), Member = "PlayerHasMaterialsToStartFire")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[CalledBy(Type = typeof(FireManager), Member = "PlayerHasMaterialsToStartFire")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 13)]
 	private FuelSourceItem PlayerGetTinderChoice()
 	{
@@ -429,66 +418,61 @@ public class FireManager : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(FireManager), Member = "PlayerHasMaterialsToStartFire")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	private FuelSourceItem PlayerGetFuelChoice()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(FireManager), Member = "PlayerHasMaterialsToStartFire")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	private FireStarterItem PlayerGetAccelerantChoice()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(FireManager), Member = "PlayerGetFuelChoice")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(FireManager), Member = "PlayerGetAccelerantChoice")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(FireManager), Member = "PlayerGetFirestarterChoice")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(FireManager), Member = "PlayerGetTinderChoice")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(FireManager), Member = "PlayerGetFirestarterChoice")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(FireManager), Member = "PlayerGetFuelChoice")]
+	[Calls(Type = typeof(FireManager), Member = "PlayerGetAccelerantChoice")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool PlayerHasMaterialsToStartFire(out FireStarterItem starter, out FuelSourceItem tinder, out FuelSourceItem fuel, out FireStarterItem accelerant)
 	{
 		starter = null;
 		tinder = null;
 		fuel = null;
 		accelerant = null;
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(FireManager), Member = "PlayerStartFire")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(Fire), Member = "PlayerBeginCreate")]
-	[Calls(Type = typeof(Fire), Member = "OnFuelBurnt")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Fire), Member = "OnFuelBurnt")]
+	[Calls(Type = typeof(Fire), Member = "PlayerBeginCreate")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 11)]
 	private bool SpawnPlayerFire(Campfire campfire, bool startFireAfterCountdown, float tinderIgniteTimeSeconds, float startTimeSeconds, FireStarterItem starter, FuelSourceItem fuel, FireStarterItem accelerant)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -496,52 +480,53 @@ public class FireManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool RollForSkillIncrease(bool success)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private static Fire GetFireComponent(GameObject go)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 16)]
 	[CalledBy(Type = typeof(FireManager), Member = "Deserialize")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[Calls(Type = typeof(Vector3), Member = "Distance")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 16)]
 	private static Fire FindFireByPosition(FireSaveData fsd)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(FireManager), Member = "Deserialize")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ObjectGuidManager), Member = "Lookup")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(FireManager), Member = "Deserialize")]
-	[CalledBy(Type = typeof(FireManager), Member = "Deserialize")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private static Fire FindFireByGuid(string guid)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Resources), Member = "Load")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(FireManager), Member = "Deserialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Resources), Member = "Load")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private static Fire InstantiateFireGameObject(FireSaveData fsd)
 	{
 		return null;

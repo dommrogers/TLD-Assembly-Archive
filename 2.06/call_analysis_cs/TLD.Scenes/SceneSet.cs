@@ -39,15 +39,15 @@ public class SceneSet : ScriptableObject
 		[CallerCount(Count = 3)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public string NameLocId
 	{
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
-		[DeduplicatedMethod]
 		get
 		{
 			return null;
@@ -91,12 +91,12 @@ public class SceneSet : ScriptableObject
 
 	public string LocalizedRegionGroupName
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(HUDManager._003CWaitToShowLocationReveal_003Ed__22), Member = "MoveNext")]
 		[CalledBy(Type = typeof(UtilsPanelChoose), Member = "RefreshDetails")]
+		[CalledBy(TypeFullName = "HUDManager.<WaitToShowLocationReveal>d__22", Member = "MoveNext")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(Localization), Member = "Get")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -105,83 +105,84 @@ public class SceneSet : ScriptableObject
 
 	public int MaxSceneCount
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(ZoneSpecification), Member = "LoadRegionAsync")]
 		[CalledBy(Type = typeof(ZoneSpecification), Member = "UnloadRegionAsync")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 17)]
-	[CalledBy(Type = typeof(ZoneSpecification), Member = "LoadRegionAsync")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneAsynchronously")]
+	[CalledBy(Type = typeof(ZoneSpecification), Member = "LoadRegionAsync")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = ".ctor")]
 	[Calls(Type = typeof(SceneSet), Member = "OnBaseSceneLoaded")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "add_Completed")]
 	[Calls(Type = typeof(Exception), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 16)]
 	public void LoadAsync(ICollection<AsyncOperationHandle<SceneInstance>> loadOperations, ICollection<SceneLoadCondition> conditions, Action<ICollection<AsyncOperationHandle<SceneInstance>>> onAllLoadsStarted = null)
 	{
 	}
 
 	[CalledBy(Type = typeof(SceneSet), Member = "LoadAsync")]
-	[Calls(Type = typeof(SceneSet), Member = "LoadAdditiveAndConditionalScenes")]
-	[CallsUnknownMethods(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_Status")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_Result")]
 	[Calls(Type = typeof(SceneSet), Member = "LoadAdditiveAndConditionalScenes")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnBaseSceneLoaded(AsyncOperationHandle<SceneInstance> sceneLoad)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 30)]
+	[CalledBy(Type = typeof(SceneSet), Member = "OnBaseSceneLoaded")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AssetReference), Member = "IsValid")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(AssetReference), Member = "IsValid")]
-	[Calls(Type = typeof(AssetReference), Member = "IsValid")]
-	[CalledBy(Type = typeof(SceneSet), Member = "OnBaseSceneLoaded")]
-	[CalledBy(Type = typeof(SceneSet), Member = "OnBaseSceneLoaded")]
+	[CallsUnknownMethods(Count = 30)]
 	private void LoadAdditiveAndConditionalScenes(ICollection<AssetReference> additiveScenes, ICollection<ConditionalScene> conditionalScenes)
 	{
 	}
 
 	[CalledBy(Type = typeof(ZoneSpecification), Member = "UnloadRegionAsync")]
-	[Calls(Type = typeof(SceneSet), Member = "IsSceneLoaded")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(SceneSet), Member = "IsSceneLoaded")]
-	[Calls(Type = typeof(SceneSet), Member = "IsSceneLoaded")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SceneSet), Member = "IsSceneLoaded")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 15)]
 	public void UnloadAsync(ICollection<AsyncOperationHandle<SceneInstance>> unloadOperations)
 	{
 	}
 
+	[CalledBy(Type = typeof(SceneSet), Member = "UnloadAsync")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_IsDone")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_Result")]
 	[Calls(Type = typeof(Exception), Member = ".ctor")]
-	[Calls(Type = typeof(Exception), Member = ".ctor")]
-	[CalledBy(Type = typeof(SceneSet), Member = "UnloadAsync")]
-	[CalledBy(Type = typeof(SceneSet), Member = "UnloadAsync")]
-	[CalledBy(Type = typeof(SceneSet), Member = "UnloadAsync")]
-	[CallsUnknownMethods(Count = 23)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 21)]
 	private static bool IsSceneLoaded(AssetReference sceneReference)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void AddExtension(SceneSetExtension extension)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 16)]
 	public SceneSet()
 	{

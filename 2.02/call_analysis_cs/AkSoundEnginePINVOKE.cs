@@ -6,7 +6,7 @@ using Cpp2ILInjected.CallAnalysis;
 internal class AkSoundEnginePINVOKE
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	static AkSoundEnginePINVOKE()
 	{
 	}
@@ -32,8 +32,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkAudioSettings_uNumSamplesPerSecond_set(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_AkAudioSettings_uNumSamplesPerSecond_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -67,8 +67,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkVector_Y_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern float CSharp_AkVector_Y_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -107,8 +107,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_AkTransform_OrientationTop(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkTransform_Set__SWIG_0(IntPtr jarg1, IntPtr jarg2, IntPtr jarg3, IntPtr jarg4);
 
 	[PreserveSig]
@@ -142,8 +142,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_new_AkTransform();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_delete_AkTransform(IntPtr jarg1);
 
 	[PreserveSig]
@@ -167,23 +167,23 @@ internal class AkSoundEnginePINVOKE
 	public static extern float CSharp_AkObstructionOcclusionValues_obstruction_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkObstructionOcclusionValues), Member = "Clear")]
 	[CalledBy(Type = typeof(AkObstructionOcclusionValuesArray), Member = "DefaultConstructAtIntPtr")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkObstructionOcclusionValues_Clear(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(AkObstructionOcclusionValuesArray), Member = "get_StructureSize")]
 	[CalledBy(Type = typeof(AkObstructionOcclusionValues), Member = "GetSizeOf")]
+	[CalledBy(Type = typeof(AkObstructionOcclusionValuesArray), Member = "get_StructureSize")]
 	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkObstructionOcclusionValues_GetSizeOf();
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkObstructionOcclusionValues), Member = "Clone")]
 	[CalledBy(Type = typeof(AkObstructionOcclusionValuesArray), Member = "CloneIntoReferenceFromIntPtr")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkObstructionOcclusionValues_Clone(IntPtr jarg1, IntPtr jarg2);
 
@@ -208,8 +208,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_AkChannelEmitter_position_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkChannelEmitter_uInputChannels_set(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
@@ -243,8 +243,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern uint CSharp_AkAuxSendValue_auxBusID_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkAuxSendValue_fControlValue_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
@@ -253,28 +253,28 @@ internal class AkSoundEnginePINVOKE
 	public static extern float CSharp_AkAuxSendValue_fControlValue_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(AkAuxSendValue), Member = "Set")]
 	[CalledBy(Type = typeof(AkAuxSendArray), Member = "Add")]
 	[CalledBy(Type = typeof(AkAuxSendArray), Member = "Add")]
+	[CallerCount(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkAuxSendValue_Set(IntPtr jarg1, ulong jarg2, uint jarg3, float jarg4);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(AkAuxSendValue), Member = "IsSame")]
 	[CalledBy(Type = typeof(AkAuxSendArray), Member = "Contains")]
 	[CalledBy(Type = typeof(AkAuxSendArray), Member = "Contains")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool CSharp_AkAuxSendValue_IsSame(IntPtr jarg1, ulong jarg2, uint jarg3);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(AkGameObjEnvironmentData), Member = ".ctor")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(AkAuxSendValue), Member = "GetSizeOf")]
 	[CalledBy(Type = typeof(AkAuxSendArray), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkGameObjEnvironmentData), Member = ".ctor")]
+	[CallerCount(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkAuxSendValue_GetSizeOf();
 
 	[PreserveSig]
@@ -298,13 +298,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkRamp_fPrev_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern float CSharp_AkRamp_fPrev_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkRamp_fNext_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
@@ -343,8 +343,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern uint CSharp_AK_LE_NATIVE_BITSPERSAMPLE_get();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_AK_LE_NATIVE_SAMPLETYPE_get();
 
 	[PreserveSig]
@@ -378,8 +378,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkAudioFormat_uBitsPerSample_set(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_AkAudioFormat_uBitsPerSample_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -413,8 +413,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern uint CSharp_AkAudioFormat_uInterleaveID_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_AkAudioFormat_GetNumChannels(IntPtr jarg1);
 
 	[PreserveSig]
@@ -443,14 +443,14 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkAudioFormat_SetAll(IntPtr jarg1, uint jarg2, IntPtr jarg3, uint jarg4, uint jarg5, uint jarg6, uint jarg7);
 
 	[PreserveSig]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern bool CSharp_AkAudioFormat_IsChannelConfigSupported(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_new_AkAudioFormat();
 
 	[PreserveSig]
@@ -484,9 +484,9 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_AkIterator_GetItem(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool CSharp_AkIterator_IsEqualTo(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
@@ -516,8 +516,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_new__ArrayPoolDefault();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_delete__ArrayPoolDefault(IntPtr jarg1);
 
 	[PreserveSig]
@@ -551,8 +551,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_delete_AkPlaylistItem(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkPlaylistItem_Assign(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
@@ -592,8 +592,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkPlaylistItem_pCustomInfo_set(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkPlaylistItem_pCustomInfo_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -627,8 +627,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_AkPlaylistArray_Erase__SWIG_0(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkPlaylistArray_Erase__SWIG_1(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
@@ -662,9 +662,9 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_AkPlaylistArray_Data(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool CSharp_AkPlaylistArray_IsEmpty(IntPtr jarg1);
 
 	[PreserveSig]
@@ -698,8 +698,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_AkPlaylistArray_Remove(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkPlaylistArray_RemoveSwap(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
@@ -724,20 +724,20 @@ internal class AkSoundEnginePINVOKE
 	public static extern bool CSharp_AkPlaylistArray_GrowArray__SWIG_0(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern bool CSharp_AkPlaylistArray_GrowArray__SWIG_1(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool CSharp_AkPlaylistArray_Resize(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkPlaylistArray_Transfer(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
@@ -776,8 +776,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_new_AkPlaylist();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_delete_AkPlaylist(IntPtr jarg1);
 
 	[PreserveSig]
@@ -811,8 +811,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_DynamicSequencePlay__SWIG_1(uint jarg1, int jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_DynamicSequencePlay__SWIG_2(uint jarg1);
 
 	[PreserveSig]
@@ -846,8 +846,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_DynamicSequenceResume__SWIG_2(uint jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_DynamicSequenceStop__SWIG_0(uint jarg1, int jarg2, int jarg3);
 
 	[PreserveSig]
@@ -876,13 +876,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_DynamicSequenceLockPlaylist(uint jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_DynamicSequenceUnlockPlaylist(uint jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_new_AkOutputSettings__SWIG_0();
 
 	[PreserveSig]
@@ -910,8 +910,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_new_AkOutputSettings__SWIG_4(string jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkOutputSettings_audioDeviceShareset_set(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
@@ -945,8 +945,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkOutputSettings_channelConfig_set(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkOutputSettings_channelConfig_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -980,8 +980,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkInitSettings_uMaxNumPaths_set(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_AkInitSettings_uMaxNumPaths_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -1020,13 +1020,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkInitSettings_uPrepareEventMemoryPoolID_set(IntPtr jarg1, int jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkInitSettings_uPrepareEventMemoryPoolID_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkInitSettings_bEnableGameSyncPreparation_set(IntPtr jarg1, bool jarg2);
 
 	[PreserveSig]
@@ -1061,8 +1061,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkInitSettings_uMonitorPoolSize_set(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_AkInitSettings_uMonitorPoolSize_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -1096,8 +1096,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern uint CSharp_AkInitSettings_uMaxHardwareTimeoutMs_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkInitSettings_bUseSoundBankMgrThread_set(IntPtr jarg1, bool jarg2);
 
 	[PreserveSig]
@@ -1128,8 +1128,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_AkInitSettings_szPluginDLLPath_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkInitSettings_eFloorPlane_set(IntPtr jarg1, int jarg2);
 
 	[PreserveSig]
@@ -1168,8 +1168,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_AkSourceSettings_pMediaMemory_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkSourceSettings_uMediaSize_set(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
@@ -1178,24 +1178,24 @@ internal class AkSoundEnginePINVOKE
 	public static extern uint CSharp_AkSourceSettings_uMediaSize_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkSourceSettings), Member = "Clear")]
 	[CalledBy(Type = typeof(AkSourceSettingsArray), Member = "DefaultConstructAtIntPtr")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkSourceSettings_Clear(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkSourceSettings), Member = "GetSizeOf")]
 	[CalledBy(Type = typeof(AkSourceSettingsArray), Member = "get_StructureSize")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkSourceSettings_GetSizeOf();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(AkSourceSettings), Member = "Clone")]
 	[CalledBy(Type = typeof(AkSourceSettingsArray), Member = "CloneIntoReferenceFromIntPtr")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(AkSourceSettings), Member = "Clone")]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkSourceSettings_Clone(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
@@ -1230,8 +1230,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_GetSpeakerConfiguration__SWIG_1();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_GetPanningRule__SWIG_0(out int jarg1, ulong jarg2);
 
 	[PreserveSig]
@@ -1260,13 +1260,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_GetSpeakerAngles__SWIG_1([In][Out] float[] jarg1, ref uint jarg2, out float jarg3);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_SetSpeakerAngles__SWIG_0([In] float[] jarg1, uint jarg2, float jarg3, ulong jarg4);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_SetSpeakerAngles__SWIG_1([In] float[] jarg1, uint jarg2, float jarg3);
 
 	[PreserveSig]
@@ -1300,13 +1300,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_RegisterPluginDLL__SWIG_1(string jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_GetIDFromString__SWIG_0(string jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_PostEvent__SWIG_0(uint jarg1, ulong jarg2, uint jarg3, IntPtr jarg4, IntPtr jarg5, uint jarg6, IntPtr jarg7, uint jarg8);
 
 	[PreserveSig]
@@ -1345,8 +1345,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern uint CSharp_PostEvent__SWIG_7(string jarg1, ulong jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_ExecuteActionOnEvent__SWIG_0(uint jarg1, int jarg2, ulong jarg3, int jarg4, int jarg5, uint jarg6);
 
 	[PreserveSig]
@@ -1380,8 +1380,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_ExecuteActionOnEvent__SWIG_6(string jarg1, int jarg2, ulong jarg3, int jarg4, int jarg5);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_ExecuteActionOnEvent__SWIG_7(string jarg1, int jarg2, ulong jarg3, int jarg4);
 
 	[PreserveSig]
@@ -1415,8 +1415,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_StopMIDIOnEvent__SWIG_2();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_PinEventInStreamCache__SWIG_0(uint jarg1, char jarg2, char jarg3);
 
 	[PreserveSig]
@@ -1446,13 +1446,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_GetBufferStatusForPinnedEvent__SWIG_1(string jarg1, out float jarg2, out int jarg3);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_SeekOnEvent__SWIG_0(uint jarg1, ulong jarg2, int jarg3, bool jarg4, uint jarg5);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_SeekOnEvent__SWIG_1(uint jarg1, ulong jarg2, int jarg3, bool jarg4);
 
 	[PreserveSig]
@@ -1486,8 +1486,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_SeekOnEvent__SWIG_10(uint jarg1, ulong jarg2, float jarg3, bool jarg4);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_SeekOnEvent__SWIG_11(uint jarg1, ulong jarg2, float jarg3);
 
 	[PreserveSig]
@@ -1506,8 +1506,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_SeekOnEvent__SWIG_14(string jarg1, ulong jarg2, float jarg3);
 
 	[PreserveSig]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(AkCallbackManager), Member = "RemoveEventCallbackCookie")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_CancelEventCallbackCookie(IntPtr jarg1);
 
@@ -1517,13 +1517,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_CancelEventCallbackGameObject(ulong jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_CancelEventCallback(uint jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_GetSourcePlayPosition__SWIG_0(uint jarg1, out int jarg2, bool jarg3);
 
 	[PreserveSig]
@@ -1557,8 +1557,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_StopPlayingID__SWIG_1(uint jarg1, int jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_StopPlayingID__SWIG_2(uint jarg1);
 
 	[PreserveSig]
@@ -1593,8 +1593,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_SetMultiplePositions__SWIG_0(ulong jarg1, IntPtr jarg2, ushort jarg3, int jarg4);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_SetMultiplePositions__SWIG_1(ulong jarg1, IntPtr jarg2, ushort jarg3);
 
 	[PreserveSig]
@@ -1628,8 +1628,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_LoadBank__SWIG_0(string jarg1, int jarg2, out uint jarg3);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_LoadBank__SWIG_1(uint jarg1, int jarg2);
 
 	[PreserveSig]
@@ -1663,13 +1663,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_LoadBank__SWIG_7(IntPtr jarg1, uint jarg2, IntPtr jarg3, IntPtr jarg4, int jarg5, out uint jarg6);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_UnloadBank__SWIG_0(string jarg1, IntPtr jarg2, out int jarg3);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_UnloadBank__SWIG_1(string jarg1, IntPtr jarg2);
 
 	[PreserveSig]
@@ -1693,8 +1693,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_UnloadBank__SWIG_8(uint jarg1, IntPtr jarg2, IntPtr jarg3, IntPtr jarg4);
 
 	[PreserveSig]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(AkCallbackManager), Member = "RemoveBankCallback")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_CancelBankCallbackCookie(IntPtr jarg1);
 
@@ -1704,8 +1704,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_PrepareBank__SWIG_0(int jarg1, string jarg2, int jarg3);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_PrepareBank__SWIG_1(int jarg1, string jarg2);
 
 	[PreserveSig]
@@ -1739,8 +1739,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_PrepareBank__SWIG_11(int jarg1, uint jarg2, IntPtr jarg3, IntPtr jarg4);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_ClearPreparedEvents();
 
 	[PreserveSig]
@@ -1779,8 +1779,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_PrepareGameSyncs__SWIG_0(int jarg1, int jarg2, string jarg3, IntPtr jarg4, uint jarg5);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_PrepareGameSyncs__SWIG_1(int jarg1, int jarg2, uint jarg3, [In] uint[] jarg4, uint jarg5);
 
 	[PreserveSig]
@@ -1814,8 +1814,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_RemoveDefaultListener(ulong jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_ResetListenersToDefault(ulong jarg1);
 
 	[PreserveSig]
@@ -1849,8 +1849,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_SetRTPCValue__SWIG_3(uint jarg1, float jarg2, ulong jarg3);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_SetRTPCValue__SWIG_4(uint jarg1, float jarg2);
 
 	[PreserveSig]
@@ -1879,13 +1879,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_SetRTPCValue__SWIG_9(string jarg1, float jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_SetRTPCValueByPlayingID__SWIG_0(uint jarg1, float jarg2, uint jarg3, int jarg4, int jarg5, bool jarg6);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_SetRTPCValueByPlayingID__SWIG_1(uint jarg1, float jarg2, uint jarg3, int jarg4, int jarg5);
 
 	[PreserveSig]
@@ -1919,8 +1919,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_SetRTPCValueByPlayingID__SWIG_7(string jarg1, float jarg2, uint jarg3);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_ResetRTPCValue__SWIG_0(uint jarg1, ulong jarg2, int jarg3, int jarg4, bool jarg5);
 
 	[PreserveSig]
@@ -1954,8 +1954,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_ResetRTPCValue__SWIG_6(string jarg1, ulong jarg2, int jarg3, int jarg4);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_ResetRTPCValue__SWIG_7(string jarg1, ulong jarg2, int jarg3);
 
 	[PreserveSig]
@@ -1989,8 +1989,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_PostTrigger__SWIG_1(string jarg1, ulong jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_SetState__SWIG_0(uint jarg1, uint jarg2);
 
 	[PreserveSig]
@@ -1999,9 +1999,9 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_SetState__SWIG_1(string jarg1, string jarg2);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetGameObjectAuxSendValues")]
 	[CalledBy(Type = typeof(AkAuxSendArray), Member = "SetValues")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_SetGameObjectAuxSendValues(ulong jarg1, IntPtr jarg2, uint jarg3);
 
@@ -2026,8 +2026,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_SetBusEffect__SWIG_1(string jarg1, uint jarg2, uint jarg3);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_SetMixer__SWIG_0(uint jarg1, uint jarg2);
 
 	[PreserveSig]
@@ -2061,8 +2061,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_StartOutputCapture(string jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_StopOutputCapture();
 
 	[PreserveSig]
@@ -2098,14 +2098,14 @@ internal class AkSoundEnginePINVOKE
 	public static extern ulong CSharp_GetOutputID__SWIG_1(string jarg1, uint jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_SetBusDevice__SWIG_0(uint jarg1, uint jarg2);
 
 	[PreserveSig]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetBusDevice")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetBusDevice")]
 	[CallsUnknownMethods(Count = 7)]
 	public static extern int CSharp_SetBusDevice__SWIG_1(string jarg1, string jarg2);
 
@@ -2130,8 +2130,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_WakeupFromSuspend();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_GetBufferTick();
 
 	[PreserveSig]
@@ -2175,8 +2175,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_AkSegmentInfo_iPostExitDuration_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkSegmentInfo_iRemainingLookAheadTime_set(IntPtr jarg1, int jarg2);
 
 	[PreserveSig]
@@ -2210,8 +2210,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkSegmentInfo_fGridDuration_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern float CSharp_AkSegmentInfo_fGridDuration_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -2245,8 +2245,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern byte CSharp_AK_INVALID_MIDI_NOTE_get();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkMIDIEvent_byChan_set(IntPtr jarg1, byte jarg2);
 
 	[PreserveSig]
@@ -2280,8 +2280,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_new_AkMIDIEvent_tGen();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_delete_AkMIDIEvent_tGen(IntPtr jarg1);
 
 	[PreserveSig]
@@ -2320,8 +2320,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkMIDIEvent_tCc_byCc_set(IntPtr jarg1, byte jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern byte CSharp_AkMIDIEvent_tCc_byCc_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -2355,8 +2355,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern byte CSharp_AkMIDIEvent_tPitchBend_byValueLsb_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkMIDIEvent_tPitchBend_byValueMsb_set(IntPtr jarg1, byte jarg2);
 
 	[PreserveSig]
@@ -2395,8 +2395,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern byte CSharp_AkMIDIEvent_tNoteAftertouch_byValue_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_new_AkMIDIEvent_tNoteAftertouch();
 
 	[PreserveSig]
@@ -2430,8 +2430,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkMIDIEvent_tProgramChange_byProgramNum_set(IntPtr jarg1, byte jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern byte CSharp_AkMIDIEvent_tProgramChange_byProgramNum_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -2465,13 +2465,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_AkMIDIEvent_Cc_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkMIDIEvent_NoteOnOff_set(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkMIDIEvent_NoteOnOff_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -2505,8 +2505,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_AkMIDIEvent_ChanAftertouch_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkMIDIEvent_ProgramChange_set(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
@@ -2545,8 +2545,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern byte CSharp_AkMIDIEvent_byVelocity_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkMIDIEvent_byCc_set(IntPtr jarg1, int jarg2);
 
 	[PreserveSig]
@@ -2580,8 +2580,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkMIDIEvent_byValueMsb_set(IntPtr jarg1, byte jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern byte CSharp_AkMIDIEvent_byValueMsb_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -2615,13 +2615,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern byte CSharp_AkMIDIEvent_byChanAftertouchValue_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkMIDIEvent_byProgramNum_set(IntPtr jarg1, byte jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern byte CSharp_AkMIDIEvent_byProgramNum_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -2645,26 +2645,26 @@ internal class AkSoundEnginePINVOKE
 	public static extern uint CSharp_AkMIDIPost_uOffset_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Event), Member = "PostMIDI")]
-	[CalledBy(Type = typeof(AkMIDIPostArray), Member = "PostOnEvent")]
-	[CalledBy(Type = typeof(Event), Member = "PostMIDI")]
 	[CalledBy(Type = typeof(AkMIDIPost), Member = "PostOnEvent")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(AkMIDIPostArray), Member = "PostOnEvent")]
+	[CalledBy(Type = typeof(AkMIDIPostArray), Member = "PostOnEvent")]
+	[CalledBy(Type = typeof(Event), Member = "PostMIDI")]
+	[CalledBy(Type = typeof(Event), Member = "PostMIDI")]
+	[CallerCount(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkMIDIPost_PostOnEvent(IntPtr jarg1, uint jarg2, ulong jarg3, uint jarg4);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkMIDIPost), Member = "Clone")]
 	[CalledBy(Type = typeof(AkMIDIPostArray), Member = "set_Item")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkMIDIPost_Clone(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkMIDIPost), Member = "GetSizeOf")]
 	[CalledBy(Type = typeof(AkMIDIPostArray), Member = ".ctor")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkMIDIPost_GetSizeOf();
 
@@ -2679,8 +2679,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_delete_AkMIDIPost(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_new_AkMemSettings();
 
 	[PreserveSig]
@@ -2714,8 +2714,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkMusicSettings_fStreamingLookAheadRatio_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern float CSharp_AkMusicSettings_fStreamingLookAheadRatio_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -2739,30 +2739,30 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_GetPlayingSegmentInfo__SWIG_1(uint jarg1, IntPtr jarg2);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkSerializedCallbackHeader), Member = "get_pPackage")]
 	[CalledBy(Type = typeof(AkCallbackManager), Member = "PostCallbacks")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkSerializedCallbackHeader_pPackage_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(AkSerializedCallbackHeader), Member = "get_pNext")]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkCallbackManager), Member = "PostCallbacks")]
+	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkSerializedCallbackHeader_pNext_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkSerializedCallbackHeader), Member = "get_eType")]
 	[CalledBy(Type = typeof(AkCallbackManager), Member = "PostCallbacks")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkSerializedCallbackHeader_eType_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkSerializedCallbackHeader), Member = "GetData")]
 	[CalledBy(Type = typeof(AkCallbackManager), Member = "PostCallbacks")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkSerializedCallbackHeader_GetData(IntPtr jarg1);
 
@@ -2777,8 +2777,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_delete_AkSerializedCallbackHeader(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkCallbackInfo_pCookie_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -2812,8 +2812,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_new_AkEventCallbackInfo();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_delete_AkEventCallbackInfo(IntPtr jarg1);
 
 	[PreserveSig]
@@ -2847,8 +2847,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern byte CSharp_AkMIDIEventCallbackInfo_byVelocity_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkMIDIEventCallbackInfo_byCc_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -2882,13 +2882,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern byte CSharp_AkMIDIEventCallbackInfo_byChanAftertouchValue_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern byte CSharp_AkMIDIEventCallbackInfo_byProgramNum_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_new_AkMIDIEventCallbackInfo();
 
 	[PreserveSig]
@@ -2922,8 +2922,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_delete_AkMarkerCallbackInfo(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern float CSharp_AkDurationCallbackInfo_fDuration_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -2953,13 +2953,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_new_AkDurationCallbackInfo();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_delete_AkDurationCallbackInfo(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_AkDynamicSequenceItemCallbackInfo_playingID_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -2993,8 +2993,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_AkMusicSyncCallbackInfo_segmentInfo_iCurrentPosition_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkMusicSyncCallbackInfo_segmentInfo_iPreEntryDuration_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -3023,13 +3023,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern float CSharp_AkMusicSyncCallbackInfo_segmentInfo_fBarDuration_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern float CSharp_AkMusicSyncCallbackInfo_segmentInfo_fGridDuration_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern float CSharp_AkMusicSyncCallbackInfo_segmentInfo_fGridOffset_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -3068,8 +3068,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern uint CSharp_AkMusicPlaylistCallbackInfo_uPlaylistSelection_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_AkMusicPlaylistCallbackInfo_uPlaylistItemDone_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -3103,8 +3103,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_AkBankCallbackInfo_memPoolId_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_new_AkBankCallbackInfo();
 
 	[PreserveSig]
@@ -3138,8 +3138,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_AkMonitoringCallbackInfo_message_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_new_AkMonitoringCallbackInfo();
 
 	[PreserveSig]
@@ -3164,14 +3164,14 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_delete_AkAudioInterruptionCallbackInfo(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool CSharp_AkAudioSourceChangeCallbackInfo_bOtherAudioPlaying_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_new_AkAudioSourceChangeCallbackInfo();
 
 	[PreserveSig]
@@ -3205,8 +3205,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkCallbackSerializer_Unlock();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkCallbackSerializer_AudioSourceChangeCallbackFunc(bool jarg1, IntPtr jarg2);
 
 	[PreserveSig]
@@ -3240,8 +3240,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_PostCode__SWIG_3(int jarg1, int jarg2, uint jarg3);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_PostCode__SWIG_4(int jarg1, int jarg2);
 
 	[PreserveSig]
@@ -3275,8 +3275,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_GetTimeStamp();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_GetNumNonZeroBits(uint jarg1);
 
 	[PreserveSig]
@@ -3320,13 +3320,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkPositioningInfo_pannerType_set(IntPtr jarg1, int jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkPositioningInfo_pannerType_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkPositioningInfo_e3dPositioningType_set(IntPtr jarg1, int jarg2);
 
 	[PreserveSig]
@@ -3361,9 +3361,9 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkPositioningInfo_bUseAttenuation_set(IntPtr jarg1, bool jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool CSharp_AkPositioningInfo_bUseAttenuation_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -3393,8 +3393,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkPositioningInfo_fOuterAngle_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern float CSharp_AkPositioningInfo_fOuterAngle_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -3428,8 +3428,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern float CSharp_AkPositioningInfo_HPFCone_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkPositioningInfo_fMaxDistance_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
@@ -3463,13 +3463,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkPositioningInfo_fVolAuxUserDefAtMaxDist_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern float CSharp_AkPositioningInfo_fVolAuxUserDefAtMaxDist_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkPositioningInfo_LPFValueAtMaxDist_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
@@ -3503,8 +3503,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkObjectInfo_objID_set(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_AkObjectInfo_objID_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -3528,23 +3528,23 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_AkObjectInfo_iDepth_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkObjectInfo), Member = "Clear")]
 	[CalledBy(Type = typeof(AkObjectInfoArray), Member = "DefaultConstructAtIntPtr")]
+	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkObjectInfo_Clear(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(AkObjectInfo), Member = "GetSizeOf")]
 	[CalledBy(Type = typeof(AkObjectInfoArray), Member = "get_StructureSize")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(AkObjectInfo), Member = "GetSizeOf")]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkObjectInfo_GetSizeOf();
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkObjectInfo), Member = "Clone")]
 	[CalledBy(Type = typeof(AkObjectInfoArray), Member = "CloneIntoReferenceFromIntPtr")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkObjectInfo_Clone(IntPtr jarg1, IntPtr jarg2);
 
@@ -3569,8 +3569,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_GetListenerPosition(ulong jarg1, IntPtr jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_GetRTPCValue__SWIG_0(uint jarg1, ulong jarg2, uint jarg3, out float jarg4, ref int jarg5);
 
 	[PreserveSig]
@@ -3605,8 +3605,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_GetGameObjectAuxSendValues(ulong jarg1, IntPtr jarg2, ref uint jarg3);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_GetGameObjectDryLevelValue(ulong jarg1, ulong jarg2, out float jarg3);
 
 	[PreserveSig]
@@ -3636,8 +3636,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern bool CSharp_GetIsGameObjectActive(ulong jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern float CSharp_GetMaxRadius(ulong jarg1);
 
 	[PreserveSig]
@@ -3672,8 +3672,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AK_SPEAKER_SETUP_FIX_LEFT_TO_CENTER(ref uint jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AK_SPEAKER_SETUP_FIX_REAR_TO_SIDE(ref uint jarg1);
 
 	[PreserveSig]
@@ -3703,9 +3703,9 @@ internal class AkSoundEnginePINVOKE
 	public static extern bool CSharp_HasSurroundChannels(uint jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool CSharp_HasStrictlyOnePairOfSurroundChannels(uint jarg1);
 
 	[PreserveSig]
@@ -3736,13 +3736,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkChannelConfig_uNumChannels_set(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_AkChannelConfig_uNumChannels_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkChannelConfig_eConfigType_set(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
@@ -3776,8 +3776,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkChannelConfig_Clear(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkChannelConfig_SetStandard(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
@@ -3807,13 +3807,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern uint CSharp_AkChannelConfig_Serialize(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkChannelConfig_Deserialize(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkChannelConfig_RemoveLFE(IntPtr jarg1);
 
 	[PreserveSig]
@@ -3848,8 +3848,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkImageSourceParams_sourcePosition_set(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkImageSourceParams_sourcePosition_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -3883,14 +3883,14 @@ internal class AkSoundEnginePINVOKE
 	public static extern float CSharp_AkImageSourceParams_fDiffraction_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkImageSourceParams_bDiffractedEmitterSide_set(IntPtr jarg1, bool jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool CSharp_AkImageSourceParams_bDiffractedEmitterSide_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -3920,8 +3920,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern float CSharp_kMaxDiffraction_get();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_g_SpatialAudioPoolId_set(int jarg1);
 
 	[PreserveSig]
@@ -3955,8 +3955,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkSpatialAudioInitSettings_uPoolID_set(IntPtr jarg1, int jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkSpatialAudioInitSettings_uPoolID_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -3990,8 +3990,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern uint CSharp_AkSpatialAudioInitSettings_uDiffractionFlags_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkSpatialAudioInitSettings_fDiffractionShadowAttenFactor_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
@@ -4030,8 +4030,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_delete_AkImageSourceSettings(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkImageSourceSettings_SetOneTexture(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
@@ -4066,8 +4066,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern uint CSharp_AkEmitterSettings_reflectAuxBusID_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkEmitterSettings_reflectionMaxPathLength_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
@@ -4101,8 +4101,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkEmitterSettings_reflectorFilterMask_set(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_AkEmitterSettings_reflectorFilterMask_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -4136,8 +4136,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern uint CSharp_AkEmitterSettings_diffractionMaxPaths_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkEmitterSettings_diffractionMaxPathLength_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
@@ -4176,8 +4176,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkVertex_X_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern float CSharp_AkVertex_X_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -4201,23 +4201,23 @@ internal class AkSoundEnginePINVOKE
 	public static extern float CSharp_AkVertex_Z_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkVertex), Member = "Clear")]
 	[CalledBy(Type = typeof(AkVertexArray), Member = "DefaultConstructAtIntPtr")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkVertex_Clear(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(AkVertex), Member = "GetSizeOf")]
 	[CalledBy(Type = typeof(AkVertexArray), Member = "get_StructureSize")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(AkVertex), Member = "GetSizeOf")]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkVertex_GetSizeOf();
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkVertex), Member = "Clone")]
 	[CalledBy(Type = typeof(AkVertexArray), Member = "CloneIntoReferenceFromIntPtr")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkVertex_Clone(IntPtr jarg1, IntPtr jarg2);
 
@@ -4232,13 +4232,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_new_AkTriangle__SWIG_0();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_new_AkTriangle__SWIG_1(ushort jarg1, ushort jarg2, ushort jarg3, ushort jarg4);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkTriangle_point0_set(IntPtr jarg1, ushort jarg2);
 
 	[PreserveSig]
@@ -4272,34 +4272,34 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkTriangle_surface_set(IntPtr jarg1, ushort jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern ushort CSharp_AkTriangle_surface_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkTriangle), Member = "Clear")]
 	[CalledBy(Type = typeof(AkTriangleArray), Member = "DefaultConstructAtIntPtr")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkTriangle_Clear(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkTriangle), Member = "GetSizeOf")]
 	[CalledBy(Type = typeof(AkTriangleArray), Member = "get_StructureSize")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkTriangle_GetSizeOf();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkTriangle), Member = "Clone")]
 	[CalledBy(Type = typeof(AkTriangleArray), Member = "CloneIntoReferenceFromIntPtr")]
+	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkTriangle_Clone(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_delete_AkTriangle(IntPtr jarg1);
 
 	[PreserveSig]
@@ -4334,14 +4334,14 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkAcousticSurface_strName_set(IntPtr jarg1, string jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkAcousticSurface_strName_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkAcousticSurface), Member = "Clear")]
 	[CalledBy(Type = typeof(AkAcousticSurfaceArray), Member = "DefaultConstructAtIntPtr")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkAcousticSurface_Clear(IntPtr jarg1);
 
@@ -4351,17 +4351,17 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkAcousticSurface_DeleteName(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkAcousticSurface), Member = "GetSizeOf")]
 	[CalledBy(Type = typeof(AkAcousticSurfaceArray), Member = "get_StructureSize")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkAcousticSurface_GetSizeOf();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(AkAcousticSurfaceArray), Member = "CloneIntoReferenceFromIntPtr")]
 	[CalledBy(Type = typeof(AkAcousticSurface), Member = "Clone")]
+	[CalledBy(Type = typeof(AkAcousticSurfaceArray), Member = "CloneIntoReferenceFromIntPtr")]
 	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkAcousticSurface_Clone(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
@@ -4390,8 +4390,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern uint CSharp_AkReflectionPathInfo_numPathPoints_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkReflectionPathInfo_numReflections_set(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
@@ -4420,14 +4420,14 @@ internal class AkSoundEnginePINVOKE
 	public static extern float CSharp_AkReflectionPathInfo_level_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkReflectionPathInfo_isOccluded_set(IntPtr jarg1, bool jarg2);
 
 	[PreserveSig]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static extern bool CSharp_AkReflectionPathInfo_isOccluded_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -4438,8 +4438,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_AkReflectionPathInfo_GetSizeOf();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkReflectionPathInfo_GetPathPoint(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
@@ -4453,9 +4453,9 @@ internal class AkSoundEnginePINVOKE
 	public static extern float CSharp_AkReflectionPathInfo_GetDiffraction(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkReflectionPathInfo), Member = "Clone")]
 	[CalledBy(Type = typeof(AkReflectionPathInfoArray), Member = "CloneIntoReferenceFromIntPtr")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkReflectionPathInfo_Clone(IntPtr jarg1, IntPtr jarg2);
 
@@ -4470,8 +4470,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_delete_AkReflectionPathInfo(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkDiffractionPathInfo_virtualPos_set(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
@@ -4505,8 +4505,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkDiffractionPathInfo_totLength_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern float CSharp_AkDiffractionPathInfo_totLength_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -4520,9 +4520,9 @@ internal class AkSoundEnginePINVOKE
 	public static extern float CSharp_AkDiffractionPathInfo_obstructionValue_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkDiffractionPathInfo), Member = "GetSizeOf")]
 	[CalledBy(Type = typeof(AkDiffractionPathInfoArray), Member = "get_StructureSize")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkDiffractionPathInfo_GetSizeOf();
 
@@ -4538,9 +4538,9 @@ internal class AkSoundEnginePINVOKE
 
 	[PreserveSig]
 	[CalledBy(Type = typeof(AkDiffractionPathInfo), Member = "Clone")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkDiffractionPathInfoArray), Member = "CloneIntoReferenceFromIntPtr")]
+	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkDiffractionPathInfo_Clone(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
@@ -4569,13 +4569,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkPropagationPathInfo_numNodes_set(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_AkPropagationPathInfo_numNodes_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkPropagationPathInfo_length_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
@@ -4614,10 +4614,10 @@ internal class AkSoundEnginePINVOKE
 	public static extern float CSharp_AkPropagationPathInfo_wetDiffraction_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(AkPropagationPathInfo), Member = "GetSizeOf")]
 	[CalledBy(Type = typeof(AkPropagationPathInfoArray), Member = "get_StructureSize")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(AkPropagationPathInfo), Member = "GetSizeOf")]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkPropagationPathInfo_GetSizeOf();
 
 	[PreserveSig]
@@ -4626,9 +4626,9 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_AkPropagationPathInfo_GetNodePoint(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkPropagationPathInfo), Member = "Clone")]
 	[CalledBy(Type = typeof(AkPropagationPathInfoArray), Member = "CloneIntoReferenceFromIntPtr")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkPropagationPathInfo_Clone(IntPtr jarg1, IntPtr jarg2);
 
@@ -4638,13 +4638,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_new_AkPropagationPathInfo();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_delete_AkPropagationPathInfo(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_new_AkRoomParams();
 
 	[PreserveSig]
@@ -4678,8 +4678,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern uint CSharp_AkRoomParams_ReverbAuxBus_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkRoomParams_ReverbLevel_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
@@ -4708,14 +4708,14 @@ internal class AkSoundEnginePINVOKE
 	public static extern float CSharp_AkRoomParams_RoomGameObj_AuxSendLevelToSelf_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkRoomParams_RoomGameObj_KeepRegistered_set(IntPtr jarg1, bool jarg2);
 
 	[PreserveSig]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static extern bool CSharp_AkRoomParams_RoomGameObj_KeepRegistered_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -4749,8 +4749,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_SetImageSource__SWIG_0(uint jarg1, IntPtr jarg2, uint jarg3, ulong jarg4, ulong jarg5);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_SetImageSource__SWIG_1(uint jarg1, IntPtr jarg2, uint jarg3, ulong jarg4);
 
 	[PreserveSig]
@@ -4784,13 +4784,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_RemovePortal(ulong jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_SetGameObjectInRoom(ulong jarg1, ulong jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_SetEmitterObstructionAndOcclusion(ulong jarg1, float jarg2, float jarg3);
 
 	[PreserveSig]
@@ -4829,8 +4829,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_AkPlatformInitSettings_threadBankManager_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkPlatformInitSettings_threadMonitor_set(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
@@ -4859,13 +4859,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern float CSharp_AkPlatformInitSettings_fLEngineDefaultPoolRatioThreshold_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkPlatformInitSettings_uNumRefillsInVoice_set(IntPtr jarg1, ushort jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern ushort CSharp_AkPlatformInitSettings_uNumRefillsInVoice_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -4900,8 +4900,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern bool CSharp_AkPlatformInitSettings_bGlobalFocus_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_new_AkPlatformInitSettings();
 
 	[PreserveSig]
@@ -4935,8 +4935,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkDeviceSettings_pIOMemory_set(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkDeviceSettings_pIOMemory_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -4970,8 +4970,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_AkDeviceSettings_ePoolAttributes_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkDeviceSettings_uGranularity_set(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
@@ -5005,13 +5005,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkDeviceSettings_fTargetAutoStmBufferLength_set(IntPtr jarg1, float jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern float CSharp_AkDeviceSettings_fTargetAutoStmBufferLength_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkDeviceSettings_uMaxConcurrentIO_set(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
@@ -5046,8 +5046,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_new_AkDeviceSettings();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_delete_AkDeviceSettings(IntPtr jarg1);
 
 	[PreserveSig]
@@ -5081,8 +5081,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern uint CSharp_AkThreadProperties_uStackSize_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_new_AkThreadProperties();
 
 	[PreserveSig]
@@ -5113,8 +5113,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkPathParams_listenerPos_set(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkPathParams_listenerPos_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -5148,13 +5148,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_delete_AkPathParams(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_new_AkUnityPlatformSpecificSettings();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_delete_AkUnityPlatformSpecificSettings(IntPtr jarg1);
 
 	[PreserveSig]
@@ -5188,8 +5188,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkCommunicationSettings_uCommandPort_set(IntPtr jarg1, ushort jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern ushort CSharp_AkCommunicationSettings_uCommandPort_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -5220,8 +5220,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkCommunicationSettings_szAppNetworkName_set(IntPtr jarg1, string jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkCommunicationSettings_szAppNetworkName_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -5255,8 +5255,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkInitializationSettings_streamMgrSettings_set(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkInitializationSettings_streamMgrSettings_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -5295,8 +5295,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkInitializationSettings_musicSettings_set(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkInitializationSettings_musicSettings_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -5330,8 +5330,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_AkInitializationSettings_unityPlatformSpecificSettings_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_new_AkExternalSourceInfo__SWIG_0();
 
 	[PreserveSig]
@@ -5355,23 +5355,23 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_new_AkExternalSourceInfo__SWIG_3(uint jarg1, uint jarg2, uint jarg3);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkExternalSourceInfo), Member = "Clear")]
 	[CalledBy(Type = typeof(AkExternalSourceInfoArray), Member = "DefaultConstructAtIntPtr")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkExternalSourceInfo_Clear(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(AkExternalSourceInfo), Member = "Clone")]
 	[CalledBy(Type = typeof(AkExternalSourceInfoArray), Member = "CloneIntoReferenceFromIntPtr")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(AkExternalSourceInfo), Member = "Clone")]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkExternalSourceInfo_Clone(IntPtr jarg1, IntPtr jarg2);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkExternalSourceInfo), Member = "GetSizeOf")]
 	[CalledBy(Type = typeof(AkExternalSourceInfoArray), Member = "get_StructureSize")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AkExternalSourceInfo_GetSizeOf();
 
@@ -5391,14 +5391,14 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_AkExternalSourceInfo_idCodec_set(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_AkExternalSourceInfo_idCodec_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(AkExternalSourceInfo), Member = "set_szFile")]
+	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkExternalSourceInfo_szFile_set(IntPtr jarg1, string jarg2);
 
 	[PreserveSig]
@@ -5427,13 +5427,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern uint CSharp_AkExternalSourceInfo_uiMemorySize_get(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_AkExternalSourceInfo_idFile_set(IntPtr jarg1, uint jarg2);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CSharp_AkExternalSourceInfo_idFile_get(IntPtr jarg1);
 
 	[PreserveSig]
@@ -5457,23 +5457,23 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_Term();
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "RegisterGameObjInternal")]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "RegisterGameObj")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_RegisterGameObjInternal(ulong jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "UnregisterGameObjInternal")]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "UnregisterGameObj")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "UnregisterGameObjInternal")]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_UnregisterGameObjInternal(ulong jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "RegisterGameObjInternal_WithName")]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "RegisterGameObj")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_RegisterGameObjInternal_WithName(ulong jarg1, string jarg2);
 
@@ -5493,8 +5493,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_LoadFilePackage(string jarg1, out uint jarg2, int jarg3);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_AddBasePath(string jarg1);
 
 	[PreserveSig]
@@ -5523,27 +5523,27 @@ internal class AkSoundEnginePINVOKE
 	public static extern IntPtr CSharp_GetCurrentLanguage();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_UnloadFilePackage(uint jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_UnloadAllFilePackages();
 
 	[PreserveSig]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetObjectPosition")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetObjectPosition")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetObjectPosition")]
 	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetObjectPosition")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetObjectPosition")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetObjectPosition")]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_SetObjectPosition(ulong jarg1, float jarg2, float jarg3, float jarg4, float jarg5, float jarg6, float jarg7, float jarg8, float jarg9, float jarg10);
 
 	[PreserveSig]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "GetSourceMultiplePlayPositions")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "GetSourceMultiplePlayPositions")]
 	[CallsUnknownMethods(Count = 4)]
 	public static extern int CSharp_GetSourceMultiplePlayPositions(uint jarg1, [Out] uint[] jarg2, [Out] uint[] jarg3, [Out] int[] jarg4, ref uint jarg5, bool jarg6);
 
@@ -5568,8 +5568,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern void CSharp_GetDefaultStreamSettings(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CSharp_GetDefaultDeviceSettings(IntPtr jarg1);
 
 	[PreserveSig]
@@ -5603,8 +5603,8 @@ internal class AkSoundEnginePINVOKE
 	public static extern uint CSharp_GetDeviceIDFromName(string jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_GetWindowsDeviceName(int jarg1, out uint jarg2);
 
 	[PreserveSig]
@@ -5634,13 +5634,13 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_SetRoom(ulong jarg1, IntPtr jarg2, string jarg3);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_RegisterSpatialAudioListener(ulong jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int CSharp_UnregisterSpatialAudioListener(ulong jarg1);
 
 	[PreserveSig]
@@ -5649,70 +5649,70 @@ internal class AkSoundEnginePINVOKE
 	public static extern int CSharp_SetGeometry(ulong jarg1, IntPtr jarg2, uint jarg3, IntPtr jarg4, uint jarg5, IntPtr jarg6, uint jarg7, bool jarg8, bool jarg9);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkPlaylist), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkPlaylist), Member = "setCPtr")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkPlaylist_SWIGUpcast(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkMIDIPost), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkMIDIPost), Member = "setCPtr")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkMIDIPost_SWIGUpcast(IntPtr jarg1);
 
 	[PreserveSig]
-	[CalledBy(Type = typeof(AkEventCallbackInfo), Member = "setCPtr")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkEventCallbackInfo), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkEventCallbackInfo), Member = "setCPtr")]
+	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkEventCallbackInfo_SWIGUpcast(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkMIDIEventCallbackInfo), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkMIDIEventCallbackInfo), Member = "setCPtr")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkMIDIEventCallbackInfo_SWIGUpcast(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkMarkerCallbackInfo), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkMarkerCallbackInfo), Member = "setCPtr")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkMarkerCallbackInfo_SWIGUpcast(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkDurationCallbackInfo), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkDurationCallbackInfo), Member = "setCPtr")]
+	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkDurationCallbackInfo_SWIGUpcast(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(AkDynamicSequenceItemCallbackInfo), Member = "setCPtr")]
 	[CalledBy(Type = typeof(AkDynamicSequenceItemCallbackInfo), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkDynamicSequenceItemCallbackInfo), Member = "setCPtr")]
 	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkDynamicSequenceItemCallbackInfo_SWIGUpcast(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkMusicSyncCallbackInfo), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkMusicSyncCallbackInfo), Member = "setCPtr")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkMusicSyncCallbackInfo_SWIGUpcast(IntPtr jarg1);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AkMusicPlaylistCallbackInfo), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkMusicPlaylistCallbackInfo), Member = "setCPtr")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CSharp_AkMusicPlaylistCallbackInfo_SWIGUpcast(IntPtr jarg1);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AkSoundEnginePINVOKE()
 	{
 	}

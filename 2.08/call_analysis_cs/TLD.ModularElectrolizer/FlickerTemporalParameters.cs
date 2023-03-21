@@ -13,13 +13,13 @@ public class FlickerTemporalParameters
 
 	public MinMax m_SampleRateVariance;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetRandomStartTime()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -28,7 +28,7 @@ public class FlickerTemporalParameters
 	[CallsUnknownMethods(Count = 1)]
 	public float GetRandomRate()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

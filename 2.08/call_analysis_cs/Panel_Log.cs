@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.AddressableAssets;
 using TLD.Gameplay;
 using TLD.GameplayTags;
+using TLD.SaveState;
 using TLD.Scenes;
 using TLD.Stats;
 using TLD.UI;
@@ -13,6 +14,7 @@ using TLD.UI.Notifications;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 {
@@ -113,47 +115,47 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 		{
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
 		internal int _003CBuildCollectibleList_003Eb__253_0(CairnInfo x, CairnInfo y)
 		{
-			return default(int);
+			return 0;
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal int _003CBuildCollectibleList_003Eb__253_1(AuroraScreenInfo x, AuroraScreenInfo y)
 		{
-			return default(int);
+			return 0;
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		internal int _003CStoreCairnCollectiblesInRecord_003Eb__339_0(CairnInfo x, CairnInfo y)
 		{
-			return default(int);
+			return 0;
 		}
 
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal int _003CStoreAuroraScreenCollectiblesInRecord_003Eb__340_0(AuroraScreenInfo x, AuroraScreenInfo y)
 		{
-			return default(int);
+			return 0;
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal int _003CBuildCartographyRegionList_003Eb__389_3(SurveyAchievementInfo a, SurveyAchievementInfo b)
 		{
-			return default(int);
+			return 0;
 		}
 
 		[DeduplicatedMethod]
@@ -162,16 +164,16 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 		[CallsUnknownMethods(Count = 1)]
 		internal int _003CBuildCartographyRegionList_003Eb__389_4(SurveyAchievementInfo a, SurveyAchievementInfo b)
 		{
-			return default(int);
+			return 0;
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal int _003CBuildCartographyRegionList_003Eb__389_0(SurveyRegionInfo a, SurveyRegionInfo b)
 		{
-			return default(int);
+			return 0;
 		}
 
 		[DeduplicatedMethod]
@@ -180,25 +182,25 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 		[CallsUnknownMethods(Count = 1)]
 		internal int _003CBuildCartographyRegionList_003Eb__389_1(SurveyRegionInfo a, SurveyRegionInfo b)
 		{
-			return default(int);
+			return 0;
 		}
 
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[DeduplicatedMethod]
 		[CallsUnknownMethods(Count = 1)]
 		internal int _003CBuildCartographyRegionList_003Eb__389_2(SurveyRegionInfo a, SurveyRegionInfo b)
 		{
-			return default(int);
+			return 0;
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal int _003CGenerateRockCacheScreenData_003Eb__555_0(RegionInfo a, RegionInfo b)
 		{
-			return default(int);
+			return 0;
 		}
 
 		[DeduplicatedMethod]
@@ -207,7 +209,7 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 		[CallsUnknownMethods(Count = 1)]
 		internal int _003CGenerateRockCacheScreenData_003Eb__555_1(RegionInfo a, RegionInfo b)
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -1013,7 +1015,7 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -1023,280 +1025,271 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public event Action<string, NotificationFlagInfo> m_ItemSelected
 	{
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 3)]
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 3)]
 		remove
 		{
 		}
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "CacheComponents")]
-	[Calls(Type = typeof(Panel_Log), Member = "InstantiateLogGridItems")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	[Calls(Type = typeof(Panel_Log), Member = "InitializeGameplayTagLookups")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[Calls(Type = typeof(Panel_Log), Member = "InstantiateLogGridItems")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_Log), Member = "CacheComponents")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 13)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateCollectionListItemsColor")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(UICamera), Member = "get_selectedObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
+	[Calls(Type = typeof(UICamera), Member = "SetSchemeOverride")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetOpenActionsPanelPressed")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(Panel_Log), Member = "ExitInterface")]
+	[Calls(Type = typeof(Panel_Log), Member = "DoControls")]
+	[Calls(Type = typeof(Panel_Log), Member = "GetTotalNumGridItems")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Panel_Log), Member = "DoMouseScrollControls")]
 	[Calls(Type = typeof(Panel_Log), Member = "CheckForNotesChange")]
 	[Calls(Type = typeof(Panel_Log), Member = "MaybeUpdateRockCacheNoteView")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateSkillListItemsColor")]
-	[CallsUnknownMethods(Count = 6)]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowListItemsColor")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateCollectionListItemsColor")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateTrustListItemsColor")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSize")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Panel_Log), Member = "MaybeShowNotificationFlagForNewKnowledgeEntry")]
 	[Calls(Type = typeof(Panel_Log), Member = "MaybeShowNotificationFlagForKnowledgeSubCategories")]
 	[Calls(Type = typeof(Panel_Log), Member = "MaybeShowNotificationFlagForNewCollectionEntry")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
-	[Calls(Type = typeof(UICamera), Member = "SetSchemeOverride")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowListItemsColor")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetTotalNumGridItems")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(UICamera), Member = "get_selectedObject")]
-	[Calls(Type = typeof(UICamera), Member = "get_selectedObject")]
-	[Calls(Type = typeof(UICamera), Member = "SetSchemeOverride")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(InputManager), Member = "GetOpenActionsPanelPressed")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[Calls(Type = typeof(Panel_Log), Member = "ExitInterface")]
-	[Calls(Type = typeof(Panel_Log), Member = "DoControls")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 5)]
 	private void FixedUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void LateUpdate()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Collections")]
+	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Skills")]
+	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Trust")]
+	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_WhatIKnow")]
+	[Calls(Type = typeof(Panel_Log), Member = "CleanupSelectedSandboxRecord")]
+	[Calls(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TrySetEnabled")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_Log), Member = "SetActiveTab")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(UIPanel), Member = "set_depth")]
+	[Calls(Type = typeof(SummaryStatsView), Member = "Start")]
 	[Calls(Type = typeof(DetailedStatsView), Member = "Start")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateSelectedSandboxRecord")]
 	[Calls(Type = typeof(Panel_Log), Member = "SetUpTopNav")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Panel_Log), Member = "Update")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
 	[Calls(Type = typeof(GameManager), Member = "MaybeForceGC")]
 	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(SummaryStatsView), Member = "Start")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetActiveTab")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
-	[Calls(Type = typeof(Panel_Log), Member = "CleanupSelectedSandboxRecord")]
-	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_WhatIKnow")]
-	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Trust")]
-	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Skills")]
-	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Collections")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UIPanel), Member = "set_depth")]
 	public override void Enable(bool enable)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Disable()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Actions), Member = "OnLog")]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "OnJournalNav")]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "OnMissionsNav")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnJournalNav")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnMissionNav")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleInput")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleInput")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "OnJournalNav")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "OnMissionsNav")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnJournalNav")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnMissionsNav")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnJournalNav")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoMainNavControls")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnMissionsNav")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoMainNavControls")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "OnJournalNav")]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "OnMissionsNav")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoGamepadControls")]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteJournalAction")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnMissionsNav")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnJournalNav")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "OnMissionsNav")]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "OnJournalNav")]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "OnMissionsNav")]
 	[CallerCount(Count = 19)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(InterfaceManager), Member = "IsUsingSurvivalTabs")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Utils), Member = "GetTitleString")]
 	[Calls(Type = typeof(Panel_Log), Member = "PointToWhatIKnowEntryOnQuickKeyActive")]
 	[Calls(Type = typeof(Panel_Log), Member = "HasEnableFromRadialOverride")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(Utils), Member = "GetTitleString")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(Panel_Log), Member = "PointToWhatIKnowEntryOnQuickKeyActive")]
 	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
 	[Calls(Type = typeof(Panel_Log), Member = "ShouldEnterSectionNav")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "OnLog")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void EnableFromRadial(PanelLogState state)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "SetRegionAndRockCacheSelected")]
-	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
+	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
+	[Calls(Type = typeof(Panel_Log), Member = "SetRegionAndRockCacheSelected")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void EnableRockCacheStateFromMap(string sceneName, string rockCacheCustomName)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnCollectibleButton")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnSkillsButton")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnRockCachesButton")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnDailyLogButton")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnStatsButton")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnCollectibleButton")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnRockCachesButton")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnSkillsButton")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
 	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void EnableFromMissionsStory(PanelLogState state)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "NavigateToMissionById")]
 	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
 	[Calls(Type = typeof(Panel_Log), Member = "ShouldEnterSectionNav")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void EnableFromMap(string missionId)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
-	[Calls(Type = typeof(Panel_Log), Member = "ShouldEnterSectionNav")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "NavigateToMissionById")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "NavigateToMissionById")]
 	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
+	[Calls(Type = typeof(Panel_Log), Member = "ShouldEnterSectionNav")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void EnableFromObjective(string missionId)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
+	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void EnableDailyView()
 	{
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnLog")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnableDeathView")]
+	[CalledBy(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
+	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
+	[Calls(Type = typeof(Panel_Log), Member = "ShouldEnterSectionNav")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Panel_Log), Member = "ShouldEnterSectionNav")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
 	public void EnableStatsView()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Log), Member = "LockInTodaysValues")]
 	[Calls(Type = typeof(Panel_Log), Member = "CreateSandboxRecord")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnableStatsView")]
 	[Calls(Type = typeof(Panel_Log), Member = "BeginFadeIn")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void EnableDeathView()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Log), Member = "UncacheSandboxRecord")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnMapNav")]
-	[Calls(Type = typeof(Panel_Log), Member = "ExitInterface")]
-	[Calls(Type = typeof(GameManager), Member = "LoadMainMenu")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
-	[Calls(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopAll")]
-	[Calls(Type = typeof(Panel_Log), Member = "ExitInterface")]
-	[Calls(Type = typeof(Panel_Log), Member = "ExitInterface")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallerCount(Count = 20)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
 	[Calls(Type = typeof(Panel_Log), Member = "BuildWhatIKnowList")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowPage")]
 	[Calls(Type = typeof(Panel_Log), Member = "ShouldEnterSectionNav")]
 	[Calls(Type = typeof(Panel_Log), Member = "QuitToMainMenuOnBack")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(GameAudioManager), Member = "MaybePlayOverrideCloseSound")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowPage")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Panel_Log), Member = "ExitInterface")]
+	[Calls(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_Log), Member = "UncacheSandboxRecord")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopAll")]
+	[Calls(Type = typeof(GameManager), Member = "LoadMainMenu")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnMapNav")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnBack()
 	{
 	}
@@ -1304,81 +1297,81 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Log), Member = "GetTotalNumGridItems")]
 	[Calls(Type = typeof(Panel_Log), Member = "DeselectLogGridItems")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetTotalNumGridItems")]
 	[Calls(Type = typeof(Panel_Log), Member = "LogListItemCallback")]
 	public void LogGridItemCallback(int entryNum)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateTrustPage")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowPage")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateMissionsPage")]
+	[CalledBy(Type = typeof(LogGridItem), Member = "SetSelected")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "LogGridItemCallback")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "LogGridItemCallback")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateCollectibleList")]
-	[CalledBy(Type = typeof(LogGridItem), Member = "SetSelected")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateCollectionsPage")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateDailyStatsPage")]
-	[Calls(Type = typeof(Panel_Log), Member = "MoveSelectedSpriteAndTween")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateTOCSelection")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateTOCSelection")]
 	[Calls(Type = typeof(Panel_Log), Member = "MoveSelectedSpriteAndTween")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateDailyStatsPage")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateCollectionsPage")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateCollectibleList")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateMissionsPage")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowPage")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateTrustPage")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public void LogListItemCallback(int indexClicked)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "NoteTakingStart")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[Calls(Type = typeof(Panel_Log), Member = "NoteTakingStart")]
 	public void OnWriteButton()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnStatus()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TrySetEnabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnInventory()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoMouseScrollControls")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnScrollbarDaysUp()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectibleList")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoMouseScrollControls")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CallsUnknownMethods(Count = 3)]
 	public void OnScrollbarDaysDown()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(Panel_Log), Member = "BuildDailyList")]
 	[Calls(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void OnScrollbarDaysChange()
 	{
 	}
@@ -1404,56 +1397,58 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoMouseScrollControls")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnScrollbarCollectiblesUp()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectibleList")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoMouseScrollControls")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnScrollbarCollectiblesDown()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
 	[Calls(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void OnScrollbarCollectiblesChange()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoScrollListScrolLRight")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateStatsSlider")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoMouseScrollControls")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateStatsSlider")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnScrollbarDayStatsUp()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoScrollListScrolLRight")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoMouseScrollControls")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateStatsSlider")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateStatsSlider")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnScrollbarDayStatsDown()
 	{
 	}
@@ -1465,26 +1460,26 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "CheckForNotesChange")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoScrollListScrolLRight")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoMouseScrollControls")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnScrollbarNotesUp()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoMouseScrollControls")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoScrollListScrolLRight")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "CheckForNotesChange")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoScrollListScrolLRight")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoMouseScrollControls")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnScrollbarNotesDown()
 	{
 	}
@@ -1497,30 +1492,28 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	}
 
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsExamineCollectible")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsExamineCollectible")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnScrollbarExamineCollectibleUp()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsExamineCollectible")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsExamineCollectible")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsExamineCollectible")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnScrollbarExamineCollectibleDown()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateExamineCollectibleSlider")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateExamineCollectibleSlider")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	public void OnScrollbarExamineCollectibleChange()
 	{
 	}
@@ -1532,18 +1525,18 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnEnterNoteTaking")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnShowDayStats")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateDailyStatsPage")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnEnterNoteTaking")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
 	public void NotesToggle()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "NotesToggle")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Log), Member = "NotesToggle")]
 	public void OnEnterNoteTaking()
 	{
 	}
@@ -1554,22 +1547,22 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
-	[Calls(Type = typeof(UIInput), Member = "Init")]
-	[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnWriteButton")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
-	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetText")]
-	[Calls(Type = typeof(TextInputField), Member = "Select")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Panel_Log), Member = "CanEditJournal")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
 	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(Panel_Log), Member = "CanEditJournal")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(TextInputField), Member = "Select")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetText")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
+	[Calls(Type = typeof(UIInput), Member = "Init")]
+	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
+	[CallsUnknownMethods(Count = 3)]
 	public void NoteTakingStart()
 	{
 	}
@@ -1595,16 +1588,16 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
 	public void OnCollectibleButton()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
 	public void OnRockCachesButton()
 	{
 	}
@@ -1623,78 +1616,83 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Reset()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnInventoryNav()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnClothingNav()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoMainNavControls")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoMainNavControls")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnCraftingNav()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnFirstAidNav()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheShowOnMapClicked")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnMapNav")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoMainNavControls")]
-	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnBack")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoMainNavControls")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheShowOnMapClicked")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnMapNav")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnMapNav()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
 	public void OnJournalNav()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
 	public void OnMissionsNav()
 	{
 	}
@@ -1719,36 +1717,34 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "HandleOnNotificationAdded")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ShowPanelLogMainCategoryNotificationIcon(MainCategory mainCategory, bool enable)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "SetWhatIKnowListSelectedToEntry")]
+	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnableRockCacheStateFromMap")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromMissionsStory")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromMap")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromObjective")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnableDailyView")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnableStatsView")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "ScrollListMovement")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateCollectionListSelectionScroll")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTrustListSelectionScroll")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "SetWhatIKnowListSelectedToEntry")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "PointToWhatIKnowEntryOnQuickKeyActive")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "ScrollListMovement")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowListSelectionScroll")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "OnRockCacheNav")]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteJournalActionFromMap")]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteJournalActionFromObjective")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowListSelectionScroll")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "ScrollListMovement")]
 	[CallerCount(Count = 18)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableStatsView")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "ScrollListMovement")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableRockCacheStateFromMap")]
-	[CallAnalysisFailed]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromMap")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromObjective")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromMissionsStory")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableDailyView")]
 	private void Refresh()
 	{
 	}
@@ -1759,38 +1755,40 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "QuitCurrentScreens")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnDeleteSandboxConfirmed")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnDeleteSandbox")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "ReallyQuitToMainMenu")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnBack")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnQuitToMainMenu")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "ForceQuit")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnBack")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
-	[Calls(Type = typeof(Panel_Extras), Member = "ShouldShowExtras")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "ReallyQuitToMainMenu")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnDeleteSandbox")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnDeleteSandboxConfirmed")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "QuitCurrentScreens")]
 	[CallerCount(Count = 10)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnBack")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnBack")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Extras), Member = "ShouldShowExtras")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void ExitInterface()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopAll")]
 	[Calls(Type = typeof(Panel_Log), Member = "ExitInterface")]
 	[Calls(Type = typeof(GameManager), Member = "LoadMainMenu")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnQuitToMainMenu()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "ExitInterface")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Log), Member = "ExitInterface")]
 	public void ForceQuit()
 	{
 	}
@@ -1806,23 +1804,40 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	[CallerCount(Count = 0)]
 	public bool IsInSectionNav()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnBack")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "GetOnBackText")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CallsUnknownMethods(Count = 2)]
 	private bool QuitToMainMenuOnBack()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectibleList")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsStats")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsExamineCollectible")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoSectionNavControls")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "ActivateBackButton")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTocViewButtons")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTocViewOverwriteButtons")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsAlmanac")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCartography")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectionList")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsMissions")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsRockCaches")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsSkillsListStats")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTrustList")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsWhatIKnowList")]
 	[CallerCount(Count = 25)]
 	[Calls(Type = typeof(Panel_Log), Member = "QuitToMainMenuOnBack")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	private string GetOnBackText()
 	{
 		return null;
@@ -1834,349 +1849,275 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallerCount(Count = 40)]
+	[Calls(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnableAllLBRBButtons")]
+	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Collections")]
+	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Skills")]
+	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Trust")]
+	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_WhatIKnow")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
+	[Calls(Type = typeof(Panel_Log), Member = "BuildTOCList")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateTOCSelection")]
+	[Calls(Type = typeof(Panel_Log), Member = "BuildDailyList")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateDailyStatsPage")]
+	[Calls(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateCollectibleList")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateExamineCollectible")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Panel_Log), Member = "BuildSkillsList")]
 	[Calls(Type = typeof(Panel_Log), Member = "RefreshSkillsList")]
 	[Calls(Type = typeof(Panel_Log), Member = "RefreshSelectedSkillDescriptionView")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateSkillListItemsColor")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateMissionsPage")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateCartographyPage")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateAlmanacPage")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateNotesPage")]
 	[Calls(Type = typeof(Panel_Log), Member = "BuildWhatIKnowList")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowPage")]
 	[Calls(Type = typeof(Panel_Log), Member = "BuildTrustList")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateTrustPage")]
 	[Calls(Type = typeof(Panel_Log), Member = "BuildRockCacheRegionScrollList")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateCartographyPage")]
+	[CallsDeduplicatedMethods(Count = 19)]
 	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateAlmanacPage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateSkillListItemsColor")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateCollectibleList")]
-	[CallerCount(Count = 40)]
-	[CallsDeduplicatedMethods(Count = 20)]
-	[Calls(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnableAllLBRBButtons")]
-	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Collections")]
-	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Trust")]
-	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_WhatIKnow")]
-	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Skills")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
-	[Calls(Type = typeof(Panel_Log), Member = "BuildTOCList")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateTOCSelection")]
-	[Calls(Type = typeof(Panel_Log), Member = "BuildDailyList")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateDailyStatsPage")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateExamineCollectible")]
 	private void EnterState(PanelLogState newState)
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	public void ResetNotificationsData()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "ClearGrid")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UIGrid), Member = "GetChildList")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateStatsSlider")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "LogListItemCallback")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "NotesToggle")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(int), Member = "ToString")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateNotesPage")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(Log), Member = "GetInfoForDay")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Panel_Log), Member = "ClearGrid")]
+	[Calls(Type = typeof(UIGrid), Member = "GetChildList")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateStatsSlider")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 10)]
 	private void UpdateDailyStatsPage()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarStatsDaysChange")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateDailyStatsPage")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarDayStatsDown")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarDayStatsUp")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarDayStatsDown")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarStatsDaysChange")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateDailyStatsPage")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 9)]
 	private void UpdateStatsSlider()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateDailyStatsPage")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateNotesSlider")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[Calls(Type = typeof(TextInputField), Member = "SetText")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(TextInputField), Member = "SetText")]
-	[Calls(Type = typeof(TextInputField), Member = "SetText")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateDailyStatsPage")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Panel_Log), Member = "CanEditJournal")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetText")]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Log), Member = "GetInfoForDay")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(TextInputField), Member = "SetText")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateNotesSlider")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateNotesPage()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarExamineCollectibleChange")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateExamineCollectible")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 9)]
 	private void UpdateExamineCollectibleSlider()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "CheckForNotesChange")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "CheckForNotesChange")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateNotesPage")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarNotesChange")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateNotesPage")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "CheckForNotesChange")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 9)]
 	private void UpdateNotesSlider()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateNotesSlider")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(TextInputField), Member = "IsLockedIn")]
-	[Calls(Type = typeof(UILabel), Member = "get_printedSize")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateNotesSlider")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(TextInputField), Member = "GetCursorLocation")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarNotesUp")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarNotesDown")]
-	[Calls(Type = typeof(NGUITools), Member = "get_screenSize")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(TextInputField), Member = "GetText")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(TextInputField), Member = "GetText")]
+	[Calls(Type = typeof(Input), Member = "GetMouseButton")]
 	[Calls(Type = typeof(TextInputField), Member = "IsLockedIn")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetText")]
-	[Calls(Type = typeof(Input), Member = "GetMouseButton")]
-	[Calls(Type = typeof(TextInputField), Member = "IsLockedIn")]
 	[Calls(Type = typeof(TextInputField), Member = "GetText")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(TextInputField), Member = "GetText")]
-	[Calls(Type = typeof(TextInputField), Member = "GetText")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(Log), Member = "EnterNotesForDay")]
-	[Calls(Type = typeof(TextInputField), Member = "IsLockedIn")]
+	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateNotesSlider")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UILabel), Member = "get_printedSize")]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+	[Calls(Type = typeof(TextInputField), Member = "GetCursorLocation")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarNotesUp")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarNotesDown")]
+	[Calls(Type = typeof(NGUITools), Member = "get_screenSize")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 10)]
 	private void CheckForNotesChange()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTextureNonNull")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectionList")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "LogListItemCallback")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectionList")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnCollectionsSubScreen")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateCollectionsPage")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_Log), Member = "SetCollectionSubscreenNameLabel")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetCollectionSubscreenNameLabel")]
-	[Calls(Type = typeof(GearItem), Member = "get_Description")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(GearItem), Member = "get_Description")]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTextureNonNull")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateCollectibleList()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
+	[Calls(Type = typeof(Utils), Member = "ShowInspectForGearItem")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTextureNonNull")]
 	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
 	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateExamineCollectibleSlider")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(Utils), Member = "ShowInspectForGearItem")]
-	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateExamineCollectible()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(DetailedStatsView), Member = "Start")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SummaryStatsView), Member = "Start")]
+	[Calls(Type = typeof(DetailedStatsView), Member = "Start")]
+	[CallsUnknownMethods(Count = 1)]
 	private void BuildStatsView()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "ViewSandbox")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarDaysChange")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(LogGridItem), Member = "SetSelected")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(LogGridItem), Member = "SetupAsDayEntry")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "ViewSandbox")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
 	[Calls(Type = typeof(Log), Member = "GetInfoForDay")]
+	[Calls(Type = typeof(LogGridItem), Member = "SetupAsDayEntry")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(LogGridItem), Member = "SetSelected")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	private void BuildDailyList(bool doSelectionReset)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarCollectiblesChange")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectionList")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnCollectionsSubScreen")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Panel_Log), Member = "BuildCollectionsList")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(HashSet<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = "Sort")]
+	[Calls(Type = typeof(LogGridItem), Member = "SetupAsCollectionEntry")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(LogGridItem), Member = "SetSelected")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NarrativeCollectibleItem), Member = "IsMementoItem")]
 	[Calls(Type = typeof(LogGridItem), Member = "SetupAsCollectibleEntry")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectionList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarCollectiblesChange")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnCollectionsSubScreen")]
-	[CallsUnknownMethods(Count = 32)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 16)]
-	[Calls(Type = typeof(Panel_Log), Member = "BuildCollectionsList")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(LogGridItem), Member = "SetSelected")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
-	[Calls(Type = typeof(LogGridItem), Member = "SetupAsCollectionEntry")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(LogGridItem), Member = "SetupAsCollectionEntry")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 31)]
 	private void BuildCollectibleList(bool doSelectionReset)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateDailyStatsPage")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UIGrid), Member = "GetChildList")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ClearGrid(UIGrid gridToClear)
 	{
 	}
@@ -2184,332 +2125,297 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	[CallerCount(Count = 0)]
 	private bool ShouldShowNotes()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "NoteTakingStart")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateNotesPage")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool CanEditJournal()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsSkillsListStats")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsStats")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectibleList")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsStats")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsSkillsListStats")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool CanSaveJournal()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoScrollListScrollLeft")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsWhatIKnowList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoScrollListScrollLeft")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoScrollListScrollLeft")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
-	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
-	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
-	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowListSelectionScroll")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowListSelectionScroll")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ScrollListMovement(int moveVal)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsWhatIKnowList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectionList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectibleList")]
-	[Calls(Type = typeof(Panel_Log), Member = "ScrollListMovement")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectionList")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsWhatIKnowList")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
 	[Calls(Type = typeof(Panel_Log), Member = "ScrollListMovement")]
 	private void DoScrollListScrollLeft()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarDayStatsUp")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectionList")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarNotesUp")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVerticalRightStick")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarNotesDown")]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarDayStatsDown")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarNotesUp")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarDayStatsUp")]
 	private void DoScrollListScrolLRight()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarCollectiblesDown")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarDaysDown")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
-	[Calls(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
-	[Calls(Type = typeof(Panel_Log), Member = "DoScrollListScrollLeft")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
-	[Calls(Type = typeof(LogGridItem), Member = "SetSelected")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_Log), Member = "DoControlsCollectionList")]
 	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Panel_Log), Member = "CanSaveJournal")]
 	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnSaveJournal")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
+	[Calls(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarCollectiblesDown")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarDaysDown")]
+	[Calls(Type = typeof(LogGridItem), Member = "SetSelected")]
+	[Calls(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
+	[Calls(Type = typeof(Panel_Log), Member = "DoScrollListScrollLeft")]
+	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DoControlsCollectibleList()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
-	[Calls(Type = typeof(Panel_Log), Member = "NotesToggle")]
-	[Calls(Type = typeof(Panel_Log), Member = "DoScrollListScrollLeft")]
-	[Calls(Type = typeof(Panel_Log), Member = "DoScrollListScrolLRight")]
-	[Calls(Type = typeof(Panel_Log), Member = "CanEditJournal")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Panel_Log), Member = "CanSaveJournal")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(Panel_Log), Member = "ActivateBackButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
-	[Calls(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(LogGridItem), Member = "SetSelected")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
-	[Calls(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
 	[Calls(Type = typeof(Panel_Log), Member = "CanSaveJournal")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Log), Member = "CanEditJournal")]
 	[Calls(Type = typeof(Panel_Log), Member = "NoteTakingStart")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnSaveJournal")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
 	[Calls(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
-	[Calls(Type = typeof(Panel_Log), Member = "CanEditJournal")]
+	[Calls(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
+	[Calls(Type = typeof(LogGridItem), Member = "SetSelected")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
+	[Calls(Type = typeof(Panel_Log), Member = "NotesToggle")]
+	[Calls(Type = typeof(Panel_Log), Member = "DoScrollListScrollLeft")]
+	[Calls(Type = typeof(Panel_Log), Member = "DoScrollListScrolLRight")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(Panel_Log), Member = "ActivateBackButton")]
+	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void DoControlsDailyListStats()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVerticalRightStick")]
+	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
+	[Calls(Type = typeof(DetailedStatsView), Member = "ScrollUp")]
+	[Calls(Type = typeof(DetailedStatsView), Member = "ScrollDown")]
+	[Calls(Type = typeof(Panel_Log), Member = "CanSaveJournal")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnSaveJournal")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(InputManager), Member = "HasContext")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(DetailedStatsView), Member = "OnResetAllTimeStatsConfirmed")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
-	[Calls(Type = typeof(InputManager), Member = "HasContext")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(Panel_Log), Member = "ActivateBackButton")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Panel_Log), Member = "CanSaveJournal")]
-	[Calls(Type = typeof(DetailedStatsView), Member = "ScrollDown")]
-	[Calls(Type = typeof(DetailedStatsView), Member = "ScrollUp")]
-	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVerticalRightStick")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Panel_Log), Member = "OnSaveJournal")]
+	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void DoControlsStats()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(DetailedStatsView), Member = "OnResetAllTimeStatsConfirmed")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnResetAllTimeStats()
 	{
 	}
 
-	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(Panel_Log), Member = "ActivateBackButton")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarExamineCollectibleUp")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarExamineCollectibleDown")]
-	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVerticalRightStick")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarExamineCollectibleUp")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarExamineCollectibleDown")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVerticalRightStick")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarExamineCollectibleDown")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarExamineCollectibleUp")]
+	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
+	[Calls(Type = typeof(Panel_Log), Member = "ActivateBackButton")]
+	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void DoControlsExamineCollectible()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(Panel_Log), Member = "RefreshActivePanelStates")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Log), Member = "MoveSectionNavToButton")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Panel_Log), Member = "MoveSectionNavToButton")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Log), Member = "MoveSectionNavToButton")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshActivePanelStates")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallerCount(Count = 1)]
 	private void DoSectionNavControls()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "SetUpTopNav")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoSectionNavControls")]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 11)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "SetUpTopNav")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 4)]
 	private void RefreshActivePanelStates()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
 	[CallsUnknownMethods(Count = 8)]
 	private void DisableAllMouseButtons()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
-	[Calls(Type = typeof(Panel_Log), Member = "DoControlsWhatIKnowList")]
-	[Calls(Type = typeof(Panel_Log), Member = "DoControlsTrustList")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Panel_Log), Member = "DoControlsCartography")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(GamepadButtonSprite), Member = "UpdateSpriteForActiveController")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(Panel_Log), Member = "DoControlsRockCaches")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(Panel_Log), Member = "DoControlsMissions")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
 	[Calls(Type = typeof(Panel_Log), Member = "DoMainNavControls")]
 	[Calls(Type = typeof(Panel_Log), Member = "DoSectionNavControls")]
 	[Calls(Type = typeof(Panel_Log), Member = "DisableAllMouseButtons")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(Panel_Log), Member = "DoControlsTOCView")]
 	[Calls(Type = typeof(Panel_Log), Member = "DoControlsTOCViewOverwrite")]
 	[Calls(Type = typeof(Panel_Log), Member = "DoControlsCollectibleList")]
 	[Calls(Type = typeof(Panel_Log), Member = "DoControlsExamineCollectible")]
 	[Calls(Type = typeof(Panel_Log), Member = "DoControlsStats")]
 	[Calls(Type = typeof(Panel_Log), Member = "DoControlsSkillsListStats")]
-	[Calls(Type = typeof(Panel_Log), Member = "DoControlsTOCView")]
+	[Calls(Type = typeof(Panel_Log), Member = "DoControlsMissions")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
+	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
+	[Calls(Type = typeof(Panel_Log), Member = "DoControlsWhatIKnowList")]
+	[Calls(Type = typeof(Panel_Log), Member = "DoControlsTrustList")]
+	[Calls(Type = typeof(Panel_Log), Member = "DoControlsRockCaches")]
+	[Calls(Type = typeof(Panel_Log), Member = "DoControlsCartography")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(GamepadButtonSprite), Member = "UpdateSpriteForActiveController")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void DoControls()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarDaysUp")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarDaysDown")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarNotesDown")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarDayStatsDown")]
-	[Calls(Type = typeof(Screen), Member = "get_width")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarCollectiblesDown")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarNotesUp")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarDayStatsUp")]
-	[Calls(Type = typeof(Screen), Member = "get_width")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarCollectiblesUp")]
-	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[Calls(Type = typeof(InputManager), Member = "HasContext")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "HasContext")]
+	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarCollectiblesUp")]
+	[Calls(Type = typeof(Screen), Member = "get_width")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarDayStatsUp")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarNotesUp")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarDaysUp")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarCollectiblesDown")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarDayStatsDown")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarNotesDown")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarDaysDown")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DoMouseScrollControls()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(CategoryButton), Member = "SetButtonState")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(CategoryButton), Member = "SetButtonState")]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateNavigationButtons()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnableDeathView")]
 	[CalledBy(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
+	[CallerCount(Count = 2)]
 	private void BeginFadeIn()
 	{
 	}
@@ -2521,187 +2427,156 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	}
 
 	[CalledBy(Type = typeof(Panel_Log), Member = "ToggleButtonColliders")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Collider), Member = "set_enabled")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Panel_Log), Member = "ToggleButtonColliders")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Log), Member = "ToggleButtonColliders")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Collider), Member = "set_enabled")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void ToggleButtonColliders(Transform transform, bool enabled)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Panel_Log), Member = "RefreshActivePanelStates")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
 	private void SetUpTopNav()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateCurrentGameLabel()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSizeIndividual")]
-	[Calls(Type = typeof(Utils), Member = "GetSliderForScrollbar")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSizeIndividual")]
-	[Calls(Type = typeof(Utils), Member = "GetSliderForScrollbar")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSizeIndividual")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSizeIndividual")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSizeIndividual")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetTotalNumGridItems")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSizeIndividual")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSizeIndividual")]
-	[Calls(Type = typeof(Utils), Member = "GetSliderForScrollbar")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSizeIndividual")]
-	[Calls(Type = typeof(Utils), Member = "GetSliderForScrollbar")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetTotalNumGridItems")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Log), Member = "GetTotalNumGridItems")]
 	[Calls(Type = typeof(Utils), Member = "GetSliderForScrollbar")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSizeIndividual")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateScrollbarThumbSize()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSize")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSize")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSize")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSize")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSize")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSize")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSize")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSize")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateScrollbarThumbSizeIndividual(UISlider slider, int numVisible, int total)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnableNavigationTabs")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnCraftingNav")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsUsingSurvivalTabs")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetAltFirePressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetFirePressed")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnMapNav")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(InputManager), Member = "GetAltFirePressed")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnableNavigationTabs")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsUsingSurvivalTabs")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnCraftingNav")]
+	[CallsUnknownMethods(Count = 2)]
 	private void DoMainNavControls()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ShouldRenderOverOtherScreens()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsRockCaches")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTocViewOverwriteButtons")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTocViewButtons")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsExamineCollectible")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCartography")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
-	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetText")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsStats")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsExamineCollectible")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTocViewButtons")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTocViewOverwriteButtons")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCartography")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsRockCaches")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
+	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetText")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void ActivateBackButton()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(NGUITools), Member = "AddChild")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Initialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NGUITools), Member = "AddChild")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	private void InstantiateLogGridItems()
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "LogListItemCallback")]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "LogListItemCallback")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void MoveSelectedSpriteAndTween(Vector3 pos)
 	{
 	}
 
-	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromMap")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromObjective")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnableStatsView")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnBack")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
 	private bool ShouldEnterSectionNav()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoSectionNavControls")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoSectionNavControls")]
-	[CallerCount(Count = 3)]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoSectionNavControls")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
+	[CallerCount(Count = 3)]
 	private void MoveSectionNavToButton(PanelLogState buttonState)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectibleList")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(LogGridItem), Member = "SetSelected")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarDaysUp")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarCollectiblesUp")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Log), Member = "LogListItemCallback")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
 	[Calls(Type = typeof(Panel_Log), Member = "GetTotalNumGridItems")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarCollectiblesDown")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetTotalNumGridItems")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarDaysDown")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetTotalNumGridItems")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
-	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Panel_Log), Member = "DeselectLogGridItems")]
+	[Calls(Type = typeof(Panel_Log), Member = "LogListItemCallback")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarCollectiblesUp")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarDaysUp")]
+	[Calls(Type = typeof(LogGridItem), Member = "SetSelected")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void MoveGridSelection(int horizontal, int vertical)
 	{
 	}
@@ -2710,46 +2585,33 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	[Calls(Type = typeof(Panel_Log), Member = "GetTotalNumGridItems")]
 	private int GetNumGridItemsShowing()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
+	[CalledBy(Type = typeof(LogGridItem), Member = "SetSelected")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "LogGridItemCallback")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSize")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "GetNumGridItemsShowing")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSize")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "LogGridItemCallback")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "LogGridItemCallback")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
-	[CalledBy(Type = typeof(LogGridItem), Member = "SetSelected")]
-	[CalledBy(Type = typeof(LogGridItem), Member = "SetSelected")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateScrollbarThumbSize")]
 	[CallerCount(Count = 13)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private int GetTotalNumGridItems()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectibleList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarCollectiblesChange")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarDaysChange")]
-	[Calls(Type = typeof(Panel_Log), Member = "LogListItemCallback")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarCollectiblesChange")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectibleList")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
+	[CallerCount(Count = 11)]
 	[Calls(Type = typeof(Panel_Log), Member = "GetTotalNumGridItems")]
 	[Calls(Type = typeof(Panel_Log), Member = "DeselectLogGridItems")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetTotalNumGridItems")]
-	[CallerCount(Count = 11)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectibleList")]
+	[Calls(Type = typeof(Panel_Log), Member = "LogListItemCallback")]
 	private void SetLogGridItemIndex(int index)
 	{
 	}
@@ -2757,13 +2619,13 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	[CallerCount(Count = 0)]
 	private int GetCollectibleListTrueIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	private bool StateIsShowing(PanelLogState state)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -2774,66 +2636,63 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void DoSectionNavUpdate()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteJournalActionFromObjective")]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteJournalActionFromMap")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoSectionNavControls")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnBack")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableStatsView")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromObjective")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromMap")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnableAllLBRBButtons")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateTrustListItemsColor")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowListItemsColor")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateSkillListItemsColor")]
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshActivePanelStates")]
-	[Calls(Type = typeof(Panel_Log), Member = "MoveSectionNavToButton")]
-	[Calls(Type = typeof(Panel_Log), Member = "DeselectLogGridItems")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateCollectionListItemsColor")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromObjective")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnableStatsView")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnBack")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoSectionNavControls")]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteJournalActionFromMap")]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteJournalActionFromObjective")]
 	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateCollectionListItemsColor")]
+	[Calls(Type = typeof(Panel_Log), Member = "DeselectLogGridItems")]
+	[Calls(Type = typeof(Panel_Log), Member = "MoveSectionNavToButton")]
+	[Calls(Type = typeof(Panel_Log), Member = "RefreshActivePanelStates")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnableAllLBRBButtons")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateSkillListItemsColor")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowListItemsColor")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateTrustListItemsColor")]
 	[Calls(Type = typeof(TrustMapEntry), Member = "RefreshObjects")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void EnterSectionNav()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "LogGridItemCallback")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(LogGridItem), Member = "SetSelected")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "LogGridItemCallback")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "MoveGridSelection")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "SetLogGridItemIndex")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
+	[CallerCount(Count = 5)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private void DeselectLogGridItems()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(GamepadButtonSprite), Member = "EnableSpriteIfActionIs")]
-	[Calls(Type = typeof(GamepadButtonSprite), Member = "EnableSpriteIfActionIs")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GamepadButtonSprite), Member = "EnableSpriteIfActionIs")]
 	[CallsUnknownMethods(Count = 2)]
 	private void EnableAllLBRBButtons(bool shouldEnable)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoMainNavControls")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoMainNavControls")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(InterfaceManager), Member = "IsUsingSurvivalTabs")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
@@ -2841,195 +2700,177 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "SetActive")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Log), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetActive")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsUsingSurvivalTabs")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsUsingSurvivalTabs")]
 	[Calls(Type = typeof(Panel_Log), Member = "SetActive")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetActiveTab(NavigationTabState state)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Log), Member = "SetActiveTab")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "SetActiveTab")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "SetActiveTab")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "SetActiveTab")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "SetActiveTab")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "SetActiveTab")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "SetActiveTab")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	private void SetActive(GameObject go, bool enable)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Initialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 2)]
 	private void CacheComponents()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Trust")]
-	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Skills")]
-	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_WhatIKnow")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Collections")]
+	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Skills")]
+	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Trust")]
+	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_WhatIKnow")]
 	private void ReleaseTempResources()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool HasEnableFromRadialOverride(out PanelLogState overrideState)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<PanelLogState, @null>(ref overrideState) = null;
-		return default(bool);
+		overrideState = default(PanelLogState);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void MaybeRemoveJournalState(GameModeConfig gameMode, PanelLogState state)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Initialize")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 10)]
 	private void InitializeGameplayTagLookups()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnTocItemClicked")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnRenameSandboxConfirmed")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnDeleteSandboxConfirmed")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnDeleteSandbox")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "LogListItemCallback")]
-	[Calls(Type = typeof(DateTime), Member = "ToString")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnDeleteSandbox")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnDeleteSandboxConfirmed")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnRenameSandboxConfirmed")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnTocItemClicked")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateSelectedSandboxRecord")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Panel_Log), Member = "GetSurvivalRecordSummaryText")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(AssetHelper), Member = "TryLoadAsset")]
+	[Calls(Type = typeof(DateTime), Member = "ToString")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateTOCSelection()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTOCSelection")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTOCSelection")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(Panel_Log), Member = "CleanupSelectedSandboxRecord")]
+	[Calls(Type = typeof(AssetHelper), Member = "TryLoadAsset")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateSelectedSandboxRecord()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateSelectedSandboxRecord")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Addressables), Member = "Release")]
 	private void CleanupSelectedSandboxRecord()
 	{
 	}
 
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "ViewSandbox")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnBack")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GearItem), Member = "InstantiateGearItem")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "ViewSandbox")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(StatContainer), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(GearItem), Member = "InstantiateGearItem")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UncacheSandboxRecord(SandboxRecordData record)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTOCSelection")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Utils), Member = "GetTimeSurvivedString")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ZoneSpecification), Member = "get_ZoneName")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "ColorToHex")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "ColorToHex")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(ZoneSpecification), Member = "get_ZoneName")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Utils), Member = "GetTimeSurvivedString")]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetSurvivalRecordSummaryText(SandboxRecordData record, Color boldColor)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Log_Toc_GridItem), Member = "OnClick")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTOCViewOverwrite")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTOCView")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(DetailedStatsView), Member = "Start")]
-	[Calls(Type = typeof(SummaryStatsView), Member = "Start")]
-	[Calls(Type = typeof(Panel_Log), Member = "UncacheSandboxRecord")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTOCViewOverwrite")]
+	[CalledBy(Type = typeof(Panel_Log_Toc_GridItem), Member = "OnClick")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Log), Member = "UncacheSandboxRecord")]
+	[Calls(Type = typeof(SummaryStatsView), Member = "Start")]
+	[Calls(Type = typeof(DetailedStatsView), Member = "Start")]
 	[Calls(Type = typeof(Panel_Log), Member = "BuildDailyList")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ViewSandbox()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "ExitInterface")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTOCView")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
-	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Panel_Log), Member = "BuildTOCList")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(Panel_Log), Member = "BuildTOCList")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateTOCSelection")]
+	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
+	[Calls(Type = typeof(Panel_Log), Member = "ExitInterface")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnDeleteSandbox()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[Calls(Type = typeof(Panel_Log), Member = "BuildTOCList")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateTOCSelection")]
 	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
@@ -3039,27 +2880,28 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTOCViewOverwrite")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTOCView")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTOCViewOverwrite")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowRenamePanel")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnRenameSandbox()
 	{
 	}
 
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateTOCSelection")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(TextInputField), Member = "GetText")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(TextInputField), Member = "GetText")]
 	[Calls(Type = typeof(Panel_Log), Member = "BuildTOCList")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateTOCSelection")]
+	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnRenameSandboxConfirmed()
 	{
 	}
@@ -3072,285 +2914,289 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[Calls(Type = typeof(Panel_Log), Member = "ReallySaveJournal")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnOverwriteSandbox()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Log), Member = "ReallySaveJournal")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(Panel_Log), Member = "ReallySaveJournal")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnOverwriteSandboxConfirmed()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnTocItemClicked")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnSandboxLimitNotification()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnTocItemClicked")]
-	[CallerCount(Count = 0)]
 	private void OnSandboxLimitNotificationConfirmed()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectibleList")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsDailyListStats")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsStats")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsSkillsListStats")]
+	[CallerCount(Count = 4)]
 	public void OnSaveJournal()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnOverwriteSandboxConfirmed")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnOverwriteSandbox")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnOverwriteSandboxConfirmed")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTOCViewOverwrite")]
-	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ReallySaveJournal()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Panel_Log), Member = "CreateLogObject")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnTocItemClicked")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void EnableTableOfContentsView()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnLogs")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnableTableOfContentsView")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnLogs")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void CreateLogObject()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildTOCList")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTOCView")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "BuildTOCList")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Log), Member = "ActivateBackButton")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Panel_Log), Member = "ActivateBackButton")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateTocViewButtons()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "OnDeleteSandbox")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateTocViewSelection")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
-	[Calls(Type = typeof(Panel_Log), Member = "ViewSandbox")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnRenameSandbox")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
-	[Calls(Type = typeof(InputManager), Member = "GetDeletePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateTocViewButtons")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(InputManager), Member = "GetRenamePressed")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateTocViewButtons")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetDeletePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetRenamePressed")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnRenameSandbox")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnDeleteSandbox")]
+	[Calls(Type = typeof(Panel_Log), Member = "ViewSandbox")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateTocViewSelection")]
+	[CallsUnknownMethods(Count = 1)]
 	private void DoControlsTOCView()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTOCViewOverwrite")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTOCView")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnTocItemClicked")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTOCViewOverwrite")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnTocItemClicked")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateTocViewSelection()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateTocViewOverwriteButtons")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnRenameSandboxConfirmed")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnDeleteSandboxConfirmed")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnDeleteSandbox")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateTocViewButtons")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnDeleteSandbox")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnDeleteSandboxConfirmed")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnRenameSandboxConfirmed")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
+	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateTocViewOverwriteButtons")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateTocViewButtons")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void BuildTOCList()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
+	[CallsUnknownMethods(Count = 4)]
 	public void OnTocScrollbarChange()
 	{
 	}
 
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTocViewSelection")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableTableOfContentsView")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnSandboxLimitNotificationConfirmed")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnSandboxLimitNotification")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(ScrollList), Member = "Prev")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnSandboxLimitNotificationConfirmed")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnableTableOfContentsView")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTocViewSelection")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnLogs")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateTOCSelection")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
-	[Calls(Type = typeof(Panel_Log_Toc_GridItem), Member = "Update")]
-	[Calls(Type = typeof(Panel_Log_Toc_GridItem), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Panel_Log_Toc_GridItem), Member = "Update")]
+	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateTOCSelection")]
 	[Calls(Type = typeof(ScrollList), Member = "Next")]
+	[Calls(Type = typeof(ScrollList), Member = "Prev")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnTocItemClicked(int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTOCViewOverwrite")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildTOCList")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTOCViewOverwrite")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Log), Member = "ActivateBackButton")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Panel_Log), Member = "ActivateBackButton")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateTocViewOverwriteButtons()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateTocViewSelection")]
-	[Calls(Type = typeof(Panel_Log), Member = "ViewSandbox")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnRenameSandbox")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetRenamePressed")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateTocViewOverwriteButtons")]
-	[Calls(Type = typeof(Panel_Log), Member = "ReallySaveJournal")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
-	[Calls(Type = typeof(InputManager), Member = "HasContext")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateTocViewOverwriteButtons")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(InputManager), Member = "HasContext")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(Panel_Log), Member = "ReallySaveJournal")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
+	[Calls(Type = typeof(InputManager), Member = "GetRenamePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnRenameSandbox")]
+	[Calls(Type = typeof(Panel_Log), Member = "ViewSandbox")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateTocViewSelection")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DoControlsTOCViewOverwrite()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "StoreNoteCollectiblesInRecord")]
-	[CalledBy(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(StatContainer), Member = ".ctor")]
-	[Calls(Type = typeof(Panel_Log), Member = "StoreAuroraScreenCollectiblesInRecord")]
-	[Calls(Type = typeof(Panel_Log), Member = "StoreCairnCollectiblesInRecord")]
-	[Calls(Type = typeof(Condition), Member = "GetCauseOfDeathStringUntranslated")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnableDeathView")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(DateTime), Member = "get_Now")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetUserDefinedSlotName")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetUserDefinedSlotName")]
+	[Calls(Type = typeof(DateTime), Member = "get_Now")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Condition), Member = "GetCauseOfDeathStringUntranslated")]
+	[Calls(Type = typeof(Panel_Log), Member = "StoreNoteCollectiblesInRecord")]
+	[Calls(Type = typeof(Panel_Log), Member = "StoreCairnCollectiblesInRecord")]
+	[Calls(Type = typeof(Panel_Log), Member = "StoreAuroraScreenCollectiblesInRecord")]
+	[Calls(Type = typeof(StatContainer), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private SandboxRecordData CreateSandboxRecord()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "CreateSandboxRecord")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void StoreNoteCollectiblesInRecord(SandboxRecordData record)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Log), Member = "CreateSandboxRecord")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentNullException")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentNullException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 12)]
 	private void StoreCairnCollectiblesInRecord(SandboxRecordData record)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentNullException")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "CreateSandboxRecord")]
-	[CallsUnknownMethods(Count = 8)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(HashSet<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentNullException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	private void StoreAuroraScreenCollectiblesInRecord(SandboxRecordData record)
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 14)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Log), Member = "InstantiateGridItems")]
+	[Calls(Type = typeof(MissionManagerBase), Member = "GetMissionBlackboardVar")]
+	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[Calls(Type = typeof(int), Member = "Parse")]
+	[Calls(Type = typeof(AlmanacGridItem), Member = "SetUpGridItem")]
+	[Calls(Type = typeof(AlmanacGridItem), Member = "ShowFalseBlizzard")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Log), Member = "InstantiateGridItems")]
-	[Calls(Type = typeof(AlmanacGridItem), Member = "ShowFalseBlizzard")]
-	[Calls(Type = typeof(AlmanacGridItem), Member = "SetUpGridItem")]
-	[Calls(Type = typeof(int), Member = "Parse")]
-	[Calls(Type = typeof(string), Member = "SplitInternal")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 14)]
 	private void UpdateAlmanacPage()
 	{
 	}
@@ -3362,122 +3208,117 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
 	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
+	[CallsUnknownMethods(Count = 2)]
 	public void DoControlsAlmanac()
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateAlmanacPage")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 11)]
-	[CallsDeduplicatedMethods(Count = 13)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 11)]
 	private void InstantiateGridItems()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CalledBy(Type = typeof(RockCacheListItem), Member = "SetRegionInfo")]
 	[CalledBy(Type = typeof(SurveyRegionListItem), Member = "SetRegionInfo")]
-	[CallsUnknownMethods(Count = 5)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 4)]
 	public Texture GetRegionButtonTexture(string sceneName)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnForceRevealHiddenDetailsToggle")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshAchievementListForSelectedRegion")]
-	[Calls(Type = typeof(SurveyRegionListItem), Member = "SetRegionInfo")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCartography")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(SurveyRegionListItem), Member = "SetSelected")]
-	[Calls(Type = typeof(SurveyRegionListItem), Member = "Clear")]
-	[Calls(Type = typeof(Panel_Log), Member = "BuildCartographyRegionList")]
-	[CallsDeduplicatedMethods(Count = 12)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnForceRevealHiddenDetailsToggle")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Log), Member = "BuildCartographyRegionList")]
+	[Calls(Type = typeof(SurveyRegionListItem), Member = "Clear")]
+	[Calls(Type = typeof(SurveyRegionListItem), Member = "SetSelected")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(SurveyListItem), Member = "SetSelected")]
+	[Calls(Type = typeof(SurveyRegionListItem), Member = "SetRegionInfo")]
+	[Calls(Type = typeof(Panel_Log), Member = "RefreshAchievementListForSelectedRegion")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 13)]
 	public void UpdateCartographyPage()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "HandleSurveyScrollbar")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "HandleSurveyScrollbar")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyAchievementScrollbarChange")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyRegionScrollbarChange")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyRegionClicked")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateCartographyPage")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(SurveyListItem), Member = "SetAchievementInfo")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(SurveyRegionListItem), Member = "SetRegionInfo")]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyRegionClicked")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyRegionScrollbarChange")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyAchievementScrollbarChange")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "HandleSurveyScrollbar")]
 	[CallerCount(Count = 6)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(SurveyRegionListItem), Member = "SetRegionInfo")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(SurveyListItem), Member = "SetAchievementInfo")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 12)]
 	private void RefreshAchievementListForSelectedRegion(bool newRegion)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCartography")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "HandleSurveyVerticalNavigation")]
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshAchievementListForSelectedRegion")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(SurveyRegionListItem), Member = "SetSelected")]
-	[Calls(Type = typeof(SurveyRegionListItem), Member = "SetSelected")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(SurveyRegionListItem), Member = "SetSelected")]
 	[Calls(Type = typeof(SurveyListItem), Member = "SetSelected")]
+	[Calls(Type = typeof(Panel_Log), Member = "RefreshAchievementListForSelectedRegion")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	protected void OnSurveyRegionClicked(int index)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "OnSurveyRegionClicked")]
-	[Calls(Type = typeof(SurveyListItem), Member = "SetSelected")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Log), Member = "ActivateBackButton")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(InputManager), Member = "GetOpenMapPressed")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateCartographyPage")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnSurveyClicked")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnSurveyRegionClicked")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
+	[Calls(Type = typeof(SurveyListItem), Member = "SetSelected")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
 	[Calls(Type = typeof(Panel_Log), Member = "HandleSurveyVerticalNavigation")]
 	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnSurveyClicked")]
 	[Calls(Type = typeof(Panel_Log), Member = "HandleSurveyScrollbar")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Panel_Log), Member = "ActivateBackButton")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateCartographyPage")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(InputManager), Member = "GetOpenMapPressed")]
 	public void DoControlsCartography()
 	{
 	}
@@ -3489,40 +3330,38 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(SurveyListItem), Member = "SetSelected")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnSurveyBack()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "HandleSurveyVerticalNavigation")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "HandleSurveyVerticalNavigation")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCartography")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "HandleSurveyVerticalNavigation")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(SurveyListItem), Member = "SetSelected")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(SurveyListItem), Member = "SetSelected")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallerCount(Count = 3)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	protected void OnSurveyClicked(int index)
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshAchievementListForSelectedRegion")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Panel_Log), Member = "RefreshAchievementListForSelectedRegion")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnSurveyRegionScrollbarChange()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(Panel_Log), Member = "RefreshAchievementListForSelectedRegion")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[CallsUnknownMethods(Count = 3)]
@@ -3531,83 +3370,77 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	}
 
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCartography")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "HandleSurveyVerticalNavigation")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "HandleSurveyVerticalNavigation")]
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshAchievementListForSelectedRegion")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(Panel_Log), Member = "RefreshAchievementListForSelectedRegion")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 9)]
 	public void HandleSurveyScrollbar(float amount)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnSurveyClicked")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnSurveyClicked")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCartography")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnSurveyRegionClicked")]
-	[Calls(Type = typeof(Panel_Log), Member = "HandleSurveyScrollbar")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_Log), Member = "HandleSurveyScrollbar")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnSurveyRegionClicked")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnSurveyClicked")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void HandleSurveyVerticalNavigation(float amount)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "GenerateCollectionSelectScreenDummyData")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateCartographyPage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsUnknownMethods(Count = 85)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsRegionUnlocked")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetLocIdsOfUnlockedMapElements")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "GenerateCollectionSelectScreenDummyData")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 27)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(AchievementManager), Member = "IsRegionCompleteFaithfulCartographer")]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetNameForScene")]
 	[Calls(Type = typeof(SurveyRegionInfo), Member = ".ctor")]
 	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(AchievementManager), Member = "IsRegionCompleteFaithfulCartographer")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsRegionUnlocked")]
+	[Calls(Type = typeof(Panel_Map), Member = "GetLocIdsOfUnlockedMapElements")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(List<>), Member = "Sort")]
+	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 80)]
 	private void BuildCartographyRegionList()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateCollectibleList")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "LogListItemCallback")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Collections")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetCollectionSubscreenNameLabel")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateCollectibleList")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Log), Member = "SetCollectionSubscreenNameLabel")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Collections")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateCollectionsPage()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateCollectionsPage")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "ReleaseTempResources")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "ReleaseTempResources")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateCollectionsPage")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Addressables), Member = "Release")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	private void ReleaseTempResources_Collections()
 	{
 	}
@@ -3624,146 +3457,140 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void DoCollectionsToggle()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectibleList")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
+	[Calls(Type = typeof(Panel_Log), Member = "DoScrollListScrollLeft")]
+	[Calls(Type = typeof(Panel_Log), Member = "DoScrollListScrolLRight")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[Calls(Type = typeof(Panel_Log), Member = "SetCollectionSubscreenNameLabel")]
+	[Calls(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateCollectibleList")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
 	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateCollectibleList")]
-	[Calls(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Log), Member = "DoScrollListScrolLRight")]
-	[Calls(Type = typeof(Panel_Log), Member = "DoScrollListScrollLeft")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Panel_Log), Member = "SetCollectionSubscreenNameLabel")]
+	[CallsUnknownMethods(Count = 3)]
 	public void DoControlsCollectionList()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateCollectibleList")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
 	[Calls(Type = typeof(Panel_Log), Member = "SetCollectionSubscreenNameLabel")]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateCollectibleList")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnCollectionsSubScreen()
 	{
 	}
 
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectibleList")]
-	[Calls(Type = typeof(CollectionListItem), Member = "SetItemInfo")]
-	[Calls(Type = typeof(Panel_Log), Member = "GenerateCollectionSelectScreenDummyData")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateAvailableMementos")]
-	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateAvailablePostCards")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateAvailableMementos")]
+	[Calls(Type = typeof(Panel_Log), Member = "GenerateCollectionSelectScreenDummyData")]
+	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(CollectionListItem), Member = "SetItemInfo")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	private void BuildCollectionsList()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(AssetLabelReference), Member = "RuntimeKeyIsValid")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectionsList")]
-	[CallsUnknownMethods(Count = 17)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AssetLabelReference), Member = "RuntimeKeyIsValid")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 16)]
 	private void UpdateAvailablePostCards()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectionsList")]
-	[Calls(Type = typeof(DisableForCurrentModeExtensions), Member = "ShouldDisableForCurrentMode")]
-	[Calls(Type = typeof(NarrativeCollectibleItem), Member = "IsMementoItem")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(AssetLabelReference), Member = "RuntimeKeyIsValid")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(NarrativeCollectibleItem), Member = "IsMementoItem")]
+	[Calls(Type = typeof(DisableForCurrentModeExtensions), Member = "ShouldDisableForCurrentMode")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 16)]
 	private void UpdateAvailableMementos()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(DisableForCurrentModeExtensions), Member = "ShouldDisableForCurrentMode")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
 	[Calls(Type = typeof(NarrativeCollectibleItem), Member = "IsMementoItem")]
+	[Calls(Type = typeof(DisableForCurrentModeExtensions), Member = "ShouldDisableForCurrentMode")]
+	[CallsUnknownMethods(Count = 1)]
 	private static bool IsActiveMemento(GameObject prefab, out NarrativeCollectibleItem collectibleItem)
 	{
 		collectibleItem = null;
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(CollectionListItem), Member = "SetItemInfo")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 3)]
 	private void AddEntryToList(int scrollIndex, CollectionListItemInfo itemInfo)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
-	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateCollectionListSelectionScroll(int moveVal, ref int index)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(CollectionListItem), Member = "SetSelected")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(CollectionListItem), Member = "SetSelected")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateCollectionListItemsColor()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(Panel_Log), Member = "BuildCartographyRegionList")]
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshCollectibleCounters")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCollectionsList")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(string), Member = "Format")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(Panel_Log), Member = "RefreshCollectibleCounters")]
 	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
+	[Calls(Type = typeof(Panel_Log), Member = "BuildCartographyRegionList")]
+	[CallsUnknownMethods(Count = 8)]
 	private void GenerateCollectionSelectScreenDummyData(List<CollectionListItemInfo> dummyDataList)
 	{
 	}
@@ -3771,131 +3598,117 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	[CallerCount(Count = 0)]
 	private bool IsInCollectionsSelectScreen()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnCollectionsSubScreen")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectionList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateCollectionsPage")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateCollectibleList")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateCollectionsPage")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCollectionList")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnCollectionsSubScreen")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetCollectionSubscreenNameLabel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "GenerateCollectionSelectScreenDummyData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(NarrativeCollectibleItem), Member = "IsMementoItem")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void RefreshCollectibleCounters()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "MaybeShowNotificationFlagForNewCollectionEntry")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void RemoveNewCollectionEntry(NotificationFlagInfo nfi)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
-	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
 	[Calls(Type = typeof(Panel_Log), Member = "RemoveNewCollectionEntry")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 9)]
 	private void MaybeShowNotificationFlagForNewCollectionEntry()
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(ChallengeConfig), Member = "GetChallengeTexture")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "LogListItemCallback")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 21)]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 16)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateMissionInfoFromPrefab")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(ChallengeChecklistEntry), Member = "UpdateEntry")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(ChallengeChecklistEntry), Member = "UpdateEntry")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(ChallengeConfig), Member = "GetChallengeTexture")]
+	[Calls(Type = typeof(AssetHelper), Member = "SafeLoadAssetAsync")]
+	[Calls(Type = typeof(Action<>), Member = ".ctor")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 21)]
 	private void UpdateMissionsPage()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(ChallengeConfig), Member = "GetChallengeTexture")]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(ChallengeConfig), Member = "GetChallengeTexture")]
+	[Calls(Type = typeof(AssetHelper), Member = "SafeLoadAssetAsync")]
+	[Calls(Type = typeof(Action<>), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "add_Completed")]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetChallengeTextureAsync(ChallengeConfig challengeConfig)
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_WhiteoutGearRequirements), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "UpdateMissionInfo")]
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateMissionInfoFromPrefab")]
+	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "UpdateMissionInfo")]
 	[CalledBy(Type = typeof(Action_ChallengeNowhereToHideRequirements), Member = "OnUpdate")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CalledBy(Type = typeof(Action_WhiteoutGearRequirements), Member = "OnUpdate")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 11)]
 	public void UpdateMissionInfo(string name, string description, string[] checklistKeys, string[] checklistValues, bool[] checklistBools)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void RemoveMission(string name)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ClearMissions()
 	{
 	}
@@ -3907,117 +3720,117 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
+	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void DoControlsMissions()
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateMissionsPage")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateMissionInfo")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetTrackedMission")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "RefreshObjectivesToShow")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateMissionInfo")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateMissionInfoFromPrefab()
 	{
 	}
 
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(RockCacheListItem), Member = "SetRegionInfo")]
-	[Calls(Type = typeof(RockCacheListItem), Member = "SetSelected")]
-	[Calls(Type = typeof(RockCacheListItem), Member = "Clear")]
-	[Calls(Type = typeof(RockCacheListItem), Member = "SetSelected")]
-	[Calls(Type = typeof(RockCacheListItem), Member = "Clear")]
-	[Calls(Type = typeof(Panel_Log), Member = "GenerateRockCacheScreenData")]
-	[CallsDeduplicatedMethods(Count = 15)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Log), Member = "GenerateRockCacheScreenData")]
+	[Calls(Type = typeof(RockCacheListItem), Member = "Clear")]
+	[Calls(Type = typeof(RockCacheListItem), Member = "SetSelected")]
+	[Calls(Type = typeof(RockCacheListItem), Member = "SetRegionInfo")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 14)]
 	private void BuildRockCacheRegionScrollList()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "OnRockCacheNav")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheItemClicked")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheRegionClicked")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnableRockCacheStateFromMap")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "OnRockCacheNav")]
+	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheRegionClicked")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheItemClicked")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	private void SetRegionAndRockCacheSelected(string sceneName, string rockCacheName)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheItemScrollbarChange")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildRockCacheRegionScrollList")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheRegionScrollbarChange")]
-	[Calls(Type = typeof(RockCacheListItem), Member = "SetItemInfo")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "HandleScrollbar")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheItemScrollbarChange")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnRenameRockCacheConfirmed")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "HandleScrollbar")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheRegionClicked")]
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(Panel_Map), Member = "MapElementExists")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnRenameRockCacheConfirmed")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsRegionUnlocked")]
-	[Calls(Type = typeof(RockCacheListItem), Member = "SetSelected")]
-	[Calls(Type = typeof(RockCacheManager), Member = "GetRockCacheUserTextFromGuid")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(RockCacheManager), Member = "GetRockCacheNameFromGuid")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(RockCacheListItem), Member = "SetRegionInfo")]
-	[CallsDeduplicatedMethods(Count = 16)]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(RockCacheListItem), Member = "SetRegionInfo")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(RockCacheListItem), Member = "SetSelected")]
+	[Calls(Type = typeof(RockCacheListItem), Member = "SetItemInfo")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(RockCacheManager), Member = "GetRockCacheNameFromGuid")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(RockCacheManager), Member = "GetRockCacheUserTextFromGuid")]
 	[Calls(Type = typeof(TextInputField), Member = "SetText")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsRegionUnlocked")]
+	[Calls(Type = typeof(Panel_Map), Member = "MapElementExists")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 19)]
 	private void RefreshRockCacheListForSelectedRegion(bool newRegion)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private int GetNumberOfRockCachesInCurrentRegion()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnRockCacheRegionScrollbarChange()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[CallsUnknownMethods(Count = 3)]
@@ -4025,148 +3838,161 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsRockCaches")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowRenamePanel")]
-	[Calls(Type = typeof(RockCacheManager), Member = "GetRockCacheNameFromGuid")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(RockCacheManager), Member = "GetRockCacheNameFromGuid")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "SetupInputField")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowRenamePanel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnRockCacheRenameButton()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(TextInputField), Member = "GetText")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(RockCacheManager), Member = "UpdateRockCacheName")]
 	[Calls(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(RockCacheManager), Member = "UpdateRockCacheName")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(TextInputField), Member = "GetText")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallerCount(Count = 0)]
 	private void OnRenameRockCacheConfirmed()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
 	[Calls(Type = typeof(Panel_Log), Member = "RockCacheNoteTakingStart")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnRockCacheEditNoteClicked()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateRockCacheNoteSlider")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "MaybeUpdateRockCacheNoteView")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "MaybeUpdateRockCacheNoteView")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateRockCacheNoteSlider")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void OnRockCacheNoteScrollbarUp()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "MaybeUpdateRockCacheNoteView")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateRockCacheNoteSlider")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "MaybeUpdateRockCacheNoteView")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "MaybeUpdateRockCacheNoteView")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public void OnRockCacheNoteScrollbarDown()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateRockCacheNoteSlider")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	public void OnRockCacheNoteScrollbarChange()
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheNoteScrollbarUp")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheNoteScrollbarDown")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheNoteScrollbarChange")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "MaybeUpdateRockCacheNoteView")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 9)]
 	private void UpdateRockCacheNoteSlider()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsRockCaches")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheEditNoteClicked")]
-	[Calls(Type = typeof(TextInputField), Member = "Select")]
-	[Calls(Type = typeof(TextInputField), Member = "SetText")]
-	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[Calls(Type = typeof(UIInput), Member = "Init")]
-	[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
-	[Calls(Type = typeof(RockCacheManager), Member = "GetRockCacheUserTextFromGuid")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsRockCaches")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(RockCacheManager), Member = "GetRockCacheUserTextFromGuid")]
 	[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
+	[Calls(Type = typeof(UIInput), Member = "Init")]
+	[Calls(Type = typeof(UIInput), Member = "UpdateLabel")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
+	[Calls(Type = typeof(TextInputField), Member = "SetText")]
+	[Calls(Type = typeof(TextInputField), Member = "Select")]
+	[CallsUnknownMethods(Count = 1)]
 	public void RockCacheNoteTakingStart()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheBack")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "MaybeUpdateRockCacheNoteView")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsRockCaches")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "MaybeUpdateRockCacheNoteView")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "MaybeUpdateRockCacheNoteView")]
-	[Calls(Type = typeof(TextInputField), Member = "GetText")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnRockCacheBack")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(TextInputField), Member = "GetText")]
 	[Calls(Type = typeof(RockCacheManager), Member = "UpdateRockCacheUserText")]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaybeUpdateNote()
 	{
 	}
 
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(TextInputField), Member = "GetCursorLocation")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheNoteScrollbarUp")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheNoteScrollbarDown")]
-	[Calls(Type = typeof(UILabel), Member = "get_printedSize")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Panel_Log), Member = "MaybeUpdateNote")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Log), Member = "MaybeUpdateNote")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
-	[Calls(Type = typeof(NGUITools), Member = "get_screenSize")]
-	[Calls(Type = typeof(TextInputField), Member = "IsLockedIn")]
-	[Calls(Type = typeof(RockCacheManager), Member = "GetRockCacheUserTextFromGuid")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UICamera), Member = "get_selectedObject")]
+	[Calls(Type = typeof(RockCacheManager), Member = "GetRockCacheUserTextFromGuid")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(RockCacheManager), Member = "UpdateRockCacheUserText")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheNoteScrollbarUp")]
-	[Calls(Type = typeof(TextInputField), Member = "GetText")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateRockCacheNoteSlider")]
 	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheNoteScrollbarUp")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheNoteScrollbarDown")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateRockCacheNoteSlider")]
+	[Calls(Type = typeof(TextInputField), Member = "GetText")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(RockCacheManager), Member = "UpdateRockCacheUserText")]
+	[Calls(Type = typeof(TextInputField), Member = "IsLockedIn")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UILabel), Member = "get_printedSize")]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(TextInputField), Member = "GetCursorLocation")]
+	[Calls(Type = typeof(NGUITools), Member = "get_screenSize")]
+	[Calls(Type = typeof(Panel_Log), Member = "MaybeUpdateNote")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	public void MaybeUpdateRockCacheNoteView()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Log), Member = "ActivateBackButton")]
+	[Calls(Type = typeof(TextInputField), Member = "IsLockedIn")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryExaminePressed")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheRenameButton")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetOpenMapPressed")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheShowOnMapClicked")]
+	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheItemClicked")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
 	[Calls(Type = typeof(Panel_Log), Member = "RockCacheNoteTakingStart")]
@@ -4174,218 +4000,189 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	[Calls(Type = typeof(Panel_Log), Member = "MaybeUpdateNote")]
 	[Calls(Type = typeof(RockCacheListItem), Member = "SetSelected")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
 	[Calls(Type = typeof(Panel_Log), Member = "HandleVerticalNavigation")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Panel_Log), Member = "HandleScrollbar")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Log), Member = "ActivateBackButton")]
-	[Calls(Type = typeof(TextInputField), Member = "IsLockedIn")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryExaminePressed")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheRenameButton")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(InputManager), Member = "GetOpenMapPressed")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheShowOnMapClicked")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
+	[Calls(Type = typeof(Panel_Log), Member = "HandleScrollbar")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 6)]
 	private void DoControlsRockCaches()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
-	[Calls(Type = typeof(Panel_Log), Member = "MaybeUpdateNote")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Log), Member = "MaybeUpdateNote")]
 	[Calls(Type = typeof(RockCacheListItem), Member = "SetSelected")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnRockCacheBack()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "HandleVerticalNavigation")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsRockCaches")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "HandleVerticalNavigation")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public void HandleScrollbar(float amount)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsRockCaches")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheItemClicked")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheItemClicked")]
-	[Calls(Type = typeof(Panel_Log), Member = "HandleScrollbar")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Log), Member = "HandleScrollbar")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheRegionClicked")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnRockCacheItemClicked")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void HandleVerticalNavigation(float amount)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "HandleVerticalNavigation")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsRockCaches")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "SetRegionAndRockCacheSelected")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
-	[Calls(Type = typeof(RockCacheListItem), Member = "SetSelected")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsRockCaches")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "HandleVerticalNavigation")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(RockCacheListItem), Member = "SetSelected")]
+	[Calls(Type = typeof(Panel_Log), Member = "RefreshRockCacheListForSelectedRegion")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	protected void OnRockCacheRegionClicked(int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "HandleVerticalNavigation")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsRockCaches")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "SetRegionAndRockCacheSelected")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(TextInputField), Member = "SetText")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsRockCaches")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "HandleVerticalNavigation")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(RockCacheManager), Member = "GetRockCacheNameFromGuid")]
-	[Calls(Type = typeof(RockCacheListItem), Member = "SetSelected")]
-	[Calls(Type = typeof(RockCacheListItem), Member = "SetSelected")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(RockCacheListItem), Member = "SetSelected")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(RockCacheManager), Member = "GetRockCacheNameFromGuid")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(RockCacheManager), Member = "GetRockCacheUserTextFromGuid")]
+	[Calls(Type = typeof(TextInputField), Member = "SetText")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	protected void OnRockCacheItemClicked(int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsRockCaches")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Map), Member = "CenterOnPoint")]
-	[Calls(Type = typeof(Panel_Map), Member = "ForceZoomIn")]
-	[Calls(Type = typeof(Panel_Map), Member = "UnloadMapElements")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsRegionUnlocked")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnMapNav")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnMapNav")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsRegionUnlocked")]
+	[Calls(Type = typeof(Panel_Map), Member = "UnloadMapElements")]
 	[Calls(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
+	[Calls(Type = typeof(Panel_Map), Member = "ForceZoomIn")]
+	[Calls(Type = typeof(Panel_Map), Member = "CenterOnPoint")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnRockCacheShowOnMapClicked()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 19)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 13)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Panel_Map), Member = "IsRegionUnlocked")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildRockCacheRegionScrollList")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Panel_Map), Member = "IsRegionUnlocked")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 17)]
 	private void GenerateRockCacheScreenData()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshSelectedSkillDescriptionView")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateSkillListItemsColor")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Log), Member = "RefreshSkillsList")]
+	[Calls(Type = typeof(Panel_Log), Member = "RefreshSelectedSkillDescriptionView")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateSkillListItemsColor")]
 	private void UpdateSkillsPage()
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "ReleaseTempResources")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshSelectedSkillDescriptionView")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Addressables), Member = "Release")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	private void ReleaseTempResources_Skills()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
 	public void OnSkillsButton()
 	{
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
+	[Calls(Type = typeof(Panel_Log), Member = "HandleSkillVerticalNavigation")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
+	[Calls(Type = typeof(Panel_Log), Member = "HandleSkillScrollbar")]
+	[Calls(Type = typeof(Panel_Log), Member = "CanSaveJournal")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnSaveJournal")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Panel_Log), Member = "CanSaveJournal")]
-	[Calls(Type = typeof(Panel_Log), Member = "HandleSkillScrollbar")]
-	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Panel_Log), Member = "HandleSkillVerticalNavigation")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Panel_Log), Member = "OnSaveJournal")]
+	[CallsUnknownMethods(Count = 1)]
 	public void DoControlsSkillsListStats()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsSkillsListStats")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshSelectedSkillDescriptionView")]
-	[Calls(Type = typeof(SkillListItem), Member = "SetSelected")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Panel_Log), Member = "HandleSkillScrollbar")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Log), Member = "HandleSkillScrollbar")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(SkillListItem), Member = "SetSelected")]
+	[Calls(Type = typeof(Panel_Log), Member = "RefreshSelectedSkillDescriptionView")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void HandleSkillVerticalNavigation(float amount)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "HandleSkillVerticalNavigation")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsSkillsListStats")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshSelectedSkillDescriptionView")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "HandleSkillVerticalNavigation")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_Log), Member = "RefreshSelectedSkillDescriptionView")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[CallsUnknownMethods(Count = 3)]
 	private void HandleSkillScrollbar(float amount)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(Panel_Log), Member = "RefreshSkillsList")]
 	[Calls(Type = typeof(Panel_Log), Member = "RefreshSelectedSkillDescriptionView")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateSkillListItemsColor")]
@@ -4395,146 +4192,128 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshSelectedSkillDescriptionView")]
-	[Calls(Type = typeof(SkillListItem), Member = "SetSelected")]
-	[Calls(Type = typeof(SkillListItem), Member = "SetSelected")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(SkillListItem), Member = "SetSelected")]
+	[Calls(Type = typeof(Panel_Log), Member = "RefreshSelectedSkillDescriptionView")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	protected void OnSkillItemClicked(int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarSkillsChange")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateSkillsPage")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(SkillListItem), Member = "SetProgress")]
-	[Calls(Type = typeof(Skill), Member = "GetProgressToNextLevelAsNormalizedValue")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Skill), Member = "GetTierPoints")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(SkillListItem), Member = "SetSkillLevel")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateSkillsPage")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarSkillsChange")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(SkillListItem), Member = "SetSkillLevel")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Skill), Member = "GetTierPoints")]
 	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Skill), Member = "GetProgressToNextLevelAsNormalizedValue")]
+	[Calls(Type = typeof(SkillListItem), Member = "SetProgress")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 13)]
 	private void RefreshSkillsList()
 	{
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
-	[Calls(Type = typeof(string), Member = "Split")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UILabel), Member = "get_processedText")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnSkillItemClicked")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateSkillsPage")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "HandleSkillVerticalNavigation")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "HandleSkillScrollbar")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarSkillsChange")]
-	[CallsUnknownMethods(Count = 20)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierName")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnSkillItemClicked")]
 	[CallerCount(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 24)]
 	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Skills")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierName")]
 	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
 	[Calls(Type = typeof(string), Member = "SplitInternal")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(UILabel), Member = "get_processedText")]
+	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(Type = typeof(UIWidget), Member = "set_height")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 21)]
+	[CallsUnknownMethods(Count = 19)]
 	private void RefreshSelectedSkillDescriptionView()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
+	[CallerCount(Count = 1)]
 	private void BuildSkillsList()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarSkillsChange")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateSkillsPage")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
-	[Calls(Type = typeof(SkillListItem), Member = "SetSelected")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateSkillsPage")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarSkillsChange")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(SkillListItem), Member = "SetSelected")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateSkillListItemsColor()
 	{
 	}
 
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetupNeedsInfo")]
-	[Calls(Type = typeof(Panel_Log), Member = "SetupTrustMap")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "LogListItemCallback")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoPeopleTabToggle")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_Trust")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(TrustManager), Member = "GetTrustValue")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(Panel_Log), Member = "SetupNeedsInfo")]
+	[Calls(Type = typeof(Panel_Log), Member = "SetupTrustMap")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateTrustPage()
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "ReleaseTempResources")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTrustPage")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Addressables), Member = "Release")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	private void ReleaseTempResources_Trust()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTrustList")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshTrustMapSelection")]
 	[CalledBy(Type = typeof(TrustMapEntry), Member = "TrustMapClicked")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTrustList")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[Calls(Type = typeof(Panel_Log), Member = "RefreshTrustMapSelection")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void OnTrustMapClicked(int index)
 	{
 	}
@@ -4552,65 +4331,63 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "DoPeopleTabToggle")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Log), Member = "DoPeopleTabToggle")]
 	public void OnPeopleTrustTab()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTrustList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnPeopleTrustTab")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnPeopleDescriptionTab")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateTrustPage")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnPeopleTrustTab")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsTrustList")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateTrustPage")]
 	public void DoPeopleTabToggle()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Log), Member = "OnTrustMapClicked")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVerticalRightStick")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
-	[Calls(Type = typeof(Panel_Log), Member = "DoPeopleTabToggle")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
+	[Calls(Type = typeof(Panel_Log), Member = "DoPeopleTabToggle")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontalRightStick")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVerticalRightStick")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnTrustMapClicked")]
+	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
+	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void DoControlsTrustList()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
-	[Calls(Type = typeof(Panel_Log), Member = "GenerateTrustListData")]
-	[Calls(Type = typeof(CollectionListItem), Member = "SetItemInfo")]
-	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshCachedKnowledgeUnlocks")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Log), Member = "RefreshCachedKnowledgeUnlocks")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
+	[Calls(Type = typeof(Panel_Log), Member = "GenerateTrustListData")]
+	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(CollectionListItem), Member = "SetItemInfo")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	private void BuildTrustList()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(CollectionListItem), Member = "SetItemInfo")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(CollectionListItem), Member = "SetItemInfo")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	private void AddTrustEntryToList(int scrollIndex, CollectionListItemInfo itemInfo)
 	{
 	}
@@ -4625,123 +4402,101 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(CollectionListItem), Member = "SetSelected")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateTrustListItemsColor()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildTrustList")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	private void GenerateTrustListData()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 2)]
 	private string GetTrustIDFromNameID(string nameLocID)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTrustPage")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetStringForNeed")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Log), Member = "IsTrustWithinNeedRange")]
-	[Calls(Type = typeof(TrustManager), Member = "GetNeedTracker")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(TrustManager), Member = "GetNeedTracker")]
+	[Calls(Type = typeof(Panel_Log), Member = "IsTrustWithinNeedRange")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_Log), Member = "GetStringForNeed")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	private void SetupNeedsInfo(string trustID)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "SetupNeedsInfo")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
+	[Calls(Type = typeof(GearItem), Member = "GetGearDisplayName")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GearItem), Member = "GetGearDisplayName")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GearItem), Member = "GetGearDisplayName")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(float), Member = "ToString")]
+	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
+	[CallsUnknownMethods(Count = 2)]
 	public string GetStringForNeed(NeedPrefabSaveData needData)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "SetupNeedsInfo")]
-	[Calls(Type = typeof(TrustManager), Member = "GetTrustValue")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(TrustManager), Member = "GetTrustValue")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool IsTrustWithinNeedRange(NeedPrefabSaveData needData, string trustID)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTrustPage")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Log), Member = "RefreshTrustMapSelection")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(TrustMapEntry), Member = "RefreshObjects")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(TrustManager), Member = "GetUnlockableTracker")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(TrustManager), Member = "GetUnlockableTracker")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(TrustMapEntry), Member = "RefreshObjects")]
+	[Calls(Type = typeof(Panel_Log), Member = "RefreshTrustMapSelection")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void SetupTrustMap(string trustID)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "SetupTrustMap")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnTrustMapClicked")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(TrustMapEntry), Member = "RefreshObjects")]
-	[Calls(Type = typeof(TrustMapEntry), Member = "RefreshObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "SetupTrustMap")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(TrustMapEntry), Member = "RefreshObjects")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void RefreshTrustMapSelection()
 	{
 	}
@@ -4753,336 +4508,306 @@ public class Panel_Log : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnBack")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnWhatIKnowSubScreen")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "LogListItemCallback")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsWhatIKnowList")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "PointToWhatIKnowEntryOnQuickKeyActive")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "LogListItemCallback")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnWhatIKnowSubScreen")]
 	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(Panel_Log), Member = "ReleaseTempResources_WhatIKnow")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Localization), Member = "Exists")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowDescScrollbar")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateWhatIKnowPage()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowPage")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "ReleaseTempResources")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowPage")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
+	[Calls(Type = typeof(Addressables), Member = "Release")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	private void ReleaseTempResources_WhatIKnow()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
 	public void OnWhatIKnowButton()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Log), Member = "BuildWhatIKnowList")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowPage")]
+	[Calls(Type = typeof(Panel_Log), Member = "DoScrollListScrollLeft")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
+	[Calls(Type = typeof(Screen), Member = "get_width")]
+	[Calls(Type = typeof(Panel_Log), Member = "ScrollListMovement")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVerticalRightStick")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarWhatIKnowDescDown")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnScrollbarWhatIKnowDescUp")]
 	[Calls(Type = typeof(Panel_Log), Member = "OnBack")]
 	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(Panel_Log), Member = "GetOnBackText")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
-	[CallsUnknownMethods(Count = 4)]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Screen), Member = "get_width")]
-	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Panel_Log), Member = "DoScrollListScrollLeft")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowPage")]
-	[Calls(Type = typeof(Panel_Log), Member = "BuildWhatIKnowList")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Panel_Log), Member = "ScrollListMovement")]
+	[CallsUnknownMethods(Count = 4)]
 	public void DoControlsWhatIKnowList()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetWhatIKnowListSelectedToEntry(string nameLocID)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
-	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowPage")]
-	[Calls(Type = typeof(Panel_Log), Member = "BuildWhatIKnowList")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnterState")]
+	[Calls(Type = typeof(Panel_Log), Member = "BuildWhatIKnowList")]
+	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowPage")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void PointToWhatIKnowEntryOnQuickKeyActive(KnowledgeCateogry category, string nameLocID)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Log), Member = "BuildWhatIKnowList")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowPage")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnWhatIKnowSubScreen()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnWhatIKnowScrollbarChange()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsWhatIKnowList")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowDescScrollbar")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsWhatIKnowList")]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnScrollbarWhatIKnowDescUp()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsWhatIKnowList")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowDescScrollbar")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsWhatIKnowList")]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnScrollbarWhatIKnowDescDown()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowDescScrollbar")]
-	[CallerCount(Count = 0)]
 	public void OnWhatIKnowDescScrollbarChange()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "AddNotificationToKnowledgeSubCategory")]
-	[Calls(Type = typeof(Panel_Log), Member = "RemoveNotificationFromKnowledgeSubCategory")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Log), Member = "RemoveNotificationFromKnowledgeSubCategory")]
+	[Calls(Type = typeof(Panel_Log), Member = "AddNotificationToKnowledgeSubCategory")]
 	public void ShowPanelLogSubCategoryNotificationIcon(SubCategory subCategory, bool enable)
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateWhatIKnowPage")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarWhatIKnowDescUp")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarWhatIKnowDescDown")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnWhatIKnowDescScrollbarChange")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 8)]
 	private void UpdateWhatIKnowDescScrollbar()
 	{
 	}
 
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnBack")]
-	[Calls(Type = typeof(Utils), Member = "GetSliderForScrollbar")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterState")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsWhatIKnowList")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "PointToWhatIKnowEntryOnQuickKeyActive")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnWhatIKnowSubScreen")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(CollectionListItem), Member = "SetItemInfo")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsWhatIKnowList")]
-	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
-	[Calls(Type = typeof(Panel_Log), Member = "GenerateSubscreenData")]
-	[Calls(Type = typeof(Panel_Log), Member = "GenerateSubscreenData")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(Panel_Log), Member = "RefreshCachedKnowledgeUnlocks")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
-	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(Panel_Log), Member = "GenerateSubscreenData")]
-	[Calls(Type = typeof(Panel_Log), Member = "GenerateSubscreenData")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(Panel_Log), Member = "GenerateSelectScreenData")]
+	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(CollectionListItem), Member = "SetItemInfo")]
+	[Calls(Type = typeof(Utils), Member = "GetSliderForScrollbar")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void BuildWhatIKnowList()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(CollectionListItem), Member = "SetItemInfo")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 3)]
 	private void AddWhatIKnowEntryToList(int scrollIndex, CollectionListItemInfo itemInfo)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "ScrollListMovement")]
-	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[Calls(Type = typeof(Panel_Log), Member = "Refresh")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateWhatIKnowListSelectionScroll(int moveVal, ref int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
-	[Calls(Type = typeof(CollectionListItem), Member = "SetSelected")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(CollectionListItem), Member = "SetSelected")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateWhatIKnowListItemsColor()
 	{
 	}
 
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildWhatIKnowList")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 9)]
 	private void GenerateSelectScreenData()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildWhatIKnowList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildWhatIKnowList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildWhatIKnowList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildWhatIKnowList")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(KnowledgeManager), Member = "GetNameIDFromDescID")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(KnowledgeManager), Member = "GetNameIDFromDescID")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void GenerateSubscreenData(List<string> knowledgeList)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildWhatIKnowList")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildTrustList")]
-	[Calls(Type = typeof(KnowledgeManager), Member = "GetListUnlockedKnowledgeOfType")]
-	[Calls(Type = typeof(KnowledgeManager), Member = "GetListUnlockedKnowledgeOfType")]
-	[Calls(Type = typeof(KnowledgeManager), Member = "GetListUnlockedKnowledgeOfType")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "BuildWhatIKnowList")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(KnowledgeManager), Member = "GetListUnlockedKnowledgeOfType")]
+	[CallsUnknownMethods(Count = 1)]
 	private void RefreshCachedKnowledgeUnlocks()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "RemoveNewKnowledgeEntry")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
-	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
-	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
+	[Calls(Type = typeof(Panel_Log), Member = "RemoveNewKnowledgeEntry")]
+	[CallsUnknownMethods(Count = 8)]
 	private void MaybeShowNotificationFlagForNewKnowledgeEntry()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(TypeFullName = "System.Linq.Buffer`1", Member = ".ctor")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(string), Member = "ToUpper")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
-	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
-	[CallsUnknownMethods(Count = 19)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[CallsUnknownMethods(Count = 17)]
 	private void MaybeShowNotificationFlagForKnowledgeSubCategories()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Log), Member = "MaybeShowNotificationFlagForNewKnowledgeEntry")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void RemoveNewKnowledgeEntry(NotificationFlagInfo nfi)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "HandleOnNotificationAdded")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "ShowPanelLogSubCategoryNotificationIcon")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void AddNotificationToKnowledgeSubCategory(string descId)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "HandleOnSubcategoryNotificationRemoved")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "ShowPanelLogSubCategoryNotificationIcon")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void RemoveNotificationFromKnowledgeSubCategory(string descId)
 	{
 	}

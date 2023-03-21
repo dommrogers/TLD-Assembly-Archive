@@ -7,8 +7,8 @@ public class CameraLodBiasOverride : MonoBehaviour
 
 	private float m_LastLodBias;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SetLodBias(float lodBias)
 	{
 	}

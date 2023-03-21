@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -17,22 +18,23 @@ public class SplineAudioClip : MonoBehaviour
 
 	private bool m_CanUseJobSystem;
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "GetValidNodesCount")]
+	[Calls(Type = typeof(SplineManager), Member = "RegisterStaticSplineAudioClip")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(SplineManager), Member = "RegisterStaticSplineAudioClip")]
-	[Calls(Type = typeof(Utils), Member = "GetValidNodesCount")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallerCount(Count = 0)]
 	public void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(SplineManager), Member = "AreJobPending")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SplineManager), Member = "AreJobPending")]
 	[Calls(Type = typeof(SplineManager), Member = "CompleteJobs")]
 	[Calls(Type = typeof(Utils.FastSpline), Member = "Dispose")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnDestroy()
 	{
 	}
@@ -44,100 +46,99 @@ public class SplineAudioClip : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SplineAudioClip), Member = "RequestClosestPointOnSpline")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void EarlyUpdate()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTeleportTransformAfterSceneLoad")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(SplineAudioClip), Member = "EarlyUpdate")]
 	[CalledBy(Type = typeof(SplineManager), Member = "EarlyUpdate")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetTeleportTransformAfterSceneLoad")]
 	[Calls(Type = typeof(SplineManager), Member = "RequestSplineClosestPositionJob")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	private void RequestClosestPointOnSpline()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CalledBy(Type = typeof(SplineAudioClip), Member = "Update")]
 	[CalledBy(Type = typeof(SplineAudioClip), Member = "ManualUpdate")]
 	[CalledBy(Type = typeof(SplineManager), Member = "Update")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void PlaySplineAudioClip()
 	{
 	}
 
+	[CalledBy(Type = typeof(SplineAudioClip), Member = "Start")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
-	[CalledBy(Type = typeof(SplineAudioClip), Member = "Start")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	private void DisableSplineMeshUpdating()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SplineAudioClip), Member = "UpdateSplineAudioClipPosition_Legacy")]
 	[Calls(Type = typeof(SplineAudioClip), Member = "PlaySplineAudioClip")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Spline), Member = "GetClosestPointParam")]
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(SplineAudioClip), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Spline), Member = "GetClosestPointParam")]
 	[Calls(Type = typeof(Spline), Member = "GetPositionOnSpline")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	public void UpdateSplineAudioClipPosition_Legacy()
 	{
 	}
 
-	[Calls(Type = typeof(SplineAudioClip), Member = "PlaySplineAudioClip")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SplineAudioClip), Member = "FetchClosestPointOnSplineResult")]
+	[Calls(Type = typeof(SplineAudioClip), Member = "PlaySplineAudioClip")]
 	public void ManualUpdate()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(SplineManager), Member = "Update")]
 	[CalledBy(Type = typeof(SplineAudioClip), Member = "ManualUpdate")]
+	[CalledBy(Type = typeof(SplineManager), Member = "Update")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(SplineManager), Member = "RetrieveSplineClosestPosition")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void FetchClosestPointOnSplineResult()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
 	[Calls(Type = typeof(SplineManager), Member = "GetMatrix")]
 	[Calls(Type = typeof(Utils.FastSpline), Member = "Allocate")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(Utils.FastSpline), Member = "Dispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils.FastSpline), Member = "Dispose")]
 	public void Terminate()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public SplineAudioClip()
 	{
 	}

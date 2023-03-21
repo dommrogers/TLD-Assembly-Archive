@@ -14,12 +14,12 @@ public class SplineAnimator : MonoBehaviour
 
 	public float passedTime;
 
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SplineUtils), Member = "WrapValue")]
 	[Calls(Type = typeof(Spline), Member = "GetPositionOnSpline")]
 	[Calls(Type = typeof(Spline), Member = "GetOrientationOnSpline")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 0)]
 	private void Update()
 	{
 	}

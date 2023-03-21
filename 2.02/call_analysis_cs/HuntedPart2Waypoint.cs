@@ -15,13 +15,12 @@ public class HuntedPart2Waypoint : MissionWaypoint
 
 	public bool m_IncrementWeatherStage;
 
-	[CallsUnknownMethods(Count = 7)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Vector3), Member = "get_up")]
 	[Calls(Type = typeof(Vector3), Member = "get_down")]
 	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
+	[CallsUnknownMethods(Count = 7)]
 	public void Awake()
 	{
 	}

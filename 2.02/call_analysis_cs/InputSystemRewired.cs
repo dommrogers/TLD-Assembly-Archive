@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Conditions;
 using Rewired;
+using Rewired.Utils;
 using Steamworks;
 using UnityEngine;
 
@@ -30,30 +31,30 @@ public class InputSystemRewired
 		[CallerCount(Count = 0)]
 		public bool GetButtonPressed()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
 		public bool GetButtonUp()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		public bool GetButtonValue()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
 		public bool GetButtonValueChanged()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public InputController_ButtonState()
 		{
 		}
@@ -71,24 +72,24 @@ public class InputSystemRewired
 
 		public EInputSourceMode m_EMode;
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public Vector2 GetAxis()
 		{
 			return default(Vector2);
 		}
 
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Vector2), Member = "op_Inequality")]
-		[CallerCount(Count = 1)]
 		[CalledBy(Type = typeof(InputSystemRewired), Member = "AnySteamAxisPressed")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Vector2), Member = "op_Inequality")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public bool ValueChanged()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public InputController_AxisState()
 		{
 		}
@@ -166,467 +167,331 @@ public class InputSystemRewired
 
 	private bool m_InInteractiveDisplay;
 
-	[Calls(Type = typeof(Controller), Member = "get_name")]
-	[Calls(Type = typeof(Controller), Member = "get_hardwareTypeGuid")]
-	[Calls(Type = typeof(Guid), Member = "op_Inequality")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "Initialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_joystickCount")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
+	[Calls(Type = typeof(Controller), Member = "get_name")]
+	[Calls(Type = typeof(Controller), Member = "get_hardwareName")]
+	[Calls(Type = typeof(Controller), Member = "get_hardwareTypeGuid")]
+	[Calls(Type = typeof(Guid), Member = "op_Inequality")]
 	[Calls(Type = typeof(Controller), Member = "get_type")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "IsControllerAssigned")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_Players")]
+	[Calls(Type = typeof(Player), Member = "get_id")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetMaps")]
 	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
 	[Calls(Type = typeof(ControllerMap), Member = "get_categoryId")]
 	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetMapCategory")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
+	[Calls(Type = typeof(ControllerMap), Member = "get_layoutId")]
 	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetJoystickLayout")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
 	[Calls(Type = typeof(ControllerMap), Member = "get_enabled")]
+	[Calls(Type = typeof(bool), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(ControllerMap), Member = "GetElementMaps")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
 	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
 	[Calls(Type = typeof(ActionElementMap), Member = "get_elementIdentifierName")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(ControllerMap), Member = "get_layoutId")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "Initialize")]
-	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_joystickCount")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_joystickCount")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Controller), Member = "get_name")]
-	[Calls(Type = typeof(Controller), Member = "get_hardwareTypeGuid")]
-	[Calls(Type = typeof(Guid), Member = "op_Inequality")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(Controller), Member = "get_type")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "IsControllerAssigned")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_Players")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(Controller), Member = "get_hardwareName")]
-	[CallsUnknownMethods(Count = 102)]
+	[CallsUnknownMethods(Count = 101)]
 	private void PrintDebugInfo()
 	{
 	}
 
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[Calls(Type = typeof(ReInput), Member = "add_ControllerDisconnectedEvent")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-	[Calls(Type = typeof(ReInput), Member = "add_ControllerConnectedEvent")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "PrintDebugInfo")]
 	[CalledBy(Type = typeof(InputManager), Member = "Awake")]
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "SetAllMapsEnabled")]
-	[Calls(Type = typeof(ReInput), Member = "add_ControllerPreDisconnectEvent")]
-	[Calls(Type = typeof(ReInput), Member = "get_configuration")]
-	[Calls(Type = typeof(ReInput.ConfigHelper), Member = "set_windowsStandalonePrimaryInputSource")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Utils), Member = "IsCommandLineArgumentPresent")]
-	[Calls(Type = typeof(ReInput.ConfigHelper), Member = "set_windowsStandalonePrimaryInputSource")]
-	[Calls(Type = typeof(ReInput), Member = "get_configuration")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Utils), Member = "IsCommandLineArgumentPresent")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "IsCommandLineArgumentPresent")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(ReInput), Member = "get_configuration")]
+	[Calls(Type = typeof(ReInput.ConfigHelper), Member = "set_windowsStandalonePrimaryInputSource")]
+	[Calls(Type = typeof(ReInput), Member = "add_ControllerPreDisconnectEvent")]
+	[Calls(Type = typeof(ReInput), Member = "add_ControllerConnectedEvent")]
+	[Calls(Type = typeof(ReInput), Member = "add_ControllerDisconnectedEvent")]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "SetAllMapsEnabled")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "PrintDebugInfo")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 26)]
 	public void Initialize()
 	{
 	}
 
 	[CalledBy(Type = typeof(InputManager), Member = "Update")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "MaybeSetGamepadActive")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "MaybeSetMouseOrKeyboardActive")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "FindActiveGamepad")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "UpdateSteamController")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "UpdateSteamController")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "FindActiveGamepad")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "MaybeSetMouseOrKeyboardActive")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "MaybeSetGamepadActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 24)]
 	[CalledBy(Type = typeof(InputManager), Member = "ResetControllerState")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "ResetSteamControllerState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Controller.Element), Member = "Reset")]
-	[Calls(Type = typeof(Controller), Member = "get_Buttons")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
 	[Calls(Type = typeof(Controller), Member = "get_Buttons")]
+	[Calls(Type = typeof(Controller.Element), Member = "Reset")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "ResetSteamControllerState")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 24)]
 	public void ResetControllerState()
 	{
 	}
 
-	[Calls(Type = typeof(ControllerMap), Member = "ToXmlString")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetMappingFromCInput")]
-	[CalledBy(Type = typeof(InputManager), Member = "SaveRemapping")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "Serialize")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "SetAllMapsEnabled")]
-	[Calls(Type = typeof(ControllerMapSaveData), Member = "get_map")]
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(ControllerMap), Member = "ToXmlString")]
-	[Calls(Type = typeof(ControllerMapSaveData), Member = "get_map")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Player), Member = "GetSaveData")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(InputManager), Member = "SaveRemapping")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetMappingFromCInput")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Player), Member = "GetSaveData")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(ControllerMapSaveData), Member = "get_map")]
+	[Calls(Type = typeof(ControllerMap), Member = "ToXmlString")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "SetAllMapsEnabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 26)]
 	public void SaveRemapping()
 	{
 	}
 
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstButtonMapWithAction")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[CallsUnknownMethods(Count = 81)]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "LoadRemapping")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstButtonMapWithAction")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstButtonMapWithAction")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstButtonMapWithAction")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstButtonMapWithAction")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
 	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstButtonMapWithAction")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstButtonMapWithAction")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstButtonMapWithAction")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstButtonMapWithAction")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
+	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
 	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
+	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 81)]
 	private void PatchControllerMapping()
 	{
 	}
 
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
 	[CallerCount(Count = 17)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
+	[Calls(Type = typeof(ListTools), Member = "ToArray")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[Calls(TypeFullName = "Rewired.Utils.EmptyObjects`1", Member = "get_array")]
+	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
 	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private bool CheckForExistingKeyboardMapping(KeyCode keycode)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
-	[CallsUnknownMethods(Count = 34)]
 	[CalledBy(Type = typeof(InputManager), Member = "LoadRemapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "ResetKeybindingsToDefault")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "RemoveController")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "ClearMaps")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "AddMapsFromXml")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "ClearMaps")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "ClearMaps")]
 	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "AddMapsFromXml")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "ResetKeybindingsToDefault")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "RemoveController")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 34)]
 	public void LoadRemapping()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
-	[CalledBy(Type = typeof(InputManager), Member = "AnyButtonsOrKeysPressed")]
-	[CalledBy(Type = typeof(InputManager), Member = "AnyInput")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "AnySteamButtonPressed")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Keyboard")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(InputManager), Member = "AnyInput")]
+	[CalledBy(Type = typeof(InputManager), Member = "AnyButtonsOrKeysPressed")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
 	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Mouse")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Keyboard")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "AnySteamButtonPressed")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 14)]
 	public bool AnyButtonsOrKeysPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(InputManager), Member = "AnyMouseOrStickMovement")]
-	[CalledBy(Type = typeof(InputManager), Member = "AnyInput")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "AnySteamAxisPressed")]
-	[Calls(Type = typeof(Vector2), Member = "get_magnitude")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetAxis")]
-	[Calls(Type = typeof(Vector2), Member = "get_magnitude")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetAxis")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetAxis")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(InputManager), Member = "AnyInput")]
+	[CalledBy(Type = typeof(InputManager), Member = "AnyMouseOrStickMovement")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetAxis")]
 	[Calls(Type = typeof(Vector2), Member = "get_magnitude")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "AnySteamAxisPressed")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool GetAnyMouseOrStickMovement()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(InputManager), Member = "CheckForActiveController")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "AddController")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "AddController")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Mouse")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Keyboard")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Keyboard")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Mouse")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "FindActiveGamepad")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "FindActiveGamepad")]
+	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Mouse")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Keyboard")]
 	[Calls(Type = typeof(Player.ControllerHelper), Member = "ClearAllControllers")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "AddController")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 13)]
 	public bool CheckForActiveController()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetAxis")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetAxis")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetScroll()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public int GetActiveUserID()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public ulong GetActiveJoystickID()
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetAnyMouseOrStickMovement")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetMenuNavigationPrimary")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetCameraMovementGamepad")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetPlayerMovement")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetScroll")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetAnyMouseOrStickMovement")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetAnyMouseOrStickMovement")]
 	[CalledBy(Type = typeof(InputManager), Member = "GetScroll")]
-	[Calls(Type = typeof(Vector2), Member = "get_zero")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Player), Member = "GetAxis")]
-	[Calls(Type = typeof(Player), Member = "GetAxis")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetAnyMouseOrStickMovement")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetScroll")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetPlayerMovement")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetCameraMovementGamepad")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetMenuNavigationPrimary")]
 	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Player), Member = "GetAxis")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(Vector2), Member = "get_zero")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private Vector2 GetAxis(InputManager.InputAxis axis, int axisXActionId, int axisYactionId)
 	{
 		return default(Vector2);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	private bool GetRewiredButtonPressed(InputManager.InputAction action)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 157)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	private bool GetButtonPressed(InputManager.InputAction action)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Player), Member = "GetButtonUp")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	private bool GetRewiredButtonUnpressed(InputManager.InputAction action)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(Condition_ActionInputButton), Member = "Test")]
-	[CalledBy(Type = typeof(Condition_ActionInputButton), Member = "OnCheck")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetInputActionReleased")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetAltFireReleased")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetFireReleased")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetInventoryDropReleased")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetInteractReleased")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonTriggers")]
-	[CalledBy(Type = typeof(InputManager), Member = "GetFireReleased")]
-	[CalledBy(Type = typeof(InputManager), Member = "GetInventoryDropReleased")]
 	[CalledBy(Type = typeof(InputManager), Member = "GetInteractReleased")]
-	[Calls(Type = typeof(Player), Member = "GetButtonUp")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 12)]
+	[CalledBy(Type = typeof(InputManager), Member = "GetInventoryDropReleased")]
+	[CalledBy(Type = typeof(InputManager), Member = "GetFireReleased")]
 	[CalledBy(Type = typeof(InputManager), Member = "GetAltFireReleased")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetInteractReleased")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetInventoryDropReleased")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetFireReleased")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetAltFireReleased")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetInputActionReleased")]
+	[CalledBy(Type = typeof(Condition_ActionInputButton), Member = "OnCheck")]
+	[CalledBy(Type = typeof(Condition_ActionInputButton), Member = "Test")]
+	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Player), Member = "GetButtonUp")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 8)]
 	private bool GetButtonUnpressed(InputManager.InputAction action)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Player), Member = "GetButton")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private bool GetRewiredButton(InputManager.InputAction action)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 64)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[Calls(Type = typeof(Player), Member = "GetButton")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 8)]
 	private bool GetButton(InputManager.InputAction action)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetFlyModeMoveSlowMultiplier")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetFlyModeMoveFastMultiplier")]
+	[CalledBy(Type = typeof(FlyMode), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(InputManager), Member = "GetFlyModeMoveSlowMultiplier")]
 	[CalledBy(Type = typeof(InputManager), Member = "GetFlyModeMoveFastMultiplier")]
-	[CalledBy(Type = typeof(FlyMode), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(FlyMode), Member = "LateUpdate")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetFlyModeMoveSlowMultiplier")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetFlyModeMoveFastMultiplier")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(Player), Member = "GetAxis")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 6)]
+	[CallsUnknownMethods(Count = 5)]
 	private float GetRewiredActionAsAxis(InputManager.InputAction action)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetMenuNavigationPrimary")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetPlayerMovement")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetMenuNavigationPrimary")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	public Vector2 GetPlayerMovementKeyboard()
@@ -637,67 +502,66 @@ public class InputSystemRewired
 	[CallerCount(Count = 0)]
 	public bool WasLastControllerActiveSteam()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool WasLastControllerActivePS4()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool WasLastControllerActiveSwitch()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(InputManager), Member = "GetSafeCrackingMovementDirection")]
-	[CalledBy(Type = typeof(Condition_ActionInputAxisAtRest), Member = "Test")]
-	[CalledBy(Type = typeof(Condition_ActionInputAxisAtRest), Member = "GetAxisValue")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetSafeCrackingMovementDirection")]
-	[CalledBy(Type = typeof(InputManager), Member = "GetPlayerMovement")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(SafeCracking), Member = "GetDialDelta")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetPlayerMovementKeyboard")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetAxis")]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(SprainedAnkle), Member = "UpdateLimpAnimation")]
+	[CalledBy(Type = typeof(InputManager), Member = "GetPlayerMovement")]
+	[CalledBy(Type = typeof(InputManager), Member = "GetSafeCrackingMovementDirection")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetSafeCrackingMovementDirection")]
+	[CalledBy(Type = typeof(Condition_ActionInputAxisAtRest), Member = "GetAxisValue")]
+	[CalledBy(Type = typeof(Condition_ActionInputAxisAtRest), Member = "Test")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetAxis")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetPlayerMovementKeyboard")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Vector2 GetPlayerMovement()
 	{
 		return default(Vector2);
 	}
 
-	[Calls(Type = typeof(Vector2), Member = "get_zero")]
-	[CalledBy(Type = typeof(Condition_ActionInputAxisAtRest), Member = "Test")]
-	[CalledBy(Type = typeof(Condition_ActionInputAxisAtRest), Member = "GetAxisValue")]
 	[CalledBy(Type = typeof(InputManager), Member = "GetCameraMovementMouse")]
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(Condition_ActionInputAxisAtRest), Member = "GetAxisValue")]
+	[CalledBy(Type = typeof(Condition_ActionInputAxisAtRest), Member = "Test")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Player), Member = "GetAxis")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(Vector2), Member = "get_magnitude")]
 	[Calls(Type = typeof(Vector2), Member = "get_zero")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Vector2), Member = "get_magnitude")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Player), Member = "GetAxis")]
-	[Calls(Type = typeof(Player), Member = "GetAxis")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public Vector2 GetCameraMovementMouse()
 	{
 		return default(Vector2);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Condition_ActionInputAxisAtRest), Member = "Test")]
-	[CalledBy(Type = typeof(Condition_ActionInputAxisAtRest), Member = "GetAxisValue")]
 	[CalledBy(Type = typeof(InputManager), Member = "GetCameraMovementGamepad")]
-	[Calls(Type = typeof(Vector2), Member = "get_zero")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Condition_ActionInputAxisAtRest), Member = "GetAxisValue")]
+	[CalledBy(Type = typeof(Condition_ActionInputAxisAtRest), Member = "Test")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetAxis")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Vector2), Member = "get_zero")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public Vector2 GetCameraMovementGamepad()
 	{
 		return default(Vector2);
@@ -707,297 +571,293 @@ public class InputSystemRewired
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetInteractPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonUnpressed")]
 	public bool GetInteractReleased()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	public bool GetSprintDown()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetAutoWalkDown()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetCompassPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetCrouchPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetReloadPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetEquipPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(InputManager), Member = "GetPickupPressed")]
-	[Calls(Type = typeof(Input), Member = "GetMouseButtonDown")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
+	[Calls(Type = typeof(Input), Member = "GetMouseButtonDown")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 4)]
 	public bool GetPickupPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(InputManager), Member = "GetPutBackPressed")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	[Calls(Type = typeof(Application), Member = "get_platform")]
 	[Calls(Type = typeof(Input), Member = "GetMouseButtonDown")]
-	[CalledBy(Type = typeof(InputManager), Member = "GetPutBackPressed")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 3)]
 	public bool GetPutBackPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetHolsterPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetOpenActionsPanelPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	public bool GetOpenActionsPanelHeldDown()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetOpenInventoryPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetOpenClothingPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetOpenJournalPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetOpenFirstAidPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetOpenMapPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetPauseMenuTogglePressed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetEscapePressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetCarryPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetQuarterPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetHarvestCharcoalPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetContinuePressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetStartFirePressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetEquipLightSourcePressed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetDeployDecoyPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetEquipWeaponPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetMenuToolSelectPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetMenuBuyNowPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetQuickSavePressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetQuickLoadPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetHinterlandMailingListPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetSkyboundInsidersPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetScrollDownPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetScrollUpPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	public bool GetScrollDownHeld()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	public bool GetScrollUpHeld()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Vector2), Member = "get_zero")]
 	[CalledBy(Type = typeof(InputManager), Member = "GetMenuNavigationPrimary")]
-	[Calls(Type = typeof(Input), Member = "GetMouseButtonUp")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetAxis")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetAxis")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetPlayerMovementKeyboard")]
+	[Calls(Type = typeof(Input), Member = "GetMouseButtonUp")]
+	[Calls(Type = typeof(Vector2), Member = "get_zero")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 3)]
 	public Vector2 GetMenuNavigationPrimary()
 	{
 		return default(Vector2);
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	public Vector2 GetMenuNavigationSecondary()
 	{
@@ -1008,216 +868,216 @@ public class InputSystemRewired
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	public bool GetRadialButtonHeldDown()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetRadialButton()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetInventoryDropPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	public bool GetInventoryDropHeldDown()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonUnpressed")]
 	public bool GetInventoryDropReleased()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetInventoryFilterLeftPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetInventoryFilterRightPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetInventoryEquipPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetInventoryExaminePressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetInventorySortPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetInventoryAddToSatchelPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetContainerSelectLeftTablePressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetContainerSelectRightTablePressed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetOptionsConfirmPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool GetStruggleTapPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool GetStruggleTapHeldDown()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetFeedFireTakeTorchePressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetQuickSelect1Pressed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetQuickSelect2Pressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetQuickSelect3Pressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetQuickSelect4Pressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool GetTabLeftPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool GetTabRightPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public bool GetFirePressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonUnpressed")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool GetFireReleased()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetAltFirePressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	public bool GetAltFire()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonUnpressed")]
 	public bool GetAltFireReleased()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetRewiredActionAsAxis")]
-	[CallerCount(Count = 0)]
 	public float GetFlyModeMoveSlowMultiplier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1225,284 +1085,272 @@ public class InputSystemRewired
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetRewiredActionAsAxis")]
 	public float GetFlyModeMoveFastMultiplier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	public bool GetFlyModeMoveUpDown()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	public bool GetFlyModeMoveDownDown()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	public bool GetFlyModeLockOrientationDown()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetFlyModeAcceptPlacement()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetFlyModeCancelPlacement()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetFlyModeToggleEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetThreeDaysOfNightToggle()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetFlyModeToggleCoords()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	public bool GetSafeCrackingLeft()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	public bool GetSafeCrackingRight()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetPlayerMovement")]
 	public float GetSafeCrackingMovementDirection()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	[CallsUnknownMethods(Count = 2)]
 	public bool GetDebugMenuTogglePressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetLeftPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetRightPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetShowAccountPickerPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetShowStatsScreenPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetResetAllTimeStatsPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetRenamePressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetDeletePressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetOverwritePressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetSaveJournalPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	public bool GetRotateClockwiseHeld()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	public bool GetRotateCounterClockwiseHeld()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetCraftingPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetShowSteamControllerBindingsPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "MaybeCreateElementAssignmentFromKeyboardPolling")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "MaybeCreateElementAssignmentFromMousePolling")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonNameForAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool PoleForKeyRemap(string actionName, out string keyName)
 	{
 		keyName = null;
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(InputManager), Member = "UpdateKeyBindingTable")]
-	[Calls(Type = typeof(KeyRebindingButton), Member = "SetValueLabel")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(KeyRebindingButton), Member = "SetValueLabel")]
-	[Calls(Type = typeof(ActionElementMap), Member = "get_elementIdentifierName")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstButtonMapWithAction")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetFirstButtonMapWithAction")]
+	[Calls(Type = typeof(KeyRebindingButton), Member = "SetValueLabel")]
+	[Calls(Type = typeof(ActionElementMap), Member = "get_elementIdentifierName")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 12)]
 	public void UpdateKeyBindingTable()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void ApplyRemapping()
 	{
 	}
 
 	[CalledBy(Type = typeof(InputManager), Member = "ResetKeybindingsToDefault")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "LoadRemapping")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "LoadDefaultMaps")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "LoadDefaultMaps")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "LoadDefaultMaps")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "LoadRemapping")]
 	[CallsUnknownMethods(Count = 1)]
 	public void ResetKeybindingsToDefault()
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void InitializeDefaultKeyBindings()
 	{
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetSteamButtonOrAxisNameForAction")]
-	[CalledBy(Type = typeof(InputManager), Member = "GetButtonNameForAction")]
+	[CalledBy(Type = typeof(NGUIText), Member = "MaybeReplaceSymbolWithKeycode")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnGUI")]
-	[CalledBy(Type = typeof(NGUIText), Member = "MaybeReplaceSymbolWithKeycode")]
-	[CalledBy(Type = typeof(NGUIText), Member = "MaybeReplaceSymbolWithKeycode")]
-	[Calls(Type = typeof(InputManager), Member = "ConvertKeycodeToLabel")]
+	[CalledBy(Type = typeof(InputManager), Member = "GetButtonNameForAction")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "PoleForKeyRemap")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetMouseMap")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 5)]
-	[CallsUnknownMethods(Count = 1)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetMouseMap")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
 	[Calls(Type = typeof(ActionElementMap), Member = "get_elementIdentifierName")]
+	[Calls(Type = typeof(InputManager), Member = "ConvertKeycodeToLabel")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetSteamButtonOrAxisNameForAction")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetButtonNameForAction(InputManager.ControllerType controllerType, string action, bool convertKeycodes = true)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "RemoveController")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "RemoveController")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetGamepadEnabled(bool enabled)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "DeserializeSettings")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "SaveRemapping")]
-	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
-	[Calls(Type = typeof(Enum), Member = "Parse")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "RemoveKeybinding")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetMouseMap")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "LoadDefaultMaps")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "LoadDefaultMaps")]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "LoadDefaultMaps")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "LoadDefaultMaps")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetMouseMap")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
+	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "RemoveKeybinding")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enum), Member = "Parse")]
+	[Calls(Type = typeof(ControllerMap), Member = "CreateElementMap")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "SaveRemapping")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 20)]
 	public void GetMappingFromCInput()
 	{
@@ -1513,188 +1361,171 @@ public class InputSystemRewired
 	{
 	}
 
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetButtonNameForAction")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetMappingFromCInput")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "RemoveKeybinding")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "CreateReassignment")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetExistingBinding")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeCreateElementAssignmentFromKeyboardPolling")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "CheckForExistingKeyboardMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "CreateReassignment")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
 	[CallerCount(Count = 16)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PatchControllerMapping")]
+	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetMap")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private KeyboardMap GetKeyboardMap()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetExistingBinding")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeCreateElementAssignmentFromMousePolling")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "CreateReassignment")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetMappingFromCInput")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetButtonNameForAction")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 6)]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetMappingFromCInput")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "RemoveKeybinding")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "CreateReassignment")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetExistingBinding")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeCreateElementAssignmentFromMousePolling")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetMap")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private MouseMap GetMouseMap()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(ControllerWithAxes), Member = "PollForFirstAxis")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "Update")]
-	[Calls(Type = typeof(UICamera), Member = "SetSchemeOverride")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "AnySteamAxisPressed")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "AnySteamButtonPressed")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(InputManager), Member = "IsInBootScene")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "IsInBootScene")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
+	[Calls(Type = typeof(ControllerWithAxes), Member = "PollForFirstAxis")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "AnySteamButtonPressed")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "AnySteamAxisPressed")]
+	[Calls(Type = typeof(UICamera), Member = "SetSchemeOverride")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 9)]
 	private void MaybeSetGamepadActive()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "Update")]
-	[Calls(Type = typeof(UICamera), Member = "SetSchemeOverride")]
-	[Calls(Type = typeof(Keyboard), Member = "PollForFirstKeyDown")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Keyboard")]
-	[Calls(Type = typeof(UICamera), Member = "SetSchemeOverride")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Mouse")]
 	[Calls(Type = typeof(ControllerWithAxes), Member = "PollForFirstAxis")]
 	[Calls(Type = typeof(UICamera), Member = "SetSchemeOverride")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Mouse")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Keyboard")]
+	[Calls(Type = typeof(Keyboard), Member = "PollForFirstKeyDown")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Mouse")]
+	[CallsUnknownMethods(Count = 10)]
 	private void MaybeSetMouseOrKeyboardActive()
 	{
 	}
 
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "ClearAllControllers")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputManager), Member = "IsShowingControllerDisconnectedPanel")]
+	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[Calls(Type = typeof(Controller), Member = "get_hardwareTypeGuid")]
+	[Calls(Type = typeof(Guid), Member = "ToString")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetPS4ControllerHardwareGuid")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "ClearAllControllers")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "AddController")]
 	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetMap")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "SetActiveController")]
-	[CallsUnknownMethods(Count = 22)]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "AddController")]
-	[Calls(Type = typeof(Controller), Member = "get_hardwareTypeGuid")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(Guid), Member = "ToString")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(InputManager), Member = "IsShowingControllerDisconnectedPanel")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 22)]
 	private void JoystickConnect(ControllerStatusChangedEventArgs args)
 	{
 	}
 
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "UpdateSteamController")]
-	[Calls(Type = typeof(InputManager), Member = "OnPlayerControllerDisconnected")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "SetActiveController")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "ContainsController")]
-	[Calls(Type = typeof(SteamInput), Member = "GetConnectedControllers")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SteamInput), Member = "GetConnectedControllers")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "ContainsController")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "SetActiveController")]
+	[Calls(Type = typeof(InputManager), Member = "OnPlayerControllerDisconnected")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	private void JoystickPreDisconnect(ControllerStatusChangedEventArgs args)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void JoystickDisconnect(ControllerStatusChangedEventArgs args)
 	{
 	}
 
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "JoystickConnect")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "JoystickPreDisconnect")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "FindActiveGamepad")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Controller), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "ClearAllControllers")]
+	[Calls(Type = typeof(UICamera), Member = "SetSchemeOverride")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "DebugLogControllerConnected")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "AddController")]
+	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Mouse")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Keyboard")]
 	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
 	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetMap")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
 	[Calls(Type = typeof(Player.ControllerHelper), Member = "RemoveController")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "DebugLogControllerConnected")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "JoystickConnect")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "JoystickPreDisconnect")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "FindActiveGamepad")]
-	[CallsUnknownMethods(Count = 28)]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "IsPS4Controller")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "AddController")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "ClearAllControllers")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "AddController")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Mouse")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "AddController")]
-	[Calls(Type = typeof(UICamera), Member = "SetSchemeOverride")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Controller), Member = "get_name")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Keyboard")]
+	[CallsUnknownMethods(Count = 28)]
 	private void SetActiveController(Controller controller)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "SetActiveController")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "CheckForActiveController")]
-	[Calls(Type = typeof(ControllerWithAxes), Member = "PollForFirstAxis")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "Update")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "CheckForActiveController")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "FindActiveSteamController")]
 	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
 	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_joystickCount")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "FindActiveSteamController")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
+	[Calls(Type = typeof(ControllerWithAxes), Member = "PollForFirstAxis")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "SetActiveController")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	private bool FindActiveGamepad(bool includeAxis)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeCreateElementAssignmentFromMousePolling")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetMappingFromCInput")]
-	[Calls(Type = typeof(ControllerMap), Member = "DeleteButtonMapsWithAction")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeCreateElementAssignmentFromKeyboardPolling")]
-	[Calls(Type = typeof(ControllerMap), Member = "DeleteButtonMapsWithAction")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeCreateElementAssignmentFromMousePolling")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
+	[Calls(Type = typeof(ControllerMap), Member = "DeleteButtonMapsWithAction")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetMouseMap")]
 	private void RemoveKeybinding(InputAction action)
 	{
 	}
 
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "RebindKeybindingConflicts")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetMouseMap")]
 	[Calls(Type = typeof(ControllerMap), Member = "ReplaceOrCreateElementMap")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
 	[Calls(Type = typeof(ActionElementMap), Member = "get_modifierKeyFlags")]
 	[Calls(Type = typeof(Keyboard), Member = "GetElementIdentifierIdByKeyCode")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "RebindKeybindingConflicts")]
 	[CallsUnknownMethods(Count = 1)]
 	private void CreateReassignment(ActionElementMap existingBinding, InputAction action)
 	{
@@ -1702,263 +1533,236 @@ public class InputSystemRewired
 
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeCreateElementAssignmentFromKeyboardPolling")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeCreateElementAssignmentFromMousePolling")]
-	[CallsUnknownMethods(Count = 8)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ElementAssignment), Member = "ToElementAssignmentConflictCheck")]
+	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
+	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "CreateReassignment")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(ElementAssignment), Member = "ToElementAssignmentConflictCheck")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
+	[CallsUnknownMethods(Count = 8)]
 	private void RebindKeybindingConflicts(ControllerMap controllerMap, ElementAssignment elementAssignment, ActionElementMap existingBinding)
 	{
 	}
 
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeCreateElementAssignmentFromKeyboardPolling")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetMouseMap")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeCreateElementAssignmentFromMousePolling")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetMouseMap")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	private ActionElementMap GetExistingBinding(InputAction action)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PoleForKeyRemap")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnGUI")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(ControllerMap), Member = "ReplaceOrCreateElementMap")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "RebindKeybindingConflicts")]
-	[Calls(Type = typeof(ElementAssignment), Member = "KeyboardKeyAssignment")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "RemoveKeybinding")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetExistingBinding")]
-	[Calls(Type = typeof(InputManager), Member = "GetKeycodeCanBeBound")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Keyboard")]
-	[Calls(Type = typeof(Keyboard), Member = "PollForAllKeys")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "PoleForKeyRemap")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetKeyboardMap")]
 	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
 	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
 	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Keyboard")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
+	[Calls(Type = typeof(Keyboard), Member = "PollForAllKeys")]
+	[Calls(Type = typeof(InputManager), Member = "GetKeycodeCanBeBound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetExistingBinding")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "RemoveKeybinding")]
+	[Calls(Type = typeof(ElementAssignment), Member = "KeyboardKeyAssignment")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "RebindKeybindingConflicts")]
+	[Calls(Type = typeof(ControllerMap), Member = "ReplaceOrCreateElementMap")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 12)]
 	private bool MaybeCreateElementAssignmentFromKeyboardPolling(string actionName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "PoleForKeyRemap")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnGUI")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "RemoveKeybinding")]
-	[Calls(Type = typeof(ControllerMap), Member = "ReplaceOrCreateElementMap")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "RebindKeybindingConflicts")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetExistingBinding")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetMouseMap")]
-	[Calls(Type = typeof(Player.ControllerHelper.PollingHelper), Member = "PollControllerForFirstButtonDown")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "PoleForKeyRemap")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetMouseMap")]
 	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
+	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
+	[Calls(Type = typeof(Player.ControllerHelper.PollingHelper), Member = "PollControllerForFirstButtonDown")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetExistingBinding")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "RemoveKeybinding")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "RebindKeybindingConflicts")]
+	[Calls(Type = typeof(ControllerMap), Member = "ReplaceOrCreateElementMap")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private bool MaybeCreateElementAssignmentFromMousePolling(string actionName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
 	public bool GetInputActionPressed(InputManager.InputAction action)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonUnpressed")]
 	public bool GetInputActionReleased(InputManager.InputAction action)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	public bool GetInputActionHeld(InputManager.InputAction action)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(ControllerMap), Member = "get_layoutId")]
-	[Calls(Type = typeof(Guid), Member = "op_Inequality")]
-	[Calls(Type = typeof(Controller), Member = "get_hardwareTypeGuid")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "SetActiveController")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_joystickCount")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
+	[Calls(Type = typeof(Controller), Member = "get_name")]
+	[Calls(Type = typeof(Controller), Member = "get_hardwareName")]
+	[Calls(Type = typeof(Controller), Member = "get_hardwareTypeGuid")]
+	[Calls(Type = typeof(Guid), Member = "op_Inequality")]
 	[Calls(Type = typeof(Controller), Member = "get_type")]
+	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "IsControllerAssigned")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_Players")]
+	[Calls(Type = typeof(Player), Member = "get_id")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetMaps")]
 	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
 	[Calls(Type = typeof(ControllerMap), Member = "get_categoryId")]
 	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetMapCategory")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
+	[Calls(Type = typeof(ControllerMap), Member = "get_layoutId")]
+	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetJoystickLayout")]
+	[Calls(Type = typeof(ControllerMap), Member = "get_enabled")]
+	[Calls(Type = typeof(bool), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(ControllerMap), Member = "GetElementMaps")]
-	[Calls(Type = typeof(Controller), Member = "get_name")]
 	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetAction")]
 	[Calls(Type = typeof(ActionElementMap), Member = "get_elementIdentifierName")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "SetActiveController")]
-	[CallsUnknownMethods(Count = 102)]
-	[Calls(Type = typeof(ControllerMap), Member = "get_enabled")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "GetJoystickLayout")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_joystickCount")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_joystickCount")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "get_Joysticks")]
-	[Calls(Type = typeof(Controller), Member = "get_name")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(Controller), Member = "get_hardwareTypeGuid")]
-	[Calls(Type = typeof(Controller), Member = "get_hardwareName")]
-	[Calls(Type = typeof(Player), Member = "get_id")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "get_Players")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[Calls(Type = typeof(ReInput.ControllerHelper), Member = "IsControllerAssigned")]
-	[Calls(Type = typeof(Controller), Member = "get_type")]
-	[Calls(Type = typeof(ReInput), Member = "get_controllers")]
-	[Calls(Type = typeof(Guid), Member = "op_Inequality")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 101)]
 	private void DebugLogControllerConnected()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "JoystickConnect")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "IsPS4Controller")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string GetPS4ControllerHardwareGuid()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(ButtonLegendAtlas), Member = "GetActiveDictionary")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateControlsMenuItems")]
 	[CalledBy(Type = typeof(InputManager), Member = "GetButtonMap")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "IsXboxController")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateControlsMenuItems")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "SetActiveController")]
-	[CalledBy(Type = typeof(ButtonLegendAtlas), Member = "GetActiveDictionary")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetPS4ControllerHardwareGuid")]
-	[Calls(Type = typeof(Guid), Member = "ToString")]
-	[Calls(Type = typeof(Controller), Member = "get_hardwareTypeGuid")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "IsXboxController")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
+	[Calls(Type = typeof(Controller), Member = "get_hardwareTypeGuid")]
+	[Calls(Type = typeof(Guid), Member = "ToString")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetPS4ControllerHardwareGuid")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public bool IsPS4Controller()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool IsSwitchController()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool HasReconnectedPS4Controller()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool HasReconnectedJoystick()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "IsPS4Controller")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
 	public bool IsXboxController()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(InputManager), Member = "StopVibration")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
 	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
 	[Calls(Type = typeof(Joystick), Member = "StopVibration")]
-	[CalledBy(Type = typeof(InputManager), Member = "StopVibration")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 14)]
 	public void StopVibration()
 	{
 	}
 
-	[Calls(Type = typeof(Joystick), Member = "SetVibration")]
 	[CalledBy(Type = typeof(InputManager), Member = "SetVibration")]
-	[Calls(Type = typeof(Joystick), Member = "SetVibration")]
-	[Calls(Type = typeof(Joystick), Member = "get_vibrationMotorCount")]
-	[Calls(Type = typeof(Joystick), Member = "get_vibrationMotorCount")]
 	[CalledBy(Type = typeof(RumbleEffectManager), Member = "Update")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
 	[Calls(Type = typeof(Joystick), Member = "get_supportsVibration")]
+	[Calls(Type = typeof(Joystick), Member = "get_vibrationMotorCount")]
+	[Calls(Type = typeof(Joystick), Member = "SetVibration")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public void SetVibration(float motor0, float motor1)
 	{
 	}
 
-	[Calls(Type = typeof(SteamInput), Member = "GetDigitalActionHandle")]
-	[Calls(Type = typeof(Enum), Member = "GetValues")]
-	[Calls(Type = typeof(SteamInput), Member = "GetAnalogActionHandle")]
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(Enum), Member = "GetValues")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "UpdateSteamController")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(SteamInput), Member = "GetActionSetHandle")]
-	[Calls(Type = typeof(SteamInput), Member = "GetActionSetHandle")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
 	[Calls(Type = typeof(InteropHelp), Member = "TestIfAvailableClient")]
 	[Calls(Type = typeof(SteamInput), Member = "GetActionSetHandle")]
-	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
-	[CallsDeduplicatedMethods(Count = 12)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enum), Member = "GetValues")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(SteamInput), Member = "GetDigitalActionHandle")]
+	[Calls(Type = typeof(SteamInput), Member = "GetAnalogActionHandle")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 33)]
 	private void InitializeSteamController()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "TryUpdateSteamControllerActionSet")]
-	[Calls(Type = typeof(InputManager), Member = "IsInBootScene")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "IsInBootScene")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool InMenus()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1969,7 +1773,7 @@ public class InputSystemRewired
 	[CallerCount(Count = 0)]
 	public bool IsInInteractiveDisplay()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1979,22 +1783,20 @@ public class InputSystemRewired
 	{
 	}
 
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsUnknownMethods(Count = 25)]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "Update")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "JoystickPreDisconnect")]
-	[Calls(Type = typeof(InteropHelp), Member = "TestIfAvailableClient")]
-	[Calls(Type = typeof(Enum), Member = "GetValues")]
-	[Calls(Type = typeof(Enum), Member = "GetValues")]
-	[Calls(Type = typeof(SteamInput), Member = "GetDigitalActionData")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "TryUpdateSteamControllerActionSet")]
-	[Calls(Type = typeof(SteamInput), Member = "GetConnectedControllers")]
-	[Calls(Type = typeof(SteamInput), Member = "GetConnectedControllers")]
-	[Calls(Type = typeof(SteamInput), Member = "RunFrame")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "InitializeSteamController")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "InitializeSteamController")]
+	[Calls(Type = typeof(SteamInput), Member = "RunFrame")]
+	[Calls(Type = typeof(SteamInput), Member = "GetConnectedControllers")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "TryUpdateSteamControllerActionSet")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enum), Member = "GetValues")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(SteamInput), Member = "GetDigitalActionData")]
+	[Calls(Type = typeof(InteropHelp), Member = "TestIfAvailableClient")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "JoystickPreDisconnect")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 25)]
 	public void UpdateSteamController()
 	{
 	}
@@ -2003,25 +1805,24 @@ public class InputSystemRewired
 	[Calls(Type = typeof(SteamInput), Member = "GetConnectedControllers")]
 	private bool IsSteamControllerPresent()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 20)]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "FindActiveGamepad")]
-	[Calls(Type = typeof(Vector2), Member = "get_magnitude")]
-	[Calls(Type = typeof(SteamInput), Member = "GetAnalogActionData")]
-	[Calls(Type = typeof(Enum), Member = "GetValues")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Enum), Member = "GetValues")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(SteamInput), Member = "GetConnectedControllers")]
-	[Calls(Type = typeof(SteamInput), Member = "RunFrame")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SteamInput), Member = "RunFrame")]
+	[Calls(Type = typeof(SteamInput), Member = "GetConnectedControllers")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enum), Member = "GetValues")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(SteamInput), Member = "GetDigitalActionData")]
+	[Calls(Type = typeof(SteamInput), Member = "GetAnalogActionData")]
+	[Calls(Type = typeof(Vector2), Member = "get_magnitude")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 20)]
 	private bool FindActiveSteamController()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 28)]
@@ -2029,101 +1830,105 @@ public class InputSystemRewired
 	[CallsUnknownMethods(Count = 3)]
 	public bool IsSteamControllerActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SteamInput), Member = "GetConnectedControllers")]
 	[Calls(Type = typeof(InteropHelp), Member = "TestIfAvailableClient")]
+	[CallsUnknownMethods(Count = 5)]
 	public ESteamInputType GetCurrentControllerSteamInputType()
 	{
 		return default(ESteamInputType);
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SteamInput), Member = "GetConnectedControllers")]
+	[CallsUnknownMethods(Count = 3)]
 	public bool IsSteamControllerDisconnected()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "AnyButtonsOrKeysPressed")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeSetGamepadActive")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Enum), Member = "GetValues")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "AnyButtonsOrKeysPressed")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeSetGamepadActive")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	private bool AnySteamButtonPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeSetGamepadActive")]
-	[Calls(Type = typeof(InputController_AxisState), Member = "ValueChanged")]
-	[Calls(Type = typeof(Enum), Member = "GetValues")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetAnyMouseOrStickMovement")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeSetGamepadActive")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enum), Member = "GetValues")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(InputController_AxisState), Member = "ValueChanged")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private bool AnySteamAxisPressed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool GetSteamButtonPressed(InputManager.InputAction action)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool GetSteamButtonUnpressed(InputManager.InputAction action)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool GetSteamButton(InputManager.InputAction action)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetButtonNameForAction")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetSteamButtonOrAxisNameForAction")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetSteamButtonOrAxisNameForAction")]
-	[Calls(Type = typeof(SteamInput), Member = "GetCurrentActionSet")]
 	[Calls(Type = typeof(SteamInput), Member = "GetConnectedControllers")]
+	[Calls(Type = typeof(SteamInput), Member = "GetCurrentActionSet")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetSteamButtonOrAxisNameForAction")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private string GetSteamButtonOrAxisNameForAction(string action)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 31)]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetSteamButtonOrAxisNameForAction")]
-	[Calls(Type = typeof(InteropHelp), Member = "TestIfAvailableClient")]
-	[Calls(Type = typeof(string), Member = "Remove")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "GetSteamButtonOrAxisNameForAction")]
-	[Calls(Type = typeof(InteropHelp), Member = "TestIfAvailableClient")]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Enum), Member = "TryParse")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(InteropHelp), Member = "TestIfAvailableClient")]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(string), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 31)]
 	private string GetSteamButtonOrAxisNameForAction(InputHandle_t[] controllers, InputActionSetHandle_t actionSetHandle, string action)
 	{
 		return null;
@@ -2131,52 +1936,51 @@ public class InputSystemRewired
 
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "ResetControllerState")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Enum), Member = "GetValues")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Enum), Member = "GetValues")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(Vector2), Member = "get_zero")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 14)]
 	private void ResetSteamControllerState()
 	{
 	}
 
-	[Calls(Type = typeof(InteropHelp), Member = "TestIfAvailableClient")]
-	[Calls(Type = typeof(SteamInput), Member = "GetConnectedControllers")]
-	[CallsUnknownMethods(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputSystemRewired), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(SteamInput), Member = "GetConnectedControllers")]
+	[Calls(Type = typeof(InteropHelp), Member = "TestIfAvailableClient")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void ShowSteamControllerBindingPanel()
 	{
 	}
 
+	[CalledBy(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "RefreshSteamControllerActionSet")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "UpdateSteamController")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(InputSystemRewired), Member = "InMenus")]
 	[Calls(Type = typeof(SteamInput), Member = "GetCurrentActionSet")]
 	[Calls(Type = typeof(InteropHelp), Member = "TestIfAvailableClient")]
 	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
-	[CalledBy(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "RefreshSteamControllerActionSet")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "UpdateSteamController")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	private bool TryUpdateSteamControllerActionSet(int connectedSteamControllers)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public static float GetSteamInputSensitivityFactor()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(InputManager), Member = "Awake")]
-	[CallsUnknownMethods(Count = 24)]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 90)]
+	[CallsUnknownMethods(Count = 24)]
 	public InputSystemRewired()
 	{
 	}

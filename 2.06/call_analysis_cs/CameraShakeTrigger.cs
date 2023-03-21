@@ -17,10 +17,10 @@ public class CameraShakeTrigger : MonoBehaviour
 
 	private bool m_WasTriggered;
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnTriggerEnter(Collider other)
 	{
 	}

@@ -32,8 +32,8 @@ public class AchievementPlugin
 	public static extern IntPtr Achievement_Id(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int Achievement_IsRevoked(IntPtr self);
 
 	[PreserveSig]
@@ -62,8 +62,8 @@ public class AchievementPlugin
 	public static extern IntPtr Achievement_MediaAssets_GetAt(IntPtr self, uint idx);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void Achievement_MediaAssets_Dispose(IntPtr self);
 
 	[PreserveSig]
@@ -92,8 +92,8 @@ public class AchievementPlugin
 	public static extern IntPtr Achievement_PlatformsAvailableOn_GetAt(IntPtr self, uint idx);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void Achievement_PlatformsAvailableOn_Dispose(IntPtr self);
 
 	[PreserveSig]
@@ -117,13 +117,13 @@ public class AchievementPlugin
 	public static extern IntPtr Achievement_Rewards(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint Achievement_Rewards_Length(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr Achievement_Rewards_GetAt(IntPtr self, uint idx);
 
 	[PreserveSig]
@@ -152,8 +152,8 @@ public class AchievementPlugin
 	public static extern IntPtr Achievement_TitleAssociations_GetAt(IntPtr self, uint idx);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void Achievement_TitleAssociations_Dispose(IntPtr self);
 
 	[PreserveSig]

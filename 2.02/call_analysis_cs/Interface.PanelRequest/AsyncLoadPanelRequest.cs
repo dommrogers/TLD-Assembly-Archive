@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -14,24 +13,25 @@ public class AsyncLoadPanelRequest : BaseLoadPanelRequest
 
 	[CalledBy(Type = typeof(InterfaceManager), Member = "LoadPanelAsync_Internal")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "ToLowerInvariant")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[Calls(Type = typeof(AssetBundleManager), Member = "BundleExists")]
 	[Calls(Type = typeof(AssetBundleManager), Member = "LoadBundleAsync")]
+	[Calls(Type = typeof(Resources), Member = "LoadAsync")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public AsyncLoadPanelRequest(string panelName, string panelVariantName)
 		: base(null)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public override float GetProgress()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallAnalysisFailed]
@@ -40,34 +40,34 @@ public class AsyncLoadPanelRequest : BaseLoadPanelRequest
 	{
 	}
 
-	[CallsUnknownMethods(Count = 29)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(AssetBundleManager), Member = "UnloadBundle")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(BaseLoadPanelRequest), Member = "SetRequestFailed")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 29)]
 	private void UpdateAssetBundleRequest()
 	{
 	}
 
-	[Calls(Type = typeof(AssetBundleManager), Member = "UnloadBundle")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(BaseLoadPanelRequest), Member = "FinishLoadRequest")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(BaseLoadPanelRequest), Member = "SetRequestFailed")]
+	[Calls(Type = typeof(BaseLoadPanelRequest), Member = "FinishLoadRequest")]
+	[Calls(Type = typeof(AssetBundleManager), Member = "UnloadBundle")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateAssetBundlePanelRequest()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(BaseLoadPanelRequest), Member = "FinishLoadRequest")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(BaseLoadPanelRequest), Member = "SetRequestFailed")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	private void UpdateResourcesRequest()
 	{

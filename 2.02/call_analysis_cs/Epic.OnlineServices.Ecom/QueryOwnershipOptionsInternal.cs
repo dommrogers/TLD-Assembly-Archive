@@ -20,10 +20,10 @@ internal struct QueryOwnershipOptionsInternal : ISettable, IDisposable
 	public EpicAccountId LocalUserId
 	{
 		[CalledBy(Type = typeof(QueryOwnershipOptionsInternal), Member = "Set")]
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(QueryOwnershipOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -33,8 +33,9 @@ internal struct QueryOwnershipOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(QueryOwnershipOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(QueryOwnershipOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -42,11 +43,11 @@ internal struct QueryOwnershipOptionsInternal : ISettable, IDisposable
 
 	public string CatalogNamespace
 	{
+		[CalledBy(Type = typeof(QueryOwnershipOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(QueryOwnershipOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(QueryOwnershipOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(QueryOwnershipOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -61,19 +62,18 @@ internal struct QueryOwnershipOptionsInternal : ISettable, IDisposable
 	}
 
 	[CalledBy(Type = typeof(EcomInterface), Member = "QueryOwnership")]
-	[Calls(Type = typeof(QueryOwnershipOptionsInternal), Member = "set_CatalogNamespace")]
-	[Calls(Type = typeof(QueryOwnershipOptionsInternal), Member = "set_CatalogItemIds")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(QueryOwnershipOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(QueryOwnershipOptionsInternal), Member = "set_CatalogItemIds")]
+	[Calls(Type = typeof(QueryOwnershipOptionsInternal), Member = "set_CatalogNamespace")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	public void Dispose()
 	{
 	}

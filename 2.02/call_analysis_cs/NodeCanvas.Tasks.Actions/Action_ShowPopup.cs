@@ -12,12 +12,12 @@ public class Action_ShowPopup : ActionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(Object), Member = "get_name")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(Object), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -25,10 +25,10 @@ public class Action_ShowPopup : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PopupDefinition), Member = "Show")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	protected override void OnExecute()
 	{
@@ -40,8 +40,8 @@ public class Action_ShowPopup : ActionTask
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_ShowPopup()
 	{
 	}

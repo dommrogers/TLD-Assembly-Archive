@@ -14,7 +14,7 @@ public class ProxyDialogueActor : IDialogueActor
 	public string name
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
@@ -23,8 +23,8 @@ public class ProxyDialogueActor : IDialogueActor
 
 	public Texture2D portrait
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -44,7 +44,7 @@ public class ProxyDialogueActor : IDialogueActor
 	public Color dialogueColor
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 12)]
+		[CallerCount(Count = 15)]
 		get
 		{
 			return default(Color);
@@ -54,8 +54,8 @@ public class ProxyDialogueActor : IDialogueActor
 	public Vector3 dialoguePosition
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Vector3), Member = "get_zero")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return default(Vector3);
@@ -65,7 +65,7 @@ public class ProxyDialogueActor : IDialogueActor
 	public Transform transform
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
@@ -73,7 +73,7 @@ public class ProxyDialogueActor : IDialogueActor
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 83)]
+	[CallerCount(Count = 88)]
 	public ProxyDialogueActor(string name, Transform transform)
 	{
 	}

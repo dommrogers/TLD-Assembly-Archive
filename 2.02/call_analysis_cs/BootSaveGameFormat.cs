@@ -7,7 +7,7 @@ public class BootSaveGameFormat
 	public int m_Version;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public BootSaveGameFormat()
 	{
 	}

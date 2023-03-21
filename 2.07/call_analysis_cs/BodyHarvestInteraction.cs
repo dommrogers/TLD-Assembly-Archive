@@ -1,5 +1,6 @@
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Interactions;
+using UnityEngine;
 
 public class BodyHarvestInteraction : SimpleInteraction
 {
@@ -11,18 +12,18 @@ public class BodyHarvestInteraction : SimpleInteraction
 
 	public override bool CanInteract
 	{
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(BodyHarvestInteraction), Member = "CheckCanInteract")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	private void Awake()
 	{
 	}
@@ -36,29 +37,26 @@ public class BodyHarvestInteraction : SimpleInteraction
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(BodyHarvestInteraction), Member = "UpdateInteraction")]
 	[CalledBy(Type = typeof(BodyHarvestInteraction), Member = "InitializeInteraction")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CalledBy(Type = typeof(BodyHarvestInteraction), Member = "UpdateInteraction")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetHoverText()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(BodyHarvestInteraction), Member = "get_CanInteract")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool CheckCanInteract()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -69,15 +67,15 @@ public class BodyHarvestInteraction : SimpleInteraction
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CheckIfResourcesLeft")]
 	[Calls(Type = typeof(BodyHarvest), Member = "InteractWithBodyHarvest")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
+	[CallsUnknownMethods(Count = 1)]
 	public override bool PerformInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

@@ -44,24 +44,24 @@ public abstract class ReflectedWrapper
 	{
 	}
 
+	[CalledBy(Type = typeof(ExecuteFunction), Member = "OnValidate")]
 	[CalledBy(Type = typeof(ExecuteFunction), Member = "SetMethod")]
+	[CalledBy(Type = typeof(ExecuteStaticFunction), Member = "OnValidate")]
+	[CalledBy(Type = typeof(ExecuteStaticFunction), Member = "SetMethod")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(ReflectedFunctionWrapper), Member = "Create")]
 	[Calls(Type = typeof(ReflectedActionWrapper), Member = "Create")]
-	[CalledBy(Type = typeof(ExecuteFunction), Member = "OnValidate")]
-	[CalledBy(Type = typeof(ExecuteStaticFunction), Member = "OnValidate")]
-	[CalledBy(Type = typeof(ExecuteStaticFunction), Member = "SetMethod")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static ReflectedWrapper Create(MethodInfo method, IBlackboard bb)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetVariablesBB(IBlackboard bb)
 	{
 	}
@@ -69,7 +69,7 @@ public abstract class ReflectedWrapper
 	[CallerCount(Count = 0)]
 	public bool HasChanged()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -84,11 +84,7 @@ public abstract class ReflectedWrapper
 		return null;
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	public abstract BBParameter[] GetVariables();
 
-	[CallerCount(Count = 101224)]
-	[DeduplicatedMethod]
 	public abstract void Init(object instance);
 }

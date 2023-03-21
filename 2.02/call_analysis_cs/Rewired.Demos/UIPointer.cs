@@ -18,7 +18,7 @@ public sealed class UIPointer : UIBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -28,10 +28,10 @@ public sealed class UIPointer : UIBehaviour
 		}
 	}
 
-	[CallsUnknownMethods(Count = 9)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIPointer), Member = "GetDependencies")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 9)]
 	protected override void Awake()
 	{
 	}
@@ -57,21 +57,22 @@ public sealed class UIPointer : UIBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(RectTransformUtility), Member = "ScreenPointToLocalPointInRectangle")]
-	[Calls(Type = typeof(Canvas), Member = "get_worldCamera")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Canvas), Member = "get_worldCamera")]
+	[Calls(Type = typeof(RectTransformUtility), Member = "ScreenPointToLocalPointInRectangle")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 12)]
 	public void OnScreenPositionChanged(Vector2 screenPosition)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(UIPointer), Member = "Awake")]
 	[CalledBy(Type = typeof(UIPointer), Member = "OnTransformParentChanged")]
 	[CalledBy(Type = typeof(UIPointer), Member = "OnCanvasGroupChanged")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	private void GetDependencies()
 	{

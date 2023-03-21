@@ -19,23 +19,27 @@ public class Action_InvokeConcurrentGraph : ActionTask
 
 	public string varAssignments;
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(Task), Member = "get_agent")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(BlackboardSource), Member = "AddVariable")]
+	[Calls(Type = typeof(Variable<>), Member = "set_value")]
+	[Calls(Type = typeof(GlobalBlackboard), Member = "set_name")]
+	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
 	[Calls(Type = typeof(string), Member = "SplitInternal")]
 	[Calls(Type = typeof(NCUtils), Member = "ProcessCommandBlockLines")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(NCUtils), Member = "GetHostState")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 11)]
 	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(GlobalBlackboard), Member = "set_name")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Task), Member = "get_agent")]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 17)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(BlackboardSource), Member = "AddVariable")]
 	protected override void OnExecute()
 	{
 	}

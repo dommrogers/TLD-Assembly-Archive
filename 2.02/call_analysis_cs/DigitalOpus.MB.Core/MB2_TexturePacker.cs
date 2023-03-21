@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -25,8 +23,8 @@ public abstract class MB2_TexturePacker
 
 		public int h;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public PixRect()
 		{
 		}
@@ -38,8 +36,8 @@ public abstract class MB2_TexturePacker
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(string), Member = "Format")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 17)]
 		public override string ToString()
 		{
@@ -59,13 +57,13 @@ public abstract class MB2_TexturePacker
 
 		public int y;
 
-		[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsMultiAtlasVertical")]
-		[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsMultiAtlasHorizontal")]
-		[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsSingleAtlas")]
 		[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsSingleAtlas")]
 		[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsMultiAtlas")]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsSingleAtlas")]
+		[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsMultiAtlasVertical")]
+		[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsMultiAtlasHorizontal")]
 		[CallerCount(Count = 5)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public Image(int id, int tw, int th, AtlasPadding padding, int minImageSizeX, int minImageSizeY)
 		{
 		}
@@ -84,11 +82,11 @@ public abstract class MB2_TexturePacker
 		[CallsUnknownMethods(Count = 1)]
 		public int Compare(Image x, Image y)
 		{
-			return default(int);
+			return 0;
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public ImgIDComparer()
 		{
 		}
@@ -100,11 +98,11 @@ public abstract class MB2_TexturePacker
 		[CallsUnknownMethods(Count = 1)]
 		public int Compare(Image x, Image y)
 		{
-			return default(int);
+			return 0;
 		}
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public ImageHeightComparer()
 		{
 		}
@@ -116,11 +114,11 @@ public abstract class MB2_TexturePacker
 		[CallsUnknownMethods(Count = 1)]
 		public int Compare(Image x, Image y)
 		{
-			return default(int);
+			return 0;
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public ImageWidthComparer()
 		{
 		}
@@ -132,11 +130,11 @@ public abstract class MB2_TexturePacker
 		[CallsUnknownMethods(Count = 1)]
 		public int Compare(Image x, Image y)
 		{
-			return default(int);
+			return 0;
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public ImageAreaComparer()
 		{
 		}
@@ -146,79 +144,61 @@ public abstract class MB2_TexturePacker
 
 	public bool atlasMustBePowerOfTwo;
 
-	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
 	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsSingleAtlas")]
 	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsMultiAtlas")]
-	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsMultiAtlas")]
-	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsMultiAtlas")]
-	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsMultiAtlas")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public static int RoundToNearestPositivePowerOfTwo(int x)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsMultiAtlasHorizontal")]
+	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "ProbeSingleAtlas")]
+	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsSingleAtlas")]
+	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsMultiAtlas")]
+	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsSingleAtlas")]
 	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsMultiAtlasVertical")]
-	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsSingleAtlas")]
-	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsSingleAtlas")]
-	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsMultiAtlas")]
-	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsMultiAtlas")]
-	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsSingleAtlas")]
-	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsSingleAtlas")]
-	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsSingleAtlas")]
-	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "ProbeSingleAtlas")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsMultiAtlasHorizontal")]
 	[CallerCount(Count = 12)]
-	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsSingleAtlas")]
-	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "ProbeSingleAtlas")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public static int CeilToNearestPowerOfTwo(int x)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 121780)]
-	[DeduplicatedMethod]
 	public abstract AtlasPackingResult[] GetRects(List<Vector2> imgWidthHeights, int maxDimensionX, int maxDimensionY, int padding);
 
-	[CallerCount(Count = 121780)]
-	[DeduplicatedMethod]
 	public abstract AtlasPackingResult[] GetRects(List<Vector2> imgWidthHeights, List<AtlasPadding> paddings, int maxDimensionX, int maxDimensionY, bool doMultiAtlas);
 
-	[CallerCount(Count = 4)]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsMultiAtlasHorizontal")]
-	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsMultiAtlasVertical")]
 	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsSingleAtlas")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
 	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsSingleAtlas")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsMultiAtlasVertical")]
+	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsMultiAtlasHorizontal")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsUnknownMethods(Count = 4)]
 	internal bool ScaleAtlasToFitMaxDim(Vector2 rootWH, List<Image> images, int maxDimensionX, int maxDimensionY, AtlasPadding padding, int minImageSizeX, int minImageSizeY, int masterImageSizeX, int masterImageSizeY, ref int outW, ref int outH, out float padX, out float padY, out int newMinSizeX, out int newMinSizeY)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref padX) = null;
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref padY) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref newMinSizeX) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref newMinSizeY) = null;
-		return default(bool);
+		padX = default(float);
+		padY = default(float);
+		newMinSizeX = default(int);
+		newMinSizeY = default(int);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsMultiAtlasHorizontal")]
 	[CalledBy(Type = typeof(MB2_TexturePackerRegular), Member = "_GetRectsMultiAtlas")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsMultiAtlasVertical")]
+	[CalledBy(Type = typeof(MB2_TexturePackerHorizontalVert), Member = "_GetRectsMultiAtlasHorizontal")]
+	[CallerCount(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	public void normalizeRects(AtlasPackingResult rr, AtlasPadding padding)
 	{
 	}

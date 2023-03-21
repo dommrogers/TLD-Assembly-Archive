@@ -9,9 +9,9 @@ public class ColorPalettePreset : ScriptableObject
 {
 	public effectPreset preset;
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public ColorPalettePreset()
 	{
 	}

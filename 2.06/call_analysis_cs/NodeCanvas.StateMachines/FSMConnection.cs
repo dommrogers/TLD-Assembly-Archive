@@ -10,13 +10,13 @@ public class FSMConnection : Connection, ITaskAssignable<ConditionTask>, ITaskAs
 	public ConditionTask condition
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 58)]
+		[CallerCount(Count = 61)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 36)]
+		[CallerCount(Count = 38)]
 		set
 		{
 		}
@@ -25,7 +25,7 @@ public class FSMConnection : Connection, ITaskAssignable<ConditionTask>, ITaskAs
 	public Task task
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 58)]
+		[CallerCount(Count = 61)]
 		get
 		{
 			return null;
@@ -44,8 +44,8 @@ public class FSMConnection : Connection, ITaskAssignable<ConditionTask>, ITaskAs
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public FSMConnection()
 	{
 	}

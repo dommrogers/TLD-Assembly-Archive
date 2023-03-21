@@ -15,12 +15,12 @@ public class JumpLoadThread
 
 	private bool m_Cancel;
 
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(Thread), Member = "set_IsBackground")]
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Thread), Member = "SetStartHelper")]
+	[Calls(Type = typeof(Thread), Member = "set_IsBackground")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public JumpLoadThread(JumpLoadCompleteDelegate onComplete)
 	{
 	}
@@ -40,14 +40,14 @@ public class JumpLoadThread
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(JumpData), Member = "LoadFromFile")]
-	[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
-	[Calls(Type = typeof(Path), Member = "GetExtension")]
-	[Calls(Type = typeof(JumpManager), Member = "GetDataPath")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(JumpManager), Member = "GetDataPath")]
 	[Calls(Type = typeof(Directory), Member = "GetFiles")]
+	[Calls(Type = typeof(Path), Member = "GetExtension")]
+	[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
+	[Calls(Type = typeof(JumpData), Member = "LoadFromFile")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void ExecuteSingleThreaded()
 	{
 	}

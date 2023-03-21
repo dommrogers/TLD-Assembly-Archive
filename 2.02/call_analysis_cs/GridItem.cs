@@ -51,8 +51,8 @@ public class GridItem : MonoBehaviour
 
 	private int m_SelectionIndex;
 
-	[CalledBy(Type = typeof(GridUI), Member = "InitializeNewItem")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(GridUI), Member = "InitializeNewItem")]
 	[CallerCount(Count = 1)]
 	public void Initialize(GridUI gridUi)
 	{
@@ -68,7 +68,7 @@ public class GridItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public int GetSelectionIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -76,20 +76,17 @@ public class GridItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 19)]
 	[CalledBy(Type = typeof(GridUI), Member = "RefreshTable")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(GridUI), Member = "MoveSelectedSpriteAndTween")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[CalledBy(Type = typeof(GridUI), Member = "RefreshTable")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIButtonColor), Member = "UpdateColor")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIButtonColor), Member = "UpdateColor")]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UIButtonColor), Member = "UpdateColor")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[Calls(Type = typeof(GridUI), Member = "MoveSelectedSpriteAndTween")]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 19)]
 	public void ToggleSelection(bool toggleVal)
 	{
 	}
@@ -98,11 +95,11 @@ public class GridItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsSelected()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public GridItem()
 	{
 	}

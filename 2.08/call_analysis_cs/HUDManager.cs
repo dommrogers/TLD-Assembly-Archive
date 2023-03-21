@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 using Audio.SimpleAudio;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Logging;
+using TLD.SaveState;
 using TLD.Scenes;
 using TLD.Serialization;
 using TLD.UI.Generics;
@@ -27,7 +28,7 @@ public class HUDManager : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -38,16 +39,16 @@ public class HUDManager : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CWaitToShowLocationReveal_003Ed__27(int _003C_003E1__state)
 		{
 		}
@@ -59,27 +60,27 @@ public class HUDManager : MonoBehaviour
 		{
 		}
 
-		[Calls(Type = typeof(Log), Member = "AddLocation")]
-		[Calls(Type = typeof(Localization), Member = "Get")]
-		[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Panel_HUD), Member = "ShowLocationReveal")]
-		[Calls(Type = typeof(MusicEventManager), Member = "PlayLocationSound")]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[Calls(Type = typeof(SceneSet), Member = "get_LocalizedRegionGroupName")]
-		[Calls(Type = typeof(Localization), Member = "Get")]
-		[Calls(Type = typeof(SaveGameSystem), Member = "IsRestoreInProgress")]
-		[Calls(Type = typeof(SaveGameSlots), Member = "HasFilenameInSlot")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(SaveGameSystem), Member = "IsRestoreInProgress")]
+		[Calls(Type = typeof(Localization), Member = "Get")]
+		[Calls(Type = typeof(SceneSet), Member = "get_LocalizedRegionGroupName")]
+		[Calls(Type = typeof(SaveGameSlots), Member = "HasFilenameInSlot")]
+		[Calls(Type = typeof(MusicEventManager), Member = "PlayLocationSound")]
+		[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+		[Calls(Type = typeof(Log), Member = "AddLocation")]
+		[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+		[Calls(Type = typeof(Panel_HUD), Member = "ShowLocationReveal")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 4)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -124,22 +125,24 @@ public class HUDManager : MonoBehaviour
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudSize")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
+	[CallsUnknownMethods(Count = 1)]
 	public IEnumerator Start()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
 	[Calls(Type = typeof(Panel_HUD), Member = "RefreshHudDisplayMode")]
 	[Calls(Type = typeof(HUDManager), Member = "UpdateDebugLines")]
 	[Calls(Type = typeof(HUDManager), Member = "UpdateCrosshair")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Update()
 	{
@@ -151,9 +154,9 @@ public class HUDManager : MonoBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static string Serialize()
 	{
 		return null;
@@ -165,107 +168,54 @@ public class HUDManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(MissionTimer), Member = "GetDebugText")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(PhoneManager), Member = "GetDebugText")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(BearHuntRedux), Member = "GetDebugText")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(HUDManager), Member = "Update")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(PlayAudioSimpleManager), Member = "GetDebugText")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetDebugDialogueText")]
-	[CallsUnknownMethods(Count = 53)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(TerrainRenderingManager), Member = "GetDebugText")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Vector3), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Vector3), Member = "ToString")]
+	[Calls(Type = typeof(float), Member = "ToString")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
 	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(string), Member = "EndsWith")]
+	[Calls(Type = typeof(string), Member = "Substring")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Camera), Member = "get_fieldOfView")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "GetWeaponCamera")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Camera), Member = "get_fieldOfView")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
 	[Calls(Type = typeof(Weather), Member = "GetDebugWeatherText")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(Camera), Member = "get_fieldOfView")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "GetWeaponCamera")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetDebugDialogueText")]
+	[Calls(Type = typeof(BearHuntRedux), Member = "GetDebugText")]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(PhoneManager), Member = "GetDebugText")]
+	[Calls(Type = typeof(MissionTimer), Member = "GetDebugText")]
+	[Calls(Type = typeof(PlayAudioSimpleManager), Member = "GetDebugText")]
+	[Calls(Type = typeof(TerrainRenderingManager), Member = "GetDebugText")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 52)]
 	public void UpdateDebugLines(Panel_HUD hud)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateHUDText")]
-	[CalledBy(Type = typeof(HUDManager), Member = "ShouldHideCrossHairs")]
-	[CalledBy(Type = typeof(HUDManager), Member = "UpdateCrosshair")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePopupPanels")]
 	[CalledBy(Type = typeof(HUDObjectives), Member = "Dequeue")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateVistaNotification")]
 	[CalledBy(Type = typeof(HUDTutorial), Member = "Dequeue")]
-	[CallerCount(Count = 8)]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateVistaNotification")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateSurvivalTimeLabel")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePopupPanels")]
+	[CalledBy(Type = typeof(HUDManager), Member = "UpdateCrosshair")]
+	[CalledBy(Type = typeof(HUDManager), Member = "ShouldHideCrossHairs")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateHUDText")]
+	[CallerCount(Count = 8)]
 	public static bool DoNotRenderHUD()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 22)]
@@ -273,51 +223,48 @@ public class HUDManager : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowItemIcons")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "Reload")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowItemIcons")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void DisplayAmmoOnHUDForTime(float seconds)
 	{
 	}
 
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[CallsUnknownMethods(Count = 22)]
 	[CalledBy(Type = typeof(HUDManager), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(HUDManager), Member = "DoNotRenderHUD")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsZooming")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "ShouldSuppressCrosshairs")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "CanPlaceMeshImmediately")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "ShouldSuppressCrosshairs")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsZooming")]
-	[Calls(Type = typeof(HUDManager), Member = "DoNotRenderHUD")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 22)]
 	private void UpdateCrosshair(Panel_HUD hud)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsZooming")]
-	[Calls(Type = typeof(HUDManager), Member = "DoNotRenderHUD")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(HUDManager), Member = "DoNotRenderHUD")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsZooming")]
+	[CallsUnknownMethods(Count = 4)]
 	private bool ShouldHideCrossHairs(Panel_HUD hud)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	private bool CanEnableHud()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[IteratorStateMachine(typeof(_003CWaitToShowLocationReveal_003Ed__27))]
@@ -328,11 +275,11 @@ public class HUDManager : MonoBehaviour
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MusicEventManager), Member = "PlayLocationSound")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
 	[Calls(Type = typeof(Log), Member = "AddLocation")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(MusicEventManager), Member = "PlayLocationSound")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
 	private void TrackIndoorLocation(string location, bool isLocationNew)
 	{
 	}
@@ -342,7 +289,7 @@ public class HUDManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool CheckIfLoadingNewLocation()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

@@ -17,11 +17,10 @@ public class CameraPathSpeedList : CameraPathPointList
 	public new CameraPathSpeed Item
 	{
 		[CalledBy(Type = typeof(CameraPathSpeedList), Member = "GetLowesetSpeed")]
-		[Calls(Type = typeof(CameraPathPointList), Member = "get_Item")]
-		[CalledBy(Type = typeof(CameraPathSpeedList), Member = "GetLowesetSpeed")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(CameraPathPointList), Member = "get_Item")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -30,11 +29,11 @@ public class CameraPathSpeedList : CameraPathPointList
 
 	public bool listEnabled
 	{
-		[Calls(Type = typeof(CameraPathPointList), Member = "get_realNumberOfPoints")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(CameraPathPointList), Member = "get_realNumberOfPoints")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 2)]
@@ -43,82 +42,81 @@ public class CameraPathSpeedList : CameraPathPointList
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CameraPathPointList), Member = "Init")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public override void Init(CameraPath _cameraPath)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 4)]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
 	[Calls(Type = typeof(CameraPathPointList), Member = "AddPoint")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public void AddSpeedPoint(CameraPathControlPoint atPoint)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(CameraPathPointList), Member = "AddPoint")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(CameraPathPointList), Member = "AddPoint")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public CameraPathSpeed AddSpeedPoint(CameraPathControlPoint curvePointA, CameraPathControlPoint curvePointB, float curvePercetage)
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CameraPathSpeedList), Member = "get_Item")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(CameraPathSpeedList), Member = "get_Item")]
 	public float GetLowesetSpeed()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(CameraPathAnimator), Member = "UpdateAnimation")]
-	[CalledBy(Type = typeof(CameraPath), Member = "GetPathSpeed")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetPathSpeed")]
+	[CalledBy(Type = typeof(CameraPathAnimator), Member = "UpdateAnimation")]
 	[CallerCount(Count = 2)]
 	public float GetSpeed(float percentage)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(CameraPathPointList), Member = "GetPoint")]
-	[Calls(Type = typeof(CameraPathPointList), Member = "GetLastPointIndex")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPathPointList), Member = "GetLastPointIndex")]
 	[Calls(Type = typeof(CameraPathPointList), Member = "GetPoint")]
-	[CallsUnknownMethods(Count = 8)]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private float LinearInterpolation(float percentage)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(CameraPathPointList), Member = "GetPoint")]
-	[Calls(Type = typeof(CameraPathPointList), Member = "GetPoint")]
-	[Calls(Type = typeof(CameraPathPointList), Member = "GetLastPointIndex")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPathPointList), Member = "GetLastPointIndex")]
+	[Calls(Type = typeof(CameraPathPointList), Member = "GetPoint")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	private float SmoothStepInterpolation(float percentage)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(CameraPathPointList), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPathPointList), Member = ".ctor")]
 	public CameraPathSpeedList()
 	{
 	}

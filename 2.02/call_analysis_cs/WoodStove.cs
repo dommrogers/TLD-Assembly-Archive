@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -18,15 +19,17 @@ public class WoodStove : MonoBehaviour
 	private ObjectAnim m_ObjectAnim;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 3)]
 	public void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(WoodStove), Member = "Close")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(WoodStove), Member = "Close")]
 	private void Update()
 	{
 	}
@@ -35,94 +38,94 @@ public class WoodStove : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsOpen()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessWoodStoveInteraction")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ObjectAnim), Member = "Play")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuOpen")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessWoodStoveInteraction")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	public bool Open()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Fire), Member = "ExitFireStarting")]
+	[CalledBy(Type = typeof(WoodStove), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_FeedFire), Member = "ExitFeedFireInterface")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "MaybeCloseFireContainer")]
-	[CalledBy(Type = typeof(WoodStove), Member = "Update")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessWoodStoveInteraction")]
-	[CalledBy(Type = typeof(Fire), Member = "ExitFireStarting")]
-	[Calls(Type = typeof(ObjectAnim), Member = "Play")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuClose")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ObjectAnim), Member = "Play")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuClose")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Close()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessWoodStoveInteraction")]
-	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "MaybeUpdateWoodStove")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(WoodStove), Member = "GetHoverText")]
+	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "MaybeUpdateWoodStove")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessWoodStoveInteraction")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool FireBurningInside()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Fire), Member = "GetRemainingLifeTimeSeconds")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetMinutesLeftToBurn()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 29)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayText")]
-	[Calls(Type = typeof(Fire), Member = "GetHeatIncreaseText")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Fire), Member = "GetHeatIncreaseText")]
-	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
-	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[Calls(Type = typeof(Fire), Member = "GetRemainingLifeTimeSeconds")]
-	[Calls(Type = typeof(WoodStove), Member = "FireBurningInside")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(WoodStove), Member = "FireBurningInside")]
+	[Calls(Type = typeof(Fire), Member = "GetRemainingLifeTimeSeconds")]
+	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
+	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
+	[Calls(Type = typeof(Fire), Member = "GetHeatIncreaseText")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 29)]
 	public string GetHoverText()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 8)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 9)]
 	public Fire GetFire()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool HasAnimation()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

@@ -139,60 +139,62 @@ public class Panel_LeanToInteract : Panel_AutoReferenced, IAccelerateTimeProvide
 	private MaterialPropertyBlock m_RedTintMaterialPropertyBlock;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 15)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 13)]
 	[CallsUnknownMethods(Count = 53)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdateCurrentCaloriesLabel")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdateConditionLabel")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "OnInteract")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdatePanelDisplays")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdateMainWindowNavigation")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "InteractionFinished")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "OnCancel")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "ExitInterface")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdateEstimatedCaloriesBurnedLabel")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
 	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdateMainWindowNavigation")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "NeedsRepair")]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "HasMaterialsForRepair")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "MaybeUpdateRotationAction")]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "GetTaskDurationInHours")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "NeedsRepair")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdateEstimatedCaloriesBurnedLabel")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdateCurrentCaloriesLabel")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdateConditionLabel")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdatePanelDisplays")]
+	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "OnInteract")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdateButtonLegend")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "InteractionFinished")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "OnCancel")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "ExitInterface")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "RefreshMainWindow")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PanViewCamera), Member = "ReattachToPlayer")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "RefreshMainWindow")]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public override void Enable(bool enable)
 	{
 	}
@@ -203,14 +205,13 @@ public class Panel_LeanToInteract : Panel_AutoReferenced, IAccelerateTimeProvide
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "ExitInterface")]
-	[Calls(Type = typeof(LeanToManager), Member = "EnterLeanTo")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "OnInteractionCommon")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "GetButtonChoiceFromIndex")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "GetButtonChoiceFromIndex")]
+	[Calls(Type = typeof(LeanToManager), Member = "EnterLeanTo")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "ExitInterface")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "OnInteractionCommon")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnUse()
 	{
 	}
@@ -227,16 +228,16 @@ public class Panel_LeanToInteract : Panel_AutoReferenced, IAccelerateTimeProvide
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "OnInteractionCommon")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnDismantle()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "OnInteractionCommon")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "OnInteractionCommon")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnRotate()
 	{
 	}
@@ -245,145 +246,140 @@ public class Panel_LeanToInteract : Panel_AutoReferenced, IAccelerateTimeProvide
 	[CallerCount(Count = 0)]
 	public bool IsTimeAccelerated()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool IsRepairing()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsDismantling()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsRotating()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshMainWindow")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "InteractionFinished")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnCancel")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnUse")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "CleanUpPlaceMesh")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 14)]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnUse")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnCancel")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "InteractionFinished")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshMainWindow")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(PlayerManager), Member = "CleanUpPlaceMesh")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 10)]
 	private void ExitInterface()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateMainWindowNavigation")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Update")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "ExitInterface")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateMainWindowNavigation")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "ExitInterface")]
 	public void OnCancel()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Update")]
+	[CallerCount(Count = 1)]
 	public void OnInteract()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnRotate")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnDismantle")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnRepair")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnUse")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnRepair")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnDismantle")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnRotate")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "GetTaskDurationInHours")]
 	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnInteractionCommon(string audioEvent)
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuClose")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "ExitInterface")]
-	[Calls(Type = typeof(PlayerManager), Member = "CleanUpPlaceMesh")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Update")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(LeanTo), Member = "Destroy")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
 	[Calls(Type = typeof(LeanTo), Member = "DismantleFinished")]
+	[Calls(Type = typeof(LeanTo), Member = "Destroy")]
+	[Calls(Type = typeof(PlayerManager), Member = "CleanUpPlaceMesh")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuClose")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "ExitInterface")]
+	[CallsUnknownMethods(Count = 3)]
 	private void InteractionFinished()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "GetTaskDurationInHours")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "GetTaskDurationInHours")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateDurationLabel()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Update")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "GetButtonChoiceFromIndex")]
+	[Calls(Type = typeof(PlayerManager), Member = "CalculateModifiedCalorieBurnRate")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "GetTaskDurationInHours")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "GetTaskDurationInHours")]
-	[Calls(Type = typeof(PlayerManager), Member = "CalculateModifiedCalorieBurnRate")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "GetButtonChoiceFromIndex")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateEstimatedCaloriesBurnedLabel()
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 10)]
 	private void UpdateCurrentCaloriesLabel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Update")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateConditionLabel()
 	{
 	}
@@ -391,69 +387,65 @@ public class Panel_LeanToInteract : Panel_AutoReferenced, IAccelerateTimeProvide
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	private string GetSignedInt(int value)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 4)]
 	private string GetSignedPercentage(float value)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Update")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "GetButtonChoiceFromIndex")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "NeedsRepair")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "HasMaterialsForRepair")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "NeedsRepair")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "GetButtonChoiceFromIndex")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "HasMaterialsForRepair")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateButtonLegend()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Enable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "ExitInterface")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(Panel_Inventory_Examine_MenuItem), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdatePanelDisplays")]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 11)]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdatePanelDisplays")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "SelectButton")]
+	[Calls(Type = typeof(Panel_Inventory_Examine_MenuItem), Member = "Update")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "ExitInterface")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 11)]
 	public void RefreshMainWindow()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnSelectRotateButton")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnSelectDismantleButton")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateMainWindowNavigation")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnSelectRepairButton")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshMainWindow")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnSelectUseButton")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnSelectRepairButton")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnSelectDismantleButton")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnSelectRotateButton")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateMainWindowNavigation")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "CameraPan")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SelectButton(int index)
 	{
 	}
@@ -472,9 +464,9 @@ public class Panel_LeanToInteract : Panel_AutoReferenced, IAccelerateTimeProvide
 	{
 	}
 
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "SelectButton")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "SelectButton")]
 	public void OnSelectDismantleButton()
 	{
 	}
@@ -486,148 +478,127 @@ public class Panel_LeanToInteract : Panel_AutoReferenced, IAccelerateTimeProvide
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "OnCancel")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "SelectButton")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "SelectButton")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "OnCancel")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateMainWindowNavigation()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateUseButton()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateDismantleButton()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void UpdateRotateButton()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "NeedsRepair")]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "HasMaterialsForRepair")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	private void UpdateRepairButton()
 	{
 	}
 
-	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshMainWindow")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "RefreshDismantlePanel")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "GetButtonChoiceFromIndex")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "GetButtonChoiceFromIndex")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "RefreshDismantlePanel")]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "NeedsRepair")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdatePanelDisplays()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdatePanelDisplays")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(LeanToManager), Member = "GetNumSticksInInventory")]
+	[Calls(Type = typeof(LeanToManager), Member = "GetNumBranchesInInventory")]
+	[Calls(Type = typeof(LeanTo), Member = "GetNumSticksToRepair")]
+	[Calls(Type = typeof(LeanTo), Member = "GetNumBranchesToRepair")]
 	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdateRequiredMaterialsObject")]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdateRequiredMaterialsObject")]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "NeedsRepair")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "HasMaterialsForRepair")]
-	[Calls(Type = typeof(LeanTo), Member = "GetNumBranchesToRepair")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(LeanToManager), Member = "GetNumBranchesInInventory")]
-	[Calls(Type = typeof(LeanToManager), Member = "GetNumSticksInInventory")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdatePanelDisplays")]
-	[Calls(Type = typeof(LeanTo), Member = "GetNumSticksToRepair")]
 	[CallsUnknownMethods(Count = 5)]
 	private void RefreshRepairPanel()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshDismantlePanel")]
-	[CallsUnknownMethods(Count = 6)]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshDismantlePanel")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
 	[Calls(Type = typeof(HarvestRepairMaterial), Member = "ShowItem")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateRequiredMaterialsObject(int index, float spacingVal, GearItem gi, int count, bool hasItem)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdatePanelDisplays")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdateRequiredMaterialsObject")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdateRequiredMaterialsObject")]
-	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
-	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "UpdateRequiredMaterialsObject")]
+	[CallsUnknownMethods(Count = 4)]
 	private void RefreshDismantlePanel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Transform), Member = "Rotate")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "InputControlRotate")]
+	[Calls(Type = typeof(Transform), Member = "Rotate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void RotatePlaceMesh()
 	{
 	}
@@ -641,79 +612,66 @@ public class Panel_LeanToInteract : Panel_AutoReferenced, IAccelerateTimeProvide
 
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "MaybeUpdateRotationAction")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "MaybeInitializePropertyBlocks")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "MaybeInitializePropertyBlocks")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void TintObject(GameObject go, bool isValid)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void RestoreOriginalTint(GameObject go)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "TintObject")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "GetPropertyBlockForMeshLocationCategory")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "MaybeUpdateRotationAction")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "TintObject")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetColor")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "MaybeUpdateRotationAction")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetColor")]
+	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 13)]
 	private void MaybeInitializePropertyBlocks()
 	{
 	}
 
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Update")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 27)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "GetButtonChoiceFromIndex")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Transform), Member = "get_rotation")]
 	[Calls(Type = typeof(Utils), Member = "InputControlRotate")]
 	[Calls(Type = typeof(Transform), Member = "Rotate")]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "MaybeInitializePropertyBlocks")]
 	[Calls(Type = typeof(PlayerManager), Member = "IsPlacementPositionValid")]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "TintObject")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[CallsDeduplicatedMethods(Count = 27)]
+	[CallsUnknownMethods(Count = 15)]
 	private void MaybeUpdateRotationAction()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateDurationLabel")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateEstimatedCaloriesBurnedLabel")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnInteractionCommon")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateDurationLabel")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateEstimatedCaloriesBurnedLabel")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Panel_LeanToInteract), Member = "GetButtonChoiceFromIndex")]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Update")]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetTaskDurationInHours()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -721,84 +679,78 @@ public class Panel_LeanToInteract : Panel_AutoReferenced, IAccelerateTimeProvide
 	[CallsUnknownMethods(Count = 4)]
 	private float GetCalorieBurnRate()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnUse")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateEstimatedCaloriesBurnedLabel")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "GetTaskDurationInHours")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "MaybeUpdateRotationAction")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdatePanelDisplays")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateButtonLegend")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdatePanelDisplays")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "MaybeUpdateRotationAction")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "GetTaskDurationInHours")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "GetCalorieBurnRate")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnUse")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnUse")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	private ButtonChoice GetButtonChoiceFromIndex(int index)
 	{
 		return default(ButtonChoice);
 	}
 
-	[CallsUnknownMethods(Count = 20)]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "SelectButton")]
-	[Calls(Type = typeof(PanViewCamera), Member = "PanToTransform")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Utils), Member = "FindChildRecursive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(PanViewCamera), Member = "PanToTransform")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 20)]
 	private void CameraPan(int index)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "HasMaterialsForRepair")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdatePanelDisplays")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateRepairButton")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateButtonLegend")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Update")]
-	[Calls(Type = typeof(LeanTo), Member = "GetNumBranchesToRepair")]
-	[Calls(Type = typeof(LeanTo), Member = "GetNumSticksToRepair")]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnRepair")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateButtonLegend")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateRepairButton")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdatePanelDisplays")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "HasMaterialsForRepair")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(LeanTo), Member = "GetNumSticksToRepair")]
+	[Calls(Type = typeof(LeanTo), Member = "GetNumBranchesToRepair")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool NeedsRepair()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateRepairButton")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateButtonLegend")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Update")]
-	[Calls(Type = typeof(GearItemObjectExtensions), Member = "NumGearInList")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "OnRepair")]
-	[Calls(Type = typeof(GearItemObjectExtensions), Member = "NumGearInList")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(LeanTo), Member = "GetNumBranchesToRepair")]
-	[Calls(Type = typeof(LeanTo), Member = "GetNumSticksToRepair")]
-	[Calls(Type = typeof(Panel_LeanToInteract), Member = "NeedsRepair")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateButtonLegend")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateRepairButton")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Panel_LeanToInteract), Member = "NeedsRepair")]
+	[Calls(Type = typeof(LeanTo), Member = "GetNumSticksToRepair")]
+	[Calls(Type = typeof(LeanTo), Member = "GetNumBranchesToRepair")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(GearItemObjectExtensions), Member = "NumGearInList")]
+	[CallsUnknownMethods(Count = 3)]
 	private bool HasMaterialsForRepair()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsAcceleratingTime()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	public string GetActionText()
 	{
@@ -818,8 +770,8 @@ public class Panel_LeanToInteract : Panel_AutoReferenced, IAccelerateTimeProvide
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public UIWidget GetWidgetToFade()
 	{
 		return null;

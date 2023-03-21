@@ -60,7 +60,7 @@ public class UICamera : MonoBehaviour
 				return null;
 			}
 			[DeduplicatedMethod]
-			[CallerCount(Count = 60)]
+			[CallerCount(Count = 69)]
 			set
 			{
 			}
@@ -68,14 +68,14 @@ public class UICamera : MonoBehaviour
 
 		public GameObject pressed
 		{
-			[CallerCount(Count = 9)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 11)]
 			get
 			{
 				return null;
 			}
 			[DeduplicatedMethod]
-			[CallerCount(Count = 13)]
+			[CallerCount(Count = 26)]
 			set
 			{
 			}
@@ -83,24 +83,24 @@ public class UICamera : MonoBehaviour
 
 		public float deltaTime
 		{
-			[CallsUnknownMethods(Count = 1)]
 			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(float);
+				return 0f;
 			}
 		}
 
 		public bool isOverUI
 		{
-			[CallerCount(Count = 1)]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[CalledBy(Type = typeof(UICamera), Member = "get_isOverUI")]
+			[CallerCount(Count = 1)]
+			[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
 			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(bool);
+				return false;
 			}
 		}
 
@@ -161,8 +161,8 @@ public class UICamera : MonoBehaviour
 
 		public int tapCount;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public Touch()
 		{
 		}
@@ -191,14 +191,14 @@ public class UICamera : MonoBehaviour
 		[CallerCount(Count = 0)]
 		internal int _003CRaycast_003Eb__132_0(DepthEntry r1, DepthEntry r2)
 		{
-			return default(int);
+			return 0;
 		}
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		internal int _003CRaycast_003Eb__132_1(DepthEntry r1, DepthEntry r2)
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -380,7 +380,7 @@ public class UICamera : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -400,12 +400,12 @@ public class UICamera : MonoBehaviour
 
 	public static Ray currentRay
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallsUnknownMethods(Count = 2)]
-		[CallerCount(Count = 3)]
-		[CalledBy(Type = typeof(UIInput), Member = "GetCharUnderMouse")]
 		[CalledBy(Type = typeof(UIDragResize), Member = "OnDragStart")]
 		[CalledBy(Type = typeof(UIDragResize), Member = "OnDrag")]
+		[CalledBy(Type = typeof(UIInput), Member = "GetCharUnderMouse")]
+		[CallerCount(Count = 3)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return default(Ray);
@@ -427,38 +427,32 @@ public class UICamera : MonoBehaviour
 
 	private bool handlesEvents
 	{
-		[CalledBy(Type = typeof(UICamera), Member = "Update")]
 		[CalledBy(Type = typeof(UICamera), Member = "Start")]
-		[Calls(Type = typeof(UICamera), Member = "get_eventHandler")]
-		[CallerCount(Count = 3)]
-		[CallsUnknownMethods(Count = 1)]
+		[CalledBy(Type = typeof(UICamera), Member = "Update")]
 		[CalledBy(Type = typeof(UICamera), Member = "LateUpdate")]
+		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(UICamera), Member = "get_eventHandler")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public Camera cachedCamera
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(UIKeyNavigation), Member = "GetCenter")]
 		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
 		[CalledBy(Type = typeof(NGUITools), Member = "FindCameraForLayer")]
 		[CalledBy(Type = typeof(UICamera), Member = "set_selectedObject")]
-		[CalledBy(Type = typeof(UICamera), Member = "CompareFunc")]
 		[CalledBy(Type = typeof(UICamera), Member = "get_mainCamera")]
 		[CalledBy(Type = typeof(UICamera), Member = "CompareFunc")]
-		[CalledBy(Type = typeof(UICamera), Member = "CompareFunc")]
-		[CalledBy(Type = typeof(UICamera), Member = "CompareFunc")]
-		[CalledBy(Type = typeof(UIInput), Member = "Update")]
-		[CalledBy(Type = typeof(UIInput), Member = "Update")]
-		[CalledBy(Type = typeof(UICamera), Member = "Start")]
-		[CalledBy(Type = typeof(UICamera), Member = "Start")]
-		[CalledBy(Type = typeof(UICamera), Member = "Start")]
-		[CalledBy(Type = typeof(UICamera), Member = "FindCameraForLayer")]
 		[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
+		[CalledBy(Type = typeof(UICamera), Member = "FindCameraForLayer")]
+		[CalledBy(Type = typeof(UICamera), Member = "Start")]
+		[CalledBy(Type = typeof(UIInput), Member = "Update")]
 		[CallerCount(Count = 16)]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
 		get
 		{
 			return null;
@@ -472,18 +466,11 @@ public class UICamera : MonoBehaviour
 		{
 			return null;
 		}
-		[CalledBy(Type = typeof(UICamera), Member = "ProcessMouse")]
 		[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
 		[CalledBy(Type = typeof(UICamera), Member = "ProcessMouse")]
 		[CalledBy(Type = typeof(UICamera), Member = "ProcessTouches")]
-		[CalledBy(Type = typeof(UICamera), Member = "ProcessTouches")]
 		[CalledBy(Type = typeof(UICamera), Member = "ProcessFakeTouches")]
-		[CalledBy(Type = typeof(UICamera), Member = "ProcessFakeTouches")]
-		[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
-		[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
-		[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
 		[CallerCount(Count = 11)]
-		[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
 		set
 		{
 		}
@@ -491,51 +478,64 @@ public class UICamera : MonoBehaviour
 
 	public static bool isOverUI
 	{
-		[CallsUnknownMethods(Count = 4)]
 		[CalledBy(Type = typeof(InspectGearController), Member = "Update")]
-		[Calls(Type = typeof(MouseOrTouch), Member = "get_isOverUI")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
+		[Calls(Type = typeof(MouseOrTouch), Member = "get_isOverUI")]
+		[CallsUnknownMethods(Count = 4)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public static GameObject selectedObject
 	{
-		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
+		[CalledBy(Type = typeof(UIButton), Member = "OnEnable")]
+		[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnEnable")]
+		[CalledBy(Type = typeof(UIPlayAnimation), Member = "Play")]
+		[CalledBy(TypeFullName = "UIPopupList.<CloseIfUnselected>d__94", Member = "MoveNext")]
 		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
 		[CalledBy(Type = typeof(UICamera), Member = "set_selectedObject")]
 		[CalledBy(Type = typeof(UICamera), Member = "IsHighlighted")]
 		[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
-		[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
 		[CalledBy(Type = typeof(Panel_Log), Member = "MaybeUpdateRockCacheNoteView")]
 		[CalledBy(Type = typeof(UtilsPanelChoose), Member = "ProcessMenu")]
-		[CalledBy(Type = typeof(UtilsPanelChoose), Member = "ProcessMenu")]
-		[CalledBy(Type = typeof(UtilsPanelChoose), Member = "ProcessMenu")]
 		[CalledBy(Type = typeof(NGUIEventHandler), Member = "OnKeyDelegate")]
-		[CalledBy(Type = typeof(UIPopupList._003CCloseIfUnselected_003Ed__94), Member = "MoveNext")]
-		[CalledBy(Type = typeof(UIPlayAnimation), Member = "Play")]
-		[CalledBy(Type = typeof(UIButton), Member = "OnEnable")]
-		[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnEnable")]
-		[CalledBy(Type = typeof(NGUIEventHandler), Member = "OnKeyDelegate")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[CallerCount(Count = 17)]
-		[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnEnable")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		get
 		{
 			return null;
 		}
-		[CallsDeduplicatedMethods(Count = 4)]
+		[CalledBy(Type = typeof(ChatInput), Member = "OnSubmit")]
+		[CalledBy(Type = typeof(UIKeyBinding), Member = "Update")]
+		[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnEnable")]
+		[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnKey")]
+		[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnClick")]
+		[CalledBy(Type = typeof(UIPlayAnimation), Member = "Play")]
+		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
+		[CalledBy(Type = typeof(UICamera), Member = "Update")]
+		[CalledBy(Type = typeof(UICamera), Member = "ProcessPress")]
+		[CalledBy(Type = typeof(UIInput), Member = "set_isSelected")]
+		[CalledBy(Type = typeof(UIInput), Member = "RemoveFocus")]
+		[CalledBy(Type = typeof(TextInputField), Member = "Update")]
+		[CalledBy(Type = typeof(TextInputField), Member = "Select")]
+		[CalledBy(Type = typeof(Panel_FeedFire), Member = "Enable")]
+		[CalledBy(Type = typeof(Panel_FeedFire), Member = "ShowTab")]
+		[CalledBy(Type = typeof(Panel_FirstAid), Member = "FirstAidItemCallback")]
+		[CalledBy(Type = typeof(Panel_Log), Member = "OnTocItemClicked")]
+		[CalledBy(Type = typeof(Panel_MainMenu), Member = "SetCommunicationButtonsFocus")]
+		[CalledBy(Type = typeof(NGUIEventHandler), Member = "OnKeyDelegate")]
+		[CallerCount(Count = 21)]
 		[Calls(Type = typeof(UICamera), Member = "get_selectedObject")]
 		[Calls(Type = typeof(UICamera), Member = "Notify")]
 		[Calls(Type = typeof(GameObject), Member = "get_layer")]
 		[Calls(Type = typeof(UICamera), Member = "FindCameraForLayer")]
 		[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
-		[Calls(Type = typeof(UICamera), Member = "Notify")]
+		[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 7)]
-		[CallerCount(Count = 21)]
 		set
 		{
 		}
@@ -547,31 +547,29 @@ public class UICamera : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public static int dragCount
 	{
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public static Camera mainCamera
 	{
+		[CalledBy(Type = typeof(UICamera), Member = "SetSchemeOverride")]
 		[CalledBy(Type = typeof(DragDropItem), Member = "OnDragDropMove")]
-		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetLanguage")]
 		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetLanguage")]
 		[CallerCount(Count = 5)]
 		[Calls(Type = typeof(UICamera), Member = "get_eventHandler")]
 		[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
-		[CalledBy(Type = typeof(UICamera), Member = "SetSchemeOverride")]
-		[CalledBy(Type = typeof(UICamera), Member = "SetSchemeOverride")]
 		get
 		{
 			return null;
@@ -580,190 +578,179 @@ public class UICamera : MonoBehaviour
 
 	public static UICamera eventHandler
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(UICamera), Member = "get_mainCamera")]
 		[CalledBy(Type = typeof(UICamera), Member = "get_handlesEvents")]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[CalledBy(Type = typeof(UICamera), Member = "get_mainCamera")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(UIWrapContent), Member = "WrapContent")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(UIWrapContent), Member = "WrapContent")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool IsPressed(GameObject go)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(UIButtonColor), Member = "OnSelect")]
+	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	public static int CountInputSources()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
-	[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
-	[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
-	[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
 	[CallsUnknownMethods(Count = 5)]
 	private static int CompareFunc(UICamera a, UICamera b)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private static Rigidbody FindRootRigidbody(Transform trans)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private static Rigidbody2D FindRootRigidbody2D(Transform trans)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(UIWidget), Member = "get_isVisible")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(UICamera), Member = "set_hoveredObject")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UICamera), Member = "IsVisible")]
-	[Calls(Type = typeof(UICamera), Member = "FindRootRigidbody2D")]
-	[Calls(Type = typeof(Physics), Member = "RaycastAll")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(UIWidget), Member = "get_isVisible")]
-	[Calls(Type = typeof(NGUITools), Member = "CalculateRaycastDepth")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(Plane), Member = "Raycast")]
-	[Calls(Type = typeof(Physics), Member = "Raycast")]
-	[Calls(Type = typeof(UICamera), Member = "set_hoveredObject")]
-	[Calls(Type = typeof(UICamera), Member = "set_hoveredObject")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UICamera), Member = "set_hoveredObject")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UICamera), Member = "FindRootRigidbody")]
 	[CalledBy(Type = typeof(UICamera), Member = "ProcessMouse")]
 	[CalledBy(Type = typeof(UICamera), Member = "ProcessTouches")]
 	[CalledBy(Type = typeof(UICamera), Member = "ProcessFakeTouches")]
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(UICamera), Member = "IsVisible")]
-	[Calls(Type = typeof(Physics2D), Member = "OverlapPoint")]
-	[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
-	[Calls(Type = typeof(UICamera), Member = "IsVisible")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 25)]
 	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-	[Calls(Type = typeof(Plane), Member = "Raycast")]
+	[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
 	[Calls(Type = typeof(Camera), Member = "ScreenPointToRay")]
+	[Calls(Type = typeof(Camera), Member = "get_cullingMask")]
 	[Calls(Type = typeof(Camera), Member = "get_farClipPlane")]
 	[Calls(Type = typeof(Camera), Member = "get_nearClipPlane")]
+	[Calls(Type = typeof(Plane), Member = "Raycast")]
 	[Calls(Type = typeof(Physics2D), Member = "OverlapPointAll")]
-	[Calls(Type = typeof(Camera), Member = "get_cullingMask")]
-	[Calls(Type = typeof(NGUITools), Member = "CalculateRaycastDepth")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
 	[Calls(Type = typeof(UIWidget), Member = "get_isVisible")]
 	[Calls(Type = typeof(UICamera), Member = "IsVisible")]
 	[Calls(Type = typeof(UICamera), Member = "set_hoveredObject")]
-	[Calls(Type = typeof(UIWidget), Member = "get_isVisible")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(NGUITools), Member = "CalculateRaycastDepth")]
+	[Calls(Type = typeof(UICamera), Member = "IsVisible")]
+	[Calls(Type = typeof(Physics2D), Member = "OverlapPoint")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(UICamera), Member = "FindRootRigidbody2D")]
+	[Calls(Type = typeof(Physics), Member = "RaycastAll")]
+	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[Calls(Type = typeof(Physics), Member = "Raycast")]
+	[Calls(Type = typeof(UICamera), Member = "FindRootRigidbody")]
+	[CallsDeduplicatedMethods(Count = 17)]
+	[CallsUnknownMethods(Count = 21)]
 	public static bool Raycast(Vector3 inPos)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UIPanel), Member = "IsVisible")]
-	[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
 	[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
+	[Calls(Type = typeof(UIPanel), Member = "IsVisible")]
 	private static bool IsVisible(Vector3 worldPoint, GameObject go)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UIPanel), Member = "IsVisible")]
+	[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
-	[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
+	[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
+	[Calls(Type = typeof(UIPanel), Member = "IsVisible")]
 	private static bool IsVisible(ref DepthEntry de)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(UIPlayTween), Member = "OnEnable")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnEnable")]
-	[CalledBy(Type = typeof(UIImageButton), Member = "UpdateImage")]
-	[CalledBy(Type = typeof(UIButtonScale), Member = "OnPress")]
-	[CalledBy(Type = typeof(UIButtonRotation), Member = "OnPress")]
-	[CalledBy(Type = typeof(UIButtonRotation), Member = "OnEnable")]
-	[CalledBy(Type = typeof(UIButtonOffset), Member = "OnPress")]
-	[CalledBy(Type = typeof(UIButtonOffset), Member = "OnEnable")]
-	[CalledBy(Type = typeof(UIButtonMessage), Member = "OnEnable")]
-	[CalledBy(Type = typeof(UIButtonScale), Member = "OnEnable")]
-	[Calls(Type = typeof(UICamera), Member = "get_selectedObject")]
-	[CallerCount(Count = 11)]
 	[CalledBy(Type = typeof(UIButtonColor), Member = "OnEnable")]
+	[CalledBy(Type = typeof(UIButtonMessage), Member = "OnEnable")]
+	[CalledBy(Type = typeof(UIButtonOffset), Member = "OnEnable")]
+	[CalledBy(Type = typeof(UIButtonOffset), Member = "OnPress")]
+	[CalledBy(Type = typeof(UIButtonRotation), Member = "OnEnable")]
+	[CalledBy(Type = typeof(UIButtonRotation), Member = "OnPress")]
+	[CalledBy(Type = typeof(UIButtonScale), Member = "OnEnable")]
+	[CalledBy(Type = typeof(UIButtonScale), Member = "OnPress")]
+	[CalledBy(Type = typeof(UIImageButton), Member = "UpdateImage")]
+	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnEnable")]
+	[CalledBy(Type = typeof(UIPlayTween), Member = "OnEnable")]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(UICamera), Member = "get_selectedObject")]
+	[CallsUnknownMethods(Count = 3)]
 	public static bool IsHighlighted(GameObject go)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(UICamera), Member = "set_selectedObject")]
-	[CalledBy(Type = typeof(NGUITools), Member = "AddWidgetCollider")]
-	[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
 	[CalledBy(Type = typeof(UIKeyNavigation), Member = "GetCenter")]
-	[Calls(Type = typeof(Camera), Member = "get_cullingMask")]
-	[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
+	[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
+	[CalledBy(Type = typeof(NGUITools), Member = "AddWidgetCollider")]
+	[CalledBy(Type = typeof(UICamera), Member = "set_selectedObject")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
+	[Calls(Type = typeof(Camera), Member = "get_cullingMask")]
+	[CallsUnknownMethods(Count = 2)]
 	public static UICamera FindCameraForLayer(int layer)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private static int GetDirection(KeyCode up, KeyCode down)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	private static int GetDirection(KeyCode up0, KeyCode up1, KeyCode down0, KeyCode down1)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
-	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+	[CalledBy(Type = typeof(UIDragDropItem), Member = "StartDragging")]
+	[CalledBy(Type = typeof(UIKeyBinding), Member = "OnBindingPress")]
+	[CalledBy(Type = typeof(UIKeyBinding), Member = "OnBindingClick")]
+	[CalledBy(Type = typeof(UICamera), Member = "set_selectedObject")]
+	[CalledBy(Type = typeof(UICamera), Member = "Update")]
+	[CalledBy(Type = typeof(UICamera), Member = "ProcessMouse")]
+	[CalledBy(Type = typeof(UICamera), Member = "ProcessTouches")]
+	[CalledBy(Type = typeof(UICamera), Member = "ProcessPress")]
+	[CalledBy(Type = typeof(UICamera), Member = "ProcessRelease")]
+	[CalledBy(Type = typeof(UICamera), Member = "ProcessTouch")]
+	[CalledBy(Type = typeof(UICamera), Member = "ShowTooltip")]
 	[CallerCount(Count = 26)]
-	[CallsUnknownMethods(Count = 1)]
+	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
 	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Notify(GameObject go, string funcName, object obj)
 	{
 	}
@@ -775,130 +762,123 @@ public class UICamera : MonoBehaviour
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(UICamera), Member = "ProcessTouches")]
+	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	public static MouseOrTouch GetTouch(int id)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(UICamera), Member = "ProcessFakeTouches")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(UICamera), Member = "ProcessTouches")]
+	[CalledBy(Type = typeof(UICamera), Member = "ProcessFakeTouches")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	public static void RemoveTouch(int id)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 7)]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BetterList<>), Member = "Add")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BetterList<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(UICamera), Member = "get_handlesEvents")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
-	[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
-	[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
+	[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
+	[Calls(Type = typeof(UICamera), Member = "get_handlesEvents")]
 	[Calls(Type = typeof(NGUIDebug), Member = "CreateInstance")]
+	[CallsDeduplicatedMethods(Count = 10)]
 	[CallsUnknownMethods(Count = 8)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
-	[Calls(Type = typeof(UICamera), Member = "ProcessTouches")]
-	[Calls(Type = typeof(UICamera), Member = "ProcessMouse")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UICamera), Member = "get_handlesEvents")]
+	[Calls(Type = typeof(UICamera), Member = "ProcessMouse")]
+	[Calls(Type = typeof(UICamera), Member = "ProcessTouches")]
+	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(UICamera), Member = "Notify")]
 	[Calls(Type = typeof(UICamera), Member = "ShowTooltip")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 4)]
 	private void Update()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UICamera), Member = "get_handlesEvents")]
 	[Calls(Type = typeof(UIRoot), Member = "Broadcast")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 3)]
 	private void LateUpdate()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UICamera), Member = "ShowTooltip")]
-	[Calls(Type = typeof(UICamera), Member = "ProcessTouch")]
-	[Calls(Type = typeof(UICamera), Member = "ShowTooltip")]
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
 	[CalledBy(Type = typeof(UICamera), Member = "Update")]
 	[CalledBy(Type = typeof(UICamera), Member = "ProcessTouches")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UICamera), Member = "set_hoveredObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UICamera), Member = "set_hoveredObject")]
-	[Calls(Type = typeof(UICamera), Member = "Raycast")]
-	[Calls(Type = typeof(Input), Member = "GetMouseButton")]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Input), Member = "GetMouseButton")]
+	[Calls(Type = typeof(UICamera), Member = "Raycast")]
+	[Calls(Type = typeof(UICamera), Member = "set_hoveredObject")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UICamera), Member = "ShowTooltip")]
+	[Calls(Type = typeof(UICamera), Member = "Notify")]
+	[Calls(Type = typeof(UICamera), Member = "ProcessTouch")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 15)]
 	public void ProcessMouse()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(UICamera), Member = "Update")]
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
-	[Calls(Type = typeof(UICamera), Member = "ProcessMouse")]
-	[Calls(Type = typeof(UICamera), Member = "RemoveTouch")]
-	[Calls(Type = typeof(UICamera), Member = "ProcessTouch")]
-	[Calls(Type = typeof(UICamera), Member = "set_hoveredObject")]
-	[Calls(Type = typeof(UICamera), Member = "Raycast")]
-	[Calls(Type = typeof(UICamera), Member = "GetTouch")]
-	[Calls(Type = typeof(Input), Member = "GetTouch")]
-	[Calls(Type = typeof(UICamera), Member = "set_hoveredObject")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Input), Member = "GetTouch")]
+	[Calls(Type = typeof(UICamera), Member = "GetTouch")]
+	[Calls(Type = typeof(UICamera), Member = "Raycast")]
+	[Calls(Type = typeof(UICamera), Member = "set_hoveredObject")]
+	[Calls(Type = typeof(UICamera), Member = "ProcessTouch")]
+	[Calls(Type = typeof(UICamera), Member = "RemoveTouch")]
+	[Calls(Type = typeof(UICamera), Member = "ProcessMouse")]
+	[Calls(Type = typeof(UICamera), Member = "Notify")]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 13)]
 	public void ProcessTouches()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(UICamera), Member = "RemoveTouch")]
-	[Calls(Type = typeof(UICamera), Member = "ProcessTouch")]
-	[Calls(Type = typeof(UICamera), Member = "set_hoveredObject")]
-	[Calls(Type = typeof(UICamera), Member = "set_hoveredObject")]
-	[Calls(Type = typeof(UICamera), Member = "Raycast")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UICamera), Member = "Raycast")]
+	[Calls(Type = typeof(UICamera), Member = "set_hoveredObject")]
+	[Calls(Type = typeof(UICamera), Member = "ProcessTouch")]
+	[Calls(Type = typeof(UICamera), Member = "RemoveTouch")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 9)]
 	private void ProcessFakeTouches()
 	{
 	}
@@ -909,93 +889,65 @@ public class UICamera : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UICamera), Member = "ShowTooltip")]
 	[CalledBy(Type = typeof(UICamera), Member = "ProcessTouch")]
-	[CalledBy(Type = typeof(UICamera), Member = "ProcessTouch")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UICamera), Member = "ShowTooltip")]
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
-	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UICamera), Member = "Notify")]
 	[Calls(Type = typeof(UICamera), Member = "ShowTooltip")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ProcessPress(bool pressed, float click, float drag)
 	{
 	}
 
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
 	[CalledBy(Type = typeof(UICamera), Member = "ProcessTouch")]
-	[CalledBy(Type = typeof(UICamera), Member = "ProcessTouch")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UICamera), Member = "Notify")]
 	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ProcessRelease(bool isMouse, float drag)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(UICamera), Member = "ProcessFakeTouches")]
-	[CalledBy(Type = typeof(UICamera), Member = "ProcessTouches")]
-	[Calls(Type = typeof(UICamera), Member = "ProcessRelease")]
-	[Calls(Type = typeof(UICamera), Member = "ProcessPress")]
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
-	[Calls(Type = typeof(UICamera), Member = "ShowTooltip")]
-	[Calls(Type = typeof(UICamera), Member = "ProcessPress")]
-	[Calls(Type = typeof(UICamera), Member = "ProcessRelease")]
 	[CalledBy(Type = typeof(UICamera), Member = "ProcessMouse")]
+	[CalledBy(Type = typeof(UICamera), Member = "ProcessTouches")]
+	[CalledBy(Type = typeof(UICamera), Member = "ProcessFakeTouches")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UICamera), Member = "ProcessRelease")]
+	[Calls(Type = typeof(UICamera), Member = "ProcessPress")]
+	[Calls(Type = typeof(UICamera), Member = "ShowTooltip")]
+	[Calls(Type = typeof(UICamera), Member = "Notify")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void ProcessTouch(bool pressed, bool released)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(UICamera), Member = "ProcessTouch")]
-	[CalledBy(Type = typeof(UICamera), Member = "ProcessPress")]
-	[CalledBy(Type = typeof(UICamera), Member = "ProcessPress")]
-	[CalledBy(Type = typeof(UICamera), Member = "ProcessPress")]
-	[CalledBy(Type = typeof(UICamera), Member = "ProcessMouse")]
-	[CalledBy(Type = typeof(UICamera), Member = "ProcessMouse")]
 	[CalledBy(Type = typeof(UICamera), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
+	[CalledBy(Type = typeof(UICamera), Member = "ProcessMouse")]
+	[CalledBy(Type = typeof(UICamera), Member = "ProcessPress")]
+	[CalledBy(Type = typeof(UICamera), Member = "ProcessTouch")]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(UICamera), Member = "Notify")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void ShowTooltip(bool val)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "SetActiveController")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeSetMouseOrKeyboardActive")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeSetMouseOrKeyboardActive")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeSetMouseOrKeyboardActive")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeSetGamepadActive")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
 	[CalledBy(Type = typeof(InputManager), Member = "SetGamepadEnabled")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "Update")]
-	[Calls(Type = typeof(UICamera), Member = "get_mainCamera")]
-	[Calls(Type = typeof(UIRoot), Member = "Broadcast")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeSetGamepadActive")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "MaybeSetMouseOrKeyboardActive")]
+	[CalledBy(Type = typeof(InputSystemRewired), Member = "SetActiveController")]
 	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(UIRoot), Member = "Broadcast")]
 	[Calls(Type = typeof(UICamera), Member = "get_mainCamera")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(string), Member = "Contains")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void SetSchemeOverride(ControlScheme newScheme)
 	{
 	}

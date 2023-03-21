@@ -54,147 +54,146 @@ public class RescueZone : MonoBehaviour
 
 	private bool m_HasSpottedProjectile;
 
-	[CallsUnknownMethods(Count = 6)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GunItem), Member = "IsFiredActionRegistered")]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GunItem), Member = "IsFiredActionRegistered")]
 	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	public void OnDestroy()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(RescueZone), Member = "UpdatePlayerCheck")]
+	[Calls(Type = typeof(RescueZone), Member = "UpdateTrackProjectile")]
+	[Calls(Type = typeof(RescueZone), Member = "CanReplyToPlayerShot")]
 	[Calls(Type = typeof(RescueZone), Member = "FireFlareGun")]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(RescueZone), Member = "CanReplyToPlayerShot")]
-	[Calls(Type = typeof(RescueZone), Member = "UpdateTrackProjectile")]
-	[Calls(Type = typeof(RescueZone), Member = "UpdatePlayerCheck")]
-	[CallerCount(Count = 0)]
 	public void Update()
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_RescueZoneFireFlareGun), Member = "DoWork")]
-	[CalledBy(Type = typeof(RescueZone), Member = "UpdateReplyShot")]
 	[CalledBy(Type = typeof(RescueZone), Member = "Update")]
-	[Calls(Type = typeof(FlareGunRoundItem), Member = "SpawnAndFire")]
+	[CalledBy(Type = typeof(RescueZone), Member = "UpdateReplyShot")]
 	[CalledBy(Type = typeof(Action_RescueZoneFireFlareGun), Member = "OnExecute")]
-	[Calls(Type = typeof(RescueZone), Member = "GetRescueTargetPosition")]
-	[Calls(Type = typeof(RescueZone), Member = "CanReplyToPlayerShot")]
+	[CalledBy(Type = typeof(Action_RescueZoneFireFlareGun), Member = "DoWork")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(RescueZone), Member = "CanReplyToPlayerShot")]
+	[Calls(Type = typeof(RescueZone), Member = "GetRescueTargetPosition")]
 	[Calls(Type = typeof(RescueZone), Member = "GetShotOrientation")]
+	[Calls(Type = typeof(FlareGunRoundItem), Member = "SpawnAndFire")]
 	public void FireFlareGun(Vector3 targetPosition)
 	{
 	}
 
+	[CalledBy(Type = typeof(RescueZone), Member = "FireFlareGun")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[CalledBy(Type = typeof(RescueZone), Member = "FireFlareGun")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 7)]
 	private Quaternion GetShotOrientation(Vector3 targetPosition)
 	{
 		return default(Quaternion);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(RescueZone), Member = "FireFlareGun")]
-	[Calls(Type = typeof(RescueZone), Member = "CanReplyToPlayerShot")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(RescueZone), Member = "CanReplyToPlayerShot")]
+	[Calls(Type = typeof(RescueZone), Member = "FireFlareGun")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateReplyShot()
 	{
 	}
 
 	[CalledBy(Type = typeof(RescueZone), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 10)]
 	private void UpdateTrackProjectile()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void HandleProjectileSpotted()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[CallsUnknownMethods(Count = 1)]
 	private void RequestReplyShot()
 	{
 	}
 
 	[CalledBy(Type = typeof(RescueZone), Member = "Update")]
-	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
-	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
 	[Calls(Type = typeof(RescueZone), Member = "GetRescueTargetPosition")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdatePlayerCheck()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(RescueZone), Member = "FireFlareGun")]
 	[CalledBy(Type = typeof(RescueZone), Member = "UpdatePlayerCheck")]
 	[CalledBy(Type = typeof(RescueZone), Member = "CanReplyToPlayerShot")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	private Vector3 GetRescueTargetPosition()
 	{
 		return default(Vector3);
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(RescueZone), Member = "UpdateReplyShot")]
-	[CalledBy(Type = typeof(RescueZone), Member = "FireFlareGun")]
 	[CalledBy(Type = typeof(RescueZone), Member = "Update")]
+	[CalledBy(Type = typeof(RescueZone), Member = "FireFlareGun")]
+	[CalledBy(Type = typeof(RescueZone), Member = "UpdateReplyShot")]
 	[CalledBy(Type = typeof(RescueZone), Member = "OnFlareGunShot")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(RescueZone), Member = "GetRescueTargetPosition")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private bool CanReplyToPlayerShot()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CalledBy(Type = typeof(RescueZone), Member = "OnFlareGunShot")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	private void StartTrackingProjectile(GameObject projectile)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(RescueZone), Member = "OnFlareGunShot")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	private static RescueZone GetActiveRescueZone()
 	{
 		return null;

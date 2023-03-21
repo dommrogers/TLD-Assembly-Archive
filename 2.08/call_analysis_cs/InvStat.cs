@@ -48,14 +48,14 @@ public class InvStat
 	[CallsUnknownMethods(Count = 1)]
 	public static int CompareArmor(InvStat a, InvStat b)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static int CompareWeapon(InvStat a, InvStat b)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]

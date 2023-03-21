@@ -76,45 +76,18 @@ public class Panel_BreakDown : Panel_AutoReferenced, IAccelerateTimeProvider
 
 	private uint m_BreakDownAudio;
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_BreakDown), Member = "OnBreakDown")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(TrustManager), Member = "MaybeHandleItemBreakdown")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "StopAudioAndRumbleEffects")]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BreakDown), Member = "DoBreakDown")]
 	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Enable")]
-	[Calls(Type = typeof(Weather), Member = "IsTooDarkForAction")]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "OnCancel")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "OnCancel")]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "StopAudioAndRumbleEffects")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(GearItem), Member = "DegradeOnUse")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(Panel_BreakDown), Member = "UpdateDurationLabel")]
@@ -122,51 +95,67 @@ public class Panel_BreakDown : Panel_AutoReferenced, IAccelerateTimeProvider
 	[Calls(Type = typeof(Panel_BreakDown), Member = "UpdateCurrentCaloriesLabel")]
 	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
 	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Panel_BreakDown), Member = "UpdateIcons")]
 	[Calls(Type = typeof(Panel_BreakDown), Member = "RefreshTools")]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
 	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_BreakDown), Member = "OnBreakDown")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(TrustManager), Member = "MaybeHandleItemBreakdown")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(Panel_BreakDown), Member = "StopAudioAndRumbleEffects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "DegradeOnUse")]
+	[Calls(Type = typeof(BreakDown), Member = "DoBreakDown")]
+	[Calls(Type = typeof(Weather), Member = "IsTooDarkForAction")]
+	[Calls(Type = typeof(Panel_BreakDown), Member = "OnCancel")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "RefreshYield")]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "Update")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Panel_BreakDown), Member = "RefreshTools")]
+	[Calls(Type = typeof(Panel_BreakDown), Member = "RefreshYield")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[Calls(Type = typeof(Panel_BreakDown), Member = "Update")]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	public override void Enable(bool enable)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsTimeAccelerated()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsBreakingDown()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -193,185 +182,155 @@ public class Panel_BreakDown : Panel_AutoReferenced, IAccelerateTimeProvider
 	}
 
 	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Update")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Panel_BreakDown), Member = "StopAudioAndRumbleEffects")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnCancel()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Update")]
-	[Calls(Type = typeof(RumbleEffectManager), Member = "PlayEffect")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Weather), Member = "IsTooDarkForAction")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetCuttingToolSwitch")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(Weather), Member = "IsTooDarkForAction")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(RumbleEffectManager), Member = "PlayEffect")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[CallsUnknownMethods(Count = 6)]
 	public void OnBreakDown()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GearItem), Member = "DegradeOnUse")]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(BreakDown), Member = "DoBreakDown")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(TrustManager), Member = "MaybeHandleItemBreakdown")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "StopAudioAndRumbleEffects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TrustManager), Member = "MaybeHandleItemBreakdown")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(Panel_BreakDown), Member = "StopAudioAndRumbleEffects")]
+	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "DegradeOnUse")]
+	[Calls(Type = typeof(BreakDown), Member = "DoBreakDown")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void BreakDownFinished()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Update")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateDurationLabel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Update")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(PlayerManager), Member = "CalculateModifiedCalorieBurnRate")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "CalculateModifiedCalorieBurnRate")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateEstimatedCaloriesBurnedLabel()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Update")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateCurrentCaloriesLabel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateToolLabel()
 	{
 	}
 
-	[Calls(Type = typeof(GearItem), Member = "GetColorBasedOnCondition")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Update")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTextureNonNull")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "GetSelectedTool")]
 	[Calls(Type = typeof(GearItem), Member = "GetColorBasedOnCondition")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTextureNonNull")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 9)]
 	private void UpdateIcons()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "DegradeToolUsed")]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "UpdateIcons")]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "UpdateToolLabel")]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "UpdateToolLabel")]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "UpdateDurationLabel")]
+	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_BreakDown), Member = "OnBreakDown")]
 	[CalledBy(Type = typeof(Panel_BreakDown), Member = "BreakDownFinished")]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "OnBreakDown")]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "UpdateIcons")]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "OnBreakDown")]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "OnBreakDown")]
-	[CallerCount(Count = 16)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_BreakDown), Member = "UpdateDurationLabel")]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_BreakDown), Member = "UpdateToolLabel")]
+	[CalledBy(Type = typeof(Panel_BreakDown), Member = "UpdateIcons")]
+	[CalledBy(Type = typeof(Panel_BreakDown), Member = "DegradeToolUsed")]
+	[CallerCount(Count = 16)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private GearItem GetSelectedTool()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Update")]
-	[Calls(Type = typeof(Panel_BreakDown), Member = "ToolIsUsable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Enable")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(GearItemObject), Member = "op_Implicit")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItemObject), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_BreakDown), Member = "ToolIsUsable")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 5)]
 	private void RefreshTools()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private void MakeDefaultSelections()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(int), Member = "ToString")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	private string GetSignedInt(int value)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallsUnknownMethods(Count = 4)]
 	private string GetSignedPercentage(float value)
@@ -379,27 +338,26 @@ public class Panel_BreakDown : Panel_AutoReferenced, IAccelerateTimeProvider
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Enable")]
-	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
-	[Calls(Type = typeof(HarvestRepairMaterial), Member = "ShowItem")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(HarvestRepairMaterial), Member = "ShowItem")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	private void RefreshYield()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CalledBy(Type = typeof(Panel_BreakDown), Member = "RefreshTools")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool ToolIsUsable(GameObject tool)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -411,12 +369,11 @@ public class Panel_BreakDown : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateButtonLegend()
 	{
 	}
@@ -430,14 +387,13 @@ public class Panel_BreakDown : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "OnCancel")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "BreakDownFinished")]
 	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_BreakDown), Member = "OnCancel")]
+	[CalledBy(Type = typeof(Panel_BreakDown), Member = "BreakDownFinished")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(RumbleEffectManager), Member = "StopEffect")]
-	[CalledBy(Type = typeof(Panel_BreakDown), Member = "Update")]
-	[CallerCount(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	private void StopAudioAndRumbleEffects()
 	{
 	}
@@ -447,7 +403,7 @@ public class Panel_BreakDown : Panel_AutoReferenced, IAccelerateTimeProvider
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsAcceleratingTime()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -464,8 +420,8 @@ public class Panel_BreakDown : Panel_AutoReferenced, IAccelerateTimeProvider
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public UIPanel GetPanelToFade()
 	{
 		return null;
@@ -499,8 +455,8 @@ public class Panel_BreakDown : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void StopAcceleratingTime()
 	{
 	}

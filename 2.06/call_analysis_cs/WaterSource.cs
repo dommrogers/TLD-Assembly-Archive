@@ -38,17 +38,17 @@ public class WaterSource : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "RollSpawnChance")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "RollSpawnChance")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}
@@ -57,7 +57,7 @@ public class WaterSource : MonoBehaviour
 	[CallerCount(Count = 1)]
 	public float GetVolumeLiters()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -70,28 +70,26 @@ public class WaterSource : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float RemoveLiters(float liters)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Panel_PickWater), Member = "SetWaterSourceForTaking")]
-	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
-	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[Calls(Type = typeof(Panel_PickWater), Member = "SetWaterSourceForTaking")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void PerformInteraction()
 	{
 	}
 
+	[CalledBy(Type = typeof(WaterSourceManager), Member = "Serialize")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(WaterSourceManager), Member = "Serialize")]
 	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
@@ -99,11 +97,11 @@ public class WaterSource : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(WaterSourceManager), Member = "Deserialize")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Random), Member = "Range")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}

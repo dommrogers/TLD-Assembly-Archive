@@ -10,14 +10,15 @@ public class Action_PostEventToConcurrentGraph : ActionTask<GraphOwner>
 
 	public BBParameter<string> eventName;
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "LookupConcurrentGraph")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "LookupConcurrentGraph")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 14)]
 	protected override void OnExecute()
 	{
 	}
@@ -38,23 +39,28 @@ public class Action_PostEventToConcurrentGraph<T> : ActionTask<GraphOwner>
 
 	public BBParameter<T> eventValue;
 
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "LookupConcurrentGraph")]
-	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "LookupConcurrentGraph")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 17)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
+	[CalledBy(TypeFullName = "ParadoxNotion.Internal.AOTDummy.NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_Collision", Member = ".ctor")]
+	[CalledBy(TypeFullName = "ParadoxNotion.Internal.AOTDummy.NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_Collision2D", Member = ".ctor")]
+	[CalledBy(TypeFullName = "ParadoxNotion.Internal.AOTDummy.NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_Space", Member = ".ctor")]
+	[CalledBy(TypeFullName = "ParadoxNotion.Internal.AOTDummy.NodeCanvas_Tasks_Actions_Action_PostEventToConcurrentGraph_SpawnLocation", Member = ".ctor")]
 	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public Action_PostEventToConcurrentGraph()
 	{
 		((ActionTask<>)(object)this)._002Ector();

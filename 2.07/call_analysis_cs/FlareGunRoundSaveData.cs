@@ -25,8 +25,8 @@ public class FlareGunRoundSaveData
 
 	public bool m_IsRendererEnabled;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public FlareGunRoundSaveData()
 	{
 	}

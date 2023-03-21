@@ -15,18 +15,18 @@ public class ObjectDependency : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ObjectDependency), Member = "CheckDependency")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
 
 	[CalledBy(Type = typeof(ObjectDependency), Member = "Update")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void CheckDependency()
 	{
 	}

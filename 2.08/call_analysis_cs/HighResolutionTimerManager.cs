@@ -32,19 +32,19 @@ public class HighResolutionTimerManager : MonoBehaviour
 
 	public static bool s_TimeAccumulationDebug;
 
-	[Calls(Type = typeof(Stopwatch), Member = "Start")]
-	[Calls(Type = typeof(Stopwatch), Member = "Stop")]
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Stopwatch), Member = "Stop")]
+	[Calls(Type = typeof(Stopwatch), Member = "Start")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnApplicationPause(bool pauseState)
 	{
 	}
 
-	[Calls(Type = typeof(Stopwatch), Member = "Start")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Stopwatch), Member = "Stop")]
+	[Calls(Type = typeof(Stopwatch), Member = "Start")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}
@@ -58,69 +58,69 @@ public class HighResolutionTimerManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedMilliseconds")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsUnknownMethods(Count = 3)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CalledBy(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedDays")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Panel_Rest), Member = "UpdateVisuals")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
-	[CalledBy(Type = typeof(HighResolutionTimerManager), Member = "UpdateTimeScale")]
-	[CalledBy(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedHours")]
-	[CalledBy(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedSeconds")]
-	[CalledBy(Type = typeof(HighResolutionTimerManager), Member = "Serialize")]
-	[CalledBy(Type = typeof(HighResolutionTimer), Member = "GetElapsedMilliseconds")]
-	[CalledBy(Type = typeof(HighResolutionTimer), Member = "Restart")]
 	[CalledBy(Type = typeof(HighResolutionTimer), Member = "Start")]
-	[Calls(Type = typeof(Stopwatch), Member = "get_ElapsedMilliseconds")]
-	[CallerCount(Count = 13)]
+	[CalledBy(Type = typeof(HighResolutionTimer), Member = "Restart")]
+	[CalledBy(Type = typeof(HighResolutionTimer), Member = "GetElapsedMilliseconds")]
+	[CalledBy(Type = typeof(HighResolutionTimerManager), Member = "Serialize")]
+	[CalledBy(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedSeconds")]
 	[CalledBy(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedMinutes")]
+	[CalledBy(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedHours")]
+	[CalledBy(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedDays")]
+	[CalledBy(Type = typeof(HighResolutionTimerManager), Member = "UpdateTimeScale")]
+	[CalledBy(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[CalledBy(Type = typeof(Panel_Rest), Member = "UpdateVisuals")]
+	[CalledBy(Type = typeof(Action_NomadRequirements), Member = "OnExecute")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
+	[CallerCount(Count = 13)]
+	[Calls(Type = typeof(Stopwatch), Member = "get_ElapsedMilliseconds")]
+	[CallsUnknownMethods(Count = 1)]
 	public ulong GetElapsedMilliseconds()
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedMilliseconds")]
 	public double GetElapsedSeconds()
 	{
-		return default(double);
+		return 0.0;
 	}
 
-	[Calls(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedMilliseconds")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedMilliseconds")]
 	public double GetElapsedMinutes()
 	{
-		return default(double);
+		return 0.0;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedMilliseconds")]
 	public double GetElapsedHours()
 	{
-		return default(double);
+		return 0.0;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedMilliseconds")]
 	public double GetElapsedDays()
 	{
-		return default(double);
+		return 0.0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -128,18 +128,18 @@ public class HighResolutionTimerManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private ulong CalculateElapsedMillisecondsSinceLastBank()
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedMilliseconds")]
+	[CallsUnknownMethods(Count = 3)]
 	public void UpdateTimeScale(double timeScale)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public HighResolutionTimerManager()
 	{
 	}

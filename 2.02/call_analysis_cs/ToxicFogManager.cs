@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using SpecialEvents;
 using UnityEngine;
@@ -24,19 +23,19 @@ public class ToxicFogManager : MonoBehaviour
 
 		public static Predicate<BaseAi> _003C_003E9__56_0;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
 
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(BaseAi), Member = "ApplyDamage")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BaseAi), Member = "ApplyDamage")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CMaybeKillAllWildlife_003Eb__56_0(BaseAi ai)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -84,176 +83,179 @@ public class ToxicFogManager : MonoBehaviour
 
 	private const uint INVALID_REGION = uint.MaxValue;
 
-	[CallsUnknownMethods(Count = 31)]
-	[Calls(Type = typeof(ToxicFogManager), Member = "GetRegionHashName")]
-	[Calls(Type = typeof(BaseAiManager), Member = "RegisterForBaseAiRemoved")]
-	[Calls(Type = typeof(BaseAiManager), Member = "RegisterForBaseAiAdded")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ToxicFogManager), Member = "Reset")]
 	[Calls(Type = typeof(GearManager), Member = "RegisterForOnGearItemAdded")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GearManager), Member = "RegisterForOnGearItemRemoved")]
+	[Calls(Type = typeof(BaseAiManager), Member = "RegisterForBaseAiAdded")]
+	[Calls(Type = typeof(BaseAiManager), Member = "RegisterForBaseAiRemoved")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "GetRegionHashName")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 31)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ToxicFogManager), Member = "GetPercentInCurrentRegion")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public float DetermineScaleForPlayerCondition()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "Start")]
 	[CalledBy(Type = typeof(GameManager), Member = "ResetLists")]
-	[Calls(Type = typeof(Weather), Member = "SetToxicFogParameters")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "Start")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "IsSceneTransition")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Weather), Member = "MaybeCreateToxicFogSporeFx")]
 	[Calls(Type = typeof(ToxicFogManager), Member = "GetPercentInCurrentRegion")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Utils), Member = "IsSceneTransition")]
+	[Calls(Type = typeof(Weather), Member = "SetToxicFogParameters")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 7)]
 	public void Reset()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_toxicfog_reset_all")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ToxicFogManager), Member = "IsActive")]
 	[Calls(Type = typeof(ToxicFogManager), Member = "SetSecondsInCurrentRegion")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(ToxicFogManager), Member = "IsActive")]
+	[CallsUnknownMethods(Count = 5)]
 	public void ResetTimeAccumulation(bool allregions)
 	{
 	}
 
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_toxicfog_full")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_toxicfog_set")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ToxicFogManager), Member = "IsActive")]
 	[Calls(Type = typeof(ToxicFogManager), Member = "GetTimeSecondsToFillUpCurrentRegion")]
 	[Calls(Type = typeof(ToxicFogManager), Member = "SetSecondsInCurrentRegion")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_toxicfog_full")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_toxicfog_set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void SetAccumulationPercent(float pct)
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateNowhereToHide")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "GetTimeSecondsToFillUpRegion")]
-	[Calls(Type = typeof(RegionManager), Member = "GetRegionFromString")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "IsActive")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ToxicFogManager), Member = "IsActive")]
+	[Calls(Type = typeof(RegionManager), Member = "GetRegionFromString")]
 	[Calls(Type = typeof(ToxicFogManager), Member = "GetRegionHash")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "GetTimeSecondsToFillUpRegion")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public float GetFogProgressForRegion(string regionName)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool HasPlacedDispelFogGlyph()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GridUI), Member = "ClearItems")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "SetSecondsInCurrentRegion")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "GetSecondsInCurrentRegion")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ToxicFogManager), Member = "GetSecondsInCurrentRegion")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "SetSecondsInCurrentRegion")]
+	[Calls(Type = typeof(GridUI), Member = "ClearItems")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void PlaceGlyph(DecalProjectorInstance instance)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Weather), Member = "SetToxicFogParameters")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "GetPercentInCurrentRegion")]
-	[Calls(Type = typeof(Weather), Member = "MaybeCreateToxicFogSporeFx")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "IsActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ToxicFogManager), Member = "IsActive")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 9)]
+	[Calls(Type = typeof(Weather), Member = "MaybeCreateToxicFogSporeFx")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "GetPercentInCurrentRegion")]
+	[Calls(Type = typeof(Weather), Member = "SetToxicFogParameters")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public void Deserialize(string serialized)
 	{
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[CallsUnknownMethods(Count = 18)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(ToxicFogManager), Member = "IsActive")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ToxicFogManager), Member = "IsActive")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 16)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
 	[Calls(Type = typeof(ToxicFogManager), Member = "DetermineCurrentRegion")]
 	[Calls(Type = typeof(ToxicFogManager), Member = "InitCurrentRegion")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void StartFogWeatherTransition()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(ToxicFogManager), Member = "GetRegionHashName")]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ToxicFogManager), Member = "GetRegionHashName")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private bool IsSceneOverrideAvailableForCurrentScene()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateCountdownCompleted")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "StartFogWeatherTransition")]
-	[CallerCount(Count = 3)]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateCountdownCompleted")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "StartFogWeatherTransition")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
+	[CallerCount(Count = 3)]
 	private uint DetermineCurrentRegion()
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallAnalysisFailed]
 	[CallerCount(Count = 0)]
 	private uint GetRegionHashFromName(string regionName, out GameRegion region)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<GameRegion, @null>(ref region) = null;
-		return default(uint);
+		region = default(GameRegion);
+		return 0u;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(ToxicFogManager), Member = "GetRegionHashName")]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "GetFogProgressForRegion")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ToxicFogManager), Member = "GetRegionHashName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private uint GetRegionHash(GameRegion region, string fallback)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -263,265 +265,271 @@ public class ToxicFogManager : MonoBehaviour
 		return default(GameRegion);
 	}
 
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "GetPercentInCurrentRegion")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "SetAccumulationPercent")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "GetRemainingTimeToFullFogSeconds")]
-	[CalledBy(Type = typeof(HUDNowhereToHide), Member = "UpdateToxicFogIndicatorLabel")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(HUDNowhereToHide), Member = "UpdateToxicFogIndicatorLabel")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "SetAccumulationPercent")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "GetPercentInCurrentRegion")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "GetRemainingTimeToFullFogSeconds")]
 	[CallerCount(Count = 4)]
 	private float GetTimeSecondsToFillUpCurrentRegion()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "GetFogProgressForRegion")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ToxicFogManager), Member = "GetSceneOverrideTunable")]
 	[Calls(Type = typeof(ToxicFogManager), Member = "GetRegionTunables")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "GetFogProgressForRegion")]
 	private float GetTimeSecondsToFillUpRegion(GameRegion region, uint sceneHash)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "GetTimeSecondsToFillUpRegion")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private ToxicFogRegionTunables GetRegionTunables(GameRegion region)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "GetTimeSecondsToFillUpRegion")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private ToxicFogSceneOverrideTunables GetSceneOverrideTunable(uint sceneHash)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "MaybeReducePlayerCondition")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "MaybeKillAllWildlife")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "MaybeRuinFood")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "Deserialize")]
-	[CallerCount(Count = 9)]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "DetermineScaleForPlayerCondition")]
 	[CalledBy(Type = typeof(HUDNowhereToHide), Member = "Update")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "GetTimeSecondsToFillUpCurrentRegion")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "GetSecondsInCurrentRegion")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "DetermineScaleForPlayerCondition")]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "Reset")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "Deserialize")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "MaybeRuinFood")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "MaybeKillAllWildlife")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "MaybeReducePlayerCondition")]
+	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(ToxicFogManager), Member = "GetSecondsInCurrentRegion")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "GetTimeSecondsToFillUpCurrentRegion")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private float GetPercentInCurrentRegion()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(ToxicFogManager), Member = "GetTimeSecondsToFillUpCurrentRegion")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "GetSecondsInCurrentRegion")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ToxicFogManager), Member = "GetSecondsInCurrentRegion")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "GetTimeSecondsToFillUpCurrentRegion")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public float GetRemainingTimeToFullFogSeconds()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(ToxicFogManager), Member = "MaybeReducePlayerCondition")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "MaybeKillAllWildlife")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "MaybeRuinFood")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "SetFogDensity")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "GetPercentInCurrentRegion")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "AddSecondsInCurrentRegion")]
-	[Calls(Type = typeof(Weather), Member = "SetToxicFogParameters")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "GetPercentInCurrentRegion")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ToxicFogManager), Member = "IsActive")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "DetermineCurrentRegion")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "GetRegionHashName")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ForceUnmanagedWeatherStage")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "IsSceneOverrideAvailableForCurrentScene")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "InitCurrentRegion")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(TimeOfDay), Member = "IsTimeLapseActive")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "InitCurrentRegion")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "IsSceneOverrideAvailableForCurrentScene")]
-	[Calls(Type = typeof(WeatherTransition), Member = "ForceUnmanagedWeatherStage")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "GetRegionHashName")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "DetermineCurrentRegion")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "IsActive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "GetPercentInCurrentRegion")]
+	[Calls(Type = typeof(Weather), Member = "SetToxicFogParameters")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "AddSecondsInCurrentRegion")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "SetFogDensity")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "MaybeRuinFood")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "MaybeKillAllWildlife")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "MaybeReducePlayerCondition")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsUnknownMethods(Count = 10)]
 	private void Update()
 	{
 	}
 
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "GetRegionHash")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "IsSceneOverrideAvailableForCurrentScene")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "Start")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "IsSceneOverrideAvailableForCurrentScene")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "GetRegionHash")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private uint GetRegionHashName(string regionName)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "Deserialize")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "GetFogProgressForRegion")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "SetAccumulationPercent")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "Serialize")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_toxicfog_reset")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "ResetTimeAccumulation")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "SetAccumulationPercent")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "GetFogProgressForRegion")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "Deserialize")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "Serialize")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
+	[CallerCount(Count = 7)]
 	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "ResetTimeAccumulation")]
 	private bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsCurrentRegionValid()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "SetToxicFogDensity")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	private void SetFogDensity(float fogScale)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnGearItemAddedToWorld(GearItem gearItem)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnGearItemRemovedFromWorld(GearItem gearItem)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnBaseAiAddedToWorld(BaseAi baseAi)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnBaseAiRemovedFromWorld(BaseAi baseAi)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
-	[Calls(Type = typeof(GearItem), Member = "WearOut")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ToxicFogManager), Member = "GetPercentInCurrentRegion")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(GearItem), Member = "WearOut")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 17)]
 	private void MaybeRuinFood()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(ToxicFogManager), Member = "GetPercentInCurrentRegion")]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ToxicFogManager), Member = "GetPercentInCurrentRegion")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAll")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	private void MaybeKillAllWildlife()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
-	[Calls(Type = typeof(PlayerCough), Member = "MaybeStart")]
-	[Calls(Type = typeof(Log), Member = "AddAffliction")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(CameraStatusEffects), Member = "HeadachePulse")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "GetPercentInCurrentRegion")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ToxicFogManager), Member = "GetPercentInCurrentRegion")]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
 	[Calls(Type = typeof(PlayerCough), Member = "Stop")]
+	[Calls(Type = typeof(CameraStatusEffects), Member = "HeadachePulse")]
+	[Calls(Type = typeof(Log), Member = "AddAffliction")]
+	[Calls(Type = typeof(PlayerCough), Member = "MaybeStart")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 16)]
 	private void MaybeReducePlayerCondition()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(KeyNotFoundException), Member = ".ctor")]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(KeyNotFoundException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 6)]
 	private void AddSecondsInCurrentRegion(float seconds)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "GetRemainingTimeToFullFogSeconds")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "GetPercentInCurrentRegion")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "PlaceGlyph")]
+	[CalledBy(Type = typeof(HUDNowhereToHide), Member = "UpdateToxicFogIndicatorLabel")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "PlaceGlyph")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "GetPercentInCurrentRegion")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "GetRemainingTimeToFullFogSeconds")]
+	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(KeyNotFoundException), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(HUDNowhereToHide), Member = "UpdateToxicFogIndicatorLabel")]
+	[CallsUnknownMethods(Count = 6)]
 	private float GetSecondsInCurrentRegion()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	private uint GetCurrentRegionKey()
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateCountdownCompleted")]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "StartFogWeatherTransition")]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	private void InitCurrentRegion()
 	{
 	}
 
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_toxicfog_reset")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "ResetTimeAccumulation")]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "SetAccumulationPercent")]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "PlaceGlyph")]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "ResetTimeAccumulation")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_toxicfog_reset")]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetSecondsInCurrentRegion(float seconds)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 22)]
 	public ToxicFogManager()
 	{

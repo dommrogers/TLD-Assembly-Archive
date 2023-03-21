@@ -42,7 +42,7 @@ public class CinematicTrack
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -53,7 +53,7 @@ public class CinematicTrack
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -67,45 +67,38 @@ public class CinematicTrack
 		{
 		}
 
-		[CallerCount(Count = 6)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[Calls(Type = typeof(CinematicTrack), Member = "RetrieveLoadedAnimators")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(CinematicAssets), Member = "ReParentProp")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(CinematicAssets), Member = "ReParentProp")]
-		[CallsUnknownMethods(Count = 15)]
-		[Calls(Type = typeof(CinematicAssets), Member = "LoadProps")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-		[Calls(Type = typeof(CinematicAssets), Member = "UseLoadedControllerAndResumeState")]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 14)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(Animator), Member = "get_runtimeAnimatorController")]
 		[Calls(Type = typeof(CinematicManager), Member = "SwapFPController")]
-		[Calls(Type = typeof(AssetBundleManager), Member = "LoadBundleAsync")]
-		[Calls(Type = typeof(Animator), Member = "get_runtimeAnimatorController")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(CinematicTrack), Member = "SwapNPCController")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(CinematicAssets), Member = "UseLoadedControllerAndResumeState")]
+		[Calls(Type = typeof(AssetBundleManager), Member = "LoadBundleAsync")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(CinematicTrack), Member = "RetrieveLoadedAnimators")]
+		[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+		[Calls(Type = typeof(CinematicAssets), Member = "LoadProps")]
+		[Calls(Type = typeof(CinematicAssets), Member = "ReParentProp")]
+		[CallsDeduplicatedMethods(Count = 13)]
+		[CallsUnknownMethods(Count = 15)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 5)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 5)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -200,37 +193,39 @@ public class CinematicTrack
 	private bool m_UseMotionFromRef;
 
 	[CalledBy(Type = typeof(CinematicManager), Member = "StartMasterNPC")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(CinematicTrack), Member = "CreateNPCCinematicTrack")]
 	[CalledBy(Type = typeof(CinematicTrack), Member = "CreateFPCinematicTrack")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(CinematicTrack), Member = "CreateNPCCinematicTrack")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private CinematicTrack(string audioStart, TextAsset subtitleAsset, string npcID, GameObject audioEmitterNode)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CalledBy(Type = typeof(CinematicManager), Member = "StartMasterFP")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CinematicTrack), Member = ".ctor")]
-	[CalledBy(Type = typeof(CinematicManager), Member = "StartMasterFP")]
+	[CallsUnknownMethods(Count = 6)]
 	public static CinematicTrack CreateFPCinematicTrack(FPAnimationState fpAnimationState, string audioStart, TextAsset subtitleAsset, string npcID, GameObject audioEmitterNode, OnEnterPlaying onEnterPlaying)
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CinematicTrack), Member = ".ctor")]
 	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 0)]
 	public static CinematicTrack CreateNPCCinematicTrack(DialogueAnimationState npcAnimationState, string audioStart, TextAsset subtitleAsset, string npcID, GameObject audioEmitterNode)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(CinematicTrack), Member = "UpdatePlaying")]
-	[Calls(Type = typeof(CinematicTrack), Member = "LateSynchronizeAnimatorsFP")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CinematicTrack), Member = "LateSynchronizeAnimatorsNPC")]
+	[Calls(Type = typeof(CinematicTrack), Member = "LateSynchronizeAnimatorsFP")]
 	public void LateUpdate()
 	{
 	}
@@ -239,13 +234,13 @@ public class CinematicTrack
 	[CallerCount(Count = 0)]
 	public bool IsUnused()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool ShouldLockPlayer()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -263,163 +258,152 @@ public class CinematicTrack
 	[CallerCount(Count = 0)]
 	public bool IsPlaying()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsLoading()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[Calls(Type = typeof(CinematicTrack), Member = "LoadCinematicAsync")]
 	[CalledBy(Type = typeof(CinematicManager), Member = "StartMasterTrack")]
-	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
-	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
+	[Calls(Type = typeof(CinematicTrack), Member = "LoadCinematicAsync")]
+	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallsUnknownMethods(Count = 8)]
 	public void Play()
 	{
 	}
 
+	[CalledBy(Type = typeof(CinematicTrack), Member = "Play")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "ParseSubtitles")]
+	[Calls(Type = typeof(AnimationUtils), Member = "FindAnimatorByMissionId")]
+	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[Calls(Type = typeof(CinematicTrack), Member = "SaveOriginalControllers")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "GetFPCinematicManager")]
 	[Calls(Type = typeof(CinematicTrack), Member = "LoadAnimations")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetFPCinematicManager")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(CinematicTrack), Member = "Play")]
-	[Calls(Type = typeof(CinematicTrack), Member = "SaveOriginalControllers")]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AnimationUtils), Member = "FindAnimatorByMissionId")]
-	[Calls(Type = typeof(Utils), Member = "ParseSubtitles")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void LoadCinematicAsync(string assetBundleFilemame, string prefabPath, TextAsset subtitleAsset)
 	{
 	}
 
 	[CalledBy(Type = typeof(CinematicManager), Member = "Update")]
-	[Calls(Type = typeof(CinematicTrack), Member = "PlayAudio")]
-	[Calls(Type = typeof(CinematicTrack), Member = "StartMasterAnimation")]
-	[Calls(Type = typeof(InterfaceManager), Member = "HidePanelsForSubtitle")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CinematicTrack), Member = "UpdatePlaying")]
-	[Calls(Type = typeof(CinematicAssets), Member = "RestoreOriginalControllerAndResumeState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
+	[Calls(Type = typeof(CinematicTrack), Member = "UnloadCinematic")]
+	[Calls(Type = typeof(CinematicTrack), Member = "SwapNPCController")]
 	[Calls(Type = typeof(CinematicManager), Member = "SwapFPController")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Reset")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(CinematicTrack), Member = "SwapNPCController")]
-	[Calls(Type = typeof(CinematicTrack), Member = "UnloadCinematic")]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(CinematicAssets), Member = "RestoreOriginalControllerAndResumeState")]
+	[Calls(Type = typeof(CinematicTrack), Member = "UpdatePlaying")]
+	[Calls(Type = typeof(InterfaceManager), Member = "HidePanelsForSubtitle")]
+	[Calls(Type = typeof(CinematicTrack), Member = "StartMasterAnimation")]
+	[Calls(Type = typeof(CinematicTrack), Member = "PlayAudio")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(CinematicTrack), Member = "SwapNPCController")]
+	[CallsUnknownMethods(Count = 5)]
 	public void Update()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsReady()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
 	[CallsUnknownMethods(Count = 3)]
 	private bool IsWaitingForIdle()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool IsNPCStatePlaying(int hashState, int layer)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool IsFPStatePlaying(int hashState, int layer)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(CinematicTrack), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	[Calls(Type = typeof(AssetBundleManager), Member = "UnloadBundle")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(CinematicAssets), Member = "UnloadProps")]
-	[CalledBy(Type = typeof(CinematicTrack), Member = "Update")]
 	[CallsUnknownMethods(Count = 1)]
 	private void UnloadCinematic()
 	{
 	}
 
-	[Calls(Type = typeof(CinematicTrack), Member = "PlayAudio")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(CinematicTrack), Member = "StartMasterAnimation")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InterfaceManager), Member = "HidePanelsForSubtitle")]
+	[Calls(Type = typeof(CinematicTrack), Member = "StartMasterAnimation")]
+	[Calls(Type = typeof(CinematicTrack), Member = "PlayAudio")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void EnterPlaying()
 	{
 	}
 
 	[IteratorStateMachine(typeof(_003CLoadAnimations_003Ed__66))]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(CinematicManager), Member = "StartLoading")]
 	[CalledBy(Type = typeof(CinematicTrack), Member = "LoadCinematicAsync")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	public IEnumerator LoadAnimations(string assetBundleFilename, string prefabPath)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(_003CLoadAnimations_003Ed__66), Member = "MoveNext")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[CallsUnknownMethods(Count = 5)]
 	private void RetrieveLoadedAnimators(string errorPath)
 	{
 	}
 
-	[CalledBy(Type = typeof(CinematicTrack), Member = "Update")]
 	[CalledBy(Type = typeof(_003CLoadAnimations_003Ed__66), Member = "MoveNext")]
 	[CalledBy(Type = typeof(CinematicTrack), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(CinematicManager), Member = "SwitchControllerAndResumeState")]
 	private void SwapNPCController(RuntimeAnimatorController controller)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(CinematicTrack), Member = "LoadCinematicAsync")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void SaveOriginalControllers()
 	{
 	}
@@ -429,7 +413,7 @@ public class CinematicTrack
 	[CallsUnknownMethods(Count = 1)]
 	private bool AreAssetsReady()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -438,72 +422,64 @@ public class CinematicTrack
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetOnGoingStateDuration(MasterAnimatorType masterAnimatorType)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	private float GetCinematicDuration()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkDurationCallbackInfo), Member = "get_fEstimatedDuration")]
+	[CallsUnknownMethods(Count = 3)]
 	private static void AudioCallback(object in_cookie, AkCallbackType in_type, object in_info)
 	{
 	}
 
 	[CalledBy(Type = typeof(CinematicTrack), Member = "Update")]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(CinematicTrack), Member = "EnterPlaying")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayVoiceWithPositionTracking")]
-	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
-	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayVoiceWithPositionTracking")]
+	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 17)]
 	private void PlayAudio(string audioEventStart)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(CinematicTrack), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(CinematicManager), Member = "LateUpdate")]
-	[Calls(Type = typeof(CinematicAssets), Member = "LateSynchronizeAnimators")]
-	[Calls(Type = typeof(CinematicAssets), Member = "LateSynchronizeAnimators")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayEventMonitor), Member = "TryGetPlayingStateId")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Animator), Member = "PlayInFixedTime")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(CinematicTrack), Member = "LateUpdate")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Animator), Member = "PlayInFixedTime")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayEventMonitor), Member = "TryGetPlayingStateId")]
+	[Calls(Type = typeof(CinematicAssets), Member = "LateSynchronizeAnimators")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void LateSynchronizeAnimatorsNPC(float currentTime, int stateHash)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(CinematicTrack), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(CinematicManager), Member = "LateUpdate")]
-	[Calls(Type = typeof(CinematicAssets), Member = "LateSynchronizeAnimators")]
-	[Calls(Type = typeof(Animator), Member = "PlayInFixedTime")]
-	[Calls(Type = typeof(CinematicAssets), Member = "LateSynchronizeAnimators")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Animator), Member = "Update")]
-	[Calls(Type = typeof(PlayEventMonitor), Member = "TryGetPlayingStateId")]
-	[Calls(Type = typeof(Animator), Member = "PlayInFixedTime")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(CinematicTrack), Member = "LateUpdate")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Animator), Member = "PlayInFixedTime")]
+	[Calls(Type = typeof(Animator), Member = "Update")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayEventMonitor), Member = "TryGetPlayingStateId")]
+	[Calls(Type = typeof(CinematicAssets), Member = "LateSynchronizeAnimators")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void LateSynchronizeAnimatorsFP(float currentTime, int stateHash)
 	{
 	}
@@ -514,8 +490,8 @@ public class CinematicTrack
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	private void OnCurrentFPHAnimatorStoppedPlaying()
 	{
 	}
@@ -526,68 +502,63 @@ public class CinematicTrack
 	{
 	}
 
-	[CalledBy(Type = typeof(CinematicTrack), Member = "OnCinematicDone")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(CinematicTrack), Member = "UpdatePlaying")]
-	[Calls(Type = typeof(CinematicAssets), Member = "SetTriggerOnLoadedPermanentProps")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
-	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
-	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
+	[CalledBy(Type = typeof(CinematicTrack), Member = "OnCinematicDone")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
 	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(CinematicAssets), Member = "SetTriggerOnLoadedPermanentProps")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	private void ReturnToIdleAnimation()
 	{
 	}
 
-	[Calls(Type = typeof(Animator), Member = "Play")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(CinematicTrack), Member = "EnterPlaying")]
 	[CalledBy(Type = typeof(CinematicTrack), Member = "Update")]
-	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[CalledBy(Type = typeof(CinematicTrack), Member = "EnterPlaying")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
+	[Calls(Type = typeof(Animator), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 6)]
 	private void StartMasterAnimation()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 15)]
 	[CalledBy(Type = typeof(CinematicTrack), Member = "Update")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CinematicManager), Member = "TryGetTimeFromAudio")]
-	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[Calls(Type = typeof(CinematicTrack), Member = "ReturnToIdleAnimation")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Reset")]
-	[Calls(Type = typeof(CinematicManager), Member = "SwapFPController")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(CinematicTrack), Member = "LateUpdate")]
-	[Calls(Type = typeof(CinematicManager), Member = "MaybeSeekMovie")]
-	[Calls(Type = typeof(CinematicManager), Member = "GetAdjustedSkipTimeAndTryToSeekAudio")]
-	[Calls(Type = typeof(Utils), Member = "GetNextSkipTime")]
-	[Calls(Type = typeof(InputManager), Member = "HasPressedSkip")]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
-	[Calls(Type = typeof(Utils), Member = "UpdateSubtitles")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "UpdateSubtitles")]
+	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
+	[Calls(Type = typeof(InputManager), Member = "HasPressedSkip")]
+	[Calls(Type = typeof(Utils), Member = "GetNextSkipTime")]
+	[Calls(Type = typeof(CinematicManager), Member = "GetAdjustedSkipTimeAndTryToSeekAudio")]
+	[Calls(Type = typeof(CinematicManager), Member = "MaybeSeekMovie")]
+	[Calls(Type = typeof(CinematicTrack), Member = "LateUpdate")]
 	[Calls(Type = typeof(InterfaceManager), Member = "RestorePanelsAfterSubtitle")]
+	[Calls(Type = typeof(CinematicManager), Member = "SwapFPController")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Reset")]
+	[Calls(Type = typeof(CinematicTrack), Member = "ReturnToIdleAnimation")]
+	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[Calls(Type = typeof(CinematicManager), Member = "TryGetTimeFromAudio")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 15)]
 	private void UpdatePlaying()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[Calls(Type = typeof(CinematicTrack), Member = "ReturnToIdleAnimation")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Reset")]
-	[Calls(Type = typeof(InterfaceManager), Member = "RestorePanelsAfterSubtitle")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "RestorePanelsAfterSubtitle")]
 	[Calls(Type = typeof(CinematicManager), Member = "SwapFPController")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Reset")]
+	[Calls(Type = typeof(CinematicTrack), Member = "ReturnToIdleAnimation")]
+	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnCinematicDone()
 	{
 	}

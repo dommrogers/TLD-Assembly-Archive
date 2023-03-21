@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class FlowingWater : MonoBehaviour
 {
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public FlowingWater()
 	{
 	}

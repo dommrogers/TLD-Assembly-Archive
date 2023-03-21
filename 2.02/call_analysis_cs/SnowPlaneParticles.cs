@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Threading;
 using Cpp2ILInjected.CallAnalysis;
@@ -14,8 +13,8 @@ public class SnowPlaneParticles : MonoBehaviour
 
 		public int m_Limit;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public WTTask()
 		{
 		}
@@ -108,12 +107,12 @@ public class SnowPlaneParticles : MonoBehaviour
 
 	public bool IsActive
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
-		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -131,26 +130,26 @@ public class SnowPlaneParticles : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(SnowPlaneParticles), Member = "StartWorkerThreads")]
 	[CalledBy(Type = typeof(SnowPlaneParticles), Member = "Start")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SnowPlaneParticles), Member = "StartWorkerThreads")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 16)]
 	private void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(EventWaitHandle), Member = ".ctor")]
-	[Calls(Type = typeof(Thread), Member = "Start")]
-	[CallsUnknownMethods(Count = 59)]
 	[CalledBy(Type = typeof(SnowPlaneParticles), Member = "Initialize")]
-	[Calls(Type = typeof(EventWaitHandle), Member = ".ctor")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Thread), Member = ".ctor")]
+	[Calls(Type = typeof(Thread), Member = "set_IsBackground")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Thread), Member = "set_Name")]
-	[Calls(Type = typeof(Thread), Member = "set_IsBackground")]
-	[Calls(Type = typeof(Thread), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 14)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(EventWaitHandle), Member = ".ctor")]
+	[Calls(Type = typeof(Thread), Member = "Start")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 59)]
 	private void StartWorkerThreads()
 	{
 	}
@@ -162,86 +161,85 @@ public class SnowPlaneParticles : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "InitializeForScene")]
+	[CalledBy(Type = typeof(TimeOfDay), Member = "Update")]
+	[CalledBy(Type = typeof(SnowPlaneManager), Member = "Start")]
 	[CalledBy(Type = typeof(SnowPlaneManager), Member = "Reset")]
 	[CalledBy(Type = typeof(SnowPlaneParticles), Member = "Start")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "InitializeForScene")]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(SnowPlaneManager), Member = "Start")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Reset()
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_up")]
-	[CallsUnknownMethods(Count = 34)]
-	[Calls(Type = typeof(ParticleSystem), Member = "SetParticles")]
-	[Calls(Type = typeof(EventWaitHandle), Member = "Set")]
-	[Calls(Type = typeof(JobHandle), Member = "Complete")]
-	[Calls(Type = typeof(SnowPlaneParticles), Member = "UpdateParticlesMultithread")]
-	[Calls(Type = typeof(ParticleSystem), Member = "GetParticles")]
-	[Calls(Type = typeof(ParticleSystem.MinMaxGradient), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Vector3), Member = "get_down")]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[Calls(Type = typeof(Vector3), Member = "get_right")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Transform), Member = "get_up")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
-	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "GetCurrentQualitySettings")]
-	[Calls(Type = typeof(Utils), Member = "ExpStep")]
 	[Calls(Type = typeof(Weather), Member = "GetFallingSnowIntensity")]
-	[CallsDeduplicatedMethods(Count = 15)]
+	[Calls(Type = typeof(Utils), Member = "ExpStep")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "GetCurrentQualitySettings")]
+	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
+	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "get_up")]
+	[Calls(Type = typeof(Vector3), Member = "get_right")]
 	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(Vector3), Member = "get_up")]
+	[Calls(Type = typeof(Vector3), Member = "get_down")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(ParticleSystem.MinMaxGradient), Member = "op_Implicit")]
+	[Calls(Type = typeof(ParticleSystem), Member = "GetParticles")]
+	[Calls(Type = typeof(SnowPlaneParticles), Member = "UpdateParticlesMultithread")]
+	[Calls(Type = typeof(JobHandle), Member = "Complete")]
+	[Calls(Type = typeof(EventWaitHandle), Member = "Set")]
+	[Calls(Type = typeof(ParticleSystem), Member = "SetParticles")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 34)]
 	private void LateUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(JobHandle), Member = "Complete")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateParticlesJob(int numParticles)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(SnowPlaneParticles), Member = "LateUpdate")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	private void UpdateParticlesMultithread(int numParticles)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(EventWaitHandle), Member = "Set")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EventWaitHandle), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	private static void WaitTasksCompletion()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(EventWaitHandle), Member = "Set")]
-	[Calls(Type = typeof(SnowPlaneParticles), Member = "UpdateParticle")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SnowPlaneParticles), Member = "UpdateParticle")]
+	[Calls(Type = typeof(EventWaitHandle), Member = "Set")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 18)]
 	private void SnowPlaneParticleTask(object obj)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Mathf), Member = "Repeat")]
-	[Calls(Type = typeof(Mathf), Member = "Repeat")]
 	[CalledBy(Type = typeof(SnowPlaneParticles), Member = "SnowPlaneParticleTask")]
 	[CalledBy(Type = typeof(SnowPlaneParticleJob), Member = "Execute")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Mathf), Member = "Repeat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private static void UpdateParticle(ref ParticleSystem.Particle particle, float particleVelocityFrac, float particleFlurryFrac, Vector3 motionVec, Vector3 flurryVec, Vector3 gravityVec)
 	{
 	}

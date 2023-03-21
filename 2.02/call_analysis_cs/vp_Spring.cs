@@ -62,149 +62,127 @@ public class vp_Spring
 	}
 
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "Awake")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "Awake")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "Start")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "Start")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "Start")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "Start")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "Start")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "Awake")]
-	[Calls(Type = typeof(vp_Spring), Member = "RefreshTransformType")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 8)]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(vp_Spring), Member = "RefreshTransformType")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public vp_Spring(Transform transform, TransformType modifier)
 	{
 	}
 
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "Update")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "FixedUpdateInternal")]
+	[CallerCount(Count = 9)]
 	[Calls(Type = typeof(vp_Spring), Member = "RefreshTransformType")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 9)]
 	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "FixedUpdateInternal")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "FixedUpdateInternal")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "FixedUpdateInternal")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "FixedUpdateInternal")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "Update")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "FixedUpdateInternal")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "FixedUpdateInternal")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "Update")]
 	public void FixedUpdate(float fixedTime, float fixedDeltaTime)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(vp_Spring), Member = "RefreshTransformType")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Refresh()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(vp_Spring), Member = "Calculate")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Position()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_Spring), Member = "Calculate")]
 	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(vp_Spring), Member = "Calculate")]
 	private void PositionAdditive()
 	{
 	}
 
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Transform), Member = "set_localEulerAngles")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(vp_Spring), Member = "Reset")]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
 	[Calls(Type = typeof(vp_Spring), Member = "Calculate")]
+	[Calls(Type = typeof(vp_Spring), Member = "Reset")]
+	[Calls(Type = typeof(Transform), Member = "set_localEulerAngles")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Rotation()
 	{
 	}
 
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(vp_Spring), Member = "Calculate")]
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[Calls(Type = typeof(vp_Spring), Member = "Calculate")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[Calls(Type = typeof(Transform), Member = "set_localEulerAngles")]
 	[Calls(Type = typeof(vp_Spring), Member = "Reset")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void RotationAdditive()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(vp_Spring), Member = "Calculate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Scale()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(vp_Spring), Member = "Calculate")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_Spring), Member = "Calculate")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void ScaleAdditive()
 	{
 	}
 
-	[CalledBy(Type = typeof(TLD_FPHandsTrack), Member = "Stop")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "RefreshCameraTransform")]
 	[CalledBy(Type = typeof(vp_Spring), Member = "set_Transform")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "RefreshCameraTransform")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "RefreshCameraTransform")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "RefreshCameraTransform")]
-	[Calls(Type = typeof(Transform), Member = "get_localScale")]
-	[Calls(Type = typeof(Transform), Member = "get_localScale")]
-	[Calls(Type = typeof(Transform), Member = "get_localEulerAngles")]
-	[Calls(Type = typeof(Transform), Member = "get_localEulerAngles")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 10)]
-	[CalledBy(Type = typeof(vp_Spring), Member = "Refresh")]
-	[CallsUnknownMethods(Count = 49)]
-	[CalledBy(Type = typeof(TLD_FPHandsTrack), Member = "Stop")]
-	[CalledBy(Type = typeof(TLD_FPHandsTrack), Member = "Stop")]
 	[CalledBy(Type = typeof(vp_Spring), Member = ".ctor")]
 	[CalledBy(Type = typeof(vp_Spring), Member = "FixedUpdate")]
+	[CalledBy(Type = typeof(vp_Spring), Member = "Refresh")]
+	[CalledBy(Type = typeof(TLD_FPHandsTrack), Member = "Stop")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
+	[Calls(Type = typeof(Transform), Member = "get_localEulerAngles")]
+	[Calls(Type = typeof(Transform), Member = "get_localScale")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 49)]
 	protected void RefreshTransformType()
 	{
 	}
 
-	[Calls(Type = typeof(Vector3), Member = "ClampMagnitude")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(vp_Spring), Member = "Rotation")]
 	[CalledBy(Type = typeof(vp_Spring), Member = "Position")]
-	[CalledBy(Type = typeof(vp_Spring), Member = "ScaleAdditive")]
-	[CalledBy(Type = typeof(vp_Spring), Member = "Scale")]
-	[CalledBy(Type = typeof(vp_Spring), Member = "RotationAdditive")]
-	[Calls(Type = typeof(vp_Spring), Member = "Reset")]
 	[CalledBy(Type = typeof(vp_Spring), Member = "PositionAdditive")]
+	[CalledBy(Type = typeof(vp_Spring), Member = "Rotation")]
+	[CalledBy(Type = typeof(vp_Spring), Member = "RotationAdditive")]
+	[CalledBy(Type = typeof(vp_Spring), Member = "Scale")]
+	[CalledBy(Type = typeof(vp_Spring), Member = "ScaleAdditive")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Vector3), Member = "ClampMagnitude")]
+	[Calls(Type = typeof(vp_Spring), Member = "Reset")]
 	[Calls(Type = typeof(vp_Spring), Member = "Move")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected void Calculate()
 	{
 	}
 
-	[CallerCount(Count = 58)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 58)]
 	public void AddForce(Vector3 force)
 	{
 	}
 
-	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_Spring), Member = "AddForce")]
 	public void AddForce(float x, float y, float z)
 	{
 	}
@@ -216,46 +194,32 @@ public class vp_Spring
 	{
 	}
 
-	[CalledBy(Type = typeof(vp_Spring), Member = "RotationAdditive")]
 	[CalledBy(Type = typeof(vp_Spring), Member = "Rotation")]
+	[CalledBy(Type = typeof(vp_Spring), Member = "RotationAdditive")]
+	[CalledBy(Type = typeof(vp_Spring), Member = "Calculate")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(vp_Spring), Member = "Calculate")]
 	public void Reset()
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_LookAtTargetForTime), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_LookAtTargetForTime), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_LookAtTargetForTime), Member = "OnExecute")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "StopSprings")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "StopSprings")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "StopSprings")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "StopSprings")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "SnapSprings")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "SnapSprings")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "SnapSprings")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "SnapSprings")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "SnapSprings")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "StopSprings")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "StopSprings")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "StopSprings")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SnapSprings")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SnapSprings")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "StopSprings")]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "SnapSprings")]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "StopSprings")]
+	[CalledBy(Type = typeof(Action_LookAtTargetForTime), Member = "OnExecute")]
+	[CallerCount(Count = 18)]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 18)]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "StopSprings")]
 	public void Stop()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "ResetSprings")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "ResetSprings")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void ForceVelocityFadeIn(float seconds)
 	{
 	}

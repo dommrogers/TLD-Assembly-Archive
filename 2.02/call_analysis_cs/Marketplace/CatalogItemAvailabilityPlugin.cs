@@ -22,8 +22,8 @@ public class CatalogItemAvailabilityPlugin
 	public static extern IntPtr CatalogItemAvailability_AcceptablePaymentInstrumentTypes_GetAt(IntPtr self, uint idx);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CatalogItemAvailability_AcceptablePaymentInstrumentTypes_Dispose(IntPtr self);
 
 	[PreserveSig]
@@ -52,13 +52,13 @@ public class CatalogItemAvailabilityPlugin
 	public static extern IntPtr CatalogItemAvailability_CurrencyCode(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CatalogItemAvailability_DisplayListPrice(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CatalogItemAvailability_DisplayPrice(IntPtr self);
 
 	[PreserveSig]
@@ -92,8 +92,8 @@ public class CatalogItemAvailabilityPlugin
 	public static extern double CatalogItemAvailability_Price(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CatalogItemAvailability_PromotionalText(IntPtr self);
 
 	[PreserveSig]
@@ -107,7 +107,7 @@ public class CatalogItemAvailabilityPlugin
 	public static extern void CatalogItemAvailability_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CatalogItemAvailabilityPlugin()
 	{
 	}

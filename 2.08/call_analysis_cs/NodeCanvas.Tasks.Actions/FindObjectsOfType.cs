@@ -34,11 +34,12 @@ public class FindObjectsOfType<T> : ActionTask where T : Component
 
 	public BBParameter<List<T>> saveComponents;
 
-	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 10)]
 	protected override void OnExecute()
 	{
 	}

@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -36,7 +35,7 @@ public class Filter : BTDecorator
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -45,9 +44,9 @@ public class Filter : BTDecorator
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 29)]
-			[DeduplicatedMethod]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -61,19 +60,20 @@ public class Filter : BTDecorator
 		{
 		}
 
-		[CallerCount(Count = 2)]
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CallsUnknownMethods(Count = 5)]
+		[CallsUnknownMethods(Count = 4)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -99,31 +99,28 @@ public class Filter : BTDecorator
 
 	private float currentTime;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public override void OnGraphStarted()
 	{
 	}
 
-	[Calls(Type = typeof(Filter), Member = "Cooldown")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Node), Member = "StartCoroutine")]
-	[Calls(Type = typeof(Connection), Member = "Execute")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[Calls(Type = typeof(Connection), Member = "Execute")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Connection), Member = "Execute")]
+	[Calls(Type = typeof(Filter), Member = "Cooldown")]
+	[Calls(Type = typeof(Node), Member = "StartCoroutine")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
+	[CalledBy(Type = typeof(Filter), Member = "OnExecute")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Filter), Member = "OnExecute")]
 	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator Cooldown()
 	{
@@ -131,9 +128,9 @@ public class Filter : BTDecorator
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Filter()
 	{
 	}

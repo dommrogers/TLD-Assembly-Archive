@@ -30,19 +30,21 @@ public class Action_Objective : ActionTask
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Action_Objective), Member = "OnUpdate")]
 	[CalledBy(Type = typeof(Action_Objective), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_Objective), Member = "OnUpdate")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_HUD), Member = "RefreshMissionMessage")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowMissionMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	private void DoWork()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsUnknownMethods(Count = 1)]
 	public Action_Objective()
 	{
 	}

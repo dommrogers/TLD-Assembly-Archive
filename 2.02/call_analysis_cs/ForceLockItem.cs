@@ -9,10 +9,10 @@ public class ForceLockItem : MonoBehaviour
 
 	public string m_ProgressText
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(LocalizedString), Member = "Text")]
-		[CallerCount(Count = 11)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 11)]
+		[Calls(Type = typeof(LocalizedString), Member = "Text")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -20,7 +20,7 @@ public class ForceLockItem : MonoBehaviour
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Start()
 	{
 	}

@@ -17,31 +17,30 @@ public class PlayableBehaviourCameraEffects : PlayableBehaviour
 
 	private PostProcessVolume m_PostProcessVolume;
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayableBehaviourCameraEffects), Member = "MaybeSetPostProcessVolume")]
+	[Calls(Type = typeof(CameraFade), Member = "SetScreenOverlayColor")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(CameraEffects), Member = "BlurSetSize")]
-	[Calls(Type = typeof(PlayableBehaviourCameraEffects), Member = "MaybeSetPostProcessVolume")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(CameraFade), Member = "SetScreenOverlayColor")]
+	[CallsUnknownMethods(Count = 7)]
 	public override void ProcessFrame(Playable playable, FrameData info, object playerData)
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayableBehaviourCameraEffects), Member = "ProcessFrame")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(PlayableBehaviourCameraEffects), Member = "ProcessFrame")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void MaybeSetPostProcessVolume()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PlayableBehaviourCameraEffects()
 	{
 	}

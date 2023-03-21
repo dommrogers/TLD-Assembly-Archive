@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Gear;
+using TLD.SaveState;
 using TLD.UI;
 using TLD.UI.Generics;
 using TLD.UI.Notifications;
@@ -37,20 +38,19 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 
 		[CalledBy(Type = typeof(Panel_Crafting), Member = "Initialize")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 3)]
+		[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		public HighlightButton(UIButton button)
 		{
 		}
 
 		[CalledBy(Type = typeof(Panel_Crafting), Member = "Initialize")]
-		[Calls(Type = typeof(UIButton), Member = "set_normalSprite")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[CalledBy(Type = typeof(Panel_Crafting), Member = "SetFilter")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[CallsDeduplicatedMethods(Count = 3)]
-		[CalledBy(Type = typeof(Panel_Crafting), Member = "SetFilter")]
 		[Calls(Type = typeof(UIButton), Member = "set_normalSprite")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 1)]
 		public void SetHighlighted(bool highlighted)
 		{
@@ -89,20 +89,19 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 
 		public static Comparison<BlueprintData> _003C_003E9__121_0;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec()
 		{
 		}
 
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-		[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 		[CallsUnknownMethods(Count = 1)]
 		internal int _003CApplyFilter_003Eb__121_0(BlueprintData lhs, BlueprintData rhs)
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -256,11 +255,11 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
@@ -275,9 +274,9 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
 		private set
 		{
 		}
@@ -285,9 +284,9 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 
 	public InProgressCraftItem m_SelectedWIP
 	{
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -309,28 +308,26 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 3)]
 		remove
 		{
 		}
 	}
 
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallsUnknownMethods(Count = 24)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "CacheComponents")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(HighlightButton), Member = "SetHighlighted")]
-	[Calls(Type = typeof(HighlightButton), Member = ".ctor")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(HighlightButton), Member = ".ctor")]
+	[Calls(Type = typeof(HighlightButton), Member = "SetHighlighted")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "CacheComponents")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 23)]
 	public override void Initialize()
 	{
 	}
@@ -343,30 +340,29 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Crafting), Member = "HandleCraftingInterrupt")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "UpdateControllerButtons")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "UpdateMouseKeyboardButtons")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "HandleInput")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "UpdateCrafting")]
-	[Calls(Type = typeof(CraftingRequirementQuantitySelect), Member = "Refresh")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "MaybeShowNotificationFlagForNewBlueprintEntry")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "MaybeShowNotificationFlagForNewBlueprintEntry")]
+	[Calls(Type = typeof(CraftingRequirementQuantitySelect), Member = "Refresh")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "HandleInput")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "UpdateMouseKeyboardButtons")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "UpdateControllerButtons")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "UpdateCrafting")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "HandleCraftingInterrupt")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "ResetLastLocations")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "ResetLastLocations")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "ResetLastLocations")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
+	[CallsUnknownMethods(Count = 2)]
 	public void UpdateLastLocations()
 	{
 	}
@@ -377,25 +373,23 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 	[CallsUnknownMethods(Count = 3)]
 	public bool CanCraftBlueprint(BlueprintData bpi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateMouseKeyboardButtons")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateControllerButtons")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnBeginCrafting")]
-	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "RefreshCraftingTimeDisplay")]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "Enable")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CraftingRequirementContainer), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(BlueprintData), Member = "HasRequiredTool")]
-	[Calls(Type = typeof(BlueprintData), Member = "HasRequiredMaterials")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "RefreshCraftingTimeDisplay")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnBeginCrafting")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateControllerButtons")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateMouseKeyboardButtons")]
 	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BlueprintData), Member = "HasRequiredMaterials")]
+	[Calls(Type = typeof(BlueprintData), Member = "HasRequiredTool")]
+	[Calls(Type = typeof(CraftingRequirementContainer), Member = "GetSelectedTool")]
+	[CallsUnknownMethods(Count = 5)]
 	public bool CanCraftSelectedBlueprint()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
@@ -404,40 +398,39 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 	{
 	}
 
-	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
 	[CalledBy(Type = typeof(Panel_Clothing), Member = "OnCraftingNav")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "EnableCraftingAtLocation")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnCraftingButton")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "OnCraftingNav")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnCraftingNav")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnCraftingNav")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "OnCraftingNav")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(CraftingCategoryNavigation), Member = "Initialize")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnCraftingNav")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "SetNavigationArea")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "OnCraftingNav")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshBlueprints")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "OnCraftingButton")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "SetFilter")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(InterfaceManager), Member = "IsUsingSurvivalTabs")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "SetFilter")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshBlueprints")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Panel_Crafting), Member = "SetNavigationArea")]
+	[Calls(Type = typeof(CraftingCategoryNavigation), Member = "Initialize")]
+	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[CallsUnknownMethods(Count = 5)]
 	public void Enable(bool enable, bool fromPanel)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	public void ResetNotificationsData()
 	{
 	}
@@ -449,72 +442,63 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 		return default(CraftingLocation);
 	}
 
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "ConsumeMaterialsUsedForCrafting")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "ConsumeMaterialsUsedForCrafting")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "ConsumeMaterialsUsedForCrafting")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "ApplyCraftingProgress")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "GetFinalCraftingTimeWithAllModifiers")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "GetAdjustedCraftingTime")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "GetFinalCraftingTimeWithAllModifiers")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "ApplyCraftingProgress")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "ConsumeMaterialsUsedForCrafting")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 6)]
+	[CallsUnknownMethods(Count = 2)]
 	public int GetModifiedCraftingDuration(int baseMinutes)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "GetModifiedCraftingDuration")]
 	[CallsUnknownMethods(Count = 2)]
 	public int GetAdjustedCraftingTime()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "CraftingStart")]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "RefreshCraftingTimeDisplay")]
-	[Calls(Type = typeof(CraftingRequirementContainer), Member = "GetQuantity")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "GetModifiedCraftingDuration")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "CraftingStart")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "GetModifiedCraftingDuration")]
+	[Calls(Type = typeof(CraftingRequirementContainer), Member = "GetQuantity")]
+	[CallsUnknownMethods(Count = 2)]
 	public int GetFinalCraftingTimeWithAllModifiers()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleInput")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameAudioManager), Member = "MaybePlayOverrideCloseSound")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "SetNavigationArea")]
+	[Calls(Type = typeof(GameAudioManager), Member = "MaybePlayOverrideCloseSound")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnBackButton()
 	{
 	}
 
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleInput")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(BodyCarry), Member = "ShowError")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "CraftingStart")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Weather), Member = "IsTooDarkForAction")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "CanCraftSelectedBlueprint")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Weather), Member = "IsTooDarkForAction")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "CraftingStart")]
+	[Calls(Type = typeof(BodyCarry), Member = "ShowError")]
+	[CallsUnknownMethods(Count = 7)]
 	public void OnBeginCrafting()
 	{
 	}
@@ -525,66 +509,72 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnClothingNav()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnFirstAidNav()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnInventoryNav()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnJournalNav()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnMapNam()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnMissionNav()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Crafting), Member = "ApplyFilter")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "MaybeShowNotificationFlagForNewBlueprintEntry")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Crafting), Member = "MaybeShowNotificationFlagForNewBlueprintEntry")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "ApplyFilter")]
 	public void OnCategoryChanged(int index)
 	{
 	}
@@ -597,34 +587,34 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Crafting), Member = "SetFilter")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnFilterChange(UIButton button)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshBlueprintDisplayList")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnScrollbarBlueprintsChanged()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Panel_Crafting), Member = "Enable")]
 	[CalledBy(Type = typeof(AmmoWorkBench), Member = "InteractWithWorkbench")]
 	[CalledBy(Type = typeof(Forge), Member = "PerformInteraction")]
 	[CalledBy(Type = typeof(WorkBench), Member = "InteractWithWorkbench")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Crafting), Member = "Enable")]
 	public void EnableCraftingAtLocation(CraftingLocationInterface location)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Crafting), Member = "ShowPanelCraftingSubCategoryNotificationIcon")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void HandleOnNotificationAdded(NotificationFlagInfo nfi)
 	{
 	}
@@ -635,317 +625,270 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleOnNotificationAdded")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleOnNotificationAdded")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public void ShowPanelCraftingSubCategoryNotificationIcon(SubCategory subCategory, bool enable)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void OnSelectedQuantityChanged()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	protected void OnBlueprintDisplayClicked(int index)
 	{
 	}
 
-	[Calls(Type = typeof(AchievementManager), Member = "CraftedItem")]
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateCrafting")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleCraftingSuccess")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleCraftingInterrupt")]
-	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(BlueprintData), Member = "GetDisplayedNameWithCount")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(ClothingItem), Member = "PickedUp")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(Skill_Gunsmithing), Member = "GetCurrentTier")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleCraftingSuccess")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateCrafting")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillGunsmithing")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "GetModifiedCraftingDuration")]
 	[Calls(Type = typeof(InProgressCraftItem), Member = "IsProgressComplete")]
 	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
 	[Calls(Type = typeof(InProgressCraftItem), Member = "GetPercentCompleteNormalized")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillGunsmithing")]
+	[Calls(Type = typeof(Skill_Gunsmithing), Member = "GetCurrentTier")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(ClothingItem), Member = "PickedUp")]
+	[Calls(Type = typeof(AchievementManager), Member = "CraftedItem")]
+	[Calls(Type = typeof(BlueprintData), Member = "GetDisplayedNameWithCount")]
+	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	private void ApplyCraftingProgress(float hoursSpentCrafting)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "SetFilter")]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "ItemPassesFilter")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshBlueprintDisplayList")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnCategoryChanged")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "RefreshBlueprints")]
-	[CallsUnknownMethods(Count = 9)]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "SetFilter")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "ItemPassesFilter")]
+	[Calls(Type = typeof(List<>), Member = "Sort")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshBlueprintDisplayList")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void ApplyFilter()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "ApplyFilter")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GearItem), Member = "IsGearType")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ItemPassesFilter(BlueprintData bpi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateCrafting")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleCraftingSuccess")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleCraftingInterrupt")]
-	[Calls(Type = typeof(PlayerManager), Member = "DeductPowderFromInventory")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "GetModifiedCraftingDuration")]
-	[Calls(Type = typeof(PlayerManager), Member = "DeductLiquidFromInventory")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "GetModifiedCraftingDuration")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleCraftingSuccess")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateCrafting")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "GetModifiedCraftingDuration")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
+	[Calls(Type = typeof(PlayerManager), Member = "DeductLiquidFromInventory")]
+	[Calls(Type = typeof(PlayerManager), Member = "DeductPowderFromInventory")]
+	[CallsUnknownMethods(Count = 8)]
 	private void ConsumeMaterialsUsedForCrafting(float hoursSpentCrafting)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleCraftingSuccess")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleCraftingInterrupt")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleCraftingSuccess")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(BlueprintDisplayItem), Member = "Setup")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(BlueprintDisplayItem), Member = "Setup")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void CraftingEnd()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnBeginCrafting")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CraftingRequirementContainer), Member = "GetQuantity")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "GetFinalCraftingTimeWithAllModifiers")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Crafting), Member = "GetFinalCraftingTimeWithAllModifiers")]
+	[Calls(Type = typeof(CraftingRequirementContainer), Member = "GetQuantity")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
+	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private void CraftingStart()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleCraftingSuccess")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleCraftingInterrupt")]
-	[Calls(Type = typeof(GearItem), Member = "Degrade")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleCraftingSuccess")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "Degrade")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void DegradeTools(float hoursSpentCrafting)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateCrafting")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateCrafting")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnCancelCrafting")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "Update")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "HandleCraftingSuccess")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "ConsumeMaterialsUsedForCrafting")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "DegradeTools")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "CraftingEnd")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnCancelCrafting")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateCrafting")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(InProgressCraftItem), Member = "IsProgressComplete")]
-	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Panel_Crafting), Member = "ConsumeMaterialsUsedForCrafting")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "ApplyCraftingProgress")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "UpdateSkillAfterCrafting")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "DegradeTools")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "CraftingEnd")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "HandleCraftingSuccess")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void HandleCraftingInterrupt(InterruptReason reason)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleCraftingInterrupt")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateCrafting")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Panel_Crafting), Member = "ConsumeMaterialsUsedForCrafting")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "ApplyCraftingProgress")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "DegradeTools")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "UpdateSkillAfterCrafting")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "CraftingEnd")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateCrafting")]
 	private void HandleCraftingSuccess()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleCraftingSuccess")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleCraftingInterrupt")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleCraftingSuccess")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateCrafting")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(PlayerSkills), Member = "RollForSkillIncrease")]
 	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
-	[CallerCount(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateSkillAfterCrafting(bool success)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(GamepadButtonSprite), Member = "UpdateSpriteForActiveController")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "CanCraftSelectedBlueprint")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "CanCraftSelectedBlueprint")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(GamepadButtonSprite), Member = "UpdateSpriteForActiveController")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateControllerButtons()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "CanCraftSelectedBlueprint")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateMouseKeyboardButtons()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Crafting), Member = "ConsumeMaterialsUsedForCrafting")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "Update")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "HandleCraftingInterrupt")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "HandleCraftingSuccess")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "ApplyCraftingProgress")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "UpdateSkillAfterCrafting")]
-	[Calls(Type = typeof(CraftingRequirementContainer), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "HandleCraftingInterrupt")]
-	[Calls(Type = typeof(Weather), Member = "IsTooDarkForAction")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Weather), Member = "IsTooDarkForAction")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "HandleCraftingInterrupt")]
+	[Calls(Type = typeof(CraftingRequirementContainer), Member = "GetSelectedTool")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "ConsumeMaterialsUsedForCrafting")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "ApplyCraftingProgress")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "UpdateSkillAfterCrafting")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "HandleCraftingSuccess")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateCrafting()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsUsingSurvivalTabs")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsUsingSurvivalTabs")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	private void EnableNavigationTabs(bool enable)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "SetNavigationArea")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "SetNavigationArea")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "SetNavigationArea")]
 	[CallsUnknownMethods(Count = 1)]
 	private int GetSelectedDisplayIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 7)]
 	private InProgressCraftItem GetInProgressItem(BlueprintData bpi)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Panel_Crafting), Member = "OnBeginCrafting")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Panel_Crafting), Member = "HandleVerticalNavigation")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "SetNavigationArea")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsUsingSurvivalTabs")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "OnBackButton")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "Update")]
-	[Calls(Type = typeof(CraftingRequirementContainer), Member = "OnPrevious")]
-	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
-	[Calls(Type = typeof(CraftingRequirementContainer), Member = "OnNext")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "SetFilter")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshBlueprintDisplayList")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
-	[Calls(Type = typeof(CraftingRequirementContainer), Member = "SetHighlightedItem")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "SetNavigationArea")]
 	[Calls(Type = typeof(InputManager), Member = "GetOpenActionsPanelPressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetAltFirePressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetFirePressed")]
@@ -954,38 +897,54 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetInventoryDropPressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetInventorySortPressed")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "SetNavigationArea")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "SetFilter")]
+	[Calls(Type = typeof(CraftingRequirementContainer), Member = "SetHighlightedItem")]
+	[Calls(Type = typeof(CraftingRequirementContainer), Member = "OnNext")]
+	[Calls(Type = typeof(CraftingRequirementContainer), Member = "OnPrevious")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "OnBeginCrafting")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "HandleVerticalNavigation")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsUsingSurvivalTabs")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "OnBackButton")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 4)]
 	private void HandleInput()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleInput")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CraftingCategoryNavigation), Member = "SetCurrentIndex")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshBlueprintDisplayList")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
-	[Calls(Type = typeof(CraftingCategoryNavigation), Member = "SetCurrentIndex")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Panel_Crafting), Member = "RefreshBlueprintDisplayList")]
+	[CallsUnknownMethods(Count = 1)]
 	private void HandleVerticalNavigation(float movement)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(BlueprintDisplayItem), Member = "Clear")]
 	[Calls(Type = typeof(CraftingRequirementContainer), Member = "Disable")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private void ClearSelectedBlueprint()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Crafting), Member = "ShouldBlockBasedOnCustomMode")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private bool ShouldAllowForSurvivalMode(BlueprintData bp)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -993,84 +952,67 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 	[CallsUnknownMethods(Count = 1)]
 	private bool ShouldAllowForStoryMode(BlueprintData bp)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[CallsUnknownMethods(Count = 1)]
 	private static bool IsBirchBarkTea(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "ShouldAllowForStoryMode")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "ShouldAllowForSurvivalMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "ShouldAllowForStoryMode")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ShouldBlockBasedOnCustomMode(BlueprintData bp)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "Enable")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(BlueprintManager), Member = "GetFilteredBlueprints")]
 	[Calls(Type = typeof(Panel_Crafting), Member = "ApplyFilter")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void RefreshBlueprints()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleVerticalNavigation")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleInput")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "ApplyFilter")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnScrollbarBlueprintsChanged")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(BlueprintDisplayItem), Member = "SetSelected")]
-	[Calls(Type = typeof(BlueprintDisplayItem), Member = "Setup")]
-	[Calls(Type = typeof(BlueprintDisplayItem), Member = "Clear")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "ApplyFilter")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleInput")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleVerticalNavigation")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(BlueprintDisplayItem), Member = "Clear")]
+	[Calls(Type = typeof(BlueprintDisplayItem), Member = "Setup")]
+	[Calls(Type = typeof(BlueprintDisplayItem), Member = "SetSelected")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsUnknownMethods(Count = 5)]
 	private void RefreshBlueprintDisplayList()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "GetTemperatureString")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
-	[Calls(Type = typeof(Utils), Member = "GetWeightTwoDecimalPlacesWithUnitsString")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(BlueprintDisplayItem), Member = "SetSelected")]
-	[Calls(Type = typeof(CraftingRequirementContainer), Member = "Enable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "ClearSelectedBlueprint")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnScrollbarBlueprintsChanged")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnBlueprintDisplayClicked")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "ApplyFilter")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "CraftingEnd")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleInput")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleVerticalNavigation")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(ClothingItem), Member = "GetWindproof")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "ApplyFilter")]
-	[Calls(Type = typeof(ClothingItem), Member = "GetWarmth")]
 	[CallerCount(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[Calls(Type = typeof(GearItem), Member = "CacheComponents")]
@@ -1078,117 +1020,109 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 	[Calls(Type = typeof(BlueprintData), Member = "GetDisplayedNameWithCount")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(GearItem), Member = "get_Description")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetTemperatureString")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
+	[Calls(Type = typeof(float), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(ClothingItem), Member = "GetWarmth")]
+	[Calls(Type = typeof(Utils), Member = "GetTemperatureString")]
+	[Calls(Type = typeof(ClothingItem), Member = "GetWindproof")]
+	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Utils), Member = "GetWeightTwoDecimalPlacesWithUnitsString")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(BlueprintDisplayItem), Member = "SetSelected")]
+	[Calls(Type = typeof(CraftingRequirementContainer), Member = "Enable")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "ClearSelectedBlueprint")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void RefreshSelectedBlueprint()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	private string CreateNegativePercentageText(float pct)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(InterfaceManager), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateLastLocations")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "Update")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateLastLocations")]
 	private void ResetLastLocations()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateFilters")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateFilters")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateFilters")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateFilters")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateFilters")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleInput")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnFilterChange")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "Enable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "ApplyFilter")]
-	[Calls(Type = typeof(HighlightButton), Member = "SetHighlighted")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnFilterChange")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleInput")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateFilters")]
 	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(HighlightButton), Member = "SetHighlighted")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "ApplyFilter")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetFilter(Filter filter)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnControllerScheme")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnBackButton")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnControllerScheme")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleInput")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleInput")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(BlueprintDisplayItem), Member = "SetSelected")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "GetSelectedDisplayIndex")]
-	[Calls(Type = typeof(CraftingCategoryNavigation), Member = "SetSelected")]
-	[Calls(Type = typeof(BlueprintDisplayItem), Member = "SetSelected")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "GetSelectedDisplayIndex")]
-	[Calls(Type = typeof(CraftingCategoryNavigation), Member = "SetSelected")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(CraftingCategoryNavigation), Member = "SetSelected")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "GetSelectedDisplayIndex")]
+	[Calls(Type = typeof(BlueprintDisplayItem), Member = "SetSelected")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetNavigationArea(NavArea target)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 15)]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnCategoryChanged")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "Update")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "RemoveNewBlueprintEntry")]
-	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "OnCategoryChanged")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "RemoveNewBlueprintEntry")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsUnknownMethods(Count = 14)]
 	private void MaybeShowNotificationFlagForNewBlueprintEntry()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "MaybeShowNotificationFlagForNewBlueprintEntry")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void RemoveNewBlueprintEntry(NotificationFlagInfo nfi)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "Initialize")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "Initialize")]
 	[CallsUnknownMethods(Count = 2)]
 	private void CacheComponents()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Crafting), Member = "SetFilter")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "SetFilter")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "SetFilter")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "SetFilter")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Crafting), Member = "SetFilter")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateFilters()
 	{
 	}
@@ -1198,7 +1132,7 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsAcceleratingTime()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1215,8 +1149,8 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	public UIPanel GetPanelToFade()
 	{
 		return null;
@@ -1250,8 +1184,8 @@ public class Panel_Crafting : Panel_AutoReferenced, INotificationHandler, IAccel
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void StopAcceleratingTime()
 	{
 	}

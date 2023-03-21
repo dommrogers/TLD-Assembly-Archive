@@ -22,7 +22,7 @@ public sealed class vp_DecalManager
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(vp_DecalManager), Member = "Refresh")]
@@ -36,7 +36,7 @@ public sealed class vp_DecalManager
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(vp_DecalManager), Member = "Refresh")]
@@ -46,59 +46,57 @@ public sealed class vp_DecalManager
 		}
 	}
 
-	[CallsUnknownMethods(Count = 11)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(vp_DecalManager), Member = "Refresh")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 11)]
 	static vp_DecalManager()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	private vp_DecalManager()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public static void Add(GameObject decal)
 	{
 	}
 
+	[CalledBy(Type = typeof(vp_Bullet), Member = "Start")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Material), Member = "get_color")]
 	[Calls(Type = typeof(Material), Member = "set_color")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Material), Member = "get_color")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(vp_Bullet), Member = "Start")]
-	[CalledBy(Type = typeof(vp_Bullet), Member = "Start")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Material), Member = "get_color")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	private static void FadeAndRemove()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(vp_DecalManager), Member = ".cctor")]
-	[CalledBy(Type = typeof(vp_DecalManager), Member = "set_FadedDecals")]
 	[CalledBy(Type = typeof(vp_DecalManager), Member = "set_MaxDecals")]
+	[CalledBy(Type = typeof(vp_DecalManager), Member = "set_FadedDecals")]
+	[CalledBy(Type = typeof(vp_DecalManager), Member = ".cctor")]
+	[CallerCount(Count = 3)]
 	private static void Refresh()
 	{
 	}
 
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Material), Member = "get_color")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallsUnknownMethods(Count = 35)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Material), Member = "get_color")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 35)]
 	private static void DebugOutput()
 	{
 	}

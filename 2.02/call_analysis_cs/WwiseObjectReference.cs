@@ -13,18 +13,18 @@ public abstract class WwiseObjectReference : ScriptableObject
 
 	public Guid Guid
 	{
-		[CalledBy(Type = typeof(BaseType), Member = "get_valueGuid")]
-		[CalledBy(Type = typeof(BaseGroupType), Member = "get_groupGuid")]
-		[CalledBy(Type = typeof(AkSwitch), Member = "get_valueGuid")]
-		[CalledBy(Type = typeof(AkState), Member = "get_groupGuid")]
-		[CalledBy(Type = typeof(AkState), Member = "get_valueGuid")]
-		[CalledBy(Type = typeof(AkSwitch), Member = "get_groupGuid")]
-		[CalledBy(Type = typeof(AkEnvironment), Member = "get_valueGuid")]
 		[CalledBy(Type = typeof(AkBank), Member = "get_valueGuid")]
+		[CalledBy(Type = typeof(AkEnvironment), Member = "get_valueGuid")]
+		[CalledBy(Type = typeof(AkEvent), Member = "get_valueGuid")]
+		[CalledBy(Type = typeof(AkState), Member = "get_valueGuid")]
+		[CalledBy(Type = typeof(AkState), Member = "get_groupGuid")]
+		[CalledBy(Type = typeof(AkSwitch), Member = "get_valueGuid")]
+		[CalledBy(Type = typeof(AkSwitch), Member = "get_groupGuid")]
+		[CalledBy(Type = typeof(BaseGroupType), Member = "get_groupGuid")]
+		[CalledBy(Type = typeof(BaseType), Member = "get_valueGuid")]
+		[CallerCount(Count = 9)]
 		[Calls(Type = typeof(Guid), Member = ".ctor")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 9)]
-		[CalledBy(Type = typeof(AkEvent), Member = "get_valueGuid")]
 		get
 		{
 			return default(Guid);
@@ -34,7 +34,7 @@ public abstract class WwiseObjectReference : ScriptableObject
 	public string ObjectName
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
@@ -44,7 +44,7 @@ public abstract class WwiseObjectReference : ScriptableObject
 	public virtual string DisplayName
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
@@ -53,35 +53,30 @@ public abstract class WwiseObjectReference : ScriptableObject
 
 	public uint Id
 	{
-		[CallerCount(Count = 1)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
-	public abstract WwiseObjectType WwiseObjectType
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	public abstract WwiseObjectType WwiseObjectType { get; }
 
-	[CalledBy(Type = typeof(WwiseTriggerReference), Member = ".ctor")]
-	[CalledBy(Type = typeof(WwiseSwitchReference), Member = ".ctor")]
-	[CalledBy(Type = typeof(WwiseSwitchGroupReference), Member = ".ctor")]
-	[CalledBy(Type = typeof(WwiseStateReference), Member = ".ctor")]
-	[CalledBy(Type = typeof(WwiseStateGroupReference), Member = ".ctor")]
-	[CalledBy(Type = typeof(WwiseRtpcReference), Member = ".ctor")]
-	[CalledBy(Type = typeof(WwiseGroupValueObjectReference), Member = ".ctor")]
-	[CallerCount(Count = 11)]
-	[CalledBy(Type = typeof(WwiseBankReference), Member = ".ctor")]
-	[CalledBy(Type = typeof(WwiseAuxBusReference), Member = ".ctor")]
 	[CalledBy(Type = typeof(WwiseAcousticTextureReference), Member = ".ctor")]
+	[CalledBy(Type = typeof(WwiseAuxBusReference), Member = ".ctor")]
+	[CalledBy(Type = typeof(WwiseBankReference), Member = ".ctor")]
+	[CalledBy(Type = typeof(WwiseEventReference), Member = ".ctor")]
+	[CalledBy(Type = typeof(WwiseGroupValueObjectReference), Member = ".ctor")]
+	[CalledBy(Type = typeof(WwiseRtpcReference), Member = ".ctor")]
+	[CalledBy(Type = typeof(WwiseStateGroupReference), Member = ".ctor")]
+	[CalledBy(Type = typeof(WwiseStateReference), Member = ".ctor")]
+	[CalledBy(Type = typeof(WwiseSwitchGroupReference), Member = ".ctor")]
+	[CalledBy(Type = typeof(WwiseSwitchReference), Member = ".ctor")]
+	[CalledBy(Type = typeof(WwiseTriggerReference), Member = ".ctor")]
+	[CallerCount(Count = 11)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(WwiseEventReference), Member = ".ctor")]
 	protected WwiseObjectReference()
 	{
 	}

@@ -15,11 +15,11 @@ internal struct CopyPlayerAchievementByAchievementIdOptionsInternal : ISettable,
 
 	public ProductUserId UserId
 	{
+		[CalledBy(Type = typeof(CopyPlayerAchievementByAchievementIdOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyPlayerAchievementByAchievementIdOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyPlayerAchievementByAchievementIdOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyPlayerAchievementByAchievementIdOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -28,34 +28,34 @@ internal struct CopyPlayerAchievementByAchievementIdOptionsInternal : ISettable,
 	public string AchievementId
 	{
 		[CalledBy(Type = typeof(CopyPlayerAchievementByAchievementIdOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(CopyPlayerAchievementByAchievementIdOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(CopyPlayerAchievementByAchievementIdOptionsInternal), Member = "set_AchievementId")]
-	[Calls(Type = typeof(CopyPlayerAchievementByAchievementIdOptionsInternal), Member = "set_UserId")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CopyPlayerAchievementByAchievementIdOptionsInternal), Member = "set_UserId")]
+	[Calls(Type = typeof(CopyPlayerAchievementByAchievementIdOptionsInternal), Member = "set_AchievementId")]
 	public void Set(CopyPlayerAchievementByAchievementIdOptions other)
 	{
 	}
 
+	[CalledBy(Type = typeof(AchievementsInterface), Member = "CopyPlayerAchievementByAchievementId")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CopyPlayerAchievementByAchievementIdOptionsInternal), Member = "set_UserId")]
 	[Calls(Type = typeof(CopyPlayerAchievementByAchievementIdOptionsInternal), Member = "set_AchievementId")]
-	[CalledBy(Type = typeof(AchievementsInterface), Member = "CopyPlayerAchievementByAchievementId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

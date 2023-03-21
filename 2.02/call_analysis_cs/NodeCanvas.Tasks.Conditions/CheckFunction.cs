@@ -28,9 +28,9 @@ public class CheckFunction : ConditionTask, ISubParametersContainer
 	public override Type agentType
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -40,67 +40,66 @@ public class CheckFunction : ConditionTask, ISubParametersContainer
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Format")]
-		[CallsUnknownMethods(Count = 25)]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
-		[Calls(Type = typeof(Task), Member = "get_agentInfo")]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsDeduplicatedMethods(Count = 7)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
 		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
+		[Calls(Type = typeof(Task), Member = "get_agentInfo")]
+		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[CallsDeduplicatedMethods(Count = 7)]
+		[CallsUnknownMethods(Count = 25)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private BBParameter[] NodeCanvas_002EFramework_002EISubParametersContainer_002EGetSubParameters()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Task), Member = "Error")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CheckFunction), Member = "SetMethod")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Task), Member = "Error")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void OnValidate(ITaskSystem ownerSystem)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Task), Member = "get_agent")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override string OnInit()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(OperationTools), Member = "Compare")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(OperationTools), Member = "Compare")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 16)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(CheckFunction), Member = "OnValidate")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(MethodInfo), Member = "op_Equality")]
 	[Calls(Type = typeof(ReflectedFunctionWrapper), Member = "Create")]
 	[Calls(Type = typeof(BBParameter), Member = "CreateInstance")]
-	[CalledBy(Type = typeof(CheckFunction), Member = "OnValidate")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void SetMethod(MethodInfo method)
 	{

@@ -18,7 +18,7 @@ public class MissingVariableType : Variable<object>, IMissingRecoverable
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 10)]
+		[CallerCount(Count = 13)]
 		set
 		{
 		}
@@ -27,13 +27,13 @@ public class MissingVariableType : Variable<object>, IMissingRecoverable
 	public string recoveryState
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 28)]
+		[CallerCount(Count = 29)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 18)]
+		[CallerCount(Count = 47)]
 		set
 		{
 		}

@@ -21,24 +21,22 @@ public class UITexture : UIBasicSprite
 
 	public override Texture mainTexture
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Material), Member = "get_mainTexture")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(Material), Member = "get_mainTexture")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
-		[Calls(Type = typeof(UIDrawCall), Member = "set_mainTexture")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(UIDrawCall), Member = "set_mainTexture")]
+		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 3)]
 		set
 		{
 		}
@@ -46,16 +44,16 @@ public class UITexture : UIBasicSprite
 
 	public override Material material
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		set
 		{
 		}
@@ -65,21 +63,20 @@ public class UITexture : UIBasicSprite
 	{
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[CallsUnknownMethods(Count = 4)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 4)]
 		get
 		{
 			return null;
 		}
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+		[Calls(Type = typeof(UIDrawCall), Member = "set_shader")]
+		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
-		[Calls(Type = typeof(UIDrawCall), Member = "set_shader")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -88,16 +85,15 @@ public class UITexture : UIBasicSprite
 	public override bool premultipliedAlpha
 	{
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(string), Member = "IndexOf")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(Material), Member = "get_shader")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[CallsUnknownMethods(Count = 4)]
+		[Calls(Type = typeof(string), Member = "IndexOf")]
 		[CallsDeduplicatedMethods(Count = 3)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[CallsUnknownMethods(Count = 4)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -109,8 +105,8 @@ public class UITexture : UIBasicSprite
 			return default(Vector4);
 		}
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(Vector4), Member = "op_Inequality")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		set
 		{
 		}
@@ -132,15 +128,12 @@ public class UITexture : UIBasicSprite
 
 	public override Vector4 drawingDimensions
 	{
-		[CallsDeduplicatedMethods(Count = 4)]
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(Mathf), Member = "Lerp")]
-		[Calls(Type = typeof(Mathf), Member = "Lerp")]
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(Mathf), Member = "Lerp")]
 		[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(Mathf), Member = "Lerp")]
+		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return default(Vector4);
@@ -149,56 +142,56 @@ public class UITexture : UIBasicSprite
 
 	public bool fixedAspect
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(UIBasicSprite), Member = "get_hasBorder")]
-	[Calls(Type = typeof(UIWidget), Member = "MakePixelPerfect")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
-	[Calls(Type = typeof(UIWidget), Member = "set_width")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UIWidget), Member = "MakePixelPerfect")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UIBasicSprite), Member = "get_hasBorder")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UIWidget), Member = "set_width")]
+	[Calls(Type = typeof(UIWidget), Member = "set_height")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void MakePixelPerfect()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIWidget), Member = "OnUpdate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UIWidget), Member = "set_drawRegion")]
 	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UIWidget), Member = "OnUpdate")]
 	protected override void OnUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(OnPostFillCallback), Member = "Invoke")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "Fill")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UIBasicSprite), Member = "Fill")]
+	[Calls(Type = typeof(OnPostFillCallback), Member = "Invoke")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void OnFill(BetterList<Vector3> verts, BetterList<Vector2> uvs, BetterList<Color32> cols)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Vector4), Member = "get_zero")]
 	[Calls(Type = typeof(UIWidget), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public UITexture()
 	{
 	}

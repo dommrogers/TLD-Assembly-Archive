@@ -44,65 +44,63 @@ public class Panel_LeanToBuild : Panel_AutoReferenced, IAccelerateTimeProvider
 
 	private uint m_BuildAudioID;
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "Enable")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[Calls(Type = typeof(LeanTo), Member = "Destroy")]
-	[Calls(Type = typeof(TerrainGrassModifier), Member = "UndoLastOperation")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuClose")]
-	[Calls(Type = typeof(LeanTo), Member = "BuildFinished")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(Panel_LeanToBuild), Member = "UpdateDurationLabel")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Panel_LeanToBuild), Member = "UpdateEstimatedCaloriesBurnedLabel")]
 	[Calls(Type = typeof(Panel_LeanToBuild), Member = "UpdateCurrentCaloriesLabel")]
 	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
 	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
 	[Calls(Type = typeof(Panel_LeanToBuild), Member = "OnBuild")]
-	[Calls(Type = typeof(Panel_LeanToBuild), Member = "UpdateEstimatedCaloriesBurnedLabel")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(LeanTo), Member = "BuildFinished")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuClose")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TerrainGrassModifier), Member = "UndoLastOperation")]
+	[Calls(Type = typeof(LeanTo), Member = "Destroy")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
-	[Calls(Type = typeof(PanViewCamera), Member = "PanToTransform")]
-	[Calls(Type = typeof(Utils), Member = "FindChildRecursive")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(PanViewCamera), Member = "ReattachToPlayer")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(HarvestRepairMaterial), Member = "ShowItem")]
 	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
 	[Calls(Type = typeof(Panel_LeanToBuild), Member = "Update")]
-	[Calls(Type = typeof(PanViewCamera), Member = "ReattachToPlayer")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(Utils), Member = "FindChildRecursive")]
+	[Calls(Type = typeof(PanViewCamera), Member = "PanToTransform")]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(HarvestRepairMaterial), Member = "ShowItem")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsUnknownMethods(Count = 9)]
 	public override void Enable(bool enable)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 8)]
+	[CallerCount(Count = 9)]
 	public void SetLeanToInstance(LeanTo lt)
 	{
 	}
@@ -111,88 +109,86 @@ public class Panel_LeanToBuild : Panel_AutoReferenced, IAccelerateTimeProvider
 	[CallerCount(Count = 0)]
 	public bool IsTimeAccelerated()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool IsBuilding()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void ExitInterface()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TerrainGrassModifier), Member = "UndoLastOperation")]
+	[Calls(Type = typeof(LeanTo), Member = "Destroy")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[Calls(Type = typeof(LeanTo), Member = "Destroy")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(TerrainGrassModifier), Member = "UndoLastOperation")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnCancel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "Update")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
 	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnBuild()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(LeanTo), Member = "BuildFinished")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuClose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void BuildFinished()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateDurationLabel()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "CalculateModifiedCalorieBurnRate")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "Update")]
 	[CallsUnknownMethods(Count = 5)]
 	private void UpdateEstimatedCaloriesBurnedLabel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "Update")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateCurrentCaloriesLabel()
 	{
 	}
@@ -200,18 +196,16 @@ public class Panel_LeanToBuild : Panel_AutoReferenced, IAccelerateTimeProvider
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	private string GetSignedInt(int value)
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	private string GetSignedPercentage(float value)
 	{
 		return null;
@@ -224,12 +218,11 @@ public class Panel_LeanToBuild : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateButtonLegend()
 	{
 	}
@@ -240,7 +233,7 @@ public class Panel_LeanToBuild : Panel_AutoReferenced, IAccelerateTimeProvider
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsAcceleratingTime()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -257,8 +250,8 @@ public class Panel_LeanToBuild : Panel_AutoReferenced, IAccelerateTimeProvider
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public UIPanel GetPanelToFade()
 	{
 		return null;
@@ -286,14 +279,14 @@ public class Panel_LeanToBuild : Panel_AutoReferenced, IAccelerateTimeProvider
 		return null;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void StartAcceleratingTime()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void StopAcceleratingTime()
 	{
 	}

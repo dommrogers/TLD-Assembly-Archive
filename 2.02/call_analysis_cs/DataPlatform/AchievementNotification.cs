@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 
 namespace DataPlatform;
@@ -23,9 +22,9 @@ public class AchievementNotification : IEnumerable<string>, IEnumerable
 
 		private string System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EString_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -36,7 +35,7 @@ public class AchievementNotification : IEnumerable<string>, IEnumerable
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -52,7 +51,7 @@ public class AchievementNotification : IEnumerable<string>, IEnumerable
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
@@ -63,7 +62,7 @@ public class AchievementNotification : IEnumerable<string>, IEnumerable
 		[CallsUnknownMethods(Count = 1)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -83,7 +82,7 @@ public class AchievementNotification : IEnumerable<string>, IEnumerable
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -105,27 +104,26 @@ public class AchievementNotification : IEnumerable<string>, IEnumerable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public string Item
 	{
-		[CallsUnknownMethods(Count = 11)]
 		[CalledBy(Type = typeof(_003CGetEnumerator_003Ed__9), Member = "MoveNext")]
-		[CallsDeduplicatedMethods(Count = 3)]
-		[Calls(Type = typeof(AchievementUnlockedEventArgs), Member = "get_InAppRewardValue")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(AchievementUnlockedEventArgs), Member = "get_InAppRewardValue")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 11)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
+	[CalledBy(Type = typeof(AchievementNotification), Member = "System.Collections.IEnumerable.GetEnumerator")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(AchievementNotification), Member = "System.Collections.IEnumerable.GetEnumerator")]
 	[CallsUnknownMethods(Count = 7)]
 	public IEnumerator<string> GetEnumerator()
 	{
@@ -133,7 +131,7 @@ public class AchievementNotification : IEnumerable<string>, IEnumerable
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 101)]
+	[CallerCount(Count = 103)]
 	public AchievementNotification(AchievementUnlockedEventArgs args)
 	{
 	}

@@ -6,9 +6,9 @@ public class FaithfulCartographerSO : ScriptableObject
 {
 	public List<CartographyAchievementRegion> m_CartographyAchievementsByRegion;
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public FaithfulCartographerSO()
 	{
 	}

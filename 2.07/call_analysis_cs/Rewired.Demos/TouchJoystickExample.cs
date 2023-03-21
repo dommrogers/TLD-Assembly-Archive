@@ -36,44 +36,44 @@ public class TouchJoystickExample : MonoBehaviour, IPointerDownHandler, IEventSy
 		{
 			return default(Vector2);
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		private set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(TouchJoystickExample), Member = "StoreOrigValues")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TouchJoystickExample), Member = "StoreOrigValues")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(TouchJoystickExample), Member = "Restart")]
 	[Calls(Type = typeof(TouchJoystickExample), Member = "StoreOrigValues")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(TouchJoystickExample), Member = "UnityEngine.EventSystems.IPointerUpHandler.OnPointerUp")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(TouchJoystickExample), Member = "Update")]
+	[CalledBy(Type = typeof(TouchJoystickExample), Member = "UnityEngine.EventSystems.IPointerUpHandler.OnPointerUp")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Restart()
 	{
 	}
 
+	[CalledBy(Type = typeof(TouchJoystickExample), Member = "Start")]
 	[CalledBy(Type = typeof(TouchJoystickExample), Member = "Update")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CalledBy(Type = typeof(TouchJoystickExample), Member = "Start")]
 	[CallsUnknownMethods(Count = 8)]
 	private void StoreOrigValues()
 	{
@@ -104,11 +104,11 @@ public class TouchJoystickExample : MonoBehaviour, IPointerDownHandler, IEventSy
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private static bool IsMousePointerId(int id)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

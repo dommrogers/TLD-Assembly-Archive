@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Serialization;
 using TLD.UI.Generics;
@@ -71,36 +72,40 @@ public class SafeCracking : MonoBehaviour
 	private Action m_OnSafeOpened;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(SafeCracking), Member = "ResetTumblers")]
-	[Calls(Type = typeof(vp_Layer), Member = "Set")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_Layer), Member = "Set")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(SafeCracking), Member = "ResetTumblers")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 13)]
 	public void Start()
 	{
 	}
 
-	[Calls(Type = typeof(SafeCracking), Member = "UpdateDial")]
-	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_SafeCracking), Member = "IsCurrentSafe")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Panel_SafeCracking), Member = "IsCurrentSafe")]
+	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
+	[Calls(Type = typeof(SafeCracking), Member = "UpdateDial")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Update()
 	{
 	}
@@ -109,80 +114,68 @@ public class SafeCracking : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsOpen()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(OpenClose), Member = "Serialize")]
 	[CalledBy(Type = typeof(Container), Member = "Serialize")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(OpenClose), Member = "Serialize")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(OpenClose), Member = "Deserialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[Calls(Type = typeof(InputManager), Member = "HasContext")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(SafeCracking), Member = "UpdateDial")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(InputManager), Member = "HasContext")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetPlayerMovement")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(InputManager), Member = "HasContext")]
+	[CallsUnknownMethods(Count = 4)]
 	private float GetDialDelta()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(SafeCracking), Member = "HitTick")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
-	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CalledBy(Type = typeof(SafeCracking), Member = "Update")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(SafeCracking), Member = "GetDialDelta")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(SafeCracking), Member = "GetDialDelta")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
+	[Calls(Type = typeof(SafeCracking), Member = "HitTick")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 10)]
 	public void UpdateDial(Panel_SafeCracking safeCracking)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(SafeCracking), Member = "EnableSafeCrackingInterface")]
-	[CalledBy(Type = typeof(SafeCracking), Member = "ResetSafe")]
-	[CalledBy(Type = typeof(SafeCracking), Member = "HitTick")]
-	[CalledBy(Type = typeof(SafeCracking), Member = "HitTick")]
-	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(vp_Timer), Member = "Cancel")]
-	[Calls(Type = typeof(vp_Timer), Member = "Cancel")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(SafeCracking), Member = "Start")]
+	[CalledBy(Type = typeof(SafeCracking), Member = "HitTick")]
+	[CalledBy(Type = typeof(SafeCracking), Member = "ResetSafe")]
+	[CalledBy(Type = typeof(SafeCracking), Member = "EnableSafeCrackingInterface")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(vp_Timer), Member = "Cancel")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void ResetTumblers(Panel_SafeCracking safeCracking)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_SafeCracking), Member = "EnableOpenSafeButton")]
 	[CallsUnknownMethods(Count = 1)]
 	private void UnlockSafe()
@@ -190,30 +183,27 @@ public class SafeCracking : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(SafeCracking), Member = "HitTick")]
-	[Calls(Type = typeof(vp_Timer), Member = "In")]
-	[Calls(Type = typeof(vp_Timer), Member = "In")]
-	[Calls(Type = typeof(Panel_SafeCracking), Member = "SetTumblerStatus")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Panel_SafeCracking), Member = "SetTumblerStatus")]
+	[Calls(Type = typeof(vp_Timer), Member = "In")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UnlockCurrentTumbler(Panel_SafeCracking safeCracking)
 	{
 	}
 
-	[Calls(Type = typeof(SafeCracking), Member = "ResetTumblers")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(SafeCracking), Member = "UpdateDial")]
-	[Calls(Type = typeof(SafeCracking), Member = "UnlockCurrentTumbler")]
-	[Calls(Type = typeof(SafeCracking), Member = "PlayResetTumblersSound")]
-	[Calls(Type = typeof(SafeCracking), Member = "PlayDialSpinClick")]
-	[Calls(Type = typeof(Panel_SafeCracking), Member = "EnableOpenSafeButton")]
-	[Calls(Type = typeof(SafeCracking), Member = "PlayResetTumblersSound")]
-	[Calls(Type = typeof(SafeCracking), Member = "ResetTumblers")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SafeCracking), Member = "ResetTumblers")]
+	[Calls(Type = typeof(SafeCracking), Member = "PlayResetTumblersSound")]
+	[Calls(Type = typeof(Panel_SafeCracking), Member = "EnableOpenSafeButton")]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(SafeCracking), Member = "PlayDialSpinClick")]
+	[Calls(Type = typeof(SafeCracking), Member = "UnlockCurrentTumbler")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void HitTick(Panel_SafeCracking safeCracking, float deltaDegrees)
 	{
 	}
@@ -224,38 +214,37 @@ public class SafeCracking : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CalledBy(Type = typeof(SafeCracking), Member = "HitTick")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void PlayDialSpinClick()
 	{
 	}
 
+	[CalledBy(Type = typeof(SafeCracking), Member = "HitTick")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CalledBy(Type = typeof(SafeCracking), Member = "HitTick")]
-	[CalledBy(Type = typeof(SafeCracking), Member = "HitTick")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void PlayResetTumblersSound()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void PlaySafeClickSound()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void PlayTumblerFallSound()
 	{
@@ -265,47 +254,51 @@ public class SafeCracking : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private int TickToDialNumber(float tick)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Panel_SafeCracking), Member = "EnableOpenSafeButton")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(OpenClose), Member = "PerformHold")]
 	[CalledBy(Type = typeof(ContainerInteraction), Member = "PerformHold")]
-	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
+	[CalledBy(Type = typeof(OpenClose), Member = "PerformHold")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_SafeCracking), Member = "IsCurrentSafe")]
+	[Calls(Type = typeof(SafeCracking), Member = "ResetTumblers")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(SafeCracking), Member = "ResetTumblers")]
+	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
+	[Calls(Type = typeof(Panel_SafeCracking), Member = "EnableOpenSafeButton")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public void EnableSafeCrackingInterface(Action safeOpenedCallback = null)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void DisableSafeCrackingInterface()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(PlayerManager), Member = "ClearLastUnequippedItem")]
 	[CalledBy(Type = typeof(SafeCracking), Member = "OpenSafe")]
 	[CalledBy(Type = typeof(Panel_SafeCracking), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_SafeCracking), Member = "OnOpen")]
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(PlayerManager), Member = "ClearLastUnequippedItem")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public void ExitInterfaceAndOpenSafe()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(OpenClose), Member = "Open")]
-	[Calls(Type = typeof(SafeCracking), Member = "ExitInterfaceAndOpenSafe")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SafeCracking), Member = "ExitInterfaceAndOpenSafe")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(OpenClose), Member = "Open")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OpenSafe(bool isImmediate)
 	{
 	}

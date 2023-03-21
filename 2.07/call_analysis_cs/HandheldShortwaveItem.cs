@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -31,24 +32,24 @@ public class HandheldShortwaveItem : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(HandheldShortwaveItem), Member = "IsActive")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[CallsUnknownMethods(Count = 13)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 12)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(HandheldShortwaveItem), Member = "Update")]
 	[CalledBy(Type = typeof(FirstPersonHandheldShortwave), Member = "UpdateIntensityNeedle")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(HandheldShortwaveItem), Member = "Update")]
 	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

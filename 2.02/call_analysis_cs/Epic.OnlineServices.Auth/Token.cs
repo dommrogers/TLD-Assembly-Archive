@@ -29,14 +29,14 @@ public class Token : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -46,14 +46,14 @@ public class Token : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 71)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -61,16 +61,16 @@ public class Token : ISettable
 
 	public EpicAccountId AccountId
 	{
-		[CallerCount(Count = 5)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
@@ -87,7 +87,7 @@ public class Token : ISettable
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
@@ -95,15 +95,15 @@ public class Token : ISettable
 
 	public double ExpiresIn
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(double);
+			return 0.0;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -113,14 +113,14 @@ public class Token : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 8)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 18)]
 		set
 		{
 		}
@@ -135,9 +135,9 @@ public class Token : ISettable
 		{
 			return default(AuthTokenType);
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		set
 		{
 		}
@@ -145,16 +145,16 @@ public class Token : ISettable
 
 	public string RefreshToken
 	{
-		[CallerCount(Count = 3)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 3)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 17)]
+		[CallerCount(Count = 19)]
 		set
 		{
 		}
@@ -166,7 +166,7 @@ public class Token : ISettable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(double);
+			return 0.0;
 		}
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
@@ -179,21 +179,21 @@ public class Token : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 10)]
+		[CallerCount(Count = 11)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 16)]
 		set
 		{
 		}
 	}
 
+	[CalledBy(Type = typeof(Token), Member = "Set")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(TokenInternal), Member = "get_App")]
 	[Calls(Type = typeof(TokenInternal), Member = "get_ClientId")]
 	[Calls(Type = typeof(TokenInternal), Member = "get_AccountId")]
@@ -201,22 +201,22 @@ public class Token : ISettable
 	[Calls(Type = typeof(TokenInternal), Member = "get_ExpiresAt")]
 	[Calls(Type = typeof(TokenInternal), Member = "get_RefreshToken")]
 	[Calls(Type = typeof(TokenInternal), Member = "get_RefreshExpiresAt")]
-	[CalledBy(Type = typeof(Token), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 10)]
 	internal void Set(TokenInternal? other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Token), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public Token()
 	{
 	}

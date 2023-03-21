@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.UI.Generics;
 using UnityEngine;
@@ -24,30 +24,26 @@ public class DamageProtection : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PutOnClothingItem")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "TakeOffClothingItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PutOnClothingItem")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void MaybeUpdateDamageProtection(GearItem gearItem)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "ApplyPercentDamageToTopMostLayer")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ApplyPercentDamageToWornClothing")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ApplyPercentDamageToTopMostLayer")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public float MaybeApplyClothingDamageProtection(DamageReason damageReason, GearItem gi)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -55,22 +51,22 @@ public class DamageProtection : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float MaybeApplyAnimalDamageProtection(DamageReason damageReason, WildlifeType wildlifeType)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DamageProtection), Member = "GetTotalBrokenRibModifier")]
+	[CallsUnknownMethods(Count = 1)]
 	public float MaybeApplyBrokenRibModifier(DamageReason damageReason, WildlifeType wildlifeTyp)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(BloodLoss), Member = "BloodLossStart")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	public List<AfflictionBodyArea> GetBodyAreasToPreventBloodLoss()
 	{
 		return null;
@@ -80,16 +76,15 @@ public class DamageProtection : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool HasDamageProtection()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DamageProtection), Member = "GetAfflictionGearItem")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(DamageProtection), Member = "GetAfflictionGearItem")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetAfflictionDescription(int index)
 	{
 		return null;
@@ -97,8 +92,7 @@ public class DamageProtection : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DamageProtection), Member = "GetAfflictionGearItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallsUnknownMethods(Count = 1)]
 	public string GetAfflictionCause(int index)
@@ -106,11 +100,10 @@ public class DamageProtection : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DamageProtection), Member = "GetAfflictionGearItem")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(DamageProtection), Member = "GetAfflictionGearItem")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public AfflictionBodyArea GetAfflictionBodyArea(int index)
 	{
 		return default(AfflictionBodyArea);
@@ -120,32 +113,32 @@ public class DamageProtection : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public int GetDamageAfflictionsCount()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(DamageProtection), Member = "Update")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool ShouldUpdateBuffNotification()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffNotification")]
 	[CalledBy(Type = typeof(DamageProtection), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffNotification")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ApplyProtectionBuff()
 	{
 	}
 
+	[CalledBy(Type = typeof(DamageProtection), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffLossNotification")]
-	[CalledBy(Type = typeof(DamageProtection), Member = "Update")]
 	[CallsUnknownMethods(Count = 1)]
 	private void RemoveProtectionBuff()
 	{
@@ -156,56 +149,56 @@ public class DamageProtection : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool HasBallisticVest()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private GearItem GetBallisticVestItem()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
 	[CalledBy(Type = typeof(DamageProtection), Member = "MaybeApplyAnimalDamageProtection")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyDamageAfterMooseAttack")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
+	[CallerCount(Count = 3)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 9)]
 	private float GetTotalAnimalDamageModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyDamageAfterMooseAttack")]
 	[CalledBy(Type = typeof(DamageProtection), Member = "MaybeApplyBrokenRibModifier")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyDamageAfterMooseAttack")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	private float GetTotalBrokenRibModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(DamageProtection), Member = "GetAfflictionDescription")]
 	[CalledBy(Type = typeof(DamageProtection), Member = "GetAfflictionCause")]
 	[CalledBy(Type = typeof(DamageProtection), Member = "GetAfflictionBodyArea")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Enumerable), Member = "ElementAt")]
 	[CallsUnknownMethods(Count = 1)]
 	private GearItem GetAfflictionGearItem(int index)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public DamageProtection()
 	{
 	}

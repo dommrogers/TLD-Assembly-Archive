@@ -21,9 +21,9 @@ public class InventorySaveDataProxy
 
 	public bool m_SuppressScentIndicator;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public InventorySaveDataProxy()
 	{
 	}

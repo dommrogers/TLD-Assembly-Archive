@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using AK.Wwise;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.SaveState;
 using TLD.UI;
 using TLD.UI.Generics;
 using TLD.UI.Notifications;
@@ -274,54 +274,48 @@ public class Panel_ActionsRadial : Panel_AutoReferenced, INotificationHandler
 
 	private bool m_DoItemInHandsDuringInteractionEnd;
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
 	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 9)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "CanPlaceFromRadial")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "DoAltClickAction")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "DoCallbackAction")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateButtonStates")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateCurrentTimeLabel")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateFadeOverlay")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateMissionInfo")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "OnCancel")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "OnBack")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateFadeOverlay")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "ReturnFromAddToSatchel")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryDropPressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateDisplayText")]
-	[Calls(Type = typeof(InputManager), Member = "GetPlayerMovement")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
 	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetRadialButtonHeldDown")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "OnBack")]
 	[Calls(Type = typeof(InterfaceManager), Member = "SetTimeWidgetActive")]
-	[CallsDeduplicatedMethods(Count = 17)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "MousePosToIndex")]
 	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "CanPlaceFromRadial")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "CanPlaceFromRadial")]
 	[Calls(Type = typeof(RadialMenuArm), Member = "DoAltClickAction")]
 	[Calls(Type = typeof(RadialMenuArm), Member = "DoCallbackAction")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetPlayerMovement")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryDropPressed")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateButtonLegend")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateButtonStates")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateDisplayText")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateCurrentTimeLabel")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateFadeOverlay")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateMissionInfo")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "OnCancel")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "ReturnFromAddToSatchel")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 10)]
 	private void Update()
 	{
 	}
@@ -332,53 +326,52 @@ public class Panel_ActionsRadial : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[Calls(Type = typeof(InterfaceManager), Member = "InitializeAndActivateTimeWidget")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowSatchelSelectSlotRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowSatchelRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPrimaryRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowLightSourceRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowWeaponRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowBodyCarryRadial")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowToolsRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowShelterRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNavigationRadial")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowBodyCarryRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowGearRadial")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateMissionInfo")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowToolsRadial")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateCurrentTimeLabel")]
 	[CallerCount(Count = 11)]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateButtonStates")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateDisplayText")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[Calls(Type = typeof(PlayerManager), Member = "CancelPlacementMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "CancelPlacementMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
 	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateButtonStates")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateDisplayText")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateCurrentTimeLabel")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateMissionInfo")]
+	[Calls(Type = typeof(InterfaceManager), Member = "InitializeAndActivateTimeWidget")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 10)]
 	public void Enable(bool enable, bool doHoverDisable)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetPanelAlpha()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsRadialDisabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -386,262 +379,220 @@ public class Panel_ActionsRadial : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "DoTween")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	public void DoFirstOpen()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CalledBy(Type = typeof(InputManager), Member = "OpenRadialMenu")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "DoFirstOpen")]
-	[Calls(Type = typeof(UISpriteAnimation), Member = "ResetToBeginning")]
+	[CalledBy(Type = typeof(InputManager), Member = "OpenRadialMenu")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
 	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(UISpriteAnimation), Member = "ResetToBeginning")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public void DoTween()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetRadialInfo")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelectionGear")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelectionGear")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetRadialInfo")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void ShowSatchelSelectSlotRadial()
 	{
 	}
 
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetRadialInfo")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelectionGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelectionGear")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetRadialInfo")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public void ShowSatchelRadial()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(InputManager), Member = "OpenRadialMenu")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetRadialInfo")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDelegateForRadial")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDelegateForRadial")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetRadialInfo")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void ShowPrimaryRadial()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetGearItemsForRadial")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelectionGear")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void ShowLightSourceRadial()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelectionGear")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetGearItemsForRadial")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetGearItemsForRadial")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelectionGear")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void ShowWeaponRadial()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetGearItemsForRadial")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetGearItemsForRadial")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelectionGear")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void ShowToolsRadial()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowLightSourceRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowWeaponRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowToolsRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowLightSourceRadial")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private List<GearItem> GetGearItemsForRadial(string[] itemOrder, out int items)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref items) = null;
+		items = default(int);
 		return null;
 	}
 
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDelegateForRadial")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDelegateForRadial")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDelegateForRadial")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDelegateForRadial")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "OverrideSpriteWithGearIcon")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelectionGear")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
 	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
 	[Calls(Type = typeof(LeanToManager), Member = "PlayerInLeanTo")]
 	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
 	[Calls(Type = typeof(RadialMenuArm), Member = "OverrideSpriteWithGearIcon")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelectionGear")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDelegateForRadial")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "OverrideSpriteWithGearIcon")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 10)]
 	public void ShowPlaceItemRadial()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDelegateForRadial")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDelegateForRadial")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(RadialMenuArm), Member = "OverrideSpriteWithGearIcon")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDelegateForRadial")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(SnowShelterManager), Member = "SnowSheltersAreUnlocked")]
+	[Calls(Type = typeof(LeanToManager), Member = "LeanTosAreUnlocked")]
 	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDelegateForRadial")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "OverrideSpriteWithGearIcon")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "SnowSheltersAreUnlocked")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(LeanToManager), Member = "LeanTosAreUnlocked")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(LeanToManager), Member = "LeanTosAreUnlocked")]
+	[CallsUnknownMethods(Count = 6)]
 	public void ShowShelterRadial()
 	{
 	}
 
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "OverrideSpriteWithGearIcon")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDelegateForRadial")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "OverrideSpriteWithGearIcon")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDelegateForRadial")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelectionGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelectionGear")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDelegateForRadial")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "OverrideSpriteWithGearIcon")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public void ShowNavigationRadial()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
 	[CalledBy(Type = typeof(InputManager), Member = "OpenRadialMenu")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "OverrideHoverText")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDelegateForRadial")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "AddRadialSelection")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "OverrideHoverText")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public void ShowBodyCarryRadial()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BodyCarry), Member = "MaybeDrop")]
+	[CallsUnknownMethods(Count = 1)]
 	public void DoBodyDrop()
 	{
 	}
@@ -654,103 +605,89 @@ public class Panel_ActionsRadial : Panel_AutoReferenced, INotificationHandler
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void DoOpenMap()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetFoodItemsInInventory")]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "ShowGearRadial")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ShowFoodRadial()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDrinkItemsInInventory")]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "ShowGearRadial")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void ShowDrinkRadial()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetFirstAidItemsInInventory")]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "ShowGearRadial")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ShowFirstAidRadial()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowBodyCarryRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowBodyCarryRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowBodyCarryRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowBodyCarryRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNavigationRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNavigationRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNavigationRadial")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowShelterRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowShelterRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowShelterRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetRadialInfo")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNavigationRadial")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowBodyCarryRadial")]
 	[CallerCount(Count = 17)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetRadialInfo")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
+	[CallsUnknownMethods(Count = 2)]
 	private void AddRadialSelection(RadialInfo radialInfo, Action callback, bool greyOut = false, bool showHighlight = false)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowToolsRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowWeaponRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowLightSourceRadial")]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowSatchelSelectSlotRadial")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetRadialInfoGear")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNavigationRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowSatchelRadial")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowLightSourceRadial")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowWeaponRadial")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowToolsRadial")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNavigationRadial")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetRadialInfoGear")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
 	[CallsUnknownMethods(Count = 2)]
 	private void AddRadialSelectionGear(string textureName, RadialGearDelegate callback, GearItem gi)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public void OnPrevRadial()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(UISpriteAnimation), Member = "ResetToBeginning")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnBack()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "ReturnFromAddToSatchel")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnBackFinal()
 	{
@@ -763,19 +700,19 @@ public class Panel_ActionsRadial : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	public void ShowNoBedrollMessage()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GetBestDecoy")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Inventory), Member = "GetBestDecoy")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ShowNoDecoyMessage()
 	{
 	}
@@ -790,9 +727,9 @@ public class Panel_ActionsRadial : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	public void ShowNoLightSourceMessage()
 	{
 	}
@@ -804,16 +741,16 @@ public class Panel_ActionsRadial : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	public void ShowNoToolsMessage()
 	{
 	}
 
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	public void ShowNoMapsMessage()
 	{
 	}
@@ -838,9 +775,9 @@ public class Panel_ActionsRadial : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	public void ShowNoFoodMessage()
 	{
 	}
@@ -852,44 +789,42 @@ public class Panel_ActionsRadial : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(RockCacheManager), Member = "HasReachedMaxRockCacheCount")]
+	[Calls(Type = typeof(RockCacheManager), Member = "GetMissingMaterialsString")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(RockCacheManager), Member = "GetMissingMaterialsString")]
-	[Calls(Type = typeof(RockCacheManager), Member = "HasReachedMaxRockCacheCount")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[CallerCount(Count = 0)]
 	public void ShowNoRockCacheMessage()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameManager), Member = "MaybeBlockMoveInputUntilReleased")]
-	[Calls(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
-	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
+	[Calls(Type = typeof(GameManager), Member = "MaybeBlockMoveInputUntilReleased")]
+	[CallsUnknownMethods(Count = 2)]
 	public void UseEmergencyStim()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TrySetEnabled")]
 	public void StartClothingUI()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SnowShelterManager), Member = "GetMissingMaterialsString")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "GetMissingMaterialsString")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[CallsUnknownMethods(Count = 2)]
 	public void ShowNoSnowShelterMessage()
 	{
 	}
@@ -904,36 +839,35 @@ public class Panel_ActionsRadial : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsUnknownMethods(Count = 2)]
 	private void ShowNoSprayPaintMessage()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
 	[Calls(Type = typeof(GameManager), Member = "MaybeBlockMoveInputUntilReleased")]
+	[CallsUnknownMethods(Count = 1)]
 	public void UseItem(GearItem gi)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Inventory), Member = "ReturnFromAddToSatchel")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "ReturnFromAddToSatchel")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ReplaceItemInSatchel(GearItem gi)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "ReturnFromAddToSatchel")]
 	[CallsUnknownMethods(Count = 2)]
 	public void AddItemToSatchel()
@@ -947,9 +881,9 @@ public class Panel_ActionsRadial : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerInVehicle), Member = "OnBedroll")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OpenVehicleRest(GearItem gi)
 	{
 	}
@@ -961,16 +895,16 @@ public class Panel_ActionsRadial : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SnowShelterManager), Member = "OnBedroll")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OpenSnowShelterRest(GearItem gi)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LeanToManager), Member = "OnBedroll")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void OpenLeanToRest()
 	{
 	}
@@ -983,25 +917,26 @@ public class Panel_ActionsRadial : Panel_AutoReferenced, INotificationHandler
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Rest), Member = "Enable")]
 	[CallsUnknownMethods(Count = 1)]
 	public void DoPassTime()
 	{
 	}
 
-	[Calls(Type = typeof(RadialMenuArm), Member = "DoCallbackAction")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(RadialMenuArm), Member = "DoCallbackAction")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "DoCallbackAction")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void ShowEatRawMeatConfirmPopup()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void ResetNotificationsData()
@@ -1010,78 +945,73 @@ public class Panel_ActionsRadial : Panel_AutoReferenced, INotificationHandler
 
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "DetermineHoveredItemState")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
 	private bool CanPlaceFromRadial(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "DetermineHoveredItemState")]
+	[CallerCount(Count = 1)]
 	private bool CanUseFromRadial(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "DetermineHoveredItemState")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetRadialInfo")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetRadialInfo")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "DetermineHoveredItemState")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateButtonLegend()
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "HideEquipPopup")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "ShowGenericPopupWithDefaultActions")]
-	[Calls(Type = typeof(Localization), Member = "GetForFallbackLanguage")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Localization), Member = "MaybeLoadStringTable")]
-	[Calls(Type = typeof(Localization), Member = "get_Language")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "DetermineHoveredItemState")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "DetermineHoveredItemState")]
+	[Calls(Type = typeof(Localization), Member = "get_Language")]
+	[Calls(Type = typeof(Localization), Member = "MaybeLoadStringTable")]
 	[Calls(Type = typeof(StringTable), Member = "GetStringForKeyAndLanguage")]
+	[Calls(Type = typeof(Localization), Member = "GetForFallbackLanguage")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "ShowGenericPopupWithDefaultActions")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "HideEquipPopup")]
 	[CallsUnknownMethods(Count = 1)]
 	private void UpdateButtonStates()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetActionText")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "CanUseFromRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateButtonStates")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "CanPlaceFromRadial")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "CanUseFromRadial")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetActionText")]
 	[CallsUnknownMethods(Count = 3)]
 	private void DetermineHoveredItemState(out bool canPlace, out string useAction)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<bool, @null>(ref canPlace) = null;
+		canPlace = default(bool);
 		useAction = null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "DetermineHoveredItemState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetActionText(RadialMenuArm arm)
 	{
 		return null;
@@ -1090,16 +1020,16 @@ public class Panel_ActionsRadial : Panel_AutoReferenced, INotificationHandler
 	[CallerCount(Count = 0)]
 	private int StickDirectionToIndex(Vector2 stickVec)
 	{
-		return default(int);
+		return 0;
 	}
 
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
 	[CallsUnknownMethods(Count = 7)]
 	private int MousePosToIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1108,240 +1038,166 @@ public class Panel_ActionsRadial : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowShelterRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNavigationRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPrimaryRadial")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowShelterRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowBodyCarryRadial")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowShelterRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNavigationRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[CallsDeduplicatedMethods(Count = 22)]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowBodyCarryRadial")]
 	[CallerCount(Count = 11)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 1)]
 	private Action GetDelegateForRadial(RadialType radialType)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(LeanToManager), Member = "CanAttemptToPlaceLeanTo")]
-	[Calls(Type = typeof(RockCacheManager), Member = "CanAttemptToPlaceRockCache")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPrimaryRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowShelterRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowShelterRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowShelterRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNavigationRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNavigationRadial")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetDelegateForRadial")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(SnowShelterManager), Member = "CanAttemptToPlaceSnowShelter")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDrinkItemsInInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "CanAttemptToPlaceSnowShelter")]
-	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
-	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CallerCount(Count = 15)]
+	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(InputManager), Member = "CanStartFireIndoors")]
 	[Calls(Type = typeof(FireManager), Member = "GetMissingMaterialsString")]
 	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
 	[Calls(Type = typeof(Inventory), Member = "GetBestDecoy")]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetFirstAidItemsInInventory")]
-	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
-	[Calls(Type = typeof(InputManager), Member = "CanStartFireIndoors")]
+	[Calls(Type = typeof(SnowShelterManager), Member = "CanAttemptToPlaceSnowShelter")]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetFoodItemsInInventory")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "GetDrinkItemsInInventory")]
+	[Calls(Type = typeof(LeanToManager), Member = "CanAttemptToPlaceLeanTo")]
+	[Calls(Type = typeof(RockCacheManager), Member = "CanAttemptToPlaceRockCache")]
+	[CallsUnknownMethods(Count = 20)]
 	private bool GetShouldGreyOut(RadialType radialType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ShouldShowNewItemHighlight(RadialType radialType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GearItem), Member = "GetColorBasedOnCondition")]
-	[Calls(Type = typeof(GearItem), Member = "GetColorStringBasedOnCondition")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GearItem), Member = "GetColorBasedOnCondition")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
-	[CallsUnknownMethods(Count = 24)]
-	[Calls(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(int), Member = "ToString")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateStackStatus")]
+	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(GearItem), Member = "GetColorStringBasedOnCondition")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(GearItem), Member = "GetColorBasedOnCondition")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 24)]
 	private void UpdateDisplayText()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
-	[Calls(Type = typeof(TimeOfDay), Member = "GetHoursDaylightString")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(TimeOfDay), Member = "GetHoursDaylightString")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateCurrentTimeLabel()
 	{
 	}
 
-	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowFoodRadial")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowDrinkRadial")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowFirstAidRadial")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
 	[Calls(Type = typeof(RadialMenuArm), Member = "SetRadialInfoGear")]
 	[Calls(Type = typeof(RadialMenuArm), Member = "SetEnabled")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowFoodRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowDrinkRadial")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowFirstAidRadial")]
+	[Calls(Type = typeof(RadialMenuArm), Member = "SetHoverColor")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 3)]
 	private void ShowGearRadial(List<GearItem> gearItems, Action noItemsAction)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowFoodRadial")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private List<GearItem> GetFoodItemsInInventory()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowDrinkRadial")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private List<GearItem> GetDrinkItemsInInventory()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowFirstAidRadial")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private List<GearItem> GetFirstAidItemsInInventory()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
-	[Calls(Type = typeof(UISpriteAnimation), Member = "GetCurrentFrame")]
-	[Calls(Type = typeof(UISpriteAnimation), Member = "GetCurrentFrame")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UISpriteAnimation), Member = "GetCurrentFrame")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateFadeOverlay()
 	{
 	}
 
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateAndEnableStackStatus")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(BowItem), Member = "GetNumArrowsInInventory")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateDisplayText")]
-	[Calls(Type = typeof(Inventory), Member = "GetNumTorches")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Inventory), Member = "GetNumFlares")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Inventory), Member = "GetNumNoiseMakers")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Inventory), Member = "GetNumStones")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(float), Member = "ToString")]
 	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Inventory), Member = "GetNumNoiseMakers")]
+	[Calls(Type = typeof(Panel_ActionsRadial), Member = "UpdateAndEnableStackStatus")]
+	[Calls(Type = typeof(BowItem), Member = "GetNumArrowsInInventory")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
+	[Calls(Type = typeof(Inventory), Member = "GetNumTorches")]
+	[Calls(Type = typeof(Inventory), Member = "GetNumFlares")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 11)]
 	private void UpdateStackStatus(GearItem gi)
 	{
 	}
@@ -1353,42 +1209,38 @@ public class Panel_ActionsRadial : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateStackStatus")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateAndEnableStackStatus(string text, string spriteName, Color c)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateMissionInfo()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(RadialMenuArm), Member = "DoCallbackAction")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ForceRadialMenuArmCallback()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 41)]
-	[CallerCount(Count = 0)]
 	public Panel_ActionsRadial()
 	{
 	}

@@ -11,7 +11,7 @@ public class AkPS4Settings : AkWwiseInitializationSettings.PlatformSettings
 		public bool UseHardwareCodecLowLatencyMode;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public override void CopyTo(AkPlatformInitSettings settings)
 		{
 		}
@@ -29,25 +29,25 @@ public class AkPS4Settings : AkWwiseInitializationSettings.PlatformSettings
 	public AkCommonCommSettings CommsSettings;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkCommonUserSettings), Member = ".ctor")]
 	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = ".ctor")]
 	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = "IgnorePropertyValue")]
 	[Calls(Type = typeof(AkWwiseInitializationSettings.PlatformSettings), Member = "SetUseGlobalPropertyValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 15)]
 	public AkPS4Settings()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 15)]
+	[CallerCount(Count = 17)]
 	protected override AkCommonUserSettings GetUserSettings()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 8)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 9)]
 	protected override AkCommonAdvancedSettings GetAdvancedSettings()
 	{
 		return null;

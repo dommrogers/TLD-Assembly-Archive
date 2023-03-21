@@ -10,16 +10,16 @@ public class AkPlatformInitSettings : IDisposable
 
 	public AkThreadProperties threadLEngine
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 8)]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AkThreadProperties), Member = "getCPtr")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -28,17 +28,17 @@ public class AkPlatformInitSettings : IDisposable
 
 	public AkThreadProperties threadOutputMgr
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 8)]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(AkThreadProperties), Member = "getCPtr")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(AkThreadProperties), Member = "getCPtr")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -46,17 +46,17 @@ public class AkPlatformInitSettings : IDisposable
 
 	public AkThreadProperties threadBankManager
 	{
-		[CallsUnknownMethods(Count = 8)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 8)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(AkThreadProperties), Member = "getCPtr")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(AkThreadProperties), Member = "getCPtr")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -72,8 +72,8 @@ public class AkPlatformInitSettings : IDisposable
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AkThreadProperties), Member = "getCPtr")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -82,12 +82,12 @@ public class AkPlatformInitSettings : IDisposable
 
 	public uint uLEngineDefaultPoolSize
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -104,7 +104,7 @@ public class AkPlatformInitSettings : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -116,12 +116,12 @@ public class AkPlatformInitSettings : IDisposable
 
 	public ushort uNumRefillsInVoice
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(ushort);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -138,11 +138,11 @@ public class AkPlatformInitSettings : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -167,12 +167,12 @@ public class AkPlatformInitSettings : IDisposable
 
 	public bool bGlobalFocus
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -182,19 +182,19 @@ public class AkPlatformInitSettings : IDisposable
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	internal AkPlatformInitSettings(IntPtr cPtr, bool cMemoryOwn)
 	{
 	}
 
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "GetDefaultPlatformInitSettings")]
 	[CalledBy(Type = typeof(AkInitializationSettings), Member = "set_platformSettings")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "GetDefaultPlatformInitSettings")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkPlatformInitSettings obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -211,11 +211,11 @@ public class AkPlatformInitSettings : IDisposable
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
-	[CallsUnknownMethods(Count = 4)]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}

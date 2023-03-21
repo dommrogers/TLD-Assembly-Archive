@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -19,13 +18,12 @@ public class LightTOD : MonoBehaviour
 
 	private bool m_Initialized;
 
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(LightTOD), Member = "SanitizeList")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LightTOD), Member = "SanitizeList")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 19)]
 	private void Start()
 	{
 	}
@@ -33,7 +31,6 @@ public class LightTOD : MonoBehaviour
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
 	[Calls(Type = typeof(LightTOD), Member = "UpdateLights")]
 	[CallsUnknownMethods(Count = 1)]
@@ -41,14 +38,12 @@ public class LightTOD : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(LightTOD), Member = "Update")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateLights()
 	{
 	}
@@ -56,7 +51,6 @@ public class LightTOD : MonoBehaviour
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
 	[CallsUnknownMethods(Count = 1)]
 	private void UpdateTOD()
@@ -64,12 +58,12 @@ public class LightTOD : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(LightTOD), Member = "Start")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(LightTOD), Member = "Start")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private List<Light> SanitizeList(List<Light> oldList)
 	{
 		return null;

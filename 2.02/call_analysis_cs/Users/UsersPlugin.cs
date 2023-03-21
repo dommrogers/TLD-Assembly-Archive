@@ -8,9 +8,9 @@ namespace Users;
 internal class UsersPlugin
 {
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool GetPlatformProfile(int idx, out PlatformProfile profile);
 
 	[PreserveSig]
@@ -41,8 +41,8 @@ internal class UsersPlugin
 	public static extern void DisposePicture(IntPtr pngData);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void SetTraceLevelForUsersLiveContext(int id, XboxServicesDiagnosticsTraceLevel traceLevel);
 
 	[PreserveSig]
@@ -63,7 +63,7 @@ internal class UsersPlugin
 	public static extern int GetAppCurrentUserId();
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public UsersPlugin()
 	{
 	}

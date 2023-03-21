@@ -38,11 +38,11 @@ public class CameraPathPoint : MonoBehaviour
 
 	public float percent
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -57,7 +57,7 @@ public class CameraPathPoint : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -67,10 +67,10 @@ public class CameraPathPoint : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -79,29 +79,29 @@ public class CameraPathPoint : MonoBehaviour
 	public string displayName
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(string), Member = "EqualsHelper")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CalledBy(Type = typeof(CameraPathDelay), Member = ".ctor")]
 	[CalledBy(Type = typeof(CameraPathEvent), Member = ".ctor")]
 	[CalledBy(Type = typeof(CameraPathFOV), Member = ".ctor")]
 	[CalledBy(Type = typeof(CameraPathOrientation), Member = ".ctor")]
 	[CalledBy(Type = typeof(CameraPathSpeed), Member = ".ctor")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(CameraPathTilt), Member = ".ctor")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public CameraPathPoint()
 	{

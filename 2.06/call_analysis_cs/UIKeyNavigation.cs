@@ -55,158 +55,133 @@ public class UIKeyNavigation : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(BetterList<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 19)]
 	private void Awake()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(UIButtonKeys), Member = "OnEnable")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BetterList<>), Member = "Add")]
 	[Calls(Type = typeof(UICamera), Member = "get_selectedObject")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UICamera), Member = "get_selectedObject")]
-	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
-	[CalledBy(Type = typeof(UIButtonKeys), Member = "OnEnable")]
-	[CallsUnknownMethods(Count = 3)]
 	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected virtual void OnEnable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(BetterList<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	protected virtual void OnDisable()
 	{
 	}
 
+	[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnKey")]
 	[CallerCount(Count = 3)]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnKey")]
-	[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnKey")]
-	[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnKey")]
-	[Calls(Type = typeof(UIKeyNavigation), Member = "Get")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UIKeyNavigation), Member = "Get")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	protected GameObject GetLeft()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnKey")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnKey")]
-	[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnKey")]
-	[CallsUnknownMethods(Count = 4)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UIKeyNavigation), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private GameObject GetRight()
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnKey")]
-	[Calls(Type = typeof(UIKeyNavigation), Member = "Get")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnKey")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UIKeyNavigation), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnKey")]
 	protected GameObject GetUp()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UIKeyNavigation), Member = "Get")]
-	[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnKey")]
-	[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnKey")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnKey")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UIKeyNavigation), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	protected GameObject GetDown()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CalledBy(Type = typeof(UIKeyNavigation), Member = "GetUp")]
-	[CalledBy(Type = typeof(UIKeyNavigation), Member = "GetRight")]
 	[CalledBy(Type = typeof(UIKeyNavigation), Member = "GetLeft")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[Calls(Type = typeof(UIKeyNavigation), Member = "GetCenter")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UIKeyNavigation), Member = "GetCenter")]
-	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 4)]
+	[CalledBy(Type = typeof(UIKeyNavigation), Member = "GetRight")]
+	[CalledBy(Type = typeof(UIKeyNavigation), Member = "GetUp")]
 	[CalledBy(Type = typeof(UIKeyNavigation), Member = "GetDown")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UIKeyNavigation), Member = "GetCenter")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 6)]
 	protected GameObject Get(Vector3 myDir, bool horizontal)
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[CalledBy(Type = typeof(UIKeyNavigation), Member = "Get")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UICamera), Member = "FindCameraForLayer")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UICamera), Member = "get_cachedCamera")]
-	[CalledBy(Type = typeof(UIKeyNavigation), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(UIKeyNavigation), Member = "Get")]
-	[Calls(Type = typeof(UICamera), Member = "FindCameraForLayer")]
-	[CallerCount(Count = 2)]
 	protected static Vector3 GetCenter(GameObject go)
 	{
 		return default(Vector3);
 	}
 
-	[Calls(Type = typeof(UIKeyNavigation), Member = "GetLeft")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UIKeyNavigation), Member = "GetUp")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UIKeyNavigation), Member = "GetLeft")]
-	[Calls(Type = typeof(UIKeyNavigation), Member = "GetLeft")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UIKeyNavigation), Member = "GetUp")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UIKeyNavigation), Member = "GetDown")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UIKeyNavigation), Member = "GetRight")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UIKeyNavigation), Member = "GetRight")]
-	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UIKeyNavigation), Member = "GetUp")]
-	[Calls(Type = typeof(UIKeyNavigation), Member = "GetDown")]
-	[Calls(Type = typeof(UIKeyNavigation), Member = "GetDown")]
 	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+	[Calls(Type = typeof(UIKeyNavigation), Member = "GetRight")]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UIKeyNavigation), Member = "GetDown")]
+	[Calls(Type = typeof(UIKeyNavigation), Member = "GetUp")]
+	[Calls(Type = typeof(UIKeyNavigation), Member = "GetLeft")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	protected virtual void OnKey(KeyCode key)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
 	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
 	protected virtual void OnClick()
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public UIKeyNavigation()
 	{
 	}

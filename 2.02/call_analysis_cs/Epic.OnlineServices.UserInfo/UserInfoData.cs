@@ -19,14 +19,14 @@ public class UserInfoData : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -34,16 +34,16 @@ public class UserInfoData : ISettable
 
 	public string Country
 	{
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 71)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -53,14 +53,14 @@ public class UserInfoData : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
@@ -68,16 +68,16 @@ public class UserInfoData : ISettable
 
 	public string PreferredLanguage
 	{
-		[CallerCount(Count = 12)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 12)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
@@ -85,44 +85,44 @@ public class UserInfoData : ISettable
 
 	public string Nickname
 	{
-		[CallerCount(Count = 15)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 23)]
 		set
 		{
 		}
 	}
 
+	[CalledBy(Type = typeof(UserInfoData), Member = "Set")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UserInfoDataInternal), Member = "get_UserId")]
 	[Calls(Type = typeof(UserInfoDataInternal), Member = "get_Country")]
 	[Calls(Type = typeof(UserInfoDataInternal), Member = "get_DisplayName")]
 	[Calls(Type = typeof(UserInfoDataInternal), Member = "get_PreferredLanguage")]
 	[Calls(Type = typeof(UserInfoDataInternal), Member = "get_Nickname")]
-	[CalledBy(Type = typeof(UserInfoData), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	internal void Set(UserInfoDataInternal? other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UserInfoData), Member = "Set")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UserInfoData), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public UserInfoData()
 	{
 	}

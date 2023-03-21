@@ -11,8 +11,8 @@ public class GetMouseScrollDelta : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -27,22 +27,22 @@ public class GetMouseScrollDelta : ActionTask
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GetMouseScrollDelta), Member = "Do")]
 	protected override void OnUpdate()
 	{
 	}
 
-	[CalledBy(Type = typeof(GetMouseScrollDelta), Member = "OnUpdate")]
 	[CalledBy(Type = typeof(GetMouseScrollDelta), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(GetMouseScrollDelta), Member = "OnUpdate")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
+	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
 	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
+	[CallsUnknownMethods(Count = 2)]
 	private void Do()
 	{
 	}

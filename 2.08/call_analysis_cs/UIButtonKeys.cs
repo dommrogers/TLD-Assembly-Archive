@@ -20,9 +20,9 @@ public class UIButtonKeys : UIKeyNavigation
 	}
 
 	[CalledBy(Type = typeof(UIButtonKeys), Member = "OnEnable")]
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	public void Upgrade()
 	{
 	}

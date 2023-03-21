@@ -101,26 +101,25 @@ public class Panel_Credits : Panel_AutoReferenced
 		[CallerCount(Count = 0)]
 		public float GetEndScrollValue()
 		{
-			return default(float);
+			return 0f;
 		}
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		public bool HasLines()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CalledBy(Type = typeof(Panel_Credits), Member = "SetActiveEpisode")]
 		[CalledBy(Type = typeof(Panel_Credits), Member = "ShowCredits")]
-		[Calls(Type = typeof(ByteReader), Member = "ReadCSV")]
-		[Calls(Type = typeof(LineDefinition), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(TextAsset), Member = "DecodeString")]
-		[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-		[CallsDeduplicatedMethods(Count = 4)]
+		[CalledBy(Type = typeof(Panel_Credits), Member = "SetActiveEpisode")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
+		[Calls(Type = typeof(TextAsset), Member = "DecodeString")]
 		[Calls(Type = typeof(ByteReader), Member = "ReadCSV")]
+		[Calls(TypeFullName = "Panel_Credits.LineDefinition", Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 3)]
 		public void BuildLines()
 		{
 		}
@@ -139,9 +138,9 @@ public class Panel_Credits : Panel_AutoReferenced
 
 		private bool m_IsEmpty;
 
+		[CalledBy(TypeFullName = "Panel_Credits.EpisodeDefinition", Member = "BuildLines")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(EpisodeDefinition), Member = "BuildLines")]
+		[Calls(Type = typeof(Enum), Member = "TryParse")]
 		[CallsUnknownMethods(Count = 6)]
 		public LineDefinition(BetterList<string> line, int contentSize)
 		{
@@ -151,7 +150,7 @@ public class Panel_Credits : Panel_AutoReferenced
 		[CallerCount(Count = 0)]
 		public bool IsEmpty()
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -221,9 +220,9 @@ public class Panel_Credits : Panel_AutoReferenced
 	private RenderTexture m_BackgroundRenderTexture;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
 	[Calls(Type = typeof(Camera), Member = "set_targetTexture")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnEnable()
 	{
@@ -242,17 +241,17 @@ public class Panel_Credits : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Action_ShowCredits), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Panel_Extras), Member = "HandleOnCreditsLoaded")]
 	[CalledBy(Type = typeof(Panel_Credits), Member = "ShowCredits")]
-	[Calls(Type = typeof(Panel_Credits), Member = "Exit")]
+	[CalledBy(Type = typeof(Panel_Extras), Member = "HandleOnCreditsLoaded")]
 	[CalledBy(Type = typeof(Action_PlayCredits), Member = "PlayCredits")]
-	[Calls(Type = typeof(EpisodeDefinition), Member = "BuildLines")]
-	[Calls(Type = typeof(Panel_Credits), Member = "Reset")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Action_ShowCredits), Member = "OnExecute")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Panel_Credits), Member = "Reset")]
+	[Calls(Type = typeof(EpisodeDefinition), Member = "BuildLines")]
 	[Calls(Type = typeof(Panel_Credits), Member = "BuildCreditElements")]
+	[Calls(Type = typeof(Panel_Credits), Member = "Exit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ShowCredits(int episodeIndex, Action fadedInAction, Action exitAction)
 	{
 	}
@@ -260,29 +259,26 @@ public class Panel_Credits : Panel_AutoReferenced
 	[CallerCount(Count = 0)]
 	public bool IsFullyActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Panel_Credits), Member = "FadeInPanel")]
-	[Calls(Type = typeof(Panel_Credits), Member = "StartMusic")]
-	[Calls(Type = typeof(Panel_Credits), Member = "FadeIn")]
-	[Calls(Type = typeof(Panel_Credits), Member = "Play")]
-	[Calls(Type = typeof(Panel_Credits), Member = "Exit")]
-	[Calls(Type = typeof(Panel_Credits), Member = "FadeInPanel")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputManager), Member = "GetFirePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetAltFirePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetFireReleased")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonUnpressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetFireReleased")]
-	[Calls(Type = typeof(InputManager), Member = "GetAltFirePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetFirePressed")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Credits), Member = "Exit")]
+	[Calls(Type = typeof(Panel_Credits), Member = "FadeInPanel")]
+	[Calls(Type = typeof(Panel_Credits), Member = "Play")]
+	[Calls(Type = typeof(Panel_Credits), Member = "FadeIn")]
+	[Calls(Type = typeof(Panel_Credits), Member = "StartMusic")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Credits), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Credits), Member = "Update")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Panel_Credits), Member = "FadeIn")]
@@ -291,33 +287,32 @@ public class Panel_Credits : Panel_AutoReferenced
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Credits), Member = "FadeIn")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void FadeInElements()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[CalledBy(Type = typeof(Panel_Credits), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Credits), Member = "FadeInPanel")]
 	[CalledBy(Type = typeof(Panel_Credits), Member = "FadeInElements")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
 	private void FadeIn(UIPanel panel, PanelState nextState, float startTime, float fadeInDuration, ref float fadeInAmount, ref float nextStateStartTime, Action onComplete)
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Credits), Member = "Update")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Seek")]
-	[Calls(Type = typeof(GameAudioManager), Member = "MuteGameplayAudio")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "MuteGameplayAudio")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
+	[Calls(Type = typeof(GameAudioManager), Member = "Seek")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void StartMusic()
 	{
 	}
@@ -329,25 +324,25 @@ public class Panel_Credits : Panel_AutoReferenced
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(Panel_Credits), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Mathf), Member = "SmoothDamp")]
-	[CalledBy(Type = typeof(Panel_Credits), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
 	private void Play()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[CallsUnknownMethods(Count = 2)]
 	public UIAtlas GetAtlasById(string id)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[CallsUnknownMethods(Count = 2)]
 	public Texture2D GetTextureById(string id)
 	{
@@ -358,17 +353,17 @@ public class Panel_Credits : Panel_AutoReferenced
 	[CallerCount(Count = 3)]
 	private bool IsEditingPrefab()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(Panel_Credits), Member = "ShowCredits")]
 	[CalledBy(Type = typeof(Panel_Credits), Member = "Update")]
-	[Calls(Type = typeof(Panel_Credits), Member = "Reset")]
-	[CalledBy(Type = typeof(Panel_Credits), Member = "Update")]
-	[Calls(Type = typeof(GameAudioManager), Member = "UnmuteGameplayAudio")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameAudioManager), Member = "UnmuteGameplayAudio")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(Panel_Credits), Member = "Reset")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryDestroyPanel")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Exit()
 	{
 	}
@@ -395,23 +390,25 @@ public class Panel_Credits : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(Panel_Credits), Member = "ShowCredits")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	[CalledBy(Type = typeof(Panel_Credits), Member = "Exit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 14)]
 	private void Reset()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_Credits), Member = "ShowCredits")]
 	[CalledBy(Type = typeof(Panel_Credits), Member = "SetActiveEpisode")]
-	[CallsUnknownMethods(Count = 11)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 10)]
 	private void BuildCreditElements(EpisodeDefinition episode)
 	{
 	}

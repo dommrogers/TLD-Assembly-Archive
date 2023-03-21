@@ -11,8 +11,9 @@ public class Cairn : MonoBehaviour
 	private PanelReference<Panel_HUD> m_HUD;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowCairnNotification")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void PerformInteraction()
 	{

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -17,11 +16,11 @@ public class FlickerTimingControl
 
 	public float FlickerDurationLimit
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -31,14 +30,14 @@ public class FlickerTimingControl
 		[CallerCount(Count = 2)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public List<float> FlickerModuleTiming
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 28)]
+		[CallerCount(Count = 32)]
 		get
 		{
 			return null;
@@ -53,19 +52,19 @@ public class FlickerTimingControl
 	}
 
 	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "InitializeFlickerSet")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public void InitializeFlickerTiming(FlickerModuleSet moduleSet)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "ManualUpdate")]
 	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "UpdateFlickerTiming")]
+	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 5)]
 	public void AdvanceFlickerTiming(FlickerModuleSet moduleSet, float deltaTime)
 	{

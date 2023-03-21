@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using MissionTypes;
@@ -15,16 +14,16 @@ public class Action_RemoveGearItem : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(string), Member = "StartsWith")]
-		[CallsUnknownMethods(Count = 9)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-		[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[Calls(Type = typeof(string), Member = "Substring")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[Calls(Type = typeof(Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(Object), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "StartsWith")]
+		[Calls(Type = typeof(string), Member = "Substring")]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsUnknownMethods(Count = 3)]
 		get
 		{
 			return null;
@@ -32,18 +31,20 @@ public class Action_RemoveGearItem : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 5)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 11)]
 	public Action_RemoveGearItem()
 	{
 	}

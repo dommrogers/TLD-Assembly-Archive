@@ -18,23 +18,23 @@ public class Action_SetBaseAIStateFollowWaypoint : TLD_Action
 
 	public BBParameter<AiMode> nextState;
 
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BaseAi), Member = "SetSpeedOverride")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TLD_Action), Member = "get_agent")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TLD_Action), Member = "get_agent")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[Calls(Type = typeof(BaseAi), Member = "SetSpeedOverride")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 14)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Action_SetBaseAIStateFollowWaypoint()
 	{
 	}

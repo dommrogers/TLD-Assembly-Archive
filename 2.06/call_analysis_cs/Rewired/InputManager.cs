@@ -9,11 +9,11 @@ public sealed class InputManager : InputManager_Base
 {
 	private bool ignoreRecompile;
 
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "add_sceneLoaded")]
-	[Calls(Type = typeof(InputManager), Member = "UnsubscribeEvents")]
-	[CallsUnknownMethods(Count = 7)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputManager), Member = "UnsubscribeEvents")]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "add_sceneLoaded")]
+	[CallsUnknownMethods(Count = 7)]
 	protected override void OnInitialized()
 	{
 	}
@@ -44,12 +44,11 @@ public sealed class InputManager : InputManager_Base
 		return null;
 	}
 
-	[Calls(Type = typeof(Regex), Member = "IsMatch")]
-	[Calls(Type = typeof(Regex), Member = "IsMatch")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Regex), Member = "IsMatch")]
 	private bool CheckDeviceName(string searchPattern, string deviceName, string deviceModel)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -61,19 +60,19 @@ public sealed class InputManager : InputManager_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "remove_sceneLoaded")]
 	[CalledBy(Type = typeof(InputManager), Member = "OnInitialized")]
 	[CalledBy(Type = typeof(InputManager), Member = "OnDeinitialized")]
 	[CalledBy(Type = typeof(InputManager), Member = "SubscribeEvents")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "remove_sceneLoaded")]
+	[CallsUnknownMethods(Count = 7)]
 	private void UnsubscribeEvents()
 	{
 	}
 
-	[Calls(Type = typeof(ReInput), Member = "bTpyOpRGeDPPHqqwooGngOxGYFE")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReInput), Member = "bTpyOpRGeDPPHqqwooGngOxGYFE")]
 	private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
 	{
 	}

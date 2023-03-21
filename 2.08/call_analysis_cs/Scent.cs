@@ -11,15 +11,13 @@ public class Scent : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeInvestigateMeatWhenStalking")]
-	[CalledBy(Type = typeof(Inventory), Member = "GetBestDecoy")]
-	[CalledBy(Type = typeof(Inventory), Member = "GetBestDecoy")]
 	[CallAnalysisFailed]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(BaseAi), Member = "MaybeInvestigateMeatWhenStalking")]
+	[CalledBy(Type = typeof(Inventory), Member = "GetBestDecoy")]
+	[CallerCount(Count = 4)]
 	public float GetRange()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]

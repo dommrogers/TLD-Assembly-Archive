@@ -6,8 +6,8 @@ namespace UnityEngine.Rendering.PostProcessing;
 [Serializable]
 public sealed class EyeAdaptationParameter : ParameterOverride<EyeAdaptation>
 {
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public EyeAdaptationParameter()
 	{
 		((ParameterOverride<>)(object)this)._002Ector();

@@ -17,8 +17,8 @@ public class CatalogItemAvailabilityPlugin
 	public static extern uint CatalogItemAvailability_AcceptablePaymentInstrumentTypes_Length(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CatalogItemAvailability_AcceptablePaymentInstrumentTypes_GetAt(IntPtr self, uint idx);
 
 	[PreserveSig]
@@ -47,8 +47,8 @@ public class CatalogItemAvailabilityPlugin
 	public static extern IntPtr CatalogItemAvailability_ContentId(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CatalogItemAvailability_CurrencyCode(IntPtr self);
 
 	[PreserveSig]
@@ -72,8 +72,8 @@ public class CatalogItemAvailabilityPlugin
 	public static extern int CatalogItemAvailability_IsPurchasable(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern double CatalogItemAvailability_ListPrice(IntPtr self);
 
 	[PreserveSig]
@@ -102,8 +102,8 @@ public class CatalogItemAvailabilityPlugin
 	public static extern IntPtr CatalogItemAvailability_SignedOffer(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CatalogItemAvailability_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]

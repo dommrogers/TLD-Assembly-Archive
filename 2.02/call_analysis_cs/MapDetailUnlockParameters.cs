@@ -19,12 +19,12 @@ public struct MapDetailUnlockParameters
 
 	public float m_RangeBoostAmount;
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "UnlockDecalMapMarkersNearPosition")]
 	[CalledBy(Type = typeof(MapDetailManager), Member = "UnlockMapDetailObjectsNearPosition")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public float GetRangeBoostFromHeightDelta(float heightDelta)
 	{
-		return default(float);
+		return 0f;
 	}
 }

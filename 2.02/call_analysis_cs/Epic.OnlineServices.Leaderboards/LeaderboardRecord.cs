@@ -15,16 +15,16 @@ public class LeaderboardRecord : ISettable
 
 	public ProductUserId UserId
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -32,12 +32,12 @@ public class LeaderboardRecord : ISettable
 
 	public uint Rank
 	{
-		[CallerCount(Count = 8)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 8)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -54,7 +54,7 @@ public class LeaderboardRecord : ISettable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -68,39 +68,39 @@ public class LeaderboardRecord : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
 	}
 
+	[CalledBy(Type = typeof(LeaderboardRecord), Member = "Set")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(LeaderboardRecordInternal), Member = "get_UserId")]
 	[Calls(Type = typeof(LeaderboardRecordInternal), Member = "get_UserDisplayName")]
-	[CalledBy(Type = typeof(LeaderboardRecord), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	internal void Set(LeaderboardRecordInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(LeaderboardRecord), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public LeaderboardRecord()
 	{
 	}

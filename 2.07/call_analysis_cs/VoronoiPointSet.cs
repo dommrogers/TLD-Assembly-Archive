@@ -9,36 +9,33 @@ public class VoronoiPointSet
 
 	private Vector4[] m_Points;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(VoronoiPointSet), Member = "SetPoint")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(VoronoiPointSet), Member = "SetPoint")]
+	[CallsUnknownMethods(Count = 2)]
 	public VoronoiPointSet()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(VoronoiPointSet), Member = "GetPoint")]
-	[Calls(Type = typeof(VoronoiPointSet), Member = "GetPoint")]
 	[CalledBy(Type = typeof(BreakableIce), Member = "IsIceBroken")]
 	[CalledBy(Type = typeof(BreakableIce), Member = "AddBrokenIceToTexture")]
 	[CalledBy(Type = typeof(BreakableIce), Member = "RemoveBrokenIceFromTexture")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(VoronoiPointSet), Member = "GetPoint")]
 	[CallsUnknownMethods(Count = 2)]
 	public int ComputeNearestPointIndex(Vector2 pos)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(VoronoiPointSet), Member = "ComputeNearestPointIndex")]
 	[CalledBy(Type = typeof(VoronoiPointSet), Member = "ComputeNearestPointIndex")]
 	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public Vector2 GetPoint(int index)
 	{
 		return default(Vector2);
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[Calls(Type = typeof(VoronoiPointSet), Member = "SetPoint")]
 	[CallsUnknownMethods(Count = 2)]
@@ -53,10 +50,10 @@ public class VoronoiPointSet
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(VoronoiPointSet), Member = ".ctor")]
 	[CalledBy(Type = typeof(VoronoiPointSet), Member = "Randomize")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(VoronoiPointSet), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetPoint(int index, Vector2 point)
 	{
 	}

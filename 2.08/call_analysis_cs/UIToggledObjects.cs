@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -14,33 +13,32 @@ public class UIToggledObjects : MonoBehaviour
 	private bool inverse;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[Calls(Type = typeof(UIToggledObjects), Member = "Set")]
-	[Calls(Type = typeof(UIToggledObjects), Member = "Set")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Toggle()
 	{
 	}
 
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CalledBy(Type = typeof(UIToggledObjects), Member = "Toggle")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(UIToggledObjects), Member = "Toggle")]
-	[CalledBy(Type = typeof(UIToggledObjects), Member = "Toggle")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	private void Set(GameObject go, bool state)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public UIToggledObjects()
 	{
 	}

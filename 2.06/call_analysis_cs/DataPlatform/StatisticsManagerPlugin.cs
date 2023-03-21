@@ -20,8 +20,8 @@ public class StatisticsManagerPlugin
 	public static extern bool StatisticsManager_GetSingleUserStatisticsAsync(int userId, string xboxUserId, string serviceConfigurationId, string statisticName, ObjectResultCallback callback, IntPtr userData);
 
 	[PreserveSig]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 2)]
 	public static extern bool StatisticsManager_GetMultipleUserStatisticsAsync(int userId, [In] string[] xboxUserIds, int numUserIds, string serviceConfigurationId, [In] string[] statisticNames, int numStatNames, ObjectResultCallback callback, IntPtr userData);
 
@@ -31,13 +31,13 @@ public class StatisticsManagerPlugin
 	public static extern void StatisticsManager_MuliUserStatisticsResult_Dispose(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint StatisticsManager_MuliUserStatisticsResult_Size(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr StatisticsManager_MuliUserStatisticsResult_GetAt(IntPtr self, uint idx);
 
 	[PreserveSig]
@@ -56,14 +56,14 @@ public class StatisticsManagerPlugin
 	public static extern uint StatisticsManager_UserStatisticsResult_ServiceConfigurationStatistics_Length(IntPtr self);
 
 	[PreserveSig]
-	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(UserStatisticsResult._003CGetEnumerator_003Ed__3), Member = "MoveNext")]
+	[CalledBy(TypeFullName = "DataPlatform.UserStatisticsResult.<GetEnumerator>d__3", Member = "MoveNext")]
 	[CalledBy(Type = typeof(UserStatisticsResult), Member = "get_Item")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr StatisticsManager_UserStatisticsResult_ServiceConfigurationStatistics_GetAt(IntPtr self, uint idx);
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public StatisticsManagerPlugin()
 	{
 	}

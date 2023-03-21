@@ -10,13 +10,12 @@ public class Action_AddMissionLayer : ActionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Format")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(string), Member = "Format")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
@@ -24,16 +23,18 @@ public class Action_AddMissionLayer : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(SceneManager), Member = "AddLayer")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public Action_AddMissionLayer()
 	{

@@ -65,7 +65,7 @@ public sealed class PostProcessResources : ScriptableObject
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public Shaders()
 		{
 		}
@@ -107,7 +107,7 @@ public sealed class PostProcessResources : ScriptableObject
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public ComputeShaders()
 		{
 		}
@@ -121,7 +121,7 @@ public sealed class PostProcessResources : ScriptableObject
 		public Texture2D search;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public SMAALuts()
 		{
 		}
@@ -137,9 +137,9 @@ public sealed class PostProcessResources : ScriptableObject
 
 	public ComputeShaders computeShaders;
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public PostProcessResources()
 	{
 	}

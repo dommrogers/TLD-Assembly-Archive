@@ -28,22 +28,22 @@ public class UIPlaySound : MonoBehaviour
 	private bool canPlay
 	{
 		[CalledBy(Type = typeof(UIPlaySound), Member = "OnHover")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[CalledBy(Type = typeof(UIPlaySound), Member = "OnPress")]
 		[CalledBy(Type = typeof(UIPlaySound), Member = "OnClick")]
 		[CalledBy(Type = typeof(UIPlaySound), Member = "OnSelect")]
-		[CalledBy(Type = typeof(UIPlaySound), Member = "OnSelect")]
-		[CallsUnknownMethods(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(UIPlaySound), Member = "OnPress")]
 		[CallerCount(Count = 5)]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[Calls(Type = typeof(NGUITools), Member = "PlaySound")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NGUITools), Member = "PlaySound")]
 	private void OnEnable()
 	{
 	}
@@ -61,16 +61,16 @@ public class UIPlaySound : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(NGUITools), Member = "PlaySound")]
-	[Calls(Type = typeof(UIPlaySound), Member = "get_canPlay")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIPlaySound), Member = "get_canPlay")]
+	[Calls(Type = typeof(NGUITools), Member = "PlaySound")]
 	private void OnPress(bool isPressed)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIPlaySound), Member = "get_canPlay")]
 	[Calls(Type = typeof(NGUITools), Member = "PlaySound")]
-	[CallerCount(Count = 0)]
 	private void OnClick()
 	{
 	}
@@ -79,7 +79,6 @@ public class UIPlaySound : MonoBehaviour
 	[Calls(Type = typeof(UIPlaySound), Member = "get_canPlay")]
 	[Calls(Type = typeof(NGUITools), Member = "PlaySound")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UIPlaySound), Member = "get_canPlay")]
 	private void OnSelect(bool isSelected)
 	{
 	}

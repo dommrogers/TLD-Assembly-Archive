@@ -2,6 +2,7 @@ using System;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Gameplay;
 using UnityEngine;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class ExperienceModeManagerSaveDataProxy
 {
@@ -13,19 +14,19 @@ public class ExperienceModeManagerSaveDataProxy
 
 	public GameModeConfig CurrentMode
 	{
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(JumpData), Member = "LoadFromFile")]
 		[CalledBy(Type = typeof(ExperienceModeManager), Member = "Deserialize")]
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -54,18 +55,18 @@ public class ExperienceModeManagerSaveDataProxy
 		{
 			return default(ExperienceModeType);
 		}
-		[Calls(Type = typeof(Enum), Member = "ToString")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Enum), Member = "ToString")]
 		set
 		{
 		}
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(ExperienceModeManagerSaveDataProxy), Member = "get_PreviousModeType")]
 	[CalledBy(Type = typeof(ExperienceModeManagerSaveDataProxy), Member = "get_CurrentModeType")]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "UpdateSlotGameMode")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private static ExperienceModeType StringToExperienceModeType(string xpMode)
 	{
 		return default(ExperienceModeType);

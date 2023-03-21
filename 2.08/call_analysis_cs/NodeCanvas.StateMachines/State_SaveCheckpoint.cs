@@ -24,9 +24,9 @@ public class State_SaveCheckpoint : FSMState
 	{
 	}
 
-	[Calls(Type = typeof(Node), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Node), Member = ".ctor")]
 	public State_SaveCheckpoint()
 	{
 	}

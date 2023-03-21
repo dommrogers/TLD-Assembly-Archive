@@ -32,8 +32,8 @@ public class PermissionIdConstantsPlugin
 	public static extern IntPtr PermissionIdConstants_PlayMultiplayer();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr PermissionIdConstants_ViewTargetExerciseInfo();
 
 	[PreserveSig]
@@ -62,17 +62,17 @@ public class PermissionIdConstantsPlugin
 	public static extern IntPtr PermissionIdConstants_ViewTargetProfile();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr PermissionIdConstants_ViewTargetVideoHistory();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr PermissionIdConstants_ViewTargetVideoStatus();
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PermissionIdConstantsPlugin()
 	{
 	}

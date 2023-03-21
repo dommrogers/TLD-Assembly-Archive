@@ -27,13 +27,13 @@ public abstract class MB3_MeshCombiner
 		[CallsUnknownMethods(Count = 1)]
 		public override bool Equals(object obj)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
 		public override int GetHashCode()
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -44,7 +44,7 @@ public abstract class MB3_MeshCombiner
 		public int blendShapeIndex;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public MBBlendShapeValue()
 		{
 		}
@@ -98,7 +98,7 @@ public abstract class MB3_MeshCombiner
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -120,13 +120,13 @@ public abstract class MB3_MeshCombiner
 	public virtual MB2_ValidationLevel validationLevel
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 6)]
 		get
 		{
 			return default(MB2_ValidationLevel);
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -135,13 +135,13 @@ public abstract class MB3_MeshCombiner
 	public string name
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -150,13 +150,13 @@ public abstract class MB3_MeshCombiner
 	public virtual MB2_TextureBakeResults textureBakeResults
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
@@ -171,7 +171,7 @@ public abstract class MB3_MeshCombiner
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
@@ -179,17 +179,16 @@ public abstract class MB3_MeshCombiner
 
 	public virtual Renderer targetRenderer
 	{
-		[CallerCount(Count = 15)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(Debug), Member = "LogWarning")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -227,8 +226,8 @@ public abstract class MB3_MeshCombiner
 
 	public virtual MB2_LightmapOptions lightmapOption
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(MB2_LightmapOptions);
@@ -246,7 +245,7 @@ public abstract class MB3_MeshCombiner
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -261,7 +260,7 @@ public abstract class MB3_MeshCombiner
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -276,7 +275,7 @@ public abstract class MB3_MeshCombiner
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -290,7 +289,7 @@ public abstract class MB3_MeshCombiner
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -304,10 +303,10 @@ public abstract class MB3_MeshCombiner
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		set
 		{
 		}
@@ -319,7 +318,7 @@ public abstract class MB3_MeshCombiner
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -334,10 +333,10 @@ public abstract class MB3_MeshCombiner
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -345,11 +344,11 @@ public abstract class MB3_MeshCombiner
 
 	public virtual bool doBlendShapes
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -362,7 +361,7 @@ public abstract class MB3_MeshCombiner
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -376,7 +375,7 @@ public abstract class MB3_MeshCombiner
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -388,130 +387,86 @@ public abstract class MB3_MeshCombiner
 	[CallerCount(Count = 0)]
 	public virtual bool doUV2()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract int GetLightmapIndex();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract void ClearBuffers();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract void ClearMesh();
 
-	[CallerCount(Count = 121780)]
-	[DeduplicatedMethod]
 	public abstract void DestroyMesh();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract void DestroyMeshEditor(MB2_EditorMethodsInterface editorMethods);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract List<GameObject> GetObjectsInCombined();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract int GetNumObjectsInCombined();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract int GetNumVerticesFor(GameObject go);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract int GetNumVerticesFor(int instanceID);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract Dictionary<MBBlendShapeKey, MBBlendShapeValue> BuildSourceBlendShapeToCombinedIndexMap();
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public virtual void Apply()
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract void Apply(GenerateUV2Delegate uv2GenerationMethod);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract void Apply(bool triangles, bool vertices, bool normals, bool tangents, bool uvs, bool uv2, bool uv3, bool uv4, bool colors, bool bones = false, bool blendShapeFlag = false, GenerateUV2Delegate uv2GenerationMethod = null);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract bool UpdateGameObjects(GameObject[] gos, bool recalcBounds = true, bool updateVertices = true, bool updateNormals = true, bool updateTangents = true, bool updateUV = false, bool updateUV2 = false, bool updateUV3 = false, bool updateUV4 = false, bool updateColors = false, bool updateSkinningInfo = false);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract bool AddDeleteGameObjects(GameObject[] gos, GameObject[] deleteGOs, bool disableRendererInSource = true);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract bool AddDeleteGameObjectsByID(GameObject[] gos, int[] deleteGOinstanceIDs, bool disableRendererInSource);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract bool CombinedMeshContains(GameObject go);
 
-	[CallerCount(Count = 121780)]
-	[DeduplicatedMethod]
 	public abstract void UpdateSkinnedMeshApproximateBounds();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract void UpdateSkinnedMeshApproximateBoundsFromBones();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract void CheckIntegrity();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract void UpdateSkinnedMeshApproximateBoundsFromBounds();
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CalledBy(Type = typeof(MB2_UpdateSkinnedMeshBoundsFromBones), Member = "Update")]
 	[CalledBy(Type = typeof(MB3_MeshCombinerSingle), Member = "UpdateSkinnedMeshApproximateBoundsFromBones")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 16)]
 	public static void UpdateSkinnedMeshApproximateBoundsFromBonesStatic(Transform[] bs, SkinnedMeshRenderer smr)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(MB3_MeshCombinerSingle), Member = "UpdateSkinnedMeshApproximateBoundsFromBounds")]
 	[CalledBy(Type = typeof(MB2_UpdateSkinnedMeshBoundsFromBounds), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(MB_Utility), Member = "GetBounds")]
+	[CalledBy(Type = typeof(MB3_MeshCombinerSingle), Member = "UpdateSkinnedMeshApproximateBoundsFromBounds")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(MB_Utility), Member = "GetBounds")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Bounds), Member = "Encapsulate")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void UpdateSkinnedMeshApproximateBoundsFromBoundsStatic(List<GameObject> objectsInCombined, SkinnedMeshRenderer smr)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(MB2_TextureBakeResults), Member = "CreateForMaterialsOnRenderer")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	protected virtual bool _CreateTemporaryTextrueBakeResult(GameObject[] gos, List<Material> matsOnTargetRenderer)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract List<Material> GetMaterialsOnTargetRenderer();
 
 	[CallerCount(Count = 0)]

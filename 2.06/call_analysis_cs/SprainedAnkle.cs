@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.SaveState;
 using TLD.Serialization;
 using TLD.UI.Generics;
 using UnityEngine;
@@ -67,10 +68,10 @@ public class SprainedAnkle : MonoBehaviour
 
 	public string m_DisplayName
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Localization), Member = "Get")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 11)]
+		[Calls(Type = typeof(Localization), Member = "Get")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -90,36 +91,31 @@ public class SprainedAnkle : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(SprainedAnkle), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetPlayerMovement")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 4)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetPlayerMovement")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateLimpAnimation()
 	{
 	}
 
-	[Calls(Type = typeof(SprainedAnkle), Member = "UpdateLimpAnimation")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SprainedAnkle), Member = "UpdateSprainedAnkle")]
+	[Calls(Type = typeof(SprainedAnkle), Member = "UpdateLimpAnimation")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Update()
 	{
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
 	[CallsUnknownMethods(Count = 13)]
 	public string Serialize()
 	{
@@ -127,10 +123,12 @@ public class SprainedAnkle : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 28)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 11)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 28)]
 	public void Deserialize(string text)
 	{
 	}
@@ -139,65 +137,62 @@ public class SprainedAnkle : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool LocationAvailable()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "SaveGameAndDisplayHUDMessage")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(SprainedAnkleEvent), Member = "OnExecute")]
 	[CalledBy(Type = typeof(SprainedAnkleEvent), Member = "OnExecute")]
 	[CalledBy(Type = typeof(FallDamage), Member = "MaybeSprainAnkle")]
 	[CalledBy(Type = typeof(Sprains), Member = "MaybeSprainWhileMoving")]
+	[CalledBy(Type = typeof(Sprains), Member = "MaybeSprainAnkle")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_sprain_ankle")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_sprain_ankle_nofx")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_sprain_ankle_nofx_unique")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CalledBy(Type = typeof(Sprains), Member = "MaybeSprainAnkle")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(SprainPain), Member = "ApplyAffliction")]
 	[CallerCount(Count = 9)]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
-	[Calls(Type = typeof(Log), Member = "AddAffliction")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
 	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "ApplyFallImpact")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(SprainPain), Member = "ApplyAffliction")]
+	[Calls(Type = typeof(Log), Member = "AddAffliction")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(GameManager), Member = "SaveGameAndDisplayHUDMessage")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 14)]
 	public void SprainedAnkleStart(string causeID, AfflictionOptions options)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TreatAffliction")]
-	[CalledBy(Type = typeof(SprainedAnkle), Member = "UpdateSprainedAnkle")]
 	[CalledBy(Type = typeof(SprainedAnkle), Member = "ApplyBandage")]
-	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
+	[CalledBy(Type = typeof(SprainedAnkle), Member = "UpdateSprainedAnkle")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TreatAffliction")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SprainedAnkleEnd(int index)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
+	[CallerCount(Count = 3)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
 	public AfflictionBodyArea GetLocation(int index)
 	{
 		return default(AfflictionBodyArea);
@@ -208,21 +203,21 @@ public class SprainedAnkle : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool HasSprainedAnkle()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool HasSprainedLeftAnkle()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[CallsUnknownMethods(Count = 1)]
 	public string[] GetCauseLocIDList()
 	{
 		return null;
@@ -232,11 +227,11 @@ public class SprainedAnkle : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public int GetAfflictionsCount()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public string GetAfflictionCauseLocalizationId(int localAfflictionIndex)
 	{
@@ -244,12 +239,12 @@ public class SprainedAnkle : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetRestAmountRemaining(int index)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -257,7 +252,7 @@ public class SprainedAnkle : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool HasSprainNeedingRest()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -265,7 +260,7 @@ public class SprainedAnkle : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool RequiresBandage()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -275,49 +270,46 @@ public class SprainedAnkle : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions_cure")]
-	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_sprain_ankle_cure")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	public void Cure()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public void AddRest(float hours)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(SprainedAnkle), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(SprainedAnkle), Member = "SprainedAnkleEnd")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsWalking")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
+	[Calls(Type = typeof(SprainedAnkle), Member = "SprainedAnkleEnd")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateSprainedAnkle(int index)
 	{
 	}
 
 	[CalledBy(Type = typeof(SprainedAnkle), Member = "MaybeLimpOrStumbleWithFootStep")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "ApplyFallImpact")]
 	[CalledBy(Type = typeof(FootStepSounds), Member = "AddMoveDistance")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "ApplyFallImpact")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void DoLimpAnimation()
 	{
 	}
@@ -330,34 +322,34 @@ public class SprainedAnkle : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(FootStepSounds), Member = "AddMoveDistance")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
 	[Calls(Type = typeof(SprainedAnkle), Member = "DoLimpAnimation")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool MaybeLimpOrStumbleWithFootStep(bool left)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "ApplyFallImpact")]
+	[CallsUnknownMethods(Count = 4)]
 	private void DoStumbleEffects(bool alreadyInjured = false)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 34)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 34)]
 	public SprainedAnkle()
 	{
 	}

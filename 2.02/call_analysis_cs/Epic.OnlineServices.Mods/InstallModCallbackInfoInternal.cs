@@ -29,7 +29,8 @@ internal struct InstallModCallbackInfoInternal : ICallbackInfoInternal
 	{
 		[CalledBy(Type = typeof(InstallModCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -39,8 +40,8 @@ internal struct InstallModCallbackInfoInternal : ICallbackInfoInternal
 	public object ClientData
 	{
 		[CalledBy(Type = typeof(InstallModCallbackInfo), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -51,18 +52,19 @@ internal struct InstallModCallbackInfoInternal : ICallbackInfoInternal
 	public IntPtr ClientDataAddress
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public ModIdentifier Mod
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(InstallModCallbackInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;

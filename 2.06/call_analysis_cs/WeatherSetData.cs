@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Serialization;
@@ -58,7 +57,7 @@ public class WeatherSetData : ScriptableObject
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsComplete()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -66,82 +65,82 @@ public class WeatherSetData : ScriptableObject
 	{
 	}
 
-	[CallerCount(Count = 5)]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_weather")]
-	[CalledBy(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(WeatherTransition), Member = "ActivateWeatherSet")]
 	[CalledBy(Type = typeof(WeatherTransition), Member = "Deserialize")]
+	[CalledBy(Type = typeof(WeatherTransition), Member = "ActivateWeatherSet")]
 	[CalledBy(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetImmediate")]
+	[CalledBy(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_weather")]
+	[CallerCount(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Prepare()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(WeatherTransition), Member = "ActivateWeatherSet")]
+	[CallerCount(Count = 1)]
 	public void Activate(float startAtFrac = 0f, WeatherStage previousType = WeatherStage.Undefined)
 	{
 	}
 
+	[CalledBy(Type = typeof(WeatherTransition), Member = "ActivateWeatherSet")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(WeatherSetStage), Member = "Deactivate")]
-	[CalledBy(Type = typeof(WeatherTransition), Member = "ActivateWeatherSet")]
 	[CallsUnknownMethods(Count = 2)]
 	public void Deactivate()
 	{
 	}
 
-	[CalledBy(Type = typeof(WeatherSetData), Member = "ForceStep")]
 	[CalledBy(Type = typeof(WeatherSetData), Member = "UpdateWeatherSet")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(WeatherSetData), Member = "ForceStep")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(WeatherSetStage), Member = "Activate")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ActivateStage(float startAtFrac, WeatherStage previousType = WeatherStage.Undefined)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(WeatherTransition), Member = "Serialize")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsUnknownMethods(Count = 2)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(WeatherTransition), Member = "Deserialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[Calls(Type = typeof(WeatherSetData), Member = "ActivateStage")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(WeatherTransition), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(WeatherSetStage), Member = "Update")]
+	[Calls(Type = typeof(WeatherSetStage), Member = "Deactivate")]
+	[Calls(Type = typeof(WeatherSetData), Member = "ActivateStage")]
 	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(WeatherSetStage), Member = "Update")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(WeatherSetStage), Member = "Deactivate")]
+	[CallsUnknownMethods(Count = 4)]
 	public void UpdateWeatherSet()
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(WeatherSetData), Member = "GetDebugString")]
 	[CalledBy(Type = typeof(WeatherTransition), Member = "Serialize")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetProgressFrac()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallAnalysisFailed]
@@ -150,35 +149,31 @@ public class WeatherSetData : ScriptableObject
 	{
 	}
 
-	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "IncrementWaypoint")]
-	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "IncrementWaypoint")]
-	[Calls(Type = typeof(WeatherSetData), Member = "ActivateStage")]
+	[CalledBy(Type = typeof(WeatherTransition), Member = "ForceTransitionToWeatherStage")]
 	[CalledBy(Type = typeof(WeatherTransition), Member = "ForceNextWeatherStage")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(WeatherTransition), Member = "ForceTransitionToWeatherStage")]
+	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "IncrementWaypoint")]
 	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(Type = typeof(WeatherSetData), Member = "ActivateStage")]
 	[Calls(Type = typeof(int), Member = "ToString")]
-	[CalledBy(Type = typeof(WeatherTransition), Member = "ForceTransitionToWeatherStage")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsUnknownMethods(Count = 3)]
 	public void ForceStep(int forceIndex)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(WeatherTransition), Member = "GetDebugString")]
 	[CalledBy(Type = typeof(Weather), Member = "GetDebugWeatherText")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(WeatherSetStage), Member = "GetDebugString")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(WeatherSetData), Member = "GetProgressFrac")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CalledBy(Type = typeof(WeatherTransition), Member = "GetDebugString")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(WeatherSetData), Member = "GetProgressFrac")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[Calls(Type = typeof(WeatherSetStage), Member = "GetDebugString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[CallsUnknownMethods(Count = 2)]
 	public string GetDebugString()
 	{
 		return null;
@@ -190,14 +185,13 @@ public class WeatherSetData : ScriptableObject
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Utils), Member = "GetFirstDayLengthInHours")]
 	[CalledBy(Type = typeof(AlmanacGridItem), Member = "SetUpGridItem")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetFirstDayLengthInHours")]
+	[CallsUnknownMethods(Count = 4)]
 	public float ReportHoursOfBlizzardForDay(int reportDay)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -206,27 +200,21 @@ public class WeatherSetData : ScriptableObject
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(WeatherSetData), Member = "GetBlendedWeatherPair")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(WeatherSetData), Member = "GetBlendedWeatherPair")]
-	[Calls(Type = typeof(WeatherSetData), Member = "GetBlendedWeatherPair")]
-	[Calls(Type = typeof(WeatherSetData), Member = "GetBlendedWeatherPair")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 9)]
 	public WeatherStage ReportWeatherForDay(int reportDay)
 	{
 		return default(WeatherStage);
 	}
 
 	[CalledBy(Type = typeof(WeatherSetData), Member = "ReportWeatherForDay")]
-	[CalledBy(Type = typeof(WeatherSetData), Member = "ReportWeatherForDay")]
-	[Calls(Type = typeof(WeatherSetData), Member = "GetDowngradedWeatherType")]
-	[Calls(Type = typeof(WeatherSetData), Member = "GetDowngradedWeatherType")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Weather), Member = "ChooseWeatherSetOfType")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(WeatherSetData), Member = "ReportWeatherForDay")]
 	[Calls(Type = typeof(WeatherSetData), Member = "GetDowngradedWeatherType")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private WeatherStage GetBlendedWeatherPair(WeatherStage ws1, WeatherStage ws2, bool allowSubordination)
 	{
@@ -234,19 +222,17 @@ public class WeatherSetData : ScriptableObject
 	}
 
 	[CalledBy(Type = typeof(WeatherSetData), Member = "GetBlendedWeatherPair")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(WeatherSetData), Member = "GetBlendedWeatherPair")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Weather), Member = "ChooseWeatherSetOfType")]
-	[CalledBy(Type = typeof(WeatherSetData), Member = "GetBlendedWeatherPair")]
+	[CallsUnknownMethods(Count = 2)]
 	private WeatherStage GetDowngradedWeatherType(WeatherStage ws)
 	{
 		return default(WeatherStage);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Weather), Member = "ChooseWeatherSetOfType")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private WeatherStage GetMoreSeriousWeatherType(WeatherStage ws1, WeatherStage ws2)
 	{

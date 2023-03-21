@@ -9,11 +9,11 @@ public class Condition_HudActive : ConditionTask
 	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Condition_HudActive()
 	{
 	}

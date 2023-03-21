@@ -31,49 +31,43 @@ public class LightRandomIntensity : MonoBehaviour
 
 	private UniStormWeatherSystem m_UniStorm;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(LightTracking), Member = "UpdateLightIntensity")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(LightTracking), Member = "UpdateLightIntensity")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(LightTracking), Member = "UpdateLightIntensity")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetNightPercentage")]
-	[Calls(Type = typeof(Mathf), Member = "SmoothStep")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(LightTracking), Member = "EnableLight")]
 	[Calls(Type = typeof(LightTracking), Member = "IsLightEnabled")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetNightPercentage")]
-	[Calls(Type = typeof(LightTracking), Member = "EnableLight")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetNightPercentage")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(Mathf), Member = "SmoothStep")]
+	[Calls(Type = typeof(LightTracking), Member = "UpdateLightIntensity")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 9)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(TorchIntensity), Member = "MaybeUpdateIntensityRTPC")]
-	[CalledBy(Type = typeof(TorchIntensity), Member = "MaybeUpdateIntensityRTPC")]
 	[CalledBy(Type = typeof(FlareIntensity), Member = "MaybeUpdateIntensityRTPC")]
-	[CalledBy(Type = typeof(FlareIntensity), Member = "MaybeUpdateIntensityRTPC")]
-	[Calls(Type = typeof(LightTracking), Member = "GetLightIntensity")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(TorchIntensity), Member = "MaybeUpdateIntensityRTPC")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(LightTracking), Member = "GetLightIntensity")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetIntensity()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]

@@ -22,11 +22,11 @@ public class MinorBruisingEvent : StruggleDamageEvent
 	[CallerCount(Count = 0)]
 	public override bool IsLocationAvailable()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public MinorBruisingEvent()
 	{
 	}

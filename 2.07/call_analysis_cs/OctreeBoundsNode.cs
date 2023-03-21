@@ -18,7 +18,7 @@ public class OctreeBoundsNode<T>
 		[CallsUnknownMethods(Count = 7)]
 		public override bool Equals(object obj)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
@@ -27,17 +27,17 @@ public class OctreeBoundsNode<T>
 		[CallsUnknownMethods(Count = 1)]
 		public bool Equals(OctreeObject obj)
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Bounds), Member = "GetHashCode")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Bounds), Member = "GetHashCode")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public override int GetHashCode()
 		{
-			return default(int);
+			return 0;
 		}
 
 		[DeduplicatedMethod]
@@ -45,15 +45,15 @@ public class OctreeBoundsNode<T>
 		[CallsUnknownMethods(Count = 2)]
 		public static bool operator ==(OctreeObject lhs, OctreeObject rhs)
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 2)]
 		public static bool operator !=(OctreeObject lhs, OctreeObject rhs)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -79,9 +79,9 @@ public class OctreeBoundsNode<T>
 
 	public Vector3 Center
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		get
 		{
 			return default(Vector3);
@@ -101,11 +101,11 @@ public class OctreeBoundsNode<T>
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		private set
 		{
 		}
@@ -124,53 +124,51 @@ public class OctreeBoundsNode<T>
 	[CallsDeduplicatedMethods(Count = 2)]
 	public bool Add(T obj, Bounds objBounds)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool Remove(T obj)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Bounds), Member = "Intersects")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Bounds), Member = "Intersects")]
-	[Calls(Type = typeof(Bounds), Member = "Intersects")]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsColliding(Bounds checkBounds)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Bounds), Member = "Intersects")]
-	[Calls(Type = typeof(Bounds), Member = "Intersects")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Bounds), Member = "Intersects")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 2)]
 	public void GetColliding(Bounds checkBounds, ref List<T> resultList)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 7)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 4)]
 	public void FrustumCapture(Plane[] frustumPlanes, ref List<T> captureList)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetChildren(OctreeBoundsNode<T>[] childOctrees)
 	{
 	}
@@ -183,18 +181,18 @@ public class OctreeBoundsNode<T>
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallsUnknownMethods(Count = 7)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	public void DrawAllObjects()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 2)]
-	[DeduplicatedMethod]
 	public OctreeBoundsNode<T> ShrinkIfPossible(float minLength)
 	{
 		return null;
@@ -208,11 +206,11 @@ public class OctreeBoundsNode<T>
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SubAdd(T obj, Bounds objBounds)
 	{
 	}
@@ -233,13 +231,13 @@ public class OctreeBoundsNode<T>
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private static bool Encapsulates(Bounds outerBounds, Bounds innerBounds)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -247,24 +245,24 @@ public class OctreeBoundsNode<T>
 	[CallsDeduplicatedMethods(Count = 3)]
 	private int BestFitChild(Bounds objBounds)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool ShouldMerge()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool HasAnyObjects()
 	{
-		return default(bool);
+		return false;
 	}
 }

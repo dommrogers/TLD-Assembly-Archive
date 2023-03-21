@@ -37,10 +37,10 @@ public sealed class RLProVHSEffect : PostProcessEffectSettings
 
 	public BoolParameter unscaledTime;
 
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 1)]
 	public RLProVHSEffect()
 	{
 	}

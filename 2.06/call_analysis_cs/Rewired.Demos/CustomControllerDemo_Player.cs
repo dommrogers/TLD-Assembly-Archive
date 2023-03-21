@@ -20,13 +20,10 @@ public class CustomControllerDemo_Player : MonoBehaviour
 	private Player player
 	{
 		[CalledBy(Type = typeof(CustomControllerDemo_Player), Member = "Update")]
-		[CalledBy(Type = typeof(CustomControllerDemo_Player), Member = "Update")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(CustomControllerDemo_Player), Member = "Update")]
 		[CallerCount(Count = 4)]
-		[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
 		[Calls(Type = typeof(ReInput), Member = "get_players")]
-		[CalledBy(Type = typeof(CustomControllerDemo_Player), Member = "Update")]
+		[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -34,28 +31,22 @@ public class CustomControllerDemo_Player : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Material), Member = "set_color")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
-	[Calls(Type = typeof(CustomControllerDemo_Player), Member = "get_player")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(CustomControllerDemo_Player), Member = "get_player")]
-	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
-	[Calls(Type = typeof(Player), Member = "GetAxis")]
-	[Calls(Type = typeof(CustomControllerDemo_Player), Member = "get_player")]
-	[Calls(Type = typeof(Player), Member = "GetAxis")]
-	[Calls(Type = typeof(CustomControllerDemo_Player), Member = "get_player")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CustomControllerDemo_Player), Member = "get_player")]
+	[Calls(Type = typeof(Player), Member = "GetAxis")]
+	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
 	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(Material), Member = "set_color")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 10)]
 	private void Update()
 	{
 	}

@@ -13,15 +13,15 @@ public class MeshSwapItem : MonoBehaviour
 
 	private bool m_InCookingReadyState;
 
-	[Calls(Type = typeof(MeshSwapItem), Member = "EnableMesh")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(MeshSwapItem), Member = "EnableMesh")]
 	private void Awake()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void Update()
 	{
 	}
@@ -31,25 +31,20 @@ public class MeshSwapItem : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(MeshSwapItem), Member = "Awake")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CalledBy(Type = typeof(MeshSwapItem), Member = "Awake")]
 	[CallsUnknownMethods(Count = 1)]
 	private void EnableMesh(GameObject go)
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool IsOpened()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

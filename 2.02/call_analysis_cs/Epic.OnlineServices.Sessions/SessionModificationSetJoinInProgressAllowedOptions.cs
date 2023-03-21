@@ -9,23 +9,23 @@ public class SessionModificationSetJoinInProgressAllowedOptions
 
 	public bool AllowJoinInProgress
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SessionModificationSetJoinInProgressAllowedOptions()
 	{
 	}

@@ -21,8 +21,8 @@ public class StaticDecal
 
 	public float m_ClipAngleCos;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public StaticDecal()
 	{
 	}

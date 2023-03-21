@@ -10,18 +10,18 @@ public class AchievementTitleAssociationList : WrappedCachedList<AchievementTitl
 	[CallsDeduplicatedMethods(Count = 1)]
 	public AchievementTitleAssociationList(IntPtr self)
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
 	public AchievementTitleAssociationList()
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	~AchievementTitleAssociationList()
 	{
 	}
@@ -41,9 +41,9 @@ public class AchievementTitleAssociationList : WrappedCachedList<AchievementTitl
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	protected override void DisposeChild()
 	{
 	}

@@ -37,13 +37,13 @@ public class WaitMousePick2D : ActionTask
 		}
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
-	[Calls(Type = typeof(Physics2D), Member = "Raycast")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Physics2D), Member = "Raycast")]
 	[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	protected override void OnUpdate()
 	{
 	}

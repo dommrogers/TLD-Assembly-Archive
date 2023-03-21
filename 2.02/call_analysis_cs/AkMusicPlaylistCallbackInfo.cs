@@ -13,7 +13,7 @@ public class AkMusicPlaylistCallbackInfo : AkEventCallbackInfo
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
@@ -24,18 +24,18 @@ public class AkMusicPlaylistCallbackInfo : AkEventCallbackInfo
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
 	public uint uPlaylistSelection
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
@@ -46,18 +46,18 @@ public class AkMusicPlaylistCallbackInfo : AkEventCallbackInfo
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkMusicPlaylistCallbackInfo_SWIGUpcast")]
-	[Calls(Type = typeof(AkEventCallbackInfo), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkMusicPlaylistCallbackInfo), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkCallbackManager), Member = ".cctor")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkMusicPlaylistCallbackInfo_SWIGUpcast")]
+	[Calls(Type = typeof(AkEventCallbackInfo), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal AkMusicPlaylistCallbackInfo(IntPtr cPtr, bool cMemoryOwn)
-		: base(default(IntPtr), cMemoryOwn: default(bool))
+		: base((IntPtr)0, cMemoryOwn: false)
 	{
 	}
 
@@ -65,41 +65,41 @@ public class AkMusicPlaylistCallbackInfo : AkEventCallbackInfo
 	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkMusicPlaylistCallbackInfo obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkMusicPlaylistCallbackInfo_SWIGUpcast")]
 	[Calls(Type = typeof(AkEventCallbackInfo), Member = "setCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal override void setCPtr(IntPtr cPtr)
 	{
 	}
 
-	[Calls(Type = typeof(AkEventCallbackInfo), Member = "Finalize")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkEventCallbackInfo), Member = "Finalize")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	~AkMusicPlaylistCallbackInfo()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[Calls(Type = typeof(AkEventCallbackInfo), Member = "Dispose")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public override void Dispose()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkMusicPlaylistCallbackInfo), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public AkMusicPlaylistCallbackInfo()
-		: base(default(IntPtr), cMemoryOwn: default(bool))
+		: base((IntPtr)0, cMemoryOwn: false)
 	{
 	}
 }

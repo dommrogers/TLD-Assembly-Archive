@@ -1,5 +1,5 @@
 using System;
-using System.Runtime.CompilerServices;
+using System.Globalization;
 using System.Text;
 using Cpp2ILInjected.CallAnalysis;
 
@@ -13,75 +13,70 @@ public class fsJsonParser
 
 	private readonly StringBuilder _cachedStringBuilder;
 
-	[CallsUnknownMethods(Count = 21)]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseObject")]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseArray")]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseString")]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseExact")]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "RunParse")]
-	[Calls(Type = typeof(fsResult), Member = "Fail")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Substring")]
 	[CalledBy(Type = typeof(fsJsonParser), Member = "TryUnescapeChar")]
-	[CallerCount(Count = 6)]
+	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseExact")]
+	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseNumber")]
+	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseString")]
+	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseArray")]
+	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseObject")]
+	[CalledBy(Type = typeof(fsJsonParser), Member = "RunParse")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(fsResult), Member = "Fail")]
+	[CallsUnknownMethods(Count = 21)]
 	private fsResult MakeFailure(string message)
 	{
 		return default(fsResult);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool TryMoveNext()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	private bool HasValue()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	private bool HasValue(int offset)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
+	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
 	[CallsUnknownMethods(Count = 1)]
 	private char Character()
 	{
-		return default(char);
+		return '\0';
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsUnknownMethods(Count = 1)]
 	private char Character(int offset)
 	{
-		return default(char);
+		return '\0';
 	}
 
+	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseArray")]
 	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseObject")]
 	[CalledBy(Type = typeof(fsJsonParser), Member = "RunParse")]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseObject")]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseObject")]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseObject")]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseObject")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseObject")]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseArray")]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseArray")]
 	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(char), Member = "IsWhiteSpace")]
 	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
 	[Calls(Type = typeof(string), Member = "Contains")]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseArray")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void SkipSpace()
 	{
 	}
@@ -90,46 +85,45 @@ public class fsJsonParser
 	[CallerCount(Count = 0)]
 	private bool IsHex(char c)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	private uint ParseSingleChar(char c1, uint multipliyer)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	private uint ParseUnicode(char c1, char c2, char c3, char c4)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseString")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(string), Member = "Format")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(string), Member = "Format")]
 	[Calls(Type = typeof(fsJsonParser), Member = "MakeFailure")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsUnknownMethods(Count = 17)]
 	private fsResult TryUnescapeChar(out char escaped)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<char, @null>(ref escaped) = null;
+		escaped = default(char);
 		return default(fsResult);
 	}
 
-	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseNull")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "RunParse")]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "RunParse")]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseFalse")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
-	[Calls(Type = typeof(fsJsonParser), Member = "MakeFailure")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseTrue")]
+	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseFalse")]
+	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseNull")]
+	[CalledBy(Type = typeof(fsJsonParser), Member = "RunParse")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(fsJsonParser), Member = "MakeFailure")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsUnknownMethods(Count = 2)]
 	private fsResult TryParseExact(string content)
 	{
 		return default(fsResult);
@@ -156,125 +150,120 @@ public class fsJsonParser
 	}
 
 	[CalledBy(Type = typeof(fsJsonParser), Member = "RunParse")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(fsJsonParser), Member = "TryParseExact")]
+	[CallsUnknownMethods(Count = 1)]
 	private fsResult TryParseNull(out fsData data)
 	{
 		data = null;
 		return default(fsResult);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(char), Member = "IsWhiteSpace")]
 	private bool IsSeparator(char c)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(fsJsonParser), Member = "RunParse")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(char), Member = "IsWhiteSpace")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(string), Member = "Contains")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(CultureInfo), Member = "get_InvariantCulture")]
+	[Calls(Type = typeof(long), Member = "TryParse")]
+	[Calls(Type = typeof(fsData), Member = ".ctor")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "GetInstance")]
+	[Calls(Type = typeof(double), Member = "TryParse")]
+	[Calls(Type = typeof(fsData), Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(fsJsonParser), Member = "MakeFailure")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsUnknownMethods(Count = 3)]
 	private fsResult TryParseNumber(out fsData data)
 	{
 		data = null;
 		return default(fsResult);
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "RunParse")]
 	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseObject")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(fsJsonParser), Member = "MakeFailure")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "set_Length")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(fsJsonParser), Member = "RunParse")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(StringBuilder), Member = "set_Length")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[Calls(Type = typeof(fsJsonParser), Member = "TryUnescapeChar")]
+	[Calls(Type = typeof(fsJsonParser), Member = "MakeFailure")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private fsResult TryParseString(out string str)
 	{
 		str = null;
 		return default(fsResult);
 	}
 
-	[Calls(Type = typeof(fsJsonParser), Member = "SkipSpace")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(fsJsonParser), Member = "RunParse")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
-	[Calls(Type = typeof(fsJsonParser), Member = "SkipSpace")]
-	[Calls(Type = typeof(fsJsonParser), Member = "SkipSpace")]
-	[Calls(Type = typeof(fsJsonParser), Member = "MakeFailure")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(fsJsonParser), Member = "MakeFailure")]
+	[Calls(Type = typeof(fsJsonParser), Member = "SkipSpace")]
 	[Calls(Type = typeof(fsJsonParser), Member = "RunParse")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private fsResult TryParseArray(out fsData arr)
 	{
 		arr = null;
 		return default(fsResult);
 	}
 
-	[CallsUnknownMethods(Count = 29)]
 	[CalledBy(Type = typeof(fsJsonParser), Member = "RunParse")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
-	[Calls(Type = typeof(IndexOutOfRangeException), Member = ".ctor")]
-	[Calls(Type = typeof(IndexOutOfRangeException), Member = ".ctor")]
-	[Calls(Type = typeof(IndexOutOfRangeException), Member = ".ctor")]
-	[Calls(Type = typeof(IndexOutOfRangeException), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "FillStringChecked")]
-	[Calls(Type = typeof(Buffer), Member = "Memcpy")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Buffer), Member = "Memcpy")]
-	[Calls(Type = typeof(Buffer), Member = "Memcpy")]
-	[Calls(Type = typeof(string), Member = "FillStringChecked")]
-	[Calls(Type = typeof(string), Member = "FillStringChecked")]
-	[Calls(Type = typeof(Buffer), Member = "Memcpy")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(fsJsonParser), Member = "MakeFailure")]
 	[Calls(Type = typeof(fsJsonParser), Member = "SkipSpace")]
-	[Calls(Type = typeof(fsJsonParser), Member = "SkipSpace")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(fsJsonParser), Member = "SkipSpace")]
-	[Calls(Type = typeof(fsJsonParser), Member = "SkipSpace")]
-	[Calls(Type = typeof(fsJsonParser), Member = "RunParse")]
-	[Calls(Type = typeof(fsJsonParser), Member = "SkipSpace")]
-	[Calls(Type = typeof(fsJsonParser), Member = "SkipSpace")]
 	[Calls(Type = typeof(fsJsonParser), Member = "TryParseString")]
+	[Calls(Type = typeof(fsJsonParser), Member = "RunParse")]
+	[Calls(Type = typeof(string), Member = "FillStringChecked")]
+	[Calls(Type = typeof(Buffer), Member = "Memcpy")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(IndexOutOfRangeException), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 29)]
 	private fsResult TryParseObject(out fsData obj)
 	{
 		obj = null;
 		return default(fsResult);
 	}
 
-	[Calls(Type = typeof(fsJsonParser), Member = "TryParseNumber")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "Parse")]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseObject")]
 	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseArray")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
-	[Calls(Type = typeof(fsJsonParser), Member = "MakeFailure")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(fsJsonParser), Member = "TryParseString")]
-	[Calls(Type = typeof(fsData), Member = ".ctor")]
-	[Calls(Type = typeof(fsJsonParser), Member = "TryParseNull")]
-	[Calls(Type = typeof(fsJsonParser), Member = "TryParseArray")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(fsJsonParser), Member = "TryParseObject")]
+	[CalledBy(Type = typeof(fsJsonParser), Member = "Parse")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(fsJsonParser), Member = "SkipSpace")]
 	[Calls(Type = typeof(fsJsonParser), Member = "TryParseExact")]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(fsJsonParser), Member = "TryParseObject")]
-	[Calls(Type = typeof(fsJsonParser), Member = "TryParseExact")]
 	[Calls(Type = typeof(fsData), Member = ".ctor")]
+	[Calls(Type = typeof(fsJsonParser), Member = "TryParseObject")]
+	[Calls(Type = typeof(fsJsonParser), Member = "TryParseNull")]
+	[Calls(Type = typeof(fsJsonParser), Member = "TryParseArray")]
+	[Calls(Type = typeof(fsJsonParser), Member = "TryParseString")]
+	[Calls(Type = typeof(fsJsonParser), Member = "TryParseNumber")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(fsJsonParser), Member = "MakeFailure")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private fsResult RunParse(out fsData data)
 	{
 		data = null;
 		return default(fsResult);
 	}
 
+	[CalledBy(Type = typeof(fsJsonParser), Member = "Parse")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(fsJsonParser), Member = "RunParse")]
 	[Calls(Type = typeof(fsResult), Member = "Fail")]
-	[CalledBy(Type = typeof(fsJsonParser), Member = "Parse")]
 	[CallsUnknownMethods(Count = 2)]
 	public static fsResult Parse(string input, out fsData data)
 	{
@@ -282,14 +271,14 @@ public class fsJsonParser
 		return default(fsResult);
 	}
 
-	[CalledBy(Type = typeof(JSONSerializer), Member = "ShowData")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(JSONSerializer), Member = "PrettifyJson")]
-	[CalledBy(Type = typeof(JSONSerializer), Member = "Internal_Deserialize")]
 	[CalledBy(Type = typeof(fsRecoveryProcessor<, >), Member = "OnBeforeDeserialize")]
-	[Calls(Type = typeof(fsResult), Member = "get_AsException")]
-	[Calls(Type = typeof(fsJsonParser), Member = "Parse")]
+	[CalledBy(Type = typeof(JSONSerializer), Member = "Internal_Deserialize")]
+	[CalledBy(Type = typeof(JSONSerializer), Member = "ShowData")]
+	[CalledBy(Type = typeof(JSONSerializer), Member = "PrettifyJson")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(fsJsonParser), Member = "Parse")]
+	[Calls(Type = typeof(fsResult), Member = "get_AsException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static fsData Parse(string input)
 	{
 		return null;

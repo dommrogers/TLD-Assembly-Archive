@@ -23,10 +23,9 @@ public class SetPlayerControlMode : StateMachineBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CallsUnknownMethods(Count = 3)]
 	public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 	}

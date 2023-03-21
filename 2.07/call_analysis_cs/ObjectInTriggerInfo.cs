@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 
 public class ObjectInTriggerInfo
@@ -9,13 +8,13 @@ public class ObjectInTriggerInfo
 
 	public MissionTrigger m_TriggerComponent;
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(MissionTrigger), Member = "OnTriggerExit")]
-	[CalledBy(Type = typeof(MissionTrigger), Member = "OnTriggerEnter")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "MissionTriggerRemoved")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "UnregisterMissionObject")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "MissionTriggerRemoved")]
+	[CalledBy(Type = typeof(MissionTrigger), Member = "OnTriggerEnter")]
+	[CalledBy(Type = typeof(MissionTrigger), Member = "OnTriggerExit")]
+	[CallerCount(Count = 4)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 1)]
 	public ObjectInTriggerInfo(MissionObjectIdentifier moi, MissionTrigger trigger)
 	{
 	}

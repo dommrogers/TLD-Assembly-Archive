@@ -13,11 +13,11 @@ internal struct LobbySearchSetTargetUserIdOptionsInternal : ISettable, IDisposab
 
 	public ProductUserId TargetUserId
 	{
+		[CalledBy(Type = typeof(LobbySearchSetTargetUserIdOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(LobbySearchSetTargetUserIdOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(LobbySearchSetTargetUserIdOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(LobbySearchSetTargetUserIdOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,16 +29,16 @@ internal struct LobbySearchSetTargetUserIdOptionsInternal : ISettable, IDisposab
 	{
 	}
 
-	[Calls(Type = typeof(LobbySearchSetTargetUserIdOptionsInternal), Member = "set_TargetUserId")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(LobbySearch), Member = "SetTargetUserId")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(LobbySearchSetTargetUserIdOptionsInternal), Member = "set_TargetUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

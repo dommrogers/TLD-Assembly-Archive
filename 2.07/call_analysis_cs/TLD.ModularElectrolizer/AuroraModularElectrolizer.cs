@@ -96,7 +96,7 @@ public class AuroraModularElectrolizer : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -106,7 +106,7 @@ public class AuroraModularElectrolizer : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -115,7 +115,7 @@ public class AuroraModularElectrolizer : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -131,7 +131,7 @@ public class AuroraModularElectrolizer : MonoBehaviour
 	public DistanceFadeControl DistanceFadeControl
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 1)]
+		[CallerCount(Count = 5)]
 		get
 		{
 			return null;
@@ -140,8 +140,8 @@ public class AuroraModularElectrolizer : MonoBehaviour
 
 	public bool ExternalPowerActive
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -160,17 +160,14 @@ public class AuroraModularElectrolizer : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "MaybeSetupHighlightFog")]
-	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "Initialize")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(AuroraManager), Member = "RegisterAuroraElectrolizer")]
-	[Calls(Type = typeof(Shader), Member = "Find")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Shader), Member = "Find")]
+	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "Initialize")]
+	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "MaybeSetupHighlightFog")]
+	[Calls(Type = typeof(AuroraManager), Member = "RegisterAuroraElectrolizer")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Awake()
 	{
 	}
@@ -181,35 +178,37 @@ public class AuroraModularElectrolizer : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "MaybeSetupHighlightFog")]
-	[CallsUnknownMethods(Count = 22)]
 	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "Awake")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "UpdateEmissiveObjects")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(DistanceFadeControl), Member = "SetLocationDistances")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
-	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "InitializeFlickerSet")]
-	[Calls(Type = typeof(AuroraManager), Member = "GetRandomElectricalColor")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[CallsDeduplicatedMethods(Count = 14)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(AuroraManager), Member = "GetRandomElectricalColor")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "InitializeFlickerSet")]
+	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
+	[Calls(Type = typeof(DistanceFadeControl), Member = "SetLocationDistances")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "UpdateEmissiveObjects")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "MaybeSetupHighlightFog")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 19)]
 	private void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "UpdateFlickerTiming")]
-	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "ManualUpdate")]
 	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(FlickerTimingControl), Member = "InitializeFlickerTiming")]
+	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "ManualUpdate")]
+	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "UpdateFlickerTiming")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(FlickerTimingControl), Member = "InitializeFlickerTiming")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void InitializeFlickerSet()
 	{
 	}
@@ -220,140 +219,135 @@ public class AuroraModularElectrolizer : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "StopAll")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "UpdateAudio")]
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateElectrolyzerWithFarOptimization")]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
-	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "UpdateEmissiveObjects")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "InitializeFlickerSet")]
-	[Calls(Type = typeof(FlickerTimingControl), Member = "AdvanceFlickerTiming")]
-	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "UpdateIntensity")]
-	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "StopAll")]
-	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "HasActivePower")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "HasActivePower")]
+	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "StopAll")]
+	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "UpdateIntensity")]
+	[Calls(Type = typeof(FlickerTimingControl), Member = "AdvanceFlickerTiming")]
+	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "InitializeFlickerSet")]
 	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "UpdateLight")]
+	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "UpdateEmissiveObjects")]
+	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "UpdateAudio")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void ManualUpdate(float camDistSqr, float auroraIntensity, float auroraDeltaTime)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "ManualUpdate")]
 	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "MaybeActivateHighlightFogObject")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private bool HasActivePower()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	private bool HasExternalPower()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	private bool HasFieldPower()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateElectrolizerState")]
+	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "OnDisable")]
+	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "ManualUpdate")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "UpdateLight")]
 	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "UpdateEmissiveObjects")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateElectrolizerState")]
-	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "OnDisable")]
-	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "ManualUpdate")]
-	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "ManualUpdate")]
 	public void StopAll()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	private void StopAudio()
 	{
 	}
 
+	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "ManualUpdate")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(FlickerModuleSet), Member = "ProcessIntensity")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "ManualUpdate")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateIntensity(float distanceFade, float auroraIntensity)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "StopAll")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
 	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "ManualUpdate")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "StopAll")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateLight(bool allOff = false)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "Initialize")]
 	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "ManualUpdate")]
 	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "StopAll")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(HashSet<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateEmissiveObjects(bool allOff = false)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "Initialize")]
 	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "Awake")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "Initialize")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaybeSetupHighlightFog()
 	{
 	}
 
+	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "HasActivePower")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public void MaybeActivateHighlightFogObject()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 2)]
 	public void MaybeControlHightlightFogFade()
 	{
 	}
 
+	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "ManualUpdate")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(AuroraModularElectrolizer), Member = "ManualUpdate")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	private void UpdateAudio()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "InitializeFlickerSet")]
-	[Calls(Type = typeof(FlickerTimingControl), Member = "AdvanceFlickerTiming")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(FlickerTimingControl), Member = "AdvanceFlickerTiming")]
+	[Calls(Type = typeof(AuroraModularElectrolizer), Member = "InitializeFlickerSet")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateFlickerTiming(float auroraDeltaTime)
 	{
 	}
@@ -361,7 +355,7 @@ public class AuroraModularElectrolizer : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private bool HasFlickerSets()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

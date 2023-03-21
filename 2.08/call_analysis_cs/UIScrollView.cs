@@ -120,16 +120,16 @@ public class UIScrollView : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public virtual Bounds bounds
 	{
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(NGUIMath), Member = "CalculateRelativeWidgetBounds")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return default(Bounds);
@@ -141,7 +141,7 @@ public class UIScrollView : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -150,7 +150,7 @@ public class UIScrollView : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -162,31 +162,32 @@ public class UIScrollView : MonoBehaviour
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public virtual bool shouldMoveVertically
 	{
-		[CallsUnknownMethods(Count = 2)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	protected virtual bool shouldMove
 	{
-		[CallsUnknownMethods(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
 		[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 3)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -203,16 +204,17 @@ public class UIScrollView : MonoBehaviour
 		}
 	}
 
-	[Calls(Type = typeof(NGUIMath), Member = "GetPivot")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(NGUIMath), Member = "GetPivot")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Awake()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void OnEnable()
 	{
 	}
@@ -223,51 +225,48 @@ public class UIScrollView : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_alpha")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_alpha")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_alpha")]
+	[CallsUnknownMethods(Count = 1)]
 	private void CheckScrollbars()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BetterList<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(UIScrollView), Member = "RestrictWithinBounds")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIScrollView), Member = "RestrictWithinBounds")]
 	public bool RestrictWithinBounds(bool instant)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(SpringPanel), Member = "Begin")]
 	[CalledBy(Type = typeof(UIScrollView), Member = "RestrictWithinBounds")]
 	[CalledBy(Type = typeof(UIScrollView), Member = "Press")]
-	[CalledBy(Type = typeof(UIScrollView), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(UIScrollView), Member = "LateUpdate")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(UIScrollView), Member = "Drag")]
 	[CalledBy(Type = typeof(UIScrollView), Member = "LateUpdate")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(SpringPanel), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 4)]
 	public bool RestrictWithinBounds(bool instant, bool horizontal, bool vertical)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(UIScrollView), Member = "SetDragAmount")]
-	[CalledBy(Type = typeof(UIScrollView), Member = "Scroll")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(UIScrollView), Member = "Press")]
+	[CalledBy(Type = typeof(UIScrollView), Member = "Scroll")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	public void DisableSpring()
 	{
 	}
@@ -279,33 +278,30 @@ public class UIScrollView : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(UIScrollView), Member = "UpdateScrollbars")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UIScrollView), Member = "UpdateScrollbars")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+	[Calls(Type = typeof(UIScrollView), Member = "UpdateScrollbars")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+	[CallsUnknownMethods(Count = 5)]
 	public virtual void UpdateScrollbars(bool recalculateBounds)
 	{
 	}
 
 	[CalledBy(Type = typeof(UIScrollView), Member = "UpdateScrollbars")]
-	[CalledBy(Type = typeof(UIScrollView), Member = "UpdateScrollbars")]
-	[Calls(Type = typeof(UIScrollBar), Member = "set_barSize")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(UIScrollBar), Member = "set_barSize")]
 	protected void UpdateScrollbars(UIProgressBar slider, float contentMin, float contentMax, float contentSize, float viewSize, bool inverted)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UIScrollView), Member = "DisableSpring")]
 	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[Calls(Type = typeof(UIPanel), Member = "set_clipOffset")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public virtual void SetDragAmount(float x, float y, bool updateScrollbars)
 	{
 	}
@@ -317,27 +313,26 @@ public class UIScrollView : MonoBehaviour
 
 	[ContextMenu("Reset Clipping Position")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
 	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void ResetPosition()
 	{
 	}
 
+	[CalledBy(Type = typeof(TypewriterEffect), Member = "Finish")]
+	[CalledBy(Type = typeof(TypewriterEffect), Member = "Update")]
+	[CalledBy(Type = typeof(UIPanel), Member = "set_baseClipRegion")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(UIPanel), Member = "set_baseClipRegion")]
-	[CalledBy(Type = typeof(TypewriterEffect), Member = "Update")]
-	[CalledBy(Type = typeof(TypewriterEffect), Member = "Update")]
-	[CalledBy(Type = typeof(TypewriterEffect), Member = "Finish")]
-	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
 	public void UpdatePosition()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void OnScrollBar()
 	{
@@ -345,47 +340,45 @@ public class UIScrollView : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIPanel), Member = "set_clipOffset")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public virtual void MoveRelative(Vector3 relative)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(UIScrollView), Member = "Drag")]
 	[CalledBy(Type = typeof(UIScrollView), Member = "Drag")]
 	[CalledBy(Type = typeof(UIScrollView), Member = "LateUpdate")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public void MoveAbsolute(Vector3 absolute)
 	{
 	}
 
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(UIPanel), Member = "set_clipOffset")]
-	[Calls(Type = typeof(Plane), Member = ".ctor")]
-	[Calls(Type = typeof(UIScrollView), Member = "DisableSpring")]
-	[Calls(Type = typeof(UICenterOnChild), Member = "Recenter")]
-	[Calls(Type = typeof(UIScrollView), Member = "RestrictWithinBounds")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
 	[CalledBy(Type = typeof(UIDragScrollView), Member = "OnPress")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UIScrollView), Member = "RestrictWithinBounds")]
+	[Calls(Type = typeof(UICenterOnChild), Member = "Recenter")]
+	[Calls(Type = typeof(UIScrollView), Member = "DisableSpring")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(Plane), Member = ".ctor")]
+	[Calls(Type = typeof(UIPanel), Member = "set_clipOffset")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 10)]
 	public void Press(bool pressed)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 8)]
+	[CalledBy(Type = typeof(UIDragScrollView), Member = "OnDrag")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
 	[Calls(Type = typeof(Camera), Member = "ScreenPointToRay")]
-	[Calls(Type = typeof(UIScrollView), Member = "MoveAbsolute")]
-	[Calls(Type = typeof(UIScrollView), Member = "MoveAbsolute")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UIScrollView), Member = "RestrictWithinBounds")]
-	[CalledBy(Type = typeof(UIDragScrollView), Member = "OnDrag")]
 	[Calls(Type = typeof(Plane), Member = "Raycast")]
+	[Calls(Type = typeof(UIScrollView), Member = "MoveAbsolute")]
+	[Calls(Type = typeof(UIScrollView), Member = "RestrictWithinBounds")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 6)]
 	public void Drag()
 	{
@@ -394,41 +387,32 @@ public class UIScrollView : MonoBehaviour
 	[CalledBy(Type = typeof(UIDragScrollView), Member = "OnScroll")]
 	[CalledBy(Type = typeof(InteractiveScrollText), Member = "Update")]
 	[CalledBy(Type = typeof(InteractiveScrollText), Member = "Scroll")]
-	[Calls(Type = typeof(UIScrollView), Member = "DisableSpring")]
 	[CalledBy(Type = typeof(InteractiveScrollText), Member = "ScrollToBottom")]
 	[CalledBy(Type = typeof(InteractiveScrollText), Member = "ScrollToTop")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "ShowCollectibleNote")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateCollectibleNote")]
-	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+	[Calls(Type = typeof(UIScrollView), Member = "DisableSpring")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Scroll(float delta)
 	{
 	}
 
-	[Calls(Type = typeof(UIProgressBar), Member = "get_alpha")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_alpha")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_alpha")]
-	[Calls(Type = typeof(NGUIMath), Member = "SpringDampen")]
-	[Calls(Type = typeof(NGUIMath), Member = "SpringLerp")]
-	[Calls(Type = typeof(NGUIMath), Member = "SpringDampen")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(UIScrollView), Member = "RestrictWithinBounds")]
-	[Calls(Type = typeof(UIScrollView), Member = "RestrictWithinBounds")]
-	[Calls(Type = typeof(UIScrollView), Member = "RestrictWithinBounds")]
-	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-	[Calls(Type = typeof(UIScrollView), Member = "MoveAbsolute")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UICenterOnChild), Member = "Recenter")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_alpha")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_alpha")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_alpha")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UIProgressBar), Member = "get_alpha")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_alpha")]
+	[Calls(Type = typeof(NGUIMath), Member = "SpringDampen")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(NGUIMath), Member = "SpringLerp")]
+	[Calls(Type = typeof(UIScrollView), Member = "MoveAbsolute")]
+	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+	[Calls(Type = typeof(UIScrollView), Member = "RestrictWithinBounds")]
+	[Calls(Type = typeof(UICenterOnChild), Member = "Recenter")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 9)]
 	private void LateUpdate()
 	{
 	}

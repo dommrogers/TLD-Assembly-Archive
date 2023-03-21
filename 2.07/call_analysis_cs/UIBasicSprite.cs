@@ -89,8 +89,8 @@ public abstract class UIBasicSprite : UIWidget
 		{
 			return default(Flip);
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -98,8 +98,8 @@ public abstract class UIBasicSprite : UIWidget
 
 	public FillDirection fillDirection
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(FillDirection);
@@ -115,15 +115,15 @@ public abstract class UIBasicSprite : UIWidget
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CalledBy(Type = typeof(HUDNowhereToHide), Member = "Update")]
 		[CalledBy(Type = typeof(UIProgressBar), Member = "ForceUpdate")]
-		[CallerCount(Count = 6)]
+		[CalledBy(Type = typeof(HUDNowhereToHide), Member = "Update")]
+		[CalledBy(Type = typeof(MissionsProgressBar), Member = "Refresh")]
 		[CalledBy(Type = typeof(Panel_Badges), Member = "RefreshVisualsScrollList")]
 		[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePackMorale")]
-		[CalledBy(Type = typeof(MissionsProgressBar), Member = "Refresh")]
 		[CalledBy(Type = typeof(TimedActionPopup), Member = "Update")]
+		[CallerCount(Count = 6)]
 		set
 		{
 		}
@@ -131,27 +131,25 @@ public abstract class UIBasicSprite : UIWidget
 
 	public override int minWidth
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(UISprite), Member = "get_minWidth")]
-		[CalledBy(Type = typeof(UISprite), Member = "get_minWidth")]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[CallerCount(Count = 2)]
+		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public override int minHeight
 	{
+		[CalledBy(Type = typeof(UISprite), Member = "get_minHeight")]
 		[CallerCount(Count = 2)]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(UISprite), Member = "get_minHeight")]
 		[CallsDeduplicatedMethods(Count = 4)]
-		[CalledBy(Type = typeof(UISprite), Member = "get_minHeight")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -161,7 +159,7 @@ public abstract class UIBasicSprite : UIWidget
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -171,13 +169,13 @@ public abstract class UIBasicSprite : UIWidget
 
 	public bool hasBorder
 	{
+		[CalledBy(Type = typeof(UI2DSprite), Member = "MakePixelPerfect")]
+		[CalledBy(Type = typeof(UITexture), Member = "MakePixelPerfect")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(UITexture), Member = "MakePixelPerfect")]
-		[CalledBy(Type = typeof(UI2DSprite), Member = "MakePixelPerfect")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -187,7 +185,7 @@ public abstract class UIBasicSprite : UIWidget
 		[CallerCount(Count = 3)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -197,14 +195,14 @@ public abstract class UIBasicSprite : UIWidget
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	private Vector4 drawingUVs
 	{
-		[CalledBy(Type = typeof(UIBasicSprite), Member = "FilledFill")]
 		[CalledBy(Type = typeof(UIBasicSprite), Member = "SimpleFill")]
+		[CalledBy(Type = typeof(UIBasicSprite), Member = "FilledFill")]
 		[CallerCount(Count = 2)]
 		get
 		{
@@ -214,125 +212,113 @@ public abstract class UIBasicSprite : UIWidget
 
 	private Color32 drawingColor
 	{
-		[CalledBy(Type = typeof(UIBasicSprite), Member = "TiledFill")]
-		[CalledBy(Type = typeof(UIBasicSprite), Member = "SlicedFill")]
 		[CalledBy(Type = typeof(UIBasicSprite), Member = "SimpleFill")]
-		[CallsDeduplicatedMethods(Count = 5)]
-		[CallsUnknownMethods(Count = 5)]
-		[CallerCount(Count = 5)]
+		[CalledBy(Type = typeof(UIBasicSprite), Member = "SlicedFill")]
+		[CalledBy(Type = typeof(UIBasicSprite), Member = "TiledFill")]
 		[CalledBy(Type = typeof(UIBasicSprite), Member = "FilledFill")]
 		[CalledBy(Type = typeof(UIBasicSprite), Member = "AdvancedFill")]
+		[CallerCount(Count = 5)]
+		[CallsDeduplicatedMethods(Count = 5)]
+		[CallsUnknownMethods(Count = 5)]
 		get
 		{
 			return default(Color32);
 		}
 	}
 
+	[CalledBy(Type = typeof(UI2DSprite), Member = "OnFill")]
+	[CalledBy(Type = typeof(UISprite), Member = "OnFill")]
+	[CalledBy(Type = typeof(UITexture), Member = "OnFill")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UIBasicSprite), Member = "AdvancedFill")]
 	[Calls(Type = typeof(UIBasicSprite), Member = "FilledFill")]
 	[Calls(Type = typeof(UIBasicSprite), Member = "TiledFill")]
 	[Calls(Type = typeof(UIBasicSprite), Member = "SlicedFill")]
-	[CalledBy(Type = typeof(UITexture), Member = "OnFill")]
 	[Calls(Type = typeof(UIBasicSprite), Member = "SimpleFill")]
-	[CalledBy(Type = typeof(UI2DSprite), Member = "OnFill")]
-	[CalledBy(Type = typeof(UISprite), Member = "OnFill")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected void Fill(BetterList<Vector3> verts, BetterList<Vector2> uvs, BetterList<Color32> cols, Rect outer, Rect inner)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UIBasicSprite), Member = "get_drawingUVs")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "get_drawingColor")]
 	[CalledBy(Type = typeof(UIBasicSprite), Member = "Fill")]
 	[CalledBy(Type = typeof(UIBasicSprite), Member = "SlicedFill")]
 	[CalledBy(Type = typeof(UIBasicSprite), Member = "AdvancedFill")]
-	[CallsUnknownMethods(Count = 10)]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UIBasicSprite), Member = "get_drawingUVs")]
+	[Calls(Type = typeof(UIBasicSprite), Member = "get_drawingColor")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 10)]
 	private void SimpleFill(BetterList<Vector3> verts, BetterList<Vector2> uvs, BetterList<Color32> cols)
 	{
 	}
 
 	[CalledBy(Type = typeof(UIBasicSprite), Member = "Fill")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UIBasicSprite), Member = "SimpleFill")]
 	[Calls(Type = typeof(UIBasicSprite), Member = "get_drawingColor")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 14)]
 	private void SlicedFill(BetterList<Vector3> verts, BetterList<Vector2> uvs, BetterList<Color32> cols)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(UIBasicSprite), Member = "Fill")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "get_drawingColor")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIBasicSprite), Member = "get_drawingColor")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 13)]
 	private void TiledFill(BetterList<Vector3> verts, BetterList<Vector2> uvs, BetterList<Color32> cols)
 	{
 	}
 
-	[Calls(Type = typeof(UIBasicSprite), Member = "RadialCut")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "get_drawingColor")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "get_drawingUVs")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(UIBasicSprite), Member = "Fill")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIBasicSprite), Member = "get_drawingUVs")]
+	[Calls(Type = typeof(UIBasicSprite), Member = "get_drawingColor")]
 	[Calls(Type = typeof(UIBasicSprite), Member = "RadialCut")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "RadialCut")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	private void FilledFill(BetterList<Vector3> verts, BetterList<Vector2> uvs, BetterList<Color32> cols)
 	{
 	}
 
 	[CalledBy(Type = typeof(UIBasicSprite), Member = "Fill")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "Fill")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "get_drawingColor")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "SimpleFill")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIBasicSprite), Member = "SimpleFill")]
+	[Calls(Type = typeof(UIBasicSprite), Member = "get_drawingColor")]
 	[Calls(Type = typeof(UIBasicSprite), Member = "Fill")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UIBasicSprite), Member = "Fill")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "Fill")]
 	private void AdvancedFill(BetterList<Vector3> verts, BetterList<Vector2> uvs, BetterList<Color32> cols)
 	{
 	}
 
-	[Calls(Type = typeof(UIBasicSprite), Member = "RadialCut")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "RadialCut")]
 	[CalledBy(Type = typeof(UIBasicSprite), Member = "FilledFill")]
-	[CalledBy(Type = typeof(UIBasicSprite), Member = "FilledFill")]
-	[CalledBy(Type = typeof(UIBasicSprite), Member = "FilledFill")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UIBasicSprite), Member = "RadialCut")]
+	[CallsUnknownMethods(Count = 2)]
 	private static bool RadialCut(Vector2[] xy, Vector2[] uv, float fill, bool invert, int corner)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(UIBasicSprite), Member = "RadialCut")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(UIBasicSprite), Member = "RadialCut")]
-	[CalledBy(Type = typeof(UIBasicSprite), Member = "RadialCut")]
+	[CallsUnknownMethods(Count = 2)]
 	private static void RadialCut(Vector2[] xy, float cos, float sin, bool invert, int corner)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
-	[CalledBy(Type = typeof(UIBasicSprite), Member = "AdvancedFill")]
-	[CalledBy(Type = typeof(UIBasicSprite), Member = "AdvancedFill")]
-	[CalledBy(Type = typeof(UIBasicSprite), Member = "AdvancedFill")]
 	[CalledBy(Type = typeof(UIBasicSprite), Member = "AdvancedFill")]
 	[CallerCount(Count = 4)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 14)]
 	private static void Fill(BetterList<Vector3> verts, BetterList<Vector2> uvs, BetterList<Color32> cols, float v0x, float v1x, float v0y, float v1y, float u0x, float u1x, float u0y, float u1y, Color col)
 	{
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIWidget), Member = ".ctor")]
 	protected UIBasicSprite()
 	{
 	}

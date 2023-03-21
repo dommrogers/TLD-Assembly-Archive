@@ -16,7 +16,7 @@ public class NPCCondition : MonoBehaviour
 		public float m_CurrentHP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public SaveData()
 		{
 		}
@@ -54,24 +54,17 @@ public class NPCCondition : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(NPCCondition), Member = "IsAlive")]
-	[Calls(Type = typeof(NPCVoice), Member = "Play")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NPCCondition), Member = "AddHealth")]
 	[CalledBy(Type = typeof(NPC), Member = "DoConditionUpdate")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NPCCondition), Member = "IsAlive")]
-	[Calls(Type = typeof(NPCCondition), Member = "ApplyDamage")]
-	[Calls(Type = typeof(NPCCondition), Member = "ApplyDamage")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetBloodLossCount")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
-	[Calls(Type = typeof(NPCCondition), Member = "IsAlive")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
-	[Calls(Type = typeof(NPCCondition), Member = "ApplyDamage")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NPCCondition), Member = "ApplyDamage")]
+	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
+	[Calls(Type = typeof(NPCAfflictions), Member = "GetBloodLossCount")]
+	[Calls(Type = typeof(NPCCondition), Member = "IsAlive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPCVoice), Member = "Play")]
+	[Calls(Type = typeof(NPCCondition), Member = "AddHealth")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 17)]
 	public void DoUpdate(float deltaTODHours)
 	{
 	}
@@ -88,12 +81,11 @@ public class NPCCondition : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(NPCCondition), Member = "AddHealth")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPCCondition), Member = "AddHealth")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void UpdateHealthForHealthy(float dayFraction)
 	{
 	}
@@ -106,56 +98,53 @@ public class NPCCondition : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(NPCCondition), Member = "Deserialize")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "MaybePlayVoiceOver")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "MaybePlayVoiceOver")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "GetCurrentConditionLevel")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "ApplyDamage")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "DoUpdate")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "DoUpdate")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "Start")]
-	[CalledBy(Type = typeof(NPC), Member = "Deserialize")]
 	[CalledBy(Type = typeof(NPC), Member = "IsAlive")]
+	[CalledBy(Type = typeof(NPC), Member = "Deserialize")]
+	[CalledBy(Type = typeof(NPCCondition), Member = "Start")]
+	[CalledBy(Type = typeof(NPCCondition), Member = "DoUpdate")]
+	[CalledBy(Type = typeof(NPCCondition), Member = "Deserialize")]
+	[CalledBy(Type = typeof(NPCCondition), Member = "ApplyDamage")]
+	[CalledBy(Type = typeof(NPCCondition), Member = "GetCurrentConditionLevel")]
+	[CalledBy(Type = typeof(NPCCondition), Member = "MaybePlayVoiceOver")]
+	[CallerCount(Count = 11)]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 11)]
-	[CalledBy(Type = typeof(NPCCondition), Member = "DoUpdate")]
 	public bool IsAlive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetNormalizedCondition()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(NPCCondition), Member = "AddHealth")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(NPCStatusBar), Member = "GetReverseFillValueCondition")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetTotalHitPointReduction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(NPCCondition), Member = "AddHealth")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPCAfflictions), Member = "GetTotalHitPointReduction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public float GetAdjustedMaxHP()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(NPCCondition), Member = "IsAlive")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Deserialize(string serialized)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(NPC), Member = "Serialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public string Serialize()
 	{
@@ -164,36 +153,34 @@ public class NPCCondition : MonoBehaviour
 
 	[CalledBy(Type = typeof(NPCCondition), Member = "DoUpdate")]
 	[CalledBy(Type = typeof(NPCCondition), Member = "UpdateHealthForHealthy")]
-	[Calls(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
 	[CalledBy(Type = typeof(NPCCondition), Member = "ApplyDamage")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(NPCCondition), Member = "GetAdjustedMaxHP")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(NPCCondition), Member = "GetAdjustedMaxHP")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void AddHealth(float amount)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(NPCThirst), Member = "ApplyTODHours")]
-	[CalledBy(Type = typeof(NPCFreezing), Member = "ApplyTODHours")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "UpdateHeathForBloodLoss")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "UpdateHealthForDehydration")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "UpdateHealthForFreezing")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "DoUpdate")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "DoUpdate")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "DoUpdate")]
-	[Calls(Type = typeof(NPCVoice), Member = "Play")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NPCCondition), Member = "IsAlive")]
-	[Calls(Type = typeof(NPCCondition), Member = "AddHealth")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 9)]
 	[CalledBy(Type = typeof(AiTarget), Member = "ApplyDamage")]
+	[CalledBy(Type = typeof(NPCCondition), Member = "DoUpdate")]
+	[CalledBy(Type = typeof(NPCCondition), Member = "UpdateHealthForFreezing")]
+	[CalledBy(Type = typeof(NPCCondition), Member = "UpdateHealthForDehydration")]
+	[CalledBy(Type = typeof(NPCCondition), Member = "UpdateHeathForBloodLoss")]
+	[CalledBy(Type = typeof(NPCFreezing), Member = "ApplyTODHours")]
+	[CalledBy(Type = typeof(NPCThirst), Member = "ApplyTODHours")]
+	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(NPCCondition), Member = "AddHealth")]
+	[Calls(Type = typeof(NPCCondition), Member = "IsAlive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPCVoice), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void ApplyDamage(DamageSource source, float damage)
 	{
 	}
@@ -205,30 +192,29 @@ public class NPCCondition : MonoBehaviour
 		return default(Level);
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void HandleDeath()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(NPCCondition), Member = "IsAlive")]
 	[Calls(Type = typeof(NPCCondition), Member = "IsAlive")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NPCVoice), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void MaybePlayVoiceOver()
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void EndBloodLoss()
 	{
 	}

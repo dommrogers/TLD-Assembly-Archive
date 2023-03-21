@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Events;
 using UnityEngine;
@@ -14,22 +15,24 @@ public class WeatherStageEventListener : MonoBehaviour
 	private WeatherStage m_LastWeatherStage;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameEvent), Member = "add_Fired")]
+	[Calls(Type = typeof(UnityEvent<>), Member = "Invoke")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(HashSet<>), Member = "Remove")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(UnityEvent<>), Member = "Invoke")]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnWeatherChanged()
 	{

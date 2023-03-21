@@ -54,47 +54,32 @@ public class MapCrosshair : MonoBehaviour
 	private TweenPosition m_TweenPosDown;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Map), Member = "ResetToNormal")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 8)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "ResetToNormal")]
 	[CallsUnknownMethods(Count = 9)]
 	public void ResetToNormal()
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateCrosshairState")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateCrosshairState")]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 9)]
 	public void SetState(CrosshairState newState)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public MapCrosshair()
 	{
 	}

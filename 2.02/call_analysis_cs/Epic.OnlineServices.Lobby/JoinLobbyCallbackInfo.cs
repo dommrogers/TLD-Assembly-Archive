@@ -13,16 +13,16 @@ public class JoinLobbyCallbackInfo : ICallbackInfo, ISettable
 
 	public Result ResultCode
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 7)]
-		[CompilerGenerated]
 		get
 		{
 			return default(Result);
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		private set
 		{
 		}
@@ -32,14 +32,14 @@ public class JoinLobbyCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -47,16 +47,16 @@ public class JoinLobbyCallbackInfo : ICallbackInfo, ISettable
 
 	public string LobbyId
 	{
-		[CallerCount(Count = 5)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -70,25 +70,25 @@ public class JoinLobbyCallbackInfo : ICallbackInfo, ISettable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(JoinLobbyCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(JoinLobbyCallbackInfoInternal), Member = "get_LobbyId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	internal void Set(JoinLobbyCallbackInfoInternal? other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(JoinLobbyCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(JoinLobbyCallbackInfoInternal), Member = "get_LobbyId")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public JoinLobbyCallbackInfo()
 	{
 	}

@@ -18,8 +18,8 @@ public class CanOpeningItem : MonoBehaviour
 
 	public float m_CanOpeningLengthSeconds;
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public CanOpeningItem()
 	{
 	}

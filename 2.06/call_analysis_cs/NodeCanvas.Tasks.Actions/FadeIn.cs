@@ -24,8 +24,8 @@ public class FadeIn : ActionTask
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public FadeIn()
 	{
 	}

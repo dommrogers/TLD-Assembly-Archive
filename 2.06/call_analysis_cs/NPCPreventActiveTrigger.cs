@@ -3,15 +3,15 @@ using UnityEngine;
 
 public class NPCPreventActiveTrigger : MonoBehaviour
 {
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(NPC), Member = "ClearActive")]
-	[Calls(Type = typeof(NPC), Member = "HasActive")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NPC), Member = "HasActive")]
+	[Calls(Type = typeof(NPC), Member = "ClearActive")]
 	private void Update()
 	{
 	}

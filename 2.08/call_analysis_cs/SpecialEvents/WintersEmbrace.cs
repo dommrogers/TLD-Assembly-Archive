@@ -1,4 +1,5 @@
 using Cpp2ILInjected.CallAnalysis;
+using TLD.SaveState;
 
 namespace SpecialEvents;
 
@@ -20,37 +21,40 @@ public static class WintersEmbrace
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	public static bool IsCurrentExperienceMode()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public static bool MatchesExperienceMode(ExperienceModeType xpMode)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(PostSpecialEvent), Member = "ManageSaveData")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(WintersEmbrace), Member = "CheckSaveSlotForMissedBadges")]
 	[Calls(Type = typeof(SaveGameSlots), Member = "UpdateSlotGameMode")]
-	[CalledBy(Type = typeof(PostSpecialEvent), Member = "ManageSaveData")]
 	public static void PostEventConvertSaveSlot(string slotName)
 	{
 	}
 
-	[Calls(Type = typeof(BadgeUIInfo), Member = "UnlockBadge")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(BadgeUIInfo), Member = "UnlockBadge")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void UpdateDaysSurvived(int numDaysSurvived)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
-	[Calls(Type = typeof(BadgeUIInfo), Member = "UnlockBadge")]
 	[CalledBy(Type = typeof(WintersEmbrace), Member = "PostEventConvertSaveSlot")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(BadgeUIInfo), Member = "UnlockBadge")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private static void CheckSaveSlotForMissedBadges(string slotName)
 	{

@@ -25,7 +25,7 @@ public abstract class BTComposite : BTNode
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -39,9 +39,9 @@ public abstract class BTComposite : BTNode
 		}
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
-	[DeduplicatedMethod]
 	protected BTComposite()
 	{
 	}

@@ -29,17 +29,17 @@ public class PurifyWater : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
 	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
+	[CallsUnknownMethods(Count = 1)]
 	public float Use()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public PurifyWater()
 	{
 	}

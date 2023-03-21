@@ -17,19 +17,19 @@ internal struct ModInfoInternal : ISettable, IDisposable
 
 	public ModIdentifier[] Mods
 	{
+		[CalledBy(Type = typeof(ModInfo), Member = "Set")]
+		[CalledBy(Type = typeof(ModInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 5)]
-		[CalledBy(Type = typeof(ModInfo), Member = "Set")]
-		[CalledBy(Type = typeof(ModInfo), Member = "Set")]
 		get
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(ModInfoInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[CalledBy(Type = typeof(ModInfoInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CalledBy(Type = typeof(ModInfoInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -57,15 +57,15 @@ internal struct ModInfoInternal : ISettable, IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ModInfoInternal), Member = "set_Mods")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

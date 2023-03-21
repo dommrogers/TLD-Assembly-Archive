@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -30,7 +29,7 @@ public class GraphOwnerControl : ActionTask<GraphOwner>
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -41,7 +40,7 @@ public class GraphOwnerControl : ActionTask<GraphOwner>
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -57,7 +56,7 @@ public class GraphOwnerControl : ActionTask<GraphOwner>
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
@@ -67,13 +66,13 @@ public class GraphOwnerControl : ActionTask<GraphOwner>
 		[CallsUnknownMethods(Count = 1)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 3)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -86,9 +85,9 @@ public class GraphOwnerControl : ActionTask<GraphOwner>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(Task), Member = "get_agentInfo")]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -96,47 +95,44 @@ public class GraphOwnerControl : ActionTask<GraphOwner>
 		}
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Task), Member = "get_ownerAgent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GraphOwnerControl), Member = "Do")]
+	[Calls(Type = typeof(GraphOwnerControl), Member = "YieldDo")]
 	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
-	[CallsUnknownMethods(Count = 10)]
 	[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
-	[Calls(Type = typeof(GraphOwnerControl), Member = "Do")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Task), Member = "get_ownerAgent")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GraphOwnerControl), Member = "YieldDo")]
+	[CallsUnknownMethods(Count = 10)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
+	[CalledBy(Type = typeof(GraphOwnerControl), Member = "OnExecute")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(GraphOwnerControl), Member = "OnExecute")]
+	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator YieldDo()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(_003CYieldDo_003Ed__6), Member = "MoveNext")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CalledBy(Type = typeof(GraphOwnerControl), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GraphOwner), Member = "PauseBehaviour")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(GraphOwner), Member = "StopBehaviour")]
+	[CalledBy(Type = typeof(_003CYieldDo_003Ed__6), Member = "MoveNext")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(GraphOwner), Member = "StopBehaviour")]
+	[Calls(Type = typeof(GraphOwner), Member = "PauseBehaviour")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Do()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GraphOwner), Member = "StopBehaviour")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnStop()
 	{

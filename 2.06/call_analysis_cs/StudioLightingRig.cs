@@ -38,13 +38,12 @@ public class StudioLightingRig : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Transform), Member = "get_localEulerAngles")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
+	[Calls(Type = typeof(Transform), Member = "LookAt")]
 	[Calls(Type = typeof(Transform), Member = "get_localEulerAngles")]
 	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Transform), Member = "LookAt")]
+	[CallsUnknownMethods(Count = 10)]
 	private void LateUpdate()
 	{
 	}

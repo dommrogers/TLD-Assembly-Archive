@@ -32,12 +32,12 @@ public class AchievementProgressionPlugin
 	public static extern ulong AchievementProgression_TimeUnlocked(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void AchievementProgression_Dispose(IntPtr self);
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public AchievementProgressionPlugin()
 	{
 	}

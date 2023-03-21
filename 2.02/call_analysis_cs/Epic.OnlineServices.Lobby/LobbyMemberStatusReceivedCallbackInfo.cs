@@ -15,16 +15,16 @@ public class LobbyMemberStatusReceivedCallbackInfo : ICallbackInfo, ISettable
 
 	public object ClientData
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 101)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		private set
 		{
 		}
@@ -34,14 +34,14 @@ public class LobbyMemberStatusReceivedCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -51,14 +51,14 @@ public class LobbyMemberStatusReceivedCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -66,9 +66,9 @@ public class LobbyMemberStatusReceivedCallbackInfo : ICallbackInfo, ISettable
 
 	public LobbyMemberStatus CurrentStatus
 	{
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return default(LobbyMemberStatus);
@@ -88,27 +88,27 @@ public class LobbyMemberStatusReceivedCallbackInfo : ICallbackInfo, ISettable
 		return null;
 	}
 
+	[CalledBy(Type = typeof(LobbyMemberStatusReceivedCallbackInfo), Member = "Set")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(LobbyMemberStatusReceivedCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(LobbyMemberStatusReceivedCallbackInfoInternal), Member = "get_LobbyId")]
 	[Calls(Type = typeof(LobbyMemberStatusReceivedCallbackInfoInternal), Member = "get_TargetUserId")]
-	[CalledBy(Type = typeof(LobbyMemberStatusReceivedCallbackInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	internal void Set(LobbyMemberStatusReceivedCallbackInfoInternal? other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LobbyMemberStatusReceivedCallbackInfo), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public LobbyMemberStatusReceivedCallbackInfo()
 	{
 	}

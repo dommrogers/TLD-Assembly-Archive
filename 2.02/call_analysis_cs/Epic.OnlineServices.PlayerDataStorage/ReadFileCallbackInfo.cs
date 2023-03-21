@@ -32,16 +32,16 @@ public class ReadFileCallbackInfo : ICallbackInfo, ISettable
 
 	public object ClientData
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -51,14 +51,14 @@ public class ReadFileCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -66,16 +66,16 @@ public class ReadFileCallbackInfo : ICallbackInfo, ISettable
 
 	public string Filename
 	{
-		[CallerCount(Count = 12)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 12)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 20)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 24)]
 		private set
 		{
 		}
@@ -88,27 +88,27 @@ public class ReadFileCallbackInfo : ICallbackInfo, ISettable
 		return null;
 	}
 
+	[CalledBy(Type = typeof(ReadFileCallbackInfo), Member = "Set")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ReadFileCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(ReadFileCallbackInfoInternal), Member = "get_LocalUserId")]
 	[Calls(Type = typeof(ReadFileCallbackInfoInternal), Member = "get_Filename")]
-	[CalledBy(Type = typeof(ReadFileCallbackInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	internal void Set(ReadFileCallbackInfoInternal? other)
 	{
 	}
 
-	[Calls(Type = typeof(ReadFileCallbackInfo), Member = "Set")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReadFileCallbackInfo), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ReadFileCallbackInfo()
 	{
 	}

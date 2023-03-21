@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using MissionTypes;
 using NodeCanvas.Framework;
@@ -15,9 +14,9 @@ public class Condition_PlayerItemIsEquipped : ConditionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Task), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		get
 		{
 			return null;
@@ -28,11 +27,11 @@ public class Condition_PlayerItemIsEquipped : ConditionTask
 	[Calls(Type = typeof(Condition_PlayerItemIsEquipped), Member = "Test")]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(Condition_PlayerItemIsEquipped), Member = "Test")]
 	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	[CallsUnknownMethods(Count = 1)]
@@ -40,16 +39,16 @@ public class Condition_PlayerItemIsEquipped : ConditionTask
 	{
 	}
 
-	[CalledBy(Type = typeof(Condition_PlayerItemIsEquipped), Member = "OnCustomEvent")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Condition_PlayerItemIsEquipped), Member = "OnCheck")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CalledBy(Type = typeof(Condition_PlayerItemIsEquipped), Member = "OnCustomEvent")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool Test()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

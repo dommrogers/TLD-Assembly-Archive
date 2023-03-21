@@ -13,8 +13,9 @@ public class AkEventCallbackData : ScriptableObject
 	public int uFlags;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 26)]
 	public AkEventCallbackData()
 	{

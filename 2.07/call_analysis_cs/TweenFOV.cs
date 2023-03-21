@@ -11,14 +11,14 @@ public class TweenFOV : UITweener
 
 	public Camera cachedCamera
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(TweenFOV), Member = "get_fov")]
 		[CalledBy(Type = typeof(TweenFOV), Member = "get_value")]
+		[CalledBy(Type = typeof(TweenFOV), Member = "set_value")]
 		[CalledBy(Type = typeof(TweenFOV), Member = "Begin")]
 		[CalledBy(Type = typeof(TweenFOV), Member = "SetStartToCurrentValue")]
 		[CalledBy(Type = typeof(TweenFOV), Member = "SetEndToCurrentValue")]
 		[CallerCount(Count = 6)]
-		[CalledBy(Type = typeof(TweenFOV), Member = "set_value")]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
 		get
 		{
 			return null;
@@ -27,13 +27,13 @@ public class TweenFOV : UITweener
 
 	public float fov
 	{
-		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(TweenFOV), Member = "get_cachedCamera")]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(TweenFOV), Member = "get_cachedCamera")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(TweenFOV), Member = "set_value")]
@@ -44,21 +44,21 @@ public class TweenFOV : UITweener
 
 	public float value
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(TweenFOV), Member = "get_cachedCamera")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CalledBy(Type = typeof(TweenFOV), Member = "set_fov")]
-		[Calls(Type = typeof(TweenFOV), Member = "get_cachedCamera")]
+		[CalledBy(Type = typeof(TweenFOV), Member = "OnUpdate")]
 		[CalledBy(Type = typeof(TweenFOV), Member = "SetCurrentValueToStart")]
 		[CalledBy(Type = typeof(TweenFOV), Member = "SetCurrentValueToEnd")]
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(TweenFOV), Member = "OnUpdate")]
 		[CallerCount(Count = 4)]
+		[Calls(Type = typeof(TweenFOV), Member = "get_cachedCamera")]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
@@ -70,11 +70,12 @@ public class TweenFOV : UITweener
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UITweener), Member = "Begin")]
 	[Calls(Type = typeof(TweenFOV), Member = "get_cachedCamera")]
 	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
 	public static TweenFOV Begin(GameObject go, float duration, float to)
 	{
 		return null;
@@ -83,37 +84,37 @@ public class TweenFOV : UITweener
 	[ContextMenu("Set 'From' to current value")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TweenFOV), Member = "get_cachedCamera")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void SetStartToCurrentValue()
 	{
 	}
 
+	[ContextMenu("Set 'To' to current value")]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
 	[Calls(Type = typeof(TweenFOV), Member = "get_cachedCamera")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[ContextMenu("Set 'To' to current value")]
+	[CallsUnknownMethods(Count = 2)]
 	public override void SetEndToCurrentValue()
 	{
 	}
 
-	[Calls(Type = typeof(TweenFOV), Member = "set_value")]
 	[ContextMenu("Assume value of 'From'")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TweenFOV), Member = "set_value")]
 	private void SetCurrentValueToStart()
 	{
 	}
 
-	[Calls(Type = typeof(TweenFOV), Member = "set_value")]
 	[ContextMenu("Assume value of 'To'")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TweenFOV), Member = "set_value")]
 	private void SetCurrentValueToEnd()
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UITweener), Member = ".ctor")]
 	public TweenFOV()
 	{
 	}

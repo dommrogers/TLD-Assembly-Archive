@@ -37,18 +37,19 @@ public class MapDetail : MonoBehaviour
 
 	private bool m_DidRegister;
 
-	[Calls(Type = typeof(MapDetail), Member = "Register")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MapDetail), Member = "Register")]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(MapDetailTrackerSO), Member = "GetInstance")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(MapDetailTrackerSO), Member = "GetInstance")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnDestroy()
 	{
 	}
@@ -60,47 +61,47 @@ public class MapDetail : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(MapDetail), Member = "UpdateMapVisibility")]
 	private void OnDisable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Map), Member = "RemoveMapDetailFromMap")]
 	[Calls(Type = typeof(Panel_Map), Member = "AddMapDetailToMap")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void UpdateCustomName(string newName)
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(BaseAi), Member = "EnterDead")]
 	[CalledBy(Type = typeof(MapDetail), Member = "Awake")]
+	[CallerCount(Count = 2)]
 	public void Register()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Harvestable), Member = "add_Harvested")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 10)]
 	private void SetupMapVisibility()
 	{
 	}
 
-	[Calls(Type = typeof(MapDetail), Member = "ShowOnMap")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MapDetail), Member = "ShowOnMap")]
 	public void Lock()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public void DiscoverOnInteract()
 	{
 	}
@@ -111,52 +112,52 @@ public class MapDetail : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
-	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(MapDetail), Member = "ShowOnMap")]
 	[CalledBy(Type = typeof(RockCache), Member = "Activate")]
 	[CalledBy(Type = typeof(DisplayLocationLabel), Member = "OnTriggerEnter")]
 	[CalledBy(Type = typeof(MapDetailManager), Member = "UnlockMapDetailObjectsNearPosition")]
-	[CalledBy(Type = typeof(MapDetailManager), Member = "UnlockMapDetailObjectsNearPosition")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(MapDetail), Member = "ShowOnMap")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	public void Unlock(bool ignoreLogged = false)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CalledBy(Type = typeof(MapDetail), Member = "OnDisable")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(MapDetail), Member = "OnEnable")]
+	[CalledBy(Type = typeof(MapDetail), Member = "OnDisable")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
 	[Calls(Type = typeof(MapDetail), Member = "ShowOnMap")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateMapVisibility()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(MapDetailManager), Member = "LockAll")]
-	[CalledBy(Type = typeof(RockCache), Member = "Destroy")]
-	[CalledBy(Type = typeof(BodyHarvest), Member = "BodyHarvestDestroy")]
-	[CalledBy(Type = typeof(MapDetail), Member = "UpdateMapVisibility")]
-	[CalledBy(Type = typeof(MapDetail), Member = "Unlock")]
 	[CalledBy(Type = typeof(MapDetail), Member = "Lock")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Panel_Map), Member = "AddMapDetailToMap")]
-	[Calls(Type = typeof(Panel_WorldMap), Member = "RemoveMapDetailFromMap")]
-	[Calls(Type = typeof(Panel_Map), Member = "RemoveMapDetailFromMap")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(MapDetail), Member = "Unlock")]
+	[CalledBy(Type = typeof(MapDetail), Member = "UpdateMapVisibility")]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "BodyHarvestDestroy")]
+	[CalledBy(Type = typeof(RockCache), Member = "Destroy")]
+	[CalledBy(Type = typeof(MapDetailManager), Member = "LockAll")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Panel_Map), Member = "RemoveMapDetailFromMap")]
+	[Calls(Type = typeof(Panel_WorldMap), Member = "RemoveMapDetailFromMap")]
+	[Calls(Type = typeof(Panel_Map), Member = "AddMapDetailToMap")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Panel_WorldMap), Member = "EnableWorldMapDetail")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private void ShowOnMap(bool isShownOnMap)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public MapDetail()
 	{
 	}

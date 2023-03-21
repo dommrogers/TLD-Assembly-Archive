@@ -30,29 +30,28 @@ public class Panel_Log_Toc_GridItem : MonoBehaviour
 
 	private float m_DoubleClickTimer;
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnTocItemClicked")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnTocItemClicked")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnTocItemClicked")]
 	[CallsUnknownMethods(Count = 2)]
 	public void Update()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SetSelected(bool selected)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void OnHover(bool hover)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Log), Member = "UncacheSandboxRecord")]
 	[Calls(Type = typeof(Panel_Log), Member = "BuildStatsView")]
 	[Calls(Type = typeof(Panel_Log), Member = "BuildDailyList")]

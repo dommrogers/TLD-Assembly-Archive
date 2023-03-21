@@ -18,21 +18,24 @@ public class ObjectiveInfoDisplay : MonoBehaviour
 
 	private List<UITweener> m_Tweens;
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(UITweener), Member = "AddOnFinished")]
 	[CalledBy(Type = typeof(HUDObjectives), Member = "Awake")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UITweener), Member = "AddOnFinished")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 19)]
 	public void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(ObjectiveInfoDisplay), Member = "OnTweenComplete")]
 	[CalledBy(Type = typeof(HUDObjectives), Member = "Disable")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(ObjectiveInfoDisplay), Member = "OnTweenComplete")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public void Disable()
 	{
 	}
@@ -40,26 +43,25 @@ public class ObjectiveInfoDisplay : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(UITweener), Member = "Update")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(HUDObjectives), Member = "Dequeue")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(UITweener), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 12)]
 	public void Show(string statusLocID, Color statusColor, string infoLocID, string missionId)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(ObjectiveInfoDisplay), Member = "Disable")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ObjectiveInfoDisplay), Member = "Disable")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnTweenComplete()
 	{
 	}

@@ -9,8 +9,8 @@ public class AnimationStateRef
 
 	public string m_StateName;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public AnimationStateRef()
 	{
 	}

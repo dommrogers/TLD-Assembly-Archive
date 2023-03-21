@@ -9,8 +9,8 @@ public class SpawnRegionSaveData
 
 	public string m_Guid;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public SpawnRegionSaveData()
 	{
 	}

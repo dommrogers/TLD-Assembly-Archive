@@ -32,10 +32,10 @@ public class ContainerSaveDataProxy
 
 	public List<ContainerItemSaveData> m_SerializedItems;
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(Container), Member = ".cctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	public ContainerSaveDataProxy()
 	{
 	}

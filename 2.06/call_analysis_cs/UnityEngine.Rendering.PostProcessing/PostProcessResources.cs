@@ -97,15 +97,15 @@ public sealed class PostProcessResources : ScriptableObject
 
 		public ComputeShader gaussianDownsample;
 
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 2)]
 		public ComputeShaders Clone()
 		{
 			return null;
 		}
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public ComputeShaders()
 		{
 		}
@@ -135,9 +135,9 @@ public sealed class PostProcessResources : ScriptableObject
 
 	public ComputeShaders computeShaders;
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public PostProcessResources()
 	{
 	}

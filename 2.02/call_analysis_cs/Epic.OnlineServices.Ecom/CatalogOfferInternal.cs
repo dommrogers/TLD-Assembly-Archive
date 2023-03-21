@@ -47,7 +47,7 @@ internal struct CatalogOfferInternal : ISettable, IDisposable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -58,17 +58,17 @@ internal struct CatalogOfferInternal : ISettable, IDisposable
 
 	public string CatalogNamespace
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(CatalogOffer), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(CatalogOfferInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -77,18 +77,18 @@ internal struct CatalogOfferInternal : ISettable, IDisposable
 
 	public string Id
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(CatalogOffer), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(CatalogOfferInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -96,17 +96,17 @@ internal struct CatalogOfferInternal : ISettable, IDisposable
 
 	public string TitleText
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(CatalogOffer), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(CatalogOfferInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -115,18 +115,18 @@ internal struct CatalogOfferInternal : ISettable, IDisposable
 
 	public string DescriptionText
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(CatalogOffer), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(CatalogOfferInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -136,15 +136,15 @@ internal struct CatalogOfferInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(CatalogOffer), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(CatalogOfferInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -153,18 +153,18 @@ internal struct CatalogOfferInternal : ISettable, IDisposable
 
 	public string TechnicalDetailsText_DEPRECATED
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(CatalogOffer), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(CatalogOfferInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -173,17 +173,17 @@ internal struct CatalogOfferInternal : ISettable, IDisposable
 	public string CurrencyCode
 	{
 		[CalledBy(Type = typeof(CatalogOffer), Member = "Set")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(CatalogOfferInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -210,7 +210,7 @@ internal struct CatalogOfferInternal : ISettable, IDisposable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -221,11 +221,11 @@ internal struct CatalogOfferInternal : ISettable, IDisposable
 
 	public uint CurrentPrice
 	{
-		[CallerCount(Count = 10)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 10)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -240,7 +240,7 @@ internal struct CatalogOfferInternal : ISettable, IDisposable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(byte);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -252,10 +252,10 @@ internal struct CatalogOfferInternal : ISettable, IDisposable
 	public long ExpirationTimestamp
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 11)]
 		get
 		{
-			return default(long);
+			return 0L;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -270,10 +270,10 @@ internal struct CatalogOfferInternal : ISettable, IDisposable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -285,7 +285,7 @@ internal struct CatalogOfferInternal : ISettable, IDisposable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -296,51 +296,46 @@ internal struct CatalogOfferInternal : ISettable, IDisposable
 
 	public bool AvailableForPurchase
 	{
+		[CalledBy(Type = typeof(CatalogOffer), Member = "Set")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(CatalogOffer), Member = "Set")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(CatalogOfferInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
 	[CalledBy(Type = typeof(CatalogOfferInternal), Member = "Set")]
-	[Calls(Type = typeof(CatalogOfferInternal), Member = "set_AvailableForPurchase")]
-	[Calls(Type = typeof(CatalogOfferInternal), Member = "set_CurrencyCode")]
-	[Calls(Type = typeof(CatalogOfferInternal), Member = "set_TechnicalDetailsText_DEPRECATED")]
-	[Calls(Type = typeof(CatalogOfferInternal), Member = "set_LongDescriptionText")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CatalogOfferInternal), Member = "set_CatalogNamespace")]
 	[Calls(Type = typeof(CatalogOfferInternal), Member = "set_Id")]
 	[Calls(Type = typeof(CatalogOfferInternal), Member = "set_TitleText")]
-	[Calls(Type = typeof(CatalogOfferInternal), Member = "set_CatalogNamespace")]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CatalogOfferInternal), Member = "set_DescriptionText")]
+	[Calls(Type = typeof(CatalogOfferInternal), Member = "set_LongDescriptionText")]
+	[Calls(Type = typeof(CatalogOfferInternal), Member = "set_TechnicalDetailsText_DEPRECATED")]
+	[Calls(Type = typeof(CatalogOfferInternal), Member = "set_CurrencyCode")]
+	[Calls(Type = typeof(CatalogOfferInternal), Member = "set_AvailableForPurchase")]
 	public void Set(CatalogOffer other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CatalogOfferInternal), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

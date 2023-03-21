@@ -28,8 +28,8 @@ internal struct QueryFriendsCallbackInfoInternal : ICallbackInfoInternal
 		[CalledBy(Type = typeof(QueryFriendsCallbackInfo), Member = "Set")]
 		[CalledBy(Type = typeof(QueryFriendsCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -42,16 +42,17 @@ internal struct QueryFriendsCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public EpicAccountId LocalUserId
 	{
 		[CalledBy(Type = typeof(QueryFriendsCallbackInfo), Member = "Set")]
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(QueryFriendsCallbackInfo), Member = "Set")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;

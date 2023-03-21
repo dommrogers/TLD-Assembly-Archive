@@ -18,8 +18,8 @@ public sealed class Vector2Parameter : ParameterOverride<Vector2>
 		return default(Vector3);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static implicit operator Vector4(Vector2Parameter prop)
 	{
 		return default(Vector4);
@@ -28,11 +28,11 @@ public sealed class Vector2Parameter : ParameterOverride<Vector2>
 	[CallerCount(Count = 0)]
 	public override bool Equals(Vector2 a, Vector2 b)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Vector2Parameter()
 	{
 		((ParameterOverride<>)(object)this)._002Ector();

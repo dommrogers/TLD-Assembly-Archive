@@ -6,9 +6,9 @@ public class DialogueCategoriesConfiguration : ScriptableObject
 {
 	public List<DialogueModeRigFP.DialogueChoiceCategoryConfiguration> m_CategoryConfigurations;
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public DialogueCategoriesConfiguration()
 	{
 	}

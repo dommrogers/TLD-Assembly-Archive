@@ -17,12 +17,12 @@ public class ByteReader
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 101)]
+	[CallerCount(Count = 103)]
 	public ByteReader(byte[] bytes)
 	{
 	}
@@ -34,17 +34,17 @@ public class ByteReader
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(File), Member = "OpenRead")]
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(File), Member = "OpenRead")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	public static ByteReader Open(string path)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private static string ReadLine(byte[] buffer, int start, int count)
@@ -52,61 +52,49 @@ public class ByteReader
 		return null;
 	}
 
-	[Calls(Type = typeof(ByteReader), Member = "ReadLine")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ByteReader), Member = "ReadLine")]
 	public string ReadLine()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(ByteReader), Member = "ReadCSV")]
+	[CalledBy(Type = typeof(ByteReader), Member = "ReadLine")]
 	[CalledBy(Type = typeof(ByteReader), Member = "ReadDictionary")]
+	[CalledBy(Type = typeof(ByteReader), Member = "ReadCSV")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(ByteReader), Member = "ReadLine")]
-	[CalledBy(Type = typeof(ByteReader), Member = "ReadCSV")]
 	[CallsUnknownMethods(Count = 8)]
 	public string ReadLine(bool skipEmptyLines)
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ByteReader), Member = "ReadLine")]
+	[Calls(Type = typeof(string), Member = "StartsWith")]
 	[Calls(Type = typeof(string), Member = "SplitInternal")]
 	[Calls(Type = typeof(string), Member = "TrimHelper")]
-	[Calls(Type = typeof(string), Member = "TrimHelper")]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
 	public Dictionary<string, string> ReadDictionary()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "get_Chars")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CalledBy(Type = typeof(Panel_Credits.EpisodeDefinition), Member = "BuildLines")]
-	[CalledBy(Type = typeof(Panel_Credits.EpisodeDefinition), Member = "BuildLines")]
+	[CalledBy(TypeFullName = "Panel_Credits.EpisodeDefinition", Member = "BuildLines")]
 	[CalledBy(Type = typeof(StringTable), Member = "ImportCsv")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "get_Chars")]
-	[Calls(Type = typeof(string), Member = "get_Chars")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(ByteReader), Member = "ReadLine")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(ByteReader), Member = "ReadLine")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(StringTable), Member = "ImportCsv")]
+	[Calls(Type = typeof(ByteReader), Member = "ReadLine")]
 	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "get_Chars")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(BetterList<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public BetterList<string> ReadCSV(bool ignoreSpaceNewLine = false)
 	{
 		return null;

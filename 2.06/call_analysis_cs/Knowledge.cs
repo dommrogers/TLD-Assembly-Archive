@@ -13,10 +13,10 @@ public class Knowledge : MonoBehaviour
 
 	public string m_Description
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Localization), Member = "Get")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(Localization), Member = "Get")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -53,60 +53,53 @@ public class Knowledge : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_UnlockKnowledge), Member = "OnExecute")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_knowledge_unlock")]
-	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "ShowCurrentTutorialPopup")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(Knowledge), Member = "UnlockWithNotification")]
 	[CalledBy(Type = typeof(DisplayLocationLabel), Member = "OnTriggerEnter")]
 	[CalledBy(Type = typeof(DisplayLocationLabel), Member = "MaybeUnlockKnowledge")]
-	[Calls(Type = typeof(GearMessage), Member = "AddJournalQueueMessage")]
-	[CalledBy(Type = typeof(Knowledge), Member = "UnlockWithNotification")]
-	[Calls(Type = typeof(KnowledgeManager), Member = "AddKnowledge")]
-	[Calls(Type = typeof(KnowledgeManager), Member = "KnowledgeIsUnlocked")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "ShowCurrentTutorialPopup")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_knowledge_unlock")]
+	[CalledBy(Type = typeof(Action_UnlockKnowledge), Member = "OnExecute")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(KnowledgeManager), Member = "KnowledgeIsUnlocked")]
+	[Calls(Type = typeof(KnowledgeManager), Member = "AddKnowledge")]
+	[Calls(Type = typeof(GearMessage), Member = "AddJournalQueueMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Unlock(string nameLocID, string descLocID, KnowledgeCateogry category, string subTitle, bool showNotificationFlag = true)
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(KnowledgeManager), Member = "AddKnowledge")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(KnowledgeManager), Member = "KnowledgeIsUnlocked")]
+	[Calls(Type = typeof(KnowledgeManager), Member = "AddKnowledge")]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void UnlockSilent(string nameLocID, string descLocID, KnowledgeCateogry category)
 	{
 	}
 
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_knowledge_unlock")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_knowledge_unlock")]
 	[CallsUnknownMethods(Count = 1)]
 	public static KnowledgeCateogry GetKnowledgeCategoryFromName(string name)
 	{
 		return default(KnowledgeCateogry);
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(DisplayLocationLabel), Member = "OnTriggerEnter")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CalledBy(Type = typeof(DisplayLocationLabel), Member = "MaybeUnlockKnowledge")]
 	[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "ShowCurrentTutorialPopup")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_knowledge_unlock")]
-	[CalledBy(Type = typeof(DisplayLocationLabel), Member = "MaybeUnlockKnowledge")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	public static string GetLocalizedKnowledgeCategoryName(KnowledgeCateogry category)
 	{
 		return null;

@@ -5,11 +5,11 @@ public class WorldMapRegion : MonoBehaviour
 {
 	public string m_RegionName;
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_WorldMap), Member = "SelectRegionMap")]
 	[CalledBy(Type = typeof(Panel_WorldMap), Member = "DoGamepadControls")]
 	[CalledBy(Type = typeof(Panel_WorldMap), Member = "DoMouseControls")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_WorldMap), Member = "SelectRegionMap")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnSelect()
 	{

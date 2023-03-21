@@ -33,9 +33,9 @@ public class PaperDollTextureData : ScriptableObject
 		return null;
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public PaperDollTextureData()
 	{
 	}

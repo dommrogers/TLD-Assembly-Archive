@@ -20,36 +20,34 @@ public class LoopTracker : BaseTracker
 
 	public bool m_TrackPosition;
 
-	[CalledBy(Type = typeof(PlayVoiceSimple), Member = "Start")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(VoiceTracker), Member = ".ctor")]
 	[CalledBy(Type = typeof(PlayAudioSimpleManager), Member = "AddVoice")]
+	[CalledBy(Type = typeof(PlayVoiceSimple), Member = "Start")]
+	[CalledBy(Type = typeof(VoiceTracker), Member = ".ctor")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(BaseTracker), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	public LoopTracker(string eventId, GameObject go, float radius, bool stopWhenDisabled, bool position)
-		: base(null, default(float), stopWhenDisabled: default(bool))
+		: base(null, 0f, stopWhenDisabled: false)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(BaseTracker), Member = ".ctor")]
 	[CalledBy(Type = typeof(PlayAudioSimple), Member = "Start")]
 	[CalledBy(Type = typeof(PlayAudioSimpleManager), Member = "Add")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BaseTracker), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[CallsUnknownMethods(Count = 1)]
 	public LoopTracker(AK.Wwise.Event eventSpec, GameObject go, float radius, bool stopWhenDisabled, bool position)
-		: base(null, default(float), stopWhenDisabled: default(bool))
+		: base(null, 0f, stopWhenDisabled: false)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[CallsUnknownMethods(Count = 3)]
 	public override void Cleanup()
 	{
 	}
@@ -58,22 +56,22 @@ public class LoopTracker : BaseTracker
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	public override bool HasProxy()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public override bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySoundWithPositionTracking")]
-	[Calls(Type = typeof(LoopTracker), Member = "SetupDynamicProxy")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySoundWithPositionTracking")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySoundWithPositionTracking")]
+	[Calls(Type = typeof(LoopTracker), Member = "SetupDynamicProxy")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	protected override void Start()
 	{
 	}
@@ -93,21 +91,19 @@ public class LoopTracker : BaseTracker
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	protected override void Stop()
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(VoiceTracker), Member = "Start")]
 	[CalledBy(Type = typeof(LoopTracker), Member = "Start")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(VoiceTracker), Member = "Start")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected void SetupDynamicProxy()
 	{
 	}

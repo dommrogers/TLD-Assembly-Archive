@@ -8,7 +8,7 @@ public class FishingItem : MonoBehaviour
 	public string m_LineSnappedAudio;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}

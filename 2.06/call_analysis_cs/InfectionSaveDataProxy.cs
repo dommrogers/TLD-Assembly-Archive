@@ -24,8 +24,8 @@ public class InfectionSaveDataProxy
 
 	public float[] m_ElapsedRestList;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public InfectionSaveDataProxy()
 	{
 	}

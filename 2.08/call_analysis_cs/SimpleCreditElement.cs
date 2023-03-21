@@ -13,15 +13,15 @@ public class SimpleCreditElement : CreditElement
 		return default(Vector2);
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public override bool IsContentValid(string[] content, Panel_Credits panel)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public override void Populate(string[] content, Panel_Credits panel)
 	{
 	}

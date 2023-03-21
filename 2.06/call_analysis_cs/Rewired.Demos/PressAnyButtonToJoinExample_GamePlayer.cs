@@ -22,12 +22,10 @@ public class PressAnyButtonToJoinExample_GamePlayer : MonoBehaviour
 	private Player player
 	{
 		[CalledBy(Type = typeof(PressAnyButtonToJoinExample_GamePlayer), Member = "GetInput")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(PressAnyButtonToJoinExample_GamePlayer), Member = "GetInput")]
-		[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-		[CalledBy(Type = typeof(PressAnyButtonToJoinExample_GamePlayer), Member = "GetInput")]
-		[Calls(Type = typeof(ReInput), Member = "get_players")]
 		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(ReInput), Member = "get_players")]
+		[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -35,7 +33,7 @@ public class PressAnyButtonToJoinExample_GamePlayer : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	private void OnEnable()
 	{
 	}
@@ -46,22 +44,19 @@ public class PressAnyButtonToJoinExample_GamePlayer : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PressAnyButtonToJoinExample_GamePlayer), Member = "get_player")]
 	[Calls(Type = typeof(Player), Member = "GetAxis")]
 	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
-	[Calls(Type = typeof(Player), Member = "GetAxis")]
-	[Calls(Type = typeof(PressAnyButtonToJoinExample_GamePlayer), Member = "get_player")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(PressAnyButtonToJoinExample_GamePlayer), Member = "get_player")]
+	[CallsUnknownMethods(Count = 1)]
 	private void GetInput()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 11)]
 	private void ProcessInput()
 	{

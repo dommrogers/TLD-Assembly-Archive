@@ -17,8 +17,8 @@ public class CatalogItemImagePlugin
 	public static extern uint CatalogItemImage_Height(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CatalogItemImage_Width(IntPtr self);
 
 	[PreserveSig]
@@ -52,12 +52,12 @@ public class CatalogItemImagePlugin
 	public static extern void CatalogItemImage_Purposes_Dispose(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void CatalogItemImage_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CatalogItemImagePlugin()
 	{
 	}

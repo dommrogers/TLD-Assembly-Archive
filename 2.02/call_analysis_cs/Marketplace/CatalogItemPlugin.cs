@@ -12,8 +12,8 @@ public class CatalogItemPlugin
 	public static extern IntPtr CatalogItem_Id(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CatalogItem_MediaItemType(IntPtr self);
 
 	[PreserveSig]
@@ -42,15 +42,15 @@ public class CatalogItemPlugin
 	public static extern IntPtr CatalogItem_SandboxId(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool CatalogItem_IsBundle(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool CatalogItem_IsPartOfAnyBundle(IntPtr self);
 
 	[PreserveSig]
@@ -79,13 +79,13 @@ public class CatalogItemPlugin
 	public static extern void CatalogItem_AvailabilityContentIds_Dispose(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr CatalogItem_Images(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CatalogItem_Images_Length(IntPtr self);
 
 	[PreserveSig]
@@ -104,7 +104,7 @@ public class CatalogItemPlugin
 	public static extern void CatalogItem_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CatalogItemPlugin()
 	{
 	}

@@ -31,12 +31,12 @@ public class UIKeyBinding : MonoBehaviour
 
 	private bool mPress;
 
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[CallsUnknownMethods(Count = 6)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	protected virtual void Start()
 	{
 	}
@@ -47,35 +47,34 @@ public class UIKeyBinding : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 1)]
 	protected virtual bool IsModifierActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 14)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
+	[CallsDeduplicatedMethods(Count = 14)]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
-	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
 	protected virtual void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UICamera), Member = "Notify")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected virtual void OnBindingPress(bool pressed)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UICamera), Member = "Notify")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UICamera), Member = "Notify")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected virtual void OnBindingClick()
 	{
 	}

@@ -44,18 +44,19 @@ public class WeatherActivatedEffect : MonoBehaviour
 
 	private StopWithCallbackEvent m_StopEvents;
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEvent), Member = "Invoke")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEvent), Member = "Invoke")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Play()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(WeatherActivatedEffectsController), Member = "StopAndReleaseInstances")]
-	[CallsUnknownMethods(Count = 12)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEvent<>), Member = "Invoke")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	public void Stop(Action onComplete)
 	{
 	}

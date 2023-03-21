@@ -16,8 +16,8 @@ public class BloodLossSaveDataProxy
 
 	public float[] m_DurationHoursList;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public BloodLossSaveDataProxy()
 	{
 	}

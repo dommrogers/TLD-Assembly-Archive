@@ -17,11 +17,11 @@ internal struct FileMetadataInternal : ISettable, IDisposable
 
 	public uint FileSizeBytes
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -32,20 +32,20 @@ internal struct FileMetadataInternal : ISettable, IDisposable
 
 	public string MD5Hash
 	{
+		[CalledBy(Type = typeof(FileMetadata), Member = "Set")]
+		[CalledBy(Type = typeof(FileMetadata), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CalledBy(Type = typeof(FileMetadata), Member = "Set")]
-		[CalledBy(Type = typeof(FileMetadata), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(FileMetadataInternal), Member = "Set")]
+		[CalledBy(Type = typeof(FileMetadataInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(FileMetadataInternal), Member = "Set")]
-		[CalledBy(Type = typeof(FileMetadataInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -56,41 +56,40 @@ internal struct FileMetadataInternal : ISettable, IDisposable
 		[CalledBy(Type = typeof(FileMetadata), Member = "Set")]
 		[CalledBy(Type = typeof(FileMetadata), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(FileMetadataInternal), Member = "Set")]
+		[CalledBy(Type = typeof(FileMetadataInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(FileMetadataInternal), Member = "Set")]
-		[CalledBy(Type = typeof(FileMetadataInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(FileMetadataInternal), Member = "set_Filename")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(FileMetadataInternal), Member = "set_MD5Hash")]
+	[Calls(Type = typeof(FileMetadataInternal), Member = "set_Filename")]
 	public void Set(FileMetadata other)
 	{
 	}
 
-	[Calls(Type = typeof(FileMetadataInternal), Member = "set_Filename")]
-	[Calls(Type = typeof(FileMetadataInternal), Member = "set_MD5Hash")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(FileMetadataInternal), Member = "set_MD5Hash")]
+	[Calls(Type = typeof(FileMetadataInternal), Member = "set_Filename")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	public void Dispose()
 	{
 	}

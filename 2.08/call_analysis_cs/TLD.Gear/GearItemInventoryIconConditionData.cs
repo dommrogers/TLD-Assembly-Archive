@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -39,8 +40,9 @@ public class GearItemInventoryIconConditionData : GearItemInventoryIconData
 	}
 
 	[CalledBy(Type = typeof(GearItemInventoryIconConditionData), Member = "GetInventoryIcon")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 3)]
 	private static string GetSuffix(ConditionTable.TableEntry conditionTable, float conditionPercent)
 	{
 		return null;

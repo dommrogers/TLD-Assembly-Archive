@@ -15,20 +15,20 @@ public class TweenScale : UITweener
 
 	public Transform cachedTransform
 	{
-		[CalledBy(Type = typeof(TweenScale), Member = "Begin")]
-		[CalledBy(Type = typeof(TweenScale), Member = "OnUpdate")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(TweenScale), Member = "set_scale")]
-		[CalledBy(Type = typeof(TweenScale), Member = "get_scale")]
-		[CalledBy(Type = typeof(TweenScale), Member = "set_value")]
 		[CalledBy(Type = typeof(TweenScale), Member = "get_value")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[CalledBy(Type = typeof(TweenScale), Member = "set_value")]
+		[CalledBy(Type = typeof(TweenScale), Member = "get_scale")]
+		[CalledBy(Type = typeof(TweenScale), Member = "set_scale")]
+		[CalledBy(Type = typeof(TweenScale), Member = "OnUpdate")]
+		[CalledBy(Type = typeof(TweenScale), Member = "Begin")]
 		[CalledBy(Type = typeof(TweenScale), Member = "SetStartToCurrentValue")]
+		[CalledBy(Type = typeof(TweenScale), Member = "SetEndToCurrentValue")]
 		[CalledBy(Type = typeof(TweenScale), Member = "SetCurrentValueToStart")]
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(TweenScale), Member = "SetCurrentValueToEnd")]
 		[CallerCount(Count = 10)]
-		[CalledBy(Type = typeof(TweenScale), Member = "SetEndToCurrentValue")]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -37,20 +37,20 @@ public class TweenScale : UITweener
 
 	public Vector3 value
 	{
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(TweenScale), Member = "get_cachedTransform")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		get
 		{
 			return default(Vector3);
 		}
-		[CallsUnknownMethods(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(TweenScale), Member = "get_cachedTransform")]
-		[CallerCount(Count = 1)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(TweenScale), Member = "get_cachedTransform")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
@@ -60,84 +60,85 @@ public class TweenScale : UITweener
 	{
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(TweenScale), Member = "get_cachedTransform")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return default(Vector3);
 		}
 		[DeduplicatedMethod]
-		[CallsUnknownMethods(Count = 2)]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(TweenScale), Member = "get_cachedTransform")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(TweenScale), Member = "get_cachedTransform")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TweenScale), Member = "get_cachedTransform")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	protected override void OnUpdate(float factor, bool isFinished)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(TweenScale), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
 	[CalledBy(Type = typeof(UIButtonScale), Member = "OnPress")]
 	[CalledBy(Type = typeof(UIButtonScale), Member = "OnHover")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(UIPopupList), Member = "AnimateScale")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UITweener), Member = "Begin")]
+	[Calls(Type = typeof(TweenScale), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static TweenScale Begin(GameObject go, float duration, Vector3 scale)
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[ContextMenu("Set 'From' to current value")]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
 	[Calls(Type = typeof(TweenScale), Member = "get_cachedTransform")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void SetStartToCurrentValue()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[ContextMenu("Set 'To' to current value")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TweenScale), Member = "get_cachedTransform")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[ContextMenu("Set 'To' to current value")]
+	[CallsUnknownMethods(Count = 2)]
 	public override void SetEndToCurrentValue()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[ContextMenu("Assume value of 'From'")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TweenScale), Member = "get_cachedTransform")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetCurrentValueToStart()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(TweenScale), Member = "get_cachedTransform")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[ContextMenu("Assume value of 'To'")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TweenScale), Member = "get_cachedTransform")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetCurrentValueToEnd()
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UITweener), Member = ".ctor")]
 	public TweenScale()
 	{
 	}

@@ -15,25 +15,25 @@ public class PlayAmbientSimple : BaseSimpleAudioComponent
 
 	public bool IsSimpleAmbient
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(AmbientTracker), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AmbientTracker), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayAudioSimpleManager), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{

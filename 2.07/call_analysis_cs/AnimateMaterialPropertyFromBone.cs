@@ -20,8 +20,8 @@ public class AnimateMaterialPropertyFromBone : MonoBehaviour
 		[NonSerialized]
 		public int m_MaterialPropertyID;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public AnimatedPropertyData()
 		{
 		}
@@ -48,19 +48,18 @@ public class AnimateMaterialPropertyFromBone : MonoBehaviour
 	private int m_MaterialPropertyID;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Shader), Member = "PropertyToID")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TransformAxisExtension), Member = "GetLocalTransformValue")]
 	[Calls(Type = typeof(Vector4), Member = "set_Item")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(TransformAxisExtension), Member = "GetLocalTransformValue")]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update()
 	{
 	}

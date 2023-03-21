@@ -25,17 +25,17 @@ public class Request
 	[CallerCount(Count = 0)]
 	public bool IsOptionSet(uint option)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsValid()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
+	[Calls(Type = typeof(uint), Member = "ToString")]
 	public string GetEventName()
 	{
 		return null;
@@ -66,8 +66,8 @@ public class Request
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public Request()
 	{
 	}

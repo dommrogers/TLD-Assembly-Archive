@@ -11,13 +11,13 @@ public class Feat_NightWalker : Feat
 
 	private bool m_Unlocked;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetFatigueScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -29,35 +29,35 @@ public class Feat_NightWalker : Feat
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	public void ValidateSaveData(string text)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public override bool IsUnlocked()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public override float GetNormalizedProgress()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public override void SetNormalizedProgress(float normalizedValue)
 	{
 	}

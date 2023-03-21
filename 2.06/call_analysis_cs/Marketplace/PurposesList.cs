@@ -10,13 +10,13 @@ public class PurposesList : WrappedCachedList<string>
 	[CallsDeduplicatedMethods(Count = 1)]
 	public PurposesList(IntPtr self)
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
 	public PurposesList()
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
@@ -26,9 +26,9 @@ public class PurposesList : WrappedCachedList<string>
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	protected override string CreateIthElement(int i)
 	{
 		return null;
@@ -41,9 +41,9 @@ public class PurposesList : WrappedCachedList<string>
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void DisposeChild()
 	{
 	}

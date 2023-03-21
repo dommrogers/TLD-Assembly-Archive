@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using Holoville.HOTween;
 using Holoville.HOTween.Core;
@@ -46,7 +45,7 @@ public class minimalMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -57,42 +56,42 @@ public class minimalMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CMove_003Ed__25(int _003C_003E1__state)
 		{
 		}
 
-		[CallerCount(Count = 2)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(minimalMove), Member = "MoveToPath")]
 		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 		[Calls(Type = typeof(minimalMove), Member = "CreateTween")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 5)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
+		[DebuggerHidden]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[CallsUnknownMethods(Count = 3)]
-		[CallerCount(Count = 0)]
-		[DebuggerHidden]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -110,7 +109,7 @@ public class minimalMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -119,9 +118,9 @@ public class minimalMove : MonoBehaviour
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 29)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -137,21 +136,21 @@ public class minimalMove : MonoBehaviour
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[Calls(Type = typeof(ABSTweenComponent), Member = "WaitForCompletion")]
-		[CallsUnknownMethods(Count = 23)]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(minimalMove), Member = "CreateTween")]
 		[Calls(Type = typeof(Tweener), Member = "UsePartialPath")]
+		[Calls(Type = typeof(ABSTweenComponent), Member = "WaitForCompletion")]
 		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 		[CallsDeduplicatedMethods(Count = 7)]
-		[Calls(Type = typeof(minimalMove), Member = "CreateTween")]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 23)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -210,34 +209,32 @@ public class minimalMove : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(minimalMove), Member = "SetPath")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(minimalMove), Member = "Move")]
-	[Calls(Type = typeof(minimalMove), Member = "Stop")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(minimalMove), Member = "Stop")]
+	[Calls(Type = typeof(minimalMove), Member = "Move")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public void StartMove()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(minimalMove), Member = "StartMove")]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator Move()
 	{
 		return null;
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
+	[CalledBy(Type = typeof(_003CMove_003Ed__25), Member = "MoveNext")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(_003CMove_003Ed__25), Member = "MoveNext")]
 	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator MoveToPath()
 	{
@@ -246,24 +243,24 @@ public class minimalMove : MonoBehaviour
 
 	[CalledBy(Type = typeof(minimalMove), Member = "ReachedEnd")]
 	[CalledBy(Type = typeof(_003CMove_003Ed__25), Member = "MoveNext")]
-	[Calls(Type = typeof(HOTween), Member = "To")]
-	[CallsUnknownMethods(Count = 35)]
 	[CalledBy(Type = typeof(_003CMoveToPath_003Ed__26), Member = "MoveNext")]
-	[Calls(Type = typeof(TweenParms), Member = "Ease")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(TweenParms), Member = "Loops")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(TweenParms), Member = "Ease")]
-	[Calls(Type = typeof(TweenParms), Member = "Prop")]
 	[Calls(Type = typeof(TweenParms), Member = ".ctor")]
+	[Calls(Type = typeof(TweenParms), Member = "Prop")]
+	[Calls(Type = typeof(TweenParms), Member = "Loops")]
+	[Calls(Type = typeof(TweenParms), Member = "Ease")]
+	[Calls(Type = typeof(TweenParms), Member = "Ease")]
+	[Calls(Type = typeof(HOTween), Member = "To")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 35)]
 	private void CreateTween()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Array), Member = "Reverse")]
 	[Calls(Type = typeof(minimalMove), Member = "CreateTween")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 3)]
 	private void ReachedEnd()
 	{
@@ -276,33 +273,33 @@ public class minimalMove : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(minimalMove), Member = "ResetMove")]
-	[CalledBy(Type = typeof(minimalMove), Member = "SetPath")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(minimalMove), Member = "StartMove")]
+	[CalledBy(Type = typeof(minimalMove), Member = "SetPath")]
+	[CalledBy(Type = typeof(minimalMove), Member = "ResetMove")]
 	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Stop()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(minimalMove), Member = "Stop")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 9)]
 	public void ResetMove(bool reposition)
 	{
 	}
 
-	[Calls(Type = typeof(ABSTweenComponent), Member = "OnPause")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ABSTweenComponent), Member = "OnPause")]
 	public void Pause()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Resume()
 	{
 	}

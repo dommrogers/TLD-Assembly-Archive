@@ -1,7 +1,7 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Gameplay;
+using TLD.SaveState;
 using TLD.UI;
 using TLD.UI.Generics;
 using UnityEngine;
@@ -198,105 +198,105 @@ public class Panel_CustomXPSetup : Panel_AutoReferenced
 
 	private static readonly string[] m_TunableNLMHVStringList;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "InitializeCustomXPMenuItems")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "InitializeCustomXPMenuItems")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "DoMainScreenControls")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "DoMainScreenControls")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "InitializeLockableOptionUI")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "ResetToDefault")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "ResetToDefault")]
+	[Calls(Type = typeof(ConsoleComboBox), Member = "InitializeLockableOptionUI")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void Enable(bool enable)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void OnCancel()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "DoMainScreenControls")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetCustomXPSettingsFromUI")]
-	[Calls(Type = typeof(Panel_SelectWorldMap), Member = "ShouldBePartOfFlow")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
 	[Calls(Type = typeof(GameManager), Member = "RegionLockedBySelectedMode")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_SelectWorldMap), Member = "ShouldBePartOfFlow")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetCustomXPSettingsFromUI")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnContinue()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Insert")]
-	[Calls(Type = typeof(string), Member = "Insert")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
+	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(string), Member = "Insert")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(string), Member = "Insert")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnShareExperiencePopup()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "DoMainScreenControls")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "SetupInputField")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
 	[Calls(Type = typeof(TextInputField), Member = "Select")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "DoMainScreenControls")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnEnterCode()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "SetupInputField")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetUIFromCurrentCustomXP")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(TextInputField), Member = "GetText")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(TextInputField), Member = "GetText")]
 	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
+	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetUIFromCurrentCustomXP")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "SetupInputField")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnEnterCodePopupConfirmed()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateCustomModeFromString")]
 	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetUIFromCurrentCustomXP")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "SetupInputField")]
@@ -312,149 +312,24 @@ public class Panel_CustomXPSetup : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Insert")]
-	[Calls(Type = typeof(string), Member = "Insert")]
-	[Calls(Type = typeof(string), Member = "Insert")]
-	[Calls(Type = typeof(string), Member = "Replace")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(string), Member = "Insert")]
+	[CallsUnknownMethods(Count = 1)]
 	private string AddDashesToCustomModeString(string customString)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "ResetToDefault")]
-	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "SetValuesToMatchXPMode")]
-	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnEnterCodePopupCancelled")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnEnterCodePopupConfirmed")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetXPModePopupListString")]
+	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnEnterCodePopupCancelled")]
+	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "SetValuesToMatchXPMode")]
+	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "ResetToDefault")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
+	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetXPModePopupListString")]
 	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
 	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetUIFromCurrentCustomXP()
 	{
 	}
@@ -465,37 +340,33 @@ public class Panel_CustomXPSetup : Panel_AutoReferenced
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "DoMainScreenControls")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "DoMainScreenControls")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "UpdateMenuNavigation")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "DoMainScreenControls")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "UpdateMenuNavigation")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallsUnknownMethods(Count = 3)]
 	private void DoScroll(float scrollAmount)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnScrollbarChange")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "ResetToDefault")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private void UpdateSlider()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[CallerCount(Count = 0)]
 	private void UpdateButtonLegendMainScreen()
 	{
 	}
@@ -509,41 +380,23 @@ public class Panel_CustomXPSetup : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "UpdateBaseValues")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnContinue")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "UpdateAfterTunableChange")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(CustomExperienceMode), Member = "UpdateBaseValues")]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetCustomXPSettingsFromUI()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "Initialize")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 66)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 65)]
+	[CallsUnknownMethods(Count = 2)]
 	private void InitializeCustomXPMenuItems()
 	{
 	}
@@ -556,14 +409,14 @@ public class Panel_CustomXPSetup : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "UpdateAfterTunableChange")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "SetUIFromCurrentCustomXP")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
+	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "UpdateAfterTunableChange")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
+	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetXPModePopupListString()
 	{
 	}
@@ -575,77 +428,72 @@ public class Panel_CustomXPSetup : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "UpdateSlider")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "Enable")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "SetUIFromCurrentCustomXP")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "UpdateSlider")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ResetToDefault()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 28)]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "DoMainScreenControls")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "OnDecrease")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "OnIncrease")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UIPanel), Member = "IsVisible")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMouseOver")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "DoScroll")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "DoScroll")]
-	[Calls(Type = typeof(UIPanel), Member = "IsVisible")]
-	[Calls(Type = typeof(UIRect), Member = "get_root")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 28)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UIRect), Member = "get_root")]
+	[Calls(Type = typeof(UIPanel), Member = "IsVisible")]
+	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "DoScroll")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
 	[Calls(Type = typeof(UITweener), Member = "Update")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMouseOver")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
+	[Calls(Type = typeof(ConsoleComboBox), Member = "OnIncrease")]
+	[Calls(Type = typeof(ConsoleComboBox), Member = "OnDecrease")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 25)]
+	[CallsUnknownMethods(Count = 28)]
 	private void UpdateMenuNavigation(ref int index, List<GameObject> menuItems)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "SetUIFromCurrentCustomXP")]
+	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "SetXPModePopupListString")]
 	[CallerCount(Count = 63)]
 	[Calls(Type = typeof(ConsoleComboBox), Member = "set_value")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetConsoleComboBoxIndex(ConsoleComboBox comboBox, int index)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Insert")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "Update")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "OnContinue")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "OnEnterCode")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Insert")]
-	[Calls(Type = typeof(string), Member = "Insert")]
-	[Calls(Type = typeof(string), Member = "Insert")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "UpdateMenuNavigation")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryExaminePressed")]
-	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryDropPressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
 	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "DoScroll")]
 	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "DoScroll")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryDropPressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryExaminePressed")]
+	[Calls(Type = typeof(CustomExperienceMode), Member = "CreateStringFromCustomMode")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(string), Member = "Insert")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "OnEnterCode")]
+	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "OnContinue")]
+	[Calls(Type = typeof(Panel_CustomXPSetup), Member = "UpdateMenuNavigation")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DoMainScreenControls()
 	{
 	}
@@ -661,7 +509,7 @@ public class Panel_CustomXPSetup : Panel_AutoReferenced
 	[CallerCount(Count = 0)]
 	private bool IsEndlessNightOptionUnlocked()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

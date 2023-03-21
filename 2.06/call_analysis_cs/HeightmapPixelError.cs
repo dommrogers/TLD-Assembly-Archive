@@ -26,16 +26,16 @@ public class HeightmapPixelError : MonoBehaviour
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	public float GetPixelError(QualityTerrainLod quality)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	public static float GetDefaultPixelError(QualityTerrainLod quality)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

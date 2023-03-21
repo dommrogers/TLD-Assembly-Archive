@@ -13,8 +13,8 @@ public sealed class MissingNode : Node, IMissingRecoverable
 
 	private string ParadoxNotion_002ESerialization_002EIMissingRecoverable_002EmissingType
 	{
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		get
 		{
 			return null;
@@ -29,13 +29,13 @@ public sealed class MissingNode : Node, IMissingRecoverable
 	private string ParadoxNotion_002ESerialization_002EIMissingRecoverable_002ErecoveryState
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 8)]
+		[CallerCount(Count = 11)]
 		set
 		{
 		}
@@ -67,7 +67,7 @@ public sealed class MissingNode : Node, IMissingRecoverable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -77,7 +77,7 @@ public sealed class MissingNode : Node, IMissingRecoverable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -87,14 +87,14 @@ public sealed class MissingNode : Node, IMissingRecoverable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public override Alignment2x2 commentsAlignment
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(Alignment2x2);

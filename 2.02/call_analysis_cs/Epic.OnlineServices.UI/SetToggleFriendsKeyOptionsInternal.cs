@@ -27,14 +27,14 @@ internal struct SetToggleFriendsKeyOptionsInternal : ISettable, IDisposable
 	}
 
 	[CalledBy(Type = typeof(UIInterface), Member = "SetToggleFriendsKey")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

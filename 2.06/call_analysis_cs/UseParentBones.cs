@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -11,18 +12,18 @@ public class UseParentBones : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[CallsUnknownMethods(Count = 19)]
 	[CalledBy(Type = typeof(ClothingSpawner), Member = "SpawnMesh")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(SkinnedMeshRenderer), Member = "get_bones")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 15)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(SkinnedMeshRenderer), Member = "get_bones")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 19)]
 	public void DoWork()
 	{
 	}

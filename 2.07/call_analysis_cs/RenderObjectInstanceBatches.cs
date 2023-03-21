@@ -38,41 +38,41 @@ public class RenderObjectInstanceBatches
 
 		private bool m_IsUsingProceduralInstancing;
 
-		[CallerCount(Count = 2)]
-		[Calls(Type = typeof(PerBatch), Member = "Dispose")]
 		[CalledBy(Type = typeof(RenderObjectInstance), Member = "CreateBatchList")]
 		[CalledBy(Type = typeof(RenderObjectInstanceBatches), Member = "Allocate")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(PerBatch), Member = "Dispose")]
 		[CallsUnknownMethods(Count = 5)]
 		public void Allocate(int batchCount, bool isUsingProceduralInstancing)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 7)]
-		[CalledBy(Type = typeof(RenderObjectInstanceBatches), Member = "Dispose")]
 		[CalledBy(Type = typeof(RenderObjectInstance), Member = "Cleanup")]
 		[CalledBy(Type = typeof(PerBatch), Member = "Allocate")]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[CalledBy(Type = typeof(RenderObjectInstanceBatches), Member = "Dispose")]
 		[CallerCount(Count = 3)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		public void Dispose()
 		{
 		}
 
-		[CallerCount(Count = 2)]
-		[Calls(Type = typeof(ComputeBuffer), Member = ".ctor")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 		[CalledBy(Type = typeof(RenderObjectInstance), Member = "CreateBatchList")]
 		[CalledBy(Type = typeof(RenderObjectInstanceBatches), Member = "Allocate")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(ComputeBuffer), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 		[CallsUnknownMethods(Count = 6)]
 		public int Initialize(List<int> objectCounts)
 		{
-			return default(int);
+			return 0;
 		}
 
-		[CallsDeduplicatedMethods(Count = 5)]
-		[CallerCount(Count = 2)]
 		[CalledBy(Type = typeof(RenderObjectInstance), Member = "ScheduleJobs")]
 		[CalledBy(Type = typeof(RenderObjectInstanceBatches), Member = "InitializeJob")]
+		[CallerCount(Count = 2)]
+		[CallsDeduplicatedMethods(Count = 5)]
 		[CallsUnknownMethods(Count = 10)]
 		public RenderObjectInstanceJob InitializeJob(RenderObjectInstanceJob job, int batchIndex, int batchCount)
 		{
@@ -80,11 +80,11 @@ public class RenderObjectInstanceBatches
 		}
 
 		[CalledBy(Type = typeof(RenderObjectInstanceBatches), Member = "AddObject")]
-		[Calls(Type = typeof(Material), Member = "set_enableInstancing")]
-		[CallsUnknownMethods(Count = 6)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Material), Member = "EnableKeyword")]
+		[Calls(Type = typeof(Material), Member = "set_enableInstancing")]
+		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 6)]
 		public void SetRenderInfo(int batchIndex, Renderer renderer, Mesh mesh, int lod, bool forceOnlyLod0Shadow)
 		{
 		}
@@ -107,40 +107,39 @@ public class RenderObjectInstanceBatches
 		public NativeArray<Bounds> m_Bounds;
 
 		[CalledBy(Type = typeof(RenderObjectInstanceBatches), Member = "AddObject")]
-		[CallsUnknownMethods(Count = 10)]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 9)]
+		[CallsUnknownMethods(Count = 10)]
 		public void AddRenderer(Renderer renderer, PerBatch batches, int batchIndex)
 		{
 		}
 
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[Calls(Type = typeof(PerObject), Member = "Dispose")]
-		[Calls(Type = typeof(ComputeBuffer), Member = ".ctor")]
-		[Calls(Type = typeof(ComputeBuffer), Member = ".ctor")]
 		[CalledBy(Type = typeof(RenderObjectInstance), Member = "CreateBatchList")]
 		[CalledBy(Type = typeof(RenderObjectInstanceBatches), Member = "Allocate")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(PerObject), Member = "Dispose")]
+		[Calls(Type = typeof(ComputeBuffer), Member = ".ctor")]
+		[Calls(Type = typeof(ComputeBuffer), Member = "BeginWrite")]
 		[CallsUnknownMethods(Count = 4)]
 		public void Allocate(int objectCount)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 5)]
-		[CalledBy(Type = typeof(RenderObjectInstanceBatches), Member = "Dispose")]
-		[CalledBy(Type = typeof(PerObject), Member = "Allocate")]
-		[Calls(Type = typeof(ComputeBuffer), Member = "Dispose")]
-		[CallerCount(Count = 3)]
 		[CalledBy(Type = typeof(RenderObjectInstance), Member = "Cleanup")]
+		[CalledBy(Type = typeof(PerObject), Member = "Allocate")]
+		[CalledBy(Type = typeof(RenderObjectInstanceBatches), Member = "Dispose")]
+		[CallerCount(Count = 3)]
 		[Calls(Type = typeof(ComputeBuffer), Member = "Dispose")]
+		[CallsUnknownMethods(Count = 5)]
 		public void Dispose()
 		{
 		}
 
-		[CallAnalysisFailed]
-		[CallerCount(Count = 2)]
 		[CalledBy(Type = typeof(RenderObjectInstance), Member = "ScheduleJobs")]
 		[CalledBy(Type = typeof(RenderObjectInstanceBatches), Member = "InitializeJob")]
+		[CallerCount(Count = 2)]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 6)]
 		public RenderObjectInstanceJob InitializeJob(RenderObjectInstanceJob job, int objectIndex, int objectCount)
 		{
 			return default(RenderObjectInstanceJob);
@@ -181,11 +180,11 @@ public class RenderObjectInstanceBatches
 
 	public int CalculatedRenderBatchCount
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -194,24 +193,24 @@ public class RenderObjectInstanceBatches
 		}
 	}
 
+	[CalledBy(Type = typeof(RenderObjectInstance), Member = "PopulateBatchList")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(RenderObjectInstance), Member = "MaybeGetMeshForInstancedRendering")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(RenderObjectInstanceBatches), Member = "GetBatchIndex")]
 	[Calls(Type = typeof(PerBatch), Member = "SetRenderInfo")]
 	[Calls(Type = typeof(PerObject), Member = "AddRenderer")]
-	[CalledBy(Type = typeof(RenderObjectInstance), Member = "PopulateBatchList")]
 	public bool AddObject(Renderer renderer, int lod, bool forceOnlyLod0Shadows)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PerBatch), Member = "Initialize")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PerObject), Member = "Allocate")]
-	[Calls(Type = typeof(PerBatch), Member = "Allocate")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PerBatch), Member = "Allocate")]
+	[Calls(Type = typeof(PerBatch), Member = "Initialize")]
+	[Calls(Type = typeof(PerObject), Member = "Allocate")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Allocate()
 	{
 	}
@@ -233,40 +232,22 @@ public class RenderObjectInstanceBatches
 	[CallsUnknownMethods(Count = 1)]
 	public int GetBatchCount()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	public int GetBatchLodMask(int batchIndex)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "GetDebugText")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
 	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
 	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[CallsUnknownMethods(Count = 3)]
 	public void GetDebugText(StringBuilder sb)
 	{
 	}
@@ -280,23 +261,23 @@ public class RenderObjectInstanceBatches
 		return default(RenderObjectInstanceJob);
 	}
 
-	[Calls(Type = typeof(string), Member = "Format")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(ArgumentOutOfRangeException), Member = ".ctor")]
-	[Calls(Type = typeof(Graphics), Member = "DrawMeshInstancedProcedural")]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "LateUpdate")]
-	[Calls(Type = typeof(Mesh), Member = "get_subMeshCount")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Mesh), Member = "get_subMeshCount")]
 	[Calls(Type = typeof(Graphics), Member = "DrawMeshInstanced")]
+	[Calls(Type = typeof(Graphics), Member = "DrawMeshInstancedProcedural")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(ArgumentOutOfRangeException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 12)]
 	public void RenderBatch(int batchIndex, MaterialPropertyBlock materialProperties)
 	{
 	}
 
+	[CalledBy(Type = typeof(RenderObjectInstance), Member = "CreateBatchList")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(RenderObjectInstanceBatches), Member = "GetBatchIndex")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(RenderObjectInstance), Member = "CreateBatchList")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 4)]
 	public void ReserveBatchName(string name, int objectCount)
 	{
@@ -307,21 +288,21 @@ public class RenderObjectInstanceBatches
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(RenderObjectInstanceBatches), Member = "AddObject")]
 	[CalledBy(Type = typeof(RenderObjectInstanceBatches), Member = "ReserveBatchName")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private int GetBatchIndex(string name)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	private bool IsAllocated()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

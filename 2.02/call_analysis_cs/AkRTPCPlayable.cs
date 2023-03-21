@@ -23,16 +23,16 @@ public class AkRTPCPlayable : PlayableAsset, ITimelineClipAsset
 
 	public RTPC Parameter
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 46)]
 		set
 		{
 		}
@@ -40,16 +40,16 @@ public class AkRTPCPlayable : PlayableAsset, ITimelineClipAsset
 
 	public TimelineClip OwningClip
 	{
-		[CallerCount(Count = 3)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 3)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 17)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 19)]
 		set
 		{
 		}
@@ -66,25 +66,28 @@ public class AkRTPCPlayable : PlayableAsset, ITimelineClipAsset
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(ScriptPlayable<>), Member = "Create")]
+	[Calls(Type = typeof(PlayableHandle), Member = "GetObject")]
 	[Calls(Type = typeof(AkRTPCPlayable), Member = "InitializeBehavior")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public override Playable CreatePlayable(PlayableGraph graph, GameObject go)
 	{
 		return default(Playable);
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(AkRTPCPlayable), Member = "CreatePlayable")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(ExposedReference<>), Member = "Resolve")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void InitializeBehavior(PlayableGraph graph, ref AkRTPCPlayableBehaviour b, GameObject owner)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public AkRTPCPlayable()
 	{

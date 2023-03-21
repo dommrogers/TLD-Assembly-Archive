@@ -5,10 +5,11 @@ public class FootstepTrailManagerSaveDataProxy
 {
 	public List<string> m_Trails;
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(FootstepTrailManager), Member = ".cctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public FootstepTrailManagerSaveDataProxy()
 	{
 	}

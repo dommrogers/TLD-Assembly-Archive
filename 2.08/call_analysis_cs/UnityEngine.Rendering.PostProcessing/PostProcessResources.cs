@@ -63,8 +63,8 @@ public sealed class PostProcessResources : ScriptableObject
 			return null;
 		}
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public Shaders()
 		{
 		}
@@ -135,9 +135,9 @@ public sealed class PostProcessResources : ScriptableObject
 
 	public ComputeShaders computeShaders;
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public PostProcessResources()
 	{
 	}

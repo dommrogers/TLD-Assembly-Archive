@@ -6,7 +6,7 @@ public class AmmoItem : MonoBehaviour
 	public GunType m_AmmoForGunType;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Start()
 	{
 	}

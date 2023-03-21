@@ -6,14 +6,15 @@ namespace TinyJSON;
 
 public static class Extensions
 {
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(JSON), Member = "Dump")]
+	[CalledBy(Type = typeof(JSON), Member = "DecodeType")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 13)]
-	[DeduplicatedMethod]
-	[CallerCount(Count = 3)]
 	public static bool AnyOfType<TSource>(this IEnumerable<TSource> source, Type expectedType)
 	{
-		return default(bool);
+		return false;
 	}
 }

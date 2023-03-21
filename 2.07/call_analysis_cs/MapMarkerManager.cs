@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class MapMarkerManager : MonoBehaviour
 {
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void AddMarker()
 	{
 	}

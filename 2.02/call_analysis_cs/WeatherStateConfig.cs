@@ -20,14 +20,14 @@ public class WeatherStateConfig
 
 	public float m_GrassTintScalar;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public WeatherStateConfig()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public WeatherStateConfig(WeatherStateConfig other)
 	{
 	}

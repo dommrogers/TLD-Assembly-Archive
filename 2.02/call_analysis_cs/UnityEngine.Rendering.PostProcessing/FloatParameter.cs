@@ -11,12 +11,12 @@ public sealed class FloatParameter : ParameterOverride<float>
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public override bool Equals(float a, float b)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 231)]

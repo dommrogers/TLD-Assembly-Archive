@@ -15,9 +15,9 @@ public class InstallModCallbackInfo : ICallbackInfo, ISettable
 
 	public Result ResultCode
 	{
-		[CallerCount(Count = 7)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return default(Result);
@@ -34,14 +34,14 @@ public class InstallModCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -51,14 +51,14 @@ public class InstallModCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -75,7 +75,7 @@ public class InstallModCallbackInfo : ICallbackInfo, ISettable
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		private set
 		{
 		}
@@ -89,26 +89,26 @@ public class InstallModCallbackInfo : ICallbackInfo, ISettable
 	}
 
 	[CalledBy(Type = typeof(InstallModCallbackInfo), Member = "Set")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InstallModCallbackInfoInternal), Member = "get_LocalUserId")]
 	[Calls(Type = typeof(InstallModCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(InstallModCallbackInfoInternal), Member = "get_Mod")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(InstallModCallbackInfoInternal), Member = "get_LocalUserId")]
+	[CallsUnknownMethods(Count = 4)]
 	internal void Set(InstallModCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InstallModCallbackInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public InstallModCallbackInfo()
 	{
 	}

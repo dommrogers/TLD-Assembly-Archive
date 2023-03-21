@@ -42,8 +42,8 @@ public class SceneMapping : ScriptableObject
 
 		public LayerMask m_ExperienceModeMask;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public ChildSceneEntry()
 		{
 		}
@@ -51,33 +51,34 @@ public class SceneMapping : ScriptableObject
 
 	public List<ParentSceneEntry> m_ParentSceneList;
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool ChildExperienceModeMatches(ParentSceneEntry entry, LayerMask xpMode, int childIndex)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[CallsUnknownMethods(Count = 7)]
 	public ParentSceneEntry GetParentChildEntryNoCase(string parentName)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(SceneMapping), Member = "IsSceneOutdoor")]
-	[CallsUnknownMethods(Count = 6)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 5)]
 	public ParentSceneEntry GetParentSceneEntry(string parentName)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "IndexOf")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "IndexOf")]
 	[Calls(Type = typeof(string), Member = "Substring")]
 	[CallsUnknownMethods(Count = 1)]
 	public string GetParentNameFromScene(string sceneName)
@@ -85,19 +86,19 @@ public class SceneMapping : ScriptableObject
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "IndexOf")]
 	[Calls(Type = typeof(string), Member = "Substring")]
 	[Calls(Type = typeof(SceneMapping), Member = "GetParentSceneEntry")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "IndexOf")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsSceneOutdoor(string sceneName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public SceneMapping()
 	{

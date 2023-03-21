@@ -8,8 +8,8 @@ public class FlashlightItemSaveDataProxy
 
 	public float m_CurrentBatteryCharge;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public FlashlightItemSaveDataProxy()
 	{
 	}

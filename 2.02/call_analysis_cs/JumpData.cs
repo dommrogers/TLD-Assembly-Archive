@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -33,14 +34,14 @@ public class JumpData
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		protected set
 		{
 		}
@@ -50,14 +51,14 @@ public class JumpData
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		protected set
 		{
 		}
@@ -65,9 +66,9 @@ public class JumpData
 
 	public ExperienceModeType m_ExperienceMode
 	{
-		[CallerCount(Count = 1)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
 		get
 		{
 			return default(ExperienceModeType);
@@ -91,7 +92,7 @@ public class JumpData
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		protected set
 		{
 		}
@@ -99,12 +100,12 @@ public class JumpData
 
 	public float m_HoursSurvived
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -118,14 +119,14 @@ public class JumpData
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 8)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 18)]
 		protected set
 		{
 		}
@@ -133,16 +134,16 @@ public class JumpData
 
 	public ScreenshotSaveGameFormat m_Screenshot
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 46)]
 		protected set
 		{
 		}
@@ -159,72 +160,45 @@ public class JumpData
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 17)]
+		[CallerCount(Count = 19)]
 		protected set
 		{
 		}
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	protected JumpData()
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(JumpManager), Member = "GetDataPath")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(DateTime), Member = "ToString")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
 	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetNameForScene")]
+	[Calls(Type = typeof(DateTime), Member = "ToString")]
+	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(JumpManager), Member = "GetDataPath")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 20)]
 	public override string ToString()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Format")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 13)]
 	public string GetTreePath()
 	{
 		return null;
@@ -233,40 +207,36 @@ public class JumpData
 	[CallerCount(Count = 0)]
 	public bool IsStoryMode()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(JumpManager), Member = "Validate")]
 	[CalledBy(Type = typeof(JumpManager), Member = "CreateFromCurrentSave")]
-	[Calls(Type = typeof(File), Member = "WriteAllBytes")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CalledBy(Type = typeof(JumpManager), Member = "Validate")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Substring")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[Calls(Type = typeof(EncryptString), Member = "CompressStringToBytes")]
+	[Calls(Type = typeof(File), Member = "WriteAllBytes")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Rename(string name)
 	{
 	}
 
-	[CalledBy(Type = typeof(JumpManager), Member = "Validate")]
-	[CalledBy(Type = typeof(JumpManager), Member = "CreateFromCurrentSave")]
-	[CalledBy(Type = typeof(JumpManager), Member = "Import")]
-	[CalledBy(Type = typeof(JumpManager), Member = "Import")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(JumpLoadThread), Member = "ExecuteSingleThreaded")]
-	[Calls(Type = typeof(EncryptString), Member = "DecompressBytesToString")]
-	[Calls(Type = typeof(EncryptString), Member = "DecompressBytesToString")]
+	[CalledBy(Type = typeof(JumpManager), Member = "Import")]
+	[CalledBy(Type = typeof(JumpManager), Member = "CreateFromCurrentSave")]
+	[CalledBy(Type = typeof(JumpManager), Member = "Validate")]
 	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[Calls(Type = typeof(EncryptString), Member = "DecompressBytesToString")]
-	[Calls(Type = typeof(File), Member = "ReadAllBytes")]
 	[Calls(Type = typeof(File), Member = "Exists")]
-	[Calls(Type = typeof(Path), Member = "GetFileNameWithoutExtension")]
+	[Calls(Type = typeof(File), Member = "ReadAllBytes")]
 	[Calls(Type = typeof(EncryptString), Member = "DecompressBytesToString")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(Path), Member = "GetFileNameWithoutExtension")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 20)]
 	public static JumpData LoadFromFile(string path)
 	{
 		return null;

@@ -36,11 +36,11 @@ public class DebugPanel_PlayerVoice : Panel_Base
 
 	private List<CompletedRequest> m_CompletedRequests;
 
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public override void Initialize()
 	{
 	}
@@ -54,27 +54,26 @@ public class DebugPanel_PlayerVoice : Panel_Base
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[CallsUnknownMethods(Count = 1)]
 	public string LookupEventName(uint eventID)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 17)]
 	public void MaybeConnectEventListener(PlayerVoice voice)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(DebugPanel_PlayerVoice), Member = "UpdateNonCriticalDelay")]
 	[Calls(Type = typeof(DebugPanel_PlayerVoice), Member = "UpdatePlayback")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Update()
 	{
 	}
@@ -83,26 +82,25 @@ public class DebugPanel_PlayerVoice : Panel_Base
 	[CallerCount(Count = 0)]
 	public override bool IsOverlayPanel()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(DebugPanel_PlayerVoice), Member = "Update")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateNonCriticalDelay()
 	{
 	}
 
+	[CalledBy(Type = typeof(DebugPanel_PlayerVoice), Member = "Enable")]
+	[CalledBy(Type = typeof(DebugPanel_PlayerVoice), Member = "OnVoicePersonaChanged")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CalledBy(Type = typeof(DebugPanel_PlayerVoice), Member = "Enable")]
-	[CalledBy(Type = typeof(DebugPanel_PlayerVoice), Member = "OnVoicePersonaChanged")]
 	[CallsUnknownMethods(Count = 1)]
 	private void UpdateGender()
 	{
@@ -110,60 +108,61 @@ public class DebugPanel_PlayerVoice : Panel_Base
 
 	[CalledBy(Type = typeof(DebugPanel_PlayerVoice), Member = "Enable")]
 	[CalledBy(Type = typeof(DebugPanel_PlayerVoice), Member = "Update")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(uint), Member = "ToString")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdatePlayback()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 18)]
 	[CalledBy(Type = typeof(DebugPanel_PlayerVoice), Member = "OnRequestEvent")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(StringBuilder), Member = "AppendFormat")]
-	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
 	[Calls(Type = typeof(ColorUtility), Member = "ToHtmlStringRGB")]
+	[Calls(Type = typeof(uint), Member = "ToString")]
+	[Calls(Type = typeof(StringBuilder), Member = "AppendFormat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 17)]
 	private void UpdateQueue()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 27)]
 	[CalledBy(Type = typeof(DebugPanel_PlayerVoice), Member = "OnRequestEvent")]
-	[Calls(Type = typeof(StringBuilder), Member = "AppendFormat")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ColorUtility), Member = "ToHtmlStringRGB")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
+	[Calls(Type = typeof(uint), Member = "ToString")]
+	[Calls(Type = typeof(ColorUtility), Member = "ToHtmlStringRGB")]
+	[Calls(Type = typeof(StringBuilder), Member = "AppendFormat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 26)]
 	private void UpdateRecent()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(uint), Member = "ToString")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
 	[Calls(Type = typeof(DebugPanel_PlayerVoice), Member = "UpdateRecent")]
 	[Calls(Type = typeof(DebugPanel_PlayerVoice), Member = "UpdateQueue")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnRequestEvent(Request request, PlayerVoice.Reason reason)
 	{
 	}
 
-	[Calls(Type = typeof(DebugPanel_PlayerVoice), Member = "UpdateGender")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DebugPanel_PlayerVoice), Member = "UpdateGender")]
 	private void OnVoicePersonaChanged(VoicePersona persona)
 	{
 	}

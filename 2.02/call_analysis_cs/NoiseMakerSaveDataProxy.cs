@@ -5,7 +5,7 @@ public class NoiseMakerSaveDataProxy
 	public float m_ElapsedBurnMinutes;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public NoiseMakerSaveDataProxy()
 	{
 	}

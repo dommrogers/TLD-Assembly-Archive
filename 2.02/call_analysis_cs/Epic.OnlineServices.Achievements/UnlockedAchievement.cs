@@ -12,16 +12,16 @@ public class UnlockedAchievement : ISettable
 
 	public string AchievementId
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 101)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -44,26 +44,26 @@ public class UnlockedAchievement : ISettable
 		}
 	}
 
+	[CalledBy(Type = typeof(UnlockedAchievement), Member = "Set")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnlockedAchievementInternal), Member = "get_AchievementId")]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-	[CalledBy(Type = typeof(UnlockedAchievement), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	internal void Set(UnlockedAchievementInternal? other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnlockedAchievement), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public UnlockedAchievement()
 	{
 	}

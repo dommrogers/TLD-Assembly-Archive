@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Serialization;
 using UnityEngine;
@@ -46,9 +45,10 @@ public class FootstepTrailManager : MonoBehaviour
 	private static FootstepTrailManagerSaveDataProxy m_FootstepTrailManagerSaveDataProxy;
 
 	[CalledBy(Type = typeof(FootstepTrailManager), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 39)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(OctreeBounds<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 39)]
 	public void Awake()
 	{
 	}
@@ -63,69 +63,73 @@ public class FootstepTrailManager : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(FootstepTrail), Member = "Reset")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnDestroy()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerMovement), Member = "Start")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MaybePlaceFootstep")]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(PlayerMovement), Member = "Start")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void AddFootstepTrail(FootstepTrail fst, bool isPlayerTrail = false)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(OctreeBounds<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnAddFootstepGroup(FootstepGroup group)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(OctreeBounds<>), Member = "Add")]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnCloseFootstepGroup(FootstepGroup group)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnRemoveFootstepGroup(FootstepGroup group)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(FootstepTrail), Member = "Serialize")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public string Serialize()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(FootstepTrailManager), Member = "Awake")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(FootstepTrail), Member = "Deserialize")]
 	[Calls(Type = typeof(FootstepGroup), Member = "AdjustSnowDepthRecords")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[Calls(Type = typeof(FootstepTrail), Member = "AddFootstep")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(FootstepTrail), Member = "AddFootstep")]
 	public void AddPlayerFootstep(Vector3 ownerPos, Vector3 pos, Vector3 groundNormal, float yRotation, bool flip, float forceDeepFrac)
 	{
 	}
@@ -138,55 +142,50 @@ public class FootstepTrailManager : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnPlayerExitSnowDepthTrigger(SnowDepth sd)
 	{
 	}
 
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
 	[CalledBy(Type = typeof(FootStepSounds), Member = "MaybeLeaveFootPrint")]
-	[Calls(Type = typeof(GameObject), Member = "get_tag")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
 	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "get_tag")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 5)]
 	public bool IsFootprintPositionValid(Vector3 heelPos, Vector3 offset, float footLen, out Vector3 point, out Vector3 normal)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref point) = null;
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref normal) = null;
-		return default(bool);
+		point = default(Vector3);
+		normal = default(Vector3);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(FootstepTrail), Member = "OnQualityChange")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnQualityChange(QualityFootprints quality)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(FootstepTrail), Member = "Reset")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(List<>), Member = "Sort")]
+	[Calls(Type = typeof(Bounds), Member = "Intersects")]
+	[Calls(Type = typeof(FootstepGroup), Member = "Show")]
 	[Calls(Type = typeof(FootstepGroup), Member = "Destroy")]
 	[Calls(Type = typeof(FootstepGroup), Member = "RemovePatchRefs")]
-	[Calls(Type = typeof(Bounds), Member = "Intersects")]
-	[Calls(Type = typeof(FootstepGroup), Member = "Show")]
-	[Calls(Type = typeof(FootstepGroup), Member = "Show")]
-	[Calls(Type = typeof(Bounds), Member = "Intersects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 12)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(FootstepGroup), Member = "Destroy")]
+	[Calls(Type = typeof(FootstepTrail), Member = "Reset")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 12)]
 	private void LateUpdate()
 	{
 	}

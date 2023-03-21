@@ -15,11 +15,11 @@ internal struct CopyTransactionByIndexOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(CopyTransactionByIndexOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyTransactionByIndexOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyTransactionByIndexOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyTransactionByIndexOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -41,15 +41,15 @@ internal struct CopyTransactionByIndexOptionsInternal : ISettable, IDisposable
 	}
 
 	[CalledBy(Type = typeof(EcomInterface), Member = "CopyTransactionByIndex")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CopyTransactionByIndexOptionsInternal), Member = "set_LocalUserId")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

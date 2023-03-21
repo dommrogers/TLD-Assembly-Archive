@@ -11,8 +11,8 @@ public class GearItemInteractabilityControlSpawnTransformSaveData
 
 	public Vector3 m_LocalScale;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public GearItemInteractabilityControlSpawnTransformSaveData()
 	{
 	}

@@ -7,10 +7,10 @@ public class UnlockAchievementSampleLogic : MonoBehaviour
 {
 	public Text output;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Gdk), Member = "get_Helpers")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Gdk), Member = "get_Helpers")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void UnlockAchievement()
 	{
 	}

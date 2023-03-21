@@ -7,7 +7,7 @@ public class SnowImprintQualitySettings
 	public bool m_Show;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SnowImprintQualitySettings()
 	{
 	}

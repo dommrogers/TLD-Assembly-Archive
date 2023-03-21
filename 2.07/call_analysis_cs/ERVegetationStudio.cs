@@ -8,14 +8,14 @@ public class ERVegetationStudio : ScriptableObject
 	[CallerCount(Count = 3)]
 	public static bool VegetationStudio()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 3)]
 	public static bool VegetationStudioPro()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -36,8 +36,8 @@ public class ERVegetationStudio : ScriptableObject
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void RemoveVegetationMaskLine(GameObject go)
 	{
 	}
@@ -60,8 +60,8 @@ public class ERVegetationStudio : ScriptableObject
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public ERVegetationStudio()
 	{

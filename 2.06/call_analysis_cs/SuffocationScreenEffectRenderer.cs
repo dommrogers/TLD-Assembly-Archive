@@ -16,19 +16,18 @@ public sealed class SuffocationScreenEffectRenderer : PostProcessEffectRenderer<
 
 	private static readonly int s_BlurTexturePropertyID;
 
-	[Calls(Type = typeof(Shader), Member = "Find")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Shader), Member = "Find")]
 	public override void Init()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetScreenSpaceTemporaryRT")]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
 	public override void Render(PostProcessRenderContext context)
 	{

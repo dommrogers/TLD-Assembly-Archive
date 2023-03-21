@@ -34,29 +34,28 @@ public class SurveyListItem : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshAchievementListForSelectedRegion")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void SetAchievementInfo(SurveyAchievementInfo sai)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnListClicked()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyClicked")]
-	[CallerCount(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateCartographyPage")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyRegionClicked")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCartography")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyBack")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyClicked")]
+	[CallerCount(Count = 6)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetSelected(bool selected)
 	{

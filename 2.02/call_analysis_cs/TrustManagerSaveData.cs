@@ -20,7 +20,7 @@ public class TrustManagerSaveData
 	public Dictionary<string, float> m_GracePeriodValuesDictionary;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public TrustManagerSaveData()
 	{
 	}

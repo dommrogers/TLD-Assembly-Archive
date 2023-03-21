@@ -73,82 +73,84 @@ public class TrustManager : MonoBehaviour
 	private Dictionary<string, float> m_GracePeriodValuesDictionary;
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(TrustManager), Member = "SerializeNeedTrackers")]
+	[Calls(Type = typeof(TrustManager), Member = "SerializeUnlockableTrackers")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(TrustManager), Member = "SerializeNeedTrackers")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(TrustManager), Member = "SerializeUnlockableTrackers")]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[Calls(Type = typeof(TrustManager), Member = "GetTrustValue")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataForEspisodeMigration")]
-	[Calls(Type = typeof(TrustManager), Member = "DeserializeNeedTrackers")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(TrustManager), Member = "DeserializeNeedTrackers")]
 	[Calls(Type = typeof(TrustManager), Member = "DeserializeUnlockableTrackers")]
+	[Calls(Type = typeof(TrustManager), Member = "GetTrustValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(TrustManager), Member = "AddGracePeriodHours")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowKeyNotFoundException")]
-	[Calls(Type = typeof(TrustManager), Member = "StrikeTimerReduce")]
-	[Calls(Type = typeof(TrustManager), Member = "AddTrustDecay")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(TrustManager), Member = "GetHighestGracePeriodThreshold")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(TrustManager), Member = "GetTrustDecayPerDay")]
+	[Calls(Type = typeof(Dictionary<, >.KeyCollection.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(TrustManager), Member = "GetGracePeriodTimerHours")]
+	[Calls(Type = typeof(TrustManager), Member = "GetHighestGracePeriodThreshold")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(TrustManager), Member = "GetTrustDecayPerDay")]
+	[Calls(Type = typeof(TrustManager), Member = "AddTrustDecay")]
+	[Calls(Type = typeof(TrustManager), Member = "AddGracePeriodHours")]
+	[Calls(Type = typeof(TrustManager), Member = "StrikeTimerReduce")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowKeyNotFoundException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 20)]
 	private void Update()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(TrustManager), Member = "DeserializeNeedTrackers")]
 	[CalledBy(Type = typeof(NPC_NeedTracker), Member = "Start")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void RegisterNeedTracker(NPC_NeedTracker needTracker, string id)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(TrustManager), Member = "DeserializeUnlockableTrackers")]
 	[CalledBy(Type = typeof(NPC_UnlockableTracker), Member = "Start")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void RegisterUnlockableTracker(NPC_UnlockableTracker unlockableTracker, string id)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "AddMission")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void AddTrustDecayGracePeriod(string npcID, string missionID, float gracePeriodHours)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void RemoveTrustDecayGracePeriod(string npcID, string missionID)
 	{
 	}
@@ -160,115 +162,115 @@ public class TrustManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Condition_NPCTrustValue), Member = "OnCheck")]
-	[CalledBy(Type = typeof(NPC_NeedTracker), Member = "IsTrustWithinNeedRange")]
-	[CalledBy(Type = typeof(TrustManager), Member = "AddTrustDecay")]
-	[CalledBy(Type = typeof(TrustManager), Member = "AddToTrustValue")]
-	[CalledBy(Type = typeof(TrustManager), Member = "Deserialize")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "IsTrustWithinNeedRange")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateTrustPage")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 8)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "IsTrustWithinNeedRange")]
+	[CalledBy(Type = typeof(TrustManager), Member = "Deserialize")]
 	[CalledBy(Type = typeof(TrustManager), Member = "GetNormalizedTrustValue")]
+	[CalledBy(Type = typeof(TrustManager), Member = "AddToTrustValue")]
+	[CalledBy(Type = typeof(TrustManager), Member = "AddTrustDecay")]
+	[CalledBy(Type = typeof(NPC_NeedTracker), Member = "IsTrustWithinNeedRange")]
+	[CalledBy(Type = typeof(Condition_NPCTrustValue), Member = "OnCheck")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public int GetTrustValue(string id)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TrustManager), Member = "GetTrustValue")]
 	public float GetNormalizedTrustValue(string id)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(Action_SetNPCTrustValue), Member = "OnExecute")]
-	[CalledBy(Type = typeof(TrustManager), Member = "AddTrustDecay")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(TrustManager), Member = "AddToTrustValue")]
+	[CalledBy(Type = typeof(TrustManager), Member = "AddTrustDecay")]
+	[CalledBy(Type = typeof(Action_SetNPCTrustValue), Member = "OnExecute")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetTrustValue(string id, int val)
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_AddToNPCTrustValue), Member = "OnExecute")]
-	[CalledBy(Type = typeof(NPC_NeedTracker), Member = "CompleteNeedAtIndex")]
-	[CalledBy(Type = typeof(TrustManager), Member = "MaybeHandleItemBreakdown")]
-	[CalledBy(Type = typeof(TrustManager), Member = "MaybeHandleItemTheft")]
-	[CalledBy(Type = typeof(TrustManager), Member = "MaybeHandleContainerTheft")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_trust_add")]
-	[CallerCount(Count = 7)]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(TrustManager), Member = "GetTrustChangeMessage")]
-	[Calls(Type = typeof(TrustManager), Member = "AddStrike")]
-	[Calls(Type = typeof(TrustManager), Member = "SetTrustValue")]
-	[Calls(Type = typeof(TrustManager), Member = "GetTrustValue")]
 	[CalledBy(Type = typeof(Panel_BreakDown), Member = "BreakDownFinished")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_trust_add")]
+	[CalledBy(Type = typeof(TrustManager), Member = "MaybeHandleContainerTheft")]
+	[CalledBy(Type = typeof(TrustManager), Member = "MaybeHandleItemTheft")]
+	[CalledBy(Type = typeof(TrustManager), Member = "MaybeHandleItemBreakdown")]
+	[CalledBy(Type = typeof(NPC_NeedTracker), Member = "CompleteNeedAtIndex")]
+	[CalledBy(Type = typeof(Action_AddToNPCTrustValue), Member = "OnExecute")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(TrustManager), Member = "GetTrustValue")]
+	[Calls(Type = typeof(TrustManager), Member = "SetTrustValue")]
+	[Calls(Type = typeof(TrustManager), Member = "AddStrike")]
+	[Calls(Type = typeof(TrustManager), Member = "GetTrustChangeMessage")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	public void AddToTrustValue(string id, int amountToAdd)
 	{
 	}
 
 	[CalledBy(Type = typeof(TrustManager), Member = "AddToTrustValue")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public string GetTrustChangeMessage(string id, int amountToAdd)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(TrustManager), Member = "AddToTrustValue")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public void AddStrike(string id)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public int GetNumStrikes(string id)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Action_CheckNPCNeed), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "SetupNeedsInfo")]
 	[CalledBy(Type = typeof(Action_AddNPCNeed), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Action_RemoveNPCNeed), Member = "OnExecute")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Action_CheckNPCNeed), Member = "OnExecute")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "SetupNeedsInfo")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public NPC_NeedTracker GetNeedTracker(string id)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "SetupTrustMap")]
 	[CalledBy(Type = typeof(Action_UnlockNPCUnlockable), Member = "OnExecute")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public NPC_UnlockableTracker GetUnlockableTracker(string id)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public List<string> GetAllTrustIDs()
 	{
 		return null;
@@ -283,88 +285,75 @@ public class TrustManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
 	[Calls(Type = typeof(OwnershipManager), Member = "GetTrustId")]
 	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
 	[Calls(Type = typeof(TrustManager), Member = "AddToTrustValue")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void MaybeHandleItemTheft(GearItem gearItem)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(TrustManager), Member = "AddToTrustValue")]
-	[Calls(Type = typeof(OwnershipManager), Member = "GetTrustId")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(OwnershipManager), Member = "GetTrustId")]
+	[Calls(Type = typeof(TrustManager), Member = "AddToTrustValue")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void MaybeHandleItemBreakdown(GameObject breakdownObject)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(TrustManager), Member = "OutputSingleTrustValue")]
-	[Calls(Type = typeof(TrustManager), Member = "OutputSingleTrustValue")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowKeyNotFoundException")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_trust_value_list")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.KeyCollection.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(TrustManager), Member = "OutputSingleTrustValue")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowKeyNotFoundException")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 13)]
 	public void OutputTrustValues()
 	{
 	}
 
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
 	[CalledBy(Type = typeof(TrustManager), Member = "OutputTrustValues")]
-	[CalledBy(Type = typeof(TrustManager), Member = "OutputTrustValues")]
-	[CallsUnknownMethods(Count = 59)]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(TrustManager), Member = "GetGracePeriodTimerHours")]
+	[Calls(Type = typeof(TrustManager), Member = "GetHighestGracePeriodThreshold")]
 	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(TrustManager), Member = "GetHighestGracePeriodThreshold")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(TrustManager), Member = "GetGracePeriodTimerHours")]
-	[Calls(Type = typeof(TrustManager), Member = "GetHighestGracePeriodThreshold")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 57)]
 	private void OutputSingleTrustValue(string npcID, int trustVal)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CalledBy(Type = typeof(TrustManager), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(TrustManager), Member = "GetTrustValue")]
 	[Calls(Type = typeof(TrustManager), Member = "SetTrustValue")]
-	[CalledBy(Type = typeof(TrustManager), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	private void AddTrustDecay(string npcID, float decayPerDay, float deltaTimeDays)
 	{
 	}
 
 	[CalledBy(Type = typeof(TrustManager), Member = "Update")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetTrustDecayPerDay(string npcID)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -372,85 +361,95 @@ public class TrustManager : MonoBehaviour
 	[Calls(Type = typeof(TrustManager), Member = "GetHighestGracePeriodThreshold")]
 	private bool TrustDecayInGracePeriod(string npcID)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 15)]
-	[CalledBy(Type = typeof(TrustManager), Member = "OutputSingleTrustValue")]
-	[CalledBy(Type = typeof(TrustManager), Member = "OutputSingleTrustValue")]
 	[CalledBy(Type = typeof(TrustManager), Member = "Update")]
+	[CalledBy(Type = typeof(TrustManager), Member = "OutputSingleTrustValue")]
 	[CalledBy(Type = typeof(TrustManager), Member = "TrustDecayInGracePeriod")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Dictionary<, >.KeyCollection.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	private float GetHighestGracePeriodThreshold(string npcID)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(TrustManager), Member = "Update")]
 	[CalledBy(Type = typeof(TrustManager), Member = "OutputSingleTrustValue")]
-	[CalledBy(Type = typeof(TrustManager), Member = "OutputSingleTrustValue")]
 	[CalledBy(Type = typeof(TrustManager), Member = "TrustDecayInGracePeriod")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetGracePeriodTimerHours(string npcID)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(TrustManager), Member = "Update")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void AddGracePeriodHours(string npcID, float hoursToAdd)
 	{
 	}
 
 	[CalledBy(Type = typeof(TrustManager), Member = "Serialize")]
-	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowKeyNotFoundException")]
-	[Calls(Type = typeof(NPC_NeedTracker), Member = "Serialize")]
-	[Calls(Type = typeof(NPC_NeedTracker), Member = "Serialize")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.KeyCollection.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(NPC_NeedTracker), Member = "Serialize")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowKeyNotFoundException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 25)]
 	private Dictionary<string, string> SerializeNeedTrackers()
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(TrustManager), Member = "Serialize")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowKeyNotFoundException")]
-	[Calls(Type = typeof(NPC_UnlockableTracker), Member = "Serialize")]
-	[CallsUnknownMethods(Count = 25)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.KeyCollection.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(NPC_UnlockableTracker), Member = "Serialize")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowKeyNotFoundException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 25)]
 	private Dictionary<string, string> SerializeUnlockableTrackers()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[Calls(Type = typeof(TrustManager), Member = "RegisterNeedTracker")]
-	[Calls(Type = typeof(NPC_NeedTracker), Member = "Deserialize")]
 	[CalledBy(Type = typeof(TrustManager), Member = "Deserialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.KeyCollection.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(TrustManager), Member = "RegisterNeedTracker")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(NPC_NeedTracker), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 12)]
 	private void DeserializeNeedTrackers(Dictionary<string, string> needTrackersSerialized)
 	{
 	}
 
 	[CalledBy(Type = typeof(TrustManager), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(TrustManager), Member = "RegisterUnlockableTracker")]
-	[Calls(Type = typeof(NPC_UnlockableTracker), Member = "Deserialize")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.KeyCollection.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(TrustManager), Member = "RegisterUnlockableTracker")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(NPC_UnlockableTracker), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 12)]
 	private void DeserializeUnlockableTrackers(Dictionary<string, string> unlockableTrackersSerialized)
 	{
 	}
@@ -462,17 +461,19 @@ public class TrustManager : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CalledBy(Type = typeof(TrustManager), Member = "Update")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	private void StrikeTimerReduce(string id, float numHours)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 46)]
-	[CallerCount(Count = 0)]
 	public TrustManager()
 	{
 	}

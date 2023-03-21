@@ -14,16 +14,17 @@ public class MoveAway : ActionTask<Transform>
 
 	public bool waitActionFinish;
 
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 11)]
 	protected override void OnUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
 	public MoveAway()
 	{
 		((ActionTask<>)(object)this)._002Ector();

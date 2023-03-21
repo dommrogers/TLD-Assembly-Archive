@@ -11,11 +11,11 @@ public class Action_PlayerHoursPlayed : ActionTask<GraphOwner>
 
 	public string belowThresholdEvent;
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	protected override void OnExecute()
 	{
 	}

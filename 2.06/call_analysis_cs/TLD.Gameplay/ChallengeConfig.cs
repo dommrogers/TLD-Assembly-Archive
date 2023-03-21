@@ -46,10 +46,10 @@ public class ChallengeConfig : SandboxBaseConfig
 
 	public override StartGearData StartGear
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(Object), Member = "op_Implicit")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -66,45 +66,42 @@ public class ChallengeConfig : SandboxBaseConfig
 		}
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ChallengeConfig), Member = "GetLockedCondition")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 0)]
 	public bool IsLocked()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "SetChallengeTextureAsync")]
+	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "UpdateUISelection")]
 	[CalledBy(Type = typeof(UtilsPanelChoose), Member = "RefreshDetails")]
-	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "UpdateUISelection")]
-	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "UpdateUISelection")]
-	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "Enable")]
 	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "SetChallengeTextureAsync")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ChallengeConfig), Member = "GetLockedCondition")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "Enable")]
+	[CallsUnknownMethods(Count = 1)]
 	public AssetReferenceTexture2D GetChallengeTexture()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ChallengeConfig), Member = "GetLockedCondition")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	public string GetSpriteName()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ChallengeConfig), Member = "GetLockedCondition")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ChallengeConfig), Member = "GetLockedCondition")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetHeaderText()
 	{
 		return null;
@@ -120,11 +117,11 @@ public class ChallengeConfig : SandboxBaseConfig
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ChallengeConfig), Member = "GetLockedCondition")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetInstructionText()
 	{
 		return null;
@@ -139,7 +136,7 @@ public class ChallengeConfig : SandboxBaseConfig
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 0)]
+	[CallerCount(Count = 2)]
 	public AssetReferenceTexture2D GetBadgeIcon()
 	{
 		return null;
@@ -152,60 +149,57 @@ public class ChallengeConfig : SandboxBaseConfig
 		return default(BestTimeStyle);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(ChallengeConfig), Member = "GetElapsedTimeInHours")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
 	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "UpdateProfileAfterChallengeComplete")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ChallengeConfig), Member = "GetElapsedTimeInHours")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public float MaybeUpdateBestTime()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedBadge")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedBadge")]
+	[CallsUnknownMethods(Count = 1)]
 	public void MaybeUnlockChallengeBadge()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "SetTimeSurvivedLabel")]
 	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "GetElapsedTimeInHours")]
 	[CalledBy(Type = typeof(ChallengeConfig), Member = "MaybeUpdateBestTime")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetElapsedTimeInHours()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void EndChallenge()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(ChallengeConfig), Member = "GetInstructionText")]
-	[CalledBy(Type = typeof(ChallengeConfig), Member = "GetStartDescriptionText")]
-	[CalledBy(Type = typeof(ChallengeConfig), Member = "GetHeaderText")]
-	[CalledBy(Type = typeof(ChallengeConfig), Member = "GetSpriteName")]
-	[CalledBy(Type = typeof(ChallengeConfig), Member = "GetChallengeTexture")]
-	[CalledBy(Type = typeof(ChallengeConfig), Member = "IsLocked")]
-	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "UpdateUISelection")]
-	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "UpdateUISelection")]
-	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "UpdateUISelection")]
 	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "ChallengeIsLocked")]
+	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "UpdateUISelection")]
+	[CalledBy(Type = typeof(ChallengeConfig), Member = "IsLocked")]
+	[CalledBy(Type = typeof(ChallengeConfig), Member = "GetChallengeTexture")]
+	[CalledBy(Type = typeof(ChallengeConfig), Member = "GetSpriteName")]
+	[CalledBy(Type = typeof(ChallengeConfig), Member = "GetHeaderText")]
+	[CalledBy(Type = typeof(ChallengeConfig), Member = "GetStartDescriptionText")]
+	[CalledBy(Type = typeof(ChallengeConfig), Member = "GetInstructionText")]
+	[CallerCount(Count = 11)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 11)]
-	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "UpdateUISelection")]
+	[CallsUnknownMethods(Count = 2)]
 	private ChallengeLockCondition GetLockedCondition()
 	{
 		return null;

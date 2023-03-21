@@ -14,46 +14,30 @@ internal sealed class MotionBlurRenderer : PostProcessEffectRenderer<MotionBlur>
 		Reconstruction
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public override DepthTextureMode GetCameraFlags()
 	{
 		return default(DepthTextureMode);
 	}
 
 	[CalledBy(Type = typeof(MotionBlurRenderer), Member = "Render")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(MotionBlurRenderer), Member = "Render")]
-	[CalledBy(Type = typeof(MotionBlurRenderer), Member = "Render")]
-	[CalledBy(Type = typeof(MotionBlurRenderer), Member = "Render")]
-	[CalledBy(Type = typeof(MotionBlurRenderer), Member = "Render")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(PostProcessRenderContext), Member = "GetDescriptor")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(MotionBlurRenderer), Member = "Render")]
+	[CallsUnknownMethods(Count = 2)]
 	private void CreateTemporaryRT(PostProcessRenderContext context, int nameID, int width, int height, RenderTextureFormat RTFormat)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(MotionBlurRenderer), Member = "CreateTemporaryRT")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(MotionBlurRenderer), Member = "CreateTemporaryRT")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(MotionBlurRenderer), Member = "CreateTemporaryRT")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(MotionBlurRenderer), Member = "CreateTemporaryRT")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(MotionBlurRenderer), Member = "CreateTemporaryRT")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
-	[Calls(Type = typeof(MotionBlurRenderer), Member = "CreateTemporaryRT")]
-	[CallsDeduplicatedMethods(Count = 14)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
+	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
+	[Calls(Type = typeof(MotionBlurRenderer), Member = "CreateTemporaryRT")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 10)]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}

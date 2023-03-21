@@ -9,9 +9,9 @@ public class Action_SetStatusBarLock : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -20,7 +20,7 @@ public class Action_SetStatusBarLock : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
@@ -28,7 +28,7 @@ public class Action_SetStatusBarLock : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
 	public Action_SetStatusBarLock()
 	{
 	}

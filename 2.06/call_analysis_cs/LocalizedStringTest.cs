@@ -9,8 +9,8 @@ public class LocalizedStringTest : MonoBehaviour
 
 	public string test_three;
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public LocalizedStringTest()
 	{
 	}

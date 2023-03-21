@@ -13,10 +13,11 @@ public class PackManagerDataProxy
 
 	public float m_PackMoraleModifier;
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(PackManager), Member = "Serialize")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public PackManagerDataProxy()
 	{
 	}

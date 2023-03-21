@@ -24,130 +24,121 @@ public class DetailedStatsView
 
 	private MonoBehaviour m_OwnerContext;
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildStatsView")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "ViewSandbox")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
-	[Calls(Type = typeof(DetailedStatsView), Member = "RefreshScrollBarPosition")]
-	[Calls(Type = typeof(ScrollList), Member = "RefreshAll")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(DetailedStatsView), Member = "Populate")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Utils), Member = "GetSliderForScrollbar")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "ViewSandbox")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "BuildStatsView")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "GetSliderForScrollbar")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotFromName")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(DetailedStatsView), Member = "Populate")]
+	[Calls(Type = typeof(ScrollList), Member = "RefreshAll")]
+	[Calls(Type = typeof(DetailedStatsView), Member = "RefreshScrollBarPosition")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public void Start(MonoBehaviour ownerContext)
 	{
 	}
 
-	[CalledBy(Type = typeof(DetailedStatsView), Member = "OnResetAllTimeStatsConfirmed")]
-	[CalledBy(Type = typeof(DetailedStatsView), Member = "Start")]
-	[CallerCount(Count = 2)]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(DetailedStatsView), Member = "Start")]
+	[CalledBy(Type = typeof(DetailedStatsView), Member = "OnResetAllTimeStatsConfirmed")]
+	[CallerCount(Count = 2)]
 	public void Populate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVerticalRightStick")]
 	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
 	[Calls(Type = typeof(DetailedStatsView), Member = "ScrollUp")]
 	[Calls(Type = typeof(DetailedStatsView), Member = "ScrollDown")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(DetailedStatsView), Member = "ScrollDown")]
 	[CalledBy(Type = typeof(DetailedStatsView), Member = "Start")]
 	[CalledBy(Type = typeof(DetailedStatsView), Member = "ScrollUp")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(DetailedStatsView), Member = "ScrollDown")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void RefreshScrollBarPosition()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarStatsChange")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
 	[Calls(Type = typeof(ScrollList), Member = "RefreshAll")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarStatsChange")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public void OnScrollBarPositionChanged()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsStats")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarStatsUp")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsStats")]
 	[CalledBy(Type = typeof(DetailedStatsView), Member = "Update")]
-	[Calls(Type = typeof(DetailedStatsView), Member = "RefreshScrollBarPosition")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[Calls(Type = typeof(ScrollList), Member = "Prev")]
+	[Calls(Type = typeof(DetailedStatsView), Member = "RefreshScrollBarPosition")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ScrollUp()
 	{
 	}
 
-	[CalledBy(Type = typeof(DetailedStatsView), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsStats")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "OnScrollbarStatsDown")]
-	[Calls(Type = typeof(DetailedStatsView), Member = "RefreshScrollBarPosition")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsStats")]
+	[CalledBy(Type = typeof(DetailedStatsView), Member = "Update")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[Calls(Type = typeof(ScrollList), Member = "Next")]
+	[Calls(Type = typeof(DetailedStatsView), Member = "RefreshScrollBarPosition")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void ScrollDown()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsStats")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnResetAllTimeStats")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsStats")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnResetAllTimeStats")]
-	[CallsUnknownMethods(Count = 8)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public void OnResetAllTimeStats()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(DetailedStatsView), Member = "Populate")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(StatContainer), Member = "Reset")]
-	[Calls(Type = typeof(StatContainer), Member = "Reset")]
-	[Calls(Type = typeof(StatContainer), Member = "Reset")]
-	[Calls(Type = typeof(StatContainer), Member = "Reset")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(StatContainer), Member = "Reset")]
+	[Calls(Type = typeof(DetailedStatsView), Member = "Populate")]
+	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public void OnResetAllTimeStatsConfirmed()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public DetailedStatsView()
 	{
 	}

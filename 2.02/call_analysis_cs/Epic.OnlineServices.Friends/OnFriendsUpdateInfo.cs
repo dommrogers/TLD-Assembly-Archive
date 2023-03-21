@@ -17,16 +17,16 @@ public class OnFriendsUpdateInfo : ICallbackInfo, ISettable
 
 	public object ClientData
 	{
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		private set
 		{
 		}
@@ -34,16 +34,16 @@ public class OnFriendsUpdateInfo : ICallbackInfo, ISettable
 
 	public EpicAccountId LocalUserId
 	{
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -53,14 +53,14 @@ public class OnFriendsUpdateInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -70,14 +70,14 @@ public class OnFriendsUpdateInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return default(FriendsStatus);
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
@@ -108,26 +108,26 @@ public class OnFriendsUpdateInfo : ICallbackInfo, ISettable
 	}
 
 	[CalledBy(Type = typeof(OnFriendsUpdateInfo), Member = "Set")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(OnFriendsUpdateInfoInternal), Member = "get_TargetUserId")]
-	[Calls(Type = typeof(OnFriendsUpdateInfoInternal), Member = "get_LocalUserId")]
-	[Calls(Type = typeof(OnFriendsUpdateInfoInternal), Member = "get_ClientData")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(OnFriendsUpdateInfoInternal), Member = "get_ClientData")]
+	[Calls(Type = typeof(OnFriendsUpdateInfoInternal), Member = "get_LocalUserId")]
+	[Calls(Type = typeof(OnFriendsUpdateInfoInternal), Member = "get_TargetUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	internal void Set(OnFriendsUpdateInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(OnFriendsUpdateInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public OnFriendsUpdateInfo()
 	{
 	}

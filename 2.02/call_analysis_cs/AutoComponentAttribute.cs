@@ -6,14 +6,14 @@ public class AutoComponentAttribute : Attribute
 {
 	private ComponentRequirement m_Requirement;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public AutoComponentAttribute(ComponentRequirement requirement)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public static void ApplyBinding(Component target)
 	{
 	}

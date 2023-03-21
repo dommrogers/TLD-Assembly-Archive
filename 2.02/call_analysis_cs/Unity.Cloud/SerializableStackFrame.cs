@@ -20,16 +20,16 @@ public class SerializableStackFrame
 
 	public string DeclaringType
 	{
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 101)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -42,7 +42,7 @@ public class SerializableStackFrame
 		[CallerCount(Count = 8)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -59,11 +59,11 @@ public class SerializableStackFrame
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		set
 		{
 		}
@@ -73,14 +73,14 @@ public class SerializableStackFrame
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
@@ -95,9 +95,9 @@ public class SerializableStackFrame
 		{
 			return null;
 		}
-		[CallerCount(Count = 20)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
@@ -105,31 +105,31 @@ public class SerializableStackFrame
 
 	public string MethodName
 	{
-		[CallerCount(Count = 15)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 23)]
 		set
 		{
 		}
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public SerializableStackFrame()
 	{
 	}
 
 	[CalledBy(Type = typeof(SerializableException), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 3)]
 	public SerializableStackFrame(StackFrame stackFrame)
 	{
 	}

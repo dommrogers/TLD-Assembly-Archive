@@ -19,10 +19,10 @@ internal struct JoinGameAcceptedCallbackInfoInternal : ICallbackInfoInternal
 
 	public object ClientData
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(JoinGameAcceptedCallbackInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -35,16 +35,16 @@ internal struct JoinGameAcceptedCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public string JoinInfo
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(JoinGameAcceptedCallbackInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -55,7 +55,8 @@ internal struct JoinGameAcceptedCallbackInfoInternal : ICallbackInfoInternal
 	{
 		[CalledBy(Type = typeof(JoinGameAcceptedCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -65,8 +66,9 @@ internal struct JoinGameAcceptedCallbackInfoInternal : ICallbackInfoInternal
 	public EpicAccountId TargetUserId
 	{
 		[CalledBy(Type = typeof(JoinGameAcceptedCallbackInfo), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -76,10 +78,10 @@ internal struct JoinGameAcceptedCallbackInfoInternal : ICallbackInfoInternal
 	public ulong UiEventId
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
-			return default(ulong);
+			return 0uL;
 		}
 	}
 }

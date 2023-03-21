@@ -23,18 +23,18 @@ internal struct SessionDetailsSettingsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(SessionDetailsSettings), Member = "Set")]
 		[CalledBy(Type = typeof(SessionDetailsSettings), Member = "Set")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 2)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(SessionDetailsSettingsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(SessionDetailsSettingsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(SessionDetailsSettingsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(SessionDetailsSettingsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -46,7 +46,7 @@ internal struct SessionDetailsSettingsInternal : ISettable, IDisposable
 		[CallerCount(Count = 7)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -63,13 +63,13 @@ internal struct SessionDetailsSettingsInternal : ISettable, IDisposable
 		[CallsDeduplicatedMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
+		[CalledBy(Type = typeof(SessionDetailsSettingsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(SessionDetailsSettingsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(SessionDetailsSettingsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(SessionDetailsSettingsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -77,8 +77,8 @@ internal struct SessionDetailsSettingsInternal : ISettable, IDisposable
 
 	public OnlineSessionPermissionLevel PermissionLevel
 	{
-		[CallerCount(Count = 8)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 8)]
 		get
 		{
 			return default(OnlineSessionPermissionLevel);
@@ -92,19 +92,19 @@ internal struct SessionDetailsSettingsInternal : ISettable, IDisposable
 
 	public bool InvitesAllowed
 	{
+		[CalledBy(Type = typeof(SessionDetailsSettings), Member = "Set")]
+		[CalledBy(Type = typeof(SessionDetailsSettings), Member = "Set")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(SessionDetailsSettings), Member = "Set")]
-		[CalledBy(Type = typeof(SessionDetailsSettings), Member = "Set")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CalledBy(Type = typeof(SessionDetailsSettingsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(SessionDetailsSettingsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -118,19 +118,19 @@ internal struct SessionDetailsSettingsInternal : ISettable, IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(SessionDetailsInfoInternal), Member = "set_Settings")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SessionDetailsSettingsInternal), Member = "set_BucketId")]
 	[Calls(Type = typeof(SessionDetailsSettingsInternal), Member = "set_AllowJoinInProgress")]
 	[Calls(Type = typeof(SessionDetailsSettingsInternal), Member = "set_InvitesAllowed")]
-	[CalledBy(Type = typeof(SessionDetailsInfoInternal), Member = "set_Settings")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

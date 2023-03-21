@@ -21,8 +21,8 @@ public class AchievementTitleAssociationPlugin
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void AchievementTitleAssociation_Dispose(IntPtr self);
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public AchievementTitleAssociationPlugin()
 	{
 	}

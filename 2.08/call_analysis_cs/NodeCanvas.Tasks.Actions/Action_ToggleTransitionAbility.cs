@@ -24,8 +24,8 @@ public class Action_ToggleTransitionAbility : ActionTask
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_ToggleTransitionAbility()
 	{
 	}

@@ -21,21 +21,21 @@ public class Action_TriggerAnimatedInteraction : ActionTask
 	}
 
 	[CalledBy(Type = typeof(Action_TriggerAnimatedInteraction), Member = "OnExecute")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_AnimatedInteraction")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_AnimatedInteraction")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallsUnknownMethods(Count = 22)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_AnimatedInteraction")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 18)]
 	private void DoWork()
 	{
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	private void OnWorkDone()
 	{
 	}

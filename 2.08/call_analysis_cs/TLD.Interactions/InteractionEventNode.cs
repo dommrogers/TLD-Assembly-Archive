@@ -14,26 +14,26 @@ public class InteractionEventNode : EventUnit<InteractionEventData>
 
 	protected override bool register
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public ValueOutput interaction
 	{
-		[CallerCount(Count = 2)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 3)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 7)]
+		[CallerCount(Count = 9)]
 		private set
 		{
 		}
@@ -43,46 +43,46 @@ public class InteractionEventNode : EventUnit<InteractionEventData>
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 1)]
+		[CallerCount(Count = 5)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 7)]
 		private set
 		{
 		}
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Unit), Member = "ControlOutput")]
 	[CalledBy(Type = typeof(TargetInteractionEventNode), Member = "Definition")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Unit), Member = "ControlOutput")]
+	[Calls(Type = typeof(Unit), Member = "ValueOutput")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void Definition()
 	{
 	}
 
-	[Calls(Type = typeof(EventHook), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EventHook), Member = ".ctor")]
 	public override EventHook GetHook(GraphReference reference)
 	{
 		return default(EventHook);
 	}
 
-	[Calls(Type = typeof(Flow), Member = "SetValue")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Flow), Member = "SetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void AssignArguments(Flow flow, InteractionEventData eventData)
 	{
 	}
 
-	[Calls(Type = typeof(Unit), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Unit), Member = ".ctor")]
 	public InteractionEventNode()
 	{
 		((EventUnit<TArgs>)(object)this)._002Ector();

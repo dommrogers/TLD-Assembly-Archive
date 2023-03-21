@@ -37,33 +37,29 @@ public class PlayableBehaviourSyncTransform : PlayableBehaviour
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayableBehaviourSyncTransform), Member = "GetParent")]
 	[Calls(Type = typeof(PlayableBehaviourSyncTransform), Member = "FindTransform")]
-	[Calls(Type = typeof(PlayableBehaviourSyncTransform), Member = "GetParent")]
-	[Calls(Type = typeof(PlayableBehaviourSyncTransform), Member = "FindTransform")]
 	public override void OnBehaviourPlay(Playable playable, FrameData info)
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayableBehaviourSyncTransform), Member = "OnBehaviourPlay")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[CalledBy(Type = typeof(PlayableBehaviourSyncTransform), Member = "OnBehaviourPlay")]
-	[Calls(Type = typeof(TLD_SpawnedAnimationTrack), Member = "GetSpawnedObject")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(TLD_SpawnedAnimationTrack), Member = "GetSpawnedObject")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private Transform GetParent(string missionObjectIdentifier, GameObject prefab, TLD_SpawnedAnimationTrack spawnedAnimationTrack)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(PlayableBehaviourSyncTransform), Member = "OnBehaviourPlay")]
-	[CalledBy(Type = typeof(PlayableBehaviourSyncTransform), Member = "OnBehaviourPlay")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "FindChildRecursive")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "FindChildRecursive")]
 	[Calls(Type = typeof(Utils), Member = "GetChildGameObjectWithNameContaining")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private Transform FindTransform(Transform parent, string transformName)
 	{
 		return null;

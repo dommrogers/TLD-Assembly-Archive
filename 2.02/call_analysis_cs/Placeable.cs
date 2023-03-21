@@ -15,85 +15,83 @@ public class Placeable : MonoBehaviour
 
 	public string m_PrefabName;
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(PlaceableManager), Member = "Add")]
-	[Calls(Type = typeof(ObjectGuid), Member = "Generate")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(ObjectGuid), Member = "Generate")]
+	[Calls(Type = typeof(PlaceableManager), Member = "Add")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(InteractionOverride), Member = "Serialize")]
-	[CallsUnknownMethods(Count = 25)]
 	[CalledBy(Type = typeof(PlaceableManager), Member = "SerializeAll")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CarryableBody), Member = "Serialize")]
+	[Calls(Type = typeof(InteractionOverride), Member = "Serialize")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 25)]
 	public string Serialize()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(Placeable), Member = "FindOrCreateAndDeserialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "EndsWith")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(ObjectGuidManager), Member = "UnRegisterGuid")]
 	[Calls(Type = typeof(ObjectGuidManager), Member = "RegisterGuid")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[CalledBy(Type = typeof(Placeable), Member = "FindOrCreateAndDeserialize")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 16)]
 	[CallsUnknownMethods(Count = 28)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 22)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	private void Deserialize(string guid, PlaceableSaveData data)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlaceableManager), Member = "Remove")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private void OnDestroy()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
 	[CalledBy(Type = typeof(PlaceableManager), Member = "DeserializeAll")]
-	[Calls(Type = typeof(Placeable), Member = "Deserialize")]
-	[Calls(Type = typeof(PlaceableManager), Member = "FindOrCreateCategoryRoot")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(ObjectGuidManager), Member = "Lookup")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Resources), Member = "Load")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(PlaceableManager), Member = "FindOrCreateCategoryRoot")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Placeable), Member = "Deserialize")]
+	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	public static Placeable FindOrCreateAndDeserialize(string guid, string serialized)
 	{
 		return null;

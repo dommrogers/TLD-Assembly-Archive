@@ -14,12 +14,12 @@ public abstract class StringKeyValuePair : IDisposable
 
 	public string Key
 	{
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(StringKeyValuePair), Member = "get_Ok")]
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CalledBy(Type = typeof(StringFullWrappedCacheMapEnumerable), Member = ".ctor")]
 		[CalledBy(Type = typeof(StringFullWrappedCacheMapEnumerable), Member = "MoveNext")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(StringKeyValuePair), Member = "get_Ok")]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -29,13 +29,13 @@ public abstract class StringKeyValuePair : IDisposable
 
 	public string Value
 	{
-		[CalledBy(Type = typeof(StringFullWrappedCacheMapEnumerable), Member = "MoveNext")]
-		[CallsUnknownMethods(Count = 7)]
 		[CalledBy(Type = typeof(StringFullWrappedCacheMapEnumerable), Member = ".ctor")]
-		[Calls(Type = typeof(StringKeyValuePair), Member = "get_Ok")]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[CalledBy(Type = typeof(StringFullWrappedCacheMapEnumerable), Member = "MoveNext")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(StringKeyValuePair), Member = "get_Ok")]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -44,23 +44,23 @@ public abstract class StringKeyValuePair : IDisposable
 
 	public bool Ok
 	{
-		[CalledBy(Type = typeof(StringFullWrappedCacheMapEnumerable), Member = ".ctor")]
-		[CalledBy(Type = typeof(StringKeyValuePair), Member = "get_Value")]
-		[CalledBy(Type = typeof(StringFullWrappedCacheMapEnumerable), Member = "MoveNext")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 4)]
 		[CalledBy(Type = typeof(StringKeyValuePair), Member = "get_Key")]
+		[CalledBy(Type = typeof(StringKeyValuePair), Member = "get_Value")]
+		[CalledBy(Type = typeof(StringFullWrappedCacheMapEnumerable), Member = ".ctor")]
+		[CalledBy(Type = typeof(StringFullWrappedCacheMapEnumerable), Member = "MoveNext")]
+		[CallerCount(Count = 4)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 52)]
+	[CallerCount(Count = 59)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -75,22 +75,16 @@ public abstract class StringKeyValuePair : IDisposable
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public void Dispose()
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract IntPtr GetKeyImpl(IntPtr self);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract IntPtr GetValueImpl(IntPtr self);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract void DisposeChildImpl();
 }

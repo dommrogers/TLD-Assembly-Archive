@@ -8,7 +8,7 @@ public class HuntedBearHPUpdate : MonoBehaviour
 	private MissionManagerBase m_MissionManager;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[CallsUnknownMethods(Count = 1)]
@@ -16,10 +16,10 @@ public class HuntedBearHPUpdate : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}

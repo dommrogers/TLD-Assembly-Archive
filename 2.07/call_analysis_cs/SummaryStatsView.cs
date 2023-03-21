@@ -25,10 +25,10 @@ public class SummaryStatsView : StatsView
 
 	private List<Panel_Stats_SummaryEntry> m_VisibleStatsPrefabs;
 
+	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildStatsView")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "ViewSandbox")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
-	[CallAnalysisFailed]
 	[CallerCount(Count = 3)]
 	public void Start()
 	{
@@ -52,9 +52,9 @@ public class SummaryStatsView : StatsView
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public SummaryStatsView()
 	{
 	}

@@ -15,7 +15,6 @@ public class CameraPathDelay : CameraPathPoint
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AnimationCurve), Member = "Linear")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Linear")]
 	[Calls(Type = typeof(CameraPathPoint), Member = ".ctor")]
 	public CameraPathDelay()
 	{

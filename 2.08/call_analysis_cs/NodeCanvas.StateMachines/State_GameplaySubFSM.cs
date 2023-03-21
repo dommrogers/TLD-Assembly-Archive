@@ -7,17 +7,19 @@ public class State_GameplaySubFSM : State_TLDBaseFSM
 {
 	public string gameplayDescription;
 
-	[Calls(Type = typeof(State_TLDBaseFSM), Member = "OnEnter")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(NCUtils), Member = "GetOrAddVar")]
+	[Calls(Type = typeof(Variable<>), Member = "set_value")]
+	[Calls(Type = typeof(State_TLDBaseFSM), Member = "OnEnter")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnEnter()
 	{
 	}
 
-	[Calls(Type = typeof(NestedFSMState), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NestedFSMState), Member = ".ctor")]
 	public State_GameplaySubFSM()
 	{
 	}

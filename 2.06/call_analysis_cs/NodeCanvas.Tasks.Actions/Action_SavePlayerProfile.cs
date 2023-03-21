@@ -12,8 +12,8 @@ public class Action_SavePlayerProfile : ActionTask
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_SavePlayerProfile()
 	{
 	}

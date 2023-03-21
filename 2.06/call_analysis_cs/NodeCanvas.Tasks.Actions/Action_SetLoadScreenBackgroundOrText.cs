@@ -12,12 +12,12 @@ public class Action_SetLoadScreenBackgroundOrText : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(Object), Member = "get_name")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(Object), Member = "get_name")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -25,18 +25,19 @@ public class Action_SetLoadScreenBackgroundOrText : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Loading), Member = "SetBackgroundData")]
 	[Calls(Type = typeof(LoadingScreenData), Member = "GetRandomNoRepeat")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_SetLoadScreenBackgroundOrText()
 	{
 	}

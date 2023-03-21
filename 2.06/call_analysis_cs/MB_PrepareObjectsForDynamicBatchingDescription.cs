@@ -4,14 +4,14 @@ using UnityEngine;
 public class MB_PrepareObjectsForDynamicBatchingDescription : MonoBehaviour
 {
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GUILayout), Member = "Label")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnGUI()
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public MB_PrepareObjectsForDynamicBatchingDescription()
 	{
 	}

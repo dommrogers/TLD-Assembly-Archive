@@ -23,7 +23,7 @@ public class NPCAfflictionSavedData
 	public string m_CauseLocId;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public NPCAfflictionSavedData()
 	{
 	}

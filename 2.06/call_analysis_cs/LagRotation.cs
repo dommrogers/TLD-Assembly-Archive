@@ -13,33 +13,32 @@ public class LagRotation : MonoBehaviour
 
 	private Quaternion mAbsolute;
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public void OnRepositionEnd()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(LagRotation), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CalledBy(Type = typeof(LagRotation), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	private void Interpolate(float delta)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
-	[CallerCount(Count = 0)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LagRotation), Member = "Interpolate")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}

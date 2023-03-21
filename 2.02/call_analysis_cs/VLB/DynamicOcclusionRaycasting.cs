@@ -21,22 +21,20 @@ public class DynamicOcclusionRaycasting : DynamicOcclusionAbstractBase
 		public bool hasCollider
 		{
 			[CallerCount(Count = 0)]
+			[Calls(Type = typeof(Object), Member = "op_Implicit")]
 			[CallsDeduplicatedMethods(Count = 1)]
-			[Calls(Type = typeof(Object), Member = "op_Implicit")]
-			[Calls(Type = typeof(Object), Member = "op_Implicit")]
 			get
 			{
-				return default(bool);
+				return false;
 			}
 		}
 
 		public string name
 		{
 			[CallerCount(Count = 0)]
-			[CallsDeduplicatedMethods(Count = 1)]
-			[Calls(Type = typeof(Object), Member = "op_Implicit")]
 			[Calls(Type = typeof(Object), Member = "op_Implicit")]
 			[Calls(Type = typeof(Object), Member = "get_name")]
+			[CallsDeduplicatedMethods(Count = 1)]
 			[CallsUnknownMethods(Count = 2)]
 			get
 			{
@@ -46,11 +44,10 @@ public class DynamicOcclusionRaycasting : DynamicOcclusionAbstractBase
 
 		public Bounds bounds
 		{
-			[CallsUnknownMethods(Count = 4)]
-			[Calls(Type = typeof(Object), Member = "op_Implicit")]
-			[CallsDeduplicatedMethods(Count = 2)]
 			[CallerCount(Count = 0)]
 			[Calls(Type = typeof(Object), Member = "op_Implicit")]
+			[CallsDeduplicatedMethods(Count = 2)]
+			[CallsUnknownMethods(Count = 4)]
 			get
 			{
 				return default(Bounds);
@@ -64,18 +61,17 @@ public class DynamicOcclusionRaycasting : DynamicOcclusionAbstractBase
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public HitResult(RaycastHit2D hit2D)
 		{
 		}
 
 		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "GetBestHit3D")]
 		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "GetBestHit2D")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Vector3), Member = "get_zero")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Vector3), Member = "get_zero")]
-		[CallerCount(Count = 2)]
 		public HitResult()
 		{
 		}
@@ -123,7 +119,7 @@ public class DynamicOcclusionRaycasting : DynamicOcclusionAbstractBase
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -136,14 +132,14 @@ public class DynamicOcclusionRaycasting : DynamicOcclusionAbstractBase
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 4)]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 19)]
 		private set
 		{
 		}
@@ -176,15 +172,15 @@ public class DynamicOcclusionRaycasting : DynamicOcclusionAbstractBase
 
 	private float raycastMaxDistance
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "GetBestHit2D")]
 		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "GetBestHit3D")]
-		[Calls(Type = typeof(VolumetricLightBeam), Member = "get_raycastDistance")]
+		[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "GetBestHit2D")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(VolumetricLightBeam), Member = "get_raycastDistance")]
 		[Calls(Type = typeof(VolumetricLightBeam), Member = "get_lossyScale")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -193,7 +189,7 @@ public class DynamicOcclusionRaycasting : DynamicOcclusionAbstractBase
 	[CallsUnknownMethods(Count = 6)]
 	public bool IsColliderHiddenByDynamicOccluder(Collider collider)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -211,8 +207,8 @@ public class DynamicOcclusionRaycasting : DynamicOcclusionAbstractBase
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(DynamicOcclusionAbstractBase), Member = "OnValidateProperties")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected override void OnValidateProperties()
 	{
 	}
@@ -222,28 +218,27 @@ public class DynamicOcclusionRaycasting : DynamicOcclusionAbstractBase
 	{
 	}
 
-	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "SetHit")]
-	[Calls(Type = typeof(DynamicOcclusionAbstractBase), Member = "OnDisable")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DynamicOcclusionAbstractBase), Member = "OnDisable")]
+	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "SetHit")]
 	protected override void OnDisable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(Random), Member = "Range")]
 	[Calls(Type = typeof(Random), Member = "Range")]
 	[Calls(Type = typeof(Quaternion), Member = "Euler")]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private Vector3 GetRandomVectorAround(Vector3 direction, float angleDiff)
 	{
 		return default(Vector3);
@@ -257,42 +252,35 @@ public class DynamicOcclusionRaycasting : DynamicOcclusionAbstractBase
 		return null;
 	}
 
-	[Calls(Type = typeof(HitResult), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 28)]
-	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
-	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
 	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "GetBestHit")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(Utils), Member = "GetMaxArea2D")]
+	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "get_raycastMaxDistance")]
+	[Calls(Type = typeof(Physics), Member = "RaycastAll")]
 	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(Physics), Member = "RaycastAll")]
 	[Calls(Type = typeof(Collider), Member = "get_bounds")]
+	[Calls(Type = typeof(Utils), Member = "GetMaxArea2D")]
+	[Calls(Type = typeof(HitResult), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 3)]
+	[CallsUnknownMethods(Count = 28)]
 	private HitResult GetBestHit3D(Vector3 rayPos, Vector3 rayDir)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
 	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "GetBestHit")]
-	[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
-	[Calls(Type = typeof(HitResult), Member = ".ctor")]
-	[Calls(Type = typeof(Utils), Member = "GetMaxArea2D")]
-	[Calls(Type = typeof(Collider2D), Member = "get_bounds")]
-	[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
-	[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
+	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "get_raycastMaxDistance")]
+	[Calls(Type = typeof(ContactFilter2D), Member = "CreateLegacyFilter")]
 	[Calls(Type = typeof(RaycastHit2D), Member = "get_collider")]
 	[Calls(Type = typeof(Collider2D), Member = "get_isTrigger")]
-	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
-	[Calls(Type = typeof(ContactFilter2D), Member = "CreateLegacyFilter")]
-	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "get_raycastMaxDistance")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Collider2D), Member = "get_bounds")]
+	[Calls(Type = typeof(Utils), Member = "GetMaxArea2D")]
+	[Calls(Type = typeof(HitResult), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 30)]
 	private HitResult GetBestHit2D(Vector3 rayPos, Vector3 rayDir)
 	{
@@ -302,69 +290,59 @@ public class DynamicOcclusionRaycasting : DynamicOcclusionAbstractBase
 	[CallerCount(Count = 0)]
 	private uint GetDirectionCount()
 	{
-		return default(uint);
+		return 0u;
 	}
 
+	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalRight")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalRight")]
 	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalUp")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalUp")]
-	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private Vector3 GetDirection(uint dirInt)
 	{
 		return default(Vector3);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
-	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool IsHitValid(HitResult hit, Vector3 forwardVec)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "IsHitValid")]
-	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "GetBestHit3D")]
-	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "GetBestHit2D")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_coneRadiusEnd")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "SetHit")]
-	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "GetDirection")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_raycastDistance")]
-	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "IsHitValid")]
-	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "GetBestHit3D")]
-	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "GetBestHit2D")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalForward")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Transform), Member = "get_localScale")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalForward")]
+	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "GetBestHit2D")]
+	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "GetBestHit3D")]
+	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "IsHitValid")]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_raycastDistance")]
+	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "GetDirection")]
+	[Calls(Type = typeof(Transform), Member = "get_localScale")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_coneRadiusEnd")]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "SetHit")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 12)]
 	protected override bool OnProcessOcclusion(ProcessOcclusionSource source)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
 	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnDisable")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "_INTERNAL_SetDynamicOcclusionCallback")]
-	[Calls(Type = typeof(Plane), Member = ".ctor")]
-	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "SetClippingPlane")]
-	[Calls(Type = typeof(Plane), Member = ".ctor")]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalForward")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnProcessOcclusion")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_raycastGlobalForward")]
+	[Calls(Type = typeof(Plane), Member = ".ctor")]
 	[Calls(Type = typeof(DynamicOcclusionRaycasting), Member = "SetClippingPlane")]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "_INTERNAL_SetDynamicOcclusionCallback")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetHit(HitResult hit)
 	{
 	}
@@ -376,21 +354,20 @@ public class DynamicOcclusionRaycasting : DynamicOcclusionAbstractBase
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
+	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "SetHit")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[Calls(Type = typeof(VolumetricLightBeam), Member = "_INTERNAL_SetDynamicOcclusionCallback")]
-	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "SetHit")]
-	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "SetHit")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 9)]
 	private void SetClippingPlane(Plane planeWS)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "_INTERNAL_SetDynamicOcclusionCallback")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "_INTERNAL_SetDynamicOcclusionCallback")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetClippingPlaneOff()
 	{
 	}
@@ -402,8 +379,8 @@ public class DynamicOcclusionRaycasting : DynamicOcclusionAbstractBase
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public DynamicOcclusionRaycasting()
 	{
 	}

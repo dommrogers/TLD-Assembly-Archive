@@ -6,16 +6,16 @@ public class BaseSimpleAudioComponent : MonoBehaviour
 	public bool m_IsGameObjectStatic;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public virtual void OnValidate()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsStatic()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

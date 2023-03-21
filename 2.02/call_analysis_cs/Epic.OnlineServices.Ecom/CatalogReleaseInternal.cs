@@ -21,18 +21,18 @@ internal struct CatalogReleaseInternal : ISettable, IDisposable
 
 	public string[] CompatibleAppIds
 	{
+		[CalledBy(Type = typeof(CatalogRelease), Member = "Set")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(CatalogRelease), Member = "Set")]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(CatalogReleaseInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CatalogReleaseInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(CatalogReleaseInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CatalogReleaseInternal), Member = "Set")]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -41,18 +41,18 @@ internal struct CatalogReleaseInternal : ISettable, IDisposable
 
 	public string[] CompatiblePlatforms
 	{
+		[CalledBy(Type = typeof(CatalogRelease), Member = "Set")]
+		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 1)]
-		[CalledBy(Type = typeof(CatalogRelease), Member = "Set")]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(CatalogReleaseInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CatalogReleaseInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(CatalogReleaseInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CatalogReleaseInternal), Member = "Set")]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -61,18 +61,18 @@ internal struct CatalogReleaseInternal : ISettable, IDisposable
 
 	public string ReleaseNote
 	{
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(CatalogRelease), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(CatalogReleaseInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(CatalogReleaseInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -88,18 +88,16 @@ internal struct CatalogReleaseInternal : ISettable, IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CatalogReleaseInternal), Member = "set_CompatibleAppIds")]
 	[Calls(Type = typeof(CatalogReleaseInternal), Member = "set_CompatiblePlatforms")]
 	[Calls(Type = typeof(CatalogReleaseInternal), Member = "set_ReleaseNote")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{

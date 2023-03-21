@@ -18,9 +18,9 @@ public class GetPODAsyncOp<T> : AsyncOp<GetPODAsyncOp<T>> where T : struct
 		((AsyncOp<>)(object)this)._002Ector();
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void Complete(uint result, T lresult)
 	{
 	}

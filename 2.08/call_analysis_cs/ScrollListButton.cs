@@ -9,11 +9,9 @@ public class ScrollListButton : MonoBehaviour
 
 	private int m_Index;
 
-	[CalledBy(Type = typeof(ScrollList), Member = "CreateFromList")]
-	[CalledBy(Type = typeof(ScrollList), Member = "CreateFromList")]
 	[CalledBy(Type = typeof(ScrollList), Member = "CreateList")]
+	[CalledBy(Type = typeof(ScrollList), Member = "CreateFromList")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(ScrollList), Member = "CreateList")]
 	public void SetCallback(GameObject callbackObject, string callbackString, int index)
 	{
 	}

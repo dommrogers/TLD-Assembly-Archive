@@ -13,7 +13,7 @@ public class FirstPersonWeapon : MonoBehaviour
 		public GameObject m_GameObject;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public FXInfo()
 		{
 		}
@@ -39,104 +39,96 @@ public class FirstPersonWeapon : MonoBehaviour
 
 	private GameObject m_ReloadBulletInstance;
 
+	[CalledBy(Type = typeof(FirstPersonWeapon), Member = "EnableRenderable")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CalledBy(Type = typeof(FirstPersonWeapon), Member = "EnableRenderable")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private void ResetFX()
 	{
 	}
 
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnShoulderProp")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "EnableEquipped")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "EnableEquipped")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "EnableEquipped")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetEquippedWeaponShoulderVisible")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetEquippedWeaponRightHandVisible")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetEquippedWeaponLeftHandVisible")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnLeftHandProp")]
-	[CalledBy(Type = typeof(MatchesItem), Member = "OnIgniteCompleteCallback")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(FirstPersonWeapon), Member = "ResetFX")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 10)]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnRightHandProp")]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnLeftHandProp")]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnShoulderProp")]
+	[CalledBy(Type = typeof(MatchesItem), Member = "OnIgniteCompleteCallback")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetEquippedWeaponLeftHandVisible")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetEquippedWeaponRightHandVisible")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetEquippedWeaponShoulderVisible")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "EnableEquipped")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(FirstPersonWeapon), Member = "ResetFX")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	public void EnableRenderable(bool enabled)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnShoulderProp")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnLeftHandProp")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnRightHandProp")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
-	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnLeftHandProp")]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnShoulderProp")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 16)]
 	public void SpawnReloadBulletPrefab(Transform parent)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "TryGetFXObject")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "TryGetFXObject")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "TryGetFXObject")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool TryGetFXObject(string name, out GameObject fxGameObject)
 	{
 		fxGameObject = null;
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "UpdateBulletsForReload")]
 	[CallerCount(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "UpdateBulletsForReload")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "UpdateBulletsForReload")]
 	[CallsUnknownMethods(Count = 7)]
 	public void UpdateBulletsForReload(int numToShow)
 	{
 	}
 
 	[CalledBy(Type = typeof(vp_FPSShooter), Member = "OnBulletLoaded")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(vp_FPSShooter), Member = "OnBulletLoaded")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
-	[CalledBy(Type = typeof(vp_FPSShooter), Member = "OnBulletLoaded")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void ShowNextLoadedBullet()
 	{
 	}
 
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "EnableReloadBulletInstance")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "EnableReloadBulletInstance")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "EnableReloadBulletInstance")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "EnableReloadBulletInstance")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void EnableReloadBulletInstance(bool enable)
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public FirstPersonWeapon()
 	{
 	}

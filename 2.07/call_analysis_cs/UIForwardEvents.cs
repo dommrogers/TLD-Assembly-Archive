@@ -44,50 +44,50 @@ public class UIForwardEvents : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDoubleClick()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnSelect(bool selected)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDrag(Vector2 delta)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private void OnDrop(GameObject go)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnSubmit()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnScroll(float delta)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public UIForwardEvents()
 	{
 	}

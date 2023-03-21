@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.OptionalContent;
 using UnityEngine;
@@ -49,12 +48,12 @@ public class BootUpdate : MonoBehaviour
 
 	private AsyncOperationHandle<SceneInstance> m_AsyncOp;
 
-	[Calls(Type = typeof(GameManager), Member = "InstantiateInputSystem")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "GetPressAnyKeyString")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "GetPressAnyKeyString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(GameManager), Member = "InstantiateInputSystem")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Start()
 	{
 	}
@@ -66,35 +65,34 @@ public class BootUpdate : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(InputManager), Member = "CheckForActiveController")]
 	[Calls(Type = typeof(InputManager), Member = "AnyButtonsOrKeysPressed")]
 	private bool HasPressedKey()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(InputSystemRewired), Member = "IsPS4Controller")]
-	[Calls(Type = typeof(InputManager), Member = "IsSteamControllerActive")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "IsPS4Controller")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 10)]
 	private void ShowOptionalContentErrorState()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryExaminePressed")]
 	[Calls(Type = typeof(Utils), Member = "OpenURL")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryExaminePressed")]
 	private void UpdateOptionalContentErrorState()
 	{
 	}
@@ -119,11 +117,11 @@ public class BootUpdate : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(OptionalContentManager), Member = "InitializeAsync")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
+	[Calls(Type = typeof(OptionalContentManager), Member = "InitializeAsync")]
+	[CallsUnknownMethods(Count = 1)]
 	private void SignInUser()
 	{
 	}
@@ -132,7 +130,7 @@ public class BootUpdate : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private bool IsUserSignedIn()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

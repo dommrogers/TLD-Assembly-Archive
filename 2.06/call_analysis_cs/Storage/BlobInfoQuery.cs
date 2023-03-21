@@ -23,7 +23,7 @@ public class BlobInfoQuery : IDisposable, IEnumerable<BlobInfo>, IEnumerable
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -34,7 +34,7 @@ public class BlobInfoQuery : IDisposable, IEnumerable<BlobInfo>, IEnumerable
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -55,13 +55,13 @@ public class BlobInfoQuery : IDisposable, IEnumerable<BlobInfo>, IEnumerable
 		{
 		}
 
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BlobInfoQuery), Member = "Name")]
 		[Calls(Type = typeof(BlobInfoQuery), Member = "TotalSize")]
 		[CallsUnknownMethods(Count = 6)]
-		[Calls(Type = typeof(BlobInfoQuery), Member = "Name")]
-		[CallerCount(Count = 0)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -89,29 +89,29 @@ public class BlobInfoQuery : IDisposable, IEnumerable<BlobInfo>, IEnumerable
 		}
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(_003CGetEnumerator_003Ed__3), Member = "MoveNext")]
 	[CalledBy(Type = typeof(BlobInfoQuery), Member = "get_Item")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public uint TotalSize(uint idx)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(_003CGetEnumerator_003Ed__3), Member = "MoveNext")]
 	[CalledBy(Type = typeof(BlobInfoQuery), Member = "get_Item")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public string Name(uint idx)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
 	[IteratorStateMachine(typeof(_003CGetEnumerator_003Ed__3))]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 6)]
 	public IEnumerator<BlobInfo> GetEnumerator()
 	{
 		return null;
@@ -125,9 +125,9 @@ public class BlobInfoQuery : IDisposable, IEnumerable<BlobInfo>, IEnumerable
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void Dispose()
 	{
 	}

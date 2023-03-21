@@ -1,102 +1,86 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
 public class ExampleCommands : MonoBehaviour
 {
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[CallsUnknownMethods(Count = 49)]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
+	[CallsUnknownMethods(Count = 49)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "UnRegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "UnRegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "UnRegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "UnRegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "UnRegisterCommand")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "UnRegisterCommand")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(uConsole), Member = "Log")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void EchoNothing()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "GetInt")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(uConsole), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void EchoInteger()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "Log")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(uConsole), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void EchoFloat()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[Calls(Type = typeof(uConsole), Member = "Log")]
-	[Calls(Type = typeof(uConsole), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void EchoBool()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(uConsole), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void EchoString()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(uConsole), Member = "Log")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(uConsole), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void EchoStrings()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(SceneManager), Member = "LoadScene")]
 	[Calls(Type = typeof(uConsole), Member = "TurnOff")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void LoadScene()
 	{
 	}

@@ -18,7 +18,7 @@ public class effectPreset
 	public Color32[] pixels;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public effectPreset()
 	{
 	}

@@ -21,8 +21,8 @@ public class CarryingCapacityBuff : MonoBehaviour
 		{
 		}
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public BuffValues()
 		{
 		}
@@ -36,8 +36,8 @@ public class CarryingCapacityBuff : MonoBehaviour
 
 	public string m_SpecialInventoryCloseSound;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public CarryingCapacityBuff()
 	{
 	}

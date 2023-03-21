@@ -15,7 +15,7 @@ public class AkExternalSourceInfo : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -32,7 +32,7 @@ public class AkExternalSourceInfo : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -45,15 +45,15 @@ public class AkExternalSourceInfo : IDisposable
 	public string szFile
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(AkSoundEngine), Member = "StringFromIntPtrOSString")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkExternalSourceInfo_szFile_set")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkExternalSourceInfo_szFile_set")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -62,12 +62,12 @@ public class AkExternalSourceInfo : IDisposable
 
 	public IntPtr pInMemory
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -84,11 +84,11 @@ public class AkExternalSourceInfo : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -101,7 +101,7 @@ public class AkExternalSourceInfo : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -117,17 +117,17 @@ public class AkExternalSourceInfo : IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(AkExternalSourceInfoArray), Member = "CloneIntoReferenceFromIntPtr")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(AkExternalSourceInfoArray), Member = "CloneIntoReferenceFromIntPtr")]
 	internal static IntPtr getCPtr(AkExternalSourceInfo obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal virtual void setCPtr(IntPtr cPtr)
 	{
 	}
@@ -140,9 +140,9 @@ public class AkExternalSourceInfo : IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
@@ -155,9 +155,9 @@ public class AkExternalSourceInfo : IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public AkExternalSourceInfo(IntPtr in_pInMemory, uint in_uiMemorySize, uint in_iExternalSrcCookie, uint in_idCodec)
 	{
 	}
@@ -176,25 +176,25 @@ public class AkExternalSourceInfo : IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkExternalSourceInfo_Clear")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkExternalSourceInfo_Clear")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Clear()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkExternalSourceInfo_Clone")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkExternalSourceInfo_Clone")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void Clone(AkExternalSourceInfo other)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkExternalSourceInfo_GetSizeOf")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkExternalSourceInfo_GetSizeOf")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static int GetSizeOf()
 	{
-		return default(int);
+		return 0;
 	}
 }

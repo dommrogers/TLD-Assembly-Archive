@@ -32,15 +32,15 @@ public struct UserReportScreenshot
 	public string DataIdentifier
 	{
 		[CompilerGenerated]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -53,7 +53,7 @@ public struct UserReportScreenshot
 		[CallerCount(Count = 7)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -65,33 +65,33 @@ public struct UserReportScreenshot
 
 	public int Height
 	{
-		[Calls(Type = typeof(Array), Member = "Reverse")]
 		[CalledBy(Type = typeof(UserReport), Member = "RemoveScreenshots")]
-		[Calls(Type = typeof(BitConverter), Member = "ToInt32")]
-		[Calls(Type = typeof(PngHelper), Member = "Slice")]
-		[Calls(Type = typeof(string), Member = "Substring")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(string), Member = "Substring")]
 		[Calls(Type = typeof(Convert), Member = "FromBase64String")]
+		[Calls(Type = typeof(PngHelper), Member = "Slice")]
+		[Calls(Type = typeof(Array), Member = "Reverse")]
+		[Calls(Type = typeof(BitConverter), Member = "ToInt32")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public int Width
 	{
-		[Calls(Type = typeof(BitConverter), Member = "ToInt32")]
+		[CalledBy(Type = typeof(UserReport), Member = "RemoveScreenshots")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(string), Member = "Substring")]
 		[Calls(Type = typeof(Convert), Member = "FromBase64String")]
 		[Calls(Type = typeof(PngHelper), Member = "Slice")]
 		[Calls(Type = typeof(Array), Member = "Reverse")]
-		[CalledBy(Type = typeof(UserReport), Member = "RemoveScreenshots")]
+		[Calls(Type = typeof(BitConverter), Member = "ToInt32")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 }

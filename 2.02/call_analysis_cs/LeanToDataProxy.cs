@@ -9,7 +9,7 @@ public class LeanToDataProxy
 	public float m_HoursRuined;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public LeanToDataProxy()
 	{
 	}

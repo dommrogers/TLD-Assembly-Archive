@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -15,17 +16,16 @@ public class ButtonLegendConfigure : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Rest), Member = "RefreshButtonConfigure")]
-	[CalledBy(Type = typeof(Panel_Badges), Member = "RefreshButtonConfigure")]
 	[CalledBy(Type = typeof(ButtonLegendConfigure), Member = "Update")]
-	[Calls(Type = typeof(ButtonLegend), Member = "ConfigureButtonIconSpriteName")]
+	[CalledBy(Type = typeof(Panel_Badges), Member = "RefreshButtonConfigure")]
+	[CalledBy(Type = typeof(Panel_Rest), Member = "RefreshButtonConfigure")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(ButtonLegendConfigure), Member = "RefreshReferences")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(ButtonLegend), Member = "ConfigureButtonIconSpriteName")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ConfigureButton()
 	{
 	}
@@ -37,18 +37,20 @@ public class ButtonLegendConfigure : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(ButtonLegendConfigure), Member = "Awake")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(ButtonLegendConfigure), Member = "ConfigureButton")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UIPanel), Member = "Find")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void RefreshReferences()
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public ButtonLegendConfigure()
 	{
 	}

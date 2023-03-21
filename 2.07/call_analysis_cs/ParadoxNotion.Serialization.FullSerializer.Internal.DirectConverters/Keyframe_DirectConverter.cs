@@ -7,24 +7,16 @@ namespace ParadoxNotion.Serialization.FullSerializer.Internal.DirectConverters;
 
 public class Keyframe_DirectConverter : fsDirectConverter<Keyframe>
 {
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[CallsUnknownMethods(Count = 5)]
 	protected override fsResult DoSerialize(Keyframe model, Dictionary<string, fsData> serialized)
 	{
 		return default(fsResult);
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsBaseConverter), Member = "DeserializeMember")]
 	[Calls(Type = typeof(fsResult), Member = "Merge")]
 	protected override fsResult DoDeserialize(Dictionary<string, fsData> data, ref Keyframe model)
 	{

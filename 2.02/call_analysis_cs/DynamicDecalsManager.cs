@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using SpecialEvents;
 using UnityEngine;
@@ -37,7 +35,7 @@ public class DynamicDecalsManager : MonoBehaviour
 		public static Comparison<StaticDecal> _003C_003E9__87_0;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
@@ -47,7 +45,7 @@ public class DynamicDecalsManager : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		internal int _003CPrepareCommandBuffer_003Eb__87_0(StaticDecal a, StaticDecal b)
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -56,16 +54,16 @@ public class DynamicDecalsManager : MonoBehaviour
 		public DecalProjectorInstance decalInstance;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass93_0()
 		{
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		internal bool _003CRemoveDynamicDecal_003Eb__0(PlacedSprayPaintDecalInfo decalInfo)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -74,7 +72,7 @@ public class DynamicDecalsManager : MonoBehaviour
 		public DecalProjectorInstance dpi;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass127_0()
 		{
 		}
@@ -83,7 +81,7 @@ public class DynamicDecalsManager : MonoBehaviour
 		[CallerCount(Count = 0)]
 		internal bool _003CReturnDecalProjectorInstanceToPool_003Eb__0(PlacedSprayPaintDecalInfo decalInfo)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -256,95 +254,88 @@ public class DynamicDecalsManager : MonoBehaviour
 
 	private int m_RenderedDecalCount;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "InitializeMaskRendering")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "InitializeScreenSpaceDecals")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "InstantiateDecalProjectorInstances")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "InstantiateDecalProjectorInstances")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "InitializeScreenSpaceDecals")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "InitializeMaskRendering")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 35)]
 	[CalledBy(Type = typeof(CameraGlobalRT), Member = "OnPreRender")]
-	[CalledBy(Type = typeof(CameraGlobalRT), Member = "OnPreRender")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentNullException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "RenderDynamicScreenSpaceDecals")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "RenderDynamicScreenSpaceDecals")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "RenderStaticScreenSpaceDecals")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "RenderMaskForDecal")]
-	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
-	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "InitializeCommandBuffers")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "ReturnDecalProjectorInstanceToPool")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "FadeDecal")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "FadeDecal")]
+	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "ReturnDecalProjectorInstanceToPool")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "InitializeCommandBuffers")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
+	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
+	[Calls(Type = typeof(Queue<>), Member = "Dequeue")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "RenderMaskForDecal")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "RenderStaticScreenSpaceDecals")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "RenderDynamicScreenSpaceDecals")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentNullException")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 35)]
 	public void PrepareCommandBuffer(Camera camera)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(ArrowItem), Member = "HandleCollisionWithObject")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddImpactDecal")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddImpactDecal")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public DecalProjectorInstance AddImpactDecal(ProjectileType projectileType, MaterialEffectType impactEffectType, Vector3 postion, Vector3 forward)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ImpactDecals), Member = "AddImpactDecal")]
 	[CalledBy(Type = typeof(vp_Bullet), Member = "SpawnImpactEffects")]
 	[CalledBy(Type = typeof(NoiseMakerEffects), Member = "LeaveScorchMark")]
 	[CalledBy(Type = typeof(ArrowItem), Member = "OnCollisionStay")]
 	[CalledBy(Type = typeof(StoneItem), Member = "PlayImpactEffects")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "AddImpactDecal")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ImpactDecals), Member = "AddImpactDecal")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public DecalProjectorInstance AddImpactDecal(ProjectileType projectileType, MaterialEffectType impactEffectType, DecalProjectorType projectorType, Vector3 postion, Vector3 forward, float yaw)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceDecal")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "CreateCustomDecal")]
-	[Calls(Type = typeof(ImpactDecal), Member = "GetImpactDecalVariationName")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ImpactDecals), Member = "GetImpactDecal")]
+	[Calls(Type = typeof(ImpactDecal), Member = "GetImpactDecalVariationName")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "CreateCustomDecal")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public DecalProjectorInstance AddSprayPaintDecal(ProjectileType projectileType, MaterialEffectType impactEffectType, Vector3 postion, Vector3 forward)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "CollectMasks")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddProjectorInstanceBoundsInfo")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "TrySpawnDecalObject")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddProjectorInstanceBoundsInfo")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "CollectMasks")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "TrySpawnDecalObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void PlaceDownSprayPaintDecal(DecalProjectorInstance instance)
 	{
 	}
@@ -354,124 +345,127 @@ public class DynamicDecalsManager : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
-	[CallsUnknownMethods(Count = 22)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "SuspendDecalPlacement")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CancelDecalPlacement")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CleanupDecalToRemove")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "EraseDecal")]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "PrepareCommandBuffer")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDecalFromMap")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "DeleteMarker")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "RemoveGlyph")]
-	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecalProjector")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 8)]
 	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Enable")]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "PrepareCommandBuffer")]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "EraseDecal")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "CleanupDecalToRemove")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "CancelDecalPlacement")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "SuspendDecalPlacement")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecalProjector")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAll")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDecalFromMap")]
+	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "RemoveGlyph")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 22)]
 	public void RemoveDynamicDecal(DecalProjectorInstance decalInstance)
 	{
 	}
 
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "AddDynamicDecalProjector")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Deserialize")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "PlaceDownSprayPaintDecal")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "AddDynamicDecalProjector")]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Deserialize")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "CalculateDecalTransform")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void TrySpawnDecalObject(DecalProjectorInstance decalInstance)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "TrySpawnDecalObject")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "CreateCustomDecal")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "CreateDecal")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "TrySpawnDecalObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void AddDynamicDecalProjector(DecalProjectorInstance decalInstance)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "FadeDecal")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "FadeDecal")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void RemoveDynamicDecalProjector(DecalProjectorInstance decalInstance)
 	{
 	}
 
-	[Conditional(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 39)]
 	private void CheckDynamicDecalNumbers()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void RemoveDynamicDecal(string guid)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "IsAlreadyPlacedInWorld")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public bool AreAnyPlacedDecalsOfType(ProjectileType projectileType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "RemoveDecal")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateMovement")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "IsLureActive")]
+	[CalledBy(Type = typeof(HUDNowhereToHide), Member = "Update")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "DoesWardGlyphExist")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "IsLureActive")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "GetWardTimeRemainingScale")]
-	[CalledBy(Type = typeof(HUDNowhereToHide), Member = "Update")]
-	[CalledBy(Type = typeof(HUDNowhereToHide), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateMovement")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "RemoveDecal")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(HUDNowhereToHide), Member = "Update")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public DecalProjectorInstance FindFirstDecalOfType(ProjectileType projectileType)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "ReturnDecalProjectorInstanceToPool")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Panel_SprayPaint), Member = "GetShapeLocNameID")]
 	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfCurrentScene")]
 	[Calls(Type = typeof(Panel_Map), Member = "RemoveMapElement")]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "ReturnDecalProjectorInstanceToPool")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void RemoveDecalFromMap(DecalProjectorInstance decalInstance)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Deserialize")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(DecalProjectorInstance), Member = "GetBounds")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "PlaceDownSprayPaintDecal")]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Deserialize")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(DecalProjectorInstance), Member = "GetBounds")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private void AddProjectorInstanceBoundsInfo(DecalProjectorInstance instance)
 	{
 	}
@@ -482,92 +476,89 @@ public class DynamicDecalsManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(RenderTexture), Member = "Release")]
-	[Calls(Type = typeof(RenderTexture), Member = "IsCreated")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(CommandBuffer), Member = "Dispose")]
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[Calls(Type = typeof(CommandBuffer), Member = "Dispose")]
-	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
-	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
+	[Calls(Type = typeof(CommandBuffer), Member = "Dispose")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(RenderTexture), Member = "IsCreated")]
+	[Calls(Type = typeof(RenderTexture), Member = "Release")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	public void OnDestroy()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Map), Member = "DoNearbyDetailsCheck")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddSurveyedVistaLocation")]
-	[Calls(Type = typeof(Panel_Map), Member = "AddDecalMapMarker")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(MapDetailUnlockParameters), Member = "GetRangeBoostFromHeightDelta")]
 	[Calls(Type = typeof(Physics), Member = "Linecast")]
 	[Calls(Type = typeof(Panel_SprayPaint), Member = "CanPlaceDecalOnMap")]
-	[Calls(Type = typeof(MapDetailUnlockParameters), Member = "GetRangeBoostFromHeightDelta")]
+	[Calls(Type = typeof(Panel_Map), Member = "AddDecalMapMarker")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void UnlockDecalMapMarkersNearPosition(MapDetailUnlockParameters parameters)
 	{
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "ShouldSaveDynamicDecal")]
-	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(DecalProjectorSaveList), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DecalProjectorSaveList), Member = ".ctor")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "ShouldSaveDynamicDecal")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 25)]
 	public static string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(qd_Decal), Member = "RefreshStaticDecal")]
 	[CalledBy(Type = typeof(qd_Decal), Member = "MaybeUpdateUvsFromDecalManager")]
-	[Calls(Type = typeof(UvList), Member = "GetUvs")]
-	[Calls(Type = typeof(Vector4), Member = "get_zero")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(qd_Decal), Member = "RefreshStaticDecal")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Vector4), Member = "get_zero")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UvList), Member = "HasUvs")]
+	[Calls(Type = typeof(UvList), Member = "GetUvs")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public bool TryGetStaticDecalUvs(string textureName, out Vector4 coordinates)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Vector4, @null>(ref coordinates) = null;
-		return default(bool);
+		coordinates = default(Vector4);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 24)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(PlayerManager), Member = "OnDecalDeserialized")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "TrySpawnDecalObject")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "CollectMasks")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Weather), Member = "IsBlizzard")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UvList), Member = "HasUvs")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "CreateDecal")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "CreateCustomDecal")]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddProjectorInstanceBoundsInfo")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "CreateDecal")]
-	[Calls(Type = typeof(UvList), Member = "HasUvs")]
-	[Calls(Type = typeof(Weather), Member = "IsBlizzard")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "CollectMasks")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "TrySpawnDecalObject")]
+	[Calls(Type = typeof(PlayerManager), Member = "OnDecalDeserialized")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 24)]
 	public static void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ClearAllDecals()
 	{
 	}
@@ -575,443 +566,417 @@ public class DynamicDecalsManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public int GetNumberOfRemainingPlaceableDecals()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Deserialize")]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "AddSprayPaintDecal")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(ImpactDecals), Member = "AddImpactDecal")]
 	[CalledBy(Type = typeof(ImpactDecals), Member = "AddSprayPaintDecal")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddDynamicDecalProjector")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveOldestNonPlacedDecal")]
-	[Calls(Type = typeof(ObjectGuidManager), Member = "GenerateNewGuidString")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "GetDecalProjectorInstanceFromPool")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(ImpactDecals), Member = "AddImpactDecal")]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "AddSprayPaintDecal")]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Deserialize")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveOldestNonPlacedDecal")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "GetDecalProjectorInstanceFromPool")]
+	[Calls(Type = typeof(ObjectGuidManager), Member = "GenerateNewGuidString")]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "ComputeDecalProjectorLifeTime")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddDynamicDecalProjector")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public DecalProjectorInstance CreateCustomDecal(string decalName, Vector3 pos, float yaw, Vector3 normal, Vector3 scale, DecalProjectorType projectorType, bool indoors, ProjectileType projectileType)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveStruggleBloodStain")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Deserialize")]
-	[CalledBy(Type = typeof(ImpactDecals), Member = "AddImpactDecal")]
-	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveBloodCluster")]
-	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveHarvestBloodStain")]
-	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveBloodStain")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddDynamicDecalProjector")]
 	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveBloodDrop")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "ComputeDecalProjectorLifeTime")]
-	[Calls(Type = typeof(ObjectGuidManager), Member = "GenerateNewGuidString")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "GetDecalProjectorInstanceFromPool")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveOldestNonPlacedDecal")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveBloodStain")]
+	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveStruggleBloodStain")]
+	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveHarvestBloodStain")]
+	[CalledBy(Type = typeof(BloodTrail), Member = "LeaveBloodCluster")]
+	[CalledBy(Type = typeof(ImpactDecals), Member = "AddImpactDecal")]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Deserialize")]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveOldestNonPlacedDecal")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "GetDecalProjectorInstanceFromPool")]
+	[Calls(Type = typeof(ObjectGuidManager), Member = "GenerateNewGuidString")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "ComputeDecalProjectorLifeTime")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddDynamicDecalProjector")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public DecalProjectorInstance CreateDecal(Vector3 pos, float yaw, Vector3 normal, int uvRectangleIndex, Vector3 scale, DecalProjectorType projectorType, bool indoors)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void AddStaticDecal(StaticDecal decal)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void RemoveStaticDecal(StaticDecal decal)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(BloodTrail), Member = "MaybeInitializeBloodDecalIndexes")]
 	[CalledBy(Type = typeof(ImpactDecals), Member = "AddImpactDecal")]
-	[CalledBy(Type = typeof(BloodTrail), Member = "MaybeInitializeBloodDecalIndexes")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(BloodTrail), Member = "MaybeInitializeBloodDecalIndexes")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CalledBy(Type = typeof(BloodTrail), Member = "MaybeInitializeBloodDecalIndexes")]
+	[CallsUnknownMethods(Count = 3)]
 	public int LookupUVRectangleIndex(string name)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool CanCreateFootPrintsOnMaterial(GameObject materialGameObject)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "SetWeatherStateAndBlendDirectly")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "SetWeatherStage")]
 	[CalledBy(Type = typeof(Wind), Member = "StartPhase")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "ComputeDecalProjectorLifeTime")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "SetWeatherStage")]
+	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "SetWeatherStateAndBlendDirectly")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "ComputeDecalProjectorLifeTime")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void UpdateDecalProjectorLifeTimes()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "CreateCustomDecal")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "CreateDecal")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "UpdateDecalProjectorLifeTimes")]
+	[CallerCount(Count = 3)]
 	private float ComputeDecalProjectorLifeTime(DecalProjectorType projectorType, bool indoors, ProjectileType decalShape = ProjectileType.Bullet)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "CreateDecal")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "CreateCustomDecal")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "FadeDecal")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "CreateDecal")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "FadeDecal")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void RemoveOldestNonPlacedDecal()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecalProjector")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "PrepareCommandBuffer")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RemoveOldestNonPlacedDecal")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecalProjector")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private void FadeDecal(int decalIdx)
 	{
 	}
 
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "GetDecalProjectorInstanceFromPool")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Start")]
-	[CallsUnknownMethods(Count = 8)]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "GetDecalProjectorInstanceFromPool")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void InstantiateDecalProjectorInstances(int n)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "GetIntersectedSprayPaintDecal")]
-	[Calls(Type = typeof(DecalProjectorInstance), Member = "GetBounds")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DecalProjectorInstance), Member = "GetBounds")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "GetIntersectedSprayPaintDecal")]
+	[CallsUnknownMethods(Count = 1)]
 	public DecalProjectorInstance GetIntersectedSprayPaintDecal(DecalProjectorInstance decalToTestAgainst)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 9)]
 	public DecalProjectorInstance GetIntersectedSprayPaintDecal(Ray ray, float maxDistance)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Bounds), Member = "Intersects")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "GetIntersectedSprayPaintDecal")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateOverlappingDecalInPlace")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Bounds), Member = "Intersects")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	private DecalProjectorInstance GetIntersectedSprayPaintDecal(Bounds boundsToTestAgainst)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private int GetDecalCount()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "CreateCustomDecal")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "CreateDecal")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "InstantiateDecalProjectorInstances")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "InstantiateDecalProjectorInstances")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private DecalProjectorInstance GetDecalProjectorInstanceFromPool()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 18)]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "PrepareCommandBuffer")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAll")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDecalFromMap")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 18)]
 	private void ReturnDecalProjectorInstanceToPool(DecalProjectorInstance dpi)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Serialize")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private static bool ShouldSaveDynamicDecal(DecalProjectorInstance dpi)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Start")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 12)]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Start")]
 	[CallsUnknownMethods(Count = 11)]
 	private void InitializeScreenSpaceDecals()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Format")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Start")]
-	[Calls(Type = typeof(Texture), Member = "set_filterMode")]
-	[Calls(Type = typeof(RenderTexture), Member = "set_antiAliasing")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 32)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[Calls(Type = typeof(Material), Member = ".ctor")]
-	[Calls(Type = typeof(Material), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Material), Member = ".ctor")]
+	[Calls(Type = typeof(Material), Member = "SetColor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(RenderTexture), Member = "GetCompatibleFormat")]
+	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(RenderTexture), Member = "set_antiAliasing")]
+	[Calls(Type = typeof(Texture), Member = "set_filterMode")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 32)]
 	private void InitializeMaskRendering()
 	{
 	}
 
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(Matrix4x4), Member = "TRS")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "CalculateDecalTransform")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Matrix4x4), Member = "TRS")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "CalculateDecalTransform")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "CalculateDecalTransform")]
+	[Calls(Type = typeof(Matrix4x4), Member = "TRS")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	private void OnDrawGizmos()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RenderDynamicDecal")]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "OnDrawGizmos")]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "OnDrawGizmos")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "TrySpawnDecalObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "OnDrawGizmos")]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RenderDynamicDecal")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 12)]
 	private void CalculateDecalTransform(DecalProjectorInstance decal, DecalProjectorMaskData mask, out Vector3 position, out Quaternion rotation, out Vector3 scale)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref position) = null;
-		System.Runtime.CompilerServices.Unsafe.As<Quaternion, @null>(ref rotation) = null;
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref scale) = null;
+		position = default(Vector3);
+		rotation = default(Quaternion);
+		scale = default(Vector3);
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "PrepareCommandBuffer")]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "PrepareCommandBuffer")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "RenderDynamicDecal")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "RenderDynamicDecal")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 14)]
 	private int RenderDynamicScreenSpaceDecals(Camera camera, List<DecalProjectorInstance> instances, int renderedDecalCount)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Utils), Member = "SetSHCoefficients")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalFloat")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalFloat")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalFloat")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalFloat")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RenderDynamicScreenSpaceDecals")]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RenderDynamicScreenSpaceDecals")]
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(LightmapSettings), Member = "get_lightProbes")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalFloat")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalFloat")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(UvList), Member = "GetUvs")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalFloat")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "CalculateDecalTransform")]
 	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
 	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
 	[Calls(Type = typeof(CommandBuffer), Member = "Blit")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
 	[Calls(Type = typeof(Matrix4x4), Member = "SetTRS")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
+	[Calls(Type = typeof(UvList), Member = "GetUvs")]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalFloat")]
+	[Calls(Type = typeof(LightmapSettings), Member = "get_lightProbes")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Utils), Member = "SetSHCoefficients")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
+	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 26)]
 	private void RenderDynamicDecal(DecalProjectorInstance decal, DecalProjectorMaskData maskData, RenderDecalParameters parameters, ref int renderedDecalCount)
 	{
 	}
 
-	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
-	[Calls(Type = typeof(CommandBuffer), Member = "Blit")]
-	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(DecalRenderBatch), Member = ".ctor")]
-	[Calls(Type = typeof(Matrix4x4), Member = "SetTRS")]
-	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloatArray")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVectorArray")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloatArray")]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMeshInstanced")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "PrepareCommandBuffer")]
-	[CallsUnknownMethods(Count = 59)]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Camera), Member = "get_fieldOfView")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(Vector3), Member = "get_forward")]
-	[Calls(Type = typeof(Material), Member = "SetInt")]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
 	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
 	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
 	[Calls(Type = typeof(CommandBuffer), Member = "Blit")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
 	[Calls(Type = typeof(Matrix4x4), Member = "SetTRS")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalFloat")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalFloat")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Material), Member = "SetInt")]
-	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
+	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
+	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(DecalRenderBatch), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloatArray")]
+	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVectorArray")]
+	[Calls(Type = typeof(CommandBuffer), Member = "DrawMeshInstanced")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 59)]
 	private int RenderStaticScreenSpaceDecals(Camera camera, List<StaticDecal> instances, int renderedDecalCount)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "RenderMaskForDecal")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Queue<>), Member = "Dequeue")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "RenderMaskForDecal")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void RenderMasks()
 	{
 	}
 
-	[Calls(Type = typeof(LODGroup), Member = "GetLODs")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Renderer), Member = "get_shadowCastingMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(MeshFilter), Member = "get_sharedMesh")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Mesh), Member = "get_subMeshCount")]
-	[Calls(Type = typeof(Transform), Member = "get_localToWorldMatrix")]
-	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
-	[CallsUnknownMethods(Count = 74)]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
-	[Calls(Type = typeof(CommandBuffer), Member = "ClearRenderTarget")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "PrepareCommandBuffer")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RenderMasks")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "IncrementMaskTextureIndex")]
-	[Calls(Type = typeof(LODGroup), Member = "get_lodCount")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Matrix4x4), Member = "Ortho")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 17)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
 	[Calls(Type = typeof(CommandBuffer), Member = "ClearRenderTarget")]
 	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
 	[Calls(Type = typeof(Vector3), Member = "get_up")]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 	[Calls(Type = typeof(Matrix4x4), Member = "LookAt")]
-	[Calls(Type = typeof(Matrix4x4), Member = "op_Multiply")]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
 	[Calls(Type = typeof(Matrix4x4), Member = "TRS")]
 	[Calls(Type = typeof(Matrix4x4), Member = "get_inverse")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(Matrix4x4), Member = "op_Multiply")]
+	[Calls(Type = typeof(Matrix4x4), Member = "Ortho")]
+	[Calls(Type = typeof(LODGroup), Member = "get_lodCount")]
+	[Calls(Type = typeof(LODGroup), Member = "GetLODs")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(Renderer), Member = "get_shadowCastingMode")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(MeshFilter), Member = "get_sharedMesh")]
+	[Calls(Type = typeof(Mesh), Member = "get_subMeshCount")]
+	[Calls(Type = typeof(Transform), Member = "get_localToWorldMatrix")]
+	[Calls(Type = typeof(CommandBuffer), Member = "DrawMesh")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "IncrementMaskTextureIndex")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 74)]
 	private void RenderMaskForDecal(DecalProjectorInstance decal)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RenderMaskForDecal")]
+	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void IncrementMaskTextureIndex()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 36)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Deserialize")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "PlaceDownSprayPaintDecal")]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Deserialize")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetLayerMaskForPlacementPosition")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInParent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Transform), Member = "get_worldToLocalMatrix")]
 	[Calls(Type = typeof(Matrix4x4), Member = "GetRotation")]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Transform), Member = "get_worldToLocalMatrix")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetLayerMaskForPlacementPosition")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
-	[CallsDeduplicatedMethods(Count = 12)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Queue<>), Member = "Enqueue")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 36)]
 	private void CollectMasks(DecalProjectorInstance decal)
 	{
 	}
@@ -1022,28 +987,25 @@ public class DynamicDecalsManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 22)]
-	[CalledBy(Type = typeof(SnowPatchManager), Member = "Start")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "PrepareCommandBuffer")]
-	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CalledBy(Type = typeof(SnowPatchManager), Member = "Start")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 22)]
 	public void InitializeCommandBuffers()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 95)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 95)]
 	public DynamicDecalsManager()
 	{
 	}

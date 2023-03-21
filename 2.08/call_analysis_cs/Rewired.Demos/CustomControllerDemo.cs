@@ -35,22 +35,19 @@ public class CustomControllerDemo : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(ControllerWithAxes), Member = "get_axisCount")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(Controller), Member = "get_buttonCount")]
 	[CalledBy(Type = typeof(CustomControllerDemo), Member = "Update")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(Player.ControllerHelper.BnvLPSemkwrCfKYYABiuIneeJhx), Member = "eFsFDEPBoBwkCtkCNRQkVwhlOQ")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
-	[Calls(Type = typeof(ReInput), Member = "add_InputSourceUpdateEvent")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReInput), Member = "add_InputSourceUpdateEvent")]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+	[Calls(TypeFullName = "Rewired.Player.ControllerHelper.BnvLPSemkwrCfKYYABiuIneeJhx", Member = "eFsFDEPBoBwkCtkCNRQkVwhlOQ")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(Controller), Member = "get_buttonCount")]
+	[Calls(Type = typeof(ControllerWithAxes), Member = "get_axisCount")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private void Initialize()
 	{
 	}
@@ -61,10 +58,10 @@ public class CustomControllerDemo : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(CustomControllerDemo), Member = "SetControllerButtonValues")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CustomControllerDemo), Member = "SetControllerAxisValues")]
+	[Calls(Type = typeof(CustomControllerDemo), Member = "SetControllerButtonValues")]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnInputSourceUpdate()
 	{
 	}
@@ -82,23 +79,23 @@ public class CustomControllerDemo : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(CustomControllerDemo), Member = "OnInputSourceUpdate")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Logger), Member = "LogWarning")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(TypeFullName = "Rewired.Logger", Member = "LogWarning")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetControllerAxisValues()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Logger), Member = "LogWarning")]
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
 	[CalledBy(Type = typeof(CustomControllerDemo), Member = "OnInputSourceUpdate")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(TypeFullName = "Rewired.Logger", Member = "LogWarning")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetControllerButtonValues()
 	{
 	}
@@ -107,14 +104,14 @@ public class CustomControllerDemo : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	private float GetAxisValueCallback(int index)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool GetButtonValueCallback(int index)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

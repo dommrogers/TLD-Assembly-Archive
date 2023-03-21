@@ -9,20 +9,20 @@ public class Action_SetStatusBarLock : ActionTask
 
 	protected override string info
 	{
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

@@ -12,7 +12,7 @@ public class BrowseCatalogResult : WrappedCachedList<CatalogItem>
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
@@ -20,13 +20,13 @@ public class BrowseCatalogResult : WrappedCachedList<CatalogItem>
 	[CallsDeduplicatedMethods(Count = 1)]
 	public BrowseCatalogResult(IntPtr self)
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
 	public BrowseCatalogResult()
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
@@ -36,9 +36,9 @@ public class BrowseCatalogResult : WrappedCachedList<CatalogItem>
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
-	[CallerCount(Count = 0)]
 	protected override CatalogItem CreateIthElement(int i)
 	{
 		return null;

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Gear;
+using TLD.SaveState;
 using TLD.UI;
 using TLD.UI.Generics;
 using TLD.UI.Notifications;
@@ -305,24 +306,21 @@ public class Panel_Inventory : Panel_AutoReferenced, INotificationHandler
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "ScrollToBottom")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "ScrollToBottom")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "SelectLastSelectedGearItem")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "OnDrop")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "RefreshTable")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "ScrollDown")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
 		[CalledBy(Type = typeof(InventoryGridItem), Member = "OnClick")]
-		[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
-		[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
-		[CallerCount(Count = 12)]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "ScrollDown")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "RefreshTable")]
 		[CalledBy(Type = typeof(Panel_Inventory), Member = "SelectGridItem")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "OnDrop")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "SelectLastSelectedGearItem")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "ScrollToBottom")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
+		[CallerCount(Count = 12)]
+		[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
@@ -333,23 +331,22 @@ public class Panel_Inventory : Panel_AutoReferenced, INotificationHandler
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "OnDrop")]
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "ScrollToBottom")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "ScrollToBottom")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "SelectLastSelectedGearItem")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "OnSortChange")]
-		[CallerCount(Count = 12)]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "ScrollUp")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "ScrollDown")]
-		[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
 		[CalledBy(Type = typeof(Panel_Inventory), Member = "Initialize")]
-		[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "ScrollDown")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "ScrollUp")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
 		[CalledBy(Type = typeof(Panel_Inventory), Member = "OnFilterChange")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "OnSortChange")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "OnDrop")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "SelectLastSelectedGearItem")]
+		[CalledBy(Type = typeof(Panel_Inventory), Member = "ScrollToBottom")]
+		[CallerCount(Count = 12)]
+		[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
@@ -357,10 +354,10 @@ public class Panel_Inventory : Panel_AutoReferenced, INotificationHandler
 
 	public event Action<string, NotificationFlagInfo> m_ItemSelected
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 2)]
 		add
 		{
 		}
@@ -373,319 +370,276 @@ public class Panel_Inventory : Panel_AutoReferenced, INotificationHandler
 		}
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "OnSortChange")]
+	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "InstantiateInventoryTableItems")]
-	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "InitQuickSelect")]
-	[CallsUnknownMethods(Count = 16)]
 	[Calls(Type = typeof(Panel_Inventory), Member = "InstantiateItemDescriptionPage")]
-	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "InitQuickSelect")]
 	[CallsDeduplicatedMethods(Count = 13)]
-	[Calls(Type = typeof(Panel_Inventory), Member = "OnSortChange")]
+	[CallsUnknownMethods(Count = 16)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_SelectedItemIndex")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "Navigate")]
-	[Calls(Type = typeof(Utils), Member = "GetMovementPressed")]
-	[Calls(Type = typeof(Input), Member = "GetMouseButtonDown")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "FilterHasNoItems")]
-	[Calls(Type = typeof(Input), Member = "GetMouseButtonDown")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "RefreshTable")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateScrollbarThumbSize")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "DeselectAllItems")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "MaybeShowNotificationFlagForNewInventoryEntry")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateScrollbarThumbSize")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventorySortPressed")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "OnSortChange")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateFilterNavigation")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateButtonTriggers")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateButtonStates")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "RefreshFilterIconColors")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "FilterHasNoItems")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Input), Member = "GetMouseButtonDown")]
+	[Calls(Type = typeof(Utils), Member = "GetMovementPressed")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "Navigate")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_SelectedItemIndex")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "RefreshTable")]
+	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "DeselectAllItems")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateScrollbarThumbSize")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "MaybeShowNotificationFlagForNewInventoryEntry")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
 	[Calls(Type = typeof(ItemDescriptionPage), Member = "UpdateButtons")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "ExitInterface")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "FilterHasNoItems")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 14)]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "RefreshFilterIconColors")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateButtonTriggers")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateFilterNavigation")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "OnSortChange")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateButtonStates")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventorySortPressed")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	private void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(InputManager), Member = "GetInventorySortPressed")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "OnSortChange")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateSortNavigation()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Inventory), Member = "OnFilterChange")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "OnFilterChange")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateFilterNavigation()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "OnPlace")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "OnDrop")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "OnBack")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonUnpressed")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "OnDrop")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryDropPressed")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "OnEquip")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "OnExamine")]
-	[Calls(Type = typeof(InputManager), Member = "HasContext")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "OnAddToSatchel")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(InputManager), Member = "GetInventoryEquipPressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetInventoryExaminePressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryAddToSatchelPressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetOpenActionsPanelPressed")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetOpenActionsPanelPressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetAltFirePressed")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "OnClothingNav")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(InputManager), Member = "GetFirePressed")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "OnCraftingNav")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryAddToSatchelPressed")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "OnAddToSatchel")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "OnBack")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "OnExamine")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "OnEquip")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryDropPressed")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "OnDrop")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonUnpressed")]
+	[Calls(Type = typeof(InputManager), Member = "HasContext")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "OnPlace")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateButtonTriggers()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "GetMovementPressed")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "GetMovementPressed")]
 	private void MaybeFlagMovmentPressedOnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "GetMovementPressed")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "GetMovementPressed")]
 	private bool ShouldIgnoreNavigationInput()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsUnknownMethods(Count = 19)]
+	[CalledBy(Type = typeof(Panel_Container), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "Update")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "Update")]
-	[Calls(Type = typeof(InputManager), Member = "GetMouseButtonDown")]
-	[Calls(Type = typeof(InputManager), Member = "GetMouseButtonDown")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[Calls(Type = typeof(InputManager), Member = "GetAxisScrollWheel")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(InputManager), Member = "GetMouseButtonDown")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 19)]
 	public static bool Navigate(MonoBehaviour context, ref int refSelectedIndex, ref int refFirstItemIndex, int itemCount, int tableLength, int numColumns)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	private int ClampIndexToFilteredItemsCount(int index)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_SelectedItemIndex")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_SelectedItemIndex")]
 	[CallsUnknownMethods(Count = 1)]
 	public void ScrollDown()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
 	public void ScrollUp()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 3)]
 	private string GetRefuelButtonText(GearItem gi)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(ItemDescriptionPage), Member = "GetExamineButtonLocalizationID")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(GamepadButtonSprite), Member = "UpdateSpriteForActiveController")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnEquip")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(ItemDescriptionPage), Member = "CanExamine")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateSortLabels")]
-	[Calls(Type = typeof(ItemDescriptionPage), Member = "GetEquipButtonLocalizationId")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(ItemDescriptionPage), Member = "GetEquipButtonLocalizationId")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "CanBeAddedToSatchel")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ItemDescriptionPage), Member = "CanExamine")]
+	[Calls(Type = typeof(ItemDescriptionPage), Member = "GetExamineButtonLocalizationID")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(Type = typeof(GamepadButtonSprite), Member = "UpdateSpriteForActiveController")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateButtonStates()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnSmashComplete")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnFoodOpeningComplete")]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairFinished")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateGearStatsBlock")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(Encumber), Member = "GetEffectiveCarryCapacityKG")]
-	[Calls(Type = typeof(Inventory), Member = "GetExtraWeightKG")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Encumber), Member = "GetPlayerCarryCapacityString")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_SelectedItemIndex")]
-	[Calls(Type = typeof(InventoryGridItem), Member = "Refresh")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairFinished")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnFoodOpeningComplete")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnSmashComplete")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(InventoryGridItem), Member = "Refresh")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_SelectedItemIndex")]
+	[Calls(Type = typeof(Encumber), Member = "GetPlayerCarryCapacityString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Inventory), Member = "GetExtraWeightKG")]
+	[Calls(Type = typeof(Encumber), Member = "GetEffectiveCarryCapacityKG")]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateGearStatsBlock")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 5)]
 	public void RefreshTable()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public override void Enable(bool enable)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateButtonStates")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallerCount(Count = 25)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetAllSpecialCarryingCapacityBuffItems")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "SelectLastSelectedGearItem")]
+	[Calls(Type = typeof(Inventory), Member = "Update")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "EnableNavigationTabs")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "DeselectAllItems")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "OnCancel")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(Utils), Member = "GetMovementPressed")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(GameAudioManager), Member = "CanPlaySpecialUIEntrySound")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetAllSpecialCarryingCapacityBuffItems")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "RefreshTable")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateButtonStates")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateSortLabels")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateScrollbarThumbSize")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "RefreshBackpackDisplay")]
 	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
 	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
 	[Calls(Type = typeof(GameManager), Member = "MaybeForceGC")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "ShouldEnterSectionNav")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "EnterSectionNav")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 32)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateScrollbarThumbSize")]
-	[Calls(Type = typeof(GameAudioManager), Member = "CanPlaySpecialUIEntrySound")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallerCount(Count = 25)]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "SelectLastSelectedGearItem")]
-	[Calls(Type = typeof(Inventory), Member = "Update")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "EnableNavigationTabs")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "DeselectAllItems")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "OnCancel")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "EnableNavigationTabs")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(Utils), Member = "GetMovementPressed")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	public void Enable(bool enable, bool resetFilter = true)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 12)]
 	public void ResetNotificationsData()
 	{
 	}
@@ -706,13 +660,13 @@ public class Panel_Inventory : Panel_AutoReferenced, INotificationHandler
 	[CallsDeduplicatedMethods(Count = 1)]
 	public override bool IsEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsPausedAndHidden()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -721,51 +675,54 @@ public class Panel_Inventory : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnStatus()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "EnableStatsView")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnableStatsView")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnLog()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonTriggers")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonTriggers")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnClothingNav()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnFirstAidNav()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
@@ -775,43 +732,44 @@ public class Panel_Inventory : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonTriggers")]
-	[Calls(Type = typeof(Panel_Crafting), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[Calls(Type = typeof(Panel_Crafting), Member = "Enable")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnCraftingNav()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnMissionsNav()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnMapNav()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[CallsUnknownMethods(Count = 4)]
-	[CallerCount(Count = 0)]
 	public void OnScrollbarChange()
 	{
 	}
@@ -823,172 +781,147 @@ public class Panel_Inventory : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
-	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "ResetFilter")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateFilterNavigation")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "ResetFilter")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
+	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
+	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnFilterChange(UIButton filterButtonClicked)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
-	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
-	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateSortNavigation")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Initialize")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowKeyNotFoundException")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateSortNavigation")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UIButton), Member = "set_normalSprite")]
 	[Calls(Type = typeof(UIButtonColor), Member = "ResetDefaultColor")]
-	[Calls(Type = typeof(UIButton), Member = "set_normalSprite")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
+	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowKeyNotFoundException")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnSortChange(UIButton sortButtonClicked)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool AllowUseAtZeroHP(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonTriggers")]
-	[CalledBy(Type = typeof(WeaponPickerGridItem), Member = "DoubleClick")]
 	[CalledBy(Type = typeof(InventoryGridItem), Member = "DoubleClick")]
-	[Calls(Type = typeof(BodyCarry), Member = "ShowError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateButtonStates")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "ExitInterface")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(ItemDescriptionPage), Member = "GetEquipButtonLocalizationId")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(WeaponPickerGridItem), Member = "DoubleClick")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonTriggers")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
+	[Calls(Type = typeof(ItemDescriptionPage), Member = "GetEquipButtonLocalizationId")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "ExitInterface")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateButtonStates")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(BodyCarry), Member = "ShowError")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnEquip()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonTriggers")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
+	[Calls(Type = typeof(ItemDescriptionPage), Member = "CanExamine")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "Enable")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "HasNoHarvestingTool")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CarcassTooFrozenToHarvestBareHands")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DisplayCarcassToFrozenMessage")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CarcassTooFrozenToHarvestBareHands")]
 	[Calls(Type = typeof(BodyCarry), Member = "ShowError")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "HasNoHarvestingTool")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonTriggers")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(ItemDescriptionPage), Member = "CanExamine")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "Enable")]
-	[CallerCount(Count = 1)]
 	public void OnExamine()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnDrop")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnDrop")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void PauseAndHide()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
-	[Calls(Type = typeof(GearItem), Member = "Drop")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonTriggers")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_SelectedItemIndex")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "SelectLastSelectedGearItem")]
-	[Calls(Type = typeof(Inventory), Member = "Update")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonTriggers")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(GearItem), Member = "Drop")]
-	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
 	[Calls(Type = typeof(ItemDescriptionPage), Member = "CanDrop")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "ItemPassesFilter")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "PauseAndHide")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "PauseAndHide")]
-	[Calls(Type = typeof(Panel_PickWater), Member = "SetWaterSupplyForDrop")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_PickUnits), Member = "SetGearForDrop")]
+	[Calls(Type = typeof(Panel_PickWater), Member = "SetWaterSupplyForDrop")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(GearItem), Member = "Drop")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_SelectedItemIndex")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "SelectLastSelectedGearItem")]
+	[Calls(Type = typeof(Inventory), Member = "Update")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public void OnDrop()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonTriggers")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetDefaultPlacementDistance")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(ItemDescriptionPage), Member = "CanDrop")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
+	[Calls(Type = typeof(ItemDescriptionPage), Member = "CanDrop")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetDefaultPlacementDistance")]
+	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public void OnPlace()
 	{
 	}
@@ -998,32 +931,29 @@ public class Panel_Inventory : Panel_AutoReferenced, INotificationHandler
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	public bool IsSelected(GearItem item)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(PlayerManager), Member = "DeductLiquidFromInventory")]
+	[Calls(Type = typeof(KeroseneLampItem), Member = "AddFuel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "AddFuel")]
-	[Calls(Type = typeof(PlayerManager), Member = "DeductLiquidFromInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void OnRefuel()
 	{
 	}
@@ -1034,43 +964,45 @@ public class Panel_Inventory : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnHarvest()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnRepair()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(InputManager), Member = "DisableActiveSubMenu")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnBack")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnEquip")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnEquip")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnBack")]
+	[CalledBy(Type = typeof(InputManager), Member = "DisableActiveSubMenu")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ExitInterface(bool restoreItemInHands)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "ItemPassesFilter")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(float), Member = "ToString")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool IgnoreWaterSupplyItem(WaterSupply ws)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1078,116 +1010,119 @@ public class Panel_Inventory : Panel_AutoReferenced, INotificationHandler
 	[CallsUnknownMethods(Count = 1)]
 	private bool IsPausedFlare(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnDrop")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "FilterHasNoItems")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "IgnoreWaterSupplyItem")]
 	[Calls(Type = typeof(GearItem), Member = "IsGearType")]
 	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "FilterHasNoItems")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnDrop")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "IgnoreWaterSupplyItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	private bool ItemPassesFilter(GearItem pi, string filterName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Panel_Inventory), Member = "ExitInterface")]
-	[CalledBy(Type = typeof(InputManager), Member = "MaybeClosePanelDueToHotkey")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonTriggers")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
+	[CalledBy(Type = typeof(InputManager), Member = "MaybeClosePanelDueToHotkey")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "EnterSectionNav")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuClose")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(GameAudioManager), Member = "MaybePlayOverrideCloseSound")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuClose")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "EnterSectionNav")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "ExitInterface")]
 	public void OnBack()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "OnFavorite")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonTriggers")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnAddToSatchel()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
 	[Calls(Type = typeof(ItemDescriptionPage), Member = "UpdateButtons")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "MoveSelectedSpriteAndTween")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public void OnControllerScheme(bool isController)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ReplaceItemInSatchel")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "OnBackFinal")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "AddItemToSatchel")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "OnBackFinal")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ReplaceItemInSatchel")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "AddItemToSatchel")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ReturnFromAddToSatchel()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateFavoriteStatus")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonStates")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	public bool CanBeAddedToSatchel(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public int GetNumFramesInPanel()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnControllerScheme")]
-	[CalledBy(Type = typeof(WeaponPickerGridItem), Member = "ToggleSelection")]
 	[CalledBy(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CalledBy(Type = typeof(WeaponPickerGridItem), Member = "ToggleSelection")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnControllerScheme")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public void MoveSelectedSpriteAndTween(Vector3 pos)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonStates")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnEquip")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnExamine")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnDrop")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnPlace")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "IsSelected")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnRefuel")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnHarvest")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnRepair")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnAddToSatchel")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateGearStatsBlock")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "AssignSlot")]
 	[CallerCount(Count = 20)]
 	[Calls(Type = typeof(Panel_Inventory), Member = "ItemPassesFilter")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private GearItem GetCurrentlySelectedGearItem()
 	{
@@ -1195,134 +1130,110 @@ public class Panel_Inventory : Panel_AutoReferenced, INotificationHandler
 	}
 
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Initialize")]
-	[Calls(Type = typeof(NGUITools), Member = "AddChild")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(NGUITools), Member = "AddChild")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void InstantiateInventoryTableItems()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 18)]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Initialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 14)]
 	[CallsUnknownMethods(Count = 15)]
 	private void InstantiateItemDescriptionPage()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static int CompareGearByName(GearItem g1, GearItem g2)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public static int CompareGearByNameTorchesLast(GearItem g1, GearItem g2)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static int CompareGearByNameHarvestableLast(GearItem g1, GearItem g2)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 	[CallsUnknownMethods(Count = 1)]
 	public static int CompareGearByCondition(GearItem g1, GearItem g2)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
-	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static int CompareGearByWeight(GearItem g1, GearItem g2)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_SelectedItemIndex")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_SelectedItemIndex")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowKeyNotFoundException")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UseEmergencyStim")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UseItem")]
 	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "ProgressBarEnded")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnFilterChange")]
-	[CallsUnknownMethods(Count = 19)]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnRefuel")]
 	[CalledBy(Type = typeof(Panel_Repair), Member = "RepairFinished")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UseEmergencyStim")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallerCount(Count = 8)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Utils), Member = "GetWeightTwoDecimalPlacesWithUnitsString")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallsDeduplicatedMethods(Count = 15)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "ItemPassesFilter")]
 	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallerCount(Count = 8)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Utils), Member = "GetWeightTwoDecimalPlacesWithUnitsString")]
 	[Calls(Type = typeof(ClothingItem), Member = "IsWearing")]
-	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "GetWeightTwoDecimalPlacesWithUnitsString")]
 	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Utils), Member = "GetWeightTwoDecimalPlacesWithUnitsString")]
+	[Calls(Type = typeof(List<>), Member = "Sort")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_SelectedItemIndex")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowKeyNotFoundException")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 19)]
 	public void UpdateFilteredInventoryList()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Inventory), Member = "ShowPanelInventorySubCategoryNotificationIcon")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Inventory), Member = "ShowPanelInventorySubCategoryNotificationIcon")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void HandleOnNotificationAdded(NotificationFlagInfo nfi)
 	{
 	}
@@ -1334,275 +1245,263 @@ public class Panel_Inventory : Panel_AutoReferenced, INotificationHandler
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "RemoveNewInventoryEntry")]
 	[CallsUnknownMethods(Count = 2)]
 	public void HandleOnInventoryItemRemoved(GearItem gi)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "HandleOnSubcategoryNotificationRemoved")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "HandleOnNotificationAdded")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "HandleOnNotificationAdded")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "HandleOnSubcategoryNotificationRemoved")]
 	[CallerCount(Count = 2)]
 	public void ShowPanelInventorySubCategoryNotificationIcon(SubCategory subCategory, bool enable)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnDrop")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_SelectedItemIndex")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnDrop")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private bool SelectLastSelectedGearItem()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_SelectedItemIndex")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_SelectedItemIndex")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_FirstItemDisplayedIndex")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_SelectedItemIndex")]
+	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
+	[CallsUnknownMethods(Count = 2)]
 	private void ScrollToBottom()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "ResetFilter")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "EnterSectionNav")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(CategoryButton), Member = "SetButtonState")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "FilterHasNoItems")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "ResetFilter")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "EnterSectionNav")]
+	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "FilterHasNoItems")]
+	[Calls(Type = typeof(CategoryButton), Member = "SetButtonState")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void RefreshFilterIconColors()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "RefreshNoItemsLabel")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "RefreshFilterIconColors")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "ItemPassesFilter")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "RefreshNoItemsLabel")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "ItemPassesFilter")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool FilterHasNoItems(string filterName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 2)]
 	[Calls(Type = typeof(Panel_Inventory), Member = "FilterHasNoItems")]
+	[CallsUnknownMethods(Count = 2)]
 	private void RefreshNoItemsLabel()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonStates")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateSortLabels()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateScrollbarThumbSize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateGearStatsBlock")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateGearStatsBlock")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	private void EnableGearStatsBlock(bool enabled)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 20)]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "RefreshTable")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "EnableGearStatsBlock")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(ItemDescriptionPage), Member = "UpdateGearItemDescription")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "EnableGearStatsBlock")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GearItemCoverflow), Member = "SetGearItem")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 20)]
 	private void UpdateGearStatsBlock()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DoSectionNavUpdate()
 	{
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_SelectedItemIndex")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "RefreshFilterIconColors")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "OnBack")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "OnFilterChange")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "OnFilterChange")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "DeselectAllItems")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(InputManager), Member = "GetAltFirePressed")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "MoveSectionNavToButton")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "OnClothingNav")]
 	[Calls(Type = typeof(InputManager), Member = "GetFirePressed")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "OnCraftingNav")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
 	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "OnClothingNav")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "MoveSectionNavToButton")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "OnFilterChange")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "RefreshFilterIconColors")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "DeselectAllItems")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "set_m_SelectedItemIndex")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "OnBack")]
+	[CallsUnknownMethods(Count = 2)]
 	private void DoSectionNavControls()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
 	private bool ShouldEnterSectionNav()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "EnterSectionNav")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
+	[CallsUnknownMethods(Count = 4)]
 	private void MoveSectionNavToButton(UIButton button)
 	{
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnBack")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "RefreshFilterIconColors")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Inventory), Member = "MoveSectionNavToButton")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(string), Member = "Replace")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnBack")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "MoveSectionNavToButton")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "DeselectAllItems")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "RefreshFilterIconColors")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void EnterSectionNav()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "EnterSectionNav")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(InventoryGridItem), Member = "OnHover")]
-	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "DoSectionNavControls")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "EnterSectionNav")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
+	[Calls(Type = typeof(InventoryGridItem), Member = "OnHover")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void DeselectAllItems()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsUsingSurvivalTabs")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsUsingSurvivalTabs")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	private void EnableNavigationTabs(bool enable)
 	{
 	}
 
-	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "HasSpecialCarryingCapacityGear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UIButton), Member = "set_normalSprite")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_NoValue")]
+	[CallsUnknownMethods(Count = 11)]
 	private void RefreshBackpackDisplay()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Update")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "RemoveNewInventoryEntry")]
-	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "RemoveNewInventoryEntry")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	private void MaybeShowNotificationFlagForNewInventoryEntry()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "HandleOnInventoryItemRemoved")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "MaybeShowNotificationFlagForNewInventoryEntry")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void RemoveNewInventoryEntry(NotificationFlagInfo nfi)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void CacheComponents()
 	{
 	}
@@ -1631,12 +1530,12 @@ public class Panel_Inventory : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Initialize")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private void InitQuickSelect()
 	{
 	}
@@ -1647,42 +1546,40 @@ public class Panel_Inventory : Panel_AutoReferenced, INotificationHandler
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateQuickSelect")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(GearItem), Member = "GetBasicDisplayNameForInventoryInterfaces")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "GetBasicDisplayNameForInventoryInterfaces")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateSlotLabel(int slotIndex)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnAssignSlot3")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnAssignSlot2")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnAssignSlot1")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnAssignSlot0")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemCanEquipInHands")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnAssignSlot1")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnAssignSlot2")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnAssignSlot3")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Panel_Inventory), Member = "GetCurrentlySelectedGearItem")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemCanEquipInHands")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 14)]
 	private void AssignSlot(int slotIndex)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 38)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 38)]
 	public Panel_Inventory()
 	{
 	}

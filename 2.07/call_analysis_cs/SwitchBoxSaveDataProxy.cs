@@ -8,8 +8,8 @@ public class SwitchBoxSaveDataProxy
 
 	public bool m_IsLocked;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public SwitchBoxSaveDataProxy()
 	{
 	}

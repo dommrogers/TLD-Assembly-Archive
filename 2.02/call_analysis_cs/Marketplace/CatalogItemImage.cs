@@ -19,10 +19,10 @@ public class CatalogItemImage : IWrappedObject, IDisposable
 
 	public string Id
 	{
-		[CallsUnknownMethods(Count = 7)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -35,7 +35,7 @@ public class CatalogItemImage : IWrappedObject, IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
@@ -45,15 +45,15 @@ public class CatalogItemImage : IWrappedObject, IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
 	public string Purpose
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -63,10 +63,10 @@ public class CatalogItemImage : IWrappedObject, IDisposable
 
 	public Uri ResizeUrl
 	{
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedUri")]
-		[CallsUnknownMethods(Count = 7)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedUri")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -102,16 +102,16 @@ public class CatalogItemImage : IWrappedObject, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 52)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 59)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void Dispose()
 	{
 	}

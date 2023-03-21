@@ -18,16 +18,16 @@ public class RenderTextureGrabber : MonoBehaviour
 
 	private GameObject m_DisplayInterface;
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(RenderTextureGrabber), Member = "Update")]
 	[CalledBy(Type = typeof(RenderTextureGrabber), Member = "Start")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(RenderTextureCameraManager), Member = "GetRenderTextureManagedCamera")]
-	[Calls(Type = typeof(Material), Member = "set_mainTexture")]
-	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(RenderTextureGrabber), Member = "Update")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
+	[Calls(Type = typeof(Material), Member = "set_mainTexture")]
 	[Calls(Type = typeof(RenderTextureCameraManager), Member = "RegisterCamera")]
+	[Calls(Type = typeof(RenderTextureCameraManager), Member = "GetRenderTextureManagedCamera")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void CreateRenderTexture()
 	{
 	}
@@ -39,15 +39,15 @@ public class RenderTextureGrabber : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 60)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 69)]
 	public void SetDisplayInterface(GameObject displayInterface)
 	{
 	}
 
-	[Calls(Type = typeof(RenderTextureGrabber), Member = "CreateRenderTexture")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(RenderTextureGrabber), Member = "CreateRenderTexture")]
 	public void Update()
 	{
 	}
@@ -66,13 +66,13 @@ public class RenderTextureGrabber : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(RenderTextureCameraManager), Member = "GetRenderTextureManagedCamera")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RenderTextureCameraManager), Member = "UnregisterCamera")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(RenderTextureCameraManager), Member = "GetRenderTextureManagedCamera")]
 	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[Calls(Type = typeof(RenderTextureCameraManager), Member = "UnregisterCamera")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnDestroy()
 	{
 	}

@@ -19,14 +19,14 @@ public class ReadFileOptions
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -34,16 +34,16 @@ public class ReadFileOptions
 
 	public string Filename
 	{
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -56,7 +56,7 @@ public class ReadFileOptions
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -75,9 +75,9 @@ public class ReadFileOptions
 		{
 			return null;
 		}
-		[CallerCount(Count = 20)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
@@ -85,23 +85,23 @@ public class ReadFileOptions
 
 	public OnFileTransferProgressCallback FileTransferProgressCallback
 	{
-		[CallerCount(Count = 15)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 23)]
 		set
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ReadFileOptions()
 	{
 	}

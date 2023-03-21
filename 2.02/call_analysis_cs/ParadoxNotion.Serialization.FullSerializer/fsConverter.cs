@@ -5,12 +5,10 @@ namespace ParadoxNotion.Serialization.FullSerializer;
 
 public abstract class fsConverter : fsBaseConverter
 {
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract bool CanProcess(Type type);
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	protected fsConverter()
 	{
 	}

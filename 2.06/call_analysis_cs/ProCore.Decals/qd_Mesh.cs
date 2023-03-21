@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -16,48 +15,41 @@ public class qd_Mesh
 
 	private static Vector2[] BILLBOARD_UV2;
 
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(qd_Decal), Member = "SetUVRect")]
-	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
-	[Calls(Type = typeof(qd_Mesh), Member = "DecalMesh")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(Object), Member = "GetInstanceID")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(qd_Mesh), Member = "DecalMesh")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
+	[Calls(Type = typeof(qd_Decal), Member = "SetUVRect")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 12)]
 	public static GameObject CreateDecal(string decalId, Material mat, Rect uvCoords, float scale, Material fullscreenDecalMaterial)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(qd_Mesh), Member = "CreateDecal")]
 	[CalledBy(Type = typeof(qd_Decal), Member = "Verify")]
-	[Calls(Type = typeof(Mesh), Member = "set_tangents")]
-	[Calls(Type = typeof(Mesh), Member = "set_triangles")]
-	[Calls(Type = typeof(Mesh), Member = ".ctor")]
-	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
-	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
-	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
-	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CalledBy(Type = typeof(qd_Mesh), Member = "CreateDecal")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
+	[Calls(Type = typeof(Mesh), Member = ".ctor")]
+	[Calls(Type = typeof(Mesh), Member = "set_triangles")]
+	[Calls(Type = typeof(Mesh), Member = "set_tangents")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 12)]
 	public static Mesh DecalMesh(string name, Material mat, Rect uvCoords, float scale)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public qd_Mesh()
 	{
 	}

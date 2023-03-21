@@ -10,47 +10,48 @@ public class CookingSlot : BaseInteraction
 
 	private FireplaceInteraction m_FireplaceHost;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 0)]
 	private void Awake()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 13)]
+	[CallerCount(Count = 26)]
 	public void SetFireplaceHost(FireplaceInteraction fireplaceHost)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
 	[Calls(Type = typeof(CookingSlot), Member = "CanCookingSlotBeUsed")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public override void UpdateInteraction(float deltaTime)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_ActionPicker), Member = "ShowActionPicker")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CookingSlot), Member = "CanCookingSlotBeUsed")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_ActionPicker), Member = "ShowActionPicker")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public override bool PerformInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "MaybeUpdateCookingSlot")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(CookingSlot), Member = "UpdateInteraction")]
 	[CalledBy(Type = typeof(CookingSlot), Member = "PerformInteraction")]
+	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "MaybeUpdateCookingSlot")]
+	[CallerCount(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool CanCookingSlotBeUsed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

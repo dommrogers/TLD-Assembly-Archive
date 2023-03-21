@@ -21,7 +21,7 @@ public class PropertyReference
 	public Component target
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
@@ -35,7 +35,7 @@ public class PropertyReference
 	public string name
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
@@ -48,57 +48,53 @@ public class PropertyReference
 
 	public bool isValid
 	{
-		[CalledBy(Type = typeof(PropertyReference), Member = "Equals")]
-		[CalledBy(Type = typeof(PropertyReference), Member = "Set")]
-		[CalledBy(Type = typeof(PropertyReference), Member = "Get")]
+		[CalledBy(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
 		[CalledBy(Type = typeof(PropertyReference), Member = "GetPropertyType")]
+		[CalledBy(Type = typeof(PropertyReference), Member = "Equals")]
+		[CalledBy(Type = typeof(PropertyReference), Member = "Get")]
+		[CalledBy(Type = typeof(PropertyReference), Member = "Set")]
 		[CallerCount(Count = 6)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[CalledBy(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
-		[CalledBy(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public bool isEnabled
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PropertyReference()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 83)]
+	[CallerCount(Count = 88)]
 	public PropertyReference(Component target, string fieldName)
 	{
 	}
 
-	[Calls(Type = typeof(PropertyReference), Member = "get_isValid")]
 	[CalledBy(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
-	[CalledBy(Type = typeof(PropertyReference), Member = "Set")]
 	[CalledBy(Type = typeof(PropertyReference), Member = "Set")]
 	[CalledBy(Type = typeof(PropertyReference), Member = "Convert")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
+	[Calls(Type = typeof(PropertyReference), Member = "get_isValid")]
 	[Calls(Type = typeof(PropertyReference), Member = "Cache")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public Type GetPropertyType()
 	{
 		return null;
@@ -108,22 +104,22 @@ public class PropertyReference
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(PropertyReference), Member = "get_isValid")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public override bool Equals(object obj)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public override int GetHashCode()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 83)]
+	[CallerCount(Count = 88)]
 	public void Set(Component target, string methodName)
 	{
 	}
@@ -136,127 +132,117 @@ public class PropertyReference
 
 	[CalledBy(Type = typeof(PropertyBinding), Member = "OnValidate")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(PropertyBinding), Member = "OnValidate")]
 	public void Reset()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public override string ToString()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(string), Member = "LastIndexOf")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public static string ToString(Component comp, string property)
 	{
 		return null;
 	}
 
+	[DebuggerHidden]
+	[DebuggerStepThrough]
+	[CalledBy(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(PropertyReference), Member = "get_isValid")]
 	[Calls(Type = typeof(PropertyReference), Member = "Cache")]
-	[CalledBy(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
-	[CalledBy(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
-	[CalledBy(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 4)]
-	[DebuggerStepThrough]
-	[DebuggerHidden]
 	public object Get()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 10)]
+	[DebuggerHidden]
+	[DebuggerStepThrough]
+	[CalledBy(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PropertyReference), Member = "get_isValid")]
 	[Calls(Type = typeof(PropertyReference), Member = "Cache")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(PropertyReference), Member = "GetPropertyType")]
 	[Calls(Type = typeof(PropertyReference), Member = "Convert")]
-	[Calls(Type = typeof(PropertyReference), Member = "GetPropertyType")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(PropertyReference), Member = "get_isValid")]
-	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 10)]
 	[CallsUnknownMethods(Count = 27)]
-	[DebuggerHidden]
-	[CalledBy(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
-	[DebuggerStepThrough]
 	public bool Set(object value)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[DebuggerStepThrough]
 	[DebuggerHidden]
-	[CalledBy(Type = typeof(PropertyReference), Member = "Get")]
+	[DebuggerStepThrough]
 	[CalledBy(Type = typeof(PropertyReference), Member = "GetPropertyType")]
-	[Calls(Type = typeof(Type), Member = "GetProperty")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
-	[CallsUnknownMethods(Count = 4)]
+	[CalledBy(Type = typeof(PropertyReference), Member = "Get")]
 	[CalledBy(Type = typeof(PropertyReference), Member = "Set")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Type), Member = "GetProperty")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private bool Cache()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(PropertyReference), Member = "GetPropertyType")]
 	[Calls(Type = typeof(PropertyReference), Member = "Convert")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool Convert(ref object value)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PropertyReference), Member = "Convert")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PropertyReference), Member = "Convert")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool Convert(Type from, Type to)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PropertyReference), Member = "Convert")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool Convert(object value, Type to)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(PropertyReference), Member = "Convert")]
-	[CalledBy(Type = typeof(PropertyReference), Member = "Convert")]
-	[CalledBy(Type = typeof(PropertyReference), Member = "Convert")]
 	[CalledBy(Type = typeof(PropertyReference), Member = "Set")]
-	[Calls(Type = typeof(System.Number), Member = "TryParseInt32")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(PropertyReference), Member = "Convert")]
+	[CalledBy(Type = typeof(PropertyReference), Member = "Convert")]
+	[CalledBy(Type = typeof(PropertyReference), Member = "Convert")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(Type = typeof(float), Member = "TryParse")]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(TypeFullName = "System.Number", Member = "TryParseInt32")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public static bool Convert(ref object value, Type from, Type to)
 	{
-		return default(bool);
+		return false;
 	}
 }

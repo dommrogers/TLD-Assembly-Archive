@@ -14,9 +14,9 @@ public class WwiseBankReference : WwiseObjectReference
 		}
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(WwiseObjectReference), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public WwiseBankReference()
 	{
 	}

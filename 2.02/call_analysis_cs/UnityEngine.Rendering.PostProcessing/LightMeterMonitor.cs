@@ -12,29 +12,26 @@ public sealed class LightMeterMonitor : Monitor
 
 	public bool showCurves;
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	internal override bool ShaderResourcesAvailable(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Exp2")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 22)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Monitor), Member = "CheckOutput")]
+	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(PropertySheet), Member = "EnableKeyword")]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "Exp2")]
 	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(PropertySheet), Member = "EnableKeyword")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[Calls(Type = typeof(Monitor), Member = "CheckOutput")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallsUnknownMethods(Count = 22)]
 	internal override void Render(PostProcessRenderContext context)
 	{
 	}

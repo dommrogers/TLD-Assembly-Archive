@@ -28,9 +28,9 @@ public class CheckProperty_Multiplatform : ConditionTask
 
 	public override Type agentType
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -41,7 +41,6 @@ public class CheckProperty_Multiplatform : ConditionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
 		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
 		[Calls(Type = typeof(Task), Member = "get_agentInfo")]
@@ -49,6 +48,7 @@ public class CheckProperty_Multiplatform : ConditionTask
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(string), Member = "Format")]
 		[Calls(Type = typeof(string), Member = "Format")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -56,12 +56,12 @@ public class CheckProperty_Multiplatform : ConditionTask
 		}
 	}
 
-	[Calls(Type = typeof(Task), Member = "Error")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Format")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(BBObjectParameter), Member = "SetType")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Task), Member = "Error")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnValidate(ITaskSystem ownerSystem)
 	{
 	}
@@ -73,20 +73,20 @@ public class CheckProperty_Multiplatform : ConditionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(Task), Member = "get_agent")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsUnknownMethods(Count = 8)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 5)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BBObjectParameter), Member = "SetType")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetMethod(MethodInfo method)
 	{
 	}

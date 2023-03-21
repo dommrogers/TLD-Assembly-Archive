@@ -5,8 +5,8 @@ public class AiStag : MonoBehaviour
 {
 	public StagType m_StagType;
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public AiStag()
 	{
 	}

@@ -7,7 +7,7 @@ public class Feat_SnowWalkerSaveData
 	public float m_MetersAccumulator;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public Feat_SnowWalkerSaveData()
 	{
 	}

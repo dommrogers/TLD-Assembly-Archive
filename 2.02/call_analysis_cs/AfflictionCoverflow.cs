@@ -5,28 +5,28 @@ public class AfflictionCoverflow : MonoBehaviour
 {
 	public UISprite m_SpriteEffect;
 
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "SetupScrollList")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Affliction), Member = "SpriteNameFromAfflictionType")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "SetupScrollList")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetAffliction(Affliction affliction)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "SetupScrollList")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetEmptySlot()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public AfflictionCoverflow()
 	{
 	}

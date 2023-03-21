@@ -6,8 +6,8 @@ public class Feat_StraightToHeartSaveData
 
 	public float m_ItemConsumedAccumulator;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public Feat_StraightToHeartSaveData()
 	{
 	}

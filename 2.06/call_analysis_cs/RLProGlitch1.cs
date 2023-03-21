@@ -29,11 +29,11 @@ public sealed class RLProGlitch1 : PostProcessEffectSettings
 
 	public TextureParameter maskTexture;
 
-	[CallsUnknownMethods(Count = 64)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[Calls(Type = typeof(TextureParameter), Member = ".ctor")]
 	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 64)]
 	public RLProGlitch1()
 	{
 	}

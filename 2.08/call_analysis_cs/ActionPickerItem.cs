@@ -15,21 +15,21 @@ public class ActionPickerItem : MonoBehaviour
 
 	private int m_Index;
 
+	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "EnableWithCurrentList")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "EnableWithCurrentList")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Setup(ActionPickerItemData itemData, int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void UpdateGamepadSelection(bool isSelected)
 	{
 	}
@@ -41,8 +41,8 @@ public class ActionPickerItem : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public ActionPickerItem()
 	{
 	}

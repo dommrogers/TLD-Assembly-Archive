@@ -9,22 +9,22 @@ internal struct AddNotifyAchievementsUnlockedOptionsInternal : ISettable, IDispo
 {
 	private int m_ApiVersion;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void Set(AddNotifyAchievementsUnlockedOptions other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Helper), Member = "TryMarshalSet")]
 	[CalledBy(Type = typeof(AchievementsInterface), Member = "AddNotifyAchievementsUnlocked")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

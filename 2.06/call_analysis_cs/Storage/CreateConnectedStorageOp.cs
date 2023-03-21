@@ -22,11 +22,11 @@ public class CreateConnectedStorageOp : AsyncOp<CreateConnectedStorageOp>
 		((AsyncOp<>)(object)this)._002Ector();
 	}
 
+	[CalledBy(Type = typeof(ConnectedStorage), Member = "InitializedThunk")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ConnectedStorage), Member = ".ctor")]
 	[Calls(Type = typeof(ConnectedStorage), Member = "OpenOrCreateContainer")]
-	[CalledBy(Type = typeof(ConnectedStorage), Member = "InitializedThunk")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	public void Complete(uint result, IntPtr self)
 	{

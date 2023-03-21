@@ -11,17 +11,17 @@ public sealed class Vector3Parameter : ParameterOverride<Vector3>
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static implicit operator Vector2(Vector3Parameter prop)
 	{
 		return default(Vector2);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static implicit operator Vector4(Vector3Parameter prop)
 	{
 		return default(Vector4);
@@ -31,7 +31,7 @@ public sealed class Vector3Parameter : ParameterOverride<Vector3>
 	[CallsDeduplicatedMethods(Count = 1)]
 	public override bool Equals(Vector3 a, Vector3 b)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

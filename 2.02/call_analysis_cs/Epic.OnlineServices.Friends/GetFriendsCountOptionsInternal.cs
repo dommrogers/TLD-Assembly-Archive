@@ -13,11 +13,11 @@ internal struct GetFriendsCountOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(GetFriendsCountOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(GetFriendsCountOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(GetFriendsCountOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(GetFriendsCountOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -30,15 +30,15 @@ internal struct GetFriendsCountOptionsInternal : ISettable, IDisposable
 	}
 
 	[CalledBy(Type = typeof(FriendsInterface), Member = "GetFriendsCount")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GetFriendsCountOptionsInternal), Member = "set_LocalUserId")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

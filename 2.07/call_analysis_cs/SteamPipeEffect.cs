@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -82,20 +83,21 @@ public class SteamPipeEffect : MonoBehaviour
 
 	private static readonly int s_HeatedAmountShaderID;
 
-	[CallsUnknownMethods(Count = 18)]
-	[CalledBy(Type = typeof(SteamPipeEffect), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(SteamPipe), Member = "Start")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(SteamPipeEffect), Member = "OnDestroy")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 17)]
 	public void SetSource(SteamPipe source)
 	{
 	}
 
+	[CalledBy(Type = typeof(SteamPipe), Member = "ThawPipes")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SteamPipeEffect), Member = "UpdateHeatTime")]
-	[CalledBy(Type = typeof(SteamPipe), Member = "ThawPipes")]
 	[CallsUnknownMethods(Count = 2)]
 	public void Thaw(bool immediate)
 	{
@@ -104,14 +106,14 @@ public class SteamPipeEffect : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsFrozen()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(SteamPipeEffect), Member = "UpdateParticles")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SteamPipeEffect), Member = "UpdateRenderers")]
+	[Calls(Type = typeof(SteamPipeEffect), Member = "UpdateParticles")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Awake()
 	{
 	}
@@ -122,16 +124,17 @@ public class SteamPipeEffect : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
@@ -139,24 +142,21 @@ public class SteamPipeEffect : MonoBehaviour
 	[CalledBy(Type = typeof(SteamPipeEffectManager), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[Calls(Type = typeof(SteamPipeEffect), Member = "UpdateRenderers")]
 	[Calls(Type = typeof(SteamPipeEffect), Member = "UpdateParticles")]
-	[Calls(Type = typeof(SteamPipeEffect), Member = "PlayOrStopAudio")]
-	[Calls(Type = typeof(SteamPipeEffect), Member = "PlayOrStopAudio")]
 	[Calls(Type = typeof(SteamPipeEffect), Member = "PlayOrStopAudio")]
 	public void DoUpdate(float currentTime)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void OnPipeSourceInternalFlowChanged(float value)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(SteamPipeEffect), Member = "Thaw")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void UpdateHeatTime()
 	{
@@ -166,71 +166,62 @@ public class SteamPipeEffect : MonoBehaviour
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	private bool MaybeUpdateThawing(float currentTime)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	private bool MaybeUpdateHeating(float currentTime)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(SteamPipeEffect), Member = "PlayOrStopAudio")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SteamPipeEffect), Member = "PlayOrStopAudio")]
 	private void MaybePlayThawingAudio(bool isThawing)
 	{
 	}
 
-	[Calls(Type = typeof(SteamPipeEffect), Member = "PlayOrStopAudio")]
-	[Calls(Type = typeof(SteamPipeEffect), Member = "PlayOrStopAudio")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SteamPipeEffect), Member = "PlayOrStopAudio")]
 	private void MaybePlayHeatingAudio(bool isHeatChanging)
 	{
 	}
 
-	[CallerCount(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[CalledBy(Type = typeof(SteamPipeEffect), Member = "DoUpdate")]
-	[CalledBy(Type = typeof(SteamPipeEffect), Member = "DoUpdate")]
 	[CalledBy(Type = typeof(SteamPipeEffect), Member = "DoUpdate")]
 	[CalledBy(Type = typeof(SteamPipeEffect), Member = "MaybePlayThawingAudio")]
 	[CalledBy(Type = typeof(SteamPipeEffect), Member = "MaybePlayHeatingAudio")]
-	[CalledBy(Type = typeof(SteamPipeEffect), Member = "MaybePlayHeatingAudio")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void PlayOrStopAudio(bool shouldPlay, string audio, ref uint audioID)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(SteamPipeEffect), Member = "DoUpdate")]
 	[CalledBy(Type = typeof(SteamPipeEffect), Member = "Awake")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[CalledBy(Type = typeof(SteamPipeEffect), Member = "DoUpdate")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateRenderers()
 	{
 	}
 
-	[Calls(Type = typeof(ParticleSystem), Member = "get_isPlaying")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(SteamPipeEffect), Member = "DoUpdate")]
 	[CalledBy(Type = typeof(SteamPipeEffect), Member = "Awake")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(ParticleSystem), Member = "Stop")]
-	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(ParticleSystem), Member = "get_isPlaying")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(SteamPipeEffect), Member = "DoUpdate")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(ParticleSystem), Member = "get_isPlaying")]
 	[Calls(Type = typeof(ParticleSystem), Member = "Play")]
+	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
+	[Calls(Type = typeof(ParticleSystem), Member = "Stop")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateParticles()
 	{
 	}

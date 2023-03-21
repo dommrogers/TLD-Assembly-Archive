@@ -16,8 +16,8 @@ public class LeaderboardResultEventArgsPlugin
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void LeaderboardResultEventArgs_Dispose(IntPtr self);
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public LeaderboardResultEventArgsPlugin()
 	{
 	}

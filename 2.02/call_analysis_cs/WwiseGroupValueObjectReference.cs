@@ -3,29 +3,16 @@ using UnityEngine;
 
 public abstract class WwiseGroupValueObjectReference : WwiseObjectReference
 {
-	public abstract WwiseObjectReference GroupObjectReference
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		set;
-	}
+	public abstract WwiseObjectReference GroupObjectReference { get; set; }
 
-	public abstract WwiseObjectType GroupWwiseObjectType
-	{
-		[CallerCount(Count = 121780)]
-		[DeduplicatedMethod]
-		get;
-	}
+	public abstract WwiseObjectType GroupWwiseObjectType { get; }
 
 	public override string DisplayName
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{

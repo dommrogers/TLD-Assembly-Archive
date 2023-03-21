@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using NodeCanvas.StateMachines;
@@ -11,43 +12,43 @@ public class Action_SaveCheckpoint : ActionTask
 
 	private const float SAVE_DELAY_TIME = 5f;
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	protected override void OnUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
-	[CalledBy(Type = typeof(Action_SetEpisodeState), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_SaveCheckpoint), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(State_SaveCheckpoint), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(GameManager), Member = "HandleCheckpointSaveRequest")]
-	[CalledBy(Type = typeof(GameManager), Member = "Update")]
-	[CalledBy(Type = typeof(BearHuntRedux), Member = "MaybeSaveCheckpoint")]
 	[CalledBy(Type = typeof(BearHuntRedux), Member = "UpdateMission")]
-	[Calls(Type = typeof(Time), Member = "get_time")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SaveGame")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "SetBaseNameForSave")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "CopyData")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetBaseNameForSave")]
-	[Calls(Type = typeof(Panel_SaveIcon), Member = "StartSaveIconAnimation")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(Time), Member = "get_frameCount")]
-	[Calls(Type = typeof(FSMHierarchy), Member = "RefreshIds")]
-	[Calls(Type = typeof(Time), Member = "get_time")]
-	[Calls(Type = typeof(GameManager), Member = "AllowedToSave")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(BearHuntRedux), Member = "MaybeSaveCheckpoint")]
+	[CalledBy(Type = typeof(GameManager), Member = "Update")]
+	[CalledBy(Type = typeof(GameManager), Member = "HandleCheckpointSaveRequest")]
+	[CalledBy(Type = typeof(State_SaveCheckpoint), Member = "OnUpdate")]
+	[CalledBy(Type = typeof(Action_SaveCheckpoint), Member = "OnUpdate")]
+	[CalledBy(Type = typeof(Action_SetEpisodeState), Member = "OnExecute")]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
+	[Calls(Type = typeof(GameManager), Member = "AllowedToSave")]
+	[Calls(Type = typeof(Time), Member = "get_time")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(FSMHierarchy), Member = "RefreshIds")]
+	[Calls(Type = typeof(Time), Member = "get_frameCount")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(Panel_SaveIcon), Member = "StartSaveIconAnimation")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetBaseNameForSave")]
 	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "CopyData")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "SetBaseNameForSave")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SaveGame")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 16)]
 	public static bool MaybeSave()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

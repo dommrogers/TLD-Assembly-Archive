@@ -7,8 +7,8 @@ public class SceneCacheInfo : MonoBehaviour
 
 	public int m_NumRareCachesActiveAtStart;
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public SceneCacheInfo()
 	{
 	}

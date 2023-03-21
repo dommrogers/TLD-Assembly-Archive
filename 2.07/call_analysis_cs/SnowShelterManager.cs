@@ -67,16 +67,17 @@ public class SnowShelterManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void Add(SnowShelter ss)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Remove(SnowShelter ss)
 	{
 	}
@@ -88,51 +89,55 @@ public class SnowShelterManager : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
 	[Calls(Type = typeof(SnowShelter), Member = "Serialize")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 7)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(SnowShelterManager), Member = "InstantiateSnowShelter")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Utils), Member = "SanitizePrefabName")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(SnowShelter), Member = "Deserialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(PdidTable), Member = "RuntimeUnregister")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PdidTable), Member = "RuntimeUnregister")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Utils), Member = "SanitizePrefabName")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(SnowShelterManager), Member = "InstantiateSnowShelter")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(SnowShelter), Member = "Deserialize")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 15)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "SceneLoadCompleted")]
 	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
-	[Calls(Type = typeof(ObjectGuid), Member = "MaybeRuntimeRegister")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_scene")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "SceneLoadCompleted")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
+	[Calls(Type = typeof(GameObject), Member = "get_scene")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ObjectGuid), Member = "MaybeRuntimeRegister")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void RegisterAnySnowShelterGuid()
 	{
 	}
@@ -142,82 +147,79 @@ public class SnowShelterManager : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowShelterRadial")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowShelterRadial")]
 	public bool SnowSheltersAreUnlocked()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetTemperatureIncreaseCelsius()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SnowShelterManager), Member = "IsMissingMaterials")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshRepairPanel")]
+	[CalledBy(Type = typeof(SnowShelterManager), Member = "IsMissingMaterials")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(SnowShelterManager), Member = "GetOrLoadSnowShelterPrefab")]
 	[Calls(Type = typeof(GearItemObjectExtensions), Member = "NumGearInList")]
+	[CallsUnknownMethods(Count = 1)]
 	public int GetNumSticksInInventory()
 	{
-		return default(int);
+		return 0;
 	}
 
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshRepairPanel")]
+	[CalledBy(Type = typeof(SnowShelterManager), Member = "IsMissingMaterials")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(SnowShelterManager), Member = "GetOrLoadSnowShelterPrefab")]
 	[Calls(Type = typeof(GearItemObjectExtensions), Member = "NumGearInList")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshRepairPanel")]
-	[CalledBy(Type = typeof(SnowShelterManager), Member = "IsMissingMaterials")]
 	[CallsUnknownMethods(Count = 1)]
 	public int GetNumClothInInventory()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SnowShelterManager), Member = "CanAttemptToPlaceSnowShelter")]
 	[CalledBy(Type = typeof(SnowShelterManager), Member = "GetMissingMaterialsString")]
+	[CalledBy(Type = typeof(SnowShelterManager), Member = "CanAttemptToPlaceSnowShelter")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(SnowShelterManager), Member = "GetNumSticksInInventory")]
 	[Calls(Type = typeof(SnowShelterManager), Member = "GetNumClothInInventory")]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(SnowShelterManager), Member = "GetOrLoadSnowShelterPrefab")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsMissingMaterials()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNoSnowShelterMessage")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "OnSnowShelter")]
-	[Calls(Type = typeof(int), Member = "ToString")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNoSnowShelterMessage")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SnowShelterManager), Member = "IsMissingMaterials")]
+	[Calls(Type = typeof(SnowShelterManager), Member = "GetOrLoadSnowShelterPrefab")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "GetOrLoadSnowShelterPrefab")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "IsMissingMaterials")]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetMissingMaterialsString()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "OnSnowShelter")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(SnowShelterManager), Member = "IsMissingMaterials")]
+	[CallsUnknownMethods(Count = 4)]
 	public bool CanAttemptToPlaceSnowShelter()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -225,122 +227,120 @@ public class SnowShelterManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetMinutesToBuild()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "OnUse")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetMediumOcclusion")]
 	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsUnknownMethods(Count = 2)]
 	public void EnterShelter(SnowShelter ss)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(SnowShelter), Member = "Update")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[Calls(Type = typeof(GameAudioManager), Member = "ExitOcclusionTrigger")]
 	[CalledBy(Type = typeof(SnowShelter), Member = "PerformInteraction")]
-	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "ExitOcclusionTrigger")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ExitShelter(SnowShelter ss)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "MaybeBreakStruggle")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ShouldBreakStruggle")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsPlaceable")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UseFireStarterInventoryItem")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerCanSprint")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
-	[CalledBy(Type = typeof(InputManager), Member = "CanStartFireIndoors")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
-	[CallerCount(Count = 19)]
-	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "CanDrop")]
-	[CalledBy(Type = typeof(Rest), Member = "ShouldInterruptWithPredator")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "Update")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "FixedUpdateInternal")]
 	[CalledBy(Type = typeof(vp_FPSController), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(vp_FPSController), Member = "ShouldFreezeMovement")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ShouldScanForSmells")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
-	[CalledBy(Type = typeof(vp_FPSController), Member = "ShouldFreezeMovement")]
+	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "CanDrop")]
+	[CalledBy(Type = typeof(Rest), Member = "ShouldInterruptWithPredator")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
+	[CalledBy(Type = typeof(InputManager), Member = "CanStartFireIndoors")]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerCanSprint")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UseFireStarterInventoryItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsPlaceable")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ShouldBreakStruggle")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "MaybeBreakStruggle")]
+	[CallerCount(Count = 19)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	public bool PlayerInShelter()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(SnowShelter), Member = "Update")]
 	[CalledBy(Type = typeof(SnowShelter), Member = "InitializeInteraction")]
 	[CalledBy(Type = typeof(SnowShelter), Member = "PerformInteraction")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	public SnowShelter GetPlayerOccupiedSnowShelter()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Wind), Member = "UpdateWindOcclusion")]
-	[CalledBy(Type = typeof(Wind), Member = "UpdateWindChill")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(Weather), Member = "CalculateCurrentTemperature")]
+	[CalledBy(Type = typeof(Wind), Member = "UpdateWindChill")]
+	[CalledBy(Type = typeof(Wind), Member = "UpdateWindOcclusion")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool PlayerInNonRuinedShelter()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool PlayerEnteringShelter()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "OpenSnowShelterRest")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "OnBedRoll")]
-	[Calls(Type = typeof(Panel_Rest), Member = "StartRest")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "OpenSnowShelterRest")]
-	[Calls(Type = typeof(Panel_Rest), Member = "StartRest")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "OpenSnowShelterRest")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Rest), Member = "StartRest")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnBedroll(GearItem gi = null)
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "InitializeStruggle")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "UnlockRotationLimit")]
 	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "InitializeStruggle")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
 	public void ExitShelterDueToStruggle()
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "DeserializePostSceneLoadFixup")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataPostSceneRestore")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "EnterShelterAfterFadeOutCommon")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "SetState")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SnowShelterManager), Member = "EnterShelterAfterFadeOutCommon")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public void ForceIntoSnowShelterSilent(Vector3 cameraPos)
 	{
 	}
@@ -353,64 +353,60 @@ public class SnowShelterManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 20)]
-	[CalledBy(Type = typeof(SnowShelterManager), Member = "EnterShelterAfterFadeOut")]
 	[CalledBy(Type = typeof(SnowShelterManager), Member = "ForceIntoSnowShelterSilent")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
-	[CallsDeduplicatedMethods(Count = 19)]
+	[CalledBy(Type = typeof(SnowShelterManager), Member = "EnterShelterAfterFadeOut")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
+	[CallsDeduplicatedMethods(Count = 19)]
+	[CallsUnknownMethods(Count = 20)]
 	private void EnterShelterAfterFadeOutCommon()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
-	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-	[Calls(Type = typeof(Wind), Member = "UpdateWindOcclusion")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(SnowShelterManager), Member = "GetSafeExitPoint")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "UnlockRotationLimit")]
+	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[CallsDeduplicatedMethods(Count = 10)]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "UnlockRotationLimit")]
+	[Calls(Type = typeof(SnowShelterManager), Member = "GetSafeExitPoint")]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
+	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
+	[Calls(Type = typeof(Wind), Member = "UpdateWindOcclusion")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 11)]
 	private void ExitShelterAfterFadeOut()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(SnowShelterManager), Member = "ExitShelterAfterFadeOut")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 9)]
 	private Vector3 GetSafeExitPoint()
 	{
 		return default(Vector3);
 	}
 
-	[CalledBy(Type = typeof(SnowShelterManager), Member = "DeserializeAll")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "OnSnowShelter")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[CalledBy(Type = typeof(SnowShelterManager), Member = "DeserializeAll")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(SnowShelterManager), Member = "GetOrLoadSnowShelterPrefab")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[CallsUnknownMethods(Count = 1)]
 	public SnowShelter InstantiateSnowShelter()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_SnowShelterBuild), Member = "UpdateDurationLabel")]
 	[CalledBy(Type = typeof(SnowShelterManager), Member = "GetNumSticksInInventory")]
 	[CalledBy(Type = typeof(SnowShelterManager), Member = "GetNumClothInInventory")]
@@ -418,6 +414,8 @@ public class SnowShelterManager : MonoBehaviour
 	[CalledBy(Type = typeof(SnowShelterManager), Member = "GetMissingMaterialsString")]
 	[CalledBy(Type = typeof(SnowShelterManager), Member = "GetMinutesToBuild")]
 	[CalledBy(Type = typeof(SnowShelterManager), Member = "InstantiateSnowShelter")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(AssetReferenceWithComponent<>), Member = "GetOrLoadTypedAsset")]
 	[CallsUnknownMethods(Count = 1)]
 	private SnowShelter GetOrLoadSnowShelterPrefab()
 	{

@@ -20,10 +20,10 @@ public class Action_FilterTopicChoice : DTNode
 		}
 	}
 
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
@@ -31,8 +31,8 @@ public class Action_FilterTopicChoice : DTNode
 		return default(Status);
 	}
 
-	[Calls(Type = typeof(DTNode), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DTNode), Member = ".ctor")]
 	public Action_FilterTopicChoice()
 	{
 	}

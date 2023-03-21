@@ -4,8 +4,8 @@ namespace ParadoxNotion.Design;
 
 public class LayerFieldAttribute : DrawerAttribute
 {
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public LayerFieldAttribute()
 	{
 	}

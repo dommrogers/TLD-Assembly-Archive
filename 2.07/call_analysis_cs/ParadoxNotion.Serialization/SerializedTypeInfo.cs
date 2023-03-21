@@ -32,13 +32,13 @@ public class SerializedTypeInfo : ISerializationCallbackReceiver
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 79)]
+	[CallerCount(Count = 86)]
 	public SerializedTypeInfo(Type info)
 	{
 	}
 
-	[CallerCount(Count = 28)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 32)]
 	public Type Get()
 	{
 		return null;

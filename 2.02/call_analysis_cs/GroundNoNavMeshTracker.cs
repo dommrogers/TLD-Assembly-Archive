@@ -6,10 +6,11 @@ public class GroundNoNavMeshTracker : MonoBehaviour
 {
 	public List<GameObject> m_GroundNoNavMeshObjects;
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public GroundNoNavMeshTracker()
 	{
 	}

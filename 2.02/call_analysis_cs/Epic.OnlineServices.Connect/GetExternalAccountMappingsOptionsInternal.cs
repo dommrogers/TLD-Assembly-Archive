@@ -17,11 +17,11 @@ internal struct GetExternalAccountMappingsOptionsInternal : ISettable, IDisposab
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(GetExternalAccountMappingsOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(GetExternalAccountMappingsOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(GetExternalAccountMappingsOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(GetExternalAccountMappingsOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -38,35 +38,35 @@ internal struct GetExternalAccountMappingsOptionsInternal : ISettable, IDisposab
 
 	public string TargetExternalUserId
 	{
+		[CalledBy(Type = typeof(GetExternalAccountMappingsOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(GetExternalAccountMappingsOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(GetExternalAccountMappingsOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(GetExternalAccountMappingsOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(GetExternalAccountMappingsOptionsInternal), Member = "set_TargetExternalUserId")]
-	[Calls(Type = typeof(GetExternalAccountMappingsOptionsInternal), Member = "set_LocalUserId")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GetExternalAccountMappingsOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(GetExternalAccountMappingsOptionsInternal), Member = "set_TargetExternalUserId")]
 	public void Set(GetExternalAccountMappingsOptions other)
 	{
 	}
 
+	[CalledBy(Type = typeof(ConnectInterface), Member = "GetExternalAccountMapping")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GetExternalAccountMappingsOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(GetExternalAccountMappingsOptionsInternal), Member = "set_TargetExternalUserId")]
-	[CalledBy(Type = typeof(ConnectInterface), Member = "GetExternalAccountMapping")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

@@ -10,13 +10,13 @@ public class AchievementList : WrappedCachedList<Achievement>
 	[CallsDeduplicatedMethods(Count = 1)]
 	public AchievementList(IntPtr self)
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
 	public AchievementList()
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
@@ -26,9 +26,9 @@ public class AchievementList : WrappedCachedList<Achievement>
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	protected override Achievement CreateIthElement(int i)
 	{
 		return null;

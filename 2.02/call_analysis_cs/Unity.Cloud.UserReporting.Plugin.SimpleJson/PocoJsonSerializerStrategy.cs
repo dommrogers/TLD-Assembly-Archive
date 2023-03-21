@@ -20,9 +20,10 @@ public class PocoJsonSerializerStrategy : IJsonSerializerStrategy
 
 	private static readonly string[] Iso8601Format;
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(SimpleJson), Member = "get_PocoJsonSerializerStrategy")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReflectionUtils.ThreadSafeDictionary<, >), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 43)]
 	public PocoJsonSerializerStrategy()
 	{
@@ -35,19 +36,19 @@ public class PocoJsonSerializerStrategy : IJsonSerializerStrategy
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ReflectionUtils), Member = "GetContructor")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal virtual ReflectionUtils.ConstructorDelegate ContructorDelegateFactory(Type key)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReflectionUtils), Member = "GetGetMethod")]
+	[Calls(Type = typeof(ReflectionUtils), Member = "GetGetMethod")]
 	[CallsDeduplicatedMethods(Count = 14)]
-	[Calls(Type = typeof(ReflectionUtils), Member = "GetGetMethod")]
-	[Calls(Type = typeof(ReflectionUtils), Member = "GetGetMethod")]
 	[CallsUnknownMethods(Count = 31)]
 	internal virtual IDictionary<string, ReflectionUtils.GetDelegate> GetterValueFactory(Type type)
 	{
@@ -55,9 +56,9 @@ public class PocoJsonSerializerStrategy : IJsonSerializerStrategy
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReflectionUtils), Member = "GetSetMethod")]
+	[Calls(Type = typeof(ReflectionUtils), Member = "GetSetMethod")]
 	[CallsDeduplicatedMethods(Count = 19)]
-	[Calls(Type = typeof(ReflectionUtils), Member = "GetSetMethod")]
-	[Calls(Type = typeof(ReflectionUtils), Member = "GetSetMethod")]
 	[CallsUnknownMethods(Count = 31)]
 	internal virtual IDictionary<string, KeyValuePair<Type, ReflectionUtils.SetDelegate>> SetterValueFactory(Type type)
 	{
@@ -69,120 +70,77 @@ public class PocoJsonSerializerStrategy : IJsonSerializerStrategy
 	public virtual bool TrySerializeNonPrimitiveObject(object input, out object output)
 	{
 		output = null;
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(ReflectionUtils), Member = "IsNullableType")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Convert), Member = "ChangeType")]
-	[Calls(Type = typeof(CultureInfo), Member = "get_InvariantCulture")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(DateTime), Member = "ParseExact")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(ReflectionUtils), Member = "ToNullableType")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(CultureInfo), Member = "get_InvariantCulture")]
-	[CallsUnknownMethods(Count = 88)]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[Calls(Type = typeof(Enum), Member = "Parse")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(ReflectionUtils), Member = "GetGenericListElementType")]
-	[Calls(Type = typeof(ReflectionUtils), Member = "IsAssignableFrom")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(ReflectionUtils), Member = "IsTypeGenericeCollectionInterface")]
-	[Calls(Type = typeof(Type), Member = "get_IsArray")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "get_Chars")]
-	[Calls(Type = typeof(Activator), Member = "CreateInstance")]
-	[Calls(Type = typeof(ReflectionUtils), Member = "IsTypeDictionary")]
-	[Calls(Type = typeof(DateTimeOffset), Member = "ParseExact")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Guid), Member = ".ctor")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Nullable), Member = "GetUnderlyingType")]
-	[Calls(Type = typeof(ReflectionUtils), Member = "IsNullableType")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(ReflectionUtils), Member = "IsNullableType")]
-	[Calls(Type = typeof(Nullable), Member = "GetUnderlyingType")]
-	[Calls(Type = typeof(Nullable), Member = "GetUnderlyingType")]
-	[Calls(Type = typeof(ReflectionUtils), Member = "IsNullableType")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 18)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(ReflectionUtils), Member = "IsNullableType")]
 	[Calls(Type = typeof(Nullable), Member = "GetUnderlyingType")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Uri), Member = "IsWellFormedUriString")]
-	[Calls(Type = typeof(TimeSpan), Member = "Parse")]
+	[Calls(Type = typeof(CultureInfo), Member = "get_InvariantCulture")]
 	[Calls(Type = typeof(Convert), Member = "ChangeType")]
-	[Calls(Type = typeof(CultureInfo), Member = "get_InvariantCulture")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Nullable), Member = "GetUnderlyingType")]
+	[Calls(Type = typeof(TimeSpan), Member = "Parse")]
+	[Calls(Type = typeof(Uri), Member = "IsWellFormedUriString")]
 	[Calls(Type = typeof(Uri), Member = "TryCreate")]
-	[Calls(Type = typeof(ReflectionUtils), Member = "IsNullableType")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(CultureInfo), Member = "get_InvariantCulture")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Nullable), Member = "GetUnderlyingType")]
-	[Calls(Type = typeof(ReflectionUtils), Member = "IsNullableType")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Guid), Member = ".ctor")]
+	[Calls(Type = typeof(DateTimeOffset), Member = "ParseExact")]
+	[Calls(Type = typeof(DateTime), Member = "ParseExact")]
+	[Calls(Type = typeof(ReflectionUtils), Member = "ToNullableType")]
+	[Calls(Type = typeof(ReflectionUtils), Member = "IsTypeDictionary")]
+	[Calls(Type = typeof(Activator), Member = "CreateInstance")]
+	[Calls(Type = typeof(string), Member = "get_Chars")]
+	[Calls(Type = typeof(char), Member = "ToLower")]
+	[Calls(Type = typeof(char), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Type), Member = "get_IsArray")]
+	[Calls(Type = typeof(ReflectionUtils), Member = "IsTypeGenericeCollectionInterface")]
+	[Calls(Type = typeof(ReflectionUtils), Member = "IsAssignableFrom")]
+	[Calls(Type = typeof(ReflectionUtils), Member = "GetGenericListElementType")]
+	[Calls(Type = typeof(Enum), Member = "Parse")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 18)]
+	[CallsUnknownMethods(Count = 86)]
 	public virtual object DeserializeObject(object value, Type type)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Convert), Member = "ToDouble")]
-	[Calls(Type = typeof(CultureInfo), Member = "get_InvariantCulture")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CultureInfo), Member = "get_InvariantCulture")]
+	[Calls(Type = typeof(Convert), Member = "ToDouble")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	protected virtual object SerializeEnum(Enum p)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(DateTime), Member = "ToString")]
-	[Calls(Type = typeof(CultureInfo), Member = "get_InvariantCulture")]
-	[Calls(Type = typeof(TimeZoneInfo), Member = "ConvertTimeToUtc")]
-	[Calls(Type = typeof(DateTimeOffset), Member = "ToString")]
-	[Calls(Type = typeof(CultureInfo), Member = "get_InvariantCulture")]
-	[Calls(Type = typeof(TimeZoneInfo), Member = "get_Local")]
-	[Calls(Type = typeof(DateTimeOffset), Member = "get_UtcDateTime")]
-	[Calls(Type = typeof(TimeSpan), Member = "ToString")]
-	[Calls(Type = typeof(Guid), Member = "ToString")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Guid), Member = "ToString")]
+	[Calls(Type = typeof(TimeSpan), Member = "ToString")]
+	[Calls(Type = typeof(DateTimeOffset), Member = "get_UtcDateTime")]
 	[Calls(Type = typeof(DateTimeOffset), Member = ".ctor")]
+	[Calls(Type = typeof(CultureInfo), Member = "get_InvariantCulture")]
+	[Calls(Type = typeof(DateTimeOffset), Member = "ToString")]
+	[Calls(Type = typeof(TimeZoneInfo), Member = "get_Local")]
+	[Calls(Type = typeof(TimeZoneInfo), Member = "ConvertTimeToUtc")]
+	[Calls(Type = typeof(DateTime), Member = "ToString")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 13)]
 	protected virtual bool TrySerializeKnownTypes(object input, out object output)
 	{
 		output = null;
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 21)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(JsonObject), Member = ".ctor")]
 	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 21)]
 	protected virtual bool TrySerializeUnknownTypes(object input, out object output)
 	{
 		output = null;
-		return default(bool);
+		return false;
 	}
 }

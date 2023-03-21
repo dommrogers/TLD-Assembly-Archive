@@ -17,14 +17,14 @@ public class ActiveSessionInfo : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -32,16 +32,16 @@ public class ActiveSessionInfo : ISettable
 
 	public ProductUserId LocalUserId
 	{
-		[CallerCount(Count = 29)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -66,42 +66,42 @@ public class ActiveSessionInfo : ISettable
 
 	public SessionDetailsInfo SessionDetails
 	{
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 12)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 20)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
 	}
 
 	[CalledBy(Type = typeof(ActiveSessionInfo), Member = "Set")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ActiveSessionInfoInternal), Member = "get_SessionName")]
 	[Calls(Type = typeof(ActiveSessionInfoInternal), Member = "get_LocalUserId")]
 	[Calls(Type = typeof(ActiveSessionInfoInternal), Member = "get_SessionDetails")]
-	[Calls(Type = typeof(ActiveSessionInfoInternal), Member = "get_SessionName")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	internal void Set(ActiveSessionInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ActiveSessionInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ActiveSessionInfo()
 	{
 	}

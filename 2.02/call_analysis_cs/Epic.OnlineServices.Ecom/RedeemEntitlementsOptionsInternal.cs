@@ -17,11 +17,11 @@ internal struct RedeemEntitlementsOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(RedeemEntitlementsOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(RedeemEntitlementsOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(RedeemEntitlementsOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(RedeemEntitlementsOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,10 +29,11 @@ internal struct RedeemEntitlementsOptionsInternal : ISettable, IDisposable
 
 	public string[] EntitlementIds
 	{
+		[CalledBy(Type = typeof(RedeemEntitlementsOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(RedeemEntitlementsOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(RedeemEntitlementsOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(RedeemEntitlementsOptionsInternal), Member = "Set")]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -46,17 +47,17 @@ internal struct RedeemEntitlementsOptionsInternal : ISettable, IDisposable
 	}
 
 	[CalledBy(Type = typeof(EcomInterface), Member = "RedeemEntitlements")]
-	[Calls(Type = typeof(RedeemEntitlementsOptionsInternal), Member = "set_EntitlementIds")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(RedeemEntitlementsOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(RedeemEntitlementsOptionsInternal), Member = "set_EntitlementIds")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

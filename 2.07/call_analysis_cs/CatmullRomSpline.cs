@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -14,7 +13,7 @@ public class CatmullRomSpline
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -23,17 +22,17 @@ public class CatmullRomSpline
 	{
 	}
 
-	[Calls(Type = typeof(CatmullRomSpline), Member = "CalcPoint")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CatmullRomSpline), Member = "SelectCps")]
+	[Calls(Type = typeof(CatmullRomSpline), Member = "CalcPoint")]
 	public Vector3 Evaluate(float t, bool isLooping)
 	{
 		return default(Vector3);
 	}
 
-	[Calls(Type = typeof(CatmullRomSpline), Member = "CalcTangent")]
-	[Calls(Type = typeof(CatmullRomSpline), Member = "SelectCps")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CatmullRomSpline), Member = "SelectCps")]
+	[Calls(Type = typeof(CatmullRomSpline), Member = "CalcTangent")]
 	public Vector3 EvaluateTangent(float t, bool isLooping)
 	{
 		return default(Vector3);
@@ -45,32 +44,32 @@ public class CatmullRomSpline
 	[Calls(Type = typeof(CatmullRomSpline), Member = "CalcPoint")]
 	public Vector3 EvaluateWithTangent(float t, bool isLooping, out Vector3 tangent)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref tangent) = null;
+		tangent = default(Vector3);
 		return default(Vector3);
 	}
 
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(CatmullRomSpline), Member = "Evaluate")]
 	[CalledBy(Type = typeof(CatmullRomSpline), Member = "EvaluateTangent")]
 	[CalledBy(Type = typeof(CatmullRomSpline), Member = "EvaluateWithTangent")]
+	[CallerCount(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	public float SelectCps(float t, bool isLooping)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(CatmullRomSpline), Member = "Evaluate")]
 	[CalledBy(Type = typeof(CatmullRomSpline), Member = "EvaluateWithTangent")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(CatmullRomSpline), Member = "Evaluate")]
+	[CallsUnknownMethods(Count = 2)]
 	private Vector3 CalcPoint(float t)
 	{
 		return default(Vector3);
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(CatmullRomSpline), Member = "EvaluateTangent")]
 	[CalledBy(Type = typeof(CatmullRomSpline), Member = "EvaluateWithTangent")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private Vector3 CalcTangent(float t)
 	{

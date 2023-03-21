@@ -13,9 +13,9 @@ public class XceDynamicProviderPlugin
 	public static extern void XceDynamicProvider_Uninitialize();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static extern void XceDynamicProvider_Create(string name, string guid);
 
 	[PreserveSig]
@@ -42,12 +42,12 @@ public class XceDynamicProviderPlugin
 	public static extern IntPtr XceDynamicProvider_CreateField(IntPtr self, string name, EtxFieldType fieldType);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint XceDynamicProvider_WriteEvent(IntPtr evt);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public XceDynamicProviderPlugin()
 	{
 	}

@@ -93,11 +93,12 @@ public class TLD_CameraAnimationTrack : AnimationTrack, TLD_ITrack, TLD_IDynamic
 	private static float s_OriginalFovForNextTimeline;
 
 	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "LateUpdatePlay")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 16)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 16)]
 	private void StartCameraOverride()
 	{
 	}
@@ -111,7 +112,6 @@ public class TLD_CameraAnimationTrack : AnimationTrack, TLD_ITrack, TLD_IDynamic
 	[Calls(Type = typeof(Collider), Member = "get_enabled")]
 	[Calls(Type = typeof(vp_FPSController), Member = "Stop")]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "IsControllingHands")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "HideHands")]
 	[CallsUnknownMethods(Count = 7)]
 	public void Play()
@@ -121,18 +121,18 @@ public class TLD_CameraAnimationTrack : AnimationTrack, TLD_ITrack, TLD_IDynamic
 	[CallerCount(Count = 0)]
 	public bool ShouldSupressBreathFX()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(TrackAsset), Member = "get_clips")]
 	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "LateUpdatePlay")]
 	[CalledBy(Type = typeof(TLD_FPAnimationTrack), Member = "MaybeUpdateTransitionOut")]
 	[CalledBy(Type = typeof(TLD_TimelineDirector), Member = "GetCameraTrackNextEndTime")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(TrackAsset), Member = "get_clips")]
 	[CallsUnknownMethods(Count = 11)]
 	public float GetNextEndTime(float currentTimeSeconds)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -141,172 +141,149 @@ public class TLD_CameraAnimationTrack : AnimationTrack, TLD_ITrack, TLD_IDynamic
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "SetFPAnchor")]
-	[Calls(Type = typeof(Camera), Member = "set_fieldOfView")]
-	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "UpdateCameraExit")]
-	[Calls(Type = typeof(Camera), Member = "set_fieldOfView")]
-	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "UpdateCamera")]
-	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "UpdateCamera")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "GetNextEndTime")]
-	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "StartCameraOverride")]
-	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "GetCamera")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "GetCamera")]
+	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "StartCameraOverride")]
+	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "GetNextEndTime")]
+	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "UpdateCamera")]
+	[Calls(Type = typeof(Camera), Member = "set_fieldOfView")]
+	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "UpdateCameraExit")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public void LateUpdatePlay()
 	{
 	}
 
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 32)]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-	[Calls(Type = typeof(Physics), Member = "SyncTransforms")]
-	[Calls(Type = typeof(Physics), Member = "get_autoSyncTransforms")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 18)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Camera), Member = "set_fieldOfView")]
 	[Calls(Type = typeof(Camera), Member = "set_nearClipPlane")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ShowHands")]
 	[Calls(Type = typeof(Camera), Member = "set_farClipPlane")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(AnimatedInteraction), Member = "InProgress")]
 	[Calls(Type = typeof(PlayerManager), Member = "EnableCharacterController")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ShowHands")]
+	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
+	[Calls(Type = typeof(Physics), Member = "get_autoSyncTransforms")]
+	[Calls(Type = typeof(Physics), Member = "SyncTransforms")]
+	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
+	[CallsDeduplicatedMethods(Count = 18)]
+	[CallsUnknownMethods(Count = 32)]
 	public void Stop()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(TLD_TimelineDirector), Member = "Cleanup")]
 	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "ResetAllTransforms")]
 	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "ResetCamera")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(TLD_TimelineDirector), Member = "Cleanup")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "ResetAllTransforms")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public static void ResetAllTransforms(Transform t)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "ResetAllTransforms")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void ResetCamera()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(TLD_FPHandsTrack), Member = "UpdatePlay")]
-	[Calls(Type = typeof(TimelineAsset), Member = "UpdateOutputTrackCache")]
-	[Calls(Type = typeof(TrackAsset), Member = "get_timelineAsset")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "LateUpdatePlay")]
+	[Calls(Type = typeof(TrackAsset), Member = "get_timelineAsset")]
+	[Calls(Type = typeof(TimelineAsset), Member = "UpdateOutputTrackCache")]
+	[Calls(Type = typeof(TLD_FPHandsTrack), Member = "UpdatePlay")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	public void SetFPAnchor(Transform anchor)
 	{
 	}
 
 	[CalledBy(Type = typeof(TLD_TimelineDirector), Member = "GetCameraTrackFeetTransform")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "GetCamera")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "GetCamera")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public Transform GetFeetTransform()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "GetCamera")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void DoDynamicBinding(PlayableDirector director)
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Utils), Member = "CreateOrFindGameObjectFromPath")]
-	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "DoDynamicBinding")]
 	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "LateUpdatePlay")]
 	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "GetFeetTransform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 47)]
+	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "DoDynamicBinding")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[Calls(Type = typeof(GameObject), Member = ".ctor")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 20)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Utils), Member = "CreateOrFindGameObjectFromPath")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 18)]
+	[CallsUnknownMethods(Count = 47)]
 	private GameObject GetCamera()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Utils), Member = "CreateOrFindGameObjectFromPath")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "CreateOrFindGameObjectFromPath")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void CreateAnimatedCamera()
 	{
 	}
 
+	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "LateUpdatePlay")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 24)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
 	[Calls(Type = typeof(Physics), Member = "SyncTransforms")]
-	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "LateUpdatePlay")]
-	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "LateUpdatePlay")]
+	[CallsDeduplicatedMethods(Count = 24)]
 	[CallsUnknownMethods(Count = 27)]
 	private void UpdateCamera(float progress, Vector3 desiredPosition, Quaternion desiredRotation)
 	{
 	}
 
 	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "LateUpdatePlay")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 11)]
 	private void UpdateCameraExit(float progress)
 	{
 	}

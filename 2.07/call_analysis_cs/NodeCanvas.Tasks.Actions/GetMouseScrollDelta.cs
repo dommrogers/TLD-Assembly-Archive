@@ -11,9 +11,9 @@ public class GetMouseScrollDelta : ActionTask
 
 	protected override string info
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -34,12 +34,12 @@ public class GetMouseScrollDelta : ActionTask
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(GetMouseScrollDelta), Member = "OnUpdate")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(GetMouseScrollDelta), Member = "OnExecute")]
+	[CalledBy(Type = typeof(GetMouseScrollDelta), Member = "OnUpdate")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Do()
 	{
 	}

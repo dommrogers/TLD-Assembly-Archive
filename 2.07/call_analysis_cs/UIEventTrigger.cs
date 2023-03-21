@@ -56,8 +56,8 @@ public class UIEventTrigger : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
 	private void OnDoubleClick()
 	{
 	}
@@ -74,8 +74,8 @@ public class UIEventTrigger : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
 	private void OnDragOver(GameObject go)
 	{
 	}
@@ -92,9 +92,9 @@ public class UIEventTrigger : MonoBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 13)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public UIEventTrigger()
 	{
 	}

@@ -34,7 +34,7 @@ public class FlickerValueGenerator : ScriptableObject
 	[CallsUnknownMethods(Count = 2)]
 	public float GetFlickerValue(float time)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -44,26 +44,26 @@ public class FlickerValueGenerator : ScriptableObject
 	{
 	}
 
+	[CalledBy(Type = typeof(FlickerValueGenerator), Member = "OnEnable")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(FlickerValueGenerator), Member = "OnEnable")]
 	[CallsUnknownMethods(Count = 12)]
 	public void GenerateRandomCurve()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(FlickerValueGenerator), Member = "OnEnable")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 11)]
 	public void GenerateSpikyCurve()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 20)]
 	public FlickerValueGenerator()
 	{

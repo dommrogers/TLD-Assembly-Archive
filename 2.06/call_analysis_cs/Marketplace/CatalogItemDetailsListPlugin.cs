@@ -12,8 +12,8 @@ public class CatalogItemDetailsListPlugin
 	public static extern void CatalogItemDetailsList_Dispose(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint CatalogItemDetailsList_Length(IntPtr self);
 
 	[PreserveSig]

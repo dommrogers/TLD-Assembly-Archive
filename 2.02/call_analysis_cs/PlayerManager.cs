@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
 using SpecialEvents;
@@ -36,34 +35,32 @@ public class PlayerManager : MonoBehaviour
 
 		public float m_BlendOutTime;
 
-		[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-		[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 		[CalledBy(Type = typeof(PlayerManager), Member = "UpdateLookAt")]
-		[Calls(Type = typeof(LookAtTargetForTime), Member = "TweenValue")]
+		[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(LookAtTargetForTime), Member = "TweenValue")]
+		[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+		[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
 		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 4)]
 		public void Update()
 		{
 		}
 
+		[CalledBy(Type = typeof(LookAtTargetForTime), Member = "Update")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 3)]
-		[CalledBy(Type = typeof(LookAtTargetForTime), Member = "Update")]
-		[CalledBy(Type = typeof(LookAtTargetForTime), Member = "Update")]
 		[CallsUnknownMethods(Count = 3)]
 		private float TweenValue(float factor, UITweener.Method tweenMethod, bool steeperCurves)
 		{
-			return default(float);
+			return 0f;
 		}
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 4)]
 		private float BounceLogic(float val)
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -89,14 +86,14 @@ public class PlayerManager : MonoBehaviour
 		public PlayerAnimation.OnAnimationEvent throwCompleteCallback;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass604_0()
 		{
 		}
 
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(PlayerManager), Member = "ReleaseThrownObject")]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		internal void _003CThrow_003Eb__0()
 		{
 		}
@@ -675,48 +672,47 @@ public class PlayerManager : MonoBehaviour
 		{
 			return null;
 		}
-		[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
-		[CalledBy(Type = typeof(PlayerManager), Member = "ReleaseFromHands")]
-		[CalledBy(Type = typeof(PlayerManager), Member = "AttemptToPlaceMesh")]
-		[CalledBy(Type = typeof(PlayerManager), Member = "OnPlaceMeshAnimationEvent")]
-		[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
-		[CalledBy(Type = typeof(PlayerManager), Member = "UnequipItemInHandsForPlacement")]
-		[CalledBy(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(PlayerManager), Member = "OnProcessPickupWinNoInspectEquipComplete")]
-		[Calls(Type = typeof(GearItem), Member = "OnWield")]
 		[CalledBy(Type = typeof(vp_FPSCamera), Member = "HidePrevious")]
+		[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenDropCurrent")]
+		[CalledBy(Type = typeof(PlayerManager), Member = "OnProcessPickupWinNoInspectEquipComplete")]
+		[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
+		[CalledBy(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
+		[CalledBy(Type = typeof(PlayerManager), Member = "UnequipItemInHandsForPlacement")]
+		[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
+		[CalledBy(Type = typeof(PlayerManager), Member = "OnPlaceMeshAnimationEvent")]
+		[CalledBy(Type = typeof(PlayerManager), Member = "AttemptToPlaceMesh")]
+		[CalledBy(Type = typeof(PlayerManager), Member = "ReleaseFromHands")]
+		[CallerCount(Count = 10)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(GearItem), Member = "OnUnwieldComplete")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(GearItem), Member = "OnWield")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 10)]
-		[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenDropCurrent")]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Freezing), Member = "AddFreezing")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void ApplyPumpkinPieBuff(float instantPercentDecrease, float rateScale, float durationHours, float durationMaxHours)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Freezing), Member = "AddFreezing")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void ApplyFreezingBuff(float instantPercentDecrease, float rateScale, float durationHours, float durationMaxHours)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Fatigue), Member = "AddFatigue")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void ApplyFatigueBuff(float instantPercentDecrease, float rateScale, float durationHours, string causeLocID, float durationMaxHours)
 	{
@@ -755,149 +751,145 @@ public class PlayerManager : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "RefreshBackpackDisplay")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public bool HasSpecialCarryingCapacityGear(string gearName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void RemoveCarryingCapacityBuff()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "GetAllSpecialCarryingCapacityBuffItems")]
 	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetAllSpecialCarryingCapacityBuffItems")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 20)]
 	public void UpdateCarryingBuff()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffLossNotification")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetWornWolfIntimidationClothing")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffLossNotification")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffLossNotification")]
+	[CallsUnknownMethods(Count = 8)]
 	public void UpdateBuffDurations(float realtimeSeconds)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffLossNotification")]
 	[CalledBy(Type = typeof(Rest), Member = "UpdateRestForCures")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffLossNotification")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public void UpdateConditonBuffDuration(float realtimeSeconds)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "FreezingBuffActive")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "HasAffliction")]
-	[CalledBy(Type = typeof(StatusBar), Member = "IsBuffActive")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "GetFreezingRateScaleBuff")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CalledBy(Type = typeof(Freezing), Member = "UpdateFreezingStatus")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "HasAffliction")]
-	[CalledBy(Type = typeof(BaseAi), Member = "CanEnterStalking")]
-	[CallerCount(Count = 13)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Condition), Member = "HasBuff")]
+	[CalledBy(Type = typeof(BaseAi), Member = "AttackOrFleeAfterNearMissGunshot")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ShouldAlwaysFleeFromCurrentTarget")]
 	[CalledBy(Type = typeof(BaseAi), Member = "MaybeEnterAttackModeWhenStalking")]
-	[CalledBy(Type = typeof(BaseAi), Member = "AttackOrFleeAfterNearMissGunshot")]
+	[CalledBy(Type = typeof(BaseAi), Member = "CanEnterStalking")]
+	[CalledBy(Type = typeof(Condition), Member = "HasBuff")]
+	[CalledBy(Type = typeof(Freezing), Member = "UpdateFreezingStatus")]
+	[CalledBy(Type = typeof(StatusBar), Member = "IsBuffActive")]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "HasAffliction")]
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "GetFreezingRateScaleBuff")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "FreezingBuffActive")]
+	[CallerCount(Count = 14)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool IsPumpkinPieBuffActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerManager), Member = "IsPumpkinPieBuffActive")]
 	public float GetFreezingRateScaleBuff()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetFatigueRateScaleBuff()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetConditionPercentBonus()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetWolfFleeIncreasePercentagePointsBuff()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public float GetWolfDecreaseAttackChancePercentagePointsBuff()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerManager), Member = "IsPumpkinPieBuffActive")]
 	public bool FreezingBuffActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool FatigueBuffActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Encumber), Member = "GetEncumberLowThresholdKG")]
-	[CalledBy(Type = typeof(Encumber), Member = "UpdateEncumberedStatusOnHUD")]
-	[CalledBy(Type = typeof(Encumber), Member = "GetEncumberLevel")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Encumber), Member = "GetEncumberLevel")]
-	[CalledBy(Type = typeof(Encumber), Member = "GetEncumberMedThresholdKG")]
-	[CalledBy(Type = typeof(Encumber), Member = "GetNoWalkCarryCapacityKG")]
-	[CalledBy(Type = typeof(Encumber), Member = "GetEncumberLevel")]
-	[CalledBy(Type = typeof(Encumber), Member = "GetMaxCarryCapacityWhenExhaustedKG")]
-	[CalledBy(Type = typeof(Encumber), Member = "GetNoSprintCarryCapacityKG")]
-	[CallerCount(Count = 14)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Encumber), Member = "IsCapacityBuffed")]
-	[CalledBy(Type = typeof(Encumber), Member = "GetEncumberHighThresholdKG")]
+	[CalledBy(Type = typeof(Encumber), Member = "GetEffectiveCarryCapacityKG")]
 	[CalledBy(Type = typeof(Encumber), Member = "GetPlayerCarryCapacityString")]
 	[CalledBy(Type = typeof(Encumber), Member = "GetMaxCarryCapacityKG")]
-	[CalledBy(Type = typeof(Encumber), Member = "GetEffectiveCarryCapacityKG")]
+	[CalledBy(Type = typeof(Encumber), Member = "GetMaxCarryCapacityWhenExhaustedKG")]
+	[CalledBy(Type = typeof(Encumber), Member = "GetNoSprintCarryCapacityKG")]
+	[CalledBy(Type = typeof(Encumber), Member = "GetNoWalkCarryCapacityKG")]
+	[CalledBy(Type = typeof(Encumber), Member = "GetEncumberLowThresholdKG")]
+	[CalledBy(Type = typeof(Encumber), Member = "GetEncumberMedThresholdKG")]
+	[CalledBy(Type = typeof(Encumber), Member = "GetEncumberHighThresholdKG")]
+	[CalledBy(Type = typeof(Encumber), Member = "GetEncumberLevel")]
+	[CalledBy(Type = typeof(Encumber), Member = "UpdateEncumberedStatusOnHUD")]
+	[CallerCount(Count = 14)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public float GetCarryCapacityKGBuff()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetConditionPerHourBonus()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -909,7 +901,7 @@ public class PlayerManager : MonoBehaviour
 	[CallerCount(Count = 1)]
 	public float GetFatigueBuffTimeRemainingHours()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -921,59 +913,59 @@ public class PlayerManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetFatigueBuffTimeRemainingNormalized()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 1)]
 	public float GetFreezingBuffTimeRemainingHours()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetFreezingBuffTimeRemainingNormalized()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 1)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 1)]
 	public float GetConditionRestBuffTimeRemainingHours()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetConditionRestBuffTimeRemainingNormalized()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetPumpkinPieBuffTimeRemainingHours()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetPumpkinPieBuffTimeRemainingNormalized()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 1)]
 	public float GetConditionPerHourTimeRemainingHours()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetConditionPerHourRemainingNormalized()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -987,11 +979,11 @@ public class PlayerManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetClimbingBuffClothing")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetClimbingBuffClothing")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void UpdateClimbingBuff()
 	{
 	}
@@ -1000,77 +992,76 @@ public class PlayerManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetClimbingBuffSprainOddsModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetClimbingBuffStaminaPerSecondModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetClimbingBuffWeakIceTimeSecondsModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "GetDamageReductionFromExteriorClothing")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PutOnClothingItem")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeUnlockResoluteOutfitterAchievement")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "GetDamageReductionFromExteriorClothing")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "IsWearingPerfectClothesInAllSlots")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PutOnClothingItem")]
 	public static int GetNumLayersForClothingRegion(ClothingRegion clothingRegion)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Weather), Member = "GetWeatherStage")]
 	[CalledBy(Type = typeof(ClothingItem), Member = "MaybeGetWetOnGround")]
 	[CalledBy(Type = typeof(GearItem), Member = "ManualUpdate")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateClothingWetness")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Weather), Member = "GetWeatherStage")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetWetnessIncreasePerHour()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(TimeOfDay), Member = "GetTODHours")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(ClothingItem), Member = "IncreaseWetnessPercent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetWetnessIncreasePerHour")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(TimeOfDay), Member = "GetTODHours")]
+	[Calls(Type = typeof(ClothingItem), Member = "IncreaseWetnessPercent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 19)]
 	public void UpdateClothingWetness()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(ClothingItem), Member = "GetWarmth")]
-	[Calls(Type = typeof(ClothingItem), Member = "IsOutermostItemInClothingRegion")]
-	[Calls(Type = typeof(ClothingItem), Member = "GetWindproof")]
 	[CalledBy(Type = typeof(Weather), Member = "UpdateTemperatureOnHUD")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadSlotOnStart")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(ClothingItem), Member = "GetWarmth")]
+	[Calls(Type = typeof(ClothingItem), Member = "IsOutermostItemInClothingRegion")]
+	[Calls(Type = typeof(ClothingItem), Member = "GetWindproof")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void UpdateBonusValuesFromWornClothing()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "ApplyPercentDamageToTopMostLayer")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "ApplyPercentDamageToTopMostLayer")]
 	public void ApplyPercentDamageToWornClothingRegion(ClothingRegion region, float normalizedDamage)
 	{
 	}
@@ -1082,133 +1073,128 @@ public class PlayerManager : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public bool GetWarnClothingCanBeDamaged()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(DamageProtection), Member = "MaybeApplyClothingDamageProtection")]
 	[Calls(Type = typeof(GearItem), Member = "Degrade")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public void ApplyPercentDamageToWornClothing(float normalizedDamage)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyClothingDamagePerSecond")]
-	[CalledBy(Type = typeof(Weather), Member = "ApplyClothingDamage")]
 	[CalledBy(Type = typeof(ClothingDamageEvent), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Weather), Member = "ApplyClothingDamage")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyClothingDamagePerSecond")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(GearItem), Member = "Degrade")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void ApplyDamageToWornClothing(float damage, DamageReason damageReason = DamageReason.Unknown)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public float GetWornClothingToughness()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(DamageProtection), Member = "MaybeUpdateDamageProtection")]
-	[Calls(Type = typeof(SprainProtection), Member = "UpdateSprainProtection")]
-	[Calls(Type = typeof(PlayerManager), Member = "MaybeSetSoundSwitch")]
 	[CalledBy(Type = typeof(ClothingItem), Member = "TakeOff")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(PlayerManager), Member = "MaybeSetSoundSwitch")]
+	[Calls(Type = typeof(SprainProtection), Member = "UpdateSprainProtection")]
+	[Calls(Type = typeof(DamageProtection), Member = "MaybeUpdateDamageProtection")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	public void TakeOffClothingItem(GearItem gi)
 	{
 	}
 
-	[Calls(Type = typeof(DamageProtection), Member = "MaybeUpdateDamageProtection")]
-	[CallsUnknownMethods(Count = 34)]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "OnUseClothingItem")]
-	[CalledBy(Type = typeof(ClothingItem), Member = "PickedUp")]
 	[CalledBy(Type = typeof(ClothingItem), Member = "PutOn")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(SprainProtection), Member = "UpdateSprainProtection")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetNumLayersForClothingRegion")]
-	[Calls(Type = typeof(PlayerManager), Member = "MaybeSetSoundSwitch")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetEmptyLayerForRegion")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(ClothingItem), Member = "PickedUp")]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "OnUseClothingItem")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetEmptyLayerForRegion")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetNumLayersForClothingRegion")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(PlayerManager), Member = "MaybeSetSoundSwitch")]
 	[Calls(Type = typeof(PlayerManager), Member = "MaybeUnlockResoluteOutfitterAchievement")]
+	[Calls(Type = typeof(SprainProtection), Member = "UpdateSprainProtection")]
+	[Calls(Type = typeof(DamageProtection), Member = "MaybeUpdateDamageProtection")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 34)]
 	public void PutOnClothingItem(GearItem gi, ClothingLayer layerToPutOn = ClothingLayer.NumLayers)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairSuccessful")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "PutOnClothingItem")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetNumLayersForClothingRegion")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GearItem), Member = "GetRoundedCondition")]
 	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetNumLayersForClothingRegion")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(GearItem), Member = "GetRoundedCondition")]
+	[CallsUnknownMethods(Count = 7)]
 	public void MaybeUnlockResoluteOutfitterAchievement()
 	{
 	}
 
+	[CalledBy(Type = typeof(ClothingItem), Member = "IsWearing")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CalledBy(Type = typeof(ClothingItem), Member = "IsWearing")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public bool IsWearingClothingItem(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(AchievementManager), Member = "WentToSleep")]
-	[CalledBy(Type = typeof(AchievementManager), Member = "WentToSleep")]
-	[CalledBy(Type = typeof(AchievementManager), Member = "WentToSleep")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public bool IsWearingClothingName(string itemName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(ClothingItem), Member = "TakeOff")]
-	[CallsUnknownMethods(Count = 16)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[Calls(Type = typeof(ClothingItem), Member = "TakeOff")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ClothingItem), Member = "PutOn")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetEmptyLayerForRegion")]
-	[Calls(Type = typeof(ClothingItem), Member = "IsWearing")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ClothingItem), Member = "IsWearing")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetEmptyLayerForRegion")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(ClothingItem), Member = "TakeOff")]
+	[Calls(Type = typeof(ClothingItem), Member = "PutOn")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 16)]
 	private bool UseClothingItem(GearItem gi, ClothingLayer layerToPutOn = ClothingLayer.NumLayers)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1216,373 +1202,347 @@ public class PlayerManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool HasFreeSlotForClothingItem(ClothingItem ci)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "HasFreeSlotForClothingItem")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UseClothingItem")]
+	[CalledBy(Type = typeof(ClothingItem), Member = "PickedUp")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "PutOnClothingItem")]
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UseClothingItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "HasFreeSlotForClothingItem")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(ClothingItem), Member = "PickedUp")]
+	[CallsUnknownMethods(Count = 5)]
 	private ClothingLayer GetEmptyLayerForRegion(ClothingRegion region, ClothingLayer minLayer, ClothingLayer maxLayer)
 	{
 		return default(ClothingLayer);
 	}
 
-	[CallsUnknownMethods(Count = 27)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_debug_clothing")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 27)]
 	public void OutputWornClothing()
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateBuffDurations")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public GearItem GetWornWolfIntimidationClothing()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "HasOptionsAvailable")]
 	[CalledBy(Type = typeof(Panel_Clothing), Member = "SetupScrollList")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 10)]
 	public GearItem GetWornCarryingCapacityBuffClothing()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void GetAllWornCarryingCapacityBuffClothing(List<GearItem> carryingCapacityBuffs)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
 	[CalledBy(Type = typeof(GameAudioManager), Member = "MaybePlayOverrideCloseSound")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateCarryingBuff")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 13)]
 	public void GetAllSpecialCarryingCapacityBuffItems(List<GearItem> carryingCapacityBuffs)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateClimbingBuff")]
 	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetFootwearType")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateClimbingBuff")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetFootwearType")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public GearItem GetClimbingBuffClothing()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public float GetClothingSprintReduction()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public int GetNumWetClothes()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(ClothingSlot), Member = "CheckForHide")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Action_DestroySelectedPlayerItems), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "SelectDefaultSlot")]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "SetupScrollList")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "CheckForChangeLayer")]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdateSlotInfo")]
+	[CalledBy(Type = typeof(ClothingSlot), Member = "ShouldUseAltTexture")]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "CheckForChangeLayer")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "ShouldUseAltTexture")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "ShouldUseAltTexture")]
+	[CalledBy(Type = typeof(ClothingSlot), Member = "CheckForHide")]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "SetupScrollList")]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "SelectDefaultSlot")]
+	[CalledBy(Type = typeof(Action_DestroySelectedPlayerItems), Member = "OnExecute")]
 	[CallerCount(Count = 10)]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "CheckForChangeLayer")]
+	[CallsUnknownMethods(Count = 5)]
 	public GearItem GetClothingInSlot(ClothingRegion region, ClothingLayer layer)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeSetPlayerFootwearSwitch")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "CheckForHide")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "GetClimbingBuffClothing")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeSetPlayerFootwearSwitch")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetTopLayerGear")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public FootwearType GetFootwearType()
 	{
 		return default(FootwearType);
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeSetPlayerFootwearSwitch")]
 	[CalledBy(Type = typeof(SprainProtection), Member = "UpdateSprainProtection")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeSetPlayerFootwearSwitch")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	public CramponsState GetCramponsState()
 	{
 		return default(CramponsState);
 	}
 
 	[CalledBy(Type = typeof(Condition), Member = "AddHealth")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyDamageAfterMooseAttack")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Condition), Member = "GetDamageReductionForCause")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTopLayerGear")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetNumLayersForClothingRegion")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyDamageAfterMooseAttack")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetTopLayerGear")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetNumLayersForClothingRegion")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public float GetDamageReductionFromExteriorClothing()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Condition), Member = "GetDamageReductionForCause")]
 	[CalledBy(Type = typeof(Condition), Member = "AddHealth")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTopLayerGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTopLayerGear")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Condition), Member = "GetDamageReductionForCause")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetTopLayerGear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public float GetDamageReductionFromExteriorLegFeet()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetNumLayersForClothingRegion")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(GearItem), Member = "GetRoundedCondition")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	public bool IsWearingPerfectClothesInAllSlots()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private float GetWornClothingRegionToughness(int regionIndex)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "ApplyPercentDamageToWornClothingRegion")]
-	[Calls(Type = typeof(GearItem), Member = "Degrade")]
-	[Calls(Type = typeof(DamageProtection), Member = "MaybeApplyClothingDamageProtection")]
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(DamageProtection), Member = "MaybeApplyClothingDamageProtection")]
+	[Calls(Type = typeof(GearItem), Member = "Degrade")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void ApplyPercentDamageToTopMostLayer(int regionIndex, float normalizedDamage, DamageReason damageReason = DamageReason.Unknown)
 	{
 	}
 
+	[CalledBy(Type = typeof(Burns), Member = "ApplyClothingDamage")]
+	[CalledBy(Type = typeof(BurnsElectric), Member = "ApplyClothingDamage")]
+	[CalledBy(Type = typeof(FallDamage), Member = "ApplyFallDamage")]
 	[CalledBy(Type = typeof(FallDamage), Member = "ApplyClothingDamage")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(DamageTrigger), Member = "ApplyContinuousDamage")]
-	[CalledBy(Type = typeof(DamageTrigger), Member = "ApplyContinuousDamage")]
-	[CalledBy(Type = typeof(DamageTrigger), Member = "ApplyContinuousDamage")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ApplyDamageToWornClothingRegion")]
-	[CalledBy(Type = typeof(FallDamage), Member = "ApplyClothingDamage")]
-	[CalledBy(Type = typeof(FallDamage), Member = "ApplyFallDamage")]
-	[CalledBy(Type = typeof(BurnsElectric), Member = "ApplyClothingDamage")]
-	[CalledBy(Type = typeof(BurnsElectric), Member = "ApplyClothingDamage")]
-	[CalledBy(Type = typeof(Burns), Member = "ApplyClothingDamage")]
-	[CalledBy(Type = typeof(Burns), Member = "ApplyClothingDamage")]
-	[Calls(Type = typeof(GearItem), Member = "Degrade")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(DamageTrigger), Member = "ApplyContinuousDamage")]
 	[CallerCount(Count = 12)]
-	[CalledBy(Type = typeof(FallDamage), Member = "ApplyFallDamage")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GearItem), Member = "Degrade")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void ApplyDamageToTopMostLayer(int regionIndex, float damage, DamageReason damageReason = DamageReason.Unknown)
 	{
 	}
 
+	[CalledBy(Type = typeof(ClothingSlot), Member = "ShouldUseAltTexture")]
+	[CalledBy(Type = typeof(ClothingSlot), Member = "ShouldUseThirdAltTexture")]
+	[CalledBy(Type = typeof(ClothingSlot), Member = "CheckForChangeLayer")]
+	[CalledBy(Type = typeof(ClothingItem), Member = "IsOutermostItemInClothingRegion")]
 	[CalledBy(Type = typeof(Panel_Clothing), Member = "RefreshVisuals")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "GetFootwearType")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "GetDamageReductionFromExteriorClothing")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "GetDamageReductionFromExteriorLegFeet")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "GetSwitchValueOfOuterLayer")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "GetDamageReductionFromExteriorLegFeet")]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "RefreshVisuals")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "GetDamageReductionFromExteriorLegFeet")]
-	[CalledBy(Type = typeof(ClothingItem), Member = "IsOutermostItemInClothingRegion")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "ShouldUseAltTexture")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "CheckForChangeLayer")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "ShouldUseThirdAltTexture")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "ShouldUseAltTexture")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "ShouldUseAltTexture")]
+	[CallerCount(Count = 14)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 14)]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "CheckForChangeLayer")]
+	[CallsUnknownMethods(Count = 5)]
 	public GearItem GetTopLayerGear(ClothingRegion region)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void GetAllClothingInRegion(ClothingRegion region, List<GearItem> gearItems)
 	{
 	}
 
+	[CalledBy(Type = typeof(Frostbite), Member = "UpdateFrostbite")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[CalledBy(Type = typeof(Frostbite), Member = "UpdateFrostbite")]
-	[CalledBy(Type = typeof(Frostbite), Member = "UpdateFrostbite")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public bool RegionHasFullFrozenInnerLayer(ClothingRegion region)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(Hypothermia), Member = "CheckForHypothermia")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public bool RegionHasFullWetInnerLayer(ClothingRegion region)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CalledBy(Type = typeof(Frostbite), Member = "UpdateFrostbite")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public bool RegionHasNonFrozenClothing(ClothingRegion region)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "PutOnClothingItem")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "TakeOffClothingItem")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetSoundSwitch")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PutOnClothingItem")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetSwitchValueOfOuterLayer")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "SetSoundSwitch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void MaybeSetSoundSwitch(ClothingRegion region)
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeSetSoundSwitch")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeSetSoundSwitch")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "SetSwitch")]
-	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "SetSwitch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void SetSoundSwitch(uint switchGroup, uint switchValue)
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeSetSoundSwitch")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetTopLayerGear")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeSetSoundSwitch")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private uint GetSwitchValueOfOuterLayer(ClothingRegion region)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void LogAiDamage(GameObject damageReceiver, float condition, float damageGiven, float damageTaken, float bleedOutMintues, DamageSource damageSource, string collider)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void LogAiFleeFromItem(BaseAi ai, GearItem item, bool wasHit, float fleeChance, float roll, float distance, float fleeDistance)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private bool RangedApproximate(float a, float b, float range)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void LogPlayerDamage(float condition, float given, float taken, DamageSource damageSource)
 	{
 	}
@@ -1592,30 +1552,30 @@ public class PlayerManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Format")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 21)]
 	private void LogPlayerPosition()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void MaybeFlushPlayerDamage()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void FlushPlayerDamage()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void EnableDebugLookAt(bool enabled, bool useHighlight)
 	{
 	}
@@ -1627,25 +1587,24 @@ public class PlayerManager : MonoBehaviour
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	private void UpdateDebugLookAtObject()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void AssignDebugLookAtMaterialProperties(bool enabled, Renderer[] renderers)
 	{
 	}
 
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "Start")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetActiveAllLabels")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "Start")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 14)]
 	public void InitInspectGearMode()
 	{
@@ -1669,8 +1628,8 @@ public class PlayerManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "EnterInspectGearMode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "EnterInspectGearMode")]
 	public void EnterInspectGearModeFromFishingHole(GearItem gear, IceFishingHole hole)
 	{
 	}
@@ -1700,96 +1659,79 @@ public class PlayerManager : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "OnCollectibleNoteReadingClickBack")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_HUD), Member = "HideCollectibleNote")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnCollectibleNoteReadingClickBack()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_Map), Member = "RevealOnPolaroidDiscovery")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Panel_Map), Member = "RevealOnPolaroidDiscovery")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void RevealOnPolaroidDiscovery(GearItem gi)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Container), Member = "ShowItemsAfterSearch")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(Panel_Container), Member = "OnDone")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Panel_Map), Member = "RevealOnPolaroidDiscovery")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void MaybeRevealPolaroidDiscoveryOnClose()
 	{
 	}
 
-	[Calls(Type = typeof(Container), Member = "ShowItemsAfterSearch")]
-	[Calls(Type = typeof(Renderer), Member = "set_shadowCastingMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "MaybeDisableInspectModeMesh")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(SnareItem), Member = "SetState")]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = "set_active")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetActiveAllLabels")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Harvestable), Member = "EnterInspectMode")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "SetCookingState")]
 	[CalledBy(Type = typeof(EvolveItem), Member = "DoEvolution")]
-	[CallsUnknownMethods(Count = 62)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Knowledge), Member = "UnlockWithNotification")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 23)]
 	[Calls(Type = typeof(Panel_HUD), Member = "HideCollectibleNote")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Container), Member = "CancelSearch")]
-	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(IceFishingHole), Member = "CancelFishing")]
+	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
+	[Calls(Type = typeof(Knowledge), Member = "UnlockWithNotification")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Renderer), Member = "set_shadowCastingMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "MaybeDisableInspectModeMesh")]
+	[Calls(Type = typeof(SnareItem), Member = "SetState")]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = "set_active")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetActiveAllLabels")]
+	[Calls(Type = typeof(Container), Member = "ShowItemsAfterSearch")]
+	[Calls(Type = typeof(Harvestable), Member = "EnterInspectMode")]
+	[CallsDeduplicatedMethods(Count = 22)]
+	[CallsUnknownMethods(Count = 62)]
 	public void ExitInspectGearMode(bool hardExit)
 	{
 	}
 
-	[CalledBy(Type = typeof(Container), Member = "RevealGearItem")]
-	[CalledBy(Type = typeof(Container), Member = "ShowItemsAfterSearch")]
-	[CalledBy(Type = typeof(EvolveItem), Member = "DoEvolution")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameManager), Member = "MaybeForceGC")]
-	[Calls(Type = typeof(PlayerManager), Member = "RefreshGamepadPrompts")]
-	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "StartInspectMode")]
+	[CalledBy(Type = typeof(EvolveItem), Member = "DoEvolution")]
+	[CalledBy(Type = typeof(Container), Member = "ShowItemsAfterSearch")]
+	[CalledBy(Type = typeof(Container), Member = "RevealGearItem")]
+	[CalledBy(Type = typeof(Harvestable), Member = "EnterInspectMode")]
 	[CalledBy(Type = typeof(IceFishingHole), Member = "RevealFishInInspectMode")]
-	[CallsUnknownMethods(Count = 83)]
+	[CalledBy(Type = typeof(Panel_CanOpening), Member = "OnCancel")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "EnterInspectGearModeWithCallback")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "EnterInspectGearMode")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "EnterInspectGearModeFromContainer")]
@@ -1798,121 +1740,81 @@ public class PlayerManager : MonoBehaviour
 	[CalledBy(Type = typeof(PlayerManager), Member = "EnterInspectGearModeFromCookingPot")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessInspectablePickupItem")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessTakeBearEarRedux")]
+	[CallerCount(Count = 15)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(Panel_CanOpening), Member = "OnCancel")]
-	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
-	[CalledBy(Type = typeof(Harvestable), Member = "EnterInspectMode")]
-	[Calls(Type = typeof(GearItem), Member = "DisablePhysics")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[CallsDeduplicatedMethods(Count = 31)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetGearTransformForInspection")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[CallerCount(Count = 15)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "UpdateDamageShader")]
-	[Calls(Type = typeof(PlayerManager), Member = "MaybeEnableInspectModeMesh")]
-	[Calls(Type = typeof(PlayerManager), Member = "InitLabelsForGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "PlayPickUpClip")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(GearItem), Member = "PlayPickUpClip")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(PlayerManager), Member = "InitLabelsForGear")]
+	[Calls(Type = typeof(PlayerManager), Member = "MaybeEnableInspectModeMesh")]
+	[Calls(Type = typeof(GearItem), Member = "UpdateDamageShader")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(GearItem), Member = "DisablePhysics")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
+	[Calls(Type = typeof(PlayerManager), Member = "RefreshGamepadPrompts")]
+	[Calls(Type = typeof(GameManager), Member = "MaybeForceGC")]
+	[CallsDeduplicatedMethods(Count = 28)]
+	[CallsUnknownMethods(Count = 83)]
 	private void EnterInspectGearMode(GearItem gear, Container c, IceFishingHole hole, Harvestable h, CookingPotItem pot)
 	{
 	}
 
-	[Calls(Type = typeof(CookingPotItem), Member = "DoSpecialActionFromInspectMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayPutBackAudio")]
-	[Calls(Type = typeof(Input), Member = "ResetInputAxes")]
-	[Calls(Type = typeof(InputManager), Member = "GetPutBackPressed")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(PlayerManager), Member = "CanPickup")]
-	[Calls(Type = typeof(InputManager), Member = "GetPickupPressed")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowCollectibleNote")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayStowAudio")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemCanEquipInHands")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
-	[Calls(Type = typeof(PlayerManager), Member = "ExitInspectGearMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "TransferGearFromInspectToContainer")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayStowAudio")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BodyHarvest), Member = "NoMoreResources")]
-	[CallsUnknownMethods(Count = 82)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[Calls(Type = typeof(PlayerManager), Member = "OnCollectibleNoteReadingClickBack")]
-	[Calls(Type = typeof(InputManager), Member = "GetPutBackPressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetPickupPressed")]
-	[Calls(Type = typeof(PlayerManager), Member = "MaybePlayInspectModeVoiceOver")]
-	[Calls(Type = typeof(PlayerManager), Member = "TransferGearFromContainerToInventory")]
-	[Calls(Type = typeof(GearManager), Member = "DestroyGearObject")]
-	[Calls(Type = typeof(CookingPotItem), Member = "PlayStowFromInspectAudio")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemShouldEquipOnPickup")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ShowOnMapItem), Member = "RemoveFromMap")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CookingPotItem), Member = "PickUpCookedItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ShowOnMapItem), Member = "RemoveFromMap")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "Enable")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsHeldItemRestricted")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "ShouldContainerDisallowEquipAction")]
-	[Calls(Type = typeof(InputManager), Member = "GetEquipPressed")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "FadeInLabels")]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdateGearTransformForInspection")]
-	[Calls(Type = typeof(PlayerManager), Member = "RefreshGamepadPrompts")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[Calls(Type = typeof(PlayerManager), Member = "RefreshGamepadPrompts")]
+	[Calls(Type = typeof(PlayerManager), Member = "UpdateGearTransformForInspection")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetGearTransformForInspection")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "ExitInspectGearMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "ExitInspectGearMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[Calls(Type = typeof(ResearchItem), Member = "IsResearchComplete")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
-	[Calls(Type = typeof(PlayerManager), Member = "UseFoodInventoryItem")]
-	[Calls(Type = typeof(Inventory), Member = "AddGear")]
-	[Calls(Type = typeof(PlayerManager), Member = "ExitInspectGearMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "FadeInLabels")]
+	[Calls(Type = typeof(InputManager), Member = "GetEquipPressed")]
+	[Calls(Type = typeof(PlayerManager), Member = "ShouldContainerDisallowEquipAction")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsHeldItemRestricted")]
+	[Calls(Type = typeof(ShowOnMapItem), Member = "RemoveFromMap")]
 	[Calls(Type = typeof(PlayerManager), Member = "CanUseFoodInventoryItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "ExitInspectGearMode")]
+	[Calls(Type = typeof(Inventory), Member = "AddGear")]
+	[Calls(Type = typeof(PlayerManager), Member = "UseFoodInventoryItem")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
+	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
+	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[Calls(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
+	[Calls(Type = typeof(ResearchItem), Member = "IsResearchComplete")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "Enable")]
+	[Calls(Type = typeof(BodyHarvest), Member = "NoMoreResources")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowCollectibleNote")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemCanEquipInHands")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayStowAudio")]
+	[Calls(Type = typeof(CookingPotItem), Member = "DoSpecialActionFromInspectMode")]
+	[Calls(Type = typeof(InputManager), Member = "GetPickupPressed")]
+	[Calls(Type = typeof(PlayerManager), Member = "CanPickup")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(InputManager), Member = "GetPutBackPressed")]
+	[Calls(Type = typeof(Input), Member = "ResetInputAxes")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayPutBackAudio")]
+	[Calls(Type = typeof(PlayerManager), Member = "TransferGearFromInspectToContainer")]
+	[Calls(Type = typeof(GearManager), Member = "DestroyGearObject")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemShouldEquipOnPickup")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(CookingPotItem), Member = "PickUpCookedItem")]
+	[Calls(Type = typeof(CookingPotItem), Member = "PlayStowFromInspectAudio")]
+	[Calls(Type = typeof(PlayerManager), Member = "TransferGearFromContainerToInventory")]
+	[Calls(Type = typeof(PlayerManager), Member = "MaybePlayInspectModeVoiceOver")]
+	[Calls(Type = typeof(PlayerManager), Member = "OnCollectibleNoteReadingClickBack")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 82)]
 	public void UpdateInspectGear()
 	{
 	}
@@ -1920,340 +1822,293 @@ public class PlayerManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsInspectModeActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public GearItem GearItemBeingInspected()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 16)]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "MaybeHandleGearItemPlacement")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "EnterInspectGearMode")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[CallsDeduplicatedMethods(Count = 16)]
 	[CallsUnknownMethods(Count = 26)]
 	public void RestoreTransformFromLastInspection(GearItem gi)
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(Utils), Member = "ShowInspectForGearItem")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "EnterInspectGearMode")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Utils), Member = "ShowInspectForGearItem")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public static void MaybeEnableInspectModeMesh(GearItem gi)
 	{
 	}
 
-	[CalledBy(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ExitInspectGearMode")]
-	[Calls(Type = typeof(SnareItem), Member = "SetState")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(SnareItem), Member = "SetState")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public static void MaybeDisableInspectModeMesh(GearItem gi)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void RestoreOriginalTransform(Transform t)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Utils), Member = "UpdateTransformFromInspectAndCamera")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "EnterInspectGearMode")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "UpdateTransformFromInspectAndCamera")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void SetGearTransformForInspection()
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_up")]
-	[CallsUnknownMethods(Count = 36)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[Calls(Type = typeof(Transform), Member = "RotateAround")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Transform), Member = "RotateAround")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InputManager), Member = "HasContext")]
+	[Calls(Type = typeof(InputManager), Member = "IsSteamControllerActive")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetCameraMovementMouse")]
+	[Calls(Type = typeof(Vector2), Member = "get_magnitude")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(InputManager), Member = "GetCameraMovementGamepad")]
+	[Calls(Type = typeof(Utils), Member = "GetInspectModePivot")]
 	[Calls(Type = typeof(Transform), Member = "get_up")]
 	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Utils), Member = "GetInspectModePivot")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Vector2), Member = "get_magnitude")]
-	[Calls(Type = typeof(InputManager), Member = "GetCameraMovementMouse")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(InputManager), Member = "IsSteamControllerActive")]
-	[Calls(Type = typeof(InputManager), Member = "HasContext")]
-	[Calls(Type = typeof(InputManager), Member = "HasContext")]
+	[Calls(Type = typeof(Transform), Member = "RotateAround")]
 	[CallsDeduplicatedMethods(Count = 15)]
-	[Calls(Type = typeof(InputManager), Member = "GetCameraMovementGamepad")]
+	[CallsUnknownMethods(Count = 36)]
 	private void UpdateGearTransformForInspection()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 31)]
-	[Calls(Type = typeof(PlayerManager), Member = "SetActiveInfoArea")]
-	[Calls(Type = typeof(PlayerManager), Member = "CanPickup")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InitInspectGearMode")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ExitInspectGearMode")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "SetActiveInfoArea")]
+	[Calls(Type = typeof(PlayerManager), Member = "CanPickup")]
+	[CallsDeduplicatedMethods(Count = 31)]
 	[CallsUnknownMethods(Count = 78)]
 	private void SetActiveAllLabels(bool active)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "SetActiveAllLabels")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "NoteToggleReadMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void SetActiveInfoArea(bool showStandard)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "SetActiveInfoArea")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void NoteToggleReadMode()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "EnterInspectGearMode")]
+	[CallerCount(Count = 1)]
 	private void InitLabelsForGear()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(CookingPotItem), Member = "IsCookingSomething")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 4)]
 	private void MaybeReplaceGearItemForLabels()
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 11)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
 	[CallsUnknownMethods(Count = 45)]
 	private void FadeInLabels()
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
 	[Calls(Type = typeof(Inspect), Member = "GetUrgency")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "SetSwitch")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[CallsUnknownMethods(Count = 22)]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 22)]
 	private void MaybePlayInspectModeVoiceOver()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(CookingPotItem), Member = "PlayPutBackFromInspectAudio")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[CallsUnknownMethods(Count = 8)]
 	private void PlayPutBackAudio()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptEquipGearItem")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TransferGearFromContainerToInventory")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptEquipGearItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TransferGearFromContainerToInventory")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void PlayStowAudio()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "ItemCanEquipInHands")]
 	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayStowAudio")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void AttemptEquipGearItem()
 	{
 	}
 
-	[Calls(Type = typeof(Container), Member = "RemoveGear")]
-	[CallsUnknownMethods(Count = 16)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Container), Member = "AddGear")]
-	[Calls(Type = typeof(GearManager), Member = "DestroyGearObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Container), Member = "RemoveGear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Container), Member = "AddToExistingStackable")]
+	[Calls(Type = typeof(GearManager), Member = "DestroyGearObject")]
+	[Calls(Type = typeof(Container), Member = "AddGear")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 16)]
 	private void TransferGearFromInspectToContainer()
 	{
 	}
 
-	[Calls(Type = typeof(Container), Member = "DestroyGear")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayStowAudio")]
-	[Calls(Type = typeof(Container), Member = "RemoveGear")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Container), Member = "DestroyGear")]
+	[Calls(Type = typeof(Container), Member = "RemoveGear")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayStowAudio")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void TransferGearFromContainerToInventory()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "SetActiveAllLabels")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitFlashlight")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitMatch")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitLamp")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitTorch")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "SetActiveAllLabels")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItem), Member = "IsLitFlare")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitLamp")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitMatch")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitTorch")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitFlashlight")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private bool CanPickup()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ShouldContainerDisallowEquipAction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
-	[CallsUnknownMethods(Count = 21)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "EnterInspectGearMode")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
+	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
-	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
+	[CallsUnknownMethods(Count = 21)]
 	private void RefreshGamepadPrompts()
 	{
 	}
 
-	[CalledBy(Type = typeof(InterfaceManager), Member = "ShouldEnableMousePointer")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateAimingStaminaBar")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateStaminaBar")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "ItemProgressBarCheck")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "IgniteDelayed")]
 	[CalledBy(Type = typeof(KeroseneLampItem), Member = "Toggle")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "IgniteDelayed")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "ItemProgressBarCheck")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateStaminaBar")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateAimingStaminaBar")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "ShouldEnableMousePointer")]
+	[CallerCount(Count = 7)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 7)]
 	public bool IsCancelableActionInProgress()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "ShouldEnableMousePointer")]
-	[CalledBy(Type = typeof(InputManager), Member = "OpenRadialMenu")]
-	[CalledBy(Type = typeof(InputManager), Member = "CanInvokePauseMenu")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "ItemProgressBarCheck")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(InputManager), Member = "CanInvokePauseMenu")]
+	[CalledBy(Type = typeof(InputManager), Member = "OpenRadialMenu")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "ShouldEnableMousePointer")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsClickHoldActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(LoadScene), Member = "Cancel")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void CancelLoadScene()
 	{
@@ -2267,33 +2122,33 @@ public class PlayerManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool WillRestoreItemInHandsAfterInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_stow_item")]
+	[CalledBy(Type = typeof(Action_LowerItemsInHand), Member = "OnExecute")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "ShouldStowOrUnstowForInteraction")]
 	[Calls(Type = typeof(FirstPersonItem), Member = "AnimateFPSMeshToExitPosition")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Stow")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_stow_item")]
-	[CalledBy(Type = typeof(Action_LowerItemsInHand), Member = "OnExecute")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public bool StowItem()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Stow")]
-	[Calls(Type = typeof(FirstPersonItem), Member = "AnimateFPSMeshToExitPosition")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 29)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "ShouldStowOrUnstowForInteraction")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
+	[Calls(Type = typeof(FirstPersonItem), Member = "AnimateFPSMeshToExitPosition")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Stow")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public void ItemInHandsDuringInteractionStart()
 	{
 	}
@@ -2304,223 +2159,193 @@ public class PlayerManager : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
 	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void DoDelayedInteractionEnd()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StowItem")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitFlashlight")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitLamp")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitFlare")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitMatch")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GearItem), Member = "IsLitMatch")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitFlare")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitLamp")]
 	[Calls(Type = typeof(GearItem), Member = "IsLitTorch")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitFlashlight")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ShouldStowOrUnstowForInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 18)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "DoDelayedInteractionEnd")]
-	[Calls(Type = typeof(FirstPersonItem), Member = "AnimateFPSMeshToDefaultPosition")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Unstow")]
-	[Calls(Type = typeof(PlayerManager), Member = "EquipLastItemInHands")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
-	[Calls(Type = typeof(PlayerManager), Member = "ShouldStowOrUnstowForInteraction")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillArchery")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "EquipLastItemInHands")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "EquipLastItemInHands")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillArchery")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(PlayerManager), Member = "ShouldStowOrUnstowForInteraction")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Unstow")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
+	[Calls(Type = typeof(FirstPersonItem), Member = "AnimateFPSMeshToDefaultPosition")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 18)]
 	private void ItemInHandsDuringInteractionEndInternal()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[CalledBy(Type = typeof(Panel_Rest), Member = "OnPickUp")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "MaybeAddSpawnedPropToInventory")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CollectArrows")]
-	[CalledBy(Type = typeof(HeldItemInPlacementZone), Member = "RetrievePlacedItemToHands")]
 	[CalledBy(Type = typeof(BreakDown), Member = "SpawnYieldObjectsAndAddToInventory")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
+	[CalledBy(Type = typeof(HeldItemInPlacementZone), Member = "RetrievePlacedItemToHands")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CollectArrows")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnCharcoalHarvest")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessInspectablePickupItem")]
+	[CalledBy(Type = typeof(Panel_Rest), Member = "OnPickUp")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptEquipGearItem")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptEquipGearItem")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessInspectablePickupItem")]
-	[CallsUnknownMethods(Count = 19)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessInspectablePickupItem")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StowOrDropPlaceMesh")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(RadialSpawnManager), Member = "ReturnToObjectPool")]
-	[Calls(Type = typeof(PlayerManager), Member = "EquipItem")]
 	[CallerCount(Count = 19)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(GearItem), Member = "GetBasicDisplayNameForInventoryInterfaces")]
 	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[Calls(Type = typeof(PlayerManager), Member = "ItemShouldEquipOnPickup")]
 	[Calls(Type = typeof(GearItem), Member = "PlayPickUpClip")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
 	[Calls(Type = typeof(GearItem), Member = "IsLitFlashlight")]
 	[Calls(Type = typeof(FlashlightItem), Member = "PlayTurnOffAudio")]
 	[Calls(Type = typeof(FlashlightItem), Member = "EnableLights")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[Calls(Type = typeof(RadialObjectSpawner), Member = "RemoveFromSpawns")]
+	[Calls(Type = typeof(RadialSpawnManager), Member = "ReturnToObjectPool")]
+	[Calls(Type = typeof(PlayerManager), Member = "EquipItem")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 19)]
 	public bool ProcessPickupItemInteraction(GearItem item, bool forceEquip, bool skipAudio)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreen")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitLightsource")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "EnterInspectGearMode")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessBodyHarvestInteraction")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessBodyHarvestInteraction")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[Calls(Type = typeof(GearItem), Member = "PlayPickUpClip")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessBodyHarvestInteraction")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(Utils), Member = "IsChildOfParent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerHoldingTorchThatCanBeLit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerHoldingTorchThatCanBeLit")]
 	[Calls(Type = typeof(GearItem), Member = "IsLitLightsource")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(GearItem), Member = "PlayPickUpClip")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreen")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
+	[Calls(Type = typeof(PlayerManager), Member = "EnterInspectGearMode")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 17)]
 	public bool ProcessInspectablePickupItem(GearItem pickupItem)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenDropCurrent")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(BodyCarry), Member = "SetupCarryState")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessInspectablePickupItem")]
 	[CalledBy(Type = typeof(WildlifeItem), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(PlayerManager), Member = "OnProcessPickupWinNoInspectEquipComplete")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessInspectablePickupItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
+	[CalledBy(Type = typeof(BodyCarry), Member = "SetupCarryState")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenEquip")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "OnProcessPickupWinNoInspectEquipComplete")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenDropCurrent")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsUnknownMethods(Count = 8)]
 	public void ProcessPickupWithNoInspectScreen(GearItem pickupItem, bool immediate)
 	{
 	}
 
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "MaybeStowItemInHand")]
-	[CallsUnknownMethods(Count = 41)]
-	[CalledBy(Type = typeof(Action_StowItemsInHand), Member = "MaybeStowItemInHand")]
-	[CalledBy(Type = typeof(BodyCarry), Member = "MaybeStowItemInHand")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreen")]
-	[CalledBy(Type = typeof(TimelinePlayback), Member = "AttemptToStowPlayerItemInHand")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "MaybeStowItemInHand")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SetWeapon")]
+	[CalledBy(Type = typeof(TimelinePlayback), Member = "AttemptToStowPlayerItemInHand")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreen")]
+	[CalledBy(Type = typeof(BodyCarry), Member = "MaybeStowItemInHand")]
+	[CalledBy(Type = typeof(Action_StowItemsInHand), Member = "MaybeStowItemInHand")]
 	[CallerCount(Count = 6)]
-	[Calls(Type = typeof(GearItem), Member = "IsLitLamp")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "set_m_ItemInHands")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SetWeapon")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SetWeapon")]
+	[Calls(Type = typeof(PlayerManager), Member = "set_m_ItemInHands")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitLamp")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Unequip")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 41)]
 	public void ProcessPickupWithNoInspectScreenDropCurrent(PlayerAnimation.OnAnimationEvent nextEvent)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "SetWeapon")]
+	[Calls(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnUnequipItemInHandInternalCompleteResetWeapon()
 	{
 	}
 
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreen")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Equip")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(GearItem), Member = "GetBasicDisplayNameForInventoryInterfaces")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayerManager), Member = "OnProcessPickupWinNoInspectEquipComplete")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(PlayerManager), Member = "OnProcessPickupWinNoInspectEquipComplete")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GearItem), Member = "GetBasicDisplayNameForInventoryInterfaces")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Equip")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 17)]
 	private void ProcessPickupWithNoInspectScreenEquip()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SetWeapon")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreen")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "OnItemEquipped")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenEquip")]
-	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
-	[Calls(Type = typeof(GearItem), Member = "DisablePhysics")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(PlayerManager), Member = "set_m_ItemInHands")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
+	[Calls(Type = typeof(GearItem), Member = "DisablePhysics")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SetWeapon")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "OnItemEquipped")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 13)]
 	private void OnProcessPickupWinNoInspectEquipComplete()
 	{
 	}
@@ -2530,282 +2355,270 @@ public class PlayerManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
 	[CalledBy(Type = typeof(RockCache), Member = "OnOpen")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Container), Member = "ForceLock")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Container), Member = "InstantiateContents")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Container), Member = "IsLockedOrSafeIsUncracked")]
 	[Calls(Type = typeof(Container), Member = "IsLocked")]
 	[Calls(Type = typeof(Container), Member = "StartSafeCrackingInterface")]
-	[Calls(Type = typeof(Container), Member = "IsLockedOrSafeIsUncracked")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Container), Member = "InstantiateContents")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Container), Member = "ForceLock")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Container), Member = "IsLocked")]
+	[CallsUnknownMethods(Count = 4)]
 	public bool ProcessContainerInteraction(Container c)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(BodyCarry), Member = "ShowError")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
-	[Calls(Type = typeof(LoadScene), Member = "StartInteract")]
-	[Calls(Type = typeof(LoadScene), Member = "ForceLock")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BodyCarry), Member = "HasBody")]
-	[Calls(Type = typeof(BodyCarry), Member = "HasBody")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(BodyCarry), Member = "HasBody")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(NPC), Member = "HasActive")]
+	[Calls(Type = typeof(BodyCarry), Member = "ShowError")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(LoadScene), Member = "ForceLock")]
+	[Calls(Type = typeof(LoadScene), Member = "StartInteract")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public bool ProcessLoadSceneInteraction(LoadScene ls)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessBodyHarvestInteraction")]
-	[Calls(Type = typeof(PlayerManager), Member = "EnterInspectGearMode")]
-	[Calls(Type = typeof(GearItem), Member = "StickToGroundAtPlayerFeet")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(GearItem), Member = "StickToGroundAtPlayerFeet")]
+	[Calls(Type = typeof(PlayerManager), Member = "EnterInspectGearMode")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 11)]
 	private void ProcessTakeBearEarRedux(BearHuntAiRedux bhairedux)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 19)]
-	[CalledBy(Type = typeof(Action_ShowPanel), Member = "MaybeShowBodyHarvest")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoBodyHarvest")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "MaybePerformCompletionAction")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
-	[Calls(Type = typeof(BaseAi), Member = "Despawn")]
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoBodyHarvest")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
+	[CalledBy(Type = typeof(Action_ShowPanel), Member = "MaybeShowBodyHarvest")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessTakeBearEarRedux")]
 	[Calls(Type = typeof(PlayerManager), Member = "ProcessInspectablePickupItem")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CheckIfResourcesLeft")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessInspectablePickupItem")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessTakeBearEarRedux")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 12)]
-	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(WildlifeItem), Member = "SpawnCarcass")]
+	[Calls(Type = typeof(BaseAi), Member = "Despawn")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 19)]
 	public bool ProcessBodyHarvestInteraction(BodyHarvest bh, bool playBookEndAnim)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
-	[Calls(Type = typeof(Panel_Rest), Member = "StartRest")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(AnimatedInteraction), Member = "InProgress")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Panel_Rest), Member = "StartRest")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool ProcessBedInteraction(Bed b)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "FireInteractCallback")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "SetCampFireInstance")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Campfire), Member = "TooWindyToStart")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerHoldingTorchThatCanBeLit")]
+	[Calls(Type = typeof(Panel_TorchLight), Member = "SetFireSourceToLightTorch")]
 	[Calls(Type = typeof(Campfire), Member = "CanFeedFire")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerAttemptToFeedFire")]
-	[Calls(Type = typeof(Panel_TorchLight), Member = "SetFireSourceToLightTorch")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerHoldingTorchThatCanBeLit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Campfire), Member = "TooWindyToStart")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "SetCampFireInstance")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	public bool ProcessCampfireInteraction(Campfire cf)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "FireInteractCallback")]
-	[Calls(Type = typeof(WoodStove), Member = "Close")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerAttemptToFeedFire")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "EnableAfterDelay")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "SetFireContainer")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(WoodStove), Member = "FireBurningInside")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerHoldingTorchThatCanBeLit")]
-	[Calls(Type = typeof(WoodStove), Member = "Open")]
-	[Calls(Type = typeof(Panel_TorchLight), Member = "SetFireSourceToLightTorch")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerHoldingTorchThatCanBeLit")]
+	[Calls(Type = typeof(Panel_TorchLight), Member = "SetFireSourceToLightTorch")]
+	[Calls(Type = typeof(WoodStove), Member = "Open")]
+	[Calls(Type = typeof(WoodStove), Member = "FireBurningInside")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "SetFireContainer")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "EnableAfterDelay")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerAttemptToFeedFire")]
+	[Calls(Type = typeof(WoodStove), Member = "Close")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 7)]
 	public bool ProcessWoodStoveInteraction(WoodStove ws)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(IceFishingHole), Member = "OnClick")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(IceFishingHole), Member = "OnClick")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool ProcessIceFishingHoleInteraction(IceFishingHole ifh)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
-	[Calls(Type = typeof(Panel_PickWater), Member = "SetWaterSourceForTaking")]
-	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
-	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Panel_PickWater), Member = "SetWaterSourceForTaking")]
+	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 17)]
 	public bool ProcessWaterSourceInteraction(WaterSource source)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
-	[Calls(Type = typeof(OpenClose), Member = "StartInteract")]
-	[Calls(Type = typeof(OpenClose), Member = "ForceLock")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(OpenClose), Member = "CanInteract")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(OpenClose), Member = "CanInteract")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(OpenClose), Member = "ForceLock")]
+	[Calls(Type = typeof(OpenClose), Member = "StartInteract")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool ProcessOpenCloseInteraction(OpenClose oc)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(AudioToggle), Member = "TurnOn")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public bool ProcessAudioToggleInteraction(AudioToggle at)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(HUDManager), Member = "UpdateCrosshair")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
 	[Calls(Type = typeof(OpenClose), Member = "CanInteract")]
-	[CalledBy(Type = typeof(HUDManager), Member = "UpdateCrosshair")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public bool ShouldShowClickHoldBackpiece()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateHUDText")]
-	[Calls(Type = typeof(Lock), Member = "GetGearItemToForceLock")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(OwnershipManager), Member = "IsUnowned")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(OwnershipManager), Member = "IsUnowned")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
 	[Calls(Type = typeof(AnimatedInteraction), Member = "CanInteract")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Lock), Member = "GetGearItemToForceLock")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public HoverTextState GetInteractiveObjectDisplayTextState(GameObject interactiveObject)
 	{
 		return default(HoverTextState);
 	}
 
-	[Calls(Type = typeof(Chair), Member = "GetHoverText")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateHUDText")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(DummyInteractiveObject), Member = "GetInteractionText")]
+	[Calls(Type = typeof(InteractionOverride), Member = "IsActive")]
+	[Calls(Type = typeof(InteractionOverride), Member = "GetInteractionText")]
+	[Calls(Type = typeof(ContainerMissionHoverText), Member = "GetHoverText")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(SteamPipeValveSocket), Member = "ShowHoverButtonPrompts")]
+	[Calls(Type = typeof(SteamPipeValveSocket), Member = "GetHoverText")]
+	[Calls(Type = typeof(NPC), Member = "GetHoverText")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(CarryableBody), Member = "CanInteract")]
+	[Calls(Type = typeof(CarryableBody), Member = "GetHoverText")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(Container), Member = "GetInteractiveDisplayText")]
+	[Calls(Type = typeof(CustomCameraPosition), Member = "GetHoverText")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(RopeAnchorPoint), Member = "GetHoverText")]
-	[Calls(Type = typeof(Forge), Member = "GetHoverText")]
-	[Calls(Type = typeof(Harvestable), Member = "GetHoverText")]
-	[Calls(Type = typeof(VehicleDoor), Member = "GetHoverText")]
-	[Calls(Type = typeof(IceFishingHole), Member = "GetHoverText")]
-	[Calls(Type = typeof(OpenClose), Member = "GetHoverText")]
-	[Calls(Type = typeof(OpenClose), Member = "CanInteract")]
-	[Calls(Type = typeof(WoodStove), Member = "GetHoverText")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "GetHoverText")]
+	[Calls(Type = typeof(BodyHarvest), Member = "GetHoverText")]
+	[Calls(Type = typeof(SnareItem), Member = "GetHoverText")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Bed), Member = "IsOccupied")]
+	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
+	[Calls(Type = typeof(CookingPotItem), Member = "GetHoverText")]
+	[Calls(Type = typeof(Campfire), Member = "GetHoverText")]
+	[Calls(Type = typeof(GearItem), Member = "GetHoverText")]
 	[Calls(Type = typeof(LoadScene), Member = "GetHoverText")]
+	[Calls(Type = typeof(WoodStove), Member = "GetHoverText")]
+	[Calls(Type = typeof(OpenClose), Member = "CanInteract")]
+	[Calls(Type = typeof(OpenClose), Member = "GetHoverText")]
+	[Calls(Type = typeof(IceFishingHole), Member = "GetHoverText")]
+	[Calls(Type = typeof(VehicleDoor), Member = "GetHoverText")]
+	[Calls(Type = typeof(Harvestable), Member = "GetHoverText")]
+	[Calls(Type = typeof(Forge), Member = "GetHoverText")]
+	[Calls(Type = typeof(RopeAnchorPoint), Member = "GetHoverText")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Chair), Member = "GetHoverText")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "GetHoverText")]
 	[Calls(Type = typeof(SnowShelter), Member = "GetHoverText")]
-	[Calls(Type = typeof(InteractiveLightsource), Member = "ShowHoverButtonPrompts")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(LeanTo), Member = "GetHoverText")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetHoverText")]
 	[Calls(Type = typeof(Cairn), Member = "GetHoverText")]
 	[Calls(Type = typeof(CookingSlot), Member = "CanBeInteractedWith")]
 	[Calls(Type = typeof(TrackableCache), Member = "GetHoverText")]
 	[Calls(Type = typeof(MillingMachine), Member = "GetHoverText")]
 	[Calls(Type = typeof(Elevator), Member = "GetHoverText")]
+	[Calls(Type = typeof(WolfDen), Member = "GetHoverText")]
+	[Calls(Type = typeof(InteractiveLightsource), Member = "ShowHoverButtonPrompts")]
 	[Calls(Type = typeof(InteractiveLightsource), Member = "GetHoverText")]
 	[Calls(Type = typeof(CellToilet), Member = "GetHoverText")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateHUDText")]
+	[CallsDeduplicatedMethods(Count = 53)]
 	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(GearItem), Member = "GetHoverText")]
-	[Calls(Type = typeof(LeanTo), Member = "GetHoverText")]
-	[Calls(Type = typeof(Campfire), Member = "GetHoverText")]
-	[Calls(Type = typeof(WolfDen), Member = "GetHoverText")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 105)]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
-	[Calls(Type = typeof(DummyInteractiveObject), Member = "GetInteractionText")]
-	[Calls(Type = typeof(DummyInteractiveObject), Member = "GetInteractionText")]
-	[Calls(Type = typeof(InteractionOverride), Member = "IsActive")]
-	[Calls(Type = typeof(CookingPotItem), Member = "GetHoverText")]
-	[Calls(Type = typeof(InteractionOverride), Member = "GetInteractionText")]
-	[Calls(Type = typeof(ContainerMissionHoverText), Member = "GetHoverText")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(InteractionOverride), Member = "GetInteractionText")]
-	[Calls(Type = typeof(SteamPipeValveSocket), Member = "ShowHoverButtonPrompts")]
-	[Calls(Type = typeof(SteamPipeValveSocket), Member = "GetHoverText")]
-	[Calls(Type = typeof(NPC), Member = "GetHoverText")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(CarryableBody), Member = "GetHoverText")]
-	[Calls(Type = typeof(CarryableBody), Member = "CanInteract")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Bed), Member = "IsOccupied")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
-	[Calls(Type = typeof(BodyHarvest), Member = "GetHoverText")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(CustomCameraPosition), Member = "GetHoverText")]
-	[Calls(Type = typeof(Container), Member = "GetInteractiveDisplayText")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(SnareItem), Member = "GetHoverText")]
 	public string GetInteractiveObjectDisplayText(GameObject interactiveObject)
 	{
 		return null;
@@ -2816,419 +2629,318 @@ public class PlayerManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallsUnknownMethods(Count = 35)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcess")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "ShouldSuppressCrosshairs")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Physics), Member = "SphereCastNonAlloc")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(PlayerManager), Member = "ShouldSuppressCrosshairs")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 14)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 35)]
 	private GameObject GetInteractiveObjectNearCrosshairs(float maxRange)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayerManager), Member = "ShouldSuppressCrosshairs")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "ShouldSuppressCrosshairs")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public bool HastInteractiveObjectUnderCrossHair()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcess")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
 	[Calls(Type = typeof(AnimatedInteraction), Member = "RespectContrainsts")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "RespectContrainsts")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	private GameObject GetInteractiveObjectWithConstraints(GameObject interactiveObject)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectUnderCrosshairs")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectUnderCrosshairs")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(RaycastHit), Member = "get_transform")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[CallsDeduplicatedMethods(Count = 15)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[Calls(Type = typeof(RaycastHit), Member = "get_transform")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 21)]
 	private void FindInteractiveObject(RaycastHit hit, ref GearItem gi, ref GameObject interactiveObj)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_transform")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_layer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(GameObject), Member = "get_layer")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_transform")]
-	[Calls(Type = typeof(Utils), Member = "GetTopParentWithLayer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 95)]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcess")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "ShouldSuppressCrosshairs")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Utils), Member = "RaycastNearest")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
 	[Calls(Type = typeof(Utils), Member = "GetTopParentWithLayer")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(PlayerManager), Member = "FindInteractiveObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(Rigidbody), Member = "get_velocity")]
+	[Calls(Type = typeof(RaycastHit), Member = "get_transform")]
 	[Calls(Type = typeof(GameObject), Member = "get_layer")]
-	[Calls(Type = typeof(Utils), Member = "GetTopParentWithLayer")]
-	[Calls(Type = typeof(GameObject), Member = "get_layer")]
-	[Calls(Type = typeof(GameObject), Member = "get_layer")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "get_childCount")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_layer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "GetTopParentWithLayer")]
-	[Calls(Type = typeof(GameObject), Member = "get_layer")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "FindInteractiveObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(Utils), Member = "RaycastNearest")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(PlayerManager), Member = "ShouldSuppressCrosshairs")]
-	[CallsDeduplicatedMethods(Count = 42)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(Utils), Member = "GetTopParentWithLayer")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Rigidbody), Member = "get_velocity")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(PlayerManager), Member = "FindInteractiveObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(Utils), Member = "GetTopParentWithLayer")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "GetChild")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInParent")]
+	[CallsDeduplicatedMethods(Count = 37)]
+	[CallsUnknownMethods(Count = 95)]
 	public GameObject GetInteractiveObjectUnderCrosshairs(float maxRange)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetInteractiveObjectNearCrosshairs")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetInteractiveObjectWithConstraints")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "ComputeModifiedPickupRange")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "LateUpdate")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "ComputeModifiedPickupRange")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetInteractiveObjectUnderCrosshairs")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetInteractiveObjectWithConstraints")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetInteractiveObjectNearCrosshairs")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void InteractiveObjectsProcess()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "GetDefaultPlacementDistance")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
-	[Calls(Type = typeof(GearItem), Member = "PlayPickUpClip")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Bed), Member = "IsOccupied")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(Bed), Member = "IsOccupied")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetDefaultPlacementDistance")]
+	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
+	[Calls(Type = typeof(GearItem), Member = "PlayPickUpClip")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void InteractiveObjectsProcessAltFire()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetDefaultPlacementDistance")]
 	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
 	[Calls(Type = typeof(GearItem), Member = "PlayPickUpClip")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetDefaultPlacementDistance")]
+	[CallsUnknownMethods(Count = 3)]
 	private void MaybeStartPlaceMesh(GearItem gi)
 	{
 	}
 
-	[Calls(Type = typeof(RadioTower), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(SwitchBox), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(AuroraActivatedToggle), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(RopeAnchorPoint), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(RopeClimbPoint), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(AmmoWorkBench), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(VehicleDoor), Member = "StartInteract")]
-	[Calls(Type = typeof(Forge), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(BreakDown), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(Chair), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessIceFishingHoleInteraction")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessOpenCloseInteraction")]
-	[Calls(Type = typeof(OpenClose), Member = "CanInteract")]
-	[Calls(Type = typeof(WorkBench), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessAudioToggleInteraction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(SnowShelter), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(CookingSlot), Member = "CanBeInteractedWith")]
-	[Calls(Type = typeof(Keypad), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessWaterSourceInteraction")]
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessFireAction")]
-	[Calls(Type = typeof(LoadingZone), Member = "StartInteract")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(RopeExitPoint), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(RockCache), Member = "StartInteraction")]
-	[Calls(Type = typeof(CellToilet), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(InteractiveLightsource), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(LeanTo), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Elevator), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(MillingMachine), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(NPC), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(TrackableCache), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(Cairn), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(WildlifeItem), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(WolfDen), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessLoadSceneInteraction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessContainerInteraction")]
-	[Calls(Type = typeof(InteractionOverride), Member = "IsActive")]
-	[Calls(Type = typeof(PlayPlayerTimelineOnInteract), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(SteamPipeValveSocket), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(Phone), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(SendMissionEventObject), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(MapDetail), Member = "Unlock")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
-	[Calls(Type = typeof(BodyCarry), Member = "ShowError")]
-	[Calls(Type = typeof(BodyCarry), Member = "CanInteractWithObject")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 101)]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteInteractAction")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(BodyCarry), Member = "CanInteractWithObject")]
+	[Calls(Type = typeof(BodyCarry), Member = "ShowError")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(MapDetail), Member = "Unlock")]
+	[Calls(Type = typeof(SendMissionEventObject), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(Phone), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(SteamPipeValveSocket), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(PlayPlayerTimelineOnInteract), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(InteractionOverride), Member = "IsActive")]
 	[Calls(Type = typeof(InteractionOverride), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(Panel_ActionPicker), Member = "ShowActionPicker")]
 	[Calls(Type = typeof(CustomCameraPosition), Member = "ProcessInteraction")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(BehaviourTreeInteraction), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
+	[Calls(Type = typeof(Bed), Member = "IsOccupied")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessBedInteraction")]
 	[Calls(Type = typeof(BodyCarry), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(CarryableBody), Member = "CanInteract")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessInspectablePickupItem")]
-	[Calls(Type = typeof(Harvestable), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessBodyHarvestInteraction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(CookingPotItem), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(CookingPotItem), Member = "ShouldProcessInteractionInternal")]
 	[Calls(Type = typeof(CookingPotItem), Member = "IsCookingSomething")]
 	[Calls(Type = typeof(Panel_ActionPicker), Member = "ShowActionPicker")]
-	[Calls(Type = typeof(BodyCarry), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessBedInteraction")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Bed), Member = "IsOccupied")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(BehaviourTreeInteraction), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(CookingPotItem), Member = "ShouldProcessInteractionInternal")]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteInteractAction")]
+	[Calls(Type = typeof(CookingPotItem), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessBodyHarvestInteraction")]
+	[Calls(Type = typeof(Harvestable), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessInspectablePickupItem")]
+	[Calls(Type = typeof(CarryableBody), Member = "CanInteract")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessContainerInteraction")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessLoadSceneInteraction")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessWaterSourceInteraction")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessAudioToggleInteraction")]
+	[Calls(Type = typeof(WorkBench), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(OpenClose), Member = "CanInteract")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessOpenCloseInteraction")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessIceFishingHoleInteraction")]
+	[Calls(Type = typeof(VehicleDoor), Member = "StartInteract")]
+	[Calls(Type = typeof(Chair), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(BreakDown), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(Forge), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(AmmoWorkBench), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(RadioTower), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(RopeClimbPoint), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(RopeAnchorPoint), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(AuroraActivatedToggle), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(SwitchBox), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(SnowShelter), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(LeanTo), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(Keypad), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(WildlifeItem), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(Cairn), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(CookingSlot), Member = "CanBeInteractedWith")]
+	[Calls(Type = typeof(TrackableCache), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(NPC), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(MillingMachine), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(Elevator), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(WolfDen), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(InteractiveLightsource), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(CellToilet), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(RockCache), Member = "StartInteraction")]
+	[Calls(Type = typeof(RopeExitPoint), Member = "ProcessInteraction")]
+	[Calls(Type = typeof(LoadingZone), Member = "StartInteract")]
+	[CallsDeduplicatedMethods(Count = 54)]
+	[CallsUnknownMethods(Count = 9)]
 	public bool InteractiveObjectsProcessInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void PlayerOpenContainer(Container c)
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessCampfireInteraction")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessWoodStoveInteraction")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(Panel_FeedFire), Member = "SetFireContainer")]
 	[Calls(Type = typeof(Panel_FeedFire), Member = "EnableAfterDelay")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessCampfireInteraction")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessWoodStoveInteraction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void PlayerAttemptToFeedFire(GameObject go, float delaySeconds)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_FireStart), Member = "EnableAfterDelay")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_FireStart), Member = "SetFireContainer")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "SetFireContainer")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "EnableAfterDelay")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void PlayerAttemptToStartFire(GameObject go, float delaySeconds)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "GetFPSMeshID")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "AssignSlot")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptEquipGearItem")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "GetFPSMeshID")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool ItemCanEquipInHands(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlacementDistance")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcess")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsUnknownMethods(Count = 10)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlacementDistance")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[CallsUnknownMethods(Count = 10)]
 	public float ComputeModifiedPickupRange(float range)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 18)]
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessFireAction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerHoldingTorchThatCanBeLit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerHoldingTorchThatCanBeLit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerHoldingTorchThatCanBeLit")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 18)]
 	public bool ObjectUnderCrosshairCanLightTorch()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private bool ItemShouldEquipOnPickup(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessWoodStoveInteraction")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ObjectUnderCrosshairCanLightTorch")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ObjectUnderCrosshairCanLightTorch")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessInspectablePickupItem")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessCampfireInteraction")]
 	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "DidUseFireToLightHeldTorch")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessInspectablePickupItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessCampfireInteraction")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessWoodStoveInteraction")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ObjectUnderCrosshairCanLightTorch")]
+	[CallerCount(Count = 7)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 7)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool PlayerHoldingTorchThatCanBeLit()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 27)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectUnderCrosshairs")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "HastInteractiveObjectUnderCrossHair")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectNearCrosshairs")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "IsHoveringInteractiveObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectNearCrosshairs")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "HastInteractiveObjectUnderCrossHair")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectUnderCrosshairs")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 27)]
 	private bool ShouldSuppressCrosshairs()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreen")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "OnItemEquipped")]
-	[Calls(Type = typeof(PlayerManager), Member = "set_m_ItemInHands")]
-	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
-	[Calls(Type = typeof(Inventory), Member = "SetActive")]
-	[Calls(Type = typeof(Inventory), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "IsWeaponAvailable")]
+	[CalledBy(Type = typeof(MatchesItem), Member = "PutOut")]
 	[CalledBy(Type = typeof(StoneItem), Member = "OnThrowComplete")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "OnSprayPaint")]
 	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnTakeTorch")]
@@ -3241,71 +2953,65 @@ public class PlayerManager : MonoBehaviour
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Deserialize")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "GetUpAnimationComplete")]
-	[CallsUnknownMethods(Count = 58)]
-	[Calls(Type = typeof(MatchesItem), Member = "PutOut")]
-	[CalledBy(Type = typeof(MatchesItem), Member = "PutOut")]
-	[Calls(Type = typeof(FlashlightItem), Member = "EnableLights")]
-	[Calls(Type = typeof(GearItem), Member = "GetFPSMeshID")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitFlashlight")]
-	[Calls(Type = typeof(FlashlightItem), Member = "PlayTurnOffAudio")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CallerCount(Count = 13)]
 	[Calls(Type = typeof(PlayerManager), Member = "IsReadyToEquip")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "IsHeldItemRestricted")]
 	[Calls(Type = typeof(SprainedWrist), Member = "CanEquipItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(FlareItem), Member = "Ignite")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NoiseMakerItem), Member = "Ignite")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
+	[Calls(Type = typeof(GearItem), Member = "GetFPSMeshID")]
 	[Calls(Type = typeof(vp_FPSPlayer), Member = "IsWeaponAvailable")]
 	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetWeaponAvailable")]
-	[CallerCount(Count = 13)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SwitchWeapon")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
-	[Calls(Type = typeof(PlayerManager), Member = "Drop")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "Drop")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SwitchWeapon")]
 	[Calls(Type = typeof(vp_FPSPlayer), Member = "ReenableWeaponStatesIn")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
 	[Calls(Type = typeof(PlayerManager), Member = "Drop")]
+	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitFlashlight")]
+	[Calls(Type = typeof(FlashlightItem), Member = "PlayTurnOffAudio")]
+	[Calls(Type = typeof(FlashlightItem), Member = "EnableLights")]
+	[Calls(Type = typeof(MatchesItem), Member = "PutOut")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Inventory), Member = "SetActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "set_m_ItemInHands")]
+	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "OnItemEquipped")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreen")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 58)]
 	public void EquipItem(GearItem gi, bool fromDeserialize)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "OnItemEquipped")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Inventory), Member = "SetActive")]
+	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "OnItemEquipped")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public void OnEquipItemBegin()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Action_PlayTimeline.Action_SetCinematicProperties), Member = "OnExecute")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "AutoEquipItemInHandsAfterInteraction")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeRestoreSaveItemInHands")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "ExitDialogueMode")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoOnInteractionComplete")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
-	[Calls(Type = typeof(PlayerManager), Member = "EquipItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "FindByInstanceID")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeRestoreSaveItemInHands")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "AutoEquipItemInHandsAfterInteraction")]
+	[CalledBy(Type = typeof(Action_PlayTimeline.Action_SetCinematicProperties), Member = "OnExecute")]
 	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "ExitDialogueMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Inventory), Member = "FindByInstanceID")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "EquipItem")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void EquipLastItemInHands()
 	{
 	}
@@ -3321,29 +3027,28 @@ public class PlayerManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Action_PlayTimeline.Action_SetCinematicProperties), Member = "OnExecute")]
-	[CalledBy(Type = typeof(HeldItemRestrictionTrigger), Member = "OnTriggerEnter")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "RestrictHeldItems")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "MaybeStowItemInHand")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "RestrictHeldItems")]
+	[CalledBy(Type = typeof(HeldItemRestrictionTrigger), Member = "OnTriggerEnter")]
+	[CalledBy(Type = typeof(Action_PlayTimeline.Action_SetCinematicProperties), Member = "OnExecute")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(HeldItemRestriction), Member = "IsRestricted")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsHeldItemRestricted(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsHeldItemRestricted")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsHeldItemRestricted")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void RestrictHeldItems(HeldItemRestriction restriction)
 	{
 	}
@@ -3352,29 +3057,29 @@ public class PlayerManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool CanHolsterItemInHand()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteHolsterAction")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitNoiseMaker")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitTorch")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateButtonStatus")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteHolsterAction")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(GearItem), Member = "IsLitFlare")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitTorch")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitNoiseMaker")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool CanHolsterItem(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 21)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsInternal")]
 	[Calls(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void UnequipItemInHands()
 	{
@@ -3386,218 +3091,178 @@ public class PlayerManager : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(BodyCarry), Member = "ReadyForPlacementDropAnimation")]
-	[CalledBy(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "MaybeStowItemInHand")]
+	[CalledBy(Type = typeof(Elevator), Member = "EnterPlayer")]
+	[CalledBy(Type = typeof(HeldItemInPlacementZone), Member = "MaybeHandleItemInHands")]
+	[CalledBy(Type = typeof(TimelinePlayback), Member = "AttemptToStowPlayerItemInHand")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "CraftingStart")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_unequip_immediate")]
+	[CalledBy(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
+	[CalledBy(Type = typeof(BodyCarry), Member = "ReadyForPlacementDropAnimation")]
 	[CalledBy(Type = typeof(BodyCarry), Member = "SetupCarryState")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "BeginReturnToStart")]
 	[CalledBy(Type = typeof(Action_PlayTimeline.Action_SetCinematicProperties), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "CraftingStart")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
-	[CalledBy(Type = typeof(TimelinePlayback), Member = "AttemptToStowPlayerItemInHand")]
 	[CallerCount(Count = 14)]
-	[CalledBy(Type = typeof(HeldItemInPlacementZone), Member = "MaybeHandleItemInHands")]
-	[CalledBy(Type = typeof(Elevator), Member = "EnterPlayer")]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "MaybeStowItemInHand")]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "MaybeStowItemInHand")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
-	[Calls(Type = typeof(PlayerManager), Member = "TurnLightOffImmediate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(TimelinePlayback), Member = "AttemptToStowPlayerItemInHand")]
+	[Calls(Type = typeof(PlayerManager), Member = "TurnLightOffImmediate")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void UnequipImmediate(bool saveLastItem)
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_UnequipItemInHands), Member = "OnExecute")]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "BeginClimbing")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoInteraction")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(PlayerManager), Member = "PauseLight")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerClimbRope), Member = "BeginClimbing")]
+	[CalledBy(Type = typeof(Action_UnequipItemInHands), Member = "OnExecute")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "PauseLight")]
 	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void AutoUnequipItemInHandsBeforeInteraction(bool pauseFlare = true)
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_RetrieveLastItemInHands), Member = "OnExecute")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoOnInteractionComplete")]
-	[Calls(Type = typeof(PlayerManager), Member = "ResumeLight")]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "EndClimbing")]
-	[Calls(Type = typeof(PlayerManager), Member = "EquipLastItemInHands")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Action_RetrieveLastItemInHands), Member = "OnExecute")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PlayerManager), Member = "EquipLastItemInHands")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "ResumeLight")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void AutoEquipItemInHandsAfterInteraction()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeDuplicateItemBeforeDrop")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
-	[Calls(Type = typeof(MatchesItem), Member = "PutOut")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitMatch")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FlashlightItem), Member = "EnableLights")]
-	[Calls(Type = typeof(FlashlightItem), Member = "PlayTurnOffAudio")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitFlashlight")]
-	[Calls(Type = typeof(TorchItem), Member = "Extinguish")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FlareItem), Member = "StopLoopingAudio")]
-	[Calls(Type = typeof(FlareItem), Member = "BurnOut")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitFlare")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitLamp")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitTorch")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeDuplicateItemBeforeDrop")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitLamp")]
+	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitFlare")]
+	[Calls(Type = typeof(FlareItem), Member = "BurnOut")]
+	[Calls(Type = typeof(FlareItem), Member = "StopLoopingAudio")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitTorch")]
+	[Calls(Type = typeof(TorchItem), Member = "Extinguish")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitFlashlight")]
+	[Calls(Type = typeof(FlashlightItem), Member = "PlayTurnOffAudio")]
+	[Calls(Type = typeof(FlashlightItem), Member = "EnableLights")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitMatch")]
+	[Calls(Type = typeof(MatchesItem), Member = "PutOut")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void TurnLightOffImmediate(bool pauseFlare, GearItem gi)
 	{
 	}
 
-	[Calls(Type = typeof(GearItem), Member = "IsLitFlashlight")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(MatchesItem), Member = "PutOut")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "AutoUnequipItemInHandsBeforeInteraction")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitMatch")]
-	[Calls(Type = typeof(TorchItem), Member = "SetState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitLamp")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitFlare")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitFlare")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitLamp")]
 	[Calls(Type = typeof(GearItem), Member = "IsLitTorch")]
+	[Calls(Type = typeof(TorchItem), Member = "SetState")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitFlashlight")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitMatch")]
+	[Calls(Type = typeof(MatchesItem), Member = "PutOut")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void PauseLight(GearItem gi)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "AutoEquipItemInHandsAfterInteraction")]
-	[Calls(Type = typeof(TorchItem), Member = "SetState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TorchItem), Member = "SetState")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	private void ResumeLight(GearItem gi)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
-	[CalledBy(Type = typeof(Action_ShowHideHands), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_PlayCredits), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_TriggerAnimatedInteraction), Member = "DoWork")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemToPlacementZone")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemInHand")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "AutoUnequipItemInHandsBeforeInteraction")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
-	[CalledBy(Type = typeof(GameManager), Member = "PostMigrationDestoryLitFlareOrTorch")]
+	[CalledBy(Type = typeof(Fire), Member = "ExitFireStarting")]
 	[CalledBy(Type = typeof(MatchesItem), Member = "PutOut")]
+	[CalledBy(Type = typeof(WildlifeItem), Member = "OnKilled")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnFeedFire")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnDrop")]
-	[CallerCount(Count = 17)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_show_hands")]
+	[CalledBy(Type = typeof(GameManager), Member = "PostMigrationDestoryLitFlareOrTorch")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "AutoUnequipItemInHandsBeforeInteraction")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemInHand")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemToPlacementZone")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
+	[CalledBy(Type = typeof(Action_TriggerAnimatedInteraction), Member = "DoWork")]
+	[CalledBy(Type = typeof(Action_PlayCredits), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_ShowHideHands), Member = "OnExecute")]
+	[CallerCount(Count = 17)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "StopAudioForEquippedItem")]
 	[Calls(Type = typeof(PlayerManager), Member = "set_m_ItemInHands")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Reset")]
-	[CalledBy(Type = typeof(Fire), Member = "ExitFireStarting")]
-	[CalledBy(Type = typeof(WildlifeItem), Member = "OnKilled")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnFeedFire")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "SetWeapon")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Reset")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void UnequipItemInHandsSkipAnimation()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
-	[Calls(Type = typeof(TorchItem), Member = "StopIgniteLoop")]
-	[Calls(Type = typeof(TorchItem), Member = "StopBurningAudioLoop")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "StopIgniteAudio")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(KeroseneLampItem), Member = "StopLoopingAudio")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(FlareItem), Member = "StopLoopingAudio")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "StopIgniteAudio")]
+	[Calls(Type = typeof(TorchItem), Member = "StopBurningAudioLoop")]
+	[Calls(Type = typeof(TorchItem), Member = "StopIgniteLoop")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public void StopAudioForEquippedItem(GearItem gi)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
-	[Calls(Type = typeof(TorchItem), Member = "CancelIgnite")]
-	[Calls(Type = typeof(Panel_HUD), Member = "IsProgressBarRelatedItem")]
-	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[Calls(Type = typeof(Panel_HUD), Member = "IsProgressBarRelatedItem")]
-	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "CancelAction")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessInput")]
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessReleaseFireAction")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "InitializeStruggle")]
-	[CallsUnknownMethods(Count = 52)]
-	[Calls(Type = typeof(Panel_HUD), Member = "IsProgressBarRelatedItem")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
 	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
 	[Calls(Type = typeof(BowItem), Member = "ForceReady")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_HUD), Member = "IsProgressBarRelatedItem")]
 	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Cancel")]
-	[Calls(Type = typeof(Panel_HUD), Member = "IsProgressBarRelatedItem")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[Calls(Type = typeof(TorchItem), Member = "CancelIgnite")]
+	[Calls(Type = typeof(KeroseneLampItem), Member = "CancelAction")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 52)]
 	public void CancelItemInHandsAction(bool cancelByUser)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "OnItemEquipped")]
-	[Calls(Type = typeof(PlayerManager), Member = "set_m_ItemInHands")]
 	[CalledBy(Type = typeof(GearItem), Member = "Drop")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsInternal")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsInternal")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Inventory), Member = "SetActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "set_m_ItemInHands")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "OnItemEquipped")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void UnequipItemInHandsForPlacement()
 	{
 	}
@@ -3607,19 +3272,20 @@ public class PlayerManager : MonoBehaviour
 	{
 	}
 
+	[CallerCount(Count = 23)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "CancelPlacementMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "GetAllBadAfflictions")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "CanBeTreatedWith")]
+	[Calls(Type = typeof(PlayerManager), Member = "CanUseFoodInventoryItem")]
+	[Calls(Type = typeof(PlayerManager), Member = "UseFoodInventoryItem")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlaceCookingPot")]
-	[Calls(Type = typeof(PlayerManager), Member = "UseWaterPurificationItem")]
+	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "Enable")]
 	[Calls(Type = typeof(PlayerManager), Member = "UseSprayPaintCan")]
+	[Calls(Type = typeof(PlayerManager), Member = "UseWaterPurificationItem")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlaceSnare")]
 	[Calls(Type = typeof(PlayerManager), Member = "UseBedItem")]
 	[Calls(Type = typeof(PlayerManager), Member = "DrinkFromWaterSupply")]
@@ -3629,169 +3295,123 @@ public class PlayerManager : MonoBehaviour
 	[Calls(Type = typeof(PlayerManager), Member = "UseFPSMeshItem")]
 	[Calls(Type = typeof(PlayerManager), Member = "UseWeaponInventoryItem")]
 	[Calls(Type = typeof(BodyCarry), Member = "ShowError")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_Inventory_Examine), Member = "Enable")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 28)]
-	[CallerCount(Count = 23)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "CancelPlacementMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "GetAllBadAfflictions")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "CanBeTreatedWith")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "CanUseFoodInventoryItem")]
-	[Calls(Type = typeof(PlayerManager), Member = "UseFoodInventoryItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 28)]
 	public bool UseInventoryItem(GearItem gi, float volumeAvailable = -1f, bool suppressWeaponsErrorMessage = false)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(MissionServicesManager), Member = "OnInventoryItemAdded")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "CraftingStart")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "AddToExistingStackable")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryWithCondition")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryCraftInProgress")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryCraftInProgress")]
 	[CallerCount(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Inventory), Member = "GetClosestMatchStackable")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "OnInventoryItemAdded")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	public GearItem AddToExistingStackable(string itemName, float normalizedCondition, int numUnits, GearItem gearToAdd = null)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "AddToExistingStackable")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(PlayerManager), Member = "AddToExistingStackable")]
+	[CallsUnknownMethods(Count = 1)]
 	public GearItem AddToExistingStackable(GearItem gearToAdd, int numUnits)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedGearItem")]
+	[CalledBy(Type = typeof(WildlifeItem), Member = "OnKilled")]
+	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "CookingPotPickUpCallback")]
+	[CalledBy(Type = typeof(Panel_Container), Member = "OnContainerToInventory")]
+	[CalledBy(Type = typeof(Panel_Container), Member = "OnMoveAllToInventory")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnDoActionSecondary")]
+	[CalledBy(Type = typeof(Panel_PickUnits), Member = "TransferGearContainerToInventory")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TransferGearFromContainerToInventory")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnProcessPickupWinNoInspectEquipComplete")]
+	[CalledBy(Type = typeof(StartGear), Member = "AddAllToInventory")]
+	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryWithCondition")]
+	[Calls(Type = typeof(ClothingItem), Member = "PickedUp")]
+	[Calls(Type = typeof(PlayerManager), Member = "AddToExistingStackable")]
+	[Calls(Type = typeof(TrustManager), Member = "MaybeHandleItemTheft")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
 	[Calls(Type = typeof(RadialObjectSpawner), Member = "RemoveFromSpawns")]
 	[Calls(Type = typeof(RadialSpawnManager), Member = "InstantiateForObjectPool")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[Calls(Type = typeof(Inventory), Member = "AddGear")]
 	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedGearItem")]
-	[CalledBy(Type = typeof(WildlifeItem), Member = "OnKilled")]
-	[CalledBy(Type = typeof(Panel_PickUnits), Member = "TransferGearContainerToInventory")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "OnContainerToInventory")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "OnMoveAllToInventory")]
-	[CalledBy(Type = typeof(Panel_Cooking), Member = "OnDoActionSecondary")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TransferGearFromContainerToInventory")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnProcessPickupWinNoInspectEquipComplete")]
-	[CalledBy(Type = typeof(StartGear), Member = "AddAllToInventory")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 24)]
-	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "CookingPotPickUpCallback")]
-	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryWithCondition")]
-	[CallerCount(Count = 12)]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddToExistingStackable")]
-	[Calls(Type = typeof(TrustManager), Member = "MaybeHandleItemTheft")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ClothingItem), Member = "PickedUp")]
 	public GearItem AddItemToPlayerInventory(GearItem gi, bool trackItemLooted = true, bool enableNotificationFlag = false)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
 	public GearItem InstantiateItemInPlayerInventory(string itemName, bool enableNotificationFlag = false)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "DoUnload")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "ApplyCraftingProgress")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "DoUnload")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryInternal")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryInternal")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddToExistingStackable")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PlayerManager), Member = "AddToExistingStackable")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryInternal")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem InstantiateItemInPlayerInventoryWithCondition(string itemName, int units, float condition, bool enableNotificationFlag = false)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "HandleEatingCompleteStackableFoodItem")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryInternal")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
 	[CalledBy(Type = typeof(Panel_PickUnits), Member = "TransferGearContainerToInventory")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryInternal")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TrustManager), Member = "MaybeHandleItemTheft")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddToExistingStackable")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryInternal")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "HandleEatingCompleteStackableFoodItem")]
+	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
 	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(PlayerManager), Member = "AddToExistingStackable")]
+	[Calls(Type = typeof(TrustManager), Member = "MaybeHandleItemTheft")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryInternal")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public GearItem InstantiateItemInPlayerInventory(GearItem gi, int numUnits, bool enableNotificationFlag = false)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddToExistingStackable")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryInternal")]
 	[CallerCount(Count = 47)]
+	[Calls(Type = typeof(PlayerManager), Member = "AddToExistingStackable")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryInternal")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem InstantiateItemInPlayerInventory(string itemName, int numUnits, bool enableNotificationFlag = false)
 	{
@@ -3799,1038 +3419,893 @@ public class PlayerManager : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "AddToExistingStackable")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryInternal")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem InstantiateItemInPlayerInventoryCraftInProgress(string itemName, bool enableNotificationFlag = false)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(CookingPotItem), Member = "MaybeSpawnGearItemForInspectMode")]
-	[CalledBy(Type = typeof(Harvestable), Member = "EnterInspectMode")]
-	[CalledBy(Type = typeof(GearPlacePoint), Member = "MaybeInstantiateDummyCookingPot")]
-	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedGearItem")]
-	[CalledBy(Type = typeof(CookingPotItem), Member = "MaybeSpawnGearItemForInspectMode")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(CookingPotItem), Member = "MaybeSpawnGearItemForInspectMode")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "OnRoundsUnloaded")]
 	[CalledBy(Type = typeof(Cookable), Member = "MaybeStartWarmingUpDueToNearbyFire")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstatiateItemAtLocation")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 9)]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "MaybeSpawnGearItemForInspectMode")]
+	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedGearItem")]
+	[CalledBy(Type = typeof(GearPlacePoint), Member = "MaybeInstantiateDummyCookingPot")]
+	[CalledBy(Type = typeof(Harvestable), Member = "EnterInspectMode")]
+	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstatiateItemAtLocation")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public GearItem InstantiateItemAtPlayersFeet(string itemName, int numUnits)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Discharge_Shell_Event")]
-	[CalledBy(Type = typeof(GunItem), Member = "HandleShellDischarge")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "OnUnJamComplete")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(GunItem), Member = "HandleShellDischarge")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Discharge_Shell_Event")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(PlayerManager), Member = "InstatiateItemAtLocation")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public GearItem InstantiateItemAtPlayersFeet(GameObject prefab, int numUnits)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "OnRoundsUnloaded")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "HandleEatingCompleteStackableFoodItem")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InstantiateItemAtPlayersFeet")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstatiateItemAtLocation")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "HandleEatingCompleteStackableFoodItem")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Resources), Member = "Load")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstatiateItemAtLocation")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem InstatiateItemAtLocation(string itemName, int numUnits, Vector3 position, bool stickToGround)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "InstatiateItemAtLocation")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InstantiateItemAtPlayersFeet")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GearItem), Member = "StickToGroundAtPlayerFeet")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "InstatiateItemAtLocation")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(GearItem), Member = "MaybeAdjustTransformWithDropDummy")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(DisableObjectForXPMode), Member = "RemoveDisabler")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(DisableObjectForXPMode), Member = "RemoveDisabler")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "MaybeAdjustTransformWithDropDummy")]
+	[Calls(Type = typeof(GearItem), Member = "StickToGroundAtPlayerFeet")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 10)]
 	public GearItem InstatiateItemAtLocation(GameObject prefab, int numUnits, Vector3 position, bool stickToGround)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
+	[CallsUnknownMethods(Count = 12)]
 	public float GetFoodCaloriesTotal()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(CraftingRequirementMaterial), Member = "EnableForKerosene")]
+	[CalledBy(Type = typeof(FirstAidKitButton), Member = "Refresh")]
+	[CalledBy(Type = typeof(StartFireSelectionRow), Member = "Update")]
+	[CalledBy(Type = typeof(BlueprintItem), Member = "HasRequiredMaterials")]
+	[CalledBy(Type = typeof(Inspect), Member = "GetUrgency")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "RefreshCraftingRequiredMaterials")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "CanCraftItem")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshRefuelPanel")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefuelFinished")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRefuel")]
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "RefreshCraftingRequiredMaterials")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshRefuelPanel")]
-	[CalledBy(Type = typeof(Inspect), Member = "GetUrgency")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CanRefuel")]
-	[CalledBy(Type = typeof(StartFireSelectionRow), Member = "Update")]
-	[CalledBy(Type = typeof(FirstAidKitButton), Member = "Refresh")]
-	[CalledBy(Type = typeof(CraftingRequirementMaterial), Member = "EnableForKerosene")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CalledBy(Type = typeof(BlueprintItem), Member = "HasRequiredMaterials")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRefuel")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefuelFinished")]
 	[CallerCount(Count = 13)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	public float GetTotalLiters(GearLiquidTypeEnum liquidType)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshRefuelPanel")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	public float GetCapacityLiters(GearLiquidTypeEnum liquidType)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "CookingCompleted")]
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "MaybeReturnAmmoOrFuelToInventory")]
-	[CalledBy(Type = typeof(Panel_Harvest), Member = "MaybeReturnAmmoOrFuelToInventory")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedGearItem")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "CookingCompleted")]
+	[CalledBy(Type = typeof(Panel_Harvest), Member = "MaybeReturnAmmoOrFuelToInventory")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "MaybeReturnAmmoOrFuelToInventory")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
+	[CallsUnknownMethods(Count = 12)]
 	public float AddLiquidToInventory(float litersToAdd, GearLiquidTypeEnum liquidType)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentNullException")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "RemoveFirstAidItem")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefuelFinished")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnRefuel")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "ConsumeMaterialsUsedForCrafting")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ConsumeMaterialsUsedForCrafting")]
-	[CallsUnknownMethods(Count = 32)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "ConsumeMaterialsUsedForCrafting")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnRefuel")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefuelFinished")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "RemoveFirstAidItem")]
 	[CallerCount(Count = 6)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentNullException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 32)]
 	public float DeductLiquidFromInventory(float literDeduction, GearLiquidTypeEnum liquidType)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 20)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "HarvestSuccessful")]
 	[CalledBy(Type = typeof(Panel_Harvest), Member = "HarvestSuccessful")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PowderItem), Member = "Add")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(PowderItem), Member = "Add")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "HarvestSuccessful")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PowderItem), Member = "Add")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 20)]
 	public void AddPowderToInventory(float amount, GearPowderType type)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 33)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "ConsumeMaterialsUsedForCrafting")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentNullException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentNullException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 33)]
 	public float DeductPowderFromInventory(float deduction, GearPowderType type)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "Enable")]
-	[CalledBy(Type = typeof(StartFireSelectionRow), Member = "Update")]
 	[CalledBy(Type = typeof(CraftingRequirementMaterial), Member = "EnableForGunpowder")]
+	[CalledBy(Type = typeof(StartFireSelectionRow), Member = "Update")]
 	[CalledBy(Type = typeof(BlueprintItem), Member = "HasRequiredMaterials")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "Enable")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	public float GetTotalPowderWeight(GearPowderType type)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_gear_add_type")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_gear_add")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_buffs_add_all")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_buffs_add_all")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_buffs_add_all")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_add_all_gear")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_buffs_add_all")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_gear_add")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_gear_add_type")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(Resources), Member = "Load")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	public GearItem AddItemCONSOLE(string name, int count)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "ActionFinished")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(FireManager), Member = "PlayerStartFire")]
-	[CalledBy(Type = typeof(FireManager), Member = "PlayerStartFire")]
-	[CalledBy(Type = typeof(FireManager), Member = "PlayerStartFire")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "ForceBurnResearchItem")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnFeedFire")]
 	[CalledBy(Type = typeof(Fire), Member = "ExitFireStarting")]
+	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "ActionFinished")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnFeedFire")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "ForceBurnResearchItem")]
 	[CalledBy(Type = typeof(Panel_TorchLight), Member = "OnUseMatches")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
-	[Calls(Type = typeof(TorchItem), Member = "StopBurningAudioLoop")]
+	[CalledBy(Type = typeof(FireManager), Member = "PlayerStartFire")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(TorchItem), Member = "StopBurningAudioLoop")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
 	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void ConsumeUnitFromInventory(GameObject go)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(Panel_CanOpening), Member = "OnSmash")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	public bool UseSmashableItem(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Burns), Member = "BurnsEnd")]
-	[CallsUnknownMethods(Count = 55)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "OnFirstAidComplete")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(SprainedAnkle), Member = "SprainedAnkleEnd")]
-	[Calls(Type = typeof(SprainedWrist), Member = "SprainedWristEnd")]
-	[Calls(Type = typeof(BurnsElectric), Member = "BurnsElectricEnd")]
-	[Calls(Type = typeof(Burns), Member = "BurnsEnd")]
-	[Calls(Type = typeof(BrokenRib), Member = "RequiresPainKiller")]
-	[Calls(Type = typeof(BloodLoss), Member = "BloodLossEnd")]
-	[Calls(Type = typeof(BrokenRib), Member = "RequiresBandage")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(IntestinalParasites), Member = "GetNumDosesRequired")]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(IntestinalParasites), Member = "IntestinalParasitesEnd")]
 	[Calls(Type = typeof(SprainPain), Member = "TakePainKillers")]
 	[Calls(Type = typeof(InfectionRisk), Member = "TakeAntiseptic")]
 	[Calls(Type = typeof(BrokenRib), Member = "RequiresBandage")]
 	[Calls(Type = typeof(BurnsElectric), Member = "BurnsElectricEnd")]
+	[Calls(Type = typeof(BrokenRib), Member = "RequiresPainKiller")]
+	[Calls(Type = typeof(Burns), Member = "BurnsEnd")]
+	[Calls(Type = typeof(SprainedWrist), Member = "SprainedWristEnd")]
+	[Calls(Type = typeof(SprainedAnkle), Member = "SprainedAnkleEnd")]
+	[Calls(Type = typeof(BloodLoss), Member = "BloodLossEnd")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 55)]
 	private void TreatAffliction(FirstAidItem firstAidItem, AfflictionType afflictionType, AfflictionBodyArea location, int afflictionId)
 	{
 	}
 
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnFirstAidComplete")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnFirstAidComplete")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnFirstAidComplete")]
 	private void FirstAidConsumed(GearItem gi)
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyAlternateRemedy")]
 	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyStandardRemedy")]
-	[Calls(Type = typeof(PlayerManager), Member = "DeductLiquidFromInventory")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "RemoveUnits")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyAlternateRemedy")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Inventory), Member = "RemoveUnits")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(Type = typeof(PlayerManager), Member = "DeductLiquidFromInventory")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	public void RemoveFirstAidItem(GearItem gi)
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "EatingComplete_Internal")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Panel_FirstAid), Member = "RefreshAll")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(PlayerManager), Member = "FirstAidConsumed")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerManager), Member = "FirstAidConsumed")]
-	[Calls(Type = typeof(PlayerManager), Member = "TreatAffliction")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "CanBeTreatedWith")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Condition), Member = "AddHealth")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Condition), Member = "AddHealth")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "CanBeTreatedWith")]
+	[Calls(Type = typeof(PlayerManager), Member = "TreatAffliction")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(PlayerManager), Member = "FirstAidConsumed")]
 	[Calls(Type = typeof(Panel_FirstAid), Member = "FirstAidItemCallback")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[Calls(Type = typeof(Panel_FirstAid), Member = "RefreshAll")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public void OnFirstAidComplete(bool success, bool playerCancel, float progress)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool IsTreatingAffliction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerManager), Member = "EatingComplete_Internal")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnEatingComplete(bool success, bool playerCancel, float progress)
 	{
 	}
 
-	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
-	[Calls(Type = typeof(Panel_FirstAid), Member = "FirstAidItemCallback")]
-	[Calls(Type = typeof(Panel_FirstAid), Member = "RefreshAll")]
-	[Calls(Type = typeof(Dysentery), Member = "DysenteryStart")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[CallsUnknownMethods(Count = 28)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQualityString")]
-	[Calls(Type = typeof(PlayerManager), Member = "RemoveWater")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(PlayerManager), Member = "RemoveWater")]
+	[Calls(Type = typeof(Utils), Member = "GetLiquidQualityString")]
+	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(Type = typeof(Dysentery), Member = "DysenteryStart")]
+	[Calls(Type = typeof(Panel_FirstAid), Member = "RefreshAll")]
+	[Calls(Type = typeof(Panel_FirstAid), Member = "FirstAidItemCallback")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 28)]
 	public void OnDrinkWaterComplete(bool success, bool playerCancel, float progress)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnDrinkWaterComplete")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(NPCAffliction), Member = "UseWater")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnDrinkWaterComplete")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void RemoveWater(WaterSupply ws, float removedLiters)
 	{
 	}
 
-	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PurifyWater), Member = "Use")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 20)]
 	public void OnPurifyWaterComplete(bool success, bool playerCancel, float progress)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Inventory), Member = "RefreshTable")]
-	[Calls(Type = typeof(PlayerManager), Member = "UseFoodInventoryItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CookingPotItem), Member = "PickUpCookedItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 40)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 18)]
-	[Calls(Type = typeof(CookingPotItem), Member = "StartCooking")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[Calls(Type = typeof(CookingPotItem), Member = "StartCooking")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "RefreshTable")]
+	[Calls(Type = typeof(PlayerManager), Member = "UseFoodInventoryItem")]
+	[Calls(Type = typeof(CookingPotItem), Member = "PickUpCookedItem")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 40)]
 	public void OnFoodOpeningComplete(bool success, bool playerCancel, float progress)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillCooking")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[Calls(Type = typeof(CookingPotItem), Member = "StartCooking")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "RefreshTable")]
 	[Calls(Type = typeof(PlayerManager), Member = "UseFoodInventoryItem")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 54)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(CookingPotItem), Member = "PickUpCookedItem")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "RefreshTable")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 19)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillCooking")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[Calls(Type = typeof(CookingPotItem), Member = "StartCooking")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 54)]
 	public void OnSmashComplete(bool success, bool playerCancel, float progress)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 28)]
-	[CalledBy(Type = typeof(LightingManager), Member = "Update")]
-	[CalledBy(Type = typeof(LightingManager), Member = "Update")]
 	[CalledBy(Type = typeof(MultiplyNighttimeParticleOpacity), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(HeightFogSettings), Member = "ApplyLightSources")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(LightingManager), Member = "Update")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 28)]
 	public float GetHeldLightIntensity()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 25)]
-	[CalledBy(Type = typeof(LightingManager), Member = "Update")]
 	[CalledBy(Type = typeof(HeightFogSettings), Member = "ApplyLightSources")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(LightingManager), Member = "Update")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 25)]
 	public Color GetHeldLightColor()
 	{
 		return default(Color);
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "DrinkFromWaterSupply")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DrinkFromWaterSupply")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	private float CalculateWaterVolumeToDrink(float availableLiters)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GearItem), Member = "GetFPSMeshID")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
+	[Calls(Type = typeof(SprainedWrist), Member = "CanEquipItem")]
 	[Calls(Type = typeof(PlayerManager), Member = "EquipItem")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(SprainedWrist), Member = "CanEquipItem")]
-	[Calls(Type = typeof(GearItem), Member = "GetFPSMeshID")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	private bool UseWeaponInventoryItem(GearItem gi, bool suppressWeaponsErrorMessage = false)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(Panel_CanOpening), Member = "OnOpen")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 9)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public void OpenAndUseFoodInventoryItem(GearItem gi, CanOpeningItem gearOpenedWith)
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CallsUnknownMethods(Count = 14)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UseFoodInventoryItem")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UseFoodInventoryItem")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostActive")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	private bool CanUseFoodInventoryItem(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 43)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnSmashComplete")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnFoodOpeningComplete")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
-	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "CanUseFoodInventoryItem")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnFoodOpeningComplete")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnSmashComplete")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PlayerManager), Member = "CanUseFoodInventoryItem")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 43)]
 	private bool UseFoodInventoryItem(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(PlayerManager), Member = "CalculateWaterVolumeToDrink")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 16)]
 	private bool DrinkFromWaterSupply(WaterSupply ws, float volumeAvailable)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 24)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 24)]
 	private bool UseFireStarterInventoryItem(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GearItem), Member = "GetFPSMeshID")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
 	[Calls(Type = typeof(PlayerManager), Member = "EquipItem")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GearItem), Member = "GetFPSMeshID")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
+	[CallsUnknownMethods(Count = 7)]
 	private bool UseFPSMeshItem(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GearItem), Member = "GetFPSMeshID")]
 	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
 	[Calls(Type = typeof(PlayerManager), Member = "EquipItem")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GearItem), Member = "GetFPSMeshID")]
+	[CallsUnknownMethods(Count = 5)]
 	private bool UseMatchesItem(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "TreatWound")]
-	[CallsUnknownMethods(Count = 16)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UseFirstAidItem")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "UpdateGamepadSelection")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UseFirstAidItem")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(FirstAidItem), Member = "DeductHealing")]
 	[Calls(Type = typeof(Condition), Member = "GetAdjustedMaxHP")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(FirstAidItem), Member = "DeductHealing")]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 16)]
 	public bool TreatAfflictionWithFirstAid(FirstAidItem firstAidItem, Affliction afflictionSelected)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 20)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[Calls(Type = typeof(PlayerManager), Member = "TreatAfflictionWithFirstAid")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "Enable")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "GetAllBadAfflictions")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Inventory), Member = "NumGearInInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "NumGearInInventory")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "GetAllBadAfflictions")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "Enable")]
+	[Calls(Type = typeof(PlayerManager), Member = "TreatAfflictionWithFirstAid")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 20)]
 	private bool UseFirstAidItem(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 13)]
 	private bool UseBedItem(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(SnareItem), Member = "SetState")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetDefaultPlacementDistance")]
 	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 9)]
 	private bool PlaceSnare(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 18)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 18)]
 	private bool UseWaterPurificationItem(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_SprayPaint), Member = "Enable")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	private bool UseSprayPaintCan(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetDefaultPlacementDistance")]
+	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private bool PlaceCookingPot(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(vp_FPSCamera), Member = "GetFPSMeshGameObject")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[CallsUnknownMethods(Count = 89)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Utils), Member = "LightPositionFixUp")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Update_Lightsource_Lit")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "EnableEffectsForWeapon")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Update_Lightsource_Lit")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "EnableEffectsForWeapon")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Update_Lightsource_Lit")]
-	[Calls(Type = typeof(FlashlightItem), Member = "IsLit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "EnableEffectsForWeapon")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Update_Lightsource_Lit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(MatchesItem), Member = "UpdateWhileInHands")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 15)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItem), Member = "GetFPSMeshID")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "GetFPSMeshGameObject")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Utils), Member = "LightPositionFixUp")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Update_Lightsource_Lit")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "EnableEffectsForWeapon")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
 	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "EnableEffectsForWeapon")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Update_Lightsource_Lit")]
-	[Calls(Type = typeof(Utils), Member = "LightPositionFixUp")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "GetFPSMeshGameObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
+	[Calls(Type = typeof(MatchesItem), Member = "UpdateWhileInHands")]
+	[Calls(Type = typeof(FlashlightItem), Member = "IsLit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 89)]
 	private void UpdateItemInHands()
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
-	[Calls(Type = typeof(PlayerManager), Member = "CancelPlacementMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SwitchWeapon")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UnequipItemInHandsForPlacement")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UnequipItemInHandsForPlacement")]
 	[Calls(Type = typeof(GearItem), Member = "GetFPSMeshID")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SwitchWeapon")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "CancelPlacementMode")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 8)]
 	private void UnequipItemInHandsInternal()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SwitchWeapon")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void OnExtinguishComplete()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 22)]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeDropAndResetCurrentWeapon")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SwitchWeapon")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "OnItemEquipped")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(MatchesItem), Member = "PutOut")]
-	[Calls(Type = typeof(FlashlightItem), Member = "EnableLights")]
-	[Calls(Type = typeof(FlashlightItem), Member = "PlayTurnOffAudio")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitFlashlight")]
-	[Calls(Type = typeof(GunItem), Member = "ResetEffects")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalCompleteResetWeapon")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeDropAndResetCurrentWeapon")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "set_m_ItemInHands")]
 	[Calls(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalCompleteResetWeapon")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Inventory), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(KeroseneLampItem), Member = "TurnOff")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitFlashlight")]
+	[Calls(Type = typeof(FlashlightItem), Member = "PlayTurnOffAudio")]
+	[Calls(Type = typeof(FlashlightItem), Member = "EnableLights")]
+	[Calls(Type = typeof(GunItem), Member = "ResetEffects")]
+	[Calls(Type = typeof(MatchesItem), Member = "PutOut")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "OnItemEquipped")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 22)]
 	public void OnUnequipItemInHandInternalComplete()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Inventory), Member = "AddGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "SetNormalizedHP")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "CraftingStart")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryWithCondition")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryCraftInProgress")]
-	[CallsUnknownMethods(Count = 37)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Resources), Member = "Load")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DisableObjectForXPMode), Member = "RemoveDisabler")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Resources), Member = "Load")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryWithCondition")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(DisableObjectForXPMode), Member = "RemoveDisabler")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(Inventory), Member = "AddGear")]
+	[Calls(Type = typeof(GearItem), Member = "SetNormalizedHP")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 37)]
 	private GearItem InstantiateItemInPlayerInventoryInternal(string itemName, int numUnits, bool craftInProgress, float condition, bool enableNotificationFlag = false)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private bool ShouldDestroyFoodAfterEating(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(PlayerManager), Member = "IsReadyToEquip")]
 	[Calls(Type = typeof(PlayerManager), Member = "EquipItem")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void MaybeUpdateEquipItem()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeUpdateEquipItem")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
-	[Calls(Type = typeof(CinematicManager), Member = "IsReady")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeUpdateEquipItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "GetFPCinematicManager")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
+	[Calls(Type = typeof(CinematicManager), Member = "IsReady")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
 	private bool IsReadyToEquip()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private bool HasSavedItemInHands()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "OnEatingComplete")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Hunger), Member = "AddReserveCalories")]
+	[Calls(Type = typeof(Thirst), Member = "AddThirst")]
+	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "GetAfflictions")]
+	[Calls(Type = typeof(PlayerManager), Member = "OnFirstAidComplete")]
+	[Calls(Type = typeof(Feat_StraightToHeart), Member = "IncrementItemConsumed")]
+	[Calls(Type = typeof(PlayerManager), Member = "HandleEatingCompleteStackableFoodItem")]
 	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
 	[Calls(Type = typeof(FoodItem), Member = "DoGearHarvestAfterFinishEating")]
 	[Calls(Type = typeof(GearItem), Member = "ApplyBuffs")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillCooking")]
-	[CallsUnknownMethods(Count = 80)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
 	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
 	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	[Calls(Type = typeof(FoodPoisoning), Member = "FoodPoisoningStart")]
 	[Calls(Type = typeof(IntestinalParasites), Member = "AddRiskPercent")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "HandleEatingCompleteStackableFoodItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(PlayerManager), Member = "OnFirstAidComplete")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Feat_StraightToHeart), Member = "IncrementItemConsumed")]
-	[Calls(Type = typeof(Thirst), Member = "AddThirst")]
-	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
-	[Calls(Type = typeof(Hunger), Member = "AddReserveCalories")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "GetAfflictions")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 80)]
 	private void EatingComplete_Internal(bool success, bool playerCancel, float progress)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 19)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "EatingComplete_Internal")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstatiateItemAtLocation")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstatiateItemAtLocation")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 19)]
 	private void HandleEatingCompleteStackableFoodItem(GearItem foodItem)
 	{
 	}
 
+	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "CanDrop")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(PlayerManager), Member = "CheckIfInsideBlockPlacement")]
-	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "CanDrop")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 7)]
 	public bool CheckIfCanDropGearItem()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CheckIfCanDropGearItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Utils), Member = "DistanceSqr")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DistanceSqr")]
 	[Calls(Type = typeof(Physics), Member = "OverlapSphereNonAlloc")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInParent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private bool CheckIfInsideBlockPlacement(Vector3 position, float radius)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -4849,126 +4324,122 @@ public class PlayerManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public bool ShouldShowSprayPaintCan()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	public bool IsInDecalPlacementMode()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[CallsUnknownMethods(Count = 20)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CleanupDecalToRemove")]
 	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "ReturnToGame")]
-	[Calls(Type = typeof(Panel_SprayPaint), Member = "CanPlaceDecalOnMap")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "ShowPlaceMeshItem")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(PlayerManager), Member = "TintDecalDuringPlacement")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddSprayPaintDecal")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "CleanupDecalToRemove")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(PlayerManager), Member = "UpdatePlacementDistance")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddSprayPaintDecal")]
+	[Calls(Type = typeof(PlayerManager), Member = "TintDecalDuringPlacement")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "ShowPlaceMeshItem")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(Panel_SprayPaint), Member = "CanPlaceDecalOnMap")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 20)]
 	public bool StartPlaceDecal(GearItem gearItem, ProjectileType decalShape, DecalColour decalColour, float placementDistance)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptToRemoveDecalInPlace")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptToRemoveDecalInPlace")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 13)]
 	public void EraseDecal(DecalProjectorInstance decalInstance)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_SprayPaint), Member = "Enable")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_SprayPaint), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void ProcessReloadAction()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
 	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceDecal")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private void CleanupDecalToRemove()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(Panel_SprayPaint), Member = "IsOnlyAllowedOneOfType")]
-	[Calls(Type = typeof(Panel_SprayPaint), Member = "IsAlreadyPlacedInWorld")]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdateOverlappingDecalInPlace")]
-	[Calls(Type = typeof(PlayerManager), Member = "TintDecalDuringPlacement")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "LateUpdate")]
-	[Calls(Type = typeof(PlayerManager), Member = "RotateCurrentPlaceable")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "IsInsideBanishmentArea")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
-	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "FindNearestSceneTransition")]
-	[Calls(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "InProgress")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "InProgress")]
+	[Calls(Type = typeof(SceneManager), Member = "IsLoading")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
 	[Calls(Type = typeof(GameManager), Member = "IsMainMenuActive")]
 	[Calls(Type = typeof(PlayerManager), Member = "UpdatePlacementDistance")]
-	[Calls(Type = typeof(SceneManager), Member = "IsLoading")]
+	[Calls(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "IsInsideBanishmentArea")]
+	[Calls(Type = typeof(Panel_SprayPaint), Member = "IsOnlyAllowedOneOfType")]
+	[Calls(Type = typeof(Panel_SprayPaint), Member = "IsAlreadyPlacedInWorld")]
+	[Calls(Type = typeof(PlayerManager), Member = "UpdateOverlappingDecalInPlace")]
+	[Calls(Type = typeof(PlayerManager), Member = "TintDecalDuringPlacement")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "FindNearestSceneTransition")]
+	[Calls(Type = typeof(PlayerManager), Member = "RotateCurrentPlaceable")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 20)]
 	private void UpdatePlaceDecal()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "FindNearestSceneTransition")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void HandleNowhereToHideEventSpecificBehaviour(DecalProjectorInstance decalInstance)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "OnOverlappingDecalChange")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(DecalProjectorInstance), Member = "GetBounds")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "GetIntersectedSprayPaintDecal")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "OnOverlappingDecalChange")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 13)]
 	private void UpdateOverlappingDecalInPlace()
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceDecal")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void TintDecalDuringPlacement(DecalProjectorInstance decalInstance, MeshLocationCategory newCategory)
 	{
@@ -4987,494 +4458,369 @@ public class PlayerManager : MonoBehaviour
 		return default(Color);
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptToPlaceObject")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "CanPlaceCurrentPlaceable")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(SprayPaintCan), Member = "ReduceHealthForPaint")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[Calls(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[Calls(Type = typeof(SprayPaintCan), Member = "ReduceHealthForPaint")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "CanPlaceCurrentPlaceable")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(SprayPaintCan), Member = "ReduceHealthForPaint")]
+	[CallsUnknownMethods(Count = 21)]
 	private void AttemptToPlaceDecal()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessRemoveObjectPressed")]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(PlayerManager), Member = "EraseDecal")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessRemoveObjectPressed")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "EraseDecal")]
 	[Calls(Type = typeof(EquipItemPopup), Member = "OnOverlappingDecalChange")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void AttemptToRemoveDecalInPlace()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
 	[CallsUnknownMethods(Count = 4)]
 	public void StopSprayPaintAudio()
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptToPlaceDecal")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddProjectorInstanceBoundsInfo")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "CollectMasks")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "TrySpawnDecalObject")]
 	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlaceGlyph")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "GetSecondsInCurrentRegion")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "SetSecondsInCurrentRegion")]
+	[Calls(Type = typeof(GridUI), Member = "ClearItems")]
+	[Calls(Type = typeof(PlayerManager), Member = "ExitDecalPlacement")]
 	[Calls(Type = typeof(CharcoalItem), Member = "HasSurveyVisibility")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 19)]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[Calls(Type = typeof(Panel_SprayPaint), Member = "CanPlaceDecalOnMap")]
 	[Calls(Type = typeof(Panel_Map), Member = "DoDetailSurvey")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptToPlaceDecal")]
-	[Calls(Type = typeof(PlayerManager), Member = "ExitDecalPlacement")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(GridUI), Member = "ClearItems")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(ToxicFogManager), Member = "GetSecondsInCurrentRegion")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlaceGlyph")]
-	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "TrySpawnDecalObject")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "CollectMasks")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddProjectorInstanceBoundsInfo")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(ToxicFogManager), Member = "SetSecondsInCurrentRegion")]
+	[CallsUnknownMethods(Count = 19)]
 	private void OnCompletedDecalPlaceDown()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "Deserialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void OnDecalDeserialized(DecalProjectorInstance decal)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "RemoveGlyph")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void OnDecalRemoved(DecalProjectorInstance decal)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "CancelDecalPlacement")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "CancelDecalPlacement")]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDecalPlacedownInterrupted()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(AnimateDecalRevealFromBone), Member = "Update")]
 	[CalledBy(Type = typeof(PlayableBehaviourUpdatePlacementDecalReveal), Member = "ProcessFrame")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void UpdatePlacementDecalReveal(float amount, bool isErasing)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "CancelDecalPlacement")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "HideRemoveDecalPopup")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "HideEquipPopup")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "CancelDecalPlacement")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(EquipItemPopup), Member = "HideEquipPopup")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "HideRemoveDecalPopup")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private void ExitDecalPlacement()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "CancelPlacementMode")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "OnDecalPlacedownInterrupted")]
-	[Calls(Type = typeof(PlayerManager), Member = "ExitDecalPlacement")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "CancelPlacementMode")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
+	[Calls(Type = typeof(PlayerManager), Member = "ExitDecalPlacement")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void CancelDecalPlacement(bool forceCancel = false)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void SuspendDecalPlacement()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "CancelPlacementMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "CancelPlacementMode")]
-	[Calls(Type = typeof(BodyCarry), Member = "HasBody")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlaceMeshInWorld")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(BodyCarry), Member = "CancelPlacement")]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "LateUpdate")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "HideLightFromMesh")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdateInventoryOnPlacement")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(PlayerManager), Member = "UpdatePlacementDistance")]
 	[Calls(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
 	[Calls(Type = typeof(PlayerManager), Member = "TintObject")]
 	[Calls(Type = typeof(PlayerManager), Member = "HideLightFromMesh")]
 	[Calls(Type = typeof(PlayerManager), Member = "RotateCurrentPlaceable")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(PlayerManager), Member = "UpdateInventoryOnPlacement")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlaceMeshInWorld")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "CancelPlacementMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(BodyCarry), Member = "HasBody")]
+	[Calls(Type = typeof(BodyCarry), Member = "CancelPlacement")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void UpdatePlaceMesh()
 	{
 	}
 
 	[CalledBy(Type = typeof(CameraEffects), Member = "SwitchImageFilter")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "InitializePropertyBlocks")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void SetPlacementColors(Color validColor, Color invalidColor)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "InitializePropertyBlocks")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "InitializePropertyBlocks")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void ResetPlacementColors()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
-	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "ComputeModifiedPickupRange")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceDecal")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceMesh")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CanPlaceMeshImmediately")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(PlayerManager), Member = "ComputeModifiedPickupRange")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void UpdatePlacementDistance()
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CheckForButtomPromptUpdate")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool CanPlaceCookingItemOnPoint(GearItem obj)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
-	[Calls(Type = typeof(GameObject), Member = "get_layer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "get_layer")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool IsOverCreatureOrRemains(GameObject go)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 140)]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation_Injected")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[Calls(Type = typeof(Transform), Member = "set_rotation_Injected")]
-	[Calls(Type = typeof(Collider), Member = "get_enabled")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Transform), Member = "get_position_Injected")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation_Injected")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation_Injected")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[Calls(Type = typeof(Vector3), Member = "Dot")]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[Calls(Type = typeof(Quaternion), Member = "FromToRotation")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "set_rotation_Injected")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[Calls(Type = typeof(Transform), Member = "set_rotation_Injected")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation_Injected")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation_Injected")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(Collider), Member = "get_bounds")]
-	[Calls(Type = typeof(Physics), Member = "ComputePenetration")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(Physics), Member = "OverlapBoxNonAlloc")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(InputManager), Member = "CanStartFireIndoors")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(IceCrackingManager), Member = "OverlapsFallTrigger")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceMesh")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CanPlaceMeshImmediately")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceImmediately")]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdateObjectToPlaceTransform")]
-	[Calls(Type = typeof(Vector3), Member = "op_Division")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Vector3), Member = "Dot")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Transform), Member = "get_position_Injected")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Vector3), Member = "op_Multiply")]
 	[Calls(Type = typeof(Vector3), Member = "op_Addition")]
-	[Calls(Type = typeof(Transform), Member = "set_position")]
-	[Calls(Type = typeof(PlayerManager), Member = "ObjectToPlaceOverlapsWithObjectsThatBlockPlacement")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Vector3), Member = "op_Multiply")]
-	[Calls(Type = typeof(Vector3), Member = "op_Addition")]
-	[Calls(Type = typeof(Transform), Member = "set_position")]
-	[Calls(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_layer")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation_Injected")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetLayerMaskForPlacementPosition")]
+	[Calls(Type = typeof(Physics), Member = "Raycast")]
+	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
 	[Calls(Type = typeof(PlayerManager), Member = "IsOverCreatureOrRemains")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetGearPlacePoint")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInParent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(GameObject), Member = "get_layer")]
 	[Calls(Type = typeof(PlayerManager), Member = "CheckForButtomPromptUpdate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Bed), Member = "CanBodyBePlaced")]
-	[Calls(Type = typeof(Transform), Member = "get_position_Injected")]
 	[Calls(Type = typeof(Transform), Member = "get_rotation_Injected")]
 	[Calls(Type = typeof(PlayerManager), Member = "UpdateObjectToPlaceTransform")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsOverCreatureOrRemains")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation_Injected")]
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 39)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "get_position_Injected")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Vector3), Member = "op_Multiply")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Vector3), Member = "op_Addition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "get_position_Injected")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Physics), Member = "Raycast")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetLayerMaskForPlacementPosition")]
-	[Calls(Type = typeof(Transform), Member = "get_position_Injected")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(Utils), Member = "GetMaterialTagForObjectAtPosition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "MaybeAdjustTransformWithDropDummy")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[Calls(Type = typeof(PlayerManager), Member = "CanPlaceCookingItemOnPoint")]
+	[Calls(Type = typeof(Vector3), Member = "Distance")]
+	[Calls(Type = typeof(GearPlacePoint), Member = "IsAuthorizedPrefab")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Utils), Member = "GetMaterialTagForObjectAtPosition")]
+	[Calls(Type = typeof(GearItem), Member = "MaybeAdjustTransformWithDropDummy")]
+	[Calls(Type = typeof(List<>), Member = "GetEnumerator")]
 	[Calls(Type = typeof(Component), Member = "CompareTag")]
 	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[Calls(Type = typeof(Transform), Member = "get_position_Injected")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation_Injected")]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdateObjectToPlaceTransform")]
-	[Calls(Type = typeof(PlayerManager), Member = "CanPlaceCookingItemOnPoint")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_position_Injected")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[Calls(Type = typeof(Transform), Member = "get_position_Injected")]
-	[Calls(Type = typeof(GearPlacePoint), Member = "IsAuthorizedPrefab")]
-	[Calls(Type = typeof(Transform), Member = "get_position_Injected")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation_Injected")]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdateObjectToPlaceTransform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_position_Injected")]
-	[Calls(Type = typeof(Transform), Member = "get_position_Injected")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "get_position_Injected")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Vector3), Member = "get_up")]
+	[Calls(Type = typeof(Vector3), Member = "Dot")]
+	[Calls(Type = typeof(Quaternion), Member = "FromToRotation")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(Transform), Member = "set_rotation_Injected")]
+	[Calls(Type = typeof(Collider), Member = "get_enabled")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(Physics), Member = "ComputePenetration")]
+	[Calls(Type = typeof(Transform), Member = "set_position")]
+	[Calls(Type = typeof(PlayerManager), Member = "ObjectToPlaceOverlapsWithObjectsThatBlockPlacement")]
+	[Calls(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
+	[Calls(Type = typeof(Collider), Member = "get_bounds")]
+	[Calls(Type = typeof(Vector3), Member = "op_Division")]
+	[Calls(Type = typeof(Physics), Member = "OverlapBoxNonAlloc")]
+	[Calls(Type = typeof(InputManager), Member = "CanStartFireIndoors")]
+	[Calls(Type = typeof(IceCrackingManager), Member = "OverlapsFallTrigger")]
+	[CallsDeduplicatedMethods(Count = 35)]
+	[CallsUnknownMethods(Count = 132)]
 	private MeshLocationCategory DoPositionCheck()
 	{
 		return default(MeshLocationCategory);
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(HUDManager), Member = "UpdateCrosshair")]
-	[Calls(Type = typeof(PlayerManager), Member = "CleanUpPlaceMesh")]
-	[Calls(Type = typeof(PlayerManager), Member = "InitializeObjectToPlace")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetDefaultPlacementDistance")]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetDefaultPlacementDistance")]
 	[Calls(Type = typeof(PlayerManager), Member = "UpdatePlacementDistance")]
+	[Calls(Type = typeof(PlayerManager), Member = "InitializeObjectToPlace")]
+	[Calls(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
+	[Calls(Type = typeof(PlayerManager), Member = "CleanUpPlaceMesh")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 14)]
 	public bool CanPlaceMeshImmediately(GearItem gearItem)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(Vector3), Member = "get_up")]
 	[Calls(Type = typeof(Transform), Member = "Rotate")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 11)]
 	private void UpdateObjectToPlaceTransform(Vector3 position, Quaternion rotation)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "CleanUpPlaceMesh")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_PlacementMode_Place")]
-	[CallsUnknownMethods(Count = 32)]
-	[Calls(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_PlacementMode_Place")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(PlayerManager), Member = "CleanUpPlaceMesh")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 32)]
 	private bool PlaceImmediately()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "set_m_ItemInHands")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlaceMeshInWorld")]
-	[Calls(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGear")]
-	[Calls(Type = typeof(PlayerManager), Member = "ObjectToPlaceInInventory")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "ObjectToPlaceInInventory")]
+	[Calls(Type = typeof(Inventory), Member = "RemoveGear")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlaceMeshInWorld")]
+	[Calls(Type = typeof(PlayerManager), Member = "set_m_ItemInHands")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void OnPlaceMeshAnimationEvent()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "DeactivateAllWeapons")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Reset")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private void OnPlaceMeshAnimationComplete()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeStartPlaceMesh")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CanPlaceMeshImmediately")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceCookingPot")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceSnare")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessAltFire")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
+	[CalledBy(Type = typeof(RadialMenuArm), Member = "DoAltClickAction")]
+	[CalledBy(Type = typeof(Panel_BedRollSelect), Member = "OnUseBedRoll")]
 	[CalledBy(Type = typeof(Panel_BedRollSelect), Member = "OnUseBearSkin")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnPlace")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessAltFire")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeStartPlaceMesh")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceSnare")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceCookingPot")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "CanPlaceMeshImmediately")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
 	[CallerCount(Count = 10)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnPlace")]
-	[CalledBy(Type = typeof(Panel_BedRollSelect), Member = "OnUseBedRoll")]
-	[CalledBy(Type = typeof(RadialMenuArm), Member = "DoAltClickAction")]
+	[CallsUnknownMethods(Count = 2)]
 	private float GetDefaultPlacementDistance()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetDefaultPlacementDistance")]
-	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "OnBedRoll")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "OnBedRoll")]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UseBedItem")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetDefaultPlacementDistance")]
+	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
 	public bool StartPlaceMesh(GameObject objectToPlace, PlaceMeshFlags flags)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(EquipItemPopup), Member = "ShowPlaceMeshItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "TintObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BodyCarry), Member = "ShowError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "PrepareGhostedObject")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "OnPlaceRockCache")]
+	[CalledBy(Type = typeof(RadialMenuArm), Member = "DoAltClickAction")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "OnSnowShelter")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "OnLeanToInternal")]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "OnPlaceRockCache")]
 	[CalledBy(Type = typeof(Panel_BedRollSelect), Member = "OnUseBedRoll")]
-	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
+	[CalledBy(Type = typeof(Panel_BedRollSelect), Member = "OnUseBearSkin")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnPlace")]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteStartFireAction")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessAltFire")]
@@ -5484,104 +4830,87 @@ public class PlayerManager : MonoBehaviour
 	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceCookingPot")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
 	[CalledBy(Type = typeof(BodyCarry), Member = "MaybePlace")]
-	[CallsUnknownMethods(Count = 47)]
-	[CalledBy(Type = typeof(RadialMenuArm), Member = "DoAltClickAction")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[CalledBy(Type = typeof(Panel_BedRollSelect), Member = "OnUseBearSkin")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
 	[CallerCount(Count = 15)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(PlayerManager), Member = "UpdatePlacementDistance")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "InitializeObjectToPlace")]
 	[Calls(Type = typeof(PlayerManager), Member = "InitializeRenderers")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItem), Member = "DisablePhysics")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(CookingPotItem), Member = "EnterPlaceMesh")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "CleanUpPlaceMesh")]
-	[Calls(Type = typeof(Quaternion), Member = "Inverse")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(PlayerManager), Member = "ObjectToPlaceInInventory")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(PlayerManager), Member = "CleanUpPlaceMesh")]
 	[Calls(Type = typeof(Campfire), Member = "OnEnteredPlaceMesh")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(PlayerManager), Member = "ObjectToPlaceInInventory")]
+	[Calls(Type = typeof(Quaternion), Member = "Inverse")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "PrepareGhostedObject")]
+	[Calls(Type = typeof(PlayerManager), Member = "TintObject")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "ShowPlaceMeshItem")]
+	[Calls(Type = typeof(BodyCarry), Member = "ShowError")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 47)]
 	public bool StartPlaceMesh(GameObject objectToPlace, float placementDistance, PlaceMeshFlags flags)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptToPlaceMesh")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptToPlaceDecal")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BodyCarry), Member = "HasBody")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptToPlaceMesh")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(BodyCarry), Member = "HasBody")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool CanPlaceCurrentPlaceable()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteInteractAction")]
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessFireAction")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "AttemptToPlaceMesh")]
-	[Calls(Type = typeof(PlayerManager), Member = "AttemptToPlaceDecal")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteInteractAction")]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
+	[Calls(Type = typeof(PlayerManager), Member = "AttemptToPlaceMesh")]
+	[Calls(Type = typeof(PlayerManager), Member = "AttemptToPlaceDecal")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void AttemptToPlaceObject()
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptToPlaceObject")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "CanPlaceCurrentPlaceable")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(PlayerManager), Member = "set_m_ItemInHands")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "DeactivateAllWeapons")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Reset")]
-	[CallsUnknownMethods(Count = 14)]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptToPlaceObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "CanPlaceCurrentPlaceable")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 14)]
 	private void AttemptToPlaceMesh()
 	{
 	}
@@ -5592,200 +4921,177 @@ public class PlayerManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Inventory), Member = "SetActive")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetBedRolledMesh")]
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(LoadScene), Member = "Activate")]
 	[CalledBy(Type = typeof(LoadingZone), Member = "Activate")]
 	[CalledBy(Type = typeof(LoadingZone), Member = "OnTriggerStay")]
-	[CalledBy(Type = typeof(LoadScene), Member = "Activate")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "RestoreTransform")]
-	[Calls(Type = typeof(PlayerManager), Member = "ObjectToPlaceInInventory")]
-	[Calls(Type = typeof(PlayerManager), Member = "HideLightFromMesh")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "HideLightFromMesh")]
+	[Calls(Type = typeof(PlayerManager), Member = "ObjectToPlaceInInventory")]
+	[Calls(Type = typeof(PlayerManager), Member = "RestoreTransform")]
 	[Calls(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Inventory), Member = "SetActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetBedRolledMesh")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void StowOrDropPlaceMesh()
 	{
 	}
 
-	[CalledBy(Type = typeof(BodyCarry), Member = "Drop")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceMesh")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceMesh")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UnequipItemInHandsInternal")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "Enable")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(GearItem), Member = "OnBeginUnwield")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "EnterPlaceMesh")]
-	[Calls(Type = typeof(PlayerManager), Member = "CancelDecalPlacement")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "CancelPlaceMesh")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 12)]
+	[CalledBy(Type = typeof(GearItem), Member = "OnBeginUnwield")]
 	[CalledBy(Type = typeof(SprayPaintCan), Member = "UnwieldBegin")]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "Enable")]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UnequipItemInHandsInternal")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceMesh")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CalledBy(Type = typeof(BodyCarry), Member = "Drop")]
+	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "CancelPlaceMesh")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "CancelDecalPlacement")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void CancelPlacementMode()
 	{
 	}
 
+	[CallAnalysisFailed]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CancelPlacementMode")]
 	[CallerCount(Count = 1)]
-	[CallAnalysisFailed]
 	private void CancelPlaceMesh()
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnPlaceMeshAnimationEvent")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "StowOrDropPlaceMesh")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "RestoreOriginalTint")]
+	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
+	[Calls(Type = typeof(RockCache), Member = "Destroy")]
+	[Calls(Type = typeof(GearPlacePoint), Member = "FindGearAtPlacePoint")]
+	[Calls(Type = typeof(GearPlacePoint), Member = "ItemPlaced")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GearItem), Member = "MaybePlayCookingSlotPlacementAudio")]
+	[Calls(Type = typeof(GearItem), Member = "PlayPickUpClip")]
+	[Calls(Type = typeof(Cookable), Member = "MaybeStartWarmingUpDueToNearbyFire")]
 	[Calls(Type = typeof(CookingPotItem), Member = "ExitPlaceMesh")]
 	[Calls(Type = typeof(Campfire), Member = "OnExitedPlaceMesh")]
 	[Calls(Type = typeof(PlayerManager), Member = "CleanUpPlaceMesh")]
 	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(BodyCarry), Member = "HasBody")]
 	[Calls(Type = typeof(BodyCarry), Member = "CancelPlacement")]
 	[Calls(Type = typeof(LeanTo), Member = "Destroy")]
-	[Calls(Type = typeof(CookingPotItem), Member = "IsDummyPot")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(SnowShelter), Member = "Destroy")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(FireManager), Member = "DestroyFireObject")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnPlaceMeshAnimationEvent")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "StowOrDropPlaceMesh")]
+	[Calls(Type = typeof(CookingPotItem), Member = "IsDummyPot")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(SnowShelter), Member = "Destroy")]
-	[Calls(Type = typeof(Cookable), Member = "MaybeStartWarmingUpDueToNearbyFire")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "RestoreOriginalTint")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RockCache), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearPlacePoint), Member = "ItemPlaced")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "MaybePlayCookingSlotPlacementAudio")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "PlayPickUpClip")]
-	[Calls(Type = typeof(GearPlacePoint), Member = "FindGearAtPlacePoint")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	public void ExitMeshPlacement()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "CanPlaceMeshImmediately")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceImmediately")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "ExitInterface")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "InteractionFinished")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "CanPlaceMeshImmediately")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceImmediately")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "ExitInterface")]
+	[CallsUnknownMethods(Count = 3)]
 	public void CleanUpPlaceMesh()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
 	[Calls(Type = typeof(LeanToManager), Member = "PlayerInLeanTo")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	public bool ItemInHandsPlaceable()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdatePlacementButtonLabels")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowPlaceMeshItem")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdatePlacementButtonLabels")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string GetPlaceMeshFireButtonString()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowPlaceMeshItem")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdatePlacementButtonLabels")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string GetPlaceMeshAltFireButtonString()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string GetPlaceMeshRotateLeftButtonString()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string GetPlaceMeshRotateRightButtonString()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string GetPlaceMeshRotateMouseScrollButtonString()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string GetPlaceMeshHolsterButtonString()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string GetPlaceMeshReloadButtonString()
 	{
 		return null;
@@ -5797,9 +5103,6 @@ public class PlayerManager : MonoBehaviour
 		return null;
 	}
 
-	[CallerCount(Count = 7)]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CalledBy(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
 	[CalledBy(Type = typeof(FlashlightItem), Member = "Update")]
 	[CalledBy(Type = typeof(InputManager), Member = "OpenRadialMenu")]
@@ -5807,268 +5110,208 @@ public class PlayerManager : MonoBehaviour
 	[CalledBy(Type = typeof(InputManager), Member = "CanExecuteCrouchAction")]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateHUDText")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	public bool IsInPlacementMode()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CallerCount(Count = 32)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool IsInMeshPlacementMode()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(Utils), Member = "InputControlRotate")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceMesh")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(Utils), Member = "InputControlRotate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void RotateCurrentPlaceable()
 	{
 	}
 
-	[CalledBy(Type = typeof(Inventory), Member = "GetExtraScentIntensity")]
-	[CalledBy(Type = typeof(Inventory), Member = "GetExtraWeightKG")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PrepareGhostedObject")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "StowOrDropPlaceMesh")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnPlaceMeshAnimationEvent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "FindByInstanceID")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 7)]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Encumber), Member = "IsEncumberedIgnoringPlaceMesh")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnPlaceMeshAnimationEvent")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "StowOrDropPlaceMesh")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PrepareGhostedObject")]
+	[CalledBy(Type = typeof(Inventory), Member = "GetExtraWeightKG")]
+	[CalledBy(Type = typeof(Inventory), Member = "GetExtraScentIntensity")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Inventory), Member = "FindByInstanceID")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public bool ObjectToPlaceInInventory()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(FastClothManager), Member = "Update")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsRendererBeingPlaced(Renderer renderer)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "VisPointsAllVisible")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetLayerMaskForPlaceMeshRaycast")]
 	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "VisPointsAllVisible")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 13)]
 	private bool VisPointVisible(Transform xform)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
-	[Calls(Type = typeof(PlayerManager), Member = "VisPointVisible")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(PlayerManager), Member = "VisPointVisible")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	private bool VisPointsAllVisible(GameObject parent)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Vector3), Member = "get_down")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "MaybeUpdateRotationAction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetLayerMaskForPlacementPosition")]
-	[Calls(Type = typeof(PlayerManager), Member = "AssignComponents")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "AssignComponents")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetLayerMaskForPlacementPosition")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Vector3), Member = "get_down")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[Calls(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public bool IsPlacementPositionValid(GameObject go, bool alreadyPlaced)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "SnowShelterTooLow")]
-	[Calls(Type = typeof(PlayerManager), Member = "SnowShelterExitBlocked")]
-	[Calls(Type = typeof(PlayerManager), Member = "SnowShelterNotOnGroundSnow")]
-	[Calls(Type = typeof(Utils), Member = "XZDistance")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsUnknownMethods(Count = 37)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(PlayerManager), Member = "LeanToExitBlocked")]
-	[Calls(Type = typeof(PlayerManager), Member = "LeanToNotOnGroundSnow")]
-	[Calls(Type = typeof(Utils), Member = "XZDistance")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(PlayerManager), Member = "CampfireTooCloseToPlayer")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsPositionOverGround")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Utils), Member = "GetMaterialTagUnderPosition")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "IsPlacementPositionValid")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Campfire), Member = "TooWindyToStart")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsPositionOverGround")]
-	[Calls(Type = typeof(PlayerManager), Member = "BedrollOnIce")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[Calls(Type = typeof(Vector3), Member = "get_up")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(PlayerManager), Member = "VisPointsAllVisible")]
 	[Calls(Type = typeof(PlayerManager), Member = "ObjectToPlaceOverlapsWithObjectsThatBlockPlacement")]
 	[Calls(Type = typeof(PlayerManager), Member = "ObjectToPlaceOverlapsSnowShelter")]
 	[Calls(Type = typeof(PlayerManager), Member = "ObjectToPlaceOverlapsLeanTo")]
 	[Calls(Type = typeof(PlayerManager), Member = "ObjectToPlaceIsOnBrokenIce")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "ObjectToPlaceOverlapsWithInteractiveProp")]
-	[Calls(Type = typeof(RockCacheManager), Member = "CanPlaceRockCache")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
+	[Calls(Type = typeof(RockCacheManager), Member = "CanPlaceRockCache")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsPositionOverGround")]
+	[Calls(Type = typeof(PlayerManager), Member = "BedrollOnIce")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Utils), Member = "XZDistance")]
+	[Calls(Type = typeof(PlayerManager), Member = "LeanToNotOnGroundSnow")]
+	[Calls(Type = typeof(PlayerManager), Member = "LeanToExitBlocked")]
+	[Calls(Type = typeof(PlayerManager), Member = "SnowShelterNotOnGroundSnow")]
+	[Calls(Type = typeof(PlayerManager), Member = "SnowShelterExitBlocked")]
+	[Calls(Type = typeof(PlayerManager), Member = "SnowShelterTooLow")]
+	[Calls(Type = typeof(Campfire), Member = "TooWindyToStart")]
+	[Calls(Type = typeof(PlayerManager), Member = "CampfireTooCloseToPlayer")]
+	[Calls(Type = typeof(Utils), Member = "GetMaterialTagUnderPosition")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 37)]
 	private MeshLocationCategory CalculateGhostedMeshValidPosition(Vector3 normal)
 	{
 		return default(MeshLocationCategory);
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "ObjectToPlaceInInventory")]
-	[CallsUnknownMethods(Count = 47)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
-	[Calls(Type = typeof(GameObject), Member = "set_layer")]
-	[Calls(Type = typeof(GameObject), Member = "set_layer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
-	[Calls(Type = typeof(SnareItem), Member = "SetState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Campfire), Member = "SetState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Bed), Member = "SetState")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 20)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Bed), Member = "SetState")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Campfire), Member = "SetState")]
+	[Calls(Type = typeof(SnareItem), Member = "SetState")]
+	[Calls(Type = typeof(PlayerManager), Member = "ObjectToPlaceInInventory")]
+	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(GameObject), Member = "set_layer")]
+	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 47)]
 	private void PrepareGhostedObject(bool usePlacementMeshVariant)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(GearItem), Member = "PlayPickUpClip")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "StickToGroundAtPlayerFeet")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(GearItem), Member = "StickToGroundAtPlayerFeet")]
+	[Calls(Type = typeof(GearItem), Member = "PlayPickUpClip")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void MaybeDropMeshAtPlayerFeet()
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[Calls(Type = typeof(Quaternion), Member = "FromToRotation")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Bed), Member = "PlaceBody")]
-	[Calls(Type = typeof(GameObject), Member = "get_layer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "set_layer")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(SnowImprintCustom), Member = "Reposition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceMesh")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "OnPlaceMeshAnimationEvent")]
-	[CallsUnknownMethods(Count = 94)]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Vector3), Member = "get_down")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 43)]
 	[Calls(Type = typeof(BodyCarry), Member = "Drop")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(SnareItem), Member = "SetState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "SetCampFireInstance")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RockCache), Member = "OnBuild")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_layer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "set_layer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Panel_FireStart), Member = "SetCampFireInstance")]
+	[Calls(Type = typeof(RockCache), Member = "OnBuild")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(GameObject), Member = "get_layer")]
+	[Calls(Type = typeof(GameObject), Member = "set_layer")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Vector3), Member = "get_down")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Vector3), Member = "get_up")]
+	[Calls(Type = typeof(Quaternion), Member = "FromToRotation")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(SnowImprintCustom), Member = "Reposition")]
+	[Calls(Type = typeof(Bed), Member = "PlaceBody")]
+	[CallsDeduplicatedMethods(Count = 36)]
+	[CallsUnknownMethods(Count = 94)]
 	private void PlaceMeshInWorld()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 24)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TintObject")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "GetPropertyBlockForMeshLocationCategory")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ResetPlacementColors")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(CameraEffects), Member = "SwitchImageFilter")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "SetPlacementColors")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ResetPlacementColors")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "GetPropertyBlockForMeshLocationCategory")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TintObject")]
+	[CallerCount(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 24)]
 	private void InitializePropertyBlocks()
 	{
 	}
@@ -6081,123 +5324,129 @@ public class PlayerManager : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceMesh")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
 	[Calls(Type = typeof(PlayerManager), Member = "InitializePropertyBlocks")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void TintObject(GameObject go, MeshLocationCategory locationCategory)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void RestoreOriginalTint(GameObject go)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Bed), Member = "SetState")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void SetBedPlacedMesh(GameObject go)
 	{
 	}
 
-	[Calls(Type = typeof(Bed), Member = "SetState")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StowOrDropPlaceMesh")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Bed), Member = "SetState")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetBedRolledMesh(GameObject go)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Campfire), Member = "SetState")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void SetCampfirePlacedMesh(GameObject go)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SnareItem), Member = "SetState")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetSnarePlacedMesh(GameObject go)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ObjectToPlaceIsKeroseneLamp()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ObjectToPlaceIsFlare()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ObjectToPlaceIsFlashlight()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ObjectToPlaceIsTorch()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "VisPointVisible")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "GetLayerMaskForPlacementPosition")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CheckBoundsAgainstObjectsThatBlockPlacement")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private static int GetLayerMaskForPlaceMeshRaycast()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "CollectMasks")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "IsPlacementPositionValid")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetLayerMaskForPlaceMeshRaycast")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetLayerMaskForPlaceMeshRaycast")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static int GetLayerMaskForPlacementPosition()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -6205,82 +5454,81 @@ public class PlayerManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool InvalidCampfireRequiredToBeWithinVolume(Vector3 worldPosition)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(Utils), Member = "XZDistance")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 7)]
 	private bool CampfireTooCloseToPlayer(Vector3 campfirePos)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Utils), Member = "XZDistance")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Utils), Member = "XZDistance")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private bool SnowShelterTooCloseToPlayer(Vector3 shelterPos)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
-	[Calls(Type = typeof(GameObject), Member = "get_layer")]
-	[Calls(Type = typeof(GameObject), Member = "CompareTag")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "GetColliderUnderPosition")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Utils), Member = "GetColliderUnderPosition")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "CompareTag")]
+	[Calls(Type = typeof(GameObject), Member = "get_layer")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 14)]
 	private bool SnowShelterNotOnGroundSnow()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Vector3), Member = "get_down")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private bool SnowShelterTooLow()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 10)]
 	private bool SnowShelterExitBlocked()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Utils), Member = "XZDistance")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Utils), Member = "XZDistance")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private bool LeanToTooCloseToPlayer(Vector3 shelterPos)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
@@ -6289,560 +5537,479 @@ public class PlayerManager : MonoBehaviour
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "CompareTag")]
 	[Calls(Type = typeof(GameObject), Member = "get_layer")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 14)]
 	private bool LeanToNotOnGroundSnow()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 10)]
 	private bool LeanToExitBlocked()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
-	[Calls(Type = typeof(GameObject), Member = "CompareTag")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(Utils), Member = "GetColliderUnderPosition")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(GameObject), Member = "CompareTag")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[CallsUnknownMethods(Count = 8)]
 	private bool BedrollOnIce()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(Vector3), Member = "get_down")]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[Calls(Type = typeof(Vector3), Member = "get_up")]
+	[Calls(Type = typeof(Vector3), Member = "get_down")]
 	[Calls(Type = typeof(PhysicsScene), Member = "SphereCast")]
+	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 12)]
 	private bool IsPositionOverGround()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "AreCollidersActiveAndEnabled")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Collider), Member = "get_enabled")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(Transform), Member = "get_lossyScale")]
+	[Calls(Type = typeof(BoxCollider), Member = "get_size")]
+	[Calls(Type = typeof(Collider), Member = "get_bounds")]
+	[Calls(Type = typeof(PlayerManager), Member = "CheckBoundsAgainstObjectsThatBlockPlacement")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(MeshFilter), Member = "get_sharedMesh")]
 	[Calls(Type = typeof(Mesh), Member = "get_bounds")]
 	[Calls(Type = typeof(Renderer), Member = "get_bounds")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
-	[Calls(Type = typeof(PlayerManager), Member = "CheckBoundsAgainstObjectsThatBlockPlacement")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
-	[CallsUnknownMethods(Count = 23)]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Collider), Member = "get_enabled")]
-	[Calls(Type = typeof(Collider), Member = "get_bounds")]
-	[Calls(Type = typeof(BoxCollider), Member = "get_size")]
-	[Calls(Type = typeof(Transform), Member = "get_lossyScale")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Utils), Member = "AreCollidersActiveAndEnabled")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 13)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "CheckBoundsAgainstObjectsThatBlockPlacement")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 23)]
 	private Collider ObjectToPlaceOverlapsWithObjectsThatBlockPlacement(Vector3 normal)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 37)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ObjectToPlaceOverlapsWithObjectsThatBlockPlacement")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ObjectToPlaceOverlapsWithObjectsThatBlockPlacement")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(Collider), Member = "get_isTrigger")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetLayerMaskForPlaceMeshRaycast")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "IsChildOf")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Collider), Member = "get_isTrigger")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Vector3), Member = "get_down")]
 	[Calls(Type = typeof(PhysicsScene), Member = "BoxCast")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInParent")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 37)]
 	private Collider CheckBoundsAgainstObjectsThatBlockPlacement(Vector3 worldPos, Vector3 localExtents, Quaternion rotation)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Vector3), Member = "Distance")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Utils), Member = "OrientedBoundingBoxesOverlap")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Vector3), Member = "Distance")]
+	[Calls(Type = typeof(Utils), Member = "OrientedBoundingBoxesOverlap")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 9)]
 	private bool ObjectToPlaceOverlapsSnowShelter()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Utils), Member = "OrientedBoundingBoxesOverlap")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "OrientedBoundingBoxesOverlap")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[CallsUnknownMethods(Count = 9)]
 	private bool ObjectToPlaceOverlapsLeanTo()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 48)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Utils), Member = "OrientedBoundingBoxesOverlap")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[Calls(Type = typeof(Collider), Member = "get_bounds")]
-	[Calls(Type = typeof(Collider), Member = "get_bounds")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Physics), Member = "OverlapSphere")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Physics), Member = "OverlapSphere")]
-	[CallsDeduplicatedMethods(Count = 18)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Collider), Member = "get_bounds")]
 	[Calls(Type = typeof(Bounds), Member = "Intersects")]
+	[Calls(Type = typeof(Utils), Member = "OrientedBoundingBoxesOverlap")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 18)]
+	[CallsUnknownMethods(Count = 48)]
 	private bool ObjectToPlaceOverlapsWithInteractiveProp()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(BreakableIce), Member = "IsIceBroken")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateGhostedMeshValidPosition")]
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[Calls(Type = typeof(GameObject), Member = "CompareTag")]
-	[Calls(Type = typeof(Collider), Member = "get_bounds")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "GetColliderUnderPosition")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "GetColliderUnderPosition")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "CompareTag")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Collider), Member = "get_bounds")]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[Calls(Type = typeof(BreakableIce), Member = "IsIceBroken")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 12)]
 	private bool ObjectToPlaceIsOnBrokenIce()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
-	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Vector3), Member = "Distance")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 17)]
 	private GearPlacePoint GetGearPlacePoint(GameObject go, Vector3 searchPos)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StowOrDropPlaceMesh")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 14)]
 	private void RestoreTransform()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "SetDamageBlendValue")]
-	[Calls(Type = typeof(GearItem), Member = "SetDamageBlendValue")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceMesh")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StowOrDropPlaceMesh")]
-	[CallsUnknownMethods(Count = 28)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceMesh")]
-	[Calls(Type = typeof(TorchItem), Member = "HideEffects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "HideEffects")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FlareItem), Member = "HideEffects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(KeroseneLampItem), Member = "HideEffects")]
+	[Calls(Type = typeof(FlareItem), Member = "HideEffects")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "HideEffects")]
+	[Calls(Type = typeof(TorchItem), Member = "HideEffects")]
+	[Calls(Type = typeof(GearItem), Member = "SetDamageBlendValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 28)]
 	private void HideLightFromMesh(bool hide)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private bool ShouldDoVisPointsCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "InitializeObjectToPlace")]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "IsPlacementPositionValid")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "InitializeObjectToPlace")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInParent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void AssignComponents(GameObject go, bool alreadyPlaced)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 12)]
 	private void InitializeRenderers()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "AreCollidersActiveAndEnabled")]
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "CanPlaceMeshImmediately")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Utils), Member = "GetLargestCollider")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[Calls(Type = typeof(Utils), Member = "AreCollidersActiveAndEnabled")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObjectByTag")]
-	[Calls(Type = typeof(PlayerManager), Member = "AssignComponents")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "AssignComponents")]
+	[Calls(Type = typeof(Utils), Member = "GetChildGameObjectByTag")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Utils), Member = "AreCollidersActiveAndEnabled")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Utils), Member = "GetLargestCollider")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 12)]
 	private void InitializeObjectToPlace(GameObject go)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "DoPositionCheck")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "ShowPlaceMeshItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "CanPlaceCookingItemOnPoint")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "ShowPlaceMeshItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "ShowPlaceMeshItem")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(PlayerManager), Member = "CanPlaceCookingItemOnPoint")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void CheckForButtomPromptUpdate(GearPlacePoint gpp)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceMesh")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGear")]
-	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Inventory), Member = "FindByInstanceID")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
+	[Calls(Type = typeof(Inventory), Member = "RemoveGear")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	private void UpdateInventoryOnPlacement()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	public bool ItemInHandsThrowable()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "ReleaseFromHands")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GearItem), Member = "StickToGroundAtPlayerFeet")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(CharacterController), Member = "get_height")]
-	[Calls(Type = typeof(PlayerManager), Member = "DropRigidBody")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_drop_lit_item_in_hands")]
 	[CalledBy(Type = typeof(Action_LowerItemsInHand), Member = "OnUpdate")]
 	[CalledBy(Type = typeof(Action_LowerItemsInHand), Member = "OnItemInHandStowed")]
-	[CallsUnknownMethods(Count = 36)]
-	[Calls(Type = typeof(PlayerManager), Member = "MaybeDuplicateItemBeforeDrop")]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(MatchesItem), Member = "PutOut")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(PlayerManager), Member = "SetGravity")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "MaybeDuplicateItemBeforeDrop")]
 	[Calls(Type = typeof(PlayerManager), Member = "Drop")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "MaybeDuplicateItemBeforeDrop")]
-	[Calls(Type = typeof(PlayerManager), Member = "MaybeDuplicateItemBeforeDrop")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "MaybeDuplicateItemBeforeDrop")]
 	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
+	[Calls(Type = typeof(MatchesItem), Member = "PutOut")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetGravity")]
+	[Calls(Type = typeof(PlayerManager), Member = "ReleaseFromHands")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(GearItem), Member = "StickToGroundAtPlayerFeet")]
+	[Calls(Type = typeof(CharacterController), Member = "get_height")]
+	[Calls(Type = typeof(Vector3), Member = "get_up")]
+	[Calls(Type = typeof(PlayerManager), Member = "DropRigidBody")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 36)]
 	public void DropLitItemInHand(DropLitItemsOptions options, bool useGravity = true)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "MaybeDuplicateItemBeforeDrop")]
-	[CallsUnknownMethods(Count = 25)]
 	[CalledBy(Type = typeof(HeldItemInPlacementZone), Member = "DropItemFromHands")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
-	[Calls(Type = typeof(PlayerManager), Member = "DropToPlacementZone")]
-	[Calls(Type = typeof(PlayerManager), Member = "MaybeDuplicateItemBeforeDrop")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetGravity")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(MatchesItem), Member = "PutOut")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "MaybeDuplicateItemBeforeDrop")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "MaybeDuplicateItemBeforeDrop")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "MaybeDuplicateItemBeforeDrop")]
+	[Calls(Type = typeof(MatchesItem), Member = "PutOut")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetGravity")]
+	[Calls(Type = typeof(PlayerManager), Member = "DropToPlacementZone")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 25)]
 	public void DropLitItemToPlacementZone(DropLitItemsOptions options, bool useGravity = true)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "DropCurrentItemInHand")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "DropCurrentItemInHand")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemInHand")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "DropCurrentItemInHand")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(PlayerManager), Member = "ReleaseFromHands")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(FlareItem), Member = "DisableRendering")]
 	[Calls(Type = typeof(TorchItem), Member = "DisableRendering")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "ReleaseFromHands")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
 	[Calls(Type = typeof(PlayerManager), Member = "DropRigidBody")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Drop(GameObject go, bool useGravity = true)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemToPlacementZone")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetGravity")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TorchItem), Member = "DisableRendering")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "ReleaseFromHands")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "ReleaseFromHands")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(FlareItem), Member = "DisableRendering")]
+	[Calls(Type = typeof(TorchItem), Member = "DisableRendering")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetGravity")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void DropToPlacementZone(GameObject go, bool useGravity = true)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "Drop")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemInHand")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetGravity")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "Drop")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetGravity")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	private static void DropRigidBody(GameObject go, bool useGravity = true)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropRigidBody")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropToPlacementZone")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemToPlacementZone")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemInHand")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(HeldItemInPlacementZone), Member = "RetrievePlacedItemToHands")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(HeldItemInPlacementZone), Member = "ResetGravity")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemInHand")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemToPlacementZone")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "DropToPlacementZone")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "DropRigidBody")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void SetGravity(GameObject go, bool useGravity)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
-	[CalledBy(Type = typeof(StoneItem), Member = "Throw")]
-	[CallsUnknownMethods(Count = 23)]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "Toggle")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "CanTransitionToState")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(StoneItem), Member = "Throw")]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "CanTransitionToState")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "MaybeSetState")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetTrigger")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 23)]
 	public void Throw(GearItem gi, PlayerAnimation.OnAnimationEvent throwCompleteCallback = null)
 	{
 	}
 
+	[CalledBy(Type = typeof(_003C_003Ec__DisplayClass604_0), Member = "<Throw>b__0")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "GetFPSMeshID")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SwitchWeapon")]
+	[Calls(Type = typeof(PlayerManager), Member = "ReleaseFromHands")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(FlareItem), Member = "DisableRendering")]
+	[Calls(Type = typeof(TorchItem), Member = "DisableRendering")]
+	[Calls(Type = typeof(StoneItem), Member = "SetThrown")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Transform), Member = "get_right")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[Calls(Type = typeof(Transform), Member = "get_up")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Rigidbody), Member = "set_drag")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CalledBy(Type = typeof(_003C_003Ec__DisplayClass604_0), Member = "<Throw>b__0")]
-	[CallsUnknownMethods(Count = 37)]
 	[Calls(Type = typeof(Rigidbody), Member = "set_angularDrag")]
-	[Calls(Type = typeof(StoneItem), Member = "SetThrown")]
-	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
-	[Calls(Type = typeof(TorchItem), Member = "DisableRendering")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "GetFPSMeshID")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SwitchWeapon")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FlareItem), Member = "DisableRendering")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "ReleaseFromHands")]
+	[Calls(Type = typeof(Rigidbody), Member = "set_drag")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 37)]
 	private void ReleaseThrownObject()
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemInHand")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "Drop")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "DropToPlacementZone")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ReleaseThrownObject")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "set_m_ItemInHands")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateCopyOfThrownObject")]
+	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "GetWeaponFromID")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(PlayerManager), Member = "MaybeAdjustShotPositionForNearShot")]
 	[Calls(Type = typeof(Inventory), Member = "RemoveGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemInHand")]
-	[CallsUnknownMethods(Count = 41)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropToPlacementZone")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ReleaseThrownObject")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "Drop")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "GetWeaponFromID")]
-	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateCopyOfThrownObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "set_m_ItemInHands")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 21)]
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[CallsDeduplicatedMethods(Count = 20)]
+	[CallsUnknownMethods(Count = 41)]
 	private GameObject ReleaseFromHands(GameObject go)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ReleaseFromHands")]
-	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 17)]
 	private GearItem InstantiateCopyOfThrownObject(GearItem gi)
 	{
 		return null;
@@ -6850,35 +6017,26 @@ public class PlayerManager : MonoBehaviour
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemInHand")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemToPlacementZone")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemToPlacementZone")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemToPlacementZone")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemToPlacementZone")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemToPlacementZone")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemInHand")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemInHand")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemInHand")]
-	[Calls(Type = typeof(PlayerManager), Member = "TurnLightOffImmediate")]
-	[Calls(Type = typeof(GearItem), Member = "Clone")]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 10)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "DropLitItemInHand")]
+	[Calls(Type = typeof(Enum), Member = "HasFlag")]
+	[Calls(Type = typeof(GearItem), Member = "Clone")]
+	[Calls(Type = typeof(PlayerManager), Member = "TurnLightOffImmediate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void MaybeDuplicateItemBeforeDrop(DropLitItemsOptions options)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
-	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ReleaseFromHands")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
 	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	public static Vector3 MaybeAdjustShotPositionForNearShot(Vector3 emissionPos, Vector3 firePos, Vector3 testDir)
 	{
 		return default(Vector3);
@@ -6891,52 +6049,56 @@ public class PlayerManager : MonoBehaviour
 		return default(Vector3);
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private static float GetNearDistanceShot(Vector3 weaponSpaceEmissionPosition)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Deserialize")]
-	[Calls(Type = typeof(PlayerManager), Member = "EnableCharacterController")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "Reset")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(PlayerManager), Member = "FindStartRegion")]
+	[Calls(Type = typeof(PlayerManager), Member = "SpawnFirstPersonItems")]
+	[Calls(Type = typeof(PlayerManager), Member = "InitInspectGearMode")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "CalculateClampedYaw")]
+	[Calls(Type = typeof(PlayerVoice), Member = "SetPlayerVoicePersona")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Reset")]
-	[Calls(Type = typeof(PlayerVoice), Member = "SetPlayerVoicePersona")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "Reset")]
+	[Calls(Type = typeof(PlayerManager), Member = "EnableCharacterController")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(PlayerManager), Member = "InitInspectGearMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "SpawnFirstPersonItems")]
-	[Calls(Type = typeof(PlayerManager), Member = "FindStartRegion")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "CalculateClampedYaw")]
 	public void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void EnterIndoorSpaceTrigger(IndoorSpaceTrigger Trigger)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void ExitIndoorSpaceTrigger(IndoorSpaceTrigger Trigger)
 	{
 	}
@@ -6944,75 +6106,47 @@ public class PlayerManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsFirstFrame()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsStickPlayerToGroundPending()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsTeleportPending()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "EnableReloadBulletInstance")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Start")]
-	[Calls(Type = typeof(Renderer), Member = "set_lightProbeProxyVolumeOverride")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "UpdateBulletsForReload")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnLeftHandProp")]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnRightHandProp")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnRightHandProp")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnLeftHandProp")]
 	[Calls(Type = typeof(vp_FPSWeapon), Member = "MaybeSpawnShoulderProp")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "UpdateBulletsForReload")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "EnableReloadBulletInstance")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(Renderer), Member = "set_lightProbeProxyVolumeOverride")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 15)]
 	private void SpawnFirstPersonItems()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Inventory), Member = "DestroyAllGear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void ResetStartGear()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "MaybeUpdateWiseWithPlayerElevation")]
-	[Calls(Type = typeof(PlayerManager), Member = "MaybeUpdateWiseWithClosestDistanceToPredator")]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdateBuffDurations")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdateItemInHands")]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdateClothingWetness")]
-	[Calls(Type = typeof(PlayerManager), Member = "MaybeRotateCamera")]
-	[Calls(Type = typeof(PlayerManager), Member = "MaybePlayLandAudio")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdateCalorieBurnRate")]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdateBonusValuesFromWornClothing")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(LookAtTargetForTime), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsReadyToEquip")]
-	[Calls(Type = typeof(PlayerManager), Member = "EquipItem")]
-	[Calls(Type = typeof(CharacterController), Member = "get_isGrounded")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(FallDamage), Member = "ApplyFallDamage")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdateHUDText")]
-	[CallsUnknownMethods(Count = 37)]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdateHUDText")]
-	[Calls(Type = typeof(PlayerManager), Member = "MaybeRepositionPlayerIfFellThroughWorld")]
-	[Calls(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcess")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
-	[Calls(Type = typeof(GameManager), Member = "ControlsLocked")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SceneManager), Member = "IsLoading")]
 	[Calls(Type = typeof(StartGear), Member = "AddAllToInventory")]
@@ -7023,116 +6157,126 @@ public class PlayerManager : MonoBehaviour
 	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGroundAfterLoad")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GameManager), Member = "SetPhysicsAutoSimulationEnabled")]
-	[Calls(Type = typeof(PlayerClimbRope), Member = "UpdateClimbing")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "SetPhysicsAutoSimulationEnabled")]
-	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
-	[Calls(Type = typeof(LoadScene), Member = "MaybeAddGUIDToPrevSceneSave")]
-	[Calls(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
-	[Calls(Type = typeof(GearManager), Member = "UpdateAll")]
-	[Calls(Type = typeof(Physics), Member = "get_autoSimulation")]
 	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayerAfterSceneLoad")]
+	[Calls(Type = typeof(GameManager), Member = "SetPhysicsAutoSimulationEnabled")]
+	[Calls(Type = typeof(GearManager), Member = "UpdateAll")]
+	[Calls(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
+	[Calls(Type = typeof(LoadScene), Member = "MaybeAddGUIDToPrevSceneSave")]
+	[Calls(Type = typeof(Physics), Member = "get_autoSimulation")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
+	[Calls(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
+	[Calls(Type = typeof(PlayerClimbRope), Member = "UpdateClimbing")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
+	[Calls(Type = typeof(GameManager), Member = "ControlsLocked")]
+	[Calls(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcess")]
+	[Calls(Type = typeof(PlayerManager), Member = "UpdateHUDText")]
+	[Calls(Type = typeof(PlayerManager), Member = "UpdateCalorieBurnRate")]
+	[Calls(Type = typeof(PlayerManager), Member = "UpdateItemInHands")]
+	[Calls(Type = typeof(PlayerManager), Member = "MaybePlayLandAudio")]
+	[Calls(Type = typeof(PlayerManager), Member = "MaybeRotateCamera")]
+	[Calls(Type = typeof(PlayerManager), Member = "UpdateClothingWetness")]
+	[Calls(Type = typeof(PlayerManager), Member = "UpdateBonusValuesFromWornClothing")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(PlayerManager), Member = "UpdateBuffDurations")]
+	[Calls(Type = typeof(PlayerManager), Member = "MaybeUpdateWiseWithClosestDistanceToPredator")]
+	[Calls(Type = typeof(PlayerManager), Member = "MaybeUpdateWiseWithPlayerElevation")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(PlayerManager), Member = "MaybeRepositionPlayerIfFellThroughWorld")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsReadyToEquip")]
+	[Calls(Type = typeof(PlayerManager), Member = "EquipItem")]
+	[Calls(Type = typeof(LookAtTargetForTime), Member = "Update")]
+	[Calls(Type = typeof(CharacterController), Member = "get_isGrounded")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(FallDamage), Member = "ApplyFallDamage")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 37)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 59)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(LeanToManager), Member = "PlayerInLeanTo")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
-	[Calls(Type = typeof(RegionManager), Member = "GetSceneFilename")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(RegionManager), Member = "GetSceneFilename")]
+	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
+	[Calls(Type = typeof(LeanToManager), Member = "PlayerInLeanTo")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 59)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "DeactivateAllWeapons")]
-	[Calls(Type = typeof(PlayerManager), Member = "EquipItem")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataForEspisodeMigration")]
-	[CallsUnknownMethods(Count = 34)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerInVehicle), Member = "ForceIntoVehicleSilent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "FindByInstanceID")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(PlayerManager), Member = "Start")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(Inventory), Member = "FindByInstanceID")]
 	[Calls(Type = typeof(RegionManager), Member = "GetRegionFromString")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[Calls(Type = typeof(PlayerManager), Member = "FindStartRegionFromFileData")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "GetGlobalSaveGameFormatVersion")]
 	[Calls(Type = typeof(PlayerVoice), Member = "SetPlayerVoicePersona")]
+	[Calls(Type = typeof(Inventory), Member = "FindByInstanceID")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "DeactivateAllWeapons")]
+	[Calls(Type = typeof(PlayerManager), Member = "EquipItem")]
+	[Calls(Type = typeof(PlayerInVehicle), Member = "ForceIntoVehicleSilent")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 34)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SnowShelterManager), Member = "ForceIntoSnowShelterSilent")]
 	[Calls(Type = typeof(LeanToManager), Member = "ForceIntoLeanToSilent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public void DeserializePostSceneLoadFixup()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(SplineManager), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "ProcessSelectionConfirm")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "UpdateFromUnderCrosshair")]
-	[Calls(Type = typeof(DialogueOptionsAnimationTree), Member = "UpdateClosestToCenter")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
+	[Calls(Type = typeof(PlayerManager), Member = "UpdatePlaceMesh")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcess")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdatePlaceMesh")]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
+	[Calls(Type = typeof(DialogueOptionsAnimationTree), Member = "UpdateClosestToCenter")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "UpdateFromUnderCrosshair")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "ProcessSelectionConfirm")]
+	[Calls(Type = typeof(SplineManager), Member = "Update")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 7)]
 	public void LateUpdate()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "TeleportPlayerAfterSceneLoad")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TeleportPlayerAfterSceneLoad")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TeleportPlayerAfterSceneLoad")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeRepositionPlayerIfFellThroughWorld")]
-	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "ForceEndGame")]
-	[CallsUnknownMethods(Count = 22)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TeleportPlayerAfterSceneLoad")]
-	[CalledBy(Type = typeof(PlayerCameraAnim), Member = "UpdateTeleport")]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "EndClimbing")]
-	[CalledBy(Type = typeof(SnowShelterManager), Member = "EnterShelterAfterFadeOutCommon")]
-	[CalledBy(Type = typeof(LeanToManager), Member = "EnterLeanToAfterFadeOutCommon")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[CalledBy(Type = typeof(FlyMode), Member = "TeleportPlayerAndExit")]
 	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "CentrePlayerInElevator")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_teleport")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CalledBy(Type = typeof(LeanToManager), Member = "EnterLeanToAfterFadeOutCommon")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TeleportPlayerAfterSceneLoad")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeRepositionPlayerIfFellThroughWorld")]
+	[CalledBy(Type = typeof(SnowShelterManager), Member = "EnterShelterAfterFadeOutCommon")]
+	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "ForceEndGame")]
+	[CalledBy(Type = typeof(PlayerCameraAnim), Member = "UpdateTeleport")]
+	[CalledBy(Type = typeof(PlayerClimbRope), Member = "EndClimbing")]
+	[CallerCount(Count = 13)]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-	[CallerCount(Count = 13)]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(Weather), Member = "WarmWeather")]
-	[CalledBy(Type = typeof(FlyMode), Member = "TeleportPlayerAndExit")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 22)]
 	public void TeleportPlayer(Vector3 position, Quaternion rotation)
 	{
 	}
@@ -7145,28 +6289,28 @@ public class PlayerManager : MonoBehaviour
 		return default(PlayerControlMode);
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "StopNearPlaneOverride")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayerManager), Member = "CancelPlacementMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetHipAndShoulderOffsetLayer")]
-	[Calls(Type = typeof(PlayerManager), Member = "DisableCharacterController")]
-	[Calls(Type = typeof(PlayerManager), Member = "EnableCharacterController")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 137)]
+	[Calls(Type = typeof(PlayerManager), Member = "EnableCharacterController")]
+	[Calls(Type = typeof(PlayerManager), Member = "DisableCharacterController")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ResetHipAndShoulderOffsetLayer")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
 	[Calls(Type = typeof(PlayerManager), Member = "ExitInspectGearMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "CancelPlacementMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "StopNearPlaneOverride")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 15)]
 	public void SetControlMode(PlayerControlMode mode)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteHolsterAction")]
+	[CallerCount(Count = 1)]
 	public bool ControlModeAllowsInterface()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -7177,186 +6321,213 @@ public class PlayerManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsStatusBarsLocked()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	public bool PlayerIsDead()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeAttackPlayerWhenTryingToFlee")]
-	[CalledBy(Type = typeof(BaseAi), Member = "TargetCanBeIgnored")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ProcessAudioEvent")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ProcessAttack")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CinematicManager), Member = "IsPlaying")]
-	[Calls(Type = typeof(CinematicManager), Member = "IsLoading")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetFPCinematicManager")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ProcessAudioEvent")]
+	[CalledBy(Type = typeof(BaseAi), Member = "TargetCanBeIgnored")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeAttackPlayerWhenTryingToFlee")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ProcessStalking")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "IsPlayingNonInterruptableAnimation")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "InProgress")]
-	[Calls(Type = typeof(GameManager), Member = "IsActiveScene")]
-	[Calls(Type = typeof(GameManager), Member = "IsMainMenuActive")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(GameManager), Member = "IsMainMenuActive")]
+	[Calls(Type = typeof(GameManager), Member = "IsActiveScene")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "InProgress")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "IsPlayingNonInterruptableAnimation")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(PlayerManager), Member = "IsPlayerInStealthArea")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "GetFPCinematicManager")]
+	[Calls(Type = typeof(CinematicManager), Member = "IsLoading")]
+	[Calls(Type = typeof(CinematicManager), Member = "IsPlaying")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	public bool PlayerIsInvisibleToAi()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "RefreshCalorieLabels")]
 	[CalledBy(Type = typeof(Panel_BreakDown), Member = "UpdateEstimatedCaloriesBurnedLabel")]
 	[CalledBy(Type = typeof(Panel_IceFishing), Member = "UpdateEstimatedCaloriesBurnedLabel")]
 	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "UpdateEstimatedCaloriesBurnedLabel")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdateEstimatedCaloriesBurnedLabel")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateCalorieBurnRate")]
 	[CalledBy(Type = typeof(Panel_Rest), Member = "UpdateEstimatedCaloriesBurnedLabel")]
 	[CalledBy(Type = typeof(Panel_SnowShelterBuild), Member = "UpdateEstimatedCaloriesBurnedLabel")]
 	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdateEstimatedCaloriesBurnedLabel")]
-	[CallsUnknownMethods(Count = 14)]
-	[CalledBy(Type = typeof(Panel_Rest), Member = "UpdateEstimatedCaloriesBurnedLabel")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "RefreshCalorieLabels")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateCalorieBurnRate")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsWalking")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsWalking")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsWalking")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 10)]
 	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 14)]
 	public float CalculateModifiedCalorieBurnRate(float baseBurnRate)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
-	[CallsUnknownMethods(Count = 39)]
-	[Calls(Type = typeof(PlayerManager), Member = "CalculateModifiedCalorieBurnRate")]
-	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsDismantlingShelter")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsWalking")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsWalking")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsRepairingShelter")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsDismantlingShelter")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
+	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
+	[Calls(Type = typeof(PlayerManager), Member = "CalculateModifiedCalorieBurnRate")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 39)]
 	public void UpdateCalorieBurnRate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(Breath), Member = "PlayBreathEffect")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerCanSprint")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "ShouldShowAlternateColor")]
 	[CalledBy(Type = typeof(Fatigue), Member = "MaybePlayHeavyBreathingLoop")]
-	[Calls(Type = typeof(SprainedAnkle), Member = "HasSprainedAnkle")]
-	[Calls(Type = typeof(Encumber), Member = "GetNoSprintCarryCapacityKG")]
-	[Calls(Type = typeof(Inventory), Member = "GetExtraWeightKG")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "ShouldShowAlternateColor")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerCanSprint")]
+	[CalledBy(Type = typeof(Breath), Member = "PlayBreathEffect")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Inventory), Member = "GetExtraWeightKG")]
+	[Calls(Type = typeof(Encumber), Member = "GetNoSprintCarryCapacityKG")]
+	[Calls(Type = typeof(SprainedAnkle), Member = "HasSprainedAnkle")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public bool PlayerCantSprintBecauseOfInjury()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 21)]
 	[CalledBy(Type = typeof(PlayerMovement), Member = "Update")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "GetMovementInput")]
-	[Calls(Type = typeof(PlayerMovement), Member = "GetSprintStaminaRemainingAsPercentage")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerCantSprintBecauseOfInjury")]
-	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsZooming")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsZooming")]
 	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
+	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerCantSprintBecauseOfInjury")]
+	[Calls(Type = typeof(PlayerMovement), Member = "GetSprintStaminaRemainingAsPercentage")]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "GetMovementInput")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 21)]
 	public bool PlayerCanSprint()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Condition), Member = "CanPlayConditionVO")]
+	[CalledBy(Type = typeof(Fatigue), Member = "CalculateFatigueIncrease")]
+	[CalledBy(Type = typeof(Freezing), Member = "CalculateBodyTemperature")]
+	[CalledBy(Type = typeof(Thirst), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[CalledBy(Type = typeof(TimeOfDay), Member = "MaybePlayTimeOfDayStingers")]
+	[CalledBy(Type = typeof(BloodLoss), Member = "MaybeApplyDamage")]
+	[CalledBy(Type = typeof(Dysentery), Member = "UpdateDysentery")]
+	[CalledBy(Type = typeof(FoodPoisoning), Member = "UpdateFoodPoisoning")]
+	[CalledBy(Type = typeof(Frostbite), Member = "CalculateBodyTemperatureWithoutClothing")]
+	[CalledBy(Type = typeof(Hypothermia), Member = "UpdateHypothermia")]
+	[CalledBy(Type = typeof(Infection), Member = "UpdateInfection")]
+	[CalledBy(Type = typeof(GearMessage), Member = "Update")]
+	[CalledBy(Type = typeof(GearMessage), Member = "ShortenMessageTimeDueToQueue")]
+	[CalledBy(Type = typeof(GameManager), Member = "ControlsLocked")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateCalorieBurnRate")]
+	[CalledBy(Type = typeof(Breath), Member = "ShouldSuppressBreathEffect")]
+	[CalledBy(Type = typeof(PlayerVoice), Member = "CanPlayPlayerVoiceEvents")]
 	[CallerCount(Count = 21)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool PlayerIsSleeping()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(vp_StateManager), Member = "IsEnabled")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[Calls(Type = typeof(GameManager), Member = "IsMovementLockedBecauseOfLantern")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "UpdateSprintState")]
+	[CalledBy(Type = typeof(Encumber), Member = "GetEncumbranceSlowdownMultiplier")]
+	[CalledBy(Type = typeof(Fatigue), Member = "MaybeCatchBreath")]
+	[CalledBy(Type = typeof(Fatigue), Member = "CalculateFatigueIncrease")]
+	[CalledBy(Type = typeof(Freezing), Member = "UpdateTemperatureBonusFromRunning")]
+	[CalledBy(Type = typeof(SprainedAnkle), Member = "UpdateSprainedAnkle")]
+	[CalledBy(Type = typeof(Sprains), Member = "MaybeSprainWhileMoving")]
+	[CalledBy(Type = typeof(Sprains), Member = "ModifyChanceForSprinting")]
+	[CalledBy(Type = typeof(Sprains), Member = "RollForSprainWhenMoving")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateModifiedCalorieBurnRate")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateCalorieBurnRate")]
+	[CalledBy(Type = typeof(FootStepSounds), Member = "SetPlayerVelocityRTPC")]
+	[CalledBy(Type = typeof(PlayerMovement), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerMovement), Member = "MovedDistance")]
+	[CalledBy(Type = typeof(PlayerMovement), Member = "AllowStaminaToRecover")]
 	[CallerCount(Count = 20)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
+	[Calls(Type = typeof(GameManager), Member = "IsMovementLockedBecauseOfLantern")]
+	[Calls(Type = typeof(vp_StateManager), Member = "IsEnabled")]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public bool PlayerIsSprinting()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateModifiedCalorieBurnRate")]
-	[CallsUnknownMethods(Count = 14)]
-	[CalledBy(Type = typeof(PlayerMovement), Member = "GetFootStepsRangeScale")]
-	[CalledBy(Type = typeof(FootStepSounds), Member = "SetPlayerVelocityRTPC")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateCalorieBurnRate")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateModifiedCalorieBurnRate")]
-	[CalledBy(Type = typeof(Sprains), Member = "RollForSprainWhenMoving")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ProcessFootstepAudioEvent")]
+	[CalledBy(Type = typeof(Fatigue), Member = "MaybeCatchBreath")]
 	[CalledBy(Type = typeof(Fatigue), Member = "CalculateFatigueIncrease")]
 	[CalledBy(Type = typeof(SprainedAnkle), Member = "UpdateSprainedAnkle")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ProcessFootstepAudioEvent")]
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[Calls(Type = typeof(vp_StateManager), Member = "IsEnabled")]
-	[Calls(Type = typeof(vp_StateManager), Member = "IsEnabled")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Sprains), Member = "RollForSprainWhenMoving")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "CalculateModifiedCalorieBurnRate")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateCalorieBurnRate")]
+	[CalledBy(Type = typeof(FootStepSounds), Member = "SetPlayerVelocityRTPC")]
+	[CalledBy(Type = typeof(PlayerMovement), Member = "GetFootStepsRangeScale")]
 	[CallerCount(Count = 10)]
-	[CalledBy(Type = typeof(Fatigue), Member = "MaybeCatchBreath")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
+	[Calls(Type = typeof(vp_StateManager), Member = "IsEnabled")]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	public bool PlayerIsWalking()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 20)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(vp_StateManager), Member = "IsEnabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	public bool PlayerIsCrouched()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(BaseAi), Member = "GetRandomNavmeshPos")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeForceFasterStalkingSpeed")]
+	[CalledBy(Type = typeof(HUDManager), Member = "ShouldHideCrossHairs")]
+	[CalledBy(Type = typeof(InputManager), Member = "ProcessInput")]
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessFireAction")]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteInteractAction")]
-	[CalledBy(Type = typeof(InputManager), Member = "ProcessInput")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerCanSprint")]
-	[CalledBy(Type = typeof(HUDManager), Member = "ShouldHideCrossHairs")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(BaseAi), Member = "GetRandomNavmeshPos")]
-	[Calls(Type = typeof(vp_StateManager), Member = "IsEnabled")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeForceFasterStalkingSpeed")]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(vp_StateManager), Member = "IsEnabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public bool PlayerIsZooming()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -7364,7 +6535,7 @@ public class PlayerManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool PlayerIsBreakingDown()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -7372,45 +6543,45 @@ public class PlayerManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool PlayerIsBuildingShelter()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateCalorieBurnRate")]
-	[CalledBy(Type = typeof(SnowShelter), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(LeanTo), Member = "Update")]
+	[CalledBy(Type = typeof(SnowShelter), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateCalorieBurnRate")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool PlayerIsRepairingShelter()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(LeanTo), Member = "Update")]
 	[CalledBy(Type = typeof(SnowShelter), Member = "Update")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateCalorieBurnRate")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool PlayerIsDismantlingShelter()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool PlayerIsBuildingLeanTo()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public bool PlayerIsRepairingLeanTo()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -7418,7 +6589,7 @@ public class PlayerManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool PlayerIsDismantlingLeanTo()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -7426,124 +6597,114 @@ public class PlayerManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool PlayerIsRotatingLeanTo()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool PlayerIsHarvestingCarcass()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 27)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 27)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool PlayerIsClimbing()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(InputManager), Member = "OpenRadialMenu")]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateStaminaBar")]
 	[CalledBy(Type = typeof(GameManager), Member = "ControlsLocked")]
+	[CalledBy(Type = typeof(InputManager), Member = "OpenRadialMenu")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateStaminaBar")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool PlayerIsInElevator()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "IsStateEnabled")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 36)]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateStaminaBar")]
 	[CalledBy(Type = typeof(PlayerMovement), Member = "Update")]
 	[CalledBy(Type = typeof(PlayerMovement), Member = "AllowStaminaToRecover")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateStaminaBar")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerSwing), Member = "SwingIsPlaying")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerSwing), Member = "SwingIsPlaying")]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "IsStateEnabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 36)]
 	public bool PlayerIsSwingingFirstPersonItem()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "RequestExitAfterFall")]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "RequestExitAfterFall")]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "RequestExitTopOrBottom")]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "RequestExitToPoint")]
-	[CalledBy(Type = typeof(PlayerCameraAnim), Member = "TeleportPlayerToCameraNow")]
-	[Calls(Type = typeof(Vector3), Member = "get_down")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionOut")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
+	[CalledBy(Type = typeof(PlayerCameraAnim), Member = "TeleportPlayerToCameraNow")]
+	[CalledBy(Type = typeof(PlayerClimbRope), Member = "RequestExitToPoint")]
+	[CalledBy(Type = typeof(PlayerClimbRope), Member = "RequestExitTopOrBottom")]
+	[CalledBy(Type = typeof(PlayerClimbRope), Member = "RequestExitAfterFall")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(Vector3), Member = "get_down")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool GetStickToGroundPosition(Vector3 testPos, out Vector3 groundPos)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref groundPos) = null;
-		return default(bool);
+		groundPos = default(Vector3);
+		return false;
 	}
 
-	[Calls(Type = typeof(PhysicsScene), Member = "SphereCast")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Vector3), Member = "get_down")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StickPlayerToGroundAfterLoad")]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Vector3), Member = "get_up")]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(Vector3), Member = "get_down")]
+	[Calls(Type = typeof(PhysicsScene), Member = "SphereCast")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	public bool GetStickToGroundPositionAfterLoad(Vector3 testPos, out Vector3 groundPos)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref groundPos) = null;
-		return default(bool);
+		groundPos = default(Vector3);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "Stop")]
-	[CalledBy(Type = typeof(PlayerInVehicle), Member = "ExitVehicleAfterFadeOut")]
-	[CalledBy(Type = typeof(PlayerInConstrainedCamera), Member = "OnExitConstrainedState")]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "EndClimbing")]
-	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "ForceEndGame")]
-	[CalledBy(Type = typeof(SnowShelterManager), Member = "ExitShelterAfterFadeOut")]
-	[CalledBy(Type = typeof(SnowShelterManager), Member = "ExitShelterDueToStruggle")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeRepositionPlayerIfFellThroughWorld")]
-	[CalledBy(Type = typeof(LeanToManager), Member = "ExitShelterDueToStruggle")]
-	[CalledBy(Type = typeof(LeanToManager), Member = "ExitLeanToAfterFadeOut")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetStickToGroundPosition")]
-	[Calls(Type = typeof(PlayerManager), Member = "GroundCharacterInternal")]
-	[CallerCount(Count = 15)]
+	[CalledBy(Type = typeof(FlyMode), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "ExitDialogueMode")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_teleport")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_warp")]
-	[CalledBy(Type = typeof(FlyMode), Member = "LateUpdate")]
+	[CalledBy(Type = typeof(LeanToManager), Member = "ExitShelterDueToStruggle")]
+	[CalledBy(Type = typeof(LeanToManager), Member = "ExitLeanToAfterFadeOut")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeRepositionPlayerIfFellThroughWorld")]
+	[CalledBy(Type = typeof(SnowShelterManager), Member = "ExitShelterDueToStruggle")]
+	[CalledBy(Type = typeof(SnowShelterManager), Member = "ExitShelterAfterFadeOut")]
+	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "ForceEndGame")]
+	[CalledBy(Type = typeof(PlayerClimbRope), Member = "EndClimbing")]
+	[CalledBy(Type = typeof(PlayerInConstrainedCamera), Member = "OnExitConstrainedState")]
+	[CalledBy(Type = typeof(PlayerInVehicle), Member = "ExitVehicleAfterFadeOut")]
+	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "Stop")]
+	[CallerCount(Count = 15)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetStickToGroundPosition")]
+	[Calls(Type = typeof(PlayerManager), Member = "GroundCharacterInternal")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public void StickPlayerToGround()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetStickToGroundPositionAfterLoad")]
 	[Calls(Type = typeof(PlayerManager), Member = "GroundCharacterInternal")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public void StickPlayerToGroundAfterLoad()
 	{
 	}
@@ -7558,19 +6719,15 @@ public class PlayerManager : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsTimeLapseActive")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "AddToYaw")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(TimeOfDay), Member = "IsTimeLapseActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "AddToYaw")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 13)]
 	public void MaybeRotateCamera()
 	{
 	}
@@ -7583,31 +6740,30 @@ public class PlayerManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool HasCheated()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public float GetZoomDamping()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(CabinFever), Member = "UpdateCabinFeverTimeTracker")]
-	[CalledBy(Type = typeof(Panel_Rest), Member = "DoRest")]
-	[CalledBy(Type = typeof(Panel_Rest), Member = "CheckPassTimeErrorMessage")]
 	[CalledBy(Type = typeof(PassTime), Member = "UpdatePassingTime")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(CabinFever), Member = "UpdateCabinFeverTimeTracker")]
+	[CalledBy(Type = typeof(Panel_Rest), Member = "CheckPassTimeErrorMessage")]
+	[CalledBy(Type = typeof(Panel_Rest), Member = "DoRest")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool InHibernationPreventionIndoorEnvironment()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -7615,81 +6771,74 @@ public class PlayerManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 5)]
 	public bool IsCharacterControllerEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(Action_SpawnPropAndTriggerAnim), Member = "OnComplete")]
-	[CalledBy(Type = typeof(Action_DisableCharacterController), Member = "OnStop")]
-	[CalledBy(Type = typeof(Action_LerpToSyncBone), Member = "MaybeBlendToSyncBone")]
-	[CalledBy(Type = typeof(Action_LerpToSyncBone), Member = "MaybePopToSync")]
-	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "Stop")]
-	[CalledBy(Type = typeof(PlayerInVehicle), Member = "ExitVehicleAfterFadeOut")]
-	[CalledBy(Type = typeof(PlayerInConstrainedCamera), Member = "OnExitConstrainedState")]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "EndClimbing")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "ExitDialogueMode")]
-	[Calls(Type = typeof(Collider), Member = "set_enabled")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 11)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Start")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CalledBy(Type = typeof(PlayerClimbRope), Member = "EndClimbing")]
+	[CalledBy(Type = typeof(PlayerInConstrainedCamera), Member = "OnExitConstrainedState")]
+	[CalledBy(Type = typeof(PlayerInVehicle), Member = "ExitVehicleAfterFadeOut")]
+	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "Stop")]
+	[CalledBy(Type = typeof(Action_LerpToSyncBone), Member = "MaybePopToSync")]
+	[CalledBy(Type = typeof(Action_LerpToSyncBone), Member = "MaybeBlendToSyncBone")]
+	[CalledBy(Type = typeof(Action_DisableCharacterController), Member = "OnStop")]
+	[CalledBy(Type = typeof(Action_SpawnPropAndTriggerAnim), Member = "OnComplete")]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Collider), Member = "set_enabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public void EnableCharacterController()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "BeginClimbing")]
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(Action_SpawnPropAndTriggerAnim), Member = "OnExecute")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
-	[CalledBy(Type = typeof(PlayerInVehicle), Member = "EnterVehicleCommon")]
-	[CalledBy(Type = typeof(PlayerInConstrainedCamera), Member = "Enter")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[CalledBy(Type = typeof(Action_DisableCharacterController), Member = "OnExecute")]
-	[Calls(Type = typeof(Collider), Member = "set_enabled")]
-	[CallerCount(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTransitionIn")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CalledBy(Type = typeof(PlayerClimbRope), Member = "BeginClimbing")]
+	[CalledBy(Type = typeof(PlayerInConstrainedCamera), Member = "Enter")]
+	[CalledBy(Type = typeof(PlayerInVehicle), Member = "EnterVehicleCommon")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
+	[CalledBy(Type = typeof(Action_DisableCharacterController), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_SpawnPropAndTriggerAnim), Member = "OnExecute")]
+	[CallerCount(Count = 8)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Collider), Member = "set_enabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public void DisableCharacterController()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void AddSpawnPoints(PlayerSpawnPoints playerSpawnPoints)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void RemoveSpawnPoints(PlayerSpawnPoints playerSpawnPoints)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 38)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "TeleportPlayerAfterSceneLoad")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 14)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 38)]
 	public static GameObject PickRandomSpawnPoint()
 	{
 		return null;
@@ -7700,120 +6849,93 @@ public class PlayerManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 27)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayText")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayTextState")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(TwoButtonsChoiceUI), Member = "HideChoices")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(HUDManager), Member = "DoNotRenderHUD")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInPlacementMode")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[Calls(Type = typeof(Panel_HUD), Member = "SetHoverText")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(HUDManager), Member = "DoNotRenderHUD")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInPlacementMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(TwoButtonsChoiceUI), Member = "HideChoices")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayTextState")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayText")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Panel_HUD), Member = "SetHoverText")]
+	[CallsUnknownMethods(Count = 27)]
 	private void UpdateHUDText()
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(GameObject), Member = "Find")]
-	[Calls(Type = typeof(PlayerManager), Member = "ShouldForcePlayerSpawnToDefault")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[CalledBy(Type = typeof(SpawnRegion), Member = "AttemptInstantiateAndPlaceSpawnFromSave")]
-	[CalledBy(Type = typeof(FireManager), Member = "DeserializeChimneyData")]
+	[CalledBy(Type = typeof(SplineAudioClip), Member = "RequestClosestPointOnSpline")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTransitionIn")]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "MaybeDestroyAfterDeserialize")]
+	[CalledBy(Type = typeof(FireManager), Member = "DeserializeChimneyData")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "TeleportPlayerAfterSceneLoad")]
-	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CalledBy(Type = typeof(SplineAudioClip), Member = "RequestClosestPointOnSpline")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(GameObject), Member = "Find")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(string), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(GameObject), Member = "FindGameObjectsWithTag")]
-	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
+	[Calls(Type = typeof(GameObject), Member = "FindGameObjectsWithTag")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "op_Inequality")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Vector3), Member = "Distance")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "Find")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(PlayerManager), Member = "ShouldForcePlayerSpawnToDefault")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 23)]
 	public bool GetTeleportTransformAfterSceneLoad(out Vector3 position, out Quaternion rotation)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref position) = null;
-		System.Runtime.CompilerServices.Unsafe.As<Quaternion, @null>(ref rotation) = null;
-		return default(bool);
+		position = default(Vector3);
+		rotation = default(Quaternion);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[CallsUnknownMethods(Count = 65)]
-	[Calls(Type = typeof(StartSettings), Member = "SetWeather")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
-	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(ThreeDaysOfNight), Member = "GetCurrentDayNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetTeleportTransformAfterSceneLoad")]
 	[Calls(Type = typeof(PlayerManager), Member = "PickRandomSpawnPoint")]
 	[Calls(Type = typeof(GameObject), Member = "Find")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(Weather), Member = "WarmWeather")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
 	[Calls(Type = typeof(StartSettings), Member = "SetTime")]
 	[Calls(Type = typeof(StartSettings), Member = "SetWeather")]
-	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
+	[Calls(Type = typeof(ThreeDaysOfNight), Member = "GetCurrentDayNumber")]
 	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
 	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(Weather), Member = "WarmWeather")]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 65)]
 	private SceneLoadSource TeleportPlayerAfterSceneLoad()
 	{
 		return default(SceneLoadSource);
 	}
 
-	[CallerCount(Count = 1)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
+	[CallerCount(Count = 1)]
 	private void MaybePlayLandAudio()
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "HandleSlipStage")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(FallDamage), Member = "ApplyFallDamage")]
 	[Calls(Type = typeof(Utils), Member = "GetMaterialTagUnderPosition")]
 	[Calls(Type = typeof(PlayerManager), Member = "MaybeSetPlayerFootwearSwitch")]
@@ -7821,41 +6943,41 @@ public class PlayerManager : MonoBehaviour
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(RumbleEffectManager), Member = "PlayEffect")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 11)]
 	public void OnLandFromFall(float fallFromHeight, float damageOverride)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetAutoWalkingEnabled")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetAutoWalkingEnabled")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnTakeDamage(float condition, float given, float taken, DamageSource damageSource)
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "OnLandFromFall")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetCramponsSwitch")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetCramponsState")]
 	[CalledBy(Type = typeof(FootStepSounds), Member = "PlayFootStepSound")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetFootwearType")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetFootwearType")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetFootwearSwitch")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetCramponsState")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetCramponsSwitch")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void MaybeSetPlayerFootwearSwitch()
 	{
 	}
 
-	[CalledBy(Type = typeof(FootStepSounds), Member = "PlayFootStepSound")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "OnLandFromFall")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetMaterialSwitch")]
+	[CalledBy(Type = typeof(FootStepSounds), Member = "PlayFootStepSound")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetMaterialSwitch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void MaybeSetPlayerGroundMaterialSwitch(string tag)
 	{
 	}
@@ -7872,50 +6994,49 @@ public class PlayerManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private bool ShouldSaveGameAfterTeleport()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "GetTeleportTransformAfterSceneLoad")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(CharacterController), Member = "get_radius")]
 	[Calls(Type = typeof(Vector3), Member = "get_down")]
 	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "GetTeleportTransformAfterSceneLoad")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	private bool ShouldForcePlayerSpawnToDefault()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[CallsUnknownMethods(Count = 8)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 8)]
 	private void MaybeUpdateWiseWithClosestDistanceToPredator()
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 7)]
 	private void MaybeUpdateWiseWithPlayerElevation()
 	{
@@ -7929,67 +7050,59 @@ public class PlayerManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void MaybePlayDelayedSpawnAudio()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
 	[Calls(Type = typeof(GameManager), Member = "ControlsLocked")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private bool AllowInteractionWithObjects()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "FindStartRegionFromFileData")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Start")]
-	[Calls(Type = typeof(RegionManager), Member = "GetRegionFromString")]
-	[Calls(Type = typeof(Utils), Member = "GetHardcodedRegionForLocation")]
-	[Calls(Type = typeof(RegionManager), Member = "GetRegionFromString")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "FindStartRegionFromFileData")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(RegionManager), Member = "GetRegionFromString")]
+	[Calls(Type = typeof(Utils), Member = "GetHardcodedRegionForLocation")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private GameRegion FindStartRegion()
 	{
 		return default(GameRegion);
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "Deserialize")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(PlayerManager), Member = "FindStartRegion")]
-	[Calls(Type = typeof(RegionManager), Member = "GetRegionFromString")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(RegionManager), Member = "GetRegionFromString")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSlotFilesInCreationOrder")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSlotFilesInCreationOrder")]
+	[Calls(Type = typeof(RegionManager), Member = "GetRegionFromString")]
 	[Calls(Type = typeof(Utils), Member = "GetHardcodedRegionForLocation")]
+	[Calls(Type = typeof(PlayerManager), Member = "FindStartRegion")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private GameRegion FindStartRegionFromFileData()
 	{
 		return default(GameRegion);
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
-	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Vector3), Member = "ToString")]
-	[Calls(Type = typeof(Vector3), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 4)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Vector3), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
+	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void MaybeRepositionPlayerIfFellThroughWorld()
 	{
 	}
@@ -7997,7 +7110,7 @@ public class PlayerManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool GetShowingUnknownTimeOfDay()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -8005,105 +7118,98 @@ public class PlayerManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Knockdown")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Knockdown")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void KnockedDownByAI(AiSubType aiSubType)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(BrokenRib), Member = "GetBrokenRibCount")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateStaminaBar")]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdateStamina")]
 	[CalledBy(Type = typeof(PlayerMovement), Member = "GetModifiedMaxSprintStamina")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(BrokenRib), Member = "GetBrokenRibCount")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 10)]
 	public float GetNormalizedSprintReduction()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerIsStealthed")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerIsInvisibleToAi")]
 	[CalledBy(Type = typeof(BaseAi), Member = "CanPlayerBeReached")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerIsInvisibleToAi")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerIsStealthed")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool IsPlayerInStealthArea()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(PlayerManager), Member = "IsPlayerInStealthArea")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool PlayerIsStealthed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsHoldingWildlifeItem()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 3)]
 	public bool CanStaminaAim()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateAimingStaminaBar")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateStaminaBar")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateAimingStaminaBar")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public bool IsStaminaAiming()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 4)]
 	public float GetStaminaAimPercent()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateAimingStaminaBar")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public float GetStaminaAimDropThresholdPercent()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -8113,18 +7219,19 @@ public class PlayerManager : MonoBehaviour
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StickPlayerToGroundAfterLoad")]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[CallsUnknownMethods(Count = 27)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(vp_FPSController), Member = "Stop")]
+	[Calls(Type = typeof(Vector3), Member = "get_up")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 27)]
 	private void GroundCharacterInternal(Vector3 groundPos)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 14)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 99)]
 	public PlayerManager()
 	{

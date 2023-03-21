@@ -4,8 +4,8 @@ public class WaterSupplySaveDataProxy
 {
 	public float m_VolumeProxy;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public WaterSupplySaveDataProxy()
 	{
 	}

@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.BehaviourTrees;
 using NodeCanvas.DialogueTrees;
@@ -19,8 +18,8 @@ public abstract class ActionTask<T> : ActionTask where T : class
 	{
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -39,16 +38,16 @@ public abstract class ActionTask<T> : ActionTask where T : class
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	protected ActionTask()
 	{
 	}
 }
 public abstract class ActionTask : Task
 {
-	private sealed class _003CActionUpdater_003Ed__20 : IDisposable, IEnumerator<object>, IEnumerator
+	private sealed class _003CActionUpdater_003Ed__20 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -66,7 +65,7 @@ public abstract class ActionTask : Task
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -75,36 +74,36 @@ public abstract class ActionTask : Task
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 29)]
-			[DeduplicatedMethod]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 		}
 
+		[DebuggerHidden]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[DebuggerHidden]
 		public _003CActionUpdater_003Ed__20(int _003C_003E1__state)
 		{
 		}
 
-		[CallerCount(Count = 2)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -141,25 +140,23 @@ public abstract class ActionTask : Task
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	public float deltaTime
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[CallerCount(Count = 7)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(Action_FaceTarget), Member = "OnUpdate")]
-		[CalledBy(Type = typeof(Action_FaceTarget), Member = "OnUpdate")]
 		[CalledBy(Type = typeof(Action_FaceTarget), Member = "OnUpdate")]
 		[CalledBy(Type = typeof(Action_FaceTarget), Member = "GetTurnSpeed")]
 		[CalledBy(Type = typeof(Action_StartAnimatedInteraction), Member = "OnUpdate")]
 		[CalledBy(Type = typeof(Action_LerpToSyncBone), Member = "MaybeBlendToSyncBone")]
 		[CalledBy(Type = typeof(Action_ScrapMetalStruggle), Member = "UpdateStruggle")]
+		[CallerCount(Count = 7)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -168,7 +165,7 @@ public abstract class ActionTask : Task
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -177,7 +174,7 @@ public abstract class ActionTask : Task
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -187,7 +184,7 @@ public abstract class ActionTask : Task
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -196,7 +193,7 @@ public abstract class ActionTask : Task
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		private set
@@ -204,32 +201,49 @@ public abstract class ActionTask : Task
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MonoManager), Member = "get_current")]
 	[Calls(Type = typeof(ActionTask), Member = "ActionUpdater")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(MonoManager), Member = "get_current")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ExecuteAction(Component agent, IBlackboard blackboard, Action<bool> callback)
 	{
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(ActionListPlayer), Member = "Play")]
 	[CalledBy(Type = typeof(ActionTask), Member = "ExecuteAction")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator ActionUpdater(Component agent, IBlackboard blackboard, Action<bool> callback)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Time), Member = "get_time")]
+	[CalledBy(Type = typeof(ActionListPlayer), Member = "ExecuteAction")]
+	[CalledBy(Type = typeof(ActionListPlayer), Member = "ExecuteAction")]
+	[CalledBy(Type = typeof(Monitor), Member = "OnExecute")]
+	[CalledBy(Type = typeof(NodeCanvas.BehaviourTrees.ActionNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(ActionList), Member = "OnUpdate")]
+	[CalledBy(Type = typeof(_003CActionUpdater_003Ed__20), Member = "MoveNext")]
+	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnUpdate")]
+	[CalledBy(Type = typeof(ConcurrentSuperState), Member = "OnEnter")]
+	[CalledBy(Type = typeof(ConcurrentSuperState), Member = "OnUpdate")]
+	[CalledBy(Type = typeof(ConcurrentSuperState), Member = "OnExit")]
+	[CalledBy(Type = typeof(State_DialogueSubDT), Member = "OnUpdate")]
+	[CalledBy(Type = typeof(ActionState), Member = "OnUpdate")]
+	[CalledBy(Type = typeof(ConcurrentState), Member = "OnEnter")]
+	[CalledBy(Type = typeof(ConcurrentState), Member = "Update")]
+	[CalledBy(Type = typeof(SuperActionState), Member = "OnUpdate")]
+	[CalledBy(Type = typeof(SuperActionState), Member = "OnExit")]
+	[CalledBy(TypeFullName = "NodeCanvas.DialogueTrees.ActionListNode.<UpdateAction>d__2", Member = "MoveNext")]
+	[CalledBy(TypeFullName = "NodeCanvas.DialogueTrees.ActionNode.<UpdateAction>d__10", Member = "MoveNext")]
 	[CallerCount(Count = 20)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Task), Member = "Set")]
+	[Calls(Type = typeof(Time), Member = "get_time")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	public Status ExecuteAction(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
@@ -248,52 +262,47 @@ public abstract class ActionTask : Task
 	{
 	}
 
-	[CalledBy(Type = typeof(ActionState), Member = "OnExit")]
-	[CalledBy(Type = typeof(NodeCanvas.DialogueTrees.ActionNode), Member = "OnReset")]
-	[CalledBy(Type = typeof(ActionListNode), Member = "OnReset")]
-	[CalledBy(Type = typeof(SuperActionState), Member = "OnExit")]
-	[CalledBy(Type = typeof(SuperActionState), Member = "OnExit")]
-	[CalledBy(Type = typeof(SuperActionState), Member = "OnExit")]
-	[CalledBy(Type = typeof(ConcurrentState), Member = "OnExit")]
-	[CalledBy(Type = typeof(State_DialogueSubDT), Member = "OnExit")]
-	[CalledBy(Type = typeof(NodeCanvas.BehaviourTrees.ActionNode), Member = "OnReset")]
-	[CalledBy(Type = typeof(ConcurrentSuperState), Member = "OnExit")]
-	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnExit")]
-	[CalledBy(Type = typeof(ActionList), Member = "OnStop")]
 	[CalledBy(Type = typeof(Monitor), Member = "OnReset")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 14)]
+	[CalledBy(Type = typeof(NodeCanvas.BehaviourTrees.ActionNode), Member = "OnReset")]
+	[CalledBy(Type = typeof(ActionList), Member = "OnStop")]
+	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnExit")]
 	[CalledBy(Type = typeof(ConcurrentSuperState), Member = "OnExit")]
+	[CalledBy(Type = typeof(State_DialogueSubDT), Member = "OnExit")]
+	[CalledBy(Type = typeof(ActionState), Member = "OnExit")]
+	[CalledBy(Type = typeof(ConcurrentState), Member = "OnExit")]
+	[CalledBy(Type = typeof(SuperActionState), Member = "OnExit")]
+	[CalledBy(Type = typeof(ActionListNode), Member = "OnReset")]
+	[CalledBy(Type = typeof(NodeCanvas.DialogueTrees.ActionNode), Member = "OnReset")]
+	[CallerCount(Count = 14)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void EndAction(bool? success)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(NodeCanvas.DialogueTrees.ActionNode), Member = "OnGraphPaused")]
-	[CalledBy(Type = typeof(SuperActionState), Member = "OnPause")]
-	[CalledBy(Type = typeof(SuperActionState), Member = "OnPause")]
-	[CalledBy(Type = typeof(ConcurrentState), Member = "OnPause")]
-	[CalledBy(Type = typeof(ActionState), Member = "OnPause")]
-	[CalledBy(Type = typeof(State_DialogueSubDT), Member = "OnPause")]
+	[CalledBy(Type = typeof(NodeCanvas.BehaviourTrees.ActionNode), Member = "OnGraphPaused")]
+	[CalledBy(Type = typeof(ActionList), Member = "OnPause")]
 	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnPause")]
 	[CalledBy(Type = typeof(ConcurrentSuperState), Member = "OnPause")]
-	[CalledBy(Type = typeof(ActionList), Member = "OnPause")]
-	[CalledBy(Type = typeof(NodeCanvas.BehaviourTrees.ActionNode), Member = "OnGraphPaused")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(State_DialogueSubDT), Member = "OnPause")]
+	[CalledBy(Type = typeof(ActionState), Member = "OnPause")]
+	[CalledBy(Type = typeof(ConcurrentState), Member = "OnPause")]
+	[CalledBy(Type = typeof(SuperActionState), Member = "OnPause")]
+	[CalledBy(Type = typeof(NodeCanvas.DialogueTrees.ActionNode), Member = "OnGraphPaused")]
 	[CallerCount(Count = 11)]
-	[CalledBy(Type = typeof(ConcurrentSuperState), Member = "OnPause")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void PauseAction()
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	protected virtual void OnExecute()
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	protected virtual void OnUpdate()
 	{
 	}
@@ -306,13 +315,13 @@ public abstract class ActionTask : Task
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	protected virtual void OnStop()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	protected virtual void OnPause()
 	{
 	}

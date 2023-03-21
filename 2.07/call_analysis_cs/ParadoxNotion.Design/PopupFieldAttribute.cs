@@ -7,7 +7,7 @@ public class PopupFieldAttribute : DrawerAttribute
 	public readonly object[] options;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 279)]
+	[CallerCount(Count = 282)]
 	public PopupFieldAttribute(object[] options)
 	{
 	}

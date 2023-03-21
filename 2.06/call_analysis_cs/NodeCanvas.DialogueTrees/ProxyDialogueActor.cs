@@ -13,8 +13,8 @@ public class ProxyDialogueActor : IDialogueActor
 
 	public string name
 	{
-		[CallerCount(Count = 98)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 113)]
 		get
 		{
 			return null;
@@ -44,7 +44,7 @@ public class ProxyDialogueActor : IDialogueActor
 	public Color dialogueColor
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 63)]
+		[CallerCount(Count = 66)]
 		get
 		{
 			return default(Color);
@@ -54,7 +54,7 @@ public class ProxyDialogueActor : IDialogueActor
 	public Vector3 dialoguePosition
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 224)]
+		[CallerCount(Count = 258)]
 		get
 		{
 			return default(Vector3);
@@ -64,7 +64,7 @@ public class ProxyDialogueActor : IDialogueActor
 	public Transform transform
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 44)]
+		[CallerCount(Count = 53)]
 		get
 		{
 			return null;
@@ -72,7 +72,7 @@ public class ProxyDialogueActor : IDialogueActor
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 224)]
+	[CallerCount(Count = 230)]
 	public ProxyDialogueActor(string name, Transform transform)
 	{
 	}

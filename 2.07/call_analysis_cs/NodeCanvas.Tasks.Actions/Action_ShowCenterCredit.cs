@@ -16,18 +16,20 @@ public class Action_ShowCenterCredit : ActionTask
 
 	private PanelReference<Panel_HUD> m_HUD;
 
-	[CallsUnknownMethods(Count = 5)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowCreditsCenter")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowCreditsCenter")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 5)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsUnknownMethods(Count = 4)]
 	public Action_ShowCenterCredit()
 	{
 	}

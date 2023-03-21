@@ -46,75 +46,76 @@ public class CabinFever : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(CabinFever), Member = "CabinFeverEnd")]
-	[Calls(Type = typeof(CabinFever), Member = "ClearCabinFeverRisk")]
-	[Calls(Type = typeof(CabinFever), Member = "UpdateCabinFever")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(CabinFever), Member = "UpdateCabinFeverTimeTracker")]
-	[Calls(Type = typeof(CabinFever), Member = "ClearCabinFeverRisk")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(CabinFever), Member = "ClearCabinFeverRisk")]
+	[Calls(Type = typeof(CabinFever), Member = "UpdateCabinFeverTimeTracker")]
 	[Calls(Type = typeof(CabinFever), Member = "CheckForCabinFever")]
+	[Calls(Type = typeof(CabinFever), Member = "UpdateCabinFever")]
+	[Calls(Type = typeof(CabinFever), Member = "CabinFeverEnd")]
+	[CallsUnknownMethods(Count = 8)]
 	public void Update()
 	{
 	}
 
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallsUnknownMethods(Count = 2)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_cabinfever_nofx")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_cabinfever")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions")]
 	[CalledBy(Type = typeof(CabinFever), Member = "CheckForCabinFever")]
-	[Calls(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
-	[Calls(Type = typeof(Log), Member = "AddAffliction")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
-	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_cabinfever")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_cabinfever_nofx")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
+	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
+	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(CameraFade), Member = "GetFadeAlpha")]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
+	[Calls(Type = typeof(Log), Member = "AddAffliction")]
+	[Calls(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
+	[CallsUnknownMethods(Count = 3)]
 	public void CabinFeverStart(bool displayIcon, bool nofx = false)
 	{
 	}
 
+	[CalledBy(Type = typeof(CabinFever), Member = "Update")]
 	[CalledBy(Type = typeof(CabinFever), Member = "UpdateCabinFever")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(CabinFever), Member = "Update")]
 	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(CabinFever), Member = "Update")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ClearCabinFeverRisk()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions_cure")]
-	[CalledBy(Type = typeof(CabinFever), Member = "UpdateCabinFever")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_cabinfever_cure")]
-	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(CabinFever), Member = "Update")]
+	[CalledBy(Type = typeof(CabinFever), Member = "UpdateCabinFever")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions_cure")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_cabinfever_cure")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
+	[CallsUnknownMethods(Count = 1)]
 	public void CabinFeverEnd()
 	{
 	}
@@ -123,91 +124,90 @@ public class CabinFever : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool HasCabinFever()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool HasCabinFeverRisk()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(AfflictionButton), Member = "UpdateFillBar")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(CabinFever), Member = "GetTimeIndoorsLastHour")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
 	public int GetCurrentRisk()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
 	[CallerCount(Count = 1)]
 	public float GetTimeAmountRemaining()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetTimeIndoorsExcludingLastHour()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(CabinFever), Member = "GetCurrentRisk")]
 	[CalledBy(Type = typeof(CabinFever), Member = "CheckForCabinFever")]
+	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetTimeIndoorsLastHour()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public void AddTimeIndoorsLastHour(float amountToAdd)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(CabinFever), Member = "Update")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
-	[Calls(Type = typeof(CabinFever), Member = "CheckForCabinFever")]
-	[Calls(Type = typeof(CabinFever), Member = "ClearCabinFeverRisk")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CabinFever), Member = "CabinFeverEnd")]
 	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
+	[Calls(Type = typeof(CabinFever), Member = "ClearCabinFeverRisk")]
+	[Calls(Type = typeof(CabinFever), Member = "CheckForCabinFever")]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateCabinFever()
 	{
 	}
 
 	[CalledBy(Type = typeof(CabinFever), Member = "Update")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(CabinFever), Member = "UpdateCabinFever")]
-	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
-	[Calls(Type = typeof(CabinFever), Member = "GetTimeIndoorsLastHour")]
-	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
-	[Calls(Type = typeof(CabinFever), Member = "CabinFeverStart")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(CabinFever), Member = "GetTimeIndoorsLastHour")]
+	[Calls(Type = typeof(CabinFever), Member = "CabinFeverStart")]
+	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[CallsUnknownMethods(Count = 4)]
 	private void CheckForCabinFever()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(CabinFever), Member = "Update")]
-	[Calls(Type = typeof(PlayerManager), Member = "InHibernationPreventionIndoorEnvironment")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(Type = typeof(PlayerManager), Member = "InHibernationPreventionIndoorEnvironment")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateCabinFeverTimeTracker()
 	{
 	}
@@ -217,7 +217,7 @@ public class CabinFever : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool DisabledForGameMode(GameModeConfig gameMode)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

@@ -14,9 +14,9 @@ public class WwiseAcousticTextureReference : WwiseObjectReference
 		}
 	}
 
-	[Calls(Type = typeof(WwiseObjectReference), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(WwiseObjectReference), Member = ".ctor")]
 	public WwiseAcousticTextureReference()
 	{
 	}

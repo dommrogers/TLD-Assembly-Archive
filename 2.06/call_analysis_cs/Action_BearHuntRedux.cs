@@ -3,9 +3,9 @@ using NodeCanvas.Framework;
 
 public class Action_BearHuntRedux : ActionTask
 {
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BearHuntRedux), Member = "Begin")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallerCount(Count = 0)]
 	protected override void OnExecute()
 	{
 	}

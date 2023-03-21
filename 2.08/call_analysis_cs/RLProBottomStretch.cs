@@ -15,10 +15,10 @@ public sealed class RLProBottomStretch : PostProcessEffectSettings
 
 	public BoolParameter distortRandomly;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	public RLProBottomStretch()
 	{
 	}

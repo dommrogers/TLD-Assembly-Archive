@@ -21,10 +21,10 @@ public class InventorySaveDataProxy
 
 	public bool m_SuppressScentIndicator;
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Inventory), Member = ".cctor")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public InventorySaveDataProxy()
 	{
 	}

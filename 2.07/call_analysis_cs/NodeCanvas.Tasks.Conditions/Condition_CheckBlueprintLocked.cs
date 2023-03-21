@@ -9,8 +9,8 @@ public class Condition_CheckBlueprintLocked : ConditionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Format")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Format")]
 		get
 		{
 			return null;
@@ -18,12 +18,12 @@ public class Condition_CheckBlueprintLocked : ConditionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

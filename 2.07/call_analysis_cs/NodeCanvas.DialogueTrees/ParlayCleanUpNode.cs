@@ -13,16 +13,16 @@ public class ParlayCleanUpNode : DTNode
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Graph), Member = "Stop")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Graph), Member = "Stop")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);

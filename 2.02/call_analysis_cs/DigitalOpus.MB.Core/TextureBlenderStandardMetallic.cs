@@ -56,133 +56,82 @@ public class TextureBlenderStandardMetallic : TextureBlender
 
 	private Color m_notGeneratingAtlasDefaultEmisionColor;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Equals")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool DoesShaderNameMatch(string shaderName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Material), Member = "HasProperty")]
-	[Calls(Type = typeof(Material), Member = "HasProperty")]
-	[Calls(Type = typeof(Material), Member = "GetFloat")]
-	[Calls(Type = typeof(Material), Member = "HasProperty")]
-	[Calls(Type = typeof(Material), Member = "GetFloat")]
-	[Calls(Type = typeof(Material), Member = "HasProperty")]
-	[Calls(Type = typeof(Material), Member = "GetColor")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Material), Member = "GetTexture")]
-	[Calls(Type = typeof(Material), Member = "GetFloat")]
-	[Calls(Type = typeof(Material), Member = "GetFloat")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Material), Member = "HasProperty")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Equals")]
-	[Calls(Type = typeof(string), Member = "Equals")]
-	[Calls(Type = typeof(string), Member = "Equals")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Equals")]
 	[Calls(Type = typeof(Material), Member = "IsKeywordEnabled")]
 	[Calls(Type = typeof(Material), Member = "HasProperty")]
 	[Calls(Type = typeof(Material), Member = "GetColor")]
-	[Calls(Type = typeof(Material), Member = "HasProperty")]
-	[Calls(Type = typeof(string), Member = "Equals")]
+	[Calls(Type = typeof(Material), Member = "GetFloat")]
+	[Calls(Type = typeof(Material), Member = "GetTexture")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void OnBeforeTintTexture(Material sourceMat, string shaderTexturePropertyName)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Color), Member = "Lerp")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Color OnBlendTexturePixel(string propertyToDoshaderPropertyName, Color pixelColor)
 	{
 		return default(Color);
 	}
 
-	[Calls(Type = typeof(TextureBlenderFallback), Member = "_compareFloat")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(TextureBlenderFallback), Member = "_compareColor")]
-	[Calls(Type = typeof(Material), Member = "IsKeywordEnabled")]
-	[Calls(Type = typeof(Material), Member = "IsKeywordEnabled")]
-	[Calls(Type = typeof(Material), Member = "IsKeywordEnabled")]
-	[Calls(Type = typeof(TextureBlenderFallback), Member = "_compareFloat")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Material), Member = "HasProperty")]
-	[Calls(Type = typeof(Material), Member = "GetTexture")]
-	[Calls(Type = typeof(Material), Member = "HasProperty")]
-	[Calls(Type = typeof(TextureBlenderFallback), Member = "_compareFloat")]
-	[Calls(Type = typeof(TextureBlenderFallback), Member = "_compareColor")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TextureBlenderFallback), Member = "_compareColor")]
+	[Calls(Type = typeof(TextureBlenderFallback), Member = "_compareFloat")]
+	[Calls(Type = typeof(Material), Member = "HasProperty")]
 	[Calls(Type = typeof(Material), Member = "GetTexture")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Material), Member = "IsKeywordEnabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool NonTexturePropertiesAreEqual(Material a, Material b)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Material), Member = "GetTexture")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(Material), Member = "SetColor")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(TextureBlenderMaterialPropertyCacheHelper), Member = "GetValueIfAllSourceAreTheSameOrDefault")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(Material), Member = "GetTexture")]
+	[Calls(Type = typeof(Material), Member = "SetColor")]
 	[Calls(Type = typeof(Material), Member = "SetFloat")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(TextureBlenderMaterialPropertyCacheHelper), Member = "GetValueIfAllSourceAreTheSameOrDefault")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Material), Member = "GetTexture")]
-	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[Calls(Type = typeof(TextureBlenderMaterialPropertyCacheHelper), Member = "GetValueIfAllSourceAreTheSameOrDefault")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Material), Member = "GetTexture")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(TextureBlenderMaterialPropertyCacheHelper), Member = "GetValueIfAllSourceAreTheSameOrDefault")]
+	[CallsUnknownMethods(Count = 15)]
 	public void SetNonTexturePropertyValuesOnResultMaterial(Material resultMaterial)
 	{
 	}
 
-	[Calls(Type = typeof(Material), Member = "HasProperty")]
-	[Calls(Type = typeof(Material), Member = "GetFloat")]
-	[Calls(Type = typeof(Material), Member = "HasProperty")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(Material), Member = "GetFloat")]
-	[Calls(Type = typeof(Material), Member = "GetColor")]
-	[Calls(Type = typeof(TextureBlenderMaterialPropertyCacheHelper), Member = "CacheMaterialProperty")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Material), Member = "HasProperty")]
-	[Calls(Type = typeof(TextureBlenderMaterialPropertyCacheHelper), Member = "CacheMaterialProperty")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(TextureBlenderMaterialPropertyCacheHelper), Member = "CacheMaterialProperty")]
-	[Calls(Type = typeof(TextureBlenderMaterialPropertyCacheHelper), Member = "CacheMaterialProperty")]
-	[Calls(Type = typeof(string), Member = "Equals")]
-	[Calls(Type = typeof(Material), Member = "HasProperty")]
-	[Calls(Type = typeof(Material), Member = "GetColor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Equals")]
-	[Calls(Type = typeof(string), Member = "Equals")]
-	[Calls(Type = typeof(string), Member = "Equals")]
-	[Calls(Type = typeof(string), Member = "Equals")]
 	[Calls(Type = typeof(string), Member = "Equals")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Material), Member = "IsKeywordEnabled")]
-	[Calls(Type = typeof(string), Member = "Equals")]
+	[Calls(Type = typeof(Material), Member = "HasProperty")]
+	[Calls(Type = typeof(Material), Member = "GetColor")]
+	[Calls(Type = typeof(TextureBlenderMaterialPropertyCacheHelper), Member = "CacheMaterialProperty")]
+	[Calls(Type = typeof(Material), Member = "GetFloat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 15)]
 	public Color GetColorIfNoTexture(Material mat, ShaderTextureProperty texPropertyName)
 	{
 		return default(Color);
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(TextureBlenderMaterialPropertyCacheHelper), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public TextureBlenderStandardMetallic()
 	{
 	}

@@ -8,42 +8,44 @@ public sealed class fsContext
 {
 	private readonly Dictionary<Type, object> _contextObjects;
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Reset()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Set<T>(T obj)
 	{
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool Has<T>()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsUnknownMethods(Count = 16)]
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(fsUnityObjectConverter), Member = "TrySerialize")]
+	[CalledBy(Type = typeof(fsUnityObjectConverter), Member = "TryDeserialize")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 16)]
 	public T Get<T>()
 	{
-		return (T)null;
+		return default(T);
 	}
 
 	[CallerCount(Count = 0)]

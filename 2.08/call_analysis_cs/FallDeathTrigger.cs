@@ -6,8 +6,9 @@ public class FallDeathTrigger : MonoBehaviour
 {
 	private PanelReference<Panel_Loading> m_Loading;
 
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void OnTriggerEnter(Collider c)
 	{

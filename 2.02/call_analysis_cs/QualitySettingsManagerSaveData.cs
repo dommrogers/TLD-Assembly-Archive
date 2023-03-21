@@ -7,7 +7,7 @@ public class QualitySettingsManagerSaveData
 	public QualityLevelSettings m_QualityCustom;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public QualitySettingsManagerSaveData()
 	{
 	}

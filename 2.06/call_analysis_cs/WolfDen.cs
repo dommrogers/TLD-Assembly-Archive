@@ -51,37 +51,29 @@ public class WolfDen : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
+	[CalledBy(Type = typeof(WolfDen), Member = "Deserialize")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SpawnRegion), Member = "SetActive")]
-	[Calls(Type = typeof(SpawnRegion), Member = "SetActive")]
-	[Calls(Type = typeof(SpawnRegion), Member = "SetActive")]
-	[CalledBy(Type = typeof(WolfDen), Member = "Deserialize")]
 	public void SetDenEnabled(bool enabled)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(WolfDen), Member = "PerformInteraction")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public bool HasRequiredItemsInInventory()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -92,30 +84,28 @@ public class WolfDen : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Panel_ActionPicker), Member = "ShowActionPicker")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(WolfDen), Member = "HasRequiredItemsInInventory")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_ActionPicker), Member = "ShowActionPicker")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void PerformInteraction()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
-	[Calls(Type = typeof(OnExitDelegate), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(OnExitDelegate), Member = ".ctor")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[CallsUnknownMethods(Count = 6)]
 	public void OnStartFire()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(SpawnRegion), Member = "SetActive")]
-	[Calls(Type = typeof(SpawnRegion), Member = "SetActive")]
 	[Calls(Type = typeof(SpawnRegion), Member = "SetActive")]
 	public void OnStartFireComplete(bool success, bool playerCancel, float progress)
 	{
@@ -128,51 +118,51 @@ public class WolfDen : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(WolfDen), Member = "Serialize")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(WolfDen), Member = "Serialize")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 10)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(WolfDen), Member = "Deserialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(WolfDen), Member = "Deserialize")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
+	[CalledBy(Type = typeof(WolfDen), Member = "SerializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(WolfDen), Member = "SerializeAll")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	private string Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(WolfDen), Member = "SetDenEnabled")]
 	[CalledBy(Type = typeof(WolfDen), Member = "DeserializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(WolfDen), Member = "SetDenEnabled")]
 	private void Deserialize(string text)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[CallsUnknownMethods(Count = 1)]
 	private static WolfDen FindWolfDenByGuid(string guid)
 	{

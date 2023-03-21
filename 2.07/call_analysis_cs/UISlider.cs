@@ -26,7 +26,7 @@ public class UISlider : UIProgressBar
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -38,81 +38,78 @@ public class UISlider : UIProgressBar
 
 	public bool inverted
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		set
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void Upgrade()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UIEventListener), Member = "Get")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(UIScrollBar), Member = "OnStart")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UIEventListener), Member = "Get")]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
 	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UIEventListener), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 12)]
 	protected override void OnStart()
 	{
 	}
 
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIProgressBar), Member = "ScreenToValue")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	protected void OnPressBackground(GameObject go, bool isPressed)
 	{
 	}
 
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "ScreenToValue")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIProgressBar), Member = "ScreenToValue")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	protected void OnDragBackground(GameObject go, Vector2 delta)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIProgressBar), Member = "ScreenToValue")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	protected void OnPressForeground(GameObject go, bool isPressed)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIProgressBar), Member = "ScreenToValue")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CallerCount(Count = 0)]
 	protected void OnDragForeground(GameObject go, Vector2 delta)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnKey(KeyCode key)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public UISlider()
 	{
 	}

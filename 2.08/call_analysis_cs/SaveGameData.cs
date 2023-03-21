@@ -25,8 +25,8 @@ public class SaveGameData
 	{
 	}
 
-	[Calls(Type = typeof(SaveGameDataPC), Member = "InitializeUserProfile")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SaveGameDataPC), Member = "InitializeUserProfile")]
 	public static void InitializeUserProfile()
 	{
 	}
@@ -35,14 +35,14 @@ public class SaveGameData
 	[CallerCount(Count = 0)]
 	public static bool ShouldValidateUserProfile()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public static bool IsValidationActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -58,117 +58,109 @@ public class SaveGameData
 	{
 	}
 
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadUserSettings")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "HandleCheckIfProfileExists")]
-	[CalledBy(Type = typeof(SaveGameDataPC), Member = "DataExists")]
 	[CalledBy(Type = typeof(SaveGameDataPC), Member = "LoadAllSaves")]
-	[Calls(Type = typeof(SaveGameData), Member = "SaveGameOperationAlreadyPending")]
+	[CalledBy(Type = typeof(SaveGameDataPC), Member = "DataExists")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "HandleCheckIfProfileExists")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadUserSettings")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(SaveGameData), Member = "SaveGameOperationAlreadyPending")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void LoadData(string name)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSettings")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "HandleOnSettingsLoaded")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "HandleOnProfileLoaded")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "HandleOnProfileLoaded")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "WriteSlotToDisk")]
 	[CalledBy(Type = typeof(GameManager), Member = "SaveProfileSettingsAndDisplayHUDMessage")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(SaveGameData), Member = "SaveGameOperationAlreadyPending")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "WriteSlotToDisk")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "HandleOnProfileLoaded")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "HandleOnSettingsLoaded")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSettings")]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(SaveGameData), Member = "SaveGameOperationAlreadyPending")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void SaveData(string name, string displayName, string data)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "InitializeUser")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "HandleCheckIfProfileExists")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadUserProfile")]
-	[CalledBy(Type = typeof(SaveGameDataPC), Member = "DataExists")]
 	[CalledBy(Type = typeof(GameManager), Member = "Start")]
+	[CalledBy(Type = typeof(SaveGameDataPC), Member = "DataExists")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadUserProfile")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "HandleCheckIfProfileExists")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "InitializeUser")]
 	[CallerCount(Count = 5)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void DataExists(string name)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "Update")]
-	[Calls(Type = typeof(SaveGameData), Member = "MaybeDisplayErrorNotification")]
-	[Calls(Type = typeof(SaveGameDataPC), Member = "DeleteData")]
-	[Calls(Type = typeof(SaveGameDataPC), Member = "LoadData")]
-	[Calls(Type = typeof(SaveGameDataPC), Member = "LoadAllSaves")]
-	[Calls(Type = typeof(SaveGameDataPC), Member = "SaveData")]
-	[Calls(Type = typeof(SaveGameDataPC), Member = "DataExists")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(SaveGameData), Member = "GetNextPendingSaveGameOperation")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SaveGameData), Member = "GetNextPendingSaveGameOperation")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(SaveGameDataPC), Member = "DataExists")]
+	[Calls(Type = typeof(SaveGameDataPC), Member = "SaveData")]
+	[Calls(Type = typeof(SaveGameDataPC), Member = "LoadAllSaves")]
+	[Calls(Type = typeof(SaveGameDataPC), Member = "LoadData")]
+	[Calls(Type = typeof(SaveGameDataPC), Member = "DeleteData")]
+	[Calls(Type = typeof(SaveGameData), Member = "MaybeDisplayErrorNotification")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void SaveGameDataProcess()
 	{
 	}
 
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "UpdateAsync")]
-	[CalledBy(Type = typeof(JumpManager._003COnSavingCoroutine_003Ed__38), Member = "MoveNext")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateButtonLegend")]
 	[CalledBy(Type = typeof(GameManager), Member = "PauseWhenFocusLost")]
-	[CalledBy(Type = typeof(JumpManager._003COnSavingCoroutine_003Ed__38), Member = "MoveNext")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(SaveGameData), Member = "GetNumPendingOperations")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateButtonLegend")]
+	[CalledBy(TypeFullName = "JumpManager.<OnSavingCoroutine>d__38", Member = "MoveNext")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "UpdateAsync")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(SaveGameData), Member = "GetNumPendingOperations")]
 	public static bool IsSaving()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "GetInstance")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
 	[CalledBy(Type = typeof(SaveGameDataPC), Member = "ValidateUserProfile")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "GetInstance")]
 	[CallsUnknownMethods(Count = 1)]
 	public static bool IsAnyOperationPending()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(NewsCarousel), Member = "UpdateCarousel")]
-	[CalledBy(Type = typeof(WebUtils.SteamCloudManager), Member = "IsSaveOperationInProgress")]
-	[CalledBy(Type = typeof(WebUtils.SteamCloudManager), Member = "IsSaveOperationInProgress")]
-	[CalledBy(Type = typeof(WebUtils.SteamCloudManager.WaitSaveOperation._003CWaitSaveOperationComplete_003Ed__3), Member = "MoveNext")]
-	[CalledBy(Type = typeof(WebUtils.SteamCloudManager.WaitSaveOperation._003CWaitSaveOperationComplete_003Ed__3), Member = "MoveNext")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "SlotsAreLoading")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(EmptyScene), Member = "IsSaveSystemInitialized")]
-	[CalledBy(Type = typeof(EmptyScene), Member = "IsSaveSystemInitialized")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[CallerCount(Count = 10)]
+	[CalledBy(Type = typeof(EmptyScene), Member = "IsSaveSystemInitialized")]
 	[CalledBy(Type = typeof(SaveGameData), Member = "IsSaving")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "SlotsAreLoading")]
+	[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.WaitSaveOperation.<WaitSaveOperationComplete>d__3", Member = "MoveNext")]
+	[CalledBy(Type = typeof(WebUtils.SteamCloudManager), Member = "IsSaveOperationInProgress")]
+	[CalledBy(Type = typeof(NewsCarousel), Member = "UpdateCarousel")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(string), Member = "Contains")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static int GetNumPendingOperations(SaveGameOperationType opType, string pattern)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(WebUtils.SteamCloudManager), Member = "IsSaveOperationInProgress")]
-	[CalledBy(Type = typeof(WebUtils.SteamCloudManager.WaitSaveOperation._003CWaitSaveOperationComplete_003Ed__3), Member = "MoveNext")]
-	[CalledBy(Type = typeof(WebUtils.SteamCloudManager.WaitSaveOperation._003CWaitSaveOperationComplete_003Ed__3), Member = "MoveNext")]
-	[CalledBy(Type = typeof(WebUtils.SteamCloudManager), Member = "IsSaveOperationInProgress")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "IsSaveSystemInitialized")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "SlotsAreLoading")]
+	[CalledBy(TypeFullName = "WebUtils.SteamCloudManager.WaitSaveOperation.<WaitSaveOperationComplete>d__3", Member = "MoveNext")]
+	[CalledBy(Type = typeof(WebUtils.SteamCloudManager), Member = "IsSaveOperationInProgress")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(string), Member = "Contains")]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool AsyncOperationInProgress(SaveGameOperationType opType, string pattern)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -178,28 +170,27 @@ public class SaveGameData
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "Init")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "Init")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "SetLoadingPriority")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "Init")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void AddLoadingPriorityPattern(string pattern)
 	{
 	}
 
 	[CalledBy(Type = typeof(SaveGameData), Member = "GetNextPendingSaveGameOperation")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(string), Member = "Contains")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private static bool DoesNameMatchPattern(string name)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(SaveGameDataPC), Member = "SaveData")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SaveGameDataPC), Member = "SaveData")]
 	private static SaveGameOperationReturnValue DoSaveOperation(SaveGameOperationData opData)
 	{
 		return default(SaveGameOperationReturnValue);
@@ -233,47 +224,46 @@ public class SaveGameData
 		return default(SaveGameOperationReturnValue);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "DeleteSlot")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "LoadAllSavedGameFiles")]
-	[CalledBy(Type = typeof(SaveGameData), Member = "SaveData")]
-	[CalledBy(Type = typeof(SaveGameData), Member = "LoadData")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CalledBy(Type = typeof(SaveGameData), Member = "DeleteData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(SaveGameData), Member = "LoadAllSaves")]
+	[CalledBy(Type = typeof(SaveGameData), Member = "LoadData")]
+	[CalledBy(Type = typeof(SaveGameData), Member = "SaveData")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "LoadAllSavedGameFiles")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "DeleteSlot")]
+	[CallerCount(Count = 6)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private static bool SaveGameOperationAlreadyPending(SaveGameOperationType operationType, string name)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(SaveGameData), Member = "SaveGameDataProcess")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(SaveGameData), Member = "DoesNameMatchPattern")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SaveGameData), Member = "DoesNameMatchPattern")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private static SaveGameOperationData GetNextPendingSaveGameOperation()
 	{
 		return default(SaveGameOperationData);
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 4)]
 	private static void CullPendingSaveGameOperations(List<string> m_Whitelist)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(SaveGameData), Member = "SaveGameDataProcess")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SaveGameSystem), Member = "IsProfileFilename")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "IsSettingsFilename")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowSaveGameFailedSaveNotification")]
 	[Calls(Type = typeof(Panel_Confirmation), Member = "AddConfirmation")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "IsProfileFilename")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(SaveGameSystem), Member = "IsSettingsFilename")]
+	[CallsUnknownMethods(Count = 1)]
 	private static void MaybeDisplayErrorNotification(SaveGameOperationData opData, SaveGameOperationReturnValue returnValue)
 	{
 	}
@@ -290,8 +280,8 @@ public class SaveGameData
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public SaveGameData()
 	{
 	}

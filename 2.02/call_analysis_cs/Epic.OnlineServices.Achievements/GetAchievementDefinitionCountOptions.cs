@@ -5,7 +5,7 @@ namespace Epic.OnlineServices.Achievements;
 public class GetAchievementDefinitionCountOptions
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public GetAchievementDefinitionCountOptions()
 	{
 	}

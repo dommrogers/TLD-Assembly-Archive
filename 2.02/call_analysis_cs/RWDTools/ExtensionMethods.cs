@@ -5,12 +5,12 @@ namespace RWDTools;
 
 public static class ExtensionMethods
 {
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static float ToAngleDeg(this Vector2 vector)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -24,6 +24,6 @@ public static class ExtensionMethods
 	[CallerCount(Count = 0)]
 	public static bool isPowerOfTwo(this int x)
 	{
-		return default(bool);
+		return false;
 	}
 }

@@ -18,17 +18,17 @@ public class ControllerUIEffect : MonoBehaviour
 
 	private float _highlightAmount;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(ControllerUIElement), Member = "Activate")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(ControllerUIElement), Member = "Activate")]
-	[CalledBy(Type = typeof(ControllerUIElement), Member = "Activate")]
 	public void Activate(float amount)
 	{
 	}
@@ -39,11 +39,10 @@ public class ControllerUIEffect : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(ControllerUIElement), Member = "Deactivate")]
 	[CalledBy(Type = typeof(ControllerUIElement), Member = "Deactivate")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void RedrawImage()
 	{
 	}

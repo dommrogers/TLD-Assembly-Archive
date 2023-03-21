@@ -106,12 +106,12 @@ public class UIPanel : UIRect
 
 	public static int nextUnusedDepth
 	{
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -120,20 +120,20 @@ public class UIPanel : UIRect
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public override float alpha
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[Calls(Type = typeof(UIPanel), Member = "SetDirty")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIPanel), Member = "SetDirty")]
 		set
 		{
 		}
@@ -145,19 +145,20 @@ public class UIPanel : UIRect
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CalledBy(Type = typeof(UIRoot), Member = "Awake")]
+		[CalledBy(Type = typeof(NGUITools), Member = "AdjustDepth")]
+		[CalledBy(Type = typeof(NGUITools), Member = "NormalizePanelDepths")]
 		[CalledBy(Type = typeof(NGUITools), Member = "CreateUI")]
+		[CalledBy(Type = typeof(UIRoot), Member = "Awake")]
 		[CalledBy(Type = typeof(Panel_FeedFire), Member = "StartAcceleratingTime")]
 		[CalledBy(Type = typeof(Panel_FeedFire), Member = "StopAcceleratingTime")]
 		[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
 		[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(NGUITools), Member = "NormalizePanelDepths")]
-		[CalledBy(Type = typeof(NGUITools), Member = "AdjustDepth")]
 		[CallerCount(Count = 8)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(List<>), Member = "Sort")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -168,10 +169,10 @@ public class UIPanel : UIRect
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[Calls(Type = typeof(UIPanel), Member = "UpdateDrawCalls")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIPanel), Member = "UpdateDrawCalls")]
 		set
 		{
 		}
@@ -183,52 +184,51 @@ public class UIPanel : UIRect
 		[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	public float height
 	{
-		[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	public bool halfPixelOffset
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public bool usedForUI
 	{
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
 		[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public Vector3 drawCallOffset
 	{
-		[CallsUnknownMethods(Count = 5)]
 		[CalledBy(Type = typeof(UIPanel), Member = "UpdateDrawCalls")]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[Calls(Type = typeof(UIRoot), Member = "get_pixelSizeAdjustment")]
-		[Calls(Type = typeof(UIRect), Member = "get_root")]
-		[Calls(Type = typeof(UIRect), Member = "get_root")]
-		[Calls(Type = typeof(UIPanel), Member = "GetWindowSize")]
-		[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
+		[Calls(Type = typeof(UIPanel), Member = "GetWindowSize")]
+		[Calls(Type = typeof(UIRect), Member = "get_root")]
+		[Calls(Type = typeof(UIRoot), Member = "get_pixelSizeAdjustment")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 5)]
 		get
 		{
 			return default(Vector3);
@@ -261,17 +261,17 @@ public class UIPanel : UIRect
 
 	public int clipCount
 	{
-		[CallerCount(Count = 7)]
 		[CalledBy(Type = typeof(UIDrawCall), Member = "CreateMaterial")]
-		[CalledBy(Type = typeof(UIWidget), Member = "Invalidate")]
 		[CalledBy(Type = typeof(UIDrawCall), Member = "UpdateMaterials")]
-		[CalledBy(Type = typeof(UIPanel), Member = "UpdateWidgets")]
-		[CalledBy(Type = typeof(UIPanel), Member = "Affects")]
+		[CalledBy(Type = typeof(UIWidget), Member = "Invalidate")]
 		[CalledBy(Type = typeof(UIPanel), Member = "get_hasCumulativeClipping")]
 		[CalledBy(Type = typeof(UIPanel), Member = "get_clipsChildren")]
+		[CalledBy(Type = typeof(UIPanel), Member = "Affects")]
+		[CalledBy(Type = typeof(UIPanel), Member = "UpdateWidgets")]
+		[CallerCount(Count = 7)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -280,7 +280,7 @@ public class UIPanel : UIRect
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -291,18 +291,18 @@ public class UIPanel : UIRect
 		[Calls(Type = typeof(UIPanel), Member = "get_clipCount")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public bool clipsChildren
 	{
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UIPanel), Member = "get_clipCount")]
-		[DeduplicatedMethod]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -313,14 +313,14 @@ public class UIPanel : UIRect
 		{
 			return default(Vector2);
 		}
+		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
 		[CalledBy(Type = typeof(UIScrollView), Member = "SetDragAmount")]
+		[CalledBy(Type = typeof(UIScrollView), Member = "MoveRelative")]
+		[CalledBy(Type = typeof(UIScrollView), Member = "Press")]
 		[CalledBy(Type = typeof(SpringPanel), Member = "AdvanceTowardsPosition")]
 		[CallerCount(Count = 5)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UIPanel), Member = "InvalidateClipping")]
-		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
-		[CalledBy(Type = typeof(UIScrollView), Member = "Press")]
-		[CalledBy(Type = typeof(UIScrollView), Member = "MoveRelative")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -334,8 +334,8 @@ public class UIPanel : UIRect
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -364,14 +364,15 @@ public class UIPanel : UIRect
 		{
 			return default(Vector4);
 		}
-		[CallerCount(Count = 4)]
-		[CalledBy(Type = typeof(UIPanel), Member = "SetRect")]
 		[CalledBy(Type = typeof(UIPanel), Member = "set_clipRange")]
+		[CalledBy(Type = typeof(UIPanel), Member = "SetRect")]
 		[CalledBy(Type = typeof(UIPanel), Member = "OnAnchor")]
 		[CalledBy(Type = typeof(UIStretch), Member = "Update")]
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 3)]
+		[CallerCount(Count = 4)]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
 		[Calls(Type = typeof(UIScrollView), Member = "UpdatePosition")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -379,9 +380,9 @@ public class UIPanel : UIRect
 
 	public Vector4 finalClipRegion
 	{
-		[CallerCount(Count = 2)]
 		[CalledBy(Type = typeof(UIAnchor), Member = "LateUpdate")]
 		[CalledBy(Type = typeof(UIStretch), Member = "Update")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 		get
 		{
@@ -405,8 +406,8 @@ public class UIPanel : UIRect
 	public override Vector3[] localCorners
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 3)]
 		get
 		{
@@ -416,52 +417,48 @@ public class UIPanel : UIRect
 
 	public override Vector3[] worldCorners
 	{
-		[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-		[CallsUnknownMethods(Count = 7)]
-		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-		[Calls(Type = typeof(NGUITools), Member = "GetWorldCorners")]
-		[Calls(Type = typeof(UIRect), Member = "get_cameraRayDistance")]
-		[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
-		[CallsDeduplicatedMethods(Count = 7)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
+		[Calls(Type = typeof(UIRect), Member = "get_cameraRayDistance")]
+		[Calls(Type = typeof(NGUITools), Member = "GetWorldCorners")]
+		[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+		[CallsDeduplicatedMethods(Count = 7)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(UIWidget), Member = "FullCompareFunc")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
+	[CallsUnknownMethods(Count = 1)]
 	public static int CompareFunc(UIPanel a, UIPanel b)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(UIPanel), Member = "InvalidateClipping")]
 	[CalledBy(Type = typeof(UIPanel), Member = "set_clipOffset")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UIPanel), Member = "InvalidateClipping")]
+	[CalledBy(Type = typeof(UIPanel), Member = "InvalidateClipping")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UIPanel), Member = "InvalidateClipping")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void InvalidateClipping()
 	{
 	}
 
-	[Calls(Type = typeof(UIRect), Member = "GetSides")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
 	[Calls(Type = typeof(UIRect), Member = "get_cameraRayDistance")]
 	[Calls(Type = typeof(NGUITools), Member = "GetSides")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(UIRect), Member = "GetSides")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public override Vector3[] GetSides(Transform relativeTo)
 	{
 		return null;
@@ -474,69 +471,62 @@ public class UIPanel : UIRect
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIRect), Member = "get_parent")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UIRect), Member = "get_parent")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UIRect), Member = "get_parent")]
 	public override float CalculateFinalAlpha(int frameID)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(AnchorPoint), Member = "SetHorizontal")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
-	[Calls(Type = typeof(UIPanel), Member = "set_baseClipRegion")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AnchorPoint), Member = "SetVertical")]
-	[Calls(Type = typeof(AnchorPoint), Member = "SetVertical")]
-	[CallsUnknownMethods(Count = 7)]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(UIPanel), Member = "set_baseClipRegion")]
+	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(AnchorPoint), Member = "SetHorizontal")]
+	[Calls(Type = typeof(AnchorPoint), Member = "SetVertical")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public override void SetRect(float x, float y, float width, float height)
 	{
 	}
 
+	[CalledBy(Type = typeof(UIPanel), Member = "IsVisible")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UIPanel), Member = "UpdateTransformMatrix")]
-	[CalledBy(Type = typeof(UIPanel), Member = "IsVisible")]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsVisible(Vector3 a, Vector3 b, Vector3 c, Vector3 d)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "UpdateMenuNavigation")]
-	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "UpdateMenuNavigation")]
 	[CalledBy(Type = typeof(UICamera), Member = "IsVisible")]
+	[CalledBy(Type = typeof(UICamera), Member = "IsVisible")]
+	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "UpdateMenuNavigation")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UIPanel), Member = "UpdateTransformMatrix")]
-	[CalledBy(Type = typeof(UICamera), Member = "IsVisible")]
 	public bool IsVisible(Vector3 worldPos)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(UIWidget), Member = "Invalidate")]
+	[CalledBy(Type = typeof(UIPanel), Member = "UpdateWidgets")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UIPanel), Member = "IsVisible")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(UIPanel), Member = "UpdateWidgets")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsVisible(UIWidget w)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIPanel), Member = "get_clipCount")]
 	public bool Affects(UIWidget w)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[ContextMenu("Force Refresh")]
@@ -545,30 +535,31 @@ public class UIPanel : UIRect
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(UIPanel), Member = "set_alpha")]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyGraphicsModeAndResolution")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void SetDirty()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(string), Member = "Contains")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 7)]
 	private void Awake()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(UIPanel), Member = "OnInit")]
 	[CalledBy(Type = typeof(UIPanel), Member = "ParentHasChanged")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(UIPanel), Member = "OnInit")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void FindParent()
 	{
 	}
@@ -593,317 +584,306 @@ public class UIPanel : UIRect
 	{
 	}
 
-	[Calls(Type = typeof(Rigidbody), Member = "set_isKinematic")]
-	[Calls(Type = typeof(UIPanel), Member = "FindParent")]
-	[Calls(Type = typeof(UIRect), Member = "OnInit")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Rigidbody), Member = "set_useGravity")]
+	[Calls(Type = typeof(UIRect), Member = "OnInit")]
+	[Calls(Type = typeof(UIPanel), Member = "FindParent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(Rigidbody), Member = "set_isKinematic")]
+	[Calls(Type = typeof(Rigidbody), Member = "set_useGravity")]
+	[Calls(Type = typeof(List<>), Member = "Sort")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
 	protected override void OnInit()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIDrawCall), Member = "Destroy")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(UIDrawCall), Member = "ClearAll")]
 	[Calls(Type = typeof(UIDrawCall), Member = "ReleaseInactive")]
 	[Calls(Type = typeof(UIRect), Member = "OnDisable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UIDrawCall), Member = "Destroy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[CalledBy(Type = typeof(UIPanel), Member = "IsVisible")]
 	[CalledBy(Type = typeof(UIPanel), Member = "IsVisible")]
 	[CalledBy(Type = typeof(UIPanel), Member = "UpdateSelf")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateTransformMatrix()
 	{
 	}
 
-	[Calls(Type = typeof(AnchorPoint), Member = "GetSides")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIRect), Member = "GetLocalPos")]
-	[Calls(Type = typeof(UIRect), Member = "GetLocalPos")]
-	[Calls(Type = typeof(AnchorPoint), Member = "GetSides")]
-	[Calls(Type = typeof(UIRect), Member = "GetLocalPos")]
-	[Calls(Type = typeof(AnchorPoint), Member = "GetSides")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIRect), Member = "GetLocalPos")]
-	[Calls(Type = typeof(AnchorPoint), Member = "GetSides")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AnchorPoint), Member = "GetSides")]
-	[Calls(Type = typeof(UIPanel), Member = "set_baseClipRegion")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UIRect), Member = "GetLocalPos")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(AnchorPoint), Member = "GetSides")]
+	[Calls(Type = typeof(UIRect), Member = "GetLocalPos")]
+	[Calls(Type = typeof(UIPanel), Member = "set_baseClipRegion")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	protected override void OnAnchor()
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(UIPanel), Member = "Refresh")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UIPanel), Member = "UpdateDrawCalls")]
-	[Calls(Type = typeof(UIPanel), Member = "UpdateDrawCalls")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UIPanel), Member = "UpdateSelf")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UIPanel), Member = "UpdateDrawCalls")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void LateUpdate()
 	{
 	}
 
+	[CalledBy(Type = typeof(UIPanel), Member = "LateUpdate")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIPanel), Member = "UpdateTransformMatrix")]
+	[Calls(Type = typeof(UIPanel), Member = "UpdateLayers")]
 	[Calls(Type = typeof(UIPanel), Member = "UpdateWidgets")]
 	[Calls(Type = typeof(UIPanel), Member = "FillDrawCall")]
 	[Calls(Type = typeof(UIDrawCall), Member = "Destroy")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
 	[Calls(Type = typeof(UIPanel), Member = "FillAllDrawCalls")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UIPanel), Member = "UpdateLayers")]
-	[CalledBy(Type = typeof(UIPanel), Member = "LateUpdate")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UIPanel), Member = "UpdateTransformMatrix")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateSelf()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(UIPanel), Member = "AddWidget")]
-	[CalledBy(Type = typeof(UIPanel), Member = "FillAllDrawCalls")]
 	[CalledBy(Type = typeof(UIWidget), Member = "set_depth")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(UIPanel), Member = "FillAllDrawCalls")]
+	[CalledBy(Type = typeof(UIPanel), Member = "AddWidget")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Sort")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SortWidgets()
 	{
 	}
 
-	[Calls(Type = typeof(UIPanel), Member = "SortWidgets")]
-	[Calls(Type = typeof(UIDrawCall), Member = "UpdateGeometry")]
-	[Calls(Type = typeof(UIGeometry), Member = "WriteToBuffers")]
-	[Calls(Type = typeof(UIDrawCall), Member = "UpdateGeometry")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(UIPanel), Member = "UpdateSelf")]
-	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(UIDrawCall), Member = "Create")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UIDrawCall), Member = "Destroy")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UIPanel), Member = "SortWidgets")]
+	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+	[Calls(Type = typeof(UIDrawCall), Member = "UpdateGeometry")]
+	[Calls(Type = typeof(UIDrawCall), Member = "Create")]
+	[Calls(Type = typeof(UIGeometry), Member = "WriteToBuffers")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 23)]
 	private void FillAllDrawCalls()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(UIPanel), Member = "UpdateSelf")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UIDrawCall), Member = "UpdateGeometry")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(UIGeometry), Member = "WriteToBuffers")]
-	[Calls(Type = typeof(UIWidget), Member = "get_isVisible")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIWidget), Member = "get_isVisible")]
+	[Calls(Type = typeof(UIGeometry), Member = "WriteToBuffers")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(Type = typeof(UIDrawCall), Member = "UpdateGeometry")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 8)]
 	private bool FillDrawCall(UIDrawCall dc)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(UIPanel), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(UIPanel), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(UIPanel), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(UIPanel), Member = "set_sortingOrder")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UIDrawCall), Member = "set_sortingOrder")]
-	[Calls(Type = typeof(UIDrawCall), Member = "set_renderQueue")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UIDrawCall), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UIPanel), Member = "get_drawCallOffset")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
-	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[CallsDeduplicatedMethods(Count = 12)]
+	[CalledBy(Type = typeof(UIPanel), Member = "LateUpdate")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
+	[Calls(Type = typeof(UIPanel), Member = "get_drawCallOffset")]
+	[Calls(Type = typeof(UIDrawCall), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(UIDrawCall), Member = "set_renderQueue")]
+	[Calls(Type = typeof(UIDrawCall), Member = "set_sortingOrder")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 17)]
 	private void UpdateDrawCalls()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameObject), Member = "set_layer")]
-	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
-	[Calls(Type = typeof(GameObject), Member = "set_layer")]
-	[Calls(Type = typeof(UIRect), Member = "get_parent")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedGameObject")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(UIPanel), Member = "UpdateSelf")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedGameObject")]
+	[Calls(Type = typeof(UIRect), Member = "get_parent")]
+	[Calls(Type = typeof(GameObject), Member = "set_layer")]
+	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateLayers()
 	{
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = "CalculateCumulativeAlpha")]
-	[Calls(Type = typeof(UIWidget), Member = "UpdateGeometry")]
-	[Calls(Type = typeof(UIPanel), Member = "IsVisible")]
-	[Calls(Type = typeof(UIWidget), Member = "UpdateTransform")]
-	[Calls(Type = typeof(UIPanel), Member = "get_clipCount")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(UIPanel), Member = "UpdateSelf")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIPanel), Member = "get_clipCount")]
+	[Calls(Type = typeof(UIWidget), Member = "UpdateTransform")]
+	[Calls(Type = typeof(UIWidget), Member = "CalculateCumulativeAlpha")]
+	[Calls(Type = typeof(UIPanel), Member = "IsVisible")]
+	[Calls(Type = typeof(UIWidget), Member = "UpdateGeometry")]
 	[Calls(Type = typeof(UIPanel), Member = "FindDrawCall")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateWidgets()
 	{
 	}
 
+	[CalledBy(Type = typeof(UIPanel), Member = "UpdateWidgets")]
+	[CalledBy(Type = typeof(UIPanel), Member = "AddWidget")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UIWidget), Member = "get_isVisible")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(UIPanel), Member = "UpdateWidgets")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(UIPanel), Member = "AddWidget")]
 	public UIDrawCall FindDrawCall(UIWidget w)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(UIWidget), Member = "set_depth")]
+	[CalledBy(Type = typeof(UIWidget), Member = "CreatePanel")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UIWidget), Member = "PanelCompareFunc")]
-	[Calls(Type = typeof(UIWidget), Member = "PanelCompareFunc")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
 	[Calls(Type = typeof(UIPanel), Member = "SortWidgets")]
 	[Calls(Type = typeof(UIPanel), Member = "FindDrawCall")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(UIWidget), Member = "set_depth")]
-	[CallerCount(Count = 2)]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(UIWidget), Member = "CreatePanel")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 4)]
 	public void AddWidget(UIWidget w)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(UIWidget), Member = "set_depth")]
 	[CalledBy(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	public void RemoveWidget(UIWidget w)
 	{
 	}
 
 	[CalledBy(Type = typeof(ActiveAnimation), Member = "Play")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(ActiveAnimation), Member = "Play")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UIPanel), Member = "LateUpdate")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UIPanel), Member = "LateUpdate")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Refresh()
 	{
 	}
 
-	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIPanel), Member = "GetViewSize")]
 	[Calls(Type = typeof(NGUIMath), Member = "ConstrainRect")]
 	public virtual Vector3 CalculateConstrainOffset(Vector2 min, Vector2 max)
 	{
 		return default(Vector3);
 	}
 
-	[Calls(Type = typeof(UIRect), Member = "get_root")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(UIPanel), Member = "ConstrainTargetToBounds")]
-	[CalledBy(Type = typeof(UIDragObject), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(UIDragObject), Member = "OnDrag")]
 	[CalledBy(Type = typeof(UIDragObject), Member = "OnPress")]
-	[Calls(Type = typeof(SpringPosition), Member = "Begin")]
+	[CalledBy(Type = typeof(UIDragObject), Member = "OnDrag")]
+	[CalledBy(Type = typeof(UIDragObject), Member = "LateUpdate")]
+	[CalledBy(Type = typeof(UIPanel), Member = "ConstrainTargetToBounds")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(UIRect), Member = "get_root")]
 	[Calls(Type = typeof(UIRoot), Member = "get_pixelSizeAdjustment")]
+	[Calls(Type = typeof(SpringPosition), Member = "Begin")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 5)]
 	public bool ConstrainTargetToBounds(Transform target, ref Bounds targetBounds, bool immediate)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(UIGrid), Member = "ConstrainWithinPanel")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
 	[CalledBy(Type = typeof(UITable), Member = "Reposition")]
-	[Calls(Type = typeof(UIPanel), Member = "ConstrainTargetToBounds")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
 	[Calls(Type = typeof(NGUIMath), Member = "CalculateRelativeWidgetBounds")]
+	[Calls(Type = typeof(UIPanel), Member = "ConstrainTargetToBounds")]
 	public bool ConstrainTargetToBounds(Transform target, bool immediate)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
-	[Calls(Type = typeof(UIPanel), Member = "Find")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIPanel), Member = "Find")]
 	public static UIPanel Find(Transform trans)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public static UIPanel Find(Transform trans, bool createIfMissing)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(UIWidget), Member = "ParentHasChanged")]
 	[CalledBy(Type = typeof(UIDragObject), Member = "FindPanel")]
 	[CalledBy(Type = typeof(UIWidget), Member = "CreatePanel")]
+	[CalledBy(Type = typeof(UIWidget), Member = "ParentHasChanged")]
 	[CalledBy(Type = typeof(UIPanel), Member = "Find")]
 	[CalledBy(Type = typeof(ButtonLegendConfigure), Member = "RefreshReferences")]
 	[CalledBy(Type = typeof(Panel_Confirmation), Member = "IsControllerSchemeEnabled")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(NGUITools), Member = "CreateUI")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
+	[Calls(Type = typeof(NGUITools), Member = "CreateUI")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static UIPanel Find(Transform trans, bool createIfMissing, int layer)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(UIPanel), Member = "get_drawCallOffset")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UIRect), Member = "get_root")]
 	[Calls(Type = typeof(NGUITools), Member = "get_screenSize")]
 	[Calls(Type = typeof(UIRoot), Member = "get_activeHeight")]
-	[CalledBy(Type = typeof(UIPanel), Member = "get_drawCallOffset")]
 	[CallsUnknownMethods(Count = 1)]
 	public Vector2 GetWindowSize()
 	{
 		return default(Vector2);
 	}
 
-	[Calls(Type = typeof(NGUITools), Member = "get_screenSize")]
 	[CallerCount(Count = 51)]
+	[Calls(Type = typeof(NGUITools), Member = "get_screenSize")]
 	public Vector2 GetViewSize()
 	{
 		return default(Vector2);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(UIRect), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public UIPanel()
 	{
 	}

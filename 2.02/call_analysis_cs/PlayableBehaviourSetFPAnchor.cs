@@ -23,8 +23,8 @@ public class PlayableBehaviourSetFPAnchor : PlayableBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public override void OnBehaviourPlay(Playable playable, FrameData info)
 	{
 	}
@@ -34,36 +34,36 @@ public class PlayableBehaviourSetFPAnchor : PlayableBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayableBehaviourSetFPAnchor), Member = "ProcessFrame")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(PlayableBehaviourSetFPAnchor), Member = "FindAnchor")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CalledBy(Type = typeof(PlayableBehaviourSetFPAnchor), Member = "ProcessFrame")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	private void MaybeSetAnchor(TLD_TimelineDirector timelineDirector)
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(PlayableBehaviourSetFPAnchor), Member = "MaybeSetAnchor")]
-	[Calls(Type = typeof(Utils), Member = "FindChildRecursive")]
-	[Calls(Type = typeof(SyncNodesInfo), Member = "GetBestNode")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "TryGetFPAnchorTargetOverride")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetComponentForMissionObject")]
+	[Calls(Type = typeof(SyncNodesInfo), Member = "GetBestNode")]
+	[Calls(Type = typeof(Utils), Member = "FindChildRecursive")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private GameObject FindAnchor(TLD_TimelineDirector timelineDirector)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public PlayableBehaviourSetFPAnchor()
 	{

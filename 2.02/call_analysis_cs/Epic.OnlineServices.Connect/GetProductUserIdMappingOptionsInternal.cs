@@ -17,11 +17,11 @@ internal struct GetProductUserIdMappingOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(GetProductUserIdMappingOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(GetProductUserIdMappingOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(GetProductUserIdMappingOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(GetProductUserIdMappingOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -40,9 +40,9 @@ internal struct GetProductUserIdMappingOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(GetProductUserIdMappingOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(GetProductUserIdMappingOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -55,17 +55,17 @@ internal struct GetProductUserIdMappingOptionsInternal : ISettable, IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(ConnectInterface), Member = "GetProductUserIdMapping")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GetProductUserIdMappingOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(GetProductUserIdMappingOptionsInternal), Member = "set_TargetProductUserId")]
-	[CalledBy(Type = typeof(ConnectInterface), Member = "GetProductUserIdMapping")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

@@ -15,13 +15,13 @@ public class CyclicalList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumer
 
 		public T Current
 		{
-			[CallsDeduplicatedMethods(Count = 2)]
-			[CallsUnknownMethods(Count = 5)]
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
+			[CallsDeduplicatedMethods(Count = 2)]
+			[CallsUnknownMethods(Count = 5)]
 			get
 			{
-				return (T)null;
+				return default(T);
 			}
 		}
 
@@ -37,14 +37,14 @@ public class CyclicalList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumer
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public Enumerator(CyclicalList<T> list)
 		{
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public void Dispose()
 		{
 		}
@@ -54,7 +54,7 @@ public class CyclicalList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumer
 		[CallsUnknownMethods(Count = 1)]
 		public bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
@@ -77,7 +77,7 @@ public class CyclicalList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumer
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -87,17 +87,17 @@ public class CyclicalList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumer
 		[CallerCount(Count = 7)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public bool IsReadOnly
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -105,17 +105,17 @@ public class CyclicalList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumer
 	{
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(IndexOutOfRangeException), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 5)]
 		get
 		{
-			return (T)null;
+			return default(T);
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(IndexOutOfRangeException), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 4)]
 		set
 		{
@@ -129,15 +129,15 @@ public class CyclicalList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumer
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Add(T item)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void Clear()
 	{
 	}
@@ -148,7 +148,7 @@ public class CyclicalList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumer
 	[CallsUnknownMethods(Count = 8)]
 	public bool Contains(T item)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -167,10 +167,10 @@ public class CyclicalList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumer
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private IEnumerator System_002ECollections_002EIEnumerable_002EGetEnumerator()
 	{
 		return null;
@@ -181,33 +181,33 @@ public class CyclicalList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumer
 	[CallsUnknownMethods(Count = 3)]
 	public T GetNextEviction()
 	{
-		return (T)null;
+		return default(T);
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(IndexOutOfRangeException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private int GetPointer(int index)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 8)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	public int IndexOf(T item)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(IndexOutOfRangeException), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(IndexOutOfRangeException), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Insert(int index, T item)
 	{
 	}
@@ -216,13 +216,13 @@ public class CyclicalList<T> : IList<T>, ICollection<T>, IEnumerable<T>, IEnumer
 	[CallerCount(Count = 0)]
 	public bool Remove(T item)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(IndexOutOfRangeException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void RemoveAt(int index)
 	{

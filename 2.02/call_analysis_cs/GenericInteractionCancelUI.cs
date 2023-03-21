@@ -14,52 +14,51 @@ public class GenericInteractionCancelUI : MonoBehaviour
 	[CallsUnknownMethods(Count = 3)]
 	public bool IsShowing()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(GenericInteractionCancelUI), Member = "RefreshButtonPrompt")]
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GenericInteractionCancelUI), Member = "RefreshButtonPrompt")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public void Show(string text, Action onButtonSelected)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "ShowHoverButtonPrompts")]
 	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "HideHoverButtonPrompts")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 6)]
 	public void Hide()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GenericInteractionCancelUI), Member = "RefreshButtonPrompt")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Update()
 	{
 	}
 
+	[CalledBy(Type = typeof(GenericInteractionCancelUI), Member = "Show")]
+	[CalledBy(Type = typeof(GenericInteractionCancelUI), Member = "Update")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
 	[Calls(Type = typeof(InputManager), Member = "GetRadialButton")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CalledBy(Type = typeof(GenericInteractionCancelUI), Member = "Show")]
-	[CalledBy(Type = typeof(GenericInteractionCancelUI), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void RefreshButtonPrompt()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public GenericInteractionCancelUI()
 	{
 	}

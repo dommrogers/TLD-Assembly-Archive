@@ -15,11 +15,11 @@ internal struct LogMessageInternal
 
 	public string Category
 	{
+		[CalledBy(Type = typeof(LogMessage), Member = "Set")]
+		[CalledBy(Type = typeof(LogMessage), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CalledBy(Type = typeof(LogMessage), Member = "Set")]
-		[CalledBy(Type = typeof(LogMessage), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -28,11 +28,11 @@ internal struct LogMessageInternal
 
 	public string Message
 	{
+		[CalledBy(Type = typeof(LogMessage), Member = "Set")]
+		[CalledBy(Type = typeof(LogMessage), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CalledBy(Type = typeof(LogMessage), Member = "Set")]
-		[CalledBy(Type = typeof(LogMessage), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;

@@ -11,43 +11,43 @@ internal class GameObjectWithComponentAsset : AssetReferenceUIRestriction
 
 	private Type ComponentType
 	{
-		[CallerCount(Count = 98)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 113)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 265)]
+		[CallerCount(Count = 269)]
 		set
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(ArgumentException), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public GameObjectWithComponentAsset(Type type)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	public override bool ValidateAsset(UnityEngine.Object obj)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public override bool ValidateAsset(string path)
 	{
-		return default(bool);
+		return false;
 	}
 }

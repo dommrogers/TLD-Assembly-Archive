@@ -20,19 +20,19 @@ public class PrivacyServicePlugin
 	public static extern bool PrivacyService_CheckPermissionWithTargetUserAsync(int userId, string permissionId, string targetXboxUserId, ObjectResultCallback callback, IntPtr userData);
 
 	[PreserveSig]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static extern bool PrivacyService_GetAvoidListAsync(int userId, ObjectResultCallback callback, IntPtr userData);
 
 	[PreserveSig]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static extern bool PrivacyService_GetMuteListAsync(int userId, ObjectResultCallback callback, IntPtr userData);
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public PrivacyServicePlugin()
 	{
 	}

@@ -6,8 +6,8 @@ public class GearSaveData
 
 	public string m_SearializedGear;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public GearSaveData()
 	{
 	}

@@ -5,9 +5,9 @@ namespace NodeCanvas.Tasks.Actions;
 
 public class Action_NPCClearActive : ActionTask
 {
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(NPC), Member = "ClearActive")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NPC), Member = "ClearActive")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	protected override void OnExecute()
 	{

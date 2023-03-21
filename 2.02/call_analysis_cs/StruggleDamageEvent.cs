@@ -20,7 +20,7 @@ public abstract class StruggleDamageEvent
 		public int m_Interloper;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public XPModeChance()
 		{
 		}
@@ -40,7 +40,7 @@ public abstract class StruggleDamageEvent
 		public int m_Interloper;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public XPModeMaxExecution()
 		{
 		}
@@ -69,74 +69,65 @@ public abstract class StruggleDamageEvent
 	{
 	}
 
+	[CalledBy(Type = typeof(DamageEventTable), Member = "MaybeApplyAttack")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
 	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
-	[CalledBy(Type = typeof(DamageEventTable), Member = "MaybeApplyAttack")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void Execute()
 	{
 	}
 
-	[CallerCount(Count = 121780)]
-	[DeduplicatedMethod]
 	public abstract void OnExecute();
 
-	[CallerCount(Count = 121780)]
-	[DeduplicatedMethod]
 	public abstract bool IsLocationAvailable();
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(StruggleDamageEvent), Member = "GetChance")]
+	[CallerCount(Count = 1)]
 	public int GetMaxExecutions()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 25)]
 	[CalledBy(Type = typeof(DamageEventTable), Member = "GetWeightedRandomAttack")]
-	[CalledBy(Type = typeof(DamageEventTable), Member = "GetWeightedRandomAttack")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(SpecialEvent), Member = "MatchesExperienceMode")]
-	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
-	[Calls(Type = typeof(StruggleDamageEvent), Member = "GetMaxExecutions")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(StruggleDamageEvent), Member = "GetMaxExecutions")]
+	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
+	[Calls(Type = typeof(SpecialEvent), Member = "MatchesExperienceMode")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 25)]
 	public int GetChance()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Condition), Member = "MaybeShowPainEffect")]
-	[CalledBy(Type = typeof(BloodLossEvent), Member = "OnExecute")]
 	[CalledBy(Type = typeof(MinorBruisingEvent), Member = "OnExecute")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(AiDifficultySetting), Member = "GetStrugglePlayerDamageReceivedScale")]
-	[Calls(Type = typeof(Condition), Member = "AddHealth")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetStrugglePlayerDamageReceivedScale")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(BloodLossEvent), Member = "OnExecute")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetStrugglePlayerDamageReceivedScale")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(AiDifficultySetting), Member = "GetStrugglePlayerDamageReceivedScale")]
+	[Calls(Type = typeof(Condition), Member = "MaybeShowPainEffect")]
+	[Calls(Type = typeof(Condition), Member = "AddHealth")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 15)]
 	protected void ApplyDamage(float damage)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	protected StruggleDamageEvent()
 	{
 	}

@@ -19,24 +19,19 @@ public sealed class LensDistortion : PostProcessEffectSettings
 	public FloatParameter scale;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Mathf), Member = "Approximately")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public override bool IsEnabledAndSupported(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 48)]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 48)]
 	public LensDistortion()
 	{
 	}

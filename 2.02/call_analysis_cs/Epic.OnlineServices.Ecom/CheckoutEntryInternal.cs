@@ -13,20 +13,20 @@ internal struct CheckoutEntryInternal : ISettable, IDisposable
 
 	public string OfferId
 	{
+		[CalledBy(Type = typeof(CheckoutEntry), Member = "Set")]
+		[CalledBy(Type = typeof(CheckoutEntry), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CalledBy(Type = typeof(CheckoutEntry), Member = "Set")]
-		[CalledBy(Type = typeof(CheckoutEntry), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(CheckoutEntryInternal), Member = "Set")]
 		[CalledBy(Type = typeof(CheckoutEntryInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -39,14 +39,14 @@ internal struct CheckoutEntryInternal : ISettable, IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CheckoutEntryInternal), Member = "set_OfferId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

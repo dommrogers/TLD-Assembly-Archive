@@ -42,8 +42,8 @@ public class BodyHarvestSaveDataProxy
 
 	public BaseAi.DamageSide m_DamageSide;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public BodyHarvestSaveDataProxy()
 	{
 	}

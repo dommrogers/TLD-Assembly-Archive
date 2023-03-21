@@ -15,10 +15,10 @@ public sealed class RLProGlitch3 : PostProcessEffectSettings
 
 	public TextureParameter maskTexture;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	public RLProGlitch3()
 	{
 	}

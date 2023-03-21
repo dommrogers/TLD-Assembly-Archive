@@ -23,7 +23,7 @@ public class HableCurve
 		[CallsUnknownMethods(Count = 2)]
 		public float Eval(float x)
 		{
-			return default(float);
+			return 0f;
 		}
 
 		[DeduplicatedMethod]
@@ -68,8 +68,8 @@ public class HableCurve
 
 		public Vector4 toeSegmentA
 		{
-			[CallsUnknownMethods(Count = 2)]
 			[CallerCount(Count = 0)]
+			[CallsUnknownMethods(Count = 2)]
 			get
 			{
 				return default(Vector4);
@@ -127,7 +127,7 @@ public class HableCurve
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 265)]
+		[CallerCount(Count = 269)]
 		internal Uniforms(HableCurve parent)
 		{
 		}
@@ -152,7 +152,7 @@ public class HableCurve
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -169,11 +169,11 @@ public class HableCurve
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
@@ -186,7 +186,7 @@ public class HableCurve
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -198,25 +198,25 @@ public class HableCurve
 
 	internal float x1
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		private set
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(ColorGradingRenderer), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 13)]
 	public HableCurve()
 	{
 	}
@@ -225,21 +225,21 @@ public class HableCurve
 	[CallsUnknownMethods(Count = 4)]
 	public float Eval(float x)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(HableCurve), Member = "InitSegments")]
 	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRPipeline3D")]
 	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRPipeline2D")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(HableCurve), Member = "InitSegments")]
 	[CallsUnknownMethods(Count = 2)]
 	public void Init(float toeStrength, float toeLength, float shoulderStrength, float shoulderLength, float shoulderAngle, float gamma)
 	{
 	}
 
 	[CalledBy(Type = typeof(HableCurve), Member = "Init")]
-	[CallsUnknownMethods(Count = 14)]
 	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	private void InitSegments(DirectParams srcParams)
 	{
 	}
@@ -248,21 +248,21 @@ public class HableCurve
 	[CallsUnknownMethods(Count = 2)]
 	private void SolveAB(out float lnA, out float B, float x0, float y0, float m)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref lnA) = null;
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref B) = null;
+		lnA = default(float);
+		B = default(float);
 	}
 
 	[CallerCount(Count = 0)]
 	private void AsSlopeIntercept(out float m, out float b, float x0, float x1, float y0, float y1)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref m) = null;
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref b) = null;
+		m = default(float);
+		b = default(float);
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	private float EvalDerivativeLinearGamma(float m, float b, float g, float x)
 	{
-		return default(float);
+		return 0f;
 	}
 }

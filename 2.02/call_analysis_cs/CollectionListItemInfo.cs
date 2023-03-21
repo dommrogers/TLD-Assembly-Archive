@@ -16,8 +16,8 @@ public class CollectionListItemInfo
 
 	public Panel_Log.CollectionsType m_CollectionType;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public CollectionListItemInfo()
 	{
 	}

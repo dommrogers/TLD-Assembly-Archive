@@ -11,7 +11,7 @@ public class RangeValue
 	public float max;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public RangeValue()
 	{
 	}

@@ -183,8 +183,8 @@ public class AuroraElectrolizer : MonoBehaviour
 	private static readonly int s_EmissiveTintPropertyID;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AuroraManager), Member = "RegisterAuroraElectrolizer")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 12)]
 	private void Awake()
 	{
@@ -197,54 +197,47 @@ public class AuroraElectrolizer : MonoBehaviour
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AuroraManager), Member = "OnAuroraElectrolizerEnableChanged")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AuroraManager), Member = "OnAuroraElectrolizerEnableChanged")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
-	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "OnDisable")]
 	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "Start")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Light), Member = "get_color")]
-	[Calls(Type = typeof(LensFlare), Member = "get_color")]
-	[CallsUnknownMethods(Count = 104)]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(AuroraManager), Member = "GetRandomElectricalColor")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[CallsDeduplicatedMethods(Count = 21)]
+	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "OnDisable")]
+	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(AuroraManager), Member = "GetRandomElectricalColor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
 	[Calls(Type = typeof(Light), Member = "get_intensity")]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(LensFlare), Member = "get_color")]
+	[Calls(Type = typeof(Light), Member = "get_color")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 104)]
 	private void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(AuroraManager), Member = "OnAuroraElectrolizerEnableChanged")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AuroraElectrolizer), Member = "Initialize")]
 	[Calls(Type = typeof(AuroraElectrolizer), Member = "StopAll")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AuroraManager), Member = "OnAuroraElectrolizerEnableChanged")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
+	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
 	public void SetLocationDistances(bool useOutdoorValues)
 	{
 	}
@@ -252,7 +245,7 @@ public class AuroraElectrolizer : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsElectrolized()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -261,25 +254,23 @@ public class AuroraElectrolizer : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "UpdateEmissiveObjects")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "UpdateAudio")]
 	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "JobUpdate")]
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateElectrolyzerWithFarOptimization")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateElectrolyzerWithFarOptimization")]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "UpdateFX")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "Initialize")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "UpdateIntensity")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "SetRandomType")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "SetRandomFlickerTime")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "StopAll")]
-	[Calls(Type = typeof(Mathf), Member = "InverseLerp")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(AuroraElectrolizer), Member = "Initialize")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Mathf), Member = "InverseLerp")]
+	[Calls(Type = typeof(AuroraElectrolizer), Member = "StopAll")]
+	[Calls(Type = typeof(AuroraElectrolizer), Member = "SetRandomFlickerTime")]
+	[Calls(Type = typeof(AuroraElectrolizer), Member = "SetRandomType")]
+	[Calls(Type = typeof(AuroraElectrolizer), Member = "UpdateIntensity")]
 	[Calls(Type = typeof(AuroraElectrolizer), Member = "UpdateLight")]
+	[Calls(Type = typeof(AuroraElectrolizer), Member = "UpdateFX")]
+	[Calls(Type = typeof(AuroraElectrolizer), Member = "UpdateEmissiveObjects")]
+	[Calls(Type = typeof(AuroraElectrolizer), Member = "UpdateAudio")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void ManualUpdate(float camDistSqr, float fadeIntensity, float auroraIntensity, float deltaTime, bool useLocalTimers)
 	{
 	}
@@ -295,100 +286,91 @@ public class AuroraElectrolizer : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(AuroraElectrolizer), Member = "SetRandomType")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "SetRandomType")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	private void UpdateIntensity(float deltaTime, bool useLocalTimers)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
 	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "StopAll")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(HashSet<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 7)]
 	private void UpdateEmissiveObjects(bool allOff = false)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 17)]
-	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "StopAll")]
 	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
-	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
-	[Calls(Type = typeof(ParticleSystem), Member = "Play")]
-	[Calls(Type = typeof(ParticleSystem), Member = "Stop")]
-	[Calls(Type = typeof(ParticleSystem), Member = "get_isPlaying")]
-	[Calls(Type = typeof(ParticleSystem), Member = "get_isStopped")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "StopAll")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(ParticleSystem), Member = "get_isStopped")]
+	[Calls(Type = typeof(ParticleSystem), Member = "get_isPlaying")]
+	[Calls(Type = typeof(ParticleSystem), Member = "Stop")]
+	[Calls(Type = typeof(ParticleSystem), Member = "Play")]
+	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 17)]
 	private void UpdateFX(bool allOff = false)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 41)]
-	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "StopAll")]
 	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "StopAll")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 41)]
 	private void UpdateLight(bool allOff = false)
 	{
 	}
 
-	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "UpdateIntensity")]
 	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
-	[CallsUnknownMethods(Count = 10)]
-	[CallsDeduplicatedMethods(Count = 12)]
+	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "UpdateIntensity")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	private void SetRandomType()
 	{
 	}
 
+	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
 	[CallsUnknownMethods(Count = 1)]
 	private void SetRandomFlickerTime()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "Start")]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateVisibility")]
-	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
 	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "OnDisable")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "UpdateEmissiveObjects")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "UpdateFX")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "UpdateLight")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
+	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateVisibility")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(AuroraElectrolizer), Member = "UpdateLight")]
+	[Calls(Type = typeof(AuroraElectrolizer), Member = "UpdateFX")]
+	[Calls(Type = typeof(AuroraElectrolizer), Member = "UpdateEmissiveObjects")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void StopAll()
 	{
 	}
@@ -397,34 +379,31 @@ public class AuroraElectrolizer : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetCurrentLowThreshold()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetCurrentStableThreshold()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "UpdateAudio")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public float GetIntensityNormalized()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetLightIntensity()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -432,30 +411,30 @@ public class AuroraElectrolizer : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
 	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "GetIntensityNormalized")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[Calls(Type = typeof(AuroraElectrolizer), Member = "GetIntensityNormalized")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateAudio()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void StopAudio()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 43)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 43)]
 	public AuroraElectrolizer()
 	{
 	}

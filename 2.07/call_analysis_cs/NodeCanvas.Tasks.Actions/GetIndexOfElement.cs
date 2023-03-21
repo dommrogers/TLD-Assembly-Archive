@@ -12,11 +12,11 @@ public class GetIndexOfElement<T> : ActionTask
 
 	public BBParameter<int> saveIndexAs;
 
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
-	[DeduplicatedMethod]
-	[CallerCount(Count = 0)]
 	protected override void OnExecute()
 	{
 	}

@@ -24,20 +24,24 @@ public class Action_GetInvRequirementsCount : ActionTask
 		}
 	}
 
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(Variable), Member = "OnValueChanged")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(NCUtils), Member = "GetItemRequirementsMatchCount")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(NCUtils), Member = "BuildRequirementsDictionary")]
+	[Calls(Type = typeof(NCUtils), Member = "GetItemRequirementsMatchCount")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(Variable), Member = "OnValueChanged")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 14)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(BBParameter<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 15)]
 	public Action_GetInvRequirementsCount()
 	{

@@ -32,9 +32,9 @@ public class InProgressCraftItem : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
@@ -50,7 +50,7 @@ public class InProgressCraftItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetWeight()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -58,29 +58,28 @@ public class InProgressCraftItem : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(ClothingSlot), Member = "HasOptionsAvailable")]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "SetupScrollList")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "ApplyCraftingProgress")]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleCraftingInterrupt")]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "SetupScrollList")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "HasOptionsAvailable")]
 	public bool IsProgressComplete()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool ProgressHasStarted()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(BlueprintData), Member = "HasRequiredMaterials")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(BlueprintData), Member = "HasRequiredMaterials")]
-	[CalledBy(Type = typeof(BlueprintData), Member = "HasRequiredMaterials")]
 	public float GetPercentRemainingNormalized()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(InProgressCraftItem), Member = "UpdateWeight")]
@@ -88,7 +87,7 @@ public class InProgressCraftItem : MonoBehaviour
 	[CallerCount(Count = 2)]
 	public float GetPercentCompleteNormalized()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]

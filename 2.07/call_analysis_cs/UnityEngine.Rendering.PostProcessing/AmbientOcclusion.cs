@@ -28,29 +28,21 @@ public sealed class AmbientOcclusion : PostProcessEffectSettings
 
 	public AmbientOcclusionQualityParameter quality;
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Shader), Member = "get_isSupported")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "get_isAndroidOpenGL")]
 	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "get_scriptableRenderPipelineActive")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
-	[Calls(Type = typeof(Shader), Member = "get_isSupported")]
-	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Shader), Member = "get_isSupported")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "get_isAndroidOpenGL")]
+	[CallsUnknownMethods(Count = 2)]
 	public override bool IsEnabledAndSupported(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 11)]
 	[CallsUnknownMethods(Count = 1)]
 	public AmbientOcclusion()

@@ -15,65 +15,67 @@ public class UIButtonOffset : MonoBehaviour
 
 	private bool mStarted;
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(UIButtonOffset), Member = "OnHover")]
 	[CalledBy(Type = typeof(UIButtonOffset), Member = "OnPress")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(UIButtonOffset), Member = "OnHover")]
 	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
+	[Calls(Type = typeof(UICamera), Member = "IsHighlighted")]
 	[Calls(Type = typeof(UIButtonOffset), Member = "OnHover")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UICamera), Member = "IsHighlighted")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(TweenPosition), Member = "set_value")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(TweenPosition), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 4)]
 	[Calls(Type = typeof(UIButtonOffset), Member = "Start")]
-	[Calls(Type = typeof(TweenPosition), Member = "Begin")]
 	[Calls(Type = typeof(UICamera), Member = "IsHighlighted")]
+	[Calls(Type = typeof(TweenPosition), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnPress(bool isPressed)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(UIButtonOffset), Member = "OnSelect")]
 	[CalledBy(Type = typeof(UIButtonOffset), Member = "OnEnable")]
-	[Calls(Type = typeof(UIButtonOffset), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(UIButtonOffset), Member = "OnSelect")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UIButtonOffset), Member = "Start")]
 	[Calls(Type = typeof(TweenPosition), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnHover(bool isOver)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UIButtonOffset), Member = "OnHover")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnSelect(bool isSelected)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void RefreshPosition()
 	{
 	}

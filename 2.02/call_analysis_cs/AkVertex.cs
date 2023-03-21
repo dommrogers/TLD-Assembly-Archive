@@ -10,16 +10,16 @@ public class AkVertex : IDisposable
 
 	public float X
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
+		[CalledBy(Type = typeof(AkSurfaceReflector), Member = "AddGeometrySet")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(AkSurfaceReflector), Member = "AddGeometrySet")]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -33,12 +33,12 @@ public class AkVertex : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CalledBy(Type = typeof(AkSurfaceReflector), Member = "AddGeometrySet")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -51,29 +51,29 @@ public class AkVertex : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
+		[CalledBy(Type = typeof(AkSurfaceReflector), Member = "AddGeometrySet")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(AkSurfaceReflector), Member = "AddGeometrySet")]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	internal AkVertex(IntPtr cPtr, bool cMemoryOwn)
 	{
 	}
 
+	[CalledBy(Type = typeof(AkVertexArray), Member = "CloneIntoReferenceFromIntPtr")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(AkVertexArray), Member = "CloneIntoReferenceFromIntPtr")]
 	internal static IntPtr getCPtr(AkVertex obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -90,11 +90,11 @@ public class AkVertex : IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}
@@ -113,24 +113,24 @@ public class AkVertex : IDisposable
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkVertex_Clear")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkVertex_Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Clear()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkVertex_GetSizeOf")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static int GetSizeOf()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkVertex_Clone")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void Clone(AkVertex other)
 	{
 	}

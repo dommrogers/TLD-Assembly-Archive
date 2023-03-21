@@ -11,8 +11,8 @@ public abstract class BTComposite : BTNode
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Node), Member = "get_name")]
-		[CallsUnknownMethods(Count = 1)]
 		[Calls(Type = typeof(string), Member = "ToUpper")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -21,11 +21,11 @@ public abstract class BTComposite : BTNode
 
 	public sealed override int maxOutConnections
 	{
-		[CallerCount(Count = 16)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 16)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 

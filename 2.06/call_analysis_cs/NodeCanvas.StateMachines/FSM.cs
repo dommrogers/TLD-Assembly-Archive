@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
@@ -30,7 +31,7 @@ public class FSM : Graph
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CGetStateNames_003Eb__48_0(Node n)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
@@ -51,13 +52,13 @@ public class FSM : Graph
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CGetStateWithName_003Eb__0(Node n)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -78,25 +79,25 @@ public class FSM : Graph
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(ReflectionTools), Member = "SingleTempArgsArray")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		internal void _003CGatherDelegates_003Eb__0(IState m)
 		{
 		}
 
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(ReflectionTools), Member = "SingleTempArgsArray")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		internal void _003CGatherDelegates_003Eb__1(IState m)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(ReflectionTools), Member = "SingleTempArgsArray")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ReflectionTools), Member = "SingleTempArgsArray")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal void _003CGatherDelegates_003Eb__2(IState m)
 		{
 		}
@@ -118,16 +119,16 @@ public class FSM : Graph
 
 	public FSMState currentState
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 4)]
+		[CallerCount(Count = 5)]
 		private set
 		{
 		}
@@ -142,9 +143,9 @@ public class FSM : Graph
 		{
 			return null;
 		}
-		[CallerCount(Count = 8)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 12)]
 		private set
 		{
 		}
@@ -184,7 +185,7 @@ public class FSM : Graph
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -194,7 +195,7 @@ public class FSM : Graph
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -204,7 +205,7 @@ public class FSM : Graph
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -214,33 +215,34 @@ public class FSM : Graph
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public sealed override bool canAcceptVariableDrops
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public event Action<IState> onStateEnter
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CompilerGenerated]
-		[CallerCount(Count = 0)]
+		[CalledBy(Type = typeof(FSM), Member = "GatherDelegates")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 2)]
 		add
 		{
 		}
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CallsUnknownMethods(Count = 2)]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 2)]
 		remove
 		{
 		}
@@ -248,10 +250,11 @@ public class FSM : Graph
 
 	public event Action<IState> onStateUpdate
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CalledBy(Type = typeof(FSM), Member = "GatherDelegates")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 2)]
 		add
 		{
 		}
@@ -267,16 +270,17 @@ public class FSM : Graph
 	public event Action<IState> onStateExit
 	{
 		[CompilerGenerated]
-		[CallerCount(Count = 0)]
+		[CalledBy(Type = typeof(FSM), Member = "GatherDelegates")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CallsUnknownMethods(Count = 2)]
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 2)]
 		remove
 		{
 		}
@@ -300,8 +304,8 @@ public class FSM : Graph
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	protected override void OnGraphStarted()
 	{
 	}
@@ -314,20 +318,19 @@ public class FSM : Graph
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Graph), Member = "Stop")]
-	[Calls(Type = typeof(FSMState), Member = "CheckTransitions")]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Graph), Member = "Stop")]
+	[Calls(Type = typeof(FSMState), Member = "CheckTransitions")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	protected override void OnGraphUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Node), Member = "Reset")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnGraphStoped()
 	{
@@ -338,41 +341,44 @@ public class FSM : Graph
 	{
 	}
 
-	[CalledBy(Type = typeof(FSM), Member = "TriggerState")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(AnyState), Member = "Update")]
-	[CalledBy(Type = typeof(FSMState), Member = "CheckTransitions")]
-	[CalledBy(Type = typeof(FSMConnection), Member = "PerformTransition")]
 	[CalledBy(Type = typeof(NCUtils), Member = "EnterStateByTag")]
 	[CalledBy(Type = typeof(FSM), Member = "OnGraphUnpaused")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
-	[Calls(Type = typeof(Node), Member = "Reset")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CalledBy(Type = typeof(FSM), Member = "TriggerState")]
+	[CalledBy(Type = typeof(FSMConnection), Member = "PerformTransition")]
+	[CalledBy(Type = typeof(FSMState), Member = "CheckTransitions")]
+	[CalledBy(Type = typeof(AnyState), Member = "Update")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Node), Member = "Reset")]
+	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool EnterState(FSMState newState)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(FSMOwner), Member = "TriggerState")]
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(FSM), Member = "EnterState")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(FSM), Member = "GetStateWithName")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(FSM), Member = "GetStateWithName")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(FSM), Member = "EnterState")]
+	[CallsUnknownMethods(Count = 21)]
 	public FSMState TriggerState(string stateName)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(FSMOwner), Member = "GetStateNames")]
-	[CallsUnknownMethods(Count = 14)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Enumerable), Member = "Where")]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	public string[] GetStateNames()
 	{
 		return null;
@@ -380,7 +386,8 @@ public class FSM : Graph
 
 	[CalledBy(Type = typeof(FSM), Member = "TriggerState")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Find")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 12)]
 	public FSMState GetStateWithName(string name)
 	{
@@ -388,13 +395,22 @@ public class FSM : Graph
 	}
 
 	[CallerCount(Count = 0)]
-	[CallAnalysisFailed]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponents")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTGetMethod")]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTCreateDelegate")]
+	[Calls(Type = typeof(FSM), Member = "add_onStateEnter")]
+	[Calls(Type = typeof(FSM), Member = "add_onStateUpdate")]
+	[Calls(Type = typeof(FSM), Member = "add_onStateExit")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 35)]
 	private void GatherDelegates()
 	{
 	}
 
-	[Calls(Type = typeof(Graph), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Graph), Member = ".ctor")]
 	public FSM()
 	{
 	}

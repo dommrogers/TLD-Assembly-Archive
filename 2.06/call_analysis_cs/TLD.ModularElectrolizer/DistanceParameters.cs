@@ -20,13 +20,13 @@ public class DistanceParameters : ScriptableObject
 	[CallerCount(Count = 0)]
 	public float GetCutoffDistance(QualityLodBias quality)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetFadeDistance(QualityLodBias quality)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

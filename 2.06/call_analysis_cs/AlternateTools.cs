@@ -5,8 +5,8 @@ public class AlternateTools : MonoBehaviour
 {
 	public GameObject[] m_AlternateToolsList;
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public AlternateTools()
 	{
 	}

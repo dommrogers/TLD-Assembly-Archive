@@ -11,30 +11,28 @@ public class EnableObjectForXPMode : MonoBehaviour, IShouldDisableForCurrentMode
 
 	public GameObject m_ObjectToEnable;
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(EnableObjectForXPMode), Member = "ShouldDisableForCurrentMode")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Update()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(EnableObjectForXPMode), Member = "Update")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomLootXPType")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(GearItem), Member = "IsGunOrAmmoOrCasingOfType")]
-	[Calls(Type = typeof(GearItem), Member = "IsGunOrAmmoOrCasingOfType")]
-	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "IsGunOrAmmoOrCasingOfType")]
 	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomLootXPType")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool ShouldDisableForCurrentMode()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

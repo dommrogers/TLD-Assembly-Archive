@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -23,47 +22,46 @@ public class UIItemStorage : MonoBehaviour
 
 	public List<InvGameItem> items
 	{
-		[CallerCount(Count = 4)]
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(UIStorageSlot), Member = "Replace")]
-		[CalledBy(Type = typeof(UIStorageSlot), Member = "get_observedItem")]
-		[CalledBy(Type = typeof(UIItemStorage), Member = "Replace")]
 		[CalledBy(Type = typeof(UIItemStorage), Member = "GetItem")]
+		[CalledBy(Type = typeof(UIItemStorage), Member = "Replace")]
+		[CalledBy(Type = typeof(UIStorageSlot), Member = "get_observedItem")]
+		[CalledBy(Type = typeof(UIStorageSlot), Member = "Replace")]
+		[CallerCount(Count = 4)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIItemStorage), Member = "get_items")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public InvGameItem GetItem(int slot)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UIItemStorage), Member = "get_items")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIItemStorage), Member = "get_items")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	public InvGameItem Replace(int slot, InvGameItem item)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(NGUITools), Member = "AddChild")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(NGUITools), Member = "AddChild")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Bounds), Member = "Encapsulate")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Start()
 	{
 	}

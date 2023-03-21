@@ -15,16 +15,12 @@ public class FirstPersonFlashlight : MonoBehaviour
 
 	private Light m_LightOutdoorsHigh;
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(FlashlightItem), Member = "IsLit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(FlashlightItem), Member = "IsLit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}

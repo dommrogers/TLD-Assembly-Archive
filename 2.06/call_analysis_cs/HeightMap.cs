@@ -38,7 +38,7 @@ public class HeightMap : ScriptableObject
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -47,27 +47,28 @@ public class HeightMap : ScriptableObject
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 4)]
 	public void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(WeatherParticleManager.WTTask), Member = "UpdateParticle")]
-	[CalledBy(Type = typeof(WeatherParticleManager.WTTask), Member = "UpdateParticleNoTurbulence")]
-	[CalledBy(Type = typeof(WeatherParticleManager.WTTask), Member = "KillBox")]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(WeatherParticleManager.WTTask), Member = "NoWrap")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "NoWrap")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "KillPoint")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "KillBox")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "UpdateParticle")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "UpdateParticleNoTurbulence")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "Execute")]
+	[CallerCount(Count = 8)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(WeatherParticleManager.WTTask), Member = "KillPoint")]
+	[CallsUnknownMethods(Count = 3)]
 	public float GetHeight(Vector3 p)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -75,13 +76,13 @@ public class HeightMap : ScriptableObject
 	[CallsUnknownMethods(Count = 1)]
 	public static float GetHeightStaticNativeArray(Vector3 p, WeatherParticleManager.ParticleCollisionHeightMapInfo info, NativeArray<float> heights)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnsafeUtility), Member = "Free")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public void OnDisable()
 	{
@@ -106,17 +107,17 @@ public class HeightMap : ScriptableObject
 		return default(NativeArray<float>);
 	}
 
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnsafeUtility), Member = "Free")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
-	[DeduplicatedMethod]
-	[CallerCount(Count = 0)]
 	private void DisposeHeightsNativeArray()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private void AllocateHeightsNativeArray()
 	{
 	}

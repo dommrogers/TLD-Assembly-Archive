@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using ParadoxNotion;
@@ -28,7 +29,7 @@ public abstract class FSMState : Node, IState
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -38,7 +39,7 @@ public abstract class FSMState : Node, IState
 		[CallerCount(Count = 16)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -48,7 +49,7 @@ public abstract class FSMState : Node, IState
 		[CallerCount(Count = 16)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -64,8 +65,8 @@ public abstract class FSMState : Node, IState
 
 	public sealed override Alignment2x2 commentsAlignment
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(Alignment2x2);
@@ -103,10 +104,10 @@ public abstract class FSMState : Node, IState
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
@@ -114,14 +115,12 @@ public abstract class FSMState : Node, IState
 
 	public FSM FSM
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(AnyState), Member = "Update")]
-		[CalledBy(Type = typeof(AnyState), Member = "Update")]
+		[CalledBy(Type = typeof(MissionServicesManager), Member = "GetOwner")]
+		[CalledBy(Type = typeof(State_InvokeGraphBase), Member = "SetCompletionFlag")]
+		[CalledBy(Type = typeof(FSMState), Member = "CheckTransitions")]
 		[CalledBy(Type = typeof(AnyState), Member = "Update")]
 		[CallerCount(Count = 6)]
-		[CalledBy(Type = typeof(State_InvokeGraphBase), Member = "SetCompletionFlag")]
-		[CalledBy(Type = typeof(MissionServicesManager), Member = "GetOwner")]
-		[CalledBy(Type = typeof(FSMState), Member = "CheckTransitions")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -129,21 +128,22 @@ public abstract class FSMState : Node, IState
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(Enumerable), Member = "Cast")]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
 	public FSMConnection[] GetTransitions()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Finish()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Finish(bool inSuccess)
 	{
 	}
@@ -171,7 +171,7 @@ public abstract class FSMState : Node, IState
 	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogWarning")]
 	protected override bool CanConnectFromSource(Node sourceNode)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -179,52 +179,52 @@ public abstract class FSMState : Node, IState
 	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogWarning")]
 	protected override bool CanConnectToTarget(Node targetNode)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Task), Member = "Set")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	protected sealed override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(FSMState), Member = "CheckTransitions")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Update()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(FSMState), Member = "Update")]
 	[CalledBy(Type = typeof(FSM), Member = "OnGraphUpdate")]
-	[Calls(Type = typeof(FSM), Member = "EnterState")]
-	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[Calls(Type = typeof(FSMState), Member = "get_FSM")]
+	[CalledBy(Type = typeof(FSMState), Member = "Update")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
+	[Calls(Type = typeof(FSMState), Member = "get_FSM")]
+	[Calls(Type = typeof(FSM), Member = "EnterState")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 4)]
 	public bool CheckTransitions()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 6)]
 	protected sealed override void OnReset()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	protected virtual void OnInit()
 	{
 	}
@@ -247,15 +247,15 @@ public abstract class FSMState : Node, IState
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	protected virtual void OnPause()
 	{
 	}
 
-	[Calls(Type = typeof(Node), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Node), Member = ".ctor")]
 	protected FSMState()
 	{
 	}

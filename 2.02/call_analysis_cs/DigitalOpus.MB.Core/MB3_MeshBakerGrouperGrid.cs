@@ -9,31 +9,35 @@ namespace DigitalOpus.MB.Core;
 public class MB3_MeshBakerGrouperGrid : MB3_MeshBakerGrouperCore
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 101)]
+	[CallerCount(Count = 103)]
 	public MB3_MeshBakerGrouperGrid(GrouperData d)
 	{
 	}
 
-	[Calls(Type = typeof(Vector3), Member = "ToString")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Renderer), Member = "get_bounds")]
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Renderer), Member = "get_bounds")]
+	[Calls(Type = typeof(Vector3), Member = "ToString")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 33)]
 	public override Dictionary<string, List<Renderer>> FilterIntoGroups(List<GameObject> selection)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(Bounds), Member = "get_size")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Bounds), Member = "get_size")]
 	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Bounds), Member = "get_size")]
+	[CallsUnknownMethods(Count = 11)]
 	public override void DrawGizmos(Bounds sourceObjectBounds)
 	{
 	}

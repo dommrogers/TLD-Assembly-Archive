@@ -5,33 +5,33 @@ public class UnityHDRHandler : IHDRHandler
 {
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityHDRHandler), Member = "IsOutputtingHDR")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Initialize(float paperWhiteNits, float peakBrightnessNits)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(UnityHDRHandler), Member = "Initialize")]
 	[CalledBy(Type = typeof(UnityHDRHandler), Member = "SetPaperWhiteNits")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool IsOutputtingHDR()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Graphics), Member = "Blit")]
 	public void Render(RenderTexture source, RenderTexture destination)
 	{
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityHDRHandler), Member = "IsOutputtingHDR")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void SetPaperWhiteNits(float value)
 	{

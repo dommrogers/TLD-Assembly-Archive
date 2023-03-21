@@ -11,21 +11,23 @@ public class PlayableAssetSetAnimControllerState : PlayableAsset
 	public string m_ControllerAssetName;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(ScriptPlayable<>), Member = "Create")]
+	[Calls(Type = typeof(PlayableHandle), Member = "GetObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
 	{
 		return default(Playable);
 	}
 
-	[CallerCount(Count = 41)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 44)]
 	public void SetTrack(TLD_SetControllerStateTrack track)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 5)]
+	[CallerCount(Count = 9)]
 	public TLD_SetControllerStateTrack GetTrack()
 	{
 		return null;

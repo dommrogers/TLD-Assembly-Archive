@@ -25,8 +25,8 @@ public class Action_PlayOverlayAlphaVideo : ActionTask
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_PlayOverlayAlphaVideo()
 	{
 	}

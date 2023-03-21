@@ -31,7 +31,7 @@ public sealed class SessionModification : Handle
 	public const int SessionmodificationSetpermissionlevelApiLatest = 1;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SessionModification()
 	{
 	}
@@ -42,11 +42,11 @@ public sealed class SessionModification : Handle
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(SessionModificationAddAttributeOptionsInternal), Member = "Set")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SessionModificationAddAttributeOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result AddAttribute(SessionModificationAddAttributeOptions options)
 	{
 		return default(Result);
@@ -59,29 +59,29 @@ public sealed class SessionModification : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(SessionModificationRemoveAttributeOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result RemoveAttribute(SessionModificationRemoveAttributeOptions options)
 	{
 		return default(Result);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SessionModificationSetBucketIdOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result SetBucketId(SessionModificationSetBucketIdOptions options)
 	{
 		return default(Result);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(SessionModificationSetHostAddressOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result SetHostAddress(SessionModificationSetHostAddressOptions options)
 	{
@@ -89,29 +89,29 @@ public sealed class SessionModification : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(SessionModificationSetInvitesAllowedOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result SetInvitesAllowed(SessionModificationSetInvitesAllowedOptions options)
 	{
 		return default(Result);
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryRelease")]
-	[Calls(Type = typeof(SessionModificationSetJoinInProgressAllowedOptionsInternal), Member = "Set")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SessionModificationSetJoinInProgressAllowedOptionsInternal), Member = "Set")]
+	[Calls(Type = typeof(Helper), Member = "TryRelease")]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public Result SetJoinInProgressAllowed(SessionModificationSetJoinInProgressAllowedOptions options)
 	{
 		return default(Result);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(SessionModificationSetMaxPlayersOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result SetMaxPlayers(SessionModificationSetMaxPlayersOptions options)
 	{
@@ -119,9 +119,9 @@ public sealed class SessionModification : Handle
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(SessionModificationSetPermissionLevelOptionsInternal), Member = "Set")]
 	[Calls(Type = typeof(Helper), Member = "TryRelease")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public Result SetPermissionLevel(SessionModificationSetPermissionLevelOptions options)
 	{
@@ -134,8 +134,8 @@ public sealed class SessionModification : Handle
 	internal static extern Result EOS_SessionModification_AddAttribute(IntPtr handle, IntPtr options);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern void EOS_SessionModification_Release(IntPtr sessionModificationHandle);
 
 	[PreserveSig]
@@ -169,7 +169,7 @@ public sealed class SessionModification : Handle
 	internal static extern Result EOS_SessionModification_SetMaxPlayers(IntPtr handle, IntPtr options);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static extern Result EOS_SessionModification_SetPermissionLevel(IntPtr handle, IntPtr options);
 }

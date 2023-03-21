@@ -21,11 +21,11 @@ public class ACtion_SuppressExploreMusic : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(SceneMusicManager), Member = "ResetExploreMusicTimer")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{

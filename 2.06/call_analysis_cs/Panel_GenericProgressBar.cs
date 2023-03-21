@@ -81,46 +81,43 @@ public class Panel_GenericProgressBar : Panel_AutoReferenced
 	private bool m_MarkForCancel;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "SetStatusBarWidgetAlpha")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "ProgressBarEnded")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "UpdateActiveBars")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "CanUserCancelAction")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "UpdateProgressBarInterface")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "CanUserCancelAction")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "CanUserCancelAction")]
 	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "UpdateProgressBarInterface")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "UpdateActiveBars")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "ProgressBarEnded")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "SetStatusBarWidgetAlpha")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "UpdateActiveBars")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "UpdateActiveBars")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 9)]
 	public override void Enable(bool enable)
 	{
 	}
@@ -128,7 +125,7 @@ public class Panel_GenericProgressBar : Panel_AutoReferenced
 	[CallerCount(Count = 0)]
 	public bool IsFadingOutStatusBars()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -137,70 +134,70 @@ public class Panel_GenericProgressBar : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "DrinkFromWaterSupply")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Launch(string name, float seconds, float minutes, float randomFailureThreshold, AK.Wwise.Event audioEvent, string voiceName, bool supressHeavyBreathing, bool skipRestoreInHands, OnExitDelegate del)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UseFoodInventoryItem")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[CallsUnknownMethods(Count = 3)]
 	public void Launch(string name, float seconds, float minutes, float randomFailureThreshold, string audioName, string voiceName, bool supressHeavyBreathing, bool skipRestoreInHands, OnExitDelegate del)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyStandardTreatment")]
+	[CalledBy(Type = typeof(WolfDen), Member = "OnStartFire")]
+	[CalledBy(Type = typeof(Fire), Member = "PlayerBeginCreate")]
+	[CalledBy(Type = typeof(IceFishingHole), Member = "StartFishing")]
+	[CalledBy(Type = typeof(InteractiveLightsource), Member = "PerformInteraction")]
+	[CalledBy(Type = typeof(RockCache), Member = "OnBuild")]
+	[CalledBy(Type = typeof(RockCache), Member = "OnDismantle")]
 	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "DismantleFireCallback")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyStandardTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyAlternateTreatment")]
 	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
 	[CalledBy(Type = typeof(Panel_IceFishingHoleClear), Member = "UseTool")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TreatAfflictionWithFirstAid")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnRefuel")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRefuel")]
 	[CalledBy(Type = typeof(Panel_PickWater), Member = "TakeWater")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UseSmashableItem")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "OpenAndUseFoodInventoryItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TreatAfflictionWithFirstAid")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UseWaterPurificationItem")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnRefuel")]
-	[CalledBy(Type = typeof(RockCache), Member = "OnDismantle")]
-	[CalledBy(Type = typeof(RockCache), Member = "OnBuild")]
-	[CalledBy(Type = typeof(IceFishingHole), Member = "StartFishing")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallerCount(Count = 19)]
 	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "InitializeProgressBar")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(GearItem), Member = "IsLitFlare")]
 	[Calls(Type = typeof(GearItem), Member = "IsLitLamp")]
-	[CallerCount(Count = 19)]
-	[Calls(Type = typeof(GearItem), Member = "IsLitTorch")]
 	[Calls(Type = typeof(GearItem), Member = "IsLitMatch")]
-	[CalledBy(Type = typeof(Fire), Member = "PlayerBeginCreate")]
-	[CalledBy(Type = typeof(InteractiveLightsource), Member = "PerformInteraction")]
-	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitTorch")]
 	[Calls(Type = typeof(GearItem), Member = "IsLitFlashlight")]
-	[CalledBy(Type = typeof(WolfDen), Member = "OnStartFire")]
+	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Launch(string name, float seconds, float minutes, float randomFailureThreshold, bool skipRestoreInHands, OnExitDelegate del)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	private void PlayAudio(AK.Wwise.Event audioEvent, string voiceName, bool supressHeavyBreathing)
 	{
 	}
@@ -219,8 +216,8 @@ public class Panel_GenericProgressBar : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "ProgressBarEnded")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "ProgressBarEnded")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Cancel()
 	{
@@ -233,135 +230,127 @@ public class Panel_GenericProgressBar : Panel_AutoReferenced
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(Fire), Member = "UpdateFireAudio")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetSliderValue()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(IceFishingHole), Member = "UpdateFishingTime")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(IceFishingHole), Member = "MaybeCatchFish")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(IceFishingHole), Member = "Update")]
+	[CalledBy(Type = typeof(IceFishingHole), Member = "MaybeCatchFish")]
+	[CalledBy(Type = typeof(IceFishingHole), Member = "UpdateFishingTime")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool IsPaused()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public void Pause()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Resume()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateButtonLegend")]
+	[CalledBy(Type = typeof(AccelTimePopup), Member = "SetActive")]
+	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "UpdateButtonLegend")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "ItemProgressBarCheck")]
-	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateActionProgressBar")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateButtonLegend")]
 	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "Update")]
-	[CalledBy(Type = typeof(AccelTimePopup), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool CanUserCancelAction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void InitializeProgressBar()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	private void StopProgressBarAudio()
 	{
 	}
 
-	[CalledBy(Type = typeof(InterfaceManager), Member = "CloseOverlaysDueToSceneLoad")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "DoClickHoldCancel")]
-	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "UpdateProgressBarInterface")]
-	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "UpdateProgressBarInterface")]
-	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "Cancel")]
-	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnCancel")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(IceFishingHole), Member = "CancelFishing")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 9)]
 	[CalledBy(Type = typeof(AccelTimePopup), Member = "OnCancel")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "OnCancel")]
+	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "Cancel")]
+	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "UpdateProgressBarInterface")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "DoClickHoldCancel")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "CloseOverlaysDueToSceneLoad")]
+	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "UpdateFilteredInventoryList")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void ProgressBarEnded(bool success, bool playerCancel)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "ProgressBarEnded")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "ProgressBarEnded")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "ProgressBarEnded")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateProgressBarInterface()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 15)]
-	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Hunger), Member = "ItemBeingEatenAffectsThirst")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "AreSubtitlesVisible")]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "Enable")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "AreSubtitlesVisible")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Hunger), Member = "ItemBeingEatenAffectsThirst")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 15)]
 	private void UpdateActiveBars()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[CallsUnknownMethods(Count = 2)]
 	private void RestoreTimeOfDay()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
+	[CallsUnknownMethods(Count = 1)]
 	private void AccelerateTimeOfDay(float seconds, float minutes)
 	{
 	}
@@ -391,9 +380,9 @@ public class Panel_GenericProgressBar : Panel_AutoReferenced
 	}
 
 	[CalledBy(Type = typeof(Panel_GenericProgressBar), Member = "Update")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetStatusBarWidgetAlpha(float alpha)
 	{
 	}

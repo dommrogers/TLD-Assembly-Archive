@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using NodeCanvas.Framework.Internal;
@@ -25,21 +25,23 @@ public class SubDialogueTree : DTNode, IGraphAssignable, ISubParametersContainer
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public DialogueTree subTree
 	{
-		[CallerCount(Count = 2)]
-		[CallsUnknownMethods(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -49,118 +51,131 @@ public class SubDialogueTree : DTNode, IGraphAssignable, ISubParametersContainer
 	{
 		[DeduplicatedMethod]
 		[CallerCount(Count = 2)]
-		[CallsUnknownMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 3)]
+		[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private Graph[] NodeCanvas_002EFramework_002EIGraphAssignable_002EGetInstances()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private BBParameter[] NodeCanvas_002EFramework_002EISubParametersContainer_002EGetSubParameters()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(Node), Member = "Error")]
-	[Calls(Type = typeof(Graph), Member = "StartGraph")]
-	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
-	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
+	[Calls(Type = typeof(NCUtils), Member = "AddBlackboardMembersIfRequired")]
+	[Calls(Type = typeof(Graph), Member = "set_blackboard")]
+	[Calls(Type = typeof(SubDialogueTree), Member = "CheckInstance")]
 	[Calls(Type = typeof(SubDialogueTree), Member = "SetActorParametersMapping")]
 	[Calls(Type = typeof(SubDialogueTree), Member = "SetVariablesMapping")]
-	[Calls(Type = typeof(Graph), Member = "set_blackboard")]
-	[Calls(Type = typeof(NCUtils), Member = "AddBlackboardMembersIfRequired")]
-	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(SubDialogueTree), Member = "CheckInstance")]
+	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
+	[Calls(Type = typeof(Graph), Member = "StartGraph")]
+	[Calls(Type = typeof(Node), Member = "Error")]
+	[CallsUnknownMethods(Count = 9)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
 	}
 
-	[Calls(Type = typeof(DialogueTree), Member = "SetActorReference")]
 	[CalledBy(Type = typeof(SubDialogueTree), Member = "OnExecute")]
-	[Calls(Type = typeof(DialogueTree.ActorParameter), Member = "get_actor")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(DialogueTree), Member = "GetParameterByID")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(DialogueTree), Member = "GetParameterByID")]
+	[Calls(Type = typeof(DialogueTree.ActorParameter), Member = "get_actor")]
+	[Calls(Type = typeof(DialogueTree), Member = "SetActorReference")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private void SetActorParametersMapping()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Graph), Member = "get_blackboard")]
 	[CalledBy(Type = typeof(SubDialogueTree), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 9)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Graph), Member = "get_blackboard")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void SetVariablesMapping()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnSubDialogueFinish(bool success)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "ContainsValue")]
 	[Calls(Type = typeof(Graph), Member = "Stop")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnGraphStoped()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "ContainsValue")]
 	[Calls(Type = typeof(Graph), Member = "Pause")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnGraphPaused()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "ContainsValue")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool IsInstance(DialogueTree dt)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(SubDialogueTree), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "ContainsValue")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Graph), Member = "Clone")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void CheckInstance()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(DTNode), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 16)]
 	public SubDialogueTree()
 	{

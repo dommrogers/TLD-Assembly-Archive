@@ -5,7 +5,7 @@ namespace Epic.OnlineServices.Leaderboards;
 public class GetLeaderboardDefinitionCountOptions
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public GetLeaderboardDefinitionCountOptions()
 	{
 	}

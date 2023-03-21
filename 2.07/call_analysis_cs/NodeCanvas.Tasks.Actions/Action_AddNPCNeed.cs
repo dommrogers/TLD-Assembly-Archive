@@ -14,30 +14,32 @@ public class Action_AddNPCNeed : ActionTask
 
 	protected override string info
 	{
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		[Calls(Type = typeof(Object), Member = "get_name")]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(TrustManager), Member = "GetNeedTracker")]
+	[Calls(Type = typeof(NPC_NeedTracker), Member = "AddNeed")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(NPC_NeedTracker), Member = "AddNeed")]
-	[Calls(Type = typeof(TrustManager), Member = "GetNeedTracker")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(NPC_NeedTracker), Member = "AddNeed")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsUnknownMethods(Count = 1)]
 	public Action_AddNPCNeed()
 	{
 	}

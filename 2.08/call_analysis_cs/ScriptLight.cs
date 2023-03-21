@@ -76,9 +76,10 @@ public class ScriptLight : MonoBehaviour, ITimeControl
 	private static List<ScriptLight> s_ActiveScriptLights;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
-	[CallsUnknownMethods(Count = 11)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 10)]
 	public void Awake()
 	{
 	}
@@ -104,15 +105,13 @@ public class ScriptLight : MonoBehaviour, ITimeControl
 	{
 	}
 
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	public void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(ScriptLight), Member = "GetFadeDistanceValue")]
-	[Calls(Type = typeof(ScriptLight), Member = "UpdateLights")]
 	[Calls(Type = typeof(ScriptLight), Member = "GetFadeDistanceValue")]
 	[Calls(Type = typeof(ScriptLight), Member = "UpdateLights")]
 	[Calls(Type = typeof(ScriptLight), Member = "Update_TurnedOff")]
@@ -125,25 +124,26 @@ public class ScriptLight : MonoBehaviour, ITimeControl
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsTurnedOff()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Reset()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
 	public static string SerializeAll()
 	{
@@ -151,19 +151,21 @@ public class ScriptLight : MonoBehaviour, ITimeControl
 	}
 
 	[CalledBy(Type = typeof(LightDistanceCull), Member = "Start")]
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public static ScriptLight GetScriptLight(Light l)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void DeserializeAll(string text)
 	{
@@ -176,10 +178,10 @@ public class ScriptLight : MonoBehaviour, ITimeControl
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(ScriptLight), Member = "LateUpdate")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update_TurnedOff()
 	{
 	}
@@ -190,28 +192,26 @@ public class ScriptLight : MonoBehaviour, ITimeControl
 	{
 	}
 
+	[CalledBy(Type = typeof(ScriptLight), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(ScriptLight), Member = "Update_FadeOut")]
-	[CalledBy(Type = typeof(ScriptLight), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(ScriptLight), Member = "LateUpdate")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateLights(float fadeValue)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(ScriptLight), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(ScriptLight), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(ScriptLight), Member = "Update_FadeOut")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 7)]
 	private float GetFadeDistanceValue()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -220,11 +220,11 @@ public class ScriptLight : MonoBehaviour, ITimeControl
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	private static ScriptLight FindActiveScriptLightById(string guid)
 	{
 		return null;

@@ -31,60 +31,54 @@ public class PropertyBinding : MonoBehaviour
 	private object mLastValue;
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
 	private void LateUpdate()
 	{
 	}
 
-	[Calls(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PropertyBinding), Member = "UpdateTarget")]
 	private void FixedUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PropertyReference), Member = "Reset")]
-	[Calls(Type = typeof(PropertyReference), Member = "Reset")]
 	private void OnValidate()
 	{
 	}
 
-	[Calls(Type = typeof(PropertyReference), Member = "GetPropertyType")]
-	[Calls(Type = typeof(PropertyReference), Member = "GetPropertyType")]
-	[Calls(Type = typeof(PropertyReference), Member = "get_isValid")]
 	[ContextMenu("Update Now")]
-	[Calls(Type = typeof(PropertyReference), Member = "get_isValid")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(PropertyReference), Member = "Get")]
 	[CalledBy(Type = typeof(PropertyBinding), Member = "Start")]
-	[Calls(Type = typeof(PropertyReference), Member = "Get")]
-	[Calls(Type = typeof(PropertyReference), Member = "Get")]
 	[CalledBy(Type = typeof(PropertyBinding), Member = "Update")]
 	[CalledBy(Type = typeof(PropertyBinding), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(PropertyBinding), Member = "FixedUpdate")]
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PropertyReference), Member = "get_isValid")]
+	[Calls(Type = typeof(PropertyReference), Member = "GetPropertyType")]
 	[Calls(Type = typeof(PropertyReference), Member = "Get")]
 	[Calls(Type = typeof(PropertyReference), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void UpdateTarget()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public PropertyBinding()
 	{
 	}

@@ -14,10 +14,10 @@ internal struct UserLoginInfoInternal : ISettable, IDisposable
 	public string DisplayName
 	{
 		[CalledBy(Type = typeof(UserLoginInfo), Member = "Set")]
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(UserLoginInfo), Member = "Set")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -25,8 +25,8 @@ internal struct UserLoginInfoInternal : ISettable, IDisposable
 		[CalledBy(Type = typeof(UserLoginInfoInternal), Member = "Set")]
 		[CalledBy(Type = typeof(UserLoginInfoInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -40,15 +40,15 @@ internal struct UserLoginInfoInternal : ISettable, IDisposable
 
 	[CalledBy(Type = typeof(LoginOptionsInternal), Member = "set_UserLoginInfo")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UserLoginInfoInternal), Member = "set_DisplayName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

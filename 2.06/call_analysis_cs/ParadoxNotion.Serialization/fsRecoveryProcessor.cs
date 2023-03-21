@@ -24,7 +24,7 @@ public class fsRecoveryProcessor<TCanProcess, TMissing> : fsObjectProcessor wher
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003COnBeforeDeserialize_003Eb__0(KeyValuePair<string, fsData> kvp)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -68,31 +68,31 @@ public class fsRecoveryProcessor<TCanProcess, TMissing> : fsObjectProcessor wher
 	[CallsUnknownMethods(Count = 1)]
 	public override bool CanProcess(Type type)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(fsData), Member = "get_AsString")]
-	[Calls(Type = typeof(fsData), Member = "get_AsDictionary")]
-	[Calls(Type = typeof(fsJsonParser), Member = "Parse")]
-	[Calls(Type = typeof(fsData), Member = "get_AsString")]
-	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(fsData), Member = "get_AsString")]
-	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
-	[Calls(Type = typeof(fsData), Member = "get_IsDictionary")]
-	[CallsDeduplicatedMethods(Count = 17)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsData), Member = "get_IsDictionary")]
+	[Calls(Type = typeof(fsData), Member = "Cast")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
+	[Calls(Type = typeof(fsData), Member = "get_AsString")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsUnknownMethods(Count = 72)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(fsJsonParser), Member = "Parse")]
+	[Calls(Type = typeof(fsData), Member = "get_AsDictionary")]
+	[Calls(Type = typeof(Enumerable), Member = "Where")]
+	[Calls(Type = typeof(Func<, >), Member = ".ctor")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 69)]
 	public override void OnBeforeDeserialize(Type storageType, ref fsData data)
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public override void OnAfterDeserialize(Type storageType, object instance)
 	{
 	}

@@ -25,75 +25,76 @@ public class Log : MonoBehaviour
 
 	private static LogSaveDataProxy m_LogSaveDataProxy;
 
-	[Calls(Type = typeof(Log), Member = "LogEndOfDayInfo")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Log), Member = "AddCurrentRegion")]
+	[Calls(Type = typeof(Log), Member = "LogEndOfDayInfo")]
 	[CallsUnknownMethods(Count = 2)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataForEspisodeMigration")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildDailyList")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateNotesPage")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateDailyStatsPage")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Log), Member = "LockInTodaysValues")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateNotesPage")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "BuildDailyList")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Log), Member = "LockInTodaysValues")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	public LogDayInfo GetInfoForDay(int dayNumber)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "CheckForNotesChange")]
+	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 4)]
 	public void EnterNotesForDay(string notes, int dayNumber)
 	{
 	}
 
+	[CallerCount(Count = 24)]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
-	[CallerCount(Count = 24)]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 2)]
 	public void AddAffliction(AfflictionType affType, string causeLocId)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(DisplayLocationLabel), Member = "OnTriggerEnter")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetLocIDForScene")]
+	[CalledBy(TypeFullName = "HUDManager.<WaitToShowLocationReveal>d__27", Member = "MoveNext")]
 	[CalledBy(Type = typeof(HUDManager), Member = "TrackIndoorLocation")]
-	[CalledBy(Type = typeof(HUDManager._003CWaitToShowLocationReveal_003Ed__27), Member = "MoveNext")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetRegionForScene")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Utils), Member = "SceneIsTransition")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 3)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(Utils), Member = "SceneIsTransition")]
 	[Calls(Type = typeof(Utils), Member = "InferOutdoorSceneName")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetRegionForScene")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetLocIDForScene")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public void AddLocation(string locationName)
 	{
 	}
@@ -110,28 +111,28 @@ public class Log : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableDeathView")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Log), Member = "GetInfoForDay")]
-	[Calls(Type = typeof(StatContainer), Member = "GetValue")]
 	[CalledBy(Type = typeof(Log), Member = "LogEndOfDayInfo")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnableDeathView")]
+	[CalledBy(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(StatContainer), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 3)]
 	public void LockInTodaysValues()
 	{
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Log), Member = "LogEndOfDayInfo")]
 	[CalledBy(Type = typeof(Log), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "GetRegionSpriteNameFromSaveSlotInfo")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetRegionForScene")]
-	[Calls(Type = typeof(Utils), Member = "InferOutdoorSceneName")]
-	[Calls(Type = typeof(Utils), Member = "SceneIsTransition")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Log), Member = "LogEndOfDayInfo")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(Utils), Member = "SceneIsTransition")]
+	[Calls(Type = typeof(Utils), Member = "InferOutdoorSceneName")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetRegionForScene")]
+	[Calls(Type = typeof(Utils), Member = "GetRegionSpriteNameFromSaveSlotInfo")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void AddCurrentRegion()
 	{
 	}
@@ -149,13 +150,13 @@ public class Log : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Log), Member = "MaybeLogEndOfDayInfo")]
 	[CalledBy(Type = typeof(Log), Member = "Update")]
+	[CalledBy(Type = typeof(Log), Member = "MaybeLogEndOfDayInfo")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Log), Member = "LockInTodaysValues")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Log), Member = "AddCurrentRegion")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void LogEndOfDayInfo(int day)
 	{
 	}

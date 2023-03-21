@@ -17,8 +17,8 @@ public class BrowseCatalogResultPlugin
 	public static extern uint BrowseCatalogResult_TotalCount(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint BrowseCatalogResult_Items_Length(IntPtr self);
 
 	[PreserveSig]

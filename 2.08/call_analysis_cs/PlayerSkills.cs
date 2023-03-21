@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
@@ -18,24 +17,24 @@ public class PlayerSkills : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataForEspisodeMigration")]
-	[Calls(Type = typeof(Skill), Member = "SetPoints")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[Calls(Type = typeof(StatsManager), Member = "GetValue")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataForEspisodeMigration")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(StatsManager), Member = "GetValue")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
+	[Calls(Type = typeof(Skill), Member = "SetPoints")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(PlayerSkills), Member = "ShowSkillIncreaseMessages")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetSkill(PlayerSkillType playerSkillType)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -45,45 +44,42 @@ public class PlayerSkills : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Repair), Member = "UpdateSkillAfterRepair")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "CompleteRepair")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateSkillAfterCrafting")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "UpdateSkillAfterRepair")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "CompleteRepair")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "UpdateSkillAfterRepair")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void RollForSkillIncrease(PlayerSkillType playerSkillType, float chance, float increase = 1f)
 	{
 	}
 
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(HashSet<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(PlayerSkills), Member = "GetSkill")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsUnknownMethods(Count = 3)]
 	public void ShowSkillIncreaseMessages()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	private string GetIncreaseString(PlayerSkillType playerSkillType)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public PlayerSkills()
 	{
 	}

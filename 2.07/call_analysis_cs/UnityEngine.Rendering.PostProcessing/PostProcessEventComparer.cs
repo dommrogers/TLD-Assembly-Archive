@@ -11,13 +11,13 @@ internal struct PostProcessEventComparer : IEqualityComparer<PostProcessEvent>
 	[CallerCount(Count = 0)]
 	public bool Equals(PostProcessEvent x, PostProcessEvent y)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public int GetHashCode(PostProcessEvent obj)
 	{
-		return default(int);
+		return 0;
 	}
 }

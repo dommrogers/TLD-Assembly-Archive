@@ -31,18 +31,18 @@ public static class NowhereToHide
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	public static bool IsCurrentExperienceMode()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public static bool MatchesExperienceMode(ExperienceModeType xpMode)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(PostSpecialEvent), Member = "ManageSaveData")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SaveGameSystem), Member = "DeleteSaveFiles")]
-	[CalledBy(Type = typeof(PostSpecialEvent), Member = "ManageSaveData")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void PostEventDeleteSaveSlot(SaveSlotInfo ssi)
 	{

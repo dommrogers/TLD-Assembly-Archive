@@ -4,8 +4,8 @@ public class SafeCrackingSaveDataProxy
 {
 	public bool m_CrackedProxy;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public SafeCrackingSaveDataProxy()
 	{
 	}

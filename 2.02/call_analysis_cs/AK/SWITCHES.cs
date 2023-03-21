@@ -25,7 +25,7 @@ public class SWITCHES
 			public static uint NOAFFLICTION;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -34,7 +34,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public AFFLICTION()
 		{
 		}
@@ -77,7 +77,7 @@ public class SWITCHES
 			public static uint WANDERPAUSED;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -86,7 +86,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public AISTATE()
 		{
 		}
@@ -103,7 +103,7 @@ public class SWITCHES
 			public static uint MED;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -112,7 +112,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public ANXIETYLEVEL()
 		{
 		}
@@ -152,8 +152,8 @@ public class SWITCHES
 
 			public static uint WOODSOLID;
 
-			[CallerCount(Count = 2)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -161,8 +161,8 @@ public class SWITCHES
 
 		public static uint GROUP;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public AUDIOMATERIALS()
 		{
 		}
@@ -181,7 +181,7 @@ public class SWITCHES
 			public static uint MUSICGROUP4;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -190,7 +190,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public AUDIOTRACKTEST()
 		{
 		}
@@ -205,7 +205,7 @@ public class SWITCHES
 			public static uint AURORAON;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -214,7 +214,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public AURORA()
 		{
 		}
@@ -229,7 +229,7 @@ public class SWITCHES
 			public static uint AURORAELECTROLIZERON;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -238,7 +238,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public AURORAELECTROLIZERONOFF()
 		{
 		}
@@ -262,8 +262,8 @@ public class SWITCHES
 
 			public static uint WOOL;
 
-			[CallerCount(Count = 2)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -271,8 +271,8 @@ public class SWITCHES
 
 		public static uint GROUP;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public CLOTHINGTYPELOWER()
 		{
 		}
@@ -297,7 +297,7 @@ public class SWITCHES
 			public static uint WOOL;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -306,7 +306,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public CLOTHINGTYPEUPPER()
 		{
 		}
@@ -323,7 +323,7 @@ public class SWITCHES
 			public static uint STOVE;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -332,7 +332,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public COOKINGSURFACE()
 		{
 		}
@@ -347,7 +347,7 @@ public class SWITCHES
 			public static uint EQUIPPED;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -356,7 +356,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public CRAMPONS()
 		{
 		}
@@ -377,7 +377,7 @@ public class SWITCHES
 			public static uint KNIFE;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -385,8 +385,8 @@ public class SWITCHES
 
 		public static uint GROUP;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public CUTTINGTOOL()
 		{
 		}
@@ -401,7 +401,7 @@ public class SWITCHES
 			public static uint NIGHT;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -410,7 +410,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public DAYNIGHT()
 		{
 		}
@@ -427,7 +427,7 @@ public class SWITCHES
 			public static uint NEAR;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -436,7 +436,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public ENTITYDISTANCE()
 		{
 		}
@@ -452,8 +452,8 @@ public class SWITCHES
 
 			public static uint MED;
 
-			[CallerCount(Count = 2)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -462,7 +462,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public ENTITYINTENSITY()
 		{
 		}
@@ -477,7 +477,7 @@ public class SWITCHES
 			public static uint INTERIOR;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -485,8 +485,8 @@ public class SWITCHES
 
 		public static uint GROUP;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public ENVIRONMENT()
 		{
 		}
@@ -505,7 +505,7 @@ public class SWITCHES
 			public static uint SHOES;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -514,7 +514,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public FOOTWEAR()
 		{
 		}
@@ -529,7 +529,7 @@ public class SWITCHES
 			public static uint NEAR;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -538,7 +538,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public HOWLDISTANCE()
 		{
 		}
@@ -554,8 +554,8 @@ public class SWITCHES
 
 			public static uint MED;
 
-			[CallerCount(Count = 2)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -564,7 +564,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public ITEMCONDITION()
 		{
 		}
@@ -579,7 +579,7 @@ public class SWITCHES
 			public static uint DETONATED_TRUE;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -588,7 +588,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public NOISEMAKER()
 		{
 		}
@@ -603,7 +603,7 @@ public class SWITCHES
 			public static uint MALE;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -612,7 +612,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public PLAYERGENDER()
 		{
 		}
@@ -627,7 +627,7 @@ public class SWITCHES
 			public static uint STEAMPIPELEAK_ON;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -636,7 +636,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public STEAMPIPELEAK()
 		{
 		}
@@ -651,7 +651,7 @@ public class SWITCHES
 			public static uint STEAMPIPEPRESSURELEAK_ON;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -659,8 +659,8 @@ public class SWITCHES
 
 		public static uint GROUP;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public STEAMPIPEPRESSURELEAK()
 		{
 		}
@@ -675,7 +675,7 @@ public class SWITCHES
 			public static uint ON;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -684,7 +684,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public SWEARFILTER()
 		{
 		}
@@ -699,7 +699,7 @@ public class SWITCHES
 			public static uint ON;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -708,7 +708,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public TOGGLESWITCH()
 		{
 		}
@@ -725,7 +725,7 @@ public class SWITCHES
 			public static uint MED;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -734,7 +734,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public URGENCY()
 		{
 		}
@@ -748,8 +748,8 @@ public class SWITCHES
 
 			public static uint MISFIRE;
 
-			[CallerCount(Count = 2)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -757,8 +757,8 @@ public class SWITCHES
 
 		public static uint GROUP;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public WEAPONFIRE()
 		{
 		}
@@ -781,7 +781,7 @@ public class SWITCHES
 			public static uint SHELLNUM_06;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -790,7 +790,7 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public WEAPONSHELLNUMDROPPED()
 		{
 		}
@@ -817,7 +817,7 @@ public class SWITCHES
 			public static uint REVOLVER;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public SWITCH()
 			{
 			}
@@ -826,14 +826,14 @@ public class SWITCHES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public WEAPONTYPE()
 		{
 		}
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public SWITCHES()
 	{
 	}

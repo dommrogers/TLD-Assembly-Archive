@@ -6,8 +6,8 @@ public class DialogueSequenceProgressionInfo
 
 	public int m_CurrentProgressionIndex;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public DialogueSequenceProgressionInfo()
 	{
 	}

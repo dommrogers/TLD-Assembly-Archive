@@ -27,31 +27,31 @@ public class UIPlaySound : MonoBehaviour
 
 	private bool canPlay
 	{
-		[Calls(Type = typeof(Object), Member = "op_Equality")]
-		[CalledBy(Type = typeof(UIPlaySound), Member = "OnSelect")]
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(UIPlaySound), Member = "OnSelect")]
-		[CalledBy(Type = typeof(UIPlaySound), Member = "OnClick")]
-		[CalledBy(Type = typeof(UIPlaySound), Member = "OnPress")]
 		[CalledBy(Type = typeof(UIPlaySound), Member = "OnHover")]
-		[CallsDeduplicatedMethods(Count = 4)]
+		[CalledBy(Type = typeof(UIPlaySound), Member = "OnPress")]
+		[CalledBy(Type = typeof(UIPlaySound), Member = "OnClick")]
+		[CalledBy(Type = typeof(UIPlaySound), Member = "OnSelect")]
 		[CallerCount(Count = 5)]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
+		[Calls(Type = typeof(Object), Member = "op_Equality")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(NGUITools), Member = "PlaySound")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NGUITools), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NGUITools), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
@@ -65,27 +65,26 @@ public class UIPlaySound : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UIPlaySound), Member = "get_canPlay")]
 	[Calls(Type = typeof(NGUITools), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnPress(bool isPressed)
 	{
 	}
 
-	[Calls(Type = typeof(NGUITools), Member = "PlaySound")]
-	[Calls(Type = typeof(UIPlaySound), Member = "get_canPlay")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIPlaySound), Member = "get_canPlay")]
+	[Calls(Type = typeof(NGUITools), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnClick()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UIPlaySound), Member = "get_canPlay")]
-	[Calls(Type = typeof(UIPlaySound), Member = "get_canPlay")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIPlaySound), Member = "get_canPlay")]
 	[Calls(Type = typeof(NGUITools), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnSelect(bool isSelected)
 	{
 	}
@@ -97,8 +96,8 @@ public class UIPlaySound : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public UIPlaySound()
 	{
 	}

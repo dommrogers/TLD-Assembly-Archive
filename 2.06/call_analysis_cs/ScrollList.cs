@@ -73,22 +73,19 @@ public class ScrollList : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(ScrollList), Member = "RefreshVisibility")]
-	[Calls(Type = typeof(ScrollList), Member = "DoTweens")]
-	[Calls(Type = typeof(ScrollList), Member = "RefreshAll")]
-	[Calls(Type = typeof(ScrollList), Member = "DoTweens")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ScrollList), Member = "RefreshAll")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScrollList), Member = "RefreshAll")]
+	[Calls(Type = typeof(ScrollList), Member = "DoTweens")]
+	[Calls(Type = typeof(ScrollList), Member = "RefreshVisibility")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
 	[CallerCount(Count = 26)]
+	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Next()
 	{
 	}
@@ -104,200 +101,180 @@ public class ScrollList : MonoBehaviour
 	[CallerCount(Count = 3)]
 	public int GetTweenTargetIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScrollList), Member = "RefreshAll")]
+	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
 	public void SetTargetIndex(int index, bool animate = true)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsTweening()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(ScrollListButton), Member = "SetCallback")]
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(ScrollList), Member = "RefreshVisibility")]
-	[Calls(Type = typeof(ScrollList), Member = "RefreshScale")]
-	[Calls(Type = typeof(ScrollList), Member = "RefreshAlpha")]
-	[Calls(Type = typeof(ScrollList), Member = "RefreshPositioning")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(ScrollListButton), Member = "SetCallback")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 45)]
 	[CallerCount(Count = 24)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(ScrollListButton), Member = "SetCallback")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(ScrollList), Member = "RefreshPositioning")]
+	[Calls(Type = typeof(ScrollList), Member = "RefreshAlpha")]
+	[Calls(Type = typeof(ScrollList), Member = "RefreshScale")]
+	[Calls(Type = typeof(ScrollList), Member = "RefreshVisibility")]
+	[CallsDeduplicatedMethods(Count = 30)]
+	[CallsUnknownMethods(Count = 33)]
 	public void CreateList(int numObjects)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 31)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(ScrollList), Member = "RefreshScale")]
-	[Calls(Type = typeof(ScrollList), Member = "RefreshAlpha")]
-	[Calls(Type = typeof(ScrollList), Member = "RefreshPositioning")]
-	[Calls(Type = typeof(ScrollListButton), Member = "SetCallback")]
-	[Calls(Type = typeof(ScrollListButton), Member = "SetCallback")]
-	[Calls(Type = typeof(ScrollList), Member = "RefreshVisibility")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 36)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(ScrollListButton), Member = "SetCallback")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(ScrollList), Member = "RefreshPositioning")]
+	[Calls(Type = typeof(ScrollList), Member = "RefreshAlpha")]
+	[Calls(Type = typeof(ScrollList), Member = "RefreshScale")]
+	[Calls(Type = typeof(ScrollList), Member = "RefreshVisibility")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 28)]
+	[CallsUnknownMethods(Count = 31)]
 	public void CreateFromList(List<GameObject> list)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(DetailedStatsView), Member = "OnScrollBarPositionChanged")]
-	[CalledBy(Type = typeof(DetailedStatsView), Member = "Start")]
+	[CalledBy(Type = typeof(ScrollList), Member = "Update")]
 	[CalledBy(Type = typeof(ScrollList), Member = "SetTargetIndex")]
-	[CalledBy(Type = typeof(ScrollList), Member = "Update")]
-	[CalledBy(Type = typeof(ScrollList), Member = "Update")]
-	[CalledBy(Type = typeof(ScrollList), Member = "Update")]
-	[Calls(Type = typeof(ScrollList), Member = "RefreshScale")]
-	[Calls(Type = typeof(ScrollList), Member = "RefreshAlpha")]
-	[Calls(Type = typeof(ScrollList), Member = "RefreshPositioning")]
+	[CalledBy(Type = typeof(DetailedStatsView), Member = "Start")]
+	[CalledBy(Type = typeof(DetailedStatsView), Member = "OnScrollBarPositionChanged")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(ScrollList), Member = "RefreshPositioning")]
+	[Calls(Type = typeof(ScrollList), Member = "RefreshAlpha")]
+	[Calls(Type = typeof(ScrollList), Member = "RefreshScale")]
 	[Calls(Type = typeof(ScrollList), Member = "RefreshVisibility")]
+	[CallsUnknownMethods(Count = 1)]
 	private void RefreshAll()
 	{
 	}
 
-	[CalledBy(Type = typeof(ScrollList), Member = "CreateFromList")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "RefreshFuelSources")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "RefreshFuelSources")]
-	[CalledBy(Type = typeof(ScrollList), Member = "RefreshAll")]
 	[CalledBy(Type = typeof(ScrollList), Member = "CreateList")]
-	[Calls(Type = typeof(ScrollList), Member = "GetPositionForIndex")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(ScrollList), Member = "GetPositionForIndex")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(ScrollList), Member = "CreateFromList")]
+	[CalledBy(Type = typeof(ScrollList), Member = "RefreshAll")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "RefreshFuelSources")]
 	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(ScrollList), Member = "GetPositionForIndex")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void RefreshPositioning()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "RefreshFuelSources")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "RefreshFuelSources")]
-	[CalledBy(Type = typeof(ScrollList), Member = "RefreshAll")]
-	[CalledBy(Type = typeof(ScrollList), Member = "CreateFromList")]
-	[Calls(Type = typeof(ScrollList), Member = "GetAlphaForIndex")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(ScrollList), Member = "CreateList")]
+	[CalledBy(Type = typeof(ScrollList), Member = "CreateFromList")]
+	[CalledBy(Type = typeof(ScrollList), Member = "RefreshAll")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "RefreshFuelSources")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(ScrollList), Member = "GetAlphaForIndex")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void RefreshAlpha()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "RefreshFuelSources")]
-	[CalledBy(Type = typeof(ScrollList), Member = "RefreshAll")]
-	[CalledBy(Type = typeof(ScrollList), Member = "CreateFromList")]
 	[CalledBy(Type = typeof(ScrollList), Member = "CreateList")]
+	[CalledBy(Type = typeof(ScrollList), Member = "CreateFromList")]
+	[CalledBy(Type = typeof(ScrollList), Member = "RefreshAll")]
 	[CalledBy(Type = typeof(Panel_FeedFire), Member = "RefreshFuelSources")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void RefreshScale()
 	{
 	}
 
 	[CalledBy(Type = typeof(ScrollList), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "RefreshFuelSources")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "RefreshFuelSources")]
-	[CalledBy(Type = typeof(ScrollList), Member = "RefreshAll")]
-	[CalledBy(Type = typeof(ScrollList), Member = "CreateFromList")]
 	[CalledBy(Type = typeof(ScrollList), Member = "CreateList")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(ScrollList), Member = "SetObjectDepth")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(ScrollList), Member = "SetObjectDepth")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CalledBy(Type = typeof(ScrollList), Member = "CreateFromList")]
+	[CalledBy(Type = typeof(ScrollList), Member = "RefreshAll")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "RefreshFuelSources")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[Calls(Type = typeof(ScrollList), Member = "SetObjectDepth")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void RefreshVisibility()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(ScrollList), Member = "Update")]
-	[CalledBy(Type = typeof(ScrollList), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(ScrollList), Member = "DoScaleTween")]
-	[Calls(Type = typeof(ScrollList), Member = "DoScaleTween")]
-	[Calls(Type = typeof(ScrollList), Member = "DoScaleTween")]
-	[Calls(Type = typeof(ScrollList), Member = "DoScaleTween")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
+	[Calls(Type = typeof(ScrollList), Member = "GetOffsetForIndex")]
 	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
 	[Calls(Type = typeof(ScrollList), Member = "GetAlphaForIndex")]
-	[Calls(Type = typeof(ScrollList), Member = "GetOffsetForIndex")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
+	[Calls(Type = typeof(ScrollList), Member = "DoScaleTween")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DoTweens(bool increasedIndex)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(ScrollList), Member = "RefreshVisibility")]
-	[CalledBy(Type = typeof(ScrollList), Member = "RefreshVisibility")]
-	[CalledBy(Type = typeof(ScrollList), Member = "RefreshVisibility")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetObjectDepth(int objIndex, int depth)
 	{
 	}
 
+	[CalledBy(Type = typeof(ScrollList), Member = "RefreshPositioning")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(ScrollList), Member = "RefreshPositioning")]
-	[CalledBy(Type = typeof(ScrollList), Member = "RefreshPositioning")]
 	private Vector3 GetPositionForIndex(int index)
 	{
 		return default(Vector3);
 	}
 
+	[CalledBy(Type = typeof(ScrollList), Member = "RefreshAlpha")]
 	[CalledBy(Type = typeof(ScrollList), Member = "DoTweens")]
-	[CalledBy(Type = typeof(ScrollList), Member = "RefreshAlpha")]
 	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(ScrollList), Member = "RefreshAlpha")]
 	private float GetAlphaForIndex(int index)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(ScrollList), Member = "DoTweens")]
+	[CallerCount(Count = 1)]
 	private Vector3 GetOffsetForIndex(int index, bool increasingIndex)
 	{
 		return default(Vector3);
@@ -305,37 +282,37 @@ public class ScrollList : MonoBehaviour
 
 	[CalledBy(Type = typeof(ScrollList), Member = "DoTweens")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
 	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
 	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(ScrollList), Member = "DoTweens")]
-	[CalledBy(Type = typeof(ScrollList), Member = "DoTweens")]
-	[CalledBy(Type = typeof(ScrollList), Member = "DoTweens")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void DoScaleTween(int index, Vector3 fromVal, Vector3 toVal, float tweenTime)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 27)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponents")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateDurationAllTweens()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private void CreateOffsetVectors()
 	{
 	}
 
 	[CallerCount(Count = 29)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void CleanUp()
 	{

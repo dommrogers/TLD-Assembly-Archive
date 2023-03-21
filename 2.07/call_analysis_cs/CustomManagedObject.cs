@@ -9,16 +9,16 @@ public class CustomManagedObject : MonoBehaviour
 
 	private bool m_IsRegistered;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	private void OnValidate()
 	{
 	}
 
-	[Calls(Type = typeof(CustomManagedObject), Member = "UpdateManagedObject")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CustomManagedObject), Member = "UpdateManagedObject")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void PersistState()
 	{
 	}
@@ -30,20 +30,20 @@ public class CustomManagedObject : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(CustomManagedObject), Member = "PersistState")]
+	[CalledBy(Type = typeof(CustomManagedObject), Member = "PersistState")]
 	[CalledBy(Type = typeof(TLD_ActivationTrack), Member = "Stop")]
-	[CalledBy(Type = typeof(CustomManagedObject), Member = "PersistState")]
-	[CalledBy(Type = typeof(CustomManagedObject), Member = "PersistState")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "AddCustomManagedObject")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateManagedObject(bool managedState)
 	{
 	}

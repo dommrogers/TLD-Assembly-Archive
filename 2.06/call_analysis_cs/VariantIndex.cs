@@ -25,9 +25,9 @@ public class VariantIndex : StateMachineBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public VariantIndex()
 	{
 	}

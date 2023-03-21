@@ -15,16 +15,16 @@ public class ActivationParameters : ScriptableObject
 	[CallsUnknownMethods(Count = 1)]
 	public float GetRandomActivationThreshold()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetRandomStableThreshold()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]

@@ -16,26 +16,26 @@ internal struct ColorCIELab
 	{
 	}
 
-	[Calls(Type = typeof(ColorCIELab), Member = "FromXYZ")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ColorCIELab), Member = "FromXYZ")]
 	public static implicit operator ColorCIELab(ColorXYZ xyz)
 	{
 		return default(ColorCIELab);
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public static implicit operator ColorCIELab(ColorCIELCh lch)
 	{
 		return default(ColorCIELab);
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(ColorCIELab), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(ColorCIELCh), Member = "FromRGBA")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(ColorCIELab), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 3)]
 	private static ColorCIELab FromXYZ(ColorXYZ xyz)
 	{
 		return default(ColorCIELab);
@@ -50,8 +50,8 @@ internal struct ColorCIELab
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 37)]
 	public override string ToString()
 	{

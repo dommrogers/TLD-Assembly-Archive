@@ -9,31 +9,29 @@ public class KeyRebindingButton : MonoBehaviour
 
 	public string m_ActionIDString;
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Start()
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(InputManager), Member = "ConvertKeycodeToLabel")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnKeyRebindButtonPress")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnGUI")]
 	[CalledBy(Type = typeof(InputSystemRewired), Member = "UpdateKeyBindingTable")]
-	[CalledBy(Type = typeof(InputSystemRewired), Member = "UpdateKeyBindingTable")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(InputManager), Member = "ConvertKeycodeToLabel")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetValueLabel(string keycode)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetSelected(bool selected)
 	{
 	}

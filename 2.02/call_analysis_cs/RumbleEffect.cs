@@ -33,7 +33,7 @@ public class RumbleEffect : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsPlaying()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -41,13 +41,12 @@ public class RumbleEffect : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(RumbleEffectManager), Member = "Update")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void ManualUpdate()
 	{
 	}
@@ -56,14 +55,14 @@ public class RumbleEffect : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetHighFrequencyValue()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetLowFrequencyValue()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]

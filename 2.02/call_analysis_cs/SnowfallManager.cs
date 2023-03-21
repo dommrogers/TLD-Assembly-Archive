@@ -16,39 +16,26 @@ public class SnowfallManager
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(SnowPatchManager), Member = "Start")]
-	[Calls(Type = typeof(SnowfallManager), Member = "RegisterRecord")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[Calls(Type = typeof(SnowfallManager), Member = "RegisterRecord")]
-	[Calls(Type = typeof(SnowfallManager), Member = "RegisterRecord")]
-	[Calls(Type = typeof(SnowfallManager), Member = "RegisterRecord")]
-	[Calls(Type = typeof(SnowfallManager), Member = "RegisterRecord")]
-	[Calls(Type = typeof(SnowfallManager), Member = "RegisterRecord")]
-	[Calls(Type = typeof(SnowfallManager), Member = "RegisterRecord")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SnowfallManager), Member = "RegisterRecord")]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 14)]
 	public SnowfallManager()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(SnowfallManager), Member = ".ctor")]
-	[CalledBy(Type = typeof(SnowfallManager), Member = ".ctor")]
-	[CalledBy(Type = typeof(SnowfallManager), Member = ".ctor")]
 	[CalledBy(Type = typeof(SnowfallManager), Member = ".ctor")]
 	[CalledBy(Type = typeof(SnowfallManager), Member = "Deserialize")]
-	[CalledBy(Type = typeof(SnowfallManager), Member = ".ctor")]
-	[CalledBy(Type = typeof(SnowfallManager), Member = ".ctor")]
-	[CalledBy(Type = typeof(SnowfallManager), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 9)]
-	[CalledBy(Type = typeof(SnowfallManager), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private SnowfallRecord RegisterRecord(string scene, float outOfSceneRateScalar)
 	{
 		return null;
@@ -56,29 +43,29 @@ public class SnowfallManager
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
 	[CalledBy(Type = typeof(SnowPatchManager), Member = "SerializeGlobal")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(SnowfallRecord), Member = "Serialize")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(SnowPatchManager), Member = "DeserializeGlobal")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(SnowfallRecord), Member = "Deserialize")]
-	[Calls(Type = typeof(SnowfallManager), Member = "RegisterRecord")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(SnowPatchManager), Member = "DeserializeGlobal")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(SnowfallManager), Member = "RegisterRecord")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(SnowfallRecord), Member = "Deserialize")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	public void Deserialize(string text)
 	{
 	}
@@ -90,9 +77,10 @@ public class SnowfallManager
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(SnowPatchManager), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void Update(float snowAdd)
 	{

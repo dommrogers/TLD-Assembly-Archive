@@ -34,7 +34,6 @@ public static class PlayAudioSimpleManager
 
 		[CalledBy(Type = typeof(PlayAudioSimpleManager), Member = ".cctor")]
 		[CallerCount(Count = 2)]
-		[CalledBy(Type = typeof(PlayAudioSimpleManager), Member = ".cctor")]
 		public Counters()
 		{
 		}
@@ -66,13 +65,14 @@ public static class PlayAudioSimpleManager
 	{
 	}
 
-	[Calls(Type = typeof(StringBuilder), Member = "AppendFormat")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(HUDManager), Member = "UpdateDebugLines")]
-	[Calls(Type = typeof(StringBuilder), Member = "AppendFormat")]
-	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
 	[Calls(Type = typeof(StringBuilder), Member = "AppendFormat")]
+	[Calls(Type = typeof(float), Member = "ToString")]
+	[Calls(Type = typeof(float), Member = "ToString")]
+	[Calls(Type = typeof(StringBuilder), Member = "AppendFormat")]
+	[CallsUnknownMethods(Count = 7)]
 	public static string GetDebugText()
 	{
 		return null;
@@ -80,58 +80,63 @@ public static class PlayAudioSimpleManager
 
 	[CalledBy(Type = typeof(GameAudioManager), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(BaseTracker), Member = "MaybeStartOrStop")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	public static void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(GameManager), Member = "ResetLists")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void Reset()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(BaseTracker), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(PlayAudioSimple), Member = "Start")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BaseTracker), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public static void Add(GameObject go, AK.Wwise.Event eventReference, float radius, bool stopWhenDisabled, bool position)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(PlayAmbientSimple), Member = "Start")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(AmbientTracker), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void AddAmbient(GameObject go, AK.Wwise.Event akEvent, MultiPositionTypeLabel multiposition, float radius, bool stopWhenDisabled)
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayVoiceSimple), Member = "Start")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(BaseTracker), Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CalledBy(Type = typeof(PlayVoiceSimple), Member = "Start")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public static void AddVoice(GameObject go, string eventID, float radius, bool stopWhenDisabled, bool position)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(PlayAmbientSimple), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(PlayAudioSimple), Member = "OnDestroy")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void Remove(GameObject go, AK.Wwise.Event akEvent)
 	{
 	}

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
@@ -18,7 +17,7 @@ public class Action_EnableObjects : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+		[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsUnknownMethods(Count = 1)]
 		get
@@ -27,22 +26,23 @@ public class Action_EnableObjects : ActionTask
 		}
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "AddCustomManagedObject")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "AddCustomManagedObject")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "AddCustomManagedObject")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(NCUtils), Member = "GetHostState")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveCustomManagedObject")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveCustomManagedObject")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 4)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	protected override void OnStop()
 	{
 	}

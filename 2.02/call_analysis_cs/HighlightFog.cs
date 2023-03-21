@@ -68,82 +68,71 @@ public class HighlightFog : MonoBehaviour
 	private static readonly int s_TintColorPropertyID;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(HighlightFog), Member = "UpdateAngleAndPosition")]
 	[Calls(Type = typeof(HighlightFog), Member = "UpdateTOD")]
 	[Calls(Type = typeof(HighlightFog), Member = "UpdateDrive")]
 	[Calls(Type = typeof(HighlightFog), Member = "UpdateMaterial")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 9)]
 	private void Start()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(HighlightFog), Member = "UpdateAngleAndPosition")]
+	[Calls(Type = typeof(HighlightFog), Member = "UpdateTOD")]
 	[Calls(Type = typeof(HighlightFog), Member = "UpdateDrive")]
 	[Calls(Type = typeof(HighlightFog), Member = "UpdateMaterial")]
-	[Calls(Type = typeof(HighlightFog), Member = "UpdateTOD")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(HighlightFog), Member = "UpdateAngleAndPosition")]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsUnknownMethods(Count = 18)]
-	[CalledBy(Type = typeof(HighlightFog), Member = "Update")]
 	[CalledBy(Type = typeof(HighlightFog), Member = "Start")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
-	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 10)]
+	[CalledBy(Type = typeof(HighlightFog), Member = "Update")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
+	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 18)]
 	private void UpdateAngleAndPosition()
 	{
 	}
 
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
-	[CalledBy(Type = typeof(HighlightFog), Member = "Update")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
 	[CalledBy(Type = typeof(HighlightFog), Member = "Start")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsNight")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
+	[CalledBy(Type = typeof(HighlightFog), Member = "Update")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsNight")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateTOD()
 	{
 	}
 
-	[CalledBy(Type = typeof(HighlightFog), Member = "Update")]
 	[CalledBy(Type = typeof(HighlightFog), Member = "Start")]
-	[CallsUnknownMethods(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(HighlightFog), Member = "Update")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateDrive()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(HighlightFog), Member = "Start")]
 	[CalledBy(Type = typeof(HighlightFog), Member = "Update")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 9)]
 	private void UpdateMaterial()
 	{

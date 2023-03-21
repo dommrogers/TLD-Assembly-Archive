@@ -1,6 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
-using NodeCanvas.DialogueTrees;
 using NodeCanvas.Framework.Internal;
 using NodeCanvas.Tasks.Actions;
 using UnityEngine;
@@ -14,19 +14,19 @@ public class GlobalBlackboard : Blackboard
 		public string name;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass6_0()
 		{
 		}
 
-		[Calls(Type = typeof(string), Member = "EqualsHelper")]
-		[Calls(Type = typeof(Blackboard), Member = "get_name")]
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Blackboard), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "EqualsHelper")]
+		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CFind_003Eb__0(GlobalBlackboard b)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
@@ -36,7 +36,7 @@ public class GlobalBlackboard : Blackboard
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CFind_003Eb__1(GlobalBlackboard b)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
@@ -46,7 +46,7 @@ public class GlobalBlackboard : Blackboard
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CFind_003Eb__2(GlobalBlackboard b)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -62,88 +62,94 @@ public class GlobalBlackboard : Blackboard
 		{
 			return null;
 		}
-		[Calls(Type = typeof(GlobalBlackboard), Member = "IsUnique")]
-		[CallsUnknownMethods(Count = 4)]
-		[CalledBy(Type = typeof(Action_InvokeConcurrentGraph), Member = "OnExecute")]
-		[Calls(Type = typeof(Debug), Member = "LogError")]
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CalledBy(Type = typeof(GlobalBlackboard), Member = "Create")]
-		[Calls(Type = typeof(string), Member = "EqualsHelper")]
-		[Calls(Type = typeof(Blackboard), Member = "get_name")]
-		[CallsDeduplicatedMethods(Count = 4)]
+		[CalledBy(Type = typeof(Action_InvokeConcurrentGraph), Member = "OnExecute")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Blackboard), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "EqualsHelper")]
 		[Calls(Type = typeof(Object), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(GlobalBlackboard), Member = "IsUnique")]
+		[Calls(Type = typeof(Debug), Member = "LogError")]
+		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 4)]
 		set
 		{
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
 	[Calls(Type = typeof(GlobalBlackboard), Member = "set_name")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 9)]
 	public static GlobalBlackboard Create()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 33)]
-	[CalledBy(Type = typeof(Statement._003C_003Ec__DisplayClass21_0), Member = "<BlackboardReplace>b__0")]
-	[CalledBy(Type = typeof(BBParameter<>), Member = "CheckForPromotedVariable")]
-	[CalledBy(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-	[CalledBy(Type = typeof(BBParameter), Member = "ResolveReference")]
-	[CalledBy(Type = typeof(GameManager), Member = "ApplyTransferData")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[CalledBy(Type = typeof(GameManager), Member = "InstantiateStoryManager")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(GameManager), Member = "SetupTransferData")]
+	[CalledBy(Type = typeof(GameManager), Member = "ApplyTransferData")]
+	[CalledBy(Type = typeof(BBParameter), Member = "ResolveReference")]
+	[CalledBy(Type = typeof(BBParameter), Member = "PromoteToVariable")]
+	[CalledBy(Type = typeof(BBParameter<>), Member = "CheckForPromotedVariable")]
+	[CalledBy(TypeFullName = "NodeCanvas.DialogueTrees.Statement.<>c__DisplayClass21_0", Member = "<BlackboardReplace>b__0")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(List<>), Member = "Find")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Object), Member = "FindObjectsOfType")]
+	[Calls(Type = typeof(Enumerable), Member = "Where")]
+	[Calls(Type = typeof(Enumerable), Member = "FirstOrDefault")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 33)]
 	public static GlobalBlackboard Find(string name)
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BlackboardSource), Member = "InitializePropertiesBinding")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(GlobalBlackboard), Member = "IsUnique")]
+	[Calls(Type = typeof(Blackboard), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[Calls(Type = typeof(Object), Member = "DontDestroyOnLoad")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Blackboard), Member = "get_name")]
-	[Calls(Type = typeof(GlobalBlackboard), Member = "IsUnique")]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(GlobalBlackboard), Member = "IsUnique")]
-	[Calls(Type = typeof(Blackboard), Member = "get_name")]
-	[Calls(Type = typeof(BlackboardSource), Member = "InitializePropertiesBinding")]
 	protected override void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(GlobalBlackboard), Member = "Awake")]
 	[CalledBy(Type = typeof(GlobalBlackboard), Member = "set_name")]
 	[CalledBy(Type = typeof(GlobalBlackboard), Member = "Awake")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Find")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private bool IsUnique()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Blackboard), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Blackboard), Member = ".ctor")]
 	public GlobalBlackboard()
 	{
 	}

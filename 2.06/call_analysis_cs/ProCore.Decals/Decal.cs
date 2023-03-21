@@ -53,97 +53,69 @@ public class Decal
 	{
 	}
 
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 33)]
 	public override string ToString()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(int), Member = "TryParse")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(int), Member = "TryParse")]
-	[Calls(Type = typeof(int), Member = "TryParse")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(int), Member = "TryParse")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(int), Member = "TryParse")]
-	[Calls(Type = typeof(Decal), Member = "Vec3WithString")]
-	[Calls(Type = typeof(int), Member = "TryParse")]
-	[Calls(Type = typeof(Decal), Member = "Vec4WithString")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(Decal), Member = "Vec3WithString")]
-	[Calls(Type = typeof(string), Member = "SplitInternal")]
-	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
+	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[Calls(Type = typeof(Decal), Member = "Vec3WithString")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(Decal), Member = "Vec4WithString")]
+	[Calls(Type = typeof(int), Member = "TryParse")]
+	[Calls(Type = typeof(bool), Member = "TryParse")]
+	[CallsUnknownMethods(Count = 7)]
 	public static bool Deserialize(string txt, out Decal decal)
 	{
 		decal = null;
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(int), Member = "ToString")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Vector3), Member = "ToString")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallsUnknownMethods(Count = 127)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Vector3), Member = "ToString")]
-	[Calls(Type = typeof(Vector3), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Decal), Member = "Deserialize")]
-	[CalledBy(Type = typeof(Decal), Member = "Deserialize")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(string), Member = "SplitInternal")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(Type = typeof(float), Member = "TryParse")]
+	[Calls(Type = typeof(float), Member = "TryParse")]
+	[CallsUnknownMethods(Count = 2)]
 	private static bool Vec3WithString(string str, ref Vector3 vec3)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Decal), Member = "Deserialize")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(Type = typeof(float), Member = "TryParse")]
+	[Calls(Type = typeof(float), Member = "TryParse")]
+	[CallsUnknownMethods(Count = 2)]
 	private static bool Vec4WithString(string str, ref Vector4 vec4)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

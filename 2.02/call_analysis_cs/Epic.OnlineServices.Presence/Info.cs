@@ -40,16 +40,16 @@ public class Info : ISettable
 
 	public EpicAccountId UserId
 	{
-		[CallerCount(Count = 29)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -59,14 +59,14 @@ public class Info : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
@@ -74,16 +74,16 @@ public class Info : ISettable
 
 	public string ProductVersion
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 12)]
-		[CompilerGenerated]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
@@ -91,16 +91,16 @@ public class Info : ISettable
 
 	public string Platform
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 23)]
 		set
 		{
 		}
@@ -110,14 +110,14 @@ public class Info : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 8)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 18)]
 		set
 		{
 		}
@@ -125,16 +125,16 @@ public class Info : ISettable
 
 	public DataRecord[] Records
 	{
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 46)]
 		set
 		{
 		}
@@ -149,39 +149,39 @@ public class Info : ISettable
 		{
 			return null;
 		}
-		[CallerCount(Count = 17)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 19)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(InfoInternal), Member = "get_ProductName")]
-	[Calls(Type = typeof(InfoInternal), Member = "get_Records")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(Info), Member = "Set")]
-	[Calls(Type = typeof(InfoInternal), Member = "get_RichText")]
-	[Calls(Type = typeof(InfoInternal), Member = "get_Platform")]
-	[Calls(Type = typeof(InfoInternal), Member = "get_ProductVersion")]
-	[Calls(Type = typeof(InfoInternal), Member = "get_ProductId")]
-	[Calls(Type = typeof(InfoInternal), Member = "get_UserId")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InfoInternal), Member = "get_UserId")]
+	[Calls(Type = typeof(InfoInternal), Member = "get_ProductId")]
+	[Calls(Type = typeof(InfoInternal), Member = "get_ProductVersion")]
+	[Calls(Type = typeof(InfoInternal), Member = "get_Platform")]
+	[Calls(Type = typeof(InfoInternal), Member = "get_RichText")]
+	[Calls(Type = typeof(InfoInternal), Member = "get_Records")]
+	[Calls(Type = typeof(InfoInternal), Member = "get_ProductName")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	internal void Set(InfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Info), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public Info()
 	{
 	}

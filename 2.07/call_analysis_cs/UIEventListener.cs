@@ -47,8 +47,8 @@ public class UIEventListener : MonoBehaviour
 
 	public BoolDelegate onTooltip;
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnSubmit()
 	{
@@ -62,15 +62,15 @@ public class UIEventListener : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDoubleClick()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnHover(bool isOver)
 	{
 	}
@@ -83,8 +83,8 @@ public class UIEventListener : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnSelect(bool selected)
 	{
 	}
@@ -96,9 +96,9 @@ public class UIEventListener : MonoBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private void OnDragStart()
 	{
 	}
@@ -117,23 +117,23 @@ public class UIEventListener : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDragOut()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDragEnd()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDrop(GameObject go)
 	{
 	}
@@ -145,20 +145,20 @@ public class UIEventListener : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnTooltip(bool show)
 	{
 	}
 
+	[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
 	[CalledBy(Type = typeof(UIScrollBar), Member = "OnStart")]
 	[CalledBy(Type = typeof(UISlider), Member = "OnStart")]
-	[CalledBy(Type = typeof(UISlider), Member = "OnStart")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	public static UIEventListener Get(GameObject go)
 	{
 		return null;

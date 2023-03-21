@@ -29,32 +29,30 @@ public sealed class VectorscopeMonitor : Monitor
 	[CallerCount(Count = 0)]
 	internal override bool NeedsHalfRes()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	internal override bool ShaderResourcesAvailable(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeVectorParam")]
-	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeBufferParam")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeBufferParam")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeTextureParam")]
-	[Calls(Type = typeof(ComputeBuffer), Member = ".ctor")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Monitor), Member = "CheckOutput")]
+	[Calls(Type = typeof(ComputeBuffer), Member = "Dispose")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[Calls(Type = typeof(ComputeBuffer), Member = ".ctor")]
-	[Calls(Type = typeof(ComputeBuffer), Member = "Dispose")]
-	[Calls(Type = typeof(Monitor), Member = "CheckOutput")]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeBufferParam")]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeVectorParam")]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeTextureParam")]
+	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
 	[CallsDeduplicatedMethods(Count = 9)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 25)]
 	internal override void Render(PostProcessRenderContext context)
 	{
 	}

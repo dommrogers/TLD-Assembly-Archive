@@ -4,8 +4,8 @@ public class PackManagerGlobalDataProxy
 {
 	public bool m_IsPackNearbyFlag;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public PackManagerGlobalDataProxy()
 	{
 	}

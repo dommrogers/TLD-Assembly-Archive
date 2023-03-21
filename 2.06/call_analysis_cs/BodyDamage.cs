@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -23,60 +22,58 @@ public class BodyDamage : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetSkillArchery")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[CalledBy(Type = typeof(vp_Bullet), Member = "Start")]
 	[CalledBy(Type = typeof(LocalizedDamage), Member = "GetDamageScale")]
 	[CalledBy(Type = typeof(ArrowItem), Member = "InflictDamage")]
 	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "InflictDamage")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillRifle")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillRevolver")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(BodyDamage), Member = "GetDamageById")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillRifle")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillRevolver")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillArchery")]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetDamageScale(BodyPart bodyPart, Weapon w)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillArchery")]
-	[Calls(Type = typeof(BodyDamage), Member = "GetDamageById")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BodyDamage), Member = "GetDamageById")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillArchery")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetBleedOutMinutes(BodyPart bodyPart, Weapon w)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(BodyDamage), Member = "GetDamageById")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(LocalizedDamage), Member = "RollChanceToKill")]
 	[CalledBy(Type = typeof(LocalizedDamage), Member = "GetChanceKill")]
+	[CalledBy(Type = typeof(LocalizedDamage), Member = "RollChanceToKill")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BodyDamage), Member = "GetDamageById")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillRifle")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillRevolver")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillArchery")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillRevolver")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillRifle")]
+	[CallsUnknownMethods(Count = 3)]
 	public int GetChanceKill(BodyPart bodyPart, Weapon w)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CalledBy(Type = typeof(BodyDamage), Member = "GetChanceKill")]
-	[CalledBy(Type = typeof(BodyDamage), Member = "GetBleedOutMinutes")]
 	[CalledBy(Type = typeof(BodyDamage), Member = "GetDamageScale")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CalledBy(Type = typeof(BodyDamage), Member = "GetBleedOutMinutes")]
+	[CalledBy(Type = typeof(BodyDamage), Member = "GetChanceKill")]
 	[CalledBy(Type = typeof(LocalizedDamage), Member = "GetBleedOutMinutes")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private DamageRegion GetDamageById(BodyPart bodyPart)
 	{
 		return null;

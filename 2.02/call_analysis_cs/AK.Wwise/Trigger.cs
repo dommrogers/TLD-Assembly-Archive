@@ -12,7 +12,7 @@ public class Trigger : BaseType
 	public override WwiseObjectReference ObjectReference
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
@@ -34,17 +34,17 @@ public class Trigger : BaseType
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Post(GameObject gameObject)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public Trigger()
 	{
 	}

@@ -26,13 +26,14 @@ public class CheckFloat : ConditionTask
 		}
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(OperationTools), Member = "Compare")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(OperationTools), Member = "Compare")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

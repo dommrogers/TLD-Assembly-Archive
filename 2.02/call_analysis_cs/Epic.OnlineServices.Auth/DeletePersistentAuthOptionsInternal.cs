@@ -14,32 +14,32 @@ internal struct DeletePersistentAuthOptionsInternal : ISettable, IDisposable
 	public string RefreshToken
 	{
 		[CalledBy(Type = typeof(DeletePersistentAuthOptionsInternal), Member = "Set")]
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(DeletePersistentAuthOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(DeletePersistentAuthOptionsInternal), Member = "set_RefreshToken")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DeletePersistentAuthOptionsInternal), Member = "set_RefreshToken")]
 	public void Set(DeletePersistentAuthOptions other)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(DeletePersistentAuthOptionsInternal), Member = "set_RefreshToken")]
 	[CalledBy(Type = typeof(AuthInterface), Member = "DeletePersistentAuth")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DeletePersistentAuthOptionsInternal), Member = "set_RefreshToken")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

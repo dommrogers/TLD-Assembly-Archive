@@ -4,8 +4,8 @@ public class Skill_ArcherySaveData
 {
 	public int m_Points;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public Skill_ArcherySaveData()
 	{
 	}

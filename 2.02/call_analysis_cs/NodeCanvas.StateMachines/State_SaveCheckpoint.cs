@@ -21,14 +21,14 @@ public class State_SaveCheckpoint : FSMState
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	protected override void OnUpdate()
 	{
 	}
 
-	[Calls(Type = typeof(Node), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Node), Member = ".ctor")]
 	public State_SaveCheckpoint()
 	{
 	}

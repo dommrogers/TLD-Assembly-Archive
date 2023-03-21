@@ -5,7 +5,7 @@ namespace Epic.OnlineServices.UI;
 public class AddNotifyDisplaySettingsUpdatedOptions
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AddNotifyDisplaySettingsUpdatedOptions()
 	{
 	}

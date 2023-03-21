@@ -11,20 +11,22 @@ public class Action_NotificationMessage : ActionTask
 
 	public BBParameter<string> iconName;
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 24)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = ".ctor")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 24)]
 	public Action_NotificationMessage()
 	{
 	}

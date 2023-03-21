@@ -17,16 +17,16 @@ public class SessionDetailsSettings : ISettable
 
 	public string BucketId
 	{
-		[CallerCount(Count = 52)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -39,7 +39,7 @@ public class SessionDetailsSettings : ISettable
 		[CallerCount(Count = 8)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -56,11 +56,11 @@ public class SessionDetailsSettings : ISettable
 		[CallerCount(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -90,7 +90,7 @@ public class SessionDetailsSettings : ISettable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -100,28 +100,28 @@ public class SessionDetailsSettings : ISettable
 		}
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(SessionDetailsSettingsInternal), Member = "get_InvitesAllowed")]
-	[Calls(Type = typeof(SessionDetailsSettingsInternal), Member = "get_AllowJoinInProgress")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SessionDetailsSettingsInternal), Member = "get_BucketId")]
+	[Calls(Type = typeof(SessionDetailsSettingsInternal), Member = "get_AllowJoinInProgress")]
+	[Calls(Type = typeof(SessionDetailsSettingsInternal), Member = "get_InvitesAllowed")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	internal void Set(SessionDetailsSettingsInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(SessionDetailsSettingsInternal), Member = "get_BucketId")]
 	[Calls(Type = typeof(SessionDetailsSettingsInternal), Member = "get_AllowJoinInProgress")]
 	[Calls(Type = typeof(SessionDetailsSettingsInternal), Member = "get_InvitesAllowed")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SessionDetailsSettings()
 	{
 	}

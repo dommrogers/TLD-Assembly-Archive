@@ -35,28 +35,25 @@ public class FPSLogger : MonoBehaviour
 
 		private float m_WorstGPUTime;
 
-		[CallerCount(Count = 1)]
 		[CalledBy(Type = typeof(FPSLogger), Member = "OnFPSChanged")]
+		[CallerCount(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		public void AddSample(FPSCounterEvent eventData)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 45)]
 		[CalledBy(Type = typeof(FPSLogger), Member = "WriteToFile")]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(Utils), Member = "GetFormattedBytes")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Utils), Member = "GetFormattedBytes")]
-		[Calls(Type = typeof(Utils), Member = "GetFormattedBytes")]
-		[Calls(Type = typeof(Utils), Member = "GetFormattedBytes")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[CallsUnknownMethods(Count = 45)]
 		public string FormatForWrite()
 		{
 			return null;
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public LogData()
 		{
 		}
@@ -99,81 +96,83 @@ public class FPSLogger : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public static bool IsRecording()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Path), Member = "Combine")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Format")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_record_fps")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(FPSLogger), Member = "StopRecording")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_record_fps")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
 	[Calls(Type = typeof(DateTime), Member = "get_Now")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Path), Member = "Combine")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void StartRecording(string newExtension)
 	{
 	}
 
-	[CalledBy(Type = typeof(FPSLogger), Member = "StartRecording")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_record_fps")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_record_fps")]
+	[CalledBy(Type = typeof(FPSLogger), Member = "StartRecording")]
 	[CallerCount(Count = 2)]
 	public static void StopRecording()
 	{
 	}
 
+	[CalledBy(Type = typeof(FPSLogger), Member = "OnDisable")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Func<, >), Member = ".ctor")]
 	[Calls(Type = typeof(LogData), Member = "FormatForWrite")]
 	[Calls(Type = typeof(string), Member = "JoinCore")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(StreamWriter), Member = ".ctor")]
-	[CalledBy(Type = typeof(FPSLogger), Member = "OnDisable")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 25)]
 	private static void WriteToFile(string outputPath)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsUnknownMethods(Count = 5)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(FPSLogger), Member = "WriteToFile")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[Calls(Type = typeof(FPSLogger), Member = "WriteToFile")]
+	[CallsUnknownMethods(Count = 5)]
 	private void OnDisable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(LogData), Member = "AddSample")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(LogData), Member = "AddSample")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnFPSChanged(FPSCounterEvent eventData)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(string), Member = "Format")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private string GetCurrentLogKey()
 	{

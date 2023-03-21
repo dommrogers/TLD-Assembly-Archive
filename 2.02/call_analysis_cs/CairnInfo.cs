@@ -7,7 +7,7 @@ public class CairnInfo
 	public int m_JournalEntryNumber;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CairnInfo()
 	{
 	}

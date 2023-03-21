@@ -22,37 +22,34 @@ public class GodrayManager : MonoBehaviour
 
 		private float m_RotationSpeed;
 
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[CalledBy(Type = typeof(GodrayManager), Member = "Start")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 5)]
 		public GodRayObject(Transform thisTransform, GameObject go)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 13)]
 		[CalledBy(Type = typeof(GodRayObject), Member = "Update")]
-		[Calls(Type = typeof(Random), Member = "Range")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Random), Member = "Range")]
 		[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 		[CallsDeduplicatedMethods(Count = 6)]
-		[Calls(Type = typeof(Random), Member = "Range")]
-		[Calls(Type = typeof(Random), Member = "Range")]
-		[CallerCount(Count = 1)]
-		[Calls(Type = typeof(Random), Member = "Range")]
+		[CallsUnknownMethods(Count = 13)]
 		private void NewRay(GodrayManager manager)
 		{
 		}
 
-		[Calls(Type = typeof(Vector3), Member = "Normalize")]
-		[CallsUnknownMethods(Count = 17)]
-		[Calls(Type = typeof(Plane), Member = "GetDistanceToPoint")]
-		[Calls(Type = typeof(Transform), Member = "get_forward")]
 		[CalledBy(Type = typeof(GodrayManager), Member = "Update")]
-		[Calls(Type = typeof(GodRayObject), Member = "NewRay")]
-		[CallsDeduplicatedMethods(Count = 10)]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(GodRayObject), Member = "NewRay")]
 		[Calls(Type = typeof(Quaternion), Member = "Euler")]
+		[Calls(Type = typeof(Transform), Member = "get_forward")]
+		[Calls(Type = typeof(Vector3), Member = "Normalize")]
+		[Calls(Type = typeof(Plane), Member = "GetDistanceToPoint")]
+		[CallsDeduplicatedMethods(Count = 10)]
+		[CallsUnknownMethods(Count = 17)]
 		public void Update(GodrayManager manager, Quaternion sunRotation, Color rayColor, Vector3 playerPosition)
 		{
 		}
@@ -95,29 +92,26 @@ public class GodrayManager : MonoBehaviour
 	private Quaternion m_LightRotationOffset;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(GodRayObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 24)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(GodRayObject), Member = "Update")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsNight")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(GodRayObject), Member = "Update")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 23)]
 	private void Update()
 	{
 	}
@@ -132,11 +126,12 @@ public class GodrayManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 28)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 28)]
 	public GodrayManager()
 	{
 	}

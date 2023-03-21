@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
@@ -16,8 +17,8 @@ public class SortGameObjectListByDistance : ActionTask<Transform>
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsDeduplicatedMethods(Count = 2)]
 		get
 		{
@@ -25,11 +26,15 @@ public class SortGameObjectListByDistance : ActionTask<Transform>
 		}
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Func<, >), Member = ".ctor")]
+	[Calls(Type = typeof(Enumerable), Member = "OrderBy")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	protected override void OnExecute()
 	{
 	}

@@ -6,8 +6,8 @@ public class Feat_BlizzardWalkerSaveData
 
 	public float m_BlizzardHoursOutsideAccumulator;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public Feat_BlizzardWalkerSaveData()
 	{
 	}

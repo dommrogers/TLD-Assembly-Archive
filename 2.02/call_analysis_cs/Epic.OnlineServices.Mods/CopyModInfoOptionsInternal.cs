@@ -15,11 +15,11 @@ internal struct CopyModInfoOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(CopyModInfoOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyModInfoOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyModInfoOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyModInfoOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -34,22 +34,22 @@ internal struct CopyModInfoOptionsInternal : ISettable, IDisposable
 		}
 	}
 
-	[Calls(Type = typeof(CopyModInfoOptionsInternal), Member = "set_LocalUserId")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CopyModInfoOptionsInternal), Member = "set_LocalUserId")]
 	public void Set(CopyModInfoOptions other)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(CopyModInfoOptionsInternal), Member = "set_LocalUserId")]
 	[CalledBy(Type = typeof(ModsInterface), Member = "CopyModInfo")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CopyModInfoOptionsInternal), Member = "set_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

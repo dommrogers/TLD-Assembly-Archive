@@ -29,8 +29,8 @@ public class SetField : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Format")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Format")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -38,10 +38,10 @@ public class SetField : ActionTask
 		}
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ReflectionTools), Member = "RTGetField")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTGetField")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected override string OnInit()
 	{
 		return null;
@@ -49,9 +49,10 @@ public class SetField : ActionTask
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Task), Member = "get_agent")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(FieldInfo), Member = "SetValue")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

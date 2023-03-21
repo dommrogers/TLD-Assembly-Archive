@@ -64,8 +64,8 @@ public class Action_PlayTimeline : ActionTask
 
 			public bool boostAurora;
 
-			[CallerCount(Count = 2)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 7)]
 			public Properties()
 			{
 			}
@@ -87,41 +87,31 @@ public class Action_PlayTimeline : ActionTask
 			}
 		}
 
-		[CallsUnknownMethods(Count = 30)]
-		[Calls(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
-		[Calls(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
-		[Calls(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
-		[Calls(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
-		[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
-		[Calls(Type = typeof(PlayerManager), Member = "IsHeldItemRestricted")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(Rest.PassTimeHelper), Member = "PassTime")]
-		[Calls(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
-		[Calls(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
-		[CallsDeduplicatedMethods(Count = 7)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
+		[Calls(Type = typeof(Rest.PassTimeHelper), Member = "PassTime")]
 		[Calls(Type = typeof(PlayerManager), Member = "EquipLastItemInHands")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(PlayerManager), Member = "IsHeldItemRestricted")]
+		[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
+		[CallsDeduplicatedMethods(Count = 7)]
+		[CallsUnknownMethods(Count = 30)]
 		protected override void OnExecute()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		protected override void OnUpdate()
 		{
 		}
 
-		[CalledBy(Type = typeof(Action_SetCinematicProperties), Member = "OnExecute")]
-		[CalledBy(Type = typeof(Action_SetCinematicProperties), Member = "OnExecute")]
-		[CalledBy(Type = typeof(Action_SetCinematicProperties), Member = "OnExecute")]
-		[CalledBy(Type = typeof(Action_SetCinematicProperties), Member = "OnExecute")]
-		[CalledBy(Type = typeof(Action_SetCinematicProperties), Member = "OnExecute")]
-		[CalledBy(Type = typeof(Action_SetCinematicProperties), Member = "OnExecute")]
-		[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_cinematicproperty")]
-		[CallerCount(Count = 7)]
 		[CallAnalysisFailed]
+		[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_cinematicproperty")]
+		[CalledBy(Type = typeof(Action_SetCinematicProperties), Member = "OnExecute")]
+		[CallerCount(Count = 7)]
 		public static void SetProperty(CinematicPropertyType type, bool isSet, int argValue)
 		{
 		}
@@ -146,8 +136,8 @@ public class Action_PlayTimeline : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -156,20 +146,20 @@ public class Action_PlayTimeline : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InterfaceManager), Member = "QuitCurrentScreens")]
 	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouchImmediate")]
 	[Calls(Type = typeof(TimelineRef), Member = "LoadForPlayerDirector")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 19)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TimelineRef), Member = "PlayTimeline")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 8)]
 	private void OnLoadComplete()
 	{
 	}
@@ -192,17 +182,18 @@ public class Action_PlayTimeline : ActionTask
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(TimelineRef), Member = "Unload")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TimelineRef), Member = "Unload")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnActionComplete()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 14)]
 	public Action_PlayTimeline()
 	{

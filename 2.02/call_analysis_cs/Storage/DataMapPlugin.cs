@@ -22,10 +22,10 @@ public class DataMapPlugin
 	public static extern void DataMap_AddEmptyBuffer(IntPtr self, string name, int length);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(DataMap), Member = "AddOrReplaceBuffer")]
 	[CalledBy(Type = typeof(DataMap), Member = "AddOrReplaceBuffer")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(DataMap), Member = "AddOrReplaceBuffer")]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void DataMap_AddOrReplaceBuffer(IntPtr self, string name, byte[] data, int length);
 
 	[PreserveSig]
@@ -51,12 +51,12 @@ public class DataMapPlugin
 	public static extern uint DataMap_BufferCapacity(IntPtr self, string name);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void DataMap_Dispose(IntPtr self);
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public DataMapPlugin()
 	{
 	}

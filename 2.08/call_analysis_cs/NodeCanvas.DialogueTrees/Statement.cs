@@ -1,8 +1,10 @@
 using System;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using NodeCanvas.Framework.Internal;
 using NodeCanvas.Tasks.Actions;
+using ParadoxNotion.Serialization;
 using UnityEngine;
 
 namespace NodeCanvas.DialogueTrees;
@@ -14,22 +16,22 @@ public class Statement : IStatement
 	{
 		public IBlackboard bb;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec__DisplayClass21_0()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(BlackboardSource), Member = "GetVariable")]
-		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[Calls(Type = typeof(GlobalBlackboard), Member = "Find")]
-		[Calls(Type = typeof(string), Member = "Split")]
-		[Calls(Type = typeof(string), Member = "Contains")]
-		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+		[Calls(Type = typeof(string), Member = "Contains")]
 		[Calls(Type = typeof(string), Member = "Split")]
+		[Calls(Type = typeof(Enumerable), Member = "First")]
+		[Calls(Type = typeof(GlobalBlackboard), Member = "Find")]
+		[Calls(Type = typeof(Enumerable), Member = "Last")]
+		[Calls(Type = typeof(BlackboardSource), Member = "GetVariable")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 2)]
 		internal string _003CBlackboardReplace_003Eb__0(string input)
 		{
 			return null;
@@ -47,13 +49,13 @@ public class Statement : IStatement
 	public string text
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 80)]
+		[CallerCount(Count = 92)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 279)]
+		[CallerCount(Count = 282)]
 		set
 		{
 		}
@@ -62,13 +64,13 @@ public class Statement : IStatement
 	public AudioClip audio
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 28)]
+		[CallerCount(Count = 32)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 79)]
+		[CallerCount(Count = 86)]
 		set
 		{
 		}
@@ -97,24 +99,24 @@ public class Statement : IStatement
 		{
 			return default(VoiceOverAnimationState);
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 2)]
 	public Statement()
 	{
 	}
 
-	[CalledBy(Type = typeof(Say), Member = ".ctor")]
-	[CalledBy(Type = typeof(StatementNode), Member = ".ctor")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnChildConnected")]
 	[CalledBy(Type = typeof(ParlayNPCResponseNode), Member = ".ctor")]
+	[CalledBy(Type = typeof(StatementNode), Member = ".ctor")]
+	[CalledBy(Type = typeof(Say), Member = ".ctor")]
+	[CallerCount(Count = 4)]
 	public Statement(string text)
 	{
 	}
@@ -134,30 +136,29 @@ public class Statement : IStatement
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SayRandom), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Say), Member = "OnExecute")]
-	[CalledBy(Type = typeof(MultipleChoiceNode), Member = "OnOptionSelected")]
-	[CalledBy(Type = typeof(MultipleChoiceNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(ParlayNPCResponseNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnOptionSelected")]
 	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnOptionSelected")]
+	[CalledBy(Type = typeof(ParlayNPCResponseNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(MultipleChoiceNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(MultipleChoiceNode), Member = "OnOptionSelected")]
 	[CalledBy(Type = typeof(StatementNode), Member = "OnExecute")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Say), Member = "OnExecute")]
+	[CalledBy(Type = typeof(SayRandom), Member = "OnExecute")]
 	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(JSONSerializer), Member = "Clone")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "IndexOf")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public IStatement BlackboardReplace(IBlackboard bb)
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 80)]
+	[CallerCount(Count = 92)]
 	public override string ToString()
 	{
 		return null;

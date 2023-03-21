@@ -10,21 +10,23 @@ public class Action_NPCEnableConditionUpdate : ActionTask
 
 	public BBParameter<string> npcIdentifier;
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(NPC), Member = "UpdateTODHours")]
-	[Calls(Type = typeof(NPC), Member = "IsActive")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNull")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter), Member = "get_isNull")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetComponentForMissionObject")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NPC), Member = "HasActive")]
+	[Calls(Type = typeof(NPC), Member = "IsActive")]
+	[Calls(Type = typeof(NPC), Member = "UpdateTODHours")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
 	public Action_NPCEnableConditionUpdate()
 	{
 	}

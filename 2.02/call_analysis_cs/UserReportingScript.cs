@@ -14,7 +14,7 @@ using UnityEngine.UI;
 
 public class UserReportingScript : MonoBehaviour
 {
-	private sealed class _003CClearError_003Ed__27 : IEnumerator, IDisposable, IEnumerator<object>
+	private sealed class _003CClearError_003Ed__27 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -24,9 +24,9 @@ public class UserReportingScript : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 29)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -37,7 +37,7 @@ public class UserReportingScript : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -53,7 +53,7 @@ public class UserReportingScript : MonoBehaviour
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
@@ -63,13 +63,13 @@ public class UserReportingScript : MonoBehaviour
 		[CallsUnknownMethods(Count = 8)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 3)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -89,31 +89,31 @@ public class UserReportingScript : MonoBehaviour
 		public static Action<bool, byte[]> _003C_003E9__33_1;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		internal void _003CCreateUserReport_003Eb__29_0(UserReportScreenshot s)
 		{
 		}
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		internal void _003CCreateUserReport_003Eb__29_1(UserReportScreenshot s)
 		{
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		internal void _003CStart_003Eb__33_0(float upload, float download)
 		{
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		internal void _003CStart_003Eb__33_1(bool result, byte[] bytes)
 		{
 		}
@@ -170,7 +170,7 @@ public class UserReportingScript : MonoBehaviour
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 1)]
+		[CallerCount(Count = 6)]
 		private set
 		{
 		}
@@ -185,28 +185,26 @@ public class UserReportingScript : MonoBehaviour
 		}
 	}
 
-	[CallsUnknownMethods(Count = 14)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[Calls(Type = typeof(UnityEventBase), Member = ".ctor")]
 	[Calls(Type = typeof(UnityUserReportingUpdater), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 14)]
 	public UserReportingScript()
 	{
 	}
 
-	[Calls(Type = typeof(InputField), Member = "SetText")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputField), Member = "SetText")]
+	[CallsUnknownMethods(Count = 1)]
 	public void CancelUserReport()
 	{
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
+	[CalledBy(Type = typeof(UserReportingScript), Member = "<SubmitUserReport>b__34_1")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(UserReportingScript), Member = "<SubmitUserReport>b__34_1")]
 	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator ClearError()
 	{
@@ -215,30 +213,25 @@ public class UserReportingScript : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputField), Member = "SetText")]
-	[Calls(Type = typeof(InputField), Member = "SetText")]
 	[CallsUnknownMethods(Count = 1)]
 	private void ClearForm()
 	{
 	}
 
-	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(UserReportingClient), Member = "CreateUserReport")]
-	[Calls(Type = typeof(UserReportingClient), Member = "TakeScreenshotFromSource")]
 	[CalledBy(Type = typeof(UserReportingScript), Member = "Update")]
-	[Calls(Type = typeof(UserReportingClient), Member = "TakeScreenshotFromSource")]
-	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
+	[Calls(Type = typeof(UserReportingClient), Member = "TakeScreenshotFromSource")]
+	[Calls(Type = typeof(UserReportingClient), Member = "CreateUserReport")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 26)]
 	public void CreateUserReport()
 	{
 	}
 
+	[CalledBy(Type = typeof(UserReportingScript), Member = "Start")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(UserReportingScript), Member = "Start")]
-	[CalledBy(Type = typeof(UserReportingScript), Member = "Start")]
 	[CallsUnknownMethods(Count = 7)]
 	private UserReportingClientConfiguration GetConfiguration()
 	{
@@ -248,70 +241,63 @@ public class UserReportingScript : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsSubmitting()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(UserReportingScript), Member = "<CreateUserReport>b__29_2")]
-	[Calls(Type = typeof(Image), Member = "set_sprite")]
-	[Calls(Type = typeof(Sprite), Member = "Create")]
-	[Calls(Type = typeof(ImageConversion), Member = "LoadImage")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Convert), Member = "FromBase64String")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
+	[Calls(Type = typeof(ImageConversion), Member = "LoadImage")]
+	[Calls(Type = typeof(Sprite), Member = "Create")]
+	[Calls(Type = typeof(Image), Member = "set_sprite")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 11)]
 	private void SetThumbnail(UserReport userReport)
 	{
 	}
 
-	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(UnityUserReporting), Member = "Configure")]
-	[Calls(Type = typeof(UserReportingScript), Member = "GetConfiguration")]
-	[Calls(Type = typeof(UserReportingScript), Member = "GetConfiguration")]
-	[Calls(Type = typeof(Activator), Member = "CreateInstance")]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectOfType")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(Activator), Member = "CreateInstance")]
+	[Calls(Type = typeof(UserReportingScript), Member = "GetConfiguration")]
 	[Calls(Type = typeof(UnityUserReporting), Member = "GetPlatform")]
+	[Calls(Type = typeof(UnityUserReporting), Member = "Configure")]
+	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 33)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 36)]
 	[CalledBy(Type = typeof(UserReportingScript), Member = "<CreateUserReport>b__29_2")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UserReportingClient), Member = "SendUserReport")]
-	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
-	[Calls(Type = typeof(InputField), Member = "SetText")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(InputField), Member = "SetText")]
+	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
+	[Calls(Type = typeof(UserReportingClient), Member = "SendUserReport")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 36)]
 	public void SubmitUserReport()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UserReportingScript), Member = "CreateUserReport")]
+	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Selectable), Member = "set_interactable")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
-	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
-	[Calls(Type = typeof(UserReportingScript), Member = "CreateUserReport")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsUnknownMethods(Count = 12)]
 	private void Update()
 	{
 	}

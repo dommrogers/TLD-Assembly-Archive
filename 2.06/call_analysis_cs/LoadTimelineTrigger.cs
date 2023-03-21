@@ -7,16 +7,16 @@ public class LoadTimelineTrigger : MonoBehaviour
 	public AssetReferenceTimeline[] m_Timelines;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(AssetReferenceTimeline), Member = "LoadTimeline")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	private void OnTriggerEnter(Collider c)
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public LoadTimelineTrigger()
 	{
 	}

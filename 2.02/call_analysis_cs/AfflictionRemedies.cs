@@ -9,7 +9,7 @@ public class AfflictionRemedies
 	public AfflictionRemedy m_Remedy2;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AfflictionRemedies()
 	{
 	}

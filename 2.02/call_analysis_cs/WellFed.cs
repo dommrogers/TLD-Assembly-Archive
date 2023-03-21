@@ -24,18 +24,18 @@ public class WellFed : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(WellFed), Member = "WellFedEnd")]
-	[Calls(Type = typeof(WellFed), Member = "CheckForWellFed")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(WellFed), Member = "CheckForWellFed")]
+	[Calls(Type = typeof(WellFed), Member = "WellFedEnd")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public string Serialize()
 	{
@@ -43,36 +43,38 @@ public class WellFed : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CalledBy(Type = typeof(WellFed), Member = "CheckForWellFed")]
-	[CallsUnknownMethods(Count = 15)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_well_fed")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_buffs_add_all")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_well_fed")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
+	[Calls(Type = typeof(Condition), Member = "AddHealth")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffNotification")]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Condition), Member = "AddHealth")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 15)]
 	public void WellFedStart(string causeId, bool displayIcon, bool nofx = false)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(WellFed), Member = "UpdateWellFed")]
 	[CalledBy(Type = typeof(WellFed), Member = "Update")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffLossNotification")]
+	[CalledBy(Type = typeof(WellFed), Member = "UpdateWellFed")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_buffs_lose_all")]
-	[Calls(Type = typeof(Condition), Member = "AddHealth")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Condition), Member = "AddHealth")]
 	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffLossNotification")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void WellFedEnd()
 	{
 	}
@@ -81,12 +83,12 @@ public class WellFed : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool HasWellFed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string GetCauseString()
 	{
 		return null;
@@ -99,8 +101,8 @@ public class WellFed : MonoBehaviour
 		return null;
 	}
 
-	[Calls(Type = typeof(WellFed), Member = "WellFedEnd")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(WellFed), Member = "WellFedEnd")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateWellFed()
@@ -108,10 +110,10 @@ public class WellFed : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(WellFed), Member = "Update")]
-	[Calls(Type = typeof(WellFed), Member = "WellFedStart")]
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(WellFed), Member = "WellFedStart")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private void CheckForWellFed()
 	{
 	}

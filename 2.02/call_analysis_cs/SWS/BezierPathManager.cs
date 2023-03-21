@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -27,15 +27,12 @@ public class BezierPathManager : PathManager
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 24)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(WaypointManager), Member = "DrawCurved")]
 	[Calls(Type = typeof(WaypointManager), Member = "DrawStraight")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[CallsUnknownMethods(Count = 24)]
 	private void OnDrawGizmos()
 	{
 	}
@@ -44,47 +41,42 @@ public class BezierPathManager : PathManager
 	[CallerCount(Count = 0)]
 	private float GetHandleSize(Vector3 pos)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 20)]
+	[CallerCount(Count = 40)]
 	public override Vector3[] GetPathPoints()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[CalledBy(Type = typeof(BezierPathManager), Member = "Awake")]
-	[CallsUnknownMethods(Count = 31)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(BezierPathManager), Member = "GetPoints")]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 30)]
 	public void CalculatePath()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[CalledBy(Type = typeof(BezierPathManager), Member = "CalculatePath")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 13)]
 	private List<Vector3> GetPoints(Vector3 p0, Vector3 p1, Vector3 p2, Vector3 p3, float detail)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	public BezierPathManager()
 	{
 	}

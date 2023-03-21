@@ -22,11 +22,11 @@ public class UserReportingClientConfiguration
 		[CallerCount(Count = 7)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		internal set
 		{
 		}
@@ -36,10 +36,10 @@ public class UserReportingClientConfiguration
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 6)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -56,11 +56,11 @@ public class UserReportingClientConfiguration
 		[CallerCount(Count = 8)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		internal set
 		{
 		}
@@ -68,16 +68,16 @@ public class UserReportingClientConfiguration
 
 	public int MaximumScreenshotCount
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		get
 		{
-			return default(int);
+			return 0;
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		internal set
 		{
 		}
@@ -85,9 +85,9 @@ public class UserReportingClientConfiguration
 
 	public MetricsGatheringMode MetricsGatheringMode
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 1)]
-		[CompilerGenerated]
 		get
 		{
 			return default(MetricsGatheringMode);

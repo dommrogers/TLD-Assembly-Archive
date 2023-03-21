@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading;
 using Cpp2ILInjected.CallAnalysis;
 using Unity.Collections;
@@ -103,76 +104,84 @@ public class WeatherParticleManager
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(HeightMap), Member = "GetHeight")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(HeightMap), Member = "GetHeight")]
+		[CallsUnknownMethods(Count = 1)]
 		private void NoWrap(int first, int limit, NativeArray<ParticleSystem.Particle> pList)
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[Calls(Type = typeof(HeightMap), Member = "GetHeight")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		private void KillPoint(int first, int limit, Bounds pkBounds, NativeArray<ParticleSystem.Particle> pList)
 		{
 		}
 
-		[Calls(Type = typeof(Bounds), Member = "Intersects")]
-		[Calls(Type = typeof(HeightMap), Member = "GetHeight")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(HeightMap), Member = "GetHeight")]
+		[Calls(Type = typeof(Bounds), Member = "Intersects")]
+		[CallsUnknownMethods(Count = 1)]
 		private void KillBox(int first, int limit, Bounds pkBounds, Bounds snowBox, NativeArray<ParticleSystem.Particle> pList)
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(WTTask), Member = "UpdateParticle")]
 		[Calls(Type = typeof(WTTask), Member = "UpdateParticleNoTurbulence")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 2)]
 		private void WrapAndKillPoint(int first, int limit, Bounds pkBounds, NativeArray<ParticleSystem.Particle> pList)
 		{
 		}
 
-		[Calls(Type = typeof(WTTask), Member = "UpdateParticleNoTurbulence")]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(WTTask), Member = "UpdateParticle")]
 		[Calls(Type = typeof(Bounds), Member = "Intersects")]
-		[Calls(Type = typeof(Bounds), Member = "Intersects")]
+		[Calls(Type = typeof(WTTask), Member = "UpdateParticleNoTurbulence")]
 		private void WrapAndKillBox(int first, int limit, Bounds pkBounds, Bounds snowBox, NativeArray<ParticleSystem.Particle> pList)
 		{
 		}
 
-		[CalledBy(Type = typeof(WTTask), Member = "WrapAndKillPoint")]
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(WTTask), Member = "Wrap")]
+		[CalledBy(Type = typeof(WTTask), Member = "WrapAndKillPoint")]
 		[CalledBy(Type = typeof(WTTask), Member = "WrapAndKillBox")]
-		[Calls(Type = typeof(HeightMap), Member = "GetHeight")]
-		[CallerCount(Count = 3)]
-		[Calls(Type = typeof(WeatherParticleManager), Member = "UpdateParticleInternal")]
+		[CalledBy(Type = typeof(WTTask), Member = "Execute")]
+		[CallerCount(Count = 6)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(HeightMap), Member = "GetHeight")]
+		[Calls(Type = typeof(WeatherParticleManager), Member = "UpdateParticleInternal")]
+		[CallsUnknownMethods(Count = 1)]
 		private void UpdateParticle(ref ParticleSystem.Particle particle)
 		{
 		}
 
-		[CallerCount(Count = 3)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(HeightMap), Member = "GetHeight")]
-		[Calls(Type = typeof(WeatherParticleManager), Member = "UpdateParticleNoTurbulenceInternal")]
 		[CalledBy(Type = typeof(WTTask), Member = "Wrap")]
 		[CalledBy(Type = typeof(WTTask), Member = "WrapAndKillPoint")]
 		[CalledBy(Type = typeof(WTTask), Member = "WrapAndKillBox")]
+		[CalledBy(Type = typeof(WTTask), Member = "Execute")]
+		[CallerCount(Count = 6)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(HeightMap), Member = "GetHeight")]
+		[Calls(Type = typeof(WeatherParticleManager), Member = "UpdateParticleNoTurbulenceInternal")]
 		[CallsUnknownMethods(Count = 1)]
 		private void UpdateParticleNoTurbulence(ref ParticleSystem.Particle particle)
 		{
 		}
 
-		[CallAnalysisFailed]
-		[CallerCount(Count = 0)]
+		[CalledBy(Type = typeof(WeatherParticleManager), Member = "WeatherParticleTask")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(HeightMap), Member = "GetHeight")]
+		[Calls(Type = typeof(WTTask), Member = "UpdateParticle")]
+		[Calls(Type = typeof(WTTask), Member = "UpdateParticleNoTurbulence")]
+		[Calls(Type = typeof(Bounds), Member = "Intersects")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 4)]
 		public void Execute()
 		{
 		}
@@ -219,116 +228,116 @@ public class WeatherParticleManager
 
 		public bool m_HasHeightMap;
 
-		[Calls(Type = typeof(WeatherParticleJob), Member = "WrapAndKillBox_Job")]
-		[Calls(Type = typeof(WeatherParticleJob), Member = "WrapAndKillPoint_Job")]
-		[Calls(Type = typeof(WeatherParticleJob), Member = "KillBox_Job")]
-		[CalledBy(Type = typeof(UnityEngine.ParticleSystemJobs.ParticleSystemParallelForJobStruct<>), Member = "Execute")]
-		[Calls(Type = typeof(WeatherParticleJob), Member = "Wrap_Job")]
-		[Calls(Type = typeof(WeatherParticleJob), Member = "NoWrap_Job")]
+		[CalledBy(TypeFullName = "UnityEngine.ParticleSystemJobs.ParticleSystemParallelForJobStruct`1", Member = "Execute")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(WeatherParticleJob), Member = "NoWrap_Job")]
+		[Calls(Type = typeof(WeatherParticleJob), Member = "Wrap_Job")]
 		[Calls(Type = typeof(WeatherParticleJob), Member = "KillPoint_Job")]
+		[Calls(Type = typeof(WeatherParticleJob), Member = "KillBox_Job")]
+		[Calls(Type = typeof(WeatherParticleJob), Member = "WrapAndKillPoint_Job")]
+		[Calls(Type = typeof(WeatherParticleJob), Member = "WrapAndKillBox_Job")]
 		public void Execute(ParticleSystemJobData jobData, int i)
 		{
 		}
 
 		[CalledBy(Type = typeof(WeatherParticleJob), Member = "Execute")]
-		[Calls(Type = typeof(WeatherParticleJob), Member = "UpdateParticleNoTurbulenceNativeArray")]
-		[Calls(Type = typeof(WeatherParticleJob), Member = "UpdateParticleNativeArray")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(WeatherParticleJob), Member = "UpdateParticleNativeArray")]
+		[Calls(Type = typeof(WeatherParticleJob), Member = "UpdateParticleNoTurbulenceNativeArray")]
 		private void Wrap_Job(ref ParticleSystemJobData jobData, int i)
 		{
 		}
 
-		[CalledBy(Type = typeof(WeatherParticleJob), Member = "UpdateParticleNoTurbulenceNativeArray")]
-		[CalledBy(Type = typeof(WeatherParticleJob), Member = "UpdateParticleNativeArray")]
+		[CalledBy(Type = typeof(WeatherParticleJob), Member = "NoWrap_Job")]
+		[CalledBy(Type = typeof(WeatherParticleJob), Member = "KillPoint_Job")]
+		[CalledBy(Type = typeof(WeatherParticleJob), Member = "KillBox_Job")]
 		[CalledBy(Type = typeof(WeatherParticleJob), Member = "WrapAndKillPoint_Job")]
 		[CalledBy(Type = typeof(WeatherParticleJob), Member = "WrapAndKillBox_Job")]
-		[CalledBy(Type = typeof(WeatherParticleJob), Member = "KillPoint_Job")]
-		[CalledBy(Type = typeof(WeatherParticleJob), Member = "NoWrap_Job")]
+		[CalledBy(Type = typeof(WeatherParticleJob), Member = "UpdateParticleNativeArray")]
+		[CalledBy(Type = typeof(WeatherParticleJob), Member = "UpdateParticleNoTurbulenceNativeArray")]
 		[CallerCount(Count = 7)]
-		[CalledBy(Type = typeof(WeatherParticleJob), Member = "KillBox_Job")]
 		private void KillParticle(ref ParticleSystemJobData jobData, int i)
 		{
 		}
 
+		[CalledBy(Type = typeof(WeatherParticleJob), Member = "Execute")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(WeatherParticleJob), Member = "KillParticle")]
-		[CalledBy(Type = typeof(WeatherParticleJob), Member = "Execute")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		private void NoWrap_Job(ref ParticleSystemJobData jobData, int i)
 		{
 		}
 
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[Calls(Type = typeof(WeatherParticleJob), Member = "KillParticle")]
 		[CalledBy(Type = typeof(WeatherParticleJob), Member = "Execute")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(WeatherParticleJob), Member = "KillParticle")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 2)]
 		private void KillPoint_Job(Bounds pkBounds, ref ParticleSystemJobData jobData, int i)
 		{
 		}
 
 		[CalledBy(Type = typeof(WeatherParticleJob), Member = "Execute")]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(WeatherParticleJob), Member = "KillParticle")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Bounds), Member = "Intersects")]
+		[Calls(Type = typeof(WeatherParticleJob), Member = "KillParticle")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		private void KillBox_Job(Bounds pkBounds, Bounds snowBox, ref ParticleSystemJobData jobData, int i)
 		{
 		}
 
+		[CalledBy(Type = typeof(WeatherParticleJob), Member = "Execute")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(WeatherParticleJob), Member = "UpdateParticleNativeArray")]
 		[Calls(Type = typeof(WeatherParticleJob), Member = "UpdateParticleNoTurbulenceNativeArray")]
 		[Calls(Type = typeof(WeatherParticleJob), Member = "KillParticle")]
-		[CalledBy(Type = typeof(WeatherParticleJob), Member = "Execute")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		private void WrapAndKillPoint_Job(Bounds pkBounds, ref ParticleSystemJobData jobData, int i)
 		{
 		}
 
 		[CalledBy(Type = typeof(WeatherParticleJob), Member = "Execute")]
-		[Calls(Type = typeof(WeatherParticleJob), Member = "KillParticle")]
-		[Calls(Type = typeof(Bounds), Member = "Intersects")]
-		[Calls(Type = typeof(WeatherParticleJob), Member = "UpdateParticleNativeArray")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(WeatherParticleJob), Member = "UpdateParticleNativeArray")]
 		[Calls(Type = typeof(WeatherParticleJob), Member = "UpdateParticleNoTurbulenceNativeArray")]
+		[Calls(Type = typeof(Bounds), Member = "Intersects")]
+		[Calls(Type = typeof(WeatherParticleJob), Member = "KillParticle")]
 		private void WrapAndKillBox_Job(Bounds pkBounds, Bounds snowBox, ref ParticleSystemJobData jobData, int i)
 		{
 		}
 
-		[CallerCount(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(WeatherParticleJob), Member = "KillParticle")]
-		[Calls(Type = typeof(WeatherParticleManager), Member = "UpdateParticleJobInternal")]
 		[CalledBy(Type = typeof(WeatherParticleJob), Member = "Wrap_Job")]
 		[CalledBy(Type = typeof(WeatherParticleJob), Member = "WrapAndKillPoint_Job")]
 		[CalledBy(Type = typeof(WeatherParticleJob), Member = "WrapAndKillBox_Job")]
+		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(WeatherParticleJob), Member = "KillParticle")]
+		[Calls(Type = typeof(WeatherParticleManager), Member = "UpdateParticleJobInternal")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		private void UpdateParticleNativeArray(ref ParticleSystemJobData jobData, int i)
 		{
 		}
 
+		[CalledBy(Type = typeof(WeatherParticleJob), Member = "Wrap_Job")]
 		[CalledBy(Type = typeof(WeatherParticleJob), Member = "WrapAndKillPoint_Job")]
 		[CalledBy(Type = typeof(WeatherParticleJob), Member = "WrapAndKillBox_Job")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(WeatherParticleJob), Member = "Wrap_Job")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(WeatherParticleJob), Member = "KillParticle")]
 		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(WeatherParticleJob), Member = "KillParticle")]
 		[Calls(Type = typeof(WeatherParticleManager), Member = "UpdateParticleJobNoTurbulenceInternal")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		private void UpdateParticleNoTurbulenceNativeArray(ref ParticleSystemJobData jobData, int i)
 		{
 		}
 
+		[CalledBy(Type = typeof(WeatherParticleManager), Member = "WeatherParticles_MultiThreadedUpdate_part2")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnsafeUtility), Member = "Free")]
 		[Calls(Type = typeof(ObjectDisposedException), Member = ".ctor")]
-		[CalledBy(Type = typeof(WeatherParticleManager), Member = "WeatherParticles_MultiThreadedUpdate_part2")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 12)]
 		public void Dispose()
 		{
@@ -419,37 +428,37 @@ public class WeatherParticleManager
 
 	private static readonly float stepDot1;
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(WeatherParticleManager), Member = "StartWorkerThreads")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "Init")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(WeatherParticleManager), Member = "StartWorkerThreads")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 39)]
 	public WeatherParticleManager(WeatherParticleManagerConfiguration config)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 19)]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "OnDisable")]
-	[Calls(Type = typeof(UnsafeUtility), Member = "Free")]
-	[Calls(Type = typeof(UnsafeUtility), Member = "Free")]
-	[Calls(Type = typeof(Resources), Member = "UnloadAsset")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Resources), Member = "UnloadAsset")]
+	[Calls(Type = typeof(UnsafeUtility), Member = "Free")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 19)]
 	public void Destroy()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "InitializeAfterSceneLoad")]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "Update")]
-	[Calls(Type = typeof(ResourcesAPI), Member = "get_ActiveAPI")]
-	[CallsUnknownMethods(Count = 27)]
-	[Calls(Type = typeof(PKInstance), Member = ".ctor")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 18)]
+	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "InitializeAfterSceneLoad")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
 	[Calls(Type = typeof(PKInstance), Member = ".ctor")]
+	[Calls(Type = typeof(PKInstance), Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(ResourcesAPI), Member = "get_ActiveAPI")]
+	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 27)]
 	public void InitializeForScene()
 	{
 	}
@@ -457,26 +466,25 @@ public class WeatherParticleManager
 	[CallerCount(Count = 0)]
 	public static int GetMaxFallingParticleCount()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	public static int GetMaxBlowingParticleCount()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 58)]
 	[CalledBy(Type = typeof(WeatherParticleManager), Member = ".ctor")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Thread), Member = "SetStartHelper")]
+	[Calls(Type = typeof(Thread), Member = "set_IsBackground")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(EventWaitHandle), Member = ".ctor")]
 	[Calls(Type = typeof(Thread), Member = "Start")]
-	[Calls(Type = typeof(EventWaitHandle), Member = ".ctor")]
-	[Calls(Type = typeof(Thread), Member = "set_IsBackground")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Thread), Member = "SetStartHelper")]
 	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 58)]
 	private void StartWorkerThreads()
 	{
 	}
@@ -488,88 +496,82 @@ public class WeatherParticleManager
 	}
 
 	[CalledBy(Type = typeof(WeatherParticleManager), Member = "LateUpdate_part1")]
-	[Calls(Type = typeof(Shader), Member = "SetGlobalVector")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Shader), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(Shader), Member = "SetGlobalVector")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[Calls(Type = typeof(Shader), Member = "SetGlobalVector")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Shader), Member = "SetGlobalVector")]
+	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void UpdateShaderGlobalsForFoliage(Vector3 camUp)
 	{
 	}
 
-	[Calls(Type = typeof(QualitySettingsManager), Member = "GetCurrentQualitySettings")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(PKInstance), Member = "ShouldUpdate")]
-	[Calls(Type = typeof(PKInstance), Member = "get_BoundingBox")]
-	[Calls(Type = typeof(PKInstance), Member = "get_BoundingBox")]
-	[Calls(Type = typeof(WeatherParticleManager), Member = "WeatherParticles_MultiThreadedUpdate_part1")]
 	[CalledBy(Type = typeof(GameManager), Member = "LateUpdate")]
-	[Calls(Type = typeof(WeatherParticleManager), Member = "UpdateShaderGlobalsForFoliage")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "DoLateUpdate")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "DoLateUpdate_part1")]
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Transform), Member = "get_up")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Matrix4x4), Member = "get_inverse")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Transform), Member = "get_localToWorldMatrix")]
 	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[CallsDeduplicatedMethods(Count = 12)]
+	[Calls(Type = typeof(Transform), Member = "get_up")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Transform), Member = "get_up")]
+	[Calls(Type = typeof(Matrix4x4), Member = "get_inverse")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(WeatherParticleManager), Member = "UpdateShaderGlobalsForFoliage")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "GetCurrentQualitySettings")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(PKInstance), Member = "ShouldUpdate")]
+	[Calls(Type = typeof(PKInstance), Member = "get_BoundingBox")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(WeatherParticleManager), Member = "WeatherParticles_MultiThreadedUpdate_part1")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 19)]
 	public void LateUpdate_part1()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(SnowPatchManager), Member = "LateUpdate")]
-	[Calls(Type = typeof(WeatherParticleManager), Member = "WeatherParticles_MultiThreadedUpdate_part2")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(WeatherParticleManager), Member = "WeatherParticles_MultiThreadedUpdate_part2")]
+	[CallsUnknownMethods(Count = 3)]
 	public void LateUpdate_part2()
 	{
 	}
 
-	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(WeatherParticleManager), Member = "LateUpdate_part1")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(WeatherParticleManager), Member = "ParticleUpdate_MultiThreaded")]
+	[Calls(TypeFullName = "System.Threading.NativeEventCalls", Member = "SetEvent")]
+	[Calls(Type = typeof(IOException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private void WeatherParticles_MultiThreadedUpdate_part1(Weather wc)
 	{
 	}
 
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "DoLateUpdate_part2")]
-	[CallsUnknownMethods(Count = 21)]
 	[CalledBy(Type = typeof(WeatherParticleManager), Member = "LateUpdate_part2")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(WeatherParticleJob), Member = "Dispose")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(WeatherParticleJob), Member = "Dispose")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[Calls(Type = typeof(ObjectDisposedException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 21)]
 	private void WeatherParticles_MultiThreadedUpdate_part2(Weather wc)
 	{
 	}
 
+	[CalledBy(Type = typeof(WeatherParticleManager), Member = "ParticleUpdate_MultiThreaded")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[CalledBy(Type = typeof(WeatherParticleManager), Member = "ParticleUpdate_MultiThreaded")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 7)]
 	private void ConfigureParticleSystemVars(ParticleSystem ps, ref ParticleSystemVars psv, float turbulenceScalar)
 	{
@@ -581,41 +583,41 @@ public class WeatherParticleManager
 	{
 	}
 
-	[Calls(Type = typeof(WeatherParticleManager), Member = "ScheduleJobWithNoBounds")]
-	[Calls(Type = typeof(WeatherParticleManager), Member = "ScheduleJobWithBounds")]
-	[Calls(Type = typeof(WeatherParticleManager), Member = "AddTaskWithNoBounds")]
-	[CallsUnknownMethods(Count = 4)]
+	[CalledBy(Type = typeof(WeatherParticleManager), Member = "WeatherParticles_MultiThreadedUpdate_part1")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(WeatherParticleManager), Member = "ConfigureParticleSystemVars")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(WeatherParticleManager), Member = "AddTasksWithBounds")]
+	[Calls(Type = typeof(WeatherParticleManager), Member = "AddTaskWithNoBounds")]
+	[Calls(Type = typeof(WeatherParticleManager), Member = "ScheduleJobWithBounds")]
+	[Calls(Type = typeof(WeatherParticleManager), Member = "ScheduleJobWithNoBounds")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ParticleUpdate_MultiThreaded(List<Bounds> pkBounds, ParticleSystem ps, float flurryScalar, float turbulenceScalar, NativeArray<ParticleSystem.Particle> workParticles, float lifetimeLimit, bool isFallingSnow, ref ParticleSystemVars psv)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(WeatherParticleManager), Member = "ParticleUpdate_MultiThreaded")]
 	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 10)]
 	private void AddTaskWithNoBounds(ParticleSystem ps, NativeArray<ParticleSystem.Particle> workParticles, bool isFallingSnow)
 	{
 	}
 
 	[CalledBy(Type = typeof(WeatherParticleManager), Member = "ParticleUpdate_MultiThreaded")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(ParticleSystem), Member = "get_particleCount")]
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ParticleSystem), Member = "get_particleCount")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void AddTasksWithBounds(List<Bounds> pkBounds, ParticleSystem ps, bool isFallingSnow)
 	{
 	}
 
+	[CalledBy(Type = typeof(WeatherParticleManager), Member = "ParticleUpdate_MultiThreaded")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(WeatherParticleManager), Member = "ParticleUpdate_MultiThreaded")]
 	[CallsUnknownMethods(Count = 5)]
 	private void ScheduleJobWithNoBounds(ParticleSystem ps, bool isFallingSnow)
 	{
@@ -624,76 +626,77 @@ public class WeatherParticleManager
 	[CalledBy(Type = typeof(WeatherParticleManager), Member = "ParticleUpdate_MultiThreaded")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 6)]
 	private void ScheduleJobWithBounds(List<Bounds> pkBounds, ParticleSystem ps, bool isFallingSnow)
 	{
 	}
 
-	[CallAnalysisFailed]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(WTTask), Member = "Execute")]
+	[Calls(TypeFullName = "System.Threading.NativeEventCalls", Member = "SetEvent")]
+	[Calls(Type = typeof(IOException), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 15)]
 	private void WeatherParticleTask(object obj)
 	{
 	}
 
 	[CalledBy(Type = typeof(WTTask), Member = "UpdateParticle")]
-	[Calls(Type = typeof(WeatherParticleManager), Member = "Noise3")]
-	[CallsUnknownMethods(Count = 11)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(WeatherParticleManager), Member = "Noise3")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	private static void UpdateParticleInternal(ref ParticleSystem.Particle particle, ParticleSystemVars psv, WeatherParticleManagerConfiguration config, CommonVars common, Vector3 p)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(WeatherParticleJob), Member = "UpdateParticleNativeArray")]
-	[Calls(Type = typeof(WeatherParticleManager), Member = "Noise3")]
-	[Calls(Type = typeof(WeatherParticleManager), Member = "Noise3")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(WeatherParticleManager), Member = "Noise3")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	private static void UpdateParticleJobInternal(ref ParticleSystemJobData jobData, int i, ParticleSystemVars psv, WeatherParticleManagerConfiguration config, CommonVars common, Vector3 p)
 	{
 	}
 
+	[CalledBy(Type = typeof(WeatherParticleJob), Member = "UpdateParticleNoTurbulenceNativeArray")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(WeatherParticleJob), Member = "UpdateParticleNoTurbulenceNativeArray")]
 	[CallsUnknownMethods(Count = 4)]
 	private static void UpdateParticleJobNoTurbulenceInternal(ref ParticleSystemJobData jobData, int i, ParticleSystemVars psv, WeatherParticleManagerConfiguration config, CommonVars common, Vector3 p)
 	{
 	}
 
+	[CalledBy(Type = typeof(WTTask), Member = "UpdateParticleNoTurbulence")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(WTTask), Member = "UpdateParticleNoTurbulence")]
 	[CallsUnknownMethods(Count = 4)]
 	private static void UpdateParticleNoTurbulenceInternal(ref ParticleSystem.Particle particle, ParticleSystemVars psv, WeatherParticleManagerConfiguration config, CommonVars common, Vector3 p)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private float FastSine(float x)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 3)]
 	private static float Hash(float p)
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(WeatherParticleManager), Member = "UpdateParticleInternal")]
+	[CalledBy(Type = typeof(WeatherParticleManager), Member = "UpdateParticleJobInternal")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(WeatherParticleManager), Member = "UpdateParticleInternal")]
-	[CalledBy(Type = typeof(WeatherParticleManager), Member = "UpdateParticleInternal")]
-	[CalledBy(Type = typeof(WeatherParticleManager), Member = "UpdateParticleJobInternal")]
-	[CalledBy(Type = typeof(WeatherParticleManager), Member = "UpdateParticleJobInternal")]
 	[CallsUnknownMethods(Count = 27)]
 	private static float Noise3(Vector3 x)
 	{
-		return default(float);
+		return 0f;
 	}
 }

@@ -11,11 +11,10 @@ public class PKInstance
 
 	public Bounds BoundingBox
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CalledBy(Type = typeof(WeatherParticleManager), Member = "LateUpdate_part1")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
-		[CalledBy(Type = typeof(WeatherParticleManager), Member = "LateUpdate_part1")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return default(Bounds);
@@ -28,22 +27,23 @@ public class PKInstance
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(WeatherParticleManager), Member = "InitializeForScene")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public PKInstance(ParticleKiller pk)
 	{
 	}
 
+	[CalledBy(Type = typeof(WeatherParticleManager), Member = "LateUpdate_part1")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Collider), Member = "ClosestPointOnBounds")]
-	[CalledBy(Type = typeof(WeatherParticleManager), Member = "LateUpdate_part1")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	public bool ShouldUpdate(Vector3 camPos)
 	{
-		return default(bool);
+		return false;
 	}
 }

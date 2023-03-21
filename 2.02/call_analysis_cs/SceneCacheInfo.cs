@@ -7,9 +7,9 @@ public class SceneCacheInfo : MonoBehaviour
 
 	public int m_NumRareCachesActiveAtStart;
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public SceneCacheInfo()
 	{
 	}

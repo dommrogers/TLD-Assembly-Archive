@@ -11,8 +11,8 @@ public class PlayMusicTriggerSaveDataProxy
 
 	public string m_ObjectLinkGuid;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public PlayMusicTriggerSaveDataProxy()
 	{
 	}

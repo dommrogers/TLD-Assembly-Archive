@@ -7,10 +7,10 @@ public class SceneNames
 
 	private static string[] m_Names;
 
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "ToLower")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void Initialize()
 	{
 	}

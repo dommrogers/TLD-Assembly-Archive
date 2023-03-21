@@ -11,10 +11,10 @@ public class SetVariable<T> : ActionTask
 
 	protected override string info
 	{
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		get
 		{
 			return null;
@@ -23,8 +23,8 @@ public class SetVariable<T> : ActionTask
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{

@@ -11,9 +11,9 @@ public class DeletePersistentAuthCallbackInfo : ICallbackInfo, ISettable
 
 	public Result ResultCode
 	{
-		[CallerCount(Count = 7)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return default(Result);
@@ -30,14 +30,14 @@ public class DeletePersistentAuthCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -50,24 +50,24 @@ public class DeletePersistentAuthCallbackInfo : ICallbackInfo, ISettable
 		return null;
 	}
 
-	[Calls(Type = typeof(DeletePersistentAuthCallbackInfoInternal), Member = "get_ClientData")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DeletePersistentAuthCallbackInfoInternal), Member = "get_ClientData")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	internal void Set(DeletePersistentAuthCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(DeletePersistentAuthCallbackInfoInternal), Member = "get_ClientData")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public DeletePersistentAuthCallbackInfo()
 	{
 	}

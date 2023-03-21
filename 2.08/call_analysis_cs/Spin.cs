@@ -11,36 +11,36 @@ public class Spin : MonoBehaviour
 
 	private Transform mTrans;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Spin), Member = "ApplyDelta")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Spin), Member = "ApplyDelta")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	private void FixedUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Spin), Member = "FixedUpdate")]
 	[CalledBy(Type = typeof(Spin), Member = "Update")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Spin), Member = "FixedUpdate")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public void ApplyDelta(float delta)
 	{
 	}

@@ -49,22 +49,22 @@ public class TerrainRenderingManager : MonoBehaviour
 	private static bool s_TerrainTreeForceDisabled;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 13)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Terrain), Member = "get_drawTreesAndFoliage")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 11)]
 	[CallsUnknownMethods(Count = 17)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(ObjectDisposedException), Member = ".ctor")]
-	[Calls(Type = typeof(ObjectDisposedException), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 24)]
-	[Calls(Type = typeof(UnsafeUtility), Member = "Free")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnsafeUtility), Member = "Free")]
+	[Calls(Type = typeof(ObjectDisposedException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 24)]
 	private void OnDisable()
 	{
 	}
@@ -77,63 +77,61 @@ public class TerrainRenderingManager : MonoBehaviour
 		return default(Vector4);
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 8)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
-	[CalledBy(Type = typeof(TerrainVisibilityTrigger), Member = "OnTriggerExit")]
 	[CalledBy(Type = typeof(TerrainVisibilityTrigger), Member = "OnTriggerEnter")]
-	[Calls(Type = typeof(Terrain), Member = "set_keepUnusedRenderingResources")]
-	[Calls(Type = typeof(TerrainRenderingManager), Member = "EnableTerrainTrees")]
-	[Calls(Type = typeof(Terrain), Member = "set_drawHeightmap")]
-	[Calls(Type = typeof(Terrain), Member = "set_drawHeightmap")]
-	[Calls(Type = typeof(Terrain), Member = "set_keepUnusedRenderingResources")]
-	[Calls(Type = typeof(TerrainRenderingManager), Member = "EnableTerrainTrees")]
-	[Calls(Type = typeof(Terrain), Member = "get_terrainData")]
-	[CallsDeduplicatedMethods(Count = 13)]
+	[CalledBy(Type = typeof(TerrainVisibilityTrigger), Member = "OnTriggerExit")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Terrain), Member = "get_terrainData")]
+	[Calls(Type = typeof(Terrain), Member = "set_drawHeightmap")]
+	[Calls(Type = typeof(TerrainRenderingManager), Member = "EnableTerrainTrees")]
+	[Calls(Type = typeof(Terrain), Member = "set_keepUnusedRenderingResources")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 14)]
 	public void SetTerrainRendering(List<Terrain> extTerrainList, bool enableTerrain)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplyTerrainTrees")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_terrain_disabletrees")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_terrain_disabletrees")]
-	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplyTerrainTrees")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(Terrain), Member = "set_drawTreesAndFoliage")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Terrain), Member = "set_drawTreesAndFoliage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public static void ForceDisableTerrainTrees(bool forceDisabled)
 	{
 	}
 
+	[CalledBy(Type = typeof(TerrainRenderingManager), Member = "SetTerrainRendering")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(TerrainRenderingManager), Member = "SetTerrainRendering")]
-	[CalledBy(Type = typeof(TerrainRenderingManager), Member = "SetTerrainRendering")]
 	[CallsUnknownMethods(Count = 3)]
 	public static void EnableTerrainTrees(Terrain t, bool enabled)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(HUDManager), Member = "UpdateDebugLines")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Terrain), Member = "get_drawTreesAndFoliage")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public static string GetDebugText()
 	{
 		return null;
@@ -142,12 +140,12 @@ public class TerrainRenderingManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public static bool IsDisabledTerrainTreesForced()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 0)]
 	public TerrainRenderingManager()
 	{
 	}

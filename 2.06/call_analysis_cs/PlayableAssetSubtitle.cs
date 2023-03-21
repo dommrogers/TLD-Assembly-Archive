@@ -10,22 +10,23 @@ public class PlayableAssetSubtitle : PlayableAsset
 
 	private TLD_SubtitleTrack m_Track;
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptPlayable<>), Member = "Create")]
+	[Calls(Type = typeof(PlayableHandle), Member = "GetObject")]
+	[CallsUnknownMethods(Count = 3)]
 	public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
 	{
 		return default(Playable);
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 36)]
+	[CallerCount(Count = 38)]
 	public void SetTrack(TLD_SubtitleTrack tldSubtitleTrack)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 58)]
+	[CallerCount(Count = 61)]
 	public TLD_SubtitleTrack GetTrack()
 	{
 		return null;

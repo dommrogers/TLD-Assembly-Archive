@@ -36,7 +36,7 @@ public class UISpriteData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -45,7 +45,7 @@ public class UISpriteData
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -70,21 +70,10 @@ public class UISpriteData
 	{
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void CopyFromReduced(UISpriteData sd, float reductionFactor)
 	{
 	}
@@ -95,9 +84,9 @@ public class UISpriteData
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(UIAtlas), Member = "Upgrade")]
+	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public UISpriteData()
 	{
 	}

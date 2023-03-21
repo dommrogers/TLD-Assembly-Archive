@@ -6,11 +6,11 @@ namespace NodeCanvas.Tasks.Actions;
 public class VideoIsPlaying : ConditionTask
 {
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

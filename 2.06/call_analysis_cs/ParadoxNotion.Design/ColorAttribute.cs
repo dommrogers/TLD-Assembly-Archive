@@ -8,7 +8,7 @@ public class ColorAttribute : Attribute
 	public readonly string hexColor;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 265)]
+	[CallerCount(Count = 269)]
 	public ColorAttribute(string hexColor)
 	{
 	}

@@ -20,17 +20,17 @@ internal struct PlayerStatInfoInternal : ISettable, IDisposable
 		[CalledBy(Type = typeof(PlayerStatInfo), Member = "Set")]
 		[CalledBy(Type = typeof(PlayerStatInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(PlayerStatInfoInternal), Member = "Set")]
+		[CalledBy(Type = typeof(PlayerStatInfoInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(PlayerStatInfoInternal), Member = "Set")]
-		[CalledBy(Type = typeof(PlayerStatInfoInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -42,7 +42,7 @@ internal struct PlayerStatInfoInternal : ISettable, IDisposable
 		[CallerCount(Count = 7)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -54,13 +54,13 @@ internal struct PlayerStatInfoInternal : ISettable, IDisposable
 	public int ThresholdValue
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 6)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -72,17 +72,17 @@ internal struct PlayerStatInfoInternal : ISettable, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerStatInfoInternal), Member = "set_Name")]
 	[CalledBy(Type = typeof(Helper), Member = "TryMarshalSet")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerStatInfoInternal), Member = "set_Name")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

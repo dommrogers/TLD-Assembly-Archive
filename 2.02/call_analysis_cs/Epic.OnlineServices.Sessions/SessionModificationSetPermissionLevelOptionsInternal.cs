@@ -20,8 +20,8 @@ internal struct SessionModificationSetPermissionLevelOptionsInternal : ISettable
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void Set(SessionModificationSetPermissionLevelOptions other)
 	{
 	}
@@ -34,7 +34,7 @@ internal struct SessionModificationSetPermissionLevelOptionsInternal : ISettable
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

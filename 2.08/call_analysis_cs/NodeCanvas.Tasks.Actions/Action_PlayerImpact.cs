@@ -26,8 +26,8 @@ public class Action_PlayerImpact : ActionTask
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_PlayerImpact()
 	{
 	}

@@ -26,14 +26,14 @@ public class PlayerAchievement : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -41,12 +41,12 @@ public class PlayerAchievement : ISettable
 
 	public double Progress
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(double);
+			return 0.0;
 		}
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
@@ -74,16 +74,16 @@ public class PlayerAchievement : ISettable
 
 	public PlayerStatInfo[] StatInfo
 	{
-		[CallerCount(Count = 8)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 15)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 18)]
 		set
 		{
 		}
@@ -100,7 +100,7 @@ public class PlayerAchievement : ISettable
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 46)]
 		set
 		{
 		}
@@ -115,9 +115,9 @@ public class PlayerAchievement : ISettable
 		{
 			return null;
 		}
-		[CallerCount(Count = 17)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 19)]
 		set
 		{
 		}
@@ -125,16 +125,16 @@ public class PlayerAchievement : ISettable
 
 	public string IconURL
 	{
-		[CallerCount(Count = 5)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 11)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 14)]
+		[CallerCount(Count = 18)]
 		set
 		{
 		}
@@ -144,44 +144,44 @@ public class PlayerAchievement : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 10)]
+		[CallerCount(Count = 11)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 15)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 16)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(PlayerAchievementInternal), Member = "get_IconURL")]
-	[Calls(Type = typeof(PlayerAchievementInternal), Member = "get_FlavorText")]
-	[Calls(Type = typeof(PlayerAchievementInternal), Member = "get_StatInfo")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(PlayerAchievement), Member = "Set")]
-	[Calls(Type = typeof(PlayerAchievementInternal), Member = "get_Description")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerAchievementInternal), Member = "get_AchievementId")]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerAchievementInternal), Member = "get_StatInfo")]
 	[Calls(Type = typeof(PlayerAchievementInternal), Member = "get_DisplayName")]
+	[Calls(Type = typeof(PlayerAchievementInternal), Member = "get_Description")]
+	[Calls(Type = typeof(PlayerAchievementInternal), Member = "get_IconURL")]
+	[Calls(Type = typeof(PlayerAchievementInternal), Member = "get_FlavorText")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	internal void Set(PlayerAchievementInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerAchievement), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PlayerAchievement()
 	{
 	}

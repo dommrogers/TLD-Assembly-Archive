@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 
 namespace Storage;
@@ -23,7 +22,7 @@ public class BlobInfoQuery : IDisposable, IEnumerable<BlobInfo>, IEnumerable
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -34,41 +33,41 @@ public class BlobInfoQuery : IDisposable, IEnumerable<BlobInfo>, IEnumerable
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 		}
 
+		[DebuggerHidden]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[DebuggerHidden]
 		public _003CGetEnumerator_003Ed__3(int _003C_003E1__state)
 		{
 		}
 
-		[CallerCount(Count = 2)]
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(BlobInfoQuery), Member = "Name")]
 		[Calls(Type = typeof(BlobInfoQuery), Member = "TotalSize")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 10)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 3)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 3)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -80,9 +79,9 @@ public class BlobInfoQuery : IDisposable, IEnumerable<BlobInfo>, IEnumerable
 
 	public BlobInfo Item
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(BlobInfoQuery), Member = "Name")]
 		[Calls(Type = typeof(BlobInfoQuery), Member = "TotalSize")]
-		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 8)]
 		get
@@ -91,27 +90,26 @@ public class BlobInfoQuery : IDisposable, IEnumerable<BlobInfo>, IEnumerable
 		}
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(BlobInfoQuery), Member = "get_Item")]
 	[CalledBy(Type = typeof(_003CGetEnumerator_003Ed__3), Member = "MoveNext")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public uint TotalSize(uint idx)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(BlobInfoQuery), Member = "get_Item")]
 	[CalledBy(Type = typeof(_003CGetEnumerator_003Ed__3), Member = "MoveNext")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(BlobInfoQuery), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public string Name(uint idx)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(BlobInfoQuery), Member = "System.Collections.IEnumerable.GetEnumerator")]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
@@ -120,22 +118,22 @@ public class BlobInfoQuery : IDisposable, IEnumerable<BlobInfo>, IEnumerable
 		return null;
 	}
 
-	[Calls(Type = typeof(BlobInfoQuery), Member = "GetEnumerator")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BlobInfoQuery), Member = "GetEnumerator")]
 	private IEnumerator System_002ECollections_002EIEnumerable_002EGetEnumerator()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Dispose()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public BlobInfoQuery(uint totalResults, IntPtr queryHandle)
 	{
 	}

@@ -27,56 +27,56 @@ public class vp_DamageHandler : MonoBehaviour
 
 	protected Quaternion m_StartRotation;
 
-	[CallsUnknownMethods(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Awake()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(vp_Timer), Member = "In")]
-	[CallsUnknownMethods(Count = 9)]
 	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(vp_Timer), Member = "In")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 9)]
 	public void Damage(float damage)
 	{
 	}
 
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(vp_DamageHandler), Member = "RemoveBulletHoles")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[Calls(Type = typeof(vp_DamageHandler), Member = "RemoveBulletHoles")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[Calls(Type = typeof(Random), Member = "Range")]
 	[Calls(Type = typeof(vp_Timer), Member = "In")]
+	[CallsDeduplicatedMethods(Count = 10)]
 	[CallsUnknownMethods(Count = 13)]
 	public void Die()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Physics), Member = "CheckSphere")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Physics), Member = "CheckSphere")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[Calls(Type = typeof(AudioSource), Member = "PlayOneShot")]
-	[Calls(Type = typeof(vp_Timer), Member = "In")]
-	[CallsUnknownMethods(Count = 13)]
 	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(vp_Timer), Member = "In")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 13)]
 	protected void Respawn()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[CalledBy(Type = typeof(vp_DamageHandler), Member = "Die")]
-	[CallsUnknownMethods(Count = 16)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 16)]
 	protected void RemoveBulletHoles()
 	{
 	}

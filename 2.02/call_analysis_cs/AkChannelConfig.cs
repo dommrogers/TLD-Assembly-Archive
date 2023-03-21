@@ -10,12 +10,12 @@ public class AkChannelConfig : IDisposable
 
 	public uint uNumChannels
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -27,15 +27,15 @@ public class AkChannelConfig : IDisposable
 
 	public uint eConfigType
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -49,11 +49,11 @@ public class AkChannelConfig : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -65,20 +65,20 @@ public class AkChannelConfig : IDisposable
 	{
 	}
 
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetListenerSpatialization")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetBusConfig")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetBusConfig")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetListenerSpatialization")]
-	[CalledBy(Type = typeof(AkOutputSettings), Member = "set_channelConfig")]
-	[CalledBy(Type = typeof(AkOutputSettings), Member = ".ctor")]
-	[CalledBy(Type = typeof(AkAudioFormat), Member = "SetAll")]
 	[CalledBy(Type = typeof(AkAudioFormat), Member = "set_channelConfig")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 9)]
+	[CalledBy(Type = typeof(AkAudioFormat), Member = "SetAll")]
 	[CalledBy(Type = typeof(AkOutputSettings), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkOutputSettings), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkOutputSettings), Member = "set_channelConfig")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetListenerSpatialization")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetListenerSpatialization")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetBusConfig")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "SetBusConfig")]
+	[CallerCount(Count = 9)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkChannelConfig obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -88,18 +88,18 @@ public class AkChannelConfig : IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	~AkChannelConfig()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}
@@ -118,9 +118,9 @@ public class AkChannelConfig : IDisposable
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void Clear()
 	{
 	}
@@ -146,19 +146,19 @@ public class AkChannelConfig : IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetAmbisonic(uint in_uNumChannels)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsValid()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -166,7 +166,7 @@ public class AkChannelConfig : IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public uint Serialize()
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -192,11 +192,11 @@ public class AkChannelConfig : IDisposable
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsChannelConfigSupported()
 	{
-		return default(bool);
+		return false;
 	}
 }

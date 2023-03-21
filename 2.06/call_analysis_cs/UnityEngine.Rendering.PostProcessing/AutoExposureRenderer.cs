@@ -23,33 +23,23 @@ internal sealed class AutoExposureRenderer : PostProcessEffectRenderer<AutoExpos
 
 	[CalledBy(Type = typeof(AutoExposureRenderer), Member = "Render")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
-	[CalledBy(Type = typeof(AutoExposureRenderer), Member = "Render")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 14)]
 	private void CheckTexture(int eye, int id)
 	{
 	}
 
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeTextureParam")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeTextureParam")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 13)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AutoExposureRenderer), Member = "CheckTexture")]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeBufferParam")]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeVectorParam")]
 	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeTextureParam")]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeVectorParam")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeVectorParam")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeVectorParam")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeBufferParam")]
-	[Calls(Type = typeof(AutoExposureRenderer), Member = "CheckTexture")]
-	[Calls(Type = typeof(AutoExposureRenderer), Member = "CheckTexture")]
 	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 13)]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}

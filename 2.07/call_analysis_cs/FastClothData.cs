@@ -18,14 +18,14 @@ public class FastClothData : ScriptableObject
 	private const int MAX_SUPPORTED_VERTICES = 256;
 
 	[CalledBy(Type = typeof(FastClothManager), Member = "TryCacheClothMeshData")]
-	[Calls(Type = typeof(Mesh), Member = "GetBlendShapeFrameCount")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Mesh), Member = "GetBlendShapeName")]
+	[Calls(Type = typeof(Mesh), Member = "GetBlendShapeFrameCount")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool IsValid()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -35,18 +35,18 @@ public class FastClothData : ScriptableObject
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Mesh), Member = "GetBlendShapeName")]
 	[Calls(Type = typeof(Mesh), Member = "GetBlendShapeFrameCount")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool IsMeshValid()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public FastClothData()
 	{
 	}

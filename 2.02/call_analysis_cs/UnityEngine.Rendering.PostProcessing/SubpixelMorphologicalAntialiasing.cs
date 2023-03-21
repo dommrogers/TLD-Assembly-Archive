@@ -22,32 +22,25 @@ public sealed class SubpixelMorphologicalAntialiasing
 
 	public Quality quality;
 
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderFinalPass")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "get_isSinglePassStereoEnabled")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
+	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderFinalPass")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "get_isSinglePassStereoEnabled")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public bool IsSupported()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderFinalPass")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[CallsUnknownMethods(Count = 22)]
-	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
-	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetTexture")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetTexture")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
+	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetTexture")]
+	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
 	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 22)]
 	internal void Render(PostProcessRenderContext context)
 	{
 	}

@@ -12,10 +12,10 @@ public class ParticleStopper : MonoBehaviour
 
 	private Action m_OnStopCompletedAction;
 
-	[Calls(Type = typeof(ParticleSystem), Member = "Stop")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ParticleSystem), Member = "Stop")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void StopWithCallback(Action onStopCompleted)
 	{
 	}

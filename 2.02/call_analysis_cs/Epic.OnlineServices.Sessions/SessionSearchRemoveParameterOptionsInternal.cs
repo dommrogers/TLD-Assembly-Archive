@@ -15,11 +15,11 @@ internal struct SessionSearchRemoveParameterOptionsInternal : ISettable, IDispos
 
 	public string Key
 	{
+		[CalledBy(Type = typeof(SessionSearchRemoveParameterOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(SessionSearchRemoveParameterOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(SessionSearchRemoveParameterOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(SessionSearchRemoveParameterOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -40,17 +40,17 @@ internal struct SessionSearchRemoveParameterOptionsInternal : ISettable, IDispos
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(SessionSearchRemoveParameterOptionsInternal), Member = "set_Key")]
 	[CalledBy(Type = typeof(SessionSearch), Member = "RemoveParameter")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SessionSearchRemoveParameterOptionsInternal), Member = "set_Key")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void Dispose()
 	{
 	}

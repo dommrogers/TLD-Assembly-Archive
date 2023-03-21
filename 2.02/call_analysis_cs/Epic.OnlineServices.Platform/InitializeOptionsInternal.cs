@@ -33,11 +33,11 @@ internal struct InitializeOptionsInternal : ISettable, IDisposable
 
 	public static AllocateMemoryFuncInternal AllocateMemoryFunction
 	{
-		[CalledBy(Type = typeof(PlatformInterface), Member = "Initialize")]
 		[CalledBy(Type = typeof(InitializeOptionsInternal), Member = "Set")]
-		[CallsUnknownMethods(Count = 7)]
+		[CalledBy(Type = typeof(PlatformInterface), Member = "Initialize")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -46,10 +46,10 @@ internal struct InitializeOptionsInternal : ISettable, IDisposable
 
 	public static ReallocateMemoryFuncInternal ReallocateMemoryFunction
 	{
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(InitializeOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(PlatformInterface), Member = "Initialize")]
+		[CallerCount(Count = 2)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -59,10 +59,10 @@ internal struct InitializeOptionsInternal : ISettable, IDisposable
 
 	public static ReleaseMemoryFuncInternal ReleaseMemoryFunction
 	{
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(InitializeOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(PlatformInterface), Member = "Initialize")]
+		[CallerCount(Count = 2)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -72,9 +72,9 @@ internal struct InitializeOptionsInternal : ISettable, IDisposable
 
 	public string ProductName
 	{
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(InitializeOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -83,10 +83,10 @@ internal struct InitializeOptionsInternal : ISettable, IDisposable
 
 	public string ProductVersion
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(InitializeOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -104,44 +104,40 @@ internal struct InitializeOptionsInternal : ISettable, IDisposable
 	public InitializeThreadAffinity OverrideThreadAffinity
 	{
 		[CalledBy(Type = typeof(InitializeOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(InitializeThreadAffinityInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(InitializeThreadAffinityInternal), Member = "Set")]
 		[CallsDeduplicatedMethods(Count = 4)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(InitializeOptionsInternal), Member = "Set")]
-	[Calls(Type = typeof(InitializeOptionsInternal), Member = "set_OverrideThreadAffinity")]
-	[Calls(Type = typeof(InitializeOptionsInternal), Member = "set_ProductVersion")]
-	[Calls(Type = typeof(InitializeOptionsInternal), Member = "set_ProductName")]
-	[Calls(Type = typeof(InitializeOptionsInternal), Member = "get_ReleaseMemoryFunction")]
-	[Calls(Type = typeof(InitializeOptionsInternal), Member = "get_ReallocateMemoryFunction")]
-	[Calls(Type = typeof(InitializeOptionsInternal), Member = "get_AllocateMemoryFunction")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InitializeOptionsInternal), Member = "get_AllocateMemoryFunction")]
+	[Calls(Type = typeof(InitializeOptionsInternal), Member = "get_ReallocateMemoryFunction")]
+	[Calls(Type = typeof(InitializeOptionsInternal), Member = "get_ReleaseMemoryFunction")]
+	[Calls(Type = typeof(InitializeOptionsInternal), Member = "set_ProductName")]
+	[Calls(Type = typeof(InitializeOptionsInternal), Member = "set_ProductVersion")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(InitializeOptionsInternal), Member = "set_OverrideThreadAffinity")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public void Set(InitializeOptions other)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(InitializeOptionsInternal), Member = "Set")]
 	[CalledBy(Type = typeof(PlatformInterface), Member = "Initialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InitializeOptionsInternal), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

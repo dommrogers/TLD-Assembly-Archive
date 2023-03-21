@@ -17,20 +17,20 @@ public class ScentRanges : MonoBehaviour
 
 	public int m_QuarterScentRange;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetScentRange(ScentRangeCategory cat)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]

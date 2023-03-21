@@ -9,7 +9,7 @@ public class KeroseneLampItemSaveDataProxy
 	public bool m_OnProxy;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public KeroseneLampItemSaveDataProxy()
 	{
 	}

@@ -8,10 +8,10 @@ public class FadeOut : ActionTask
 {
 	public float fadeTime;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CameraFader), Member = "get_current")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

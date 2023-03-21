@@ -13,18 +13,18 @@ public class Skill_Firestarting : Skill
 
 	private static Skill_FirestartingSaveData m_Skill_FirestartingSaveData;
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public string Serialize()
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(Feat_FireMaster), Member = "MaybeUpdateFireStartingSkillLevel")]
 	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
@@ -35,16 +35,16 @@ public class Skill_Firestarting : Skill
 	[CallsUnknownMethods(Count = 2)]
 	public int GetBaseChanceSuccess()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetDurationScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -52,20 +52,15 @@ public class Skill_Firestarting : Skill
 	[CallsUnknownMethods(Count = 2)]
 	public float GetStartTimeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 2)]
 	public override string GetTierBenefits(int index)
 	{
 		return null;
@@ -75,7 +70,7 @@ public class Skill_Firestarting : Skill
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	public bool TinderRequired()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

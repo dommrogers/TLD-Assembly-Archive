@@ -13,8 +13,8 @@ public class ParlayParams : MonoBehaviour
 
 	private StateOfMind m_CurentStateOfMind;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	private void Start()
 	{
 	}

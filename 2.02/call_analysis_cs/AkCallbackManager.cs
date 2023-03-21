@@ -24,32 +24,32 @@ public static class AkCallbackManager
 
 		public uint m_playingID;
 
-		[CallsUnknownMethods(Count = 9)]
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
 		[CalledBy(Type = typeof(AkSoundEngine), Member = "DynamicSequenceOpen")]
 		[CalledBy(Type = typeof(AkSoundEngine), Member = "DynamicSequenceOpen")]
 		[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-		[CallsDeduplicatedMethods(Count = 3)]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
 		[CallerCount(Count = 8)]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 9)]
 		public static EventCallbackPackage Create(EventCallback in_cb, object in_cookie, ref uint io_Flags)
 		{
 			return null;
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AkCallbackManager), Member = "RemoveEventCallbackCookie")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		~EventCallbackPackage()
 		{
 		}
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public EventCallbackPackage()
 		{
 		}
@@ -61,23 +61,23 @@ public static class AkCallbackManager
 
 		public object m_Cookie;
 
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "PrepareGameSyncs")]
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "PrepareGameSyncs")]
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "PrepareEvent")]
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "PrepareEvent")]
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "PrepareBank")]
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "PrepareBank")]
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "PrepareBank")]
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "PrepareBank")]
-		[CallsUnknownMethods(Count = 1)]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "LoadBank")]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "LoadBank")]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "LoadBank")]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "LoadBank")]
 		[CalledBy(Type = typeof(AkSoundEngine), Member = "UnloadBank")]
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "LoadBank")]
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "LoadBank")]
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "LoadBank")]
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "LoadBank")]
-		[CallsDeduplicatedMethods(Count = 3)]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "UnloadBank")]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "PrepareBank")]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "PrepareBank")]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "PrepareBank")]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "PrepareBank")]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "PrepareEvent")]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "PrepareEvent")]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "PrepareGameSyncs")]
+		[CalledBy(Type = typeof(AkSoundEngine), Member = "PrepareGameSyncs")]
 		[CallerCount(Count = 14)]
-		[CalledBy(Type = typeof(AkSoundEngine), Member = "UnloadBank")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 1)]
 		public BankCallbackPackage(BankCallback in_cb, object in_cookie)
 		{
 		}
@@ -92,7 +92,7 @@ public static class AkCallbackManager
 		public object m_Cookie;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public BGMCallbackPackage()
 		{
 		}
@@ -109,9 +109,9 @@ public static class AkCallbackManager
 		public bool IsLoggingEnabled;
 
 		[CalledBy(Type = typeof(AkBasePlatformSettings), Member = "get_CallbackManagerInitializationSettings")]
+		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_CallbackManagerInitializationSettings")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(AkCommonPlatformSettings), Member = "get_CallbackManagerInitializationSettings")]
 		public InitializationSettings()
 		{
 		}
@@ -158,7 +158,7 @@ public static class AkCallbackManager
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
@@ -169,68 +169,74 @@ public static class AkCallbackManager
 	}
 
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "CancelEventCallback")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 23)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 23)]
 	public static void RemoveEventCallback(uint in_playingID)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_CancelEventCallbackCookie")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "CancelEventCallbackCookie")]
 	[CalledBy(Type = typeof(EventCallbackPackage), Member = "Finalize")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_CancelEventCallbackCookie")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 22)]
 	public static void RemoveEventCallbackCookie(object in_cookie)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 22)]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "CancelBankCallbackCookie")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_CancelBankCallbackCookie")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 22)]
 	public static void RemoveBankCallback(object in_cookie)
 	{
 	}
 
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "DynamicSequenceOpen")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "DynamicSequenceOpen")]
-	[CalledBy(Type = typeof(AkSoundEngine), Member = "DynamicSequenceOpen")]
 	[CalledBy(Type = typeof(GameAudioManager), Member = "PlayDynamicSequence")]
-	[CallerCount(Count = 12)]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "DynamicSequenceOpen")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "DynamicSequenceOpen")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "DynamicSequenceOpen")]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CalledBy(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CallerCount(Count = 12)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void SetLastAddedPlayingID(uint in_playingID)
 	{
 	}
 
-	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "ResetSoundEngine")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "InitializeSoundEngine")]
+	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "ResetSoundEngine")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Marshal), Member = "AllocHGlobal")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public static AKRESULT Init(InitializationSettings settings)
 	{
 		return default(AKRESULT);
 	}
 
+	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "TerminateSoundEngine")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "TerminateSoundEngine")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Term()
 	{
@@ -243,50 +249,46 @@ public static class AkCallbackManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public static void SetBGMCallback(BGMCallback in_CB, object in_cookie)
 	{
 	}
 
-	[Calls(Type = typeof(EventCallback), Member = "Invoke")]
-	[Calls(Type = typeof(AkMonitoringCallbackInfo), Member = "get_gameObjID")]
-	[Calls(Type = typeof(AkMonitoringCallbackInfo), Member = "get_message")]
-	[Calls(Type = typeof(MonitoringCallback), Member = "Invoke")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "GetInstance")]
+	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "TerminateSoundEngine")]
 	[CalledBy(Type = typeof(AkInitializer), Member = "LateUpdate")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "TerminateSoundEngine")]
-	[CalledBy(Type = typeof(AkWwiseInitializationSettings), Member = "TerminateSoundEngine")]
-	[Calls(Type = typeof(AkMonitoringCallbackInfo), Member = "get_playingID")]
 	[CalledBy(Type = typeof(AkSoundEngineController), Member = "LateUpdate")]
-	[CallsUnknownMethods(Count = 40)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt64")]
-	[Calls(Type = typeof(AkMonitoringCallbackInfo), Member = "get_errorLevel")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "GetInstance")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 21)]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkSerializedCallbackHeader_pPackage_get")]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkSerializedCallbackHeader_eType_get")]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkSerializedCallbackHeader_GetData")]
 	[Calls(Type = typeof(AkAudioSourceChangeCallbackInfo), Member = "get_bOtherAudioPlaying")]
-	[Calls(Type = typeof(AkMonitoringCallbackInfo), Member = "get_errorCode")]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkSerializedCallbackHeader_pNext_get")]
 	[Calls(Type = typeof(BGMCallback), Member = "Invoke")]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkSerializedCallbackHeader_pNext_get")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(AkBankCallbackInfo), Member = "get_bankID")]
 	[Calls(Type = typeof(AkBankCallbackInfo), Member = "get_inMemoryBankPtr")]
 	[Calls(Type = typeof(AkBankCallbackInfo), Member = "get_loadResult")]
 	[Calls(Type = typeof(AkBankCallbackInfo), Member = "get_memPoolId")]
 	[Calls(Type = typeof(BankCallback), Member = "Invoke")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt64")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "GetInstance")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt64")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(AkBankCallbackInfo), Member = "get_bankID")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(AkMonitoringCallbackInfo), Member = "get_errorCode")]
+	[Calls(Type = typeof(AkMonitoringCallbackInfo), Member = "get_errorLevel")]
+	[Calls(Type = typeof(AkMonitoringCallbackInfo), Member = "get_playingID")]
+	[Calls(Type = typeof(AkMonitoringCallbackInfo), Member = "get_gameObjID")]
+	[Calls(Type = typeof(AkMonitoringCallbackInfo), Member = "get_message")]
+	[Calls(Type = typeof(MonitoringCallback), Member = "Invoke")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(EventCallback), Member = "Invoke")]
+	[CallsDeduplicatedMethods(Count = 17)]
+	[CallsUnknownMethods(Count = 40)]
 	public static int PostCallbacks()
 	{
-		return default(int);
+		return 0;
 	}
 }

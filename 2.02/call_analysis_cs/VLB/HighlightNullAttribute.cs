@@ -5,8 +5,8 @@ namespace VLB;
 
 public sealed class HighlightNullAttribute : PropertyAttribute
 {
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public HighlightNullAttribute()
 	{
 	}

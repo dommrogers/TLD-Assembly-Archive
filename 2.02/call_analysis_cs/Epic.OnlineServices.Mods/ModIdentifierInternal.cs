@@ -21,18 +21,18 @@ internal struct ModIdentifierInternal : ISettable, IDisposable
 
 	public string NamespaceId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(ModIdentifier), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(ModIdentifierInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -41,17 +41,17 @@ internal struct ModIdentifierInternal : ISettable, IDisposable
 	public string ItemId
 	{
 		[CalledBy(Type = typeof(ModIdentifier), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(ModIdentifierInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -61,15 +61,15 @@ internal struct ModIdentifierInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(ModIdentifier), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(ModIdentifierInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -78,17 +78,17 @@ internal struct ModIdentifierInternal : ISettable, IDisposable
 
 	public string Title
 	{
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(ModIdentifier), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(ModIdentifierInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -97,51 +97,47 @@ internal struct ModIdentifierInternal : ISettable, IDisposable
 
 	public string Version
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(ModIdentifier), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(ModIdentifierInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
 	[CalledBy(Type = typeof(ModIdentifierInternal), Member = "Set")]
-	[Calls(Type = typeof(ModIdentifierInternal), Member = "set_Version")]
-	[Calls(Type = typeof(ModIdentifierInternal), Member = "set_Title")]
-	[Calls(Type = typeof(ModIdentifierInternal), Member = "set_ItemId")]
-	[Calls(Type = typeof(ModIdentifierInternal), Member = "set_NamespaceId")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ModIdentifierInternal), Member = "set_NamespaceId")]
+	[Calls(Type = typeof(ModIdentifierInternal), Member = "set_ItemId")]
 	[Calls(Type = typeof(ModIdentifierInternal), Member = "set_ArtifactId")]
+	[Calls(Type = typeof(ModIdentifierInternal), Member = "set_Title")]
+	[Calls(Type = typeof(ModIdentifierInternal), Member = "set_Version")]
 	public void Set(ModIdentifier other)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(ModIdentifierInternal), Member = "Set")]
 	[CalledBy(Type = typeof(InstallModOptionsInternal), Member = "set_Mod")]
 	[CalledBy(Type = typeof(UninstallModOptionsInternal), Member = "set_Mod")]
 	[CalledBy(Type = typeof(UpdateModOptionsInternal), Member = "set_Mod")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(ModIdentifierInternal), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[CallerCount(Count = 0)]
 	public void Dispose()
 	{
 	}

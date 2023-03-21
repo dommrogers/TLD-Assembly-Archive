@@ -18,18 +18,17 @@ public class RegionMap
 
 	public float m_Angle;
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Map), Member = "WorldRotationToMapRotation")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "MapPositionToWorldPosition")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "UnlockRegionMap")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "GetWorldMapForSceneSet")]
-	[CallerCount(Count = 7)]
+	[CalledBy(Type = typeof(Panel_Map), Member = "UnlockRegionMap")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "WorldPositionToMapPosition")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "MapPositionToWorldPosition")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "WorldRotationToMapRotation")]
+	[CallerCount(Count = 7)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsRegionMatch(string regionName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

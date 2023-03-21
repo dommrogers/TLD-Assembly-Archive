@@ -13,7 +13,7 @@ public class MusicEventSaveData
 	public float m_NumHoursWithAffliction;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public MusicEventSaveData()
 	{
 	}

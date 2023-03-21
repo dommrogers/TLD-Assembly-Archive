@@ -20,21 +20,20 @@ public sealed class AutoExposure : PostProcessEffectSettings
 
 	public FloatParameter speedDown;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "get_isAndroidOpenGL")]
 	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "get_isAndroidOpenGL")]
+	[CallsUnknownMethods(Count = 2)]
 	public override bool IsEnabledAndSupported(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 1)]
 	public AutoExposure()
 	{

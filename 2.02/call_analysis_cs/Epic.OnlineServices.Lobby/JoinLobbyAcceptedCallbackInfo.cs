@@ -13,16 +13,16 @@ public class JoinLobbyAcceptedCallbackInfo : ICallbackInfo, ISettable
 
 	public object ClientData
 	{
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 101)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		private set
 		{
 		}
@@ -32,14 +32,14 @@ public class JoinLobbyAcceptedCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -49,14 +49,14 @@ public class JoinLobbyAcceptedCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
-			return default(ulong);
+			return 0uL;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
@@ -70,25 +70,25 @@ public class JoinLobbyAcceptedCallbackInfo : ICallbackInfo, ISettable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(JoinLobbyAcceptedCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(JoinLobbyAcceptedCallbackInfoInternal), Member = "get_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	internal void Set(JoinLobbyAcceptedCallbackInfoInternal? other)
 	{
 	}
 
-	[Calls(Type = typeof(JoinLobbyAcceptedCallbackInfoInternal), Member = "get_LocalUserId")]
-	[Calls(Type = typeof(JoinLobbyAcceptedCallbackInfoInternal), Member = "get_ClientData")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(JoinLobbyAcceptedCallbackInfoInternal), Member = "get_ClientData")]
+	[Calls(Type = typeof(JoinLobbyAcceptedCallbackInfoInternal), Member = "get_LocalUserId")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public JoinLobbyAcceptedCallbackInfo()
 	{
 	}

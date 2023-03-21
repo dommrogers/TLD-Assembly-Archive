@@ -14,7 +14,7 @@ public class MB_AtlasesAndRects
 	public string[] texPropertyNames;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public MB_AtlasesAndRects()
 	{
 	}

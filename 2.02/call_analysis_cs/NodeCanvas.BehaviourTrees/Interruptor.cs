@@ -39,15 +39,12 @@ public class Interruptor : BTDecorator, ITaskAssignable<ConditionTask>, ITaskAss
 		}
 	}
 
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[Calls(Type = typeof(Node), Member = "Reset")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
 	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
+	[Calls(Type = typeof(Node), Member = "Reset")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);

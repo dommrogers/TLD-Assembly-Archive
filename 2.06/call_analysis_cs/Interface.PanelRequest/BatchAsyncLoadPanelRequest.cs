@@ -15,10 +15,10 @@ public class BatchAsyncLoadPanelRequest : ILoadPanelRequest
 
 	public event Action<bool> m_PanelLoadedCallback
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 2)]
 		add
 		{
 		}
@@ -37,11 +37,11 @@ public class BatchAsyncLoadPanelRequest : ILoadPanelRequest
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsLoadingPanel(string panelName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -54,21 +54,21 @@ public class BatchAsyncLoadPanelRequest : ILoadPanelRequest
 	[CallsUnknownMethods(Count = 2)]
 	public float GetProgress()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool HasCompleted()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool HasFailed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -77,19 +77,19 @@ public class BatchAsyncLoadPanelRequest : ILoadPanelRequest
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public void UpdateRequest()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(BatchAsyncLoadPanelRequest), Member = ".ctor")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "GetBatchAsyncPanels_Internal")]
+	[CalledBy(Type = typeof(BatchAsyncLoadPanelRequest), Member = ".ctor")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanelAsync_Internal")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
+	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanelAsync_Internal")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	private void LoadNextPanel()
 	{
 	}

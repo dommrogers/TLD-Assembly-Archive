@@ -10,24 +10,25 @@ public class ChatInput : MonoBehaviour
 	private UIInput mInput;
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(UITextList), Member = "Add")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UITextList), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 12)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UIInput), Member = "set_isSelected")]
-	[Calls(Type = typeof(UITextList), Member = "Add")]
-	[Calls(Type = typeof(UIInput), Member = "set_value")]
-	[CallsUnknownMethods(Count = 4)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UIInput), Member = "Init")]
 	[Calls(Type = typeof(NGUIText), Member = "StripSymbols")]
+	[Calls(Type = typeof(UITextList), Member = "Add")]
+	[Calls(Type = typeof(UIInput), Member = "set_value")]
+	[Calls(Type = typeof(UIInput), Member = "set_isSelected")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void OnSubmit()
 	{
 	}

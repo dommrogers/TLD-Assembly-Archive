@@ -4,8 +4,8 @@ public class HudManagerSaveDataProxy
 {
 	public bool m_ShowDebugInfo;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public HudManagerSaveDataProxy()
 	{
 	}

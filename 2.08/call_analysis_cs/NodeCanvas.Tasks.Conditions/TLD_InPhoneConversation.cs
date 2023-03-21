@@ -15,32 +15,33 @@ public class TLD_InPhoneConversation : ConditionTask
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TLD_InPhoneConversation), Member = "GetPhone")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(TLD_InPhoneConversation), Member = "GetPhone")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TLD_InPhoneConversation), Member = "GetPhone")]
 	private void RetrievePhone()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
 	[CalledBy(Type = typeof(TLD_InPhoneConversation), Member = "OnCheck")]
 	[CalledBy(Type = typeof(TLD_InPhoneConversation), Member = "RetrievePhone")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private Phone GetPhone()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public TLD_InPhoneConversation()
 	{
 	}

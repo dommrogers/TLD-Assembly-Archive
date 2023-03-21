@@ -9,8 +9,9 @@ public class MegaWireConnectionHelper : MonoBehaviour
 	public bool showgizmo;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public MegaWireConnectionHelper()
 	{

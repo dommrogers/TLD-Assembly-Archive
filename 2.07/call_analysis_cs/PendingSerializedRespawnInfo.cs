@@ -6,8 +6,8 @@ public class PendingSerializedRespawnInfo
 
 	public int m_TrySpawnCount;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public PendingSerializedRespawnInfo()
 	{
 	}

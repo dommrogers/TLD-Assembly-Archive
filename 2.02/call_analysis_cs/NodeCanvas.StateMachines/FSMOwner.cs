@@ -8,10 +8,10 @@ public class FSMOwner : GraphOwner<FSM>
 {
 	public string currentRootStateName
 	{
-		[Calls(Type = typeof(Object), Member = "op_Inequality")]
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Object), Member = "op_Inequality")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -21,8 +21,8 @@ public class FSMOwner : GraphOwner<FSM>
 	public string previousRootStateName
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(Object), Member = "op_Inequality")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -33,8 +33,8 @@ public class FSMOwner : GraphOwner<FSM>
 	public string currentDeepStateName
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(FSMOwner), Member = "GetCurrentState")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -44,68 +44,63 @@ public class FSMOwner : GraphOwner<FSM>
 
 	public string previousDeepStateName
 	{
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(FSMOwner), Member = "GetPreviousState")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
+	[CalledBy(Type = typeof(FSMOwner), Member = "get_currentDeepStateName")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(NestedFSMState), Member = "get_nestedFSM")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(NestedFSMState), Member = "get_nestedFSM")]
-	[CalledBy(Type = typeof(FSMOwner), Member = "get_currentDeepStateName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public IState GetCurrentState(bool includeSubFSMs = true)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(FSMOwner), Member = "get_previousDeepStateName")]
-	[Calls(Type = typeof(NestedFSMState), Member = "get_nestedFSM")]
-	[Calls(Type = typeof(NestedFSMState), Member = "get_nestedFSM")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(NestedFSMState), Member = "get_nestedFSM")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(NestedFSMState), Member = "get_nestedFSM")]
+	[CallsUnknownMethods(Count = 5)]
 	public IState GetPreviousState(bool includeSubFSMs = true)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(FSM), Member = "TriggerState")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public IState TriggerState(string stateName)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(FSM), Member = "GetStateNames")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(FSM), Member = "GetStateNames")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public string[] GetStateNames()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GraphOwner), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public FSMOwner()
 	{

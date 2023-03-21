@@ -35,8 +35,8 @@ public class FireSaveDataProxy
 
 	public string[] m_TrackedBurntItems;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public FireSaveDataProxy()
 	{
 	}

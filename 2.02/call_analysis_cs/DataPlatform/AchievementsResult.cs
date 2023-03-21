@@ -26,7 +26,7 @@ public class AchievementsResult : IWrappedObject, IDisposable
 	[CallsUnknownMethods(Count = 2)]
 	public bool GetNextAsync(AchievementsResult res, uint maxItems, ObjectResultCallback callback, IntPtr userData)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -41,17 +41,17 @@ public class AchievementsResult : IWrappedObject, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SetNativePtr(IntPtr self)
 	{
 	}
 
-	[CallerCount(Count = 52)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 59)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]

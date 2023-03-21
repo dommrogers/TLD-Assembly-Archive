@@ -1,49 +1,18 @@
-using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
 namespace NodeCanvas.DialogueTrees;
 
 public interface IDialogueActor
 {
-	string name
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101262)]
-		get;
-	}
+	string name { get; }
 
-	Texture2D portrait
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101262)]
-		get;
-	}
+	Texture2D portrait { get; }
 
-	Sprite portraitSprite
-	{
-		[CallerCount(Count = 101262)]
-		[DeduplicatedMethod]
-		get;
-	}
+	Sprite portraitSprite { get; }
 
-	Color dialogueColor
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101262)]
-		get;
-	}
+	Color dialogueColor { get; }
 
-	Vector3 dialoguePosition
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101262)]
-		get;
-	}
+	Vector3 dialoguePosition { get; }
 
-	Transform transform
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101262)]
-		get;
-	}
+	Transform transform { get; }
 }

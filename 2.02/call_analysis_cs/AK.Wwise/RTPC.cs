@@ -12,13 +12,13 @@ public class RTPC : BaseType
 	public override WwiseObjectReference ObjectReference
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -26,8 +26,8 @@ public class RTPC : BaseType
 
 	public override WwiseObjectType WwiseObjectType
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(WwiseObjectType);
@@ -35,29 +35,29 @@ public class RTPC : BaseType
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "SetRTPCValue")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetValue(GameObject gameObject, float value)
 	{
 	}
 
+	[CalledBy(Type = typeof(RTPC), Member = "GetGlobalValue")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CalledBy(Type = typeof(RTPC), Member = "GetGlobalValue")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetValue(GameObject gameObject)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(AkRTPCPlayableBehaviour), Member = "ProcessFrame")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetGlobalValue(float value)
 	{
 	}
@@ -66,11 +66,11 @@ public class RTPC : BaseType
 	[Calls(Type = typeof(RTPC), Member = "GetValue")]
 	public float GetGlobalValue()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public RTPC()
 	{
 	}

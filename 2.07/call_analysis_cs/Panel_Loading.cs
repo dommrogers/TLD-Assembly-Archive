@@ -30,7 +30,7 @@ public class Panel_Loading : Panel_AutoReferenced
 		public string Title;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 96)]
+		[CallerCount(Count = 100)]
 		public HintQueueEntry(string text, string title)
 		{
 		}
@@ -46,9 +46,9 @@ public class Panel_Loading : Panel_AutoReferenced
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 28)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -57,9 +57,9 @@ public class Panel_Loading : Panel_AutoReferenced
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 28)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -73,26 +73,27 @@ public class Panel_Loading : Panel_AutoReferenced
 		{
 		}
 
-		[CallerCount(Count = 6)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
+		[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+		[CallsUnknownMethods(Count = 1)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 4)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 4)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -225,19 +226,19 @@ public class Panel_Loading : Panel_AutoReferenced
 	private static List<string> m_AsyncScenesRemoveList;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[CallsUnknownMethods(Count = 1)]
 	public override void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Loading), Member = "RefreshAsyncSceneLoadRecord")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
+	[Calls(Type = typeof(Panel_Loading), Member = "RefreshAsyncSceneLoadRecord")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
@@ -246,82 +247,93 @@ public class Panel_Loading : Panel_AutoReferenced
 	[CallerCount(Count = 3)]
 	public override bool IsOverlayPanel()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(InputManager), Member = "AnyButtonsOrKeysPressed")]
-	[Calls(Type = typeof(uConsole), Member = "RunCommand")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[Calls(Type = typeof(Panel_Loading), Member = "SetRandomQuoteActive")]
-	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
-	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[Calls(Type = typeof(GameManager), Member = "ForceGC")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameManager), Member = "ForceGC")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 22)]
+	[Calls(Type = typeof(Utils), Member = "GetPressAnyKeyString")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(InputManager), Member = "AnyButtonsOrKeysPressed")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[Calls(Type = typeof(Component), Member = "SendMessage")]
-	[Calls(Type = typeof(Utils), Member = "GetPressAnyKeyString")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
 	[Calls(Type = typeof(GameManager), Member = "CompareSceneNames")]
 	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
 	[Calls(Type = typeof(Panel_Loading), Member = "RefreshAsyncSceneLoadRecord")]
 	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Component), Member = "SendMessage")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(GameManager), Member = "ForceGC")]
+	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(uConsole), Member = "RunCommand")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[Calls(Type = typeof(Panel_Loading), Member = "SetRandomQuoteActive")]
+	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
+	[CallsDeduplicatedMethods(Count = 20)]
+	[CallsUnknownMethods(Count = 11)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool HasFinishedHolding()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
 	[Calls(Type = typeof(GameManager), Member = "CompareSceneNames")]
 	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
 	[Calls(Type = typeof(Panel_Loading), Member = "RefreshAsyncSceneLoadRecord")]
 	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool HasFinishedLoading()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[IteratorStateMachine(typeof(_003CCaptureScreenCoroutine_003Ed__71))]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static IEnumerator CaptureScreenCoroutine()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Panel_HUD), Member = "ClearWarningMessage")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(CaptureScreenTransition), Member = "ResetBackgrounds")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitlesImmediate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "RegisterAnyMissionObjects")]
+	[Calls(Type = typeof(BaseAiManager), Member = "RegisterAnyAIGuid")]
+	[Calls(Type = typeof(SpawnWildlife_Trigger), Member = "RegisterAnySpawnWildlifeGuid")]
+	[Calls(Type = typeof(SnowShelterManager), Member = "RegisterAnySnowShelterGuid")]
+	[Calls(Type = typeof(LeanToManager), Member = "RegisterAnyLeanToGuid")]
+	[Calls(Type = typeof(RockCacheManager), Member = "RegisterAnyRockCacheGuid")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudSize")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[Calls(Type = typeof(GameManager), Member = "MatchesMainMenuSceneName")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetNameForScene")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Reset")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "Reset")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ClearWarningMessage")]
 	[Calls(Type = typeof(HUDManager), Member = "SetHUDDisplayMode")]
 	[Calls(Type = typeof(Panel_Loading), Member = "FindBackgroundAndLoadingText")]
 	[Calls(Type = typeof(Panel_Loading), Member = "SetLoadingScreenText")]
@@ -329,83 +341,39 @@ public class Panel_Loading : Panel_AutoReferenced
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(Panel_Loading), Member = "SelectLoadingAnimation")]
 	[Calls(Type = typeof(CaptureScreenTransition), Member = "InitFadeOutCapture")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
 	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
 	[Calls(Type = typeof(InterfaceManager), Member = "UnloadMainMenuPanels")]
 	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetBatchAsyncPanels_Internal")]
 	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "Reset")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Reset")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 17)]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(CaptureScreenTransition), Member = "ResetBackgrounds")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitlesImmediate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "RegisterAnyMissionObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(SpawnWildlife_Trigger), Member = "RegisterAnySpawnWildlifeGuid")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "RegisterAnySnowShelterGuid")]
-	[Calls(Type = typeof(LeanToManager), Member = "RegisterAnyLeanToGuid")]
-	[Calls(Type = typeof(RockCacheManager), Member = "RegisterAnyRockCacheGuid")]
-	[Calls(Type = typeof(BaseAiManager), Member = "RegisterAnyAIGuid")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudSize")]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetNameForScene")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameManager), Member = "MatchesMainMenuSceneName")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
-	[Calls(Type = typeof(CaptureScreenTransition), Member = "ResetBackgrounds")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 14)]
 	public override void Enable(bool enable)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 21)]
 	private void FindBackgroundAndLoadingText()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private string FindChallengeOrSurvivalText()
 	{
 		return null;
@@ -414,112 +382,107 @@ public class Panel_Loading : Panel_AutoReferenced
 	[CallerCount(Count = 0)]
 	public bool HasFoundLoadingBackground()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool HasFoundLoadingText()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Action_SetLoadScreenBackgroundOrText), Member = "OnExecute")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(LoadingScreenData), Member = "GetRandomNoRepeat")]
 	[Calls(Type = typeof(TextureCache), Member = "GetAddressableTexture")]
-	[CalledBy(Type = typeof(Action_SetLoadScreenBackgroundOrText), Member = "OnExecute")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void SetBackgroundData(LoadingScreenData data)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LoadingScreenData), Member = "GetRandomNoRepeat")]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetTextData(LoadingScreenData data)
 	{
 	}
 
 	[CallerCount(Count = 27)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 9)]
 	public bool IsLoading()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Panel_Loading), Member = "IsShowingQuote")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Loading), Member = "IsShowingQuote")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public override bool IsEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(InputManager), Member = "Process")]
-	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "IsEnabled")]
-	[CalledBy(Type = typeof(InputManager), Member = "CanInvokePauseMenu")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "CanShowLocationReveal")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "ShouldHideConditionRelatedLabels")]
+	[CalledBy(Type = typeof(Panel_Loading), Member = "IsEnabled")]
+	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
+	[CalledBy(Type = typeof(InputManager), Member = "Process")]
+	[CalledBy(Type = typeof(InputManager), Member = "CanInvokePauseMenu")]
+	[CallerCount(Count = 6)]
 	public bool IsShowingQuote()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnQuoteFinished()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Loading), Member = "ShowHintLabel")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Action_QueueLoadScreenHint), Member = "OnExecute")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Loading), Member = "ShowHintLabel")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public void QueueHintLabel(string textLocId, string titleLocId = "")
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Loading), Member = "QueueHintLabel")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(Panel_Loading), Member = "OnHintFinished")]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ShowHintLabel(HintQueueEntry hint)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Loading), Member = "ShowHintLabel")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnHintFinished()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsHintQueueFull()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -539,30 +502,31 @@ public class Panel_Loading : Panel_AutoReferenced
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnScreenBackgroundTransitionFinished()
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[CallsUnknownMethods(Count = 15)]
 	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 15)]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "IsChallengeActive")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "IsChallengeActive")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 15)]
 	private void SetLoadingScreenText()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 18)]
 	[CalledBy(Type = typeof(Panel_Loading), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 17)]
 	[CallsUnknownMethods(Count = 19)]
 	private void SetRandomQuoteActive()
 	{
@@ -576,50 +540,52 @@ public class Panel_Loading : Panel_AutoReferenced
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
 	[Calls(Type = typeof(GameManager), Member = "CompareSceneNames")]
 	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
 	[Calls(Type = typeof(Panel_Loading), Member = "RefreshAsyncSceneLoadRecord")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private bool AsyncLoadsComplete()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[CallsUnknownMethods(Count = 1)]
 	public LoadingAnimation[] GetPossibleLoadingAnimations()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetLoadingAnimationSelection(LoadingAnimationSelection selection, int index = -1)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	private void SelectLoadingAnimation()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "AsyncLoadsComplete")]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "HasFinishedLoading")]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Loading), Member = "OnDisable")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetSceneByName")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Loading), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Loading), Member = "HasFinishedLoading")]
+	[CalledBy(Type = typeof(Panel_Loading), Member = "AsyncLoadsComplete")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetSceneByName")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void RefreshAsyncSceneLoadRecord()
 	{
 	}
@@ -628,7 +594,7 @@ public class Panel_Loading : Panel_AutoReferenced
 	[CallsUnknownMethods(Count = 1)]
 	public bool ShouldCaptureScreen()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -637,15 +603,15 @@ public class Panel_Loading : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void UpdateCaptureForTransition()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[CallsUnknownMethods(Count = 1)]
 	public void DoCaptureScreen()
 	{

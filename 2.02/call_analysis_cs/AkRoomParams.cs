@@ -10,19 +10,17 @@ public class AkRoomParams : IDisposable
 
 	public AkVector Up
 	{
+		[CalledBy(Type = typeof(AkRoom), Member = "OnEnable")]
 		[CallerCount(Count = 3)]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(AkRoom), Member = "OnEnable")]
-		[CalledBy(Type = typeof(AkRoom), Member = "OnEnable")]
-		[CalledBy(Type = typeof(AkRoom), Member = "OnEnable")]
 		[CallsUnknownMethods(Count = 8)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AkVector), Member = "getCPtr")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -31,20 +29,18 @@ public class AkRoomParams : IDisposable
 
 	public AkVector Front
 	{
+		[CalledBy(Type = typeof(AkRoom), Member = "OnEnable")]
 		[CallerCount(Count = 3)]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(AkRoom), Member = "OnEnable")]
-		[CalledBy(Type = typeof(AkRoom), Member = "OnEnable")]
-		[CalledBy(Type = typeof(AkRoom), Member = "OnEnable")]
 		[CallsUnknownMethods(Count = 8)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(AkVector), Member = "getCPtr")]
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(AkVector), Member = "getCPtr")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -52,12 +48,12 @@ public class AkRoomParams : IDisposable
 
 	public uint ReverbAuxBus
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -74,11 +70,11 @@ public class AkRoomParams : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -91,7 +87,7 @@ public class AkRoomParams : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -103,12 +99,12 @@ public class AkRoomParams : IDisposable
 
 	public float RoomGameObj_AuxSendLevelToSelf
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -125,7 +121,7 @@ public class AkRoomParams : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -135,8 +131,8 @@ public class AkRoomParams : IDisposable
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	internal AkRoomParams(IntPtr cPtr, bool cMemoryOwn)
 	{
 	}
@@ -145,7 +141,7 @@ public class AkRoomParams : IDisposable
 	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkRoomParams obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -162,18 +158,18 @@ public class AkRoomParams : IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public AkRoomParams()
 	{
 	}

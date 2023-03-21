@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
 using TLD.UI.Generics;
@@ -93,143 +94,140 @@ public class Phone : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "GetComponentOnSelfOrParent")]
 	[Calls(Type = typeof(Phone), Member = "AssignBindingOverrides")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(Phone), Member = "StartRinging")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Phone), Member = "StartRinging")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Phone), Member = "UpdateAudio")]
-	[Calls(Type = typeof(Phone), Member = "StartRinging")]
-	[Calls(Type = typeof(PhoneManager), Member = "GetPhoneSaveInfo")]
-	[Calls(Type = typeof(Phone), Member = "GetMissionObjectId")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Phone), Member = "GetMissionObjectId")]
+	[Calls(Type = typeof(PhoneManager), Member = "GetPhoneSaveInfo")]
+	[Calls(Type = typeof(Phone), Member = "StartRinging")]
+	[Calls(Type = typeof(Phone), Member = "UpdateAudio")]
 	private void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PhoneManager), Member = "GetDebugText")]
-	[CalledBy(Type = typeof(PhoneManager), Member = "GetDebugText")]
-	[CalledBy(Type = typeof(PhoneManager), Member = "GetDebugText")]
-	[CalledBy(Type = typeof(Phone), Member = "UpdateAudio")]
-	[CalledBy(Type = typeof(Phone), Member = "UpdateWaitingNextCall")]
-	[CalledBy(Type = typeof(Phone), Member = "GetRingCycleCount")]
-	[CalledBy(Type = typeof(Phone), Member = "StopRinging")]
 	[CalledBy(Type = typeof(Phone), Member = "Update")]
+	[CalledBy(Type = typeof(Phone), Member = "StopRinging")]
+	[CalledBy(Type = typeof(Phone), Member = "GetRingCycleCount")]
+	[CalledBy(Type = typeof(Phone), Member = "UpdateWaitingNextCall")]
+	[CalledBy(Type = typeof(Phone), Member = "UpdateAudio")]
+	[CalledBy(Type = typeof(PhoneManager), Member = "GetDebugText")]
 	[CallerCount(Count = 8)]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetMissionObjectId()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Phone), Member = "UpdateAudio")]
-	[CalledBy(Type = typeof(Phone), Member = "UpdateWaitingNextCall")]
-	[CalledBy(Type = typeof(Phone), Member = "UpdateShortPause")]
 	[CalledBy(Type = typeof(Phone), Member = "StartRinging")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySoundWithPositionTracking")]
-	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CalledBy(Type = typeof(Phone), Member = "UpdateShortPause")]
+	[CalledBy(Type = typeof(Phone), Member = "UpdateWaitingNextCall")]
+	[CalledBy(Type = typeof(Phone), Member = "UpdateAudio")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySoundWithPositionTracking")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "ShowSubtitles")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void StartSingleRing()
 	{
 	}
 
-	[CalledBy(Type = typeof(Phone), Member = "StopPhoneRingAudio")]
-	[CalledBy(Type = typeof(Phone), Member = "UpdateAudio")]
-	[CalledBy(Type = typeof(Phone), Member = "StartWaitingNextCall")]
-	[CalledBy(Type = typeof(Phone), Member = "UpdateShortPause")]
-	[CalledBy(Type = typeof(Phone), Member = "UpdateRinging")]
 	[CalledBy(Type = typeof(Phone), Member = "StopRinging")]
-	[CalledBy(Type = typeof(Phone), Member = "UpdateAudio")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 8)]
+	[CalledBy(Type = typeof(Phone), Member = "StopPhoneRingAudio")]
 	[CalledBy(Type = typeof(Phone), Member = "StartShortPause")]
+	[CalledBy(Type = typeof(Phone), Member = "UpdateRinging")]
+	[CalledBy(Type = typeof(Phone), Member = "UpdateShortPause")]
+	[CalledBy(Type = typeof(Phone), Member = "StartWaitingNextCall")]
+	[CalledBy(Type = typeof(Phone), Member = "UpdateAudio")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
 	[CallsUnknownMethods(Count = 1)]
 	private void HideClosedCaptions()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Phone), Member = "StartRinging")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[CallsUnknownMethods(Count = 15)]
 	[CalledBy(Type = typeof(Phone), Member = "UpdateWaitingNextCall")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Phone), Member = "UpdateAudio")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(PhoneManager), Member = "GetOrCreateDialogueSequenceProgressionInfo")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PhoneManager), Member = "GetOrCreateDialogueSequenceProgressionInfo")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 15)]
 	private void MaybeAssignDTController()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 26)]
 	[CalledBy(Type = typeof(PhoneManager), Member = "GetDebugText")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(float), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 25)]
 	public string GetDebugText()
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(Phone), Member = "Start")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Phone), Member = "Update")]
-	[Calls(Type = typeof(Phone), Member = "MaybeAssignDTController")]
 	[CalledBy(Type = typeof(Phone), Member = "StartPhoneRinging")]
-	[Calls(Type = typeof(Phone), Member = "StartSingleRing")]
-	[Calls(Type = typeof(Phone), Member = "StopPhoneRingAudio")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Phone), Member = "StopPhoneRingAudio")]
+	[Calls(Type = typeof(Phone), Member = "StartSingleRing")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Phone), Member = "MaybeAssignDTController")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void StartRinging()
 	{
 	}
 
-	[CalledBy(Type = typeof(Phone), Member = "StopPhoneRinging")]
 	[CalledBy(Type = typeof(Phone), Member = "PerformInteraction")]
-	[Calls(Type = typeof(PhoneManager), Member = "GetOrCreatePhoneSaveDataInfo")]
+	[CalledBy(Type = typeof(Phone), Member = "StopPhoneRinging")]
 	[CalledBy(Type = typeof(UsePhoneTrigger), Member = "MaybeUsePhone")]
-	[Calls(Type = typeof(Phone), Member = "HideClosedCaptions")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(Phone), Member = "HideClosedCaptions")]
 	[Calls(Type = typeof(Phone), Member = "GetMissionObjectId")]
+	[Calls(Type = typeof(PhoneManager), Member = "GetOrCreatePhoneSaveDataInfo")]
 	public void StopRinging()
 	{
 	}
 
+	[CalledBy(Type = typeof(Phone), Member = "StartRinging")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(Phone), Member = "HideClosedCaptions")]
-	[CalledBy(Type = typeof(Phone), Member = "StartRinging")]
 	private void StopPhoneRingAudio()
 	{
 	}
@@ -237,26 +235,26 @@ public class Phone : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsRinging()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(Phone), Member = "StopRinging")]
 	[Calls(Type = typeof(Phone), Member = "OnPhonePickup")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void PerformInteraction()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsInConversation()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -264,52 +262,54 @@ public class Phone : MonoBehaviour
 	[Calls(Type = typeof(PhoneManager), Member = "GetPhoneSaveInfo")]
 	public int GetRingCycleCount()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(UsePhoneTrigger), Member = "MaybeUsePhone")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "PerformInteraction")]
 	[CalledBy(Type = typeof(Phone), Member = "PerformInteraction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeHandleItemInHands")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(UsePhoneTrigger), Member = "MaybeUsePhone")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeHandleItemInHands")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "PerformInteraction")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnPhonePickup()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "PerformInteraction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnPhonePickupComplete()
 	{
 	}
 
-	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeProcessPickingUpPlacedItem")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
-	[Calls(Type = typeof(PhoneManager), Member = "SelectNextDialogueTree")]
-	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
+	[Calls(Type = typeof(PhoneManager), Member = "SelectNextDialogueTree")]
+	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeProcessPickingUpPlacedItem")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnPhoneHangup()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PhoneManager), Member = "SelectNextDialogueTree")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeProcessPickingUpPlacedItem")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PhoneManager), Member = "SelectNextDialogueTree")]
+	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeProcessPickingUpPlacedItem")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnPhoneHangupComplete()
 	{
 	}
@@ -332,49 +332,47 @@ public class Phone : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private int RollRingCount()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Phone), Member = "HideClosedCaptions")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Phone), Member = "StartSingleRing")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(Phone), Member = "HideClosedCaptions")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateShortPause()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(Phone), Member = "HideClosedCaptions")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void StartWaitingNextCall()
 	{
 	}
 
-	[Calls(Type = typeof(Phone), Member = "StartSingleRing")]
-	[Calls(Type = typeof(Phone), Member = "MaybeAssignDTController")]
-	[Calls(Type = typeof(Phone), Member = "GetMissionObjectId")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Phone), Member = "GetMissionObjectId")]
 	[Calls(Type = typeof(PhoneManager), Member = "GetOrCreatePhoneSaveDataInfo")]
+	[Calls(Type = typeof(Phone), Member = "MaybeAssignDTController")]
+	[Calls(Type = typeof(Phone), Member = "StartSingleRing")]
 	private void UpdateWaitingNextCall()
 	{
 	}
 
-	[Calls(Type = typeof(Phone), Member = "HideClosedCaptions")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Phone), Member = "HideClosedCaptions")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CalledBy(Type = typeof(Phone), Member = "Update")]
-	[Calls(Type = typeof(Phone), Member = "MaybeAssignDTController")]
-	[Calls(Type = typeof(PhoneManager), Member = "GetOrCreatePhoneSaveDataInfo")]
-	[Calls(Type = typeof(Phone), Member = "GetMissionObjectId")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Phone), Member = "GetMissionObjectId")]
+	[Calls(Type = typeof(PhoneManager), Member = "GetOrCreatePhoneSaveDataInfo")]
+	[Calls(Type = typeof(Phone), Member = "MaybeAssignDTController")]
 	[Calls(Type = typeof(Phone), Member = "StartSingleRing")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(Phone), Member = "HideClosedCaptions")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateAudio()
 	{
 	}
@@ -386,25 +384,26 @@ public class Phone : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(UsePhoneTrigger), Member = "MaybeUsePhone")]
 	[CalledBy(Type = typeof(Phone), Member = "StartPhoneRinging")]
 	[CalledBy(Type = typeof(Phone), Member = "StopPhoneRinging")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(UsePhoneTrigger), Member = "MaybeUsePhone")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static Phone GetPhone(string missionId)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_phone_startringing")]
+	[CalledBy(Type = typeof(Action_PhoneStartRinging), Member = "OnExecute")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(PhoneManager), Member = "GetOrCreatePhoneSaveDataInfo")]
 	[Calls(Type = typeof(Phone), Member = "GetPhone")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Phone), Member = "StartRinging")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_phone_startringing")]
-	[CalledBy(Type = typeof(Action_PhoneStartRinging), Member = "OnExecute")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void StartPhoneRinging(string missionId)
 	{
@@ -412,37 +411,33 @@ public class Phone : MonoBehaviour
 
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_phone_stopringing")]
 	[CalledBy(Type = typeof(Action_PhoneStopRinging), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Phone), Member = "StopRinging")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(PhoneManager), Member = "GetOrCreatePhoneSaveDataInfo")]
 	[Calls(Type = typeof(Phone), Member = "GetPhone")]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Phone), Member = "StopRinging")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void StopPhoneRinging(string missionId)
 	{
 	}
 
+	[CalledBy(Type = typeof(Phone), Member = "Awake")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetNPCAnimator")]
 	[Calls(Type = typeof(Phone), Member = "AssignBindingInfo")]
-	[Calls(Type = typeof(Phone), Member = "AssignBindingInfo")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(Phone), Member = "Awake")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void AssignBindingOverrides()
 	{
 	}
 
 	[CalledBy(Type = typeof(Phone), Member = "AssignBindingOverrides")]
-	[CalledBy(Type = typeof(Phone), Member = "AssignBindingOverrides")]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetTrackBindingInfo")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetTrackBindingInfo")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void AssignBindingInfo(AnimatedInteraction animatedInteraction, Animator animator)
 	{
 	}

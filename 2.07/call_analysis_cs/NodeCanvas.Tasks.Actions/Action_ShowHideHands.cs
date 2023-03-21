@@ -34,8 +34,8 @@ public class Action_ShowHideHands : ActionTask
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_ShowHideHands()
 	{
 	}

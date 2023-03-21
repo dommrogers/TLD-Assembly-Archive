@@ -27,8 +27,8 @@ public class TriggerZone : MonoBehaviour
 	private TriggerZoneUpdateRate updateRate
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -36,51 +36,49 @@ public class TriggerZone : MonoBehaviour
 		}
 	}
 
-	[Calls(Type = typeof(TriggerZone), Member = "ComputeZone")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[Calls(Type = typeof(TriggerZone), Member = "ComputeZone")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 11)]
 	private void OnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(TriggerZone), Member = "ComputeZone")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TriggerZone), Member = "ComputeZone")]
 	private void OnOcclusionProcessed()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 28)]
 	[CalledBy(Type = typeof(TriggerZone), Member = "OnEnable")]
-	[Calls(Type = typeof(Collider), Member = "set_isTrigger")]
-	[Calls(Type = typeof(MeshCollider), Member = "set_convex")]
-	[Calls(Type = typeof(MeshCollider), Member = "set_sharedMesh")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_hideFlags")]
-	[Calls(Type = typeof(Consts), Member = "get_ProceduralObjectsHideFlags")]
-	[Calls(Type = typeof(MeshGenerator), Member = "GenerateConeZ_Radius")]
-	[Calls(Type = typeof(Config), Member = "get_Instance")]
-	[Calls(Type = typeof(Collider2D), Member = "set_isTrigger")]
-	[Calls(Type = typeof(PolygonHelper.Plane2D), Member = "CutConvex")]
-	[Calls(Type = typeof(PolygonHelper.Plane2D), Member = "Flip")]
-	[Calls(Type = typeof(PolygonHelper.Plane2D), Member = "FromPoints")]
 	[CalledBy(Type = typeof(TriggerZone), Member = "OnOcclusionProcessed")]
-	[Calls(Type = typeof(Vector3), Member = "get_right")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_coneRadiusEnd")]
-	[Calls(Type = typeof(Utils), Member = "ClosestPointOnPlaneCustom")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Utils), Member = "GetOrAddComponent")]
+	[Calls(Type = typeof(Utils), Member = "IsAlmostZero")]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[Calls(Type = typeof(Utils), Member = "ClosestPointOnPlaneCustom")]
 	[Calls(Type = typeof(Vector3), Member = "get_up")]
-	[Calls(Type = typeof(Utils), Member = "ClosestPointOnPlaneCustom")]
-	[Calls(Type = typeof(Utils), Member = "IsAlmostZero")]
-	[Calls(Type = typeof(Utils), Member = "IsAlmostZero")]
+	[Calls(Type = typeof(Vector3), Member = "get_right")]
+	[Calls(Type = typeof(PolygonHelper.Plane2D), Member = "FromPoints")]
+	[Calls(Type = typeof(PolygonHelper.Plane2D), Member = "Flip")]
+	[Calls(Type = typeof(PolygonHelper.Plane2D), Member = "CutConvex")]
+	[Calls(Type = typeof(Collider2D), Member = "set_isTrigger")]
+	[Calls(Type = typeof(Config), Member = "get_Instance")]
+	[Calls(Type = typeof(MeshGenerator), Member = "GenerateConeZ_Radius")]
+	[Calls(Type = typeof(Consts), Member = "get_ProceduralObjectsHideFlags")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_hideFlags")]
+	[Calls(Type = typeof(MeshCollider), Member = "set_sharedMesh")]
+	[Calls(Type = typeof(MeshCollider), Member = "set_convex")]
+	[Calls(Type = typeof(Collider), Member = "set_isTrigger")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 28)]
 	private void ComputeZone()
 	{
 	}

@@ -50,19 +50,19 @@ public class DecalProjectorInstance
 
 	public bool m_FadeOverEntireLifetime;
 
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "AddProjectorInstanceBoundsInfo")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "GetIntersectedSprayPaintDecal")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateOverlappingDecalInPlace")]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "AddProjectorInstanceBoundsInfo")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Bounds), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Bounds GetBounds()
 	{
 		return default(Bounds);
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public DecalProjectorInstance()
 	{
 	}

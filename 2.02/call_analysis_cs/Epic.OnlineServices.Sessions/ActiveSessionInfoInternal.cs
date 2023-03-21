@@ -19,10 +19,10 @@ internal struct ActiveSessionInfoInternal : ISettable, IDisposable
 
 	public string SessionName
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(ActiveSessionInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -30,8 +30,8 @@ internal struct ActiveSessionInfoInternal : ISettable, IDisposable
 		[CalledBy(Type = typeof(ActiveSessionInfoInternal), Member = "Set")]
 		[CalledBy(Type = typeof(ActiveSessionInfoInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -39,18 +39,19 @@ internal struct ActiveSessionInfoInternal : ISettable, IDisposable
 
 	public ProductUserId LocalUserId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(ActiveSessionInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(ActiveSessionInfoInternal), Member = "Set")]
+		[CalledBy(Type = typeof(ActiveSessionInfoInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(ActiveSessionInfoInternal), Member = "Set")]
-		[CalledBy(Type = typeof(ActiveSessionInfoInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -64,8 +65,8 @@ internal struct ActiveSessionInfoInternal : ISettable, IDisposable
 		{
 			return default(OnlineSessionState);
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -73,44 +74,44 @@ internal struct ActiveSessionInfoInternal : ISettable, IDisposable
 
 	public SessionDetailsInfo SessionDetails
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(ActiveSessionInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(ActiveSessionInfoInternal), Member = "Set")]
+		[CalledBy(Type = typeof(ActiveSessionInfoInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[Calls(Type = typeof(SessionDetailsInfoInternal), Member = "Set")]
-		[CalledBy(Type = typeof(ActiveSessionInfoInternal), Member = "Set")]
-		[CalledBy(Type = typeof(ActiveSessionInfoInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(ActiveSessionInfoInternal), Member = "set_SessionDetails")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ActiveSessionInfoInternal), Member = "set_SessionName")]
 	[Calls(Type = typeof(ActiveSessionInfoInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(ActiveSessionInfoInternal), Member = "set_SessionDetails")]
 	public void Set(ActiveSessionInfo other)
 	{
 	}
 
-	[Calls(Type = typeof(ActiveSessionInfoInternal), Member = "set_SessionDetails")]
-	[Calls(Type = typeof(ActiveSessionInfoInternal), Member = "set_LocalUserId")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ActiveSessionInfoInternal), Member = "set_SessionName")]
+	[Calls(Type = typeof(ActiveSessionInfoInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(ActiveSessionInfoInternal), Member = "set_SessionDetails")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	public void Dispose()
 	{
 	}

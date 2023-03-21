@@ -38,7 +38,7 @@ public class ParlayDebug : MonoBehaviour
 		[CallsDeduplicatedMethods(Count = 1)]
 		internal int _003CUpdate_003Eb__4_0(string a, string b)
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -46,28 +46,34 @@ public class ParlayDebug : MonoBehaviour
 
 	private Dictionary<string, Dictionary<string, DebugElement>> m_ActiveElements;
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 33)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Sort")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 31)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(ParlayDebug), Member = "SetText")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 12)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 12)]
 	private void SetTextInternal(string tag, string title, string text, float duration)
 	{
 	}
@@ -81,21 +87,21 @@ public class ParlayDebug : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
 	private void ResetInternal()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Reset()
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public ParlayDebug()
 	{
 	}

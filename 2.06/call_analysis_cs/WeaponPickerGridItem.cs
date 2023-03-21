@@ -1,6 +1,6 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Gameplay;
+using TLD.SaveState;
 using TLD.UI.Generics;
 using UnityEngine;
 
@@ -61,75 +61,61 @@ public class WeaponPickerGridItem : MonoBehaviour
 	private bool m_EmptyItemEnabled;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(WeaponPickerGridItem), Member = "ToggleSelection")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInParent")]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(WeaponPickerGridItem), Member = "UpdateConditionDisplay")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_WeaponPicker), Member = "InitializeListItem")]
-	[Calls(Type = typeof(WeaponPickerGridItem), Member = "OnHover")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTextureNonNull")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTextureNonNull")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(WeaponPickerGridItem), Member = "UpdateConditionDisplay")]
+	[Calls(Type = typeof(WeaponPickerGridItem), Member = "OnHover")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 6)]
 	public void RefreshEmptyItem(int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(GunItem), Member = "NumRoundsInClip")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(WeaponPickerGridItem), Member = "UpdateConditionDisplay")]
-	[Calls(Type = typeof(WeaponPickerGridItem), Member = "OnHover")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CalledBy(Type = typeof(Panel_WeaponPicker), Member = "InitializeListItem")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 20)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ClothingItem), Member = "IsWearing")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GunItem), Member = "NumRoundsInClip")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(WeaponPickerGridItem), Member = "UpdateConditionDisplay")]
+	[Calls(Type = typeof(WeaponPickerGridItem), Member = "OnHover")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 9)]
 	public void Refresh(GearItem gi, int index)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[Calls(Type = typeof(WeaponPickerGridItem), Member = "UpdateConditionDisplay")]
 	[CallsUnknownMethods(Count = 1)]
@@ -137,36 +123,33 @@ public class WeaponPickerGridItem : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public void OnClick()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(WeaponPickerGridItem), Member = "RefreshEmptyItem")]
 	[CalledBy(Type = typeof(WeaponPickerGridItem), Member = "Refresh")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	public void OnHover(bool isOver)
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_WeaponPicker), Member = "InitializeSelection")]
-	[CalledBy(Type = typeof(Panel_WeaponPicker), Member = "InitializeSelection")]
-	[CalledBy(Type = typeof(Panel_WeaponPicker), Member = "OnSelectedIndexChanged")]
-	[CalledBy(Type = typeof(Panel_WeaponPicker), Member = "OnSelectedIndexChanged")]
 	[CalledBy(Type = typeof(WeaponPickerGridItem), Member = "Awake")]
-	[Calls(Type = typeof(Panel_Container), Member = "MoveSelectedSpriteAndTween")]
+	[CalledBy(Type = typeof(Panel_WeaponPicker), Member = "OnSelectedIndexChanged")]
+	[CalledBy(Type = typeof(Panel_WeaponPicker), Member = "InitializeSelection")]
 	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(Panel_Inventory), Member = "MoveSelectedSpriteAndTween")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UIButtonColor), Member = "UpdateColor")]
-	[CallsDeduplicatedMethods(Count = 17)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "MoveSelectedSpriteAndTween")]
+	[Calls(Type = typeof(Panel_Container), Member = "MoveSelectedSpriteAndTween")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 6)]
 	public void ToggleSelection(bool toggleVal)
 	{
 	}
@@ -175,7 +158,7 @@ public class WeaponPickerGridItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public int GetSelectionIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -183,55 +166,58 @@ public class WeaponPickerGridItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetDisplayName()
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 0)]
+	[CallerCount(Count = 2)]
 	public GearItem GetGearItem()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "OnEquip")]
 	[Calls(Type = typeof(Panel_Container), Member = "OnContainerToInventory")]
 	[Calls(Type = typeof(Panel_Container), Member = "OnInventoryToContainer")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void DoubleClick()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(WeaponPickerGridItem), Member = "Update")]
-	[CalledBy(Type = typeof(WeaponPickerGridItem), Member = "Refresh")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(WeaponPickerGridItem), Member = "RefreshEmptyItem")]
+	[CalledBy(Type = typeof(WeaponPickerGridItem), Member = "Refresh")]
+	[CalledBy(Type = typeof(WeaponPickerGridItem), Member = "Update")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateConditionDisplay()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void DisableButton()
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public WeaponPickerGridItem()
 	{
 	}

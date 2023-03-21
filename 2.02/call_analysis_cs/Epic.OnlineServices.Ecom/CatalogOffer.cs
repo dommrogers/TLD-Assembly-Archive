@@ -44,7 +44,7 @@ public class CatalogOffer : ISettable
 		[CallerCount(Count = 7)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -58,14 +58,14 @@ public class CatalogOffer : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -73,16 +73,16 @@ public class CatalogOffer : ISettable
 
 	public string Id
 	{
-		[CallerCount(Count = 5)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
@@ -99,7 +99,7 @@ public class CatalogOffer : ISettable
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
@@ -107,16 +107,16 @@ public class CatalogOffer : ISettable
 
 	public string DescriptionText
 	{
-		[CallerCount(Count = 15)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 23)]
 		set
 		{
 		}
@@ -126,14 +126,14 @@ public class CatalogOffer : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 8)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 18)]
 		set
 		{
 		}
@@ -148,9 +148,9 @@ public class CatalogOffer : ISettable
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 46)]
 		set
 		{
 		}
@@ -167,7 +167,7 @@ public class CatalogOffer : ISettable
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 17)]
+		[CallerCount(Count = 19)]
 		set
 		{
 		}
@@ -175,16 +175,16 @@ public class CatalogOffer : ISettable
 
 	public Result PriceResult
 	{
-		[CallerCount(Count = 3)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 3)]
 		get
 		{
 			return default(Result);
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -197,7 +197,7 @@ public class CatalogOffer : ISettable
 		[CallerCount(Count = 3)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -214,11 +214,11 @@ public class CatalogOffer : ISettable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -231,7 +231,7 @@ public class CatalogOffer : ISettable
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(byte);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -243,16 +243,16 @@ public class CatalogOffer : ISettable
 
 	public long ExpirationTimestamp
 	{
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 20)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 40)]
 		get
 		{
-			return default(long);
+			return 0L;
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		set
 		{
 		}
@@ -260,12 +260,12 @@ public class CatalogOffer : ISettable
 
 	public uint PurchasedCount
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -282,10 +282,10 @@ public class CatalogOffer : ISettable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		set
 		{
@@ -294,47 +294,47 @@ public class CatalogOffer : ISettable
 
 	public bool AvailableForPurchase
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(CatalogOfferInternal), Member = "get_CurrencyCode")]
-	[Calls(Type = typeof(CatalogOfferInternal), Member = "get_TechnicalDetailsText_DEPRECATED")]
 	[CalledBy(Type = typeof(CatalogOffer), Member = "Set")]
-	[Calls(Type = typeof(CatalogOfferInternal), Member = "get_AvailableForPurchase")]
-	[Calls(Type = typeof(CatalogOfferInternal), Member = "get_LongDescriptionText")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(CatalogOfferInternal), Member = "get_TitleText")]
-	[Calls(Type = typeof(CatalogOfferInternal), Member = "get_Id")]
-	[Calls(Type = typeof(CatalogOfferInternal), Member = "get_CatalogNamespace")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CatalogOfferInternal), Member = "get_CatalogNamespace")]
+	[Calls(Type = typeof(CatalogOfferInternal), Member = "get_Id")]
+	[Calls(Type = typeof(CatalogOfferInternal), Member = "get_TitleText")]
 	[Calls(Type = typeof(CatalogOfferInternal), Member = "get_DescriptionText")]
+	[Calls(Type = typeof(CatalogOfferInternal), Member = "get_LongDescriptionText")]
+	[Calls(Type = typeof(CatalogOfferInternal), Member = "get_TechnicalDetailsText_DEPRECATED")]
+	[Calls(Type = typeof(CatalogOfferInternal), Member = "get_CurrencyCode")]
+	[Calls(Type = typeof(CatalogOfferInternal), Member = "get_AvailableForPurchase")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 16)]
 	internal void Set(CatalogOfferInternal? other)
 	{
 	}
 
-	[Calls(Type = typeof(CatalogOffer), Member = "Set")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CatalogOffer), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CatalogOffer()
 	{
 	}

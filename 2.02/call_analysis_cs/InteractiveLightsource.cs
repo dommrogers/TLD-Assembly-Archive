@@ -43,22 +43,25 @@ public class InteractiveLightsource : MonoBehaviour
 	private float m_MissionIlluminationOnRadius;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Reset()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
@@ -71,100 +74,99 @@ public class InteractiveLightsource : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayText")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[CallsUnknownMethods(Count = 4)]
 	public string GetHoverText()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(InteractiveLightsource), Member = "OnInteractComplete")]
 	[CalledBy(Type = typeof(InteractiveLightsource), Member = "OnInteractComplete")]
 	[CalledBy(Type = typeof(InteractiveLightsource), Member = "Deserialize")]
 	[CalledBy(Type = typeof(Action_SetInteractiveLightsourceState), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Action_SetInteractiveLightsourceState), Member = "SetLightsourceState")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void SetState(bool isOn)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 15)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InteractiveObjectsProcessInteraction")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(GenericInteractionPrompt), Member = "HideInteraction")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GenericInteractionPrompt), Member = "HideInteraction")]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 15)]
 	public bool ProcessInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(InteractiveLightsource), Member = "SetState")]
-	[Calls(Type = typeof(InteractiveLightsource), Member = "SetState")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public void OnInteractComplete(bool success, bool playerCancel, float progress)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(InteractiveLightsource), Member = "Serialize")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InteractiveLightsource), Member = "Serialize")]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 16)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(InteractiveLightsource), Member = "FindLightsourceByGuid")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(InteractiveLightsource), Member = "Deserialize")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 10)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(InteractiveLightsource), Member = "SerializeAll")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	private string Serialize()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(InteractiveLightsource), Member = "SetState")]
 	[CalledBy(Type = typeof(InteractiveLightsource), Member = "DeserializeAll")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(InteractiveLightsource), Member = "SetState")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Deserialize(string text)
 	{
 	}
 
+	[CalledBy(Type = typeof(InteractiveLightsource), Member = "DeserializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ObjectGuidManager), Member = "Lookup")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(InteractiveLightsource), Member = "DeserializeAll")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private static InteractiveLightsource FindLightsourceByGuid(string guid)
 	{
@@ -172,19 +174,19 @@ public class InteractiveLightsource : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayText")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(GenericInteractionPrompt), Member = "ShowInteraction")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GenericInteractionPrompt), Member = "PrepareInteraction")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(GenericInteractionPrompt), Member = "ShowInteraction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void ShowHoverButtonPrompts()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GenericInteractionPrompt), Member = "HideInteraction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public void HideHoverButtonPrompts()
 	{

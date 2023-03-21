@@ -20,17 +20,17 @@ internal class CommandLineParser
 	[CallsUnknownMethods(Count = 2)]
 	private bool HasArg(string arg, string[] args)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(Type = typeof(string), Member = "Split")]
 	[Calls(Type = typeof(Console), Member = "WriteLine")]
 	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(string), Member = "Split")]
 	public bool Parse(string[] args, string[] validArgs)
 	{
-		return default(bool);
+		return false;
 	}
 }

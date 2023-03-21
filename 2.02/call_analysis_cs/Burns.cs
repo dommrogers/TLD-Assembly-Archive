@@ -60,91 +60,88 @@ public class Burns : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Burns), Member = "MaybePlayBurnReminder")]
-	[Calls(Type = typeof(Burns), Member = "BurnsEnd")]
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Burns), Member = "BurnsEnd")]
+	[Calls(Type = typeof(Burns), Member = "MaybePlayBurnReminder")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public void Update()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
-	[CalledBy(Type = typeof(DamageTrigger), Member = "ApplyOneTimeDamage")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_burns_nofx")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_burns")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions")]
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(NoiseMakerItem), Member = "ApplyBurnAffliction")]
-	[Calls(Type = typeof(Log), Member = "AddAffliction")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(Time), Member = "get_time")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_burns")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_burns_nofx")]
+	[CalledBy(Type = typeof(DamageTrigger), Member = "ApplyOneTimeDamage")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
 	[Calls(Type = typeof(Time), Member = "get_time")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[Calls(Type = typeof(Log), Member = "AddAffliction")]
+	[Calls(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	public void BurnsStart(string causeLocID, bool displayIcon, bool nofx = false, AfflictionOptions options = AfflictionOptions.None)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TreatAffliction")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TreatAffliction")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_burns_cure")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions_cure")]
-	[CalledBy(Type = typeof(Burns), Member = "UpdateBurns")]
-	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
-	[CalledBy(Type = typeof(Burns), Member = "TakePainKillers")]
 	[CalledBy(Type = typeof(Burns), Member = "Update")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 8)]
+	[CalledBy(Type = typeof(Burns), Member = "TakePainKillers")]
 	[CalledBy(Type = typeof(Burns), Member = "ApplyBandage")]
+	[CalledBy(Type = typeof(Burns), Member = "UpdateBurns")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions_cure")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_burns_cure")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TreatAffliction")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void BurnsEnd()
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 2)]
 	public bool HasBurns()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
 	[CallerCount(Count = 2)]
 	public bool RequiresBandage()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
 	public bool RequiresPainkillers()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -159,48 +156,46 @@ public class Burns : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 31)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UIToggle), Member = "Set")]
-	[Calls(Type = typeof(UIToggle), Member = "Set")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIToggle), Member = "Set")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 31)]
 	public void UpdateRemedyItems(GameObject[] items)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "ApplyDamageToTopMostLayer")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "ApplyDamageToTopMostLayer")]
-	[Calls(Type = typeof(PlayerManager), Member = "ApplyDamageToTopMostLayer")]
 	[CallsUnknownMethods(Count = 4)]
 	public void ApplyClothingDamage(float realtimeSeconds)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string GetCauseLocID()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Burns), Member = "BurnsEnd")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateBurns()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
 	[CalledBy(Type = typeof(Burns), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 11)]
 	private void MaybePlayBurnReminder()
 	{

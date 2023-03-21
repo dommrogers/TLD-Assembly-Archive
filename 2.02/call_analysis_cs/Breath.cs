@@ -42,41 +42,34 @@ public class Breath : MonoBehaviour
 
 	public bool m_SuppressEffects;
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[CallsDeduplicatedMethods(Count = 19)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 33)]
 	public void Start()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(LightingCapture), Member = "Initialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public void StopBreathEffectImmediate()
 	{
 	}
@@ -85,20 +78,19 @@ public class Breath : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetBreathTimePercent()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Breath), Member = "Update")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(Condition), Member = "IsPlayerVulnerable")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerCantSprintBecauseOfInjury")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(ParticleSystem), Member = "Play")]
-	[Calls(Type = typeof(Breath), Member = "ShouldSuppressBreathEffect")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Breath), Member = "ShouldSuppressBreathEffect")]
 	[Calls(Type = typeof(ParticleSystem), Member = "Play")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerCantSprintBecauseOfInjury")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Condition), Member = "IsPlayerVulnerable")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 20)]
 	private void PlayBreathEffect()
 	{
 	}
@@ -106,57 +98,48 @@ public class Breath : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public static float GetBreathingStatePercent(HeavyBreathingState hbs)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(Time), Member = "get_time")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Breath), Member = "PlayBreathEffect")]
-	[Calls(Type = typeof(Time), Member = "get_time")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(DownsampleFX), Member = "RegisterParticleSystem")]
-	[Calls(Type = typeof(Time), Member = "get_time")]
-	[Calls(Type = typeof(DownsampleFX), Member = "RegisterParticleSystem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Breath), Member = "ParentEffectToCamera")]
-	[Calls(Type = typeof(Breath), Member = "ParentEffectToCamera")]
-	[Calls(Type = typeof(Breath), Member = "ParentEffectToCamera")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Breath), Member = "ParentEffectToCamera")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(DownsampleFX), Member = "RegisterParticleSystem")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(Time), Member = "get_time")]
+	[Calls(Type = typeof(Breath), Member = "PlayBreathEffect")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 11)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 24)]
 	[CalledBy(Type = typeof(Breath), Member = "Update")]
-	[CalledBy(Type = typeof(Breath), Member = "Update")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[CallsDeduplicatedMethods(Count = 15)]
-	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(Breath), Member = "Update")]
+	[CallsUnknownMethods(Count = 24)]
 	private void ParentEffectToCamera(GameObject instance)
 	{
 	}
 
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetCameraTrack")]
 	[CalledBy(Type = typeof(Breath), Member = "PlayBreathEffect")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetCameraTrack")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 16)]
 	private bool ShouldSuppressBreathEffect()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

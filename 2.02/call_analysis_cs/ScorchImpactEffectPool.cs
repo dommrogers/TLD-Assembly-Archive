@@ -6,9 +6,9 @@ public class ScorchImpactEffectPool : EffectPool<ScorchImpactEffectType>
 	[Serializable]
 	public class SerializableSpawnGroup : SerializableSpawnGroupGeneric
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		public SerializableSpawnGroup()
 		{
 			((EffectPool<>.SerializableSpawnGroupGeneric)(object)this)._002Ector();
@@ -24,15 +24,16 @@ public class ScorchImpactEffectPool : EffectPool<ScorchImpactEffectType>
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void InternalUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(EffectPool<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public ScorchImpactEffectPool()
 	{
 		((EffectPool<>)(object)this)._002Ector();

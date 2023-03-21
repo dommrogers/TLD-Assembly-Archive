@@ -21,8 +21,8 @@ public class CartographyAchievementRegion
 
 	public List<RandomSpawnObjectAchievementGroup> m_RandomSpawnObjectAchievementGroups;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public CartographyAchievementRegion()
 	{
 	}

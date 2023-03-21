@@ -31,23 +31,23 @@ public class Iterator : BTDecorator
 
 	private IList list
 	{
-		[CallerCount(Count = 1)]
 		[CalledBy(Type = typeof(Iterator), Member = "OnExecute")]
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(Node), Member = "Reset")]
-	[Calls(Type = typeof(Iterator), Member = "get_list")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(Type = typeof(Iterator), Member = "get_list")]
+	[Calls(Type = typeof(Node), Member = "Reset")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);

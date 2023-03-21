@@ -27,7 +27,7 @@ public class AchievementRequirementPlugin
 	public static extern void AchievementRequirement_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AchievementRequirementPlugin()
 	{
 	}

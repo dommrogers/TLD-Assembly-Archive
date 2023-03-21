@@ -4,6 +4,8 @@ using System.Net;
 using System.Runtime.CompilerServices;
 using System.Text;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.SaveState;
+using TLD.Serialization;
 
 namespace TLD.News;
 
@@ -40,62 +42,53 @@ public class NewsProvider
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 98)]
+		[CallerCount(Count = 113)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 265)]
+		[CallerCount(Count = 269)]
 		private set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(DateTime), Member = "get_Now")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[CallsUnknownMethods(Count = 1)]
 	public bool NeedsRefresh()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(WebUtility), Member = "UrlEncode")]
-	[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NewsProvider), Member = "GenerateQuery")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
+	[Calls(Type = typeof(WebUtility), Member = "UrlEncode")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public string GenerateNewsURL(string sku)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CalledBy(Type = typeof(NewsProvider), Member = "GenerateNewsURL")]
 	[CalledBy(Type = typeof(NewsCarousel), Member = "RetrieveNewsFromServer")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CalledBy(Type = typeof(NewsProvider), Member = "GenerateNewsURL")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	private string GenerateQuery(string sku)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(string), Member = "Replace")]
 	[CallsUnknownMethods(Count = 1)]
 	private string TrimQuery(string query)
@@ -109,23 +102,23 @@ public class NewsProvider
 		return null;
 	}
 
+	[CalledBy(Type = typeof(NewsCarousel), Member = "FinishNewsFetching")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(DateTime), Member = "get_Now")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(SerializationUtils), Member = "TryDeserializeObject")]
 	[Calls(Type = typeof(DateTime), Member = "get_Now")]
 	[Calls(Type = typeof(TimeSpan), Member = "FromMinutes")]
 	[Calls(Type = typeof(DateTime), Member = "op_Addition")]
-	[Calls(Type = typeof(DateTime), Member = "get_Now")]
 	[Calls(Type = typeof(TimeSpan), Member = "Interval")]
-	[CalledBy(Type = typeof(NewsCarousel), Member = "FinishNewsFetching")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	public void ParseJson(string newsJson)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public NewsProvider()
 	{
 	}

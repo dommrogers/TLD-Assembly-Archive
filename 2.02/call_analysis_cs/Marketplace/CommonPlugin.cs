@@ -27,8 +27,8 @@ public class CommonPlugin
 	[CallsUnknownMethods(Count = 1)]
 	public static extern int GetPluginFrameworkVersion();
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public CommonPlugin()
 	{
 	}

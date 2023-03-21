@@ -7,9 +7,9 @@ public class CampfireSaveDataProxy
 
 	public Dictionary<string, string> m_RockGuids;
 
+	[CalledBy(Type = typeof(Campfire), Member = ".cctor")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(Campfire), Member = ".cctor")]
 	[CallsUnknownMethods(Count = 8)]
 	public CampfireSaveDataProxy()
 	{

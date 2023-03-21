@@ -43,8 +43,8 @@ public class BlueprintItem : MonoBehaviour
 
 	public bool m_CanIncreaseRepairSkill;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void Start()
 	{
 	}

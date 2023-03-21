@@ -72,23 +72,23 @@ public class AkCommonUserSettings : AkSettingsValidationHandler
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(AkCommonUserSettings), Member = "CopyTo")]
-	[Calls(Type = typeof(Path), Member = "Combine")]
-	[Calls(Type = typeof(string), Member = "CreateString")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "CreateString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Path), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	protected static string GetPluginPath()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[Calls(Type = typeof(AkInitSettings), Member = "get_settingsMainOutput")]
 	[Calls(Type = typeof(AkCommonOutputSettings), Member = "CopyTo")]
 	[Calls(Type = typeof(AkCommonUserSettings), Member = "GetPluginPath")]
+	[CallsDeduplicatedMethods(Count = 11)]
 	[CallsUnknownMethods(Count = 8)]
 	public virtual void CopyTo(AkInitSettings settings)
 	{
@@ -101,15 +101,15 @@ public class AkCommonUserSettings : AkSettingsValidationHandler
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void CopyTo(AkStreamMgrSettings settings)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public virtual void CopyTo(AkDeviceSettings settings)
 	{
 	}
@@ -129,7 +129,7 @@ public class AkCommonUserSettings : AkSettingsValidationHandler
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public virtual void CopyTo(AkUnityPlatformSpecificSettings settings)
 	{
 	}
@@ -139,10 +139,10 @@ public class AkCommonUserSettings : AkSettingsValidationHandler
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(AkPS4Settings), Member = ".ctor")]
 	[CalledBy(Type = typeof(AkXBoxOneSettings), Member = ".ctor")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public AkCommonUserSettings()
 	{
 	}

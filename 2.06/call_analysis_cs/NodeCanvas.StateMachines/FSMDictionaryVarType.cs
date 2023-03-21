@@ -23,7 +23,8 @@ public class FSMDictionaryVarType
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	public void RemoveElement(Graph g)
 	{
 	}

@@ -26,7 +26,7 @@ public class HeightmapPixelError : MonoBehaviour
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	public float GetPixelError(QualityTerrainLod quality)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -35,7 +35,7 @@ public class HeightmapPixelError : MonoBehaviour
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	public static float GetDefaultPixelError(QualityTerrainLod quality)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

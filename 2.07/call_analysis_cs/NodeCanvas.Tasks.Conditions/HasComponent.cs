@@ -6,17 +6,17 @@ namespace NodeCanvas.Tasks.Conditions;
 
 public class HasComponent<T> : ConditionTask<Transform> where T : Component
 {
-	[CallsDeduplicatedMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public HasComponent()
 	{
 		((ConditionTask<>)(object)this)._002Ector();

@@ -22,10 +22,10 @@ public class DestroyGameObjectAfterTime : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}

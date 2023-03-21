@@ -21,104 +21,104 @@ public class MatchTransform : MonoBehaviour
 
 	private Transform m_CachedTargetTransform;
 
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInParent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(MatchTransform), Member = "UpdateColliderState")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnDisable()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(MatchTransform), Member = "LateUpdateAll")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(BaseAi), Member = "IsImposter")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(MatchTransform), Member = "LateUpdateAll")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 12)]
-	[CallerCount(Count = 1)]
 	private int DoLateUpdate()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Collider), Member = "set_enabled")]
-	[Calls(Type = typeof(Collider), Member = "set_enabled")]
 	[CalledBy(Type = typeof(MatchTransform), Member = "OnEnable")]
 	[CalledBy(Type = typeof(MatchTransform), Member = "EnableCollidersForAllActive")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(MatchTransform), Member = "AreColliderEnabled")]
+	[Calls(Type = typeof(Collider), Member = "set_enabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateColliderState()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(MatchTransform), Member = "DoLateUpdate")]
 	[CalledBy(Type = typeof(MatchTransform), Member = "EnableCollidersForAllActive")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(GameManager), Member = "LateUpdate")]
-	[CallsUnknownMethods(Count = 9)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(MatchTransform), Member = "DoLateUpdate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Collider), Member = "set_enabled")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	public static int LateUpdateAll()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(MatchTransform), Member = "UpdateColliderState")]
 	[CalledBy(Type = typeof(MatchTransform), Member = "EnableCollidersForAllActive")]
-	[CalledBy(Type = typeof(MatchTransform), Member = "EnableCollidersForAllActive")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool AreColliderEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(BaseAi), Member = "ExitDead")]
-	[Calls(Type = typeof(Utils), Member = "UseHigherPrecisionTimestep")]
-	[Calls(Type = typeof(MatchTransform), Member = "LateUpdateAll")]
-	[Calls(Type = typeof(MatchTransform), Member = "UpdateColliderState")]
-	[Calls(Type = typeof(MatchTransform), Member = "AreColliderEnabled")]
-	[Calls(Type = typeof(MatchTransform), Member = "AreColliderEnabled")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(vp_Bullet), Member = "Start")]
-	[CallerCount(Count = 7)]
+	[CalledBy(Type = typeof(BaseAi), Member = "EnterDead")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ExitDead")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ProcessCurrentAiMode")]
 	[CalledBy(Type = typeof(BaseAi), Member = "SetAiMode")]
 	[CalledBy(Type = typeof(Utils), Member = "SetIsKinematic")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(MatchTransform), Member = "AreColliderEnabled")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(MatchTransform), Member = "UpdateColliderState")]
+	[Calls(Type = typeof(MatchTransform), Member = "LateUpdateAll")]
+	[Calls(Type = typeof(Utils), Member = "UseHigherPrecisionTimestep")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(BaseAi), Member = "EnterDead")]
-	[CalledBy(Type = typeof(vp_Bullet), Member = "Start")]
 	public static void EnableCollidersForAllActive(bool enable)
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public MatchTransform()
 	{
 	}

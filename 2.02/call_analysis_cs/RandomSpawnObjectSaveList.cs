@@ -6,9 +6,10 @@ public class RandomSpawnObjectSaveList
 	public List<RandomSpawnObjectSaveData> m_SaveDataList;
 
 	[CalledBy(Type = typeof(RandomSpawnObjectManager), Member = "Serialize")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public RandomSpawnObjectSaveList()
 	{
 	}

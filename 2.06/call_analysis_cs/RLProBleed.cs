@@ -26,15 +26,13 @@ public sealed class RLProBleed : PostProcessEffectSettings
 
 	public SplineParameter curveQ;
 
-	[Calls(Type = typeof(Spline), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 82)]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[Calls(Type = typeof(AnimationCurve), Member = ".ctor")]
-	[Calls(Type = typeof(Spline), Member = ".ctor")]
-	[Calls(Type = typeof(Spline), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Spline), Member = ".ctor")]
 	[Calls(Type = typeof(SplineParameter), Member = ".ctor")]
+	[Calls(Type = typeof(AnimationCurve), Member = ".ctor")]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 82)]
 	public RLProBleed()
 	{
 	}

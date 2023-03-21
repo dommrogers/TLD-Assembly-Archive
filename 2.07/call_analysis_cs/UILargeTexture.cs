@@ -15,10 +15,10 @@ internal class UILargeTexture : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "GetLargeTexture")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "GetLargeTexture")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnEnable()
 	{
 	}

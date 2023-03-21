@@ -15,44 +15,42 @@ public class UserReportingScriptNoPanel : MonoBehaviour
 
 		public object Current
 		{
-			[CallerCount(Count = 29)]
-			[DeduplicatedMethod]
 			[CompilerGenerated]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 71)]
+			[CallerCount(Count = 77)]
 			private set
 			{
 			}
 		}
 
+		[CalledBy(Type = typeof(UserReportingScriptNoPanel), Member = "Awake")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(UserReportingScriptNoPanel), Member = "Awake")]
 		[CallsUnknownMethods(Count = 7)]
 		public TLDUserReportingUpdater()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
 		[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
 		[Calls(Type = typeof(UserReportingClient), Member = "UpdateOnEndOfFrame")]
-		[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
 		[Calls(Type = typeof(UserReportingClient), Member = "Update")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		public bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public void Reset()
 		{
 		}
@@ -63,28 +61,27 @@ public class UserReportingScriptNoPanel : MonoBehaviour
 	private Coroutine m_RunningCoroutine;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
 	[Calls(Type = typeof(UnityUserReporting), Member = "Configure")]
 	[Calls(Type = typeof(TLDUserReportingUpdater), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StopCoroutine")]
 	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
-	[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public UserReportingScriptNoPanel()
 	{
 	}

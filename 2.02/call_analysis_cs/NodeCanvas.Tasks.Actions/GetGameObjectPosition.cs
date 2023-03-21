@@ -10,11 +10,11 @@ public class GetGameObjectPosition : ActionTask<Transform>
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 17)]
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Task), Member = "get_agentInfo")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 17)]
 		get
 		{
 			return null;
@@ -22,8 +22,8 @@ public class GetGameObjectPosition : ActionTask<Transform>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	protected override void OnExecute()
 	{

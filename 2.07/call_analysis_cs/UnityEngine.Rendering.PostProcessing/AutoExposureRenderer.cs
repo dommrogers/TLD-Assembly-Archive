@@ -21,34 +21,24 @@ internal sealed class AutoExposureRenderer : PostProcessEffectRenderer<AutoExpos
 		((PostProcessEffectRenderer<>)(object)this)._002Ector();
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(AutoExposureRenderer), Member = "Render")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(AutoExposureRenderer), Member = "Render")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	private void CheckTexture(int eye, int id)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeTextureParam")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeTextureParam")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AutoExposureRenderer), Member = "CheckTexture")]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeBufferParam")]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeVectorParam")]
 	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeTextureParam")]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeVectorParam")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeVectorParam")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeVectorParam")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeBufferParam")]
-	[Calls(Type = typeof(AutoExposureRenderer), Member = "CheckTexture")]
-	[Calls(Type = typeof(AutoExposureRenderer), Member = "CheckTexture")]
 	[CallsDeduplicatedMethods(Count = 9)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 13)]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}

@@ -40,7 +40,7 @@ public abstract class GameModeConfig : ScriptableObject
 	public LocalizedString Description
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 9)]
+		[CallerCount(Count = 11)]
 		get
 		{
 			return null;
@@ -58,16 +58,16 @@ public abstract class GameModeConfig : ScriptableObject
 		}
 	}
 
-	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
 	public bool HasActiveTag(GameplayTag tag)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	protected GameModeConfig()
 	{
 	}

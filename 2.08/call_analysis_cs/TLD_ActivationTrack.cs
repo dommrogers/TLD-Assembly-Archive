@@ -16,18 +16,19 @@ public class TLD_ActivationTrack : ActivationTrack, TLD_IDynamicBindableTrack, T
 	private bool m_InitialBindingObjectState;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(Utils), Member = "FindTimelineDynamicBinding")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void DoDynamicBinding(PlayableDirector director)
 	{
 	}
 
-	[Calls(Type = typeof(CustomManagedObject), Member = "UpdateManagedObject")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(CustomManagedObject), Member = "UpdateManagedObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Stop()
 	{
 	}
@@ -36,7 +37,7 @@ public class TLD_ActivationTrack : ActivationTrack, TLD_IDynamicBindableTrack, T
 	[CallsUnknownMethods(Count = 2)]
 	private bool GetPersistedState()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -57,9 +58,9 @@ public class TLD_ActivationTrack : ActivationTrack, TLD_IDynamicBindableTrack, T
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TrackAsset), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public TLD_ActivationTrack()
 	{
 	}

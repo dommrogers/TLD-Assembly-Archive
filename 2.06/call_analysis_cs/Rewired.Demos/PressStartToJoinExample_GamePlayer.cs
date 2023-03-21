@@ -30,13 +30,13 @@ public class PressStartToJoinExample_GamePlayer : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	private void OnEnable()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void Update()
 	{
 	}
@@ -44,20 +44,17 @@ public class PressStartToJoinExample_GamePlayer : MonoBehaviour
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PressStartToJoinExample_Assigner), Member = "GetRewiredPlayer")]
 	[Calls(Type = typeof(Player), Member = "GetAxis")]
-	[Calls(Type = typeof(PressStartToJoinExample_Assigner), Member = "GetRewiredPlayer")]
-	[Calls(Type = typeof(Player), Member = "GetAxis")]
-	[Calls(Type = typeof(PressStartToJoinExample_Assigner), Member = "GetRewiredPlayer")]
 	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
 	[CallsUnknownMethods(Count = 1)]
 	private void GetInput()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 11)]
 	private void ProcessInput()
 	{
 	}

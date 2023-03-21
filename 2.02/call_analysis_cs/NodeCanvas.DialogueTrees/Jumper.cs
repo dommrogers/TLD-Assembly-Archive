@@ -1,3 +1,4 @@
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -18,8 +19,8 @@ public class Jumper : DTNode
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		set
 		{
 		}
@@ -27,19 +28,19 @@ public class Jumper : DTNode
 
 	private DTNode sourceNode
 	{
+		[CalledBy(Type = typeof(Jumper), Member = "get_name")]
+		[CalledBy(Type = typeof(Jumper), Member = "OnExecute")]
 		[CallerCount(Count = 4)]
-		[CallsDeduplicatedMethods(Count = 3)]
-		[CalledBy(Type = typeof(Jumper), Member = "get_name")]
-		[CalledBy(Type = typeof(Jumper), Member = "get_name")]
-		[CalledBy(Type = typeof(Jumper), Member = "OnExecute")]
-		[CalledBy(Type = typeof(Jumper), Member = "OnExecute")]
+		[Calls(Type = typeof(Enumerable), Member = "OfType")]
+		[Calls(Type = typeof(Enumerable), Member = "FirstOrDefault")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 16)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 7)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		set
 		{
 		}
@@ -47,11 +48,11 @@ public class Jumper : DTNode
 
 	public override int maxOutConnections
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -61,17 +62,16 @@ public class Jumper : DTNode
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public override string name
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Jumper), Member = "get_sourceNode")]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Jumper), Member = "get_sourceNode")]
-		[Calls(Type = typeof(Jumper), Member = "get_sourceNode")]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -79,14 +79,13 @@ public class Jumper : DTNode
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Node), Member = "Error")]
-	[Calls(Type = typeof(DialogueTree), Member = "EnterNode")]
-	[Calls(Type = typeof(Jumper), Member = "get_sourceNode")]
-	[Calls(Type = typeof(Jumper), Member = "get_sourceNode")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Jumper), Member = "get_sourceNode")]
 	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[Calls(Type = typeof(DialogueTree), Member = "EnterNode")]
+	[Calls(Type = typeof(Node), Member = "Error")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);

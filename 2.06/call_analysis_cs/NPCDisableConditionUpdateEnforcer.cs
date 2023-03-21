@@ -7,11 +7,12 @@ public class NPCDisableConditionUpdateEnforcer : MonoBehaviour
 	private PanelReference<Panel_Loading> m_Loading;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(BodyCarry), Member = "IsCarryingBody")]
 	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 13)]
 	public void Update()
 	{

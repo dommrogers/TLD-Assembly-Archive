@@ -7,8 +7,8 @@ public static class PlayerRichPresenceManager
 
 	private static IRichPresenceProvider s_RichPresenceProvider;
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void Initialize()
 	{
 	}
@@ -32,8 +32,8 @@ public static class PlayerRichPresenceManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private static IRichPresenceProvider AllocatePresenceProvider()
 	{
 		return null;

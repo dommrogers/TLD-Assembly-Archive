@@ -5,8 +5,8 @@ namespace NodeCanvas.Tasks.Actions;
 
 public class Action_ForceKillPlayer : ActionTask
 {
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{

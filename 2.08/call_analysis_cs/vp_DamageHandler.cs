@@ -27,52 +27,53 @@ public class vp_DamageHandler : MonoBehaviour
 
 	protected Quaternion m_StartRotation;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
-	[CallerCount(Count = 0)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Random), Member = "Range")]
 	[Calls(Type = typeof(vp_Timer), Member = "In")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Damage(float damage)
 	{
 	}
 
-	[Calls(Type = typeof(vp_Timer), Member = "In")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(vp_DamageHandler), Member = "RemoveBulletHoles")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(vp_Timer), Member = "In")]
+	[CallsDeduplicatedMethods(Count = 10)]
 	[CallsUnknownMethods(Count = 8)]
 	public void Die()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 13)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Physics), Member = "CheckSphere")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(AudioSource), Member = "PlayOneShot")]
 	[Calls(Type = typeof(Random), Member = "Range")]
 	[Calls(Type = typeof(vp_Timer), Member = "In")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 8)]
-	[CallerCount(Count = 0)]
 	protected void Respawn()
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
-	[CallsUnknownMethods(Count = 16)]
 	[CalledBy(Type = typeof(vp_DamageHandler), Member = "Die")]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 16)]
 	protected void RemoveBulletHoles()
 	{
 	}

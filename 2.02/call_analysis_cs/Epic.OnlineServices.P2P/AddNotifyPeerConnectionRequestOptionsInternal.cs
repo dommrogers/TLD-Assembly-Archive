@@ -15,11 +15,11 @@ internal struct AddNotifyPeerConnectionRequestOptionsInternal : ISettable, IDisp
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(AddNotifyPeerConnectionRequestOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(AddNotifyPeerConnectionRequestOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(AddNotifyPeerConnectionRequestOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(AddNotifyPeerConnectionRequestOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -30,8 +30,8 @@ internal struct AddNotifyPeerConnectionRequestOptionsInternal : ISettable, IDisp
 		[CalledBy(Type = typeof(AddNotifyPeerConnectionRequestOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(AddNotifyPeerConnectionRequestOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[Calls(Type = typeof(SocketIdInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		set
 		{
 		}
@@ -44,18 +44,18 @@ internal struct AddNotifyPeerConnectionRequestOptionsInternal : ISettable, IDisp
 	{
 	}
 
+	[CalledBy(Type = typeof(P2PInterface), Member = "AddNotifyPeerConnectionRequest")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AddNotifyPeerConnectionRequestOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(AddNotifyPeerConnectionRequestOptionsInternal), Member = "set_SocketId")]
-	[CalledBy(Type = typeof(P2PInterface), Member = "AddNotifyPeerConnectionRequest")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

@@ -21,9 +21,9 @@ public class SubmitDataMapUpdatesAsyncOp : AsyncOp<SubmitDataMapUpdatesAsyncOp>
 		((AsyncOp<>)(object)this)._002Ector();
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Complete(uint status, uint result)
 	{
 	}

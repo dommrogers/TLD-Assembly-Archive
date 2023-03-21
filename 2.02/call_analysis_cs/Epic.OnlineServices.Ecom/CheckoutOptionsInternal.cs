@@ -19,11 +19,11 @@ internal struct CheckoutOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(CheckoutOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CheckoutOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CheckoutOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CheckoutOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -31,11 +31,11 @@ internal struct CheckoutOptionsInternal : ISettable, IDisposable
 
 	public string OverrideCatalogNamespace
 	{
+		[CalledBy(Type = typeof(CheckoutOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CheckoutOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CheckoutOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CheckoutOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -45,8 +45,8 @@ internal struct CheckoutOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(CheckoutOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(CheckoutOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[CallerCount(Count = 2)]
+		[CallsDeduplicatedMethods(Count = 3)]
 		set
 		{
 		}
@@ -60,19 +60,18 @@ internal struct CheckoutOptionsInternal : ISettable, IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(EcomInterface), Member = "Checkout")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CheckoutOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(CheckoutOptionsInternal), Member = "set_OverrideCatalogNamespace")]
 	[Calls(Type = typeof(CheckoutOptionsInternal), Member = "set_Entries")]
-	[CalledBy(Type = typeof(EcomInterface), Member = "Checkout")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{

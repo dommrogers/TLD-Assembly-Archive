@@ -8,8 +8,8 @@ public class PlayerAttributesSaveData
 
 	public float m_MaxStrength;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public PlayerAttributesSaveData()
 	{
 	}

@@ -7,25 +7,29 @@ namespace Epic.OnlineServices.Metrics;
 [StructLayout(2, Pack = 1, Size = 12)]
 internal struct BeginPlayerSessionOptionsAccountIdInternal : ISettable, IDisposable
 {
+	[FieldOffset(0)]
 	private MetricsAccountIdType m_AccountIdType;
 
+	[FieldOffset(4)]
 	private IntPtr m_Epic;
 
+	[FieldOffset(4)]
 	private IntPtr m_External;
 
 	public EpicAccountId Epic
 	{
 		[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "Set")]
 		[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountIdInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountIdInternal), Member = "Set")]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -34,41 +38,45 @@ internal struct BeginPlayerSessionOptionsAccountIdInternal : ISettable, IDisposa
 
 	public string External
 	{
+		[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "Set")]
+		[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "Set")]
-		[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "Set")]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountIdInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
 	[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountIdInternal), Member = "Set")]
-	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountIdInternal), Member = "set_External")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountIdInternal), Member = "set_Epic")]
+	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountIdInternal), Member = "set_External")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void Set(BeginPlayerSessionOptionsAccountId other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountIdInternal), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "Dispose")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

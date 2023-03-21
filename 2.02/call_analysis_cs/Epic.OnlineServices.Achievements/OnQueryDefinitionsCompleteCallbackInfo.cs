@@ -28,46 +28,46 @@ public class OnQueryDefinitionsCompleteCallbackInfo : ICallbackInfo, ISettable
 
 	public object ClientData
 	{
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Result? GetResultCode()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(OnQueryDefinitionsCompleteCallbackInfoInternal), Member = "get_ClientData")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(OnQueryDefinitionsCompleteCallbackInfoInternal), Member = "get_ClientData")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	internal void Set(OnQueryDefinitionsCompleteCallbackInfoInternal? other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(OnQueryDefinitionsCompleteCallbackInfoInternal), Member = "get_ClientData")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(OnQueryDefinitionsCompleteCallbackInfoInternal), Member = "get_ClientData")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public OnQueryDefinitionsCompleteCallbackInfo()
 	{
 	}

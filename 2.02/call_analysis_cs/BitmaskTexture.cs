@@ -22,7 +22,7 @@ public class BitmaskTexture
 	public Texture2D Texture
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
@@ -30,20 +30,20 @@ public class BitmaskTexture
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(BreakableIce), Member = "InitializeBrokenIceTexture")]
+	[CallerCount(Count = 1)]
 	public BitmaskTexture(int width, int height, int bitCount)
 	{
 	}
 
-	[Calls(Type = typeof(UnityException), Member = ".ctor")]
 	[CalledBy(Type = typeof(BreakableIce), Member = "Update")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Texture), Member = "CreateNonReadableException")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(Texture2D), Member = "Apply")]
+	[Calls(Type = typeof(Texture), Member = "CreateNonReadableException")]
+	[Calls(Type = typeof(UnityException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public void ApplyChanges()
 	{
 	}
@@ -57,14 +57,14 @@ public class BitmaskTexture
 	[CallerCount(Count = 0)]
 	public int IndexOf(int x, int y)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 3)]
 	public bool IsBitSet(int x, int y, int bit)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -77,6 +77,6 @@ public class BitmaskTexture
 	[CallerCount(Count = 0)]
 	private static int RoundUpAndDivide(int x, int d)
 	{
-		return default(int);
+		return 0;
 	}
 }

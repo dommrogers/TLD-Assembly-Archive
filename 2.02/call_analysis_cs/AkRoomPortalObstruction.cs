@@ -6,24 +6,26 @@ public class AkRoomPortalObstruction : AkObstructionOcclusion
 {
 	private AkRoomPortal m_portal;
 
-	[Calls(Type = typeof(AkObstructionOcclusion), Member = "InitIntervalsAndFadeRates")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(AkObstructionOcclusion), Member = "InitIntervalsAndFadeRates")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(AkSpatialAudioListener), Member = "get_TheSpatialAudioListener")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(AkSpatialAudioListener), Member = "get_TheSpatialAudioListener")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void UpdateCurrentListenerList()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "GetInstanceID")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	protected override void SetObstructionOcclusion(KeyValuePair<AkAudioListener, ObstructionOcclusionValue> ObsOccPair)
 	{

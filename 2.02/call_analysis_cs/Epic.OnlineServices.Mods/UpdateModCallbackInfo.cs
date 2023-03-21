@@ -32,16 +32,16 @@ public class UpdateModCallbackInfo : ICallbackInfo, ISettable
 
 	public EpicAccountId LocalUserId
 	{
-		[CallerCount(Count = 29)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -51,14 +51,14 @@ public class UpdateModCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -66,16 +66,16 @@ public class UpdateModCallbackInfo : ICallbackInfo, ISettable
 
 	public ModIdentifier Mod
 	{
-		[CallerCount(Count = 12)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 12)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		private set
 		{
 		}
@@ -88,27 +88,27 @@ public class UpdateModCallbackInfo : ICallbackInfo, ISettable
 		return null;
 	}
 
-	[Calls(Type = typeof(UpdateModCallbackInfoInternal), Member = "get_Mod")]
 	[CalledBy(Type = typeof(UpdateModCallbackInfo), Member = "Set")]
-	[Calls(Type = typeof(UpdateModCallbackInfoInternal), Member = "get_ClientData")]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UpdateModCallbackInfoInternal), Member = "get_LocalUserId")]
+	[Calls(Type = typeof(UpdateModCallbackInfoInternal), Member = "get_ClientData")]
+	[Calls(Type = typeof(UpdateModCallbackInfoInternal), Member = "get_Mod")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	internal void Set(UpdateModCallbackInfoInternal? other)
 	{
 	}
 
-	[Calls(Type = typeof(UpdateModCallbackInfo), Member = "Set")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UpdateModCallbackInfo), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public UpdateModCallbackInfo()
 	{
 	}

@@ -6,8 +6,8 @@ public class LightsourceSaveDataProxy
 
 	public bool m_IsOn;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public LightsourceSaveDataProxy()
 	{
 	}

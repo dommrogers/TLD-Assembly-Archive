@@ -14,9 +14,9 @@ public class SetFloatRandom : ActionTask
 
 	protected override string info
 	{
-		[CallsDeduplicatedMethods(Count = 3)]
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 29)]
 		get
 		{
@@ -24,20 +24,21 @@ public class SetFloatRandom : ActionTask
 		}
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
+	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
 	[Calls(Type = typeof(BBParameter), Member = "set_varRef")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(BBParameter), Member = "PromoteToVariable")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Random), Member = "Range")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(BBParameter), Member = "get_isNone")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public SetFloatRandom()
 	{
 	}

@@ -31,15 +31,15 @@ internal struct PlayerAchievementInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(PlayerAchievement), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(PlayerAchievementInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -52,7 +52,7 @@ internal struct PlayerAchievementInternal : ISettable, IDisposable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(double);
+			return 0.0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -64,16 +64,16 @@ internal struct PlayerAchievementInternal : ISettable, IDisposable
 	public DateTimeOffset? UnlockTime
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(PlayerAchievementInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -81,16 +81,16 @@ internal struct PlayerAchievementInternal : ISettable, IDisposable
 
 	public PlayerStatInfo[] StatInfo
 	{
+		[CalledBy(Type = typeof(PlayerAchievement), Member = "Set")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 5)]
-		[CalledBy(Type = typeof(PlayerAchievement), Member = "Set")]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(PlayerAchievementInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(PlayerAchievementInternal), Member = "Set")]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -99,17 +99,17 @@ internal struct PlayerAchievementInternal : ISettable, IDisposable
 
 	public string DisplayName
 	{
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(PlayerAchievement), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(PlayerAchievementInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -120,15 +120,15 @@ internal struct PlayerAchievementInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(PlayerAchievement), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(PlayerAchievementInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -137,18 +137,18 @@ internal struct PlayerAchievementInternal : ISettable, IDisposable
 
 	public string IconURL
 	{
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(PlayerAchievement), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(PlayerAchievementInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 1)]
 		set
 		{
 		}
@@ -156,48 +156,43 @@ internal struct PlayerAchievementInternal : ISettable, IDisposable
 
 	public string FlavorText
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(PlayerAchievement), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(PlayerAchievementInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
 	[CalledBy(Type = typeof(PlayerAchievementInternal), Member = "Set")]
-	[Calls(Type = typeof(PlayerAchievementInternal), Member = "set_FlavorText")]
-	[Calls(Type = typeof(PlayerAchievementInternal), Member = "set_IconURL")]
-	[Calls(Type = typeof(PlayerAchievementInternal), Member = "set_Description")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerAchievementInternal), Member = "set_AchievementId")]
 	[Calls(Type = typeof(PlayerAchievementInternal), Member = "set_UnlockTime")]
 	[Calls(Type = typeof(PlayerAchievementInternal), Member = "set_StatInfo")]
-	[Calls(Type = typeof(PlayerAchievementInternal), Member = "set_AchievementId")]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerAchievementInternal), Member = "set_DisplayName")]
+	[Calls(Type = typeof(PlayerAchievementInternal), Member = "set_Description")]
+	[Calls(Type = typeof(PlayerAchievementInternal), Member = "set_IconURL")]
+	[Calls(Type = typeof(PlayerAchievementInternal), Member = "set_FlavorText")]
 	public void Set(PlayerAchievement other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerAchievementInternal), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]

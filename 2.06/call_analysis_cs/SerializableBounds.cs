@@ -14,7 +14,7 @@ public class SerializableBounds
 	[CallsUnknownMethods(Count = 1)]
 	public bool Contains(Vector3 point)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

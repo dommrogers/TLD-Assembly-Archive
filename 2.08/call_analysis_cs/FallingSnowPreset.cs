@@ -42,44 +42,42 @@ public class FallingSnowPreset
 	{
 	}
 
+	[CalledBy(Type = typeof(Weather), Member = "SetSnowPresetBlend")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Weather), Member = "SetSnowPresetBlend")]
 	[CallsUnknownMethods(Count = 1)]
 	public FallingSnowPreset(Type type)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Weather), Member = "UpdateFallingSnowPreset")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetBlended(FallingSnowPreset a, FallingSnowPreset b, float blend)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Weather), Member = "UpdateFallingSnowPreset")]
-	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 9)]
 	public void Apply(ParticleSystem ps, ParticleSystemRenderer lpr)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetAdjustedMaxFallingParticlesCount(Type type)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetMaxFallingParticlesCount(Type type)
 	{
-		return default(float);
+		return 0f;
 	}
 }

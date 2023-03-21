@@ -11,8 +11,8 @@ public class Chair : MonoBehaviour
 	public PlayerInConstrainedCamera.ConstrainedCameraInfo m_ConstrainedCameraInfo;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Chair), Member = "CanInteract")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void InitializeInteraction(BaseInteraction baseInteraction)
 	{
@@ -26,16 +26,16 @@ public class Chair : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(Chair), Member = "InitializeInteraction")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private bool CanInteract()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

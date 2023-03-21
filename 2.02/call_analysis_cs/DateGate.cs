@@ -42,49 +42,45 @@ public class DateGate : MonoBehaviour
 
 	private bool m_Active;
 
-	[Calls(Type = typeof(DateTime), Member = "op_Addition")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(DateTime), Member = "op_Addition")]
-	[Calls(Type = typeof(DateTime), Member = ".ctor")]
-	[Calls(Type = typeof(DateTime), Member = ".ctor")]
-	[Calls(Type = typeof(Transform), Member = "Find")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Transform), Member = "Find")]
+	[Calls(Type = typeof(DateTime), Member = ".ctor")]
+	[Calls(Type = typeof(DateTime), Member = "op_Addition")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DateTime), Member = "get_UtcNow")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void Update()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DateTime), Member = "get_UtcNow")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private bool PassesDateGate()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public DateGate()
 	{

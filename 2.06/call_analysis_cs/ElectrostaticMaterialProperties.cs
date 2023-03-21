@@ -44,11 +44,11 @@ public class ElectrostaticMaterialProperties : ActivatedMaterialProperties
 		}
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(ActivatedMaterialProperties), Member = "UpdateMaterial")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 5)]
 	public override void UpdateMaterial(Material mat, bool isActive)
 	{
 	}

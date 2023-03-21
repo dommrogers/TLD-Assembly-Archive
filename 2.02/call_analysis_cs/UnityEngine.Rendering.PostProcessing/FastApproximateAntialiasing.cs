@@ -11,7 +11,7 @@ public sealed class FastApproximateAntialiasing
 	public bool keepAlpha;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public FastApproximateAntialiasing()
 	{
 	}

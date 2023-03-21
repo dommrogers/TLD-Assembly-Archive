@@ -44,9 +44,10 @@ internal struct ColorCIELab
 		return default(ColorCIELab);
 	}
 
-	[CallsUnknownMethods(Count = 41)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(float), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 37)]
 	public override string ToString()
 	{
 		return null;

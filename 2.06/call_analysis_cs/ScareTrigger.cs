@@ -11,19 +11,20 @@ public class ScareTrigger : MonoBehaviour
 
 	private Vector3 m_OldPos;
 
-	[Calls(Type = typeof(BaseAi), Member = "MaybeFleeFromFlareGunRound")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInParent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(BaseAi), Member = "MaybeFleeFromFlareGunRound")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 8)]
 	private void OnTriggerEnter(Collider c)
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public ScareTrigger()
 	{
 	}

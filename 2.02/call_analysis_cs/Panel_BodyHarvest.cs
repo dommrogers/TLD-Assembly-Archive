@@ -189,8 +189,8 @@ public class Panel_BodyHarvest : Panel_Base
 	private static Collider[] s_PossibleColliders;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void RequestFadeInErrorMessage()
 	{
@@ -201,46 +201,46 @@ public class Panel_BodyHarvest : Panel_Base
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "DisplayCarcassToFrozenMessage")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "DisplayCarcassTooFrozenToQuarterMessage")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CheckIfResourcesLeft")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnQuarter")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnHarvest")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnQuarter")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "DisplayCarcassToFrozenMessage")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CheckIfResourcesLeft")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "DisplayCarcassTooFrozenToQuarterMessage")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void DisplayErrorMessage(string text)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateErrorMessage")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Refresh")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 6)]
 	private void HandleMessageErrorFadeout()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Refresh")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateErrorMessage")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Refresh")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void HandleMessageErrorFadein()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "HandleMessageErrorFadein")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "HandleMessageErrorFadeout")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	private void UpdateErrorMessage()
 	{
@@ -253,12 +253,12 @@ public class Panel_BodyHarvest : Panel_Base
 	{
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DisableProgressBar")]
-	[CallsUnknownMethods(Count = 16)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DisableProgressBar")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 16)]
 	public override void Initialize()
 	{
 	}
@@ -269,132 +269,129 @@ public class Panel_BodyHarvest : Panel_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "InterruptHarvest")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "StopProgressBarAudio")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RestoreTimeOfDay")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_AnimatedInteraction")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "InterruptHarvest")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "StopProgressBarAudio")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnBack()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnDecreaseMeatHarvest")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "MakeDefaultSelections")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnDecreaseGutHarvest")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnIncreaseGutHarvest")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnDecreaseHideHarvest")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnIncreaseHideHarvest")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnIncreaseMeatHarvest")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateHarvestMenuNavigation")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CameraPan")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 9)]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnIncreaseMeatHarvest")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnDecreaseMeatHarvest")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnIncreaseHideHarvest")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnDecreaseHideHarvest")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnIncreaseGutHarvest")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnDecreaseGutHarvest")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "MakeDefaultSelections")]
+	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CameraPan")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	private void SelectMenuItem(int index)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "SelectMenuItem")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateMenuNavigation")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_BodyHarvest_MenuItem), Member = "OnDecreaseHarvestAmount")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_BodyHarvest_MenuItem), Member = "OnIncreaseHarvestAmount")]
+	[Calls(Type = typeof(Panel_BodyHarvest_MenuItem), Member = "OnDecreaseHarvestAmount")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "SelectMenuItem")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateHarvestMenuNavigation()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "OnQuarter")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "UpdateHarvestMenuNavigation")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "UpdateControllerInputForTabs")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "OnHarvest")]
 	[Calls(Type = typeof(InputManager), Member = "HasContext")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetButtonPressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "UpdateControllerInputForTabs")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "UpdateHarvestMenuNavigation")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "OnQuarter")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "OnHarvest")]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateMenuNavigation()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DisplayCarcassToFrozenMessage")]
-	[CalledBy(Type = typeof(Condition_CheckPanelRequirements), Member = "OnCheck")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "ProcessInteraction")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "CheckCompletionActionPossible")]
-	[CallsUnknownMethods(Count = 29)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RefreshTools")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CheckIfResourcesLeft")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "ProcessInteraction")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
+	[CalledBy(Type = typeof(Condition_CheckPanelRequirements), Member = "OnCheck")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CheckIfResourcesLeft")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RefreshTools")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CarcassTooFrozenToHarvestBareHands")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DisplayCarcassToFrozenMessage")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 29)]
 	public bool CanEnable(BodyHarvest bodyHarvest)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CalledBy(Type = typeof(GearItem), Member = "MaybeDestroyBodyHarvest")]
 	[CalledBy(Type = typeof(GearPlacePoint), Member = "CheckGearStillPlaced")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool IsCurrent(BodyHarvest bodyHarvest)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "UpdateTabs")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "UpdateTabs")]
 	private void EnableTabs()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Utils), Member = "ShowInspectForGearItem")]
 	[Calls(Type = typeof(PlayerManager), Member = "RestoreTransformFromLastInspection")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 13)]
 	private void MaybeHandleGearItemPlacement(ComingFromScreenCategory comingFrom, BodyHarvest bodyHarvest, bool enable)
 	{
 	}
 
-	[Calls(Type = typeof(GearItem), Member = "Drop")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(BodyHarvest), Member = "NoMoreResources")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(BodyHarvest), Member = "NoMoreResources")]
 	[Calls(Type = typeof(BodyHarvest), Member = "ConditionReachedZero")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "Drop")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void MaybeDropDepletedItem(BodyHarvest currentBodyHarvest)
 	{
 	}
@@ -405,36 +402,36 @@ public class Panel_BodyHarvest : Panel_Base
 	{
 	}
 
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CameraPan")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "SelectMenuItem")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuOpen")]
-	[CallsUnknownMethods(Count = 30)]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "UpdateTabs")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "Refresh")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnBack")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnExamine")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessBodyHarvestInteraction")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "MaybeHandleGearItemPlacement")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CollectArrows")]
-	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[Calls(Type = typeof(GearItem), Member = "Drop")]
 	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CanEnable")]
 	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "MaybeHandleGearItemPlacement")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(PanViewCamera), Member = "ReattachToPlayer")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DisableProgressBar")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuClose")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(BodyHarvest), Member = "NoMoreResources")]
 	[Calls(Type = typeof(BodyHarvest), Member = "ConditionReachedZero")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(PanViewCamera), Member = "ReattachToPlayer")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "Drop")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CameraPan")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "SelectMenuItem")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuOpen")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "UpdateTabs")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "Refresh")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CollectArrows")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 30)]
 	public void Enable(bool enable, BodyHarvest bh, bool playBookEndAnim, ComingFromScreenCategory comingFrom)
 	{
 	}
@@ -442,47 +439,44 @@ public class Panel_BodyHarvest : Panel_Base
 	[CallerCount(Count = 0)]
 	public bool IsHarvesting()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsQuartering()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsHarvestingOrQuartering()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnPopupClicked()
 	{
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateMenuNavigation")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DisplayErrorMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "StartHarvest")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CarcassTooFrozenToHarvestBareHands")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CarcassTooFrozenToHarvestBareHands")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DisplayCarcassToFrozenMessage")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "StartHarvest")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DisplayErrorMessage")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public void OnHarvest()
 	{
 	}
@@ -491,150 +485,134 @@ public class Panel_BodyHarvest : Panel_Base
 	[CallsUnknownMethods(Count = 1)]
 	public bool CanQuarter()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnTabQuarterSelected()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void OnTabHarvestSelected()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateMenuNavigation")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "StartQuarter")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DisplayErrorMessage")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(BodyHarvest), Member = "GetPercentFrozen")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(BodyHarvest), Member = "GetPercentFrozen")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DisplayErrorMessage")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "StartQuarter")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 19)]
 	public void OnQuarter()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "InterruptHarvest")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "InterruptQuarter")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "InterruptHarvest")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnCancel()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnExamine")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnExamine")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	public static bool HasNoHarvestingTool()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnExamine")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "RefreshTools")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "RefreshTitle")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CanEnable")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnHarvest")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "RefreshTitle")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "RefreshTools")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnExamine")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[Calls(Type = typeof(BodyHarvest), Member = "GetPercentFrozen")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CanEnable")]
+	[CallsUnknownMethods(Count = 5)]
 	public static bool CarcassTooFrozenToHarvestBareHands(BodyHarvest bodyHarvest)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DisplayErrorMessage")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnExamine")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnHarvest")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CanEnable")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnHarvest")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnExamine")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DisplayErrorMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public static void DisplayCarcassToFrozenMessage()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessBodyHarvestInteraction")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CanEnable")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessBodyHarvestInteraction")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DisplayErrorMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static bool CheckIfResourcesLeft(BodyHarvest bodyHarvest)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Utils), Member = "FindChildRecursive")]
-	[CallsUnknownMethods(Count = 24)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "SelectMenuItem")]
-	[Calls(Type = typeof(PanViewCamera), Member = "PanToTransform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "MakeDefaultSelections")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Utils), Member = "FindChildRecursive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(PanViewCamera), Member = "PanToTransform")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 24)]
 	private void CameraPan(HarvestCarcass bodypart)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_BodyHarvest_MenuItem), Member = "OnIncreaseHarvestAmount")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "SelectMenuItem")]
+	[Calls(Type = typeof(Panel_BodyHarvest_MenuItem), Member = "OnIncreaseHarvestAmount")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnIncreaseMeatHarvest()
 	{
 	}
@@ -655,10 +633,10 @@ public class Panel_BodyHarvest : Panel_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_BodyHarvest_MenuItem), Member = "OnDecreaseHarvestAmount")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "SelectMenuItem")]
+	[Calls(Type = typeof(Panel_BodyHarvest_MenuItem), Member = "OnDecreaseHarvestAmount")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnDecreaseHideHarvest()
 	{
 	}
@@ -671,61 +649,59 @@ public class Panel_BodyHarvest : Panel_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "SelectMenuItem")]
 	[Calls(Type = typeof(Panel_BodyHarvest_MenuItem), Member = "OnDecreaseHarvestAmount")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnDecreaseGutHarvest()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnHarvest")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "AccelerateTimeOfDay")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetCuttingToolSwitch")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DetermineTimeForToolBreak")]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnHarvest")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetCuttingToolSwitch")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "AccelerateTimeOfDay")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[CallsUnknownMethods(Count = 12)]
 	private void StartHarvest(int durationMinutes, string harvestAudio)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnQuarter")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DetermineTimeForToolBreak")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "AccelerateTimeOfDay")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "AccelerateTimeOfDay")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetCuttingToolSwitch")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DetermineTimeForToolBreak")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 9)]
 	private void StartQuarter(int durationMinutes, string quarterAudio)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "StartHarvest")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "StartQuarter")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(GearItem), Member = "CheckForBreakOnUse")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void DetermineTimeForToolBreak(int duration)
 	{
 	}
@@ -734,29 +710,24 @@ public class Panel_BodyHarvest : Panel_Base
 	[CallsUnknownMethods(Count = 1)]
 	private float GetQuarterDurationMinutes()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "RefreshEstimatedTimeLabel")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnHarvest")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CarcassTooFrozenToHarvestBareHands")]
-	[Calls(Type = typeof(Skill_CarcassHarvesting), Member = "GetHideGutHarvestTimeScale")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
-	[Calls(Type = typeof(Skill_CarcassHarvesting), Member = "GetHideGutHarvestTimeScale")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
-	[Calls(Type = typeof(Skill_CarcassHarvesting), Member = "GetMeatHarvestTimeScale")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "RefreshEstimatedTimeLabel")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "RefreshCalorieLabels")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
 	[Calls(Type = typeof(Skill_CarcassHarvesting), Member = "GetMeatHarvestTimeScale")]
+	[Calls(Type = typeof(Skill_CarcassHarvesting), Member = "GetHideGutHarvestTimeScale")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CarcassTooFrozenToHarvestBareHands")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 10)]
 	private float GetHarvestDurationMinutes()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -766,8 +737,8 @@ public class Panel_BodyHarvest : Panel_Base
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetQuarterAudio()
 	{
 		return null;
@@ -786,234 +757,231 @@ public class Panel_BodyHarvest : Panel_Base
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BodyHarvest), Member = "CanSpawnCarcassSite")]
+	[Calls(Type = typeof(BodyHarvest), Member = "HasSpawnedCarcassSite")]
 	[Calls(Type = typeof(BodyHarvest), Member = "MaybeSpawnCarcassSite")]
 	[Calls(Type = typeof(BodyHarvest), Member = "RefreshCarcassSite")]
-	[Calls(Type = typeof(BodyHarvest), Member = "CanSpawnCarcassSite")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(BodyHarvest), Member = "HasSpawnedCarcassSite")]
+	[CallsUnknownMethods(Count = 8)]
 	private void SpawnOrRefreshCarcassSite()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(CarcassSite), Member = "MaybeSpawnBodyParts")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void SpawnQuarteringMessOnCarcassSite()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "SkipSpawnChanceRollInitialDecayAndAutoEvolve")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(GearItem), Member = "StickToGroundAndOrientOnSlope")]
-	[CallsUnknownMethods(Count = 25)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RandomRotateQuarter")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(GearItem), Member = "SkipSpawnChanceRollInitialDecayAndAutoEvolve")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 25)]
 	private void SpawnQuarters()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private int CalculateNumberOfQuartersToSpawn()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RandomRotateGutsOrHide")]
-	[CallsUnknownMethods(Count = 29)]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GearItem), Member = "SkipSpawnChanceRollInitialDecayAndAutoEvolve")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "SkipSpawnChanceRollInitialDecayAndAutoEvolve")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(GearItem), Member = "StickToGroundAndOrientOnSlope")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RandomRotateGutsOrHide")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 29)]
 	private void SpawnHideAndGutsAfterQuarter()
 	{
 	}
 
-	[Calls(Type = typeof(GearItem), Member = "StickToGroundAtPlayerFeet")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(GearItem), Member = "StickToGroundAtPlayerFeet")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	private void MaybeCollectSpentArrows()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "SpawnQuarters")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 5)]
 	private void RandomRotateQuarter(Transform transform)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "SpawnHideAndGutsAfterQuarter")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Transform), Member = "get_up")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void RandomRotateGutsOrHide(Transform transform)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
-	[Calls(Type = typeof(Utils), Member = "GetWeightOneDecimalPlaceWithUnitsString")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(BodyHarvest), Member = "GetGearItemCondition")]
-	[Calls(Type = typeof(BodyHarvest), Member = "IsGearItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "GetSingleItemWeightKG")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(GearItem), Member = "GetSingleItemWeightKG")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "GetSingleItemWeightKG")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BodyHarvest), Member = "IsGearItem")]
+	[Calls(Type = typeof(BodyHarvest), Member = "GetGearItemCondition")]
 	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(Utils), Member = "GetWeightOneDecimalPlaceWithUnitsString")]
+	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 21)]
 	private void TransferMeatFromCarcassToInventory()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 28)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
 	private void TransferHideFromCarcassToInventory()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 28)]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 28)]
 	private void TransferGutFromCarcassToInventory()
 	{
 	}
 
-	[Calls(Type = typeof(GearItem), Member = "BreakOnUse")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
-	[Calls(Type = typeof(GearItem), Member = "CheckForBreakOnUse")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItem), Member = "Degrade")]
+	[Calls(Type = typeof(GearItem), Member = "CheckForBreakOnUse")]
+	[Calls(Type = typeof(GearItem), Member = "BreakOnUse")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void ApplyWearToTool()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 23)]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateQuarter")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "OnBack")]
-	[Calls(Type = typeof(Skill_CarcassHarvesting), Member = "ApplyHoursToSkill")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
-	[Calls(Type = typeof(GearManager), Member = "DestroyGearObject")]
-	[Calls(Type = typeof(BaseAi), Member = "Despawn")]
-	[Calls(Type = typeof(BodyHarvest), Member = "BodyHarvestDestroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CarcassSite), Member = "MaybeSpawnBodyParts")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "ApplyWearToTool")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "SpawnOrRefreshCarcassSite")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "StopProgressBarAudio")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RestoreTimeOfDay")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "MaybeCollectSpentArrows")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "SpawnQuarters")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "SpawnHideAndGutsAfterQuarter")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "SpawnOrRefreshCarcassSite")]
+	[Calls(Type = typeof(CarcassSite), Member = "MaybeSpawnBodyParts")]
+	[Calls(Type = typeof(BodyHarvest), Member = "BodyHarvestDestroy")]
+	[Calls(Type = typeof(BaseAi), Member = "Despawn")]
+	[Calls(Type = typeof(GearManager), Member = "DestroyGearObject")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
+	[Calls(Type = typeof(Skill_CarcassHarvesting), Member = "ApplyHoursToSkill")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "OnBack")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 23)]
 	private void QuarterSuccessful()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[CallsUnknownMethods(Count = 29)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "InterruptHarvest")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateHarvest")]
-	[Calls(Type = typeof(Skill_CarcassHarvesting), Member = "ApplyHoursToSkill")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
-	[Calls(Type = typeof(AchievementPlatformManager), Member = "SendStatistic")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "ApplyWearToTool")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RestoreTimeOfDay")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "StopProgressBarAudio")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "SpawnOrRefreshCarcassSite")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "TransferGutFromCarcassToInventory")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "TransferHideFromCarcassToInventory")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "TransferMeatFromCarcassToInventory")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "InterruptHarvest")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "TransferMeatFromCarcassToInventory")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "TransferHideFromCarcassToInventory")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "TransferGutFromCarcassToInventory")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "SpawnOrRefreshCarcassSite")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "ApplyWearToTool")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "StopProgressBarAudio")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RestoreTimeOfDay")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(AchievementPlatformManager), Member = "SendStatistic")]
+	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
+	[Calls(Type = typeof(Skill_CarcassHarvesting), Member = "ApplyHoursToSkill")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 29)]
 	private void HarvestSuccessful()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool HarvestInProgress()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1024,71 +992,64 @@ public class Panel_BodyHarvest : Panel_Base
 	}
 
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Refresh")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallsUnknownMethods(Count = 24)]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(BodyHarvest), Member = "GetPercentFrozen")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CarcassTooFrozenToHarvestBareHands")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CarcassTooFrozenToHarvestBareHands")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(BodyHarvest), Member = "GetPercentFrozen")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 24)]
 	private void RefreshTitle()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RefreshCalorieLabels")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RefreshEstimatedTimeLabel")]
-	[Calls(Type = typeof(Panel_BodyHarvest_MenuItem), Member = "RefreshLabel")]
-	[Calls(Type = typeof(Panel_BodyHarvest_MenuItem), Member = "RefreshLabel")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_BodyHarvest_MenuItem), Member = "RefreshLabel")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RefreshEstimatedTimeLabel")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RefreshCalorieLabels")]
+	[CallsUnknownMethods(Count = 1)]
 	private void RefreshLabels()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Refresh")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "RefreshLabels")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Refresh")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void RefreshEstimatedTimeLabel()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void RefreshHarvestEstimatedCalories(float numCaloriesBurned)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void RefreshQuarterEstimatedCalories(float numCaloriesBurned)
 	{
@@ -1097,386 +1058,342 @@ public class Panel_BodyHarvest : Panel_Base
 	[CallerCount(Count = 0)]
 	private bool IsTabHarvestSelected()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	private bool IsTabQuarterSelected()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Refresh")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "RefreshLabels")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(PlayerManager), Member = "CalculateModifiedCalorieBurnRate")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Refresh")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
+	[Calls(Type = typeof(PlayerManager), Member = "CalculateModifiedCalorieBurnRate")]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 13)]
 	private void RefreshCalorieLabels()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Initialize")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Initialize")]
+	[CallsUnknownMethods(Count = 5)]
 	private void DisableProgressBar()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "UpdateHarvest")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RefreshCalorieLabels")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "UpdateQuarter")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "UpdateTabs")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RefreshTools")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RefreshTitle")]
+	[Calls(Type = typeof(Panel_BodyHarvest_MenuItem), Member = "RefreshLabel")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RefreshEstimatedTimeLabel")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RefreshCalorieLabels")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "UpdateHarvest")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "UpdateQuarter")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RefreshToolSelection")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "HandleMessageErrorFadein")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "HandleMessageErrorFadeout")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RefreshToolSelection")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(Panel_BodyHarvest_MenuItem), Member = "RefreshLabel")]
-	[Calls(Type = typeof(Panel_BodyHarvest_MenuItem), Member = "RefreshLabel")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RefreshTitle")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RefreshTools")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "UpdateTabs")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Panel_BodyHarvest_MenuItem), Member = "RefreshLabel")]
+	[CallsUnknownMethods(Count = 16)]
 	private void Refresh()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Refresh")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "EnableTabs")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Refresh")]
 	[CallerCount(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "EnableTabs")]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateTabs()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CleanUpOnExit")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "InterruptHarvest")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "InterruptQuarter")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnBack")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CleanUpOnExit")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "InterruptQuarter")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "InterruptHarvest")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
+	[CallsUnknownMethods(Count = 2)]
 	private void StopProgressBarAudio()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Refresh")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "InterruptHarvest")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(GearItem), Member = "BreakOnUse")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "BreakOnUse")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "InterruptHarvest")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 14)]
 	private void UpdateHarvest()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Refresh")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "InterruptQuarter")]
-	[Calls(Type = typeof(GearItem), Member = "BreakOnUse")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "BreakOnUse")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "InterruptQuarter")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 14)]
 	private void UpdateQuarter()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CleanUpOnExit")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "InterruptHarvest")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "InterruptQuarter")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnBack")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CleanUpOnExit")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "InterruptQuarter")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "InterruptHarvest")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void RestoreTimeOfDay()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "StartHarvest")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "StartQuarter")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void AccelerateTimeOfDay(int minutes)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CameraPan")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "SelectMenuItem")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	private void MakeDefaultSelections()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
-	[Calls(Type = typeof(BodyHarvest), Member = "GetPercentFrozen")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(BodyHarvest), Member = "GetPercentFrozen")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private bool IsCarcassTooFrozenToQuarter()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateQuarter")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnCancel")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "StopProgressBarAudio")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateQuarter")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "StopProgressBarAudio")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RestoreTimeOfDay")]
+	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void InterruptQuarter()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
-	[CallsUnknownMethods(Count = 19)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateHarvest")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnCancel")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnBack")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "StopProgressBarAudio")]
-	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RestoreTimeOfDay")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnCancel")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateHarvest")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "StopProgressBarAudio")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "RestoreTimeOfDay")]
+	[Calls(Type = typeof(UIProgressBar), Member = "get_value")]
+	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 19)]
 	private void InterruptHarvest()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnToolPrev()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnToolNext()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "DetermineTimeForToolBreak")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "RefreshToolSelection")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateQuarter")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateHarvest")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "ApplyWearToTool")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "StartQuarter")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "StartHarvest")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "StartHarvest")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "StartQuarter")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnQuarter")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnHarvest")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnQuarter")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "StartHarvest")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "StartQuarter")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "DetermineTimeForToolBreak")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "ApplyWearToTool")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateHarvest")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateQuarter")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "RefreshToolSelection")]
 	[CallerCount(Count = 12)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private GearItem GetSelectedTool()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Refresh")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CanEnable")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CarcassTooFrozenToHarvestBareHands")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Refresh")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CarcassTooFrozenToHarvestBareHands")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	private void RefreshTools()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 27)]
-	[Calls(Type = typeof(GearItem), Member = "GetRoundedCondition")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTexture")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Refresh")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GearItem), Member = "GetColorBasedOnCondition")]
-	[Calls(Type = typeof(GearItem), Member = "GetRoundedCondition")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 15)]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "GetSelectedTool")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
 	[Calls(Type = typeof(Vector3), Member = "get_one")]
 	[Calls(Type = typeof(GearItem), Member = "GetItemPostFixForInventoryInterfaces")]
 	[Calls(Type = typeof(GearItem), Member = "GetBasicDisplayNameForInventoryInterfaces")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(Type = typeof(GearItem), Member = "GetColorBasedOnCondition")]
+	[Calls(Type = typeof(GearItem), Member = "GetRoundedCondition")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTexture")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 27)]
 	private void RefreshToolSelection()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 46)]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
 	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
-	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 46)]
 	private void UpdateButtonLegend()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DisplayErrorMessage")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillCarcassHarvesting")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "DisplayErrorMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void DisplayCarcassTooFrozenToQuarterMessage()
 	{
 	}
 
-	[Calls(Type = typeof(InputManager), Member = "GetTabRightPressed")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateMenuNavigation")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(InputManager), Member = "GetTabLeftPressed")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(InputManager), Member = "GetTabRightPressed")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateControllerInputForTabs()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CollectArrows")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "ComputeBoundsFromColliders")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "ComputeBoundsFromColliders")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CollectArrows")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Bounds), Member = "Encapsulate")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "ComputeBoundsFromColliders")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	private static void ComputeBoundsFromColliders(Transform t, ref Bounds b)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "ComputeBoundsFromColliders")]
+	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 14)]
 	private static void CollectArrows(BodyHarvest bh)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 21)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 21)]
 	public Panel_BodyHarvest()
 	{
 	}

@@ -17,18 +17,18 @@ internal struct AttributeDataInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(AttributeData), Member = "Set")]
 		[CalledBy(Type = typeof(AttributeData), Member = "Set")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 2)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(AttributeDataInternal), Member = "Set")]
+		[CalledBy(Type = typeof(AttributeDataInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(AttributeDataInternal), Member = "Set")]
-		[CalledBy(Type = typeof(AttributeDataInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -36,10 +36,10 @@ internal struct AttributeDataInternal : ISettable, IDisposable
 
 	public AttributeDataValue Value
 	{
+		[CalledBy(Type = typeof(AttributeData), Member = "Set")]
+		[CalledBy(Type = typeof(AttributeData), Member = "Set")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 3)]
-		[CalledBy(Type = typeof(AttributeData), Member = "Set")]
-		[CalledBy(Type = typeof(AttributeData), Member = "Set")]
 		[CallsUnknownMethods(Count = 3)]
 		get
 		{
@@ -47,8 +47,8 @@ internal struct AttributeDataInternal : ISettable, IDisposable
 		}
 		[CalledBy(Type = typeof(AttributeDataInternal), Member = "Set")]
 		[CalledBy(Type = typeof(AttributeDataInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[CallerCount(Count = 2)]
+		[CallsDeduplicatedMethods(Count = 3)]
 		set
 		{
 		}
@@ -61,22 +61,22 @@ internal struct AttributeDataInternal : ISettable, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AttributeDataInternal), Member = "set_Key")]
-	[Calls(Type = typeof(AttributeDataInternal), Member = "set_Value")]
 	[CalledBy(Type = typeof(AttributeInternal), Member = "set_Data")]
 	[CalledBy(Type = typeof(LobbyModificationAddAttributeOptionsInternal), Member = "set_Attribute")]
 	[CalledBy(Type = typeof(LobbyModificationAddMemberAttributeOptionsInternal), Member = "set_Attribute")]
 	[CalledBy(Type = typeof(LobbySearchSetParameterOptionsInternal), Member = "set_Parameter")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(AttributeDataInternal), Member = "set_Key")]
+	[Calls(Type = typeof(AttributeDataInternal), Member = "set_Value")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(AttributeDataValueInternal), Member = "Dispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[Calls(Type = typeof(AttributeDataValueInternal), Member = "Dispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

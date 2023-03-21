@@ -9,24 +9,24 @@ public class TLD_ControlPlayableAsset : ControlPlayableAsset
 
 	private bool m_IsPlaying;
 
-	[Calls(Type = typeof(ControlPlayableAsset), Member = "CreatePlayable")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetGameObjectOverride")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "FindClip")]
+	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetGameObjectOverride")]
+	[Calls(Type = typeof(ControlPlayableAsset), Member = "CreatePlayable")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
 	{
 		return default(Playable);
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	private GameObject FindGameObject(string missionObjectId)
 	{
 		return null;

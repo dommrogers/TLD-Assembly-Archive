@@ -18,11 +18,11 @@ public class Picture
 	[CallsUnknownMethods(Count = 2)]
 	public static int GetDimension(Size size)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public Picture()
 	{
 	}

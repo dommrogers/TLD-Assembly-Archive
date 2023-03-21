@@ -1,4 +1,4 @@
-using System;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using ParadoxNotion.Serialization;
 
@@ -13,13 +13,13 @@ public class MissingCondition : ConditionTask, IMissingRecoverable
 	private string ParadoxNotion_002ESerialization_002EIMissingRecoverable_002EmissingType
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 4)]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 19)]
 		set
 		{
 		}
@@ -34,7 +34,7 @@ public class MissingCondition : ConditionTask, IMissingRecoverable
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		set
 		{
 		}
@@ -42,12 +42,13 @@ public class MissingCondition : ConditionTask, IMissingRecoverable
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "SplitInternal")]
+		[Calls(Type = typeof(Enumerable), Member = "Last")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 4)]
 		get
 		{
 			return null;

@@ -67,17 +67,17 @@ public class SceneWeatherOverride : MonoBehaviour
 
 	public float m_MinimumBlizzardWindSpeed;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
-	[CallerCount(Count = 0)]
 	private void Awake()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Weather), Member = "RegisterSceneWeatherSets")]
 	[CalledBy(Type = typeof(Weather), Member = "TryLoadOverridePrefabFromPath")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Weather), Member = "RegisterSceneWeatherSets")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 21)]
 	public void DoWeatherOverride()
 	{

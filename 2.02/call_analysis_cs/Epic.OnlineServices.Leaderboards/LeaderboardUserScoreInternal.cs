@@ -17,17 +17,18 @@ internal struct LeaderboardUserScoreInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(LeaderboardUserScore), Member = "Set")]
 		[CalledBy(Type = typeof(LeaderboardUserScore), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(LeaderboardUserScoreInternal), Member = "Set")]
+		[CalledBy(Type = typeof(LeaderboardUserScoreInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(LeaderboardUserScoreInternal), Member = "Set")]
-		[CalledBy(Type = typeof(LeaderboardUserScoreInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -39,7 +40,7 @@ internal struct LeaderboardUserScoreInternal : ISettable, IDisposable
 		[CallerCount(Count = 7)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -54,15 +55,15 @@ internal struct LeaderboardUserScoreInternal : ISettable, IDisposable
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LeaderboardUserScoreInternal), Member = "set_UserId")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

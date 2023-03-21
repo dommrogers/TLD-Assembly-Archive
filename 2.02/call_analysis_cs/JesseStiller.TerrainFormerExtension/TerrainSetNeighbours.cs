@@ -14,9 +14,10 @@ public class TerrainSetNeighbours : MonoBehaviour
 	private Terrain bottomTerrain;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Terrain), Member = "SetNeighbors")]
 	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{

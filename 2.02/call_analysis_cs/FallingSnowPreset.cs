@@ -37,42 +37,34 @@ public class FallingSnowPreset
 	public const float LIGHT_SNOW_MAX_PARTICLES_MAX = 1500f;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public FallingSnowPreset()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Weather), Member = "SetSnowPresetBlend")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(Weather), Member = "SetSnowPresetBlend")]
+	[CallsUnknownMethods(Count = 1)]
 	public FallingSnowPreset(Type type)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[CalledBy(Type = typeof(Weather), Member = "UpdateFallingSnowPreset")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void SetBlended(FallingSnowPreset a, FallingSnowPreset b, float blend)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(Weather), Member = "UpdateFallingSnowPreset")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 10)]
 	public void Apply(ParticleSystem ps, ParticleSystemRenderer lpr)
 	{
 	}
@@ -82,13 +74,13 @@ public class FallingSnowPreset
 	[CallsUnknownMethods(Count = 1)]
 	private float GetAdjustedMaxFallingParticlesCount(Type type)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	private float GetMaxFallingParticlesCount(Type type)
 	{
-		return default(float);
+		return 0f;
 	}
 }

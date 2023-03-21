@@ -10,18 +10,18 @@ public class AkAudioSourceChangeCallbackInfo : IDisposable
 
 	public bool bOtherAudioPlaying
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(AkCallbackManager), Member = "PostCallbacks")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	internal AkAudioSourceChangeCallbackInfo(IntPtr cPtr, bool cMemoryOwn)
 	{
 	}
@@ -30,7 +30,7 @@ public class AkAudioSourceChangeCallbackInfo : IDisposable
 	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkAudioSourceChangeCallbackInfo obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -48,9 +48,9 @@ public class AkAudioSourceChangeCallbackInfo : IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{

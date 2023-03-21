@@ -12,12 +12,13 @@ public class ExportMesh : MonoBehaviour
 	public int vertexCountVertical;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Extensions), Member = "TerrainToMesh")]
 	[Calls(Type = typeof(TerrainToMeshDataExtractor), Member = "ExportMesh")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Utilities), Member = "GetUnityDefaultShader")]
 	[Calls(Type = typeof(Shader), Member = "Find")]
 	[Calls(Type = typeof(Material), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Start()
 	{

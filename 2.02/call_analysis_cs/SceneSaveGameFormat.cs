@@ -122,8 +122,8 @@ public class SceneSaveGameFormat
 
 	public string m_WolfDenSerialized;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public SceneSaveGameFormat()
 	{
 	}

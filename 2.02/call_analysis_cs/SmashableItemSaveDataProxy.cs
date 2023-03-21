@@ -5,7 +5,7 @@ public class SmashableItemSaveDataProxy
 	public bool m_HasBeenSmashed;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SmashableItemSaveDataProxy()
 	{
 	}

@@ -17,79 +17,82 @@ public class UIImageButton : MonoBehaviour
 
 	public bool isEnabled
 	{
-		[CalledBy(Type = typeof(UIImageButton), Member = "OnHover")]
-		[CallsUnknownMethods(Count = 4)]
 		[CalledBy(Type = typeof(UIImageButton), Member = "UpdateImage")]
-		[Calls(Type = typeof(Object), Member = "op_Implicit")]
-		[CallsDeduplicatedMethods(Count = 3)]
+		[CalledBy(Type = typeof(UIImageButton), Member = "OnHover")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+		[Calls(Type = typeof(Object), Member = "op_Implicit")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 4)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallsDeduplicatedMethods(Count = 4)]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+		[Calls(Type = typeof(Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(Collider), Member = "set_enabled")]
 		[Calls(Type = typeof(UIImageButton), Member = "UpdateImage")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(Object), Member = "op_Implicit")]
-		[CallerCount(Count = 0)]
 		set
 		{
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UIImageButton), Member = "UpdateImage")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(UIImageButton), Member = "UpdateImage")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 4)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnValidate()
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UIImageButton), Member = "get_isEnabled")]
 	[CalledBy(Type = typeof(UIImageButton), Member = "set_isEnabled")]
 	[CalledBy(Type = typeof(UIImageButton), Member = "OnEnable")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UIImageButton), Member = "SetSprite")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UIImageButton), Member = "get_isEnabled")]
 	[Calls(Type = typeof(UICamera), Member = "IsHighlighted")]
+	[Calls(Type = typeof(UIImageButton), Member = "SetSprite")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateImage()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(UIImageButton), Member = "get_isEnabled")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UIImageButton), Member = "SetSprite")]
-	[Calls(Type = typeof(UIImageButton), Member = "get_isEnabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnHover(bool isOver)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void OnPress(bool pressed)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(UIImageButton), Member = "OnHover")]
 	[CalledBy(Type = typeof(UIImageButton), Member = "UpdateImage")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UIAtlas), Member = "GetSprite")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(UIImageButton), Member = "OnHover")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UIAtlas), Member = "GetSprite")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void SetSprite(string sprite)
 	{
 	}

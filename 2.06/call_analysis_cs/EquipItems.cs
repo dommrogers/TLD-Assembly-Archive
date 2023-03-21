@@ -5,23 +5,25 @@ public class EquipItems : MonoBehaviour
 {
 	public int[] itemIDs;
 
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(InvDatabase), Member = "FindByID")]
 	[Calls(Type = typeof(int), Member = "ToString")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[Calls(Type = typeof(InvGameItem), Member = ".ctor")]
 	[Calls(Type = typeof(NGUITools), Member = "RandomRange")]
 	[Calls(Type = typeof(InvEquipment), Member = "Equip")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(InvDatabase), Member = "FindByID")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	private void Start()
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public EquipItems()
 	{
 	}

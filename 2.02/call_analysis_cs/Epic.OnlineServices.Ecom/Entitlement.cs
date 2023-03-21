@@ -21,14 +21,14 @@ public class Entitlement : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -36,16 +36,16 @@ public class Entitlement : ISettable
 
 	public string EntitlementId
 	{
-		[CallerCount(Count = 29)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -55,14 +55,14 @@ public class Entitlement : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
@@ -70,16 +70,16 @@ public class Entitlement : ISettable
 
 	public int ServerIndex
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -92,7 +92,7 @@ public class Entitlement : ISettable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -104,43 +104,43 @@ public class Entitlement : ISettable
 
 	public long EndTimestamp
 	{
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 15)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 17)]
 		get
 		{
-			return default(long);
+			return 0L;
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		set
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(EntitlementInternal), Member = "get_Redeemed")]
 	[CalledBy(Type = typeof(Entitlement), Member = "Set")]
-	[Calls(Type = typeof(EntitlementInternal), Member = "get_CatalogItemId")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(EntitlementInternal), Member = "get_EntitlementName")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(EntitlementInternal), Member = "get_EntitlementId")]
+	[Calls(Type = typeof(EntitlementInternal), Member = "get_CatalogItemId")]
+	[Calls(Type = typeof(EntitlementInternal), Member = "get_Redeemed")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	internal void Set(EntitlementInternal? other)
 	{
 	}
 
-	[Calls(Type = typeof(Entitlement), Member = "Set")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Entitlement), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public Entitlement()
 	{
 	}

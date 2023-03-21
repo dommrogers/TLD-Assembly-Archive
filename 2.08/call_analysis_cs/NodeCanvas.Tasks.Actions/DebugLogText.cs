@@ -38,10 +38,10 @@ public class DebugLogText : ActionTask<Transform>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(float), Member = "ToString")]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsUnknownMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -50,26 +50,27 @@ public class DebugLogText : ActionTask<Transform>
 
 	private Texture2D tex
 	{
-		[Calls(Type = typeof(Texture2D), Member = "Apply")]
 		[CalledBy(Type = typeof(DebugLogText), Member = "OnGUI")]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Texture2D), Member = "SetPixel")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Texture2D), Member = ".ctor")]
+		[Calls(Type = typeof(Texture2D), Member = "SetPixel")]
+		[Calls(Type = typeof(Texture2D), Member = "Apply")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 5)]
 	protected override void OnExecute()
 	{
 	}
@@ -81,21 +82,22 @@ public class DebugLogText : ActionTask<Transform>
 	{
 	}
 
-	[Calls(Type = typeof(GUI), Member = "Label")]
-	[Calls(Type = typeof(GUI), Member = "DrawTexture")]
-	[Calls(Type = typeof(DebugLogText), Member = "get_tex")]
-	[Calls(Type = typeof(GUIContent), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GUIStyle), Member = "op_Implicit")]
 	[Calls(Type = typeof(GUIStyle), Member = ".ctor")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(GUIContent), Member = ".ctor")]
+	[Calls(Type = typeof(DebugLogText), Member = "get_tex")]
+	[Calls(Type = typeof(GUI), Member = "DrawTexture")]
+	[Calls(Type = typeof(GUI), Member = "Label")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 9)]
 	private void OnGUI()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "op_Implicit")]
 	public DebugLogText()
 	{
 		((ActionTask<>)(object)this)._002Ector();

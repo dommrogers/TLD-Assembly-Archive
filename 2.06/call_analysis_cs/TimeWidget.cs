@@ -15,41 +15,39 @@ public class TimeWidget : MonoBehaviour
 
 	private bool m_Initialized;
 
-	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(TimeWidget), Member = "Update")]
+	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 9)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "InitializeAndActivateTimeWidget")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "InitializeAndActivateTimeWidget")]
-	[Calls(Type = typeof(TimeWidget), Member = "UpdateIconFill")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(TimeWidget), Member = "Start")]
+	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
+	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
 	[Calls(Type = typeof(TimeWidget), Member = "UpdateIconPositions")]
 	[Calls(Type = typeof(TimeWidget), Member = "UpdateIconFill")]
-	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
-	[Calls(Type = typeof(TimeWidget), Member = "Start")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
+	[CallsUnknownMethods(Count = 6)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
+	[CalledBy(Type = typeof(TimeWidget), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 11)]
-	[CalledBy(Type = typeof(TimeWidget), Member = "Update")]
+	[CallsUnknownMethods(Count = 16)]
 	private void UpdateIconPositions(float angleDegrees)
 	{
 	}
 
 	[CalledBy(Type = typeof(TimeWidget), Member = "Update")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(TimeWidget), Member = "Update")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateIconFill(UISprite sprite, Vector3 pos, float angleDegrees)
 	{
 	}

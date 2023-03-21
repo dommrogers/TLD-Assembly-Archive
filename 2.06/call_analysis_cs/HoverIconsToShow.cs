@@ -17,9 +17,9 @@ public class HoverIconsToShow : MonoBehaviour
 	public HoverIcons[] m_HoverIcons;
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "SetHoverText")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InitLabelsForGear")]
+	[CallerCount(Count = 2)]
 	public static string GetSpriteNameForHoverIcon(HoverIcons hoverIcon)
 	{
 		return null;

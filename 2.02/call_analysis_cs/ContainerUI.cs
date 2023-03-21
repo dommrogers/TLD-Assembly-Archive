@@ -81,37 +81,33 @@ public class ContainerUI : MonoBehaviour
 
 	private ScrollbarThumbResizer m_ContainerScrollbarThumbResizer;
 
+	[CalledBy(Type = typeof(Panel_Container), Member = "Initialize")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Utils), Member = "GetSliderForScrollbar")]
-	[Calls(Type = typeof(Utils), Member = "GetSliderForScrollbar")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "Initialize")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "Initialize")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Initialize()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Container), Member = "ApplyUIConfig")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(Panel_Container), Member = "ApplyUIConfig")]
 	[CalledBy(Type = typeof(Panel_Container), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(Panel_Container), Member = "ApplyUIConfig")]
 	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 8)]
 	public void Enable(bool enable)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Container), Member = "Initialize")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Container), Member = "Initialize")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "Initialize")]
 	public void SetScrollbarChangeActions(Action onScrollbarInventoryChanged, Action onScrollbarContainerChanged)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Container), Member = "Initialize")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Container), Member = "Initialize")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "Initialize")]
 	public void SetDragAndDropActions(Action onDragInventoryToContainer, Action onDragContainerToInventory)
 	{
 	}
@@ -128,32 +124,32 @@ public class ContainerUI : MonoBehaviour
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnDragContainerToInventory()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Container), Member = "Initialize")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[Calls(Type = typeof(NGUITools), Member = "AddChild")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "Initialize")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "Initialize")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 10)]
 	public void InstantiateContainerTableItems()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_Container), Member = "Initialize")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "Initialize")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(NGUITools), Member = "AddChild")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(NGUITools), Member = "AddChild")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void InstantiateInventoryTableItems()
 	{
 	}
@@ -176,35 +172,27 @@ public class ContainerUI : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Container), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "Update")]
-	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void UpdateScrollbarThumbSize(List<GearItem> filteredInventoryList, List<GearItem> filteredContainerList)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Container), Member = "Enable")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Container), Member = "RefreshScrollBars")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "OnSortInventoryChange")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "OnSortInventoryChange")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "OnFilterInventoryChange")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "Initialize")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "OnFilterInventoryChange")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "set_m_ContainerFirstItemDisplayedIndex")]
 	[CalledBy(Type = typeof(Panel_Container), Member = "set_m_InventoryFirstItemDisplayedIndex")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
+	[CalledBy(Type = typeof(Panel_Container), Member = "set_m_ContainerFirstItemDisplayedIndex")]
 	[CalledBy(Type = typeof(Panel_Container), Member = "Initialize")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Container), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Container), Member = "OnFilterInventoryChange")]
+	[CalledBy(Type = typeof(Panel_Container), Member = "OnSortInventoryChange")]
+	[CalledBy(Type = typeof(Panel_Container), Member = "RefreshScrollBars")]
 	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void RefreshScrollBars(int inventoryFirstItemDisplayedIndexVal, int containerFirstItemDisplayedIndexVal, List<GearItem> filteredInventoryList, List<GearItem> filteredContainerList)
 	{
 	}
@@ -216,35 +204,33 @@ public class ContainerUI : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
+	[CallsUnknownMethods(Count = 5)]
 	public void SetInventoryItemSelectedIndex(int inventorySelectedItemIndexVal, SelectedTableEnum selectedTable, int newIndex)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
-	[Calls(Type = typeof(InventoryGridItem), Member = "ToggleSelection")]
 	[CallsUnknownMethods(Count = 5)]
 	public void SetContainerItemSelectedIndex(int containerSelectedItemIndexVal, SelectedTableEnum selectedTable, int newIndex)
 	{
 	}
 
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Container), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Container), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Container), Member = "OnControllerScheme")]
+	[CallerCount(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	public bool HasSelectedGridItem()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public ContainerUI()
 	{
 	}

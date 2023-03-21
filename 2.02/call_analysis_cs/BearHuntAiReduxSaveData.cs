@@ -12,7 +12,7 @@ public class BearHuntAiReduxSaveData
 	public BearEncounter.PostStruggleBehavior m_PostStruggleBehavior;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public BearHuntAiReduxSaveData()
 	{
 	}

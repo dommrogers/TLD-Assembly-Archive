@@ -4,10 +4,10 @@ public static class PlayerRichPresenceManager
 {
 	private static IRichPresenceProvider s_RichPresenceProvider;
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(GameManager), Member = "InstantiateOnlineSystems")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public static void Initialize()
 	{
 	}

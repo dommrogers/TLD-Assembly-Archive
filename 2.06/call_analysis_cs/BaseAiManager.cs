@@ -5,9 +5,11 @@ using Cpp2ILInjected.CallAnalysis;
 using TLD.PDID;
 using TLD.Serialization;
 using TLD.UI;
+using TLD.UI.Generics;
 using Unity.Collections;
 using Unity.Collections.LowLevel.Unsafe;
 using Unity.Jobs;
+using Unity.Jobs.LowLevel.Unsafe;
 using UnityEngine;
 
 public class BaseAiManager
@@ -56,9 +58,9 @@ public class BaseAiManager
 
 	public static event Action<BaseAi> m_OnBaseAiAdded
 	{
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CallsUnknownMethods(Count = 2)]
 		add
 		{
@@ -74,54 +76,54 @@ public class BaseAiManager
 
 	public static event Action<BaseAi> m_OnBaseAiRemoved
 	{
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
-		[CallsUnknownMethods(Count = 2)]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 2)]
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 2)]
 		remove
 		{
 		}
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[CallsUnknownMethods(Count = 43)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
-	[Calls(Type = typeof(BaseAi), Member = "Serialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
+	[Calls(Type = typeof(Component), Member = "GetComponents")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(BaseAi), Member = "Serialize")]
+	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 43)]
 	public static string Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(MoveAgent), Member = "Enable")]
-	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
-	[Calls(Type = typeof(MoveAgent), Member = "IsOnNavMesh")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
+	[Calls(Type = typeof(MoveAgent), Member = "IsOnNavMesh")]
+	[Calls(Type = typeof(MoveAgent), Member = "Enable")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
 	public static void DisableInvalidAi()
 	{
 	}
@@ -132,231 +134,233 @@ public class BaseAiManager
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	public static bool IsClosestToPlayer(BaseAi ai)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 3)]
 	public static void RefreshClosestToPlayer()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(BaseAiManager), Member = "Deserialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	private static bool BearHuntPart2Validate(BaseAiDataProxy proxy, BaseAi bai, BaseAiData bad)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(BaseAiManager), Member = "Deserialize")]
-	[CalledBy(Type = typeof(SpawnRegion), Member = "InstantiateSpawn")]
 	[CalledBy(Type = typeof(SpawnRegion), Member = "InstantiateSpawnFromSaveData")]
+	[CalledBy(Type = typeof(SpawnRegion), Member = "InstantiateSpawn")]
+	[CalledBy(Type = typeof(BaseAiManager), Member = "Deserialize")]
 	[CalledBy(Type = typeof(BaseAiManager), Member = "DeserializeAi")]
-	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
-	[Calls(Type = typeof(BaseAi), Member = "CreateMoveAgent")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(BaseAi), Member = "CreateMoveAgent")]
+	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
 	[Calls(Type = typeof(MoveAgent), Member = "Warp")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool CreateMoveAgent(Transform transform, BaseAi bai, Vector3 position)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(SpawnRegion), Member = "GetPrefabNameFromInstanceName")]
+	[Calls(Type = typeof(Resources), Member = "Load")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(BaseAiManager), Member = "CreateMoveAgent")]
 	[Calls(Type = typeof(BaseAi), Member = "Deserialize")]
 	[Calls(Type = typeof(ObjectGuid), Member = "MaybeAttachObjectGuidAndRegister")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(BaseAiManager), Member = "DeserializeAi")]
-	[Calls(Type = typeof(BaseAiManager), Member = "BearHuntPart2Validate")]
-	[Calls(Type = typeof(BaseAi), Member = "DeferredDeserialize")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(BaseAi), Member = "GetBaseAiDataProxyFromText")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Resources), Member = "Load")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(SpawnRegion), Member = "GetPrefabNameFromInstanceName")]
+	[Calls(Type = typeof(BaseAiManager), Member = "BearHuntPart2Validate")]
+	[Calls(Type = typeof(BaseAiManager), Member = "DeserializeAi")]
+	[Calls(Type = typeof(BaseAi), Member = "DeferredDeserialize")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 19)]
 	public static void Deserialize(string text)
 	{
 	}
 
-	[Calls(Type = typeof(BaseAi), Member = "DeserializeUsingBaseAiDataProxy")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(BaseAiManager), Member = "Deserialize")]
 	[CalledBy(Type = typeof(BaseAi), Member = "Awake")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(BaseAiManager), Member = "Deserialize")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(BaseAiManager), Member = "CreateMoveAgent")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BaseAi), Member = "DeserializeUsingBaseAiDataProxy")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	public static void DeserializeAi(BaseAi bai, BaseAiData bad, BaseAiDataProxy proxy)
 	{
 	}
 
+	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
+	[CalledBy(Type = typeof(GameManager), Member = "InstantiateAiSystems")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateAiSystems")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void InstantiateSubsystems(GameObject prefab, Transform parent)
 	{
 	}
 
 	[CalledBy(Type = typeof(BaseAi), Member = "Start")]
-	[Calls(Type = typeof(WolfHowlController), Member = "SetNextTimer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(WolfHowlController), Member = "SetNextTimer")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void Add(BaseAi bai)
 	{
 	}
 
+	[CalledBy(Type = typeof(BaseAi), Member = "OnDestroy")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(WolfHowlController), Member = "Remove")]
-	[CalledBy(Type = typeof(BaseAi), Member = "OnDestroy")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Remove(BaseAi bai)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(GameManager), Member = "ResetLists")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public static void Reset()
 	{
 	}
 
-	[Calls(Type = typeof(BaseAi), Member = "StopHideAndSeekAudio")]
 	[CalledBy(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(PanelReference), Member = "Get")]
-	[Calls(Type = typeof(BaseAi), Member = "StopHoldGroundAudio")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(BaseAi), Member = "StopStruggleAudio")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BaseAi), Member = "StopStruggleAudio")]
 	[Calls(Type = typeof(BaseAi), Member = "StopAttackAudio")]
+	[Calls(Type = typeof(BaseAi), Member = "StopHoldGroundAudio")]
+	[Calls(Type = typeof(BaseAi), Member = "StopHideAndSeekAudio")]
+	[Calls(Type = typeof(PanelReference), Member = "Get")]
+	[Calls(Type = typeof(PanelReference), Member = "TryGetPanel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CallsUnknownMethods(Count = 6)]
 	public static void ResetAudioLoops()
 	{
 	}
 
-	[CalledBy(Type = typeof(BearEncounter), Member = "UpdateBearDespawn")]
 	[CalledBy(Type = typeof(BaseAi), Member = "MaybeDestroyIfFellThroughWorld")]
+	[CalledBy(Type = typeof(BearEncounter), Member = "UpdateBearDespawn")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestoreAI")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(WolfHowlController), Member = "Remove")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(WolfHowlController), Member = "Remove")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void Destroy(BaseAi bai)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "UnregisterDuplicatedGuids")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestore")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[CallsUnknownMethods(Count = 3)]
 	public static BaseAi GetAIFromSerializedMissionId(string missionId)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "SceneLoadCompleted")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
-	[Calls(Type = typeof(ObjectGuid), Member = "MaybeRuntimeRegister")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(GameManager), Member = "InstantiateStoryManager")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "SceneLoadCompleted")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "get_scene")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(ObjectGuid), Member = "MaybeRuntimeRegister")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public static void RegisterAnyAIGuid()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(BaseAiManager), Member = "Update")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[CalledBy(Type = typeof(BaseAiManager), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private static void MaybeSetAiModeWhenInactiveOrDisabled(BaseAi bai)
 	{
 	}
 
-	[Calls(Type = typeof(CharacterController), Member = "get_height")]
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
-	[Calls(Type = typeof(BaseAi), Member = "EnableSkinnedMeshRenderers")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(WolfHowlController), Member = "UpdateCurrentHowl")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(BaseAiManager), Member = "MaybeSetAiModeWhenInactiveOrDisabled")]
-	[Calls(Type = typeof(BaseAi), Member = "EnableSkinnedMeshRenderers")]
-	[Calls(Type = typeof(CharacterController), Member = "get_radius")]
-	[Calls(Type = typeof(Collider), Member = "get_bounds")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(BaseAi), Member = "EnableSkinnedMeshRenderers")]
 	[Calls(Type = typeof(WolfHowlController), Member = "UpdateTimer")]
-	[Calls(Type = typeof(BaseAiManager), Member = "MaybeSetAiModeWhenInactiveOrDisabled")]
-	[Calls(Type = typeof(WolfHowlController), Member = "UpdateCurrentHowl")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Collider), Member = "get_bounds")]
+	[Calls(Type = typeof(CharacterController), Member = "get_height")]
+	[Calls(Type = typeof(CharacterController), Member = "get_radius")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	public static void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(BaseAi), Member = "SetCollisionMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BaseAi), Member = "SetCollisionMode")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void UpdateCollisionMode(CollisionDetectionMode mode)
 	{
 	}
@@ -367,49 +371,47 @@ public class BaseAiManager
 	{
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "LateUpdate")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(BaseAiManager), Member = "BatchGroundRaycast")]
-	[CalledBy(Type = typeof(BaseAiManager), Member = "BatchGroundRaycast")]
-	[CalledBy(Type = typeof(BaseAiManager), Member = "DoLateUpdate")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(BaseAi), Member = "IsImposter")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(BaseAiManager), Member = "GetBatchGroundRaycastSize")]
+	[CalledBy(Type = typeof(BaseAiManager), Member = "DoLateUpdate")]
+	[CalledBy(Type = typeof(BaseAiManager), Member = "BatchGroundRaycast")]
+	[CalledBy(Type = typeof(GameManager), Member = "LateUpdate")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BaseAi), Member = "IsImposter")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private static bool CanUpdateAI(BaseAi bai)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BaseAiManager), Member = "CanUpdateAI")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private static int GetBatchGroundRaycastSize()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(BaseAi), Member = "DoLateUpdate")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(JobHandle), Member = "Complete")]
 	[Calls(Type = typeof(BaseAiManager), Member = "CanUpdateAI")]
+	[Calls(Type = typeof(BaseAi), Member = "DoLateUpdate")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void DoLateUpdate()
 	{
 	}
 
+	[CalledBy(Type = typeof(GameManager), Member = "LateUpdate")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(BaseAiManager), Member = "CanUpdateAI")]
 	[Calls(Type = typeof(BaseAiManager), Member = "CanUpdateAI")]
 	[Calls(Type = typeof(BaseAi), Member = "GetCommandUnderCharacterController")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(GameManager), Member = "LateUpdate")]
-	[CallsUnknownMethods(Count = 8)]
+	[Calls(Type = typeof(BatchQueryJobStruct<>), Member = "Initialize")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void BatchGroundRaycast()
 	{
 	}
@@ -420,15 +422,13 @@ public class BaseAiManager
 		return default(RaycastHit);
 	}
 
-	[CallsUnknownMethods(Count = 24)]
-	[CalledBy(Type = typeof(GameManager), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(GameManager), Member = "LateUpdate")]
-	[Calls(Type = typeof(ObjectDisposedException), Member = ".ctor")]
-	[Calls(Type = typeof(UnsafeUtility), Member = "Free")]
-	[Calls(Type = typeof(UnsafeUtility), Member = "Free")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(GameManager), Member = "OnDestroy")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnsafeUtility), Member = "Free")]
 	[Calls(Type = typeof(ObjectDisposedException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 24)]
 	public static void DiposeBatchGroundRaycastHit()
 	{
 	}
@@ -447,8 +447,8 @@ public class BaseAiManager
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public BaseAiManager()
 	{
 	}

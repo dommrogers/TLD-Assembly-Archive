@@ -5,11 +5,11 @@ public class CameraDeAlpha : MonoBehaviour
 {
 	private Material mat;
 
-	[CallsDeduplicatedMethods(Count = 15)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Material), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 15)]
 	[CallsUnknownMethods(Count = 27)]
-	[CallerCount(Count = 0)]
 	private void OnPostRender()
 	{
 	}

@@ -55,62 +55,64 @@ public class Cookable : MonoBehaviour
 
 	public Mesh m_MeshRawFryingPanStyle;
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
-	[CalledBy(Type = typeof(GearItem), Member = "Drop")]
 	[CalledBy(Type = typeof(Fire), Member = "AttachToNearbyCookables")]
-	[Calls(Type = typeof(CookingPotItem), Member = "StartCooking")]
-	[Calls(Type = typeof(CookingPotItem), Member = "AttachToFire")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemAtPlayersFeet")]
-	[Calls(Type = typeof(FireManager), Member = "GetClosestFire")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Cookable), Member = "IsNearFire")]
-	[CallsDeduplicatedMethods(Count = 12)]
+	[CalledBy(Type = typeof(GearItem), Member = "Drop")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ExitMeshPlacement")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Cookable), Member = "IsNearFire")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(FireManager), Member = "GetClosestFire")]
 	[Calls(Type = typeof(GearItem), Member = "LoadGearItemPrefab")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemAtPlayersFeet")]
+	[Calls(Type = typeof(CookingPotItem), Member = "AttachToFire")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(CookingPotItem), Member = "StartCooking")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 8)]
 	public void MaybeStartWarmingUpDueToNearbyFire()
 	{
 	}
 
 	[CalledBy(Type = typeof(Fire), Member = "AttachToNearbyCookables")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(CookingPotItem), Member = "CheckForFireBurntOut")]
-	[CalledBy(Type = typeof(CookingPotItem), Member = "ExitPlaceMesh")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "Update")]
-	[Calls(Type = typeof(CookingPotItem), Member = "AttachToFire")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[CalledBy(Type = typeof(CookingPotItem), Member = "ExitPlaceMesh")]
+	[CalledBy(Type = typeof(CookingPotItem), Member = "CheckForFireBurntOut")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(FireManager), Member = "GetClosestFire")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Cookable), Member = "IsNearFire")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(FireManager), Member = "GetClosestFire")]
+	[Calls(Type = typeof(CookingPotItem), Member = "AttachToFire")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void MaybeReattachToNearbyFire(CookingPotItem cookingPot)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Cookable), Member = "MaybeReattachToNearbyFire")]
 	[CalledBy(Type = typeof(Cookable), Member = "MaybeStartWarmingUpDueToNearbyFire")]
+	[CalledBy(Type = typeof(Cookable), Member = "MaybeReattachToNearbyFire")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "ExitPlaceMesh")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(FireManager), Member = "GetDistanceToClosestFire")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool IsNearFire()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "ModifiedCookTimeMinutes")]
 	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateGearItem")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetCookTimeMinutesForCaloriesRemaining()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

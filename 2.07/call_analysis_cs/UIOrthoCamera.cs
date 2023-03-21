@@ -8,8 +8,9 @@ public class UIOrthoCamera : MonoBehaviour
 	private Transform mTrans;
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	private void Start()
 	{
 	}
@@ -17,14 +18,14 @@ public class UIOrthoCamera : MonoBehaviour
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[Calls(Type = typeof(Camera), Member = "set_orthographicSize")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Update()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public UIOrthoCamera()
 	{
 	}

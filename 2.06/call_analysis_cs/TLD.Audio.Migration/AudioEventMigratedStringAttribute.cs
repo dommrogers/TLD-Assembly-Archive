@@ -10,23 +10,23 @@ public class AudioEventMigratedStringAttribute : PropertyAttribute
 
 	public string FormerStringFieldName
 	{
-		[CallerCount(Count = 44)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 53)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 85)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 93)]
 		private set
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 85)]
+	[CallerCount(Count = 93)]
 	public AudioEventMigratedStringAttribute(string previousStringEventName)
 	{
 	}

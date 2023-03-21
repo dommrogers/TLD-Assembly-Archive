@@ -6,9 +6,9 @@ public class LocalizedString
 {
 	public string m_LocalizationID;
 
-	[CallerCount(Count = 289)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallerCount(Count = 293)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string Text()
 	{
 		return null;
@@ -18,11 +18,11 @@ public class LocalizedString
 	[CallerCount(Count = 0)]
 	public bool IsSet()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public LocalizedString()
 	{
 	}

@@ -8,56 +8,64 @@ namespace Marketplace;
 public class CatalogServiceManager
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public static void Create()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 17)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(GetObjectAsyncOp<>), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetHandle")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 17)]
 	public static GetObjectAsyncOp<BrowseCatalogResult> BrowseCatalogAsync(int userId, string parentId, MediaItemType parentMediaType, MediaItemType childMediaType, CatalogSortOrder orderBy, uint skipItems, uint maxItems, GetObjectAsyncOp<BrowseCatalogResult>.GetObjectAsyncCallback callback)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 17)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(GetObjectAsyncOp<>), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetHandle")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 17)]
 	public static GetObjectAsyncOp<BrowseCatalogResult> BrowseCatalogBundlesAsync(int userId, string parentId, MediaItemType parentMediaType, string productId, BundleRelationshipType relationship, uint skipItems, uint maxItems, GetObjectAsyncOp<BrowseCatalogResult>.GetObjectAsyncCallback callback)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(GetObjectAsyncOp<>), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetHandle")]
 	[Calls(Type = typeof(CatalogServicePlugin), Member = "CatalogService_GetCatalogItemDetailsAsync")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 16)]
 	public static GetObjectAsyncOp<CatalogItemDetailsList> GetCatalogItemDetailsAsync(int userId, string[] productIds, GetObjectAsyncOp<CatalogItemDetailsList>.GetObjectAsyncCallback callback)
 	{
 		return null;
 	}
 
-	[UnityAOT.MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetMyObject")]
+	[Calls(Type = typeof(GetObjectAsyncOp<>), Member = "Complete")]
 	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
 	[Calls(Type = typeof(UnityPlugin.Log), Member = "LogCallbackException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public static void GetCatalogItemDetailsListThunk(uint result, IntPtr lresult, IntPtr userData)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetMyObject")]
+	[Calls(Type = typeof(GetObjectAsyncOp<>), Member = "Complete")]
 	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
 	[Calls(Type = typeof(UnityPlugin.Log), Member = "LogCallbackException")]
-	[CallerCount(Count = 0)]
-	[UnityAOT.MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public static void GetBrowseCatalogResultThunk(uint result, IntPtr lresult, IntPtr userData)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CatalogServiceManager()
 	{
 	}

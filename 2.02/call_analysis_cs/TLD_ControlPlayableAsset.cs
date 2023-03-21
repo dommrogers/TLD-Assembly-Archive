@@ -9,33 +9,33 @@ public class TLD_ControlPlayableAsset : ControlPlayableAsset
 
 	private bool m_IsPlaying;
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(ControlPlayableAsset), Member = "CreatePlayable")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetGameObjectOverride")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "FindClip")]
+	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetGameObjectOverride")]
+	[Calls(Type = typeof(ControlPlayableAsset), Member = "CreatePlayable")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
 	{
 		return default(Playable);
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private GameObject FindGameObject(string missionObjectId)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public TLD_ControlPlayableAsset()
 	{
 	}

@@ -28,10 +28,10 @@ public sealed class HistogramMonitor : Monitor
 
 	private const int k_ThreadGroupSizeY = 16;
 
-	[Calls(Type = typeof(ComputeBuffer), Member = "Dispose")]
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
+	[Calls(Type = typeof(ComputeBuffer), Member = "Dispose")]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	internal override void OnDisable()
 	{
 	}
@@ -40,7 +40,7 @@ public sealed class HistogramMonitor : Monitor
 	[CallerCount(Count = 0)]
 	internal override bool NeedsHalfRes()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -48,20 +48,19 @@ public sealed class HistogramMonitor : Monitor
 	[CallsUnknownMethods(Count = 1)]
 	internal override bool ShaderResourcesAvailable(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeTextureParam")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Monitor), Member = "CheckOutput")]
+	[Calls(Type = typeof(ComputeBuffer), Member = ".ctor")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeBufferParam")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeVectorParam")]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeTextureParam")]
+	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(ComputeBuffer), Member = ".ctor")]
-	[Calls(Type = typeof(Monitor), Member = "CheckOutput")]
 	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeBufferParam")]
 	[CallsUnknownMethods(Count = 18)]
 	internal override void Render(PostProcessRenderContext context)
 	{

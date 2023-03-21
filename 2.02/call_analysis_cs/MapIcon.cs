@@ -81,60 +81,43 @@ public class MapIcon : MonoBehaviour
 
 	private float m_OriginalBGSelectedAlpha;
 
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 34)]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(MapIcon), Member = "ScaleSprite")]
-	[Calls(Type = typeof(MapIcon), Member = "ScaleSprite")]
-	[Calls(Type = typeof(MapIcon), Member = "ScaleSprite")]
-	[Calls(Type = typeof(MapIcon), Member = "ScaleSprite")]
-	[Calls(Type = typeof(MapIcon), Member = "ScaleSprite")]
-	[Calls(Type = typeof(MapIcon), Member = "ScaleSprite")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetDetailLevelAlpha")]
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
 	[Calls(Type = typeof(UIWidget), Member = "set_width")]
-	[Calls(Type = typeof(UILabel), Member = "ProcessText")]
-	[CallsDeduplicatedMethods(Count = 15)]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIWidget), Member = "set_height")]
+	[Calls(Type = typeof(Panel_Map), Member = "GetDetailLevelAlpha")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(MapIcon), Member = "ScaleSprite")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 34)]
 	private void LateUpdate()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[CallerCount(Count = 6)]
 	[CallAnalysisFailed]
 	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
+	[CallerCount(Count = 6)]
 	public void DoSetup(MapElementSaveData mapData, Transform parentToUse, int index, MapIconType iconType, float mainSpriteSizeMultiplier, bool useSelectedBG)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(Quaternion), Member = "Euler")]
 	[Calls(Type = typeof(MapIcon), Member = "SetSpriteActive")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[CallsUnknownMethods(Count = 10)]
 	public void EnableDirectionalIcon(float angle)
 	{
 	}
@@ -150,17 +133,17 @@ public class MapIcon : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(Panel_Map), Member = "SetMapIconBeingHovered")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "SetMapIconBeingHovered")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	public void HideHoverWidget()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public string GetLocationNameLocID()
 	{
 		return null;
@@ -173,83 +156,53 @@ public class MapIcon : MonoBehaviour
 		return default(State);
 	}
 
-	[Calls(Type = typeof(MapIcon), Member = "SetSpriteActive")]
-	[Calls(Type = typeof(MapIcon), Member = "SetSpriteActive")]
-	[Calls(Type = typeof(MapIcon), Member = "SetSpriteActive")]
-	[Calls(Type = typeof(MapIcon), Member = "SetSpriteActive")]
-	[Calls(Type = typeof(MapIcon), Member = "SetSpriteActive")]
-	[Calls(Type = typeof(MapIcon), Member = "SetSpriteActive")]
-	[Calls(Type = typeof(MapIcon), Member = "SetSpriteActive")]
-	[Calls(Type = typeof(MapIcon), Member = "SetSpriteActive")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateIconsForOffscreenMissionMarkers")]
-	[Calls(Type = typeof(MapIcon), Member = "SetSpriteActive")]
-	[Calls(Type = typeof(MapIcon), Member = "SetSpriteActive")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(MapIcon), Member = "SetSpriteActive")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateIconsForOffscreenMissionMarkers")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public State SetState(State state)
 	{
 		return default(State);
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "MergeNearbyMissionMapIconsWithLocations")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallsUnknownMethods(Count = 11)]
 	public string SetLocationMapIcon(MapIcon icon)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateIconsForOffscreenMissionMarkers")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public Transform GetLocationMapTransform()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(MapIcon), Member = "SetState")]
-	[CalledBy(Type = typeof(MapIcon), Member = "SetState")]
-	[CalledBy(Type = typeof(MapIcon), Member = "SetState")]
-	[CalledBy(Type = typeof(MapIcon), Member = "SetState")]
-	[CalledBy(Type = typeof(MapIcon), Member = "SetState")]
-	[CalledBy(Type = typeof(MapIcon), Member = "SetState")]
-	[CalledBy(Type = typeof(MapIcon), Member = "SetState")]
 	[CalledBy(Type = typeof(MapIcon), Member = "EnableDirectionalIcon")]
 	[CalledBy(Type = typeof(MapIcon), Member = "SetState")]
-	[CalledBy(Type = typeof(MapIcon), Member = "SetState")]
-	[CalledBy(Type = typeof(MapIcon), Member = "SetState")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 12)]
-	[CalledBy(Type = typeof(MapIcon), Member = "SetState")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private void SetSpriteActive(UISprite sprite, bool isActive)
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void SetDepths(int index)
 	{
 	}
@@ -257,29 +210,24 @@ public class MapIcon : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private int GetBaseDepth()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void TintSprite(UISprite sprite, Color tint)
 	{
 	}
 
 	[CalledBy(Type = typeof(MapIcon), Member = "LateUpdate")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(MapIcon), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(MapIcon), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(MapIcon), Member = "LateUpdate")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(MapIcon), Member = "LateUpdate")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(MapIcon), Member = "LateUpdate")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ScaleSprite(UISprite sprite, float scale)
 	{
 	}

@@ -13,14 +13,14 @@ public class CopyProductUserExternalAccountByAccountTypeOptions
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -28,23 +28,23 @@ public class CopyProductUserExternalAccountByAccountTypeOptions
 
 	public ExternalAccountType AccountIdType
 	{
-		[CallerCount(Count = 8)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 8)]
 		get
 		{
 			return default(ExternalAccountType);
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CopyProductUserExternalAccountByAccountTypeOptions()
 	{
 	}

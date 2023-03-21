@@ -19,20 +19,20 @@ public class XceDynamicProviderPlugin
 	public static extern void XceDynamicProvider_Create(string name, string guid);
 
 	[PreserveSig]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern bool XceDynamicProvider_Initialize();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void XceDynamicProvider_SetDefaults(EtxProviderLatency latency, EtxProviderPriority priority, EtxProviderEnabledState enabled, EtxPopulationSample sample);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 21)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 21)]
 	public static extern IntPtr XceDynamicProvider_CreateEvent(string name, uint eventId, EtxEventLatency latency, EtxEventPriority priority, EtxPopulationSample sample, EtxEventEnabledState enabled, string partBAbbreviation, string partBVersion, string partCAbbreviation, string partCVersion);
 
 	[PreserveSig]

@@ -4,8 +4,8 @@ namespace Epic.OnlineServices.Connect;
 
 public class DeleteDeviceIdOptions
 {
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public DeleteDeviceIdOptions()
 	{
 	}

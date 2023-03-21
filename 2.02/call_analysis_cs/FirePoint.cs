@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -31,70 +30,71 @@ public class FirePoint : MonoBehaviour
 
 	private ParticleSystem m_SpriteParticlesPS;
 
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(FirePoint), Member = "StartFire")]
-	[Calls(Type = typeof(FirePoint), Member = "UpdateRatesAndSizes")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(FirePoint), Member = "UpdateRatesAndSizes")]
+	[Calls(Type = typeof(FirePoint), Member = "StartFire")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 16)]
 	private void Start()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CalledBy(Type = typeof(FirePoint), Member = "Start")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 11)]
 	private void StartFire()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(FirePoint), Member = "UpdateRatesAndSizes")]
-	[CalledBy(Type = typeof(FirePoint), Member = "UpdateRatesAndSizes")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(FirePoint), Member = "UpdateRatesAndSizes")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void SetEmissionRate(GameObject ps, float newRate)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void SetSize(GameObject ps, float newSize)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(FirePoint), Member = "Update")]
 	[CalledBy(Type = typeof(FirePoint), Member = "Start")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(FirePoint), Member = "SetEmissionRate")]
-	[Calls(Type = typeof(FirePoint), Member = "SetEmissionRate")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(FirePoint), Member = "Update")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(FirePoint), Member = "SetEmissionRate")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 10)]
 	private void UpdateRatesAndSizes()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(FirePoint), Member = "UpdateRatesAndSizes")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	public FirePoint()
 	{
 	}

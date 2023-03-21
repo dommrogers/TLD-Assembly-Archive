@@ -12,8 +12,8 @@ public class SpawnAnimalTableEntry
 
 	public float m_Odds;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public SpawnAnimalTableEntry()
 	{
 	}

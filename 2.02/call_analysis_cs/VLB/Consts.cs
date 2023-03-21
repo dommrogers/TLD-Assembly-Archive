@@ -173,15 +173,15 @@ public static class Consts
 
 	public static HideFlags ProceduralObjectsHideFlags
 	{
-		[CalledBy(Type = typeof(MaterialManager), Member = "NewMaterialTransient")]
-		[CalledBy(Type = typeof(DynamicOcclusionDepthBuffer), Member = "InstantiateOrActivateDepthCamera")]
-		[CalledBy(Type = typeof(TriggerZone), Member = "ComputeZone")]
-		[CalledBy(Type = typeof(Config), Member = "NewVolumetricDustParticles")]
-		[CalledBy(Type = typeof(GlobalMesh), Member = "Get")]
 		[CalledBy(Type = typeof(BeamGeometry), Member = "Initialize")]
 		[CalledBy(Type = typeof(BeamGeometry), Member = "RegenerateMesh")]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[CalledBy(Type = typeof(Config), Member = "NewVolumetricDustParticles")]
+		[CalledBy(Type = typeof(DynamicOcclusionDepthBuffer), Member = "InstantiateOrActivateDepthCamera")]
+		[CalledBy(Type = typeof(GlobalMesh), Member = "Get")]
+		[CalledBy(Type = typeof(MaterialManager), Member = "NewMaterialTransient")]
+		[CalledBy(Type = typeof(TriggerZone), Member = "ComputeZone")]
 		[CallerCount(Count = 7)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return default(HideFlags);

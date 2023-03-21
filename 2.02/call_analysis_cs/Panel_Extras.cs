@@ -24,8 +24,8 @@ public class Panel_Extras : Panel_Base
 
 		public string m_LabelLocalizationId;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public ExtraMenuItem()
 		{
 		}
@@ -45,103 +45,100 @@ public class Panel_Extras : Panel_Base
 
 	private int m_CreditsEpisode;
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(BasicMenu), Member = "InstantiateMenu")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(BasicMenu), Member = "InstantiateMenu")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public override void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(BasicMenu), Member = "ManualUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private void Update()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Extras), Member = "AddMenuItem")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Extras), Member = "AddMenuItem")]
 	[CallsUnknownMethods(Count = 42)]
 	public Action GetActionFromType(ExtraMenuItem.ExtraMenuItemType type)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_Extras), Member = "ConfigureMenu")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(BasicMenu), Member = "AddItem")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_Extras), Member = "GetActionFromType")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Panel_Extras), Member = "GetActionFromType")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(BasicMenu), Member = "AddItem")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private void AddMenuItem(int itemIndex)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Extras), Member = "AddMenuItem")]
-	[CallsUnknownMethods(Count = 24)]
 	[CalledBy(Type = typeof(Panel_Extras), Member = "Enable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(BasicMenu), Member = "EnableConfirm")]
-	[Calls(Type = typeof(Panel_Notifications), Member = "HasNotifications")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(BasicMenu), Member = "Reset")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(BasicMenu), Member = "Reset")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[Calls(Type = typeof(BasicMenu), Member = "UpdateTitle")]
+	[Calls(Type = typeof(Panel_Notifications), Member = "HasNotifications")]
+	[Calls(Type = typeof(Panel_Extras), Member = "AddMenuItem")]
+	[Calls(Type = typeof(BasicMenu), Member = "EnableConfirm")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 24)]
 	private void ConfigureMenu()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
 	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
 	[Calls(Type = typeof(PostProcessEffectSettings), Member = "set_active")]
 	[Calls(Type = typeof(Panel_Extras), Member = "ConfigureMenu")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(BasicMenu), Member = "Enable")]
+	[CallsUnknownMethods(Count = 7)]
 	public override void Enable(bool enable)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
 	[Calls(Type = typeof(Panel_MainMenu), Member = "OnLogs")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnClickJournals()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Extras), Member = "PlayCredits")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void OnClickCredits()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Extras), Member = "PlayCredits")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnClickCreditsEp3()
 	{
 	}
@@ -152,22 +149,23 @@ public class Panel_Extras : Panel_Base
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Extras), Member = "OnClickCreditsEp3")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(Panel_Extras), Member = "OnClickCredits")]
-	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanelAsync_Internal")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
-	[Calls(Type = typeof(Panel_MainMenu), Member = "StopMainMenuMusic")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Extras), Member = "OnClickCreditsEp3")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+	[Calls(Type = typeof(Panel_MainMenu), Member = "StopMainMenuMusic")]
+	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanelAsync_Internal")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	private void PlayCredits(int episodeIndex)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Credits), Member = "ShowCredits")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 15)]
 	private void HandleOnCreditsLoaded(Panel_Base panel)
 	{
@@ -180,52 +178,54 @@ public class Panel_Extras : Panel_Base
 	{
 	}
 
-	[Calls(Type = typeof(Panel_MainMenu), Member = "PlayMainMenuMusic")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+	[Calls(Type = typeof(Panel_MainMenu), Member = "PlayMainMenuMusic")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryDestroyPanel")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnCreditsEnd()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_MainMenu), Member = "OnMainMenuTop")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+	[Calls(Type = typeof(Panel_MainMenu), Member = "OnMainMenuTop")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnClickBack()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(Panel_Notifications), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnClickUpdates()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void OnSelectionUpdate(string name, int value, int itemIndex)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateButtonLegend()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public Panel_Extras()
 	{

@@ -32,43 +32,44 @@ public class Rest : MonoBehaviour
 		private Panel_Cooking m_Cooking;
 
 		[DeduplicatedMethod]
+		[CalledBy(Type = typeof(PassTimeHelper), Member = "PassTime")]
+		[CalledBy(Type = typeof(PassTimeHelper), Member = "OnSleepEnd")]
 		[CallerCount(Count = 4)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		private static bool TryGetPanel<T>(out T panel, ref T cache) where T : Panel_Base
 		{
 			panel = null;
-			return default(bool);
+			return false;
 		}
 
-		[CalledBy(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
 		[CalledBy(Type = typeof(Action_SetCinematicProperties), Member = "OnExecute")]
-		[Calls(Type = typeof(Rest), Member = "BeginSleeping")]
-		[Calls(Type = typeof(AccelTimePopup), Member = "IsLabelMessageActive")]
-		[CallsUnknownMethods(Count = 10)]
-		[Calls(Type = typeof(Panel_Cooking), Member = "ExitCookingInterface")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[CallsDeduplicatedMethods(Count = 6)]
+		[CalledBy(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(PassTimeHelper), Member = "TryGetPanel")]
 		[Calls(Type = typeof(Panel_FeedFire), Member = "ExitFeedFireInterface")]
+		[Calls(Type = typeof(Panel_Cooking), Member = "ExitCookingInterface")]
+		[Calls(Type = typeof(AccelTimePopup), Member = "IsLabelMessageActive")]
+		[Calls(Type = typeof(Rest), Member = "BeginSleeping")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 10)]
 		public void PassTime(int hours)
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(PassTimeHelper), Member = "TryGetPanel")]
 		[Calls(Type = typeof(AccelTimePopup), Member = "EnableLabelMessage")]
 		[CallsUnknownMethods(Count = 2)]
 		private void OnSleepEnd()
 		{
 		}
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public PassTimeHelper()
 		{
 		}
@@ -152,41 +153,42 @@ public class Rest : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[Calls(Type = typeof(AchievementManager), Member = "WentToSleep")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(AchievementManager), Member = "WentToSleep")]
 	[CallsUnknownMethods(Count = 2)]
 	private void MaybeTriggerAchievement(Bed bed)
 	{
 	}
 
-	[Calls(Type = typeof(Rest), Member = "BeginSleeping")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Rest), Member = "BeginSleeping")]
 	public void BeginSleeping(Bed b, int durationHours, int maxHours)
 	{
 	}
@@ -195,26 +197,25 @@ public class Rest : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsSleeping()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
+	[CalledBy(Type = typeof(BaseAi), Member = "EnterPassingAttack")]
 	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
 	[CalledBy(Type = typeof(SnowShelter), Member = "Update")]
-	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
-	[CalledBy(Type = typeof(Action_PlayerWakeup), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
-	[CalledBy(Type = typeof(BaseAi), Member = "EnterPassingAttack")]
+	[CalledBy(Type = typeof(Action_PlayerWakeup), Member = "OnExecute")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[Calls(Type = typeof(TimeOfDay), Member = "ForceUpdateTodObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Bed), Member = "Degrade")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Bed), Member = "Degrade")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TimeOfDay), Member = "ForceUpdateTodObjects")]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 7)]
 	[Calls(Type = typeof(AiUtils), Member = "DespawnHostileAiAroundPoint")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public void EndSleeping(bool interrupted)
 	{
 	}
@@ -223,41 +224,41 @@ public class Rest : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	public int GetNumHoursSleptInLastTwentyFour()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public int GetNumHoursSleptSinceMidnight()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool AllowedToSleepAmount(int amount)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Freezing), Member = "CalculateBodyTemperature")]
+	[CalledBy(Type = typeof(Frostbite), Member = "CalculateBodyTemperatureWithoutClothing")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Bed), Member = "GetWarmthBonusCelsius")]
-	[CalledBy(Type = typeof(Freezing), Member = "CalculateBodyTemperature")]
-	[CalledBy(Type = typeof(Frostbite), Member = "CalculateBodyTemperatureWithoutClothing")]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetBedWarmthBonusCelsius()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
+	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
 	[CalledBy(Type = typeof(Panel_Rest), Member = "DoRest")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
+	[CallsUnknownMethods(Count = 9)]
 	public bool RestNeededForAffliction()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -284,19 +285,19 @@ public class Rest : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsForcedSleep()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
 	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
 	[CalledBy(Type = typeof(Panel_Rest), Member = "DoRest")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
+	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
 	[CallsUnknownMethods(Count = 1)]
 	public bool AllowUnlimitedSleep()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -305,26 +306,27 @@ public class Rest : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Condition), Member = "IsDegrading")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Condition), Member = "AddHealth")]
 	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
-	[Calls(Type = typeof(Condition), Member = "IsDegrading")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	private void UpdateCondition(float todSeconds)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffLossNotification")]
 	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
-	[Calls(Type = typeof(BrokenRib), Member = "AddRest")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BrokenRib), Member = "AddRest")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowBuffLossNotification")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	private void UpdateRestForCures(float todSeconds)
 	{
 	}
@@ -334,25 +336,25 @@ public class Rest : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	private bool IsFearOrAnxietyPreventingSleep()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InsomniaManager), Member = "GetElectrostaticFogAffliction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool ShouldInterruptSleepWithInsomnia()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InsomniaManager), Member = "GetElectrostaticFogAffliction")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetChanceOfHowBadlySleepIsIntnerrupted()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -360,184 +362,138 @@ public class Rest : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	private bool ShouldInterruptSleep()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Rest), Member = "UpdateLogWithHoursSlept")]
+	[CalledBy(Type = typeof(Rest), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(Rest), Member = "RestNeededForAffliction")]
+	[Calls(Type = typeof(Rest), Member = "AllowUnlimitedSleep")]
+	[Calls(Type = typeof(Rest), Member = "EndSleeping")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[Calls(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
+	[Calls(Type = typeof(Rest), Member = "CanSpawnPredator")]
+	[Calls(Type = typeof(Anxiety), Member = "CanPassTime")]
+	[Calls(Type = typeof(Rest), Member = "UpdateCondition")]
+	[Calls(Type = typeof(Rest), Member = "UpdateRestForCures")]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+	[Calls(Type = typeof(Rest), Member = "UpdateLogWithHoursSlept")]
 	[Calls(Type = typeof(Rest), Member = "DisplayDayNumber")]
-	[Calls(Type = typeof(Rest), Member = "UpdateLogWithHoursSlept")]
-	[Calls(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Rest), Member = "SpawnPredator")]
 	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Rest), Member = "EndSleeping")]
-	[CalledBy(Type = typeof(Rest), Member = "Update")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Rest), Member = "UpdateRestForCures")]
-	[Calls(Type = typeof(Rest), Member = "UpdateCondition")]
-	[Calls(Type = typeof(Anxiety), Member = "CanPassTime")]
-	[Calls(Type = typeof(Rest), Member = "CanSpawnPredator")]
-	[Calls(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Rest), Member = "EndSleeping")]
-	[Calls(Type = typeof(Rest), Member = "AllowUnlimitedSleep")]
-	[Calls(Type = typeof(Rest), Member = "RestNeededForAffliction")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Rest), Member = "EndSleeping")]
+	[CallsUnknownMethods(Count = 10)]
 	private void UpdateWhenSleeping()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateLogWithPredatorInterruption()
 	{
 	}
 
+	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Utils), Member = "GetExpandedDurationString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
-	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateLogWithHoursSlept()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	private void DisplayDayNumber()
 	{
 	}
 
+	[CalledBy(Type = typeof(Rest), Member = "BeginSleeping")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Rest), Member = "ShouldInterruptWithPredator")]
 	[Calls(Type = typeof(InsomniaManager), Member = "GetElectrostaticFogAffliction")]
-	[Calls(Type = typeof(InsomniaManager), Member = "GetElectrostaticFogAffliction")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[CalledBy(Type = typeof(Rest), Member = "BeginSleeping")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	private void RollForRestInterruption()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
 	[CalledBy(Type = typeof(Rest), Member = "ShouldInterruptSleep")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(SpawnRegionManager), Member = "GetClosestActiveSpawn")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(SpawnRegionManager), Member = "GetClosestActiveSpawn")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(SpawnRegionManager), Member = "GetClosestActiveSpawn")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private bool CanSpawnPredator()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(BaseAi), Member = "SetRotation")]
-	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
+	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(SpawnRegionManager), Member = "GetClosestActiveSpawn")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(AiUtils), Member = "GetClosestNavmeshPos")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[Calls(Type = typeof(MoveAgent), Member = "Warp")]
+	[Calls(Type = typeof(Quaternion), Member = "LookRotation")]
+	[Calls(Type = typeof(BaseAi), Member = "SetRotation")]
 	[Calls(Type = typeof(BaseAi), Member = "MoveAgentStop")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(BaseAi), Member = "StickCharacterControllerToGround")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BaseAi), Member = "StickCharacterControllerToGround")]
-	[Calls(Type = typeof(AiUtils), Member = "GetClosestNavmeshPos")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(SpawnRegionManager), Member = "GetClosestActiveSpawn")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(SpawnRegionManager), Member = "GetClosestActiveSpawn")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	private void SpawnPredator()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(SpawnRegionManager), Member = "PointInsideActiveSpawnRegion")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(AiUtils), Member = "GetNavmeshArea")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(SpawnRegionManager), Member = "PointInsideActiveSpawnRegion")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(AiUtils), Member = "GetNavmeshArea")]
 	[CalledBy(Type = typeof(Rest), Member = "RollForRestInterruption")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(AiUtils), Member = "GetNavmeshArea")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(SpawnRegionManager), Member = "PointInsideNoSpawnRegion")]
-	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(FireManager), Member = "GetDistanceToClosestFire")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(AiUtils), Member = "GetClosestNavmeshPos")]
 	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(FireManager), Member = "GetDistanceToClosestFire")]
+	[Calls(Type = typeof(AiUtils), Member = "GetClosestNavmeshPos")]
+	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(SpawnRegionManager), Member = "PointInsideActiveSpawnRegion")]
+	[Calls(Type = typeof(AiUtils), Member = "GetNavmeshArea")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 11)]
 	private bool ShouldInterruptWithPredator()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[CallsUnknownMethods(Count = 2)]
 	private void RestoreTimeOfDay()
 	{
 	}
@@ -555,64 +511,63 @@ public class Rest : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[CalledBy(Type = typeof(Rest), Member = "ShouldInterruptIfFreezingStartsWhileSleeping")]
-	[CallsUnknownMethods(Count = 6)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(FireManager), Member = "GetClosestFire")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(FireManager), Member = "GetClosestFire")]
+	[CallsUnknownMethods(Count = 6)]
 	private Fire GetNearbyBuringFire()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Rest), Member = "GetNearbyBuringFire")]
 	[CalledBy(Type = typeof(Rest), Member = "BeginSleeping")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Rest), Member = "GetNearbyBuringFire")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool ShouldInterruptIfFreezingStartsWhileSleeping()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool CanUseFade()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool CanDisplayCancelButton()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Rest), Member = "RollForRestInterruption")]
-	[CalledBy(Type = typeof(Action_PassTime), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Panel_Rest), Member = "DoRest")]
-	[CalledBy(Type = typeof(Rest), Member = "BeginSleeping")]
 	[CalledBy(Type = typeof(PassTimeHelper), Member = "PassTime")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CalledBy(Type = typeof(Rest), Member = "BeginSleeping")]
+	[CalledBy(Type = typeof(Panel_Rest), Member = "DoRest")]
+	[CalledBy(Type = typeof(Action_PassTime), Member = "OnExecute")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
-	[Calls(Type = typeof(AchievementManager), Member = "WentToSleep")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(AchievementManager), Member = "WentToSleep")]
+	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
 	[Calls(Type = typeof(Rest), Member = "ShouldInterruptIfFreezingStartsWhileSleeping")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Rest), Member = "RollForRestInterruption")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void BeginSleeping(Bed b, int durationHours, int maxHours, float fadeOutDuration, PassTimeOptions options, Action onSleepEnd)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
 	private Panel_HUD GetHUD()
 	{
 		return null;

@@ -14,10 +14,10 @@ public class HUDMission : MonoBehaviour
 
 		public MissionStatusType type;
 
-		[CallerCount(Count = 3)]
 		[CalledBy(Type = typeof(HUDMission), Member = "Disable")]
 		[CalledBy(Type = typeof(HUDMission), Member = "Dequeue")]
 		[CalledBy(Type = typeof(HUDMission), Member = "OnAnimationComplete")]
+		[CallerCount(Count = 3)]
 		public void Clear()
 		{
 		}
@@ -25,7 +25,7 @@ public class HUDMission : MonoBehaviour
 		[CallerCount(Count = 0)]
 		public bool IsValid()
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -51,39 +51,37 @@ public class HUDMission : MonoBehaviour
 
 	private float m_AnimationElapsedSec;
 
-	[Calls(Type = typeof(StatusUpdate), Member = "Clear")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePopupPanels")]
 	[CalledBy(Type = typeof(HUDMission), Member = "OnAnimationComplete")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePopupPanels")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(StatusUpdate), Member = "Clear")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 3)]
 	public void Disable()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "AddMission")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionName")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionDesc")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionTexture")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionName")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MarkMissionComplete")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateMissionTimer")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "AddMission")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MarkMissionComplete")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionInfoFromID")]
 	[Calls(Type = typeof(HUDObjectives), Member = "Dequeue")]
-	[CallerCount(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(HUDMission), Member = "Dequeue")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionInfoFromID")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 4)]
 	public void Enqueue(MissionStatusType type, string id)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjective")]
 	[Calls(Type = typeof(HUDMission), Member = "Dequeue")]
 	[CallsUnknownMethods(Count = 2)]
@@ -91,85 +89,81 @@ public class HUDMission : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetDebugText()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	public void HideDisplay()
 	{
 	}
 
+	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 12)]
-	[DeduplicatedMethod]
 	public bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Animator), Member = "PlayInFixedTime")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void RestoreDisplay()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInParent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
+	[CalledBy(Type = typeof(HUDMission), Member = "Enqueue")]
+	[CalledBy(Type = typeof(HUDMission), Member = "EnqueueObjective")]
+	[CalledBy(Type = typeof(HUDMission), Member = "OnAnimationComplete")]
+	[CalledBy(Type = typeof(HUDObjectives), Member = "EnqueueObjective")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjective")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionInfoFromID")]
+	[Calls(Type = typeof(StatusUpdate), Member = "Clear")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CalledBy(Type = typeof(HUDMission), Member = "EnqueueObjective")]
-	[CalledBy(Type = typeof(HUDMission), Member = "OnAnimationComplete")]
-	[CalledBy(Type = typeof(HUDObjectives), Member = "EnqueueObjective")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(HUDMission), Member = "Enqueue")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjective")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(StatusUpdate), Member = "Clear")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionInfoFromID")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 4)]
 	private void Dequeue()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(HUDMission), Member = "Dequeue")]
-	[Calls(Type = typeof(HUDMission), Member = "Disable")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(StatusUpdate), Member = "Clear")]
+	[Calls(Type = typeof(HUDMission), Member = "Disable")]
+	[Calls(Type = typeof(HUDMission), Member = "Dequeue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnAnimationComplete()
 	{
 	}

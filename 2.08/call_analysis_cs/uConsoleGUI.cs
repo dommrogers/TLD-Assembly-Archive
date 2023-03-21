@@ -22,7 +22,7 @@ public class uConsoleGUI : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -31,9 +31,9 @@ public class uConsoleGUI : MonoBehaviour
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 28)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -54,18 +54,18 @@ public class uConsoleGUI : MonoBehaviour
 		{
 		}
 
-		[CallsUnknownMethods(Count = 3)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(InputField), Member = "MoveTextEnd")]
+		[CallsUnknownMethods(Count = 3)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 4)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 4)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -87,31 +87,30 @@ public class uConsoleGUI : MonoBehaviour
 
 	private int m_LogScrollOffset;
 
-	[Calls(Type = typeof(InputField), Member = "DeactivateInputField")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(InputField), Member = "DeactivateInputField")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsoleGUI), Member = "MaybeInstantiateEventSystem")]
 	[Calls(Type = typeof(InputField), Member = "DeactivateInputField")]
 	[Calls(Type = typeof(uConsoleGUI), Member = "UpdateUIDimensions")]
 	[Calls(Type = typeof(uConsoleGUI), Member = "UpdateUIWithCustomizationSettings")]
 	[Calls(Type = typeof(uConsoleGUI), Member = "Animate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
 
 	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessLogInput")]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessLogInput")]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessLogInput")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(uConsoleLog), Member = "GetNumLines")]
 	[Calls(Type = typeof(uConsoleLog), Member = "GetNumLines")]
 	[Calls(Type = typeof(uConsoleGUI), Member = "RefreshLogText")]
 	public void ScrollLogUp()
@@ -130,41 +129,36 @@ public class uConsoleGUI : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public void ScrollLogDownMax()
 	{
 	}
 
-	[CalledBy(Type = typeof(uConsoleGUI), Member = "ScrollLogDown")]
-	[CalledBy(Type = typeof(uConsoleLog), Member = "Add")]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessLogInput")]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessLogInput")]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessLogInput")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessLogInput")]
-	[CalledBy(Type = typeof(uConsoleGUI), Member = "ScrollLogUp")]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessLogInput")]
 	[CalledBy(Type = typeof(uConsole), Member = "Start")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(uConsoleLog), Member = "GetNumLines")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 10)]
 	[CalledBy(Type = typeof(uConsoleCommands), Member = "ClearLogAndHistory")]
+	[CalledBy(Type = typeof(uConsoleGUI), Member = "ScrollLogUp")]
+	[CalledBy(Type = typeof(uConsoleGUI), Member = "ScrollLogDown")]
+	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessLogInput")]
+	[CalledBy(Type = typeof(uConsoleLog), Member = "Add")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(uConsoleLog), Member = "GetNumLines")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 2)]
 	public void RefreshLogText()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessSubmitInput")]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessActivationInput")]
 	[CalledBy(Type = typeof(uConsoleInput), Member = "SubmitCommand")]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessActivationInput")]
+	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessSubmitInput")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(InputField), Member = "ActivateInputField")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void InputFieldSetFocus()
 	{
 	}
@@ -184,28 +178,28 @@ public class uConsoleGUI : MonoBehaviour
 		return null;
 	}
 
+	[CalledBy(Type = typeof(uConsoleInput), Member = "SubmitCommand")]
 	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessActivationInput")]
 	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessSubmitInput")]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "SubmitCommand")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(InputField), Member = "get_compositionString")]
-	[Calls(Type = typeof(InputField), Member = "SetText")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(InputField), Member = "SetText")]
+	[Calls(Type = typeof(InputField), Member = "get_compositionString")]
 	[Calls(Type = typeof(InputField), Member = "UpdateLabel")]
+	[CallsUnknownMethods(Count = 1)]
 	public void InputFieldClearText()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputField), Member = "SetText")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void InputFieldSetText(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(InputField), Member = "MoveTextEnd")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputField), Member = "MoveTextEnd")]
+	[CallsUnknownMethods(Count = 1)]
 	public void InputFieldMoveCaretToEnd()
 	{
 	}
@@ -217,101 +211,80 @@ public class uConsoleGUI : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(uConsoleGUI), Member = "Update")]
-	[Calls(Type = typeof(RectTransform), Member = "get_anchoredPosition")]
-	[Calls(Type = typeof(RectTransform), Member = "set_anchoredPosition")]
-	[Calls(Type = typeof(RectTransform), Member = "get_anchoredPosition")]
-	[Calls(Type = typeof(RectTransform), Member = "get_anchoredPosition")]
-	[Calls(Type = typeof(RectTransform), Member = "set_anchoredPosition")]
-	[Calls(Type = typeof(RectTransform), Member = "get_anchoredPosition")]
-	[Calls(Type = typeof(RectTransform), Member = "get_anchoredPosition")]
-	[Calls(Type = typeof(RectTransform), Member = "set_anchoredPosition")]
-	[Calls(Type = typeof(RectTransform), Member = "get_anchoredPosition")]
-	[Calls(Type = typeof(RectTransform), Member = "get_anchoredPosition")]
-	[Calls(Type = typeof(uConsoleGUI), Member = "CalculatePixelsMovedForAnimation")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(RectTransform), Member = "get_anchoredPosition")]
-	[Calls(Type = typeof(RectTransform), Member = "set_anchoredPosition")]
-	[Calls(Type = typeof(RectTransform), Member = "get_anchoredPosition")]
-	[Calls(Type = typeof(uConsoleGUI), Member = "CalculatePixelsMovedForAnimation")]
-	[Calls(Type = typeof(RectTransform), Member = "get_anchoredPosition")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(RectTransform), Member = "get_anchoredPosition")]
+	[Calls(Type = typeof(uConsoleGUI), Member = "CalculatePixelsMovedForAnimation")]
+	[Calls(Type = typeof(RectTransform), Member = "set_anchoredPosition")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Animate(float deltaTimeSeconds)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(uConsoleGUI), Member = "Animate")]
 	[CalledBy(Type = typeof(uConsoleGUI), Member = "Animate")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private float CalculatePixelsMovedForAnimation(float deltaSeconds, float fullAnimateSeconds)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(RectTransform), Member = "SetSizeWithCurrentAnchors")]
-	[Calls(Type = typeof(RectTransform), Member = "SetSizeWithCurrentAnchors")]
-	[Calls(Type = typeof(RectTransform), Member = "SetSizeWithCurrentAnchors")]
-	[Calls(Type = typeof(uConsoleGUI), Member = "GetInputFieldHeightInPixels")]
-	[Calls(Type = typeof(RectTransform), Member = "SetSizeWithCurrentAnchors")]
-	[Calls(Type = typeof(Graphic), Member = "get_rectTransform")]
-	[Calls(Type = typeof(uConsoleGUI), Member = "GetInputFieldHeightInPixels")]
-	[Calls(Type = typeof(Graphic), Member = "get_rectTransform")]
 	[CalledBy(Type = typeof(uConsoleGUI), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(RectTransform), Member = "SetSizeWithCurrentAnchors")]
+	[Calls(Type = typeof(uConsoleGUI), Member = "GetInputFieldHeightInPixels")]
+	[Calls(Type = typeof(Graphic), Member = "get_rectTransform")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
 	private void UpdateUIDimensions()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(uConsoleGUI), Member = "UpdateUIDimensions")]
 	[CalledBy(Type = typeof(uConsoleGUI), Member = "UpdateUIDimensions")]
 	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetInputFieldHeightInPixels()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(uConsoleGUI), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(Text), Member = "set_font")]
 	[Calls(Type = typeof(Text), Member = "set_font")]
 	[Calls(Type = typeof(Selectable), Member = "get_image")]
-	[CalledBy(Type = typeof(uConsoleGUI), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 1)]
 	private void UpdateUIWithCustomizationSettings()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private int ComputeMaxDisplayLinesForLog()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(uConsoleGUI), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(EventSystem), Member = "get_current")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[CalledBy(Type = typeof(uConsoleGUI), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void MaybeInstantiateEventSystem()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputField), Member = "DeactivateInputField")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private void MaybeDeactivateInputField()
 	{
 	}

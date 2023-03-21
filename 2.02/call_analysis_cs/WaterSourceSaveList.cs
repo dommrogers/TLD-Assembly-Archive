@@ -5,10 +5,11 @@ public class WaterSourceSaveList
 {
 	public List<WaterSourceSaveData> m_SerializedWaterSources;
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(WaterSourceManager), Member = "Serialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public WaterSourceSaveList()
 	{
 	}

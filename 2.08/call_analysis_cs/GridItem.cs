@@ -51,9 +51,9 @@ public class GridItem : MonoBehaviour
 
 	private int m_SelectionIndex;
 
-	[CalledBy(Type = typeof(GridUI), Member = "InitializeNewItem")]
-	[CalledBy(Type = typeof(GridUI), Member = "Initialize")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(GridUI), Member = "Initialize")]
+	[CalledBy(Type = typeof(GridUI), Member = "InitializeNewItem")]
 	[CallerCount(Count = 2)]
 	public void Initialize(GridUI gridUi)
 	{
@@ -68,7 +68,7 @@ public class GridItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public int GetSelectionIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -76,31 +76,26 @@ public class GridItem : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Update")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Update")]
-	[CalledBy(Type = typeof(GridUI), Member = "RefreshTable")]
-	[CalledBy(Type = typeof(GridUI), Member = "RefreshTable")]
 	[CalledBy(Type = typeof(GridUI), Member = "Update")]
-	[Calls(Type = typeof(GridUI), Member = "MoveSelectedSpriteAndTween")]
-	[CalledBy(Type = typeof(GridUI), Member = "Update")]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIButtonColor), Member = "UpdateColor")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIButtonColor), Member = "UpdateColor")]
-	[CallsDeduplicatedMethods(Count = 12)]
+	[CalledBy(Type = typeof(GridUI), Member = "RefreshTable")]
+	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Update")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UIButtonColor), Member = "UpdateColor")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
 	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[Calls(Type = typeof(GridUI), Member = "MoveSelectedSpriteAndTween")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 6)]
 	public void ToggleSelection(bool toggleVal)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsSelected()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

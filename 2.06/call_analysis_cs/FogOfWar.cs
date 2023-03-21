@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.AddressableAssets;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Rendering;
 
 public class FogOfWar : MonoBehaviour
@@ -108,107 +110,81 @@ public class FogOfWar : MonoBehaviour
 	private const int VISTA_PASS = 1;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 85)]
+	[CallerCount(Count = 93)]
 	public void SetOwner(Panel_Map map)
 	{
 	}
 
+	[CalledBy(Type = typeof(FogOfWar), Member = "OnEnable")]
 	[CalledBy(Type = typeof(FogOfWar), Member = "ProcessList")]
-	[CalledBy(Type = typeof(FogOfWar), Member = "OnEnable")]
-	[CalledBy(Type = typeof(FogOfWar), Member = "OnEnable")]
-	[CalledBy(Type = typeof(FogOfWar), Member = "OnEnable")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(AssetHelper), Member = "TryLoadAsset")]
 	private bool MaybeLoadTextureAsset(string filename, ref Texture2D texture)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
-	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
-	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FogOfWar), Member = "RefreshCommandBuffer")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(FogOfWar), Member = "RefreshCommandBuffer")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(FogOfWar), Member = "MaybeLoadTextureAsset")]
-	[Calls(Type = typeof(FogOfWar), Member = "MaybeLoadTextureAsset")]
-	[Calls(Type = typeof(FogOfWar), Member = "MaybeLoadTextureAsset")]
-	[CallsDeduplicatedMethods(Count = 14)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Material), Member = ".ctor")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
+	[Calls(Type = typeof(FogOfWar), Member = "RefreshCommandBuffer")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 33)]
 	private void OnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(CommandBuffer), Member = "Dispose")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(CommandBuffer), Member = "Dispose")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(CommandBuffer), Member = "Dispose")]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Addressables), Member = "Release")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 13)]
 	private void OnDisable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInParent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(FogOfWar), Member = "RefreshCommandBuffer")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(FogOfWar), Member = "RefreshCommandBuffer")]
-	[Calls(Type = typeof(RenderTexture), Member = "Create")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CommandBuffer), Member = "Clear")]
+	[Calls(Type = typeof(FogOfWar), Member = "RefreshCommandBuffer")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(FogOfWar), Member = "RefreshCommandBuffer")]
-	[Calls(Type = typeof(CommandBuffer), Member = "Clear")]
-	[Calls(Type = typeof(CommandBuffer), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(RenderTexture), Member = "Create")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(FogOfWar), Member = "RefreshCommandBuffer")]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Map), Member = "GetDetailLevelAlpha")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Panel_Map), Member = "GetDetailLevelAlpha")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void LateUpdate()
 	{
 	}
@@ -219,57 +195,51 @@ public class FogOfWar : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(FogOfWar), Member = "RefreshCommandBuffer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(FogOfWar), Member = "RefreshCommandBuffer")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "LoadMapElementsForScene")]
-	[Calls(Type = typeof(Path), Member = "GetFileNameWithoutExtension")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Path), Member = "GetFileNameWithoutExtension")]
 	[Calls(Type = typeof(FogOfWar), Member = "MaybeLoadTextureAsset")]
+	[Calls(Type = typeof(FogOfWar), Member = "RefreshCommandBuffer")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void ProcessList(List<DetailSurveyPosition> dsps, List<VistaLocationData> vistaLocations, float sceneRadius, float mapRadius)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 18)]
-	[CalledBy(Type = typeof(FogOfWar), Member = "ProcessList")]
-	[CalledBy(Type = typeof(FogOfWar), Member = "ProcessList")]
-	[CalledBy(Type = typeof(FogOfWar), Member = "Update")]
-	[CalledBy(Type = typeof(FogOfWar), Member = "Update")]
-	[CalledBy(Type = typeof(FogOfWar), Member = "Update")]
-	[CalledBy(Type = typeof(FogOfWar), Member = "Update")]
 	[CalledBy(Type = typeof(FogOfWar), Member = "OnEnable")]
-	[CalledBy(Type = typeof(FogOfWar), Member = "OnEnable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(CommandBuffer), Member = "Blit")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(CommandBuffer), Member = "Blit")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalFloat")]
+	[CalledBy(Type = typeof(FogOfWar), Member = "Update")]
+	[CalledBy(Type = typeof(FogOfWar), Member = "ProcessList")]
 	[CallerCount(Count = 8)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(FogOfWar), Member = "UpdateShaderConstants")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
 	[Calls(Type = typeof(CommandBuffer), Member = "ClearRenderTarget")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetGlobalFloat")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetRenderTarget")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
+	[Calls(Type = typeof(CommandBuffer), Member = "Blit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 18)]
 	private void RefreshCommandBuffer(CommandBuffer commandBuffer, RenderTargetIdentifier renderTargetId, Texture2D map)
 	{
 	}
 
+	[CalledBy(Type = typeof(FogOfWar), Member = "RefreshCommandBuffer")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(FogOfWar), Member = "RefreshCommandBuffer")]
 	[CallsUnknownMethods(Count = 6)]
 	private void UpdateShaderConstants()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public FogOfWar()
 	{

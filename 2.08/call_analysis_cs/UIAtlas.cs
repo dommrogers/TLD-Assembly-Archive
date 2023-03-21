@@ -30,7 +30,7 @@ public class UIAtlas : MonoBehaviour
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(bool);
+				return false;
 			}
 		}
 
@@ -59,13 +59,13 @@ public class UIAtlas : MonoBehaviour
 		{
 		}
 
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		internal int _003CSortAlphabetically_003Eb__30_0(UISpriteData s1, UISpriteData s2)
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -89,20 +89,19 @@ public class UIAtlas : MonoBehaviour
 
 	public Material spriteMaterial
 	{
-		[CallerCount(Count = 4)]
 		[CalledBy(Type = typeof(UIAtlas), Member = "get_premultipliedAlpha")]
 		[CalledBy(Type = typeof(UIFont), Member = "set_atlas")]
 		[CalledBy(Type = typeof(UIFont), Member = "get_material")]
 		[CalledBy(Type = typeof(UISprite), Member = "get_material")]
+		[CallerCount(Count = 4)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -110,18 +109,17 @@ public class UIAtlas : MonoBehaviour
 
 	public bool premultipliedAlpha
 	{
-		[Calls(Type = typeof(string), Member = "Contains")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[Calls(Type = typeof(Material), Member = "get_shader")]
-		[Calls(Type = typeof(Material), Member = "get_shader")]
-		[Calls(Type = typeof(UIAtlas), Member = "get_spriteMaterial")]
-		[CallerCount(Count = 2)]
 		[CalledBy(Type = typeof(UIFont), Member = "get_premultipliedAlphaShader")]
 		[CalledBy(Type = typeof(UISprite), Member = "get_premultipliedAlpha")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(UIAtlas), Member = "get_spriteMaterial")]
+		[Calls(Type = typeof(Material), Member = "get_shader")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "Contains")]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -129,13 +127,11 @@ public class UIAtlas : MonoBehaviour
 	{
 		[CalledBy(Type = typeof(UIAtlas), Member = "GetRandomSprite")]
 		[CalledBy(Type = typeof(UISprite), Member = "set_atlas")]
-		[CalledBy(Type = typeof(UISprite), Member = "set_atlas")]
-		[CalledBy(Type = typeof(UISprite), Member = "GetAtlasSprite")]
 		[CalledBy(Type = typeof(UISprite), Member = "GetAtlasSprite")]
 		[CalledBy(Type = typeof(UISpriteAnimation), Member = "RebuildSpriteList")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 6)]
 		[Calls(Type = typeof(UIAtlas), Member = "Upgrade")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -149,11 +145,11 @@ public class UIAtlas : MonoBehaviour
 
 	public Texture texture
 	{
-		[CallerCount(Count = 3)]
-		[Calls(Type = typeof(Material), Member = "get_mainTexture")]
 		[CalledBy(Type = typeof(BMSymbol), Member = "Validate")]
 		[CalledBy(Type = typeof(UIFont), Member = "Trim")]
 		[CalledBy(Type = typeof(UIFont), Member = "UpdateUVRect")]
+		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(Material), Member = "get_mainTexture")]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -164,18 +160,18 @@ public class UIAtlas : MonoBehaviour
 	public float pixelSize
 	{
 		[CalledBy(Type = typeof(UIPopupList), Member = "GetHighlightPosition")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(UIStretch), Member = "Update")]
-		[CalledBy(Type = typeof(UISprite), Member = "get_pixelSize")]
 		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
+		[CalledBy(Type = typeof(UISprite), Member = "get_pixelSize")]
+		[CalledBy(Type = typeof(UIStretch), Member = "Update")]
 		[CallerCount(Count = 4)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -184,189 +180,168 @@ public class UIAtlas : MonoBehaviour
 	public UIAtlas replacement
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 16)]
+		[CallerCount(Count = 18)]
 		get
 		{
 			return null;
 		}
-		[CalledBy(Type = typeof(InterfaceManager), Member = "LoadReplacementAtlases")]
 		[CalledBy(Type = typeof(UIAtlas), Member = "set_replacement")]
-		[Calls(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
-		[Calls(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
-		[Calls(Type = typeof(UIAtlas), Member = "set_replacement")]
-		[CallerCount(Count = 4)]
+		[CalledBy(Type = typeof(InterfaceManager), Member = "LoadReplacementAtlases")]
 		[CalledBy(Type = typeof(InterfaceManager), Member = "ResetReplacementAtlases")]
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(InterfaceManager), Member = "OnDestroy")]
+		[CallerCount(Count = 4)]
+		[Calls(Type = typeof(UIAtlas), Member = "set_replacement")]
+		[Calls(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(UIAtlas), Member = "GetSprite")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(UIImageButton), Member = "SetSprite")]
 	[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
 	[CalledBy(Type = typeof(BMSymbol), Member = "Validate")]
 	[CalledBy(Type = typeof(NGUITools), Member = "AddSprite")]
 	[CalledBy(Type = typeof(UIAtlas), Member = "GetSprite")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CalledBy(Type = typeof(UIAtlas), Member = "GetSprite")]
 	[CalledBy(Type = typeof(UIAtlas), Member = "GetRandomSprite")]
-	[CalledBy(Type = typeof(UIFont), Member = "get_sprite")]
 	[CalledBy(Type = typeof(UIFont), Member = "get_sprite")]
 	[CalledBy(Type = typeof(UISprite), Member = "GetAtlasSprite")]
 	[CalledBy(Type = typeof(UISprite), Member = "OnFill")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UIAtlas), Member = "MarkSpriteListAsChanged")]
-	[Calls(Type = typeof(UIAtlas), Member = "MarkSpriteListAsChanged")]
-	[Calls(Type = typeof(UIAtlas), Member = "Upgrade")]
-	[Calls(Type = typeof(UIAtlas), Member = "GetSprite")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 11)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(UIAtlas), Member = "GetSprite")]
+	[Calls(Type = typeof(UIAtlas), Member = "Upgrade")]
 	[Calls(Type = typeof(UIAtlas), Member = "MarkSpriteListAsChanged")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 13)]
 	public UISpriteData GetSprite(string name)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UIAtlas), Member = "get_spriteList")]
-	[Calls(Type = typeof(UIAtlas), Member = "GetSprite")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(UIAtlas), Member = "GetSprite")]
+	[Calls(Type = typeof(UIAtlas), Member = "get_spriteList")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public string GetRandomSprite(string startsWith)
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(UIAtlas), Member = "GetSprite")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(UIAtlas), Member = "GetSprite")]
 	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(UIAtlas), Member = "GetSprite")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void MarkSpriteListAsChanged()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Sort")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	public void SortAlphabetically()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UIAtlas), Member = "Upgrade")]
-	[Calls(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
+	[CalledBy(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
+	[CalledBy(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
-	[CalledBy(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
+	[Calls(Type = typeof(UIAtlas), Member = "Upgrade")]
+	[Calls(Type = typeof(BetterList<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public BetterList<string> GetListOfSprites()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UIAtlas), Member = "Upgrade")]
+	[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
+	[Calls(Type = typeof(string), Member = "Split")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(BetterList<>), Member = "Add")]
 	[Calls(Type = typeof(string), Member = "Contains")]
 	[Calls(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
 	[Calls(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(string), Member = "Split")]
-	[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
-	[Calls(Type = typeof(UIAtlas), Member = "Upgrade")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 5)]
 	public BetterList<string> GetListOfSprites(string match)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(UIAtlas), Member = "CheckIfRelated")]
-	[CalledBy(Type = typeof(UIAtlas), Member = "CheckIfRelated")]
 	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private bool References(UIAtlas atlas)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UIAtlas), Member = "References")]
-	[CalledBy(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
 	[CalledBy(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UIAtlas), Member = "References")]
-	[CalledBy(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
 	public static bool CheckIfRelated(UIAtlas a, UIAtlas b)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UIFont), Member = "get_atlas")]
-	[Calls(Type = typeof(UIFont), Member = "set_atlas")]
-	[Calls(Type = typeof(UIFont), Member = "set_atlas")]
-	[Calls(Type = typeof(UIFont), Member = "get_atlas")]
-	[Calls(Type = typeof(UIAtlas), Member = "CheckIfRelated")]
-	[CalledBy(Type = typeof(UIAtlas), Member = "set_spriteMaterial")]
-	[Calls(Type = typeof(UIAtlas), Member = "CheckIfRelated")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(UIAtlas), Member = "set_replacement")]
-	[CalledBy(Type = typeof(UIAtlas), Member = "set_replacement")]
-	[Calls(Type = typeof(UILabel), Member = "set_bitmapFont")]
-	[Calls(Type = typeof(UILabel), Member = "set_bitmapFont")]
 	[CalledBy(Type = typeof(UIAtlas), Member = "set_spriteMaterial")]
 	[CalledBy(Type = typeof(UIAtlas), Member = "set_pixelSize")]
-	[Calls(Type = typeof(UIFont), Member = "get_atlas")]
+	[CalledBy(Type = typeof(UIAtlas), Member = "set_replacement")]
 	[CalledBy(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
-	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
-	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
-	[Calls(Type = typeof(UIAtlas), Member = "CheckIfRelated")]
-	[Calls(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
+	[Calls(Type = typeof(NGUITools), Member = "FindActive")]
+	[Calls(Type = typeof(UIAtlas), Member = "CheckIfRelated")]
+	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
 	[Calls(Type = typeof(ResourcesAPI), Member = "get_ActiveAPI")]
+	[Calls(Type = typeof(UIFont), Member = "get_atlas")]
+	[Calls(Type = typeof(UIFont), Member = "set_atlas")]
+	[Calls(Type = typeof(UILabel), Member = "set_bitmapFont")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void MarkAsChanged()
 	{
 	}
 
+	[CalledBy(Type = typeof(UIAtlas), Member = "get_spriteList")]
+	[CalledBy(Type = typeof(UIAtlas), Member = "GetSprite")]
+	[CalledBy(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
+	[CalledBy(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
+	[CalledBy(Type = typeof(UIAtlas), Member = "Upgrade")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
 	[Calls(Type = typeof(NGUIMath), Member = "ConvertToPixels")]
 	[Calls(Type = typeof(UISpriteData), Member = ".ctor")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(UIAtlas), Member = "Upgrade")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
-	[Calls(Type = typeof(NGUIMath), Member = "ConvertToPixels")]
-	[CalledBy(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
-	[CalledBy(Type = typeof(UIAtlas), Member = "Upgrade")]
-	[CallsUnknownMethods(Count = 16)]
-	[CalledBy(Type = typeof(UIAtlas), Member = "get_spriteList")]
-	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
-	[CalledBy(Type = typeof(UIAtlas), Member = "GetSprite")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 16)]
 	private bool Upgrade()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(UISDAtlas), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public UIAtlas()
 	{
 	}

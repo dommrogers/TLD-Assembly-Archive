@@ -14,34 +14,34 @@ public class StatementNode : DTNode
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(DialogueTree), Member = "RequestSubtitles")]
-	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
+	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
+	[Calls(Type = typeof(DialogueTree), Member = "RequestSubtitles")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
 	}
 
-	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnStatementFinish()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Statement), Member = ".ctor")]
 	[Calls(Type = typeof(DTNode), Member = ".ctor")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Statement), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	public StatementNode()
 	{
 	}

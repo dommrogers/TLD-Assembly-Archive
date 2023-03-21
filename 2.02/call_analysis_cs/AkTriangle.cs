@@ -15,11 +15,11 @@ public class AkTriangle : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(ushort);
+			return 0;
 		}
+		[CalledBy(Type = typeof(AkSurfaceReflector), Member = "AddGeometrySet")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(AkSurfaceReflector), Member = "AddGeometrySet")]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -28,16 +28,16 @@ public class AkTriangle : IDisposable
 
 	public ushort point1
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(ushort);
+			return 0;
 		}
+		[CalledBy(Type = typeof(AkSurfaceReflector), Member = "AddGeometrySet")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(AkSurfaceReflector), Member = "AddGeometrySet")]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -51,11 +51,11 @@ public class AkTriangle : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(ushort);
+			return 0;
 		}
+		[CalledBy(Type = typeof(AkSurfaceReflector), Member = "AddGeometrySet")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(AkSurfaceReflector), Member = "AddGeometrySet")]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -64,16 +64,16 @@ public class AkTriangle : IDisposable
 
 	public ushort surface
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
-			return default(ushort);
+			return 0;
 		}
+		[CalledBy(Type = typeof(AkSurfaceReflector), Member = "AddGeometrySet")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(AkSurfaceReflector), Member = "AddGeometrySet")]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -91,12 +91,12 @@ public class AkTriangle : IDisposable
 	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkTriangle obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal virtual void setCPtr(IntPtr cPtr)
 	{
 	}
@@ -108,47 +108,47 @@ public class AkTriangle : IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public AkTriangle()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public AkTriangle(ushort in_pt0, ushort in_pt1, ushort in_pt2, ushort in_surfaceInfo)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkTriangle_Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Clear()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkTriangle_GetSizeOf")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static int GetSizeOf()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkTriangle_Clone")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void Clone(AkTriangle other)
 	{
 	}

@@ -11,10 +11,10 @@ public class MissionObjectEventInfo
 
 	public string prefabType;
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "get_name")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public MissionObjectEventInfo(MissionObjectIdentifier moi)
 	{
 	}

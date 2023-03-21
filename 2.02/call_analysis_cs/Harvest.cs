@@ -20,7 +20,7 @@ public class Harvest : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool RequiresTool()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

@@ -11,14 +11,14 @@ public class MissingBBParameterType : BBParameter<object>, IMissingRecoverable
 
 	private string ParadoxNotion_002ESerialization_002EIMissingRecoverable_002EmissingType
 	{
-		[CallerCount(Count = 3)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 3)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 17)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 19)]
 		set
 		{
 		}
@@ -27,20 +27,21 @@ public class MissingBBParameterType : BBParameter<object>, IMissingRecoverable
 	private string ParadoxNotion_002ESerialization_002EIMissingRecoverable_002ErecoveryState
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 11)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 14)]
+		[CallerCount(Count = 18)]
 		set
 		{
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public MissingBBParameterType()
 	{
 		((BBParameter<>)(object)this)._002Ector();

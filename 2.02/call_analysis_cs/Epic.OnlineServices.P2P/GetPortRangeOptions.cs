@@ -5,7 +5,7 @@ namespace Epic.OnlineServices.P2P;
 public class GetPortRangeOptions
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public GetPortRangeOptions()
 	{
 	}

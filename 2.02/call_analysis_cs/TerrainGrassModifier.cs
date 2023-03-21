@@ -19,9 +19,9 @@ public class TerrainGrassModifier : MonoBehaviour
 
 		public static int m_NextId;
 
+		[CalledBy(Type = typeof(TerrainGrassModifier), Member = "DrawToMap")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(TerrainGrassModifier), Member = "DrawToMap")]
 		public ModifiedRegion(int layer, int x, int y, int[,] cellData)
 		{
 		}
@@ -31,23 +31,24 @@ public class TerrainGrassModifier : MonoBehaviour
 
 	private List<ModifiedRegion> m_ModifiedRegions;
 
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 18)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(TerrainData), Member = "SetDetailLayer")]
-	[CallsUnknownMethods(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(TerrainData), Member = "SetDetailLayer")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void OnDestroy()
 	{
 	}
@@ -64,41 +65,37 @@ public class TerrainGrassModifier : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(Panel_SnowShelterBuild), Member = "OnCancel")]
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "OnCancel")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(TerrainData), Member = "SetDetailLayer")]
+	[CalledBy(Type = typeof(Panel_SnowShelterBuild), Member = "OnCancel")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(TerrainData), Member = "SetDetailLayer")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	public void UndoLastOperation()
 	{
 	}
 
-	[Calls(Type = typeof(TerrainData), Member = "GetDetailLayer")]
-	[CalledBy(Type = typeof(TerrainGrassModifier), Member = "RemoveGrass")]
-	[CallsUnknownMethods(Count = 35)]
 	[CalledBy(Type = typeof(TerrainGrassModifier), Member = "AddGrass")]
-	[Calls(Type = typeof(TerrainData), Member = "SetDetailLayer")]
-	[Calls(Type = typeof(ModifiedRegion), Member = ".ctor")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[CallsDeduplicatedMethods(Count = 13)]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CalledBy(Type = typeof(TerrainGrassModifier), Member = "RemoveGrass")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(TerrainData), Member = "GetDetailLayer")]
+	[Calls(Type = typeof(ModifiedRegion), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(TerrainData), Member = "SetDetailLayer")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 35)]
 	private void DrawToMap(Vector3 position, float radius, int value, int layerIndex = -1)
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public TerrainGrassModifier()
 	{
 	}

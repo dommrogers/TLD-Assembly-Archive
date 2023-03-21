@@ -13,7 +13,7 @@ public class PlayableBehaviourSubtitle : PlayableBehaviour
 	private bool m_IsShowingSubtitles;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "ShowSubtitles")]
 	[CallsUnknownMethods(Count = 1)]
 	public override void OnBehaviourPlay(Playable playable, FrameData info)
@@ -21,7 +21,7 @@ public class PlayableBehaviourSubtitle : PlayableBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitlesImmediate")]
 	[CallsUnknownMethods(Count = 1)]
 	public override void OnBehaviourPause(Playable playable, FrameData info)

@@ -82,99 +82,97 @@ public class IceFishingHole : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(IceFishingHole), Member = "CancelFishing")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(IceFishingHole), Member = "CancelFishing")]
 	private void OnDisable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(IceFishingHole), Member = "UpdateFrozenState")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "IsPaused")]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(IceFishingHole), Member = "MaybeCatchFish")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(IceFishingHole), Member = "UpdateFrozenState")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "IsPaused")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void Update()
 	{
 	}
 
+	[CalledBy(Type = typeof(IceFishingHole), Member = "SerializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(IceFishingHole), Member = "SerializeAll")]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(IceFishingHole), Member = "SetNormalizedFrozen")]
-	[Calls(Type = typeof(IceFishingHole), Member = "SetNormalizedFrozen")]
-	[Calls(Type = typeof(IceFishingHole), Member = "SetNormalizedFrozen")]
 	[CalledBy(Type = typeof(IceFishingHole), Member = "DeserializeAll")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(IceFishingHole), Member = "SetNormalizedFrozen")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Reset()
 	{
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(IceFishingHole), Member = "Serialize")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 9)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(IceFishingHole), Member = "FindIceFishingHoleByGuid")]
 	[Calls(Type = typeof(IceFishingHole), Member = "FindIceFishingHoleByPosition")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(IceFishingHole), Member = "Deserialize")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void DeserializeAll(string text)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 3)]
 	public void UpdateInteraction(BaseInteraction baseInteraction)
 	{
 	}
 
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Inventory), Member = "GetBestFishingTackle")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void PerformInteraction()
 	{
 	}
@@ -183,47 +181,43 @@ public class IceFishingHole : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetNormalizedFrozen()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_IceFishingHoleClear), Member = "OnBreakIceComplete")]
-	[CalledBy(Type = typeof(Panel_IceFishingHoleClear), Member = "OnBreakIceComplete")]
-	[CalledBy(Type = typeof(IceFishingHole), Member = "UpdateFrozenState")]
-	[CalledBy(Type = typeof(IceFishingHole), Member = "Deserialize")]
+	[CalledBy(Type = typeof(IceFishingHole), Member = "Start")]
 	[CalledBy(Type = typeof(IceFishingHole), Member = "Deserialize")]
 	[CalledBy(Type = typeof(IceFishingHole), Member = "ClearHole")]
-	[CalledBy(Type = typeof(IceFishingHole), Member = "Start")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CalledBy(Type = typeof(IceFishingHole), Member = "UpdateFrozenState")]
+	[CalledBy(Type = typeof(Panel_IceFishingHoleClear), Member = "OnBreakIceComplete")]
+	[CallerCount(Count = 8)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(IceFishingHole), Member = "Deserialize")]
+	[CallsUnknownMethods(Count = 4)]
 	public void SetNormalizedFrozen(float normalized)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(IceFishingHole), Member = "SetNormalizedFrozen")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void ClearHole()
 	{
 	}
 
-	[Calls(Type = typeof(IceFishingHole), Member = "SetNextCatchTime")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_IceFishing), Member = "OnFish")]
 	[CalledBy(Type = typeof(Panel_IceFishing), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_IceFishing), Member = "OnFish")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(OnExitDelegate), Member = ".ctor")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(OnExitDelegate), Member = ".ctor")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[Calls(Type = typeof(IceFishingHole), Member = "SetNextCatchTime")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void StartFishing(float seconds, float minutes)
 	{
 	}
@@ -234,23 +228,24 @@ public class IceFishingHole : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(IceFishingHole), Member = "LineBreak")]
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "ProgressBarEnded")]
 	[CalledBy(Type = typeof(IceFishingHole), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(IceFishingHole), Member = "OnDisable")]
+	[CalledBy(Type = typeof(IceFishingHole), Member = "LineBreak")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ExitInspectGearMode")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "ProgressBarEnded")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void CancelFishing(bool fromInputManager = false)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsFishingInProgress()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -261,98 +256,97 @@ public class IceFishingHole : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(IceFishingHole), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "IsPaused")]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillIceFishing")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(Type = typeof(IceFishingHole), Member = "LineBreak")]
+	[Calls(Type = typeof(LootTableData), Member = "GetRandomGearItemPrefab")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(IceFishingHole), Member = "RevealFishInInspectMode")]
-	[Calls(Type = typeof(LootTableData), Member = "GetRandomGearItemPrefab")]
-	[Calls(Type = typeof(IceFishingHole), Member = "SetNextCatchTime")]
-	[CalledBy(Type = typeof(IceFishingHole), Member = "Update")]
-	[CallsUnknownMethods(Count = 6)]
 	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
-	[Calls(Type = typeof(IceFishingHole), Member = "LineBreak")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "IsPaused")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillIceFishing")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(IceFishingHole), Member = "SetNextCatchTime")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private void MaybeCatchFish()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillIceFishing")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool RollForLineBreak()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
 	[CalledBy(Type = typeof(IceFishingHole), Member = "MaybeCatchFish")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(IceFishingHole), Member = "CancelFishing")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(Type = typeof(IceFishingHole), Member = "CancelFishing")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void LineBreak()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(IceFishingHole), Member = "RevealFishInInspectMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
-	[Calls(Type = typeof(LootTableData), Member = "GetRandomGearItemPrefab")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LootTableData), Member = "GetRandomGearItemPrefab")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(IceFishingHole), Member = "RevealFishInInspectMode")]
+	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
+	[CallsUnknownMethods(Count = 1)]
 	private void CatchFish()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(IceFishingHole), Member = "CatchFish")]
 	[CalledBy(Type = typeof(IceFishingHole), Member = "MaybeCatchFish")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[CalledBy(Type = typeof(IceFishingHole), Member = "CatchFish")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(PlayerManager), Member = "EnterInspectGearMode")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillIceFishing")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillIceFishing")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillIceFishing")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(PlayerManager), Member = "EnterInspectGearMode")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 11)]
 	private void RevealFishInInspectMode(GameObject go)
 	{
 	}
 
 	[CalledBy(Type = typeof(IceFishingHole), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(TimeOfDay), Member = "GetTODHours")]
 	[Calls(Type = typeof(IceFishingHole), Member = "SetNormalizedFrozen")]
@@ -361,28 +355,28 @@ public class IceFishingHole : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private void SetFishingInProgress(bool inProgress)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(IceFishingHole), Member = "StartFishing")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[CalledBy(Type = typeof(IceFishingHole), Member = "MaybeCatchFish")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillIceFishing")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetNextCatchTime()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "IsPaused")]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateFishingTime(float realtimeSeconds)
@@ -391,19 +385,20 @@ public class IceFishingHole : MonoBehaviour
 
 	[CalledBy(Type = typeof(IceFishingHole), Member = "DeserializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	private static IceFishingHole FindIceFishingHoleByPosition(IceFishingHoleSaveData proxy)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(IceFishingHole), Member = "DeserializeAll")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	private static IceFishingHole FindIceFishingHoleByGuid(string guid)
 	{
 		return null;

@@ -19,11 +19,11 @@ public class FaithfulCartographerSO : ScriptableObject
 
 	public SandboxConfig m_Interloper;
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Object), Member = "get_name")]
 	[CalledBy(Type = typeof(AchievementManager), Member = "IsRegionCompleteFaithfulCartographer")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[CallsUnknownMethods(Count = 7)]
 	public SceneSetCount FindPresetCartographyAchevementSceneSetCount(string regionName)
 	{
 		return null;

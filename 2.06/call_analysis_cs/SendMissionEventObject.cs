@@ -7,10 +7,10 @@ public class SendMissionEventObject : MonoBehaviour
 
 	public SendMissionEventTrigger m_TriggerRequiredForEvent;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
+	[CallsUnknownMethods(Count = 1)]
 	public void PerformInteraction()
 	{
 	}

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Reflection;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
@@ -15,7 +16,7 @@ public abstract class ReflectedActionWrapper : ReflectedWrapper
 		public static Func<ParameterInfo, Type> _003C_003E9__0_0;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
@@ -30,32 +31,26 @@ public abstract class ReflectedActionWrapper : ReflectedWrapper
 		}
 	}
 
-	[CallsUnknownMethods(Count = 27)]
-	[CalledBy(Type = typeof(SetProperty), Member = "SetMethod")]
-	[CalledBy(Type = typeof(SetProperty), Member = "OnValidate")]
 	[CalledBy(Type = typeof(ReflectedWrapper), Member = "Create")]
-	[Calls(Type = typeof(BBParameter), Member = "SetBBFields")]
-	[Calls(Type = typeof(Activator), Member = "CreateInstance")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 10)]
+	[CalledBy(Type = typeof(SetProperty), Member = "OnValidate")]
+	[CalledBy(Type = typeof(SetProperty), Member = "SetMethod")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[Calls(Type = typeof(Activator), Member = "CreateInstance")]
+	[Calls(Type = typeof(BBParameter), Member = "SetBBFields")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 27)]
 	public new static ReflectedActionWrapper Create(MethodInfo method, IBlackboard bb)
 	{
 		return null;
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract void Call();
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	protected ReflectedActionWrapper()
 	{
 	}

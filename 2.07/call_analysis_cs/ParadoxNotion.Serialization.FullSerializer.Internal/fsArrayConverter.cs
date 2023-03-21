@@ -11,44 +11,46 @@ public class fsArrayConverter : fsConverter
 	[CallsUnknownMethods(Count = 1)]
 	public override bool CanProcess(Type type)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 3)]
 	public override bool RequestCycleSupport(Type storageType)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 3)]
 	public override bool RequestInheritanceSupport(Type storageType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsData), Member = "CreateList")]
+	[Calls(Type = typeof(fsData), Member = "Cast")]
 	[Calls(Type = typeof(fsSerializer), Member = "TrySerialize")]
 	[Calls(Type = typeof(fsResult), Member = "AddMessages")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(fsData), Member = "CreateList")]
+	[CallsUnknownMethods(Count = 6)]
 	public override fsResult TrySerialize(object instance, out fsData serialized, Type storageType)
 	{
 		serialized = null;
 		return default(fsResult);
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(fsResult), Member = "AddMessages")]
-	[Calls(Type = typeof(fsSerializer), Member = "TryDeserialize")]
-	[Calls(Type = typeof(ArrayList), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(fsBaseConverter), Member = "CheckType")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsBaseConverter), Member = "CheckType")]
 	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[Calls(Type = typeof(fsData), Member = "Cast")]
+	[Calls(Type = typeof(ArrayList), Member = ".ctor")]
+	[Calls(Type = typeof(fsSerializer), Member = "TryDeserialize")]
+	[Calls(Type = typeof(fsResult), Member = "AddMessages")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 2)]
 	public override fsResult TryDeserialize(fsData data, ref object instance, Type storageType)
 	{
 		return default(fsResult);

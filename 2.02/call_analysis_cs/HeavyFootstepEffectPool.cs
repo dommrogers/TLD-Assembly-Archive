@@ -32,7 +32,8 @@ public class HeavyFootstepEffectPool : EffectPool<HeavyFootstepEffectType>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(EffectPool<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public HeavyFootstepEffectPool()
 	{
 		((EffectPool<>)(object)this)._002Ector();

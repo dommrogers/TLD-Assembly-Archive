@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -48,33 +47,32 @@ public class LightDistanceCull : MonoBehaviour
 
 	private QualityLodBias m_CachedQuality;
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Light), Member = "get_intensity")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(ScriptLight), Member = "GetScriptLight")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(ScriptLight), Member = "GetScriptLight")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Light), Member = "get_intensity")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(LightDistanceCull), Member = "UpdateQualityValues")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "GetCurrentQualitySettings")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(LightDistanceCull), Member = "UpdateLights")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LightDistanceCull), Member = "UpdateLights")]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "GetCurrentQualitySettings")]
+	[Calls(Type = typeof(LightDistanceCull), Member = "UpdateQualityValues")]
+	[CallsUnknownMethods(Count = 3)]
 	private void LateUpdate()
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(LightDistanceCull), Member = "LateUpdate")]
+	[CallerCount(Count = 1)]
 	private void UpdateQualityValues()
 	{
 	}
@@ -83,23 +81,19 @@ public class LightDistanceCull : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private float DistanceToPlayer(Vector3 lightPos, Vector3 camPos)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
 	[CalledBy(Type = typeof(LightDistanceCull), Member = "LateUpdate")]
-	[Calls(Type = typeof(Light), Member = "get_intensity")]
-	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Light), Member = "get_intensity")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateLights()
 	{
 	}

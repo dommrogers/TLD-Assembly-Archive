@@ -25,7 +25,7 @@ public class InvisibleEntityManagerGlobalDataProxy
 	public List<IndoorWardData> m_IndoorWardLocations;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public InvisibleEntityManagerGlobalDataProxy()
 	{
 	}

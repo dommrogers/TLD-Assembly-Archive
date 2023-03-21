@@ -20,9 +20,9 @@ public class DeleteCacheCallbackInfo : ICallbackInfo, ISettable
 		{
 			return default(Result);
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
@@ -30,16 +30,16 @@ public class DeleteCacheCallbackInfo : ICallbackInfo, ISettable
 
 	public object ClientData
 	{
-		[CallerCount(Count = 29)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -49,14 +49,14 @@ public class DeleteCacheCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -69,26 +69,26 @@ public class DeleteCacheCallbackInfo : ICallbackInfo, ISettable
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(DeleteCacheCallbackInfoInternal), Member = "get_LocalUserId")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DeleteCacheCallbackInfoInternal), Member = "get_ClientData")]
+	[Calls(Type = typeof(DeleteCacheCallbackInfoInternal), Member = "get_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	internal void Set(DeleteCacheCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(DeleteCacheCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(DeleteCacheCallbackInfoInternal), Member = "get_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public DeleteCacheCallbackInfo()
 	{
 	}

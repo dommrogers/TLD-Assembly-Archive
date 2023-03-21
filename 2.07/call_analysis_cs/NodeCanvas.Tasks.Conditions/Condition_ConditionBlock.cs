@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 
@@ -18,36 +19,33 @@ public class Condition_ConditionBlock : ConditionTask
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(string), Member = "Concat")]
 		get
 		{
 			return null;
 		}
 	}
 
+	[CalledBy(Type = typeof(Condition_ConditionBlock), Member = "OnCheck")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(NCUtils), Member = "ParseConditional")]
-	[CalledBy(Type = typeof(Condition_ConditionBlock), Member = "OnCheck")]
-	[CalledBy(Type = typeof(Condition_ConditionBlock), Member = "OnCheck")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	private object[] BuildVarCache(string[] conditions)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(NCUtils), Member = "TestConditional")]
-	[Calls(Type = typeof(Condition_ConditionBlock), Member = "BuildVarCache")]
-	[Calls(Type = typeof(string), Member = "Split")]
-	[Calls(Type = typeof(Condition_ConditionBlock), Member = "BuildVarCache")]
-	[Calls(Type = typeof(string), Member = "SplitInternal")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[Calls(Type = typeof(Condition_ConditionBlock), Member = "BuildVarCache")]
 	[Calls(Type = typeof(NCUtils), Member = "TestConditional")]
+	[Calls(Type = typeof(string), Member = "Split")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

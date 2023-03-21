@@ -113,8 +113,8 @@ public class AmplifyBloomBase : MonoBehaviour
 
 	public AmplifyGlare LensGlareInstance
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 5)]
 		get
 		{
 			return null;
@@ -147,7 +147,7 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -158,11 +158,11 @@ public class AmplifyBloomBase : MonoBehaviour
 
 	public float LensDirtStrength
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
@@ -180,7 +180,7 @@ public class AmplifyBloomBase : MonoBehaviour
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 1)]
+		[CallerCount(Count = 6)]
 		set
 		{
 		}
@@ -192,10 +192,10 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -210,7 +210,7 @@ public class AmplifyBloomBase : MonoBehaviour
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 8)]
 		set
 		{
 		}
@@ -222,10 +222,10 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -238,8 +238,8 @@ public class AmplifyBloomBase : MonoBehaviour
 		{
 			return default(PrecisionModes);
 		}
-		[Calls(Type = typeof(AmplifyBloomBase), Member = "CleanTempFilterRT")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(AmplifyBloomBase), Member = "CleanTempFilterRT")]
 		set
 		{
 		}
@@ -251,7 +251,7 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(AmplifyBloomBase), Member = "CleanTempFilterRT")]
@@ -266,7 +266,7 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -280,7 +280,7 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
@@ -304,11 +304,11 @@ public class AmplifyBloomBase : MonoBehaviour
 
 	public float OverallIntensity
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -322,7 +322,7 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -336,7 +336,7 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -351,7 +351,7 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(AmplifyBloomBase), Member = "CleanTempFilterRT")]
@@ -362,11 +362,11 @@ public class AmplifyBloomBase : MonoBehaviour
 
 	public float TemporalFilteringValue
 	{
-		[CallerCount(Count = 1)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -381,7 +381,7 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -391,7 +391,7 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -406,7 +406,7 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -417,8 +417,8 @@ public class AmplifyBloomBase : MonoBehaviour
 
 	public bool[] DownscaleSettingsFoldout
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return null;
@@ -428,7 +428,7 @@ public class AmplifyBloomBase : MonoBehaviour
 	public float[] UpscaleWeights
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -469,7 +469,7 @@ public class AmplifyBloomBase : MonoBehaviour
 	public int[] GaussianSteps
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 1)]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return null;
@@ -478,14 +478,14 @@ public class AmplifyBloomBase : MonoBehaviour
 
 	public AnimationCurve TemporalFilteringCurve
 	{
-		[CallerCount(Count = 4)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 19)]
 		set
 		{
 		}
@@ -497,7 +497,7 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -511,7 +511,7 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
@@ -543,8 +543,8 @@ public class AmplifyBloomBase : MonoBehaviour
 		{
 			return default(UpscaleQualityEnum);
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -556,7 +556,7 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -583,13 +583,13 @@ public class AmplifyBloomBase : MonoBehaviour
 	public RenderTexture TargetTexture
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
@@ -597,14 +597,14 @@ public class AmplifyBloomBase : MonoBehaviour
 
 	public Texture MaskTexture
 	{
-		[CallerCount(Count = 29)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -616,7 +616,7 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
@@ -631,7 +631,7 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
@@ -646,196 +646,140 @@ public class AmplifyBloomBase : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(Material), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 55)]
-	[Calls(Type = typeof(AmplifyUtils), Member = "DebugLog")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(AmplifyUtils), Member = "DebugLog")]
-	[Calls(Type = typeof(string), Member = "Equals")]
-	[Calls(Type = typeof(Material), Member = "GetTag")]
-	[Calls(Type = typeof(AmplifyLensFlare), Member = "CreateLUTexture")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 29)]
 	[Calls(Type = typeof(AmplifyUtils), Member = "InitializeIds")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(Material), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(AmplifyLensFlare), Member = "CreateLUTexture")]
+	[Calls(Type = typeof(Material), Member = "GetTag")]
+	[Calls(Type = typeof(string), Member = "Equals")]
+	[Calls(Type = typeof(AmplifyUtils), Member = "DebugLog")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 28)]
+	[CallsUnknownMethods(Count = 55)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
-	[Calls(Type = typeof(AmplifyGlare), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AmplifyBokeh), Member = "Destroy")]
+	[Calls(Type = typeof(AmplifyGlare), Member = "Destroy")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
-	[Calls(Type = typeof(RenderTexture), Member = "get_format")]
 	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[Calls(Type = typeof(AmplifyUtils), Member = "ReleaseTempRenderTarget")]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(RenderTexture), Member = "DiscardContents")]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(RenderTexture), Member = "DiscardContents")]
-	[Calls(Type = typeof(AmplifyBloomBase), Member = "CreateTempFilterRT")]
-	[Calls(Type = typeof(AmplifyBloomBase), Member = "CleanTempFilterRT")]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[Calls(Type = typeof(RenderTexture), Member = "get_format")]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(RenderTexture), Member = "DiscardContents")]
-	[Calls(Type = typeof(RenderTexture), Member = "DiscardContents")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(RenderTexture), Member = "DiscardContents")]
-	[Calls(Type = typeof(AmplifyUtils), Member = "GetTempRenderTarget")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(AmplifyUtils), Member = "GetTempRenderTarget")]
+	[Calls(Type = typeof(RenderTexture), Member = "DiscardContents")]
+	[Calls(Type = typeof(Graphics), Member = "Blit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[Calls(Type = typeof(RenderTexture), Member = "get_format")]
+	[Calls(Type = typeof(AmplifyBloomBase), Member = "CleanTempFilterRT")]
+	[Calls(Type = typeof(AmplifyBloomBase), Member = "CreateTempFilterRT")]
+	[Calls(Type = typeof(Graphics), Member = "Blit")]
+	[Calls(Type = typeof(AmplifyUtils), Member = "ReleaseTempRenderTarget")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 13)]
 	private void ApplyGaussianBlur(RenderTexture renderTexture, int amount, float radius = 1f, bool applyTemporal = false)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
 	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "ApplyGaussianBlur")]
-	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
-	[Calls(Type = typeof(RenderTexture), Member = "GetCompatibleFormat")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(AmplifyBloomBase), Member = "CleanTempFilterRT")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(AmplifyBloomBase), Member = "CleanTempFilterRT")]
 	[Calls(Type = typeof(RenderTexture), Member = "get_format")]
+	[Calls(Type = typeof(RenderTexture), Member = "GetCompatibleFormat")]
+	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 14)]
 	private void CreateTempFilterRT(RenderTexture source)
 	{
 	}
 
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "set_TemporalFilteringActive")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "set_CurrentPrecisionMode")]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "CreateTempFilterRT")]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "set_HighPrecision")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "ApplyGaussianBlur")]
+	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "CreateTempFilterRT")]
+	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
+	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "set_CurrentPrecisionMode")]
+	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "set_HighPrecision")]
+	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "set_TemporalFilteringActive")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void CleanTempFilterRT()
 	{
 	}
 
-	[Calls(Type = typeof(AmplifyUtils), Member = "ReleaseTempRenderTarget")]
-	[Calls(Type = typeof(AmplifyBokeh), Member = "ApplyBokehFilter")]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(AmplifyUtils), Member = "ReleaseAllRT")]
-	[Calls(Type = typeof(Material), Member = "SetVector")]
-	[Calls(Type = typeof(Material), Member = "SetVector")]
-	[Calls(Type = typeof(AmplifyGlare), Member = "OnRenderImage")]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(AmplifyUtils), Member = "GetTempRenderTarget")]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(AmplifyBokeh), Member = "ApplyBokehFilter")]
-	[Calls(Type = typeof(AmplifyLensFlare), Member = "ApplyFlare")]
-	[Calls(Type = typeof(AmplifyBloomBase), Member = "ApplyGaussianBlur")]
-	[Calls(Type = typeof(AmplifyUtils), Member = "GetTempRenderTarget")]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(AmplifyUtils), Member = "GetTempRenderTarget")]
-	[Calls(Type = typeof(AmplifyUtils), Member = "ReleaseTempRenderTarget")]
-	[Calls(Type = typeof(AmplifyBloomBase), Member = "ApplyUpscale")]
-	[CallsUnknownMethods(Count = 308)]
-	[Calls(Type = typeof(AmplifyUtils), Member = "ReleaseAllRT")]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(AmplifyBloomBase), Member = "FinalComposition")]
-	[Calls(Type = typeof(RenderTexture), Member = "DiscardContents")]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Material), Member = "SetMatrix")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(AmplifyBloomBase), Member = "ApplyUpscale")]
-	[Calls(Type = typeof(AmplifyBloomBase), Member = "FinalComposition")]
-	[Calls(Type = typeof(AmplifyBloomBase), Member = "ApplyGaussianBlur")]
-	[Calls(Type = typeof(AmplifyBloomBase), Member = "ApplyGaussianBlur")]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(Material), Member = "SetColorImpl")]
-	[Calls(Type = typeof(Vector3), Member = "Cross")]
-	[Calls(Type = typeof(Vector3), Member = "get_right")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Vector3), Member = "Dot")]
-	[Calls(Type = typeof(Vector3), Member = "get_right")]
-	[Calls(Type = typeof(Material), Member = "SetColorImpl")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(AmplifyUtils), Member = "EnsureKeywordEnabled")]
-	[Calls(Type = typeof(AmplifyUtils), Member = "EnsureKeywordEnabled")]
-	[Calls(Type = typeof(AmplifyUtils), Member = "EnsureKeywordEnabled")]
-	[Calls(Type = typeof(AmplifyUtils), Member = "InitializeIds")]
-	[CallsDeduplicatedMethods(Count = 42)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AmplifyUtils), Member = "InitializeIds")]
 	[Calls(Type = typeof(AmplifyUtils), Member = "EnsureKeywordEnabled")]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(Vector3), Member = "get_right")]
+	[Calls(Type = typeof(Vector3), Member = "Dot")]
+	[Calls(Type = typeof(Vector3), Member = "Cross")]
 	[Calls(Type = typeof(Material), Member = "SetColorImpl")]
 	[Calls(Type = typeof(AmplifyUtils), Member = "GetTempRenderTarget")]
-	[Calls(Type = typeof(RenderTexture), Member = "DiscardContents")]
-	[Calls(Type = typeof(AmplifyBloomBase), Member = "CreateTempFilterRT")]
-	[Calls(Type = typeof(AmplifyBloomBase), Member = "CleanTempFilterRT")]
-	[Calls(Type = typeof(GraphicsFormatUtility), Member = "GetRenderTextureFormat")]
-	[Calls(Type = typeof(RenderTexture), Member = "get_graphicsFormat")]
-	[Calls(Type = typeof(GraphicsFormatUtility), Member = "GetRenderTextureFormat")]
-	[Calls(Type = typeof(Material), Member = "SetColorImpl")]
-	[Calls(Type = typeof(RenderTexture), Member = "get_graphicsFormat")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Graphics), Member = "Blit")]
 	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(RenderTexture), Member = "get_graphicsFormat")]
+	[Calls(Type = typeof(GraphicsFormatUtility), Member = "GetRenderTextureFormat")]
+	[Calls(Type = typeof(AmplifyBloomBase), Member = "CleanTempFilterRT")]
+	[Calls(Type = typeof(AmplifyBloomBase), Member = "CreateTempFilterRT")]
+	[Calls(Type = typeof(RenderTexture), Member = "DiscardContents")]
 	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(AmplifyUtils), Member = "GetTempRenderTarget")]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(AmplifyBloomBase), Member = "ApplyGaussianBlur")]
+	[Calls(Type = typeof(AmplifyUtils), Member = "ReleaseTempRenderTarget")]
+	[Calls(Type = typeof(AmplifyBokeh), Member = "ApplyBokehFilter")]
+	[Calls(Type = typeof(AmplifyUtils), Member = "ReleaseAllRT")]
+	[Calls(Type = typeof(Material), Member = "SetVector")]
+	[Calls(Type = typeof(AmplifyLensFlare), Member = "ApplyFlare")]
+	[Calls(Type = typeof(AmplifyGlare), Member = "OnRenderImage")]
+	[Calls(Type = typeof(AmplifyBloomBase), Member = "ApplyUpscale")]
+	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
+	[Calls(Type = typeof(Material), Member = "SetMatrix")]
+	[Calls(Type = typeof(AmplifyBloomBase), Member = "FinalComposition")]
+	[CallsDeduplicatedMethods(Count = 42)]
+	[CallsUnknownMethods(Count = 274)]
 	private void OnRenderImage(RenderTexture src, RenderTexture dest)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[Calls(Type = typeof(AmplifyUtils), Member = "ReleaseAllRT")]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Graphics), Member = "Blit")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Graphics), Member = "Blit")]
+	[Calls(Type = typeof(AmplifyUtils), Member = "ReleaseAllRT")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void FinalComposition(float srcContribution, float upscaleContribution, RenderTexture src, RenderTexture dest, int forcePassId)
 	{
 	}
 
+	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AmplifyUtils), Member = "GetTempRenderTarget")]
 	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 26)]
 	private void ApplyUpscale()
 	{
@@ -843,16 +787,12 @@ public class AmplifyBloomBase : MonoBehaviour
 
 	[CalledBy(Type = typeof(AmplifyBloomEffect), Member = ".ctor")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AmplifyLensFlare), Member = ".ctor")]
 	[Calls(Type = typeof(AmplifyGlare), Member = ".ctor")]
 	[Calls(Type = typeof(AmplifyBokeh), Member = ".ctor")]
 	[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
-	[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
-	[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
-	[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
-	[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 21)]
 	public AmplifyBloomBase()
 	{

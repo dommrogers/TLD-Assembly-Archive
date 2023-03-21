@@ -5,6 +5,7 @@ using AK.Wwise;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
 using TLD.Logging;
+using TLD.SaveState;
 using TLD.UI.Generics;
 using UnityEngine;
 using Voice;
@@ -76,10 +77,10 @@ public class PlayerVoice : MonoBehaviour
 
 	private List<Request> m_Queue;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Action_BlockNonCriticalVoiceOver), Member = "OnExecute")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void BlockNonCriticalVoiceForDuration(float duration)
 	{
 	}
@@ -95,7 +96,7 @@ public class PlayerVoice : MonoBehaviour
 	[CallerCount(Count = 1)]
 	public float GetNonCriticalDelayTime()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -116,70 +117,71 @@ public class PlayerVoice : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsSpeaking()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerVoice), Member = "MaybeShowInitialSubtitle")]
-	[Calls(Type = typeof(PlayerVoice), Member = "HandleNextRequest")]
-	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 66)]
+	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetIDFromString")]
+	[Calls(Type = typeof(PlayerVoice), Member = "HandleNextRequest")]
+	[Calls(Type = typeof(PlayerVoice), Member = "MaybeShowInitialSubtitle")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public uint Play(string eventName, Priority priority, Options options = Options.None, Action completionCallback = null)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CalledBy(Type = typeof(Fire), Member = "PlayStartingFireVoiceEvent")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "FallInWater")]
-	[CalledBy(Type = typeof(Breath), Member = "PlayBreathEffect")]
-	[CalledBy(Type = typeof(BodyCarry), Member = "PlayHoistEffortAudio")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "MaybePlayInspectModeVoiceOver")]
-	[CalledBy(Type = typeof(Container), Member = "MaybePlayInspectionAudio")]
-	[CalledBy(Type = typeof(Container), Member = "BeginContainerOpen")]
-	[CalledBy(Type = typeof(EmergencyStimItem), Member = "OnInject")]
-	[CalledBy(Type = typeof(Fire), Member = "ExitFireStarting")]
-	[Calls(Type = typeof(PlayerVoice), Member = "HandleNextRequest")]
-	[CalledBy(Type = typeof(Freezing), Member = "MaybePlayPlayerFreezingVoiceOver")]
-	[CalledBy(Type = typeof(Freezing), Member = "MaybePlayPlayerFreezingTeethChatter")]
-	[CalledBy(Type = typeof(Fatigue), Member = "CatchBreath")]
-	[CalledBy(Type = typeof(Condition), Member = "MaybePlayPlayerInjuredVoiceOver")]
-	[CalledBy(Type = typeof(Condition), Member = "PlayPlayerDeathAudio")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "DoAiming")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 16)]
+	[CalledBy(Type = typeof(Condition), Member = "PlayPlayerDeathAudio")]
+	[CalledBy(Type = typeof(Condition), Member = "MaybePlayPlayerInjuredVoiceOver")]
+	[CalledBy(Type = typeof(Fatigue), Member = "CatchBreath")]
+	[CalledBy(Type = typeof(Freezing), Member = "MaybePlayPlayerFreezingTeethChatter")]
+	[CalledBy(Type = typeof(Freezing), Member = "MaybePlayPlayerFreezingVoiceOver")]
 	[CalledBy(Type = typeof(Fire), Member = "ExitFireStarting")]
+	[CalledBy(Type = typeof(Fire), Member = "PlayStartingFireVoiceEvent")]
+	[CalledBy(Type = typeof(EmergencyStimItem), Member = "OnInject")]
+	[CalledBy(Type = typeof(Container), Member = "BeginContainerOpen")]
+	[CalledBy(Type = typeof(Container), Member = "MaybePlayInspectionAudio")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "MaybePlayInspectModeVoiceOver")]
+	[CalledBy(Type = typeof(BodyCarry), Member = "PlayHoistEffortAudio")]
+	[CalledBy(Type = typeof(Breath), Member = "PlayBreathEffect")]
+	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "FallInWater")]
+	[CallerCount(Count = 16)]
+	[Calls(Type = typeof(PlayerVoice), Member = "HandleNextRequest")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public uint Play(uint eventID, Priority priority, Options options = Options.None, Action completionCallback = null)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CalledBy(Type = typeof(TimeOfDay), Member = "Update")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "PlayDelayedVoiceOver")]
-	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
+	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool Queue(AK.Wwise.Event audioEvent, Priority priority, Action completionCallback = null)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Action_PlayerSay), Member = "DoSay")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetIDFromString")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
 	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetIDFromString")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool Queue(string eventName, Priority priority, Action completionCallback = null)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -189,17 +191,15 @@ public class PlayerVoice : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_voice_female")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_voice_male")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "SetSwitch")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Start")]
-	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
-	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "Deserialize")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "SetSwitch")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetPlayerVoicePersona()
 	{
 	}
@@ -218,72 +218,74 @@ public class PlayerVoice : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(PlayerVoice), Member = "MaybeHandleNextQueuedRequest")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerVoice), Member = "UpdateActive")]
+	[Calls(Type = typeof(PlayerVoice), Member = "MaybeHandleNextQueuedRequest")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Update()
 	{
 	}
 
-	[CalledBy(Type = typeof(GunItem), Member = "ZoomStart")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayableBehaviourSay), Member = "OnBehaviourPause")]
-	[CalledBy(Type = typeof(PlayerVoice), Member = "OnAkVoiceEvent")]
-	[CalledBy(Type = typeof(PlayerVoice), Member = "UpdateActive")]
-	[CalledBy(Type = typeof(PlayerVoice), Member = "StopBelowPriority")]
-	[CalledBy(Type = typeof(PlayerVoice), Member = "Stop")]
-	[CalledBy(Type = typeof(BowItem), Member = "ZoomStart")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[CalledBy(Type = typeof(Freezing), Member = "MaybeCancelPlayerFreezingTeethChatter")]
-	[CallerCount(Count = 10)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Fatigue), Member = "EndSuppressHeavyBreathingCallback")]
-	[CalledBy(Type = typeof(BowItem), Member = "PressFire")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "InputZoom")]
+	[CalledBy(Type = typeof(Freezing), Member = "MaybeCancelPlayerFreezingTeethChatter")]
+	[CalledBy(Type = typeof(BowItem), Member = "PressFire")]
+	[CalledBy(Type = typeof(BowItem), Member = "ZoomStart")]
+	[CalledBy(Type = typeof(GunItem), Member = "ZoomStart")]
+	[CalledBy(Type = typeof(PlayerVoice), Member = "Stop")]
+	[CalledBy(Type = typeof(PlayerVoice), Member = "StopBelowPriority")]
+	[CalledBy(Type = typeof(PlayerVoice), Member = "UpdateActive")]
+	[CalledBy(Type = typeof(PlayerVoice), Member = "OnAkVoiceEvent")]
+	[CalledBy(Type = typeof(PlayableBehaviourSay), Member = "OnBehaviourPause")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(Fatigue), Member = "EndSuppressHeavyBreathingCallback")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void CompleteActiveRequest()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerVoice), Member = "CanPlayPlayerVoiceEvents")]
-	[Calls(Type = typeof(PlayerVoice), Member = "CanPlayNonCriticalVoiceLine")]
 	[CalledBy(Type = typeof(PlayerVoice), Member = "HandleNextRequest")]
 	[CalledBy(Type = typeof(PlayerVoice), Member = "MaybeHandleNextQueuedRequest")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerVoice), Member = "CanPlayPlayerVoiceEvents")]
+	[Calls(Type = typeof(PlayerVoice), Member = "CanPlayNonCriticalVoiceLine")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool CanPlayNextRequest()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(PlayerVoice), Member = "CanPlayNextRequest")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private bool CanPlayNonCriticalVoiceLine()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(PlayerVoice), Member = "CanPlayNextRequest")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
 	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
+	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	private bool CanPlayPlayerVoiceEvents()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[Conditional("__DEBUG")]
@@ -293,30 +295,32 @@ public class PlayerVoice : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
-	[Calls(Type = typeof(PlayerVoice), Member = "StartNextRequest")]
 	[CalledBy(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
-	[Calls(Type = typeof(PlayerVoice), Member = "CanPlayNextRequest")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(ActiveRequest), Member = "Stop")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerVoice), Member = "CanPlayNextRequest")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
+	[Calls(Type = typeof(ActiveRequest), Member = "Stop")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(PlayerVoice), Member = "StartNextRequest")]
+	[Calls(Type = typeof(uint), Member = "ToString")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool HandleNextRequest()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[Conditional("__DEBUG")]
+	[CallerCount(Count = 0)]
 	private void LogRequestIgnored(string reason)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
 	[CallsUnknownMethods(Count = 1)]
@@ -324,73 +328,71 @@ public class PlayerVoice : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Array), Member = "Copy")]
+	[CalledBy(Type = typeof(PlayerVoice), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerVoice), Member = "CanPlayNextRequest")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
 	[Calls(Type = typeof(PlayerVoice), Member = "StartNextRequest")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(PlayerVoice), Member = "Update")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 3)]
 	private void MaybeHandleNextQueuedRequest()
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerVoice), Member = "Play")]
+	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Localization), Member = "Exists")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "ShowSubtitles")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Exists")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	private void MaybeShowInitialSubtitle(string eventName)
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerVoice), Member = "MaybeHandleNextQueuedRequest")]
 	[CalledBy(Type = typeof(PlayerVoice), Member = "HandleNextRequest")]
-	[Calls(Type = typeof(ActiveRequest), Member = "Start")]
-	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
-	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(PlayerVoice), Member = "MaybeHandleNextQueuedRequest")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
+	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
+	[Calls(Type = typeof(ActiveRequest), Member = "Start")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool StartNextRequest()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(PlayerVoice), Member = "Update")]
-	[Calls(Type = typeof(PlayerVoice), Member = "CompleteActiveRequest")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetSourcePlayPosition")]
+	[Calls(Type = typeof(PlayerVoice), Member = "CompleteActiveRequest")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateActive()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateQueued()
 	{
 	}
 
-	[Calls(Type = typeof(AkDurationCallbackInfo), Member = "get_fEstimatedDuration")]
-	[Calls(Type = typeof(AkEventCallbackInfo), Member = "get_playingID")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
-	[Calls(Type = typeof(AkMarkerCallbackInfo), Member = "get_strLabel")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(AkEventCallbackInfo), Member = "get_playingID")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkEventCallbackInfo), Member = "get_playingID")]
 	[Calls(Type = typeof(PlayerVoice), Member = "CompleteActiveRequest")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(AkMarkerCallbackInfo), Member = "get_strLabel")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
+	[Calls(Type = typeof(AkDurationCallbackInfo), Member = "get_fEstimatedDuration")]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnAkVoiceEvent(object in_cookie, AkCallbackType in_type, object in_info)
 	{
 	}

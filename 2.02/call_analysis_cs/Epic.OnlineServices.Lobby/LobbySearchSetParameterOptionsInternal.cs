@@ -15,11 +15,11 @@ internal struct LobbySearchSetParameterOptionsInternal : ISettable, IDisposable
 
 	public AttributeData Parameter
 	{
+		[CalledBy(Type = typeof(LobbySearchSetParameterOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(LobbySearchSetParameterOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[Calls(Type = typeof(AttributeDataInternal), Member = "Set")]
-		[CalledBy(Type = typeof(LobbySearchSetParameterOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(LobbySearchSetParameterOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		set
 		{
 		}
@@ -27,8 +27,8 @@ internal struct LobbySearchSetParameterOptionsInternal : ISettable, IDisposable
 
 	public ComparisonOp ComparisonOp
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -40,17 +40,17 @@ internal struct LobbySearchSetParameterOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(LobbySearchSetParameterOptionsInternal), Member = "set_Parameter")]
 	[CalledBy(Type = typeof(LobbySearch), Member = "SetParameter")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(LobbySearchSetParameterOptionsInternal), Member = "set_Parameter")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

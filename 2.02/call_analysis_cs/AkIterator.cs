@@ -18,8 +18,8 @@ public class AkIterator : IDisposable
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AkPlaylistItem), Member = "getCPtr")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -32,13 +32,13 @@ public class AkIterator : IDisposable
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(AkPlaylistArray), Member = "Erase")]
 	[CalledBy(Type = typeof(AkPlaylistArray), Member = "EraseSwap")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkIterator obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -55,11 +55,11 @@ public class AkIterator : IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}
@@ -72,9 +72,9 @@ public class AkIterator : IDisposable
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public AkIterator PrevIter()
 	{
 		return null;
@@ -93,7 +93,7 @@ public class AkIterator : IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsEqualTo(AkIterator in_rOp)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -101,7 +101,7 @@ public class AkIterator : IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsDifferentFrom(AkIterator in_rOp)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

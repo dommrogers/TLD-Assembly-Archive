@@ -10,7 +10,7 @@ using UnityEngine;
 
 public class SprayPaintCan : MonoBehaviour
 {
-	private sealed class _003CReduceHealthForPaint_003Ed__19 : IEnumerator, IDisposable, IEnumerator<object>
+	private sealed class _003CReduceHealthForPaint_003Ed__19 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -26,9 +26,9 @@ public class SprayPaintCan : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -39,7 +39,7 @@ public class SprayPaintCan : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -60,13 +60,13 @@ public class SprayPaintCan : MonoBehaviour
 		{
 		}
 
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -110,17 +110,17 @@ public class SprayPaintCan : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_SprayPaint), Member = "Enable")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_SprayPaint), Member = "Enable")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnWield(bool immediate)
 	{
 	}
@@ -133,8 +133,8 @@ public class SprayPaintCan : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void UnwieldEnd()
 	{
@@ -144,12 +144,12 @@ public class SprayPaintCan : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool HasEnoughPaintForSprayDecal()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsUnknownMethods(Count = 6)]
 	public void OnPlacedown()
 	{
 	}
@@ -163,7 +163,7 @@ public class SprayPaintCan : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetLiquidWeightKG()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[IteratorStateMachine(typeof(_003CReduceHealthForPaint_003Ed__19))]

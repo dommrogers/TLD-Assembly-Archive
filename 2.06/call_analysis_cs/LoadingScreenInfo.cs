@@ -17,18 +17,18 @@ public class LoadingScreenInfo
 
 	public string m_Mission;
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetNameForScene")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetNameForScene")]
 	[CallsUnknownMethods(Count = 1)]
 	public string GetLocalizedSceneName()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public LoadingScreenInfo()
 	{
 	}

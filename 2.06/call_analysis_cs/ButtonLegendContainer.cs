@@ -22,21 +22,19 @@ public class ButtonLegendContainer
 
 	private static Dictionary<GameObject, ButtonLegendContainer> m_OwnerDictionnary;
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 14)]
 	[CallerCount(Count = 60)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 9)]
 	public void Create(GameObject owner)
 	{
 	}
@@ -55,10 +53,10 @@ public class ButtonLegendContainer
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ButtonLegend), Member = "AddButton")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(ButtonLegend), Member = "AddButton")]
+	[CallsUnknownMethods(Count = 1)]
 	public void AddButton(string action, string localizationKey, int priority, bool localize = true)
 	{
 	}
@@ -78,30 +76,30 @@ public class ButtonLegendContainer
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ButtonLegend), Member = "AddButton")]
 	[CallerCount(Count = 245)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(ButtonLegend), Member = "RemoveButton")]
+	[Calls(Type = typeof(ButtonLegend), Member = "AddButton")]
+	[CallsUnknownMethods(Count = 1)]
 	public void UpdateButton(string action, string localizationKey, bool active, int priority, bool localize = true)
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[CallerCount(Count = 87)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[CallsUnknownMethods(Count = 1)]
 	public void EndUpdate()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "UpdateButtonLegend")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ButtonLegendItem), Member = "SetDepth")]
 	[CalledBy(Type = typeof(ButtonLegendContainer), Member = "ResetDefaultDepthOfAllItems")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "UpdateButtonLegend")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(ButtonLegendItem), Member = "SetDepth")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OverrideDepthOfAllItems(int depthAmount)
 	{
 	}
@@ -113,7 +111,7 @@ public class ButtonLegendContainer
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[CallsUnknownMethods(Count = 1)]
 	public static ButtonLegendContainer TryGetButtonLegendContainer(GameObject owner)
 	{

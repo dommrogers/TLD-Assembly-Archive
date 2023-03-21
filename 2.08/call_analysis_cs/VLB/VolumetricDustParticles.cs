@@ -51,7 +51,7 @@ public class VolumetricDustParticles : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -67,43 +67,41 @@ public class VolumetricDustParticles : MonoBehaviour
 		[Calls(Type = typeof(Object), Member = "op_Implicit")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public int particlesCurrentCount
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Object), Member = "op_Implicit")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public int particlesMaxCount
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Object), Member = "op_Implicit")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public Camera mainCamera
 	{
 		[CalledBy(Type = typeof(VolumetricDustParticles), Member = "UpdateCulling")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(VolumetricDustParticles), Member = "UpdateCulling")]
-		[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-		[Calls(Type = typeof(Object), Member = "op_Implicit")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -111,7 +109,7 @@ public class VolumetricDustParticles : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(VolumetricDustParticles), Member = "InstantiateParticleSystem")]
 	[Calls(Type = typeof(VolumetricDustParticles), Member = "SetActiveAndPlay")]
 	[CallsUnknownMethods(Count = 1)]
@@ -119,12 +117,13 @@ public class VolumetricDustParticles : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(VolumetricDustParticles), Member = "Start")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(Config), Member = "GetInstance")]
 	[Calls(Type = typeof(Config), Member = "NewVolumetricDustParticles")]
 	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_beamInternalLocalRotation")]
-	[CalledBy(Type = typeof(VolumetricDustParticles), Member = "Start")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 9)]
 	private void InstantiateParticleSystem()
 	{
@@ -136,30 +135,30 @@ public class VolumetricDustParticles : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(VolumetricDustParticles), Member = "OnEnable")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(VolumetricDustParticles), Member = "SetParticleProperties")]
 	[CalledBy(Type = typeof(VolumetricDustParticles), Member = "Start")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(VolumetricDustParticles), Member = "OnEnable")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(VolumetricDustParticles), Member = "SetParticleProperties")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void SetActiveAndPlay()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnDisable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "DestroyImmediate")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "DestroyImmediate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnDestroy()
 	{
 	}
@@ -170,15 +169,15 @@ public class VolumetricDustParticles : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Gradient), Member = "get_colorKeys")]
 	[CalledBy(Type = typeof(VolumetricDustParticles), Member = "SetActiveAndPlay")]
-	[Calls(Type = typeof(Gradient), Member = "get_alphaKeys")]
-	[Calls(Type = typeof(Gradient), Member = "Equals")]
-	[CallsUnknownMethods(Count = 41)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 37)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Config), Member = "GetInstance")]
+	[Calls(Type = typeof(Gradient), Member = "Equals")]
+	[Calls(Type = typeof(Gradient), Member = "get_colorKeys")]
+	[Calls(Type = typeof(Gradient), Member = "get_alphaKeys")]
+	[CallsDeduplicatedMethods(Count = 37)]
+	[CallsUnknownMethods(Count = 41)]
 	private void SetParticleProperties()
 	{
 	}
@@ -188,16 +187,14 @@ public class VolumetricDustParticles : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(ParticleSystem), Member = "Play")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(VolumetricDustParticles), Member = "get_mainCamera")]
 	[Calls(Type = typeof(VolumetricLightBeam), Member = "get_bounds")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(VolumetricDustParticles), Member = "get_mainCamera")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ParticleSystem), Member = "Play")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateCulling()
 	{
 	}

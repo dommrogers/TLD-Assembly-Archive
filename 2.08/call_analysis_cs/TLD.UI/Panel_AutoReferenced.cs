@@ -17,30 +17,30 @@ public abstract class Panel_AutoReferenced : Panel_Base
 		}
 	}
 
-	[CalledBy(Type = typeof(Panel_Debug), Member = "Awake")]
 	[CalledBy(Type = typeof(Panel_List<, >), Member = "Awake")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(Panel_Debug), Member = "Awake")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PanelReference), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	protected virtual void Awake()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(Panel_ChooseChallenge), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(Panel_ChooseSandbox), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(Panel_SaveStory), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(Panel_SelectWorldMap), Member = "OnDestroy")]
+	[CallerCount(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	protected virtual void OnDestroy()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	protected Panel_AutoReferenced()
 	{
 	}

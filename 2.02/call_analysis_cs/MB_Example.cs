@@ -7,23 +7,23 @@ public class MB_Example : MonoBehaviour
 
 	public GameObject[] objsToCombine;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private void Start()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private void LateUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GUILayout), Member = "Label")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	private void OnGUI()
 	{
 	}

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 
@@ -18,27 +19,32 @@ public class Condition_ConditionBlock : ConditionTask
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(string), Member = "Concat")]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 10)]
+	[CalledBy(Type = typeof(Condition_ConditionBlock), Member = "OnCheck")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(NCUtils), Member = "ParseConditional")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 10)]
 	private object[] BuildVarCache(string[] conditions)
 	{
 		return null;
 	}
 
-	[CallAnalysisFailed]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(Type = typeof(Condition_ConditionBlock), Member = "BuildVarCache")]
+	[Calls(Type = typeof(NCUtils), Member = "TestConditional")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

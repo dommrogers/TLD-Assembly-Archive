@@ -61,7 +61,7 @@ public sealed class PostProcessDebugLayer
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 46)]
 		private set
 		{
 		}
@@ -74,7 +74,7 @@ public sealed class PostProcessDebugLayer
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -86,9 +86,9 @@ public sealed class PostProcessDebugLayer
 
 	public DebugOverlay debugOverlay
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(DebugOverlay);
@@ -101,45 +101,46 @@ public sealed class PostProcessDebugLayer
 		}
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "OnEnable")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "CreateIfNull")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 11)]
 	internal void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "OnDisable")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(PostProcessDebugLayer), Member = "DestroyDebugOverlayTarget")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	internal void OnDisable()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
 	[CalledBy(Type = typeof(PostProcessDebugLayer), Member = "OnDisable")]
 	[CalledBy(Type = typeof(PostProcessDebugLayer), Member = "EndFrame")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void DestroyDebugOverlayTarget()
 	{
 	}
 
 	[CalledBy(Type = typeof(PostProcessDebug), Member = "UpdateStates")]
-	[CalledBy(Type = typeof(PostProcessDebug), Member = "UpdateStates")]
-	[CalledBy(Type = typeof(PostProcessDebug), Member = "UpdateStates")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(PostProcessDebug), Member = "UpdateStates")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void RequestMonitorPass(MonitorType monitor)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void RequestDebugOverlay(DebugOverlay mode)
 	{
 	}
@@ -149,23 +150,23 @@ public sealed class PostProcessDebugLayer
 	{
 	}
 
-	[CalledBy(Type = typeof(MultiScaleVO), Member = "PushDebug")]
-	[CalledBy(Type = typeof(DepthOfFieldRenderer), Member = "Render")]
-	[CalledBy(Type = typeof(ScalableAO), Member = "Render")]
-	[CalledBy(Type = typeof(BloomRenderer), Member = "Render")]
-	[CalledBy(Type = typeof(PostProcessRenderContext), Member = "PushDebugOverlay")]
-	[CallsUnknownMethods(Count = 18)]
-	[CalledBy(Type = typeof(PostProcessDebugLayer), Member = "RenderSpecialOverlays")]
 	[CalledBy(Type = typeof(MaskedBlurEffectRenderer), Member = "Render")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
-	[Calls(Type = typeof(RenderTexture), Member = "GetCompatibleFormat")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[CalledBy(Type = typeof(BloomRenderer), Member = "Render")]
+	[CalledBy(Type = typeof(DepthOfFieldRenderer), Member = "Render")]
+	[CalledBy(Type = typeof(MultiScaleVO), Member = "PushDebug")]
+	[CalledBy(Type = typeof(ScalableAO), Member = "Render")]
+	[CalledBy(Type = typeof(PostProcessDebugLayer), Member = "RenderSpecialOverlays")]
+	[CalledBy(Type = typeof(PostProcessRenderContext), Member = "PushDebugOverlay")]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
+	[Calls(Type = typeof(RenderTexture), Member = "GetCompatibleFormat")]
+	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 18)]
 	public void PushDebugOverlay(CommandBuffer cmd, RenderTargetIdentifier source, PropertySheet sheet, int pass)
 	{
 	}
@@ -176,48 +177,45 @@ public sealed class PostProcessDebugLayer
 		return default(DepthTextureMode);
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
-	[Calls(Type = typeof(CommandBuffer), Member = "Blit")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Monitor), Member = "IsRequestedAndSupported")]
 	[Calls(Type = typeof(GraphicsFormatUtility), Member = "GetGraphicsFormat")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
+	[Calls(Type = typeof(CommandBuffer), Member = "Blit")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 13)]
 	internal void RenderMonitors(PostProcessRenderContext context)
 	{
 	}
 
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 36)]
-	[Calls(Type = typeof(PostProcessDebugLayer), Member = "PushDebugOverlay")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[Calls(Type = typeof(PropertySheet), Member = "EnableKeyword")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
 	[Calls(Type = typeof(PropertySheet), Member = "ClearKeywords")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
+	[Calls(Type = typeof(PropertySheet), Member = "EnableKeyword")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = "op_Implicit")]
+	[Calls(Type = typeof(PostProcessDebugLayer), Member = "PushDebugOverlay")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 36)]
 	internal void RenderSpecialOverlays(PostProcessRenderContext context)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(PostProcessDebugLayer), Member = "DestroyDebugOverlayTarget")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	internal void EndFrame()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PostProcessDebugLayer()
 	{
 	}

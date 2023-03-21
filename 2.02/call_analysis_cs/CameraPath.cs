@@ -158,20 +158,17 @@ public class CameraPath : MonoBehaviour
 
 	public CameraPathControlPoint Item
 	{
-		[CallerCount(Count = 5)]
-		[CalledBy(Type = typeof(CameraPathAnimator), Member = "UpdatePointReached")]
+		[CalledBy(Type = typeof(CameraPath), Member = "RemovePoint")]
+		[CalledBy(Type = typeof(CameraPath), Member = "RemovePoint")]
 		[CalledBy(Type = typeof(CameraPath), Member = "GetPoint")]
-		[CalledBy(Type = typeof(CameraPath), Member = "RemovePoint")]
-		[CalledBy(Type = typeof(CameraPath), Member = "RemovePoint")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(Debug), Member = "LogError")]
-		[Calls(Type = typeof(CameraPath), Member = "get_shouldInterpolateNextPath")]
-		[Calls(Type = typeof(Debug), Member = "LogError")]
-		[Calls(Type = typeof(CameraPath), Member = "get_shouldInterpolateNextPath")]
-		[CallsUnknownMethods(Count = 6)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[CalledBy(Type = typeof(CameraPathAnimator), Member = "UpdatePointReached")]
 		[CalledBy(Type = typeof(CameraPathPointList), Member = "RecalculatePoints")]
+		[CallerCount(Count = 5)]
 		[Calls(Type = typeof(Debug), Member = "LogError")]
+		[Calls(Type = typeof(CameraPath), Member = "get_shouldInterpolateNextPath")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -181,42 +178,53 @@ public class CameraPath : MonoBehaviour
 	public int numberOfPoints
 	{
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 3)]
 		[Calls(Type = typeof(CameraPath), Member = "get_shouldInterpolateNextPath")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 3)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public int realNumberOfPoints
 	{
 		[CalledBy(Type = typeof(CameraPath), Member = "RemovePoint")]
-		[CalledBy(Type = typeof(CameraPath), Member = "RemovePoint")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 7)]
-		[CalledBy(Type = typeof(CameraPath), Member = "GetPathPosition")]
+		[CalledBy(Type = typeof(CameraPath), Member = "CalculateNormalisedPercentage")]
 		[CalledBy(Type = typeof(CameraPath), Member = "GetPathPosition")]
 		[CalledBy(Type = typeof(CameraPathAnimator), Member = "UpdatePointReached")]
-		[CalledBy(Type = typeof(CameraPath), Member = "CalculateNormalisedPercentage")]
 		[CalledBy(Type = typeof(CameraPathPointList), Member = "RecalculatePoints")]
+		[CallerCount(Count = 7)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public int numberOfCurves
 	{
+		[CalledBy(Type = typeof(CameraPath), Member = "StoredArcLength")]
+		[CalledBy(Type = typeof(CameraPath), Member = "RemovePoint")]
+		[CalledBy(Type = typeof(CameraPath), Member = "GetPointNumber")]
+		[CalledBy(Type = typeof(CameraPath), Member = "GetPathPosition")]
+		[CalledBy(Type = typeof(CameraPath), Member = "GetPathPercentage")]
+		[CalledBy(Type = typeof(CameraPath), Member = "GetPathPercentage")]
+		[CalledBy(Type = typeof(CameraPath), Member = "GetNearestPointIndex")]
+		[CalledBy(Type = typeof(CameraPath), Member = "GetLastPointIndex")]
+		[CalledBy(Type = typeof(CameraPath), Member = "GetNextPointIndex")]
+		[CalledBy(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
+		[CalledBy(Type = typeof(CameraPath), Member = "GetPoint")]
+		[CalledBy(Type = typeof(CameraPath), Member = "GetPointIndex")]
+		[CalledBy(Type = typeof(CameraPath), Member = "GetCurveIndex")]
 		[CallerCount(Count = 27)]
+		[Calls(Type = typeof(CameraPath), Member = "get_shouldInterpolateNextPath")]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(CameraPath), Member = "get_shouldInterpolateNextPath")]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -225,7 +233,7 @@ public class CameraPath : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
@@ -240,14 +248,14 @@ public class CameraPath : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	public CameraPathOrientationList orientationList
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
 		get
 		{
 			return null;
@@ -256,8 +264,8 @@ public class CameraPath : MonoBehaviour
 
 	public CameraPathFOVList fovList
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -276,8 +284,8 @@ public class CameraPath : MonoBehaviour
 
 	public CameraPathSpeedList speedList
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -287,7 +295,7 @@ public class CameraPath : MonoBehaviour
 	public CameraPathEventList eventList
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 1)]
 		get
 		{
 			return null;
@@ -296,8 +304,8 @@ public class CameraPath : MonoBehaviour
 
 	public CameraPathDelayList delayList
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 5)]
 		get
 		{
 			return null;
@@ -315,18 +323,18 @@ public class CameraPath : MonoBehaviour
 
 	public int storedValueArraySize
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public CameraPathControlPoint[] pointALink
 	{
-		[CallerCount(Count = 8)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 8)]
 		get
 		{
 			return null;
@@ -345,8 +353,8 @@ public class CameraPath : MonoBehaviour
 
 	public Vector3[] storedPoints
 	{
-		[CallerCount(Count = 3)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 3)]
 		get
 		{
 			return null;
@@ -358,7 +366,7 @@ public class CameraPath : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -368,14 +376,14 @@ public class CameraPath : MonoBehaviour
 
 	public Interpolation interpolation
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return default(Interpolation);
 		}
-		[Calls(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
 		set
 		{
 		}
@@ -389,13 +397,14 @@ public class CameraPath : MonoBehaviour
 		{
 			return null;
 		}
-		[CallsDeduplicatedMethods(Count = 2)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
 		[Calls(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
-		[CallsUnknownMethods(Count = 2)]
 		[Calls(Type = typeof(Debug), Member = "LogError")]
-		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
@@ -407,7 +416,7 @@ public class CameraPath : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
@@ -418,28 +427,27 @@ public class CameraPath : MonoBehaviour
 
 	public bool shouldInterpolateNextPath
 	{
+		[CalledBy(Type = typeof(CameraPath), Member = "get_Item")]
+		[CalledBy(Type = typeof(CameraPath), Member = "get_numberOfPoints")]
+		[CalledBy(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
 		[CalledBy(Type = typeof(CameraPathPointList), Member = "GetLastPointIndex")]
 		[CalledBy(Type = typeof(CameraPathPointList), Member = "GetPoint")]
-		[CalledBy(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
-		[CalledBy(Type = typeof(CameraPath), Member = "get_numberOfPoints")]
-		[CalledBy(Type = typeof(CameraPath), Member = "get_Item")]
 		[CallerCount(Count = 6)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[CalledBy(Type = typeof(CameraPath), Member = "get_Item")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public float storedPointResolution
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -454,7 +462,7 @@ public class CameraPath : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -468,10 +476,10 @@ public class CameraPath : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -479,14 +487,14 @@ public class CameraPath : MonoBehaviour
 
 	public float aspect
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -498,7 +506,7 @@ public class CameraPath : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -509,19 +517,19 @@ public class CameraPath : MonoBehaviour
 
 	public event RecalculateCurvesHandler RecalculateCurvesEvent
 	{
+		[CompilerGenerated]
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CompilerGenerated]
+		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
@@ -529,25 +537,25 @@ public class CameraPath : MonoBehaviour
 
 	public event PathPointAddedHandler PathPointAddedEvent
 	{
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CompilerGenerated]
 		[CalledBy(Type = typeof(CameraPathFOVList), Member = "Init")]
 		[CalledBy(Type = typeof(CameraPathOrientationList), Member = "Init")]
 		[CalledBy(Type = typeof(CameraPathTiltList), Member = "Init")]
+		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CompilerGenerated]
-		[CallerCount(Count = 3)]
 		add
 		{
 		}
 		[CompilerGenerated]
-		[CallerCount(Count = 3)]
+		[CalledBy(Type = typeof(CameraPathFOVList), Member = "CleanUp")]
 		[CalledBy(Type = typeof(CameraPathOrientationList), Member = "CleanUp")]
+		[CalledBy(Type = typeof(CameraPathTiltList), Member = "CleanUp")]
+		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(CameraPathTiltList), Member = "CleanUp")]
-		[CalledBy(Type = typeof(CameraPathFOVList), Member = "CleanUp")]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		remove
 		{
 		}
@@ -555,19 +563,19 @@ public class CameraPath : MonoBehaviour
 
 	public event PathPointRemovedHandler PathPointRemovedEvent
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
+		[CompilerGenerated]
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CompilerGenerated]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
@@ -575,19 +583,19 @@ public class CameraPath : MonoBehaviour
 
 	public event CheckStartPointCullHandler CheckStartPointCullEvent
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CallsUnknownMethods(Count = 1)]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
@@ -596,18 +604,18 @@ public class CameraPath : MonoBehaviour
 	public event CheckEndPointCullHandler CheckEndPointCullEvent
 	{
 		[CompilerGenerated]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
 		[CompilerGenerated]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
@@ -615,169 +623,184 @@ public class CameraPath : MonoBehaviour
 
 	public event CleanUpListsHandler CleanUpListsEvent
 	{
-		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
-		[CallsUnknownMethods(Count = 1)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 4)]
 	public float StoredArcLength(int curve)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public int StoredValueIndex(float percentage)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(CameraPathOrientationList), Member = "AddOrientation")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "set_localPosition")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 7)]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(CameraPathControlPoint), Member = "set_localPosition")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(CameraPathOrientationList), Member = "AddOrientation")]
 	[Calls(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	public CameraPathControlPoint AddPoint(Vector3 position)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(CameraPath), Member = "Init")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(CameraPath), Member = "Init")]
-	[CalledBy(Type = typeof(CameraPath), Member = "Init")]
-	[CalledBy(Type = typeof(CameraPath), Member = "Init")]
-	[CalledBy(Type = typeof(CameraPath), Member = "Init")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void AddPoint(CameraPathControlPoint point)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[Calls(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void InsertPoint(CameraPathControlPoint point, int index)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[Calls(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public CameraPathControlPoint InsertPoint(int index)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(CameraPath), Member = "RemovePoint")]
 	[Calls(Type = typeof(CameraPath), Member = "get_Item")]
+	[Calls(Type = typeof(CameraPath), Member = "RemovePoint")]
 	public void RemovePoint(int index)
 	{
 	}
 
-	[Calls(Type = typeof(CameraPath), Member = "RemovePoint")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(CameraPath), Member = "RemovePoint")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public bool RemovePoint(string pointName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(CameraPath), Member = "RemovePoint")]
-	[Calls(Type = typeof(CameraPath), Member = "get_Item")]
-	[Calls(Type = typeof(CameraPath), Member = "GetNearestPoint")]
-	[Calls(Type = typeof(CameraPath), Member = "RemovePoint")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
+	[Calls(Type = typeof(CameraPath), Member = "RemovePoint")]
+	[Calls(Type = typeof(CameraPath), Member = "GetNearestPoint")]
 	[Calls(Type = typeof(CameraPath), Member = "GetNearestPointIndex")]
+	[Calls(Type = typeof(CameraPath), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void RemovePoint(Vector3 pointPosition)
 	{
 	}
 
+	[CalledBy(Type = typeof(CameraPath), Member = "RemovePoint")]
+	[CalledBy(Type = typeof(CameraPath), Member = "RemovePoint")]
+	[CalledBy(Type = typeof(CameraPath), Member = "RemovePoint")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
+	[Calls(Type = typeof(CameraPath), Member = "get_realNumberOfPoints")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[Calls(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CalledBy(Type = typeof(CameraPath), Member = "RemovePoint")]
-	[CalledBy(Type = typeof(CameraPath), Member = "RemovePoint")]
-	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
-	[CalledBy(Type = typeof(CameraPath), Member = "RemovePoint")]
-	[CalledBy(Type = typeof(CameraPath), Member = "RemovePoint")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(CameraPath), Member = "get_realNumberOfPoints")]
-	[Calls(Type = typeof(CameraPath), Member = "get_realNumberOfPoints")]
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
 	public void RemovePoint(CameraPathControlPoint point)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetPointNumber")]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetPathPosition")]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetPathRotation")]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetPathTilt")]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetPathFOV")]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetPathOrthographicSize")]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetPathSpeed")]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetPathEase")]
+	[CalledBy(Type = typeof(CameraPath), Member = "CheckEvents")]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetNearestPointIndex")]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetLastPointIndex")]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetNextPointIndex")]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetStoredPoint")]
+	[CalledBy(Type = typeof(CameraPathAnimator), Member = "GetOrientation")]
+	[CalledBy(Type = typeof(CameraPathAnimator), Member = "UpdateAnimation")]
+	[CalledBy(Type = typeof(CameraPathAnimator), Member = "CheckEvents")]
 	[CallerCount(Count = 23)]
 	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private float ParsePercentage(float percentage)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(CameraPath), Member = "get_realNumberOfPoints")]
 	[CalledBy(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
 	[CalledBy(Type = typeof(CameraPathPointList), Member = "RecalculatePoints")]
-	[CalledBy(Type = typeof(CameraPathPointList), Member = "RecalculatePoints")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(CameraPath), Member = "get_realNumberOfPoints")]
+	[CallsUnknownMethods(Count = 9)]
 	public float CalculateNormalisedPercentage(float percentage)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public float DeNormalisePercentage(float normalisedPercent)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
 	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
 	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
 	public int GetPointNumber(float percentage)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -787,184 +810,163 @@ public class CameraPath : MonoBehaviour
 		return default(Vector3);
 	}
 
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(CameraPath), Member = "GetPoint")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
-	[Calls(Type = typeof(CPMath), Member = "CalculateHermite")]
-	[Calls(Type = typeof(CameraPath), Member = "GetPoint")]
-	[Calls(Type = typeof(CameraPath), Member = "GetPoint")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
-	[Calls(Type = typeof(CPMath), Member = "CalculateCatmullRom")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
-	[Calls(Type = typeof(Vector3), Member = "Lerp")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(CameraPath), Member = "get_realNumberOfPoints")]
-	[Calls(Type = typeof(CameraPath), Member = "GetPoint")]
-	[Calls(Type = typeof(CPMath), Member = "CalculateBezier")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "get_backwardControlPointWorld")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetPathPosition")]
+	[CalledBy(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetNearestPoint")]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetNearestPointNear")]
+	[CalledBy(Type = typeof(CameraPathAnimator), Member = "GetOrientation")]
+	[CalledBy(Type = typeof(CameraPathAnimator), Member = "UpdateAnimation")]
+	[CalledBy(Type = typeof(CameraPathPointList), Member = "RecalculatePoints")]
+	[CalledBy(Type = typeof(CameraPathTiltList), Member = "AutoSetTilt")]
 	[CallerCount(Count = 20)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CameraPath), Member = "get_realNumberOfPoints")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
+	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
 	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
 	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
 	[Calls(Type = typeof(CameraPath), Member = "GetPoint")]
-	[Calls(Type = typeof(CameraPath), Member = "GetPoint")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
 	[Calls(Type = typeof(CameraPathControlPoint), Member = "get_forwardControlPointWorld")]
-	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
+	[Calls(Type = typeof(CameraPathControlPoint), Member = "get_backwardControlPointWorld")]
+	[Calls(Type = typeof(CPMath), Member = "CalculateBezier")]
+	[Calls(Type = typeof(CPMath), Member = "CalculateHermite")]
+	[Calls(Type = typeof(CPMath), Member = "CalculateCatmullRom")]
+	[Calls(Type = typeof(Vector3), Member = "Lerp")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 16)]
 	public Vector3 GetPathPosition(float percentage, bool ignoreNormalisation)
 	{
 		return default(Vector3);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(CameraPathOrientationList), Member = "GetOrientation")]
-	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
+	[Calls(Type = typeof(CameraPathOrientationList), Member = "GetOrientation")]
+	[CallsUnknownMethods(Count = 1)]
 	public Quaternion GetPathRotation(float percentage, bool ignoreNormalisation)
 	{
 		return default(Quaternion);
 	}
 
-	[Calls(Type = typeof(CameraPath), Member = "GetPathDirection")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPath), Member = "GetPathDirection")]
 	public Vector3 GetPathDirection(float percentage)
 	{
 		return default(Vector3);
 	}
 
-	[Calls(Type = typeof(Vector3), Member = "Lerp")]
-	[CalledBy(Type = typeof(CameraPathAnimator), Member = "GetOrientation")]
-	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[CalledBy(Type = typeof(CameraPathAnimator), Member = "GetOrientation")]
-	[CalledBy(Type = typeof(CameraPathAnimator), Member = "GetOrientation")]
-	[CalledBy(Type = typeof(CameraPathAnimator), Member = "GetOrientation")]
 	[CalledBy(Type = typeof(CameraPath), Member = "GetPathDirection")]
-	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(CameraPathTiltList), Member = "AutoSetTilt")]
-	[CallsUnknownMethods(Count = 9)]
+	[CalledBy(Type = typeof(CameraPathAnimator), Member = "GetOrientation")]
 	[CalledBy(Type = typeof(CameraPathOrientationList), Member = "AddOrientation")]
+	[CalledBy(Type = typeof(CameraPathTiltList), Member = "AutoSetTilt")]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
+	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
+	[Calls(Type = typeof(Vector3), Member = "Lerp")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public Vector3 GetPathDirection(float percentage, bool normalisePercent)
 	{
 		return default(Vector3);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(CameraPathTiltList), Member = "GetTilt")]
-	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
+	[Calls(Type = typeof(CameraPathTiltList), Member = "GetTilt")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetPathTilt(float percentage)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(CameraPathFOVList), Member = "GetValue")]
-	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
+	[Calls(Type = typeof(CameraPathFOVList), Member = "GetValue")]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetPathFOV(float percentage)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(CameraPathFOVList), Member = "GetValue")]
 	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
+	[Calls(Type = typeof(CameraPathFOVList), Member = "GetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetPathOrthographicSize(float percentage)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(CameraPathSpeedList), Member = "GetSpeed")]
-	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
+	[Calls(Type = typeof(CameraPathSpeedList), Member = "GetSpeed")]
 	[Calls(Type = typeof(CameraPathDelayList), Member = "CheckEase")]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetPathSpeed(float percentage)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(CameraPathDelayList), Member = "CheckEase")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
+	[Calls(Type = typeof(CameraPathDelayList), Member = "CheckEase")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetPathEase(float percentage)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
 	[Calls(Type = typeof(CameraPathEventList), Member = "CheckEvents")]
 	[Calls(Type = typeof(CameraPathDelayList), Member = "CheckEvents")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
 	public void CheckEvents(float percentage)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetCurvePercentage")]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetCurvePercentage")]
 	[CalledBy(Type = typeof(CameraPath), Member = "GetPathPercentage")]
-	[CalledBy(Type = typeof(CameraPath), Member = "GetPathPercentage")]
-	[CalledBy(Type = typeof(CameraPath), Member = "GetCurvePercentage")]
-	[CalledBy(Type = typeof(CameraPath), Member = "GetCurvePercentage")]
-	[CalledBy(Type = typeof(CameraPath), Member = "GetCurvePercentage")]
-	[CalledBy(Type = typeof(CameraPath), Member = "GetCurvePercentage")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 6)]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetPathPercentage(CameraPathControlPoint point)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
 	public float GetPathPercentage(int pointIndex)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(CameraPath), Member = "RemovePoint")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
 	[CalledBy(Type = typeof(CameraPathPointList), Member = "RecalculatePoints")]
-	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
+	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public int GetNearestPointIndex(float percentage)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
 	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
 	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[Calls(Type = typeof(CameraPath), Member = "ParsePercentage")]
-	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public int GetLastPointIndex(float percentage, bool isNormalised)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -974,78 +976,73 @@ public class CameraPath : MonoBehaviour
 	[CallsDeduplicatedMethods(Count = 1)]
 	public int GetNextPointIndex(float percentage, bool isNormalised)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(CameraPath), Member = "GetPathPercentage")]
-	[Calls(Type = typeof(CameraPath), Member = "GetPathPercentage")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPath), Member = "GetPathPercentage")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public float GetCurvePercentage(CameraPathControlPoint pointA, CameraPathControlPoint pointB, float percentage)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public float GetCurvePercentage(CameraPathPoint pointA, CameraPathPoint pointB, float percentage)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(CameraPathPointList), Member = "PathPointAddedEvent")]
+	[CalledBy(Type = typeof(CameraPathPointList), Member = "PathPointRemovedEvent")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(CameraPath), Member = "GetPathPercentage")]
-	[CalledBy(Type = typeof(CameraPathPointList), Member = "PathPointRemovedEvent")]
-	[CalledBy(Type = typeof(CameraPathPointList), Member = "PathPointRemovedEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(CameraPath), Member = "GetPathPercentage")]
-	[CalledBy(Type = typeof(CameraPathPointList), Member = "PathPointAddedEvent")]
 	public float GetCurvePercentage(CameraPathPoint point)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CameraPathPointList), Member = "GetPoint")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
-	[CallerCount(Count = 0)]
 	public float GetOutroEasePercentage(CameraPathDelay point)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[Calls(Type = typeof(CameraPathPointList), Member = "GetPoint")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public float GetIntroEasePercentage(CameraPathDelay point)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(CameraPathPointList), Member = "RecalculatePoints")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CameraPath), Member = "GetPathPercentage")]
-	[CalledBy(Type = typeof(CameraPathPointList), Member = "RecalculatePoints")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(CameraPath), Member = "GetPathPercentage")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public float GetPathPercentage(CameraPathControlPoint pointA, CameraPathControlPoint pointB, float curvePercentage)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(CameraPathDelayList), Member = "CheckEase")]
-	[CalledBy(Type = typeof(CameraPathDelayList), Member = "CheckEase")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	public float GetPathPercentage(float pointA, float pointB, float curvePercentage)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1054,22 +1051,21 @@ public class CameraPath : MonoBehaviour
 	[CallsDeduplicatedMethods(Count = 1)]
 	public int GetStoredPoint(float percentage)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(CameraPath), Member = "Init")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPath), Member = "Init")]
 	private void Awake()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 43)]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 43)]
 	private void Start()
 	{
 	}
@@ -1077,210 +1073,160 @@ public class CameraPath : MonoBehaviour
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CameraPath), Member = "InitialiseLists")]
 	[Calls(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnValidate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	private void OnDestroy()
 	{
 	}
 
-	[CalledBy(Type = typeof(CameraPath), Member = "set_interpolateNextPath")]
-	[Calls(Type = typeof(CameraPath), Member = "GetPathPosition")]
-	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(CameraPath), Member = "GetPathPosition")]
-	[Calls(Type = typeof(CameraPath), Member = "GetPathPosition")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[Calls(Type = typeof(CameraPath), Member = "GetPathPosition")]
-	[Calls(Type = typeof(CameraPath), Member = "GetPathPosition")]
-	[Calls(Type = typeof(CameraPath), Member = "GetPathPosition")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(CameraPath), Member = "set_loop")]
 	[CalledBy(Type = typeof(CameraPath), Member = "set_interpolation")]
 	[CalledBy(Type = typeof(CameraPath), Member = "set_nextPath")]
+	[CalledBy(Type = typeof(CameraPath), Member = "set_interpolateNextPath")]
 	[CalledBy(Type = typeof(CameraPath), Member = "AddPoint")]
 	[CalledBy(Type = typeof(CameraPath), Member = "AddPoint")]
 	[CalledBy(Type = typeof(CameraPath), Member = "InsertPoint")]
 	[CalledBy(Type = typeof(CameraPath), Member = "InsertPoint")]
 	[CalledBy(Type = typeof(CameraPath), Member = "RemovePoint")]
 	[CalledBy(Type = typeof(CameraPath), Member = "OnValidate")]
-	[CallsUnknownMethods(Count = 110)]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(CameraPath), Member = "GetPathPosition")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(CameraPath), Member = "GetPathPosition")]
 	[CallerCount(Count = 10)]
-	[CallsDeduplicatedMethods(Count = 20)]
 	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
 	[Calls(Type = typeof(CameraPath), Member = "CalculateNormalisedPercentage")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
 	[Calls(Type = typeof(CameraPath), Member = "GetPoint")]
-	[Calls(Type = typeof(CameraPath), Member = "GetPoint")]
+	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
 	[Calls(Type = typeof(CameraPathControlPoint), Member = "get_forwardControlPointWorld")]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "get_forwardControlPointWorld")]
 	[Calls(Type = typeof(CameraPathControlPoint), Member = "get_backwardControlPointWorld")]
-	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "get_backwardControlPointWorld")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
-	[Calls(Type = typeof(Vector3), Member = "Distance")]
-	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "LocalToWorldPosition")]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(CameraPath), Member = "GetPathPosition")]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 20)]
+	[CallsUnknownMethods(Count = 110)]
 	public void RecalculateStoredValues()
 	{
 	}
 
-	[Calls(Type = typeof(CameraPath), Member = "GetNearestPoint")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPath), Member = "GetNearestPoint")]
 	public float GetNearestPoint(Vector3 fromPostition)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(CameraPath), Member = "GetNearestPoint")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPath), Member = "GetNearestPoint")]
 	public float GetNearestPoint(Vector3 fromPostition, bool ignoreNormalisation)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(CameraPath), Member = "RemovePoint")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(CameraPathAnimator), Member = "GetOrientation")]
 	[CalledBy(Type = typeof(CameraPath), Member = "GetNearestPoint")]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetNearestPoint")]
+	[CalledBy(Type = typeof(CameraPathAnimator), Member = "GetOrientation")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(CameraPath), Member = "GetPathPosition")]
 	[Calls(Type = typeof(CameraPath), Member = "GetPathPosition")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[CalledBy(Type = typeof(CameraPath), Member = "GetNearestPoint")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetNearestPoint(Vector3 fromPostition, bool ignoreNormalisation, int refinments)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(CameraPath), Member = "GetPathPosition")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPath), Member = "GetPathPosition")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetNearestPointNear(Vector3 fromPostition, float prevPercentage, Vector3 prevPosition, bool ignoreNormalisation, int refinments)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Clear()
 	{
 	}
 
-	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
+	[CalledBy(Type = typeof(CameraPath), Member = "GetPathPosition")]
+	[CalledBy(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
+	[CalledBy(Type = typeof(CameraPathPointList), Member = "PathPointRemovedEvent")]
+	[CallerCount(Count = 10)]
 	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
 	[Calls(Type = typeof(CameraPath), Member = "get_Item")]
-	[CalledBy(Type = typeof(CameraPath), Member = "GetPathPosition")]
-	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
-	[CalledBy(Type = typeof(CameraPath), Member = "GetPathPosition")]
-	[CalledBy(Type = typeof(CameraPath), Member = "GetPathPosition")]
-	[CalledBy(Type = typeof(CameraPath), Member = "GetPathPosition")]
-	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 10)]
-	[CalledBy(Type = typeof(CameraPathPointList), Member = "PathPointRemovedEvent")]
-	[CalledBy(Type = typeof(CameraPath), Member = "GetPathPosition")]
-	[CalledBy(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
-	[CalledBy(Type = typeof(CameraPath), Member = "RecalculateStoredValues")]
-	[CalledBy(Type = typeof(CameraPathPointList), Member = "PathPointRemovedEvent")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(CameraPath), Member = "GetPathPosition")]
+	[CallsUnknownMethods(Count = 1)]
 	public CameraPathControlPoint GetPoint(int index)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
-	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
 	public int GetPointIndex(int index)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
-	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
-	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CameraPath), Member = "get_numberOfCurves")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public int GetCurveIndex(int startPointIndex)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "set_forwardControlPoint")]
-	[Calls(Type = typeof(CameraPath), Member = "AddPoint")]
-	[Calls(Type = typeof(CameraPath), Member = "AddPoint")]
-	[Calls(Type = typeof(CameraPath), Member = "AddPoint")]
-	[Calls(Type = typeof(CameraPath), Member = "AddPoint")]
 	[CalledBy(Type = typeof(CameraPath), Member = "Awake")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "set_forwardControlPoint")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "set_forwardControlPoint")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "set_forwardControlPoint")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "set_localPosition")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "set_localPosition")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "set_localPosition")]
-	[Calls(Type = typeof(CameraPathControlPoint), Member = "set_localPosition")]
-	[Calls(Type = typeof(CameraPath), Member = "InitialiseLists")]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CameraPath), Member = "InitialiseLists")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(CameraPathControlPoint), Member = "set_localPosition")]
+	[Calls(Type = typeof(CameraPathControlPoint), Member = "set_forwardControlPoint")]
+	[Calls(Type = typeof(CameraPath), Member = "AddPoint")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 16)]
 	private void Init()
 	{
 	}
 
-	[CalledBy(Type = typeof(CameraPath), Member = "Init")]
 	[CalledBy(Type = typeof(CameraPath), Member = "OnValidate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 19)]
-	[CallsUnknownMethods(Count = 18)]
+	[CalledBy(Type = typeof(CameraPath), Member = "Init")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 18)]
 	private void InitialiseLists()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public CameraPath()
 	{
 	}

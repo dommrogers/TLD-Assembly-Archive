@@ -5,7 +5,7 @@ public class Feat_ExpertTrapperSaveData
 	public int m_RabbitSnaredCount;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public Feat_ExpertTrapperSaveData()
 	{
 	}

@@ -11,11 +11,11 @@ public class AuroraTrigger : MonoBehaviour
 
 	public float m_TransitionTime;
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = "get_tag")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	private void OnTriggerEnter(Collider other)
 	{
 	}

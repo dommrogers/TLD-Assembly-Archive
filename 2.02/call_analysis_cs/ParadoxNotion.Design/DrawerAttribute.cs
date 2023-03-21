@@ -11,12 +11,12 @@ public abstract class DrawerAttribute : Attribute
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	protected DrawerAttribute()
 	{
 	}

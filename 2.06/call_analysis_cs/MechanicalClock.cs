@@ -46,41 +46,39 @@ public class MechanicalClock : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(MechanicalClock), Member = "UpdateHands")]
-	[Calls(Type = typeof(MechanicalClock), Member = "UpdateWeights")]
-	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
+	[Calls(Type = typeof(MechanicalClock), Member = "UpdateWeights")]
+	[Calls(Type = typeof(MechanicalClock), Member = "UpdateHands")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void UpdatePendulum()
 	{
 	}
 
+	[CalledBy(Type = typeof(MechanicalClock), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CalledBy(Type = typeof(MechanicalClock), Member = "Update")]
 	[CallsUnknownMethods(Count = 5)]
 	private void UpdateWeights()
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "set_localEulerAngles")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[CalledBy(Type = typeof(MechanicalClock), Member = "Update")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(Transform), Member = "set_localEulerAngles")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Transform), Member = "set_localEulerAngles")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateHands()
 	{
 	}

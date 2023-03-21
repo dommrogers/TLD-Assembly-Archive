@@ -18,8 +18,8 @@ public class BearEncounterSaveData
 
 	public bool m_IsEncounterEnabled;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public BearEncounterSaveData()
 	{
 	}

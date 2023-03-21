@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.SaveState;
 using TLD.UI;
 using TLD.UI.Generics;
 using UnityEngine;
@@ -71,22 +72,22 @@ public class Panel_GearSelect : Panel_AutoReferenced
 	private GameObject m_CookingGameObject;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_GearSelect), Member = "OnCancel")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "UpdateGamepadSelection")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlayDuringStruggle")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(Panel_GearSelect), Member = "RefreshVisuals")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "UpdateGamepadSelection")]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "OnCancel")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlayDuringStruggle")]
 	private void Update()
 	{
 	}
@@ -98,41 +99,40 @@ public class Panel_GearSelect : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Panel_GearSelect), Member = "Enable")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "GetItems")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "GetItems")]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "Enable")]
 	public void Enable(bool enable, ListItemFilter filter, bool isStruggleWeaponSelection)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "ShowCookWaterPicker")]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "ShowCookFoodPicker")]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "SelectGear")]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Enable")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "SetBGWidgetsEnabled")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "SetPreviousPanelActive")]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "OnCancel")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "RefreshVisuals")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "SetupScrollList")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "SetPreviousPanelActive")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_GearSelect), Member = "SelectGear")]
+	[CalledBy(Type = typeof(Panel_GearSelect), Member = "ShowCookFoodPicker")]
+	[CalledBy(Type = typeof(Panel_GearSelect), Member = "ShowCookWaterPicker")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "SetPreviousPanelActive")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "SetupScrollList")]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "RefreshVisuals")]
 	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "SetBGWidgetsEnabled")]
+	[CallsUnknownMethods(Count = 3)]
 	public void Enable(bool enable, List<GearItem> listItems, bool isStruggleWeaponSelection, Action onGearSelected)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Update")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "Enable")]
-	[Calls(Type = typeof(Panel_ActionPicker), Member = "ShowActionPicker")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "Enable")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+	[Calls(Type = typeof(Panel_ActionPicker), Member = "ShowActionPicker")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnCancel()
 	{
 	}
@@ -146,32 +146,32 @@ public class Panel_GearSelect : Panel_AutoReferenced
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(ScrollList), Member = "Prev")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void PreviousGear()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(ScrollList), Member = "Next")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void NextGear()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CalledBy(Type = typeof(Panel_GearSelect), Member = "UpdateGamepadSelection")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Debug), Member = "LogFormat")]
 	[Calls(Type = typeof(Panel_GearSelect), Member = "Enable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "UpdateGamepadSelection")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void SelectGear()
 	{
 	}
@@ -183,70 +183,66 @@ public class Panel_GearSelect : Panel_AutoReferenced
 		return null;
 	}
 
+	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "FireCookCallback")]
+	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "CookingSlotCookCallback")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "FindFireEmptyPlacePoint")]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "Enable")]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "SetBGWidgetsEnabled")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "CreateMessageInfo")]
 	[Calls(Type = typeof(HUDMessage), Member = "AddMessageToQueue")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(HUDMessage), Member = "CreateMessageInfo")]
-	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "CookingSlotCookCallback")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "FireCookCallback")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "Enable")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "SetBGWidgetsEnabled")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "FindFireEmptyPlacePoint")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(HUDMessage), Member = "CreateMessageInfo")]
+	[CallsUnknownMethods(Count = 4)]
 	public void ShowCookFoodPicker(GameObject fireObject, GameObject cookingObject)
 	{
 	}
 
-	[Calls(Type = typeof(HUDMessage), Member = "CreateMessageInfo")]
-	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "CookingSlotWaterCallback")]
 	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "FireWaterCallback")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessageToQueue")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "SetBGWidgetsEnabled")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "Enable")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "FindFireEmptyPlacePoint")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_ActionPicker), Member = "CookingSlotWaterCallback")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "FindFireEmptyPlacePoint")]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "Enable")]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "SetBGWidgetsEnabled")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(HUDMessage), Member = "CreateMessageInfo")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessageToQueue")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void ShowCookWaterPicker(GameObject fireObject, GameObject cookingObject)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 2)]
 	public void SetSelectedGearPlacePoint(GearPlacePoint selectedGearPlacePoint)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Enable")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Enable")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public static List<GearItem> GetItems(ListItemFilter filter)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private GearItem GetScrolllistCurrentItem()
 	{
 		return null;
@@ -254,153 +250,142 @@ public class Panel_GearSelect : Panel_AutoReferenced
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_GearSelect), Member = "UpdateSelectedGear")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateSelectedGear(int selectedGearIndex)
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "RefreshVisuals")]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "UpdateSelectedGear")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "GetWeightTwoDecimalPlacesWithUnitsString")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_GearSelect), Member = "RefreshVisuals")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
+	[Calls(Type = typeof(Utils), Member = "GetWeightTwoDecimalPlacesWithUnitsString")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateSelectedGear(GearItem selectedGear)
 	{
 	}
 
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "RefreshGearItemIcons")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "UpdateSelectedGear")]
+	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Enable")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "UpdateSelectedGear")]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "RefreshGearItemIcons")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void RefreshVisuals()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Update")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "SelectGear")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(ScrollList), Member = "Next")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ScrollList), Member = "Prev")]
+	[Calls(Type = typeof(ScrollList), Member = "Next")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "SelectGear")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateGamepadSelection()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Enable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GearSelectCoverflow), Member = "SetBareHands")]
-	[Calls(Type = typeof(GearSelectCoverflow), Member = "SetEmptySlot")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
 	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(GearSelectCoverflow), Member = "SetGearItem")]
+	[Calls(Type = typeof(GearSelectCoverflow), Member = "SetEmptySlot")]
+	[Calls(Type = typeof(GearSelectCoverflow), Member = "SetBareHands")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void SetupScrollList()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateButtonLegend()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Enable")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Enable")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void SetPreviousPanelActive(bool toggle)
 	{
 	}
 
-	[Calls(Type = typeof(GearPlacePoint), Member = "DropAndPlaceItem")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GearPlacePoint), Member = "DropAndPlaceItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Cooking), Member = "SetFireContainer")]
-	[Calls(Type = typeof(Panel_GearSelect), Member = "FindFireEmptyPlacePoint")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_GearSelect), Member = "FindFireEmptyPlacePoint")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(GearPlacePoint), Member = "DropAndPlaceItem")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Cooking), Member = "SetFireContainer")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void DoFirePickerAction()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GearPlacePoint), Member = "FindFirstEmptyPlacePoint")]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "ShowCookFoodPicker")]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "ShowCookWaterPicker")]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "DoFirePickerAction")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(GearPlacePoint), Member = "FindFirstEmptyPlacePoint")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	private GearPlacePoint FindFireEmptyPlacePoint()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "ShowCookWaterPicker")]
-	[CallsUnknownMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "ShowCookFoodPicker")]
+	[CalledBy(Type = typeof(Panel_GearSelect), Member = "ShowCookWaterPicker")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "Enable")]
+	[CallsUnknownMethods(Count = 4)]
 	private void SetBGWidgetsEnabled(bool shouldEnable)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
 	[CalledBy(Type = typeof(Panel_GearSelect), Member = "RefreshVisuals")]
-	[CallsUnknownMethods(Count = 5)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void RefreshGearItemIcons()
 	{
 	}

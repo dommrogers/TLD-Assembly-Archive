@@ -10,7 +10,7 @@ public class ElevatorSaveDataProxy
 	public int m_LastFloorIndex;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ElevatorSaveDataProxy()
 	{
 	}

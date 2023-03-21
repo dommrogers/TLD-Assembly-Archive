@@ -6,8 +6,8 @@ public class ArrayIndexes
 {
 	public int[] indexes;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public ArrayIndexes()
 	{
 	}

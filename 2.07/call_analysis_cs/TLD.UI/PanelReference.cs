@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
+using NodeCanvas.Tasks.Actions;
 using UnityEngine;
 
 namespace TLD.UI;
@@ -14,20 +15,27 @@ public class PanelReference : ScriptableObject
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 28)]
+		[CallerCount(Count = 32)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 79)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 86)]
 		set
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(PackManager), Member = "Start")]
+	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "Start")]
+	[CalledBy(Type = typeof(Panel_HUD.ScentIndicator), Member = "UpdateActionsPanel")]
+	[CalledBy(Type = typeof(Panel_HUD.ScentIndicator), Member = "Update")]
+	[CalledBy(Type = typeof(Action_AddBearkillerRifle), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_PlayCredits), Member = "PlayNextSkippableMovie")]
+	[CalledBy(Type = typeof(Action_PlayCredits), Member = "OnMovieStop")]
 	[CallerCount(Count = 7)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(PanelReference), Member = "Get")]
@@ -36,75 +44,83 @@ public class PanelReference : ScriptableObject
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_AutoReferenced), Member = "Awake")]
-	[CalledBy(Type = typeof(PanelReference), Member = "Get")]
 	[CalledBy(Type = typeof(BaseAiManager), Member = "ResetAudioLoops")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(PanelReference), Member = "Get")]
+	[CalledBy(Type = typeof(Panel_AutoReferenced), Member = "Awake")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ScriptableObject), Member = "CreateInstance")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public static PanelReference Get(Type type)
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(PackManager), Member = "Start")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ExitOptions")]
+	[CalledBy(Type = typeof(BaseAiManager), Member = "ResetAudioLoops")]
+	[CalledBy(Type = typeof(Action_AddBearkillerRifle), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_PlayCredits), Member = "PlayNextSkippableMovie")]
+	[CalledBy(Type = typeof(Action_PlayCredits), Member = "OnMovieStop")]
 	[CallerCount(Count = 6)]
 	[CallsUnknownMethods(Count = 10)]
 	public bool TryGetPanel<T>(out T panel) where T : Panel_Base
 	{
 		panel = null;
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 79)]
+	[CallerCount(Count = 86)]
 	public void SetPanelReference<T>(T panel) where T : Panel_Base
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static string GetAssetName(Type type)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 2)]
 	private static PanelReference FindExistingInstance(string assetKey)
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = "CreateInstance")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	private static PanelReference CreateReference(string assetKey)
 	{
 		return null;
 	}
 
+	[Conditional("__DEBUG")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[Conditional("__DEBUG")]
 	private void VerifyPanelTypes<T>() where T : Panel_Base
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public PanelReference()
 	{
 	}

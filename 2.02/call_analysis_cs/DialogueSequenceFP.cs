@@ -58,44 +58,40 @@ public class DialogueSequenceFP : MonoBehaviour
 
 	private float m_MaxTextSizeFactor;
 
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 15)]
 	[Calls(Type = typeof(UILabel), Member = "get_fontSize")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentOnSelfOrParent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 33)]
 	private void Awake()
 	{
 	}
 
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "AssignChoiceToCategorySlot")]
 	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "Setup")]
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "SetChoiceCategoryConfiguration")]
-	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Material), Member = "GetColor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "Setup")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(Type = typeof(Material), Member = "GetColor")]
+	[Calls(Type = typeof(Material), Member = "SetColor")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 13)]
 	private void UpdateText()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(RenderTextureCameraManager), Member = "GetRenderTextureManagedCamera")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DialogueSequenceFP), Member = "UpdateText")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DialogueSequenceFP), Member = "UpdateText")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(RenderTextureCameraManager), Member = "GetRenderTextureManagedCamera")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
@@ -107,39 +103,35 @@ public class DialogueSequenceFP : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
-	[Calls(Type = typeof(DialogueSequenceFP), Member = "EnableImage")]
-	[Calls(Type = typeof(DialogueSequenceFP), Member = "DisableImage")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DialogueSequenceFP), Member = "EnableImage")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DialogueSequenceFP), Member = "UpdateText")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(DialogueSequenceFP), Member = "UpdateText")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(DialogueSequenceFP), Member = "DisableImage")]
+	[Calls(Type = typeof(DialogueSequenceFP), Member = "EnableImage")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void SetChoiceCategoryConfiguration(DialogueModeRigFP.DialogueChoiceCategoryConfiguration categoryConfig)
 	{
 	}
 
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "ProcessSelectionConfirm")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnChoiceSelected")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "ProcessSelectionConfirm")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool ProcessInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 5)]
+	[CallerCount(Count = 9)]
 	public void Reset(DialogueModeRigFP dialogueModeRigFP)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 1)]
 	public string GetHoverText()
 	{
 		return null;
@@ -156,85 +148,78 @@ public class DialogueSequenceFP : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public int GetChoiceIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(DialogueSequenceFP), Member = "SetupNormalUILabelText")]
 	[Calls(Type = typeof(DialogueSequenceFP), Member = "UpdateText")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Setup(string text, int choiceIndex, float textSize)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DialogueSequenceFP), Member = "EnableImage")]
-	[Calls(Type = typeof(DialogueSequenceFP), Member = "DisableImage")]
-	[Calls(Type = typeof(DialogueSequenceFP), Member = "EnableImage")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DialogueSequenceFP), Member = "DisableImage")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(DialogueSequenceFP), Member = "DisableImage")]
+	[Calls(Type = typeof(DialogueSequenceFP), Member = "EnableImage")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void SetupImages(Texture2D fg, Texture2D bg)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 9)]
 	private void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "EnableBackground")]
+	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "SetChoiceCategoryConfiguration")]
+	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "SetupImages")]
 	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "EnableForeground")]
-	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "SetupImages")]
-	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "SetupImages")]
-	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "SetChoiceCategoryConfiguration")]
-	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "SetChoiceCategoryConfiguration")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "EnableBackground")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Material), Member = "get_mainTexture")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Material), Member = "set_mainTexture")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 10)]
 	private void EnableImage(Renderer renderer, Texture2D image)
 	{
 	}
 
+	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "SetChoiceCategoryConfiguration")]
 	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "SetupImages")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "DisableForeground")]
 	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "DisableBackground")]
-	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "SetupImages")]
-	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "SetChoiceCategoryConfiguration")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "DisableForeground")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "SetChoiceCategoryConfiguration")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private void DisableImage(Renderer renderer)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Renderer), Member = "get_enabled")]
 	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnRenderComplete()
 	{
 	}
 
-	[Calls(Type = typeof(DialogueSequenceFP), Member = "EnableImage")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DialogueSequenceFP), Member = "EnableImage")]
 	public void EnableForeground(Texture2D image)
 	{
 	}
@@ -258,18 +243,17 @@ public class DialogueSequenceFP : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "AssignChoiceToCategorySlot")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	public void SetChoiceEnabled(bool isEnabled)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SetChoiceAssigned(bool isAssigned)
 	{
 	}
@@ -278,14 +262,14 @@ public class DialogueSequenceFP : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsChoiceEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool IsChoiceAssigned()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -298,21 +282,21 @@ public class DialogueSequenceFP : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsHovered()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "Setup")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "AssignChoiceToCategorySlot")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_fontSize")]
-	[Calls(Type = typeof(UILabel), Member = "get_fontSize")]
+	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "Setup")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
 	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(UILabel), Member = "get_fontSize")]
+	[Calls(Type = typeof(UILabel), Member = "set_fontSize")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void SetupNormalUILabelText(string text, float textSize)
 	{
 	}

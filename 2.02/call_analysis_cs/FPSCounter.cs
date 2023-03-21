@@ -31,16 +31,16 @@ public class FPSCounter : MonoBehaviour
 	{
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
@@ -52,9 +52,10 @@ public class FPSCounter : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 11)]
+	[Calls(Type = typeof(Action<>), Member = "Invoke")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 11)]
 	public void Update()
 	{
 	}
@@ -70,11 +71,11 @@ public class FPSCounter : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public static uint RetrieveFrameTimings(uint numFrames)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public FPSCounter()
 	{

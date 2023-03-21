@@ -12,7 +12,7 @@ public class GlobalParameters : MonoBehaviour
 		public float m_StrafingSensitivityMultiplier;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public DialogueSequenceParameters()
 		{
 		}
@@ -34,15 +34,15 @@ public class GlobalParameters : MonoBehaviour
 
 	public DialogueSequenceParameters m_DialogueSequenceParameters;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public GlobalParameters()
 	{
 	}

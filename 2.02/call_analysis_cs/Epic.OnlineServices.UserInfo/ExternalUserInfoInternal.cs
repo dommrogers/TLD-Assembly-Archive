@@ -32,20 +32,20 @@ internal struct ExternalUserInfoInternal : ISettable, IDisposable
 
 	public string AccountId
 	{
+		[CalledBy(Type = typeof(ExternalUserInfo), Member = "Set")]
+		[CalledBy(Type = typeof(ExternalUserInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CalledBy(Type = typeof(ExternalUserInfo), Member = "Set")]
-		[CalledBy(Type = typeof(ExternalUserInfo), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(ExternalUserInfoInternal), Member = "Set")]
+		[CalledBy(Type = typeof(ExternalUserInfoInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(ExternalUserInfoInternal), Member = "Set")]
-		[CalledBy(Type = typeof(ExternalUserInfoInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -56,17 +56,17 @@ internal struct ExternalUserInfoInternal : ISettable, IDisposable
 		[CalledBy(Type = typeof(ExternalUserInfo), Member = "Set")]
 		[CalledBy(Type = typeof(ExternalUserInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(ExternalUserInfoInternal), Member = "Set")]
+		[CalledBy(Type = typeof(ExternalUserInfoInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(ExternalUserInfoInternal), Member = "Set")]
-		[CalledBy(Type = typeof(ExternalUserInfoInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -79,18 +79,17 @@ internal struct ExternalUserInfoInternal : ISettable, IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(ExternalUserInfoInternal), Member = "set_DisplayName")]
-	[Calls(Type = typeof(ExternalUserInfoInternal), Member = "set_AccountId")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ExternalUserInfoInternal), Member = "set_AccountId")]
+	[Calls(Type = typeof(ExternalUserInfoInternal), Member = "set_DisplayName")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	public void Dispose()
 	{
 	}

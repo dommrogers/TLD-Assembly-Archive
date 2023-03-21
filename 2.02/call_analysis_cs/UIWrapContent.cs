@@ -29,88 +29,78 @@ public class UIWrapContent : MonoBehaviour
 
 	private List<Transform> mChildren;
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UIWrapContent), Member = "WrapContent")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIWrapContent), Member = "SortBasedOnScrollMovement")]
+	[Calls(Type = typeof(UIWrapContent), Member = "WrapContent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	protected virtual void Start()
 	{
 	}
 
-	[Calls(Type = typeof(UIWrapContent), Member = "WrapContent")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIWrapContent), Member = "WrapContent")]
 	protected virtual void OnMove(UIPanel panel)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[ContextMenu(/*Could not decode attribute arguments.*/)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 23)]
 	[CalledBy(Type = typeof(UIWrapContent), Member = "Start")]
-	[Calls(Type = typeof(UIWrapContent), Member = "ResetChildPositions")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UIWrapContent), Member = "CacheScrollView")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UIWrapContent), Member = "ResetChildPositions")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 23)]
 	public void SortBasedOnScrollMovement()
 	{
 	}
 
-	[Calls(Type = typeof(UIWrapContent), Member = "CacheScrollView")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
-	[ContextMenu(/*Could not decode attribute arguments.*/)]
-	[Calls(Type = typeof(UIWrapContent), Member = "ResetChildPositions")]
-	[CallsUnknownMethods(Count = 16)]
+	[Calls(Type = typeof(UIWrapContent), Member = "CacheScrollView")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UIWrapContent), Member = "ResetChildPositions")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 16)]
 	public void SortAlphabetically()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CalledBy(Type = typeof(UIWrapContent), Member = "SortBasedOnScrollMovement")]
 	[CalledBy(Type = typeof(UIWrapContent), Member = "SortAlphabetically")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	protected bool CacheScrollView()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(UIWrapContent), Member = "SortBasedOnScrollMovement")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(UIWrapContent), Member = "SortAlphabetically")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ResetChildPositions()
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(UICamera), Member = "IsPressed")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(UIWrapContent), Member = "Start")]
 	[CalledBy(Type = typeof(UIWrapContent), Member = "OnMove")]
-	[CallsUnknownMethods(Count = 38)]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UICamera), Member = "IsPressed")]
-	[Calls(Type = typeof(Vector3), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[CallsDeduplicatedMethods(Count = 15)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Vector3), Member = "Lerp")]
+	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(UICamera), Member = "IsPressed")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 38)]
 	public void WrapContent()
 	{
 	}
@@ -120,18 +110,19 @@ public class UIWrapContent : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 7)]
 	protected virtual void UpdateItem(Transform item, int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public UIWrapContent()
 	{
 	}

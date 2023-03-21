@@ -16,15 +16,15 @@ public class Action_StartAnimatedInteraction : ActionTask
 
 	private float waitTimeRemainingSeconds;
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	protected override void OnExecute()
 	{
 	}
 
+	[CalledBy(Type = typeof(Action_StartAnimatedInteraction), Member = "OnUpdate")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[CalledBy(Type = typeof(Action_StartAnimatedInteraction), Member = "OnUpdate")]
 	private void UpdateFade(float delta)
 	{
 	}
@@ -40,29 +40,30 @@ public class Action_StartAnimatedInteraction : ActionTask
 
 	[CalledBy(Type = typeof(Action_StartAnimatedInteraction), Member = "OnUpdate")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	private bool CanStart()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(Action_StartAnimatedInteraction), Member = "OnUpdate")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void DoWork()
 	{
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	private void OnWorkDone()
 	{
 	}

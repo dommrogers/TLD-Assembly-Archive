@@ -28,32 +28,24 @@ public sealed class AmbientOcclusion : PostProcessEffectSettings
 
 	public AmbientOcclusionQualityParameter quality;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Shader), Member = "get_isSupported")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "get_scriptableRenderPipelineActive")]
-	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
-	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
-	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "get_isAndroidOpenGL")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Shader), Member = "get_isSupported")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Shader), Member = "get_isSupported")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "get_isAndroidOpenGL")]
+	[Calls(Type = typeof(TextureFormatUtilities), Member = "IsSupported")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "get_scriptableRenderPipelineActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override bool IsEnabledAndSupported(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 56)]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ColorParameter), Member = ".ctor")]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 56)]
 	public AmbientOcclusion()
 	{
 	}

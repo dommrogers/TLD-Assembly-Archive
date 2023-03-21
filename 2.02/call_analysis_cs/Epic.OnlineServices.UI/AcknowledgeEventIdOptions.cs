@@ -13,10 +13,10 @@ public class AcknowledgeEventIdOptions
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
-			return default(ulong);
+			return 0uL;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -35,16 +35,16 @@ public class AcknowledgeEventIdOptions
 		{
 			return default(Result);
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		set
 		{
 		}
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public AcknowledgeEventIdOptions()
 	{
 	}

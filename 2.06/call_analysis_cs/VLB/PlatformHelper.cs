@@ -7,8 +7,8 @@ namespace VLB;
 public class PlatformHelper
 {
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static string GetCurrentPlatformSuffix()
 	{

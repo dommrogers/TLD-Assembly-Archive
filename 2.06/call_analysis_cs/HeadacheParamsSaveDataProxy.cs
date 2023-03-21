@@ -38,8 +38,8 @@ public class HeadacheParamsSaveDataProxy
 
 	public LocalizedString m_TreatmentRequiredDescription;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public HeadacheParamsSaveDataProxy()
 	{
 	}

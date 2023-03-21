@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -18,17 +17,18 @@ public class SpriteCreditElement : CreditElement
 	[CallsUnknownMethods(Count = 1)]
 	public override bool IsContentValid(string[] content, Panel_Credits panel)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UIWidget), Member = "SetDimensions")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SpriteCreditElement), Member = "GetAtlasFromContent")]
+	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 	[Calls(Type = typeof(UISprite), Member = "GetAtlasSprite")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
-	[Calls(Type = typeof(SpriteCreditElement), Member = "GetAtlasFromContent")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(float), Member = "TryParse")]
+	[Calls(Type = typeof(UIWidget), Member = "SetDimensions")]
+	[CallsUnknownMethods(Count = 4)]
 	public override void Populate(string[] content, Panel_Credits panel)
 	{
 	}
@@ -49,11 +49,11 @@ public class SpriteCreditElement : CreditElement
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(SpriteCreditElement), Member = "Populate")]
 	[CalledBy(Type = typeof(SpriteCreditElement), Member = "IsContentValid")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CalledBy(Type = typeof(SpriteCreditElement), Member = "Populate")]
 	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 2)]
 	private UIAtlas GetAtlasFromContent(string[] content, Panel_Credits panel)
 	{
 		return null;

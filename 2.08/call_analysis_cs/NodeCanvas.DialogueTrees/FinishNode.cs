@@ -15,7 +15,7 @@ public class FinishNode : DTNode
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -25,14 +25,14 @@ public class FinishNode : DTNode
 		[CallerCount(Count = 3)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Graph), Member = "Stop")]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[Calls(Type = typeof(Graph), Member = "Stop")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);

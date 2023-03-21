@@ -10,9 +10,9 @@ public class RootSwitcher : BTNode
 
 	private Node targetNode;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Graph), Member = "GetNodeWithTag")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnGraphStarted()
 	{
 	}
@@ -26,8 +26,8 @@ public class RootSwitcher : BTNode
 		return default(Status);
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
 	public RootSwitcher()
 	{

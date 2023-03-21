@@ -46,35 +46,34 @@ public class Placeholder : MonoBehaviour
 
 	private const string LINE_SHADER_NAME = "Hidden/Internal-Colored";
 
-	[Calls(Type = typeof(Gizmos), Member = "DrawMesh")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(Transform), Member = "get_localToWorldMatrix")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Transform), Member = "get_localToWorldMatrix")]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Gizmos), Member = "DrawMesh")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 5)]
 	private void OnDrawGizmos()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(GUIStyle), Member = "get_normal")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GUIStyle), Member = ".ctor")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(GUIStyle), Member = ".ctor")]
+	[Calls(Type = typeof(GUIStyle), Member = "get_normal")]
 	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CallsUnknownMethods(Count = 26)]
 	private GUIStyle GetLabelStyle(Color textColor, float normalizedDistance)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Placeholder()
 	{
 	}

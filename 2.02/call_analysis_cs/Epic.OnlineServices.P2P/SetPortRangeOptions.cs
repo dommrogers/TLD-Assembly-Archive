@@ -16,7 +16,7 @@ public class SetPortRangeOptions
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(ushort);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -33,10 +33,10 @@ public class SetPortRangeOptions
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(ushort);
+			return 0;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		set
 		{
@@ -44,7 +44,7 @@ public class SetPortRangeOptions
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SetPortRangeOptions()
 	{
 	}

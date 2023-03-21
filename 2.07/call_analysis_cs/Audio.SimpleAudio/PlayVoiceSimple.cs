@@ -13,8 +13,8 @@ public class PlayVoiceSimple : BaseSimpleAudioComponent
 	public bool m_TrackPosition;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(LoopTracker), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private void Start()
 	{

@@ -19,8 +19,8 @@ public class DeleteFileOp : AsyncOp<DeleteFileOp>
 		((AsyncOp<>)(object)this)._002Ector();
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void Complete(uint result)
 	{
 	}

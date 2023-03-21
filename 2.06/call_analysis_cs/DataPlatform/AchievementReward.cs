@@ -19,10 +19,10 @@ public class AchievementReward : IWrappedObject, IDisposable
 
 	public string Data
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallsUnknownMethods(Count = 6)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -32,8 +32,8 @@ public class AchievementReward : IWrappedObject, IDisposable
 	public string Description
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -43,8 +43,8 @@ public class AchievementReward : IWrappedObject, IDisposable
 
 	public AchievementMediaAsset MediaAsset
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -54,10 +54,10 @@ public class AchievementReward : IWrappedObject, IDisposable
 
 	public string Name
 	{
-		[CallsUnknownMethods(Count = 6)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -101,11 +101,11 @@ public class AchievementReward : IWrappedObject, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 98)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 113)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]

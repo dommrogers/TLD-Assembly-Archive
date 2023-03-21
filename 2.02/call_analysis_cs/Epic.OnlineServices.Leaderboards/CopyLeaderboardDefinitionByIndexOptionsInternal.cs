@@ -13,8 +13,8 @@ internal struct CopyLeaderboardDefinitionByIndexOptionsInternal : ISettable, IDi
 
 	public uint LeaderboardIndex
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -26,15 +26,15 @@ internal struct CopyLeaderboardDefinitionByIndexOptionsInternal : ISettable, IDi
 	{
 	}
 
+	[CalledBy(Type = typeof(LeaderboardsInterface), Member = "CopyLeaderboardDefinitionByIndex")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(LeaderboardsInterface), Member = "CopyLeaderboardDefinitionByIndex")]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

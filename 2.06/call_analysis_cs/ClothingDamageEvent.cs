@@ -9,17 +9,16 @@ public class ClothingDamageEvent : StruggleDamageEvent
 
 	public float m_RipClothingDamageMax;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "ApplyDamageToWornClothing")]
-	[Calls(Type = typeof(AiDifficultySetting), Member = "GetStrugglePlayerClothingDamageScale")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetStrugglePlayerClothingDamageScale")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetStrugglePlayerClothingDamageScale")]
+	[Calls(Type = typeof(AiDifficultySetting), Member = "GetStrugglePlayerClothingDamageScale")]
+	[Calls(Type = typeof(PlayerManager), Member = "ApplyDamageToWornClothing")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnExecute()
 	{
 	}
@@ -29,7 +28,7 @@ public class ClothingDamageEvent : StruggleDamageEvent
 	[CallsUnknownMethods(Count = 2)]
 	public override bool IsLocationAvailable()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

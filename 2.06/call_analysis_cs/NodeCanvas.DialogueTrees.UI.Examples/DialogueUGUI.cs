@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace NodeCanvas.DialogueTrees.UI.Examples;
@@ -73,9 +75,9 @@ public class DialogueUGUI : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -86,7 +88,7 @@ public class DialogueUGUI : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -107,45 +109,30 @@ public class DialogueUGUI : MonoBehaviour
 		{
 		}
 
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-		[Calls(Type = typeof(DialogueUGUI), Member = "DelayPrint")]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(GameObject), Member = "SetActive")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(Image), Member = "set_sprite")]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
+		[Calls(Type = typeof(DialogueUGUI), Member = "get_localSource")]
+		[Calls(Type = typeof(AudioSource), Member = "set_clip")]
+		[Calls(Type = typeof(AudioSource), Member = "Play")]
+		[Calls(Type = typeof(AudioClip), Member = "get_length")]
+		[Calls(Type = typeof(Input), Member = "get_anyKeyDown")]
+		[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 		[Calls(Type = typeof(DialogueUGUI), Member = "DelayPrint")]
-		[Calls(Type = typeof(DialogueUGUI), Member = "PlayTypeSound")]
 		[Calls(Type = typeof(DialogueUGUI), Member = "PlayTypeSound")]
 		[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-		[Calls(Type = typeof(GameObject), Member = "SetActive")]
-		[Calls(Type = typeof(DialogueUGUI), Member = "DelayPrint")]
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-		[Calls(Type = typeof(Input), Member = "get_anyKeyDown")]
-		[Calls(Type = typeof(DialogueUGUI), Member = "PlayTypeSound")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
-		[CallsUnknownMethods(Count = 26)]
+		[Calls(Type = typeof(char), Member = "ToString")]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-		[Calls(Type = typeof(GameObject), Member = "SetActive")]
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 17)]
-		[Calls(Type = typeof(GameObject), Member = "SetActive")]
-		[Calls(Type = typeof(GameObject), Member = "SetActive")]
-		[Calls(Type = typeof(Image), Member = "set_sprite")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(DialogueUGUI), Member = "get_localSource")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-		[Calls(Type = typeof(Input), Member = "get_anyKeyDown")]
-		[Calls(Type = typeof(DialogueUGUI), Member = "DelayPrint")]
-		[Calls(Type = typeof(AudioClip), Member = "get_length")]
-		[Calls(Type = typeof(AudioSource), Member = "Play")]
-		[Calls(Type = typeof(AudioSource), Member = "set_clip")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+		[CallsDeduplicatedMethods(Count = 16)]
+		[CallsUnknownMethods(Count = 25)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -169,7 +156,7 @@ public class DialogueUGUI : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -178,18 +165,18 @@ public class DialogueUGUI : MonoBehaviour
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CCheckInput_003Ed__27(int _003C_003E1__state)
 		{
 		}
@@ -206,13 +193,13 @@ public class DialogueUGUI : MonoBehaviour
 		[CallsUnknownMethods(Count = 2)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 5)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 5)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -230,9 +217,9 @@ public class DialogueUGUI : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -243,7 +230,7 @@ public class DialogueUGUI : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -264,18 +251,18 @@ public class DialogueUGUI : MonoBehaviour
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 5)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 5)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -306,10 +293,10 @@ public class DialogueUGUI : MonoBehaviour
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(DialogueUGUI), Member = "Finalize")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+		[Calls(Type = typeof(DialogueUGUI), Member = "Finalize")]
+		[CallsUnknownMethods(Count = 1)]
 		internal void _003COnMultipleChoiceRequest_003Eb__0()
 		{
 		}
@@ -331,7 +318,7 @@ public class DialogueUGUI : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -340,9 +327,9 @@ public class DialogueUGUI : MonoBehaviour
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -363,15 +350,16 @@ public class DialogueUGUI : MonoBehaviour
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(DialogueUGUI), Member = "Finalize")]
-		[Calls(Type = typeof(DialogueUGUI), Member = "SetMassAlpha")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+		[Calls(Type = typeof(DialogueUGUI), Member = "SetMassAlpha")]
+		[Calls(Type = typeof(Enumerable), Member = "Last")]
+		[Calls(Type = typeof(DialogueUGUI), Member = "Finalize")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -415,51 +403,48 @@ public class DialogueUGUI : MonoBehaviour
 
 	private AudioSource localSource
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(DialogueUGUI), Member = "PlayTypeSound")]
 		[CalledBy(Type = typeof(_003CInternal_OnSubtitlesRequestInfo_003Ed__25), Member = "MoveNext")]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[CalledBy(Type = typeof(DialogueUGUI), Member = "PlayTypeSound")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(DialogueTree), Member = "add_OnDialogueStarted")]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
 	[Calls(Type = typeof(DialogueTree), Member = "add_OnDialogueFinished")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 32)]
 	private void OnEnable()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DialogueTree), Member = "remove_OnDialogueStarted")]
 	[Calls(Type = typeof(Delegate), Member = "Remove")]
 	[Calls(Type = typeof(DialogueTree), Member = "remove_OnDialogueFinished")]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[Calls(Type = typeof(DialogueTree), Member = "remove_OnDialogueStarted")]
 	[CallsUnknownMethods(Count = 32)]
 	private void OnDisable()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 10)]
 	[CallsUnknownMethods(Count = 11)]
 	private void Start()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	private void OnDialogueStarted(DialogueTree dlg)
 	{
 	}
@@ -471,42 +456,41 @@ public class DialogueUGUI : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(Dictionary<, >.KeyCollection.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 12)]
 	private void OnDialogueFinished(DialogueTree dlg)
 	{
 	}
 
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[Calls(Type = typeof(DialogueUGUI), Member = "Internal_OnSubtitlesRequestInfo")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DialogueUGUI), Member = "Internal_OnSubtitlesRequestInfo")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	private void OnSubtitlesRequest(SubtitlesRequestInfo info)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[IteratorStateMachine(typeof(_003CInternal_OnSubtitlesRequestInfo_003Ed__25))]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(DialogueUGUI), Member = "OnSubtitlesRequest")]
+	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private IEnumerator Internal_OnSubtitlesRequestInfo(SubtitlesRequestInfo info)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(_003CInternal_OnSubtitlesRequestInfo_003Ed__25), Member = "MoveNext")]
-	[CalledBy(Type = typeof(_003CInternal_OnSubtitlesRequestInfo_003Ed__25), Member = "MoveNext")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(AudioSource), Member = "PlayOneShot")]
-	[CalledBy(Type = typeof(_003CInternal_OnSubtitlesRequestInfo_003Ed__25), Member = "MoveNext")]
-	[Calls(Type = typeof(DialogueUGUI), Member = "get_localSource")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(DialogueUGUI), Member = "get_localSource")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(AudioSource), Member = "PlayOneShot")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void PlayTypeSound()
 	{
 	}
@@ -519,47 +503,54 @@ public class DialogueUGUI : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(_003CInternal_OnSubtitlesRequestInfo_003Ed__25), Member = "MoveNext")]
-	[CalledBy(Type = typeof(_003CInternal_OnSubtitlesRequestInfo_003Ed__25), Member = "MoveNext")]
-	[CalledBy(Type = typeof(_003CInternal_OnSubtitlesRequestInfo_003Ed__25), Member = "MoveNext")]
-	[CallerCount(Count = 4)]
 	[IteratorStateMachine(typeof(_003CDelayPrint_003Ed__28))]
 	[CalledBy(Type = typeof(_003CInternal_OnSubtitlesRequestInfo_003Ed__25), Member = "MoveNext")]
+	[CallerCount(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private IEnumerator DelayPrint(float time)
 	{
 		return null;
 	}
 
-	[CallAnalysisFailed]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(UnityEvent), Member = "AddListener")]
+	[Calls(Type = typeof(DialogueUGUI), Member = "CountDown")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsDeduplicatedMethods(Count = 27)]
+	[CallsUnknownMethods(Count = 83)]
 	private void OnMultipleChoiceRequest(MultipleChoiceRequestInfo info)
 	{
 	}
 
 	[IteratorStateMachine(typeof(_003CCountDown_003Ed__30))]
-	[CallerCount(Count = 0)]
+	[CalledBy(Type = typeof(DialogueUGUI), Member = "OnMultipleChoiceRequest")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	private IEnumerator CountDown(MultipleChoiceRequestInfo info)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(_003C_003Ec__DisplayClass29_1), Member = "<OnMultipleChoiceRequest>b__0")]
 	[CalledBy(Type = typeof(_003CCountDown_003Ed__30), Member = "MoveNext")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[Calls(Type = typeof(DialogueUGUI), Member = "SetMassAlpha")]
-	[CalledBy(Type = typeof(_003C_003Ec__DisplayClass29_1), Member = "<OnMultipleChoiceRequest>b__0")]
+	[Calls(Type = typeof(Dictionary<, >.KeyCollection.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 10)]
 	[CallsUnknownMethods(Count = 22)]
 	private void Finalize(MultipleChoiceRequestInfo info, int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(DialogueUGUI), Member = "Finalize")]
 	[CalledBy(Type = typeof(_003CCountDown_003Ed__30), Member = "MoveNext")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(DialogueUGUI), Member = "Finalize")]
 	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void SetMassAlpha(RectTransform root, float alpha)
 	{
 	}

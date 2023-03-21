@@ -3,8 +3,8 @@ using NodeCanvas.StateMachines;
 
 public class MainMissionManager : MissionManagerBase
 {
-	[Calls(Type = typeof(MissionManagerBase), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MissionManagerBase), Member = ".ctor")]
 	public MainMissionManager(string name, FSMOwner fsmOwner)
 		: base(null, null)
 	{

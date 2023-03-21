@@ -11,9 +11,8 @@ public class MegaWireConnectionDef
 
 	public float radius;
 
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public MegaWireConnectionDef()
 	{
@@ -21,10 +20,8 @@ public class MegaWireConnectionDef
 
 	[CalledBy(Type = typeof(MegaWire), Member = "Copy")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[CalledBy(Type = typeof(MegaWire), Member = "Copy")]
 	[CallsUnknownMethods(Count = 1)]
 	public MegaWireConnectionDef(MegaWireConnectionDef src)
 	{

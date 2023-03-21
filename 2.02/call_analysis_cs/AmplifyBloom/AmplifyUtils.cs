@@ -83,101 +83,89 @@ public class AmplifyUtils
 
 	private static List<RenderTexture> _allocatedRT;
 
-	[CallsUnknownMethods(Count = 214)]
+	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "Awake")]
 	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 83)]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "Awake")]
+	[CallsUnknownMethods(Count = 214)]
 	public static void InitializeIds()
 	{
 	}
 
 	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "Awake")]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "Awake")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void DebugLog(string value, LogType type)
 	{
 	}
 
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(AmplifyLensFlare), Member = "ApplyFlare")]
-	[CalledBy(Type = typeof(AmplifyGlare), Member = "OnRenderImage")]
-	[CalledBy(Type = typeof(AmplifyGlare), Member = "OnRenderFromCache")]
-	[CalledBy(Type = typeof(AmplifyBokeh), Member = "ApplyBokehFilter")]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "ApplyUpscale")]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
 	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "ApplyGaussianBlur")]
-	[Calls(Type = typeof(RenderTexture), Member = "GetTemporaryImpl")]
-	[Calls(Type = typeof(RenderTexture), Member = "GetCompatibleFormat")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 11)]
 	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
+	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "ApplyUpscale")]
+	[CalledBy(Type = typeof(AmplifyBokeh), Member = "ApplyBokehFilter")]
+	[CalledBy(Type = typeof(AmplifyGlare), Member = "OnRenderFromCache")]
+	[CalledBy(Type = typeof(AmplifyGlare), Member = "OnRenderImage")]
+	[CalledBy(Type = typeof(AmplifyLensFlare), Member = "ApplyFlare")]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(RenderTexture), Member = "GetCompatibleFormat")]
+	[Calls(Type = typeof(RenderTexture), Member = "GetTemporaryImpl")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static RenderTexture GetTempRenderTarget(int width, int height)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(AmplifyBokeh), Member = "Destroy")]
-	[CalledBy(Type = typeof(AmplifyGlare), Member = "OnRenderImage")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(AmplifyGlare), Member = "OnRenderFromCache")]
-	[CalledBy(Type = typeof(AmplifyGlare), Member = "Destroy")]
-	[CalledBy(Type = typeof(AmplifyBokeh), Member = "ApplyBokehFilter")]
-	[CalledBy(Type = typeof(AmplifyBokehData), Member = "Destroy")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
 	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "ApplyGaussianBlur")]
-	[Calls(Type = typeof(RenderTexture), Member = "DiscardContents")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallerCount(Count = 9)]
 	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
+	[CalledBy(Type = typeof(AmplifyBokehData), Member = "Destroy")]
+	[CalledBy(Type = typeof(AmplifyBokeh), Member = "Destroy")]
+	[CalledBy(Type = typeof(AmplifyBokeh), Member = "ApplyBokehFilter")]
+	[CalledBy(Type = typeof(AmplifyGlare), Member = "Destroy")]
+	[CalledBy(Type = typeof(AmplifyGlare), Member = "OnRenderFromCache")]
+	[CalledBy(Type = typeof(AmplifyGlare), Member = "OnRenderImage")]
+	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(RenderTexture), Member = "DiscardContents")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void ReleaseTempRenderTarget(RenderTexture renderTarget)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
 	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "FinalComposition")]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(RenderTexture), Member = "ReleaseTemporary")]
-	[Calls(Type = typeof(RenderTexture), Member = "DiscardContents")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(RenderTexture), Member = "DiscardContents")]
+	[Calls(Type = typeof(RenderTexture), Member = "ReleaseTemporary")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public static void ReleaseAllRT()
 	{
 	}
 
 	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
-	[Calls(Type = typeof(Material), Member = "DisableKeyword")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(Material), Member = "EnableKeyword")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Material), Member = "IsKeywordEnabled")]
-	[Calls(Type = typeof(Material), Member = "IsKeywordEnabled")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Material), Member = "IsKeywordEnabled")]
+	[Calls(Type = typeof(Material), Member = "EnableKeyword")]
+	[Calls(Type = typeof(Material), Member = "DisableKeyword")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void EnsureKeywordEnabled(Material mat, string keyword, bool state)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AmplifyUtils()
 	{
 	}

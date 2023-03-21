@@ -5,40 +5,40 @@ namespace ParadoxNotion;
 
 public static class GUIStyleUtils
 {
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(GUIStyle), Member = "set_margin")]
-	[Calls(Type = typeof(RectOffset), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(RectOffset), Member = ".ctor")]
+	[Calls(Type = typeof(GUIStyle), Member = "set_margin")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public static GUIStyle Margin(this GUIStyle style, int left, int right, int top, int bottom)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(RectOffset), Member = ".ctor")]
 	[Calls(Type = typeof(GUIStyle), Member = "set_padding")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public static GUIStyle Padding(this GUIStyle style, int left, int right, int top, int bottom)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(RectOffset), Member = ".ctor")]
 	[Calls(Type = typeof(GUIStyle), Member = "set_border")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public static GUIStyle Border(this GUIStyle style, int left, int right, int top, int bottom)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(RectOffset), Member = ".ctor")]
 	[Calls(Type = typeof(GUIStyle), Member = "set_overflow")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public static GUIStyle Overflow(this GUIStyle style, int left, int right, int top, int bottom)
 	{
@@ -53,9 +53,9 @@ public static class GUIStyleUtils
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static GUIStyle RichText(this GUIStyle style, bool rich)
 	{
 		return null;

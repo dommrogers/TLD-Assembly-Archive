@@ -10,8 +10,8 @@ public class SuffocatingSaveDataProxy
 
 	public float m_TimeRemaining;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public SuffocatingSaveDataProxy()
 	{
 	}

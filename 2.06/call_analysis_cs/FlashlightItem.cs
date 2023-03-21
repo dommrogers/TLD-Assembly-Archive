@@ -68,30 +68,31 @@ public class FlashlightItem : MonoBehaviour
 	private bool m_FlareIsPaused;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(AuroraField), Member = "SetDynamic")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	public void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[Calls(Type = typeof(FlashlightItem), Member = "EnableLights")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInPlacementMode")]
-	[Calls(Type = typeof(InputManager), Member = "GetAltFire")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(InputManager), Member = "GetAltFire")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInPlacementMode")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
+	[Calls(Type = typeof(FlashlightItem), Member = "EnableLights")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 11)]
 	public void Update()
 	{
 	}
@@ -105,48 +106,48 @@ public class FlashlightItem : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(FlashlightItem), Member = "EnableLights")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void DoRecharge(float deltaTODHours)
 	{
 	}
 
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "AllowedToHideAmmoPopup")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
 	[CalledBy(Type = typeof(FlashlightItem), Member = "TurnOn")]
+	[CallerCount(Count = 3)]
 	public float GetNormalizedCharge()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(FirstPersonFlashlight), Member = "Update")]
 	[CalledBy(Type = typeof(GearItem), Member = "IsLitFlashlight")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateItemInHands")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Equip")]
+	[CallerCount(Count = 4)]
 	public bool IsLit()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsLow()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsOn()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
@@ -155,44 +156,44 @@ public class FlashlightItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessFireAction")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Confirm")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
-	[Calls(Type = typeof(FlashlightItem), Member = "GetNormalizedCharge")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(FlashlightItem), Member = "GetNormalizedCharge")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Ignite_Confirm")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 14)]
 	public void TurnOn()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
+	[CalledBy(Type = typeof(InputManager), Member = "ProcessFireAction")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "FirstPersonHandsEnabled")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Extinguish")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CalledBy(Type = typeof(InputManager), Member = "ProcessFireAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public void TurnOff()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(FlashlightItem), Member = "PlayTurnOffAudio")]
 	[Calls(Type = typeof(FlashlightItem), Member = "EnableLights")]
-	[CallerCount(Count = 0)]
 	public void TurnOffImmediate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(FlashlightItem), Member = "EnableLights")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnTurnOnFXCallback()
 	{
@@ -222,82 +223,80 @@ public class FlashlightItem : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsPaused()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(FlashlightItem), Member = "OnTurnOffCompleteCallback")]
 	[CalledBy(Type = typeof(FlashlightItem), Member = "OnTurnOnCompleteCallback")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(FlashlightItem), Member = "OnTurnOffCompleteCallback")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ShowEquipItemPopup()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
-	[CalledBy(Type = typeof(FlashlightItem), Member = "OnTurnOffCompleteCallback")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TurnLightOffImmediate")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
-	[CalledBy(Type = typeof(FlashlightItem), Member = "OnTurnOnFXCallback")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CalledBy(Type = typeof(FlashlightItem), Member = "Deserialize")]
 	[CalledBy(Type = typeof(FlashlightItem), Member = "Update")]
-	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(AuroraField), Member = "SetFieldActive")]
-	[CallerCount(Count = 10)]
+	[CalledBy(Type = typeof(FlashlightItem), Member = "Deserialize")]
 	[CalledBy(Type = typeof(FlashlightItem), Member = "TurnOffImmediate")]
+	[CalledBy(Type = typeof(FlashlightItem), Member = "OnTurnOnFXCallback")]
+	[CalledBy(Type = typeof(FlashlightItem), Member = "OnTurnOffCompleteCallback")]
+	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TurnLightOffImmediate")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(AuroraField), Member = "SetFieldActive")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 11)]
 	private void EnableLights(State state)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void PlayTurnOnAudio()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TurnLightOffImmediate")]
-	[CalledBy(Type = typeof(FlashlightItem), Member = "OnTurnOffCompleteCallback")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(FlashlightItem), Member = "TurnOffImmediate")]
+	[CalledBy(Type = typeof(FlashlightItem), Member = "OnTurnOffCompleteCallback")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TurnLightOffImmediate")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void PlayTurnOffAudio()
 	{
 	}
 
-	[Calls(Type = typeof(ThreeDaysOfNight), Member = "GetFlashlightEffectivenessMultiplier")]
-	[Calls(Type = typeof(ThreeDaysOfNight), Member = "GetFlashlightEffectivenessMultiplier")]
-	[Calls(Type = typeof(ThreeDaysOfNight), Member = "GetFlashlightEffectivenessMultiplier")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(ThreeDaysOfNight), Member = "GetFlashlightDurationMultiplier")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ThreeDaysOfNight), Member = "GetFlashlightDurationMultiplier")]
+	[Calls(Type = typeof(ThreeDaysOfNight), Member = "GetFlashlightEffectivenessMultiplier")]
+	[Calls(Type = typeof(Component), Member = "GetComponents")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 10)]
 	private void DoThreeDaysOfNightBonus()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void UpdateAudio()
 	{

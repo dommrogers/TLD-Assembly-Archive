@@ -9,8 +9,8 @@ public class UnityPluginLogPlugin
 	public delegate void PluginLogCallback(int channel, string message);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int InitializePlugin(uint creationFlags);
 
 	[PreserveSig]
@@ -36,15 +36,15 @@ public class UnityPluginLogPlugin
 	public static extern void UnityPluginLog_SetLogVerbosity(int target, uint verbosity);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void UnityPluginLog_SetLogChannels(int target, uint channels);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern int UnityPluginLog_GetLogVerbosity(int target);
 
 	[PreserveSig]
@@ -72,35 +72,35 @@ public class UnityPluginLogPlugin
 	public static extern void RemoveLogMessagesCallback(PluginLogCallback callback);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(PluginLogManager), Member = "LogException")]
 	[CalledBy(Type = typeof(PluginLogManager), Member = "LogException")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(PluginLogManager), Member = "LogException")]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void Log_LogException(string module, uint hresult, string message, string fileAndLine);
 
 	[PreserveSig]
+	[CalledBy(Type = typeof(PluginLogManager), Member = "LogError")]
+	[CalledBy(Type = typeof(PluginLogManager), Member = "LogError")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(PluginLogManager), Member = "LogError")]
-	[CalledBy(Type = typeof(PluginLogManager), Member = "LogError")]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void Log_LogError(string module, string message, string fileAndLine);
 
 	[PreserveSig]
+	[CalledBy(Type = typeof(PluginLogManager), Member = "Log")]
+	[CalledBy(Type = typeof(PluginLogManager), Member = "Log")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(PluginLogManager), Member = "Log")]
-	[CalledBy(Type = typeof(PluginLogManager), Member = "Log")]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void Log_Log(string module, string message, string fileAndLine);
 
 	[PreserveSig]
 	[CalledBy(Type = typeof(PluginLogManager), Member = "Trace")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(PluginLogManager), Member = "Trace")]
 	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void Log_Trace(string module, string message, string fileAndLine);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public UnityPluginLogPlugin()
 	{
 	}

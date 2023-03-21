@@ -21,8 +21,8 @@ public class Sharpenable : MonoBehaviour
 
 	public bool m_RequiresToolToSharpen;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Sharpenable()
 	{
 	}

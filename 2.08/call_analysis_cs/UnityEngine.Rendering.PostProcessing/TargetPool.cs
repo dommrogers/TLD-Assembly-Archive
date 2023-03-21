@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 
@@ -21,32 +20,29 @@ internal class TargetPool
 	[Calls(Type = typeof(TargetPool), Member = "Get")]
 	internal int Get()
 	{
-		return default(int);
+		return 0;
 	}
 
+	[CalledBy(Type = typeof(PostProcessLayer), Member = "OnEnable")]
+	[CalledBy(Type = typeof(PostProcessLayer), Member = "UpdateSrcDstForOpaqueOnly")]
+	[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
+	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderInjectionPoint")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderList")]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderList")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderBuiltins")]
-	[CalledBy(Type = typeof(TargetPool), Member = "Get")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderFinalPass")]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderEffect")]
 	[CalledBy(Type = typeof(TargetPool), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "UpdateSrcDstForOpaqueOnly")]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "OnEnable")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(TargetPool), Member = "Get")]
 	[CallerCount(Count = 14)]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "Render")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private int Get(int i)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]

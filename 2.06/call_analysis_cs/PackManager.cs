@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using TLD;
 using TLD.PDID;
 using TLD.Serialization;
+using TLD.UI;
 using UnityEngine;
 
 public class PackManager : MonoBehaviour
@@ -72,11 +72,10 @@ public class PackManager : MonoBehaviour
 
 	private bool m_SystemEnabled;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 21)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private PackSettings GetPackSettings()
 	{
 		return null;
@@ -91,283 +90,274 @@ public class PackManager : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	public void DeserializeGlobal(string serialized)
 	{
 	}
 
-	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
-	[CallsUnknownMethods(Count = 51)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
-	[Calls(Type = typeof(PackManager), Member = "MaybeCleanupDeadPackAnimals")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PackManagerDataProxyList), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
+	[Calls(Type = typeof(PackManager), Member = "MaybeCleanupDeadPackAnimals")]
+	[Calls(Type = typeof(PackManagerDataProxyList), Member = ".ctor")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 50)]
 	public string Serialize()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(PackManager), Member = "MaybeAddOrUpdateGroup")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(BaseAi), Member = "Despawn")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(PackManager), Member = "IsPackCombatRestricted")]
 	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
 	[Calls(Type = typeof(BaseAi), Member = "ForceSetPlayerTarget")]
-	[Calls(Type = typeof(BaseAi), Member = "Despawn")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BaseAi), Member = "Despawn")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 35)]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PackManager), Member = "MaybeAddOrUpdateGroup")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BaseAi), Member = "Despawn")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void RegisterPackAnimal(PackAnimal pa)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 25)]
-	[CalledBy(Type = typeof(PackManager), Member = "UnregisterPackAnimal")]
 	[CalledBy(Type = typeof(PackManager), Member = "DisbandGroup")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(BaseAi), Member = "ClearTarget")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(PackManager), Member = "GroupMoraleHeuristic")]
-	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(PackManager), Member = "UnregisterPackAnimal")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(PackManager), Member = "GroupMoraleHeuristic")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(BaseAi), Member = "ClearTarget")]
+	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 24)]
 	private void RemoveGroup(PackAnimal leader, bool setReformTimer)
 	{
 	}
 
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeKeepLonersWithinRadius")]
 	[CalledBy(Type = typeof(PackManager), Member = "MaybeAddOrUpdateGroup")]
-	[CallsUnknownMethods(Count = 4)]
+	[CalledBy(Type = typeof(PackManager), Member = "MaybeKeepLonersWithinRadius")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 3)]
 	private PackAnimal FindPackGroupLeaderByGroupId(string groupId)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 16)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(PackManager), Member = "FindPackGroupLeaderByGroupId")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(PackManager), Member = "Deserialize")]
 	[CalledBy(Type = typeof(PackManager), Member = "MaybeFormGroup")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PackManager), Member = "FindPackGroupLeaderByGroupId")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 15)]
 	private PackAnimal MaybeAddOrUpdateGroup(PackAnimal newLeader)
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BaseAi), Member = "IsMismatchWildlifeMode")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private bool IsMismatchWildlifeMode(PackAnimal animal)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(BaseAi), Member = "IsMismatchWildlifeMode")]
 	[CallsUnknownMethods(Count = 2)]
 	private bool CanAnimalFormGroup(PackAnimal animal)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ScanForNewTarget")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(PackManager), Member = "DisbandGroup")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(BaseAi), Member = "IsMismatchWildlifeMode")]
-	[Calls(Type = typeof(PackManager), Member = "AreSameTaggedGroupAnimals")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PackManager), Member = "MaybeFormGroupOnPlayerDetectionRange")]
-	[Calls(Type = typeof(PackManager), Member = "MaybeAddOrUpdateGroup")]
-	[Calls(Type = typeof(BaseAi), Member = "IsMismatchWildlifeMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BaseAi), Member = "IsMismatchWildlifeMode")]
+	[Calls(Type = typeof(PackManager), Member = "MaybeAddOrUpdateGroup")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PackManager), Member = "AreSameTaggedGroupAnimals")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(PackManager), Member = "DisbandGroup")]
+	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 45)]
 	public bool MaybeFormGroup(PackAnimal newLeader)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeFormGroupOnPlayerDetectionRange")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ScanForNewTarget")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(PackManager), Member = "InPack")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(PackManager), Member = "MaybeFormGroupOnPlayerDetectionRange")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PackManager), Member = "InPack")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 10)]
 	public void MaybeAlertMembers(PackAnimal animal)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(BaseAi), Member = "ProcessJoinPack")]
-	[Calls(Type = typeof(BaseAi), Member = "MaybeStartOrJoinPackHowl")]
-	[Calls(Type = typeof(PackManager), Member = "IsLeader")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BaseAi), Member = "MaybeStartOrJoinPackHowl")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(BaseAi), Member = "MaybeStartOrJoinPackHowl")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PackManager), Member = "IsLeader")]
+	[CallsUnknownMethods(Count = 10)]
 	public void MaybeStartHowl(PackAnimal animal)
 	{
 	}
 
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeFleeAndDisbandOnMoraleCheck")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeFleeAndDisbandOnBearOrMooseCheck")]
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeDisbandGroupOnTargetLost")]
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(PackManager), Member = "RemoveGroup")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PackManager), Member = "MaybeFormGroup")]
+	[CalledBy(Type = typeof(PackManager), Member = "MaybeDisbandGroupOnTargetLost")]
+	[CalledBy(Type = typeof(PackManager), Member = "MaybeFleeAndDisbandOnMoraleCheck")]
+	[CalledBy(Type = typeof(PackManager), Member = "MaybeFleeAndDisbandOnBearOrMooseCheck")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PackManager), Member = "RemoveGroup")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool DisbandGroup(PackAnimal pa, bool setReformTimer)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(PackManager), Member = "UnregisterPackAnimal")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsUnknownMethods(Count = 4)]
 	public PackAnimal ChooseLeader(PackGroup pack)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(BaseAi), Member = "EnterDead")]
 	[CalledBy(Type = typeof(PackAnimal), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(PackManager), Member = "MaybeCleanupDeadPackAnimals")]
-	[CalledBy(Type = typeof(BaseAi), Member = "EnterDead")]
 	[CalledBy(Type = typeof(SpawnRegion), Member = "RemoveActiveSpawns")]
-	[CallsUnknownMethods(Count = 22)]
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeCleanupDeadPackAnimals")]
-	[Calls(Type = typeof(PackManager), Member = "RemoveGroup")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PackManager), Member = "ChooseLeader")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(PackManager), Member = "ChooseLeader")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
+	[Calls(Type = typeof(PackManager), Member = "RemoveGroup")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 21)]
 	public void UnregisterPackAnimal(PackAnimal pa, bool onDeath)
 	{
 	}
 
 	[CallerCount(Count = 26)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	public static bool InPack(PackAnimal animal)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnDamage")]
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeStartHowl")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeStartOrJoinPackHowl")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ProcessJoinPack")]
+	[CalledBy(Type = typeof(PackManager), Member = "MaybeStartHowl")]
+	[CalledBy(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnDamage")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeStartOrJoinPackHowl")]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool IsLeader(PackAnimal animal)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(BaseAi), Member = "ProcessHideAndSeek")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(BaseAi), Member = "EnterPassingAttack")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeForceHideAndSeek")]
-	[CalledBy(Type = typeof(BaseAi), Member = "CanEnterHideAndSeekInternal")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ScanForNewTarget")]
+	[CalledBy(Type = typeof(BaseAi), Member = "TargetCanBeIgnored")]
+	[CalledBy(Type = typeof(BaseAi), Member = "CanPerformPassingAttackChance")]
 	[CalledBy(Type = typeof(BaseAi), Member = "CanPerformPassingAttack")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ProcessHideAndSeek")]
-	[CalledBy(Type = typeof(BaseAi), Member = "TargetCanBeIgnored")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ScanForNewTarget")]
-	[Calls(Type = typeof(AiTarget), Member = "IsNpcSurvivor")]
-	[Calls(Type = typeof(AiTarget), Member = "IsPlayer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CalledBy(Type = typeof(BaseAi), Member = "CanEnterHideAndSeekInternal")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeForceHideAndSeek")]
+	[CalledBy(Type = typeof(BaseAi), Member = "EnterPassingAttack")]
 	[CallerCount(Count = 9)]
-	[CalledBy(Type = typeof(BaseAi), Member = "CanPerformPassingAttackChance")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(AiTarget), Member = "IsPlayer")]
+	[Calls(Type = typeof(AiTarget), Member = "IsNpcSurvivor")]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool IsValidPackTarget(AiTarget target)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(BaseAi), Member = "FindHighGround")]
-	[Calls(Type = typeof(MoveAgent), Member = "GetDestination")]
-	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
 	[CalledBy(Type = typeof(BaseAi), Member = "FindRandomLocation")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
+	[Calls(Type = typeof(MoveAgent), Member = "GetDestination")]
+	[CallsUnknownMethods(Count = 12)]
 	public bool IsPointCloseToPackMembers(PackAnimal animal, Vector3 point, float radius)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PackManager), Member = "GetHighestPackMorale")]
-	[CalledBy(Type = typeof(PackManager), Member = "ShouldAnimalFleeChance")]
-	[CalledBy(Type = typeof(PackManager), Member = "ShouldAnimalFlee")]
-	[CalledBy(Type = typeof(PackManager), Member = "ShouldAnimalFlee")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(PackManager), Member = "RemoveGroup")]
+	[CalledBy(Type = typeof(PackManager), Member = "ShouldAnimalFlee")]
+	[CalledBy(Type = typeof(PackManager), Member = "ShouldAnimalFleeChance")]
+	[CalledBy(Type = typeof(PackManager), Member = "GetHighestPackMorale")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GroupMoraleHeuristic(PackAnimal animal)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[Conditional("__DEBUG")]
@@ -378,11 +368,11 @@ public class PackManager : MonoBehaviour
 
 	[CalledBy(Type = typeof(BaseAi), Member = "ApplyDamage")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "BreakStruggle")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
+	[Calls(Type = typeof(PackManager), Member = "IsLeader")]
 	[Calls(Type = typeof(PackManager), Member = "ModifyGroupMorale")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(PackManager), Member = "IsLeader")]
 	public void ModifyGroupMoraleOnDamage(PackAnimal animal)
 	{
 	}
@@ -395,22 +385,22 @@ public class PackManager : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "HandleCollisionWithObject")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
 	[Calls(Type = typeof(PackManager), Member = "ModifyGroupMorale")]
-	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "HandleCollisionWithObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public void ModifyGroupMoraleOnFlareGunRound(PackAnimal animal, bool isStuckInAnimal)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(BaseAi), Member = "ProcessGunshotAudioEvent")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
 	[Calls(Type = typeof(PackManager), Member = "ModifyGroupMorale")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
+	[CallsUnknownMethods(Count = 5)]
 	public void ModifyGroupMoraleOnGunshot(PackAnimal animal)
 	{
 	}
@@ -424,68 +414,61 @@ public class PackManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(PackManager), Member = "ModifyGroupMorale")]
 	[CalledBy(Type = typeof(BaseAi), Member = "MaybeFleeFromThrownItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PackManager), Member = "ModifyGroupMorale")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ModifyGroupMoraleOnHitWithItem(PackAnimal animal, GearItem item)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(BaseAi), Member = "MaybeFleeFromThrownItem")]
-	[Calls(Type = typeof(PackManager), Member = "ModifyGroupMorale")]
-	[Calls(Type = typeof(PackManager), Member = "ModifyGroupMorale")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PackManager), Member = "ModifyGroupMorale")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ModifyGroupMoraleOnThrownItem(PackAnimal animal, GearItem item)
 	{
 	}
 
-	[CalledBy(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnGunshot")]
-	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "MaybeScareWildlife")]
-	[CalledBy(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnThrownItem")]
-	[CalledBy(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnThrownItem")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnHitWithItem")]
-	[CalledBy(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnFlashLightHighBeam")]
-	[CalledBy(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnFlareGunRound")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnDamage")]
-	[CalledBy(Type = typeof(BaseAi), Member = "EnterFlee")]
 	[CalledBy(Type = typeof(BaseAi), Member = "AttackOrFleeAfterNearMissGunshot")]
-	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 11)]
+	[CalledBy(Type = typeof(BaseAi), Member = "EnterFlee")]
+	[CalledBy(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnDamage")]
 	[CalledBy(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnNearMissGunshot")]
+	[CalledBy(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnFlareGunRound")]
+	[CalledBy(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnGunshot")]
+	[CalledBy(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnFlashLightHighBeam")]
+	[CalledBy(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnHitWithItem")]
+	[CalledBy(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnThrownItem")]
+	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "MaybeScareWildlife")]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool ModifyGroupMorale(PackSettings modeSettings, PackAnimal animal, float percent, MoraleModifierType eventType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public PackAnimal GetPackLeader(BaseAi ai)
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	public int GetMemberCount(PackAnimal leader)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
@@ -494,58 +477,56 @@ public class PackManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeMoveToNewHoldGroundPosition")]
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeForceMoveMembers")]
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeForceAttackInCombatRestrictedArea")]
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeSetPackAttackCooldownTime")]
-	[CalledBy(Type = typeof(PackManager), Member = "CanAttack")]
-	[CalledBy(Type = typeof(PackManager), Member = "Deserialize")]
-	[CalledBy(Type = typeof(BaseAi), Member = "CanEnterStalking")]
-	[CalledBy(Type = typeof(BaseAi), Member = "CanEnterHideAndSeekInternal")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ProcessHideAndSeek")]
-	[CalledBy(Type = typeof(BaseAi), Member = "CanPerformPassingAttack")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ProcessHoldGround")]
+	[CalledBy(Type = typeof(BaseAi), Member = "EnterAttack")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ShouldPlayTimberwolfAttackStartAnimation")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ProcessFootstepAudioEvent")]
-	[CallerCount(Count = 16)]
 	[CalledBy(Type = typeof(BaseAi), Member = "CanPerformPassingAttackChance")]
+	[CalledBy(Type = typeof(BaseAi), Member = "CanPerformPassingAttack")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ProcessHideAndSeek")]
+	[CalledBy(Type = typeof(BaseAi), Member = "CanEnterHideAndSeekInternal")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ProcessHoldGround")]
+	[CalledBy(Type = typeof(BaseAi), Member = "CanEnterStalking")]
+	[CalledBy(Type = typeof(PackManager), Member = "Deserialize")]
+	[CalledBy(Type = typeof(PackManager), Member = "CanAttack")]
+	[CalledBy(Type = typeof(PackManager), Member = "MaybeSetPackAttackCooldownTime")]
+	[CalledBy(Type = typeof(PackManager), Member = "MaybeForceAttackInCombatRestrictedArea")]
+	[CalledBy(Type = typeof(PackManager), Member = "MaybeForceMoveMembers")]
+	[CalledBy(Type = typeof(PackManager), Member = "MaybeMoveToNewHoldGroundPosition")]
+	[CallerCount(Count = 16)]
 	[Calls(Type = typeof(PackManager), Member = "InPack")]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(BaseAi), Member = "EnterAttack")]
-	[CalledBy(Type = typeof(BaseAi), Member = "EnterAttack")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ShouldPlayTimberwolfAttackStartAnimation")]
 	[Calls(Type = typeof(BaseAi), Member = "IsMismatchWildlifeMode")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public bool IsPackCombatRestricted(PackAnimal animal)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[CallsUnknownMethods(Count = 1)]
 	public int GetFormationCount(PackAnimal leader)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(PackManager), Member = "GroupMoraleHeuristic")]
-	[CallsUnknownMethods(Count = 16)]
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeFleeAndDisbandOnMoraleCheck")]
-	[CalledBy(Type = typeof(BaseAi), Member = "HoldGroundFightOrFlight")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ChangeModeWhenTargetDetected")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
-	[Calls(Type = typeof(BaseAi), Member = "IsMismatchWildlifeMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(BaseAi), Member = "HoldGroundFightOrFlight")]
+	[CalledBy(Type = typeof(PackManager), Member = "MaybeFleeAndDisbandOnMoraleCheck")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BaseAi), Member = "IsMismatchWildlifeMode")]
+	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
 	[Calls(Type = typeof(PackManager), Member = "GroupMoraleHeuristic")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsUnknownMethods(Count = 15)]
 	public bool ShouldAnimalFlee(PackAnimal animal)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -553,212 +534,211 @@ public class PackManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetMoraleThreshold()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(BaseAi), Member = "ProcessGunshotAudioEvent")]
 	[CalledBy(Type = typeof(BaseAi), Member = "AttackOrFleeAfterNearMissGunshot")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ProcessGunshotAudioEvent")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
 	[Calls(Type = typeof(PackManager), Member = "GroupMoraleHeuristic")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool ShouldAnimalFleeChance(PackAnimal animal)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(BaseAi), Member = "IsTimberwolf")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(PackManager), Member = "MaybeForceAttackInCombatRestrictedArea")]
-	[Calls(Type = typeof(BaseAi), Member = "IsInFlashLight")]
-	[Calls(Type = typeof(PackManager), Member = "IsPackCombatRestricted")]
-	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
-	[Calls(Type = typeof(AiTarget), Member = "HoldingLitFlare")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerStruggle), Member = "InStruggle")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(BaseAi), Member = "CanPathfindToPosition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerStruggle), Member = "InStruggle")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(BaseAi), Member = "IsTimberwolf")]
+	[Calls(Type = typeof(AiTarget), Member = "HoldingLitFlare")]
+	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
+	[Calls(Type = typeof(PackManager), Member = "IsPackCombatRestricted")]
+	[Calls(Type = typeof(BaseAi), Member = "IsInFlashLight")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool CanAttack(PackAnimal animal)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(BaseAi), Member = "MaybeApplyAttack")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(BaseAi), Member = "CantReachTarget")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ClearAttackCooldownTimeOnAttackFailed(PackAnimal animal)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(PackManager), Member = "IsPackCombatRestricted")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void MaybeSetPackAttackCooldownTime(PackAnimal animal)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 19)]
 	[CalledBy(Type = typeof(PackManager), Member = "Update")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(PackManager), Member = "CanAttack")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PackManager), Member = "IsPackCombatRestricted")]
+	[Calls(Type = typeof(BaseAi), Member = "CanSeeTarget")]
+	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(MoveAgent), Member = "CanFindPath")]
-	[Calls(Type = typeof(BaseAi), Member = "CanSeeTarget")]
-	[Calls(Type = typeof(PackManager), Member = "IsPackCombatRestricted")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
+	[Calls(Type = typeof(PackManager), Member = "CanAttack")]
+	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 18)]
 	private void MaybeForceAttackInCombatRestrictedArea(PackSettings modeSettings)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 39)]
-	[CalledBy(Type = typeof(PackManager), Member = "Update")]
 	[CalledBy(Type = typeof(PackManager), Member = "Serialize")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(PackManager), Member = "UnregisterPackAnimal")]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[CalledBy(Type = typeof(PackManager), Member = "Update")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(PackManager), Member = "UnregisterPackAnimal")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 37)]
 	private void MaybeCleanupDeadPackAnimals(PackSettings modeSettings)
 	{
 	}
 
 	[CalledBy(Type = typeof(PackManager), Member = "Update")]
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(PackManager), Member = "DisbandGroup")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 25)]
 	private void MaybeDisbandGroupOnTargetLost(PackSettings modeSettings)
 	{
 	}
 
+	[CalledBy(Type = typeof(PackManager), Member = "MaybeFleeAndDisbandOnMoraleCheck")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(AuroraObjectMaterials), Member = "SwitchToNormalMaterials")]
 	[Calls(Type = typeof(AuroraObjectMaterials), Member = "SwitchToAuroraMaterials")]
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeFleeAndDisbandOnMoraleCheck")]
 	[CallsUnknownMethods(Count = 1)]
 	private void MaybeSetAuroraMaterialsOnFlee(BaseAi ai)
 	{
 	}
 
-	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(PackManager), Member = "MaybeSetAuroraMaterialsOnFlee")]
-	[CallsUnknownMethods(Count = 20)]
 	[CalledBy(Type = typeof(PackManager), Member = "Update")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(PackManager), Member = "DisbandGroup")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(BaseAi), Member = "ClearTarget")]
-	[Calls(Type = typeof(PackManager), Member = "ShouldAnimalFlee")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PackManager), Member = "ShouldAnimalFlee")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(BaseAi), Member = "ClearTarget")]
+	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[Calls(Type = typeof(PackManager), Member = "MaybeSetAuroraMaterialsOnFlee")]
+	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
+	[Calls(Type = typeof(PackManager), Member = "DisbandGroup")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 19)]
 	private void MaybeFleeAndDisbandOnMoraleCheck()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 23)]
 	[CalledBy(Type = typeof(PackManager), Member = "Update")]
-	[Calls(Type = typeof(PackManager), Member = "DisbandGroup")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(PackManager), Member = "DisbandGroup")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 22)]
 	private void MaybeFleeAndDisbandOnBearOrMooseCheck(PackSettings modeSettings)
 	{
 	}
 
 	[CalledBy(Type = typeof(PackManager), Member = "Update")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(BaseAi), Member = "ClearTarget")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(BaseAi), Member = "IsPlayerFacingAi")]
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(BaseAi), Member = "ClearTarget")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(PackManager), Member = "IsPackCombatRestricted")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PackManager), Member = "IsPackCombatRestricted")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(BaseAi), Member = "ClearTarget")]
 	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[Calls(Type = typeof(BaseAi), Member = "IsPlayerFacingAi")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 20)]
 	private void MaybeForceMoveMembers(PackSettings modeSettings)
 	{
 	}
 
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeMoveToNewHoldGroundPosition")]
 	[CalledBy(Type = typeof(BaseAi), Member = "CanEnterStalking")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(PackManager), Member = "MaybeMoveToNewHoldGroundPosition")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsMovingToHoldGroundPosition(PackAnimal animal)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(PackManager), Member = "MaybeMoveToNewHoldGroundPosition")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PackManager), Member = "MaybePickHoldGroundHint")]
 	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[CalledBy(Type = typeof(PackManager), Member = "MaybeMoveToNewHoldGroundPosition")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool MaybePickAndMoveToHoldGroundHint(PackAnimal member)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(BaseAi), Member = "ClearTarget")]
-	[CallsUnknownMethods(Count = 36)]
 	[CalledBy(Type = typeof(PackManager), Member = "MaybeMoveToNewHoldGroundPosition")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowKeyNotFoundException")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(BaseAi), Member = "ClearTarget")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowKeyNotFoundException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 33)]
 	private void MaybeForceHoldGroundAfterReposition(PackSettings modeSettings)
 	{
 	}
 
-	[Calls(Type = typeof(PackManager), Member = "MaybePickAndMoveToHoldGroundHint")]
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(PackManager), Member = "Update")]
-	[Calls(Type = typeof(PackManager), Member = "MaybeForceHoldGroundAfterReposition")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(PackManager), Member = "IsMovingToHoldGroundPosition")]
-	[Calls(Type = typeof(PackManager), Member = "IsPackCombatRestricted")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PackManager), Member = "IsPackCombatRestricted")]
+	[Calls(Type = typeof(PackManager), Member = "IsMovingToHoldGroundPosition")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(PackManager), Member = "MaybePickAndMoveToHoldGroundHint")]
+	[Calls(Type = typeof(PackManager), Member = "MaybeForceHoldGroundAfterReposition")]
+	[CallsUnknownMethods(Count = 13)]
 	private void MaybeMoveToNewHoldGroundPosition(PackSettings modeSettings)
 	{
 	}
@@ -767,134 +747,124 @@ public class PackManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private static bool IsTaggedGroupAnimal(PackAnimal animal)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CalledBy(Type = typeof(PackManager), Member = "MaybeFormGroup")]
+	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[CallsUnknownMethods(Count = 1)]
 	private static bool AreSameTaggedGroupAnimals(PackAnimal a, PackAnimal b)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(MoveAgent), Member = "GetDestination")]
-	[Calls(Type = typeof(AiUtils), Member = "GetRandomPointOnNavmesh")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[CallsUnknownMethods(Count = 36)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(PackManager), Member = "Update")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(BaseAi), Member = "StartPath")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AreaMarkupManager), Member = "MaybeReserveAreaMarkup")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(AreaMarkupManager), Member = "FindFarthestAreaMarkupOfTypeWithinRadius")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 10)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(BaseAi), Member = "IsImposter")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(PackManager), Member = "FindPackGroupLeaderByGroupId")]
 	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
 	[Calls(Type = typeof(MoveAgent), Member = "HasPath")]
-	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
 	[Calls(Type = typeof(MoveAgent), Member = "GetDestination")]
-	[Calls(Type = typeof(PackManager), Member = "FindPackGroupLeaderByGroupId")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(AreaMarkupManager), Member = "FindFarthestAreaMarkupOfTypeWithinRadius")]
+	[Calls(Type = typeof(AreaMarkupManager), Member = "MaybeReserveAreaMarkup")]
+	[Calls(Type = typeof(AiUtils), Member = "GetRandomPointOnNavmesh")]
+	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[Calls(Type = typeof(BaseAi), Member = "StartPath")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 36)]
 	private void MaybeKeepLonersWithinRadius()
 	{
 	}
 
-	[Calls(Type = typeof(PackManager), Member = "MaybeAlertMembers")]
-	[CallsUnknownMethods(Count = 18)]
 	[CalledBy(Type = typeof(PackManager), Member = "Update")]
-	[Calls(Type = typeof(BaseAi), Member = "ForceSetPlayerTarget")]
-	[Calls(Type = typeof(PackManager), Member = "MaybeFormGroup")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(PackManager), Member = "InPack")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(PackManager), Member = "MaybeFormGroup")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(PackManager), Member = "MaybeAlertMembers")]
+	[Calls(Type = typeof(BaseAi), Member = "ForceSetPlayerTarget")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 18)]
 	private void MaybeFormGroupOnPlayerDetectionRange(PackSettings modeSettings)
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(PackManager), Member = "MaybePickAndMoveToHoldGroundHint")]
-	[CallsUnknownMethods(Count = 45)]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(AreaMarkupManager), Member = "MaybeReserveAreaMarkup")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(AreaMarkupManager), Member = "FindAreaMarkupsOfTypeWithinRadius")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(AreaMarkupManager), Member = "FindAreaMarkupsOfTypeWithinRadius")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(AreaMarkupManager), Member = "MaybeReserveAreaMarkup")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 43)]
 	private bool MaybePickHoldGroundHint(PackAnimal animal, out Vector3 point)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref point) = null;
-		return default(bool);
+		point = default(Vector3);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePackMorale")]
 	[CalledBy(Type = typeof(TimberwolfReplenishTrigger), Member = "OnTriggerEnter")]
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePackMorale")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(PackManager), Member = "GroupMoraleHeuristic")]
+	[CallsUnknownMethods(Count = 4)]
 	public float GetHighestPackMorale(out float modifier, out int memberCount, out int originalMemberCount)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref modifier) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref memberCount) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref originalMemberCount) = null;
-		return default(float);
+		modifier = default(float);
+		memberCount = default(int);
+		originalMemberCount = default(int);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CalledBy(Type = typeof(PackManager), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 16)]
 	private void MaybeEnableAnimalsOnLoad()
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(PackManager), Member = "Update")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 3)]
 	private void ResetGroupEventFlags()
 	{
 	}
 
-	[Calls(Type = typeof(CustomAudioEmitter), Member = "Enable")]
-	[CallsUnknownMethods(Count = 18)]
 	[CalledBy(Type = typeof(PackManager), Member = "Update")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(CustomAudioEmitter), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 17)]
 	private void MaybeUpdateInteriorAudio(PackSettings modeSettings)
 	{
 	}
@@ -905,42 +875,43 @@ public class PackManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	public bool ArePacksAllowed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetWildlifeNotAttackUnprovoked")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference), Member = "Get")]
+	[Calls(Type = typeof(PanelReference), Member = "TryGetPanel")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetWildlifeNotAttackUnprovoked")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Start()
 	{
 	}
 
-	[Calls(Type = typeof(PackManager), Member = "MaybeForceAttackInCombatRestrictedArea")]
-	[Calls(Type = typeof(PackManager), Member = "MaybeMoveToNewHoldGroundPosition")]
-	[Calls(Type = typeof(PackManager), Member = "MaybeForceMoveMembers")]
-	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
-	[Calls(Type = typeof(PackManager), Member = "MaybeFormGroupOnPlayerDetectionRange")]
-	[Calls(Type = typeof(PackManager), Member = "MaybeFleeAndDisbandOnBearOrMooseCheck")]
-	[Calls(Type = typeof(PackManager), Member = "MaybeKeepLonersWithinRadius")]
-	[Calls(Type = typeof(PackManager), Member = "MaybeFleeAndDisbandOnMoraleCheck")]
-	[Calls(Type = typeof(GameManager), Member = "ControlsLocked")]
-	[Calls(Type = typeof(PackManager), Member = "MaybeCleanupDeadPackAnimals")]
-	[Calls(Type = typeof(PackManager), Member = "ResetGroupEventFlags")]
-	[Calls(Type = typeof(PackManager), Member = "MaybeEnableAnimalsOnLoad")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(PackManager), Member = "MaybeUpdateInteriorAudio")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "ControlsLocked")]
+	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(PackManager), Member = "MaybeEnableAnimalsOnLoad")]
+	[Calls(Type = typeof(PackManager), Member = "ResetGroupEventFlags")]
+	[Calls(Type = typeof(PackManager), Member = "MaybeCleanupDeadPackAnimals")]
 	[Calls(Type = typeof(PackManager), Member = "MaybeDisbandGroupOnTargetLost")]
+	[Calls(Type = typeof(PackManager), Member = "MaybeFleeAndDisbandOnMoraleCheck")]
+	[Calls(Type = typeof(PackManager), Member = "MaybeFleeAndDisbandOnBearOrMooseCheck")]
+	[Calls(Type = typeof(PackManager), Member = "MaybeForceMoveMembers")]
+	[Calls(Type = typeof(PackManager), Member = "MaybeMoveToNewHoldGroundPosition")]
+	[Calls(Type = typeof(PackManager), Member = "MaybeForceAttackInCombatRestrictedArea")]
+	[Calls(Type = typeof(PackManager), Member = "MaybeKeepLonersWithinRadius")]
+	[Calls(Type = typeof(PackManager), Member = "MaybeFormGroupOnPlayerDetectionRange")]
+	[Calls(Type = typeof(PackManager), Member = "MaybeUpdateInteriorAudio")]
 	public void Update()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 47)]
-	[CallerCount(Count = 0)]
 	public PackManager()
 	{
 	}

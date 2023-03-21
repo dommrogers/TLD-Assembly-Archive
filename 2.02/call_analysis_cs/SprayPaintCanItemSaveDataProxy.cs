@@ -4,8 +4,8 @@ public class SprayPaintCanItemSaveDataProxy
 {
 	public DecalColour m_Colour;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public SprayPaintCanItemSaveDataProxy()
 	{
 	}

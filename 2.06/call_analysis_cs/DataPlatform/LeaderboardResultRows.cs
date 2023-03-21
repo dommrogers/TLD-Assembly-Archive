@@ -9,7 +9,7 @@ namespace DataPlatform;
 
 public class LeaderboardResultRows : IEnumerable<LeaderboardResultRow>, IEnumerable
 {
-	private sealed class _003CGetEnumerator_003Ed__1 : IDisposable, IEnumerator<LeaderboardResultRow>, IEnumerator
+	private sealed class _003CGetEnumerator_003Ed__1 : IEnumerator<LeaderboardResultRow>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -21,9 +21,9 @@ public class LeaderboardResultRows : IEnumerable<LeaderboardResultRow>, IEnumera
 
 		private LeaderboardResultRow System_002ECollections_002EGeneric_002EIEnumerator_003CDataPlatform_002ELeaderboardResultRow_003E_002ECurrent
 		{
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -34,16 +34,16 @@ public class LeaderboardResultRows : IEnumerable<LeaderboardResultRow>, IEnumera
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
 			}
 		}
 
+		[DebuggerHidden]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[DebuggerHidden]
 		public _003CGetEnumerator_003Ed__1(int _003C_003E1__state)
 		{
 		}
@@ -61,13 +61,13 @@ public class LeaderboardResultRows : IEnumerable<LeaderboardResultRow>, IEnumera
 		[CallsUnknownMethods(Count = 11)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 5)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 5)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -91,10 +91,10 @@ public class LeaderboardResultRows : IEnumerable<LeaderboardResultRow>, IEnumera
 		}
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 0)]
 	[IteratorStateMachine(typeof(_003CGetEnumerator_003Ed__1))]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 6)]
 	public IEnumerator<LeaderboardResultRow> GetEnumerator()
 	{
 		return null;

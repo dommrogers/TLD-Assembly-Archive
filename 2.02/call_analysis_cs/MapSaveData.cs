@@ -20,8 +20,8 @@ public class MapSaveData
 
 	public Guid m_Guid;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public MapSaveData()
 	{
 	}

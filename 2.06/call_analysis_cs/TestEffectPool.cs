@@ -14,17 +14,18 @@ public class TestEffectPool : MonoBehaviour
 	private int m_EffectIndex;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(EffectPool<>), Member = "LoadEffects")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Awake()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 24)]
-	[CallsUnknownMethods(Count = 13)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EffectPool<>), Member = "SpawnUntilParticlesDone")]
+	[Calls(Type = typeof(EffectPool<>), Member = "LoadEffects")]
+	[CallsDeduplicatedMethods(Count = 21)]
+	[CallsUnknownMethods(Count = 13)]
 	public void Update()
 	{
 	}

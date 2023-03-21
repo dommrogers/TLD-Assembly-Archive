@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using System.Text;
 using Cpp2ILInjected.CallAnalysis;
 using DigitalOpus.MB.Core;
@@ -16,52 +15,45 @@ public class MB2_TextureBakeResults : ScriptableObject
 
 		private MB_MaterialAndUVRect[] matsAndSrcUVRect;
 
-		[CallsUnknownMethods(Count = 30)]
-		[CalledBy(Type = typeof(MB3_MeshCombinerSingle), Member = "_updateGameObjects")]
 		[CalledBy(Type = typeof(MB3_MeshCombinerSingle), Member = "_addToCombined")]
+		[CalledBy(Type = typeof(MB3_MeshCombinerSingle), Member = "_updateGameObjects")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+		[CallsUnknownMethods(Count = 30)]
 		public Material2AtlasRectangleMapper(MB2_TextureBakeResults res)
 		{
 		}
 
-		[Calls(Type = typeof(Debug), Member = "LogError")]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[Calls(Type = typeof(Debug), Member = "Log")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[CalledBy(Type = typeof(MB3_MeshCombinerSingle), Member = "_addToCombined")]
 		[CalledBy(Type = typeof(MB3_MeshCombinerSingle), Member = "_updateGameObject")]
-		[CallsUnknownMethods(Count = 60)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[Calls(Type = typeof(MB2_TextureBakeResults), Member = "IsMeshAndMaterialRectEnclosedByAtlasRect")]
-		[Calls(Type = typeof(Rect), Member = "ToString")]
-		[Calls(Type = typeof(Debug), Member = "Log")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 3)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
+		[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+		[Calls(Type = typeof(Mesh), Member = "get_subMeshCount")]
 		[Calls(Type = typeof(MB3_MeshCombinerSingle.MeshChannelsCache), Member = "GetUv0Raw")]
-		[Calls(Type = typeof(Mesh), Member = "get_subMeshCount")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
-		[Calls(Type = typeof(Mesh), Member = "get_subMeshCount")]
-		[Calls(Type = typeof(string), Member = "Format")]
 		[Calls(Type = typeof(MB_Utility), Member = "hasOutOfBoundsUVs")]
+		[Calls(Type = typeof(Rect), Member = "ToString")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[Calls(Type = typeof(Debug), Member = "Log")]
+		[Calls(Type = typeof(MB2_TextureBakeResults), Member = "IsMeshAndMaterialRectEnclosedByAtlasRect")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[Calls(Type = typeof(Debug), Member = "LogError")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 60)]
 		public bool TryMapMaterialToUVRect(Material mat, Mesh m, int submeshIdx, int idxInResultMats, MB3_MeshCombinerSingle.MeshChannelsCache meshChannelCache, Dictionary<int, MB_Utility.MeshAnalysisResult[]> meshAnalysisCache, out MB_TextureTilingTreatment tilingTreatment, out Rect rectInAtlas, out Rect encapsulatingRectOut, out Rect sourceMaterialTilingOut, ref string errorMsg, MB2_LogLevel logLevel)
 		{
-			System.Runtime.CompilerServices.Unsafe.As<MB_TextureTilingTreatment, @null>(ref tilingTreatment) = null;
-			System.Runtime.CompilerServices.Unsafe.As<Rect, @null>(ref rectInAtlas) = null;
-			System.Runtime.CompilerServices.Unsafe.As<Rect, @null>(ref encapsulatingRectOut) = null;
-			System.Runtime.CompilerServices.Unsafe.As<Rect, @null>(ref sourceMaterialTilingOut) = null;
-			return default(bool);
+			tilingTreatment = default(MB_TextureTilingTreatment);
+			rectInAtlas = default(Rect);
+			encapsulatingRectOut = default(Rect);
+			sourceMaterialTilingOut = default(Rect);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
@@ -84,7 +76,7 @@ public class MB2_TextureBakeResults : ScriptableObject
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -100,84 +92,73 @@ public class MB2_TextureBakeResults : ScriptableObject
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(MB_MultiMaterial), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 83)]
 	[CalledBy(Type = typeof(MB3_MeshCombiner), Member = "_CreateTemporaryTextrueBakeResult")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 17)]
+	[Calls(Type = typeof(HashSet<>), Member = ".ctor")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(string), Member = "Format")]
 	[Calls(Type = typeof(MB_Utility), Member = "GetGOMaterials")]
+	[Calls(Type = typeof(HashSet<>), Member = "Contains")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(MB_MultiMaterial), Member = ".ctor")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 83)]
 	public static MB2_TextureBakeResults CreateForMaterialsOnRenderer(GameObject[] gos, List<Material> matsOnTargetRenderer)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(MB3_MeshCombinerSingle), Member = "_addToCombined")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(MB3_MeshCombinerSingle), Member = "_addToCombined")]
-	[CalledBy(Type = typeof(MB3_MeshCombinerSingle), Member = "_addToCombined")]
 	[CallsUnknownMethods(Count = 3)]
 	public bool DoAnyResultMatsUseConsiderMeshUVs()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public bool ContainsMaterial(Material m)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[CallsUnknownMethods(Count = 43)]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(Material), Member = "get_shader")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Material), Member = "get_shader")]
+	[Calls(Type = typeof(HashSet<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 43)]
 	public string GetDescription()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(MB3_UVTransformUtility), Member = "LineSegmentContainsShifted")]
-	[CallsUnknownMethods(Count = 41)]
-	[CalledBy(Type = typeof(MB3_TextureCombinerMerging), Member = "DoIntegrityCheckMergedEncapsulatingSamplingRects")]
-	[CalledBy(Type = typeof(MB3_TextureCombinerMerging), Member = "DoIntegrityCheckMergedEncapsulatingSamplingRects")]
 	[CalledBy(Type = typeof(Material2AtlasRectangleMapper), Member = "TryMapMaterialToUVRect")]
-	[Calls(Type = typeof(MB3_UVTransformUtility), Member = "LineSegmentContainsShifted")]
-	[Calls(Type = typeof(MB3_UVTransformUtility), Member = "RectContainsShifted")]
+	[CalledBy(Type = typeof(MB3_TextureCombinerMerging), Member = "DoIntegrityCheckMergedEncapsulatingSamplingRects")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Rect), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Rect), Member = "ToString")]
-	[Calls(Type = typeof(Rect), Member = "ToString")]
-	[Calls(Type = typeof(Rect), Member = "ToString")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(MB3_UVTransformUtility), Member = "RectContainsShifted")]
+	[Calls(Type = typeof(MB3_UVTransformUtility), Member = "LineSegmentContainsShifted")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 41)]
 	public static bool IsMeshAndMaterialRectEnclosedByAtlasRect(MB_TextureTilingTreatment tilingTreatment, Rect uvR, Rect sourceMaterialTiling, Rect samplingEncapsulatinRect, MB2_LogLevel logLevel)
 	{
-		return default(bool);
+		return false;
 	}
 }

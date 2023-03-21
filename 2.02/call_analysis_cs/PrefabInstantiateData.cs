@@ -14,7 +14,7 @@ public class PrefabInstantiateData
 	public Vector3 m_LocalScale;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PrefabInstantiateData()
 	{
 	}

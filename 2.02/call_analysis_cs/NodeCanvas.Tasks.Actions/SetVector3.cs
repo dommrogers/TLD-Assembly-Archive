@@ -17,11 +17,11 @@ public class SetVector3 : ActionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 17)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(OperationTools), Member = "GetOperationString")]
 		[Calls(Type = typeof(string), Member = "Format")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 17)]
 		get
 		{
 			return null;
@@ -29,16 +29,17 @@ public class SetVector3 : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(OperationTools), Member = "Operate")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public SetVector3()
 	{
 	}

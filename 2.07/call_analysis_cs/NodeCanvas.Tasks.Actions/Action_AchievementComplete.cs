@@ -7,8 +7,8 @@ public class Action_AchievementComplete : ActionTask
 {
 	public AchievementManager.ChallengeAchievement achievement;
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{

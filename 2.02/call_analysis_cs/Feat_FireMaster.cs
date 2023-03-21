@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -14,29 +13,31 @@ public class Feat_FireMaster : Feat
 	private static Feat_FireMasterSaveData m_Feat_FireMasterSaveData;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void ValidateSaveData(string text)
 	{
 	}
@@ -45,52 +46,49 @@ public class Feat_FireMaster : Feat
 	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
 	public int GetDefaultFireStartingSkillLevel()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Feat), Member = "ShouldBlockIncrement")]
 	[Calls(Type = typeof(Feat_FireMaster), Member = "MaybeUpdateFireStartingSkillLevel")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
 	[CallsDeduplicatedMethods(Count = 3)]
 	public void IncrementFiresStarted(int count)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Replace")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Replace")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[CallsUnknownMethods(Count = 3)]
 	public override string GetDescription()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public override string GetShortDescription()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override string GetBonusDescription()
 	{
 		return null;
@@ -100,46 +98,44 @@ public class Feat_FireMaster : Feat
 	[CallsDeduplicatedMethods(Count = 1)]
 	public override bool IsUnlocked()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public override float GetNormalizedProgress()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
-	[Calls(Type = typeof(Feat_FireMaster), Member = "MaybeUpdateFireStartingSkillLevel")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(Feat_FireMaster), Member = "MaybeUpdateFireStartingSkillLevel")]
+	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	public override void SetNormalizedProgress(float normalizedValue)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Skill_Firestarting), Member = "Deserialize")]
-	[CalledBy(Type = typeof(Skill), Member = "Start")]
-	[CalledBy(Type = typeof(SkillsManager), Member = "Deserialize")]
-	[CalledBy(Type = typeof(Fire), Member = "FireStateSet")]
-	[CalledBy(Type = typeof(Feat_FireMaster), Member = "SetNormalizedProgress")]
 	[CalledBy(Type = typeof(Feat_FireMaster), Member = "IncrementFiresStarted")]
-	[Calls(Type = typeof(Skill), Member = "SetPoints")]
-	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
-	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Feat_FireMaster), Member = "SetNormalizedProgress")]
+	[CalledBy(Type = typeof(Fire), Member = "FireStateSet")]
+	[CalledBy(Type = typeof(SkillsManager), Member = "Deserialize")]
+	[CalledBy(Type = typeof(Skill), Member = "Start")]
+	[CalledBy(Type = typeof(Skill_Firestarting), Member = "Deserialize")]
 	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillFireStarting")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(Skill), Member = "SetPoints")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void MaybeUpdateFireStartingSkillLevel()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public Feat_FireMaster()
 	{

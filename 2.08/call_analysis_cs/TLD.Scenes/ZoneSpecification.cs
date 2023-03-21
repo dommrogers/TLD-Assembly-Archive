@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.AddressableAssets;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -40,7 +41,7 @@ public class ZoneSpecification : ScriptableObject
 	public ZoneSpecification ParentZoneSpecification
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 28)]
+		[CallerCount(Count = 29)]
 		get
 		{
 			return null;
@@ -49,12 +50,12 @@ public class ZoneSpecification : ScriptableObject
 
 	public string ZoneName
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(SandboxRecord), Member = "GetSurvivalRecordSummaryText")]
 		[CalledBy(Type = typeof(Panel_Log), Member = "GetSurvivalRecordSummaryText")]
-		[Calls(Type = typeof(Object), Member = "op_Implicit")]
+		[CalledBy(Type = typeof(SandboxRecord), Member = "GetSurvivalRecordSummaryText")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(Localization), Member = "Get")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -78,24 +79,24 @@ public class ZoneSpecification : ScriptableObject
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public bool HasMapIcon
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public WorldMapSpecification WorldMap
 	{
-		[CallerCount(Count = 28)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 32)]
 		get
 		{
 			return null;
@@ -119,26 +120,26 @@ public class ZoneSpecification : ScriptableObject
 		return default(AsyncOperationHandle<GameObject>);
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public AsyncOperationHandle<GameObject> InstantiateMapIconAsync(Transform parent)
 	{
 		return default(AsyncOperationHandle<GameObject>);
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AssetHelper), Member = "TryLoadAsset")]
 	public Texture2D GetTOCTexture()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(SceneSet), Member = "LoadAsync")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SceneSet), Member = "get_MaxSceneCount")]
+	[Calls(Type = typeof(SceneSet), Member = "LoadAsync")]
+	[CallsUnknownMethods(Count = 2)]
 	public IList<AsyncOperationHandle<SceneInstance>> LoadRegionAsync(ICollection<SceneLoadCondition> conditions = null)
 	{
 		return null;
@@ -154,9 +155,9 @@ public class ZoneSpecification : ScriptableObject
 		return null;
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public ZoneSpecification()
 	{
 	}

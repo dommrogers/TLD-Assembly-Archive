@@ -13,10 +13,10 @@ public class LimitTransformPosition : MonoBehaviour
 
 	private Vector3 m_TransformPosCache;
 
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
 	private void Start()
 	{
 	}

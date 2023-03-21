@@ -12,8 +12,8 @@ public class WaitUntil : BTDecorator, ITaskAssignable<ConditionTask>, ITaskAssig
 
 	public Task task
 	{
-		[CallerCount(Count = 7)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return null;
@@ -40,15 +40,12 @@ public class WaitUntil : BTDecorator, ITaskAssignable<ConditionTask>, ITaskAssig
 		}
 	}
 
-	[Calls(Type = typeof(Connection), Member = "Execute")]
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
 	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
+	[Calls(Type = typeof(Connection), Member = "Execute")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);

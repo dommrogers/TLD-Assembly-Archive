@@ -30,8 +30,8 @@ public class RegionGroupSpecification : ScriptableObject
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public RegionGroupSpecification()
 	{

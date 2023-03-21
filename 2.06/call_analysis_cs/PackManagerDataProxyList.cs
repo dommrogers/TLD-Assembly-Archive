@@ -11,10 +11,10 @@ public class PackManagerDataProxyList
 
 	public bool m_PlayerInPackCombatTrigger;
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(PackManager), Member = "Serialize")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	public PackManagerDataProxyList()
 	{
 	}

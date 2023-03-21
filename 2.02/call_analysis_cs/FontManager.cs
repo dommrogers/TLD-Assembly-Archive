@@ -32,12 +32,11 @@ public class FontManager : MonoBehaviour
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetLanguage")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_lang")]
-	[Calls(Type = typeof(UIFont), Member = "set_replacement")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(FontManager), Member = "ResetFontsForCharacterSet")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(FontManager), Member = "ResetFontsForCharacterSet")]
 	[Calls(Type = typeof(UIFont), Member = "set_replacement")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void UpdateDummyFonts()
 	{
 	}
@@ -61,32 +60,32 @@ public class FontManager : MonoBehaviour
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
+	[CallerCount(Count = 1)]
 	public void ResetCurrentFonts()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(FontManager), Member = "UpdateDummyFonts")]
-	[Calls(Type = typeof(TMP_FontAsset), Member = "ReadFontAssetDefinition")]
-	[Calls(Type = typeof(TMP_FontAsset), Member = "ClearAtlasTextures")]
 	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "RenderFontTest")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(FontManager), Member = "UpdateDummyFonts")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(TMP_FontAsset), Member = "ClearFontAssetTables")]
+	[Calls(Type = typeof(TMP_FontAsset), Member = "ClearAtlasTextures")]
+	[Calls(Type = typeof(TMP_FontAsset), Member = "ReadFontAssetDefinition")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void ResetFontsForCharacterSet(CharacterSet characterSet)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(TMP_FontAsset), Member = "ClearAtlasTextures")]
-	[Calls(Type = typeof(TMP_FontAsset), Member = "ClearFontAssetTables")]
-	[Calls(Type = typeof(TMP_FontAsset), Member = "ReadFontAssetDefinition")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(TMP_FontAsset), Member = "ClearFontAssetTables")]
+	[Calls(Type = typeof(TMP_FontAsset), Member = "ClearAtlasTextures")]
+	[Calls(Type = typeof(TMP_FontAsset), Member = "ReadFontAssetDefinition")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void ResetTMPFont(TMP_FontAsset font)
 	{
 	}

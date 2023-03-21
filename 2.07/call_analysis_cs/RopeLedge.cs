@@ -39,16 +39,16 @@ public class RopeLedge : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "SetRopeActiveState")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "SetRopeActiveState")]
 	[CallerCount(Count = 1)]
 	public void SetActiveInitial(bool state)
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerClimbRope), Member = "OnRopeTransition")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "OnRopeTransition")]
 	[CallsUnknownMethods(Count = 5)]
 	public void OnRopeTransition(bool playerOnRope)
 	{

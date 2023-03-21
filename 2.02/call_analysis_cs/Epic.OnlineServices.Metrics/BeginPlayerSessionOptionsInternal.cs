@@ -21,10 +21,10 @@ internal struct BeginPlayerSessionOptionsInternal : ISettable, IDisposable
 
 	public BeginPlayerSessionOptionsAccountId AccountId
 	{
+		[CalledBy(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 3)]
-		[CalledBy(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "Set")]
 		set
 		{
 		}
@@ -34,9 +34,9 @@ internal struct BeginPlayerSessionOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -53,11 +53,11 @@ internal struct BeginPlayerSessionOptionsInternal : ISettable, IDisposable
 
 	public string ServerIp
 	{
+		[CalledBy(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -67,9 +67,9 @@ internal struct BeginPlayerSessionOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -84,23 +84,21 @@ internal struct BeginPlayerSessionOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "set_ServerIp")]
-	[Calls(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "set_DisplayName")]
-	[Calls(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "set_GameSessionId")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(MetricsInterface), Member = "BeginPlayerSession")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "set_AccountId")]
-	[CalledBy(Type = typeof(MetricsInterface), Member = "BeginPlayerSession")]
+	[Calls(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "set_DisplayName")]
+	[Calls(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "set_ServerIp")]
+	[Calls(Type = typeof(BeginPlayerSessionOptionsInternal), Member = "set_GameSessionId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountIdInternal), Member = "Dispose")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountIdInternal), Member = "Dispose")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

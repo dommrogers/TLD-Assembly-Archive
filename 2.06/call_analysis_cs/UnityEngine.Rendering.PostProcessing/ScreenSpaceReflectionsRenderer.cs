@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 
 namespace UnityEngine.Rendering.PostProcessing;
@@ -13,8 +12,8 @@ internal sealed class ScreenSpaceReflectionsRenderer : PostProcessEffectRenderer
 
 		public ScreenSpaceReflectionResolution downsampling;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public QualityPreset()
 		{
 		}
@@ -36,75 +35,44 @@ internal sealed class ScreenSpaceReflectionsRenderer : PostProcessEffectRenderer
 
 	private readonly QualityPreset[] m_Presets;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public override DepthTextureMode GetCameraFlags()
 	{
 		return default(DepthTextureMode);
 	}
 
 	[CalledBy(Type = typeof(ScreenSpaceReflectionsRenderer), Member = "Render")]
-	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
-	[CalledBy(Type = typeof(ScreenSpaceReflectionsRenderer), Member = "Render")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
+	[Calls(Type = typeof(RenderTexture), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 13)]
 	internal void CheckRT(ref RenderTexture rt, int width, int height, FilterMode filterMode, bool useMipMap)
 	{
 	}
 
-	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(ScreenSpaceReflectionsRenderer), Member = "CheckRT")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
-	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(Camera), Member = "get_worldToCameraMatrix")]
-	[Calls(Type = typeof(Camera), Member = "get_worldToCameraMatrix")]
-	[Calls(Type = typeof(Matrix4x4), Member = "op_Multiply")]
-	[Calls(Type = typeof(Camera), Member = "get_projectionMatrix")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 29)]
 	[Calls(Type = typeof(ScreenSpaceReflectionsRenderer), Member = "CheckRT")]
 	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
 	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
+	[Calls(Type = typeof(Camera), Member = "get_projectionMatrix")]
+	[Calls(Type = typeof(Matrix4x4), Member = "op_Multiply")]
+	[Calls(Type = typeof(Camera), Member = "get_worldToCameraMatrix")]
+	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[Calls(Type = typeof(RenderTargetIdentifier), Member = ".ctor")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(CommandBuffer), Member = "GetTemporaryRT")]
+	[CallsDeduplicatedMethods(Count = 29)]
 	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
-	[Calls(Type = typeof(Matrix4x4), Member = "set_Item")]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}
 
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
 	public override void Release()

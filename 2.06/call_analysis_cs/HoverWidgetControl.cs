@@ -12,16 +12,16 @@ public class HoverWidgetControl : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnHover(bool isHovering)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnDragOut()
 	{
 	}

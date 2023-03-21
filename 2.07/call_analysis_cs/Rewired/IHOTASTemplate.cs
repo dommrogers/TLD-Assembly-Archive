@@ -1,622 +1,180 @@
-using Cpp2ILInjected.CallAnalysis;
-
 namespace Rewired;
 
 public interface IHOTASTemplate : IControllerTemplate
 {
-	IControllerTemplateButton stickTrigger
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickTriggerStage2
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickPinkyButton
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickPinkyTrigger
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickButton1
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
-
-	IControllerTemplateButton stickButton2
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickButton3
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickButton4
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickButton5
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickButton6
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
-
-	IControllerTemplateButton stickButton7
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
-
-	IControllerTemplateButton stickButton8
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickButton9
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickButton10
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickBaseButton1
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickBaseButton2
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickBaseButton3
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
-
-	IControllerTemplateButton stickBaseButton4
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickBaseButton5
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickBaseButton6
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickBaseButton7
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickBaseButton8
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
-
-	IControllerTemplateButton stickBaseButton9
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickBaseButton10
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickBaseButton11
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton stickBaseButton12
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton mode1
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton mode2
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
-
-	IControllerTemplateButton mode3
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleButton1
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleButton2
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleButton3
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleButton4
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
-
-	IControllerTemplateButton throttleButton5
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleButton6
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleButton7
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleButton8
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleButton9
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
-
-	IControllerTemplateButton throttleButton10
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleBaseButton1
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleBaseButton2
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleBaseButton3
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleBaseButton4
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleBaseButton5
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
-
-	IControllerTemplateButton throttleBaseButton6
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleBaseButton7
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleBaseButton8
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleBaseButton9
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleBaseButton10
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
-
-	IControllerTemplateButton throttleBaseButton11
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleBaseButton12
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleBaseButton13
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleBaseButton14
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleBaseButton15
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
-
-	IControllerTemplateAxis throttleSlider1
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
-
-	IControllerTemplateAxis throttleSlider2
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateAxis throttleSlider3
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateAxis throttleSlider4
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateAxis throttleDial1
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateAxis throttleDial2
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateAxis throttleDial3
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
-
-	IControllerTemplateAxis throttleDial4
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleWheel1Forward
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleWheel1Back
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleWheel1Press
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleWheel2Forward
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
-
-	IControllerTemplateButton throttleWheel2Back
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleWheel2Press
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleWheel3Forward
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleWheel3Back
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateButton throttleWheel3Press
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateAxis leftPedal
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
-
-	IControllerTemplateAxis rightPedal
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateAxis slidePedals
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateStick stick
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateThumbStick stickMiniStick1
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateThumbStick stickMiniStick2
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
-
-	IControllerTemplateHat stickHat1
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateHat stickHat2
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateHat stickHat3
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateHat stickHat4
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateThrottle throttle1
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
-
-	IControllerTemplateThrottle throttle2
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateThumbStick throttleMiniStick
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateHat throttleHat1
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateHat throttleHat2
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateHat throttleHat3
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
-
-	IControllerTemplateHat throttleHat4
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
+	IControllerTemplateButton stickTrigger { get; }
+
+	IControllerTemplateButton stickTriggerStage2 { get; }
+
+	IControllerTemplateButton stickPinkyButton { get; }
+
+	IControllerTemplateButton stickPinkyTrigger { get; }
+
+	IControllerTemplateButton stickButton1 { get; }
+
+	IControllerTemplateButton stickButton2 { get; }
+
+	IControllerTemplateButton stickButton3 { get; }
+
+	IControllerTemplateButton stickButton4 { get; }
+
+	IControllerTemplateButton stickButton5 { get; }
+
+	IControllerTemplateButton stickButton6 { get; }
+
+	IControllerTemplateButton stickButton7 { get; }
+
+	IControllerTemplateButton stickButton8 { get; }
+
+	IControllerTemplateButton stickButton9 { get; }
+
+	IControllerTemplateButton stickButton10 { get; }
+
+	IControllerTemplateButton stickBaseButton1 { get; }
+
+	IControllerTemplateButton stickBaseButton2 { get; }
+
+	IControllerTemplateButton stickBaseButton3 { get; }
+
+	IControllerTemplateButton stickBaseButton4 { get; }
+
+	IControllerTemplateButton stickBaseButton5 { get; }
+
+	IControllerTemplateButton stickBaseButton6 { get; }
+
+	IControllerTemplateButton stickBaseButton7 { get; }
+
+	IControllerTemplateButton stickBaseButton8 { get; }
+
+	IControllerTemplateButton stickBaseButton9 { get; }
+
+	IControllerTemplateButton stickBaseButton10 { get; }
+
+	IControllerTemplateButton stickBaseButton11 { get; }
+
+	IControllerTemplateButton stickBaseButton12 { get; }
+
+	IControllerTemplateButton mode1 { get; }
+
+	IControllerTemplateButton mode2 { get; }
+
+	IControllerTemplateButton mode3 { get; }
+
+	IControllerTemplateButton throttleButton1 { get; }
+
+	IControllerTemplateButton throttleButton2 { get; }
+
+	IControllerTemplateButton throttleButton3 { get; }
+
+	IControllerTemplateButton throttleButton4 { get; }
+
+	IControllerTemplateButton throttleButton5 { get; }
+
+	IControllerTemplateButton throttleButton6 { get; }
+
+	IControllerTemplateButton throttleButton7 { get; }
+
+	IControllerTemplateButton throttleButton8 { get; }
+
+	IControllerTemplateButton throttleButton9 { get; }
+
+	IControllerTemplateButton throttleButton10 { get; }
+
+	IControllerTemplateButton throttleBaseButton1 { get; }
+
+	IControllerTemplateButton throttleBaseButton2 { get; }
+
+	IControllerTemplateButton throttleBaseButton3 { get; }
+
+	IControllerTemplateButton throttleBaseButton4 { get; }
+
+	IControllerTemplateButton throttleBaseButton5 { get; }
+
+	IControllerTemplateButton throttleBaseButton6 { get; }
+
+	IControllerTemplateButton throttleBaseButton7 { get; }
+
+	IControllerTemplateButton throttleBaseButton8 { get; }
+
+	IControllerTemplateButton throttleBaseButton9 { get; }
+
+	IControllerTemplateButton throttleBaseButton10 { get; }
+
+	IControllerTemplateButton throttleBaseButton11 { get; }
+
+	IControllerTemplateButton throttleBaseButton12 { get; }
+
+	IControllerTemplateButton throttleBaseButton13 { get; }
+
+	IControllerTemplateButton throttleBaseButton14 { get; }
+
+	IControllerTemplateButton throttleBaseButton15 { get; }
+
+	IControllerTemplateAxis throttleSlider1 { get; }
+
+	IControllerTemplateAxis throttleSlider2 { get; }
+
+	IControllerTemplateAxis throttleSlider3 { get; }
+
+	IControllerTemplateAxis throttleSlider4 { get; }
+
+	IControllerTemplateAxis throttleDial1 { get; }
+
+	IControllerTemplateAxis throttleDial2 { get; }
+
+	IControllerTemplateAxis throttleDial3 { get; }
+
+	IControllerTemplateAxis throttleDial4 { get; }
+
+	IControllerTemplateButton throttleWheel1Forward { get; }
+
+	IControllerTemplateButton throttleWheel1Back { get; }
+
+	IControllerTemplateButton throttleWheel1Press { get; }
+
+	IControllerTemplateButton throttleWheel2Forward { get; }
+
+	IControllerTemplateButton throttleWheel2Back { get; }
+
+	IControllerTemplateButton throttleWheel2Press { get; }
+
+	IControllerTemplateButton throttleWheel3Forward { get; }
+
+	IControllerTemplateButton throttleWheel3Back { get; }
+
+	IControllerTemplateButton throttleWheel3Press { get; }
+
+	IControllerTemplateAxis leftPedal { get; }
+
+	IControllerTemplateAxis rightPedal { get; }
+
+	IControllerTemplateAxis slidePedals { get; }
+
+	IControllerTemplateStick stick { get; }
+
+	IControllerTemplateThumbStick stickMiniStick1 { get; }
+
+	IControllerTemplateThumbStick stickMiniStick2 { get; }
+
+	IControllerTemplateHat stickHat1 { get; }
+
+	IControllerTemplateHat stickHat2 { get; }
+
+	IControllerTemplateHat stickHat3 { get; }
+
+	IControllerTemplateHat stickHat4 { get; }
+
+	IControllerTemplateThrottle throttle1 { get; }
+
+	IControllerTemplateThrottle throttle2 { get; }
+
+	IControllerTemplateThumbStick throttleMiniStick { get; }
+
+	IControllerTemplateHat throttleHat1 { get; }
+
+	IControllerTemplateHat throttleHat2 { get; }
+
+	IControllerTemplateHat throttleHat3 { get; }
+
+	IControllerTemplateHat throttleHat4 { get; }
 }

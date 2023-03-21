@@ -29,9 +29,9 @@ public class CameraPathEvent : CameraPathPoint
 
 	public ArgumentTypes argumentType;
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CameraPathPoint), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public CameraPathEvent()
 	{
 	}

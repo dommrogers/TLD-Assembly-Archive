@@ -13,40 +13,40 @@ internal struct PresenceModificationDataRecordIdInternal : ISettable, IDisposabl
 
 	public string Key
 	{
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(PresenceModificationDataRecordId), Member = "Set")]
 		[CalledBy(Type = typeof(PresenceModificationDataRecordId), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(PresenceModificationDataRecordIdInternal), Member = "Set")]
+		[CalledBy(Type = typeof(PresenceModificationDataRecordIdInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(PresenceModificationDataRecordIdInternal), Member = "Set")]
-		[CalledBy(Type = typeof(PresenceModificationDataRecordIdInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(PresenceModificationDataRecordIdInternal), Member = "set_Key")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PresenceModificationDataRecordIdInternal), Member = "set_Key")]
 	public void Set(PresenceModificationDataRecordId other)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PresenceModificationDataRecordIdInternal), Member = "set_Key")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PresenceModificationDataRecordIdInternal), Member = "set_Key")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{

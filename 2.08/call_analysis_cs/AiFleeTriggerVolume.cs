@@ -3,16 +3,16 @@ using UnityEngine;
 
 public class AiFleeTriggerVolume : MonoBehaviour
 {
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnTriggerStay(Collider other)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public AiFleeTriggerVolume()
 	{
 	}

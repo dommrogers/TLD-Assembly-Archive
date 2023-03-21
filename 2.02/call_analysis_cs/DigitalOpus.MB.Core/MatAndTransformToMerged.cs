@@ -18,15 +18,15 @@ public class MatAndTransformToMerged
 
 	public DRect obUVRectIfTilingSame
 	{
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		get
 		{
 			return default(DRect);
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
@@ -67,26 +67,26 @@ public class MatAndTransformToMerged
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 1)]
 	public MatAndTransformToMerged(DRect obUVrect, bool fixOutOfBoundsUVs, Material m)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 1)]
 	private void _init(DRect obUVrect, bool fixOutOfBoundsUVs, Material m)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(DRect), Member = "Equals")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public override bool Equals(object obj)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -94,18 +94,19 @@ public class MatAndTransformToMerged
 	[CallsUnknownMethods(Count = 1)]
 	public override int GetHashCode()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(MB_TexSet), Member = "GetMatSubrectDescriptions")]
 	[CalledBy(Type = typeof(MB_TexSet), Member = "GetDescription")]
-	[CalledBy(Type = typeof(MB3_TextureCombinerPackerMeshBaker._003CCreateAtlases_003Ed__0), Member = "MoveNext")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(MB_TexSet), Member = "GetMatSubrectDescriptions")]
+	[CalledBy(TypeFullName = "DigitalOpus.MB.Core.MB3_TextureCombinerPackerMeshBaker.<CreateAtlases>d__0", Member = "MoveNext")]
+	[CalledBy(TypeFullName = "DigitalOpus.MB.Core.MB3_TextureCombinerPipeline.<CalculateIdealSizesForTexturesInAtlasAndPadding>d__10", Member = "MoveNext")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetMaterialName()
 	{
 		return null;

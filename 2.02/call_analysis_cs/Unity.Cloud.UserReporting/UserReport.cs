@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using Cpp2ILInjected.CallAnalysis;
-using Unity.Cloud.UserReporting.Client;
 
 namespace Unity.Cloud.UserReporting;
 
@@ -12,15 +12,15 @@ public class UserReport : UserReportPreview
 	private class UserReportMetricSorter : IComparer<UserReportMetric>
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(string), Member = "CompareOrdinalHelper")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public int Compare(UserReportMetric x, UserReportMetric y)
 		{
-			return default(int);
+			return 0;
 		}
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public UserReportMetricSorter()
 		{
 		}
@@ -42,16 +42,16 @@ public class UserReport : UserReportPreview
 
 	public List<UserReportAttachment> Attachments
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 1)]
+		[CallerCount(Count = 6)]
 		set
 		{
 		}
@@ -66,9 +66,9 @@ public class UserReport : UserReportPreview
 		{
 			return null;
 		}
-		[CallerCount(Count = 7)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		set
 		{
 		}
@@ -76,16 +76,16 @@ public class UserReport : UserReportPreview
 
 	public List<UserReportNamedValue> DeviceMetadata
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 5)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 8)]
 		set
 		{
 		}
@@ -95,14 +95,14 @@ public class UserReport : UserReportPreview
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 1)]
+		[CallerCount(Count = 3)]
 		set
 		{
 		}
@@ -112,14 +112,14 @@ public class UserReport : UserReportPreview
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 5)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 2)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
 		set
 		{
 		}
@@ -146,7 +146,7 @@ public class UserReport : UserReportPreview
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -161,29 +161,30 @@ public class UserReport : UserReportPreview
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(UserReport), Member = "Clone")]
-	[CalledBy(Type = typeof(UserReportingClient._003C_003Ec__DisplayClass47_0), Member = "<CreateUserReport>b__1")]
+	[CalledBy(TypeFullName = "Unity.Cloud.UserReporting.Client.UserReportingClient.<>c__DisplayClass47_0", Member = "<CreateUserReport>b__1")]
+	[CallerCount(Count = 2)]
 	public UserReport()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(UserReport), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UserReport), Member = ".ctor")]
+	[Calls(Type = typeof(Enumerable), Member = "ToList")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public UserReport Clone()
 	{
 		return null;
 	}
 
+	[CalledBy(TypeFullName = "Unity.Cloud.UserReporting.Client.UserReportingClient.<>c__DisplayClass47_0", Member = "<CreateUserReport>b__1")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(UserReportMetric), Member = "Sample")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[CalledBy(Type = typeof(UserReportingClient._003C_003Ec__DisplayClass47_0), Member = "<CreateUserReport>b__1")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 56)]
 	public void Complete()
 	{
@@ -196,36 +197,33 @@ public class UserReport : UserReportPreview
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 12)]
 	public string GetDimensionsString()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(UserReportScreenshot), Member = "get_Width")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UserReportScreenshot), Member = "get_Width")]
 	[Calls(Type = typeof(UserReportScreenshot), Member = "get_Height")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public void RemoveScreenshots(int maximumWidth, int maximumHeight, int totalBytes, int ignoreCount)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(UserReportPreview), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UserReportPreview), Member = ".ctor")]
+	[Calls(Type = typeof(Enumerable), Member = "ToList")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public UserReportPreview ToPreview()
 	{
 		return null;

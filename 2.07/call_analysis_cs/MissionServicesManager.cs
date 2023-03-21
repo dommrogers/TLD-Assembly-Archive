@@ -30,9 +30,9 @@ public abstract class MissionServicesManager : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 28)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -43,7 +43,7 @@ public abstract class MissionServicesManager : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -64,24 +64,24 @@ public abstract class MissionServicesManager : MonoBehaviour
 		{
 		}
 
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowKeyNotFoundException")]
-		[Calls(Type = typeof(Array), Member = "Clear")]
-		[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
-		[Calls(Type = typeof(Graph), Member = "SendGlobalEvent")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Graph), Member = "SendGlobalEvent")]
+		[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
 		[Calls(Type = typeof(FSMHierarchy), Member = "SendEvent")]
+		[Calls(Type = typeof(Array), Member = "Clear")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowKeyNotFoundException")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 4)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 4)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 4)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -109,7 +109,7 @@ public abstract class MissionServicesManager : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -120,7 +120,7 @@ public abstract class MissionServicesManager : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -141,23 +141,26 @@ public abstract class MissionServicesManager : MonoBehaviour
 		{
 		}
 
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(FSMHierarchy), Member = "SetFSMForRank")]
-		[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
-		[Calls(Type = typeof(Blackboard), Member = "Deserialize")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+		[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 		[Calls(Type = typeof(MissionManagerBase), Member = "GetNextJumpToId")]
-		[CallsDeduplicatedMethods(Count = 8)]
 		[Calls(Type = typeof(NCUtils), Member = "SetInitialStateByTag")]
+		[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+		[Calls(Type = typeof(Blackboard), Member = "Deserialize")]
+		[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
+		[Calls(Type = typeof(FSMHierarchy), Member = "SetFSMForRank")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 4)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 4)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -227,17 +230,18 @@ public abstract class MissionServicesManager : MonoBehaviour
 
 	private static List<string> m_ConcurrentGraphRemoveList;
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(MissionManagerBase), Member = ".ctor")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "InstantiateMission")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 2)]
 	protected void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
@@ -248,16 +252,16 @@ public abstract class MissionServicesManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool OnNodeCanvasLogMessage(ParadoxNotion.Services.Logger.Message message)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "DeserializeTimers")]
-	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_mission_remove")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "StopMission")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "DeserializeTimers")]
 	[CalledBy(Type = typeof(NCUtils), Member = "GetMissionManagerForFSM")]
 	[CalledBy(Type = typeof(Action_StartSideMission), Member = "OnExecute")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[CallsUnknownMethods(Count = 1)]
 	public MissionManagerBase GetMissionManager(string missionId)
 	{
@@ -267,93 +271,84 @@ public abstract class MissionServicesManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsDeserializationComplete()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_is_mission_active")]
 	[CalledBy(Type = typeof(Action_StartSideMission), Member = "OnExecute")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsMissionActive(string missionId)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(MissionManagerBase), Member = ".ctor")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "JumpTo")]
-	[Calls(Type = typeof(NCUtils), Member = "GetOrAddVar")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "JumpTo")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "Awake")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "JumpTo")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 13)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(MissionManagerBase), Member = ".ctor")]
+	[Calls(Type = typeof(NCUtils), Member = "GetOrAddVar")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 6)]
 	public void InstantiateMission(string missionId)
 	{
 	}
 
+	[CalledBy(Type = typeof(MissionsProgressBar), Member = "Refresh")]
+	[CalledBy(Type = typeof(StoryMissionObjective), Member = "TryGetCurrentAndRequired")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(MissionObjectiveTable), Member = "GetMissionGraphOwnerList")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionGraphOwner")]
-	[CalledBy(Type = typeof(MissionsProgressBar), Member = "Refresh")]
-	[CalledBy(Type = typeof(StoryMissionObjective), Member = "TryGetCurrentAndRequired")]
 	[CallsUnknownMethods(Count = 2)]
 	public string GetActiveGraphNameFromObjective(StoryMissionObjective objective)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(StoryMissionObjective), Member = "TryGetCurrentAndRequired")]
-	[CalledBy(Type = typeof(StoryMissionObjective), Member = "TryGetCurrentAndRequired")]
 	[CalledBy(Type = typeof(MissionsProgressBar), Member = "Refresh")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionGraphOwner")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(StoryMissionObjective), Member = "TryGetCurrentAndRequired")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(MissionsProgressBar), Member = "Refresh")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionGraphOwner")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "TryGetMissionBlackboardVar")]
 	public float GetBlackboardVarAsFloat(string varName, string graphName)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(StoryMissionObjective), Member = "TryGetCurrentAndRequired")]
-	[CalledBy(Type = typeof(StoryMissionObjective), Member = "TryGetCurrentAndRequired")]
 	[CalledBy(Type = typeof(MissionsProgressBar), Member = "Refresh")]
-	[CalledBy(Type = typeof(MissionsProgressBar), Member = "Refresh")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[Calls(Type = typeof(MissionManagerBase), Member = "TryGetBlackboardVarAsFloatFullSearch")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(StoryMissionObjective), Member = "TryGetCurrentAndRequired")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(MissionManagerBase), Member = "TryGetBlackboardVarAsFloatFullSearch")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public float GetBlackboardVarAsFloatFullSearch(string varName)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetActiveGraphName")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetBlackboardVarAsFloat")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetActiveGraphNameFromObjective")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetBlackboardVarAsFloat")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetActiveGraphName")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(MissionManagerBase), Member = "GetMissionGraphOwner")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsUnknownMethods(Count = 8)]
 	public GraphOwner GetMissionGraphOwner(string graphName)
 	{
 		return null;
@@ -367,23 +362,24 @@ public abstract class MissionServicesManager : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "DestroySandboxManager")]
 	[CalledBy(Type = typeof(GameManager), Member = "DestroyStoryManager")]
+	[CalledBy(Type = typeof(GameManager), Member = "DestroySandboxManager")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "Deserialize")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "ProcessRemoveMissionList")]
-	[CallsUnknownMethods(Count = 6)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void StopAllMissions()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(InternalUserReport._003C_003Ec__DisplayClass7_0), Member = "<Send>b__1")]
+	[CalledBy(TypeFullName = "InternalUserReport.<>c__DisplayClass7_0", Member = "<Send>b__1")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "GetActiveNode")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public string GetAllActiveMissionNamesAsString()
 	{
 		return null;
@@ -402,18 +398,20 @@ public abstract class MissionServicesManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(GameManager), Member = "AddAsyncLoadRequest")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void SceneUnloaded()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[CallsUnknownMethods(Count = 1)]
 	public Variable GetGlobalVariable(string name)
 	{
@@ -421,85 +419,88 @@ public abstract class MissionServicesManager : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_mission_add_filter_tags")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(Action_FilterObjectsByTag), Member = "OnExecute")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "ReviewObjectFiltering")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
-	[Calls(Type = typeof(string), Member = "SplitInternal")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FilterObjectsByTag")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "ReviewObjectFiltering")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	public void AddMissionObjectFilterTags(string tags)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Action_FilterObjectsByTag), Member = "OnStop")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "UnregisterAllMissionObjects")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "ReviewObjectFiltering")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_mission_remove_filter_tags")]
-	[Calls(Type = typeof(string), Member = "SplitInternal")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "UnregisterAllMissionObjects")]
+	[CalledBy(Type = typeof(Action_FilterObjectsByTag), Member = "OnStop")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(string), Member = "SplitInternal")]
 	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "ReviewObjectFiltering")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public void RemoveMissionObjectFilterTags(string tags)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(MissionObjectIdentifier), Member = "AddMissionComponentForSaveManagedItem")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "UnregisterAllMissionObjects")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 2)]
 	public string GetCurrentMissionFilterTags()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(MissionObjectIdentifier), Member = "HasAnyTag")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool FiltersAllowObject(MissionObjectIdentifier moi)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(CustomManagedObject), Member = "UpdateManagedObject")]
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "AddCustomManagedObject")]
 	[CalledBy(Type = typeof(Action_EnableObjects), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_EnableObjects), Member = "OnExecute")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 4)]
 	public void AddCustomManagedObject(string name, bool reqState)
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_EnableObjects), Member = "OnStop")]
-	[CalledBy(Type = typeof(Action_EnableObjects), Member = "OnStop")]
-	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "RemoveCustomManagedObject")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnExit")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "UnregisterAllMissionObjects")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnExit")]
+	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "RemoveCustomManagedObject")]
+	[CalledBy(Type = typeof(Action_EnableObjects), Member = "OnStop")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 2)]
 	public void RemoveCustomManagedObject(string name)
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 2)]
 	public void RemoveCustomManagedObject(MissionObjectIdentifier moi)
 	{
 	}
@@ -509,44 +510,35 @@ public abstract class MissionServicesManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool HasCustomManagedObject(string name)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(MissionTimer), Member = "Serialize")]
-	[Calls(Type = typeof(Blackboard), Member = "RestoreInternalVars")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Blackboard), Member = "Serialize")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Blackboard), Member = "ExtractInternalVars")]
-	[Calls(Type = typeof(Blackboard), Member = "ExtractInternalVars")]
-	[Calls(Type = typeof(Blackboard), Member = "Serialize")]
-	[Calls(Type = typeof(Blackboard), Member = "RestoreInternalVars")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(MissionManagerBase), Member = "Serialize")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Blackboard), Member = "RestoreInternalVars")]
-	[Calls(Type = typeof(Blackboard), Member = "Serialize")]
-	[Calls(Type = typeof(Blackboard), Member = "ExtractInternalVars")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Blackboard), Member = "ExtractInternalVars")]
+	[Calls(Type = typeof(Blackboard), Member = "Serialize")]
+	[Calls(Type = typeof(Blackboard), Member = "RestoreInternalVars")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(MissionManagerBase), Member = "Serialize")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(Type = typeof(MissionTimer), Member = "Serialize")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 30)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(MissionServicesManager), Member = "Deserialize")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "Deserialize")]
 	public void DeserializeSandbox(string text)
 	{
 	}
@@ -559,197 +551,206 @@ public abstract class MissionServicesManager : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnLoadGame")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "DeserializeChallenge")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "DeserializeSandbox")]
-	[CalledBy(Type = typeof(JumpManager), Member = "OnLoadComplete")]
-	[CalledBy(Type = typeof(GameManager), Member = "OnLoadStoryFromEmptyCallback")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "OnLoadComplete")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "DeserializeTimers")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "JumpTo")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "DeserializeConcurrentGraphs")]
-	[Calls(Type = typeof(Blackboard), Member = "Deserialize")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "StopAllMissions")]
+	[CalledBy(Type = typeof(GameManager), Member = "OnLoadStoryFromEmptyCallback")]
+	[CalledBy(Type = typeof(JumpManager), Member = "OnLoadComplete")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "DeserializeSandbox")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "DeserializeChallenge")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "StopAllMissions")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(Blackboard), Member = "Deserialize")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "DeserializeConcurrentGraphs")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "JumpTo")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "DeserializeTimers")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "DeserializeCustomManagedObjects")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void AfterGlobalDeserialize()
 	{
 	}
 
-	[Calls(Type = typeof(MissionServicesManager), Member = "SendOrQueueEvent")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "SendOrQueueEvent")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SendMissionEvent(string missionId, string eventString)
 	{
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "SendOrQueueEvent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public void SendMissionEvent<T>(string missionId, string eventString, T value)
 	{
 	}
 
+	[CalledBy(Type = typeof(GearItem), Member = "Drop")]
+	[CalledBy(Type = typeof(GunItem), Member = "StruggleRevolverFire")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnProcessPickupWinNoInspectEquipComplete")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnEquipItemBegin")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UnequipItemInHandsForPlacement")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
+	[CalledBy(Type = typeof(AISendMissionEvent), Member = "Update")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "OnItemEquipped")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "OnFiredEquippedWeapon")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "Update")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "RemoveMissionTimer")]
 	[CalledBy(Type = typeof(MissionTimer), Member = "Update")]
 	[CalledBy(Type = typeof(MissionTimer), Member = "PostExpireEvent")]
-	[CalledBy(Type = typeof(SendMissionEventTrigger), Member = "OnTriggerEnter")]
-	[CalledBy(Type = typeof(SendMissionEventTrigger), Member = "SendMissionEvent")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "Update")]
-	[CalledBy(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SendMissionEventObject), Member = "SendMissionEvent")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "OnFiredEquippedWeapon")]
 	[CalledBy(Type = typeof(SendMissionEventObject), Member = "PerformInteraction")]
-	[CalledBy(Type = typeof(AISendMissionEvent), Member = "Update")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UnequipItemInHandsForPlacement")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnEquipItemBegin")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnProcessPickupWinNoInspectEquipComplete")]
-	[CalledBy(Type = typeof(GunItem), Member = "StruggleRevolverFire")]
-	[CalledBy(Type = typeof(GearItem), Member = "Drop")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "SendOrQueueEvent")]
+	[CalledBy(Type = typeof(SendMissionEventObject), Member = "SendMissionEvent")]
+	[CalledBy(Type = typeof(SendMissionEventTrigger), Member = "SendMissionEvent")]
+	[CalledBy(Type = typeof(SendMissionEventTrigger), Member = "OnTriggerEnter")]
+	[CalledBy(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
 	[CallerCount(Count = 18)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "OnItemEquipped")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "SendOrQueueEvent")]
+	[CallsUnknownMethods(Count = 1)]
 	public void BroadcastMissionEvent(string eventString)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "SendOrQueueEvent")]
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(CookingPotItem), Member = "BroadcastEventWithItemName")]
+	[CalledBy(Type = typeof(GearPlacePoint), Member = "UpdateAttachedFire")]
+	[CalledBy(Type = typeof(IceFishingHole), Member = "RevealFishInInspectMode")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "InstantiateMission")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "OnEnterMissionTrigger")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "OnExitMissionTrigger")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "DestroyMission")]
+	[CalledBy(Type = typeof(MissionUtils), Member = "PostAfflictionEvent")]
 	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "SendOrQueueEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void BroadcastMissionEvent<T>(string eventString, T value)
 	{
 	}
 
-	[CallerCount(Count = 6)]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "SendOrQueueEvent")]
 	[CalledBy(Type = typeof(WeatherSet), Member = "ActivateStage")]
 	[CalledBy(Type = typeof(WeatherSetData), Member = "ActivateStage")]
 	[CalledBy(Type = typeof(FlareItem), Member = "Ignite")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "OnInventoryItemAdded")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "OnInventoryItemRemoved")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "GetUpAnimationComplete")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "SendOrQueueEvent")]
 	[CallsUnknownMethods(Count = 1)]
 	public void BroadcastMissionEvent(MissionEvent missionEvent)
 	{
 	}
 
-	[Calls(Type = typeof(MissionServicesManager), Member = "SendOrQueueEvent")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "SendOrQueueEvent")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void BroadcastMissionEvent<T>(MissionEvent missionEvent, T value)
 	{
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "SendOrQueueEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void BroadcastMissionEvent<T>(MissionObjectEvent missionEvent, T value)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(MissionTimer), Member = "GetDebugString")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(MissionTimer), Member = "GetDebugString")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public string GetMissionTimerDebugText()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
-	[CallsUnknownMethods(Count = 21)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "RegisterMissionObject")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_dump_mission_objects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
-	[Calls(Type = typeof(GameObject), Member = "Find")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "RegisterMissionObject")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 21)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(GameObject), Member = "Find")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
+	[CallsDeduplicatedMethods(Count = 21)]
+	[CallsUnknownMethods(Count = 21)]
 	public static bool ShouldIgnoreMissionObject(MissionObjectIdentifier moi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void QueueRegistration(MissionObjectIdentifier moi)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "Update")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "RegisterMissionObject")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 2)]
 	public void ProcessRegistrationQueue()
 	{
 	}
 
 	[CalledBy(Type = typeof(MissionObjectIdentifier), Member = "AddMissionComponentForSaveManagedItem")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "ProcessRegistrationQueue")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "RegisterAnyMissionObjects")]
-	[Calls(Type = typeof(MissionObjectIdentifier), Member = "HasAnyTag")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "ShouldIgnoreMissionObject")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "MaybeResumeStateOnDeserialize")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "ShouldIgnoreMissionObject")]
-	[CallsDeduplicatedMethods(Count = 17)]
-	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(MissionObjectIdentifier), Member = "HasAnyTag")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 1)]
 	public void RegisterMissionObject(MissionObjectIdentifier moi)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(MissionObjectIdentifier), Member = "AddMissionComponentForSaveManagedItem")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(MissionObjectIdentifier), Member = "OnDestroy")]
-	[Calls(Type = typeof(ObjectInTriggerInfo), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(MissionObjectIdentifier), Member = "AddMissionComponentForSaveManagedItem")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(ObjectInTriggerInfo), Member = ".ctor")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "OnExitMissionTrigger")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void UnregisterMissionObject(MissionObjectIdentifier moi)
 	{
 	}
 
 	[CallerCount(Count = 60)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public MissionObjectIdentifier FindMissionObject(string name)
 	{
@@ -757,158 +758,178 @@ public abstract class MissionServicesManager : MonoBehaviour
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(Action_PlayTimelineOnTarget), Member = "GetTimelinePlayback")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	public T FindMissionObject<T>(string name) where T : Component
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(MissionObjectIdentifier), Member = "HasAnyTag")]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(MissionObjectIdentifier), Member = "HasAnyTag")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public List<MissionObjectIdentifier> FindMissionObjectsByTag(string[] tags)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(MissionObjectIdentifier), Member = "HasAnyTag")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "FilterObjectsByTag")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(MissionObjectIdentifier), Member = "HasAnyTag")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public List<MissionObjectIdentifier> FindMissionObjectsWithoutTag()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(GameManager), Member = "DestroySandboxManager")]
 	[CalledBy(Type = typeof(GameManager), Member = "DestroyStoryManager")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "GetCurrentMissionFilterTags")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveCustomManagedObject")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveMissionObjectFilterTags")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(GameManager), Member = "DestroySandboxManager")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetCurrentMissionFilterTags")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveMissionObjectFilterTags")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveCustomManagedObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(GearItem), Member = "MaybeDestroyGearItemAfterMission")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void UnregisterAllMissionObjects()
 	{
 	}
 
-	[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
-	[Calls(Type = typeof(NCUtils), Member = "SetInitialStateByTag")]
 	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "RegisterConcurrentGraph")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GraphOwner), Member = "GetInstance")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Blackboard), Member = "Deserialize")]
-	[Calls(Type = typeof(ConcurrentGraphState), Member = ".ctor")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ConcurrentGraphState), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(Blackboard), Member = "Deserialize")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GraphOwner), Member = "GetInstance")]
+	[Calls(Type = typeof(NCUtils), Member = "SetInitialStateByTag")]
+	[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 2)]
 	public void RegisterConcurrentGraph(string id, GraphOwner graphOwner)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "RemoveConcurrentGraph")]
-	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnExit")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "Update")]
-	[Calls(Type = typeof(GraphOwner), Member = "StopBehaviour")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnExit")]
+	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "RemoveConcurrentGraph")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GraphOwner), Member = "StopBehaviour")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void RemoveConcurrentGraph(string id)
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_PostEventToConcurrentGraph), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "RemoveConcurrentGraph")]
-	[CalledBy(Type = typeof(Action_PostEventToConcurrentGraph<>), Member = "OnExecute")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnExit")]
+	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "RemoveConcurrentGraph")]
+	[CalledBy(Type = typeof(Action_PostEventToConcurrentGraph), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_PostEventToConcurrentGraph<>), Member = "OnExecute")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public GraphOwner LookupConcurrentGraph(string id)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowMissionTimer")]
-	[Calls(Type = typeof(MissionTimer), Member = "Initialize")]
 	[CalledBy(Type = typeof(Action_StartTimer), Member = "OnExecute")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(MissionTimer), Member = ".ctor")]
+	[Calls(Type = typeof(MissionTimer), Member = "Initialize")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowMissionTimer")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	public void StartMissionTimer(MissionManagerBase manager, string name, float duration, string eventOnExpire, MissionTimer.MissionTimerOptions options)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveMissionTimer")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Action_StartTimer), Member = "OnStop")]
 	[CalledBy(Type = typeof(Action_RemoveTimer), Member = "OnExecute")]
+	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveMissionTimer")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public void RemoveMissionTimer(string name, bool postEvent = true)
 	{
 	}
 
 	[CalledBy(Type = typeof(MissionTrigger), Member = "OnTriggerEnter")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnEnterMissionTrigger(ObjectInTriggerInfo info)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "UnregisterMissionObject")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "MissionTriggerRemoved")]
 	[CalledBy(Type = typeof(MissionTrigger), Member = "OnTriggerExit")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnExitMissionTrigger(ObjectInTriggerInfo info, bool bypassListRemove = false)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(MissionTrigger), Member = "OnDestroy")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "OnExitMissionTrigger")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ObjectInTriggerInfo), Member = ".ctor")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "OnExitMissionTrigger")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public void MissionTriggerRemoved(MissionTrigger mt)
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_IsInMissionTrigger), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Condition_InsideMissionTrigger), Member = "OnCheck")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(Action_IsInMissionTrigger), Member = "OnExecute")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public List<MissionTrigger> IsPlayerInMissionTrigger()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(Condition_InsideMissionTrigger), Member = "OnCheck")]
 	[CalledBy(Type = typeof(Action_IsInMissionTrigger), Member = "OnExecute")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public List<MissionTrigger> IsMissionObjectInMissionTrigger(MissionObjectIdentifier moi)
 	{
@@ -916,40 +937,44 @@ public abstract class MissionServicesManager : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public List<MissionTrigger> IsGameObjectInMissionTrigger(GameObject obj)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TryAddToExistingStackable")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedGearItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TryAddToExistingStackable")]
+	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
 	public void OnInventoryItemAdded()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
 	[CalledBy(Type = typeof(Inventory), Member = "RemoveGear")]
 	[CalledBy(Type = typeof(Inventory), Member = "DestroyGear")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
 	public void OnInventoryItemRemoved()
 	{
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "SceneLoadCompleted")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateStoryManager")]
 	[CalledBy(Type = typeof(Panel_Loading), Member = "Enable")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "RegisterMissionObject")]
-	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(GameManager), Member = "InstantiateStoryManager")]
+	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "SceneLoadCompleted")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "RegisterMissionObject")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void RegisterAnyMissionObjects()
 	{
 	}
@@ -960,49 +985,37 @@ public abstract class MissionServicesManager : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
 	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
 	[CalledBy(Type = typeof(BowItem), Member = "ShootArrow")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
 	public void OnFiredEquippedWeapon()
 	{
 	}
 
-	[CalledBy(Type = typeof(Condition_IsTimeActive), Member = "OnCheck")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "CheckForExpiredMissionTimers")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "CheckForExpiredMissionTimers")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "CheckForExpiredMissionTimers")]
-	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(StoryMissionListEntry), Member = "Refresh")]
 	[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "MaybeUpdateTimerObjectiveUI")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(StoryMissionListEntry), Member = "Refresh")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "RefreshHoverIconText")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "CheckForExpiredMissionTimers")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
+	[CalledBy(Type = typeof(Condition_IsTimeActive), Member = "OnCheck")]
+	[CallerCount(Count = 8)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	public MissionTimer GetMissionTimerByName(string timerName)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(FSMHierarchy), Member = "RefreshIds")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(FSMHierarchy), Member = "RefreshIds")]
+	[CallsUnknownMethods(Count = 1)]
 	public void RefreshMissionIds()
 	{
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[Calls(Type = typeof(MissionManagerBase), Member = "InitiateJumpTo")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(EpisodeManager), Member = "SetActiveEpisode")]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnLoadGame")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "OnLoadComplete")]
@@ -1012,64 +1025,58 @@ public abstract class MissionServicesManager : MonoBehaviour
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "Deserialize")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "JumpTo")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "DeserializeMissions")]
-	[CallsUnknownMethods(Count = 32)]
-	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 9)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "SplitInternal")]
 	[Calls(Type = typeof(string), Member = "StartsWith")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "InstantiateMission")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "InstantiateMission")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "JumpTo")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
+	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(MissionManagerBase), Member = "InitiateJumpTo")]
+	[Calls(Type = typeof(EpisodeManager), Member = "SetActiveEpisode")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 32)]
 	public void JumpTo(string id, bool isDebug, string missionConfigData = null)
 	{
 	}
 
 	[CalledBy(Type = typeof(GameManager), Member = "SaveShouldBePending")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "GetNodeActiveActionCountRecursive")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "GetActiveNode")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetNodeActiveActionCountRecursive")]
+	[CallsUnknownMethods(Count = 2)]
 	public int GetMissionsActiveActionCount()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public static bool IsDuplicateAllowed(MissionObjectIdentifier moi)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(MissionManagerBase), Member = "TryGetBlackboardVarAsFloatFullSearch")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetBlackboardVarAsFloat")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Convert), Member = "ChangeType")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public static bool TryGetMissionBlackboardVar<T>(GraphOwner go, string varName, out T value)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<T, @null>(ref value) = null;
-		return default(bool);
+		value = default(T);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -1080,63 +1087,65 @@ public abstract class MissionServicesManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(TLD_TimelineDirector), Member = "GetGameObjectOverride")]
 	[CalledBy(Type = typeof(TLD_TimelineDirector), Member = "TryGetFPAnchorTargetOverride")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionObjectIdentifier")]
-	[CalledBy(Type = typeof(TLD_TimelineDirector), Member = "GetGameObjectOverride")]
+	[CallsUnknownMethods(Count = 1)]
 	public static GameObject GetMissionObject(string moi)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetComponentForMissionObject")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetMissionObject")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public static MissionObjectIdentifier GetMissionObjectIdentifier(string moi)
 	{
 		return null;
 	}
 
+	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(PlayableAssetFadeLight), Member = "CreatePlayable")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
 	[CallsUnknownMethods(Count = 1)]
-	[DeduplicatedMethod]
-	[CallerCount(Count = 1)]
 	public static T[] GetComponentsInChildrenForMissionObject<T>(string moi, bool includeInactive) where T : Behaviour
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveConcurrentGraph")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "ProcessRemoveMissionList")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(GraphOwner), Member = "get_isPaused")]
-	[Calls(Type = typeof(GraphOwner), Member = "get_isRunning")]
-	[Calls(Type = typeof(FSMHierarchy), Member = "RefreshIds")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "ProcessRegistrationQueue")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(MissionTimer), Member = "get_ElapsedTime")]
+	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveMissionTimer")]
-	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetDurationString")]
-	[Calls(Type = typeof(MissionTimer), Member = "get_ElapsedTime")]
-	[Calls(Type = typeof(MissionTimer), Member = "get_ElapsedTime")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "ProcessRegistrationQueue")]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(MissionTimer), Member = "get_ElapsedTime")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(FSMHierarchy), Member = "RefreshIds")]
+	[Calls(Type = typeof(GraphOwner), Member = "get_isRunning")]
+	[Calls(Type = typeof(GraphOwner), Member = "get_isPaused")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "ProcessRemoveMissionList")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveConcurrentGraph")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	protected void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionGraphOwner")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionGraphOwner")]
+	[CallsUnknownMethods(Count = 2)]
 	private string GetActiveGraphName(string[] graphNames)
 	{
 		return null;
@@ -1147,7 +1156,7 @@ public abstract class MissionServicesManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool IsSideMission(string missionName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[IteratorStateMachine(typeof(_003CPostSceneLoadCo_003Ed__109))]
@@ -1158,50 +1167,55 @@ public abstract class MissionServicesManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "AddMissionObjectFilterTags")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObjectsWithoutTag")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObjectsWithoutTag")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 2)]
 	private void FilterObjectsByTag()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "ReviewObjectFiltering")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(BodyHarvestManager), Member = "GetBodyHarvestFromSerializedMissionId")]
+	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
-	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
-	[Calls(Type = typeof(BodyHarvestManager), Member = "GetBodyHarvestFromSerializedMissionId")]
-	[CallsDeduplicatedMethods(Count = 12)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 11)]
 	private void MaybeCleanupDuplicateBody(MissionObjectIdentifier mo)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "RemoveMissionObjectFilterTags")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "AddMissionObjectFilterTags")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "RemoveMissionObjectFilterTags")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "MaybeCleanupDuplicateBody")]
-	[Calls(Type = typeof(MissionObjectIdentifier), Member = "HasAnyTag")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(MissionObjectIdentifier), Member = "HasAnyTag")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "MaybeCleanupDuplicateBody")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponents")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	private void ReviewObjectFiltering()
 	{
 	}
@@ -1215,201 +1229,203 @@ public abstract class MissionServicesManager : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "JumpTo")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private void DeserializeMissions(MissionServicesManagerSaveProxy proxy)
 	{
 	}
 
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(ConcurrentGraphState), Member = ".ctor")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ConcurrentGraphState), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void DeserializeConcurrentGraphs(MissionServicesManagerSaveProxy proxy)
 	{
 	}
 
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "Deserialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionManager")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(MissionTimer), Member = ".ctor")]
 	[Calls(Type = typeof(MissionTimer), Member = "Deserialize")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowMissionTimer")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "Deserialize")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 6)]
 	private void DeserializeTimers(MissionServicesManagerSaveProxy proxy)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "UnregisterDuplicatedGuids")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "UnregisterDuplicatedGuids")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PdidTable), Member = "RuntimeUnregister")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(PdidTable), Member = "RuntimeUnregister")]
+	[CallsUnknownMethods(Count = 1)]
 	private void TryUnregisterGuid(GameObject gameObject)
 	{
 	}
 
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestore")]
-	[Calls(Type = typeof(BaseAi), Member = "Deserialize")]
-	[Calls(Type = typeof(BaseAiManager), Member = "Destroy")]
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(BaseAi), Member = "Serialize")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BaseAi), Member = "Serialize")]
+	[Calls(Type = typeof(BaseAiManager), Member = "Destroy")]
+	[Calls(Type = typeof(BaseAi), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void EliminateDuplicateAndRestoreAI(MissionObjectIdentifier sceneAiMissionId, BaseAi baseAI, BaseAi sceneAi)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestore")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(BodyHarvest), Member = "Serialize")]
 	[Calls(Type = typeof(BodyHarvestManager), Member = "Destroy")]
 	[Calls(Type = typeof(BodyHarvest), Member = "Deserialize")]
 	[Calls(Type = typeof(BodyHarvestManager), Member = "MaybeRestoreCorpseState")]
 	[Calls(Type = typeof(BodyHarvestManager), Member = "MaybeRestoreCarcassSite")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestore")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void EliminateDuplicateAndRestoreBodyHarvest(MissionObjectIdentifier sceneBodyHarvestMissionId, BodyHarvest bodyHarvest, BodyHarvest sceneBodyHarvest)
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "TryUnregisterGuid")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "MaybeResumeStateOnDeserialize")]
-	[Calls(Type = typeof(BodyHarvestManager), Member = "GetBodyHarvestFromSerializedMissionId")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BaseAiManager), Member = "GetAIFromSerializedMissionId")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(BaseAiManager), Member = "GetAIFromSerializedMissionId")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "TryUnregisterGuid")]
+	[Calls(Type = typeof(BodyHarvestManager), Member = "GetBodyHarvestFromSerializedMissionId")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UnregisterDuplicatedGuids(BaseAi[] sceneAiList, BodyHarvest[] sceneBodyHarvestList)
 	{
 	}
 
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "MaybeResumeStateOnDeserialize")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(BaseAiManager), Member = "GetAIFromSerializedMissionId")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestoreAI")]
 	[Calls(Type = typeof(BodyHarvestManager), Member = "GetBodyHarvestFromSerializedMissionId")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestoreBodyHarvest")]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BaseAiManager), Member = "GetAIFromSerializedMissionId")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestoreAI")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 18)]
 	private void EliminateDuplicateAndRestore(BaseAi[] sceneAiList, BodyHarvest[] sceneBodyHarvestList)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "DeserializeCustomManagedObjects")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "RegisterMissionObject")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestore")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "DeserializeCustomManagedObjects")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "UnregisterDuplicatedGuids")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "EliminateDuplicateAndRestore")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void MaybeResumeStateOnDeserialize(MissionObjectIdentifier moi, CustomManagedObjectState stateInfo)
 	{
 	}
 
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "Deserialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "MaybeResumeStateOnDeserialize")]
 	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowKeyNotFoundException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowKeyNotFoundException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
 	private void DeserializeCustomManagedObjects(MissionServicesManagerSaveProxy proxy)
 	{
 	}
 
-	[Calls(Type = typeof(FSMHierarchy), Member = "SendEvent")]
-	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Graph), Member = "SendGlobalEvent")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
+	[Calls(Type = typeof(FSMHierarchy), Member = "SendEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void SendEvent(EventData ev, string missionId)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "SendMissionEvent")]
-	[Calls(Type = typeof(FSMHierarchy), Member = "SendEvent")]
-	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
-	[Calls(Type = typeof(Graph), Member = "SendGlobalEvent")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "SendMissionEvent")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
 	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "SendMissionEvent")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Graph), Member = "SendGlobalEvent")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
+	[Calls(Type = typeof(FSMHierarchy), Member = "SendEvent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SendOrQueueEvent(EventData ev, string missionId)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "Update")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "RemoveMissionTimer")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "Update")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowMissionTimer")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void RemoveMissionTimer(int timerIndex, bool postEvent = true)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Action_StartSideMission), Member = "OnExecute")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "Update")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "StopMission")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "StopAllMissions")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "DestroyMission")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "MissionCompleted")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "Update")]
+	[CalledBy(Type = typeof(Action_StartSideMission), Member = "OnExecute")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "MissionCompleted")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "DestroyMission")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void ProcessRemoveMissionList()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "ProcessRemoveMissionList")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 4)]
 	private void MissionCompleted(MissionManagerBase mm)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "ProcessRemoveMissionList")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(MissionManagerBase), Member = "Stop")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DestroyMission(MissionManagerBase mm)
 	{
 	}
@@ -1422,64 +1438,56 @@ public abstract class MissionServicesManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetAllActiveMissionNamesAsString")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetMissionsActiveActionCount")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetAllActiveMissionNamesAsString")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsUnknownMethods(Count = 1)]
 	private Node GetActiveNode(string mission)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "RecursiveActionListCounter")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "RecursiveActionListCounter")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetNodeActiveActionCountRecursive")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "RecursiveActionListCounter")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 4)]
 	private int RecursiveActionListCounter(ActionList actionList)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetNodeActiveActionCountRecursive")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "GetNodeActiveActionCountRecursive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "GetNodeActiveActionCountRecursive")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private int GetSubNodeActionCountRecursive(Node node)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetMissionsActiveActionCount")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetSubNodeActionCountRecursive")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetSubNodeActionCountRecursive")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "RecursiveActionListCounter")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "RecursiveActionListCounter")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "GetSubNodeActionCountRecursive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 6)]
 	private int GetNodeActiveActionCountRecursive(Node node)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(EpisodeManager), Member = "SetActiveEpisode")]
-	[Calls(Type = typeof(EpisodeManager), Member = "SetActiveEpisode")]
-	[Calls(Type = typeof(EpisodeManager), Member = "SetActiveEpisode")]
-	[Calls(Type = typeof(EpisodeManager), Member = "SetActiveEpisode")]
-	[Calls(Type = typeof(EpisodeManager), Member = "SetActiveEpisode")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(Type = typeof(EpisodeManager), Member = "SetActiveEpisode")]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetCurrentEpisode(string id)
 	{
 	}
@@ -1490,14 +1498,14 @@ public abstract class MissionServicesManager : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void LogTransitionRecursive(ConditionTask conditionTask)
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void LogActionTaskEnter(ActionTask actionTask)
 	{
 	}
@@ -1526,8 +1534,8 @@ public abstract class MissionServicesManager : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void LogSave(float timePending)
 	{
 	}
@@ -1541,39 +1549,39 @@ public abstract class MissionServicesManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(FSMState), Member = "get_FSM")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "GetNodeOwnsChild")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 17)]
 	public static Node GetOwner(FSM fsm, Task task)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetNodeOwnsChild")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetOwnerRecursive")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "GetOwnerRecursive")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetNodeOwnsChild")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetOwnerRecursive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private static bool GetOwnerRecursive(ConditionTask conditionTask, Task child)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetOwner")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "GetOwnerRecursive")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetOwner")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private static bool GetNodeOwnsChild(Node node, Task child)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(StoryManager), Member = ".ctor")]
 	[CalledBy(Type = typeof(SandboxManager), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(StoryManager), Member = ".ctor")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	protected MissionServicesManager()
 	{
 	}

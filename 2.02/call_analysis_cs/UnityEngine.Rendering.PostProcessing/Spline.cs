@@ -24,36 +24,23 @@ public sealed class Spline
 
 	public float[] cachedData;
 
-	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
+	[CalledBy(Type = typeof(ColorGradingSettings), Member = ".ctor")]
 	[CalledBy(Type = typeof(RLProBleed), Member = ".ctor")]
-	[CalledBy(Type = typeof(RLProBleed), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGradingSettings), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGradingSettings), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGradingSettings), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGradingSettings), Member = ".ctor")]
+	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
+	[CallerCount(Count = 15)]
 	[Calls(Type = typeof(Vector2), Member = "get_magnitude")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 15)]
-	[CalledBy(Type = typeof(RLProBleed), Member = ".ctor")]
 	public Spline(AnimationCurve curve, float zeroValue, bool loop, Vector2 bounds)
 	{
 	}
 
+	[CalledBy(Type = typeof(SplineParameter), Member = "OnEnable")]
 	[CalledBy(Type = typeof(SplineParameter), Member = "SetValue")]
-	[CallsUnknownMethods(Count = 25)]
 	[CalledBy(Type = typeof(SplineParameter), Member = "Interp")]
-	[CalledBy(Type = typeof(SplineParameter), Member = "Interp")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(AnimationCurve), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 11)]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(SplineParameter), Member = "OnEnable")]
+	[CallsUnknownMethods(Count = 25)]
 	public void Cache(int frame)
 	{
 	}
@@ -63,23 +50,23 @@ public sealed class Spline
 	[CallsUnknownMethods(Count = 1)]
 	public float Evaluate(float t, int length)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public float Evaluate(float t)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public override int GetHashCode()
 	{
-		return default(int);
+		return 0;
 	}
 }

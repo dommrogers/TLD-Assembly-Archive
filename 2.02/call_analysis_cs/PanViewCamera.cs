@@ -28,50 +28,50 @@ public class PanViewCamera : MonoBehaviour
 	private float m_PanStartTime;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
+	[CallsDeduplicatedMethods(Count = 12)]
 	[CallsUnknownMethods(Count = 13)]
 	private void Update()
 	{
 	}
 
+	[CalledBy(Type = typeof(PanViewCamera), Member = "PanToTransform")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 9)]
-	[CalledBy(Type = typeof(PanViewCamera), Member = "PanToTransform")]
 	[CallsUnknownMethods(Count = 10)]
 	public void PanToLocation(Vector3 location, Quaternion rotation)
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "CameraPan")]
-	[CalledBy(Type = typeof(Panel_SnowShelterBuild), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "CameraPan")]
-	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "Enable")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CalledBy(Type = typeof(CustomCameraPosition), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(PanViewCamera), Member = "PanToLocation")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CameraPan")]
+	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "CameraPan")]
+	[CalledBy(Type = typeof(Panel_SnowShelterBuild), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "CameraPan")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(PanViewCamera), Member = "PanToLocation")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public void PanToTransform(Transform target)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Enable")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_SnowShelterBuild), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnCharcoalHarvest")]
 	[CalledBy(Type = typeof(Fire), Member = "ExitFireStarting")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
 	[CalledBy(Type = typeof(CustomCameraPosition), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 10)]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnCancel")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnCharcoalHarvest")]
+	[CalledBy(Type = typeof(Panel_LeanToBuild), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_SnowShelterBuild), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "Enable")]
+	[CallerCount(Count = 10)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	public void ReattachToPlayer()
 	{
 	}
@@ -85,19 +85,19 @@ public class PanViewCamera : MonoBehaviour
 	[CallerCount(Count = 2)]
 	public bool IsDetached()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool IsPanning()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public PanViewCamera()
 	{
 	}

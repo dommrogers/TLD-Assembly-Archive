@@ -17,11 +17,11 @@ public class TodAmbientLight : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(InteriorLightingManager), Member = "UpdateLights")]
-	[CalledBy(Type = typeof(DarkLightingManager), Member = "UpdateAmbient")]
-	[Calls(Type = typeof(Utils), Member = "SetAmbientLightScaled")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "Update")]
+	[CalledBy(Type = typeof(DarkLightingManager), Member = "UpdateAmbient")]
+	[CalledBy(Type = typeof(InteriorLightingManager), Member = "UpdateLights")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "SetAmbientLightScaled")]
 	public void SetAmbientLightValue(float todValue, float multiplier)
 	{
 	}

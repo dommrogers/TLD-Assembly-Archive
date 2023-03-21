@@ -19,39 +19,34 @@ public class TriggerAnimationCallback : StateMachineBehaviour
 	private bool m_HasTriggeredNormalizedTimeCallback;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Enum), Member = "Parse")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "TriggerCallback")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Enum), Member = "Parse")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "TriggerCallback")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "TriggerCallback")]
 	[Calls(Type = typeof(Enum), Member = "Parse")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "TriggerCallback")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "TriggerCallback")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Enum), Member = "Parse")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enum), Member = "Parse")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "TriggerCallback")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 	}

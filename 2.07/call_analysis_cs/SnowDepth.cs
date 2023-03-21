@@ -14,17 +14,17 @@ public class SnowDepth : MonoBehaviour
 	public bool m_BorderIsFractionOfSize;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(FootstepTrail), Member = "OnOwnerEnterSnowDepthTrigger")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void OnTriggerEnter(Collider c)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(FootstepTrail), Member = "OnOwnerExitSnowDepthTrigger")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(FootstepTrail), Member = "OnOwnerExitSnowDepthTrigger")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnTriggerExit(Collider c)
 	{
 	}

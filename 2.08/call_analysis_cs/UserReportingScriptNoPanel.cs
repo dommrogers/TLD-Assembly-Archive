@@ -17,14 +17,14 @@ public class UserReportingScriptNoPanel : MonoBehaviour
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 79)]
+			[CallerCount(Count = 86)]
 			private set
 			{
 			}
@@ -36,17 +36,16 @@ public class UserReportingScriptNoPanel : MonoBehaviour
 		{
 		}
 
-		[Calls(Type = typeof(UserReportingClient), Member = "Update")]
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityUserReporting), Member = "Configure")]
 		[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
 		[Calls(Type = typeof(UserReportingClient), Member = "UpdateOnEndOfFrame")]
-		[Calls(Type = typeof(UnityUserReporting), Member = "Configure")]
+		[Calls(Type = typeof(UserReportingClient), Member = "Update")]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
+		[CallsUnknownMethods(Count = 1)]
 		public bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
@@ -60,26 +59,24 @@ public class UserReportingScriptNoPanel : MonoBehaviour
 
 	private Coroutine m_RunningCoroutine;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityUserReporting), Member = "Configure")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityUserReporting), Member = "Configure")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StopCoroutine")]
 	[Calls(Type = typeof(UnityUserReporting), Member = "Configure")]
-	[Calls(Type = typeof(UnityUserReporting), Member = "Configure")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public UserReportingScriptNoPanel()
 	{
 	}

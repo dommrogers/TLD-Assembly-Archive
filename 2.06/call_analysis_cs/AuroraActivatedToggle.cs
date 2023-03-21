@@ -35,7 +35,7 @@ public class AuroraActivatedToggle : MonoBehaviour
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 33)]
+	[CallerCount(Count = 38)]
 	public void SetAuroraField(AuroraField auroraField)
 	{
 	}
@@ -46,20 +46,20 @@ public class AuroraActivatedToggle : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetState(AuroraActivatedToggleState state)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
 	[CalledBy(Type = typeof(AuroraActivatedToggle), Member = "Start")]
 	[CalledBy(Type = typeof(AuroraActivatedToggle), Member = "Update")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 18)]
 	private void UpdateChildStatus(bool forceUpdate)
 	{
@@ -70,7 +70,7 @@ public class AuroraActivatedToggle : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool ShouldEnableChildren()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

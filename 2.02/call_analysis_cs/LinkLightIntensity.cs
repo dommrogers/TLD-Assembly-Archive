@@ -10,7 +10,8 @@ public class LinkLightIntensity : MonoBehaviour
 	private Light m_ThisLight;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Start()
 	{
 	}
@@ -22,9 +23,9 @@ public class LinkLightIntensity : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public LinkLightIntensity()
 	{
 	}

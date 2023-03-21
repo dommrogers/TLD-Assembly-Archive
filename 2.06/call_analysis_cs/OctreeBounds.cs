@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.CompilerServices;
@@ -21,51 +20,56 @@ public class OctreeBounds<T>
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 14)]
+		[CallerCount(Count = 34)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
+	[CalledBy(Type = typeof(FootstepTrailManager), Member = "Awake")]
+	[CalledBy(Type = typeof(SnowPatchManager), Member = "Start")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public OctreeBounds(float initialWorldSize, Vector3 initialWorldPos, float minNodeSize, float loosenessVal)
 	{
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(FootstepGroup), Member = ".ctor")]
+	[CalledBy(Type = typeof(FootstepGroup), Member = "Close")]
+	[CalledBy(Type = typeof(FootstepTrailManager), Member = "OnAddFootstepGroup")]
+	[CalledBy(Type = typeof(FootstepTrailManager), Member = "OnCloseFootstepGroup")]
+	[CalledBy(Type = typeof(SnowPatchManager), Member = "AddPatch")]
 	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Add(T obj, Bounds objBounds)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool Remove(T obj)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -74,7 +78,7 @@ public class OctreeBounds<T>
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsColliding(Bounds checkBounds)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -85,10 +89,11 @@ public class OctreeBounds<T>
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(SnowPatchManager), Member = "LateUpdate")]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void FrustumCapture(Plane[] frustumPlanes, ref List<T> captureList)
 	{
 	}
@@ -109,10 +114,10 @@ public class OctreeBounds<T>
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallsUnknownMethods(Count = 16)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 16)]
 	private void Grow(Vector3 direction)
 	{
 	}
@@ -125,10 +130,10 @@ public class OctreeBounds<T>
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private static int GetRootPosIndex(int xDir, int yDir, int zDir)
 	{
-		return default(int);
+		return 0;
 	}
 }

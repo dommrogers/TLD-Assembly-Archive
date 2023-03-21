@@ -16,8 +16,8 @@ public class AkAuxSendArray : IDisposable
 	public AkAuxSendValue Item
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(IndexOutOfRangeException), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 9)]
 		get
 		{
@@ -27,23 +27,22 @@ public class AkAuxSendArray : IDisposable
 
 	public bool isFull
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(AkGameObjEnvironmentData), Member = "AddHighestPriorityEnvironments")]
-		[CalledBy(Type = typeof(AkGameObjEnvironmentData), Member = "AddHighestPriorityEnvironments")]
+		[CalledBy(Type = typeof(AkAuxSendArray), Member = "Add")]
+		[CalledBy(Type = typeof(AkAuxSendArray), Member = "Add")]
 		[CalledBy(Type = typeof(AkGameObjEnvironmentData), Member = "AddHighestPriorityEnvironmentsFromPortals")]
+		[CalledBy(Type = typeof(AkGameObjEnvironmentData), Member = "AddHighestPriorityEnvironments")]
 		[CallerCount(Count = 5)]
-		[CalledBy(Type = typeof(AkAuxSendArray), Member = "Add")]
-		[CalledBy(Type = typeof(AkAuxSendArray), Member = "Add")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[Calls(Type = typeof(Marshal), Member = "AllocHGlobal")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkAuxSendValue_GetSizeOf")]
+	[Calls(Type = typeof(Marshal), Member = "AllocHGlobal")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public AkAuxSendArray()
 	{
 	}
@@ -67,57 +66,57 @@ public class AkAuxSendArray : IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkAuxSendValue_Set")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkAuxSendArray), Member = "get_isFull")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkAuxSendValue_Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool Add(GameObject in_listenerGameObj, uint in_AuxBusID, float in_fValue)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkAuxSendArray), Member = "get_isFull")]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkAuxSendValue_Set")]
 	[CalledBy(Type = typeof(AkGameObjEnvironmentData), Member = "AddHighestPriorityEnvironmentsFromPortals")]
 	[CalledBy(Type = typeof(AkGameObjEnvironmentData), Member = "AddHighestPriorityEnvironments")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AkAuxSendArray), Member = "get_isFull")]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkAuxSendValue_Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool Add(uint in_AuxBusID, float in_fValue)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkAuxSendValue_IsSame")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool Contains(GameObject in_listenerGameObj, uint in_AuxBusID)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(AkGameObjEnvironmentData), Member = "AddHighestPriorityEnvironments")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkAuxSendValue_IsSame")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	public bool Contains(uint in_AuxBusID)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_SetGameObjectAuxSendValues")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public AKRESULT SetValues(GameObject gameObject)
 	{
 		return default(AKRESULT);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public AKRESULT GetValues(GameObject gameObject)
 	{
@@ -125,22 +124,22 @@ public class AkAuxSendArray : IDisposable
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 29)]
+	[CallerCount(Count = 35)]
 	public IntPtr GetBuffer()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 1)]
 	public int Count()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	private IntPtr GetObjectPtr(int index)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 }

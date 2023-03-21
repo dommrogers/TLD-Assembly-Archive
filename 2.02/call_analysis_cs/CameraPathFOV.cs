@@ -6,8 +6,8 @@ public class CameraPathFOV : CameraPathPoint
 
 	public float Size;
 
-	[Calls(Type = typeof(CameraPathPoint), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraPathPoint), Member = ".ctor")]
 	public CameraPathFOV()
 	{
 	}

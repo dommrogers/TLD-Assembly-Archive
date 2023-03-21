@@ -43,12 +43,12 @@ public class SkillListItem : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshSkillsList")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshSkillsList")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallerCount(Count = 1)]
 	public void SetSkillLevel(int level)
 	{
 	}
@@ -74,12 +74,12 @@ public class SkillListItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshSkillsList")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetProgress(float normalizedProgress)
 	{
 	}
@@ -91,22 +91,19 @@ public class SkillListItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateSkillListItemsColor")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnSkillItemClicked")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnSkillItemClicked")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "HandleSkillVerticalNavigation")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnSkillItemClicked")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateSkillListItemsColor")]
+	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "HandleSkillVerticalNavigation")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetSelected(bool selected)
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public SkillListItem()
 	{
 	}

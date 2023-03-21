@@ -97,8 +97,8 @@ public class AkCommonOutputSettings
 		{
 		}
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public ChannelConfiguration()
 		{
 		}
@@ -112,8 +112,8 @@ public class AkCommonOutputSettings
 
 	public ChannelConfiguration m_ChannelConfig;
 
-	[CalledBy(Type = typeof(AkCommonUserSettings), Member = "CopyTo")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(AkCommonUserSettings), Member = "CopyTo")]
 	[CallerCount(Count = 1)]
 	public void CopyTo(AkOutputSettings settings)
 	{

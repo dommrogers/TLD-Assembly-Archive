@@ -22,7 +22,7 @@ public class AvoidListPlugin
 	public static extern void AvoidList_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AvoidListPlugin()
 	{
 	}

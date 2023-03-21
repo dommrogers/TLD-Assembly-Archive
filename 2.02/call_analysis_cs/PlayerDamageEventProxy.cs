@@ -21,7 +21,7 @@ public class PlayerDamageEventProxy
 	public bool m_FadeOut;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PlayerDamageEventProxy()
 	{
 	}

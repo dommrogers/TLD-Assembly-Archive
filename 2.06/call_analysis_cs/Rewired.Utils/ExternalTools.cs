@@ -32,35 +32,35 @@ public class ExternalTools : IExternalTools
 	public bool isEditorPaused
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 6)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public bool UnityInput_IsTouchPressureSupported
 	{
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
-		[DeduplicatedMethod]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public event Action<bool> EditorPausedStateChangedEvent
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CallsUnknownMethods(Count = 4)]
-		[CallerCount(Count = 0)]
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 4)]
 		remove
 		{
 		}
@@ -68,10 +68,10 @@ public class ExternalTools : IExternalTools
 
 	public event Action<uint, bool> XboxOneInput_OnGamepadStateChange
 	{
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
-		[CallsUnknownMethods(Count = 2)]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 2)]
 		add
 		{
 		}
@@ -113,35 +113,35 @@ public class ExternalTools : IExternalTools
 	[CallerCount(Count = 0)]
 	public bool IsEditorSceneViewFocused()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool LinuxInput_IsJoystickPreconfigured(string name)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public int XboxOneInput_GetUserIdForGamepad(uint id)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public ulong XboxOneInput_GetControllerId(uint unityJoystickId)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool XboxOneInput_IsGamepadActive(uint unityJoystickId)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -150,11 +150,11 @@ public class ExternalTools : IExternalTools
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public uint XboxOneInput_GetJoystickId(ulong xboxControllerId)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[DeduplicatedMethod]
@@ -167,7 +167,7 @@ public class ExternalTools : IExternalTools
 	[CallerCount(Count = 0)]
 	public bool XboxOne_Gamepad_SetGamepadVibration(ulong xboxOneJoystickId, float leftMotor, float rightMotor, float leftTriggerLevel, float rightTriggerLevel)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -177,21 +177,21 @@ public class ExternalTools : IExternalTools
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 224)]
+	[CallerCount(Count = 258)]
 	public Vector3 PS4Input_GetLastAcceleration(int id)
 	{
 		return default(Vector3);
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 224)]
+	[CallerCount(Count = 258)]
 	public Vector3 PS4Input_GetLastGyro(int id)
 	{
 		return default(Vector3);
 	}
 
-	[CallerCount(Count = 3)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 3)]
 	public Vector4 PS4Input_GetLastOrientation(int id)
 	{
 		return default(Vector4);
@@ -200,24 +200,24 @@ public class ExternalTools : IExternalTools
 	[CallerCount(Count = 0)]
 	public void PS4Input_GetLastTouchData(int id, out int touchNum, out int touch0x, out int touch0y, out int touch0id, out int touch1x, out int touch1y, out int touch1id)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref touchNum) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref touch0x) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref touch0y) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref touch0id) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref touch1x) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref touch1y) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref touch1id) = null;
+		touchNum = default(int);
+		touch0x = default(int);
+		touch0y = default(int);
+		touch0id = default(int);
+		touch1x = default(int);
+		touch1y = default(int);
+		touch1id = default(int);
 	}
 
 	[CallerCount(Count = 0)]
 	public void PS4Input_GetPadControllerInformation(int id, out float touchpixelDensity, out int touchResolutionX, out int touchResolutionY, out int analogDeadZoneLeft, out int analogDeadZoneright, out int connectionType)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref touchpixelDensity) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref touchResolutionX) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref touchResolutionY) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref analogDeadZoneLeft) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref analogDeadZoneright) = null;
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref connectionType) = null;
+		touchpixelDensity = default(float);
+		touchResolutionX = default(int);
+		touchResolutionY = default(int);
+		analogDeadZoneLeft = default(int);
+		analogDeadZoneright = default(int);
+		connectionType = default(int);
 	}
 
 	[DeduplicatedMethod]
@@ -238,14 +238,14 @@ public class ExternalTools : IExternalTools
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void PS4Input_PadSetLightBar(int id, int red, int green, int blue)
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void PS4Input_PadResetLightBar(int id)
 	{
 	}
@@ -266,7 +266,7 @@ public class ExternalTools : IExternalTools
 	[CallerCount(Count = 0)]
 	public bool PS4Input_PadIsConnected(int id)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -279,11 +279,11 @@ public class ExternalTools : IExternalTools
 	[CallerCount(Count = 16)]
 	public int PS4Input_GetDeviceClassForHandle(int handle)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public string PS4Input_GetDeviceClassString(int intValue)
 	{
 		return null;
@@ -293,7 +293,7 @@ public class ExternalTools : IExternalTools
 	[CallerCount(Count = 0)]
 	public int PS4Input_PadGetUsersHandles2(int maxControllers, int[] handles)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
@@ -303,45 +303,45 @@ public class ExternalTools : IExternalTools
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 224)]
+	[CallerCount(Count = 258)]
 	public Vector3 PS4Input_SpecialGetLastAcceleration(int id)
 	{
 		return default(Vector3);
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 224)]
+	[CallerCount(Count = 258)]
 	public Vector3 PS4Input_SpecialGetLastGyro(int id)
 	{
 		return default(Vector3);
 	}
 
-	[CallerCount(Count = 3)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 3)]
 	public Vector4 PS4Input_SpecialGetLastOrientation(int id)
 	{
 		return default(Vector4);
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public int PS4Input_SpecialGetUsersHandles(int maxNumberControllers, int[] handles)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public int PS4Input_SpecialGetUsersHandles2(int maxNumberControllers, int[] handles)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool PS4Input_SpecialIsConnected(int id)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -362,8 +362,8 @@ public class ExternalTools : IExternalTools
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void PS4Input_SpecialSetLightSphere(int id, int red, int green, int blue)
 	{
 	}
@@ -387,21 +387,21 @@ public class ExternalTools : IExternalTools
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 224)]
+	[CallerCount(Count = 258)]
 	public Vector3 PS4Input_AimGetLastAcceleration(int id)
 	{
 		return default(Vector3);
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 224)]
+	[CallerCount(Count = 258)]
 	public Vector3 PS4Input_AimGetLastGyro(int id)
 	{
 		return default(Vector3);
 	}
 
-	[CallerCount(Count = 3)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 3)]
 	public Vector4 PS4Input_AimGetLastOrientation(int id)
 	{
 		return default(Vector4);
@@ -411,21 +411,21 @@ public class ExternalTools : IExternalTools
 	[CallerCount(Count = 0)]
 	public int PS4Input_AimGetUsersHandles(int maxNumberControllers, int[] handles)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public int PS4Input_AimGetUsersHandles2(int maxNumberControllers, int[] handles)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool PS4Input_AimIsConnected(int id)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -440,8 +440,8 @@ public class ExternalTools : IExternalTools
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void PS4Input_AimSetAngularVelocityDeadbandState(int id, bool bEnable)
 	{
 	}
@@ -471,14 +471,14 @@ public class ExternalTools : IExternalTools
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 224)]
+	[CallerCount(Count = 258)]
 	public Vector3 PS4Input_GetLastMoveAcceleration(int id, int index)
 	{
 		return default(Vector3);
 	}
 
-	[CallerCount(Count = 224)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 258)]
 	public Vector3 PS4Input_GetLastMoveGyro(int id, int index)
 	{
 		return default(Vector3);
@@ -488,62 +488,62 @@ public class ExternalTools : IExternalTools
 	[CallerCount(Count = 0)]
 	public int PS4Input_MoveGetButtons(int id, int index)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public int PS4Input_MoveGetAnalogButton(int id, int index)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool PS4Input_MoveIsConnected(int id, int index)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public int PS4Input_MoveGetUsersMoveHandles(int maxNumberControllers, int[] primaryHandles, int[] secondaryHandles)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public int PS4Input_MoveGetUsersMoveHandles(int maxNumberControllers, int[] primaryHandles)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public int PS4Input_MoveGetUsersMoveHandles(int maxNumberControllers)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	public IntPtr PS4Input_MoveGetControllerInputForTracking()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public int PS4Input_MoveSetLightSphere(int id, int index, int red, int green, int blue)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public int PS4Input_MoveSetVibration(int id, int index, int motor)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -558,14 +558,12 @@ public class ExternalTools : IExternalTools
 	[CallerCount(Count = 16)]
 	public int GetAndroidAPILevel()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 19)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 19)]
 	public void WindowsStandalone_ForwardRawInput(IntPtr rawInputHeaderIndices, IntPtr rawInputDataIndices, uint indicesCount, IntPtr rawInputData, uint rawInputDataSize)
 	{
 	}
@@ -575,12 +573,12 @@ public class ExternalTools : IExternalTools
 	[CallsUnknownMethods(Count = 1)]
 	public bool UnityUI_Graphic_GetRaycastTarget(object graphic)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void UnityUI_Graphic_SetRaycastTarget(object graphic, bool value)
 	{
@@ -589,13 +587,13 @@ public class ExternalTools : IExternalTools
 	[CallerCount(Count = 0)]
 	public float UnityInput_GetTouchPressure(ref Touch touch)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float UnityInput_GetTouchMaximumPossiblePressure(ref Touch touch)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

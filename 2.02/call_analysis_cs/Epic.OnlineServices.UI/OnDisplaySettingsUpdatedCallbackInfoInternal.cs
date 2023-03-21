@@ -16,9 +16,9 @@ internal struct OnDisplaySettingsUpdatedCallbackInfoInternal : ICallbackInfoInte
 	public object ClientData
 	{
 		[CalledBy(Type = typeof(OnDisplaySettingsUpdatedCallbackInfo), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(OnDisplaySettingsUpdatedCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -28,35 +28,35 @@ internal struct OnDisplaySettingsUpdatedCallbackInfoInternal : ICallbackInfoInte
 
 	public IntPtr ClientDataAddress
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public bool IsVisible
 	{
+		[CalledBy(Type = typeof(OnDisplaySettingsUpdatedCallbackInfo), Member = "Set")]
+		[CalledBy(Type = typeof(OnDisplaySettingsUpdatedCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(OnDisplaySettingsUpdatedCallbackInfo), Member = "Set")]
-		[CalledBy(Type = typeof(OnDisplaySettingsUpdatedCallbackInfo), Member = "Set")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public bool IsExclusiveInput
 	{
+		[CalledBy(Type = typeof(OnDisplaySettingsUpdatedCallbackInfo), Member = "Set")]
+		[CalledBy(Type = typeof(OnDisplaySettingsUpdatedCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(OnDisplaySettingsUpdatedCallbackInfo), Member = "Set")]
-		[CalledBy(Type = typeof(OnDisplaySettingsUpdatedCallbackInfo), Member = "Set")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 }

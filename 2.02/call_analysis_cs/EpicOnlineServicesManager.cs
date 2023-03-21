@@ -19,9 +19,9 @@ public class EpicOnlineServicesManager : MonoBehaviour
 
 	public string m_CatalogItemID;
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public EpicOnlineServicesManager()
 	{
 	}

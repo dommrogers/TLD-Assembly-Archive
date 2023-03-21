@@ -45,10 +45,10 @@ public class FirstAidItem : MonoBehaviour
 
 	public string m_RemedyText
 	{
-		[Calls(Type = typeof(LocalizedString), Member = "Text")]
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 11)]
+		[Calls(Type = typeof(LocalizedString), Member = "Text")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -68,13 +68,14 @@ public class FirstAidItem : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Awake()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Start()
 	{
 	}
@@ -84,19 +85,18 @@ public class FirstAidItem : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetRemainingHealing()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "TreatAfflictionWithFirstAid")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public float DeductHealing(float neededHP)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]

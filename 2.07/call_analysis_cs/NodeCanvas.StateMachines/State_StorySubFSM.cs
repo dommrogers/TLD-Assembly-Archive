@@ -13,8 +13,8 @@ public class State_StorySubFSM : State_TLDBaseFSM
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NestedFSMState), Member = ".ctor")]
 	public State_StorySubFSM()
 	{

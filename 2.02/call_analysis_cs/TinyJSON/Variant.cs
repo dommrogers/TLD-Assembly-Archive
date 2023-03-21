@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 
 namespace TinyJSON;
@@ -27,9 +26,9 @@ public abstract class Variant : IConvertible
 
 	public virtual Variant Item
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[CallsUnknownMethods(Count = 3)]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -47,7 +46,7 @@ public abstract class Variant : IConvertible
 	[CallsDeduplicatedMethods(Count = 2)]
 	public void Make<T>(out T item)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<T, @null>(ref item) = null;
+		item = default(T);
 	}
 
 	[DeduplicatedMethod]
@@ -55,7 +54,7 @@ public abstract class Variant : IConvertible
 	[CallsDeduplicatedMethods(Count = 2)]
 	public T Make<T>()
 	{
-		return (T)null;
+		return default(T);
 	}
 
 	[DeduplicatedMethod]
@@ -65,20 +64,20 @@ public abstract class Variant : IConvertible
 		return default(TypeCode);
 	}
 
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 17)]
 	public virtual object ToType(Type conversionType, IFormatProvider provider)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public virtual DateTime ToDateTime(IFormatProvider provider)
 	{
@@ -86,143 +85,143 @@ public abstract class Variant : IConvertible
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public virtual bool ToBoolean(IFormatProvider provider)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public virtual byte ToByte(IFormatProvider provider)
 	{
-		return default(byte);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public virtual char ToChar(IFormatProvider provider)
 	{
-		return default(char);
+		return '\0';
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public virtual decimal ToDecimal(IFormatProvider provider)
 	{
 		return default(decimal);
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 3)]
 	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	public virtual double ToDouble(IFormatProvider provider)
 	{
-		return default(double);
+		return 0.0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public virtual short ToInt16(IFormatProvider provider)
 	{
-		return default(short);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public virtual int ToInt32(IFormatProvider provider)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public virtual long ToInt64(IFormatProvider provider)
 	{
-		return default(long);
+		return 0L;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public virtual sbyte ToSByte(IFormatProvider provider)
 	{
-		return default(sbyte);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public virtual float ToSingle(IFormatProvider provider)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public virtual string ToString(IFormatProvider provider)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public virtual ushort ToUInt16(IFormatProvider provider)
 	{
-		return default(ushort);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public virtual uint ToUInt32(IFormatProvider provider)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(InvalidCastException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public virtual ulong ToUInt64(IFormatProvider provider)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
 	[CallerCount(Count = 0)]
@@ -237,7 +236,7 @@ public abstract class Variant : IConvertible
 	[CallsUnknownMethods(Count = 1)]
 	public static implicit operator bool(Variant variant)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -245,23 +244,23 @@ public abstract class Variant : IConvertible
 	[CallsUnknownMethods(Count = 1)]
 	public static implicit operator float(Variant variant)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static implicit operator double(Variant variant)
 	{
-		return default(double);
+		return 0.0;
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static implicit operator ushort(Variant variant)
 	{
-		return default(ushort);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -269,7 +268,7 @@ public abstract class Variant : IConvertible
 	[CallsUnknownMethods(Count = 1)]
 	public static implicit operator short(Variant variant)
 	{
-		return default(short);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -277,7 +276,7 @@ public abstract class Variant : IConvertible
 	[CallsUnknownMethods(Count = 1)]
 	public static implicit operator uint(Variant variant)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -285,7 +284,7 @@ public abstract class Variant : IConvertible
 	[CallsUnknownMethods(Count = 1)]
 	public static implicit operator int(Variant variant)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -293,15 +292,15 @@ public abstract class Variant : IConvertible
 	[CallsUnknownMethods(Count = 1)]
 	public static implicit operator ulong(Variant variant)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static implicit operator long(Variant variant)
 	{
-		return default(long);
+		return 0L;
 	}
 
 	[CallerCount(Count = 0)]
@@ -321,7 +320,7 @@ public abstract class Variant : IConvertible
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	protected Variant()
 	{
 	}

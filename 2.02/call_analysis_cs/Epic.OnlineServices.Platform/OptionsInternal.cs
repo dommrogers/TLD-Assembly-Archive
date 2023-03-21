@@ -44,10 +44,10 @@ internal struct OptionsInternal : ISettable, IDisposable
 
 	public string ProductId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(OptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -56,9 +56,9 @@ internal struct OptionsInternal : ISettable, IDisposable
 	public string SandboxId
 	{
 		[CalledBy(Type = typeof(OptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 1)]
 		set
 		{
 		}
@@ -66,9 +66,9 @@ internal struct OptionsInternal : ISettable, IDisposable
 
 	public ClientCredentials ClientCredentials
 	{
+		[CalledBy(Type = typeof(OptionsInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 3)]
-		[CalledBy(Type = typeof(OptionsInternal), Member = "Set")]
 		set
 		{
 		}
@@ -76,10 +76,10 @@ internal struct OptionsInternal : ISettable, IDisposable
 
 	public bool IsServer
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(OptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -87,10 +87,10 @@ internal struct OptionsInternal : ISettable, IDisposable
 
 	public string EncryptionKey
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(OptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -99,8 +99,8 @@ internal struct OptionsInternal : ISettable, IDisposable
 	public string OverrideCountryCode
 	{
 		[CalledBy(Type = typeof(OptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -109,10 +109,10 @@ internal struct OptionsInternal : ISettable, IDisposable
 
 	public string OverrideLocaleCode
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(OptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -120,10 +120,10 @@ internal struct OptionsInternal : ISettable, IDisposable
 
 	public string DeploymentId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(OptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -140,9 +140,9 @@ internal struct OptionsInternal : ISettable, IDisposable
 
 	public string CacheDirectory
 	{
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(OptionsInternal), Member = "Set")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -159,39 +159,32 @@ internal struct OptionsInternal : ISettable, IDisposable
 	}
 
 	[CalledBy(Type = typeof(OptionsInternal), Member = "Set")]
-	[Calls(Type = typeof(OptionsInternal), Member = "set_CacheDirectory")]
-	[Calls(Type = typeof(OptionsInternal), Member = "set_DeploymentId")]
-	[Calls(Type = typeof(OptionsInternal), Member = "set_OverrideLocaleCode")]
-	[Calls(Type = typeof(OptionsInternal), Member = "set_OverrideCountryCode")]
-	[Calls(Type = typeof(OptionsInternal), Member = "set_IsServer")]
-	[Calls(Type = typeof(OptionsInternal), Member = "set_ClientCredentials")]
-	[Calls(Type = typeof(OptionsInternal), Member = "set_SandboxId")]
-	[Calls(Type = typeof(OptionsInternal), Member = "set_ProductId")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(OptionsInternal), Member = "set_ProductId")]
+	[Calls(Type = typeof(OptionsInternal), Member = "set_SandboxId")]
+	[Calls(Type = typeof(OptionsInternal), Member = "set_ClientCredentials")]
+	[Calls(Type = typeof(OptionsInternal), Member = "set_IsServer")]
 	[Calls(Type = typeof(OptionsInternal), Member = "set_EncryptionKey")]
+	[Calls(Type = typeof(OptionsInternal), Member = "set_OverrideCountryCode")]
+	[Calls(Type = typeof(OptionsInternal), Member = "set_OverrideLocaleCode")]
+	[Calls(Type = typeof(OptionsInternal), Member = "set_DeploymentId")]
+	[Calls(Type = typeof(OptionsInternal), Member = "set_CacheDirectory")]
 	public void Set(Options other)
 	{
 	}
 
 	[CalledBy(Type = typeof(PlatformInterface), Member = "Create")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(OptionsInternal), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[Calls(Type = typeof(ClientCredentialsInternal), Member = "Dispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

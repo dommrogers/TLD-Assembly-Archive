@@ -19,10 +19,10 @@ public class DecalRenderBatch
 
 	public int m_Count;
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RenderStaticScreenSpaceDecals")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public DecalRenderBatch()
 	{
 	}

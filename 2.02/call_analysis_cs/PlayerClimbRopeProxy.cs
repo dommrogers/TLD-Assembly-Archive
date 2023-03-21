@@ -15,7 +15,7 @@ public class PlayerClimbRopeProxy
 	public float m_NextFallChance;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PlayerClimbRopeProxy()
 	{
 	}

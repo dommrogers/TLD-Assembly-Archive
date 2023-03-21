@@ -7,9 +7,9 @@ public class MapDetailSaveData
 
 	public Dictionary<string, MapDetailStateData> m_NewMapDetailStates;
 
+	[CalledBy(Type = typeof(MapDetailManager), Member = ".cctor")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(MapDetailManager), Member = ".cctor")]
 	[CallsUnknownMethods(Count = 11)]
 	public MapDetailSaveData()
 	{

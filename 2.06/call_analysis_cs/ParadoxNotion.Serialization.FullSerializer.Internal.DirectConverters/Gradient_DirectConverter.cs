@@ -7,21 +7,21 @@ namespace ParadoxNotion.Serialization.FullSerializer.Internal.DirectConverters;
 
 public class Gradient_DirectConverter : fsDirectConverter<Gradient>
 {
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsBaseConverter), Member = "SerializeMember")]
 	[Calls(Type = typeof(fsResult), Member = "Merge")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	protected override fsResult DoSerialize(Gradient model, Dictionary<string, fsData> serialized)
 	{
 		return default(fsResult);
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsBaseConverter), Member = "DeserializeMember")]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 5)]
 	protected override fsResult DoDeserialize(Dictionary<string, fsData> data, ref Gradient model)
 	{
 		return default(fsResult);

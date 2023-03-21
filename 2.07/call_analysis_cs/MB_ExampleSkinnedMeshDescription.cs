@@ -4,8 +4,8 @@ using UnityEngine;
 public class MB_ExampleSkinnedMeshDescription : MonoBehaviour
 {
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GUILayout), Member = "Label")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnGUI()
 	{
 	}

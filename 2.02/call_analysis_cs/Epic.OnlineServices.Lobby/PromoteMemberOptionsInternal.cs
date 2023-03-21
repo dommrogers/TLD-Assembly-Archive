@@ -17,11 +17,11 @@ internal struct PromoteMemberOptionsInternal : ISettable, IDisposable
 
 	public string LobbyId
 	{
+		[CalledBy(Type = typeof(PromoteMemberOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(PromoteMemberOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(PromoteMemberOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(PromoteMemberOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -31,9 +31,9 @@ internal struct PromoteMemberOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(PromoteMemberOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(PromoteMemberOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 2)]
 		set
 		{
 		}
@@ -41,11 +41,11 @@ internal struct PromoteMemberOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId TargetUserId
 	{
+		[CalledBy(Type = typeof(PromoteMemberOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(PromoteMemberOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(PromoteMemberOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(PromoteMemberOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -60,17 +60,17 @@ internal struct PromoteMemberOptionsInternal : ISettable, IDisposable
 	}
 
 	[CalledBy(Type = typeof(LobbyInterface), Member = "PromoteMember")]
-	[Calls(Type = typeof(PromoteMemberOptionsInternal), Member = "set_TargetUserId")]
-	[Calls(Type = typeof(PromoteMemberOptionsInternal), Member = "set_LocalUserId")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PromoteMemberOptionsInternal), Member = "set_LobbyId")]
+	[Calls(Type = typeof(PromoteMemberOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(PromoteMemberOptionsInternal), Member = "set_TargetUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

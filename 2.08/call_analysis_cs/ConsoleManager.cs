@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas;
 using NodeCanvas.Framework;
 using NodeCanvas.Tasks.Actions;
+using TLD.AddressableAssets;
 using TLD.Audio;
 using TLD.Gameplay;
 using TLD.Gameplay.Condition;
@@ -14,6 +14,7 @@ using TLD.Gear;
 using TLD.OptionalContent;
 using TLD.SaveState;
 using TLD.Scenes;
+using TLD.UI.Generics;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -36,13 +37,12 @@ public class ConsoleManager
 		}
 
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 		[CallsDeduplicatedMethods(Count = 3)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 		[CallsUnknownMethods(Count = 3)]
 		internal int _003CCONSOLE_dump_mission_objects_003Eb__124_0(MissionObjectIdentifier a, MissionObjectIdentifier b)
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -56,13 +56,13 @@ public class ConsoleManager
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
+		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CCONSOLE_unlock_region_003Eb__0(RegionSpecification region)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -79,9 +79,11 @@ public class ConsoleManager
 		}
 
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_Status")]
+		[Calls(Type = typeof(AsyncOperationHandle<>), Member = "get_Result")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 		[Calls(Type = typeof(ConsoleManager), Member = "set_spawn_position")]
-		[CallsUnknownMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 1)]
 		internal void _003Cspawn_common_003Eb__0(AsyncOperationHandle<GameObject> goOp)
 		{
 		}
@@ -93,537 +95,47 @@ public class ConsoleManager
 
 	private static bool m_Initialized;
 
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(uConsoleAutoComplete), Member = "CreateCommandParameterSet")]
 	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
-	[Calls(Type = typeof(uConsoleAutoComplete), Member = "CreateCommandParameterSet")]
-	[Calls(Type = typeof(Panel_Debug), Member = "PopulateTimelineOptions")]
-	[Calls(Type = typeof(uConsoleAutoComplete), Member = "CreateCommandParameterSet")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[CallsUnknownMethods(Count = 24)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 12)]
-	[Calls(Type = typeof(ConsoleManager), Member = "RegisterCommands")]
-	[Calls(Type = typeof(uConsoleAutoComplete), Member = "CreateCommandParameterSet")]
-	[Calls(Type = typeof(uConsoleAutoComplete), Member = "CreateCommandParameterSet")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
 	[Calls(Type = typeof(ConsoleManager), Member = "StoreAutoCompleteGearNames")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(ConsoleManager), Member = "RegisterCommands")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(uConsoleAutoComplete), Member = "CreateCommandParameterSet")]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Panel_Debug), Member = "PopulateTimelineOptions")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 24)]
 	public static void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommandReturn")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[CallsUnknownMethods(Count = 1109)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "Initialize")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[CallsDeduplicatedMethods(Count = 470)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
 	[Calls(Type = typeof(uConsole), Member = "RegisterCommandReturn")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommandReturn")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommandReturn")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommandReturn")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommandReturn")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommandReturn")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
-	[Calls(Type = typeof(uConsole), Member = "RegisterCommand")]
+	[CallsDeduplicatedMethods(Count = 470)]
+	[CallsUnknownMethods(Count = 1109)]
 	public static void RegisterCommands()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(HashSet<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void CONSOLE_add_all_gear()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 4)]
 	public static void CONSOLE_ai_feeding_test()
 	{
@@ -636,10 +148,10 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(BaseAiManager), Member = "UpdateCollisionMode")]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[Calls(Type = typeof(BaseAiManager), Member = "UpdateCollisionMode")]
 	public static void CONSOLE_ai_continuouscollision()
 	{
 	}
@@ -658,56 +170,57 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(InfectionRisk), Member = "InfectionRiskStart")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(InsomniaManager), Member = "ApplyInsomniaAffliction")]
-	[Calls(Type = typeof(Frostbite), Member = "FrostbiteStart")]
-	[Calls(Type = typeof(IntestinalParasites), Member = "IntestinalParasitesStart")]
-	[Calls(Type = typeof(CabinFever), Member = "CabinFeverStart")]
-	[Calls(Type = typeof(Infection), Member = "InfectionStart")]
-	[Calls(Type = typeof(BrokenRib), Member = "BrokenRibStart")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Hypothermia), Member = "HypothermiaStart")]
-	[Calls(Type = typeof(BurnsElectric), Member = "BurnsElectricStart")]
-	[Calls(Type = typeof(Burns), Member = "BurnsStart")]
-	[Calls(Type = typeof(SprainedWrist), Member = "SprainedWristStart")]
-	[Calls(Type = typeof(SprainedAnkle), Member = "SprainedAnkleStart")]
-	[Calls(Type = typeof(Dysentery), Member = "DysenteryStart")]
 	[Calls(Type = typeof(FoodPoisoning), Member = "FoodPoisoningStart")]
+	[Calls(Type = typeof(Dysentery), Member = "DysenteryStart")]
+	[Calls(Type = typeof(SprainedAnkle), Member = "SprainedAnkleStart")]
+	[Calls(Type = typeof(SprainedWrist), Member = "SprainedWristStart")]
+	[Calls(Type = typeof(Burns), Member = "BurnsStart")]
+	[Calls(Type = typeof(BurnsElectric), Member = "BurnsElectricStart")]
+	[Calls(Type = typeof(Hypothermia), Member = "HypothermiaStart")]
 	[Calls(Type = typeof(BloodLoss), Member = "BloodLossStart")]
+	[Calls(Type = typeof(BrokenRib), Member = "BrokenRibStart")]
+	[Calls(Type = typeof(InfectionRisk), Member = "InfectionRiskStart")]
+	[Calls(Type = typeof(Infection), Member = "InfectionStart")]
+	[Calls(Type = typeof(CabinFever), Member = "CabinFeverStart")]
+	[Calls(Type = typeof(IntestinalParasites), Member = "IntestinalParasitesStart")]
+	[Calls(Type = typeof(Frostbite), Member = "FrostbiteStart")]
+	[Calls(Type = typeof(InsomniaManager), Member = "ApplyInsomniaAffliction")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_afflictions()
 	{
 	}
 
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_god")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(FoodPoisoning), Member = "FoodPoisoningEnd")]
+	[Calls(Type = typeof(Dysentery), Member = "DysenteryEnd")]
+	[Calls(Type = typeof(SprainedAnkle), Member = "Cure")]
+	[Calls(Type = typeof(SprainedWrist), Member = "Cure")]
+	[Calls(Type = typeof(SprainPain), Member = "CureAffliction")]
+	[Calls(Type = typeof(Burns), Member = "BurnsEnd")]
+	[Calls(Type = typeof(BurnsElectric), Member = "BurnsElectricEnd")]
+	[Calls(Type = typeof(Hypothermia), Member = "HypothermiaEnd")]
+	[Calls(Type = typeof(BloodLoss), Member = "Cure")]
+	[Calls(Type = typeof(BrokenRib), Member = "BrokenRibEnd")]
+	[Calls(Type = typeof(InfectionRisk), Member = "Cure")]
 	[Calls(Type = typeof(Infection), Member = "Cure")]
 	[Calls(Type = typeof(CabinFever), Member = "CabinFeverEnd")]
 	[Calls(Type = typeof(IntestinalParasites), Member = "IntestinalParasitesEnd")]
 	[Calls(Type = typeof(Suffocating), Member = "StopAudio")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_god")]
-	[Calls(Type = typeof(InfectionRisk), Member = "Cure")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
-	[Calls(Type = typeof(BrokenRib), Member = "BrokenRibEnd")]
-	[Calls(Type = typeof(Burns), Member = "BurnsEnd")]
-	[Calls(Type = typeof(Hypothermia), Member = "HypothermiaEnd")]
-	[Calls(Type = typeof(BurnsElectric), Member = "BurnsElectricEnd")]
-	[Calls(Type = typeof(SprainPain), Member = "CureAffliction")]
-	[Calls(Type = typeof(SprainedWrist), Member = "Cure")]
-	[Calls(Type = typeof(SprainedAnkle), Member = "Cure")]
-	[Calls(Type = typeof(Dysentery), Member = "DysenteryEnd")]
-	[Calls(Type = typeof(FoodPoisoning), Member = "FoodPoisoningEnd")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(BloodLoss), Member = "Cure")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_afflictions_cure()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsUnknownMethods(Count = 4)]
 	public static void CONSOLE_afflictions_nofx()
 	{
 	}
@@ -723,51 +236,49 @@ public class ConsoleManager
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[Calls(Type = typeof(InterfaceManager), Member = "LoadReplacementAtlases")]
-	[Calls(Type = typeof(InterfaceManager), Member = "LoadReplacementAtlases")]
 	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_atlas_sd()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_aurora()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(uConsole), Member = "GetInt")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsInt")]
+	[Calls(Type = typeof(uConsole), Member = "GetInt")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_autosave()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[Calls(Type = typeof(BearHuntRedux), Member = "ActivateEncounter")]
 	public static void CONSOLE_bearhuntredux_encounter_activate()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(BearHuntRedux), Member = "SetLastEncounter")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[Calls(Type = typeof(BearHuntRedux), Member = "SetLastEncounter")]
 	public static void CONSOLE_bearhuntredux_encounter_last()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Enum), Member = "Parse")]
@@ -785,34 +296,31 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
+	[Calls(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_bearspear()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Enum), Member = "Parse")]
 	[Calls(Type = typeof(BloodLoss), Member = "BloodLossStart")]
 	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(BloodLoss), Member = "BloodLossStart")]
 	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 17)]
 	public static void CONSOLE_blood_loss()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BloodLoss), Member = "Cure")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_blood_loss_cure()
 	{
 	}
@@ -825,19 +333,16 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(BloodLoss), Member = "BloodLossStart")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[Calls(Type = typeof(BloodLoss), Member = "BloodLossStart")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Enum), Member = "Parse")]
+	[Calls(Type = typeof(BloodLoss), Member = "BloodLossStart")]
+	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 17)]
 	public static void CONSOLE_blood_loss_nofx()
 	{
 	}
@@ -855,25 +360,25 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(BrokenRib), Member = "BrokenRibStart")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_brokenrib()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BrokenRib), Member = "BrokenRibEnd")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static void CONSOLE_brokenrib_cure()
 	{
 	}
 
-	[Calls(Type = typeof(BrokenRib), Member = "BrokenRibStart")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(BrokenRib), Member = "BrokenRibStart")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_brokenrib_minor()
 	{
 	}
@@ -898,14 +403,15 @@ public class ConsoleManager
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(BlueprintManager), Member = "FindBlueprintsForGear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(BlueprintManager), Member = "UnlockWithNotification")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_blueprint_unlock()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void CONSOLE_blueprint_grant()
 	{
 	}
@@ -913,33 +419,31 @@ public class ConsoleManager
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
 	[Calls(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
 	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_bow()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsFloat")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsFloat")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
 	[Calls(Type = typeof(Utils), Member = "DistanceToMainCamera")]
 	[Calls(Type = typeof(BreakDown), Member = "DoBreakDown")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	public static void CONSOLE_breakdown_all()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(WellFed), Member = "WellFedStart")]
-	[Calls(Type = typeof(ConditionOverTimeBuff), Member = "Apply")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
-	[Calls(Type = typeof(FatigueBuff), Member = "Apply")]
-	[Calls(Type = typeof(ConditionRestBuff), Member = "Apply")]
-	[Calls(Type = typeof(FreezingBuff), Member = "Apply")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
+	[Calls(Type = typeof(ConditionRestBuff), Member = "Apply")]
+	[Calls(Type = typeof(FreezingBuff), Member = "Apply")]
+	[Calls(Type = typeof(FatigueBuff), Member = "Apply")]
+	[Calls(Type = typeof(WellFed), Member = "WellFedStart")]
+	[Calls(Type = typeof(ConditionOverTimeBuff), Member = "Apply")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_buffs_add_all()
 	{
 	}
@@ -966,10 +470,10 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Burns), Member = "BurnsStart")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(Burns), Member = "BurnsStart")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_burns_nofx()
 	{
 	}
@@ -995,11 +499,11 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(CabinFever), Member = "CabinFeverStart")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
 	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(CabinFever), Member = "CabinFeverStart")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_cabinfever()
 	{
 	}
@@ -1020,10 +524,10 @@ public class ConsoleManager
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	public static void CONSOLE_capture()
 	{
 	}
@@ -1050,14 +554,13 @@ public class ConsoleManager
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
+	[Calls(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GunItem), Member = "AddRoundsToClip")]
 	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
 	public static void CONSOLE_flaregun()
 	{
 	}
@@ -1084,15 +587,15 @@ public class ConsoleManager
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(BatchLightingCapture), Member = "CaptureLighting")]
-	[CallerCount(Count = 0)]
 	public static void CONSOLE_capture_lighting()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Queue<>), Member = "Clear")]
 	[Calls(Type = typeof(LightingCapture), Member = "MakeNextDirectoryID")]
 	[Calls(Type = typeof(BatchLightingCapture), Member = "CaptureNextScene")]
 	[CallsUnknownMethods(Count = 1)]
@@ -1100,37 +603,30 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
 	[Calls(Type = typeof(FSMHierarchy), Member = "SendEvent")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_challenge_complete()
 	{
 	}
 
-	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedBadge")]
-	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedBadge")]
-	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedBadge")]
-	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedBadge")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedBadge")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedBadge")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
-	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedBadge")]
-	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedBadge")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedBadge")]
-	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 16)]
 	public static void CONSOLE_challenge_complete_all()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_character_splitstep_optimization()
 	{
 	}
@@ -1148,21 +644,18 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Container), Member = "AllFoodItemsAreNatural")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Container), Member = "GetTotalCalories")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Container), Member = "GetTotalCalories")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(Container), Member = "GetHoursFuel")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(Container), Member = "AllFoodItemsAreNatural")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_container_test()
 	{
 	}
@@ -1172,15 +665,13 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
 	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
 	[Calls(Type = typeof(Weather), Member = "IsSnowing")]
-	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsUnknownMethods(Count = 5)]
 	public static void CONSOLE_crow_flyover_test()
 	{
 	}
@@ -1205,15 +696,15 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(BaseAiManager), Member = "DisableInvalidAi")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BaseAiManager), Member = "DisableInvalidAi")]
 	public static void CONSOLE_disable_invalid_ai()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[CallerCount(Count = 0)]
 	public static void CONSOLE_debug_ai_states()
 	{
 	}
@@ -1239,9 +730,9 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_debug_navmesh()
 	{
 	}
@@ -1260,11 +751,10 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
-	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
 	public static void CONSOLE_debug_ai_lite()
 	{
 	}
@@ -1283,9 +773,9 @@ public class ConsoleManager
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[CallerCount(Count = 0)]
 	public static void CONSOLE_debug_steampipebyname()
 	{
 	}
@@ -1304,18 +794,18 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "OutputWornClothing")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "OutputWornClothing")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_debug_clothing()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 4)]
 	public static void CONSOLE_debug_damage()
 	{
 	}
@@ -1334,8 +824,8 @@ public class ConsoleManager
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void CONSOLE_debug_font_rendering()
 	{
 	}
@@ -1354,16 +844,16 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_debug_loading_screen()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[CallerCount(Count = 0)]
 	public static void CONSOLE_debug_heavy_breathing()
 	{
 	}
@@ -1382,15 +872,15 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_debug_player()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void CONSOLE_debug_player_interaction()
 	{
 	}
@@ -1411,15 +901,15 @@ public class ConsoleManager
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void CONSOLE_debug_noisemaker_radius()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_debug_nowheretohide()
 	{
 	}
@@ -1440,14 +930,13 @@ public class ConsoleManager
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
-	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
 	public static void CONSOLE_debug_radial_spawning()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_debug_roi_lods()
 	{
 	}
@@ -1466,10 +955,10 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsUnknownMethods(Count = 4)]
 	public static void CONSOLE_debug_struggle()
 	{
 	}
@@ -1500,26 +989,26 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(DebugViewModeManager), Member = "SetMode")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(DebugViewModeManager), Member = "SetMode")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
 	public static void CONSOLE_debug_view_mode()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void CONSOLE_debug_voice_ui()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[CallerCount(Count = 0)]
 	public static void CONSOLE_debug_voice_verbose()
 	{
 	}
@@ -1551,16 +1040,16 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Enum), Member = "Parse")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "AssignCategory")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetInt")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetInt")]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enum), Member = "Parse")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "AssignCategory")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_dialogue_assign()
 	{
 	}
@@ -1574,68 +1063,62 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(Animator), Member = "Play")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "FindDialogueModeRigFp")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Animator), Member = "Play")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_dialogue_setanimationstate()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(int), Member = "Parse")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Animator), Member = "get_parameters")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "FindDialogueModeRigFp")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(Animator), Member = "get_parameters")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(bool), Member = "Parse")]
+	[Calls(Type = typeof(int), Member = "Parse")]
+	[Calls(Type = typeof(float), Member = "Parse")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_dialogue_setanimationparameter()
 	{
 	}
 
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceCameraFraming")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "FindDialogueModeRigFp")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceCameraFraming")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_dialogue_setframing()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_hideFlags")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "ShouldIgnoreMissionObject")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 52)]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_hideFlags")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_hideFlags")]
+	[CallsUnknownMethods(Count = 52)]
 	public static void CONSOLE_dump_mission_objects()
 	{
 	}
@@ -1648,23 +1131,23 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Dysentery), Member = "DysenteryStart")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_dysentery()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Dysentery), Member = "DysenteryEnd")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static void CONSOLE_dysentery_cure()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Dysentery), Member = "DysenteryStart")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dysentery), Member = "DysenteryStart")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_dysentery_nofx()
 	{
 	}
@@ -1684,28 +1167,28 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[Calls(Type = typeof(CameraFade), Member = "IsFadingOut")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[Calls(Type = typeof(CameraFade), Member = "IsFadingOut")]
+	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
 	public static void CONSOLE_fade_out()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_cinematic_fade_blackout()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
+	[CallsUnknownMethods(Count = 4)]
 	public static void CONSOLE_fancy()
 	{
 	}
@@ -1725,8 +1208,8 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleManager), Member = "SetFeat")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConsoleManager), Member = "SetFeat")]
 	public static void CONSOLE_feat_booksmarts()
 	{
 	}
@@ -1755,14 +1238,14 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleManager), Member = "SetFeat")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConsoleManager), Member = "SetFeat")]
 	public static void CONSOLE_feat_snowwalker()
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleManager), Member = "SetFeat")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConsoleManager), Member = "SetFeat")]
 	public static void CONSOLE_feat_experttrapper()
 	{
 	}
@@ -1785,33 +1268,30 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 24)]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "Remove")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(Array), Member = "GetEnumerator")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Enum), Member = "Parse")]
+	[Calls(Type = typeof(Array), Member = "GetEnumerator")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Remove")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 24)]
 	public static void CONSOLE_feat_set_enabled()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Array), Member = "GetEnumerator")]
 	[Calls(Type = typeof(FeatsManager), Member = "GetFeat")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Array), Member = "GetEnumerator")]
+	[CallsUnknownMethods(Count = 19)]
 	public static void CONSOLE_feat_unlock_all()
 	{
 	}
@@ -1831,27 +1311,27 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_force_aurora()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetImmediate")]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetImmediate")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_force_aurora_immediate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsFloat")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsFloat")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_force_aurora_duration()
 	{
 	}
@@ -1860,7 +1340,7 @@ public class ConsoleManager
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[Calls(Type = typeof(AuroraField), Member = "SetFieldActive")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_enable_aurorafields()
 	{
@@ -1880,14 +1360,13 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(EpisodeManager), Member = "SetState")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetState")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetNextEpisode")]
-	[Calls(Type = typeof(StatsManager), Member = "SetValue")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
 	[Calls(Type = typeof(EpisodeManager), Member = "SetState")]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetNextEpisode")]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetState")]
+	[Calls(Type = typeof(StatsManager), Member = "SetValue")]
 	public static void CONSOLE_episode_complete()
 	{
 	}
@@ -1901,11 +1380,11 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouch")]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouch")]
+	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_force_crouch()
 	{
 	}
@@ -1918,17 +1397,17 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_force_limp_slow()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_disable_procedural_instancing()
 	{
 	}
@@ -1937,7 +1416,6 @@ public class ConsoleManager
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
 	[Calls(Type = typeof(OptionalContentManager), Member = "CanUseContent")]
@@ -1946,11 +1424,11 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(OptionalContentManager), Member = "InitializeAsync")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
+	[Calls(Type = typeof(OptionalContentManager), Member = "InitializeAsync")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_dlc_initialize()
 	{
 	}
@@ -1961,49 +1439,48 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 26)]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplyListKnownDLC")]
-	[Calls(Type = typeof(string), Member = "Join")]
-	[Calls(Type = typeof(OptionalContentManager), Member = "GetAllConfigs")]
-	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
+	[Calls(Type = typeof(OptionalContentManager), Member = "GetAllConfigs")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Join")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 25)]
 	public static void CONSOLE_dlc_list_known_content()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplyListAvailableDLC")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
-	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(OptionalContentManager), Member = "TryFindConfig")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
 	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplyListAvailableDLC")]
-	[CallsUnknownMethods(Count = 10)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	public static void CONSOLE_dlc_list_available_content()
 	{
 	}
 
-	[Calls(Type = typeof(OptionalContentManager), Member = "OpenContentInStore")]
-	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
+	[Calls(Type = typeof(OptionalContentManager), Member = "OpenContentInStore")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_dlc_open_content_in_store()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_force_no_random_sprain()
 	{
 	}
@@ -2022,10 +1499,10 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_force_no_sprainwrist()
 	{
 	}
@@ -2038,17 +1515,17 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_force_gear_weight()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_force_howl()
 	{
 	}
@@ -2087,22 +1564,21 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_force_skip_enabled()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
 	public static void CONSOLE_force_mobility_reduction()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsInt")]
 	[Calls(Type = typeof(uConsole), Member = "GetInt")]
@@ -2113,9 +1589,9 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
 	public static void CONSOLE_fog_scale()
 	{
 	}
@@ -2127,16 +1603,16 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(FoodPoisoning), Member = "FoodPoisoningStart")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_food_poison_nofx()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_forward_rendering()
 	{
 	}
@@ -2157,52 +1633,53 @@ public class ConsoleManager
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetInt")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_framerate_cap()
 	{
 	}
 
-	[Calls(Type = typeof(Frostbite), Member = "FrostbiteStart")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetInt")]
+	[Calls(Type = typeof(Frostbite), Member = "FrostbiteStart")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_frostbite()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_frostbite_cure()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Frostbite), Member = "FrostbiteStart")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetInt")]
+	[Calls(Type = typeof(Frostbite), Member = "FrostbiteStart")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_frostbite_nofx()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetInt")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Array), Member = "GetEnumerator")]
 	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
 	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 19)]
 	public static void CONSOLE_achievement_unlock()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_achievement_list()
 	{
 	}
@@ -2214,29 +1691,31 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(uConsole), Member = "GetInt")]
-	[Calls(Type = typeof(uConsole), Member = "GetInt")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetInt")]
+	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public static void CONSOLE_gear_add()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetInt")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsInt")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsInt")]
+	[Calls(Type = typeof(uConsole), Member = "GetInt")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void CONSOLE_gear_add_type()
 	{
 	}
@@ -2269,8 +1748,8 @@ public class ConsoleManager
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static object CONSOLE_get_thirst()
 	{
 		return null;
@@ -2288,10 +1767,10 @@ public class ConsoleManager
 		return null;
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsUnknownMethods(Count = 4)]
 	public static void CONSOLE_ghost()
 	{
 	}
@@ -2313,11 +1792,12 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Exception), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(float), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Exception), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public static void CONSOLE_exception_test()
 	{
 	}
@@ -2335,28 +1815,29 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(HuntedPart2WaypointController), Member = "ForceEndGame")]
-	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
-	[Calls(Type = typeof(GameManager), Member = "IsActiveScene")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "IsActiveScene")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectOfType")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
+	[Calls(Type = typeof(HuntedPart2WaypointController), Member = "ForceEndGame")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_hunted2_endgame()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(Hypothermia), Member = "HypothermiaStart")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_hypothermia()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Hypothermia), Member = "HypothermiaEnd")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_hypothermia_cure()
 	{
 	}
@@ -2377,9 +1858,9 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_invisibleentity_pause()
 	{
 	}
@@ -2395,15 +1876,15 @@ public class ConsoleManager
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsFloat")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_invisibleentity_addspace()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "SetRange")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_invisibleentity_near()
 	{
 	}
@@ -2431,33 +1912,33 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Infection), Member = "Cure")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_infection_cure()
 	{
 	}
 
-	[Calls(Type = typeof(Infection), Member = "InfectionStart")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(Infection), Member = "InfectionStart")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_infection_nofx()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(InfectionRisk), Member = "InfectionRiskStart")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(InfectionRisk), Member = "InfectionRiskStart")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_infection_risk()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(InfectionRisk), Member = "InfectionRiskStart")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_infection_risk_constant()
 	{
@@ -2470,10 +1951,10 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(InfectionRisk), Member = "InfectionRiskStart")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(InfectionRisk), Member = "InfectionRiskStart")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_infection_risk_nofx()
 	{
 	}
@@ -2486,10 +1967,10 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsUnknownMethods(Count = 4)]
 	public static void CONSOLE_invulnerable()
 	{
 	}
@@ -2507,58 +1988,58 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(Knowledge), Member = "Unlock")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(Knowledge), Member = "GetKnowledgeCategoryFromName")]
 	[Calls(Type = typeof(Knowledge), Member = "GetLocalizedKnowledgeCategoryName")]
+	[Calls(Type = typeof(Knowledge), Member = "Unlock")]
 	public static void CONSOLE_knowledge_unlock()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[CallerCount(Count = 0)]
 	public static void CONSOLE_lampinfinite()
 	{
 	}
 
-	[Calls(Type = typeof(FontManager), Member = "UpdateDummyFonts")]
-	[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "set_Language")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(Localization), Member = "MaybeLoadLanguageTables")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Localization), Member = "set_Language")]
+	[Calls(Type = typeof(FontManager), Member = "UpdateDummyFonts")]
+	[CallsUnknownMethods(Count = 6)]
 	public static void CONSOLE_lang()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
-	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(Utils), Member = "TryParseTOD")]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_lighting_preview()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(Collider), Member = "get_enabled")]
-	[Calls(Type = typeof(Vector3), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Collider), Member = "get_enabled")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(Vector3), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void CONSOLE_list_unexplored_interiors()
 	{
 	}
@@ -2570,56 +2051,61 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetInt")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetInt")]
 	public static void CONSOLE_loadpriority()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsUnknownMethods(Count = 4)]
 	public static void CONSOLE_lock_player()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 2)]
 	private static void CONSOLE_lock_region()
 	{
 	}
 
-	[Calls(Type = typeof(RegionSpecification), Member = "IsUnlocked")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(RegionSpecification), Member = "MaybeUnlock")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(AssetHelper), Member = "SafeLoadAssetsAsync")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(RegionSpecification), Member = "IsUnlocked")]
+	[Calls(Type = typeof(RegionSpecification), Member = "MaybeUnlock")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private static void CONSOLE_unlock_region()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_lock_temperature()
 	{
 	}
 
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "WeatherNameToEnum")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[Calls(Type = typeof(WeatherTransition), Member = "ForceUnmanagedWeatherStage")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "WeatherNameToEnum")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ForceUnmanagedWeatherStage")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_lock_weather()
 	{
 	}
@@ -2633,31 +2119,32 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_lock_wind_instant()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_lod_bias()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Debug), Member = "LogFormat")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(AchievementManager), Member = "IsRegionCompleteFaithfulCartographer")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(AchievementManager), Member = "IsRegionCompleteFaithfulCartographer")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(Debug), Member = "LogFormat")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public static void CONSOLE_log_all_faithful_cartographer()
 	{
 	}
@@ -2675,10 +2162,10 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_makestrugglepartnerflee()
 	{
 	}
@@ -2687,7 +2174,7 @@ public class ConsoleManager
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(string), Member = "StartsWith")]
 	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "JumpTo")]
@@ -2696,11 +2183,11 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "RunCommand")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(uConsole), Member = "RunCommand")]
 	public static void CONSOLE_mission_add()
 	{
 	}
@@ -2713,37 +2200,37 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(MissionServicesManager), Member = "IsMissionActive")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "IsMissionActive")]
 	[CallsUnknownMethods(Count = 4)]
 	public static object CONSOLE_is_mission_active()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "AddMissionObjectFilterTags")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "AddMissionObjectFilterTags")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_mission_add_filter_tags()
 	{
 	}
 
-	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveMissionObjectFilterTags")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveMissionObjectFilterTags")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_mission_remove_filter_tags()
 	{
 	}
 
-	[Calls(Type = typeof(WeatherTransition), Member = "ForceNextWeatherStage")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(uConsole), Member = "GetInt")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetInt")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ForceNextWeatherStage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_next_weather()
 	{
 	}
@@ -2763,27 +2250,26 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(NPC), Member = "UpdateTODHours")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(NPC), Member = "UpdateTODHours")]
 	[Calls(Type = typeof(NPC), Member = "FindNearest")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(NPC), Member = "UpdateTODHours")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_npc_conditionupdate()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(NPC), Member = "FindNearest")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPCAfflictions), Member = "AddAffliction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_npc_bloodloss()
 	{
 	}
@@ -2795,31 +2281,28 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(Enum), Member = "Parse")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enum), Member = "Parse")]
+	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_npc_goto()
 	{
 	}
 
-	[Calls(Type = typeof(BaseAi), Member = "GoToAiMarker")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Enum), Member = "Parse")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enum), Member = "Parse")]
+	[Calls(Type = typeof(BaseAi), Member = "GoToAiMarker")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void CONSOLE_NPC_GoTo_Marker()
 	{
 	}
@@ -2838,20 +2321,20 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(PassTime), Member = "Begin")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[Calls(Type = typeof(PassTime), Member = "Begin")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_pass_time()
 	{
 	}
 
-	[Calls(Type = typeof(IntestinalParasites), Member = "IntestinalParasitesStart")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(IntestinalParasites), Member = "GetNumDosesRequired")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(IntestinalParasites), Member = "IntestinalParasitesStart")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_parasites()
 	{
 	}
@@ -2877,27 +2360,27 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerStunned), Member = "Begin")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[Calls(Type = typeof(PlayerStunned), Member = "Begin")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_player_stunned()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(IntestinalParasites), Member = "GetNumDosesRequired")]
 	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[Calls(Type = typeof(IntestinalParasites), Member = "IntestinalParasitesStart")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_parasites_nofx()
 	{
 	}
 
-	[Calls(Type = typeof(Phone), Member = "StartPhoneRinging")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(Phone), Member = "StartPhoneRinging")]
 	public static void CONSOLE_phone_startringing()
 	{
 	}
@@ -2910,9 +2393,9 @@ public class ConsoleManager
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public static void CONSOLE_physics_autosync()
 	{
@@ -2932,34 +2415,34 @@ public class ConsoleManager
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(MoviePlayer), Member = "Play")]
-	[CallerCount(Count = 0)]
 	public static void CONSOLE_play_movie_alpha_ext()
 	{
 	}
 
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayDynamicSequence")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayDynamicSequence")]
 	public static void CONSOLE_play_dd()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SceneMusicManager), Member = "PlayExploreMusic")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_play_exploremusic()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SoundbankLoader), Member = "DebugLoadAllEpisodeBanks")]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_play_timeline()
 	{
@@ -2971,8 +2454,8 @@ public class ConsoleManager
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void CONSOLE_stop_timeline_on()
 	{
 	}
@@ -2984,59 +2467,60 @@ public class ConsoleManager
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_play_sorrowmusic()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_play_sound()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySoundWithPositionTracking")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_play_soundlogduration()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_play_unistorm_anim()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_play_voice()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void CONSOLE_popup()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_postprocess_globaloptim()
 	{
 	}
@@ -3055,10 +2539,10 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_pulse_stim()
 	{
 	}
@@ -3071,31 +2555,31 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_random_voice()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(WeatherTransition), Member = "ForceUnmanagedWeatherStage")]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_random_weather()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[Calls(Type = typeof(FPSLogger), Member = "StopRecording")]
 	[Calls(Type = typeof(FPSLogger), Member = "StartRecording")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_record_fps()
 	{
@@ -3106,33 +2590,31 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(Utils), Member = "RestoreView")]
 	public static void CONSOLE_restore_view()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GunItem), Member = "AddRoundsToClip")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
 	[Calls(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GunItem), Member = "AddRoundsToClip")]
+	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_revolver()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GunItem), Member = "AddRoundsToClip")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
-	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "AddItemCONSOLE")]
 	[Calls(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GunItem), Member = "AddRoundsToClip")]
+	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_rifle()
 	{
 	}
@@ -3145,17 +2627,17 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ToxicFogManager), Member = "SetAccumulationPercent")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_toxicfog_full()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[CallerCount(Count = 0)]
 	public static void CONSOLE_toxicfog_pause()
 	{
 	}
@@ -3176,37 +2658,37 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsFloat")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ToxicFogManager), Member = "SetAccumulationPercent")]
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsFloat")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "SetAccumulationPercent")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_toxicfog_set()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[Calls(Type = typeof(InputManager), Member = "StopVibration")]
 	public static void CONSOLE_rumble()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_safezone()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "ForceSaveGame")]
-	[Calls(Type = typeof(Panel_SaveIcon), Member = "StartSaveIconAnimation")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "ForceSaveGame")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_SaveIcon), Member = "StartSaveIconAnimation")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_save()
 	{
 	}
@@ -3218,38 +2700,36 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "LoadSceneWithLoadingScreen")]
-	[Calls(Type = typeof(uConsole), Member = "TurnOff")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopAll")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopAll")]
+	[Calls(Type = typeof(uConsole), Member = "TurnOff")]
+	[Calls(Type = typeof(GameManager), Member = "LoadSceneWithLoadingScreen")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_scene()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(SceneManager), Member = "AddLayer")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_scene_addlayer()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(SceneManager), Member = "RemoveLayer")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_scene_removelayer()
 	{
@@ -3261,10 +2741,10 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_set_aurora_cine_colours()
 	{
 	}
@@ -3277,16 +2757,15 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
-	[Calls(Type = typeof(Enum), Member = "Parse")]
-	[Calls(Type = typeof(uConsole), Member = "GetInt")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetInt")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enum), Member = "Parse")]
+	[Calls(Type = typeof(Action_SetCinematicProperties), Member = "SetProperty")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_set_cinematicproperty()
 	{
 	}
@@ -3300,9 +2779,9 @@ public class ConsoleManager
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	public static void CONSOLE_set_condition()
 	{
 	}
@@ -3316,26 +2795,26 @@ public class ConsoleManager
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[CallerCount(Count = 0)]
 	public static void CONSOLE_set_fatigue()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_fixedDeltaTime()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_set_hours_played()
 	{
@@ -3349,33 +2828,32 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(string), Member = "JoinCore")]
 	[Calls(Type = typeof(HUDManager), Member = "SetHUDDisplayMode")]
 	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "JoinCore")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	public static void CONSOLE_set_hud_display_mode()
 	{
 	}
 
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(CameraEffects), Member = "SwitchImageFilter")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 9)]
 	public static void CONSOLE_set_image_filter()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_set_jump_creation()
 	{
 	}
@@ -3388,12 +2866,12 @@ public class ConsoleManager
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[Calls(Type = typeof(GridUI), Member = "ClearItems")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	public static void CONSOLE_set_nowhere_to_hide_banishment_ready()
 	{
 	}
@@ -3407,13 +2885,13 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
-	[Calls(Type = typeof(Enum), Member = "Parse")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(Enum), Member = "Parse")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
+	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_set_quality()
 	{
 	}
@@ -3432,45 +2910,41 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(Utils), Member = "TryParseTOD")]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_set_time()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSet")]
-	[Calls(Type = typeof(Weather), Member = "GetCustomWeatherSet")]
-	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
-	[Calls(Type = typeof(WeatherSetData), Member = "Prepare")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "WeatherNameToEnum")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "WeatherNameToEnum")]
 	[Calls(Type = typeof(Weather), Member = "ChooseWeatherSetOfType")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
+	[Calls(Type = typeof(Weather), Member = "GetCustomWeatherSet")]
+	[Calls(Type = typeof(WeatherSetData), Member = "Prepare")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSet")]
+	[CallsUnknownMethods(Count = 4)]
 	public static void CONSOLE_set_weather()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(ConsoleManager), Member = "SetWind")]
 	public static void CONSOLE_set_wind()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(ConsoleManager), Member = "SetWind")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(ConsoleManager), Member = "SetWind")]
 	public static void CONSOLE_set_wind_immediate()
 	{
 	}
@@ -3482,9 +2956,9 @@ public class ConsoleManager
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[CallerCount(Count = 0)]
 	public static void CONSOLE_suppress_blizzards()
 	{
 	}
@@ -3497,30 +2971,21 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ShaderComparison), Member = "Toggle")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(ShaderComparison), Member = "Toggle")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_shader_toggle()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsFloat")]
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsFloat")]
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsFloat")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsFloat")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsFloat")]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	public static void CONSOLE_shake_camera()
 	{
 	}
@@ -3545,27 +3010,26 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_show_decal_debug()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
 	[Calls(Type = typeof(Panel_HUD), Member = "ShowLocationReveal")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_show_location_reveal()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_show_lookat()
 	{
 	}
@@ -3574,17 +3038,16 @@ public class ConsoleManager
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
-	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
 	public static void CONSOLE_show_days_survived()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_show_fps()
 	{
 	}
@@ -3603,12 +3066,12 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_show_tod_slider()
 	{
 	}
@@ -3616,7 +3079,6 @@ public class ConsoleManager
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
 	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
 	public static void CONSOLE_show_running_temp_bonus()
 	{
@@ -3629,10 +3091,10 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_show_unknown_timeofday()
 	{
 	}
@@ -3649,14 +3111,14 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleManager), Member = "SetSkillLevel")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConsoleManager), Member = "SetSkillLevel")]
 	public static void CONSOLE_skill_archery_level()
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleManager), Member = "SetSkillPoints")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConsoleManager), Member = "SetSkillPoints")]
 	public static void CONSOLE_skill_firestarting()
 	{
 	}
@@ -3685,8 +3147,8 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleManager), Member = "SetSkillLevel")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConsoleManager), Member = "SetSkillLevel")]
 	public static void CONSOLE_skill_carcassharvesting_level()
 	{
 	}
@@ -3715,8 +3177,8 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleManager), Member = "SetSkillPoints")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConsoleManager), Member = "SetSkillPoints")]
 	public static void CONSOLE_skill_icefishing()
 	{
 	}
@@ -3745,8 +3207,8 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleManager), Member = "SetSkillLevel")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConsoleManager), Member = "SetSkillLevel")]
 	public static void CONSOLE_skill_toolrepair_level()
 	{
 	}
@@ -3769,15 +3231,15 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_skip_fade_on_load()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_skip_delay_spawn_audio()
 	{
 	}
@@ -3796,35 +3258,36 @@ public class ConsoleManager
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Map), Member = "DoNearbyDetailsCheck")]
 	[Calls(Type = typeof(Panel_Map), Member = "Enable")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Panel_Map), Member = "DoNearbyDetailsCheck")]
 	public static void CONSOLE_survey()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Map), Member = "ClearData")]
 	[Calls(Type = typeof(MapDetailManager), Member = "LockAll")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_survey_clear()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[CallerCount(Count = 0)]
 	public static void CONSOLE_leanto()
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleManager), Member = "spawn_common")]
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[Calls(Type = typeof(ConsoleManager), Member = "spawn_common")]
 	public static void CONSOLE_spawn_aurorawolf()
 	{
 	}
@@ -3837,10 +3300,10 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[Calls(Type = typeof(ConsoleManager), Member = "spawn_common")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[Calls(Type = typeof(ConsoleManager), Member = "spawn_common")]
 	public static void CONSOLE_spawn_bear()
 	{
 	}
@@ -3853,18 +3316,18 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleManager), Member = "spawn_common")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[Calls(Type = typeof(ConsoleManager), Member = "spawn_common")]
 	public static void CONSOLE_spawn_bear_old()
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleManager), Member = "spawn_common")]
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[Calls(Type = typeof(ConsoleManager), Member = "spawn_common")]
 	public static void CONSOLE_spawn_doe()
 	{
 	}
@@ -3877,42 +3340,42 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleManager), Member = "spawn_common")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[Calls(Type = typeof(ConsoleManager), Member = "spawn_common")]
 	public static void CONSOLE_spawn_rabbit()
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleManager), Member = "spawn_common")]
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[Calls(Type = typeof(ConsoleManager), Member = "spawn_common")]
 	public static void CONSOLE_spawn_stag()
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleManager), Member = "spawn_common")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[Calls(Type = typeof(ConsoleManager), Member = "spawn_common")]
 	public static void CONSOLE_spawn_wolf()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ConsoleManager), Member = "spawn_common")]
 	public static void CONSOLE_spawn_wolf_grey()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
 	[Calls(Type = typeof(ConsoleManager), Member = "spawn_common")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[CallerCount(Count = 0)]
 	public static void CONSOLE_spawn_grey_wolf_aurora()
 	{
 	}
@@ -3940,12 +3403,12 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(SprainedAnkle), Member = "SprainedAnkleStart")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(SprainedAnkle), Member = "SprainedAnkleStart")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_sprain_ankle_nofx_unique()
 	{
 	}
@@ -3965,61 +3428,58 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(SprainedWrist), Member = "SprainedWristStart")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(SprainedWrist), Member = "SprainedWristStart")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_sprain_wrist_nofx()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetUnusedGameId")]
-	[Calls(Type = typeof(GameManager), Member = "LoadSceneAsynchronously")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetUnusedGameId")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
-	[Calls(Type = typeof(GameManager), Member = "DestroySandboxManager")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetSceneAt")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[Calls(Type = typeof(GameManager), Member = "DestroySandboxManager")]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetUnusedGameId")]
+	[Calls(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(GameManager), Member = "LoadSceneAsynchronously")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
+	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void CONSOLE_sandbox()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetSceneAt")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private static SceneSet GetSceneSetFromLoadedScenes()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetUnusedGameId")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(GameManager), Member = "DestroyStoryManager")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetUnusedGameId")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	public static void CONSOLE_story()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_stagger_nodecanvasupdate()
 	{
 	}
@@ -4034,42 +3494,41 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_suppress_breath_fx()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_suppress_hypothermia()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_suppress_frostbite()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
+	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 6)]
 	public static void CONSOLE_teleport()
 	{
 	}
@@ -4078,17 +3537,15 @@ public class ConsoleManager
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(TerrainRenderingManager), Member = "ForceDisableTerrainTrees")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(TerrainRenderingManager), Member = "ForceDisableTerrainTrees")]
 	public static void CONSOLE_terrain_disabletrees()
 	{
 	}
 
-	[Calls(Type = typeof(RenderObjectInstance), Member = "IsCategoryEnabled")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableCategory")]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "IsCategoryEnabled")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "IsCategoryEnabled")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableCategory")]
 	public static void CONSOLE_terrain_disableinstancedtrees()
 	{
 	}
@@ -4102,9 +3559,9 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_enable_audio_use_static_check()
 	{
 	}
@@ -4122,12 +3579,11 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableAll")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(RenderObjectInstance), Member = "AllEnabled")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "AllEnabled")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableAll")]
 	public static void CONSOLE_enable_renderobjectinstances()
 	{
 	}
@@ -4137,7 +3593,6 @@ public class ConsoleManager
 	[Calls(Type = typeof(RenderObjectInstance), Member = "AllEnabled")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableAll")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "AllEnabled")]
 	public static void CONSOLE_enable_renderobjectinstances_norenderers()
 	{
 	}
@@ -4148,10 +3603,10 @@ public class ConsoleManager
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
-	[CallerCount(Count = 0)]
 	public static void CONSOLE_enable_renderobjectinstances_frustumtest()
 	{
 	}
@@ -4160,7 +3615,6 @@ public class ConsoleManager
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(Utils), Member = "EnableShadows")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(Utils), Member = "EnableShadows")]
 	public static void CONSOLE_enable_shadows()
 	{
 	}
@@ -4172,70 +3626,70 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_enable_ai_frustum_culling()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "GetInt")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_texture_streaming_budget()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsFloat")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_texel_density()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_texture_streaming_caching()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableAimBreathing")]
+	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableAllAimingMotion")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableAimBreathing")]
-	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableAllAimingMotion")]
 	public static void CONSOLE_disable_aim_breath()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableAimSway")]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableAllAimingMotion")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_disable_aim_sway()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableAimStamina")]
+	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableAllAimingMotion")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
-	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableAllAimingMotion")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_disable_aim_stamina()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableAllAimingMotion")]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableAimShake")]
+	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableAllAimingMotion")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
@@ -4243,12 +3697,12 @@ public class ConsoleManager
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableAmbientSway")]
+	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableAllAimingMotion")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "IsAmbientSwayDisabled")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
-	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableAmbientSway")]
-	[CalledBy(Type = typeof(Panel_Debug), Member = "DisableAllAimingMotion")]
 	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_disable_ambient_sway()
 	{
@@ -4259,28 +3713,27 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "DropLitItemInHand")]
-	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[Calls(Type = typeof(PlayerManager), Member = "DropLitItemInHand")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_drop_lit_item_in_hands()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "MaybeResetCurrentWeapon")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Inventory), Member = "DropAndScatterItems")]
+	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_drop_scatter_item_in_hands()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_disable_aim_depth_of_field()
 	{
 	}
@@ -4301,24 +3754,25 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_HUD), Member = "SetConditionLabelDepth")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
 	[Calls(Type = typeof(AccelTimePopup), Member = "SetActive")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(Panel_HUD), Member = "SetConditionLabelDepth")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_timeofday_display()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_timescale()
 	{
 	}
@@ -4328,12 +3782,12 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(TrustManager), Member = "AddToTrustValue")]
-	[Calls(Type = typeof(uConsole), Member = "GetInt")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(uConsole), Member = "GetInt")]
+	[Calls(Type = typeof(TrustManager), Member = "AddToTrustValue")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_trust_add()
 	{
 	}
@@ -4352,16 +3806,16 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
 	public static void CONSOLE_ui_height()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[CallerCount(Count = 0)]
 	public static void CONSOLE_ui_width()
 	{
 	}
@@ -4380,40 +3834,40 @@ public class ConsoleManager
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_unequip_immediate()
 	{
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
+	[Calls(Type = typeof(uConsole), Member = "GetBool")]
 	public static void CONSOLE_unlimited_sprint()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(GearItemObjectExtensions), Member = "GetBestGearItemWithName")]
+	[Calls(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
 	[CallsUnknownMethods(Count = 3)]
 	public static void CONSOLE_use_best_gearitem()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void CONSOLE_use_legacyloading()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerVoice), Member = "SetPlayerVoicePersona")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerVoice), Member = "SetPlayerVoicePersona")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void CONSOLE_voice_female()
 	{
 	}
@@ -4426,40 +3880,42 @@ public class ConsoleManager
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "NextParameterIsBool")]
 	[Calls(Type = typeof(uConsole), Member = "GetBool")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_vsync()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[Calls(Type = typeof(FlyMode), Member = "TeleportPlayerAndExit")]
-	[Calls(Type = typeof(FlyMode), Member = "Warp")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(FlyMode), Member = "Warp")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(string), Member = "JoinCore")]
-	[Calls(Type = typeof(uConsole), Member = "GetAllParameters")]
-	[Calls(Type = typeof(ConsoleManager), Member = "TryGetWarpToPosition")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConsoleManager), Member = "TryGetWarpToPosition")]
+	[Calls(Type = typeof(uConsole), Member = "GetAllParameters")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[Calls(Type = typeof(string), Member = "JoinCore")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(string), Member = "Contains")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(FlyMode), Member = "Warp")]
+	[Calls(Type = typeof(FlyMode), Member = "Warp")]
+	[Calls(Type = typeof(FlyMode), Member = "TeleportPlayerAndExit")]
+	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 14)]
 	public static void CONSOLE_warp()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "SetToken")]
-	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "GetInstance")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(GameManager), Member = "SaveProfileSettingsAndDisplayHUDMessage")]
+	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "GetInstance")]
+	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "SetToken")]
+	[CallsUnknownMethods(Count = 1)]
 	private static void SaveToken(string token)
 	{
 	}
@@ -4467,38 +3923,37 @@ public class ConsoleManager
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_warp")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "TryGetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "TryGetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "TryGetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "TryGetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "TryGetFloat")]
 	[Calls(Type = typeof(Quaternion), Member = "set_eulerAngles")]
 	private static bool TryGetWarpToPosition(out Vector3 pos, out Quaternion rot)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref pos) = null;
-		System.Runtime.CompilerServices.Unsafe.As<Quaternion, @null>(ref rot) = null;
-		return default(bool);
+		pos = default(Vector3);
+		rot = default(Quaternion);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(WellFed), Member = "WellFedStart")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(WellFed), Member = "WellFedStart")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void CONSOLE_well_fed()
 	{
 	}
 
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_xpmode")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 69)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 68)]
 	private static GameModeConfig GetGameModeConfig(string name)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_xpmode")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_xpmode_keep_inventory")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
@@ -4509,15 +3964,13 @@ public class ConsoleManager
 	[Calls(Type = typeof(ExperienceModeManager), Member = "SetGameModeConfig")]
 	[Calls(Type = typeof(Inventory), Member = "DestroyAllGear")]
 	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_xpmode")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_xpmode_keep_inventory")]
 	[CallsUnknownMethods(Count = 4)]
 	public static void CONSOLE_xpmode(bool resetInventory)
 	{
 	}
 
-	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_xpmode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConsoleManager), Member = "CONSOLE_xpmode")]
 	public static void CONSOLE_xpmode()
 	{
 	}
@@ -4529,7 +3982,7 @@ public class ConsoleManager
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
 	[Calls(Type = typeof(uConsole), Member = "GetInt")]
 	[Calls(Type = typeof(LoadScene), Member = "Activate")]
 	[CallsUnknownMethods(Count = 2)]
@@ -4538,7 +3991,7 @@ public class ConsoleManager
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
 	[Calls(Type = typeof(uConsole), Member = "GetInt")]
 	[Calls(Type = typeof(LoadScene), Member = "Activate")]
 	[CallsUnknownMethods(Count = 2)]
@@ -4553,56 +4006,65 @@ public class ConsoleManager
 		return default(WeatherStage);
 	}
 
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_rabbit")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_moose")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_stag")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_aurorawolf")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_aurorabear")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_bear")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_bear_challenge")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_bear_old")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_doe")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_moose")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_rabbit")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_stag")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_wolf")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_wolf_grey")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_grey_wolf_aurora")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_wolf")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_bear_old")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_aurorawolf")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_bear")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_aurorabear")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_spawn_bear_challenge")]
-	[Calls(Type = typeof(UnityEngine.AddressableAssets.AddressablesImpl), Member = "InstantiateAsync")]
-	[Calls(Type = typeof(InstantiationParameters), Member = ".ctor")]
-	[Calls(Type = typeof(Addressables), Member = "LoadResourceLocationsAsync")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Addressables), Member = "LoadResourceLocationsAsync")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(Type = typeof(Addressables), Member = "Release")]
+	[Calls(Type = typeof(InstantiationParameters), Member = ".ctor")]
+	[Calls(TypeFullName = "UnityEngine.AddressableAssets.AddressablesImpl", Member = "InstantiateAsync")]
+	[Calls(Type = typeof(Action<>), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "add_Completed")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private static void spawn_common(string prefabName, float dist)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(_003C_003Ec__DisplayClass472_0), Member = "<spawn_common>b__0")]
-	[Calls(Type = typeof(ObjectGuid), Member = "MaybeAttachObjectGuidAndRegister")]
-	[Calls(Type = typeof(MoveAgent), Member = "Warp")]
-	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
-	[Calls(Type = typeof(BaseAi), Member = "CreateMoveAgent")]
-	[Calls(Type = typeof(BaseAi), Member = "Despawn")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsDeduplicatedMethods(Count = 13)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BaseAi), Member = "CreateMoveAgent")]
+	[Calls(Type = typeof(BaseAi), Member = "GetMoveAgent")]
+	[Calls(Type = typeof(MoveAgent), Member = "Warp")]
+	[Calls(Type = typeof(BaseAi), Member = "Despawn")]
+	[Calls(Type = typeof(ObjectGuid), Member = "MaybeAttachObjectGuidAndRegister")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 12)]
 	private static void set_spawn_position(GameObject go, float dist)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 29)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "Initialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Component), Member = "GetComponent")]
-	[Calls(Type = typeof(GearNames), Member = "GetBaseName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 22)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[Calls(Type = typeof(AssetHelper), Member = "ValidateKey")]
+	[Calls(Type = typeof(AssetReferenceWithComponent<>), Member = "GetOrLoadTypedAsset")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(GearNames), Member = "GetPrefixedName")]
+	[Calls(Type = typeof(GearNames), Member = "GetBaseName")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(Addressables), Member = "Release")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 27)]
 	private static void StoreAutoCompleteGearNames()
 	{
 	}
@@ -4616,18 +4078,18 @@ public class ConsoleManager
 		return null;
 	}
 
-	[Calls(Type = typeof(Panel_Map), Member = "AddMapMarkerToMap")]
-	[Calls(Type = typeof(uConsole), Member = "GetString")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Map), Member = "AddMapMarkerToMap")]
+	[CallsUnknownMethods(Count = 1)]
 	private static void CONSOLE_mapmarker_add()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Map), Member = "RemoveMapMarkerFromMap")]
 	[CallsUnknownMethods(Count = 1)]
 	private static void CONSOLE_mapmarker_remove()
@@ -4641,29 +4103,30 @@ public class ConsoleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Map), Member = "RevealCurrentScene")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Map), Member = "RevealCurrentScene")]
+	[CallsUnknownMethods(Count = 1)]
 	private static void CONSOLE_map_reveal()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(uConsole), Member = "GetString")]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Map), Member = "UnlockRegionMap")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private static void CONSOLE_map_unlock_region()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetInt")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(uConsole), Member = "GetInt")]
 	private static void CONSOLE_map_screenshot()
 	{
 	}
@@ -4679,115 +4142,91 @@ public class ConsoleManager
 	{
 	}
 
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_archery")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_firestarting")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_gunsmithing")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_carcassharvesting")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_clothingrepair")]
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_cooking")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_icefishing")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_rifle")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_toolrepair")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_revolver")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_archery")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_cooking")]
-	[Calls(Type = typeof(SkillNotify), Member = "MaybeShowLevelUp")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_icefishing")]
-	[Calls(Type = typeof(SkillNotify), Member = "MaybeShowPointIncrease")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallerCount(Count = 10)]
 	[Calls(Type = typeof(SkillsManager), Member = "GetSkill")]
 	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[Calls(Type = typeof(SkillsManager), Member = "GetTierName")]
-	[CallerCount(Count = 10)]
 	[Calls(Type = typeof(uConsole), Member = "GetInt")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[Calls(Type = typeof(Skill), Member = "SetPoints")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(SkillNotify), Member = "MaybeShowPointIncrease")]
+	[Calls(Type = typeof(SkillsManager), Member = "GetTierName")]
+	[Calls(Type = typeof(SkillNotify), Member = "MaybeShowLevelUp")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private static void SetSkillPoints(string command, SkillType skillType, SkillsManager.PointAssignmentMode mode)
 	{
 	}
 
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_firestarting_level")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_revolver_level")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_toolrepair_level")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_rifle_level")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_icefishing_level")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_cooking_level")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_clothingrepair_level")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_carcassharvesting_level")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_gunsmithing_level")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_archery_level")]
-	[Calls(Type = typeof(SkillsManager), Member = "GetTierName")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_firestarting_level")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_gunsmithing_level")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_carcassharvesting_level")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_clothingrepair_level")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_cooking_level")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_icefishing_level")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_rifle_level")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_toolrepair_level")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_skill_revolver_level")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(SkillsManager), Member = "GetSkill")]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetInt")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[Calls(Type = typeof(Skill), Member = "SetPoints")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(uConsole), Member = "GetInt")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[Calls(Type = typeof(SkillsManager), Member = "GetSkill")]
+	[Calls(Type = typeof(SkillsManager), Member = "GetTierName")]
 	[Calls(Type = typeof(SkillNotify), Member = "MaybeShowLevelUp")]
-	[CallerCount(Count = 10)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private static void SetSkillLevel(string command, SkillType skillType, SkillsManager.PointAssignmentMode mode)
 	{
 	}
 
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_feat_booksmarts")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_feat_coldfusion")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_feat_efficientmachine")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_feat_firemaster")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_feat_freerunner")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_feat_snowwalker")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_feat_experttrapper")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_feat_firemaster")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_feat_blizzardwalker")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_feat_straighttoheart")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_feat_efficientmachine")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_feat_blizzardwalker")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_feat_nightwalker")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_feat_booksmarts")]
-	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
-	[Calls(Type = typeof(FeatsManager), Member = "GetFeat")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 10)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_feat_coldfusion")]
+	[Calls(Type = typeof(FeatsManager), Member = "GetFeat")]
+	[Calls(Type = typeof(uConsole), Member = "GetNumParameters")]
+	[Calls(Type = typeof(uConsole), Member = "GetFloat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private static void SetFeat(string command, FeatType featType)
 	{
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Wind), Member = "StartPhaseImmediate")]
-	[Calls(Type = typeof(Wind), Member = "StartPhase")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_wind")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_wind_immediate")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Wind), Member = "DirectionToAngle")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Utils), Member = "GetRandomEnum")]
+	[Calls(Type = typeof(Wind), Member = "DirectionToAngle")]
+	[Calls(Type = typeof(Wind), Member = "StartPhase")]
+	[Calls(Type = typeof(Wind), Member = "StartPhaseImmediate")]
+	[CallsUnknownMethods(Count = 3)]
 	public static void SetWind(string windName, string windDir, bool immediate)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkDurationCallbackInfo), Member = "get_fEstimatedDuration")]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	private static void AudioCallback(object cookie, AkCallbackType type, object callbackInfo)
 	{
 	}

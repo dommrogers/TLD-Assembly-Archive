@@ -14,25 +14,24 @@ internal sealed class AmbientOcclusionRenderer : PostProcessEffectRenderer<Ambie
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool IsAmbientOnly(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
+	[CallsUnknownMethods(Count = 2)]
 	public IAmbientOcclusionMethod Get()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	public override DepthTextureMode GetCameraFlags()
 	{
 		return default(DepthTextureMode);

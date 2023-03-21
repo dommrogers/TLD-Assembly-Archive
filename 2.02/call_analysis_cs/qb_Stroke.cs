@@ -9,29 +9,31 @@ public class qb_Stroke
 	private qb_Point curPoint;
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	public qb_Stroke()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	public qb_Point AddPoint(Vector3 position, Vector3 upVector, Vector3 dirVector)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 52)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 59)]
 	public List<qb_Point> GetPoints()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 29)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 35)]
 	public qb_Point GetCurPoint()
 	{
 		return null;

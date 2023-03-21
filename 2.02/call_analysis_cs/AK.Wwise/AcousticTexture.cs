@@ -11,7 +11,7 @@ public class AcousticTexture : BaseType
 	public override WwiseObjectReference ObjectReference
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
@@ -34,7 +34,7 @@ public class AcousticTexture : BaseType
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AcousticTexture()
 	{
 	}

@@ -22,11 +22,11 @@ public class Action_StartAnimatedInteraction : ActionTask
 	{
 	}
 
+	[CalledBy(Type = typeof(Action_StartAnimatedInteraction), Member = "OnUpdate")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[CalledBy(Type = typeof(Action_StartAnimatedInteraction), Member = "OnUpdate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void UpdateFade(float delta)
 	{
 	}
@@ -40,33 +40,34 @@ public class Action_StartAnimatedInteraction : ActionTask
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Action_StartAnimatedInteraction), Member = "OnUpdate")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool CanStart()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Action_StartAnimatedInteraction), Member = "OnUpdate")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CalledBy(Type = typeof(Action_StartAnimatedInteraction), Member = "OnUpdate")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 14)]
 	private void DoWork()
 	{
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	private void OnWorkDone()
 	{
 	}

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -11,35 +10,36 @@ public class SpawnRegionAnimalTableSO : ScriptableObject
 
 	private float m_TotalOdds;
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(SpawnRegionAnimalTableSO), Member = "PickSpawnAnimal")]
 	[CalledBy(Type = typeof(SpawnRegion), Member = "InstantiateSpawnFromSaveData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(SpawnRegionAnimalTableSO), Member = "PickSpawnAnimal")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	public AssetReferenceAnimalPrefab FindAnimalPrefab(string assetReferenceGUID)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 18)]
-	[CalledBy(Type = typeof(SpawnRegionAnimalTableSO), Member = "FindAnimalPrefab")]
-	[CalledBy(Type = typeof(SpawnRegion), Member = "InstantiateAndPlaceSpawn")]
-	[CalledBy(Type = typeof(SpawnRegion), Member = "Spawn")]
-	[CalledBy(Type = typeof(SpawnRegion), Member = "GetSpawnablePrefabName")]
 	[CalledBy(Type = typeof(SpawnRegion), Member = "Start")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(SpawnRegionAnimalTableSO), Member = "GetEntryAnimalFromMode")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(SpawnRegion), Member = "GetSpawnablePrefabName")]
+	[CalledBy(Type = typeof(SpawnRegion), Member = "Spawn")]
+	[CalledBy(Type = typeof(SpawnRegion), Member = "InstantiateAndPlaceSpawn")]
+	[CalledBy(Type = typeof(SpawnRegionAnimalTableSO), Member = "FindAnimalPrefab")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(SpawnRegionAnimalTableSO), Member = "GetEntryAnimalFromMode")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 18)]
 	public AssetReferenceAnimalPrefab PickSpawnAnimal(WildlifeMode mode)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(SpawnRegionAnimalTableSO), Member = "PickSpawnAnimal")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private AssetReferenceAnimalPrefab GetEntryAnimalFromMode(SpawnAnimalTableEntry entry, WildlifeMode mode)
 	{

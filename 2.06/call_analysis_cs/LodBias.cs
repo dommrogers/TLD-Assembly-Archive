@@ -28,16 +28,16 @@ public class LodBias : MonoBehaviour
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	public float GetLodBias(QualityLodBias quality)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	public static float GetDefaultLodBias(QualityLodBias quality)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

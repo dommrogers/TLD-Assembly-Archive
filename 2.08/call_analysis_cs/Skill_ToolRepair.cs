@@ -11,16 +11,16 @@ public class Skill_ToolRepair : Skill
 
 	private static Skill_ToolRepairSaveData m_Skill_ToolRepairSaveData;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
@@ -30,15 +30,15 @@ public class Skill_ToolRepair : Skill
 	[CallsUnknownMethods(Count = 2)]
 	public int GetBaseChanceSuccess()
 	{
-		return default(int);
+		return 0;
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
-	[DeduplicatedMethod]
 	public float GetRepairTimeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -46,20 +46,15 @@ public class Skill_ToolRepair : Skill
 	[CallsUnknownMethods(Count = 2)]
 	public float GetItemConditionScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	public override string GetTierBenefits(int index)
 	{
 		return null;

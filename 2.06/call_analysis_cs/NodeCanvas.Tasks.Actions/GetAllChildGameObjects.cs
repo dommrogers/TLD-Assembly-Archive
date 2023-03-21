@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using UnityEngine;
@@ -21,9 +22,9 @@ public class GetAllChildGameObjects : ActionTask<Transform>
 		{
 		}
 
-		[CallsUnknownMethods(Count = 2)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 2)]
 		internal GameObject _003COnExecute_003Eb__4_0(Transform t)
 		{
 			return null;
@@ -37,32 +38,35 @@ public class GetAllChildGameObjects : ActionTask<Transform>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
 	[Calls(Type = typeof(GetAllChildGameObjects), Member = "Get")]
-	[CallsUnknownMethods(Count = 32)]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(Enumerable), Member = "ToList")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 29)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CalledBy(Type = typeof(GetAllChildGameObjects), Member = "Get")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(GetAllChildGameObjects), Member = "Get")]
 	[CalledBy(Type = typeof(GetAllChildGameObjects), Member = "OnExecute")]
-	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(GetAllChildGameObjects), Member = "Get")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[Calls(Type = typeof(GetAllChildGameObjects), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 20)]
 	private List<Transform> Get(Transform parent)
 	{
 		return null;

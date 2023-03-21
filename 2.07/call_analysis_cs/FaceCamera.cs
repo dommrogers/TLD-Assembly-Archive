@@ -11,11 +11,11 @@ public class FaceCamera : MonoBehaviour
 
 	private Vector3 m_TargetPosition;
 
-	[CallsUnknownMethods(Count = 12)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Transform), Member = "LookAt")]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 12)]
 	private void Update()
 	{
 	}

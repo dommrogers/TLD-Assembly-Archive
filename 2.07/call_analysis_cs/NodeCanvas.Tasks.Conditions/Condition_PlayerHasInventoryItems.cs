@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using MissionTypes;
@@ -20,18 +19,18 @@ public class Condition_PlayerHasInventoryItems : ConditionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 53)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(int), Member = "ToString")]
-		[Calls(Type = typeof(string), Member = "Substring")]
-		[Calls(Type = typeof(string), Member = "StartsWith")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(int), Member = "ToString")]
-		[Calls(Type = typeof(NCUtils), Member = "IsValidRequirementIndex")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[Calls(Type = typeof(NCUtils), Member = "IsValidRequirementIndex")]
+		[Calls(Type = typeof(int), Member = "ToString")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(Object), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "StartsWith")]
+		[Calls(Type = typeof(string), Member = "Substring")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 49)]
 		get
 		{
 			return null;
@@ -42,33 +41,34 @@ public class Condition_PlayerHasInventoryItems : ConditionTask
 	[Calls(Type = typeof(Condition_PlayerHasInventoryItems), Member = "Test")]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
-	[Calls(Type = typeof(Condition_PlayerHasInventoryItems), Member = "Test")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Condition_PlayerHasInventoryItems), Member = "Test")]
+	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnCustomEvent(EventData receivedEvent)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(NCUtils), Member = "BuildRequirementsDictionary")]
-	[Calls(Type = typeof(NCUtils), Member = "TestItemRequirements")]
 	[CalledBy(Type = typeof(Condition_PlayerHasInventoryItems), Member = "OnCheck")]
 	[CalledBy(Type = typeof(Condition_PlayerHasInventoryItems), Member = "OnCustomEvent")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(NCUtils), Member = "BuildRequirementsDictionary")]
+	[Calls(Type = typeof(NCUtils), Member = "TestItemRequirements")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool Test()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public Condition_PlayerHasInventoryItems()
 	{
 	}

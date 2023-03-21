@@ -28,16 +28,17 @@ public class SmokeWispTrail : MonoBehaviour
 	private Vector4 m_UVOffsets;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 3)]
 	public void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 18)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 18)]
 	public void Update()
 	{
 	}

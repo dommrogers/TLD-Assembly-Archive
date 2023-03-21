@@ -4,8 +4,8 @@ public class AuroraScreenInfo
 {
 	public string m_PrefabName;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public AuroraScreenInfo()
 	{
 	}

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -23,71 +22,70 @@ public class CraftingCategoryNavigation : MonoBehaviour
 
 	private bool m_Selected;
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "Enable")]
-	[CallsUnknownMethods(Count = 13)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(CraftingCategoryNavigation), Member = "SetCurrentIndex")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 13)]
 	public void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(CraftingCategoryNavigation), Member = "SetCurrentIndex")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnNavigationChanged(UIButton button)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CraftingCategoryNavigation), Member = "SetCurrentIndex")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(CraftingCategoryNavigation), Member = "SetCurrentIndex")]
-	[CallerCount(Count = 0)]
 	public void OnNavigateDown()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CraftingCategoryNavigation), Member = "SetCurrentIndex")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnNavigateUp()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "SetNavigationArea")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "SetNavigationArea")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "SetNavigationArea")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void SetSelected(bool selected)
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleVerticalNavigation")]
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(CraftingCategoryNavigation), Member = "OnNavigateUp")]
-	[CalledBy(Type = typeof(CraftingCategoryNavigation), Member = "OnNavigateDown")]
-	[CalledBy(Type = typeof(CraftingCategoryNavigation), Member = "OnNavigationChanged")]
 	[CalledBy(Type = typeof(CraftingCategoryNavigation), Member = "Initialize")]
+	[CalledBy(Type = typeof(CraftingCategoryNavigation), Member = "OnNavigationChanged")]
+	[CalledBy(Type = typeof(CraftingCategoryNavigation), Member = "OnNavigateDown")]
+	[CalledBy(Type = typeof(CraftingCategoryNavigation), Member = "OnNavigateUp")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "HandleVerticalNavigation")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(CategoryButton), Member = "SetButtonState")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 11)]
 	private void SetCurrentIndex(int index)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public CraftingCategoryNavigation()
 	{
 	}

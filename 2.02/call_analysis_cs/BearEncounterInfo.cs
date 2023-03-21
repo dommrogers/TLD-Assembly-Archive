@@ -12,8 +12,8 @@ public class BearEncounterInfo
 
 	public string m_MissionObjectId;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public BearEncounterInfo()
 	{
 	}

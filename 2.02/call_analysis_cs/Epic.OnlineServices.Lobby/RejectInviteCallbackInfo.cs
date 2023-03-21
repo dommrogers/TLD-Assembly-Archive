@@ -20,9 +20,9 @@ public class RejectInviteCallbackInfo : ICallbackInfo, ISettable
 		{
 			return default(Result);
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		private set
 		{
 		}
@@ -32,14 +32,14 @@ public class RejectInviteCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -47,16 +47,16 @@ public class RejectInviteCallbackInfo : ICallbackInfo, ISettable
 
 	public string InviteId
 	{
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 5)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -69,26 +69,26 @@ public class RejectInviteCallbackInfo : ICallbackInfo, ISettable
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(RejectInviteCallbackInfoInternal), Member = "get_InviteId")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(RejectInviteCallbackInfoInternal), Member = "get_ClientData")]
+	[Calls(Type = typeof(RejectInviteCallbackInfoInternal), Member = "get_InviteId")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	internal void Set(RejectInviteCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(RejectInviteCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(RejectInviteCallbackInfoInternal), Member = "get_InviteId")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public RejectInviteCallbackInfo()
 	{
 	}

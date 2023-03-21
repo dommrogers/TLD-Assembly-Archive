@@ -20,37 +20,36 @@ public class RadioTower : TimedHoldInteraction
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TimedHoldInteraction), Member = "InitializeInteraction")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallsUnknownMethods(Count = 1)]
 	public override void InitializeInteraction()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[Calls(Type = typeof(TimedHoldInteraction), Member = "BeginHold")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TimedHoldInteraction), Member = "BeginHold")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void BeginHold()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
 	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public override bool PerformInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void CancelHold()
 	{
 	}
@@ -68,9 +67,9 @@ public class RadioTower : TimedHoldInteraction
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public RadioTower()
 	{
 	}

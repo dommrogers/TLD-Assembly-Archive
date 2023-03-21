@@ -38,7 +38,7 @@ public class ParlayDebug : MonoBehaviour
 		[CallsDeduplicatedMethods(Count = 1)]
 		internal int _003CUpdate_003Eb__4_0(string a, string b)
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -53,40 +53,46 @@ public class ParlayDebug : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 31)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Sort")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 29)]
 	private void Update()
 	{
 	}
 
 	[CalledBy(Type = typeof(ParlayDebug), Member = "SetText")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 12)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetTextInternal(string tag, string title, string text, float duration)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ParlayDebug), Member = "SetTextInternal")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static void SetText(string tag, string title, string text, float duration = 0f)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ResetInternal()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Reset()
 	{

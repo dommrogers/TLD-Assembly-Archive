@@ -9,21 +9,21 @@ internal struct SessionSearchGetSearchResultCountOptionsInternal : ISettable, ID
 {
 	private int m_ApiVersion;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void Set(SessionSearchGetSearchResultCountOptions other)
 	{
 	}
 
+	[CalledBy(Type = typeof(SessionSearch), Member = "GetSearchResultCount")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(SessionSearch), Member = "GetSearchResultCount")]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

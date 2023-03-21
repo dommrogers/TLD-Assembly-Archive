@@ -14,7 +14,7 @@ public class LoadSceneSaveDataProxy
 	public string m_LockSerialized;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public LoadSceneSaveDataProxy()
 	{
 	}

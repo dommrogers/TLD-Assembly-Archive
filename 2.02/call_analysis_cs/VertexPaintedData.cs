@@ -15,37 +15,37 @@ public class VertexPaintedData : ScriptableObject
 
 	private Mesh m_Mesh;
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Mesh), Member = "set_colors")]
 	[CalledBy(Type = typeof(VertexPaintedMesh), Member = "LoadData")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Mesh), Member = "set_colors")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public void SetMesh(Mesh mesh)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Mesh), Member = "set_colors")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void ResetMesh()
 	{
 	}
 
-	[Calls(Type = typeof(Mesh), Member = "set_colors")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Mesh), Member = "get_vertices")]
 	[Calls(Type = typeof(Color), Member = "Lerp")]
+	[Calls(Type = typeof(Mesh), Member = "set_colors")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public void PaintVertexes(Transform transform, Color colour, PaintVertexDelegate paintVertexDelegate)
 	{
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public VertexPaintedData()
 	{
 	}

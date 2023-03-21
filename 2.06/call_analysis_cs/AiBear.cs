@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class AiBear : MonoBehaviour
 {
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void Start()
 	{
 	}

@@ -13,15 +13,15 @@ public class BodyHarvestItem : MonoBehaviour
 
 	public float m_HPDecreasePerHourUse;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public BodyHarvestItem()
 	{
 	}

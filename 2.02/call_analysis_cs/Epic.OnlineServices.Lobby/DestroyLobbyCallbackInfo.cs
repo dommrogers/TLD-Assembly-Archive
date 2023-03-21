@@ -32,14 +32,14 @@ public class DestroyLobbyCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -47,16 +47,16 @@ public class DestroyLobbyCallbackInfo : ICallbackInfo, ISettable
 
 	public string LobbyId
 	{
-		[CallerCount(Count = 5)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -70,25 +70,25 @@ public class DestroyLobbyCallbackInfo : ICallbackInfo, ISettable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(DestroyLobbyCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(DestroyLobbyCallbackInfoInternal), Member = "get_LobbyId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	internal void Set(DestroyLobbyCallbackInfoInternal? other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DestroyLobbyCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(DestroyLobbyCallbackInfoInternal), Member = "get_LobbyId")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public DestroyLobbyCallbackInfo()
 	{
 	}

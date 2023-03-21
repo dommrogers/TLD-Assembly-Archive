@@ -28,7 +28,7 @@ public class LeaderboardResultRow : IEnumerable<string>, IEnumerable
 		[CallsUnknownMethods(Count = 1)]
 		internal IntPtr _003Cget_Item_003Eb__0()
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
@@ -40,23 +40,23 @@ public class LeaderboardResultRow : IEnumerable<string>, IEnumerable
 
 		public UnityPlugin.Utils.GetStringDelegate _003C_003E9__0;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec__DisplayClass7_0()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(LeaderboardResultPlugin), Member = "LeaderboardResult_LeaderboardRow_Value")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(LeaderboardResultPlugin), Member = "LeaderboardResult_LeaderboardRow_Value")]
+		[CallsUnknownMethods(Count = 1)]
 		internal IntPtr _003CGetEnumerator_003Eb__0()
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
-	private sealed class _003CGetEnumerator_003Ed__7 : IEnumerator, IDisposable, IEnumerator<string>
+	private sealed class _003CGetEnumerator_003Ed__7 : IEnumerator<string>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -68,9 +68,9 @@ public class LeaderboardResultRow : IEnumerable<string>, IEnumerable
 
 		private string System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EString_003E_002ECurrent
 		{
-			[CallerCount(Count = 44)]
-			[DeduplicatedMethod]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -81,34 +81,34 @@ public class LeaderboardResultRow : IEnumerable<string>, IEnumerable
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CGetEnumerator_003Ed__7(int _003C_003E1__state)
 		{
 		}
 
+		[DebuggerHidden]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 6)]
-		[DebuggerHidden]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
-		[CallsUnknownMethods(Count = 12)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 12)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -133,8 +133,8 @@ public class LeaderboardResultRow : IEnumerable<string>, IEnumerable
 	public string Gamertag
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -145,8 +145,8 @@ public class LeaderboardResultRow : IEnumerable<string>, IEnumerable
 	public string Xuid
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -156,10 +156,10 @@ public class LeaderboardResultRow : IEnumerable<string>, IEnumerable
 
 	public string Item
 	{
-		[CallsUnknownMethods(Count = 12)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 12)]
 		get
 		{
 			return null;
@@ -172,7 +172,7 @@ public class LeaderboardResultRow : IEnumerable<string>, IEnumerable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
@@ -182,7 +182,7 @@ public class LeaderboardResultRow : IEnumerable<string>, IEnumerable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(double);
+			return 0.0;
 		}
 	}
 
@@ -203,11 +203,11 @@ public class LeaderboardResultRow : IEnumerable<string>, IEnumerable
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(TypeFullName = "DataPlatform.LeaderboardResultRows.<GetEnumerator>d__1", Member = "MoveNext")]
 	[CalledBy(Type = typeof(LeaderboardResultRows), Member = "get_Item")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(LeaderboardResultRows._003CGetEnumerator_003Ed__1), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 1)]
 	public LeaderboardResultRow(IntPtr self)
 	{
 	}

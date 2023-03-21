@@ -3,8 +3,8 @@ using UnityEngine;
 
 public static class ConsoleProDebug
 {
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void Clear()
 	{
 	}

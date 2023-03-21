@@ -24,20 +24,20 @@ public class PurifyWater : MonoBehaviour
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Start()
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "OnPurifyWaterComplete")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public float Use()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]

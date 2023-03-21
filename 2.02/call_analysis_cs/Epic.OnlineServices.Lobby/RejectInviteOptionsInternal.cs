@@ -17,9 +17,9 @@ internal struct RejectInviteOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(RejectInviteOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(RejectInviteOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 2)]
 		set
 		{
 		}
@@ -27,11 +27,11 @@ internal struct RejectInviteOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(RejectInviteOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(RejectInviteOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(RejectInviteOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(RejectInviteOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -44,17 +44,17 @@ internal struct RejectInviteOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(RejectInviteOptionsInternal), Member = "set_LocalUserId")]
-	[Calls(Type = typeof(RejectInviteOptionsInternal), Member = "set_InviteId")]
 	[CalledBy(Type = typeof(LobbyInterface), Member = "RejectInvite")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(RejectInviteOptionsInternal), Member = "set_InviteId")]
+	[Calls(Type = typeof(RejectInviteOptionsInternal), Member = "set_LocalUserId")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{

@@ -18,15 +18,16 @@ public class Action_SetBearPatrolPointsOfInterest : TLD_Action
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Action_SetBearPatrolPointsOfInterest), Member = "OnExecute")]
-	[Calls(Type = typeof(BaseAi), Member = "SetPointsOfInterest")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(TLD_Action), Member = "get_agent")]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[Calls(Type = typeof(BaseAi), Member = "SetPointsOfInterest")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void DoWork()
 	{
 	}

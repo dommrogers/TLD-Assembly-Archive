@@ -9,16 +9,17 @@ public class TaskAgent : BBParameter<UnityEngine.Object>
 {
 	public new UnityEngine.Object value
 	{
-		[CallerCount(Count = 1)]
-		[Calls(Type = typeof(GameObject), Member = "get_transform")]
 		[CalledBy(Type = typeof(TaskAgent), Member = "get_objectValue")]
-		[CallsUnknownMethods(Count = 2)]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[Calls(Type = typeof(GameObject), Member = "get_transform")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 60)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 69)]
 		set
 		{
 		}

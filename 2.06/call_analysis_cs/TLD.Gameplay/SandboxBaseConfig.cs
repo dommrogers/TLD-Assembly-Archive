@@ -1,5 +1,7 @@
-using System;
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.AddressableAssets;
+using TLD.SaveState;
 using TLD.Scenes;
 using UnityEngine;
 
@@ -23,18 +25,18 @@ public abstract class SandboxBaseConfig : GameModeConfig
 
 	public bool m_SaveAfterLoad;
 
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateDisplayedRegions")]
 	[CalledBy(Type = typeof(WorldMapChangedEvent), Member = "HasValidStartingRegionsForGameMode")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "UpdateDisplayedRegions")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsValidStartingRegion(RegionSpecification region)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CallsUnknownMethods(Count = 2)]
 	public RegionSpecification ValidateStartingRegion(RegionSpecification requestedRegion)
 	{
@@ -42,48 +44,50 @@ public abstract class SandboxBaseConfig : GameModeConfig
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SandboxBaseConfig), Member = "GetRandomRegionFromAllAvailable")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public RegionSpecification GetRandomStartingRegion()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[CallsUnknownMethods(Count = 1)]
 	public virtual bool CanSpawnIndoors()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public SceneSet GetSpawnSceneSet(RegionSpecification region)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool ShouldSpawnIndoors(RegionSpecification region)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(RegionSpecification), Member = "IsUnlocked")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
 	[CalledBy(Type = typeof(SandboxBaseConfig), Member = "GetRandomStartingRegion")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AssetHelper), Member = "TryLoadAssets")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(RegionSpecification), Member = "IsUnlocked")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 25)]
 	private static RegionSpecification GetRandomRegionFromAllAvailable()
 	{

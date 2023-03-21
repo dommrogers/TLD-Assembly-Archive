@@ -6,13 +6,16 @@ using System.Globalization;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.DialogueTrees;
+using NodeCanvas.Framework;
 using NodeCanvas.StateMachines;
 using NodeCanvas.Tasks.Actions;
 using TLD.AddressableAssets;
 using TLD.Interactions;
+using TLD.SaveState;
 using TLD.Serialization;
 using TLD.UI.Generics;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Timeline;
 
 public class DialogueModeRigFP : MonoBehaviour
@@ -43,9 +46,9 @@ public class DialogueModeRigFP : MonoBehaviour
 
 		public AssignedChoiceCategoryInfo[] m_CurrentAssignedChoiceCategoryInfo;
 
-		[CallsUnknownMethods(Count = 8)]
-		[CallerCount(Count = 1)]
 		[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SerializeAll")]
+		[CallerCount(Count = 1)]
+		[CallsUnknownMethods(Count = 8)]
 		public DialogueModeRigFPSaveData()
 		{
 		}
@@ -224,9 +227,9 @@ public class DialogueModeRigFP : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 44)]
-			[DeduplicatedMethod]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -237,16 +240,16 @@ public class DialogueModeRigFP : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CLoadAnimations_003Ed__250(int _003C_003E1__state)
 		{
 		}
@@ -258,28 +261,26 @@ public class DialogueModeRigFP : MonoBehaviour
 		{
 		}
 
-		[Calls(Type = typeof(DialogueModeRigFP), Member = "AbortLoad")]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceAnimControllerAndResumeState")]
+		[Calls(Type = typeof(DialogueModeRigFP), Member = "SetAnimationParameter_IsInDialogue")]
+		[Calls(Type = typeof(DialogueModeRigFP), Member = "GetBundleFilename")]
+		[Calls(Type = typeof(DialogueModeRigFP), Member = "GePrefabPath")]
+		[Calls(Type = typeof(AssetBundleManager), Member = "LoadBundleAsync")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(DialogueModeRigFP), Member = "RetrieveLoadedAnimators")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(CinematicAssets), Member = "LoadProps")]
+		[Calls(Type = typeof(CinematicAssets), Member = "ReParentProp")]
 		[Calls(Type = typeof(DialogueModeRigFP), Member = "AbortLoad")]
 		[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-		[Calls(Type = typeof(DialogueModeRigFP), Member = "AbortLoad")]
-		[Calls(Type = typeof(CinematicAssets), Member = "ReParentProp")]
-		[Calls(Type = typeof(CinematicAssets), Member = "ReParentProp")]
-		[Calls(Type = typeof(CinematicAssets), Member = "LoadProps")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(DialogueModeRigFP), Member = "RetrieveLoadedAnimators")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+		[CallsDeduplicatedMethods(Count = 8)]
 		[CallsUnknownMethods(Count = 11)]
-		[Calls(Type = typeof(AssetBundleManager), Member = "LoadBundleAsync")]
-		[Calls(Type = typeof(DialogueModeRigFP), Member = "GePrefabPath")]
-		[Calls(Type = typeof(DialogueModeRigFP), Member = "GetBundleFilename")]
-		[Calls(Type = typeof(DialogueModeRigFP), Member = "SetAnimationParameter_IsInDialogue")]
-		[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceAnimControllerAndResumeState")]
-		[CallsDeduplicatedMethods(Count = 9)]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(string), Member = "Concat")]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -581,33 +582,25 @@ public class DialogueModeRigFP : MonoBehaviour
 
 	private bool m_HandsReady;
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DialogueOptionsAnimationTree), Member = "InstantiateLabels")]
-	[CallsUnknownMethods(Count = 34)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetNPCAnimator")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceCameraFraming")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Animator), Member = "Play")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(DialogueOptionsAnimationTree), Member = "InstantiateLabels")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 34)]
 	public void Awake()
 	{
 	}
@@ -619,63 +612,60 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateEnd")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
 	[CalledBy(Type = typeof(_003CLoadAnimations_003Ed__250), Member = "MoveNext")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(AnimationUtils), Member = "HasParameter")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateEnd")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(AnimationUtils), Member = "HasParameter")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void SetAnimationParameter_IsInDialogue(bool isInDialogue)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionIn")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionOut")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "SetCameraFov")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "SetAnimationParameter_IsInDialogue")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "CheckLastAnimationRestore")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "DisableDialogue")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "ExitDialogueMode")]
-	[Calls(Type = typeof(NPC_Animation), Member = "SetAnimationParameter_IdleVariationIndex")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateLoadSequence")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateIdle")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsCameraCentered")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "RecenterCameraToDesired")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsNPCStatePlaying")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematicComplete")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "DisableDialogue")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTimeline")]
-	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTimeline")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "DisableDialogue")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematicComplete")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsNPCStatePlaying")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "RecenterCameraToDesired")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsCameraCentered")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateIdle")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateLoadSequence")]
 	[Calls(Type = typeof(AnimationUtils), Member = "IsAnyLayerInAnimationTransition")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "ExitDialogueMode")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "CheckLastAnimationRestore")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "SetAnimationParameter_IsInDialogue")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPC_Animation), Member = "SetAnimationParameter_IdleVariationIndex")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "SetCameraFov")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionOut")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionIn")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "LateSynchronizeAnimators")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 12)]
 	public void LateUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceAnimControllerAndResumeState")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "UnloadAnimations")]
@@ -684,13 +674,13 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnDialogueTreeFinished")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTransitionOut")]
 	[Calls(Type = typeof(DialogueTree), Member = "remove_OnDialogueFinished")]
 	[Calls(Type = typeof(DialogueTree), Member = "remove_OnDialogueStarted")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTransitionOut")]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	public void OnPlayerEndedDialogue()
 	{
 	}
@@ -700,14 +690,14 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "PerformInteraction")]
+	[CalledBy(Type = typeof(State_DialogueSubDT), Member = "StartDialogueTree")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(DialogueTree), Member = "add_OnDialogueFinished")]
 	[Calls(Type = typeof(DialogueTree), Member = "add_OnDialogueStarted")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTransitionIn")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "PerformInteraction")]
-	[CalledBy(Type = typeof(State_DialogueSubDT), Member = "StartDialogueTree")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	public void OnPlayerStartedDialogue()
 	{
 	}
@@ -730,27 +720,25 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(KnowledgeManager), Member = "GetNameIDFromDescID")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(KnowledgeManager), Member = "KnowledgeIsUnlocked")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(KnowledgeManager), Member = "KnowledgeIsUnlocked")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(KnowledgeManager), Member = "GetNameIDFromDescID")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void InitializeInteraction(BaseInteraction baseInteraction)
 	{
 	}
 
 	[CalledBy(Type = typeof(Phone), Member = "OnPhonePickupComplete")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnPlayerStartedDialogue")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnPlayerStartedDialogue")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void PerformInteraction()
 	{
 	}
@@ -764,45 +752,43 @@ public class DialogueModeRigFP : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsInTransition()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsInIdle()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool CanShowDialogueUI()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[CallsUnknownMethods(Count = 5)]
 	public bool RespectContrainsts()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetFilter(List<DialogueOptionTopic> filter, bool clearFilter)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "ProcessInteraction")]
 	[CalledBy(Type = typeof(Dialogue_MultipleChoiceNode), Member = "OnButtonSelected")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnChoiceSelected(int choiceIndex)
 	{
@@ -813,42 +799,21 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetCurrentTimelineTime")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatUInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(HUDManager), Member = "UpdateDebugLines")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(float), Member = "ToString")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetCurrentTimelineTime")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatUInt32")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public string GetDebugDialogueText()
 	{
 		return null;
@@ -867,42 +832,40 @@ public class DialogueModeRigFP : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsExitUIEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "LogChoices")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "LogChoices")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool MaybeGetAssignedChoiceCategory(int choiceIndex, string locId, out Dialogue_MultipleChoiceNode.ChoiceCategory category)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Dialogue_MultipleChoiceNode.ChoiceCategory, @null>(ref category) = null;
-		return default(bool);
+		category = default(Dialogue_MultipleChoiceNode.ChoiceCategory);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_dialogue_assign")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetChoiceInfo")]
 	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_dialogue_assign")]
 	[CallsUnknownMethods(Count = 6)]
 	public bool AssignCategory(int choiceIndex, Dialogue_MultipleChoiceNode.ChoiceCategory category)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 26)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_dialogue_logchoices")]
-	[Calls(Type = typeof(Debug), Member = "LogFormat")]
-	[Calls(Type = typeof(Debug), Member = "LogFormat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetAssignedSlot")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "MaybeGetAssignedChoiceCategory")]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "MaybeGetAssignedChoiceCategory")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetAssignedSlot")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Debug), Member = "LogFormat")]
+	[CallsUnknownMethods(Count = 26)]
 	public void LogChoices()
 	{
 	}
@@ -912,48 +875,47 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetChoiceInfo")]
+	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnCategoryAssigned(int choiceIndex, Dialogue_MultipleChoiceNode.ChoiceCategory category)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "LogChoices")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsUnknownMethods(Count = 3)]
 	private DialogueSequenceFP GetAssignedSlot(int choiceIndex)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "AssignCategory")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnCategoryAssigned")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 3)]
 	private DialogueChoiceInfo GetChoiceInfo(int choiceIndex)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLineComplete")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematicComplete")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLineComplete")]
 	[CallerCount(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool IsNPCStatePlaying(int hashState, int layer)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[CallsUnknownMethods(Count = 1)]
 	private void ExtractNPCMissionId()
 	{
@@ -970,86 +932,78 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 14)]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTransitionOut")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTimeline")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayLine")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayCinematic")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateIdle")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateIdle")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Awake")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnDestroy")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueTreeChoices")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateStart")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "DisableDialogue")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UpdateChoicesAfterFilterChange")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueTreeChoices")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnDestroy")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Awake")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateIdle")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateIdle")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayCinematic")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayLine")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTimeline")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTransitionOut")]
+	[CallerCount(Count = 14)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateStart")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void EnableDialogueSequenceFP(bool enabled)
 	{
 	}
 
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateStart")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateIdle")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCameraDesiredRotation")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCameraDesiredRotation")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
+	[CallsUnknownMethods(Count = 3)]
 	private void LimitCameraRotation()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "ExitDialogueMode")]
-	[Calls(Type = typeof(CinematicAssets), Member = "UnloadProps")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnDestroy")]
-	[Calls(Type = typeof(AssetBundleManager), Member = "UnloadBundle")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "ExitDialogueMode")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(AssetBundleManager), Member = "UnloadBundle")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(CinematicAssets), Member = "UnloadProps")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UnloadAnimations()
 	{
 	}
 
-	[Calls(Type = typeof(DialogueSequenceFP), Member = "UpdateText")]
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(DialogueSequenceFP), Member = "SetupNormalUILabelText")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(DialogueSequenceFP), Member = "SetChoiceEnabled")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetAvailableSlotForCategory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetAvailableSlotForCategory")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetAvailableSlotForCategory")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(DialogueSequenceFP), Member = "SetChoiceEnabled")]
+	[Calls(Type = typeof(DialogueSequenceFP), Member = "SetupNormalUILabelText")]
+	[Calls(Type = typeof(DialogueSequenceFP), Member = "UpdateText")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 17)]
 	private DialogueSequenceFP AssignChoiceToCategorySlot(Dialogue_MultipleChoiceNode.ChoiceCategory category, string dialogueChoiceText, int choiceIndex, float textSize)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "AssignHiddenChoiceToCategorySlot")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "AssignChoiceToCategorySlot")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "AssignHiddenChoiceToCategorySlot")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "AssignChoiceToCategorySlot")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 3)]
 	private DialogueSequenceFP GetAvailableSlotForCategory(Dialogue_MultipleChoiceNode.ChoiceCategory category)
 	{
 		return null;
@@ -1061,11 +1015,10 @@ public class DialogueModeRigFP : MonoBehaviour
 		return default(Dialogue_MultipleChoiceNode.ChoiceCategory);
 	}
 
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsUnknownMethods(Count = 4)]
 	private DialogueChoiceCategoryConfiguration GetCategoryConfiguration(Dialogue_MultipleChoiceNode.ChoiceCategory choiceCategory)
 	{
@@ -1073,46 +1026,45 @@ public class DialogueModeRigFP : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetAvailableSlotForCategory")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetAvailableSlotForCategory")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	private void AssignHiddenChoiceToCategorySlot(Dialogue_MultipleChoiceNode.ChoiceCategory category, string dialogueChoiceText, int choiceIndex)
 	{
 	}
 
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCategoryConfiguration")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateIdle")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UpdateChoicesAfterFilterChange")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueTreeChoices")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
-	[Calls(Type = typeof(DialogueSequenceFP), Member = "SetChoiceCategoryConfiguration")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueTreeChoices")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UpdateChoicesAfterFilterChange")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateIdle")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(FontManager), Member = "ResetFontsForCharacterSet")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(DialogueSequenceFP), Member = "SetChoiceEnabled")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "AssignHiddenChoiceToCategorySlot")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "AssignChoiceToCategorySlot")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "MaybeGetAssignedChoiceCategory")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCategoryConfiguration")]
 	[Calls(Type = typeof(DialogueSequenceFP), Member = "SetChoiceCategoryConfiguration")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "MaybeGetAssignedChoiceCategory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "AssignChoiceToCategorySlot")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "AssignHiddenChoiceToCategorySlot")]
-	[Calls(Type = typeof(DialogueSequenceFP), Member = "SetChoiceEnabled")]
-	[Calls(Type = typeof(FontManager), Member = "ResetFontsForCharacterSet")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 12)]
 	private void UpdateChoiceAssignment()
 	{
 	}
 
 	[CalledBy(Type = typeof(Dialogue_MultipleChoiceNode), Member = "OnExecute")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(VoiceOverItem), Member = "GetLocString")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(VoiceOverItem), Member = "GetLocString")]
 	[Calls(Type = typeof(VoiceOverItem), Member = "GetLocId")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 17)]
 	internal void SetDialogueTreeChoices(List<Dialogue_MultipleChoiceNode.Choice> dialogueChoices, int loopBackIndex)
 	{
 	}
@@ -1122,7 +1074,7 @@ public class DialogueModeRigFP : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool IsChoiceAcceptedByFilter(DialogueOptionTopic topic)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1132,129 +1084,122 @@ public class DialogueModeRigFP : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private uint PostAudioEvent(string soundID, GameObject go)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateIdle")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "ExitDialogueMode")]
-	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateIdle")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
+	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CallsUnknownMethods(Count = 1)]
 	private void StopPreviousAudio()
 	{
 	}
 
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateLoadSequence")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTransitionOut")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTransitionIn")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateIdle")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayLine")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayCinematicComplete")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateStart")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "DisableDialogue")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTimeline")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "DisableDialogue")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateStart")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayCinematicComplete")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayCinematic")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayLine")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateIdle")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTransitionIn")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTransitionOut")]
 	public void SetDialogueModeState(DialogueModeState dialogueModeState)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Awake")]
 	[CalledBy(Type = typeof(Phone), Member = "Awake")]
 	[CalledBy(Type = typeof(Phone), Member = "AssignBindingOverrides")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public Animator GetNPCAnimator()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Animator), Member = "get_runtimeAnimatorController")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CinematicManager), Member = "SwapFPController")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CinematicManager), Member = "SwapFPController")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Animator), Member = "get_runtimeAnimatorController")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void ReplaceFPController(DialogueControllerMode dialogueControllerMode)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionOut")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(_003CLoadAnimations_003Ed__250), Member = "MoveNext")]
-	[Calls(Type = typeof(CinematicAssets), Member = "UseLoadedControllerAndResumeState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CinematicManager), Member = "SwapFPController")]
-	[Calls(Type = typeof(Animator), Member = "get_runtimeAnimatorController")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CinematicManager), Member = "SwitchControllerAndResumeState")]
-	[Calls(Type = typeof(CinematicAssets), Member = "RestoreOriginalControllerAndResumeState")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CinematicManager), Member = "SwapFPController")]
-	[Calls(Type = typeof(CinematicManager), Member = "SwitchControllerAndResumeState")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnDestroy")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionOut")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(CinematicManager), Member = "SwitchControllerAndResumeState")]
+	[Calls(Type = typeof(CinematicManager), Member = "SwapFPController")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(CinematicAssets), Member = "RestoreOriginalControllerAndResumeState")]
+	[Calls(Type = typeof(Animator), Member = "get_runtimeAnimatorController")]
+	[Calls(Type = typeof(CinematicAssets), Member = "UseLoadedControllerAndResumeState")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void ReplaceAnimControllerAndResumeState(DialogueControllerMode dialogueControllerMode)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateEnd")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
-	[Calls(Type = typeof(CinematicManager), Member = "CheckAnimationRestored")]
-	[Calls(Type = typeof(CinematicManager), Member = "CheckAnimationRestored")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateEnd")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(CinematicManager), Member = "CheckAnimationRestored")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsUnknownMethods(Count = 3)]
 	private void CheckLastAnimationRestore()
 	{
 	}
 
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateIdle")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
+	[CallerCount(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
 	private void SetCameraFov()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private bool IsStatePlaying(int stateHash)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetTriggerIdle")]
-	[Calls(Type = typeof(AnimationUtils), Member = "HasParameter")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematicComplete")]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
-	[CallsUnknownMethods(Count = 19)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnNextDialogueRequested")]
-	[Calls(Type = typeof(Animator), Member = "StringToHash")]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
-	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetTriggerIdle")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetTriggerIdle")]
+	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Animator), Member = "StringToHash")]
+	[Calls(Type = typeof(AnimationUtils), Member = "HasParameter")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 19)]
 	private void ReturnToIdleAnimation()
 	{
 	}
@@ -1264,70 +1209,70 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "StopPreviousAudio")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateEnd")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "UnloadAnimations")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
-	[Calls(Type = typeof(PlayerManager), Member = "EquipLastItemInHands")]
-	[Calls(Type = typeof(PlayerManager), Member = "EnableCharacterController")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapSprings")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateEnd")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapSprings")]
+	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "EnableCharacterController")]
+	[Calls(Type = typeof(PlayerManager), Member = "EquipLastItemInHands")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "UnloadAnimations")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "StopPreviousAudio")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void ExitDialogueMode()
 	{
 	}
 
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionIn")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueModeState")]
-	[Calls(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
-	[Calls(Type = typeof(vp_FPSController), Member = "Stop")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(CinematicManager), Member = "ClearSavedAnimationState")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionIn")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(CinematicManager), Member = "ClearSavedAnimationState")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "LimitCameraRotation")]
+	[Calls(Type = typeof(vp_FPSController), Member = "Stop")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetCameraLayer")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnEnter_DialogueModeStateStart()
 	{
 	}
 
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateNone")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateEnd")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateNone")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueModeState")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateEnd")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateNone")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateNone")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void DisableDialogue()
 	{
 	}
 
-	[Calls(Type = typeof(NPC_Animation), Member = "SetAnimationParameter_IdleVariationIndex")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "SetAnimationParameter_IsInDialogue")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "CheckLastAnimationRestore")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "ExitDialogueMode")]
-	[Calls(Type = typeof(AnimationUtils), Member = "IsAnyLayerInAnimationTransition")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AnimationUtils), Member = "IsAnyLayerInAnimationTransition")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "ExitDialogueMode")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "DisableDialogue")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "CheckLastAnimationRestore")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "SetAnimationParameter_IsInDialogue")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPC_Animation), Member = "SetAnimationParameter_IdleVariationIndex")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update_DialogueModeStateEnd()
 	{
 	}
@@ -1352,33 +1297,32 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionIn")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "IsCameraCentered")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "LerpCameraFramingToDesired")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "IsCameraCentered")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionIn")]
 	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private Vector3 GetCharacterDesiredPosition()
 	{
 		return default(Vector3);
 	}
 
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionIn")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "IsCameraCentered")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "LimitCameraRotation")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "LerpCameraFramingToDesired")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "LimitCameraRotation")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "IsCameraCentered")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionIn")]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "LimitCameraRotation")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private Quaternion GetCameraDesiredRotation()
 	{
 		return default(Quaternion);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private Vector3 GetReferenceCameraForward()
 	{
@@ -1386,62 +1330,63 @@ public class DialogueModeRigFP : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private Vector3 GetReferenceCameraRight()
 	{
 		return default(Vector3);
 	}
 
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionIn")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "IsCameraCentered")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "LerpCameraFramingToDesired")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "IsCameraCentered")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionIn")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private Vector3 GetCameraDesiredLocalPosition()
 	{
 		return default(Vector3);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SerializeAll")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private int GetCurrentNPCIdleStateHash()
 	{
-		return default(int);
+		return 0;
 	}
 
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SerializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SerializeAll")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 15)]
 	private List<IdlePropInfo> GetCurrentIdlePropInfos()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "RestoreCurrentIdleDialogueModeRigFp")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Animator), Member = "Play")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "RestoreCurrentIdleDialogueModeRigFp")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
 	[CallsUnknownMethods(Count = 9)]
 	private void RestoreCurrentPermamentPropIdle(CinematicAssets.PermanentPropInfo permanentProp, List<IdlePropInfo> currentIdlePropInfos)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "DeserializeAll")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "RestoreCurrentPermamentPropIdle")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Animator), Member = "Play")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "RestoreCurrentPermamentPropIdle")]
+	[CallsUnknownMethods(Count = 4)]
 	private void RestoreCurrentIdleDialogueModeRigFp(int currentNpcIdleStateHash, List<IdlePropInfo> currentIdlePropInfos)
 	{
 	}
@@ -1457,30 +1402,30 @@ public class DialogueModeRigFP : MonoBehaviour
 		return null;
 	}
 
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCurrentIdlePropInfos")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(DialogueModeRigFPSaveData), Member = ".ctor")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(DialogueModeRigFPSaveData), Member = ".ctor")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCurrentNPCIdleStateHash")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCurrentIdlePropInfos")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 13)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceCameraFraming")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "RestoreCurrentIdleDialogueModeRigFp")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "FindDialogueModeRigFp")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "FindDialogueModeRigFp")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "RestoreCurrentIdleDialogueModeRigFp")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceCameraFraming")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void DeserializeAll(string text)
 	{
 	}
@@ -1494,23 +1439,23 @@ public class DialogueModeRigFP : MonoBehaviour
 
 	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
 	[CalledBy(Type = typeof(GameManager), Member = "OnGameQuit")]
-	[Calls(Type = typeof(InterfaceManager), Member = "RestorePanelsAfterSubtitle")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "RestorePanelsAfterSubtitle")]
 	public static void QuitGame()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Action_SetDialogueFraming), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_PlayAnimationState), Member = "OnExecute")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_dialogue_setanimationparameter")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_dialogue_setanimationstate")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_dialogue_setframing")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "DeserializeAll")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_dialogue_setanimationstate")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_dialogue_setanimationparameter")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_dialogue_setframing")]
+	[CalledBy(Type = typeof(Action_PlayAnimationState), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_SetDialogueFraming), Member = "OnExecute")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static DialogueModeRigFP FindDialogueModeRigFp(string NPC_MissionId)
 	{
 		return null;
@@ -1524,12 +1469,13 @@ public class DialogueModeRigFP : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateIdleUI")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "LateUpdate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	private void UpdateFromUnderCrosshair()
 	{
 	}
@@ -1542,42 +1488,43 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateIdleUI")]
-	[Calls(Type = typeof(DialogueSequenceFP), Member = "ProcessInteraction")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(InputManager), Member = "GetFirePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetMouseButtonDown")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "LateUpdate")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(InputManager), Member = "GetMouseButtonDown")]
+	[Calls(Type = typeof(InputManager), Member = "GetFirePressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(DialogueSequenceFP), Member = "ProcessInteraction")]
+	[CallsUnknownMethods(Count = 3)]
 	private void ProcessSelectionConfirm()
 	{
 	}
 
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueModeState")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematicComplete")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLineComplete")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "StopPreviousAudio")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueModeState")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateStart")]
-	[Calls(Type = typeof(vp_FPSController), Member = "Stop")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "LimitCameraRotation")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematicComplete")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLineComplete")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "LimitCameraRotation")]
+	[Calls(Type = typeof(vp_FPSController), Member = "Stop")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "StopPreviousAudio")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnEnter_DialogueModeStateIdle()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "SetCameraFov")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "UpdateChoiceAssignment")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	private void Update_DialogueModeStateIdle()
 	{
 	}
@@ -1592,70 +1539,57 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "PlayStatement")]
 	[CalledBy(Type = typeof(Dialogue_VoiceOverNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "PlayStatement")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
+	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(Type = typeof(VoiceOverItem), Member = "GetLocId")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "MaybeAutoAssignDialogueAnimationAndAudio")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
-	[Calls(Type = typeof(VoiceOverItem), Member = "GetLocId")]
-	[Calls(Type = typeof(string), Member = "Split")]
-	[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(VoiceOverItem), Member = "GetLocId")]
+	[CallsUnknownMethods(Count = 7)]
 	public void OnSpeech(string meta, Action onStatementFinish, string subtitlesText, IDialogueActor dialogueActor, VoiceOverItem voiceOverItem)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnSpeech")]
-	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Localization), Member = "Exists")]
+	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetDefaultAudioStartForDialogueLineFromLocId")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetDefaultStateNameForDialogueLineFromLocId")]
+	[Calls(Type = typeof(DialogueStatesTable), Member = "GetFirstStateKeyForState")]
+	[Calls(Type = typeof(DialogueStatesTable), Member = "GetFaceStateKeyForState")]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[Calls(Type = typeof(DialogueStatesTable), Member = "GetFirstStateKeyForState")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetDefaultStateNameForDialogueLineFromLocId")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetDefaultAudioStartForDialogueLineFromLocId")]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[Calls(Type = typeof(Localization), Member = "Exists")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(DialogueStatesTable), Member = "GetFaceStateKeyForState")]
+	[Calls(Type = typeof(AssetHelper), Member = "TryLoadAsset")]
+	[CallsUnknownMethods(Count = 11)]
 	private void MaybeAutoAssignDialogueAnimationAndAudio(DialogueStatement dialogueStatement, string locId)
 	{
 	}
 
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceSavedPosition")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceCameraFraming")]
-	[Calls(Type = typeof(Utils), Member = "ParseSubtitles")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(Dialogue_Cinematic), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
-	[Calls(Type = typeof(CinematicManager), Member = "MaybeSetFadedOutOnLoad")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CinematicManager), Member = "MaybeSetFadedOutOnLoad")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceCameraFraming")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceSavedPosition")]
+	[Calls(Type = typeof(Utils), Member = "ParseSubtitles")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
+	[CallsUnknownMethods(Count = 6)]
 	public void OnCinematicPlay(DialogueAnimationState dialogueAnimationState, string audioStart, string audioEnd, Action onCinematicFinish, TextAsset subtitleAsset)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Dialogue_TimelineCinematic), Member = "OnExecute")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
-	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceCameraFraming")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceCameraFraming")]
+	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnTimelinePlay(DialogueTimelineScript dialogueTimelineScript, Action onCinematicFinish)
 	{
 	}
@@ -1663,35 +1597,34 @@ public class DialogueModeRigFP : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool CanApplyCameraMotionToJoint()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Action_SetDialogueFraming), Member = "OnExecute")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_dialogue_setframing")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematicComplete")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnTimelinePlay")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "DeserializeAll")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Awake")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 9)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "DeserializeAll")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnCinematicPlay")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnTimelinePlay")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematicComplete")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_dialogue_setframing")]
+	[CalledBy(Type = typeof(Action_SetDialogueFraming), Member = "OnExecute")]
+	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 5)]
 	public void ReplaceCameraFraming(string cameraFraming)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnCinematicPlay")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[CallsUnknownMethods(Count = 8)]
 	private void ReplaceSavedPosition(string cameraFraming)
 	{
 	}
@@ -1702,26 +1635,26 @@ public class DialogueModeRigFP : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private float ComputeSubtitleDurationInSeconds(string text)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(_003CLoadAnimations_003Ed__250), Member = "MoveNext")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "IsAnimationAlreadyLoaded")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "IsAnimationLoadingRequired")]
-	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
 	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(_003CLoadAnimations_003Ed__250), Member = "MoveNext")]
+	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
+	[CallsUnknownMethods(Count = 2)]
 	private string GetBundleFilename(string stateKey)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "IsAnimationLoadingRequired")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "IsAnimationAlreadyLoaded")]
-	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(_003CLoadAnimations_003Ed__250), Member = "MoveNext")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "IsAnimationAlreadyLoaded")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "IsAnimationLoadingRequired")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
+	[CallsUnknownMethods(Count = 2)]
 	private string GePrefabPath(string stateKey)
 	{
 		return null;
@@ -1729,40 +1662,36 @@ public class DialogueModeRigFP : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetBundleFilename")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "GePrefabPath")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	private bool IsAnimationAlreadyLoaded(string stateKey)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetBundleFilename")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetBundleFilename")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "GePrefabPath")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool IsAnimationLoadingRequired()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(_003CLoadAnimations_003Ed__250), Member = "MoveNext")]
 	[CalledBy(Type = typeof(_003CLoadAnimations_003Ed__250), Member = "MoveNext")]
 	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(_003CLoadAnimations_003Ed__250), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 1)]
 	private void AbortLoad()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
 	[IteratorStateMachine(typeof(_003CLoadAnimations_003Ed__250))]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
 	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private IEnumerator LoadAnimations(string stateKey)
 	{
 		return null;
@@ -1773,19 +1702,15 @@ public class DialogueModeRigFP : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool AreAssetsReady()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(_003CLoadAnimations_003Ed__250), Member = "MoveNext")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallsUnknownMethods(Count = 9)]
 	private void RetrieveLoadedAnimators(string errorPath)
 	{
@@ -1794,35 +1719,35 @@ public class DialogueModeRigFP : MonoBehaviour
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueModeState")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnSpeech")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnCinematicPlay")]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(AssetReferenceTimeline), Member = "LoadTimeline")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnTimelinePlay")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "UnloadTimeline")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsAnimationLoadingRequired")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "UnloadAnimations")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "SetAnimationParameter_IsInDialogue")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceAnimControllerAndResumeState")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "LoadAnimations")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsAnimationLoadingRequired")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceAnimControllerAndResumeState")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "SetAnimationParameter_IsInDialogue")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "UnloadAnimations")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "LoadAnimations")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "UnloadTimeline")]
+	[Calls(Type = typeof(AssetReferenceTimeline), Member = "LoadTimeline")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void OnEnter_DialogueModeStateLoadSequence()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "SetDialogueModeState")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "TimelineIndividualLineCompleted")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTimeline")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayLine")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "RecenterCameraToDesired")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsCameraCentered")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsCameraCentered")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "RecenterCameraToDesired")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayLine")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayCinematic")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateTimeline")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "TimelineIndividualLineCompleted")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "SetDialogueModeState")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update_DialogueModeStateLoadSequence()
 	{
 	}
@@ -1834,12 +1759,13 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematicComplete")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateLoadSequence")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematicComplete")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Addressables), Member = "Release")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void UnloadTimeline()
 	{
 	}
@@ -1847,41 +1773,33 @@ public class DialogueModeRigFP : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private bool IsTimelineRequested()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public bool ShouldSupressBreathFXForTimeline()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(NPC_Animation), Member = "RequestVO")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "MaybeAutoAssignDialogueAnimationAndAudio")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[CalledBy(Type = typeof(NPC_Animation), Member = "RequestVO")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[CallsUnknownMethods(Count = 1)]
 	public static string GetDefaultStateNameForDialogueLineFromLocId(string localizationId)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "Replace")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "Substring")]
 	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[CallsUnknownMethods(Count = 1)]
 	public static string GetDefaultTimelineNameForDialogueLineFromLocId(string localizationId)
 	{
 		return null;
@@ -1891,120 +1809,117 @@ public class DialogueModeRigFP : MonoBehaviour
 	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[Calls(Type = typeof(string), Member = "Substring")]
 	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "Replace")]
 	[CallsUnknownMethods(Count = 1)]
 	public static string GetDefaultLocIdForDialogueLineFromTimeline(string timelineName)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(NPC_Animation), Member = "RequestVO")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "MaybeAutoAssignDialogueAnimationAndAudio")]
-	[Calls(Type = typeof(string), Member = "Replace")]
+	[CalledBy(Type = typeof(NPC_Animation), Member = "RequestVO")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[Calls(Type = typeof(string), Member = "Substring")]
+	[CallsUnknownMethods(Count = 1)]
 	public static string GetDefaultAudioStartForDialogueLineFromLocId(string localizationId)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayCinematic")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayCinematic")]
 	[CallerCount(Count = 1)]
 	private void PlayCinematic()
 	{
 	}
 
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueModeState")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateLoadSequence")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(InterfaceManager), Member = "HidePanelsForSubtitle")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "PlayCinematic")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "PlayAudio")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateLoadSequence")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnEnter_DialogueModeStatePlayCinematic()
 	{
 	}
 
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_HUD), Member = "RefreshHudDisplayMode")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	private void SetHudModeForCinematic()
 	{
 	}
 
-	[Calls(Type = typeof(CinematicManager), Member = "GetAdjustedSkipTimeAndTryToSeekAudio")]
-	[Calls(Type = typeof(InputManager), Member = "HasPressedSkip")]
-	[Calls(Type = typeof(CinematicManager), Member = "MaybeSeekMovie")]
-	[Calls(Type = typeof(Utils), Member = "GetNextSkipTime")]
-	[Calls(Type = typeof(CinematicManager), Member = "TryGetTimeFromAudio")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "SetHudModeForCinematic")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ResetStandardAimingMode")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(InterfaceManager), Member = "HidePanelsForSubtitle")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "SetCameraFov")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsFPHPlayingIdle")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "GetFPCinematicManager")]
+	[Calls(Type = typeof(CinematicManager), Member = "UpdateAnimDrivenEffects")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceCameraFraming")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "RecenterCameraToDesired")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsCameraCentered")]
+	[Calls(Type = typeof(Utils), Member = "UpdateSubtitles")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetOnGoingStateDuration")]
+	[Calls(Type = typeof(InputManager), Member = "HasPressedSkip")]
+	[Calls(Type = typeof(Utils), Member = "GetNextSkipTime")]
+	[Calls(Type = typeof(CinematicManager), Member = "GetAdjustedSkipTimeAndTryToSeekAudio")]
+	[Calls(Type = typeof(CinematicManager), Member = "MaybeSeekMovie")]
+	[Calls(Type = typeof(CinematicManager), Member = "TryGetTimeFromAudio")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnCinematicDone")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetOnGoingStateDuration")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "UpdateSubtitles")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "GetFPCinematicManager")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "RecenterCameraToDesired")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetStandardAimingMode")]
-	[Calls(Type = typeof(InterfaceManager), Member = "HidePanelsForSubtitle")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "SetCameraFov")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "SetHudModeForCinematic")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsCameraCentered")]
-	[Calls(Type = typeof(CinematicManager), Member = "UpdateAnimDrivenEffects")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceCameraFraming")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsFPHPlayingIdle")]
 	private void Update_DialogueModeStatePlayCinematic()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayCinematicComplete")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayCinematicComplete")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnCinematicDone()
 	{
 	}
 
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnCinematicDone")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueModeState")]
-	[Calls(Type = typeof(InterfaceManager), Member = "RestorePanelsAfterSubtitle")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnCinematicDone")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "RestorePanelsAfterSubtitle")]
 	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	private void OnEnter_DialogueModeStatePlayCinematicComplete()
 	{
 	}
 
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsCameraCentered")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateIdle")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsNPCStatePlaying")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "RecenterCameraToDesired")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "UnloadTimeline")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReturnToIdleAnimation")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReturnToIdleAnimation")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "UnloadTimeline")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceCameraFraming")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsNPCStatePlaying")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateIdle")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "RecenterCameraToDesired")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsCameraCentered")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Update_DialogueModeStatePlayCinematicComplete()
 	{
 	}
@@ -2020,10 +1935,9 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "PlayDialogueAnimation")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "PlayDialogueAnimation")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "PlayDialogueAnimation")]
 	[CallsUnknownMethods(Count = 1)]
 	private string GetTriggeredByName(string stateKey)
 	{
@@ -2031,10 +1945,9 @@ public class DialogueModeRigFP : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "ReturnToIdleAnimation")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "ReturnToIdleAnimation")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(DialogueStatesTable), Member = "GetListEntryFromStateKey")]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetTriggerIdle(string stateKey)
 	{
 		return null;
@@ -2053,147 +1966,135 @@ public class DialogueModeRigFP : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private int GetLayerIndex(string stateKey)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool IsAnimationRequested()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayLine")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayCinematic")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayLine")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayVoiceWithPositionTracking")]
 	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	private void PlayAudio(string audioEventStart, string audioEventStop)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(Mathf), Member = "LerpAngle")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "RecenterCameraToDesired")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Mathf), Member = "LerpAngle")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCameraDesiredLocalPosition")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCameraDesiredRotation")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCameraDesiredRotation")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCharacterDesiredPosition")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCameraDesiredLocalPosition")]
+	[Calls(Type = typeof(Mathf), Member = "LerpAngle")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 12)]
 	private void LerpCameraFramingToDesired(float normalizedProgress)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLineComplete")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematicComplete")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateLoadSequence")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "LerpCameraFramingToDesired")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateLoadSequence")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematicComplete")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLineComplete")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "LerpCameraFramingToDesired")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void RecenterCameraToDesired()
 	{
 	}
 
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLineComplete")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "IsTransitionDone")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematicComplete")]
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateLoadSequence")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematicComplete")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "IsTransitionDone")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLineComplete")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCharacterDesiredPosition")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCameraDesiredRotation")]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCameraDesiredLocalPosition")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCameraDesiredRotation")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCharacterDesiredPosition")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
+	[CallsUnknownMethods(Count = 7)]
 	private bool IsCameraCentered()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStatePlayLine")]
-	[Calls(Type = typeof(Animator), Member = "Play")]
-	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetTriggeredByName")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetTriggeredByName")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetTriggeredByName")]
 	[Calls(Type = typeof(Debug), Member = "LogFormat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarningFormat")]
+	[Calls(Type = typeof(Animator), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 12)]
 	private void PlayDialogueAnimation()
 	{
 	}
 
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_CameraControl")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool IsFPHPlayingIdle()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsCameraCentered")]
 	private bool IsTransitionDone()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsFPHPlayingIdle")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[CallsUnknownMethods(Count = 3)]
 	private void Update_CameraControl()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayCinematic")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private float GetOnGoingStateDuration()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "LateUpdate")]
-	[Calls(Type = typeof(CinematicAssets), Member = "LateSynchronizeAnimators")]
-	[Calls(Type = typeof(CinematicAssets), Member = "LateSynchronizeAnimators")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Animator), Member = "PlayInFixedTime")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayEventMonitor), Member = "TryGetPlayingStateId")]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
-	[Calls(Type = typeof(Animator), Member = "PlayInFixedTime")]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
-	[Calls(Type = typeof(Animator), Member = "PlayInFixedTime")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Animator), Member = "PlayInFixedTime")]
+	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayEventMonitor), Member = "TryGetPlayingStateId")]
+	[Calls(Type = typeof(CinematicAssets), Member = "LateSynchronizeAnimators")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void LateSynchronizeAnimators(float currentTime, int stateHash)
 	{
 	}
@@ -2207,38 +2108,39 @@ public class DialogueModeRigFP : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool IsCinematicOrNotAnimatedStatement()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateLoadSequence")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueModeState")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "PlayAudio")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "PlayDialogueAnimation")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "DisplaySubtitleText")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateLoadSequence")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "DisplaySubtitleText")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "PlayDialogueAnimation")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "PlayAudio")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnEnter_DialogueModeStatePlayLine()
 	{
 	}
 
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnNextDialogueRequested")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "ProcessAfterDuration")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStatePlayLine")]
 	[CallerCount(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnNextDialogueRequested")]
+	[CallsUnknownMethods(Count = 1)]
 	private void DoNextStatement()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReturnToIdleAnimation")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "DoNextStatement")]
 	[CallsUnknownMethods(Count = 1)]
@@ -2246,11 +2148,11 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "DoNextStatement")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InputManager), Member = "HasPressedSkip")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "DoNextStatement")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void ProcessAfterDuration()
 	{
 	}
@@ -2258,7 +2160,7 @@ public class DialogueModeRigFP : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private float GetCinematicDuration()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -2267,24 +2169,24 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReturnToIdleAnimation")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "StopPreviousAudio")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(CinematicManager), Member = "TryGetTimeFromAudio")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "DoNextStatement")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
-	[Calls(Type = typeof(InputManager), Member = "HasPressedSkip")]
-	[Calls(Type = typeof(InputManager), Member = "HasPressedSkip")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsCameraCentered")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "SetCameraFov")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetOnGoingStateDuration")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsFPHPlayingIdle")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceCameraFraming")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "RecenterCameraToDesired")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "IsCameraCentered")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetOnGoingStateDuration")]
+	[Calls(Type = typeof(InputManager), Member = "HasPressedSkip")]
+	[Calls(Type = typeof(CinematicManager), Member = "TryGetTimeFromAudio")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "StopPreviousAudio")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReturnToIdleAnimation")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "DoNextStatement")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	private void Update_DialogueModeStatePlayLine()
 	{
 	}
@@ -2303,46 +2205,46 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(AkDurationCallbackInfo), Member = "get_fEstimatedDuration")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(AkDurationCallbackInfo), Member = "get_fEstimatedDuration")]
+	[CallsUnknownMethods(Count = 3)]
 	private static void AudioCallback(object in_cookie, AkCallbackType in_type, object in_info)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Phone), Member = "Awake")]
 	[CalledBy(Type = typeof(Phone), Member = "AssignBindingOverrides")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public void AssignTimelineOverride(string trackName, GameObject target)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateLoadSequence")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueModeState")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateLoadSequence")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "Play")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CallsUnknownMethods(Count = 7)]
 	private void OnEnter_DialogueModeStateTimeline()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
+	[CallerCount(Count = 1)]
 	private void Update_DialogueModeStateTimeline()
 	{
 	}
 
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateLoadSequence")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateLoadSequence")]
 	private void TimelineIndividualLineCompleted()
 	{
 	}
@@ -2352,43 +2254,41 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueModeState")]
 	[CallAnalysisFailed]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnPlayerStartedDialogue")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueModeState")]
+	[CallerCount(Count = 2)]
 	private void OnEnter_DialogueModeStateTransitionIn()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenDropCurrent")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(PlayerManager), Member = "IsHeldItemRestricted")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenDropCurrent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	private void MaybeStowItemInHand()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AnimationUtils), Member = "IsAnyLayerInAnimationTransition")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AnimationUtils), Member = "IsAnyLayerInAnimationTransition")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool IsNPCReady()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private bool AreHandsReady()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -2396,63 +2296,60 @@ public class DialogueModeRigFP : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateStart")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapSprings")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AnimationUtils), Member = "IsAnyLayerInAnimationTransition")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "LerpPlayer")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCameraDesiredLocalPosition")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCameraDesiredRotation")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCharacterDesiredPosition")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCharacterDesiredPosition")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCameraDesiredRotation")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "GetCameraDesiredLocalPosition")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "LerpPlayer")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(AnimationUtils), Member = "IsAnyLayerInAnimationTransition")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapSprings")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateStart")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void Update_DialogueModeStateTransitionIn()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionOut")]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionIn")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update_DialogueModeStateTransitionOut")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateShoulderRotation")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[CallsUnknownMethods(Count = 8)]
 	private static void LerpPlayer(float progress, Vector3 originalPlayerPosition, Quaternion originalCameraRotation, Vector3 originalLocalCameraPosition, float originalFov, Vector3 desiredPlayerPosition, Quaternion desiredCameraRotation, Vector3 desireedLocalCameraPosition, float desiredFov)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnPlayerEndedDialogue")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueModeState")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(CinematicManager), Member = "SwapFPController")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Reset")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "EnableDialogueSequenceFP")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnPlayerEndedDialogue")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "SetDialogueModeState")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 12)]
 	private void OnEnter_DialogueModeStateTransitionOut()
 	{
 	}
 
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "Update")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceAnimControllerAndResumeState")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetStickToGroundPosition")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "LerpPlayer")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "ReplaceAnimControllerAndResumeState")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update_DialogueModeStateTransitionOut()
 	{
 	}

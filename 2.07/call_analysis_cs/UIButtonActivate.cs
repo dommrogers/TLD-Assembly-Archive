@@ -7,8 +7,8 @@ public class UIButtonActivate : MonoBehaviour
 
 	public bool state;
 
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	private void OnClick()
 	{
 	}

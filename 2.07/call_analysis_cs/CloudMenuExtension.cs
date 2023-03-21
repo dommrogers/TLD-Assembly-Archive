@@ -20,8 +20,8 @@ public class CloudMenuExtension : IBasicMenuExtension
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void UpdateButtonLegend(ButtonLegendContainer buttonLegendContainer, int basePriority)
 	{
 	}

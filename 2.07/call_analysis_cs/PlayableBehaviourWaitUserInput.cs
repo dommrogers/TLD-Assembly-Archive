@@ -14,15 +14,15 @@ public class PlayableBehaviourWaitUserInput : PlayableBehaviour
 
 	private Panel_HUD m_HUD;
 
-	[CalledBy(Type = typeof(PlayableBehaviourWaitUserInput), Member = "OnButtonSelected")]
-	[CalledBy(Type = typeof(PlayableBehaviourWaitUserInput), Member = "OnBehaviourPause")]
 	[CalledBy(Type = typeof(PlayableBehaviourWaitUserInput), Member = "OnBehaviourPlay")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayableBehaviourWaitUserInput), Member = "OnBehaviourPause")]
+	[CalledBy(Type = typeof(PlayableBehaviourWaitUserInput), Member = "OnButtonSelected")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
 	private bool HasHUD()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -34,12 +34,12 @@ public class PlayableBehaviourWaitUserInput : PlayableBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(PlayableDirector), Member = "set_time")]
-	[Calls(Type = typeof(TwoButtonsChoiceUI), Member = "HideChoices")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayableBehaviourWaitUserInput), Member = "HasHUD")]
+	[Calls(Type = typeof(TwoButtonsChoiceUI), Member = "HideChoices")]
+	[Calls(Type = typeof(PlayableDirector), Member = "set_time")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public override void OnBehaviourPause(Playable playable, FrameData info)
 	{
 	}

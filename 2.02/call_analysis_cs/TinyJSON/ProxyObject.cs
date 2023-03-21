@@ -12,9 +12,10 @@ public sealed class ProxyObject : Variant, IEnumerable<KeyValuePair<string, Vari
 
 	public string TypeHint
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[CalledBy(Type = typeof(JSON), Member = "DecodeType")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
@@ -25,15 +26,16 @@ public sealed class ProxyObject : Variant, IEnumerable<KeyValuePair<string, Vari
 	public override Variant Item
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -41,18 +43,18 @@ public sealed class ProxyObject : Variant, IEnumerable<KeyValuePair<string, Vari
 
 	public int Count
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
+	[CalledBy(Type = typeof(Decoder), Member = "DecodeObject")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(Decoder), Member = "DecodeObject")]
 	[CallsUnknownMethods(Count = 8)]
 	public ProxyObject()
 	{
@@ -74,19 +76,20 @@ public sealed class ProxyObject : Variant, IEnumerable<KeyValuePair<string, Vari
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Add(string key, Variant item)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool TryGetValue(string key, out Variant item)
 	{
 		item = null;
-		return default(bool);
+		return false;
 	}
 }

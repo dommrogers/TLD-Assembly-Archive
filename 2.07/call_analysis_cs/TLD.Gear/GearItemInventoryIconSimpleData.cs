@@ -8,14 +8,14 @@ public class GearItemInventoryIconSimpleData : GearItemInventoryIconData
 	private Texture2D m_Icon;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 28)]
+	[CallerCount(Count = 32)]
 	public override Texture2D GetInventoryIcon(GearItem item)
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 28)]
+	[CallerCount(Count = 32)]
 	public override Texture2D GetInventoryIcon(float condition)
 	{
 		return null;

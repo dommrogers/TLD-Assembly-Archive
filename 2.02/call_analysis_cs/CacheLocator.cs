@@ -5,17 +5,17 @@ public class CacheLocator : MonoBehaviour
 {
 	public LandmarkLocator[] m_NearbyLandmarks;
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public LandmarkLocator ChooseLandmark()
 	{
 		return null;
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public CacheLocator()
 	{
 	}

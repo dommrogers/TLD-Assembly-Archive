@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using AK.Wwise;
 using Cpp2ILInjected.CallAnalysis;
@@ -44,12 +43,12 @@ public class SceneMusicManager : MonoBehaviour
 
 	private static SceneMusicSaveData m_SceneMusicSaveData;
 
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(Utils), Member = "IsSceneTransition")]
-	[Calls(Type = typeof(SceneMusicManager), Member = "ResetExploreMusicTimer")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(SceneMusicManager), Member = "ResetExploreMusicTimer")]
+	[Calls(Type = typeof(Utils), Member = "IsSceneTransition")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 21)]
 	private void Awake()
 	{
 	}
@@ -59,75 +58,77 @@ public class SceneMusicManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 17)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(SceneMusicManager), Member = "PlayExploreMusic")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 17)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void AddMusicSuppressor(MusicSuppressor ms)
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void PlaySceneEnterMusic()
 	{
 	}
 
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_play_exploremusic")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(SceneMusicManager), Member = "Update")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
 	[Calls(Type = typeof(SceneMusicManager), Member = "ResetExploreMusicTimer")]
 	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
+	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public void PlayExploreMusic()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void RemoveMusicSuppressor(MusicSuppressor ms)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(ACtion_SuppressExploreMusic), Member = "OnExecute")]
 	[CalledBy(Type = typeof(SceneMusicManager), Member = "Awake")]
 	[CalledBy(Type = typeof(SceneMusicManager), Member = "PlayExploreMusic")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(ACtion_SuppressExploreMusic), Member = "OnExecute")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void ResetExploreMusicTimer()
 	{
 	}

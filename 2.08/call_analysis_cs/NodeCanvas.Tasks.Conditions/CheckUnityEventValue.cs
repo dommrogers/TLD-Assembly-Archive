@@ -35,22 +35,22 @@ public class CheckUnityEventValue<T> : ConditionTask
 		}
 	}
 
-	[Calls(Type = typeof(Task), Member = "get_agent")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(ReflectionTools), Member = "RTGetField")]
+	[Calls(Type = typeof(Task), Member = "get_agent")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 6)]
 	protected override string OnInit()
 	{
 		return null;
 	}
 
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
-	[DeduplicatedMethod]
-	[CallerCount(Count = 0)]
 	public void Raised(T eventValue)
 	{
 	}
@@ -59,7 +59,7 @@ public class CheckUnityEventValue<T> : ConditionTask
 	[CallerCount(Count = 3)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

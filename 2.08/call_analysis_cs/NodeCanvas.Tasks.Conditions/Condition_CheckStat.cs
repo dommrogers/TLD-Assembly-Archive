@@ -18,10 +18,10 @@ public class Condition_CheckStat : ConditionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Enum), Member = "ToString")]
 		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
+		[Calls(Type = typeof(float), Member = "ToString")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		get
 		{
@@ -29,11 +29,11 @@ public class Condition_CheckStat : ConditionTask
 		}
 	}
 
-	[Calls(Type = typeof(StatsManager), Member = "GetValue")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(StatsManager), Member = "GetValue")]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

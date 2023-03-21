@@ -22,7 +22,7 @@ public class CatalogItemDetailsListPlugin
 	public static extern IntPtr CatalogItemDetailsList_GetAt(IntPtr self, uint idx);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CatalogItemDetailsListPlugin()
 	{
 	}

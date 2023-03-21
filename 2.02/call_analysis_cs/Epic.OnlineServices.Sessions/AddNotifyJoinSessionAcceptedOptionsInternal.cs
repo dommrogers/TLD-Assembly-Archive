@@ -22,8 +22,8 @@ internal struct AddNotifyJoinSessionAcceptedOptionsInternal : ISettable, IDispos
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

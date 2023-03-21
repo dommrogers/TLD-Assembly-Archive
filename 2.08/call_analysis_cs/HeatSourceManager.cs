@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -13,15 +12,15 @@ public class HeatSourceManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(NPCFreezing), Member = "CalculateCurrentTemperature")]
 	[CalledBy(Type = typeof(Weather), Member = "CalculateCurrentTemperature")]
+	[CalledBy(Type = typeof(NPCFreezing), Member = "CalculateCurrentTemperature")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(HeatSource), Member = "GetTempIncrease")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	public float GetTemperatureIncrease(Vector3 position)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -31,20 +30,21 @@ public class HeatSourceManager : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(HeatSource), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(HeatSource), Member = "TurnOffImmediate")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(HeatSource), Member = "OnDestroy")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void RemoveHeatSource(HeatSource hs)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(HeatSource), Member = "GetTempIncrease")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	public HeatSource GetBestHeatSourceInRange()
 	{

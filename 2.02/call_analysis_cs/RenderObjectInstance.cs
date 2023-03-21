@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 using Cpp2ILInjected.CallAnalysis;
 using Unity.Collections;
+using Unity.Collections.LowLevel.Unsafe;
 using Unity.Jobs;
 using Unity.Mathematics;
 using UnityEngine;
@@ -22,7 +23,7 @@ public class RenderObjectInstance : MonoBehaviour
 		public float m_Lod3Distances;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public LodDistanceQualityOverride()
 		{
 		}
@@ -174,101 +175,104 @@ public class RenderObjectInstance : MonoBehaviour
 
 	private string m_DebugText;
 
+	[CalledBy(Type = typeof(RenderObjectInstance), Member = "MaybeGetMeshForInstancedRendering")]
+	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EnableRendererForLODGroup")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[CalledBy(Type = typeof(RenderObjectInstance), Member = "MaybeGetMeshForInstancedRendering")]
-	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EnableRendererForLODGroup")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 6)]
 	public static MeshFilter MaybeGetMeshFilterForInstancedRendering(Renderer r)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(RenderObjectInstanceBatches), Member = "AddObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(RenderObjectInstanceSceneData), Member = "CountInstancedMeshesInLODGroup")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(RenderObjectInstance), Member = "MaybeGetMeshFilterForInstancedRendering")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static Mesh MaybeGetMeshForInstancedRendering(Renderer r)
 	{
 		return null;
 	}
 
-	[CallAnalysisFailed]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GCHandle), Member = "AddrOfPinnedObject")]
+	[Calls(Type = typeof(UnsafeUtility), Member = "MemCpy")]
+	[Calls(Type = typeof(GCHandle), Member = "Free")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void CopyNativeToManaged(NativeArray<Matrix4x4> src, int srcIndex, Matrix4x4[] dst, int dstIndex, int length)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void OnValidate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(GameManager), Member = "EarlyUpdate")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "EarlyUpdate")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "EarlyUpdate")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void EarlyUpdateAll()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplyRenderObjectInstances")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_enable_renderobjectinstances_norenderers")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_enable_renderobjectinstances")]
-	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplyRenderObjectInstances")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_enable_renderobjectinstances_norenderers")]
 	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableRenderers")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplyRenderObjectInstances")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Enum), Member = "HasFlag")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableRenderers")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public static void EnableAll(bool enabled, EnableOptions options)
 	{
 	}
 
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_enable_renderobjectinstances")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_enable_renderobjectinstances_norenderers")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_enable_renderobjectinstances")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_enable_renderobjectinstances")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_enable_renderobjectinstances_norenderers")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_enable_renderobjectinstances_norenderers")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public static bool AllEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableRenderers")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_terrain_disableinstancedtrees")]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplyInstanceTrees")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_terrain_disableinstancedtrees")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableRenderers")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void EnableCategory(Category category, bool enabled, EnableOptions options)
 	{
 	}
 
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_terrain_disableinstancedtrees")]
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplyInstanceTrees")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_terrain_disableinstancedtrees")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplyInstanceTrees")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplyInstanceTrees")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static bool IsCategoryEnabled(Category category)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -277,155 +281,159 @@ public class RenderObjectInstance : MonoBehaviour
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsFrustumTestEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Transform), Member = "IsChildOf")]
-	[CalledBy(Type = typeof(AkGameObj), Member = "Awake")]
 	[CalledBy(Type = typeof(Utils), Member = "CheckIfAkGameObjIsStatic")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CalledBy(Type = typeof(AkGameObj), Member = "Awake")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "IsChildOf")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static bool IsRenderObjectInstanceChild(Transform t)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(RenderObjectInstanceTriggerVolume), Member = "RegisterInstancingScript")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "Register")]
-	[CallsUnknownMethods(Count = 11)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "Register")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(RenderObjectInstanceTriggerVolume), Member = "RegisterInstancingScript")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	private void Awake()
 	{
 	}
 
+	[CalledBy(Type = typeof(RenderObjectInstance), Member = "OnEnable")]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EarlyUpdate")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(GeometryUtility), Member = "CalculateFrustumPlanes")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
 	[Calls(Type = typeof(RenderObjectInstance), Member = "CreateBatchList")]
 	[Calls(Type = typeof(RenderObjectInstance), Member = "PopulateBatchList")]
 	[Calls(Type = typeof(RenderObjectInstanceBatches), Member = "FinishInitialization")]
-	[CalledBy(Type = typeof(RenderObjectInstance), Member = "OnEnable")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 12)]
 	private void Setup()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EnableCategory")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableRenderersInChildren")]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EnableAll")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EnableCategory")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableRenderersInChildren")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private void EnableRenderers(bool enabled)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableRendererForLODGroup")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableRenderersInChildren")]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EnableRenderers")]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EnableRenderersInChildren")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableRendererForLODGroup")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "EnableRenderersInChildren")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	private void EnableRenderersInChildren(Transform parent, bool enabled)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EnableRenderersInChildren")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "MaybeGetMeshFilterForInstancedRendering")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "MaybeGetMeshFilterForInstancedRendering")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	private void EnableRendererForLODGroup(LODGroup group, bool enabled)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
 	[Calls(Type = typeof(RenderObjectInstance), Member = "CreateBatchList")]
 	[Calls(Type = typeof(RenderObjectInstance), Member = "PopulateBatchList")]
 	[Calls(Type = typeof(RenderObjectInstanceBatches), Member = "FinishInitialization")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
-	[CalledBy(Type = typeof(RenderObjectInstance), Member = "Initialize")]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "Setup")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(RenderObjectInstanceBatches), Member = "ReserveBatchName")]
-	[Calls(Type = typeof(RenderObjectInstanceBatches), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(RenderObjectInstance), Member = "Initialize")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(RenderObjectInstanceBatches), Member = ".ctor")]
+	[Calls(Type = typeof(RenderObjectInstanceBatches), Member = "ReserveBatchName")]
 	[Calls(Type = typeof(RenderObjectInstanceBatches), Member = "Allocate")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 16)]
 	private void CreateBatchList(RenderObjectInstanceSceneData[] sceneDataComponents)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "PopulateBatchListWithChildren")]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "Setup")]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "Initialize")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "PopulateBatchListWithChildren")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private void PopulateBatchList(RenderObjectInstanceSceneData[] sceneDataComponents)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(RenderObjectInstance), Member = "PopulateBatchListWithChildren")]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "PopulateBatchList")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "AddLODGroupToBatchList")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CalledBy(Type = typeof(RenderObjectInstance), Member = "PopulateBatchListWithChildren")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "AddLODGroupToBatchList")]
 	[Calls(Type = typeof(RenderObjectInstance), Member = "PopulateBatchListWithChildren")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	private void PopulateBatchListWithChildren(Transform parent)
 	{
 	}
 
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "PopulateBatchListWithChildren")]
-	[Calls(Type = typeof(RenderObjectInstanceBatches), Member = "AddObject")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(RenderObjectInstanceBatches), Member = "AddObject")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 11)]
 	private void AddLODGroupToBatchList(LODGroup group)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private MaterialPropertyBlock GetMaterialPropertiesForLod(int batchIndex)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "Cleanup")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "Cleanup")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
@@ -442,115 +450,114 @@ public class RenderObjectInstance : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(RenderObjectInstance), Member = "OnDisable")]
-	[Calls(Type = typeof(RenderObjectInstanceBatches.PerBatch), Member = "Dispose")]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "OnDestroy")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "WaitForJobs")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(RenderObjectInstance), Member = "OnDisable")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(RenderObjectInstanceBatches.PerObject), Member = "Dispose")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "WaitForJobs")]
+	[Calls(TypeFullName = "RenderObjectInstanceBatches.PerObject", Member = "Dispose")]
+	[Calls(TypeFullName = "RenderObjectInstanceBatches.PerBatch", Member = "Dispose")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 9)]
 	private void Cleanup()
 	{
 	}
 
-	[Calls(Type = typeof(RenderObjectInstance), Member = "UpdateLodMaterialProperties")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EarlyUpdateAll")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "ScheduleJobs")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "UpdateFrustumArrays")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "WaitForJobs")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "TestClipPlaneDistance")]
-	[Calls(Type = typeof(SceneManager), Member = "IsLoading")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "UpdateLODs")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "Setup")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SceneManager), Member = "IsLoading")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "Setup")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "UpdateLODs")]
 	[Calls(Type = typeof(RenderObjectInstance), Member = "TestVolumes")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "TestClipPlaneDistance")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "UpdateLodMaterialProperties")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "WaitForJobs")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "UpdateFrustumArrays")]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "ScheduleJobs")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void EarlyUpdate()
 	{
 	}
 
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EarlyUpdate")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(RenderObjectInstanceBatches), Member = "InitializeJob")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(RenderObjectInstanceBatches), Member = "GetBatchCount")]
+	[Calls(Type = typeof(RenderObjectInstanceBatches), Member = "InitializeJob")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	private void ScheduleJobs()
 	{
 	}
 
+	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EarlyUpdate")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(MainCameraFrustrum), Member = "RecalculateFrustumPlanes")]
 	[Calls(Type = typeof(MainCameraFrustrum), Member = "RecalculateFrustumCorners")]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsDusk")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(JobVisUtils), Member = "UpdateDirectionalLightCullingPlanes")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EarlyUpdate")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 13)]
 	private void UpdateFrustumArrays()
 	{
 	}
 
-	[CalledBy(Type = typeof(RenderObjectInstance), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EarlyUpdate")]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "Cleanup")]
+	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EarlyUpdate")]
+	[CalledBy(Type = typeof(RenderObjectInstance), Member = "LateUpdate")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(JobHandle), Member = "CompleteAll")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void WaitForJobs()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(RenderObjectInstance), Member = "WaitForJobs")]
 	[Calls(Type = typeof(RenderObjectInstanceBatches), Member = "RenderBatch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	private void LateUpdate()
 	{
 	}
 
-	[Calls(Type = typeof(QualitySettingsManager), Member = "GetCurrentQualitySettings")]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EarlyUpdate")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Mathf), Member = "InverseLerp")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Mathf), Member = "InverseLerp")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "GetCurrentQualitySettings")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private void UpdateLODs(float4 camPos)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "GetCurrentQualitySettings")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	private void GetLodDistances(out float lod1Distance, out float lod2Distance, out float lod3Distance)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref lod1Distance) = null;
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref lod2Distance) = null;
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref lod3Distance) = null;
+		lod1Distance = default(float);
+		lod2Distance = default(float);
+		lod3Distance = default(float);
 	}
 
+	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EarlyUpdate")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EarlyUpdate")]
 	[CallsUnknownMethods(Count = 4)]
 	private void TestClipPlaneDistance()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 36)]
+	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EarlyUpdate")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 10)]
-	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EarlyUpdate")]
+	[CallsUnknownMethods(Count = 36)]
 	private void UpdateLodMaterialProperties()
 	{
 	}
@@ -558,34 +565,32 @@ public class RenderObjectInstance : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private float FastSqrDist3D(Vector3 a, Vector3 b)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "EarlyUpdate")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 11)]
 	private void TestVolumes(Vector4 camPos)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void PushTriggerVolume(RenderObjectInstanceTriggerVolume curVolume)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void PopTriggerVolume(RenderObjectInstanceTriggerVolume curVolume)
 	{
@@ -593,41 +598,43 @@ public class RenderObjectInstance : MonoBehaviour
 
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "Awake")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(string), Member = "Format")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private void Register()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void UnRegister()
 	{
 	}
 
-	[Calls(Type = typeof(RenderObjectInstanceBatches), Member = "GetDebugText")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[Calls(Type = typeof(RenderObjectInstanceBatches), Member = "GetDebugText")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
 	public string GetDebugText()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 14)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	public RenderObjectInstance()
 	{
 	}

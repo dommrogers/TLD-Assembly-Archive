@@ -18,23 +18,23 @@ public class FrostbiteIndicator : MonoBehaviour
 	private float m_RiskValue;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(FrostbiteIndicator), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(FrostbiteIndicator), Member = "OnEnable")]
-	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
-	[Calls(Type = typeof(Frostbite), Member = "GetFrostbiteRiskValue")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Frostbite), Member = "NumInstancesFrostbiteAtLocation")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Frostbite), Member = "NumInstancesFrostbiteAtLocation")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Frostbite), Member = "GetFrostbiteRiskValue")]
+	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 12)]
 	private void Update()
 	{
 	}

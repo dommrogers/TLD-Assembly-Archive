@@ -27,9 +27,9 @@ public class ToxicFog : MonoBehaviour
 
 	public bool m_AllowAfflictionHeadache;
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetAfflictionLocId()
 	{
 		return null;
@@ -44,10 +44,10 @@ public class ToxicFog : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 12)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetAfflictionDescription()
 	{
 		return null;
@@ -66,22 +66,22 @@ public class ToxicFog : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool HasAffliction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PlayerCough), Member = "MaybeStart")]
-	[Calls(Type = typeof(Log), Member = "AddAffliction")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[Calls(Type = typeof(Log), Member = "AddAffliction")]
+	[Calls(Type = typeof(PlayerCough), Member = "MaybeStart")]
+	[CallsUnknownMethods(Count = 3)]
 	public void StartAffliction()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerCough), Member = "Stop")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[Calls(Type = typeof(PlayerCough), Member = "Stop")]
+	[CallsUnknownMethods(Count = 3)]
 	public void StopAffliction()
 	{
 	}
@@ -97,15 +97,14 @@ public class ToxicFog : MonoBehaviour
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(TimeOfDay), Member = "GetTODMinutes")]
 	[Calls(Type = typeof(Condition), Member = "AddHealth")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(Random), Member = "Range")]
 	[CallsUnknownMethods(Count = 4)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public ToxicFog()
 	{
 	}

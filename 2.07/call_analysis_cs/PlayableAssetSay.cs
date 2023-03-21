@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 using UnityEngine.Playables;
@@ -11,17 +10,19 @@ public class PlayableAssetSay : PlayableAsset
 
 	private PlayableBehaviourSay m_PlayableBehaviour;
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptPlayable<>), Member = "Create")]
+	[Calls(Type = typeof(PlayableHandle), Member = "GetObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "FindClip")]
 	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
 	{
 		return default(Playable);
 	}
 
-	[CallerCount(Count = 55)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 55)]
 	public void SetTrack(TLD_SayTrack sayTrack)
 	{
 	}
@@ -33,18 +34,18 @@ public class PlayableAssetSay : PlayableAsset
 		return null;
 	}
 
+	[CalledBy(Type = typeof(TLD_TimelineDirector), Member = "TryGetTimeFromVoice")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetSourcePlayPosition")]
-	[CalledBy(Type = typeof(TLD_TimelineDirector), Member = "TryGetTimeFromVoice")]
 	public bool TryGetCurrentTimelineTimeFromAudio(out float currentTime)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref currentTime) = null;
-		return default(bool);
+		currentTime = default(float);
+		return false;
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public PlayableAssetSay()
 	{
 	}

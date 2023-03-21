@@ -7,9 +7,9 @@ public class SteamPipeValveSaveList
 
 	public List<SteamPipeSaveData> m_SerializedSteamPipeValveSockets;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public SteamPipeValveSaveList()
 	{
 	}

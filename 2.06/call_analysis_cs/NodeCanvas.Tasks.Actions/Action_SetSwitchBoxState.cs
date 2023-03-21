@@ -12,19 +12,19 @@ public class Action_SetSwitchBoxState : ActionTask
 
 	public bool isLocked;
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Action_SetSwitchBoxState), Member = "DoWork")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallerCount(Count = 0)]
 	protected override void OnExecute()
 	{
 	}
 
+	[CalledBy(Type = typeof(Action_SetSwitchBoxState), Member = "OnExecute")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CalledBy(Type = typeof(Action_SetSwitchBoxState), Member = "OnExecute")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void DoWork()
 	{

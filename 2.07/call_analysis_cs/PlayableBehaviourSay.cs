@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.UI.Generics;
 using UnityEngine;
@@ -38,8 +37,8 @@ public class PlayableBehaviourSay : PlayableBehaviour
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetSourcePlayPosition")]
 	public bool TryGetCurrentTimelineTimeFromAudio(out float currentTime)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref currentTime) = null;
-		return default(bool);
+		currentTime = default(float);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -48,11 +47,12 @@ public class PlayableBehaviourSay : PlayableBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(NPCVoice), Member = "Play")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPCVoice), Member = "Play")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public override void ProcessFrame(Playable playable, FrameData info, object playerData)
 	{
@@ -64,17 +64,17 @@ public class PlayableBehaviourSay : PlayableBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerVoice), Member = "CompleteActiveRequest")]
-	[Calls(Type = typeof(NPCVoice), Member = "CompleteActiveRequest")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPCVoice), Member = "CompleteActiveRequest")]
+	[Calls(Type = typeof(PlayerVoice), Member = "CompleteActiveRequest")]
+	[CallsUnknownMethods(Count = 2)]
 	public override void OnBehaviourPause(Playable playable, FrameData info)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NPCVoice), Member = "Play")]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
@@ -83,8 +83,8 @@ public class PlayableBehaviourSay : PlayableBehaviour
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public PlayableBehaviourSay()
 	{
 	}

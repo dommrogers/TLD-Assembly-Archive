@@ -1,3 +1,4 @@
+using System;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -13,8 +14,8 @@ public class UIWorldMap : MonoBehaviour
 
 	private AsyncOperationHandle<Texture2D> m_asyncOp;
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "TryGetComponent")]
 	private void Awake()
 	{
 	}
@@ -26,17 +27,21 @@ public class UIWorldMap : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "IsValid")]
+	[Calls(Type = typeof(Addressables), Member = "Release")]
 	private void OnDisable()
 	{
 	}
 
-	[CalledBy(Type = typeof(UIWorldMap), Member = "OnEnable")]
 	[CalledBy(Type = typeof(Panel_SelectWorldMap), Member = "OnSelectionUpdate")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(UIWorldMap), Member = "OnEnable")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "IsValid")]
+	[Calls(Type = typeof(Action<>), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "add_Completed")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void LoadMap()
 	{
 	}

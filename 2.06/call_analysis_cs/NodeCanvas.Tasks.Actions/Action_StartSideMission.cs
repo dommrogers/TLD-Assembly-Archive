@@ -12,16 +12,15 @@ public class Action_StartSideMission : ActionTask<GraphOwner>
 
 	public bool restartIfAlreadyActive;
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(BlackboardSource), Member = "GetVariable")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "StopMission")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "IsMissionActive")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "IsMissionActive")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "StopMission")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(BlackboardSource), Member = "GetVariable")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

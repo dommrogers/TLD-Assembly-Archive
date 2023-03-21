@@ -15,11 +15,11 @@ internal struct CopyPlayerAchievementByIndexOptionsInternal : ISettable, IDispos
 
 	public ProductUserId UserId
 	{
+		[CalledBy(Type = typeof(CopyPlayerAchievementByIndexOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyPlayerAchievementByIndexOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyPlayerAchievementByIndexOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyPlayerAchievementByIndexOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -27,8 +27,8 @@ internal struct CopyPlayerAchievementByIndexOptionsInternal : ISettable, IDispos
 
 	public uint AchievementIndex
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -40,16 +40,16 @@ internal struct CopyPlayerAchievementByIndexOptionsInternal : ISettable, IDispos
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(CopyPlayerAchievementByIndexOptionsInternal), Member = "set_UserId")]
 	[CalledBy(Type = typeof(AchievementsInterface), Member = "CopyPlayerAchievementByIndex")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CopyPlayerAchievementByIndexOptionsInternal), Member = "set_UserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

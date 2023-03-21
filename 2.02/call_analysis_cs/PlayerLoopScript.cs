@@ -10,7 +10,7 @@ public class PlayerLoopScript
 	public class EarlyUpdateTimer
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public EarlyUpdateTimer()
 		{
 		}
@@ -18,8 +18,8 @@ public class PlayerLoopScript
 
 	public class PostLateUpdateTimer
 	{
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public PostLateUpdateTimer()
 		{
 		}
@@ -35,25 +35,26 @@ public class PlayerLoopScript
 		public static PlayerLoopSystem.UpdateFunction _003C_003E9__7_1;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(Stopwatch), Member = "Start")]
 		[Calls(Type = typeof(GameManager), Member = "EarlyUpdate")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 2)]
 		internal void _003CInit_003Eb__7_0()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 7)]
 		[Calls(Type = typeof(Stopwatch), Member = "Stop")]
 		[Calls(Type = typeof(Stopwatch), Member = "get_Elapsed")]
-		[CallsUnknownMethods(Count = 19)]
+		[Calls(Type = typeof(Queue<>.Enumerator), Member = "MoveNext")]
+		[CallsDeduplicatedMethods(Count = 7)]
+		[CallsUnknownMethods(Count = 18)]
 		internal void _003CInit_003Eb__7_1()
 		{
 		}
@@ -69,50 +70,45 @@ public class PlayerLoopScript
 
 	public const uint MAX_FRAME_TIMINGS = 60u;
 
-	[Calls(Type = typeof(PlayerLoopScript), Member = "InsertSystem")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(PlayerLoop), Member = "SetPlayerLoop")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(PlayerLoopScript), Member = "InsertSystem")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(PlayerLoop), Member = "InternalToPlayerLoopSystem")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[RuntimeInitializeOnLoadMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerLoop), Member = "InternalToPlayerLoopSystem")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(PlayerLoopScript), Member = "InsertSystem")]
+	[Calls(Type = typeof(PlayerLoop), Member = "SetPlayerLoop")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 16)]
 	private static void Init()
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerLoopScript), Member = "Init")]
 	[CalledBy(Type = typeof(PlayerLoopScript), Member = "InsertSystem")]
-	[CalledBy(Type = typeof(PlayerLoopScript), Member = "Init")]
-	[CalledBy(Type = typeof(PlayerLoopScript), Member = "Init")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(PlayerLoopScript), Member = "InsertSystem")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PlayerLoopScript), Member = "InsertSystem")]
 	[Calls(Type = typeof(Array), Member = "CopyTo")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private static bool InsertSystem(ref PlayerLoopSystem system, Type insertUnder, PlayerLoopSystem toInsert, bool insertAtStart = true)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "EarlyUpdate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private static void EarlyUpdate_Internal()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	private static void PostLateUpdate_Internal()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PlayerLoopScript()
 	{
 	}

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
@@ -9,6 +10,7 @@ using NodeCanvas.BehaviourTrees;
 using NodeCanvas.DialogueTrees;
 using NodeCanvas.StateMachines;
 using ParadoxNotion;
+using ParadoxNotion.Serialization;
 using ParadoxNotion.Services;
 using UnityEngine;
 
@@ -17,7 +19,7 @@ namespace NodeCanvas.Framework;
 [Serializable]
 public abstract class Node : IGraphElement
 {
-	private sealed class _003CYieldBreak_003Ed__85 : IEnumerator, IDisposable, IEnumerator<object>
+	private sealed class _003CYieldBreak_003Ed__85 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -29,7 +31,7 @@ public abstract class Node : IGraphElement
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -38,35 +40,35 @@ public abstract class Node : IGraphElement
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 29)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 		}
 
+		[DebuggerHidden]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[DebuggerHidden]
 		public _003CYieldBreak_003Ed__85(int _003C_003E1__state)
 		{
 		}
 
-		[CallerCount(Count = 2)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 2)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -84,8 +86,8 @@ public abstract class Node : IGraphElement
 
 		public Node a;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass100_0()
 		{
 		}
@@ -95,14 +97,14 @@ public abstract class Node : IGraphElement
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CAreNodesConnected_003Eb__0(Connection c)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CAreNodesConnected_003Eb__1(Connection c)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -116,14 +118,14 @@ public abstract class Node : IGraphElement
 		public static Func<Connection, Node> _003C_003E9__104_0;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		internal Node _003CGetParentNodes_003Eb__103_0(Connection c)
 		{
 			return null;
@@ -143,7 +145,7 @@ public abstract class Node : IGraphElement
 		public Node parentNode;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass105_0()
 		{
 		}
@@ -153,7 +155,7 @@ public abstract class Node : IGraphElement
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CIsChildOf_003Eb__0(Connection c)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -162,17 +164,17 @@ public abstract class Node : IGraphElement
 		public Node childNode;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass106_0()
 		{
 		}
 
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
-		[DeduplicatedMethod]
 		internal bool _003CIsParentOf_003Eb__0(Connection c)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -221,7 +223,7 @@ public abstract class Node : IGraphElement
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 46)]
 		set
 		{
 		}
@@ -233,7 +235,7 @@ public abstract class Node : IGraphElement
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -250,8 +252,8 @@ public abstract class Node : IGraphElement
 		{
 			return null;
 		}
-		[CallerCount(Count = 17)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 19)]
 		protected set
 		{
 		}
@@ -260,13 +262,13 @@ public abstract class Node : IGraphElement
 	public List<Connection> outConnections
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 11)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 14)]
+		[CallerCount(Count = 18)]
 		protected set
 		{
 		}
@@ -289,9 +291,9 @@ public abstract class Node : IGraphElement
 
 	public string UID
 	{
-		[Calls(Type = typeof(Guid), Member = "ToString")]
-		[Calls(Type = typeof(Guid), Member = "NewGuid")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Guid), Member = "NewGuid")]
+		[Calls(Type = typeof(Guid), Member = "ToString")]
 		[CallsDeduplicatedMethods(Count = 2)]
 		get
 		{
@@ -302,13 +304,13 @@ public abstract class Node : IGraphElement
 	private string customName
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
@@ -316,14 +318,14 @@ public abstract class Node : IGraphElement
 
 	public string tag
 	{
-		[CallerCount(Count = 12)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 12)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
@@ -332,13 +334,13 @@ public abstract class Node : IGraphElement
 	public string comments
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 23)]
 		set
 		{
 		}
@@ -350,7 +352,7 @@ public abstract class Node : IGraphElement
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -361,25 +363,26 @@ public abstract class Node : IGraphElement
 
 	public virtual string name
 	{
-		[CalledBy(Type = typeof(DTNode), Member = "get_name")]
-		[CalledBy(Type = typeof(ConcurrentState), Member = "get_name")]
-		[CalledBy(Type = typeof(ConcurrentSuperState), Member = "get_name")]
-		[CalledBy(Type = typeof(SubTree), Member = "get_name")]
-		[CalledBy(Type = typeof(NestedFSM), Member = "get_name")]
-		[CalledBy(Type = typeof(NodeCanvas.BehaviourTrees.ConditionNode), Member = "get_name")]
-		[CallerCount(Count = 9)]
-		[CalledBy(Type = typeof(BinarySelector), Member = "get_name")]
 		[CalledBy(Type = typeof(BTComposite), Member = "get_name")]
-		[Calls(Type = typeof(StringUtils), Member = "SplitCamelCase")]
-		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[CalledBy(Type = typeof(BinarySelector), Member = "get_name")]
 		[CalledBy(Type = typeof(NodeCanvas.BehaviourTrees.ActionNode), Member = "get_name")]
+		[CalledBy(Type = typeof(NodeCanvas.BehaviourTrees.ConditionNode), Member = "get_name")]
+		[CalledBy(Type = typeof(NestedFSM), Member = "get_name")]
+		[CalledBy(Type = typeof(SubTree), Member = "get_name")]
+		[CalledBy(Type = typeof(ConcurrentSuperState), Member = "get_name")]
+		[CalledBy(Type = typeof(ConcurrentState), Member = "get_name")]
+		[CalledBy(Type = typeof(DTNode), Member = "get_name")]
+		[CallerCount(Count = 9)]
+		[Calls(Type = typeof(ReflectionTools), Member = "RTGetAttribute")]
+		[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
+		[Calls(Type = typeof(StringUtils), Member = "SplitCamelCase")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
@@ -388,7 +391,8 @@ public abstract class Node : IGraphElement
 	public virtual string description
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(ReflectionTools), Member = "RTGetAttribute")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -397,55 +401,26 @@ public abstract class Node : IGraphElement
 
 	public virtual int priority
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ReflectionTools), Member = "RTGetAttribute")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
-	public abstract int maxInConnections
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	public abstract int maxInConnections { get; }
 
-	public abstract int maxOutConnections
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	public abstract int maxOutConnections { get; }
 
-	public abstract Type outConnectionType
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	public abstract Type outConnectionType { get; }
 
-	public abstract bool allowAsPrime
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	public abstract bool allowAsPrime { get; }
 
-	public abstract Alignment2x2 commentsAlignment
-	{
-		[CallerCount(Count = 121780)]
-		[DeduplicatedMethod]
-		get;
-	}
+	public abstract Alignment2x2 commentsAlignment { get; }
 
-	public abstract Alignment2x2 iconAlignment
-	{
-		[CallerCount(Count = 121780)]
-		[DeduplicatedMethod]
-		get;
-	}
+	public abstract Alignment2x2 iconAlignment { get; }
 
 	public Status status
 	{
@@ -465,8 +440,8 @@ public abstract class Node : IGraphElement
 	public Component graphAgent
 	{
 		[CallerCount(Count = 24)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -476,11 +451,11 @@ public abstract class Node : IGraphElement
 
 	public IBlackboard graphBlackboard
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
 		[CallerCount(Count = 41)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -489,16 +464,16 @@ public abstract class Node : IGraphElement
 
 	private bool isChecked
 	{
-		[CallerCount(Count = 2)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -511,7 +486,7 @@ public abstract class Node : IGraphElement
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -522,120 +497,120 @@ public abstract class Node : IGraphElement
 	}
 
 	[CallerCount(Count = 44)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 14)]
 	public Node()
 	{
 	}
 
-	[Calls(Type = typeof(BBParameter), Member = "SetBBFields")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Graph), Member = "AddNode")]
-	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogError")]
-	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Activator), Member = "CreateInstance")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Activator), Member = "CreateInstance")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
+	[Calls(Type = typeof(BBParameter), Member = "SetBBFields")]
+	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public static Node Create(Graph targetGraph, Type nodeType, Vector2 pos)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(Graph), Member = "CloneNodes")]
-	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogError")]
-	[Calls(Type = typeof(BBParameter), Member = "SetBBFields")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(JSONSerializer), Member = "Clone")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Graph), Member = "get_localBlackboard")]
+	[Calls(Type = typeof(BBParameter), Member = "SetBBFields")]
+	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 14)]
 	public Node Duplicate(Graph targetGraph)
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public virtual void OnCreate(Graph assignedGraph)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public virtual void OnValidate(Graph assignedGraph)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public virtual void OnDestroy()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Status Execute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
 	}
 
 	[CallerCount(Count = 27)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Connection), Member = "Reset")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void Reset(bool recursively = true)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
-	[CallerCount(Count = 0)]
 	private IEnumerator YieldBreak(Action resume)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(NodeCanvas.DialogueTrees.ActionNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(GoToNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(SubDialogueTree), Member = "OnExecute")]
-	[CalledBy(Type = typeof(MultipleConditionNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(MultipleChoiceNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Jumper), Member = "OnExecute")]
-	[CalledBy(Type = typeof(NodeCanvas.DialogueTrees.ConditionNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(ParlayRollChance), Member = "OnExecute")]
 	[CalledBy(Type = typeof(ActionListNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Dialogue_MultipleChoiceNode), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogError")]
-	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogException")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 12)]
+	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnExecute")]
 	[CalledBy(Type = typeof(ParlayNPCResponseNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(ParlayRollChance), Member = "OnExecute")]
+	[CalledBy(Type = typeof(NodeCanvas.DialogueTrees.ActionNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(NodeCanvas.DialogueTrees.ConditionNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Jumper), Member = "OnExecute")]
+	[CalledBy(Type = typeof(MultipleChoiceNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(MultipleConditionNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(SubDialogueTree), Member = "OnExecute")]
+	[CalledBy(Type = typeof(GoToNode), Member = "OnExecute")]
+	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogException")]
+	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public Status Error(object msg)
 	{
 		return default(Status);
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogError")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public Status Fail(string msg)
 	{
 		return default(Status);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Warn(string msg)
 	{
 	}
@@ -659,146 +634,158 @@ public abstract class Node : IGraphElement
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogError")]
-	[Calls(Type = typeof(MessageRouter), Member = "Register")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(MessageRouter), Member = "Register")]
+	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void RegisterEvents(Component targetAgent, string[] eventNames)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(MessageRouter), Member = "UnRegister")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void UnRegisterEvents(string[] eventNames)
 	{
 	}
 
-	[Calls(Type = typeof(MessageRouter), Member = "UnRegister")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(MessageRouter), Member = "UnRegister")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void UnRegisterEvents(Component targetAgent, string[] eventNames)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(MessageRouter), Member = "UnRegister")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void UnregisterAllEvents()
 	{
 	}
 
-	[Calls(Type = typeof(MessageRouter), Member = "UnRegister")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(MessageRouter), Member = "UnRegister")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void UnregisterAllEvents(Component targetAgent)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogWarning")]
 	[CalledBy(Type = typeof(Graph), Member = "ConnectNodes")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 2)]
 	public static bool IsNewConnectionAllowed(Node sourceNode, Node targetNode, Connection refConnection = null)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	protected virtual bool CanConnectToTarget(Node targetNode)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	protected virtual bool CanConnectFromSource(Node sourceNode)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Enumerable), Member = "FirstOrDefault")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 22)]
 	public static bool AreNodesConnected(Node a, Node b)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(NodeCanvas.DialogueTrees.ActionNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Filter), Member = "OnExecute")]
 	[CalledBy(Type = typeof(ActionListNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnExecute")]
+	[CalledBy(Type = typeof(NodeCanvas.DialogueTrees.ActionNode), Member = "OnExecute")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(MonoManager), Member = "get_current")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Filter), Member = "OnExecute")]
+	[CallsUnknownMethods(Count = 1)]
 	protected Coroutine StartCoroutine(IEnumerator routine)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MonoManager), Member = "get_current")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StopCoroutine")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected void StopCoroutine(Coroutine routine)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 9)]
 	public Node[] GetParentNodes()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public Node[] GetChildNodes()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(FSMState), Member = "CanConnectFromSource")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Enumerable), Member = "Any")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 15)]
 	public bool IsChildOf(Node parentNode)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(FSMState), Member = "CanConnectToTarget")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Enumerable), Member = "Any")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 15)]
 	public bool IsParentOf(Node childNode)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -808,90 +795,90 @@ public abstract class Node : IGraphElement
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	protected virtual Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	protected virtual void OnReset()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public virtual void OnParentConnected(int connectionIndex)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public virtual void OnParentDisconnected(int connectionIndex)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public virtual void OnChildConnected(int connectionIndex)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public virtual void OnChildDisconnected(int connectionIndex)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public virtual void OnGraphStarted()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public virtual void OnGraphStoped()
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public virtual void OnGraphPaused()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public virtual void OnGraphUnpaused()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(MemberInfo), Member = "op_Equality")]
 	[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	public override string ToString()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	public virtual void OnDrawGizmos()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	public virtual void OnDrawGizmosSelected()
 	{
 	}

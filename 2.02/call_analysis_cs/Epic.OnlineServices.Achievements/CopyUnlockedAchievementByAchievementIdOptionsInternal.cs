@@ -15,11 +15,11 @@ internal struct CopyUnlockedAchievementByAchievementIdOptionsInternal : ISettabl
 
 	public ProductUserId UserId
 	{
+		[CalledBy(Type = typeof(CopyUnlockedAchievementByAchievementIdOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyUnlockedAchievementByAchievementIdOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyUnlockedAchievementByAchievementIdOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyUnlockedAchievementByAchievementIdOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,9 +29,9 @@ internal struct CopyUnlockedAchievementByAchievementIdOptionsInternal : ISettabl
 	{
 		[CalledBy(Type = typeof(CopyUnlockedAchievementByAchievementIdOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(CopyUnlockedAchievementByAchievementIdOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -44,18 +44,18 @@ internal struct CopyUnlockedAchievementByAchievementIdOptionsInternal : ISettabl
 	{
 	}
 
+	[CalledBy(Type = typeof(AchievementsInterface), Member = "CopyUnlockedAchievementByAchievementId")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CopyUnlockedAchievementByAchievementIdOptionsInternal), Member = "set_UserId")]
 	[Calls(Type = typeof(CopyUnlockedAchievementByAchievementIdOptionsInternal), Member = "set_AchievementId")]
-	[CalledBy(Type = typeof(AchievementsInterface), Member = "CopyUnlockedAchievementByAchievementId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

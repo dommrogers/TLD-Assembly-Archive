@@ -25,8 +25,8 @@ public class ConditionNode : BTNode, ITaskAssignable<ConditionTask>, ITaskAssign
 
 	public ConditionTask condition
 	{
-		[CallerCount(Count = 7)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return null;
@@ -51,16 +51,16 @@ public class ConditionNode : BTNode, ITaskAssignable<ConditionTask>, ITaskAssign
 		}
 	}
 
-	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
 	}
 
-	[Calls(Type = typeof(Node), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Node), Member = ".ctor")]
 	public ConditionNode()
 	{
 	}

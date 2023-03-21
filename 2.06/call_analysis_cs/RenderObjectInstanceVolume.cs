@@ -11,10 +11,10 @@ public class RenderObjectInstanceVolume : MonoBehaviour
 
 	private Vector3 m_CachedPosition;
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(vp_Layer), Member = "Set")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_Layer), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Awake()
 	{
 	}

@@ -10,21 +10,21 @@ public class fsTypeConverter : fsConverter
 	[CallsUnknownMethods(Count = 1)]
 	public override bool CanProcess(Type type)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 3)]
 	public override bool RequestCycleSupport(Type type)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 3)]
 	public override bool RequestInheritanceSupport(Type type)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -36,11 +36,12 @@ public class fsTypeConverter : fsConverter
 		return default(fsResult);
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsData), Member = "Cast")]
+	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(fsResult), Member = "Fail")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
+	[CallsUnknownMethods(Count = 1)]
 	public override fsResult TryDeserialize(fsData data, ref object instance, Type storageType)
 	{
 		return default(fsResult);

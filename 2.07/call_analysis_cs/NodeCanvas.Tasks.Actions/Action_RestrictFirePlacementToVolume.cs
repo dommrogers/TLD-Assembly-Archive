@@ -1,5 +1,6 @@
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
+using UnityEngine;
 
 namespace NodeCanvas.Tasks.Actions;
 
@@ -15,10 +16,12 @@ public class Action_RestrictFirePlacementToVolume : ActionTask
 	}
 
 	[CalledBy(Type = typeof(Action_RestrictFirePlacementToVolume), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void DoWork()
 	{
 	}

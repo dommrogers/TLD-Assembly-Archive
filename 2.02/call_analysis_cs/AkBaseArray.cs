@@ -11,12 +11,12 @@ public abstract class AkBaseArray<T> : IDisposable
 
 	public int Capacity
 	{
-		[CallerCount(Count = 7)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -26,12 +26,7 @@ public abstract class AkBaseArray<T> : IDisposable
 		}
 	}
 
-	protected abstract int StructureSize
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	protected abstract int StructureSize { get; }
 
 	public T Item
 	{
@@ -41,7 +36,7 @@ public abstract class AkBaseArray<T> : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return (T)null;
+			return default(T);
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -53,9 +48,20 @@ public abstract class AkBaseArray<T> : IDisposable
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(AkPropagationPathInfoArray), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkAcousticSurfaceArray), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkDiffractionPathInfoArray), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkExternalSourceInfoArray), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkObjectInfoArray), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkObstructionOcclusionValuesArray), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkReflectionPathInfoArray), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkSourceSettingsArray), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkTriangleArray), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkVertexArray), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkSurfaceReflector), Member = "AddGeometrySet")]
 	[CallerCount(Count = 13)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Marshal), Member = "AllocHGlobal")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
 	public AkBaseArray(int capacity)
 	{
@@ -82,44 +88,40 @@ public abstract class AkBaseArray<T> : IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public virtual int Count()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	protected virtual void DefaultConstructAtIntPtr(IntPtr address)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	protected virtual void ReleaseAllocatedMemoryFromReferenceAtIntPtr(IntPtr address)
 	{
 	}
 
-	[CallerCount(Count = 121780)]
-	[DeduplicatedMethod]
 	protected abstract T CreateNewReferenceFromIntPtr(IntPtr address);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	protected abstract void CloneIntoReferenceFromIntPtr(IntPtr address, T other);
 
-	[CallerCount(Count = 29)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 35)]
 	public IntPtr GetBuffer()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(IndexOutOfRangeException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 6)]
 	protected IntPtr GetObjectPtr(int index)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 }

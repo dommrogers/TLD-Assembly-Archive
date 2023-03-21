@@ -31,9 +31,9 @@ public class DynamicEventPlugin
 	public static extern bool DynamicEvent_AddParamInt8(IntPtr self, string name, sbyte value);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool DynamicEvent_AddParamUInt8(IntPtr self, string name, byte value);
 
 	[PreserveSig]
@@ -55,9 +55,9 @@ public class DynamicEventPlugin
 	public static extern bool DynamicEvent_AddParamInt32(IntPtr self, string name, int value);
 
 	[PreserveSig]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static extern bool DynamicEvent_AddParamUInt32(IntPtr self, string name, uint value);
 
 	[PreserveSig]
@@ -85,9 +85,9 @@ public class DynamicEventPlugin
 	public static extern bool DynamicEvent_AddParamUInt64(IntPtr self, string name, ulong value);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool DynamicEvent_AddParamGUID(IntPtr self, string name, Guid value);
 
 	[PreserveSig]
@@ -103,15 +103,15 @@ public class DynamicEventPlugin
 	public static extern bool DynamicEvent_AddParamSYSTEMTIME(IntPtr self, string name, ref SYSTEMTIME value);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool DynamicEvent_AddParamUnicodeString(IntPtr self, string name, string value);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool DynamicEvent_AddParamIPv4(IntPtr self, string name, byte[] value);
 
 	[PreserveSig]
@@ -120,8 +120,8 @@ public class DynamicEventPlugin
 	[CallsUnknownMethods(Count = 1)]
 	public static extern bool DynamicEvent_AddParamIPv6(IntPtr self, string name, byte[] value);
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public DynamicEventPlugin()
 	{
 	}

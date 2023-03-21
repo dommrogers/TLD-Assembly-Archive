@@ -22,14 +22,14 @@ public class Feat_EfficientMachine : Feat
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	public void ValidateSaveData(string text)
 	{
 	}
@@ -39,27 +39,25 @@ public class Feat_EfficientMachine : Feat
 	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
 	public float ReduceCaloriesScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Feat), Member = "ShouldBlockIncrement")]
 	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
-	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void IncrementElapsedHours(float hours)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Replace")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	public override string GetDescription()
 	{
 		return null;
@@ -75,12 +73,12 @@ public class Feat_EfficientMachine : Feat
 		return null;
 	}
 
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsUnknownMethods(Count = 1)]
 	public override string GetBonusDescription()
 	{
 		return null;
@@ -91,20 +89,20 @@ public class Feat_EfficientMachine : Feat
 	[CallsUnknownMethods(Count = 1)]
 	public override bool IsUnlocked()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public override float GetNormalizedProgress()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void SetNormalizedProgress(float normalizedValue)
 	{
 	}

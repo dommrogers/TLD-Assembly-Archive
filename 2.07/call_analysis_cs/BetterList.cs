@@ -9,7 +9,7 @@ public class BetterList<T>
 {
 	public delegate int CompareFunc(T left, T right);
 
-	private sealed class _003CGetEnumerator_003Ed__2 : IDisposable, IEnumerator<T>, IEnumerator
+	private sealed class _003CGetEnumerator_003Ed__2 : IEnumerator<T>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -26,16 +26,16 @@ public class BetterList<T>
 			[CallerCount(Count = 0)]
 			get
 			{
-				return (T)null;
+				return default(T);
 			}
 		}
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallsUnknownMethods(Count = 1)]
-			[CallerCount(Count = 0)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
+			[CallsUnknownMethods(Count = 1)]
 			get
 			{
 				return null;
@@ -56,21 +56,21 @@ public class BetterList<T>
 		{
 		}
 
+		[DebuggerHidden]
+		[DebuggerStepThrough]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 2)]
-		[DebuggerStepThrough]
-		[DebuggerHidden]
-		[DeduplicatedMethod]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 4)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 4)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -87,23 +87,23 @@ public class BetterList<T>
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return (T)null;
+			return default(T);
 		}
 		[DeduplicatedMethod]
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
 	}
 
-	[CallerCount(Count = 0)]
+	[IteratorStateMachine(typeof(BetterList<>._003CGetEnumerator_003Ed__2))]
 	[DebuggerHidden]
+	[DebuggerStepThrough]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[DeduplicatedMethod]
-	[IteratorStateMachine(typeof(BetterList<>._003CGetEnumerator_003Ed__2))]
-	[DebuggerStepThrough]
 	public IEnumerator<T> GetEnumerator()
 	{
 		return null;
@@ -136,52 +136,81 @@ public class BetterList<T>
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(UIKeyNavigation), Member = "Awake")]
+	[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnEnable")]
+	[CalledBy(Type = typeof(UIToggle), Member = "OnEnable")]
+	[CalledBy(Type = typeof(BMSymbol), Member = "SetSpriteLocation")]
+	[CalledBy(Type = typeof(ByteReader), Member = "ReadCSV")]
+	[CalledBy(Type = typeof(NGUIText), Member = "Print")]
+	[CalledBy(Type = typeof(NGUIText), Member = "GetDynamicSymbol")]
+	[CalledBy(Type = typeof(UIDrawCall), Member = "Create")]
+	[CalledBy(Type = typeof(UIDrawCall), Member = "Destroy")]
+	[CalledBy(Type = typeof(UIRect), Member = "OnInit")]
+	[CalledBy(Type = typeof(UIRect), Member = "ParentHasChanged")]
+	[CalledBy(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
+	[CalledBy(Type = typeof(UIAtlas), Member = "GetListOfSprites")]
+	[CalledBy(Type = typeof(UICamera), Member = "OnEnable")]
+	[CalledBy(Type = typeof(UILabel), Member = "OnInit")]
+	[CalledBy(Type = typeof(UILabel), Member = "AddDynamicSymbolSprite")]
+	[CalledBy(Type = typeof(UIRoot), Member = "CreateDynamicSymbolSprite")]
+	[CalledBy(Type = typeof(UITextList), Member = "Add")]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Add(T item)
 	{
 	}
 
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
 	public void Insert(int index, T item)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public bool Contains(T item)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public int IndexOf(T item)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(UIKeyNavigation), Member = "OnDisable")]
+	[CalledBy(Type = typeof(UIScrollView), Member = "OnDisable")]
+	[CalledBy(Type = typeof(UIToggle), Member = "OnDisable")]
+	[CalledBy(Type = typeof(UIDrawCall), Member = "Destroy")]
+	[CalledBy(Type = typeof(UIRect), Member = "OnDisable")]
+	[CalledBy(Type = typeof(UIRect), Member = "ParentHasChanged")]
+	[CalledBy(Type = typeof(UICamera), Member = "OnDisable")]
+	[CalledBy(Type = typeof(UILabel), Member = "OnDisable")]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool Remove(T item)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(TypewriterEffect), Member = "Update")]
+	[CalledBy(Type = typeof(UITextList), Member = "Add")]
+	[CalledBy(Type = typeof(StringTable), Member = "ImportCsv")]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void RemoveAt(int index)
 	{
 	}
@@ -191,29 +220,29 @@ public class BetterList<T>
 	[CallsUnknownMethods(Count = 1)]
 	public T Pop()
 	{
-		return (T)null;
+		return default(T);
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public T[] ToArray()
 	{
 		return null;
 	}
 
-	[DebuggerHidden]
 	[DebuggerStepThrough]
+	[DebuggerHidden]
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[DeduplicatedMethod]
 	[CallsUnknownMethods(Count = 2)]
 	public void Sort(CompareFunc comparer)
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public BetterList()
 	{
 	}

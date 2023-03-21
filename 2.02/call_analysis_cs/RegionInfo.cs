@@ -5,7 +5,7 @@ public class RegionInfo
 	public string m_SceneName;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public RegionInfo()
 	{
 	}

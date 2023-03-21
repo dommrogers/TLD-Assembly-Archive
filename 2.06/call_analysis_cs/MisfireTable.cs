@@ -21,14 +21,14 @@ public class MisfireTable : ScriptableObject
 
 	public List<Range> m_Ranges;
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(GunItem), Member = "RollForMisfire")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsUnknownMethods(Count = 7)]
 	public bool DoesMisfire(float condition)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

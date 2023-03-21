@@ -16,7 +16,7 @@ public class RandomSpawnObjectAchievementGroup
 	public List<string> m_GroupAchievementLocIds;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public RandomSpawnObjectAchievementGroup()
 	{
 	}

@@ -22,7 +22,7 @@ public class CameraPathColours
 	public static Color MAGENTA;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CameraPathColours()
 	{
 	}

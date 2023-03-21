@@ -13,11 +13,11 @@ internal struct UpdateLobbyOptionsInternal : ISettable, IDisposable
 
 	public LobbyModification LobbyModificationHandle
 	{
+		[CalledBy(Type = typeof(UpdateLobbyOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(UpdateLobbyOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(UpdateLobbyOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(UpdateLobbyOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -30,15 +30,15 @@ internal struct UpdateLobbyOptionsInternal : ISettable, IDisposable
 	}
 
 	[CalledBy(Type = typeof(LobbyInterface), Member = "UpdateLobby")]
-	[Calls(Type = typeof(UpdateLobbyOptionsInternal), Member = "set_LobbyModificationHandle")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UpdateLobbyOptionsInternal), Member = "set_LobbyModificationHandle")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.BehaviourTrees;
 using NodeCanvas.Framework;
@@ -38,13 +37,15 @@ public class NestedBTState : FSMState, IGraphAssignable
 	{
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -52,61 +53,63 @@ public class NestedBTState : FSMState, IGraphAssignable
 
 	private Graph NodeCanvas_002EFramework_002EIGraphAssignable_002EnestedGraph
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 3)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.Linq.Buffer`1", Member = ".ctor")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[CallsUnknownMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 5)]
 	private Graph[] NodeCanvas_002EFramework_002EIGraphAssignable_002EGetInstances()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Graph), Member = "StartGraph")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(NestedBTState), Member = "CheckInstance")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(NestedBTState), Member = "CheckInstance")]
 	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(Graph), Member = "StartGraph")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnEnter()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Graph), Member = "Stop")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Graph), Member = "Stop")]
-	[Calls(Type = typeof(Graph), Member = "Stop")]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnUpdate()
 	{
 	}
 
-	[Calls(Type = typeof(Graph), Member = "SendEvent")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Graph), Member = "SendEvent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnFinish(bool success)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Graph), Member = "Stop")]
-	[Calls(Type = typeof(Graph), Member = "Pause")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Graph), Member = "Pause")]
+	[Calls(Type = typeof(Graph), Member = "Stop")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExit()
 	{
 	}
@@ -118,19 +121,23 @@ public class NestedBTState : FSMState, IGraphAssignable
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(NestedBTState), Member = "OnEnter")]
-	[CallsUnknownMethods(Count = 6)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Graph), Member = "Clone")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private BehaviourTree CheckInstance()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Node), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Node), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public NestedBTState()
 	{
 	}

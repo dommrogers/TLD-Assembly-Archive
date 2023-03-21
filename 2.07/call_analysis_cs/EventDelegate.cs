@@ -31,11 +31,11 @@ public class EventDelegate
 
 		public object value
 		{
+			[CalledBy(Type = typeof(EventDelegate), Member = "Execute")]
 			[CallerCount(Count = 1)]
-			[CallsDeduplicatedMethods(Count = 5)]
 			[Calls(Type = typeof(Convert), Member = "ChangeType")]
 			[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-			[CalledBy(Type = typeof(EventDelegate), Member = "Execute")]
+			[CallsDeduplicatedMethods(Count = 5)]
 			[CallsUnknownMethods(Count = 8)]
 			get
 			{
@@ -50,11 +50,10 @@ public class EventDelegate
 
 		public Type type
 		{
-			[CallsUnknownMethods(Count = 1)]
 			[CalledBy(Type = typeof(EventDelegate), Member = "Execute")]
-			[CalledBy(Type = typeof(EventDelegate), Member = "Execute")]
-			[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 			[CallerCount(Count = 2)]
+			[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+			[CallsUnknownMethods(Count = 1)]
 			get
 			{
 				return null;
@@ -76,7 +75,6 @@ public class EventDelegate
 		[CalledBy(Type = typeof(BasicMenu), Member = "InstantiateMenuItems")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[CalledBy(Type = typeof(BasicMenu), Member = "InstantiateMenuItems")]
 		public Parameter(object val)
 		{
 		}
@@ -114,8 +112,8 @@ public class EventDelegate
 
 	public MonoBehaviour target
 	{
-		[CallerCount(Count = 80)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 92)]
 		get
 		{
 			return null;
@@ -129,7 +127,7 @@ public class EventDelegate
 	public string methodName
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 28)]
+		[CallerCount(Count = 32)]
 		get
 		{
 			return null;
@@ -152,35 +150,35 @@ public class EventDelegate
 
 	public bool isValid
 	{
-		[CalledBy(Type = typeof(EventDelegate), Member = "IsValid")]
 		[CalledBy(Type = typeof(EventDelegate), Member = "Equals")]
-		[Calls(Type = typeof(EventDelegate), Member = "Cache")]
+		[CalledBy(Type = typeof(EventDelegate), Member = "IsValid")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(EventDelegate), Member = "Cache")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public bool isEnabled
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(EventDelegate), Member = "Cache")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public EventDelegate()
 	{
 	}
 
-	[Calls(Type = typeof(EventDelegate), Member = "Set")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EventDelegate), Member = "Set")]
 	public EventDelegate(Callback call)
 	{
 	}
@@ -192,193 +190,179 @@ public class EventDelegate
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private static string GetMethodName(Callback callback)
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private static bool IsValid(Callback callback)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(EventDelegate), Member = "get_isValid")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(EventDelegate), Member = "get_isValid")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public override bool Equals(object obj)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public override int GetHashCode()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(EventDelegate), Member = "Clear")]
 	[CalledBy(Type = typeof(EventDelegate), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(UITweener), Member = "SetOnFinished")]
 	[CalledBy(Type = typeof(EventDelegate), Member = "Set")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "ShowNewLocationDiscovered")]
 	[CalledBy(Type = typeof(EventDelegate), Member = "Add")]
+	[CalledBy(Type = typeof(UITweener), Member = "SetOnFinished")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "ShowNewLocationDiscovered")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(EventDelegate), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Set(Callback call)
 	{
 	}
 
-	[Calls(Type = typeof(EventDelegate), Member = "Clear")]
-	[CallerCount(Count = 3)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(EventDelegate), Member = "Clear")]
 	public void Set(MonoBehaviour target, string methodName)
 	{
 	}
 
+	[CalledBy(Type = typeof(EventDelegate), Member = "get_parameters")]
+	[CalledBy(Type = typeof(EventDelegate), Member = "get_isValid")]
+	[CalledBy(Type = typeof(EventDelegate), Member = "get_isEnabled")]
+	[CalledBy(Type = typeof(EventDelegate), Member = "Execute")]
+	[CalledBy(Type = typeof(BasicMenu), Member = "InstantiateMenuItems")]
+	[CallerCount(Count = 6)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Delegate), Member = "CreateDelegate")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 21)]
-	[CalledBy(Type = typeof(BasicMenu), Member = "InstantiateMenuItems")]
-	[CalledBy(Type = typeof(EventDelegate), Member = "Execute")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CalledBy(Type = typeof(EventDelegate), Member = "get_isEnabled")]
-	[CalledBy(Type = typeof(EventDelegate), Member = "get_isValid")]
-	[CalledBy(Type = typeof(EventDelegate), Member = "get_parameters")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CalledBy(Type = typeof(BasicMenu), Member = "InstantiateMenuItems")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 9)]
-	[CallerCount(Count = 6)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[CallsUnknownMethods(Count = 21)]
 	private void Cache()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Parameter), Member = "get_type")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Parameter), Member = "get_type")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(DoubleClickButton), Member = "OnClick")]
 	[CalledBy(Type = typeof(EventDelegate), Member = "Execute")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(DoubleClickButton), Member = "OnClick")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(EventDelegate), Member = "Cache")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Parameter), Member = "get_value")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Parameter), Member = "get_type")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallsDeduplicatedMethods(Count = 14)]
-	[CallerCount(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	public bool Execute()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(EventDelegate), Member = "Set")]
 	[CalledBy(Type = typeof(EventDelegate), Member = ".ctor")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(EventDelegate), Member = "Set")]
+	[CalledBy(Type = typeof(EventDelegate), Member = "Set")]
+	[CallerCount(Count = 3)]
 	public void Clear()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "LastIndexOf")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "LastIndexOf")]
 	[Calls(Type = typeof(string), Member = "Substring")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public override string ToString()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 32)]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void Execute(List<EventDelegate> list)
 	{
 	}
 
+	[CalledBy(Type = typeof(UIPlayAnimation), Member = "Awake")]
+	[CalledBy(Type = typeof(UIPlayTween), Member = "Awake")]
+	[CalledBy(Type = typeof(UIPopupList), Member = "TriggerCallbacks")]
+	[CalledBy(Type = typeof(UIPopupList), Member = "OnEnable")]
+	[CalledBy(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CalledBy(Type = typeof(UIToggle), Member = "Start")]
+	[CalledBy(Type = typeof(UIToggle), Member = "Set")]
 	[CalledBy(Type = typeof(ActiveAnimation), Member = "Start")]
 	[CalledBy(Type = typeof(UIInput), Member = "ExecuteOnChange")]
-	[CalledBy(Type = typeof(ConsoleSlider), Member = "OnIncrease")]
-	[CalledBy(Type = typeof(UIProgressBar), Member = "set_value")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
 	[CalledBy(Type = typeof(ConsoleComboBox), Member = "OnIncrease")]
 	[CalledBy(Type = typeof(ConsoleComboBox), Member = "OnDecrease")]
 	[CalledBy(Type = typeof(ConsoleSlider), Member = "OnDragFinished")]
+	[CalledBy(Type = typeof(ConsoleSlider), Member = "OnIncrease")]
 	[CalledBy(Type = typeof(ConsoleSlider), Member = "OnDecrease")]
-	[CalledBy(Type = typeof(UIPopupList), Member = "OnEnable")]
-	[CalledBy(Type = typeof(UIToggle), Member = "Set")]
-	[CalledBy(Type = typeof(UIPlayTween), Member = "Awake")]
-	[CalledBy(Type = typeof(UIPlayAnimation), Member = "Awake")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(EventDelegate), Member = "get_isValid")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabel")]
 	[CallerCount(Count = 16)]
-	[CalledBy(Type = typeof(UIPopupList), Member = "TriggerCallbacks")]
+	[Calls(Type = typeof(EventDelegate), Member = "get_isValid")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool IsValid(List<EventDelegate> list)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(EventDelegate), Member = "Set")]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(EventDelegate), Member = "Set")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 2)]
 	public static EventDelegate Set(List<EventDelegate> list, Callback callback)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Set(List<EventDelegate> list, EventDelegate del)
 	{
 	}
 
-	[CalledBy(Type = typeof(UISavedOption), Member = "OnEnable")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(UISavedOption), Member = "OnEnable")]
 	[CalledBy(Type = typeof(Panel_SelectRegion_Map), Member = "OnSelectRegionItemInstantiated")]
 	[CalledBy(Type = typeof(SelectRegionItem), Member = "AttachEventHandler")]
-	[CalledBy(Type = typeof(UISavedOption), Member = "OnEnable")]
 	[CallerCount(Count = 4)]
 	public static EventDelegate Add(List<EventDelegate> list, Callback callback)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 76)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[Calls(Type = typeof(EventDelegate), Member = "Set")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public static EventDelegate Add(List<EventDelegate> list, Callback callback, bool oneShot)
 	{
@@ -391,36 +375,38 @@ public class EventDelegate
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(UITweener), Member = "AddOnFinished")]
 	[CalledBy(Type = typeof(UITweener), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(UITweener), Member = "AddOnFinished")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public static void Add(List<EventDelegate> list, EventDelegate ev, bool oneShot)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(UIPlayAnimation), Member = "OnDisable")]
 	[CalledBy(Type = typeof(UIPlayTween), Member = "OnDisable")]
 	[CalledBy(Type = typeof(UISavedOption), Member = "OnDisable")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool Remove(List<EventDelegate> list, Callback callback)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool Remove(List<EventDelegate> list, EventDelegate ev)
 	{
-		return default(bool);
+		return false;
 	}
 }

@@ -31,8 +31,8 @@ public class BatchAsyncLoadPanelRequest : ILoadPanelRequest
 		}
 	}
 
-	[Calls(Type = typeof(BatchAsyncLoadPanelRequest), Member = "LoadNextPanel")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BatchAsyncLoadPanelRequest), Member = "LoadNextPanel")]
 	public BatchAsyncLoadPanelRequest(List<Type> panelTypes)
 	{
 	}
@@ -41,7 +41,7 @@ public class BatchAsyncLoadPanelRequest : ILoadPanelRequest
 	[CallerCount(Count = 3)]
 	public bool IsLoadingPanel(string panelName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -54,21 +54,21 @@ public class BatchAsyncLoadPanelRequest : ILoadPanelRequest
 	[CallsUnknownMethods(Count = 2)]
 	public float GetProgress()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool HasCompleted()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 3)]
 	public bool HasFailed()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -83,13 +83,13 @@ public class BatchAsyncLoadPanelRequest : ILoadPanelRequest
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "GetBatchAsyncPanels_Internal")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(BatchAsyncLoadPanelRequest), Member = ".ctor")]
-	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "HasInstance")]
 	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanelAsync_Internal")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	private void LoadNextPanel()
 	{
 	}

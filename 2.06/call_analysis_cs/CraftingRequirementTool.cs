@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Gear;
 using UnityEngine;
@@ -14,40 +15,39 @@ public class CraftingRequirementTool : MonoBehaviour
 
 	private GearItem m_SelectedTool;
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Awake()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "Enable")]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "Enable")]
 	[CalledBy(Type = typeof(CraftingRequirementTool), Member = "Enable")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Disable()
 	{
 	}
 
-	[Calls(Type = typeof(GearItemObjectExtensions), Member = "GetBestGearItemWithName")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "Enable")]
-	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(CraftingRequirementTool), Member = "Disable")]
-	[Calls(Type = typeof(GearItemObject), Member = ".ctor")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BlueprintData), Member = "GetToolsAvailableToCraft")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(BlueprintData), Member = "GetToolsAvailableToCraft")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GearItemObject), Member = ".ctor")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(GearItemObjectExtensions), Member = "GetBestGearItemWithName")]
+	[Calls(Type = typeof(CraftingRequirementTool), Member = "Disable")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 25)]
 	public void Enable(Panel_Crafting panel, BlueprintData bp)
 	{
 	}
@@ -65,11 +65,11 @@ public class CraftingRequirementTool : MonoBehaviour
 	[CallsUnknownMethods(Count = 3)]
 	public bool IsEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public CraftingRequirementTool()
 	{
 	}

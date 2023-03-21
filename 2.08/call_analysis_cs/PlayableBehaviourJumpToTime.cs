@@ -16,8 +16,8 @@ public class PlayableBehaviourJumpToTime : PlayableBehaviour
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public PlayableBehaviourJumpToTime()
 	{
 	}

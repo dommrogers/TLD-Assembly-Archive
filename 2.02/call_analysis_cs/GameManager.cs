@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Runtime.CompilerServices;
@@ -548,514 +547,439 @@ public class GameManager : MonoBehaviour
 		{
 			return null;
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		private set
 		{
 		}
 	}
 
+	[CalledBy(Type = typeof(Wind), Member = "Update")]
 	[CalledBy(Type = typeof(Sprains), Member = "Update")]
 	[CalledBy(Type = typeof(BodyHarvest), Member = "Update")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Wind), Member = "Update")]
-	[Calls(Type = typeof(GameManager), Member = "GetDelayedGameplayComponentInfo")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(GameManager), Member = "GetDelayedGameplayComponentInfo")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool IsFrameValidToUpdate(GameplayComponent component)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(BodyHarvest), Member = "Update")]
-	[CalledBy(Type = typeof(Sprains), Member = "RollForSprainWhenMoving")]
-	[CalledBy(Type = typeof(Sprains), Member = "UpdateSprainRiskWarning")]
-	[CalledBy(Type = typeof(Sprains), Member = "MaybeSprainWhileMoving")]
-	[CalledBy(Type = typeof(Sprains), Member = "MaybeSprainWhileMoving")]
-	[CalledBy(Type = typeof(Wind), Member = "RefreshSettings")]
-	[CalledBy(Type = typeof(Sprains), Member = "UpdateSprainRiskWarning")]
-	[CalledBy(Type = typeof(Wind), Member = "RefreshSettings")]
+	[CalledBy(Type = typeof(Wind), Member = "UpdateNoise")]
 	[CalledBy(Type = typeof(Wind), Member = "Update")]
-	[CalledBy(Type = typeof(Wind), Member = "UpdateNoise")]
-	[CalledBy(Type = typeof(Wind), Member = "UpdateNoise")]
-	[CalledBy(Type = typeof(Wind), Member = "UpdateNoise")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 13)]
 	[CalledBy(Type = typeof(Wind), Member = "RefreshSettings")]
+	[CalledBy(Type = typeof(Sprains), Member = "MaybeSprainWhileMoving")]
+	[CalledBy(Type = typeof(Sprains), Member = "UpdateSprainRiskWarning")]
+	[CalledBy(Type = typeof(Sprains), Member = "RollForSprainWhenMoving")]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "Update")]
+	[CallerCount(Count = 13)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public static float GetDeltaTime(GameplayComponent component)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(GameManager), Member = "InitDelayedComponents")]
-	[CalledBy(Type = typeof(GameManager), Member = "InitDelayedComponents")]
-	[CalledBy(Type = typeof(GameManager), Member = "InitDelayedComponents")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(GameManager), Member = "RegisterDelayedComponents")]
-	[CalledBy(Type = typeof(GameManager), Member = "RegisterDelayedComponents")]
+	[CalledBy(Type = typeof(GameManager), Member = "InitDelayedComponents")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(GameManager), Member = "RegisterDelayedComponents")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	private static void RegisterDelayedComponent(GameplayComponent component, int frequency)
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "RegisterDelayedComponent")]
-	[Calls(Type = typeof(GameManager), Member = "RegisterDelayedComponent")]
-	[Calls(Type = typeof(GameManager), Member = "RegisterDelayedComponent")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "RegisterDelayedComponent")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	private static void RegisterDelayedComponents()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "RegisterDelayedComponent")]
+	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Enum), Member = "GetNames")]
 	[Calls(Type = typeof(GameManager), Member = "RegisterDelayedComponent")]
-	[Calls(Type = typeof(GameManager), Member = "RegisterDelayedComponent")]
-	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 11)]
 	private static void InitDelayedComponents()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(GameManager), Member = "IsFrameValidToUpdate")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(GameManager), Member = "IsFrameValidToUpdate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private static DelayedGameplayComponentInfo GetDelayedGameplayComponentInfo(GameplayComponent component)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Time), Member = "get_frameCount")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Time), Member = "get_frameCount")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private static void UpdateDelayedComponentsDeltaTime()
 	{
 	}
 
-	[Calls(Type = typeof(CustomExperienceMode), Member = "SendAnalytics")]
-	[Calls(Type = typeof(Utils), Member = "SendGameStartAnalyticsEvent")]
-	[Calls(Type = typeof(GameManager), Member = "IsPlayingCustomXPGame")]
-	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(FeatEnabledTracker), Member = "SendAnalytics")]
-	[Calls(Type = typeof(GameManager), Member = "FadeOutSceneAudio")]
-	[Calls(Type = typeof(BadgeUIInfo), Member = "SendBadgeInfoAnalyticsEvent")]
-	[Calls(Type = typeof(GameManager), Member = "LoadSceneWithLoadingScreen")]
 	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "OnTryAgain")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnSelectSlotNameContinue")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateNewGame")]
-	[CallsUnknownMethods(Count = 37)]
-	[Calls(Type = typeof(Panel_HUD), Member = "CleanupDamageEventTable")]
-	[Calls(Type = typeof(SandboxConfig), Member = "GetIndoorSpawn")]
-	[Calls(Type = typeof(Panel_Log), Member = "Reset")]
-	[Calls(Type = typeof(GridUI), Member = "ClearItems")]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(SaveGameSlots), Member = "ClearAutoSave")]
 	[Calls(Type = typeof(SaveGameSlotHelper), Member = "ClearSaveSlotsLists")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
 	[Calls(Type = typeof(SandboxConfig), Member = "GetRandomStartingRegion")]
-	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(SandboxConfig), Member = "GetIndoorSpawn")]
+	[Calls(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
 	[Calls(Type = typeof(SpecialEvent), Member = "MatchesExperienceMode")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "OnFilterChange")]
 	[Calls(Type = typeof(Panel_Inventory), Member = "RefreshFilterIconColors")]
 	[Calls(Type = typeof(StatsManager), Member = "Reset")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
+	[Calls(Type = typeof(Panel_Log), Member = "Reset")]
+	[Calls(Type = typeof(GridUI), Member = "ClearItems")]
+	[Calls(Type = typeof(Panel_HUD), Member = "CleanupDamageEventTable")]
+	[Calls(Type = typeof(GameManager), Member = "FadeOutSceneAudio")]
+	[Calls(Type = typeof(Utils), Member = "SendGameStartAnalyticsEvent")]
+	[Calls(Type = typeof(GameManager), Member = "IsPlayingCustomXPGame")]
+	[Calls(Type = typeof(GameManager), Member = "GetCustomMode")]
+	[Calls(Type = typeof(CustomExperienceMode), Member = "SendAnalytics")]
+	[Calls(Type = typeof(FeatEnabledTracker), Member = "SendAnalytics")]
+	[Calls(Type = typeof(BadgeUIInfo), Member = "SendBadgeInfoAnalyticsEvent")]
+	[Calls(Type = typeof(GameManager), Member = "LoadSceneWithLoadingScreen")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 37)]
 	public void LaunchSandbox()
 	{
 	}
 
-	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "OnContinue")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnSelectSurvivorBack")]
 	[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "OnChallengeClicked")]
 	[CalledBy(Type = typeof(Panel_SelectExperience), Member = "OnExperienceClicked")]
 	[CalledBy(Type = typeof(Panel_SelectSurvivor), Member = "OnClickBack")]
+	[CallerCount(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static bool RegionLockedBySelectedMode()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "UpdateFeatActionButton")]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "UpdateSelectedFeats")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnToggleFeatActive")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "UpdateSelectedFeats")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "UpdateFeatActionButton")]
+	[CallerCount(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public int GetNumFeatsForXPMode(ExperienceModeType xpMode)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "Update")]
-	[CalledBy(Type = typeof(StartGear), Member = "AddAllToInventory")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerIsInvisibleToAi")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "IsActive")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "InstantiateInterfaceObjects")]
-	[CalledBy(Type = typeof(InterfaceManager), Member = "Update")]
-	[CalledBy(Type = typeof(GameManager), Member = "AreControlsLockedForIntro")]
+	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SetFOVFromOptions")]
+	[CalledBy(Type = typeof(Weather), Member = "IsMainMenu")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateLastLocations")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "RefreshHudDisplayMode")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyFOV")]
+	[CalledBy(Type = typeof(GameManager), Member = "Start")]
+	[CalledBy(Type = typeof(GameManager), Member = "Update")]
 	[CalledBy(Type = typeof(GameManager), Member = "AllowedToSave")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneWithLoadingScreen")]
-	[CalledBy(Type = typeof(GameManager), Member = "Update")]
-	[CalledBy(Type = typeof(GameManager), Member = "Start")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyFOV")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "RefreshHudDisplayMode")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateLastLocations")]
-	[CalledBy(Type = typeof(Weather), Member = "IsMainMenu")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SetFOVFromOptions")]
+	[CalledBy(Type = typeof(GameManager), Member = "AreControlsLockedForIntro")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "Update")]
+	[CalledBy(Type = typeof(InterfaceManager), Member = "InstantiateInterfaceObjects")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "IsActive")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerIsInvisibleToAi")]
+	[CalledBy(Type = typeof(StartGear), Member = "AddAllToInventory")]
+	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "Update")]
 	[CallerCount(Count = 18)]
-	[CallAnalysisFailed]
-	[CalledBy(Type = typeof(GameManager), Member = "Update")]
 	public static bool IsMainMenuActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Condition_InScene), Member = "OnCheck")]
-	[CalledBy(Type = typeof(Condition_StreamPipeMonitorStatus), Member = "OnInit")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerIsInvisibleToAi")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "IsIndoorWardLocationForCurrentScene")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_hunted2_endgame")]
+	[CalledBy(Type = typeof(GameManager), Member = "AllowedToSave")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneWithLoadingScreen")]
 	[CalledBy(Type = typeof(GameManager), Member = "AreControlsLockedForIntro")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_hunted2_endgame")]
-	[Calls(Type = typeof(TextInfo), Member = "CompareOrdinalIgnoreCase")]
-	[Calls(Type = typeof(string), Member = "CompareOrdinalIgnoreCaseHelper")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "IsIndoorWardLocationForCurrentScene")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerIsInvisibleToAi")]
+	[CalledBy(Type = typeof(Condition_StreamPipeMonitorStatus), Member = "OnInit")]
+	[CalledBy(Type = typeof(Condition_InScene), Member = "OnCheck")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(GameManager), Member = "AllowedToSave")]
+	[Calls(Type = typeof(string), Member = "CompareOrdinalIgnoreCaseHelper")]
+	[Calls(Type = typeof(TextInfo), Member = "CompareOrdinalIgnoreCase")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public static bool IsActiveScene(string SceneName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateSystem")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateSystem")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateSystem")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateSystem")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateSystem")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateSystem")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateSystem")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateSystem")]
-	[Calls(Type = typeof(InterfaceManager), Member = "InstantiateInterfaceObjects")]
-	[Calls(Type = typeof(BaseAiManager), Member = "InstantiateSubsystems")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateSystem")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateOnlineSystems")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateInputSystem")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(InterfaceManager), Member = "CreateInterfaceManager")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "CreateInterfaceManager")]
+	[Calls(Type = typeof(InterfaceManager), Member = "InstantiateInterfaceObjects")]
+	[Calls(Type = typeof(GameManager), Member = "InstantiateInputSystem")]
+	[Calls(Type = typeof(GameManager), Member = "InstantiateOnlineSystems")]
 	[Calls(Type = typeof(GameManager), Member = "InstantiateSystem")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(BaseAiManager), Member = "InstantiateSubsystems")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 5)]
 	private void InstantiateSystems()
 	{
 	}
 
-	[Calls(Type = typeof(InterfaceManager), Member = "InstantiateInterfaceObjects")]
-	[Calls(Type = typeof(InterfaceManager), Member = "CreateInterfaceManager")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "CreateInterfaceManager")]
+	[Calls(Type = typeof(InterfaceManager), Member = "InstantiateInterfaceObjects")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static void InstantiateInterfaceSystem()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "InitializeSystems")]
 	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Resources), Member = "Load")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void InstantiateInputSystem()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerRichPresenceManager), Member = "Initialize")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "InitializeSystems")]
-	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
-	[Calls(Type = typeof(AchievementPlatformManager), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Resources), Member = "Load")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(AchievementPlatformManager), Member = "Initialize")]
+	[Calls(Type = typeof(PlayerRichPresenceManager), Member = "Initialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void InstantiateOnlineSystems()
 	{
 	}
 
-	[CalledBy(Type = typeof(EmptyScene), Member = "OnLoadComplete")]
-	[Calls(Type = typeof(Blackboard), Member = "Deserialize")]
 	[CalledBy(Type = typeof(Panel_Story), Member = "DeserializeStoryManagerCallback")]
+	[CalledBy(Type = typeof(EmptyScene), Member = "OnLoadComplete")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_story")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(GameManager), Member = "OnLoadStoryFromEmptyCallback")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneAsynchronously")]
 	[CalledBy(Type = typeof(JumpManager), Member = "OnLoadSetup")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(GlobalBlackboard), Member = "Find")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameManager), Member = "DestroySandboxManager")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "RegisterAnyMissionObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "RegisterAnyMissionObjects")]
 	[Calls(Type = typeof(BaseAiManager), Member = "RegisterAnyAIGuid")]
+	[Calls(Type = typeof(GlobalBlackboard), Member = "Find")]
+	[Calls(Type = typeof(Blackboard), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 13)]
 	public static void InstantiateStoryManager()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void ResetGameState()
 	{
 	}
 
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_story")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadScene")]
-	[CalledBy(Type = typeof(GameManager), Member = "OnLoadGameCallback")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
 	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "ShowPanel")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "UnregisterAllMissionObjects")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "StopAllMissions")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_story")]
+	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
+	[CalledBy(Type = typeof(GameManager), Member = "OnLoadGameCallback")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadScene")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "StopAllMissions")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "UnregisterAllMissionObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public static void DestroyStoryManager()
 	{
 	}
 
-	[CalledBy(Type = typeof(EmptyScene), Member = "OnLoadComplete")]
-	[CalledBy(Type = typeof(JumpManager), Member = "OnLoadSetup")]
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneAsynchronously")]
-	[CalledBy(Type = typeof(GameManager), Member = "OnLoadStoryFromEmptyCallback")]
-	[CalledBy(Type = typeof(GameManager), Member = "OnLoadStoryFromEmptyCallback")]
-	[CalledBy(Type = typeof(GameManager), Member = "Start")]
-	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_sandbox")]
-	[CalledBy(Type = typeof(EmptyScene), Member = "OnLoadComplete")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnLoadGame")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(BaseAiManager), Member = "RegisterAnyAIGuid")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "RegisterAnyMissionObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[CalledBy(Type = typeof(EmptyScene), Member = "OnLoadComplete")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_sandbox")]
+	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
+	[CalledBy(Type = typeof(GameManager), Member = "Start")]
+	[CalledBy(Type = typeof(GameManager), Member = "OnLoadStoryFromEmptyCallback")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneAsynchronously")]
+	[CalledBy(Type = typeof(JumpManager), Member = "OnLoadSetup")]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GameManager), Member = "DestroyStoryManager")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(GameManager), Member = "DestroyStoryManager")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallerCount(Count = 11)]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnLoadGame")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "RegisterAnyMissionObjects")]
+	[Calls(Type = typeof(BaseAiManager), Member = "RegisterAnyAIGuid")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 10)]
 	public static void InstantiateSandboxManager()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(PlayerLoopScript._003C_003Ec), Member = "<Init>b__7_0")]
 	[CalledBy(Type = typeof(PlayerLoopScript), Member = "EarlyUpdate_Internal")]
-	[Calls(Type = typeof(PlayerCameraAnim), Member = "RestoreMainCameraPos")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(RenderObjectInstance), Member = "EarlyUpdateAll")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(TypeFullName = "PlayerLoopScript.<>c", Member = "<Init>b__7_0")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(RenderObjectInstance), Member = "EarlyUpdateAll")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerCameraAnim), Member = "RestoreMainCameraPos")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void EarlyUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(GameManager), Member = "OnLoadGameCallback")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateStoryManager")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_sandbox")]
 	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "OnTryAgain")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_sandbox")]
+	[CalledBy(Type = typeof(GameManager), Member = "InstantiateStoryManager")]
+	[CalledBy(Type = typeof(GameManager), Member = "OnLoadGameCallback")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadScene")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "UnregisterAllMissionObjects")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "StopAllMissions")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "StopAllMissions")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "UnregisterAllMissionObjects")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void DestroySandboxManager()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "InstantiatePlayerObject")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateSystems")]
-	[Calls(Type = typeof(GameManager), Member = "CacheComponents")]
-	[Calls(Type = typeof(TimeOfDay), Member = "InstantiateUniStorm")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateEffectPoolManager")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateRumbleEffectManager")]
-	[Calls(Type = typeof(GameManager), Member = "ResetLists")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GameManager), Member = "InitDelayedComponents")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(AfflictionDefinitionTable), Member = "RefreshCache")]
-	[Calls(Type = typeof(ConsoleManager), Member = "Initialize")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "CachePlayerComponents")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[Calls(Type = typeof(RegionManager), Member = "SceneIsRegion")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "ReadVersionFile")]
 	[Calls(Type = typeof(GameManager), Member = "SetGameVersionString")]
 	[Calls(Type = typeof(GameManager), Member = "OutputSystemInfo")]
 	[Calls(Type = typeof(PersistentDataPath), Member = "Init")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
-	[CallsDeduplicatedMethods(Count = 12)]
+	[Calls(Type = typeof(Animator), Member = "StringToHash")]
 	[Calls(Type = typeof(ThreeDaysOfNight), Member = "Init")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "Init")]
 	[Calls(Type = typeof(EpisodeManager), Member = "Init")]
 	[Calls(Type = typeof(Utils), Member = "InitAssetBundles")]
-	[Calls(Type = typeof(Animator), Member = "StringToHash")]
 	[Calls(Type = typeof(HDRManager), Member = "Initialize")]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(RegionManager), Member = "SceneIsRegion")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(AfflictionDefinitionTable), Member = "RefreshCache")]
+	[Calls(Type = typeof(GameManager), Member = "InstantiatePlayerObject")]
+	[Calls(Type = typeof(GameManager), Member = "InstantiateSystems")]
+	[Calls(Type = typeof(GameManager), Member = "CacheComponents")]
+	[Calls(Type = typeof(GameManager), Member = "CachePlayerComponents")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(TimeOfDay), Member = "InstantiateUniStorm")]
+	[Calls(Type = typeof(GameManager), Member = "InstantiateEffectPoolManager")]
+	[Calls(Type = typeof(GameManager), Member = "InstantiateRumbleEffectManager")]
+	[Calls(Type = typeof(ConsoleManager), Member = "Initialize")]
+	[Calls(Type = typeof(GameManager), Member = "ResetLists")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GameManager), Member = "InitDelayedComponents")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 26)]
 	public void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(BearHuntRedux), Member = "Reset")]
-	[Calls(Type = typeof(AuroraScreenManager), Member = "Reset")]
-	[Calls(Type = typeof(LoadSceneParent), Member = "Reset")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(KnowledgeManager), Member = "Reset")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(TLDBehaviourTreeManager), Member = "Init")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(PlayableBehaviourFadeLight), Member = "Reset")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(RumbleEffectManager), Member = "Reset")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "Reset")]
-	[Calls(Type = typeof(PhoneManager), Member = "Reset")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ToxicFogManager), Member = "Reset")]
 	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneWithLoadingScreen")]
-	[CallsUnknownMethods(Count = 63)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(PlaceableManager), Member = "Reset")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 75)]
 	[Calls(Type = typeof(BaseAiManager), Member = "Reset")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
 	[Calls(Type = typeof(GearManager), Member = "Reset")]
 	[Calls(Type = typeof(PlayAudioSimpleManager), Member = "Reset")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(AuroraManager), Member = "Reset")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(TLDBehaviourTreeManager), Member = "Init")]
+	[Calls(Type = typeof(KnowledgeManager), Member = "Reset")]
+	[Calls(Type = typeof(HashSet<>), Member = "Clear")]
+	[Calls(Type = typeof(LoadSceneParent), Member = "Reset")]
+	[Calls(Type = typeof(AuroraScreenManager), Member = "Reset")]
+	[Calls(Type = typeof(BearHuntRedux), Member = "Reset")]
+	[Calls(Type = typeof(PlayableBehaviourFadeLight), Member = "Reset")]
+	[Calls(Type = typeof(RumbleEffectManager), Member = "Reset")]
+	[Calls(Type = typeof(PlaceableManager), Member = "Reset")]
+	[Calls(Type = typeof(PhoneManager), Member = "Reset")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "Reset")]
+	[Calls(Type = typeof(ToxicFogManager), Member = "Reset")]
+	[CallsDeduplicatedMethods(Count = 72)]
+	[CallsUnknownMethods(Count = 63)]
 	private static void ResetLists()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_HUD), Member = "HideLocationLabel")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "LoadProfile")]
-	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
-	[Calls(Type = typeof(GameManager), Member = "IsMainMenuActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 24)]
-	[Calls(Type = typeof(CameraFade), Member = "BashFadeAlpha")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "DeleteSaveFiles")]
-	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "LoadProfile")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetDefaultOptionsAtStartup")]
-	[Calls(Type = typeof(GameManager), Member = "UpdateTerrainSettings")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
 	[Calls(Type = typeof(GameManager), Member = "StripOptFromSceneName")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyBrightness")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyMasterVolume")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[Calls(Type = typeof(FeatsManager), Member = "Deserialize")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplySoundVolume")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyMusicVolume")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyVoiceVolume")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyPanningRule")]
 	[Calls(Type = typeof(InputManager), Member = "LoadRemapping")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplySoundVolume")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(FeatsManager), Member = "Deserialize")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "SetDefaultOptionsAtStartup")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "LoadProfile")]
+	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
+	[Calls(Type = typeof(GameManager), Member = "IsMainMenuActive")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[Calls(Type = typeof(Panel_HUD), Member = "HideLocationLabel")]
+	[Calls(Type = typeof(GameManager), Member = "UpdateTerrainSettings")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
+	[Calls(Type = typeof(CameraFade), Member = "BashFadeAlpha")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "DeleteSaveFiles")]
+	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 24)]
 	public void Start()
 	{
 	}
 
-	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "UpdateQueue")]
-	[Calls(Type = typeof(GameManager), Member = "UpdateNotPaused")]
-	[Calls(Type = typeof(GameManager), Member = "UpdatePaused")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
-	[Calls(Type = typeof(AkGameObj), Member = "UpdateAll")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "Update")]
-	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "GetInstance")]
-	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "GetInstance")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "MaybeShowNotificationsInQueue")]
-	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "HideSyncMessage")]
-	[Calls(Type = typeof(AssetBundleManager), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(GameManager), Member = "PostMigrationDestoryLitFlareOrTorch")]
-	[Calls(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "ShowSyncMessage")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "RestoreGameForEpisodeMigration")]
-	[Calls(Type = typeof(GameManager), Member = "IsMainMenuActive")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "GetMovementInput")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(SceneManager), Member = "IsLoading")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "GetMovementInput")]
 	[Calls(Type = typeof(Vector2), Member = "Normalize")]
+	[Calls(Type = typeof(Vector2), Member = "get_zero")]
 	[Calls(Type = typeof(string), Member = "Format")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Vector2), Member = "get_zero")]
+	[Calls(Type = typeof(StatsManager), Member = "CheckBurntHousesInCoastal")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[Calls(Type = typeof(MainCameraFrustrum), Member = "RecalculateFrustumPlanes")]
 	[Calls(Type = typeof(QualitySettingsManager), Member = "ApplyCurrentQualitySettings")]
@@ -1063,41 +987,60 @@ public class GameManager : MonoBehaviour
 	[Calls(Type = typeof(GameManager), Member = "SaveGameAndDisplayHUDMessage")]
 	[Calls(Type = typeof(GameManager), Member = "IsMainMenuActive")]
 	[Calls(Type = typeof(GameManager), Member = "LoadSlotOnStart")]
-	[Calls(Type = typeof(StatsManager), Member = "CheckBurntHousesInCoastal")]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "RestoreGameForEpisodeMigration")]
+	[Calls(Type = typeof(GameManager), Member = "PostMigrationDestoryLitFlareOrTorch")]
+	[Calls(Type = typeof(GameManager), Member = "UpdateNotPaused")]
+	[Calls(Type = typeof(GameManager), Member = "UpdatePaused")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
+	[Calls(Type = typeof(AkGameObj), Member = "UpdateAll")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "Update")]
+	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "GetInstance")]
+	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "UpdateQueue")]
+	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "ShowSyncMessage")]
+	[Calls(Type = typeof(WebUtils.SteamCloudManager), Member = "HideSyncMessage")]
+	[Calls(Type = typeof(AssetBundleManager), Member = "Update")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "MaybeShowNotificationsInQueue")]
+	[Calls(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 21)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(NPC), Member = "FindAll")]
-	[Calls(Type = typeof(InaccessibleGearContainer), Member = "Initialize")]
 	[CalledBy(Type = typeof(SceneManager), Member = "OnSceneLoaded")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NPC), Member = "FindAll")]
+	[Calls(Type = typeof(Resources), Member = "FindObjectsOfTypeAll")]
+	[Calls(Type = typeof(InaccessibleGearContainer), Member = "Initialize")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public static void AllScenesLoaded()
 	{
 	}
 
-	[Calls(Type = typeof(BaseAiManager), Member = "DoLateUpdate")]
-	[Calls(Type = typeof(WeatherParticleManager), Member = "LateUpdate_part1")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(BaseAiManager), Member = "DiposeBatchGroundRaycastHit")]
-	[Calls(Type = typeof(BaseAiManager), Member = "BatchGroundRaycast")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BaseAiManager), Member = "BatchGroundRaycast")]
 	[Calls(Type = typeof(MatchTransform), Member = "LateUpdateAll")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(WeatherParticleManager), Member = "LateUpdate_part1")]
+	[Calls(Type = typeof(BaseAiManager), Member = "DoLateUpdate")]
+	[Calls(Type = typeof(BaseAiManager), Member = "DiposeBatchGroundRaycastHit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void LateUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(SaveGameSystem), Member = "IsWaitingForScreenshot")]
 	[Calls(Type = typeof(EpisodeManager), Member = "Shutdown")]
 	[Calls(Type = typeof(BaseAiManager), Member = "DiposeBatchGroundRaycastHit")]
 	[Calls(Type = typeof(SplineManager), Member = "Dispose")]
 	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 8)]
 	private void OnDestroy()
 	{
@@ -1106,35 +1049,34 @@ public class GameManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private bool CanMigrateEnteringEpisode(Episode episode)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_Loading), Member = "Update")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "LoadScene")]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Loading), Member = "Update")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GC), Member = "Collect")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void ForceGC()
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "Enable")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "EnterInspectGearMode")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "Enable")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "Enable")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(GC), Member = "Collect")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 6)]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(GC), Member = "Collect")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void MaybeForceGC()
 	{
 	}
@@ -1145,11 +1087,10 @@ public class GameManager : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public static string Serialize()
 	{
@@ -1157,9 +1098,10 @@ public class GameManager : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public static void Deserialize(string serialized)
 	{
 	}
@@ -1171,216 +1113,226 @@ public class GameManager : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(EventWaitHandle), Member = "Set")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "WaitForAsyncSave")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 6)]
 	public void OnApplicationQuit()
 	{
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
-	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateLoadingSave")]
-	[CalledBy(Type = typeof(Panel_Story), Member = "LoadStoryForMigration")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "SaveGameCanBeLoaded")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Story), Member = "LoadStory")]
+	[CalledBy(Type = typeof(Panel_Story), Member = "LoadStoryForMigration")]
+	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateLoadingSave")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameManager), Member = "SaveGameCanBeLoaded")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool SaveGameCanBeLoaded(string slotName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(GameManager), Member = "SaveGameCanBeLoaded")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnLoadGame")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CalledBy(Type = typeof(GameManager), Member = "SaveGameCanBeLoaded")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotTypeFromName")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "GetBootData")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotTypeFromName")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "SaveIsCompatible")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool SaveGameCanBeLoaded(string slotName, out string saveErrorMessage)
 	{
 		saveErrorMessage = null;
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(GameManager), Member = "TriggerQuicksaveAndDisplayHUDMessage")]
-	[CalledBy(Type = typeof(GameManager), Member = "TriggerAutosaveAndDisplayHUDMessage")]
 	[CalledBy(Type = typeof(GameManager), Member = "SaveGameAndDisplayHUDMessage")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "IsAsyncSaveRunning")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(GameManager), Member = "TriggerAutosaveAndDisplayHUDMessage")]
+	[CalledBy(Type = typeof(GameManager), Member = "TriggerQuicksaveAndDisplayHUDMessage")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "GetMissionsActiveActionCount")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "IsAsyncSaveRunning")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	private static bool SaveShouldBePending()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "ForceSaveGame")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
 	[CalledBy(Type = typeof(GameManager), Member = "Update")]
-	[Calls(Type = typeof(Panel_SaveIcon), Member = "StartSaveIconAnimation")]
 	[CalledBy(Type = typeof(GameManager), Member = "TriggerManualSaveAndDisplayHUDMessage")]
-	[Calls(Type = typeof(GameManager), Member = "SaveShouldBePending")]
-	[Calls(Type = typeof(GameManager), Member = "AllowedToSave")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameManager), Member = "AllowedToSave")]
+	[Calls(Type = typeof(GameManager), Member = "SaveShouldBePending")]
 	[Calls(Type = typeof(StatsManager), Member = "SetValue")]
+	[Calls(Type = typeof(Panel_SaveIcon), Member = "StartSaveIconAnimation")]
+	[Calls(Type = typeof(GameManager), Member = "ForceSaveGame")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private static void SaveGameAndDisplayHUDMessage()
 	{
 	}
 
 	[CallerCount(Count = 21)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_SaveIcon), Member = "StartSaveIconAnimation")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void SaveProfileAndDisplayHUDMessage()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(AchievementManager), Member = "UpdateCacheAchievementInProfile")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SaveSettings")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "ResetBindings")]
-	[Calls(Type = typeof(Panel_SaveIcon), Member = "StartSaveIconAnimation")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SaveSettings")]
+	[CalledBy(Type = typeof(AchievementManager), Member = "UpdateCacheAchievementInProfile")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_SaveIcon), Member = "StartSaveIconAnimation")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void SaveProfileSettingsAndDisplayHUDMessage()
 	{
 	}
 
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetOldestAutosaveName")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "UpdateAutosave")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SaveGame")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "SetBaseNameForSave")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "CopyData")]
-	[Calls(Type = typeof(Debug), Member = "LogFormat")]
-	[Calls(Type = typeof(Panel_SaveIcon), Member = "StartSaveIconAnimation")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(SaveGameSystem), Member = "ResetAutosaveTimer")]
-	[Calls(Type = typeof(GameManager), Member = "SaveShouldBePending")]
-	[Calls(Type = typeof(GameManager), Member = "AllowedToSave")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(GameManager), Member = "AllowedToSave")]
+	[Calls(Type = typeof(GameManager), Member = "SaveShouldBePending")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "ResetAutosaveTimer")]
 	[Calls(Type = typeof(StatsManager), Member = "SetValue")]
+	[Calls(Type = typeof(Panel_SaveIcon), Member = "StartSaveIconAnimation")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetOldestAutosaveName")]
+	[Calls(Type = typeof(Debug), Member = "LogFormat")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "CopyData")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "SetBaseNameForSave")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SaveGame")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	public static void TriggerAutosaveAndDisplayHUDMessage()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
+	[CalledBy(TypeFullName = "Panel_SaveStory.<OnQuicksaveCoroutine>d__58", Member = "MoveNext")]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteQuickSaveAction")]
-	[CalledBy(Type = typeof(Panel_SaveStory._003COnQuicksaveCoroutine_003Ed__58), Member = "MoveNext")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SaveGame")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "SetBaseNameForSave")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "CopyData")]
-	[Calls(Type = typeof(Debug), Member = "LogFormat")]
-	[Calls(Type = typeof(StatsManager), Member = "SetValue")]
-	[Calls(Type = typeof(GameManager), Member = "SaveShouldBePending")]
-	[Calls(Type = typeof(GameManager), Member = "AllowedToSave")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(GameManager), Member = "AllowedToSave")]
+	[Calls(Type = typeof(GameManager), Member = "SaveShouldBePending")]
+	[Calls(Type = typeof(StatsManager), Member = "SetValue")]
 	[Calls(Type = typeof(Panel_SaveIcon), Member = "StartSaveIconAnimation")]
+	[Calls(Type = typeof(Debug), Member = "LogFormat")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "CopyData")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "SetBaseNameForSave")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SaveGame")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	public static void TriggerQuicksaveAndDisplayHUDMessage()
 	{
 	}
 
-	[Calls(Type = typeof(SaveGameSlots), Member = "SetSlotDisplayName")]
-	[CalledBy(Type = typeof(Panel_SaveStory), Member = "OnOverwriteSaveNamed")]
-	[Calls(Type = typeof(GameManager), Member = "SaveGameAndDisplayHUDMessage")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "SetUserDefinedSlotName")]
 	[CalledBy(Type = typeof(Panel_SaveStory), Member = "OnNewSaveNamed")]
-	[Calls(Type = typeof(GameManager), Member = "AllowedToSave")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_SaveStory), Member = "OnOverwriteSaveNamed")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(GameManager), Member = "AllowedToSave")]
 	[Calls(Type = typeof(SaveGameSlots), Member = "CopyData")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "SetUserDefinedSlotName")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "SetSlotDisplayName")]
+	[Calls(Type = typeof(GameManager), Member = "SaveGameAndDisplayHUDMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void TriggerManualSaveAndDisplayHUDMessage(string saveName, string displayName)
 	{
 	}
 
+	[CalledBy(Type = typeof(PassTime), Member = "UpdatePassingTime")]
+	[CalledBy(Type = typeof(Rest), Member = "UpdateWhenSleeping")]
+	[CalledBy(Type = typeof(BloodLoss), Member = "BloodLossStart")]
+	[CalledBy(Type = typeof(BrokenRib), Member = "BrokenRibStart")]
+	[CalledBy(Type = typeof(Burns), Member = "BurnsStart")]
+	[CalledBy(Type = typeof(CabinFever), Member = "CabinFeverStart")]
+	[CalledBy(Type = typeof(Dysentery), Member = "DysenteryStart")]
+	[CalledBy(Type = typeof(FoodPoisoning), Member = "FoodPoisoningStart")]
+	[CalledBy(Type = typeof(Frostbite), Member = "FrostbiteStart")]
+	[CalledBy(Type = typeof(Hypothermia), Member = "HypothermiaStart")]
+	[CalledBy(Type = typeof(Infection), Member = "InfectionStart")]
+	[CalledBy(Type = typeof(IntestinalParasites), Member = "AddRiskPercent")]
+	[CalledBy(Type = typeof(IntestinalParasites), Member = "IntestinalParasitesStart")]
+	[CalledBy(Type = typeof(SprainedAnkle), Member = "SprainedAnkleStart")]
+	[CalledBy(Type = typeof(SprainedWrist), Member = "SprainedWristStart")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "BreakStruggle")]
+	[CalledBy(Type = typeof(DamageTrigger), Member = "OnTriggerExit")]
 	[CallerCount(Count = 20)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(GameManager), Member = "SaveGameAndDisplayHUDMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void TriggerSurvivalSaveAndDisplayHUDMessage()
 	{
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
-	[CalledBy(Type = typeof(MoviePlayer), Member = "UpdatePause")]
+	[CalledBy(Type = typeof(MoviePlayer), Member = "Update")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "CheckForPause")]
+	[CalledBy(Type = typeof(MoviePlayer), Member = "UpdatePause")]
+	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(InputManager), Member = "IsShowingControllerDisconnectedPanel")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(MoviePlayer), Member = "Update")]
 	public static bool ShouldPauseMoviePlayer()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "DoAnyFSMsHaveInvalidTags")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CharacterController), Member = "get_isGrounded")]
-	[Calls(Type = typeof(GameManager), Member = "AllowedToLoadActiveGame")]
-	[CalledBy(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
-	[CallsUnknownMethods(Count = 38)]
+	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "UpdateSaving")]
 	[CalledBy(Type = typeof(GameManager), Member = "SaveGameAndDisplayHUDMessage")]
 	[CalledBy(Type = typeof(GameManager), Member = "TriggerAutosaveAndDisplayHUDMessage")]
 	[CalledBy(Type = typeof(GameManager), Member = "TriggerQuicksaveAndDisplayHUDMessage")]
 	[CalledBy(Type = typeof(GameManager), Member = "TriggerManualSaveAndDisplayHUDMessage")]
 	[CalledBy(Type = typeof(Condition_CanSave), Member = "OnCheck")]
-	[Calls(Type = typeof(GameManager), Member = "IsActiveScene")]
-	[Calls(Type = typeof(Time), Member = "get_time")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "SaveExists")]
-	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "UpdateSaving")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "SaveExists")]
+	[CalledBy(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
 	[CallerCount(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(GameManager), Member = "IsMainMenuActive")]
 	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "InProgress")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(StatsManager), Member = "GetValue")]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetTrackedMission")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "InProgress")]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "SaveExists")]
+	[Calls(Type = typeof(GameManager), Member = "IsActiveScene")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "DoAnyFSMsHaveInvalidTags")]
+	[Calls(Type = typeof(CharacterController), Member = "get_isGrounded")]
+	[Calls(Type = typeof(GameManager), Member = "AllowedToLoadActiveGame")]
+	[Calls(Type = typeof(Time), Member = "get_time")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 38)]
 	public static bool AllowedToSave(SaveState state)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "LoadActiveSaveGame")]
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
-	[CalledBy(Type = typeof(GameManager), Member = "AllowedToSave")]
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
-	[Calls(Type = typeof(InputManager), Member = "CanInvokePauseMenu")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "UpdateSaving")]
+	[CalledBy(Type = typeof(GameManager), Member = "AllowedToSave")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadActiveSaveGame")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(InputManager), Member = "CanInvokePauseMenu")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 11)]
 	public static bool AllowedToLoadActiveGame()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1396,310 +1348,303 @@ public class GameManager : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "SaveGameAndDisplayHUDMessage")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(JumpManager._003COnSavingCoroutine_003Ed__37), Member = "MoveNext")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_save")]
+	[CalledBy(Type = typeof(GameManager), Member = "SaveGameAndDisplayHUDMessage")]
+	[CalledBy(TypeFullName = "JumpManager.<OnSavingCoroutine>d__37", Member = "MoveNext")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetBaseNameForSave")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "SaveGame")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetBaseNameForSave")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public static void ForceSaveGame()
 	{
 	}
 
-	[CalledBy(Type = typeof(JumpManager), Member = "OnLoadSetup")]
-	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateLoadingSave")]
-	[CalledBy(Type = typeof(GameManager), Member = "OnLoadGameCallback")]
-	[CallerCount(Count = 4)]
 	[CallAnalysisFailed]
 	[CalledBy(Type = typeof(Panel_Story), Member = "LoadStorySaveSlot")]
+	[CalledBy(Type = typeof(EmptyScene), Member = "UpdateLoadingSave")]
+	[CalledBy(Type = typeof(GameManager), Member = "OnLoadGameCallback")]
+	[CalledBy(Type = typeof(JumpManager), Member = "OnLoadSetup")]
+	[CallerCount(Count = 4)]
 	public static bool LoadSaveGameSlot(SaveSlotInfo ssi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnLoadGame")]
-	[Calls(Type = typeof(GameManager), Member = "LoadSceneWithLoadingScreen")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SaveIsCompatible")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotTypeFromName")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "GetBootData")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SaveGameSystem), Member = "GetBootData")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "GetSaveSlotTypeFromName")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SaveIsCompatible")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "ResetAutosaveTimer")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameManager), Member = "LoadSceneWithLoadingScreen")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static bool LoadSaveGameSlot(string slotName, int saveChangelistVersion)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "FadeOutSceneAudio")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ClearUISaveData")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "Cleanup")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteQuickLoadAction")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(CameraFade), Member = "IsFadingOut")]
-	[Calls(Type = typeof(GameManager), Member = "CancelPendingSave")]
-	[Calls(Type = typeof(PopupBase), Member = "Quit")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "QuitGame")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "GetNewestSaveSlotForActiveGame")]
-	[Calls(Type = typeof(GameManager), Member = "AllowedToLoadActiveGame")]
-	[Calls(Type = typeof(CameraFade), Member = "IsFadingIn")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CameraFade), Member = "IsFadingOut")]
+	[Calls(Type = typeof(CameraFade), Member = "IsFadingIn")]
+	[Calls(Type = typeof(GameManager), Member = "AllowedToLoadActiveGame")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "GetNewestSaveSlotForActiveGame")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "QuitGame")]
+	[Calls(Type = typeof(PopupBase), Member = "Quit")]
+	[Calls(Type = typeof(GameManager), Member = "CancelPendingSave")]
 	[Calls(Type = typeof(CameraFade), Member = "ClearPendingCallbacks")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(TLD_TimelineDirector), Member = "Cleanup")]
+	[Calls(Type = typeof(InterfaceManager), Member = "ClearUISaveData")]
+	[Calls(Type = typeof(GameManager), Member = "FadeOutSceneAudio")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 18)]
 	public static void LoadActiveSaveGame()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(CameraFade), Member = "BlackOutScreen")]
-	[Calls(Type = typeof(GameManager), Member = "OnLoadGameCallback")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CalledBy(Type = typeof(Panel_ChooseStory), Member = "OnSlotClicked")]
 	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "ReloadSlot")]
 	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "OnSlotClicked")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
 	[CalledBy(Type = typeof(Panel_ChooseStory), Member = "OnSlotClicked")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(GameManager), Member = "FadeOutSceneAudio")]
-	[Calls(Type = typeof(GameManager), Member = "ContinueToNextEpisode")]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "Cleanup")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ClearUISaveData")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(CameraFade), Member = "IsFadingOut")]
 	[Calls(Type = typeof(CameraFade), Member = "IsFadingIn")]
 	[Calls(Type = typeof(GameManager), Member = "AllowedToLoadActiveGame")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "SaveGameCanBeLoaded")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "QuitGame")]
 	[Calls(Type = typeof(PopupBase), Member = "Quit")]
 	[Calls(Type = typeof(GameManager), Member = "CancelPendingSave")]
 	[Calls(Type = typeof(CameraFade), Member = "ClearPendingCallbacks")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GameManager), Member = "SaveGameCanBeLoaded")]
+	[Calls(Type = typeof(TLD_TimelineDirector), Member = "Cleanup")]
+	[Calls(Type = typeof(InterfaceManager), Member = "ClearUISaveData")]
+	[Calls(Type = typeof(GameManager), Member = "FadeOutSceneAudio")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(CameraFade), Member = "BlackOutScreen")]
+	[Calls(Type = typeof(GameManager), Member = "OnLoadGameCallback")]
+	[Calls(Type = typeof(GameManager), Member = "ContinueToNextEpisode")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public static bool LoadGame(SaveSlotInfo ssi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
-	[CalledBy(Type = typeof(Panel_EpisodeContinue), Member = "OnClickContinueToNextEpisode")]
 	[CalledBy(Type = typeof(Panel_EpisodeContinue), Member = "Update")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
-	[Calls(Type = typeof(Panel_PauseMenu), Member = "DoQuitGame")]
-	[Calls(Type = typeof(Panel_EpisodeSelection), Member = "GetEpisodeMenuItem")]
-	[Calls(Type = typeof(GameManager), Member = "SetupTransferData")]
-	[Calls(Type = typeof(EpisodeManager), Member = "SetActiveEpisode")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetNextEpisode")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
-	[Calls(Type = typeof(GameManager), Member = "DestroyPlayerObject")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_EpisodeContinue), Member = "OnClickContinueToNextEpisode")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameManager), Member = "SetupTransferData")]
+	[Calls(Type = typeof(GameManager), Member = "DestroyPlayerObject")]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetNextEpisode")]
+	[Calls(Type = typeof(EpisodeManager), Member = "SetActiveEpisode")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
+	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanel")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+	[Calls(Type = typeof(Panel_EpisodeSelection), Member = "GetEpisodeMenuItem")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryDestroyPanel")]
+	[Calls(Type = typeof(Panel_PauseMenu), Member = "DoQuitGame")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public static void ContinueToNextEpisode()
 	{
 	}
 
 	[CalledBy(Type = typeof(GameManager), Member = "ContinueToNextEpisode")]
-	[CallsUnknownMethods(Count = 9)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GlobalBlackboard), Member = "Find")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Blackboard), Member = "Serialize")]
-	[Calls(Type = typeof(GlobalBlackboard), Member = "Find")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	private static void SetupTransferData()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GlobalBlackboard), Member = "Find")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Blackboard), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private static void ApplyTransferData()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 19)]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
-	[Calls(Type = typeof(GameManager), Member = "LoadSaveGameSlot")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "SetExperienceModeType")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopAll")]
+	[Calls(Type = typeof(GameManager), Member = "DestroyPlayerObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GameManager), Member = "DestroyStoryManager")]
 	[Calls(Type = typeof(GameManager), Member = "DestroySandboxManager")]
 	[Calls(Type = typeof(EpisodeManager), Member = "SetActiveEpisode")]
-	[Calls(Type = typeof(GameManager), Member = "DestroyStoryManager")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GameManager), Member = "DestroyPlayerObject")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopAll")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "SetExperienceModeType")]
+	[Calls(Type = typeof(GameManager), Member = "LoadSaveGameSlot")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsUnknownMethods(Count = 19)]
 	private static void OnLoadGameCallback()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 20)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "InstantiateStoryManager")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "Deserialize")]
 	[Calls(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "JumpTo")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateStoryManager")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "Deserialize")]
+	[CallsUnknownMethods(Count = 20)]
 	private static void OnLoadStoryFromEmptyCallback()
 	{
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "LoadActiveSaveGame")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
-	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnLoadGame")]
+	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadActiveSaveGame")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void FadeOutSceneAudio()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(LoadScene), Member = "LoadLevelWhenFadeOutComplete")]
 	[CalledBy(Type = typeof(LoadingZone), Member = "LoadLevelWhenFadeOutComplete")]
 	[CalledBy(Type = typeof(Action_LoadScene), Member = "OnExecute")]
+	[CallerCount(Count = 3)]
 	public static void LoadScene(string sceneName, string sceneSaveFilenameCurrent)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Action_LoadScene), Member = "OnExecute")]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadScene")]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadSaveGameSlot")]
-	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_scene")]
-	[Calls(Type = typeof(GameManager), Member = "SetPhysicsAutoSimulationEnabled")]
-	[Calls(Type = typeof(SceneManager), Member = "LoadScene")]
-	[Calls(Type = typeof(GameManager), Member = "ResetLists")]
-	[Calls(Type = typeof(GameManager), Member = "IsActiveScene")]
-	[Calls(Type = typeof(GameManager), Member = "IsMainMenuActive")]
-	[Calls(Type = typeof(InterfaceManager), Member = "CloseOverlaysDueToSceneLoad")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadSaveGameSlot")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadScene")]
+	[CalledBy(Type = typeof(Action_LoadScene), Member = "OnExecute")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(InterfaceManager), Member = "CloseOverlaysDueToSceneLoad")]
+	[Calls(Type = typeof(GameManager), Member = "IsMainMenuActive")]
+	[Calls(Type = typeof(GameManager), Member = "IsActiveScene")]
+	[Calls(Type = typeof(GameManager), Member = "ResetLists")]
+	[Calls(Type = typeof(SceneManager), Member = "LoadScene")]
 	[Calls(Type = typeof(GameManager), Member = "LoadSceneAsynchronously")]
+	[Calls(Type = typeof(GameManager), Member = "SetPhysicsAutoSimulationEnabled")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void LoadSceneWithLoadingScreen(string sceneName)
 	{
 	}
 
-	[Calls(Type = typeof(SaveGameSlotHelper), Member = "GetCurrentSaveSlotInfo")]
-	[CallsUnknownMethods(Count = 25)]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneWithLoadingScreen")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "LoadScene")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetRegionForScene")]
-	[Calls(Type = typeof(GameManager), Member = "ChooseConditionalLoadMode")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(OutdoorSceneRoot), Member = "OnSceneUnload")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateStoryManager")]
-	[Calls(Type = typeof(GameManager), Member = "AddAsyncLoadRequest")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneWithLoadingScreen")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "InstantiateStoryManager")]
+	[Calls(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(OutdoorSceneRoot), Member = "OnSceneUnload")]
+	[Calls(Type = typeof(GameManager), Member = "AddAsyncLoadRequest")]
+	[Calls(Type = typeof(GameManager), Member = "ChooseConditionalLoadMode")]
+	[Calls(Type = typeof(SaveGameSlotHelper), Member = "GetCurrentSaveSlotInfo")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetRegionForScene")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 25)]
 	public static void LoadSceneAsynchronously(string sceneName)
 	{
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneAsynchronously")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_story")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_sandbox")]
-	[Calls(Type = typeof(GameManager), Member = "LoadModeConditionalScenes")]
-	[Calls(Type = typeof(GameManager), Member = "LoadModeConditionalScenesMapped")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_story")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneAsynchronously")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameManager), Member = "LoadModeConditionalScenesMapped")]
+	[Calls(Type = typeof(GameManager), Member = "LoadModeConditionalScenes")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void ChooseConditionalLoadMode(string rootScene, bool isStory, List<AsyncOperation> asyncOps)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(SceneManager), Member = "LoadSceneAsync")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(SceneMapping), Member = "GetParentChildEntryNoCase")]
 	[Calls(Type = typeof(SceneMapping), Member = "ChildExperienceModeMatches")]
 	[Calls(Type = typeof(SceneManager), Member = "ContainsLayer")]
-	[Calls(Type = typeof(SceneMapping), Member = "GetParentChildEntryNoCase")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetSceneByName")]
+	[Calls(Type = typeof(SceneManager), Member = "LoadSceneAsync")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 16)]
 	public static void MaybeLateLoadMissionLayers()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "AddAsyncLoadRequest")]
 	[CalledBy(Type = typeof(GameManager), Member = "ChooseConditionalLoadMode")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 40)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetRegionForScene")]
-	[Calls(Type = typeof(SaveGameSlotHelper), Member = "GetCurrentSaveSlotInfo")]
-	[Calls(Type = typeof(GameManager), Member = "ShouldLoadConditionalScene")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetSceneAt")]
 	[Calls(Type = typeof(SceneMapping), Member = "GetParentChildEntryNoCase")]
+	[Calls(Type = typeof(SceneMapping), Member = "ChildExperienceModeMatches")]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "UnloadSceneAsync")]
-	[Calls(Type = typeof(SceneMapping), Member = "ChildExperienceModeMatches")]
-	[Calls(Type = typeof(SceneMapping), Member = "GetParentChildEntryNoCase")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(SceneMapping), Member = "ChildExperienceModeMatches")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(GameManager), Member = "ShouldLoadConditionalScene")]
+	[Calls(Type = typeof(GameManager), Member = "AddAsyncLoadRequest")]
+	[Calls(Type = typeof(SaveGameSlotHelper), Member = "GetCurrentSaveSlotInfo")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetRegionForScene")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 40)]
 	public static void LoadModeConditionalScenesMapped(string rootScene, bool isStory, List<AsyncOperation> asyncOps)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(SceneManager), Member = "ContainsLayer")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadModeConditionalScenesMapped")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SceneManager), Member = "ContainsLayer")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private static bool ShouldLoadConditionalScene(SceneMapping.ChildSceneEntry entry)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "AddAsyncSceneLoadWithPattern")]
-	[CallsUnknownMethods(Count = 29)]
-	[CalledBy(Type = typeof(BatchLightingCapture), Member = "CaptureLightingStory")]
-	[CalledBy(Type = typeof(BatchLightingCapture), Member = "CaptureLighting")]
 	[CalledBy(Type = typeof(GameManager), Member = "ChooseConditionalLoadMode")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetRegionForScene")]
-	[Calls(Type = typeof(SaveGameSlotHelper), Member = "GetCurrentSaveSlotInfo")]
-	[Calls(Type = typeof(GameManager), Member = "AddAsyncSceneLoadWithPattern")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GameManager), Member = "AddAsyncSceneLoadWithPattern")]
-	[Calls(Type = typeof(GameManager), Member = "AddAsyncSceneLoadWithPattern")]
-	[Calls(Type = typeof(GameManager), Member = "AddAsyncSceneLoadWithPattern")]
+	[CalledBy(Type = typeof(BatchLightingCapture), Member = "CaptureLighting")]
+	[CalledBy(Type = typeof(BatchLightingCapture), Member = "CaptureLightingStory")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetSceneAt")]
 	[Calls(Type = typeof(GameManager), Member = "SceneNotCompatibleWithMode")]
-	[Calls(Type = typeof(GameManager), Member = "AddAsyncSceneLoadWithPattern")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "UnloadSceneAsync")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[Calls(Type = typeof(GameManager), Member = "AddAsyncSceneLoadWithPattern")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(SaveGameSlotHelper), Member = "GetCurrentSaveSlotInfo")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetRegionForScene")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 29)]
 	public static void LoadModeConditionalScenes(string sceneName, bool isStory, List<AsyncOperation> asyncOps)
 	{
 	}
@@ -1715,192 +1660,176 @@ public class GameManager : MonoBehaviour
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool SaveIsBlockedDueToRestoreGame()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(BatchLightingCapture), Member = "CaptureLightingStory")]
-	[CalledBy(Type = typeof(BatchLightingCapture), Member = "CaptureLighting")]
-	[CalledBy(Type = typeof(BatchLightingCapture), Member = "CaptureLighting")]
-	[CalledBy(Type = typeof(GameManager), Member = "AddAsyncSceneLoadWithPattern")]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadModeConditionalScenesMapped")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneAsynchronously")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadModeConditionalScenesMapped")]
+	[CalledBy(Type = typeof(GameManager), Member = "AddAsyncSceneLoadWithPattern")]
+	[CalledBy(Type = typeof(BatchLightingCapture), Member = "CaptureLighting")]
 	[CalledBy(Type = typeof(BatchLightingCapture), Member = "CaptureLightingStory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "UnloadSceneAsync")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetSceneByName")]
-	[Calls(Type = typeof(SceneManager), Member = "LoadSceneAsync")]
-	[Calls(Type = typeof(SceneManager), Member = "LoadSceneAsync")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(SceneManager), Member = "LoadSceneAsync")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetSceneByName")]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "UnloadSceneAsync")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "SceneUnloaded")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 8)]
 	public static void AddAsyncLoadRequest(string sceneName, List<AsyncOperation> asyncOps, bool additive)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadModeConditionalScenes")]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadModeConditionalScenes")]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadModeConditionalScenes")]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadModeConditionalScenes")]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadModeConditionalScenes")]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadModeConditionalScenes")]
-	[Calls(Type = typeof(GameManager), Member = "AddAsyncLoadRequest")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadModeConditionalScenes")]
 	[CallerCount(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(GameManager), Member = "AddAsyncLoadRequest")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 11)]
 	private static bool AddAsyncSceneLoadWithPattern(string baseSceneName, string pattern, List<AsyncOperation> asyncOps, bool suppressError = false)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "DoExitToMainMenu")]
-	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "DoQuitGame")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "ReallyQuitToMainMenu")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnQuitToMainMenu")]
 	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "OnMainMenu")]
-	[Calls(Type = typeof(Utils), Member = "QuitAndRunApplication")]
-	[Calls(Type = typeof(Path), Member = "Combine")]
-	[Calls(Type = typeof(GameManager), Member = "LoadScene")]
-	[Calls(Type = typeof(GameAudioManager), Member = "UnloadActiveEpisode")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnQuitToMainMenu")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "ReallyQuitToMainMenu")]
+	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "DoQuitGame")]
+	[CalledBy(Type = typeof(GameManager), Member = "DoExitToMainMenu")]
 	[CallerCount(Count = 5)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(GameAudioManager), Member = "UnloadActiveEpisode")]
 	[Calls(Type = typeof(GameManager), Member = "DestroyPlayerObject")]
+	[Calls(Type = typeof(GameManager), Member = "LoadScene")]
+	[Calls(Type = typeof(Path), Member = "Combine")]
+	[Calls(Type = typeof(Utils), Member = "QuitAndRunApplication")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void LoadMainMenu()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "LoadScene")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static void LoadBoot()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "DoQuitGame")]
-	[Calls(Type = typeof(CameraFade), Member = "BlackOutScreen")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "Cleanup")]
-	[Calls(Type = typeof(CameraFade), Member = "ClearPendingCallbacks")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopAll")]
-	[Calls(Type = typeof(PopupBase), Member = "Quit")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "QuitGame")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "WaitForAsyncSave")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "WaitForAsyncSave")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "QuitGame")]
+	[Calls(Type = typeof(PopupBase), Member = "Quit")]
 	[Calls(Type = typeof(GameManager), Member = "CancelPendingSave")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopAll")]
+	[Calls(Type = typeof(CameraFade), Member = "ClearPendingCallbacks")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(TLD_TimelineDirector), Member = "Cleanup")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
+	[Calls(Type = typeof(CameraFade), Member = "BlackOutScreen")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void OnGameQuit()
 	{
 	}
 
 	[CalledBy(Type = typeof(GameManager), Member = "LoadMainMenu")]
-	[Calls(Type = typeof(GameManager), Member = "LoadSceneWithLoadingScreen")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadBoot")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GameManager), Member = "DestroyStoryManager")]
-	[Calls(Type = typeof(GameManager), Member = "DestroySandboxManager")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GameManager), Member = "DestroySandboxManager")]
+	[Calls(Type = typeof(GameManager), Member = "DestroyStoryManager")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(GameManager), Member = "LoadSceneWithLoadingScreen")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public static void LoadScene(string sceneName)
 	{
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "Start")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveBootData")]
-	[CalledBy(Type = typeof(HUDManager), Member = "UpdateDebugLines")]
-	[CalledBy(Type = typeof(LoadingZone), Member = "LoadLevelWhenFadeOutComplete")]
 	[CalledBy(Type = typeof(LoadScene), Member = "LoadLevelWhenFadeOutComplete")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(LoadingZone), Member = "LoadLevelWhenFadeOutComplete")]
+	[CalledBy(Type = typeof(GameManager), Member = "Start")]
+	[CalledBy(Type = typeof(HUDManager), Member = "UpdateDebugLines")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveBootData")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(string), Member = "EndsWith")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static string StripOptFromSceneName(string sceneName)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(GameManager), Member = "IsMainMenuActive")]
-	[Calls(Type = typeof(GameManager), Member = "IsActiveScene")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "Update")]
 	[CalledBy(Type = typeof(vp_FPSController), Member = "Update")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "IsMainMenuActive")]
+	[Calls(Type = typeof(GameManager), Member = "IsActiveScene")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static bool AreControlsLockedForIntro()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(PackManager), Member = "Update")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "DoWeaponSwaying")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "Update")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "UpdateForces")]
+	[CalledBy(Type = typeof(vp_FPSController), Member = "Update")]
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "Update")]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "DoWeaponSwaying")]
+	[CalledBy(Type = typeof(PackManager), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "AllowInteractionWithObjects")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeFadeoutHipShoulder")]
 	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "ShowHoverButtonPrompts")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "AllowInteractionWithObjects")]
-	[CalledBy(Type = typeof(vp_FPSController), Member = "Update")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "Update")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsInElevator")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "UpdateForces")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsInElevator")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public static bool ControlsLocked()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeFadeoutHipShoulder")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
-	[CalledBy(Type = typeof(vp_FPSController), Member = "Update")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "DoBob")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(vp_FPSController), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeFadeoutHipShoulder")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public static bool IsMovementLockedBecauseOfLantern()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsMoveInputUnblocked()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Vector2), Member = "Normalize")]
 	[CalledBy(Type = typeof(RadialMenuArm), Member = "DoAltClickAction")]
-	[Calls(Type = typeof(InputManager), Member = "GetPlayerMovement")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UseItem")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetPlayerMovement")]
+	[Calls(Type = typeof(Vector2), Member = "Normalize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void MaybeBlockMoveInputUntilReleased(MonoBehaviour context)
 	{
 	}
@@ -1947,8 +1876,8 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static Light GetInspectModeLight()
 	{
 		return null;
@@ -1997,16 +1926,16 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static GameObject GetWeaponView()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 215)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static Transform GetPlayerTransform()
 	{
@@ -2042,8 +1971,8 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static AuroraManager GetAuroraManager()
 	{
 		return null;
@@ -2091,8 +2020,8 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static Breath GetBreathComponent()
 	{
 		return null;
@@ -2140,8 +2069,8 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static AfflictionDefinitionTable GetAfflictionDefinitionTable()
 	{
 		return null;
@@ -2189,8 +2118,8 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static EnergyBoost GetEnergyBoostComponent()
 	{
 		return null;
@@ -2238,8 +2167,8 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static Frostbite GetFrostbiteComponent()
 	{
 		return null;
@@ -2287,8 +2216,8 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static Infection GetInfectionComponent()
 	{
 		return null;
@@ -2336,8 +2265,8 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static Feat_FireMaster GetFeatFireMaster()
 	{
 		return null;
@@ -2385,15 +2314,15 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static FeatsManager GetFeatsManager()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static FeatNotify GetFeatNotify()
 	{
 		return null;
@@ -2441,8 +2370,8 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static Log GetLogComponent()
 	{
 		return null;
@@ -2483,15 +2412,15 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static PlayerGameStats GetPlayerGameStatsComponent()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static PlayerInVehicle GetPlayerInVehicle()
 	{
 		return null;
@@ -2539,8 +2468,8 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static PlayerSkills GetPlayerSkillsComponent()
 	{
 		return null;
@@ -2595,8 +2524,8 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static Rest GetRestComponent()
 	{
 		return null;
@@ -2630,161 +2559,152 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
-	[CalledBy(Type = typeof(GearItem), Member = "DegradeOnUse")]
-	[CalledBy(Type = typeof(BowItem), Member = "GetSwayIncreasePerSecond")]
-	[CalledBy(Type = typeof(BowItem), Member = "PressFire")]
-	[CalledBy(Type = typeof(BodyDamage), Member = "GetChanceKill")]
-	[CalledBy(Type = typeof(BodyDamage), Member = "GetDamageScale")]
-	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "EnableCrouchImmediate")]
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "EnableCrouch")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 9)]
+	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "EnableCrouchImmediate")]
+	[CalledBy(Type = typeof(BodyDamage), Member = "GetDamageScale")]
 	[CalledBy(Type = typeof(BodyDamage), Member = "GetBleedOutMinutes")]
+	[CalledBy(Type = typeof(BodyDamage), Member = "GetChanceKill")]
+	[CalledBy(Type = typeof(BowItem), Member = "PressFire")]
+	[CalledBy(Type = typeof(BowItem), Member = "GetSwayIncreasePerSecond")]
+	[CalledBy(Type = typeof(GearItem), Member = "DegradeOnUse")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
+	[CallerCount(Count = 9)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static Skill_Archery GetSkillArchery()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "DisplayCarcassTooFrozenToQuarterMessage")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "IsCarcassTooFrozenToQuarter")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnQuarter")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CarcassTooFrozenToHarvestBareHands")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "DisplayCarcassToFrozenMessage")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "GetHarvestDurationMinutes")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "CarcassTooFrozenToHarvestBareHands")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnQuarter")]
-	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "OnQuarter")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "QuarterSuccessful")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "IsCarcassTooFrozenToQuarter")]
+	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "DisplayCarcassTooFrozenToQuarterMessage")]
 	[CallerCount(Count = 12)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static Skill_CarcassHarvesting GetSkillCarcassHarvesting()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetConditionIncreaseFromRepair")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GearItemIsConsideredClothing")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetCurrentSkillName")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "DegradeToolUsedForAction")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetModifiedActionDuration")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetChanceSuccessfullRepair")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetCurrentSkillName")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GearItemIsConsideredClothing")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetConditionIncreaseFromRepair")]
+	[CallerCount(Count = 6)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static Skill_ClothingRepair GetSkillClothingRepair()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnSmashComplete")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "EatingComplete_Internal")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "ExecuteCook")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "SetCookedGearProperties")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_FeedFire), Member = "SetCookedGearProperties")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "ExecuteCook")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnSmashComplete")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "EatingComplete_Internal")]
+	[CallerCount(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static Skill_Cooking GetSkillCooking()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(FireManager), Member = "CalclateFireStartSuccess")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerSkills), Member = "Deserialize")]
-	[CalledBy(Type = typeof(FireManager), Member = "PlayerHasMaterialsToStartFire")]
-	[CalledBy(Type = typeof(FireManager), Member = "PlayerGetTinderChoice")]
-	[CalledBy(Type = typeof(FireManager), Member = "PlayerCalculateFireStartTime")]
-	[CalledBy(Type = typeof(FireManager), Member = "GetMissingMaterialsString")]
-	[CalledBy(Type = typeof(FireManager), Member = "GetMissingMaterialsString")]
-	[CalledBy(Type = typeof(FireManager), Member = "PlayerStartFire")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshTinderLabel")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshList")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "CanStartFire")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshLabels")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshBaseSkillLabel")]
-	[CalledBy(Type = typeof(FuelSourceItem), Member = "GetModifiedBurnDurationHours")]
 	[CalledBy(Type = typeof(Feat_FireMaster), Member = "MaybeUpdateFireStartingSkillLevel")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(FuelSourceItem), Member = "GetModifiedBurnDurationHours")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshBaseSkillLabel")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshTinderLabel")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "CanStartFire")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "OnStartFire")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshList")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "RefreshLabels")]
+	[CalledBy(Type = typeof(FireManager), Member = "PlayerStartFire")]
+	[CalledBy(Type = typeof(FireManager), Member = "CalclateFireStartSuccess")]
+	[CalledBy(Type = typeof(FireManager), Member = "GetMissingMaterialsString")]
+	[CalledBy(Type = typeof(FireManager), Member = "PlayerCalculateFireStartTime")]
+	[CalledBy(Type = typeof(FireManager), Member = "PlayerGetTinderChoice")]
+	[CalledBy(Type = typeof(FireManager), Member = "PlayerHasMaterialsToStartFire")]
+	[CalledBy(Type = typeof(PlayerSkills), Member = "Deserialize")]
 	[CallerCount(Count = 16)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static Skill_Firestarting GetSkillFireStarting()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(IceFishingHole), Member = "SetNextCatchTime")]
-	[CalledBy(Type = typeof(IceFishingHole), Member = "RevealFishInInspectMode")]
-	[CalledBy(Type = typeof(IceFishingHole), Member = "RevealFishInInspectMode")]
 	[CalledBy(Type = typeof(IceFishingHole), Member = "MaybeCatchFish")]
 	[CalledBy(Type = typeof(IceFishingHole), Member = "RollForLineBreak")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(IceFishingHole), Member = "RevealFishInInspectMode")]
+	[CalledBy(Type = typeof(IceFishingHole), Member = "SetNextCatchTime")]
+	[CallerCount(Count = 6)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static Skill_IceFishing GetSkillIceFishing()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(BodyDamage), Member = "GetChanceKill")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetCleanConditionIncreaseAndDuration")]
-	[CalledBy(Type = typeof(GunItem), Member = "GetSwayIncreasePerSecond")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(BodyDamage), Member = "GetDamageScale")]
-	[CalledBy(Type = typeof(GearItem), Member = "DegradeOnUse")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "DoAiming")]
-	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
 	[CalledBy(Type = typeof(vp_Bullet), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 9)]
+	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "DoAiming")]
+	[CalledBy(Type = typeof(BodyDamage), Member = "GetDamageScale")]
+	[CalledBy(Type = typeof(BodyDamage), Member = "GetChanceKill")]
+	[CalledBy(Type = typeof(GearItem), Member = "DegradeOnUse")]
+	[CalledBy(Type = typeof(GunItem), Member = "GetSwayIncreasePerSecond")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetCleanConditionIncreaseAndDuration")]
+	[CallerCount(Count = 9)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static Skill_Rifle GetSkillRifle()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "GetFleeChanceOnRevolverShotPercent")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "GetFleeChanceOnHitPercent")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "OnRevolverFired")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetCleanConditionIncreaseAndDuration")]
-	[CalledBy(Type = typeof(GunItem), Member = "GetRecoilYaw")]
+	[CalledBy(Type = typeof(vp_Bullet), Member = "Start")]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "PlayFireAnimation")]
+	[CalledBy(Type = typeof(BodyDamage), Member = "GetDamageScale")]
+	[CalledBy(Type = typeof(BodyDamage), Member = "GetChanceKill")]
 	[CalledBy(Type = typeof(GearItem), Member = "DegradeOnUse")]
 	[CalledBy(Type = typeof(GunItem), Member = "GetRecoilPitch")]
-	[CalledBy(Type = typeof(BodyDamage), Member = "GetDamageScale")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "PlayFireAnimation")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "PlayFireAnimation")]
-	[CalledBy(Type = typeof(vp_Bullet), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(GunItem), Member = "GetRecoilYaw")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "GetCleanConditionIncreaseAndDuration")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "OnRevolverFired")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "GetFleeChanceOnHitPercent")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "GetFleeChanceOnRevolverShotPercent")]
 	[CallerCount(Count = 12)]
-	[CalledBy(Type = typeof(BodyDamage), Member = "GetChanceKill")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static Skill_Revolver GetSkillRevolver()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_Milling), Member = "RollForRepairSuccess")]
-	[CallerCount(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Crafting), Member = "ApplyCraftingProgress")]
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "CheckForHarvestSuccess")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "ApplyCondition")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "DetermineConditionImprovement")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshSelected")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "RollForRepairSuccess")]
+	[CallerCount(Count = 6)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static Skill_Gunsmithing GetSkillGunsmithing()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static SkillNotify GetSkillNotify()
 	{
 		return null;
@@ -2832,8 +2752,8 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static SprainedAnkle GetSprainedAnkleComponent()
 	{
 		return null;
@@ -2881,8 +2801,8 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static StartSettings GetStartSettingsComponent()
 	{
 		return null;
@@ -2923,15 +2843,15 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static TimeOfDay GetTimeOfDayComponent()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static TrustManager GetTrustManagerComponent()
 	{
 		return null;
@@ -2972,8 +2892,8 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static WindZone GetWindZone()
 	{
 		return null;
@@ -2986,8 +2906,8 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static AreaMarkupManager GetAreaMarkupManager()
 	{
 		return null;
@@ -3028,8 +2948,8 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static SteamPipeEffectManager GetSteamPipeEffectManager()
 	{
 		return null;
@@ -3077,19 +2997,19 @@ public class GameManager : MonoBehaviour
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static DamageProtection GetDamageProtection()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 139)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsStoryMode()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -3100,96 +3020,72 @@ public class GameManager : MonoBehaviour
 	}
 
 	[CallerCount(Count = 35)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 2)]
 	public static Camera GetCurrentCamera()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
 	[CallerCount(Count = 207)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static CustomExperienceMode GetCustomMode()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 59)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool InCustomMode()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(StatsManager), Member = "MaybeUpdateAllTimeBestStat")]
-	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
-	[CalledBy(Type = typeof(InternalUserReport._003C_003Ec__DisplayClass7_0), Member = "<Send>b__1")]
 	[CalledBy(Type = typeof(Feat), Member = "ShouldBlockIncrement")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
+	[CalledBy(Type = typeof(StatsManager), Member = "MaybeUpdateAllTimeBestStat")]
+	[CalledBy(TypeFullName = "InternalUserReport.<>c__DisplayClass7_0", Member = "<Send>b__1")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool IsPlayingCustomXPGame()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InputManager), Member = "ShowCursor")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PauseAudio")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(GameManager), Member = "Update")]
-	[Calls(Type = typeof(InputManager), Member = "ProcessTimeGatedUnlocks")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(InputManager), Member = "ProcessScreenshotInput")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(InputManager), Member = "MaybeTakeScreenshot")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PauseAudio")]
+	[Calls(Type = typeof(InputManager), Member = "ProcessScreenshotInput")]
+	[Calls(Type = typeof(InputManager), Member = "MaybeTakeScreenshot")]
+	[Calls(Type = typeof(InputManager), Member = "ProcessTimeGatedUnlocks")]
+	[Calls(Type = typeof(InputManager), Member = "ShowCursor")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdatePaused()
 	{
 	}
 
-	[Calls(Type = typeof(BreakDown), Member = "UpdateAll")]
-	[Calls(Type = typeof(Container), Member = "UpdateContainer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Harvestable), Member = "UpdateHarvesting")]
-	[Calls(Type = typeof(OpenCloseManager), Member = "UpdateAll")]
-	[Calls(Type = typeof(VehicleDoor), Member = "UpdateDoorInProgress")]
-	[Calls(Type = typeof(TodMaterial), Member = "UpdateAll")]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdateCarryingBuff")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetClimbingBuffClothing")]
-	[Calls(Type = typeof(BearHuntRedux), Member = "UpdateMission")]
-	[Calls(Type = typeof(SplineManager), Member = "EarlyUpdate")]
-	[Calls(Type = typeof(BaseAiManager), Member = "Update")]
-	[Calls(Type = typeof(NPC), Member = "UpdateAll")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Time), Member = "get_frameCount")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(GameManager), Member = "Update")]
-	[CallsUnknownMethods(Count = 35)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearManager), Member = "UpdateAll")]
-	[Calls(Type = typeof(Carrion), Member = "UpdateCarrions")]
-	[Calls(Type = typeof(GearManager), Member = "DestroyMarkedObjects")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[Calls(Type = typeof(GameManager), Member = "MaybeSwitchRenderingPath")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(GearManager), Member = "UpdateItems")]
+	[Calls(Type = typeof(GameAudioManager), Member = "HasFadedInOnStart")]
 	[Calls(Type = typeof(MoviePlayer), Member = "IsPaused")]
 	[Calls(Type = typeof(GameManager), Member = "ShouldPauseMoviePlayer")]
 	[Calls(Type = typeof(GameAudioManager), Member = "UnPauseAudio")]
 	[Calls(Type = typeof(GameAudioManager), Member = "FadeInAudioOnSceneStart")]
-	[Calls(Type = typeof(GameAudioManager), Member = "HasFadedInOnStart")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
 	[Calls(Type = typeof(Panel_Loading), Member = "IsShowingQuote")]
 	[Calls(Type = typeof(InputManager), Member = "ProcessInput")]
 	[Calls(Type = typeof(InputManager), Member = "MaybeTakeScreenshot")]
@@ -3198,166 +3094,171 @@ public class GameManager : MonoBehaviour
 	[Calls(Type = typeof(CameraFade), Member = "UpdateFade")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[Calls(Type = typeof(TimeOfDay), Member = "IsTimeLapseActive")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
+	[Calls(Type = typeof(GearManager), Member = "DestroyMarkedObjects")]
+	[Calls(Type = typeof(GearManager), Member = "UpdateItems")]
+	[Calls(Type = typeof(GearManager), Member = "UpdateAll")]
+	[Calls(Type = typeof(SplineManager), Member = "EarlyUpdate")]
+	[Calls(Type = typeof(BreakDown), Member = "UpdateAll")]
+	[Calls(Type = typeof(Carrion), Member = "UpdateCarrions")]
+	[Calls(Type = typeof(Container), Member = "UpdateContainer")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Harvestable), Member = "UpdateHarvesting")]
+	[Calls(Type = typeof(OpenCloseManager), Member = "UpdateAll")]
+	[Calls(Type = typeof(VehicleDoor), Member = "UpdateDoorInProgress")]
+	[Calls(Type = typeof(TodMaterial), Member = "UpdateAll")]
+	[Calls(Type = typeof(PlayerManager), Member = "UpdateCarryingBuff")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetClimbingBuffClothing")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BearHuntRedux), Member = "UpdateMission")]
+	[Calls(Type = typeof(BaseAiManager), Member = "Update")]
+	[Calls(Type = typeof(NPC), Member = "UpdateAll")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Time), Member = "get_frameCount")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 35)]
 	private void UpdateNotPaused()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 173)]
 	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 108)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 173)]
 	private void CacheComponents()
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[CallsUnknownMethods(Count = 16)]
 	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
-	[CallsDeduplicatedMethods(Count = 16)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 16)]
 	private void CachePlayerComponents()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 39)]
 	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
-	[Calls(Type = typeof(GameManager), Member = "DestroyInventoryItems")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(GameManager), Member = "DestroyPlayerObject")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 27)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(GameManager), Member = "DestroyPlayerObject")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameManager), Member = "DestroyInventoryItems")]
+	[CallsDeduplicatedMethods(Count = 26)]
+	[CallsUnknownMethods(Count = 39)]
 	private void InstantiatePlayerObject()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	public static void RestorePlayerTransformParent()
 	{
 	}
 
 	[CalledBy(Type = typeof(LoadScene), Member = "Activate")]
-	[CalledBy(Type = typeof(HUDManager), Member = "MaybeShowLocationReveal")]
-	[CalledBy(Type = typeof(GameManager), Member = "GetRandomSeed")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(OutdoorSceneRoot), Member = "MaybeClearCache")]
-	[Calls(Type = typeof(SceneMapping), Member = "GetParentSceneEntry")]
+	[CalledBy(Type = typeof(GameManager), Member = "GetRandomSeed")]
+	[CalledBy(Type = typeof(HUDManager), Member = "MaybeShowLocationReveal")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(SceneMapping), Member = "GetParentSceneEntry")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public static bool IsOutDoorsScene(string sceneName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SceneMapping), Member = "GetParentSceneEntry")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static string GetMapNameOfScene(string sceneName)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public static int GetResolutionOverrideForScene(string sceneName)
 	{
-		return default(int);
+		return 0;
 	}
 
+	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
 	[CallsUnknownMethods(Count = 6)]
 	private static void MaybeSwitchRenderingPath()
 	{
 	}
 
-	[Calls(Type = typeof(TerrainData), Member = "get_alphamapTextures")]
 	[CalledBy(Type = typeof(GameManager), Member = "Start")]
-	[Calls(Type = typeof(Texture2D), Member = "Apply")]
-	[Calls(Type = typeof(TerrainData), Member = "get_alphamapTextures")]
-	[Calls(Type = typeof(Terrain), Member = "get_terrainData")]
-	[Calls(Type = typeof(Terrain), Member = "get_terrainData")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(Terrain), Member = "set_collectDetailPatches")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Terrain), Member = "get_terrainData")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Terrain), Member = "get_terrainData")]
+	[Calls(Type = typeof(Terrain), Member = "set_collectDetailPatches")]
 	[Calls(Type = typeof(Terrain), Member = "set_drawInstanced")]
+	[Calls(Type = typeof(TerrainData), Member = "get_alphamapTextures")]
+	[Calls(Type = typeof(Texture2D), Member = "Apply")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 12)]
 	private static void UpdateTerrainSettings()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private static void InstantiateSwitchKeyboard()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Light), Member = "set_shadows")]
-	[Calls(Type = typeof(Light), Member = "get_shadows")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Light), Member = "get_shadows")]
+	[Calls(Type = typeof(Light), Member = "set_shadows")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	private void AdjustShadowSettings()
 	{
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
-	[CalledBy(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
-	[CalledBy(Type = typeof(GameManager), Member = "DoExitToMainMenu")]
-	[CalledBy(Type = typeof(GameManager), Member = "OnGameQuit")]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadActiveSaveGame")]
-	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "OnMainMenu")]
 	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "ShowPanel")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "OnMainMenu")]
 	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "OnTryAgain")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadActiveSaveGame")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadGame")]
+	[CalledBy(Type = typeof(GameManager), Member = "OnGameQuit")]
+	[CalledBy(Type = typeof(GameManager), Member = "DoExitToMainMenu")]
+	[CalledBy(Type = typeof(GameManager), Member = "HandlePlayerDeath")]
+	[CallerCount(Count = 8)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void CancelPendingSave()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "Initialize")]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Initialize")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 10)]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Initialize")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "Initialize")]
+	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "Update")]
+	[CallerCount(Count = 10)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsTrialMode()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -3370,22 +3271,22 @@ public class GameManager : MonoBehaviour
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool ToggleTrialMode()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public static void OnBuyNow()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
 	public static string TrialModeTimeRemaining()
 	{
 		return null;
@@ -3395,172 +3296,171 @@ public class GameManager : MonoBehaviour
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsStorySaveActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GameManager), Member = "LoadMainMenu")]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "Cleanup")]
-	[Calls(Type = typeof(CameraFade), Member = "ClearPendingCallbacks")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "CancelPendingSave")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "CancelPendingSave")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopAll")]
+	[Calls(Type = typeof(CameraFade), Member = "ClearPendingCallbacks")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(TLD_TimelineDirector), Member = "Cleanup")]
+	[Calls(Type = typeof(GameManager), Member = "LoadMainMenu")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void DoExitToMainMenu()
 	{
 	}
 
-	[CalledBy(Type = typeof(RadialObjectSpawner), Member = "Start")]
-	[CallerCount(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[Calls(Type = typeof(GameManager), Member = "IsOutDoorsScene")]
 	[CalledBy(Type = typeof(AuroraScreenPrefabPool), Member = "InstantiateRandomPrefabForScreen")]
 	[CalledBy(Type = typeof(GearItem), Member = "RollGearCondition")]
 	[CalledBy(Type = typeof(GearItem), Member = "MaybeRollRandomWeightAndCalories")]
 	[CalledBy(Type = typeof(Container), Member = "PopulateWithRandomGear")]
+	[CalledBy(Type = typeof(RadialObjectSpawner), Member = "Start")]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "ActivateRandomObject")]
 	[CalledBy(Type = typeof(GameManager), Member = "RollSpawnChance")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(GameManager), Member = "IsOutDoorsScene")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public static int GetRandomSeed(int seed)
 	{
-		return default(int);
+		return 0;
 	}
 
+	[CalledBy(Type = typeof(GearItem), Member = "RollSpawnChance")]
+	[CalledBy(Type = typeof(GearItem), Member = "ManualStart")]
+	[CalledBy(Type = typeof(BodyHarvest), Member = "Update")]
+	[CalledBy(Type = typeof(Container), Member = "UpdateContainer")]
 	[CalledBy(Type = typeof(Harvestable), Member = "RollSpawnChance")]
 	[CalledBy(Type = typeof(WaterSource), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[CalledBy(Type = typeof(Container), Member = "UpdateContainer")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(BodyHarvest), Member = "Update")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(GearItem), Member = "RollSpawnChance")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	[Calls(Type = typeof(GameManager), Member = "GetRandomSeed")]
-	[CalledBy(Type = typeof(GearItem), Member = "ManualStart")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	public static bool RollSpawnChance(GameObject go, float spawnChance)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Weather), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(Wind), Member = "GetWindAngleRelativeToPlayer")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CalledBy(Type = typeof(Weather), Member = "LateUpdate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool HasPlayerObject()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PauseAudioImmediate")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PauseAudioImmediate")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnApplicationFocus(bool focusStatus)
 	{
 	}
 
 	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(GameManager), Member = "InstantiateAiSystems")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateSystems")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private GameObject InstantiateSystem(GameObject prefab, Vector3 pos, Transform parent)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameManager), Member = "InstantiateSystem")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(BaseAiManager), Member = "InstantiateSubsystems")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void InstantiateAiSystems(Vector3 pos, Transform parent)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	private void InstantiateConsole()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(TimeOfDay), Member = "InstantiateUniStorm")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(TimeOfDay), Member = "InstantiateUniStorm")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void InstantiateUniStorm()
 	{
 	}
 
 	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void InstantiateEffectPoolManager()
 	{
 	}
 
+	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(RumbleEffectManager), Member = "LoadEffects")]
-	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	private void InstantiateRumbleEffectManager()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(GameManager), Member = "InstantiatePlayerObject")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 11)]
 	private void DestroyInventoryItems(GameObject parent)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "SplitInternal")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "TryParseInt32")]
 	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
 	[CalledBy(Type = typeof(GameManager), Member = "LookupGameVersionString")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "TryParseInt32")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
 	private void SetGameVersionString(string versionString)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(System.Number), Member = "TryParseInt32")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "TryParseInt32")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public int ExtractChangelistFromVersion(string versionString)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -3571,166 +3471,142 @@ public class GameManager : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(GameManager), Member = "LookupGameVersionString")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(StreamReader), Member = ".ctor")]
-	[Calls(Type = typeof(File), Member = "Exists")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(File), Member = "Exists")]
+	[Calls(Type = typeof(StreamReader), Member = ".ctor")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 9)]
 	private string ReadVersionFile()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
-	[CallsUnknownMethods(Count = 123)]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 19)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 123)]
 	private void OutputSystemInfo()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(GameManager), Member = "LoadModeConditionalScenes")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private static bool SceneNotCompatibleWithMode(bool isStory, string sceneName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsUnknownMethods(Count = 24)]
 	[CalledBy(Type = typeof(GameManager), Member = "Update")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
-	[Calls(Type = typeof(PlayerManager), Member = "UpdateBonusValuesFromWornClothing")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowSaveGameFaileLoadNotification")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(SaveGameSlots), Member = "CopyData")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "RestoreGame")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SaveGameSystem), Member = "RestoreGame")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(SaveGameSlots), Member = "CopyData")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(Panel_Confirmation), Member = "ShowSaveGameFaileLoadNotification")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "UpdateBonusValuesFromWornClothing")]
+	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 24)]
 	private void LoadSlotOnStart()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SaveGameSystem), Member = "RestoreGameForEpisodeMigration")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void MigrateSlotOnStart()
 	{
 	}
 
 	[CalledBy(Type = typeof(GameManager), Member = "Update")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "SetState")]
-	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "SetState")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "SetState")]
+	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void SetAudioModeForLoadedScene()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(GameManager), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(GearItem), Member = "IsLitFlare")]
 	[Calls(Type = typeof(GearItem), Member = "IsLitTorch")]
 	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Inventory), Member = "RemoveGear")]
-	[CalledBy(Type = typeof(GameManager), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void PostMigrationDestoryLitFlareOrTorch()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private void HandleCheckpointSaveRequest()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "DoSaftyChecksOnCurrentState")]
-	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
-	[Calls(Type = typeof(DateTime), Member = "get_UtcNow")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(GameManager), Member = "GetServerTime")]
-	[Calls(Type = typeof(DateTime), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(DateTime), Member = ".ctor")]
 	[Calls(Type = typeof(GameManager), Member = "GetServerTime")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(DateTime), Member = "get_UtcNow")]
+	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public static DateTime ValidateTime()
 	{
 		return default(DateTime);
 	}
 
-	[Calls(Type = typeof(DateTime), Member = "get_UtcNow")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Notifications), Member = "ParseJson")]
-	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
-	[Calls(Type = typeof(TimeZoneInfo), Member = "ConvertTimeToUtc")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.DateTimeParse), Member = "TryParse")]
-	[Calls(Type = typeof(DateTimeFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(DateTimeFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.DateTimeParse", Member = "TryParse")]
 	[Calls(Type = typeof(TimeZoneInfo), Member = "get_Local")]
+	[Calls(Type = typeof(TimeZoneInfo), Member = "ConvertTimeToUtc")]
+	[Calls(Type = typeof(DateTime), Member = "get_UtcNow")]
+	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void SetServerTime(string dateTimeAsIso8601)
 	{
 	}
 
+	[CalledBy(Type = typeof(GameManager), Member = "ValidateTime")]
 	[CalledBy(Type = typeof(SpecialEvent), Member = "IsActive")]
-	[CalledBy(Type = typeof(ThreeDaysOfNight), Member = "GetCurrentDayNumber")]
-	[CalledBy(Type = typeof(ThreeDaysOfNight), Member = "SetDailyTimerLabel")]
 	[CalledBy(Type = typeof(SpecialEvent), Member = "SetDailyTimerLabel")]
-	[CalledBy(Type = typeof(GameManager), Member = "ValidateTime")]
 	[CalledBy(Type = typeof(ThreeDaysOfNight), Member = "SetTransitionToDay")]
-	[Calls(Type = typeof(DateTime), Member = "op_Subtraction")]
-	[Calls(Type = typeof(DateTime), Member = "get_UtcNow")]
-	[Calls(Type = typeof(DateTime), Member = "get_UtcNow")]
-	[CalledBy(Type = typeof(GameManager), Member = "ValidateTime")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(ThreeDaysOfNight), Member = "SetDailyTimerLabel")]
+	[CalledBy(Type = typeof(ThreeDaysOfNight), Member = "GetCurrentDayNumber")]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(DateTime), Member = "get_UtcNow")]
+	[Calls(Type = typeof(DateTime), Member = "op_Subtraction")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public static DateTime GetServerTime()
 	{
 		return default(DateTime);
@@ -3740,11 +3616,11 @@ public class GameManager : MonoBehaviour
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsServerTimeValid()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void RequestSaveCheckpoint()
 	{
 	}
@@ -3753,111 +3629,107 @@ public class GameManager : MonoBehaviour
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool GetAllowPhysicsSimulationControl()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void SetAllowPhysicsSimulationControl(bool allow)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(EmptyScene), Member = "LoadScene")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneWithLoadingScreen")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "Update")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(EmptyScene), Member = "LoadScene")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadSceneWithLoadingScreen")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void SetPhysicsAutoSimulationEnabled(bool enabled)
 	{
 	}
 
-	[Calls(Type = typeof(BaseAiManager), Member = "ResetAudioLoops")]
-	[CallsUnknownMethods(Count = 36)]
-	[CalledBy(Type = typeof(Action_FailMission), Member = "OnExecute")]
-	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "DidFallThroughIceFadeOut")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "HandleDeath")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "AddHealth")]
 	[CalledBy(Type = typeof(Condition), Member = "PlayerDeath")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "DeleteSaveFilesForGameId")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "IsCurrentEpisodeExperienceMode")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
-	[Calls(Type = typeof(GameManager), Member = "CancelPendingSave")]
-	[Calls(Type = typeof(Panel_ChallengeComplete), Member = "ShowPanel")]
-	[Calls(Type = typeof(Condition), Member = "GetCauseOfDeathString")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "IsCurrentEpisodeExperienceMode")]
-	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
-	[Calls(Type = typeof(Panel_TutorialPopup), Member = "ClearRequests")]
-	[Calls(Type = typeof(Rest), Member = "EndSleeping")]
-	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 10)]
+	[CalledBy(Type = typeof(NPCCondition), Member = "AddHealth")]
+	[CalledBy(Type = typeof(NPCCondition), Member = "HandleDeath")]
+	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "DidFallThroughIceFadeOut")]
+	[CalledBy(Type = typeof(Action_FailMission), Member = "OnExecute")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
+	[Calls(Type = typeof(Condition), Member = "GetCauseOfDeathString")]
+	[Calls(Type = typeof(Rest), Member = "EndSleeping")]
+	[Calls(Type = typeof(Panel_TutorialPopup), Member = "ClearRequests")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "IsCurrentEpisodeExperienceMode")]
 	[Calls(Type = typeof(Panel_Log), Member = "EnableDeathView")]
+	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanel")]
+	[Calls(Type = typeof(Panel_ChallengeComplete), Member = "ShowPanel")]
+	[Calls(Type = typeof(BaseAiManager), Member = "ResetAudioLoops")]
+	[Calls(Type = typeof(GameManager), Member = "CancelPendingSave")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "ApplyHudType")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "DeleteSaveFilesForGameId")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 36)]
 	public static void HandlePlayerDeath(string overrideCauseOfDeath = null)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(EmptyScene), Member = "InitializeSystems")]
-	[Calls(Type = typeof(Thread), Member = "set_CurrentCulture")]
-	[Calls(Type = typeof(CultureInfo), Member = ".ctor")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Thread), Member = "get_CurrentThread")]
 	[Calls(Type = typeof(Thread), Member = "GetCurrentCultureNoAppX")]
-	[Calls(Type = typeof(Thread), Member = "get_CurrentThread")]
+	[Calls(Type = typeof(CultureInfo), Member = ".ctor")]
+	[Calls(Type = typeof(Thread), Member = "set_CurrentCulture")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Thread), Member = "get_CurrentThread")]
+	[CallsUnknownMethods(Count = 9)]
 	public static void InitializeCulture()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiatePlayerObject")]
-	[CalledBy(Type = typeof(GameManager), Member = "LoadMainMenu")]
-	[CalledBy(Type = typeof(GameManager), Member = "OnLoadGameCallback")]
-	[CalledBy(Type = typeof(GameManager), Member = "ContinueToNextEpisode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(Panel_ChallengeComplete), Member = "OnTryAgain")]
+	[CalledBy(Type = typeof(GameManager), Member = "ContinueToNextEpisode")]
+	[CalledBy(Type = typeof(GameManager), Member = "OnLoadGameCallback")]
+	[CalledBy(Type = typeof(GameManager), Member = "LoadMainMenu")]
+	[CalledBy(Type = typeof(GameManager), Member = "InstantiatePlayerObject")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void DestroyPlayerObject()
 	{
 	}
 
-	[Conditional(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	private static void DebugNotAllowedToLoad(string message)
 	{
 	}
 
-	[Conditional(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	private static void DebugNotAllowedToSave(string message)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnSelectSlotNameContinue")]
-	[CalledBy(Type = typeof(Panel_ChooseEpisodeExperience), Member = "OnNameStoryConfirmed")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(Panel_ChooseEpisodeExperience), Member = "OnNameStoryConfirmed")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnSelectSlotNameContinue")]
 	[CallerCount(Count = 2)]
 	public static void RelaunchBuildForNewGame(string saveName)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Path), Member = "Combine")]
 	[Calls(Type = typeof(Utils), Member = "QuitAndRunApplication")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void RelaunchBuildForMainMenu()
 	{
@@ -3865,24 +3737,24 @@ public class GameManager : MonoBehaviour
 
 	[CalledBy(Type = typeof(Panel_ChooseStory), Member = "OnSlotClicked")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnLoadGame")]
-	[Calls(Type = typeof(Utils), Member = "QuitAndRunApplication")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Path), Member = "Combine")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Path), Member = "Combine")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Utils), Member = "QuitAndRunApplication")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void RelaunchBuildToLoadSave(string savefile)
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PauseAudio")]
-	[Calls(Type = typeof(SaveGameData), Member = "IsSaving")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(SaveGameData), Member = "IsSaving")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PauseAudio")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void PauseWhenFocusLost(bool focusLost)
 	{
 	}

@@ -5,9 +5,9 @@ public class NoSpawnRegion : MonoBehaviour
 {
 	public float m_Radius;
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
 	}

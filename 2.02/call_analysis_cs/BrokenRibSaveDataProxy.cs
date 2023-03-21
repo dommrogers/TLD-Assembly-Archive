@@ -15,7 +15,7 @@ public class BrokenRibSaveDataProxy
 	public float[] m_NumHoursRestForCureList;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public BrokenRibSaveDataProxy()
 	{
 	}

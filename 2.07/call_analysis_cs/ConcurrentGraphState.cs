@@ -13,9 +13,9 @@ public class ConcurrentGraphState
 
 	public string m_SerializedGlobalBlackboard;
 
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "RegisterConcurrentGraph")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "DeserializeConcurrentGraphs")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "RegisterConcurrentGraph")]
 	public ConcurrentGraphState()
 	{
 	}

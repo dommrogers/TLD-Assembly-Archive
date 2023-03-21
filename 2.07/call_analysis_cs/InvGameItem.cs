@@ -33,31 +33,27 @@ public class InvGameItem
 
 	public int baseItemID
 	{
-		[CallerCount(Count = 28)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 28)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public InvBaseItem baseItem
 	{
+		[CalledBy(Type = typeof(UIItemSlot), Member = "OnTooltip")]
 		[CalledBy(Type = typeof(UIItemSlot), Member = "UpdateCursor")]
-		[CalledBy(Type = typeof(InvGameItem), Member = "CalculateStats")]
 		[CalledBy(Type = typeof(UIItemSlot), Member = "Update")]
 		[CalledBy(Type = typeof(InvEquipment), Member = "Replace")]
 		[CalledBy(Type = typeof(InvEquipment), Member = "Equip")]
+		[CalledBy(Type = typeof(InvEquipment), Member = "Unequip")]
 		[CalledBy(Type = typeof(InvEquipment), Member = "HasEquipped")]
 		[CalledBy(Type = typeof(InvGameItem), Member = "get_name")]
-		[CalledBy(Type = typeof(InvGameItem), Member = "get_name")]
 		[CalledBy(Type = typeof(InvGameItem), Member = "CalculateStats")]
-		[CalledBy(Type = typeof(UIItemSlot), Member = "UpdateCursor")]
-		[CalledBy(Type = typeof(UIItemSlot), Member = "UpdateCursor")]
-		[CalledBy(Type = typeof(InvEquipment), Member = "Unequip")]
-		[Calls(Type = typeof(InvDatabase), Member = "FindByID")]
-		[CalledBy(Type = typeof(UIItemSlot), Member = "OnTooltip")]
 		[CallerCount(Count = 13)]
+		[Calls(Type = typeof(InvDatabase), Member = "FindByID")]
 		get
 		{
 			return null;
@@ -66,15 +62,14 @@ public class InvGameItem
 
 	public string name
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[CalledBy(Type = typeof(UIItemSlot), Member = "Update")]
 		[CalledBy(Type = typeof(UIItemSlot), Member = "OnTooltip")]
+		[CalledBy(Type = typeof(UIItemSlot), Member = "Update")]
+		[CalledBy(Type = typeof(InvEquipment), Member = "Replace")]
+		[CallerCount(Count = 3)]
 		[Calls(Type = typeof(InvGameItem), Member = "get_baseItem")]
 		[Calls(Type = typeof(Enum), Member = "ToString")]
-		[Calls(Type = typeof(InvGameItem), Member = "get_baseItem")]
-		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(InvEquipment), Member = "Replace")]
 		get
 		{
 			return null;
@@ -86,7 +81,7 @@ public class InvGameItem
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -106,20 +101,20 @@ public class InvGameItem
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(EquipItems), Member = "Start")]
 	[CalledBy(Type = typeof(EquipRandomItem), Member = "OnClick")]
+	[CallerCount(Count = 2)]
 	public InvGameItem(int id, InvBaseItem bi)
 	{
 	}
 
 	[CalledBy(Type = typeof(UIItemSlot), Member = "OnTooltip")]
-	[Calls(Type = typeof(InvGameItem), Member = "get_baseItem")]
-	[Calls(Type = typeof(InvGameItem), Member = "get_baseItem")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(InvGameItem), Member = "get_baseItem")]
+	[Calls(Type = typeof(List<>), Member = "Sort")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public List<InvStat> CalculateStats()
 	{
 		return null;

@@ -9,8 +9,8 @@ public class NameAttribute : Attribute
 
 	public readonly int priority;
 
-	[CallerCount(Count = 11)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 11)]
 	public NameAttribute(string name, int priority = 0)
 	{
 	}

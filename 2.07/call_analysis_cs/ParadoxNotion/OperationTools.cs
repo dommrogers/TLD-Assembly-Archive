@@ -7,10 +7,10 @@ namespace ParadoxNotion;
 
 public static class OperationTools
 {
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(SetFloat), Member = "get_info")]
 	[CalledBy(Type = typeof(SetInt), Member = "get_info")]
 	[CalledBy(Type = typeof(SetVector3), Member = "get_info")]
+	[CallerCount(Count = 3)]
 	public static string GetOperationString(OperationMethod om)
 	{
 		return null;
@@ -19,13 +19,13 @@ public static class OperationTools
 	[CallerCount(Count = 0)]
 	public static float Operate(float a, float b, OperationMethod om, float delta = 1f)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public static int Operate(int a, int b, OperationMethod om)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CalledBy(Type = typeof(SetVector3), Member = "OnExecute")]
@@ -45,13 +45,13 @@ public static class OperationTools
 	[CallerCount(Count = 1)]
 	public static bool Compare(float a, float b, CompareMethod cm, float floatingPoint)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Condition_CheckInventoryItemCondition), Member = "OnCheck")]
+	[CallerCount(Count = 1)]
 	public static bool Compare(int a, int b, CompareMethod cm)
 	{
-		return default(bool);
+		return false;
 	}
 }

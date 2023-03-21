@@ -13,7 +13,7 @@ public class BehaviourTreeOwner : GraphOwner<BehaviourTree>
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
@@ -30,11 +30,11 @@ public class BehaviourTreeOwner : GraphOwner<BehaviourTree>
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -51,20 +51,19 @@ public class BehaviourTreeOwner : GraphOwner<BehaviourTree>
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public Status Tick()
 	{
 		return default(Status);
 	}
 
-	[Calls(Type = typeof(GraphOwner), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GraphOwner), Member = ".ctor")]
 	public BehaviourTreeOwner()
 	{
 		((GraphOwner<>)(object)this)._002Ector();

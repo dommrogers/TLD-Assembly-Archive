@@ -3,9 +3,9 @@ using NodeCanvas.DialogueTrees;
 
 public class Dialogue_Speech_Utils
 {
-	[CalledBy(Type = typeof(Dialogue_MultipleChoiceNode), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_HideChoice), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Action_ShowChoice), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_HideChoice), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Dialogue_MultipleChoiceNode), Member = "OnExecute")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]

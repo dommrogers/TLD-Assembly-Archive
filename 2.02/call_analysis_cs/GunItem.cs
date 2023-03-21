@@ -110,24 +110,25 @@ public class GunItem : MonoBehaviour
 
 	private static Action<GameObject> s_OnFlareGunFired;
 
-	[Calls(Type = typeof(GunItem), Member = "MaybeDetermineSingleRoundWeight")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GunItem), Member = "MaybeDetermineSingleRoundWeight")]
 	public void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(GunItem), Member = "AddRoundsToClip")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Start()
 	{
 	}
 
+	[CalledBy(Type = typeof(GearItem), Member = "Serialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Copy")]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(GearItem), Member = "Serialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	public string Serialize()
 	{
@@ -135,35 +136,36 @@ public class GunItem : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(GunItem), Member = "AddRoundsToClip")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(GunItem), Member = "AddRoundsToClip")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(vp_FPSShooter), Member = "OnClipLoaded")]
+	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	public void AddRangeToClip(List<int> bullets)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Action_AddBearkillerRifle), Member = "OnExecute")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_rifle")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_flaregun")]
-	[CalledBy(Type = typeof(GunItem), Member = "FillClipAtCondition")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_revolver")]
-	[CalledBy(Type = typeof(GunItem), Member = "Start")]
 	[CalledBy(Type = typeof(vp_FPSShooter), Member = "OnBulletLoaded")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 8)]
+	[CalledBy(Type = typeof(GunItem), Member = "Start")]
 	[CalledBy(Type = typeof(GunItem), Member = "Deserialize")]
+	[CalledBy(Type = typeof(GunItem), Member = "FillClipAtCondition")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_flaregun")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_revolver")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_rifle")]
+	[CalledBy(Type = typeof(Action_AddBearkillerRifle), Member = "OnExecute")]
+	[CallerCount(Count = 8)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void AddRoundsToClip(int count, int condition)
 	{
 	}
@@ -173,12 +175,12 @@ public class GunItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "DoUnload")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnRefuel")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "DoUnload")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void EmptyClip()
 	{
 	}
@@ -189,40 +191,39 @@ public class GunItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "DoUnload")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "OnUnJamComplete")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "DoUnload")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public int GetAmmoCondition(int index)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 43)]
+	[CallerCount(Count = 44)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public int NumRoundsInClip()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 1)]
 	public int NumSpentCasingsInClip()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "OnUnJamComplete")]
-	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
-	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
 	[CalledBy(Type = typeof(GunItem), Member = "StruggleRevolverFire")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void RemoveNextFromClip()
 	{
 	}
@@ -231,132 +232,125 @@ public class GunItem : MonoBehaviour
 	[Calls(Type = typeof(GunItem), Member = "NumRoundsInClip")]
 	public int TotalCasingsInClip()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CalledBy(Type = typeof(GunItem), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostActive")]
-	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
 	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostActive")]
 	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillRifle")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 12)]
 	public float GetSwayIncreasePerSecond()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(GunItem), Member = "Update")]
-	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostActive")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostActive")]
 	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public float GetSwayDecreasePerSecond()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetCurrentStaminaPercent()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetStaminaDropThresholdPercent()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool CanStartAiming()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(GunItem), Member = "GetSwayDecreasePerSecond")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GunItem), Member = "IsEquipped")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "IsAllowedToFire")]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(GunItem), Member = "GetSwayIncreasePerSecond")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Update_WeaponFatigue")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "IsAllowedToFire")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(GunItem), Member = "IsEquipped")]
+	[Calls(Type = typeof(GunItem), Member = "GetSwayDecreasePerSecond")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[CallsUnknownMethods(Count = 9)]
 	public void Update()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
 	[CalledBy(Type = typeof(vp_FPSShooter), Member = "DryFire")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void PlayDryFireAudio(GameObject go)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Aim")]
-	[CallsUnknownMethods(Count = 15)]
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "InputZoom")]
-	[Calls(Type = typeof(PlayerVoice), Member = "CompleteActiveRequest")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerVoice), Member = "CompleteActiveRequest")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Aim")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 15)]
 	public void ZoomStart()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void OnAiming()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "MaybeCancelZoomInternal")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Aim_Cancel")]
+	[Calls(Type = typeof(Freezing), Member = "MaybeCancelPlayerFreezingTeethChatter")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Freezing), Member = "MaybeCancelPlayerFreezingTeethChatter")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Aim_Cancel")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CallsUnknownMethods(Count = 13)]
 	public void ZoomEnd()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void OnAimingStoppedComplete()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ResetControlState()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GunItem), Member = "NumRoundsInClip")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void MaybePlayUncockAudio(GameObject go)
 	{
@@ -367,19 +361,19 @@ public class GunItem : MonoBehaviour
 	[Calls(Type = typeof(GunItem), Member = "NumRoundsInClip")]
 	public float GetClipWeightKG()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(GunItem), Member = "GetClipWeightKG")]
-	[CalledBy(Type = typeof(GunItem), Member = "Awake")]
-	[CalledBy(Type = typeof(GearItem), Member = "GetItemWeightKG")]
 	[CalledBy(Type = typeof(GearItem), Member = "GetItemWeightIgnoreClothingWornBonusKG")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(GearItem), Member = "GetItemWeightKG")]
+	[CalledBy(Type = typeof(GunItem), Member = "Awake")]
+	[CalledBy(Type = typeof(GunItem), Member = "GetClipWeightKG")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void MaybeDetermineSingleRoundWeight()
 	{
 	}
@@ -390,168 +384,164 @@ public class GunItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 17)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "Reset")]
-	[Calls(Type = typeof(SmokeTrail), Member = "InitEffect")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(SmokeTrail), Member = "InitEffect")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 17)]
 	public void ResetEffects()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "IsAllowedToFire")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GunItem), Member = "IsEquipped")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "IsAllowedToFire")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool IsAiming()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CalledBy(Type = typeof(GunItem), Member = "Update")]
 	[CalledBy(Type = typeof(GunItem), Member = "IsAiming")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	private bool IsEquipped()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillRevolver")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public float GetRecoilPitch()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillRevolver")]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public float GetRecoilYaw()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "OnRevolverFired")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "OnFiredEquippedWeapon")]
-	[Calls(Type = typeof(RumbleEffectManager), Member = "PlayEffect")]
-	[Calls(Type = typeof(Condition), Member = "StartEarRinging")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GunItem), Member = "RemoveNextFromClip")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Condition), Member = "StartEarRinging")]
+	[Calls(Type = typeof(GunItem), Member = "RemoveNextFromClip")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItem), Member = "DegradeOnUse")]
+	[Calls(Type = typeof(RumbleEffectManager), Member = "PlayEffect")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "OnFiredEquippedWeapon")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public void StruggleRevolverFire()
 	{
 	}
 
+	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Fired(GameObject projectile)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GunItem), Member = "PlayCasingAudio")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemAtPlayersFeet")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemAtPlayersFeet")]
+	[Calls(Type = typeof(GunItem), Member = "PlayCasingAudio")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void HandleShellDischarge()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void MaybeHandleMisfire()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
-	[Calls(Type = typeof(MisfireTable), Member = "DoesMisfire")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(GunItem), Member = "NumRoundsInClip")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GunItem), Member = "NumRoundsInClip")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(MisfireTable), Member = "DoesMisfire")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool RollForMisfire()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Discharge_Shell_Event")]
-	[CalledBy(Type = typeof(GunItem), Member = "HandleShellDischarge")]
-	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "OnRoundsUnloaded")]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "OnUnJamComplete")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "OnRoundsUnloaded")]
+	[CalledBy(Type = typeof(GunItem), Member = "HandleShellDischarge")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Discharge_Shell_Event")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
 	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void PlayCasingAudio(int count)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GunItem), Member = "IsFiredActionRegistered")]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void RegisterOnFiredAction(Action<GameObject> action, GunType gunType)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GunItem), Member = "IsFiredActionRegistered")]
 	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void UnRegisterOnFiredAction(Action<GameObject> action, GunType gunType)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(RescueZone), Member = "OnDestroy")]
+	[CalledBy(Type = typeof(GunItem), Member = "RegisterOnFiredAction")]
 	[CalledBy(Type = typeof(GunItem), Member = "UnRegisterOnFiredAction")]
 	[CalledBy(Type = typeof(RescueZone), Member = "Awake")]
+	[CalledBy(Type = typeof(RescueZone), Member = "OnDestroy")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Delegate), Member = "op_Inequality")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(GunItem), Member = "RegisterOnFiredAction")]
+	[CallsUnknownMethods(Count = 5)]
 	private static bool IsFiredActionRegistered(Action<GameObject> action, GunType gunType)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 12)]
 	public GunItem()
 	{

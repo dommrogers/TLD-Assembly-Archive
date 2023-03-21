@@ -8,7 +8,7 @@ public class DescriptionAttribute : Attribute
 	public readonly string description;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 279)]
+	[CallerCount(Count = 282)]
 	public DescriptionAttribute(string description)
 	{
 	}

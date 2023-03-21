@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
+using NodeCanvas;
 using NodeCanvas.Tasks.Actions;
 using UnityEngine;
 
@@ -25,9 +25,9 @@ public class uConsole : MonoBehaviour
 		{
 		}
 
+		[CalledBy(Type = typeof(uConsole), Member = "RegisterCommandReturn")]
+		[CalledBy(Type = typeof(uConsole), Member = "RegisterCommandReturn")]
 		[CallerCount(Count = 2)]
-		[CalledBy(Type = typeof(uConsole), Member = "RegisterCommandReturn")]
-		[CalledBy(Type = typeof(uConsole), Member = "RegisterCommandReturn")]
 		public CommandDelegate(DebugCommandReturn cmd)
 		{
 		}
@@ -36,7 +36,7 @@ public class uConsole : MonoBehaviour
 		[CallerCount(Count = 0)]
 		public bool IsValid()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
@@ -123,114 +123,98 @@ public class uConsole : MonoBehaviour
 	private static bool m_On;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 11)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(uConsoleGUI), Member = "RefreshLogText")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(uConsoleCommands), Member = "RegisterBuiltInCommands")]
-	[Calls(Type = typeof(uConsole), Member = "InstantiateGUIPrefab")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "InstantiateGUIPrefab")]
+	[Calls(Type = typeof(uConsoleCommands), Member = "RegisterBuiltInCommands")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
 	[Calls(Type = typeof(uConsoleHistory), Member = "Restore")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(Type = typeof(uConsoleGUI), Member = "RefreshLogText")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsoleInput), Member = "DoFrame")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "RegisterCommands")]
+	[CalledBy(Type = typeof(ExampleCommands), Member = "Start")]
+	[CallerCount(Count = 462)]
+	[Calls(Type = typeof(uConsole), Member = "CommandAlreadyRegistered")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
 	[Calls(Type = typeof(CommandDelegate), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(uConsole), Member = "CommandAlreadyRegistered")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 462)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void RegisterCommand(string command, DebugCommand commandCallback)
 	{
 	}
 
 	[CalledBy(Type = typeof(uConsoleCommands), Member = "RegisterBuiltInCommands")]
-	[CalledBy(Type = typeof(uConsoleCommands), Member = "RegisterBuiltInCommands")]
-	[CalledBy(Type = typeof(uConsoleCommands), Member = "RegisterBuiltInCommands")]
-	[CalledBy(Type = typeof(uConsoleCommands), Member = "RegisterBuiltInCommands")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(uConsoleCommands), Member = "RegisterBuiltInCommands")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(uConsole), Member = "CommandAlreadyRegistered")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
 	[Calls(Type = typeof(CommandDelegate), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(uConsole), Member = "CommandAlreadyRegistered")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void RegisterCommand(string command, string help, DebugCommand commandCallback)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "RegisterCommands")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "RegisterCommands")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "RegisterCommands")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "RegisterCommands")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "RegisterCommands")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "RegisterCommands")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "RegisterCommands")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(uConsole), Member = "CommandAlreadyRegistered")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
 	[Calls(Type = typeof(CommandDelegate), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(uConsole), Member = "CommandAlreadyRegistered")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void RegisterCommandReturn(string command, DebugCommandReturn commandCallback)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(uConsole), Member = "CommandAlreadyRegistered")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsole), Member = "CommandAlreadyRegistered")]
+	[Calls(Type = typeof(string), Member = "ToLower")]
 	[Calls(Type = typeof(CommandDelegate), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void RegisterCommandReturn(string command, string help, DebugCommandReturn commandCallback)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(ExampleCommands), Member = "OnDestroy")]
-	[CalledBy(Type = typeof(ExampleCommands), Member = "OnDestroy")]
-	[CalledBy(Type = typeof(ExampleCommands), Member = "OnDestroy")]
-	[CalledBy(Type = typeof(ExampleCommands), Member = "OnDestroy")]
-	[CalledBy(Type = typeof(ExampleCommands), Member = "OnDestroy")]
-	[CalledBy(Type = typeof(ExampleCommands), Member = "OnDestroy")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void UnRegisterCommand(string command)
 	{
 	}
@@ -240,60 +224,67 @@ public class uConsole : MonoBehaviour
 	[CalledBy(Type = typeof(Panel_Debug), Member = "TransitionToDay4DON")]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "CompleteTimer4DON")]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "ResetBadgeProgress4DON")]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "SubmitCommand")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_mission_add")]
-	[CalledBy(Type = typeof(Panel_Debug), Member = "Toggle4DON")]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessSubmitInput")]
-	[CallsUnknownMethods(Count = 19)]
 	[CalledBy(Type = typeof(Panel_Loading), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(Panel_Debug), Member = "OverrideDay4DON")]
-	[Calls(Type = typeof(uConsoleLog), Member = "Add")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_mission_add")]
+	[CalledBy(Type = typeof(uConsoleInput), Member = "SubmitCommand")]
+	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessSubmitInput")]
 	[CallerCount(Count = 11)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(string), Member = "TrimHelper")]
 	[Calls(Type = typeof(uConsoleHistory), Member = "Add")]
-	[Calls(Type = typeof(uConsole), Member = "BuildArgListFromTokens")]
 	[Calls(Type = typeof(string), Member = "SplitInternal")]
-	[Calls(Type = typeof(uConsoleLog), Member = "Add")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(uConsoleLog), Member = "Add")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(uConsole), Member = "BuildArgListFromTokens")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(uConsoleLog), Member = "Add")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 19)]
 	public static object RunCommand(string commandWithArgs)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(string), Member = "SplitInternal")]
-	[Calls(Type = typeof(string), Member = "TrimHelper")]
+	[CalledBy(Type = typeof(Panel_Loading), Member = "Update")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_crow_flyover_test")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_debug_ai_lite")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_debug_radial_spawning")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_hunted2_endgame")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_mission_jump")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_show_days_survived")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_show_running_temp_bonus")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_sandbox")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_story")]
+	[CalledBy(Type = typeof(ExperienceModeManager), Member = "RunInitCommandStory")]
+	[CalledBy(Type = typeof(RadialSpawnManager), Member = "Start")]
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "JumpTo")]
+	[CalledBy(Type = typeof(NCUtils), Member = "ProcessCommandBlockLines")]
+	[CalledBy(Type = typeof(Action_StartSideMission), Member = "OnExecute")]
 	[CallerCount(Count = 35)]
+	[Calls(Type = typeof(string), Member = "TrimHelper")]
+	[Calls(Type = typeof(string), Member = "SplitInternal")]
 	[Calls(Type = typeof(uConsole), Member = "BuildArgListFromTokens")]
+	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 9)]
 	public static object RunCommandSilent(string commandWithArgs)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(ExampleCommands), Member = "EchoBool")]
-	[CalledBy(Type = typeof(uConsoleAutoComplete), Member = "DisplayStringsStartingWithMatch")]
-	[CalledBy(Type = typeof(ExampleCommands), Member = "EchoStrings")]
-	[CalledBy(Type = typeof(ExampleCommands), Member = "EchoStrings")]
-	[CalledBy(Type = typeof(ExampleCommands), Member = "EchoString")]
-	[CalledBy(Type = typeof(ExampleCommands), Member = "EchoBool")]
-	[CalledBy(Type = typeof(uConsoleAutoComplete), Member = "DisplayStringsStartingWithMatch")]
-	[CalledBy(Type = typeof(ExampleCommands), Member = "EchoInteger")]
 	[CalledBy(Type = typeof(ExampleCommands), Member = "EchoNothing")]
+	[CalledBy(Type = typeof(ExampleCommands), Member = "EchoInteger")]
+	[CalledBy(Type = typeof(ExampleCommands), Member = "EchoFloat")]
+	[CalledBy(Type = typeof(ExampleCommands), Member = "EchoBool")]
+	[CalledBy(Type = typeof(ExampleCommands), Member = "EchoString")]
+	[CalledBy(Type = typeof(ExampleCommands), Member = "EchoStrings")]
+	[CalledBy(Type = typeof(uConsoleAutoComplete), Member = "DisplayStringsStartingWithMatch")]
+	[CallerCount(Count = 10)]
 	[Calls(Type = typeof(uConsoleLog), Member = "Add")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(ExampleCommands), Member = "EchoFloat")]
-	[CallerCount(Count = 10)]
 	public static void Log(string text)
 	{
 	}
@@ -304,18 +295,18 @@ public class uConsole : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_LoadScene), Member = "OnExecute")]
-	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessActivationInput")]
-	[CalledBy(Type = typeof(ExampleCommands), Member = "LoadScene")]
-	[CalledBy(Type = typeof(LightingCapture), Member = "SampleCameras")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_show_location_reveal")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_shake_camera")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_play_movie_alpha_ext")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_play_movie_alpha")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_play_movie")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 10)]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_play_movie_alpha")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_play_movie_alpha_ext")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_scene")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_shake_camera")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_show_location_reveal")]
+	[CalledBy(Type = typeof(LightingCapture), Member = "SampleCameras")]
+	[CalledBy(Type = typeof(ExampleCommands), Member = "LoadScene")]
+	[CalledBy(Type = typeof(uConsoleInput), Member = "ProcessActivationInput")]
+	[CalledBy(Type = typeof(Action_LoadScene), Member = "OnExecute")]
+	[CallerCount(Count = 10)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void TurnOff()
 	{
 	}
@@ -324,31 +315,30 @@ public class uConsole : MonoBehaviour
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsOn()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "ParameterIsRegistered")]
 	[CalledBy(Type = typeof(uConsoleInput), Member = "AutoComplete")]
-	[Calls(Type = typeof(uConsole), Member = "CommandIsRegistered")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(string), Member = "SplitInternal")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(string), Member = "SplitInternal")]
 	[Calls(Type = typeof(uConsole), Member = "CommandIsRegistered")]
+	[Calls(Type = typeof(uConsole), Member = "ParameterIsRegistered")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public static bool CommandIsUnabmiguousAutoComplete(string command)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(uConsoleCommands), Member = "ShowHelp")]
-	[CalledBy(Type = typeof(uConsoleCommands), Member = "ShowHelp")]
 	[CalledBy(Type = typeof(uConsoleCommands), Member = "SearchForCommand")]
-	[Calls(Type = typeof(uConsoleLog), Member = "Add")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(uConsoleCommands), Member = "ShowHelp")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(uConsoleLog), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void ShowHelp(string command)
 	{
 	}
@@ -358,135 +348,122 @@ public class uConsole : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public static int GetNumParameters()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_warp")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public static List<string> GetAllParameters()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 143)]
+	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallsUnknownMethods(Count = 5)]
 	public static bool NextParameterIsBool()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
 	[CallerCount(Count = 153)]
+	[Calls(Type = typeof(string), Member = "ToLower")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public static bool GetBool()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "TryParseInt32")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_autosave")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_episode_unlock")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_force_sleep_length")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_gear_add_type")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "TryParseInt32")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool NextParameterIsInt()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.Number), Member = "TryParseInt32")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 30)]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "TryParseInt32")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static int GetInt()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_toxicfog_set")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_texel_density")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_shake_camera")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_shake_camera")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_shake_camera")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_shake_camera")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_shake_camera")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_invisibleentity_speed")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_invisibleentity_countdown")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_force_aurora_duration")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_debug_position")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_breakdown_all")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 13)]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_debug_position")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_force_aurora_duration")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_invisibleentity_countdown")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_invisibleentity_addspace")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_invisibleentity_speed")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_toxicfog_set")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_shake_camera")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_texel_density")]
+	[CallerCount(Count = 13)]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(Type = typeof(float), Member = "TryParse")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool NextParameterIsFloat()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallerCount(Count = 60)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(Type = typeof(float), Member = "TryParse")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static float GetFloat()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(ConsoleManager), Member = "TryGetWarpToPosition")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(uConsole), Member = "TryGetVector3")]
-	[CalledBy(Type = typeof(uConsole), Member = "TryGetVector3")]
-	[CalledBy(Type = typeof(uConsole), Member = "TryGetVector3")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "TryGetWarpToPosition")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "TryGetWarpToPosition")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "TryGetWarpToPosition")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(Type = typeof(float), Member = "TryParse")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "TryGetWarpToPosition")]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool TryGetFloat(out float f)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref f) = null;
-		return default(bool);
+		f = default(float);
+		return false;
 	}
 
-	[Calls(Type = typeof(uConsole), Member = "TryGetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "TryGetFloat")]
-	[Calls(Type = typeof(uConsole), Member = "TryGetFloat")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(uConsole), Member = "TryGetFloat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool TryGetVector3(out Vector3 v)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref v) = null;
-		return default(bool);
+		v = default(Vector3);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -494,111 +471,104 @@ public class uConsole : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public static bool NextParameterExists()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 111)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallsUnknownMethods(Count = 2)]
 	public static string GetString()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(uConsoleLog), Member = "Save")]
-	[Calls(Type = typeof(uConsoleHistory), Member = "Save")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(uConsoleHistory), Member = "Save")]
+	[Calls(Type = typeof(uConsoleLog), Member = "Save")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnApplicationQuit()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 23)]
-	[CalledBy(Type = typeof(uConsole), Member = "RunCommandSilent")]
 	[CalledBy(Type = typeof(uConsole), Member = "RunCommand")]
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "get_Chars")]
-	[Calls(Type = typeof(string), Member = "Substring")]
+	[CalledBy(Type = typeof(uConsole), Member = "RunCommandSilent")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(string), Member = "get_Chars")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(string), Member = "get_Chars")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 23)]
 	private static void BuildArgListFromTokens(string[] tokens)
 	{
 	}
 
-	[CalledBy(Type = typeof(uConsole), Member = "RegisterCommandReturn")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(uConsole), Member = "RegisterCommandReturn")]
 	[CalledBy(Type = typeof(uConsole), Member = "RegisterCommand")]
+	[CalledBy(Type = typeof(uConsole), Member = "RegisterCommand")]
+	[CalledBy(Type = typeof(uConsole), Member = "RegisterCommandReturn")]
+	[CalledBy(Type = typeof(uConsole), Member = "RegisterCommandReturn")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(uConsole), Member = "RegisterCommand")]
+	[CallsUnknownMethods(Count = 4)]
 	private static bool CommandAlreadyRegistered(string command)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(uConsole), Member = "Start")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(Transform), Member = "SetParent")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Resources), Member = "Load")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Resources), Member = "Load")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "SetParent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void InstantiateGUIPrefab()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(uConsole), Member = "CommandIsRegistered")]
 	[Calls(Type = typeof(uConsole), Member = "ParameterIsRegistered")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private static bool CommandAndParameterRegistered(string command, string parameter)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(uConsole), Member = "CommandIsUnabmiguousAutoComplete")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(uConsole), Member = "CommandIsUnabmiguousAutoComplete")]
 	[CalledBy(Type = typeof(uConsole), Member = "CommandAndParameterRegistered")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >.KeyCollection.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private static bool CommandIsRegistered(string command)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(uConsole), Member = "CommandAndParameterRegistered")]
 	[CalledBy(Type = typeof(uConsole), Member = "CommandIsUnabmiguousAutoComplete")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[CalledBy(Type = typeof(uConsole), Member = "CommandAndParameterRegistered")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "op_Inequality")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(string), Member = "op_Inequality")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	private static bool ParameterIsRegistered(string command, string parameter)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

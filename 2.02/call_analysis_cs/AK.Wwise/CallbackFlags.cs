@@ -9,7 +9,7 @@ public class CallbackFlags
 	public uint value;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CallbackFlags()
 	{
 	}

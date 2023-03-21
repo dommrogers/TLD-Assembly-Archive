@@ -27,73 +27,62 @@ public class WeatherTransition : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(WeatherSetStage), Member = "Deactivate")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(WeatherSetData), Member = "UpdateWeatherSet")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(WeatherTransition), Member = "ForceNextWeatherStage")]
-	[Calls(Type = typeof(WeatherTransition), Member = "ChooseNextWeatherSet")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(WeatherTransition), Member = "GetCustomWeightsForCurrentXpMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(WeatherTransition), Member = "ChooseNextWeatherSet")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(WeatherTransition), Member = "ForceNextWeatherStage")]
+	[Calls(Type = typeof(WeatherSetData), Member = "UpdateWeatherSet")]
+	[Calls(Type = typeof(WeatherTransition), Member = "GetCustomWeightsForCurrentXpMode")]
+	[CallsUnknownMethods(Count = 4)]
 	public void Update()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ToggleGameCameraForBrightness")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(WeatherSetData), Member = "Serialize")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
 	[Calls(Type = typeof(WeatherSetData), Member = "GetProgressFrac")]
+	[Calls(Type = typeof(WeatherSetData), Member = "Serialize")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(WeatherTransition), Member = "ForceUnmanagedWeatherStage")]
-	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ToggleGameCameraForBrightness")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(Weather), Member = "GetWeatherSetByName")]
+	[Calls(Type = typeof(WeatherSetData), Member = "Deserialize")]
+	[Calls(Type = typeof(Weather), Member = "ChooseWeatherSetOfType")]
 	[Calls(Type = typeof(WeatherSetData), Member = "Prepare")]
 	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSet")]
-	[Calls(Type = typeof(WeatherSetData), Member = "Deserialize")]
-	[Calls(Type = typeof(Weather), Member = "GetWeatherSetByName")]
-	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Weather), Member = "ChooseWeatherSetOfType")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ForceUnmanagedWeatherStage")]
+	[CallsUnknownMethods(Count = 3)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CalledBy(Type = typeof(StartSettings), Member = "SetRandomWeather")]
-	[CalledBy(Type = typeof(StartSettings), Member = "SetWeather")]
-	[CalledBy(Type = typeof(WeatherTransition), Member = "Update")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_next_weatherset")]
-	[CallerCount(Count = 5)]
 	[CallAnalysisFailed]
 	[CalledBy(Type = typeof(WeatherTransition), Member = "Update")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_next_weatherset")]
+	[CalledBy(Type = typeof(StartSettings), Member = "SetWeather")]
+	[CalledBy(Type = typeof(StartSettings), Member = "SetRandomWeather")]
+	[CallerCount(Count = 5)]
 	public void ChooseNextWeatherSet(int[] customWeights = null, bool forceClear = false)
 	{
 	}
@@ -105,22 +94,38 @@ public class WeatherTransition : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool ActivateWeatherSet(string customTypeName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(PlayableBehaviourChangeWeather), Member = "OnBehaviourPlay")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(LightingCapture._003CCaptureFrame_003Ed__15), Member = "MoveNext")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_force_aurora_immediate")]
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSet")]
-	[Calls(Type = typeof(WeatherSetData), Member = "Prepare")]
-	[Calls(Type = typeof(Weather), Member = "ChooseWeatherSetOfType")]
 	[CalledBy(Type = typeof(DebugViewModeManager), Member = "ToggleTexelDensity")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_force_aurora_immediate")]
+	[CalledBy(Type = typeof(PlayableBehaviourChangeWeather), Member = "OnBehaviourPlay")]
+	[CalledBy(TypeFullName = "LightingCapture.<CaptureFrame>d__15", Member = "MoveNext")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Weather), Member = "ChooseWeatherSetOfType")]
+	[Calls(Type = typeof(WeatherSetData), Member = "Prepare")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSet")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ActivateWeatherSetImmediate(WeatherStage reqType)
 	{
 	}
 
+	[CalledBy(Type = typeof(WeatherTransition), Member = "Start")]
+	[CalledBy(Type = typeof(WeatherTransition), Member = "Deserialize")]
+	[CalledBy(Type = typeof(WeatherTransition), Member = "ActivateWeatherSet")]
+	[CalledBy(Type = typeof(WeatherTransition), Member = "ActivateDefaultWeatherSet")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
+	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateForceAurora")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_force_electrostatic_fog")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_force_aurora")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_lighting_preview")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_weather")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateCountdownCompleted")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TeleportPlayerAfterSceneLoad")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "StartFogWeatherTransition")]
+	[CalledBy(Type = typeof(PlayerSpawn), Member = "SetStartTimeAndWeather")]
+	[CalledBy(Type = typeof(PlayerSpawn), Member = "SetWeather")]
+	[CalledBy(Type = typeof(PlayableBehaviourChangeWeather), Member = "OnBehaviourPlay")]
 	[CallerCount(Count = 20)]
 	[Calls(Type = typeof(Weather), Member = "ChooseWeatherSetOfType")]
 	[Calls(Type = typeof(WeatherSetData), Member = "Prepare")]
@@ -136,16 +141,16 @@ public class WeatherTransition : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetImmediate")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
-	[CalledBy(Type = typeof(WeatherTransition), Member = "ActivateWeatherSet")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_weather")]
-	[Calls(Type = typeof(WeatherSetData), Member = "Activate")]
-	[Calls(Type = typeof(WeatherSetStage), Member = "Deactivate")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(WeatherTransition), Member = "Deserialize")]
+	[CalledBy(Type = typeof(WeatherTransition), Member = "ActivateWeatherSet")]
+	[CalledBy(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetImmediate")]
+	[CalledBy(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_weather")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(WeatherSetStage), Member = "Deactivate")]
+	[Calls(Type = typeof(WeatherSetData), Member = "Activate")]
+	[CallsUnknownMethods(Count = 2)]
 	public void ActivateWeatherSet(WeatherSetData ws, float startAtFrac, WeatherStage previousType = WeatherStage.Undefined)
 	{
 	}
@@ -159,49 +164,46 @@ public class WeatherTransition : MonoBehaviour
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(WeatherSetData), Member = "ForceStep")]
-	[Calls(Type = typeof(WeatherSetData), Member = "ForceStep")]
 	[CallsUnknownMethods(Count = 2)]
 	public void ForceTransitionToWeatherStage(int forceIndex)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_next_weather")]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateForceAurora")]
 	[CalledBy(Type = typeof(WeatherTransition), Member = "Update")]
+	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateForceAurora")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_next_weather")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(WeatherSetData), Member = "ForceStep")]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(WeatherTransition), Member = "Update")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ForceNextWeatherStage(int forceIndex = -1)
 	{
 	}
 
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
-	[CalledBy(Type = typeof(PlayableBehaviourChangeWeather), Member = "OnBehaviourPlay")]
-	[CalledBy(Type = typeof(PlayableBehaviourChangeWeather), Member = "OnBehaviourPlay")]
-	[CalledBy(Type = typeof(StartSettings), Member = "SetLockedWeather")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(StartSettings), Member = "SetWeather")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_random_weather")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "SetWeatherStage")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_lock_weather")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ToggleGameCameraForBrightness")]
 	[CalledBy(Type = typeof(WeatherTransition), Member = "Deserialize")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(WeatherSetStage), Member = "Deactivate")]
-	[CallerCount(Count = 10)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ToggleGameCameraForBrightness")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_lock_weather")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_lock_weather_instant")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_random_weather")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
+	[CalledBy(Type = typeof(StartSettings), Member = "SetWeather")]
+	[CalledBy(Type = typeof(StartSettings), Member = "SetLockedWeather")]
+	[CalledBy(Type = typeof(PlayableBehaviourChangeWeather), Member = "OnBehaviourPlay")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(WeatherSetStage), Member = "Deactivate")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "SetWeatherStage")]
+	[CallsUnknownMethods(Count = 2)]
 	public void ForceUnmanagedWeatherStage(WeatherStage ws, float transitionTime)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(WeatherSetData), Member = "GetDebugString")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetDebugString()
 	{
 		return null;
@@ -210,11 +212,11 @@ public class WeatherTransition : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsLocked()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateForceAurora")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void OverrideDurationOfStageInCurrentWeatherSet(WeatherStage weatherType, float duration)
 	{
@@ -224,28 +226,28 @@ public class WeatherTransition : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	public float GetDurationOfStageInCurrentWeatherSet(WeatherStage weatherType)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetElapsedTimeOfStageInCurrentWeatherSet(WeatherStage weatherType)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(TimeOfDay), Member = "IsDay")]
 	[CalledBy(Type = typeof(WeatherTransition), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsDay")]
 	[CallsUnknownMethods(Count = 3)]
 	private int[] GetCustomWeightsForCurrentXpMode()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public WeatherTransition()
 	{
 	}

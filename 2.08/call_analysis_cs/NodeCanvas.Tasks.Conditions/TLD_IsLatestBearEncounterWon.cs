@@ -13,16 +13,17 @@ public class TLD_IsLatestBearEncounterWon : ConditionTask
 	{
 	}
 
-	[Calls(Type = typeof(BearHuntRedux), Member = "GetBearEncounterInfo")]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(BearHuntRedux), Member = "GetBearEncounterInfo")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public TLD_IsLatestBearEncounterWon()
 	{
 	}

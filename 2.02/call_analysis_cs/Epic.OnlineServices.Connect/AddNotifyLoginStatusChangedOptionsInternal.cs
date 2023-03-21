@@ -9,8 +9,8 @@ internal struct AddNotifyLoginStatusChangedOptionsInternal : ISettable, IDisposa
 {
 	private int m_ApiVersion;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void Set(AddNotifyLoginStatusChangedOptions other)
 	{
 	}
@@ -23,7 +23,7 @@ internal struct AddNotifyLoginStatusChangedOptionsInternal : ISettable, IDisposa
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

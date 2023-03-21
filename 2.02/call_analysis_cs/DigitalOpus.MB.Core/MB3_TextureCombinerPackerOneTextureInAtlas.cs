@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -20,7 +19,7 @@ internal class MB3_TextureCombinerPackerOneTextureInAtlas : MB_ITextureCombinerP
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -31,7 +30,7 @@ internal class MB3_TextureCombinerPackerOneTextureInAtlas : MB_ITextureCombinerP
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -45,9 +44,9 @@ internal class MB3_TextureCombinerPackerOneTextureInAtlas : MB_ITextureCombinerP
 		{
 		}
 
-		[CallerCount(Count = 2)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
@@ -56,7 +55,7 @@ internal class MB3_TextureCombinerPackerOneTextureInAtlas : MB_ITextureCombinerP
 		[CallerCount(Count = 0)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -68,7 +67,7 @@ internal class MB3_TextureCombinerPackerOneTextureInAtlas : MB_ITextureCombinerP
 		}
 	}
 
-	private sealed class _003CCreateAtlases_003Ed__2 : IEnumerator, IDisposable, IEnumerator<object>
+	private sealed class _003CCreateAtlases_003Ed__2 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -84,7 +83,7 @@ internal class MB3_TextureCombinerPackerOneTextureInAtlas : MB_ITextureCombinerP
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -93,83 +92,76 @@ internal class MB3_TextureCombinerPackerOneTextureInAtlas : MB_ITextureCombinerP
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CCreateAtlases_003Ed__2(int _003C_003E1__state)
 		{
 		}
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[Calls(Type = typeof(Material), Member = "SetTextureOffset")]
-		[CallsUnknownMethods(Count = 28)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(Vector2), Member = "get_zero")]
-		[Calls(Type = typeof(Material), Member = "SetTextureScale")]
-		[Calls(Type = typeof(Vector2), Member = "get_one")]
-		[Calls(Type = typeof(Material), Member = "SetTexture")]
-		[Calls(Type = typeof(MeshBakerMaterialTexture), Member = "GetTexture2D")]
-		[Calls(Type = typeof(MB3_TextureCombinerPipeline.TexturePipelineData), Member = "get_numAtlases")]
-		[Calls(Type = typeof(Debug), Member = "Log")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Debug), Member = "Log")]
+		[Calls(Type = typeof(MB3_TextureCombinerPipeline.TexturePipelineData), Member = "get_numAtlases")]
+		[Calls(Type = typeof(MeshBakerMaterialTexture), Member = "GetTexture2D")]
+		[Calls(Type = typeof(Material), Member = "SetTexture")]
+		[Calls(Type = typeof(Vector2), Member = "get_one")]
+		[Calls(Type = typeof(Material), Member = "SetTextureScale")]
+		[Calls(Type = typeof(Vector2), Member = "get_zero")]
+		[Calls(Type = typeof(Material), Member = "SetTextureOffset")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 28)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 3)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 3)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public IEnumerator ConvertTexturesToReadableFormats(ProgressUpdateDelegate progressInfo, MB3_TextureCombiner.CombineTexturesIntoAtlasesCoroutineResult result, MB3_TextureCombinerPipeline.TexturePipelineData data, MB3_TextureCombiner combiner, MB2_EditorMethodsInterface textureEditorMethods, MB2_LogLevel LOG_LEVEL)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(MeshBakerMaterialTexture), Member = "get_height")]
-	[Calls(Type = typeof(MeshBakerMaterialTexture), Member = "get_width")]
-	[CallsUnknownMethods(Count = 60)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(MeshBakerMaterialTexture), Member = "get_height")]
-	[Calls(Type = typeof(MeshBakerMaterialTexture), Member = "get_isNull")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(MeshBakerMaterialTexture), Member = "get_isNull")]
 	[Calls(Type = typeof(MeshBakerMaterialTexture), Member = "get_width")]
+	[Calls(Type = typeof(MeshBakerMaterialTexture), Member = "get_height")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 60)]
 	public AtlasPackingResult[] CalculateAtlasRectangles(MB3_TextureCombinerPipeline.TexturePipelineData data, bool doMultiAtlas, MB2_LogLevel LOG_LEVEL)
 	{
 		return null;
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
@@ -178,8 +170,8 @@ internal class MB3_TextureCombinerPackerOneTextureInAtlas : MB_ITextureCombinerP
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public MB3_TextureCombinerPackerOneTextureInAtlas()
 	{
 	}

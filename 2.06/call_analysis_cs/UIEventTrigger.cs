@@ -32,30 +32,30 @@ public class UIEventTrigger : MonoBehaviour
 
 	public List<EventDelegate> onDrag;
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
-	[CallerCount(Count = 0)]
 	private void OnHover(bool isOver)
 	{
 	}
 
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
 	private void OnPress(bool pressed)
 	{
 	}
 
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
 	private void OnSelect(bool selected)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
 	private void OnClick()
 	{
 	}
@@ -67,9 +67,9 @@ public class UIEventTrigger : MonoBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
-	[CallerCount(Count = 0)]
 	private void OnDragStart()
 	{
 	}
@@ -89,22 +89,22 @@ public class UIEventTrigger : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
 	private void OnDragOut(GameObject go)
 	{
 	}
 
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
 	private void OnDrag(Vector2 delta)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 66)]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 66)]
 	public UIEventTrigger()
 	{
 	}

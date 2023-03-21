@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class PopupDefinition : ScriptableObject
 {
-	private sealed class _003CDisplayPopup_003Ed__7 : IDisposable, IEnumerator<object>, IEnumerator
+	private sealed class _003CDisplayPopup_003Ed__7 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -23,9 +23,9 @@ public class PopupDefinition : ScriptableObject
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -34,9 +34,9 @@ public class PopupDefinition : ScriptableObject
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -50,30 +50,30 @@ public class PopupDefinition : ScriptableObject
 		{
 		}
 
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 6)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(GameObject), Member = "SetActive")]
+		[Calls(Type = typeof(GameObject), Member = "get_transform")]
 		[Calls(Type = typeof(Transform), Member = "set_parent")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-		[Calls(Type = typeof(GameObject), Member = "get_transform")]
-		[CallsUnknownMethods(Count = 6)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(GameObject), Member = "SetActive")]
+		[CallsUnknownMethods(Count = 6)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 5)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 5)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -87,15 +87,15 @@ public class PopupDefinition : ScriptableObject
 
 	private Action m_OnPopupEndAction;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[Calls(Type = typeof(PopupDefinition), Member = "DisplayPopup")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CalledBy(Type = typeof(Action_ShowPopup), Member = "OnExecute")]
-	[Calls(Type = typeof(InterfaceManager), Member = "InstantiatePopup")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "InstantiatePopup")]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(PopupDefinition), Member = "DisplayPopup")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Show(Action onPopupEndAction)
 	{
 	}
@@ -114,17 +114,17 @@ public class PopupDefinition : ScriptableObject
 	}
 
 	[IteratorStateMachine(typeof(_003CDisplayPopup_003Ed__7))]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(PopupDefinition), Member = "Show")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	private IEnumerator DisplayPopup(GameObject go, float duration)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public PopupDefinition()
 	{
 	}

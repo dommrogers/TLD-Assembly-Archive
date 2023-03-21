@@ -38,77 +38,76 @@ public class vp_Timer : MonoBehaviour
 		return null;
 	}
 
+	[CalledBy(Type = typeof(vp_DamageHandler), Member = "Damage")]
+	[CalledBy(Type = typeof(vp_DamageHandler), Member = "Die")]
+	[CalledBy(Type = typeof(vp_DamageHandler), Member = "Respawn")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "DeactivateWhenSilent")]
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "ReenableWeaponStatesIn")]
 	[CalledBy(Type = typeof(vp_Timer), Member = "In")]
 	[CalledBy(Type = typeof(vp_Timer), Member = "In")]
 	[CalledBy(Type = typeof(Fatigue), Member = "EndSuppressHeavyBreathingCallback")]
 	[CalledBy(Type = typeof(SafeCracking), Member = "UnlockCurrentTumbler")]
-	[CalledBy(Type = typeof(SafeCracking), Member = "UnlockCurrentTumbler")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "DeactivateWhenSilent")]
-	[CalledBy(Type = typeof(vp_DamageHandler), Member = "Respawn")]
-	[CalledBy(Type = typeof(vp_DamageHandler), Member = "Die")]
-	[CalledBy(Type = typeof(vp_DamageHandler), Member = "Damage")]
-	[Calls(Type = typeof(vp_Timer), Member = "Schedule")]
-	[Calls(Type = typeof(vp_Timer), Member = "Schedule")]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(vp_Timer), Member = "Schedule")]
+	[Calls(Type = typeof(vp_Timer), Member = "Schedule")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	private static vp_Timer In(float time, Callback func, ArgCallback argFunc, object args, int iterations, float interval)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public static void Cancel(vp_Timer timer)
 	{
 	}
 
-	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "Reload")]
-	[CallerCount(Count = 6)]
 	[CallAnalysisFailed]
-	[CalledBy(Type = typeof(vp_Timer), Member = "CancelInvoke")]
-	[CalledBy(Type = typeof(SafeCracking), Member = "ResetTumblers")]
-	[CalledBy(Type = typeof(SafeCracking), Member = "ResetTumblers")]
+	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "Reload")]
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "ReenableWeaponStatesIn")]
 	[CalledBy(Type = typeof(vp_Timer), Member = "CancelInvoke")]
+	[CalledBy(Type = typeof(vp_Timer), Member = "CancelInvoke")]
+	[CalledBy(Type = typeof(SafeCracking), Member = "ResetTumblers")]
+	[CallerCount(Count = 6)]
 	public void Cancel()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(vp_Timer), Member = "Cancel")]
 	public new void CancelInvoke(string methodName)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[Calls(Type = typeof(vp_Timer), Member = "Cancel")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_Timer), Member = "Cancel")]
 	public new void CancelInvoke()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void CancelInstance()
 	{
 	}
 
 	[CalledBy(Type = typeof(vp_Timer), Member = "In")]
-	[Calls(Type = typeof(MonoBehaviour), Member = "InvokeDelayed")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MonoBehaviour), Member = "InvokeDelayed")]
 	private void Schedule(float time, Callback function)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(vp_Timer), Member = "In")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(MonoBehaviour), Member = "InvokeDelayed")]
 	private void Schedule(float time, ArgCallback function, object args)
 	{
@@ -121,15 +120,15 @@ public class vp_Timer : MonoBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "Destroy")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private void ArgExecute()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public vp_Timer()
 	{

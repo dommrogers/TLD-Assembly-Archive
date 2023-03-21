@@ -8,24 +8,19 @@ namespace ParadoxNotion.Serialization.FullSerializer.Internal.DirectConverters;
 public class RectOffset_DirectConverter : fsDirectConverter<RectOffset>
 {
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsResult), Member = "Merge")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
 	[CallsUnknownMethods(Count = 9)]
 	protected override fsResult DoSerialize(RectOffset model, Dictionary<string, fsData> serialized)
 	{
 		return default(fsResult);
 	}
 
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
-	[Calls(Type = typeof(fsResult), Member = "Merge")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[Calls(Type = typeof(fsBaseConverter), Member = "DeserializeMember")]
 	[Calls(Type = typeof(fsResult), Member = "Merge")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 16)]
 	protected override fsResult DoDeserialize(Dictionary<string, fsData> data, ref RectOffset model)
 	{
 		return default(fsResult);
@@ -39,8 +34,8 @@ public class RectOffset_DirectConverter : fsDirectConverter<RectOffset>
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public RectOffset_DirectConverter()
 	{

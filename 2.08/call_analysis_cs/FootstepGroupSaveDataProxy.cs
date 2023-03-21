@@ -15,8 +15,8 @@ public class FootstepGroupSaveDataProxy
 
 	public int m_Num;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public FootstepGroupSaveDataProxy()
 	{
 	}

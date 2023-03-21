@@ -17,37 +17,37 @@ public class ElectrifiedWater : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(ElectrifiedWater), Member = "SetElectrified")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ElectrifiedWater), Member = "SetElectrified")]
 	public void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(ElectrifiedWater), Member = "SetElectrified")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ElectrifiedWater), Member = "SetElectrified")]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(ElectrifiedWater), Member = "Awake")]
-	[CalledBy(Type = typeof(ElectrifiedWater), Member = "Initialize")]
-	[CalledBy(Type = typeof(ElectrifiedWater), Member = "SetExternalPowerState")]
-	[CalledBy(Type = typeof(AuroraElectrolizerControlVolume), Member = "Initialize")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(AuroraElectrolizerController), Member = "Initialize")]
+	[CalledBy(Type = typeof(AuroraElectrolizerControlVolume), Member = "SetPowerState")]
+	[CalledBy(Type = typeof(AuroraElectrolizerControlVolume), Member = "Initialize")]
+	[CalledBy(Type = typeof(ElectrifiedWater), Member = "SetExternalPowerState")]
+	[CalledBy(Type = typeof(ElectrifiedWater), Member = "Initialize")]
+	[CalledBy(Type = typeof(ElectrifiedWater), Member = "Awake")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(AuroraElectrolizerControlVolume), Member = "SetPowerState")]
+	[CallsUnknownMethods(Count = 8)]
 	private void SetElectrified(bool isElectrified)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public ElectrifiedWater()
 	{
 	}

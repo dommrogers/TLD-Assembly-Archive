@@ -18,9 +18,9 @@ public class DebugText : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[Conditional("__DEBUG")]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void DeactivateTags(string _tags)
 	{
 	}

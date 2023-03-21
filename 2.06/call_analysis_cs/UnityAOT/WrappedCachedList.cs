@@ -7,7 +7,7 @@ using Cpp2ILInjected.CallAnalysis;
 
 namespace UnityAOT;
 
-public abstract class WrappedCachedList<T> : IEnumerable<T>, IDisposable, IWrappedObject, IEnumerable
+public abstract class WrappedCachedList<T> : IDisposable, IEnumerable<T>, IEnumerable, IWrappedObject
 {
 	private sealed class _003CGetEnumerator_003Ed__4 : IEnumerator<T>, IEnumerator, IDisposable
 	{
@@ -21,12 +21,12 @@ public abstract class WrappedCachedList<T> : IEnumerable<T>, IDisposable, IWrapp
 
 		private T System_002ECollections_002EGeneric_002EIEnumerator_003CT_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
-				return (T)null;
+				return default(T);
 			}
 		}
 
@@ -34,7 +34,7 @@ public abstract class WrappedCachedList<T> : IEnumerable<T>, IDisposable, IWrapp
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -55,13 +55,13 @@ public abstract class WrappedCachedList<T> : IEnumerable<T>, IDisposable, IWrapp
 		{
 		}
 
-		[CallsUnknownMethods(Count = 3)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 3)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -88,20 +88,14 @@ public abstract class WrappedCachedList<T> : IEnumerable<T>, IDisposable, IWrapp
 		[CallsUnknownMethods(Count = 3)]
 		get
 		{
-			return (T)null;
+			return default(T);
 		}
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract T CreateIthElement(int i);
 
-	[CallerCount(Count = 101224)]
-	[DeduplicatedMethod]
 	protected abstract void SetupLength();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract void DisposeChild();
 
 	[IteratorStateMachine(typeof(WrappedCachedList<>._003CGetEnumerator_003Ed__4))]
@@ -114,8 +108,8 @@ public abstract class WrappedCachedList<T> : IEnumerable<T>, IDisposable, IWrapp
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private IEnumerator System_002ECollections_002EIEnumerable_002EGetEnumerator()
 	{
 		return null;
@@ -143,16 +137,16 @@ public abstract class WrappedCachedList<T> : IEnumerable<T>, IDisposable, IWrapp
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 44)]
+	[CallerCount(Count = 53)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

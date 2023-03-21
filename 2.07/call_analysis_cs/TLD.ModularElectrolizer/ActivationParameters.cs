@@ -15,7 +15,7 @@ public class ActivationParameters : ScriptableObject
 	[CallsUnknownMethods(Count = 1)]
 	public float GetRandomActivationThreshold()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -24,12 +24,12 @@ public class ActivationParameters : ScriptableObject
 	[CallsUnknownMethods(Count = 1)]
 	public float GetRandomStableThreshold()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public ActivationParameters()
 	{
 	}

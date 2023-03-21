@@ -18,16 +18,17 @@ internal struct AttributeInternal : ISettable, IDisposable
 		[CalledBy(Type = typeof(Attribute), Member = "Set")]
 		[CalledBy(Type = typeof(Attribute), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(AttributeInternal), Member = "Set")]
+		[CalledBy(Type = typeof(AttributeInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[Calls(Type = typeof(AttributeDataInternal), Member = "Set")]
-		[CalledBy(Type = typeof(AttributeInternal), Member = "Set")]
-		[CalledBy(Type = typeof(AttributeInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		set
 		{
 		}
@@ -48,21 +49,21 @@ internal struct AttributeInternal : ISettable, IDisposable
 		}
 	}
 
-	[Calls(Type = typeof(AttributeInternal), Member = "set_Data")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AttributeInternal), Member = "set_Data")]
 	public void Set(Attribute other)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AttributeInternal), Member = "set_Data")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AttributeInternal), Member = "set_Data")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{

@@ -34,9 +34,9 @@ public class TimeOfDay : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -45,9 +45,9 @@ public class TimeOfDay : MonoBehaviour
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -61,27 +61,27 @@ public class TimeOfDay : MonoBehaviour
 		{
 		}
 
-		[CallerCount(Count = 6)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
 		[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 4)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 4)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -181,8 +181,8 @@ public class TimeOfDay : MonoBehaviour
 
 	public static TimeOfDay Instance
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -195,7 +195,7 @@ public class TimeOfDay : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
 	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
@@ -207,50 +207,52 @@ public class TimeOfDay : MonoBehaviour
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(TimeOfDay), Member = "Deserialize")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "Deserialize")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	public void Start()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "InitializeForScene")]
+	[Calls(Type = typeof(SceneManager), Member = "IsLoading")]
+	[Calls(Type = typeof(WeatherParticleManager), Member = "InitializeForScene")]
+	[Calls(Type = typeof(TimeOfDay), Member = "MaybePlayTimeOfDayStingers")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetTimeOfDayScale")]
+	[Calls(Type = typeof(TimeOfDay), Member = "DebugOnly_UpdateTimeOfDayScale")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
 	[Calls(Type = typeof(PlayerVoice), Member = "Queue")]
-	[Calls(Type = typeof(TimeOfDay), Member = "DebugOnly_UpdateTimeOfDayScale")]
-	[Calls(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
-	[CallsUnknownMethods(Count = 5)]
 	[Calls(Type = typeof(TimeOfDay), Member = "UpdateAnalytics")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetTimeOfDayScale")]
-	[Calls(Type = typeof(WeatherParticleManager), Member = "InitializeForScene")]
-	[Calls(Type = typeof(SceneManager), Member = "IsLoading")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "InitializeForScene")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(TimeOfDay), Member = "MaybePlayTimeOfDayStingers")]
+	[Calls(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ToggleGameCameraForBrightness")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataForEspisodeMigration")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ToggleGameCameraForBrightness")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(TimeOfDay), Member = "Start")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataForEspisodeMigration")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(TimeOfDay), Member = "Start")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
@@ -265,7 +267,7 @@ public class TimeOfDay : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsTODLocked()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -282,22 +284,22 @@ public class TimeOfDay : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetDayLengthSeconds()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetDayLengthSecondsUnscaled()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsTimeLapseActive")]
-	[Calls(Type = typeof(Panel_HUD), Member = "EnableTimeOfDayScaleDisplay")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 34)]
 	[Calls(Type = typeof(HighResolutionTimerManager), Member = "GetElapsedMilliseconds")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsTimeLapseActive")]
+	[Calls(Type = typeof(Panel_HUD), Member = "EnableTimeOfDayScaleDisplay")]
+	[CallsUnknownMethods(Count = 3)]
 	public void SetDayLengthScale(float scale)
 	{
 	}
@@ -306,150 +308,138 @@ public class TimeOfDay : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetDayLengthScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(BaseAi), Member = "PlaceFootPrintDecal")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ShouldPlaceFootPrintDecal")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ComputeDistanceForTarget")]
+	[CalledBy(Type = typeof(BaseAi), Member = "EnterHoldGround")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ProcessHoldGround")]
+	[CalledBy(Type = typeof(MoveAgent), Member = "Update")]
+	[CalledBy(Type = typeof(Suffocating), Member = "Update")]
+	[CalledBy(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[CalledBy(Type = typeof(EntityWard), Member = "Update")]
+	[CalledBy(Type = typeof(EntityWard), Member = "UpdateWard")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "SetConditionLabelDepth")]
 	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "DetermineScaledDeltaTime")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MaybePlaceFootstep")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "PlaceFootstep")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeRotateCamera")]
-	[CalledBy(Type = typeof(BaseAi), Member = "PlaceFootPrintDecal")]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
 	[CalledBy(Type = typeof(NCUtils), Member = "GetGameState")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "SetConditionLabelDepth")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "MaybeRotateCamera")]
-	[CalledBy(Type = typeof(EntityWard), Member = "UpdateWard")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
-	[CalledBy(Type = typeof(EntityWard), Member = "Update")]
 	[CallerCount(Count = 19)]
-	[CalledBy(Type = typeof(BaseAi), Member = "ShouldPlaceFootPrintDecal")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ComputeDistanceForTarget")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ProcessHoldGround")]
-	[CalledBy(Type = typeof(MoveAgent), Member = "Update")]
-	[CalledBy(Type = typeof(Suffocating), Member = "Update")]
-	[CalledBy(Type = typeof(BaseAi), Member = "EnterHoldGround")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsTimeLapseActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(WeatherTransition), Member = "GetCustomWeightsForCurrentXpMode")]
-	[CalledBy(Type = typeof(AmbientEmitter), Member = "PassesTimeOfDayFilter")]
-	[CalledBy(Type = typeof(AmbientEmitter), Member = "PassesTimeOfDayFilter")]
-	[CalledBy(Type = typeof(NCUtils), Member = "GetGameState")]
-	[CalledBy(Type = typeof(NCUtils), Member = "GetGameState")]
-	[CalledBy(Type = typeof(Wind), Member = "CalculateWindChill")]
-	[CalledBy(Type = typeof(TodSmokeTrail), Member = "ForceDayOnlyObject")]
+	[CalledBy(Type = typeof(BaseAi), Member = "HandleLastWaypoint")]
 	[CalledBy(Type = typeof(SpawnRegion), Member = "ShouldSleepInDenAfterWaypointLoop")]
-	[CalledBy(Type = typeof(TodMaterial), Member = "ForceUpdate")]
-	[CalledBy(Type = typeof(SpawnRegion), Member = "CalculateTargetPopulation")]
 	[CalledBy(Type = typeof(SpawnRegion), Member = "GetDenSleepDurationInHours")]
-	[CalledBy(Type = typeof(BaseAi), Member = "HandleLastWaypoint")]
-	[CalledBy(Type = typeof(BaseAi), Member = "HandleLastWaypoint")]
-	[CallerCount(Count = 14)]
+	[CalledBy(Type = typeof(SpawnRegion), Member = "CalculateTargetPopulation")]
+	[CalledBy(Type = typeof(TodMaterial), Member = "ForceUpdate")]
 	[CalledBy(Type = typeof(TodSmokeTrail), Member = "ForceUpdate")]
+	[CalledBy(Type = typeof(TodSmokeTrail), Member = "ForceDayOnlyObject")]
+	[CalledBy(Type = typeof(WeatherTransition), Member = "GetCustomWeightsForCurrentXpMode")]
+	[CalledBy(Type = typeof(Wind), Member = "CalculateWindChill")]
+	[CalledBy(Type = typeof(NCUtils), Member = "GetGameState")]
+	[CalledBy(Type = typeof(AmbientEmitter), Member = "PassesTimeOfDayFilter")]
+	[CallerCount(Count = 14)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsDay()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsMorning()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsAfternoon()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_crow_flyover_test")]
-	[CalledBy(Type = typeof(AchievementManager), Member = "Update")]
-	[CalledBy(Type = typeof(SceneMusicManager), Member = "PlayExploreMusic")]
-	[CalledBy(Type = typeof(Feat_NightWalker), Member = "GetFatigueScale")]
-	[CalledBy(Type = typeof(PlayAudioTrigger), Member = "Play")]
-	[CalledBy(Type = typeof(PlayAudioTrigger), Member = "Play")]
-	[CalledBy(Type = typeof(IndoorSpaceTrigger), Member = "OnTriggerEnter")]
-	[CalledBy(Type = typeof(Weather), Member = "IsTooDarkForAction")]
-	[CalledBy(Type = typeof(NCUtils), Member = "GetGameState")]
-	[CalledBy(Type = typeof(TodSmokeTrail), Member = "ForceNightOnlyObject")]
-	[CalledBy(Type = typeof(TodSmokeTrail), Member = "ForceUpdate")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
-	[CalledBy(Type = typeof(Fatigue), Member = "AddFatigue")]
 	[CalledBy(Type = typeof(FlyOver), Member = "CanSpawnFlyover")]
-	[CallerCount(Count = 17)]
+	[CalledBy(Type = typeof(Fatigue), Member = "AddFatigue")]
+	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
+	[CalledBy(Type = typeof(TodSmokeTrail), Member = "ForceUpdate")]
+	[CalledBy(Type = typeof(TodSmokeTrail), Member = "ForceNightOnlyObject")]
 	[CalledBy(Type = typeof(Weather), Member = "IsTooDarkForAction")]
+	[CalledBy(Type = typeof(Feat_NightWalker), Member = "GetFatigueScale")]
+	[CalledBy(Type = typeof(AchievementManager), Member = "Update")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_crow_flyover_test")]
+	[CalledBy(Type = typeof(SceneMusicManager), Member = "PlayExploreMusic")]
+	[CalledBy(Type = typeof(IndoorSpaceTrigger), Member = "OnTriggerEnter")]
+	[CalledBy(Type = typeof(PlayAudioTrigger), Member = "Play")]
+	[CalledBy(Type = typeof(NCUtils), Member = "GetGameState")]
+	[CallerCount(Count = 17)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsNight()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsNightWithExtendedHours(float extendedHours)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsDayWithExtendedHours(float extendedHours)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsNightPreMidnight()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsNightPostMidnight()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(NCUtils), Member = "GetGameState")]
-	[CalledBy(Type = typeof(NCUtils), Member = "GetGameState")]
-	[CalledBy(Type = typeof(TodSmokeTrail), Member = "UpdateNightOnlyObject")]
-	[CalledBy(Type = typeof(TodSmokeTrail), Member = "UpdateDayOnlyObject")]
-	[CalledBy(Type = typeof(TodSmokeTrail), Member = "Update")]
-	[CalledBy(Type = typeof(TodSmokeTrail), Member = "Update")]
-	[CalledBy(Type = typeof(Carrion), Member = "IsTooDark")]
 	[CalledBy(Type = typeof(Carrion), Member = "StaggeredUpdateCarrion")]
-	[CallerCount(Count = 9)]
+	[CalledBy(Type = typeof(Carrion), Member = "IsTooDark")]
 	[CalledBy(Type = typeof(TodSmokeTrail), Member = "Update")]
+	[CalledBy(Type = typeof(TodSmokeTrail), Member = "UpdateDayOnlyObject")]
+	[CalledBy(Type = typeof(TodSmokeTrail), Member = "UpdateNightOnlyObject")]
+	[CalledBy(Type = typeof(NCUtils), Member = "GetGameState")]
+	[CallerCount(Count = 9)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsDusk()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(NCUtils), Member = "GetGameState")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(NCUtils), Member = "GetGameState")]
-	[CalledBy(Type = typeof(TodSmokeTrail), Member = "Update")]
-	[CalledBy(Type = typeof(Carrion), Member = "IsTooDark")]
 	[CalledBy(Type = typeof(Carrion), Member = "StaggeredUpdateCarrion")]
+	[CalledBy(Type = typeof(Carrion), Member = "IsTooDark")]
+	[CalledBy(Type = typeof(TodSmokeTrail), Member = "Update")]
+	[CalledBy(Type = typeof(NCUtils), Member = "GetGameState")]
 	[CallerCount(Count = 5)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsDawn()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -457,72 +447,72 @@ public class TimeOfDay : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetProgressDusk()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetDawnHourTime()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetProgressDawn")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public float GetProgressDawn()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public int GetDayNumber()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public int GetHour()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public int GetMinutes()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetNormalizedTime()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "UpdateSunTransform")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 25)]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "UpdateSunTransform")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetNormalizedTime(float time)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(BrightnessCalibration), Member = "ForceDay")]
-	[Calls(Type = typeof(HeightFogManager), Member = "Update")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(TodMaterial), Member = "ForceUpdateAll")]
 	[CalledBy(Type = typeof(BrightnessCalibration), Member = "ForceNight")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "Update")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "UpdateSunTransform")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(BrightnessCalibration), Member = "ForceDay")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "UpdateSunTransform")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "Update")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(TodMaterial), Member = "ForceUpdateAll")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(HeightFogManager), Member = "Update")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetNormalizedTime(float time, bool forceUpdate)
 	{
 	}
@@ -533,122 +523,112 @@ public class TimeOfDay : MonoBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(StringBuilder), Member = "set_Length")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "set_Length")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallerCount(Count = 0)]
 	public string FormatTime(int hours, int minutes)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 22)]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Accelerate(float realTimeSeconds, float gameTimeHours, bool doFadeToBlack = true)
 	{
 	}
 
+	[CalledBy(Type = typeof(Fire), Member = "Update")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(Fire), Member = "Update")]
-	[CalledBy(Type = typeof(Fire), Member = "Update")]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetTODSeconds(float realTimeSeconds)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetTODSecondsUnscaled(float realTimeSeconds)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(Anxiety), Member = "Update")]
 	[CalledBy(Type = typeof(Fear), Member = "Update")]
 	[CalledBy(Type = typeof(ToxicFog), Member = "Update")]
 	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(Anxiety), Member = "Update")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetTODMinutes(float realTimeSeconds)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetTODMinutesUnscaled(float realTimeSeconds)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateClothingWetness")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "Update")]
+	[CalledBy(Type = typeof(Weather), Member = "ApplyClothingDamage")]
+	[CalledBy(Type = typeof(BloodLoss), Member = "Update")]
+	[CalledBy(Type = typeof(InfectionRisk), Member = "Update")]
 	[CalledBy(Type = typeof(InfectionRisk), Member = "UpdateInfectionRisk")]
 	[CalledBy(Type = typeof(IceFishingHole), Member = "UpdateFrozenState")]
-	[CalledBy(Type = typeof(BloodLoss), Member = "Update")]
-	[CalledBy(Type = typeof(Weather), Member = "ApplyClothingDamage")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateClothingWetness")]
+	[CalledBy(Type = typeof(KeroseneLampItem), Member = "Update")]
 	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(InfectionRisk), Member = "Update")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetTODHours(float realTimeSeconds)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetTODHoursUnscaled(float realTimeSeconds)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetRealTimeSeconds(float todHours)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetRealTimeSecondsUnscaled(float todHours)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetSecondsPlayedUnscaled()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetHoursPlayedNotPaused()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool IsInitializedForScene()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -663,8 +643,8 @@ public class TimeOfDay : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	public void SetCameraVignettingIndoors()
 	{
 	}
@@ -682,26 +662,16 @@ public class TimeOfDay : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public float GetTODBlendPercent(TODBlendState blendState)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Replace")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateCurrentTimeLabel")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 7)]
 	public string GetHoursDaylightString()
 	{
 		return null;
@@ -709,36 +679,33 @@ public class TimeOfDay : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	public string GetGenericTODString()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "UpdateSunTransform")]
-	[CalledBy(Type = typeof(GameManager), Member = "InstantiateUniStorm")]
 	[CalledBy(Type = typeof(GameManager), Member = "Awake")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "Init")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(GameManager), Member = "InstantiateUniStorm")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(Utils), Member = "GetChildGameObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "UpdateSunTransform")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "Init")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void InstantiateUniStorm(Camera mainCamera)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_timeaccelerate")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "BashGetupDelayCamera")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsUnknownMethods(Count = 1)]
 	public void AccelerateTime(float minutes, float realtimeDurationSeconds)
 	{
 	}
@@ -751,97 +718,75 @@ public class TimeOfDay : MonoBehaviour
 		return null;
 	}
 
-	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(AchievementPlatformManager), Member = "SendStatistic")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "Update")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(AchievementPlatformManager), Member = "SendStatistic")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(AchievementPlatformManager), Member = "SendStatistic")]
-	[Calls(Type = typeof(AchievementPlatformManager), Member = "SendStatistic")]
-	[Calls(Type = typeof(AchievementPlatformManager), Member = "SendStatistic")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(AchievementPlatformManager), Member = "SendStatistic")]
 	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
-	[Calls(Type = typeof(AchievementPlatformManager), Member = "SendStatistic")]
 	[Calls(Type = typeof(TimeOfDay), Member = "DoEndOfDayAnalytics")]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[CallsUnknownMethods(Count = 6)]
 	private void CheckAchievements()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Utils), Member = "SendDailyAnalyticsEvent")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Utils), Member = "SendDailyAnalyticsEvent")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(Utils), Member = "SendDailyAnalyticsEvent")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(SkillsManager), Member = "GetSkillFromIndex")]
-	[Calls(Type = typeof(Utils), Member = "SendDailyAnalyticsEvent")]
-	[CallsDeduplicatedMethods(Count = 14)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SendDailyAnalyticsEvent")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[Calls(Type = typeof(SkillsManager), Member = "GetSkillFromIndex")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 5)]
 	private void DoEndOfDayAnalytics(int numDaysSurvived)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetTimeOfDayScale")]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateUniStormDayLength()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void UpdateUniStormTimeScollBarDisplay()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void DebugOnly_UpdateTimeOfDayScale()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "Update")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CallsUnknownMethods(Count = 8)]
 	private void MaybePlayTimeOfDayStingers()
 	{
 	}
@@ -853,25 +798,22 @@ public class TimeOfDay : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CallsUnknownMethods(Count = 1)]
 	private void MaybeUpdateWiseWithCurrentHour()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEventWithSeed")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateAnalytics()
 	{
 	}

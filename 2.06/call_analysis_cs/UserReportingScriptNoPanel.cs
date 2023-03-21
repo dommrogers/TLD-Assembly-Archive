@@ -17,37 +17,36 @@ public class UserReportingScriptNoPanel : MonoBehaviour
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 85)]
+			[CallerCount(Count = 93)]
 			private set
 			{
 			}
 		}
 
-		[CallsUnknownMethods(Count = 6)]
 		[CalledBy(Type = typeof(UserReportingScriptNoPanel), Member = "Awake")]
 		[CallerCount(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		public TLDUserReportingUpdater()
 		{
 		}
 
-		[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UserReportingClient), Member = "Update")]
-		[Calls(Type = typeof(UserReportingClient), Member = "UpdateOnEndOfFrame")]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityUserReporting), Member = "Configure")]
 		[Calls(Type = typeof(UnityUserReporting), Member = "get_CurrentClient")]
+		[Calls(Type = typeof(UserReportingClient), Member = "UpdateOnEndOfFrame")]
+		[Calls(Type = typeof(UserReportingClient), Member = "Update")]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		public bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
@@ -61,18 +60,16 @@ public class UserReportingScriptNoPanel : MonoBehaviour
 
 	private Coroutine m_RunningCoroutine;
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(TLDUserReportingUpdater), Member = ".ctor")]
-	[Calls(Type = typeof(UnityUserReporting), Member = "Configure")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityUserReporting), Member = "Configure")]
+	[Calls(Type = typeof(TLDUserReportingUpdater), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 6)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StopCoroutine")]
-	[Calls(Type = typeof(UnityUserReporting), Member = "Configure")]
 	[Calls(Type = typeof(UnityUserReporting), Member = "Configure")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[CallsUnknownMethods(Count = 1)]

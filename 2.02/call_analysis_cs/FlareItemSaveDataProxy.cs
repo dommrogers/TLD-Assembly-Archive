@@ -9,7 +9,7 @@ public class FlareItemSaveDataProxy
 	public float m_ElapsedBurnMinutesProxy;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public FlareItemSaveDataProxy()
 	{
 	}

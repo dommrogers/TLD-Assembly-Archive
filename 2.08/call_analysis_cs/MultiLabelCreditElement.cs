@@ -8,20 +8,21 @@ public class MultiLabelCreditElement : CreditElement
 	[CallerCount(Count = 0)]
 	public override bool IsContentValid(string[] content, Panel_Credits panel)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(bool), Member = "TryParse")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 2)]
 	public override void Populate(string[] content, Panel_Credits panel)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public override Vector2 GetSize()
 	{
 		return default(Vector2);

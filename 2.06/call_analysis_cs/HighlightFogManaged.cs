@@ -50,59 +50,58 @@ public class HighlightFogManaged : MonoBehaviour
 	private bool m_Initialized;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 10)]
 	private void UpdateAngles()
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateDrive()
 	{
 	}
 
+	[CalledBy(Type = typeof(HighlightFogManaged), Member = "ManualUpdate")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Material), Member = "SetFloat")]
 	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[CalledBy(Type = typeof(HighlightFogManaged), Member = "ManualUpdate")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	private void UpdateMaterial()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(HighlightFogManager), Member = "UpdateQuads")]
 	[CalledBy(Type = typeof(HighlightFogManager), Member = "Update")]
+	[CalledBy(Type = typeof(HighlightFogManager), Member = "UpdateQuads")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(HighlightFogManaged), Member = "ManualUpdateAngles")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(HighlightFogManaged), Member = "UpdateMaterial")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(HighlightFogManaged), Member = "ManualUpdateAngles")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 4)]
 	public void ManualUpdate(float todMult, Vector3 heading)
 	{
 	}
 
 	[CalledBy(Type = typeof(HighlightFogManaged), Member = "ManualUpdate")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 10)]
 	private void ManualUpdateAngles()
 	{

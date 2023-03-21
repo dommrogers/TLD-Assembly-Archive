@@ -9,9 +9,9 @@ public class RockCacheInfoSaveList
 
 	public int m_RockCacheIndex;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public RockCacheInfoSaveList()
 	{
 	}

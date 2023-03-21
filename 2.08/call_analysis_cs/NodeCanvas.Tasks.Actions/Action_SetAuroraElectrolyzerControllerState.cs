@@ -9,23 +9,23 @@ public class Action_SetAuroraElectrolyzerControllerState : ActionTask
 
 	public bool active;
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(AuroraElectrolizerController), Member = "SetPowerStateAll")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetComponentForMissionObject")]
+	[Calls(Type = typeof(AuroraElectrolizerController), Member = "SetPowerStateAll")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetComponentForMissionObject")]
 	[Calls(Type = typeof(AuroraElectrolizerController), Member = "SetPowerStateAll")]
 	private void DoWork()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_SetAuroraElectrolyzerControllerState()
 	{
 	}

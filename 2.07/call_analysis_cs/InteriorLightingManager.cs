@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -136,305 +134,223 @@ public class InteriorLightingManager : MonoBehaviour
 
 	private bool m_Initialized;
 
-	[Calls(Type = typeof(InteriorLightingManager), Member = "GetStartingValues")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(InteriorLightingManager), Member = "FindLooseLights")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(InteriorLightingManager), Member = "FilterGroupedObjects")]
 	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(InteriorLightingManager), Member = "FindLightGroups")]
-	[Calls(Type = typeof(InteriorLightingManager), Member = "InitializeCurves")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "FindObjectsOfType")]
+	[Calls(Type = typeof(InteriorLightingManager), Member = "InitializeCurves")]
+	[Calls(Type = typeof(InteriorLightingManager), Member = "FindLightGroups")]
+	[Calls(Type = typeof(InteriorLightingManager), Member = "FindLooseLights")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(InteriorLightingManager), Member = "FindLightShaftControllers")]
+	[Calls(Type = typeof(InteriorLightingManager), Member = "FilterGroupedObjects")]
+	[Calls(Type = typeof(InteriorLightingManager), Member = "GetStartingValues")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(InteriorLightingManager), Member = "UpdateLights")]
-	[Calls(Type = typeof(InteriorLightingManager), Member = "GetAuroraColours")]
-	[Calls(Type = typeof(InteriorLightingManager), Member = "UpdateParticles")]
-	[Calls(Type = typeof(LightingManager), Member = "SetLightingStrength")]
-	[Calls(Type = typeof(InteriorLightingManager), Member = "UpdateLightShaft")]
-	[Calls(Type = typeof(InteriorLightingManager), Member = "UpdateParticles")]
-	[Calls(Type = typeof(InteriorLightingManager), Member = "UpdateLightShaft")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(InteriorLightingManager), Member = "UpdateLights")]
-	[Calls(Type = typeof(InteriorLightingManager), Member = "MiddayIntensities")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InteriorLightingManager), Member = "Initialize")]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(InteriorLightingManager), Member = "Initialize")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
 	[Calls(Type = typeof(InteriorLightingManager), Member = "MiddayIntensities")]
+	[Calls(Type = typeof(InteriorLightingManager), Member = "UpdateLights")]
+	[Calls(Type = typeof(InteriorLightingManager), Member = "UpdateParticles")]
+	[Calls(Type = typeof(InteriorLightingManager), Member = "UpdateLightShaft")]
+	[Calls(Type = typeof(InteriorLightingManager), Member = "GetAuroraColours")]
+	[Calls(Type = typeof(LightingManager), Member = "SetLightingStrength")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update()
 	{
 	}
 
+	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Update")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InteriorLightingManager), Member = "GetGroupSpreadOffset")]
+	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[Calls(Type = typeof(InteriorLightingManager), Member = "GetAuroraColours")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(InteriorLightingManager), Member = "GetBlendedCurve")]
+	[Calls(Type = typeof(InteriorLightingGroup), Member = "ScrubUpdate")]
 	[Calls(Type = typeof(Light), Member = "set_intensity")]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(TodAmbientLight), Member = "SetAmbientLightValue")]
-	[Calls(Type = typeof(InteriorLightingGroup), Member = "ScrubUpdate")]
-	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Update")]
-	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Update")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(InteriorLightingManager), Member = "GetBlendedCurve")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(InteriorLightingManager), Member = "GetAuroraColours")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(InteriorLightingManager), Member = "GetGroupSpreadOffset")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[CallsUnknownMethods(Count = 17)]
 	private void UpdateLights(float scrubTime, float todSun, float todCalc, float auroraIntensity)
 	{
 	}
 
-	[CalledBy(Type = typeof(InteriorLightingManager), Member = "UpdateLights")]
 	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Update")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(InteriorLightingManager), Member = "UpdateLights")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(AuroraManager), Member = "GetAuroraColour")]
+	[CallsUnknownMethods(Count = 1)]
 	private Color GetAuroraColours()
 	{
 		return default(Color);
 	}
 
+	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Update")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(InteriorLightingManager), Member = "SetEmissionRate")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Update")]
-	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Update")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateParticles(float timeOfDayIntensity)
 	{
 	}
 
+	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Update")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Update")]
-	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Update")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateLightShaft(float timeOfDayIntensity, bool followTod)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(ParticleSystem.MinMaxGradient), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(InteriorLightingManager), Member = "UpdateParticles")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ParticleSystem.MinMaxGradient), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void SetEmissionRate(ParticleSystem ps, float er)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
+	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Initialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Random), Member = "Range")]
 	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
 	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Initialize")]
-	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "RemoveKey")]
-	[Calls(Type = typeof(AnimationCurve), Member = "AddKey")]
 	private void InitializeCurves()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(InteriorLightingManager), Member = "GetBlendedCurve")]
 	[CalledBy(Type = typeof(InteriorLightingManager), Member = "GetBlendedCurve")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[CallsUnknownMethods(Count = 1)]
 	private float EvaluateCurve(WeatherStage curWeather, float curTime)
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(InteriorLightingManager), Member = "UpdateLights")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(InteriorLightingManager), Member = "EvaluateCurve")]
-	[Calls(Type = typeof(InteriorLightingManager), Member = "EvaluateCurve")]
-	[CalledBy(Type = typeof(InteriorLightingManager), Member = "UpdateLights")]
 	private float GetBlendedCurve(WeatherStage weather1, WeatherStage weather2, float curTime, float weatherBlend)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	private float GetWindMultiplier()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(InteriorLightingManager), Member = "UpdateLights")]
+	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetGroupSpreadOffset()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetTimeOfDayIntensity()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Update")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Update")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
+	[CallsUnknownMethods(Count = 1)]
 	private float MiddayIntensities()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	private float GetSunlightIntensity(float sunlight, Color sunColor)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
 	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 9)]
 	private void FindLightShaftControllers()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
 	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Initialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	private void FindLightGroups()
 	{
 	}
 
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[CallsUnknownMethods(Count = 16)]
 	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Initialize")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 16)]
 	private void FindLooseLights()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 2)]
 	private void FindParticleSystems()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Initialize")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 8)]
 	private void GetStartingValues()
 	{
 	}
 
 	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Initialize")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[CallsDeduplicatedMethods(Count = 15)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 20)]
 	private void FilterGroupedObjects()
 	{
 	}

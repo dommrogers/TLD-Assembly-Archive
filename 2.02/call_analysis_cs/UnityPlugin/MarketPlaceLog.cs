@@ -11,7 +11,7 @@ internal class MarketPlaceLog
 	public static extern void LogCallbackException(string message);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public MarketPlaceLog()
 	{
 	}

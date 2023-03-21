@@ -23,7 +23,7 @@ public class MissionTimerSaveProxy
 	public string m_StartingTime;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public MissionTimerSaveProxy()
 	{
 	}

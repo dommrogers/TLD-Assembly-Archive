@@ -30,16 +30,16 @@ public class ScreenshotManager
 
 		public Action<int, byte[]> Callback
 		{
-			[CallerCount(Count = 52)]
 			[CompilerGenerated]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 59)]
 			get
 			{
 				return null;
 			}
-			[CallerCount(Count = 101)]
-			[DeduplicatedMethod]
 			[CompilerGenerated]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 103)]
 			set
 			{
 			}
@@ -49,14 +49,14 @@ public class ScreenshotManager
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 71)]
+			[CallerCount(Count = 77)]
 			set
 			{
 			}
@@ -69,7 +69,7 @@ public class ScreenshotManager
 			[CallerCount(Count = 1)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
@@ -81,12 +81,12 @@ public class ScreenshotManager
 
 		public bool IsAwaiting
 		{
-			[CallerCount(Count = 0)]
-			[DeduplicatedMethod]
 			[CompilerGenerated]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			get
 			{
-				return default(bool);
+				return false;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
@@ -103,7 +103,7 @@ public class ScreenshotManager
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(bool);
+				return false;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
@@ -120,11 +120,11 @@ public class ScreenshotManager
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(bool);
+				return false;
 			}
-			[CallerCount(Count = 0)]
 			[CompilerGenerated]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			set
 			{
 			}
@@ -134,10 +134,10 @@ public class ScreenshotManager
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 0)]
+			[CallerCount(Count = 2)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
@@ -154,11 +154,11 @@ public class ScreenshotManager
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
+			[CompilerGenerated]
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
-			[CompilerGenerated]
 			set
 			{
 			}
@@ -168,28 +168,27 @@ public class ScreenshotManager
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 15)]
+			[CallerCount(Count = 17)]
 			get
 			{
 				return null;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 20)]
+			[CallerCount(Count = 23)]
 			set
 			{
 			}
 		}
 
+		[CalledBy(Type = typeof(ScreenshotManager), Member = "GetScreenshotOperation")]
 		[CallerCount(Count = 2)]
-		[CalledBy(Type = typeof(ScreenshotManager), Member = "GetScreenshotOperation")]
-		[CalledBy(Type = typeof(ScreenshotManager), Member = "GetScreenshotOperation")]
 		public void Use()
 		{
 		}
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public ScreenshotOperation()
 		{
 		}
@@ -201,50 +200,52 @@ public class ScreenshotManager
 
 	private ScreenshotRecorder screenshotRecorder;
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(ScreenshotRecorder), Member = ".ctor")]
 	[CalledBy(Type = typeof(AsyncUnityUserReportingPlatform), Member = ".ctor")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ScreenshotRecorder), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 21)]
 	public ScreenshotManager()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(ScreenshotManager), Member = "TakeScreenshot")]
-	[Calls(Type = typeof(ScreenshotOperation), Member = "Use")]
 	[CalledBy(Type = typeof(AsyncUnityUserReportingPlatform), Member = "TakeScreenshot")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(ScreenshotOperation), Member = "Use")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	private ScreenshotOperation GetScreenshotOperation()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
+	[CalledBy(Type = typeof(AsyncUnityUserReportingPlatform), Member = "OnEndOfFrame")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(ScreenshotManager), Member = "ScreenshotCallback")]
 	[Calls(Type = typeof(ScreenshotRecorder), Member = "ScreenshotInternal")]
-	[Calls(Type = typeof(ScreenshotRecorder), Member = "ScreenshotInternal")]
 	[Calls(Type = typeof(ScreenshotRecorder), Member = "Screenshot")]
 	[Calls(Type = typeof(ScreenshotRecorder), Member = "Screenshot")]
-	[CalledBy(Type = typeof(AsyncUnityUserReportingPlatform), Member = "OnEndOfFrame")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	public void OnEndOfFrame()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(ScreenshotManager), Member = "OnEndOfFrame")]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void ScreenshotCallback(byte[] data, object state)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScreenshotManager), Member = "GetScreenshotOperation")]
+	[CallsUnknownMethods(Count = 1)]
 	public void TakeScreenshot(object source, int frameNumber, int maximumWidth, int maximumHeight, Action<int, byte[]> callback)
 	{
 	}

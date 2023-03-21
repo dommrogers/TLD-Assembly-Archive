@@ -14,28 +14,29 @@ public class Action_SetSkillPoints : ActionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 3)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Enum), Member = "ToString")]
-		[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(SkillNotify), Member = "MaybeShowLevelUp")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(SkillsManager), Member = "GetTierName")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(SkillNotify), Member = "MaybeShowPointIncrease")]
-	[Calls(Type = typeof(SkillsManager), Member = "GetSkill")]
-	[Calls(Type = typeof(Skill), Member = "SetPoints")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SkillsManager), Member = "GetSkill")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(Skill), Member = "SetPoints")]
+	[Calls(Type = typeof(SkillNotify), Member = "MaybeShowPointIncrease")]
+	[Calls(Type = typeof(SkillsManager), Member = "GetTierName")]
+	[Calls(Type = typeof(SkillNotify), Member = "MaybeShowLevelUp")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	protected override void OnExecute()
 	{
 	}

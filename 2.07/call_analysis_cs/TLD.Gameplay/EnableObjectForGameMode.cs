@@ -10,26 +10,26 @@ public class EnableObjectForGameMode : MonoBehaviour, IShouldDisableForCurrentMo
 
 	private GameObject m_ObjectToEnable;
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(EnableObjectForGameMode), Member = "ShouldDisableForCurrentMode")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EnableObjectForGameMode), Member = "ShouldDisableForCurrentMode")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Update()
 	{
 	}
 
+	[CalledBy(Type = typeof(EnableObjectForGameMode), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "IsGunOrAmmoOrCasingOfType")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
 	[Calls(Type = typeof(GearItem), Member = "IsGunOrAmmoOrCasingOfType")]
 	[Calls(Type = typeof(GameplayTag), Member = "MatchesAnyExact")]
-	[CalledBy(Type = typeof(EnableObjectForGameMode), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public bool ShouldDisableForCurrentMode()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

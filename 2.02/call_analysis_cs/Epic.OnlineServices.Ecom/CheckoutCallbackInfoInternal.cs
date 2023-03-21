@@ -17,8 +17,8 @@ internal struct CheckoutCallbackInfoInternal : ICallbackInfoInternal
 
 	public Result ResultCode
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(Result);
@@ -27,10 +27,10 @@ internal struct CheckoutCallbackInfoInternal : ICallbackInfoInternal
 
 	public object ClientData
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CallerCount(Count = 1)]
 		[CalledBy(Type = typeof(CheckoutCallbackInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -39,11 +39,11 @@ internal struct CheckoutCallbackInfoInternal : ICallbackInfoInternal
 
 	public IntPtr ClientDataAddress
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
@@ -51,7 +51,8 @@ internal struct CheckoutCallbackInfoInternal : ICallbackInfoInternal
 	{
 		[CalledBy(Type = typeof(CheckoutCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -60,10 +61,10 @@ internal struct CheckoutCallbackInfoInternal : ICallbackInfoInternal
 
 	public string TransactionId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(CheckoutCallbackInfo), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;

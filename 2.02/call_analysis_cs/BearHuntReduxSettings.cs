@@ -53,8 +53,8 @@ public class BearHuntReduxSettings : ScriptableObject
 
 	public float m_StrugglePlayerClothingDamageScale;
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public BearHuntReduxSettings()
 	{
 	}

@@ -15,7 +15,7 @@ public class PolygonHelper : MonoBehaviour
 		[CallerCount(Count = 0)]
 		public float Distance(Vector2 point)
 		{
-			return default(float);
+			return 0f;
 		}
 
 		[CallerCount(Count = 0)]
@@ -24,9 +24,8 @@ public class PolygonHelper : MonoBehaviour
 			return default(Vector2);
 		}
 
+		[CalledBy(Type = typeof(Plane2D), Member = "CutConvex")]
 		[CallerCount(Count = 2)]
-		[CalledBy(Type = typeof(Plane2D), Member = "CutConvex")]
-		[CalledBy(Type = typeof(Plane2D), Member = "CutConvex")]
 		public Vector2 Intersect(Vector2 p1, Vector2 p2)
 		{
 			return default(Vector2);
@@ -35,7 +34,7 @@ public class PolygonHelper : MonoBehaviour
 		[CallerCount(Count = 0)]
 		public bool GetSide(Vector2 point)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
@@ -57,20 +56,19 @@ public class PolygonHelper : MonoBehaviour
 		}
 
 		[CalledBy(Type = typeof(TriggerZone), Member = "ComputeZone")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[CallsUnknownMethods(Count = 13)]
-		[Calls(Type = typeof(Array), Member = "Copy")]
-		[Calls(Type = typeof(Plane2D), Member = "Intersect")]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(Plane2D), Member = "Intersect")]
+		[Calls(Type = typeof(Array), Member = "Copy")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 13)]
 		public Vector2[] CutConvex(Vector2[] poly)
 		{
 			return null;
 		}
 
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		public override string ToString()
 		{
@@ -78,8 +76,8 @@ public class PolygonHelper : MonoBehaviour
 		}
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public PolygonHelper()
 	{
 	}

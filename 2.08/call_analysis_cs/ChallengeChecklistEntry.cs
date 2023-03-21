@@ -17,29 +17,26 @@ public class ChallengeChecklistEntry : MonoBehaviour
 
 	private bool m_GotOrigPos;
 
-	[CallsUnknownMethods(Count = 19)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateMissionsPage")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateMissionsPage")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsDeduplicatedMethods(Count = 18)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 18)]
+	[CallsUnknownMethods(Count = 19)]
 	public float UpdateEntry(string name, string count, bool completed, float offsetY, float spacing)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void GetOrigPos()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public ChallengeChecklistEntry()
 	{
 	}

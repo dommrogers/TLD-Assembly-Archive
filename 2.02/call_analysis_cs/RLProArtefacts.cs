@@ -15,15 +15,13 @@ public sealed class RLProArtefacts : PostProcessEffectSettings
 
 	public BoolParameter debugArtefacts;
 
-	[Calls(Type = typeof(BoolParameter), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 39)]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[Calls(Type = typeof(ColorParameter), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
+	[Calls(Type = typeof(ColorParameter), Member = ".ctor")]
+	[Calls(Type = typeof(BoolParameter), Member = ".ctor")]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 39)]
 	public RLProArtefacts()
 	{
 	}

@@ -5,72 +5,51 @@ public class vp_SmoothRandom
 {
 	private static vp_FractalNoise s_Noise;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(vp_FractalNoise), Member = "HybridMultifractal")]
-	[Calls(Type = typeof(vp_SmoothRandom), Member = "Get")]
-	[Calls(Type = typeof(vp_FractalNoise), Member = "HybridMultifractal")]
-	[Calls(Type = typeof(vp_SmoothRandom), Member = "Get")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(vp_FractalNoise), Member = "HybridMultifractal")]
 	[Calls(Type = typeof(vp_SmoothRandom), Member = "Get")]
+	[Calls(Type = typeof(vp_FractalNoise), Member = "HybridMultifractal")]
+	[CallsUnknownMethods(Count = 1)]
 	public static Vector3 GetVector3Slow(float time, float speed)
 	{
 		return default(Vector3);
 	}
 
-	[Calls(Type = typeof(vp_SmoothRandom), Member = "Get")]
-	[Calls(Type = typeof(vp_FractalNoise), Member = "HybridMultifractal")]
-	[Calls(Type = typeof(vp_FractalNoise), Member = "HybridMultifractal")]
-	[Calls(Type = typeof(vp_SmoothRandom), Member = "Get")]
-	[Calls(Type = typeof(vp_FractalNoise), Member = "HybridMultifractal")]
-	[Calls(Type = typeof(vp_SmoothRandom), Member = "Get")]
-	[Calls(Type = typeof(vp_FractalNoise), Member = "HybridMultifractal")]
-	[Calls(Type = typeof(vp_SmoothRandom), Member = "Get")]
-	[Calls(Type = typeof(vp_FractalNoise), Member = "HybridMultifractal")]
-	[Calls(Type = typeof(vp_SmoothRandom), Member = "Get")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "FixedUpdateInternal")]
 	[CalledBy(Type = typeof(vp_FPSCamera), Member = "UpdateShakes")]
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "UpdateEarthQuake")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(vp_SmoothRandom), Member = "Get")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "FixedUpdateInternal")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "UpdateEarthQuake")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(vp_FractalNoise), Member = "HybridMultifractal")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public static Vector3 GetVector3CenteredSlow(float time, float speed)
 	{
 		return default(Vector3);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(vp_FractalNoise), Member = "HybridMultifractal")]
-	[Calls(Type = typeof(vp_SmoothRandom), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_SmoothRandom), Member = "Get")]
+	[Calls(Type = typeof(vp_FractalNoise), Member = "HybridMultifractal")]
+	[CallsUnknownMethods(Count = 1)]
 	public static float GetSlow(float time, float speed)
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3Slow")]
+	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3CenteredSlow")]
 	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetSlow")]
-	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3Slow")]
-	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3CenteredSlow")]
-	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3CenteredSlow")]
-	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3CenteredSlow")]
-	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3CenteredSlow")]
-	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3CenteredSlow")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3Slow")]
-	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3Slow")]
-	[CalledBy(Type = typeof(vp_SmoothRandom), Member = "GetVector3CenteredSlow")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 10)]
 	[Calls(Type = typeof(vp_FractalNoise), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private static vp_FractalNoise Get()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public vp_SmoothRandom()
 	{
 	}

@@ -6,7 +6,7 @@ public class AuroraEffectNode : MonoBehaviour
 	public GameObject m_Prefab;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}

@@ -5,7 +5,7 @@ public class CarryableBodySaveData
 	public bool m_HasBeenDropped;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CarryableBodySaveData()
 	{
 	}

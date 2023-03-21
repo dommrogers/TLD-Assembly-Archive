@@ -13,8 +13,8 @@ public class ProfileState
 
 		public bool m_LogsMenuViewed;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public MaineMenuViewedState()
 		{
 		}
@@ -217,8 +217,10 @@ public class ProfileState
 	public long m_LastValidUtcTicks;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallsUnknownMethods(Count = 52)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 49)]
 	public ProfileState()
 	{
 	}

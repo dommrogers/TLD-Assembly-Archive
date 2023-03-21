@@ -14,9 +14,9 @@ public class NPC_UnlockablePrefabInfo
 
 	public string m_DisplayName
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Localization), Member = "Get")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -37,10 +37,10 @@ public class NPC_UnlockablePrefabInfo
 
 	public string m_Description
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Localization), Member = "Get")]
-		[CallerCount(Count = 13)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 13)]
+		[Calls(Type = typeof(Localization), Member = "Get")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;

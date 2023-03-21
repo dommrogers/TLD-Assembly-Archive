@@ -5,8 +5,8 @@ namespace NodeCanvas.DialogueTrees;
 
 public class DTConnection : Connection
 {
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public DTConnection()
 	{
 	}

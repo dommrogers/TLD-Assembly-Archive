@@ -47,19 +47,19 @@ public class Placeholder : MonoBehaviour
 	private const string LINE_SHADER_NAME = "Hidden/Internal-Colored";
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Transform), Member = "get_localToWorldMatrix")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Gizmos), Member = "DrawMesh")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	private void OnDrawGizmos()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(GUIStyle), Member = ".ctor")]
 	[Calls(Type = typeof(GUIStyle), Member = "get_normal")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 16)]
 	private GUIStyle GetLabelStyle(Color textColor, float normalizedDistance)
 	{

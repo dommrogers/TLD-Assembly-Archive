@@ -11,7 +11,7 @@ public class STATES
 			public static uint SUSPENSION;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -20,7 +20,7 @@ public class STATES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public BRIDGE()
 		{
 		}
@@ -39,7 +39,7 @@ public class STATES
 			public static uint SUSPENSION03;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -48,7 +48,7 @@ public class STATES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public BRIDGE_SUSPENSION()
 		{
 		}
@@ -61,7 +61,7 @@ public class STATES
 			public static uint NOISEMAKER;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -70,7 +70,7 @@ public class STATES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public DAMAGESOURCE()
 		{
 		}
@@ -84,8 +84,8 @@ public class STATES
 
 			public static uint DAILOGUEMODE_ON;
 
-			[CallerCount(Count = 2)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -93,8 +93,8 @@ public class STATES
 
 		public static uint GROUP;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public DIALOGUEMODE()
 		{
 		}
@@ -109,7 +109,7 @@ public class STATES
 			public static uint TRUE;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -118,7 +118,7 @@ public class STATES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public FOURDAYSOFNIGHT()
 		{
 		}
@@ -133,7 +133,7 @@ public class STATES
 			public static uint STORYEP01EP02;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -142,7 +142,7 @@ public class STATES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public GAMEMODE()
 		{
 		}
@@ -161,7 +161,7 @@ public class STATES
 			public static uint INT03;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -170,7 +170,7 @@ public class STATES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public INTENSITY()
 		{
 		}
@@ -202,8 +202,8 @@ public class STATES
 
 			public static uint FL02R04;
 
-			[CallerCount(Count = 2)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -212,7 +212,7 @@ public class STATES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public INTERIORSTATES()
 		{
 		}
@@ -227,7 +227,7 @@ public class STATES
 			public static uint ON;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -236,7 +236,7 @@ public class STATES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public MISOPHONIA()
 		{
 		}
@@ -257,7 +257,7 @@ public class STATES
 			public static uint NOOCCLUSION;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -266,7 +266,7 @@ public class STATES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public OCCLUSIONSTATES()
 		{
 		}
@@ -281,7 +281,7 @@ public class STATES
 			public static uint RIVERFILTERON;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -290,7 +290,7 @@ public class STATES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public RIVERFILTER()
 		{
 		}
@@ -305,7 +305,7 @@ public class STATES
 			public static uint SCENEDESTRUCTION_ON;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -314,7 +314,7 @@ public class STATES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public SCENEDESTRUCTION()
 		{
 		}
@@ -329,7 +329,7 @@ public class STATES
 			public static uint SE_STEAMTUNNEL;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -338,7 +338,7 @@ public class STATES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public SCENEENVIRONMENT()
 		{
 		}
@@ -359,7 +359,7 @@ public class STATES
 			public static uint STAGE04;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -368,7 +368,7 @@ public class STATES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public SPOTLIGHTSTAGESTATE()
 		{
 		}
@@ -382,8 +382,8 @@ public class STATES
 
 			public static uint SUFFOCATEON;
 
-			[CallerCount(Count = 2)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -391,8 +391,8 @@ public class STATES
 
 		public static uint GROUP;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public SUFFOCATION()
 		{
 		}
@@ -421,7 +421,7 @@ public class STATES
 			public static uint TOXICFOG;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -430,7 +430,7 @@ public class STATES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public WEATHERSTATE()
 		{
 		}
@@ -445,7 +445,7 @@ public class STATES
 			public static uint WIELDTRUE;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -454,7 +454,7 @@ public class STATES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public WIELDSTATE()
 		{
 		}
@@ -477,7 +477,7 @@ public class STATES
 			public static uint MOUNTAIN;
 
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 7)]
 			public STATE()
 			{
 			}
@@ -486,14 +486,14 @@ public class STATES
 		public static uint GROUP;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public WINDLOCATION()
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public STATES()
 	{
 	}

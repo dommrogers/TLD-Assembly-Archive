@@ -10,7 +10,7 @@ public class AkGameObjPositionData
 	public Vector3 up;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AkGameObjPositionData()
 	{
 	}

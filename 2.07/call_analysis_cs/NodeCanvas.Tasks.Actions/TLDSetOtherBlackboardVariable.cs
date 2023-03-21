@@ -16,8 +16,8 @@ public class TLDSetOtherBlackboardVariable : ActionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(string), Member = "Format")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -25,22 +25,23 @@ public class TLDSetOtherBlackboardVariable : ActionTask
 		}
 	}
 
-	[Calls(Type = typeof(BlackboardSource), Member = "SetValue")]
-	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
-	[Calls(Type = typeof(TLDSetOtherBlackboardVariable), Member = "GetBlackboard")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TLDSetOtherBlackboardVariable), Member = "GetBlackboard")]
 	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(BlackboardSource), Member = "SetValue")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[CallsUnknownMethods(Count = 5)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
 	[CalledBy(Type = typeof(TLDSetOtherBlackboardVariable), Member = "OnExecute")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private Blackboard GetBlackboard()
 	{

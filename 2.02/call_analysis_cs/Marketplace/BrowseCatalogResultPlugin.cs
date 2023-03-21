@@ -27,7 +27,7 @@ public class BrowseCatalogResultPlugin
 	public static extern IntPtr BrowseCatalogResult_Items_GetAt(IntPtr self, uint idx);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public BrowseCatalogResultPlugin()
 	{
 	}

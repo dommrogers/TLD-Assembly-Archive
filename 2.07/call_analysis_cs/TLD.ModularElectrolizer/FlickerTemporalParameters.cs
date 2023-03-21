@@ -19,7 +19,7 @@ public class FlickerTemporalParameters
 	[CallsUnknownMethods(Count = 1)]
 	public float GetRandomStartTime()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -28,7 +28,7 @@ public class FlickerTemporalParameters
 	[CallsUnknownMethods(Count = 1)]
 	public float GetRandomRate()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

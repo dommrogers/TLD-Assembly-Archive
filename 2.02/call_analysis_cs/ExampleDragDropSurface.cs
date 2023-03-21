@@ -5,9 +5,9 @@ public class ExampleDragDropSurface : MonoBehaviour
 {
 	public bool rotatePlacedObject;
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public ExampleDragDropSurface()
 	{
 	}

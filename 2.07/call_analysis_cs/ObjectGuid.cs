@@ -12,7 +12,7 @@ public class ObjectGuid : PdidObjectBase
 	public override string PDID
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 28)]
+		[CallerCount(Count = 32)]
 		get
 		{
 			return null;
@@ -37,54 +37,55 @@ public class ObjectGuid : PdidObjectBase
 	public List<string> HistoricalGuids
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 25)]
+		[CallerCount(Count = 28)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallerCount(Count = 27)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 27)]
 	public string GetLegacyID()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(CookingPotItem), Member = "StartCooking")]
-	[CallerCount(Count = 10)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(PdidTable), Member = "RuntimeRegister")]
 	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "Start")]
 	[CalledBy(Type = typeof(Placeable), Member = "Awake")]
 	[CalledBy(Type = typeof(SpawnWildlife_Trigger), Member = "RegisterAnySpawnWildlifeGuid")]
+	[CalledBy(Type = typeof(CookingPotItem), Member = "StartCooking")]
 	[CalledBy(Type = typeof(Campfire), Member = "Update")]
 	[CalledBy(Type = typeof(BaseAiManager), Member = "RegisterAnyAIGuid")]
 	[CalledBy(Type = typeof(FireManager), Member = "AddCampfire")]
 	[CalledBy(Type = typeof(LeanToManager), Member = "RegisterAnyLeanToGuid")]
 	[CalledBy(Type = typeof(RockCacheManager), Member = "RegisterAnyRockCacheGuid")]
 	[CalledBy(Type = typeof(SnowShelterManager), Member = "RegisterAnySnowShelterGuid")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(PdidTable), Member = "RuntimeRegister")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public string MaybeRuntimeRegister()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(PdidTable), Member = "RuntimeUnregister")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PdidTable), Member = "RuntimeUnregister")]
 	public void OnDestroy()
 	{
 	}
 
-	[CalledBy(Type = typeof(ConsoleManager), Member = "set_spawn_position")]
-	[CalledBy(Type = typeof(BodyHarvestManager), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(BaseAiManager), Member = "Deserialize")]
-	[CalledBy(Type = typeof(RockCache), Member = "Activate")]
 	[CalledBy(Type = typeof(SpawnRegion), Member = "InstantiateSpawnFromSaveData")]
-	[Calls(Type = typeof(PdidTable), Member = "RuntimeRegister")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(SpawnRegion), Member = "InstantiateSpawn")]
+	[CalledBy(Type = typeof(RockCache), Member = "Activate")]
+	[CalledBy(Type = typeof(BaseAiManager), Member = "Deserialize")]
+	[CalledBy(Type = typeof(BodyHarvestManager), Member = "Deserialize")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "set_spawn_position")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(PdidTable), Member = "RuntimeRegister")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void MaybeAttachObjectGuidAndRegister(GameObject go, string guid)
 	{
 	}
@@ -98,33 +99,33 @@ public class ObjectGuid : PdidObjectBase
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UnRegisterAuroraField")]
-	[CalledBy(Type = typeof(AuroraFieldsSceneManager), Member = "UnRegisterAuroraField")]
-	[CalledBy(Type = typeof(BreakDown), Member = "Serialize")]
-	[Calls(Type = typeof(ObjectGuid), Member = "GetObjectGuidFromGO")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "SerializeAll")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(Bed), Member = "Serialize")]
+	[CalledBy(Type = typeof(BreakDown), Member = "Serialize")]
+	[CalledBy(Type = typeof(AuroraFieldsSceneManager), Member = "UnRegisterAuroraField")]
+	[CalledBy(Type = typeof(AuroraManager), Member = "UnRegisterAuroraField")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(ObjectGuid), Member = "GetObjectGuidFromGO")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public static string MaybeGetGuidFromGameObject(GameObject go)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(ObjectGuid), Member = "MaybeGetGuidFromGameObject")]
 	[CalledBy(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(ObjectGuid), Member = "MaybeGetGuidFromGameObject")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	public static ObjectGuid GetObjectGuidFromGO(GameObject go)
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 28)]
+	[CallerCount(Count = 32)]
 	private string Get()
 	{
 		return null;

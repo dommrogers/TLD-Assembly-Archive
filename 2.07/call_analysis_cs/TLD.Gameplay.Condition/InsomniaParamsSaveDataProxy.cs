@@ -60,8 +60,8 @@ public class InsomniaParamsSaveDataProxy
 
 	public float m_ChaneOfGettingInterruptedSleep;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public InsomniaParamsSaveDataProxy()
 	{
 	}

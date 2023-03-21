@@ -63,53 +63,49 @@ public class UserBlueprintData
 
 	public bool CanIncreaseRepairSkill;
 
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(UserBlueprintData), Member = "CreateFromJson")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	private UserBlueprintData()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 53)]
 	[CalledBy(Type = typeof(BlueprintManager), Member = "LoadUserBlueprint")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UserBlueprintData), Member = "FindGearItemPrefab")]
-	[Calls(Type = typeof(UserBlueprintData), Member = "MakeRuntimeWwiseEvent")]
-	[Calls(Type = typeof(UserBlueprintData), Member = "FindGearItemPrefab")]
-	[Calls(Type = typeof(UserBlueprintData), Member = "FindGearItemPrefab")]
-	[Calls(Type = typeof(JsonConvert), Member = "PopulateObject")]
-	[Calls(Type = typeof(UserBlueprintData), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UserBlueprintData), Member = ".ctor")]
+	[Calls(Type = typeof(JsonConvert), Member = "PopulateObject")]
 	[Calls(Type = typeof(UserBlueprintData), Member = "FindGearItemPrefab")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(ScriptableObject), Member = "CreateInstance")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UserBlueprintData), Member = "MakeRuntimeWwiseEvent")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 53)]
 	public static BlueprintData CreateFromJson(string text)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(UserBlueprintData), Member = "CreateFromJson")]
-	[CalledBy(Type = typeof(UserBlueprintData), Member = "CreateFromJson")]
-	[CalledBy(Type = typeof(UserBlueprintData), Member = "CreateFromJson")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(GearItem), Member = "LoadGearItemPrefab")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(UserBlueprintData), Member = "CreateFromJson")]
+	[CallsUnknownMethods(Count = 2)]
 	private static bool FindGearItemPrefab(string gearName, Dictionary<string, GameObject> library)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(UserBlueprintData), Member = "CreateFromJson")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetIDFromString")]
+	[Calls(Type = typeof(ScriptableObject), Member = "CreateInstance")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(FieldInfo), Member = "SetValue")]
-	[Calls(Type = typeof(FieldInfo), Member = "SetValue")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 6)]
 	private static AK.Wwise.Event MakeRuntimeWwiseEvent(string eventName)
 	{

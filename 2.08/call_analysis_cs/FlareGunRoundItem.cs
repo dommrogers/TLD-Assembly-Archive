@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.PDID;
 using UnityEngine;
@@ -145,9 +146,10 @@ public class FlareGunRoundItem : MonoBehaviour
 
 	private FlightStatus m_FlightStatus;
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Awake()
 	{
 	}
@@ -165,97 +167,92 @@ public class FlareGunRoundItem : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(FlareGunRoundManager), Member = "Serialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(FlareGunRoundItem), Member = "BelongsToPlayer")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[CallsDeduplicatedMethods(Count = 24)]
 	[CallsUnknownMethods(Count = 24)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(FlareGunRoundManager), Member = "Serialize")]
-	[Calls(Type = typeof(FlareGunRoundItem), Member = "BelongsToPlayer")]
-	[CallsDeduplicatedMethods(Count = 27)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	public FlareGunRoundSaveData Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 16)]
 	[CalledBy(Type = typeof(FlareGunRoundManager), Member = "Deserialize")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[Calls(Type = typeof(FlareGunRoundItem), Member = "FlightComplete")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(FlareGunRoundItem), Member = "ParentToObject")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
 	[Calls(Type = typeof(Transform), Member = "set_localEulerAngles")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FlareGunRoundItem), Member = "FlightComplete")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 16)]
 	public void Deserialize(FlareGunRoundSaveData asd)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(FlareGunRoundItem), Member = "BurnOut")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
-	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(FlareGunRoundItem), Member = "BurnOut")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 14)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Transform), Member = "set_forward")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 11)]
 	private void FixedUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(FlareGunRoundItem), Member = "FallFree")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(FlareGunRoundItem), Member = "FallFree")]
+	[CallsDeduplicatedMethods(Count = 10)]
 	[CallsUnknownMethods(Count = 11)]
 	private void LateUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "SpawnAndFire")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 13)]
 	public void Fire()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "Update")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(ParticleSystem.MinMaxCurve), Member = ".ctor")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void BurnOut()
 	{
 	}
@@ -263,7 +260,7 @@ public class FlareGunRoundItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsBurning()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -271,212 +268,186 @@ public class FlareGunRoundItem : MonoBehaviour
 	[CallsUnknownMethods(Count = 3)]
 	public bool InFlight(bool onlyConsiderFirstImpact)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "Serialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
 	public bool BelongsToPlayer()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "Deserialize")]
 	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "HandleCollisionWithObject")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Renderer), Member = "set_enabled")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private void FlightComplete()
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Rigidbody), Member = "get_isKinematic")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(FlareGunRoundItem), Member = "FallFree")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Rigidbody), Member = "get_velocity")]
-	[Calls(Type = typeof(Rigidbody), Member = "get_isKinematic")]
-	[Calls(Type = typeof(FlareGunRoundItem), Member = "InflictDamage")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PackManager), Member = "InPack")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnFlareGunRound")]
-	[Calls(Type = typeof(FlareGunRoundItem), Member = "MaybeScareWildlife")]
-	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
-	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
-	[Calls(Type = typeof(Utils), Member = "GetMaterialTagForObjectAtPosition")]
-	[Calls(Type = typeof(FlareGunRoundItem), Member = "PlayImpactAudio")]
 	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "OnCollisionEnter")]
-	[CallsUnknownMethods(Count = 34)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(FlareGunRoundItem), Member = "ParentToObject")]
-	[Calls(Type = typeof(Rigidbody), Member = "set_angularDrag")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 44)]
 	[Calls(Type = typeof(FlareGunRoundItem), Member = "FlightComplete")]
 	[Calls(Type = typeof(Rigidbody), Member = "set_drag")]
+	[Calls(Type = typeof(Rigidbody), Member = "set_angularDrag")]
 	[Calls(Type = typeof(Rigidbody), Member = "set_mass")]
+	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
 	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(Vector3), Member = "get_normalized")]
+	[Calls(Type = typeof(Utils), Member = "GetMaterialTagForObjectAtPosition")]
 	[Calls(Type = typeof(FlareGunRoundItem), Member = "GetSurfaceResponseInfo")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_hideFlags")]
 	[Calls(Type = typeof(FlareGunRoundItem), Member = "PlayImpactAudio")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Utils), Member = "GetMaterialTagForObjectAtPosition")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(FlareGunRoundItem), Member = "ParentToObject")]
+	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
+	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
+	[Calls(Type = typeof(Rigidbody), Member = "get_isKinematic")]
+	[Calls(Type = typeof(FlareGunRoundItem), Member = "FallFree")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Rigidbody), Member = "get_velocity")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(FlareGunRoundItem), Member = "InflictDamage")]
+	[Calls(Type = typeof(PackManager), Member = "InPack")]
+	[Calls(Type = typeof(PackManager), Member = "ModifyGroupMoraleOnFlareGunRound")]
+	[Calls(Type = typeof(FlareGunRoundItem), Member = "MaybeScareWildlife")]
+	[CallsDeduplicatedMethods(Count = 43)]
+	[CallsUnknownMethods(Count = 34)]
 	private void HandleCollisionWithObject(GameObject colliderGO, Vector3 collisionPoint, Vector3 collisionNormal, Vector3 relativeVelocity)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(FlareGunRoundItem), Member = "HandleCollisionWithObject")]
-	[Calls(Type = typeof(Collision), Member = "get_contacts")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Collision), Member = "get_gameObject")]
 	[Calls(Type = typeof(Collision), Member = "get_contacts")]
+	[Calls(Type = typeof(FlareGunRoundItem), Member = "HandleCollisionWithObject")]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnCollisionEnter(Collision collision)
 	{
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(FlareGunRoundItem), Member = "GetSurfaceResponseInfo")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsDeduplicatedMethods(Count = 12)]
-	[Calls(Type = typeof(GameObject), Member = "get_tag")]
-	[Calls(Type = typeof(Collision), Member = "get_gameObject")]
-	[Calls(Type = typeof(Collision), Member = "get_contacts")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Collision), Member = "get_contacts")]
 	[Calls(Type = typeof(Collision), Member = "get_gameObject")]
+	[Calls(Type = typeof(GameObject), Member = "get_tag")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(FlareGunRoundItem), Member = "GetSurfaceResponseInfo")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 16)]
 	private void OnCollisionStay(Collision collision)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "Deserialize")]
 	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "HandleCollisionWithObject")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
 	private void ParentToObject(Transform t)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "HandleCollisionWithObject")]
-	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "HandleCollisionWithObject")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetMaterialSwitch")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetMaterialSwitch")]
 	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void PlayImpactAudio(string surfaceTag)
 	{
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "OnCollisionStay")]
 	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "HandleCollisionWithObject")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowIndexOutOfRangeException")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "OnCollisionStay")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowIndexOutOfRangeException")]
+	[CallsUnknownMethods(Count = 9)]
 	private SurfaceResponseInfo GetSurfaceResponseInfo(string surfaceTag)
 	{
 		return default(SurfaceResponseInfo);
 	}
 
+	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "HandleCollisionWithObject")]
-	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "LateUpdate")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[Calls(Type = typeof(Utils), Member = "SetIsKinematic")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	private void FallFree()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "HandleCollisionWithObject")]
-	[Calls(Type = typeof(BaseAi), Member = "MaybeFleeFromFlareGunRound")]
-	[Calls(Type = typeof(BaseAi), Member = "ApplyDamage")]
-	[Calls(Type = typeof(BaseAi), Member = "SetupDamageForAnim")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(LocalizedDamage), Member = "RollChanceToKill")]
-	[Calls(Type = typeof(BodyDamage), Member = "GetDamageScale")]
-	[Calls(Type = typeof(BodyDamage), Member = "GetBleedOutMinutes")]
-	[Calls(Type = typeof(LocalizedDamage), Member = "HasBodyDamage")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(LocalizedDamage), Member = "HasBodyDamage")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInParent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(LocalizedDamage), Member = "HasBodyDamage")]
+	[Calls(Type = typeof(BodyDamage), Member = "GetBleedOutMinutes")]
+	[Calls(Type = typeof(BodyDamage), Member = "GetDamageScale")]
+	[Calls(Type = typeof(LocalizedDamage), Member = "RollChanceToKill")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(BaseAi), Member = "SetupDamageForAnim")]
+	[Calls(Type = typeof(BaseAi), Member = "ApplyDamage")]
+	[Calls(Type = typeof(BaseAi), Member = "MaybeFleeFromFlareGunRound")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private BaseAi InflictDamage(GameObject victim, float damageScalar, bool stickIn, string collider)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(PackManager), Member = "ModifyGroupMorale")]
 	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "HandleCollisionWithObject")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
-	[Calls(Type = typeof(BaseAi), Member = "MaybeFleeFromFlareGunRound")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(BaseAi), Member = "MaybeFleeFromFlareGunRound")]
 	[Calls(Type = typeof(PackManager), Member = "InPack")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PackManager), Member = "GetPackSettings")]
+	[Calls(Type = typeof(PackManager), Member = "ModifyGroupMorale")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 5)]
 	private void MaybeScareWildlife(PackAnimal ignoreMoraleOnAnimal)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(RescueZone), Member = "FireFlareGun")]
 	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
-	[Calls(Type = typeof(FlareGunRoundItem), Member = "Fire")]
+	[CalledBy(Type = typeof(RescueZone), Member = "FireFlareGun")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(FlareGunRoundItem), Member = "Fire")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public static GameObject SpawnAndFire(GameObject prefab, Vector3 startPos, Quaternion startRot)
 	{
 		return null;

@@ -11,16 +11,16 @@ public class LobbyDetailsCopyMemberAttributeByIndexOptions
 
 	public ProductUserId TargetUserId
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -33,7 +33,7 @@ public class LobbyDetailsCopyMemberAttributeByIndexOptions
 		[CallerCount(Count = 8)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -44,7 +44,7 @@ public class LobbyDetailsCopyMemberAttributeByIndexOptions
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public LobbyDetailsCopyMemberAttributeByIndexOptions()
 	{
 	}

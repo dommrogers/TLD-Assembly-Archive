@@ -42,14 +42,14 @@ public class SlotData : BaseState
 	[NonSerialized]
 	private Mutex m_SlotDataMutex;
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "AddGUIDToPrevSceneSave")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "SaveDataToSlot")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "CopyData")]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "WriteSlotToDisk")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "CopyData")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "SaveDataToSlot")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "AddGUIDToPrevSceneSave")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Mutex), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public void Lock()
 	{
 	}
@@ -64,7 +64,7 @@ public class SlotData : BaseState
 	[CallerCount(Count = 0)]
 	public bool IsValidVersion()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -74,11 +74,11 @@ public class SlotData : BaseState
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "CreateSlot")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(BaseState), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public SlotData()
 	{
 	}

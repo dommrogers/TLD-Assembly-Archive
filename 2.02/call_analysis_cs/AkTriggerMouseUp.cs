@@ -10,9 +10,9 @@ public class AkTriggerMouseUp : AkTriggerBase
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public AkTriggerMouseUp()
 	{
 	}

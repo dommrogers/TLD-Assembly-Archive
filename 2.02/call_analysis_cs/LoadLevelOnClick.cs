@@ -5,15 +5,15 @@ public class LoadLevelOnClick : MonoBehaviour
 {
 	public string levelName;
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(SceneManager), Member = "LoadScene")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SceneManager), Member = "LoadScene")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnClick()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public LoadLevelOnClick()
 	{

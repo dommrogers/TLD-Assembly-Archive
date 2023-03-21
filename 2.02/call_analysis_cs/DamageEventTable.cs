@@ -34,72 +34,69 @@ public class DamageEventTable : ScriptableObject
 
 	private StruggleDamageEvent[] m_DamageEvents;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsInitialized()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(BaseAi), Member = "EnterAttack")]
 	[CalledBy(Type = typeof(BaseAi), Member = "EnterPassingAttack")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "DamageEventsInitialize")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "DamageEventsInitialize")]
-	[CallsUnknownMethods(Count = 29)]
+	[CallerCount(Count = 4)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 29)]
 	public void Initialize()
 	{
 	}
 
+	[CalledBy(Type = typeof(DamageEventTable), Member = "MaybeApplyAttack")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "OnPlayerDeath")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "GetUpAnimationComplete")]
 	[CallerCount(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(DamageEventTable), Member = "MaybeApplyAttack")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "OnPlayerDeath")]
 	[CallsUnknownMethods(Count = 1)]
 	public void FadeOutEventUi(float withDelay)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Reset()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(DamageEventTable), Member = "MaybeApplyAttack")]
-	[Calls(Type = typeof(StruggleDamageEvent), Member = "GetChance")]
-	[Calls(Type = typeof(StruggleDamageEvent), Member = "GetChance")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(StruggleDamageEvent), Member = "GetChance")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 13)]
 	public StruggleDamageEvent GetWeightedRandomAttack()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[Calls(Type = typeof(DamageEventTable), Member = "FadeOutEventUi")]
 	[CalledBy(Type = typeof(BaseAi), Member = "MaybeApplyAttack")]
-	[Calls(Type = typeof(StruggleDamageEvent), Member = "Execute")]
 	[CalledBy(Type = typeof(BaseAi), Member = "DoPassingAttackDamage")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "MaybeReceiveAIAttack")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "ReceiveAIAttack")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Enum), Member = "HasFlag")]
 	[Calls(Type = typeof(DamageEventTable), Member = "GetWeightedRandomAttack")]
+	[Calls(Type = typeof(StruggleDamageEvent), Member = "Execute")]
+	[Calls(Type = typeof(DamageEventTable), Member = "FadeOutEventUi")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public StruggleDamageEvent MaybeApplyAttack(ApplyAttackOpts opts)
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public DamageEventTable()
 	{
 	}

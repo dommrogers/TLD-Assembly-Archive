@@ -160,52 +160,52 @@ public class DarkLightingManager : MonoBehaviour
 
 	private static readonly float oneThird;
 
-	[Calls(Type = typeof(DarkLightingManager), Member = "FindParticles")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateQualityValues")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
-	[Calls(Type = typeof(DarkLightingManager), Member = "FindGimbleObjects")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DarkLightingManager), Member = "FindAmbientLighting")]
+	[Calls(Type = typeof(DarkLightingManager), Member = "FindConstantLights")]
+	[Calls(Type = typeof(DarkLightingManager), Member = "FindColourizedLights")]
+	[Calls(Type = typeof(DarkLightingManager), Member = "FindNightLights")]
 	[Calls(Type = typeof(DarkLightingManager), Member = "FindOtherLights")]
 	[Calls(Type = typeof(DarkLightingManager), Member = "FindGlowObjects")]
-	[Calls(Type = typeof(DarkLightingManager), Member = "FindColourizedLights")]
-	[Calls(Type = typeof(DarkLightingManager), Member = "FindConstantLights")]
-	[Calls(Type = typeof(DarkLightingManager), Member = "FindAmbientLighting")]
+	[Calls(Type = typeof(DarkLightingManager), Member = "FindGimbleObjects")]
+	[Calls(Type = typeof(DarkLightingManager), Member = "FindParticles")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "GetQualitySettings")]
+	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateQualityValues")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(DarkLightingManager), Member = "FindNightLights")]
+	[CallsUnknownMethods(Count = 3)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(LightingManager), Member = "SetLightingStrengthDefault")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LightingManager), Member = "SetLightingStrengthDefault")]
 	private void OnDisable()
 	{
 	}
 
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "Start")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+	[CallsUnknownMethods(Count = 2)]
 	private void FindAmbientLighting()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "Start")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 8)]
 	private void FindConstantLights()
 	{
 	}
 
+	[CalledBy(Type = typeof(DarkLightingManager), Member = "Start")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Light), Member = "get_intensity")]
-	[CalledBy(Type = typeof(DarkLightingManager), Member = "Start")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	private void FindColourizedLights()
 	{
@@ -213,105 +213,97 @@ public class DarkLightingManager : MonoBehaviour
 
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "Start")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Light), Member = "get_intensity")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	private void FindNightLights()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Light), Member = "get_intensity")]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Light), Member = "get_intensity")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 15)]
 	private void FindOtherLights()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void FindParticles()
 	{
 	}
 
+	[CalledBy(Type = typeof(DarkLightingManager), Member = "Start")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Material), Member = "get_shader")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(Material), Member = "get_color")]
-	[Calls(Type = typeof(Material), Member = "get_color")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(DarkLightingManager), Member = "Start")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 10)]
 	private void FindGlowObjects()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void FindGimbleObjects()
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "Start")]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "Update")]
+	[CallerCount(Count = 2)]
 	private void UpdateQualityValues()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateLightmaps")]
-	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateConstantLights")]
-	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateNightLights")]
-	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateNonTodLights")]
-	[Calls(Type = typeof(InteriorWeatherController), Member = "SetInteriorWeather")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateParticles")]
-	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateColouredLights")]
-	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateGlowObjects")]
-	[Calls(Type = typeof(TodAmbientLight), Member = "SetAmbientLightValue")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateIntensities")]
-	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateQualityValues")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "GetCurrentQualitySettings")]
-	[Calls(Type = typeof(QualitySettingsManager), Member = "GetCurrentQualitySettings")]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+	[Calls(Type = typeof(QualitySettingsManager), Member = "GetCurrentQualitySettings")]
+	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateQualityValues")]
+	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateIntensities")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TodAmbientLight), Member = "SetAmbientLightValue")]
+	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateGlowObjects")]
 	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateGimbles")]
+	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateParticles")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(InteriorWeatherController), Member = "SetInteriorWeather")]
+	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateNonTodLights")]
+	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateNightLights")]
+	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateConstantLights")]
+	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateLightmaps")]
+	[Calls(Type = typeof(DarkLightingManager), Member = "UpdateColouredLights")]
+	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[CalledBy(Type = typeof(DarkLightingManager), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AuroraManager), Member = "GetAuroraColour")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
 	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[CalledBy(Type = typeof(DarkLightingManager), Member = "Update")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(AuroraManager), Member = "GetAuroraColour")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateIntensities()
 	{
 	}
@@ -324,98 +316,86 @@ public class DarkLightingManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateConstantLights()
 	{
 	}
 
+	[CalledBy(Type = typeof(DarkLightingManager), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(LightmapColorOverride), Member = "IsEnabled")]
 	[Calls(Type = typeof(LightingManager), Member = "SetLightingStrength")]
-	[CalledBy(Type = typeof(DarkLightingManager), Member = "Update")]
 	[CallsUnknownMethods(Count = 1)]
 	private void UpdateLightmaps()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "Update")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 9)]
 	private void UpdateColouredLights()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateNightLights()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateNonTodLights()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 10)]
 	private void UpdateGlowObjects()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(LightShaftGimble), Member = "UpdateFX")]
-	[Calls(Type = typeof(LightShaftGimble), Member = "UpdateLight")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(LightShaftGimble), Member = "UpdateRotation")]
-	[Calls(Type = typeof(LightShaftGimble), Member = "UpdateWeather")]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(LightShaftGimble), Member = "UpdateWeather")]
+	[Calls(Type = typeof(LightShaftGimble), Member = "UpdateRotation")]
 	[Calls(Type = typeof(LightShaftGimble), Member = "UpdateMaterial")]
+	[Calls(Type = typeof(LightShaftGimble), Member = "UpdateLight")]
+	[Calls(Type = typeof(LightShaftGimble), Member = "UpdateFX")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateGimbles()
 	{
 	}
 
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateParticles()
 	{
 	}
@@ -431,32 +411,31 @@ public class DarkLightingManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private float GetSunAverage(Color col, float lum)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
 	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetTimeOfDayIntensity()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	private float NormalizedTod()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	private float DistanceToPlayer(Vector3 localPos, Vector3 camPos)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -468,9 +447,6 @@ public class DarkLightingManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(AnimationCurve), Member = "EaseInOut")]
-	[Calls(Type = typeof(AnimationCurve), Member = "EaseInOut")]
-	[Calls(Type = typeof(AnimationCurve), Member = "EaseInOut")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AnimationCurve), Member = "EaseInOut")]
 	public DarkLightingManager()

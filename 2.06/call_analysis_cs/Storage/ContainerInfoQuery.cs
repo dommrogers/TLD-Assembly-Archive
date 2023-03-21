@@ -25,11 +25,11 @@ public class ContainerInfoQuery : IDisposable, IEnumerable<ContainerInfo>, IEnum
 		[CallsUnknownMethods(Count = 2)]
 		internal ulong _003CLastModifiedTime_003Eb__0()
 		{
-			return default(ulong);
+			return 0uL;
 		}
 	}
 
-	private sealed class _003CGetEnumerator_003Ed__6 : IEnumerator, IDisposable, IEnumerator<ContainerInfo>
+	private sealed class _003CGetEnumerator_003Ed__6 : IEnumerator<ContainerInfo>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -43,7 +43,7 @@ public class ContainerInfoQuery : IDisposable, IEnumerable<ContainerInfo>, IEnum
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -54,16 +54,16 @@ public class ContainerInfoQuery : IDisposable, IEnumerable<ContainerInfo>, IEnum
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CGetEnumerator_003Ed__6(int _003C_003E1__state)
 		{
 		}
@@ -80,13 +80,13 @@ public class ContainerInfoQuery : IDisposable, IEnumerable<ContainerInfo>, IEnum
 		[CallsUnknownMethods(Count = 6)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 5)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 5)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -111,7 +111,7 @@ public class ContainerInfoQuery : IDisposable, IEnumerable<ContainerInfo>, IEnum
 	[CallsUnknownMethods(Count = 1)]
 	public ulong TotalSize(uint idx)
 	{
-		return default(ulong);
+		return 0uL;
 	}
 
 	[CallerCount(Count = 0)]
@@ -122,8 +122,8 @@ public class ContainerInfoQuery : IDisposable, IEnumerable<ContainerInfo>, IEnum
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public string DisplayName(uint idx)
 	{
@@ -131,11 +131,11 @@ public class ContainerInfoQuery : IDisposable, IEnumerable<ContainerInfo>, IEnum
 	}
 
 	[CalledBy(Type = typeof(ContainerInfoQuery), Member = "MarshalContainerInfo")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(DateTime), Member = "ToLocalTime")]
-	[Calls(Type = typeof(DateTime), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DateTime), Member = ".ctor")]
+	[Calls(Type = typeof(DateTime), Member = "ToLocalTime")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	public DateTime LastModifiedTime(uint idx)
 	{
 		return default(DateTime);
@@ -146,7 +146,7 @@ public class ContainerInfoQuery : IDisposable, IEnumerable<ContainerInfo>, IEnum
 	[CallsUnknownMethods(Count = 1)]
 	public bool NeedsSync(uint idx)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[IteratorStateMachine(typeof(_003CGetEnumerator_003Ed__6))]
@@ -158,33 +158,33 @@ public class ContainerInfoQuery : IDisposable, IEnumerable<ContainerInfo>, IEnum
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 6)]
 	private IEnumerator System_002ECollections_002EIEnumerable_002EGetEnumerator()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(ContainerInfoQuery), Member = "LastModifiedTime")]
 	[CalledBy(Type = typeof(_003CGetEnumerator_003Ed__6), Member = "MoveNext")]
 	[CalledBy(Type = typeof(ContainerInfoQuery), Member = "get_Item")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ContainerInfoQuery), Member = "LastModifiedTime")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 9)]
 	protected void MarshalContainerInfo(ContainerInfo ci, uint i)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void Dispose()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public ContainerInfoQuery(uint totalResults, IntPtr queryHandle)
 	{
 	}

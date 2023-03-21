@@ -63,8 +63,8 @@ public sealed class PostProcessResources : ScriptableObject
 			return null;
 		}
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public Shaders()
 		{
 		}

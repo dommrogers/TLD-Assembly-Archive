@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -8,48 +7,48 @@ public class GamepadButtonSprite : MonoBehaviour
 
 	private UISprite m_ButtonSprite;
 
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshGamepadButtons")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "RefreshGamepadButtons")]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonStates")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateControllerButtons")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 	[CalledBy(Type = typeof(Panel_List<, >), Member = "UpdateControllerButtons")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
-	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 10)]
 	[CalledBy(Type = typeof(Panel_Clothing), Member = "UpdateButtonLegend")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "UpdateControllerButtons")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "UpdateButtonLegend")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "UpdateButtonStates")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "DoControls")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "RefreshGamepadButtons")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateButtonLegend")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshGamepadButtons")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
+	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[CallsUnknownMethods(Count = 1)]
 	public void UpdateSpriteForActiveController(ButtonLegend legend)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 2)]
 	public void EnableSprite(bool enable)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnableAllLBRBButtons")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableAllLBRBButtons")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnableAllLBRBButtons")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void EnableSpriteIfActionIs(string action, bool enable)
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public GamepadButtonSprite()
 	{
 	}

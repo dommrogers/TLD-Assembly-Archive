@@ -7,8 +7,8 @@ namespace Users;
 public class MultiplePermissionsCheckResultPlugin
 {
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr MultiplePermissionsCheckResult_Items(IntPtr self);
 
 	[PreserveSig]
@@ -36,8 +36,8 @@ public class MultiplePermissionsCheckResultPlugin
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void MultiplePermissionsCheckResult_Dispose(IntPtr self);
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public MultiplePermissionsCheckResultPlugin()
 	{
 	}

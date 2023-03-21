@@ -44,35 +44,35 @@ public class TouchJoystickExample : MonoBehaviour, IPointerDownHandler, IEventSy
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(TouchJoystickExample), Member = "StoreOrigValues")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TouchJoystickExample), Member = "Restart")]
 	[Calls(Type = typeof(TouchJoystickExample), Member = "StoreOrigValues")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(TouchJoystickExample), Member = "Update")]
 	[CalledBy(Type = typeof(TouchJoystickExample), Member = "UnityEngine.EventSystems.IPointerUpHandler.OnPointerUp")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Restart()
 	{
 	}
 
+	[CalledBy(Type = typeof(TouchJoystickExample), Member = "Start")]
 	[CalledBy(Type = typeof(TouchJoystickExample), Member = "Update")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CalledBy(Type = typeof(TouchJoystickExample), Member = "Start")]
 	[CallsUnknownMethods(Count = 8)]
 	private void StoreOrigValues()
 	{
@@ -89,25 +89,25 @@ public class TouchJoystickExample : MonoBehaviour, IPointerDownHandler, IEventSy
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TouchJoystickExample), Member = "Restart")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UnityEngine_002EEventSystems_002EIPointerUpHandler_002EOnPointerUp(PointerEventData eventData)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void UnityEngine_002EEventSystems_002EIDragHandler_002EOnDrag(PointerEventData eventData)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private static bool IsMousePointerId(int id)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

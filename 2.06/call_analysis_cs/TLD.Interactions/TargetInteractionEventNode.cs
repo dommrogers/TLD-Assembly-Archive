@@ -11,9 +11,9 @@ public class TargetInteractionEventNode : InteractionEventNode
 
 	public ValueInput target
 	{
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return null;
@@ -27,20 +27,23 @@ public class TargetInteractionEventNode : InteractionEventNode
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ValueInput), Member = "SetDefaultValue")]
 	[Calls(Type = typeof(ValueInput), Member = "NullMeansSelf")]
-	[CallsUnknownMethods(Count = 4)]
+	[Calls(Type = typeof(EventUnit<>), Member = "Definition")]
+	[Calls(Type = typeof(Unit), Member = "ValueOutput")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void Definition()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Flow), Member = "GetValue")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override bool ShouldTrigger(Flow flow, InteractionEventData eventData)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

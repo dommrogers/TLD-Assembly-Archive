@@ -1,39 +1,41 @@
 using System;
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Serialization;
 using UnityEngine;
 
 public class RandomSpawnObjectManager : MonoBehaviour
 {
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(RandomSpawnObject), Member = "ShouldSkipSerialization")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
 	[Calls(Type = typeof(RandomSpawnObject), Member = "ShouldAllSkipSerialization")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(RandomSpawnObject), Member = "ShouldSkipSerialization")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	public static string Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(RandomSpawnObject), Member = "HasObject")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(RandomSpawnObject), Member = "LoadObject")]
-	[Calls(Type = typeof(RandomSpawnObject), Member = "ShouldSkipSerialization")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(RandomSpawnObject), Member = "PruneMissingObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+	[Calls(Type = typeof(RandomSpawnObject), Member = "PruneMissingObjects")]
 	[Calls(Type = typeof(RandomSpawnObject), Member = "DisableAllAndCheckContainers")]
+	[Calls(Type = typeof(RandomSpawnObject), Member = "ShouldSkipSerialization")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(RandomSpawnObject), Member = "HasObject")]
+	[Calls(Type = typeof(RandomSpawnObject), Member = "LoadObject")]
+	[CallsUnknownMethods(Count = 8)]
 	public static void Deserialize(string text)
 	{
 	}

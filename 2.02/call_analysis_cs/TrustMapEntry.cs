@@ -18,8 +18,8 @@ public class TrustMapEntry : MonoBehaviour
 	private int m_Index;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Log), Member = "OnTrustMapClicked")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void TrustMapClicked()
 	{
@@ -43,17 +43,15 @@ public class TrustMapEntry : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(TrustMapEntry), Member = "SetLocked")]
+	[CalledBy(Type = typeof(TrustMapEntry), Member = "SetSelected")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "SetupTrustMap")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshTrustMapSelection")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DeselectAllTrustMapEntries")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshTrustMapSelection")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "SetupTrustMap")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "SetupTrustMap")]
-	[CalledBy(Type = typeof(TrustMapEntry), Member = "SetSelected")]
-	[CalledBy(Type = typeof(TrustMapEntry), Member = "SetLocked")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "EnterSectionNav")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void RefreshObjects()
 	{
 	}

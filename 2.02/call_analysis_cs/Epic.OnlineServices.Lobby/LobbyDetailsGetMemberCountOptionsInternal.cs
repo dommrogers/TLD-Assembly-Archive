@@ -9,21 +9,21 @@ internal struct LobbyDetailsGetMemberCountOptionsInternal : ISettable, IDisposab
 {
 	private int m_ApiVersion;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void Set(LobbyDetailsGetMemberCountOptions other)
 	{
 	}
 
+	[CalledBy(Type = typeof(LobbyDetails), Member = "GetMemberCount")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(LobbyDetails), Member = "GetMemberCount")]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

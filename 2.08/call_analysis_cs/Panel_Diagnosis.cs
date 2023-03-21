@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.AddressableAssets;
+using TLD.SaveState;
 using TLD.UI;
 using TLD.UI.Generics;
 using UnityEngine;
@@ -101,9 +102,9 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 		{
 		}
 
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 2)]
-		[DeduplicatedMethod]
 		public void AddAffliction(AfflictionType afflictionType)
 		{
 		}
@@ -307,33 +308,52 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 
 	private List<NPCAffliction> m_ScrollListAfflictions;
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public override void Initialize()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Enable")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "GetSliderValue")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "ApplyWaterTreatment")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "CanApplyTreatment")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasAlternateTreatment")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "ApplyAlternateTreatment")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasStandardTreatment")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "ApplyStandardTreatment")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
+	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
+	[Calls(Type = typeof(ScrollList), Member = "Next")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "GetChild")]
 	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "CheckForAfflictionListChange")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshAll")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
 	[Calls(Type = typeof(NPCAfflictions), Member = "AfflictionDiagnosed")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshStatusLabels")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshRightPage")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "UpdateScrollbar")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(Input), Member = "GetAxis")]
-	[Calls(Type = typeof(ScrollList), Member = "Next")]
-	[Calls(Type = typeof(Transform), Member = "GetChild")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
 	[Calls(Type = typeof(Input), Member = "GetAxis")]
 	[Calls(Type = typeof(ScrollList), Member = "Prev")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
@@ -342,56 +362,24 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "ExitInterface")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Enable")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 20)]
 	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(ScrollList), Member = "Next")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshRightPage")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "GetSliderValue")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "ApplyWaterTreatment")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "CanApplyTreatment")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "CanApplyTreatment")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
-	[CallsDeduplicatedMethods(Count = 21)]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "ApplyAlternateTreatment")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasAlternateTreatment")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterRightPressed")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasStandardTreatment")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
-	[Calls(Type = typeof(InputManager), Member = "GetInventoryFilterLeftPressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasAlternateTreatment")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "ApplyStandardTreatment")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasStandardTreatment")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(NPCAffliction), Member = "UseWater")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ApplyWaterTreatment(float progress)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScrollList), Member = "Prev")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public void DoScrollUp()
 	{
 	}
@@ -403,12 +391,12 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void OnScrollbarChange()
 	{
 	}
@@ -422,17 +410,14 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "SelectNextFAKItem")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "SelectPrevFAKItem")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(FirstAidKitButton), Member = "Refresh")]
-	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
-	[Calls(Type = typeof(FirstAidKitButton), Member = "Refresh")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "SelectNextFAKItem")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(FirstAidKitButton), Member = "Refresh")]
+	[Calls(Type = typeof(Utils), Member = "IsMouseActive")]
 	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void SelectItem(FirstAidKitButton fakButton)
 	{
 	}
@@ -447,32 +432,29 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(NPCAfflictions), Member = "AfflictionDiagnosed")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshRightPage")]
-	[Calls(Type = typeof(NPCAfflictionButton), Member = "SetSelected")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(NPCAfflictionButton), Member = "SetSelected")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshRightPage")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
+	[Calls(Type = typeof(NPCAfflictions), Member = "AfflictionDiagnosed")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SelectNPCAffliction(NPCAfflictionButton affButton)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Enable")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CheckForAfflictionListChange")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CheckForAfflictionListChange")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PostTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CheckForAfflictionListChange")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshRightPage")]
+	[Calls(Type = typeof(FirstAidKitButton), Member = "Refresh")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshTintedImages")]
 	[Calls(Type = typeof(InterfaceManager), Member = "SetTimeWidgetActive")]
-	[Calls(Type = typeof(FirstAidKitButton), Member = "Refresh")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshRightPage")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
+	[CallsUnknownMethods(Count = 2)]
 	public void RefreshAll()
 	{
 	}
@@ -480,7 +462,7 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 	[CallerCount(Count = 0)]
 	public bool TreatmentInProgress()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
@@ -489,86 +471,86 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshAll")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(InterfaceManager), Member = "InitializeAndActivateTimeWidget")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "Update")]
 	[CalledBy(Type = typeof(NPCAfflictions), Member = "StartDiagnosing")]
 	[CalledBy(Type = typeof(NPCAfflictions), Member = "OnDiagnoseIntroComplete")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetAllAfflictions")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[Calls(Type = typeof(NPCAfflictionButton), Member = "SetSelected")]
-	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
-	[Calls(Type = typeof(StatusBar), Member = "Update")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshScrollList")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
 	[Calls(Type = typeof(InterfaceManager), Member = "SetTimeWidgetActive")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TrySetEnabled")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "DisableAfflictionButtons")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "EnableOutline")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
 	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
 	[Calls(Type = typeof(BodyCarry), Member = "MaybeDrop")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshAll")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "DisableAfflictionButtons")]
+	[Calls(Type = typeof(StatusBar), Member = "Update")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshScrollList")]
+	[Calls(Type = typeof(NPCAfflictionButton), Member = "SetSelected")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetAllAfflictions")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(InterfaceManager), Member = "InitializeAndActivateTimeWidget")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[Calls(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "Update")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 13)]
 	public void Enable(bool enable, NPC npc)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(GameAudioManager), Member = "MaybePlayOverrideCloseSound")]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameAudioManager), Member = "MaybePlayOverrideCloseSound")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "ExitInterface")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	public void OnBack()
 	{
 	}
 
-	[Calls(Type = typeof(FirstAidKitButton), Member = "Refresh")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "SelectItem")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "SelectItem")]
+	[Calls(Type = typeof(FirstAidKitButton), Member = "Refresh")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void SelectPrevFAKItem(bool playAudio = true)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CheckIfSelectedItemUsedUp")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "SelectItem")]
 	[Calls(Type = typeof(FirstAidKitButton), Member = "Refresh")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CheckIfSelectedItemUsedUp")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void SelectNextFAKItem(bool playAudio = true)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public AfflictionType GetSelectedAfflictionType()
 	{
 		return default(AfflictionType);
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshStatusLabels")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public Color GetColorForStatusLine()
 	{
@@ -579,222 +561,189 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsSameAffliction(NPCAffliction afflictiona, NPCAffliction afflictionb)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsSameAffliction(NPCAffliction afflictiona, NPCAfflictionButton afflictionButtonb)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "OnTreatmentComplete")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "ExitInterface")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetAllAfflictions")]
-	[Calls(Type = typeof(NPCAfflictionButton), Member = "SetSelected")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshAll")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshScrollList")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "HealedAffliction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(NPCAffliction), Member = "IsTreated")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NPCAffliction), Member = "IsTreated")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "ReplaceAnimation")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "ReplaceAnimation")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[Calls(Type = typeof(NPCAfflictions), Member = "HealedAffliction")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshScrollList")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshAll")]
+	[Calls(Type = typeof(NPCAfflictionButton), Member = "SetSelected")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetAllAfflictions")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "ExitInterface")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void PostTreatment(NPCAffliction affliction)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "ReplaceAnimation")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "ReplaceAnimation")]
 	[CallsUnknownMethods(Count = 1)]
 	private void MaybeReplaceExitAnimation(NPCAffliction affliction)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "MaybeReplaceExitAnimation")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PostTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "MaybeReplaceExitAnimation")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PostTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PostTreatment")]
 	private void ReplaceAnimation(AssetReferenceTimeline timelineExitRef, AnimatedInteraction animatedInteraction)
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "OnTreatmentComplete")]
-	[Calls(Type = typeof(NPCAffliction), Member = "GetTreatmentWaterVolumeLiters")]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "IsWaterSupply")]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "IsWaterSupply")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "EnableApplyTreatmentUI")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(OnExitDelegate), Member = ".ctor")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyTreatment")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
 	[Calls(Type = typeof(AfflictionDefinition), Member = "GetFirstAidItemUsed")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(AfflictionDefinition), Member = "GetFirstAidItemUsed")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AfflictionDefinition), Member = "GetFirstAidItemUsed")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(OnExitDelegate), Member = ".ctor")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "EnableApplyTreatmentUI")]
+	[Calls(Type = typeof(AfflictionRemedy), Member = "IsWaterSupply")]
+	[Calls(Type = typeof(NPCAffliction), Member = "GetTreatmentWaterVolumeLiters")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "OnTreatmentComplete")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void ApplyStandardTreatment()
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AfflictionRemedy), Member = "IsWaterSupply")]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "IsWaterSupply")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool IsWaterTreamentInProgress()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(NPCAffliction), Member = "ApplyStandardRemedy")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyAlternateTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyStandardTreatment")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "PostTreatment")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(NPCAffliction), Member = "ApplyStandardRemedy")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyAlternateTreatment")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NPCAffliction), Member = "UseWater")]
 	[Calls(Type = typeof(NPCAffliction), Member = "ApplyAlternateRemedy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPCAffliction), Member = "ApplyStandardRemedy")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "PostTreatment")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(NPCAffliction), Member = "ApplyAlternateRemedy")]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnTreatmentComplete(bool success, bool playerCancel, float progress)
 	{
 	}
 
-	[Calls(Type = typeof(NPCAffliction), Member = "GetTreatmentWaterVolumeLiters")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
-	[Calls(Type = typeof(OnExitDelegate), Member = ".ctor")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "OnTreatmentComplete")]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "IsWaterSupply")]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "IsWaterSupply")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AfflictionDefinition), Member = "GetFirstAidItemUsed")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AfflictionDefinition), Member = "GetFirstAidItemUsed")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AfflictionDefinition), Member = "GetFirstAidItemUsed")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyTreatment")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
+	[Calls(Type = typeof(AfflictionDefinition), Member = "GetFirstAidItemUsed")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(AfflictionRemedy), Member = "IsWaterSupply")]
+	[Calls(Type = typeof(NPCAffliction), Member = "GetTreatmentWaterVolumeLiters")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "OnTreatmentComplete")]
+	[Calls(Type = typeof(OnExitDelegate), Member = ".ctor")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "Launch")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ApplyAlternateTreatment()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetColorForStatusLine")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "GetStringFromColor")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Utils), Member = "GetStringFromColor")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetColorForStatusLine")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void RefreshStatusLabels()
 	{
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[Calls(Type = typeof(NPCAfflictionButton), Member = "GetColorBasedOnAffliction")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
 	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 22)]
 	private void UpdateBodyIconActiveAnimation(int affLocation, AfflictionType afflictionType)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Enable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void DisableAfflictionButtons()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "UpdateBodyIconColors")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void UpdateAllButSelectedBodyIconColors()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void HideRightPage()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "SelectNPCAffliction")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyStandardTreatment")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyAlternateTreatment")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "GetAlternateAfflictionsRemediesInfo")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "GetAfflictionsRemediesInfo")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CanSelectAlternateTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CanSelectStandardTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CanApplyTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "SelectStandardTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "SelectAlternateTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyTreatment")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "GetAfflictionsRemediesInfo")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "SelectStandardTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "GetAlternateAfflictionsRemediesInfo")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyStandardTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "SelectNPCAffliction")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 17)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyAlternateTreatment")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	private NPCAffliction GetSelectedAffliction()
 	{
 		return null;
@@ -806,23 +755,23 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void HookupStatusBars()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(StatusBar), Member = "Update")]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	private void UpdateStatusBars()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetAfflictionsRemediesParams")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetAfflictionsRemediesParams")]
+	[CallsUnknownMethods(Count = 1)]
 	private void GetAlternateAfflictionsRemediesInfo(out string[] altRemedySprites, out bool[] altRemedyComplete, out int[] altRemedyNumRequired)
 	{
 		altRemedySprites = null;
@@ -830,10 +779,10 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 		altRemedyNumRequired = null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetAfflictionsRemediesParams")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetAfflictionsRemediesParams")]
+	[CallsUnknownMethods(Count = 1)]
 	private void GetAfflictionsRemediesInfo(out string[] remedySprites, out bool[] remedyComplete, out int[] remedyNumRequired)
 	{
 		remedySprites = null;
@@ -841,107 +790,89 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 		remedyNumRequired = null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "HasAlternateTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "HasStandardTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "HasStandardTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PlayerCanUseRemedy")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PlayerCanUseRemedy")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "HasStandardTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "HasAlternateTreatment")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "PlayerHasRequiredRemedy")]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "IsWaterSupply")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(AfflictionRemedy), Member = "IsWaterSupply")]
+	[Calls(Type = typeof(AfflictionRemedy), Member = "PlayerHasRequiredRemedy")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool PlayerHasRemedy(AfflictionRemedy remedy, AfflictionDefinition afflictionDefinition)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "PlayerHasRemedy")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "PlayerHasRemedy")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool PlayerCanUseRemedy(NPCAffliction npcAffliction, AfflictionRemedy afflictionRemedy1, bool remedy1Complete, AfflictionRemedy afflictionRemedy2, bool remedy2Complete)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CanApplyTreatment")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshSelection")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CanApplyTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CanApplyTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CanApplyTreatment")]
-	[CallerCount(Count = 10)]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CanSelectStandardTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "PlayerHasRemedy")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "PlayerHasRemedy")]
-	[Calls(Type = typeof(NPCAffliction), Member = "IsTreated")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateStandardTreatmentUI")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CanApplyTreatment")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshSelection")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyTreatment")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(NPCAffliction), Member = "IsTreated")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "PlayerHasRemedy")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool HasStandardTreatment(NPCAffliction npcAffliction)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CanApplyTreatment")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshSelection")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CanApplyTreatment")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CanSelectAlternateTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateAlternateTreatmentUI")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CanApplyTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshSelection")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyTreatment")]
 	[CallerCount(Count = 9)]
 	[Calls(Type = typeof(NPCAffliction), Member = "IsTreated")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "PlayerHasRemedy")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CanSelectAlternateTreatment")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "PlayerHasRemedy")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool HasAlternateTreatment(NPCAffliction npcAffliction)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateAlternateTreatmentUI")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateStandardTreatmentUI")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateAlternateTreatmentUI")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateStandardTreatmentUI")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	private void EnableMultipleRemedies(TreatmentUI ui, bool enabled)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void EnableAlternateTreatment(bool enabled)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsUnknownMethods(Count = 5)]
 	private void UpdateRestUI(NPCAffliction affliction)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasAlternateTreatment")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
-	[CallerCount(Count = 0)]
 	private bool CanSelectAlternateTreatment()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -950,46 +881,39 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 	[CallsUnknownMethods(Count = 1)]
 	private bool CanSelectStandardTreatment()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "EnableMouseButton")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "EnableMultipleRemedies")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "UpdateRemedyUI")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "UpdateRemedyUI")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "EnableMultipleRemedies")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasStandardTreatment")]
-	[Calls(Type = typeof(NPCAffliction), Member = "GetWaterRequiredForTreatment")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NPCAffliction), Member = "GetWaterRequiredForTreatment")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasStandardTreatment")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "EnableMouseButton")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "EnableMultipleRemedies")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "UpdateRemedyUI")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateStandardTreatmentUI(NPCAffliction affliction)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "UpdateRemedyUI")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "UpdateRemedyUI")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "EnableMultipleRemedies")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "EnableMultipleRemedies")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(NPCAffliction), Member = "GetWaterRequiredForTreatment")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "EnableMouseButton")]
+	[Calls(Type = typeof(NPCAffliction), Member = "GetWaterRequiredForTreatment")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasAlternateTreatment")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "EnableMouseButton")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "EnableMultipleRemedies")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "UpdateRemedyUI")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateAlternateTreatmentUI(NPCAffliction affliction)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "GetGearItemName")]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "GetGearItemName")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "GetAlternateAfflictionsRemediesInfo")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "GetAfflictionsRemediesInfo")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AfflictionRemedy), Member = "GetGearItemName")]
 	[CallsUnknownMethods(Count = 14)]
 	private static void GetAfflictionsRemediesParams(out string[] remedySprites, out bool[] remedyComplete, out int[] remedyNumRequired, AfflictionRemedy afflictionRemedy1, AfflictionRemedy afflictionRemedy2, bool remedy1Complete, bool remedy2Complete)
 	{
@@ -999,79 +923,70 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "SelectNPCAffliction")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshAll")]
+	[CallerCount(Count = 3)]
 	private void RefreshRightPage()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void DisableMultiAndSingleTreatmentsBG()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void EnableMultiTreatmentBG()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void EnableSingleTreatmentBG()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyStandardTreatment")]
 	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void EnableApplyTreatmentUI(bool canApplyTreatment)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasAlternateTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateButtonLegend")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ApplyTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasStandardTreatment")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasStandardTreatment")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasStandardTreatment")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateButtonLegend")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasAlternateTreatment")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasAlternateTreatment")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasStandardTreatment")]
 	[Calls(Type = typeof(NPCAffliction), Member = "RequiresRemdy")]
-	private bool CanApplyTreatment()
-	{
-		return default(bool);
-	}
-
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasAlternateTreatment")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasStandardTreatment")]
 	[CallsUnknownMethods(Count = 1)]
+	private bool CanApplyTreatment()
+	{
+		return false;
+	}
+
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasAlternateTreatment")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "HasStandardTreatment")]
+	[CallsUnknownMethods(Count = 1)]
 	private void RefreshSelection(NPCAffliction npcAffliction)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "EnableMouseButton")]
+	[CallsUnknownMethods(Count = 1)]
 	private void EnableAlternateSelectionButtons(bool isEnabled)
 	{
 	}
@@ -1083,69 +998,68 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void DisableTreatmentSelectionObjects()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(FirstAidKitButton), Member = "Refresh")]
+	[CallsUnknownMethods(Count = 2)]
 	private void RefreshKit()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateAllButSelectedBodyIconColors")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshScrollList")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(NPCAfflictionButton), Member = "GetColorBasedOnAffliction")]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateAllButSelectedBodyIconColors")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshScrollList")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 16)]
 	private void UpdateBodyIconColors(NPCAfflictionButton afflictionButton, bool isButtonSelected, int bodyIconIndex)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshScrollList")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	private void AddAfflictionAtLocation(int bodyIconIndex, AfflictionBodyArea location, AfflictionType type)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PostTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PostTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CheckIfSelectedAfflictionHealed")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CheckForAfflictionListChange")]
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CheckForAfflictionListChange")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "UpdateBodyIconColors")]
-	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
-	[Calls(Type = typeof(NPCAfflictionButton), Member = "SetupAffliction")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "AddAfflictionAtLocation")]
-	[Calls(Type = typeof(NPCAfflictionButton), Member = "SetSelected")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetAllAfflictions")]
-	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetAllAfflictions")]
+	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "AddAfflictionAtLocation")]
+	[Calls(Type = typeof(NPCAfflictionButton), Member = "SetupAffliction")]
+	[Calls(Type = typeof(NPCAfflictionButton), Member = "SetSelected")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "UpdateBodyIconColors")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 12)]
 	private void RefreshScrollList()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(NPCAfflictionButton), Member = "SetSelected")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshScrollList")]
+	[Calls(Type = typeof(NPCAfflictionButton), Member = "SetSelected")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void CheckIfSelectedAfflictionHealed()
 	{
 	}
@@ -1158,46 +1072,42 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 	}
 
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PostTreatment")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "OnBack")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PostTreatment")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void ExitInterface()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateRemedyUI")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringNoOunces")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringNoOunces")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 13)]
 	public void UpdateWaterRemedyUI(float waterNeeded, RemedyUI ui, AfflictionType afflictionType)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
 	public void SelectStandardTreatment()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetSelectedAffliction")]
 	public void SelectAlternateTreatment()
 	{
 	}
@@ -1214,35 +1124,29 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateAlternateTreatmentUI")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateAlternateTreatmentUI")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateStandardTreatmentUI")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateStandardTreatmentUI")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTextureFromPrefabName")]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "GetGearItemName")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "UpdateWaterRemedyUI")]
-	[Calls(Type = typeof(AfflictionRemedy), Member = "IsWaterSupply")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateAlternateTreatmentUI")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(AfflictionRemedy), Member = "IsWaterSupply")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "UpdateWaterRemedyUI")]
+	[Calls(Type = typeof(AfflictionRemedy), Member = "GetGearItemName")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTextureFromPrefabName")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateRemedyUI(RemedyUI ui, AfflictionRemedy remedy, bool itemNeeded, float waterNeeded, AfflictionType afflictionType)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 16)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 10)]
 	private void UpdateHasTreatments(bool hasMainTreatment, bool hasAltTreatment)
 	{
 	}
@@ -1251,28 +1155,26 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 	[CallsUnknownMethods(Count = 2)]
 	private bool HasAnyFirstAidItem()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	private bool AfflictionTypeNeedsRestAfterItems(AfflictionType affType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
-	[Calls(Type = typeof(ButtonLegend), Member = "ConfigureButtonIconSpriteName")]
-	[Calls(Type = typeof(ButtonLegend), Member = "ConfigureButtonIconSpriteName")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "CanApplyTreatment")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(ButtonLegend), Member = "ConfigureButtonIconSpriteName")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateButtonLegend()
 	{
 	}
@@ -1283,36 +1185,34 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateScrollbar()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshAll")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshAll")]
 	[CallsUnknownMethods(Count = 2)]
 	private void RefreshTintedImages()
 	{
 	}
 
-	[Calls(Type = typeof(NPCAfflictionButton), Member = "SetSelected")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshAll")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshAll")]
-	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshScrollList")]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "GetAllAfflictions")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshScrollList")]
+	[Calls(Type = typeof(Panel_Diagnosis), Member = "RefreshAll")]
+	[Calls(Type = typeof(NPCAfflictionButton), Member = "SetSelected")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void CheckForAfflictionListChange()
 	{
 	}
@@ -1322,67 +1222,62 @@ public class Panel_Diagnosis : Panel_AutoReferenced
 	[CallsUnknownMethods(Count = 3)]
 	private bool AfflictionListHasChanged()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PostTreatment")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "AfflictionListHasChanged")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshScrollList")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "PostTreatment")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "RefreshScrollList")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "CheckForAfflictionListChange")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "AfflictionListHasChanged")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(NPCAffliction), Member = "IsTreated")]
+	[CallsUnknownMethods(Count = 5)]
 	private void GetAllAfflictions(ref List<NPCAffliction> list)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	private float GetColdPercent()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	private float GetConditionPercent()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	private float GetCriticalHP()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	private float GetHP()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "Enable")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsUnknownMethods(Count = 4)]
 	private void EnableOutline(NPC npc)
 	{
 	}

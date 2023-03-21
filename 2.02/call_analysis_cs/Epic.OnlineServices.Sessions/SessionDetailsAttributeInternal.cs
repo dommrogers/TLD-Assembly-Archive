@@ -15,19 +15,20 @@ internal struct SessionDetailsAttributeInternal : ISettable, IDisposable
 
 	public AttributeData Data
 	{
+		[CalledBy(Type = typeof(SessionDetailsAttribute), Member = "Set")]
+		[CalledBy(Type = typeof(SessionDetailsAttribute), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(SessionDetailsAttribute), Member = "Set")]
-		[CalledBy(Type = typeof(SessionDetailsAttribute), Member = "Set")]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(SessionDetailsAttributeInternal), Member = "Set")]
+		[CalledBy(Type = typeof(SessionDetailsAttributeInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[Calls(Type = typeof(AttributeDataInternal), Member = "Set")]
-		[CalledBy(Type = typeof(SessionDetailsAttributeInternal), Member = "Set")]
-		[CalledBy(Type = typeof(SessionDetailsAttributeInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		set
 		{
 		}
@@ -35,8 +36,8 @@ internal struct SessionDetailsAttributeInternal : ISettable, IDisposable
 
 	public SessionAttributeAdvertisementType AdvertisementType
 	{
-		[CallerCount(Count = 7)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return default(SessionAttributeAdvertisementType);
@@ -55,15 +56,15 @@ internal struct SessionDetailsAttributeInternal : ISettable, IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SessionDetailsAttributeInternal), Member = "set_Data")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

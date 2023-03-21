@@ -12,8 +12,8 @@ public class CheckMouseClick2D : ConditionTask<Collider2D>
 
 	protected override string info
 	{
-		[Calls(Type = typeof(Enum), Member = "ToString")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Enum), Member = "ToString")]
 		get
 		{
 			return null;
@@ -24,7 +24,7 @@ public class CheckMouseClick2D : ConditionTask<Collider2D>
 	[CallerCount(Count = 3)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

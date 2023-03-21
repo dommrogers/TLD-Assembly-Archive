@@ -13,8 +13,8 @@ public class AsyncQuotaOp : AsyncOp<AsyncQuotaOp>
 
 	private QuotaRequestDelegate Callback;
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(TitleStorage), Member = "RequestQuotaAsync")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public AsyncQuotaOp(TitleStorage storage, QuotaRequestDelegate callback)
 	{

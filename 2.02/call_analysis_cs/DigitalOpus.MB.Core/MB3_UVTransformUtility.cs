@@ -6,21 +6,12 @@ namespace DigitalOpus.MB.Core;
 
 public class MB3_UVTransformUtility
 {
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Vector2), Member = "ToString")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Vector2), Member = "ToString")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Vector2), Member = "ToString")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Vector2), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void Test()
 	{
 	}
@@ -28,7 +19,7 @@ public class MB3_UVTransformUtility
 	[CallerCount(Count = 0)]
 	public static float TransformX(DRect r, double x)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -49,21 +40,20 @@ public class MB3_UVTransformUtility
 		return default(DRect);
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Convert), Member = "ToInt32")]
-	[Calls(Type = typeof(Convert), Member = "ToInt32")]
 	[CalledBy(Type = typeof(MB_TexSet), Member = "DrawRectsToMergeGizmos")]
 	[CalledBy(Type = typeof(MB3_TextureCombinerMerging), Member = "BuildTransformMeshUV2AtlasRect")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Convert), Member = "ToInt32")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static DRect GetShiftTransformToFitBinA(ref DRect A, ref DRect B)
 	{
 		return default(DRect);
 	}
 
-	[CallerCount(Count = 0)]
+	[CalledBy(Type = typeof(MB3_TextureCombinerMerging), Member = "MergeOverlappingDistinctMaterialTexturesAndCalcMaterialSubrects")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Convert), Member = "ToInt32")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Convert), Member = "ToInt32")]
-	[Calls(Type = typeof(Convert), Member = "ToInt32")]
 	public static DRect GetEncapsulatingRectShifted(ref DRect uvRect1, ref DRect willBeIn)
 	{
 		return default(DRect);
@@ -75,45 +65,42 @@ public class MB3_UVTransformUtility
 		return default(DRect);
 	}
 
-	[Calls(Type = typeof(Convert), Member = "ToInt32")]
-	[Calls(Type = typeof(Convert), Member = "ToInt32")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Convert), Member = "ToInt32")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool RectContainsShifted(ref DRect bucket, ref DRect tryFit)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Convert), Member = "ToInt32")]
-	[Calls(Type = typeof(Convert), Member = "ToInt32")]
 	[CalledBy(Type = typeof(MB2_TextureBakeResults), Member = "IsMeshAndMaterialRectEnclosedByAtlasRect")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Convert), Member = "ToInt32")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool RectContainsShifted(ref Rect bucket, ref Rect tryFit)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(MB2_TextureBakeResults), Member = "IsMeshAndMaterialRectEnclosedByAtlasRect")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Convert), Member = "ToInt32")]
-	[CalledBy(Type = typeof(MB2_TextureBakeResults), Member = "IsMeshAndMaterialRectEnclosedByAtlasRect")]
-	[CalledBy(Type = typeof(MB2_TextureBakeResults), Member = "IsMeshAndMaterialRectEnclosedByAtlasRect")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool LineSegmentContainsShifted(float bucketOffset, float bucketLength, float tryFitOffset, float tryFitLength)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public static bool RectContains(ref DRect bigRect, ref DRect smallToTestIfFits)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public static bool RectContains(ref Rect bigRect, ref Rect smallToTestIfFits)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -129,7 +116,7 @@ public class MB3_UVTransformUtility
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public MB3_UVTransformUtility()
 	{
 	}

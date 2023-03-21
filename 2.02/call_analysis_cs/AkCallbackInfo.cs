@@ -15,7 +15,7 @@ public class AkCallbackInfo : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
@@ -26,7 +26,7 @@ public class AkCallbackInfo : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(ulong);
+			return 0uL;
 		}
 	}
 
@@ -36,11 +36,11 @@ public class AkCallbackInfo : IDisposable
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkCallbackInfo obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -50,31 +50,31 @@ public class AkCallbackInfo : IDisposable
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(AkDynamicSequenceItemCallbackInfo), Member = "Finalize")]
 	[CalledBy(Type = typeof(AkEventCallbackInfo), Member = "Finalize")]
 	[CalledBy(Type = typeof(AkMusicSyncCallbackInfo), Member = "Finalize")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	~AkCallbackInfo()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(AkMusicSyncCallbackInfo), Member = "Dispose")]
-	[CalledBy(Type = typeof(AkEventCallbackInfo), Member = "Dispose")]
 	[CalledBy(Type = typeof(AkDynamicSequenceItemCallbackInfo), Member = "Dispose")]
-	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(AkEventCallbackInfo), Member = "Dispose")]
+	[CalledBy(Type = typeof(AkMusicSyncCallbackInfo), Member = "Dispose")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public AkCallbackInfo()
 	{
 	}

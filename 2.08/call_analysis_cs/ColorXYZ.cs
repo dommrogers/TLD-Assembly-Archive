@@ -24,8 +24,8 @@ internal struct ColorXYZ
 		return default(ColorXYZ);
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	public static implicit operator ColorXYZ(ColorCIELab lab)
 	{
 		return default(ColorXYZ);
@@ -52,16 +52,17 @@ internal struct ColorXYZ
 		return default(ColorXYZ);
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	private static Color ToRGBA(ColorXYZ xyz)
 	{
 		return default(Color);
 	}
 
-	[CallsUnknownMethods(Count = 41)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(float), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 37)]
 	public override string ToString()
 	{
 		return null;

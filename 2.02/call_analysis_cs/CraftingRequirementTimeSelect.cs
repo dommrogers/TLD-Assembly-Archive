@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
@@ -31,32 +30,32 @@ public class CraftingRequirementTimeSelect : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(CraftingRequirementTimeSelect), Member = "Enable")]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "RefreshCraftingTimeDisplay")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CalledBy(Type = typeof(CraftingRequirementTimeSelect), Member = "Enable")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Disable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "RefreshCraftingTimeDisplay")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(CraftingRequirementTimeSelect), Member = "Refresh")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[Calls(Type = typeof(CraftingRequirementTimeSelect), Member = "Disable")]
-	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "RefreshCraftingTimeDisplay")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Enable(int craftingTime, bool offset)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public int GetCraftingTime()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
@@ -65,68 +64,62 @@ public class CraftingRequirementTimeSelect : MonoBehaviour
 	[CallsUnknownMethods(Count = 3)]
 	public bool IsEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool IsSelected()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(CraftingRequirementTimeSelect), Member = "Refresh")]
-	[Calls(Type = typeof(CraftingRequirementTimeSelect), Member = "Refresh")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void OnDecrease()
 	{
 	}
 
-	[Calls(Type = typeof(CraftingRequirementTimeSelect), Member = "Refresh")]
-	[Calls(Type = typeof(CraftingRequirementTimeSelect), Member = "Refresh")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(CraftingRequirementTimeSelect), Member = "Refresh")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void OnIncrease()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "SetHighlightedItem")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void SetSelected(bool selected)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(CraftingRequirementTimeSelect), Member = "OnIncrease")]
-	[CalledBy(Type = typeof(CraftingRequirementTimeSelect), Member = "OnDecrease")]
-	[CalledBy(Type = typeof(CraftingRequirementTimeSelect), Member = "OnDecrease")]
+	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "OnNext")]
+	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "OnPrevious")]
 	[CalledBy(Type = typeof(CraftingRequirementTimeSelect), Member = "Enable")]
-	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "OnPrevious")]
-	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "OnPrevious")]
-	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "OnNext")]
+	[CalledBy(Type = typeof(CraftingRequirementTimeSelect), Member = "OnDecrease")]
 	[CalledBy(Type = typeof(CraftingRequirementTimeSelect), Member = "OnIncrease")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "TrimEnd")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 9)]
-	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "OnNext")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "TrimEnd")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void Refresh()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public CraftingRequirementTimeSelect()
 	{

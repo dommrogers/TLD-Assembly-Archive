@@ -25,18 +25,18 @@ public class RenderTextureCameraManager : MonoBehaviour
 			[CompilerGenerated]
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[Calls(Type = typeof(Delegate), Member = "Combine")]
+			[CallsDeduplicatedMethods(Count = 1)]
 			[CallsUnknownMethods(Count = 1)]
 			add
 			{
 			}
-			[CallsUnknownMethods(Count = 1)]
+			[CompilerGenerated]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			[Calls(Type = typeof(Delegate), Member = "Remove")]
 			[CallsDeduplicatedMethods(Count = 1)]
-			[DeduplicatedMethod]
-			[CompilerGenerated]
-			[CallerCount(Count = 0)]
+			[CallsUnknownMethods(Count = 1)]
 			remove
 			{
 			}
@@ -59,7 +59,7 @@ public class RenderTextureCameraManager : MonoBehaviour
 		[CallerCount(Count = 0)]
 		public bool IsDirty()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
@@ -68,10 +68,10 @@ public class RenderTextureCameraManager : MonoBehaviour
 		{
 		}
 
-		[Calls(Type = typeof(RenderTextureManagedCamera), Member = "MaybeUpdateUICamera")]
-		[CallsUnknownMethods(Count = 4)]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(RenderTextureManagedCamera), Member = "MaybeUpdateUICamera")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 4)]
 		public void Update(int index, float displayOffset)
 		{
 		}
@@ -84,27 +84,27 @@ public class RenderTextureCameraManager : MonoBehaviour
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		public void RegisterOnRenderCompletedAction(Action action)
 		{
 		}
 
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		public void UnRegisterOnRenderCompletedAction(Action action)
 		{
 		}
 
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 6)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[CalledBy(Type = typeof(RenderTextureCameraManager), Member = "LateUpdate")]
 		[CalledBy(Type = typeof(RenderTextureManagedCamera), Member = "Update")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[CallsDeduplicatedMethods(Count = 6)]
 		[CallsUnknownMethods(Count = 10)]
 		private void MaybeUpdateUICamera(int index, float displayOffset)
 		{
@@ -118,85 +118,87 @@ public class RenderTextureCameraManager : MonoBehaviour
 	private bool m_HasShownRenderWarning;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Deactivate(RenderTextureManagedCamera renderTextureManagedCamera)
 	{
 	}
 
 	[CalledBy(Type = typeof(RenderTextureCameraManager), Member = "Render")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Render(RenderTextureManagedCamera renderTextureManagedCamera)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(RenderTextureManagedCamera), Member = "MaybeUpdateUICamera")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 9)]
 	public void LateUpdate()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(RenderTextureCameraManager), Member = "Render")]
 	[CalledBy(Type = typeof(CameraGlobalRT), Member = "OnPreRender")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(RenderTextureCameraManager), Member = "Render")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 6)]
 	public void Render()
 	{
 	}
 
-	[CalledBy(Type = typeof(RenderTextureGrabber), Member = "CreateRenderTexture")]
 	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "InitializeDisplayInterface")]
-	[CallsUnknownMethods(Count = 12)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(RenderTextureGrabber), Member = "CreateRenderTexture")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 12)]
 	public void RegisterCamera(Camera camera, GameObject displayInterface)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(RenderTextureCameraManager), Member = "GetRenderTextureManagedCamera")]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void RegisterOnRenderCompletedAction(Camera camera, GameObject displayInterface, Action onRenderCompletedAction)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[Calls(Type = typeof(RenderTextureCameraManager), Member = "GetRenderTextureManagedCamera")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(RenderTextureCameraManager), Member = "GetRenderTextureManagedCamera")]
+	[Calls(Type = typeof(Delegate), Member = "Remove")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void UnRegisterOnRenderCompletedAction(Camera camera, GameObject displayInterface, Action onRenderCompletedAction)
 	{
 	}
 
-	[CalledBy(Type = typeof(RenderTextureCameraManager), Member = "UnRegisterOnRenderCompletedAction")]
-	[CalledBy(Type = typeof(RenderTextureGrabber), Member = "OnDestroy")]
-	[CalledBy(Type = typeof(RenderTextureGrabber), Member = "SetDirty")]
-	[CalledBy(Type = typeof(RenderTextureGrabber), Member = "CreateRenderTexture")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(RenderTextureCameraManager), Member = "UnregisterCamera")]
-	[CalledBy(Type = typeof(RenderTextureCameraManager), Member = "SetDirty")]
-	[CalledBy(Type = typeof(RenderTextureCameraManager), Member = "RegisterOnRenderCompletedAction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "RefreshLocalization")]
-	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "OnTextScrolled")]
-	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "SetDisplayActive")]
 	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "InitializeDisplayInterface")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 12)]
+	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "SetDisplayActive")]
+	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "OnTextScrolled")]
+	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "RefreshLocalization")]
 	[CalledBy(Type = typeof(DialogueSequenceFP), Member = "Update")]
+	[CalledBy(Type = typeof(RenderTextureCameraManager), Member = "RegisterOnRenderCompletedAction")]
+	[CalledBy(Type = typeof(RenderTextureCameraManager), Member = "UnRegisterOnRenderCompletedAction")]
+	[CalledBy(Type = typeof(RenderTextureCameraManager), Member = "SetDirty")]
+	[CalledBy(Type = typeof(RenderTextureCameraManager), Member = "UnregisterCamera")]
+	[CalledBy(Type = typeof(RenderTextureGrabber), Member = "CreateRenderTexture")]
+	[CalledBy(Type = typeof(RenderTextureGrabber), Member = "SetDirty")]
+	[CalledBy(Type = typeof(RenderTextureGrabber), Member = "OnDestroy")]
+	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private RenderTextureManagedCamera GetRenderTextureManagedCamera(Camera camera, GameObject displayInterface)
 	{
 		return null;
@@ -208,19 +210,21 @@ public class RenderTextureCameraManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(RenderTextureGrabber), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(AuroraScreenDisplay), Member = "OnDestroy")]
-	[Calls(Type = typeof(RenderTextureCameraManager), Member = "GetRenderTextureManagedCamera")]
+	[CalledBy(Type = typeof(RenderTextureGrabber), Member = "OnDestroy")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(RenderTextureCameraManager), Member = "GetRenderTextureManagedCamera")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void UnregisterCamera(Camera camera, GameObject displayInterface)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public RenderTextureCameraManager()
 	{

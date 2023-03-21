@@ -12,9 +12,9 @@ public sealed class Vector4Parameter : ParameterOverride<Vector4>
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static implicit operator Vector2(Vector4Parameter prop)
 	{
 		return default(Vector2);
@@ -32,21 +32,15 @@ public sealed class Vector4Parameter : ParameterOverride<Vector4>
 	[CallsDeduplicatedMethods(Count = 1)]
 	public override bool Equals(Vector4 a, Vector4 b)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
 	[CalledBy(Type = typeof(ColorGradingSettings), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGradingSettings), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGradingSettings), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 9)]
 	[CalledBy(Type = typeof(SuffocationScreenEffect), Member = ".ctor")]
+	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
+	[CallerCount(Count = 9)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public Vector4Parameter()
 	{
 		((ParameterOverride<>)(object)this)._002Ector();

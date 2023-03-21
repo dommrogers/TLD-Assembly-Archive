@@ -172,128 +172,128 @@ public class AnimatedInteraction : MonoBehaviour
 
 	private Vector3 m_SyncNodeOriginalPosition;
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetFPAnchorBindingInfo")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetFPAnchorBindingInfo")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Awake()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CanEnable")]
 	[CallsUnknownMethods(Count = 1)]
 	public bool CheckCompletionActionPossible()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Action_StartAnimatedInteraction), Member = "DoWork")]
-	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "OnValveActivateInteraction")]
-	[CalledBy(Type = typeof(LoadScene), Member = "PerformHold")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ExitInterface")]
-	[CalledBy(Type = typeof(Phone), Member = "OnPhoneHangup")]
-	[CalledBy(Type = typeof(Phone), Member = "OnPhonePickup")]
-	[CalledBy(Type = typeof(LockedInteraction), Member = "PerformLockInteraction")]
 	[CalledBy(Type = typeof(NPCAfflictions), Member = "StartDiagnosing")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "DoInteraction")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouch")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "TryPerformInteraction")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "CanInteract")]
-	[CallerCount(Count = 9)]
 	[CalledBy(Type = typeof(NPCAfflictions), Member = "EndDiagnosing")]
+	[CalledBy(Type = typeof(LockedInteraction), Member = "PerformLockInteraction")]
+	[CalledBy(Type = typeof(Phone), Member = "OnPhonePickup")]
+	[CalledBy(Type = typeof(Phone), Member = "OnPhoneHangup")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "ExitInterface")]
+	[CalledBy(Type = typeof(LoadScene), Member = "PerformHold")]
+	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "OnValveActivateInteraction")]
+	[CalledBy(Type = typeof(Action_StartAnimatedInteraction), Member = "DoWork")]
+	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "CanInteract")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "TryPerformInteraction")]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouch")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "DoInteraction")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool StartAnimatedInteraction(Action onAnimationCompleted, bool forceInteraction, bool shouldStowItemInHands, Action onAnimationInterrupted = null)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AnimatedInteraction), Member = "CanInteract")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void UpdateInteraction(BaseInteraction baseInteraction)
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "UpdateInteraction")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
 	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 	[Calls(Type = typeof(Transform), Member = "get_right")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "UpdateInteraction")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private bool CanInteract()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(AnimatedInteraction), Member = "TryPerformInteraction")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "TryPerformInteraction")]
 	public void PerformInteraction()
 	{
 	}
 
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "PerformInteraction")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "DoInteraction")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouch")]
-	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CanEnable")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouch")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_BodyHarvest), Member = "CanEnable")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "DoInteraction")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private bool TryPerformInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "TryPerformInteraction")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "OnPlayInteractAnimation")]
-	[Calls(Type = typeof(PlayerManager), Member = "AutoUnequipItemInHandsBeforeInteraction")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "TryPerformInteraction")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "AutoUnequipItemInHandsBeforeInteraction")]
 	[Calls(Type = typeof(TimelinePlayback), Member = "AttemptToStowPlayerItemInHand")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "OnPlayInteractAnimation")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void DoInteraction(bool shouldStowItemInHands)
 	{
 	}
 
-	[Calls(Type = typeof(AnimatedInteraction), Member = "OnPlayInteractAnimation")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeSetCameraFov")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeTriggerAnimation")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeBlendToSyncBone")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeBlendToSyncBone")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeSetCameraFov")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "UpdateTransitionOut")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "UpdateTransitionOut")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeSetCameraFov")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeBlendToSyncBone")]
 	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeResumeFov")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "OnPlayInteractAnimation")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeTriggerAnimation")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
@@ -307,24 +307,23 @@ public class AnimatedInteraction : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AnimatedInteraction), Member = "OnPlayInteractAnimation")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void UpdateStowItemInHand()
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(vp_FPSController), Member = "Stop")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
+	[Calls(Type = typeof(vp_FPSController), Member = "Stop")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenDropCurrent")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private bool MaybeStowItemInHand()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -332,30 +331,30 @@ public class AnimatedInteraction : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "UpdateStowItemInHand")]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "UpdateDequipping")]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "Update")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoInteraction")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeTriggerAnimation")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeSpawnProp")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeMoveSyncBoneToRadius")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapSprings")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(Condition), Member = "ResetLowHealthPitchAndRoll")]
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "Update")]
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "UpdateDequipping")]
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "UpdateStowItemInHand")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Condition), Member = "ResetLowHealthPitchAndRoll")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapSprings")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeMoveSyncBoneToRadius")]
 	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybePopToSync")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeSpawnProp")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeTriggerAnimation")]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnPlayInteractAnimation()
 	{
 	}
 
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "OnPlayInteractAnimation")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	private void MaybeMoveSyncBoneToRadius()
 	{
 	}
@@ -385,135 +384,118 @@ public class AnimatedInteraction : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Physics), Member = "get_autoSyncTransforms")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-	[Calls(Type = typeof(Physics), Member = "SyncTransforms")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "OnPlayInteractAnimation")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeSetCameraFov")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(Camera), Member = "get_fieldOfView")]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeSetCameraFov")]
+	[Calls(Type = typeof(Physics), Member = "get_autoSyncTransforms")]
+	[Calls(Type = typeof(Physics), Member = "SyncTransforms")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 10)]
 	private void MaybePopToSync()
 	{
 	}
 
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeSetCameraFov")]
 	[Calls(Type = typeof(AnimatedInteraction), Member = "DoOnInteractionComplete")]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void UpdateTransitionOut()
 	{
 	}
 
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "UpdateTransitionOut")]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "Update")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "MaybePopToSync")]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "Update")]
-	[Calls(Type = typeof(Camera), Member = "set_fieldOfView")]
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "UpdateTransitionOut")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "Update")]
+	[Calls(Type = typeof(Camera), Member = "set_fieldOfView")]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaybeSetCameraFov()
 	{
 	}
 
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "Update")]
 	[CallsUnknownMethods(Count = 1)]
 	private void MaybeResumeFov()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "Update")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "Update")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Physics), Member = "SyncTransforms")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
-	[Calls(Type = typeof(Physics), Member = "get_autoSyncTransforms")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Mathf), Member = "SmoothStep")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "set_Angle")]
+	[Calls(Type = typeof(Physics), Member = "get_autoSyncTransforms")]
+	[Calls(Type = typeof(Physics), Member = "SyncTransforms")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "UpdateCameraRotation")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 8)]
 	private void MaybeBlendToSyncBone()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "OnPlayInteractAnimation")]
-	[Calls(Type = typeof(Utils), Member = "SetObjectAndChildrenLayer")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(Utils), Member = "SetObjectAndChildrenLayer")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	private void MaybeSpawnProp()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "Play")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "OnInteractionComplete")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AssetReferenceTimeline), Member = "get_IsLoaded")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AssetReferenceTimeline), Member = "get_IsLoaded")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "OnInteractionComplete")]
+	[Calls(Type = typeof(TLD_TimelineDirector), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnTimelineLoaded(AssetReferenceTimeline result)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "OnInteractionComplete")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "InterruptAnyInProgressAnimations")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "OnInteractionComplete")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Interrupt()
 	{
 	}
 
-	[Calls(Type = typeof(AnimatedInteraction), Member = "OnInteractionComplete")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "OnInteractionComplete")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void StopTimeline()
 	{
 	}
 
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "Update")]
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "OnPlayInteractAnimation")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(CinematicManager), Member = "StartMasterFP")]
 	[Calls(Type = typeof(AnimatedInteraction), Member = "DoTriggerAnimation")]
 	[Calls(Type = typeof(AssetReferenceTimeline), Member = "LoadTimeline")]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "Update")]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "OnPlayInteractAnimation")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	private void MaybeTriggerAnimation()
 	{
@@ -525,48 +507,40 @@ public class AnimatedInteraction : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(AnimatedInteraction), Member = "GetAnimator")]
-	[Calls(Type = typeof(Animator), Member = "StringToHash")]
-	[Calls(Type = typeof(AnimationUtils), Member = "HasParameter")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "MaybeTriggerAnimation")]
-	[Calls(Type = typeof(AnimationUtils), Member = "HasParameter")]
-	[Calls(Type = typeof(Animator), Member = "StringToHash")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "GetAnimator")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_AnimatedInteraction")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_AnimatedInteraction")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "GetAnimator")]
+	[Calls(Type = typeof(Animator), Member = "StringToHash")]
+	[Calls(Type = typeof(AnimationUtils), Member = "HasParameter")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DoTriggerAnimation()
 	{
 	}
 
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoTriggerAnimation")]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoTriggerAnimation")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
 	public Animator GetAnimator(GameObject parent)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoOnInteractionComplete")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[Calls(Type = typeof(Utils), Member = "SetObjectAndChildrenLayer")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "SetObjectAndChildrenLayer")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void MaybeAddSpawnedPropToInventory()
 	{
 	}
@@ -574,65 +548,64 @@ public class AnimatedInteraction : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private float GetFovTransitionDuration()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "StopTimeline")]
+	[CallAnalysisFailed]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "OnTimelineLoaded")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "Interrupt")]
-	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "StopTimeline")]
 	[CallerCount(Count = 3)]
 	private void OnInteractionComplete()
 	{
 	}
 
-	[Calls(Type = typeof(BodyHarvest), Member = "InteractWithBodyHarvest")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "UpdateTransitionOut")]
-	[Calls(Type = typeof(PlayerManager), Member = "EquipLastItemInHands")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "AutoEquipItemInHandsAfterInteraction")]
-	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
-	[Calls(Type = typeof(CameraEffects), Member = "BlurSetSize")]
-	[Calls(Type = typeof(Fatigue), Member = "AddFatigue")]
-	[Calls(Type = typeof(PlayerMovement), Member = "AddSprintStamina")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeAddSpawnedPropToInventory")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "StopNearPlaneOverride")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapSprings")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapSprings")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "StopNearPlaneOverride")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "MaybeAddSpawnedPropToInventory")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerMovement), Member = "AddSprintStamina")]
+	[Calls(Type = typeof(Fatigue), Member = "AddFatigue")]
+	[Calls(Type = typeof(BodyHarvest), Member = "InteractWithBodyHarvest")]
+	[Calls(Type = typeof(CameraEffects), Member = "BlurSetSize")]
+	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
+	[Calls(Type = typeof(PlayerManager), Member = "AutoEquipItemInHandsAfterInteraction")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "EquipLastItemInHands")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 15)]
 	private void DoOnInteractionComplete()
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectWithConstraints")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool RespectContrainsts()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(BodyHarvest), Member = "InteractWithBodyHarvest")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void MaybePerformCompletionAction()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(BodyHarvest), Member = "InteractWithBodyHarvest")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BodyHarvest), Member = "InteractWithBodyHarvest")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DoBodyHarvest()
 	{
 	}
@@ -647,7 +620,7 @@ public class AnimatedInteraction : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public static bool IsFovControlled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -655,77 +628,81 @@ public class AnimatedInteraction : MonoBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static void Reset()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "Stop")]
-	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "Play")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeFadeoutHipShoulder")]
+	[CalledBy(Type = typeof(CameraStatusEffects), Member = "Update")]
+	[CalledBy(Type = typeof(GearItem), Member = "PerformInteraction")]
+	[CalledBy(Type = typeof(Bed), Member = "ShouldPerformBedInteraction")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "CanChangeFovOption")]
+	[CalledBy(Type = typeof(GameManager), Member = "AllowedToSave")]
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessInput")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerIsInvisibleToAi")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "CanChangeFovOption")]
-	[CalledBy(Type = typeof(Bed), Member = "ShouldPerformBedInteraction")]
-	[CalledBy(Type = typeof(GearItem), Member = "PerformInteraction")]
-	[CalledBy(Type = typeof(CameraStatusEffects), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "MaybeFadeoutHipShoulder")]
+	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "Play")]
+	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "Stop")]
 	[CallerCount(Count = 11)]
-	[CalledBy(Type = typeof(GameManager), Member = "AllowedToSave")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 3)]
 	public static bool InProgress()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerIsInvisibleToAi")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public static bool IsPlayingNonInterruptableAnimation()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "Begin")]
 	[CalledBy(Type = typeof(IceCrackingTrigger), Member = "DidFallThroughIceFadeOut")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(AnimatedInteraction), Member = "Interrupt")]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static bool InterruptAnyInProgressAnimations()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 4)]
 	public static void DeserializeAll(string serialized)
 	{
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(ObjectGuid), Member = "MaybeGetGuidFromGameObject")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[CallsUnknownMethods(Count = 8)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static string SerializeAll()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public AnimatedInteraction()
 	{
 	}

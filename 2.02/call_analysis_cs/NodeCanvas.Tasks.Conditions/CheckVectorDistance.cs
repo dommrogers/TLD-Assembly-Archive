@@ -17,11 +17,11 @@ public class CheckVectorDistance : ConditionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 17)]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
 		[Calls(Type = typeof(string), Member = "Format")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 17)]
 		get
 		{
 			return null;
@@ -29,13 +29,14 @@ public class CheckVectorDistance : ConditionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Vector3), Member = "Distance")]
 	[Calls(Type = typeof(OperationTools), Member = "Compare")]
-	[CallsUnknownMethods(Count = 6)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

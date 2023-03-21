@@ -25,8 +25,8 @@ public class ActionNode : BTNode, ITaskAssignable<ActionTask>, ITaskAssignable
 
 	public ActionTask action
 	{
-		[CallerCount(Count = 7)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return null;
@@ -58,8 +58,8 @@ public class ActionNode : BTNode, ITaskAssignable<ActionTask>, ITaskAssignable
 		return default(Status);
 	}
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	protected override void OnReset()
 	{
 	}

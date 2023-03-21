@@ -4,6 +4,7 @@ using Cpp2ILInjected.CallAnalysis;
 using TLD.PDID;
 using TLD.Serialization;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class RadialSpawnManager : MonoBehaviour
 {
@@ -34,7 +35,6 @@ public class RadialSpawnManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(RadialSpawnManager), Member = "InitObjectPools")]
 	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
-	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
 	public void Start()
 	{
 	}
@@ -45,237 +45,245 @@ public class RadialSpawnManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(RadialObjectSpawner), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(RadialSpawnManager), Member = "ProcessActiveRadialSpawnObjects")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(RadialObjectSpawner), Member = "OnDestroy")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void Unregister(RadialObjectSpawner ros)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(RadialObjectSpawner), Member = "SpawnAttemptAllNoVisChecks")]
-	[Calls(Type = typeof(RadialObjectSpawner), Member = "ShouldAttemptSpawning")]
-	[Calls(Type = typeof(RadialSpawnManager), Member = "MaybeAllocateForObjectPool")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(RadialSpawnManager), Member = "ProcessActiveRadialSpawnObjects")]
-	[Calls(Type = typeof(RadialSpawnManager), Member = "UpdateRadialSpawnObjectsActiveList")]
-	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SceneManager), Member = "GetInstance")]
+	[Calls(Type = typeof(RadialSpawnManager), Member = "UpdateRadialSpawnObjectsActiveList")]
+	[Calls(Type = typeof(RadialSpawnManager), Member = "ProcessActiveRadialSpawnObjects")]
 	[Calls(Type = typeof(RadialObjectSpawner), Member = "CanPotentiallySpawn")]
+	[Calls(Type = typeof(RadialSpawnManager), Member = "MaybeAllocateForObjectPool")]
+	[Calls(Type = typeof(RadialObjectSpawner), Member = "ShouldAttemptSpawning")]
+	[Calls(Type = typeof(RadialObjectSpawner), Member = "SpawnAttemptAllNoVisChecks")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(RadialObjectSpawner), Member = "Serialize")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 8)]
 	public string SerializeAll()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[Calls(Type = typeof(RadialObjectSpawner), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(RadialSpawnManager), Member = "FindRadialObjectSpawnerByPosition")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(RadialSpawnManager), Member = "InitObjectPools")]
 	[Calls(Type = typeof(uConsole), Member = "RunCommandSilent")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(RadialSpawnManager), Member = "FindRadialObjectSpawnerByGuid")]
+	[Calls(Type = typeof(RadialSpawnManager), Member = "FindRadialObjectSpawnerByPosition")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(RadialObjectSpawner), Member = "Deserialize")]
+	[CallsUnknownMethods(Count = 2)]
 	public void DeserializeAll(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(RadialSpawnManager), Member = "DoFirstUpdateForAllRadialSpawnObjects")]
 	[CalledBy(Type = typeof(RadialSpawnManager), Member = "Update")]
-	[Calls(Type = typeof(RadialSpawnManager), Member = "InstantiateForObjectPool")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(RadialSpawnManager), Member = "DoFirstUpdateForAllRadialSpawnObjects")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(RadialSpawnManager), Member = "InstantiateForObjectPool")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void MaybeAllocateForObjectPool(GameObject prefab)
 	{
 	}
 
+	[CalledBy(Type = typeof(RadialSpawnManager), Member = "DeserializeAll")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(RadialSpawnManager), Member = "DeserializeAll")]
 	[CallsUnknownMethods(Count = 4)]
 	private RadialObjectSpawner FindRadialObjectSpawnerByPosition(RadialObjectSpawnerSaveData proxy, RadialObjectSpawner[] spawners)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
 	[CalledBy(Type = typeof(RadialSpawnManager), Member = "DeserializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PdidTable), Member = "GetGameObject")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[CallsUnknownMethods(Count = 1)]
 	private RadialObjectSpawner FindRadialObjectSpawnerByGuid(string guid)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(RadialObjectSpawner), Member = "SpawnAttemptAllNoVisChecks")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(RadialSpawnManager), Member = "MaybeAllocateForObjectPool")]
 	[Calls(Type = typeof(RadialObjectSpawner), Member = "CanPotentiallySpawn")]
+	[Calls(Type = typeof(RadialSpawnManager), Member = "MaybeAllocateForObjectPool")]
 	[Calls(Type = typeof(RadialObjectSpawner), Member = "ShouldAttemptSpawning")]
+	[Calls(Type = typeof(RadialObjectSpawner), Member = "SpawnAttemptAllNoVisChecks")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	private void DoFirstUpdateForAllRadialSpawnObjects()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(RadialSpawnManager), Member = "Update")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(RadialObjectSpawner), Member = "ShouldDisable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(RadialObjectSpawner), Member = "ShouldDisable")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(RadialObjectSpawner), Member = "ShouldDisable")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[Calls(Type = typeof(RadialObjectSpawner), Member = "ReleaseSpawnedObjectsToPool")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateRadialSpawnObjectsActiveList()
 	{
 	}
 
+	[CalledBy(Type = typeof(RadialSpawnManager), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(RadialObjectSpawner), Member = "ShouldAttemptSpawning")]
 	[Calls(Type = typeof(RadialObjectSpawner), Member = "SpawnObjectAttempt")]
 	[Calls(Type = typeof(RadialSpawnManager), Member = "Unregister")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(RadialSpawnManager), Member = "Update")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 5)]
 	private void ProcessActiveRadialSpawnObjects()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void ResetRadialSpawnerList()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(RadialSpawnManager), Member = "Start")]
 	[CalledBy(Type = typeof(RadialSpawnManager), Member = "DeserializeAll")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Addressables), Member = "Release")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void InitObjectPools()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 9)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(RadialSpawnManager), Member = "InstantiateForObjectPool")]
-	[Calls(Type = typeof(RadialSpawnManager), Member = "InstantiateForObjectPool")]
 	[CalledBy(Type = typeof(RadialObjectSpawner), Member = "SpawnPending")]
 	[CalledBy(Type = typeof(RadialObjectSpawner), Member = "SpawnAtPosition")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(RadialSpawnManager), Member = "InstantiateForObjectPool")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(Stack<>), Member = "Pop")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 6)]
 	public static GameObject TakeFromObjectPool(string prefabName)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[CalledBy(Type = typeof(RadialObjectSpawner), Member = "ReleaseSpawnedObjectsToPool")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(BreakDown), Member = "DoBreakDown")]
+	[CalledBy(Type = typeof(RadialObjectSpawner), Member = "ReleaseSpawnedObjectsToPool")]
 	[CalledBy(Type = typeof(GearManager), Member = "DestroyGearObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(RadialSpawnManager), Member = "AddToPools")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool ReturnToObjectPool(GameObject go)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(RadialSpawnManager), Member = "MaybeAllocateForObjectPool")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedGearItem")]
-	[Calls(Type = typeof(RadialSpawnManager), Member = "AddToPools")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
+	[CalledBy(Type = typeof(RadialSpawnManager), Member = "MaybeAllocateForObjectPool")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(RadialSpawnManager), Member = "AddToPools")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void InstantiateForObjectPool(GameObject prefab, int numToInstantiate)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(RadialSpawnManager), Member = "TakeFromObjectPool")]
-	[Calls(Type = typeof(RadialSpawnManager), Member = "AddToPools")]
-	[CalledBy(Type = typeof(RadialSpawnManager), Member = "TakeFromObjectPool")]
-	[Calls(Type = typeof(RadialSpawnManager), Member = "InstantiateFromPrefabName")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(RadialSpawnManager), Member = "InstantiateFromPrefabName")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(RadialSpawnManager), Member = "AddToPools")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	private static void InstantiateForObjectPool(string prefabName, int count)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private static int GetCountInObjectPool(string prefabName)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallsUnknownMethods(Count = 1)]
 	private static GameObject InstantiateFromPrefab(GameObject prefab)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(RadialSpawnManager), Member = "InstantiateForObjectPool")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Resources), Member = "Load")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private static GameObject InstantiateFromPrefabName(string name)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(RadialSpawnManager), Member = "InstantiateForObjectPool")]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CalledBy(Type = typeof(RadialSpawnManager), Member = "ReturnToObjectPool")]
 	[CalledBy(Type = typeof(RadialSpawnManager), Member = "InstantiateForObjectPool")]
-	[CallsUnknownMethods(Count = 8)]
+	[CalledBy(Type = typeof(RadialSpawnManager), Member = "InstantiateForObjectPool")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(Stack<>), Member = "Push")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private static void AddToPools(GameObject go)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public RadialSpawnManager()
 	{
 	}

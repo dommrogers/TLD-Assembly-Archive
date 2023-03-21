@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
 using UnityEngine;
@@ -97,11 +96,11 @@ public class vp_FPSController : vp_Component
 
 	public float FallImpact
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -110,7 +109,7 @@ public class vp_FPSController : vp_Component
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -128,7 +127,7 @@ public class vp_FPSController : vp_Component
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -142,122 +141,94 @@ public class vp_FPSController : vp_Component
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(vp_Component), Member = "Awake")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	protected override void Awake()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	protected override void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 11)]
 	private void DoPlayerStrafing(Vector3 moveDirection, Vector3 prevPos)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerMovement), Member = "MovedDistance")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(CharacterController), Member = "get_velocity")]
-	[Calls(Type = typeof(CharacterController), Member = "get_velocity")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(vp_FPSController), Member = "ShouldFreezeMovement")]
-	[Calls(Type = typeof(CharacterController), Member = "get_isGrounded")]
-	[Calls(Type = typeof(CharacterController), Member = "get_isGrounded")]
-	[Calls(Type = typeof(vp_FPSController), Member = "AbsorbForce")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(vp_FPSController), Member = "AbsorbHorisontalForce")]
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
-	[Calls(Type = typeof(vp_FPSController), Member = "AbsorbForce")]
-	[Calls(Type = typeof(CharacterController), Member = "get_height")]
-	[Calls(Type = typeof(CharacterController), Member = "set_height")]
-	[Calls(Type = typeof(CharacterController), Member = "get_height")]
-	[Calls(Type = typeof(CharacterController), Member = "set_height")]
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
-	[Calls(Type = typeof(GameManager), Member = "AreControlsLockedForIntro")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 14)]
-	[Calls(Type = typeof(CharacterController), Member = "get_isGrounded")]
+	[Calls(Type = typeof(GameManager), Member = "AreControlsLockedForIntro")]
 	[Calls(Type = typeof(GameManager), Member = "ControlsLocked")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(InterfaceManager), Member = "IsMainMenuEnabled")]
 	[Calls(Type = typeof(GameManager), Member = "IsMovementLockedBecauseOfLantern")]
+	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
 	[Calls(Type = typeof(Collider), Member = "get_enabled")]
 	[Calls(Type = typeof(vp_FPSController), Member = "UpdateMoves")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
 	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
 	[Calls(Type = typeof(CharacterController), Member = "get_isGrounded")]
-	[Calls(Type = typeof(CharacterController), Member = "get_isGrounded")]
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
-	[Calls(Type = typeof(CharacterController), Member = "get_isGrounded")]
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
-	[Calls(Type = typeof(CharacterController), Member = "get_isGrounded")]
+	[Calls(Type = typeof(Transform), Member = "get_localPosition")]
+	[Calls(Type = typeof(vp_FPSController), Member = "ShouldFreezeMovement")]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(CharacterController), Member = "get_velocity")]
+	[Calls(Type = typeof(PlayerMovement), Member = "MovedDistance")]
+	[Calls(Type = typeof(vp_FPSController), Member = "AbsorbHorisontalForce")]
+	[Calls(Type = typeof(vp_FPSController), Member = "AbsorbForce")]
+	[Calls(Type = typeof(CharacterController), Member = "get_height")]
+	[Calls(Type = typeof(CharacterController), Member = "set_height")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 26)]
 	protected override void Update()
 	{
 	}
 
+	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "EnableCrouchImmediate")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(CharacterController), Member = "set_height")]
 	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "EnableCrouchImmediate")]
-	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "EnableCrouchImmediate")]
-	[Calls(Type = typeof(CharacterController), Member = "set_height")]
-	[Calls(Type = typeof(CharacterController), Member = "set_height")]
-	[CallerCount(Count = 2)]
 	public void SetCompactImmmediate(bool isCompact)
 	{
 	}
 
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
-	[Calls(Type = typeof(vp_FPSController), Member = "GetSlopeMultiplier")]
-	[Calls(Type = typeof(PlayerMovement), Member = "GetBodyCarryMovementMultiplier")]
-	[Calls(Type = typeof(PlayerMovement), Member = "GetSnowDepthMovementMultiplier")]
-	[Calls(Type = typeof(PlayerMovement), Member = "GetWindMovementMultiplier")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(Encumber), Member = "GetEncumbranceSlowdownMultiplier")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Vector2), Member = "get_normalized")]
-	[CallsUnknownMethods(Count = 16)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(vp_FPSController), Member = "Update")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Vector2), Member = "get_normalized")]
+	[Calls(Type = typeof(vp_FPSController), Member = "GetSlopeMultiplier")]
+	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
+	[Calls(Type = typeof(Encumber), Member = "GetEncumbranceSlowdownMultiplier")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(PlayerMovement), Member = "GetWindMovementMultiplier")]
+	[Calls(Type = typeof(PlayerMovement), Member = "GetSnowDepthMovementMultiplier")]
+	[Calls(Type = typeof(PlayerMovement), Member = "GetBodyCarryMovementMultiplier")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 16)]
 	protected void UpdateMoves()
 	{
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CalledBy(Type = typeof(vp_FPSController), Member = "UpdateMoves")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 4)]
 	protected float GetSlopeMultiplier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -271,64 +242,48 @@ public class vp_FPSController : vp_Component
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool Jump()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(Transform), Member = "get_up")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(CapsuleCollider), Member = "get_direction")]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CapsuleCollider), Member = "get_direction")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Transform), Member = "get_up")]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Rigidbody), Member = "get_mass")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 10)]
 	protected void OnControllerColliderHit(ControllerColliderHit hit)
 	{
 	}
 
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
-	[Calls(Type = typeof(vp_FPSController), Member = "AbsorbForce")]
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
-	[Calls(Type = typeof(vp_FPSController), Member = "AbsorbForce")]
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
-	[Calls(Type = typeof(vp_FPSController), Member = "AbsorbForce")]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(vp_FPSController), Member = "Update")]
-	[Calls(Type = typeof(vp_FPSController), Member = "AbsorbForce")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
+	[Calls(Type = typeof(vp_FPSController), Member = "AbsorbForce")]
 	protected void AbsorbHorisontalForce(Vector3 impact)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
-	[Calls(Type = typeof(vp_FPSController), Member = "AbsorbForce")]
-	[Calls(Type = typeof(vp_Component), Member = "get_Delta")]
 	[Calls(Type = typeof(vp_FPSController), Member = "AbsorbForce")]
 	protected void AbsorbUpForce(float impact)
 	{
 	}
 
-	[CalledBy(Type = typeof(vp_FPSController), Member = "AbsorbHorisontalForce")]
 	[CalledBy(Type = typeof(vp_FPSController), Member = "Update")]
 	[CalledBy(Type = typeof(vp_FPSController), Member = "AbsorbHorisontalForce")]
-	[CalledBy(Type = typeof(vp_FPSController), Member = "AbsorbHorisontalForce")]
-	[CalledBy(Type = typeof(vp_FPSController), Member = "AbsorbHorisontalForce")]
-	[CalledBy(Type = typeof(vp_FPSController), Member = "AbsorbUpForce")]
 	[CalledBy(Type = typeof(vp_FPSController), Member = "AbsorbUpForce")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(vp_FPSController), Member = "Update")]
 	private float AbsorbForce(float current, float toAbsorb)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -351,39 +306,39 @@ public class vp_FPSController : vp_Component
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void Move(Vector2 input)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void SetPosition(Vector3 position)
 	{
 	}
 
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateStart")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateIdle")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "MaybeStowItemInHand")]
+	[CalledBy(Type = typeof(CustomCameraPosition), Member = "PerformInteraction")]
 	[CalledBy(Type = typeof(TimelinePlayback), Member = "AttemptToStowPlayerItemInHand")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "Enable")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "GroundCharacterInternal")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "PrepareStruggle")]
 	[CalledBy(Type = typeof(TLD_CameraAnimationTrack), Member = "Play")]
 	[CalledBy(Type = typeof(Action_LookAtTargetForTime), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(CustomCameraPosition), Member = "PerformInteraction")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateIdle")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateStart")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 10)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Stop()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void TryGroundingCharacterController()
 	{
 	}
@@ -393,18 +348,18 @@ public class vp_FPSController : vp_Component
 	{
 	}
 
+	[CalledBy(Type = typeof(vp_FPSController), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CameraFade), Member = "IsFadingOut")]
 	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
-	[CalledBy(Type = typeof(vp_FPSController), Member = "Update")]
 	[CallsUnknownMethods(Count = 6)]
 	private bool ShouldFreezeMovement()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	private Vector3 AdjustMovementForCapsule(Vector3 moveDirection)
 	{
 		return default(Vector3);
@@ -414,20 +369,20 @@ public class vp_FPSController : vp_Component
 	[CallerCount(Count = 0)]
 	private bool CanDoStrafing()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool IsUsingSplitSteps()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetEffectiveMovePercent()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

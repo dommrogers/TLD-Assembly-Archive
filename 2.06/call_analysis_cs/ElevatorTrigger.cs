@@ -5,16 +5,16 @@ public class ElevatorTrigger : MonoBehaviour
 {
 	public ElevatorPrototypeController m_ElevatorController;
 
-	[Calls(Type = typeof(ElevatorPrototypeController), Member = "set_m_State")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ElevatorPrototypeController), Member = "set_m_State")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnTriggerEnter(Collider other)
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public ElevatorTrigger()
 	{
 	}

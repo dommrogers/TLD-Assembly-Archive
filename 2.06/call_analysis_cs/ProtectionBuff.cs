@@ -29,19 +29,19 @@ public class ProtectionBuff : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetAnimalDamageModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetClothingDamageModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetBrokenRibModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

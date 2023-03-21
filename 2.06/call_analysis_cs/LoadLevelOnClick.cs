@@ -5,8 +5,8 @@ public class LoadLevelOnClick : MonoBehaviour
 {
 	public string levelName;
 
-	[Calls(Type = typeof(SceneManager), Member = "LoadScene")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SceneManager), Member = "LoadScene")]
 	private void OnClick()
 	{
 	}

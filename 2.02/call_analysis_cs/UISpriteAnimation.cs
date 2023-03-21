@@ -27,16 +27,14 @@ public class UISpriteAnimation : MonoBehaviour
 
 	public int frames
 	{
-		[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateFadeOverlay")]
 		[CalledBy(Type = typeof(LoadingAnimation), Member = "OnEnable")]
-		[CallsUnknownMethods(Count = 1)]
+		[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateFadeOverlay")]
 		[CallerCount(Count = 4)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateFadeOverlay")]
-		[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateFadeOverlay")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -46,7 +44,7 @@ public class UISpriteAnimation : MonoBehaviour
 		[CallerCount(Count = 8)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -58,14 +56,14 @@ public class UISpriteAnimation : MonoBehaviour
 	public string namePrefix
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(UISpriteAnimation), Member = "RebuildSpriteList")]
-		[Calls(Type = typeof(string), Member = "EqualsHelper")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "EqualsHelper")]
+		[Calls(Type = typeof(UISpriteAnimation), Member = "RebuildSpriteList")]
 		set
 		{
 		}
@@ -73,14 +71,14 @@ public class UISpriteAnimation : MonoBehaviour
 
 	public bool loop
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -92,47 +90,48 @@ public class UISpriteAnimation : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[Calls(Type = typeof(UISpriteAnimation), Member = "RebuildSpriteList")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UISpriteAnimation), Member = "RebuildSpriteList")]
 	protected virtual void Start()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Time), Member = "get_timeScale")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 8)]
-	[CallerCount(Count = 0)]
 	protected virtual void Update()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UIAtlas), Member = "get_spriteList")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(UISpriteAnimation), Member = "set_namePrefix")]
 	[CalledBy(Type = typeof(UISpriteAnimation), Member = "Start")]
 	[CalledBy(Type = typeof(LoadingAnimation), Member = "OnEnable")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UIAtlas), Member = "get_spriteList")]
+	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 10)]
 	public void RebuildSpriteList()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void Play()
 	{
 	}
@@ -142,37 +141,34 @@ public class UISpriteAnimation : MonoBehaviour
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 5)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public void PlayReverseFromFrame(int frameVal)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateFadeOverlay")]
 	[CallerCount(Count = 4)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateFadeOverlay")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateFadeOverlay")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateFadeOverlay")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateFadeOverlay")]
 	[CallsUnknownMethods(Count = 1)]
 	public int GetCurrentFrame()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "OnBack")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "DoTween")]
 	[CalledBy(Type = typeof(LoadingAnimation), Member = "OnEnable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "DoTween")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "OnBack")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void ResetToBeginning()
 	{
 	}
@@ -183,9 +179,10 @@ public class UISpriteAnimation : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public UISpriteAnimation()
 	{

@@ -8,14 +8,14 @@ public class TintMaterialsTag : MonoBehaviour
 	private Renderer[] m_Renderers;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 29)]
+	[CallerCount(Count = 35)]
 	public string GetTag()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 5)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 9)]
 	public Renderer[] GetRenderers()
 	{
 		return null;

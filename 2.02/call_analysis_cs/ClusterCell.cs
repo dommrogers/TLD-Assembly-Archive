@@ -20,26 +20,29 @@ public class ClusterCell : MapElementSaveData
 	public List<MapElementSaveData> m_Elements;
 
 	[CalledBy(Type = typeof(Panel_Map), Member = "GatherClustersElementsForScene")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 30)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 30)]
 	public void UpdateFrom(MapElementSaveData me)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Remove(MapElementSaveData mesd)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Map), Member = "GatherClustersElementsForScene")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Panel_Map), Member = "IsRockCache")]
 	[Calls(Type = typeof(Panel_Map), Member = "IsSprayPaint")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "GatherClustersElementsForScene")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 9)]
 	public void UpdateMapElement()
 	{
@@ -47,8 +50,9 @@ public class ClusterCell : MapElementSaveData
 
 	[CalledBy(Type = typeof(Panel_Map), Member = "GetOrCreateClusterCell")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(MapElementSaveData), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public ClusterCell()
 	{

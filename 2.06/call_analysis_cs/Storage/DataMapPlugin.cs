@@ -17,14 +17,14 @@ public class DataMapPlugin
 	public static extern IntPtr DataMap_FromDataMapView(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void DataMap_AddEmptyBuffer(IntPtr self, string name, int length);
 
 	[PreserveSig]
+	[CalledBy(Type = typeof(DataMap), Member = "AddOrReplaceBuffer")]
+	[CalledBy(Type = typeof(DataMap), Member = "AddOrReplaceBuffer")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(DataMap), Member = "AddOrReplaceBuffer")]
-	[CalledBy(Type = typeof(DataMap), Member = "AddOrReplaceBuffer")]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void DataMap_AddOrReplaceBuffer(IntPtr self, string name, byte[] data, int length);
 
@@ -41,8 +41,8 @@ public class DataMapPlugin
 	public static extern bool DataMap_GetBufferData(IntPtr self, string name, int offset, byte[] data, int length);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint DataMap_BufferLength(IntPtr self, string name);
 
 	[PreserveSig]

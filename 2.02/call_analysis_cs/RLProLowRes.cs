@@ -7,11 +7,11 @@ public sealed class RLProLowRes : PostProcessEffectSettings
 {
 	public IntParameter pixelSize;
 
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[Calls(Type = typeof(IntParameter), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(IntParameter), Member = ".ctor")]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public RLProLowRes()
 	{
 	}

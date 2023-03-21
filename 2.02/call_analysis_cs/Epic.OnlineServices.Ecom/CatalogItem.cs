@@ -29,14 +29,14 @@ public class CatalogItem : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
-		[CallerCount(Count = 101)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -46,14 +46,14 @@ public class CatalogItem : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 71)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -61,16 +61,16 @@ public class CatalogItem : ISettable
 
 	public string EntitlementName
 	{
-		[CallerCount(Count = 5)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
@@ -87,7 +87,7 @@ public class CatalogItem : ISettable
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
@@ -95,16 +95,16 @@ public class CatalogItem : ISettable
 
 	public string DescriptionText
 	{
-		[CallerCount(Count = 15)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 20)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 23)]
 		set
 		{
 		}
@@ -114,14 +114,14 @@ public class CatalogItem : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 8)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 18)]
 		set
 		{
 		}
@@ -129,16 +129,16 @@ public class CatalogItem : ISettable
 
 	public string TechnicalDetailsText
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 46)]
 		set
 		{
 		}
@@ -146,16 +146,16 @@ public class CatalogItem : ISettable
 
 	public string DeveloperText
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 3)]
-		[CompilerGenerated]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 17)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 19)]
 		set
 		{
 		}
@@ -180,12 +180,12 @@ public class CatalogItem : ISettable
 
 	public long EntitlementEndTimestamp
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 10)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 11)]
 		get
 		{
-			return default(long);
+			return 0L;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -195,32 +195,32 @@ public class CatalogItem : ISettable
 		}
 	}
 
-	[Calls(Type = typeof(CatalogItemInternal), Member = "get_LongDescriptionText")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(CatalogItem), Member = "Set")]
-	[Calls(Type = typeof(CatalogItemInternal), Member = "get_DeveloperText")]
-	[Calls(Type = typeof(CatalogItemInternal), Member = "get_TechnicalDetailsText")]
-	[Calls(Type = typeof(CatalogItemInternal), Member = "get_DescriptionText")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(CatalogItemInternal), Member = "get_EntitlementName")]
-	[Calls(Type = typeof(CatalogItemInternal), Member = "get_Id")]
-	[Calls(Type = typeof(CatalogItemInternal), Member = "get_CatalogNamespace")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CatalogItemInternal), Member = "get_CatalogNamespace")]
+	[Calls(Type = typeof(CatalogItemInternal), Member = "get_Id")]
+	[Calls(Type = typeof(CatalogItemInternal), Member = "get_EntitlementName")]
 	[Calls(Type = typeof(CatalogItemInternal), Member = "get_TitleText")]
+	[Calls(Type = typeof(CatalogItemInternal), Member = "get_DescriptionText")]
+	[Calls(Type = typeof(CatalogItemInternal), Member = "get_LongDescriptionText")]
+	[Calls(Type = typeof(CatalogItemInternal), Member = "get_TechnicalDetailsText")]
+	[Calls(Type = typeof(CatalogItemInternal), Member = "get_DeveloperText")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	internal void Set(CatalogItemInternal? other)
 	{
 	}
 
-	[Calls(Type = typeof(CatalogItem), Member = "Set")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CatalogItem), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public CatalogItem()
 	{
 	}

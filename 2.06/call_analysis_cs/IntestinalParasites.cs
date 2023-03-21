@@ -50,12 +50,12 @@ public class IntestinalParasites : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(IntestinalParasites), Member = "IntestinalParasitesEnd")]
-	[Calls(Type = typeof(IntestinalParasites), Member = "GetNumDosesRequired")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(IntestinalParasites), Member = "CheckForInfection")]
+	[Calls(Type = typeof(IntestinalParasites), Member = "GetNumDosesRequired")]
+	[Calls(Type = typeof(IntestinalParasites), Member = "IntestinalParasitesEnd")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Update()
 	{
 	}
@@ -68,56 +68,56 @@ public class IntestinalParasites : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "EatingComplete_Internal")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_parasites_risk")]
-	[Calls(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_parasites_risk_nofx")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "EatingComplete_Internal")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(IntestinalParasites), Member = "GetNumDosesRequired")]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
 	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(IntestinalParasites), Member = "GetNumDosesRequired")]
-	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	public void AddRiskPercent(float[] riskToAdd, bool nofx = false)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_parasites_nofx")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_parasites")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions")]
 	[CalledBy(Type = typeof(IntestinalParasites), Member = "CheckForInfection")]
-	[Calls(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(Log), Member = "AddAffliction")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
-	[Calls(Type = typeof(IntestinalParasites), Member = "GetNumDosesRequired")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_parasites")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_parasites_nofx")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(IntestinalParasites), Member = "GetNumDosesRequired")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnDamageEvent")]
+	[Calls(Type = typeof(Log), Member = "AddAffliction")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[Calls(Type = typeof(GameManager), Member = "TriggerSurvivalSaveAndDisplayHUDMessage")]
+	[CallsUnknownMethods(Count = 3)]
 	public void IntestinalParasitesStart(bool nofx = false)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "TreatAffliction")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_parasites_cure")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions_cure")]
+	[CalledBy(Type = typeof(IntestinalParasites), Member = "Update")]
 	[CalledBy(Type = typeof(IntestinalParasites), Member = "TakeAntibiotics")]
 	[CalledBy(Type = typeof(IntestinalParasites), Member = "UpdateIntestinalParasites")]
-	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
-	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_afflictions_cure")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_parasites_cure")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "TreatAffliction")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(IntestinalParasites), Member = "Update")]
+	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_FirstAid), Member = "UpdateDueToAfflictionHealed")]
+	[CallsUnknownMethods(Count = 1)]
 	public void IntestinalParasitesEnd()
 	{
 	}
@@ -126,20 +126,20 @@ public class IntestinalParasites : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool HasIntestinalParasites()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool HasIntestinalParasitesRisk()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
+	[CallerCount(Count = 1)]
 	public int GetCurrentRisk()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -149,87 +149,86 @@ public class IntestinalParasites : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public int GetNumDosesTaken()
 	{
-		return default(int);
+		return 0;
 	}
 
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(IntestinalParasites), Member = "GetNumDosesRequired")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
 	public int GetNumDosesRemaining()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 1)]
 	public bool HasTakenDoseToday()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(IntestinalParasites), Member = "Update")]
+	[CalledBy(Type = typeof(IntestinalParasites), Member = "AddRiskPercent")]
+	[CalledBy(Type = typeof(IntestinalParasites), Member = "IntestinalParasitesStart")]
+	[CalledBy(Type = typeof(IntestinalParasites), Member = "TakeAntibiotics")]
+	[CalledBy(Type = typeof(IntestinalParasites), Member = "GetNumDosesRemaining")]
 	[CalledBy(Type = typeof(IntestinalParasites), Member = "UpdateIntestinalParasites")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_parasites")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_parasites_nofx")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "TreatAffliction")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_parasites")]
-	[CalledBy(Type = typeof(IntestinalParasites), Member = "GetNumDosesRemaining")]
-	[CalledBy(Type = typeof(IntestinalParasites), Member = "Update")]
-	[CalledBy(Type = typeof(IntestinalParasites), Member = "IntestinalParasitesStart")]
 	[CallerCount(Count = 10)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CalledBy(Type = typeof(IntestinalParasites), Member = "TakeAntibiotics")]
-	[CalledBy(Type = typeof(IntestinalParasites), Member = "AddRiskPercent")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[CallsUnknownMethods(Count = 1)]
 	public int GetNumDosesRequired()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetTotalHitPointReduction()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetTotalFatigueReduction()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(IntestinalParasites), Member = "IntestinalParasitesStart")]
 	[CalledBy(Type = typeof(IntestinalParasites), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	[Calls(Type = typeof(PlayerDamageEvent), Member = "SpawnAfflictionEvent")]
+	[Calls(Type = typeof(IntestinalParasites), Member = "IntestinalParasitesStart")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void CheckForInfection()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(IntestinalParasites), Member = "GetNumDosesRequired")]
 	[Calls(Type = typeof(IntestinalParasites), Member = "IntestinalParasitesEnd")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateIntestinalParasites()
 	{
 	}
 
-	[Calls(Type = typeof(Random), Member = "Range")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Random), Member = "Range")]
 	private void RestartRiskTimer()
 	{
 	}
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public IntestinalParasites()
 	{
 	}

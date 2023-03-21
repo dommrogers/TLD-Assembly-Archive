@@ -11,14 +11,14 @@ public class WaitForFullFSMUpdate : CustomYieldInstruction
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MonoManager), Member = "get_current")]
 	[Calls(Type = typeof(MonoManager), Member = "GetYeldReturnFrameCount")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public WaitForFullFSMUpdate()
 	{

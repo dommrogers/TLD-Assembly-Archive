@@ -13,7 +13,7 @@ public class PerformanceTest : MonoBehaviour
 		public int value;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public IntClass()
 		{
 		}
@@ -24,7 +24,7 @@ public class PerformanceTest : MonoBehaviour
 		public float value;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public FloatClass()
 		{
 		}
@@ -35,7 +35,7 @@ public class PerformanceTest : MonoBehaviour
 		public bool value;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public BoolClass()
 		{
 		}
@@ -45,9 +45,9 @@ public class PerformanceTest : MonoBehaviour
 	{
 		public Vector3 value;
 
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Vector3), Member = "get_zero")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Vector3), Member = "get_zero")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public Vector3Class()
 		{
 		}
@@ -69,7 +69,7 @@ public class PerformanceTest : MonoBehaviour
 		public ClassA value;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public ClassAClass()
 		{
 		}
@@ -80,7 +80,7 @@ public class PerformanceTest : MonoBehaviour
 		public EnumA value;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public EnumClass()
 		{
 		}
@@ -128,20 +128,19 @@ public class PerformanceTest : MonoBehaviour
 
 		public List<int> intList;
 
-		[CallsUnknownMethods(Count = 40)]
+		[CalledBy(TypeFullName = "PerformanceTest.<>c", Member = "<TestPerformance>b__2_6")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 10)]
 		[Calls(Type = typeof(PerformanceTest), Member = "GenerateRandomText")]
-		[Calls(Type = typeof(PerformanceTest), Member = "GenerateRandomText")]
-		[Calls(Type = typeof(PerformanceTest), Member = "GenerateRandomText")]
-		[CalledBy(Type = typeof(_003C_003Ec), Member = "<TestPerformance>b__2_6")]
+		[Calls(Type = typeof(List<>), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 9)]
+		[CallsUnknownMethods(Count = 40)]
 		public static ClassA Generate()
 		{
 			return null;
 		}
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public ClassA()
 		{
 		}
@@ -167,7 +166,7 @@ public class PerformanceTest : MonoBehaviour
 		public static GenerateFunc<ClassA> _003C_003E9__2_6;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec()
 		{
 		}
@@ -176,7 +175,7 @@ public class PerformanceTest : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		internal int _003CTestPerformance_003Eb__2_0()
 		{
-			return default(int);
+			return 0;
 		}
 
 		[DeduplicatedMethod]
@@ -184,20 +183,20 @@ public class PerformanceTest : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		internal float _003CTestPerformance_003Eb__2_1()
 		{
-			return default(float);
+			return 0f;
 		}
 
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		internal bool _003CTestPerformance_003Eb__2_2()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 3)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 3)]
 		internal Vector3 _003CTestPerformance_003Eb__2_3()
 		{
 			return default(Vector3);
@@ -218,7 +217,7 @@ public class PerformanceTest : MonoBehaviour
 		}
 
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(ClassA), Member = "Generate")]
+		[Calls(TypeFullName = "PerformanceTest.ClassA", Member = "Generate")]
 		internal ClassA _003CTestPerformance_003Eb__2_6()
 		{
 			return null;
@@ -238,10 +237,10 @@ public class PerformanceTest : MonoBehaviour
 		{
 		}
 
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(FastJson), Member = "Serialize")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(FastJson), Member = "Serialize")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		internal void _003CTest1_003Eb__0()
 		{
 		}
@@ -269,14 +268,14 @@ public class PerformanceTest : MonoBehaviour
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(FastJson), Member = "Serialize")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		internal void _003CTest2_003Eb__0()
 		{
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		internal void _003CTest2_003Eb__1()
 		{
@@ -285,101 +284,94 @@ public class PerformanceTest : MonoBehaviour
 
 	private StringBuilder resultText;
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GUILayout), Member = "Button")]
+	[Calls(Type = typeof(PerformanceTest), Member = "TestPerformance")]
 	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(PerformanceTest), Member = "TestPerformance")]
-	[Calls(Type = typeof(GUILayout), Member = "Button")]
-	[CallerCount(Count = 0)]
 	private void OnGUI()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 9)]
-	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 51)]
 	[CalledBy(Type = typeof(PerformanceTest), Member = "OnGUI")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PerformanceTest), Member = "Test1")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 51)]
 	private void TestPerformance()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallsUnknownMethods(Count = 4)]
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[DeduplicatedMethod]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 4)]
 	private T GenerateTestData2<T, U>(GenerateFunc<U> generateValue) where T : new()
 	{
-		return (T)null;
+		return default(T);
 	}
 
-	[Calls(Type = typeof(FastJson), Member = "Serialize")]
-	[CallerCount(Count = 1)]
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(PerformanceTest), Member = "TestPerformance")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(PerformanceTest), Member = "Stopwatch")]
+	[Calls(Type = typeof(FastJson), Member = "Serialize")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 31)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(PerformanceTest), Member = "Stopwatch")]
 	private void Test1<T, U>(string name, GenerateFunc<U> generate) where T : new()
 	{
 	}
 
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 12)]
-	[CallerCount(Count = 0)]
 	private ArrayClass<T> GenerateTestData2<T>(int count, GenerateFunc<T> generate)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(FastJson), Member = "Serialize")]
-	[Calls(Type = typeof(PerformanceTest), Member = "Stopwatch")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(PerformanceTest), Member = "Stopwatch")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(PerformanceTest), Member = "Stopwatch")]
+	[Calls(Type = typeof(FastJson), Member = "Serialize")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 31)]
 	private void Test2<T>(string name, GenerateFunc<T> generate)
 	{
 	}
 
+	[CalledBy(Type = typeof(PerformanceTest), Member = "Test1")]
+	[CalledBy(Type = typeof(PerformanceTest), Member = "Test2")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Stopwatch), Member = "StartNew")]
 	[Calls(Type = typeof(Stopwatch), Member = "Stop")]
 	[Calls(Type = typeof(Stopwatch), Member = "get_ElapsedMilliseconds")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt64")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt64")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[CalledBy(Type = typeof(PerformanceTest), Member = "Test1")]
-	[CalledBy(Type = typeof(PerformanceTest), Member = "Test1")]
-	[CalledBy(Type = typeof(PerformanceTest), Member = "Test2")]
-	[CalledBy(Type = typeof(PerformanceTest), Member = "Test2")]
-	[CallsUnknownMethods(Count = 3)]
 	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Stopwatch(string text, Action action)
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(ClassA), Member = "Generate")]
 	[CalledBy(Type = typeof(ClassA), Member = "Generate")]
 	[CalledBy(Type = typeof(_003C_003Ec), Member = "<TestPerformance>b__2_4")]
-	[CallsUnknownMethods(Count = 10)]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(string), Member = "CreateString")]
-	[CalledBy(Type = typeof(ClassA), Member = "Generate")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 10)]
 	private static string GenerateRandomText(int length)
 	{
 		return null;
@@ -388,8 +380,8 @@ public class PerformanceTest : MonoBehaviour
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public PerformanceTest()
 	{
 	}

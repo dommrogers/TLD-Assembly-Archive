@@ -10,12 +10,12 @@ public class Condition_IsTimedActionTriggered : ConditionTask
 	private PanelReference<Panel_HUD> m_HUD;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallsUnknownMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

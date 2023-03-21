@@ -10,13 +10,13 @@ public class CatalogItemImageList : WrappedCachedList<CatalogItemImage>
 	[CallsDeduplicatedMethods(Count = 1)]
 	public CatalogItemImageList(IntPtr self)
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
 	public CatalogItemImageList()
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
@@ -26,9 +26,9 @@ public class CatalogItemImageList : WrappedCachedList<CatalogItemImage>
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	protected override CatalogItemImage CreateIthElement(int i)
 	{
 		return null;

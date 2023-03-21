@@ -13,7 +13,7 @@ public class NotificationManagerPlugin
 	public static extern void NotificationManager_SetNotificationPositionHint(NotificationPositionHint locationHint);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public NotificationManagerPlugin()
 	{
 	}

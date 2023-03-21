@@ -17,9 +17,9 @@ internal struct LinkAccountOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(LinkAccountOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(LinkAccountOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -27,11 +27,11 @@ internal struct LinkAccountOptionsInternal : ISettable, IDisposable
 
 	public ContinuanceToken ContinuanceToken
 	{
+		[CalledBy(Type = typeof(LinkAccountOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(LinkAccountOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(LinkAccountOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(LinkAccountOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -44,17 +44,17 @@ internal struct LinkAccountOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(LinkAccountOptionsInternal), Member = "set_ContinuanceToken")]
 	[CalledBy(Type = typeof(ConnectInterface), Member = "LinkAccount")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(LinkAccountOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(LinkAccountOptionsInternal), Member = "set_ContinuanceToken")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

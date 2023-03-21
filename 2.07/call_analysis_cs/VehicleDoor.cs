@@ -25,24 +25,22 @@ public class VehicleDoor : TimedHoldInteraction
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TimedHoldInteraction), Member = "InitializeInteraction")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void InitializeInteraction()
 	{
 	}
@@ -54,12 +52,12 @@ public class VehicleDoor : TimedHoldInteraction
 	[CallsUnknownMethods(Count = 4)]
 	public override bool PerformInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public VehicleDoor()
 	{
 	}

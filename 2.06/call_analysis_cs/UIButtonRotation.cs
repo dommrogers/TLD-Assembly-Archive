@@ -15,61 +15,62 @@ public class UIButtonRotation : MonoBehaviour
 
 	private bool mStarted;
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CalledBy(Type = typeof(UIButtonRotation), Member = "OnPress")]
 	[CalledBy(Type = typeof(UIButtonRotation), Member = "OnHover")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UICamera), Member = "IsHighlighted")]
 	[Calls(Type = typeof(UIButtonRotation), Member = "OnHover")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(TweenRotation), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(TweenRotation), Member = "get_cachedTransform")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(TweenRotation), Member = "Begin")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UICamera), Member = "IsHighlighted")]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 6)]
 	[Calls(Type = typeof(UIButtonRotation), Member = "Start")]
+	[Calls(Type = typeof(UICamera), Member = "IsHighlighted")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(TweenRotation), Member = "Begin")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnPress(bool isPressed)
 	{
 	}
 
+	[CalledBy(Type = typeof(UIButtonRotation), Member = "OnEnable")]
+	[CalledBy(Type = typeof(UIButtonRotation), Member = "OnSelect")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UIButtonRotation), Member = "Start")]
 	[Calls(Type = typeof(TweenRotation), Member = "Begin")]
-	[CalledBy(Type = typeof(UIButtonRotation), Member = "OnSelect")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(UIButtonRotation), Member = "OnEnable")]
 	private void OnHover(bool isOver)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UIButtonRotation), Member = "OnHover")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIButtonRotation), Member = "OnHover")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnSelect(bool isSelected)
 	{
 	}

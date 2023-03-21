@@ -16,8 +16,8 @@ public class BurnsElectricSaveDataProxy
 
 	public float m_SecondsUntilNextBurnReminder;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public BurnsElectricSaveDataProxy()
 	{
 	}

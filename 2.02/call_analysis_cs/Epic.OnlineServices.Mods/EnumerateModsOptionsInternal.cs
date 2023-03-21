@@ -17,9 +17,9 @@ internal struct EnumerateModsOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(EnumerateModsOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(EnumerateModsOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -40,16 +40,16 @@ internal struct EnumerateModsOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(EnumerateModsOptionsInternal), Member = "set_LocalUserId")]
 	[CalledBy(Type = typeof(ModsInterface), Member = "EnumerateMods")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(EnumerateModsOptionsInternal), Member = "set_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

@@ -34,8 +34,9 @@ public class EmissiveTextureFadeFire : MonoBehaviour
 	private int m_ThisEmissiveID;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(EmissiveTextureFadeFire), Member = "SetNewMaxTime")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Start()
 	{
@@ -53,8 +54,8 @@ public class EmissiveTextureFadeFire : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public EmissiveTextureFadeFire()
 	{
 	}

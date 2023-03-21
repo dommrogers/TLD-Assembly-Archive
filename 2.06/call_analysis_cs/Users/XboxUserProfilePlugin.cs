@@ -32,8 +32,8 @@ public class XboxUserProfilePlugin
 	public static extern IntPtr XboxUserProfile_Gamerscore(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr XboxUserProfile_Gamertag(IntPtr self);
 
 	[PreserveSig]

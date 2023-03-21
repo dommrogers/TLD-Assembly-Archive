@@ -8,8 +8,8 @@ public class AkCallbackSerializer : IDisposable
 
 	protected bool swigCMemOwn;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	internal AkCallbackSerializer(IntPtr cPtr, bool cMemoryOwn)
 	{
 	}
@@ -18,7 +18,7 @@ public class AkCallbackSerializer : IDisposable
 	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkCallbackSerializer obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -35,18 +35,18 @@ public class AkCallbackSerializer : IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AKRESULT Init(IntPtr in_pMemory, uint in_uSize)
 	{
 		return default(AKRESULT);
@@ -64,7 +64,7 @@ public class AkCallbackSerializer : IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public static IntPtr Lock()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -74,9 +74,9 @@ public class AkCallbackSerializer : IDisposable
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static void Unlock()
 	{
 	}

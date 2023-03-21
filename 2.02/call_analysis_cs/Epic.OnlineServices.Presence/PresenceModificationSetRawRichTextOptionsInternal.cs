@@ -13,11 +13,11 @@ internal struct PresenceModificationSetRawRichTextOptionsInternal : ISettable, I
 
 	public string RichText
 	{
+		[CalledBy(Type = typeof(PresenceModificationSetRawRichTextOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(PresenceModificationSetRawRichTextOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(PresenceModificationSetRawRichTextOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(PresenceModificationSetRawRichTextOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -30,16 +30,16 @@ internal struct PresenceModificationSetRawRichTextOptionsInternal : ISettable, I
 	}
 
 	[CalledBy(Type = typeof(PresenceModification), Member = "SetRawRichText")]
-	[Calls(Type = typeof(PresenceModificationSetRawRichTextOptionsInternal), Member = "set_RichText")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PresenceModificationSetRawRichTextOptionsInternal), Member = "set_RichText")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

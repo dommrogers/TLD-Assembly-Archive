@@ -7,15 +7,15 @@ public static class PlayerRichPresenceManager
 
 	private static IRichPresenceProvider s_RichPresenceProvider;
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(GameManager), Member = "InstantiateOnlineSystems")]
+	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void Update()
 	{
 	}

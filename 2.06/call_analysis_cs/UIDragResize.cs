@@ -27,28 +27,28 @@ public class UIDragResize : MonoBehaviour
 
 	private bool mDragging;
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(Plane), Member = "Raycast")]
-	[Calls(Type = typeof(UICamera), Member = "get_currentRay")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UICamera), Member = "get_currentRay")]
+	[Calls(Type = typeof(Plane), Member = "Raycast")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnDragStart()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UICamera), Member = "get_currentRay")]
 	[Calls(Type = typeof(Plane), Member = "Raycast")]
 	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
 	[Calls(Type = typeof(UIWidget), Member = "set_width")]
+	[Calls(Type = typeof(UIWidget), Member = "set_height")]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 	[Calls(Type = typeof(NGUIMath), Member = "ResizeWidget")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UICamera), Member = "get_currentRay")]
 	private void OnDrag(Vector2 delta)
 	{
 	}

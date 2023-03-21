@@ -13,16 +13,16 @@ public class PriorityQueue<TEntry> : IEnumerable<TEntry>, IEnumerable where TEnt
 
 		public readonly Queue<TEntry> m_Entries;
 
-		[CallsUnknownMethods(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		public PriorityQueueEntry(int Priority)
 		{
 		}
 	}
 
-	public struct Enumerator : IEnumerator, IDisposable, IEnumerator<TEntry>
+	public struct Enumerator : IEnumerator<TEntry>, IEnumerator, IDisposable
 	{
 		private PriorityQueue<TEntry> m_Queue;
 
@@ -37,15 +37,15 @@ public class PriorityQueue<TEntry> : IEnumerable<TEntry>, IEnumerable where TEnt
 			[CallsUnknownMethods(Count = 4)]
 			get
 			{
-				return (TEntry)null;
+				return default(TEntry);
 			}
 		}
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallsUnknownMethods(Count = 4)]
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
+			[CallsUnknownMethods(Count = 4)]
 			get
 			{
 				return null;
@@ -53,6 +53,9 @@ public class PriorityQueue<TEntry> : IEnumerable<TEntry>, IEnumerable where TEnt
 		}
 
 		[DeduplicatedMethod]
+		[CalledBy(Type = typeof(HUDMessage), Member = "AddMessageToQueue")]
+		[CalledBy(Type = typeof(PriorityQueue<>), Member = "GetEnumerator")]
+		[CalledBy(Type = typeof(PriorityQueue<>), Member = "System.Collections.IEnumerable.GetEnumerator")]
 		[CallerCount(Count = 3)]
 		[CallsDeduplicatedMethods(Count = 3)]
 		[CallsUnknownMethods(Count = 7)]
@@ -66,19 +69,20 @@ public class PriorityQueue<TEntry> : IEnumerable<TEntry>, IEnumerable where TEnt
 		{
 		}
 
-		[CallsUnknownMethods(Count = 16)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Queue<>.Enumerator), Member = "MoveNext")]
 		[CallsDeduplicatedMethods(Count = 5)]
+		[CallsUnknownMethods(Count = 14)]
 		public bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotImplementedException), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 4)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotImplementedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 4)]
 		public void Reset()
 		{
 		}
@@ -102,7 +106,7 @@ public class PriorityQueue<TEntry> : IEnumerable<TEntry>, IEnumerable where TEnt
 		[CallsUnknownMethods(Count = 1)]
 		internal int _003CEnqueue_003Eb__6_0(PriorityQueueEntry a, PriorityQueueEntry b)
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -110,54 +114,63 @@ public class PriorityQueue<TEntry> : IEnumerable<TEntry>, IEnumerable where TEnt
 
 	public int Count
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CallsUnknownMethods(Count = 5)]
 		[DeduplicatedMethod]
+		[CalledBy(Type = typeof(HUDMessage), Member = "Update")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 4)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public bool Contains(TEntry entry)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(HUDMessage), Member = "Update")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallsUnknownMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 6)]
 	public TEntry Dequeue()
 	{
-		return (TEntry)null;
+		return default(TEntry);
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(HUDMessage), Member = "AddMessageToQueue")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CallsUnknownMethods(Count = 17)]
+	[CallsUnknownMethods(Count = 16)]
 	public void Enqueue(TEntry entry)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(HUDMessage), Member = "Update")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public TEntry Peek()
 	{
-		return (TEntry)null;
+		return default(TEntry);
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PriorityQueue<>.Enumerator), Member = ".ctor")]
 	[CallsUnknownMethods(Count = 1)]
 	public IEnumerator<TEntry> GetEnumerator()
 	{
@@ -166,17 +179,17 @@ public class PriorityQueue<TEntry> : IEnumerable<TEntry>, IEnumerable where TEnt
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PriorityQueue<>.Enumerator), Member = ".ctor")]
 	[CallsUnknownMethods(Count = 1)]
 	private IEnumerator System_002ECollections_002EIEnumerable_002EGetEnumerator()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public PriorityQueue()
 	{
 	}

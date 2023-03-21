@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -52,51 +51,67 @@ public class ConsoleComboBox : MonoBehaviour
 	public string value
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 4)]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "SetXPModePopupListString")]
+		[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "SetConsoleComboBoxIndex")]
+		[CalledBy(Type = typeof(Panel_Debug.DebugElement), Member = "AssignComboBox")]
+		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshAccessibilitySettings")]
+		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshAudioSliderLabels")]
+		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshControlsSettings")]
+		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyGraphicsModeAndResolution")]
+		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshDisplaySettings")]
+		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmGraphicsOptions")]
+		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
+		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ProcessDisplayMenu")]
+		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshLanguage")]
+		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshPrivacySettings")]
+		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshQualitySettings")]
+		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "SetUiFromQualitySetting")]
+		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "MaybeSwitchToCustomQuality")]
+		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshSettings")]
+		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "RefreshSliderLabels")]
 		[CallerCount(Count = 50)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(string), Member = "EqualsHelper")]
 		[Calls(Type = typeof(ConsoleComboBox), Member = "Refresh")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public virtual void Start()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(ConsoleComboBox), Member = "set_value")]
 	[CalledBy(Type = typeof(ConsoleComboBox), Member = "OnIncrease")]
 	[CalledBy(Type = typeof(ConsoleComboBox), Member = "OnDecrease")]
 	[CalledBy(Type = typeof(ConsoleComboBox), Member = "OnLocalize")]
 	[CalledBy(Type = typeof(ConsoleComboBox), Member = "OnEnable")]
+	[CallerCount(Count = 5)]
 	private void Refresh()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void RefreshCustomItems()
 	{
 	}
@@ -107,30 +122,30 @@ public class ConsoleComboBox : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "UpdateMenuNavigation")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
-	[Calls(Type = typeof(ConsoleComboBox), Member = "Refresh")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIComboBoxScroll")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIComboBoxScroll")]
+	[Calls(Type = typeof(ConsoleComboBox), Member = "Refresh")]
 	[Calls(Type = typeof(EventDelegate), Member = "IsValid")]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void OnIncrease()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "UpdateMenuNavigation")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
-	[Calls(Type = typeof(EventDelegate), Member = "IsValid")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIComboBoxScroll")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIComboBoxScroll")]
 	[Calls(Type = typeof(ConsoleComboBox), Member = "Refresh")]
+	[Calls(Type = typeof(EventDelegate), Member = "IsValid")]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void OnDecrease()
 	{
 	}
@@ -139,16 +154,16 @@ public class ConsoleComboBox : MonoBehaviour
 	[CallerCount(Count = 1)]
 	public int GetCurrentIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "RefreshEndlessNightOption")]
-	[CallsUnknownMethods(Count = 24)]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "RefreshEndlessNightOption")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 24)]
 	public void InitializeLockableOptionUI(bool isUnlocked)
 	{
 	}
@@ -168,8 +183,9 @@ public class ConsoleComboBox : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public ConsoleComboBox()
 	{

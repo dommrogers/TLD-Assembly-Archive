@@ -12,10 +12,10 @@ public class CommonPlugin
 
 	[PreserveSig]
 	[CalledBy(Type = typeof(StorageManager), Member = "AmFullyInitialized")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(TitleStorage), Member = "Create")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern bool AmFullyInitialized();
 
 	[PreserveSig]
@@ -29,7 +29,7 @@ public class CommonPlugin
 	public static extern int GetPluginVersion();
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CommonPlugin()
 	{
 	}

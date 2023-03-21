@@ -36,8 +36,8 @@ public class AchievementProgressionPlugin
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void AchievementProgression_Dispose(IntPtr self);
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public AchievementProgressionPlugin()
 	{
 	}

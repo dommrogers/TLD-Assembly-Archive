@@ -7,7 +7,7 @@ public class AuroraFieldDataProxy
 	public bool m_CanRollChance;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AuroraFieldDataProxy()
 	{
 	}

@@ -5,8 +5,9 @@ public class Panel_Base : MonoBehaviour
 {
 	protected UIPanel m_Panel;
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 76)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public virtual void Initialize()
 	{
 	}
@@ -17,12 +18,12 @@ public class Panel_Base : MonoBehaviour
 	[CallsUnknownMethods(Count = 3)]
 	public virtual bool IsEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 73)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public virtual void Enable(bool enable)
 	{
@@ -32,19 +33,19 @@ public class Panel_Base : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public virtual bool IsOverlayPanel()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public virtual bool CanBeDestroyed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public Panel_Base()
 	{
 	}

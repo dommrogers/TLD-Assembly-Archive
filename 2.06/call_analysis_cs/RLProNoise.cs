@@ -43,19 +43,13 @@ public sealed class RLProNoise : PostProcessEffectSettings
 
 	public BoolParameter unscaledTime;
 
-	[Calls(Type = typeof(TextureParameter), Member = ".ctor")]
-	[Calls(Type = typeof(BoolParameter), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 106)]
-	[Calls(Type = typeof(BoolParameter), Member = ".ctor")]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[Calls(Type = typeof(BoolParameter), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[Calls(Type = typeof(BoolParameter), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BoolParameter), Member = ".ctor")]
 	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
+	[Calls(Type = typeof(TextureParameter), Member = ".ctor")]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 106)]
 	public RLProNoise()
 	{
 	}

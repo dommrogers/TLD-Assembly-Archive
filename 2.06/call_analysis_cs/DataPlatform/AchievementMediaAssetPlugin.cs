@@ -26,8 +26,8 @@ public class AchievementMediaAssetPlugin
 	[CallsUnknownMethods(Count = 1)]
 	public static extern void AchievementMediaAsset_Dispose(IntPtr self);
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public AchievementMediaAssetPlugin()
 	{
 	}

@@ -27,23 +27,22 @@ public class MB_MaterialAndUVRect
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Rect), Member = "GetHashCode")]
-	[Calls(Type = typeof(Rect), Member = "GetHashCode")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
+	[Calls(Type = typeof(Rect), Member = "GetHashCode")]
+	[CallsUnknownMethods(Count = 1)]
 	public override int GetHashCode()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public override bool Equals(object obj)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

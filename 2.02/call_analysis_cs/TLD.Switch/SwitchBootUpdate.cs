@@ -7,9 +7,9 @@ public class SwitchBootUpdate : MonoBehaviour
 {
 	private UILabel m_Label_Continue;
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public SwitchBootUpdate()
 	{
 	}

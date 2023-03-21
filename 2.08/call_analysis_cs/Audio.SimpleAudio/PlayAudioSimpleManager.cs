@@ -26,13 +26,12 @@ public static class PlayAudioSimpleManager
 		{
 		}
 
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 2)]
 		public void Clear()
 		{
 		}
 
-		[CalledBy(Type = typeof(PlayAudioSimpleManager), Member = ".cctor")]
 		[CalledBy(Type = typeof(PlayAudioSimpleManager), Member = ".cctor")]
 		[CallerCount(Count = 2)]
 		public Counters()
@@ -67,32 +66,34 @@ public static class PlayAudioSimpleManager
 	}
 
 	[CalledBy(Type = typeof(HUDManager), Member = "UpdateDebugLines")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(StringBuilder), Member = "AppendFormat")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
 	[Calls(Type = typeof(StringBuilder), Member = "AppendFormat")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(float), Member = "ToString")]
+	[Calls(Type = typeof(float), Member = "ToString")]
 	[Calls(Type = typeof(StringBuilder), Member = "AppendFormat")]
+	[CallsUnknownMethods(Count = 2)]
 	public static string GetDebugText()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(BaseTracker), Member = "MaybeStartOrStop")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(GameAudioManager), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BaseTracker), Member = "MaybeStartOrStop")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	public static void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(GameManager), Member = "ResetLists")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void Reset()
 	{
 	}
@@ -104,25 +105,27 @@ public static class PlayAudioSimpleManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AmbientTracker), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void AddAmbient(GameObject go, AK.Wwise.Event akEvent, MultiPositionTypeLabel multiposition, float radius, bool stopWhenDisabled)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LoopTracker), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void AddVoice(GameObject go, string eventID, float radius, bool stopWhenDisabled, bool position)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(PlayAmbientSimple), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(PlayAudioSimple), Member = "OnDestroy")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public static void Remove(GameObject go, AK.Wwise.Event akEvent)
 	{
 	}

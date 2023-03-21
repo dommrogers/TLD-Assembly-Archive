@@ -4,6 +4,7 @@ using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
 using NodeCanvas.Tasks.Conditions;
 using SpecialEvents;
+using TLD.SaveState;
 using TLD.Serialization;
 using TLD.UI.Generics;
 using UnityEngine;
@@ -219,8 +220,8 @@ public class InvisibleEntityManager : MonoBehaviour
 
 	private float m_NextCaptionDisplayTime;
 
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "IsActive")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "IsActive")]
 	public NowhereToHide.GlyphTypes GetActiveGlyph()
 	{
 		return default(NowhereToHide.GlyphTypes);
@@ -234,22 +235,22 @@ public class InvisibleEntityManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MaybeApplyIndoorWardProtection")]
+	[CalledBy(Type = typeof(EntityWard), Member = "UpdateAwake")]
+	[CalledBy(Type = typeof(EntityWard), Member = "Deserialize")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "AddWardIncludingForNearbyTransitions")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "PlaceGlyph")]
-	[CalledBy(Type = typeof(EntityWard), Member = "Deserialize")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MaybeApplyIndoorWardProtection")]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(EntityWard), Member = "UpdateAwake")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	public void AddWard(string guid, Vector3 position, float radius)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public string GetPlayerInsideWardGuid()
 	{
@@ -257,7 +258,7 @@ public class InvisibleEntityManager : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public string GetActiveWardGuid()
 	{
@@ -269,27 +270,27 @@ public class InvisibleEntityManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool DoesWardGlyphExist()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsPlayerInsideWard()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsWardActive()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "FindFirstDecalOfType")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public bool IsLureActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -302,7 +303,7 @@ public class InvisibleEntityManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetStartMovementDelayTime()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -315,51 +316,53 @@ public class InvisibleEntityManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetDistanceToPlayer()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void PlaceGlyphDeserialize(DecalProjectorInstance instance)
 	{
 	}
 
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateLoad")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "AddWard")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "AttemptToPlaceIndoorLocationWard")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateLoad")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
 	public void PlaceGlyph(DecalProjectorInstance instance)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnDecalRemoved")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "RemoveWardByGuid")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnDecalRemoved")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "RemoveWardByGuid")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public void RemoveGlyph(DecalProjectorInstance instance)
 	{
 	}
 
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Action_BanishDarkwalker), Member = "OnExecute")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Start")]
 	[CalledBy(Type = typeof(GameManager), Member = "ResetLists")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "CalculateAfflictionRanges")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayStopAudio")]
-	[Calls(Type = typeof(Utils), Member = "IsSceneTransition")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "IsActive")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Start")]
+	[CalledBy(Type = typeof(Action_BanishDarkwalker), Member = "OnExecute")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "IsActive")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(Utils), Member = "IsSceneTransition")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayStopAudio")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "CalculateAfflictionRanges")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Reset()
 	{
 	}
@@ -374,19 +377,19 @@ public class InvisibleEntityManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetRealTimeHoursPlayedUnpaused()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "FindNearestSceneTransition")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "FindNearestSceneTransition")]
 	public bool IsInAreaOfSceneTransition(Vector3 position)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetBanishmentArea(NowhereToHide_BanishmentArea banishmentArea)
 	{
@@ -397,52 +400,52 @@ public class InvisibleEntityManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Condition_IsDarkwalkerInBanishmentArea), Member = "OnCheck")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "IsEntityInBanishmentArea")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Condition_IsDarkwalkerInBanishmentArea), Member = "OnCheck")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool IsInsideBanishmentArea(Vector3 position)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "IsInsideBanishmentArea")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public bool IsEntityInBanishmentArea()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 14)]
 	[CalledBy(Type = typeof(HUDNowhereToHide), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "FindFirstDecalOfType")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "FindFirstDecalOfType")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsUnknownMethods(Count = 14)]
 	public float GetWardTimeRemainingScale(string guid)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Physics), Member = "OverlapSphereNonAlloc")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "IsInAreaOfSceneTransition")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "AttemptToPlaceIndoorLocationWard")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "HandleNowhereToHideEventSpecificBehaviour")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Physics), Member = "OverlapSphereNonAlloc")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private IndoorWardData FindNearestSceneTransition(Vector3 position)
 	{
 		return default(IndoorWardData);
@@ -450,49 +453,49 @@ public class InvisibleEntityManager : MonoBehaviour
 
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "AddWardIncludingForNearbyTransitions")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "PlaceGlyph")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "FindNearestSceneTransition")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "FindNearestSceneTransition")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	private void AttemptToPlaceIndoorLocationWard(Vector3 position, string guid, float radius, float lifetimeHours, float hoursAtCreateTime)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MaybeApplyIndoorWardProtection")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "HasIndoorWardProtectionForCurrentScene")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MaybeApplyIndoorWardProtection")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateIndoorWardLifetime")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GameManager), Member = "CompareSceneNames")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(GameManager), Member = "CompareSceneNames")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool IsIndoorWardLocationForCurrentScene(IndoorWardData wardData)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "IsAlreadyPlacedInWorld")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "IsIndoorWardLocationForCurrentScene")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "IsAlreadyPlacedInWorld")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
 	[CallsUnknownMethods(Count = 10)]
 	public bool HasIndoorWardProtectionForCurrentScene()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "AddWard")]
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateLoad")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "Find")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "IsIndoorWardLocationForCurrentScene")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "IsIndoorWardLocationForCurrentScene")]
+	[Calls(Type = typeof(GameObject), Member = "Find")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "AddWard")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsUnknownMethods(Count = 11)]
 	private void MaybeApplyIndoorWardProtection()
 	{
 	}
@@ -502,138 +505,126 @@ public class InvisibleEntityManager : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private float DetermineDistanceToPlayer()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "IsActive")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "IsActive")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "Reset")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Anxiety), Member = "StopAffliction")]
-	[Calls(Type = typeof(Fear), Member = "StopAffliction")]
-	[Calls(Type = typeof(Fear), Member = "StopAffliction")]
-	[Calls(Type = typeof(Anxiety), Member = "StartAffliction")]
-	[Calls(Type = typeof(Anxiety), Member = "StopAffliction")]
-	[Calls(Type = typeof(Fear), Member = "StartAffliction")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "MaybeMakeWildlifeFlee")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "UpdateAfflictionUI")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "GetCurrentRange")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "UpdateIndoorWardLifetime")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "UpdateWard")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DetermineScaledDeltaTime")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "UpdateLoad")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "IsActive")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "UpdateMovement")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "FindWardThatOverlapsPosition")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "UpdateAttack")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "DetermineScaledDeltaTime")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "UpdateCountdownCompleted")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "FindWardThatOverlapsPosition")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "UpdateLoad")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "UpdateMovement")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "UpdateWard")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "GetCurrentRange")]
+	[Calls(Type = typeof(Anxiety), Member = "StopAffliction")]
+	[Calls(Type = typeof(Fear), Member = "StopAffliction")]
+	[Calls(Type = typeof(Anxiety), Member = "StartAffliction")]
+	[Calls(Type = typeof(Fear), Member = "StartAffliction")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "MaybeMakeWildlifeFlee")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "UpdateIndoorWardLifetime")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "UpdateAfflictionUI")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(BaseAi), Member = "ClearTarget")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(BaseAi), Member = "IsImposter")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(BaseAi), Member = "ClearTarget")]
+	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void MaybeMakeWildlifeFlee()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateWard")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateMovement")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateWard")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AnimationCurve), Member = "Evaluate")]
+	[CallsUnknownMethods(Count = 1)]
 	private float DetermineMovementSpeed()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateWard")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateWard")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateCountdown")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateAttack")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MoveTowardsTarget")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateMovement")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsTimeLapseActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 8)]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MoveAwayFromTarget")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MoveTowardsTarget")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateAttack")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateCountdown")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateMovement")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateWard")]
+	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsTimeLapseActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private float DetermineScaledDeltaTime()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateWard")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateAttack")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "FindWardThatOverlapsPosition")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateMovement")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "FindWardThatOverlapsPosition")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateWard")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "FindWardThatOverlapsPosition")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
 	private bool DeterminePlayerActiveWard()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MoveTowardsTarget")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "CanPlayDarkWalkerDeathAnimation")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "SerializeGlobal")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateWard")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateWard")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateLoad")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateAudio")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "SetRange")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MaybePlaceFootstep")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MoveAwayFromTarget")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerActiveWard")]
-	[CallerCount(Count = 18)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_invisibleentity_addspace")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Move")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "DetermineTargetPosition")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "DetermineDistanceToPlayer")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerActiveWard")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "DetermineTargetPosition")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MoveAwayFromTarget")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MoveTowardsTarget")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "MaybePlaceFootstep")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "SetRange")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateAudio")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateLoad")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateWard")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "SerializeGlobal")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "CanPlayDarkWalkerDeathAnimation")]
+	[CallerCount(Count = 18)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private Vector3 DeterminePlayerPosition()
 	{
 		return default(Vector3);
@@ -646,45 +637,44 @@ public class InvisibleEntityManager : MonoBehaviour
 		return default(Vector3);
 	}
 
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "GetActiveGlyph")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Reset")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Start")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerActiveWard")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerActiveWard")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerActiveWard")]
+	[CallerCount(Count = 3)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private int FindWardThatOverlapsPosition(Vector3 pos)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "IsEntityWithinCurrentRange")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateMovement")]
+	[CallerCount(Count = 3)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private BehaviorRange GetCurrentRange()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public float GetMovementSpeedScalar()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -696,13 +686,13 @@ public class InvisibleEntityManager : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateMovement")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateAttack")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DetermineScaledDeltaTime")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateMovement")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "DetermineScaledDeltaTime")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[CallsUnknownMethods(Count = 1)]
 	private void MoveTowardsTarget(float speed)
 	{
 	}
@@ -720,100 +710,88 @@ public class InvisibleEntityManager : MonoBehaviour
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "GetCurrentRange")]
 	private bool IsEntityWithinCurrentRange()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 24)]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateAttack")]
-	[Calls(Type = typeof(RaycastManager), Member = "RequestAsyncRaycast")]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsTimeLapseActive")]
-	[Calls(Type = typeof(Transform), Member = "LookAt")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateMovement")]
-	[Calls(Type = typeof(FootstepTrailManager), Member = "AddFootstepTrail")]
-	[Calls(Type = typeof(FootstepTrail), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(FootstepTrail), Member = "Initialize")]
+	[Calls(Type = typeof(FootstepTrailManager), Member = "AddFootstepTrail")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
+	[Calls(Type = typeof(Transform), Member = "LookAt")]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsTimeLapseActive")]
+	[Calls(Type = typeof(RaycastManager), Member = "RequestAsyncRaycast")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 24)]
 	private void MaybePlaceFootstep()
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddImpactDecal")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetMaterialSwitch")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsTimeLapseActive")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetMaterialSwitch")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "GetHeavyFootstepEffectTypeBasedOnMaterial")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(FootstepTrail), Member = "AddFootstep")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
 	[Calls(Type = typeof(Utils), Member = "GetMaterialTagForObjectAtPosition")]
-	[Calls(Type = typeof(RaycastHit), Member = "get_collider")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "GetHeavyFootstepEffectTypeBasedOnMaterial")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsTimeLapseActive")]
+	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(EffectPool<>), Member = "SpawnUntilParticlesDone")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "AddImpactDecal")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetMaterialSwitch")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 5)]
 	private void PlaceFootstep(RaycastHit hitOut)
 	{
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "PlaceFootstep")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	private static HeavyFootstepEffectType GetHeavyFootstepEffectTypeBasedOnMaterial(string tag)
 	{
 		return default(HeavyFootstepEffectType);
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "AreSubtitlesVisible")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "AreSubtitlesVisible")]
 	[Calls(Type = typeof(AkMarkerCallbackInfo), Member = "get_strLabel")]
+	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnAkVoiceEvent(object in_cookie, AkCallbackType in_type, object in_info)
 	{
 	}
 
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "PlaceFootstep")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "PlayStartAudio")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "SetBehaviour")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Spawn")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateAttack")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateCountdown")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateCountdownCompleted")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateInit")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateLoad")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateMovement")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateWard")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "DeserializeGlobal")]
 	[CallerCount(Count = 22)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
@@ -825,68 +803,64 @@ public class InvisibleEntityManager : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateLoad")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Spawn")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateLoad")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
+	[CallsUnknownMethods(Count = 2)]
 	private void PlayStartAudio()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Reset")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "SetBehaviour")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallsUnknownMethods(Count = 2)]
 	private void PlayStopAudio()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateMovement")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateLoad")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateAttack")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateLoad")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateMovement")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayStopAudio")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(Fear), Member = "StopAffliction")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Anxiety), Member = "StopAffliction")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayStopAudio")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void SetBehaviour(Behavior newBehaviour)
 	{
 	}
 
 	[CalledBy(Type = typeof(EntityWard), Member = "DisableWard")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateIndoorWardLifetime")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "RemoveGlyph")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateIndoorWardLifetime")]
 	[CallerCount(Count = 3)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	public void RemoveWardByGuid(string guid)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateCountdownCompleted")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_invisibleentity_spawn")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayStartAudio")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateCountdownCompleted")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayStartAudio")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Spawn()
 	{
 	}
@@ -901,56 +875,53 @@ public class InvisibleEntityManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_invisibleentity_far")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_invisibleentity_near")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_invisibleentity_far")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[CallsUnknownMethods(Count = 6)]
 	public void SetRange(bool isNear)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "DetermineScaledDeltaTime")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerActiveWard")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "MoveTowardsTarget")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "MaybePlaceFootstep")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "SetBehaviour")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "MaybePlaceFootstep")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "MoveTowardsTarget")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerActiveWard")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DetermineScaledDeltaTime")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateAttack()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void UpdateAudio()
 	{
 	}
 
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DetermineScaledDeltaTime")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "DetermineScaledDeltaTime")]
 	private void UpdateCountdown()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
@@ -958,59 +929,57 @@ public class InvisibleEntityManager : MonoBehaviour
 	[Calls(Type = typeof(MissionUtils), Member = "PostObjectEvent")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "Spawn")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateCountdownCompleted()
 	{
 	}
 
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
 	private void UpdateInit()
 	{
 	}
 
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "SetBehaviour")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayStartAudio")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "CalculateAfflictionRanges")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "MaybeApplyIndoorWardProtection")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlaceGlyph")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlaceGlyph")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "MaybeApplyIndoorWardProtection")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "SetBehaviour")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayStartAudio")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "CalculateAfflictionRanges")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 16)]
 	private void UpdateLoad()
 	{
 	}
 
+	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "DetermineScaledDeltaTime")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerActiveWard")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "DetermineMovementSpeed")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "MoveTowardsTarget")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "MaybePlaceFootstep")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "SetBehaviour")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "FindFirstDecalOfType")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "GetCurrentRange")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "FindFirstDecalOfType")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "MaybePlaceFootstep")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "MoveTowardsTarget")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DetermineMovementSpeed")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerActiveWard")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DetermineScaledDeltaTime")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "SetBehaviour")]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateMovement()
 	{
 	}
@@ -1022,105 +991,102 @@ public class InvisibleEntityManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 18)]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "IsIndoorWardLocationForCurrentScene")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "IsIndoorWardLocationForCurrentScene")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "RemoveWardByGuid")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 18)]
 	private void UpdateIndoorWardLifetime()
 	{
 	}
 
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DetermineMovementSpeed")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DetermineScaledDeltaTime")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "DetermineScaledDeltaTime")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerActiveWard")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(Transform), Member = "RotateAround")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "DetermineMovementSpeed")]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateWard()
 	{
 	}
 
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Update")]
-	[Calls(Type = typeof(HUDNowhereToHide), Member = "MaybeSetRootActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 17)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(HUDNowhereToHide), Member = "MaybeSetRootActive")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 17)]
 	private void UpdateAfflictionUI()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "Reset")]
 	[CalledBy(Type = typeof(InvisibleEntityManager), Member = "UpdateLoad")]
+	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private void CalculateAfflictionRanges()
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 9)]
 	public string SerializeGlobal()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(InvisibleEntityManager), Member = "PlayAudioEvent")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[CallsUnknownMethods(Count = 1)]
 	public void DeserializeGlobal(string serialized)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Condition_CanPlayDarkWalkerDeathAnimation), Member = "OnCheck")]
-	[Calls(Type = typeof(PhysicsScene), Member = "SphereCast")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(vp_FPSPlayer), Member = "HasHeadRoom")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "DeterminePlayerPosition")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(PhysicsScene), Member = "SphereCast")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public bool CanPlayDarkWalkerDeathAnimation()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 40)]
 	public InvisibleEntityManager()
 	{

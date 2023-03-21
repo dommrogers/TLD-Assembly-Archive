@@ -97,66 +97,68 @@ public class MoviePlayer : MonoBehaviour
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "PopulateMovieOptions")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 9)]
 	public static string[] GetFilenameList()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static uint GetAudioPlayingID()
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Path), Member = "GetFileNameWithoutExtension")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "UpdatePrepare")]
 	[CalledBy(Type = typeof(Action_PlayCredits), Member = "PlayCredits")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Path), Member = "GetFileNameWithoutExtension")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static string GetAudioEventFromFileName(string fileName)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(MoviePlayer), Member = "PlayMovieFromFullPath")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "TryToUsePreparedMovie")]
-	[Calls(Type = typeof(Path), Member = "GetFileName")]
+	[CalledBy(Type = typeof(MoviePlayer), Member = "PlayMovieFromFullPath")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(File), Member = "Exists")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(File), Member = "Exists")]
+	[Calls(Type = typeof(Path), Member = "GetFileName")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private static void SetupMovie(OnPlaybackComplete onPlaybackComplete, Options opts, string fullpath)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(MoviePlayer), Member = "BuildPathDictionary")]
 	[Calls(Type = typeof(Path), Member = "GetFileNameWithoutExtension")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private static string FindFullMoviePath(string filename)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "Play")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(MoviePlayer), Member = "SetupMovie")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool TryToUsePreparedMovie(string fullpath, OnPlaybackComplete onPlaybackComplete, Options opts)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
@@ -165,444 +167,434 @@ public class MoviePlayer : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_play_movie")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Action_PlayOverlayAlphaVideo), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_PlayVideo), Member = "PlayMovie")]
-	[CalledBy(Type = typeof(Action_PlayCredits), Member = "PlayNextSkippableMovie")]
-	[CalledBy(Type = typeof(AnimationEvents), Member = "EventPrepareMovie")]
-	[CalledBy(Type = typeof(AnimationEvents), Member = "EventPlayMovie")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_play_movie_alpha_ext")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_play_movie_alpha")]
-	[CalledBy(Type = typeof(Panel_MainMenu), Member = "PlayIntroMovie")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
 	[CalledBy(Type = typeof(Panel_Debug), Member = "ApplyPlayMovie")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(MoviePlayer), Member = "PlayMovieFromFullPath")]
-	[Calls(Type = typeof(MoviePlayer), Member = "TryToUsePreparedMovie")]
-	[Calls(Type = typeof(Path), Member = "GetFileNameWithoutExtension")]
-	[Calls(Type = typeof(MoviePlayer), Member = "BuildPathDictionary")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 11)]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_MainMenu), Member = "PlayIntroMovie")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_play_movie")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_play_movie_alpha")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_play_movie_alpha_ext")]
+	[CalledBy(Type = typeof(AnimationEvents), Member = "EventPlayMovie")]
+	[CalledBy(Type = typeof(AnimationEvents), Member = "EventPrepareMovie")]
+	[CalledBy(Type = typeof(Action_PlayCredits), Member = "PlayNextSkippableMovie")]
+	[CalledBy(Type = typeof(Action_PlayVideo), Member = "PlayMovie")]
+	[CalledBy(Type = typeof(Action_PlayOverlayAlphaVideo), Member = "OnExecute")]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(MoviePlayer), Member = "BuildPathDictionary")]
+	[Calls(Type = typeof(Path), Member = "GetFileNameWithoutExtension")]
+	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(MoviePlayer), Member = "TryToUsePreparedMovie")]
+	[Calls(Type = typeof(MoviePlayer), Member = "PlayMovieFromFullPath")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void Play(string filename, OnPlaybackComplete onPlaybackComplete, Options opts = Options.None)
 	{
 	}
 
-	[Calls(Type = typeof(MoviePlayer), Member = "IsGameplayRendering")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "Play")]
-	[Calls(Type = typeof(MoviePlayer), Member = "Stop")]
-	[Calls(Type = typeof(InterfaceManager), Member = "HidePanelsForSubtitle")]
-	[Calls(Type = typeof(GameAudioManager), Member = "MuteGameplayAudio")]
-	[Calls(Type = typeof(MoviePlayer), Member = "IsUsingWwiseAudio")]
-	[Calls(Type = typeof(Utils), Member = "ParseSubtitles")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Path), Member = "Combine")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Path), Member = "GetFileNameWithoutExtension")]
-	[Calls(Type = typeof(MoviePlayer), Member = "SetupMovie")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(MoviePlayer), Member = "SetupMovie")]
+	[Calls(Type = typeof(Path), Member = "GetFileNameWithoutExtension")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Path), Member = "Combine")]
 	[Calls(Type = typeof(File), Member = "Exists")]
+	[Calls(Type = typeof(Utils), Member = "ParseSubtitles")]
+	[Calls(Type = typeof(MoviePlayer), Member = "IsGameplayRendering")]
+	[Calls(Type = typeof(MoviePlayer), Member = "IsUsingWwiseAudio")]
+	[Calls(Type = typeof(GameAudioManager), Member = "MuteGameplayAudio")]
+	[Calls(Type = typeof(InterfaceManager), Member = "HidePanelsForSubtitle")]
+	[Calls(Type = typeof(MoviePlayer), Member = "Stop")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public static void PlayMovieFromFullPath(OnPlaybackComplete onPlaybackComplete, Options opts, string fullpath, string filename)
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_StopVideo), Member = "OnExecute")]
-	[CalledBy(Type = typeof(AnimationEvents), Member = "EventStopMovie")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "PlayMovieFromFullPath")]
-	[Calls(Type = typeof(MoviePlayer), Member = "DoStop")]
-	[Calls(Type = typeof(MoviePlayer), Member = "IsInitialized")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
+	[CalledBy(Type = typeof(AnimationEvents), Member = "EventStopMovie")]
+	[CalledBy(Type = typeof(Action_StopVideo), Member = "OnExecute")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(MoviePlayer), Member = "IsInitialized")]
+	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
+	[Calls(Type = typeof(MoviePlayer), Member = "DoStop")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void Stop()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(MoviePlayer), Member = "IsInitialized")]
 	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public static float GetCurrentMovieDurationSeconds()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(InputManager), Member = "HasPressedSkip")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool IsPreparingPending()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static bool IsPreparingReady()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(CinematicManager), Member = "MaybeSeekMovie")]
 	[CalledBy(Type = typeof(AnimationEvents), Member = "EventPlayMovie")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(MoviePlayer), Member = "IsInitialized")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(CinematicManager), Member = "MaybeSeekMovie")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(MoviePlayer), Member = "IsInitialized")]
 	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public static void Seek(float newTime)
 	{
 	}
 
-	[CalledBy(Type = typeof(CinematicManager), Member = "MaybeSeekMovie")]
-	[CalledBy(Type = typeof(MoviePlayer), Member = "Awake")]
-	[CalledBy(Type = typeof(MoviePlayer), Member = "Seek")]
+	[CalledBy(Type = typeof(MoviePlayer), Member = "Stop")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "GetCurrentMovieDurationSeconds")]
+	[CalledBy(Type = typeof(MoviePlayer), Member = "Seek")]
+	[CalledBy(Type = typeof(MoviePlayer), Member = "Awake")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CalledBy(Type = typeof(CinematicManager), Member = "MaybeSeekMovie")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(MoviePlayer), Member = "Stop")]
 	public static bool IsInitialized()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 27)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsPlaying()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "Enable")]
 	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
 	[CalledBy(Type = typeof(InputManager), Member = "CanInvokePauseMenu")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsPaused()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsScreenFilled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(MoviePlayer), Member = "UpdatePlayback")]
-	[CalledBy(Type = typeof(MoviePlayer), Member = "DoStop")]
-	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "PlayMovieFromFullPath")]
+	[CalledBy(Type = typeof(MoviePlayer), Member = "DoStop")]
+	[CalledBy(Type = typeof(MoviePlayer), Member = "UpdatePlayback")]
+	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "Enable")]
 	[CalledBy(Type = typeof(CameraGlobalRT), Member = "OnPreRender")]
+	[CallerCount(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsGameplayRendering()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsAudioEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "PlayMovieFromFullPath")]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "UpdatePrepare")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsUsingWwiseAudio()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool SuppressingErrors()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool ShouldWaitFirstFrame()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool ShouldPrepareMovieOnly()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool HasNoUserInterrupt()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public static bool ShouldTryToUsePreparedMovie(Options opts)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "UpdatePrepare")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "UpdatePlayback")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "OnAkVoiceEvent")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool ShouldSyncToAudio()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool ShouldStopAudio()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(MoviePlayer), Member = "BuildPathDictionary")]
-	[Calls(Type = typeof(MoviePlayer), Member = "InstantiateCameraForPlayer")]
-	[Calls(Type = typeof(Path), Member = "Combine")]
-	[Calls(Type = typeof(Path), Member = "Combine")]
-	[Calls(Type = typeof(MoviePlayer), Member = "IsInitialized")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MoviePlayer), Member = "IsInitialized")]
 	[Calls(Type = typeof(Path), Member = "Combine")]
+	[Calls(Type = typeof(MoviePlayer), Member = "InstantiateCameraForPlayer")]
+	[Calls(Type = typeof(MoviePlayer), Member = "BuildPathDictionary")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "UnPauseAudio")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(MoviePlayer), Member = "UpdatePrepare")]
-	[Calls(Type = typeof(MoviePlayer), Member = "DoStop")]
-	[Calls(Type = typeof(MoviePlayer), Member = "UpdatePlayback")]
-	[Calls(Type = typeof(MoviePlayer), Member = "GetCurrentFrame")]
-	[Calls(Type = typeof(MoviePlayer), Member = "GetCurrentFrame")]
-	[Calls(Type = typeof(VideoPlayer), Member = "Play")]
-	[Calls(Type = typeof(MoviePlayer), Member = "GetCurrentFrame")]
-	[Calls(Type = typeof(MoviePlayer), Member = "DoStop")]
-	[Calls(Type = typeof(MoviePlayer), Member = "CheckForPause")]
-	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
-	[Calls(Type = typeof(MoviePlayer), Member = "CheckForInterrupt")]
-	[Calls(Type = typeof(MoviePlayer), Member = "IsInitialized")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MoviePlayer), Member = "IsInitialized")]
+	[Calls(Type = typeof(MoviePlayer), Member = "CheckForInterrupt")]
+	[Calls(Type = typeof(MoviePlayer), Member = "IsPlaying")]
+	[Calls(Type = typeof(MoviePlayer), Member = "CheckForPause")]
+	[Calls(Type = typeof(MoviePlayer), Member = "DoStop")]
 	[Calls(Type = typeof(GameManager), Member = "ShouldPauseMoviePlayer")]
+	[Calls(Type = typeof(VideoPlayer), Member = "Play")]
+	[Calls(Type = typeof(GameAudioManager), Member = "UnPauseAudio")]
+	[Calls(Type = typeof(MoviePlayer), Member = "GetCurrentFrame")]
+	[Calls(Type = typeof(MoviePlayer), Member = "UpdatePlayback")]
+	[Calls(Type = typeof(MoviePlayer), Member = "UpdatePrepare")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "Update")]
-	[Calls(Type = typeof(InputManager), Member = "GetInteractPressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_OptionsMenu), Member = "HasCinematicBeenViewed")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetInteractPressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool CheckForInterrupt()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PauseAudioImmediate")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "ShouldPauseMoviePlayer")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PauseAudioImmediate")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void CheckForPause()
 	{
 	}
 
-	[Calls(Type = typeof(MoviePlayer), Member = "StopAudio")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(MoviePlayer), Member = "OnLoopPointReached")]
-	[CalledBy(Type = typeof(MoviePlayer), Member = "OnLoopPointReached")]
-	[CalledBy(Type = typeof(MoviePlayer), Member = "Update")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "Stop")]
-	[Calls(Type = typeof(GameAudioManager), Member = "UnmuteGameplayAudio")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "Update")]
-	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MarkCinematicAsViewed")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(InterfaceManager), Member = "RestorePanelsAfterSubtitle")]
-	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
-	[Calls(Type = typeof(MoviePlayer), Member = "IsGameplayRendering")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(MoviePlayer), Member = "OnLoopPointReached")]
+	[CalledBy(Type = typeof(MoviePlayer), Member = "OnLoopPointReached")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(MoviePlayer), Member = "IsGameplayRendering")]
+	[Calls(Type = typeof(InterfaceManager), Member = "RestorePanelsAfterSubtitle")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_OptionsMenu), Member = "MarkCinematicAsViewed")]
+	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
+	[Calls(Type = typeof(GameAudioManager), Member = "UnmuteGameplayAudio")]
+	[Calls(Type = typeof(MoviePlayer), Member = "StopAudio")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 8)]
 	private static void DoStop()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "DoStop")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void StopAudio()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "UnPauseAudio")]
-	[Calls(Type = typeof(VideoPlayer), Member = "Play")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "ShouldPauseMoviePlayer")]
+	[Calls(Type = typeof(VideoPlayer), Member = "Play")]
+	[Calls(Type = typeof(GameAudioManager), Member = "UnPauseAudio")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdatePause()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "Update")]
-	[Calls(Type = typeof(CameraFade), Member = "BashFadeAlpha")]
-	[Calls(Type = typeof(VideoPlayer), Member = "set_externalReferenceTime")]
-	[Calls(Type = typeof(VideoPlayer), Member = "set_timeReference")]
-	[Calls(Type = typeof(MoviePlayer), Member = "ShouldSyncToAudio")]
-	[Calls(Type = typeof(MoviePlayer), Member = "GetAudioEventFromFileName")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetSwearFilterSwitchOnEmitter")]
-	[Calls(Type = typeof(MoviePlayer), Member = "IsUsingWwiseAudio")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MoviePlayer), Member = "IsUsingWwiseAudio")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetSwearFilterSwitchOnEmitter")]
+	[Calls(Type = typeof(MoviePlayer), Member = "GetAudioEventFromFileName")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[Calls(Type = typeof(MoviePlayer), Member = "ShouldSyncToAudio")]
+	[Calls(Type = typeof(VideoPlayer), Member = "set_timeReference")]
+	[Calls(Type = typeof(VideoPlayer), Member = "set_externalReferenceTime")]
+	[Calls(Type = typeof(CameraFade), Member = "BashFadeAlpha")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 17)]
 	private void UpdatePrepare()
 	{
 	}
 
-	[Calls(Type = typeof(VideoPlayer), Member = "set_externalReferenceTime")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "Update")]
-	[Calls(Type = typeof(MoviePlayer), Member = "GetCurrentFrame")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetSourcePlayPosition")]
-	[Calls(Type = typeof(MoviePlayer), Member = "IsGameplayRendering")]
-	[Calls(Type = typeof(Utils), Member = "UpdateSubtitles")]
-	[Calls(Type = typeof(MoviePlayer), Member = "GetCurrentFrame")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MoviePlayer), Member = "IsGameplayRendering")]
+	[Calls(Type = typeof(MoviePlayer), Member = "GetCurrentFrame")]
+	[Calls(Type = typeof(Utils), Member = "UpdateSubtitles")]
 	[Calls(Type = typeof(MoviePlayer), Member = "ShouldSyncToAudio")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetSourcePlayPosition")]
+	[Calls(Type = typeof(VideoPlayer), Member = "set_externalReferenceTime")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdatePlayback()
 	{
 	}
 
 	[CalledBy(Type = typeof(MoviePlayer), Member = "Awake")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 44)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 19)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 44)]
 	private void InstantiateCameraForPlayer()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "BuildPathDictionary")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(Utils), Member = "IsCommandLineArgumentPresent")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "IsCommandLineArgumentPresent")]
 	[Calls(Type = typeof(Path), Member = "GetExtension")]
+	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private static bool ShouldReplacePathEntry(FileInfo fi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(MoviePlayer), Member = "ShouldReplacePathEntry")]
-	[CallsUnknownMethods(Count = 25)]
-	[CalledBy(Type = typeof(MoviePlayer), Member = "Awake")]
-	[CalledBy(Type = typeof(MoviePlayer), Member = "Play")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "FindFullMoviePath")]
-	[Calls(Type = typeof(TextInfo), Member = "CompareOrdinalIgnoreCase")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
+	[CalledBy(Type = typeof(MoviePlayer), Member = "Play")]
+	[CalledBy(Type = typeof(MoviePlayer), Member = "Awake")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(string), Member = "CompareOrdinalIgnoreCaseHelper")]
-	[Calls(Type = typeof(Path), Member = "GetExtension")]
-	[Calls(Type = typeof(DirectoryInfo), Member = "GetFiles")]
 	[Calls(Type = typeof(DirectoryInfo), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(DirectoryInfo), Member = "GetFiles")]
+	[Calls(Type = typeof(Path), Member = "GetExtension")]
+	[Calls(Type = typeof(string), Member = "CompareOrdinalIgnoreCaseHelper")]
 	[Calls(Type = typeof(Path), Member = "GetFileNameWithoutExtension")]
+	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(MoviePlayer), Member = "ShouldReplacePathEntry")]
+	[Calls(Type = typeof(TextInfo), Member = "CompareOrdinalIgnoreCase")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 25)]
 	private static void BuildPathDictionary()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private static void OnErrorReceived(VideoPlayer source, string message)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(MoviePlayer), Member = "DoStop")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	private void OnLoopPointReached(VideoPlayer vp)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MoviePlayer), Member = "DoStop")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private static void OnLoopPointReached()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private static void LogError(string err)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MoviePlayer), Member = "ShouldSyncToAudio")]
 	[Calls(Type = typeof(AkEventCallbackInfo), Member = "get_playingID")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnAkVoiceEvent(object in_cookie, AkCallbackType in_type, object in_info)
 	{
 	}
 
-	[CalledBy(Type = typeof(MoviePlayer), Member = "UpdatePlayback")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "Update")]
 	[CalledBy(Type = typeof(MoviePlayer), Member = "UpdatePlayback")]
-	[CalledBy(Type = typeof(MoviePlayer), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(MoviePlayer), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private long GetCurrentFrame()
 	{
-		return default(long);
+		return 0L;
 	}
 
 	[CallerCount(Count = 0)]
@@ -610,7 +602,7 @@ public class MoviePlayer : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	private long GetLastFrame()
 	{
-		return default(long);
+		return 0L;
 	}
 
 	[DeduplicatedMethod]

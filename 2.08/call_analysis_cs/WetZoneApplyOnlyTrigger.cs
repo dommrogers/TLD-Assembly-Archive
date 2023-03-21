@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -29,26 +28,26 @@ public class WetZoneApplyOnlyTrigger : MonoBehaviour
 
 	public bool m_VoiceOverIsCritical;
 
-	[Calls(Type = typeof(CameraEffects), Member = "WaterPulse")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(WetZoneApplyOnlyTrigger), Member = "AddFreezing")]
-	[Calls(Type = typeof(WetZoneApplyOnlyTrigger), Member = "IncreaseWetness")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(WetZoneApplyOnlyTrigger), Member = "IncreaseWetness")]
+	[Calls(Type = typeof(WetZoneApplyOnlyTrigger), Member = "AddFreezing")]
+	[Calls(Type = typeof(CameraEffects), Member = "WaterPulse")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(WetZoneApplyOnlyTrigger), Member = "AddFreezing")]
-	[Calls(Type = typeof(GearItem), Member = "ExtinguishLitItem")]
-	[Calls(Type = typeof(GearItem), Member = "ExtinguishLitItem")]
-	[Calls(Type = typeof(Component), Member = "CompareTag")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "CompareTag")]
+	[Calls(Type = typeof(GameObject), Member = "TryGetComponent")]
+	[Calls(Type = typeof(GearItem), Member = "ExtinguishLitItem")]
 	[Calls(Type = typeof(WetZoneApplyOnlyTrigger), Member = "IncreaseWetness")]
+	[Calls(Type = typeof(WetZoneApplyOnlyTrigger), Member = "AddFreezing")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnTriggerEnter(Collider other)
 	{
 	}
@@ -60,24 +59,24 @@ public class WetZoneApplyOnlyTrigger : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Freezing), Member = "AddFreezing")]
 	[CalledBy(Type = typeof(WetZoneApplyOnlyTrigger), Member = "Update")]
 	[CalledBy(Type = typeof(WetZoneApplyOnlyTrigger), Member = "OnTriggerEnter")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Freezing), Member = "AddFreezing")]
+	[CallsUnknownMethods(Count = 1)]
 	private void AddFreezing(float freezingValue)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(WetZoneApplyOnlyTrigger), Member = "OnTriggerEnter")]
-	[Calls(Type = typeof(ClothingItem), Member = "IncreaseWetnessPercent")]
 	[CalledBy(Type = typeof(WetZoneApplyOnlyTrigger), Member = "Update")]
-	[Calls(Type = typeof(ClothingItem), Member = "IsWearing")]
+	[CalledBy(Type = typeof(WetZoneApplyOnlyTrigger), Member = "OnTriggerEnter")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ClothingItem), Member = "IsWearing")]
 	[Calls(Type = typeof(ClothingItem), Member = "IsOutermostItemInClothingRegion")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ClothingItem), Member = "IncreaseWetnessPercent")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	private void IncreaseWetness(float wetnessValue)
 	{
 	}

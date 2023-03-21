@@ -58,112 +58,110 @@ public class ClothingSpawner : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(ClothingSpawner), Member = "MaybeSpawnHands")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ClothingSpawner), Member = "MaybeSpawnHands")]
 	[Calls(Type = typeof(ClothingSpawner), Member = "MaybeSpawnTorso")]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(ClothingSpawner), Member = "SpawnMesh")]
-	[CalledBy(Type = typeof(ClothingSpawner), Member = "Update")]
 	[CalledBy(Type = typeof(ClothingSpawner), Member = "Start")]
-	[Calls(Type = typeof(ClothingSpawner), Member = "ListContains")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(ClothingSpawner), Member = "ListContains")]
-	[Calls(Type = typeof(ClothingSpawner), Member = "GetCurrentHands")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(ClothingSpawner), Member = "Update")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ClothingSpawner), Member = "GetCurrentHands")]
+	[Calls(Type = typeof(ClothingSpawner), Member = "ListContains")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	[Calls(Type = typeof(Debug), Member = "LogErrorFormat")]
+	[Calls(Type = typeof(ClothingSpawner), Member = "ListContains")]
+	[Calls(Type = typeof(ClothingSpawner), Member = "SpawnMesh")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	private void MaybeSpawnHands()
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "HideHands")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "ShowHands")]
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "HideHands")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public void EnableActiveClothing(bool enable)
 	{
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ClothingSpawner), Member = "GetCurrentHands")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public string SetHandMeshState(string name)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(ClothingSpawner), Member = "MaybeSpawnHands")]
+	[CalledBy(Type = typeof(ClothingSpawner), Member = "SetHandMeshState")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "SetHandMeshState")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CalledBy(Type = typeof(ClothingSpawner), Member = "MaybeSpawnHands")]
-	[CalledBy(Type = typeof(ClothingSpawner), Member = "SetHandMeshState")]
 	private List<MeshSet> GetCurrentHands()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(ClothingSpawner), Member = "MaybeSpawnHands")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 3)]
 	private bool ListContains(List<GameObject> gs, GameObject prefab)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(ClothingSpawner), Member = "MaybeSpawnHands")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private bool ListContains(List<MeshAssociation> mas, GameObject prefab)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(ClothingSpawner), Member = "Update")]
 	[CalledBy(Type = typeof(ClothingSpawner), Member = "Start")]
-	[Calls(Type = typeof(ClothingSpawner), Member = "SpawnMesh")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[CalledBy(Type = typeof(ClothingSpawner), Member = "Update")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(ClothingSpawner), Member = "SpawnMesh")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsUnknownMethods(Count = 3)]
 	private void MaybeSpawnTorso()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(ClothingSpawner), Member = "MaybeSpawnTorso")]
 	[CalledBy(Type = typeof(ClothingSpawner), Member = "MaybeSpawnHands")]
-	[Calls(Type = typeof(UseParentBones), Member = "DoWork")]
-	[Calls(Type = typeof(Renderer), Member = "set_shadowCastingMode")]
-	[Calls(Type = typeof(SkinnedMeshRenderer), Member = "set_updateWhenOffscreen")]
-	[Calls(Type = typeof(SkinnedMeshRenderer), Member = "set_rootBone")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CalledBy(Type = typeof(ClothingSpawner), Member = "MaybeSpawnTorso")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(SkinnedMeshRenderer), Member = "set_rootBone")]
+	[Calls(Type = typeof(SkinnedMeshRenderer), Member = "set_updateWhenOffscreen")]
+	[Calls(Type = typeof(Renderer), Member = "set_shadowCastingMode")]
+	[Calls(Type = typeof(UseParentBones), Member = "DoWork")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	private GameObject SpawnMesh(GameObject prefab)
 	{
 		return null;

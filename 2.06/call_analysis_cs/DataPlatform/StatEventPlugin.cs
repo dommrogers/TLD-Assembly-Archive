@@ -7,9 +7,9 @@ namespace DataPlatform;
 public class StatEventPlugin
 {
 	[PreserveSig]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(StatEvent), Member = "get_EventType")]
 	[CalledBy(Type = typeof(StatEvent), Member = "get_LeaderboardResultArgs")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static extern StatEventType StatisticEvent_EventType(IntPtr self);
 
@@ -24,8 +24,8 @@ public class StatEventPlugin
 	public static extern IntPtr StatisticEvent_ErrorMessage(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void StatisticEvent_Dispose(IntPtr self);
 
 	[PreserveSig]

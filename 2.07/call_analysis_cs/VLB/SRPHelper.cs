@@ -20,58 +20,52 @@ public static class SRPHelper
 
 	public static RenderPipeline renderPipelineType
 	{
-		[CalledBy(Type = typeof(Config), Member = "get_requiresDoubleSidedMesh")]
-		[CalledBy(Type = typeof(Config), Member = "get_actualRenderingMode")]
-		[CalledBy(Type = typeof(Config), Member = "get_useSinglePassShader")]
-		[CalledBy(Type = typeof(Config), Member = "get_hasRenderPipelineMismatch")]
-		[CalledBy(Type = typeof(BatchingHelper), Member = "CanBeBatched")]
-		[CalledBy(Type = typeof(GlobalMesh), Member = "Get")]
-		[CalledBy(Type = typeof(MeshGenerator), Member = "GetSharedMeshVertexCount")]
-		[CalledBy(Type = typeof(MeshGenerator), Member = "GetSharedMeshIndicesCount")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(Config), Member = "IsSRPBatcherSupported")]
-		[CalledBy(Type = typeof(Config), Member = "OnStartup")]
-		[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMatricesPropertiesForGPUInstancingSRP")]
+		[CalledBy(Type = typeof(BatchingHelper), Member = "get_forceEnableDepthBlend")]
 		[CalledBy(Type = typeof(BatchingHelper), Member = "CanBeBatched")]
 		[CalledBy(Type = typeof(BatchingHelper), Member = "CanBeBatched")]
 		[CalledBy(Type = typeof(BeamGeometry), Member = "get_shouldUseGPUInstancedMaterial")]
-		[CalledBy(Type = typeof(BatchingHelper), Member = "get_forceEnableDepthBlend")]
-		[CalledBy(Type = typeof(BatchingHelper), Member = "get_forceEnableDepthBlend")]
-		[Calls(Type = typeof(string), Member = "Contains")]
-		[Calls(Type = typeof(string), Member = "Contains")]
-		[Calls(Type = typeof(string), Member = "Contains")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMatricesPropertiesForGPUInstancingSRP")]
+		[CalledBy(Type = typeof(Config), Member = "IsSRPBatcherSupported")]
+		[CalledBy(Type = typeof(Config), Member = "get_actualRenderingMode")]
+		[CalledBy(Type = typeof(Config), Member = "get_useSinglePassShader")]
+		[CalledBy(Type = typeof(Config), Member = "get_requiresDoubleSidedMesh")]
+		[CalledBy(Type = typeof(Config), Member = "get_hasRenderPipelineMismatch")]
+		[CalledBy(Type = typeof(Config), Member = "OnStartup")]
+		[CalledBy(Type = typeof(GlobalMesh), Member = "Get")]
+		[CalledBy(Type = typeof(MeshGenerator), Member = "GetSharedMeshVertexCount")]
+		[CalledBy(Type = typeof(MeshGenerator), Member = "GetSharedMeshIndicesCount")]
 		[CallerCount(Count = 16)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(string), Member = "Contains")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return default(RenderPipeline);
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Contains")]
-	[Calls(Type = typeof(string), Member = "Contains")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Contains")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private static RenderPipeline ComputeRenderPipeline()
 	{
 		return default(RenderPipeline);
 	}
 
-	[CalledBy(Type = typeof(DynamicOcclusionDepthBuffer), Member = "OnProcessOcclusion")]
-	[CalledBy(Type = typeof(SRPHelper), Member = "UnregisterOnBeginCameraRendering")]
-	[CalledBy(Type = typeof(SRPHelper), Member = "RegisterOnBeginCameraRendering")]
-	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMatricesPropertiesForGPUInstancingSRP")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "OnDisable")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "OnEnable")]
+	[CalledBy(Type = typeof(BeamGeometry), Member = "UpdateMatricesPropertiesForGPUInstancingSRP")]
+	[CalledBy(Type = typeof(DynamicOcclusionDepthBuffer), Member = "OnProcessOcclusion")]
+	[CalledBy(Type = typeof(SRPHelper), Member = "RegisterOnBeginCameraRendering")]
+	[CalledBy(Type = typeof(SRPHelper), Member = "UnregisterOnBeginCameraRendering")]
+	[CallerCount(Count = 6)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsUsingCustomRenderPipeline()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

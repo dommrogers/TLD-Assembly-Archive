@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -23,61 +22,63 @@ public class ParticleSpawnTrigger : MonoBehaviour
 
 	private HashSet<Collider> m_TriggeredColliders;
 
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 5)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ParticleSpawnTrigger), Member = "SpawnParticlesAtPosition")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ParticleSpawnTrigger), Member = "IsAllowedToTrigger")]
+	[Calls(Type = typeof(ParticleSpawnTrigger), Member = "SpawnParticlesAtPosition")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnTriggerEnter(Collider collider)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ParticleSpawnTrigger), Member = "IsAllowedToTrigger")]
 	[Calls(Type = typeof(ParticleSpawnTrigger), Member = "SpawnParticlesAtPosition")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnTriggerExit(Collider collider)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(ParticleSpawnTrigger), Member = "OnTriggerEnter")]
 	[CalledBy(Type = typeof(ParticleSpawnTrigger), Member = "OnTriggerExit")]
-	[CallsUnknownMethods(Count = 5)]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(HashSet<>), Member = "Contains")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	private bool IsAllowedToTrigger(Collider collider)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	private bool IsValidLayer(int layer)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private ParticleSystem GetNextParticleSystemFromPool()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(ParticleSpawnTrigger), Member = "OnTriggerExit")]
 	[CalledBy(Type = typeof(ParticleSpawnTrigger), Member = "OnTriggerEnter")]
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(ParticleSpawnTrigger), Member = "OnTriggerExit")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	private void SpawnParticlesAtPosition(Vector3 worldPosition)
 	{
 	}

@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityPlugin;
 
@@ -10,7 +9,7 @@ namespace DataPlatform;
 
 public class ServiceConfigurationStatistic : IEnumerable<Statistic>, IEnumerable
 {
-	private sealed class _003CGetEnumerator_003Ed__3 : IDisposable, IEnumerator<Statistic>, IEnumerator
+	private sealed class _003CGetEnumerator_003Ed__3 : IEnumerator<Statistic>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -24,7 +23,7 @@ public class ServiceConfigurationStatistic : IEnumerable<Statistic>, IEnumerable
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -33,9 +32,9 @@ public class ServiceConfigurationStatistic : IEnumerable<Statistic>, IEnumerable
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 29)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -51,18 +50,18 @@ public class ServiceConfigurationStatistic : IEnumerable<Statistic>, IEnumerable
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 19)]
-		[Calls(Type = typeof(ServiceConfigurationStatisticPlugin), Member = "ServiceConfigurationStatistic_GetAt")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ServiceConfigurationStatisticPlugin), Member = "ServiceConfigurationStatistic_GetAt")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 19)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -85,8 +84,8 @@ public class ServiceConfigurationStatistic : IEnumerable<Statistic>, IEnumerable
 	public string ServiceConfigurationId
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -97,8 +96,8 @@ public class ServiceConfigurationStatistic : IEnumerable<Statistic>, IEnumerable
 	public Statistic Item
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(ServiceConfigurationStatisticPlugin), Member = "ServiceConfigurationStatistic_GetAt")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 18)]
 		get
 		{
@@ -106,11 +105,10 @@ public class ServiceConfigurationStatistic : IEnumerable<Statistic>, IEnumerable
 		}
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(ServiceConfigurationStatistic), Member = "System.Collections.IEnumerable.GetEnumerator")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public IEnumerator<Statistic> GetEnumerator()
 	{
 		return null;
@@ -123,10 +121,10 @@ public class ServiceConfigurationStatistic : IEnumerable<Statistic>, IEnumerable
 		return null;
 	}
 
+	[CalledBy(Type = typeof(UserStatisticsResult), Member = "get_Item")]
+	[CalledBy(TypeFullName = "DataPlatform.UserStatisticsResult.<GetEnumerator>d__3", Member = "MoveNext")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(UserStatisticsResult), Member = "get_Item")]
-	[CalledBy(Type = typeof(UserStatisticsResult._003CGetEnumerator_003Ed__3), Member = "MoveNext")]
 	[CallsUnknownMethods(Count = 1)]
 	public ServiceConfigurationStatistic(IntPtr self)
 	{

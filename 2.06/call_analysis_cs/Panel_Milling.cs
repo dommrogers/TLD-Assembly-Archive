@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.SaveState;
 using TLD.UI;
 using TLD.UI.Generics;
 using UnityEngine;
@@ -83,12 +84,12 @@ public class Panel_Milling : Panel_AutoReferenced, IAccelerateTimeProvider
 
 	public bool m_MillingInProgress
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -99,42 +100,42 @@ public class Panel_Milling : Panel_AutoReferenced, IAccelerateTimeProvider
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 12)]
 	public override void Initialize()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void Update()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Milling), Member = "Interrupt")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "OnBack")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "Interrupt")]
 	[CalledBy(Type = typeof(InterfaceManager), Member = "QuitCurrentScreens")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Milling), Member = "Interrupt")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Disable()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Milling), Member = "RefreshSelected")]
-	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
-	[Calls(Type = typeof(Panel_Milling), Member = "RefreshList")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
+	[Calls(Type = typeof(Panel_Milling), Member = "RefreshList")]
+	[Calls(Type = typeof(Panel_Milling), Member = "RefreshSelected")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Enable(MillingMachine machine)
 	{
 	}
@@ -152,20 +153,17 @@ public class Panel_Milling : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
-	[Calls(Type = typeof(Panel_Milling), Member = "HasEnoughMaterials")]
-	[Calls(Type = typeof(Panel_Milling), Member = "BeginRepair")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Milling), Member = "GetSelected")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Milling), Member = "GetSelected")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[Calls(Type = typeof(Panel_Milling), Member = "HasEnoughMaterials")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGuiConfirm")]
+	[Calls(Type = typeof(Panel_Milling), Member = "BeginRepair")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnRepair()
 	{
 	}
@@ -180,17 +178,16 @@ public class Panel_Milling : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
 	[CalledBy(Type = typeof(MillingMachine), Member = "PerformInteraction")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 16)]
 	public bool DetermineRepairables()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -201,57 +198,57 @@ public class Panel_Milling : Panel_AutoReferenced, IAccelerateTimeProvider
 	}
 
 	[CalledBy(Type = typeof(Panel_Milling), Member = "CompleteRepair")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "Interrupt")]
-	[Calls(Type = typeof(GearItem), Member = "SetNormalizedHP")]
-	[Calls(Type = typeof(Panel_Milling), Member = "GetSelected")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillGunsmithing")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Milling), Member = "GetSelected")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillGunsmithing")]
 	[Calls(Type = typeof(Skill_Gunsmithing), Member = "GetMillingRepairCondition")]
+	[Calls(Type = typeof(GearItem), Member = "SetNormalizedHP")]
+	[CallsUnknownMethods(Count = 2)]
 	private void ApplyCondition(float percent)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "OnRepair")]
-	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
-	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Milling), Member = "GetSelected")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Panel_Milling), Member = "RollForRepairSuccess")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Milling), Member = "GetSelected")]
+	[Calls(Type = typeof(GameAudioManager), Member = "Play3DSound")]
+	[Calls(Type = typeof(TimeOfDay), Member = "Accelerate")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsUnknownMethods(Count = 4)]
 	private void BeginRepair()
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "UpdateRepair")]
-	[Calls(Type = typeof(Panel_Milling), Member = "EndRepair")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
-	[Calls(Type = typeof(Panel_Milling), Member = "GetSelected")]
-	[Calls(Type = typeof(Panel_Milling), Member = "ApplyCondition")]
-	[Calls(Type = typeof(Panel_Milling), Member = "ConsumeMaterials")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Milling), Member = "GetSelected")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Milling), Member = "ConsumeMaterials")]
+	[Calls(Type = typeof(Panel_Milling), Member = "ApplyCondition")]
 	[Calls(Type = typeof(PlayerSkills), Member = "RollForSkillIncrease")]
+	[Calls(Type = typeof(SkillsManager), Member = "IncrementPointsAndNotify")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(Panel_Milling), Member = "EndRepair")]
+	[CallsUnknownMethods(Count = 3)]
 	private void CompleteRepair()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "Interrupt")]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "CompleteRepair")]
-	[Calls(Type = typeof(Panel_Milling), Member = "GetMaterials")]
-	[Calls(Type = typeof(Panel_Milling), Member = "GetSelected")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "Interrupt")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Milling), Member = "GetSelected")]
+	[Calls(Type = typeof(Panel_Milling), Member = "GetMaterials")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
+	[CallsUnknownMethods(Count = 5)]
 	private void ConsumeMaterials(float progress)
 	{
 	}
@@ -262,47 +259,47 @@ public class Panel_Milling : Panel_AutoReferenced, IAccelerateTimeProvider
 	[CallsUnknownMethods(Count = 2)]
 	private float DetermineConditionImprovement(SkillType skill)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "Interrupt")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "CompleteRepair")]
-	[Calls(Type = typeof(Panel_Milling), Member = "RefreshSelected")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "Interrupt")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetDayLengthScale")]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Panel_Milling), Member = "RefreshList")]
+	[Calls(Type = typeof(Panel_Milling), Member = "RefreshSelected")]
+	[CallsUnknownMethods(Count = 1)]
 	private void EndRepair()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshRequiredMaterials")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "ConsumeMaterials")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "HasEnoughMaterials")]
-	[Calls(Type = typeof(Panel_Milling), Member = "GetSelected")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshRequiredMaterials")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Milling), Member = "GetSelected")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 8)]
 	private void GetMaterials(out GearItem[] mats, out int[] units, bool adjustForProgress)
 	{
 		mats = null;
 		units = null;
 	}
 
-	[CalledBy(Type = typeof(Panel_Milling), Member = "GetMaterials")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshSelected")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "Interrupt")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "HasEnoughMaterials")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "ConsumeMaterials")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "BeginRepair")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "ApplyCondition")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "OnRepair")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "ApplyCondition")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "BeginRepair")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "CompleteRepair")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "ConsumeMaterials")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "GetMaterials")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "HasEnoughMaterials")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "Interrupt")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshSelected")]
 	[CallerCount(Count = 9)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private GearItem GetSelected()
 	{
 		return null;
@@ -314,44 +311,43 @@ public class Panel_Milling : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
-	[Calls(Type = typeof(Panel_Milling), Member = "RefreshList")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Milling), Member = "RefreshList")]
 	[Calls(Type = typeof(Panel_Milling), Member = "RefreshSelected")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[CallsUnknownMethods(Count = 1)]
 	private void HandleMenuMovement(float movement)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshRequiredMaterials")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "OnRepair")]
-	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshRequiredMaterials")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Milling), Member = "GetSelected")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Milling), Member = "GetMaterials")]
-	[Calls(Type = typeof(Panel_Milling), Member = "GetSelected")]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
+	[CallsUnknownMethods(Count = 3)]
 	private bool HasEnoughMaterials()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "UpdateRepair")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "OnCancel")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "Disable")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Panel_Milling), Member = "ApplyCondition")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "OnCancel")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "UpdateRepair")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Panel_Milling), Member = "EndRepair")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Milling), Member = "ConsumeMaterials")]
 	[Calls(Type = typeof(Panel_Milling), Member = "GetSelected")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Panel_Milling), Member = "ConsumeMaterials")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Milling), Member = "EndRepair")]
 	[Calls(Type = typeof(Panel_Milling), Member = "Disable")]
+	[Calls(Type = typeof(Panel_Milling), Member = "ApplyCondition")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Interrupt()
 	{
 	}
@@ -363,159 +359,136 @@ public class Panel_Milling : Panel_AutoReferenced, IAccelerateTimeProvider
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Milling), Member = "OnScrollbarChanged")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshAll")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "HandleMenuMovement")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "EndRepair")]
-	[CalledBy(Type = typeof(Panel_Milling), Member = "Enable")]
-	[CallerCount(Count = 6)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(GearItemDisplay), Member = "Clear")]
-	[Calls(Type = typeof(GearItemDisplay), Member = "SetSelected")]
-	[Calls(Type = typeof(GearItemDisplay), Member = "Setup")]
 	[CalledBy(Type = typeof(MillingMachine), Member = "PerformInteraction")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "OnScrollbarChanged")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "EndRepair")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "HandleMenuMovement")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshAll")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(GearItemDisplay), Member = "Setup")]
+	[Calls(Type = typeof(GearItemDisplay), Member = "SetSelected")]
+	[Calls(Type = typeof(GearItemDisplay), Member = "Clear")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void RefreshList()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Skill_Gunsmithing), Member = "GetMillingRepairCondition")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillGunsmithing")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(Panel_Milling), Member = "RefreshRequiredMaterials")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GearItemDisplay), Member = "SetSelected")]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(MillingMachine), Member = "PerformInteraction")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "OnScrollbarChanged")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "OnGearItemDisplayClicked")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "EndRepair")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "HandleMenuMovement")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(SkillsManager), Member = "GetTierName")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshAll")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Panel_Milling), Member = "GetSelected")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItem), Member = "GetColorBasedOnCondition")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
 	[Calls(Type = typeof(Utils), Member = "GetWeightOneDecimalPlaceWithUnitsString")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "FormatDisplayTimeMinutes")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTextureFromPrefabName")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTextureFromPrefabName")]
+	[Calls(Type = typeof(Utils), Member = "FormatDisplayTimeMinutes")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillGunsmithing")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(Skill_Gunsmithing), Member = "GetMillingRepairCondition")]
+	[Calls(Type = typeof(SkillsManager), Member = "GetTierName")]
+	[Calls(Type = typeof(Panel_Milling), Member = "RefreshRequiredMaterials")]
+	[Calls(Type = typeof(GearItemDisplay), Member = "SetSelected")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	private void RefreshSelected()
 	{
 	}
 
-	[Calls(Type = typeof(HarvestRepairMaterial), Member = "ShowItem")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshSelected")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Panel_Milling), Member = "HasEnoughMaterials")]
-	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
-	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Milling), Member = "GetMaterials")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Milling), Member = "GetMaterials")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "GearInInventory")]
+	[Calls(Type = typeof(HarvestRepairMaterial), Member = "ShowItem")]
+	[Calls(Type = typeof(HarvestRepairMaterial), Member = "Hide")]
+	[Calls(Type = typeof(Panel_Milling), Member = "HasEnoughMaterials")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	private void RefreshRequiredMaterials(GearItem gearItem)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_Milling), Member = "BeginRepair")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	[Calls(Type = typeof(GameManager), Member = "GetSkillGunsmithing")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	private bool RollForRepairSuccess(SkillType skill)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
 	private void UpdateButtonLegend()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(Panel_Milling), Member = "CompleteRepair")]
 	[Calls(Type = typeof(Panel_Milling), Member = "Interrupt")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateRepair()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsAcceleratingTime()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	public string GetActionText()
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 0)]
+	[CallerCount(Count = 2)]
 	public string GetSpriteName()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	public UIPanel GetPanelToFade()
 	{
 		return null;
@@ -536,15 +509,15 @@ public class Panel_Milling : Panel_AutoReferenced, IAccelerateTimeProvider
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public UIProgressBar GetActionProgress()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void StartAcceleratingTime()
 	{
 	}

@@ -34,78 +34,65 @@ public class ControllerUIElement : MonoBehaviour
 	{
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[Calls(Type = typeof(ControllerUIElement), Member = "ClearLabels")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(ControllerUIElement), Member = "ClearLabels")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(ControllerUIElement), Member = "Activate")]
 	[CalledBy(Type = typeof(ControllerUIElement), Member = "Activate")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(GamepadTemplateUI), Member = "ActivateElements")]
-	[Calls(Type = typeof(ControllerUIEffect), Member = "Activate")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(ControllerUIEffect), Member = "Activate")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(ControllerUIElement), Member = "Activate")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Activate(float amount)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(GamepadTemplateUI), Member = "DrawActiveElements")]
 	[CalledBy(Type = typeof(ControllerUIElement), Member = "Deactivate")]
-	[Calls(Type = typeof(ControllerUIElement), Member = "Deactivate")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(ControllerUIEffect), Member = "RedrawImage")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(GamepadTemplateUI), Member = "DrawActiveElements")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(ControllerUIEffect), Member = "RedrawImage")]
+	[Calls(Type = typeof(ControllerUIElement), Member = "Deactivate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Deactivate()
 	{
 	}
 
-	[CalledBy(Type = typeof(GamepadTemplateUI), Member = "DrawLabel")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(GamepadTemplateUI), Member = "DrawLabel")]
-	[CalledBy(Type = typeof(GamepadTemplateUI), Member = "DrawLabel")]
 	[CalledBy(Type = typeof(ControllerUIElement), Member = "SetLabel")]
-	[Calls(Type = typeof(ControllerUIElement), Member = "SetLabel")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(GamepadTemplateUI), Member = "DrawLabel")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(ControllerUIElement), Member = "SetLabel")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetLabel(string text, AxisRange labelType)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(GamepadTemplateUI), Member = "DrawLabels")]
-	[CalledBy(Type = typeof(ControllerUIElement), Member = "ClearLabels")]
 	[CalledBy(Type = typeof(ControllerUIElement), Member = "Awake")]
-	[Calls(Type = typeof(ControllerUIElement), Member = "ClearLabels")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(ControllerUIElement), Member = "ClearLabels")]
+	[CalledBy(Type = typeof(GamepadTemplateUI), Member = "DrawLabels")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(ControllerUIElement), Member = "ClearLabels")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ClearLabels()
 	{
 	}

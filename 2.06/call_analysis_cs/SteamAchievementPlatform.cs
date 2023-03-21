@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using Steamworks;
 
@@ -21,80 +22,79 @@ public class SteamAchievementPlatform : AchievementPlatformBase
 	private InternalState m_InternalState;
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
+	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
 	[Calls(Type = typeof(InteropHelp), Member = "TestIfAvailableClient")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void ResetAllAchievements()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
-	[Calls(Type = typeof(AchievementPlatformBase), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AchievementPlatformBase), Member = "Initialize")]
+	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
+	[Calls(Type = typeof(Callback<>), Member = "Create")]
+	[CallsUnknownMethods(Count = 15)]
 	public override void Initialize()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
 	[Calls(Type = typeof(InteropHelp), Member = "TestIfAvailableClient")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
-	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
 	public override void Update()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
 	[Calls(Type = typeof(CallbackDispatcher), Member = "Unregister")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(CallbackDispatcher), Member = "Unregister")]
-	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
-	[CallerCount(Count = 0)]
 	public override void Shutdown()
 	{
 	}
 
-	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(SteamUserStats), Member = "StoreStats")]
-	[Calls(Type = typeof(SteamUserStats), Member = "SetAchievement")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(SteamUserStats), Member = "SetAchievement")]
+	[Calls(Type = typeof(SteamUserStats), Member = "StoreStats")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void Unlock(Achievement achievement)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(SteamUserStats), Member = "SetStat")]
 	[Calls(Type = typeof(SteamUserStats), Member = "StoreStats")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(SteamUserStats), Member = "SetStat")]
 	public override void SendStatistic(GameIntStatType statistic, int amount)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(InteropHelp), Member = "TestIfAvailableClient")]
-	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SteamManager), Member = "get_Initialized")]
+	[Calls(Type = typeof(InteropHelp), Member = "TestIfAvailableClient")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void RequestStatsAndAchievements()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Enum), Member = "GetValues")]
 	[Calls(Type = typeof(Array), Member = "GetEnumerator")]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[Calls(Type = typeof(SteamUserStats), Member = "GetAchievement")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 14)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	private void OnUserStatsReceived(UserStatsReceived_t callback)
 	{
 	}

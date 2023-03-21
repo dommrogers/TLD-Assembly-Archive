@@ -54,59 +54,38 @@ public class MapCrosshair : MonoBehaviour
 	private TweenPosition m_TweenPosDown;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(Panel_WorldMap), Member = "ResetToNormal")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "ResetToNormal")]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[CalledBy(Type = typeof(Panel_WorldMap), Member = "ResetToNormal")]
 	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 9)]
 	public void ResetToNormal()
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateCrosshairState")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "UpdateCrosshairState")]
 	[CalledBy(Type = typeof(Panel_WorldMap), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_WorldMap), Member = "UpdateCrosshairState")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
 	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsUnknownMethods(Count = 9)]
 	public void SetState(CrosshairState newState)
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public MapCrosshair()
 	{
 	}

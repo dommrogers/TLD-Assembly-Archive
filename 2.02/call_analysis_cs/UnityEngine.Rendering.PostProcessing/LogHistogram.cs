@@ -18,31 +18,28 @@ internal sealed class LogHistogram
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		private set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
-	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeVectorParam")]
-	[CallsUnknownMethods(Count = 20)]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "RenderBuiltins")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeTextureParam")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ComputeBuffer), Member = ".ctor")]
 	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeBufferParam")]
 	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
-	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeBufferParam")]
-	[Calls(Type = typeof(ComputeBuffer), Member = ".ctor")]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeTextureParam")]
+	[Calls(Type = typeof(CommandBuffer), Member = "SetComputeVectorParam")]
 	[CallsDeduplicatedMethods(Count = 9)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 20)]
 	public void Generate(PostProcessRenderContext context)
 	{
 	}
@@ -55,15 +52,15 @@ internal sealed class LogHistogram
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ComputeBuffer), Member = "Dispose")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Release()
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public LogHistogram()
 	{
 	}

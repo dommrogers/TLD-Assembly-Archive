@@ -13,13 +13,13 @@ public class Event : BaseType
 	public override WwiseObjectReference ObjectReference
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -36,44 +36,44 @@ public class Event : BaseType
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void VerifyPlayingID(uint playingId)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
 	[CalledBy(Type = typeof(AkEvent), Member = "HandleEvent")]
 	[CalledBy(Type = typeof(AkRoom), Member = "HandleEvent")]
 	[CalledBy(Type = typeof(AmbientTracker), Member = "Start")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 1)]
 	public uint Post(GameObject gameObject)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public uint Post(GameObject gameObject, CallbackFlags flags, AkCallbackManager.EventCallback callback, object cookie = null)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CalledBy(Type = typeof(AkEventPlayableBehavior), Member = "retriggerEvent")]
-	[CalledBy(Type = typeof(AkEventPlayableBehavior), Member = "playEvent")]
-	[CalledBy(Type = typeof(AkEvent), Member = "HandleEvent")]
+	[CalledBy(Type = typeof(AkAudioInputManager), Member = "PostAudioInputEvent")]
 	[CalledBy(Type = typeof(AkAmbient), Member = "HandleEvent")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(AkEvent), Member = "HandleEvent")]
+	[CalledBy(Type = typeof(AkEventPlayableBehavior), Member = "playEvent")]
+	[CalledBy(Type = typeof(AkEventPlayableBehavior), Member = "retriggerEvent")]
+	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(AkAudioInputManager), Member = "PostAudioInputEvent")]
+	[CallsUnknownMethods(Count = 1)]
 	public uint Post(GameObject gameObject, uint flags, AkCallbackManager.EventCallback callback, object cookie = null)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -82,65 +82,64 @@ public class Event : BaseType
 	{
 	}
 
-	[CalledBy(Type = typeof(AkEventPlayableBehavior), Member = "triggerFadeIn")]
-	[CalledBy(Type = typeof(AmbientTracker), Member = "Stop")]
-	[CalledBy(Type = typeof(Event), Member = "Stop")]
-	[CalledBy(Type = typeof(AkEventPlayableBehavior), Member = "stopEvent")]
-	[CalledBy(Type = typeof(AkEventPlayableBehavior), Member = "triggerFadeOut")]
-	[CalledBy(Type = typeof(AkEventPlayableBehavior), Member = "triggerFadeIn")]
-	[CalledBy(Type = typeof(AkEventPlayableBehavior), Member = "ProcessFrame")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(AkEvent), Member = "Stop")]
-	[CallerCount(Count = 11)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
-	[CalledBy(Type = typeof(AkEvent), Member = "Stop")]
 	[CalledBy(Type = typeof(AkAmbient), Member = "HandleEvent")]
 	[CalledBy(Type = typeof(AkEvent), Member = "HandleEvent")]
+	[CalledBy(Type = typeof(AkEvent), Member = "Stop")]
+	[CalledBy(Type = typeof(AkEvent), Member = "Stop")]
+	[CalledBy(Type = typeof(AkEventPlayableBehavior), Member = "ProcessFrame")]
+	[CalledBy(Type = typeof(AkEventPlayableBehavior), Member = "triggerFadeIn")]
+	[CalledBy(Type = typeof(AkEventPlayableBehavior), Member = "triggerFadeOut")]
+	[CalledBy(Type = typeof(AkEventPlayableBehavior), Member = "stopEvent")]
+	[CalledBy(Type = typeof(Event), Member = "Stop")]
+	[CalledBy(Type = typeof(AmbientTracker), Member = "Stop")]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ExecuteAction(GameObject gameObject, AkActionOnEventType actionOnEventType, int transitionDuration, AkCurveInterpolation curveInterpolation)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkMIDIPost_PostOnEvent")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public void PostMIDI(GameObject gameObject, AkMIDIPostArray array)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkMIDIPost_PostOnEvent")]
-	[Calls(Type = typeof(IndexOutOfRangeException), Member = ".ctor")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkMIDIPost_PostOnEvent")]
+	[Calls(Type = typeof(IndexOutOfRangeException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public void PostMIDI(GameObject gameObject, AkMIDIPostArray array, int count)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetAkGameObjectID")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "PreGameObjectAPICall")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 2)]
 	public void StopMIDI(GameObject gameObject)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 2)]
 	public void StopMIDI()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public Event()
 	{
 	}

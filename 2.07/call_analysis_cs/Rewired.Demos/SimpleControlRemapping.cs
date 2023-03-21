@@ -44,9 +44,9 @@ public class SimpleControlRemapping : MonoBehaviour
 		{
 		}
 
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(SimpleControlRemapping), Member = "get_controller")]
+		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 		[CallsUnknownMethods(Count = 1)]
 		internal void _003CRedrawUI_003Eb__0()
 		{
@@ -69,7 +69,7 @@ public class SimpleControlRemapping : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -80,16 +80,16 @@ public class SimpleControlRemapping : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CStartListeningDelayed_003Ed__28(int _003C_003E1__state)
 		{
 		}
@@ -101,28 +101,27 @@ public class SimpleControlRemapping : MonoBehaviour
 		{
 		}
 
-		[Calls(Type = typeof(SimpleControlRemapping), Member = "get_player")]
-		[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "SetMapsEnabled")]
-		[Calls(Type = typeof(InputMapper), Member = "Start")]
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-		[Calls(Type = typeof(InputMapper.Context), Member = "set_actionElementMapToReplace")]
-		[Calls(Type = typeof(SimpleControlRemapping), Member = "get_controllerMap")]
-		[Calls(Type = typeof(InputMapper.Context), Member = "set_actionRange")]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(InputMapper.Context), Member = "set_actionId")]
 		[Calls(Type = typeof(SimpleControlRemapping), Member = "get_controllerMap")]
 		[Calls(Type = typeof(InputMapper.Context), Member = "set_controllerMap")]
-		[Calls(Type = typeof(InputMapper.Context), Member = "set_actionId")]
+		[Calls(Type = typeof(InputMapper.Context), Member = "set_actionRange")]
+		[Calls(Type = typeof(InputMapper.Context), Member = "set_actionElementMapToReplace")]
+		[Calls(Type = typeof(InputMapper), Member = "Start")]
+		[Calls(Type = typeof(SimpleControlRemapping), Member = "get_player")]
+		[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "SetMapsEnabled")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 2)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
+		[DebuggerHidden]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
 		[CallsUnknownMethods(Count = 4)]
-		[DebuggerHidden]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -156,11 +155,11 @@ public class SimpleControlRemapping : MonoBehaviour
 
 	private Player player
 	{
+		[CalledBy(Type = typeof(_003CStartListeningDelayed_003Ed__28), Member = "MoveNext")]
+		[CalledBy(Type = typeof(SimpleControlRemapping), Member = "SetSelectedController")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(ReInput), Member = "get_players")]
 		[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-		[CalledBy(Type = typeof(_003CStartListeningDelayed_003Ed__28), Member = "MoveNext")]
-		[CalledBy(Type = typeof(SimpleControlRemapping), Member = "SetSelectedController")]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -170,18 +169,15 @@ public class SimpleControlRemapping : MonoBehaviour
 
 	private ControllerMap controllerMap
 	{
-		[CallsUnknownMethods(Count = 1)]
+		[CalledBy(Type = typeof(_003CStartListeningDelayed_003Ed__28), Member = "MoveNext")]
 		[CalledBy(Type = typeof(SimpleControlRemapping), Member = "RedrawUI")]
-		[CalledBy(Type = typeof(_003CStartListeningDelayed_003Ed__28), Member = "MoveNext")]
-		[CalledBy(Type = typeof(_003CStartListeningDelayed_003Ed__28), Member = "MoveNext")]
-		[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetMap")]
-		[Calls(Type = typeof(SimpleControlRemapping), Member = "get_controller")]
-		[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-		[Calls(Type = typeof(SimpleControlRemapping), Member = "get_controller")]
 		[CallerCount(Count = 3)]
 		[Calls(Type = typeof(SimpleControlRemapping), Member = "get_controller")]
-		[Calls(Type = typeof(Controller), Member = "get_type")]
 		[Calls(Type = typeof(ReInput), Member = "get_players")]
+		[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+		[Calls(Type = typeof(Controller), Member = "get_type")]
+		[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetMap")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -190,124 +186,111 @@ public class SimpleControlRemapping : MonoBehaviour
 
 	private Controller controller
 	{
-		[CalledBy(Type = typeof(SimpleControlRemapping), Member = "get_controllerMap")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(SimpleControlRemapping), Member = "OnInputFieldClicked")]
-		[CalledBy(Type = typeof(SimpleControlRemapping), Member = "RedrawUI")]
-		[CalledBy(Type = typeof(SimpleControlRemapping), Member = "RedrawUI")]
-		[CalledBy(Type = typeof(SimpleControlRemapping), Member = "get_controllerMap")]
-		[CalledBy(Type = typeof(SimpleControlRemapping), Member = "get_controllerMap")]
 		[CalledBy(Type = typeof(_003C_003Ec__DisplayClass21_0), Member = "<RedrawUI>b__0")]
-		[Calls(Type = typeof(Player.ControllerHelper), Member = "GetController")]
-		[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-		[Calls(Type = typeof(ReInput), Member = "get_players")]
+		[CalledBy(Type = typeof(SimpleControlRemapping), Member = "get_controllerMap")]
+		[CalledBy(Type = typeof(SimpleControlRemapping), Member = "RedrawUI")]
+		[CalledBy(Type = typeof(SimpleControlRemapping), Member = "OnInputFieldClicked")]
 		[CallerCount(Count = 7)]
+		[Calls(Type = typeof(ReInput), Member = "get_players")]
+		[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+		[Calls(Type = typeof(Player.ControllerHelper), Member = "GetController")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(SimpleControlRemapping), Member = "InitializeUI")]
-	[Calls(Type = typeof(InputMapper), Member = "add_StoppedEvent")]
-	[Calls(Type = typeof(InputMapper), Member = "add_InputMappedEvent")]
-	[Calls(Type = typeof(ReInput), Member = "add_ControllerDisconnectedEvent")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(InputMapper), Member = "get_options")]
-	[Calls(Type = typeof(InputMapper), Member = "get_options")]
-	[Calls(Type = typeof(InputMapper), Member = "get_options")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputMapper), Member = "get_options")]
 	[Calls(Type = typeof(ReInput), Member = "add_ControllerConnectedEvent")]
+	[Calls(Type = typeof(ReInput), Member = "add_ControllerDisconnectedEvent")]
+	[Calls(Type = typeof(InputMapper), Member = "add_InputMappedEvent")]
+	[Calls(Type = typeof(InputMapper), Member = "add_StoppedEvent")]
+	[Calls(Type = typeof(SimpleControlRemapping), Member = "InitializeUI")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ReInput), Member = "remove_ControllerDisconnectedEvent")]
+	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "Rewired.InputMapper.KFfTdKEYHyKIWgtQchMdsiMvqor", Member = "cLsgLNiZfZLdTfDERXbrfQHXqTPc")]
 	[Calls(Type = typeof(InputMapper), Member = "RemoveAllEventListeners")]
 	[Calls(Type = typeof(ReInput), Member = "remove_ControllerConnectedEvent")]
+	[Calls(Type = typeof(ReInput), Member = "remove_ControllerDisconnectedEvent")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(InputMapper.KFfTdKEYHyKIWgtQchMdsiMvqor), Member = "cLsgLNiZfZLdTfDERXbrfQHXqTPc")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEventBase), Member = "RemoveAllListeners")]
-	[CalledBy(Type = typeof(SimpleControlRemapping), Member = "OnInputMapped")]
-	[CalledBy(Type = typeof(SimpleControlRemapping), Member = "SetSelectedController")]
 	[CalledBy(Type = typeof(SimpleControlRemapping), Member = "InitializeUI")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(UnityEvent), Member = "AddListener")]
-	[Calls(Type = typeof(ActionElementMap), Member = "get_elementIdentifierName")]
-	[Calls(Type = typeof(Controller), Member = "get_name")]
-	[Calls(Type = typeof(ControllerMap), Member = "ElementMapsWithAction")]
+	[CalledBy(Type = typeof(SimpleControlRemapping), Member = "SetSelectedController")]
+	[CalledBy(Type = typeof(SimpleControlRemapping), Member = "OnInputMapped")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(ActionElementMap), Member = "ShowInField")]
 	[Calls(Type = typeof(SimpleControlRemapping), Member = "get_controller")]
+	[Calls(Type = typeof(Controller), Member = "get_name")]
 	[Calls(Type = typeof(SimpleControlRemapping), Member = "get_controllerMap")]
-	[Calls(Type = typeof(SimpleControlRemapping), Member = "get_controller")]
+	[Calls(Type = typeof(ControllerMap), Member = "ElementMapsWithAction")]
+	[Calls(Type = typeof(ActionElementMap), Member = "ShowInField")]
+	[Calls(Type = typeof(ActionElementMap), Member = "get_elementIdentifierName")]
+	[Calls(Type = typeof(UnityEventBase), Member = "RemoveAllListeners")]
+	[Calls(Type = typeof(UnityEvent), Member = "AddListener")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 13)]
 	private void RedrawUI()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private void ClearUI()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 38)]
 	[CalledBy(Type = typeof(SimpleControlRemapping), Member = "OnEnable")]
-	[Calls(Type = typeof(SimpleControlRemapping), Member = "RedrawUI")]
-	[Calls(Type = typeof(SimpleControlRemapping), Member = "CreateUIRow")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(InputAction), Member = "get_negativeDescriptiveName")]
-	[Calls(Type = typeof(InputAction), Member = "get_negativeDescriptiveName")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(InputAction), Member = "get_positiveDescriptiveName")]
-	[Calls(Type = typeof(SimpleControlRemapping), Member = "CreateUIRow")]
-	[Calls(Type = typeof(InputAction), Member = "get_positiveDescriptiveName")]
-	[Calls(Type = typeof(SimpleControlRemapping), Member = "CreateUIRow")]
-	[Calls(Type = typeof(Logger), Member = "LogError")]
-	[Calls(Type = typeof(UserData), Member = "GIRDqTjLRaEIriZdEiTFKTpCEtce")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
-	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
+	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
+	[Calls(Type = typeof(UserData), Member = "GIRDqTjLRaEIriZdEiTFKTpCEtce")]
+	[Calls(TypeFullName = "Rewired.Logger", Member = "LogError")]
+	[Calls(TypeFullName = "Rewired.Utils.EmptyObjects`1", Member = "get_EmptyReadOnlyIListT")]
 	[Calls(Type = typeof(SimpleControlRemapping), Member = "CreateUIRow")]
+	[Calls(Type = typeof(InputAction), Member = "get_positiveDescriptiveName")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(InputAction), Member = "get_negativeDescriptiveName")]
+	[Calls(Type = typeof(SimpleControlRemapping), Member = "RedrawUI")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 38)]
 	private void InitializeUI()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(SimpleControlRemapping), Member = "InitializeUI")]
 	[CalledBy(Type = typeof(SimpleControlRemapping), Member = "InitializeUI")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(SimpleControlRemapping), Member = "InitializeUI")]
-	[CallsDeduplicatedMethods(Count = 15)]
-	[CalledBy(Type = typeof(SimpleControlRemapping), Member = "InitializeUI")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 10)]
 	private void CreateUIRow(InputAction action, AxisRange actionRange, string label)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(SimpleControlRemapping), Member = "OnControllerChanged")]
 	[CalledBy(Type = typeof(SimpleControlRemapping), Member = "OnControllerSelected")]
-	[Calls(Type = typeof(SimpleControlRemapping), Member = "RedrawUI")]
-	[Calls(Type = typeof(InputMapper.KFfTdKEYHyKIWgtQchMdsiMvqor), Member = "cLsgLNiZfZLdTfDERXbrfQHXqTPc")]
-	[Calls(Type = typeof(SimpleControlRemapping), Member = "get_player")]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
+	[CalledBy(Type = typeof(SimpleControlRemapping), Member = "OnControllerChanged")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
 	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_joystickCount")]
+	[Calls(Type = typeof(SimpleControlRemapping), Member = "get_player")]
+	[Calls(Type = typeof(Player.ControllerHelper), Member = "get_Joysticks")]
+	[Calls(TypeFullName = "Rewired.InputMapper.KFfTdKEYHyKIWgtQchMdsiMvqor", Member = "cLsgLNiZfZLdTfDERXbrfQHXqTPc")]
+	[Calls(Type = typeof(SimpleControlRemapping), Member = "RedrawUI")]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetSelectedController(ControllerType controllerType)
 	{
 	}
@@ -318,17 +301,17 @@ public class SimpleControlRemapping : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SimpleControlRemapping), Member = "get_controller")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnInputFieldClicked(int index, int actionElementMapToReplaceId)
 	{
 	}
 
+	[IteratorStateMachine(typeof(_003CStartListeningDelayed_003Ed__28))]
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
-	[IteratorStateMachine(typeof(_003CStartListeningDelayed_003Ed__28))]
 	private IEnumerator StartListeningDelayed(int index, int actionElementMapToReplaceId)
 	{
 		return null;
@@ -346,19 +329,19 @@ public class SimpleControlRemapping : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "SetMapsEnabled")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "SetMapsEnabled")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnStopped(InputMapper.StoppedEventData data)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InputMapper), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public SimpleControlRemapping()
 	{

@@ -9,17 +9,18 @@ public class TaskAgentParameter : BBParameter<UnityEngine.Object>
 {
 	public new UnityEngine.Object value
 	{
-		[CallerCount(Count = 3)]
 		[CalledBy(Type = typeof(Task), Member = "get_agent")]
 		[CalledBy(Type = typeof(Task), Member = "Set")]
 		[CalledBy(Type = typeof(TaskAgentParameter), Member = "get_objectValue")]
-		[CallsUnknownMethods(Count = 3)]
+		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 60)]
+		[CallerCount(Count = 69)]
 		set
 		{
 		}
@@ -27,8 +28,8 @@ public class TaskAgentParameter : BBParameter<UnityEngine.Object>
 
 	protected override object objectValue
 	{
-		[Calls(Type = typeof(TaskAgentParameter), Member = "get_value")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(TaskAgentParameter), Member = "get_value")]
 		get
 		{
 			return null;

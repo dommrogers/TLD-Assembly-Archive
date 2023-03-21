@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -11,13 +10,13 @@ public static class MiniEXR
 	private static byte[] kHeader;
 
 	[CalledBy(Type = typeof(ThreadedImageWriter), Member = "ImageWriter")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 22)]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(MiniEXR), Member = "MiniEXRWrite")]
 	[Calls(Type = typeof(File), Member = "InternalWriteAllBytes")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[Calls(Type = typeof(ArgumentException), Member = ".ctor")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 22)]
 	public static void MiniEXRWrite(string _filePath, uint _width, uint _height, Color[] _colorArray)
 	{
 	}
@@ -41,49 +40,46 @@ public static class MiniEXR
 	{
 	}
 
-	[CalledBy(Type = typeof(MiniEXR), Member = "MiniEXRWrite_Depth")]
 	[CalledBy(Type = typeof(ThreadedImageWriter), Member = "ImageWriter")]
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(MiniEXR), Member = "MiniEXRWrite_Depth")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(MiniEXR), Member = "MiniEXRWrite_Depth")]
+	[CallsUnknownMethods(Count = 2)]
 	public static byte[] MiniEXRWrite_Depth(uint _width, uint _height, Color[] _colorArray, float farClip)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Array), Member = "Copy")]
 	[CalledBy(Type = typeof(MiniEXR), Member = "MiniEXRWrite")]
 	[CalledBy(Type = typeof(MiniEXR), Member = "MiniEXRWrite_Depth")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Array), Member = "Copy")]
 	[CallsUnknownMethods(Count = 2)]
 	public static byte[] BuildEXRHeader(uint _width, uint _height, out int bufI)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref bufI) = null;
+		bufI = default(int);
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(MiniEXR), Member = "MiniEXRWrite")]
 	[CalledBy(Type = typeof(MiniEXR), Member = "MiniEXRWrite")]
-	[Calls(Type = typeof(HalfHelper), Member = "SingleToHalf")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(MiniEXR), Member = "BuildEXRHeader")]
 	[Calls(Type = typeof(Buffer), Member = "BlockCopy")]
 	[Calls(Type = typeof(HalfHelper), Member = "SingleToHalf")]
-	[Calls(Type = typeof(MiniEXR), Member = "BuildEXRHeader")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(HalfHelper), Member = "SingleToHalf")]
+	[CallsUnknownMethods(Count = 2)]
 	public static byte[] MiniEXRWrite(uint _width, uint _height, uint _channels, float[] _rgbaArray)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Array), Member = "Copy")]
 	[CalledBy(Type = typeof(MiniEXR), Member = "MiniEXRWrite_Depth")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MiniEXR), Member = "BuildEXRHeader")]
+	[Calls(Type = typeof(Buffer), Member = "BlockCopy")]
+	[Calls(Type = typeof(HalfHelper), Member = "SingleToHalf")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Buffer), Member = "BlockCopy")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(HalfHelper), Member = "SingleToHalf")]
-	[Calls(Type = typeof(MiniEXR), Member = "BuildEXRHeader")]
 	public static byte[] MiniEXRWrite_Depth(uint _width, uint _height, float[] _rArray)
 	{
 		return null;

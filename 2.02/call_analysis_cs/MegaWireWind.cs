@@ -60,51 +60,40 @@ public class MegaWireWind : MonoBehaviour
 	private Vector3 dirval;
 
 	[CalledBy(Type = typeof(MegaWireWind), Member = "Force")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(MegaWireWind), Member = "Force")]
-	[Calls(Type = typeof(MegaWirePerlin), Member = "Noise")]
-	[CalledBy(Type = typeof(MegaWireWind), Member = "Force")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(MegaWirePerlin), Member = "Noise")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private float RTurbulence(Vector3 p, float freq)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(Vector3), Member = "Magnitude")]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[Calls(Type = typeof(MegaWireWind), Member = "RTurbulence")]
-	[Calls(Type = typeof(MegaWireWind), Member = "RTurbulence")]
-	[Calls(Type = typeof(MegaWireWind), Member = "RTurbulence")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 15)]
 	public virtual Vector3 Force(Vector3 pos)
 	{
 		return default(Vector3);
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(MegaWirePerlin), Member = "Noise")]
-	[Calls(Type = typeof(MegaWirePerlin), Member = "Noise")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(MegaWirePerlin), Member = "Noise")]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(MegaWirePerlin), Member = "Noise")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[Calls(Type = typeof(MegaWirePerlin), Member = "get_Instance")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public MegaWireWind()
 	{
 	}

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using SpecialEvents;
 using UnityEngine;
@@ -80,97 +81,93 @@ public class Panel_Actions : Panel_Base
 
 	private float m_FadeTimer;
 
-	[CallsUnknownMethods(Count = 8)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 8)]
 	public override void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 29)]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "Enable")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
-	[Calls(Type = typeof(InputManager), Member = "HasContext")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
-	[Calls(Type = typeof(InterfaceManager), Member = "SetTimeWidgetActive")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Panel_FirstAid), Member = "GetColorForStatusLine")]
-	[Calls(Type = typeof(Panel_Actions), Member = "UpdateFeelsLike")]
-	[Calls(Type = typeof(Panel_Actions), Member = "UpdateMissionInfo")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Weather), Member = "GetWeatherStageDisplayName")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetTemperatureString")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetTemperatureString")]
-	[Calls(Type = typeof(InterfaceManager), Member = "SetTimeWidgetActive")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "SetTimeWidgetActive")]
+	[Calls(Type = typeof(Utils), Member = "GetTemperatureString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Weather), Member = "GetWeatherStageDisplayName")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Panel_Actions), Member = "UpdateMissionInfo")]
+	[Calls(Type = typeof(Panel_Actions), Member = "UpdateFeelsLike")]
+	[Calls(Type = typeof(Panel_FirstAid), Member = "GetColorForStatusLine")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(InputManager), Member = "HasContext")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 29)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetPanelAlpha()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(InterfaceManager), Member = "SetTimeWidgetActive")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "RefreshMissionMessage")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "RefreshMissionMessageNoLoc")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "SetTimeWidgetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void ConfigureForMissionStart()
 	{
 	}
 
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(PlayerManager), Member = "CancelPlacementMode")]
-	[CallsUnknownMethods(Count = 27)]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[Calls(Type = typeof(Panel_Actions), Member = "Update")]
-	[Calls(Type = typeof(Panel_Actions), Member = "UpdateMissionInfo")]
-	[Calls(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(EquipItemPopup), Member = "HideEquipPopup")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "HideAmmoPopup")]
-	[Calls(Type = typeof(InterfaceManager), Member = "InitializeAndActivateTimeWidget")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(InterfaceManager), Member = "SetTimeWidgetActive")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(InterfaceManager), Member = "SetTimeWidgetActive")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(InterfaceManager), Member = "InitializeAndActivateTimeWidget")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "HideAmmoPopup")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "HideEquipPopup")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_Actions), Member = "UpdateMissionInfo")]
+	[Calls(Type = typeof(Panel_Actions), Member = "Update")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "CancelPlacementMode")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 27)]
 	public override void Enable(bool enable)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnInventory()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Log), Member = "EnableFromRadial")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnLog()
 	{
 	}
@@ -182,49 +179,42 @@ public class Panel_Actions : Panel_Base
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
+	[Calls(Type = typeof(LeanToManager), Member = "PlayerInLeanTo")]
+	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
 	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
-	[CallsUnknownMethods(Count = 33)]
+	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
 	[Calls(Type = typeof(LeanToManager), Member = "OnBedroll")]
 	[Calls(Type = typeof(SnowShelterManager), Member = "OnBedroll")]
 	[Calls(Type = typeof(PlayerInVehicle), Member = "OnBedroll")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
-	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
-	[Calls(Type = typeof(LeanToManager), Member = "PlayerInLeanTo")]
 	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
+	[CallsUnknownMethods(Count = 33)]
 	public void OnBedRoll()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SnowShelterManager), Member = "CanAttemptToPlaceSnowShelter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(SnowShelterManager), Member = "GetMissingMaterialsString")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "CanAttemptToPlaceSnowShelter")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 18)]
 	public void OnSnowShelter()
 	{
 	}
@@ -233,27 +223,27 @@ public class Panel_Actions : Panel_Base
 	[CallerCount(Count = 0)]
 	public override bool IsOverlayPanel()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
-	[CallsUnknownMethods(Count = 24)]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "OnLeanToNoCampfire")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "OnLeanTo")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(LeanToManager), Member = "GetMissingMaterialsString")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(LeanToManager), Member = "CanAttemptToPlaceLeanTo")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "OnLeanToNoCampfire")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(LeanToManager), Member = "CanAttemptToPlaceLeanTo")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(LeanToManager), Member = "GetMissingMaterialsString")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 24)]
 	private void OnLeanToInternal(bool hasCampfire)
 	{
 	}
@@ -264,75 +254,75 @@ public class Panel_Actions : Panel_Base
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Actions), Member = "OnLeanToInternal")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Actions), Member = "OnLeanToInternal")]
 	public void OnLeanToNoCampfire()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(GearItem), Member = "InstantiateDepletedGearPrefab")]
-	[Calls(Type = typeof(PlayerManager), Member = "EquipItem")]
-	[Calls(Type = typeof(Inventory), Member = "AddGear")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Inventory), Member = "GetLowestConditionGearThatMatchesName")]
 	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
-	[Calls(Type = typeof(Inventory), Member = "GetLowestConditionGearThatMatchesName")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GearItem), Member = "InstantiateDepletedGearPrefab")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Inventory), Member = "AddGear")]
+	[Calls(Type = typeof(PlayerManager), Member = "EquipItem")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public void OnSprayPaint()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_SprayPaint), Member = "Enable")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_SprayPaint), Member = "Enable")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnSprayPaint(GearItem sprayPaintCanToUse)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(InputManager), Member = "ExecuteStartFireAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void OnStartFire()
 	{
 	}
 
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(RockCacheManager), Member = "GetMissingMaterialsString")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(RockCacheManager), Member = "CanAttemptToPlaceRockCache")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(RockCacheManager), Member = "CanAttemptToPlaceRockCache")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(RockCacheManager), Member = "GetMissingMaterialsString")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 17)]
 	public void OnPlaceRockCache()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	public void OnRepair()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnHarvest()
 	{
 	}
@@ -345,47 +335,47 @@ public class Panel_Actions : Panel_Base
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ScrollList), Member = "Prev")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void DoScrollUp()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ScrollList), Member = "Next")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void DoScrollDown()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetTemperatureString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void UpdateAirTemperature()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetTemperatureString")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void UpdateWindchill()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Weather), Member = "GetWeatherStageDisplayName")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 4)]
 	public void UpdateWeatherConditions()
 	{
 	}
@@ -395,49 +385,91 @@ public class Panel_Actions : Panel_Base
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsFadingOut()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 	[Calls(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	private void SetFirstAidElements()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Actions), Member = "SetFirstAidElements")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "Enable")]
-	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "SetFirstAidElements")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(BloodLoss), Member = "HasBloodLoss")]
+	[Calls(Type = typeof(BloodLoss), Member = "GetCauseLocIDList")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(BloodLoss), Member = "GetLocation")]
+	[Calls(Type = typeof(BrokenRib), Member = "GetBrokenRibCount")]
+	[Calls(Type = typeof(BrokenRib), Member = "GetCauseLocIDList")]
+	[Calls(Type = typeof(BrokenRib), Member = "GetLocation")]
+	[Calls(Type = typeof(Burns), Member = "GetCauseLocID")]
+	[Calls(Type = typeof(Infection), Member = "HasInfection")]
+	[Calls(Type = typeof(Infection), Member = "GetCauseLocIDList")]
+	[Calls(Type = typeof(Infection), Member = "GetLocation")]
+	[Calls(Type = typeof(FoodPoisoning), Member = "GetCauseString")]
+	[Calls(Type = typeof(SprainedAnkle), Member = "HasSprainedAnkle")]
+	[Calls(Type = typeof(SprainedAnkle), Member = "GetCauseLocIDList")]
+	[Calls(Type = typeof(SprainedAnkle), Member = "GetLocation")]
+	[Calls(Type = typeof(SprainedWrist), Member = "HasSprainedWrist")]
+	[Calls(Type = typeof(SprainedWrist), Member = "GetCauseLocIDList")]
+	[Calls(Type = typeof(SprainedWrist), Member = "GetLocation")]
+	[Calls(Type = typeof(SprainPain), Member = "HasSprainPain")]
+	[Calls(Type = typeof(SprainPain), Member = "GetAfflictionsCount")]
+	[Calls(Type = typeof(SprainPain), Member = "GetCauseLocId")]
+	[Calls(Type = typeof(SprainPain), Member = "GetLocation")]
+	[Calls(Type = typeof(InfectionRisk), Member = "HasInfectionRisk")]
+	[Calls(Type = typeof(InfectionRisk), Member = "GetCauseLocIDList")]
+	[Calls(Type = typeof(InfectionRisk), Member = "GetLocation")]
+	[Calls(Type = typeof(Hypothermia), Member = "GetCauseString")]
+	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsPumpkinPieBuffActive")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
+	[Calls(Type = typeof(List<>), Member = "get_Item")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "GetChild")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Affliction), Member = "LocalizedNameFromAfflictionType")]
+	[Calls(Type = typeof(Affliction), Member = "SpriteNameFromAfflictionType")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(AfflictionButton), Member = "SetCauseAndEffect")]
+	[Calls(Type = typeof(BoxCollider), Member = "set_center_Injected")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 85)]
 	private void RefreshScrollList()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "Enable")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 14)]
 	private void UpdateMissionInfo()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "Update")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Freezing), Member = "CalculateBodyTemperature")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "GetTemperatureString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateFeelsLike()
 	{
 	}

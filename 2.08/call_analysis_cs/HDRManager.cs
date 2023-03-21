@@ -33,24 +33,24 @@ public static class HDRManager
 	[CallerCount(Count = 0)]
 	public static float GetPaperWhiteAsRange(float value)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public static float GetPaperWhiteFromRange(float value)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void SetPaperWhiteFromRange(float value)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyBrightness")]
 	[CalledBy(Type = typeof(HDRManager), Member = "SetPeakBrightnessFromRange")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void SetPeakBrightnessNits(float value)
 	{
@@ -59,13 +59,13 @@ public static class HDRManager
 	[CallerCount(Count = 0)]
 	public static float GetPeakBrightnessNitsAsRange(float value)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public static float GetPeakBrightnessNitsFromRange(float value)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -74,20 +74,20 @@ public static class HDRManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ValidateSettingsState")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "InitializeBrightnessMenuItems")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnBrightnessTab")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnBrightnessTab")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "InitializeBrightnessMenuItems")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ValidateSettingsState")]
 	[CallerCount(Count = 4)]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool IsOutputtingHDR()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Graphics), Member = "Blit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public static void Render(RenderTexture source, RenderTexture destination)
 	{

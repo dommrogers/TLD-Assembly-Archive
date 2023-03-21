@@ -1,5 +1,4 @@
 using System;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityAOT;
 using UnityPlugin;
@@ -19,10 +18,10 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 98)]
+		[CallerCount(Count = 113)]
 		internal IntPtr _003CMount_003Eb__0()
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
@@ -49,8 +48,8 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 	public string ContentId
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -64,16 +63,16 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
 	public string Description
 	{
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
-		[CallsUnknownMethods(Count = 6)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -83,8 +82,8 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 	public string DisplayName
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -94,23 +93,23 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 
 	public bool IsMounted
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(DownloadableContentPackage), Member = "Mount")]
 		[CalledBy(Type = typeof(DownloadableContentPackage), Member = "UnMount")]
+		[CallerCount(Count = 2)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public string MountPath
 	{
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
-		[CallsUnknownMethods(Count = 6)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -120,8 +119,8 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 	public string PackageFullName
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -132,8 +131,8 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 	public string ProductId
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -143,10 +142,10 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 
 	public string Publisher
 	{
-		[CallsUnknownMethods(Count = 6)]
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -156,8 +155,8 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 	public string TitleId
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -168,8 +167,8 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 	public string Version
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -177,11 +176,11 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 		}
 	}
 
-	[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(DownloadableContentPackage), Member = "get_IsMounted")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DownloadableContentPackage), Member = "get_IsMounted")]
+	[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 17)]
 	public string Mount()
 	{
 		return null;
@@ -199,8 +198,8 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public bool CheckLicense(out bool isTrial)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<bool, @null>(ref isTrial) = null;
-		return default(bool);
+		isTrial = default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -214,17 +213,17 @@ public class DownloadableContentPackage : IWrappedObject, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SetNativePtr(IntPtr self)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 98)]
+	[CallerCount(Count = 113)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]

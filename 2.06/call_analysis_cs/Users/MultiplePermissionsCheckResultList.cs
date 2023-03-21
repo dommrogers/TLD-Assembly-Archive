@@ -10,18 +10,18 @@ public class MultiplePermissionsCheckResultList : WrappedCachedList<MultiplePerm
 	[CallsDeduplicatedMethods(Count = 1)]
 	public MultiplePermissionsCheckResultList(IntPtr self)
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
 	[CallerCount(Count = 0)]
 	public MultiplePermissionsCheckResultList()
 	{
-		((WrappedCachedList<>)(object)this)._002Ector(default(IntPtr));
+		((WrappedCachedList<>)(object)this)._002Ector((IntPtr)0);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	~MultiplePermissionsCheckResultList()
 	{
 	}
@@ -34,16 +34,16 @@ public class MultiplePermissionsCheckResultList : WrappedCachedList<MultiplePerm
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void SetupLength()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	protected override void DisposeChild()
 	{
 	}

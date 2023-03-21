@@ -10,26 +10,29 @@ public class Action_SetBaseAiWaypointPath : TLD_Action
 
 	public BBParameter<bool> disableScanForTargets;
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Action_SetBaseAiWaypointPath), Member = "DoWork")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Action_SetBaseAiWaypointPath), Member = "DoWork")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	protected override void OnExecute()
 	{
 	}
 
+	[CalledBy(Type = typeof(Action_SetBaseAiWaypointPath), Member = "OnExecute")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(TLD_Action), Member = "get_agent")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(BaseAi), Member = "SetWaypoints")]
-	[CalledBy(Type = typeof(Action_SetBaseAiWaypointPath), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void DoWork()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_SetBaseAiWaypointPath()
 	{
 	}

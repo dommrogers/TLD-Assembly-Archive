@@ -19,17 +19,18 @@ public class ScrollbarThumbResizer : MonoBehaviour
 	private int m_NumStepsTotal;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ScrollbarThumbResizer), Member = "SetThumbPositionFromValue")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScrollbarThumbResizer), Member = "CalculateAndSetThumbSize")]
+	[Calls(Type = typeof(ScrollbarThumbResizer), Member = "SetThumbPositionFromValue")]
+	[CallsUnknownMethods(Count = 2)]
 	private void LateUpdate()
 	{
 	}
@@ -41,35 +42,31 @@ public class ScrollbarThumbResizer : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(ScrollbarThumbResizer), Member = "LateUpdate")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UIWidget), Member = "set_height")]
 	[Calls(Type = typeof(UIWidget), Member = "set_width")]
-	[CalledBy(Type = typeof(ScrollbarThumbResizer), Member = "LateUpdate")]
+	[CallsUnknownMethods(Count = 3)]
 	private void CalculateAndSetThumbSize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private float CalculateThumbValue()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(ScrollbarThumbResizer), Member = "LateUpdate")]
-	[Calls(Type = typeof(UIProgressBar), Member = "SetThumbPosition")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(UIProgressBar), Member = "SetThumbPosition")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void SetThumbPositionFromValue(float val)
 	{
 	}

@@ -15,11 +15,11 @@ internal struct UninstallModOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(UninstallModOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(UninstallModOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(UninstallModOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(UninstallModOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -27,11 +27,11 @@ internal struct UninstallModOptionsInternal : ISettable, IDisposable
 
 	public ModIdentifier Mod
 	{
+		[CalledBy(Type = typeof(UninstallModOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(UninstallModOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[Calls(Type = typeof(ModIdentifierInternal), Member = "Set")]
-		[CalledBy(Type = typeof(UninstallModOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(UninstallModOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		set
 		{
 		}
@@ -45,17 +45,17 @@ internal struct UninstallModOptionsInternal : ISettable, IDisposable
 	}
 
 	[CalledBy(Type = typeof(ModsInterface), Member = "UninstallMod")]
-	[Calls(Type = typeof(UninstallModOptionsInternal), Member = "set_Mod")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UninstallModOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(UninstallModOptionsInternal), Member = "set_Mod")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

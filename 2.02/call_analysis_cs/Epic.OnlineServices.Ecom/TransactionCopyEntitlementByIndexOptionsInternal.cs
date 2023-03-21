@@ -26,15 +26,15 @@ internal struct TransactionCopyEntitlementByIndexOptionsInternal : ISettable, ID
 	{
 	}
 
+	[CalledBy(Type = typeof(Transaction), Member = "CopyEntitlementByIndex")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Transaction), Member = "CopyEntitlementByIndex")]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

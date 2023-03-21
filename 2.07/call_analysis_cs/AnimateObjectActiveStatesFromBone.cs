@@ -32,8 +32,8 @@ public class AnimateObjectActiveStatesFromBone : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public AnimateObjectActiveStatesFromBone()
 	{
 	}

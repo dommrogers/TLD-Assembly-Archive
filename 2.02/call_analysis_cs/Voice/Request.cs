@@ -1,5 +1,4 @@
 using System;
-using System.Diagnostics;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 
@@ -17,11 +16,11 @@ public class Request
 
 	public float m_Timeout;
 
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(NPCVoice), Member = "StartNextRequest")]
 	[CalledBy(Type = typeof(PlayerVoice), Member = "MaybeHandleNextQueuedRequest")]
 	[CalledBy(Type = typeof(PlayerVoice), Member = "StartNextRequest")]
 	[CalledBy(Type = typeof(ActiveRequest), Member = "Start")]
+	[CallerCount(Count = 4)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Copy(Request other)
 	{
@@ -30,18 +29,18 @@ public class Request
 	[CallerCount(Count = 0)]
 	public bool IsOptionSet(uint option)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsValid()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatUInt32")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatUInt32")]
 	public string GetEventName()
 	{
 		return null;
@@ -54,16 +53,14 @@ public class Request
 		return default(TimeSpan);
 	}
 
-	[Conditional(/*Could not decode attribute arguments.*/)]
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void SetEventName(string name)
 	{
 	}
 
-	[Conditional(/*Could not decode attribute arguments.*/)]
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void SetTimestamp()
 	{
 	}
@@ -73,8 +70,8 @@ public class Request
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public Request()
 	{
 	}

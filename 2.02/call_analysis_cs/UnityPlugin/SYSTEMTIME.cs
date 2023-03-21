@@ -36,8 +36,6 @@ public struct SYSTEMTIME
 	[Calls(Type = typeof(TimeZoneInfo), Member = "get_Local")]
 	[Calls(Type = typeof(TimeZoneInfo), Member = "ConvertTimeToUtc")]
 	[Calls(Type = typeof(DateTime), Member = "GetDatePart")]
-	[Calls(Type = typeof(DateTime), Member = "GetDatePart")]
-	[Calls(Type = typeof(DateTime), Member = "GetDatePart")]
 	public SYSTEMTIME(DateTime dt)
 	{
 	}
@@ -49,8 +47,8 @@ public struct SYSTEMTIME
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(DateTime), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public DateTime ToDateTime()
 	{
 		return default(DateTime);
@@ -59,31 +57,31 @@ public struct SYSTEMTIME
 	[CallerCount(Count = 0)]
 	public static bool operator ==(SYSTEMTIME s1, SYSTEMTIME s2)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool operator !=(SYSTEMTIME s1, SYSTEMTIME s2)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ValueType), Member = "DefaultEquals")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public override bool Equals(object obj)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ValueType), Member = "GetHashCode")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public override int GetHashCode()
 	{
-		return default(int);
+		return 0;
 	}
 }

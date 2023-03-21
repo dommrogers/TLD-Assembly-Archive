@@ -23,22 +23,8 @@ public struct Affliction
 	public const string DEFINITION_ASSET_PREFIX = "Affliction_";
 
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 15)]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	public Affliction(AfflictionType afflictionType, string causeLocalizationId, AfflictionBodyArea location, int id)
 	{
 	}
@@ -52,20 +38,20 @@ public struct Affliction
 	[CallerCount(Count = 0)]
 	public bool IsValid()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool CompareTo(Affliction toCompare)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool CompareTo(AfflictionButton toCompare)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -79,27 +65,27 @@ public struct Affliction
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
 	[CalledBy(Type = typeof(AfflictionCoverflow), Member = "SetAffliction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshScrollList")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(AfflictionDefinitionTable), Member = "GetAfflictionDefinitionByName")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(AfflictionDefinitionTable), Member = "GetAfflictionDefinitionByName")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public static string SpriteNameFromAfflictionType(AfflictionType affType)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshScrollList")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "UpdateSelectedAffliction")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "RefreshScrollList")]
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "UpdateSelectedAffliction")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "GetAfflictionsCount")]
-	[Calls(Type = typeof(Affliction), Member = "GetDisplayName")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshScrollList")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Affliction), Member = "GetDisplayName")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "GetAfflictionsCount")]
 	[Calls(Type = typeof(string), Member = "Format")]
 	public static string LocalizedNameFromAfflictionType(AfflictionType affType, int index)
 	{
@@ -117,56 +103,54 @@ public struct Affliction
 		return null;
 	}
 
+	[CalledBy(Type = typeof(Affliction), Member = "LocalizedNameFromAfflictionType")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(AfflictionDefinitionTable), Member = "GetAfflictionDefinitionByName")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Affliction), Member = "LocalizedNameFromAfflictionType")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(AfflictionDefinitionTable), Member = "GetAfflictionDefinitionByName")]
 	public static string GetDisplayName(AfflictionType affType)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "HasAfflictionOfCategory")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetAllBadAfflictions")]
+	[CalledBy(Type = typeof(AfflictionButton), Member = "GetColorBasedOnAffliction")]
 	[CalledBy(Type = typeof(Affliction), Member = "IsBadAffliction")]
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetAllBadAfflictions")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(AfflictionButton), Member = "GetColorBasedOnAffliction")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "HasAfflictionOfCategory")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(AfflictionButton), Member = "GetColorBasedOnAffliction")]
 	public static bool IsBeneficial(AfflictionType affType)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "CanUpdateColor")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "HasAfflictionOfCategory")]
+	[CallerCount(Count = 3)]
 	public static bool IsRisk(AfflictionType affType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
+	[CallerCount(Count = 1)]
 	public static bool AfflictionTypeIsBuff(AfflictionType affType)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "CanUpdateColor")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "HasBadAffliction")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "CanUpdateColor")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "HasAfflictionOfCategory")]
-	[Calls(Type = typeof(Affliction), Member = "IsBeneficial")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "CanUpdateColor")]
+	[Calls(Type = typeof(Affliction), Member = "IsBeneficial")]
 	public static bool IsBadAffliction(AfflictionType affType)
 	{
-		return default(bool);
+		return false;
 	}
 }

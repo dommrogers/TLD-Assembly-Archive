@@ -25,10 +25,10 @@ internal struct WriteFileOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId LocalUserId
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(WriteFileOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -36,10 +36,10 @@ internal struct WriteFileOptionsInternal : ISettable, IDisposable
 
 	public string Filename
 	{
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(WriteFileOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -56,11 +56,11 @@ internal struct WriteFileOptionsInternal : ISettable, IDisposable
 
 	public static OnWriteFileDataCallbackInternal WriteFileDataCallback
 	{
-		[CallsUnknownMethods(Count = 7)]
 		[CalledBy(Type = typeof(PlayerDataStorageInterface), Member = "WriteFile")]
 		[CalledBy(Type = typeof(WriteFileOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -69,10 +69,10 @@ internal struct WriteFileOptionsInternal : ISettable, IDisposable
 
 	public static OnFileTransferProgressCallbackInternal FileTransferProgressCallback
 	{
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(PlayerDataStorageInterface), Member = "WriteFile")]
 		[CalledBy(Type = typeof(WriteFileOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -80,27 +80,27 @@ internal struct WriteFileOptionsInternal : ISettable, IDisposable
 		}
 	}
 
+	[CalledBy(Type = typeof(WriteFileOptionsInternal), Member = "Set")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(WriteFileOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(WriteFileOptionsInternal), Member = "set_Filename")]
 	[Calls(Type = typeof(WriteFileOptionsInternal), Member = "get_WriteFileDataCallback")]
 	[Calls(Type = typeof(WriteFileOptionsInternal), Member = "get_FileTransferProgressCallback")]
-	[CalledBy(Type = typeof(WriteFileOptionsInternal), Member = "Set")]
 	public void Set(WriteFileOptions other)
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerDataStorageInterface), Member = "WriteFile")]
-	[Calls(Type = typeof(WriteFileOptionsInternal), Member = "Set")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(WriteFileOptionsInternal), Member = "Set")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

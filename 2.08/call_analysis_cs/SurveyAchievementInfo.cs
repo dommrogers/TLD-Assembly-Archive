@@ -6,8 +6,8 @@ public class SurveyAchievementInfo
 
 	public bool m_Completed;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public SurveyAchievementInfo()
 	{
 	}

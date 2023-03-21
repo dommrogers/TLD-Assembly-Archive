@@ -5,8 +5,8 @@ public class Panel_Story_MissionJumpItem : MonoBehaviour
 {
 	public UILabel m_Label_Mission;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Panel_Story_MissionJumpItem()
 	{
 	}

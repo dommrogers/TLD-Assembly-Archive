@@ -14,32 +14,32 @@ internal struct GetLeaderboardUserScoreCountOptionsInternal : ISettable, IDispos
 	public string StatName
 	{
 		[CalledBy(Type = typeof(GetLeaderboardUserScoreCountOptionsInternal), Member = "Set")]
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(GetLeaderboardUserScoreCountOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(GetLeaderboardUserScoreCountOptionsInternal), Member = "set_StatName")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GetLeaderboardUserScoreCountOptionsInternal), Member = "set_StatName")]
 	public void Set(GetLeaderboardUserScoreCountOptions other)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GetLeaderboardUserScoreCountOptionsInternal), Member = "set_StatName")]
 	[CalledBy(Type = typeof(LeaderboardsInterface), Member = "GetLeaderboardUserScoreCount")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GetLeaderboardUserScoreCountOptionsInternal), Member = "set_StatName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

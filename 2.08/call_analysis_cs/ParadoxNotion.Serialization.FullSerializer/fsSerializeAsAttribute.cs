@@ -7,8 +7,8 @@ public sealed class fsSerializeAsAttribute : Attribute
 {
 	public readonly string Name;
 
-	[CallerCount(Count = 279)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 282)]
 	public fsSerializeAsAttribute(string name)
 	{
 	}

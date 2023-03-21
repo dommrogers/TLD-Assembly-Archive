@@ -11,8 +11,8 @@ public class WebNotifications
 
 	public List<WebNotification> notifications;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public WebNotifications()
 	{
 	}

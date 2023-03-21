@@ -11,7 +11,7 @@ namespace NodeCanvas.DialogueTrees;
 
 public class ActionListNode : DTNode
 {
-	private sealed class _003CUpdateAction_003Ed__2 : IDisposable, IEnumerator<object>, IEnumerator
+	private sealed class _003CUpdateAction_003Ed__2 : IEnumerator<object>, IEnumerator, IDisposable
 	{
 		private int _003C_003E1__state;
 
@@ -25,7 +25,7 @@ public class ActionListNode : DTNode
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -36,42 +36,42 @@ public class ActionListNode : DTNode
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CUpdateAction_003Ed__2(int _003C_003E1__state)
 		{
 		}
 
+		[DebuggerHidden]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 6)]
-		[DebuggerHidden]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-		[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+		[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 5)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 5)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -79,10 +79,10 @@ public class ActionListNode : DTNode
 
 	public List<ActionTask> actions;
 
-	[Calls(Type = typeof(Node), Member = "StartCoroutine")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DTNode), Member = "get_finalActor")]
 	[Calls(Type = typeof(ActionListNode), Member = "UpdateAction")]
+	[Calls(Type = typeof(Node), Member = "StartCoroutine")]
 	[Calls(Type = typeof(Node), Member = "Error")]
 	[CallsUnknownMethods(Count = 2)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
@@ -90,53 +90,52 @@ public class ActionListNode : DTNode
 		return default(Status);
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(ActionListNode), Member = "OnExecute")]
 	[IteratorStateMachine(typeof(_003CUpdateAction_003Ed__2))]
+	[CalledBy(Type = typeof(ActionListNode), Member = "OnExecute")]
 	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private IEnumerator UpdateAction(Component actionAgent)
 	{
 		return null;
 	}
 
+	[DeduplicatedMethod]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(Graph), Member = "Stop")]
 	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
-	[CallerCount(Count = 1)]
-	[DeduplicatedMethod]
-	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnActionEnd(bool success)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnReset()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 3)]
 	public override void OnGraphPaused()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void AddAction(ActionTask action)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(DTNode), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public ActionListNode()
 	{

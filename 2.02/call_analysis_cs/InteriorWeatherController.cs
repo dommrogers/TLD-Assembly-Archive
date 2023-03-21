@@ -15,14 +15,13 @@ public class InteriorWeatherController : MonoBehaviour
 
 	public List<InteriorWeatherSet> m_InteriorWeatherList;
 
-	[CalledBy(Type = typeof(DarkLightingManager), Member = "MaybeSetInteriorWeather")]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(DarkLightingManager), Member = "MaybeSetInteriorWeather")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public void SetInteriorWeather(WeatherStage currentWeatherStage)
 	{
 	}

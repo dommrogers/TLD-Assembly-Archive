@@ -17,9 +17,9 @@ internal struct UpdateModOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(UpdateModOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(UpdateModOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -27,11 +27,11 @@ internal struct UpdateModOptionsInternal : ISettable, IDisposable
 
 	public ModIdentifier Mod
 	{
+		[CalledBy(Type = typeof(UpdateModOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(UpdateModOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[Calls(Type = typeof(ModIdentifierInternal), Member = "Set")]
-		[CalledBy(Type = typeof(UpdateModOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(UpdateModOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		set
 		{
 		}
@@ -44,18 +44,18 @@ internal struct UpdateModOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(UpdateModOptionsInternal), Member = "set_Mod")]
 	[CalledBy(Type = typeof(ModsInterface), Member = "UpdateMod")]
-	[Calls(Type = typeof(UpdateModOptionsInternal), Member = "set_LocalUserId")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UpdateModOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(UpdateModOptionsInternal), Member = "set_Mod")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

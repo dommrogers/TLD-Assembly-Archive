@@ -9,9 +9,9 @@ public class LobbyModificationSetPermissionLevelOptions
 
 	public LobbyPermissionLevel PermissionLevel
 	{
-		[CallerCount(Count = 7)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return default(LobbyPermissionLevel);
@@ -25,7 +25,7 @@ public class LobbyModificationSetPermissionLevelOptions
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public LobbyModificationSetPermissionLevelOptions()
 	{
 	}

@@ -18,10 +18,10 @@ public class TLD_FPAnimationTrack : TLD_SpawnedAnimationTrack, TLD_IFPAnchoredTr
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "HasFPAnchor")]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallerCount(Count = 0)]
 	protected override void PlayInternal()
 	{
 	}
@@ -32,33 +32,30 @@ public class TLD_FPAnimationTrack : TLD_SpawnedAnimationTrack, TLD_IFPAnchoredTr
 	{
 	}
 
-	[Calls(Type = typeof(TLD_FPAnimationTrack), Member = "UpdateRotationExit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetCameraTrack")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(TLD_CameraAnimationTrack), Member = "GetNextEndTime")]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetCameraTrack")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TLD_FPAnimationTrack), Member = "UpdateRotationExit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void MaybeUpdateTransitionOut()
 	{
 	}
 
 	[CalledBy(Type = typeof(TLD_FPAnimationTrack), Member = "MaybeUpdateTransitionOut")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateRotationExit(float progress)
 	{
 	}
 
-	[Calls(Type = typeof(AnimationTrack), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AnimationTrack), Member = ".ctor")]
 	public TLD_FPAnimationTrack()
 	{
 	}

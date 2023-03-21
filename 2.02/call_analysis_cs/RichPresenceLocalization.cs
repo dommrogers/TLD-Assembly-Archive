@@ -5,9 +5,9 @@ public class RichPresenceLocalization : MonoBehaviour
 {
 	public RichPresenceLocInfo[] RichPresenceLocKeys;
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
 	}

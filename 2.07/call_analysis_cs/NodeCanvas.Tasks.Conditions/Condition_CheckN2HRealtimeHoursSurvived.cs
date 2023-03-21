@@ -14,9 +14,9 @@ public class Condition_CheckN2HRealtimeHoursSurvived : ConditionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
+		[Calls(Type = typeof(string), Member = "Format")]
 		get
 		{
 			return null;
@@ -28,7 +28,7 @@ public class Condition_CheckN2HRealtimeHoursSurvived : ConditionTask
 	[CallsUnknownMethods(Count = 2)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

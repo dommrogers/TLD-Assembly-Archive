@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -28,16 +27,14 @@ public class PressStartToJoinExample_Assigner : MonoBehaviour
 
 	private int gamePlayerIdCounter;
 
-	[CalledBy(Type = typeof(PressStartToJoinExample_GamePlayer), Member = "GetInput")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PressStartToJoinExample_GamePlayer), Member = "GetInput")]
-	[CalledBy(Type = typeof(PressStartToJoinExample_GamePlayer), Member = "GetInput")]
 	[CalledBy(Type = typeof(PressStartToJoinExample_GamePlayer), Member = "get_player")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[CalledBy(Type = typeof(PressStartToJoinExample_GamePlayer), Member = "GetInput")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static Player GetRewiredPlayer(int gamePlayerId)
 	{
 		return null;
@@ -50,10 +47,9 @@ public class PressStartToJoinExample_Assigner : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Logger), Member = "LogError")]
 	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(TypeFullName = "Rewired.Logger", Member = "LogError")]
 	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
 	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
 	[Calls(Type = typeof(PressStartToJoinExample_Assigner), Member = "AssignNextPlayer")]
@@ -62,19 +58,18 @@ public class PressStartToJoinExample_Assigner : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(PressStartToJoinExample_Assigner), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
+	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "SetMapsEnabled")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[CalledBy(Type = typeof(PressStartToJoinExample_Assigner), Member = "Update")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "SetMapsEnabled")]
-	[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "SetMapsEnabled")]
+	[CallsUnknownMethods(Count = 3)]
 	private void AssignNextPlayer(int rewiredPlayerId)
 	{
 	}
@@ -82,7 +77,7 @@ public class PressStartToJoinExample_Assigner : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private int GetNextGamePlayerId()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]

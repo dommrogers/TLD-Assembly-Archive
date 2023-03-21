@@ -10,25 +10,25 @@ public class TLD_SetControllerStateTrack : PlayableTrack, TLD_IDynamicBindableTr
 	public string m_ChildObjectName;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(Utils), Member = "FindTimelineDynamicBinding")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void DoDynamicBinding(PlayableDirector director)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(TrackAsset), Member = "get_clips")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 12)]
 	public void RefreshClips()
 	{
 	}
 
-	[Calls(Type = typeof(TrackAsset), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TrackAsset), Member = ".ctor")]
 	public TLD_SetControllerStateTrack()
 	{
 	}

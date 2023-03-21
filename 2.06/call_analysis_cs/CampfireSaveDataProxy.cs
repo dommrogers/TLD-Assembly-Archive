@@ -7,9 +7,9 @@ public class CampfireSaveDataProxy
 
 	public Dictionary<string, string> m_RockGuids;
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public CampfireSaveDataProxy()
 	{
 	}

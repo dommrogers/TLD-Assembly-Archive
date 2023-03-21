@@ -14,18 +14,17 @@ internal sealed class AmbientOcclusionRenderer : PostProcessEffectRenderer<Ambie
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public bool IsAmbientOnly(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(PostProcessLayer), Member = "BuildCommandBuffers")]
+	[CallsUnknownMethods(Count = 2)]
 	public IAmbientOcclusionMethod Get()
 	{
 		return null;
@@ -52,8 +51,8 @@ internal sealed class AmbientOcclusionRenderer : PostProcessEffectRenderer<Ambie
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	public MultiScaleVO GetMultiScaleVO()
 	{
 		return null;

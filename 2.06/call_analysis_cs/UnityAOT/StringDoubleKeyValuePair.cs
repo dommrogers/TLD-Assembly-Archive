@@ -14,11 +14,11 @@ public abstract class StringDoubleKeyValuePair : IDisposable
 
 	public string Key
 	{
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CalledBy(Type = typeof(StringDoubleFullWrappedCacheMapEnumerable), Member = ".ctor")]
 		[CalledBy(Type = typeof(StringDoubleFullWrappedCacheMapEnumerable), Member = "MoveNext")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -28,12 +28,12 @@ public abstract class StringDoubleKeyValuePair : IDisposable
 
 	public double Value
 	{
+		[CalledBy(Type = typeof(StringDoubleFullWrappedCacheMapEnumerable), Member = ".ctor")]
 		[CalledBy(Type = typeof(StringDoubleFullWrappedCacheMapEnumerable), Member = "MoveNext")]
 		[CallerCount(Count = 2)]
-		[CalledBy(Type = typeof(StringDoubleFullWrappedCacheMapEnumerable), Member = ".ctor")]
 		get
 		{
-			return default(double);
+			return 0.0;
 		}
 	}
 
@@ -42,15 +42,15 @@ public abstract class StringDoubleKeyValuePair : IDisposable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CallerCount(Count = 98)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 113)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -65,22 +65,16 @@ public abstract class StringDoubleKeyValuePair : IDisposable
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}
 
-	[CallerCount(Count = 101224)]
-	[DeduplicatedMethod]
 	protected abstract IntPtr GetKeyImpl(IntPtr self);
 
-	[CallerCount(Count = 101224)]
-	[DeduplicatedMethod]
 	protected abstract double GetValueImpl(IntPtr self);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract void DisposeChildImpl();
 }

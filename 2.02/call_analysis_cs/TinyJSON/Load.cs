@@ -4,8 +4,8 @@ namespace TinyJSON;
 
 public sealed class Load : AfterDecode
 {
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public Load()
 	{
 	}

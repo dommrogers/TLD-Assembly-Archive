@@ -37,18 +37,18 @@ public class GearMessage : MonoBehaviour
 
 		public bool m_ShowOnHUDOnly;
 
-		[CalledBy(Type = typeof(GearMessage), Member = "AddJournalMessage")]
-		[CalledBy(Type = typeof(GearMessage), Member = "AddMessageFadeIn")]
+		[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedGearItem")]
 		[CalledBy(Type = typeof(GearMessage), Member = "AddMessage")]
+		[CalledBy(Type = typeof(GearMessage), Member = "AddMessage")]
+		[CalledBy(Type = typeof(GearMessage), Member = "AddMessageFadeIn")]
+		[CalledBy(Type = typeof(GearMessage), Member = "AddMessageFadeIn")]
 		[CalledBy(Type = typeof(GearMessage), Member = "AddMessage")]
 		[CalledBy(Type = typeof(GearMessage), Member = "AddMessageWithQuickKey")]
 		[CalledBy(Type = typeof(GearMessage), Member = "AddMessage")]
 		[CalledBy(Type = typeof(GearMessage), Member = "AddMessage")]
 		[CalledBy(Type = typeof(GearMessage), Member = "AddMessageFadeIn")]
-		[CalledBy(Type = typeof(GearMessage), Member = "AddMessage")]
-		[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedGearItem")]
+		[CalledBy(Type = typeof(GearMessage), Member = "AddJournalMessage")]
 		[CallerCount(Count = 11)]
-		[CalledBy(Type = typeof(GearMessage), Member = "AddMessageFadeIn")]
 		public GearMessageInfo(string prefabName, string header, string text, GearItem gearItem = null)
 		{
 		}
@@ -62,14 +62,14 @@ public class GearMessage : MonoBehaviour
 
 		public string m_NameLocID;
 
-		[CallerCount(Count = 7)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 8)]
 		public void Set(string categoryLocID, KnowledgeCateogry category, string nameLocID)
 		{
 		}
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public JournalMessageInfo()
 		{
 		}
@@ -118,67 +118,62 @@ public class GearMessage : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void OnEnable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	private void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GearMessage), Member = "AddJournalMessage")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PanelReference<>), Member = "GetPanel")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(GearMessage), Member = "IsMapOrLogEnabled")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GearMessage), Member = "ShowNextMessageInQueue")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(GearMessage), Member = "IsMapOrLogEnabled")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(GearMessage), Member = "IsMapOrLogEnabled")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(GearMessage), Member = "AddJournalMessage")]
-	[CallsDeduplicatedMethods(Count = 20)]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GearMessage), Member = "ShowNextMessageInQueue")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 12)]
 	public void Update()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GearMessage), Member = "IsMapOrLogEnabled")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool ShouldShowNextMessageInQueue()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CalledBy(Type = typeof(GearMessage), Member = "Update")]
 	[CalledBy(Type = typeof(GearMessage), Member = "Update")]
 	[CalledBy(Type = typeof(GearMessage), Member = "ShouldShowNextMessageInQueue")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private bool IsMapOrLogEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -190,120 +185,114 @@ public class GearMessage : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "Update")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MaybeShowNotificationsInQueue")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(Knowledge), Member = "Unlock")]
 	[CalledBy(Type = typeof(GearMessage), Member = "AddJournalQueueMessageWithQuickKey")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MaybeShowNotificationsInQueue")]
+	[CalledBy(Type = typeof(GameManager), Member = "Update")]
 	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void AddJournalQueueMessage(string categoryLocID)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GearMessage), Member = "AddJournalQueueMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void AddJournalQueueMessageWithQuickKey(string categoryLocID, KnowledgeCateogry category, string nameLocID)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "SetCookedGearProperties")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "CookingCompleted")]
-	[CalledBy(Type = typeof(FoodItem), Member = "DoGearHarvestAfterFinishEating")]
-	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedGearItem")]
-	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedGearItem")]
-	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedGearItem")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "StartCooking")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearMessageInfo), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedGearItem")]
+	[CalledBy(Type = typeof(FoodItem), Member = "DoGearHarvestAfterFinishEating")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "CookingCompleted")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "SetCookedGearProperties")]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(GearMessageInfo), Member = ".ctor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
 	[Calls(Type = typeof(GearMessage), Member = "AddMessageToQueue")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void AddMessage(GearItem gi, string header, string message, bool highPriority = false, bool showOnHUDOnly = true)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessageToQueue")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(GearMessageInfo), Member = ".ctor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessageToQueue")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void AddMessage(GearItem gi, string header, string message, float numSeconds, bool highPriority = false, bool showOnHUDOnly = true)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Action_AddGearItem), Member = "OnExecute")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessageToQueue")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(GearMessageInfo), Member = ".ctor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessageToQueue")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void AddMessageFadeIn(GearItem gi, string header, string message, bool highPriority = false, bool showOnHUDOnly = true)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessageToQueue")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(GearMessageInfo), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessageToQueue")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void AddMessageFadeIn(GearItem gi, string header, string message, float numSeconds, bool highPriority = false, bool showOnHUDOnly = true)
 	{
 	}
 
 	[CallerCount(Count = 45)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GearMessageInfo), Member = ".ctor")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
 	[Calls(Type = typeof(GearMessage), Member = "AddMessageToQueue")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void AddMessage(string prefabName, string header, string message, bool highPriority = false, bool showOnHUDOnly = true, GearItem gi = null)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessageToQueue")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GearMessageInfo), Member = ".ctor")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessageToQueue")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void AddMessageWithQuickKey(string prefabName, string header, string message, QuickKey quickKey, bool highPriority = false, bool showOnHUDOnly = true)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GearMessageInfo), Member = ".ctor")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
 	[Calls(Type = typeof(GearMessage), Member = "AddMessageToQueue")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void AddMessage(string prefabName, string header, string message, Color color, bool highPriority = false, bool showOnHUDOnly = true)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GearMessageInfo), Member = ".ctor")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessageToQueue")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(GearMessageInfo), Member = ".ctor")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessageToQueue")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void AddMessage(string prefabName, string header, string message, float numSeconds, bool highPriority = false, bool showOnHUDOnly = true)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GearMessageInfo), Member = ".ctor")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
 	[Calls(Type = typeof(GearMessage), Member = "AddMessageToQueue")]
 	[CallsUnknownMethods(Count = 1)]
 	public static void AddMessageFadeIn(string prefabName, string header, string message, bool highPriority = false, bool showOnHUDOnly = true)
@@ -316,104 +305,97 @@ public class GearMessage : MonoBehaviour
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void SetJournalQuickKey(string categoryLocID, KnowledgeCateogry category, string nameLocID)
 	{
 	}
 
+	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedGearItem")]
+	[CalledBy(Type = typeof(GearMessage), Member = "AddMessage")]
+	[CalledBy(Type = typeof(GearMessage), Member = "AddMessage")]
+	[CalledBy(Type = typeof(GearMessage), Member = "AddMessageFadeIn")]
+	[CalledBy(Type = typeof(GearMessage), Member = "AddMessageFadeIn")]
 	[CalledBy(Type = typeof(GearMessage), Member = "AddMessage")]
 	[CalledBy(Type = typeof(GearMessage), Member = "AddMessageWithQuickKey")]
 	[CalledBy(Type = typeof(GearMessage), Member = "AddMessage")]
-	[CalledBy(Type = typeof(GearMessage), Member = "AddMessageFadeIn")]
+	[CalledBy(Type = typeof(GearMessage), Member = "AddMessage")]
 	[CalledBy(Type = typeof(GearMessage), Member = "AddMessageFadeIn")]
 	[CalledBy(Type = typeof(GearMessage), Member = "AddJournalMessage")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(GearMessage), Member = "AddMessage")]
-	[CalledBy(Type = typeof(GearMessage), Member = "AddMessage")]
-	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedGearItem")]
-	[CalledBy(Type = typeof(GearMessage), Member = "AddMessage")]
 	[CallerCount(Count = 11)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(GearMessage), Member = "AddMessageFadeIn")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private static void AddMessageToQueue(Panel_HUD hud, GearMessageInfo newGearMessage, bool highPriority)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(UITweener), Member = "Update")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "Replace")]
 	[CalledBy(Type = typeof(GearMessage), Member = "Update")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "StartsWith")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
 	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTextureFromPrefabName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[Calls(Type = typeof(UITweener), Member = "Update")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 4)]
 	private static void ShowNextMessageInQueue(Panel_HUD hud)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	private static bool MessageExistsInQueue(string message)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
 	[CallsUnknownMethods(Count = 2)]
 	private static bool ShortenMessageTimeDueToQueue()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(GearMessage), Member = "Update")]
-	[Calls(Type = typeof(GearMessage), Member = "AddMessageToQueue")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(GearMessageInfo), Member = ".ctor")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(GearMessageInfo), Member = ".ctor")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanel")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessageToQueue")]
+	[Calls(Type = typeof(GearMessage), Member = "AddMessage")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private static void AddJournalMessage()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool ShouldUseOffsetLocation(Panel_HUD hud, Panel_FeedFire feedFire, Panel_FirstAid firstAid)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

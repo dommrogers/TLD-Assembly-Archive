@@ -6,16 +6,16 @@ public class LoadingAnimation : MonoBehaviour
 	private UISpriteAnimation m_SpriteAnimation;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(UISpriteAnimation), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(UISpriteAnimation), Member = "RebuildSpriteList")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UISpriteAnimation), Member = "RebuildSpriteList")]
+	[Calls(Type = typeof(UISpriteAnimation), Member = "ResetToBeginning")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}

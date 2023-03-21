@@ -2,8 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.AddressableAssets;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class ClothingSlot : MonoBehaviour
 {
@@ -59,26 +61,28 @@ public class ClothingSlot : MonoBehaviour
 
 	private Panel_Clothing m_Panel_Clothing;
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(GenericClothingSlotSpawner), Member = "AssignValuesToSpawnedObject")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 5)]
 	public void DoSetup(Panel_Clothing parentPanel, string emptySlotSpriteName, ClothingRegion region, ClothingLayer layer, int column, int row, UITexture[] paperDolls, string layerLocID)
 	{
 	}
 
+	[CalledBy(Type = typeof(ClothingSlot), Member = "SetSelected")]
 	[CalledBy(Type = typeof(Panel_Clothing), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Clothing), Member = "DeselectItems")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "SetSelected")]
+	[CallsUnknownMethods(Count = 2)]
 	public void ActivateMouseHoverHighlight(bool isEnabled)
 	{
 	}
@@ -92,49 +96,47 @@ public class ClothingSlot : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool HasAltIndex()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public int GetColumnIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool ColumnMatchesLayout(int col)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "DeselectItems")]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "SelectItemIfEquipped")]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "SelectClothingSlot")]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "SelectClothingSlot")]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "SetDefaultSelection")]
-	[Calls(Type = typeof(ClothingSlot), Member = "ActivateMouseHoverHighlight")]
 	[CalledBy(Type = typeof(Panel_Clothing), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "SetDefaultSelection")]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "SelectClothingSlot")]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "SelectItemIfEquipped")]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "DeselectItems")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(ClothingSlot), Member = "ActivateMouseHoverHighlight")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "SetDefaultSelection")]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetSelected(bool isSelected)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Panel_Clothing), Member = "SelectClothingSlot")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Clothing), Member = "SelectClothingSlot")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void DoClickAction()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Clothing), Member = "OnUseClothingItem")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void DoDoubleClickAction()
 	{
@@ -143,18 +145,18 @@ public class ClothingSlot : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsAtPositionInLayout(int col, int row)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsSelected()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public ClothingRegion GetClothingRegion()
 	{
 		return default(ClothingRegion);
@@ -167,34 +169,32 @@ public class ClothingSlot : MonoBehaviour
 		return default(ClothingLayer);
 	}
 
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "RefreshVisuals")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ClothingSlot), Member = "ShouldUseAltTexture")]
+	[Calls(Type = typeof(ClothingSlot), Member = "ShouldUseThirdAltTexture")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ClothingSlot), Member = "SetBlendAmountOnly")]
+	[Calls(Type = typeof(ClothingSlot), Member = "SetPaperDollTexture")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
 	[Calls(Type = typeof(ClothingSlot), Member = "ToggleWidgetsActive")]
 	[Calls(Type = typeof(ClothingSlot), Member = "HasOptionsAvailable")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
-	[Calls(Type = typeof(ClothingSlot), Member = "CheckForHide")]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "RefreshVisuals")]
 	[Calls(Type = typeof(ClothingSlot), Member = "CheckForChangeLayer")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(ClothingSlot), Member = "SetBlendAmountOnly")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ClothingSlot), Member = "ShouldUseThirdAltTexture")]
-	[Calls(Type = typeof(ClothingSlot), Member = "ShouldUseAltTexture")]
+	[Calls(Type = typeof(ClothingSlot), Member = "CheckForHide")]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(ClothingSlot), Member = "SetPaperDollTexture")]
+	[CallsUnknownMethods(Count = 6)]
 	public void UpdateSlotInfo()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "ActivateTopLayerOnly")]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "ActivateTopLayerOnly")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "CheckForHide")]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdateSlotInfo")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "SetPaperDollTexture")]
+	[CalledBy(Type = typeof(ClothingSlot), Member = "CheckForHide")]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "ActivateTopLayerOnly")]
+	[CallerCount(Count = 5)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public void ToggleWidgetsActive(bool toggle)
 	{
 	}
@@ -203,301 +203,246 @@ public class ClothingSlot : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public int GetLayoutRow()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public int GetLayoutColumn()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateWetFrozenSprites(ClothingItem clothingItem)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdateSlotInfo")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(ClothingSlot), Member = "ToggleWidgetsActive")]
-	[Calls(Type = typeof(ClothingSlot), Member = "SetPaperDollTextureNoBlendMap")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ClothingSlot), Member = "SetPaperDollTextureBlendMap")]
+	[Calls(Type = typeof(ClothingSlot), Member = "SetPaperDollTextureNoBlendMap")]
+	[Calls(Type = typeof(ClothingSlot), Member = "ToggleWidgetsActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void SetPaperDollTexture(GearItem gi)
 	{
 	}
 
+	[CalledBy(Type = typeof(ClothingSlot), Member = "AdjustForFemaleVariant")]
+	[CalledBy(Type = typeof(ClothingSlot), Member = "SetPaperDollTextureBlendMap")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Addressables), Member = "LoadResourceLocationsAsync")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "AdjustForFemaleVariant")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "SetPaperDollTextureBlendMap")]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool IsAddressableTexture(string name)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(ClothingSlot), Member = "SetPaperDollTextureBlendMap")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "SetPaperDollTextureNoBlendMap")]
-	[Calls(Type = typeof(StringBuilder), Member = "Replace")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "SetPaperDollTextureBlendMap")]
-	[Calls(Type = typeof(ClothingSlot), Member = "IsAddressableTexture")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(ClothingSlot), Member = "IsAddressableTexture")]
 	[Calls(Type = typeof(StringBuilder), Member = "Remove")]
+	[Calls(Type = typeof(StringBuilder), Member = "Replace")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void AdjustForFemaleVariant()
 	{
 	}
 
-	[Calls(Type = typeof(StringBuilder), Member = "set_Length")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Replace")]
-	[Calls(Type = typeof(StringBuilder), Member = "Replace")]
-	[Calls(Type = typeof(GearItem), Member = "GetDamageBlendValue")]
-	[Calls(Type = typeof(Material), Member = "SetTexture")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "SetPaperDollTexture")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Material), Member = "SetTexture")]
-	[Calls(Type = typeof(ClothingSlot), Member = "AdjustForFemaleVariant")]
-	[Calls(Type = typeof(ClothingSlot), Member = "IsAddressableTexture")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 16)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(Addressables), Member = "Release")]
 	[Calls(Type = typeof(StringBuilder), Member = "set_Length")]
-	[Calls(Type = typeof(ClothingSlot), Member = "ShouldUseAltTexture")]
 	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(ClothingSlot), Member = "ShouldUseThirdAltTexture")]
+	[Calls(Type = typeof(ClothingSlot), Member = "ShouldUseAltTexture")]
 	[Calls(Type = typeof(ClothingSlot), Member = "AdjustForFemaleVariant")]
 	[Calls(Type = typeof(Material), Member = "SetTexture")]
-	[Calls(Type = typeof(StringBuilder), Member = "set_Length")]
-	[Calls(Type = typeof(ClothingSlot), Member = "ShouldUseThirdAltTexture")]
+	[Calls(Type = typeof(AssetHelper), Member = "TryLoadAsset")]
+	[Calls(Type = typeof(StringBuilder), Member = "Replace")]
+	[Calls(Type = typeof(ClothingSlot), Member = "IsAddressableTexture")]
+	[Calls(Type = typeof(GearItem), Member = "GetDamageBlendValue")]
+	[Calls(Type = typeof(Material), Member = "SetFloat")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetPaperDollTextureBlendMap(GearItem gi, bool isFemale, int widgetIndex)
 	{
 	}
 
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "SetPaperDollTexture")]
-	[Calls(Type = typeof(ClothingSlot), Member = "AdjustForFemaleVariant")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(ClothingSlot), Member = "ShouldUseThirdAltTexture")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "set_Length")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(StringBuilder), Member = "set_Length")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(ClothingSlot), Member = "ShouldUseThirdAltTexture")]
 	[Calls(Type = typeof(ClothingSlot), Member = "ShouldUseAltTexture")]
+	[Calls(Type = typeof(ClothingSlot), Member = "AdjustForFemaleVariant")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void SetPaperDollTextureNoBlendMap(GearItem gi, bool isFemale, int widgetIndex)
 	{
 	}
 
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdateSlotInfo")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Material), Member = "GetFloat")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItem), Member = "GetDamageBlendValue")]
+	[Calls(Type = typeof(Material), Member = "GetFloat")]
+	[Calls(Type = typeof(Material), Member = "SetFloat")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private void SetBlendAmountOnly(GearItem gi)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdateSlotInfo")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(ClothingItem), Member = "IsWearing")]
-	[Calls(Type = typeof(InProgressCraftItem), Member = "IsProgressComplete")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetClimbingBuffClothing")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetWornCarryingCapacityBuffClothing")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetWornCarryingCapacityBuffClothing")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetClimbingBuffClothing")]
+	[Calls(Type = typeof(InProgressCraftItem), Member = "IsProgressComplete")]
+	[Calls(Type = typeof(ClothingItem), Member = "IsWearing")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 4)]
 	private bool HasOptionsAvailable()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	private int GetPaperDollTextureLayer()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdatePaperDollLayer_HeadMid")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdatePaperDollLayer_Astrid")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdatePaperDollLayer_Astrid")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdatePaperDollLayer_Accessory")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdatePaperDollLayer_FeetTop")]
-	[CallerCount(Count = 9)]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdatePaperDollLayer_Hands")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdatePaperDollLayer_Hands")]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "CheckForChangeLayer")]
-	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
+	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdatePaperDollLayer_Hands")]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdatePaperDollLayer_FeetTop")]
+	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdatePaperDollLayer_HeadMid")]
+	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdatePaperDollLayer_Accessory")]
+	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdatePaperDollLayer_Astrid")]
+	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(UIWidget), Member = "set_depth")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdatePaperDollTextureLayer(int newLayer)
 	{
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "SetPaperDollTextureNoBlendMap")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "SetPaperDollTextureBlendMap")]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdateSlotInfo")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTopLayerGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTopLayerGear")]
+	[CalledBy(Type = typeof(ClothingSlot), Member = "SetPaperDollTextureBlendMap")]
+	[CalledBy(Type = typeof(ClothingSlot), Member = "SetPaperDollTextureNoBlendMap")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetTopLayerGear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 12)]
 	private bool ShouldUseAltTexture()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "SetPaperDollTextureBlendMap")]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdateSlotInfo")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CalledBy(Type = typeof(ClothingSlot), Member = "SetPaperDollTextureBlendMap")]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "SetPaperDollTextureNoBlendMap")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetTopLayerGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 2)]
 	private bool ShouldUseThirdAltTexture()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdateSlotInfo")]
-	[Calls(Type = typeof(ClothingSlot), Member = "UpdatePaperDollLayer_Astrid")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(ClothingSlot), Member = "UpdatePaperDollTextureLayer")]
-	[Calls(Type = typeof(ClothingSlot), Member = "UpdatePaperDollLayer_HeadMid")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(ClothingSlot), Member = "UpdatePaperDollLayer_HeadMid")]
 	[Calls(Type = typeof(ClothingSlot), Member = "UpdatePaperDollLayer_Accessory")]
+	[Calls(Type = typeof(ClothingSlot), Member = "UpdatePaperDollTextureLayer")]
+	[Calls(Type = typeof(ClothingSlot), Member = "UpdatePaperDollLayer_Astrid")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void CheckForChangeLayer()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(ClothingSlot), Member = "UpdatePaperDollTextureLayer")]
-	[Calls(Type = typeof(ClothingSlot), Member = "UpdatePaperDollTextureLayer")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void UpdatePaperDollLayer_Hands()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ClothingSlot), Member = "UpdatePaperDollTextureLayer")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(ClothingSlot), Member = "UpdatePaperDollTextureLayer")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdatePaperDollLayer_FeetTop()
 	{
 	}
 
-	[Calls(Type = typeof(ClothingSlot), Member = "UpdatePaperDollTextureLayer")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "CheckForChangeLayer")]
-	[CallsUnknownMethods(Count = 13)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(ClothingSlot), Member = "UpdatePaperDollTextureLayer")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	private void UpdatePaperDollLayer_HeadMid()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "CheckForChangeLayer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ClothingSlot), Member = "UpdatePaperDollTextureLayer")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	private void UpdatePaperDollLayer_Accessory(int CHEST_MID_DEFAULT_LAYER)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(ClothingSlot), Member = "CheckForChangeLayer")]
-	[Calls(Type = typeof(ClothingSlot), Member = "UpdatePaperDollTextureLayer")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(ClothingSlot), Member = "UpdatePaperDollTextureLayer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTopLayerGear")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTopLayerGear")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetTopLayerGear")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(ClothingSlot), Member = "UpdatePaperDollTextureLayer")]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdatePaperDollLayer_Astrid(int CHEST_BASE_LAYER, int CHEST_MID_DEFAULT_LAYER)
 	{
 	}
 
+	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdateSlotInfo")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetFootwearType")]
 	[Calls(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
 	[Calls(Type = typeof(Panel_Clothing), Member = "RefreshVisuals")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CalledBy(Type = typeof(ClothingSlot), Member = "UpdateSlotInfo")]
-	[CallsUnknownMethods(Count = 6)]
 	[Calls(Type = typeof(ClothingSlot), Member = "ToggleWidgetsActive")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetFootwearType")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 6)]
 	private void CheckForHide()
 	{
 	}
@@ -507,12 +452,12 @@ public class ClothingSlot : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	private static bool IsMatchingGearName(string a, string b)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public ClothingSlot()
 	{
 	}

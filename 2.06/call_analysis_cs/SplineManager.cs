@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using SuperSplines;
 using Unity.Collections;
@@ -38,10 +37,9 @@ public static class SplineManager
 
 		public NativeArray<Vector3> m_Results;
 
-		[Calls(Type = typeof(Utils), Member = "GetPositionOnSpline")]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Utils), Member = "GetClosestPointParamOnSegmentIntern")]
-		[Calls(Type = typeof(Utils), Member = "GetClosestPointParamOnSegmentIntern")]
+		[Calls(Type = typeof(Utils), Member = "GetPositionOnSpline")]
 		[CallsUnknownMethods(Count = 1)]
 		public void Execute()
 		{
@@ -66,138 +64,131 @@ public static class SplineManager
 
 	private static bool s_Initialized;
 
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(SplineManager), Member = "GetMatrix")]
-	[CalledBy(Type = typeof(SplineManager), Member = "EarlyUpdate")]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[RuntimeInitializeOnLoadMethod]
 	[CalledBy(Type = typeof(SplineAudioClip), Member = "Initialize")]
+	[CalledBy(Type = typeof(SplineManager), Member = "EarlyUpdate")]
+	[CalledBy(Type = typeof(SplineManager), Member = "GetMatrix")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 11)]
 	public static void Initialize()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SplineAudioClip), Member = "Initialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void RegisterStaticSplineAudioClip(SplineAudioClip splineAudioClip)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Utils.FastSpline), Member = "Dispose")]
-	[Calls(Type = typeof(SplineManager), Member = "CompleteJobs")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SplineManager), Member = "AreJobPending")]
+	[Calls(Type = typeof(SplineManager), Member = "CompleteJobs")]
+	[Calls(Type = typeof(Utils.FastSpline), Member = "Dispose")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void UnRegisterStaticSplineAudioClip(SplineAudioClip splineAudioClip)
 	{
 	}
 
+	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SplineManager), Member = "Initialize")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SplineAudioClip), Member = "RequestClosestPointOnSpline")]
 	[Calls(Type = typeof(SplineManager), Member = "SheduleJobs")]
-	[CalledBy(Type = typeof(GameManager), Member = "UpdateNotPaused")]
 	[CallsUnknownMethods(Count = 4)]
 	public static void EarlyUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static int RequestSplineClosestPositionJob(Utils.FastSpline fastSpline, Vector3 position)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(SplineAudioClip), Member = "ManualUpdate")]
 	[CalledBy(Type = typeof(SplineAudioClip), Member = "FetchClosestPointOnSplineResult")]
 	[CalledBy(Type = typeof(SplineManager), Member = "Update")]
+	[CallerCount(Count = 3)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public static bool RetrieveSplineClosestPosition(int jobIndex, out Vector3 closestPosition)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Vector3, @null>(ref closestPosition) = null;
-		return default(bool);
+		closestPosition = default(Vector3);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(SplineManager), Member = "EarlyUpdate")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SplineManager), Member = "AreJobPending")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public static void SheduleJobs()
 	{
 	}
 
-	[CalledBy(Type = typeof(SplineManager), Member = "Update")]
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(SplineManager), Member = "AreJobPending")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(ObjectDisposedException), Member = ".ctor")]
 	[CalledBy(Type = typeof(SplineAudioClip), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(SplineManager), Member = "UnRegisterStaticSplineAudioClip")]
+	[CalledBy(Type = typeof(SplineManager), Member = "Update")]
 	[CalledBy(Type = typeof(SplineManager), Member = "Dispose")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(SplineManager), Member = "AreJobPending")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(ObjectDisposedException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 17)]
 	public static void CompleteJobs()
 	{
 	}
 
 	[CalledBy(Type = typeof(PlayerManager), Member = "LateUpdate")]
-	[Calls(Type = typeof(SplineManager), Member = "CompleteJobs")]
-	[Calls(Type = typeof(SplineAudioClip), Member = "PlaySplineAudioClip")]
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(SplineManager), Member = "RetrieveSplineClosestPosition")]
+	[Calls(Type = typeof(SplineAudioClip), Member = "PlaySplineAudioClip")]
+	[Calls(Type = typeof(SplineManager), Member = "CompleteJobs")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	public static void Update()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static void Reset()
 	{
 	}
 
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(SplineAudioClip), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(SplineManager), Member = "UnRegisterStaticSplineAudioClip")]
 	[CalledBy(Type = typeof(SplineManager), Member = "SheduleJobs")]
 	[CalledBy(Type = typeof(SplineManager), Member = "CompleteJobs")]
 	[CalledBy(Type = typeof(SplineManager), Member = "Dispose")]
+	[CallerCount(Count = 5)]
 	[CallsUnknownMethods(Count = 1)]
 	public static bool AreJobPending()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 62)]
 	[CalledBy(Type = typeof(GameManager), Member = "OnDestroy")]
-	[Calls(Type = typeof(ObjectDisposedException), Member = ".ctor")]
-	[Calls(Type = typeof(ObjectDisposedException), Member = ".ctor")]
-	[Calls(Type = typeof(ObjectDisposedException), Member = ".ctor")]
-	[Calls(Type = typeof(ObjectDisposedException), Member = ".ctor")]
-	[Calls(Type = typeof(UnsafeUtility), Member = "Free")]
-	[Calls(Type = typeof(ObjectDisposedException), Member = ".ctor")]
-	[Calls(Type = typeof(UnsafeUtility), Member = "Free")]
-	[Calls(Type = typeof(UnsafeUtility), Member = "Free")]
-	[Calls(Type = typeof(UnsafeUtility), Member = "Free")]
-	[Calls(Type = typeof(SplineManager), Member = "CompleteJobs")]
-	[Calls(Type = typeof(SplineManager), Member = "AreJobPending")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SplineManager), Member = "AreJobPending")]
+	[Calls(Type = typeof(SplineManager), Member = "CompleteJobs")]
 	[Calls(Type = typeof(UnsafeUtility), Member = "Free")]
+	[Calls(Type = typeof(ObjectDisposedException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 62)]
 	public static void Dispose()
 	{
 	}

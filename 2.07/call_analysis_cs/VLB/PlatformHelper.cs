@@ -6,10 +6,10 @@ namespace VLB;
 
 public class PlatformHelper
 {
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static string GetCurrentPlatformSuffix()
 	{
 		return null;

@@ -58,84 +58,78 @@ public class MissionTimer
 
 	public float Time
 	{
-		[CalledBy(Type = typeof(Panel_Map), Member = "RefreshHoverIconText")]
-		[CalledBy(Type = typeof(MissionServicesManager), Member = "Update")]
-		[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-		[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-		[CalledBy(Type = typeof(StoryMissionListEntry), Member = "Refresh")]
-		[CallerCount(Count = 7)]
 		[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "MaybeUpdateTimerObjectiveUI")]
-		[Calls(Type = typeof(MissionTimer), Member = "get_ElapsedTime")]
+		[CalledBy(Type = typeof(StoryMissionListEntry), Member = "Refresh")]
+		[CalledBy(Type = typeof(Panel_Map), Member = "RefreshHoverIconText")]
+		[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
+		[CalledBy(Type = typeof(MissionServicesManager), Member = "Update")]
+		[CallerCount(Count = 7)]
 		[Calls(Type = typeof(MissionTimer), Member = "get_ElapsedTime")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "MaybeUpdateTimerObjectiveUI")]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	public float ElapsedTime
 	{
-		[CalledBy(Type = typeof(MissionTimer), Member = "Update")]
-		[CallsUnknownMethods(Count = 4)]
-		[CalledBy(Type = typeof(MissionTimer), Member = "GetDebugString")]
+		[CalledBy(Type = typeof(MissionTimer), Member = "get_Time")]
 		[CalledBy(Type = typeof(MissionTimer), Member = "Serialize")]
+		[CalledBy(Type = typeof(MissionTimer), Member = "Update")]
+		[CalledBy(Type = typeof(MissionTimer), Member = "GetDebugString")]
 		[CalledBy(Type = typeof(Condition_IsTimeActive), Member = "OnCheck")]
-		[CalledBy(Type = typeof(MissionTimer), Member = "get_Time")]
 		[CallerCount(Count = 6)]
-		[CalledBy(Type = typeof(MissionTimer), Member = "get_Time")]
 		[Calls(Type = typeof(MissionTimer), Member = "GetAllSecondsElapsedSinceTimerStarted")]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 4)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "StartMissionTimer")]
-	[Calls(Type = typeof(DateTime), Member = "get_Now")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "DeserializeTimers")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(DateTime), Member = "get_Now")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public MissionTimer(MissionServicesManager mainMissionManager, MissionManagerBase manager, string name)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(MissionTimer), Member = "Deserialize")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "StartMissionTimer")]
-	[Calls(Type = typeof(DateTime), Member = "get_Now")]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[Calls(Type = typeof(MissionTimer), Member = "GetAllSecondsElapsedSinceTimerStarted")]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[Calls(Type = typeof(Enum), Member = "HasFlag")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(MissionTimer), Member = "Deserialize")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Enum), Member = "HasFlag")]
+	[Calls(Type = typeof(MissionTimer), Member = "GetAllSecondsElapsedSinceTimerStarted")]
+	[Calls(Type = typeof(DateTime), Member = "get_Now")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public void Initialize(MissionTimerType type, float duration, string eventOnExpire, MissionTimerOptions timerOptions)
 	{
 	}
 
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "Serialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MissionTimer), Member = "get_ElapsedTime")]
 	[Calls(Type = typeof(DateTime), Member = "ToString")]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "Serialize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 9)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(DateTime), Member = "ParseExact")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "DeserializeTimers")]
-	[Calls(Type = typeof(DateTimeFormatInfo), Member = "get_InvariantInfo")]
-	[Calls(Type = typeof(MissionTimer), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(MissionTimer), Member = "Initialize")]
+	[Calls(Type = typeof(DateTimeFormatInfo), Member = "get_InvariantInfo")]
+	[Calls(Type = typeof(DateTime), Member = "ParseExact")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
@@ -147,34 +141,34 @@ public class MissionTimer
 	{
 	}
 
+	[CalledBy(Type = typeof(MissionServicesManager), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
 	[Calls(Type = typeof(MissionTimer), Member = "get_ElapsedTime")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
-	[CalledBy(Type = typeof(MissionServicesManager), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool Update()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
+	[CallsUnknownMethods(Count = 1)]
 	public void PostExpireEvent()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(DateTime), Member = "get_Now")]
 	[CalledBy(Type = typeof(MissionTimer), Member = "Initialize")]
 	[CalledBy(Type = typeof(MissionTimer), Member = "get_ElapsedTime")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(DateTime), Member = "get_Now")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private float GetAllSecondsElapsedSinceTimerStarted()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -184,28 +178,26 @@ public class MissionTimer
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 17)]
-	[CalledBy(Type = typeof(MissionTimer), Member = "GetDebugText")]
-	[Calls(Type = typeof(string), Member = "Format")]
 	[CalledBy(Type = typeof(MissionServicesManager), Member = "GetMissionTimerDebugText")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(MissionTimer), Member = "GetDebugText")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(MissionTimer), Member = "get_ElapsedTime")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 17)]
 	public string GetDebugString()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(HUDManager), Member = "UpdateDebugLines")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(MissionTimer), Member = "GetDebugString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(HUDManager), Member = "UpdateDebugLines")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	public static string GetDebugText()
 	{
 		return null;

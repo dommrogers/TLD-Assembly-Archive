@@ -7,12 +7,12 @@ public class GearSaveList
 
 	public List<string> m_SpawnedGearInOldSavesGUIDs;
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(GearManager), Member = "Serialize")]
+	[CalledBy(Type = typeof(GearItemInteractabilityControlSaveData), Member = ".ctor")]
 	[CalledBy(Type = typeof(GearItemInteractabilityControl), Member = "Serialize")]
+	[CalledBy(Type = typeof(GearManager), Member = "Serialize")]
 	[CallerCount(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(GearItemInteractabilityControlSaveData), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 1)]
 	public GearSaveList()
 	{
 	}

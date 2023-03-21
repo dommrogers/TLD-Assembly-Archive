@@ -9,18 +9,17 @@ public class UILocalize : MonoBehaviour
 
 	public string value
 	{
-		[Calls(Type = typeof(UILabel), Member = "set_text")]
-		[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 		[CalledBy(Type = typeof(UILocalize), Member = "OnLocalize")]
 		[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "UpdateUISelection")]
-		[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "UpdateUISelection")]
-		[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "UpdateUISelection")]
-		[CalledBy(Type = typeof(Panel_SelectChallengeType), Member = "UpdateUISelection")]
-		[CallsUnknownMethods(Count = 2)]
-		[Calls(Type = typeof(UIButton), Member = "set_normalSprite")]
-		[Calls(Type = typeof(UIInput), Member = "set_defaultText")]
 		[CallerCount(Count = 5)]
-		[CallsDeduplicatedMethods(Count = 7)]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
+		[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
+		[Calls(Type = typeof(UIInput), Member = "set_defaultText")]
+		[Calls(Type = typeof(UILabel), Member = "set_text")]
+		[Calls(Type = typeof(UIButton), Member = "set_normalSprite")]
+		[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
@@ -32,25 +31,25 @@ public class UILocalize : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void Start()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(UILocalize), Member = "OnEnable")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(string), Member = "ToUpper")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILocalize), Member = "set_value")]
-	[CalledBy(Type = typeof(UILocalize), Member = "OnEnable")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	private void OnLocalize()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public UILocalize()
 	{
 	}

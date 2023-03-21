@@ -7,9 +7,9 @@ public class SphereVolume : VolumetricObjectBase
 
 	private float previousRadius;
 
-	[Calls(Type = typeof(VolumetricObjectBase), Member = "OnEnable")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(VolumetricObjectBase), Member = "OnEnable")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	protected override void OnEnable()
 	{
@@ -21,32 +21,30 @@ public class SphereVolume : VolumetricObjectBase
 	{
 	}
 
-	[Calls(Type = typeof(VolumetricObjectBase), Member = "HasChanged")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(VolumetricObjectBase), Member = "HasChanged")]
 	public override bool HasChanged()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(VolumetricObjectBase), Member = "SetChangedValues")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(VolumetricObjectBase), Member = "SetChangedValues")]
 	protected override void SetChangedValues()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Vector3), Member = "get_one")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(VolumetricObjectBase), Member = "ScaleMesh")]
 	[Calls(Type = typeof(Bounds), Member = "SetMinMax")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Material), Member = "SetVector")]
 	[Calls(Type = typeof(Material), Member = "SetFloat")]
 	[Calls(Type = typeof(Material), Member = "SetColor")]
 	[Calls(Type = typeof(Material), Member = "SetTexture")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Material), Member = "SetVector")]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
 	public override void UpdateVolume()
 	{
 	}

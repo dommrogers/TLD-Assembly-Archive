@@ -28,19 +28,19 @@ public class Action_StartTimer : ActionTask
 
 	private string realId
 	{
-		[CallerCount(Count = 5)]
 		[CalledBy(Type = typeof(Action_StartTimer), Member = "get_info")]
 		[CalledBy(Type = typeof(Action_StartTimer), Member = "OnExecute")]
-		[CalledBy(Type = typeof(Action_StartTimer), Member = "OnExecute")]
 		[CalledBy(Type = typeof(Action_StartTimer), Member = "OnStop")]
-		[CalledBy(Type = typeof(Action_StartTimer), Member = "OnStop")]
-		[CallsUnknownMethods(Count = 3)]
+		[CallerCount(Count = 5)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -48,8 +48,8 @@ public class Action_StartTimer : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(Action_StartTimer), Member = "get_realId")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Action_StartTimer), Member = "get_realId")]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		get
 		{
@@ -57,20 +57,19 @@ public class Action_StartTimer : ActionTask
 		}
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "StartMissionTimer")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(NCUtils), Member = "GetMissionManagerForFSM")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Action_StartTimer), Member = "get_realId")]
-	[Calls(Type = typeof(Action_StartTimer), Member = "get_realId")]
+	[Calls(Type = typeof(NCUtils), Member = "GetMissionManagerForFSM")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "StartMissionTimer")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Action_StartTimer), Member = "get_realId")]
 	[Calls(Type = typeof(Action_StartTimer), Member = "get_realId")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "RemoveMissionTimer")]
 	[CallsUnknownMethods(Count = 2)]
@@ -79,7 +78,8 @@ public class Action_StartTimer : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 3)]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsUnknownMethods(Count = 2)]
 	public Action_StartTimer()
 	{
 	}

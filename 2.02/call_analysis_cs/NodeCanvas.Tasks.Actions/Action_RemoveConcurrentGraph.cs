@@ -8,9 +8,10 @@ public class Action_RemoveConcurrentGraph : ActionTask
 	public string graphId;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(NCUtils), Member = "GetHostState")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	protected override void OnExecute()
 	{

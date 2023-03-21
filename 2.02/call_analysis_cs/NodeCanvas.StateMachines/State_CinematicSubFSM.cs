@@ -9,12 +9,13 @@ public class State_CinematicSubFSM : NestedFSMState
 
 	public string cinematicDescription;
 
-	[Calls(Type = typeof(NestedFSMState), Member = "OnEnter")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(NCUtils), Member = "GetOrAddVar")]
+	[Calls(Type = typeof(Variable<>), Member = "set_value")]
+	[Calls(Type = typeof(NestedFSMState), Member = "OnEnter")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnEnter()
 	{
 	}

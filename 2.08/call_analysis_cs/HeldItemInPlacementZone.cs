@@ -30,50 +30,45 @@ public class HeldItemInPlacementZone : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void MaybeUpdateDroppedItemPosition()
 	{
 	}
 
-	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "DropItemFromHands")]
-	[CalledBy(Type = typeof(Action_UnequipItemInHands), Member = "OnExecute")]
-	[CalledBy(Type = typeof(SteamPipeValve), Member = "OnOpenValveInteraction")]
-	[CalledBy(Type = typeof(PlayPlayerTimelineOnInteract), Member = "PerformInteraction")]
-	[CalledBy(Type = typeof(Phone), Member = "OnPhonePickup")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Elevator), Member = "EnterPlayer")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
-	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MoveItemToTheZone")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitFlashlight")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitFlare")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitTorch")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitLamp")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(Phone), Member = "OnPhonePickup")]
+	[CalledBy(Type = typeof(PlayPlayerTimelineOnInteract), Member = "PerformInteraction")]
+	[CalledBy(Type = typeof(SteamPipeValve), Member = "OnOpenValveInteraction")]
+	[CalledBy(Type = typeof(Action_UnequipItemInHands), Member = "OnExecute")]
 	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitFlare")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitLamp")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitTorch")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitFlashlight")]
+	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "DropItemFromHands")]
+	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MoveItemToTheZone")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipImmediate")]
+	[CallsUnknownMethods(Count = 1)]
 	public void MaybeHandleItemInHands()
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_RetrieveLastItemInHands), Member = "OnExecute")]
-	[CalledBy(Type = typeof(SteamPipeValve), Member = "OnCloseValveComplete")]
-	[CalledBy(Type = typeof(SteamPipeValve), Member = "OnOpenValveComplete")]
-	[CalledBy(Type = typeof(SteamPipeValve), Member = "OnOpenValveInteraction")]
+	[CalledBy(Type = typeof(Elevator), Member = "ExitPlayer")]
+	[CalledBy(Type = typeof(Elevator), Member = "OnExitAnimationComplete")]
+	[CalledBy(Type = typeof(Phone), Member = "OnPhoneHangup")]
 	[CalledBy(Type = typeof(Phone), Member = "OnPhoneHangupComplete")]
 	[CalledBy(Type = typeof(PlayPlayerTimelineOnInteract), Member = "OnTimelineEnded")]
-	[CalledBy(Type = typeof(Elevator), Member = "OnExitAnimationComplete")]
-	[CalledBy(Type = typeof(Elevator), Member = "ExitPlayer")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "RetrievePlacedItemToHands")]
+	[CalledBy(Type = typeof(SteamPipeValve), Member = "OnOpenValveInteraction")]
+	[CalledBy(Type = typeof(SteamPipeValve), Member = "OnOpenValveComplete")]
+	[CalledBy(Type = typeof(SteamPipeValve), Member = "OnCloseValveComplete")]
+	[CalledBy(Type = typeof(Action_RetrieveLastItemInHands), Member = "OnExecute")]
 	[CallerCount(Count = 9)]
-	[CalledBy(Type = typeof(Phone), Member = "OnPhoneHangup")]
+	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "RetrievePlacedItemToHands")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
 	public void MaybeProcessPickingUpPlacedItem()
 	{
 	}
@@ -82,46 +77,40 @@ public class HeldItemInPlacementZone : MonoBehaviour
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	public bool IsValid()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitTorch")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "IsLitLamp")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItem), Member = "IsLitFlare")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitLamp")]
+	[Calls(Type = typeof(GearItem), Member = "IsLitTorch")]
 	[Calls(Type = typeof(GearItem), Member = "IsLitFlashlight")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsValidItemToPlace(GearItem Item)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(HeldItemInPlacementZone), Member = "MaybeHandleItemInHands")]
-	[Calls(Type = typeof(PlayerManager), Member = "DropLitItemToPlacementZone")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(HeldItemInPlacementZone), Member = "ProcessMovingHeldItemToZone")]
-	[Calls(Type = typeof(GearItem), Member = "Drop")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItem), Member = "Clone")]
 	[Calls(Type = typeof(PlayerManager), Member = "DropLitItemToPlacementZone")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GearItem), Member = "Drop")]
+	[CallsUnknownMethods(Count = 1)]
 	private void DropItemFromHands()
 	{
 	}
 
-	[CalledBy(Type = typeof(HeldItemInPlacementZone), Member = "ProcessMovingHeldItemToZone")]
 	[CalledBy(Type = typeof(HeldItemInPlacementZone), Member = "MaybeHandleItemInHands")]
-	[Calls(Type = typeof(Transform), Member = "SetParent")]
-	[CallsUnknownMethods(Count = 11)]
-	[CallsDeduplicatedMethods(Count = 10)]
+	[CalledBy(Type = typeof(HeldItemInPlacementZone), Member = "ProcessMovingHeldItemToZone")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Transform), Member = "SetParent")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 11)]
 	private void MoveItemToTheZone()
 	{
 	}
@@ -140,16 +129,15 @@ public class HeldItemInPlacementZone : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "SetGravity")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(HeldItemInPlacementZone), Member = "ProcessPickingUpPlacedItem")]
 	[CalledBy(Type = typeof(HeldItemInPlacementZone), Member = "MaybeProcessPickingUpPlacedItem")]
-	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(HeldItemInPlacementZone), Member = "ProcessPickingUpPlacedItem")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupItemInteraction")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetGravity")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void RetrievePlacedItemToHands()
 	{
 	}
@@ -166,18 +154,18 @@ public class HeldItemInPlacementZone : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GearItem), Member = "Clone")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "Clone")]
+	[CallsUnknownMethods(Count = 1)]
 	private void DuplicateItemBeforeDrop(GearItem gi)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void RemoveDuplicatedItem()
 	{

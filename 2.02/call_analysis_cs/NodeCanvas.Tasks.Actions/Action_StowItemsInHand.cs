@@ -6,25 +6,24 @@ namespace NodeCanvas.Tasks.Actions;
 
 public class Action_StowItemsInHand : ActionTask
 {
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Action_StowItemsInHand), Member = "MaybeStowItemInHand")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Action_StowItemsInHand), Member = "MaybeStowItemInHand")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	protected override void OnExecute()
 	{
 	}
 
+	[CalledBy(Type = typeof(Action_StowItemsInHand), Member = "OnExecute")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "ProcessPickupWithNoInspectScreenDropCurrent")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CalledBy(Type = typeof(Action_StowItemsInHand), Member = "OnExecute")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 9)]
 	private bool MaybeStowItemInHand()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -34,8 +33,8 @@ public class Action_StowItemsInHand : ActionTask
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_StowItemsInHand()
 	{
 	}

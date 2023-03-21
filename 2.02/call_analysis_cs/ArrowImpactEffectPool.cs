@@ -32,7 +32,8 @@ public class ArrowImpactEffectPool : EffectPool<ArrowImpactEffectType>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(EffectPool<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public ArrowImpactEffectPool()
 	{
 		((EffectPool<>)(object)this)._002Ector();

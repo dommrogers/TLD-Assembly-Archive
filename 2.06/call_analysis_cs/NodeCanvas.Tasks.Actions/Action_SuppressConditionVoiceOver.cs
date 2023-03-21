@@ -9,8 +9,8 @@ public class Action_SuppressConditionVoiceOver : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Concat")]
 		get
 		{
 			return null;

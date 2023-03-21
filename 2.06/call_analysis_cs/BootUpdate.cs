@@ -31,38 +31,37 @@ public class BootUpdate : MonoBehaviour
 
 	private AsyncOperationHandle<SceneInstance> m_AsyncOp;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetPressAnyKeyString")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "GetPressAnyKeyString")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Start()
 	{
 	}
 
-	[Calls(Type = typeof(InputManager), Member = "CheckForActiveController")]
-	[Calls(Type = typeof(OptionalContentManager), Member = "InitializeAsync")]
-	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
-	[Calls(Type = typeof(Input), Member = "ResetInputAxes")]
-	[Calls(Type = typeof(InputManager), Member = "AnyButtonsOrKeysPressed")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlatformManager), Member = "Update")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(SceneManager), Member = "LoadSceneAsync")]
-	[Calls(Type = typeof(GameManager), Member = "GetTargetMainMenuSceneName")]
-	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlatformManager), Member = "Update")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(OptionalContentManager), Member = "get_Instance")]
+	[Calls(Type = typeof(GameManager), Member = "GetTargetMainMenuSceneName")]
+	[Calls(Type = typeof(SceneManager), Member = "LoadSceneAsync")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InputManager), Member = "CheckForActiveController")]
+	[Calls(Type = typeof(InputManager), Member = "AnyButtonsOrKeysPressed")]
+	[Calls(Type = typeof(Input), Member = "ResetInputAxes")]
+	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
+	[Calls(Type = typeof(OptionalContentManager), Member = "InitializeAsync")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Update()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "GetTargetMainMenuSceneName")]
 	[Calls(Type = typeof(SceneManager), Member = "LoadSceneAsync")]
-	[CallerCount(Count = 0)]
 	private void LoadMainMenu()
 	{
 	}
@@ -79,7 +78,7 @@ public class BootUpdate : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private bool IsUserSignedIn()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

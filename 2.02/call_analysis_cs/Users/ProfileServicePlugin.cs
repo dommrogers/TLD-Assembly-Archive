@@ -20,7 +20,7 @@ public class ProfileServicePlugin
 	public static extern bool ProfileService_GetUserProfilesAsync(int requestingUserId, [In] string[] xboxUserIds, uint numXboxUserIds, ObjectResultCallback callback, IntPtr userData);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ProfileServicePlugin()
 	{
 	}

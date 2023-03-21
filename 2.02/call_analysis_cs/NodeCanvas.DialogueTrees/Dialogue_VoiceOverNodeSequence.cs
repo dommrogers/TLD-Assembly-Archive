@@ -25,19 +25,19 @@ public class Dialogue_VoiceOverNodeSequence : DTNode
 		public string actorName
 		{
 			[CallerCount(Count = 0)]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 			[Calls(Type = typeof(DialogueTree), Member = "GetParameterByID")]
+			[CallsDeduplicatedMethods(Count = 1)]
 			[CallsUnknownMethods(Count = 1)]
 			get
 			{
 				return null;
 			}
-			[CallsUnknownMethods(Count = 2)]
-			[Calls(Type = typeof(DialogueTree.ActorParameter), Member = "get_ID")]
 			[CallerCount(Count = 0)]
 			[Calls(Type = typeof(string), Member = "EqualsHelper")]
 			[Calls(Type = typeof(DialogueTree), Member = "GetParameterByName")]
+			[Calls(Type = typeof(DialogueTree.ActorParameter), Member = "get_ID")]
+			[CallsUnknownMethods(Count = 2)]
 			set
 			{
 			}
@@ -48,7 +48,6 @@ public class Dialogue_VoiceOverNodeSequence : DTNode
 			[CallerCount(Count = 0)]
 			[Calls(Type = typeof(DialogueTree), Member = "GetParameterByID")]
 			[Calls(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
-			[Calls(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
 			[CallsUnknownMethods(Count = 1)]
 			get
 			{
@@ -57,8 +56,8 @@ public class Dialogue_VoiceOverNodeSequence : DTNode
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(VoiceOverItem), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		public ActorVoiceOverItem()
 		{
@@ -71,11 +70,11 @@ public class Dialogue_VoiceOverNodeSequence : DTNode
 
 	public override bool requireActorSelection
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -90,40 +89,39 @@ public class Dialogue_VoiceOverNodeSequence : DTNode
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
 	[Calls(Type = typeof(BBParameter), Member = "set_bb")]
 	[Calls(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "PlayStatement")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
 	}
 
-	[CallsUnknownMethods(Count = 39)]
-	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "OnStatementFinish")]
 	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "OnExecute")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnSpeech")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
-	[Calls(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
+	[CalledBy(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "OnStatementFinish")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Statement), Member = ".ctor")]
-	[Calls(Type = typeof(DialogueTree), Member = "RequestSubtitles")]
 	[Calls(Type = typeof(VoiceOverItem), Member = "GetLocId")]
 	[Calls(Type = typeof(DialogueTree), Member = "GetParameterByID")]
+	[Calls(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnSpeech")]
+	[Calls(Type = typeof(DialogueTree), Member = "RequestSubtitles")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 39)]
 	private void PlayStatement(int index)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(DTNode), Member = "get_DLGTree")]
 	[Calls(Type = typeof(DialogueTree), Member = "Continue")]
 	[Calls(Type = typeof(Dialogue_VoiceOverNodeSequence), Member = "PlayStatement")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnStatementFinish()
 	{
@@ -138,10 +136,11 @@ public class Dialogue_VoiceOverNodeSequence : DTNode
 	{
 	}
 
-	[Calls(Type = typeof(DTNode), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(DTNode), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public Dialogue_VoiceOverNodeSequence()
 	{
 	}

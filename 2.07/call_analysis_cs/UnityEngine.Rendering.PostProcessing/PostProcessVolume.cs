@@ -26,16 +26,19 @@ public sealed class PostProcessVolume : MonoBehaviour
 
 	public PostProcessProfile profile
 	{
-		[CallsUnknownMethods(Count = 7)]
 		[CalledBy(Type = typeof(PostProcessManager), Member = "QuickVolume")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 3)]
+		[Calls(Type = typeof(ScriptableObject), Member = "CreateInstance")]
+		[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+		[Calls(Type = typeof(Object), Member = "Instantiate")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 60)]
+		[CallerCount(Count = 69)]
 		set
 		{
 		}
@@ -43,11 +46,10 @@ public sealed class PostProcessVolume : MonoBehaviour
 
 	internal PostProcessProfile profileRef
 	{
-		[CallerCount(Count = 4)]
 		[CalledBy(Type = typeof(PostProcessManager), Member = "GetActiveVolumes")]
 		[CalledBy(Type = typeof(PostProcessManager), Member = "UpdateSettings")]
-		[CalledBy(Type = typeof(PostProcessManager), Member = "UpdateSettings")]
 		[CalledBy(Type = typeof(RuntimeUtilities), Member = "DestroyVolume")]
+		[CallerCount(Count = 4)]
 		get
 		{
 			return null;
@@ -57,59 +59,56 @@ public sealed class PostProcessVolume : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool HasInstantiatedProfile()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(PostProcessManager), Member = "get_instance")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(PostProcessManager), Member = "get_instance")]
 	[Calls(Type = typeof(PostProcessManager), Member = "Register")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 5)]
 	private void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PostProcessManager), Member = "Unregister")]
-	[Calls(Type = typeof(PostProcessManager), Member = "get_instance")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessManager), Member = "get_instance")]
+	[Calls(Type = typeof(PostProcessManager), Member = "Unregister")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(PostProcessManager), Member = "SetLayerDirty")]
-	[Calls(Type = typeof(PostProcessManager), Member = "get_instance")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PostProcessManager), Member = "Register")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(PostProcessManager), Member = "get_instance")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessManager), Member = "get_instance")]
 	[Calls(Type = typeof(PostProcessManager), Member = "Unregister")]
+	[Calls(Type = typeof(PostProcessManager), Member = "Register")]
+	[Calls(Type = typeof(PostProcessManager), Member = "SetLayerDirty")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(MeshCollider), Member = "get_sharedMesh")]
-	[Calls(Type = typeof(SphereCollider), Member = "get_radius")]
-	[Calls(Type = typeof(SphereCollider), Member = "get_radius")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponents")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(MeshCollider), Member = "get_convex")]
+	[Calls(Type = typeof(MeshCollider), Member = "set_convex")]
 	[Calls(Type = typeof(MeshCollider), Member = "get_sharedMesh")]
 	[Calls(Type = typeof(Gizmos), Member = "DrawMesh")]
-	[Calls(Type = typeof(MeshCollider), Member = "set_convex")]
+	[Calls(Type = typeof(SphereCollider), Member = "get_radius")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 21)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(MeshCollider), Member = "get_convex")]
-	[CallsUnknownMethods(Count = 27)]
+	[CallsDeduplicatedMethods(Count = 20)]
+	[CallsUnknownMethods(Count = 26)]
 	private void OnDrawGizmos()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public PostProcessVolume()
 	{
 	}

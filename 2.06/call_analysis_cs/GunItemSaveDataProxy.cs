@@ -10,8 +10,8 @@ public class GunItemSaveDataProxy
 
 	public int m_SpentCasingsInClip;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public GunItemSaveDataProxy()
 	{
 	}

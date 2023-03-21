@@ -1,6 +1,6 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
+using TLD.AddressableAssets;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
@@ -31,7 +31,7 @@ public class ZoneSpecification : ScriptableObject
 	public SceneSet Scenes
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 9)]
+		[CallerCount(Count = 10)]
 		get
 		{
 			return null;
@@ -41,7 +41,7 @@ public class ZoneSpecification : ScriptableObject
 	public ZoneSpecification ParentZoneSpecification
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 31)]
+		[CallerCount(Count = 51)]
 		get
 		{
 			return null;
@@ -50,12 +50,12 @@ public class ZoneSpecification : ScriptableObject
 
 	public string ZoneName
 	{
-		[CalledBy(Type = typeof(SandboxRecord), Member = "GetSurvivalRecordSummaryText")]
 		[CalledBy(Type = typeof(Panel_Log), Member = "GetSurvivalRecordSummaryText")]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[CalledBy(Type = typeof(SandboxRecord), Member = "GetSurvivalRecordSummaryText")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(Localization), Member = "Get")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -65,7 +65,7 @@ public class ZoneSpecification : ScriptableObject
 	public string ZoneNameId
 	{
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(Object), Member = "op_Implicit")]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -79,7 +79,7 @@ public class ZoneSpecification : ScriptableObject
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -89,14 +89,14 @@ public class ZoneSpecification : ScriptableObject
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public WorldMapSpecification WorldMap
 	{
-		[CallerCount(Count = 44)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 53)]
 		get
 		{
 			return null;
@@ -129,37 +129,37 @@ public class ZoneSpecification : ScriptableObject
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(AssetHelper), Member = "TryLoadAsset")]
 	public Texture2D GetTOCTexture()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(SceneSet), Member = "LoadAsync")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(SceneSet), Member = "get_MaxSceneCount")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(SceneSet), Member = "get_MaxSceneCount")]
+	[Calls(Type = typeof(SceneSet), Member = "LoadAsync")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsUnknownMethods(Count = 9)]
 	public IList<AsyncOperationHandle<SceneInstance>> LoadRegionAsync(ICollection<SceneLoadCondition> conditions = null)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SceneSet), Member = "get_MaxSceneCount")]
 	[Calls(Type = typeof(SceneSet), Member = "UnloadAsync")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsUnknownMethods(Count = 9)]
 	public IList<AsyncOperationHandle<SceneInstance>> UnloadRegionAsync()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public ZoneSpecification()
 	{
 	}

@@ -27,9 +27,9 @@ public class AchievementsManagerPlugin
 	public static extern bool AchievementsManager_GetAchievementAsync(int userId, string xboxUserId, string serviceConfigurationId, string achievementId, ObjectResultCallback callback, IntPtr userData);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static extern bool AchievementsManager_LaunchAchievementsUIAsync(uint userId, uint titleId, GenericActionCallback callback, IntPtr userData);
 
 	[PreserveSig]
@@ -44,15 +44,15 @@ public class AchievementsManagerPlugin
 	public static extern void AchievementsManager_UnRegisterForUnlockNotifications();
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static extern bool AchievementsManager_UpdateAchievementAsync(int userId, string xboxUserId, string achievementId, uint percentComplete, GenericActionCallback callback, IntPtr userData);
 
 	[PreserveSig]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public static extern bool AchievementsManager_UpdateAchievementFullAsync(int userId, string xboxUserId, uint titleId, string serviceConfigurationId, string achievementId, uint percentComplete, GenericActionCallback callback, IntPtr userData);
 
 	[DeduplicatedMethod]

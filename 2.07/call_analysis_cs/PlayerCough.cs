@@ -1,4 +1,5 @@
 using Cpp2ILInjected.CallAnalysis;
+using TLD.SaveState;
 using TLD.UI.Generics;
 using UnityEngine;
 
@@ -17,38 +18,40 @@ public class PlayerCough : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "MaybeReducePlayerCondition")]
-	[CalledBy(Type = typeof(ToxicFog), Member = "StartAffliction")]
 	[CalledBy(Type = typeof(Suffocating), Member = "StartSuffocating")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
-	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[CalledBy(Type = typeof(ToxicFog), Member = "StartAffliction")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "MaybeReducePlayerCondition")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
 	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
+	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[CallsUnknownMethods(Count = 1)]
 	public void MaybeStart(string eventName)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CalledBy(Type = typeof(Suffocating), Member = "StopAudio")]
 	[CalledBy(Type = typeof(ToxicFog), Member = "StopAffliction")]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "MaybeReducePlayerCondition")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	public void Stop()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
-	[Calls(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(AkMarkerCallbackInfo), Member = "get_strLabel")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
+	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnAkVoiceEvent(object in_cookie, AkCallbackType in_type, object in_info)
 	{
 	}

@@ -11,8 +11,8 @@ public class AuroraScreenAudio : MonoBehaviour
 
 	public GameObject m_LinkedScreen;
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void SetState(AuroraScreenDisplay.State state)
 	{

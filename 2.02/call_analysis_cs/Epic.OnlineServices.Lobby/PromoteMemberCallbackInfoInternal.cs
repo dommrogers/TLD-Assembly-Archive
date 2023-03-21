@@ -25,11 +25,11 @@ internal struct PromoteMemberCallbackInfoInternal : ICallbackInfoInternal
 
 	public object ClientData
 	{
+		[CalledBy(Type = typeof(PromoteMemberCallbackInfo), Member = "Set")]
+		[CalledBy(Type = typeof(PromoteMemberCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CalledBy(Type = typeof(PromoteMemberCallbackInfo), Member = "Set")]
-		[CalledBy(Type = typeof(PromoteMemberCallbackInfo), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -42,16 +42,16 @@ internal struct PromoteMemberCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public string LobbyId
 	{
 		[CalledBy(Type = typeof(PromoteMemberCallbackInfo), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CalledBy(Type = typeof(PromoteMemberCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{

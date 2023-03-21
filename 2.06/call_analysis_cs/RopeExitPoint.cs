@@ -13,7 +13,7 @@ public class RopeExitPoint : BaseInteraction
 	[CallsUnknownMethods(Count = 1)]
 	public override bool PerformInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

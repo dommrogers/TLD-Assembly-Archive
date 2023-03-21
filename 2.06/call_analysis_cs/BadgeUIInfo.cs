@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
 using SpecialEvents;
@@ -22,44 +23,45 @@ public class BadgeUIInfo : ScriptableObject
 	[NonSerialized]
 	public bool m_Unlocked;
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "SetupChallengeScrollList")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public BadgeInfo CreateBadgeInfo()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEvent")]
-	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEvent")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Enum), Member = "GetNames")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(Utils), Member = "SendCustomAnalyticsEvent")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void SendBadgeInfoAnalyticsEvent()
 	{
 	}
 
-	[Calls(Type = typeof(FeatNotify), Member = "ShowFeatUnlockedKicker")]
 	[CalledBy(Type = typeof(WintersEmbrace), Member = "UpdateDaysSurvived")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(Action_UnlockBadge), Member = "OnExecute")]
 	[CalledBy(Type = typeof(WintersEmbrace), Member = "CheckSaveSlotForMissedBadges")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[CalledBy(Type = typeof(Action_UnlockBadge), Member = "OnExecute")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedBadge")]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(FeatNotify), Member = "ShowFeatUnlockedKicker")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void UnlockBadge(BadgeInfoType badge, bool skipProfileSave = false)
 	{
 	}

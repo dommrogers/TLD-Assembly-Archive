@@ -18,14 +18,14 @@ public class LockedInteraction : TimedHoldInteraction
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 8)]
+		[CallerCount(Count = 12)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 4)]
+		[CallerCount(Count = 21)]
 		private set
 		{
 		}
@@ -34,86 +34,88 @@ public class LockedInteraction : TimedHoldInteraction
 	[CalledBy(Type = typeof(ContainerInteraction), Member = "Awake")]
 	[CalledBy(Type = typeof(OpenClose), Member = "Awake")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	protected virtual void Awake()
 	{
 	}
 
-	[CalledBy(Type = typeof(LoadScene), Member = "InitializeInteraction")]
-	[CalledBy(Type = typeof(OpenClose), Member = "PerformHold")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(LoadScene), Member = "PerformHold")]
-	[CalledBy(Type = typeof(OpenClose), Member = "InitializeInteraction")]
-	[CalledBy(Type = typeof(ContainerInteraction), Member = "GetHoverText")]
 	[CalledBy(Type = typeof(ContainerInteraction), Member = "PerformHold")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 7)]
+	[CalledBy(Type = typeof(ContainerInteraction), Member = "GetHoverText")]
 	[CalledBy(Type = typeof(ContainerInteraction), Member = "GetInteractiveActionText")]
+	[CalledBy(Type = typeof(OpenClose), Member = "InitializeInteraction")]
+	[CalledBy(Type = typeof(OpenClose), Member = "PerformHold")]
+	[CalledBy(Type = typeof(LoadScene), Member = "InitializeInteraction")]
+	[CalledBy(Type = typeof(LoadScene), Member = "PerformHold")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[CallsUnknownMethods(Count = 1)]
 	protected bool IsLocked()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CalledBy(Type = typeof(LoadScene), Member = "PerformHold")]
-	[CalledBy(Type = typeof(OpenClose), Member = "PerformHold")]
 	[CalledBy(Type = typeof(ContainerInteraction), Member = "PerformHold")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Lock), Member = "PrepareForceLock")]
-	[Calls(Type = typeof(Lock), Member = "CanForceLock")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(OpenClose), Member = "PerformHold")]
+	[CalledBy(Type = typeof(LoadScene), Member = "PerformHold")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Lock), Member = "CanForceLock")]
+	[Calls(Type = typeof(Lock), Member = "PrepareForceLock")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_HUD), Member = "StartItemProgressBar")]
+	[Calls(Type = typeof(AnimatedInteraction), Member = "StartAnimatedInteraction")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	protected void PerformLockInteraction()
 	{
 	}
 
-	[Calls(Type = typeof(LockedInteraction), Member = "FinishForceLock")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LockedInteraction), Member = "FinishForceLock")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void UpdateHoldInteraction(float deltaTime)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Lock), Member = "FinishForceLock")]
-	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
+	[Calls(Type = typeof(Lock), Member = "FinishForceLock")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void CancelHold()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(LockedInteraction), Member = "FinishForceLock")]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnAnimatedInteractionComplete()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(LockedInteraction), Member = "OnAnimatedInteractionComplete")]
 	[CalledBy(Type = typeof(LockedInteraction), Member = "UpdateHoldInteraction")]
-	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(LockedInteraction), Member = "OnAnimatedInteractionComplete")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_HUD), Member = "CancelItemProgressBar")]
 	[Calls(Type = typeof(Lock), Member = "FinishForceLock")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void FinishForceLock(bool complete)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BaseInteraction), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 6)]
 	public LockedInteraction()
 	{
 	}

@@ -22,7 +22,7 @@ public class FireStarterItem : MonoBehaviour
 	public string m_OnUseSoundEvent;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Start()
 	{
 	}

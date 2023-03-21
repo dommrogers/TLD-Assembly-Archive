@@ -18,15 +18,15 @@ public class Action_PlayOverlayAlphaVideo : ActionTask
 		}
 	}
 
-	[Calls(Type = typeof(MoviePlayer), Member = "Play")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MoviePlayer), Member = "Play")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Action_PlayOverlayAlphaVideo()
 	{
 	}

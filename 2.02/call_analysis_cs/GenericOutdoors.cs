@@ -6,8 +6,8 @@ public class GenericOutdoors : MonoBehaviour
 	public GameObject m_Aurora;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Weather), Member = "ForceOutdoorEnvironment")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{

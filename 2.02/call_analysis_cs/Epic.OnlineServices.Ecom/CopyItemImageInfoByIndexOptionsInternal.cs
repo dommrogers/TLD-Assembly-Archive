@@ -18,9 +18,9 @@ internal struct CopyItemImageInfoByIndexOptionsInternal : ISettable, IDisposable
 	public EpicAccountId LocalUserId
 	{
 		[CalledBy(Type = typeof(CopyItemImageInfoByIndexOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(CopyItemImageInfoByIndexOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -29,11 +29,11 @@ internal struct CopyItemImageInfoByIndexOptionsInternal : ISettable, IDisposable
 
 	public string ItemId
 	{
+		[CalledBy(Type = typeof(CopyItemImageInfoByIndexOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyItemImageInfoByIndexOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyItemImageInfoByIndexOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyItemImageInfoByIndexOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -55,17 +55,17 @@ internal struct CopyItemImageInfoByIndexOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(CopyItemImageInfoByIndexOptionsInternal), Member = "set_ItemId")]
-	[Calls(Type = typeof(CopyItemImageInfoByIndexOptionsInternal), Member = "set_LocalUserId")]
 	[CalledBy(Type = typeof(EcomInterface), Member = "CopyItemImageInfoByIndex")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CopyItemImageInfoByIndexOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(CopyItemImageInfoByIndexOptionsInternal), Member = "set_ItemId")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

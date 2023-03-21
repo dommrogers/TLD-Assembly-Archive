@@ -9,21 +9,21 @@ internal struct AddNotifySessionInviteReceivedOptionsInternal : ISettable, IDisp
 {
 	private int m_ApiVersion;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void Set(AddNotifySessionInviteReceivedOptions other)
 	{
 	}
 
+	[CalledBy(Type = typeof(SessionsInterface), Member = "AddNotifySessionInviteReceived")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(SessionsInterface), Member = "AddNotifySessionInviteReceived")]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

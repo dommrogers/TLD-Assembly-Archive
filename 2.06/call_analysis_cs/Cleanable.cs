@@ -21,8 +21,8 @@ public class Cleanable : MonoBehaviour
 
 	public bool m_RequiresToolToClean;
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public Cleanable()
 	{
 	}

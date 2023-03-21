@@ -22,93 +22,82 @@ public class GenericButtonMouseSpawner : MonoBehaviour
 
 	private UIButton[] m_UIButtonArray;
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "AssignValuesToSpawnedObject")]
 	[CalledBy(Type = typeof(GenericButtonMouseSpawner), Member = "InstantiateObjectIfNoneExists")]
 	[CalledBy(Type = typeof(UIControllerScheme), Member = "Awake")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "AssignValuesToSpawnedObject")]
 	public void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
-	[Calls(Type = typeof(Transform), Member = "Find")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
-	[Calls(Type = typeof(Transform), Member = "Find")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIWidget), Member = "set_width")]
-	[Calls(Type = typeof(Transform), Member = "Find")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(Transform), Member = "Find")]
 	[CalledBy(Type = typeof(GenericButtonMouseSpawner), Member = "Awake")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIWidget), Member = "set_width")]
-	[Calls(Type = typeof(UIWidget), Member = "set_width")]
-	[Calls(Type = typeof(Transform), Member = "Find")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 30)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "InstantiateObjectIfNoneExists")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Object), Member = "get_name")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "set_name")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(Transform), Member = "Find")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UIWidget), Member = "set_width")]
-	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UIWidget), Member = "set_height")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 19)]
+	[CallsUnknownMethods(Count = 17)]
 	public void AssignValuesToSpawnedObject()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshDismantlePanel")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshRepairPanel")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdatePanelDisplays")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "ToggleWorldMap")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshDismantlePanel")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdatePanelDisplays")]
-	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "InstantiateObjectIfNoneExists")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdatePanelDisplays")]
-	[CalledBy(Type = typeof(Panel_GearSelect), Member = "RefreshVisuals")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "RefreshVisuals")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[CalledBy(Type = typeof(Panel_GearSelect), Member = "RefreshVisuals")]
 	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "UpdatePanelDisplays")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshRepairPanel")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "RefreshDismantlePanel")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "ToggleWorldMap")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "UpdatePanelDisplays")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshRepairPanel")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "RefreshDismantlePanel")]
 	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "InstantiateObjectIfNoneExists")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetLocID(string locID)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "ActivateBackButton")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "CheckForNotesChange")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateNotesPage")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "NoteTakingStart")]
+	[CalledBy(Type = typeof(BasicMenu), Member = "EnableConfirm")]
 	[CalledBy(Type = typeof(BasicMenu), Member = "UpdateMouseConfirmText")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "NoteTakingStart")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateNotesPage")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "CheckForNotesChange")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "ActivateBackButton")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "InstantiateObjectIfNoneExists")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "InstantiateObjectIfNoneExists")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(BasicMenu), Member = "EnableConfirm")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetText(string text)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "EnableAlternateSelectionButtons")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "EnableStandardSelectionButtons")]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateAlternateTreatmentUI")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateStandardTreatmentUI")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateAlternateTreatmentUI")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "EnableAlternateSelectionButtons")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "EnableStandardSelectionButtons")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public void EnableMouseButton(bool isEnabled)
 	{
 	}
@@ -120,11 +109,11 @@ public class GenericButtonMouseSpawner : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
 	[CalledBy(Type = typeof(GenericButtonMouseSpawner), Member = "AssignValuesToSpawnedObject")]
+	[CalledBy(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
 	[CalledBy(Type = typeof(GenericButtonMouseSpawner), Member = "SetText")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "Awake")]
 	private void InstantiateObjectIfNoneExists()
 	{

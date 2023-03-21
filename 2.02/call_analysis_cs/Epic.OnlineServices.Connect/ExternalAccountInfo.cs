@@ -20,14 +20,14 @@ public class ExternalAccountInfo : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -37,14 +37,14 @@ public class ExternalAccountInfo : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -54,14 +54,14 @@ public class ExternalAccountInfo : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
@@ -69,9 +69,9 @@ public class ExternalAccountInfo : ISettable
 
 	public ExternalAccountType AccountIdType
 	{
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return default(ExternalAccountType);
@@ -101,28 +101,28 @@ public class ExternalAccountInfo : ISettable
 		}
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(ExternalAccountInfo), Member = "Set")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-	[Calls(Type = typeof(ExternalAccountInfoInternal), Member = "get_AccountId")]
-	[Calls(Type = typeof(ExternalAccountInfoInternal), Member = "get_DisplayName")]
-	[Calls(Type = typeof(ExternalAccountInfoInternal), Member = "get_ProductUserId")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ExternalAccountInfoInternal), Member = "get_ProductUserId")]
+	[Calls(Type = typeof(ExternalAccountInfoInternal), Member = "get_DisplayName")]
+	[Calls(Type = typeof(ExternalAccountInfoInternal), Member = "get_AccountId")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	internal void Set(ExternalAccountInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ExternalAccountInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ExternalAccountInfo()
 	{
 	}

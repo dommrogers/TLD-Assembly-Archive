@@ -19,7 +19,7 @@ public class DialogueActor : MonoBehaviour, IDialogueActor
 	public new string name
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 28)]
+		[CallerCount(Count = 32)]
 		get
 		{
 			return null;
@@ -38,10 +38,10 @@ public class DialogueActor : MonoBehaviour, IDialogueActor
 
 	public Sprite portraitSprite
 	{
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Sprite), Member = "Create")]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -75,9 +75,9 @@ public class DialogueActor : MonoBehaviour, IDialogueActor
 	}
 
 	[SpecialName]
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
-	[CallerCount(Count = 1151)]
+	[CallerCount(Count = 1205)]
+	[CallsUnknownMethods(Count = 1)]
 	private Transform NodeCanvas_002EDialogueTrees_002EIDialogueActor_002Eget_transform()
 	{
 		return null;

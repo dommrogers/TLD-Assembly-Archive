@@ -17,36 +17,36 @@ public class Condition_ActionInputAxisAtRest : ConditionTask
 	[Calls(Type = typeof(Condition_ActionInputAxisAtRest), Member = "Test")]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Vector2), Member = "get_zero")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetCameraMovementGamepad")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetCameraMovementMouse")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetPlayerMovement")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private Vector2 GetAxisValue()
 	{
 		return default(Vector2);
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Condition_ActionInputAxisAtRest), Member = "OnCheck")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetPlayerMovement")]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetCameraMovementMouse")]
-	[Calls(Type = typeof(Vector2), Member = "get_zero")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Vector2), Member = "get_zero")]
 	[Calls(Type = typeof(InputSystemRewired), Member = "GetCameraMovementGamepad")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetCameraMovementMouse")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetPlayerMovement")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool Test()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void OnCustomEvent(EventData receivedEvent)
 	{
 	}

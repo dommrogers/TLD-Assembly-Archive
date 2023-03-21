@@ -8,8 +8,8 @@ public class HuntedPart2WaypointControllerSaveData
 
 	public HuntedPart2WaypointControllerState m_State;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public HuntedPart2WaypointControllerSaveData()
 	{
 	}

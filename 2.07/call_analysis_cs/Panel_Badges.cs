@@ -4,7 +4,9 @@ using Cpp2ILInjected.CallAnalysis;
 using TLD.SaveState;
 using TLD.UI;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class Panel_Badges : Panel_AutoReferenced
 {
@@ -77,22 +79,23 @@ public class Panel_Badges : Panel_AutoReferenced
 	private UILabel m_FeatBenefitHeaderLabel;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	public override void Initialize()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(Panel_Badges), Member = "DoGamepadControls")]
 	[Calls(Type = typeof(Panel_Badges), Member = "RefreshVisuals")]
 	[Calls(Type = typeof(Panel_Badges), Member = "OnCancel")]
-	[Calls(Type = typeof(Panel_Badges), Member = "DoGamepadControls")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private void Update()
 	{
 	}
@@ -103,31 +106,31 @@ public class Panel_Badges : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Sandbox), Member = "OnClickFeats")]
-	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "OnBadges")]
-	[CalledBy(Type = typeof(Panel_Challenges), Member = "OnClickAllChallenges")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "OnCancel")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[Calls(Type = typeof(Panel_Badges), Member = "RefreshVisuals")]
+	[CalledBy(Type = typeof(Panel_Challenges), Member = "OnClickAllChallenges")]
+	[CalledBy(Type = typeof(Panel_PauseMenu), Member = "OnBadges")]
+	[CalledBy(Type = typeof(Panel_Sandbox), Member = "OnClickFeats")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[Calls(Type = typeof(Panel_Badges), Member = "CleanupFeatScrollList")]
+	[Calls(Type = typeof(Panel_Badges), Member = "CleanupChallengeScrollList")]
 	[Calls(Type = typeof(Panel_Badges), Member = "SetupFeatScrollList")]
 	[Calls(Type = typeof(Panel_Badges), Member = "SetupChallengeScrollList")]
-	[Calls(Type = typeof(Panel_Badges), Member = "CleanupChallengeScrollList")]
-	[Calls(Type = typeof(Panel_Badges), Member = "CleanupFeatScrollList")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Panel_Badges), Member = "OnFeats")]
+	[Calls(Type = typeof(Panel_Badges), Member = "RefreshVisuals")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[CallsUnknownMethods(Count = 3)]
 	public void Enable(bool enable, ComingFromScreenCategory cameFrom)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Badges), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "OnBadgeLabelClicked")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
 	[Calls(Type = typeof(Panel_Badges), Member = "Enable")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TrySetPanelEnabled")]
 	public void OnCancel()
 	{
 	}
@@ -138,55 +141,55 @@ public class Panel_Badges : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[CalledBy(Type = typeof(Panel_Badges), Member = "DoGamepadControls")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[Calls(Type = typeof(ScrollList), Member = "Next")]
 	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[CalledBy(Type = typeof(Panel_Badges), Member = "DoGamepadControls")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void NextTool()
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(ScrollList), Member = "Prev")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "DoGamepadControls")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
+	[Calls(Type = typeof(ScrollList), Member = "Prev")]
+	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void PrevTool()
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[CallsUnknownMethods(Count = 1)]
 	public void BadgeIndexSelected(int index)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Panel_Badges), Member = "SetTabActive")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "DoGamepadControls")]
 	[CalledBy(Type = typeof(Panel_Sandbox), Member = "OnClickFeats")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Badges), Member = "SetTabActive")]
 	public void OnFeats()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Challenges), Member = "OnClickAllChallenges")]
-	[Calls(Type = typeof(Panel_Badges), Member = "SetTabActive")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "DoGamepadControls")]
+	[CalledBy(Type = typeof(Panel_Challenges), Member = "OnClickAllChallenges")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_Badges), Member = "SetTabActive")]
 	public void OnChallenges()
 	{
 	}
@@ -195,170 +198,164 @@ public class Panel_Badges : Panel_AutoReferenced
 	[Calls(Type = typeof(Panel_Badges), Member = "SetupFeatScrollList")]
 	[Calls(Type = typeof(Panel_Badges), Member = "SetupChallengeScrollList")]
 	[Calls(Type = typeof(Panel_Badges), Member = "ListHasUnviewedUnlockedBadge")]
-	[Calls(Type = typeof(Panel_Badges), Member = "ListHasUnviewedUnlockedBadge")]
 	public bool HasAnyUnviewedUnlockedBadges()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Panel_Badges), Member = "SetupChallengeScrollList")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Badges), Member = "SetupFeatScrollList")]
+	[Calls(Type = typeof(Panel_Badges), Member = "SetupChallengeScrollList")]
 	private void SetupScrollLists()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Feat), Member = "CreateBadgeInfo")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Feat), Member = "CreateBadgeInfo")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[CallsUnknownMethods(Count = 2)]
 	private void AddFeatToList(Feat f)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Badges), Member = "SetupScrollLists")]
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(Panel_Badges), Member = "HasAnyUnviewedUnlockedBadges")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Feat), Member = "CreateBadgeInfo")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "Enable")]
-	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
-	[Calls(Type = typeof(FeatsManager), Member = "GetNumFeats")]
-	[Calls(Type = typeof(Panel_Badges), Member = "CleanupFeatScrollList")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(Panel_Badges), Member = "HasAnyUnviewedUnlockedBadges")]
+	[CalledBy(Type = typeof(Panel_Badges), Member = "SetupScrollLists")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Badges), Member = "CleanupFeatScrollList")]
+	[Calls(Type = typeof(FeatsManager), Member = "GetNumFeats")]
+	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
 	[Calls(Type = typeof(FeatsManager), Member = "GetFeatFromIndex")]
+	[Calls(Type = typeof(Feat), Member = "CreateBadgeInfo")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void SetupFeatScrollList()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "SetupFeatScrollList")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Addressables), Member = "Release")]
+	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void CleanupFeatScrollList()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	private void AddChallengeToList(BadgeInfo bi)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 3)]
 	private BadgeUIInfo GetBadgeUIInfo(BadgeInfoType type)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_Badges), Member = "SetupScrollLists")]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Panel_Badges), Member = "CleanupChallengeScrollList")]
-	[Calls(Type = typeof(BadgeUIInfo), Member = "CreateBadgeInfo")]
-	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "HasAnyUnviewedUnlockedBadges")]
-	[CallsUnknownMethods(Count = 18)]
+	[CalledBy(Type = typeof(Panel_Badges), Member = "SetupScrollLists")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Panel_Badges), Member = "CleanupChallengeScrollList")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(BadgeUIInfo), Member = "CreateBadgeInfo")]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 15)]
 	private void SetupChallengeScrollList()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_Badges), Member = "SetupChallengeScrollList")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "Enable")]
-	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(Panel_Badges), Member = "SetupChallengeScrollList")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Addressables), Member = "Release")]
+	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void CleanupChallengeScrollList()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Badges), Member = "RefreshVisualsMainScreen")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	private void EnableFeatBenefit(bool isEnabled)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Badges), Member = "RefreshVisuals")]
-	[Calls(Type = typeof(Panel_Badges), Member = "EnableFeatBenefit")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_Badges), Member = "ListHasUnviewedUnlockedBadge")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Badges), Member = "ListHasUnviewedUnlockedBadge")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Badges), Member = "ListHasUnviewedUnlockedBadge")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Panel_Badges), Member = "EnableFeatBenefit")]
+	[CallsUnknownMethods(Count = 1)]
 	private void RefreshVisualsMainScreen()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedBadgeViewed")]
+	[CalledBy(Type = typeof(Panel_Badges), Member = "RefreshVisuals")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CalledBy(Type = typeof(Panel_Badges), Member = "RefreshVisuals")]
-	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
 	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
 	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedBadgeViewed")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsUnknownMethods(Count = 18)]
 	private void RefreshVisualsScrollList()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "OnFeats")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "OnChallenges")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void SetTabActive(GameObject tabObj)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(Panel_Badges), Member = "RefreshVisualsMainScreen")]
+	[CalledBy(Type = typeof(Panel_Badges), Member = "HasAnyUnviewedUnlockedBadges")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "RefreshVisualsMainScreen")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(Panel_Badges), Member = "HasAnyUnviewedUnlockedBadges")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Badges), Member = "HasAnyUnviewedUnlockedBadges")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[CallsUnknownMethods(Count = 6)]
 	private bool ListHasUnviewedUnlockedBadge(List<BadgeInfo> badgeInfoList)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
@@ -367,40 +364,38 @@ public class Panel_Badges : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "RefreshVisuals")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(ButtonLegendConfigure), Member = "ConfigureButton")]
-	[CalledBy(Type = typeof(Panel_Badges), Member = "RefreshVisuals")]
+	[CallsUnknownMethods(Count = 2)]
 	private void RefreshButtonConfigure(ButtonLegendConfigure[] buttonLegendConfigureArray)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "Update")]
-	[Calls(Type = typeof(Panel_Badges), Member = "OnChallenges")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
+	[Calls(Type = typeof(Panel_Badges), Member = "PrevTool")]
+	[Calls(Type = typeof(Panel_Badges), Member = "NextTool")]
+	[Calls(Type = typeof(InputManager), Member = "GetAltFirePressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetFirePressed")]
 	[Calls(Type = typeof(Panel_Badges), Member = "OnFeats")]
-	[Calls(Type = typeof(Panel_Badges), Member = "NextTool")]
-	[Calls(Type = typeof(Panel_Badges), Member = "PrevTool")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(InputManager), Member = "GetAltFirePressed")]
+	[Calls(Type = typeof(Panel_Badges), Member = "OnChallenges")]
+	[CallsUnknownMethods(Count = 1)]
 	private void DoGamepadControls()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_Badges), Member = "RefreshButtonConfigure")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Badges), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Badges), Member = "Update")]
-	[Calls(Type = typeof(Panel_Badges), Member = "RefreshButtonConfigure")]
+	[CalledBy(Type = typeof(Panel_Badges), Member = "Enable")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Badges), Member = "RefreshVisualsMainScreen")]
+	[Calls(Type = typeof(Panel_Badges), Member = "RefreshVisualsScrollList")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(Panel_Badges), Member = "RefreshVisualsScrollList")]
-	[Calls(Type = typeof(Panel_Badges), Member = "RefreshVisualsMainScreen")]
-	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Badges), Member = "RefreshButtonConfigure")]
+	[CallsUnknownMethods(Count = 1)]
 	private void RefreshVisuals()
 	{
 	}

@@ -9,20 +9,19 @@ public class InvAttachmentPoint : MonoBehaviour
 
 	private GameObject mChild;
 
+	[CalledBy(Type = typeof(InvEquipment), Member = "Replace")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "Destroy")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(InvEquipment), Member = "Replace")]
-	[CalledBy(Type = typeof(InvEquipment), Member = "Replace")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	public GameObject Attach(GameObject prefab)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public InvAttachmentPoint()
 	{
 	}

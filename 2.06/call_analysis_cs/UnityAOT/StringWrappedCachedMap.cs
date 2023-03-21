@@ -14,10 +14,10 @@ public abstract class StringWrappedCachedMap : IDisposable
 
 	public Dictionary<string, string>.KeyCollection Keys
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(StringFullWrappedCacheMapEnumerable), Member = "MoveNext")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(StringFullWrappedCacheMapEnumerable), Member = "MoveNext")]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -27,8 +27,8 @@ public abstract class StringWrappedCachedMap : IDisposable
 	public Dictionary<string, string>.ValueCollection Values
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(StringFullWrappedCacheMapEnumerable), Member = "MoveNext")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -39,7 +39,8 @@ public abstract class StringWrappedCachedMap : IDisposable
 	public string Item
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 3)]
+		[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -47,36 +48,26 @@ public abstract class StringWrappedCachedMap : IDisposable
 		}
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract string LookupElementImpl(IntPtr self, string key);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract void SetupLengthImpl(IntPtr self);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract void DisposeChildImpl();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract bool HasKeyImpl(IntPtr self, string key);
 
-	[CallerCount(Count = 101224)]
-	[DeduplicatedMethod]
 	protected abstract StringFullWrappedCacheMapEnumerable CreateIteratorImpl(IntPtr self);
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool HasKey(string key)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 23)]
+	[CallerCount(Count = 27)]
 	public Dictionary<string, string> GetDictionary()
 	{
 		return null;
@@ -93,32 +84,32 @@ public abstract class StringWrappedCachedMap : IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(StringWrappedCachedMap), Member = ".ctor")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(StringWrappedCachedMap), Member = ".ctor")]
 	[CallsUnknownMethods(Count = 6)]
 	public void SetNativePtr(IntPtr self)
 	{
 	}
 
-	[CallerCount(Count = 44)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 53)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(StringFullWrappedCacheMapEnumerable), Member = ".ctor")]
 	[CalledBy(Type = typeof(StringFullWrappedCacheMapEnumerable), Member = "MoveNext")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetValue(string key, string val)
 	{

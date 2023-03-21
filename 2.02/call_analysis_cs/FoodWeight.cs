@@ -9,8 +9,8 @@ public class FoodWeight : MonoBehaviour
 
 	public float m_CaloriesPerKG;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}

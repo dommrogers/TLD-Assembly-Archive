@@ -31,8 +31,8 @@ public class StatisticsManagerPlugin
 	public static extern void StatisticsManager_MuliUserStatisticsResult_Dispose(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint StatisticsManager_MuliUserStatisticsResult_Size(IntPtr self);
 
 	[PreserveSig]
@@ -56,14 +56,14 @@ public class StatisticsManagerPlugin
 	public static extern uint StatisticsManager_UserStatisticsResult_ServiceConfigurationStatistics_Length(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(UserStatisticsResult), Member = "get_Item")]
-	[CalledBy(Type = typeof(UserStatisticsResult._003CGetEnumerator_003Ed__3), Member = "MoveNext")]
+	[CalledBy(TypeFullName = "DataPlatform.UserStatisticsResult.<GetEnumerator>d__3", Member = "MoveNext")]
+	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr StatisticsManager_UserStatisticsResult_ServiceConfigurationStatistics_GetAt(IntPtr self, uint idx);
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public StatisticsManagerPlugin()
 	{
 	}

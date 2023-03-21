@@ -16,8 +16,8 @@ internal struct LobbyModificationRemoveMemberAttributeOptionsInternal : ISettabl
 		[CalledBy(Type = typeof(LobbyModificationRemoveMemberAttributeOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(LobbyModificationRemoveMemberAttributeOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,17 +29,17 @@ internal struct LobbyModificationRemoveMemberAttributeOptionsInternal : ISettabl
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(LobbyModificationRemoveMemberAttributeOptionsInternal), Member = "set_Key")]
 	[CalledBy(Type = typeof(LobbyModification), Member = "RemoveMemberAttribute")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(LobbyModificationRemoveMemberAttributeOptionsInternal), Member = "set_Key")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

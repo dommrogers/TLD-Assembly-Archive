@@ -37,8 +37,8 @@ public class GetAllChildGameObjects : ActionTask<Transform>
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Format")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(string), Member = "Format")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -47,22 +47,24 @@ public class GetAllChildGameObjects : ActionTask<Transform>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
 	[Calls(Type = typeof(GetAllChildGameObjects), Member = "Get")]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[CallsUnknownMethods(Count = 20)]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 18)]
 	protected override void OnExecute()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(GetAllChildGameObjects), Member = "OnExecute")]
+	[CalledBy(Type = typeof(GetAllChildGameObjects), Member = "Get")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Transform), Member = "GetEnumerator")]
 	[Calls(Type = typeof(GetAllChildGameObjects), Member = "Get")]
-	[CalledBy(Type = typeof(GetAllChildGameObjects), Member = "OnExecute")]
-	[CalledBy(Type = typeof(GetAllChildGameObjects), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 13)]
 	private List<Transform> Get(Transform parent)
 	{

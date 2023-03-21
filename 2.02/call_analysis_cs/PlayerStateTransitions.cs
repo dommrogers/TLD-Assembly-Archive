@@ -11,18 +11,18 @@ public class PlayerStateTransitions : ScriptableObject
 	[CallsUnknownMethods(Count = 3)]
 	public bool IsValidTransition(PlayerAnimation.State from, PlayerAnimation.State to)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 3)]
 	public bool IsInvalidTransition(PlayerAnimation.State from, PlayerAnimation.State to)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public PlayerStateTransitions()
 	{

@@ -10,28 +10,28 @@ public class Say : ActionTask<IDialogueActor>
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(string), Member = "Format")]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Substring")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(DialogueTree), Member = "RequestSubtitles")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Statement), Member = "BlackboardReplace")]
+	[Calls(Type = typeof(DialogueTree), Member = "RequestSubtitles")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}
 
-	[Calls(Type = typeof(Statement), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Statement), Member = ".ctor")]
 	[CallsUnknownMethods(Count = 1)]
 	public Say()
 	{

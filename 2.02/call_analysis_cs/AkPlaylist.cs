@@ -6,43 +6,43 @@ public class AkPlaylist : AkPlaylistArray
 {
 	private IntPtr swigCPtr;
 
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkPlaylist_SWIGUpcast")]
 	[CalledBy(Type = typeof(AkPlaylist), Member = ".ctor")]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "DynamicSequenceLockPlaylist")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkPlaylist_SWIGUpcast")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal AkPlaylist(IntPtr cPtr, bool cMemoryOwn)
-		: base(default(IntPtr), cMemoryOwn: default(bool))
+		: base((IntPtr)0, cMemoryOwn: false)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkPlaylist obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkPlaylist_SWIGUpcast")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkPlaylist_SWIGUpcast")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	internal override void setCPtr(IntPtr cPtr)
 	{
 	}
 
-	[Calls(Type = typeof(AkPlaylistArray), Member = "Finalize")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkPlaylistArray), Member = "Finalize")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	~AkPlaylist()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[Calls(Type = typeof(AkPlaylistArray), Member = "Dispose")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public override void Dispose()
 	{
@@ -64,9 +64,9 @@ public class AkPlaylist : AkPlaylistArray
 		return default(AKRESULT);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public AKRESULT Enqueue(uint in_audioNodeID, int in_msDelay, IntPtr in_pCustomInfo)
 	{
 		return default(AKRESULT);
@@ -89,11 +89,11 @@ public class AkPlaylist : AkPlaylistArray
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkPlaylist), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public AkPlaylist()
-		: base(default(IntPtr), cMemoryOwn: default(bool))
+		: base((IntPtr)0, cMemoryOwn: false)
 	{
 	}
 }

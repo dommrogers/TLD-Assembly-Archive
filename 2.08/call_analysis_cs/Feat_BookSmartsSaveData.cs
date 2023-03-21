@@ -4,8 +4,8 @@ public class Feat_BookSmartsSaveData
 {
 	public int m_HoursResearch;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public Feat_BookSmartsSaveData()
 	{
 	}

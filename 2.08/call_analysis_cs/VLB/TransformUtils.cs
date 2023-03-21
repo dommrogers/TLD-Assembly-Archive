@@ -20,20 +20,20 @@ public static class TransformUtils
 		}
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static Packed GetWorldPacked(this Transform self)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(DynamicOcclusionAbstractBase), Member = "OnWillCameraRender")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(DynamicOcclusionAbstractBase), Member = "OnWillCameraRender")]
 	[CallsUnknownMethods(Count = 4)]
 	public static bool IsSame(this Transform self, Packed packed)
 	{
-		return default(bool);
+		return false;
 	}
 }

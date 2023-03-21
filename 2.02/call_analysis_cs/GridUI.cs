@@ -83,73 +83,71 @@ public class GridUI
 
 	private int m_FirstItemDisplayedIndex;
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(GridUI), Member = "RefreshTable")]
 	[CalledBy(Type = typeof(GridItem), Member = "ToggleSelection")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(GridUI), Member = "RefreshTable")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	public void MoveSelectedSpriteAndTween(Vector3 pos)
 	{
 	}
 
-	[Calls(Type = typeof(NGUITools), Member = "AddChild")]
-	[CallsUnknownMethods(Count = 18)]
 	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Enable")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GridUI), Member = "InitializeNewItem")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NowhereToHide), Member = "IsCurrentExperienceMode")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(NGUITools), Member = "AddChild")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(GridUI), Member = "InitializeNewItem")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 18)]
 	public void Initialize(Panel_Base parentPanel, Action backAction, Action optionalConfirmAction = null)
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(GridItem), Member = "Initialize")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CalledBy(Type = typeof(GridUI), Member = "Initialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GridItem), Member = "Initialize")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 6)]
 	private void InitializeNewItem(GridItem item)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Enable")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GridUI), Member = "RefreshGridItem")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GridUI), Member = "RefreshGridItem")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 9)]
 	public void AddItem(LocalizedString label, Texture icon, bool disabled)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "SetShowBanishmentGlyph")]
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "PlaceGlyph")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
-	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
-	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Reset")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_nowhere_to_hide_banishment_ready")]
-	[Calls(Type = typeof(NGUITools), Member = "Destroy")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 7)]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "OnLoadGame")]
+	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Reset")]
+	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "SetShowBanishmentGlyph")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_nowhere_to_hide_banishment_ready")]
+	[CalledBy(Type = typeof(GameManager), Member = "LaunchSandbox")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "PlaceGlyph")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(NGUITools), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 13)]
 	public void ClearItems()
 	{
 	}
@@ -159,22 +157,22 @@ public class GridUI
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsEmpty()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 20)]
-	[CalledBy(Type = typeof(GridUI), Member = "RefreshTable")]
 	[CalledBy(Type = typeof(GridUI), Member = "AddItem")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UIWidget), Member = "set_color")]
-	[Calls(Type = typeof(Collider), Member = "set_enabled")]
-	[Calls(Type = typeof(UIButtonColor), Member = "ResetDefaultColor")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(GridUI), Member = "RefreshTable")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(UIWidget), Member = "set_color")]
+	[Calls(Type = typeof(UIButtonColor), Member = "ResetDefaultColor")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Collider), Member = "set_enabled")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 20)]
 	private void RefreshGridItem(int gridItemIndex, int itemIndex)
 	{
 	}
@@ -197,13 +195,13 @@ public class GridUI
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "OnButtonScrollRight")]
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(GridUI), Member = "ScrollLeft")]
 	[CalledBy(Type = typeof(GridUI), Member = "MoveGridSelection")]
 	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "OnButtonScrollLeft")]
-	[CalledBy(Type = typeof(GridUI), Member = "ScrollLeft")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "OnButtonScrollRight")]
 	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Scroll(int direction)
 	{
 	}
@@ -212,7 +210,7 @@ public class GridUI
 	[CallerCount(Count = 2)]
 	public int GetSelectedIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -234,49 +232,48 @@ public class GridUI
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	private void OnBack()
 	{
 	}
 
+	[CalledBy(Type = typeof(GridUI), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Update")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
 	[Calls(Type = typeof(Utils), Member = "GetMenuMovementVertical")]
 	[Calls(Type = typeof(GridUI), Member = "MoveGridSelection")]
-	[CalledBy(Type = typeof(GridUI), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateControls()
 	{
 	}
 
 	[CalledBy(Type = typeof(GridUI), Member = "UpdateControls")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Mathf), Member = "Abs")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(GridUI), Member = "Scroll")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Mathf), Member = "Abs")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void MoveGridSelection(int horizontal, int vertical)
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Update")]
 	[CalledBy(Type = typeof(GridUI), Member = "Update")]
-	[Calls(Type = typeof(GridUI), Member = "MoveSelectedSpriteAndTween")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(GridItem), Member = "ToggleSelection")]
-	[Calls(Type = typeof(GridUI), Member = "RefreshGridItem")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Update")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GridUI), Member = "RefreshGridItem")]
 	[Calls(Type = typeof(GridItem), Member = "ToggleSelection")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(GridUI), Member = "MoveSelectedSpriteAndTween")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private void RefreshTable()
 	{
 	}

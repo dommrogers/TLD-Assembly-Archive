@@ -19,7 +19,7 @@ public class FoodItemSaveDataProxy
 	public bool m_Packaged;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public FoodItemSaveDataProxy()
 	{
 	}

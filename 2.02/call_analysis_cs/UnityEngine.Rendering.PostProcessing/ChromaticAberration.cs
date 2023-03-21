@@ -17,15 +17,15 @@ public sealed class ChromaticAberration : PostProcessEffectSettings
 	[CallsUnknownMethods(Count = 1)]
 	public override bool IsEnabledAndSupported(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(TextureParameter), Member = ".ctor")]
 	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
 	[Calls(Type = typeof(BoolParameter), Member = ".ctor")]
 	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 24)]
 	public ChromaticAberration()
 	{

@@ -46,9 +46,9 @@ public class UIProgressBar : UIWidgetContainer
 
 	public Transform cachedTransform
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -57,11 +57,11 @@ public class UIProgressBar : UIWidgetContainer
 
 	public Camera cachedCamera
 	{
-		[CallsUnknownMethods(Count = 3)]
 		[CalledBy(Type = typeof(UIProgressBar), Member = "ScreenToValue")]
+		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(NGUITools), Member = "FindCameraForLayer")]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 1)]
+		[CallsUnknownMethods(Count = 3)]
 		get
 		{
 			return null;
@@ -70,14 +70,14 @@ public class UIProgressBar : UIWidgetContainer
 
 	public UIWidget foregroundWidget
 	{
-		[CallerCount(Count = 4)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 4)]
 		get
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -85,8 +85,8 @@ public class UIProgressBar : UIWidgetContainer
 
 	public UIWidget backgroundWidget
 	{
-		[CallerCount(Count = 16)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 18)]
 		get
 		{
 			return null;
@@ -120,14 +120,14 @@ public class UIProgressBar : UIWidgetContainer
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
+		[CallerCount(Count = 143)]
+		[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+		[Calls(Type = typeof(EventDelegate), Member = "IsValid")]
+		[Calls(Type = typeof(EventDelegate), Member = "Execute")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(EventDelegate), Member = "Execute")]
-		[Calls(Type = typeof(EventDelegate), Member = "IsValid")]
-		[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-		[CallerCount(Count = 143)]
 		set
 		{
 		}
@@ -135,26 +135,20 @@ public class UIProgressBar : UIWidgetContainer
 
 	public float alpha
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(UIScrollView), Member = "LateUpdate")]
 		[CalledBy(Type = typeof(UIScrollView), Member = "LateUpdate")]
 		[CallerCount(Count = 4)]
-		[CalledBy(Type = typeof(UIScrollView), Member = "LateUpdate")]
-		[CalledBy(Type = typeof(UIScrollView), Member = "LateUpdate")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
+		[CalledBy(Type = typeof(UIScrollView), Member = "CheckScrollbars")]
+		[CalledBy(Type = typeof(UIScrollView), Member = "LateUpdate")]
 		[CallerCount(Count = 4)]
-		[CallsDeduplicatedMethods(Count = 25)]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
 		[Calls(Type = typeof(Collider), Member = "set_enabled")]
-		[Calls(Type = typeof(Collider), Member = "set_enabled")]
-		[Calls(Type = typeof(Collider), Member = "set_enabled")]
+		[CallsDeduplicatedMethods(Count = 12)]
 		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(UIScrollView), Member = "LateUpdate")]
-		[CalledBy(Type = typeof(UIScrollView), Member = "CheckScrollbars")]
-		[CalledBy(Type = typeof(UIScrollView), Member = "LateUpdate")]
-		[CalledBy(Type = typeof(UIScrollView), Member = "CheckScrollbars")]
 		set
 		{
 		}
@@ -165,31 +159,31 @@ public class UIProgressBar : UIWidgetContainer
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	protected bool isInverted
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CallerCount(Count = 1)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 1)]
 	public float GetRawValue()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 4)]
 	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	protected void Start()
 	{
 	}
@@ -206,75 +200,75 @@ public class UIProgressBar : UIWidgetContainer
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected void Update()
 	{
 	}
 
-	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	protected void OnValidate()
 	{
 	}
 
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(UISlider), Member = "OnDragForeground")]
-	[CalledBy(Type = typeof(UISlider), Member = "OnPressForeground")]
-	[CalledBy(Type = typeof(UISlider), Member = "OnDragBackground")]
 	[CalledBy(Type = typeof(UISlider), Member = "OnPressBackground")]
-	[Calls(Type = typeof(Plane), Member = "Raycast")]
+	[CalledBy(Type = typeof(UISlider), Member = "OnDragBackground")]
+	[CalledBy(Type = typeof(UISlider), Member = "OnPressForeground")]
+	[CalledBy(Type = typeof(UISlider), Member = "OnDragForeground")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 	[Calls(Type = typeof(UIProgressBar), Member = "get_cachedCamera")]
+	[Calls(Type = typeof(Plane), Member = "Raycast")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 8)]
 	protected float ScreenToValue(Vector2 screenPos)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(UIScrollBar), Member = "LocalToValue")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	protected virtual float LocalToValue(Vector2 localPos)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsDeduplicatedMethods(Count = 12)]
+	[CalledBy(Type = typeof(UIScrollBar), Member = "ForceUpdate")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
 	[Calls(Type = typeof(UIWidget), Member = "set_drawRegion")]
 	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[CalledBy(Type = typeof(UIScrollBar), Member = "ForceUpdate")]
-	[CallsUnknownMethods(Count = 8)]
 	[Calls(Type = typeof(UIProgressBar), Member = "SetThumbPosition")]
-	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 8)]
 	public virtual void ForceUpdate()
 	{
 	}
 
+	[CalledBy(Type = typeof(UIProgressBar), Member = "ForceUpdate")]
 	[CalledBy(Type = typeof(UIScrollBar), Member = "ForceUpdate")]
+	[CalledBy(Type = typeof(ScrollbarThumbResizer), Member = "SetThumbPositionFromValue")]
 	[CallerCount(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(UIProgressBar), Member = "ForceUpdate")]
 	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(ScrollbarThumbResizer), Member = "SetThumbPositionFromValue")]
 	public void SetThumbPosition(Vector3 worldPos)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	private Vector3 LerpWithoutClamp(Vector3 A, Vector3 B, float t)
 	{
 		return default(Vector3);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public UIProgressBar()
 	{
 	}

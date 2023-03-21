@@ -9,18 +9,18 @@ public class AkEnvironment : MonoBehaviour
 {
 	public class AkEnvironment_CompareByPriority : IComparer<AkEnvironment>
 	{
-		[CallsUnknownMethods(Count = 2)]
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[CalledBy(Type = typeof(AkEnvironment_CompareBySelectionAlgorithm), Member = "Compare")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		public virtual int Compare(AkEnvironment a, AkEnvironment b)
 		{
-			return default(int);
+			return 0;
 		}
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public AkEnvironment_CompareByPriority()
 		{
 		}
@@ -33,11 +33,11 @@ public class AkEnvironment : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		public override int Compare(AkEnvironment a, AkEnvironment b)
 		{
-			return default(int);
+			return 0;
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public AkEnvironment_CompareBySelectionAlgorithm()
 		{
 		}
@@ -72,9 +72,9 @@ public class AkEnvironment : MonoBehaviour
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 20)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 24)]
 		private set
 		{
 		}
@@ -87,17 +87,17 @@ public class AkEnvironment : MonoBehaviour
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public byte[] valueGuid
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(WwiseObjectReference), Member = "get_Guid")]
 		[Calls(Type = typeof(Guid), Member = "ToByteArray")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -109,22 +109,23 @@ public class AkEnvironment : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetAuxSendValueForPosition(Vector3 in_position)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[Obsolete]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public uint GetAuxBusID()
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[Obsolete]
@@ -136,8 +137,8 @@ public class AkEnvironment : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public AkEnvironment()
 	{

@@ -12,8 +12,8 @@ public sealed class RLPro_NTSC : PostProcessEffectSettings
 	public FloatParameter lineSpeed;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public RLPro_NTSC()
 	{

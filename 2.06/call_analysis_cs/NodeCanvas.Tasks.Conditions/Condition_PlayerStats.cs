@@ -28,15 +28,15 @@ public class Condition_PlayerStats : ConditionTask
 
 	protected override string info
 	{
-		[CallsUnknownMethods(Count = 17)]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-		[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
-		[Calls(Type = typeof(Condition_PlayerStats), Member = "GetStatValue")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Condition_PlayerStats), Member = "GetStatValue")]
 		[Calls(Type = typeof(Enum), Member = "ToString")]
+		[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+		[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+		[Calls(Type = typeof(OperationTools), Member = "GetCompareString")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 17)]
 		get
 		{
 			return null;
@@ -44,27 +44,26 @@ public class Condition_PlayerStats : ConditionTask
 	}
 
 	[CalledBy(Type = typeof(Condition_PlayerStats), Member = "get_info")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Condition_PlayerStats), Member = "OnCheck")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsUnknownMethods(Count = 6)]
 	private float GetStatValue()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	[Calls(Type = typeof(Condition_PlayerStats), Member = "GetStatValue")]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

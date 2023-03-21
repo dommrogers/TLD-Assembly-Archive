@@ -5,8 +5,8 @@ namespace UnityEngine.Rendering.PostProcessing;
 internal sealed class VignetteRenderer : PostProcessEffectRenderer<Vignette>
 {
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(PropertySheet), Member = "EnableKeyword")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 31)]
 	public override void Render(PostProcessRenderContext context)
 	{

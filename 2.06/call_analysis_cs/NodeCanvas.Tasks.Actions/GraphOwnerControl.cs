@@ -30,7 +30,7 @@ public class GraphOwnerControl : ActionTask<GraphOwner>
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -39,9 +39,9 @@ public class GraphOwnerControl : ActionTask<GraphOwner>
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -55,9 +55,9 @@ public class GraphOwnerControl : ActionTask<GraphOwner>
 		{
 		}
 
+		[DebuggerHidden]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 6)]
-		[DebuggerHidden]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
@@ -67,13 +67,13 @@ public class GraphOwnerControl : ActionTask<GraphOwner>
 		[CallsUnknownMethods(Count = 1)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 5)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 5)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -86,25 +86,24 @@ public class GraphOwnerControl : ActionTask<GraphOwner>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Enum), Member = "ToString")]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Task), Member = "get_ownerAgent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GraphOwnerControl), Member = "Do")]
 	[Calls(Type = typeof(Task), Member = "StartCoroutine")]
 	[Calls(Type = typeof(GraphOwner), Member = "StartBehaviour")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Task), Member = "get_ownerAgent")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GraphOwnerControl), Member = "Do")]
+	[CallsUnknownMethods(Count = 12)]
 	protected override void OnExecute()
 	{
 	}
@@ -117,22 +116,21 @@ public class GraphOwnerControl : ActionTask<GraphOwner>
 		return null;
 	}
 
-	[Calls(Type = typeof(GraphOwner), Member = "PauseBehaviour")]
-	[CalledBy(Type = typeof(GraphOwnerControl), Member = "OnExecute")]
 	[CalledBy(Type = typeof(_003CYieldDo_003Ed__6), Member = "MoveNext")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(GraphOwnerControl), Member = "OnExecute")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[Calls(Type = typeof(GraphOwner), Member = "StopBehaviour")]
+	[Calls(Type = typeof(GraphOwner), Member = "PauseBehaviour")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Do()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GraphOwner), Member = "StopBehaviour")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnStop()
 	{

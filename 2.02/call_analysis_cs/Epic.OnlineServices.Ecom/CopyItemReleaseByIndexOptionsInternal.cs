@@ -17,11 +17,11 @@ internal struct CopyItemReleaseByIndexOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(CopyItemReleaseByIndexOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyItemReleaseByIndexOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyItemReleaseByIndexOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyItemReleaseByIndexOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -31,9 +31,9 @@ internal struct CopyItemReleaseByIndexOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(CopyItemReleaseByIndexOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(CopyItemReleaseByIndexOptionsInternal), Member = "Set")]
+		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 2)]
 		set
 		{
 		}
@@ -55,17 +55,17 @@ internal struct CopyItemReleaseByIndexOptionsInternal : ISettable, IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(EcomInterface), Member = "CopyItemReleaseByIndex")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(CopyItemReleaseByIndexOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(CopyItemReleaseByIndexOptionsInternal), Member = "set_ItemId")]
-	[CalledBy(Type = typeof(EcomInterface), Member = "CopyItemReleaseByIndex")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

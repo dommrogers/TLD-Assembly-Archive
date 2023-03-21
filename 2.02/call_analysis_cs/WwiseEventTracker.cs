@@ -15,9 +15,9 @@ public class WwiseEventTracker
 	public float previousEventStartTime;
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkDurationCallbackInfo), Member = "get_fEstimatedDuration")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(AkDurationCallbackInfo), Member = "get_fEstimatedDuration")]
 	public void CallbackHandler(object in_cookie, AkCallbackType in_type, AkCallbackInfo in_info)
 	{
 	}

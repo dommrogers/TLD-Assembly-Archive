@@ -10,9 +10,9 @@ public class GearItemInteractabilityControlSaveData
 	public List<GearItemInteractabilityControlSpawnTransformSaveData> m_SpawnTransforms;
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GearSaveList), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GearSaveList), Member = ".ctor")]
 	public GearItemInteractabilityControlSaveData()
 	{
 	}

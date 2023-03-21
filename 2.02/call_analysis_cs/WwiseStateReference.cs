@@ -10,8 +10,8 @@ public class WwiseStateReference : WwiseGroupValueObjectReference
 
 	public override WwiseObjectType WwiseObjectType
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return default(WwiseObjectType);
@@ -21,7 +21,7 @@ public class WwiseStateReference : WwiseGroupValueObjectReference
 	public override WwiseObjectReference GroupObjectReference
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;

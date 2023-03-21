@@ -1,300 +1,88 @@
-using Cpp2ILInjected.CallAnalysis;
-
 namespace Rewired;
 
 public interface IRacingWheelTemplate : IControllerTemplate
 {
-	IControllerTemplateAxis wheel
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
+	IControllerTemplateAxis wheel { get; }
 
-	IControllerTemplateAxis accelerator
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateAxis accelerator { get; }
 
-	IControllerTemplateAxis brake
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateAxis brake { get; }
 
-	IControllerTemplateAxis clutch
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateAxis clutch { get; }
 
-	IControllerTemplateButton shiftDown
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton shiftDown { get; }
 
-	IControllerTemplateButton shiftUp
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton shiftUp { get; }
 
-	IControllerTemplateButton wheelButton1
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
+	IControllerTemplateButton wheelButton1 { get; }
 
-	IControllerTemplateButton wheelButton2
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton wheelButton2 { get; }
 
-	IControllerTemplateButton wheelButton3
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton wheelButton3 { get; }
 
-	IControllerTemplateButton wheelButton4
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton wheelButton4 { get; }
 
-	IControllerTemplateButton wheelButton5
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton wheelButton5 { get; }
 
-	IControllerTemplateButton wheelButton6
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
+	IControllerTemplateButton wheelButton6 { get; }
 
-	IControllerTemplateButton wheelButton7
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
+	IControllerTemplateButton wheelButton7 { get; }
 
-	IControllerTemplateButton wheelButton8
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton wheelButton8 { get; }
 
-	IControllerTemplateButton wheelButton9
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton wheelButton9 { get; }
 
-	IControllerTemplateButton wheelButton10
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton wheelButton10 { get; }
 
-	IControllerTemplateButton consoleButton1
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton consoleButton1 { get; }
 
-	IControllerTemplateButton consoleButton2
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
+	IControllerTemplateButton consoleButton2 { get; }
 
-	IControllerTemplateButton consoleButton3
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
+	IControllerTemplateButton consoleButton3 { get; }
 
-	IControllerTemplateButton consoleButton4
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton consoleButton4 { get; }
 
-	IControllerTemplateButton consoleButton5
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton consoleButton5 { get; }
 
-	IControllerTemplateButton consoleButton6
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton consoleButton6 { get; }
 
-	IControllerTemplateButton consoleButton7
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton consoleButton7 { get; }
 
-	IControllerTemplateButton consoleButton8
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton consoleButton8 { get; }
 
-	IControllerTemplateButton consoleButton9
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
+	IControllerTemplateButton consoleButton9 { get; }
 
-	IControllerTemplateButton consoleButton10
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton consoleButton10 { get; }
 
-	IControllerTemplateButton shifter1
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton shifter1 { get; }
 
-	IControllerTemplateButton shifter2
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton shifter2 { get; }
 
-	IControllerTemplateButton shifter3
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton shifter3 { get; }
 
-	IControllerTemplateButton shifter4
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
+	IControllerTemplateButton shifter4 { get; }
 
-	IControllerTemplateButton shifter5
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton shifter5 { get; }
 
-	IControllerTemplateButton shifter6
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton shifter6 { get; }
 
-	IControllerTemplateButton shifter7
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton shifter7 { get; }
 
-	IControllerTemplateButton shifter8
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton shifter8 { get; }
 
-	IControllerTemplateButton shifter9
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
+	IControllerTemplateButton shifter9 { get; }
 
-	IControllerTemplateButton shifter10
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton shifter10 { get; }
 
-	IControllerTemplateButton reverseGear
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton reverseGear { get; }
 
-	IControllerTemplateButton select
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton select { get; }
 
-	IControllerTemplateButton start
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton start { get; }
 
-	IControllerTemplateButton systemButton
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton systemButton { get; }
 
-	IControllerTemplateButton horn
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101261)]
-		get;
-	}
+	IControllerTemplateButton horn { get; }
 
-	IControllerTemplateDPad dPad
-	{
-		[CallerCount(Count = 101261)]
-		[DeduplicatedMethod]
-		get;
-	}
+	IControllerTemplateDPad dPad { get; }
 }

@@ -14,9 +14,10 @@ public sealed class FloatParameter : ParameterOverride<float>
 	[CallerCount(Count = 0)]
 	public override bool Equals(float a, float b)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
 	[CallerCount(Count = 24)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public FloatParameter()

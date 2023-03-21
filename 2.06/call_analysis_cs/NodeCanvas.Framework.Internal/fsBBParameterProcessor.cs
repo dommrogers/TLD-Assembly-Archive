@@ -8,12 +8,13 @@ namespace NodeCanvas.Framework.Internal;
 public class fsBBParameterProcessor : fsRecoveryProcessor<BBParameter, MissingBBParameterType>
 {
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(fsData), Member = "get_IsDictionary")]
+	[Calls(Type = typeof(fsData), Member = "Cast")]
 	[Calls(Type = typeof(fsSerializer), Member = ".ctor")]
 	[Calls(Type = typeof(fsSerializer), Member = "TryDeserialize")]
 	[Calls(Type = typeof(fsSerializer), Member = "TrySerialize")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 6)]
 	public override void OnBeforeDeserializeAfterInstanceCreation(Type storageType, object instance, ref fsData data)
 	{
 	}

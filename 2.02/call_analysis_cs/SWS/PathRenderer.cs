@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -22,7 +21,7 @@ public class PathRenderer : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -33,34 +32,33 @@ public class PathRenderer : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		public _003CStartRenderer_003Ed__6(int _003C_003E1__state)
 		{
 		}
 
-		[DeduplicatedMethod]
 		[DebuggerHidden]
-		[CallerCount(Count = 2)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(PathRenderer), Member = "Render")]
-		[Calls(Type = typeof(PathRenderer), Member = "Render")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(PathRenderer), Member = "Render")]
+		[CallsUnknownMethods(Count = 1)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -83,14 +81,14 @@ public class PathRenderer : MonoBehaviour
 	private Vector3[] points;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
@@ -99,26 +97,23 @@ public class PathRenderer : MonoBehaviour
 		return null;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 27)]
 	[CalledBy(Type = typeof(_003CStartRenderer_003Ed__6), Member = "MoveNext")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(_003CStartRenderer_003Ed__6), Member = "MoveNext")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Array), Member = "Copy")]
 	[Calls(Type = typeof(PathRenderer), Member = "DrawCurved")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 27)]
 	private void Render()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(PathRenderer), Member = "Render")]
-	[Calls(Type = typeof(WaypointManager), Member = "GetPoint")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(WaypointManager), Member = "GetPoint")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void DrawCurved()
 	{
 	}

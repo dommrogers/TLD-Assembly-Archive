@@ -21,27 +21,28 @@ public class EnvelopContent : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void OnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(NGUITools), Member = "IsChild")]
-	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(EnvelopContent), Member = "Start")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Component), Member = "BroadcastMessage")]
-	[Calls(Type = typeof(NGUIMath), Member = "CalculateRelativeWidgetBounds")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[ContextMenu("Execute")]
+	[CalledBy(Type = typeof(EnvelopContent), Member = "Start")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NGUITools), Member = "IsChild")]
+	[Calls(Type = typeof(NGUIMath), Member = "CalculateRelativeWidgetBounds")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "BroadcastMessage")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Execute()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public EnvelopContent()
 	{
 	}

@@ -9,18 +9,15 @@ public static class GlobalMesh
 
 	private static bool ms_DoubleSided;
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "RegenerateMesh")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Config), Member = "GetInstance")]
-	[Calls(Type = typeof(Config), Member = "GetInstance")]
+	[Calls(Type = typeof(SRPHelper), Member = "get_renderPipelineType")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Object), Member = "DestroyImmediate")]
 	[Calls(Type = typeof(MeshGenerator), Member = "GenerateConeZ_Radius")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(SRPHelper), Member = "get_renderPipelineType")]
-	[Calls(Type = typeof(Config), Member = "GetInstance")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[CallsUnknownMethods(Count = 2)]
 	public static Mesh Get()
 	{
 		return null;

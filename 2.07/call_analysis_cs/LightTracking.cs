@@ -32,9 +32,9 @@ public class LightTracking : MonoBehaviour
 	private bool m_IsDirectional;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(LightTracking), Member = "IsLightingWeaponCamera")]
 	[Calls(Type = typeof(LightTracking), Member = "GetLightComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Awake()
 	{
@@ -52,13 +52,14 @@ public class LightTracking : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(LightTracking), Member = "OnEnable")]
 	[CalledBy(Type = typeof(LightTracking), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(LightTracking), Member = "OnEnable")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInParent")]
 	[Calls(Type = typeof(LightingManager), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 6)]
 	private void MaybeAdd(bool areWeStarting)
 	{
 	}
@@ -69,62 +70,57 @@ public class LightTracking : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(LightingManager), Member = "InverseTransformLightPositions")]
 	[CalledBy(Type = typeof(LightingManager), Member = "TransformFpsLightPositions")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(LightingManager), Member = "InverseTransformLightPositions")]
-	[CalledBy(Type = typeof(LightingManager), Member = "InverseTransformLightPositions")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	public void StorePositionAndRotation()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CalledBy(Type = typeof(LightingManager), Member = "TransformLightPositions")]
 	[CalledBy(Type = typeof(LightingManager), Member = "TransformLightPositions")]
 	[CalledBy(Type = typeof(LightingManager), Member = "InverseTransformFpsLightPositions")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	public void RestorePositionAndRotation()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(LightingManager), Member = "Update")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(LightTracking), Member = "UpdateLightIntensity")]
+	[CallsUnknownMethods(Count = 1)]
 	public void MaybeUpdateForCinematic(bool isCinematicActive)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(LightTracking), Member = "GetLightComponent")]
 	[CalledBy(Type = typeof(LightRandomIntensity), Member = "Update")]
 	[CalledBy(Type = typeof(LightingManager), Member = "UpdateLightsForFP_Part1")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(LightTracking), Member = "GetLightComponent")]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsLightEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(LightRandomIntensity), Member = "Update")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(LightTracking), Member = "GetLightComponent")]
-	[CalledBy(Type = typeof(LightRandomIntensity), Member = "Update")]
+	[CallsUnknownMethods(Count = 2)]
 	public void EnableLight(bool state)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(LightingManager), Member = "UpdateLightsForFP_Part1")]
-	[Calls(Type = typeof(LightTracking), Member = "GetLightComponent")]
-	[CalledBy(Type = typeof(LightingManager), Member = "UpdateLightsForFP_Part1")]
-	[Calls(Type = typeof(LightTracking), Member = "IsLightingWeaponCamera")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(LightTracking), Member = "IsLightingWeaponCamera")]
 	[Calls(Type = typeof(LightTracking), Member = "GetLightComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void EnableWeaponCameraLighting(bool enable)
 	{
 	}
@@ -133,34 +129,34 @@ public class LightTracking : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool WasLightingWeaponCamera()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(LightingManager), Member = "UpdateLightsForFP_Part1")]
 	[CalledBy(Type = typeof(LightingManager), Member = "UpdateLightsForFP_Part2")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(LightTracking), Member = "GetLightComponent")]
-	[CalledBy(Type = typeof(LightingManager), Member = "UpdateLightsForFP_Part1")]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetLightRange()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsDirectional()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(LightTracking), Member = "GetLightComponent")]
 	[CalledBy(Type = typeof(LightRandomIntensity), Member = "GetIntensity")]
 	[CalledBy(Type = typeof(LightingManager), Member = "UpdateLightsForFP_Part2")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(LightTracking), Member = "GetLightComponent")]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetLightIntensity()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallAnalysisFailed]
@@ -169,47 +165,43 @@ public class LightTracking : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(LightTracking), Member = "GetLightComponent")]
-	[CalledBy(Type = typeof(LightRandomIntensity), Member = "Update")]
+	[CalledBy(Type = typeof(KeroseneLampIntensity), Member = "Update")]
 	[CalledBy(Type = typeof(LightRandomIntensity), Member = "Start")]
-	[CalledBy(Type = typeof(KeroseneLampIntensity), Member = "Update")]
-	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(KeroseneLampIntensity), Member = "Update")]
-	[CalledBy(Type = typeof(KeroseneLampIntensity), Member = "Update")]
+	[CalledBy(Type = typeof(LightRandomIntensity), Member = "Update")]
 	[CalledBy(Type = typeof(LightTracking), Member = "MaybeUpdateForCinematic")]
-	[CalledBy(Type = typeof(KeroseneLampIntensity), Member = "Update")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(LightTracking), Member = "GetLightComponent")]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateLightIntensity()
 	{
 	}
 
+	[CalledBy(Type = typeof(LightTracking), Member = "Awake")]
+	[CalledBy(Type = typeof(LightTracking), Member = "IsLightEnabled")]
+	[CalledBy(Type = typeof(LightTracking), Member = "EnableLight")]
+	[CalledBy(Type = typeof(LightTracking), Member = "EnableWeaponCameraLighting")]
+	[CalledBy(Type = typeof(LightTracking), Member = "GetLightRange")]
 	[CalledBy(Type = typeof(LightTracking), Member = "GetLightIntensity")]
 	[CalledBy(Type = typeof(LightTracking), Member = "UpdateLightIntensity")]
-	[CalledBy(Type = typeof(LightTracking), Member = "GetLightRange")]
-	[CalledBy(Type = typeof(LightingManager), Member = "UpdateLightsForFP_Part2")]
 	[CalledBy(Type = typeof(LightTracking), Member = "IsLightingWeaponCamera")]
-	[CalledBy(Type = typeof(LightTracking), Member = "EnableWeaponCameraLighting")]
 	[CalledBy(Type = typeof(LightingManager), Member = "Update")]
-	[CalledBy(Type = typeof(LightTracking), Member = "EnableLight")]
+	[CalledBy(Type = typeof(LightingManager), Member = "UpdateLightsForFP_Part2")]
 	[CallerCount(Count = 11)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(LightTracking), Member = "EnableWeaponCameraLighting")]
-	[CalledBy(Type = typeof(LightTracking), Member = "IsLightEnabled")]
-	[CalledBy(Type = typeof(LightTracking), Member = "Awake")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	private Light GetLightComponent()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(LightTracking), Member = "GetLightComponent")]
 	[CalledBy(Type = typeof(LightTracking), Member = "Awake")]
 	[CalledBy(Type = typeof(LightTracking), Member = "EnableWeaponCameraLighting")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(LightTracking), Member = "GetLightComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private bool IsLightingWeaponCamera()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

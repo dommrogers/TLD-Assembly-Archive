@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
+using TLD.SaveState;
 using TLD.UI.Generics;
 using UnityEngine;
 using Voice;
@@ -35,27 +36,26 @@ public class NPCVoice : MonoBehaviour
 
 	private static List<NPCVoice> s_NPCVoiceList;
 
-	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Awake()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 9)]
 	private void LateUpdate()
 	{
 	}
@@ -66,31 +66,30 @@ public class NPCVoice : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_NPCSay), Member = "OnExecute")]
-	[CalledBy(Type = typeof(PlayableBehaviourSay), Member = "PlayVoice")]
-	[CalledBy(Type = typeof(PlayableBehaviourSay), Member = "ProcessFrame")]
-	[CalledBy(Type = typeof(NPCFreezing), Member = "MaybePlayVoiceOver")]
-	[CalledBy(Type = typeof(NPCFreezing), Member = "DoUpdate")]
-	[CalledBy(Type = typeof(NPCFreezing), Member = "DoUpdate")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "MaybePlayVoiceOver")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "ApplyDamage")]
-	[CalledBy(Type = typeof(NPCCondition), Member = "DoUpdate")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(NPC), Member = "DoUpdate")]
 	[CalledBy(Type = typeof(SpotLightController), Member = "MaybePlayVO")]
-	[Calls(Type = typeof(NPCVoice), Member = "HandleNextRequest")]
-	[Calls(Type = typeof(AkSoundEngine), Member = "GetIDFromString")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 12)]
+	[CalledBy(Type = typeof(NPC), Member = "DoUpdate")]
 	[CalledBy(Type = typeof(NPC), Member = "UpdateAmbientVoiceOver")]
+	[CalledBy(Type = typeof(NPCCondition), Member = "DoUpdate")]
+	[CalledBy(Type = typeof(NPCCondition), Member = "ApplyDamage")]
+	[CalledBy(Type = typeof(NPCCondition), Member = "MaybePlayVoiceOver")]
+	[CalledBy(Type = typeof(NPCFreezing), Member = "DoUpdate")]
+	[CalledBy(Type = typeof(NPCFreezing), Member = "MaybePlayVoiceOver")]
+	[CalledBy(Type = typeof(PlayableBehaviourSay), Member = "ProcessFrame")]
+	[CalledBy(Type = typeof(PlayableBehaviourSay), Member = "PlayVoice")]
+	[CalledBy(Type = typeof(Action_NPCSay), Member = "OnExecute")]
+	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(AkSoundEngine), Member = "GetIDFromString")]
+	[Calls(Type = typeof(NPCVoice), Member = "HandleNextRequest")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public uint Play(string eventName, Priority priority, Options options = Options.None, Action completionCallback = null)
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(NPCVoice), Member = "CompleteActiveRequest")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Stop(uint playingID)
 	{
 	}
@@ -99,17 +98,18 @@ public class NPCVoice : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsSpeaking()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(NPCVoice), Member = "Stop")]
 	[CalledBy(Type = typeof(NPCVoice), Member = "OnAkVoiceEvent")]
+	[CalledBy(Type = typeof(PlayableBehaviourSay), Member = "OnBehaviourPause")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[Calls(Type = typeof(NPCVoice), Member = "AnyOtherSpeaking")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
-	[CalledBy(Type = typeof(NPCVoice), Member = "Stop")]
-	[CalledBy(Type = typeof(PlayableBehaviourSay), Member = "OnBehaviourPause")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void CompleteActiveRequest()
 	{
@@ -122,51 +122,53 @@ public class NPCVoice : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 5)]
 	public static bool AnySpeaking()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(NPCVoice), Member = "CompleteActiveRequest")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsUnknownMethods(Count = 5)]
 	private bool AnyOtherSpeaking()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(NPCVoice), Member = "Play")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(ActiveRequest), Member = "Stop")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(NPCVoice), Member = "StartNextRequest")]
+	[Calls(Type = typeof(uint), Member = "ToString")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
-	[CalledBy(Type = typeof(NPCVoice), Member = "Play")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool HandleNextRequest()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(DebugUtils), Member = "GetGameObjectPath")]
 	[Conditional("__DEBUG")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DebugUtils), Member = "GetGameObjectPath")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void LogRequestIgnored(string reason)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "HideSubtitles")]
 	[CallsUnknownMethods(Count = 1)]
@@ -178,66 +180,63 @@ public class NPCVoice : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private bool CanPlayNextRequest()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(NPCVoice), Member = "HandleNextRequest")]
-	[Calls(Type = typeof(NPCVoice), Member = "UpdateAudioEmitterPosition")]
-	[Calls(Type = typeof(Request), Member = "Copy")]
-	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameAudioManager), Member = "GetSoundEmitterFromGameObject")]
 	[Calls(Type = typeof(NPCVoice), Member = "UpdateIndoorOutdoorSwitch")]
+	[Calls(Type = typeof(AkCallbackManager.EventCallback), Member = ".ctor")]
+	[Calls(Type = typeof(AkSoundEngine), Member = "PostEvent")]
+	[Calls(Type = typeof(Request), Member = "Copy")]
+	[Calls(Type = typeof(NPCVoice), Member = "UpdateAudioEmitterPosition")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 8)]
 	private bool StartNextRequest()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(NPCVoice), Member = "StartNextRequest")]
-	[CalledBy(Type = typeof(NPCVoice), Member = "DoUpdate")]
 	[CalledBy(Type = typeof(NPC), Member = "DoUpdate")]
-	[Calls(Type = typeof(NPCVoice), Member = "UpdateIndoorOutdoorSwitch")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(NPCVoice), Member = "DoUpdate")]
+	[CalledBy(Type = typeof(NPCVoice), Member = "StartNextRequest")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
+	[Calls(Type = typeof(NPCVoice), Member = "UpdateIndoorOutdoorSwitch")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateAudioEmitterPosition()
 	{
 	}
 
 	[CalledBy(Type = typeof(NPCVoice), Member = "StartNextRequest")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(NPCVoice), Member = "UpdateAudioEmitterPosition")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetIndoorEnvironmentSwitch")]
-	[Calls(Type = typeof(NPC), Member = "IsIndoors")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPC), Member = "IsIndoors")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetOutdoorEnvironmentSwitch")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetIndoorEnvironmentSwitch")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdateIndoorOutdoorSwitch(bool forced)
 	{
 	}
 
-	[Calls(Type = typeof(NPCVoice), Member = "CompleteActiveRequest")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(AkMarkerCallbackInfo), Member = "get_strLabel")]
 	[Calls(Type = typeof(Panel_Subtitles), Member = "MaybeShowSubtitleForAudioEvent")]
 	[Calls(Type = typeof(AkEventCallbackInfo), Member = "get_playingID")]
+	[Calls(Type = typeof(NPCVoice), Member = "CompleteActiveRequest")]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnAkVoiceEvent(object in_cookie, AkCallbackType in_type, object in_info)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 11)]
 	public NPCVoice()
 	{
 	}

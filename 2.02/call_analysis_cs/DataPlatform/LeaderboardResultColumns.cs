@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 
 namespace DataPlatform;
@@ -23,7 +22,7 @@ public class LeaderboardResultColumns : IEnumerable<LeaderboardResultColumn>, IE
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -34,7 +33,7 @@ public class LeaderboardResultColumns : IEnumerable<LeaderboardResultColumn>, IE
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -48,20 +47,20 @@ public class LeaderboardResultColumns : IEnumerable<LeaderboardResultColumn>, IE
 		{
 		}
 
-		[CallerCount(Count = 2)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 20)]
-		[Calls(Type = typeof(LeaderboardResultPlugin), Member = "LeaderboardResult_GetColumn")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(LeaderboardResultPlugin), Member = "LeaderboardResult_GetColumn")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 20)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -82,8 +81,8 @@ public class LeaderboardResultColumns : IEnumerable<LeaderboardResultColumn>, IE
 	public LeaderboardResultColumn Item
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(LeaderboardResultPlugin), Member = "LeaderboardResult_GetColumn")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 18)]
 		get
 		{
@@ -91,10 +90,9 @@ public class LeaderboardResultColumns : IEnumerable<LeaderboardResultColumn>, IE
 		}
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
+	[CalledBy(Type = typeof(LeaderboardResultColumns), Member = "System.Collections.IEnumerable.GetEnumerator")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(LeaderboardResultColumns), Member = "System.Collections.IEnumerable.GetEnumerator")]
 	[CallsUnknownMethods(Count = 7)]
 	public IEnumerator<LeaderboardResultColumn> GetEnumerator()
 	{
@@ -108,8 +106,8 @@ public class LeaderboardResultColumns : IEnumerable<LeaderboardResultColumn>, IE
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public LeaderboardResultColumns(uint numColumns, IntPtr self)
 	{
 	}

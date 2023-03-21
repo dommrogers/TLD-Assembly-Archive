@@ -22,10 +22,10 @@ public class PlayableBehaviourActivateSpawnedObject : PlayableBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(TLD_SpawnedAnimationTrack), Member = "Activate")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(TLD_SpawnedAnimationTrack), Member = "Activate")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void OnBehaviourPause(Playable playable, FrameData info)
 	{
 	}

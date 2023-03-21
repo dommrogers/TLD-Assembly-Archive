@@ -6,18 +6,18 @@ public class SnowDepthSphereRecord : SnowDepthTriggerRecord
 	private SphereCollider m_Sphere;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 83)]
+	[CallerCount(Count = 88)]
 	public SnowDepthSphereRecord(SnowDepth sd, SphereCollider sphere)
 		: base(null)
 	{
 	}
 
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[CallsUnknownMethods(Count = 12)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 12)]
 	public override float GetDepthFracAtPosition(Vector3 position)
 	{
-		return default(float);
+		return 0f;
 	}
 }

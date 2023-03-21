@@ -81,122 +81,108 @@ public static class MaterialManager
 			[CallerCount(Count = 7)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 		}
 
 		private int noise3DID
 		{
 			[CallerCount(Count = 0)]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[Calls(Type = typeof(Config), Member = "get_Instance")]
+			[CallsDeduplicatedMethods(Count = 1)]
 			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 		}
 
 		private int depthBlendID
 		{
-			[CallsUnknownMethods(Count = 1)]
 			[CallerCount(Count = 0)]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[Calls(Type = typeof(Config), Member = "get_Instance")]
+			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 		}
 
 		private int colorGradientID
 		{
-			[Calls(Type = typeof(Config), Member = "get_Instance")]
 			[CallerCount(Count = 0)]
-			[CallsUnknownMethods(Count = 1)]
+			[Calls(Type = typeof(Config), Member = "get_Instance")]
 			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 		}
 
 		private int dynamicOcclusionID
 		{
 			[CallerCount(Count = 0)]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[Calls(Type = typeof(Config), Member = "get_Instance")]
+			[CallsDeduplicatedMethods(Count = 1)]
 			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 		}
 
 		private int meshSkewingID
 		{
 			[CallerCount(Count = 0)]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[Calls(Type = typeof(Config), Member = "get_Instance")]
+			[CallsDeduplicatedMethods(Count = 1)]
 			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 		}
 
 		private int shaderAccuracyID
 		{
-			[CallsUnknownMethods(Count = 1)]
-			[Calls(Type = typeof(Config), Member = "get_Instance")]
 			[CallerCount(Count = 0)]
+			[Calls(Type = typeof(Config), Member = "get_Instance")]
 			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 		}
 
 		public int materialID
 		{
-			[CallerCount(Count = 1)]
-			[CallsDeduplicatedMethods(Count = 6)]
-			[Calls(Type = typeof(Config), Member = "get_Instance")]
-			[Calls(Type = typeof(Config), Member = "get_Instance")]
-			[Calls(Type = typeof(Config), Member = "get_Instance")]
-			[Calls(Type = typeof(Config), Member = "get_Instance")]
-			[Calls(Type = typeof(Config), Member = "get_Instance")]
-			[Calls(Type = typeof(Config), Member = "get_Instance")]
 			[CalledBy(Type = typeof(MaterialManager), Member = "GetInstancedMaterial")]
+			[CallerCount(Count = 1)]
+			[Calls(Type = typeof(Config), Member = "get_Instance")]
+			[CallsDeduplicatedMethods(Count = 6)]
 			[CallsUnknownMethods(Count = 6)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 		}
 
-		[Calls(Type = typeof(Material), Member = "SetInt")]
-		[Calls(Type = typeof(Material), Member = "SetInt")]
-		[Calls(Type = typeof(Utils), Member = "SetKeywordEnabled")]
-		[CalledBy(Type = typeof(MaterialManager), Member = "GetInstancedMaterial")]
-		[CallsUnknownMethods(Count = 10)]
-		[Calls(Type = typeof(Utils), Member = "SetKeywordEnabled")]
 		[CalledBy(Type = typeof(BeamGeometry), Member = "ApplyMaterial")]
-		[Calls(Type = typeof(Utils), Member = "SetKeywordEnabled")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Utils), Member = "SetKeywordEnabled")]
-		[Calls(Type = typeof(Utils), Member = "SetKeywordEnabled")]
-		[Calls(Type = typeof(Utils), Member = "SetKeywordEnabled")]
-		[Calls(Type = typeof(Utils), Member = "SetKeywordEnabled")]
-		[Calls(Type = typeof(Utils), Member = "SetKeywordEnabled")]
-		[Calls(Type = typeof(Utils), Member = "SetKeywordEnabled")]
+		[CalledBy(Type = typeof(MaterialManager), Member = "GetInstancedMaterial")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Utils), Member = "SetKeywordEnabled")]
+		[Calls(Type = typeof(Material), Member = "SetInt")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 10)]
 		public void ApplyToMaterial(Material mat)
 		{
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public StaticProperties()
 		{
 		}
@@ -206,8 +192,8 @@ public static class MaterialManager
 	{
 		public Material[] materials;
 
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public MaterialsGroup()
 		{
 		}
@@ -225,42 +211,41 @@ public static class MaterialManager
 
 	private static Hashtable ms_MaterialsGroup;
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Config), Member = "get_Instance")]
-	[CalledBy(Type = typeof(MaterialManager), Member = "GetInstancedMaterial")]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "Initialize")]
-	[Calls(Type = typeof(Consts), Member = "get_ProceduralObjectsHideFlags")]
+	[CalledBy(Type = typeof(MaterialManager), Member = "GetInstancedMaterial")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Config), Member = "get_Instance")]
 	[Calls(Type = typeof(MaterialManager), Member = "NewMaterialPersistent")]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Consts), Member = "get_ProceduralObjectsHideFlags")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public static Material NewMaterialTransient(bool gpuInstanced)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(MaterialManager), Member = "NewMaterialTransient")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Material), Member = ".ctor")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CalledBy(Type = typeof(MaterialManager), Member = "NewMaterialTransient")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 9)]
 	public static Material NewMaterialPersistent(Shader shader, bool gpuInstanced)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(MaterialManager), Member = "NewMaterialTransient")]
-	[CallsUnknownMethods(Count = 20)]
 	[CalledBy(Type = typeof(BeamGeometry), Member = "ApplyMaterial")]
-	[Calls(Type = typeof(StaticProperties), Member = "ApplyToMaterial")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(StaticProperties), Member = "get_materialID")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(StaticProperties), Member = "get_materialID")]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(MaterialManager), Member = "NewMaterialTransient")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(StaticProperties), Member = "ApplyToMaterial")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 20)]
 	public static Material GetInstancedMaterial(uint groupID, StaticProperties staticProps)
 	{
 		return null;

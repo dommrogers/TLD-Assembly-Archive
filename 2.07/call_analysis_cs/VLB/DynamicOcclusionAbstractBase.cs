@@ -30,26 +30,26 @@ public abstract class DynamicOcclusionAbstractBase : MonoBehaviour
 	public int _INTERNAL_LastFrameRendered
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 2)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public event Action onOcclusionProcessed
 	{
-		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 1)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
@@ -61,37 +61,27 @@ public abstract class DynamicOcclusionAbstractBase : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(DynamicOcclusionAbstractBase), Member = "OnWillCameraRender")]
 	[CalledBy(Type = typeof(DynamicOcclusionAbstractBase), Member = "ProcessOcclusionManually")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "_INTERNAL_SetDynamicOcclusionCallback")]
+	[CalledBy(Type = typeof(DynamicOcclusionAbstractBase), Member = "OnWillCameraRender")]
 	[CalledBy(Type = typeof(DynamicOcclusionAbstractBase), Member = "<OnEnable>b__22_0")]
-	[Calls(Type = typeof(Config), Member = "GetInstance")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Config), Member = "GetInstance")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "_INTERNAL_SetDynamicOcclusionCallback")]
 	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 6)]
 	protected void ProcessOcclusion(ProcessOcclusionSource source)
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101261)]
 	protected abstract string GetShaderKeyword();
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101261)]
 	protected abstract MaterialManager.DynamicOcclusion GetDynamicOcclusionMode();
 
-	[CallerCount(Count = 101261)]
-	[DeduplicatedMethod]
 	protected abstract bool OnProcessOcclusion(ProcessOcclusionSource source);
 
-	[CallerCount(Count = 101261)]
-	[DeduplicatedMethod]
 	protected abstract void OnModifyMaterialCallback(MaterialModifier.Interface owner);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101261)]
 	protected abstract void OnEnablePostValidate();
 
 	[CallerCount(Count = 0)]
@@ -101,55 +91,55 @@ public abstract class DynamicOcclusionAbstractBase : MonoBehaviour
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	protected virtual void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "_INTERNAL_SetDynamicOcclusionCallback")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "_INTERNAL_SetDynamicOcclusionCallback")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected virtual void OnDestroy()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(VolumetricLightBeam), Member = "CallOnBeamGeometryInitializedCallback")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	protected virtual void OnEnable()
 	{
 	}
 
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnDisable")]
 	[CalledBy(Type = typeof(DynamicOcclusionDepthBuffer), Member = "OnDisable")]
+	[CalledBy(Type = typeof(DynamicOcclusionRaycasting), Member = "OnDisable")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Delegate), Member = "Remove")]
 	[Calls(Type = typeof(VolumetricLightBeam), Member = "_INTERNAL_SetDynamicOcclusionCallback")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	protected virtual void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(DynamicOcclusionAbstractBase), Member = "ProcessOcclusion")]
-	[Calls(Type = typeof(TransformUtils), Member = "IsSame")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TransformUtils), Member = "IsSame")]
+	[Calls(Type = typeof(DynamicOcclusionAbstractBase), Member = "ProcessOcclusion")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnWillCameraRender(Camera cam)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(VolumetricLightBeam), Member = "_INTERNAL_SetDynamicOcclusionCallback")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(VolumetricLightBeam), Member = "_INTERNAL_SetDynamicOcclusionCallback")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void DisableOcclusion()
 	{
 	}

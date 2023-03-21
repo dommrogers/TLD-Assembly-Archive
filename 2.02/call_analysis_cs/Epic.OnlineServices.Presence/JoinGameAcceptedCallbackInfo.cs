@@ -17,16 +17,16 @@ public class JoinGameAcceptedCallbackInfo : ICallbackInfo, ISettable
 
 	public object ClientData
 	{
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		private set
 		{
 		}
@@ -36,14 +36,14 @@ public class JoinGameAcceptedCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -53,14 +53,14 @@ public class JoinGameAcceptedCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -77,7 +77,7 @@ public class JoinGameAcceptedCallbackInfo : ICallbackInfo, ISettable
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		private set
 		{
 		}
@@ -87,10 +87,10 @@ public class JoinGameAcceptedCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 17)]
 		get
 		{
-			return default(ulong);
+			return 0uL;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -100,35 +100,35 @@ public class JoinGameAcceptedCallbackInfo : ICallbackInfo, ISettable
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Result? GetResultCode()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(JoinGameAcceptedCallbackInfo), Member = "Set")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(JoinGameAcceptedCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(JoinGameAcceptedCallbackInfoInternal), Member = "get_JoinInfo")]
 	[Calls(Type = typeof(JoinGameAcceptedCallbackInfoInternal), Member = "get_LocalUserId")]
 	[Calls(Type = typeof(JoinGameAcceptedCallbackInfoInternal), Member = "get_TargetUserId")]
-	[CalledBy(Type = typeof(JoinGameAcceptedCallbackInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	internal void Set(JoinGameAcceptedCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(JoinGameAcceptedCallbackInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public JoinGameAcceptedCallbackInfo()
 	{
 	}

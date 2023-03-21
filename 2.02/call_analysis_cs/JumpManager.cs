@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 
 public class JumpManager
@@ -32,9 +31,9 @@ public class JumpManager
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 29)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -43,42 +42,41 @@ public class JumpManager
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[DeduplicatedMethod]
 			[DebuggerHidden]
-			[CallerCount(Count = 29)]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003COnSavingCoroutine_003Ed__37(int _003C_003E1__state)
 		{
 		}
 
-		[CallerCount(Count = 2)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 10)]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(SaveGameData), Member = "IsSaving")]
 		[Calls(Type = typeof(SaveGameSystem), Member = "IsWaitingForScreenshot")]
-		[Calls(Type = typeof(SaveGameData), Member = "IsSaving")]
 		[Calls(Type = typeof(Panel_Loading), Member = "IsLoading")]
 		[Calls(Type = typeof(CameraFade), Member = "GetFadeAlpha")]
 		[Calls(Type = typeof(Utils), Member = "IsZero")]
 		[Calls(Type = typeof(GameManager), Member = "ForceSaveGame")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 10)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -115,20 +113,19 @@ public class JumpManager
 	private bool m_RestoreAsyncSave;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(JumpManager), Member = "GetDataPath")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected JumpManager()
 	{
 	}
 
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_rejump")]
 	[CalledBy(Type = typeof(JumpManager), Member = "Reload")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_rejump")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_rejump")]
 	[CallerCount(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool CanReload()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -141,19 +138,18 @@ public class JumpManager
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool Create(string name = null)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(JumpManager), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(JumpManager), Member = "Instantiate")]
+	[CalledBy(Type = typeof(JumpData), Member = "ToString")]
 	[CalledBy(Type = typeof(JumpLoadThread), Member = "ExecuteSingleThreaded")]
 	[CalledBy(Type = typeof(Panel_Story), Member = "LoadAllJumpData")]
-	[Calls(Type = typeof(Path), Member = "Combine")]
+	[CalledBy(Type = typeof(JumpManager), Member = ".ctor")]
+	[CalledBy(Type = typeof(JumpManager), Member = "Instantiate")]
+	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(Path), Member = "Combine")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(JumpData), Member = "ToString")]
+	[CallsUnknownMethods(Count = 1)]
 	public static string GetDataPath()
 	{
 		return null;
@@ -166,24 +162,22 @@ public class JumpManager
 		return default(State);
 	}
 
-	[Calls(Type = typeof(JumpData), Member = "LoadFromFile")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(File), Member = "Exists")]
 	[Calls(Type = typeof(JumpData), Member = "LoadFromFile")]
 	[Calls(Type = typeof(JumpManager), Member = "CreateJumpFilePath")]
 	[Calls(Type = typeof(File), Member = "Copy")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static JumpData Import(string path)
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(JumpManager), Member = "GetDataPath")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
-	[Conditional(/*Could not decode attribute arguments.*/)]
-	[CallerCount(Count = 0)]
 	public static void Instantiate()
 	{
 	}
@@ -199,50 +193,51 @@ public class JumpManager
 	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsCreationAllowed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(JumpManager), Member = "StopJumpLoadAsync")]
-	[CalledBy(Type = typeof(Panel_Story), Member = "LoadAllJumpData")]
-	[CalledBy(Type = typeof(Panel_Story), Member = "CanSwitchView")]
-	[CalledBy(Type = typeof(Panel_Story), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(Panel_Story), Member = "CancelAsyncLoad")]
+	[CalledBy(Type = typeof(Panel_Story), Member = "CanSwitchView")]
+	[CalledBy(Type = typeof(Panel_Story), Member = "LoadAllJumpData")]
+	[CalledBy(Type = typeof(Panel_Story), Member = "Update")]
+	[CalledBy(Type = typeof(JumpManager), Member = "StopJumpLoadAsync")]
+	[CallerCount(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool IsAsyncLoading()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_Story), Member = "DoFileJump")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Story), Member = "DoFileJump")]
 	public static bool Load(JumpData jump)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(JumpManager), Member = "CanReload")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Reload()
 	{
 	}
 
-	[Calls(Type = typeof(EncryptString), Member = "CompressStringToBytes")]
 	[CalledBy(Type = typeof(JumpManager), Member = "CreateFromCurrentSave")]
-	[Calls(Type = typeof(File), Member = "WriteAllBytes")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(EncryptString), Member = "DecompressBytesToString")]
-	[Calls(Type = typeof(File), Member = "ReadAllBytes")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(File), Member = "ReadAllBytes")]
+	[Calls(Type = typeof(EncryptString), Member = "DecompressBytesToString")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[Calls(Type = typeof(EncryptString), Member = "CompressStringToBytes")]
+	[Calls(Type = typeof(File), Member = "WriteAllBytes")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool Rename(string path, string name)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -258,55 +253,54 @@ public class JumpManager
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(JumpManager), Member = "IsAsyncLoading")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void StopJumpLoadAsync()
 	{
 	}
 
-	[Calls(Type = typeof(MissionServicesManager), Member = "Deserialize")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "JumpTo")]
-	[CallsUnknownMethods(Count = 20)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "JumpTo")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "Deserialize")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 20)]
 	private void OnLoadComplete()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(GameManager), Member = "LoadSaveGameSlot")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "SetExperienceModeType")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
-	[Calls(Type = typeof(EpisodeManager), Member = "SetActiveEpisode")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopAll")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
+	[Calls(Type = typeof(InterfaceManager), Member = "QuitCurrentScreens")]
+	[Calls(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "SetCurrentSaveInfo")]
 	[Calls(Type = typeof(GameManager), Member = "InstantiateStoryManager")]
-	[Calls(Type = typeof(InterfaceManager), Member = "QuitCurrentScreens")]
-	[Calls(Type = typeof(InterfaceManager), Member = "IsOverlayActiveImmediate")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopAll")]
+	[Calls(Type = typeof(EpisodeManager), Member = "SetActiveEpisode")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "SetExperienceModeType")]
+	[Calls(Type = typeof(GameManager), Member = "LoadSaveGameSlot")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GameManager), Member = "InstantiateSandboxManager")]
+	[CallsUnknownMethods(Count = 23)]
 	private void OnLoadSetup()
 	{
 	}
 
-	[Calls(Type = typeof(JumpManager), Member = "Rename")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(JumpData), Member = "LoadFromFile")]
-	[Calls(Type = typeof(File), Member = "Copy")]
-	[Calls(Type = typeof(JumpData), Member = "Rename")]
-	[Calls(Type = typeof(Path), Member = "Combine")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Path), Member = "Combine")]
 	[Calls(Type = typeof(JumpManager), Member = "CreateJumpFilePath")]
+	[Calls(Type = typeof(File), Member = "Copy")]
+	[Calls(Type = typeof(JumpManager), Member = "Rename")]
+	[Calls(Type = typeof(JumpData), Member = "LoadFromFile")]
+	[Calls(Type = typeof(JumpData), Member = "Rename")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private static void CreateFromCurrentSave(string name)
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(JumpManager), Member = "Import")]
 	[CalledBy(Type = typeof(JumpManager), Member = "CreateFromCurrentSave")]
+	[CallerCount(Count = 2)]
 	private static string CreateJumpFilePath(SaveSlotType mode, ExperienceModeType xpmode, Episode episode = Episode.One)
 	{
 		return null;
@@ -326,10 +320,9 @@ public class JumpManager
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private static IEnumerator OnSavingCoroutine()
 	{
 		return null;
@@ -343,19 +336,19 @@ public class JumpManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(EncryptString), Member = "CompressStringToBytes")]
-	[Calls(Type = typeof(File), Member = "Delete")]
-	[Calls(Type = typeof(File), Member = "Exists")]
-	[Calls(Type = typeof(Path), Member = "Combine")]
-	[Calls(Type = typeof(File), Member = "WriteAllBytes")]
-	[Calls(Type = typeof(System.Number), Member = "FormatUInt32")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatUInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Path), Member = "Combine")]
+	[Calls(Type = typeof(File), Member = "Exists")]
+	[Calls(Type = typeof(File), Member = "Delete")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[Calls(Type = typeof(EncryptString), Member = "CompressStringToBytes")]
+	[Calls(Type = typeof(File), Member = "WriteAllBytes")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private static SlotData WriteDataForJump(JumpData jump)
 	{
 		return null;

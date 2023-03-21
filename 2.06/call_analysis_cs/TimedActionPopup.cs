@@ -35,7 +35,7 @@ public class TimedActionPopup : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -51,16 +51,15 @@ public class TimedActionPopup : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(TimedActionPopup), Member = "Reset")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(TimedActionPopup), Member = "Reset")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(TimedActionPopup), Member = "SetPrompt")]
+	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(UIBasicSprite), Member = "set_fillAmount")]
-	[Calls(Type = typeof(TimedActionPopup), Member = "SetPrompt")]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(TimedActionPopup), Member = "Reset")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(InputSystemRewired), Member = "GetButton")]
+	[CallsUnknownMethods(Count = 3)]
 	public void Update()
 	{
 	}
@@ -72,12 +71,11 @@ public class TimedActionPopup : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(TimedActionPopup), Member = "Setup")]
-	[CalledBy(Type = typeof(TimedActionPopup), Member = "Update")]
-	[CalledBy(Type = typeof(TimedActionPopup), Member = "Update")]
-	[CallerCount(Count = 4)]
 	[CallAnalysisFailed]
 	[CalledBy(Type = typeof(TimedActionPopup), Member = "Awake")]
+	[CalledBy(Type = typeof(TimedActionPopup), Member = "Update")]
+	[CalledBy(Type = typeof(TimedActionPopup), Member = "Setup")]
+	[CallerCount(Count = 4)]
 	private void Reset()
 	{
 	}
@@ -91,13 +89,13 @@ public class TimedActionPopup : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(Action_TimedActionPopup), Member = "OnExecute")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(TimedActionPopup), Member = "Reset")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Setup(float displaytime, float holdtime, string prompt, InputManager.InputAction action)
 	{
 	}

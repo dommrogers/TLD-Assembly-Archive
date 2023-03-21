@@ -15,44 +15,44 @@ public class LagPosition : MonoBehaviour
 
 	private bool mStarted;
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public void OnRepositionEnd()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(LagPosition), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Interpolate(float delta)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(LagPosition), Member = "ResetPosition")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LagPosition), Member = "ResetPosition")]
 	private void OnEnable()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void Start()
 	{
 	}
 
+	[CalledBy(Type = typeof(LagPosition), Member = "OnEnable")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(LagPosition), Member = "OnEnable")]
 	[CallsUnknownMethods(Count = 3)]
 	public void ResetPosition()
 	{
@@ -60,8 +60,8 @@ public class LagPosition : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LagPosition), Member = "Interpolate")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}

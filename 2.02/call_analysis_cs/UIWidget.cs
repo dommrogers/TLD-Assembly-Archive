@@ -107,8 +107,8 @@ public class UIWidget : UIRect
 
 	public UIDrawCall.OnRenderCallback onRender
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -116,10 +116,9 @@ public class UIWidget : UIRect
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
-		[CallsUnknownMethods(Count = 7)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 7)]
 		set
 		{
 		}
@@ -132,15 +131,14 @@ public class UIWidget : UIRect
 		{
 			return default(Vector4);
 		}
-		[Calls(Type = typeof(Vector4), Member = "op_Inequality")]
-		[CalledBy(Type = typeof(UITexture), Member = "OnUpdate")]
-		[CalledBy(Type = typeof(UI2DSprite), Member = "OnUpdate")]
+		[CalledBy(Type = typeof(UIProgressBar), Member = "ForceUpdate")]
 		[CalledBy(Type = typeof(UIScrollBar), Member = "ForceUpdate")]
+		[CalledBy(Type = typeof(UI2DSprite), Member = "OnUpdate")]
+		[CalledBy(Type = typeof(UITexture), Member = "OnUpdate")]
 		[CallerCount(Count = 5)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(UIProgressBar), Member = "ForceUpdate")]
+		[Calls(Type = typeof(Vector4), Member = "op_Inequality")]
 		[Calls(Type = typeof(UIWidget), Member = "ResizeCollider")]
-		[CalledBy(Type = typeof(UIProgressBar), Member = "ForceUpdate")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		set
 		{
 		}
@@ -148,8 +146,8 @@ public class UIWidget : UIRect
 
 	public Vector2 pivotOffset
 	{
-		[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
 		get
 		{
 			return default(Vector2);
@@ -158,20 +156,18 @@ public class UIWidget : UIRect
 
 	public int width
 	{
-		[CallerCount(Count = 1)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(UIWidget), Member = "SetDimensions")]
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[CallerCount(Count = 41)]
-		[Calls(Type = typeof(NGUIMath), Member = "AdjustWidget")]
+		[Calls(Type = typeof(UIWidget), Member = "SetDimensions")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(NGUIMath), Member = "AdjustWidget")]
 		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 3)]
 		set
 		{
 		}
@@ -179,20 +175,18 @@ public class UIWidget : UIRect
 
 	public int height
 	{
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[CallerCount(Count = 40)]
-		[Calls(Type = typeof(NGUIMath), Member = "AdjustWidget")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(UIWidget), Member = "SetDimensions")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(NGUIMath), Member = "AdjustWidget")]
 		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 3)]
 		set
 		{
 		}
@@ -201,15 +195,15 @@ public class UIWidget : UIRect
 	public Color color
 	{
 		[CalledBy(Type = typeof(AccelTimePopup), Member = "SetActive")]
-		[CallsDeduplicatedMethods(Count = 27)]
 		[CallerCount(Count = 1)]
+		[CallsDeduplicatedMethods(Count = 27)]
 		get
 		{
 			return default(Color);
 		}
 		[CallerCount(Count = 38)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Color), Member = "op_Equality")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -221,7 +215,7 @@ public class UIWidget : UIRect
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -232,20 +226,18 @@ public class UIWidget : UIRect
 
 	public bool isVisible
 	{
-		[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
-		[CalledBy(Type = typeof(UIPanel), Member = "FindDrawCall")]
-		[CalledBy(Type = typeof(UIPanel), Member = "FillDrawCall")]
-		[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
-		[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
-		[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
-		[CalledBy(Type = typeof(UIWidget), Member = "MarkAsChanged")]
 		[CalledBy(Type = typeof(UIWidget), Member = "SetDirty")]
+		[CalledBy(Type = typeof(UIWidget), Member = "MarkAsChanged")]
+		[CalledBy(Type = typeof(UICamera), Member = "Raycast")]
+		[CalledBy(Type = typeof(UIPanel), Member = "FillAllDrawCalls")]
+		[CalledBy(Type = typeof(UIPanel), Member = "FillDrawCall")]
+		[CalledBy(Type = typeof(UIPanel), Member = "FindDrawCall")]
+		[CallerCount(Count = 9)]
 		[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-		[CallerCount(Count = 8)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -255,21 +247,21 @@ public class UIWidget : UIRect
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public Pivot rawPivot
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(Pivot);
 		}
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UIWidget), Member = "ResizeCollider")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -283,28 +275,18 @@ public class UIWidget : UIRect
 		{
 			return default(Pivot);
 		}
-		[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
-		[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
-		[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
+		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
 		[CalledBy(Type = typeof(BMSymbol), Member = "SetSpriteLocation")]
-		[CalledBy(Type = typeof(UITextList), Member = "Start")]
 		[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
 		[CalledBy(Type = typeof(UIInput), Member = "SetPivotToLeft")]
 		[CalledBy(Type = typeof(UIInput), Member = "SetPivotToRight")]
 		[CalledBy(Type = typeof(UIInput), Member = "RestoreLabelPivot")]
 		[CalledBy(Type = typeof(UITextList), Member = "Start")]
 		[CalledBy(Type = typeof(Panel_Container), Member = "HoverItem")]
-		[CallsUnknownMethods(Count = 17)]
-		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
-		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
-		[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
-		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+		[CallerCount(Count = 15)]
 		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
 		[CallsDeduplicatedMethods(Count = 8)]
-		[CallerCount(Count = 15)]
-		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
+		[CallsUnknownMethods(Count = 17)]
 		set
 		{
 		}
@@ -312,19 +294,35 @@ public class UIWidget : UIRect
 
 	public int depth
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
+		[CalledBy(Type = typeof(UICursor), Member = "Start")]
+		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
+		[CalledBy(Type = typeof(BMSymbol), Member = "SetSpriteLocation")]
+		[CalledBy(Type = typeof(NGUITools), Member = "AdjustDepth")]
+		[CalledBy(Type = typeof(NGUITools), Member = "NormalizeWidgetDepths")]
+		[CalledBy(Type = typeof(NGUITools), Member = "AddWidget")]
+		[CalledBy(Type = typeof(NGUITools), Member = "AddWidget")]
+		[CalledBy(Type = typeof(ButtonLegendItem), Member = "SetDepth")]
+		[CalledBy(Type = typeof(ClothingSlot), Member = "UpdatePaperDollTextureLayer")]
+		[CalledBy(Type = typeof(DragDropItem), Member = "MoveWidgetDepth")]
+		[CalledBy(Type = typeof(MapIcon), Member = "ShowHoverWidget")]
+		[CalledBy(Type = typeof(MapIcon), Member = "HideHoverWidget")]
+		[CalledBy(Type = typeof(MapIcon), Member = "SetDepths")]
+		[CalledBy(Type = typeof(ScrollList), Member = "SetObjectDepth")]
+		[CalledBy(Type = typeof(Panel_HUD), Member = "SetConditionLabelDepth")]
+		[CalledBy(Type = typeof(Panel_Map), Member = "SetMapIconBeingHovered")]
+		[CalledBy(Type = typeof(GenericSimpleScrollbarSpawner), Member = "AssignValuesToSpawnedObject")]
+		[CallerCount(Count = 34)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[Calls(Type = typeof(UIPanel), Member = "RemoveWidget")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 34)]
-		[Calls(Type = typeof(UIPanel), Member = "SortWidgets")]
 		[Calls(Type = typeof(UIPanel), Member = "AddWidget")]
+		[Calls(Type = typeof(UIPanel), Member = "SortWidgets")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 5)]
 		set
 		{
@@ -333,17 +331,16 @@ public class UIWidget : UIRect
 
 	public int raycastDepth
 	{
+		[CalledBy(Type = typeof(NGUITools), Member = "CalculateRaycastDepth")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[CalledBy(Type = typeof(NGUITools), Member = "CalculateRaycastDepth")]
-		[CalledBy(Type = typeof(NGUITools), Member = "CalculateRaycastDepth")]
-		[CallsUnknownMethods(Count = 1)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 		[Calls(Type = typeof(UIWidget), Member = "CreatePanel")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -361,8 +358,8 @@ public class UIWidget : UIRect
 	public virtual Vector2 localSize
 	{
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 3)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 3)]
 		get
 		{
 			return default(Vector2);
@@ -371,12 +368,12 @@ public class UIWidget : UIRect
 
 	public Vector3 localCenter
 	{
-		[CallsUnknownMethods(Count = 5)]
-		[CalledBy(Type = typeof(Panel_WorldMap), Member = "CheckForHoverState")]
 		[CalledBy(Type = typeof(UIWidget), Member = "get_worldCenter")]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[CalledBy(Type = typeof(Panel_WorldMap), Member = "CheckForHoverState")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Vector3), Member = "Lerp")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 5)]
 		get
 		{
 			return default(Vector3);
@@ -386,11 +383,11 @@ public class UIWidget : UIRect
 	public override Vector3[] worldCorners
 	{
 		[CalledBy(Type = typeof(UILabel), Member = "get_worldCorners")]
-		[CallsUnknownMethods(Count = 13)]
-		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
+		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 13)]
 		get
 		{
 			return null;
@@ -400,9 +397,9 @@ public class UIWidget : UIRect
 	public Vector3 worldCenter
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
 		[Calls(Type = typeof(UIWidget), Member = "get_localCenter")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		get
 		{
@@ -413,12 +410,9 @@ public class UIWidget : UIRect
 	public virtual Vector4 drawingDimensions
 	{
 		[CalledBy(Type = typeof(UILabel), Member = "get_drawingDimensions")]
-		[Calls(Type = typeof(Mathf), Member = "Lerp")]
 		[CallerCount(Count = 1)]
-		[Calls(Type = typeof(Mathf), Member = "Lerp")]
-		[Calls(Type = typeof(Mathf), Member = "Lerp")]
-		[Calls(Type = typeof(Mathf), Member = "Lerp")]
 		[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
+		[Calls(Type = typeof(Mathf), Member = "Lerp")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
@@ -428,17 +422,17 @@ public class UIWidget : UIRect
 
 	public virtual Material material
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsUnknownMethods(Count = 3)]
 		[Calls(Type = typeof(NotImplementedException), Member = ".ctor")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 3)]
 		set
 		{
 		}
@@ -446,19 +440,19 @@ public class UIWidget : UIRect
 
 	public virtual Texture mainTexture
 	{
-		[Calls(Type = typeof(Material), Member = "get_mainTexture")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(Material), Member = "get_mainTexture")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[Calls(Type = typeof(NotImplementedException), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 3)]
 		set
 		{
@@ -467,19 +461,19 @@ public class UIWidget : UIRect
 
 	public virtual Shader shader
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(NotImplementedException), Member = ".ctor")]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(NotImplementedException), Member = ".ctor")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 3)]
 		set
 		{
 		}
@@ -487,9 +481,9 @@ public class UIWidget : UIRect
 
 	public Vector2 relativeSize
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Vector2), Member = "get_one")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return default(Vector2);
@@ -498,13 +492,13 @@ public class UIWidget : UIRect
 
 	public bool hasBoxCollider
 	{
-		[CallsDeduplicatedMethods(Count = 3)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -514,175 +508,161 @@ public class UIWidget : UIRect
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public virtual int minHeight
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public virtual Vector4 border
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Vector4), Member = "get_zero")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return default(Vector4);
 		}
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = "ResizeCollider")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(NGUIMath), Member = "AdjustWidget")]
-	[CalledBy(Type = typeof(UIWidget), Member = "set_height")]
-	[CalledBy(Type = typeof(TextureCreditElement), Member = "Populate")]
-	[CalledBy(Type = typeof(SpriteCreditElement), Member = "Populate")]
 	[CalledBy(Type = typeof(UIWidget), Member = "set_width")]
+	[CalledBy(Type = typeof(UIWidget), Member = "set_height")]
+	[CalledBy(Type = typeof(SpriteCreditElement), Member = "Populate")]
+	[CalledBy(Type = typeof(TextureCreditElement), Member = "Populate")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(UIWidget), Member = "ResizeCollider")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void SetDimensions(int w, int h)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 25)]
 	[CalledBy(Type = typeof(UILabel), Member = "GetSides")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 25)]
 	public override Vector3[] GetSides(Transform relativeTo)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = "UpdateFinalAlpha")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIWidget), Member = "UpdateFinalAlpha")]
 	public override float CalculateFinalAlpha(int frameID)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CalledBy(Type = typeof(UIWidget), Member = "CalculateFinalAlpha")]
 	[CalledBy(Type = typeof(UIWidget), Member = "Invalidate")]
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UIRect), Member = "get_parent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	protected void UpdateFinalAlpha(int frameID)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UIRect), Member = "Invalidate")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UIPanel), Member = "get_clipCount")]
 	[Calls(Type = typeof(UIPanel), Member = "IsVisible")]
 	[Calls(Type = typeof(UIWidget), Member = "CalculateCumulativeAlpha")]
 	[Calls(Type = typeof(UIWidget), Member = "UpdateFinalAlpha")]
+	[Calls(Type = typeof(UIRect), Member = "Invalidate")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public override void Invalidate(bool includeChildren)
 	{
 	}
 
-	[CalledBy(Type = typeof(UIPanel), Member = "UpdateWidgets")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(UIWidget), Member = "Invalidate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UIRect), Member = "get_parent")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(UIPanel), Member = "UpdateWidgets")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UIRect), Member = "get_parent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public float CalculateCumulativeAlpha(int frameID)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(AnchorPoint), Member = "SetHorizontal")]
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
-	[Calls(Type = typeof(UIWidget), Member = "set_width")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(AnchorPoint), Member = "SetHorizontal")]
-	[Calls(Type = typeof(AnchorPoint), Member = "SetVertical")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AnchorPoint), Member = "SetVertical")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(UIWidget), Member = "set_width")]
+	[Calls(Type = typeof(UIWidget), Member = "set_height")]
 	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(AnchorPoint), Member = "SetHorizontal")]
+	[Calls(Type = typeof(AnchorPoint), Member = "SetVertical")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 14)]
 	public override void SetRect(float x, float y, float width, float height)
 	{
 	}
 
-	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-	[CalledBy(Type = typeof(UILabel), Member = "set_text")]
-	[CalledBy(Type = typeof(UIWidget), Member = "OnAnchor")]
-	[CalledBy(Type = typeof(UIWidget), Member = "SetDimensions")]
-	[CalledBy(Type = typeof(UIWidget), Member = "set_rawPivot")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(UIWidget), Member = "set_drawRegion")]
-	[Calls(Type = typeof(NGUITools), Member = "UpdateWidgetCollider")]
+	[CalledBy(Type = typeof(UIWidget), Member = "set_rawPivot")]
+	[CalledBy(Type = typeof(UIWidget), Member = "SetDimensions")]
+	[CalledBy(Type = typeof(UIWidget), Member = "OnAnchor")]
+	[CalledBy(Type = typeof(UILabel), Member = "set_text")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+	[Calls(Type = typeof(NGUITools), Member = "UpdateWidgetCollider")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public void ResizeCollider()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[DebuggerHidden]
+	[DebuggerStepThrough]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
 	[Calls(Type = typeof(UIWidget), Member = "PanelCompareFunc")]
-	[CallerCount(Count = 0)]
-	[DebuggerStepThrough]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[DebuggerHidden]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public static int FullCompareFunc(UIWidget left, UIWidget right)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(UIWidget), Member = "FullCompareFunc")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(UIPanel), Member = "AddWidget")]
-	[CalledBy(Type = typeof(UIPanel), Member = "AddWidget")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[DebuggerHidden]
 	[DebuggerStepThrough]
+	[CalledBy(Type = typeof(UIWidget), Member = "FullCompareFunc")]
+	[CalledBy(Type = typeof(UIPanel), Member = "AddWidget")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "GetInstanceID")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static int PanelCompareFunc(UIWidget left, UIWidget right)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -692,33 +672,36 @@ public class UIWidget : UIRect
 		return default(Bounds);
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsUnknownMethods(Count = 11)]
-	[CalledBy(Type = typeof(UIStretch), Member = "Update")]
-	[CalledBy(Type = typeof(UIAnchor), Member = "LateUpdate")]
 	[CalledBy(Type = typeof(UIWidget), Member = "CalculateBounds")]
-	[Calls(Type = typeof(Bounds), Member = "Encapsulate")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Bounds), Member = "Encapsulate")]
+	[CalledBy(Type = typeof(UIAnchor), Member = "LateUpdate")]
+	[CalledBy(Type = typeof(UIStretch), Member = "Update")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Transform), Member = "get_worldToLocalMatrix")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Bounds), Member = "Encapsulate")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 11)]
 	public Bounds CalculateBounds(Transform relativeParent)
 	{
 		return default(Bounds);
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = "CreatePanel")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UIWidget), Member = "get_isVisible")]
+	[Calls(Type = typeof(UIWidget), Member = "CreatePanel")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetDirty()
 	{
 	}
 
+	[CalledBy(Type = typeof(UIWidget), Member = "ParentHasChanged")]
+	[CalledBy(Type = typeof(UIWidget), Member = "OnInit")]
+	[CalledBy(Type = typeof(UIWidget), Member = "OnDisable")]
+	[CalledBy(Type = typeof(UIWidget), Member = "OnDestroy")]
+	[CalledBy(Type = typeof(UI2DSprite), Member = "set_sprite2D")]
 	[CalledBy(Type = typeof(UI2DSprite), Member = "set_material")]
 	[CalledBy(Type = typeof(UI2DSprite), Member = "set_shader")]
 	[CalledBy(Type = typeof(UILabel), Member = "set_material")]
@@ -730,122 +713,112 @@ public class UIWidget : UIRect
 	[CalledBy(Type = typeof(UITexture), Member = "set_mainTexture")]
 	[CalledBy(Type = typeof(UITexture), Member = "set_material")]
 	[CalledBy(Type = typeof(UITexture), Member = "set_shader")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(UIWidget), Member = "OnDestroy")]
-	[CalledBy(Type = typeof(UIWidget), Member = "OnDisable")]
-	[CalledBy(Type = typeof(UI2DSprite), Member = "set_sprite2D")]
-	[CalledBy(Type = typeof(UIWidget), Member = "ParentHasChanged")]
-	[CalledBy(Type = typeof(UIWidget), Member = "OnInit")]
-	[Calls(Type = typeof(UIPanel), Member = "RemoveWidget")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 16)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UIPanel), Member = "RemoveWidget")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void RemoveFromPanel()
 	{
 	}
 
-	[CalledBy(Type = typeof(UILabel), Member = "MarkAsChanged")]
 	[CalledBy(Type = typeof(UILabel), Member = "set_trueTypeFont")]
-	[Calls(Type = typeof(UIWidget), Member = "CheckLayer")]
-	[Calls(Type = typeof(UIWidget), Member = "CreatePanel")]
-	[Calls(Type = typeof(UIWidget), Member = "get_isVisible")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(UILabel), Member = "MarkAsChanged")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+	[Calls(Type = typeof(UIWidget), Member = "get_isVisible")]
+	[Calls(Type = typeof(UIWidget), Member = "CreatePanel")]
+	[Calls(Type = typeof(UIWidget), Member = "CheckLayer")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public virtual void MarkAsChanged()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(UILabel), Member = "OnStart")]
-	[CalledBy(Type = typeof(UILabel), Member = "OnFontChanged")]
-	[CalledBy(Type = typeof(UI2DSprite), Member = "set_sprite2D")]
-	[CalledBy(Type = typeof(UIWidget), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(UIWidget), Member = "OnStart")]
-	[CalledBy(Type = typeof(UIWidget), Member = "ParentHasChanged")]
-	[CalledBy(Type = typeof(UIWidget), Member = "MarkAsChanged")]
-	[CalledBy(Type = typeof(UIWidget), Member = "SetDirty")]
-	[CalledBy(Type = typeof(UIWidget), Member = "get_raycastDepth")]
 	[CalledBy(Type = typeof(NGUITools), Member = "CallCreatePanel")]
-	[Calls(Type = typeof(UIWidget), Member = "CheckLayer")]
-	[Calls(Type = typeof(UIPanel), Member = "AddWidget")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UIPanel), Member = "Find")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedGameObject")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(UIWidget), Member = "get_raycastDepth")]
+	[CalledBy(Type = typeof(UIWidget), Member = "SetDirty")]
+	[CalledBy(Type = typeof(UIWidget), Member = "MarkAsChanged")]
+	[CalledBy(Type = typeof(UIWidget), Member = "ParentHasChanged")]
+	[CalledBy(Type = typeof(UIWidget), Member = "OnStart")]
+	[CalledBy(Type = typeof(UIWidget), Member = "OnUpdate")]
+	[CalledBy(Type = typeof(UI2DSprite), Member = "set_sprite2D")]
+	[CalledBy(Type = typeof(UILabel), Member = "OnFontChanged")]
+	[CalledBy(Type = typeof(UILabel), Member = "OnStart")]
 	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(NGUITools), Member = "GetActive")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedGameObject")]
 	[Calls(Type = typeof(GameObject), Member = "get_layer")]
+	[Calls(Type = typeof(UIPanel), Member = "Find")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UIPanel), Member = "AddWidget")]
+	[Calls(Type = typeof(UIWidget), Member = "CheckLayer")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public UIPanel CreatePanel()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 2)]
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(UIWidget), Member = "CreatePanel")]
-	[Calls(Type = typeof(GameObject), Member = "set_layer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CalledBy(Type = typeof(UIWidget), Member = "MarkAsChanged")]
+	[CalledBy(Type = typeof(UIWidget), Member = "CreatePanel")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(GameObject), Member = "set_layer")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 13)]
 	public void CheckLayer()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UIRect), Member = "ParentHasChanged")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedGameObject")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UIWidget), Member = "CreatePanel")]
 	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedGameObject")]
 	[Calls(Type = typeof(UIPanel), Member = "Find")]
+	[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
+	[Calls(Type = typeof(UIWidget), Member = "CreatePanel")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void ParentHasChanged()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	protected virtual void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(UISprite), Member = "OnInit")]
 	[CalledBy(Type = typeof(UILabel), Member = "OnInit")]
-	[Calls(Type = typeof(UIRect), Member = "Update")]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
-	[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
-	[Calls(Type = typeof(UIRect), Member = "OnInit")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[CalledBy(Type = typeof(UISprite), Member = "OnInit")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UIRect), Member = "OnInit")]
+	[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(UIRect), Member = "Update")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	protected override void OnInit()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(NGUITools), Member = "UpdateWidgetCollider")]
-	[Calls(Type = typeof(Mathf), Member = "Abs")]
-	[Calls(Type = typeof(Mathf), Member = "Abs")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
 	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(Mathf), Member = "Abs")]
+	[Calls(Type = typeof(NGUITools), Member = "UpdateWidgetCollider")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	protected virtual void UpgradeFrom265()
 	{
 	}
@@ -856,54 +829,37 @@ public class UIWidget : UIRect
 	{
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[Calls(Type = typeof(AnchorPoint), Member = "GetSides")]
-	[Calls(Type = typeof(UIRect), Member = "GetLocalPos")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AnchorPoint), Member = "GetSides")]
-	[Calls(Type = typeof(UIRect), Member = "GetLocalPos")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(AnchorPoint), Member = "GetSides")]
-	[Calls(Type = typeof(UIRect), Member = "GetLocalPos")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[CallsUnknownMethods(Count = 56)]
 	[CalledBy(Type = typeof(UILabel), Member = "OnAnchor")]
-	[Calls(Type = typeof(UIWidget), Member = "ResizeCollider")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
-	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(UIRect), Member = "GetLocalPos")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIRect), Member = "GetLocalPos")]
-	[Calls(Type = typeof(AnchorPoint), Member = "GetSides")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(AnchorPoint), Member = "GetSides")]
+	[Calls(Type = typeof(UIRect), Member = "GetLocalPos")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
+	[Calls(Type = typeof(Mathf), Member = "RoundToInt")]
+	[Calls(Type = typeof(UIWidget), Member = "ResizeCollider")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 56)]
 	protected override void OnAnchor()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
+	[CalledBy(Type = typeof(UI2DSprite), Member = "OnUpdate")]
 	[CalledBy(Type = typeof(UISprite), Member = "OnUpdate")]
 	[CalledBy(Type = typeof(UITexture), Member = "OnUpdate")]
-	[CalledBy(Type = typeof(UI2DSprite), Member = "OnUpdate")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UIWidget), Member = "CreatePanel")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected override void OnUpdate()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnApplicationPause(bool paused)
 	{
 	}
@@ -924,84 +880,74 @@ public class UIWidget : UIRect
 	[CallerCount(Count = 0)]
 	public bool UpdateVisibility(bool visibleByAlpha, bool visibleByPanel)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Transform), Member = "TransformPoint")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(UIPanel), Member = "UpdateWidgets")]
-	[Calls(Type = typeof(Transform), Member = "TransformPoint")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
-	[Calls(Type = typeof(Transform), Member = "get_localToWorldMatrix")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
 	[Calls(Type = typeof(Transform), Member = "set_hasChanged")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(Transform), Member = "get_localToWorldMatrix")]
 	[Calls(Type = typeof(Matrix4x4), Member = "op_Multiply")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
+	[Calls(Type = typeof(Transform), Member = "TransformPoint")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	public bool UpdateTransform(int frame)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UIGeometry), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Matrix4x4), Member = "op_Multiply")]
-	[Calls(Type = typeof(Transform), Member = "get_localToWorldMatrix")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Transform), Member = "get_localToWorldMatrix")]
-	[Calls(Type = typeof(Matrix4x4), Member = "op_Multiply")]
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(UIPanel), Member = "UpdateWidgets")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(Transform), Member = "get_localToWorldMatrix")]
+	[Calls(Type = typeof(Matrix4x4), Member = "op_Multiply")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UIGeometry), Member = "Clear")]
 	[Calls(Type = typeof(UIGeometry), Member = "ApplyTransform")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 17)]
 	public bool UpdateGeometry(int frame)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(UIGeometry), Member = "WriteToBuffers")]
+	[CallsUnknownMethods(Count = 1)]
 	public void WriteToBuffers(BetterList<Vector3> v, BetterList<Vector2> u, BetterList<Color32> c, BetterList<Vector3> n, BetterList<Vector4> t)
 	{
 	}
 
-	[CalledBy(Type = typeof(UISprite), Member = "MakePixelPerfect")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
 	[CalledBy(Type = typeof(UI2DSprite), Member = "MakePixelPerfect")]
 	[CalledBy(Type = typeof(UILabel), Member = "MakePixelPerfect")]
-	[CallsUnknownMethods(Count = 11)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(UISprite), Member = "MakePixelPerfect")]
 	[CalledBy(Type = typeof(UITexture), Member = "MakePixelPerfect")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 11)]
 	public virtual void MakePixelPerfect()
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public virtual void OnFill(BetterList<Vector3> verts, BetterList<Vector2> uvs, BetterList<Color32> cols)
 	{
 	}
 
-	[Calls(Type = typeof(UIGeometry), Member = ".ctor")]
-	[Calls(Type = typeof(UIRect), Member = ".ctor")]
 	[CalledBy(Type = typeof(UIBasicSprite), Member = ".ctor")]
+	[CalledBy(Type = typeof(UI2DSprite), Member = ".ctor")]
 	[CalledBy(Type = typeof(UILabel), Member = ".ctor")]
 	[CalledBy(Type = typeof(UISprite), Member = ".ctor")]
 	[CalledBy(Type = typeof(UITexture), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(UI2DSprite), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UIGeometry), Member = ".ctor")]
+	[Calls(Type = typeof(UIRect), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public UIWidget()
 	{
 	}

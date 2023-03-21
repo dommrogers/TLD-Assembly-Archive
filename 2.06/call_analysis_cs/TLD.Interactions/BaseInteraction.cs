@@ -18,16 +18,16 @@ public abstract class BaseInteraction : MonoBehaviour, IInteraction
 
 	public string HoverText
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 58)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 61)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 36)]
+		[CallerCount(Count = 38)]
 		set
 		{
 		}
@@ -40,7 +40,7 @@ public abstract class BaseInteraction : MonoBehaviour, IInteraction
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -51,10 +51,10 @@ public abstract class BaseInteraction : MonoBehaviour, IInteraction
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
 		set
 		{
 		}
@@ -67,11 +67,11 @@ public abstract class BaseInteraction : MonoBehaviour, IInteraction
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(BreakDown), Member = "InitializeInteraction")]
 	[CalledBy(Type = typeof(BodyHarvestInteraction), Member = "InitializeInteraction")]
 	[CalledBy(Type = typeof(WildlifeItemInteraction), Member = "InitializeInteraction")]
 	[CalledBy(Type = typeof(TimedHoldInteraction), Member = "InitializeInteraction")]
+	[CallerCount(Count = 4)]
 	public virtual void InitializeInteraction()
 	{
 	}
@@ -83,14 +83,12 @@ public abstract class BaseInteraction : MonoBehaviour, IInteraction
 	{
 	}
 
-	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
 	public virtual void UpdateInteraction(float deltaTime)
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	public abstract bool PerformInteraction();
 
 	[CallAnalysisFailed]
@@ -100,46 +98,47 @@ public abstract class BaseInteraction : MonoBehaviour, IInteraction
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 1446)]
+	[CallerCount(Count = 1552)]
 	[CallsUnknownMethods(Count = 1)]
 	public GameObject GetInteractiveObject()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(BaseInteraction), Member = "TryFindEventForEventType")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 30)]
+	[Calls(Type = typeof(BaseInteraction), Member = "TryFindEventForEventType")]
+	[Calls(Type = typeof(UnityEvent<>), Member = "Invoke")]
+	[CallsUnknownMethods(Count = 1)]
 	public void TriggerEvent(InteractionEventType eventType)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(BaseInteraction), Member = "FindOrAddEventForEventType")]
 	[Calls(Type = typeof(UnityEventBase), Member = "AddCall")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void AddEventCallback(InteractionEventType eventType, UnityAction<BaseInteraction> eventCallback)
 	{
 	}
 
+	[CalledBy(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
 	[CalledBy(Type = typeof(BaseInteraction), Member = "FindOrAddEventForEventType")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsUnknownMethods(Count = 4)]
 	private bool TryFindEventForEventType(InteractionEventType eventType, out InteractionEvent interactionEvent)
 	{
 		interactionEvent = null;
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(BaseInteraction), Member = "AddEventCallback")]
-	[CallsUnknownMethods(Count = 12)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BaseInteraction), Member = "TryFindEventForEventType")]
 	[Calls(Type = typeof(UnityEventBase), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(BaseInteraction), Member = "TryFindEventForEventType")]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	private InteractionEvent FindOrAddEventForEventType(InteractionEventType eventType)
 	{
 		return null;

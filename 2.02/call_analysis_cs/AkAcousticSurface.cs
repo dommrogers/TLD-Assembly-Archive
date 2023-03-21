@@ -10,12 +10,12 @@ public class AkAcousticSurface : IDisposable
 
 	public uint textureID
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -27,12 +27,12 @@ public class AkAcousticSurface : IDisposable
 
 	public uint reflectorChannelMask
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -45,17 +45,17 @@ public class AkAcousticSurface : IDisposable
 	public string strName
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(AkSoundEngine), Member = "StringFromIntPtrString")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CalledBy(Type = typeof(AkSurfaceReflector), Member = "AddGeometrySet")]
-		[CallsUnknownMethods(Count = 4)]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 4)]
 		set
 		{
 		}
@@ -67,12 +67,12 @@ public class AkAcousticSurface : IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(AkAcousticSurfaceArray), Member = "CloneIntoReferenceFromIntPtr")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(AkAcousticSurfaceArray), Member = "CloneIntoReferenceFromIntPtr")]
 	internal static IntPtr getCPtr(AkAcousticSurface obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -89,11 +89,11 @@ public class AkAcousticSurface : IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}
@@ -106,8 +106,8 @@ public class AkAcousticSurface : IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkAcousticSurface_Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Clear()
 	{
 	}
@@ -120,15 +120,15 @@ public class AkAcousticSurface : IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkAcousticSurface_GetSizeOf")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static int GetSizeOf()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkAcousticSurface_Clone")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkAcousticSurface_Clone")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	public void Clone(AkAcousticSurface other)
 	{

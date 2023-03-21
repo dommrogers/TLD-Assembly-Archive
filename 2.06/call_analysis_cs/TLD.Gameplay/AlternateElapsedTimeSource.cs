@@ -5,8 +5,6 @@ namespace TLD.Gameplay;
 
 public abstract class AlternateElapsedTimeSource : ScriptableObject
 {
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	public abstract float GetElapsedTimeInHours();
 
 	[DeduplicatedMethod]

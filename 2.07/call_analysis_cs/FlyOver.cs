@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Serialization;
 using UnityEngine;
@@ -74,27 +73,27 @@ public class FlyOver : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(FlyOver), Member = "MaybeSpawnFlyover")]
 	[Calls(Type = typeof(FlyOver), Member = "MoveFlyover")]
 	[Calls(Type = typeof(FlyOver), Member = "MaybeDestroyFlyover")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Update()
 	{
 	}
 
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(FlyOver), Member = "ResetFlyoverTimer")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(FlyOver), Member = "ResetFlyoverTimer")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
@@ -108,117 +107,102 @@ public class FlyOver : MonoBehaviour
 	[Calls(Type = typeof(Physics), Member = "SphereCast")]
 	private bool HasClearFlightPath(Vector3 start, Vector3 dir)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Physics), Member = "SphereCast")]
 	[CalledBy(Type = typeof(Carrion), Member = "Create")]
 	[CalledBy(Type = typeof(FlyOver), Member = "MaybeSpawnFlyover")]
 	[CalledBy(Type = typeof(FlyOver), Member = "MoveFlyover")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Physics), Member = "SphereCast")]
 	[CallsUnknownMethods(Count = 1)]
 	public static bool TryGetClearFlightHeight(Vector3 center, float radius, out float height, out float updatedRadius)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref height) = null;
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref updatedRadius) = null;
-		return default(bool);
+		height = default(float);
+		updatedRadius = default(float);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Weather), Member = "GetDebugWeatherText")]
-	[CalledBy(Type = typeof(Weather), Member = "GetDebugWeatherText")]
 	[CalledBy(Type = typeof(Weather), Member = "GetDebugWeatherText")]
 	[CallerCount(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public static GameObject GetCurrentFormation()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(FlyOver), Member = "Update")]
-	[Calls(Type = typeof(FlyOver), Member = "ResetFlyoverTimer")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Physics), Member = "SphereCast")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(FlyOver), Member = "TryGetClearFlightHeight")]
-	[Calls(Type = typeof(Random), Member = "get_insideUnitCircle")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(FlyOver), Member = "CanSpawnFlyover")]
 	[Calls(Type = typeof(Random), Member = "Range")]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Random), Member = "get_insideUnitCircle")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(FlyOver), Member = "TryGetClearFlightHeight")]
+	[Calls(Type = typeof(Physics), Member = "SphereCast")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(FlyOver), Member = "ResetFlyoverTimer")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 12)]
 	private void MaybeSpawnFlyover()
 	{
 	}
 
-	[Calls(Type = typeof(FlyOver), Member = "TryGetClearFlightHeight")]
-	[CallsUnknownMethods(Count = 31)]
 	[CalledBy(Type = typeof(FlyOver), Member = "Update")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
-	[Calls(Type = typeof(Transform), Member = "RotateAround")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 26)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(FlyOver), Member = "TryGetClearFlightHeight")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(Transform), Member = "RotateAround")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetAudioSourceTransform")]
+	[CallsDeduplicatedMethods(Count = 26)]
+	[CallsUnknownMethods(Count = 31)]
 	private void MoveFlyover()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(FlyOver), Member = "Update")]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 10)]
 	private void MaybeDestroyFlyover()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(FlyOver), Member = "MaybeSpawnFlyover")]
-	[Calls(Type = typeof(Weather), Member = "IsSnowing")]
-	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
+	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
+	[Calls(Type = typeof(Weather), Member = "IsSnowing")]
+	[CallsUnknownMethods(Count = 6)]
 	private bool CanSpawnFlyover()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(FlyOver), Member = "MaybeSpawnFlyover")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[CalledBy(Type = typeof(FlyOver), Member = "Deserialize")]
 	[CalledBy(Type = typeof(FlyOver), Member = "Start")]
-	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
-	[Calls(Type = typeof(Random), Member = "Range")]
+	[CalledBy(Type = typeof(FlyOver), Member = "Deserialize")]
+	[CalledBy(Type = typeof(FlyOver), Member = "MaybeSpawnFlyover")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ResetFlyoverTimer()
 	{
 	}

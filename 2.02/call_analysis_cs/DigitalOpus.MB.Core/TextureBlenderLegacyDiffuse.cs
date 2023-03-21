@@ -12,20 +12,19 @@ public class TextureBlenderLegacyDiffuse : TextureBlender
 	private Color m_defaultTintColor;
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Equals")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Equals")]
-	[Calls(Type = typeof(string), Member = "Equals")]
 	[CallsUnknownMethods(Count = 1)]
 	public bool DoesShaderNameMatch(string shaderName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Material), Member = "GetColor")]
-	[Calls(Type = typeof(string), Member = "EndsWith")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "EndsWith")]
+	[Calls(Type = typeof(Material), Member = "GetColor")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnBeforeTintTexture(Material sourceMat, string shaderTexturePropertyName)
 	{
 	}
@@ -38,35 +37,35 @@ public class TextureBlenderLegacyDiffuse : TextureBlender
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(TextureBlenderFallback), Member = "_compareColor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool NonTexturePropertiesAreEqual(Material a, Material b)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Material), Member = "SetColor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetNonTexturePropertyValuesOnResultMaterial(Material resultMaterial)
 	{
 	}
 
-	[Calls(Type = typeof(Material), Member = "HasProperty")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Material), Member = "GetColor")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Equals")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Material), Member = "HasProperty")]
+	[Calls(Type = typeof(Material), Member = "GetColor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public Color GetColorIfNoTexture(Material m, ShaderTextureProperty texPropertyName)
 	{
 		return default(Color);
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public TextureBlenderLegacyDiffuse()
 	{
 	}

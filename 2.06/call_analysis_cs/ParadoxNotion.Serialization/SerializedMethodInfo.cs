@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Reflection;
 using Cpp2ILInjected.CallAnalysis;
 
@@ -30,10 +31,10 @@ public class SerializedMethodInfo : SerializedMethodBaseInfo
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		internal string _003COnBeforeSerialize_003Eb__5_0(ParameterInfo p)
 		{
 			return null;
@@ -56,19 +57,19 @@ public class SerializedMethodInfo : SerializedMethodBaseInfo
 		[CallerCount(Count = 0)]
 		internal bool _003COnAfterDeserialize_003Eb__6_1(Type t)
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
 		internal Type _003COnAfterDeserialize_003Eb__6_3(string x)
 		{
 			return null;
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		internal Type _003COnAfterDeserialize_003Eb__6_5(ParameterInfo p)
 		{
 			return null;
@@ -89,12 +90,12 @@ public class SerializedMethodInfo : SerializedMethodBaseInfo
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003COnAfterDeserialize_003Eb__2(MethodInfo m)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -110,13 +111,14 @@ public class SerializedMethodInfo : SerializedMethodBaseInfo
 		{
 		}
 
-		[CallsUnknownMethods(Count = 7)]
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 		[CallerCount(Count = 0)]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+		[Calls(Type = typeof(Enumerable), Member = "Select")]
 		[CallsDeduplicatedMethods(Count = 7)]
+		[CallsUnknownMethods(Count = 6)]
 		internal bool _003COnAfterDeserialize_003Eb__4(MethodInfo m)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -132,30 +134,33 @@ public class SerializedMethodInfo : SerializedMethodBaseInfo
 	[NonSerialized]
 	private bool _hasChanged;
 
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(string), Member = "Join")]
-	[Calls(Type = typeof(string), Member = "Join")]
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[Calls(Type = typeof(string), Member = "Join")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 11)]
 	public override void OnBeforeSerialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 45)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(ReflectionTools), Member = "RTGetMethods")]
-	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
-	[Calls(Type = typeof(ReflectionTools), Member = "RTGetMethod")]
-	[Calls(Type = typeof(ReflectionTools), Member = "RTGetMethods")]
-	[Calls(Type = typeof(string), Member = "Split")]
-	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
-	[Calls(Type = typeof(string), Member = "Split")]
-	[CallsDeduplicatedMethods(Count = 14)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[Calls(Type = typeof(Enumerable), Member = "All")]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTGetMethods")]
+	[Calls(Type = typeof(Enumerable), Member = "FirstOrDefault")]
+	[Calls(Type = typeof(ReflectionTools), Member = "RTGetMethod")]
+	[Calls(Type = typeof(Enumerable), Member = "First")]
+	[Calls(Type = typeof(Enumerable), Member = "FirstOrDefault")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 39)]
 	public override void OnAfterDeserialize()
 	{
 	}
@@ -172,14 +177,14 @@ public class SerializedMethodInfo : SerializedMethodBaseInfo
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 58)]
+	[CallerCount(Count = 61)]
 	public MethodInfo Get()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 58)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 61)]
 	public override MethodBase GetBase()
 	{
 		return null;
@@ -189,13 +194,12 @@ public class SerializedMethodInfo : SerializedMethodBaseInfo
 	[CallerCount(Count = 0)]
 	public override bool HasChanged()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[CallsUnknownMethods(Count = 1)]
 	public override string GetMethodString()

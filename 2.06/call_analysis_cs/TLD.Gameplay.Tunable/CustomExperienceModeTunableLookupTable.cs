@@ -52,8 +52,8 @@ public class CustomExperienceModeTunableLookupTable : ScriptableObject
 
 	public CustomTunableLookup_ProportionalMaxItems m_MaxItemReductionByEmptyContainerChance;
 
-	[CallerCount(Count = 23)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 27)]
 	public IList<ExperienceMode> GetBaseExperienceModes()
 	{
 		return null;

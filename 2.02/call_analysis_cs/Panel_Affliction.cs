@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
@@ -72,31 +71,31 @@ public class Panel_Affliction : Panel_Base
 
 	private static List<Affliction> m_TmpAfflictionList;
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
 	[Calls(Type = typeof(Panel_Affliction), Member = "InitializeColorReferences")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	public override void Initialize()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[Calls(Type = typeof(Panel_Affliction), Member = "RefreshVisuals")]
 	[Calls(Type = typeof(Panel_Affliction), Member = "UpdateGamepadSelection")]
 	[Calls(Type = typeof(Panel_Affliction), Member = "OnCancel")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void LateUpdate()
 	{
 	}
@@ -107,498 +106,432 @@ public class Panel_Affliction : Panel_Base
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UseFirstAidItem")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "UpdateGamepadSelection")]
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "OnCancel")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "Enable")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "MovePanel")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "EnableInventoryRightSide")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "RestorePanel")]
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "OnCancel")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "TreatWound")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "SetupScrollList")]
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "UpdateGamepadSelection")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UseFirstAidItem")]
 	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
 	[Calls(Type = typeof(Panel_Affliction), Member = "EnableInventoryRightSide")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "RefreshVisuals")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "RestorePanel")]
 	[Calls(Type = typeof(PostProcessEffectSettings), Member = "set_active")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(ItemDescriptionPage), Member = "GetEquipButtonLocalizationId")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "Clear")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "RestorePanel")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "SetupScrollList")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "RefreshVisuals")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "MovePanel")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 10)]
 	public void Enable(bool enable, List<Affliction> listAffliction, FirstAidItem firstAidItem)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnCancel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(ScrollList), Member = "UpdateDurationAllTweens")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SelectItemByIndex(int index)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(ScrollList), Member = "Prev")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void PreviousAffliction()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(ScrollList), Member = "Next")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void NextAffliction()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Affliction), Member = "TryGetSelectedAffliction")]
 	[Calls(Type = typeof(PlayerManager), Member = "TreatAfflictionWithFirstAid")]
 	[Calls(Type = typeof(Panel_Affliction), Member = "Enable")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void TreatWound()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "AfflictionListHasChanged")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "HasRiskAffliction")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "HasBadAffliction")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshScrollList")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetAllBadAfflictions")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "GetAfflictions")]
-	[CallerCount(Count = 7)]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshPaperDoll")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshScrollList")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "HasBadAffliction")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "HasRiskAffliction")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "AfflictionListHasChanged")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(Panel_Affliction), Member = "GetAfflictions")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static void GetAllAfflictions(ref List<Affliction> list)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UseFirstAidItem")]
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "CanBeTreated")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UseFirstAidItem")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(Panel_Affliction), Member = "GetAllAfflictions")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "CanBeTreated")]
 	[Calls(Type = typeof(Affliction), Member = "IsBeneficial")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	public static void GetAllBadAfflictions(AfflictionExclusions exclusions, ref List<Affliction> badAfflictions)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
+	[CallerCount(Count = 19)]
 	[Calls(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 19)]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
 	public static AfflictionBodyArea GetAfflictionLocation(AfflictionType type, int localAfflictionIndex)
 	{
 		return default(AfflictionBodyArea);
 	}
 
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "RefreshtListOfShownAfflictionTypes")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(BloodLoss), Member = "HasBloodLoss")]
+	[Calls(Type = typeof(Infection), Member = "HasInfection")]
+	[Calls(Type = typeof(SprainedAnkle), Member = "HasSprainedAnkle")]
+	[Calls(Type = typeof(InfectionRisk), Member = "HasInfectionRisk")]
+	[Calls(Type = typeof(SprainedWrist), Member = "HasSprainedWrist")]
+	[Calls(Type = typeof(Frostbite), Member = "GetFrostbiteAfflictionCount")]
+	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsPumpkinPieBuffActive")]
+	[Calls(Type = typeof(Frostbite), Member = "GetFrostbiteRiskAfflictionCount")]
+	[Calls(Type = typeof(BrokenRib), Member = "GetBrokenRibCount")]
+	[Calls(Type = typeof(Sprains), Member = "HasSprainsRiskAffliction")]
+	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostActive")]
 	[Calls(Type = typeof(Headache), Member = "GetHeadacheActive")]
 	[Calls(Type = typeof(SprainPain), Member = "HasSprainPain")]
 	[Calls(Type = typeof(DamageProtection), Member = "HasDamageProtection")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "RefreshtListOfShownAfflictionTypes")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "RefreshRightPage")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "RefreshtListOfShownAfflictionTypes")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "RefreshtListOfShownAfflictionTypes")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "RefreshtListOfShownAfflictionTypes")]
-	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostActive")]
-	[CallsUnknownMethods(Count = 72)]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "RefreshtListOfShownAfflictionTypes")]
-	[Calls(Type = typeof(Sprains), Member = "HasSprainsRiskAffliction")]
-	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
-	[Calls(Type = typeof(Frostbite), Member = "GetFrostbiteRiskAfflictionCount")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsPumpkinPieBuffActive")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsPumpkinPieBuffActive")]
-	[Calls(Type = typeof(Frostbite), Member = "GetFrostbiteAfflictionCount")]
-	[Calls(Type = typeof(SprainedWrist), Member = "HasSprainedWrist")]
-	[Calls(Type = typeof(InfectionRisk), Member = "HasInfectionRisk")]
-	[Calls(Type = typeof(SprainedAnkle), Member = "HasSprainedAnkle")]
-	[Calls(Type = typeof(Infection), Member = "HasInfection")]
-	[Calls(Type = typeof(BloodLoss), Member = "HasBloodLoss")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 6)]
-	[Calls(Type = typeof(BrokenRib), Member = "GetBrokenRibCount")]
+	[CallsUnknownMethods(Count = 72)]
 	public static bool HasAffliction(AfflictionType afflictionType)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Panel_Affliction), Member = "MaybeAddOrFilter")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetAllAfflictions")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "EatingComplete_Internal")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "RefreshtListOfShownAfflictionTypes")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Affliction), Member = "GetAfflictionsCount")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Affliction), Member = "RefreshtListOfShownAfflictionTypes")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "GetAfflictionsCount")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "GetCurrentAffliction")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "MaybeAddOrFilter")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void GetAfflictions(FirstAidItem firstAidItem, ref List<Affliction> list)
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetAllBadAfflictions")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "RequiresPainKiller")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "RequiresAntibiotic")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Panel_Affliction), Member = "RequiresBandage")]
 	[Calls(Type = typeof(Panel_Affliction), Member = "RequiresAntiseptic")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_Affliction), Member = "RequiresAntibiotic")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "RequiresPainKiller")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public static bool CanBeTreated(Affliction affliction)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnFirstAidComplete")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "MaybeAddOrFilter")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UseInventoryItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnFirstAidComplete")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "RequiresPainKiller")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "RequiresAntibiotic")]
 	[Calls(Type = typeof(Panel_Affliction), Member = "RequiresAntiseptic")]
 	[Calls(Type = typeof(Panel_Affliction), Member = "RequiresBandage")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "RequiresPainKiller")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Panel_Affliction), Member = "RequiresAntibiotic")]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool CanBeTreatedWith(FirstAidItem firstAidItem, Affliction affliction)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(Affliction), Member = "LocalizedNameFromAfflictionType")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetAfflictions")]
+	[CallerCount(Count = 2)]
 	public static int GetAfflictionsCount(AfflictionType afflictionType)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "UpdateGamepadSelection")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "TreatWound")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "UpdateGamepadSelection")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool TryGetSelectedAffliction(out Affliction affliction)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<Affliction, @null>(ref affliction) = null;
-		return default(bool);
+		affliction = default(Affliction);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "Enable")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 9)]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "Enable")]
 	[CallsUnknownMethods(Count = 16)]
 	private void MovePanel()
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "Enable")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 8)]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "Enable")]
 	[CallsUnknownMethods(Count = 9)]
 	private void RestorePanel()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "RefreshVisuals")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(AfflictionButton), Member = "GetColorBasedOnAffliction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(AfflictionButton), Member = "GetColorBasedOnAffliction")]
 	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateCoverFlowColor(int index, bool isSelected)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "RefreshVisuals")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "UpdateSelectedAffliction")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "RefreshVisuals")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(AfflictionButton), Member = "GetColorBasedOnAffliction")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Affliction), Member = "LocalizedNameFromAfflictionType")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(AfflictionButton), Member = "GetColorBasedOnAffliction")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateSelectedAffliction(Affliction affliction)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Panel_Affliction), Member = "UpdateSelectedAffliction")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateSelectedAffliction(int selectedAfflictionIndex)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "UpdateButtonLegend")]
-	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "Enable")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Panel_Affliction), Member = "UpdateCoverFlowColor")]
 	[Calls(Type = typeof(Panel_Affliction), Member = "UpdateSelectedAffliction")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "UpdateCoverFlowColor")]
+	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "SetLocID")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "UpdateButtonLegend")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsUnknownMethods(Count = 12)]
 	private void RefreshVisuals()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "Enable")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void EnableInventoryRightSide(bool enabled)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "Enable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(AfflictionCoverflow), Member = "SetAffliction")]
-	[Calls(Type = typeof(AfflictionCoverflow), Member = "SetEmptySlot")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
-	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(ScrollList), Member = "CleanUp")]
+	[Calls(Type = typeof(ScrollList), Member = "CreateList")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(AfflictionCoverflow), Member = "SetEmptySlot")]
+	[Calls(Type = typeof(AfflictionCoverflow), Member = "SetAffliction")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	private void SetupScrollList(List<Affliction> afflictionList)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "RefreshVisuals")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	private void UpdateButtonLegend()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(ItemDescriptionPage), Member = "GetEquipButtonLocalizationId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void UpdateTreatWoundsLocalizationId()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "Initialize")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 9)]
 	private void InitializeColorReferences()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetAfflictions")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "CanBeTreatedWith")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "CanBeTreatedWith")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private static void MaybeAddOrFilter(FirstAidItem firstAidItem, List<Affliction> list, Affliction affliction)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private static string LocalizedNameFromAfflictionLocation(AfflictionBodyArea afflictionBodyArea)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(SprainedAnkle), Member = "HasSprainedAnkle")]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "CanBeTreatedWith")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "CanBeTreated")]
-	[Calls(Type = typeof(BloodLoss), Member = "HasBloodLoss")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(SprainedWrist), Member = "HasSprainedWrist")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "CanBeTreatedWith")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SprainedWrist), Member = "HasSprainedWrist")]
 	[Calls(Type = typeof(BrokenRib), Member = "RequiresBandage")]
+	[Calls(Type = typeof(BloodLoss), Member = "HasBloodLoss")]
+	[Calls(Type = typeof(SprainedAnkle), Member = "HasSprainedAnkle")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 12)]
 	private static bool RequiresBandage(AfflictionType afflictionType, AfflictionBodyArea area, int localIndex)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Infection), Member = "HasTakenAntibiotics")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "CanBeTreated")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "CanBeTreatedWith")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Infection), Member = "HasTakenAntibiotics")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	private static bool RequiresAntibiotic(AfflictionType afflictionType, AfflictionBodyArea area, int localIndex)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Panel_Affliction), Member = "CanBeTreatedWith")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "CanBeTreated")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_Affliction), Member = "CanBeTreatedWith")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(InfectionRisk), Member = "RequiresAntiseptic")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private static bool RequiresAntiseptic(AfflictionType afflictionType, AfflictionBodyArea area, int localIndex)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(BrokenRib), Member = "RequiresPainKiller")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "CanBeTreated")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "CanBeTreatedWith")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BrokenRib), Member = "RequiresPainKiller")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 9)]
 	private static bool RequiresPainKiller(AfflictionType afflictionType, AfflictionBodyArea area, int localIndex)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Panel_Affliction), Member = "HasAffliction")]
-	[CallsUnknownMethods(Count = 13)]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetAfflictions")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "HasAffliction")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "HasAffliction")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "HasAffliction")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(Panel_Affliction), Member = "HasAffliction")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	private static void RefreshtListOfShownAfflictionTypes()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[CallsUnknownMethods(Count = 11)]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "Update")]
-	[Calls(Type = typeof(ScrollList), Member = "Next")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "Enable")]
-	[Calls(Type = typeof(PlayerManager), Member = "TreatAfflictionWithFirstAid")]
-	[Calls(Type = typeof(Panel_Affliction), Member = "TryGetSelectedAffliction")]
-	[Calls(Type = typeof(ScrollList), Member = "Prev")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(Utils), Member = "GetMenuMovementHorizontal")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(ScrollList), Member = "Prev")]
 	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "TryGetSelectedAffliction")]
+	[Calls(Type = typeof(PlayerManager), Member = "TreatAfflictionWithFirstAid")]
+	[Calls(Type = typeof(Panel_Affliction), Member = "Enable")]
+	[Calls(Type = typeof(ScrollList), Member = "Next")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 11)]
 	private void UpdateGamepadSelection()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(DamageProtection), Member = "GetAfflictionGearItem")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(Affliction), Member = ".ctor")]
-	[Calls(Type = typeof(SprainPain), Member = "GetLocation")]
-	[Calls(Type = typeof(SprainPain), Member = "GetCauseLocId")]
-	[Calls(Type = typeof(Affliction), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetAfflictionLocation")]
 	[CalledBy(Type = typeof(Panel_Affliction), Member = "GetAfflictions")]
-	[Calls(Type = typeof(DamageProtection), Member = "GetAfflictionGearItem")]
-	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
-	[CallsUnknownMethods(Count = 102)]
-	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostTimeRemainingHours")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[Calls(Type = typeof(BloodLoss), Member = "GetLocation")]
 	[Calls(Type = typeof(Affliction), Member = ".ctor")]
 	[Calls(Type = typeof(Burns), Member = "GetCauseLocID")]
@@ -609,27 +542,31 @@ public class Panel_Affliction : Panel_Base
 	[Calls(Type = typeof(SprainedWrist), Member = "GetLocation")]
 	[Calls(Type = typeof(Frostbite), Member = "NumInstancesFrostbiteAtLocation")]
 	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
-	[Calls(Type = typeof(Affliction), Member = ".ctor")]
-	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
 	[Calls(Type = typeof(EmergencyStim), Member = "GetActiveHoursRemaining")]
-	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostActive")]
-	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
-	[Calls(Type = typeof(Sprains), Member = "GetSprainRiskAfflictionReason")]
-	[Calls(Type = typeof(Sprains), Member = "GetSprainRiskAfflictionReason")]
-	[Calls(Type = typeof(EmergencyStim), Member = "GetActiveHoursRemaining")]
-	[Calls(Type = typeof(BrokenRib), Member = "GetLocation")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsPumpkinPieBuffActive")]
 	[Calls(Type = typeof(Frostbite), Member = "GetFrostbiteRiskValue")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsPumpkinPieBuffActive")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsPumpkinPieBuffActive")]
+	[Calls(Type = typeof(BrokenRib), Member = "GetLocation")]
 	[Calls(Type = typeof(SprainedAnkle), Member = "HasSprainedAnkle")]
+	[Calls(Type = typeof(Sprains), Member = "GetSprainRiskAfflictionReason")]
+	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostActive")]
+	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostTimeRemainingHours")]
+	[Calls(Type = typeof(SprainPain), Member = "GetCauseLocId")]
+	[Calls(Type = typeof(SprainPain), Member = "GetLocation")]
+	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[Calls(Type = typeof(DamageProtection), Member = "GetAfflictionGearItem")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 102)]
 	private static Affliction GetCurrentAffliction(AfflictionType type, int localAfflictionIndex)
 	{
 		return default(Affliction);
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 26)]
 	public Panel_Affliction()
 	{

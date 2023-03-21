@@ -13,28 +13,28 @@ public class SendMissionEventTrigger : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool PlayerIsInsideTrigger()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void SendMissionEvent()
 	{
 	}
 
-	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MissionServicesManager), Member = "BroadcastMissionEvent")]
 	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 6)]
 	private void OnTriggerEnter(Collider c)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnTriggerExit(Collider c)
 	{
 	}

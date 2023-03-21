@@ -67,10 +67,10 @@ public class SceneWeatherOverrideData : ScriptableObject
 
 	public float m_MinimumBlizzardWindSpeed;
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Weather), Member = "InitializeWeatherSetsForScene")]
-	[Calls(Type = typeof(Weather), Member = "RegisterSceneWeatherSets")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Weather), Member = "RegisterSceneWeatherSets")]
+	[CallsUnknownMethods(Count = 2)]
 	public void DoWeatherOverride()
 	{
 	}
@@ -79,7 +79,7 @@ public class SceneWeatherOverrideData : ScriptableObject
 	[CallsUnknownMethods(Count = 2)]
 	public bool HasElectrostaticFogWeatherSet()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

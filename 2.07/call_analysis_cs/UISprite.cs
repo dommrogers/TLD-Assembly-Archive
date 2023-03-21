@@ -18,9 +18,9 @@ public class UISprite : UIBasicSprite
 
 	public override Material material
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UIAtlas), Member = "get_spriteMaterial")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -35,14 +35,28 @@ public class UISprite : UIBasicSprite
 		{
 			return null;
 		}
-		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
-		[CallsUnknownMethods(Count = 3)]
+		[CalledBy(Type = typeof(UICursor), Member = "Set")]
+		[CalledBy(Type = typeof(UIItemSlot), Member = "Update")]
+		[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
+		[CalledBy(Type = typeof(BMSymbol), Member = "SetSpriteLocation")]
+		[CalledBy(Type = typeof(NGUITools), Member = "AddSprite")]
+		[CalledBy(Type = typeof(UIAtlas), Member = "MarkAsChanged")]
+		[CalledBy(Type = typeof(ButtonLegend), Member = "ConfigureButtonIconSpriteName")]
+		[CalledBy(Type = typeof(ButtonLegendItem), Member = "Setup")]
+		[CalledBy(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
+		[CalledBy(Type = typeof(SpriteCreditElement), Member = "Populate")]
+		[CalledBy(Type = typeof(GamepadButtonSprite), Member = "UpdateSpriteForActiveController")]
+		[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "UpdateButtonLegend")]
+		[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshHoursToRead")]
+		[CalledBy(Type = typeof(PlayerManager), Member = "RefreshGamepadPrompts")]
+		[CalledBy(Type = typeof(PlayerStruggle), Member = "UpdateKeyBindingLabels")]
 		[CallerCount(Count = 25)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-		[Calls(Type = typeof(UIAtlas), Member = "get_spriteList")]
+		[Calls(Type = typeof(UIWidget), Member = "RemoveFromPanel")]
 		[Calls(Type = typeof(UIAtlas), Member = "get_spriteList")]
 		[Calls(Type = typeof(UISprite), Member = "SetAtlasSprite")]
+		[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 3)]
 		set
 		{
 		}
@@ -50,14 +64,14 @@ public class UISprite : UIBasicSprite
 
 	public string spriteName
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
-		[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 		[CallerCount(Count = 120)]
+		[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 		set
 		{
 		}
@@ -69,7 +83,7 @@ public class UISprite : UIBasicSprite
 		[Calls(Type = typeof(UISprite), Member = "GetAtlasSprite")]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -78,10 +92,10 @@ public class UISprite : UIBasicSprite
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -104,45 +118,43 @@ public class UISprite : UIBasicSprite
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	public override int minWidth
 	{
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIBasicSprite), Member = "get_minWidth")]
 		[Calls(Type = typeof(UISprite), Member = "GetAtlasSprite")]
-		[Calls(Type = typeof(UIBasicSprite), Member = "get_minWidth")]
-		[CallsUnknownMethods(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 5)]
-		[Calls(Type = typeof(UIBasicSprite), Member = "get_minWidth")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public override int minHeight
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 4)]
+		[Calls(Type = typeof(UIBasicSprite), Member = "get_minHeight")]
 		[Calls(Type = typeof(UISprite), Member = "GetAtlasSprite")]
-		[Calls(Type = typeof(UIBasicSprite), Member = "get_minHeight")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UIBasicSprite), Member = "get_minHeight")]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public override Vector4 drawingDimensions
 	{
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 5)]
-		[Calls(Type = typeof(UISprite), Member = "GetAtlasSprite")]
 		[Calls(Type = typeof(NGUIMath), Member = "GetPivotOffset")]
+		[Calls(Type = typeof(UISprite), Member = "GetAtlasSprite")]
 		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 5)]
 		get
 		{
 			return default(Vector4);
@@ -151,78 +163,73 @@ public class UISprite : UIBasicSprite
 
 	public override bool premultipliedAlpha
 	{
-		[Calls(Type = typeof(UIAtlas), Member = "get_premultipliedAlpha")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UIAtlas), Member = "get_premultipliedAlpha")]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CalledBy(Type = typeof(UISprite), Member = "get_minHeight")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CalledBy(Type = typeof(UIPopupList), Member = "Highlight")]
 	[CalledBy(Type = typeof(UIPopupList), Member = "GetHighlightPosition")]
 	[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
 	[CalledBy(Type = typeof(UISprite), Member = "get_isValid")]
-	[Calls(Type = typeof(UISprite), Member = "SetAtlasSprite")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UIAtlas), Member = "get_spriteList")]
-	[Calls(Type = typeof(UIAtlas), Member = "get_spriteList")]
-	[Calls(Type = typeof(UIAtlas), Member = "GetSprite")]
-	[CallerCount(Count = 11)]
 	[CalledBy(Type = typeof(UISprite), Member = "get_border")]
+	[CalledBy(Type = typeof(UISprite), Member = "get_minWidth")]
+	[CalledBy(Type = typeof(UISprite), Member = "get_minHeight")]
 	[CalledBy(Type = typeof(UISprite), Member = "get_drawingDimensions")]
 	[CalledBy(Type = typeof(UISprite), Member = "MakePixelPerfect")]
-	[CalledBy(Type = typeof(UISprite), Member = "MakePixelPerfect")]
 	[CalledBy(Type = typeof(SpriteCreditElement), Member = "Populate")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(UIAtlas), Member = "GetSprite")]
 	[Calls(Type = typeof(UISprite), Member = "SetAtlasSprite")]
-	[CalledBy(Type = typeof(UISprite), Member = "get_minWidth")]
+	[Calls(Type = typeof(UIAtlas), Member = "get_spriteList")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsUnknownMethods(Count = 3)]
 	public UISpriteData GetAtlasSprite()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(UISprite), Member = "set_atlas")]
+	[CalledBy(Type = typeof(UISprite), Member = "GetAtlasSprite")]
 	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(UISprite), Member = "GetAtlasSprite")]
-	[CalledBy(Type = typeof(UISprite), Member = "GetAtlasSprite")]
+	[CallsUnknownMethods(Count = 1)]
 	protected void SetAtlasSprite(UISpriteData sp)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UISprite), Member = "GetAtlasSprite")]
 	[Calls(Type = typeof(UIWidget), Member = "MakePixelPerfect")]
-	[Calls(Type = typeof(UISprite), Member = "GetAtlasSprite")]
 	[Calls(Type = typeof(UIWidget), Member = "set_width")]
 	[Calls(Type = typeof(UIWidget), Member = "set_height")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public override void MakePixelPerfect()
 	{
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = "OnInit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIWidget), Member = "OnInit")]
 	protected override void OnInit()
 	{
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = "OnUpdate")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIWidget), Member = "OnUpdate")]
 	protected override void OnUpdate()
 	{
 	}
 
-	[Calls(Type = typeof(UIBasicSprite), Member = "Fill")]
-	[Calls(Type = typeof(UIAtlas), Member = "GetSprite")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIAtlas), Member = "GetSprite")]
+	[Calls(Type = typeof(UIBasicSprite), Member = "Fill")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	public override void OnFill(BetterList<Vector3> verts, BetterList<Vector2> uvs, BetterList<Color32> cols)
 	{

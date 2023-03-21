@@ -10,17 +10,16 @@ public class Spring : ODE
 
 	public float restLen;
 
+	[CalledBy(Type = typeof(PlayerClimbRope), Member = "BeginClimbing")]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "BeginClimbing")]
-	[CalledBy(Type = typeof(PlayerClimbRope), Member = "BeginClimbing")]
 	[CallsUnknownMethods(Count = 2)]
 	public Spring(float _mass, float _dampening, float _k, float _restLength, float _initialLength)
-		: base(default(int))
+		: base(0)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public override float[] GetRightHandSide(float t, float[] q, float[] deltaQ, float dt, float qScale)
 	{
 		return null;
@@ -30,7 +29,7 @@ public class Spring : ODE
 	[CallsUnknownMethods(Count = 2)]
 	public float GetLength()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -43,17 +42,17 @@ public class Spring : ODE
 	[CallsUnknownMethods(Count = 2)]
 	public float GetVelocity()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetVelocity(float velocity)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void AddForce(float force)
 	{
 	}

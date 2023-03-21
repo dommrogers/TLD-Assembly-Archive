@@ -15,11 +15,11 @@ internal struct GetNextReceivedPacketSizeOptionsInternal : ISettable, IDisposabl
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(GetNextReceivedPacketSizeOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(GetNextReceivedPacketSizeOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(GetNextReceivedPacketSizeOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(GetNextReceivedPacketSizeOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -27,34 +27,34 @@ internal struct GetNextReceivedPacketSizeOptionsInternal : ISettable, IDisposabl
 
 	public byte? RequestedChannel
 	{
+		[CalledBy(Type = typeof(GetNextReceivedPacketSizeOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(GetNextReceivedPacketSizeOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 3)]
-		[CalledBy(Type = typeof(GetNextReceivedPacketSizeOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(GetNextReceivedPacketSizeOptionsInternal), Member = "Set")]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(GetNextReceivedPacketSizeOptionsInternal), Member = "set_RequestedChannel")]
-	[Calls(Type = typeof(GetNextReceivedPacketSizeOptionsInternal), Member = "set_LocalUserId")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GetNextReceivedPacketSizeOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(GetNextReceivedPacketSizeOptionsInternal), Member = "set_RequestedChannel")]
 	public void Set(GetNextReceivedPacketSizeOptions other)
 	{
 	}
 
+	[CalledBy(Type = typeof(P2PInterface), Member = "GetNextReceivedPacketSize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GetNextReceivedPacketSizeOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(GetNextReceivedPacketSizeOptionsInternal), Member = "set_RequestedChannel")]
-	[CalledBy(Type = typeof(P2PInterface), Member = "GetNextReceivedPacketSize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

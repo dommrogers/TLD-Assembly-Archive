@@ -12,7 +12,7 @@ public class PlatformSpecificScreens : ScriptableObject
 	[CallsUnknownMethods(Count = 3)]
 	public bool Contains(string screenName)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

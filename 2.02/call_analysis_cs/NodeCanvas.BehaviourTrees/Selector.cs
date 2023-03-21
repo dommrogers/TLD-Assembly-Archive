@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
@@ -15,12 +14,9 @@ public class Selector : BTComposite
 	private int lastRunningNodeIndex;
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Node), Member = "Reset")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Node), Member = "Reset")]
-	[Calls(Type = typeof(Node), Member = "Reset")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallsUnknownMethods(Count = 10)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
@@ -33,8 +29,8 @@ public class Selector : BTComposite
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public override void OnChildDisconnected(int index)
 	{
 	}
@@ -48,9 +44,8 @@ public class Selector : BTComposite
 
 	[CalledBy(Type = typeof(Selector), Member = "OnReset")]
 	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallsUnknownMethods(Count = 5)]
 	private List<Connection> Shuffle(List<Connection> list)
 	{

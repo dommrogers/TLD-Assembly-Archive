@@ -14,45 +14,40 @@ public class Example : MonoBehaviour
 
 		public string name;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public ExampleClass()
 		{
 		}
 	}
 
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Example), Member = "ToString")]
-	[CallsUnknownMethods(Count = 59)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(FastJson), Member = "Serialize")]
-	[Calls(Type = typeof(FastJson), Member = "Deserialize")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(FastJson), Member = "Serialize")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(FastJson), Member = "Serialize")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(FastJson), Member = "Deserialize")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(RuntimeHelpers), Member = "InitializeArray")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(FastJson), Member = "Deserialize")]
+	[Calls(Type = typeof(Example), Member = "ToString")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 59)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 20)]
-	[CalledBy(Type = typeof(Example), Member = "ToString")]
 	[CalledBy(Type = typeof(Example), Member = "Start")]
-	[Calls(Type = typeof(StringBuilder), Member = "ExpandByABlock")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(Example), Member = "ToString")]
-	[Calls(Type = typeof(Array), Member = "GetValue")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CalledBy(Type = typeof(Example), Member = "ToString")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[Calls(Type = typeof(Array), Member = "get_Length")]
+	[Calls(Type = typeof(Array), Member = "GetValue")]
+	[Calls(Type = typeof(Example), Member = "ToString")]
+	[Calls(Type = typeof(StringBuilder), Member = "ExpandByABlock")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 20)]
 	private string ToString(object a)
 	{
 		return null;

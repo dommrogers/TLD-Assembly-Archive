@@ -12,22 +12,22 @@ public class PicturePngData : IWrappedObject
 	private byte[] m_PictureBytes;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Marshal), Member = "Copy")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	public byte[] GetPictureBytes()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public PicturePngData(IntPtr self)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public PicturePngData()
 	{
 	}
@@ -39,10 +39,10 @@ public class PicturePngData : IWrappedObject
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 52)]
+	[CallerCount(Count = 59)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -53,18 +53,18 @@ public class PicturePngData : IWrappedObject
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PicturePngData), Member = "DisposeImpl")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}
 
-	[CalledBy(Type = typeof(PicturePngData), Member = "Dispose")]
 	[CalledBy(Type = typeof(PicturePngData), Member = "Finalize")]
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(PicturePngData), Member = "Dispose")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void DisposeImpl()
 	{
 	}

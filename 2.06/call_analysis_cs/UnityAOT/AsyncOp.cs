@@ -1,6 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 using Cpp2ILInjected.CallAnalysis;
+using Marketplace;
 
 namespace UnityAOT;
 
@@ -21,25 +22,33 @@ public class AsyncOp<T> : IDisposable where T : AsyncOp<T>
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public virtual void Dispose()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	public static IntPtr GetMyHandle(T obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(CatalogServiceManager), Member = "GetCatalogItemDetailsListThunk")]
+	[CalledBy(Type = typeof(CatalogServiceManager), Member = "GetBrowseCatalogResultThunk")]
+	[CalledBy(Type = typeof(InventoryServiceManager), Member = "GetConsumeInventoryItemResultThunk")]
+	[CalledBy(Type = typeof(InventoryServiceManager), Member = "GetInventoryItemThunk")]
+	[CalledBy(Type = typeof(InventoryServiceManager), Member = "GetInventoryItemsResultThunk")]
+	[CalledBy(Type = typeof(StoreManager), Member = "PrivilegeCheckResultThunk")]
+	[CalledBy(Type = typeof(GetStringAsyncOp), Member = "GetStringAsyncThunkImpl")]
+	[CalledBy(Type = typeof(ActionAsyncOp), Member = "GenericActionThunkImpl")]
 	[CallerCount(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GCHandle), Member = "op_Explicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 14)]
 	public static T GetMyObject(IntPtr handlePtr)
 	{
@@ -51,12 +60,12 @@ public class AsyncOp<T> : IDisposable where T : AsyncOp<T>
 	[CallsUnknownMethods(Count = 5)]
 	public IntPtr GetHandle()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[DeduplicatedMethod]
 	public void FreeHandle()
 	{
 	}

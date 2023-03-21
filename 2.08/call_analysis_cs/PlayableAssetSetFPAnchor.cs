@@ -12,13 +12,16 @@ public class PlayableAssetSetFPAnchor : PlayableAsset
 
 	public string m_SyncNodeInfoId;
 
-	[Calls(Type = typeof(TimelineAsset), Member = "UpdateOutputTrackCache")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(PlayableDirector), Member = "get_playableAsset")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptPlayable<>), Member = "Create")]
+	[Calls(Type = typeof(PlayableHandle), Member = "GetObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(PlayableDirector), Member = "get_playableAsset")]
+	[Calls(Type = typeof(TimelineAsset), Member = "UpdateOutputTrackCache")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 16)]
 	public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
 	{
 		return default(Playable);

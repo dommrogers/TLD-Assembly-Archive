@@ -20,12 +20,12 @@ public class StartDialogueTree : ActionTask<IDialogueActor>
 		}
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}

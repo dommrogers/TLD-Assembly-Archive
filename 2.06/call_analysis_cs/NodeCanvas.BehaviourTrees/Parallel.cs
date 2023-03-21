@@ -21,14 +21,13 @@ public class Parallel : BTComposite
 
 	private readonly List<Connection> finishedConnections;
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(Parallel), Member = "ResetRunning")]
-	[Calls(Type = typeof(Parallel), Member = "ResetRunning")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = "Reset")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Connection), Member = "Execute")]
+	[Calls(Type = typeof(Parallel), Member = "ResetRunning")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
@@ -42,18 +41,17 @@ public class Parallel : BTComposite
 	}
 
 	[CalledBy(Type = typeof(Parallel), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Parallel), Member = "OnExecute")]
-	[Calls(Type = typeof(Node), Member = "Reset")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Node), Member = "Reset")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	private void ResetRunning()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public Parallel()
 	{

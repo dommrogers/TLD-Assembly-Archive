@@ -8,9 +8,9 @@ public class DialogueStatement : Statement
 
 	public new VoiceOverAnimationState anim
 	{
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return default(VoiceOverAnimationState);

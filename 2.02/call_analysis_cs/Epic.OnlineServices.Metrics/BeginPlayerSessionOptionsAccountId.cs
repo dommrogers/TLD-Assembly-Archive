@@ -28,16 +28,18 @@ public class BeginPlayerSessionOptionsAccountId : ISettable
 	public EpicAccountId Epic
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "op_Implicit")]
 		[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "Set")]
 		[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "Set")]
 		[CallerCount(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "op_Implicit")]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -46,24 +48,26 @@ public class BeginPlayerSessionOptionsAccountId : ISettable
 	public string External
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "op_Implicit")]
 		[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "Set")]
 		[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "Set")]
 		[CallerCount(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "op_Implicit")]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "set_Epic")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public static implicit operator BeginPlayerSessionOptionsAccountId(EpicAccountId value)
 	{
@@ -71,38 +75,38 @@ public class BeginPlayerSessionOptionsAccountId : ISettable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "set_External")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public static implicit operator BeginPlayerSessionOptionsAccountId(string value)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "set_External")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountIdInternal), Member = "get_External")]
-	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountIdInternal), Member = "get_Epic")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountIdInternal), Member = "get_Epic")]
 	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "set_Epic")]
+	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountIdInternal), Member = "get_External")]
+	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "set_External")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	internal void Set(BeginPlayerSessionOptionsAccountIdInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountIdInternal), Member = "get_Epic")]
 	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "set_Epic")]
 	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountIdInternal), Member = "get_External")]
 	[Calls(Type = typeof(BeginPlayerSessionOptionsAccountId), Member = "set_External")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public BeginPlayerSessionOptionsAccountId()
 	{
 	}

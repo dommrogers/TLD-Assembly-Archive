@@ -22,8 +22,8 @@ public class FeatsManagerSaveData
 
 	public string m_Feat_NightWalkerSerialized;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public FeatsManagerSaveData()
 	{
 	}

@@ -15,11 +15,11 @@ public class AkThreadProperties : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -27,12 +27,12 @@ public class AkThreadProperties : IDisposable
 
 	public uint dwAffinityMask
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -49,11 +49,11 @@ public class AkThreadProperties : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -65,17 +65,17 @@ public class AkThreadProperties : IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(AkDeviceSettings), Member = "set_threadProperties")]
+	[CalledBy(Type = typeof(AkPlatformInitSettings), Member = "set_threadLEngine")]
+	[CalledBy(Type = typeof(AkPlatformInitSettings), Member = "set_threadOutputMgr")]
 	[CalledBy(Type = typeof(AkPlatformInitSettings), Member = "set_threadBankManager")]
 	[CalledBy(Type = typeof(AkPlatformInitSettings), Member = "set_threadMonitor")]
-	[CalledBy(Type = typeof(AkPlatformInitSettings), Member = "set_threadOutputMgr")]
 	[CalledBy(Type = typeof(AkSoundEngine), Member = "AkGetDefaultHighPriorityThreadProperties")]
-	[CalledBy(Type = typeof(AkDeviceSettings), Member = "set_threadProperties")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(AkPlatformInitSettings), Member = "set_threadLEngine")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkThreadProperties obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -92,10 +92,10 @@ public class AkThreadProperties : IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{

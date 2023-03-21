@@ -25,11 +25,11 @@ public class Dialogue_Cinematic : DTNode
 		}
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(DialogueModeRigFP), Member = "OnCinematicPlay")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	protected override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
@@ -44,9 +44,9 @@ public class Dialogue_Cinematic : DTNode
 	{
 	}
 
-	[Calls(Type = typeof(DTNode), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DTNode), Member = ".ctor")]
 	public Dialogue_Cinematic()
 	{
 	}

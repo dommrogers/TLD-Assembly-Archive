@@ -15,11 +15,11 @@ internal struct CopyEntitlementByIdOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(CopyEntitlementByIdOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyEntitlementByIdOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyEntitlementByIdOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyEntitlementByIdOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -27,34 +27,34 @@ internal struct CopyEntitlementByIdOptionsInternal : ISettable, IDisposable
 
 	public string EntitlementId
 	{
+		[CalledBy(Type = typeof(CopyEntitlementByIdOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyEntitlementByIdOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyEntitlementByIdOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyEntitlementByIdOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(CopyEntitlementByIdOptionsInternal), Member = "set_LocalUserId")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CopyEntitlementByIdOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(CopyEntitlementByIdOptionsInternal), Member = "set_EntitlementId")]
 	public void Set(CopyEntitlementByIdOptions other)
 	{
 	}
 
-	[Calls(Type = typeof(CopyEntitlementByIdOptionsInternal), Member = "set_EntitlementId")]
-	[Calls(Type = typeof(CopyEntitlementByIdOptionsInternal), Member = "set_LocalUserId")]
 	[CalledBy(Type = typeof(EcomInterface), Member = "CopyEntitlementById")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CopyEntitlementByIdOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(CopyEntitlementByIdOptionsInternal), Member = "set_EntitlementId")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

@@ -15,17 +15,17 @@ public class PlayAudioSimple : BaseSimpleAudioComponent
 
 	public bool m_TrackPosition;
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(LoopTracker), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LoopTracker), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(PlayAudioSimpleManager), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{

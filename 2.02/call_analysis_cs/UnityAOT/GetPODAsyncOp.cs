@@ -19,17 +19,17 @@ public class GetPODAsyncOp<T> : AsyncOp<GetPODAsyncOp<T>> where T : struct
 		((AsyncOp<>)(object)this)._002Ector();
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void Complete(uint result, T lresult)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public GetPODAsyncOp<T> Validate(bool ok)
 	{
 		return null;

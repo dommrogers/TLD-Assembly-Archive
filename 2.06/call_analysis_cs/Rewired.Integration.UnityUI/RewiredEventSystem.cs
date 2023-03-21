@@ -14,24 +14,22 @@ public class RewiredEventSystem : EventSystem
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(EventSystem), Member = "get_current")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(EventSystem), Member = "set_current")]
 	[Calls(Type = typeof(EventSystem), Member = "Update")]
-	[Calls(Type = typeof(EventSystem), Member = "Update")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(EventSystem), Member = "set_current")]
+	[CallsUnknownMethods(Count = 3)]
 	protected override void Update()
 	{
 	}

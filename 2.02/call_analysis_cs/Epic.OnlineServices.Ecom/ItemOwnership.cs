@@ -11,16 +11,16 @@ public class ItemOwnership : ISettable
 
 	public string Id
 	{
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 101)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -43,24 +43,24 @@ public class ItemOwnership : ISettable
 		}
 	}
 
-	[Calls(Type = typeof(ItemOwnershipInternal), Member = "get_Id")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ItemOwnershipInternal), Member = "get_Id")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	internal void Set(ItemOwnershipInternal? other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ItemOwnershipInternal), Member = "get_Id")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ItemOwnershipInternal), Member = "get_Id")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ItemOwnership()
 	{
 	}

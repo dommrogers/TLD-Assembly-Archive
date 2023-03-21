@@ -12,9 +12,9 @@ public class LookAt : ActionTask<Transform>
 
 	protected override string info
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Concat")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -36,12 +36,13 @@ public class LookAt : ActionTask<Transform>
 	}
 
 	[CalledBy(Type = typeof(LookAt), Member = "OnExecute")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CalledBy(Type = typeof(LookAt), Member = "OnUpdate")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(Transform), Member = "LookAt")]
-	[CallsUnknownMethods(Count = 5)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 4)]
 	private void DoLook()
 	{
 	}

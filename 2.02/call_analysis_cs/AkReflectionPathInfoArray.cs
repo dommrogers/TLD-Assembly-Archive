@@ -5,20 +5,21 @@ public class AkReflectionPathInfoArray : AkBaseArray<AkReflectionPathInfo>
 {
 	protected override int StructureSize
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkReflectionPathInfo_GetSizeOf")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(AkBaseArray<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public AkReflectionPathInfoArray(int count)
 	{
-		((AkBaseArray<>)(object)this)._002Ector(default(int));
+		((AkBaseArray<>)(object)this)._002Ector(0);
 	}
 
 	[CallerCount(Count = 0)]
@@ -30,9 +31,9 @@ public class AkReflectionPathInfoArray : AkBaseArray<AkReflectionPathInfo>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkReflectionPathInfo), Member = "getCPtr")]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkReflectionPathInfo_Clone")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected override void CloneIntoReferenceFromIntPtr(IntPtr address, AkReflectionPathInfo other)
 	{
 	}

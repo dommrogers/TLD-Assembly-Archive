@@ -10,10 +10,10 @@ public class DataMap : IDisposable
 	public IntPtr NativePtr
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 98)]
+		[CallerCount(Count = 113)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
@@ -46,8 +46,8 @@ public class DataMap : IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(DataMapPlugin), Member = "DataMap_AddOrReplaceBuffer")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DataMapPlugin), Member = "DataMap_AddOrReplaceBuffer")]
 	public void AddOrReplaceBuffer(string name, byte[] data, int len)
 	{
 	}
@@ -62,14 +62,14 @@ public class DataMap : IDisposable
 	[CallsUnknownMethods(Count = 1)]
 	public uint Length(string name)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public uint Capacity(string name)
 	{
-		return default(uint);
+		return 0u;
 	}
 
 	[CallerCount(Count = 0)]
@@ -77,12 +77,12 @@ public class DataMap : IDisposable
 	[CallsUnknownMethods(Count = 2)]
 	public bool FillBuffer(string name, int offset, byte[] data)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public byte[] GetBuffer(string name)
 	{
 		return null;

@@ -4,31 +4,30 @@ using Cpp2ILInjected.CallAnalysis;
 [Serializable]
 public class SprainedWristEvent : StruggleDamageEvent
 {
-	[Calls(Type = typeof(PlayerStruggle), Member = "InStruggleWIthWolf")]
-	[Calls(Type = typeof(SprainedWrist), Member = "SprainedWristStart")]
-	[Calls(Type = typeof(SprainedWrist), Member = "SprainedWristStart")]
-	[Calls(Type = typeof(PlayerStruggle), Member = "InStruggleWIthBear")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(CameraStatusEffects), Member = "PainPulse")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraStatusEffects), Member = "PainPulse")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerStruggle), Member = "InStruggleWIthWolf")]
+	[Calls(Type = typeof(PlayerStruggle), Member = "InStruggleWIthBear")]
+	[Calls(Type = typeof(SprainedWrist), Member = "SprainedWristStart")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 15)]
 	public override void OnExecute()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public override bool IsLocationAvailable()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SprainedWristEvent()
 	{
 	}

@@ -25,11 +25,11 @@ internal struct OnQueryPlayerAchievementsCompleteCallbackInfoInternal : ICallbac
 
 	public object ClientData
 	{
+		[CalledBy(Type = typeof(OnQueryPlayerAchievementsCompleteCallbackInfo), Member = "Set")]
+		[CalledBy(Type = typeof(OnQueryPlayerAchievementsCompleteCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CalledBy(Type = typeof(OnQueryPlayerAchievementsCompleteCallbackInfo), Member = "Set")]
-		[CalledBy(Type = typeof(OnQueryPlayerAchievementsCompleteCallbackInfo), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -42,7 +42,7 @@ internal struct OnQueryPlayerAchievementsCompleteCallbackInfoInternal : ICallbac
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
@@ -51,7 +51,8 @@ internal struct OnQueryPlayerAchievementsCompleteCallbackInfoInternal : ICallbac
 		[CalledBy(Type = typeof(OnQueryPlayerAchievementsCompleteCallbackInfo), Member = "Set")]
 		[CalledBy(Type = typeof(OnQueryPlayerAchievementsCompleteCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;

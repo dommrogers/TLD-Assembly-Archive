@@ -11,10 +11,10 @@ public sealed class RLProNegative : PostProcessEffectSettings
 
 	public FloatParameter negative;
 
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 16)]
 	public RLProNegative()
 	{
 	}

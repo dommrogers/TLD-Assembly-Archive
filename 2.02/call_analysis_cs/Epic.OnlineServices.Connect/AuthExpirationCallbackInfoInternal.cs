@@ -13,11 +13,11 @@ internal struct AuthExpirationCallbackInfoInternal : ICallbackInfoInternal
 
 	public object ClientData
 	{
+		[CalledBy(Type = typeof(AuthExpirationCallbackInfo), Member = "Set")]
+		[CalledBy(Type = typeof(AuthExpirationCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CalledBy(Type = typeof(AuthExpirationCallbackInfo), Member = "Set")]
-		[CalledBy(Type = typeof(AuthExpirationCallbackInfo), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -30,7 +30,7 @@ internal struct AuthExpirationCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
@@ -39,7 +39,8 @@ internal struct AuthExpirationCallbackInfoInternal : ICallbackInfoInternal
 		[CalledBy(Type = typeof(AuthExpirationCallbackInfo), Member = "Set")]
 		[CalledBy(Type = typeof(AuthExpirationCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;

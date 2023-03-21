@@ -71,17 +71,17 @@ public class Inventory : MonoBehaviour, NCUtils.IItemRequirementsCollection
 	{
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
@@ -93,193 +93,177 @@ public class Inventory : MonoBehaviour, NCUtils.IItemRequirementsCollection
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Inventory), Member = "GameObjectInInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Inventory), Member = "GameObjectInInventory")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private void UpdateQuickSelectionSlots()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Inventory), Member = "QuickSelectionHandleInventoryItemRemoval")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool AssignedToQuickSlot(GameObject go)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(Inventory), Member = "RemoveGear")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(GearItemObject), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Inventory), Member = "AssignedToQuickSlot")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(GearItemObject), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Inventory), Member = "AssignedToQuickSlot")]
+	[CallsUnknownMethods(Count = 17)]
 	private void QuickSelectionHandleInventoryItemRemoval(GameObject deader)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 23)]
 	[CalledBy(Type = typeof(Inventory), Member = "Deserialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 23)]
 	public void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 14)]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnDrop")]
 	[CalledBy(Type = typeof(Panel_Inventory), Member = "Enable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "OnDrop")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GearItemObject), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(Type = typeof(Inventory), Member = "ProcessItems")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Inventory), Member = "GameObjectInInventory")]
 	[Calls(Type = typeof(Inventory), Member = "MaybeUpdateWeightRTPCs")]
-	[Calls(Type = typeof(Inventory), Member = "ProcessItems")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItemObject), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsUnknownMethods(Count = 14)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 41)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItem), Member = "Serialize")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 41)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Inventory), Member = "Deserialize")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "GearInInventoryAtCondition")]
+	[Calls(Type = typeof(GearItem), Member = "IsUndegradableAccelerant")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(GearItem), Member = "GetRoundedCondition")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "GearInInventoryAtCondition")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(GearItem), Member = "IsUndegradableAccelerant")]
+	[CallsUnknownMethods(Count = 4)]
 	private bool TryStackingItem(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataForEspisodeMigration")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Inventory), Member = "Start")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Resources), Member = "Load")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GearItem), Member = "IsDummy")]
+	[Calls(Type = typeof(GearItem), Member = "Deserialize")]
+	[Calls(Type = typeof(Inventory), Member = "TryStackingItem")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "ToLower")]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[Calls(Type = typeof(Inventory), Member = "AddGear")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Inventory), Member = "FindByInstanceID")]
 	[Calls(Type = typeof(Utils), Member = "GetTotalWeightKG")]
 	[Calls(Type = typeof(Inventory), Member = "HanksHack")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataForEspisodeMigration")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(Inventory), Member = "FindByInstanceID")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(GearItem), Member = "Deserialize")]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(Inventory), Member = "Start")]
-	[Calls(Type = typeof(Resources), Member = "Load")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Inventory), Member = "TryStackingItem")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(GearItem), Member = "IsDummy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Inventory), Member = "Deserialize")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "Deserialize")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInventoryOnPlacement")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "EquipLastItemInHands")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ObjectToPlaceInInventory")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInventoryOnPlacement")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "Deserialize")]
+	[CalledBy(Type = typeof(Inventory), Member = "Deserialize")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public GearItem FindByInstanceID(int id)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(GearManager), Member = "DestroyGearObject")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Inventory), Member = "DropAndScatterItems")]
-	[CalledBy(Type = typeof(Inventory), Member = "DestroyGear")]
-	[CalledBy(Type = typeof(Inventory), Member = "RemoveGear")]
-	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
-	[CalledBy(Type = typeof(Inventory), Member = "Update")]
-	[CalledBy(Type = typeof(Inventory), Member = "UpdateQuickSelectionSlots")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "ProcessItemInHandDetonated")]
-	[CalledBy(Type = typeof(GearItem), Member = "BreakOnUse")]
-	[CalledBy(Type = typeof(GearItem), Member = "WearOut")]
-	[CalledBy(Type = typeof(GearItem), Member = "WearOut")]
 	[CalledBy(Type = typeof(DespawnWhenRuined), Member = "MaybeDespawnWhenRuined")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(GearItemObject), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(GearItem), Member = "WearOut")]
+	[CalledBy(Type = typeof(GearItem), Member = "BreakOnUse")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "ProcessItemInHandDetonated")]
+	[CalledBy(Type = typeof(GearManager), Member = "DestroyGearObject")]
+	[CalledBy(Type = typeof(Inventory), Member = "UpdateQuickSelectionSlots")]
+	[CalledBy(Type = typeof(Inventory), Member = "Update")]
+	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
+	[CalledBy(Type = typeof(Inventory), Member = "RemoveGear")]
+	[CalledBy(Type = typeof(Inventory), Member = "DestroyGear")]
+	[CalledBy(Type = typeof(Inventory), Member = "DropAndScatterItems")]
 	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(GearItemObject), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool GameObjectInInventory(GameObject searchItem)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(BearSpearItem), Member = "Break")]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "AddNotification")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "OnInventoryItemAdded")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_Map), Member = "RevealOnPolaroidDiscovery")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CalledBy(Type = typeof(EvolveItem), Member = "DoEvolution")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
-	[CalledBy(Type = typeof(Panel_CanOpening), Member = "OnSmash")]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "OnSprayPaint")]
 	[CalledBy(Type = typeof(Panel_CanOpening), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_CanOpening), Member = "OnOpen")]
-	[Calls(Type = typeof(BlueprintItemUnlock), Member = "Unlock")]
+	[CalledBy(Type = typeof(Panel_CanOpening), Member = "OnSmash")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventoryInternal")]
@@ -288,117 +272,110 @@ public class Inventory : MonoBehaviour, NCUtils.IItemRequirementsCollection
 	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "HandleInteractionChoice")]
 	[CalledBy(Type = typeof(Action_RestorePlayerInventory), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Action_GiveBackPlayerItems), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 59)]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "OnSprayPaint")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(KnowledgeManager), Member = "KnowledgeIsUnlocked")]
 	[CallerCount(Count = 15)]
-	[CallsDeduplicatedMethods(Count = 14)]
 	[Calls(Type = typeof(Inventory), Member = "GameObjectInInventory")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(KnowledgeManager), Member = "AddKnowledge")]
-	[Calls(Type = typeof(Inventory), Member = "HasNonRuinedItem")]
-	[Calls(Type = typeof(Inventory), Member = "AddToWaterSupply")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "AddToWaterSupply")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Inventory), Member = "HasNonRuinedItem")]
 	[Calls(Type = typeof(Inventory), Member = "AddToWaterSupply")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItemObject), Member = ".ctor")]
 	[Calls(Type = typeof(GearItemObject), Member = ".ctor")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
 	[Calls(Type = typeof(GearManager), Member = "RemovedFromDroppedDecoys")]
 	[Calls(Type = typeof(Inventory), Member = "SetActive")]
 	[Calls(Type = typeof(GearItem), Member = "DisableTextureStreaming")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(KnowledgeManager), Member = "KnowledgeIsUnlocked")]
+	[Calls(Type = typeof(KnowledgeManager), Member = "AddKnowledge")]
+	[Calls(Type = typeof(BlueprintItemUnlock), Member = "Unlock")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(Panel_Map), Member = "RevealOnPolaroidDiscovery")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "OnInventoryItemAdded")]
+	[Calls(Type = typeof(NotificationFlagManager), Member = "AddNotification")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 59)]
 	public void AddGear(GameObject go, bool enableNotificationFlag = false)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	public void RemoveGear(GameObject go)
 	{
 	}
 
-	[CalledBy(Type = typeof(Inventory), Member = "DestroyGear")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ReleaseFromHands")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInventoryOnPlacement")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnPlaceMeshAnimationEvent")]
-	[CalledBy(Type = typeof(GearManager), Member = "DestroyGearObject")]
-	[CalledBy(Type = typeof(GameManager), Member = "PostMigrationDestoryLitFlareOrTorch")]
-	[CalledBy(Type = typeof(Panel_PickUnits), Member = "TransferGearInventoryToContainer")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "OnMoveAllToContainer")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "OnInventoryToContainer")]
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(WildlifeItem), Member = "ResetControls")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "ProcessItemInHandDetonated")]
+	[CalledBy(Type = typeof(CookingPotItem), Member = "StartCooking")]
 	[CalledBy(Type = typeof(GearItem), Member = "Drop")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "ProcessItemInHandDetonated")]
+	[CalledBy(Type = typeof(WildlifeItem), Member = "ResetControls")]
 	[CalledBy(Type = typeof(HeldItemInPlacementZone), Member = "RemoveDuplicatedItem")]
-	[CalledBy(Type = typeof(CookingPotItem), Member = "StartCooking")]
-	[CalledBy(Type = typeof(CookingPotItem), Member = "StartCooking")]
+	[CalledBy(Type = typeof(Panel_Container), Member = "OnInventoryToContainer")]
+	[CalledBy(Type = typeof(Panel_Container), Member = "OnMoveAllToContainer")]
+	[CalledBy(Type = typeof(Panel_PickUnits), Member = "TransferGearInventoryToContainer")]
+	[CalledBy(Type = typeof(GameManager), Member = "PostMigrationDestoryLitFlareOrTorch")]
+	[CalledBy(Type = typeof(GearManager), Member = "DestroyGearObject")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnPlaceMeshAnimationEvent")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInventoryOnPlacement")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ReleaseFromHands")]
+	[CalledBy(Type = typeof(Inventory), Member = "DestroyGear")]
 	[CallerCount(Count = 15)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Inventory), Member = "QuickSelectionHandleInventoryItemRemoval")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItem), Member = "DisableTextureStreaming")]
+	[Calls(Type = typeof(ClothingItem), Member = "TakeOff")]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(Inventory), Member = "GameObjectInInventory")]
 	[Calls(Type = typeof(Inventory), Member = "RemoveGameObjectInInventory")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "OnInventoryItemRemoved")]
-	[Calls(Type = typeof(ClothingItem), Member = "TakeOff")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 10)]
 	public void RemoveGear(GameObject go, bool toContainer)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Inventory), Member = "RemoveGear")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(GearItemObject), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GearItemObject), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void RemoveGameObjectInInventory(GameObject objectToRemove)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "OnInventoryItemRemoved")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallerCount(Count = 34)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Inventory), Member = "GameObjectInInventory")]
 	[Calls(Type = typeof(Inventory), Member = "RemoveGear")]
 	[Calls(Type = typeof(GearManager), Member = "DestroyGearObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "OnInventoryItemRemoved")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 34)]
-	[Calls(Type = typeof(Inventory), Member = "GameObjectInInventory")]
+	[CallsUnknownMethods(Count = 3)]
 	public void DestroyGear(GameObject go)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "ResetStartGear")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Action_ResetStartGear), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Action_OverrideStartGear), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Inventory), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_xpmode")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(GearItemObject), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ResetStartGear")]
+	[CalledBy(Type = typeof(Inventory), Member = "OnDestroy")]
+	[CalledBy(Type = typeof(Action_OverrideStartGear), Member = "OnExecute")]
+	[CalledBy(Type = typeof(Action_ResetStartGear), Member = "OnExecute")]
 	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(GearItemObject), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void DestroyAllGear()
 	{
 	}
@@ -407,67 +384,79 @@ public class Inventory : MonoBehaviour, NCUtils.IItemRequirementsCollection
 	[Calls(Type = typeof(Inventory), Member = "GetExtraScentIntensity")]
 	public float GetCurrentTotalScentIntensity()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(Inventory), Member = "GetTotalWeightKG")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerCantSprintBecauseOfInjury")]
-	[CalledBy(Type = typeof(Panel_Inventory), Member = "RefreshTable")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "RefreshWeight")]
-	[CalledBy(Type = typeof(Encumber), Member = "GetEncumberLevel")]
-	[CalledBy(Type = typeof(Encumber), Member = "GetPlayerCarryCapacityString")]
 	[CalledBy(Type = typeof(Encumber), Member = "Update")]
+	[CalledBy(Type = typeof(Encumber), Member = "GetPlayerCarryCapacityString")]
+	[CalledBy(Type = typeof(Encumber), Member = "GetEncumberLevel")]
+	[CalledBy(Type = typeof(Panel_Container), Member = "RefreshWeight")]
+	[CalledBy(Type = typeof(Panel_Inventory), Member = "RefreshTable")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "PlayerCantSprintBecauseOfInjury")]
+	[CalledBy(Type = typeof(Inventory), Member = "GetTotalWeightKG")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "ObjectToPlaceInInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	private float GetExtraWeightKG()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
-	[CalledBy(Type = typeof(Inventory), Member = "GetCurrentTotalScentIntensity")]
-	[CallsUnknownMethods(Count = 21)]
-	[CalledBy(Type = typeof(Panel_HUD.ScentIndicator), Member = "Update")]
-	[CalledBy(Type = typeof(BaseAi), Member = "CanSmellSource")]
 	[CalledBy(Type = typeof(AiTarget), Member = "EmitsTrackableSmell")]
-	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(BaseAi), Member = "CanSmellSource")]
+	[CalledBy(Type = typeof(Panel_HUD.ScentIndicator), Member = "Update")]
+	[CalledBy(Type = typeof(Inventory), Member = "GetCurrentTotalScentIntensity")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerManager), Member = "ObjectToPlaceInInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(BloodLoss), Member = "HasBloodLoss")]
+	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 21)]
 	private float GetExtraScentIntensity()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Inventory), Member = "GetExtraWeightKG")]
 	public float GetTotalWeightKG()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(Lock), Member = "GetGearItemToForceLock")]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "OnBedRoll")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetGearItemsForRadial")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowPlaceItemRadial")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNavigationRadial")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UseEmergencyStim")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
+	[CalledBy(Type = typeof(Panel_BedRollSelect), Member = "OnUseBedRoll")]
+	[CalledBy(Type = typeof(Panel_BedRollSelect), Member = "OnUseBearSkin")]
+	[CalledBy(Type = typeof(Panel_CanOpening), Member = "SetupScrollList")]
+	[CalledBy(Type = typeof(Panel_IceFishingHoleClear), Member = "SetupScrollList")]
+	[CalledBy(Type = typeof(Panel_TorchLight), Member = "SetupScrollList")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ShouldShowSprayPaintCan")]
 	[CallerCount(Count = 22)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetHighestConditionGearThatMatchesName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetHighestConditionGearThatMatchesName(string name)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(Panel_Actions), Member = "OnSprayPaint")]
-	[Calls(Type = typeof(Utils), Member = "GetLowestConditionGearThatMatchesName")]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "OnSprayPaint")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "GetLowestConditionGearThatMatchesName")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetLowestConditionGearThatMatchesName(string name)
 	{
@@ -475,57 +464,71 @@ public class Inventory : MonoBehaviour, NCUtils.IItemRequirementsCollection
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetHighestConditionGearThatMatchesCanOpeningType")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetHighestConditionGearThatMatchesCanOpeningType(CanOpeningItem.CanOpeningType type)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(FirstAidKitButton), Member = "Refresh")]
+	[CalledBy(Type = typeof(BlueprintItem), Member = "HasRequiredMaterials")]
+	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyStandardRemedy")]
+	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyAlternateRemedy")]
+	[CalledBy(Type = typeof(Elevator), Member = "ProcessInteraction")]
+	[CalledBy(Type = typeof(Elevator), Member = "HasValidCrankItem")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UseItem")]
+	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UseSelectedItem")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "UseItem")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "UseSelectedItem")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "MaybeUseNextTreatmentItem")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshMaterialsTable")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RepairHasRequiredMaterial")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "HasVistaLocationRequiredGearItem")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "RefreshRequiredMaterials")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "OnRepair")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "RefreshMaterialsTable")]
+	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "HasValveHandleInInventory")]
+	[CalledBy(Type = typeof(Action_AddGearItem), Member = "OnExecute")]
 	[CallerCount(Count = 20)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GearInInventory")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GearInInventory(string gearName, int numUnits)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Utils), Member = "GearInInventoryAtCondition")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "GearInInventoryAtCondition")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GearInInventoryAtCondition(string gearName, int numUnits, int conditionInPercent)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
-	[CalledBy(Type = typeof(StartGear), Member = "AddAllToInventory")]
-	[CalledBy(Type = typeof(Inventory), Member = "HanksHack")]
-	[CalledBy(Type = typeof(StartGear), Member = "AddAllToInventory")]
-	[CalledBy(Type = typeof(Inventory), Member = "HanksHack")]
-	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
-	[CalledBy(Type = typeof(BreakDown), Member = "ProcessInteraction")]
-	[Calls(Type = typeof(Utils), Member = "GetNonRuinedItem")]
-	[CalledBy(Type = typeof(BlueprintItem), Member = "HasRequiredTool")]
-	[CalledBy(Type = typeof(BlueprintItem), Member = "HasRequiredTool")]
 	[CalledBy(Type = typeof(CraftingRequirementMultiTool), Member = "RefreshDisplayed")]
+	[CalledBy(Type = typeof(BlueprintItem), Member = "HasRequiredTool")]
+	[CalledBy(Type = typeof(Inspect), Member = "GetUrgency")]
+	[CalledBy(Type = typeof(BreakDown), Member = "ProcessInteraction")]
+	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
+	[CalledBy(Type = typeof(Inventory), Member = "HanksHack")]
+	[CalledBy(Type = typeof(StartGear), Member = "AddAllToInventory")]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(Utils), Member = "GetNonRuinedItem")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 11)]
-	[CalledBy(Type = typeof(Inspect), Member = "GetUrgency")]
 	public bool HasNonRuinedItem(string gearName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
-	[CalledBy(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
-	[CalledBy(Type = typeof(Harvestable), Member = "GetRequiredTool")]
 	[CalledBy(Type = typeof(BlueprintItem), Member = "GetToolsAvailableToCraft")]
+	[CalledBy(Type = typeof(Harvestable), Member = "GetRequiredTool")]
+	[CalledBy(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[CalledBy(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
+	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(Utils), Member = "GetNonRuinedItem")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(BlueprintItem), Member = "GetToolsAvailableToCraft")]
 	public GearItem GetNonRuinedItem(string gearName)
 	{
 		return null;
@@ -533,314 +536,320 @@ public class Inventory : MonoBehaviour, NCUtils.IItemRequirementsCollection
 
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GearInList")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "RefreshTools")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem[] GearInInventory(string gearName)
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "GetNumMatches")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public int GetNumMatches()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "GetNumFlares")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
 	[CalledBy(Type = typeof(RadialMenuArm), Member = "UpdateStackLabel")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateStackStatus")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "GetNumFlares")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public int GetNumFlares(FlareType type)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateStackStatus")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(RadialMenuArm), Member = "UpdateStackLabel")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateStackStatus")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public int GetNumTorches()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "GetNumStones")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
 	[CalledBy(Type = typeof(RadialMenuArm), Member = "UpdateStackLabel")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateStackStatus")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Update_HasUnloadedAmmo")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Utils), Member = "GetNumStones")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public int GetNumStones()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateStackStatus")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public int GetNumNoiseMakers()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "UseFirstAidItem")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "HasMaterialsForRepair")]
-	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "HasMaterialsForRepair")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "HasMaterialsForRepair")]
-	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "HasMaterialsForRepair")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "SetItemsNeeded")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "RefreshWaterSources")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "CanCraftItem")]
-	[CalledBy(Type = typeof(Panel_FirstAid), Member = "SetItemsNeeded")]
-	[CalledBy(Type = typeof(AfflictionRemedy), Member = "PlayerHasRequiredRemedy")]
-	[CalledBy(Type = typeof(BowItem), Member = "GetNumArrowsInInventory")]
-	[CalledBy(Type = typeof(FirstAidKitButton), Member = "Refresh")]
-	[CalledBy(Type = typeof(CraftingRequirementQuantitySelect), Member = "Enable")]
 	[CalledBy(Type = typeof(CraftingRequirementMaterial), Member = "Enable")]
+	[CalledBy(Type = typeof(CraftingRequirementQuantitySelect), Member = "Enable")]
+	[CalledBy(Type = typeof(FirstAidKitButton), Member = "Refresh")]
+	[CalledBy(Type = typeof(BowItem), Member = "GetNumArrowsInInventory")]
+	[CalledBy(Type = typeof(AfflictionRemedy), Member = "PlayerHasRequiredRemedy")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "RefreshCraftingRequiredMaterials")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "CanCraftItem")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "RefreshWaterSources")]
+	[CalledBy(Type = typeof(Panel_FirstAid), Member = "SetItemsNeeded")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "HasMaterialsForRepair")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "HasMaterialsForRepair")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UseFirstAidItem")]
+	[CallerCount(Count = 15)]
 	[Calls(Type = typeof(Utils), Member = "NumGearInList")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 15)]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "RefreshCraftingRequiredMaterials")]
 	public int NumGearInInventory(string gearName)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[Calls(Type = typeof(Utils), Member = "NumGearInListForScripting")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "NumGearInListForScripting")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public int GetNumGearWithName(string gearName)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetMeasurableTotalByTypeInList")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public int GetMeasurableTotalByType(string type)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyAlternateRemedy")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "RemoveFirstAidItem")]
 	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyStandardRemedy")]
-	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(NPCAffliction), Member = "ApplyAlternateRemedy")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "RemoveFirstAidItem")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(Type = typeof(Inventory), Member = "RemoveGearFromInventory")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void RemoveUnits(GearItem gi, int numUnits)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Action_GetWeightOfItems), Member = "OnExecute")]
-	[CalledBy(Type = typeof(Condition_CheckInventoryItemCondition), Member = "OnCheck")]
 	[CalledBy(Type = typeof(CraftingRequirementMultiTool), Member = "AddToolOptions")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Condition_PlayerHasItemsWithWeight), Member = "Test")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Condition_CheckInventoryItemCondition), Member = "OnCheck")]
+	[CalledBy(Type = typeof(Action_GetWeightOfItems), Member = "OnExecute")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void GetItems(string gearName, List<GearItem> list)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
+	[CalledBy(Type = typeof(LeanTo), Member = "BuildFinished")]
+	[CalledBy(Type = typeof(LeanTo), Member = "RepairFinished")]
+	[CalledBy(Type = typeof(RockCache), Member = "BuildFinished")]
+	[CalledBy(Type = typeof(RockCache), Member = "BuildCallback")]
+	[CalledBy(Type = typeof(SnowShelter), Member = "BuildFinished")]
+	[CalledBy(Type = typeof(SnowShelter), Member = "RepairFinished")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ConsumeMaterialsUsedForCrafting")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "ConsumeMaterialsUsedForCrafting")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "PurifyingWaterCompleted")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "ConsumeMaterialsUsedForRepair")]
+	[CalledBy(Type = typeof(Panel_LeanToInteract), Member = "InteractionFinished")]
+	[CalledBy(Type = typeof(Panel_Milling), Member = "ConsumeMaterials")]
+	[CalledBy(Type = typeof(Panel_Repair), Member = "ConsumeMaterialsUsedForRepair")]
+	[CalledBy(Type = typeof(Panel_SnowShelterBuild), Member = "BuildFinished")]
+	[CalledBy(Type = typeof(Panel_SnowShelterInteract), Member = "InteractionFinished")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInventoryOnPlacement")]
+	[CalledBy(Type = typeof(Inventory), Member = "RemoveUnits")]
+	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "HandleInteractionChoice")]
+	[CalledBy(Type = typeof(Action_RemoveGearItem), Member = "OnExecute")]
 	[CallerCount(Count = 25)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	public void RemoveGearFromInventory(string gearName, int numUnits)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "GetAmmoAvailableForWeapon")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "GetAmmoAvailableForWeapon")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public int GetAmmoAvailableForGunType(GunType gunType)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Update_HasUnloadedAmmo")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "Reload")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Update_HasUnloadedAmmo")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetAmmoAvailableForWeapon")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public int GetAmmoAvailableForWeapon(GearItem weapon)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Utils), Member = "RemoveBestQualityAmmoForWeaponSingle")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public int RemoveAmmoForWeaponSingle(GearItem weapon)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Utils), Member = "RemoveBestQualityAmmoForWeapon")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "RemoveBestQualityAmmoForWeapon")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public List<int> RemoveAmmoForWeapon(GearItem weapon, int ammoNeeded)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "PurifyingWaterCompleted")]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpWater")]
 	[CalledBy(Type = typeof(Panel_FeedFire), Member = "BoilingWaterCompleted")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "PurifyingWaterCompleted")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool AddToPotableWaterSupply(float volumeLiters)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteLightSourceAction")]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteStrikeMatchAction")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "GetBestMatches")]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteLightSourceAction")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "GetBestMatches")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestMatches()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(Panel_TorchLight), Member = "SetupScrollList")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetBestMatches")]
-	[CalledBy(Type = typeof(Panel_TorchLight), Member = "SetupScrollList")]
-	[CalledBy(Type = typeof(Panel_TorchLight), Member = "SetupScrollList")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestMatches(MatchesType matchesType)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteLightSourceAction")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetBestFlare")]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteLightSourceAction")]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteLightSourceAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestFlare(FlareType type)
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "GetBestFlashlight")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "GetBestFlashlight")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestFlashlight()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetBestTorch")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestTorch()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public GearItem GetBestBed()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Utils), Member = "GetBestLamp")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "GetBestLamp")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestLamp()
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "GetBestRevolver")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public GearItem GetBestRevolver()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetBestRifle")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestRifle()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetBestBearSpear")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestBearSpear()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetBestFlareGun")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestFlareGun()
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(StoneItem), Member = "OnThrowComplete")]
-	[Calls(Type = typeof(Utils), Member = "GetBestStone")]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteFirearmAction")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "GetBestStone")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestStone()
 	{
@@ -848,139 +857,151 @@ public class Inventory : MonoBehaviour, NCUtils.IItemRequirementsCollection
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetBestBow")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestBow()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "GetBestDecoy")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "ShowNoDecoyMessage")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "GetShouldGreyOut")]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteDecoyAction")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "GetBestDecoy")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestDecoy()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetBestFishingTackle")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestFishingTackle()
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "GetBestFishingHook")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public GearItem GetBestFishingHook()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetBestFishingLine")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestFishingLine()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "GetBestRopeItem")]
 	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "ActionStarted")]
 	[CalledBy(Type = typeof(RopeAnchorPoint), Member = "ActionFinished")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "GetBestRopeItem")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestRopeItem()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetBestStruggleBonusItem")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestStuggleBonusItem()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetBestNoiseMaker")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestNoiseMakerItem()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(BowItem), Member = "MaybeSpawnArrow")]
 	[CalledBy(Type = typeof(BowItem), Member = "CanEquipWithArrow")]
+	[CalledBy(Type = typeof(BowItem), Member = "MaybeSpawnArrow")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetLowestConditionArrow")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetLowestConditionArrow()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "HasRawMeat")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool HasRawMeat()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[CallsUnknownMethods(Count = 15)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "AddToExistingStackable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
-	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[CallsUnknownMethods(Count = 15)]
 	public GearItem GetClosestMatchStackable(string name, float normalizedHP)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
-	[Calls(Type = typeof(Inventory), Member = "GetNonRuinedItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 37)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Inventory), Member = "GetNonRuinedItem")]
+	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public GearItem GetPotableWaterSupply()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(CookingPotItem), Member = "StartBoilingWater")]
+	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpSnow")]
+	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpWater")]
+	[CalledBy(Type = typeof(PurifyWater), Member = "Use")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "GetBoilableWaterSupply")]
+	[CalledBy(Type = typeof(Panel_Cooking), Member = "UpdateGearItem")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "Refresh")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "GetBoilableWaterSupply")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "MeltingSnowCompleted")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "AwardPartialAmount")]
+	[CalledBy(Type = typeof(Panel_PickWater), Member = "TransferWaterContainerToInventory")]
+	[CalledBy(Type = typeof(Panel_PickWater), Member = "OnTakeWaterComplete")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInspectGear")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessWaterSourceInteraction")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnDrinkWaterComplete")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UseWaterPurificationItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateInventoryOnPlacement")]
+	[CalledBy(Type = typeof(Inventory), Member = "GetWaterSupply")]
+	[CalledBy(Type = typeof(Inventory), Member = "AddToWaterSupply")]
 	[CallerCount(Count = 28)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Inventory), Member = "GetNonRuinedItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(PlayerManager), Member = "InstantiateItemInPlayerInventory")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	public GearItem GetNonPotableWaterSupply()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
 	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
 	public GearItem GetWaterSupply(LiquidQuality quality)
 	{
@@ -988,35 +1009,32 @@ public class Inventory : MonoBehaviour, NCUtils.IItemRequirementsCollection
 	}
 
 	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
 	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
-	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
+	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool AddToWaterSupply(float numLiters, LiquidQuality quality)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
-	[CalledBy(Type = typeof(Inventory), Member = "ProcessItems")]
-	[CalledBy(Type = typeof(Inventory), Member = "HideInventoryItem")]
-	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "StowOrDropPlaceMesh")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UnequipItemInHandsForPlacement")]
-	[CalledBy(Type = typeof(Utils), Member = "ShowInspectForGearItem")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
-	[CalledBy(Type = typeof(BowItem), Member = "OnDequip")]
-	[CalledBy(Type = typeof(BowItem), Member = "MaybeSpawnArrow")]
 	[CalledBy(Type = typeof(BowItem), Member = "ShootArrow")]
+	[CalledBy(Type = typeof(BowItem), Member = "MaybeSpawnArrow")]
+	[CalledBy(Type = typeof(BowItem), Member = "OnDequip")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnEquipItemBegin")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UnequipItemInHandsForPlacement")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "StowOrDropPlaceMesh")]
+	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
+	[CalledBy(Type = typeof(Inventory), Member = "HideInventoryItem")]
+	[CalledBy(Type = typeof(Inventory), Member = "ProcessItems")]
+	[CalledBy(Type = typeof(Utils), Member = "ShowInspectForGearItem")]
+	[CalledBy(Type = typeof(Utils), Member = "ExitInspectForGearItem")]
+	[CallerCount(Count = 14)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 14)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnEquipItemBegin")]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetActive(GearItem gi, bool active)
 	{
 	}
@@ -1028,93 +1046,76 @@ public class Inventory : MonoBehaviour, NCUtils.IItemRequirementsCollection
 	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "EnterInspectGearMode")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateExamineCollectible")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "OnProcessPickupWinNoInspectEquipComplete")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "InitializeRenderers")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "OnEquipItemBegin")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "OnPlaceMeshAnimationEvent")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "PrepareGhostedObject")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "InitializeRenderers")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ReleaseFromHands")]
 	[CalledBy(Type = typeof(Inventory), Member = "ProcessItems")]
-	[CallsUnknownMethods(Count = 49)]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "EquipItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 14)]
-	[CallsDeduplicatedMethods(Count = 15)]
 	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NoiseMakerItem), Member = "HideEffects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ArrowItem), Member = "Reset")]
 	[Calls(Type = typeof(Inventory), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "HideEffects")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 49)]
 	public void HideInventoryItem(GearItem gi, bool hide)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Inventory), Member = "DropAndScatterItems")]
-	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Vector3), Member = "get_magnitude")]
+	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void AdjustForSlope(Vector3 origin, ref Vector3 target)
 	{
 	}
 
-	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(GearItem), Member = "StickToGroundAndOrientOnSlope")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(ShowOnMapItem), Member = "AddToMap")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_drop_scatter_item_in_hands")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "OnPlayerDazed")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "BreakStruggle")]
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(GearItem), Member = "StickToGroundAndOrientOnSlope")]
-	[Calls(Type = typeof(Inventory), Member = "AdjustForSlope")]
-	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
-	[Calls(Type = typeof(Quaternion), Member = "Euler")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[CallsDeduplicatedMethods(Count = 12)]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Inventory), Member = "CanDropAndScatterItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
 	[Calls(Type = typeof(Inventory), Member = "GameObjectInInventory")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GearItem), Member = "Drop")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(GearItem), Member = "Drop")]
+	[Calls(Type = typeof(Quaternion), Member = "Euler")]
+	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[Calls(Type = typeof(Inventory), Member = "AdjustForSlope")]
+	[Calls(Type = typeof(GearItem), Member = "StickToGroundAndOrientOnSlope")]
+	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(ShowOnMapItem), Member = "AddToMap")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 21)]
 	public int DropAndScatterItems(int count, float minRadius, float maxRadius, GearItem forceDropItem, int minAngleDegrees, int maxAngleDegrees)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "GetBestGearItemWithName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public GearItem GetBestGearItemWithName(string name)
 	{
 		return null;
@@ -1131,25 +1132,21 @@ public class Inventory : MonoBehaviour, NCUtils.IItemRequirementsCollection
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnConsumed(GearItem gearItem)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnFirstAidCompleted(GearItem gearItem)
 	{
 	}
@@ -1158,26 +1155,26 @@ public class Inventory : MonoBehaviour, NCUtils.IItemRequirementsCollection
 	[CallerCount(Count = 0)]
 	public bool HasConsumedCoffee()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool HasConsumedRosehipTea()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool HasConsumedReishiTea()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool HasConsumedOldMansBeardDressing()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -1185,125 +1182,94 @@ public class Inventory : MonoBehaviour, NCUtils.IItemRequirementsCollection
 	{
 	}
 
-	[Calls(Type = typeof(NoiseMakerItem), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BowItem), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ClothingItem), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(EvolveItem), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(KeroseneLampItem), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(SnareItem), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(TorchItem), Member = "Update")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(Inventory), Member = "Update")]
-	[CallsUnknownMethods(Count = 32)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(FlareItem), Member = "Update")]
-	[Calls(Type = typeof(Inventory), Member = "ShouldMakeItemInHandsActive")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(ClothingItem), Member = "IsWearing")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
-	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
-	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
 	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Inventory), Member = "ShouldMakeItemInHandsActive")]
 	[Calls(Type = typeof(Inventory), Member = "SetActive")]
 	[Calls(Type = typeof(Inventory), Member = "HideInventoryItem")]
-	[Calls(Type = typeof(GearItem), Member = "GetItemWeightKG")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(FlareItem), Member = "Update")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "Update")]
+	[Calls(Type = typeof(BowItem), Member = "Update")]
+	[Calls(Type = typeof(ClothingItem), Member = "Update")]
+	[Calls(Type = typeof(EvolveItem), Member = "Update")]
+	[Calls(Type = typeof(KeroseneLampItem), Member = "Update")]
+	[Calls(Type = typeof(SnareItem), Member = "Update")]
+	[Calls(Type = typeof(TorchItem), Member = "Update")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 32)]
 	private void ProcessItems()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
 	[CalledBy(Type = typeof(Inventory), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void MaybeUpdateWeightRTPCs()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Inventory), Member = "DropAndScatterItems")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool CanDropAndScatterItem(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Renderer), Member = "get_bounds")]
-	[Calls(Type = typeof(GearItem), Member = "MaybeAdjustTransformWithDropDummy")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Bounds), Member = "get_min")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
+	[Calls(Type = typeof(Utils), Member = "GetOrientationOnSlope")]
+	[Calls(Type = typeof(Utils), Member = "GetMaterialTagUnderPosition")]
+	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Vector3), Member = "get_up")]
+	[Calls(Type = typeof(Transform), Member = "Rotate")]
 	[Calls(Type = typeof(Renderer), Member = "get_bounds")]
 	[Calls(Type = typeof(Bounds), Member = "get_max")]
-	[Calls(Type = typeof(Transform), Member = "Rotate")]
-	[CallsUnknownMethods(Count = 35)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Utils), Member = "GetMaterialTagUnderPosition")]
-	[Calls(Type = typeof(Utils), Member = "GetOrientationOnSlope")]
-	[Calls(Type = typeof(Quaternion), Member = "get_identity")]
+	[Calls(Type = typeof(Bounds), Member = "get_min")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(GearItem), Member = "MaybeAdjustTransformWithDropDummy")]
 	[CallsDeduplicatedMethods(Count = 21)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Vector3), Member = "get_up")]
+	[CallsUnknownMethods(Count = 35)]
 	private void PositionAndRotateScatteredItem(GearItem item, Vector3 dropPosition, Vector3 dropNormal)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Inventory), Member = "ProcessItems")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(CameraFade), Member = "GetFadeAlpha")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	private bool ShouldMakeItemInHandsActive(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[CalledBy(Type = typeof(Inventory), Member = "Deserialize")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Inventory), Member = "AddGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Inventory), Member = "HasNonRuinedItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Resources), Member = "Load")]
-	[Calls(Type = typeof(Inventory), Member = "HasNonRuinedItem")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Inventory), Member = "HasNonRuinedItem")]
+	[Calls(Type = typeof(Resources), Member = "Load")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(Inventory), Member = "AddGear")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void HanksHack()
 	{
 	}
@@ -1321,8 +1287,9 @@ public class Inventory : MonoBehaviour, NCUtils.IItemRequirementsCollection
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 19)]
 	public Inventory()
 	{

@@ -13,16 +13,16 @@ public class OnDisplaySettingsUpdatedCallbackInfo : ICallbackInfo, ISettable
 
 	public object ClientData
 	{
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		private set
 		{
 		}
@@ -35,7 +35,7 @@ public class OnDisplaySettingsUpdatedCallbackInfo : ICallbackInfo, ISettable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -52,7 +52,7 @@ public class OnDisplaySettingsUpdatedCallbackInfo : ICallbackInfo, ISettable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -62,35 +62,35 @@ public class OnDisplaySettingsUpdatedCallbackInfo : ICallbackInfo, ISettable
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public Result? GetResultCode()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(OnDisplaySettingsUpdatedCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(OnDisplaySettingsUpdatedCallbackInfoInternal), Member = "get_IsVisible")]
 	[Calls(Type = typeof(OnDisplaySettingsUpdatedCallbackInfoInternal), Member = "get_IsExclusiveInput")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	internal void Set(OnDisplaySettingsUpdatedCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(OnDisplaySettingsUpdatedCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(OnDisplaySettingsUpdatedCallbackInfoInternal), Member = "get_IsVisible")]
 	[Calls(Type = typeof(OnDisplaySettingsUpdatedCallbackInfoInternal), Member = "get_IsExclusiveInput")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public OnDisplaySettingsUpdatedCallbackInfo()
 	{
 	}

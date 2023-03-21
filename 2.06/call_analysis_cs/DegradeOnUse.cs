@@ -5,8 +5,8 @@ public class DegradeOnUse : MonoBehaviour
 {
 	public float m_DegradeHP;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void Start()
 	{
 	}

@@ -11,10 +11,10 @@ public class UIControllerScheme : MonoBehaviour
 
 	public ControlScheme m_ControlScheme;
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GenericButtonMouseSpawner), Member = "Awake")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Awake()
 	{
 	}
@@ -32,11 +32,11 @@ public class UIControllerScheme : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(UIControllerScheme), Member = "Start")]
 	[CalledBy(Type = typeof(UIControllerScheme), Member = "LateUpdate")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void SetActiveChildren(bool enabled)
 	{
 	}

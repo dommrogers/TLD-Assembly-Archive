@@ -6,40 +6,41 @@ public class AkAcousticSurfaceArray : AkBaseArray<AkAcousticSurface>
 	protected override int StructureSize
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkAcousticSurface_GetSizeOf")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(AkBaseArray<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public AkAcousticSurfaceArray(int count)
 	{
-		((AkBaseArray<>)(object)this)._002Ector(default(int));
+		((AkBaseArray<>)(object)this)._002Ector(0);
 	}
 
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkAcousticSurface_Clear")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkAcousticSurface_Clear")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	protected override void DefaultConstructAtIntPtr(IntPtr address)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	protected override AkAcousticSurface CreateNewReferenceFromIntPtr(IntPtr address)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkAcousticSurface), Member = "getCPtr")]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkAcousticSurface_Clone")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected override void CloneIntoReferenceFromIntPtr(IntPtr address, AkAcousticSurface other)
 	{
 	}

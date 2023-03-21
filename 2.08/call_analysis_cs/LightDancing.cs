@@ -43,36 +43,28 @@ public class LightDancing : MonoBehaviour
 	private Light m_MyLight;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Random), Member = "get_insideUnitCircle")]
+	[Calls(Type = typeof(Random), Member = "Range")]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(Light), Member = "set_shadowStrength")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(Random), Member = "get_insideUnitCircle")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Random), Member = "Range")]
+	[CallsUnknownMethods(Count = 6)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 38)]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-	[CallsDeduplicatedMethods(Count = 46)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
+	[CallsDeduplicatedMethods(Count = 46)]
+	[CallsUnknownMethods(Count = 38)]
 	private void OnDrawGizmosSelected()
 	{
 	}

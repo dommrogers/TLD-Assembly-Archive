@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
@@ -24,7 +25,7 @@ public class UserReportingClient
 		public Action<object> _003C_003E9__2;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass47_0()
 		{
 		}
@@ -36,19 +37,18 @@ public class UserReportingClient
 		{
 		}
 
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Stopwatch), Member = "StartNew")]
+		[Calls(Type = typeof(UserReport), Member = ".ctor")]
+		[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+		[Calls(Type = typeof(Enumerable), Member = "ToList")]
+		[Calls(Type = typeof(UserReport), Member = "Complete")]
 		[Calls(Type = typeof(Stopwatch), Member = "Stop")]
 		[Calls(Type = typeof(Stopwatch), Member = "get_ElapsedMilliseconds")]
-		[Calls(Type = typeof(UserReport), Member = "Complete")]
-		[CallsUnknownMethods(Count = 45)]
 		[Calls(Type = typeof(UserReportingClient), Member = "SampleClientMetric")]
-		[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
-		[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
-		[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
-		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 5)]
-		[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
-		[Calls(Type = typeof(UserReport), Member = ".ctor")]
-		[Calls(Type = typeof(Stopwatch), Member = "StartNew")]
+		[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 41)]
 		internal object _003CCreateUserReport_003Eb__1()
 		{
 			return null;
@@ -73,21 +73,22 @@ public class UserReportingClient
 		public Action<bool, UserReport> callback;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass57_0()
 		{
 		}
 
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Action<, >), Member = "Invoke")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallsUnknownMethods(Count = 1)]
 		internal void _003CSendUserReport_003Eb__0(float uploadProgress, float downloadProgress)
 		{
 		}
 
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CallsUnknownMethods(Count = 17)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(List<>), Member = "Add")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 17)]
 		internal void _003CSendUserReport_003Eb__1(bool success, byte[] result)
 		{
 		}
@@ -102,17 +103,16 @@ public class UserReportingClient
 		public _003C_003Ec__DisplayClass57_0 CS_0024_003C_003E8__locals1;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass57_1()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 10)]
 		[Calls(Type = typeof(UserReportingClient), Member = "LogEvent")]
 		[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
 		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(UserReportingClient), Member = "LogEvent")]
+		[CallsDeduplicatedMethods(Count = 10)]
 		[CallsUnknownMethods(Count = 39)]
 		internal void _003CSendUserReport_003Eb__2()
 		{
@@ -126,14 +126,15 @@ public class UserReportingClient
 		public Action<UserReportScreenshot> callback;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass59_0()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 17)]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(List<>), Member = "Add")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 17)]
 		internal void _003CTakeScreenshotFromSource_003Eb__0(int passedFrameNumber, byte[] data)
 		{
 		}
@@ -148,15 +149,15 @@ public class UserReportingClient
 		public _003C_003Ec__DisplayClass59_0 CS_0024_003C_003E8__locals1;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass59_1()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 		[Calls(Type = typeof(Convert), Member = "ToBase64String")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 18)]
 		internal void _003CTakeScreenshotFromSource_003Eb__1()
 		{
@@ -172,13 +173,13 @@ public class UserReportingClient
 		public Action callback;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass62_0()
 		{
 		}
 
-		[Calls(Type = typeof(UserReportingClient), Member = "WaitForPerforation")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UserReportingClient), Member = "WaitForPerforation")]
 		[CallsUnknownMethods(Count = 1)]
 		internal void _003CWaitForPerforation_003Eb__0()
 		{
@@ -231,9 +232,9 @@ public class UserReportingClient
 
 	public UserReportingClientConfiguration Configuration
 	{
-		[CallerCount(Count = 6)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		get
 		{
 			return null;
@@ -250,14 +251,14 @@ public class UserReportingClient
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 8)]
+		[CallerCount(Count = 11)]
 		private set
 		{
 		}
@@ -270,11 +271,11 @@ public class UserReportingClient
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -287,7 +288,7 @@ public class UserReportingClient
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -316,16 +317,16 @@ public class UserReportingClient
 
 	public string ProjectIdentifier
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 8)]
 		private set
 		{
 		}
@@ -338,7 +339,7 @@ public class UserReportingClient
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -348,23 +349,22 @@ public class UserReportingClient
 		}
 	}
 
+	[CalledBy(Type = typeof(UnityUserReporting), Member = "Configure")]
+	[CalledBy(Type = typeof(UnityUserReporting), Member = "Configure")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 13)]
 	[Calls(Type = typeof(UserReportingClient), Member = "AddDeviceMetadata")]
-	[Calls(Type = typeof(UserReportingClient), Member = "AddDeviceMetadata")]
-	[CalledBy(Type = typeof(UnityUserReporting), Member = "Configure")]
-	[CalledBy(Type = typeof(UnityUserReporting), Member = "Configure")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 11)]
 	[CallsUnknownMethods(Count = 107)]
 	public UserReportingClient(string endpoint, string projectIdentifier, IUserReportingPlatform platform, UserReportingClientConfiguration configuration)
 	{
 	}
 
 	[CalledBy(Type = typeof(UserReportingClient), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(UserReportingClient), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 5)]
 	public void AddDeviceMetadata(string name, string value)
 	{
 	}
@@ -376,28 +376,28 @@ public class UserReportingClient
 	{
 	}
 
-	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void ClearScreenshots()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 15)]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UserReportingClient), Member = "LogEvent")]
-	[Calls(Type = typeof(UserReportingClient), Member = "WaitForPerforation")]
 	[CalledBy(Type = typeof(InternalUserReport), Member = "Send")]
 	[CalledBy(Type = typeof(UserReportingMonitor), Member = "Trigger")]
 	[CalledBy(Type = typeof(UserReportingScript), Member = "CreateUserReport")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UserReportingClient), Member = "LogEvent")]
+	[Calls(Type = typeof(UserReportingClient), Member = "WaitForPerforation")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 15)]
 	public void CreateUserReport(Action<UserReport> callback)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "TrimHelper")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "TrimHelper")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public string GetEndpoint()
 	{
@@ -416,84 +416,63 @@ public class UserReportingClient
 	{
 	}
 
+	[CalledBy(Type = typeof(UnityUserReportingPlatform), Member = "Update")]
+	[CalledBy(Type = typeof(AsyncUnityUserReportingPlatform), Member = "Update")]
+	[CalledBy(Type = typeof(UserReportingClient), Member = "CreateUserReport")]
+	[CalledBy(Type = typeof(UserReportingClient), Member = "LogEvent")]
+	[CalledBy(Type = typeof(UserReportingClient), Member = "LogEvent")]
+	[CalledBy(Type = typeof(UserReportingClient), Member = "LogException")]
 	[CalledBy(Type = typeof(UserReportingClient), Member = "SaveUserReportToDisk")]
 	[CalledBy(Type = typeof(UserReportingClient), Member = "SendUserReport")]
-	[CalledBy(Type = typeof(UserReportingClient), Member = "SendUserReport")]
-	[CalledBy(Type = typeof(UserReportingClient), Member = "SendUserReport")]
-	[CalledBy(Type = typeof(UserReportingClient), Member = "SendUserReport")]
 	[CalledBy(Type = typeof(UserReportingClient), Member = "TakeScreenshotFromSource")]
-	[CalledBy(Type = typeof(UserReportingClient), Member = "SendUserReport")]
 	[CalledBy(Type = typeof(_003C_003Ec__DisplayClass57_1), Member = "<SendUserReport>b__2")]
-	[CallsUnknownMethods(Count = 17)]
-	[CalledBy(Type = typeof(_003C_003Ec__DisplayClass57_1), Member = "<SendUserReport>b__2")]
-	[CalledBy(Type = typeof(UserReportingClient), Member = "SendUserReport")]
-	[CalledBy(Type = typeof(UserReportingClient), Member = "LogException")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(UserReportingClient), Member = "LogEvent")]
-	[CalledBy(Type = typeof(UserReportingClient), Member = "CreateUserReport")]
-	[CalledBy(Type = typeof(AsyncUnityUserReportingPlatform), Member = "Update")]
-	[CalledBy(Type = typeof(AsyncUnityUserReportingPlatform), Member = "Update")]
-	[CalledBy(Type = typeof(UnityUserReportingPlatform), Member = "Update")]
-	[CalledBy(Type = typeof(UnityUserReportingPlatform), Member = "Update")]
-	[Calls(Type = typeof(SerializableException), Member = ".ctor")]
-	[Calls(Type = typeof(DateTime), Member = "get_UtcNow")]
-	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[CallerCount(Count = 18)]
-	[CalledBy(Type = typeof(UserReportingClient), Member = "LogEvent")]
+	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+	[Calls(Type = typeof(DateTime), Member = "get_UtcNow")]
+	[Calls(Type = typeof(SerializableException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 17)]
 	private void LogEvent(UserReportEventLevel level, string message, string stackTrace, Exception exception)
 	{
 	}
 
-	[Calls(Type = typeof(UserReportingClient), Member = "LogEvent")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UserReportingClient), Member = "LogEvent")]
 	public void LogException(Exception exception)
 	{
 	}
 
-	[CalledBy(Type = typeof(UserReportingClient), Member = "UpdateOnEndOfFrame")]
+	[CalledBy(Type = typeof(UnityUserReportingPlatform), Member = "OnEndOfFrame")]
 	[CalledBy(Type = typeof(UserReportingClient), Member = "Update")]
-	[CallsUnknownMethods(Count = 5)]
+	[CalledBy(Type = typeof(UserReportingClient), Member = "UpdateOnEndOfFrame")]
 	[CalledBy(Type = typeof(_003C_003Ec__DisplayClass47_0), Member = "<CreateUserReport>b__1")]
-	[CalledBy(Type = typeof(UnityUserReportingPlatform), Member = "OnEndOfFrame")]
-	[CalledBy(Type = typeof(UnityUserReportingPlatform), Member = "OnEndOfFrame")]
-	[CalledBy(Type = typeof(UnityUserReportingPlatform), Member = "OnEndOfFrame")]
-	[CalledBy(Type = typeof(UnityUserReportingPlatform), Member = "OnEndOfFrame")]
-	[Calls(Type = typeof(UserReportingClient), Member = "SampleMetric")]
-	[Calls(Type = typeof(UserReportMetric), Member = "Sample")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(UserReportMetric), Member = "Sample")]
+	[Calls(Type = typeof(UserReportingClient), Member = "SampleMetric")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public void SampleClientMetric(string name, double value)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(UserReportingClient), Member = "SampleClientMetric")]
-	[CalledBy(Type = typeof(AsyncUnityUserReportingPlatform), Member = "SampleAutomaticMetrics")]
-	[CalledBy(Type = typeof(AsyncUnityUserReportingPlatform), Member = "SampleAutomaticMetrics")]
-	[CalledBy(Type = typeof(AsyncUnityUserReportingPlatform), Member = "SampleAutomaticMetrics")]
-	[CalledBy(Type = typeof(AsyncUnityUserReportingPlatform), Member = "SampleAutomaticMetrics")]
-	[CalledBy(Type = typeof(AsyncUnityUserReportingPlatform), Member = "SampleAutomaticMetrics")]
-	[CalledBy(Type = typeof(AsyncUnityUserReportingPlatform), Member = "SampleAutomaticMetrics")]
-	[CalledBy(Type = typeof(AsyncUnityUserReportingPlatform), Member = "Update")]
-	[CalledBy(Type = typeof(UnityUserReportingPlatform), Member = "SampleAutomaticMetrics")]
-	[CalledBy(Type = typeof(UnityUserReportingPlatform), Member = "SampleAutomaticMetrics")]
-	[CalledBy(Type = typeof(UnityUserReportingPlatform), Member = "SampleAutomaticMetrics")]
-	[CalledBy(Type = typeof(UnityUserReportingPlatform), Member = "SampleAutomaticMetrics")]
-	[CalledBy(Type = typeof(UnityUserReportingPlatform), Member = "SampleAutomaticMetrics")]
 	[CalledBy(Type = typeof(UnityUserReportingPlatform), Member = "Update")]
+	[CalledBy(Type = typeof(UnityUserReportingPlatform), Member = "SampleAutomaticMetrics")]
+	[CalledBy(Type = typeof(AsyncUnityUserReportingPlatform), Member = "Update")]
+	[CalledBy(Type = typeof(AsyncUnityUserReportingPlatform), Member = "SampleAutomaticMetrics")]
+	[CalledBy(Type = typeof(UserReportingClient), Member = "SampleClientMetric")]
+	[CallerCount(Count = 15)]
 	[Calls(Type = typeof(UserReportMetric), Member = "Sample")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 15)]
-	[CalledBy(Type = typeof(UnityUserReportingPlatform), Member = "SampleAutomaticMetrics")]
+	[CallsUnknownMethods(Count = 6)]
 	public void SampleMetric(string name, double value)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UserReportingClient), Member = "LogEvent")]
 	[Calls(Type = typeof(File), Member = "WriteAllText")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SaveUserReportToDisk(UserReport userReport)
 	{
 	}
@@ -504,24 +483,18 @@ public class UserReportingClient
 	{
 	}
 
-	[Calls(Type = typeof(UserReportingClient), Member = "LogEvent")]
-	[CallsUnknownMethods(Count = 32)]
-	[CalledBy(Type = typeof(UserReportingClient), Member = "SendUserReport")]
-	[CalledBy(Type = typeof(UserReportingScript), Member = "SubmitUserReport")]
-	[CalledBy(Type = typeof(UserReportingMonitor), Member = "<Trigger>b__7_2")]
 	[CalledBy(Type = typeof(InternalUserReport), Member = "SubmitUserReport")]
-	[Calls(Type = typeof(UserReportingClient), Member = "LogEvent")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(UserReportingClient), Member = "LogEvent")]
-	[Calls(Type = typeof(UserReportingClient), Member = "LogEvent")]
-	[Calls(Type = typeof(UserReportingClient), Member = "LogEvent")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(string), Member = "TrimHelper")]
-	[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-	[Calls(Type = typeof(UserReportingClient), Member = "LogEvent")]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[CalledBy(Type = typeof(UserReportingMonitor), Member = "<Trigger>b__7_2")]
+	[CalledBy(Type = typeof(UserReportingScript), Member = "SubmitUserReport")]
+	[CalledBy(Type = typeof(UserReportingClient), Member = "SendUserReport")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UserReportingClient), Member = "LogEvent")]
+	[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
+	[Calls(Type = typeof(string), Member = "TrimHelper")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 32)]
 	public void SendUserReport(UserReport userReport, Action<float, float> progressCallback, Action<bool, UserReport> callback)
 	{
 	}
@@ -532,56 +505,53 @@ public class UserReportingClient
 	{
 	}
 
-	[CalledBy(Type = typeof(UserReportingScript), Member = "CreateUserReport")]
-	[CalledBy(Type = typeof(UserReportingScript), Member = "CreateUserReport")]
-	[CallsUnknownMethods(Count = 17)]
-	[CalledBy(Type = typeof(UserReportingClient), Member = "TakeScreenshot")]
-	[CalledBy(Type = typeof(UserReportingMonitor), Member = "Trigger")]
-	[CalledBy(Type = typeof(UserReportingMonitor), Member = "Trigger")]
 	[CalledBy(Type = typeof(InternalUserReport), Member = "Send")]
+	[CalledBy(Type = typeof(UserReportingMonitor), Member = "Trigger")]
+	[CalledBy(Type = typeof(UserReportingScript), Member = "CreateUserReport")]
+	[CalledBy(Type = typeof(UserReportingClient), Member = "TakeScreenshot")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(UserReportingClient), Member = "LogEvent")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 6)]
+	[CallsUnknownMethods(Count = 17)]
 	public void TakeScreenshotFromSource(int maximumWidth, int maximumHeight, object source, Action<UserReportScreenshot> callback)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 80)]
+	[CalledBy(TypeFullName = "UserReportingScriptNoPanel.TLDUserReportingUpdater", Member = "MoveNext")]
 	[CalledBy(Type = typeof(UnityUserReportingUpdater), Member = "MoveNext")]
-	[CalledBy(Type = typeof(UserReportingScriptNoPanel.TLDUserReportingUpdater), Member = "MoveNext")]
-	[Calls(Type = typeof(UserReportingClient), Member = "SampleClientMetric")]
-	[Calls(Type = typeof(Stopwatch), Member = "get_ElapsedMilliseconds")]
-	[Calls(Type = typeof(Stopwatch), Member = "Stop")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
-	[Calls(Type = typeof(Stopwatch), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Stopwatch), Member = "Start")]
+	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Stopwatch), Member = "Stop")]
+	[Calls(Type = typeof(Stopwatch), Member = "get_ElapsedMilliseconds")]
+	[Calls(Type = typeof(UserReportingClient), Member = "SampleClientMetric")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 80)]
 	public void Update()
 	{
 	}
 
+	[CalledBy(TypeFullName = "UserReportingScriptNoPanel.TLDUserReportingUpdater", Member = "MoveNext")]
 	[CalledBy(Type = typeof(UnityUserReportingUpdater), Member = "MoveNext")]
-	[CalledBy(Type = typeof(UserReportingScriptNoPanel.TLDUserReportingUpdater), Member = "MoveNext")]
-	[Calls(Type = typeof(UserReportingClient), Member = "SampleClientMetric")]
-	[Calls(Type = typeof(Stopwatch), Member = "get_ElapsedMilliseconds")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Stopwatch), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Stopwatch), Member = "Start")]
 	[Calls(Type = typeof(Stopwatch), Member = "Stop")]
+	[Calls(Type = typeof(Stopwatch), Member = "get_ElapsedMilliseconds")]
+	[Calls(Type = typeof(UserReportingClient), Member = "SampleClientMetric")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public void UpdateOnEndOfFrame()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(UserReportingClient), Member = "CreateUserReport")]
 	[CalledBy(Type = typeof(_003C_003Ec__DisplayClass62_0), Member = "<WaitForPerforation>b__0")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 17)]
 	private void WaitForPerforation(int currentScreenshotsTaken, Action callback)
 	{

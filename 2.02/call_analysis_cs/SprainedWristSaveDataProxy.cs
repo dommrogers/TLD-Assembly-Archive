@@ -23,7 +23,7 @@ public class SprainedWristSaveDataProxy
 	public bool m_IsNoSprainWristForced;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SprainedWristSaveDataProxy()
 	{
 	}

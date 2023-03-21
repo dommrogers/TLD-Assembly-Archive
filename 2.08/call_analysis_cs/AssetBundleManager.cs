@@ -22,9 +22,9 @@ public class AssetBundleManager
 
 		private AssetBundleRef System_002ECollections_002EGeneric_002EIEnumerator_003CAssetBundleRef_003E_002ECurrent
 		{
-			[CallerCount(Count = 28)]
-			[DeduplicatedMethod]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -35,7 +35,7 @@ public class AssetBundleManager
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 28)]
+			[CallerCount(Count = 32)]
 			get
 			{
 				return null;
@@ -57,12 +57,13 @@ public class AssetBundleManager
 		{
 		}
 
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Dictionary<, >.ValueCollection.Enumerator), Member = "MoveNext")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -73,11 +74,11 @@ public class AssetBundleManager
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[DebuggerHidden]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		private IEnumerator<AssetBundleRef> System_002ECollections_002EGeneric_002EIEnumerable_003CAssetBundleRef_003E_002EGetEnumerator()
 		{
 			return null;
@@ -106,9 +107,9 @@ public class AssetBundleManager
 
 	private static bool s_Verbose;
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[IteratorStateMachine(typeof(_003CGetAllBundles_003Ed__6))]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static IEnumerable<AssetBundleRef> GetAllBundles()
 	{
@@ -121,11 +122,11 @@ public class AssetBundleManager
 		return null;
 	}
 
+	[CalledBy(Type = typeof(AssetBundleRef), Member = "LoadBundle")]
+	[CalledBy(Type = typeof(AssetBundleRef), Member = "LoadBundleAsync")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(CompatibilityAssetBundleManifest), Member = "GetAllDependencies")]
-	[CalledBy(Type = typeof(AssetBundleRef), Member = "LoadBundle")]
-	[CalledBy(Type = typeof(AssetBundleRef), Member = "LoadBundleAsync")]
 	[CallsUnknownMethods(Count = 1)]
 	public static IEnumerable<string> GetDependencies(string bundle)
 	{
@@ -136,37 +137,37 @@ public class AssetBundleManager
 	[CallsUnknownMethods(Count = 1)]
 	public static bool IsLoading()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public static bool IsVerbose()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 3)]
 	public static bool IsSimulating()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Path), Member = "Combine")]
 	[Calls(Type = typeof(AssetBundleManager), Member = "LoadManifest")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void Init()
 	{
 	}
 
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CalledBy(Type = typeof(GameManager), Member = "Update")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallsUnknownMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void Update()
 	{
 	}
@@ -177,21 +178,22 @@ public class AssetBundleManager
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(AssetBundleManager), Member = "LoadBundle")]
 	[CalledBy(Type = typeof(AssetBundleManager), Member = "LoadBundleAsync")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private static AssetBundleRef CreateReference(string name)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(AssetBundleManager), Member = "LoadBundle")]
 	[CalledBy(Type = typeof(AssetBundleManager), Member = "LoadBundleAsync")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private static AssetBundleRef FindBundleByName(string name)
 	{
 		return null;
@@ -202,65 +204,71 @@ public class AssetBundleManager
 	[Calls(Type = typeof(File), Member = "Exists")]
 	public static bool BundleExists(string bundleName, string fileName = "")
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(AssetBundleRef), Member = "LoadBundle")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MaybeLoadMissionTexturesAssetBundle")]
-	[CalledBy(Type = typeof(Localization), Member = "MaybeLoadStringTable")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
-	[Calls(Type = typeof(AssetBundleManager), Member = "CreateReference")]
-	[Calls(Type = typeof(AssetBundleManager), Member = "FindBundleByName")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(Localization), Member = "MaybeLoadLanguageTables")]
+	[CalledBy(Type = typeof(Localization), Member = "MaybeLoadStringTable")]
+	[CalledBy(Type = typeof(AssetBundleRef), Member = "LoadBundle")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "RefreshDescriptionPage")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MaybeLoadMissionTexturesAssetBundle")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(AssetBundleManager), Member = "FindBundleByName")]
+	[Calls(Type = typeof(AssetBundleManager), Member = "CreateReference")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public static AssetBundleRef LoadBundle(string name)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(DialogueModeRigFP._003CLoadAnimations_003Ed__250), Member = "MoveNext")]
 	[CalledBy(Type = typeof(AssetBundleRef), Member = "LoadBundleAsync")]
-	[CalledBy(Type = typeof(CinematicTrack._003CLoadAnimations_003Ed__66), Member = "MoveNext")]
-	[Calls(Type = typeof(AssetBundleManager), Member = "FindBundleByName")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(TypeFullName = "DialogueModeRigFP.<LoadAnimations>d__250", Member = "MoveNext")]
+	[CalledBy(TypeFullName = "CinematicTrack.<LoadAnimations>d__66", Member = "MoveNext")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(AssetBundleManager), Member = "FindBundleByName")]
 	[Calls(Type = typeof(AssetBundleManager), Member = "CreateReference")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public static AssetBundleRef LoadBundleAsync(string name)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Path), Member = "Combine")]
 	[CalledBy(Type = typeof(AssetBundleManager), Member = "Init")]
 	[CalledBy(Type = typeof(EmptyScene), Member = "InitializeSystems")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Path), Member = "Combine")]
+	[Calls(Type = typeof(AssetBundle), Member = "LoadAsset")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private static void LoadManifest()
 	{
 	}
 
-	[CalledBy(Type = typeof(AssetBundleRef), Member = "UnloadBundle")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(CinematicTrack), Member = "UnloadCinematic")]
-	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UnloadAnimations")]
+	[CalledBy(Type = typeof(Localization), Member = "MaybeLoadLanguageTables")]
 	[CalledBy(Type = typeof(Localization), Member = "MaybeLoadStringTable")]
+	[CalledBy(Type = typeof(AssetBundleRef), Member = "UnloadBundle")]
+	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "UnloadAnimations")]
+	[CalledBy(Type = typeof(CinematicTrack), Member = "UnloadCinematic")]
+	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(Localization), Member = "MaybeLoadLanguageTables")]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void UnloadBundle(AssetBundleRef bundle, bool unloadAllLoadedObjects)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void UnloadBundle(string name, bool unloadAllLoadedObjects)
 	{
@@ -284,8 +292,8 @@ public class AssetBundleManager
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public AssetBundleManager()
 	{
 	}

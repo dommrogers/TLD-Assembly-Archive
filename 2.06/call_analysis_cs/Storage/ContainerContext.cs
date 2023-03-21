@@ -23,25 +23,26 @@ public class ContainerContext : IDisposable
 
 	public string Name
 	{
-		[CallerCount(Count = 98)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 113)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 265)]
+		[CallerCount(Count = 269)]
 		set
 		{
 		}
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(ContainerContextPlugin), Member = "ContainerContext_GetAsync")]
 	[CalledBy(Type = typeof(ConnectedStorage), Member = "GetAsync")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetHandle")]
+	[Calls(Type = typeof(ContainerContextPlugin), Member = "ContainerContext_GetAsync")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public GetDataMapViewAsyncOp GetAsync(string[] names, GetDataMapViewAsyncOp.GetAsyncCallback callback)
 	{
@@ -49,36 +50,39 @@ public class ContainerContext : IDisposable
 	}
 
 	[CalledBy(Type = typeof(ConnectedStorage), Member = "ReadAsync")]
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetHandle")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public ReadDataMapAsyncOp ReadAsync(DataMap map, ReadDataMapAsyncOp.ReadAsyncCallback callback)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(ContainerContext), Member = "DeleteAsync")]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(ContainerContextPlugin), Member = "ContainerContext_SubmitUpdatesAsync")]
 	[CalledBy(Type = typeof(ConnectedStorage), Member = "SubmitUpdatesAsync")]
 	[CalledBy(Type = typeof(ConnectedStorage), Member = "DeleteAsync")]
+	[CalledBy(Type = typeof(ContainerContext), Member = "DeleteAsync")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetHandle")]
+	[Calls(Type = typeof(ContainerContextPlugin), Member = "ContainerContext_SubmitUpdatesAsync")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
 	public SubmitDataMapUpdatesAsyncOp SubmitUpdatesAsync(DataMap toUpdate, string[] toDelete, SubmitDataMapUpdatesAsyncOp.UpdateAsyncCallback callback, string displayName = null)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(ContainerContext), Member = "SubmitUpdatesAsync")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ContainerContext), Member = "SubmitUpdatesAsync")]
 	public SubmitDataMapUpdatesAsyncOp DeleteAsync(string[] toDelete, SubmitDataMapUpdatesAsyncOp.UpdateAsyncCallback callback, string displayName = null)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetHandle")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public BlobInfoQueryAsyncOp QueryBlobInfoAsync(string query, BlobInfoQueryAsyncOp.BlobInfoQueryCallback callback)
 	{
 		return null;
@@ -98,48 +102,48 @@ public class ContainerContext : IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(StorageLog), Member = "LogCallbackException")]
+	[UnityAOT.MonoPInvokeCallback(typeof(ObjectResultCallback))]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GCHandle), Member = "op_Explicit")]
 	[Calls(Type = typeof(GetDataMapViewAsyncOp), Member = "Complete")]
 	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
+	[Calls(Type = typeof(StorageLog), Member = "LogCallbackException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[UnityAOT.MonoPInvokeCallback(typeof(ObjectResultCallback))]
-	[Calls(Type = typeof(GCHandle), Member = "op_Explicit")]
+	[CallsUnknownMethods(Count = 7)]
 	private static void GetAsyncThunk(uint result, IntPtr map, IntPtr userData)
 	{
 	}
 
 	[UnityAOT.MonoPInvokeCallback(typeof(ObjectResultCallback))]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GCHandle), Member = "op_Explicit")]
 	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
 	[Calls(Type = typeof(StorageLog), Member = "LogCallbackException")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 7)]
 	private static void ReadAsyncThunk(uint result, IntPtr map, IntPtr userData)
 	{
 	}
 
-	[Calls(Type = typeof(StorageLog), Member = "LogCallbackException")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
 	[UnityAOT.MonoPInvokeCallback(typeof(GenericActionCallback))]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GCHandle), Member = "op_Explicit")]
+	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
+	[Calls(Type = typeof(StorageLog), Member = "LogCallbackException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	private static void SubmitUpdatesAsyncThunk(uint result, uint status, IntPtr userData)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
+	[UnityAOT.MonoPInvokeCallback(typeof(ContainerContextPlugin.BlobInfoQueryAsyncCallback))]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GCHandle), Member = "op_Explicit")]
 	[Calls(Type = typeof(BlobInfoQueryAsyncOp), Member = "Complete")]
+	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
 	[Calls(Type = typeof(StorageLog), Member = "LogCallbackException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[UnityAOT.MonoPInvokeCallback(typeof(ContainerContextPlugin.BlobInfoQueryAsyncCallback))]
-	[Calls(Type = typeof(GCHandle), Member = "op_Explicit")]
+	[CallsUnknownMethods(Count = 7)]
 	private static void BlobInfoQueryAsyncThunk(uint result, IntPtr queryHandle, IntPtr userData, uint totalResults)
 	{
 	}

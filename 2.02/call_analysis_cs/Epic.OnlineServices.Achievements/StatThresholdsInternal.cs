@@ -15,20 +15,20 @@ internal struct StatThresholdsInternal : ISettable, IDisposable
 
 	public string Name
 	{
+		[CalledBy(Type = typeof(StatThresholds), Member = "Set")]
+		[CalledBy(Type = typeof(StatThresholds), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CalledBy(Type = typeof(StatThresholds), Member = "Set")]
-		[CalledBy(Type = typeof(StatThresholds), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
+		[CalledBy(Type = typeof(StatThresholdsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(StatThresholdsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(StatThresholdsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(StatThresholdsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -40,10 +40,10 @@ internal struct StatThresholdsInternal : ISettable, IDisposable
 		[CallerCount(Count = 7)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -56,15 +56,15 @@ internal struct StatThresholdsInternal : ISettable, IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(StatThresholdsInternal), Member = "set_Name")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

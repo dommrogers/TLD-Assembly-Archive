@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Serialization;
 using UnityEngine;
@@ -20,9 +19,9 @@ public class AuroraFieldsSceneManager
 
 		public List<FieldContainerSerialized> m_SerializedFields;
 
-		[CallsUnknownMethods(Count = 8)]
 		[CalledBy(Type = typeof(AuroraFieldsSceneManager), Member = ".cctor")]
 		[CallerCount(Count = 1)]
+		[CallsUnknownMethods(Count = 8)]
 		public AuroraFieldsSceneManagerDataProxy()
 		{
 		}
@@ -36,35 +35,38 @@ public class AuroraFieldsSceneManager
 
 	private static AuroraFieldsSceneManagerDataProxy m_AuroraFieldsSceneManagerDataProxy;
 
-	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 22)]
 	public string Serialize()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(AuroraFieldsSceneManager), Member = "GetAuroraFieldByName")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(AuroraField), Member = "Deserialize")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CalledBy(Type = typeof(AuroraFieldsSceneManager), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >.ValueCollection.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public AuroraField GetAuroraFieldByName(string name)
 	{
 		return null;
@@ -75,34 +77,35 @@ public class AuroraFieldsSceneManager
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsRegisteredAuroraField(AuroraField auroraField)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(AuroraManager), Member = "RegisterAuroraField")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 4)]
 	public void RegisterAuroraField(AuroraField auroraField)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(ObjectGuid), Member = "MaybeGetGuidFromGameObject")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void UnRegisterAuroraField(AuroraField auroraField)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	public void Reset()
 	{
 	}
@@ -110,76 +113,75 @@ public class AuroraFieldsSceneManager
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AuroraField), Member = "OnAuroraDisabled")]
 	[Calls(Type = typeof(AuroraField), Member = "OnAuroraEnabled")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public void UpdateAuroraFields(bool active)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(AuroraFieldsSceneManager), Member = "GetPlayerSafeHaven")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeMoveWanderPosOutsideOfField")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeHoldGroundAuroraField")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeMoveInvestigationPositionOutsideOfField")]
-	[CalledBy(Type = typeof(BaseAi), Member = "EnterInvestigate")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeEnterHoldGroundForAuroraField")]
-	[CalledBy(Type = typeof(BaseAi), Member = "HoldGroundSafeHaven")]
-	[CalledBy(Type = typeof(BaseAi), Member = "IsInFlashLight")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeHoldGroundAuroraFieldForAttack")]
 	[CalledBy(Type = typeof(BaseAi), Member = "MaybeHoldGroundDueToSafeHaven")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeHoldGroundAuroraFieldForAttack")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeHoldGroundAuroraFieldForAttack")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(AuroraField), Member = "Contains")]
-	[CallerCount(Count = 12)]
+	[CalledBy(Type = typeof(BaseAi), Member = "IsInFlashLight")]
 	[CalledBy(Type = typeof(BaseAi), Member = "TargetCanBeIgnored")]
+	[CalledBy(Type = typeof(BaseAi), Member = "HoldGroundSafeHaven")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeEnterHoldGroundForAuroraField")]
+	[CalledBy(Type = typeof(BaseAi), Member = "EnterInvestigate")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeMoveInvestigationPositionOutsideOfField")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeHoldGroundAuroraField")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeMoveWanderPosOutsideOfField")]
+	[CalledBy(Type = typeof(AuroraFieldsSceneManager), Member = "GetPlayerSafeHaven")]
+	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(AuroraField), Member = "Contains")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public AuroraField GetFieldContaining(Vector3 position)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(AuroraField), Member = "Contains")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AuroraField), Member = "Contains")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public AuroraField GetFieldContaining(Vector3 position, float radius)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public AuroraField GetClosestActiveFieldDistance(out float distanceToField, Vector3 position)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref distanceToField) = null;
+		distanceToField = default(float);
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AuroraField), Member = "SetFieldActive")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public void EnableAllStaticFields(bool enabled)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeEnterHoldGroundForAuroraField")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeHoldGroundDueToSafeHaven")]
 	[CalledBy(Type = typeof(BaseAi), Member = "HoldGroundSafeHaven")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeEnterHoldGroundForAuroraField")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(AuroraFieldsSceneManager), Member = "GetFieldContaining")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeHoldGroundDueToSafeHaven")]
+	[CallsUnknownMethods(Count = 3)]
 	public AuroraField GetPlayerSafeHaven()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(AuroraManager), Member = ".cctor")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(AuroraManager), Member = ".cctor")]
 	[CallsUnknownMethods(Count = 11)]
 	public AuroraFieldsSceneManager()
 	{

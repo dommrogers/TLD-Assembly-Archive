@@ -5,9 +5,9 @@ namespace VLB;
 
 public class PlatformHelper
 {
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public static string GetCurrentPlatformSuffix()
 	{
 		return null;
@@ -22,7 +22,7 @@ public class PlatformHelper
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public PlatformHelper()
 	{
 	}

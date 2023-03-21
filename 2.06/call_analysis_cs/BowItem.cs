@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Gear;
 using UnityEngine;
@@ -40,7 +39,7 @@ public class BowItem : MonoBehaviour
 	public float m_AimingSwayDropThresholdPercent;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	private void Awake()
 	{
 	}
@@ -51,38 +50,36 @@ public class BowItem : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(BowItem), Member = "Equipped")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
-	[Calls(Type = typeof(BowItem), Member = "NockArrow")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
-	[Calls(Type = typeof(BowItem), Member = "UpdateBowStateAim")]
 	[CalledBy(Type = typeof(Inventory), Member = "ProcessItems")]
-	[Calls(Type = typeof(BowItem), Member = "Equipped")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BowItem), Member = "UpdateBowStamina")]
-	[Calls(Type = typeof(BowItem), Member = "NockArrow")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
+	[Calls(Type = typeof(BowItem), Member = "NockArrow")]
+	[Calls(Type = typeof(BowItem), Member = "Equipped")]
+	[Calls(Type = typeof(BowItem), Member = "UpdateBowStamina")]
+	[Calls(Type = typeof(BowItem), Member = "UpdateBowStateAim")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetBool")]
+	[CallsUnknownMethods(Count = 3)]
 	public void Update()
 	{
 	}
 
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessFireAction")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(PlayerVoice), Member = "CompleteActiveRequest")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "ToggleZoom")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillArchery")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillArchery")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Aim")]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "ToggleZoom")]
+	[Calls(Type = typeof(PlayerVoice), Member = "CompleteActiveRequest")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public void PressFire()
 	{
 	}
@@ -92,31 +89,29 @@ public class BowItem : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(BowItem), Member = "ZoomEnd")]
 	[CalledBy(Type = typeof(BowItem), Member = "UpdateBowStateAim")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_BowAim_Cancel")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(BowItem), Member = "StopHoldAudio")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_BowAim_Cancel")]
+	[Calls(Type = typeof(BowItem), Member = "StopHoldAudio")]
+	[Calls(Type = typeof(BowItem), Member = "ZoomEnd")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 13)]
 	public void ExhaustedRelaxBow()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessReleaseFireAction")]
-	[Calls(Type = typeof(BowItem), Member = "ZoomEnd")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(BowItem), Member = "ZoomEnd")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_BowAim_Cancel")]
-	[Calls(Type = typeof(BowItem), Member = "ShootArrow")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "IsBowAllowedToFire")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "IsBowAllowedToFire")]
+	[Calls(Type = typeof(BowItem), Member = "ShootArrow")]
 	[Calls(Type = typeof(BowItem), Member = "StopHoldAudio")]
+	[Calls(Type = typeof(BowItem), Member = "ZoomEnd")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_BowAim_Cancel")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public void ReleaseFire()
 	{
 	}
@@ -134,15 +129,15 @@ public class BowItem : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
-	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "EnableCrouchImmediate")]
-	[Calls(Type = typeof(BowItem), Member = "ZoomEnd")]
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "EnableCrouch")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_BowAim_Cancel")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "EnableCrouchImmediate")]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "CancelItemInHandsAction")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_BowAim_Cancel")]
+	[Calls(Type = typeof(BowItem), Member = "ZoomEnd")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public void ForceReady()
 	{
 	}
@@ -156,48 +151,48 @@ public class BowItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool InReadyState()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Inventory), Member = "GetLowestConditionArrow")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool CanEquipWithArrow()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool ShouldBeZooming()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(GearItemObjectExtensions), Member = "NumGearInList")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
 	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateStackStatus")]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateStackStatus")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Update_HasUnloadedAmmo")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GearItemObjectExtensions), Member = "NumGearInList")]
 	[CallsUnknownMethods(Count = 1)]
 	public int GetNumArrowsInInventory()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsArrowNocked()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(BowItem), Member = "NockArrow")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
-	[Calls(Type = typeof(BowItem), Member = "UpdateBowStateAim")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BowItem), Member = "UpdateBowStateAim")]
 	[Calls(Type = typeof(BowItem), Member = "Equipped")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "WeaponSwitchInProgress")]
+	[Calls(Type = typeof(BowItem), Member = "NockArrow")]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateBowState()
 	{
 	}
@@ -207,18 +202,16 @@ public class BowItem : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(BowItem), Member = "UpdateBowStateReady")]
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(BowItem), Member = "Update")]
 	[CalledBy(Type = typeof(BowItem), Member = "UpdateBowState")]
-	[CalledBy(Type = typeof(BowItem), Member = "Update")]
-	[CalledBy(Type = typeof(BowItem), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(BowItem), Member = "UpdateBowStateReady")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CallsUnknownMethods(Count = 3)]
 	private bool Equipped()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -230,76 +223,70 @@ public class BowItem : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	private void UpdateBowStateReadyToAim()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(BowItem), Member = "UpdateBowStateAim")]
-	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
-	[Calls(Type = typeof(GameManager), Member = "GetSkillArchery")]
-	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostActive")]
-	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
-	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostActive")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostActive")]
 	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
+	[Calls(Type = typeof(GameManager), Member = "GetSkillArchery")]
+	[Calls(Type = typeof(Skill), Member = "GetCurrentTierNumber")]
+	[CallsUnknownMethods(Count = 4)]
 	public float GetSwayIncreasePerSecond()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostActive")]
-	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
 	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostActive")]
 	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
 	[CallsUnknownMethods(Count = 3)]
 	public float GetSwayDecreasePerSecond()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetCurrentStaminaPercent()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetStaminaDropThresholdPercent()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
-	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostActive")]
 	[CalledBy(Type = typeof(BowItem), Member = "Update")]
-	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(EnergyBoost), Member = "GetEnergyBoostActive")]
 	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateBowStamina()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(BowItem), Member = "UpdateBowState")]
-	[Calls(Type = typeof(BowItem), Member = "ExhaustedRelaxBow")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Update_WeaponFatigue")]
 	[CalledBy(Type = typeof(BowItem), Member = "Update")]
-	[Calls(Type = typeof(BowItem), Member = "GetSwayIncreasePerSecond")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(BowItem), Member = "UpdateBowState")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BowItem), Member = "GetSwayIncreasePerSecond")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Update_WeaponFatigue")]
+	[Calls(Type = typeof(BowItem), Member = "ExhaustedRelaxBow")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateBowStateAim()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "ClearOutstandingCallbacks")]
 	[Calls(Type = typeof(BowItem), Member = "NockArrow")]
 	[CallsUnknownMethods(Count = 1)]
@@ -307,78 +294,72 @@ public class BowItem : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Inventory), Member = "SetActive")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(ArrowItem), Member = "Fire")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Fire")]
-	[CallsUnknownMethods(Count = 20)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "OnFiredEquippedWeapon")]
 	[CalledBy(Type = typeof(BowItem), Member = "ReleaseFire")]
-	[Calls(Type = typeof(GearItem), Member = "DegradeOnUse")]
-	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(ArrowItem), Member = "SetPlacementHelperEnabled")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(ArrowItem), Member = "SetPlacementHelperEnabled")]
+	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
+	[Calls(Type = typeof(ArrowItem), Member = "Fire")]
+	[Calls(Type = typeof(Inventory), Member = "SetActive")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[Calls(Type = typeof(GearItem), Member = "DegradeOnUse")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Fire")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "OnFiredEquippedWeapon")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 20)]
 	private void ShootArrow()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(BowItem), Member = "NockArrow")]
-	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
-	[Calls(Type = typeof(ArrowItem), Member = "SetPlacementHelperEnabled")]
-	[Calls(Type = typeof(BowItem), Member = "MakeArrowChildOfBow")]
-	[Calls(Type = typeof(Inventory), Member = "SetActive")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Inventory), Member = "GetLowestConditionArrow")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Inventory), Member = "GetLowestConditionArrow")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Inventory), Member = "SetActive")]
+	[Calls(Type = typeof(BowItem), Member = "MakeArrowChildOfBow")]
+	[Calls(Type = typeof(ArrowItem), Member = "SetPlacementHelperEnabled")]
+	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void MaybeSpawnArrow()
 	{
 	}
 
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "DropCurrentItemInHand")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(ArrowItem), Member = "SetPlacementHelperEnabled")]
-	[Calls(Type = typeof(BowItem), Member = "ZoomEnd")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Inventory), Member = "SetActive")]
 	[Calls(Type = typeof(BowItem), Member = "RemoveArrowChildFromBow")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ArrowItem), Member = "SetPlacementHelperEnabled")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
+	[Calls(Type = typeof(BowItem), Member = "ZoomEnd")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 5)]
 	public void OnDequip()
 	{
 	}
 
 	[CalledBy(Type = typeof(BowItem), Member = "Update")]
-	[CallsUnknownMethods(Count = 12)]
-	[CalledBy(Type = typeof(BowItem), Member = "MaybeHandleDroppedArrow")]
-	[CalledBy(Type = typeof(BowItem), Member = "UpdateBowStateReady")]
 	[CalledBy(Type = typeof(BowItem), Member = "UpdateBowState")]
-	[CalledBy(Type = typeof(BowItem), Member = "Update")]
-	[Calls(Type = typeof(BowItem), Member = "ZoomEnd")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_BowAim_Cancel")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BowItem), Member = "MaybeSpawnArrow")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(BowItem), Member = "UpdateBowStateReady")]
+	[CalledBy(Type = typeof(BowItem), Member = "MaybeHandleDroppedArrow")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BowItem), Member = "MaybeSpawnArrow")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_BowAim_Cancel")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Reload")]
+	[Calls(Type = typeof(BowItem), Member = "ZoomEnd")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 12)]
 	private void NockArrow()
 	{
 	}
@@ -389,66 +370,64 @@ public class BowItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(BowItem), Member = "MaybeSpawnArrow")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "GetWeaponFromItemData")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "GetWeaponFromItemData")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 6)]
 	private void MakeArrowChildOfBow(GearItem arrow)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(BowItem), Member = "OnDequip")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "GetWeaponFromItemData")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "GetWeaponFromItemData")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private void RemoveArrowChildFromBow(GearItem arrow)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	[CalledBy(Type = typeof(BowItem), Member = "ExhaustedRelaxBow")]
 	[CalledBy(Type = typeof(BowItem), Member = "ReleaseFire")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
 	private void StopHoldAudio()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerVoice), Member = "CompleteActiveRequest")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "ToggleZoom")]
+	[Calls(Type = typeof(PlayerVoice), Member = "CompleteActiveRequest")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ZoomStart()
 	{
 	}
 
-	[CalledBy(Type = typeof(BowItem), Member = "OnDequip")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(BowItem), Member = "NockArrow")]
-	[CalledBy(Type = typeof(BowItem), Member = "ReleaseFire")]
+	[CalledBy(Type = typeof(BowItem), Member = "ExhaustedRelaxBow")]
 	[CalledBy(Type = typeof(BowItem), Member = "ReleaseFire")]
 	[CalledBy(Type = typeof(BowItem), Member = "ForceReady")]
-	[Calls(Type = typeof(Freezing), Member = "MaybeCancelPlayerFreezingTeethChatter")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "ToggleZoom")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
+	[CalledBy(Type = typeof(BowItem), Member = "OnDequip")]
+	[CalledBy(Type = typeof(BowItem), Member = "NockArrow")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(BowItem), Member = "ExhaustedRelaxBow")]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "ToggleZoom")]
+	[Calls(Type = typeof(Freezing), Member = "MaybeCancelPlayerFreezingTeethChatter")]
+	[CallsUnknownMethods(Count = 1)]
 	private void ZoomEnd()
 	{
 	}

@@ -15,10 +15,10 @@ public class SaveLoadOp : AsyncOp<SaveLoadOp>
 
 	private SaveLoadDelegate Callback;
 
+	[CalledBy(Type = typeof(TitleStorage), Member = "UploadFileAsync")]
 	[CalledBy(Type = typeof(TitleStorage), Member = "DownloadFileAsync")]
 	[CalledBy(Type = typeof(TitleStorage), Member = "DownloadFileAsync")]
 	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(TitleStorage), Member = "UploadFileAsync")]
 	public SaveLoadOp(TitleStorage storage, byte[] buffer, SaveLoadDelegate callback)
 	{
 		((AsyncOp<>)(object)this)._002Ector();

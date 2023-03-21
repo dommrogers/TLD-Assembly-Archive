@@ -7,8 +7,8 @@ public class ParticleKiller : MonoBehaviour
 
 	public bool m_KillsBlowingSnow;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public ParticleKiller()
 	{
 	}

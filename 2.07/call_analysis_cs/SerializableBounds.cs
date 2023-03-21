@@ -9,12 +9,12 @@ public class SerializableBounds
 
 	public Vector3 m_Size;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool Contains(Vector3 point)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

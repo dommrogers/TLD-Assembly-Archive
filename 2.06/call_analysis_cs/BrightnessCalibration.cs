@@ -21,37 +21,37 @@ public class BrightnessCalibration : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public static bool IsShowing()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(BrightnessCalibration), Member = "SetVisibility")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ToggleGameCameraForBrightness")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(BrightnessCalibration), Member = "SetVisibility")]
+	[CallsUnknownMethods(Count = 3)]
 	public static void Show(bool isShown)
 	{
 	}
 
+	[CalledBy(Type = typeof(CameraGlobalRT), Member = "OnPreRender")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
 	[Calls(Type = typeof(Transform), Member = "Rotate")]
 	[Calls(Type = typeof(BrightnessCalibration), Member = "RefreshAmbientLightShaderValue")]
-	[CalledBy(Type = typeof(CameraGlobalRT), Member = "OnPreRender")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public static void ForceNight()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(CameraGlobalRT), Member = "OnPreRender")]
-	[Calls(Type = typeof(BrightnessCalibration), Member = "RefreshAmbientLightShaderValue")]
-	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
 	[Calls(Type = typeof(Transform), Member = "Rotate")]
+	[Calls(Type = typeof(BrightnessCalibration), Member = "RefreshAmbientLightShaderValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void ForceDay()
 	{
 	}
@@ -60,43 +60,40 @@ public class BrightnessCalibration : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public static float DayScreenRatio()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BrightnessCalibration), Member = "SetVisibility")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(BrightnessCalibration), Member = "SetVisibility")]
-	[Calls(Type = typeof(BrightnessCalibration), Member = "SetVisibility")]
 	[CallsUnknownMethods(Count = 2)]
 	private void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
+	[CalledBy(Type = typeof(BrightnessCalibration), Member = "Show")]
+	[CalledBy(Type = typeof(BrightnessCalibration), Member = "Awake")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CalledBy(Type = typeof(BrightnessCalibration), Member = "Show")]
-	[CalledBy(Type = typeof(BrightnessCalibration), Member = "Awake")]
-	[CalledBy(Type = typeof(BrightnessCalibration), Member = "Awake")]
 	[CallsUnknownMethods(Count = 2)]
 	private void SetVisibility(bool isShown)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(BrightnessCalibration), Member = "ForceNight")]
 	[CalledBy(Type = typeof(BrightnessCalibration), Member = "ForceDay")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private static void RefreshAmbientLightShaderValue()
 	{
 	}

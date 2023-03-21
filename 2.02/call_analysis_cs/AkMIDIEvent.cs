@@ -17,7 +17,7 @@ public class AkMIDIEvent : IDisposable
 			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(byte);
+				return 0;
 			}
 			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
@@ -29,23 +29,23 @@ public class AkMIDIEvent : IDisposable
 
 		public byte byParam2
 		{
+			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
 			[CallsUnknownMethods(Count = 1)]
-			[CallerCount(Count = 0)]
 			get
 			{
-				return default(byte);
+				return 0;
 			}
-			[CallsUnknownMethods(Count = 1)]
 			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 1)]
 			set
 			{
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		internal tGen(IntPtr cPtr, bool cMemoryOwn)
 		{
 		}
@@ -54,7 +54,7 @@ public class AkMIDIEvent : IDisposable
 		[CallsDeduplicatedMethods(Count = 1)]
 		internal static IntPtr getCPtr(tGen obj)
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 
 		[DeduplicatedMethod]
@@ -71,18 +71,18 @@ public class AkMIDIEvent : IDisposable
 		{
 		}
 
-		[CallsUnknownMethods(Count = 4)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 		[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 4)]
 		public virtual void Dispose()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		public tGen()
 		{
 		}
@@ -101,7 +101,7 @@ public class AkMIDIEvent : IDisposable
 			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(byte);
+				return 0;
 			}
 			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
@@ -113,16 +113,16 @@ public class AkMIDIEvent : IDisposable
 
 		public byte byVelocity
 		{
+			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
 			[CallsUnknownMethods(Count = 1)]
-			[CallerCount(Count = 0)]
 			get
 			{
-				return default(byte);
+				return 0;
 			}
-			[CallsUnknownMethods(Count = 1)]
 			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 1)]
 			set
 			{
 			}
@@ -138,7 +138,7 @@ public class AkMIDIEvent : IDisposable
 		[CallsDeduplicatedMethods(Count = 1)]
 		internal static IntPtr getCPtr(tNoteOnOff obj)
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 
 		[DeduplicatedMethod]
@@ -155,11 +155,11 @@ public class AkMIDIEvent : IDisposable
 		{
 		}
 
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+		[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 4)]
 		public virtual void Dispose()
 		{
 		}
@@ -180,12 +180,12 @@ public class AkMIDIEvent : IDisposable
 
 		public byte byCc
 		{
-			[CallsUnknownMethods(Count = 1)]
 			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(byte);
+				return 0;
 			}
 			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
@@ -197,16 +197,16 @@ public class AkMIDIEvent : IDisposable
 
 		public byte byValue
 		{
+			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
 			[CallsUnknownMethods(Count = 1)]
-			[CallerCount(Count = 0)]
 			get
 			{
-				return default(byte);
+				return 0;
 			}
+			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
 			[CallsUnknownMethods(Count = 1)]
-			[CallerCount(Count = 0)]
 			set
 			{
 			}
@@ -222,7 +222,7 @@ public class AkMIDIEvent : IDisposable
 		[CallsDeduplicatedMethods(Count = 1)]
 		internal static IntPtr getCPtr(tCc obj)
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 
 		[DeduplicatedMethod]
@@ -232,18 +232,18 @@ public class AkMIDIEvent : IDisposable
 		{
 		}
 
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		~tCc()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+		[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 4)]
 		public virtual void Dispose()
 		{
 		}
@@ -269,7 +269,7 @@ public class AkMIDIEvent : IDisposable
 			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(byte);
+				return 0;
 			}
 			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
@@ -281,12 +281,12 @@ public class AkMIDIEvent : IDisposable
 
 		public byte byValueMsb
 		{
-			[CallsUnknownMethods(Count = 1)]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[CallerCount(Count = 0)]
+			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(byte);
+				return 0;
 			}
 			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
@@ -306,7 +306,7 @@ public class AkMIDIEvent : IDisposable
 		[CallsDeduplicatedMethods(Count = 1)]
 		internal static IntPtr getCPtr(tPitchBend obj)
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 
 		[DeduplicatedMethod]
@@ -323,11 +323,11 @@ public class AkMIDIEvent : IDisposable
 		{
 		}
 
-		[CallsUnknownMethods(Count = 4)]
-		[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+		[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 4)]
 		public virtual void Dispose()
 		{
 		}
@@ -348,12 +348,12 @@ public class AkMIDIEvent : IDisposable
 
 		public byte byNote
 		{
+			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
 			[CallsUnknownMethods(Count = 1)]
-			[CallerCount(Count = 0)]
 			get
 			{
-				return default(byte);
+				return 0;
 			}
 			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
@@ -365,16 +365,16 @@ public class AkMIDIEvent : IDisposable
 
 		public byte byValue
 		{
-			[CallsUnknownMethods(Count = 1)]
-			[CallsDeduplicatedMethods(Count = 1)]
 			[CallerCount(Count = 0)]
+			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(byte);
+				return 0;
 			}
+			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
 			[CallsUnknownMethods(Count = 1)]
-			[CallerCount(Count = 0)]
 			set
 			{
 			}
@@ -390,7 +390,7 @@ public class AkMIDIEvent : IDisposable
 		[CallsDeduplicatedMethods(Count = 1)]
 		internal static IntPtr getCPtr(tNoteAftertouch obj)
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 
 		[DeduplicatedMethod]
@@ -400,17 +400,17 @@ public class AkMIDIEvent : IDisposable
 		{
 		}
 
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		~tNoteAftertouch()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 		[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 4)]
 		public virtual void Dispose()
 		{
@@ -437,7 +437,7 @@ public class AkMIDIEvent : IDisposable
 			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(byte);
+				return 0;
 			}
 			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
@@ -457,7 +457,7 @@ public class AkMIDIEvent : IDisposable
 		[CallsDeduplicatedMethods(Count = 1)]
 		internal static IntPtr getCPtr(tChanAftertouch obj)
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 
 		[DeduplicatedMethod]
@@ -467,24 +467,24 @@ public class AkMIDIEvent : IDisposable
 		{
 		}
 
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		~tChanAftertouch()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 		[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 4)]
 		public virtual void Dispose()
 		{
 		}
 
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
 		public tChanAftertouch()
 		{
@@ -504,18 +504,18 @@ public class AkMIDIEvent : IDisposable
 			[CallsUnknownMethods(Count = 1)]
 			get
 			{
-				return default(byte);
+				return 0;
 			}
-			[CallsUnknownMethods(Count = 1)]
 			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 1)]
 			set
 			{
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		internal tProgramChange(IntPtr cPtr, bool cMemoryOwn)
 		{
 		}
@@ -524,7 +524,7 @@ public class AkMIDIEvent : IDisposable
 		[CallsDeduplicatedMethods(Count = 1)]
 		internal static IntPtr getCPtr(tProgramChange obj)
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 
 		[DeduplicatedMethod]
@@ -541,10 +541,10 @@ public class AkMIDIEvent : IDisposable
 		{
 		}
 
-		[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+		[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 4)]
 		public virtual void Dispose()
 		{
@@ -569,7 +569,7 @@ public class AkMIDIEvent : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(byte);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -581,9 +581,9 @@ public class AkMIDIEvent : IDisposable
 
 	public tGen Gen
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 8)]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -605,9 +605,9 @@ public class AkMIDIEvent : IDisposable
 		{
 			return null;
 		}
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -632,9 +632,9 @@ public class AkMIDIEvent : IDisposable
 
 	public tPitchBend PitchBend
 	{
-		[CallsUnknownMethods(Count = 8)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 8)]
 		get
 		{
 			return null;
@@ -690,9 +690,9 @@ public class AkMIDIEvent : IDisposable
 		{
 			return null;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -722,11 +722,11 @@ public class AkMIDIEvent : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(byte);
+			return 0;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -739,7 +739,7 @@ public class AkMIDIEvent : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(byte);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -751,16 +751,16 @@ public class AkMIDIEvent : IDisposable
 
 	public AkMIDICcTypes byCc
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return default(AkMIDICcTypes);
 		}
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -773,11 +773,11 @@ public class AkMIDIEvent : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(byte);
+			return 0;
 		}
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -790,7 +790,7 @@ public class AkMIDIEvent : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(byte);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -807,11 +807,11 @@ public class AkMIDIEvent : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(byte);
+			return 0;
 		}
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -824,7 +824,7 @@ public class AkMIDIEvent : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(byte);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -836,16 +836,16 @@ public class AkMIDIEvent : IDisposable
 
 	public byte byNoteAftertouchValue
 	{
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
-			return default(byte);
+			return 0;
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -858,7 +858,7 @@ public class AkMIDIEvent : IDisposable
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(byte);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -870,12 +870,12 @@ public class AkMIDIEvent : IDisposable
 
 	public byte byProgramNum
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(byte);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
@@ -885,8 +885,8 @@ public class AkMIDIEvent : IDisposable
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	internal AkMIDIEvent(IntPtr cPtr, bool cMemoryOwn)
 	{
 	}
@@ -895,7 +895,7 @@ public class AkMIDIEvent : IDisposable
 	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkMIDIEvent obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[DeduplicatedMethod]
@@ -905,27 +905,27 @@ public class AkMIDIEvent : IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(AkMIDIPost), Member = "Finalize")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(AkMIDIPost), Member = "Finalize")]
 	[CallsUnknownMethods(Count = 1)]
 	~AkMIDIEvent()
 	{
 	}
 
 	[CalledBy(Type = typeof(AkMIDIPost), Member = "Dispose")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public virtual void Dispose()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public AkMIDIEvent()
 	{
 	}

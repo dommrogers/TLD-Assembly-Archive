@@ -31,9 +31,9 @@ public class Skill_Rifle : Skill
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
@@ -43,7 +43,7 @@ public class Skill_Rifle : Skill
 	[CallsUnknownMethods(Count = 2)]
 	public float GetCriticalHitChanceScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -51,46 +51,46 @@ public class Skill_Rifle : Skill
 	[CallsUnknownMethods(Count = 2)]
 	public int GetConditionRepairBonus()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetAccuracyRangeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetRifleDamageScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(vp_FPSWeapon), Member = "DoAiming")]
 	[CalledBy(Type = typeof(GunItem), Member = "GetSwayIncreasePerSecond")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetStabilityBonus()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetBestStabilityBonus()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(vp_FPSShooter), Member = "Fire")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetEffectiveRange()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -98,36 +98,22 @@ public class Skill_Rifle : Skill
 	[CallsUnknownMethods(Count = 2)]
 	public float GetConditionDegradeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetAimAssistAngleDegrees()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "Replace")]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(int), Member = "ToString")]
 	public override string GetTierBenefits(int index)
 	{
 		return null;

@@ -27,29 +27,30 @@ public class ButtonLegend : MonoBehaviour
 
 	private bool m_IsDirty;
 
-	[Calls(Type = typeof(ButtonLegendAtlas), Member = "BuildDictionaries")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ButtonLegendAtlas), Member = "BuildDictionaries")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 8)]
 	public void LateUpdate()
 	{
 	}
 
+	[CalledBy(Type = typeof(ButtonLegendContainer), Member = "Clear")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
 	[Calls(Type = typeof(UITable), Member = "GetChildList")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(ButtonLegendContainer), Member = "Clear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
 	public void Clear()
 	{
@@ -75,60 +76,56 @@ public class ButtonLegend : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_FeedFire), Member = "UpdateButtonLegend")]
-	[CallerCount(Count = 14)]
-	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_Container), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
 	[CalledBy(Type = typeof(ButtonLegendConfigure), Member = "ConfigureButton")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
-	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
+	[CalledBy(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
+	[CalledBy(Type = typeof(Panel_Container), Member = "UpdateButtonLegend")]
 	[CalledBy(Type = typeof(Panel_Diagnosis), Member = "UpdateButtonLegend")]
+	[CalledBy(Type = typeof(Panel_FeedFire), Member = "UpdateButtonLegend")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
+	[CallerCount(Count = 14)]
+	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
+	[Calls(Type = typeof(UISprite), Member = "set_atlas")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ConfigureButtonIconSpriteName(string action, ref UISprite buttonSprite)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ForceButtonSpriteName(string spriteName, ref UISprite buttonSprite)
 	{
 	}
 
-	[CalledBy(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(ButtonLegendContainer), Member = "AddButton")]
+	[CalledBy(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[CalledBy(Type = typeof(ButtonLegend), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendItem), Member = "Setup")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(ButtonLegend), Member = "CreatePrefab")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(ButtonLegendAtlas), Member = "GetButtonIcon")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(ButtonLegend), Member = "CreatePrefab")]
 	[Calls(Type = typeof(ButtonLegendItem), Member = "SetDepth")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(ButtonLegendItem), Member = "Setup")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void AddButton(string action, string localizationKey, int priority, bool localize)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[Calls(Type = typeof(UITable), Member = "GetChildList")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	[CalledBy(Type = typeof(ButtonLegendContainer), Member = "RemoveButton")]
 	[CalledBy(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[CalledBy(Type = typeof(ButtonLegend), Member = "UpdateButton")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(UITable), Member = "GetChildList")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 6)]
 	public void RemoveButton(string action)
 	{
 	}
@@ -140,24 +137,27 @@ public class ButtonLegend : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(ButtonLegend), Member = "AddButton")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 8)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	private ButtonLegendItem CreatePrefab()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private int OnSort(Transform a, Transform b)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]

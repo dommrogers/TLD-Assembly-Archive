@@ -44,14 +44,14 @@ public class ScreenshotRecorder
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 5)]
+			[CallerCount(Count = 9)]
 			get
 			{
 				return null;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 41)]
+			[CallerCount(Count = 44)]
 			set
 			{
 			}
@@ -61,10 +61,10 @@ public class ScreenshotRecorder
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 0)]
+			[CallerCount(Count = 2)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
@@ -76,12 +76,12 @@ public class ScreenshotRecorder
 
 		public int Identifier
 		{
-			[CallerCount(Count = 0)]
 			[CompilerGenerated]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
@@ -98,11 +98,11 @@ public class ScreenshotRecorder
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(bool);
+				return false;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 0)]
+			[CallerCount(Count = 1)]
 			set
 			{
 			}
@@ -110,16 +110,16 @@ public class ScreenshotRecorder
 
 		public int MaximumHeight
 		{
-			[CallerCount(Count = 0)]
 			[CompilerGenerated]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
-			[CallerCount(Count = 0)]
 			[CompilerGenerated]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			set
 			{
 			}
@@ -132,7 +132,7 @@ public class ScreenshotRecorder
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
@@ -151,9 +151,9 @@ public class ScreenshotRecorder
 			{
 				return default(NativeArray<byte>);
 			}
+			[CompilerGenerated]
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
-			[CompilerGenerated]
 			set
 			{
 			}
@@ -163,14 +163,14 @@ public class ScreenshotRecorder
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 5)]
+			[CallerCount(Count = 11)]
 			get
 			{
 				return null;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 14)]
+			[CallerCount(Count = 18)]
 			set
 			{
 			}
@@ -180,14 +180,14 @@ public class ScreenshotRecorder
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 10)]
+			[CallerCount(Count = 11)]
 			get
 			{
 				return null;
 			}
-			[CallerCount(Count = 15)]
 			[CompilerGenerated]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 16)]
 			set
 			{
 			}
@@ -195,9 +195,9 @@ public class ScreenshotRecorder
 
 		public ScreenshotType Type
 		{
-			[CallerCount(Count = 0)]
 			[CompilerGenerated]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			get
 			{
 				return default(ScreenshotType);
@@ -217,7 +217,7 @@ public class ScreenshotRecorder
 			[CallerCount(Count = 1)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
@@ -228,38 +228,39 @@ public class ScreenshotRecorder
 		}
 
 		[CalledBy(Type = typeof(ScreenshotRecorder), Member = "GetOperation")]
-		[CallsUnknownMethods(Count = 14)]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 14)]
 		public ScreenshotOperation()
 		{
 		}
 
-		[CallsDeduplicatedMethods(Count = 4)]
-		[CallsUnknownMethods(Count = 6)]
-		[Calls(Type = typeof(PngEncoder), Member = "Encode")]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Downsampler), Member = "Downsample")]
+		[Calls(Type = typeof(PngEncoder), Member = "Encode")]
+		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 6)]
 		private void EncodeCallback(object state)
 		{
 		}
 
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Directory), Member = "Exists")]
 		[Calls(Type = typeof(Directory), Member = "CreateDirectory")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[Calls(Type = typeof(File), Member = "WriteAllBytes")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		private void SavePngToDisk(byte[] byteData)
 		{
 		}
 
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(ThreadPool), Member = "QueueUserWorkItem")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 7)]
+		[Calls(Type = typeof(AsyncGPUReadbackRequest), Member = "GetData")]
+		[Calls(Type = typeof(ThreadPool), Member = "QueueUserWorkItem")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+		[CallsDeduplicatedMethods(Count = 6)]
 		[CallsUnknownMethods(Count = 4)]
 		private void ScreenshotCallback(AsyncGPUReadbackRequest request)
 		{
@@ -270,36 +271,39 @@ public class ScreenshotRecorder
 
 	private List<ScreenshotOperation> operationPool;
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(ScreenshotManager), Member = ".ctor")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public ScreenshotRecorder()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(ScreenshotOperation), Member = ".ctor")]
 	[CalledBy(Type = typeof(ScreenshotRecorder), Member = "ScreenshotInternal")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(ScreenshotOperation), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 12)]
 	private ScreenshotOperation GetOperation()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ScreenshotRecorder), Member = "ScreenshotInternal")]
 	[CalledBy(Type = typeof(ScreenshotManager), Member = "OnEndOfFrame")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ScreenshotRecorder), Member = "ScreenshotInternal")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Screenshot(int maximumWidth, int maximumHeight, ScreenshotType type, Action<byte[], object> callback, object state)
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(ScreenshotManager), Member = "OnEndOfFrame")]
+	[CallerCount(Count = 1)]
 	public void Screenshot(Camera source, int maximumWidth, int maximumHeight, ScreenshotType type, Action<byte[], object> callback, object state)
 	{
 	}
@@ -319,13 +323,12 @@ public class ScreenshotRecorder
 	}
 
 	[CalledBy(Type = typeof(ScreenshotManager), Member = "OnEndOfFrame")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(ScreenshotRecorder), Member = "Screenshot")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(ScreenshotRecorder), Member = "GetOperation")]
 	[Calls(Type = typeof(AsyncGPUReadback), Member = "Request")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(ScreenshotRecorder), Member = "GetOperation")]
-	[CallerCount(Count = 3)]
-	[CalledBy(Type = typeof(ScreenshotManager), Member = "OnEndOfFrame")]
+	[CallsUnknownMethods(Count = 3)]
 	private void ScreenshotInternal(Texture source, int maximumWidth, int maximumHeight, ScreenshotType type, Action<byte[], object> callback, object state)
 	{
 	}

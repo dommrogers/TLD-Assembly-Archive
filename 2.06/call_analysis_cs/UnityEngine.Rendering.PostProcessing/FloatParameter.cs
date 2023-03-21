@@ -14,11 +14,16 @@ public sealed class FloatParameter : ParameterOverride<float>
 	[CallerCount(Count = 0)]
 	public override bool Equals(float a, float b)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(ColorGradingSettings), Member = ".ctor")]
+	[CalledBy(Type = typeof(RLProJitter), Member = ".ctor")]
+	[CalledBy(Type = typeof(RLProNoise), Member = ".ctor")]
+	[CalledBy(Type = typeof(RLProVHSEffect), Member = ".ctor")]
+	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
 	[CallerCount(Count = 25)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public FloatParameter()
 	{
 		((ParameterOverride<>)(object)this)._002Ector();

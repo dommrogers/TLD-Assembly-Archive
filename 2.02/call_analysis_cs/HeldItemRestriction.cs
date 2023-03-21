@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -8,8 +9,8 @@ public class HeldItemRestriction : ScriptableObject
 	{
 		public GearItem gi;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass2_0()
 		{
 		}
@@ -17,23 +18,21 @@ public class HeldItemRestriction : ScriptableObject
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Object), Member = "get_name")]
-		[Calls(Type = typeof(Object), Member = "get_name")]
 		[Calls(Type = typeof(string), Member = "Equals")]
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CIsRestricted_003Eb__0(GearItem i)
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Object), Member = "get_name")]
-		[Calls(Type = typeof(Object), Member = "get_name")]
 		[Calls(Type = typeof(string), Member = "Equals")]
+		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CIsRestricted_003Eb__1(GearItem i)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -41,20 +40,22 @@ public class HeldItemRestriction : ScriptableObject
 
 	public List<GearItem> m_List;
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "IsHeldItemRestricted")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Enumerable), Member = "Any")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 24)]
 	public bool IsRestricted(GearItem gi)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public HeldItemRestriction()
 	{
 	}

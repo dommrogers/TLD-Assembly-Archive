@@ -5,14 +5,13 @@ public class HeldItemRestrictionTrigger : MonoBehaviour
 {
 	public HeldItemRestriction m_Restriction;
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(PlayerManager), Member = "IsHeldItemRestricted")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsHeldItemRestricted")]
+	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHands")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnTriggerEnter(Collider c)
 	{
 	}
@@ -24,9 +23,9 @@ public class HeldItemRestrictionTrigger : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public HeldItemRestrictionTrigger()
 	{
 	}

@@ -33,24 +33,18 @@ public class Wiggle : MonoBehaviour
 
 	private Vector3 m_RotationOriginal;
 
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[CallsUnknownMethods(Count = 14)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
 	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 14)]
 	public void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
-	[CallsDeduplicatedMethods(Count = 15)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Mathf), Member = "PerlinNoise")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 16)]
 	public void Update()
 	{
 	}

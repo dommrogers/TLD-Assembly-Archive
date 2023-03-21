@@ -31,11 +31,13 @@ public static class EnumExtensions
 			[CallsUnknownMethods(Count = 2)]
 			get
 			{
-				return (T)null;
+				return default(T);
 			}
 		}
 
 		[DeduplicatedMethod]
+		[CalledBy(Type = typeof(GearItem), Member = "IsAnyGearType")]
+		[CalledBy(Type = typeof(EnumExtensions), Member = "GetFlags")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 		[Calls(Type = typeof(Enum), Member = "GetValues")]
@@ -44,9 +46,9 @@ public static class EnumExtensions
 		{
 		}
 
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 2)]
-		[DeduplicatedMethod]
 		public IEnumerator<T> GetEnumerator()
 		{
 			return null;
@@ -66,13 +68,13 @@ public static class EnumExtensions
 		{
 		}
 
-		[CallsUnknownMethods(Count = 6)]
-		[Calls(Type = typeof(Enum), Member = "HasFlag")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Enum), Member = "HasFlag")]
+		[CallsUnknownMethods(Count = 6)]
 		public bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
@@ -82,26 +84,20 @@ public static class EnumExtensions
 		}
 	}
 
-	[DeduplicatedMethod]
-	[CallAnalysisNotSupported]
-	[CallerCount(Count = 101224)]
 	public static bool HasFlag<T>(this T var, T flags) where T : struct, IConvertible
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 101224)]
-	[DeduplicatedMethod]
-	[CallAnalysisNotSupported]
 	public static bool HasAnyFlag<T>(this T var, T flags) where T : struct, IConvertible
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EnumFlagIterator<>), Member = ".ctor")]
+	[CallsUnknownMethods(Count = 1)]
 	public static IEnumerable<T> GetFlags<T>(this T enumFlag) where T : Enum
 	{
 		return null;

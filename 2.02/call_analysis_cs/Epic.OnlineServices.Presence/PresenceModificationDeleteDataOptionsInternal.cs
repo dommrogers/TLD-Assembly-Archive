@@ -17,9 +17,9 @@ internal struct PresenceModificationDeleteDataOptionsInternal : ISettable, IDisp
 	{
 		[CalledBy(Type = typeof(PresenceModificationDeleteDataOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(PresenceModificationDeleteDataOptionsInternal), Member = "Set")]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -31,17 +31,17 @@ internal struct PresenceModificationDeleteDataOptionsInternal : ISettable, IDisp
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PresenceModificationDeleteDataOptionsInternal), Member = "set_Records")]
 	[CalledBy(Type = typeof(PresenceModification), Member = "DeleteData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PresenceModificationDeleteDataOptionsInternal), Member = "set_Records")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class OnWanderPauseComplete : StateMachineBehaviour
 {
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(BaseAi), Member = "OnWanderPauseAnimStateExit")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(BaseAi), Member = "OnWanderPauseAnimStateExit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
 	{
 	}

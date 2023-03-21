@@ -16,8 +16,8 @@ public class UITextList : MonoBehaviour
 
 		public string[] lines;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public Paragraph()
 		{
 		}
@@ -45,38 +45,36 @@ public class UITextList : MonoBehaviour
 
 	public bool isValid
 	{
+		[CalledBy(Type = typeof(UITextList), Member = "set_scrollValue")]
 		[CalledBy(Type = typeof(UITextList), Member = "get_scrollHeight")]
 		[CalledBy(Type = typeof(UITextList), Member = "Update")]
 		[CalledBy(Type = typeof(UITextList), Member = "Rebuild")]
-		[CalledBy(Type = typeof(UITextList), Member = "Rebuild")]
-		[CalledBy(Type = typeof(UITextList), Member = "Rebuild")]
 		[CalledBy(Type = typeof(UITextList), Member = "UpdateVisibleText")]
+		[CallerCount(Count = 7)]
 		[Calls(Type = typeof(UILabel), Member = "get_ambigiousFont")]
 		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(UITextList), Member = "set_scrollValue")]
-		[CallerCount(Count = 7)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public float scrollValue
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CalledBy(Type = typeof(UITextList), Member = "OnDrag")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(UITextList), Member = "OnScroll")]
 		[CalledBy(Type = typeof(UITextList), Member = "Start")]
-		[Calls(Type = typeof(UITextList), Member = "UpdateVisibleText")]
-		[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+		[CalledBy(Type = typeof(UITextList), Member = "OnScroll")]
+		[CalledBy(Type = typeof(UITextList), Member = "OnDrag")]
 		[CallerCount(Count = 3)]
 		[Calls(Type = typeof(UITextList), Member = "get_isValid")]
+		[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+		[Calls(Type = typeof(UITextList), Member = "UpdateVisibleText")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -84,73 +82,72 @@ public class UITextList : MonoBehaviour
 
 	protected float lineHeight
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(UITextList), Member = "Rebuild")]
-		[CallerCount(Count = 6)]
-		[Calls(Type = typeof(UILabel), Member = "get_fontSize")]
 		[CalledBy(Type = typeof(UITextList), Member = "get_scrollHeight")]
 		[CalledBy(Type = typeof(UITextList), Member = "OnScroll")]
 		[CalledBy(Type = typeof(UITextList), Member = "OnDrag")]
-		[CalledBy(Type = typeof(UITextList), Member = "UpdateVisibleText")]
 		[CalledBy(Type = typeof(UITextList), Member = "Rebuild")]
+		[CalledBy(Type = typeof(UITextList), Member = "UpdateVisibleText")]
+		[CallerCount(Count = 6)]
+		[Calls(Type = typeof(UILabel), Member = "get_fontSize")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	protected int scrollHeight
 	{
+		[CalledBy(Type = typeof(UITextList), Member = "OnScroll")]
+		[CalledBy(Type = typeof(UITextList), Member = "OnDrag")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(UITextList), Member = "get_isValid")]
 		[Calls(Type = typeof(UITextList), Member = "get_lineHeight")]
-		[CalledBy(Type = typeof(UITextList), Member = "OnScroll")]
 		[CallsUnknownMethods(Count = 2)]
-		[CalledBy(Type = typeof(UITextList), Member = "OnDrag")]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(UITextList), Member = "UpdateVisibleText")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Clear()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(EventDelegate), Member = "Add")]
 	[Calls(Type = typeof(UIWidget), Member = "set_pivot")]
-	[Calls(Type = typeof(UIWidget), Member = "set_pivot")]
-	[CallsUnknownMethods(Count = 1)]
 	[Calls(Type = typeof(UITextList), Member = "set_scrollValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UITextList), Member = "get_isValid")]
 	[Calls(Type = typeof(UITextList), Member = "Rebuild")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(UITextList), Member = "set_scrollValue")]
-	[Calls(Type = typeof(UITextList), Member = "get_lineHeight")]
-	[Calls(Type = typeof(UITextList), Member = "get_scrollHeight")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UITextList), Member = "get_scrollHeight")]
+	[Calls(Type = typeof(UITextList), Member = "get_lineHeight")]
+	[Calls(Type = typeof(UITextList), Member = "set_scrollValue")]
 	public void OnScroll(float val)
 	{
 	}
 
-	[Calls(Type = typeof(UITextList), Member = "set_scrollValue")]
-	[Calls(Type = typeof(UITextList), Member = "get_lineHeight")]
-	[Calls(Type = typeof(UITextList), Member = "get_scrollHeight")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UITextList), Member = "get_scrollHeight")]
+	[Calls(Type = typeof(UITextList), Member = "get_lineHeight")]
+	[Calls(Type = typeof(UITextList), Member = "set_scrollValue")]
 	public void OnDrag(Vector2 delta)
 	{
 	}
@@ -164,9 +161,11 @@ public class UITextList : MonoBehaviour
 
 	[CalledBy(Type = typeof(ChatInput), Member = "Start")]
 	[CalledBy(Type = typeof(ChatInput), Member = "OnSubmit")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UITextList), Member = "Rebuild")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BetterList<>), Member = "RemoveAt")]
+	[Calls(Type = typeof(BetterList<>), Member = "Add")]
+	[Calls(Type = typeof(UITextList), Member = "Rebuild")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Add(string text)
 	{
 	}
@@ -177,45 +176,40 @@ public class UITextList : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(UITextList), Member = "get_lineHeight")]
-	[Calls(Type = typeof(UITextList), Member = "get_isValid")]
-	[Calls(Type = typeof(UIScrollBar), Member = "set_barSize")]
-	[CalledBy(Type = typeof(UITextList), Member = "Add")]
 	[CalledBy(Type = typeof(UITextList), Member = "Update")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(UITextList), Member = "get_lineHeight")]
-	[Calls(Type = typeof(UITextList), Member = "get_isValid")]
-	[Calls(Type = typeof(string), Member = "SplitInternal")]
-	[Calls(Type = typeof(NGUIText), Member = "WrapText")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UITextList), Member = "get_isValid")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(UITextList), Member = "Add")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UITextList), Member = "get_isValid")]
 	[Calls(Type = typeof(UILabel), Member = "UpdateNGUIText")]
+	[Calls(Type = typeof(NGUIText), Member = "WrapText")]
+	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[Calls(Type = typeof(UITextList), Member = "get_lineHeight")]
+	[Calls(Type = typeof(UIScrollBar), Member = "set_barSize")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	protected void Rebuild()
 	{
 	}
 
-	[CalledBy(Type = typeof(UITextList), Member = "Clear")]
 	[CalledBy(Type = typeof(UITextList), Member = "set_scrollValue")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-	[Calls(Type = typeof(UITextList), Member = "get_lineHeight")]
-	[Calls(Type = typeof(UITextList), Member = "get_isValid")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 4)]
+	[CalledBy(Type = typeof(UITextList), Member = "Clear")]
 	[CalledBy(Type = typeof(UITextList), Member = "OnScrollBar")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UITextList), Member = "get_isValid")]
+	[Calls(Type = typeof(UITextList), Member = "get_lineHeight")]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	protected void UpdateVisibleText()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public UITextList()
 	{
 	}

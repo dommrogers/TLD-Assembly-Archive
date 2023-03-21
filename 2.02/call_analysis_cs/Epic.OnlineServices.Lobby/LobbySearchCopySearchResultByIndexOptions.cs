@@ -9,12 +9,12 @@ public class LobbySearchCopySearchResultByIndexOptions
 
 	public uint LobbyIndex
 	{
-		[CallerCount(Count = 7)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -25,7 +25,7 @@ public class LobbySearchCopySearchResultByIndexOptions
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public LobbySearchCopySearchResultByIndexOptions()
 	{
 	}

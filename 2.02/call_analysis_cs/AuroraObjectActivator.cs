@@ -8,10 +8,10 @@ public class AuroraObjectActivator : MonoBehaviour
 	private bool m_ChildrenDisabled;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
 	[Calls(Type = typeof(AuroraObjectActivator), Member = "EnableChildren")]
 	[Calls(Type = typeof(AuroraObjectActivator), Member = "DisableChildren")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private void Start()
 	{
@@ -23,18 +23,18 @@ public class AuroraObjectActivator : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(AuroraObjectActivator), Member = "Start")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CalledBy(Type = typeof(AuroraObjectActivator), Member = "Start")]
 	[CallsUnknownMethods(Count = 7)]
 	private void EnableChildren()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(AuroraObjectActivator), Member = "Start")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void DisableChildren()
 	{
 	}

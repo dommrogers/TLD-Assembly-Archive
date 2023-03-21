@@ -102,7 +102,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateAxis Rewired_002EIRacingWheelTemplate_002Ewheel
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -112,7 +112,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateAxis Rewired_002EIRacingWheelTemplate_002Eaccelerator
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -122,7 +122,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateAxis Rewired_002EIRacingWheelTemplate_002Ebrake
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -132,7 +132,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateAxis Rewired_002EIRacingWheelTemplate_002Eclutch
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -141,8 +141,8 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EshiftDown
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -152,7 +152,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EshiftUp
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -162,7 +162,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EwheelButton1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -172,7 +172,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EwheelButton2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -182,7 +182,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EwheelButton3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -191,8 +191,8 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EwheelButton4
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -201,8 +201,8 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EwheelButton5
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -212,7 +212,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EwheelButton6
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -222,7 +222,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EwheelButton7
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -232,7 +232,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EwheelButton8
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -242,7 +242,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EwheelButton9
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -252,7 +252,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EwheelButton10
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -261,8 +261,8 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EconsoleButton1
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -272,7 +272,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EconsoleButton2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -282,7 +282,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EconsoleButton3
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -292,7 +292,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EconsoleButton4
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -302,7 +302,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EconsoleButton5
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -312,7 +312,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EconsoleButton6
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -321,8 +321,8 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EconsoleButton7
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -332,7 +332,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EconsoleButton8
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -342,7 +342,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EconsoleButton9
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -352,7 +352,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EconsoleButton10
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -362,7 +362,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002Eshifter1
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -372,7 +372,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002Eshifter2
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -381,8 +381,8 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002Eshifter3
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -392,7 +392,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002Eshifter4
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -402,7 +402,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002Eshifter5
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -412,7 +412,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002Eshifter6
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -422,7 +422,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002Eshifter7
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -431,8 +431,8 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002Eshifter8
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -442,7 +442,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002Eshifter9
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -452,7 +452,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002Eshifter10
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -462,7 +462,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EreverseGear
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -472,7 +472,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002Eselect
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -482,7 +482,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002Estart
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -492,7 +492,7 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002EsystemButton
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -501,8 +501,8 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 
 	private IControllerTemplateButton Rewired_002EIRacingWheelTemplate_002Ehorn
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;
@@ -511,8 +511,8 @@ public sealed class RacingWheelTemplate : ControllerTemplate, IRacingWheelTempla
 
 	private IControllerTemplateDPad Rewired_002EIRacingWheelTemplate_002EdPad
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ControllerTemplate), Member = "GetElement")]
 		get
 		{
 			return null;

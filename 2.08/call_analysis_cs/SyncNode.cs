@@ -7,18 +7,17 @@ public class SyncNode : MonoBehaviour
 
 	private static Collider[] s_Results;
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(NPCAfflictions), Member = "SelectApproachSide")]
-	[CalledBy(Type = typeof(NPCAfflictions), Member = "SelectApproachSide")]
 	[CalledBy(Type = typeof(SyncNodesInfo), Member = "GetBestNode")]
-	[CallsDeduplicatedMethods(Count = 12)]
-	[Calls(Type = typeof(Collider), Member = "get_isTrigger")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(NPCAfflictions), Member = "SelectApproachSide")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Collider), Member = "get_isTrigger")]
 	[Calls(Type = typeof(Transform), Member = "IsChildOf")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 10)]
 	public bool OverlapsObjects()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

@@ -19,10 +19,10 @@ public class InitializeThreadAffinity : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
-			return default(ulong);
+			return 0uL;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -36,14 +36,14 @@ public class InitializeThreadAffinity : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
-			return default(ulong);
+			return 0uL;
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -51,12 +51,12 @@ public class InitializeThreadAffinity : ISettable
 
 	public ulong WebSocketIo
 	{
-		[CallerCount(Count = 5)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
-			return default(ulong);
+			return 0uL;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -73,7 +73,7 @@ public class InitializeThreadAffinity : ISettable
 		[CallerCount(Count = 12)]
 		get
 		{
-			return default(ulong);
+			return 0uL;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -87,14 +87,14 @@ public class InitializeThreadAffinity : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 17)]
 		get
 		{
-			return default(ulong);
+			return 0uL;
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -115,7 +115,7 @@ public class InitializeThreadAffinity : ISettable
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public InitializeThreadAffinity()
 	{
 	}

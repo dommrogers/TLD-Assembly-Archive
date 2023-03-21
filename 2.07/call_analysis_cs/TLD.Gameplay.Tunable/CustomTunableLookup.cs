@@ -11,14 +11,12 @@ public abstract class CustomTunableLookup<TKey, TElement> where TKey : Enum
 
 	public TElement[] m_values;
 
-	[CallsUnknownMethods(Count = 28)]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[DeduplicatedMethod]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 28)]
 	static CustomTunableLookup()
 	{
 	}
@@ -31,17 +29,28 @@ public abstract class CustomTunableLookup<TKey, TElement> where TKey : Enum
 		return null;
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 4)]
-	[DeduplicatedMethod]
 	public static string[] GetNames()
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallsUnknownMethods(Count = 4)]
+	[CalledBy(Type = typeof(CustomTunableLookup_LMH), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomPackSettingsLookup_LMH), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_NLH), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_LMHV), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_NLMH), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_NLMHV), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_DayNightMultiplier), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_TimeOfDay), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_Distance), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_Weather), Member = ".ctor")]
+	[CalledBy(Type = typeof(CustomTunableLookup_ProportionalMaxItems), Member = ".ctor")]
 	[CallerCount(Count = 11)]
+	[CallsUnknownMethods(Count = 4)]
 	public CustomTunableLookup()
 	{
 	}
@@ -52,6 +61,6 @@ public abstract class CustomTunableLookup<TKey, TElement> where TKey : Enum
 	[CallsUnknownMethods(Count = 8)]
 	public TElement GetValue(TKey index)
 	{
-		return (TElement)null;
+		return default(TElement);
 	}
 }

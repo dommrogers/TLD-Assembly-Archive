@@ -1,7 +1,7 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
 using TLD.Gear;
+using TLD.SaveState;
 using TLD.UI.Generics;
 using UnityEngine;
 
@@ -77,286 +77,190 @@ public class EquipItemPopup : MonoBehaviour
 
 	private int m_LastReserveValue;
 
-	[Calls(Type = typeof(EquipItemPopup), Member = "InitializeValues")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "HideRemoveDecalPopup")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(EquipItemPopup), Member = "HideEquipPopup")]
 	[Calls(Type = typeof(EquipItemPopup), Member = "HideAmmoPopup")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "HideRemoveDecalPopup")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "InitializeValues")]
 	private void Awake()
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EquipItemPopup), Member = "ShouldHideEquipPopup")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
 	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[CallsUnknownMethods(Count = 5)]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(EquipItemPopup), Member = "UpdatePlacementButtonLabels")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "ShouldHideEquipPopup")]
+	[CallsUnknownMethods(Count = 5)]
 	public void OnControllerScheme(bool isController)
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(EquipItemPopup), Member = "UpdatePlacementButtonLabels")]
 	[CalledBy(Type = typeof(InputManager), Member = "ExecuteAltFire")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateOverlappingDecalInPlace")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "AttemptToRemoveDecalInPlace")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessRemoveObjectPressed")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(EquipItemPopup), Member = "UpdatePlacementButtonLabels")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void OnOverlappingDecalChange(bool isOverlapping)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "AllowedToHideAmmoPopup")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "UpdateButtonStatus")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "ShouldHideEquipPopup")]
 	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
 	[Calls(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(EquipItemPopup), Member = "HideEquipPopup")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "HideAmmoPopup")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "AllowedToHideAmmoPopup")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(EquipItemPopup), Member = "ControlModeAllowsInterface")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "ShouldHideEquipPopup")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "HideAmmoPopup")]
+	[CallsDeduplicatedMethods(Count = 29)]
 	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(EquipItemPopup), Member = "HideEquipPopup")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "UpdateButtonStatus")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "UpdateButtonStatus")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "AllowedToHideAmmoPopup")]
-	[CallsDeduplicatedMethods(Count = 30)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	private void Update()
 	{
 	}
 
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowItemIcons")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "Awake")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowItemIcons")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void InitializeValues()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "ShouldSuppressCrosshairs")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShouldHideEquipPopup")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "ShouldSuppressCrosshairs")]
 	[CallsUnknownMethods(Count = 1)]
 	private bool IsHoveringInteractiveObject()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowGenericPopupWithDefaultActions")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowGenericPopup")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdatePlacementButtonLabels")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowGenericPopup")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowGenericPopupWithDefaultActions")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void MaybeRepositionAltFireButtonPrompt(string otherButtonText)
 	{
 	}
 
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdatePlacementButtonLabels")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowGenericPopup")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowGenericPopupWithDefaultActions")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowGenericPopupWithDefaultActions")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdatePlacementButtonLabels")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdatePlacementButtonLabels")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void MaybeRepositionFireButtonPrompt(string otherButtonText)
 	{
 	}
 
-	[CalledBy(Type = typeof(PlayerManager), Member = "CheckForButtomPromptUpdate")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "CheckForButtomPromptUpdate")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
-	[CallerCount(Count = 4)]
 	[CallAnalysisFailed]
 	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Enable")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceMesh")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "CheckForButtomPromptUpdate")]
+	[CallerCount(Count = 4)]
 	public void ShowPlaceMeshItem(bool show, bool isDecal)
 	{
 	}
 
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "MaybeRepositionAltFireButtonPrompt")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "OnOverlappingDecalChange")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "OnControllerScheme")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(EquipItemPopup), Member = "MaybeRepositionFireButtonPrompt")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "MaybeRepositionFireButtonPrompt")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "OnOverlappingDecalChange")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetPlaceMeshFireButtonString")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetPlaceMeshAltFireButtonString")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "MaybeRepositionFireButtonPrompt")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "MaybeRepositionAltFireButtonPrompt")]
+	[CallsUnknownMethods(Count = 1)]
 	private void UpdatePlacementButtonLabels()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "MaybeRepositionFireButtonPrompt")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "HideEquipPopup")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(KeroseneLampItem), Member = "OnIgniteComplete")]
-	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Equip")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
-	[CalledBy(Type = typeof(TorchItem), Member = "OnIgniteComplete")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "OnIgniteComplete")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "MaybeRepositionAltFireButtonPrompt")]
-	[CalledBy(Type = typeof(FlashlightItem), Member = "ShowEquipItemPopup")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "Update")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "OnControllerScheme")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKeyWithDisable")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "Update")]
 	[CalledBy(Type = typeof(FlareItem), Member = "OnIgniteComplete")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
+	[CalledBy(Type = typeof(FlashlightItem), Member = "ShowEquipItemPopup")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "OnIgniteComplete")]
+	[CalledBy(Type = typeof(TorchItem), Member = "OnIgniteComplete")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "OnUnequipItemInHandInternalComplete")]
+	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Equip")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "OnAnimationEvent_Generic_Equip_Complete")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GetAmmoAvailableForWeapon")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(PlayerManager), Member = "CanHolsterItem")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "IsHoveringInteractiveObject")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(KeroseneLampItem), Member = "OnIgniteComplete")]
 	[CallerCount(Count = 11)]
-	[Calls(Type = typeof(EquipItemPopup), Member = "MaybeRepositionFireButtonPrompt")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "IsHoveringInteractiveObject")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(PlayerManager), Member = "CanHolsterItem")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Inventory), Member = "GetAmmoAvailableForWeapon")]
 	[Calls(Type = typeof(EquipItemPopup), Member = "ShowItemIcons")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "MaybeRepositionFireButtonPrompt")]
+	[Calls(Type = typeof(SnowShelterManager), Member = "PlayerInShelter")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "MaybeRepositionAltFireButtonPrompt")]
+	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKeyWithDisable")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "HideEquipPopup")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public void ShowEquippedItem(GearItem gi)
 	{
 	}
 
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(InteractiveScrollText), Member = "UpdateButtonDisplay")]
 	[CalledBy(Type = typeof(InteractiveScrollText), Member = "Update")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
+	[CalledBy(Type = typeof(InteractiveScrollText), Member = "UpdateButtonDisplay")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(EquipItemPopup), Member = "ShowItemIcons")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "MaybeRepositionAltFireButtonPrompt")]
 	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
 	[Calls(Type = typeof(EquipItemPopup), Member = "MaybeRepositionFireButtonPrompt")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "MaybeRepositionAltFireButtonPrompt")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ShowGenericPopup(string fireButtonStr, string fireButtonAction, string altFireButtonStr, string altFireButtonAction)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateButtonStates")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "MaybeRepositionAltFireButtonPrompt")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "MaybeRepositionFireButtonPrompt")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "ShowItemIcons")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(EquipItemPopup), Member = "ShowItemIcons")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
 	[Calls(Type = typeof(EquipItemPopup), Member = "MaybeRepositionFireButtonPrompt")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "MaybeRepositionAltFireButtonPrompt")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ShowGenericPopupWithDefaultActions(string fireButtonStr, string altFireButtonStr)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void ShowAmmoForTime(float seconds)
 	{
 	}
@@ -368,176 +272,144 @@ public class EquipItemPopup : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(Action_AddBearkillerRifle), Member = "OnExecute")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ExitDecalPlacement")]
-	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateButtonStates")]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "Enable")]
-	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "Update")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "Update")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "Awake")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "Update")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_ActionsRadial), Member = "UpdateButtonStates")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ExitDecalPlacement")]
+	[CalledBy(Type = typeof(Action_AddBearkillerRifle), Member = "OnExecute")]
+	[CallerCount(Count = 8)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public void HideEquipPopup()
 	{
 	}
 
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
-	[CalledBy(Type = typeof(Action_AddBearkillerRifle), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 4)]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "Awake")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "Update")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
 	[CalledBy(Type = typeof(Panel_Actions), Member = "Enable")]
+	[CalledBy(Type = typeof(Action_AddBearkillerRifle), Member = "OnExecute")]
+	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(EquipItemPopup), Member = "AllowedToHideAmmoPopup")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "Awake")]
+	[CallsUnknownMethods(Count = 4)]
 	public void HideAmmoPopup()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "Awake")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "ExitDecalPlacement")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void HideRemoveDecalPopup()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "Update")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "HideAmmoPopup")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "Update")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(FlashlightItem), Member = "GetNormalizedCharge")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(FlashlightItem), Member = "GetNormalizedCharge")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
+	[CallsUnknownMethods(Count = 6)]
 	private bool AllowedToHideAmmoPopup()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "UpdatePromptLabel")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "UpdatePromptLabel")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "UpdatePromptLabel")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "Update")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "Update")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(PlayerManager), Member = "CanHolsterItem")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(ButtonPrompt), Member = "UpdatePromptLabel")]
+	[Calls(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateButtonStatus()
 	{
 	}
 
-	[Calls(Type = typeof(HUDManager), Member = "DisplayAmmoOnHUDForTime")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "Update")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowItemIcons")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(Inventory), Member = "GetNumNoiseMakers")]
+	[Calls(Type = typeof(NoiseMakerItem), Member = "GetNormalizedWickTimeLeft")]
+	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
+	[Calls(Type = typeof(FlashlightItem), Member = "GetNormalizedCharge")]
+	[Calls(Type = typeof(Inventory), Member = "GetNumStones")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(TorchItem), Member = "GetBurnProgress")]
 	[Calls(Type = typeof(Inventory), Member = "GetNumMatches")]
 	[Calls(Type = typeof(Inventory), Member = "GetNumFlares")]
 	[Calls(Type = typeof(FlareItem), Member = "GetNormalizedBurnTimeLeft")]
 	[Calls(Type = typeof(BowItem), Member = "GetNumArrowsInInventory")]
+	[Calls(Type = typeof(HUDManager), Member = "DisplayAmmoOnHUDForTime")]
 	[Calls(Type = typeof(Inventory), Member = "GetAmmoAvailableForWeapon")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "HideAmmoPopup")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "Update")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "Update")]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowItemIcons")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
-	[Calls(Type = typeof(NoiseMakerItem), Member = "GetNormalizedWickTimeLeft")]
-	[Calls(Type = typeof(Inventory), Member = "GetNumStones")]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 16)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Inventory), Member = "GetNumNoiseMakers")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "HideAmmoPopup")]
+	[CallsDeduplicatedMethods(Count = 15)]
 	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(GearItem), Member = "GetNormalizedCondition")]
-	[Calls(Type = typeof(FlashlightItem), Member = "GetNormalizedCharge")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	private void UpdateAmmoStatus()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
-	[CallerCount(Count = 0)]
 	private void ShowEquipPopupWidget()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowGenericPopup")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowEquippedItem")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
+	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowGenericPopup")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShowGenericPopupWithDefaultActions")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "InitializeValues")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(EquipItemPopup), Member = "InitializeValues")]
 	[Calls(Type = typeof(HUDManager), Member = "DisplayAmmoOnHUDForTime")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "UpdateAmmoStatus")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 6)]
 	private void ShowItemIcons(string fireButtonStr, string altFireButtonStr, bool showAmmo)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "Update")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShouldHideEquipPopup")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "ShouldHideAmmoPopup")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	private bool ControlModeAllowsInterface()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "OnControllerScheme")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(EquipItemPopup), Member = "IsHoveringInteractiveObject")]
 	[CalledBy(Type = typeof(EquipItemPopup), Member = "Update")]
-	[Calls(Type = typeof(EquipItemPopup), Member = "ControlModeAllowsInterface")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PlayerManager), Member = "IsInMeshPlacementMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "ControlModeAllowsInterface")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "IsHoveringInteractiveObject")]
+	[CallsUnknownMethods(Count = 6)]
 	private bool ShouldHideEquipPopup()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -546,12 +418,12 @@ public class EquipItemPopup : MonoBehaviour
 	[CallsUnknownMethods(Count = 3)]
 	private bool ShouldHideAmmoPopup()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 8)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 8)]
+	[CallsUnknownMethods(Count = 1)]
 	private void SetFillDurationAmount(float value)
 	{
 	}

@@ -21,12 +21,12 @@ public class UI2DSpriteAnimation : MonoBehaviour
 
 	public bool isPlaying
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 59)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -36,20 +36,20 @@ public class UI2DSpriteAnimation : MonoBehaviour
 		[CallerCount(Count = 11)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UI2DSpriteAnimation), Member = "UpdateSprite")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
+	[CallsUnknownMethods(Count = 2)]
 	public void Play()
 	{
 	}
@@ -60,42 +60,37 @@ public class UI2DSpriteAnimation : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UI2DSpriteAnimation), Member = "UpdateSprite")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UI2DSpriteAnimation), Member = "UpdateSprite")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ResetToBeginning()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UI2DSpriteAnimation), Member = "UpdateSprite")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[DeduplicatedMethod]
+	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void Update()
 	{
 	}
 
 	[CalledBy(Type = typeof(UI2DSpriteAnimation), Member = "Play")]
+	[CalledBy(Type = typeof(UI2DSpriteAnimation), Member = "ResetToBeginning")]
 	[CalledBy(Type = typeof(UI2DSpriteAnimation), Member = "Start")]
-	[CalledBy(Type = typeof(UI2DSpriteAnimation), Member = "ResetToBeginning")]
-	[CalledBy(Type = typeof(UI2DSpriteAnimation), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateSprite()
 	{
 	}

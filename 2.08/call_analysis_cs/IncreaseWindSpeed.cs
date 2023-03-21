@@ -11,17 +11,17 @@ public class IncreaseWindSpeed : MonoBehaviour
 
 	private float m_CurrentWindSpeedIncrease;
 
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void OnTriggerEnter(Collider c)
 	{
 	}

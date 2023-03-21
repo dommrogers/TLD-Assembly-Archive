@@ -26,9 +26,9 @@ public class LightingCapture : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -37,9 +37,9 @@ public class LightingCapture : MonoBehaviour
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -53,44 +53,41 @@ public class LightingCapture : MonoBehaviour
 		{
 		}
 
-		[CallerCount(Count = 6)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Enum), Member = "ToString")]
+		[Calls(Type = typeof(LightingCapture), Member = "RenderCameraToTexture")]
 		[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
+		[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+		[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+		[Calls(Type = typeof(UniStormWeatherSystem), Member = "SetWeatherStage")]
+		[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetImmediate")]
+		[Calls(Type = typeof(Transform), Member = "get_position")]
+		[Calls(Type = typeof(FlyMode), Member = "Warp")]
+		[Calls(Type = typeof(FlyMode), Member = "Exit")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(BoxSectorManager), Member = "RestoreSectorState")]
 		[Calls(Type = typeof(BatchLightingCapture), Member = "CaptureNextScene")]
-		[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-		[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "UnloadSceneAsync")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-		[CallsUnknownMethods(Count = 11)]
-		[Calls(Type = typeof(UniStormWeatherSystem), Member = "SetWeatherStage")]
 		[Calls(Type = typeof(GameObject), Member = "get_scene")]
-		[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-		[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
-		[Calls(Type = typeof(FlyMode), Member = "Warp")]
-		[Calls(Type = typeof(Transform), Member = "get_position")]
-		[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetImmediate")]
-		[Calls(Type = typeof(UniStormWeatherSystem), Member = "SetWeatherStage")]
-		[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-		[Calls(Type = typeof(LightingCapture), Member = "RenderCameraToTexture")]
-		[Calls(Type = typeof(Enum), Member = "ToString")]
+		[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "UnloadSceneAsync")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 		[CallsDeduplicatedMethods(Count = 7)]
-		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(FlyMode), Member = "Exit")]
+		[CallsUnknownMethods(Count = 11)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 5)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 5)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -120,53 +117,54 @@ public class LightingCapture : MonoBehaviour
 
 	private BoxSectorManager m_BoSeMan;
 
+	[CalledBy(Type = typeof(LightingCapture), Member = "SampleCameras")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Path), Member = "Combine")]
+	[Calls(Type = typeof(Directory), Member = "CreateDirectory")]
+	[Calls(Type = typeof(Breath), Member = "StopBreathEffectImmediate")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectOfType")]
 	[Calls(Type = typeof(BoxSectorManager), Member = "ForceAllActive")]
 	[Calls(Type = typeof(LightingCapture), Member = "MakeNextDirectoryID")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CalledBy(Type = typeof(LightingCapture), Member = "SampleCameras")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Breath), Member = "StopBreathEffectImmediate")]
-	[Calls(Type = typeof(Directory), Member = "CreateDirectory")]
-	[Calls(Type = typeof(Path), Member = "Combine")]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	private void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(LightingCapture), Member = "Initialize")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_capture_lighting_all")]
-	[Calls(Type = typeof(Directory), Member = "CreateDirectory")]
-	[Calls(Type = typeof(Path), Member = "Combine")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(int), Member = "TryParse")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(string), Member = "LastIndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(Directory), Member = "InternalEnumeratePaths")]
-	[Calls(Type = typeof(Path), Member = "Combine")]
-	[Calls(Type = typeof(int), Member = "ToString")]
+	[CalledBy(Type = typeof(LightingCapture), Member = "Initialize")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(Path), Member = "Combine")]
+	[Calls(Type = typeof(Directory), Member = "InternalEnumeratePaths")]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(string), Member = "LastIndexOf")]
 	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(int), Member = "TryParse")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Path), Member = "Combine")]
+	[Calls(Type = typeof(Directory), Member = "CreateDirectory")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public static string MakeNextDirectoryID()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(BatchLightingCapture), Member = "OnLevelFinishedLoading")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(LightingCapture), Member = "Initialize")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(LightingCapture), Member = "Initialize")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "SetWeatherStage")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 8)]
 	public void SampleCameras(bool batchMode)
 	{
 	}
@@ -179,16 +177,14 @@ public class LightingCapture : MonoBehaviour
 		return null;
 	}
 
-	[Calls(Type = typeof(Path), Member = "Combine")]
-	[CallsUnknownMethods(Count = 22)]
 	[CalledBy(Type = typeof(_003CCaptureFrame_003Ed__15), Member = "MoveNext")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[Calls(Type = typeof(string), Member = "Format")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(Path), Member = "Combine")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(string), Member = "Format")]
+	[CallsUnknownMethods(Count = 22)]
 	private void RenderCameraToTexture(int idx, int curHour, string weatherType)
 	{
 	}

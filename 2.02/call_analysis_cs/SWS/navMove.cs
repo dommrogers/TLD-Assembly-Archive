@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 using UnityEngine.AI;
@@ -32,7 +31,7 @@ public class navMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -41,9 +40,9 @@ public class navMove : MonoBehaviour
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -59,22 +58,21 @@ public class navMove : MonoBehaviour
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-		[CallsUnknownMethods(Count = 11)]
-		[Calls(Type = typeof(navMove), Member = "NextWaypoint")]
-		[Calls(Type = typeof(navMove), Member = "ReachedEnd")]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(navMove), Member = "WaitForDestination")]
 		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+		[Calls(Type = typeof(navMove), Member = "NextWaypoint")]
+		[Calls(Type = typeof(navMove), Member = "ReachedEnd")]
 		[CallsDeduplicatedMethods(Count = 6)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 11)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -98,7 +96,7 @@ public class navMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -107,9 +105,9 @@ public class navMove : MonoBehaviour
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 29)]
-			[DeduplicatedMethod]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -125,30 +123,28 @@ public class navMove : MonoBehaviour
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-		[Calls(Type = typeof(Messages), Member = "Execute")]
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-		[Calls(Type = typeof(navMove), Member = "WaitForDestination")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[Calls(Type = typeof(System.Number), Member = "ParseInt32")]
-		[Calls(Type = typeof(string), Member = "Replace")]
-		[CallsUnknownMethods(Count = 38)]
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[Calls(Type = typeof(navMove), Member = "NextWaypoint")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(navMove), Member = "ReachedEnd")]
 		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 		[Calls(Type = typeof(navMove), Member = "WaitDelay")]
-		[Calls(Type = typeof(navMove), Member = "ReachedEnd")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "Replace")]
+		[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+		[Calls(TypeFullName = "System.Number", Member = "ParseInt32")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+		[Calls(Type = typeof(navMove), Member = "WaitForDestination")]
+		[Calls(Type = typeof(Messages), Member = "Execute")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 38)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -174,7 +170,7 @@ public class navMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -185,40 +181,40 @@ public class navMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 		}
 
+		[DebuggerHidden]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[DebuggerHidden]
 		public _003CWaitForDestination_003Ed__20(int _003C_003E1__state)
 		{
 		}
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[Calls(Type = typeof(NavMeshAgent), Member = "get_pathStatus")]
+		[CallsDeduplicatedMethods(Count = 4)]
 		[CallsUnknownMethods(Count = 7)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 3)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -236,9 +232,9 @@ public class navMove : MonoBehaviour
 
 		private object System_002ECollections_002EGeneric_002EIEnumerator_003CSystem_002EObject_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -249,7 +245,7 @@ public class navMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -265,18 +261,18 @@ public class navMove : MonoBehaviour
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 5)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -300,7 +296,7 @@ public class navMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -311,7 +307,7 @@ public class navMove : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -327,35 +323,30 @@ public class navMove : MonoBehaviour
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-		[Calls(Type = typeof(Messages), Member = "Execute")]
-		[Calls(Type = typeof(navMove), Member = "WaitForDestination")]
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-		[CallsUnknownMethods(Count = 72)]
-		[Calls(Type = typeof(navMove), Member = "WaitDelay")]
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-		[Calls(Type = typeof(navMove), Member = "WaitDelay")]
-		[Calls(Type = typeof(Messages), Member = "Execute")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[Calls(Type = typeof(Array), Member = "Copy")]
-		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-		[Calls(Type = typeof(navMove), Member = "NextWaypoint")]
-		[CallsDeduplicatedMethods(Count = 6)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(navMove), Member = "NextWaypoint")]
+		[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+		[Calls(Type = typeof(Array), Member = "Copy")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+		[Calls(Type = typeof(Messages), Member = "Execute")]
+		[Calls(Type = typeof(navMove), Member = "WaitDelay")]
+		[Calls(Type = typeof(navMove), Member = "WaitForDestination")]
+		[CallsDeduplicatedMethods(Count = 6)]
+		[CallsUnknownMethods(Count = 72)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 3)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 3)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -392,30 +383,28 @@ public class navMove : MonoBehaviour
 	private bool waiting;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(navMove), Member = "StartMove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 34)]
 	[CalledBy(Type = typeof(navMove), Member = "Start")]
-	[Calls(Type = typeof(navMove), Member = "Stop")]
-	[Calls(Type = typeof(Messages), Member = "Initialize")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(Messages), Member = "Initialize")]
+	[Calls(Type = typeof(navMove), Member = "Stop")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 33)]
 	public void StartMove()
 	{
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
@@ -424,48 +413,43 @@ public class navMove : MonoBehaviour
 		return null;
 	}
 
-	[CalledBy(Type = typeof(_003CReachedEnd_003Ed__22), Member = "MoveNext")]
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(_003CMove_003Ed__18), Member = "MoveNext")]
 	[CalledBy(Type = typeof(_003CNextWaypoint_003Ed__19), Member = "MoveNext")]
+	[CalledBy(Type = typeof(_003CReachedEnd_003Ed__22), Member = "MoveNext")]
 	[CallerCount(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(_003CMove_003Ed__18), Member = "MoveNext")]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
+	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator NextWaypoint()
 	{
 		return null;
 	}
 
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(_003CMove_003Ed__18), Member = "MoveNext")]
 	[CalledBy(Type = typeof(_003CNextWaypoint_003Ed__19), Member = "MoveNext")]
 	[CalledBy(Type = typeof(_003CReachedEnd_003Ed__22), Member = "MoveNext")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator WaitForDestination()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(_003CReachedEnd_003Ed__22), Member = "MoveNext")]
-	[CalledBy(Type = typeof(_003CReachedEnd_003Ed__22), Member = "MoveNext")]
 	[CalledBy(Type = typeof(_003CNextWaypoint_003Ed__19), Member = "MoveNext")]
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(_003CReachedEnd_003Ed__22), Member = "MoveNext")]
 	[CallerCount(Count = 3)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator WaitDelay()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(_003CNextWaypoint_003Ed__19), Member = "MoveNext")]
 	[CalledBy(Type = typeof(_003CMove_003Ed__18), Member = "MoveNext")]
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(_003CNextWaypoint_003Ed__19), Member = "MoveNext")]
 	[CallerCount(Count = 2)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator ReachedEnd()
 	{
 		return null;
@@ -477,35 +461,35 @@ public class navMove : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(navMove), Member = "SetPath")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(navMove), Member = "Stop")]
 	[Calls(Type = typeof(navMove), Member = "ResetMove")]
-	[CalledBy(Type = typeof(navMove), Member = "SetPath")]
 	public void SetPath(PathManager newPath, bool reset)
 	{
 	}
 
 	[CalledBy(Type = typeof(navMove), Member = "SetPath")]
-	[Calls(Type = typeof(navMove), Member = "Stop")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(navMove), Member = "Stop")]
 	public void Stop()
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(navMove), Member = "StartMove")]
 	[CalledBy(Type = typeof(navMove), Member = "Stop")]
 	[CalledBy(Type = typeof(navMove), Member = "ResetMove")]
 	[CalledBy(Type = typeof(navMove), Member = "Pause")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Stop(bool stopUpdates)
 	{
 	}
 
+	[CalledBy(Type = typeof(navMove), Member = "SetPath")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(navMove), Member = "Stop")]
-	[CalledBy(Type = typeof(navMove), Member = "SetPath")]
 	[CallsUnknownMethods(Count = 1)]
 	public void ResetMove(bool reposition)
 	{
@@ -517,10 +501,10 @@ public class navMove : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(navMove), Member = "Pause")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(navMove), Member = "Stop")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Pause(bool stopUpdates)
 	{
 	}
@@ -545,7 +529,11 @@ public class navMove : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallAnalysisFailed]
+	[Calls(Type = typeof(Messages), Member = ".ctor")]
+	[Calls(Type = typeof(System.Random), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 14)]
 	public navMove()
 	{
 	}

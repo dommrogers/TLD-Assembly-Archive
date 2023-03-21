@@ -17,32 +17,32 @@ public class ActiveRequest : Request
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsPlaying()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(NPCVoice), Member = "StartNextRequest")]
 	[CalledBy(Type = typeof(PlayerVoice), Member = "StartNextRequest")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(NPCVoice), Member = "StartNextRequest")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Start(Request original, uint playbackID)
 	{
 	}
 
 	[CalledBy(Type = typeof(NPCVoice), Member = "HandleNextRequest")]
+	[CalledBy(Type = typeof(PlayerVoice), Member = "HandleNextRequest")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
-	[CalledBy(Type = typeof(PlayerVoice), Member = "HandleNextRequest")]
 	public void Stop()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public ActiveRequest()
 	{
 	}

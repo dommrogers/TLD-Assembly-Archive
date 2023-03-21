@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -37,18 +35,17 @@ public struct SnowImprint
 
 	public Vector3 Position
 	{
-		[CallerCount(Count = 4)]
 		[CalledBy(Type = typeof(SnowImprint), Member = "ToString")]
+		[CalledBy(Type = typeof(FootstepTrail), Member = "FadeFootprintsAtTrailEnd")]
 		[CalledBy(Type = typeof(SnowImprintExpanded), Member = ".ctor")]
 		[CalledBy(Type = typeof(SnowPatch), Member = "AddImprint")]
 		[CalledBy(Type = typeof(SnowPatchManager), Member = "AddImprint")]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return default(Vector3);
 		}
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(SnowImprint), Member = "FloatToBytes")]
-		[Calls(Type = typeof(SnowImprint), Member = "FloatToBytes")]
 		[Calls(Type = typeof(SnowImprint), Member = "FloatToBytes")]
 		set
 		{
@@ -73,7 +70,7 @@ public struct SnowImprint
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -86,14 +83,13 @@ public struct SnowImprint
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
-		[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
 		[CalledBy(Type = typeof(SnowImprint), Member = ".ctor")]
 		[CalledBy(Type = typeof(FootstepGroup), Member = "AdjustSnowDepthRecords")]
+		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -105,13 +101,13 @@ public struct SnowImprint
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CalledBy(Type = typeof(SnowImprint), Member = ".ctor")]
-		[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Mathf), Member = "Repeat")]
+		[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -135,7 +131,7 @@ public struct SnowImprint
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -148,7 +144,7 @@ public struct SnowImprint
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -161,7 +157,7 @@ public struct SnowImprint
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -174,7 +170,7 @@ public struct SnowImprint
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -182,27 +178,22 @@ public struct SnowImprint
 		}
 	}
 
+	[CalledBy(Type = typeof(FootstepTrail), Member = "AddFootstep")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(SnowImprint), Member = "FloatToBytes")]
-	[Calls(Type = typeof(SnowImprint), Member = "FloatToBytes")]
 	[Calls(Type = typeof(SnowImprint), Member = "FloatToBytes")]
 	[Calls(Type = typeof(SnowImprint), Member = "set_Angle")]
 	[Calls(Type = typeof(SnowImprint), Member = "set_InitialSnowDepth")]
-	[CalledBy(Type = typeof(FootstepTrail), Member = "AddFootstep")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public SnowImprint(SnowImprintType type, Vector3 pos, Vector3 normal, float yRotation, float depth, bool flip, int variant)
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(FootstepTrail), Member = "Deserialize")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public SnowImprint(List<uint> serializedList, ref int index)
 	{
 	}
@@ -210,42 +201,36 @@ public struct SnowImprint
 	[CallerCount(Count = 0)]
 	private float FloatFromBytes(byte b0, byte b1, byte b2)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SnowImprint), Member = "set_Position")]
-	[CalledBy(Type = typeof(SnowImprint), Member = "set_Position")]
-	[CalledBy(Type = typeof(SnowImprint), Member = "set_Position")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(SnowImprint), Member = ".ctor")]
-	[CalledBy(Type = typeof(SnowImprint), Member = ".ctor")]
+	[CalledBy(Type = typeof(SnowImprint), Member = "set_Position")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(SnowImprint), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void FloatToBytes(float f, out byte b0, out byte b1, out byte b2)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<byte, @null>(ref b0) = null;
-		System.Runtime.CompilerServices.Unsafe.As<byte, @null>(ref b1) = null;
-		System.Runtime.CompilerServices.Unsafe.As<byte, @null>(ref b2) = null;
+		b0 = default(byte);
+		b1 = default(byte);
+		b2 = default(byte);
 	}
 
+	[CalledBy(Type = typeof(FootstepGroup), Member = "SerializeFootsteps")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(FootstepGroup), Member = "SerializeFootsteps")]
 	[CallsUnknownMethods(Count = 17)]
 	public void AddForSerialize(List<uint> list)
 	{
 	}
 
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
 	[Calls(Type = typeof(SnowImprint), Member = "get_Position")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
+	[CallsUnknownMethods(Count = 33)]
 	public override string ToString()
 	{
 		return null;

@@ -4,13 +4,13 @@ using UnityEngine;
 public class DefaultHDRHandler : IHDRHandler
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void SetPaperWhiteNits(float value)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void SetPeakBrightnessNits(float value)
 	{
 	}
@@ -19,24 +19,24 @@ public class DefaultHDRHandler : IHDRHandler
 	[CallerCount(Count = 0)]
 	public bool IsOutputtingHDR()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Initialize(float paperWhiteNits, float peakBrightnessNits)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Graphics), Member = "Blit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Render(RenderTexture source, RenderTexture destination)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public DefaultHDRHandler()
 	{
 	}

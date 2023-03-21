@@ -14,22 +14,18 @@ public class ActiveWindSettings
 	public float m_VerticalBluster;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ActiveWindSettings()
 	{
 	}
 
 	[CalledBy(Type = typeof(Wind), Member = "StartPhase")]
-	[CalledBy(Type = typeof(Wind), Member = "StartPhase")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(GameManager), Member = "InCustomMode")]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCustomMode")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	public ActiveWindSettings(WindSettings ws, float angle = -1f)
 	{
 	}
@@ -41,15 +37,12 @@ public class ActiveWindSettings
 	{
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Mathf), Member = "LerpAngle")]
+	[Calls(Type = typeof(Mathf), Member = "Repeat")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Mathf), Member = "Repeat")]
 	public void SetBlended(ActiveWindSettings a, ActiveWindSettings b, float blend)
 	{
 	}

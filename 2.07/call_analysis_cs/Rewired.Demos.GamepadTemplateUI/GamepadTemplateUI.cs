@@ -19,33 +19,32 @@ public class GamepadTemplateUI : MonoBehaviour
 
 		public Vector2 position
 		{
-			[CallsUnknownMethods(Count = 1)]
 			[CallerCount(Count = 0)]
 			[Calls(Type = typeof(RectTransform), Member = "get_anchoredPosition")]
+			[CallsUnknownMethods(Count = 1)]
 			get
 			{
 				return default(Vector2);
 			}
-			[CallsUnknownMethods(Count = 2)]
 			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
+			[CallsUnknownMethods(Count = 2)]
 			set
 			{
 			}
 		}
 
+		[CalledBy(Type = typeof(GamepadTemplateUI), Member = "Awake")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(RectTransform), Member = "get_anchoredPosition")]
-		[CalledBy(Type = typeof(GamepadTemplateUI), Member = "Awake")]
-		[CalledBy(Type = typeof(GamepadTemplateUI), Member = "Awake")]
 		[CallsUnknownMethods(Count = 1)]
 		public Stick(RectTransform transform, int xAxisElementId, int yAxisElementId)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		public void Reset()
 		{
 		}
@@ -53,13 +52,13 @@ public class GamepadTemplateUI : MonoBehaviour
 		[CallerCount(Count = 0)]
 		public bool ContainsElement(int elementId)
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[Calls(Type = typeof(RectTransform), Member = "get_anchoredPosition")]
 		[CalledBy(Type = typeof(GamepadTemplateUI), Member = "ActivateElements")]
+		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(RectTransform), Member = "get_anchoredPosition")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 2)]
 		public void SetAxisPosition(int elementId, float value)
 		{
@@ -143,10 +142,10 @@ public class GamepadTemplateUI : MonoBehaviour
 
 	private Player player
 	{
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(ReInput), Member = "get_players")]
 		[Calls(Type = typeof(ReInput.PlayerHelper), Member = "GetPlayer")]
 		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(ReInput), Member = "get_players")]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -154,11 +153,10 @@ public class GamepadTemplateUI : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Stick), Member = ".ctor")]
 	[Calls(Type = typeof(Stick), Member = ".ctor")]
 	[Calls(Type = typeof(ReInput), Member = "add_ControllerConnectedEvent")]
 	[Calls(Type = typeof(ReInput), Member = "add_ControllerDisconnectedEvent")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 104)]
 	private void Awake()
 	{
@@ -170,46 +168,48 @@ public class GamepadTemplateUI : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ReInput), Member = "remove_ControllerDisconnectedEvent")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ReInput), Member = "remove_ControllerConnectedEvent")]
+	[Calls(Type = typeof(ReInput), Member = "remove_ControllerDisconnectedEvent")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Logger), Member = "LogError")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(GamepadTemplateUI), Member = "ActivateElements")]
-	[Calls(Type = typeof(BkfCnyksRntdMWqKutrNDmKklsX), Member = "kkZUFmepoMvetrsAbIdaNqfeQZH")]
-	[Calls(Type = typeof(ControllerUIElement), Member = "Deactivate")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "get_Actions")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ControllerUIElement), Member = "Deactivate")]
+	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
+	[Calls(Type = typeof(ReInput.MappingHelper), Member = "get_Actions")]
 	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(TypeFullName = "BkfCnyksRntdMWqKutrNDmKklsX", Member = "kkZUFmepoMvetrsAbIdaNqfeQZH")]
+	[Calls(TypeFullName = "Rewired.Logger", Member = "LogError")]
+	[Calls(Type = typeof(GamepadTemplateUI), Member = "ActivateElements")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void DrawActiveElements()
 	{
 	}
 
 	[CalledBy(Type = typeof(GamepadTemplateUI), Member = "DrawActiveElements")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Player), Member = "GetAxis")]
 	[Calls(Type = typeof(Player), Member = "GetCurrentInputSources")]
+	[Calls(Type = typeof(Controller), Member = "GetTemplate")]
 	[Calls(Type = typeof(ControllerElementTarget), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(Player), Member = "GetButton")]
 	[Calls(Type = typeof(Player), Member = "GetNegativeButton")]
 	[Calls(Type = typeof(ControllerUIElement), Member = "Activate")]
 	[Calls(Type = typeof(GamepadTemplateUI), Member = "GetStick")]
 	[Calls(Type = typeof(Stick), Member = "SetAxisPosition")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 9)]
 	private void ActivateElements(Player player, int actionId)
 	{
@@ -217,55 +217,49 @@ public class GamepadTemplateUI : MonoBehaviour
 
 	[CalledBy(Type = typeof(GamepadTemplateUI), Member = "Start")]
 	[CalledBy(Type = typeof(GamepadTemplateUI), Member = "OnControllerConnected")]
-	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(GamepadTemplateUI), Member = "DrawLabels")]
 	[CalledBy(Type = typeof(GamepadTemplateUI), Member = "OnControllerDisconnected")]
-	[Calls(Type = typeof(Logger), Member = "LogError")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(ReInput), Member = "get_players")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(BkfCnyksRntdMWqKutrNDmKklsX), Member = "kkZUFmepoMvetrsAbIdaNqfeQZH")]
-	[Calls(Type = typeof(ReInput.MappingHelper), Member = "get_Actions")]
 	[Calls(Type = typeof(ControllerUIElement), Member = "ClearLabels")]
+	[Calls(Type = typeof(ReInput), Member = "get_mapping")]
+	[Calls(Type = typeof(ReInput.MappingHelper), Member = "get_Actions")]
+	[Calls(Type = typeof(ReInput), Member = "get_players")]
+	[Calls(TypeFullName = "BkfCnyksRntdMWqKutrNDmKklsX", Member = "kkZUFmepoMvetrsAbIdaNqfeQZH")]
+	[Calls(TypeFullName = "Rewired.Logger", Member = "LogError")]
+	[Calls(Type = typeof(GamepadTemplateUI), Member = "DrawLabels")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void DrawLabels()
 	{
 	}
 
-	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[CalledBy(Type = typeof(GamepadTemplateUI), Member = "DrawLabels")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Player.ControllerHelper), Member = "GetFirstControllerWithTemplate")]
+	[Calls(Type = typeof(Controller), Member = "GetTemplate")]
 	[Calls(Type = typeof(Controller), Member = "get_type")]
 	[Calls(Type = typeof(Player.ControllerHelper.MapHelper), Member = "GetMap")]
 	[Calls(Type = typeof(GamepadTemplateUI), Member = "DrawLabel")]
-	[CalledBy(Type = typeof(GamepadTemplateUI), Member = "DrawLabels")]
+	[Calls(Type = typeof(ReInput), Member = "CheckInitialized")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void DrawLabels(Player player, InputAction action)
 	{
 	}
 
-	[Calls(Type = typeof(ControllerMap), Member = "GetFirstElementMapWithElementTarget")]
-	[Calls(Type = typeof(ControllerUIElement), Member = "SetLabel")]
-	[Calls(Type = typeof(ControllerMap), Member = "GetFirstElementMapWithElementTarget")]
 	[CalledBy(Type = typeof(GamepadTemplateUI), Member = "DrawLabels")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(ControllerMap), Member = "GetFirstElementMapWithElementTarget")]
-	[Calls(Type = typeof(ControllerMap), Member = "GetFirstElementMapWithElementTarget")]
-	[Calls(Type = typeof(ControllerElementTarget), Member = ".ctor")]
-	[Calls(Type = typeof(ControllerUIElement), Member = "SetLabel")]
-	[Calls(Type = typeof(ControllerMap), Member = "GetFirstElementMapWithElementTarget")]
-	[Calls(Type = typeof(ControllerUIElement), Member = "SetLabel")]
-	[Calls(Type = typeof(ControllerMap), Member = "GetFirstElementMapWithElementTarget")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ControllerMap), Member = "GetFirstElementMapWithElementTarget")]
+	[Calls(Type = typeof(ControllerUIElement), Member = "SetLabel")]
 	[Calls(Type = typeof(ControllerElementTarget), Member = ".ctor")]
+	[Calls(Type = typeof(ControllerMap), Member = "GetFirstElementMapWithElementTarget")]
+	[CallsUnknownMethods(Count = 17)]
 	private void DrawLabel(ControllerUIElement uiElement, InputAction action, ControllerMap controllerMap, IControllerTemplate template, IControllerTemplateElement element)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(GamepadTemplateUI), Member = "ActivateElements")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private Stick GetStick(int elementId)
 	{
@@ -279,16 +273,16 @@ public class GamepadTemplateUI : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(GamepadTemplateUI), Member = "DrawLabels")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GamepadTemplateUI), Member = "DrawLabels")]
 	private void OnControllerDisconnected(ControllerStatusChangedEventArgs args)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public GamepadTemplateUI()
 	{
 	}

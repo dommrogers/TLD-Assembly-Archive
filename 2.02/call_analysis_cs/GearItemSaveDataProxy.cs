@@ -110,7 +110,7 @@ public class GearItemSaveDataProxy
 	public string m_NoiseMakerSerialized;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public GearItemSaveDataProxy()
 	{
 	}

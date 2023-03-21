@@ -13,46 +13,39 @@ public abstract class BaseGroupType : BaseType
 
 	public WwiseObjectReference GroupWwiseObjectReference
 	{
+		[CalledBy(Type = typeof(AkState), Member = "get_groupGuid")]
+		[CalledBy(Type = typeof(AkSwitch), Member = "get_groupGuid")]
 		[CalledBy(Type = typeof(BaseGroupType), Member = "get_GroupId")]
 		[CalledBy(Type = typeof(BaseGroupType), Member = "IsValid")]
-		[CalledBy(Type = typeof(BaseGroupType), Member = "get_GroupId")]
-		[CalledBy(Type = typeof(AkSwitch), Member = "get_groupGuid")]
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 5)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[CallsDeduplicatedMethods(Count = 3)]
-		[CallerCount(Count = 5)]
-		[CalledBy(Type = typeof(AkState), Member = "get_groupGuid")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	public abstract WwiseObjectType WwiseObjectGroupType
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	public abstract WwiseObjectType WwiseObjectGroupType { get; }
 
 	public uint GroupId
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(Switch), Member = "SetValue")]
-		[CalledBy(Type = typeof(BaseGroupType), Member = "get_groupID")]
-		[CalledBy(Type = typeof(AkSwitch), Member = "get_groupID")]
-		[CalledBy(Type = typeof(AkSwitch), Member = "HandleEvent")]
+		[CalledBy(Type = typeof(AkState), Member = "HandleEvent")]
 		[CalledBy(Type = typeof(AkState), Member = "get_groupID")]
+		[CalledBy(Type = typeof(AkSwitch), Member = "HandleEvent")]
+		[CalledBy(Type = typeof(AkSwitch), Member = "get_groupID")]
+		[CalledBy(Type = typeof(BaseGroupType), Member = "get_groupID")]
 		[CalledBy(Type = typeof(State), Member = "SetValue")]
+		[CalledBy(Type = typeof(Switch), Member = "SetValue")]
+		[CallerCount(Count = 7)]
 		[Calls(Type = typeof(BaseGroupType), Member = "get_GroupWwiseObjectReference")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(BaseGroupType), Member = "get_GroupWwiseObjectReference")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 7)]
-		[CalledBy(Type = typeof(AkState), Member = "HandleEvent")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
@@ -62,36 +55,35 @@ public abstract class BaseGroupType : BaseType
 		[Calls(Type = typeof(BaseGroupType), Member = "get_GroupId")]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public byte[] groupGuid
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[Calls(Type = typeof(WwiseObjectReference), Member = "get_Guid")]
 		[Calls(Type = typeof(Guid), Member = "ToByteArray")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(BaseGroupType), Member = "get_GroupWwiseObjectReference")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
 	public override bool IsValid()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	protected BaseGroupType()
 	{
 	}

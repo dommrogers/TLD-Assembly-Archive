@@ -1,8 +1,8 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Gameplay;
 using TLD.Serialization;
 using UnityEngine;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class HuntedPart2WaypointController : MonoBehaviour
 {
@@ -48,40 +48,37 @@ public class HuntedPart2WaypointController : MonoBehaviour
 
 	private static readonly HuntedPart2WaypointControllerSaveData m_HuntedPart2WaypointControllerSaveData;
 
-	[CalledBy(Type = typeof(BaseAi), Member = "TargetCanBeIgnored")]
-	[CalledBy(Type = typeof(BaseAi), Member = "IgnoreAudioEvent")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ProcessGunshotAudioEvent")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeHoldGround")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(BloodTrail), Member = "GetDecalProjectorType")]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "IsDamageFatal")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "IsHuntedBear2ChallengeEnd")]
-	[CalledBy(Type = typeof(BaseAi), Member = "UseFixedStalkingSpeed")]
-	[CalledBy(Type = typeof(BaseAi), Member = "UpdateWounds")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ChangeModeWhenTargetDetected")]
-	[CalledBy(Type = typeof(BaseAi), Member = "ApplyDamage")]
-	[CallerCount(Count = 17)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(BaseAi), Member = "IsDamageFatal")]
 	[CalledBy(Type = typeof(BaseAi), Member = "PlaceFootPrintDecal")]
 	[CalledBy(Type = typeof(BaseAi), Member = "AttackOrFleeAfterNearMissGunshot")]
 	[CalledBy(Type = typeof(BaseAi), Member = "SetAiMode")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ApplyDamage")]
+	[CalledBy(Type = typeof(BaseAi), Member = "IsDamageFatal")]
+	[CalledBy(Type = typeof(BaseAi), Member = "UpdateWounds")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ChangeModeWhenTargetDetected")]
+	[CalledBy(Type = typeof(BaseAi), Member = "TargetCanBeIgnored")]
+	[CalledBy(Type = typeof(BaseAi), Member = "IgnoreAudioEvent")]
+	[CalledBy(Type = typeof(BaseAi), Member = "ProcessGunshotAudioEvent")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeHoldGround")]
+	[CalledBy(Type = typeof(BaseAi), Member = "UseFixedStalkingSpeed")]
+	[CalledBy(Type = typeof(BloodTrail), Member = "GetDecalProjectorType")]
+	[CalledBy(Type = typeof(BearSpearItem), Member = "IsDamageFatal")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "IsHuntedBear2ChallengeEnd")]
+	[CallerCount(Count = 17)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(HuntedPart2WaypointController), Member = "InRequiredGameMode")]
+	[CallsUnknownMethods(Count = 1)]
 	public static bool IsHuntedBear(BaseAi bai)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public static int GetCurrentWaypoint(string text)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -95,11 +92,11 @@ public class HuntedPart2WaypointController : MonoBehaviour
 
 	[CalledBy(Type = typeof(BaseAi), Member = "DeserializeUsingBaseAiDataProxy")]
 	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(HuntedPart2WaypointController), Member = "WaypointsInitialize")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(HuntedPart2WaypointController), Member = "WaypointsInitialize")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
@@ -113,38 +110,31 @@ public class HuntedPart2WaypointController : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(HuntedPart2WaypointController), Member = "Start")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(HuntedPart2WaypointController), Member = "GoToCurrentWaypoint")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[Calls(Type = typeof(BaseAi), Member = "GetRandomWanderDuration")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(BaseAi), Member = "SetSpeedOverride")]
-	[Calls(Type = typeof(HuntedPart2WaypointController), Member = "ShouldDoWanderPause")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(BaseAi), Member = "GetRandomWanderDuration")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[Calls(Type = typeof(HuntedPart2WaypointController), Member = "GoToCurrentWaypoint")]
-	[Calls(Type = typeof(MoveAgent), Member = "Warp")]
-	[Calls(Type = typeof(BaseAi), Member = "SetRotation")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(HuntedPart2WaypointController), Member = "MaybeDisableDuplicateBear")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 14)]
+	[Calls(Type = typeof(HuntedPart2WaypointController), Member = "GoToCurrentWaypoint")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
 	[Calls(Type = typeof(HuntedPart2WaypointController), Member = "InRangeOfTargetWaypoint")]
 	[Calls(Type = typeof(BaseAi), Member = "SetSpeedOverride")]
 	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
 	[Calls(Type = typeof(HuntedPart2WaypointController), Member = "IncrementWaypoint")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(MoveAgent), Member = "Warp")]
+	[Calls(Type = typeof(BaseAi), Member = "SetRotation")]
+	[Calls(Type = typeof(BaseAi), Member = "GetRandomWanderDuration")]
+	[Calls(Type = typeof(HuntedPart2WaypointController), Member = "ShouldDoWanderPause")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 12)]
 	private void Update()
 	{
 	}
@@ -155,108 +145,108 @@ public class HuntedPart2WaypointController : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "Update")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "IncrementWaypoint")]
-	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "Deserialize")]
-	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "SetCurrentWaypoint")]
 	[CalledBy(Type = typeof(BaseAi), Member = "DeserializeUsingBaseAiDataProxy")]
+	[CalledBy(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "Deserialize")]
+	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "Update")]
+	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "SetCurrentWaypoint")]
+	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "IncrementWaypoint")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[CallsUnknownMethods(Count = 3)]
 	public bool GoToCurrentWaypoint()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
-	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "Update")]
-	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "ProcessHitByPlayer")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ApplyDamage")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ChangeModeWhenTargetDetected")]
-	[Calls(Type = typeof(HuntedPart2WaypointController), Member = "GoToCurrentWaypoint")]
-	[Calls(Type = typeof(WeatherSetData), Member = "ForceStep")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "ProcessHitByPlayer")]
+	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ApplyBearDamageAfterStruggleEnds")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(WeatherSetData), Member = "ForceStep")]
+	[Calls(Type = typeof(HuntedPart2WaypointController), Member = "GoToCurrentWaypoint")]
+	[CallsUnknownMethods(Count = 3)]
 	public void IncrementWaypoint()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(BaseAi), Member = "SetAiMode")]
 	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "Update")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	public bool InRangeOfTargetWaypoint()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public HuntedPart2Waypoint.WaypointType GetCurrentWaypointType()
 	{
 		return default(HuntedPart2Waypoint.WaypointType);
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool FinalAmbushStarted()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool AwaitingFinalAmbush()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanel")]
 	[Calls(Type = typeof(Panel_ChallengeComplete), Member = "ShowPanel")]
 	[CallsUnknownMethods(Count = 1)]
 	public void WinChallenge()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_hunted2_endgame")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
+	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
 	[Calls(Type = typeof(MoveAgent), Member = "Warp")]
 	[Calls(Type = typeof(BaseAi), Member = "SetRotation")]
-	[Calls(Type = typeof(PlayerManager), Member = "TeleportPlayer")]
+	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
 	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(PlayerManager), Member = "StickPlayerToGround")]
+	[CallsUnknownMethods(Count = 10)]
 	public void ForceEndGame()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "IsHuntedBear")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private static bool InRequiredGameMode()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(AiUtils), Member = "PositionVisible")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "Update")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Utils), Member = "GetPlayerEyePosition")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(AiUtils), Member = "PositionVisible")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 7)]
 	private bool ShouldDoWanderPause()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -265,11 +255,11 @@ public class HuntedPart2WaypointController : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "Start")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 12)]
 	private void WaypointsInitialize()
 	{
@@ -279,19 +269,19 @@ public class HuntedPart2WaypointController : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool SkipWaypointFollowingBasedOnAiMode()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(HuntedPart2WaypointController), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	private bool MaybeDisableDuplicateBear()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

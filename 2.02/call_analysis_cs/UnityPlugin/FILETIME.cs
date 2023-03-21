@@ -15,9 +15,9 @@ public struct FILETIME
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(DateTime), Member = "FromFileTimeUtc")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public DateTime ToDateTime()
 	{
 		return default(DateTime);

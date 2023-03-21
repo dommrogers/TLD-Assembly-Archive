@@ -7,7 +7,7 @@ public class UnlockableTrackerSaveData
 	public string m_NPCTrustID;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public UnlockableTrackerSaveData()
 	{
 	}

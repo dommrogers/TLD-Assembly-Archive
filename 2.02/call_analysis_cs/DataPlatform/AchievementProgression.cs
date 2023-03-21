@@ -15,9 +15,9 @@ public class AchievementProgression : IWrappedObject, IDisposable
 
 	public AchievementRequirementList Requirements
 	{
-		[CallsUnknownMethods(Count = 9)]
-		[CallsDeduplicatedMethods(Count = 4)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 4)]
+		[CallsUnknownMethods(Count = 9)]
 		get
 		{
 			return null;
@@ -27,8 +27,8 @@ public class AchievementProgression : IWrappedObject, IDisposable
 	public DateTime TimeUnlocked
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedDateTime")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 7)]
 		get
 		{
@@ -55,15 +55,15 @@ public class AchievementProgression : IWrappedObject, IDisposable
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 52)]
+	[CallerCount(Count = 59)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	~AchievementProgression()
 	{
 	}

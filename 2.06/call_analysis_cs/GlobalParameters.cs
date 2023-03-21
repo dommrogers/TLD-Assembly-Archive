@@ -11,8 +11,8 @@ public class GlobalParameters : MonoBehaviour
 
 		public float m_StrafingSensitivityMultiplier;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public DialogueSequenceParameters()
 		{
 		}

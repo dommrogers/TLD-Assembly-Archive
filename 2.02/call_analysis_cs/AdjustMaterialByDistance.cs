@@ -30,7 +30,8 @@ public class AdjustMaterialByDistance : MonoBehaviour
 	private Material m_ThisMaterial;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 8)]
 	private void Start()
 	{
@@ -38,26 +39,26 @@ public class AdjustMaterialByDistance : MonoBehaviour
 
 	[CalledBy(Type = typeof(AdjustMaterialByDistance), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	private float DistanceToPlayer(Vector3 fxPos)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Color), Member = "Lerp")]
-	[Calls(Type = typeof(AdjustMaterialByDistance), Member = "DistanceToPlayer")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AdjustMaterialByDistance), Member = "DistanceToPlayer")]
+	[Calls(Type = typeof(Color), Member = "Lerp")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public AdjustMaterialByDistance()
 	{
 	}

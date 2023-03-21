@@ -11,12 +11,12 @@ public class GetComponent<T> : ActionTask<Transform> where T : Component
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "Format")]
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[DeduplicatedMethod]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -25,8 +25,8 @@ public class GetComponent<T> : ActionTask<Transform> where T : Component
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExecute()
 	{

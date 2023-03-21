@@ -31,14 +31,14 @@ public class SlotData
 	[NonSerialized]
 	private Mutex m_SlotDataMutex;
 
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "AddGUIDToPrevSceneSave")]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "SaveDataToSlot")]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(SaveGameSlots), Member = "CopyData")]
 	[CalledBy(Type = typeof(SaveGameSlots), Member = "WriteSlotToDisk")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "CopyData")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "SaveDataToSlot")]
+	[CalledBy(Type = typeof(SaveGameSlots), Member = "AddGUIDToPrevSceneSave")]
+	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Mutex), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 4)]
+	[CallsUnknownMethods(Count = 8)]
 	public void Lock()
 	{
 	}
@@ -51,7 +51,7 @@ public class SlotData
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SlotData()
 	{
 	}

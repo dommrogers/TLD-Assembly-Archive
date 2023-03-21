@@ -17,11 +17,11 @@ internal struct SendInviteOptionsInternal : ISettable, IDisposable
 
 	public string LobbyId
 	{
+		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -31,9 +31,9 @@ internal struct SendInviteOptionsInternal : ISettable, IDisposable
 	{
 		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -41,11 +41,11 @@ internal struct SendInviteOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId TargetUserId
 	{
+		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -59,18 +59,18 @@ internal struct SendInviteOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(SendInviteOptionsInternal), Member = "set_TargetUserId")]
 	[CalledBy(Type = typeof(LobbyInterface), Member = "SendInvite")]
-	[Calls(Type = typeof(SendInviteOptionsInternal), Member = "set_LocalUserId")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SendInviteOptionsInternal), Member = "set_LobbyId")]
+	[Calls(Type = typeof(SendInviteOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(SendInviteOptionsInternal), Member = "set_TargetUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

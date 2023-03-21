@@ -8,21 +8,21 @@ public class IncreaseTemperatureTrigger : MonoBehaviour
 	private bool m_PlayerIsInside;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnTriggerEnter(Collider c)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 0)]
 	private void OnTriggerExit(Collider c)
 	{
 	}

@@ -18,8 +18,8 @@ internal struct CopyLobbyDetailsHandleOptionsInternal : ISettable, IDisposable
 		[CalledBy(Type = typeof(CopyLobbyDetailsHandleOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(CopyLobbyDetailsHandleOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -27,11 +27,11 @@ internal struct CopyLobbyDetailsHandleOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(CopyLobbyDetailsHandleOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyLobbyDetailsHandleOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyLobbyDetailsHandleOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyLobbyDetailsHandleOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -44,17 +44,17 @@ internal struct CopyLobbyDetailsHandleOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[Calls(Type = typeof(CopyLobbyDetailsHandleOptionsInternal), Member = "set_LocalUserId")]
-	[Calls(Type = typeof(CopyLobbyDetailsHandleOptionsInternal), Member = "set_LobbyId")]
 	[CalledBy(Type = typeof(LobbyInterface), Member = "CopyLobbyDetailsHandle")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CopyLobbyDetailsHandleOptionsInternal), Member = "set_LobbyId")]
+	[Calls(Type = typeof(CopyLobbyDetailsHandleOptionsInternal), Member = "set_LocalUserId")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

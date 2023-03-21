@@ -10,8 +10,8 @@ public class LootTableModData : ScriptableObject
 
 	public IEnumerable<LootTableItemReference> LootToAdd
 	{
-		[CallerCount(Count = 44)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 53)]
 		get
 		{
 			return null;
@@ -21,7 +21,7 @@ public class LootTableModData : ScriptableObject
 	public IEnumerable<AssetReferenceGearItem> LootToRemove
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 23)]
+		[CallerCount(Count = 27)]
 		get
 		{
 			return null;
@@ -29,8 +29,8 @@ public class LootTableModData : ScriptableObject
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 11)]
 	public LootTableModData()
 	{

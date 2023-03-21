@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
@@ -85,95 +84,93 @@ public class BearSpearItem : MonoBehaviour
 		{
 			return default(PlayerControlMode);
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		private set
 		{
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(BearHuntAiRedux), Member = "IsLastEncounter")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private float GetDamageDealt(BaseAi bai)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	private float GetBleedOutMinutes(BaseAi bai)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(BaseAi), Member = "IsDamageFatal")]
-	[Calls(Type = typeof(BearHuntAiRedux), Member = "IsLastEncounter")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BearHuntAiRedux), Member = "IsLastEncounter")]
+	[Calls(Type = typeof(BaseAi), Member = "IsDamageFatal")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private bool IsDamageFatal(BaseAi bai, float damageDealt)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 21)]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "UpdateCollision")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(BaseAi), Member = "OnSpearHit")]
-	[Calls(Type = typeof(BaseAi), Member = "IsDamageFatal")]
-	[Calls(Type = typeof(BearHuntAiRedux), Member = "IsLastEncounter")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_None")]
-	[Calls(Type = typeof(Debug), Member = "LogFormat")]
-	[Calls(Type = typeof(BearSpearItem), Member = "DistanceToNearestSpearable")]
-	[Calls(Type = typeof(BearSpearItem), Member = "GetAngleBetweenSpearAndBearHeadings")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BearSpearItem), Member = "GetAngleBetweenSpearAndBearHeadings")]
+	[Calls(Type = typeof(BearSpearItem), Member = "DistanceToNearestSpearable")]
+	[Calls(Type = typeof(Debug), Member = "LogFormat")]
+	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_None")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(BearHuntAiRedux), Member = "IsLastEncounter")]
+	[Calls(Type = typeof(BaseAi), Member = "IsDamageFatal")]
+	[Calls(Type = typeof(BaseAi), Member = "OnSpearHit")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 21)]
 	private void OnAiCollidedWithSpear(BaseAi bai, Vector3 spearForward, LocalizedDamage localizedDamage)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(BearSpearItem), Member = "Break")]
-	[Calls(Type = typeof(GearItem), Member = "DegradeOnUse")]
-	[Calls(Type = typeof(BaseAi), Member = "ApplyDamage")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(BaseAi), Member = "SetupDamageForAnim")]
+	[Calls(Type = typeof(BaseAi), Member = "ApplyDamage")]
+	[Calls(Type = typeof(GearItem), Member = "DegradeOnUse")]
+	[Calls(Type = typeof(BearSpearItem), Member = "Break")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void OnStruggleHitEnd()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 25)]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "OnStruggleHitEnd")]
-	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
-	[Calls(Type = typeof(GearItem), Member = "OverrideOwnership")]
-	[Calls(Type = typeof(OwnershipManager), Member = "IsUnowned")]
-	[Calls(Type = typeof(Inventory), Member = "AddGear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 14)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(OwnershipManager), Member = "IsUnowned")]
+	[Calls(Type = typeof(GearItem), Member = "OverrideOwnership")]
+	[Calls(Type = typeof(Inventory), Member = "AddGear")]
+	[Calls(Type = typeof(Inventory), Member = "DestroyGear")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 25)]
 	private void Break()
 	{
 	}
@@ -182,82 +179,77 @@ public class BearSpearItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	private bool IsSpearHitLethal()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "HandleBearSpearInput")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "HitAction")]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "CancelAction")]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "ZoomStart")]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "Update")]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "OnAiCollidedWithSpear")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[CalledBy(Type = typeof(BearSpearItem), Member = "Update")]
+	[CalledBy(Type = typeof(BearSpearItem), Member = "ZoomStart")]
+	[CalledBy(Type = typeof(BearSpearItem), Member = "CancelAction")]
+	[CalledBy(Type = typeof(BearSpearItem), Member = "HitAction")]
 	[CallerCount(Count = 6)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Vector3), Member = "Magnitude")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(BaseAi), Member = "CanBeHitBySpear")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(Vector3), Member = "Magnitude")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private float DistanceToNearestSpearable()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 10)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 10)]
 	[CallsUnknownMethods(Count = 17)]
 	private static Vector3 UpdateHudBearSpearSprite(GameObject hudObject, UISprite sprite, Vector3 viewportSpearLocation, float size, bool isSpearInsideTarget, Color insideColor, Color outsideColor)
 	{
 		return default(Vector3);
 	}
 
-	[CallsUnknownMethods(Count = 18)]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeCollideWithSpear")]
 	[CalledBy(Type = typeof(BaseAi), Member = "ProcessCommonPre")]
-	[Calls(Type = typeof(BearSpearItem), Member = "OnAiCollidedWithSpear")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeCollideWithSpear")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(BaseAi), Member = "CanBeHitBySpear")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(BearSpearItem), Member = "OnAiCollidedWithSpear")]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 18)]
 	public void UpdateCollision(BaseAi bai)
 	{
 	}
 
-	[Calls(Type = typeof(PlayerMovement), Member = "AddSprintStamina")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(BearSpearItem), Member = "CancelAction")]
-	[Calls(Type = typeof(BearSpearItem), Member = "IsEquipped")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BearSpearItem), Member = "IsEquipped")]
+	[Calls(Type = typeof(BearSpearItem), Member = "CancelAction")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(PlayerMovement), Member = "AddSprintStamina")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Update_SpearRaised()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(Debug), Member = "LogFormat")]
-	[Calls(Type = typeof(BearSpearItem), Member = "DistanceToNearestSpearable")]
-	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_Raised")]
-	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_None")]
-	[Calls(Type = typeof(PlayerMovement), Member = "AddSprintStamina")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PlayerStruggle), Member = "InStruggle")]
 	[Calls(Type = typeof(BearSpearItem), Member = "CancelAction")]
 	[Calls(Type = typeof(BearSpearItem), Member = "IsEquipped")]
-	[Calls(Type = typeof(BearSpearItem), Member = "CancelAction")]
-	[Calls(Type = typeof(PlayerStruggle), Member = "InStruggle")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(PlayerMovement), Member = "AddSprintStamina")]
+	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_None")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_Raised")]
+	[Calls(Type = typeof(BearSpearItem), Member = "DistanceToNearestSpearable")]
+	[Calls(Type = typeof(Debug), Member = "LogFormat")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[CallsUnknownMethods(Count = 12)]
 	private void Update()
 	{
 	}
@@ -272,128 +264,119 @@ public class BearSpearItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsRaised()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsRaisedOrRaisingOrLowering()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 1)]
 	public float GetActionElapsedInSeconds()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool CanStartZoom()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool CheckStaminaForRaising()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool CanEndZoom()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(BearSpearItem), Member = "DistanceToNearestSpearable")]
 	[Calls(Type = typeof(Debug), Member = "LogFormat")]
 	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_Setting")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	public void ZoomStart()
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 1)]
 	public SpearState GetCurrentSpearState()
 	{
 		return default(SpearState);
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Vector3), Member = "Angle")]
 	[CalledBy(Type = typeof(BaseAi), Member = "MaybeSpearAttackTooLate")]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "OnAiCollidedWithSpear")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(Vector3), Member = "Angle")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public float GetAngleBetweenSpearAndBearHeadings(BaseAi bai, Vector3 spearForward)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "UnlockRotationLimit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 6)]
 	private void RestoreYawPitchLimits()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_Recovering")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void ZoomEnd()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "Update")]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "Update_SpearRaised")]
-	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_None")]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "Update")]
-	[Calls(Type = typeof(BearSpearItem), Member = "DistanceToNearestSpearable")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(BearSpearItem), Member = "DistanceToNearestSpearable")]
 	[Calls(Type = typeof(Debug), Member = "LogFormat")]
+	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_None")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void CancelAction()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(BearSpearItem), Member = "DistanceToNearestSpearable")]
 	[Calls(Type = typeof(Debug), Member = "LogFormat")]
 	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_None")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 5)]
 	public void HitAction()
 	{
 	}
 
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsUnknownMethods(Count = 41)]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 41)]
 	public string GetStateDebugString()
 	{
 		return null;
@@ -405,142 +388,141 @@ public class BearSpearItem : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_None")]
-	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_Raised")]
-	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_Setting")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_Recovering")]
+	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_Raised")]
+	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_Setting")]
+	[Calls(Type = typeof(BearSpearItem), Member = "OnEnter_None")]
 	private void SetCurrentState(SpearState state)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void OnRaised()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void OnRaisedCancelled()
 	{
 	}
 
 	[CalledBy(Type = typeof(BearSpearItem), Member = "OnAiCollidedWithSpear")]
-	[CallsUnknownMethods(Count = 14)]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "SetCurrentState")]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "CancelAction")]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "Update")]
-	[Calls(Type = typeof(BearSpearItem), Member = "MaybeEnableStaminaRecharge")]
+	[CalledBy(Type = typeof(BearSpearItem), Member = "CancelAction")]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "HitAction")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetParameterRecoverSpearMultiplier")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "ResetHipAndShoulderOffsetLayer")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(BearSpearItem), Member = "SetCurrentState")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "ResetHipAndShoulderOffsetLayer")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetParameterRecoverSpearMultiplier")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "UnlockRotationLimit")]
+	[Calls(Type = typeof(BearSpearItem), Member = "MaybeEnableStaminaRecharge")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 14)]
 	private void OnEnter_None()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 33)]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "SetCurrentState")]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "ZoomStart")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Aim")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetParameterSetSpearMultiplier")]
 	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "HandleBearSpearInput")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(BearSpearItem), Member = "ZoomStart")]
+	[CalledBy(Type = typeof(BearSpearItem), Member = "SetCurrentState")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SetYawLimit")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetParameterSetSpearMultiplier")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "UpdateHipAndShoulderOffsetLayerWeigth")]
+	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Aim")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 33)]
 	private void OnEnter_Setting()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "SetCurrentState")]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(BearSpearItem), Member = "SetCurrentState")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	private void OnEnter_Raised()
 	{
 	}
 
+	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "MaybeCancelZoomInternal")]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "ZoomEnd")]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "SetCurrentState")]
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(vp_FPSPlayer), Member = "MaybeCancelZoomInternal")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PlayerAnimation), Member = "SetParameterRecoverSpearMultiplier")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(PlayerAnimation), Member = "SetParameterRecoverSpearMultiplier")]
 	[Calls(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Aim_Cancel")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	private void OnEnter_Recovering()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void OnExit_None()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void OnExit_Setting()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void OnExit_Raised()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void OnExit_Recovering()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaybeDisableStaminaRecharge()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "OnEnter_None")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void MaybeEnableStaminaRecharge()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "Update")]
 	[CalledBy(Type = typeof(BearSpearItem), Member = "Update_SpearRaised")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(BearSpearItem), Member = "Update")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private bool IsEquipped()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

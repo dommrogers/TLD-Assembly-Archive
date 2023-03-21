@@ -7,81 +7,78 @@ public class LocalizedDamage : MonoBehaviour
 
 	private BodyDamage m_BodyDamage;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	private void Start()
 	{
 	}
 
-	[CallerCount(Count = 41)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 44)]
 	public void SetBodyDamage(BodyDamage bodyDamage)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(BodyDamage), Member = "GetDamageScale")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LocalizedDamage), Member = "HasBodyDamage")]
+	[Calls(Type = typeof(BodyDamage), Member = "GetDamageScale")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetDamageScale(BodyDamage.Weapon weapon)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(BodyDamage), Member = "GetBleedOutMinutes")]
-	[Calls(Type = typeof(LocalizedDamage), Member = "HasBodyDamage")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(LocalizedDamage), Member = "HasBodyDamage")]
+	[Calls(Type = typeof(BodyDamage), Member = "GetBleedOutMinutes")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetBleedOutMinutes(BodyDamage.Weapon weapon)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(LocalizedDamage), Member = "HasBodyDamage")]
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 1)]
+	[Calls(Type = typeof(LocalizedDamage), Member = "HasBodyDamage")]
 	[Calls(Type = typeof(BodyDamage), Member = "GetChanceKill")]
+	[CallsUnknownMethods(Count = 1)]
 	public int GetChanceKill(BodyDamage.Weapon weapon)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "InflictDamage")]
-	[CalledBy(Type = typeof(ArrowItem), Member = "InflictDamage")]
 	[CalledBy(Type = typeof(vp_Bullet), Member = "Start")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[Calls(Type = typeof(BodyDamage), Member = "GetChanceKill")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(LocalizedDamage), Member = "HasBodyDamage")]
+	[CalledBy(Type = typeof(ArrowItem), Member = "InflictDamage")]
+	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "InflictDamage")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(LocalizedDamage), Member = "HasBodyDamage")]
+	[Calls(Type = typeof(BodyDamage), Member = "GetChanceKill")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool RollChanceToKill(BodyDamage.Weapon weapon)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(ArrowItem), Member = "InflictDamage")]
-	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "InflictDamage")]
-	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "InflictDamage")]
-	[CalledBy(Type = typeof(ArrowItem), Member = "InflictDamage")]
-	[CalledBy(Type = typeof(LocalizedDamage), Member = "RollChanceToKill")]
-	[CalledBy(Type = typeof(LocalizedDamage), Member = "GetChanceKill")]
-	[CallerCount(Count = 10)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CalledBy(Type = typeof(vp_Bullet), Member = "Start")]
 	[CalledBy(Type = typeof(vp_Bullet), Member = "Start")]
 	[CalledBy(Type = typeof(LocalizedDamage), Member = "GetDamageScale")]
 	[CalledBy(Type = typeof(LocalizedDamage), Member = "GetBleedOutMinutes")]
+	[CalledBy(Type = typeof(LocalizedDamage), Member = "GetChanceKill")]
+	[CalledBy(Type = typeof(LocalizedDamage), Member = "RollChanceToKill")]
+	[CalledBy(Type = typeof(ArrowItem), Member = "InflictDamage")]
+	[CalledBy(Type = typeof(FlareGunRoundItem), Member = "InflictDamage")]
+	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private bool HasBodyDamage()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public LocalizedDamage()
 	{
 	}

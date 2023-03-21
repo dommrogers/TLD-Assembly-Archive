@@ -166,41 +166,41 @@ public class CameraEffects : MonoBehaviour
 	private bool m_HasInitializedImageFilter;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 16)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(PostProcessProfile), Member = "TryGetSettings")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 5)]
 	public void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = "set_active")]
-	[Calls(Type = typeof(CameraEffects), Member = "SwitchImageFilter")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PostProcessEffectSettings), Member = "set_active")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
+	[Calls(Type = typeof(CameraEffects), Member = "SwitchImageFilter")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[Calls(Type = typeof(CameraEffects), Member = "UpdateEffectParameters")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
@@ -211,27 +211,24 @@ public class CameraEffects : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(CameraEffects), Member = "Configure")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
-	[CalledBy(Type = typeof(CameraEffects), Member = "UpdateEffectParameters")]
-	[CalledBy(Type = typeof(CameraEffects), Member = "ConfigureForInterior")]
 	[CalledBy(Type = typeof(Weather), Member = "ForceIndoorEnvironment")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(CameraEffects), Member = "Configure")]
+	[CalledBy(Type = typeof(CameraEffects), Member = "ConfigureForInterior")]
+	[CalledBy(Type = typeof(CameraEffects), Member = "UpdateEffectParameters")]
+	[CalledBy(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
 	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void ConfigureContrastEnhance(float intensity)
 	{
 	}
 
 	[CallerCount(Count = 45)]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[CallsUnknownMethods(Count = 1)]
 	public void DepthOfFieldTurnOn(float focalPoint)
 	{
@@ -243,13 +240,12 @@ public class CameraEffects : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_CanOpening), Member = "Enable")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[CalledBy(Type = typeof(AccelTimePopup), Member = "SetActive")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_CanOpening), Member = "Enable")]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "Update")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[CallsUnknownMethods(Count = 1)]
 	public void DepthOfFieldTurnOff(bool forceOff = false)
 	{
 	}
@@ -258,48 +254,40 @@ public class CameraEffects : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsDepthOfFieldEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "UpdateFadeAndBlur")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayableBehaviourCameraEffects), Member = "ProcessFrame")]
-	[CalledBy(Type = typeof(PlayerStunned), Member = "UpdateBlurEffect")]
-	[CalledBy(Type = typeof(PlayerStunned), Member = "End")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "ResetGameSettingsToNormal")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "BreakStruggle")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "OnPlayerDeath")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(CinematicManager), Member = "UpdateFadeAndBlur")]
-	[CalledBy(Type = typeof(CinematicManager), Member = "Update")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoOnInteractionComplete")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallerCount(Count = 11)]
+	[CalledBy(Type = typeof(CinematicManager), Member = "Update")]
+	[CalledBy(Type = typeof(CinematicManager), Member = "UpdateFadeAndBlur")]
 	[CalledBy(Type = typeof(PlayerStruggle), Member = "Start")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "OnPlayerDeath")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "UpdateFadeAndBlur")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "BreakStruggle")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "ResetGameSettingsToNormal")]
+	[CalledBy(Type = typeof(PlayerStunned), Member = "End")]
+	[CalledBy(Type = typeof(PlayerStunned), Member = "UpdateBlurEffect")]
+	[CalledBy(Type = typeof(PlayableBehaviourCameraEffects), Member = "ProcessFrame")]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void BlurSetSize(float blurSize)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void BlurTurnOff()
 	{
 	}
 
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[CallsUnknownMethods(Count = 1)]
 	public void BloomEnable(bool enable)
 	{
 	}
@@ -308,35 +296,21 @@ public class CameraEffects : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool GetContrastEnhanceEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ContrastEnhanceEnable(bool enable)
 	{
 	}
 
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
 	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetPostFx")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[CallsUnknownMethods(Count = 1)]
 	public void VignettingEnable(bool enable)
 	{
 	}
@@ -355,17 +329,17 @@ public class CameraEffects : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(FallDamage), Member = "ApplyFallDamage")]
 	[CalledBy(Type = typeof(FallDamage), Member = "MaybeSprainWrist")]
+	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void PainPulse(float amount)
 	{
 	}
 
 	[CalledBy(Type = typeof(EmergencyStim), Member = "MaybeUpdateEmergencyStimEffects")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void StimPulse(float amount)
 	{
 	}
@@ -376,8 +350,8 @@ public class CameraEffects : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(HeadacheParams), Member = "MaybeStartHealing")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void HeadachePulse(float amount)
 	{
@@ -395,15 +369,15 @@ public class CameraEffects : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(WetZoneApplyOnlyTrigger), Member = "Update")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void WaterPulse(float amount)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SprainPulse(float amount)
 	{
 	}
@@ -431,16 +405,15 @@ public class CameraEffects : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CameraEffects), Member = "ConfigureSSAO")]
-	[Calls(Type = typeof(CameraEffects), Member = "ConfigureSSAO")]
 	[Calls(Type = typeof(CameraEffects), Member = "ConfigureContrastEnhance")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Configure()
 	{
 	}
 
-	[Calls(Type = typeof(CameraEffects), Member = "ConfigureContrastEnhance")]
-	[Calls(Type = typeof(CameraEffects), Member = "ConfigureSSAO")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(CameraEffects), Member = "ConfigureSSAO")]
+	[Calls(Type = typeof(CameraEffects), Member = "ConfigureContrastEnhance")]
 	public void ConfigureForInterior()
 	{
 	}
@@ -456,9 +429,9 @@ public class CameraEffects : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(CameraEffects), Member = "EnableCameraWeaponPostEffects")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CameraEffects), Member = "ConfigureSSAO")]
+	[Calls(Type = typeof(CameraEffects), Member = "EnableCameraWeaponPostEffects")]
 	public void DisableSSAO()
 	{
 	}
@@ -466,7 +439,7 @@ public class CameraEffects : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsSSAOEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -490,87 +463,59 @@ public class CameraEffects : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void RemoveBloomOverride(BloomOverride bloomOverride)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[CalledBy(Type = typeof(CameraEffects), Member = "Update")]
-	[CallsUnknownMethods(Count = 98)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[Calls(Type = typeof(CameraEffects), Member = "ConfigureContrastEnhance")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(ParameterOverride<>), Member = "Override")]
 	[Calls(Type = typeof(Mathf), Member = "Max")]
 	[Calls(Type = typeof(CameraEffects), Member = "AdaptSSAOByViewAngle")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[CallsDeduplicatedMethods(Count = 14)]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(CameraEffects), Member = "ConfigureContrastEnhance")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Mathf), Member = "Max")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 96)]
 	private void UpdateEffectParameters()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(CameraEffects), Member = "UpdateEffectParameters")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Transform), Member = "get_up")]
 	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Transform), Member = "get_up")]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[CallsUnknownMethods(Count = 3)]
 	public void AdaptSSAOByViewAngle()
 	{
 	}
 
+	[CalledBy(Type = typeof(DebugViewModeManager), Member = "ToggleLightingOnly")]
+	[CalledBy(Type = typeof(Weather), Member = "ForceIndoorEnvironment")]
+	[CalledBy(Type = typeof(Weather), Member = "ForceOutdoorEnvironment")]
+	[CalledBy(Type = typeof(CameraEffects), Member = "Configure")]
+	[CalledBy(Type = typeof(CameraEffects), Member = "ConfigureForInterior")]
 	[CalledBy(Type = typeof(CameraEffects), Member = "ConfigureForExterior")]
 	[CalledBy(Type = typeof(CameraEffects), Member = "DisableSSAO")]
 	[CalledBy(Type = typeof(CameraEffects), Member = "EnableSSAO")]
 	[CalledBy(Type = typeof(CameraEffects), Member = "RefreshSSAOSettings")]
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetSSAO")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetSSAO")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(CameraEffects), Member = "ConfigureForInterior")]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "ApplyQualitySettings")]
-	[CalledBy(Type = typeof(CameraEffects), Member = "Configure")]
 	[CallerCount(Count = 14)]
-	[CalledBy(Type = typeof(Weather), Member = "ForceOutdoorEnvironment")]
-	[CalledBy(Type = typeof(Weather), Member = "ForceIndoorEnvironment")]
-	[CalledBy(Type = typeof(DebugViewModeManager), Member = "ToggleLightingOnly")]
-	[Calls(Type = typeof(PostProcessManager), Member = "EnableAO")]
-	[Calls(Type = typeof(PostProcessManager), Member = "get_instance")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ParameterOverride<>), Member = "Override")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[Calls(Type = typeof(PostProcessManager), Member = "get_instance")]
+	[Calls(Type = typeof(PostProcessManager), Member = "EnableAO")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(CameraEffects), Member = "Configure")]
+	[CallsUnknownMethods(Count = 2)]
 	public void ConfigureSSAO(SSAOMode mode)
 	{
 	}
@@ -582,30 +527,29 @@ public class CameraEffects : MonoBehaviour
 		return default(SSAOMode);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetSSAO")]
+	[CalledBy(Type = typeof(CameraEffects), Member = "DisableSSAO")]
 	[CalledBy(Type = typeof(CameraEffects), Member = "EnableSSAO")]
 	[CalledBy(Type = typeof(QualitySettingsManager), Member = "SetSSAO")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(CameraEffects), Member = "DisableSSAO")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void EnableCameraWeaponPostEffects(bool isEnabled)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_image_filter")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
-	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmImageFilter")]
 	[CalledBy(Type = typeof(CameraEffects), Member = "Start")]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(PlayerManager), Member = "InitializePropertyBlocks")]
-	[Calls(Type = typeof(PlayerManager), Member = "InitializePropertyBlocks")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmImageFilter")]
+	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "OnConfirmDisplay")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_image_filter")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PlayerManager), Member = "InitializePropertyBlocks")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 4)]
 	public void SwitchImageFilter(ImageFilterType filter)
 	{
 	}

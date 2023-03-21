@@ -10,9 +10,9 @@ public class Condition_CheckExperienceMode : ConditionTask
 
 	protected override string info
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Enum), Member = "ToString")]
 		[Calls(Type = typeof(string), Member = "Format")]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -23,7 +23,7 @@ public class Condition_CheckExperienceMode : ConditionTask
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

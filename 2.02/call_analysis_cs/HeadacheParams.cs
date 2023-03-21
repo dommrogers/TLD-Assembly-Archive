@@ -10,8 +10,8 @@ public class HeadacheParams
 
 	public float m_StartTimeInGameHours;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public HeadacheParams()
 	{
 	}

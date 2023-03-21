@@ -32,16 +32,16 @@ public class QueryFileListCallbackInfo : ICallbackInfo, ISettable
 
 	public object ClientData
 	{
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -51,14 +51,14 @@ public class QueryFileListCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -66,12 +66,12 @@ public class QueryFileListCallbackInfo : ICallbackInfo, ISettable
 
 	public uint FileCount
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 2)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -89,25 +89,25 @@ public class QueryFileListCallbackInfo : ICallbackInfo, ISettable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(QueryFileListCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(QueryFileListCallbackInfoInternal), Member = "get_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	internal void Set(QueryFileListCallbackInfoInternal? other)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(QueryFileListCallbackInfoInternal), Member = "get_ClientData")]
-	[CallsUnknownMethods(Count = 2)]
 	[Calls(Type = typeof(QueryFileListCallbackInfoInternal), Member = "get_LocalUserId")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public QueryFileListCallbackInfo()
 	{
 	}

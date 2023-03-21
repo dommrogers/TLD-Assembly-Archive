@@ -5,11 +5,11 @@ public class MB_ExampleMover : MonoBehaviour
 {
 	public int axis;
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Vector3), Member = "set_Item")]
-	[Calls(Type = typeof(Vector3), Member = "get_Item")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Vector3), Member = "get_Item")]
+	[Calls(Type = typeof(Vector3), Member = "set_Item")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{
 	}

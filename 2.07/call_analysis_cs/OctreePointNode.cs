@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
@@ -12,8 +11,8 @@ public class OctreePointNode<T> where T : class
 
 		public Vector3 Pos;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public OctreeObject()
 		{
 		}
@@ -44,9 +43,9 @@ public class OctreePointNode<T> where T : class
 		{
 			return default(Vector3);
 		}
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
@@ -59,7 +58,7 @@ public class OctreePointNode<T> where T : class
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -69,10 +68,10 @@ public class OctreePointNode<T> where T : class
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public OctreePointNode(float baseLengthVal, float minSizeVal, Vector3 centerVal)
 	{
 	}
@@ -82,7 +81,7 @@ public class OctreePointNode<T> where T : class
 	[CallsDeduplicatedMethods(Count = 2)]
 	public bool Add(T obj, Vector3 objPos)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -91,13 +90,13 @@ public class OctreePointNode<T> where T : class
 	[CallsUnknownMethods(Count = 2)]
 	public bool Remove(T obj)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 4)]
 	public T[] GetNearby(Ray ray, float maxDistance)
 	{
 		return null;
@@ -105,7 +104,7 @@ public class OctreePointNode<T> where T : class
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallsUnknownMethods(Count = 2)]
@@ -113,26 +112,27 @@ public class OctreePointNode<T> where T : class
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallsUnknownMethods(Count = 5)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 5)]
 	public void DrawAllBounds(float depth = 0f)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallsUnknownMethods(Count = 8)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	public void DrawAllObjects()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallsUnknownMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 2)]
 	public OctreePointNode<T> ShrinkIfPossible(float minLength)
 	{
 		return null;
@@ -146,11 +146,11 @@ public class OctreePointNode<T> where T : class
 	{
 	}
 
+	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Debug), Member = "Log")]
 	[CallsDeduplicatedMethods(Count = 12)]
 	[CallsUnknownMethods(Count = 3)]
-	[DeduplicatedMethod]
-	[CallerCount(Count = 0)]
 	private void SubAdd(T obj, Vector3 objPos)
 	{
 	}
@@ -171,13 +171,13 @@ public class OctreePointNode<T> where T : class
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private static bool Encapsulates(Bounds outerBounds, Vector3 point)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -185,7 +185,7 @@ public class OctreePointNode<T> where T : class
 	[CallsDeduplicatedMethods(Count = 3)]
 	private int BestFitChild(Vector3 objPos)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
@@ -194,7 +194,7 @@ public class OctreePointNode<T> where T : class
 	[CallsUnknownMethods(Count = 2)]
 	private bool ShouldMerge()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -203,7 +203,7 @@ public class OctreePointNode<T> where T : class
 	[CallsUnknownMethods(Count = 2)]
 	private bool HasAnyObjects()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -211,6 +211,6 @@ public class OctreePointNode<T> where T : class
 	[CallsUnknownMethods(Count = 1)]
 	public static float DistanceToRay(Ray ray, Vector3 point)
 	{
-		return default(float);
+		return 0f;
 	}
 }

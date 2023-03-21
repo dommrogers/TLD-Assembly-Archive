@@ -13,28 +13,28 @@ internal struct SessionDetailsCopySessionAttributeByIndexOptionsInternal : ISett
 
 	public uint AttrIndex
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void Set(SessionDetailsCopySessionAttributeByIndexOptions other)
 	{
 	}
 
+	[CalledBy(Type = typeof(SessionDetails), Member = "CopySessionAttributeByIndex")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(SessionDetails), Member = "CopySessionAttributeByIndex")]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

@@ -32,10 +32,8 @@ public struct SYSTEMTIME
 	{
 	}
 
-	[Calls(Type = typeof(DateTime), Member = "ToUniversalTime")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(DateTime), Member = "GetDatePart")]
-	[Calls(Type = typeof(DateTime), Member = "GetDatePart")]
+	[Calls(Type = typeof(DateTime), Member = "ToUniversalTime")]
 	[Calls(Type = typeof(DateTime), Member = "GetDatePart")]
 	public SYSTEMTIME(DateTime dt)
 	{
@@ -56,27 +54,27 @@ public struct SYSTEMTIME
 	[CallerCount(Count = 0)]
 	public static bool operator ==(SYSTEMTIME s1, SYSTEMTIME s2)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public static bool operator !=(SYSTEMTIME s1, SYSTEMTIME s2)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ValueType), Member = "DefaultEquals")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public override bool Equals(object obj)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(ValueType), Member = "GetHashCode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ValueType), Member = "GetHashCode")]
 	public override int GetHashCode()
 	{
-		return default(int);
+		return 0;
 	}
 }

@@ -4,8 +4,8 @@ namespace Epic.OnlineServices.Sessions;
 
 public class SessionDetailsGetSessionAttributeCountOptions
 {
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public SessionDetailsGetSessionAttributeCountOptions()
 	{
 	}

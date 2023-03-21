@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -44,23 +43,23 @@ public class StoryMissionObjective
 
 	public bool useAsFraction;
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "Deserialize")]
-	[Calls(Type = typeof(FieldInfo), Member = "SetValue")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(FieldInfo), Member = "SetValue")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	public void CopyConstantDataFromResources(StoryMissionObjective other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private static bool HasStoryMissionObjectiveResourcesAttribute(FieldInfo field)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -69,22 +68,20 @@ public class StoryMissionObjective
 		return null;
 	}
 
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "GetNumCompletedObjectivesForMission")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "GetNumObjectivesForMission")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(MissionServicesManager), Member = "GetBlackboardVarAsFloat")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "GetBlackboardVarAsFloat")]
 	[CalledBy(Type = typeof(MissionObjectiveEntry), Member = "MaybeUpdateCounterUI")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "GetBlackboardVarAsFloatFullSearch")]
-	[Calls(Type = typeof(MissionServicesManager), Member = "GetActiveGraphNameFromObjective")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "GetNumObjectivesForMission")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "GetNumCompletedObjectivesForMission")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetActiveGraphNameFromObjective")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "GetBlackboardVarAsFloatFullSearch")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "GetBlackboardVarAsFloat")]
+	[CallsUnknownMethods(Count = 4)]
 	public bool TryGetCurrentAndRequired(out float outCurrent, out float outRequired)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref outCurrent) = null;
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref outRequired) = null;
-		return default(bool);
+		outCurrent = default(float);
+		outRequired = default(float);
+		return false;
 	}
 
 	[DeduplicatedMethod]

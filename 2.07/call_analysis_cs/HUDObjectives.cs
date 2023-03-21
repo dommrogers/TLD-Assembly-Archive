@@ -34,7 +34,7 @@ public class HUDObjectives : MonoBehaviour
 		[CallerCount(Count = 0)]
 		public bool IsValid()
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -84,43 +84,40 @@ public class HUDObjectives : MonoBehaviour
 
 	private Queue<StatusUpdate> m_Queue;
 
+	[CalledBy(Type = typeof(HUDObjectives), Member = "ManualUpdate")]
+	[CalledBy(Type = typeof(HUDObjectives), Member = "Setup")]
 	[CalledBy(Type = typeof(HUDObjectives), Member = "OnHideTweenComplete")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Initialize")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePopupPanels")]
-	[CallsUnknownMethods(Count = 14)]
-	[CalledBy(Type = typeof(HUDObjectives), Member = "Setup")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "SetupPopupPanels")]
-	[CalledBy(Type = typeof(HUDObjectives), Member = "ManualUpdate")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(ObjectiveInfoDisplay), Member = "Disable")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePopupPanels")]
 	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(ObjectiveInfoDisplay), Member = "Disable")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 11)]
 	public void Disable()
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MarkObjectiveComplete")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateObjectiveTimer")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateObjectiveDesc")]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "AddObjective")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateObjectiveDesc")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "UpdateObjectiveTimer")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "MarkObjectiveComplete")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjective")]
+	[Calls(Type = typeof(HUDObjectives), Member = "Dequeue")]
 	[Calls(Type = typeof(HUDMission), Member = "Dequeue")]
 	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(HUDObjectives), Member = "Dequeue")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjective")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjective")]
 	public void EnqueueObjective(MissionStatusType type, string id)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionInfoFromID")]
 	[Calls(Type = typeof(HUDObjectives), Member = "Dequeue")]
 	[CallsUnknownMethods(Count = 2)]
@@ -128,31 +125,27 @@ public class HUDObjectives : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(string), Member = "Format")]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "Format")]
-	[CallsUnknownMethods(Count = 9)]
+	[Calls(Type = typeof(float), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[CallsUnknownMethods(Count = 7)]
 	public string GetDebugText()
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(HUDObjectives), Member = "Dequeue")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePopupPanels")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public void HideDisplay()
 	{
 	}
@@ -160,27 +153,28 @@ public class HUDObjectives : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(HUDObjectives), Member = "Dequeue")]
-	[Calls(Type = typeof(HUDObjectives), Member = "Disable")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePopupPanels")]
-	[CallsUnknownMethods(Count = 5)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(HUDObjectives), Member = "Dequeue")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(HUDObjectives), Member = "Disable")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void ManualUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdatePopupPanels")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(HUDObjectives), Member = "Dequeue")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(HUDObjectives), Member = "Dequeue")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public void RestoreDisplay()
 	{
 	}
@@ -194,94 +188,94 @@ public class HUDObjectives : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool WantsUpdates()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(InputManager), Member = "ProcessInput")]
-	[CalledBy(Type = typeof(InputManager), Member = "ProcessInput")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionInfoFromID")]
+	[CallsUnknownMethods(Count = 4)]
 	public string GetMissionId()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(ObjectiveInfoDisplay), Member = "Awake")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(UITweener), Member = "AddOnFinished")]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UITweener), Member = "AddOnFinished")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(ObjectiveInfoDisplay), Member = "Awake")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInParent")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 16)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(TweenPosition), Member = "Begin")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(HUDObjectives), Member = "HideDisplay")]
 	[CalledBy(Type = typeof(HUDMission), Member = "Enqueue")]
-	[Calls(Type = typeof(TweenPosition), Member = "Begin")]
+	[CalledBy(Type = typeof(HUDObjectives), Member = "EnqueueObjective")]
 	[CalledBy(Type = typeof(HUDObjectives), Member = "EnqueueSideMission")]
 	[CalledBy(Type = typeof(HUDObjectives), Member = "ManualUpdate")]
 	[CalledBy(Type = typeof(HUDObjectives), Member = "RestoreDisplay")]
-	[CallsUnknownMethods(Count = 17)]
-	[CalledBy(Type = typeof(HUDObjectives), Member = "EnqueueObjective")]
-	[Calls(Type = typeof(HUDObjectives), Member = "Show")]
-	[Calls(Type = typeof(MissionStatusDisplaySettings), Member = "GetLocID")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
-	[Calls(Type = typeof(ObjectiveInfoDisplay), Member = "Show")]
 	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 27)]
 	[Calls(Type = typeof(HUDManager), Member = "DoNotRenderHUD")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionInfoFromID")]
-	[Calls(Type = typeof(MissionStatusDisplaySettings), Member = "GetLocID")]
 	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetObjective")]
+	[Calls(Type = typeof(MissionStatusDisplaySettings), Member = "GetLocID")]
+	[Calls(Type = typeof(Panel_MissionsStory), Member = "GetMissionInfoFromID")]
 	[Calls(Type = typeof(MissionStatusDisplaySettings), Member = "GetWwiseEvent")]
 	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayMusic")]
+	[Calls(Type = typeof(ObjectiveInfoDisplay), Member = "Show")]
+	[Calls(Type = typeof(HUDObjectives), Member = "Show")]
+	[Calls(Type = typeof(TweenPosition), Member = "Begin")]
+	[Calls(Type = typeof(HUDObjectives), Member = "HideDisplay")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 26)]
+	[CallsUnknownMethods(Count = 17)]
 	private void Dequeue()
 	{
 	}
 
+	[CalledBy(Type = typeof(HUDObjectives), Member = "OnObjectiveDisplayComplete")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
 	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[CalledBy(Type = typeof(HUDObjectives), Member = "OnObjectiveDisplayComplete")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void Hide()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(HUDObjectives), Member = "Disable")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnHideTweenComplete()
 	{
 	}
 
-	[Calls(Type = typeof(HUDObjectives), Member = "Hide")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(HUDObjectives), Member = "Hide")]
 	private void OnObjectiveDisplayComplete()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(HUDObjectives), Member = "Dequeue")]
-	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
-	[Calls(Type = typeof(UITweener), Member = "Play")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryGetPanel")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UITweener), Member = "ResetToBeginning")]
+	[Calls(Type = typeof(UITweener), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	private void Show()
 	{
 	}

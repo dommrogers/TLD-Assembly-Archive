@@ -7,10 +7,10 @@ public class FireSaveList
 
 	public List<string> m_DestroyedFires;
 
-	[CallsUnknownMethods(Count = 11)]
+	[CalledBy(Type = typeof(FireManager), Member = "Serialize")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(FireManager), Member = "Serialize")]
+	[CallsUnknownMethods(Count = 11)]
 	public FireSaveList()
 	{
 	}

@@ -16,8 +16,8 @@ public class HuntedPart2Waypoint : MissionWaypoint
 	public bool m_IncrementWeatherStage;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(PhysicsScene), Member = "Raycast")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 6)]
 	public void Awake()
 	{

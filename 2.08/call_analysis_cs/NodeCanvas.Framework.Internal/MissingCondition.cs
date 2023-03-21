@@ -1,3 +1,4 @@
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using ParadoxNotion.Serialization;
 
@@ -17,8 +18,8 @@ public class MissingCondition : ConditionTask, IMissingRecoverable
 		{
 			return null;
 		}
-		[CallerCount(Count = 4)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 23)]
 		set
 		{
 		}
@@ -33,7 +34,7 @@ public class MissingCondition : ConditionTask, IMissingRecoverable
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 6)]
+		[CallerCount(Count = 10)]
 		set
 		{
 		}
@@ -43,16 +44,17 @@ public class MissingCondition : ConditionTask, IMissingRecoverable
 	{
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "SplitInternal")]
+		[Calls(Type = typeof(Enumerable), Member = "Last")]
 		[Calls(Type = typeof(string), Member = "Format")]
-		[CallsUnknownMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public MissingCondition()
 	{
 	}

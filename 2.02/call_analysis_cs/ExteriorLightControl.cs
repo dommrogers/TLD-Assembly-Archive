@@ -9,17 +9,17 @@ public class ExteriorLightControl : MonoBehaviour
 
 	private float[] m_LightVals;
 
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 12)]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 33)]
-	[Calls(Type = typeof(Light), Member = "set_intensity")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Light), Member = "set_intensity")]
 	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 33)]
 	private void Update()
 	{
 	}

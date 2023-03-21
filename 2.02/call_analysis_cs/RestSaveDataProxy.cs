@@ -9,7 +9,7 @@ public class RestSaveDataProxy
 	public bool m_PassTimeIsLocked;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public RestSaveDataProxy()
 	{
 	}

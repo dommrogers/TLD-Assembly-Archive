@@ -72,11 +72,11 @@ public class Lock : MonoBehaviour
 
 	public float ForceTime
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
@@ -89,7 +89,7 @@ public class Lock : MonoBehaviour
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 0)]
+		[CallerCount(Count = 2)]
 		get
 		{
 			return null;
@@ -102,55 +102,55 @@ public class Lock : MonoBehaviour
 		}
 	}
 
-	[Calls(Type = typeof(Lock), Member = "SetLockState")]
-	[Calls(Type = typeof(Lock), Member = "RollLockedState")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Lock), Member = "SetLockState")]
-	[Calls(Type = typeof(Lock), Member = "SetLockState")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Lock), Member = "AssignBindingOverrides")]
+	[Calls(Type = typeof(Lock), Member = "RollLockedState")]
 	[Calls(Type = typeof(Lock), Member = "MaybeGetHoverIconsToShow")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Lock), Member = "AssignBindingOverrides")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(GameModeFilterExtensions), Member = "PassesGameModeFilter")]
+	[Calls(Type = typeof(Lock), Member = "SetLockState")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Awake()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(Container), Member = "Serialize")]
 	[CalledBy(Type = typeof(OpenClose), Member = "Serialize")]
 	[CalledBy(Type = typeof(LoadScene), Member = "Serialize")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(Container), Member = "Deserialize")]
 	[CalledBy(Type = typeof(OpenClose), Member = "Deserialize")]
 	[CalledBy(Type = typeof(LoadScene), Member = "Deserialize")]
-	[CalledBy(Type = typeof(Container), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(Lock), Member = "MaybeGetHoverIconsToShow")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public static string SerializeUnlockedCompanionGuids()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public static void DeserializeUnlockedCompanionGuids(string text)
 	{
 	}
@@ -159,45 +159,43 @@ public class Lock : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsLocked()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool WasEverLocked()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Action_LockSetState), Member = "DoWork")]
-	[CalledBy(Type = typeof(Panel_SafeCracking), Member = "Enable")]
-	[CalledBy(Type = typeof(Lock), Member = "MaybeUnlockDueToCompanionBeingUnlocked")]
 	[CalledBy(Type = typeof(Lock), Member = "Awake")]
 	[CalledBy(Type = typeof(Lock), Member = "RollLockedState")]
-	[CalledBy(Type = typeof(Lock), Member = "Awake")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CalledBy(Type = typeof(Lock), Member = "MaybeUnlockDueToCompanionBeingUnlocked")]
+	[CalledBy(Type = typeof(Panel_SafeCracking), Member = "Enable")]
+	[CalledBy(Type = typeof(Action_LockSetState), Member = "DoWork")]
 	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(Lock), Member = "Awake")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	public void SetLockState(LockState state)
 	{
 	}
 
+	[CalledBy(Type = typeof(Lock), Member = "Awake")]
+	[CalledBy(Type = typeof(Container), Member = "PopulateWithRandomGear")]
 	[CalledBy(Type = typeof(OpenClose), Member = "Start")]
+	[CalledBy(Type = typeof(LoadScene), Member = "Start")]
 	[CallerCount(Count = 4)]
 	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	[Calls(Type = typeof(Lock), Member = "SetLockState")]
-	[CalledBy(Type = typeof(Lock), Member = "Awake")]
-	[CalledBy(Type = typeof(Container), Member = "PopulateWithRandomGear")]
-	[CalledBy(Type = typeof(LoadScene), Member = "Start")]
 	public void RollLockedState()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	public bool RequiresToolToUnlock()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -205,135 +203,130 @@ public class Lock : MonoBehaviour
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	public bool PlayerHasRequiredToolToUnlock()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(LockedInteraction), Member = "PerformLockInteraction")]
-	[Calls(Type = typeof(Lock), Member = "PlayLockedAudio")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Lock), Member = "PlayLockedAudio")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Lock), Member = "GetGearItemToForceLock")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Lock), Member = "GetGearItemToForceLock")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Lock), Member = "PlayLockedAudio")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GearItem), Member = "get_DisplayName")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[CallsUnknownMethods(Count = 1)]
 	public bool CanForceLock()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(LockedInteraction), Member = "PerformLockInteraction")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(GearItem), Member = "CheckForBreakOnUse")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GearItem), Member = "CheckForBreakOnUse")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void PrepareForceLock()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(LockedInteraction), Member = "FinishForceLock")]
-	[CalledBy(Type = typeof(LockedInteraction), Member = "CancelHold")]
 	[CalledBy(Type = typeof(ContainerInteraction), Member = "CancelHold")]
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[CalledBy(Type = typeof(LockedInteraction), Member = "CancelHold")]
+	[CalledBy(Type = typeof(LockedInteraction), Member = "FinishForceLock")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(Lock), Member = "UnlockCompanionLock")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GearItem), Member = "Degrade")]
 	[Calls(Type = typeof(GearItem), Member = "BreakOnUse")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(Lock), Member = "UnlockCompanionLock")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(GameAudioManager), Member = "StopPlayingID")]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 4)]
 	public void FinishForceLock(bool complete)
 	{
 	}
 
-	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayTextState")]
-	[CalledBy(Type = typeof(Lock), Member = "CanForceLock")]
 	[CalledBy(Type = typeof(Lock), Member = "PlayerHasRequiredToolToUnlock")]
+	[CalledBy(Type = typeof(Lock), Member = "CanForceLock")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "GetInteractiveObjectDisplayTextState")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Inventory), Member = "GetHighestConditionGearThatMatchesName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	public GearItem GetGearItemToForceLock()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Action_LockSetState), Member = "DoWork")]
 	[CalledBy(Type = typeof(Lock), Member = "FinishForceLock")]
+	[CalledBy(Type = typeof(Action_LockSetState), Member = "DoWork")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void UnlockCompanionLock()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(Lock), Member = "SetLockState")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void MaybeUnlockDueToCompanionBeingUnlocked()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Lock), Member = "CanForceLock")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
-	[CalledBy(Type = typeof(Lock), Member = "CanForceLock")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIError")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void PlayLockedAudio()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void PlayUnlockAudio()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Lock), Member = "Awake")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
 	private void AssignBindingOverrides()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(Lock), Member = "Deserialize")]
 	[CalledBy(Type = typeof(Lock), Member = "Awake")]
+	[CalledBy(Type = typeof(Lock), Member = "Deserialize")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(Component), Member = "TryGetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "ToArray")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 8)]
 	private void MaybeGetHoverIconsToShow()
 	{
 	}

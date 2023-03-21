@@ -48,12 +48,12 @@ public class LightShaftTod : MonoBehaviour
 
 	private Renderer[] m_LightShaftRenderer;
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Start()
 	{
 	}
@@ -68,26 +68,24 @@ public class LightShaftTod : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(LightShaftTod), Member = "Update")]
-	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Transform), Member = "set_eulerAngles")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	private void UpdateRotation(float tod)
 	{
 	}
 
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(LightShaftTod), Member = "Update")]
-	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[Calls(Type = typeof(LightShaftTod), Member = "CalculateDot")]
-	[Calls(Type = typeof(LightShaftTod), Member = "CalculateDot")]
-	[Calls(Type = typeof(Light), Member = "get_intensity")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Light), Member = "get_intensity")]
+	[Calls(Type = typeof(LightShaftTod), Member = "CalculateDot")]
 	[Calls(Type = typeof(Material), Member = "SetFloat")]
+	[Calls(Type = typeof(Material), Member = "SetColor")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateMaterial()
 	{
 	}
@@ -106,35 +104,34 @@ public class LightShaftTod : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SetTimeOfDayIntensity(float todIntensity)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SetFollowTimeOfDay(bool followTod)
 	{
 	}
 
+	[CalledBy(Type = typeof(LightShaftTod), Member = "UpdateMaterial")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
 	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[CalledBy(Type = typeof(LightShaftTod), Member = "UpdateMaterial")]
-	[CalledBy(Type = typeof(LightShaftTod), Member = "UpdateMaterial")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 6)]
 	private float CalculateDot()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	private float AngleDir(Vector3 fwd, Vector3 targetDir, Vector3 up)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

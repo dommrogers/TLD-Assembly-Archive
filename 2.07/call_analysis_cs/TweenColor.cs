@@ -34,15 +34,15 @@ public class TweenColor : UITweener
 
 	public Color value
 	{
-		[CallsDeduplicatedMethods(Count = 2)]
-		[Calls(Type = typeof(TweenColor), Member = "Cache")]
-		[Calls(Type = typeof(Material), Member = "get_color")]
+		[CalledBy(Type = typeof(TweenColor), Member = "get_color")]
 		[CalledBy(Type = typeof(TweenColor), Member = "Begin")]
-		[CallerCount(Count = 4)]
 		[CalledBy(Type = typeof(TweenColor), Member = "SetStartToCurrentValue")]
 		[CalledBy(Type = typeof(TweenColor), Member = "SetEndToCurrentValue")]
+		[CallerCount(Count = 4)]
+		[Calls(Type = typeof(TweenColor), Member = "Cache")]
+		[Calls(Type = typeof(Material), Member = "get_color")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 3)]
-		[CalledBy(Type = typeof(TweenColor), Member = "get_color")]
 		get
 		{
 			return default(Color);
@@ -50,25 +50,27 @@ public class TweenColor : UITweener
 		[CalledBy(Type = typeof(UIButtonColor), Member = "OnDisable")]
 		[CalledBy(Type = typeof(UIButtonColor), Member = "UpdateColor")]
 		[CalledBy(Type = typeof(TweenColor), Member = "set_color")]
-		[Calls(Type = typeof(Material), Member = "set_color")]
 		[CalledBy(Type = typeof(TweenColor), Member = "OnUpdate")]
 		[CalledBy(Type = typeof(TweenColor), Member = "SetCurrentValueToStart")]
 		[CalledBy(Type = typeof(TweenColor), Member = "SetCurrentValueToEnd")]
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(UIWidget), Member = "set_color")]
-		[Calls(Type = typeof(TweenColor), Member = "Cache")]
 		[CallerCount(Count = 6)]
+		[Calls(Type = typeof(TweenColor), Member = "Cache")]
+		[Calls(Type = typeof(UIWidget), Member = "set_color")]
+		[Calls(Type = typeof(Material), Member = "set_color")]
 		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 3)]
 		set
 		{
 		}
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(TweenColor), Member = "set_value")]
 	[CalledBy(Type = typeof(TweenColor), Member = "get_value")]
+	[CalledBy(Type = typeof(TweenColor), Member = "set_value")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Cache()
 	{
 	}
@@ -79,36 +81,37 @@ public class TweenColor : UITweener
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(UIPopupList), Member = "AnimateColor")]
-	[CalledBy(Type = typeof(UIPopupList), Member = "Close")]
 	[CalledBy(Type = typeof(UIButtonColor), Member = "UpdateColor")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(UIPopupList), Member = "Close")]
+	[CalledBy(Type = typeof(UIPopupList), Member = "AnimateColor")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UITweener), Member = "Begin")]
 	[Calls(Type = typeof(TweenColor), Member = "get_value")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static TweenColor Begin(GameObject go, float duration, Color color)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(TweenColor), Member = "get_value")]
-	[CallerCount(Count = 0)]
 	[ContextMenu("Set 'From' to current value")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TweenColor), Member = "get_value")]
 	public override void SetStartToCurrentValue()
 	{
 	}
 
 	[ContextMenu("Set 'To' to current value")]
-	[Calls(Type = typeof(TweenColor), Member = "get_value")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TweenColor), Member = "get_value")]
 	public override void SetEndToCurrentValue()
 	{
 	}
 
-	[Calls(Type = typeof(TweenColor), Member = "set_value")]
-	[CallerCount(Count = 0)]
 	[ContextMenu("Assume value of 'From'")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TweenColor), Member = "set_value")]
 	private void SetCurrentValueToStart()
 	{
 	}
@@ -120,8 +123,8 @@ public class TweenColor : UITweener
 	{
 	}
 
-	[Calls(Type = typeof(UITweener), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UITweener), Member = ".ctor")]
 	public TweenColor()
 	{
 	}

@@ -23,31 +23,30 @@ public sealed class PropertySheetFactory
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(PropertySheet), Member = ".ctor")]
-	[Calls(Type = typeof(Object), Member = "set_hideFlags")]
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "LastIndexOf")]
-	[Calls(Type = typeof(Material), Member = ".ctor")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 58)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Material), Member = ".ctor")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "LastIndexOf")]
 	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(Object), Member = "set_hideFlags")]
+	[Calls(Type = typeof(PropertySheet), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public PropertySheet Get(Shader shader)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "OnDisable")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public void Release()
 	{
 	}

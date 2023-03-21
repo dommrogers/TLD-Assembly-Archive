@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -37,89 +36,88 @@ public class FootstepGroup
 
 	private HashSet<int> m_ReferencedSnowPatches;
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CalledBy(Type = typeof(FootstepTrail), Member = "AddFootstep")]
 	[CalledBy(Type = typeof(FootstepTrail), Member = "Deserialize")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(OctreeBounds<>), Member = "Add")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 7)]
 	public FootstepGroup(FootstepTrail parent, Vector3 pos, Vector3 defaultBoundsSize)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 17)]
-	[CalledBy(Type = typeof(FootstepTrailManager), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(FootstepTrailManager), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(FootstepTrail), Member = "AddFootstep")]
-	[Calls(Type = typeof(FootstepGroup), Member = "RemovePatchRefs")]
 	[CalledBy(Type = typeof(FootstepTrail), Member = "Reset")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(FootstepTrail), Member = "ProcessPurge")]
+	[CalledBy(Type = typeof(FootstepTrail), Member = "AddFootstep")]
+	[CalledBy(Type = typeof(FootstepTrailManager), Member = "LateUpdate")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(FootstepGroup), Member = "RemovePatchRefs")]
 	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 17)]
 	public void Destroy()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(FootstepTrail), Member = "Close")]
 	[CalledBy(Type = typeof(FootstepTrail), Member = "AddFootstep")]
 	[CalledBy(Type = typeof(FootstepTrail), Member = "Deserialize")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[Calls(Type = typeof(OctreeBounds<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public void Close()
 	{
 	}
 
-	[Calls(Type = typeof(Bounds), Member = "Encapsulate")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(FootstepTrail), Member = "AddFootstep")]
-	[Calls(Type = typeof(FootstepGroup), Member = "AddFootstep")]
-	[Calls(Type = typeof(Bounds), Member = "get_size")]
-	[Calls(Type = typeof(Bounds), Member = "get_size")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Bounds), Member = "get_min")]
 	[Calls(Type = typeof(Bounds), Member = "Encapsulate")]
 	[Calls(Type = typeof(Bounds), Member = "get_max")]
-	[Calls(Type = typeof(Bounds), Member = "get_min")]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Bounds), Member = "get_size")]
+	[Calls(Type = typeof(FootstepGroup), Member = "AddFootstep")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public bool MaybeAddFootstep(Vector3 pos, ref SnowImprint footstep, float depth, Vector3 defaultBoundsSize, Vector3 boundsLimit)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(FootstepTrail), Member = "AddFootstep")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(FootstepGroup), Member = "MaybeAddFootstep")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(FootstepTrail), Member = "AddFootstep")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(FootstepGroup), Member = "AddFootstep")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void AddFootstep(ref SnowImprint footstep, float depth)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(FootstepTrail), Member = "ReserveFootstepBlock")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(FootstepGroup), Member = "AddFootstep")]
 	[CalledBy(Type = typeof(FootstepTrail), Member = "Deserialize")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(FootstepTrail), Member = "ReserveFootstepBlock")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 12)]
 	public void AddFootstep(ref SnowImprint footstep)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 0)]
 	private void UpdateExpireDepth(float depth)
 	{
 	}
 
+	[CalledBy(Type = typeof(FootstepTrailManager), Member = "LateUpdate")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(SnowPatchManager), Member = "AddImprint")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CalledBy(Type = typeof(FootstepTrailManager), Member = "LateUpdate")]
-	[CalledBy(Type = typeof(FootstepTrailManager), Member = "LateUpdate")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 18)]
 	public void Show(int captureTick)
 	{
@@ -131,42 +129,43 @@ public class FootstepGroup
 	{
 	}
 
-	[CallerCount(Count = 0)]
+	[CalledBy(Type = typeof(FootstepTrail), Member = "FadeFootprintsAtTrailEnd")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public int GetFootprintIndexInTrail(int i)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CalledBy(Type = typeof(FootstepTrail), Member = "Serialize")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SnowImprint), Member = "AddForSerialize")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void SerializeFootsteps(List<uint> list)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(FootstepTrailManager), Member = "Deserialize")]
 	[CalledBy(Type = typeof(FootstepTrail), Member = "AdjustSnowDepthRecords")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(SnowImprint), Member = "set_InitialSnowDepth")]
+	[CalledBy(Type = typeof(FootstepTrailManager), Member = "Deserialize")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(SnowImprint), Member = "set_InitialSnowDepth")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	public void AdjustSnowDepthRecords(float baseDepth)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(SnowPatchManager), Member = "RemovePatchRef")]
 	[CalledBy(Type = typeof(FootstepGroup), Member = "Destroy")]
 	[CalledBy(Type = typeof(FootstepGroup), Member = "Hide")]
 	[CalledBy(Type = typeof(FootstepTrailManager), Member = "LateUpdate")]
-	[CallsUnknownMethods(Count = 5)]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(HashSet<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(SnowPatchManager), Member = "RemovePatchRef")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void RemovePatchRefs()
 	{
 	}
@@ -175,6 +174,6 @@ public class FootstepGroup
 	[CallsUnknownMethods(Count = 1)]
 	public bool QualityAllowsShowing()
 	{
-		return default(bool);
+		return false;
 	}
 }

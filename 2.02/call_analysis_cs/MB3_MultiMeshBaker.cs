@@ -16,38 +16,34 @@ public class MB3_MultiMeshBaker : MB3_MeshBakerCommon
 		}
 	}
 
-	[Calls(Type = typeof(Object), Member = "get_name")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 11)]
 	public override bool AddDeleteGameObjects(GameObject[] gos, GameObject[] deleteGOs, bool disableRendererInSource)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Object), Member = "get_name")]
-	[CallsUnknownMethods(Count = 11)]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(GameObject), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CallsUnknownMethods(Count = 11)]
 	public override bool AddDeleteGameObjectsByID(GameObject[] gos, int[] deleteGOs, bool disableRendererInSource)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(MB3_MultiMeshCombiner), Member = ".ctor")]
 	[Calls(Type = typeof(MB3_MeshBakerCommon), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public MB3_MultiMeshBaker()
 	{

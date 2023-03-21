@@ -23,7 +23,7 @@ public class LeaderboardResultColumns : IEnumerable<LeaderboardResultColumn>, IE
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -32,9 +32,9 @@ public class LeaderboardResultColumns : IEnumerable<LeaderboardResultColumn>, IE
 
 		private object System_002ECollections_002EIEnumerator_002ECurrent
 		{
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -55,18 +55,18 @@ public class LeaderboardResultColumns : IEnumerable<LeaderboardResultColumn>, IE
 		{
 		}
 
-		[CallsUnknownMethods(Count = 11)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(LeaderboardResultPlugin), Member = "LeaderboardResult_GetColumn")]
+		[CallsUnknownMethods(Count = 11)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 5)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 5)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -98,9 +98,9 @@ public class LeaderboardResultColumns : IEnumerable<LeaderboardResultColumn>, IE
 		return null;
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 6)]
-	[DeduplicatedMethod]
 	private IEnumerator System_002ECollections_002EIEnumerable_002EGetEnumerator()
 	{
 		return null;

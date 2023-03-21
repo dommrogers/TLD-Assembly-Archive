@@ -12,8 +12,8 @@ public class FlickerAmplitudeParameters
 
 	public float m_CurveGain;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public FlickerAmplitudeParameters()
 	{
 	}

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -48,7 +47,7 @@ public class StringTable : StringTableData
 	[CallsUnknownMethods(Count = 2)]
 	private bool IsUsingLegacyCyrillicOverride(string language)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallAnalysisFailed]
@@ -60,20 +59,17 @@ public class StringTable : StringTableData
 
 	[CalledBy(Type = typeof(Localization), Member = "SelectLanguage")]
 	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "GetAllLanguagesWithCharacterSet")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(StringTable), Member = "GetStringForKeyAndLanguage")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(StringTable), Member = "GetStringForKeyAndLanguage")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(StringTable), Member = "GetStringForKeyAndLanguage")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 2)]
 	public CharacterSet GetCharacterSetForLanguage(string language)
 	{
 		return default(CharacterSet);
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 23)]
+	[CallerCount(Count = 27)]
 	public List<string> GetLanguages()
 	{
 		return null;
@@ -83,14 +79,14 @@ public class StringTable : StringTableData
 	[CallerCount(Count = 0)]
 	public bool IsInitialized()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsGeneratedByCode()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -99,20 +95,17 @@ public class StringTable : StringTableData
 	{
 	}
 
-	[CalledBy(Type = typeof(Localization), Member = "GetForFallbackLanguage")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(StringTable), Member = "GetCharacterSetForLanguage")]
-	[CalledBy(Type = typeof(StringTable), Member = "GetCharacterSetForLanguage")]
-	[CalledBy(Type = typeof(StringTable), Member = "IsUsingLegacyCyrillicOverride")]
-	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "GetAllCharactersInLanguage")]
-	[CalledBy(Type = typeof(Localization), Member = "GetForLang")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CalledBy(Type = typeof(Localization), Member = "GetForLang")]
 	[CalledBy(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(Localization), Member = "GetForLang")]
-	[Calls(Type = typeof(StringTable), Member = "GetEntryFromKey")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Localization), Member = "GetForFallbackLanguage")]
+	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "GetAllCharactersInLanguage")]
+	[CalledBy(Type = typeof(StringTable), Member = "IsUsingLegacyCyrillicOverride")]
+	[CalledBy(Type = typeof(StringTable), Member = "GetCharacterSetForLanguage")]
 	[CallerCount(Count = 9)]
+	[Calls(Type = typeof(StringTable), Member = "GetEntryFromKey")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public string GetStringForKeyAndLanguage(string key, string language)
 	{
 		return null;
@@ -120,18 +113,19 @@ public class StringTable : StringTableData
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(StringTable), Member = "GetEntryFromKey")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public string GetStringForKeyAndLanguage(string key, int languageIndex)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(Localization), Member = "LoadStringTableForLanguage")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(StringTable), Member = "InitializeData")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 10)]
 	public void AddNewLanguage(string language)
 	{
 	}
@@ -140,44 +134,38 @@ public class StringTable : StringTableData
 	[Calls(Type = typeof(StringTable), Member = "IndexOfLanguage")]
 	public bool HasLanguage(string language)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Localization), Member = "GetForLang")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(StringTable), Member = "HasLanguage")]
-	[CalledBy(Type = typeof(Localization), Member = "GetForLang")]
-	[CalledBy(Type = typeof(Localization), Member = "GetForLang")]
-	[CalledBy(Type = typeof(Localization), Member = "SelectLanguage")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(string), Member = "ToUpperInvariant")]
-	[Calls(Type = typeof(string), Member = "ToUpperInvariant")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(Localization), Member = "LoadStringTableForLanguage")]
+	[CalledBy(Type = typeof(Localization), Member = "SelectLanguage")]
+	[CalledBy(Type = typeof(Localization), Member = "GetForLang")]
+	[CalledBy(Type = typeof(StringTable), Member = "HasLanguage")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(string), Member = "ToUpperInvariant")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public int IndexOfLanguage(string language)
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(StringTable), Member = "DoesKeyExist")]
-	[CallsUnknownMethods(Count = 36)]
-	[CalledBy(Type = typeof(StringTable), Member = "RemoveEntryForKey")]
-	[CalledBy(Type = typeof(StringTable), Member = "GetKeyForEntry")]
-	[CalledBy(Type = typeof(StringTable), Member = "GetKeyForEntry")]
-	[CalledBy(Type = typeof(StringTable), Member = "GetEntryFromKey")]
-	[CalledBy(Type = typeof(StringTable), Member = "AddEntryForKey")]
-	[CalledBy(Type = typeof(StringTable), Member = "GetNumEntries")]
-	[CalledBy(Type = typeof(StringTable), Member = "ParseLanguages")]
 	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "GetAllCharactersInLanguage")]
-	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "GetAllCharactersInLanguage")]
-	[CalledBy(Type = typeof(DebugPanel_FontRendering), Member = "GetAllCharactersInLanguage")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CalledBy(Type = typeof(StringTable), Member = "AddNewLanguage")]
+	[CalledBy(Type = typeof(StringTable), Member = "GetNumEntries")]
+	[CalledBy(Type = typeof(StringTable), Member = "DoesKeyExist")]
+	[CalledBy(Type = typeof(StringTable), Member = "AddEntryForKey")]
+	[CalledBy(Type = typeof(StringTable), Member = "GetEntryFromKey")]
+	[CalledBy(Type = typeof(StringTable), Member = "GetKeyForEntry")]
+	[CalledBy(Type = typeof(StringTable), Member = "RemoveEntryForKey")]
+	[CalledBy(Type = typeof(StringTable), Member = "ParseLanguages")]
 	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 36)]
 	private void InitializeData(bool forceInit = false)
 	{
 	}
@@ -187,43 +175,44 @@ public class StringTable : StringTableData
 	[CallsUnknownMethods(Count = 1)]
 	public int GetNumEntries()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(StringTable), Member = "AddEntryForKey")]
 	[CalledBy(Type = typeof(Localization), Member = "Exists")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(StringTable), Member = "AddEntryForKey")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(StringTable), Member = "InitializeData")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool DoesKeyExist(string key)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(StringTable), Member = "InitializeData")]
-	[Calls(Type = typeof(StringTable), Member = "DoesKeyExist")]
-	[Calls(Type = typeof(StringTable), Member = "GetEntryFromKey")]
 	[CalledBy(Type = typeof(StringTable), Member = "ImportCsv")]
 	[CalledBy(Type = typeof(StringTable), Member = "AddOrUpdateTableEntry")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(StringTable), Member = "InitializeData")]
+	[Calls(Type = typeof(StringTable), Member = "DoesKeyExist")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(StringTable), Member = "GetEntryFromKey")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 26)]
 	private Entry AddEntryForKey(string key)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(StringTable), Member = "RemoveEntryForKey")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(StringTable), Member = "AddOrUpdateTableEntry")]
-	[CalledBy(Type = typeof(StringTable), Member = "ImportCsv")]
+	[CalledBy(Type = typeof(StringTable), Member = "GetStringForKeyAndLanguage")]
+	[CalledBy(Type = typeof(StringTable), Member = "GetStringForKeyAndLanguage")]
 	[CalledBy(Type = typeof(StringTable), Member = "AddEntryForKey")]
+	[CalledBy(Type = typeof(StringTable), Member = "RemoveEntryForKey")]
+	[CalledBy(Type = typeof(StringTable), Member = "ImportCsv")]
+	[CalledBy(Type = typeof(StringTable), Member = "AddOrUpdateTableEntry")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(StringTable), Member = "GetStringForKeyAndLanguage")]
 	[Calls(Type = typeof(StringTable), Member = "InitializeData")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(StringTable), Member = "GetStringForKeyAndLanguage")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsUnknownMethods(Count = 1)]
 	private Entry GetEntryFromKey(string key)
 	{
 		return null;
@@ -231,19 +220,22 @@ public class StringTable : StringTableData
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(StringTable), Member = "InitializeData")]
-	[Calls(Type = typeof(StringTable), Member = "InitializeData")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 2)]
 	public string GetKeyForEntry(int index)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(StringTable), Member = "GetEntryFromKey")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(StringTable), Member = "InitializeData")]
+	[Calls(Type = typeof(StringTable), Member = "GetEntryFromKey")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	private void RemoveEntryForKey(string key)
 	{
 	}
@@ -252,49 +244,50 @@ public class StringTable : StringTableData
 	[CallsDeduplicatedMethods(Count = 1)]
 	private bool ShouldImportLanguage(string language, List<string> importLanguages)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(StringTable), Member = "GetEntryFromKey")]
 	[CalledBy(Type = typeof(Localization), Member = "LoadWorkshopLocalization")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(ByteReader), Member = "ReadCSV")]
-	[Calls(Type = typeof(StringTable), Member = "AddEntryForKey")]
-	[Calls(Type = typeof(ByteReader), Member = "ReadCSV")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(StringTable), Member = "ParseLanguages")]
-	[Calls(Type = typeof(File), Member = "ReadAllText")]
 	[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
+	[Calls(Type = typeof(File), Member = "ReadAllText")]
+	[Calls(Type = typeof(ByteReader), Member = "ReadCSV")]
+	[Calls(Type = typeof(BetterList<>), Member = "RemoveAt")]
+	[Calls(Type = typeof(StringTable), Member = "ParseLanguages")]
+	[Calls(Type = typeof(StringTable), Member = "GetEntryFromKey")]
+	[Calls(Type = typeof(StringTable), Member = "AddEntryForKey")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 14)]
 	public List<string> ImportCsv(string path, List<string> filterLanguages)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(StringTable), Member = "InitializeData")]
 	[CalledBy(Type = typeof(StringTable), Member = "ImportCsv")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(StringTable), Member = "InitializeData")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 18)]
 	private int[] ParseLanguages(BetterList<string> languages, List<string> filterLanguages)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(StringTable), Member = "GetEntryFromKey")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(StringTable), Member = "GetEntryFromKey")]
 	[Calls(Type = typeof(StringTable), Member = "AddEntryForKey")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	private void AddOrUpdateTableEntry(string key, BetterList<string> importEntryLanguages, int[] languageIndexes)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 16)]
 	public StringTable()
 	{
 	}

@@ -10,21 +10,21 @@ public class Condition_CheckEpisode : ConditionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Enum), Member = "ToString")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

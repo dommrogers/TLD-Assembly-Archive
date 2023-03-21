@@ -15,11 +15,11 @@ internal struct CopyProductUserExternalAccountByIndexOptionsInternal : ISettable
 
 	public ProductUserId TargetUserId
 	{
+		[CalledBy(Type = typeof(CopyProductUserExternalAccountByIndexOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyProductUserExternalAccountByIndexOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyProductUserExternalAccountByIndexOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyProductUserExternalAccountByIndexOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -40,16 +40,16 @@ internal struct CopyProductUserExternalAccountByIndexOptionsInternal : ISettable
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(CopyProductUserExternalAccountByIndexOptionsInternal), Member = "set_TargetUserId")]
 	[CalledBy(Type = typeof(ConnectInterface), Member = "CopyProductUserExternalAccountByIndex")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CopyProductUserExternalAccountByIndexOptionsInternal), Member = "set_TargetUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

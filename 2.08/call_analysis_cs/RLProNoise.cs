@@ -43,10 +43,10 @@ public sealed class RLProNoise : PostProcessEffectSettings
 
 	public BoolParameter unscaledTime;
 
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 19)]
+	[CallsUnknownMethods(Count = 1)]
 	public RLProNoise()
 	{
 	}

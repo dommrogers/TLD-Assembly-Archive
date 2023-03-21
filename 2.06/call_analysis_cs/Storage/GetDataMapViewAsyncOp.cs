@@ -20,10 +20,10 @@ public class GetDataMapViewAsyncOp : AsyncOp<GetDataMapViewAsyncOp>
 		((AsyncOp<>)(object)this)._002Ector();
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CalledBy(Type = typeof(ContainerContext), Member = "GetAsyncThunk")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(ContainerContext), Member = "GetAsyncThunk")]
+	[CallsUnknownMethods(Count = 6)]
 	public void Complete(uint result, IntPtr map)
 	{
 	}

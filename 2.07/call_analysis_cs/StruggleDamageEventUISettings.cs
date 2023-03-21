@@ -11,8 +11,8 @@ public class StruggleDamageEventUISettings : ScriptableObject
 
 	public Color m_TintColor;
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	public StruggleDamageEventUISettings()
 	{
 	}

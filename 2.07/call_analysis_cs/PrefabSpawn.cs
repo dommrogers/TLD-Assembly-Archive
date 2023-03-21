@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Serialization;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class PrefabSpawn : MonoBehaviour
 {
@@ -94,10 +95,10 @@ public class PrefabSpawn : MonoBehaviour
 		}
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Awake()
 	{
 	}
@@ -110,53 +111,56 @@ public class PrefabSpawn : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
 	[CalledBy(Type = typeof(PrefabSpawn), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(PrefabSpawn), Member = "SpawnObject")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[CalledBy(Type = typeof(RandomSpawnObject), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
 	[Calls(Type = typeof(Utils), Member = "RollChance")]
-	[CallsUnknownMethods(Count = 32)]
+	[Calls(Type = typeof(GenericPool<>), Member = "Get")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(PrefabSpawn), Member = "SpawnObject")]
+	[Calls(Type = typeof(List<>), Member = "RemoveAt")]
+	[Calls(Type = typeof(PooledObject<>), Member = "System.IDisposable.Dispose")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 30)]
 	public GameObject SpawnObjects()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 6)]
 	public List<int> CalculateSetWeights(out int sumOfAllWeights)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<int, @null>(ref sumOfAllWeights) = null;
+		sumOfAllWeights = default(int);
 		return null;
 	}
 
+	[CalledBy(Type = typeof(PrefabSpawn), Member = "SpawnObjects")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 10)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[CalledBy(Type = typeof(PrefabSpawn), Member = "SpawnObjects")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 9)]
 	public GameObject SpawnObject(Element spawnElement)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(string), Member = "SplitInternal")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[CallsUnknownMethods(Count = 3)]
 	public static string GetNameFromValue(string text)
 	{
 		return null;
@@ -165,11 +169,11 @@ public class PrefabSpawn : MonoBehaviour
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "SplitInternal")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "TryParseInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "TryParseInt32")]
 	[CallsUnknownMethods(Count = 3)]
 	public static int GetIndexFromValue(string text)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -180,11 +184,12 @@ public class PrefabSpawn : MonoBehaviour
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "LoadSceneData")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 7)]
 	public static void DeserializeAll(string serialized)
 	{
 	}
@@ -196,11 +201,12 @@ public class PrefabSpawn : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveSceneData")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public static string SerializeAll()
 	{
 		return null;

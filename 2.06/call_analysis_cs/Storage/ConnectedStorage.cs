@@ -39,7 +39,7 @@ public class ConnectedStorage : IDisposable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -48,7 +48,7 @@ public class ConnectedStorage : IDisposable
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -61,49 +61,54 @@ public class ConnectedStorage : IDisposable
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 1)]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 1)]
 		remove
 		{
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetHandle")]
 	[Calls(Type = typeof(Exception), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 17)]
 	public static CreateConnectedStorageOp CreateAsync(int userId, string containerName, CreateConnectedStorageOp.ConnectedStorageInitializedCallback callback, ConnectedStorageCreationFlags flags = (ConnectedStorageCreationFlags)0, string serviceConfigurationId = null)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(DeleteContainerAsyncOp), Member = ".ctor")]
-	[Calls(Type = typeof(ConnectedStoragePlugin), Member = "ConnectedStorage_DeleteContainer")]
 	[CalledBy(Type = typeof(ConnectedStorage), Member = "DeleteContainer")]
-	[CallsUnknownMethods(Count = 7)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DeleteContainerAsyncOp), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetHandle")]
+	[Calls(Type = typeof(ConnectedStoragePlugin), Member = "ConnectedStorage_DeleteContainer")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public DeleteContainerAsyncOp DeleteThisContainer(DeleteContainerAsyncOp.DeleteContainerAsyncCallback callback)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(ConnectedStoragePlugin), Member = "ConnectedStorage_DeleteContainer")]
-	[Calls(Type = typeof(DeleteContainerAsyncOp), Member = ".ctor")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(ConnectedStorage), Member = "DeleteThisContainer")]
+	[Calls(Type = typeof(DeleteContainerAsyncOp), Member = ".ctor")]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetHandle")]
+	[Calls(Type = typeof(ConnectedStoragePlugin), Member = "ConnectedStorage_DeleteContainer")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public DeleteContainerAsyncOp DeleteContainer(string containerName, DeleteContainerAsyncOp.DeleteContainerAsyncCallback callback)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetHandle")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public QueryRemainingQuotaAsyncOp QueryRemainingQuotaAsync(QueryRemainingQuotaAsyncOp.QueryAsyncCallback callback)
 	{
@@ -111,25 +116,27 @@ public class ConnectedStorage : IDisposable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(AsyncOp<>), Member = "GetHandle")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public ContainerInfoQueryAsyncOp QueryContainerInfoAsync(string query, ContainerInfoQueryAsyncOp.ContainerInfoQueryCallback callback)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
+	[CalledBy(Type = typeof(ConnectedStorage), Member = "SetActiveContainer")]
 	[CalledBy(Type = typeof(CreateConnectedStorageOp), Member = "Complete")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(ConnectedStorage), Member = "SetActiveContainer")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public ContainerContext OpenOrCreateContainer(string containerName)
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 21)]
+	[CallerCount(Count = 25)]
 	public void SetActiveContainer(ContainerContext context)
 	{
 	}
@@ -144,13 +151,13 @@ public class ConnectedStorage : IDisposable
 	[Calls(Type = typeof(ConnectedStoragePlugin), Member = "ConnectedStorage_ContainersChangedSinceLastSync_Size")]
 	public uint GetNumberOfContainersChangedSinceLastSync()
 	{
-		return default(uint);
+		return 0u;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(ConnectedStoragePlugin), Member = "ConnectedStorage_ContainersChangedSinceLastSync_Size")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConnectedStoragePlugin), Member = "ConnectedStorage_ContainersChangedSinceLastSync_Size")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public string GetContainerChangedSinceLastSync(uint idx)
 	{
 		return null;
@@ -172,26 +179,26 @@ public class ConnectedStorage : IDisposable
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ContainerContext), Member = "SubmitUpdatesAsync")]
+	[CallsUnknownMethods(Count = 1)]
 	public SubmitDataMapUpdatesAsyncOp SubmitUpdatesAsync(DataMap toUpdate, string[] toDelete, SubmitDataMapUpdatesAsyncOp.UpdateAsyncCallback callback, string displayName = null)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ContainerContext), Member = "SubmitUpdatesAsync")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ContainerContext), Member = "SubmitUpdatesAsync")]
+	[CallsUnknownMethods(Count = 1)]
 	public SubmitDataMapUpdatesAsyncOp DeleteAsync(string[] toDelete, SubmitDataMapUpdatesAsyncOp.UpdateAsyncCallback callback, string displayName = null)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(GCHandle), Member = ".ctor")]
 	[CalledBy(Type = typeof(CreateConnectedStorageOp), Member = "Complete")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(GCHandle), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public ConnectedStorage(IntPtr self, int userId)
 	{
@@ -204,60 +211,60 @@ public class ConnectedStorage : IDisposable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(StorageLog), Member = "LogCallbackException")]
-	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
-	[Calls(Type = typeof(CreateConnectedStorageOp), Member = "Complete")]
 	[UnityAOT.MonoPInvokeCallback(typeof(ObjectResultCallback))]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GCHandle), Member = "op_Explicit")]
+	[Calls(Type = typeof(CreateConnectedStorageOp), Member = "Complete")]
+	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
+	[Calls(Type = typeof(StorageLog), Member = "LogCallbackException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private static void InitializedThunk(uint result, IntPtr self, IntPtr userData)
 	{
 	}
 
+	[UnityAOT.MonoPInvokeCallback(typeof(ConnectedStoragePlugin.UserSignedOutStorageInvalidCallback))]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GCHandle), Member = "op_Explicit")]
 	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
 	[Calls(Type = typeof(StorageLog), Member = "LogCallbackException")]
-	[Calls(Type = typeof(GCHandle), Member = "op_Explicit")]
-	[CallsUnknownMethods(Count = 8)]
-	[CallerCount(Count = 0)]
-	[UnityAOT.MonoPInvokeCallback(typeof(ConnectedStoragePlugin.UserSignedOutStorageInvalidCallback))]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private static void OnUserSignedOutThunk(uint userId, IntPtr userData)
 	{
 	}
 
 	[UnityAOT.MonoPInvokeCallback(typeof(GenericActionCallback))]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(GCHandle), Member = "op_Explicit")]
 	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
 	[Calls(Type = typeof(StorageLog), Member = "LogCallbackException")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 7)]
 	private static void DeleteContainerAsyncThunk(uint result, uint status, IntPtr userData)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(StorageLog), Member = "LogCallbackException")]
-	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
-	[Calls(Type = typeof(QueryRemainingQuotaAsyncOp), Member = "Complete")]
-	[Calls(Type = typeof(GCHandle), Member = "op_Explicit")]
-	[CallerCount(Count = 0)]
 	[UnityAOT.MonoPInvokeCallback(typeof(ConnectedStoragePlugin.QueryRemainingQuotaAsyncCallback))]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GCHandle), Member = "op_Explicit")]
+	[Calls(Type = typeof(QueryRemainingQuotaAsyncOp), Member = "Complete")]
+	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
+	[Calls(Type = typeof(StorageLog), Member = "LogCallbackException")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private static void QueryRemainingQuotaAsyncThunk(uint result, long quota, IntPtr userData)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[UnityAOT.MonoPInvokeCallback(typeof(ConnectedStoragePlugin.ContainerInfoQueryAsyncCallback))]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GCHandle), Member = "op_Explicit")]
 	[Calls(Type = typeof(ContainerInfoQueryAsyncOp), Member = "Complete")]
 	[Calls(Type = typeof(UnityPlugin.Utils), Member = "FormatException")]
 	[Calls(Type = typeof(StorageLog), Member = "LogCallbackException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	private static void ContainerInfoQueryAsyncThunk(uint result, IntPtr queryHandle, IntPtr userData, uint totalResults)
 	{
 	}

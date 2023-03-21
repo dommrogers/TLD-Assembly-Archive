@@ -15,10 +15,10 @@ public sealed class RLProOldFilm : PostProcessEffectSettings
 
 	public FloatParameter fade;
 
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 26)]
 	public RLProOldFilm()
 	{
 	}

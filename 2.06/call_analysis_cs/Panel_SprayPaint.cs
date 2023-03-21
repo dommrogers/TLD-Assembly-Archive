@@ -58,12 +58,12 @@ public class Panel_SprayPaint : Panel_AutoReferenced
 
 	private bool m_CanShowBanishmentGlyph;
 
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void Initialize()
 	{
 	}
@@ -77,80 +77,80 @@ public class Panel_SprayPaint : Panel_AutoReferenced
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Panel_SprayPaint), Member = "ReturnToGame")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(Panel_SprayPaint), Member = "ReturnToGame")]
+	[CallsUnknownMethods(Count = 2)]
 	public void OnButtonCancel()
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "MaybeShowShapeWillNotShowOnMapWarning")]
 	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "UnlockDecalMapMarkersNearPosition")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "StartPlaceDecal")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "OnCompletedDecalPlaceDown")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	[CallsUnknownMethods(Count = 2)]
 	public bool CanPlaceDecalOnMap(ProjectileType projectile)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "MaybeShowCannotPlaceMoreThanOneWarning")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
 	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "IsValidSelection")]
+	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "MaybeShowCannotPlaceMoreThanOneWarning")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsOnlyAllowedOneOfType(ProjectileType projectile)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "IsValidSelection")]
+	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "MaybeShowCannotPlaceMoreThanOneWarning")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "AreAnyPlacedDecalsOfType")]
 	[Calls(Type = typeof(InvisibleEntityManager), Member = "HasIndoorWardProtectionForCurrentScene")]
-	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "IsValidSelection")]
-	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "MaybeShowCannotPlaceMoreThanOneWarning")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdatePlaceDecal")]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsAlreadyPlacedInWorld(ProjectileType projectile)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[CallsUnknownMethods(Count = 2)]
 	public bool DoesShapeLocIDExist(string locName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RemoveDecalFromMap")]
-	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveDecalMapMarker")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	[CalledBy(Type = typeof(Panel_Map), Member = "Deserialize")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(Panel_Map), Member = "AddDecalMapMarker")]
+	[CalledBy(Type = typeof(Panel_Map), Member = "RemoveDecalMapMarker")]
+	[CalledBy(Type = typeof(DynamicDecalsManager), Member = "RemoveDecalFromMap")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
+	[CallsUnknownMethods(Count = 2)]
 	public string GetShapeLocNameID(ProjectileType projectile)
 	{
 		return null;
 	}
 
+	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "IsValidSelection")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
-	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "IsValidSelection")]
 	[CallsUnknownMethods(Count = 2)]
 	public ProjectileType GetSelectedDecalShape()
 	{
@@ -163,12 +163,12 @@ public class Panel_SprayPaint : Panel_AutoReferenced
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Enable")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "OnButtonCancel")]
+	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Enable")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PlayerManager), Member = "StartPlaceDecal")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void ReturnToGame()
 	{
 	}
@@ -193,36 +193,34 @@ public class Panel_SprayPaint : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(Panel_SprayPaint), Member = "Enable")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Panel_SprayPaint), Member = "Enable")]
 	public override void Enable(bool enable)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessReloadAction")]
-	[CallsUnknownMethods(Count = 17)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UseSprayPaintCan")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "set_m_ItemInHands")]
-	[CalledBy(Type = typeof(InputManager), Member = "ExecuteReloadAction")]
-	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Enable")]
-	[CalledBy(Type = typeof(Panel_Actions), Member = "OnSprayPaint")]
-	[CalledBy(Type = typeof(SprayPaintCan), Member = "OnWield")]
 	[CalledBy(Type = typeof(GearItem), Member = "OnWield")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(EquipItemPopup), Member = "ShowPlaceMeshItem")]
+	[CalledBy(Type = typeof(SprayPaintCan), Member = "OnWield")]
+	[CalledBy(Type = typeof(Panel_Actions), Member = "OnSprayPaint")]
+	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Enable")]
+	[CalledBy(Type = typeof(InputManager), Member = "ExecuteReloadAction")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "set_m_ItemInHands")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UseSprayPaintCan")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ProcessReloadAction")]
 	[CallerCount(Count = 8)]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
 	[Calls(Type = typeof(GridUI), Member = "Initialize")]
 	[Calls(Type = typeof(Panel_SprayPaint), Member = "GetShapes")]
 	[Calls(Type = typeof(GridUI), Member = "AddItem")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "RemoveDynamicDecal")]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	[Calls(Type = typeof(Panel_SprayPaint), Member = "ReturnToGame")]
 	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(EquipItemPopup), Member = "ShowPlaceMeshItem")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 17)]
 	public void Enable(bool enable, GearItem sprayPaintCan, bool bypassScreen)
 	{
 	}
@@ -233,18 +231,18 @@ public class Panel_SprayPaint : Panel_AutoReferenced
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GridUI), Member = "ClearItems")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetShowBanishmentGlyph(bool show)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool CanShowBanishmentGlyph()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -253,7 +251,7 @@ public class Panel_SprayPaint : Panel_AutoReferenced
 	[Calls(Type = typeof(Panel_SprayPaint), Member = "IsAlreadyPlacedInWorld")]
 	private bool IsValidSelection()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -261,65 +259,61 @@ public class Panel_SprayPaint : Panel_AutoReferenced
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	private bool IsUsingNowhereToHideShapes()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Enable")]
 	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "MaybeShowShapeWillNotShowOnMapWarning")]
-	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "MaybeShowShapeWillNotShowOnMapWarning")]
 	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "MaybeShowCannotPlaceMoreThanOneWarning")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	private ShapeInfo[] GetShapes()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(GridUI), Member = "MoveSelectedSpriteAndTween")]
-	[Calls(Type = typeof(Panel_SprayPaint), Member = "MaybeShowShapeWillNotShowOnMapWarning")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GridItem), Member = "ToggleSelection")]
-	[Calls(Type = typeof(Panel_SprayPaint), Member = "MaybeShowCannotPlaceMoreThanOneWarning")]
-	[Calls(Type = typeof(GridItem), Member = "ToggleSelection")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
 	[Calls(Type = typeof(GridUI), Member = "UpdateControls")]
 	[Calls(Type = typeof(GridUI), Member = "RefreshGridItem")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(InterfaceManager), Member = "ShouldImmediatelyExitOverlay")]
+	[Calls(Type = typeof(GridItem), Member = "ToggleSelection")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(GridUI), Member = "MoveSelectedSpriteAndTween")]
+	[Calls(Type = typeof(Panel_SprayPaint), Member = "MaybeShowShapeWillNotShowOnMapWarning")]
+	[Calls(Type = typeof(Panel_SprayPaint), Member = "MaybeShowCannotPlaceMoreThanOneWarning")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Update")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_SprayPaint), Member = "CanPlaceDecalOnMap")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
 	[Calls(Type = typeof(Panel_SprayPaint), Member = "GetShapes")]
+	[Calls(Type = typeof(Panel_SprayPaint), Member = "CanPlaceDecalOnMap")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(Panel_SprayPaint), Member = "GetShapes")]
+	[CallsUnknownMethods(Count = 4)]
 	private void MaybeShowShapeWillNotShowOnMapWarning(int selectedIndex)
 	{
 	}
 
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Panel_SprayPaint), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_SprayPaint), Member = "IsAlreadyPlacedInWorld")]
-	[Calls(Type = typeof(Panel_SprayPaint), Member = "GetShapes")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceModeType")]
+	[Calls(Type = typeof(Panel_SprayPaint), Member = "GetShapes")]
 	[Calls(Type = typeof(Panel_SprayPaint), Member = "IsOnlyAllowedOneOfType")]
+	[Calls(Type = typeof(Panel_SprayPaint), Member = "IsAlreadyPlacedInWorld")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	private void MaybeShowCannotPlaceMoreThanOneWarning(int selectedIndex)
 	{
 	}
@@ -332,8 +326,8 @@ public class Panel_SprayPaint : Panel_AutoReferenced
 	{
 	}
 
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	private void UpdateControls()
 	{

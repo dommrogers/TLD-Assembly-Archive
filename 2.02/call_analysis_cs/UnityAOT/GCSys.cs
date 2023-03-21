@@ -11,12 +11,12 @@ public class GCSys<T>
 	[CallsUnknownMethods(Count = 1)]
 	public static IntPtr SetupHandle(ref GCHandle handle, T obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
-	[Calls(Type = typeof(GCHandle), Member = "Free")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GCHandle), Member = "Free")]
 	public static void FreeHandle(ref GCHandle handle)
 	{
 	}

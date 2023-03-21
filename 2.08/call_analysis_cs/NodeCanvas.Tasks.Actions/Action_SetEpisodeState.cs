@@ -9,12 +9,12 @@ public class Action_SetEpisodeState : ActionTask
 
 	public EpisodeState state;
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
-	[Calls(Type = typeof(StatsManager), Member = "SetValue")]
-	[Calls(Type = typeof(EpisodeManager), Member = "SetState")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EpisodeManager), Member = "SetState")]
 	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
+	[Calls(Type = typeof(StatsManager), Member = "SetValue")]
+	[Calls(Type = typeof(Action_SaveCheckpoint), Member = "MaybeSave")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	protected override void OnExecute()
 	{
 	}

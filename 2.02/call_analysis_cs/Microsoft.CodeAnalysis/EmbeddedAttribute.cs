@@ -6,7 +6,7 @@ namespace Microsoft.CodeAnalysis;
 internal sealed class EmbeddedAttribute : Attribute
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public EmbeddedAttribute()
 	{
 	}

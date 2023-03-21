@@ -7,16 +7,17 @@ public class AkMultiPosEvent
 
 	public List<AkAmbient> list;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void FinishedPlaying(object in_cookie, AkCallbackType in_type, object in_info)
 	{
 	}
 
 	[CalledBy(Type = typeof(AkAmbient), Member = "OnEnable")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public AkMultiPosEvent()
 	{
 	}

@@ -17,9 +17,9 @@ public class Condition_IsCameraFadeActive : ConditionTask
 
 	protected override string info
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Enum), Member = "ToString")]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -28,11 +28,10 @@ public class Condition_IsCameraFadeActive : ConditionTask
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CameraFade), Member = "IsFadingIn")]
-	[Calls(Type = typeof(CameraFade), Member = "IsFadingIn")]
 	[Calls(Type = typeof(CameraFade), Member = "IsFadingOut")]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -10,7 +9,7 @@ public class Fatigue : MonoBehaviour
 		public Fatigue fatigue;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass24_0()
 		{
 		}
@@ -128,24 +127,24 @@ public class Fatigue : MonoBehaviour
 
 	private static FatigueSaveDataProxy m_FatigueSaveDataProxy;
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SuppressHeavyBreathing(bool suppress)
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(vp_Timer), Member = "In")]
 	[CalledBy(Type = typeof(PlayerVoice), Member = "CompleteActiveRequest")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[Calls(Type = typeof(vp_Timer), Member = "In")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 17)]
 	public static void EndSuppressHeavyBreathingCallback()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void ResetMovementTimers()
 	{
 	}
@@ -155,32 +154,32 @@ public class Fatigue : MonoBehaviour
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[CalledBy(Type = typeof(Fatigue), Member = "UpdateHeavyBreathing")]
 	[CalledBy(Type = typeof(Fatigue), Member = "MaybeCatchBreath")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private bool MovingUpIncline()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(Fatigue), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Fatigue), Member = "MovingUpIncline")]
 	[Calls(Type = typeof(Fatigue), Member = "MaybePlayHeavyBreathingLoop")]
 	[Calls(Type = typeof(Fatigue), Member = "MaybePlayFatigueVoiceOver")]
 	[Calls(Type = typeof(Fatigue), Member = "MaybeCatchBreath")]
 	[Calls(Type = typeof(Fatigue), Member = "UpdateHeavyBreathingLoopRTPC")]
-	[CalledBy(Type = typeof(Fatigue), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	private void UpdateHeavyBreathing()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void UpdateDebugText()
 	{
 	}
@@ -192,37 +191,36 @@ public class Fatigue : MonoBehaviour
 		return default(HeavyBreathingState);
 	}
 
+	[CalledBy(Type = typeof(Fatigue), Member = "MaybeCatchBreath")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[CalledBy(Type = typeof(Fatigue), Member = "MaybeCatchBreath")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void CatchBreath()
 	{
 	}
 
+	[CalledBy(Type = typeof(Fatigue), Member = "UpdateHeavyBreathing")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerMovement), Member = "GetSprintStaminaRemainingAsPercentage")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsWalking")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
 	[Calls(Type = typeof(Fatigue), Member = "MovingUpIncline")]
 	[Calls(Type = typeof(Fatigue), Member = "CatchBreath")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
-	[CalledBy(Type = typeof(Fatigue), Member = "UpdateHeavyBreathing")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(PlayerMovement), Member = "GetSprintStaminaRemainingAsPercentage")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void MaybeCatchBreath()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Fatigue), Member = "UpdateHeavyBreathing")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(PlayerMovement), Member = "GetSprintStaminaRemainingAsPercentage")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerMovement), Member = "GetSprintStaminaRemainingAsPercentage")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateHeavyBreathingLoopRTPC()
 	{
 	}
@@ -232,98 +230,91 @@ public class Fatigue : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(Fatigue), Member = "UpdateHeavyBreathing")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerCantSprintBecauseOfInjury")]
+	[Calls(Type = typeof(BodyCarry), Member = "HasBody")]
 	[Calls(Type = typeof(Fatigue), Member = "ComputeHeavyBreathingState")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsClimbing")]
-	[Calls(Type = typeof(Fatigue), Member = "ComputeHeavyBreathingState")]
 	[Calls(Type = typeof(Time), Member = "get_time")]
-	[CalledBy(Type = typeof(Fatigue), Member = "UpdateHeavyBreathing")]
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(BodyCarry), Member = "HasBody")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	private void MaybePlayHeavyBreathingLoop()
 	{
 	}
 
+	[CalledBy(Type = typeof(Fatigue), Member = "MaybePlayHeavyBreathingLoop")]
 	[CallerCount(Count = 2)]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(Fatigue), Member = "MaybePlayHeavyBreathingLoop")]
-	[CalledBy(Type = typeof(Fatigue), Member = "MaybePlayHeavyBreathingLoop")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(PlayerMovement), Member = "GetModifiedMaxSprintStamina")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private HeavyBreathingState ComputeHeavyBreathingState(HeavyBreathingLevels thresholds)
 	{
 		return default(HeavyBreathingState);
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool HeavyBreathingShouldSuppressVO()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(Fatigue), Member = "Deserialize")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
 	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[Calls(Type = typeof(Fatigue), Member = "UpdateHeavyBreathing")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Fatigue), Member = "MaybeUpdateExhaustedStatusInLog")]
-	[Calls(Type = typeof(Fatigue), Member = "UpdateFatigueStatusOnHUD")]
 	[Calls(Type = typeof(Fatigue), Member = "CalculateFatigueIncrease")]
 	[Calls(Type = typeof(Fatigue), Member = "AddFatigue")]
+	[Calls(Type = typeof(Fatigue), Member = "UpdateHeavyBreathing")]
+	[Calls(Type = typeof(Fatigue), Member = "UpdateFatigueStatusOnHUD")]
+	[Calls(Type = typeof(Fatigue), Member = "MaybeUpdateExhaustedStatusInLog")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void LateUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 3)]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Fatigue), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Fatigue), Member = "Start")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	public string GetFatigueStateString()
 	{
 		return null;
@@ -332,28 +323,28 @@ public class Fatigue : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetNormalizedFatigue()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(EmergencyStim), Member = "ApplyEmergencyStim")]
+	[CalledBy(Type = typeof(EmergencyStim), Member = "ApplyEmergencyStimExitEffects")]
+	[CalledBy(Type = typeof(EnergyBoost), Member = "ApplyEnergyBoost")]
+	[CalledBy(Type = typeof(EnergyBoost), Member = "ApplyEnergyBoostExitEffects")]
 	[CalledBy(Type = typeof(Fatigue), Member = "Update")]
 	[CalledBy(Type = typeof(FatigueBuff), Member = "Apply")]
-	[CalledBy(Type = typeof(EnergyBoost), Member = "ApplyEnergyBoostExitEffects")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ApplyFatigueBuff")]
 	[CalledBy(Type = typeof(BloodLoss), Member = "MaybeApplyDamage")]
+	[CalledBy(Type = typeof(Dysentery), Member = "UpdateDysentery")]
 	[CalledBy(Type = typeof(FoodPoisoning), Member = "UpdateFoodPoisoning")]
 	[CalledBy(Type = typeof(Hypothermia), Member = "UpdateHypothermia")]
 	[CalledBy(Type = typeof(Infection), Member = "UpdateInfection")]
 	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoOnInteractionComplete")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ApplyFatigueBuff")]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdateFatigue")]
-	[CallsUnknownMethods(Count = 13)]
-	[CalledBy(Type = typeof(EnergyBoost), Member = "ApplyEnergyBoost")]
-	[CalledBy(Type = typeof(EmergencyStim), Member = "ApplyEmergencyStimExitEffects")]
-	[CalledBy(Type = typeof(Dysentery), Member = "UpdateDysentery")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsNight")]
-	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 14)]
-	[CalledBy(Type = typeof(EmergencyStim), Member = "ApplyEmergencyStim")]
+	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsNight")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 13)]
 	public void AddFatigue(float fatigueValue)
 	{
 	}
@@ -361,14 +352,14 @@ public class Fatigue : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsExhausted()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public float GetCurrentTotalFatigueBurnPerHour()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -376,9 +367,9 @@ public class Fatigue : MonoBehaviour
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void CalculateTotalFatigueBurnPerHour()
 	{
@@ -391,100 +382,94 @@ public class Fatigue : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	private void DisplayFatigueOnHUDForTime(float seconds)
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private string GetFatigueTextForHud()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 5)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Mathf), Member = "CeilToInt")]
 	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	private void MaybeUpdateFatigueStatusLabel()
 	{
 	}
 
-	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
-	[CallsUnknownMethods(Count = 37)]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CallsDeduplicatedMethods(Count = 16)]
 	[CalledBy(Type = typeof(Fatigue), Member = "Update")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(Time), Member = "get_deltaTime")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 37)]
 	private void UpdateFatigueStatusOnHUD()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Condition), Member = "CanPlayConditionVO")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private bool ShouldPlayFatigueVoiceOver()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(Fatigue), Member = "UpdateHeavyBreathing")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Condition), Member = "CanPlayConditionVO")]
 	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Condition), Member = "CanPlayConditionVO")]
+	[CallsUnknownMethods(Count = 8)]
 	private void MaybePlayFatigueVoiceOver()
 	{
 	}
 
 	[CalledBy(Type = typeof(Fatigue), Member = "Update")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private void MaybeUpdateExhaustedStatusInLog()
 	{
 	}
 
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
-	[Calls(Type = typeof(Encumber), Member = "GetMaxCarryCapacityKG")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Fatigue), Member = "Update")]
-	[CallsUnknownMethods(Count = 22)]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsWalking")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSleeping")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsWalking")]
+	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[Calls(Type = typeof(Encumber), Member = "GetMaxCarryCapacityKG")]
+	[Calls(Type = typeof(ExperienceModeManager), Member = "GetCurrentExperienceMode")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 22)]
 	private float CalculateFatigueIncrease(float realtimeSeconds)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public Fatigue()
 	{
 	}

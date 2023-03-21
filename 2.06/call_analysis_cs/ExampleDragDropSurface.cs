@@ -5,8 +5,8 @@ public class ExampleDragDropSurface : MonoBehaviour
 {
 	public bool rotatePlacedObject;
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	public ExampleDragDropSurface()
 	{
 	}

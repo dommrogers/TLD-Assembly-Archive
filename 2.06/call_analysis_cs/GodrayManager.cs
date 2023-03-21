@@ -22,34 +22,31 @@ public class GodrayManager : MonoBehaviour
 
 		private float m_RotationSpeed;
 
-		[CallsUnknownMethods(Count = 3)]
 		[CalledBy(Type = typeof(GodrayManager), Member = "Start")]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 3)]
 		public GodRayObject(Transform thisTransform, GameObject go)
 		{
 		}
 
+		[CalledBy(Type = typeof(GodRayObject), Member = "Update")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 5)]
-		[Calls(Type = typeof(Random), Member = "Range")]
-		[Calls(Type = typeof(Random), Member = "Range")]
 		[Calls(Type = typeof(Random), Member = "Range")]
 		[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-		[Calls(Type = typeof(Random), Member = "Range")]
-		[Calls(Type = typeof(Random), Member = "Range")]
-		[CalledBy(Type = typeof(GodRayObject), Member = "Update")]
+		[CallsDeduplicatedMethods(Count = 5)]
 		[CallsUnknownMethods(Count = 6)]
 		private void NewRay(GodrayManager manager)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 13)]
 		[CalledBy(Type = typeof(GodrayManager), Member = "Update")]
-		[Calls(Type = typeof(Transform), Member = "get_forward")]
 		[CallerCount(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 9)]
 		[Calls(Type = typeof(GodRayObject), Member = "NewRay")]
+		[Calls(Type = typeof(Transform), Member = "get_forward")]
+		[CallsDeduplicatedMethods(Count = 9)]
+		[CallsUnknownMethods(Count = 13)]
 		public void Update(GodrayManager manager, Quaternion sunRotation, Color rayColor, Vector3 playerPosition)
 		{
 		}
@@ -92,29 +89,25 @@ public class GodrayManager : MonoBehaviour
 	private Quaternion m_LightRotationOffset;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(GodRayObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 15)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[CallsUnknownMethods(Count = 21)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(GodRayObject), Member = "Update")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsNight")]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsNight")]
 	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
+	[Calls(Type = typeof(GodRayObject), Member = "Update")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 21)]
 	private void Update()
 	{
 	}
@@ -130,9 +123,9 @@ public class GodrayManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 22)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 22)]
 	public GodrayManager()
 	{
 	}

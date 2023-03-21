@@ -11,8 +11,8 @@ public class VistaLocationData
 
 	public float m_Time;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public VistaLocationData()
 	{
 	}

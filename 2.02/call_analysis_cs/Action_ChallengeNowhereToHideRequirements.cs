@@ -33,27 +33,26 @@ public class Action_ChallengeNowhereToHideRequirements : ActionTask<GraphOwner>
 
 	private string m_RequirementString;
 
-	[CallsUnknownMethods(Count = 33)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Array), Member = "Copy")]
 	[Calls(Type = typeof(Panel_Log), Member = "UpdateMissionInfo")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[Calls(Type = typeof(GraphOwner), Member = "SendEvent")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 31)]
 	protected override void OnUpdate()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 26)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 26)]
 	public Action_ChallengeNowhereToHideRequirements()
 	{
 		((ActionTask<>)(object)this)._002Ector();

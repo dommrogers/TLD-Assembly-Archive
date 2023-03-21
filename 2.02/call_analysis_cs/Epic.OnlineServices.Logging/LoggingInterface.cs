@@ -7,8 +7,8 @@ namespace Epic.OnlineServices.Logging;
 public static class LoggingInterface
 {
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Helper), Member = "AddStaticCallback")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 9)]
 	public static Result SetCallback(LogMessageFunc callback)
 	{
@@ -23,10 +23,11 @@ public static class LoggingInterface
 		return default(Result);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[MonoPInvokeCallback(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryGetStaticCallback")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	internal static void LogMessageFuncInternalImplementation(IntPtr message)
 	{
 	}

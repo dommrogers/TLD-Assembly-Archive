@@ -28,8 +28,8 @@ public class MissionMapMarkerInfo : MonoBehaviour
 	public bool m_IsSurveyed;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public MissionMapMarkerInfo()
 	{
 	}

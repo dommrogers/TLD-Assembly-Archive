@@ -33,11 +33,11 @@ public abstract class AchievementPlatformBase : IAchievementPlatform
 		[CallerCount(Count = 3)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		protected set
 		{
 		}
@@ -45,34 +45,34 @@ public abstract class AchievementPlatformBase : IAchievementPlatform
 
 	public virtual bool DidAchievementsChangeThisUpdate
 	{
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(Array), Member = "GetEnumerator")]
-	[CallsUnknownMethods(Count = 31)]
+	[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "Initialize")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 11)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Enum), Member = "GetValues")]
-	[CalledBy(Type = typeof(SteamAchievementPlatform), Member = "Initialize")]
+	[Calls(Type = typeof(Array), Member = "GetEnumerator")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 31)]
 	public virtual void Initialize()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public virtual void Update()
 	{
 	}
@@ -83,16 +83,14 @@ public abstract class AchievementPlatformBase : IAchievementPlatform
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	public abstract void Unlock(Achievement achievement);
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	public virtual bool IsUnlocked(Achievement achievement)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -113,15 +111,15 @@ public abstract class AchievementPlatformBase : IAchievementPlatform
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public virtual void ListAllUnlockedAchievements()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 3)]
 	protected AchievementInfo FindAchievementInfoByOptionalData(int optionalID)
 	{
 		return null;

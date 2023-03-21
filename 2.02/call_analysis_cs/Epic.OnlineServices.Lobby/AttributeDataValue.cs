@@ -23,11 +23,11 @@ public class AttributeDataValue : ISettable
 		{
 			return null;
 		}
-		[CallerCount(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(AttributeDataValue), Member = "op_Implicit")]
 		[CalledBy(Type = typeof(AttributeDataValue), Member = "Set")]
 		[CalledBy(Type = typeof(AttributeDataValue), Member = "Set")]
+		[CallerCount(Count = 3)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -36,18 +36,18 @@ public class AttributeDataValue : ISettable
 
 	public double? AsDouble
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(AttributeDataValue), Member = "op_Implicit")]
 		[CalledBy(Type = typeof(AttributeDataValue), Member = "Set")]
 		[CalledBy(Type = typeof(AttributeDataValue), Member = "Set")]
+		[CallerCount(Count = 3)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 1)]
 		set
 		{
@@ -63,12 +63,12 @@ public class AttributeDataValue : ISettable
 		{
 			return null;
 		}
-		[CalledBy(Type = typeof(AttributeDataValue), Member = "Set")]
-		[CalledBy(Type = typeof(AttributeDataValue), Member = "Set")]
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 3)]
 		[CalledBy(Type = typeof(AttributeDataValue), Member = "op_Implicit")]
+		[CalledBy(Type = typeof(AttributeDataValue), Member = "Set")]
+		[CalledBy(Type = typeof(AttributeDataValue), Member = "Set")]
+		[CallerCount(Count = 3)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -77,16 +77,18 @@ public class AttributeDataValue : ISettable
 	public string AsUtf8
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 3)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CalledBy(Type = typeof(AttributeDataValue), Member = "op_Implicit")]
 		[CalledBy(Type = typeof(AttributeDataValue), Member = "Set")]
 		[CalledBy(Type = typeof(AttributeDataValue), Member = "Set")]
+		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -107,18 +109,18 @@ public class AttributeDataValue : ISettable
 		}
 	}
 
-	[CallsUnknownMethods(Count = 8)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsInt64")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 8)]
 	public static implicit operator AttributeDataValue(long? value)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsDouble")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public static implicit operator AttributeDataValue(double? value)
 	{
@@ -126,55 +128,55 @@ public class AttributeDataValue : ISettable
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsBool")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public static implicit operator AttributeDataValue(bool? value)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsUtf8")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public static implicit operator AttributeDataValue(string value)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(AttributeDataValueInternal), Member = "get_AsUtf8")]
-	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsBool")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsUtf8")]
-	[Calls(Type = typeof(AttributeDataValueInternal), Member = "get_AsBool")]
-	[Calls(Type = typeof(AttributeDataValueInternal), Member = "get_AsInt64")]
-	[Calls(Type = typeof(AttributeDataValueInternal), Member = "get_AsDouble")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsDouble")]
+	[Calls(Type = typeof(AttributeDataValueInternal), Member = "get_AsInt64")]
 	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsInt64")]
+	[Calls(Type = typeof(AttributeDataValueInternal), Member = "get_AsDouble")]
+	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsDouble")]
+	[Calls(Type = typeof(AttributeDataValueInternal), Member = "get_AsBool")]
+	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsBool")]
+	[Calls(Type = typeof(AttributeDataValueInternal), Member = "get_AsUtf8")]
+	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsUtf8")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	internal void Set(AttributeDataValueInternal? other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(AttributeDataValueInternal), Member = "get_AsUtf8")]
-	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsBool")]
-	[Calls(Type = typeof(AttributeDataValueInternal), Member = "get_AsBool")]
-	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsDouble")]
-	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsUtf8")]
-	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsInt64")]
-	[Calls(Type = typeof(AttributeDataValueInternal), Member = "get_AsInt64")]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(AttributeDataValueInternal), Member = "get_AsDouble")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AttributeDataValueInternal), Member = "get_AsInt64")]
+	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsInt64")]
+	[Calls(Type = typeof(AttributeDataValueInternal), Member = "get_AsDouble")]
+	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsDouble")]
+	[Calls(Type = typeof(AttributeDataValueInternal), Member = "get_AsBool")]
+	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsBool")]
+	[Calls(Type = typeof(AttributeDataValueInternal), Member = "get_AsUtf8")]
+	[Calls(Type = typeof(AttributeDataValue), Member = "set_AsUtf8")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public AttributeDataValue()
 	{
 	}

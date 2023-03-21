@@ -8,16 +8,16 @@ public class CallbackAttribute : DrawerAttribute
 
 	public override int priority
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 279)]
+	[CallerCount(Count = 282)]
 	public CallbackAttribute(string methodName)
 	{
 	}

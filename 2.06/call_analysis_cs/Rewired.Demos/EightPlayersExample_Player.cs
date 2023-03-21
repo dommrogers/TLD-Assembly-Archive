@@ -26,7 +26,7 @@ public class EightPlayersExample_Player : MonoBehaviour
 	private bool initialized;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	private void Awake()
 	{
 	}
@@ -45,19 +45,18 @@ public class EightPlayersExample_Player : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Player), Member = "GetAxis")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
-	[Calls(Type = typeof(Player), Member = "GetAxis")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Player), Member = "GetAxis")]
+	[Calls(Type = typeof(Player), Member = "GetButtonDown")]
+	[CallsUnknownMethods(Count = 1)]
 	private void GetInput()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(Transform), Member = "get_right")]
-	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 11)]
 	private void ProcessInput()
 	{

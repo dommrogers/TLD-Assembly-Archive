@@ -26,10 +26,10 @@ public class MultiplePermissionsCheckResult : IWrappedObject, IDisposable
 
 	public string XboxUserId
 	{
-		[CallsUnknownMethods(Count = 7)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -55,10 +55,10 @@ public class MultiplePermissionsCheckResult : IWrappedObject, IDisposable
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 52)]
+	[CallerCount(Count = 59)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]

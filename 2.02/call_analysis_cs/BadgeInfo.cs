@@ -14,8 +14,8 @@ public class BadgeInfo
 
 	public string m_Benefit;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public BadgeInfo()
 	{
 	}

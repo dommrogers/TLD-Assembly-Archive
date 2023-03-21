@@ -15,8 +15,8 @@ internal struct TransferDeviceIdAccountCallbackInfoInternal : ICallbackInfoInter
 
 	public Result ResultCode
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(Result);
@@ -25,11 +25,11 @@ internal struct TransferDeviceIdAccountCallbackInfoInternal : ICallbackInfoInter
 
 	public object ClientData
 	{
+		[CalledBy(Type = typeof(TransferDeviceIdAccountCallbackInfo), Member = "Set")]
+		[CalledBy(Type = typeof(TransferDeviceIdAccountCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CalledBy(Type = typeof(TransferDeviceIdAccountCallbackInfo), Member = "Set")]
-		[CalledBy(Type = typeof(TransferDeviceIdAccountCallbackInfo), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -42,16 +42,17 @@ internal struct TransferDeviceIdAccountCallbackInfoInternal : ICallbackInfoInter
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(TransferDeviceIdAccountCallbackInfo), Member = "Set")]
+		[CalledBy(Type = typeof(TransferDeviceIdAccountCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(TransferDeviceIdAccountCallbackInfo), Member = "Set")]
-		[CalledBy(Type = typeof(TransferDeviceIdAccountCallbackInfo), Member = "Set")]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;

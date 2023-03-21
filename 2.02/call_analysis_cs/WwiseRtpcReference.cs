@@ -6,8 +6,8 @@ public class WwiseRtpcReference : WwiseObjectReference
 
 	public override WwiseObjectType WwiseObjectType
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return default(WwiseObjectType);

@@ -31,18 +31,17 @@ public class StudioLightingRig : MonoBehaviour
 
 	private Vector3 m_PlayerTarget;
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 10)]
 	[Calls(Type = typeof(Transform), Member = "LookAt")]
 	[Calls(Type = typeof(Transform), Member = "get_localEulerAngles")]
-	[Calls(Type = typeof(Transform), Member = "get_localEulerAngles")]
+	[CallsDeduplicatedMethods(Count = 10)]
 	[CallsUnknownMethods(Count = 11)]
 	private void LateUpdate()
 	{

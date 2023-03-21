@@ -7,9 +7,9 @@ public class ConfigOverride : Config
 {
 	public const string kAssetName = "VLBConfigOverride";
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public ConfigOverride()
 	{
 	}

@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Reflection;
 using Cpp2ILInjected.CallAnalysis;
 
@@ -18,8 +19,8 @@ public class SerializedConstructorInfo : SerializedMethodBaseInfo
 
 		public static Func<Type, bool> _003C_003E9__5_1;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec()
 		{
 		}
@@ -43,7 +44,7 @@ public class SerializedConstructorInfo : SerializedMethodBaseInfo
 		[CallerCount(Count = 0)]
 		internal bool _003COnAfterDeserialize_003Eb__5_1(Type t)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -57,30 +58,35 @@ public class SerializedConstructorInfo : SerializedMethodBaseInfo
 	[NonSerialized]
 	private bool _hasChanged;
 
-	[Calls(Type = typeof(string), Member = "Join")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ReflectionTools), Member = "RTReflectedOrDeclaredType")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[Calls(Type = typeof(string), Member = "Join")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 6)]
 	public override void OnBeforeSerialize()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(string), Member = "SplitInternal")]
 	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
 	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(Type = typeof(Enumerable), Member = "ToArray")]
+	[Calls(Type = typeof(Enumerable), Member = "All")]
 	[Calls(Type = typeof(ReflectionTools), Member = "RTGetConstructors")]
-	[Calls(Type = typeof(ReflectionTools), Member = "RTGetConstructors")]
-	[CallsUnknownMethods(Count = 15)]
+	[Calls(Type = typeof(Enumerable), Member = "FirstOrDefault")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 12)]
 	public override void OnAfterDeserialize()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public SerializedConstructorInfo()
 	{
 	}
@@ -91,14 +97,14 @@ public class SerializedConstructorInfo : SerializedMethodBaseInfo
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 23)]
+	[CallerCount(Count = 27)]
 	public ConstructorInfo Get()
 	{
 		return null;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 23)]
+	[CallerCount(Count = 27)]
 	public override MethodBase GetBase()
 	{
 		return null;
@@ -108,14 +114,13 @@ public class SerializedConstructorInfo : SerializedMethodBaseInfo
 	[CallerCount(Count = 0)]
 	public override bool HasChanged()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[CallsUnknownMethods(Count = 1)]
 	public override string GetMethodString()
 	{

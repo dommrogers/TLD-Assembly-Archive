@@ -9,47 +9,49 @@ public static class GearNames
 
 	public const string PREFIX = "gear_";
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "Initialize")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public static List<string> GetComponentsWithNames()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_gear_add_type")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static string[] GetWithComponent(string componentName)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "StoreAutoCompleteGearNames")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "AddCustomGearName")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_gear_add")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "AddCustomGearName")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "StoreAutoCompleteGearNames")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(string), Member = "ToLower")]
 	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static string GetPrefixedName(string gearName)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(string), Member = "Substring")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_gear_add")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "AddCustomGearName")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "StoreAutoCompleteGearNames")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public static string GetBaseName(string gearName)
 	{
 		return null;

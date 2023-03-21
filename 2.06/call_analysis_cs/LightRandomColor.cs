@@ -20,7 +20,7 @@ public class LightRandomColor : MonoBehaviour
 	private float m_CurrentTime;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Random), Member = "ColorHSV")]
 	[CallsUnknownMethods(Count = 1)]
 	private void Start()
@@ -28,8 +28,8 @@ public class LightRandomColor : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Random), Member = "ColorHSV")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	private void Update()
 	{

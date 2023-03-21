@@ -21,31 +21,31 @@ public class ActiveRequest : Request
 	[CallerCount(Count = 0)]
 	public bool IsPlaying()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Request), Member = "Copy")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Start(Request original, uint playbackID)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerVoice), Member = "HandleNextRequest")]
-	[CalledBy(Type = typeof(PlayerVoice), Member = "CompleteActiveRequest")]
+	[CalledBy(Type = typeof(NPCVoice), Member = "Play")]
 	[CalledBy(Type = typeof(NPCVoice), Member = "CompleteActiveRequest")]
 	[CalledBy(Type = typeof(NPCVoice), Member = "HandleNextRequest")]
+	[CalledBy(Type = typeof(PlayerVoice), Member = "CompleteActiveRequest")]
+	[CalledBy(Type = typeof(PlayerVoice), Member = "HandleNextRequest")]
+	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(NPCVoice), Member = "Play")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Stop()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ActiveRequest()
 	{
 	}

@@ -7,7 +7,7 @@ public class qb_TemplateSignature
 	public string directory;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public qb_TemplateSignature()
 	{
 	}

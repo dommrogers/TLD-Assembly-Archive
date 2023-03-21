@@ -15,11 +15,11 @@ internal struct AcceptInviteOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(AcceptInviteOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(AcceptInviteOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(AcceptInviteOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(AcceptInviteOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -27,34 +27,34 @@ internal struct AcceptInviteOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId TargetUserId
 	{
+		[CalledBy(Type = typeof(AcceptInviteOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(AcceptInviteOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(AcceptInviteOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(AcceptInviteOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(AcceptInviteOptionsInternal), Member = "set_TargetUserId")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AcceptInviteOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(AcceptInviteOptionsInternal), Member = "set_TargetUserId")]
 	public void Set(AcceptInviteOptions other)
 	{
 	}
 
+	[CalledBy(Type = typeof(FriendsInterface), Member = "AcceptInvite")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AcceptInviteOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(AcceptInviteOptionsInternal), Member = "set_TargetUserId")]
-	[CalledBy(Type = typeof(FriendsInterface), Member = "AcceptInvite")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

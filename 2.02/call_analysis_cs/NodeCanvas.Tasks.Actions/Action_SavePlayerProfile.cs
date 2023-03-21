@@ -7,9 +7,9 @@ public class Action_SavePlayerProfile : ActionTask
 {
 	public bool m_SaveFeats;
 
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SaveGameSystem), Member = "SaveProfile")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	protected override void OnExecute()
 	{

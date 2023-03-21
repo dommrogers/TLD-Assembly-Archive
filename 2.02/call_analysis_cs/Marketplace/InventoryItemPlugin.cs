@@ -12,8 +12,8 @@ public class InventoryItemPlugin
 	public static extern uint InventoryItem_ConsumableBalance(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr InventoryItem_ConsumableUrl(IntPtr self);
 
 	[PreserveSig]
@@ -47,8 +47,8 @@ public class InventoryItemPlugin
 	public static extern uint InventoryItem_InventoryItemState(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern uint InventoryItem_IsTrialEntitlement(IntPtr self);
 
 	[PreserveSig]
@@ -82,17 +82,17 @@ public class InventoryItemPlugin
 	public static extern long InventoryItem_TrialTimeRemaining(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern IntPtr InventoryItem_Url(IntPtr self);
 
 	[PreserveSig]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public static extern void InventoryItem_Dispose(IntPtr self);
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public InventoryItemPlugin()
 	{
 	}

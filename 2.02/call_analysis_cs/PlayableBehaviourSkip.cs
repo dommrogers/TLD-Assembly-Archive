@@ -21,15 +21,14 @@ public class PlayableBehaviourSkip : PlayableBehaviour
 
 	public static bool s_ForceSkipEnabled;
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(TLD_TimelineDirector), Member = "SetNewTime")]
-	[Calls(Type = typeof(PlayableBehaviourSkip), Member = "GetNextEndOrStartTime")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(InputManager), Member = "HasPressedSkip")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(TLD_TimelineDirector), Member = "GetCurrentTimelineTime")]
-	[Calls(Type = typeof(InputManager), Member = "HasPressedSkip")]
+	[Calls(Type = typeof(PlayableBehaviourSkip), Member = "GetNextEndOrStartTime")]
+	[Calls(Type = typeof(TLD_TimelineDirector), Member = "SetNewTime")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 11)]
 	public override void ProcessFrame(Playable playable, FrameData info, object playerData)
 	{
 	}
@@ -38,33 +37,33 @@ public class PlayableBehaviourSkip : PlayableBehaviour
 	[Calls(Type = typeof(PlayableBehaviourSkip), Member = "GetNextEndOrStartTime")]
 	private float GetNextSkipTime(float currentTimeSeconds)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(PlayableBehaviourSkip), Member = "CanOverrideValue")]
-	[Calls(Type = typeof(PlayableBehaviourSkip), Member = "CanOverrideValue")]
 	[CalledBy(Type = typeof(PlayableBehaviourSkip), Member = "ProcessFrame")]
 	[CalledBy(Type = typeof(PlayableBehaviourSkip), Member = "GetNextSkipTime")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(PlayableBehaviourSkip), Member = "CanOverrideValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public float GetNextEndOrStartTime(float currentTimeSeconds)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(PlayableBehaviourSkip), Member = "GetNextEndOrStartTime")]
-	[CallsUnknownMethods(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(PlayableBehaviourSkip), Member = "GetNextEndOrStartTime")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	private bool CanOverrideValue(TimelineClip clip, SkipInfo skipInfo, float time)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public PlayableBehaviourSkip()
 	{

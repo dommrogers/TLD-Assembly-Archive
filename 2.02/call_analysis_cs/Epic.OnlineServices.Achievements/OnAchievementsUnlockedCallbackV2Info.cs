@@ -18,14 +18,14 @@ public class OnAchievementsUnlockedCallbackV2Info : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		private set
 		{
 		}
@@ -33,16 +33,16 @@ public class OnAchievementsUnlockedCallbackV2Info : ICallbackInfo, ISettable
 
 	public ProductUserId UserId
 	{
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 29)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 71)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -50,16 +50,16 @@ public class OnAchievementsUnlockedCallbackV2Info : ICallbackInfo, ISettable
 
 	public string AchievementId
 	{
-		[CallerCount(Count = 5)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -89,28 +89,28 @@ public class OnAchievementsUnlockedCallbackV2Info : ICallbackInfo, ISettable
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(OnAchievementsUnlockedCallbackV2Info), Member = "Set")]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-	[Calls(Type = typeof(OnAchievementsUnlockedCallbackV2InfoInternal), Member = "get_AchievementId")]
-	[Calls(Type = typeof(OnAchievementsUnlockedCallbackV2InfoInternal), Member = "get_ClientData")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(OnAchievementsUnlockedCallbackV2InfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(OnAchievementsUnlockedCallbackV2InfoInternal), Member = "get_UserId")]
+	[Calls(Type = typeof(OnAchievementsUnlockedCallbackV2InfoInternal), Member = "get_AchievementId")]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	internal void Set(OnAchievementsUnlockedCallbackV2InfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(OnAchievementsUnlockedCallbackV2Info), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public OnAchievementsUnlockedCallbackV2Info()
 	{
 	}

@@ -25,14 +25,14 @@ public abstract class UIRect : MonoBehaviour
 		{
 		}
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public AnchorPoint(float relative)
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		public void Set(float relative, float absolute)
 		{
 		}
@@ -55,52 +55,38 @@ public abstract class UIRect : MonoBehaviour
 		{
 		}
 
-		[CallsUnknownMethods(Count = 5)]
-		[CalledBy(Type = typeof(UIPanel), Member = "SetRect")]
-		[CalledBy(Type = typeof(UIPanel), Member = "SetRect")]
-		[CalledBy(Type = typeof(UIWidget), Member = "SetRect")]
-		[CalledBy(Type = typeof(UIWidget), Member = "SetRect")]
 		[CalledBy(Type = typeof(NGUIMath), Member = "AdjustWidget")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[CallsDeduplicatedMethods(Count = 3)]
+		[CalledBy(Type = typeof(UIWidget), Member = "SetRect")]
+		[CalledBy(Type = typeof(UIPanel), Member = "SetRect")]
 		[CallerCount(Count = 6)]
-		[CalledBy(Type = typeof(NGUIMath), Member = "AdjustWidget")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 5)]
 		public void SetHorizontal(Transform parent, float localPos)
 		{
 		}
 
-		[CalledBy(Type = typeof(UIWidget), Member = "SetRect")]
-		[CallsUnknownMethods(Count = 5)]
-		[CalledBy(Type = typeof(UIPanel), Member = "SetRect")]
-		[CalledBy(Type = typeof(UIPanel), Member = "SetRect")]
-		[CalledBy(Type = typeof(UIWidget), Member = "SetRect")]
 		[CalledBy(Type = typeof(NGUIMath), Member = "AdjustWidget")]
-		[CalledBy(Type = typeof(NGUIMath), Member = "AdjustWidget")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[CallsDeduplicatedMethods(Count = 3)]
+		[CalledBy(Type = typeof(UIWidget), Member = "SetRect")]
+		[CalledBy(Type = typeof(UIPanel), Member = "SetRect")]
 		[CallerCount(Count = 6)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsDeduplicatedMethods(Count = 3)]
+		[CallsUnknownMethods(Count = 5)]
 		public void SetVertical(Transform parent, float localPos)
 		{
 		}
 
-		[CalledBy(Type = typeof(UIPanel), Member = "OnAnchor")]
-		[CalledBy(Type = typeof(UIPanel), Member = "OnAnchor")]
-		[CalledBy(Type = typeof(UIPanel), Member = "OnAnchor")]
-		[CalledBy(Type = typeof(UIPanel), Member = "OnAnchor")]
-		[CalledBy(Type = typeof(UIPanel), Member = "OnAnchor")]
 		[CalledBy(Type = typeof(UIWidget), Member = "OnAnchor")]
-		[CalledBy(Type = typeof(UIWidget), Member = "OnAnchor")]
-		[CalledBy(Type = typeof(UIWidget), Member = "OnAnchor")]
-		[CalledBy(Type = typeof(UIWidget), Member = "OnAnchor")]
-		[Calls(Type = typeof(NGUITools), Member = "GetSides")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CallsDeduplicatedMethods(Count = 4)]
+		[CalledBy(Type = typeof(UIPanel), Member = "OnAnchor")]
 		[CallerCount(Count = 10)]
-		[CalledBy(Type = typeof(UIWidget), Member = "OnAnchor")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+		[Calls(Type = typeof(NGUITools), Member = "GetSides")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 3)]
 		public Vector3[] GetSides(Transform relativeTo)
 		{
@@ -165,21 +151,20 @@ public abstract class UIRect : MonoBehaviour
 
 	public GameObject cachedGameObject
 	{
+		[CalledBy(Type = typeof(UICenterOnChild), Member = "CenterOn")]
+		[CalledBy(Type = typeof(UICenterOnClick), Member = "OnClick")]
+		[CalledBy(Type = typeof(NGUITools), Member = "CalculateNextDepth")]
+		[CalledBy(Type = typeof(NGUITools), Member = "CreateUI")]
+		[CalledBy(Type = typeof(UIDrawCall), Member = "Create")]
 		[CalledBy(Type = typeof(UIRect), Member = "ResetAnchors")]
 		[CalledBy(Type = typeof(UIWidget), Member = "CreatePanel")]
 		[CalledBy(Type = typeof(UIWidget), Member = "ParentHasChanged")]
 		[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
-		[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
 		[CalledBy(Type = typeof(UIPanel), Member = "UpdateLayers")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(UIDrawCall), Member = "Create")]
-		[CalledBy(Type = typeof(NGUITools), Member = "CalculateNextDepth")]
-		[CalledBy(Type = typeof(UICenterOnClick), Member = "OnClick")]
-		[CalledBy(Type = typeof(UICenterOnChild), Member = "CenterOn")]
-		[CalledBy(Type = typeof(NGUITools), Member = "CreateUI")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 11)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -188,10 +173,10 @@ public abstract class UIRect : MonoBehaviour
 
 	public Transform cachedTransform
 	{
-		[CallsUnknownMethods(Count = 1)]
+		[CallerCount(Count = 83)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 83)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -210,65 +195,60 @@ public abstract class UIRect : MonoBehaviour
 
 	public bool isFullyAnchored
 	{
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public virtual bool isAnchoredHorizontally
 	{
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public virtual bool isAnchoredVertically
 	{
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public virtual bool canBeAnchored
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public UIRect parent
 	{
-		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(UIWidget), Member = "UpdateFinalAlpha")]
-		[CallerCount(Count = 7)]
-		[CalledBy(Type = typeof(UIWidget), Member = "CalculateCumulativeAlpha")]
-		[CalledBy(Type = typeof(UIPanel), Member = "CalculateFinalAlpha")]
-		[CalledBy(Type = typeof(UIPanel), Member = "CalculateFinalAlpha")]
-		[CalledBy(Type = typeof(UIPanel), Member = "UpdateLayers")]
-		[CallsUnknownMethods(Count = 2)]
 		[CalledBy(Type = typeof(UIRect), Member = "get_root")]
 		[CalledBy(Type = typeof(UIRect), Member = "OnInit")]
+		[CalledBy(Type = typeof(UIWidget), Member = "UpdateFinalAlpha")]
+		[CalledBy(Type = typeof(UIWidget), Member = "CalculateCumulativeAlpha")]
+		[CalledBy(Type = typeof(UIPanel), Member = "CalculateFinalAlpha")]
+		[CalledBy(Type = typeof(UIPanel), Member = "UpdateLayers")]
+		[CallerCount(Count = 7)]
+		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+		[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
@@ -278,25 +258,21 @@ public abstract class UIRect : MonoBehaviour
 	public UIRoot root
 	{
 		[CalledBy(Type = typeof(BMSymbol), Member = "SetSpriteLocation")]
-		[CalledBy(Type = typeof(BMSymbol), Member = "SetSpriteLocation")]
-		[CalledBy(Type = typeof(UIPanel), Member = "GetWindowSize")]
 		[CalledBy(Type = typeof(UILabel), Member = "ProcessText")]
-		[CalledBy(Type = typeof(BMSymbol), Member = "SetSpriteLocation")]
 		[CalledBy(Type = typeof(UILabel), Member = "UpdateNGUIText")]
 		[CalledBy(Type = typeof(UILabel), Member = "ClearDynamicSymbolSprites")]
 		[CalledBy(Type = typeof(UIPanel), Member = "get_drawCallOffset")]
-		[CalledBy(Type = typeof(UIPanel), Member = "get_drawCallOffset")]
 		[CalledBy(Type = typeof(UIPanel), Member = "ConstrainTargetToBounds")]
+		[CalledBy(Type = typeof(UIPanel), Member = "GetWindowSize")]
 		[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "UpdateMenuNavigation")]
-		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UIRect), Member = "get_parent")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 14)]
+		[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
 		[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "ApplyCommandLineParameters")]
-		[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
+		[CallerCount(Count = 14)]
+		[Calls(Type = typeof(UIRect), Member = "get_parent")]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
+		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+		[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -305,85 +281,79 @@ public abstract class UIRect : MonoBehaviour
 
 	public bool isAnchored
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[CalledBy(Type = typeof(NGUIMath), Member = "MoveRect")]
+		[CalledBy(Type = typeof(NGUIMath), Member = "AdjustWidget")]
+		[CalledBy(Type = typeof(UIRect), Member = "UpdateAnchors")]
+		[CalledBy(Type = typeof(UIRect), Member = "SetAnchor")]
+		[CalledBy(Type = typeof(UIRect), Member = "SetAnchor")]
+		[CalledBy(Type = typeof(UIRect), Member = "SetAnchor")]
+		[CalledBy(Type = typeof(UIRect), Member = "ResetAndUpdateAnchors")]
+		[CalledBy(Type = typeof(UIWidget), Member = "SetRect")]
+		[CalledBy(Type = typeof(TweenPosition), Member = "set_value")]
+		[CalledBy(Type = typeof(UIPanel), Member = "SetRect")]
+		[CalledBy(Type = typeof(ButtonPrompt), Member = "ShowPromptForKey")]
+		[CalledBy(Type = typeof(LogListItem), Member = "SetText")]
+		[CalledBy(Type = typeof(LogListItem), Member = "SetHasNotes")]
+		[CalledBy(Type = typeof(Panel_BreakDown), Member = "UpdateCurrentCaloriesLabel")]
+		[CalledBy(Type = typeof(Panel_HUD), Member = "SetHoverText")]
+		[CalledBy(Type = typeof(Panel_Log), Member = "UpdateExamineCollectible")]
+		[CalledBy(Type = typeof(Panel_MainMenu), Member = "UpdateFeatActionButton")]
+		[CalledBy(Type = typeof(Panel_TutorialPopup), Member = "ShowCurrentTutorialPopup")]
+		[CalledBy(Type = typeof(PlayerManager), Member = "InitLabelsForGear")]
 		[CallerCount(Count = 25)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	public abstract float alpha
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101224)]
-		get;
-		[CallerCount(Count = 101224)]
-		[DeduplicatedMethod]
-		set;
-	}
+	public abstract float alpha { get; set; }
 
-	public abstract Vector3[] localCorners
-	{
-		[CallerCount(Count = 101224)]
-		[DeduplicatedMethod]
-		get;
-	}
+	public abstract Vector3[] localCorners { get; }
 
-	public abstract Vector3[] worldCorners
-	{
-		[CallerCount(Count = 101224)]
-		[DeduplicatedMethod]
-		get;
-	}
+	public abstract Vector3[] worldCorners { get; }
 
 	protected float cameraRayDistance
 	{
+		[CalledBy(Type = typeof(UIRect), Member = "GetSides")]
 		[CalledBy(Type = typeof(UIPanel), Member = "get_worldCorners")]
+		[CalledBy(Type = typeof(UIPanel), Member = "GetSides")]
+		[CallerCount(Count = 3)]
+		[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
 		[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
 		[Calls(Type = typeof(Plane), Member = ".ctor")]
-		[Calls(Type = typeof(Quaternion), Member = "op_Multiply")]
-		[CalledBy(Type = typeof(UIRect), Member = "GetSides")]
-		[CalledBy(Type = typeof(UIPanel), Member = "GetSides")]
-		[CallsUnknownMethods(Count = 11)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-		[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
-		[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-		[CallerCount(Count = 3)]
 		[CallsDeduplicatedMethods(Count = 8)]
+		[CallsUnknownMethods(Count = 11)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
-	[CallerCount(Count = 101224)]
-	[DeduplicatedMethod]
 	public abstract float CalculateFinalAlpha(int frameID);
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(UIWidget), Member = "Invalidate")]
 	[CalledBy(Type = typeof(UIPanel), Member = "Invalidate")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public virtual void Invalidate(bool includeChildren)
 	{
 	}
 
 	[CalledBy(Type = typeof(UIPanel), Member = "GetSides")]
-	[Calls(Type = typeof(NGUITools), Member = "GetSides")]
-	[Calls(Type = typeof(UIRect), Member = "get_cameraRayDistance")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
+	[Calls(Type = typeof(UIRect), Member = "get_cameraRayDistance")]
+	[Calls(Type = typeof(NGUITools), Member = "GetSides")]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
-	[CallerCount(Count = 1)]
 	public virtual Vector3[] GetSides(Transform relativeTo)
 	{
 		return null;
@@ -391,22 +361,13 @@ public abstract class UIRect : MonoBehaviour
 
 	[CalledBy(Type = typeof(UIWidget), Member = "OnAnchor")]
 	[CalledBy(Type = typeof(UIPanel), Member = "OnAnchor")]
-	[CalledBy(Type = typeof(UIWidget), Member = "OnAnchor")]
-	[CalledBy(Type = typeof(UIWidget), Member = "OnAnchor")]
-	[CalledBy(Type = typeof(UIWidget), Member = "OnAnchor")]
-	[CalledBy(Type = typeof(UIWidget), Member = "OnAnchor")]
-	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 10)]
-	[CalledBy(Type = typeof(UIPanel), Member = "OnAnchor")]
-	[CalledBy(Type = typeof(UIPanel), Member = "OnAnchor")]
+	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(UIPanel), Member = "OnAnchor")]
-	[CalledBy(Type = typeof(UIPanel), Member = "OnAnchor")]
 	protected Vector3 GetLocalPos(AnchorPoint ac, Transform trans)
 	{
 		return default(Vector3);
@@ -418,175 +379,151 @@ public abstract class UIRect : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(UIWidget), Member = "OnInit")]
+	[CalledBy(Type = typeof(UIPanel), Member = "OnInit")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UIRect), Member = "get_parent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(UIWidget), Member = "OnInit")]
-	[CalledBy(Type = typeof(UIPanel), Member = "OnInit")]
+	[Calls(Type = typeof(BetterList<>), Member = "Add")]
+	[CallsUnknownMethods(Count = 1)]
 	protected virtual void OnInit()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(UIPanel), Member = "OnDisable")]
-	[CalledBy(Type = typeof(UILabel), Member = "OnDisable")]
 	[CalledBy(Type = typeof(UIWidget), Member = "OnDisable")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(UILabel), Member = "OnDisable")]
+	[CalledBy(Type = typeof(UIPanel), Member = "OnDisable")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BetterList<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	protected virtual void OnDisable()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	protected void Start()
 	{
 	}
 
 	[CalledBy(Type = typeof(UIRect), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIRect), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIRect), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIRect), Member = "Update")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(UIRect), Member = "Update")]
-	[CalledBy(Type = typeof(UIRect), Member = "Update")]
 	[CalledBy(Type = typeof(UIWidget), Member = "OnInit")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UIRect), Member = "Update")]
-	[CalledBy(Type = typeof(UIRect), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Update()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "SetHoverText")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void UpdateAnchors()
 	{
 	}
 
-	[CallerCount(Count = 101224)]
-	[DeduplicatedMethod]
 	protected abstract void OnAnchor();
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
-	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
-	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(UIInput), Member = "UpdateLabel")]
+	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
+	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetAnchor(Transform t)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
-	[CallsUnknownMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
+	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetAnchor(GameObject go)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
-	[CallsUnknownMethods(Count = 2)]
 	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetAnchor(GameObject go, int left, int bottom, int right, int top)
 	{
 	}
 
+	[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
 	[CalledBy(Type = typeof(UIRect), Member = "get_anchorCamera")]
-	[CalledBy(Type = typeof(UIRect), Member = "ResetAndUpdateAnchors")]
 	[CalledBy(Type = typeof(UIRect), Member = "get_cameraRayDistance")]
 	[CalledBy(Type = typeof(UIRect), Member = "GetSides")]
 	[CalledBy(Type = typeof(UIRect), Member = "GetLocalPos")]
 	[CalledBy(Type = typeof(UIRect), Member = "Update")]
 	[CalledBy(Type = typeof(UIRect), Member = "SetAnchor")]
 	[CalledBy(Type = typeof(UIRect), Member = "SetAnchor")]
-	[CalledBy(Type = typeof(UIPanel), Member = "get_drawCallOffset")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(UIPopupList), Member = "Show")]
-	[CalledBy(Type = typeof(UIPanel), Member = "UpdateLayers")]
-	[CalledBy(Type = typeof(UIPanel), Member = "UpdateDrawCalls")]
-	[CalledBy(Type = typeof(UIPanel), Member = "OnInit")]
-	[CalledBy(Type = typeof(UIPanel), Member = "GetSides")]
-	[CalledBy(Type = typeof(UIPanel), Member = "get_worldCorners")]
-	[CalledBy(Type = typeof(UIPanel), Member = "get_usedForUI")]
-	[Calls(Type = typeof(UIRect), Member = "FindCameraFor")]
 	[CalledBy(Type = typeof(UIRect), Member = "SetAnchor")]
-	[Calls(Type = typeof(UIRect), Member = "FindCameraFor")]
+	[CalledBy(Type = typeof(UIRect), Member = "ResetAndUpdateAnchors")]
+	[CalledBy(Type = typeof(UIPanel), Member = "get_usedForUI")]
+	[CalledBy(Type = typeof(UIPanel), Member = "get_drawCallOffset")]
+	[CalledBy(Type = typeof(UIPanel), Member = "get_worldCorners")]
+	[CalledBy(Type = typeof(UIPanel), Member = "GetSides")]
+	[CalledBy(Type = typeof(UIPanel), Member = "OnInit")]
+	[CalledBy(Type = typeof(UIPanel), Member = "UpdateDrawCalls")]
+	[CalledBy(Type = typeof(UIPanel), Member = "UpdateLayers")]
 	[CallerCount(Count = 17)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UIRect), Member = "FindCameraFor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UIRect), Member = "get_cachedGameObject")]
 	[Calls(Type = typeof(NGUITools), Member = "FindCameraForLayer")]
 	[Calls(Type = typeof(UIRect), Member = "FindCameraFor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void ResetAnchors()
 	{
 	}
 
-	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
-	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIRect), Member = "ResetAnchors")]
+	[Calls(Type = typeof(UIRect), Member = "get_isAnchored")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void ResetAndUpdateAnchors()
 	{
 	}
 
-	[CallerCount(Count = 101224)]
-	[DeduplicatedMethod]
 	public abstract void SetRect(float x, float y, float width, float height);
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(UIRect), Member = "ResetAnchors")]
-	[CalledBy(Type = typeof(UIRect), Member = "ResetAnchors")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(UIRect), Member = "ResetAnchors")]
-	[CalledBy(Type = typeof(UIRect), Member = "ResetAnchors")]
-	[Calls(Type = typeof(NGUITools), Member = "FindCameraForLayer")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(NGUITools), Member = "FindCameraForLayer")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void FindCameraFor(AnchorPoint ap)
 	{
 	}
 
-	[CalledBy(Type = typeof(UIPanel), Member = "ParentHasChanged")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(UIWidget), Member = "ParentHasChanged")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(UIPanel), Member = "ParentHasChanged")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UIRect), Member = "get_cachedTransform")]
+	[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(BetterList<>), Member = "Remove")]
+	[Calls(Type = typeof(BetterList<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public virtual void ParentHasChanged()
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	protected abstract void OnStart();
 
 	[DeduplicatedMethod]
@@ -595,10 +532,10 @@ public abstract class UIRect : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 26)]
-	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(UIPanel), Member = ".ctor")]
 	[CalledBy(Type = typeof(UIWidget), Member = ".ctor")]
+	[CalledBy(Type = typeof(UIPanel), Member = ".ctor")]
+	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 26)]
 	protected UIRect()
 	{
 	}

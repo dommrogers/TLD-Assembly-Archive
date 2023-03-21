@@ -10,9 +10,9 @@ public class WeatherActivatedEffectData : ScriptableObject
 
 	public AssetReferenceWithComponent<WeatherActivatedEffect> m_EffectAsset;
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public WeatherActivatedEffectData()
 	{
 	}

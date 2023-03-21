@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 using ParadoxNotion;
+using ParadoxNotion.Serialization;
 using ParadoxNotion.Services;
 using UnityEngine;
 
@@ -24,7 +25,7 @@ public class ActionListPlayer : MonoBehaviour, ITaskSystem, ISerializationCallba
 	public ActionList actionList
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 8)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
@@ -34,7 +35,7 @@ public class ActionListPlayer : MonoBehaviour, ITaskSystem, ISerializationCallba
 	private Component NodeCanvas_002EFramework_002EITaskSystem_002Eagent
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 1949)]
+		[CallerCount(Count = 2043)]
 		get
 		{
 			return null;
@@ -44,15 +45,15 @@ public class ActionListPlayer : MonoBehaviour, ITaskSystem, ISerializationCallba
 	public IBlackboard blackboard
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(ActionListPlayer), Member = "SendTaskOwnerDefaults")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -65,38 +66,40 @@ public class ActionListPlayer : MonoBehaviour, ITaskSystem, ISerializationCallba
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	private UnityEngine.Object NodeCanvas_002EFramework_002EITaskSystem_002EcontextObject
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 1949)]
+		[CallerCount(Count = 2043)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	private void UnityEngine_002EISerializationCallbackReceiver_002EOnBeforeSerialize()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(JSONSerializer), Member = "Deserialize")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(Task), Member = "Create")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void UnityEngine_002EISerializationCallbackReceiver_002EOnAfterDeserialize()
 	{
 	}
 
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public static ActionListPlayer Create()
 	{
@@ -104,25 +107,25 @@ public class ActionListPlayer : MonoBehaviour, ITaskSystem, ISerializationCallba
 	}
 
 	[CalledBy(Type = typeof(ActionListPlayer), Member = "set_blackboard")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Task), Member = "SetOwnerSystem")]
 	[CalledBy(Type = typeof(ActionListPlayer), Member = "Awake")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Task), Member = "SetOwnerSystem")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public void SendTaskOwnerDefaults()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void NodeCanvas_002EFramework_002EITaskSystem_002ESendEvent(EventData eventData, object sender)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void NodeCanvas_002EFramework_002EITaskSystem_002ERecordUndo(string name)
 	{
 	}
@@ -134,27 +137,26 @@ public class ActionListPlayer : MonoBehaviour, ITaskSystem, ISerializationCallba
 	{
 	}
 
-	[ContextMenu(/*Could not decode attribute arguments.*/)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ActionListPlayer), Member = "Play")]
 	public void Play()
 	{
 	}
 
-	[Calls(Type = typeof(ActionListPlayer), Member = "Play")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ActionListPlayer), Member = "Play")]
 	public void Play(Action<bool> OnFinish)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(MonoManager), Member = "get_current")]
-	[Calls(Type = typeof(ActionTask), Member = "ActionUpdater")]
-	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
 	[CalledBy(Type = typeof(ActionListPlayer), Member = "Awake")]
 	[CalledBy(Type = typeof(ActionListPlayer), Member = "Play")]
 	[CalledBy(Type = typeof(ActionListPlayer), Member = "Play")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(MonoManager), Member = "get_current")]
+	[Calls(Type = typeof(ActionTask), Member = "ActionUpdater")]
+	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void Play(Component agent, IBlackboard blackboard, Action<bool> OnFinish)
 	{
@@ -168,9 +170,9 @@ public class ActionListPlayer : MonoBehaviour, ITaskSystem, ISerializationCallba
 		return default(Status);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
+	[CallsUnknownMethods(Count = 1)]
 	public Status ExecuteAction(Component agent)
 	{
 		return default(Status);

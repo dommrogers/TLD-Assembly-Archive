@@ -7,14 +7,13 @@ internal class DefaultAssetBundleRefRequest : AssetBundleRefRequest
 	private AssetBundleRequest m_Request;
 
 	[CalledBy(Type = typeof(DefaultAssetBundleRef), Member = "LoadAssetAsync")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(DefaultAssetBundleRef), Member = "LoadAssetAsync")]
 	[CalledBy(Type = typeof(DefaultAssetBundleRef), Member = "LoadAssetAsync")]
-	[Calls(Type = typeof(AssetBundle), Member = "LoadAssetAsync")]
-	[Calls(Type = typeof(AssetBundle), Member = "LoadAssetAsync")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(AssetBundle), Member = "LoadAssetAsync")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public DefaultAssetBundleRefRequest(AssetBundle bundle, string name, Type type = null)
 	{
 	}
@@ -27,26 +26,26 @@ internal class DefaultAssetBundleRefRequest : AssetBundleRefRequest
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public override T GetObject<T>()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public override bool IsLoaded()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public override float GetProgress()
 	{
-		return default(float);
+		return 0f;
 	}
 }

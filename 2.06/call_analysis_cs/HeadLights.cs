@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -14,23 +13,22 @@ public class HeadLights : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(HeadLights), Member = "ProcessHeadLightsReaction")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(HeadLights), Member = "ProcessHeadLightsReaction")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(HeadLights), Member = "MaybeInvestigateHeadLights")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(HeadLights), Member = "MaybeFleeHeadLights")]
 	[CalledBy(Type = typeof(HeadLights), Member = "Update")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(HeadLights), Member = "MaybeInvestigateHeadLights")]
+	[Calls(Type = typeof(HeadLights), Member = "MaybeFleeHeadLights")]
 	[CallsUnknownMethods(Count = 1)]
 	private void ProcessHeadLightsReaction(BaseAi bai)
 	{
@@ -40,24 +38,24 @@ public class HeadLights : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	private bool ShouldReactToHeadLights(BaseAi bai)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(HeadLights), Member = "ProcessHeadLightsReaction")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(BaseAi), Member = "ClearTarget")]
+	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	private void MaybeInvestigateHeadLights(BaseAi bai)
 	{
 	}
 
+	[CalledBy(Type = typeof(HeadLights), Member = "ProcessHeadLightsReaction")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(BaseAi), Member = "ClearTarget")]
 	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[CalledBy(Type = typeof(HeadLights), Member = "ProcessHeadLightsReaction")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	private void MaybeFleeHeadLights(BaseAi bai)
 	{

@@ -8,9 +8,9 @@ public class Action_UnlockAchievement : ActionTask
 	public Achievement achievement;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected override void OnExecute()
 	{
 	}

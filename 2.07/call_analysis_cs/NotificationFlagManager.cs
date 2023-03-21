@@ -33,24 +33,18 @@ public class NotificationFlagManager : MonoBehaviour
 	public event Action<NotificationFlagInfo> m_NotificationAdded
 	{
 		[CompilerGenerated]
+		[CalledBy(Type = typeof(NotificationFlagManager), Member = "SubscribeToEvents")]
 		[CallerCount(Count = 4)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
-		[CalledBy(Type = typeof(NotificationFlagManager), Member = "SubscribeToEvents")]
-		[CalledBy(Type = typeof(NotificationFlagManager), Member = "SubscribeToEvents")]
-		[CalledBy(Type = typeof(NotificationFlagManager), Member = "SubscribeToEvents")]
-		[CalledBy(Type = typeof(NotificationFlagManager), Member = "SubscribeToEvents")]
 		[CallsUnknownMethods(Count = 3)]
 		add
 		{
 		}
-		[CallsUnknownMethods(Count = 3)]
-		[CalledBy(Type = typeof(NotificationFlagManager), Member = "UnsubscribeEvents")]
-		[CalledBy(Type = typeof(NotificationFlagManager), Member = "UnsubscribeEvents")]
-		[CalledBy(Type = typeof(NotificationFlagManager), Member = "UnsubscribeEvents")]
 		[CompilerGenerated]
-		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CallerCount(Count = 4)]
 		[CalledBy(Type = typeof(NotificationFlagManager), Member = "UnsubscribeEvents")]
+		[CallerCount(Count = 4)]
+		[Calls(Type = typeof(Delegate), Member = "Remove")]
+		[CallsUnknownMethods(Count = 3)]
 		remove
 		{
 		}
@@ -58,24 +52,18 @@ public class NotificationFlagManager : MonoBehaviour
 
 	public event Action<NotificationFlagInfo> m_SubcategoryNotificationRemoved
 	{
-		[CalledBy(Type = typeof(NotificationFlagManager), Member = "SubscribeToEvents")]
-		[CallsUnknownMethods(Count = 3)]
-		[CalledBy(Type = typeof(NotificationFlagManager), Member = "SubscribeToEvents")]
-		[CalledBy(Type = typeof(NotificationFlagManager), Member = "SubscribeToEvents")]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CompilerGenerated]
 		[CalledBy(Type = typeof(NotificationFlagManager), Member = "SubscribeToEvents")]
 		[CallerCount(Count = 4)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 3)]
 		add
 		{
 		}
-		[CalledBy(Type = typeof(NotificationFlagManager), Member = "UnsubscribeEvents")]
 		[CompilerGenerated]
+		[CalledBy(Type = typeof(NotificationFlagManager), Member = "UnsubscribeEvents")]
 		[CallerCount(Count = 4)]
 		[Calls(Type = typeof(Delegate), Member = "Remove")]
-		[CalledBy(Type = typeof(NotificationFlagManager), Member = "UnsubscribeEvents")]
-		[CalledBy(Type = typeof(NotificationFlagManager), Member = "UnsubscribeEvents")]
-		[CalledBy(Type = typeof(NotificationFlagManager), Member = "UnsubscribeEvents")]
 		[CallsUnknownMethods(Count = 3)]
 		remove
 		{
@@ -84,10 +72,10 @@ public class NotificationFlagManager : MonoBehaviour
 
 	public event Action<NotificationFlagInfo> m_MaincategoryNotificationRemoved
 	{
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 3)]
 		add
 		{
 		}
@@ -100,130 +88,119 @@ public class NotificationFlagManager : MonoBehaviour
 		}
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Clear")]
+	[Calls(Type = typeof(NotificationFlagManager), Member = "AddPanels")]
 	[Calls(Type = typeof(NotificationFlagManager), Member = "SubscribeToEvents")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "AddPanels")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
-	[CalledBy(Type = typeof(NotificationFlagManager), Member = "Deserialize")]
-	[CalledBy(Type = typeof(KnowledgeManager), Member = "AddKnowledge")]
-	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "AddObjective")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "ShowNotificationFlagsOnMiniTopNavNar")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "AddMission")]
+	[CalledBy(Type = typeof(Panel_MissionsStory), Member = "AddObjective")]
+	[CalledBy(Type = typeof(KnowledgeManager), Member = "AddKnowledge")]
+	[CalledBy(Type = typeof(NotificationFlagManager), Member = "Deserialize")]
+	[CalledBy(Type = typeof(Inventory), Member = "AddGear")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(NotificationFlagManager), Member = "ShowNotificationFlagsOnMiniTopNavNar")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public void AddNotification(PanelType panelType, MainCategory mainCategory, SubCategory subCategory, string nameId, GearItem gearItem = null)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(NotificationFlagManager), Member = "ShowNotificationFlagsOnMiniTopNavNar")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnNewNotificationAdded(NotificationFlagInfo nfi)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(NotificationFlagManager), Member = "ShowNotificationFlagsOnMiniTopNavNar")]
-	[CallsUnknownMethods(Count = 6)]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public void HandleOnNotificationSelected(string key, NotificationFlagInfo nfi)
 	{
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[CallsUnknownMethods(Count = 19)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 19)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "AddNotification")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(NotificationFlagManager), Member = "AddNotification")]
+	[CallsUnknownMethods(Count = 3)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(NotificationFlagManager), Member = "HandleOnNotificationSelected")]
-	[CalledBy(Type = typeof(NotificationFlagManager), Member = "OnNewNotificationAdded")]
 	[CalledBy(Type = typeof(NotificationFlagManager), Member = "AddNotification")]
-	[Calls(Type = typeof(NotificationFlag), Member = "GetNotificationFlags")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(NotificationFlagManager), Member = "OnNewNotificationAdded")]
+	[CalledBy(Type = typeof(NotificationFlagManager), Member = "HandleOnNotificationSelected")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(NotificationFlag), Member = "GetNotificationFlags")]
 	[Calls(Type = typeof(NotificationFlag), Member = "ShowNotificationIcon")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ShowNotificationFlagsOnMiniTopNavNar(PanelType panelType, bool enable)
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(NotificationFlagManager), Member = "Start")]
+	[CallerCount(Count = 1)]
 	private void AddPanels()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void AddPanelIfNotNull(Panel_Base panel)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 16)]
 	[CalledBy(Type = typeof(NotificationFlagManager), Member = "Start")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "add_m_SubcategoryNotificationRemoved")]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "add_m_NotificationAdded")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "add_m_SubcategoryNotificationRemoved")]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "add_m_NotificationAdded")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "add_m_SubcategoryNotificationRemoved")]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "add_m_NotificationAdded")]
-	[Calls(Type = typeof(Delegate), Member = "Combine")]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "add_m_SubcategoryNotificationRemoved")]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "add_m_NotificationAdded")]
-	[CallsDeduplicatedMethods(Count = 17)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(NotificationFlagManager), Member = "add_m_NotificationAdded")]
+	[Calls(Type = typeof(NotificationFlagManager), Member = "add_m_SubcategoryNotificationRemoved")]
+	[Calls(Type = typeof(Delegate), Member = "Combine")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 16)]
 	private void SubscribeToEvents()
 	{
 	}
 
-	[Calls(Type = typeof(NotificationFlagManager), Member = "remove_m_NotificationAdded")]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "remove_m_SubcategoryNotificationRemoved")]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "remove_m_SubcategoryNotificationRemoved")]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "remove_m_SubcategoryNotificationRemoved")]
-	[CallsDeduplicatedMethods(Count = 17)]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "remove_m_SubcategoryNotificationRemoved")]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "remove_m_NotificationAdded")]
-	[Calls(Type = typeof(Delegate), Member = "Remove")]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "remove_m_NotificationAdded")]
-	[Calls(Type = typeof(NotificationFlagManager), Member = "remove_m_NotificationAdded")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(NotificationFlagManager), Member = "remove_m_NotificationAdded")]
+	[Calls(Type = typeof(NotificationFlagManager), Member = "remove_m_SubcategoryNotificationRemoved")]
+	[Calls(Type = typeof(Delegate), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 16)]
 	private void UnsubscribeEvents()
 	{
 	}

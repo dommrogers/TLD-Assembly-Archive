@@ -13,103 +13,79 @@ public abstract class AssetBundleRef
 
 	protected int m_RefCount;
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[DeduplicatedMethod]
 	protected AssetBundleRef(string name)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(AssetBundleRef), Member = "HasDependencies")]
 	[CalledBy(Type = typeof(DefaultAssetBundleRef), Member = "IsLoaded")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AssetBundleRef), Member = "HasDependencies")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public virtual bool IsLoaded()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract float GetProgress();
 
-	[CallerCount(Count = 121780)]
-	[DeduplicatedMethod]
 	public abstract bool IsValid();
 
-	[CallerCount(Count = 121780)]
-	[DeduplicatedMethod]
 	public abstract bool Contains(string name);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract UnityEngine.Object LoadAsset(string name);
 
-	[CallerCount(Count = 121780)]
-	[DeduplicatedMethod]
 	public abstract UnityEngine.Object LoadAsset(string name, Type type);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract T LoadAsset<T>(string name) where T : UnityEngine.Object;
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract UnityEngine.Object[] LoadAllAssets();
 
-	[CallerCount(Count = 121780)]
-	[DeduplicatedMethod]
 	public abstract UnityEngine.Object[] LoadAllAssets(Type type);
 
-	[CallerCount(Count = 121780)]
-	[DeduplicatedMethod]
 	public abstract T[] LoadAllAssets<T>() where T : UnityEngine.Object;
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract AssetBundleRefRequest LoadAssetAsync(string name);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract AssetBundleRefRequest LoadAssetAsync(string name, Type type);
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 121780)]
 	public abstract AssetBundleRefRequest LoadAssetAsync<T>(string name) where T : UnityEngine.Object;
 
-	[CallerCount(Count = 121780)]
-	[DeduplicatedMethod]
 	internal abstract bool UpdateBundleLoad();
 
-	[Calls(Type = typeof(AssetBundleManager), Member = "GetDependencies")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(AssetBundleRef), Member = "AddDependent")]
 	[CalledBy(Type = typeof(DefaultAssetBundleRef), Member = "LoadBundle")]
-	[CallsUnknownMethods(Count = 6)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AssetBundleManager), Member = "GetDependencies")]
 	[Calls(Type = typeof(AssetBundleManager), Member = "LoadBundle")]
+	[Calls(Type = typeof(AssetBundleRef), Member = "AddDependent")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	internal virtual void LoadBundle()
 	{
 	}
 
+	[CalledBy(Type = typeof(DefaultAssetBundleRef), Member = "LoadBundleAsync")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(AssetBundleManager), Member = "GetDependencies")]
 	[Calls(Type = typeof(AssetBundleManager), Member = "LoadBundleAsync")]
 	[Calls(Type = typeof(AssetBundleRef), Member = "AddDependent")]
-	[CalledBy(Type = typeof(DefaultAssetBundleRef), Member = "LoadBundleAsync")]
-	[CallsUnknownMethods(Count = 6)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	internal virtual void LoadBundleAsync()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(AssetBundleRef), Member = "HasDependencies")]
-	[Calls(Type = typeof(AssetBundleManager), Member = "UnloadBundle")]
 	[CalledBy(Type = typeof(DefaultAssetBundleRef), Member = "UnloadBundle")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AssetBundleRef), Member = "HasDependencies")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(AssetBundleManager), Member = "UnloadBundle")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	internal virtual void UnloadBundle(bool unloadAllLoadedObjects)
 	{
@@ -119,54 +95,56 @@ public abstract class AssetBundleRef
 	[CallerCount(Count = 1)]
 	public override int GetHashCode()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CallerCount(Count = 29)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 35)]
 	public string GetName()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 3)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 3)]
 	public int GetRefCount()
 	{
-		return default(int);
+		return 0;
 	}
 
-	[CalledBy(Type = typeof(DefaultAssetBundleRef), Member = "GetProgress")]
-	[CalledBy(Type = typeof(AssetBundleRef), Member = "UnloadBundle")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
 	[CalledBy(Type = typeof(AssetBundleRef), Member = "IsLoaded")]
+	[CalledBy(Type = typeof(AssetBundleRef), Member = "UnloadBundle")]
+	[CalledBy(Type = typeof(DefaultAssetBundleRef), Member = "GetProgress")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool HasDependencies()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 3)]
-	[CallsUnknownMethods(Count = 8)]
-	[CalledBy(Type = typeof(AssetBundleRef), Member = "LoadBundleAsync")]
 	[CalledBy(Type = typeof(AssetBundleRef), Member = "LoadBundle")]
+	[CalledBy(Type = typeof(AssetBundleRef), Member = "LoadBundleAsync")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	internal void AddDependent(AssetBundleRef bundle)
 	{
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal int DecrementRefCount()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
 	internal int IncrementRefCount()
 	{
-		return default(int);
+		return 0;
 	}
 }

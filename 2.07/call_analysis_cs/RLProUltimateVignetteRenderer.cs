@@ -6,18 +6,15 @@ public sealed class RLProUltimateVignetteRenderer : PostProcessEffectRenderer<RL
 {
 	private float m_Horizontal;
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Shader), Member = "Find")]
+	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
+	[Calls(Type = typeof(PropertySheet), Member = "DisableKeyword")]
+	[Calls(Type = typeof(PropertySheet), Member = "EnableKeyword")]
+	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVector")]
 	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetColor")]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVector")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVector")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetVector")]
-	[Calls(Type = typeof(PropertySheet), Member = "DisableKeyword")]
-	[Calls(Type = typeof(PropertySheet), Member = "DisableKeyword")]
-	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
-	[Calls(Type = typeof(Shader), Member = "Find")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(PropertySheet), Member = "EnableKeyword")]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}

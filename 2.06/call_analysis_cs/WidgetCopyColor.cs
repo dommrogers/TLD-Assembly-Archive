@@ -7,8 +7,8 @@ public class WidgetCopyColor : MonoBehaviour
 
 	private UIWidget m_Widget;
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	private void Awake()
 	{
 	}
@@ -20,9 +20,9 @@ public class WidgetCopyColor : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(WidgetCopyColor), Member = "OnEnable")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CalledBy(Type = typeof(WidgetCopyColor), Member = "OnEnable")]
 	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{

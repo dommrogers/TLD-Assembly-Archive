@@ -33,20 +33,20 @@ public class DebugPanel_WolfHowlController : Panel_Base
 			return null;
 		}
 
-		[CallsUnknownMethods(Count = 21)]
 		[CalledBy(Type = typeof(DebugPanel_WolfHowlController), Member = "RefreshEventList")]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(ColorUtility), Member = "ToHtmlStringRGB")]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(ColorUtility), Member = "ToHtmlStringRGB")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[CallsUnknownMethods(Count = 21)]
 		private string FailureToString()
 		{
 			return null;
 		}
 
+		[CalledBy(Type = typeof(DebugPanel_WolfHowlController), Member = "RefreshEventList")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(ColorUtility), Member = "ToHtmlStringRGB")]
 		[Calls(Type = typeof(string), Member = "Format")]
-		[CalledBy(Type = typeof(DebugPanel_WolfHowlController), Member = "RefreshEventList")]
 		[CallsUnknownMethods(Count = 21)]
 		private string SuccessToString()
 		{
@@ -64,11 +64,11 @@ public class DebugPanel_WolfHowlController : Panel_Base
 
 	private List<HowlEvent> m_HowlEvents;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	public override void Initialize()
 	{
 	}
@@ -77,16 +77,13 @@ public class DebugPanel_WolfHowlController : Panel_Base
 	[CallerCount(Count = 3)]
 	public override bool IsOverlayPanel()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Update()
 	{
 	}
@@ -98,30 +95,29 @@ public class DebugPanel_WolfHowlController : Panel_Base
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[Conditional("__DEBUG")]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public static void NotifyHowlFailed(int howlID, float timer)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[CallAnalysisFailed]
+	[CallerCount(Count = 0)]
 	private void AddEvent(HowlEvent howl)
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
+	[Calls(Type = typeof(HowlEvent), Member = "FailureToString")]
+	[Calls(Type = typeof(HowlEvent), Member = "SuccessToString")]
+	[Calls(Type = typeof(StringBuilder), Member = "Append")]
 	[Calls(Type = typeof(Environment), Member = "get_NewLine")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(StringBuilder), Member = "Append")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(HowlEvent), Member = "FailureToString")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(HowlEvent), Member = "SuccessToString")]
-	[Calls(Type = typeof(StringBuilder), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 4)]
 	private void RefreshEventList()
 	{
 	}

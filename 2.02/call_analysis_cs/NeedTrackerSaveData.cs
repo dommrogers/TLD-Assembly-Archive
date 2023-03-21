@@ -11,7 +11,7 @@ public class NeedTrackerSaveData
 	public bool m_NoTrustDecayUntilPlayerInteraction;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public NeedTrackerSaveData()
 	{
 	}

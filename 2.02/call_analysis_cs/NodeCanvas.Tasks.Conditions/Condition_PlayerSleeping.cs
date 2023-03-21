@@ -5,12 +5,12 @@ namespace NodeCanvas.Tasks.Conditions;
 
 public class Condition_PlayerSleeping : ConditionTask
 {
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

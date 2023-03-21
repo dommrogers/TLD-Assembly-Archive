@@ -29,11 +29,12 @@ public class UIWrapContent : MonoBehaviour
 
 	private List<Transform> mChildren;
 
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIWrapContent), Member = "SortBasedOnScrollMovement")]
 	[Calls(Type = typeof(UIWrapContent), Member = "WrapContent")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	protected virtual void Start()
 	{
 	}
@@ -44,59 +45,59 @@ public class UIWrapContent : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UIWrapContent), Member = "CacheScrollView")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 1)]
 	[ContextMenu("Sort Based on Scroll Movement")]
-	[Calls(Type = typeof(UIWrapContent), Member = "ResetChildPositions")]
 	[CalledBy(Type = typeof(UIWrapContent), Member = "Start")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UIWrapContent), Member = "CacheScrollView")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UIWrapContent), Member = "ResetChildPositions")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 5)]
 	public void SortBasedOnScrollMovement()
 	{
 	}
 
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UIWrapContent), Member = "CacheScrollView")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UIWrapContent), Member = "ResetChildPositions")]
 	[ContextMenu("Sort Alphabetically")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIWrapContent), Member = "CacheScrollView")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[Calls(Type = typeof(UIWrapContent), Member = "ResetChildPositions")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 5)]
 	public void SortAlphabetically()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(UIWrapContent), Member = "SortBasedOnScrollMovement")]
 	[CalledBy(Type = typeof(UIWrapContent), Member = "SortAlphabetically")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	protected bool CacheScrollView()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(UIWrapContent), Member = "SortBasedOnScrollMovement")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(UIWrapContent), Member = "SortAlphabetically")]
+	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private void ResetChildPositions()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 19)]
-	[CallsDeduplicatedMethods(Count = 18)]
 	[CalledBy(Type = typeof(UIWrapContent), Member = "Start")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UICamera), Member = "IsPressed")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UICamera), Member = "IsPressed")]
 	[CalledBy(Type = typeof(UIWrapContent), Member = "OnMove")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UICamera), Member = "IsPressed")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 18)]
+	[CallsUnknownMethods(Count = 19)]
 	public void WrapContent()
 	{
 	}
@@ -107,8 +108,8 @@ public class UIWrapContent : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 5)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	protected virtual void UpdateItem(Transform item, int index)
 	{
 	}

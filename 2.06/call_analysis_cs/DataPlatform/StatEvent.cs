@@ -17,7 +17,7 @@ public class StatEvent : IDisposable, IWrappedObject
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -37,16 +37,16 @@ public class StatEvent : IDisposable, IWrappedObject
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public string ErrorMessage
 	{
-		[CallsUnknownMethods(Count = 6)]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -55,10 +55,10 @@ public class StatEvent : IDisposable, IWrappedObject
 
 	public LeaderboardResultEventArgs LeaderboardResultArgs
 	{
-		[CallsUnknownMethods(Count = 7)]
-		[Calls(Type = typeof(StatEventPlugin), Member = "StatisticEvent_EventType")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(StatEventPlugin), Member = "StatisticEvent_EventType")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		get
 		{
 			return null;
@@ -83,30 +83,30 @@ public class StatEvent : IDisposable, IWrappedObject
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 98)]
+	[CallerCount(Count = 113)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(StatEvent), Member = "DisposeImpl")]
+	[CallsUnknownMethods(Count = 1)]
 	~StatEvent()
 	{
 	}
 
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(StatEvent), Member = "DisposeImpl")]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	public void Dispose()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(StatEvent), Member = "Finalize")]
 	[CalledBy(Type = typeof(StatEvent), Member = "Dispose")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void DisposeImpl()
 	{

@@ -5,9 +5,9 @@ public class ScriptActionsTrigger : MonoBehaviour
 {
 	public bool m_SupressNonCriticalSpeech;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 0)]
 	private void OnTriggerEnter(Collider c)
 	{
 	}

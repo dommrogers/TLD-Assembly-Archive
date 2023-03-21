@@ -15,9 +15,9 @@ public class CheatTowardsCamera : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 11)]
 	private void Update()
 	{
 	}

@@ -55,37 +55,38 @@ public class SnowPlaneManager : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[Calls(Type = typeof(SnowPlaneParticles), Member = "Reset")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(SnowPlaneManager), Member = "MaybeRefreshCameraForCommandBuffer")]
-	[Calls(Type = typeof(SnowPlaneManager), Member = "SetComponentsActive")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SnowPlaneManager), Member = "InitializeMesh")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(SnowPlaneManager), Member = "MaybeRefreshCameraForCommandBuffer")]
+	[Calls(Type = typeof(SnowPlaneManager), Member = "SetComponentsActive")]
+	[Calls(Type = typeof(SnowPlaneParticles), Member = "Reset")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 13)]
 	private void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(SnowPlaneManager), Member = "RemoveCommandBuffer")]
 	[Calls(Type = typeof(CommandBuffer), Member = "Dispose")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
 	private void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(SnowPlaneParticles), Member = "Reset")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SnowPlaneManager), Member = "SetComponentsActive")]
+	[Calls(Type = typeof(SnowPlaneParticles), Member = "Reset")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Reset()
 	{
 	}
@@ -95,31 +96,31 @@ public class SnowPlaneManager : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(SnowPlaneManager), Member = "Start")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 16)]
 	[Calls(Type = typeof(Mesh), Member = ".ctor")]
 	[Calls(Type = typeof(Material), Member = ".ctor")]
-	[CalledBy(Type = typeof(SnowPlaneManager), Member = "Start")]
+	[CallsDeduplicatedMethods(Count = 16)]
 	[CallsUnknownMethods(Count = 48)]
 	private void InitializeMesh()
 	{
 	}
 
+	[CalledBy(Type = typeof(SnowPlaneManager), Member = "OnRenderObject")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Transform), Member = "get_up")]
+	[Calls(Type = typeof(Vector3), Member = "get_zero")]
+	[Calls(Type = typeof(Vector2), Member = "get_zero")]
+	[Calls(Type = typeof(MeshFilter), Member = "get_mesh")]
 	[Calls(Type = typeof(Mesh), Member = "set_vertices")]
+	[Calls(Type = typeof(Mesh), Member = "set_uv")]
 	[Calls(Type = typeof(Mesh), Member = "set_colors")]
 	[Calls(Type = typeof(Mesh), Member = "set_triangles")]
-	[CallsUnknownMethods(Count = 54)]
-	[Calls(Type = typeof(MeshFilter), Member = "get_mesh")]
-	[CalledBy(Type = typeof(SnowPlaneManager), Member = "OnRenderObject")]
-	[Calls(Type = typeof(Vector2), Member = "get_zero")]
-	[Calls(Type = typeof(Mesh), Member = "set_uv")]
-	[Calls(Type = typeof(Transform), Member = "get_up")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Vector3), Member = "get_zero")]
-	[Calls(Type = typeof(Quaternion), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 6)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 54)]
 	private void UpdateMesh()
 	{
 	}
@@ -130,46 +131,46 @@ public class SnowPlaneManager : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "InitializeForScene")]
-	[CalledBy(Type = typeof(SnowPlaneManager), Member = "Reset")]
-	[CalledBy(Type = typeof(SnowPlaneManager), Member = "Start")]
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "Update")]
+	[CalledBy(Type = typeof(SnowPlaneManager), Member = "Start")]
+	[CalledBy(Type = typeof(SnowPlaneManager), Member = "Reset")]
+	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "InitializeForScene")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void SetComponentsActive(bool state)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(SnowPlaneManager), Member = "UpdateMesh")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 9)]
 	[CallsUnknownMethods(Count = 14)]
 	private void OnRenderObject()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SnowPlaneManager), Member = "MaybeRefreshCameraForCommandBuffer")]
 	[CalledBy(Type = typeof(SnowPlaneManager), Member = "OnDestroy")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CalledBy(Type = typeof(SnowPlaneManager), Member = "MaybeRefreshCameraForCommandBuffer")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Camera), Member = "RemoveCommandBuffer")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void RemoveCommandBuffer()
 	{
 	}
 
-	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(SnowPlaneManager), Member = "Start")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(SnowPlaneManager), Member = "RemoveCommandBuffer")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Camera), Member = "AddCommandBuffer")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaybeRefreshCameraForCommandBuffer()
 	{
 	}

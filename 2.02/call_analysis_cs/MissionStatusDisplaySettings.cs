@@ -35,22 +35,20 @@ public struct MissionStatusDisplaySettings
 		return default(Color);
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(HUDObjectives), Member = "Dequeue")]
-	[CalledBy(Type = typeof(HUDObjectives), Member = "Dequeue")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(HUDMission), Member = "Dequeue")]
+	[CalledBy(Type = typeof(HUDObjectives), Member = "Dequeue")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(HUDMission), Member = "Dequeue")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public string GetLocID(MissionStatusType type)
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(HUDMission), Member = "Dequeue")]
 	[CalledBy(Type = typeof(HUDObjectives), Member = "Dequeue")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public string GetWwiseEvent(MissionStatusType type)
 	{
 		return null;

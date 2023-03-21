@@ -24,52 +24,55 @@ public class MissionTrigger : MissionObjectIdentifier
 	{
 	}
 
-	[Calls(Type = typeof(MissionServicesManager), Member = "OnEnterMissionTrigger")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(ObjectInTriggerInfo), Member = ".ctor")]
-	[Calls(Type = typeof(MissionTrigger), Member = "MatchesTag")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(MissionTrigger), Member = "MatchesTag")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(ObjectInTriggerInfo), Member = ".ctor")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "OnEnterMissionTrigger")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 7)]
 	private void OnTriggerEnter(Collider c)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(MissionTrigger), Member = "MatchesTag")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
 	[Calls(Type = typeof(ObjectInTriggerInfo), Member = ".ctor")]
 	[Calls(Type = typeof(MissionServicesManager), Member = "OnExitMissionTrigger")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 7)]
 	private void OnTriggerExit(Collider c)
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_IsInMissionTrigger), Member = "OnExecute")]
 	[CalledBy(Type = typeof(Condition_EnterMissionTrigger), Member = "OnCustomEvent")]
-	[Calls(Type = typeof(int), Member = "TryParse")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
-	[Calls(Type = typeof(string), Member = "SplitInternal")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(Action_IsInMissionTrigger), Member = "OnExecute")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(Type = typeof(string), Member = "SplitInternal")]
+	[Calls(Type = typeof(string), Member = "TrimWhiteSpaceHelper")]
 	[Calls(Type = typeof(string), Member = "Split")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(Type = typeof(float), Member = "TryParse")]
+	[Calls(Type = typeof(int), Member = "TryParse")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	public Dictionary<string, object>[] ParseAssociatedData()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(MissionTrigger), Member = "OnTriggerEnter")]
 	[CalledBy(Type = typeof(MissionTrigger), Member = "OnTriggerExit")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private bool MatchesTag(Collider c)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

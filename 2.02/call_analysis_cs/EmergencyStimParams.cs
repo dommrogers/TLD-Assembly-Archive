@@ -25,8 +25,8 @@ public class EmergencyStimParams
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public EmergencyStimParams(EmergencyStimParams rhs)
 	{
 	}

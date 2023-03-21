@@ -19,7 +19,7 @@ public class AkUtilities
 			[CallsDeduplicatedMethods(Count = 1)]
 			get
 			{
-				return default(byte);
+				return 0;
 			}
 			[CallerCount(Count = 0)]
 			[CallsDeduplicatedMethods(Count = 1)]
@@ -35,28 +35,25 @@ public class AkUtilities
 		}
 
 		[CalledBy(Type = typeof(AkTriggerBase), Member = "GetAllDerivedTypes")]
-		[CalledBy(Type = typeof(AkTriggerBase), Member = "GetAllDerivedTypes")]
-		[CalledBy(Type = typeof(AkTriggerBase), Member = "GetAllDerivedTypes")]
-		[CalledBy(Type = typeof(AkTriggerBase), Member = "GetAllDerivedTypes")]
-		[CallsUnknownMethods(Count = 5)]
-		[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 4)]
+		[Calls(Type = typeof(Encoding), Member = "get_UTF8")]
 		[Calls(Type = typeof(string), Member = "ToLower")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 5)]
 		public static uint Compute(string in_name)
 		{
-			return default(uint);
+			return 0u;
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public ShortIDGenerator()
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AkUtilities()
 	{
 	}

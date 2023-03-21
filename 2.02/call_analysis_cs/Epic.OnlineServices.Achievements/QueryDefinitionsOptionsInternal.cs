@@ -19,11 +19,11 @@ internal struct QueryDefinitionsOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(QueryDefinitionsOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(QueryDefinitionsOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(QueryDefinitionsOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(QueryDefinitionsOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -31,11 +31,11 @@ internal struct QueryDefinitionsOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId EpicUserId_DEPRECATED
 	{
+		[CalledBy(Type = typeof(QueryDefinitionsOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(QueryDefinitionsOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(QueryDefinitionsOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(QueryDefinitionsOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -43,11 +43,11 @@ internal struct QueryDefinitionsOptionsInternal : ISettable, IDisposable
 
 	public string[] HiddenAchievementIds_DEPRECATED
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(QueryDefinitionsOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(QueryDefinitionsOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -61,19 +61,19 @@ internal struct QueryDefinitionsOptionsInternal : ISettable, IDisposable
 	{
 	}
 
+	[CalledBy(Type = typeof(AchievementsInterface), Member = "QueryDefinitions")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(QueryDefinitionsOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(QueryDefinitionsOptionsInternal), Member = "set_EpicUserId_DEPRECATED")]
 	[Calls(Type = typeof(QueryDefinitionsOptionsInternal), Member = "set_HiddenAchievementIds_DEPRECATED")]
-	[CalledBy(Type = typeof(AchievementsInterface), Member = "QueryDefinitions")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

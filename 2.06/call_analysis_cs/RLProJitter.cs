@@ -31,12 +31,12 @@ public sealed class RLProJitter : PostProcessEffectSettings
 
 	public BoolParameter unscaledTime;
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
 	[Calls(Type = typeof(BoolParameter), Member = ".ctor")]
 	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 69)]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 69)]
 	public RLProJitter()
 	{
 	}

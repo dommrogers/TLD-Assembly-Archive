@@ -7,9 +7,9 @@ public class Action_PhoneStartRinging : ActionTask
 {
 	public string missionObjectIdentifier;
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Phone), Member = "StartPhoneRinging")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[CallerCount(Count = 0)]
 	protected override void OnExecute()
 	{
 	}

@@ -11,12 +11,13 @@ public class DialogueOptionsAnimationSubTree : MonoBehaviour
 	public Dialogue_MultipleChoiceNode.ChoiceCategory m_Category;
 
 	[CalledBy(Type = typeof(DialogueOptionsAnimationTree), Member = "InstantiateLabels")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[CallsDeduplicatedMethods(Count = 13)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentInChildren")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 17)]
 	public List<DialogueSequenceFP> InstantiateLabels(GameObject labelPrefab)
 	{
 		return null;

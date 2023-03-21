@@ -7,5 +7,7 @@ public sealed class CallsAttribute : Attribute
 {
 	public Type Type;
 
+	public string TypeFullName;
+
 	public string Member;
 }

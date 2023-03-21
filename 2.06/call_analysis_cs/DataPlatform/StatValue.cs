@@ -15,10 +15,10 @@ public class StatValue : IDisposable, IWrappedObject
 
 	public string Name
 	{
-		[CallsUnknownMethods(Count = 6)]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -31,7 +31,7 @@ public class StatValue : IDisposable, IWrappedObject
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(double);
+			return 0.0;
 		}
 	}
 
@@ -41,15 +41,15 @@ public class StatValue : IDisposable, IWrappedObject
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(long);
+			return 0L;
 		}
 	}
 
 	public string AsString
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
 		get
 		{
@@ -59,8 +59,8 @@ public class StatValue : IDisposable, IWrappedObject
 
 	public StatDataType DataType
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return default(StatDataType);
@@ -91,24 +91,24 @@ public class StatValue : IDisposable, IWrappedObject
 	{
 	}
 
-	[CallerCount(Count = 98)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 113)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
-	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
-	[Calls(Type = typeof(StatValue), Member = "DisposeImpl")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(StatValue), Member = "DisposeImpl")]
+	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	public void Dispose()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(StatValue), Member = "Finalize")]
 	[CalledBy(Type = typeof(StatValue), Member = "Dispose")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void DisposeImpl()
 	{

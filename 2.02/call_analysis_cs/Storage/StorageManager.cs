@@ -14,11 +14,11 @@ public class StorageManager
 	[Calls(Type = typeof(CommonPlugin), Member = "AmFullyInitialized")]
 	public static bool AmFullyInitialized()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public StorageManager()
 	{
 	}

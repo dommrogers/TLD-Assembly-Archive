@@ -1,8 +1,8 @@
-using System;
 using System.Globalization;
 using AK.Wwise;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Gear;
+using TLD.SaveState;
 using TLD.Serialization;
 using UnityEngine;
 
@@ -69,7 +69,7 @@ public class ClothingItem : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	public void Awake()
 	{
 	}
@@ -80,67 +80,64 @@ public class ClothingItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Inventory), Member = "ProcessItems")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ClothingItem), Member = "DoDryOrFreeze")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(GearItem), Member = "Serialize")]
-	[Calls(Type = typeof(Fire), Member = "GetRemainingLifeTimeSeconds")]
-	[Calls(Type = typeof(FireManager), Member = "GetClosestFire")]
-	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[Calls(Type = typeof(ClothingItem), Member = "IsWearing")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ClothingItem), Member = "IsWearing")]
 	[Calls(Type = typeof(ClothingItem), Member = "IsNearFire")]
+	[Calls(Type = typeof(FireManager), Member = "GetClosestFire")]
+	[Calls(Type = typeof(Fire), Member = "GetRemainingLifeTimeSeconds")]
+	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(ClothingItem), Member = "PutOn")]
 	[Calls(Type = typeof(ClothingItem), Member = "DoDryOrFreeze")]
-	[Calls(Type = typeof(ClothingItem), Member = "DoDryOrFreeze")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
 
+	[CallerCount(Count = 29)]
 	[Calls(Type = typeof(PlayerManager), Member = "IsWearingClothingItem")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 29)]
 	public bool IsWearing()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(PlayerManager), Member = "PutOnClothingItem")]
 	[CalledBy(Type = typeof(ClothingItem), Member = "Deserialize")]
 	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UseClothingItem")]
 	[CalledBy(Type = typeof(StartGearData), Member = "AddStartingGearToPlayer")]
-	[CalledBy(Type = typeof(StartGearData), Member = "AddStartingGearToPlayer")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(PlayerManager), Member = "PutOnClothingItem")]
+	[CallsUnknownMethods(Count = 1)]
 	public void PutOn(ClothingLayer layerToPutOn = ClothingLayer.NumLayers)
 	{
 	}
 
-	[CalledBy(Type = typeof(Inventory), Member = "RemoveGear")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UseClothingItem")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UseClothingItem")]
-	[Calls(Type = typeof(PlayerManager), Member = "TakeOffClothingItem")]
 	[CalledBy(Type = typeof(GearItem), Member = "WearOut")]
-	[CallerCount(Count = 5)]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(GearItem), Member = "Drop")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UseClothingItem")]
+	[CalledBy(Type = typeof(Inventory), Member = "RemoveGear")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(PlayerManager), Member = "TakeOffClothingItem")]
+	[CallsUnknownMethods(Count = 1)]
 	public void TakeOff()
 	{
 	}
@@ -148,25 +145,23 @@ public class ClothingItem : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsDry()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Weather), Member = "GetWeatherStage")]
-	[Calls(Type = typeof(Weather), Member = "GetWeatherStage")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[Calls(Type = typeof(Weather), Member = "GetWeatherStage")]
 	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	public bool IsGettingWet()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsFrozen()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -188,17 +183,17 @@ public class ClothingItem : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(WetZoneTrigger), Member = "IncreaseWetness")]
 	[CalledBy(Type = typeof(WetZoneApplyOnlyTrigger), Member = "IncreaseWetness")]
-	[Calls(Type = typeof(ClothingItem), Member = "IsNearFire")]
+	[CalledBy(Type = typeof(WetZoneTrigger), Member = "IncreaseWetness")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ClothingItem), Member = "IsNearFire")]
 	public void IncreaseWetnessPercent(float wetnessPercentIncrease)
 	{
 	}
 
+	[CalledBy(Type = typeof(ClothingItem), Member = "DoDryOrFreeze")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ClothingItem), Member = "IsWearing")]
-	[CalledBy(Type = typeof(ClothingItem), Member = "DoDryOrFreeze")]
 	public void Dry(float amountToDry)
 	{
 	}
@@ -208,124 +203,114 @@ public class ClothingItem : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(GearItem), Member = "GetHoverStateText")]
 	[CalledBy(Type = typeof(GearItem), Member = "GetItemPostFixForInventoryInterfaces")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CalledBy(Type = typeof(GearItem), Member = "GetHoverStateText")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[CallsUnknownMethods(Count = 4)]
 	public string GetWetnessString()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateTopRightStatus")]
-	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsUnknownMethods(Count = 3)]
 	public string GetWetnessOnlyString()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateTopRightStatus")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Replace")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateTopRightStatus")]
+	[CallsUnknownMethods(Count = 3)]
 	public string GetFrozenOnlyString()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ClothingItem), Member = "IsWearing")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ClothingItem), Member = "IsWearing")]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetWeightModifier()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(GearItem), Member = "GetItemWeightKG")]
+	[CallerCount(Count = 1)]
 	public float GetWeightModifierNoWornBonus()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetWetnessDebuffNormalized()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetWetnessNormalized()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetFrozenNormalized()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetWarmthWhenWet()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "UpdateGlobalStatBars")]
-	[CalledBy(Type = typeof(ClothingItem), Member = "GetWindchillBonusString")]
-	[CalledBy(Type = typeof(ClothingItem), Member = "GetWarmthAndWindchillBonusString")]
-	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateItemWarmthArrow")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateBonusValuesFromWornClothing")]
-	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateComparisonArrows")]
-	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateComparisonArrows")]
-	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateWarmthDisplay")]
 	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateGearItemDescription")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 11)]
+	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateWarmthDisplay")]
+	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateComparisonArrows")]
 	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateItemWarmthArrow")]
+	[CalledBy(Type = typeof(ClothingItem), Member = "GetWarmthAndWindchillBonusString")]
+	[CalledBy(Type = typeof(ClothingItem), Member = "GetWindchillBonusString")]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "UpdateGlobalStatBars")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateBonusValuesFromWornClothing")]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetWarmth()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateBonusValuesFromWornClothing")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
-	[CalledBy(Type = typeof(Panel_Clothing), Member = "UpdateGlobalStatBars")]
-	[CalledBy(Type = typeof(ClothingItem), Member = "GetWindchillBonusString")]
-	[CalledBy(Type = typeof(ClothingItem), Member = "GetWarmthAndWindchillBonusString")]
-	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateItemWindproofArrow")]
-	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateItemWindproofArrow")]
-	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateComparisonArrows")]
-	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateWindproofDisplay")]
 	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateGearItemDescription")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 11)]
+	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateWindproofDisplay")]
 	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateComparisonArrows")]
+	[CalledBy(Type = typeof(ItemDescriptionPage), Member = "UpdateItemWindproofArrow")]
+	[CalledBy(Type = typeof(ClothingItem), Member = "GetWarmthAndWindchillBonusString")]
+	[CalledBy(Type = typeof(ClothingItem), Member = "GetWindchillBonusString")]
+	[CalledBy(Type = typeof(Panel_Clothing), Member = "UpdateGlobalStatBars")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "RefreshSelectedBlueprint")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateBonusValuesFromWornClothing")]
+	[CallerCount(Count = 11)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetWindproof()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -335,14 +320,14 @@ public class ClothingItem : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "ApplyCraftingProgress")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
 	[CalledBy(Type = typeof(CookingPotItem), Member = "PickUpCookedGearItem")]
-	[Calls(Type = typeof(PlayerManager), Member = "PutOnClothingItem")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetEmptyLayerForRegion")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "ApplyCraftingProgress")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "AddItemToPlayerInventory")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetEmptyLayerForRegion")]
+	[Calls(Type = typeof(PlayerManager), Member = "PutOnClothingItem")]
+	[CallsUnknownMethods(Count = 3)]
 	public void PickedUp()
 	{
 	}
@@ -354,46 +339,31 @@ public class ClothingItem : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(GearItem), Member = "GetTextToDisplayWhenSelected")]
-	[CallsUnknownMethods(Count = 89)]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
 	[Calls(Type = typeof(ClothingItem), Member = "GetWarmth")]
 	[Calls(Type = typeof(ClothingItem), Member = "GetWindproof")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 89)]
 	public string GetWarmthAndWindchillBonusString(float normalizedCondition)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ClothingItem), Member = "GetWindproof")]
 	[Calls(Type = typeof(ClothingItem), Member = "GetWarmth")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallsUnknownMethods(Count = 2)]
 	public string GetWindchillBonusString(float normalizedCondition)
@@ -408,61 +378,59 @@ public class ClothingItem : MonoBehaviour
 		return default(ClothingLayer);
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SetEquippedLayer(ClothingLayer layer)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(WetZoneTrigger), Member = "IncreaseWetness")]
-	[CalledBy(Type = typeof(WetZoneApplyOnlyTrigger), Member = "IncreaseWetness")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetTopLayerGear")]
 	[CalledBy(Type = typeof(Panel_Clothing), Member = "UpdateGlobalStatBars")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateBonusValuesFromWornClothing")]
+	[CalledBy(Type = typeof(WetZoneApplyOnlyTrigger), Member = "IncreaseWetness")]
+	[CalledBy(Type = typeof(WetZoneTrigger), Member = "IncreaseWetness")]
+	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetTopLayerGear")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsOutermostItemInClothingRegion()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
-	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
-	[CalledBy(Type = typeof(ClothingItem), Member = "Deserialize")]
-	[CalledBy(Type = typeof(ClothingItem), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ClothingItem), Member = "Dry")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(ClothingItem), Member = "IsNearFire")]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(ClothingItem), Member = "Update")]
+	[CalledBy(Type = typeof(ClothingItem), Member = "Deserialize")]
+	[CalledBy(Type = typeof(GearItem), Member = "Deserialize")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(ClothingItem), Member = "IsNearFire")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(ClothingItem), Member = "Dry")]
+	[CallsUnknownMethods(Count = 2)]
 	private void DoDryOrFreeze(float numHoursDelta, bool nearFireOverride = false)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateClothingWetness")]
-	[CalledBy(Type = typeof(GearItem), Member = "ManualUpdate")]
-	[CalledBy(Type = typeof(ClothingItem), Member = "DoDryOrFreeze")]
-	[CalledBy(Type = typeof(ClothingItem), Member = "IncreaseWetnessPercent")]
 	[CalledBy(Type = typeof(ClothingItem), Member = "Serialize")]
+	[CalledBy(Type = typeof(ClothingItem), Member = "MaybeGetWetOnGround")]
+	[CalledBy(Type = typeof(ClothingItem), Member = "IncreaseWetnessPercent")]
+	[CalledBy(Type = typeof(ClothingItem), Member = "DoDryOrFreeze")]
+	[CalledBy(Type = typeof(GearItem), Member = "ManualUpdate")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "UpdateClothingWetness")]
+	[CallerCount(Count = 6)]
 	[Calls(Type = typeof(FireManager), Member = "GetDistanceToClosestFire")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(ClothingItem), Member = "MaybeGetWetOnGround")]
+	[CallsUnknownMethods(Count = 3)]
 	private bool IsNearFire()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(ClothingItem), Member = "IsWearing")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ClothingItem), Member = "IsWearing")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetDailyHPDecay()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

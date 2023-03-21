@@ -39,11 +39,8 @@ public class JiggleBone : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Debug), Member = "DrawRay")]
 	[CallsDeduplicatedMethods(Count = 18)]
-	[Calls(Type = typeof(Debug), Member = "DrawRay")]
-	[Calls(Type = typeof(Debug), Member = "DrawRay")]
-	[Calls(Type = typeof(Debug), Member = "DrawRay")]
-	[Calls(Type = typeof(Debug), Member = "DrawRay")]
 	[CallsUnknownMethods(Count = 20)]
 	private void LateUpdate()
 	{

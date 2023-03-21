@@ -13,97 +13,97 @@
   <ItemGroup />
   <ItemGroup>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.PhysicsModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.PhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="SuperSplines">
-      <HintPath>..\assembly_cpp2il\SuperSplines.dll</HintPath>
+      <HintPath>..\call_analysis\SuperSplines.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AudioModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.AudioModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.AudioModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AnimationModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.AnimationModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.AnimationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ParticleSystemModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.ParticleSystemModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Physics2DModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.Physics2DModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.Physics2DModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.TextRenderingModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
     <Reference Include="com.rlabrecque.steamworks.net">
-      <HintPath>..\assembly_cpp2il\com.rlabrecque.steamworks.net.dll</HintPath>
+      <HintPath>..\call_analysis\com.rlabrecque.steamworks.net.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.IMGUIModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.IMGUIModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.IMGUIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.AIModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.AIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AssetBundleModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.AssetBundleModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.AssetBundleModule.dll</HintPath>
     </Reference>
     <Reference Include="System.Core">
-      <HintPath>..\assembly_cpp2il\System.Core.dll</HintPath>
+      <HintPath>..\call_analysis\System.Core.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass">
-      <HintPath>..\assembly_cpp2il\Assembly-CSharp-firstpass.dll</HintPath>
+      <HintPath>..\call_analysis\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>..\assembly_cpp2il\Unity.TextMeshPro.dll</HintPath>
+      <HintPath>..\call_analysis\Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TerrainModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.TerrainModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.TerrainModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.WindModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.WindModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.WindModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ClothModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.ClothModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.ClothModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VideoModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.VideoModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.VideoModule.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-      <HintPath>..\assembly_cpp2il\Unity.Mathematics.dll</HintPath>
+      <HintPath>..\call_analysis\Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Rewired_Core">
-      <HintPath>..\assembly_cpp2il\Rewired_Core.dll</HintPath>
+      <HintPath>..\call_analysis\Rewired_Core.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.DirectorModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.DirectorModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.DirectorModule.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>..\assembly_cpp2il\Unity.Timeline.dll</HintPath>
+      <HintPath>..\call_analysis\Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\assembly_cpp2il\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\call_analysis\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="EasyRoads3Dv3">
-      <HintPath>..\assembly_cpp2il\EasyRoads3Dv3.dll</HintPath>
+      <HintPath>..\call_analysis\EasyRoads3Dv3.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\assembly_cpp2il\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.UIModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.UIModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UnityWebRequestModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.UnityWebRequestModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TerrainPhysicsModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.TerrainPhysicsModule.dll</HintPath>
     </Reference>
     <Reference Include="HOTween">
-      <HintPath>..\assembly_cpp2il\HOTween.dll</HintPath>
+      <HintPath>..\call_analysis\HOTween.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.InputLegacyModule">
-      <HintPath>..\assembly_cpp2il\UnityEngine.InputLegacyModule.dll</HintPath>
+      <HintPath>..\call_analysis\UnityEngine.InputLegacyModule.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

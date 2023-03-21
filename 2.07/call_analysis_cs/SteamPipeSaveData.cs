@@ -6,8 +6,8 @@ public class SteamPipeSaveData
 
 	public string m_SerializedData;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public SteamPipeSaveData()
 	{
 	}

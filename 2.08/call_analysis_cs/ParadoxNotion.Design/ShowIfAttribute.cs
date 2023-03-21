@@ -14,7 +14,7 @@ public class ShowIfAttribute : DrawerAttribute
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 

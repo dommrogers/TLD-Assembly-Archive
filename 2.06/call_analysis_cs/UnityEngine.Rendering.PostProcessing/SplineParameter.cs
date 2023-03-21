@@ -6,24 +6,23 @@ namespace UnityEngine.Rendering.PostProcessing;
 [Serializable]
 public sealed class SplineParameter : ParameterOverride<Spline>
 {
-	[Calls(Type = typeof(Spline), Member = "Cache")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Spline), Member = "Cache")]
 	protected internal override void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Spline), Member = "Cache")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Spline), Member = "Cache")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	internal override void SetValue(ParameterOverride parameter)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Spline), Member = "Cache")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(Spline), Member = "Cache")]
-	[Calls(Type = typeof(Spline), Member = "Cache")]
 	[CallsUnknownMethods(Count = 3)]
 	public override void Interp(Spline from, Spline to, float t)
 	{
@@ -31,11 +30,8 @@ public sealed class SplineParameter : ParameterOverride<Spline>
 
 	[CalledBy(Type = typeof(ColorGradingSettings), Member = ".ctor")]
 	[CalledBy(Type = typeof(RLProBleed), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGradingSettings), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(ColorGradingSettings), Member = ".ctor")]
 	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(ColorGradingSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public SplineParameter()
 	{
 		((ParameterOverride<>)(object)this)._002Ector();

@@ -12,20 +12,20 @@ public class fsRecoveryProcessor<TCanProcess, TMissing> : fsObjectProcessor wher
 	{
 		public Dictionary<string, fsData> json;
 
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
 		public _003C_003Ec__DisplayClass3_0()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		internal bool _003COnBeforeDeserialize_003Eb__0(KeyValuePair<string, fsData> kvp)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -38,24 +38,24 @@ public class fsRecoveryProcessor<TCanProcess, TMissing> : fsObjectProcessor wher
 
 		public static Func<KeyValuePair<string, fsData>, fsData> _003C_003E9__3_2;
 
-		[CallsUnknownMethods(Count = 1)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		public _003C_003Ec()
 		{
 		}
 
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[DeduplicatedMethod]
 		internal string _003COnBeforeDeserialize_003Eb__3_1(KeyValuePair<string, fsData> c)
 		{
 			return null;
 		}
 
+		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[DeduplicatedMethod]
 		internal fsData _003COnBeforeDeserialize_003Eb__3_2(KeyValuePair<string, fsData> c)
 		{
 			return null;
@@ -66,47 +66,43 @@ public class fsRecoveryProcessor<TCanProcess, TMissing> : fsObjectProcessor wher
 
 	private const string FIELD_NAME_STATE = "_recoveryState";
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override bool CanProcess(Type type)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(fsData), Member = "get_AsString")]
-	[CallsUnknownMethods(Count = 108)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(fsData), Member = "get_AsDictionary")]
-	[Calls(Type = typeof(fsJsonParser), Member = "Parse")]
-	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(fsData), Member = "get_AsString")]
-	[Calls(Type = typeof(fsData), Member = "get_AsString")]
-	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
-	[Calls(Type = typeof(fsData), Member = "get_AsString")]
-	[Calls(Type = typeof(fsData), Member = "get_AsDictionary")]
-	[Calls(Type = typeof(fsData), Member = "get_IsDictionary")]
-	[CallsDeduplicatedMethods(Count = 17)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(fsData), Member = "get_IsDictionary")]
+	[Calls(Type = typeof(fsData), Member = "get_AsDictionary")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(fsData), Member = "get_AsString")]
+	[Calls(Type = typeof(ReflectionTools), Member = "GetType")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+	[Calls(Type = typeof(fsJsonParser), Member = "Parse")]
+	[Calls(Type = typeof(Enumerable), Member = "Where")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 108)]
 	public override void OnBeforeDeserialize(Type storageType, ref fsData data)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public override void OnAfterDeserialize(Type storageType, object instance)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public fsRecoveryProcessor()
 	{
 	}

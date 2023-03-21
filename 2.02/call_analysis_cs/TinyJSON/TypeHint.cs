@@ -6,7 +6,7 @@ namespace TinyJSON;
 public class TypeHint : Attribute
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public TypeHint()
 	{
 	}

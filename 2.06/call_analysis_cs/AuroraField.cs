@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Tasks.Actions;
@@ -43,10 +42,13 @@ public class AuroraField : MonoBehaviour
 
 	private List<AuroraActivatedToggle> m_InfluencedAAuroraActivatedToggles;
 
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(AuroraManager), Member = "RegisterAuroraField")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
+	[Calls(Type = typeof(Component), Member = "GetComponents")]
+	[Calls(Type = typeof(AuroraManager), Member = "RegisterAuroraField")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 16)]
 	public void Awake()
 	{
 	}
@@ -58,8 +60,8 @@ public class AuroraField : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AuroraField), Member = "ComputeRadiusExtent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void Start()
 	{
@@ -69,7 +71,7 @@ public class AuroraField : MonoBehaviour
 	[CallerCount(Count = 1)]
 	public float GetExtentRadius()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -81,23 +83,23 @@ public class AuroraField : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(AuroraFieldsSceneManager), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(AuroraField), Member = "SetFieldActive")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
+	[CalledBy(Type = typeof(FlashlightItem), Member = "Awake")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(ObjectGuid), Member = "GetGuidFromGameObject")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[Calls(Type = typeof(AuroraManager), Member = "UnRegisterAuroraField")]
 	[Calls(Type = typeof(AuroraManager), Member = "RegisterAuroraField")]
-	[CalledBy(Type = typeof(FlashlightItem), Member = "Awake")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
 	public void SetDynamic(bool isDynamic)
 	{
@@ -112,7 +114,7 @@ public class AuroraField : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool DoesFieldControlComponents(ControlledComponents flag)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -120,28 +122,28 @@ public class AuroraField : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[CalledBy(Type = typeof(BaseAi), Member = "EnterInvestigate")]
 	[CalledBy(Type = typeof(BaseAi), Member = "MaybeMoveInvestigationPositionOutsideOfField")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	public Vector3 GetClosestPointOnFieldExtent(Vector3 position, float margin)
 	{
 		return default(Vector3);
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Vector3), Member = "Normalize")]
 	[CalledBy(Type = typeof(BaseAi), Member = "MaybeMoveWanderPosOutsideOfField")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 8)]
 	public Vector3 GetClosestPointOnFieldBorder(Vector3 position)
 	{
@@ -149,46 +151,45 @@ public class AuroraField : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(AuroraFieldsSceneManager), Member = "UpdateAuroraFields")]
-	[Calls(Type = typeof(AuroraField), Member = "SetFieldActive")]
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateActivation")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "RollChance")]
+	[Calls(Type = typeof(AuroraField), Member = "SetFieldActive")]
 	public void OnAuroraEnabled()
 	{
 	}
 
+	[CalledBy(Type = typeof(AuroraFieldsSceneManager), Member = "UpdateAuroraFields")]
+	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateActivation")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(AuroraField), Member = "ActivateElectrolizers")]
 	[Calls(Type = typeof(AuroraField), Member = "ActivateToggles")]
-	[CalledBy(Type = typeof(AuroraFieldsSceneManager), Member = "UpdateAuroraFields")]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateActivation")]
 	public void OnAuroraDisabled()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[CalledBy(Type = typeof(AuroraFieldsSceneManager), Member = "GetFieldContaining")]
-	[CalledBy(Type = typeof(AuroraField), Member = "ActivateToggles")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CalledBy(Type = typeof(BaseAi), Member = "HoldGroundInsideAuroraField")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(AuroraField), Member = "ActivateElectrolizers")]
+	[CalledBy(Type = typeof(AuroraField), Member = "ActivateToggles")]
+	[CalledBy(Type = typeof(AuroraFieldsSceneManager), Member = "GetFieldContaining")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 6)]
 	public bool Contains(Vector3 position)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeHoldGroundDueToSafeHaven")]
 	[CalledBy(Type = typeof(BaseAi), Member = "GetVisibleFieldNearby")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(AuroraFieldsSceneManager), Member = "GetFieldContaining")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeHoldGroundDueToSafeHaven")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Bounds), Member = "Intersects")]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeHoldGroundDueToSafeHaven")]
+	[Calls(Type = typeof(Bounds), Member = "Intersects")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public bool Contains(Vector3 position, float radius)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -201,80 +202,80 @@ public class AuroraField : MonoBehaviour
 	[CallerCount(Count = 2)]
 	public bool IsStaticField()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameObject), Member = "get_layer")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(GameObject), Member = "set_layer")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "get_layer")]
+	[Calls(Type = typeof(GameObject), Member = "set_layer")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void ResetAllAuroraFieldLayerToDefault(GameObject rootObject)
 	{
 	}
 
-	[CalledBy(Type = typeof(Action_AuroraFielEnable), Member = "DoWork")]
-	[CallerCount(Count = 7)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AuroraField), Member = "ActivateElectrolizers")]
-	[Calls(Type = typeof(AuroraField), Member = "ActivateToggles")]
 	[CalledBy(Type = typeof(AuroraField), Member = "Deserialize")]
 	[CalledBy(Type = typeof(AuroraField), Member = "OnAuroraEnabled")]
 	[CalledBy(Type = typeof(AuroraField), Member = "Enable")]
 	[CalledBy(Type = typeof(FlashlightItem), Member = "EnableLights")]
 	[CalledBy(Type = typeof(AuroraFieldsSceneManager), Member = "EnableAllStaticFields")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_enable_aurorafields")]
+	[CalledBy(Type = typeof(Action_AuroraFielEnable), Member = "DoWork")]
+	[CallerCount(Count = 7)]
+	[Calls(Type = typeof(AuroraField), Member = "ActivateElectrolizers")]
+	[Calls(Type = typeof(AuroraField), Member = "ActivateToggles")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void SetFieldActive(bool enabled)
 	{
 	}
 
-	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "RollChance")]
 	private bool ShouldActivate()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(AuroraField), Member = "SetFieldActive")]
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(AuroraField), Member = "OnFieldEnableChanged")]
 	[CalledBy(Type = typeof(AuroraField), Member = "OnAuroraDisabled")]
-	[Calls(Type = typeof(AuroraField), Member = "Contains")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(AuroraField), Member = "SetFieldActive")]
+	[CalledBy(Type = typeof(AuroraField), Member = "OnFieldEnableChanged")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(AuroraField), Member = "Contains")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ActivateElectrolizers(bool enabled)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(AuroraField), Member = "OnFieldEnableChanged")]
 	[CalledBy(Type = typeof(AuroraField), Member = "OnAuroraDisabled")]
 	[CalledBy(Type = typeof(AuroraField), Member = "SetFieldActive")]
-	[Calls(Type = typeof(AuroraField), Member = "Contains")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(AuroraField), Member = "OnFieldEnableChanged")]
 	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(AuroraField), Member = "Contains")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	private void ActivateToggles(bool enabled)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AuroraField), Member = "ActivateElectrolizers")]
 	[Calls(Type = typeof(AuroraField), Member = "ActivateToggles")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	private void OnFieldEnableChanged(bool enabled)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CalledBy(Type = typeof(AuroraField), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 9)]
 	private void ComputeRadiusExtent()
 	{
 	}

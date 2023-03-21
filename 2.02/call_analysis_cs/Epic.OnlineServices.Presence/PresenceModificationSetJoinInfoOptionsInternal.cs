@@ -14,10 +14,10 @@ internal struct PresenceModificationSetJoinInfoOptionsInternal : ISettable, IDis
 	public string JoinInfo
 	{
 		[CalledBy(Type = typeof(PresenceModificationSetJoinInfoOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(PresenceModificationSetJoinInfoOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,17 +29,17 @@ internal struct PresenceModificationSetJoinInfoOptionsInternal : ISettable, IDis
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(PresenceModificationSetJoinInfoOptionsInternal), Member = "set_JoinInfo")]
 	[CalledBy(Type = typeof(PresenceModification), Member = "SetJoinInfo")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(PresenceModificationSetJoinInfoOptionsInternal), Member = "set_JoinInfo")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

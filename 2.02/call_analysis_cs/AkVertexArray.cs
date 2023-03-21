@@ -6,23 +6,24 @@ public class AkVertexArray : AkBaseArray<AkVertex>
 	protected override int StructureSize
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkVertex_GetSizeOf")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(AkBaseArray<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public AkVertexArray(int count)
 	{
-		((AkBaseArray<>)(object)this)._002Ector(default(int));
+		((AkBaseArray<>)(object)this)._002Ector(0);
 	}
 
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkVertex_Clear")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkVertex_Clear")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	protected override void DefaultConstructAtIntPtr(IntPtr address)
 	{
@@ -37,9 +38,9 @@ public class AkVertexArray : AkBaseArray<AkVertex>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkVertex), Member = "getCPtr")]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkVertex_Clone")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected override void CloneIntoReferenceFromIntPtr(IntPtr address, AkVertex other)
 	{
 	}

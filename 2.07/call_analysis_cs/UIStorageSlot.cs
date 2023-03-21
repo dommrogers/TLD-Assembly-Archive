@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 
 public class UIStorageSlot : UIItemSlot
@@ -9,20 +8,20 @@ public class UIStorageSlot : UIItemSlot
 
 	protected override InvGameItem observedItem
 	{
-		[Calls(Type = typeof(UIItemStorage), Member = "get_items")]
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+		[Calls(Type = typeof(UIItemStorage), Member = "get_items")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(UIItemStorage), Member = "get_items")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIItemStorage), Member = "get_items")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	protected override InvGameItem Replace(InvGameItem item)
 	{
 		return null;

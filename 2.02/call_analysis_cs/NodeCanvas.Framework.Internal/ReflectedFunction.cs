@@ -10,19 +10,19 @@ public class ReflectedFunction<TResult> : ReflectedFunctionWrapper
 
 	public BBParameter<TResult> result;
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[DeduplicatedMethod]
 	[CallsUnknownMethods(Count = 5)]
 	public override BBParameter[] GetVariables()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void Init(object instance)
 	{
 	}
@@ -37,6 +37,10 @@ public class ReflectedFunction<TResult> : ReflectedFunctionWrapper
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(TypeFullName = "ParadoxNotion.Internal.AOTDummy.NodeCanvas_Framework_Internal_ReflectedFunction_Collision", Member = ".ctor")]
+	[CalledBy(TypeFullName = "ParadoxNotion.Internal.AOTDummy.NodeCanvas_Framework_Internal_ReflectedFunction_Collision2D", Member = ".ctor")]
+	[CalledBy(TypeFullName = "ParadoxNotion.Internal.AOTDummy.NodeCanvas_Framework_Internal_ReflectedFunction_Space", Member = ".ctor")]
+	[CalledBy(TypeFullName = "ParadoxNotion.Internal.AOTDummy.NodeCanvas_Framework_Internal_ReflectedFunction_SpawnLocation", Member = ".ctor")]
 	[CallerCount(Count = 4)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
@@ -62,10 +66,10 @@ public class ReflectedFunction<TResult, T1> : ReflectedFunctionWrapper
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void Init(object instance)
 	{
 	}
@@ -107,10 +111,10 @@ public class ReflectedFunction<TResult, T1, T2> : ReflectedFunctionWrapper
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void Init(object instance)
 	{
 	}
@@ -145,19 +149,19 @@ public class ReflectedFunction<TResult, T1, T2, T3> : ReflectedFunctionWrapper
 
 	public BBParameter<TResult> result;
 
-	[CallsUnknownMethods(Count = 17)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 17)]
 	public override BBParameter[] GetVariables()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public override void Init(object instance)
 	{
 	}
@@ -171,9 +175,9 @@ public class ReflectedFunction<TResult, T1, T2, T3> : ReflectedFunctionWrapper
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 4)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 32)]
 	public ReflectedFunction()
 	{
@@ -194,10 +198,10 @@ public class ReflectedFunction<TResult, T1, T2, T3, T4> : ReflectedFunctionWrapp
 
 	public BBParameter<TResult> result;
 
-	[CallsUnknownMethods(Count = 21)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 21)]
 	public override BBParameter[] GetVariables()
 	{
 		return null;
@@ -220,10 +224,10 @@ public class ReflectedFunction<TResult, T1, T2, T3, T4> : ReflectedFunctionWrapp
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 5)]
-	[CallsUnknownMethods(Count = 40)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 40)]
 	public ReflectedFunction()
 	{
 	}
@@ -271,10 +275,10 @@ public class ReflectedFunction<TResult, T1, T2, T3, T4, T5> : ReflectedFunctionW
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 48)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 48)]
 	public ReflectedFunction()
 	{
 	}
@@ -315,10 +319,10 @@ public class ReflectedFunction<TResult, T1, T2, T3, T4, T5, T6> : ReflectedFunct
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 1)]
 	public override object Call()
 	{
 		return null;

@@ -8,18 +8,18 @@ internal class HR
 	[CallerCount(Count = 0)]
 	internal static bool SUCCEEDED(int hr)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	internal static bool FAILED(int hr)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public HR()
 	{
 	}

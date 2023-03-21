@@ -13,8 +13,8 @@ public static class MB_TGAWriter
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(BinaryWriter), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 35)]
 	public static void Write(Color[] pixels, int width, int height, Stream output)
 	{

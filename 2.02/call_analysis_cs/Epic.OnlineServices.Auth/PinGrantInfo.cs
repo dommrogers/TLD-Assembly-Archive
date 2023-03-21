@@ -15,16 +15,16 @@ public class PinGrantInfo : ISettable
 
 	public string UserCode
 	{
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -32,16 +32,16 @@ public class PinGrantInfo : ISettable
 
 	public string VerificationURI
 	{
-		[CallerCount(Count = 29)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -54,7 +54,7 @@ public class PinGrantInfo : ISettable
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -73,35 +73,35 @@ public class PinGrantInfo : ISettable
 		{
 			return null;
 		}
-		[CallerCount(Count = 20)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
 	}
 
+	[CalledBy(Type = typeof(PinGrantInfo), Member = "Set")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PinGrantInfoInternal), Member = "get_UserCode")]
 	[Calls(Type = typeof(PinGrantInfoInternal), Member = "get_VerificationURI")]
 	[Calls(Type = typeof(PinGrantInfoInternal), Member = "get_VerificationURIComplete")]
-	[CalledBy(Type = typeof(PinGrantInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	internal void Set(PinGrantInfoInternal? other)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(PinGrantInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public PinGrantInfo()
 	{
 	}

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using Unity.Collections;
@@ -138,105 +137,109 @@ public class AuroraManager : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AuroraManager), Member = "GetForceDisableForNewGame")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Start()
 	{
 	}
 
-	[Calls(Type = typeof(AuroraManager), Member = "DisposeNativeArrays")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AuroraManager), Member = "DisposeNativeArrays")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(AuroraManager), Member = "UpdateForceAurora")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(AuroraManager), Member = "UpdateVisibility")]
 	[Calls(Type = typeof(AuroraManager), Member = "UpdateActivation")]
 	[Calls(Type = typeof(AuroraManager), Member = "UpdateAuroraAudio")]
 	[Calls(Type = typeof(AuroraManager), Member = "UpdateColour")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
+	[Calls(Type = typeof(AuroraManager), Member = "UpdateForceAurora")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 14)]
 	public void Update()
 	{
 	}
 
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
-	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
-	[CallsUnknownMethods(Count = 13)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 13)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(AuroraManager), Member = "GetForceDisableForNewGame")]
-	[Calls(Type = typeof(AuroraManager), Member = "GetForceDisableForNewGame")]
-	[Calls(Type = typeof(AuroraManager), Member = "UpdateVisibility")]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AuroraManager), Member = "GetForceDisableForNewGame")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(AuroraManager), Member = "UpdateVisibility")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CalledBy(Type = typeof(AuroraField), Member = "Awake")]
-	[Calls(Type = typeof(AuroraFieldsSceneManager), Member = "RegisterAuroraField")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(AuroraField), Member = "SetDynamic")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AuroraFieldsSceneManager), Member = "RegisterAuroraField")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void RegisterAuroraField(AuroraField auroraField)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AuroraFieldsSceneManager), Member = "UnRegisterAuroraField")]
 	[CalledBy(Type = typeof(AuroraField), Member = "OnDestroy")]
 	[CalledBy(Type = typeof(AuroraField), Member = "SetDynamic")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AuroraFieldsSceneManager), Member = "UnRegisterAuroraField")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void UnRegisterAuroraField(AuroraField auroraField)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public static bool IsRegisteredAuroraField(AuroraField auroraField)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static void RegisterAuroraGameObject(GameObject go)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 18)]
 	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "Awake")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 18)]
 	public static void RegisterAuroraElectrolizer(AuroraElectrolizer auroraElectrolizer)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 8)]
 	public static void RegisterAuroraLightSimple(AuroraLightingSimple auroraLightSimple)
 	{
@@ -257,7 +260,8 @@ public class AuroraManager : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public static void RegisterAuroraActivatedToggle(AuroraActivatedToggle auroraActivatedToggle)
 	{
@@ -270,91 +274,91 @@ public class AuroraManager : MonoBehaviour
 		return null;
 	}
 
-	[CalledBy(Type = typeof(GameManager), Member = "ResetLists")]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(GameManager), Member = "ResetLists")]
 	[CallerCount(Count = 1)]
 	public static void Reset()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CalledBy(Type = typeof(AuroraManager), Member = "OnDisable")]
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateVisibility")]
+	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 12)]
 	public static void DisposeNativeArrays()
 	{
 	}
 
 	[CallerCount(Count = 52)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public bool AuroraIsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
 	public float GetSecondsBetweenFlyoverScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
 	public float GetWildlifeDetectionRangeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
 	public float GetWildlifeFleeDistanceScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
 	public float GetDamageToPredatorsScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
 	public float GetPredatorInflictDamageScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
 	public float GetPredatorFleeChanceScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
 	public float GetPredatorAttackDistanceScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetNormalizedAlpha()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetNormalizedAlphaSquare()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -365,11 +369,11 @@ public class AuroraManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsFullyActive()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void BoostAurora(bool isBoostEnabled)
 	{
 	}
@@ -378,137 +382,97 @@ public class AuroraManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsAuroraBoostEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(AuroraManager), Member = "Update")]
-	[CallsUnknownMethods(Count = 71)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 18)]
 	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
 	[Calls(Type = typeof(Weather), Member = "UseOutdoorLightingForLightSources")]
 	[Calls(Type = typeof(AuroraManager), Member = "DisposeNativeArrays")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(GameManager), Member = "GetCurrentCamera")]
+	[Calls(Type = typeof(Random), Member = "Range")]
 	[Calls(Type = typeof(JobHandle), Member = "Complete")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "SetLocationDistances")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(AuroraLightingSimple), Member = "ManualUpdate")]
 	[Calls(Type = typeof(AuroraManager), Member = "GetAuroraElectrolyzerFadeRatio")]
-	[Calls(Type = typeof(AuroraLightingSimple), Member = "SetLocationDistances")]
+	[Calls(Type = typeof(AuroraElectrolizer), Member = "SetLocationDistances")]
+	[Calls(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
 	[Calls(Type = typeof(AuroraManager), Member = "UpdateElectrolyzerWithFarOptimization")]
-	[Calls(Type = typeof(AuroraManager), Member = "GetAuroraElectrolyzerFadeRatio")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "SetLocationDistances")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
-	[Calls(Type = typeof(AuroraManager), Member = "GetAuroraElectrolyzerFadeRatio")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
+	[Calls(Type = typeof(AuroraLightingSimple), Member = "SetLocationDistances")]
+	[Calls(Type = typeof(AuroraLightingSimple), Member = "ManualUpdate")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 18)]
+	[CallsUnknownMethods(Count = 71)]
 	private void UpdateAuroraElectrolizers()
 	{
 	}
 
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[CallsUnknownMethods(Count = 22)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[Calls(Type = typeof(AuroraElectrolizer), Member = "ManualUpdate")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 22)]
 	private void UpdateElectrolyzerWithFarOptimization(float distSqr, bool updateFarElectrolizersThisFrame, int i, float fadeRatio, float alpha, float4 timings, float priTimer, float deltaTime)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateActivation")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(AuroraField), Member = "OnAuroraDisabled")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(AuroraField), Member = "OnAuroraDisabled")]
 	[Calls(Type = typeof(AuroraField), Member = "OnAuroraEnabled")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 5)]
 	private void UpdateAuroraFields(bool active)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(AuroraManager), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(AuroraManager), Member = "OnFullyActiveStart")]
+	[Calls(Type = typeof(AuroraManager), Member = "UpdateAuroraFields")]
+	[Calls(Type = typeof(SpawnRegion), Member = "OnAuroraEnabled")]
 	[Calls(Type = typeof(AuroraScreenManager), Member = "Reset")]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
-	[Calls(Type = typeof(AuroraManager), Member = "UpdateAuroraFields")]
-	[Calls(Type = typeof(AuroraManager), Member = "OnFullyActiveStart")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(SpawnRegion), Member = "OnAuroraEnabled")]
+	[CallsUnknownMethods(Count = 7)]
 	private void UpdateActivation()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateActivation")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 27)]
 	private void OnFullyActiveStart()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
-	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
+	[CalledBy(Type = typeof(Weather), Member = "GetDebugWeatherText")]
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraElectrolizers")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(Weather), Member = "GetDebugWeatherText")]
+	[CallsUnknownMethods(Count = 5)]
 	public float GetAuroraElectrolyzerFadeRatio()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(AuroraLightingSimple), Member = "StopAll")]
-	[CallsUnknownMethods(Count = 9)]
-	[CalledBy(Type = typeof(AuroraManager), Member = "Deserialize")]
 	[CalledBy(Type = typeof(AuroraManager), Member = "Update")]
-	[Calls(Type = typeof(AuroraElectrolizer), Member = "StopAll")]
-	[CallsDeduplicatedMethods(Count = 5)]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetMaxAuroraIntensity")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(AuroraManager), Member = "DisposeNativeArrays")]
-	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CalledBy(Type = typeof(AuroraManager), Member = "Deserialize")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(AuroraManager), Member = "DisposeNativeArrays")]
+	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetMaxAuroraIntensity")]
+	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(AuroraElectrolizer), Member = "StopAll")]
+	[Calls(Type = typeof(AuroraLightingSimple), Member = "StopAll")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 9)]
 	private void UpdateVisibility(float deltaGameMinutes)
 	{
 	}
@@ -520,40 +484,33 @@ public class AuroraManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
 	[CalledBy(Type = typeof(AuroraManager), Member = "Update")]
-	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
-	[Calls(Type = typeof(WeatherTransition), Member = "ForceNextWeatherStage")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
-	[Calls(Type = typeof(WeatherTransition), Member = "OverrideDurationOfStageInCurrentWeatherSet")]
-	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsNightOrNightBlend")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsLateNightWindowForAuroraActivation")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsEarlyNightWindowForAuroraActivation")]
-	[Calls(Type = typeof(GameManager), Member = "GetUniStorm")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsLateNightWindowForAuroraActivation")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsNightOrNightBlend")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ActivateWeatherSetAtFrac")]
+	[Calls(Type = typeof(WeatherTransition), Member = "OverrideDurationOfStageInCurrentWeatherSet")]
+	[Calls(Type = typeof(AuroraManager), Member = "AuroraIsActive")]
+	[Calls(Type = typeof(WeatherTransition), Member = "ForceNextWeatherStage")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 10)]
 	private void UpdateForceAurora()
 	{
 	}
 
-	[CalledBy(Type = typeof(AuroraManager), Member = "GetAuroraColourCorrected")]
-	[CalledBy(Type = typeof(InteriorLightingManager), Member = "GetAuroraColours")]
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(AuroraBand), Member = "UpdateColour")]
-	[CalledBy(Type = typeof(AuroraBand), Member = "Update")]
-	[CalledBy(Type = typeof(ExteriorLightingManager), Member = "Update")]
+	[CalledBy(Type = typeof(DarkLightingManager), Member = "UpdateIntensities")]
 	[CalledBy(Type = typeof(DarkLightingManager), Member = "GetAuroraColours")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
-	[Calls(Type = typeof(Mathf), Member = "Lerp")]
+	[CalledBy(Type = typeof(ExteriorLightingManager), Member = "Update")]
+	[CalledBy(Type = typeof(AuroraBand), Member = "Update")]
+	[CalledBy(Type = typeof(AuroraBand), Member = "UpdateColour")]
+	[CalledBy(Type = typeof(InteriorLightingManager), Member = "GetAuroraColours")]
+	[CalledBy(Type = typeof(AuroraManager), Member = "GetAuroraColourCorrected")]
+	[CallerCount(Count = 7)]
 	[Calls(Type = typeof(Mathf), Member = "Lerp")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(DarkLightingManager), Member = "UpdateIntensities")]
+	[CallsUnknownMethods(Count = 10)]
 	public Color GetAuroraColour()
 	{
 		return default(Color);
@@ -566,14 +523,13 @@ public class AuroraManager : MonoBehaviour
 		return default(Color);
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "Initialize")]
-	[Calls(Type = typeof(Color), Member = "HSVToRGB")]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
-	[Calls(Type = typeof(Color), Member = "RGBToHSVHelper")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
+	[Calls(Type = typeof(Color), Member = "RGBToHSVHelper")]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(Color), Member = "HSVToRGB")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public Color GetRandomElectricalColor(bool randomSaturation = true, bool randomBrightness = true)
 	{
 		return default(Color);
@@ -589,78 +545,77 @@ public class AuroraManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsUsingCinematicColours()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(AuroraManager), Member = "Update")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public void UpdateColour()
 	{
 	}
 
+	[CalledBy(Type = typeof(AuroraManager), Member = "Update")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
-	[CalledBy(Type = typeof(AuroraManager), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
 	private void UpdateAuroraAudio()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkSoundEngine), Member = "StopPlayingID")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void AuroraAudioStop()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void AuroraAudioPlay()
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void AuroraAudioSetIntensityRTPC()
 	{
 	}
 
-	[CalledBy(Type = typeof(AuroraManager), Member = "Deserialize")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(AuroraManager), Member = "Deserialize")]
 	[CalledBy(Type = typeof(AuroraManager), Member = "Start")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(AuroraManager), Member = "Deserialize")]
 	[CallerCount(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private bool GetForceDisableForNewGame()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
 	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "OnEnable")]
 	[CalledBy(Type = typeof(AuroraElectrolizer), Member = "OnDisable")]
+	[CallerCount(Count = 2)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 5)]
 	public static void OnAuroraElectrolizerEnableChanged(AuroraElectrolizer a, bool isEnabled)
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 42)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 42)]
 	public AuroraManager()
 	{
 	}

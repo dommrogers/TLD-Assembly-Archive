@@ -7,7 +7,7 @@ public class SteamPipeSaveData
 	public string m_SerializedData;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public SteamPipeSaveData()
 	{
 	}

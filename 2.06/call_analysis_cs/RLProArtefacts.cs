@@ -15,11 +15,11 @@ public sealed class RLProArtefacts : PostProcessEffectSettings
 
 	public BoolParameter debugArtefacts;
 
-	[CallsUnknownMethods(Count = 26)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ColorParameter), Member = ".ctor")]
 	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 26)]
 	public RLProArtefacts()
 	{
 	}

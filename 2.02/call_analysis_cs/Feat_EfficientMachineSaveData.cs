@@ -7,7 +7,7 @@ public class Feat_EfficientMachineSaveData
 	public float m_HoursAccumulator;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public Feat_EfficientMachineSaveData()
 	{
 	}

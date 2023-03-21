@@ -8,8 +8,8 @@ public class Activation
 
 	public float m_Duration;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public Activation()
 	{
 	}

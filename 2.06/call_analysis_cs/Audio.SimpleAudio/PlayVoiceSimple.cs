@@ -12,10 +12,10 @@ public class PlayVoiceSimple : BaseSimpleAudioComponent
 
 	public bool m_TrackPosition;
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayAudioSimpleManager), Member = "AddVoice")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
 	}

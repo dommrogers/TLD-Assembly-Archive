@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.UI.Generics;
 using UnityEngine;
@@ -38,8 +37,8 @@ public class PlayableBehaviourSay : PlayableBehaviour
 	[Calls(Type = typeof(AkSoundEngine), Member = "GetSourcePlayPosition")]
 	public bool TryGetCurrentTimelineTimeFromAudio(out float currentTime)
 	{
-		System.Runtime.CompilerServices.Unsafe.As<float, @null>(ref currentTime) = null;
-		return default(bool);
+		currentTime = default(float);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -48,14 +47,14 @@ public class PlayableBehaviourSay : PlayableBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
-	[Calls(Type = typeof(NPCVoice), Member = "Play")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPCVoice), Member = "Play")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public override void ProcessFrame(Playable playable, FrameData info, object playerData)
 	{
 	}
@@ -75,12 +74,12 @@ public class PlayableBehaviourSay : PlayableBehaviour
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NPCVoice), Member = "Play")]
+	[Calls(Type = typeof(PlayerVoice), Member = "Play")]
+	[CallsUnknownMethods(Count = 2)]
 	private void PlayVoice(float playTime)
 	{
 	}

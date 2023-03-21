@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -67,9 +66,9 @@ public class SnowImprintCustom : MonoBehaviour
 	private MaterialPropertyBlock m_MaterialPropertyBlock1;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 10)]
 	private void Awake()
 	{
@@ -81,16 +80,15 @@ public class SnowImprintCustom : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 17)]
-	[CalledBy(Type = typeof(SnowImprintCustom), Member = "Start")]
 	[CalledBy(Type = typeof(PlayerManager), Member = "PlaceMeshInWorld")]
-	[Calls(Type = typeof(SnowImprintCustom), Member = "BuildMaterialPropertyBlocks")]
-	[Calls(Type = typeof(Utils), Member = "GeneratePatchCoefficients")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 14)]
+	[CalledBy(Type = typeof(SnowImprintCustom), Member = "Start")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Utils), Member = "GeneratePatchCoefficients")]
+	[Calls(Type = typeof(SnowImprintCustom), Member = "BuildMaterialPropertyBlocks")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 17)]
 	public void Reposition()
 	{
 	}
@@ -101,28 +99,26 @@ public class SnowImprintCustom : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Graphics), Member = "DrawMesh")]
-	[CallsUnknownMethods(Count = 15)]
-	[Calls(Type = typeof(Graphics), Member = "DrawMesh")]
-	[Calls(Type = typeof(Transform), Member = "get_rotation")]
-	[Calls(Type = typeof(Camera), Member = "get_nearClipPlane")]
-	[Calls(Type = typeof(Transform), Member = "get_up")]
-	[CallsDeduplicatedMethods(Count = 20)]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Transform), Member = "get_eulerAngles")]
+	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(Transform), Member = "get_right")]
+	[Calls(Type = typeof(Transform), Member = "get_up")]
+	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Camera), Member = "get_nearClipPlane")]
+	[Calls(Type = typeof(Transform), Member = "get_rotation")]
+	[Calls(Type = typeof(Graphics), Member = "DrawMesh")]
+	[CallsDeduplicatedMethods(Count = 20)]
+	[CallsUnknownMethods(Count = 15)]
 	private void LateUpdate()
 	{
 	}
 
 	[CalledBy(Type = typeof(SnowImprintCustom), Member = "Reposition")]
-	[CallsUnknownMethods(Count = 24)]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 16)]
+	[CallsUnknownMethods(Count = 24)]
 	private void BuildMaterialPropertyBlocks()
 	{
 	}

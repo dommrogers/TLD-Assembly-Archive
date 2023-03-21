@@ -85,104 +85,97 @@ public class SmokeTrail : MonoBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SmokeTrail), Member = "InitEffect")]
-	[Calls(Type = typeof(SmokeTrail), Member = "InitEffect")]
 	private void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Material), Member = "SetColor")]
 	[CalledBy(Type = typeof(Chimney), Member = "Update")]
 	[CalledBy(Type = typeof(SmokeTrail), Member = "FixedUpdateInternal")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Material), Member = "SetColor")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetAlpha(float fadePercent)
 	{
 	}
 
-	[Calls(Type = typeof(SmokeTrail), Member = "SetAlpha")]
-	[Calls(Type = typeof(Weather), Member = "IsBlizzard")]
-	[Calls(Type = typeof(Material), Member = "SetColor")]
 	[CalledBy(Type = typeof(SmokeTrail), Member = "FixedUpdate")]
-	[Calls(Type = typeof(Material), Member = "GetColor")]
+	[CalledBy(Type = typeof(SmokeTrail), Member = "WarmUpEffect")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_MainMenu), Member = "WarmUpSmokeTrails")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Fire), Member = "GetRemainingLifeTimeSeconds")]
-	[CalledBy(Type = typeof(SmokeTrail), Member = "WarmUpEffect")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Material), Member = "GetTextureOffset")]
-	[Calls(Type = typeof(Object), Member = "Destroy")]
-	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[Calls(Type = typeof(Material), Member = "set_mainTextureOffset")]
-	[Calls(Type = typeof(Material), Member = "GetTextureOffset")]
-	[Calls(Type = typeof(SmokeTrail), Member = "UpdateInternal")]
-	[Calls(Type = typeof(SmokeTrail), Member = "InitEffect")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(SmokeTrail), Member = "InitEffect")]
+	[Calls(Type = typeof(SmokeTrail), Member = "UpdateInternal")]
+	[Calls(Type = typeof(Material), Member = "GetTextureOffset")]
+	[Calls(Type = typeof(Material), Member = "GetTextureOffset")]
+	[Calls(Type = typeof(Material), Member = "set_mainTextureOffset")]
+	[Calls(Type = typeof(Material), Member = "GetColor")]
 	[Calls(Type = typeof(Material), Member = "SetColor")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[Calls(Type = typeof(Fire), Member = "GetRemainingLifeTimeSeconds")]
+	[Calls(Type = typeof(SmokeTrail), Member = "SetAlpha")]
+	[Calls(Type = typeof(Weather), Member = "IsBlizzard")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void FixedUpdateInternal(float deltaTime)
 	{
 	}
 
-	[Calls(Type = typeof(SmokeTrail), Member = "FixedUpdateInternal")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SmokeTrail), Member = "FixedUpdateInternal")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void FixedUpdate()
 	{
 	}
 
-	[CalledBy(Type = typeof(SmokeTrail), Member = "Start")]
+	[CalledBy(Type = typeof(vp_MuzzleFlash), Member = "OnDisable")]
+	[CalledBy(Type = typeof(vp_MuzzleFlash), Member = "ShowSmoke")]
 	[CalledBy(Type = typeof(SmokeTrail), Member = "Start")]
 	[CalledBy(Type = typeof(SmokeTrail), Member = "FixedUpdateInternal")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[CalledBy(Type = typeof(SmokeTrail), Member = "StartSmoke")]
 	[CalledBy(Type = typeof(SmokeTrail), Member = "Reset")]
 	[CalledBy(Type = typeof(GunItem), Member = "ResetEffects")]
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(vp_MuzzleFlash), Member = "ShowSmoke")]
-	[CalledBy(Type = typeof(SmokeTrail), Member = "StartSmoke")]
-	[CalledBy(Type = typeof(vp_MuzzleFlash), Member = "OnDisable")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[CallerCount(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[Calls(Type = typeof(Fire), Member = "SetSmokeTrail")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Material), Member = "GetColor")]
 	[Calls(Type = typeof(SmokeTrail), Member = "getSmokeVec")]
 	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(Material), Member = "GetColor")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Fire), Member = "SetSmokeTrail")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 10)]
 	private void InitEffect(bool resetEffect = false)
 	{
 	}
 
 	[CalledBy(Type = typeof(SmokeTrail), Member = "FixedUpdateInternal")]
-	[Calls(Type = typeof(SmokeTrail), Member = "getSmokeVec")]
-	[CallsUnknownMethods(Count = 12)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[Calls(Type = typeof(SmokeTrail), Member = "getSmokeVec")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 12)]
 	private void UpdateInternal(float deltaTime)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Material), Member = "GetTextureOffset")]
 	[Calls(Type = typeof(Material), Member = "GetTextureOffset")]
 	[Calls(Type = typeof(Material), Member = "set_mainTextureOffset")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	private void UpdateMaterial()
 	{
 	}
 
-	[CalledBy(Type = typeof(SmokeTrail), Member = "UpdateInternal")]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(SmokeTrail), Member = "UpdateInternal")]
 	[CalledBy(Type = typeof(SmokeTrail), Member = "InitEffect")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(SmokeTrail), Member = "UpdateInternal")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 3)]
 	private Vector3 getSmokeVec()
 	{
 		return default(Vector3);
@@ -204,7 +197,7 @@ public class SmokeTrail : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool GetSmokeStatus()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -212,8 +205,8 @@ public class SmokeTrail : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(SmokeTrail), Member = "FixedUpdateInternal")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(SmokeTrail), Member = "FixedUpdateInternal")]
 	public void WarmUpEffect()
 	{
 	}

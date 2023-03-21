@@ -15,119 +15,115 @@ public class FirstPersonItem : MonoBehaviour
 
 	private vp_FPSWeapon m_FPSWeapon;
 
-	[Calls(Type = typeof(vp_FPSCamera), Member = "GetWeaponFromID")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(vp_FPSCamera), Member = "GetWeaponIDFromName")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "GetWeaponFromID")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	public void Awake()
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public int GetMeshID()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Equip")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 6)]
 	public void PlayWieldAudio()
 	{
 	}
 
+	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SwitchWeapon")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
-	[CalledBy(Type = typeof(vp_FPSCamera), Member = "SwitchWeapon")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 6)]
 	public void PlayUnWieldAudio()
 	{
 	}
 
-	[CalledBy(Type = typeof(TorchItem), Member = "ExtinguishAfterDelayStarted")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
-	[CalledBy(Type = typeof(PlayerManager), Member = "StowItem")]
-	[CalledBy(Type = typeof(Panel_BedRollSelect), Member = "Enable")]
-	[CalledBy(Type = typeof(NoiseMakerItem), Member = "IgniteAfterDelay")]
 	[CalledBy(Type = typeof(FlareItem), Member = "IgniteAfterDelay")]
 	[CalledBy(Type = typeof(MatchesItem), Member = "IgniteAfterDelay")]
+	[CalledBy(Type = typeof(NoiseMakerItem), Member = "IgniteAfterDelay")]
+	[CalledBy(Type = typeof(TorchItem), Member = "IgniteAfterDelay")]
+	[CalledBy(Type = typeof(TorchItem), Member = "ExtinguishAfterDelayStarted")]
+	[CalledBy(Type = typeof(Panel_BedRollSelect), Member = "Enable")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "StowItem")]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionStart")]
+	[CallerCount(Count = 8)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 8)]
-	[CalledBy(Type = typeof(TorchItem), Member = "IgniteAfterDelay")]
+	[CallsUnknownMethods(Count = 1)]
 	public void AnimateFPSMeshToExitPosition()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
-	[Calls(Type = typeof(vp_FPSWeapon), Member = "get_DefaultRotation")]
 	[CalledBy(Type = typeof(Panel_TorchLight), Member = "OnCancel")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(PlayerManager), Member = "ItemInHandsDuringInteractionEndInternal")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(vp_FPSWeapon), Member = "get_DefaultPosition")]
+	[Calls(Type = typeof(vp_FPSWeapon), Member = "get_DefaultRotation")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void AnimateFPSMeshToDefaultPosition()
 	{
 	}
 
+	[CalledBy(Type = typeof(PlayerSwing), Member = "SwingIsPlaying")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorStateInfo")]
-	[CalledBy(Type = typeof(PlayerSwing), Member = "SwingIsPlaying")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool AnimIsPlaying(int id, int layer)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(Type = typeof(Weather), Member = "ForceIndoorEnvironment")]
+	[CalledBy(Type = typeof(Weather), Member = "ForceOutdoorEnvironment")]
 	[CalledBy(Type = typeof(PlayerAnimation), Member = "Trigger_Generic_Equip")]
 	[CalledBy(Type = typeof(IndoorSpaceTrigger), Member = "OnTriggerEnter")]
-	[CalledBy(Type = typeof(Weather), Member = "ForceIndoorEnvironment")]
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(IndoorSpaceTrigger), Member = "OnTriggerExit")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetIndoorEnvironmentSwitch")]
-	[CalledBy(Type = typeof(Weather), Member = "ForceOutdoorEnvironment")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetOutdoorEnvironmentSwitch")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetIndoorEnvironmentSwitch")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 5)]
+	[CallsUnknownMethods(Count = 8)]
 	public void SetExteriorInteriorSwitch()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public FirstPersonItem()
 	{
 	}

@@ -34,11 +34,11 @@ public class HeightMap : ScriptableObject
 
 	public float Width
 	{
-		[Calls(Type = typeof(Bounds), Member = "get_size")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Bounds), Member = "get_size")]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -48,30 +48,31 @@ public class HeightMap : ScriptableObject
 		[Calls(Type = typeof(Bounds), Member = "get_size")]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Mathf), Member = "FloorToInt")]
 	[Calls(Type = typeof(Utils), Member = "IsZero")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	public void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(WeatherParticleManager.WTTask), Member = "UpdateParticleNoTurbulence")]
-	[CalledBy(Type = typeof(WeatherParticleManager.WTTask), Member = "KillBox")]
-	[CalledBy(Type = typeof(WeatherParticleManager.WTTask), Member = "UpdateParticle")]
-	[CalledBy(Type = typeof(WeatherParticleManager.WTTask), Member = "NoWrap")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "NoWrap")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "KillPoint")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "KillBox")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "UpdateParticle")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "UpdateParticleNoTurbulence")]
+	[CalledBy(TypeFullName = "WeatherParticleManager.WTTask", Member = "Execute")]
+	[CallerCount(Count = 8)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(WeatherParticleManager.WTTask), Member = "KillPoint")]
+	[CallsUnknownMethods(Count = 4)]
 	public float GetHeight(Vector3 p)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -79,7 +80,7 @@ public class HeightMap : ScriptableObject
 	[CallsUnknownMethods(Count = 1)]
 	public static float GetHeightStaticNativeArray(Vector3 p, WeatherParticleManager.ParticleCollisionHeightMapInfo info, NativeArray<float> heights)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -103,10 +104,10 @@ public class HeightMap : ScriptableObject
 		return default(WeatherParticleManager.ParticleCollisionHeightMapInfo);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(WeatherParticleManager), Member = "ScheduleJobWithBounds")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public static NativeArray<float> CreateEmptyHeights()
 	{
 		return default(NativeArray<float>);

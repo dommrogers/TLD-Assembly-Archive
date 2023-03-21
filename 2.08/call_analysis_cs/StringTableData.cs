@@ -27,10 +27,10 @@ public class StringTableData : ScriptableObject
 
 	public List<Entry> m_Entries;
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public StringTableData()
 	{
 	}

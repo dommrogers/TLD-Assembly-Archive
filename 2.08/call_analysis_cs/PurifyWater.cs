@@ -23,19 +23,19 @@ public class PurifyWater : MonoBehaviour
 		}
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public void Start()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Inventory), Member = "GetPotableWaterSupply")]
+	[Calls(Type = typeof(Inventory), Member = "GetNonPotableWaterSupply")]
+	[CallsUnknownMethods(Count = 1)]
 	public float Use()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]

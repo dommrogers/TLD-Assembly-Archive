@@ -21,9 +21,9 @@ public class MultipleChoiceRequestInfo
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(ParlayChooseResponseNode), Member = "OnExecute")]
 	[CalledBy(Type = typeof(MultipleChoiceNode), Member = "OnExecute")]
+	[CallerCount(Count = 2)]
 	public MultipleChoiceRequestInfo(IDialogueActor actor, Dictionary<IStatement, int> options, float availableTime, Action<int> callback)
 	{
 	}

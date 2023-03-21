@@ -31,12 +31,11 @@ public class SteamPipeGauge : MonoBehaviour
 
 	private float m_GaugeNeedleFlowRange;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(SteamPipeGauge), Member = "UpdateGaugeNeedle")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(SteamPipeGauge), Member = "UpdateGaugeNeedle")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Start()
 	{
 	}
@@ -48,13 +47,13 @@ public class SteamPipeGauge : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(SteamPipeGauge), Member = "Start")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(SteamPipeGauge), Member = "Update")]
-	[Calls(Type = typeof(Transform), Member = "set_localEulerAngles")]
-	[Calls(Type = typeof(Renderer), Member = "get_isVisible")]
-	[Calls(Type = typeof(Random), Member = "Range")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Random), Member = "Range")]
+	[Calls(Type = typeof(Renderer), Member = "get_isVisible")]
+	[Calls(Type = typeof(Transform), Member = "set_localEulerAngles")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void UpdateGaugeNeedle()
 	{
 	}

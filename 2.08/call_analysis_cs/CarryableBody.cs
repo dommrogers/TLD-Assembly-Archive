@@ -52,16 +52,17 @@ public class CarryableBody : MonoBehaviour
 	private bool m_ResumeRequested;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
 	public void Awake()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Container), Member = "IsEmpty")]
 	[Calls(Type = typeof(CarryableBody), Member = "GetHoverText")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void InitializeInteraction(BaseInteraction baseInteraction)
 	{
 	}
@@ -73,27 +74,27 @@ public class CarryableBody : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(GearItem), Member = "GetHoverText")]
 	[CalledBy(Type = typeof(CarryableBody), Member = "InitializeInteraction")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(NPC), Member = "GetHoverText")]
+	[CalledBy(Type = typeof(GearItem), Member = "GetHoverText")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(NPC), Member = "GetHoverText")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 1)]
 	public string GetHoverText()
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public string Serialize()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
@@ -107,19 +108,19 @@ public class CarryableBody : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ShowOnMapItem), Member = "AddToMap")]
-	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Dropped()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(ShowOnMapItem), Member = "RemoveFromMap")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void OnPickedUp()
 	{
@@ -133,16 +134,16 @@ public class CarryableBody : MonoBehaviour
 	{
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(Animator), Member = "Play")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallerCount(Count = 0)]
 	public void StartingPlacement()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 8)]
+	[CallerCount(Count = 9)]
 	public void OnPlacedInBed(Bed bed)
 	{
 	}

@@ -5,11 +5,10 @@ public class AkTriggerEnter : AkTriggerBase
 {
 	public GameObject triggerObject;
 
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(Object), Member = "op_Equality")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void OnTriggerEnter(Collider in_other)
 	{
 	}

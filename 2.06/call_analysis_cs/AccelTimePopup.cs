@@ -21,7 +21,7 @@ public class AccelTimePopup : MonoBehaviour
 		[CallerCount(Count = 0)]
 		public bool IsAcceleratingTime()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
@@ -63,8 +63,8 @@ public class AccelTimePopup : MonoBehaviour
 			return null;
 		}
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public void StartAcceleratingTime()
 		{
 		}
@@ -111,11 +111,11 @@ public class AccelTimePopup : MonoBehaviour
 		[Calls(Type = typeof(AccelTimePopup), Member = "GetControlMode")]
 		internal bool _003CAwake_003Eb__30_0()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(Localization), Member = "Get")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Localization), Member = "Get")]
 		internal string _003CAwake_003Eb__30_1()
 		{
 			return null;
@@ -125,7 +125,7 @@ public class AccelTimePopup : MonoBehaviour
 		[Calls(Type = typeof(AccelTimePopup), Member = "GetControlMode")]
 		internal bool _003CAwake_003Eb__30_4()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
@@ -139,7 +139,7 @@ public class AccelTimePopup : MonoBehaviour
 		[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 		internal bool _003CAwake_003Eb__30_8()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
@@ -149,9 +149,9 @@ public class AccelTimePopup : MonoBehaviour
 			return null;
 		}
 
+		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 6)]
-		[CallerCount(Count = 0)]
 		internal Action _003CAwake_003Eb__30_11()
 		{
 			return null;
@@ -218,10 +218,11 @@ public class AccelTimePopup : MonoBehaviour
 
 	private IAccelerateTimeProvider m_activeAccelerator;
 
-	[CallsUnknownMethods(Count = 90)]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 12)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 12)]
+	[CallsUnknownMethods(Count = 89)]
 	private void Awake()
 	{
 	}
@@ -232,70 +233,62 @@ public class AccelTimePopup : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(AccelTimePopup), Member = "IsLabelMessageActive")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AccelTimePopup), Member = "SetActive")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
+	[Calls(Type = typeof(AccelTimePopup), Member = "IsLabelMessageActive")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
-	[Calls(Type = typeof(string), Member = "ToUpper")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CalledBy(Type = typeof(AccelTimePopup), Member = "ForceDisable")]
 	[CalledBy(Type = typeof(AccelTimePopup), Member = "Update")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_timeofday_display")]
-	[CallsUnknownMethods(Count = 61)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "CanUserCancelAction")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 19)]
 	[Calls(Type = typeof(UIProgressBar), Member = "set_value")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOff")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(CameraFade), Member = "GetTargetAlpha")]
 	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
-	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
 	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(InterfaceManager), Member = "InitializeAndActivateTimeWidget")]
 	[Calls(Type = typeof(InterfaceManager), Member = "SetTimeWidgetActive")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(CameraEffects), Member = "DepthOfFieldTurnOn")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "CanUserCancelAction")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetPanelsWithComponent")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UISprite), Member = "set_spriteName")]
+	[Calls(Type = typeof(string), Member = "ToUpper")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsDeduplicatedMethods(Count = 15)]
+	[CallsUnknownMethods(Count = 61)]
 	public void SetActive(bool active, bool fadeIn)
 	{
 	}
 
-	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "ProgressBarEnded")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_GenericProgressBar), Member = "ProgressBarEnded")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnCancel()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -307,26 +300,26 @@ public class AccelTimePopup : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Rest.PassTimeHelper), Member = "OnSleepEnd")]
 	[CalledBy(Type = typeof(Action_PassTime), Member = "OnUpdate")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void EnableLabelMessage(bool enabled)
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(Rest.PassTimeHelper), Member = "PassTime")]
 	[CalledBy(Type = typeof(AccelTimePopup), Member = "Update")]
 	[CalledBy(Type = typeof(Action_PassTime), Member = "OnExecute")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public bool IsLabelMessageActive()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -338,14 +331,14 @@ public class AccelTimePopup : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsPassTimeUISuppressed()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(_003C_003Ec), Member = "<Awake>b__30_0")]
 	[CalledBy(Type = typeof(_003C_003Ec), Member = "<Awake>b__30_4")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[CalledBy(Type = typeof(_003C_003Ec), Member = "<Awake>b__30_0")]
+	[CallsUnknownMethods(Count = 1)]
 	private static PlayerControlMode GetControlMode()
 	{
 		return default(PlayerControlMode);

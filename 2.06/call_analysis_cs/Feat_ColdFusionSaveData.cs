@@ -6,8 +6,8 @@ public class Feat_ColdFusionSaveData
 
 	public float m_HoursAccumulator;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public Feat_ColdFusionSaveData()
 	{
 	}

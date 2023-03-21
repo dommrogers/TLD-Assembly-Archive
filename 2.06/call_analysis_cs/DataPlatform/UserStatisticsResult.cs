@@ -23,9 +23,9 @@ public class UserStatisticsResult : IDisposable, IEnumerable<ServiceConfiguratio
 
 		private ServiceConfigurationStatistic System_002ECollections_002EGeneric_002EIEnumerator_003CDataPlatform_002EServiceConfigurationStatistic_003E_002ECurrent
 		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
 			[DebuggerHidden]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
@@ -36,16 +36,16 @@ public class UserStatisticsResult : IDisposable, IEnumerable<ServiceConfiguratio
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 44)]
+			[CallerCount(Count = 53)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CGetEnumerator_003Ed__3(int _003C_003E1__state)
 		{
 		}
@@ -63,7 +63,7 @@ public class UserStatisticsResult : IDisposable, IEnumerable<ServiceConfiguratio
 		[CallsUnknownMethods(Count = 11)]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DebuggerHidden]
@@ -87,10 +87,10 @@ public class UserStatisticsResult : IDisposable, IEnumerable<ServiceConfiguratio
 
 	public string XboxUserId
 	{
-		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
-		[CallsUnknownMethods(Count = 6)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityPlugin.Utils), Member = "MarshalCachedString")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		get
 		{
 			return null;
@@ -118,8 +118,8 @@ public class UserStatisticsResult : IDisposable, IEnumerable<ServiceConfiguratio
 		return null;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 6)]
 	private IEnumerator System_002ECollections_002EIEnumerable_002EGetEnumerator()
 	{
@@ -152,11 +152,11 @@ public class UserStatisticsResult : IDisposable, IEnumerable<ServiceConfiguratio
 	{
 	}
 
-	[CallerCount(Count = 58)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 61)]
 	public IntPtr GetNativePtr()
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -166,10 +166,10 @@ public class UserStatisticsResult : IDisposable, IEnumerable<ServiceConfiguratio
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(UserStatisticsResult), Member = "Finalize")]
 	[CalledBy(Type = typeof(UserStatisticsResult), Member = "Dispose")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void DisposeImpl()
 	{

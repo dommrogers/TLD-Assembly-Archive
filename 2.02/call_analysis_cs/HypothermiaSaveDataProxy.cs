@@ -11,7 +11,7 @@ public class HypothermiaSaveDataProxy
 	public string m_CauseLocID;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public HypothermiaSaveDataProxy()
 	{
 	}

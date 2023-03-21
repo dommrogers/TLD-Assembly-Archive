@@ -16,8 +16,8 @@ internal struct SessionDetailsCopySessionAttributeByKeyOptionsInternal : ISettab
 		[CalledBy(Type = typeof(SessionDetailsCopySessionAttributeByKeyOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(SessionDetailsCopySessionAttributeByKeyOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,17 +29,17 @@ internal struct SessionDetailsCopySessionAttributeByKeyOptionsInternal : ISettab
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(SessionDetailsCopySessionAttributeByKeyOptionsInternal), Member = "set_AttrKey")]
 	[CalledBy(Type = typeof(SessionDetails), Member = "CopySessionAttributeByKey")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SessionDetailsCopySessionAttributeByKeyOptionsInternal), Member = "set_AttrKey")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

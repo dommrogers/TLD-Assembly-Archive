@@ -1,6 +1,7 @@
 using System;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
+using UnityEngine;
 
 namespace NodeCanvas.Tasks.Actions;
 
@@ -14,7 +15,7 @@ public class Action_PlayCredits : ActionTask
 		public string m_AudioEventName;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public VideoDefinition()
 		{
 		}
@@ -48,13 +49,12 @@ public class Action_PlayCredits : ActionTask
 
 	protected override string info
 	{
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsUnknownMethods(Count = 4)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 4)]
 		get
 		{
 			return null;
@@ -62,72 +62,75 @@ public class Action_PlayCredits : ActionTask
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "StopAllSoundsFromGameObject")]
 	[Calls(Type = typeof(PlayerManager), Member = "UnequipItemInHandsSkipAnimation")]
 	[Calls(Type = typeof(Action_PlayCredits), Member = "PlayNextSkippableMovie")]
 	[Calls(Type = typeof(CameraFade), Member = "StartAlphaFade")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 9)]
 	protected override void OnExecute()
 	{
 	}
 
 	[CalledBy(Type = typeof(Action_PlayCredits), Member = "OnExecute")]
-	[Calls(Type = typeof(Action_PlayCredits), Member = "OnMovieStop")]
-	[CallsUnknownMethods(Count = 12)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(MoviePlayer), Member = "Play")]
+	[Calls(Type = typeof(Action_PlayCredits), Member = "OnMovieStop")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 12)]
 	private void PlayNextSkippableMovie()
 	{
 	}
 
 	[CallAnalysisFailed]
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Action_PlayCredits), Member = "PlayNextSkippableMovie")]
+	[CallerCount(Count = 1)]
 	private void OnMovieStop()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(MoviePlayer), Member = "GetAudioEventFromFileName")]
-	[Calls(Type = typeof(Panel_Credits), Member = "ShowCredits")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(MoviePlayer), Member = "GetAudioEventFromFileName")]
+	[Calls(Type = typeof(InterfaceManager), Member = "LoadPanel")]
+	[Calls(Type = typeof(Panel_Credits), Member = "ShowCredits")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 11)]
 	private void PlayCredits()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Action_PlayCredits), Member = "OnActionComplete")]
+	[Calls(Type = typeof(InterfaceManager), Member = "TryDestroyPanel")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private void OnCreditsEnd()
 	{
 	}
 
-	[Calls(Type = typeof(CameraFade), Member = "BlackOutScreen")]
 	[CalledBy(Type = typeof(Action_PlayCredits), Member = "OnCreditsEnd")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Panel_PauseMenu), Member = "DoQuitGame")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetState")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
 	[Calls(Type = typeof(EpisodeManager), Member = "GetNextEpisode")]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetState")]
+	[Calls(Type = typeof(CameraFade), Member = "BlackOutScreen")]
+	[Calls(Type = typeof(Panel_PauseMenu), Member = "DoQuitGame")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	private void OnActionComplete()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
 	[Calls(Type = typeof(EpisodeManager), Member = "GetNextEpisode")]
 	[Calls(Type = typeof(EpisodeManager), Member = "GetState")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	private bool AllowContinueToNextEpisode()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

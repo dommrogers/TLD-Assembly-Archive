@@ -7,11 +7,8 @@ namespace UnityEngine.Rendering.PostProcessing;
 public sealed class ColorGradingSettingsParameter : ParameterOverride<ColorGradingSettings>
 {
 	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
-	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 4)]
-	[CalledBy(Type = typeof(ColorGrading), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public ColorGradingSettingsParameter()
 	{
 		((ParameterOverride<>)(object)this)._002Ector();

@@ -13,16 +13,16 @@ public abstract class BaseHoldInteraction : BaseInteraction, IHoldInteraction, I
 
 	public string HoldText
 	{
-		[CallerCount(Count = 7)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 55)]
+		[CallerCount(Count = 65)]
 		set
 		{
 		}
@@ -35,22 +35,17 @@ public abstract class BaseHoldInteraction : BaseInteraction, IHoldInteraction, I
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
-		[CallerCount(Count = 0)]
-		[DeduplicatedMethod]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		protected set
 		{
 		}
 	}
 
-	public abstract float NormalizedProgress
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 101224)]
-		get;
-	}
+	public abstract float NormalizedProgress { get; }
 
 	public virtual bool CanCancel
 	{
@@ -58,24 +53,24 @@ public abstract class BaseHoldInteraction : BaseInteraction, IHoldInteraction, I
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public override bool CanInteract
 	{
-		[CalledBy(Type = typeof(LoadScene), Member = "get_CanInteract")]
-		[CalledBy(Type = typeof(LoadingZone), Member = "get_CanInteract")]
-		[CalledBy(Type = typeof(VehicleDoor), Member = "get_CanInteract")]
-		[CalledBy(Type = typeof(OpenClose), Member = "get_CanInteract")]
-		[CallsUnknownMethods(Count = 1)]
 		[CalledBy(Type = typeof(ContainerInteraction), Member = "get_CanInteract")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 6)]
 		[CalledBy(Type = typeof(HarvestableInteraction), Member = "get_CanInteract")]
+		[CalledBy(Type = typeof(OpenClose), Member = "get_CanInteract")]
+		[CalledBy(Type = typeof(VehicleDoor), Member = "get_CanInteract")]
+		[CalledBy(Type = typeof(LoadingZone), Member = "get_CanInteract")]
+		[CalledBy(Type = typeof(LoadScene), Member = "get_CanInteract")]
+		[CallerCount(Count = 6)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -85,8 +80,6 @@ public abstract class BaseHoldInteraction : BaseInteraction, IHoldInteraction, I
 	{
 	}
 
-	[DeduplicatedMethod]
-	[CallerCount(Count = 101224)]
 	public abstract bool PerformHold();
 
 	[CallerCount(Count = 0)]
@@ -96,26 +89,24 @@ public abstract class BaseHoldInteraction : BaseInteraction, IHoldInteraction, I
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public override void UpdateInteraction(float deltaTime)
 	{
 	}
 
-	[CallerCount(Count = 101224)]
-	[DeduplicatedMethod]
 	protected abstract void UpdateHoldInteraction(float deltaTime);
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
 	public override bool PerformInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public virtual void CancelHold()
 	{
 	}

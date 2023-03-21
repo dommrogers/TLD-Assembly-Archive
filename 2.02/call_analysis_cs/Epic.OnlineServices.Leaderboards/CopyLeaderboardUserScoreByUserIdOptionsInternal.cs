@@ -15,11 +15,11 @@ internal struct CopyLeaderboardUserScoreByUserIdOptionsInternal : ISettable, IDi
 
 	public ProductUserId UserId
 	{
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CalledBy(Type = typeof(CopyLeaderboardUserScoreByUserIdOptionsInternal), Member = "Set")]
 		[CalledBy(Type = typeof(CopyLeaderboardUserScoreByUserIdOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -27,34 +27,34 @@ internal struct CopyLeaderboardUserScoreByUserIdOptionsInternal : ISettable, IDi
 
 	public string StatName
 	{
+		[CalledBy(Type = typeof(CopyLeaderboardUserScoreByUserIdOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyLeaderboardUserScoreByUserIdOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyLeaderboardUserScoreByUserIdOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyLeaderboardUserScoreByUserIdOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(CopyLeaderboardUserScoreByUserIdOptionsInternal), Member = "set_StatName")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(CopyLeaderboardUserScoreByUserIdOptionsInternal), Member = "set_UserId")]
+	[Calls(Type = typeof(CopyLeaderboardUserScoreByUserIdOptionsInternal), Member = "set_StatName")]
 	public void Set(CopyLeaderboardUserScoreByUserIdOptions other)
 	{
 	}
 
 	[CalledBy(Type = typeof(LeaderboardsInterface), Member = "CopyLeaderboardUserScoreByUserId")]
-	[Calls(Type = typeof(CopyLeaderboardUserScoreByUserIdOptionsInternal), Member = "set_StatName")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CopyLeaderboardUserScoreByUserIdOptionsInternal), Member = "set_UserId")]
+	[Calls(Type = typeof(CopyLeaderboardUserScoreByUserIdOptionsInternal), Member = "set_StatName")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{

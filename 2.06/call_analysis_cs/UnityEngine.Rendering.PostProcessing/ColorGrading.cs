@@ -157,25 +157,26 @@ public sealed class ColorGrading : PostProcessEffectSettings
 	[CallsUnknownMethods(Count = 3)]
 	public override bool IsEnabledAndSupported(PostProcessRenderContext context)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRPipeline2D")]
 	[CalledBy(Type = typeof(ColorGradingRenderer), Member = "RenderHDRBlendPipeline2D")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetBlendGammaForBrightness(float brightness)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(PostProcessManager), Member = "get_instance")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(ColorGradingSettings), Member = "ApplySettings")]
-	[Calls(Type = typeof(PostProcessManager), Member = "QuickVolume")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = "CreateInstance")]
+	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
+	[Calls(Type = typeof(ColorGradingSettings), Member = "ApplySettings")]
+	[Calls(Type = typeof(PostProcessManager), Member = "get_instance")]
+	[Calls(Type = typeof(PostProcessManager), Member = "QuickVolume")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	public static PostProcessVolume ApplyTempLut(ColorGradingSettings temp)
 	{
 		return null;
@@ -190,54 +191,30 @@ public sealed class ColorGrading : PostProcessEffectSettings
 	{
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(ColorGrading), Member = "ConfigureLutForInterior")]
-	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
 	[CalledBy(Type = typeof(GenericIndoors), Member = "Start")]
+	[CalledBy(Type = typeof(ActiveEnvironment), Member = "Refresh")]
+	[CalledBy(Type = typeof(ColorGrading), Member = "ConfigureLutForInterior")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(ParameterOverride<>), Member = "Override")]
 	[Calls(Type = typeof(PostProcessManager), Member = "MarkSettingsChanged")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
+	[CallsUnknownMethods(Count = 1)]
 	public void UpdateLutForTimeOfDay(ColorGradingSettings settings1A, ColorGradingSettings settings1B, ColorGradingSettings settings2A, ColorGradingSettings settings2B, float blend1, float blend2, float blendCombine)
 	{
 	}
 
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ParameterOverride<>), Member = ".ctor")]
+	[Calls(Type = typeof(AnimationCurve), Member = "Internal_Create")]
+	[Calls(Type = typeof(Spline), Member = ".ctor")]
 	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
 	[Calls(Type = typeof(ColorGradingSettingsParameter), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[Calls(Type = typeof(ColorGradingSettingsParameter), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
 	[Calls(Type = typeof(TextureParameter), Member = ".ctor")]
 	[Calls(Type = typeof(Vector4Parameter), Member = ".ctor")]
 	[Calls(Type = typeof(BoolParameter), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 252)]
-	[Calls(Type = typeof(ColorGradingSettingsParameter), Member = ".ctor")]
-	[Calls(Type = typeof(ColorGradingSettingsParameter), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Internal_Create")]
-	[Calls(Type = typeof(Spline), Member = ".ctor")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Internal_Create")]
-	[Calls(Type = typeof(Spline), Member = ".ctor")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Internal_Create")]
-	[Calls(Type = typeof(Spline), Member = ".ctor")]
-	[Calls(Type = typeof(FloatParameter), Member = ".ctor")]
-	[Calls(Type = typeof(Spline), Member = ".ctor")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Internal_Create")]
-	[Calls(Type = typeof(Spline), Member = ".ctor")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Internal_Create")]
-	[Calls(Type = typeof(Spline), Member = ".ctor")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Internal_Create")]
-	[Calls(Type = typeof(Spline), Member = ".ctor")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Internal_Create")]
-	[Calls(Type = typeof(Spline), Member = ".ctor")]
-	[Calls(Type = typeof(AnimationCurve), Member = "Internal_Create")]
-	[CallsDeduplicatedMethods(Count = 26)]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 21)]
+	[CallsUnknownMethods(Count = 220)]
 	public ColorGrading()
 	{
 	}

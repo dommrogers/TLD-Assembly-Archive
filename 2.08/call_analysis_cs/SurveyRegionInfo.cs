@@ -15,9 +15,9 @@ public class SurveyRegionInfo
 
 	public List<SurveyAchievementInfo> m_Achievements;
 
+	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCartographyRegionList")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCartographyRegionList")]
 	[CallsUnknownMethods(Count = 1)]
 	public SurveyRegionInfo()
 	{

@@ -5,7 +5,7 @@ public class ResearchItemSaveData
 	public float m_ElapsedHours;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ResearchItemSaveData()
 	{
 	}

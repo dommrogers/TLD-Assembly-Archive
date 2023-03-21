@@ -23,7 +23,7 @@ internal struct AddNotifyDisplaySettingsUpdatedOptionsInternal : ISettable, IDis
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

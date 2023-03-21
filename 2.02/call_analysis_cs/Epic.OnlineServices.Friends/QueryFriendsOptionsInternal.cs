@@ -13,11 +13,11 @@ internal struct QueryFriendsOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(QueryFriendsOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(QueryFriendsOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(QueryFriendsOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(QueryFriendsOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,16 +29,16 @@ internal struct QueryFriendsOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(QueryFriendsOptionsInternal), Member = "set_LocalUserId")]
 	[CalledBy(Type = typeof(FriendsInterface), Member = "QueryFriends")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(QueryFriendsOptionsInternal), Member = "set_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

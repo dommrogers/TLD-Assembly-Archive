@@ -10,8 +10,8 @@ public class GameManagerSaveDataProxy
 
 	public string m_StartRegion;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public GameManagerSaveDataProxy()
 	{
 	}

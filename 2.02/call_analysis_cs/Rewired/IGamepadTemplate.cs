@@ -1,209 +1,62 @@
-using Cpp2ILInjected.CallAnalysis;
-
 namespace Rewired;
 
 public interface IGamepadTemplate : IControllerTemplate
 {
-	IControllerTemplateButton actionBottomRow1
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateButton actionBottomRow1 { get; }
 
-	IControllerTemplateButton a
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateButton a { get; }
 
-	IControllerTemplateButton actionBottomRow2
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateButton actionBottomRow2 { get; }
 
-	IControllerTemplateButton b
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateButton b { get; }
 
-	IControllerTemplateButton actionBottomRow3
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateButton actionBottomRow3 { get; }
 
-	IControllerTemplateButton c
-	{
-		[CallerCount(Count = 121780)]
-		[DeduplicatedMethod]
-		get;
-	}
+	IControllerTemplateButton c { get; }
 
-	IControllerTemplateButton actionTopRow1
-	{
-		[CallerCount(Count = 121780)]
-		[DeduplicatedMethod]
-		get;
-	}
+	IControllerTemplateButton actionTopRow1 { get; }
 
-	IControllerTemplateButton x
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateButton x { get; }
 
-	IControllerTemplateButton actionTopRow2
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateButton actionTopRow2 { get; }
 
-	IControllerTemplateButton y
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateButton y { get; }
 
-	IControllerTemplateButton actionTopRow3
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateButton actionTopRow3 { get; }
 
-	IControllerTemplateButton z
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateButton z { get; }
 
-	IControllerTemplateButton leftShoulder1
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateButton leftShoulder1 { get; }
 
-	IControllerTemplateButton leftBumper
-	{
-		[CallerCount(Count = 121780)]
-		[DeduplicatedMethod]
-		get;
-	}
+	IControllerTemplateButton leftBumper { get; }
 
-	IControllerTemplateAxis leftShoulder2
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateAxis leftShoulder2 { get; }
 
-	IControllerTemplateAxis leftTrigger
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateAxis leftTrigger { get; }
 
-	IControllerTemplateButton rightShoulder1
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateButton rightShoulder1 { get; }
 
-	IControllerTemplateButton rightBumper
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateButton rightBumper { get; }
 
-	IControllerTemplateAxis rightShoulder2
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateAxis rightShoulder2 { get; }
 
-	IControllerTemplateAxis rightTrigger
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateAxis rightTrigger { get; }
 
-	IControllerTemplateButton center1
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateButton center1 { get; }
 
-	IControllerTemplateButton back
-	{
-		[CallerCount(Count = 121780)]
-		[DeduplicatedMethod]
-		get;
-	}
+	IControllerTemplateButton back { get; }
 
-	IControllerTemplateButton center2
-	{
-		[CallerCount(Count = 121780)]
-		[DeduplicatedMethod]
-		get;
-	}
+	IControllerTemplateButton center2 { get; }
 
-	IControllerTemplateButton start
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateButton start { get; }
 
-	IControllerTemplateButton center3
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateButton center3 { get; }
 
-	IControllerTemplateButton guide
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateButton guide { get; }
 
-	IControllerTemplateThumbStick leftStick
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateThumbStick leftStick { get; }
 
-	IControllerTemplateThumbStick rightStick
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateThumbStick rightStick { get; }
 
-	IControllerTemplateDPad dPad
-	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
-		get;
-	}
+	IControllerTemplateDPad dPad { get; }
 }

@@ -8,8 +8,8 @@ public class LootTableItemReference
 
 	public int m_Weight;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public LootTableItemReference()
 	{
 	}

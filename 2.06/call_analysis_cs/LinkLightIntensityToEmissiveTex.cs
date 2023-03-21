@@ -9,10 +9,10 @@ public class LinkLightIntensityToEmissiveTex : MonoBehaviour
 
 	public float m_IntensityMultiplier;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Material), Member = "SetFloat")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Material), Member = "SetFloat")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Update()
 	{
 	}

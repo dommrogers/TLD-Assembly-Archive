@@ -16,13 +16,10 @@ public class fsConfig
 	public bool SerializeEnumsAsInteger;
 
 	[CalledBy(Type = typeof(fsSerializer), Member = ".ctor")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 18)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	public fsConfig()
 	{
 	}

@@ -13,26 +13,26 @@ public class AkDurationCallbackInfo : AkEventCallbackInfo
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	public float fEstimatedDuration
 	{
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(WwiseEventTracker), Member = "CallbackHandler")]
-		[CalledBy(Type = typeof(PlayableBehaviourPlayAudio), Member = "AudioCallback")]
-		[CalledBy(Type = typeof(PlayerVoice), Member = "OnAkVoiceEvent")]
-		[CalledBy(Type = typeof(CinematicTrack), Member = "AudioCallback")]
+		[CalledBy(Type = typeof(DialogueModeRigFP), Member = "AudioCallback")]
 		[CalledBy(Type = typeof(Phone), Member = "AudioCallback")]
 		[CalledBy(Type = typeof(ConsoleManager), Member = "AudioCallback")]
-		[CalledBy(Type = typeof(DialogueModeRigFP), Member = "AudioCallback")]
-		[CallsDeduplicatedMethods(Count = 1)]
-		[CallerCount(Count = 8)]
 		[CalledBy(Type = typeof(NPC_Animation), Member = "AudioCallback")]
+		[CalledBy(Type = typeof(CinematicTrack), Member = "AudioCallback")]
+		[CalledBy(Type = typeof(PlayerVoice), Member = "OnAkVoiceEvent")]
+		[CalledBy(Type = typeof(PlayableBehaviourPlayAudio), Member = "AudioCallback")]
+		[CalledBy(Type = typeof(WwiseEventTracker), Member = "CallbackHandler")]
+		[CallerCount(Count = 8)]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -43,40 +43,40 @@ public class AkDurationCallbackInfo : AkEventCallbackInfo
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
 	public uint mediaID
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(uint);
+			return 0u;
 		}
 	}
 
 	public bool bStreaming
 	{
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
-	[CalledBy(Type = typeof(AkCallbackManager), Member = ".cctor")]
 	[CalledBy(Type = typeof(AkDurationCallbackInfo), Member = ".ctor")]
-	[Calls(Type = typeof(AkEventCallbackInfo), Member = ".ctor")]
+	[CalledBy(Type = typeof(AkCallbackManager), Member = ".cctor")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkDurationCallbackInfo_SWIGUpcast")]
+	[Calls(Type = typeof(AkEventCallbackInfo), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal AkDurationCallbackInfo(IntPtr cPtr, bool cMemoryOwn)
-		: base(default(IntPtr), cMemoryOwn: default(bool))
+		: base((IntPtr)0, cMemoryOwn: false)
 	{
 	}
 
@@ -84,41 +84,41 @@ public class AkDurationCallbackInfo : AkEventCallbackInfo
 	[CallsDeduplicatedMethods(Count = 1)]
 	internal static IntPtr getCPtr(AkDurationCallbackInfo obj)
 	{
-		return default(IntPtr);
+		return (IntPtr)0;
 	}
 
-	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkDurationCallbackInfo_SWIGUpcast")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(AkSoundEnginePINVOKE), Member = "CSharp_AkDurationCallbackInfo_SWIGUpcast")]
 	[Calls(Type = typeof(AkEventCallbackInfo), Member = "setCPtr")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	internal override void setCPtr(IntPtr cPtr)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(AkEventCallbackInfo), Member = "Finalize")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	~AkDurationCallbackInfo()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Monitor), Member = "ReliableEnterTimeout")]
 	[Calls(Type = typeof(GC), Member = "SuppressFinalize")]
 	[Calls(Type = typeof(AkEventCallbackInfo), Member = "Dispose")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	public override void Dispose()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(AkDurationCallbackInfo), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public AkDurationCallbackInfo()
-		: base(default(IntPtr), cMemoryOwn: default(bool))
+		: base((IntPtr)0, cMemoryOwn: false)
 	{
 	}
 }

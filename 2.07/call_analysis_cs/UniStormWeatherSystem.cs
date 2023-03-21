@@ -7,6 +7,7 @@ using TLD.Scenes;
 using TLD.Stats;
 using TLD.UI.Generics;
 using UnityEngine;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 {
@@ -18,9 +19,9 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 
 		public float m_ElapsedHours;
 
+		[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "UpdateTimeStats")]
 		[CallerCount(Count = 1)]
 		[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-		[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "UpdateTimeStats")]
 		public void AddTime(float deltaHours, float threshold)
 		{
 		}
@@ -49,19 +50,19 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CAwake_003Eb__142_0(WeatherStatesData x)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CGetClearNightFogDensity_003Eb__151_0(WeatherStatesData x)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[DeduplicatedMethod]
@@ -69,7 +70,7 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CSetToxicFogDensity_003Eb__152_0(WeatherStatesData x)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -362,38 +363,42 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 9)]
 	public void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AsyncOperationHandle<>), Member = "WaitForCompletion")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallsUnknownMethods(Count = 19)]
+	[CallsUnknownMethods(Count = 18)]
 	public void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Material), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 17)]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "InstantiateUniStorm")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
-	[Calls(Type = typeof(WeatherParticleManager), Member = ".ctor")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 24)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Instantiate")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(ScriptableObject), Member = "CreateInstance")]
+	[Calls(Type = typeof(WeatherParticleManager), Member = ".ctor")]
+	[Calls(Type = typeof(Material), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 14)]
+	[CallsUnknownMethods(Count = 17)]
 	public void Init()
 	{
 	}
@@ -406,11 +411,11 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 	}
 
 	[CalledBy(Type = typeof(TimeOfDay), Member = "Update")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(SnowPlaneParticles), Member = "Reset")]
-	[Calls(Type = typeof(SnowPlaneManager), Member = "SetComponentsActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(SnowPlaneManager), Member = "SetComponentsActive")]
+	[Calls(Type = typeof(SnowPlaneParticles), Member = "Reset")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public void InitializeForScene()
 	{
 	}
@@ -423,38 +428,38 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
 	private bool IsPaused()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "SetNormalizedTime")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "WarmWeatherState")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
-	[CallAnalysisFailed]
 	[CallerCount(Count = 3)]
 	public void Update()
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "SetFogDensity")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 7)]
 	public float GetClearNightFogDensity()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(ToxicFogManager), Member = "SetFogDensity")]
 	[CalledBy(Type = typeof(ToxicFogManager), Member = "Update")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[CalledBy(Type = typeof(ToxicFogManager), Member = "SetFogDensity")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public void SetToxicFogDensity(float fogDensity)
 	{
 	}
@@ -462,7 +467,7 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 	[CallerCount(Count = 0)]
 	public float GetOriginalNightToxicFogDensity()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -470,61 +475,55 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "CalculateWeatherChangeAuroraIntensity")]
 	public float GetElectroStaticActive()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public float GetElectrostaticStrength()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateAuroraValue")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetProgressDusk")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "GetElectroStaticActive")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsDawn")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsDusk")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "CalculateWeatherChangeAuroraIntensity")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "CalculateWeatherChangeAuroraIntensity")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsDusk")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "IsDawn")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetProgressDawn")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetProgressDusk")]
+	[CallsUnknownMethods(Count = 3)]
 	public float GetClearAuroraIntensity()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallAnalysisFailed]
 	[CallerCount(Count = 0)]
 	private float GetElectrostaticFogIntensity()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "GetElectroStaticActive")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "GetClearAuroraIntensity")]
+	[CallerCount(Count = 2)]
 	private float CalculateWeatherChangeAuroraIntensity(WeatherStage auroraWeatherStage)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(RegionTimeAccumulator), Member = "AddTime")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(Feat), Member = "ShouldBlockIncrement")]
-	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
-	[Calls(Type = typeof(Feat), Member = "ShouldBlockIncrement")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(Feat), Member = "ShouldBlockIncrement")]
 	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(RegionTimeAccumulator), Member = "AddTime")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 8)]
 	private void UpdateTimeStats(float timeDeltaHours)
 	{
 	}
@@ -536,10 +535,10 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(WeatherParticleManager), Member = "LateUpdate_part1")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(WeatherParticleManager), Member = "LateUpdate_part1")]
+	[CallsUnknownMethods(Count = 1)]
 	public void DoLateUpdate()
 	{
 	}
@@ -569,35 +568,35 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 	{
 	}
 
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "UpdateSunTransform")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "UpdateSunTransform")]
 	public void SetNormalizedTime(float time)
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "UpdateSunTransform")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "Update")]
-	[CallerCount(Count = 0)]
 	public void SetNormalizedTime(float time, bool forceUpdate)
 	{
 	}
 
-	[CallerCount(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "InstantiateUniStorm")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "SetNormalizedTime")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "SetNormalizedTime")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "WarmWeatherState")]
+	[CallerCount(Count = 6)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsDeduplicatedMethods(Count = 7)]
 	[CallsUnknownMethods(Count = 9)]
 	public void UpdateSunTransform()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void SetAmbientLight(Color c)
 	{
 	}
@@ -607,22 +606,21 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(DebugViewModeManager), Member = "ToggleTexelDensity")]
 	[CalledBy(Type = typeof(DebugViewModeManager), Member = "ToggleTexelDensity")]
 	[CalledBy(Type = typeof(Weather), Member = "ForceIndoorEnvironment")]
 	[CalledBy(Type = typeof(Weather), Member = "ForceOutdoorEnvironment")]
+	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public void EnableWeatherSystems(bool enable)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(Weather), Member = "ForceOutdoorEnvironment")]
 	[CalledBy(Type = typeof(Weather), Member = "ForceIndoorEnvironment")]
+	[CalledBy(Type = typeof(Weather), Member = "ForceOutdoorEnvironment")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void EnableCloudParent(bool enable)
 	{
 	}
@@ -634,55 +632,54 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 		return default(WeatherStage);
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(GameEvent), Member = "Post")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "SetWeatherStage")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "SetWeatherStateAndBlendDirectly")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(GameEvent), Member = "Post")]
 	[CallsUnknownMethods(Count = 1)]
 	private void ChangeWeatherState(WeatherStage current, WeatherStage previous)
 	{
 	}
 
-	[CalledBy(Type = typeof(LightingCapture), Member = "SampleCameras")]
-	[CalledBy(Type = typeof(LightingCapture._003CCaptureFrame_003Ed__15), Member = "MoveNext")]
-	[CalledBy(Type = typeof(LightingCapture._003CCaptureFrame_003Ed__15), Member = "MoveNext")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
-	[CalledBy(Type = typeof(WeatherTransition), Member = "ForceUnmanagedWeatherStage")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "ChangeWeatherState")]
-	[Calls(Type = typeof(DynamicDecalsManager), Member = "UpdateDecalProjectorLifeTimes")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "SendWeatherStateToWise")]
-	[CallerCount(Count = 6)]
 	[CalledBy(Type = typeof(Weather), Member = "Deserialize")]
+	[CalledBy(Type = typeof(WeatherTransition), Member = "ForceUnmanagedWeatherStage")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CalledBy(TypeFullName = "LightingCapture.<CaptureFrame>d__15", Member = "MoveNext")]
+	[CalledBy(Type = typeof(LightingCapture), Member = "SampleCameras")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "ChangeWeatherState")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "SendWeatherStateToWise")]
+	[Calls(Type = typeof(DynamicDecalsManager), Member = "UpdateDecalProjectorLifeTimes")]
 	[CallsUnknownMethods(Count = 2)]
 	public void SetWeatherStage(WeatherStage ws, float transitionTime, bool force = false)
 	{
 	}
 
-	[CalledBy(Type = typeof(WeatherSetStage), Member = "Update")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(WeatherSetStage), Member = "Activate")]
+	[CalledBy(Type = typeof(WeatherSetStage), Member = "Update")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(DynamicDecalsManager), Member = "UpdateDecalProjectorLifeTimes")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "ChangeWeatherState")]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetWeatherStateAndBlendDirectly(WeatherStage ws, WeatherStage prevWS, float elapsedGameTimeInStage, float transitionGameTimeForStage)
 	{
 	}
 
+	[CalledBy(Type = typeof(Weather), Member = "WarmWeather")]
+	[CalledBy(Type = typeof(Weather), Member = "WarmWeatherState")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "Update")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "UpdateSunTransform")]
-	[CalledBy(Type = typeof(Weather), Member = "WarmWeather")]
-	[CalledBy(Type = typeof(Weather), Member = "WarmWeatherState")]
 	[CallsUnknownMethods(Count = 1)]
 	public void WarmWeatherState()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public int GetMoonPhaseIndex()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]
@@ -694,7 +691,7 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 	[CallerCount(Count = 0)]
 	public float GetMoonIntensityScalar()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -707,7 +704,7 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsFullMoon()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -720,11 +717,11 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public int GetDayNumber()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
@@ -743,174 +740,184 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateForceAurora")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsNightOrNightBlend()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(HighlightFog), Member = "UpdateTOD")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(MultiplyNighttimeParticleOpacity), Member = "Update")]
 	[CalledBy(Type = typeof(GodrayManager), Member = "Update")]
-	[CallerCount(Count = 4)]
+	[CalledBy(Type = typeof(HighlightFog), Member = "UpdateTOD")]
 	[CalledBy(Type = typeof(HighlightFogManager), Member = "UpdateTOD")]
+	[CalledBy(Type = typeof(MultiplyNighttimeParticleOpacity), Member = "Update")]
+	[CallerCount(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsNight()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsNightWithExtendedHours(float extendedHours)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsMorning()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsAfternoon()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsNightPreMidnight()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsNightPostMidnight()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(RenderObjectInstance), Member = "UpdateFrustumArrays")]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "GetClearAuroraIntensity")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsDusk()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "GetClearAuroraIntensity")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsDawn()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public bool IsDayWithExtendedHours(float extendedHours)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetDawnHourTime()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateForceAurora")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsEarlyNightWindowForAuroraActivation()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(AuroraManager), Member = "UpdateForceAurora")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsLateNightWindowForAuroraActivation()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 1)]
 	public bool IsInsideElectrostaticFogSelectionWindow()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public bool IsInsideElectrostaticFogActivationWindow()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetDawnTime()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetNightStartTime()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "GetClearAuroraIntensity")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(TodMaterial), Member = "UpdateForDusk")]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "GetProgressDusk")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(TodMaterial), Member = "UpdateForDusk")]
+	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "GetClearAuroraIntensity")]
+	[CallerCount(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetProgressDusk()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "GetClearAuroraIntensity")]
-	[CallerCount(Count = 4)]
 	[CalledBy(Type = typeof(TimeOfDay), Member = "GetProgressDawn")]
 	[CalledBy(Type = typeof(TodMaterial), Member = "UpdateForDawn")]
-	[CalledBy(Type = typeof(TodMaterial), Member = "UpdateForDawn")]
+	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "GetClearAuroraIntensity")]
+	[CallerCount(Count = 4)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetProgressDawn()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(NPCLightingRig), Member = "Update")]
 	[CalledBy(Type = typeof(LightRandomIntensity), Member = "Update")]
+	[CalledBy(Type = typeof(NPCLightingRig), Member = "Update")]
 	[CalledBy(Type = typeof(TransformAtNight), Member = "Update")]
-	[CalledBy(Type = typeof(NPCLightingRig), Member = "Update")]
-	[CalledBy(Type = typeof(LightRandomIntensity), Member = "Update")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(LightRandomIntensity), Member = "Update")]
-	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
 	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendState")]
+	[Calls(Type = typeof(UniStormWeatherSystem), Member = "GetTODBlendPercent")]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetNightPercentage()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CalledBy(Type = typeof(DarkLightingManager), Member = "UpdateIntensities")]
+	[CalledBy(Type = typeof(DarkLightingManager), Member = "GetTimeOfDayIntensity")]
+	[CalledBy(Type = typeof(TimeOfDay), Member = "GetTODBlendState")]
+	[CalledBy(Type = typeof(TodSmokeTrail), Member = "ForceMiddayObject")]
+	[CalledBy(Type = typeof(TodSmokeTrail), Member = "UpdateMiddayObject")]
+	[CalledBy(Type = typeof(Weather), Member = "GetDebugWeatherText")]
+	[CalledBy(Type = typeof(Weather), Member = "UpdateAndMaybeSendAnalytics")]
+	[CalledBy(Type = typeof(HighlightFog), Member = "UpdateTOD")]
+	[CalledBy(Type = typeof(HighlightFogManager), Member = "UpdateTOD")]
+	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Update")]
+	[CalledBy(Type = typeof(InteriorLightingManager), Member = "GetTimeOfDayIntensity")]
+	[CalledBy(Type = typeof(InteriorLightingManager), Member = "MiddayIntensities")]
+	[CalledBy(Type = typeof(LightTOD), Member = "Update")]
+	[CalledBy(Type = typeof(LightTOD), Member = "UpdateTOD")]
+	[CalledBy(Type = typeof(MultiplyNighttimeParticleOpacity), Member = "Update")]
+	[CalledBy(Type = typeof(Rainbow), Member = "Update")]
+	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "GetNightPercentage")]
 	[CallerCount(Count = 38)]
 	[CallsUnknownMethods(Count = 2)]
 	public TODBlendState GetTODBlendState()
@@ -918,37 +925,51 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 		return default(TODBlendState);
 	}
 
+	[CalledBy(Type = typeof(DarkLightingManager), Member = "UpdateIntensities")]
+	[CalledBy(Type = typeof(DarkLightingManager), Member = "GetTimeOfDayIntensity")]
+	[CalledBy(Type = typeof(TimeOfDay), Member = "GetTODBlendPercent")]
+	[CalledBy(Type = typeof(Weather), Member = "GetDebugWeatherText")]
+	[CalledBy(Type = typeof(HighlightFog), Member = "UpdateTOD")]
+	[CalledBy(Type = typeof(HighlightFogManager), Member = "UpdateTOD")]
+	[CalledBy(Type = typeof(InteriorLightingManager), Member = "Update")]
+	[CalledBy(Type = typeof(InteriorLightingManager), Member = "GetTimeOfDayIntensity")]
+	[CalledBy(Type = typeof(InteriorLightingManager), Member = "MiddayIntensities")]
+	[CalledBy(Type = typeof(LightTOD), Member = "Update")]
+	[CalledBy(Type = typeof(LightTOD), Member = "UpdateTOD")]
+	[CalledBy(Type = typeof(MultiplyNighttimeParticleOpacity), Member = "Update")]
+	[CalledBy(Type = typeof(Rainbow), Member = "Update")]
+	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "GetNightPercentage")]
 	[CallerCount(Count = 23)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetTODBlendPercent(TODBlendState blendState)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	private float GetBlendBiasWeightByWeather(WeatherStage stage)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetTODBlendBiased(TODBlendState blendState, float linearResult, float weatherBlend)
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
-	[CallerCount(Count = 0)]
 	public float GetSunShadowStrength()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetElapsedHours()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
@@ -956,66 +977,58 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(SunShadowOverrideVolume), Member = "OnTriggerEnter")]
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Insert")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	public void RegisterSunShadowOverrideVolume(SunShadowOverrideVolume volume)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(SunShadowOverrideVolume), Member = "OnDisable")]
 	[CalledBy(Type = typeof(SunShadowOverrideVolume), Member = "OnTriggerExit")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(SunShadowOverrideVolume), Member = "OnDisable")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void UnregisterSunShadowOverrideVolume(SunShadowOverrideVolume volume)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(SunShadowOverrideVolume), Member = "GetBlendFactor")]
-	[CallsUnknownMethods(Count = 13)]
+	[CallsDeduplicatedMethods(Count = 8)]
+	[CallsUnknownMethods(Count = 12)]
 	private void UpdateShadowStrength()
 	{
 	}
 
-	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "SetWeatherStage")]
-	[CalledBy(Type = typeof(WeatherSetStage), Member = "Activate")]
-	[CallerCount(Count = 2)]
 	[CallAnalysisFailed]
+	[CalledBy(Type = typeof(WeatherSetStage), Member = "Activate")]
+	[CalledBy(Type = typeof(UniStormWeatherSystem), Member = "SetWeatherStage")]
+	[CallerCount(Count = 2)]
 	public static void SendWeatherStateToWise(WeatherStage ws)
 	{
 	}
 
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_weather")]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_lock_weather_instant")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_lock_weather")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_lock_weather_instant")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_set_weather")]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "WeatherNameToEnum")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	public static WeatherStage WeatherNameToEnum(string weatherName)
 	{
 		return default(WeatherStage);
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void TriggerAnimation(string triggerName)
 	{
 	}
@@ -1026,22 +1039,22 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(HorizonCloudsBand), Member = "OnEnable")]
 	[CalledBy(Type = typeof(HorizonCloudsBand), Member = "OnDisable")]
+	[CallerCount(Count = 2)]
 	public void SetHorizonCloudsBand2Renderer(Renderer r)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(HorizonCloudsBand), Member = "OnEnable")]
 	[CalledBy(Type = typeof(HorizonCloudsBand), Member = "OnDisable")]
+	[CallerCount(Count = 2)]
 	public void SetHorizonCloudsBand3Renderer(Renderer r)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 2)]
 	public void SetHorizonGradRenderer(Renderer r)
 	{
 	}
@@ -1075,14 +1088,14 @@ public class UniStormWeatherSystem : MonoBehaviour, IElectrostaticSource
 	[CallerCount(Count = 0)]
 	public bool ApproximateColorMatch(Color a, Color b, float margin)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	private int GetIndexOfWeatherStage(WeatherStage stage)
 	{
-		return default(int);
+		return 0;
 	}
 
 	[CallerCount(Count = 0)]

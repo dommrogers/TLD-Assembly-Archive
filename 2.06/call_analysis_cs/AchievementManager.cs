@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
+using NodeCanvas.Tasks.Actions;
 using TLD;
 using TLD.Gameplay;
 using TLD.Logging;
@@ -119,10 +120,10 @@ public class AchievementManager : MonoBehaviour
 	public static bool s_DebugVerbose;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	private void Awake()
 	{
@@ -134,38 +135,39 @@ public class AchievementManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
-	[Calls(Type = typeof(AchievementManager), Member = "ExploredNewInterior")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(TimeOfDay), Member = "IsNight")]
+	[Calls(Type = typeof(AchievementManager), Member = "ExploredNewInterior")]
+	[Calls(Type = typeof(GameManager), Member = "SaveProfileAndDisplayHUDMessage")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private void Update()
 	{
 	}
 
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(SerializationUtils), Member = "SerializeObject")]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "SaveGlobalData")]
 	[CallsUnknownMethods(Count = 1)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataForEspisodeMigration")]
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalDataForEspisodeMigration")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public void Deserialize(string text)
 	{
 	}
 
 	[CallerCount(Count = 27)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
 	[Calls(Type = typeof(AchievementManager), Member = "CheckAchievements")]
 	[CallsUnknownMethods(Count = 2)]
@@ -173,14 +175,10 @@ public class AchievementManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
-	[Calls(Type = typeof(AchievementPlatformManager), Member = "SendStatistic")]
-	[Calls(Type = typeof(AchievementPlatformManager), Member = "SendStatistic")]
-	[Calls(Type = typeof(AchievementPlatformManager), Member = "SendStatistic")]
-	[Calls(Type = typeof(AchievementPlatformManager), Member = "SendStatistic")]
-	[Calls(Type = typeof(AchievementPlatformManager), Member = "SendStatistic")]
-	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(AchievementPlatformManager), Member = "SendStatistic")]
+	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
 	public void UpdateDaysSurvived(int numDays)
 	{
 	}
@@ -203,10 +201,10 @@ public class AchievementManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "IsStoryMode")]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[CallsUnknownMethods(Count = 2)]
 	public void NightStarted()
 	{
 	}
@@ -231,10 +229,10 @@ public class AchievementManager : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[CallsUnknownMethods(Count = 1)]
 	public void AteFoodItem(FoodItem foodItem)
 	{
 	}
@@ -258,17 +256,15 @@ public class AchievementManager : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
-	[CalledBy(Type = typeof(Rest), Member = "BeginSleeping")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(Rest), Member = "MaybeTriggerAchievement")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsWearingClothingName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
-	[Calls(Type = typeof(PlayerManager), Member = "IsWearingClothingName")]
+	[CalledBy(Type = typeof(Rest), Member = "BeginSleeping")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(PlayerManager), Member = "IsWearingClothingName")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(PlayerManager), Member = "IsWearingClothingName")]
+	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
+	[CallsUnknownMethods(Count = 4)]
 	public void WentToSleep(GearItem bedroll)
 	{
 	}
@@ -276,62 +272,43 @@ public class AchievementManager : MonoBehaviour
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
 	[CallsUnknownMethods(Count = 1)]
 	public void UsedMedicine(GearItem medicineItem)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Harvestable), Member = "Harvest")]
-	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
+	[CallsUnknownMethods(Count = 1)]
 	public void HarvestedPlant(string plantName)
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRead")]
 	[CalledBy(Type = typeof(ResearchItem), Member = "OnResearchComplete")]
-	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[CalledBy(Type = typeof(Panel_Inventory_Examine), Member = "OnRead")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
+	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
+	[CallsUnknownMethods(Count = 1)]
 	public void ResearchedBook(string bookName)
 	{
 	}
 
+	[CalledBy(Type = typeof(Panel_Crafting), Member = "ApplyCraftingProgress")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(string), Member = "IndexOf")]
-	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
-	[CalledBy(Type = typeof(Panel_Crafting), Member = "ApplyCraftingProgress")]
 	[CallsUnknownMethods(Count = 1)]
 	public void CraftedItem(string itemName)
 	{
 	}
 
-	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
 	public void DefeatTimberwolfPack()
 	{
 	}
@@ -343,13 +320,12 @@ public class AchievementManager : MonoBehaviour
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AchievementManager), Member = "CheckInteriors")]
-	[Calls(Type = typeof(AchievementManager), Member = "CheckInteriors")]
-	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
 	[CalledBy(Type = typeof(LoadScene), Member = "Activate")]
 	[CalledBy(Type = typeof(AchievementManager), Member = "Update")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(AchievementManager), Member = "CheckInteriors")]
+	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
 	public void ExploredNewInterior(string interiorName)
 	{
 	}
@@ -365,32 +341,32 @@ public class AchievementManager : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(MapDetailManager), Member = "MaybeUnlockFaithfulCartographer")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(AchievementManager), Member = "IsRegionCompleteFaithfulCartographer")]
 	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowKeyNotFoundException")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowKeyNotFoundException")]
-	[CalledBy(Type = typeof(MapDetailManager), Member = "MaybeUnlockFaithfulCartographer")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowKeyNotFoundException")]
+	[CallsDeduplicatedMethods(Count = 5)]
 	[CallsUnknownMethods(Count = 11)]
 	public void MaybeUnlockFaithfulCartographer(string sceneName, bool areAllNamedLocationsUnlocked)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_log_all_faithful_cartographer")]
-	[CalledBy(Type = typeof(AchievementManager), Member = "MaybeUnlockFaithfulCartographerForAllRegions")]
-	[CalledBy(Type = typeof(AchievementManager), Member = "MaybeUnlockFaithfulCartographer")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "BuildCartographyRegionList")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfScene")]
-	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfScene")]
-	[Calls(Type = typeof(FaithfulCartographerSO), Member = "FindPresetCartographyAchevementSceneSetCount")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(AchievementManager), Member = "MaybeUnlockFaithfulCartographer")]
+	[CalledBy(Type = typeof(AchievementManager), Member = "MaybeUnlockFaithfulCartographerForAllRegions")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_log_all_faithful_cartographer")]
 	[CallerCount(Count = 4)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(FaithfulCartographerSO), Member = "FindPresetCartographyAchevementSceneSetCount")]
+	[Calls(Type = typeof(PanelReference<>), Member = "TryGetPanel")]
+	[Calls(Type = typeof(Panel_Map), Member = "GetMapNameOfScene")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 3)]
 	public bool IsRegionCompleteFaithfulCartographer(string sceneName, ref int numCompleted, ref int total)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -399,105 +375,87 @@ public class AchievementManager : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(UnlockAchievementTrigger), Member = "OnTriggerEnter")]
+	[CalledBy(Type = typeof(Panel_Debug), Member = "UnlockAchievement")]
+	[CalledBy(Type = typeof(AchievementManager), Member = "CheckAchievements")]
+	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_achievement_unlock")]
+	[CalledBy(Type = typeof(Action_UnlockAchievement), Member = "OnExecute")]
+	[CallerCount(Count = 31)]
+	[Calls(Type = typeof(AchievementPlatformManager), Member = "Unlock")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[CallsUnknownMethods(Count = 7)]
 	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedAchievement")]
 	[Calls(Type = typeof(Utils), Member = "SendGameplayAnalyticsEvent")]
-	[Calls(Type = typeof(AchievementPlatformManager), Member = "Unlock")]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(Enum), Member = "ToString")]
-	[CallerCount(Count = 31)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void UnlockAchievement(Achievement achievement)
 	{
 	}
 
 	[CalledBy(Type = typeof(AchievementManager), Member = "CheckAchievements")]
-	[Calls(Type = typeof(AchievementManager), Member = "IsRegionCompleteFaithfulCartographer")]
-	[CallsUnknownMethods(Count = 8)]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(AchievementManager), Member = "IsRegionCompleteFaithfulCartographer")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	private void MaybeUnlockFaithfulCartographerForAllRegions()
 	{
 	}
 
-	[Calls(Type = typeof(AchievementManager), Member = "MaybeUnlockFaithfulCartographerForAllRegions")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(SkillsManager), Member = "AllSkillsAtMaxmiumLevel")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "CompletedAllChallenges")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
 	[CalledBy(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
-	[CallsUnknownMethods(Count = 27)]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(Enum), Member = "GetValues")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enum), Member = "GetValues")]
 	[Calls(Type = typeof(Array), Member = "GetEnumerator")]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
 	[Calls(Type = typeof(AchievementPlatformManager), Member = "IsUnlocked")]
 	[Calls(Type = typeof(AchievementPlatformManager), Member = "Unlock")]
 	[Calls(Type = typeof(ProfileState), Member = "AddUnlockedAchievement")]
 	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
-	[Calls(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
+	[Calls(Type = typeof(SkillsManager), Member = "AllSkillsAtMaxmiumLevel")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(AchievementManager), Member = "MaybeUnlockFaithfulCartographerForAllRegions")]
+	[Calls(Type = typeof(AchievementManager), Member = "CompletedAllChallenges")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 27)]
 	private void CheckAchievements()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(AchievementManager), Member = "ExploredNewInterior")]
-	[CalledBy(Type = typeof(AchievementManager), Member = "ExploredNewInterior")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
-	[Calls(Type = typeof(Collider), Member = "get_enabled")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(string), Member = "StartsWith")]
-	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.SceneManagement.SceneManager), Member = "GetActiveScene")]
+	[Calls(Type = typeof(string), Member = "StartsWith")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Collider), Member = "get_enabled")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeSelf")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	private bool CheckInteriors(string sceneName)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CalledBy(Type = typeof(AchievementManager), Member = "CheckAchievements")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BaseStateSingleton<>), Member = "get_Instance")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 1)]
 	private static bool CompletedAllChallenges()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
-	[Calls(Type = typeof(Array), Member = "get_Length")]
-	[Calls(Type = typeof(Enum), Member = "GetValues")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Enum), Member = "GetValues")]
+	[Calls(Type = typeof(Array), Member = "get_Length")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 6)]
 	public AchievementManager()
 	{
 	}

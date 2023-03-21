@@ -1,4 +1,3 @@
-using System;
 using System.IO;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -42,44 +41,44 @@ public class FrameDumper : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(FrameDumper), Member = "CreateHelpers")]
-	[Calls(Type = typeof(Directory), Member = "CreateDirectory")]
-	[Calls(Type = typeof(Path), Member = "InsecureGetFullPath")]
-	[Calls(Type = typeof(System.IO.FileSystem), Member = "RemoveDirectoryInternal")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Directory), Member = "InsecureGetCurrentDirectory")]
-	[Calls(Type = typeof(Time), Member = "set_captureFramerate")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Time), Member = "set_captureFramerate")]
+	[Calls(Type = typeof(Directory), Member = "InsecureGetCurrentDirectory")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Directory), Member = "Exists")]
+	[Calls(Type = typeof(Path), Member = "InsecureGetFullPath")]
+	[Calls(TypeFullName = "System.IO.FileSystem", Member = "RemoveDirectoryInternal")]
+	[Calls(Type = typeof(Directory), Member = "CreateDirectory")]
+	[Calls(Type = typeof(FrameDumper), Member = "CreateHelpers")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void StartDumpingToDirectory(string directoryName)
 	{
 	}
 
-	[Calls(Type = typeof(Directory), Member = "CreateDirectory")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(ConsoleManager), Member = "CONSOLE_capture_toggle")]
-	[Calls(Type = typeof(FrameDumper), Member = "DestroyHelpers")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(FrameDumper), Member = "CreateHelpers")]
-	[Calls(Type = typeof(Directory), Member = "Exists")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Directory), Member = "InsecureGetCurrentDirectory")]
-	[Calls(Type = typeof(Time), Member = "set_captureFramerate")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Time), Member = "set_captureFramerate")]
+	[Calls(Type = typeof(Directory), Member = "InsecureGetCurrentDirectory")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Directory), Member = "Exists")]
+	[Calls(Type = typeof(Directory), Member = "CreateDirectory")]
+	[Calls(Type = typeof(FrameDumper), Member = "CreateHelpers")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(FrameDumper), Member = "DestroyHelpers")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void Toggle()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(FrameDumper), Member = "GetImageFilename")]
-	[Calls(Type = typeof(FrameDumper), Member = "MaybeStartDumpingAnimation")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(FrameDumper), Member = "MaybeStartDumpingAnimation")]
+	[Calls(Type = typeof(FrameDumper), Member = "GetImageFilename")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 12)]
 	private void Update()
 	{
 	}
@@ -102,117 +101,99 @@ public class FrameDumper : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 6)]
 	[CalledBy(Type = typeof(FrameDumper), Member = "StartDumpingToDirectory")]
 	[CalledBy(Type = typeof(FrameDumper), Member = "Toggle")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 7)]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	private void CreateHelpers()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(Camera), Member = "set_clearFlags")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
 	[CalledBy(Type = typeof(FrameDumper), Member = "Toggle")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[Calls(Type = typeof(Camera), Member = "set_clearFlags")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void DestroyHelpers()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
-	[Calls(Type = typeof(Screen), Member = "get_width")]
-	[Calls(Type = typeof(Screen), Member = "get_height")]
-	[Calls(Type = typeof(Texture2D), Member = "ReadPixels")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(ThreadedImageWriter), Member = "AddWriteRequest")]
-	[Calls(Type = typeof(Screen), Member = "get_width")]
-	[Calls(Type = typeof(Screen), Member = "get_height")]
-	[Calls(Type = typeof(Screen), Member = "get_height")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(ImageConversion), Member = "EncodeToPNG")]
-	[Calls(Type = typeof(Screen), Member = "get_width")]
-	[Calls(Type = typeof(Texture2D), Member = "ReadPixels")]
-	[Calls(Type = typeof(ThreadedImageWriter), Member = "AddWriteRequest")]
-	[Calls(Type = typeof(Texture2D), Member = "GetPixels")]
 	[CalledBy(Type = typeof(FrameDumpHelper), Member = "OnRenderImage")]
-	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[Calls(Type = typeof(ThreadedImageWriter), Member = "AddWriteRequest")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Texture2D), Member = "ReadPixels")]
-	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
-	[Calls(Type = typeof(FrameDumper), Member = "GetImageFilename")]
-	[CallsDeduplicatedMethods(Count = 17)]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[Calls(Type = typeof(FrameDumper), Member = "GetImageFilename")]
+	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
+	[Calls(Type = typeof(Texture2D), Member = "ReadPixels")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(ThreadedImageWriter), Member = "AddWriteRequest")]
+	[Calls(Type = typeof(Object), Member = "Destroy")]
+	[Calls(Type = typeof(Texture2D), Member = "GetPixels")]
+	[Calls(Type = typeof(ThreadedImageWriter), Member = "AddWriteRequest")]
+	[Calls(Type = typeof(Screen), Member = "get_width")]
+	[Calls(Type = typeof(Screen), Member = "get_height")]
+	[Calls(Type = typeof(ImageConversion), Member = "EncodeToPNG")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CallsDeduplicatedMethods(Count = 17)]
 	[CallsUnknownMethods(Count = 18)]
 	public void DumpFrame(RenderTexture image, RenderTexture depth, RenderTexture norm)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(FrameDumper), Member = "GetImageFilename")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(FrameDumper), Member = "GetImageFilename")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[CallsUnknownMethods(Count = 1)]
 	private void DumpFrameSimple()
 	{
 	}
 
-	[CallerCount(Count = 3)]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(string), Member = "Concat")]
 	[CalledBy(Type = typeof(FrameDumper), Member = "Update")]
 	[CalledBy(Type = typeof(FrameDumper), Member = "DumpFrame")]
 	[CalledBy(Type = typeof(FrameDumper), Member = "DumpFrameSimple")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	private static string GetImageFilename()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Directory), Member = "CreateDirectory")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Directory), Member = "InsecureGetCurrentDirectory")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Directory), Member = "Exists")]
-	[Calls(Type = typeof(Directory), Member = "InsecureGetCurrentDirectory")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(Type = typeof(Directory), Member = "CreateDirectory")]
 	private static string GetShotDirectory()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(FrameDumper), Member = "Update")]
-	[Calls(Type = typeof(File), Member = "Delete")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(DirectoryInfo), Member = "GetFiles")]
-	[Calls(Type = typeof(DirectoryInfo), Member = ".ctor")]
-	[Calls(Type = typeof(Directory), Member = "CreateDirectory")]
-	[Calls(Type = typeof(Directory), Member = "Exists")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(AnimatorClipInfo), Member = "get_clip")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-	[Calls(Type = typeof(Time), Member = "set_captureFramerate")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(string), Member = "ToLower")]
-	[Calls(Type = typeof(AnimatorClipInfo), Member = "get_clip")]
-	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorClipInfo")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(Animator), Member = "GetCurrentAnimatorClipInfo")]
+	[Calls(Type = typeof(AnimatorClipInfo), Member = "get_clip")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(string), Member = "ToLower")]
+	[Calls(Type = typeof(Time), Member = "set_captureFramerate")]
 	[Calls(Type = typeof(Directory), Member = "InsecureGetCurrentDirectory")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Directory), Member = "Exists")]
+	[Calls(Type = typeof(Directory), Member = "CreateDirectory")]
+	[Calls(Type = typeof(DirectoryInfo), Member = ".ctor")]
+	[Calls(Type = typeof(DirectoryInfo), Member = "GetFiles")]
+	[Calls(Type = typeof(File), Member = "Delete")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 7)]
 	private static void MaybeStartDumpingAnimation()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public FrameDumper()
 	{
 	}

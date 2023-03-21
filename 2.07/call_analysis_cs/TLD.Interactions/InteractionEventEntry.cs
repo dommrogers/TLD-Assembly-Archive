@@ -10,8 +10,8 @@ public class InteractionEventEntry
 
 	public InteractionEvent m_Event;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public InteractionEventEntry()
 	{
 	}

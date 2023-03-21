@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -27,20 +26,31 @@ public class StartFireSelectionRow : MonoBehaviour
 
 	private GearItem m_GearItem;
 
-	[Calls(Type = typeof(StartFireSelectionRow), Member = "Update")]
-	[CallsUnknownMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(StartFireSelectionRow), Member = "Update")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void Awake()
 	{
 	}
 
+	[CalledBy(Type = typeof(StartFireSelectionRow), Member = "Awake")]
+	[CalledBy(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
+	[CalledBy(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
+	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTexture")]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Panel_FireStart), Member = "IsThisKeroseneAccelerant")]
 	[Calls(Type = typeof(Panel_FireStart), Member = "IsGunpowderAccelerant")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
+	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
+	[Calls(Type = typeof(Vector3), Member = "get_one")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(GearItem), Member = "GetRoundedCondition")]
 	[Calls(Type = typeof(string), Member = "Concat")]
@@ -49,68 +59,38 @@ public class StartFireSelectionRow : MonoBehaviour
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(PlayerManager), Member = "GetTotalLiters")]
 	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(StartFireSelectionRow), Member = "Awake")]
-	[CalledBy(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
-	[CalledBy(Type = typeof(StartFireSelectionRow), Member = "SetGearItem")]
-	[CallsUnknownMethods(Count = 56)]
-	[Calls(Type = typeof(Vector3), Member = "get_one")]
-	[Calls(Type = typeof(Utils), Member = "GetWeightTwoDecimalPlacesWithUnitsString")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Utils), Member = "GetLiquidQuantityStringWithUnitsNoOunces")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTexture")]
-	[CallerCount(Count = 3)]
 	[CallsDeduplicatedMethods(Count = 11)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "IsThisKeroseneAccelerant")]
-	[Calls(Type = typeof(Panel_FireStart), Member = "IsGunpowderAccelerant")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTexture")]
-	[Calls(Type = typeof(GearItem), Member = "get_m_DisplayName")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryGridIconTexture")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Utils), Member = "GetInventoryIconTexture")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsUnknownMethods(Count = 56)]
 	private void Update()
 	{
 	}
 
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "Refresh")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "DecreaseAccelerant")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "IncreaseAccelerant")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "DecreaseStarter")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "IncreaseStarter")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(StartFireSelectionRow), Member = "Update")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "DecreaseStarter")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "IncreaseAccelerant")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "DecreaseAccelerant")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "Refresh")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(StartFireSelectionRow), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetGearItem(FireStarterItem fsi)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "DecreaseFuel")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "IncreaseFuel")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "DecreaseTinder")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "Refresh")]
 	[CalledBy(Type = typeof(Panel_FireStart), Member = "IncreaseTinder")]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "Refresh")]
-	[Calls(Type = typeof(StartFireSelectionRow), Member = "Update")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "DecreaseTinder")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "IncreaseFuel")]
+	[CalledBy(Type = typeof(Panel_FireStart), Member = "DecreaseFuel")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(Panel_FireStart), Member = "Refresh")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(StartFireSelectionRow), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetGearItem(FuelSourceItem fsi)
 	{
 	}

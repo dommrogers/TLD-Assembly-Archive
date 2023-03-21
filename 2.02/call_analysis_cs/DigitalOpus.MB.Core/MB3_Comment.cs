@@ -7,9 +7,9 @@ public class MB3_Comment : MonoBehaviour
 {
 	public string comment;
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public MB3_Comment()
 	{
 	}

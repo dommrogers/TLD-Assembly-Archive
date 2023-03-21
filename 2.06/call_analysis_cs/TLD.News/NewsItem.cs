@@ -39,8 +39,8 @@ public class NewsItem
 		return null;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public NewsItem()
 	{
 	}

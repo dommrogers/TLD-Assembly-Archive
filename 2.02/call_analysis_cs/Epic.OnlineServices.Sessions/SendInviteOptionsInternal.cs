@@ -18,9 +18,9 @@ internal struct SendInviteOptionsInternal : ISettable, IDisposable
 	public string SessionName
 	{
 		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
@@ -29,11 +29,11 @@ internal struct SendInviteOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -41,36 +41,36 @@ internal struct SendInviteOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId TargetUserId
 	{
+		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(SendInviteOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(SendInviteOptionsInternal), Member = "set_LocalUserId")]
-	[Calls(Type = typeof(SendInviteOptionsInternal), Member = "set_TargetUserId")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(SendInviteOptionsInternal), Member = "set_SessionName")]
+	[Calls(Type = typeof(SendInviteOptionsInternal), Member = "set_LocalUserId")]
+	[Calls(Type = typeof(SendInviteOptionsInternal), Member = "set_TargetUserId")]
 	public void Set(SendInviteOptions other)
 	{
 	}
 
+	[CalledBy(Type = typeof(SessionsInterface), Member = "SendInvite")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(SendInviteOptionsInternal), Member = "set_SessionName")]
 	[Calls(Type = typeof(SendInviteOptionsInternal), Member = "set_LocalUserId")]
 	[Calls(Type = typeof(SendInviteOptionsInternal), Member = "set_TargetUserId")]
-	[CalledBy(Type = typeof(SessionsInterface), Member = "SendInvite")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{

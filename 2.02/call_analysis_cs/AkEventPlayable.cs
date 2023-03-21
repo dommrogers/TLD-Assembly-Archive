@@ -34,14 +34,14 @@ public class AkEventPlayable : PlayableAsset, ITimelineClipAsset
 
 	public TimelineClip OwningClip
 	{
-		[CallerCount(Count = 10)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 11)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 16)]
 		set
 		{
 		}
@@ -53,7 +53,7 @@ public class AkEventPlayable : PlayableAsset, ITimelineClipAsset
 		[Calls(Type = typeof(PlayableAsset), Member = "get_duration")]
 		get
 		{
-			return default(double);
+			return 0.0;
 		}
 	}
 
@@ -78,8 +78,8 @@ public class AkEventPlayable : PlayableAsset, ITimelineClipAsset
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void setBlendInDuration(float d)
 	{
 	}
@@ -91,26 +91,29 @@ public class AkEventPlayable : PlayableAsset, ITimelineClipAsset
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(ScriptPlayable<>), Member = "Create")]
+	[Calls(Type = typeof(PlayableHandle), Member = "GetObject")]
 	[Calls(Type = typeof(AkEventPlayable), Member = "initializeBehaviour")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
 	{
 		return default(Playable);
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CalledBy(Type = typeof(AkEventPlayable), Member = "CreatePlayable")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(ExposedReference<>), Member = "Resolve")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void initializeBehaviour(PlayableGraph graph, AkEventPlayableBehavior b, GameObject owner)
 	{
 	}
 
-	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ScriptableObject), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public AkEventPlayable()
 	{
 	}

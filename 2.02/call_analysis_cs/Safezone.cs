@@ -7,9 +7,9 @@ public class Safezone : MonoBehaviour
 
 	public static bool m_ShowSafeZone;
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	public Safezone()
 	{
 	}

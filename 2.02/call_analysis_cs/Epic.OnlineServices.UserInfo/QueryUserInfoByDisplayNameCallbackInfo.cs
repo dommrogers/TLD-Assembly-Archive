@@ -17,16 +17,16 @@ public class QueryUserInfoByDisplayNameCallbackInfo : ICallbackInfo, ISettable
 
 	public Result ResultCode
 	{
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 7)]
-		[CompilerGenerated]
 		get
 		{
 			return default(Result);
 		}
+		[CompilerGenerated]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CompilerGenerated]
 		private set
 		{
 		}
@@ -36,14 +36,14 @@ public class QueryUserInfoByDisplayNameCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		private set
 		{
 		}
@@ -53,14 +53,14 @@ public class QueryUserInfoByDisplayNameCallbackInfo : ICallbackInfo, ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		private set
 		{
 		}
@@ -77,7 +77,7 @@ public class QueryUserInfoByDisplayNameCallbackInfo : ICallbackInfo, ISettable
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		private set
 		{
 		}
@@ -85,50 +85,50 @@ public class QueryUserInfoByDisplayNameCallbackInfo : ICallbackInfo, ISettable
 
 	public string DisplayName
 	{
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 15)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 20)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 23)]
 		private set
 		{
 		}
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Result? GetResultCode()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
 	[CalledBy(Type = typeof(QueryUserInfoByDisplayNameCallbackInfo), Member = "Set")]
-	[Calls(Type = typeof(QueryUserInfoByDisplayNameCallbackInfoInternal), Member = "get_DisplayName")]
-	[Calls(Type = typeof(QueryUserInfoByDisplayNameCallbackInfoInternal), Member = "get_TargetUserId")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(QueryUserInfoByDisplayNameCallbackInfoInternal), Member = "get_ClientData")]
 	[Calls(Type = typeof(QueryUserInfoByDisplayNameCallbackInfoInternal), Member = "get_LocalUserId")]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(QueryUserInfoByDisplayNameCallbackInfoInternal), Member = "get_TargetUserId")]
+	[Calls(Type = typeof(QueryUserInfoByDisplayNameCallbackInfoInternal), Member = "get_DisplayName")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 5)]
 	internal void Set(QueryUserInfoByDisplayNameCallbackInfoInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(QueryUserInfoByDisplayNameCallbackInfo), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public QueryUserInfoByDisplayNameCallbackInfo()
 	{
 	}

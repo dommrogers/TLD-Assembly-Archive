@@ -7,7 +7,8 @@ public class PlayableAssetCameraEffects : PlayableAsset
 	public PlayableBehaviourCameraEffects template;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(ScriptPlayable<>), Member = "Create")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public override Playable CreatePlayable(PlayableGraph graph, GameObject owner)
 	{

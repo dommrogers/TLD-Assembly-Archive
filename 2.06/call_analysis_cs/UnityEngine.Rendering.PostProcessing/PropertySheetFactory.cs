@@ -8,9 +8,9 @@ public sealed class PropertySheetFactory
 {
 	private readonly Dictionary<Shader, PropertySheet> m_Sheets;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 0)]
 	public PropertySheetFactory()
 	{
 	}
@@ -23,29 +23,30 @@ public sealed class PropertySheetFactory
 		return null;
 	}
 
-	[Calls(Type = typeof(string), Member = "Substring")]
-	[Calls(Type = typeof(PropertySheet), Member = ".ctor")]
-	[Calls(Type = typeof(Object), Member = "set_hideFlags")]
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[CallsUnknownMethods(Count = 17)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "LastIndexOf")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 58)]
+	[Calls(Type = typeof(Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Object), Member = "get_name")]
 	[Calls(Type = typeof(Material), Member = ".ctor")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "LastIndexOf")]
+	[Calls(Type = typeof(string), Member = "Substring")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(Object), Member = "set_hideFlags")]
+	[Calls(Type = typeof(PropertySheet), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 17)]
 	public PropertySheet Get(Shader shader)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(PostProcessLayer), Member = "OnDisable")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsUnknownMethods(Count = 8)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.ValueCollection.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(RuntimeUtilities), Member = "Destroy")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 8)]
 	public void Release()
 	{
 	}

@@ -12,8 +12,8 @@ public class NotificationFlagInfo
 
 	public SubCategory m_SubCategory;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public NotificationFlagInfo()
 	{
 	}

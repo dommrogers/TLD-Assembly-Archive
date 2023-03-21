@@ -44,18 +44,18 @@ public class MarkerListDisplayItem : MonoBehaviour
 
 	private bool m_CanOpenMarker;
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CalledBy(Type = typeof(Panel_MarkerList), Member = "ClearDisplay")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Clear()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[DeduplicatedMethod]
 	public void OnButtonClicked()
 	{
 	}
@@ -73,16 +73,16 @@ public class MarkerListDisplayItem : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(MarkerListDisplayItem), Member = "RefreshButtons")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetSelected(bool selected)
 	{
 	}
 
+	[CallAnalysisFailed]
 	[CalledBy(Type = typeof(Panel_MarkerList), Member = "SetupDisplay")]
 	[CallerCount(Count = 1)]
-	[CallAnalysisFailed]
 	public void Setup(MapElementSaveData marker)
 	{
 	}
@@ -93,25 +93,22 @@ public class MarkerListDisplayItem : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public static bool CanDelete(MapElementSaveData marker)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Map), Member = "IsRockCache")]
 	public static bool CanOpen(MapElementSaveData marker)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(Panel_MarkerList), Member = "SetSelected")]
 	[CalledBy(Type = typeof(MarkerListDisplayItem), Member = "SetSelected")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[CalledBy(Type = typeof(Panel_MarkerList), Member = "SetSelected")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	private void RefreshButtons(bool selected)
 	{
 	}

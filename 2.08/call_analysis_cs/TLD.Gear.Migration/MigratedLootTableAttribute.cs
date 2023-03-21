@@ -10,23 +10,23 @@ public class MigratedLootTableAttribute : PropertyAttribute
 
 	public string LegacyFieldName
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 28)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 32)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 79)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 86)]
 		private set
 		{
 		}
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 79)]
+	[CallerCount(Count = 86)]
 	public MigratedLootTableAttribute(string legacyFieldName)
 	{
 	}

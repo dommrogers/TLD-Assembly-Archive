@@ -7,7 +7,7 @@ public class AkEnumFlagAttribute : PropertyAttribute
 	public Type Type;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 71)]
+	[CallerCount(Count = 77)]
 	public AkEnumFlagAttribute(Type type)
 	{
 	}

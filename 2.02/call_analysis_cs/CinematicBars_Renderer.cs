@@ -4,13 +4,12 @@ using UnityEngine.Rendering.PostProcessing;
 
 public sealed class CinematicBars_Renderer : PostProcessEffectRenderer<RLProCinematicBars>
 {
-	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[CallsUnknownMethods(Count = 10)]
-	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PropertySheetFactory), Member = "Get")]
+	[Calls(Type = typeof(MaterialPropertyBlock), Member = "SetFloat")]
+	[Calls(Type = typeof(RuntimeUtilities), Member = "BlitFullscreenTriangle")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	public override void Render(PostProcessRenderContext context)
 	{
 	}

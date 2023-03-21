@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
 using Rewired.Utils.Interfaces;
 using UnityEngine;
@@ -52,7 +51,7 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 			[CallerCount(Count = 7)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
@@ -63,14 +62,14 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 
 		public int joyConGripStyle
 		{
-			[CallerCount(Count = 2)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 6)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
-			[CallerCount(Count = 0)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			set
 			{
 			}
@@ -82,7 +81,7 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(bool);
+				return false;
 			}
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
@@ -97,7 +96,7 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 			[CallerCount(Count = 0)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
@@ -112,7 +111,7 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 			[CallerCount(Count = 2)]
 			get
 			{
-				return default(bool);
+				return false;
 			}
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
@@ -123,11 +122,11 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 
 		public bool useVibrationThread
 		{
-			[CallerCount(Count = 0)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			get
 			{
-				return default(bool);
+				return false;
 			}
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
@@ -149,7 +148,7 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 		private NpadSettings_Internal npadNo2
 		{
 			[DeduplicatedMethod]
-			[CallerCount(Count = 15)]
+			[CallerCount(Count = 17)]
 			get
 			{
 				return null;
@@ -159,7 +158,7 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 		private NpadSettings_Internal npadNo3
 		{
 			[DeduplicatedMethod]
-			[CallerCount(Count = 8)]
+			[CallerCount(Count = 9)]
 			get
 			{
 				return null;
@@ -188,8 +187,8 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 
 		private NpadSettings_Internal npadNo6
 		{
-			[CallerCount(Count = 5)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 11)]
 			get
 			{
 				return null;
@@ -199,7 +198,7 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 		private NpadSettings_Internal npadNo7
 		{
 			[DeduplicatedMethod]
-			[CallerCount(Count = 10)]
+			[CallerCount(Count = 11)]
 			get
 			{
 				return null;
@@ -209,7 +208,7 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 		private NpadSettings_Internal npadNo8
 		{
 			[DeduplicatedMethod]
-			[CallerCount(Count = 20)]
+			[CallerCount(Count = 40)]
 			get
 			{
 				return null;
@@ -219,7 +218,7 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 		private NpadSettings_Internal npadHandheld
 		{
 			[DeduplicatedMethod]
-			[CallerCount(Count = 4)]
+			[CallerCount(Count = 7)]
 			get
 			{
 				return null;
@@ -238,10 +237,10 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 
 		private Dictionary<int, object[]> delegates
 		{
+			[CalledBy(Type = typeof(UserData), Member = "Rewired.Utils.Interfaces.IKeyedData<System.Int32>.TryGetValue")]
 			[CalledBy(Type = typeof(UserData), Member = "Rewired.Utils.Interfaces.IKeyedData<System.Int32>.TrySetValue")]
 			[CallerCount(Count = 2)]
 			[CallsDeduplicatedMethods(Count = 17)]
-			[CalledBy(Type = typeof(UserData), Member = "Rewired.Utils.Interfaces.IKeyedData<System.Int32>.TryGetValue")]
 			[CallsUnknownMethods(Count = 270)]
 			get
 			{
@@ -249,31 +248,33 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 			}
 		}
 
-		[CallsUnknownMethods(Count = 7)]
-		[Calls(Type = typeof(UserData), Member = "get_delegates")]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 3)]
+		[Calls(Type = typeof(UserData), Member = "get_delegates")]
+		[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 7)]
 		private bool Rewired_002EUtils_002EInterfaces_002EIKeyedData_003CSystem_002EInt32_003E_002ETryGetValue<T>(int key, out T value)
 		{
-			System.Runtime.CompilerServices.Unsafe.As<T, @null>(ref value) = null;
-			return default(bool);
+			value = default(T);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 7)]
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[Calls(Type = typeof(UserData), Member = "get_delegates")]
+		[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 7)]
 		private bool Rewired_002EUtils_002EInterfaces_002EIKeyedData_003CSystem_002EInt32_003E_002ETrySetValue<T>(int key, T value)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CalledBy(Type = typeof(NintendoSwitchInputManager), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 70)]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 70)]
 		public UserData()
 		{
 		}
@@ -293,10 +294,10 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 		private bool isAllowed
 		{
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 6)]
 			get
 			{
-				return default(bool);
+				return false;
 			}
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
@@ -308,10 +309,10 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 		private int rewiredPlayerId
 		{
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 6)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
@@ -326,10 +327,10 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 			[CallerCount(Count = 8)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
-			[CallerCount(Count = 0)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			set
 			{
 			}
@@ -337,10 +338,10 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 
 		private Dictionary<int, object[]> delegates
 		{
-			[CallerCount(Count = 2)]
-			[CallsDeduplicatedMethods(Count = 5)]
 			[CalledBy(Type = typeof(NpadSettings_Internal), Member = "Rewired.Utils.Interfaces.IKeyedData<System.Int32>.TryGetValue")]
 			[CalledBy(Type = typeof(NpadSettings_Internal), Member = "Rewired.Utils.Interfaces.IKeyedData<System.Int32>.TrySetValue")]
+			[CallerCount(Count = 2)]
+			[CallsDeduplicatedMethods(Count = 5)]
 			[CallsUnknownMethods(Count = 77)]
 			get
 			{
@@ -355,23 +356,25 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[Calls(Type = typeof(NpadSettings_Internal), Member = "get_delegates")]
+		[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 7)]
 		private bool Rewired_002EUtils_002EInterfaces_002EIKeyedData_003CSystem_002EInt32_003E_002ETryGetValue<T>(int key, out T value)
 		{
-			System.Runtime.CompilerServices.Unsafe.As<T, @null>(ref value) = null;
-			return default(bool);
+			value = default(T);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 7)]
-		[Calls(Type = typeof(NpadSettings_Internal), Member = "get_delegates")]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
-		[CallsDeduplicatedMethods(Count = 3)]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NpadSettings_Internal), Member = "get_delegates")]
+		[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 7)]
 		private bool Rewired_002EUtils_002EInterfaces_002EIKeyedData_003CSystem_002EInt32_003E_002ETrySetValue<T>(int key, T value)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -387,10 +390,10 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 		private int rewiredPlayerId
 		{
 			[DeduplicatedMethod]
-			[CallerCount(Count = 2)]
+			[CallerCount(Count = 6)]
 			get
 			{
-				return default(int);
+				return 0;
 			}
 			[DeduplicatedMethod]
 			[CallerCount(Count = 0)]
@@ -401,14 +404,14 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 
 		private bool enabled
 		{
-			[CallerCount(Count = 2)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 6)]
 			get
 			{
-				return default(bool);
+				return false;
 			}
-			[CallerCount(Count = 0)]
 			[DeduplicatedMethod]
+			[CallerCount(Count = 0)]
 			set
 			{
 			}
@@ -416,10 +419,10 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 
 		private Dictionary<int, object[]> delegates
 		{
-			[CallerCount(Count = 2)]
-			[CallsDeduplicatedMethods(Count = 4)]
 			[CalledBy(Type = typeof(DebugPadSettings_Internal), Member = "Rewired.Utils.Interfaces.IKeyedData<System.Int32>.TryGetValue")]
 			[CalledBy(Type = typeof(DebugPadSettings_Internal), Member = "Rewired.Utils.Interfaces.IKeyedData<System.Int32>.TrySetValue")]
+			[CallerCount(Count = 2)]
+			[CallsDeduplicatedMethods(Count = 4)]
 			[CallsUnknownMethods(Count = 54)]
 			get
 			{
@@ -435,23 +438,25 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 3)]
 		[Calls(Type = typeof(DebugPadSettings_Internal), Member = "get_delegates")]
+		[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 7)]
 		private bool Rewired_002EUtils_002EInterfaces_002EIKeyedData_003CSystem_002EInt32_003E_002ETryGetValue<T>(int key, out T value)
 		{
-			System.Runtime.CompilerServices.Unsafe.As<T, @null>(ref value) = null;
-			return default(bool);
+			value = default(T);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 7)]
-		[Calls(Type = typeof(DebugPadSettings_Internal), Member = "get_delegates")]
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
-		[CallsDeduplicatedMethods(Count = 3)]
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(DebugPadSettings_Internal), Member = "get_delegates")]
+		[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+		[CallsDeduplicatedMethods(Count = 2)]
+		[CallsUnknownMethods(Count = 7)]
 		private bool Rewired_002EUtils_002EInterfaces_002EIKeyedData_003CSystem_002EInt32_003E_002ETrySetValue<T>(int key, T value)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -465,15 +470,15 @@ public sealed class NintendoSwitchInputManager : MonoBehaviour, IExternalInputMa
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	private void Rewired_002EUtils_002EInterfaces_002EIExternalInputManager_002EDeinitialize()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UserData), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public NintendoSwitchInputManager()
 	{

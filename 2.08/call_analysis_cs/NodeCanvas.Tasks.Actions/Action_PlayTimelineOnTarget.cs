@@ -19,13 +19,13 @@ public class Action_PlayTimelineOnTarget : Action_PlayTimeline
 		}
 	}
 
-	[Calls(Type = typeof(Action_PlayTimelineOnTarget), Member = "GetTimelinePlayback")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Action_PlayTimeline), Member = "BuildTimelineInfo")]
+	[Calls(Type = typeof(Action_PlayTimelineOnTarget), Member = "GetTimelinePlayback")]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(TimelinePlayback), Member = "PlayTimelineOnSelf")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
 	protected override void ExecuteTimelineAction()
 	{
@@ -33,16 +33,18 @@ public class Action_PlayTimelineOnTarget : Action_PlayTimeline
 
 	[CalledBy(Type = typeof(Action_PlayTimelineOnTarget), Member = "ExecuteTimelineAction")]
 	[CallerCount(Count = 1)]
-	[CallsUnknownMethods(Count = 6)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(MissionServicesManager), Member = "FindMissionObject")]
+	[CallsUnknownMethods(Count = 2)]
 	private TimelinePlayback GetTimelinePlayback()
 	{
 		return null;
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[DeduplicatedMethod]
 	private void OnTimelineComplete()
 	{
 	}

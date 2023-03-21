@@ -20,8 +20,8 @@ public class AnimateMaterialPropertyFromBone : MonoBehaviour
 		[NonSerialized]
 		public int m_MaterialPropertyID;
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public AnimatedPropertyData()
 		{
 		}
@@ -48,29 +48,27 @@ public class AnimateMaterialPropertyFromBone : MonoBehaviour
 	private int m_MaterialPropertyID;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Shader), Member = "PropertyToID")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 11)]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(Vector4), Member = "set_Item")]
-	[CallsUnknownMethods(Count = 12)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(TransformAxisExtension), Member = "GetLocalTransformValue")]
-	[Calls(Type = typeof(TransformAxisExtension), Member = "GetLocalTransformValue")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[Calls(Type = typeof(TransformAxisExtension), Member = "GetLocalTransformValue")]
+	[Calls(Type = typeof(Vector4), Member = "set_Item")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 12)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Vector4), Member = "get_zero")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public AnimateMaterialPropertyFromBone()
 	{
 	}

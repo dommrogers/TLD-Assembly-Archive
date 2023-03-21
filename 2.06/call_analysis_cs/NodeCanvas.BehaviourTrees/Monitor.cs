@@ -35,8 +35,8 @@ public class Monitor : BTDecorator, ITaskAssignable<ActionTask>, ITaskAssignable
 		{
 			return null;
 		}
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		set
 		{
 		}
@@ -57,20 +57,19 @@ public class Monitor : BTDecorator, ITaskAssignable<ActionTask>, ITaskAssignable
 		}
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
 	[Calls(Type = typeof(BTDecorator), Member = "get_decoratedConnection")]
 	[Calls(Type = typeof(ActionTask), Member = "ExecuteAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override Status OnExecute(Component agent, IBlackboard blackboard)
 	{
 		return default(Status);
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnReset()
 	{
 	}

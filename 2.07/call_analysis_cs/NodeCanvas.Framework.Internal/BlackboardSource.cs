@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using Cpp2ILInjected.CallAnalysis;
-using NodeCanvas.DialogueTrees;
 using NodeCanvas.Tasks.Actions;
 using ParadoxNotion;
 using UnityEngine;
@@ -17,18 +16,18 @@ public sealed class BlackboardSource : IBlackboard
 	{
 		public Type ofType;
 
-		[CallerCount(Count = 6)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 6)]
 		public _003C_003Ec__DisplayClass30_0()
 		{
 		}
 
-		[CallsUnknownMethods(Count = 1)]
 		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Variable), Member = "GetGetConverter")]
+		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CGetVariableNames_003Eb__0(Variable v)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -76,13 +75,13 @@ public sealed class BlackboardSource : IBlackboard
 	public Dictionary<string, Variable> variables
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 25)]
+		[CallerCount(Count = 28)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 40)]
+		[CallerCount(Count = 50)]
 		set
 		{
 		}
@@ -100,10 +99,11 @@ public sealed class BlackboardSource : IBlackboard
 
 	public object Item
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CalledBy(Type = typeof(Blackboard), Member = "get_Item")]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[CallerCount(Count = 1)]
+		[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
 			return null;
@@ -117,10 +117,10 @@ public sealed class BlackboardSource : IBlackboard
 
 	public event Action<Variable> onVariableAdded
 	{
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 3)]
 		add
 		{
 		}
@@ -135,10 +135,10 @@ public sealed class BlackboardSource : IBlackboard
 
 	public event Action<Variable> onVariableRemoved
 	{
-		[CallsUnknownMethods(Count = 3)]
-		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CompilerGenerated]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Delegate), Member = "Combine")]
+		[CallsUnknownMethods(Count = 3)]
 		add
 		{
 		}
@@ -151,167 +151,170 @@ public sealed class BlackboardSource : IBlackboard
 		}
 	}
 
-	[CalledBy(Type = typeof(GlobalBlackboard), Member = ".ctor")]
-	[CalledBy(Type = typeof(Blackboard), Member = ".ctor")]
-	[CalledBy(Type = typeof(Blackboard), Member = "UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(Graph), Member = "DeserializeLocalBlackboard")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(Graph), Member = "get_localBlackboard")]
+	[CalledBy(Type = typeof(Blackboard), Member = "UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize")]
+	[CalledBy(Type = typeof(Blackboard), Member = ".ctor")]
+	[CalledBy(Type = typeof(GlobalBlackboard), Member = ".ctor")]
+	[CallerCount(Count = 5)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public BlackboardSource()
 	{
 	}
 
-	[CallerCount(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
 	[CalledBy(Type = typeof(Graph), Member = "Validate")]
 	[CalledBy(Type = typeof(Blackboard), Member = "Awake")]
 	[CalledBy(Type = typeof(Blackboard), Member = "Deserialize")]
 	[CalledBy(Type = typeof(GlobalBlackboard), Member = "Awake")]
+	[CallerCount(Count = 4)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowInvalidOperationException_InvalidOperation_EnumFailedVersion")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public void InitializePropertiesBinding(GameObject targetGO, bool callSetter)
 	{
 	}
 
 	[CalledBy(Type = typeof(BlackboardSource), Member = "SetValue")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(BlackboardSource), Member = "AddVariable")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public Variable AddVariable(string varName, object value)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 6)]
+	[CalledBy(Type = typeof(Blackboard), Member = "AddVariable")]
+	[CalledBy(Type = typeof(Blackboard), Member = "AddVariable")]
+	[CalledBy(Type = typeof(BlackboardSource), Member = "AddVariable")]
+	[CalledBy(Type = typeof(BlackboardSource), Member = "AddVariable")]
 	[CalledBy(Type = typeof(Action_InvokeConcurrentGraph), Member = "OnExecute")]
-	[CalledBy(Type = typeof(BlackboardSource), Member = "AddVariable")]
-	[CalledBy(Type = typeof(BlackboardSource), Member = "AddVariable")]
-	[CalledBy(Type = typeof(Blackboard), Member = "AddVariable")]
-	[CalledBy(Type = typeof(Blackboard), Member = "AddVariable")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Activator), Member = "CreateInstance")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[Calls(Type = typeof(BlackboardSource), Member = "GetVariable")]
 	[Calls(Type = typeof(string), Member = "Format")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[Calls(Type = typeof(BlackboardSource), Member = "GetVariable")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(Activator), Member = "CreateInstance")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[CallsDeduplicatedMethods(Count = 5)]
-	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(string), Member = "Format")]
+	[CallsUnknownMethods(Count = 6)]
 	public Variable AddVariable(string varName, Type type)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public Variable RemoveVariable(string varName)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Debug), Member = "LogError")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
 	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
 	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 8)]
 	public T GetValue<T>(string varName)
 	{
-		return (T)null;
+		return default(T);
 	}
 
+	[CalledBy(Type = typeof(BlackboardSpawner), Member = "MaybeCopyBlackboardVariables")]
+	[CalledBy(Type = typeof(BehaviourTreeInteraction), Member = "PerformInteraction")]
+	[CalledBy(Type = typeof(BlackboardPatch), Member = "ApplyPatch")]
 	[CalledBy(Type = typeof(Blackboard), Member = "set_Item")]
 	[CalledBy(Type = typeof(Blackboard), Member = "SetValue")]
 	[CalledBy(Type = typeof(Blackboard), Member = "Deserialize")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
+	[CalledBy(Type = typeof(BlackboardSource), Member = "set_Item")]
 	[CalledBy(Type = typeof(TLDSetOtherBlackboardVariable), Member = "OnExecute")]
 	[CalledBy(Type = typeof(SetOtherBlackboardVariable), Member = "OnExecute")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(BlackboardPatch), Member = "ApplyPatch")]
-	[CalledBy(Type = typeof(BlackboardSource), Member = "set_Item")]
-	[CalledBy(Type = typeof(BlackboardPatch), Member = "ApplyPatch")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[CalledBy(Type = typeof(BlackboardSpawner), Member = "MaybeCopyBlackboardVariables")]
-	[Calls(Type = typeof(BlackboardSource), Member = "AddVariable")]
-	[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Format")]
-	[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 10)]
-	[CalledBy(Type = typeof(BehaviourTreeInteraction), Member = "PerformInteraction")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(ReflectionTools), Member = "FriendlyName")]
+	[Calls(Type = typeof(string), Member = "Format")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(BlackboardSource), Member = "AddVariable")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 2)]
 	public Variable SetValue(string varName, object value)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(BlackboardSource), Member = "GetVariable")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(BlackboardSource), Member = "GetVariable")]
 	[CallsUnknownMethods(Count = 2)]
 	public Variable<T> GetVariable<T>(string varName)
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(BlackboardSource), Member = "GetVariable")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(BlackboardSource), Member = "AddVariable")]
-	[CalledBy(Type = typeof(Statement._003C_003Ec__DisplayClass21_0), Member = "<BlackboardReplace>b__0")]
-	[Calls(Type = typeof(Variable), Member = "GetGetConverter")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Blackboard), Member = "GetVariable")]
+	[CalledBy(Type = typeof(BlackboardSource), Member = "AddVariable")]
+	[CalledBy(Type = typeof(BlackboardSource), Member = "GetVariable")]
+	[CalledBy(TypeFullName = "NodeCanvas.DialogueTrees.Statement.<>c__DisplayClass21_0", Member = "<BlackboardReplace>b__0")]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Variable), Member = "GetGetConverter")]
+	[CallsUnknownMethods(Count = 1)]
 	public Variable GetVariable(string varName, Type ofType = null)
 	{
 		return null;
 	}
 
 	[CalledBy(Type = typeof(Blackboard), Member = "GetVariableByID")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(Interop), Member = "GetRandomBytes")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(TypeFullName = "Interop", Member = "GetRandomBytes")]
 	[Calls(Type = typeof(Guid), Member = "ToString")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 2)]
 	public Variable GetVariableByID(string ID)
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.Linq.Buffer`1", Member = ".ctor")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[CallsUnknownMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 5)]
 	public string[] GetVariableNames()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 3)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
 	[CalledBy(Type = typeof(Blackboard), Member = "GetVariableNames")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Enumerable), Member = "Where")]
+	[Calls(Type = typeof(Enumerable), Member = "Select")]
+	[Calls(TypeFullName = "System.Linq.Buffer`1", Member = ".ctor")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 5)]
 	public string[] GetVariableNames(Type ofType)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public Variable<T> AddVariable<T>(string varName, T value)
 	{
 		return null;

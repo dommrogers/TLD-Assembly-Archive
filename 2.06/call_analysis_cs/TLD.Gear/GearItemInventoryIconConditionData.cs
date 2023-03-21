@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -28,20 +29,20 @@ public class GearItemInventoryIconConditionData : GearItemInventoryIconData
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameManager), Member = "GetConditionTable")]
 	[Calls(Type = typeof(GearItemInventoryIconConditionData), Member = "GetSuffix")]
 	[Calls(Type = typeof(CompareInfo), Member = "CompareOrdinalIgnoreCase")]
+	[CallsUnknownMethods(Count = 2)]
 	public override Texture2D GetInventoryIcon(float conditionPercent)
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(GearItemInventoryIconConditionData), Member = "GetInventoryIcon")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[CallsUnknownMethods(Count = 4)]
 	private static string GetSuffix(ConditionTable.TableEntry conditionTable, float conditionPercent)
 	{
 		return null;

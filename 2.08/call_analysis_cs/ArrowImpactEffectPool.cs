@@ -16,7 +16,7 @@ public class ArrowImpactEffectPool : EffectPool<ArrowImpactEffectType>
 	public SerializableSpawnGroup[] m_EffectGroupsSerialized;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 25)]
+	[CallerCount(Count = 28)]
 	protected override SerializableSpawnGroupGeneric[] GetSerializedGroups()
 	{
 		return null;
@@ -29,7 +29,7 @@ public class ArrowImpactEffectPool : EffectPool<ArrowImpactEffectType>
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(EffectPool<>), Member = ".ctor")]
 	public ArrowImpactEffectPool()
 	{
 		((EffectPool<>)(object)this)._002Ector();

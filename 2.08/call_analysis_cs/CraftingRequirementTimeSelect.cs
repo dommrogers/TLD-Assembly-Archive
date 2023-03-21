@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
@@ -31,31 +30,31 @@ public class CraftingRequirementTimeSelect : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(CraftingRequirementTimeSelect), Member = "Enable")]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "RefreshCraftingTimeDisplay")]
+	[CalledBy(Type = typeof(CraftingRequirementTimeSelect), Member = "Enable")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Disable()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(CraftingRequirementTimeSelect), Member = "Refresh")]
 	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[Calls(Type = typeof(CraftingRequirementTimeSelect), Member = "Disable")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 4)]
 	public void Enable(int craftingTime, bool offset)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public int GetCraftingTime()
 	{
-		return default(int);
+		return 0;
 	}
 
 	[DeduplicatedMethod]
@@ -64,54 +63,53 @@ public class CraftingRequirementTimeSelect : MonoBehaviour
 	[CallsUnknownMethods(Count = 3)]
 	public bool IsEnabled()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public bool IsSelected()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(CraftingRequirementTimeSelect), Member = "Refresh")]
-	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
+	[Calls(Type = typeof(CraftingRequirementTimeSelect), Member = "Refresh")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnDecrease()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "IsGamepadActive")]
 	[Calls(Type = typeof(CraftingRequirementTimeSelect), Member = "Refresh")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void OnIncrease()
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "SetHighlightedItem")]
-	[CallsUnknownMethods(Count = 3)]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(NGUITools), Member = "SetActive")]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetSelected(bool selected)
 	{
 	}
 
-	[CalledBy(Type = typeof(CraftingRequirementTimeSelect), Member = "OnDecrease")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(CraftingRequirementTimeSelect), Member = "OnIncrease")]
-	[CalledBy(Type = typeof(CraftingRequirementTimeSelect), Member = "Enable")]
-	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "OnPrevious")]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "OnNext")]
+	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "OnPrevious")]
 	[CalledBy(Type = typeof(CraftingRequirementContainer), Member = "RefreshCraftingTimeDisplay")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(string), Member = "TrimHelper")]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[CalledBy(Type = typeof(CraftingRequirementTimeSelect), Member = "Enable")]
+	[CalledBy(Type = typeof(CraftingRequirementTimeSelect), Member = "OnDecrease")]
+	[CalledBy(Type = typeof(CraftingRequirementTimeSelect), Member = "OnIncrease")]
 	[CallerCount(Count = 6)]
-	[Calls(Type = typeof(System.Number), Member = "FormatSingle")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatSingle")]
+	[Calls(Type = typeof(string), Member = "TrimHelper")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	private void Refresh()
 	{
 	}

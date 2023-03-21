@@ -14,7 +14,7 @@ public class CanvasGroup
 	public Color color;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public CanvasGroup()
 	{
 	}

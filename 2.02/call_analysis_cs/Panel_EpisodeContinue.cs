@@ -27,134 +27,121 @@ public class Panel_EpisodeContinue : Panel_Base
 
 	private bool m_WasEscapePressedWhenEnabled;
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(Panel_Base), Member = "Initialize")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "Create")]
+	[Calls(Type = typeof(Utils), Member = "GetComponentInChildren")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void Initialize()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_EpisodeContinue), Member = "GetContinueToEpisodeButtonText")]
 	[CalledBy(Type = typeof(Panel_EpisodeContinue), Member = "Enable")]
-	[Calls(Type = typeof(GameManager), Member = "ContinueToNextEpisode")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
-	[Calls(Type = typeof(Panel_PauseMenu), Member = "DoQuitGame")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
-	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
-	[Calls(Type = typeof(Panel_EpisodeContinue), Member = "UpdateNextEpisodeCards")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_EpisodeContinue), Member = "GetEpisodeTitleText")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_EpisodeContinue), Member = "GetContinueToEpisodeButtonText")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(Panel_EpisodeContinue), Member = "GetContinueToEpisodeButtonText")]
-	[CallsDeduplicatedMethods(Count = 7)]
-	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Panel_EpisodeContinue), Member = "GetEpisodeTitleText")]
+	[Calls(Type = typeof(Panel_EpisodeContinue), Member = "UpdateNextEpisodeCards")]
+	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
 	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
+	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(Panel_PauseMenu), Member = "DoQuitGame")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
+	[Calls(Type = typeof(GameManager), Member = "ContinueToNextEpisode")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 8)]
 	private void Update()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_EpisodeContinue), Member = "Update")]
-	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
-	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Panel_Base), Member = "Enable")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(InputManager), Member = "GetContinuePressed")]
+	[Calls(Type = typeof(InputManager), Member = "GetEscapePressed")]
+	[Calls(Type = typeof(InputManager), Member = "ResetControllerState")]
+	[Calls(Type = typeof(Panel_EpisodeContinue), Member = "Update")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public override void Enable(bool enable)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonClick")]
 	[Calls(Type = typeof(GameManager), Member = "ContinueToNextEpisode")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	public void OnClickContinueToNextEpisode()
 	{
 	}
 
-	[Calls(Type = typeof(Panel_PauseMenu), Member = "DoQuitGame")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIButtonBack")]
+	[Calls(Type = typeof(Panel_PauseMenu), Member = "DoQuitGame")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnClickQuitToMainMenu()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "BeginUpdate")]
 	[Calls(Type = typeof(Panel_EpisodeContinue), Member = "GetContinueToEpisodeButtonText")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
-	[Calls(Type = typeof(ButtonLegendContainer), Member = "UpdateButton")]
 	[Calls(Type = typeof(ButtonLegendContainer), Member = "EndUpdate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 4)]
 	private void UpdateButtonLegend()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CalledBy(Type = typeof(Panel_EpisodeContinue), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_EpisodeContinue), Member = "UpdateButtonLegend")]
-	[CalledBy(Type = typeof(Panel_EpisodeContinue), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_EpisodeContinue), Member = "Update")]
-	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(Localization), Member = "Get")]
 	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
 	[Calls(Type = typeof(EpisodeManager), Member = "GetNextEpisode")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(EpisodeManager), Member = "GetEpisodeGenericNameLocId")]
+	[Calls(Type = typeof(string), Member = "Replace")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetContinueToEpisodeButtonText()
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[Calls(Type = typeof(Localization), Member = "Get")]
 	[CalledBy(Type = typeof(Panel_EpisodeContinue), Member = "Update")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetNextEpisode")]
-	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
+	[Calls(Type = typeof(EpisodeManager), Member = "GetNextEpisode")]
+	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private string GetEpisodeTitleText()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 16)]
 	[CalledBy(Type = typeof(Panel_EpisodeContinue), Member = "Update")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(EpisodeManager), Member = "GetActiveEpisode")]
 	[Calls(Type = typeof(EpisodeManager), Member = "GetNextEpisode")]
-	[CallsDeduplicatedMethods(Count = 9)]
-	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Object), Member = "op_Inequality")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 16)]
 	private void UpdateNextEpisodeCards()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public Panel_EpisodeContinue()
 	{
 	}

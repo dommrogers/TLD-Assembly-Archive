@@ -5,7 +5,7 @@ namespace ParadoxNotion.Design;
 public class TagFieldAttribute : DrawerAttribute
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public TagFieldAttribute()
 	{
 	}

@@ -17,41 +17,43 @@ public class ThreadedImageWriter : MonoBehaviour
 	private const int NUM_WRITER_THREADS = 4;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
 	[Calls(Type = typeof(Thread), Member = "SetStartHelper")]
 	[Calls(Type = typeof(Thread), Member = "set_IsBackground")]
 	[Calls(Type = typeof(Thread), Member = "Start")]
+	[CallsDeduplicatedMethods(Count = 6)]
 	[CallsUnknownMethods(Count = 22)]
 	private void Start()
 	{
 	}
 
 	[CalledBy(Type = typeof(FrameDumper), Member = "DumpFrame")]
-	[Calls(Type = typeof(Monitor), Member = "ThrowLockTakenException")]
-	[CallsUnknownMethods(Count = 25)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Queue<>), Member = "Enqueue")]
 	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[Calls(Type = typeof(Monitor), Member = "ThrowLockTakenException")]
+	[CallsUnknownMethods(Count = 24)]
 	public void AddWriteRequest(string filename, Color[] image, uint width, uint height, ImageWriteRequest.Type type, float farClip)
 	{
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Queue<>), Member = "Enqueue")]
 	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[Calls(Type = typeof(Monitor), Member = "ThrowLockTakenException")]
-	[CallsUnknownMethods(Count = 25)]
+	[CallsUnknownMethods(Count = 24)]
 	public void AddWriteRequest(string filename, Color[] image, uint width, uint height, ImageWriteRequest.Type type)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 25)]
 	[CalledBy(Type = typeof(FrameDumper), Member = "DumpFrame")]
-	[CalledBy(Type = typeof(FrameDumper), Member = "DumpFrame")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Queue<>), Member = "Enqueue")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
 	[Calls(Type = typeof(Monitor), Member = "ThrowLockTakenException")]
+	[CallsUnknownMethods(Count = 24)]
 	public void AddWriteRequest(string filename, byte[] image, uint width, uint height, ImageWriteRequest.Type type)
 	{
 	}
@@ -60,25 +62,22 @@ public class ThreadedImageWriter : MonoBehaviour
 	[CallsUnknownMethods(Count = 2)]
 	public bool IsFallingBehind()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Monitor), Member = "ThrowLockTakenException")]
-	[CallsUnknownMethods(Count = 48)]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(File), Member = "WriteAllBytes")]
-	[Calls(Type = typeof(global::MiniEXR.MiniEXR), Member = "MiniEXRWrite_Depth")]
-	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
-	[Calls(Type = typeof(global::MiniEXR.MiniEXR), Member = "MiniEXRWrite")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "Log")]
+	[Calls(Type = typeof(Queue<>), Member = "Dequeue")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(ArgumentNullException), Member = ".ctor")]
+	[Calls(Type = typeof(Monitor), Member = "ThrowLockTakenException")]
+	[Calls(Type = typeof(global::MiniEXR.MiniEXR), Member = "MiniEXRWrite_Depth")]
+	[Calls(Type = typeof(global::MiniEXR.MiniEXR), Member = "MiniEXRWrite")]
+	[Calls(Type = typeof(File), Member = "WriteAllBytes")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 47)]
 	private void ImageWriter(object obj)
 	{
 	}

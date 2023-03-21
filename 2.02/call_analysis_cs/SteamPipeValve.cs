@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -51,43 +52,45 @@ public class SteamPipeValve : MonoBehaviour
 	private HeldItemInPlacementZone m_HeldItemInPlacementZone;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Utils), Member = "GetGuidFromGameObject")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Awake()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public string GetGuid()
 	{
 		return null;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(List<>), Member = "Contains")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(SteamPipeValve), Member = "MaybeShowFrozenValve")]
 	[Calls(Type = typeof(SteamPipeValve), Member = "SetPipeOpenState")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 3)]
 	public void Start()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnDestroy()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(LocalizedString), Member = "Text")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(LocalizedString), Member = "Text")]
+	[CallsUnknownMethods(Count = 4)]
 	public string GetHoverText()
 	{
 		return null;
@@ -100,9 +103,9 @@ public class SteamPipeValve : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SteamPipeValve), Member = "MaybeShowFrozenValve")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Update()
 	{
@@ -110,84 +113,81 @@ public class SteamPipeValve : MonoBehaviour
 
 	[CalledBy(Type = typeof(SteamPipeValveManager), Member = "SerializeAll")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SerializeObject")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 8)]
 	public string Serialize()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CallsUnknownMethods(Count = 1)]
 	[CalledBy(Type = typeof(SteamPipeValveManager), Member = "DeserializeAll")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
 	[Calls(Type = typeof(SteamPipeValve), Member = "MaybeShowFrozenValve")]
 	[Calls(Type = typeof(SteamPipeValve), Member = "SetPipeOpenState")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Deserialize(string text)
 	{
 	}
 
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(SteamPipeValve), Member = "MaybeShowFrozenValve")]
 	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "ShowHoverButtonPrompts")]
 	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "ProcessInteraction")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(SteamPipeValve), Member = "MaybeShowFrozenValve")]
 	[CallsUnknownMethods(Count = 1)]
 	public void MaybeUpdateFrozenState()
 	{
 	}
 
-	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "OnValveActivateInteraction")]
-	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "Deserialize")]
-	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "HandleInteractionChoice")]
-	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "Update")]
-	[CalledBy(Type = typeof(SteamPipeValve), Member = "OnCloseValveComplete")]
-	[CalledBy(Type = typeof(SteamPipeValve), Member = "OnOpenValveComplete")]
-	[CalledBy(Type = typeof(SteamPipeValve), Member = "OnOpenValveInteraction")]
-	[CalledBy(Type = typeof(SteamPipeValve), Member = "OnOpenValveInteraction")]
 	[CalledBy(Type = typeof(SteamPipeValve), Member = "Start")]
 	[CalledBy(Type = typeof(SteamPipeValve), Member = "InteractOpenValve")]
-	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "OnAttachValveComplete")]
-	[Calls(Type = typeof(SteamPipe), Member = "MaybePlayOpenCloseAudio")]
-	[Calls(Type = typeof(Mathf), Member = "Approximately")]
-	[Calls(Type = typeof(Mathf), Member = "Approximately")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 12)]
 	[CalledBy(Type = typeof(SteamPipeValve), Member = "Deserialize")]
+	[CalledBy(Type = typeof(SteamPipeValve), Member = "OnOpenValveInteraction")]
+	[CalledBy(Type = typeof(SteamPipeValve), Member = "OnOpenValveComplete")]
+	[CalledBy(Type = typeof(SteamPipeValve), Member = "OnCloseValveComplete")]
+	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "Update")]
+	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "HandleInteractionChoice")]
+	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "Deserialize")]
+	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "OnValveActivateInteraction")]
+	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "OnAttachValveComplete")]
+	[CallerCount(Count = 12)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Mathf), Member = "Approximately")]
+	[Calls(Type = typeof(SteamPipe), Member = "MaybePlayOpenCloseAudio")]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
 	public void SetPipeOpenState(bool playerInteraction)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	private void OnValidate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private void SetValvePosition()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "ProcessInteraction")]
-	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "ShowHoverButtonPrompts")]
-	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "Update")]
-	[CalledBy(Type = typeof(SteamPipeValve), Member = "MaybeUpdateFrozenState")]
+	[CalledBy(Type = typeof(SteamPipeValve), Member = "Start")]
 	[CalledBy(Type = typeof(SteamPipeValve), Member = "Update")]
 	[CalledBy(Type = typeof(SteamPipeValve), Member = "Deserialize")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(GameObject), Member = "SetActive")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[CalledBy(Type = typeof(SteamPipeValve), Member = "MaybeUpdateFrozenState")]
+	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "Update")]
+	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "ShowHoverButtonPrompts")]
+	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "ProcessInteraction")]
 	[CallerCount(Count = 7)]
-	[CalledBy(Type = typeof(SteamPipeValve), Member = "Start")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "SetActive")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void MaybeShowFrozenValve()
 	{
 	}
@@ -198,62 +198,58 @@ public class SteamPipeValve : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 59)]
-	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "OnAttachValveComplete")]
-	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "OnValveActivateInteraction")]
 	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "HandleInteractionChoice")]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeProcessPickingUpPlacedItem")]
-	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "IsValid")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeProcessPickingUpPlacedItem")]
+	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "OnValveActivateInteraction")]
+	[CalledBy(Type = typeof(SteamPipeValveSocket), Member = "OnAttachValveComplete")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 9)]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(SteamPipeValve), Member = "SetPipeOpenState")]
+	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeHandleItemInHands")]
 	[Calls(Type = typeof(TimelinePlayback), Member = "PlayTimelineOnPlayer")]
 	[Calls(Type = typeof(SteamPipeValve), Member = "SetPipeOpenState")]
-	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeHandleItemInHands")]
+	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeProcessPickingUpPlacedItem")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "IsValid")]
+	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 59)]
 	public void OnOpenValveInteraction(bool isOpening)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnTimelineInterrupted()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
-	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeProcessPickingUpPlacedItem")]
-	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "IsValid")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(SteamPipeValve), Member = "SetPipeOpenState")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "IsValid")]
+	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeProcessPickingUpPlacedItem")]
+	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnOpenValveComplete()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(SteamPipeValve), Member = "SetPipeOpenState")]
 	[Calls(Type = typeof(HeldItemInPlacementZone), Member = "MaybeProcessPickingUpPlacedItem")]
 	[Calls(Type = typeof(PlayerManager), Member = "SetControlMode")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	private void OnCloseValveComplete()
 	{
 	}
 
-	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 14)]
-	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TimelinePlayback.TimelineInfo), Member = ".ctor")]
+	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 14)]
 	public SteamPipeValve()
 	{
 	}

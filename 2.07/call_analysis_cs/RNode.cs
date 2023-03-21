@@ -11,13 +11,13 @@ public class RNode : MonoBehaviour
 
 	public GameObject m_PreviewPrefab;
 
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[CallsUnknownMethods(Count = 26)]
-	[Calls(Type = typeof(Object), Member = "Instantiate")]
-	[CallsDeduplicatedMethods(Count = 24)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(GameObject), Member = "SetActive")]
 	[Calls(Type = typeof(Object), Member = "set_hideFlags")]
-	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "Instantiate")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[CallsDeduplicatedMethods(Count = 24)]
+	[CallsUnknownMethods(Count = 26)]
 	private void Start()
 	{
 	}

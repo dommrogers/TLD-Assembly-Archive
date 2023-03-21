@@ -5,7 +5,7 @@ namespace Epic.OnlineServices.Auth;
 public class AddNotifyLoginStatusChangedOptions
 {
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public AddNotifyLoginStatusChangedOptions()
 	{
 	}

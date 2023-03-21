@@ -16,10 +16,10 @@ internal struct CopyProductUserExternalAccountByAccountIdOptionsInternal : ISett
 	public ProductUserId TargetUserId
 	{
 		[CalledBy(Type = typeof(CopyProductUserExternalAccountByAccountIdOptionsInternal), Member = "Set")]
-		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
 		[CalledBy(Type = typeof(CopyProductUserExternalAccountByAccountIdOptionsInternal), Member = "Set")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 2)]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -27,11 +27,11 @@ internal struct CopyProductUserExternalAccountByAccountIdOptionsInternal : ISett
 
 	public string AccountId
 	{
+		[CalledBy(Type = typeof(CopyProductUserExternalAccountByAccountIdOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyProductUserExternalAccountByAccountIdOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyProductUserExternalAccountByAccountIdOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyProductUserExternalAccountByAccountIdOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -45,17 +45,17 @@ internal struct CopyProductUserExternalAccountByAccountIdOptionsInternal : ISett
 	}
 
 	[CalledBy(Type = typeof(ConnectInterface), Member = "CopyProductUserExternalAccountByAccountId")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(CopyProductUserExternalAccountByAccountIdOptionsInternal), Member = "set_TargetUserId")]
 	[Calls(Type = typeof(CopyProductUserExternalAccountByAccountIdOptionsInternal), Member = "set_AccountId")]
-	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Helper), Member = "TryMarshalDispose")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Dispose()
 	{
 	}

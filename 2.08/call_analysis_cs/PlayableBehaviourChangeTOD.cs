@@ -21,23 +21,22 @@ public class PlayableBehaviourChangeTOD : PlayableBehaviour
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Utils), Member = "TryParseTOD")]
-	[Calls(Type = typeof(Utils), Member = "TryParseTOD")]
 	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
 	[CallsUnknownMethods(Count = 1)]
 	public override void OnBehaviourPlay(Playable playable, FrameData info)
 	{
 	}
 
-	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TimeOfDay), Member = "SetNormalizedTime")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	public override void ProcessFrame(Playable playable, FrameData info, object playerData)
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public PlayableBehaviourChangeTOD()
 	{
 	}

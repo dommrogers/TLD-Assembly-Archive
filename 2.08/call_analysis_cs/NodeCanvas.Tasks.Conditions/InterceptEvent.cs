@@ -13,20 +13,20 @@ public class InterceptEvent : ConditionTask<Transform>
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Enum), Member = "ToString")]
 		[Calls(Type = typeof(string), Member = "Format")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(Task), Member = "RegisterEvents")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Enum), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Task), Member = "RegisterEvents")]
+	[CallsUnknownMethods(Count = 5)]
 	protected override string OnInit()
 	{
 		return null;
@@ -36,7 +36,7 @@ public class InterceptEvent : ConditionTask<Transform>
 	[CallerCount(Count = 3)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -46,16 +46,16 @@ public class InterceptEvent : ConditionTask<Transform>
 	{
 	}
 
-	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	private void OnPointerExit(PointerEventData eventData)
 	{
 	}
 
-	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	private void OnPointerDown(PointerEventData eventData)
 	{
 	}
@@ -74,9 +74,9 @@ public class InterceptEvent : ConditionTask<Transform>
 	{
 	}
 
-	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	private void OnDrag(PointerEventData eventData)
 	{
 	}
@@ -95,23 +95,23 @@ public class InterceptEvent : ConditionTask<Transform>
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
-	[DeduplicatedMethod]
 	private void OnUpdateSelected(BaseEventData eventData)
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
-	[DeduplicatedMethod]
 	private void OnSelect(BaseEventData eventData)
 	{
 	}
 
-	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ConditionTask), Member = "YieldReturn")]
 	private void OnDeselect(BaseEventData eventData)
 	{
 	}

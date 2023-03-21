@@ -5,8 +5,8 @@ namespace ParadoxNotion.Design;
 
 public class ProtectedSingletonAttribute : Attribute
 {
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public ProtectedSingletonAttribute()
 	{
 	}

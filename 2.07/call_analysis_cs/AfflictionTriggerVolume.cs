@@ -18,19 +18,19 @@ public class AfflictionTriggerVolume : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(Suffocating), Member = "MaybeStopSuffocating")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Suffocating), Member = "StartSuffocating")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Suffocating), Member = "StartSuffocating")]
+	[Calls(Type = typeof(Suffocating), Member = "MaybeStopSuffocating")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 4)]
 	private void OnTriggerEnter(Collider collider)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(Suffocating), Member = "MaybeStopSuffocating")]
 	[Calls(Type = typeof(Suffocating), Member = "StartSuffocating")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 4)]
 	private void OnTriggerExit(Collider collider)
 	{

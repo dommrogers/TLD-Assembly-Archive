@@ -8,12 +8,12 @@ public class RopeExitPoint : BaseInteraction
 
 	public Transform m_ExitPoint;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerClimbRope), Member = "RequestExitToPoint")]
+	[CallsUnknownMethods(Count = 1)]
 	public override bool PerformInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

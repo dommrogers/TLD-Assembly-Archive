@@ -19,10 +19,10 @@ public sealed class RLProFisheye : PostProcessEffectSettings
 
 	public FloatParameter size;
 
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 36)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 36)]
 	public RLProFisheye()
 	{
 	}

@@ -63,14 +63,13 @@ public abstract class UITweener : MonoBehaviour
 
 	public float amountPerDelta
 	{
-		[CalledBy(Type = typeof(UITweener), Member = "Begin")]
-		[CalledBy(Type = typeof(UITweener), Member = "Toggle")]
 		[CalledBy(Type = typeof(UITweener), Member = "Update")]
-		[CallerCount(Count = 4)]
 		[CalledBy(Type = typeof(UITweener), Member = "Toggle")]
+		[CalledBy(Type = typeof(UITweener), Member = "Begin")]
+		[CallerCount(Count = 4)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
@@ -80,7 +79,7 @@ public abstract class UITweener : MonoBehaviour
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -110,60 +109,58 @@ public abstract class UITweener : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
-	[CalledBy(Type = typeof(GearMessage), Member = "ShowNextMessageInQueue")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CalledBy(Type = typeof(UITweener), Member = "Start")]
 	[CalledBy(Type = typeof(UITweener), Member = "Play")]
+	[CalledBy(Type = typeof(GearMessage), Member = "ShowNextMessageInQueue")]
 	[CalledBy(Type = typeof(Panel_CustomXPSetup), Member = "UpdateMenuNavigation")]
 	[CalledBy(Type = typeof(Panel_OptionsMenu), Member = "UpdateMenuNavigationGeneric")]
-	[CallsUnknownMethods(Count = 13)]
-	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
-	[Calls(Type = typeof(UITweener), Member = "Sample")]
-	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(UITweener), Member = "Sample")]
+	[Calls(Type = typeof(EventDelegate), Member = "Execute")]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[Calls(Type = typeof(GameObject), Member = "SendMessage")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 13)]
 	private void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(EventDelegate), Member = "Set")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EventDelegate), Member = "Set")]
+	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetOnFinished(EventDelegate.Callback del)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetOnFinished(EventDelegate del)
 	{
 	}
 
-	[CalledBy(Type = typeof(HUDObjectives), Member = "Awake")]
-	[CallerCount(Count = 5)]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
 	[CalledBy(Type = typeof(HUDChapter), Member = "Awake")]
-	[CalledBy(Type = typeof(ObjectiveInfoDisplay), Member = "Awake")]
 	[CalledBy(Type = typeof(HUDObjectives), Member = "Awake")]
 	[CalledBy(Type = typeof(HUDTutorial), Member = "Awake")]
+	[CalledBy(Type = typeof(ObjectiveInfoDisplay), Member = "Awake")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
 	public void AddOnFinished(EventDelegate.Callback del)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(EventDelegate), Member = "Add")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(EventDelegate), Member = "Add")]
+	[CallsUnknownMethods(Count = 1)]
 	public void AddOnFinished(EventDelegate del)
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	public void RemoveOnFinished(EventDelegate del)
 	{
 	}
@@ -185,7 +182,7 @@ public abstract class UITweener : MonoBehaviour
 	[CallerCount(Count = 4)]
 	private float BounceLogic(float val)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[Obsolete("Use PlayForward() instead")]
@@ -209,10 +206,10 @@ public abstract class UITweener : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
+	[CallerCount(Count = 80)]
 	[Calls(Type = typeof(UITweener), Member = "Update")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 80)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Play(bool forward)
 	{
 	}
@@ -224,34 +221,44 @@ public abstract class UITweener : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(UIPlayTween), Member = "Play")]
+	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
-	[CallerCount(Count = 1)]
 	public void Toggle()
 	{
 	}
 
-	[CallerCount(Count = 101261)]
-	[DeduplicatedMethod]
 	protected abstract void OnUpdate(float factor, bool isFinished);
 
-	[CallerCount(Count = 13)]
 	[DeduplicatedMethod]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(NGUITools), Member = "GetHierarchy")]
-	[CallsDeduplicatedMethods(Count = 10)]
+	[CalledBy(Type = typeof(TweenAlpha), Member = "Begin")]
+	[CalledBy(Type = typeof(TweenColor), Member = "Begin")]
+	[CalledBy(Type = typeof(TweenFOV), Member = "Begin")]
+	[CalledBy(Type = typeof(TweenHeight), Member = "Begin")]
+	[CalledBy(Type = typeof(TweenOrthoSize), Member = "Begin")]
+	[CalledBy(Type = typeof(TweenPosition), Member = "Begin")]
+	[CalledBy(Type = typeof(TweenPosition), Member = "Begin")]
+	[CalledBy(Type = typeof(TweenRotation), Member = "Begin")]
+	[CalledBy(Type = typeof(TweenScale), Member = "Begin")]
+	[CalledBy(Type = typeof(TweenTransform), Member = "Begin")]
+	[CalledBy(Type = typeof(TweenTransform), Member = "Begin")]
+	[CalledBy(Type = typeof(TweenVolume), Member = "Begin")]
+	[CalledBy(Type = typeof(TweenWidth), Member = "Begin")]
+	[CallerCount(Count = 13)]
 	[Calls(Type = typeof(UITweener), Member = "get_amountPerDelta")]
+	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(NGUITools), Member = "GetHierarchy")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[CallsDeduplicatedMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 8)]
 	public static T Begin<T>(GameObject go, float duration) where T : UITweener
 	{
 		return null;
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public virtual void SetStartToCurrentValue()
 	{
 	}
@@ -262,20 +269,20 @@ public abstract class UITweener : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(TweenScale), Member = ".ctor")]
-	[CalledBy(Type = typeof(TweenRotation), Member = ".ctor")]
-	[CalledBy(Type = typeof(TweenPosition), Member = ".ctor")]
-	[CalledBy(Type = typeof(TweenOrthoSize), Member = ".ctor")]
-	[CalledBy(Type = typeof(TweenColor), Member = ".ctor")]
-	[CalledBy(Type = typeof(TweenHeight), Member = ".ctor")]
-	[CalledBy(Type = typeof(TweenFOV), Member = ".ctor")]
-	[CalledBy(Type = typeof(TweenTransform), Member = ".ctor")]
 	[CalledBy(Type = typeof(TweenAlpha), Member = ".ctor")]
+	[CalledBy(Type = typeof(TweenColor), Member = ".ctor")]
+	[CalledBy(Type = typeof(TweenFOV), Member = ".ctor")]
+	[CalledBy(Type = typeof(TweenHeight), Member = ".ctor")]
+	[CalledBy(Type = typeof(TweenOrthoSize), Member = ".ctor")]
+	[CalledBy(Type = typeof(TweenPosition), Member = ".ctor")]
+	[CalledBy(Type = typeof(TweenRotation), Member = ".ctor")]
+	[CalledBy(Type = typeof(TweenScale), Member = ".ctor")]
+	[CalledBy(Type = typeof(TweenTransform), Member = ".ctor")]
+	[CalledBy(Type = typeof(TweenVolume), Member = ".ctor")]
 	[CalledBy(Type = typeof(TweenWidth), Member = ".ctor")]
 	[CallerCount(Count = 11)]
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(TweenVolume), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 3)]
 	protected UITweener()
 	{
 	}

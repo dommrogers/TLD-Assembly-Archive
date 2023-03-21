@@ -22,8 +22,8 @@ public class DialogueTreeController : GraphOwner<DialogueTree>, IDialogueActor
 
 	private Texture2D NodeCanvas_002EDialogueTrees_002EIDialogueActor_002Eportrait
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return null;
@@ -43,7 +43,7 @@ public class DialogueTreeController : GraphOwner<DialogueTree>, IDialogueActor
 	private Color NodeCanvas_002EDialogueTrees_002EIDialogueActor_002EdialogueColor
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 63)]
+		[CallerCount(Count = 66)]
 		get
 		{
 			return default(Color);
@@ -53,7 +53,7 @@ public class DialogueTreeController : GraphOwner<DialogueTree>, IDialogueActor
 	private Vector3 NodeCanvas_002EDialogueTrees_002EIDialogueActor_002EdialoguePosition
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 224)]
+		[CallerCount(Count = 258)]
 		get
 		{
 			return default(Vector3);
@@ -63,7 +63,7 @@ public class DialogueTreeController : GraphOwner<DialogueTree>, IDialogueActor
 	private Transform NodeCanvas_002EDialogueTrees_002EIDialogueActor_002Etransform
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 1207)]
+		[CallerCount(Count = 1280)]
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
@@ -71,14 +71,14 @@ public class DialogueTreeController : GraphOwner<DialogueTree>, IDialogueActor
 		}
 	}
 
-	[Calls(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
 	public void StartDialogue()
 	{
 	}
 
-	[Calls(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
 	public void StartDialogue(Action<bool> callback)
 	{
 	}
@@ -89,40 +89,39 @@ public class DialogueTreeController : GraphOwner<DialogueTree>, IDialogueActor
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[CalledBy(Type = typeof(StartDialogueTree), Member = "OnExecute")]
-	[CalledBy(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
-	[CalledBy(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
-	[CalledBy(Type = typeof(StartDialogueTree), Member = "OnExecute")]
-	[Calls(Type = typeof(Graph), Member = "StartGraph")]
-	[Calls(Type = typeof(GraphOwner), Member = "GetInstance")]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CallerCount(Count = 5)]
 	[CalledBy(Type = typeof(DialogueModeRigFP), Member = "OnEnter_DialogueModeStateStart")]
+	[CalledBy(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
+	[CalledBy(Type = typeof(DialogueTreeController), Member = "StartDialogue")]
+	[CalledBy(Type = typeof(StartDialogueTree), Member = "OnExecute")]
+	[CallerCount(Count = 5)]
+	[Calls(Type = typeof(GraphOwner), Member = "GetInstance")]
+	[Calls(Type = typeof(Graph), Member = "StartGraph")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 3)]
 	public void StartDialogue(IDialogueActor instigator, Action<bool> callback)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Graph), Member = "Pause")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void PauseDialogue()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Graph), Member = "Stop")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void StopDialogue()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(DialogueTree), Member = "SetActorReference")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(DialogueTree), Member = "SetActorReference")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetActorReference(string paramName, IDialogueActor actor)
 	{
 	}
@@ -135,17 +134,17 @@ public class DialogueTreeController : GraphOwner<DialogueTree>, IDialogueActor
 	{
 	}
 
-	[Calls(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "CompareBaseObjects")]
+	[Calls(Type = typeof(DialogueTree), Member = "GetActorReferenceByName")]
 	[CallsUnknownMethods(Count = 1)]
 	public IDialogueActor GetActorReferenceByName(string paramName)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(GraphOwner), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GraphOwner), Member = ".ctor")]
 	public DialogueTreeController()
 	{
 		((GraphOwner<>)(object)this)._002Ector();

@@ -20,8 +20,8 @@ public class HungerSaveDataProxy
 
 	public bool m_SuppressVoiceOver;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public HungerSaveDataProxy()
 	{
 	}

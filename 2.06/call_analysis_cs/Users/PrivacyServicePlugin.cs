@@ -20,9 +20,9 @@ public class PrivacyServicePlugin
 	public static extern bool PrivacyService_CheckPermissionWithTargetUserAsync(int userId, string permissionId, string targetXboxUserId, ObjectResultCallback callback, IntPtr userData);
 
 	[PreserveSig]
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 0)]
 	public static extern bool PrivacyService_GetAvoidListAsync(int userId, ObjectResultCallback callback, IntPtr userData);
 
 	[PreserveSig]

@@ -5,14 +5,14 @@ namespace NodeCanvas.Tasks.Actions;
 
 public class Action_4DONObjective : ActionTask
 {
-	[Calls(Type = typeof(Panel_HUD), Member = "ShowMissionMessage")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
-	[Calls(Type = typeof(Panel_HUD), Member = "RefreshMissionMessage")]
-	[Calls(Type = typeof(ThreeDaysOfNight), Member = "GetCurrentDayNumber")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(ThreeDaysOfNight), Member = "GetCurrentDayNumber")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(Panel_HUD), Member = "RefreshMissionMessage")]
+	[Calls(Type = typeof(Panel_HUD), Member = "ShowMissionMessage")]
+	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnExecute()
 	{
 	}

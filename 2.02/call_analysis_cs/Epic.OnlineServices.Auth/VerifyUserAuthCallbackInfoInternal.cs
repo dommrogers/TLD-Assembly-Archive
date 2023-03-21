@@ -13,8 +13,8 @@ internal struct VerifyUserAuthCallbackInfoInternal : ICallbackInfoInternal
 
 	public Result ResultCode
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(Result);
@@ -23,11 +23,11 @@ internal struct VerifyUserAuthCallbackInfoInternal : ICallbackInfoInternal
 
 	public object ClientData
 	{
+		[CalledBy(Type = typeof(VerifyUserAuthCallbackInfo), Member = "Set")]
+		[CalledBy(Type = typeof(VerifyUserAuthCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CalledBy(Type = typeof(VerifyUserAuthCallbackInfo), Member = "Set")]
-		[CalledBy(Type = typeof(VerifyUserAuthCallbackInfo), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -40,7 +40,7 @@ internal struct VerifyUserAuthCallbackInfoInternal : ICallbackInfoInternal
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 }

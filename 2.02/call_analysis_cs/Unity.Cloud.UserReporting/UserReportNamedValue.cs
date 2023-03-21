@@ -18,9 +18,9 @@ public struct UserReportNamedValue
 		{
 			return null;
 		}
-		[CallerCount(Count = 1)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 1)]
 		set
 		{
 		}
@@ -44,7 +44,7 @@ public struct UserReportNamedValue
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 67)]
+	[CallerCount(Count = 68)]
 	public UserReportNamedValue(string name, string value)
 	{
 	}

@@ -8,11 +8,11 @@ public class MinValueAttribute : DrawerAttribute
 
 	public override int priority
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 

@@ -19,7 +19,7 @@ public class DefaultHDRHandler : IHDRHandler
 	[CallerCount(Count = 3)]
 	public bool IsOutputtingHDR()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -34,8 +34,8 @@ public class DefaultHDRHandler : IHDRHandler
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public DefaultHDRHandler()
 	{
 	}

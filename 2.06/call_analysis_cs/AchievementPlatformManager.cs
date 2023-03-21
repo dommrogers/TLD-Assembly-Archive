@@ -17,26 +17,26 @@ public static class AchievementPlatformManager
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public static bool IsFullyOperational
 	{
-		[CallsUnknownMethods(Count = 2)]
 		[CallerCount(Count = 0)]
+		[CallsUnknownMethods(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	public static event AchievementsChangedHandler OnAchievementsChanged
 	{
 		[CompilerGenerated]
+		[CallerCount(Count = 0)]
 		[Calls(Type = typeof(Delegate), Member = "Combine")]
 		[CallsUnknownMethods(Count = 1)]
-		[CallerCount(Count = 0)]
 		add
 		{
 		}
@@ -49,22 +49,22 @@ public static class AchievementPlatformManager
 		}
 	}
 
-	[CallsUnknownMethods(Count = 7)]
 	[CalledBy(Type = typeof(GameManager), Member = "InstantiateOnlineSystems")]
 	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	public static void Initialize()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	public static void Update()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void Shutdown()
 	{
 	}
@@ -75,10 +75,10 @@ public static class AchievementPlatformManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AchievementManager), Member = "UnlockAchievement")]
 	[CalledBy(Type = typeof(AchievementManager), Member = "CheckAchievements")]
+	[CallerCount(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void Unlock(Achievement achievement)
 	{
 	}
@@ -87,33 +87,21 @@ public static class AchievementPlatformManager
 	[CalledBy(Type = typeof(AchievementManager), Member = "CheckAchievements")]
 	[CalledBy(Type = typeof(EpisodeManager), Member = "HasCompletedEpisode")]
 	[CalledBy(Type = typeof(EpisodeManager), Member = "OnAchievementsChanged")]
-	[CalledBy(Type = typeof(EpisodeManager), Member = "OnAchievementsChanged")]
-	[CalledBy(Type = typeof(EpisodeManager), Member = "OnAchievementsChanged")]
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 6)]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool IsUnlocked(Achievement achievement)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CalledBy(Type = typeof(AchievementManager), Member = "UpdateDaysSurvived")]
+	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
 	[CalledBy(Type = typeof(Panel_BodyHarvest), Member = "HarvestSuccessful")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
 	[CalledBy(Type = typeof(AchievementManager), Member = "UpdateDaysSurvived")]
-	[CalledBy(Type = typeof(TimeOfDay), Member = "CheckAchievements")]
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(AchievementManager), Member = "FullyHarvestedDeer")]
-	[CalledBy(Type = typeof(AchievementManager), Member = "NightEnded")]
 	[CalledBy(Type = typeof(AchievementManager), Member = "SendStat")]
-	[CalledBy(Type = typeof(AchievementManager), Member = "UpdateDaysSurvived")]
-	[CalledBy(Type = typeof(AchievementManager), Member = "UpdateDaysSurvived")]
+	[CalledBy(Type = typeof(AchievementManager), Member = "NightEnded")]
+	[CalledBy(Type = typeof(AchievementManager), Member = "FullyHarvestedDeer")]
 	[CallerCount(Count = 16)]
-	[CalledBy(Type = typeof(AchievementManager), Member = "UpdateDaysSurvived")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void SendStatistic(GameIntStatType statistic, int amount)
 	{
 	}
@@ -124,8 +112,8 @@ public static class AchievementPlatformManager
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public static void SendStatistic(GameEventStatType statistic)
 	{
 	}

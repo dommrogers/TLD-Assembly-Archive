@@ -8,7 +8,7 @@ public class CategoryAttribute : Attribute
 	public readonly string category;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 279)]
+	[CallerCount(Count = 282)]
 	public CategoryAttribute(string category)
 	{
 	}

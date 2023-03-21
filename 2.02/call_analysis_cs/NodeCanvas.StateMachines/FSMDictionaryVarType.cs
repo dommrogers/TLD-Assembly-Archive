@@ -8,10 +8,10 @@ public class FSMDictionaryVarType
 {
 	public Dictionary<Graph, State_TLDBaseFSM> dict;
 
-	[CallsUnknownMethods(Count = 8)]
 	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "RegisterAsSubFSMOwner")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 1)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 8)]
 	public FSMDictionaryVarType()
 	{
 	}
@@ -24,7 +24,8 @@ public class FSMDictionaryVarType
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "Remove")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void RemoveElement(Graph g)
 	{

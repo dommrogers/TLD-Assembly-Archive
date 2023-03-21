@@ -11,7 +11,7 @@ public class WaitForFullFSMUpdate : CustomYieldInstruction
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 

@@ -7,12 +7,12 @@ public class Action_FoundAllHiddenCaches : ActionTask
 {
 	public Episode episode;
 
-	[CallsUnknownMethods(Count = 8)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(AchievementManager), Member = "UpdateCacheAchievementInProfile")]
 	[Calls(Type = typeof(AchievementManager), Member = "UpdateAchievements")]
 	[Calls(Type = typeof(ActionTask), Member = "EndAction")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(AchievementManager), Member = "UpdateCacheAchievementInProfile")]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 8)]
 	protected override void OnExecute()
 	{
 	}

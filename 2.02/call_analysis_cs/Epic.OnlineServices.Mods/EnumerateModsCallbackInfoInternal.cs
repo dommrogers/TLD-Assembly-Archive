@@ -17,8 +17,8 @@ internal struct EnumerateModsCallbackInfoInternal : ICallbackInfoInternal
 
 	public Result ResultCode
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(Result);
@@ -27,10 +27,11 @@ internal struct EnumerateModsCallbackInfoInternal : ICallbackInfoInternal
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(EnumerateModsCallbackInfo), Member = "Set")]
+		[CalledBy(Type = typeof(EnumerateModsCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 2)]
-		[CalledBy(Type = typeof(EnumerateModsCallbackInfo), Member = "Set")]
-		[CalledBy(Type = typeof(EnumerateModsCallbackInfo), Member = "Set")]
+		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -39,11 +40,11 @@ internal struct EnumerateModsCallbackInfoInternal : ICallbackInfoInternal
 
 	public object ClientData
 	{
+		[CalledBy(Type = typeof(EnumerateModsCallbackInfo), Member = "Set")]
+		[CalledBy(Type = typeof(EnumerateModsCallbackInfo), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalGet")]
-		[CalledBy(Type = typeof(EnumerateModsCallbackInfo), Member = "Set")]
-		[CalledBy(Type = typeof(EnumerateModsCallbackInfo), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -53,17 +54,17 @@ internal struct EnumerateModsCallbackInfoInternal : ICallbackInfoInternal
 	public IntPtr ClientDataAddress
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
+		[CallerCount(Count = 59)]
 		get
 		{
-			return default(IntPtr);
+			return (IntPtr)0;
 		}
 	}
 
 	public ModEnumerationType Type
 	{
-		[CallerCount(Count = 8)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 8)]
 		get
 		{
 			return default(ModEnumerationType);

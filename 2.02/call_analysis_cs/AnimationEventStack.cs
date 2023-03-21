@@ -15,9 +15,9 @@ public class AnimationEventStack
 
 	public AnimationEventValue[] m_Stack;
 
+	[CalledBy(Type = typeof(AnimationEvents), Member = "MaybeRecreateEventArrays")]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(AnimationEvents), Member = "MaybeRecreateEventArrays")]
 	[CallsUnknownMethods(Count = 1)]
 	public AnimationEventStack(string name, AnimatorControllerParameterType type, RuntimeAnimatorController target)
 	{
@@ -36,8 +36,8 @@ public class AnimationEventStack
 		return default(AnimationEventValue);
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void Reset()
 	{
 	}

@@ -9,8 +9,8 @@ public class ActionPickerItemData
 
 	public Action m_Callback;
 
-	[CallerCount(Count = 54)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 54)]
 	public ActionPickerItemData(string spriteName, string locID, Action callback)
 	{
 	}

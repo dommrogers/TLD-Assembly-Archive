@@ -23,9 +23,9 @@ public class GetDataMapViewAsyncOp : AsyncOp<GetDataMapViewAsyncOp>
 	}
 
 	[CalledBy(Type = typeof(ContainerContext), Member = "GetAsyncThunk")]
-	[CallsUnknownMethods(Count = 7)]
 	[CallerCount(Count = 1)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 7)]
 	public void Complete(uint result, IntPtr map)
 	{
 	}

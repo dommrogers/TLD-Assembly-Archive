@@ -41,7 +41,7 @@ public class AmplifyLensFlare : IAmplifyItem
 		[CallerCount(Count = 2)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -56,7 +56,7 @@ public class AmplifyLensFlare : IAmplifyItem
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
@@ -71,7 +71,7 @@ public class AmplifyLensFlare : IAmplifyItem
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -82,8 +82,8 @@ public class AmplifyLensFlare : IAmplifyItem
 
 	public Vector4 LensFlareGhostsParams
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(Vector4);
@@ -100,7 +100,7 @@ public class AmplifyLensFlare : IAmplifyItem
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
@@ -115,7 +115,7 @@ public class AmplifyLensFlare : IAmplifyItem
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -129,7 +129,7 @@ public class AmplifyLensFlare : IAmplifyItem
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -140,11 +140,11 @@ public class AmplifyLensFlare : IAmplifyItem
 
 	public float LensFlareGhostsPowerFactor
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -159,7 +159,7 @@ public class AmplifyLensFlare : IAmplifyItem
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -171,13 +171,13 @@ public class AmplifyLensFlare : IAmplifyItem
 	public Gradient LensFlareGradient
 	{
 		[DeduplicatedMethod]
-		[CallerCount(Count = 8)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 18)]
 		set
 		{
 		}
@@ -199,11 +199,11 @@ public class AmplifyLensFlare : IAmplifyItem
 
 	public float LensFlareNormalizedHaloIntensity
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		[CallsUnknownMethods(Count = 1)]
@@ -218,7 +218,7 @@ public class AmplifyLensFlare : IAmplifyItem
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -232,7 +232,7 @@ public class AmplifyLensFlare : IAmplifyItem
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -247,10 +247,10 @@ public class AmplifyLensFlare : IAmplifyItem
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		set
 		{
 		}
@@ -262,7 +262,7 @@ public class AmplifyLensFlare : IAmplifyItem
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[CallerCount(Count = 0)]
 		set
@@ -276,7 +276,7 @@ public class AmplifyLensFlare : IAmplifyItem
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -291,7 +291,7 @@ public class AmplifyLensFlare : IAmplifyItem
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -306,7 +306,7 @@ public class AmplifyLensFlare : IAmplifyItem
 		[CallerCount(Count = 1)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 		[DeduplicatedMethod]
 		[CallerCount(Count = 0)]
@@ -315,50 +315,50 @@ public class AmplifyLensFlare : IAmplifyItem
 		}
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Gradient), Member = "SetKeys")]
 	[CalledBy(Type = typeof(AmplifyBloomBase), Member = ".ctor")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Gradient), Member = "SetKeys")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 31)]
 	public AmplifyLensFlare()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "DestroyImmediate")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Destroy()
 	{
 	}
 
 	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "Awake")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(Texture2D), Member = "Apply")]
-	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 5)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Texture2D), Member = ".ctor")]
 	[Calls(Type = typeof(Texture2D), Member = "SetPixels")]
+	[Calls(Type = typeof(Texture2D), Member = "Apply")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 16)]
 	public void CreateLUTexture()
 	{
 	}
 
+	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[Calls(Type = typeof(AmplifyUtils), Member = "GetTempRenderTarget")]
 	[Calls(Type = typeof(Graphics), Member = "Blit")]
-	[CalledBy(Type = typeof(AmplifyBloomBase), Member = "OnRenderImage")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 7)]
 	public RenderTexture ApplyFlare(Material material, RenderTexture source)
 	{
 		return null;
 	}
 
-	[Calls(Type = typeof(Texture2D), Member = "Apply")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(Texture2D), Member = "SetPixels")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Texture2D), Member = "SetPixels")]
+	[Calls(Type = typeof(Texture2D), Member = "Apply")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public void TextureFromGradient()
 	{
 	}

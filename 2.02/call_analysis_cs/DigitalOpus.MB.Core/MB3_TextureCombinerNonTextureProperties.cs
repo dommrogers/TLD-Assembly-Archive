@@ -10,22 +10,10 @@ public class MB3_TextureCombinerNonTextureProperties
 {
 	public interface MaterialProperty
 	{
-		string PropertyName
-		{
-			[DeduplicatedMethod]
-			[CallerCount(Count = 121780)]
-			get;
-			[CallerCount(Count = 121780)]
-			[DeduplicatedMethod]
-			set;
-		}
+		string PropertyName { get; set; }
 
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
 		MaterialPropertyValueAveraged GetAverageCalculator();
 
-		[CallerCount(Count = 121780)]
-		[DeduplicatedMethod]
 		object GetDefaultValue();
 	}
 
@@ -41,34 +29,29 @@ public class MB3_TextureCombinerNonTextureProperties
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 52)]
+			[CallerCount(Count = 59)]
 			get
 			{
 				return null;
 			}
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 101)]
+			[CallerCount(Count = 103)]
 			set
 			{
 			}
 		}
 
 		[CalledBy(Type = typeof(MB3_TextureCombinerNonTextureProperties), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 7)]
-		[CalledBy(Type = typeof(MB3_TextureCombinerNonTextureProperties), Member = ".ctor")]
-		[CalledBy(Type = typeof(MB3_TextureCombinerNonTextureProperties), Member = ".ctor")]
-		[CalledBy(Type = typeof(MB3_TextureCombinerNonTextureProperties), Member = ".ctor")]
-		[CalledBy(Type = typeof(MB3_TextureCombinerNonTextureProperties), Member = ".ctor")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 6)]
-		[CalledBy(Type = typeof(MB3_TextureCombinerNonTextureProperties), Member = ".ctor")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 7)]
 		public MaterialPropertyFloat(string name, float defValue)
 		{
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		public MaterialPropertyValueAveraged GetAverageCalculator()
 		{
 			return null;
@@ -94,30 +77,29 @@ public class MB3_TextureCombinerNonTextureProperties
 		{
 			[CompilerGenerated]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 52)]
+			[CallerCount(Count = 59)]
 			get
 			{
 				return null;
 			}
-			[DeduplicatedMethod]
-			[CallerCount(Count = 101)]
 			[CompilerGenerated]
+			[DeduplicatedMethod]
+			[CallerCount(Count = 103)]
 			set
 			{
 			}
 		}
 
+		[CalledBy(Type = typeof(MB3_TextureCombinerNonTextureProperties), Member = ".ctor")]
 		[CallerCount(Count = 2)]
 		[CallsDeduplicatedMethods(Count = 1)]
-		[CalledBy(Type = typeof(MB3_TextureCombinerNonTextureProperties), Member = ".ctor")]
-		[CalledBy(Type = typeof(MB3_TextureCombinerNonTextureProperties), Member = ".ctor")]
 		[CallsUnknownMethods(Count = 7)]
 		public MaterialPropertyColor(string name, Color defaultVal)
 		{
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		public MaterialPropertyValueAveraged GetAverageCalculator()
 		{
 			return null;
@@ -133,20 +115,12 @@ public class MB3_TextureCombinerNonTextureProperties
 
 	public interface MaterialPropertyValueAveraged
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
 		void TryGetPropValueFromMaterialAndBlendIntoAverage(Material mat, MaterialProperty property);
 
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
 		object GetAverage();
 
-		[CallerCount(Count = 121780)]
-		[DeduplicatedMethod]
 		int NumValues();
 
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
 		void SetAverageValueOrDefaultOnMaterial(Material mat, MaterialProperty property);
 	}
 
@@ -156,11 +130,11 @@ public class MB3_TextureCombinerNonTextureProperties
 
 		public int numValues;
 
-		[Calls(Type = typeof(Material), Member = "GetFloat")]
-		[Calls(Type = typeof(Material), Member = "HasProperty")]
-		[CallsUnknownMethods(Count = 4)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Material), Member = "HasProperty")]
+		[Calls(Type = typeof(Material), Member = "GetFloat")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 4)]
 		public void TryGetPropValueFromMaterialAndBlendIntoAverage(Material mat, MaterialProperty property)
 		{
 		}
@@ -173,23 +147,23 @@ public class MB3_TextureCombinerNonTextureProperties
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 6)]
 		public int NumValues()
 		{
-			return default(int);
+			return 0;
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Material), Member = "HasProperty")]
 		[Calls(Type = typeof(Material), Member = "SetFloat")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 8)]
 		public void SetAverageValueOrDefaultOnMaterial(Material mat, MaterialProperty property)
 		{
 		}
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public MaterialPropertyValueAveragedFloat()
 		{
 		}
@@ -202,9 +176,9 @@ public class MB3_TextureCombinerNonTextureProperties
 		public int numValues;
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Material), Member = "HasProperty")]
 		[Calls(Type = typeof(Material), Member = "GetColor")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		[CallsUnknownMethods(Count = 4)]
 		public void TryGetPropValueFromMaterialAndBlendIntoAverage(Material mat, MaterialProperty property)
 		{
@@ -221,20 +195,20 @@ public class MB3_TextureCombinerNonTextureProperties
 		[CallerCount(Count = 1)]
 		public int NumValues()
 		{
-			return default(int);
+			return 0;
 		}
 
-		[Calls(Type = typeof(Material), Member = "SetColor")]
-		[Calls(Type = typeof(Material), Member = "HasProperty")]
-		[CallsUnknownMethods(Count = 8)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Material), Member = "HasProperty")]
+		[Calls(Type = typeof(Material), Member = "SetColor")]
 		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 8)]
 		public void SetAverageValueOrDefaultOnMaterial(Material mat, MaterialProperty property)
 		{
 		}
 
-		[CallerCount(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 7)]
 		public MaterialPropertyValueAveragedColor()
 		{
 		}
@@ -255,24 +229,14 @@ public class MB3_TextureCombinerNonTextureProperties
 
 	private interface NonTextureProperties
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
 		bool NonTexturePropertiesAreEqual(Material a, Material b);
 
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
 		Texture2D TintTextureWithTextureCombiner(Texture2D t, MB_TexSet sourceMaterial, ShaderTextureProperty shaderPropertyName);
 
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
 		void AdjustNonTextureProperties(Material resultMat, List<ShaderTextureProperty> texPropertyNames, List<MB_TexSet> distinctMaterialTextures, MB2_EditorMethodsInterface editorMethods);
 
-		[DeduplicatedMethod]
-		[CallerCount(Count = 121780)]
 		Color GetColorForTemporaryTexture(Material matIfBlender, ShaderTextureProperty texProperty);
 
-		[CallerCount(Count = 121780)]
-		[DeduplicatedMethod]
 		Color GetColorAsItWouldAppearInAtlasIfNoTexture(Material matIfBlender, ShaderTextureProperty texProperty);
 	}
 
@@ -280,8 +244,8 @@ public class MB3_TextureCombinerNonTextureProperties
 	{
 		private MB3_TextureCombinerNonTextureProperties _textureProperties;
 
-		[CallerCount(Count = 101)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 103)]
 		public NonTexturePropertiesDontBlendProps(MB3_TextureCombinerNonTextureProperties textureProperties)
 		{
 		}
@@ -290,35 +254,36 @@ public class MB3_TextureCombinerNonTextureProperties
 		[CallerCount(Count = 0)]
 		public bool NonTexturePropertiesAreEqual(Material a, Material b)
 		{
-			return default(bool);
+			return false;
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Debug), Member = "LogError")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		public Texture2D TintTextureWithTextureCombiner(Texture2D t, MB_TexSet sourceMaterial, ShaderTextureProperty shaderPropertyName)
 		{
 			return null;
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 		[Calls(Type = typeof(Material), Member = "HasProperty")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 13)]
 		public void AdjustNonTextureProperties(Material resultMat, List<ShaderTextureProperty> texPropertyNames, List<MB_TexSet> distinctMaterialTextures, MB2_EditorMethodsInterface editorMethods)
 		{
 		}
 
-		[CallerCount(Count = 12)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 15)]
 		public Color GetColorAsItWouldAppearInAtlasIfNoTexture(Material matIfBlender, ShaderTextureProperty texProperty)
 		{
 			return default(Color);
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 3)]
+		[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
+		[CallsDeduplicatedMethods(Count = 2)]
 		[CallsUnknownMethods(Count = 5)]
 		public Color GetColorForTemporaryTexture(Material matIfBlender, ShaderTextureProperty texProperty)
 		{
@@ -343,33 +308,32 @@ public class MB3_TextureCombinerNonTextureProperties
 		[CallsUnknownMethods(Count = 2)]
 		public bool NonTexturePropertiesAreEqual(Material a, Material b)
 		{
-			return default(bool);
+			return false;
 		}
 
-		[CallsUnknownMethods(Count = 21)]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRangeException")]
-		[Calls(Type = typeof(Texture2D), Member = "Apply")]
-		[Calls(Type = typeof(Texture2D), Member = "SetPixels")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[Calls(Type = typeof(string), Member = "FormatHelper")]
-		[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
-		[CallsDeduplicatedMethods(Count = 5)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
+		[Calls(Type = typeof(string), Member = "FormatHelper")]
 		[Calls(Type = typeof(Debug), Member = "Log")]
+		[Calls(Type = typeof(Texture2D), Member = "SetPixels")]
+		[Calls(Type = typeof(Texture2D), Member = "Apply")]
+		[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRangeException")]
+		[CallsDeduplicatedMethods(Count = 5)]
+		[CallsUnknownMethods(Count = 21)]
 		public Texture2D TintTextureWithTextureCombiner(Texture2D t, MB_TexSet sourceMaterial, ShaderTextureProperty shaderPropertyName)
 		{
 			return null;
 		}
 
-		[Calls(Type = typeof(string), Member = "Concat")]
-		[CallsUnknownMethods(Count = 6)]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
-		[Calls(Type = typeof(Debug), Member = "Log")]
-		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 		[Calls(Type = typeof(Material), Member = "get_shader")]
+		[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+		[Calls(Type = typeof(string), Member = "Concat")]
+		[Calls(Type = typeof(Debug), Member = "Log")]
+		[CallsDeduplicatedMethods(Count = 1)]
+		[CallsUnknownMethods(Count = 6)]
 		public void AdjustNonTextureProperties(Material resultMat, List<ShaderTextureProperty> texPropertyNames, List<MB_TexSet> distinctMaterialTextures, MB2_EditorMethodsInterface editorMethods)
 		{
 		}
@@ -409,27 +373,21 @@ public class MB3_TextureCombinerNonTextureProperties
 
 	private NonTextureProperties _nonTexturePropertiesBlender;
 
-	[Calls(Type = typeof(MaterialPropertyFloat), Member = ".ctor")]
-	[Calls(Type = typeof(MaterialPropertyFloat), Member = ".ctor")]
 	[CalledBy(Type = typeof(MB3_TextureCombiner), Member = "LoadPipelineData")]
-	[Calls(Type = typeof(MaterialPropertyColor), Member = ".ctor")]
-	[Calls(Type = typeof(MaterialPropertyFloat), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 130)]
-	[Calls(Type = typeof(MaterialPropertyFloat), Member = ".ctor")]
-	[Calls(Type = typeof(MaterialPropertyFloat), Member = ".ctor")]
-	[Calls(Type = typeof(MaterialPropertyColor), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(MaterialPropertyColor), Member = ".ctor")]
 	[Calls(Type = typeof(MaterialPropertyFloat), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 130)]
 	public MB3_TextureCombinerNonTextureProperties(MB2_LogLevel ll, bool considerNonTextureProps)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 10)]
-	[CalledBy(Type = typeof(MB3_TextureCombinerPipeline._003C__Step1_CollectDistinctMatTexturesAndUsedObjects_003Ed__8), Member = "MoveNext")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(Material), Member = "HasProperty")]
+	[CalledBy(TypeFullName = "DigitalOpus.MB.Core.MB3_TextureCombinerPipeline.<__Step1_CollectDistinctMatTexturesAndUsedObjects>d__8", Member = "MoveNext")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Material), Member = "HasProperty")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 10)]
 	internal void CollectAverageValuesOfNonTextureProperties(Material resultMaterial, Material mat)
 	{
 	}
@@ -442,55 +400,58 @@ public class MB3_TextureCombinerNonTextureProperties
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	private static bool InterfaceFilter(Type typeObj, object criteriaObj)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 26)]
+	[CalledBy(TypeFullName = "DigitalOpus.MB.Core.MB3_TextureCombiner.<_CombineTexturesIntoAtlases>d__69", Member = "MoveNext")]
 	[CalledBy(Type = typeof(MB3_TextureCombinerNonTextureProperties), Member = "LoadTextureBlendersIfNeeded")]
-	[CalledBy(Type = typeof(MB3_TextureCombiner._003C_CombineTexturesIntoAtlases_003Ed__69), Member = "MoveNext")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
 	[Calls(Type = typeof(string), Member = "Concat")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[CallsDeduplicatedMethods(Count = 3)]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[CallsUnknownMethods(Count = 26)]
 	private void FindBestTextureBlender(Material resultMaterial)
 	{
 	}
 
+	[CalledBy(TypeFullName = "DigitalOpus.MB.Core.MB3_TextureCombiner.<_CombineTexturesIntoAtlases>d__69", Member = "MoveNext")]
+	[CalledBy(Type = typeof(MB3_TextureCombinerNonTextureProperties), Member = "LoadTextureBlendersIfNeeded")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 14)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(Type), Member = "get_IsInterface")]
 	[Calls(Type = typeof(Activator), Member = "CreateInstance")]
-	[Calls(Type = typeof(System.ParamsArray), Member = ".ctor")]
+	[Calls(TypeFullName = "System.ParamsArray", Member = ".ctor")]
 	[Calls(Type = typeof(string), Member = "FormatHelper")]
 	[Calls(Type = typeof(Debug), Member = "Log")]
-	[CalledBy(Type = typeof(MB3_TextureCombiner._003C_CombineTexturesIntoAtlases_003Ed__69), Member = "MoveNext")]
-	[CalledBy(Type = typeof(MB3_TextureCombinerNonTextureProperties), Member = "LoadTextureBlendersIfNeeded")]
+	[CallsDeduplicatedMethods(Count = 8)]
 	[CallsUnknownMethods(Count = 51)]
 	private void LoadTextureBlenders()
 	{
 	}
 
-	[CalledBy(Type = typeof(MB_TexSet), Member = "AllTexturesAreSameForMerge")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(MB_TexSet), Member = "IsEqual")]
+	[CalledBy(Type = typeof(MB_TexSet), Member = "AllTexturesAreSameForMerge")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	internal bool NonTexturePropertiesAreEqual(Material a, Material b)
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CalledBy(TypeFullName = "DigitalOpus.MB.Core.MB3_TextureCombinerPackerMeshBaker.<CopyScaledAndTiledToAtlas>d__1", Member = "MoveNext")]
+	[CalledBy(TypeFullName = "DigitalOpus.MB.Core.MB3_TextureCombinerPackerUnity.<CreateAtlases>d__1", Member = "MoveNext")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(MB3_TextureCombinerPackerMeshBaker._003CCopyScaledAndTiledToAtlas_003Ed__1), Member = "MoveNext")]
-	[CalledBy(Type = typeof(MB3_TextureCombinerPackerUnity._003CCreateAtlases_003Ed__1), Member = "MoveNext")]
 	[CallsUnknownMethods(Count = 2)]
 	internal Texture2D TintTextureWithTextureCombiner(Texture2D t, MB_TexSet sourceMaterial, ShaderTextureProperty shaderPropertyName)
 	{
@@ -498,36 +459,35 @@ public class MB3_TextureCombinerNonTextureProperties
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	internal void AdjustNonTextureProperties(Material resultMat, List<ShaderTextureProperty> texPropertyNames, List<MB_TexSet> distinctMaterialTextures, MB2_EditorMethodsInterface editorMethods)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(MB3_TextureCombinerPipeline), Member = "CalculateAllTexturesAreNullAndSameColor")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 2)]
-	[CalledBy(Type = typeof(MB3_TextureCombinerPipeline), Member = "CalculateAllTexturesAreNullAndSameColor")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	internal Color GetColorAsItWouldAppearInAtlasIfNoTexture(Material matIfBlender, ShaderTextureProperty texProperty)
 	{
 		return default(Color);
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CalledBy(Type = typeof(MB_TextureCombinerRenderTexture), Member = "CopyScaledAndTiledToAtlas")]
 	[CalledBy(Type = typeof(MB3_TextureCombinerPackerRoot), Member = "CreateTemporaryTexturesForAtlas")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 2)]
 	internal Color GetColorForTemporaryTexture(Material matIfBlender, ShaderTextureProperty texProperty)
 	{
 		return default(Color);
 	}
 
-	[CallsUnknownMethods(Count = 9)]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 9)]
 	private TextureBlender FindMatchingTextureBlender(string shaderName)
 	{
 		return null;

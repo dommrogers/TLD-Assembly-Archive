@@ -1,4 +1,3 @@
-using System;
 using Cpp2ILInjected.CallAnalysis;
 using TLD.Serialization;
 using UnityEngine;
@@ -92,37 +91,32 @@ public class PlayerMovement : MonoBehaviour
 
 	private static PlayerMovementSaveDataProxy m_PlayerMovementSaveDataProxy;
 
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
-	[CallsUnknownMethods(Count = 5)]
-	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
 	[CalledBy(Type = typeof(PlayerMovement), Member = "Deserialize")]
+	[CalledBy(Type = typeof(SaveGameSystem), Member = "RestoreGlobalData")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(FootstepTrail), Member = "Initialize")]
 	[Calls(Type = typeof(FootstepTrailManager), Member = "AddFootstepTrail")]
 	[Calls(Type = typeof(vp_FPSPlayer), Member = "IsStateEnabled")]
-	[Calls(Type = typeof(FootstepTrail), Member = "Initialize")]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
+	[CallsUnknownMethods(Count = 5)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSwingingFirstPersonItem")]
-	[Calls(Type = typeof(PlayerMovement), Member = "GetModifiedMaxSprintStamina")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
-	[Calls(Type = typeof(InputManager), Member = "CanExecuteCrouchAction")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouch")]
-	[CallsUnknownMethods(Count = 16)]
-	[Calls(Type = typeof(PlayerMovement), Member = "GetModifiedMaxSprintStamina")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(PlayerMovement), Member = "GetModifiedMaxSprintStamina")]
-	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerCanSprint")]
 	[Calls(Type = typeof(InputManager), Member = "GetSprintDown")]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerCanSprint")]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "SetState")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
+	[Calls(Type = typeof(EmergencyStim), Member = "GetEmergencyStimActive")]
+	[Calls(Type = typeof(PlayerMovement), Member = "GetModifiedMaxSprintStamina")]
 	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouch")]
+	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSwingingFirstPersonItem")]
+	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
+	[Calls(Type = typeof(InputManager), Member = "CanExecuteCrouchAction")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 16)]
 	private void Update()
 	{
 	}
@@ -135,13 +129,13 @@ public class PlayerMovement : MonoBehaviour
 		return null;
 	}
 
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapZoom")]
-	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapSprings")]
-	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouchImmediate")]
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerMovement), Member = "Start")]
+	[Calls(Type = typeof(Utils), Member = "DeserializeObject")]
+	[Calls(Type = typeof(vp_FPSPlayer), Member = "EnableCrouchImmediate")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapSprings")]
+	[Calls(Type = typeof(vp_FPSCamera), Member = "SnapZoom")]
+	[CallsUnknownMethods(Count = 2)]
 	public void Deserialize(string text)
 	{
 	}
@@ -157,11 +151,11 @@ public class PlayerMovement : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsCrouchForced()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetForceWalk(bool enabled)
 	{
 	}
@@ -170,13 +164,13 @@ public class PlayerMovement : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsWalkForced()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
 	public bool IsCrouchOrLimpOrWalkForced()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -188,7 +182,7 @@ public class PlayerMovement : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsLimpForced()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -201,14 +195,14 @@ public class PlayerMovement : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsLimpSlowForced()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public bool IsNoRandomSprainForced()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]
@@ -220,130 +214,123 @@ public class PlayerMovement : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetSprintStaminaRemainingAsPercentage()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(PlayerMovement), Member = "AddSprintStamina")]
-	[CalledBy(Type = typeof(PlayerMovement), Member = "Update")]
-	[CalledBy(Type = typeof(PlayerMovement), Member = "Update")]
-	[CalledBy(Type = typeof(PlayerMovement), Member = "Update")]
-	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateStaminaBar")]
-	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "OnElevatorMoving")]
-	[CalledBy(Type = typeof(Fatigue), Member = "ComputeHeavyBreathingState")]
-	[CalledBy(Type = typeof(EnergyBoost), Member = "ApplyEnergyBoostExitEffects")]
-	[CalledBy(Type = typeof(EnergyBoost), Member = "ApplyEnergyBoost")]
 	[CalledBy(Type = typeof(EmergencyStim), Member = "ApplyEmergencyStimExitEffects")]
-	[Calls(Type = typeof(PlayerManager), Member = "GetNormalizedSprintReduction")]
+	[CalledBy(Type = typeof(EnergyBoost), Member = "ApplyEnergyBoost")]
+	[CalledBy(Type = typeof(EnergyBoost), Member = "ApplyEnergyBoostExitEffects")]
+	[CalledBy(Type = typeof(Fatigue), Member = "ComputeHeavyBreathingState")]
+	[CalledBy(Type = typeof(ElevatorPrototypeController), Member = "OnElevatorMoving")]
+	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateStaminaBar")]
+	[CalledBy(Type = typeof(PlayerMovement), Member = "Update")]
+	[CalledBy(Type = typeof(PlayerMovement), Member = "AddSprintStamina")]
 	[CallerCount(Count = 10)]
+	[Calls(Type = typeof(PlayerManager), Member = "GetNormalizedSprintReduction")]
+	[CallsUnknownMethods(Count = 2)]
 	public float GetModifiedMaxSprintStamina()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	public float GetSecondsSprinting()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public float GetSecondsNotSprinting()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[CallsUnknownMethods(Count = 1)]
 	public float GetIndoorMovementSlowdownMultiplier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetMaterialMovementMultiplier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	public float GetLimpMovementMultiplier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(vp_FPSController), Member = "UpdateMoves")]
-	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[CalledBy(Type = typeof(PlayerMovement), Member = "MovedDistance")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
 	[CallsUnknownMethods(Count = 1)]
 	public float GetBodyCarryMovementMultiplier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(vp_FPSController), Member = "UpdateMoves")]
+	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
 	[Calls(Type = typeof(Utils), Member = "Approximately")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
 	public float GetSnowDepthMovementMultiplier()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CalledBy(Type = typeof(vp_FPSController), Member = "UpdateMoves")]
-	[Calls(Type = typeof(PlayerMovement), Member = "GetVelocity")]
-	[CallsUnknownMethods(Count = 9)]
-	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(PlayerMovement), Member = "GetVelocity")]
 	[Calls(Type = typeof(Vector3), Member = "Normalize")]
+	[Calls(Type = typeof(Feat), Member = "IsUnlockedAndEnabled")]
+	[CallsUnknownMethods(Count = 9)]
 	public float GetWindMovementMultiplier()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
-	[CallsUnknownMethods(Count = 19)]
 	[CalledBy(Type = typeof(vp_FPSController), Member = "Update")]
-	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
-	[Calls(Type = typeof(Feat), Member = "ShouldBlockIncrement")]
-	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
-	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
-	[Calls(Type = typeof(BloodTrail), Member = "AddMoveDistance")]
-	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(Feat), Member = "ShouldBlockIncrement")]
-	[Calls(Type = typeof(Encumber), Member = "GetEffectiveCarryCapacityKG")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
-	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
-	[Calls(Type = typeof(PlayerMovement), Member = "GetBodyCarryMovementMultiplier")]
-	[Calls(Type = typeof(Encumber), Member = "GetEncumbranceSlowdownMultiplier")]
-	[Calls(Type = typeof(Encumber), Member = "GetEffectiveCarryCapacityKG")]
-	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
-	[CallsDeduplicatedMethods(Count = 7)]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(Weather), Member = "IsIndoorEnvironment")]
+	[Calls(Type = typeof(Encumber), Member = "GetEffectiveCarryCapacityKG")]
+	[Calls(Type = typeof(Encumber), Member = "GetEncumbranceSlowdownMultiplier")]
+	[Calls(Type = typeof(PlayerMovement), Member = "GetBodyCarryMovementMultiplier")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsSprinting")]
+	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
 	[Calls(Type = typeof(FootStepSounds), Member = "AddMoveDistance")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(NPCAfflictions), Member = "GetNPCAffliction")]
+	[Calls(Type = typeof(BloodTrail), Member = "AddMoveDistance")]
+	[Calls(Type = typeof(StatsManager), Member = "IncrementValue")]
+	[Calls(Type = typeof(Feat), Member = "ShouldBlockIncrement")]
+	[Calls(Type = typeof(Feat), Member = "HandleOnFeatUnlocked")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 19)]
 	public void MovedDistance(Vector3 delta, bool wasStopped)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 4)]
 	public void UpdateDistanceTraveled(float dist)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(AiTarget), Member = "GetVelocity")]
 	[CalledBy(Type = typeof(PlayerMovement), Member = "GetWindMovementMultiplier")]
+	[CallerCount(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public Vector3 GetVelocity()
 	{
@@ -351,30 +338,30 @@ public class PlayerMovement : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	public float GetDetectionRangeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsCrouched")]
 	[Calls(Type = typeof(PlayerManager), Member = "PlayerIsWalking")]
-	[CallerCount(Count = 0)]
 	[CallsUnknownMethods(Count = 2)]
 	public float GetFootStepsRangeScale()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(PlayerSwing), Member = "Update")]
-	[CalledBy(Type = typeof(PlayerStruggle), Member = "MaybeApplyStaminaCost")]
+	[CalledBy(Type = typeof(BearSpearItem), Member = "Update_SpearRaised")]
+	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoOnInteractionComplete")]
 	[CalledBy(Type = typeof(Elevator), Member = "UpdateMoving")]
 	[CalledBy(Type = typeof(PlayerClimbRope), Member = "UpdateStamina")]
-	[CalledBy(Type = typeof(BearSpearItem), Member = "Update_SpearRaised")]
+	[CalledBy(Type = typeof(PlayerStruggle), Member = "MaybeApplyStaminaCost")]
+	[CalledBy(Type = typeof(PlayerSwing), Member = "Update")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(AnimatedInteraction), Member = "DoOnInteractionComplete")]
 	[Calls(Type = typeof(PlayerMovement), Member = "GetModifiedMaxSprintStamina")]
 	public void AddSprintStamina(float stamina)
 	{
@@ -384,7 +371,7 @@ public class PlayerMovement : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetSprintStamina()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[DeduplicatedMethod]
@@ -397,17 +384,17 @@ public class PlayerMovement : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsStaminaRechargeDisabled()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "Update")]
 	[CalledBy(Type = typeof(Panel_HUD), Member = "UpdateStaminaBar")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(PlayerManager), Member = "GetControlMode")]
+	[CallsUnknownMethods(Count = 3)]
 	public bool StaminaUsedForClimbing()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -417,7 +404,7 @@ public class PlayerMovement : MonoBehaviour
 	[CallsUnknownMethods(Count = 3)]
 	private bool AllowStaminaToRecover()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

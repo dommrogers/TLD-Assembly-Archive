@@ -90,107 +90,108 @@ public class UIRoot : MonoBehaviour
 
 	public int activeHeight
 	{
-		[CalledBy(Type = typeof(UIPanel), Member = "GetWindowSize")]
 		[CalledBy(Type = typeof(UIAnchor), Member = "LateUpdate")]
-		[Calls(Type = typeof(NGUITools), Member = "get_screenSize")]
+		[CalledBy(Type = typeof(UIPanel), Member = "GetWindowSize")]
+		[CalledBy(Type = typeof(UIRoot), Member = "get_pixelSizeAdjustment")]
+		[CalledBy(Type = typeof(UIRoot), Member = "GetPixelSizeAdjustment")]
+		[CalledBy(Type = typeof(UIRoot), Member = "UpdateScale")]
+		[CalledBy(Type = typeof(UIStretch), Member = "Update")]
+		[CallerCount(Count = 7)]
 		[Calls(Type = typeof(NGUITools), Member = "get_screenSize")]
 		[CallsDeduplicatedMethods(Count = 2)]
-		[CallerCount(Count = 7)]
-		[CalledBy(Type = typeof(UIStretch), Member = "Update")]
-		[CalledBy(Type = typeof(UIRoot), Member = "UpdateScale")]
 		[CallsUnknownMethods(Count = 5)]
-		[CalledBy(Type = typeof(UIRoot), Member = "get_pixelSizeAdjustment")]
-		[CalledBy(Type = typeof(UIStretch), Member = "Update")]
-		[CalledBy(Type = typeof(UIRoot), Member = "GetPixelSizeAdjustment")]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
 	public float pixelSizeAdjustment
 	{
 		[CalledBy(Type = typeof(UIDragDropItem), Member = "OnDrag")]
-		[Calls(Type = typeof(UIRoot), Member = "get_activeHeight")]
-		[Calls(Type = typeof(NGUITools), Member = "get_screenSize")]
-		[CallerCount(Count = 9)]
-		[CalledBy(Type = typeof(UIPanel), Member = "get_drawCallOffset")]
-		[CallsUnknownMethods(Count = 1)]
-		[CalledBy(Type = typeof(DragDropItem), Member = "OnDrag")]
-		[CalledBy(Type = typeof(UIStretch), Member = "Update")]
-		[CalledBy(Type = typeof(UILabel), Member = "UpdateNGUIText")]
-		[CalledBy(Type = typeof(UIRoot), Member = "GetPixelSizeAdjustment")]
-		[CalledBy(Type = typeof(UIPanel), Member = "ConstrainTargetToBounds")]
 		[CalledBy(Type = typeof(UIDraggableCamera), Member = "Drag")]
 		[CalledBy(Type = typeof(UILabel), Member = "ProcessText")]
+		[CalledBy(Type = typeof(UILabel), Member = "UpdateNGUIText")]
+		[CalledBy(Type = typeof(UIPanel), Member = "get_drawCallOffset")]
+		[CalledBy(Type = typeof(UIPanel), Member = "ConstrainTargetToBounds")]
+		[CalledBy(Type = typeof(UIRoot), Member = "GetPixelSizeAdjustment")]
+		[CalledBy(Type = typeof(UIStretch), Member = "Update")]
+		[CalledBy(Type = typeof(DragDropItem), Member = "OnDrag")]
+		[CallerCount(Count = 9)]
+		[Calls(Type = typeof(NGUITools), Member = "get_screenSize")]
+		[Calls(Type = typeof(UIRoot), Member = "get_activeHeight")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(NGUITools), Member = "FindInParents")]
 	[Calls(Type = typeof(UIRoot), Member = "get_pixelSizeAdjustment")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	public static float GetPixelSizeAdjustment(GameObject go)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIRoot), Member = "get_activeHeight")]
 	public float GetPixelSizeAdjustment(int height)
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 6)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UIPanel), Member = "set_depth")]
-	[CallsUnknownMethods(Count = 6)]
 	[Calls(Type = typeof(UIRoot), Member = "CreateDynamicSymbolSprite")]
+	[CallsDeduplicatedMethods(Count = 5)]
+	[CallsUnknownMethods(Count = 6)]
 	protected virtual void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsUnknownMethods(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	protected virtual void OnEnable()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
+	[CallsUnknownMethods(Count = 1)]
 	protected virtual void OnDisable()
 	{
 	}
 
-	[Calls(Type = typeof(Camera), Member = "set_orthographicSize")]
-	[Calls(Type = typeof(Debug), Member = "LogWarning")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
+	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(Camera), Member = "set_orthographicSize")]
 	[Calls(Type = typeof(UIRoot), Member = "UpdateScale")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	protected virtual void Start()
 	{
 	}
 
-	[Calls(Type = typeof(UIRoot), Member = "UpdateScale")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UIRoot), Member = "UpdateScale")]
 	private void Update()
 	{
 	}
 
+	[CalledBy(Type = typeof(UIRoot), Member = "Start")]
+	[CalledBy(Type = typeof(UIRoot), Member = "Update")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UIRoot), Member = "get_activeHeight")]
 	[Calls(Type = typeof(Component), Member = "BroadcastMessage")]
-	[CalledBy(Type = typeof(UIRoot), Member = "Start")]
-	[CalledBy(Type = typeof(UIRoot), Member = "Update")]
-	[CallsUnknownMethods(Count = 5)]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 5)]
 	public void UpdateScale(bool updateAnchors = true)
 	{
 	}
@@ -198,75 +199,77 @@ public class UIRoot : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public float GetAspectRatioBonusSize()
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CalledBy(Type = typeof(UICamera), Member = "LateUpdate")]
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Localization), Member = "SelectLanguage")]
+	[CalledBy(Type = typeof(UICamera), Member = "LateUpdate")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Component), Member = "BroadcastMessage")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void Broadcast(string funcName)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(UICamera), Member = "SetSchemeOverride")]
-	[Calls(Type = typeof(Debug), Member = "LogError")]
-	[Calls(Type = typeof(Component), Member = "BroadcastMessage")]
 	[CallerCount(Count = 1)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(Type = typeof(Component), Member = "BroadcastMessage")]
+	[Calls(Type = typeof(Debug), Member = "LogError")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 2)]
 	public static void Broadcast(string funcName, object param)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UIRoot), Member = "CreateDynamicSymbolSprite")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public UISprite GetDynamicSymbolSpriteFromPool()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 4)]
-	[CalledBy(Type = typeof(UILabel), Member = "ClearDynamicSymbolSprites")]
-	[CallsUnknownMethods(Count = 4)]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[CallerCount(Count = 2)]
 	[CalledBy(Type = typeof(BMSymbol), Member = "SetSpriteLocation")]
+	[CalledBy(Type = typeof(UILabel), Member = "ClearDynamicSymbolSprites")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
+	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 4)]
 	public void ReturnDynamicSymbolSpriteToPool(UISprite uiSprite)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UIRoot), Member = "CreateDynamicSymbolSprite")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void InitDynamicSymbolSpritePool()
 	{
 	}
 
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(string), Member = "Concat")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
 	[CalledBy(Type = typeof(BMSymbol), Member = "SetSpriteLocation")]
 	[CalledBy(Type = typeof(UIRoot), Member = "Awake")]
 	[CalledBy(Type = typeof(UIRoot), Member = "GetDynamicSymbolSpriteFromPool")]
 	[CalledBy(Type = typeof(UIRoot), Member = "InitDynamicSymbolSpritePool")]
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[Calls(Type = typeof(GameObject), Member = ".ctor")]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 4)]
+	[Calls(Type = typeof(GameObject), Member = ".ctor")]
+	[Calls(Type = typeof(int), Member = "ToString")]
+	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "set_name")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(BetterList<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	private void CreateDynamicSymbolSprite()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public UIRoot()
 	{
 	}

@@ -15,9 +15,10 @@ public class WoodStove : FireplaceInteraction
 	private ObjectAnim m_ObjectAnim;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(FireplaceInteraction), Member = "Awake")]
+	[Calls(Type = typeof(Component), Member = "GetComponentInChildren")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 3)]
 	protected override void Awake()
 	{
@@ -29,45 +30,46 @@ public class WoodStove : FireplaceInteraction
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ObjectAnim), Member = "Play")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuOpen")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(ObjectAnim), Member = "Play")]
+	[CallsUnknownMethods(Count = 2)]
 	public bool Open()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 2)]
-	[CalledBy(Type = typeof(WoodStove), Member = "PerformFireplaceInteraction")]
-	[CalledBy(Type = typeof(WoodStove), Member = "Update")]
 	[CalledBy(Type = typeof(Fire), Member = "ExitFireStarting")]
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuClose")]
-	[Calls(Type = typeof(ObjectAnim), Member = "Play")]
-	[Calls(Type = typeof(Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CalledBy(Type = typeof(WoodStove), Member = "Update")]
+	[CalledBy(Type = typeof(WoodStove), Member = "PerformFireplaceInteraction")]
 	[CallerCount(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ObjectAnim), Member = "Play")]
 	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuClose")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Close()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
-	[CallsUnknownMethods(Count = 2)]
-	[Calls(Type = typeof(FireplaceInteraction), Member = "AttemptToFeedFire")]
-	[Calls(Type = typeof(FireplaceInteraction), Member = "AttemptToStartFire")]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuOpen")]
-	[Calls(Type = typeof(WoodStove), Member = "Close")]
-	[Calls(Type = typeof(ObjectAnim), Member = "Play")]
 	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	[Calls(Type = typeof(Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(ObjectAnim), Member = "Play")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIMenuOpen")]
+	[Calls(Type = typeof(GameAudioManager), Member = "SetRTPCValue")]
+	[Calls(Type = typeof(FireplaceInteraction), Member = "AttemptToStartFire")]
+	[Calls(Type = typeof(FireplaceInteraction), Member = "AttemptToFeedFire")]
+	[Calls(Type = typeof(WoodStove), Member = "Close")]
 	[CallsDeduplicatedMethods(Count = 4)]
+	[CallsUnknownMethods(Count = 2)]
 	public override void PerformFireplaceInteraction()
 	{
 	}
@@ -76,7 +78,7 @@ public class WoodStove : FireplaceInteraction
 	[CallerCount(Count = 3)]
 	public override bool TooWindyToStart()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

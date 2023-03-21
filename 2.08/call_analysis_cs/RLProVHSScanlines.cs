@@ -23,10 +23,10 @@ public sealed class RLProVHSScanlines : PostProcessEffectSettings
 
 	public FloatParameter scale;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PostProcessEffectSettings), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 9)]
+	[CallsUnknownMethods(Count = 1)]
 	public RLProVHSScanlines()
 	{
 	}

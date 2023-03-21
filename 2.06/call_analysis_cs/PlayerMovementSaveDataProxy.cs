@@ -10,8 +10,8 @@ public class PlayerMovementSaveDataProxy
 
 	public bool m_IsCrouching;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public PlayerMovementSaveDataProxy()
 	{
 	}

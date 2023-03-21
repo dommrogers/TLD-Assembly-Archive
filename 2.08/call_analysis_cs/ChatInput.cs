@@ -9,24 +9,25 @@ public class ChatInput : MonoBehaviour
 
 	private UIInput mInput;
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UITextList), Member = "Add")]
-	[Calls(Type = typeof(int), Member = "ToString")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
+	[Calls(Type = typeof(int), Member = "ToString")]
 	[Calls(Type = typeof(string), Member = "Concat")]
+	[Calls(Type = typeof(UITextList), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(UIInput), Member = "set_value")]
-	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UIInput), Member = "Init")]
 	[Calls(Type = typeof(NGUIText), Member = "StripSymbols")]
 	[Calls(Type = typeof(UITextList), Member = "Add")]
-	[CallsUnknownMethods(Count = 1)]
+	[Calls(Type = typeof(UIInput), Member = "set_value")]
 	[Calls(Type = typeof(UIInput), Member = "get_isSelected")]
+	[Calls(Type = typeof(UICamera), Member = "set_selectedObject")]
+	[CallsUnknownMethods(Count = 1)]
 	public void OnSubmit()
 	{
 	}

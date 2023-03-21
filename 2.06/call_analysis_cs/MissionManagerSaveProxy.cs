@@ -7,9 +7,9 @@ public class MissionManagerSaveProxy
 
 	public List<string> m_SerializedChildGraphs;
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 6)]
-	[CallerCount(Count = 0)]
 	public MissionManagerSaveProxy()
 	{
 	}

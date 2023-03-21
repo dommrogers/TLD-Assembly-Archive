@@ -30,14 +30,14 @@ public class AiMoose : MonoBehaviour
 	[CallsUnknownMethods(Count = 1)]
 	public bool CanScratch()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(Random), Member = "Range")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Random), Member = "Range")]
 	public float GetRolledStumpScratchingDelay()
 	{
-		return default(float);
+		return 0f;
 	}
 
 	[CallerCount(Count = 0)]

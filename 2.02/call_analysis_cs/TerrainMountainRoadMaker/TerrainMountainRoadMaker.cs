@@ -39,8 +39,9 @@ public class TerrainMountainRoadMaker : MonoBehaviour
 	public Terrain terrain
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(Object), Member = "op_Equality")]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -50,19 +51,21 @@ public class TerrainMountainRoadMaker : MonoBehaviour
 	public TerrainCollider collider
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 2)]
 		[Calls(Type = typeof(Object), Member = "op_Equality")]
+		[Calls(Type = typeof(Component), Member = "GetComponent")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[CallsUnknownMethods(Count = 33)]
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(GUIStyle), Member = ".ctor")]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 33)]
 	public TerrainMountainRoadMaker()
 	{
 	}

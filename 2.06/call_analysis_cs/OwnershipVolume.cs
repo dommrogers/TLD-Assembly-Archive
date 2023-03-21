@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -7,15 +8,15 @@ public class OwnershipVolume : MonoBehaviour
 
 	public string m_TrustId;
 
-	[CallsUnknownMethods(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 2)]
 	private void Awake()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	private void OnDestroy()
 	{
@@ -39,14 +40,14 @@ public class OwnershipVolume : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
+	[CalledBy(Type = typeof(OwnershipManager), Member = "GetTrustId")]
 	[CalledBy(Type = typeof(OwnershipManager), Member = "GetOwnershipVolumeContaining")]
 	[CallerCount(Count = 2)]
 	[CallsDeduplicatedMethods(Count = 7)]
-	[CalledBy(Type = typeof(OwnershipManager), Member = "GetTrustId")]
+	[CallsUnknownMethods(Count = 8)]
 	public bool Contains(GameObject item)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[DeduplicatedMethod]

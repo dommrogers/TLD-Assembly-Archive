@@ -9,14 +9,14 @@ public class MiddleOutProgressBar : MonoBehaviour
 
 	public float m_Value;
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetValue(float newValue)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void IncrementValue(float increment)
 	{
 	}

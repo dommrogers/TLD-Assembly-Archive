@@ -5,9 +5,9 @@ namespace NodeCanvas.Tasks.Actions;
 
 public class Action_DisableCharacterController : ActionTask
 {
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(PlayerManager), Member = "DisableCharacterController")]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	protected override void OnExecute()
 	{
 	}

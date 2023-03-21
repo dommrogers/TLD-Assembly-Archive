@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Runtime.CompilerServices;
+using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
 
@@ -53,17 +53,17 @@ public class iTweenEvent : MonoBehaviour
 		public string name;
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public _003C_003Ec__DisplayClass7_0()
 		{
 		}
 
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 1)]
 		[Calls(Type = typeof(string), Member = "EqualsHelper")]
+		[CallsUnknownMethods(Count = 1)]
 		internal bool _003CGetEvent_003Eb__0(iTweenEvent tween)
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -79,7 +79,7 @@ public class iTweenEvent : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
@@ -90,27 +90,50 @@ public class iTweenEvent : MonoBehaviour
 		{
 			[DebuggerHidden]
 			[DeduplicatedMethod]
-			[CallerCount(Count = 29)]
+			[CallerCount(Count = 35)]
 			get
 			{
 				return null;
 			}
 		}
 
-		[CallerCount(Count = 0)]
 		[DebuggerHidden]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		public _003CStartEvent_003Ed__41(int _003C_003E1__state)
 		{
 		}
 
 		[DebuggerHidden]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		private void System_002EIDisposable_002EDispose()
 		{
 		}
 
+		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(Hashtable), Member = ".ctor")]
+		[Calls(Type = typeof(iTweenEvent), Member = "DeserializeValues")]
+		[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+		[Calls(Type = typeof(string), Member = "EqualsHelper")]
+		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+		[Calls(Type = typeof(iTweenPath), Member = "GetPath")]
+		[Calls(Type = typeof(Guid), Member = "NewGuid")]
+		[Calls(Type = typeof(Guid), Member = "ToString")]
+		[Calls(Type = typeof(string), Member = "Format")]
+		[Calls(Type = typeof(iTween), Member = "AudioFrom")]
+		[Calls(Type = typeof(iTween), Member = "AudioTo")]
+		[Calls(Type = typeof(iTween), Member = "AudioUpdate")]
+		[Calls(Type = typeof(iTween), Member = "ColorFrom")]
+		[Calls(Type = typeof(iTween), Member = "ColorTo")]
+		[Calls(Type = typeof(iTween), Member = "ColorUpdate")]
+		[Calls(Type = typeof(iTween), Member = "FadeFrom")]
+		[Calls(Type = typeof(iTween), Member = "FadeTo")]
+		[Calls(Type = typeof(iTween), Member = "FadeUpdate")]
+		[Calls(Type = typeof(iTween), Member = "LookFrom")]
+		[Calls(Type = typeof(iTween), Member = "LookTo")]
+		[Calls(Type = typeof(iTween), Member = "LookUpdate")]
+		[Calls(Type = typeof(iTween), Member = "MoveAdd")]
 		[Calls(Type = typeof(iTween), Member = "MoveBy")]
 		[Calls(Type = typeof(iTween), Member = "MoveFrom")]
 		[Calls(Type = typeof(iTween), Member = "MoveTo")]
@@ -122,6 +145,7 @@ public class iTweenEvent : MonoBehaviour
 		[Calls(Type = typeof(iTween), Member = "RotateBy")]
 		[Calls(Type = typeof(iTween), Member = "RotateFrom")]
 		[Calls(Type = typeof(iTween), Member = "RotateTo")]
+		[Calls(Type = typeof(iTween), Member = "RotateUpdate")]
 		[Calls(Type = typeof(iTween), Member = "ScaleAdd")]
 		[Calls(Type = typeof(iTween), Member = "ScaleBy")]
 		[Calls(Type = typeof(iTween), Member = "ScaleFrom")]
@@ -132,40 +156,17 @@ public class iTweenEvent : MonoBehaviour
 		[Calls(Type = typeof(iTween), Member = "ShakeScale")]
 		[Calls(Type = typeof(iTween), Member = "Stab")]
 		[Calls(Type = typeof(string), Member = "Concat")]
-		[Calls(Type = typeof(iTween), Member = "RotateUpdate")]
+		[CallsDeduplicatedMethods(Count = 39)]
 		[CallsUnknownMethods(Count = 34)]
-		[Calls(Type = typeof(iTween), Member = "MoveAdd")]
-		[Calls(Type = typeof(iTween), Member = "LookTo")]
-		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 40)]
-		[Calls(Type = typeof(Hashtable), Member = ".ctor")]
-		[Calls(Type = typeof(iTweenEvent), Member = "DeserializeValues")]
-		[Calls(Type = typeof(string), Member = "EqualsHelper")]
-		[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-		[Calls(Type = typeof(iTweenPath), Member = "GetPath")]
-		[Calls(Type = typeof(Guid), Member = "NewGuid")]
-		[Calls(Type = typeof(Guid), Member = "ToString")]
-		[Calls(Type = typeof(string), Member = "Format")]
-		[Calls(Type = typeof(iTween), Member = "LookUpdate")]
-		[Calls(Type = typeof(iTween), Member = "AudioTo")]
-		[Calls(Type = typeof(iTween), Member = "AudioUpdate")]
-		[Calls(Type = typeof(iTween), Member = "ColorFrom")]
-		[Calls(Type = typeof(iTween), Member = "ColorTo")]
-		[Calls(Type = typeof(iTween), Member = "ColorUpdate")]
-		[Calls(Type = typeof(iTween), Member = "FadeFrom")]
-		[Calls(Type = typeof(iTween), Member = "FadeTo")]
-		[Calls(Type = typeof(iTween), Member = "FadeUpdate")]
-		[Calls(Type = typeof(iTween), Member = "LookFrom")]
-		[Calls(Type = typeof(iTween), Member = "AudioFrom")]
 		private bool MoveNext()
 		{
-			return default(bool);
+			return false;
 		}
 
-		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
-		[CallsUnknownMethods(Count = 3)]
 		[DebuggerHidden]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(NotSupportedException), Member = ".ctor")]
+		[CallsUnknownMethods(Count = 3)]
 		private void System_002ECollections_002EIEnumerator_002EReset()
 		{
 		}
@@ -239,24 +240,23 @@ public class iTweenEvent : MonoBehaviour
 		{
 			return null;
 		}
-		[Calls(Type = typeof(iTweenEvent), Member = "SerializeValues")]
 		[CallerCount(Count = 0)]
+		[Calls(Type = typeof(iTweenEvent), Member = "SerializeValues")]
 		set
 		{
 		}
 	}
 
+	[CalledBy(Type = typeof(ObjectAnim), Member = "Play")]
+	[CalledBy(Type = typeof(StartAndStopTween), Member = "OnGUI")]
 	[CallerCount(Count = 5)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponents")]
+	[Calls(Type = typeof(Enumerable), Member = "FirstOrDefault")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(string), Member = "Concat")]
-	[CalledBy(Type = typeof(ObjectAnim), Member = "Play")]
-	[CalledBy(Type = typeof(StartAndStopTween), Member = "OnGUI")]
-	[CalledBy(Type = typeof(StartAndStopTween), Member = "OnGUI")]
-	[CalledBy(Type = typeof(StartAndStopTween), Member = "OnGUI")]
-	[CalledBy(Type = typeof(StartAndStopTween), Member = "OnGUI")]
-	[CallsUnknownMethods(Count = 37)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 36)]
 	public static iTweenEvent GetEvent(GameObject obj, string name)
 	{
 		return null;
@@ -270,31 +270,28 @@ public class iTweenEvent : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(ObjectAnim), Member = "Play")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(iTweenEvent), Member = "Stop")]
 	[Calls(Type = typeof(iTweenEvent), Member = "StartEvent")]
 	[Calls(Type = typeof(MonoBehaviour), Member = "StartCoroutine")]
-	[CalledBy(Type = typeof(ObjectAnim), Member = "Play")]
 	public void Play()
 	{
 	}
 
-	[Calls(Type = typeof(iTween), Member = "StopByName")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(iTweenEvent), Member = "Play")]
+	[CalledBy(Type = typeof(StartAndStopTween), Member = "OnGUI")]
 	[CalledBy(Type = typeof(iTweenEvent), Member = "Start")]
-	[CalledBy(Type = typeof(StartAndStopTween), Member = "OnGUI")]
-	[CallsDeduplicatedMethods(Count = 2)]
-	[CalledBy(Type = typeof(StartAndStopTween), Member = "OnGUI")]
-	[CalledBy(Type = typeof(StartAndStopTween), Member = "OnGUI")]
+	[CalledBy(Type = typeof(iTweenEvent), Member = "Play")]
 	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(StartAndStopTween), Member = "OnGUI")]
+	[Calls(Type = typeof(iTween), Member = "StopByName")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Stop()
 	{
 	}
 
-	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(string), Member = "IndexOf")]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnAnimComplete(string name)
 	{
@@ -304,74 +301,56 @@ public class iTweenEvent : MonoBehaviour
 	[CallerCount(Count = 0)]
 	public bool IsAnimating()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsDeduplicatedMethods(Count = 4)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 4)]
 	[CallsUnknownMethods(Count = 4)]
 	public void OnDrawGizmos()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CalledBy(Type = typeof(iTweenEvent), Member = "Play")]
+	[CalledBy(Type = typeof(StartAndStopTween), Member = "OnGUI")]
 	[CalledBy(Type = typeof(iTweenEvent), Member = "Start")]
-	[CalledBy(Type = typeof(StartAndStopTween), Member = "OnGUI")]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[IteratorStateMachine(/*Could not decode attribute arguments.*/)]
-	[CalledBy(Type = typeof(StartAndStopTween), Member = "OnGUI")]
+	[CalledBy(Type = typeof(iTweenEvent), Member = "Play")]
 	[CallerCount(Count = 4)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 7)]
 	private IEnumerator StartEvent()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 242)]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Array), Member = "Copy")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CalledBy(Type = typeof(iTweenEvent), Member = "set_Values")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 33)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
+	[Calls(Type = typeof(Dictionary<, >.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[Calls(Type = typeof(iTweenEvent), Member = "AddToList")]
+	[Calls(Type = typeof(iTweenEvent), Member = "AddToList")]
+	[Calls(Type = typeof(Array), Member = "Copy")]
+	[CallsDeduplicatedMethods(Count = 13)]
+	[CallsUnknownMethods(Count = 241)]
 	private void SerializeValues()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(iTweenEvent), Member = "SerializeValues")]
 	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void AddToList<T>(List<string> keyList, List<int> indexList, IList<T> valueList, List<string> metadataList, KeyValuePair<string, object> pair)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	private void AddToList<T>(List<string> keyList, List<int> indexList, IList<T> valueList, List<string> metadataList, KeyValuePair<string, object> pair, string metadata)
 	{
 	}
@@ -385,45 +364,30 @@ public class iTweenEvent : MonoBehaviour
 	}
 
 	[DeduplicatedMethod]
+	[CalledBy(Type = typeof(iTweenEvent), Member = "SerializeValues")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
+	[Calls(Type = typeof(List<>), Member = "Add")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 15)]
 	private void AddToList<T>(List<string> keyList, List<int> indexList, IList<T> valueList, List<string> metadataList, string key, object value, string metadata)
 	{
 	}
 
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[CallsUnknownMethods(Count = 234)]
-	[Calls(Type = typeof(string), Member = "EqualsHelper")]
 	[CalledBy(Type = typeof(iTweenEvent), Member = "get_Values")]
 	[CalledBy(Type = typeof(_003CStartEvent_003Ed__41), Member = "MoveNext")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Dictionary<, >), Member = "get_Item")]
 	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
 	[Calls(Type = typeof(string), Member = "EqualsHelper")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
-	[Calls(Type = typeof(Type), Member = "GetTypeFromHandle")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 234)]
 	private void DeserializeValues()
 	{
 	}
 
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	public iTweenEvent()
 	{
 	}

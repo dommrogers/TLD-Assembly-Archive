@@ -27,8 +27,8 @@ public class SceneTransitionData
 
 	public string m_LastOutdoorScene;
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public SceneTransitionData()
 	{
 	}

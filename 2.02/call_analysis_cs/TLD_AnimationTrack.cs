@@ -25,31 +25,31 @@ public class TLD_AnimationTrack : AnimationTrack, TLD_IDynamicBindableTrack, TLD
 
 		private CollisionDetectionMode m_CollisionDetectionMode;
 
+		[CalledBy(Type = typeof(TLD_AnimationTrack), Member = "SaveAndDisablePhysicComponents")]
+		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 8)]
 		[CallsUnknownMethods(Count = 9)]
-		[CallerCount(Count = 1)]
-		[CalledBy(Type = typeof(TLD_AnimationTrack), Member = "SaveAndDisablePhysicComponents")]
 		public void CopyFrom(Rigidbody rb)
 		{
 		}
 
-		[CallerCount(Count = 52)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		public GameObject GetOwner()
 		{
 			return null;
 		}
 
+		[CalledBy(Type = typeof(TLD_AnimationTrack), Member = "RestorePhysicComponents")]
 		[CallerCount(Count = 1)]
 		[CallsDeduplicatedMethods(Count = 6)]
-		[CalledBy(Type = typeof(TLD_AnimationTrack), Member = "RestorePhysicComponents")]
 		[CallsUnknownMethods(Count = 8)]
 		public void CopyTo(Rigidbody rb)
 		{
 		}
 
 		[DeduplicatedMethod]
-		[CallerCount(Count = 2)]
+		[CallerCount(Count = 7)]
 		public RigidBodyInfo()
 		{
 		}
@@ -68,84 +68,89 @@ public class TLD_AnimationTrack : AnimationTrack, TLD_IDynamicBindableTrack, TLD
 	private GameObject m_DynamicBinding;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "get_name")]
 	[Calls(Type = typeof(Utils), Member = "FindTimelineDynamicBinding")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
 	public void DoDynamicBinding(PlayableDirector director)
 	{
 	}
 
-	[Calls(Type = typeof(ToggleComponentsDuringTimelinePlayback), Member = "UpdateComponentStates")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[Calls(Type = typeof(TLD_AnimationTrack), Member = "SaveAndDisablePhysicComponents")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(ToggleComponentsDuringTimelinePlayback), Member = "UpdateComponentStates")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void Play()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
-	[Calls(Type = typeof(TLD_AnimationTrack), Member = "RestorePhysicComponents")]
-	[Calls(Type = typeof(ToggleComponentsDuringTimelinePlayback), Member = "UpdateComponentStates")]
-	[CallsDeduplicatedMethods(Count = 2)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[Calls(Type = typeof(ToggleComponentsDuringTimelinePlayback), Member = "UpdateComponentStates")]
+	[Calls(Type = typeof(TLD_AnimationTrack), Member = "RestorePhysicComponents")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	public void Stop()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void UpdatePlay()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void LateUpdatePlay()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(TLD_AnimationTrack), Member = "SaveAndDisablePhysicComponents")]
-	[Calls(Type = typeof(Collider), Member = "set_enabled")]
 	[CalledBy(Type = typeof(TLD_AnimationTrack), Member = "RestorePhysicComponents")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(Collider), Member = "set_enabled")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 3)]
 	private void EnableSavedPhysicColliders(GameObject gameObject, bool isEnabled)
 	{
 	}
 
+	[CalledBy(Type = typeof(TLD_AnimationTrack), Member = "Play")]
 	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(TLD_AnimationTrack), Member = "EnableSavedPhysicColliders")]
 	[Calls(Type = typeof(Array), Member = "Clear")]
 	[Calls(Type = typeof(RigidBodyInfo), Member = "CopyFrom")]
+	[Calls(Type = typeof(List<>), Member = "Add")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "Destroy")]
-	[CalledBy(Type = typeof(TLD_AnimationTrack), Member = "Play")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 14)]
 	private void SaveAndDisablePhysicComponents(GameObject go)
 	{
 	}
 
-	[Calls(Type = typeof(RigidBodyInfo), Member = "CopyTo")]
 	[CalledBy(Type = typeof(TLD_AnimationTrack), Member = "Stop")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CallsUnknownMethods(Count = 4)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(TLD_AnimationTrack), Member = "EnableSavedPhysicColliders")]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(GameObject), Member = "AddComponent")]
+	[Calls(Type = typeof(RigidBodyInfo), Member = "CopyTo")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void RestorePhysicComponents(GameObject go)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = ".ctor")]
 	[Calls(Type = typeof(AnimationTrack), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 7)]
 	public TLD_AnimationTrack()
 	{

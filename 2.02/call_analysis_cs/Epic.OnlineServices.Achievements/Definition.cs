@@ -29,16 +29,16 @@ public class Definition : ISettable
 
 	public string AchievementId
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 52)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 59)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 101)]
+		[CallerCount(Count = 103)]
 		set
 		{
 		}
@@ -48,14 +48,14 @@ public class Definition : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 29)]
+		[CallerCount(Count = 35)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 71)]
+		[CallerCount(Count = 77)]
 		set
 		{
 		}
@@ -63,16 +63,16 @@ public class Definition : ISettable
 
 	public string Description
 	{
-		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 41)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 44)]
 		set
 		{
 		}
@@ -89,7 +89,7 @@ public class Definition : ISettable
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
+		[CallerCount(Count = 24)]
 		set
 		{
 		}
@@ -99,14 +99,14 @@ public class Definition : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 17)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
-		[CallerCount(Count = 20)]
 		[CompilerGenerated]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 23)]
 		set
 		{
 		}
@@ -116,14 +116,14 @@ public class Definition : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 8)]
+		[CallerCount(Count = 9)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 15)]
+		[CallerCount(Count = 18)]
 		set
 		{
 		}
@@ -140,7 +140,7 @@ public class Definition : ISettable
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 41)]
+		[CallerCount(Count = 46)]
 		set
 		{
 		}
@@ -148,16 +148,16 @@ public class Definition : ISettable
 
 	public string UnlockedIconId
 	{
-		[CallerCount(Count = 3)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 3)]
 		get
 		{
 			return null;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 17)]
+		[CallerCount(Count = 19)]
 		set
 		{
 		}
@@ -167,14 +167,14 @@ public class Definition : ISettable
 	{
 		[CompilerGenerated]
 		[DeduplicatedMethod]
-		[CallerCount(Count = 5)]
+		[CallerCount(Count = 11)]
 		get
 		{
 			return null;
 		}
-		[CallerCount(Count = 14)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 18)]
 		set
 		{
 		}
@@ -182,12 +182,12 @@ public class Definition : ISettable
 
 	public bool IsHidden
 	{
-		[CallerCount(Count = 0)]
 		[CompilerGenerated]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 		[CompilerGenerated]
 		[DeduplicatedMethod]
@@ -199,50 +199,50 @@ public class Definition : ISettable
 
 	public StatThresholds[] StatThresholds
 	{
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 20)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 40)]
 		get
 		{
 			return null;
 		}
-		[DeduplicatedMethod]
 		[CompilerGenerated]
-		[CallerCount(Count = 12)]
+		[DeduplicatedMethod]
+		[CallerCount(Count = 37)]
 		set
 		{
 		}
 	}
 
-	[Calls(Type = typeof(DefinitionInternal), Member = "get_IsHidden")]
-	[Calls(Type = typeof(DefinitionInternal), Member = "get_StatThresholds")]
-	[Calls(Type = typeof(DefinitionInternal), Member = "get_LockedIconId")]
-	[CallsUnknownMethods(Count = 11)]
-	[Calls(Type = typeof(DefinitionInternal), Member = "get_UnlockedIconId")]
 	[CalledBy(Type = typeof(Definition), Member = "Set")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(DefinitionInternal), Member = "get_AchievementId")]
+	[Calls(Type = typeof(DefinitionInternal), Member = "get_DisplayName")]
+	[Calls(Type = typeof(DefinitionInternal), Member = "get_Description")]
+	[Calls(Type = typeof(DefinitionInternal), Member = "get_LockedDisplayName")]
+	[Calls(Type = typeof(DefinitionInternal), Member = "get_LockedDescription")]
 	[Calls(Type = typeof(DefinitionInternal), Member = "get_HiddenDescription")]
 	[Calls(Type = typeof(DefinitionInternal), Member = "get_CompletionDescription")]
-	[Calls(Type = typeof(DefinitionInternal), Member = "get_LockedDescription")]
-	[Calls(Type = typeof(DefinitionInternal), Member = "get_LockedDisplayName")]
-	[Calls(Type = typeof(DefinitionInternal), Member = "get_Description")]
-	[Calls(Type = typeof(DefinitionInternal), Member = "get_DisplayName")]
-	[Calls(Type = typeof(DefinitionInternal), Member = "get_AchievementId")]
+	[Calls(Type = typeof(DefinitionInternal), Member = "get_UnlockedIconId")]
+	[Calls(Type = typeof(DefinitionInternal), Member = "get_LockedIconId")]
+	[Calls(Type = typeof(DefinitionInternal), Member = "get_IsHidden")]
+	[Calls(Type = typeof(DefinitionInternal), Member = "get_StatThresholds")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 1)]
+	[CallsUnknownMethods(Count = 11)]
 	internal void Set(DefinitionInternal? other)
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(Definition), Member = "Set")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public Definition()
 	{
 	}

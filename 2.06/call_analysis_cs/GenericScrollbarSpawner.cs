@@ -44,30 +44,23 @@ public class GenericScrollbarSpawner : MonoBehaviour
 	{
 	}
 
-	[Calls(Type = typeof(UIWidget), Member = "set_width")]
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
-	[Calls(Type = typeof(UIWidget), Member = "set_width")]
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
-	[Calls(Type = typeof(UIWidget), Member = "set_width")]
-	[Calls(Type = typeof(Transform), Member = "Find")]
-	[Calls(Type = typeof(UIWidget), Member = "set_height")]
-	[CallsUnknownMethods(Count = 23)]
-	[Calls(Type = typeof(Transform), Member = "Find")]
-	[Calls(Type = typeof(UIButtonColor), Member = "UpdateColor")]
-	[Calls(Type = typeof(Transform), Member = "Find")]
-	[Calls(Type = typeof(Transform), Member = "Find")]
-	[Calls(Type = typeof(Transform), Member = "set_parent")]
-	[Calls(Type = typeof(Object), Member = "set_name")]
-	[Calls(Type = typeof(Object), Member = "get_name")]
-	[CallsDeduplicatedMethods(Count = 41)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Object), Member = "get_name")]
+	[Calls(Type = typeof(Object), Member = "set_name")]
+	[Calls(Type = typeof(Transform), Member = "set_parent")]
+	[Calls(Type = typeof(Transform), Member = "Find")]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(UIButtonColor), Member = "UpdateColor")]
+	[Calls(Type = typeof(UIWidget), Member = "set_width")]
+	[Calls(Type = typeof(UIWidget), Member = "set_height")]
+	[CallsDeduplicatedMethods(Count = 30)]
+	[CallsUnknownMethods(Count = 23)]
 	public void AssignValuesToSpawnedObject()
 	{
 	}
 
-	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlayGUIScroll")]
 	private void OnDragFinished()
 	{
 	}

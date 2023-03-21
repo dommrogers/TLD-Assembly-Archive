@@ -25,11 +25,11 @@ public abstract class FSMState : Node, IState
 
 	public override bool allowAsPrime
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
@@ -39,7 +39,7 @@ public abstract class FSMState : Node, IState
 		[CallerCount(Count = 16)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -49,7 +49,7 @@ public abstract class FSMState : Node, IState
 		[CallerCount(Count = 16)]
 		get
 		{
-			return default(int);
+			return 0;
 		}
 	}
 
@@ -75,8 +75,8 @@ public abstract class FSMState : Node, IState
 
 	public sealed override Alignment2x2 iconAlignment
 	{
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		get
 		{
 			return default(Alignment2x2);
@@ -104,10 +104,10 @@ public abstract class FSMState : Node, IState
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
-		[CallerCount(Count = 0)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 0)]
 		private set
 		{
 		}
@@ -115,14 +115,12 @@ public abstract class FSMState : Node, IState
 
 	public FSM FSM
 	{
-		[CalledBy(Type = typeof(AnyState), Member = "Update")]
+		[CalledBy(Type = typeof(MissionServicesManager), Member = "GetOwner")]
 		[CalledBy(Type = typeof(State_InvokeGraphBase), Member = "SetCompletionFlag")]
-		[CallsUnknownMethods(Count = 1)]
+		[CalledBy(Type = typeof(FSMState), Member = "CheckTransitions")]
 		[CalledBy(Type = typeof(AnyState), Member = "Update")]
 		[CallerCount(Count = 6)]
-		[CalledBy(Type = typeof(FSMState), Member = "CheckTransitions")]
-		[CalledBy(Type = typeof(MissionServicesManager), Member = "GetOwner")]
-		[CalledBy(Type = typeof(AnyState), Member = "Update")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
@@ -130,17 +128,17 @@ public abstract class FSMState : Node, IState
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.Linq.Buffer`1", Member = ".ctor")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[CallsUnknownMethods(Count = 10)]
+	[CallsUnknownMethods(Count = 9)]
 	public FSMConnection[] GetTransitions()
 	{
 		return null;
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Finish()
 	{
 	}
@@ -164,73 +162,75 @@ public abstract class FSMState : Node, IState
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public override void OnGraphPaused()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Enumerable), Member = "Any")]
 	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogWarning")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override bool CanConnectFromSource(Node sourceNode)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Enumerable), Member = "Any")]
 	[Calls(Type = typeof(ParadoxNotion.Services.Logger), Member = "LogWarning")]
-	[CallsUnknownMethods(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	protected override bool CanConnectToTarget(Node targetNode)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[Calls(Type = typeof(Task), Member = "Set")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 3)]
 	[CallsUnknownMethods(Count = 5)]
 	protected sealed override Status OnExecute(Component agent, IBlackboard bb)
 	{
 		return default(Status);
 	}
 
-	[Calls(Type = typeof(FSMState), Member = "CheckTransitions")]
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(FSMState), Member = "CheckTransitions")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void Update()
 	{
 	}
 
 	[CalledBy(Type = typeof(FSM), Member = "OnGraphUpdate")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[CallsUnknownMethods(Count = 4)]
 	[CalledBy(Type = typeof(FSMState), Member = "Update")]
-	[Calls(Type = typeof(FSM), Member = "EnterState")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
 	[Calls(Type = typeof(ConditionTask), Member = "CheckCondition")]
 	[Calls(Type = typeof(FSMState), Member = "get_FSM")]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
-	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
-	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(FSM), Member = "EnterState")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsUnknownMethods(Count = 4)]
 	public bool CheckTransitions()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsDeduplicatedMethods(Count = 2)]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
 	[CallsUnknownMethods(Count = 5)]
 	protected sealed override void OnReset()
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	protected virtual void OnInit()
 	{
 	}
@@ -253,15 +253,15 @@ public abstract class FSMState : Node, IState
 	{
 	}
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	protected virtual void OnPause()
 	{
 	}
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
-	[DeduplicatedMethod]
 	protected FSMState()
 	{
 	}

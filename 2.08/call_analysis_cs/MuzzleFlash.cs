@@ -12,8 +12,9 @@ public class MuzzleFlash : MonoBehaviour
 	private Renderer m_Renderer;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 3)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	[Calls(Type = typeof(Material), Member = "GetColor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 2)]
 	private void Start()
 	{
@@ -25,9 +26,8 @@ public class MuzzleFlash : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Material), Member = "SetColor")]
 	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Material), Member = "SetColor")]
-	[Calls(Type = typeof(Material), Member = "SetColor")]
 	[CallsUnknownMethods(Count = 6)]
 	private void Update()
 	{

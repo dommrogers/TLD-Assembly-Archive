@@ -8,13 +8,14 @@ public class MissionIlluminationArea : MonoBehaviour
 
 	private static List<MissionIlluminationArea> s_RegisteredIlluminationAreas;
 
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(Weather), Member = "IsTooDarkForAction")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	public static bool IsInIlluminationArea(Vector3 pos)
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]
@@ -25,14 +26,14 @@ public class MissionIlluminationArea : MonoBehaviour
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	public void OnDestroy()
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public MissionIlluminationArea()
 	{
 	}

@@ -7,6 +7,6 @@ public static class HaltonSeq
 	[CallerCount(Count = 0)]
 	public static float Get(int index, int radix)
 	{
-		return default(float);
+		return 0f;
 	}
 }

@@ -20,7 +20,7 @@ public class RadialObjectSpawnerSaveData
 	public bool[] m_SpawnedObjectUnlockForDetailMapStates;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public RadialObjectSpawnerSaveData()
 	{
 	}

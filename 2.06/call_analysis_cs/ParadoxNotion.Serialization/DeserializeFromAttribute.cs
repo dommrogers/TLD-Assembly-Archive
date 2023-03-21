@@ -8,7 +8,7 @@ public class DeserializeFromAttribute : Attribute
 	public readonly string[] previousTypeFullNames;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 265)]
+	[CallerCount(Count = 269)]
 	public DeserializeFromAttribute(string[] previousTypeNames)
 	{
 	}

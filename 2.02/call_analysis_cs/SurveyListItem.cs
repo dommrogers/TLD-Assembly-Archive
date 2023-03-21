@@ -27,18 +27,18 @@ public class SurveyListItem : MonoBehaviour
 	public OnDisplayItemClicked m_ClickedDelegate;
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
 	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void Clear()
 	{
 	}
 
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshAchievementListForSelectedRegion")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 3)]
 	public void SetAchievementInfo(SurveyAchievementInfo sai)
 	{
@@ -50,16 +50,15 @@ public class SurveyListItem : MonoBehaviour
 	{
 	}
 
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyClicked")]
-	[Calls(Type = typeof(Color), Member = "op_Equality")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyClicked")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyBack")]
-	[CallerCount(Count = 6)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyRegionClicked")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateCartographyPage")]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyRegionClicked")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "DoControlsCartography")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyBack")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnSurveyClicked")]
+	[CallerCount(Count = 6)]
+	[Calls(Type = typeof(Color), Member = "op_Equality")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetSelected(bool selected)
 	{
 	}

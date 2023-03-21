@@ -1,4 +1,3 @@
-using System;
 using System.Globalization;
 using Cpp2ILInjected.CallAnalysis;
 using UnityEngine;
@@ -16,15 +15,16 @@ public class TextureCreditElement : CreditElement
 	[CallsUnknownMethods(Count = 1)]
 	public override bool IsContentValid(string[] content, Panel_Credits panel)
 	{
-		return default(bool);
+		return false;
 	}
 
-	[CallsUnknownMethods(Count = 5)]
-	[Calls(Type = typeof(UIWidget), Member = "SetDimensions")]
-	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
-	[CallsDeduplicatedMethods(Count = 3)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(TextureCreditElement), Member = "GetTextureFromContent")]
+	[Calls(Type = typeof(NumberFormatInfo), Member = "get_CurrentInfo")]
+	[Calls(Type = typeof(float), Member = "TryParse")]
+	[Calls(Type = typeof(UIWidget), Member = "SetDimensions")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 4)]
 	public override void Populate(string[] content, Panel_Credits panel)
 	{
 	}
@@ -45,11 +45,11 @@ public class TextureCreditElement : CreditElement
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
+	[CalledBy(Type = typeof(TextureCreditElement), Member = "IsContentValid")]
 	[CalledBy(Type = typeof(TextureCreditElement), Member = "Populate")]
 	[CallerCount(Count = 2)]
-	[Calls(Type = typeof(System.SpanHelpers), Member = "SequenceEqual")]
-	[CalledBy(Type = typeof(TextureCreditElement), Member = "IsContentValid")]
+	[Calls(TypeFullName = "System.SpanHelpers", Member = "SequenceEqual")]
+	[CallsUnknownMethods(Count = 2)]
 	private Texture2D GetTextureFromContent(string[] content, Panel_Credits panel)
 	{
 		return null;

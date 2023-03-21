@@ -15,11 +15,11 @@ internal struct CopyEntitlementByIndexOptionsInternal : ISettable, IDisposable
 
 	public EpicAccountId LocalUserId
 	{
+		[CalledBy(Type = typeof(CopyEntitlementByIndexOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(CopyEntitlementByIndexOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(CopyEntitlementByIndexOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(CopyEntitlementByIndexOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -40,16 +40,16 @@ internal struct CopyEntitlementByIndexOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(EcomInterface), Member = "CopyEntitlementByIndex")]
-	[Calls(Type = typeof(CopyEntitlementByIndexOptionsInternal), Member = "set_LocalUserId")]
 	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(CopyEntitlementByIndexOptionsInternal), Member = "set_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

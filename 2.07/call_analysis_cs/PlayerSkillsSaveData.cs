@@ -10,8 +10,8 @@ public class PlayerSkillsSaveData
 
 	public float m_SharpenSkill;
 
-	[CallerCount(Count = 6)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 6)]
 	public PlayerSkillsSaveData()
 	{
 	}

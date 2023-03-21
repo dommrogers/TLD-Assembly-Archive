@@ -10,21 +10,21 @@ public class Condition_CanSave : ConditionTask
 	protected override string info
 	{
 		[CallerCount(Count = 0)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Task), Member = "get_name")]
 		[Calls(Type = typeof(string), Member = "Concat")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 	}
 
-	[Calls(Type = typeof(GameManager), Member = "AllowedToSave")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(GameManager), Member = "AllowedToSave")]
 	[CallsDeduplicatedMethods(Count = 1)]
 	protected override bool OnCheck()
 	{
-		return default(bool);
+		return false;
 	}
 
 	[CallerCount(Count = 0)]

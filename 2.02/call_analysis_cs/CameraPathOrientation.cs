@@ -7,9 +7,9 @@ public class CameraPathOrientation : CameraPathPoint
 
 	public Transform lookAt;
 
-	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 1)]
 	private void OnEnable()
 	{
 	}

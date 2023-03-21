@@ -6,20 +6,19 @@ public class SnowDepthCapsuleRecord : SnowDepthTriggerRecord
 	private CapsuleCollider m_Capsule;
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 224)]
+	[CallerCount(Count = 230)]
 	public SnowDepthCapsuleRecord(SnowDepth sd, CapsuleCollider capsule)
 		: base(null)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 8)]
-	[Calls(Type = typeof(Utils), Member = "NearestPoint")]
-	[Calls(Type = typeof(Transform), Member = "get_forward")]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Transform), Member = "get_forward")]
+	[Calls(Type = typeof(Utils), Member = "NearestPoint")]
+	[CallsDeduplicatedMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 8)]
 	public override float GetDepthFracAtPosition(Vector3 position)
 	{
-		return default(float);
+		return 0f;
 	}
 }

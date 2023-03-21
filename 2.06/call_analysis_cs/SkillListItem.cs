@@ -42,11 +42,11 @@ public class SkillListItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 2)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshSkillsList")]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
-	[Calls(Type = typeof(System.Number), Member = "FormatInt32")]
 	[CallerCount(Count = 1)]
+	[Calls(TypeFullName = "System.Number", Member = "FormatInt32")]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 2)]
 	public void SetSkillLevel(int level)
 	{
 	}
@@ -65,15 +65,15 @@ public class SkillListItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(UILabel), Member = "set_text")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(UILabel), Member = "set_text")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetSkillPoints(string points)
 	{
 	}
 
-	[CallerCount(Count = 1)]
 	[CalledBy(Type = typeof(Panel_Log), Member = "RefreshSkillsList")]
+	[CallerCount(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	public void SetProgress(float normalizedProgress)
 	{
@@ -86,16 +86,13 @@ public class SkillListItem : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateSkillListItemsColor")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnSkillItemClicked")]
-	[CalledBy(Type = typeof(Panel_Log), Member = "OnSkillItemClicked")]
 	[CalledBy(Type = typeof(Panel_Log), Member = "HandleSkillVerticalNavigation")]
-	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "OnSkillItemClicked")]
+	[CalledBy(Type = typeof(Panel_Log), Member = "UpdateSkillListItemsColor")]
+	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
-	[CalledBy(Type = typeof(Panel_Log), Member = "HandleSkillVerticalNavigation")]
+	[CallsUnknownMethods(Count = 1)]
 	public void SetSelected(bool selected)
 	{
 	}

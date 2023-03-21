@@ -25,40 +25,33 @@ public class ShaderComparison
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(TerrainData), Member = "RefreshPrototypes")]
-	[Calls(Type = typeof(Material), Member = "set_shader")]
-	[CalledBy(Type = typeof(ShaderComparison), Member = "Toggle")]
-	[CalledBy(Type = typeof(ShaderComparison), Member = "Toggle")]
-	[CallsUnknownMethods(Count = 25)]
-	[Calls(Type = typeof(Material), Member = "get_shader")]
 	[CalledBy(Type = typeof(ShaderComparison), Member = "SelectShader")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Terrain), Member = "get_terrainData")]
-	[Calls(Type = typeof(Terrain), Member = "get_terrainData")]
+	[CalledBy(Type = typeof(ShaderComparison), Member = "Toggle")]
 	[CallerCount(Count = 3)]
-	[CallsDeduplicatedMethods(Count = 6)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
-	[Calls(Type = typeof(TerrainData), Member = "get_treePrototypes")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "FindObjectsOfType")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Material), Member = "get_shader")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Equality")]
 	[Calls(Type = typeof(Material), Member = "set_shader")]
+	[Calls(Type = typeof(Terrain), Member = "get_terrainData")]
+	[Calls(Type = typeof(TerrainData), Member = "get_treePrototypes")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponent")]
+	[Calls(Type = typeof(TerrainData), Member = "RefreshPrototypes")]
+	[CallsDeduplicatedMethods(Count = 3)]
+	[CallsUnknownMethods(Count = 25)]
 	public void SetShaderForMaterials(Shader shader)
 	{
 	}
 
+	[CalledBy(Type = typeof(ShaderToggle), Member = "Toggle")]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(ShaderComparison), Member = "SetShaderForMaterials")]
-	[Calls(Type = typeof(ShaderComparison), Member = "SetShaderForMaterials")]
-	[CalledBy(Type = typeof(ShaderToggle), Member = "Toggle")]
 	public void Toggle()
 	{
 	}
 
 	[DeduplicatedMethod]
-	[CallerCount(Count = 2)]
+	[CallerCount(Count = 7)]
 	public ShaderComparison()
 	{
 	}

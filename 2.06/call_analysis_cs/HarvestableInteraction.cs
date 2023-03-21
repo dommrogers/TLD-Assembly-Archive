@@ -15,46 +15,46 @@ public class HarvestableInteraction : TimedHoldInteraction
 		[CallsUnknownMethods(Count = 1)]
 		get
 		{
-			return default(bool);
+			return false;
 		}
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	private void Awake()
 	{
 	}
 
-	[Calls(Type = typeof(Localization), Member = "Get")]
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(TimedHoldInteraction), Member = "PerformHold")]
-	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
-	[Calls(Type = typeof(Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(Harvestable), Member = "GetRequiredTool")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Harvestable), Member = "GetRequiredTool")]
+	[Calls(Type = typeof(Object), Member = "op_Inequality")]
 	[Calls(Type = typeof(Debug), Member = "LogWarning")]
+	[Calls(Type = typeof(Localization), Member = "Get")]
+	[Calls(Type = typeof(HUDMessage), Member = "AddMessage")]
+	[Calls(Type = typeof(TimedHoldInteraction), Member = "PerformHold")]
+	[CallsUnknownMethods(Count = 1)]
 	public override bool PerformHold()
 	{
-		return default(bool);
+		return false;
 	}
 
-	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Harvestable), Member = "Harvest")]
+	[Calls(Type = typeof(BaseInteraction), Member = "TriggerEvent")]
 	[CallsUnknownMethods(Count = 1)]
 	public override bool PerformInteraction()
 	{
-		return default(bool);
+		return false;
 	}
 
+	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(TimedHoldInteraction), Member = "BeginHold")]
+	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
+	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
+	[Calls(Type = typeof(Harvestable), Member = "GetRequiredTool")]
+	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
 	[Calls(Type = typeof(GameAudioManager), Member = "SetCuttingToolSwitch")]
 	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(GameManager), Member = "GetPlayerObject")]
-	[Calls(Type = typeof(Harvestable), Member = "GetRequiredTool")]
-	[Calls(Type = typeof(InterfaceManager), Member = "GetSoundEmitter")]
-	[Calls(Type = typeof(TimedHoldInteraction), Member = "BeginHold")]
-	[CallerCount(Count = 0)]
-	[Calls(Type = typeof(GameAudioManager), Member = "PlaySound")]
 	protected override void BeginHold()
 	{
 	}
@@ -66,9 +66,9 @@ public class HarvestableInteraction : TimedHoldInteraction
 	{
 	}
 
-	[Calls(Type = typeof(BaseInteraction), Member = ".ctor")]
 	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(BaseInteraction), Member = ".ctor")]
 	[CallsUnknownMethods(Count = 6)]
 	public HarvestableInteraction()
 	{

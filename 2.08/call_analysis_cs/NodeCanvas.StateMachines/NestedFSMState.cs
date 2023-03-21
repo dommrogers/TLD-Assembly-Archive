@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using Cpp2ILInjected.CallAnalysis;
 using NodeCanvas.Framework;
 
@@ -17,13 +16,15 @@ public class NestedFSMState : FSMState, IGraphAssignable
 	{
 		[DeduplicatedMethod]
 		[CallerCount(Count = 4)]
-		[CallsUnknownMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 2)]
+		[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+		[CallsUnknownMethods(Count = 1)]
 		set
 		{
 		}
@@ -31,37 +32,41 @@ public class NestedFSMState : FSMState, IGraphAssignable
 
 	private Graph NodeCanvas_002EFramework_002EIGraphAssignable_002EnestedGraph
 	{
-		[CallerCount(Count = 4)]
-		[CallsUnknownMethods(Count = 2)]
 		[DeduplicatedMethod]
+		[CallerCount(Count = 4)]
+		[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+		[CallsUnknownMethods(Count = 1)]
 		get
 		{
 			return null;
 		}
 		[CallerCount(Count = 0)]
-		[CallsUnknownMethods(Count = 3)]
+		[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+		[CallsUnknownMethods(Count = 2)]
 		set
 		{
 		}
 	}
 
 	[CallerCount(Count = 0)]
+	[Calls(TypeFullName = "System.Linq.Buffer`1", Member = ".ctor")]
+	[Calls(TypeFullName = "System.Linq.Error", Member = "ArgumentNull")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(System.Linq.Error), Member = "ArgumentNull")]
-	[CallsUnknownMethods(Count = 6)]
+	[CallsUnknownMethods(Count = 5)]
 	private Graph[] NodeCanvas_002EFramework_002EIGraphAssignable_002EGetInstances()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(State_CinematicSubFSM), Member = "OnEnter")]
-	[CallsUnknownMethods(Count = 3)]
 	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = "OnEnter")]
-	[Calls(Type = typeof(Graph), Member = "StartGraph")]
-	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
-	[Calls(Type = typeof(NestedFSMState), Member = "CheckInstance")]
+	[CalledBy(Type = typeof(State_CinematicSubFSM), Member = "OnEnter")]
 	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(NestedFSMState), Member = "CheckInstance")]
+	[Calls(Type = typeof(Node), Member = "get_graphAgent")]
 	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(Graph), Member = "StartGraph")]
+	[CallsUnknownMethods(Count = 2)]
 	protected override void OnEnter()
 	{
 	}
@@ -73,39 +78,43 @@ public class NestedFSMState : FSMState, IGraphAssignable
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Graph), Member = "Stop")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnExit()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Graph), Member = "Pause")]
+	[CallsUnknownMethods(Count = 1)]
 	protected override void OnPause()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 7)]
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 4)]
-	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
 	[CalledBy(Type = typeof(NestedFSMState), Member = "OnEnter")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(BBParameter<>), Member = "get_value")]
+	[Calls(Type = typeof(Dictionary<, >), Member = "TryGetValue")]
+	[Calls(Type = typeof(Graph), Member = "Clone")]
+	[Calls(Type = typeof(Node), Member = "get_graphBlackboard")]
+	[Calls(Type = typeof(BBParameter<>), Member = "set_value")]
+	[CallsDeduplicatedMethods(Count = 2)]
+	[CallsUnknownMethods(Count = 2)]
 	protected FSM CheckInstance()
 	{
 		return null;
 	}
 
-	[CalledBy(Type = typeof(State_StorySubFSM), Member = ".ctor")]
-	[CalledBy(Type = typeof(State_SandboxSubFSM), Member = ".ctor")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(State_GameplaySubFSM), Member = ".ctor")]
-	[CalledBy(Type = typeof(State_CinematicSubFSM), Member = ".ctor")]
 	[CalledBy(Type = typeof(State_TLDBaseFSM), Member = ".ctor")]
+	[CalledBy(Type = typeof(State_CinematicSubFSM), Member = ".ctor")]
+	[CalledBy(Type = typeof(State_GameplaySubFSM), Member = ".ctor")]
+	[CalledBy(Type = typeof(State_SandboxSubFSM), Member = ".ctor")]
+	[CalledBy(Type = typeof(State_StorySubFSM), Member = ".ctor")]
+	[CallerCount(Count = 5)]
 	[Calls(Type = typeof(Node), Member = ".ctor")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 5)]
+	[CallsUnknownMethods(Count = 1)]
 	public NestedFSMState()
 	{
 	}

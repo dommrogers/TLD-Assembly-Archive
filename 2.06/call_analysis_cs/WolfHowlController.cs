@@ -39,16 +39,16 @@ public class WolfHowlController : MonoBehaviour
 
 	private float m_NextHowlTimer;
 
-	[CallsUnknownMethods(Count = 2)]
+	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(WolfHowlController), Member = "SetNextTimer")]
 	[CallsDeduplicatedMethods(Count = 1)]
-	[CallerCount(Count = 0)]
+	[CallsUnknownMethods(Count = 2)]
 	public void Add(BaseAi wolf)
 	{
 	}
 
-	[CallerCount(Count = 0)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 0)]
 	public void ForceNextHowl()
 	{
 	}
@@ -65,22 +65,21 @@ public class WolfHowlController : MonoBehaviour
 		return null;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(BaseAiManager), Member = "Remove")]
 	[CalledBy(Type = typeof(BaseAiManager), Member = "Destroy")]
+	[CallerCount(Count = 2)]
+	[Calls(Type = typeof(List<>), Member = "Remove")]
 	[CallsUnknownMethods(Count = 1)]
 	public void Remove(BaseAi wolf)
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(WolfHowlController), Member = "StartResponseHowl")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[Calls(Type = typeof(WolfHowlController), Member = "StartLeadHowl")]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(WolfHowlController), Member = "StartResponseHowl")]
+	[Calls(Type = typeof(WolfHowlController), Member = "StartLeadHowl")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 1)]
 	public void RequestHowl(BaseAi wolf, bool isLead)
 	{
 	}
@@ -92,11 +91,12 @@ public class WolfHowlController : MonoBehaviour
 	{
 	}
 
-	[CallsUnknownMethods(Count = 1)]
-	[Calls(Type = typeof(WolfHowlController), Member = "UpdateTimer")]
-	[Calls(Type = typeof(WolfHowlController), Member = "UpdateCurrentHowl")]
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(InterfaceManager), Member = "IsPanelEnabled")]
+	[Calls(Type = typeof(PanelReference<>), Member = "IsEnabled")]
+	[Calls(Type = typeof(WolfHowlController), Member = "UpdateCurrentHowl")]
+	[Calls(Type = typeof(WolfHowlController), Member = "UpdateTimer")]
+	[CallsUnknownMethods(Count = 1)]
 	public void Update()
 	{
 	}
@@ -108,64 +108,62 @@ public class WolfHowlController : MonoBehaviour
 	{
 	}
 
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeStartOrJoinPackHowl")]
 	[CalledBy(Type = typeof(WolfHowlController), Member = "RequestHowl")]
 	[CalledBy(Type = typeof(WolfHowlController), Member = "UpdateTimer")]
-	[CallsUnknownMethods(Count = 1)]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeStartOrJoinPackHowl")]
 	[CallerCount(Count = 3)]
 	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[CallsUnknownMethods(Count = 1)]
 	private void StartLeadHowl(BaseAi wolf)
 	{
 	}
 
+	[CalledBy(Type = typeof(BaseAi), Member = "MaybeStartOrJoinPackHowl")]
+	[CalledBy(Type = typeof(WolfHowlController), Member = "RequestHowl")]
 	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Random), Member = "Range")]
 	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[CalledBy(Type = typeof(BaseAi), Member = "MaybeStartOrJoinPackHowl")]
-	[CalledBy(Type = typeof(WolfHowlController), Member = "RequestHowl")]
 	[CallsUnknownMethods(Count = 1)]
 	private float StartResponseHowl(BaseAi wolf, float baseTime)
 	{
-		return default(float);
+		return 0f;
 	}
 
-	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CalledBy(Type = typeof(WolfHowlController), Member = "Add")]
 	[CalledBy(Type = typeof(BaseAiManager), Member = "Add")]
+	[CallerCount(Count = 2)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	[CallsUnknownMethods(Count = 1)]
 	private void SetNextTimer()
 	{
 	}
 
-	[CallsUnknownMethods(Count = 4)]
-	[CalledBy(Type = typeof(BaseAiManager), Member = "Update")]
 	[CalledBy(Type = typeof(WolfHowlController), Member = "Update")]
+	[CalledBy(Type = typeof(BaseAiManager), Member = "Update")]
 	[CallerCount(Count = 2)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(List<>.Enumerator), Member = "MoveNext")]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[CallsDeduplicatedMethods(Count = 1)]
+	[CallsUnknownMethods(Count = 4)]
 	private void UpdateCurrentHowl()
 	{
 	}
 
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
-	[CalledBy(Type = typeof(BaseAiManager), Member = "Update")]
 	[CalledBy(Type = typeof(WolfHowlController), Member = "Update")]
-	[Calls(Type = typeof(System.ThrowHelper), Member = "ThrowArgumentOutOfRange_IndexException")]
-	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
-	[CallsUnknownMethods(Count = 12)]
+	[CalledBy(Type = typeof(BaseAiManager), Member = "Update")]
+	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(Array), Member = "Clear")]
-	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
-	[Calls(Type = typeof(WolfHowlController), Member = "StartLeadHowl")]
+	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
+	[Calls(Type = typeof(GameObject), Member = "get_transform")]
 	[Calls(Type = typeof(Transform), Member = "get_position")]
 	[Calls(Type = typeof(GameManager), Member = "GetPlayerTransform")]
-	[Calls(Type = typeof(Transform), Member = "get_position")]
-	[Calls(Type = typeof(GameObject), Member = "get_transform")]
-	[Calls(Type = typeof(GameObject), Member = "get_activeInHierarchy")]
-	[Calls(Type = typeof(Array), Member = "Clear")]
-	[CallsDeduplicatedMethods(Count = 11)]
-	[CallerCount(Count = 2)]
 	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Implicit")]
+	[Calls(Type = typeof(UnityEngine.Object), Member = "op_Inequality")]
+	[Calls(Type = typeof(WolfHowlController), Member = "StartLeadHowl")]
+	[Calls(Type = typeof(BaseAi), Member = "SetAiMode")]
+	[Calls(TypeFullName = "System.ThrowHelper", Member = "ThrowArgumentOutOfRange_IndexException")]
+	[CallsDeduplicatedMethods(Count = 11)]
+	[CallsUnknownMethods(Count = 12)]
 	private void UpdateTimer()
 	{
 	}

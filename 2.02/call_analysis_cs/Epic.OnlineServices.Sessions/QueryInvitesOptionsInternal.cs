@@ -13,11 +13,11 @@ internal struct QueryInvitesOptionsInternal : ISettable, IDisposable
 
 	public ProductUserId LocalUserId
 	{
+		[CalledBy(Type = typeof(QueryInvitesOptionsInternal), Member = "Set")]
+		[CalledBy(Type = typeof(QueryInvitesOptionsInternal), Member = "Set")]
 		[CallerCount(Count = 2)]
-		[CallsDeduplicatedMethods(Count = 1)]
 		[Calls(Type = typeof(Helper), Member = "TryMarshalSet")]
-		[CalledBy(Type = typeof(QueryInvitesOptionsInternal), Member = "Set")]
-		[CalledBy(Type = typeof(QueryInvitesOptionsInternal), Member = "Set")]
+		[CallsDeduplicatedMethods(Count = 1)]
 		set
 		{
 		}
@@ -29,16 +29,16 @@ internal struct QueryInvitesOptionsInternal : ISettable, IDisposable
 	{
 	}
 
-	[CallerCount(Count = 1)]
-	[CallsDeduplicatedMethods(Count = 1)]
-	[Calls(Type = typeof(QueryInvitesOptionsInternal), Member = "set_LocalUserId")]
 	[CalledBy(Type = typeof(SessionsInterface), Member = "QueryInvites")]
+	[CallerCount(Count = 1)]
+	[Calls(Type = typeof(QueryInvitesOptionsInternal), Member = "set_LocalUserId")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public void Set(object other)
 	{
 	}
 
-	[CallerCount(Count = 2)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 7)]
 	public void Dispose()
 	{
 	}

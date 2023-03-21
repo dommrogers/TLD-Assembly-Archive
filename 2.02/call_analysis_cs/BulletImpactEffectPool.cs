@@ -17,22 +17,23 @@ public class BulletImpactEffectPool : EffectPool<BulletImpactEffectType>
 
 	public SerializableSpawnGroup[] m_EffectGroupsSerialized;
 
-	[CallerCount(Count = 12)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 12)]
 	protected override SerializableSpawnGroupGeneric[] GetSerializedGroups()
 	{
 		return null;
 	}
 
+	[CallerCount(Count = 0)]
 	[CallsDeduplicatedMethods(Count = 2)]
 	[CallsUnknownMethods(Count = 1)]
-	[CallerCount(Count = 0)]
 	protected override void InternalUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 2)]
+	[Calls(Type = typeof(EffectPool<>), Member = ".ctor")]
+	[CallsDeduplicatedMethods(Count = 1)]
 	public BulletImpactEffectPool()
 	{
 		((EffectPool<>)(object)this)._002Ector();

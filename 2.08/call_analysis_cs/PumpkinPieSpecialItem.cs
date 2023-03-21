@@ -11,14 +11,14 @@ public class PumpkinPieSpecialItem : MonoBehaviour
 
 	private GearItem m_GearItem;
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(Component), Member = "GetComponent")]
 	private void Start()
 	{
 	}
 
-	[Calls(Type = typeof(PumpkinPieSpecialItem), Member = "Hide")]
 	[CallerCount(Count = 0)]
+	[Calls(Type = typeof(PumpkinPieSpecialItem), Member = "Hide")]
 	private void Update()
 	{
 	}
@@ -31,11 +31,12 @@ public class PumpkinPieSpecialItem : MonoBehaviour
 	}
 
 	[CalledBy(Type = typeof(PumpkinPieSpecialItem), Member = "Update")]
-	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
-	[CallsUnknownMethods(Count = 9)]
-	[CallsDeduplicatedMethods(Count = 8)]
 	[CallerCount(Count = 1)]
 	[Calls(Type = typeof(Utils), Member = "SetActive")]
+	[Calls(Type = typeof(Utils), Member = "ChangeLayersForGearItem")]
+	[Calls(Type = typeof(GameObject), Member = "GetComponentsInChildren")]
+	[CallsDeduplicatedMethods(Count = 7)]
+	[CallsUnknownMethods(Count = 9)]
 	private void Hide(bool hide)
 	{
 	}

@@ -15,21 +15,21 @@ public class HeavyFootstepEffectPool : EffectPool<HeavyFootstepEffectType>
 
 	public SerializableSpawnGroup[] m_EffectGroupsSerialized;
 
-	[CallerCount(Count = 58)]
 	[DeduplicatedMethod]
+	[CallerCount(Count = 61)]
 	protected override SerializableSpawnGroupGeneric[] GetSerializedGroups()
 	{
 		return null;
 	}
 
-	[CallsDeduplicatedMethods(Count = 1)]
 	[CallerCount(Count = 0)]
+	[CallsDeduplicatedMethods(Count = 1)]
 	protected override void InternalUpdate()
 	{
 	}
 
 	[CallerCount(Count = 0)]
-	[CallsDeduplicatedMethods(Count = 1)]
+	[Calls(Type = typeof(EffectPool<>), Member = ".ctor")]
 	public HeavyFootstepEffectPool()
 	{
 		((EffectPool<>)(object)this)._002Ector();

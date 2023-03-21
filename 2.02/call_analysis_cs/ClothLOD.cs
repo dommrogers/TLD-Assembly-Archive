@@ -7,9 +7,9 @@ public class ClothLOD : MonoBehaviour
 
 	public float m_Distance;
 
+	[DeduplicatedMethod]
 	[CallerCount(Count = 0)]
 	[Calls(Type = typeof(Component), Member = ".ctor")]
-	[DeduplicatedMethod]
 	public ClothLOD()
 	{
 	}

@@ -15,7 +15,7 @@ public struct HeavyBreathingLevels
 		[CallerCount(Count = 0)]
 		get
 		{
-			return default(float);
+			return 0f;
 		}
 	}
 }
